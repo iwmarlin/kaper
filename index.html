@@ -21,7 +21,7 @@
         
         .container {
             width: 100vw;
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
         }
@@ -77,9 +77,6 @@
         .content {
             flex: 1;
             padding: 3rem 4rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
         }
         
         .view {
@@ -199,6 +196,12 @@
         
         .period-card {
             text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        
+        .period-card:hover {
+            transform: translateY(-4px);
         }
         
         .period-number {
@@ -319,6 +322,8 @@
         
         .period-detail:hover {
             border-color: #d1d5db;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         }
         
         .period-detail-number {
@@ -423,6 +428,7 @@
         .film-card:hover {
             border-color: #d1d5db;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
         }
         
         .film-title {
@@ -495,7 +501,7 @@
     <div class="container">
         <div class="header">
             <h2 class="title">The Works of Bronisław Kaper in the Context of Migration</h2>
-            <h3 class="period">1926—1939</h3>
+            <h3 class="period">1926–1939</h3>
         </div>
         
         <div class="navigation">
@@ -512,7 +518,7 @@
                     <div class="metric">
                         <div class="metric-number">175</div>
                         <div class="metric-label">Total Songs</div>
-                        <div class="metric-sublabel">1926—1939</div>
+                        <div class="metric-sublabel">1926–1939</div>
                     </div>
                     <div class="metric">
                         <div class="metric-number">53</div>
@@ -553,25 +559,25 @@
                 </div>
                 
                 <div class="periods-grid">
-                    <div class="period-card">
+                    <div class="period-card" onclick="showPeriodTimeline('warsaw')">
                         <div class="period-number" style="background-color: #e5e7eb; color: #374151;">1</div>
                         <h3 class="period-name">Between Warsaw and Berlin</h3>
-                        <p class="period-years">1926—1929</p>
+                        <p class="period-years">1926–1929</p>
                         <div class="period-stats">12 songs · 0 films</div>
                         <p class="period-desc">Early songs with Polish or German lyrics</p>
                     </div>
-                    <div class="period-card">
+                    <div class="period-card" onclick="showPeriodTimeline('european')">
                         <div class="period-number" style="background-color: #6b7280;">2</div>
                         <h3 class="period-name">European Period</h3>
-                        <p class="period-years">1930—1934</p>
+                        <p class="period-years">1930–1934</p>
                         <div class="period-stats">97 songs · 31 films</div>
                         <p class="period-desc">Berlin, Paris & international films</p>
                         <p class="period-studios">Main studios: UFA, Aafa, Emelka</p>
                     </div>
-                    <div class="period-card">
+                    <div class="period-card" onclick="showPeriodTimeline('hollywood')">
                         <div class="period-number" style="background-color: #111827;">3</div>
                         <h3 class="period-name">Hollywood Period</h3>
-                        <p class="period-years">1935—1939</p>
+                        <p class="period-years">1935–1939</p>
                         <div class="period-stats">66 songs · 22 films</div>
                         <p class="period-desc">MGM studio contract (73% of films)</p>
                         <p class="period-studios">Main studios: MGM, Universal</p>
@@ -582,10 +588,10 @@
             <!-- Timeline View -->
             <div id="timeline" class="view">
                 <div class="filters">
-                    <button class="filter-btn active" id="filter-all">All Periods</button>
-                    <button class="filter-btn" id="filter-warsaw">Warsaw-Berlin</button>
-                    <button class="filter-btn" id="filter-european">Europe</button>
-                    <button class="filter-btn" id="filter-hollywood">Hollywood</button>
+                    <button class="filter-btn active" onclick="filterPeriod('all')" id="filter-all">All Periods</button>
+                    <button class="filter-btn" onclick="filterPeriod('warsaw')" id="filter-warsaw">Warsaw-Berlin</button>
+                    <button class="filter-btn" onclick="filterPeriod('european')" id="filter-european">Europe</button>
+                    <button class="filter-btn" onclick="filterPeriod('hollywood')" id="filter-hollywood">Hollywood</button>
                 </div>
                 
                 <div class="chart-container">
@@ -607,11 +613,11 @@
             <!-- Periods View -->
             <div id="periods" class="view">
                 <div class="periods-detail">
-                    <div class="period-detail" id="period-warsaw">
+                    <div class="period-detail" onclick="showPeriodTimeline('warsaw')">
                         <div class="period-detail-number" style="background-color: #e5e7eb; color: #374151;">1</div>
                         <div class="period-detail-content">
                             <h3 class="period-detail-name">Warsaw-Berlin</h3>
-                            <p class="period-detail-years">1926—1929</p>
+                            <p class="period-detail-years">1926–1929</p>
                             <p class="period-detail-desc">Early songs with Polish or German lyrics</p>
                             <p class="period-detail-partner">Partners: Andrzej Włast & Fritz Rotter</p>
                         </div>
@@ -625,11 +631,11 @@
                         </div>
                     </div>
                     
-                    <div class="period-detail" id="period-european">
+                    <div class="period-detail" onclick="showPeriodTimeline('european')">
                         <div class="period-detail-number" style="background-color: #6b7280;">2</div>
                         <div class="period-detail-content">
                             <h3 class="period-detail-name">European Period</h3>
-                            <p class="period-detail-years">1930—1934</p>
+                            <p class="period-detail-years">1930–1934</p>
                             <p class="period-detail-desc">Berlin, Paris, international films</p>
                             <p class="period-detail-partner">Partners: Walter Jurmann & Fritz Rotter</p>
                             <p class="period-detail-studios">Key studios: UFA-Berlin, Aafa-Film, Emelka, Cine-Allianz</p>
@@ -644,11 +650,11 @@
                         </div>
                     </div>
                     
-                    <div class="period-detail" id="period-hollywood">
+                    <div class="period-detail" onclick="showPeriodTimeline('hollywood')">
                         <div class="period-detail-number" style="background-color: #111827;">3</div>
                         <div class="period-detail-content">
                             <h3 class="period-detail-name">Hollywood Period</h3>
-                            <p class="period-detail-years">1935—1939</p>
+                            <p class="period-detail-years">1935–1939</p>
                             <p class="period-detail-desc">MGM studio contract</p>
                             <p class="period-detail-partner">Partners: Walter Jurmann, Gus Kahn, Ned Washington</p>
                             <p class="period-detail-studios">MGM dominance: 16/22 films (73%); also Universal, 20th Century Fox</p>
@@ -668,9 +674,9 @@
             <!-- Filmography View -->
             <div id="filmography" class="view">
                 <div class="filmography-filters">
-                    <button class="filter-btn active" id="films-all">All Films (53)</button>
-                    <button class="filter-btn" id="films-european">European Period (31)</button>
-                    <button class="filter-btn" id="films-hollywood">Hollywood Period (22)</button>
+                    <button class="filter-btn active" onclick="filterFilms('all')" id="films-all">All Films (53)</button>
+                    <button class="filter-btn" onclick="filterFilms('european')" id="films-european">European Period (31)</button>
+                    <button class="filter-btn" onclick="filterFilms('hollywood')" id="films-hollywood">Hollywood Period (22)</button>
                 </div>
                 
                 <div class="films-container">
@@ -683,7 +689,7 @@
     </div>
     
     <script>
-        // Poprawne dane z pliku Excel
+        // Timeline data
         const timelineData = [
             { year: 1926, songs: 3, films: 0 },
             { year: 1927, songs: 2, films: 0 },
@@ -700,33 +706,33 @@
             { year: 1939, songs: 2, films: 2 }
         ];
 
-        // WSZYSTKIE 53 FILMY Z EXCELA
+        // Complete film data with version information
         const filmData = [
             { title: "Ihre Majestät die Liebe", director: "Joe May", year: 1931, period: "european", jurmann: "yes", production: "Joe May-Film AG" },
-            { title: "Son altesse l'amour", director: "Robert Péguy, Erich Schmidt", year: 1931, period: "european", jurmann: "yes", production: "International Standard Film, Paris/Joe May-Film Berlin", version of: "Ihre Majestät die Liebe" },
+            { title: "Son altesse l'amour", director: "Robert Péguy, Erich Schmidt", year: 1931, period: "european", jurmann: "yes", production: "International Standard Film, Paris/Joe May-Film Berlin", version: "Ihre Majestät die Liebe" },
             { title: "Die lustigen Musikanten (Laubenkolonie)", director: "Max Obal", year: 1930, period: "european", jurmann: "no", production: "Aafa-Film AG, Berlin" },
             { title: "Alraune", director: "Richard Oswald", year: 1930, period: "european", jurmann: "no", production: "Richard Oswald-Produktion GmbH, Berlin" },
             { title: "Seitensprünge", director: "István Székely", year: 1931, period: "european", jurmann: "yes", production: "Cicero-Film GmbH, Berlin" },
             { title: "Der Korvettenkapitän", director: "Rudolf Walther-Fein", year: 1930, period: "european", jurmann: "no", production: "Aafa-Film AG, Berlin" },
             { title: "Die große Attraktion", director: "Max Reichmann", year: 1931, period: "european", jurmann: "yes", production: "Emelka AG" },
             { title: "Ehe mit beschränkter Haftung", director: "Franz Wenzler", year: 1932, period: "european", jurmann: "yes", production: "Hisa-Film Berlin/T.K. Tonfilm_Produktion GmbH" },
-            { title: "Mariage à responsabilité limitée", director: "Jean de Limur", year: 1933, period: "european", jurmann: "yes", production: "Vandor-Film, Francja" },
+            { title: "Mariage à responsabilité limitée", director: "Jean de Limur", year: 1933, period: "european", jurmann: "yes", production: "Vandor-Film, Francja", version: "Ehe mit beschränkter Haftung" },
             { title: "Es wird schon wieder besser...", director: "Kurt Gerron", year: 1932, period: "european", jurmann: "yes", production: "UFA-Berlin" },
             { title: "Skandal in der Parkstrasse", director: "Franz Wenzler", year: 1932, period: "european", jurmann: "yes", production: "Kreis-Film, Berlin" },
             { title: "Melodie der Liebe", director: "Georg Jacoby", year: 1932, period: "european", jurmann: "yes", production: "Reichsliga-Film Berlin" },
             { title: "Ein toller Einfall", director: "Kurt Gerron", year: 1932, period: "european", jurmann: "yes", production: "Emelka Munchner Filmgesselschaft" },
             { title: "Die Zwei vom Südexpreß", director: "Robert Wohlmuth", year: 1932, period: "european", jurmann: "yes", production: "Emelka-Konzern" },
             { title: "Hochzeitsreise zu Dritt", director: "Karl Meinhardt", year: 1932, period: "european", jurmann: "yes", production: "Mondial Internationale Filmindustrie AG, Wien" },
-            { title: "Voyage de noces", director: "Germain Fried, Erich Schmidt", year: 1932, period: "european", jurmann: "yes", production: "Société Internationale Cinématographique" },
+            { title: "Voyage de noces", director: "Germain Fried, Erich Schmidt", year: 1932, period: "european", jurmann: "yes", production: "Société Internationale Cinématographique", version: "Hochzeitsreise zu Dritt" },
             { title: "Madame wünscht keine Kinder", director: "Hans Steinhoff", year: 1933, period: "european", jurmann: "yes", production: "UFA" },
-            { title: "L'Homme qui ne sait pas dire non", director: "Heinz Hilpert", year: 1933, period: "european", jurmann: "yes", production: "UFA-Cine Allianz" },
-            { title: "Madame ne veut pas d'enfants", director: "Constantin Landau, Hans Steinhoff", year: 1933, period: "european", jurmann: "yes", production: "Vandor Film" },
+            { title: "L'Homme qui ne sait pas dire non", director: "Heinz Hilpert", year: 1933, period: "european", jurmann: "yes", production: "UFA-Cine Allianz", version: "Ich will Dich Liebe lehren" },
+            { title: "Madame ne veut pas d'enfants", director: "Constantin Landau, Hans Steinhoff", year: 1933, period: "european", jurmann: "yes", production: "Vandor Film", version: "Madame wünscht keine Kinder" },
             { title: "Heut kommt's drauf an", director: "Kurt Gerron", year: 1933, period: "european", jurmann: "yes", production: "Boston-Films-Co Berlin" },
-            { title: "Ich will Dich Liebe lehren [Der glücklische Herr Fünf]", director: "Heinz Hilpert", year: 1933, period: "european", jurmann: "yes", production: "Pax Film GmbH" },
+            { title: "Ich will Dich Liebe lehren [Der glückliche Herr Fünf]", director: "Heinz Hilpert", year: 1933, period: "european", jurmann: "yes", production: "Pax Film GmbH" },
             { title: "Ein Lied für Dich", director: "Joe May", year: 1933, period: "european", jurmann: "yes", production: "UFA (Neubabelsberg) & Cine-Allianz" },
-            { title: "My Song for You", director: "Maurice Elvey", year: 1934, period: "european", jurmann: "yes", production: "Gaumont British Picture Corporation/Cine Allianz" },
+            { title: "My Song for You", director: "Maurice Elvey", year: 1934, period: "european", jurmann: "yes", production: "Gaumont British Picture Corporation/Cine Allianz", version: "Ein Lied für Dich" },
             { title: "Kind, ich freu' mich auf Dein Kommen", director: "Kurt Gerron, Erich von Neusser", year: 1933, period: "european", jurmann: "yes", production: "Pan-Film KG-Leopold Meissner/Austria" },
-            { title: "Tout pour l'amour", director: "Henri-Georges Clouzot, Joe May", year: 1933, period: "european", jurmann: "yes", production: "Cine-Allianz Tonfilm & UFA" },
+            { title: "Tout pour l'amour", director: "Henri-Georges Clouzot, Joe May", year: 1933, period: "european", jurmann: "yes", production: "Cine-Allianz Tonfilm & UFA", version: "Ein Lied für Dich" },
             { title: "Abenteuer am Lido", director: "Richard Oswald", year: 1933, period: "european", jurmann: "yes", production: "Richard Oswald-Produktion" },
             { title: "Le chant du destin", director: "Jean Legrand", year: 1933, period: "european", jurmann: "yes", production: "Pan-Film" },
             { title: "On a volé un homme", director: "Max Ophuls", year: 1934, period: "european", jurmann: "yes", production: "Fox Europa" },
@@ -735,7 +741,7 @@
             { title: "Une femme au volant", director: "Pierre Billon, Kurt Gerron", year: 1933, period: "european", jurmann: "yes", production: "Films R.P." },
             
             // Hollywood Period (1935-1939)
-            { title: "Moscow Nights", director: "Anthony Asquith", year: 1935, period: "hollywood", jurmann: "yes", production: "London Films" },
+            { title: "Moscow Nights", director: "Anthony Asquith", year: 1935, period: "hollywood", jurmann: "yes", production: "London Films", version: "Les nuits moscovites" },
             { title: "Escapade", director: "Robert Z. Leonard", year: 1935, period: "hollywood", jurmann: "yes", production: "MGM" },
             { title: "Mutiny on the Bounty", director: "Frank Lloyd", year: 1935, period: "hollywood", jurmann: "yes", production: "MGM" },
             { title: "Last of the Pagans", director: "Richard Thorpe", year: 1935, period: "hollywood", jurmann: "yes", production: "MGM" },
@@ -763,57 +769,26 @@
         let currentFilter = 'all';
         let currentFilmFilter = 'all';
 
-        // Bezpieczna inicjalizacja
+        // Initialize when page loads
         document.addEventListener('DOMContentLoaded', function() {
-            console.log('Presentation loaded');
-            setupEventListeners();
+            console.log('Page loaded, initializing...');
             renderFilms();
         });
 
-        function setupEventListeners() {
-            // Nawigacja
-            safeAddListener('nav-overview', () => showView('overview'));
-            safeAddListener('nav-timeline', () => showView('timeline'));
-            safeAddListener('nav-periods', () => showView('periods'));
-            safeAddListener('nav-filmography', () => showView('filmography'));
-            
-            // Filtry osi czasu
-            safeAddListener('filter-all', () => filterPeriod('all'));
-            safeAddListener('filter-warsaw', () => filterPeriod('warsaw'));
-            safeAddListener('filter-european', () => filterPeriod('european'));
-            safeAddListener('filter-hollywood', () => filterPeriod('hollywood'));
-            
-            // Filtry filmów
-            safeAddListener('films-all', () => filterFilms('all'));
-            safeAddListener('films-european', () => filterFilms('european'));
-            safeAddListener('films-hollywood', () => filterFilms('hollywood'));
-            
-            // Szczegóły okresów
-            safeAddListener('period-warsaw', () => showPeriodTimeline('warsaw'));
-            safeAddListener('period-european', () => showPeriodTimeline('european'));
-            safeAddListener('period-hollywood', () => showPeriodTimeline('hollywood'));
-        }
-
-        function safeAddListener(id, callback) {
-            const element = document.getElementById(id);
-            if (element) {
-                element.addEventListener('click', callback);
-            }
-        }
-
+        // Navigation functions
         function showView(viewName) {
-            // Ukryj wszystkie widoki
+            // Hide all views
             document.querySelectorAll('.view').forEach(view => {
                 view.classList.remove('active');
             });
             
-            // Pokaż wybrany widok
+            // Show selected view
             const targetView = document.getElementById(viewName);
             if (targetView) {
                 targetView.classList.add('active');
             }
             
-            // Aktualizuj nawigację
+            // Update navigation
             document.querySelectorAll('.nav-btn').forEach(btn => {
                 btn.classList.remove('active');
             });
@@ -823,21 +798,22 @@
                 activeNavBtn.classList.add('active');
             }
             
-            // Inicjalizuj wykres jeśli widok osi czasu
+            // Initialize chart if timeline view
             if (viewName === 'timeline') {
                 setTimeout(() => initChart(), 100);
             }
             
-            // Inicjalizuj filmografię jeśli widok filmografii
+            // Render films if filmography view
             if (viewName === 'filmography') {
                 setTimeout(() => renderFilms(), 100);
             }
         }
 
+        // Filter functions
         function filterPeriod(period) {
             currentFilter = period;
             
-            // Aktualizuj przyciski filtrów
+            // Update filter buttons
             document.querySelectorAll('.filters .filter-btn').forEach(btn => {
                 btn.classList.remove('active');
             });
@@ -853,7 +829,7 @@
         function filterFilms(period) {
             currentFilmFilter = period;
             
-            // Aktualizuj przyciski filtrów
+            // Update filter buttons
             document.querySelectorAll('.filmography-filters .filter-btn').forEach(btn => {
                 btn.classList.remove('active');
             });
@@ -885,7 +861,7 @@
                         <div><strong>Director:</strong> ${film.director}</div>
                         <div><strong>Production:</strong> ${film.production}</div>
                         <div class="film-partner"><strong>With Jurmann:</strong> ${film.jurmann}</div>
-                        <div><strong>Version:</strong> ${film.version}</div>
+                        ${film.version ? `<div class="film-notes"><strong>Version of:</strong> ${film.version}</div>` : ''}
                     </div>
                 </div>
             `).join('');
@@ -915,7 +891,7 @@
             const ctx = document.getElementById('timelineChart');
             if (!ctx) return;
             
-            // Sprawdź czy Chart.js jest załadowany
+            // Check if Chart.js is loaded
             if (typeof Chart === 'undefined') {
                 console.warn('Chart.js not loaded, showing fallback');
                 ctx.parentElement.innerHTML = '<div style="text-align: center; padding: 60px; color: #6b7280;">Timeline chart will load when Chart.js is available</div>';
@@ -1026,5 +1002,12 @@
             chart.data.datasets[1].data = data.map(d => d.films);
             chart.update('active');
         }
+
+        // Navigation click handlers
+        document.getElementById('nav-overview').onclick = () => showView('overview');
+        document.getElementById('nav-timeline').onclick = () => showView('timeline');
+        document.getElementById('nav-periods').onclick = () => showView('periods');
+        document.getElementById('nav-filmography').onclick = () => showView('filmography');
     </script>
 </body>
+</html>
