@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bronisław Kaper - Filmy i Piosenki</title>
+    <title>Bronisław Kaper - Films and Songs</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
     <style>
         * {
@@ -514,32 +514,6 @@
                         <div class="metric-label">Total Songs</div>
                         <div class="metric-sublabel">1926—1939</div>
                     </div>
-                
-                <div class="studio-overview">
-                    <h4 class="studio-overview-title">Collaboration Statistics</h4>
-                    <div class="collaboration-stats">
-                        <div class="collab-stat">
-                            <div class="collab-number">94%</div>
-                            <div class="collab-label">Films with Jurmann</div>
-                            <div class="collab-detail">50 of 53 films</div>
-                        </div>
-                        <div class="collab-stat">
-                            <div class="collab-number">79%</div>
-                            <div class="collab-label">Songs with Jurmann</div>
-                            <div class="collab-detail">139 of 175 songs</div>
-                        </div>
-                    </div>
-                    <div class="studio-periods">
-                        <div class="studio-period">
-                            <h5>European Period (1930-1934)</h5>
-                            <p>Diverse studio landscape: UFA-Berlin, Aafa-Film, Emelka, Cine-Allianz, and French productions</p>
-                        </div>
-                        <div class="studio-period">
-                            <h5>Hollywood Period (1935-1939)</h5>
-                            <p>MGM dominance with 16/22 films; additional work at Universal Pictures and 20th Century Fox</p>
-                        </div>
-                    </div>
-                </div>
                     <div class="metric">
                         <div class="metric-number">53</div>
                         <div class="metric-label">Film Titles</div>
@@ -726,485 +700,63 @@
             { year: 1939, songs: 2, films: 2 }
         ];
 
-        // Kompletne dane wszystkich 53 filmów z pliku Excel
+        // WSZYSTKIE 53 PRAWDZIWE FILMY Z EXCELA
         const filmData = [
-          {
-            "title": "Ihre Majestät die Liebe",
-            "director": "Joe May",
-            "year": 1931,
-            "period": "european",
-            "jurmann": "yes",
-            "production": "Joe May-Film AG",
-            "notes": ""
-          },
-          {
-            "title": "Son altesse l'amour",
-            "director": "Robert Péguy, Erich  Schmidt",
-            "year": 1931,
-            "period": "european",
-            "jurmann": "yes",
-            "production": "International Standard Film, Paris/Joe May-Film Berlin",
-            "notes": "francuska wersja Ihre Majestät die Liebe"
-          },
-          {
-            "title": "Die lustigen Musikanten (Laubenkolonie)",
-            "director": "Max Obal",
-            "year": 1930,
-            "period": "european",
-            "jurmann": "no",
-            "production": "\r\nAafa-Film AG, Berlin",
-            "notes": ""
-          },
-          {
-            "title": "Alraune",
-            "director": "Richard Oswald",
-            "year": 1930,
-            "period": "european",
-            "jurmann": "no",
-            "production": "Richard Oswald-Produktion GmbH, Berlin",
-            "notes": ""
-          },
-          {
-            "title": "Seitensprünge",
-            "director": "István Székely",
-            "year": 1931,
-            "period": "european",
-            "jurmann": "yes",
-            "production": "Cicero-Film GmbH, Berlin",
-            "notes": ""
-          },
-          {
-            "title": "Der Korvettenkapitän",
-            "director": "Rudolf Walther-Fein",
-            "year": 1930,
-            "period": "european",
-            "jurmann": "no",
-            "production": "Aafa-Film AG, Berlin",
-            "notes": ""
-          },
-          {
-            "title": "Die große Attraktion",
-            "director": "Max Reichmann",
-            "year": 1931,
-            "period": "european",
-            "jurmann": "yes",
-            "production": "Emelka AG",
-            "notes": ""
-          },
-          {
-            "title": "Ehe mit beschränkter Haftung",
-            "director": "Franz Wenzler",
-            "year": 1932,
-            "period": "european",
-            "jurmann": "yes",
-            "production": "Hisa-Film Berlin/T.K. Tonfilm_Produktion GmbH",
-            "notes": ""
-          },
-          {
-            "title": "Mariage à responsabilité limitée",
-            "director": "Jean de Limur",
-            "year": 1933,
-            "period": "european",
-            "jurmann": "yes",
-            "production": "Vandor-Film, Francja",
-            "notes": "francuska wersja Ehe mit beschränkter Haftung"
-          },
-          {
-            "title": "Es wird schon wieder besser...",
-            "director": "Kurt Gerron",
-            "year": 1932,
-            "period": "european",
-            "jurmann": "yes",
-            "production": "UFA-Berlin",
-            "notes": ""
-          },
-          {
-            "title": "Melodie der Liebe",
-            "director": "Georg Jacoby",
-            "year": 1932,
-            "period": "european",
-            "jurmann": "yes",
-            "production": "Unknown",
-            "notes": ""
-          },
-          {
-            "title": "Ein toller Einfall",
-            "director": "Kurt Gerron",
-            "year": 1932,
-            "period": "european",
-            "jurmann": "yes",
-            "production": "Unknown",
-            "notes": ""
-          },
-          {
-            "title": "Die Zwei vom Südexpreß",
-            "director": "Robert Wohlmuth",
-            "year": 1932,
-            "period": "european",
-            "jurmann": "yes",
-            "production": "Emelka-Konzern",
-            "notes": ""
-          },
-          {
-            "title": "Hochzeitsreise zu Dritt",
-            "director": "Erich Schmidt",
-            "year": 1932,
-            "period": "european",
-            "jurmann": "yes",
-            "production": "Mondial-Film",
-            "notes": ""
-          },
-          {
-            "title": "Voyage de noces",
-            "director": "Germain Fried, Erich Schmidt",
-            "year": 1932,
-            "period": "european",
-            "jurmann": "yes",
-            "production": "Société Internationale Cinématographique",
-            "notes": ""
-          },
-          {
-            "title": "Madame ne veut pas d'enfants",
-            "director": "Constantin Landau, Hans Steinhoff",
-            "year": 1932,
-            "period": "european",
-            "jurmann": "no",
-            "production": "Vandor Film",
-            "notes": ""
-          },
-          {
-            "title": "Madame wünscht keine Kinder",
-            "director": "Hans Steinhoff",
-            "year": 1933,
-            "period": "european",
-            "jurmann": "yes",
-            "production": "Unknown",
-            "notes": ""
-          },
-          {
-            "title": "L'Homme qui ne sait pas dire non",
-            "director": "Heinz Hilpert",
-            "year": 1933,
-            "period": "european",
-            "jurmann": "yes",
-            "production": "Unknown",
-            "notes": ""
-          },
-          {
-            "title": "Heut kommt's drauf an",
-            "director": "Kurt Gerron",
-            "year": 1933,
-            "period": "european",
-            "jurmann": "yes",
-            "production": "Boston-Films-Co Berlin",
-            "notes": ""
-          },
-          {
-            "title": "Ich will Dich Liebe lehren",
-            "director": "Heinz Hilpert",
-            "year": 1933,
-            "period": "european",
-            "jurmann": "yes",
-            "production": "Pax Film GmbH",
-            "notes": ""
-          },
-          {
-            "title": "Ein Lied für Dich",
-            "director": "Joe May",
-            "year": 1933,
-            "period": "european",
-            "jurmann": "yes",
-            "production": "UFA (Neubabelsberg) & Cine-Allianz",
-            "notes": ""
-          },
-          {
-            "title": "Kind, ich freu' mich auf Dein Kommen",
-            "director": "Kurt Gerron, Erich von Neusser",
-            "year": 1933,
-            "period": "european",
-            "jurmann": "yes",
-            "production": "Unknown",
-            "notes": ""
-          },
-          {
-            "title": "Tout pour l'amour",
-            "director": "Henri-Georges Clouzot, Joe May",
-            "year": 1933,
-            "period": "european",
-            "jurmann": "yes",
-            "production": "Cine-Allianz Tonfilm & UFA",
-            "notes": ""
-          },
-          {
-            "title": "Abenteuer am Lido",
-            "director": "Richard Oswald",
-            "year": 1933,
-            "period": "european",
-            "jurmann": "yes",
-            "production": "Richard Oswald-Produktion",
-            "notes": ""
-          },
-          {
-            "title": "Le chant du destin",
-            "director": "Jean Legrand",
-            "year": 1933,
-            "period": "european",
-            "jurmann": "yes",
-            "production": "Unknown",
-            "notes": ""
-          },
-          {
-            "title": "Une femme au volant",
-            "director": "Pierre Billon, Kurt Gerron",
-            "year": 1933,
-            "period": "european",
-            "jurmann": "yes",
-            "production": "Films R.P.",
-            "notes": ""
-          },
-          {
-            "title": "On a volé un homme",
-            "director": "Max Ophuls",
-            "year": 1934,
-            "period": "european",
-            "jurmann": "yes",
-            "production": "Fox Europa",
-            "notes": ""
-          },
-          {
-            "title": "Les nuits moscovites",
-            "director": "Alexis Granovsky",
-            "year": 1934,
-            "period": "european",
-            "jurmann": "yes",
-            "production": "GG films",
-            "notes": ""
-          },
-          {
-            "title": "En attendant",
-            "director": "Unknown",
-            "year": 1934,
-            "period": "european",
-            "jurmann": "yes",
-            "production": "Unknown",
-            "notes": ""
-          },
-          {
-            "title": "Pour vivre heureux",
-            "director": "Claudio de la Torre",
-            "year": 1932,
-            "period": "european",
-            "jurmann": "yes",
-            "production": "Unknown",
-            "notes": ""
-          },
-          {
-            "title": "Grand jeu",
-            "director": "Jacques Feyder",
-            "year": 1934,
-            "period": "european",
-            "jurmann": "yes",
-            "production": "Unknown",
-            "notes": ""
-          },
-          {
-            "title": "Moscow Nights",
-            "director": "Anthony Asquith",
-            "year": 1935,
-            "period": "hollywood",
-            "jurmann": "yes",
-            "production": "London Films",
-            "notes": ""
-          },
-          {
-            "title": "Escapade",
-            "director": "Robert Z. Leonard",
-            "year": 1935,
-            "period": "hollywood",
-            "jurmann": "yes",
-            "production": "MGM",
-            "notes": ""
-          },
-          {
-            "title": "Mutiny on the Bounty",
-            "director": "Frank Lloyd",
-            "year": 1935,
-            "period": "hollywood",
-            "jurmann": "yes",
-            "production": "MGM",
-            "notes": ""
-          },
-          {
-            "title": "Last of the Pagans",
-            "director": "Richard Thorpe",
-            "year": 1935,
-            "period": "hollywood",
-            "jurmann": "yes",
-            "production": "MGM",
-            "notes": ""
-          },
-          {
-            "title": "A night at the opera",
-            "director": "Edmund Goulding, Sam Wood",
-            "year": 1935,
-            "period": "hollywood",
-            "jurmann": "yes",
-            "production": "MGM",
-            "notes": ""
-          },
-          {
-            "title": "Kind Lady",
-            "director": "George B. Seitz",
-            "year": 1935,
-            "period": "hollywood",
-            "jurmann": "yes",
-            "production": "MGM",
-            "notes": ""
-          },
-          {
-            "title": "The Perfect Gentleman",
-            "director": "Tim Whelan",
-            "year": 1935,
-            "period": "hollywood",
-            "jurmann": "yes",
-            "production": "MGM",
-            "notes": ""
-          },
-          {
-            "title": "Two Hearts in Wax Time",
-            "director": "William V. Skall",
-            "year": 1935,
-            "period": "hollywood",
-            "jurmann": "yes",
-            "production": "MGM",
-            "notes": ""
-          },
-          {
-            "title": "Trouble for Two",
-            "director": "J. Walter Ruben",
-            "year": 1936,
-            "period": "hollywood",
-            "jurmann": "yes",
-            "production": "MGM",
-            "notes": ""
-          },
-          {
-            "title": "We Went to College",
-            "director": "Joseph Santley",
-            "year": 1936,
-            "period": "hollywood",
-            "jurmann": "yes",
-            "production": "MGM",
-            "notes": ""
-          },
-          {
-            "title": "Three Smart Girls",
-            "director": "Henry Koster",
-            "year": 1936,
-            "period": "hollywood",
-            "jurmann": "yes",
-            "production": "Universal Pictures",
-            "notes": ""
-          },
-          {
-            "title": "San Francisco",
-            "director": "W.S. Van Dyke",
-            "year": 1936,
-            "period": "hollywood",
-            "jurmann": "yes",
-            "production": "MGM",
-            "notes": ""
-          },
-          {
-            "title": "Dimples",
-            "director": "William A. Seiter",
-            "year": 1936,
-            "period": "hollywood",
-            "jurmann": "yes",
-            "production": "20th Century Fox",
-            "notes": ""
-          },
-          {
-            "title": "Man of the People",
-            "director": "Edwin L. Marin",
-            "year": 1937,
-            "period": "hollywood",
-            "jurmann": "yes",
-            "production": "MGM",
-            "notes": ""
-          },
-          {
-            "title": "Wings of the Morning",
-            "director": "Harold D. Schuster",
-            "year": 1937,
-            "period": "hollywood",
-            "jurmann": "yes",
-            "production": "20th Century Fox",
-            "notes": ""
-          },
-          {
-            "title": "A Day at the Races",
-            "director": "Sam Wood",
-            "year": 1937,
-            "period": "hollywood",
-            "jurmann": "yes",
-            "production": "MGM",
-            "notes": ""
-          },
-          {
-            "title": "Maytime",
-            "director": "Robert Z. Leonard",
-            "year": 1937,
-            "period": "hollywood",
-            "jurmann": "yes",
-            "production": "MGM",
-            "notes": ""
-          },
-          {
-            "title": "The Firefly",
-            "director": "Robert Z. Leonard",
-            "year": 1937,
-            "period": "hollywood",
-            "jurmann": "yes",
-            "production": "MGM",
-            "notes": ""
-          },
-          {
-            "title": "Everybody Sing",
-            "director": "Edwin L. Marin",
-            "year": 1938,
-            "period": "hollywood",
-            "jurmann": "yes",
-            "production": "MGM",
-            "notes": ""
-          },
-          {
-            "title": "The Girl of the Golden West",
-            "director": "Robert Z. Leonard",
-            "year": 1938,
-            "period": "hollywood",
-            "jurmann": "yes",
-            "production": "MGM",
-            "notes": ""
-          },
-          {
-            "title": "Balalaika",
-            "director": "Reinhold Schünzel",
-            "year": 1939,
-            "period": "hollywood",
-            "jurmann": "yes",
-            "production": "MGM",
-            "notes": ""
-          },
-          {
-            "title": "The Adventures of Huckleberry Finn",
-            "director": "Richard Thorpe",
-            "year": 1939,
-            "period": "hollywood",
-            "jurmann": "yes",
-            "production": "MGM",
-            "notes": ""
-          }
+            { title: "Ihre Majestät die Liebe", director: "Joe May", year: 1931, period: "european", jurmann: "yes", production: "Joe May-Film AG" },
+            { title: "Son altesse l'amour", director: "Robert Péguy, Erich Schmidt", year: 1931, period: "european", jurmann: "yes", production: "International Standard Film, Paris/Joe May-Film Berlin" },
+            { title: "Die lustigen Musikanten (Laubenkolonie)", director: "Max Obal", year: 1930, period: "european", jurmann: "no", production: "Aafa-Film AG, Berlin" },
+            { title: "Alraune", director: "Richard Oswald", year: 1930, period: "european", jurmann: "no", production: "Richard Oswald-Produktion GmbH, Berlin" },
+            { title: "Seitensprünge", director: "István Székely", year: 1931, period: "european", jurmann: "yes", production: "Cicero-Film GmbH, Berlin" },
+            { title: "Der Korvettenkapitän", director: "Rudolf Walther-Fein", year: 1930, period: "european", jurmann: "no", production: "Aafa-Film AG, Berlin" },
+            { title: "Die große Attraktion", director: "Max Reichmann", year: 1931, period: "european", jurmann: "yes", production: "Emelka AG" },
+            { title: "Ehe mit beschränkter Haftung", director: "Franz Wenzler", year: 1932, period: "european", jurmann: "yes", production: "Hisa-Film Berlin/T.K. Tonfilm_Produktion GmbH" },
+            { title: "Mariage à responsabilité limitée", director: "Jean de Limur", year: 1933, period: "european", jurmann: "yes", production: "Vandor-Film, Francja" },
+            { title: "Es wird schon wieder besser...", director: "Kurt Gerron", year: 1932, period: "european", jurmann: "yes", production: "UFA-Berlin" },
+            { title: "Skandal in der Parkstrasse", director: "Franz Wenzler", year: 1932, period: "european", jurmann: "yes", production: "Kreis-Film, Berlin" },
+            { title: "Melodie der Liebe", director: "Georg Jacoby", year: 1932, period: "european", jurmann: "yes", production: "Reichsliga-Film Berlin" },
+            { title: "Ein toller Einfall", director: "Kurt Gerron", year: 1932, period: "european", jurmann: "yes", production: "Emelka Munchner Filmgesselschaft" },
+            { title: "Die Zwei vom Südexpreß", director: "Robert Wohlmuth", year: 1932, period: "european", jurmann: "yes", production: "Emelka-Konzern" },
+            { title: "Hochzeitsreise zu Dritt", director: "Karl Meinhardt", year: 1932, period: "european", jurmann: "yes", production: "Mondial Internationale Filmindustrie AG, Wien" },
+            { title: "Voyage de noces", director: "Germain Fried, Erich Schmidt", year: 1932, period: "european", jurmann: "yes", production: "Société Internationale Cinématographique" },
+            { title: "Madame wünscht keine Kinder", director: "Hans Steinhoff", year: 1933, period: "european", jurmann: "yes", production: "UFA" },
+            { title: "L'Homme qui ne sait pas dire non", director: "Heinz Hilpert", year: 1933, period: "european", jurmann: "yes", production: "UFA-Cine Allianz" },
+            { title: "Madame ne veut pas d'enfants", director: "Constantin Landau, Hans Steinhoff", year: 1933, period: "european", jurmann: "yes", production: "Vandor Film" },
+            { title: "Heut kommt's drauf an", director: "Kurt Gerron", year: 1933, period: "european", jurmann: "yes", production: "Boston-Films-Co Berlin" },
+            { title: "Ich will Dich Liebe lehren [Der glücklische Herr Fünf]", director: "Heinz Hilpert", year: 1933, period: "european", jurmann: "yes", production: "Pax Film GmbH" },
+            { title: "Ein Lied für Dich", director: "Joe May", year: 1933, period: "european", jurmann: "yes", production: "UFA (Neubabelsberg) & Cine-Allianz" },
+            { title: "My Song for You", director: "Maurice Elvey", year: 1934, period: "european", jurmann: "yes", production: "Gaumont British Picture Corporation/Cine Allianz" },
+            { title: "Kind, ich freu' mich auf Dein Kommen", director: "Kurt Gerron, Erich von Neusser", year: 1933, period: "european", jurmann: "yes", production: "Pan-Film KG-Leopold Meissner/Austria" },
+            { title: "Tout pour l'amour", director: "Henri-Georges Clouzot, Joe May", year: 1933, period: "european", jurmann: "yes", production: "Cine-Allianz Tonfilm & UFA" },
+            { title: "Abenteuer am Lido", director: "Richard Oswald", year: 1933, period: "european", jurmann: "yes", production: "Richard Oswald-Produktion" },
+            { title: "Le chant du destin", director: "Jean Legrand", year: 1933, period: "european", jurmann: "yes", production: "Pan-Film" },
+            { title: "On a volé un homme", director: "Max Ophuls", year: 1934, period: "european", jurmann: "yes", production: "Fox Europa" },
+            { title: "Le greluchon délicat", director: "Pierre Billon", year: 1934, period: "european", jurmann: "yes", production: "Foc Film Cooperation, Europa Films, Francja" },
+            { title: "Les nuits moscovites", director: "Alexis Granovsky", year: 1934, period: "european", jurmann: "yes", production: "G.G. Film-France" },
+            { title: "Une femme au volant", director: "Pierre Billon, Kurt Gerron", year: 1933, period: "european", jurmann: "yes", production: "Films R.P." },
+            
+            // Hollywood Period (1935-1939)
+            { title: "Moscow Nights", director: "Anthony Asquith", year: 1935, period: "hollywood", jurmann: "yes", production: "London Films" },
+            { title: "Escapade", director: "Robert Z. Leonard", year: 1935, period: "hollywood", jurmann: "yes", production: "MGM" },
+            { title: "Mutiny on the Bounty", director: "Frank Lloyd", year: 1935, period: "hollywood", jurmann: "yes", production: "MGM" },
+            { title: "Last of the Pagans", director: "Richard Thorpe", year: 1935, period: "hollywood", jurmann: "yes", production: "MGM" },
+            { title: "A night at the opera", director: "Sam Wood", year: 1935, period: "hollywood", jurmann: "yes", production: "MGM" },
+            { title: "Kind Lady", director: "George B. Seitz", year: 1935, period: "hollywood", jurmann: "yes", production: "MGM" },
+            { title: "The Perfect Gentleman", director: "Tim Whelan", year: 1935, period: "hollywood", jurmann: "yes", production: "MGM" },
+            { title: "Two Hearts in Wax Time", director: "William V. Skall", year: 1935, period: "hollywood", jurmann: "yes", production: "MGM" },
+            { title: "Little Boy Blue", director: "Charles Lamont", year: 1936, period: "hollywood", jurmann: "yes", production: "Universal" },
+            { title: "Trouble for Two", director: "J. Walter Ruben", year: 1936, period: "hollywood", jurmann: "yes", production: "MGM" },
+            { title: "We Went to College", director: "Joseph Santley", year: 1936, period: "hollywood", jurmann: "yes", production: "MGM" },
+            { title: "Three Smart Girls", director: "Henry Koster", year: 1936, period: "hollywood", jurmann: "yes", production: "Universal Pictures" },
+            { title: "San Francisco", director: "W.S. Van Dyke", year: 1936, period: "hollywood", jurmann: "yes", production: "MGM" },
+            { title: "Man of the People", director: "Edwin L. Marin", year: 1937, period: "hollywood", jurmann: "yes", production: "MGM" },
+            { title: "Un coup de Rouge", director: "Jacques de Baroncelli", year: 1937, period: "hollywood", jurmann: "yes", production: "Cindeproduction, France" },
+            { title: "Wings of the morning", director: "Harold D. Schuster", year: 1937, period: "hollywood", jurmann: "yes", production: "20th Century Fox" },
+            { title: "A day at the races", director: "Sam Wood", year: 1937, period: "hollywood", jurmann: "yes", production: "MGM" },
+            { title: "Maytime", director: "Robert Z. Leonard", year: 1937, period: "hollywood", jurmann: "yes", production: "MGM" },
+            { title: "Everybody Sing", director: "Edwin L. Marin", year: 1938, period: "hollywood", jurmann: "yes", production: "MGM" },
+            { title: "The Spy Ring", director: "Joseph H. Lewis", year: 1938, period: "hollywood", jurmann: "yes", production: "Universal" },
+            { title: "The Adventures of Huckleberry Finn", director: "Richard Thorpe", year: 1939, period: "hollywood", jurmann: "yes", production: "MGM" },
+            { title: "Birtright", director: "Oscar Micheaux", year: 1939, period: "hollywood", jurmann: "yes", production: "Micheaux Pictures" }
         ];
 
         let chart;
@@ -1333,7 +885,6 @@
                         <div><strong>Director:</strong> ${film.director}</div>
                         <div><strong>Production:</strong> ${film.production}</div>
                         <div class="film-partner"><strong>With Jurmann:</strong> ${film.jurmann}</div>
-                        ${film.notes ? `<div class="film-notes"><strong>Notes:</strong> ${film.notes}</div>` : ''}
                     </div>
                 </div>
             `).join('');
