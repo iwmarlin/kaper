@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bronisław Kaper - Media Gallery</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            color: #111827;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+        
+        .container {
+            width: 100vw;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .header {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="20" cy="20" r="0.5" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="80" r="0.3" fill="rgba(255,255,255,0.05)"/><circle cx="40" cy="70" r="0.4" fill="rgba(255,255,255,0.08)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.6;
+            pointer-events: none;
+        }
+        
+        .header > * {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header-portrait {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+        
+        .header-text {
+            flex: 1;
+        }
+        
+        .title {
+            font-size: 4rem;
+            font-weight: 200;
+            margin-bottom: 1rem;
+            letter-spacing: -0.025em;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .period {
+            font-size: 1.125rem;
+            color: #d1d5db;
+            font-weight: 300;
+            letter-spacing: 0.05em;
+        }
+        
+        .navigation {
+            display: flex;
+            justify-content: center;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            gap: 2rem;
+            border-bottom: 1px solid rgba(229, 231, 235, 0.6);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            flex-wrap: wrap;
+        }
+        
+        .nav-btn {
+            background: none;
+            border: none;
+            font-size: 1.125rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 500;
+            padding-bottom: 0.75rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: #9ca3af;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .nav-btn.active {
+            color: #111827;
+            border-bottom: 2px solid #111827;
+        }
+        
+        .nav-btn:hover {
+            color: #374151;
+        }
+        
+        .nav-btn.back-link {
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            border-bottom: none;
+        }
+        
+        .nav-btn.back-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+            color: white;
+        }
+        
+        .content {
+            flex: 1;
+            padding: 3rem 4rem;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            margin: 2rem;
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+        }
+        
+        .view {
+            display: none;
+        }
+        
+        .view.active {
+            display: block;
+        }
+        
+        .warning-banner {
+            margin-bottom: 3rem;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, rgba(255, 193, 7, 0.1) 0%, rgba(255, 193, 7, 0.05) 100%);
+            backdrop-filter: blur(10px);
+            border-radius: 1rem;
+            border: 1px solid rgba(255, 193, 7, 0.3);
+            text-align: center;
+        }
+        
+        .warning-text {
+            color: #d97706;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+        
+        .section {
+            margin-bottom: 4rem;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 200;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #111827;
+        }
+        
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+        }
+        
+        .media-card {
+            background: linear-gradient(135deg, rgba(249, 250, 251, 0.95) 0%, rgba(255, 255, 255, 0.95) 100%);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(229, 231, 235, 0.6);
+            border-radius: 1.25rem;
+            padding: 2.5rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .media-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(17, 24, 39, 0.02) 0%, rgba(55, 65, 81, 0.02) 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        
+        .media-card:hover::before {
+            opacity: 1;
+        }
+        
+        .media-card:hover {
+            border-color: rgba(156, 163, 175, 0.4);
+            box-shadow: 0 12px 28px -4px rgba(0, 0, 0, 0.15), 0 4px 12px -2px rgba(0, 0, 0, 0.08);
+            transform: translateY(-4px);
+        }
+        
+        .media-card > * {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .media-title {
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 0.75rem;
+            color: #111827;
+        }
+        
+        .media-info {
+            font-size: 0.875rem;
+            color: #6b7280;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+        
+        .media-player {
+            width: 100%;
+            margin-bottom: 1.5rem;
+            border-radius: 8px;
+            background: rgba(17, 24, 39, 0.05);
+        }
+        
+        .media-description {
+            font-size: 0.875rem;
+            line-height: 1.6;
+            color: #374151;
+        }
+        
+        .period-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 1rem;
+        }
+        
+        .period-audio {
+            background-color: #6366f1;
+            color: white;
+        }
+        
+        .period-video {
+            background-color: #8b5cf6;
+            color: white;
+        }
+        
+        .period-historical {
+            background-color: #6b7280;
+            color: white;
+        }
+        
+        .credits-section {
+            margin-top: 4rem;
+            padding: 2.5rem;
+            background: linear-gradient(135deg, rgba(249, 250, 251, 0.9) 0%, rgba(243, 244, 246, 0.9) 100%);
+            backdrop-filter: blur(10px);
+            border-radius: 1.25rem;
+            border: 1px solid rgba(229, 231, 235, 0.6);
+            box-shadow: 0 8px 20px -4px rgba(0, 0, 0, 0.08);
+        }
+        
+        .credits-title {
+            font-size: 1.5rem;
+            font-weight: 300;
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #111827;
+        }
+        
+        .credits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .credit-category {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(5px);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            border: 1px solid rgba(209, 213, 219, 0.4);
+        }
+        
+        .credit-category h4 {
+            font-size: 1.125rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            color: #374151;
+        }
+        
+        .credit-list {
+            list-style: none;
+            line-height: 1.6;
+        }
+        
+        .credit-list li {
+            color: #6b7280;
+            font-size: 0.875rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .filters {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(209, 213, 219, 0.6);
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            color: #6b7280;
+            box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        
+        .filter-btn.active {
+            background: linear-gradient(135deg, #111827 0%, #374151 100%);
+            color: white;
+            border-color: #111827;
+            box-shadow: 0 4px 8px -2px rgba(17, 24, 39, 0.4);
+            transform: translateY(-1px);
+        }
+        
+        .filter-btn:hover:not(.active) {
+            color: #374151;
+            border-color: #9ca3af;
+            background: rgba(255, 255, 255, 0.95);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 8px -2px rgba(0, 0, 0, 0.1);
+        }
+        
+        @media (max-width: 768px) {
+            .title { font-size: 2.5rem; }
+            .header-content { flex-direction: column; gap: 1.5rem; }
+            .header-portrait { width: 80px; height: 80px; }
+            .content { padding: 2rem; }
+            .navigation { gap: 1rem; flex-direction: column; align-items: center; }
+            .media-grid { grid-template-columns: 1fr; }
+            .section-title { font-size: 2rem; }
+            .credits-grid { grid-template-columns: 1fr; }
+            .filters { flex-direction: column; align-items: center; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-content">
+                <img src="assets/images/portraits/kaper-young.jpg" alt="Bronisław Kaper" class="header-portrait" onerror="this.style.display='none'">
+                <div class="header-text">
+                    <h2 class="title">Media Gallery</h2>
+                    <h3 class="period">Songs, Films & Historical Context</h3>
+                </div>
+            </div>
+        </div>
+        
+        <div class="navigation">
+            <a href="index.html" class="nav-btn back-link">← Back to Main Presentation</a>
+            <button class="nav-btn active" onclick="showView('audio')" id="nav-audio">Audio</button>
+            <button class="nav-btn" onclick="showView('video')" id="nav-video">Video</button>
+
+            <button class="nav-btn" onclick="showView('credits')" id="nav-credits">Credits</button>
+        </div>
+        
+        <div class="content">
+            <div class="warning-banner">
+                <p class="warning-text">
+                    ⚖️ All media content is used for educational purposes under Fair Use provisions. 
+                    Original copyrights belong to their respective owners.
+                </p>
+            </div>
+            
+            <div id="audio" class="view active">
+                <h2 class="section-title">Song Samples & Musical Heritage</h2>
+                
+                <div class="filters">
+                    <button class="filter-btn active" onclick="filterMedia('all')" id="filter-all">All Periods</button>
+                    <button class="filter-btn" onclick="filterMedia('european')" id="filter-european">European Period</button>
+                    <button class="filter-btn" onclick="filterMedia('hollywood')" id="filter-hollywood">Hollywood Period</button>
+                </div>
+                
+                <div class="media-grid" id="audioGrid">
+                    <div class="media-card" data-period="hollywood">
+                        <div class="period-badge period-audio">Hollywood Period</div>
+                        <h3 class="media-title">Cosí, Cosa</h3>
+                        <p class="media-info">From "A Night at the Opera" (1935) • With Walter Jurmann • Lyrics: Ned Washington</p>
+                        <audio controls preload="none" class="media-player">
+                            <source src="assets/audio/samples/cosi-cosa-sample.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                        <p class="media-description">
+                            One of Kaper and Jurmann's most memorable compositions for the Marx Brothers film. 
+                            This 30-second excerpt showcases their distinctive melodic style that bridged European 
+                            sophistication with American entertainment sensibilities.
+                        </p>
+                    </div>
+                    
+                    <div class="media-card" data-period="hollywood">
+                        <div class="period-badge period-audio">Hollywood Period</div>
+                        <h3 class="media-title">San Francisco</h3>
+                        <p class="media-info">From "San Francisco" (1936) • Lyrics: Gus Kahn • MGM Production</p>
+                        <audio controls preload="none" class="media-player">
+                            <source src="assets/audio/samples/san-francisco-sample.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                        <p class="media-description">
+                            The title song that became synonymous with the city itself. Written during Kaper's 
+                            most productive Hollywood period, it exemplifies his successful adaptation to American 
+                            musical sensibilities while maintaining his European compositional sophistication.
+                        </p>
+                    </div>
+                    
+                    <div class="media-card" data-period="hollywood">
+                        <div class="period-badge period-audio">Hollywood Period</div>
+                        <h3 class="media-title">All God's Chillun Got Rhythm</h3>
+                        <p class="media-info">From "A Day at the Races" (1937) • Lyrics: Gus Kahn • With Walter Jurmann</p>
+                        <audio controls preload="none" class="media-player">
+                            <source src="assets/audio/samples/all-gods-chillun-sample.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                        <p class="media-description">
+                            A swing-influenced number that demonstrates Kaper's versatility and adaptation 
+                            to contemporary American musical trends of the late 1930s. The collaboration with 
+                            Gus Kahn marked a new phase in his creative partnerships.
+                        </p>
+                    </div>
+                    
+                    <div class="media-card" data-period="european">
+                        <div class="period-badge period-audio">European Period</div>
+                        <h3 class="media-title">Ein Lied für Dich</h3>
+                        <p class="media-info">From "Ein Lied für Dich" (1933) • UFA Production • With Walter Jurmann</p>
+                        <audio controls preload="none" class="media-player">
+                            <source src="assets/audio/samples/ein-lied-fur-dich-sample.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                        <p class="media-description">
+                            A representative example of Kaper's European period, showcasing the sophisticated 
+                            musical language he developed during his Berlin years. This piece demonstrates 
+                            the international appeal that would later serve him well in Hollywood.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="video" class="view">
+                <h2 class="section-title">Visual Documentation & Context</h2>
+                
+                <div class="media-grid">
+                    <div class="media-card">
+                        <div class="period-badge period-video">Historical Context</div>
+                        <h3 class="media-title">MGM Studios in the 1930s</h3>
+                        <p class="media-info">Historical Footage • Public Domain • Circa 1935-1939</p>
+                        <video controls preload="none" class="media-player" poster="assets/images/video-thumbnails/mgm-studios.jpg">
+                            <source src="assets/video/historical/mgm-studios-1930s.mp4" type="video/mp4">
+                            Your browser does not support the video element.
+                        </video>
+                        <p class="media-description">
+                            Rare footage showing the MGM lot where Kaper worked during his most productive 
+                            Hollywood years. This provides essential context for understanding the studio system 
+                            environment that shaped his American period compositions.
+                        </p>
+                    </div>
+                    
+                    <div class="media-card">
+                        <div class="period-badge period-video">Educational Animation</div>
+                        <h3 class="media-title">Kaper's Migration Timeline</h3>
+                        <p class="media-info">Custom Animation • Educational Use • 1926-1939</p>
+                        <video controls preload="none" class="media-player" poster="assets/images/video-thumbnails/migration-timeline.jpg">
+                            <source src="assets/video/animations/kaper-migration.mp4" type="video/mp4">
+                            Your browser does not support the video element.
+                        </video>
+                        <p class="media-description">
+                            An animated visualization of Kaper's journey from Warsaw through Berlin to Hollywood, 
+                            showing key dates, creative milestones, and the evolution of his musical style 
+                            across different cultural contexts.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="credits" class="view">
+                <div class="credits-section">
+                    <h3 class="credits-title">Media Credits & Sources</h3>
+                    <div class="credits-grid">
+                        <div class="credit-category">
+                            <h4>🎵 Audio Sources</h4>
+                            <ul class="credit-list">
+                                <li>Internet Archive - Public Domain recordings</li>
+                                <li>Library of Congress Music Division</li>
+                                <li>MGM Historical Archives (Fair Use)</li>
+                                <li>Educational excerpts under Fair Use provisions</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="credit-category">
+                            <h4>🎬 Video Sources</h4>
+                            <ul class="credit-list">
+                                <li>Library of Congress Motion Picture Division</li>
+                                <li>National Archives - Public Domain footage</li>
+                                <li>USC Digital Library - Studio documentation</li>
+                                <li>Custom animations for educational purposes</li>
+                                <li>Historical footage under Fair Use</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="credit-category">
+                            <h4>📚 Research Sources</h4>
+                            <ul class="credit-list">
+                                <li>ASCAP Archives</li>
+                                <li>BMI Historical Database</li>
+                                <li>Austrian National Library</li>
+                                <li>Polish Music Information Centre</li>
+                                <li>Academy of Motion Picture Arts and Sciences</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="credit-category">
+                            <h4>⚖️ Legal Notice</h4>
+                            <ul class="credit-list">
+                                <li>All content used for educational purposes</li>
+                                <li>Fair Use provisions (17 U.S.C. § 107)</li>
+                                <li>Limited excerpts for scholarly analysis</li>
+                                <li>No commercial use intended</li>
+                                <li>Original rights remain with copyright holders</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        let currentView = 'audio';
+        let currentFilter = 'all';
+
+        function showView(viewName) {
+            // Hide all views
+            document.querySelectorAll('.view').forEach(view => {
+                view.classList.remove('active');
+            });
+            
+            // Show selected view
+            const targetView = document.getElementById(viewName);
+            if (targetView) {
+                targetView.classList.add('active');
+            }
+            
+            // Update navigation
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            const activeNavBtn = document.getElementById('nav-' + viewName);
+            if (activeNavBtn) {
+                activeNavBtn.classList.add('active');
+            }
+            
+            currentView = viewName;
+        }
+
+        function filterMedia(period) {
+            currentFilter = period;
+            
+            // Update filter buttons
+            document.querySelectorAll('.filters .filter-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            const activeBtn = document.getElementById('filter-' + period);
+            if (activeBtn) {
+                activeBtn.classList.add('active');
+            }
+            
+            // Filter media cards
+            const cards = document.querySelectorAll('#audioGrid .media-card');
+            cards.forEach(card => {
+                const cardPeriod = card.dataset.period;
+                if (period === 'all' || cardPeriod === period) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            showView('audio');
+        });
+    </script>
+</body>
+</html>
