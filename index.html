@@ -14,9 +14,10 @@
         
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: white;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
             color: #111827;
             overflow-x: hidden;
+            min-height: 100vh;
         }
         
         .container {
@@ -28,8 +29,28 @@
         
         .header {
             text-align: center;
-            padding: 3rem 2rem;
-            border-bottom: 1px solid #e5e7eb;
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="20" cy="20" r="0.5" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="80" r="0.3" fill="rgba(255,255,255,0.05)"/><circle cx="40" cy="70" r="0.4" fill="rgba(255,255,255,0.08)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.6;
+            pointer-events: none;
+        }
+        
+        .header > * {
+            position: relative;
+            z-index: 1;
         }
         
         .title {
@@ -37,19 +58,25 @@
             font-weight: 200;
             margin-bottom: 1rem;
             letter-spacing: -0.025em;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
         
         .period {
             font-size: 1.125rem;
-            color: #9ca3af;
+            color: #d1d5db;
+            font-weight: 300;
+            letter-spacing: 0.05em;
         }
         
         .navigation {
             display: flex;
             justify-content: center;
             padding: 2rem;
-            background: #f9fafb;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
             gap: 3rem;
+            border-bottom: 1px solid rgba(229, 231, 235, 0.6);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
         }
         
         .nav-btn {
@@ -77,6 +104,12 @@
         .content {
             flex: 1;
             padding: 3rem 4rem;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            margin: 2rem;
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.8);
         }
         
         .view {
@@ -87,7 +120,6 @@
             display: block;
         }
         
-        /* Overview styles */
         .metrics-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -120,10 +152,12 @@
         
         .studio-overview {
             margin: 3rem 0;
-            padding: 2rem;
-            background: #f9fafb;
-            border-radius: 0.75rem;
-            border: 1px solid #e5e7eb;
+            padding: 2.5rem;
+            background: linear-gradient(135deg, rgba(249, 250, 251, 0.9) 0%, rgba(243, 244, 246, 0.9) 100%);
+            backdrop-filter: blur(10px);
+            border-radius: 1.25rem;
+            border: 1px solid rgba(229, 231, 235, 0.6);
+            box-shadow: 0 8px 20px -4px rgba(0, 0, 0, 0.08);
         }
         
         .studio-overview-title {
@@ -139,10 +173,12 @@
             grid-template-columns: repeat(2, 1fr);
             gap: 2rem;
             margin-bottom: 2rem;
-            padding: 1.5rem;
-            background: white;
-            border-radius: 0.5rem;
-            border: 1px solid #d1d5db;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(5px);
+            border-radius: 1rem;
+            border: 1px solid rgba(209, 213, 219, 0.4);
+            box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.05);
         }
         
         .collab-stat {
@@ -215,6 +251,17 @@
             font-size: 2rem;
             font-weight: 300;
             color: white;
+            box-shadow: 0 8px 16px -4px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+        
+        .period-number::before {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+            z-index: -1;
         }
         
         .period-name {
@@ -246,7 +293,6 @@
             font-style: italic;
         }
         
-        /* Timeline styles */
         .chart-container {
             height: 400px;
             margin: 2rem 0;
@@ -260,27 +306,34 @@
         }
         
         .filter-btn {
-            background: none;
-            border: 1px solid #d1d5db;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(209, 213, 219, 0.6);
             padding: 0.75rem 1.5rem;
             border-radius: 9999px;
             font-size: 0.875rem;
             text-transform: uppercase;
             letter-spacing: 0.1em;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             color: #6b7280;
+            box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.06);
         }
         
         .filter-btn.active {
-            background: #111827;
+            background: linear-gradient(135deg, #111827 0%, #374151 100%);
             color: white;
             border-color: #111827;
+            box-shadow: 0 4px 8px -2px rgba(17, 24, 39, 0.4);
+            transform: translateY(-1px);
         }
         
-        .filter-btn:hover {
+        .filter-btn:hover:not(.active) {
             color: #374151;
             border-color: #9ca3af;
+            background: rgba(255, 255, 255, 0.95);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 8px -2px rgba(0, 0, 0, 0.1);
         }
         
         .legend {
@@ -302,7 +355,6 @@
             border-radius: 0.25rem;
         }
         
-        /* Periods detail styles */
         .periods-detail {
             display: flex;
             flex-direction: column;
@@ -313,17 +365,42 @@
             display: flex;
             align-items: center;
             gap: 3rem;
-            padding: 2rem;
-            border-radius: 0.75rem;
-            border: 1px solid #e5e7eb;
+            padding: 2.5rem;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(249, 250, 251, 0.9) 100%);
+            backdrop-filter: blur(10px);
+            border-radius: 1.25rem;
+            border: 1px solid rgba(229, 231, 235, 0.6);
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .period-detail::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(17, 24, 39, 0.02) 0%, rgba(55, 65, 81, 0.02) 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        
+        .period-detail:hover::before {
+            opacity: 1;
         }
         
         .period-detail:hover {
-            border-color: #d1d5db;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border-color: rgba(156, 163, 175, 0.4);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 28px -4px rgba(0, 0, 0, 0.15), 0 4px 12px -2px rgba(0, 0, 0, 0.08);
+        }
+        
+        .period-detail > * {
+            position: relative;
+            z-index: 1;
         }
         
         .period-detail-number {
@@ -337,6 +414,17 @@
             font-weight: 300;
             color: white;
             flex-shrink: 0;
+            box-shadow: 0 6px 12px -2px rgba(0, 0, 0, 0.15);
+            position: relative;
+        }
+        
+        .period-detail-number::before {
+            content: '';
+            position: absolute;
+            inset: -1px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+            z-index: -1;
         }
         
         .period-detail-content {
@@ -397,7 +485,6 @@
             line-height: 1.5;
         }
         
-        /* Filmography styles */
         .filmography-filters {
             display: flex;
             justify-content: center;
@@ -418,17 +505,41 @@
         }
         
         .film-card {
-            background: #f9fafb;
-            border: 1px solid #e5e7eb;
-            border-radius: 0.75rem;
-            padding: 1.5rem;
-            transition: all 0.3s ease;
+            background: linear-gradient(135deg, rgba(249, 250, 251, 0.95) 0%, rgba(255, 255, 255, 0.95) 100%);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(229, 231, 235, 0.6);
+            border-radius: 1.25rem;
+            padding: 2rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .film-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(17, 24, 39, 0.02) 0%, rgba(55, 65, 81, 0.02) 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        
+        .film-card:hover::before {
+            opacity: 1;
         }
         
         .film-card:hover {
-            border-color: #d1d5db;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            transform: translateY(-2px);
+            border-color: rgba(156, 163, 175, 0.4);
+            box-shadow: 0 12px 28px -4px rgba(0, 0, 0, 0.15), 0 4px 12px -2px rgba(0, 0, 0, 0.08);
+            transform: translateY(-4px);
+        }
+        
+        .film-card > * {
+            position: relative;
+            z-index: 1;
         }
         
         .film-title {
@@ -509,14 +620,14 @@
             <button class="nav-btn" id="nav-timeline">Timeline</button>
             <button class="nav-btn" id="nav-periods">Periods</button>
             <button class="nav-btn" id="nav-filmography">Filmography</button>
+            <button class="nav-btn" id="nav-songs">Songs</button>
         </div>
         
         <div class="content">
-            <!-- Overview View -->
             <div id="overview" class="view active">
                 <div class="metrics-grid">
                     <div class="metric">
-                        <div class="metric-number">175</div>
+                        <div class="metric-number">172</div>
                         <div class="metric-label">Total Songs</div>
                         <div class="metric-sublabel">1926–1939</div>
                     </div>
@@ -526,9 +637,9 @@
                         <div class="metric-sublabel">31 European + 22 Hollywood</div>
                     </div>
                     <div class="metric">
-                        <div class="metric-number">94%</div>
-                        <div class="metric-label">With Jurmann</div>
-                        <div class="metric-sublabel">50 of 53 films</div>
+                        <div class="metric-number">78%</div>
+                        <div class="metric-label">Songs with Jurmann</div>
+                        <div class="metric-sublabel">134 of 172 songs</div>
                     </div>
                 </div>
                 
@@ -541,9 +652,9 @@
                             <div class="collab-detail">50 of 53 films</div>
                         </div>
                         <div class="collab-stat">
-                            <div class="collab-number">79%</div>
+                            <div class="collab-number">78%</div>
                             <div class="collab-label">Songs with Jurmann</div>
-                            <div class="collab-detail">139 of 175 songs</div>
+                            <div class="collab-detail">134 of 172 songs</div>
                         </div>
                     </div>
                     <div class="studio-periods">
@@ -563,14 +674,14 @@
                         <div class="period-number" style="background-color: #e5e7eb; color: #374151;">1</div>
                         <h3 class="period-name">Between Warsaw and Berlin</h3>
                         <p class="period-years">1926–1929</p>
-                        <div class="period-stats">12 songs · 0 films</div>
+                        <div class="period-stats">14 songs · 0 films</div>
                         <p class="period-desc">Early songs with Polish or German lyrics</p>
                     </div>
                     <div class="period-card" onclick="showPeriodTimeline('european')">
                         <div class="period-number" style="background-color: #6b7280;">2</div>
                         <h3 class="period-name">European Period</h3>
                         <p class="period-years">1930–1934</p>
-                        <div class="period-stats">97 songs · 31 films</div>
+                        <div class="period-stats">94 songs · 31 films</div>
                         <p class="period-desc">Berlin, Paris & international films</p>
                         <p class="period-studios">Main studios: UFA, Aafa, Emelka</p>
                     </div>
@@ -578,14 +689,13 @@
                         <div class="period-number" style="background-color: #111827;">3</div>
                         <h3 class="period-name">Hollywood Period</h3>
                         <p class="period-years">1935–1939</p>
-                        <div class="period-stats">66 songs · 22 films</div>
+                        <div class="period-stats">63 songs · 22 films</div>
                         <p class="period-desc">MGM studio contract (73% of films)</p>
                         <p class="period-studios">Main studios: MGM, Universal</p>
                     </div>
                 </div>
             </div>
             
-            <!-- Timeline View -->
             <div id="timeline" class="view">
                 <div class="filters">
                     <button class="filter-btn active" onclick="filterPeriod('all')" id="filter-all">All Periods</button>
@@ -610,7 +720,6 @@
                 </div>
             </div>
             
-            <!-- Periods View -->
             <div id="periods" class="view">
                 <div class="periods-detail">
                     <div class="period-detail" onclick="showPeriodTimeline('warsaw')">
@@ -622,10 +731,10 @@
                             <p class="period-detail-partner">Partners: Andrzej Włast & Fritz Rotter</p>
                         </div>
                         <div class="period-detail-stats">
-                            <div class="period-detail-total">12</div>
+                            <div class="period-detail-total">14</div>
                             <div class="period-detail-label">Total Works</div>
                             <div class="period-detail-breakdown">
-                                <div>12 songs</div>
+                                <div>14 songs</div>
                                 <div>0 films</div>
                             </div>
                         </div>
@@ -641,10 +750,10 @@
                             <p class="period-detail-studios">Key studios: UFA-Berlin, Aafa-Film, Emelka, Cine-Allianz</p>
                         </div>
                         <div class="period-detail-stats">
-                            <div class="period-detail-total">128</div>
+                            <div class="period-detail-total">125</div>
                             <div class="period-detail-label">Total Works</div>
                             <div class="period-detail-breakdown">
-                                <div>97 songs</div>
+                                <div>94 songs</div>
                                 <div>31 films</div>
                             </div>
                         </div>
@@ -660,10 +769,10 @@
                             <p class="period-detail-studios">MGM dominance: 16/22 films (73%); also Universal, 20th Century Fox</p>
                         </div>
                         <div class="period-detail-stats">
-                            <div class="period-detail-total">88</div>
+                            <div class="period-detail-total">85</div>
                             <div class="period-detail-label">Total Works</div>
                             <div class="period-detail-breakdown">
-                                <div>66 songs</div>
+                                <div>63 songs</div>
                                 <div>22 films</div>
                             </div>
                         </div>
@@ -671,7 +780,6 @@
                 </div>
             </div>
             
-            <!-- Filmography View -->
             <div id="filmography" class="view">
                 <div class="filmography-filters">
                     <button class="filter-btn active" onclick="filterFilms('all')" id="films-all">All Films (53)</button>
@@ -685,28 +793,41 @@
                     </div>
                 </div>
             </div>
+            
+            <div id="songs" class="view">
+                <div class="filmography-filters">
+                    <button class="filter-btn active" onclick="filterSongs('all')" id="songs-all">All Songs (172)</button>
+                    <button class="filter-btn" onclick="filterSongs('warsaw')" id="songs-warsaw">Warsaw-Berlin (14)</button>
+                    <button class="filter-btn" onclick="filterSongs('european')" id="songs-european">European Period (94)</button>
+                    <button class="filter-btn" onclick="filterSongs('hollywood')" id="songs-hollywood">Hollywood Period (63)</button>
+                </div>
+                
+                <div class="films-container">
+                    <div class="films-grid" id="songsGrid">
+                        <!-- Songs will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     
     <script>
-        // Timeline data
         const timelineData = [
-            { year: 1926, songs: 3, films: 0 },
+            { year: 1926, songs: 4, films: 0 },
             { year: 1927, songs: 2, films: 0 },
-            { year: 1929, songs: 7, films: 0 },
-            { year: 1930, songs: 15, films: 3 },
-            { year: 1931, songs: 21, films: 4 },
-            { year: 1932, songs: 21, films: 8 },
+            { year: 1929, songs: 8, films: 0 },
+            { year: 1930, songs: 16, films: 3 },
+            { year: 1931, songs: 19, films: 4 },
+            { year: 1932, songs: 19, films: 8 },
             { year: 1933, songs: 25, films: 12 },
             { year: 1934, songs: 15, films: 4 },
             { year: 1935, songs: 13, films: 8 },
-            { year: 1936, songs: 27, films: 5 },
-            { year: 1937, songs: 23, films: 5 },
+            { year: 1936, songs: 25, films: 5 },
+            { year: 1937, songs: 22, films: 5 },
             { year: 1938, songs: 1, films: 2 },
             { year: 1939, songs: 2, films: 2 }
         ];
 
-        // Complete film data with version information
         const filmData = [
             { title: "Ihre Majestät die Liebe", director: "Joe May", year: 1931, period: "european", jurmann: "yes", production: "Joe May-Film AG" },
             { title: "Son altesse l'amour", director: "Robert Péguy, Erich Schmidt", year: 1931, period: "european", jurmann: "yes", production: "International Standard Film, Paris/Joe May-Film Berlin", version: "Ihre Majestät die Liebe" },
@@ -734,13 +855,11 @@
             { title: "Kind, ich freu' mich auf Dein Kommen", director: "Kurt Gerron, Erich von Neusser", year: 1933, period: "european", jurmann: "yes", production: "Pan-Film KG-Leopold Meissner/Austria" },
             { title: "Tout pour l'amour", director: "Henri-Georges Clouzot, Joe May", year: 1933, period: "european", jurmann: "yes", production: "Cine-Allianz Tonfilm & UFA", version: "Ein Lied für Dich" },
             { title: "Abenteuer am Lido", director: "Richard Oswald", year: 1933, period: "european", jurmann: "yes", production: "Richard Oswald-Produktion" },
-            { title: "Le chant du destin", director: "Jean Legrand", year: 1933, period: "european", jurmann: "yes", production: "Pan-Film", version: "Abenteuer am Lido" },
+            { title: "Le chant du destin", director: "Jean Legrand", year: 1933, period: "european", jurmann: "yes", production: "Pan-Film" },
             { title: "On a volé un homme", director: "Max Ophuls", year: 1934, period: "european", jurmann: "yes", production: "Fox Europa" },
             { title: "Le greluchon délicat", director: "Pierre Billon", year: 1934, period: "european", jurmann: "yes", production: "Foc Film Cooperation, Europa Films, Francja" },
             { title: "Les nuits moscovites", director: "Alexis Granovsky", year: 1934, period: "european", jurmann: "yes", production: "G.G. Film-France" },
             { title: "Une femme au volant", director: "Pierre Billon, Kurt Gerron", year: 1933, period: "european", jurmann: "yes", production: "Films R.P." },
-            
-            // Hollywood Period (1935-1939)
             { title: "Moscow Nights", director: "Anthony Asquith", year: 1935, period: "hollywood", jurmann: "yes", production: "London Films", version: "Les nuits moscovites" },
             { title: "Escapade", director: "Robert Z. Leonard", year: 1935, period: "hollywood", jurmann: "yes", production: "MGM" },
             { title: "Mutiny on the Bounty", director: "Frank Lloyd", year: 1935, period: "hollywood", jurmann: "yes", production: "MGM" },
@@ -765,30 +884,201 @@
             { title: "Birtright", director: "Oscar Micheaux", year: 1939, period: "hollywood", jurmann: "yes", production: "Micheaux Pictures" }
         ];
 
+        const songsData = [
+            { title: "All God's chillun got rhythm", genre: null, year: 1937, publisher: "Robbins Music Corporation", lyricist: "Gus Kahn", notes: "with Jurmann", film: "A day at the races", period: "hollywood" },
+            { title: "Blue Venetian Waters", genre: null, year: 1936, publisher: "Robbins Music Corporation", lyricist: "Gus Kahn", notes: "with Jurmann", film: "A day at the races", period: "hollywood" },
+            { title: "A Message from the Man in the Moon", genre: null, year: 1937, publisher: "Robbins Music Corporation", lyricist: "Gus Kahn", notes: "with Jurmann", film: "A day at the races", period: "hollywood" },
+            { title: "Tomorrow is another day ", genre: null, year: 1937, publisher: "Robbins Music Corporation", lyricist: "Gus Kahn", notes: "with Jurmann", film: "A day at the races", period: "hollywood" },
+            { title: "Cosí, Cosa", genre: null, year: 1935, publisher: "Robbins Music Corporation", lyricist: "Ned Washington", notes: "with Jurmann", film: "A night at the opera", period: "hollywood" },
+            { title: "Adieu, es ist zu schön, um wahr zu sein", genre: "tango", year: 1933, publisher: "Edition Coda", lyricist: "Fritz Rotter", notes: "with Jurmann", film: "Abenteuer am Lido", period: "european" },
+            { title: "Wie schön ist diese Welt", genre: "slow-fox", year: 1933, publisher: "Edition Coda", lyricist: "Fritz Rotter", notes: "with Jurmann", film: "Abenteuer am Lido", period: "european" },
+            { title: "Wenn mich die Männer betrügen", genre: "tango", year: 1930, publisher: "Alrobi Musikverlag", lyricist: "Fritz Rotter", notes: null, film: "Alraune", period: "european" },
+            { title: "Nur Tango, nur Tango...", genre: "tango", year: 1930, publisher: "Alrobi Musikverlag", lyricist: "Fritz Rotter", notes: null, film: "Alraune", period: "european" },
+            { title: "Blaue Jung's von der Marine", genre: null, year: 1930, publisher: "Alrobi Musikverlag", lyricist: "Fritz Rotter", notes: null, film: "Der Korvettenkapitän", period: "european" },
+            { title: "Sagen kleine Mädels \"nein\"", genre: null, year: 1930, publisher: "Alrobi Musikverlag", lyricist: "Fritz Rotter", notes: null, film: "Der Korvettenkapitän", period: "european" },
+            { title: "Von einem bißchen Glück träumt jedes Mädchen", genre: null, year: 1930, publisher: "Alrobi Musikverlag", lyricist: "Fritz Rotter", notes: null, film: "Der Korvettenkapitän", period: "european" },
+            { title: "Was braucht den jede Frau leider unbedingt?", genre: null, year: 1930, publisher: "Alrobi Musikverlag", lyricist: "Fritz Rotter", notes: null, film: "Der Korvettenkapitän", period: "european" },
+            { title: "Ich steh' im Schnee und wart' auf dich", genre: "foxtrot", year: 1931, publisher: "UFA Musikverlag", lyricist: "Fritz Rotter", notes: "with Jurmann", film: "Die große Attraktion", period: "european" },
+            { title: "Du warst mir ein Roman", genre: "slow-fox", year: 1931, publisher: "Alrobi Musikverlag", lyricist: "Fritz Rotter", notes: "with Jurmann", film: "Die große Attraktion", period: "european" },
+            { title: "Wir sind international", genre: null, year: 1931, publisher: null, lyricist: null, notes: "with Jurmann", film: "Die große Attraktion", period: "european" },
+            { title: "In der Laubenkolonie", genre: "foxtrot", year: 1930, publisher: null, lyricist: "Bronisław Kaper", notes: null, film: "Die lustigen Musikanten (Laubenkolonie)", period: "european" },
+            { title: "Wer weint heut' aus Liebe Tränen?", genre: "slow-fox", year: 1931, publisher: "Edition Karl Brüll", lyricist: "Fritz Rotter", notes: "with Jurmann", film: "Ehe mit beschränkter Haftung", period: "european" },
+            { title: "Ich frag', Madame, wann kommen wir zusamm'?", genre: "foxtrot", year: 1931, publisher: "Edition Karl Brüll", lyricist: "Fritz Rotter", notes: "with Jurmann", film: "Ehe mit beschränkter Haftung", period: "european" },
+            { title: "Ninon, lach mir einmal zu", genre: "slow-fox", year: 1933, publisher: "Wiener Boheme Verlag", lyricist: "Ernst Marischka, Bronisław Kaper", notes: "with Jurmann", film: "Ein Lied  für dich", period: "european" },
+            { title: "O Madonna [Signorina, Signorina, komm zu mir]", genre: "song and serenade", year: 1933, publisher: "Wiener Boheme Verlag", lyricist: "Fritz Rotter, Ernst Marischka", notes: "with Jurmann", film: "Ein Lied  für dich", period: "european" },
+            { title: "Ich suche einen, der mir allein gehört", genre: "rhumba", year: 1932, publisher: "Ufaton Verlag", lyricist: "Fritz Rotter", notes: "with Jurmann", film: "Ein toller Einfall", period: "european" },
+            { title: "Heut' bin ich gut aufgelegt", genre: "foxtrot", year: 1932, publisher: "Ufaton Verlag", lyricist: "Fritz Rotter", notes: "with Jurmann", film: "Ein toller Einfall", period: "european" },
+            { title: "Es wird schon wieder besser", genre: "foxtrot", year: 1932, publisher: "Ufaton Verlag", lyricist: "Fritz Rotter", notes: "with Jurmann", film: "Es wird schon wieder besser", period: "european" },
+            { title: "Wenn ein kleiner Zufall will", genre: "slow-fox", year: 1932, publisher: "Ufaton Verlag", lyricist: "Fritz Rotter", notes: "with Jurmann", film: "Es wird schon wieder besser", period: "european" },
+            { title: "You're all I need", genre: null, year: 1935, publisher: "Robbins Music Corporation", lyricist: "Gus Kahn", notes: "with Jurmann", film: "Escapade", period: "hollywood" },
+            { title: "Escapade", genre: null, year: 1935, publisher: null, lyricist: "bez", notes: "with Jurmann", film: "Escapade", period: "hollywood" },
+            { title: "Never Was There Such a Perfect Day", genre: null, year: 1937, publisher: null, lyricist: "Gus Kahn", notes: "with Jurmann", film: "Everybody Sing", period: "hollywood" },
+            { title: "Melody Farm ", genre: null, year: 1937, publisher: "Leo Feist Inc.", lyricist: "Gus Kahn", notes: "with Jurmann", film: "Everybody Sing", period: "hollywood" },
+            { title: "Swing, Mister Mendelssohn", genre: null, year: 1937, publisher: "Leo Feist Inc.", lyricist: "Gus Kahn", notes: "with Jurmann", film: "Everybody Sing", period: "hollywood" },
+            { title: "The One I Love", genre: null, year: 1937, publisher: "Leo Feist Inc.", lyricist: "Gus Kahn", notes: "with Jurmann", film: "Everybody Sing", period: "hollywood" },
+            { title: "Early Morning Sequence", genre: null, year: 1937, publisher: null, lyricist: "Gus Kahn", notes: "with Jurmann", film: "Everybody Sing", period: "hollywood" },
+            { title: "The Sun Never Sets on Swing", genre: null, year: 1937, publisher: null, lyricist: "Gus Kahn", notes: "with Jurmann", film: "Everybody Sing", period: "hollywood" },
+            { title: "Down on Melody Farm", genre: null, year: 1937, publisher: "Leo Feist Inc.", lyricist: "Gus Kahn", notes: "with Jurmann", film: "Everybody Sing", period: "hollywood" },
+            { title: "The Show Must Go On", genre: null, year: 1937, publisher: null, lyricist: "Gus Kahn, Roger Edens", notes: "with Jurmann", film: "Everybody Sing", period: "hollywood" },
+            { title: "Mein Gorilla hat 'ne Villa im Zoo", genre: "paso doble", year: 1933, publisher: "Beboton Verlag", lyricist: "Fritz Rotter", notes: "with Jurmann", film: "Heut' kommt's drauf an", period: "european" },
+            { title: "Immer, wenn ich glücklich bin, muß ich schrecklich weinen", genre: "foxtrot", year: 1933, publisher: "Wiener Boheme Verlag", lyricist: "Fritz Rotter", notes: "with Jurmann", film: "Heut' kommt's drauf an", period: "european" },
+            { title: "In 24 Stunden kann soviel gescheh'n", genre: "tango", year: 1933, publisher: "Wiener Boheme Verlag", lyricist: "Fritz Rotter", notes: "with Jurmann", film: "Heut' kommt's drauf an", period: "european" },
+            { title: "Wenn ich 'mal eine Dummheit mach'", genre: "foxtrot", year: 1933, publisher: "Friedrich Hofmeister-Figaro-Verlag", lyricist: "Ernst Marischka, Fritz Rotter", notes: "with Jurmann", film: "Hochzeitsreise zu Dritt", period: "european" },
+            { title: "Signorina, ich liebe dich", genre: "tango", year: 1932, publisher: "Monopol Liederverlag", lyricist: "Marischka Ernst", notes: "with Jurmann", film: "Hochzeitsreise zu Dritt", period: "european" },
+            { title: "Heut' ist Karneval", genre: null, year: 1934, publisher: null, lyricist: "André de Badet ", notes: "with Jurmann", film: "Hochzeitsreise zu Dritt", period: "european" },
+            { title: "Tränen in der Geige", genre: "slow-fox", year: 1933, publisher: "Edition Karl Brüll", lyricist: "Fritz Rotter", notes: "with Jurmann", film: "Ich will dich Liebe lehren", period: "european" },
+            { title: "Schön ist das ganze Leben", genre: "slow-fox", year: 1932, publisher: "Edition Karl Brüll", lyricist: "Fritz Rotter", notes: "with Jurmann", film: "Ich will dich Liebe lehren", period: "european" },
+            { title: "The Duchess Has a Twinkle in Her Eye", genre: null, year: 1935, publisher: null, lyricist: "Ned Washington", notes: "with Jurmann", film: "Kind Lady", period: "hollywood" },
+            { title: "Der Matrose hat das größte Herz der Welt", genre: "march-song", year: 1933, publisher: "Ufaton Verlag", lyricist: "Fritz Rotter", notes: "with Jurmann", film: "Kind, ich freu mich auf dein", period: "european" },
+            { title: "Kind, ich freu' mich auf dein Kommen (und bin traurig wenn du gehst)", genre: "slow-fox", year: 1933, publisher: "Ufaton Verlag", lyricist: "Fritz Rotter", notes: "with Jurmann", film: "Kind, ich freu' mich auf dein Kommen", period: "european" },
+            { title: "L'Homme qui ne sait pas dire non", genre: null, year: 1933, publisher: null, lyricist: "bez", notes: "with Jurmann", film: "L'Homme qui ne sait pas dire non", period: "european" },
+            { title: "Les charmes chantent, mon violin soupire", genre: null, year: 1933, publisher: null, lyricist: "nieznany", notes: "with Jurmann", film: "L'homme qui ne sait pas dire non", period: "european" },
+            { title: "Last of the Pagans", genre: null, year: 1935, publisher: null, lyricist: "bez", notes: "with Jurmann", film: "Last of the Pagans", period: "hollywood" },
+            { title: "Happy Natives", genre: null, year: 1935, publisher: null, lyricist: "Ned Washington", notes: "with Jurmann", film: "Last of the Pagans", period: "hollywood" },
+            { title: "Shadows on the Starlit Waters", genre: null, year: 1935, publisher: null, lyricist: "Ned Washington", notes: "with Jurmann", film: "Last of the Pagans", period: "hollywood" },
+            { title: "J'ai un message pour toi", genre: null, year: null, publisher: null, lyricist: "Jean Feline", notes: "with Jurmann", film: null, period: "unknown" },
+            { title: "Ton sourire apaisé", genre: "berceuse", year: 1933, publisher: "Edition Coda", lyricist: "Ninon Steinhoff, Henri-André Legrand", notes: "with Jurmann", film: "Le chant du destin", period: "european" },
+            { title: "Venetia, ville d'amour", genre: "serenade", year: 1933, publisher: "Edition Coda", lyricist: "Ninon Steinhoff, Henri-André Legrand", notes: "with Jurmann", film: "Le chant du destin", period: "european" },
+            { title: "C'est l'amour qui m'enivre", genre: "valse", year: 1933, publisher: "Edition Coda", lyricist: "Ninon Steinhoff, Henri-André Legrand", notes: "with Jurmann", film: "Le chant du destin", period: "european" },
+            { title: "Adieu", genre: null, year: 1933, publisher: null, lyricist: "Ninon Steinhoff, Henri-André Legrand", notes: "with Jurmann", film: "Le chant du destin", period: "european" },
+            { title: "Amanda", genre: null, year: 1934, publisher: "Editions Univers", lyricist: "Louis Poterat", notes: "with Jurmann", film: "Le greluchon délicat", period: "european" },
+            { title: "Natacha", genre: "foxtrot", year: 1934, publisher: "Edition Coda", lyricist: "André de Badet", notes: "with Jurmann", film: "Les Nuits Moscovites", period: "european" },
+            { title: "Nuits moscovites", genre: "valse", year: 1934, publisher: "Edition Coda", lyricist: "André de Badet", notes: "with Jurmann", film: "Les Nuits Moscovites", period: "european" },
+            { title: "On N'aime Qu'une Fois", genre: "tango", year: 1934, publisher: "Edition Coda", lyricist: "André de Badet", notes: "with Jurmann", film: "Les Nuits Moscovites", period: "european" },
+            { title: "En Avant", genre: "gypsy-song", year: 1934, publisher: "Edition Coda", lyricist: "André de Badet", notes: "with Jurmann", film: "Les Nuits Moscovites", period: "european" },
+            { title: "Ich geh' nie von Dir fort, denn ich lieb' Dich!", genre: null, year: 1933, publisher: "Monopol-Liederverlag Ernst Wengraf", lyricist: "Fritz Rotter, Max Kolpe", notes: "with Jurmann", film: "Madame wünscht keine Kinder", period: "european" },
+            { title: "Nur Sport!", genre: "foxtrot", year: 1933, publisher: "Monopol-Liederverlag Ernst Wengraf", lyricist: "Fritz Rotter, Max Kolpe", notes: "with Jurmann", film: "Madame wünscht keine Kinder", period: "european" },
+            { title: "Magic", genre: null, year: 1937, publisher: null, lyricist: "bez", notes: "with Jurmann", film: "Man of the People", period: "hollywood" },
+            { title: "Rhumba", genre: null, year: 1937, publisher: null, lyricist: "bez", notes: "with Jurmann", film: "Man of the People", period: "hollywood" },
+            { title: "Tahiti", genre: null, year: 1937, publisher: null, lyricist: "bez", notes: "with Jurmann", film: "Man of the People", period: "hollywood" },
+            { title: "Pourquoi donc verser des larmes", genre: null, year: 1931, publisher: null, lyricist: "Fritz Rotter", notes: "with Jurmann", film: "Mariage à la responsabilité limitèe", period: "european" },
+            { title: "Stay 'way from My Arms", genre: null, year: 1931, publisher: null, lyricist: "Oliver Perry, Reg Connelly", notes: "with Jurmann", film: "Mariage à la responsabilité limitèe", period: "european" },
+            { title: "Keep the Magic of Springtime", genre: null, year: 1937, publisher: null, lyricist: "Gus Kahn", notes: "with Jurmann", film: "Maytime", period: "hollywood" },
+            { title: "Schade, daß Liebe ein Märchen ist", genre: "tango", year: 1932, publisher: "Alrobi Musikverlag", lyricist: "Fritz Rotter", notes: "with Jurmann", film: "Melodie der Liebe", period: "european" },
+            { title: "Wie gern' möcht' ich dich verwöhnen", genre: "song and tango", year: 1932, publisher: "Alrobi Musikverlag", lyricist: "Fritz Rotter", notes: "with Jurmann", film: "Melodie der Liebe", period: "european" },
+            { title: "Es war einmal ein Baby (Kinderlied)", genre: null, year: 1932, publisher: "Alrobi Musikverlag", lyricist: "Fritz Rotter", notes: "with Jurmann", film: "Melodie der Liebe", period: "european" },
+            { title: "Ein Lied aus meiner Heimat", genre: "song and foxtrot", year: 1932, publisher: "Alrobi Musikverlag", lyricist: "Fritz Rotter", notes: "with Jurmann", film: "Melodie der Liebe", period: "european" },
+            { title: "Melodie die Liebe", genre: null, year: 1932, publisher: "Alrobi Musikverlag", lyricist: "Fritz Rotter", notes: "with Jurmann", film: "Melodie der Liebe", period: "european" },
+            { title: "Mutiny on the Bounty", genre: null, year: 1935, publisher: null, lyricist: "bez", notes: "with Jurmann", film: "Mutiny on the Bounty", period: "hollywood" },
+            { title: "Love song of Tahiti", genre: null, year: 1935, publisher: "Robbins Music Corporation", lyricist: "Gus Kahn", notes: "with Jurmann", film: "Mutiny on the Bounty", period: "hollywood" },
+            { title: "On a Volé un Homme", genre: null, year: 1934, publisher: null, lyricist: "René Pujol ", notes: "with Jurmann", film: "On a Volé un Homme", period: "european" },
+            { title: "Ni Mal Ni Bien,", genre: "java", year: 1934, publisher: "Editions Salabert", lyricist: "René Pujol", notes: "with Jurmann", film: "On a Volé un Homme", period: "european" },
+            { title: "Un Regard de Femme", genre: "slow-fox", year: 1934, publisher: "Editions Salabert", lyricist: "René Pujol", notes: "with Jurmann", film: "On a Volé un Homme", period: "european" },
+            { title: "Vivons l'amour! Vivons la vie", genre: "tango", year: 1934, publisher: "Edition Coda", lyricist: "Henri Varna, Léo Leliévre, Marcel Cabridens, Louis Poterat, Paul Bertrand", notes: "with Jurmann", film: "Parade de France", period: "european" },
+            { title: "C'est chez nous", genre: "fox-march", year: 1934, publisher: "Edition Coda", lyricist: "Henri Varna, Louis Poterat", notes: "with Jurmann", film: "Parade de France", period: "european" },
+            { title: "C'est ton amour", genre: "valse", year: 1934, publisher: "Edition Coda", lyricist: "Henri Varna, Louis Poterat, Marcel Cabridens, Paul Bertrand", notes: "with Jurmann", film: "Parade de France", period: "european" },
+            { title: "Un baiser de femme sous un ciel de feu", genre: "slow-fox", year: 1934, publisher: "Edition Coda", lyricist: "Henri Varna, Léo Leliévre, Marcel Cabridens", notes: "with Jurmann", film: "Parade de France", period: "european" },
+            { title: "San Francisco", genre: null, year: 1936, publisher: "Robbins Music Corporation", lyricist: "Gus Kahn", notes: "with Jurmann", film: "San Francisco", period: "hollywood" },
+            { title: "Happy New Year", genre: null, year: 1936, publisher: null, lyricist: "Gus Kahn", notes: "with Jurmann", film: "San Francisco", period: "hollywood" },
+            { title: "Du lieber Geiger, spiel einen Tango für mich", genre: "tango", year: 1931, publisher: "Edition Karl Brüll", lyricist: "Fritz Rotter", notes: "with German", film: "Seitensprünge", period: "european" },
+            { title: "Du gefällst mir so", genre: "foxtrot", year: 1932, publisher: "Wiener Boheme Verlag", lyricist: "Fritz Rotter", notes: "with Jurmann", film: "Skandal in der Parkstraße", period: "european" },
+            { title: "Ganz ohne Liebe wär' das Leben so bescheiden", genre: "slow-fox", year: 1932, publisher: "Wiener Boheme Verlag", lyricist: "Fritz Rotter", notes: "with Jurmann", film: "Skandal in der Parkstraße", period: "european" },
+            { title: "The Adventures of Huckleberry Finn", genre: null, year: 1939, publisher: null, lyricist: "bez", notes: "with Jurmann", film: "The Adventures of Huckleberry Finn", period: "hollywood" },
+            { title: "At Night", genre: null, year: 1939, publisher: "MGM-Loews Inc.", lyricist: "bez", notes: "with Jurmann and Waxman", film: "The Adventures of Huckleberry Finn", period: "hollywood" },
+            { title: "There's Something in a Big Parade", genre: null, year: 1935, publisher: "Robbins Music Corporation", lyricist: "Ned Washington", notes: "with Jurmann", film: "The Perfect Gentleman", period: "hollywood" },
+            { title: "Tillie, the Tight Rope Walker", genre: null, year: 1935, publisher: "Robbins Music Corporation", lyricist: "Ned Washington", notes: "with Jurmann", film: "The Perfect Gentleman", period: "hollywood" },
+            { title: "Three Smart Girls, background theme", genre: null, year: 1936, publisher: null, lyricist: "bez", notes: "with Jurmann", film: "Three smart girls", period: "hollywood" },
+            { title: "My heart is singing", genre: "waltz", year: 1936, publisher: "Leo Feist Inc.", lyricist: "Gus Kahn", notes: "with Jurmann", film: "Three smart girls", period: "hollywood" },
+            { title: "Someone to care for me", genre: null, year: 1936, publisher: "Leo Feist Inc.", lyricist: "Gus Kahn", notes: "with Jurmann", film: "Three smart girls", period: "hollywood" },
+            { title: "New York", genre: null, year: 1936, publisher: "Leo Feist Inc.", lyricist: "Gus Kahn", notes: "with Jurmann", film: "Three smart girls", period: "hollywood" },
+            { title: "Suicide Club", genre: null, year: 1936, publisher: null, lyricist: "bez", notes: "with Jurmann and Waxman", film: "Trouble for Two", period: "hollywood" },
+            { title: "The Bomb", genre: null, year: 1936, publisher: null, lyricist: "bez", notes: "with Jurmann", film: "Trouble for Two", period: "hollywood" },
+            { title: "The Hideout", genre: null, year: 1936, publisher: null, lyricist: "bez", notes: "with Jurmann and Waxman", film: "Trouble for Two", period: "hollywood" },
+            { title: "The Duel", genre: null, year: 1936, publisher: null, lyricist: "bez", notes: "with Jurmann and Waxman", film: "Trouble for Two", period: "hollywood" },
+            { title: "The Next Morning", genre: null, year: 1936, publisher: null, lyricist: "bez", notes: "with Jurmann and Waxman", film: "Trouble for Two", period: "hollywood" },
+            { title: "A Trader", genre: null, year: 1937, publisher: null, lyricist: "bez", notes: "with Jurmann and Waxman", film: "Trouble for Two", period: "hollywood" },
+            { title: "First Deal", genre: null, year: 1936, publisher: null, lyricist: "bez", notes: "with Jurmann and Waxman", film: "Trouble for Two", period: "hollywood" },
+            { title: "Second Deal", genre: null, year: 1936, publisher: null, lyricist: "bez", notes: "with Jurmann", film: "Trouble for Two", period: "hollywood" },
+            { title: "Miss Vandeleur", genre: null, year: 1936, publisher: null, lyricist: "bez", notes: "with Jurmann", film: "Trouble for Two", period: "hollywood" },
+            { title: "Hi-di-ho", genre: null, year: 1935, publisher: null, lyricist: "nieznany", notes: "with Jurmann", film: "Two Hearts in Wax Time", period: "hollywood" },
+            { title: "Love Needs No Inspiration", genre: null, year: 1935, publisher: null, lyricist: "nieznany", notes: "with Jurmann", film: "Two Hearts in Wax Time", period: "hollywood" },
+            { title: "Le plus petit baiser", genre: null, year: 1933, publisher: "Editions Musicales Echo", lyricist: "Louis Poterat", notes: "with Jurmann", film: "Une femme au volant", period: "european" },
+            { title: "A Paris, tiguidiguidi", genre: null, year: 1933, publisher: "Editions Musicales Echo", lyricist: "Louis Poterat", notes: "with Jurmann", film: "Une femme au volant", period: "european" },
+            { title: "Signorina", genre: "tango", year: 1932, publisher: "Editions Musicales Universelles, Paris", lyricist: "Lucien Jean Boyer", notes: "with Jurmann", film: "Voyage de Noces", period: "european" },
+            { title: "We Went to College", genre: null, year: 1936, publisher: null, lyricist: "bez", notes: "with Jurmann", film: "We Went to College", period: "hollywood" },
+            { title: "Alma Mater", genre: null, year: 1936, publisher: null, lyricist: "Gus Kahn", notes: "with Jurmann", film: "We Went to College", period: "hollywood" },
+            { title: "Sutter's Victory March", genre: "march", year: 1936, publisher: null, lyricist: "Gus Kahn", notes: "with Jurmann", film: "We Went to College", period: "hollywood" },
+            { title: "Solange wir gute Freunde sind", genre: null, year: 1932, publisher: "Alrobi Musikverlag", lyricist: "Fritz Rotter", notes: "with Jurmann", film: "Zwei vom Südexpress", period: "european" },
+            { title: "Pourvu qu'on ait ving ans", genre: null, year: 1934, publisher: "En Attente Cles Phonos", lyricist: "Louis Poterat", notes: "with Jurmann and Andre Roubier", film: null, period: "european" },
+            { title: "A zresztą niech pan do mnie zadzwoni", genre: "foxtrot", year: 1926, publisher: "Edition J. Altschuler", lyricist: "Andrzej Włast", notes: "as Bruno Asper", film: null, period: "warsaw" },
+            { title: "Jak się da, to się zrobi", genre: "foxtrot", year: 1926, publisher: "Edition J. Altschuler", lyricist: "Andrzej Włast", notes: "as Bruno Asper", film: null, period: "warsaw" },
+            { title: "Zgaś lampę", genre: "foxtrot", year: 1926, publisher: "Edition J. Altschuler", lyricist: "Andrzej Włast", notes: "as Bruno Asper", film: null, period: "warsaw" },
+            { title: "To muszą śpiewać wszyscy", genre: "foxtrot", year: 1927, publisher: null, lyricist: "Andrzej Włast", notes: "as Bruno Asper", film: null, period: "warsaw" },
+            { title: "Ja nie mam głosu", genre: "foxtrot", year: 1927, publisher: "Gebethner & Wolf", lyricist: "Andrzej Włast", notes: "as Bruno Asper", film: null, period: "warsaw" },
+            { title: "O tym już wróble świergocą na dachu", genre: "foxtrot", year: 1930, publisher: null, lyricist: "Andrzej Włast", notes: null, film: null, period: "european" },
+            { title: "Auf Wiederseh'n, Herr Doktor! Auf Wiederseh'n, Frau Doktor!", genre: null, year: 1929, publisher: null, lyricist: "Fritz Rotter", notes: null, film: null, period: "warsaw" },
+            { title: "Nimm diesen Strauß Vergißmeinnicht", genre: "foxtrot", year: 1929, publisher: "Alrobi Musikverlag", lyricist: "Bronisław Kaper", notes: null, film: null, period: "warsaw" },
+            { title: "Gib nur acht, über Nacht kommt die Liebe", genre: "valse boston", year: 1929, publisher: "Wiener Boheme Verlag", lyricist: "Fritz Rotter", notes: null, film: null, period: "warsaw" },
+            { title: "Tränen weint jede Frau so gern", genre: "tango", year: 1929, publisher: "Alrobi Musikverlag", lyricist: "Fritz Rotter", notes: null, film: null, period: "warsaw" },
+            { title: "Auf wiederseh'n, Herr Doktor, auf wiederseh'n, Frau Doktor", genre: "foxtrot", year: 1929, publisher: null, lyricist: "Fritz Rotter", notes: "with Rotter", film: null, period: "warsaw" },
+            { title: "Süße Mamsell, denkst du noch an das kleine Hotel", genre: "tango", year: 1929, publisher: "Wiener Boheme Verlag", lyricist: "Fritz Rotter", notes: "with Rotter", film: null, period: "warsaw" },
+            { title: "Hätt' ich einen Kammerdiener?", genre: "foxtrot", year: 1926, publisher: null, lyricist: "Fritz Rotter", notes: "with Rotter", film: null, period: "warsaw" },
+            { title: "Denks du nach am jeden Tag", genre: "foxtrot", year: 1929, publisher: null, lyricist: "Egon Schubert", notes: null, film: null, period: "warsaw" },
+            { title: "Wenn wir nicht beide in gesellschaft wären, würde ich dir liebe schwören (vergißmeinnicht)", genre: null, year: 1929, publisher: null, lyricist: "Fritz Rotter", notes: null, film: null, period: "warsaw" },
+            { title: "Ach, Otto, Otto...!", genre: null, year: 1930, publisher: null, lyricist: "Fritz Rotter", notes: "with Rotter", film: null, period: "european" },
+            { title: "Was macht jede Nacht", genre: "slow-fox", year: 1930, publisher: "Wiener Boheme Verlag", lyricist: "Fritz Rotter", notes: null, film: null, period: "european" },
+            { title: "Herr Lehmann, Herr Lehmann, was macht die Frau Gemahlin in Marienbad?", genre: null, year: 1930, publisher: null, lyricist: "Fritz Rotter", notes: null, film: null, period: "european" },
+            { title: "Ich hab' heut' g'rad Geburtstag", genre: null, year: 1930, publisher: null, lyricist: "Fritz Rotter", notes: null, film: null, period: "european" },
+            { title: "Hab ich dir weh getan – pardon, verzeih", genre: null, year: 1930, publisher: "Drei-Masken Verlag", lyricist: null, notes: "with Rotter", film: null, period: "european" },
+            { title: "An schonen Titicacasee [Heut um viertel Sechs…]", genre: "song and foxtrot", year: 1930, publisher: "Wiener Boheme Verlag", lyricist: "Fritz Rotter", notes: "with Jurmann", film: null, period: "european" },
+            { title: "A chucuito", genre: "song and foxtrot", year: 1930, publisher: "Wiener Boheme Verlag", lyricist: "nieznany", notes: "with Jurmann", film: null, period: "european" },
+            { title: "And Still I Love You", genre: null, year: 1930, publisher: "Harms. Inc.", lyricist: "Irving Caesar", notes: "with Jurmann", film: null, period: "european" },
+            { title: "Once There Was a Baby", genre: null, year: 1931, publisher: null, lyricist: "Desmond Carter", notes: "with Jurmann", film: null, period: "european" },
+            { title: "Schöne Frau, gute Nacht!", genre: "boston", year: 1931, publisher: null, lyricist: "Fritz Rotter", notes: null, film: null, period: "european" },
+            { title: "Margarete, wander' mit mir", genre: "foxtrot", year: 1931, publisher: null, lyricist: "Fritz Rotter", notes: null, film: null, period: "european" },
+            { title: "Du bist verrückt, mein Schatz, du glaubst an Liebe", genre: "foxtrot", year: 1931, publisher: "Wiener Boheme-Verlag", lyricist: "Fritz Rotter", notes: null, film: null, period: "european" },
+            { title: "Spiel' mir auf der Balalaika einen russischen Tango", genre: "tango", year: 1931, publisher: "Wiener Boheme Verlag", lyricist: "Fritz Rotter", notes: null, film: null, period: "european" },
+            { title: "Das verliebte Orchester", genre: null, year: 1931, publisher: null, lyricist: "Fritz Rotter", notes: null, film: null, period: "european" },
+            { title: "Mondnacht in Sanssouci", genre: "walzer-serenade", year: 1931, publisher: "Sirius-Verlag", lyricist: "Fritz Rotter", notes: null, film: null, period: "european" },
+            { title: "Ich weiß ein kleines Café", genre: "tango", year: 1931, publisher: "Drei-Masken Verlag", lyricist: "Fritz Rotter", notes: "with Austin Egen", film: null, period: "european" },
+            { title: "Signorina aus Brioni", genre: "tango", year: 1931, publisher: "Edition Karl Brüll", lyricist: "Fritz Rotter, Bronisław Kaper", notes: "with Rotter", film: null, period: "european" },
+            { title: "Dit's moi, Madame", genre: null, year: 1931, publisher: null, lyricist: "nieznany", notes: null, film: null, period: "european" },
+            { title: "Große Liebe wird jetzt wieder modern", genre: "tango", year: 1931, publisher: "Drei-Masken Verlag", lyricist: null, notes: "with Rotter", film: null, period: "european" },
+            { title: "Du bist in meinem Leben die erste Sensation", genre: "tango", year: 1932, publisher: "Wiener Boheme Verlag", lyricist: "Fritz Rotter", notes: "with Jurmann", film: null, period: "european" },
+            { title: "Du liebst mich nicht mehr", genre: null, year: 1932, publisher: "Wiener Boheme Verlag", lyricist: "Fritz Rotter", notes: "with Jurmann", film: null, period: "european" },
+            { title: "Eine Sommernacht am Meer", genre: "walc angielski", year: 1932, publisher: "Beboton Verlag", lyricist: "Fritz Rotter", notes: "with Jurmann", film: null, period: "european" },
+            { title: "Vie et l'amour", genre: null, year: 1932, publisher: "Alrobi Musikverlag", lyricist: "Fritz Rotter, Lucien Jean Boyer", notes: "with Jurmann", film: null, period: "european" },
+            { title: "Le bistro du port", genre: null, year: 1933, publisher: "Edition Coda", lyricist: "André Auguste Saudemont, Gaston Groener", notes: "with Jurmann", film: null, period: "european" },
+            { title: "Einen Sonntag ohne Sorgen", genre: "slow-fox", year: 1933, publisher: "Alrobi Musikverlag", lyricist: "Fritz Rotter", notes: "with Jurmann", film: null, period: "european" },
+            { title: "Trink dich gesund", genre: "schlunkerwalzer", year: 1933, publisher: "Edition Meisel", lyricist: "Fritz Rotter", notes: "with Jurmann", film: null, period: "european" },
+            { title: "Ganz Ihrer Meinung, Jawohl", genre: "foxtrot", year: 1933, publisher: "Alrobi Musikverlag", lyricist: "Fritz Rotter", notes: "with Jurmann", film: null, period: "european" },
+            { title: "Rêves d'amour", genre: null, year: 1934, publisher: "Edition Coda", lyricist: "André de Badet", notes: "with Jurmann", film: null, period: "european" },
+            { title: "I've Made Myself Over for Your", genre: null, year: 1936, publisher: null, lyricist: "Gus Kahn", notes: "with Jurmann", film: null, period: "hollywood" },
+            { title: "In the Latin Quarter", genre: null, year: 1936, publisher: null, lyricist: "Gus Kahn", notes: "with Jurmann", film: null, period: "hollywood" },
+            { title: "It's Love", genre: null, year: 1936, publisher: null, lyricist: "Gus Kahn", notes: "with Jurmann", film: null, period: "hollywood" },
+            { title: "Let's not Make a Fool of the Moonlight", genre: null, year: 1936, publisher: null, lyricist: "Gus Kahn", notes: "with Jurmann", film: null, period: "hollywood" },
+            { title: "The Call to the Colors", genre: null, year: 1936, publisher: null, lyricist: "Gus Kahn", notes: "with Jurmann", film: null, period: "hollywood" },
+            { title: "Who knows", genre: null, year: 1936, publisher: null, lyricist: "Gus Kahn", notes: "with Jurmann", film: null, period: "hollywood" },
+            { title: "Be Mine", genre: null, year: 1936, publisher: null, lyricist: "Gus Kahn", notes: "with Jurmann", film: null, period: "hollywood" },
+            { title: "At the Spats and Tennis Club", genre: null, year: 1937, publisher: null, lyricist: "Gus Kahn", notes: "with Jurmann", film: null, period: "hollywood" },
+            { title: "For Ev'ry Lonely Heart", genre: null, year: 1937, publisher: null, lyricist: "Gus Kahn", notes: "with Jurmann", film: null, period: "hollywood" },
+            { title: "Goodnight", genre: null, year: 1937, publisher: null, lyricist: "nieznany", notes: "with Jurmann", film: null, period: "hollywood" },
+            { title: "My Heart is Gypsy", genre: null, year: 1938, publisher: null, lyricist: "Gus Kahn", notes: "with Jurmann", film: null, period: "hollywood" },
+            { title: "Give ma Heart a Brake", genre: null, year: 1937, publisher: null, lyricist: "nieznane", notes: "with Jurmann", film: null, period: "hollywood" },
+            { title: "Goodnight", genre: null, year: 1937, publisher: null, lyricist: "nieznane", notes: "with Jurmann", film: null, period: "hollywood" },
+            { title: "Love May Never Call Again", genre: null, year: 1937, publisher: null, lyricist: "Gus Kahn", notes: "with Jurmann", film: null, period: "hollywood" }
+        ];
+        
         let chart;
         let currentFilter = 'all';
         let currentFilmFilter = 'all';
+        let currentSongFilter = 'all';
 
-        // Initialize when page loads
         document.addEventListener('DOMContentLoaded', function() {
-            console.log('Page loaded, initializing...');
             renderFilms();
+            renderSongs();
         });
 
-        // Navigation functions
         function showView(viewName) {
-            // Hide all views
             document.querySelectorAll('.view').forEach(view => {
                 view.classList.remove('active');
             });
             
-            // Show selected view
             const targetView = document.getElementById(viewName);
             if (targetView) {
                 targetView.classList.add('active');
             }
             
-            // Update navigation
             document.querySelectorAll('.nav-btn').forEach(btn => {
                 btn.classList.remove('active');
             });
@@ -798,22 +1088,22 @@
                 activeNavBtn.classList.add('active');
             }
             
-            // Initialize chart if timeline view
             if (viewName === 'timeline') {
                 setTimeout(() => initChart(), 100);
             }
             
-            // Render films if filmography view
             if (viewName === 'filmography') {
                 setTimeout(() => renderFilms(), 100);
             }
+            
+            if (viewName === 'songs') {
+                setTimeout(() => renderSongs(), 100);
+            }
         }
 
-        // Filter functions
         function filterPeriod(period) {
             currentFilter = period;
             
-            // Update filter buttons
             document.querySelectorAll('.filters .filter-btn').forEach(btn => {
                 btn.classList.remove('active');
             });
@@ -829,7 +1119,6 @@
         function filterFilms(period) {
             currentFilmFilter = period;
             
-            // Update filter buttons
             document.querySelectorAll('.filmography-filters .filter-btn').forEach(btn => {
                 btn.classList.remove('active');
             });
@@ -841,6 +1130,57 @@
             
             renderFilms();
         }
+
+        function filterSongs(period) {
+            currentSongFilter = period;
+            
+            document.querySelectorAll('#songs .filmography-filters .filter-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            const activeBtn = document.getElementById('songs-' + period);
+            if (activeBtn) {
+                activeBtn.classList.add('active');
+            }
+            
+            renderSongs();
+        }
+
+        function renderSongs() {
+    const grid = document.getElementById('songsGrid');
+    if (!grid) return;
+
+    let filteredSongs = songsData;
+
+    if (currentSongFilter !== 'all') {
+        if (currentSongFilter === 'warsaw') {
+            filteredSongs = songsData.filter(song => song.year >= 1926 && song.year <= 1929);
+        } else {
+            filteredSongs = songsData.filter(song => song.period === currentSongFilter);
+        }
+    }
+
+    grid.innerHTML = filteredSongs.map(song => {
+        const periodName = song.year >= 1926 && song.year <= 1929 ? 'warsaw' : song.period;
+        const periodLabel = periodName === 'warsaw' ? 'Warsaw-Berlin' : 
+                          periodName === 'european' ? 'European' : 'Hollywood';
+        
+        return `
+            <div class="film-card">
+                <div class="period-badge period-${periodName === 'warsaw' ? 'european' : periodName}">${periodLabel}</div>
+                <h3 class="film-title">${song.title}</h3>
+                <div class="film-year">${song.year}</div>
+                <div class="film-details">
+                    ${song.genre ? `<div><strong>Genre:</strong> ${song.genre}</div>` : ''}
+                    ${song.publisher ? `<div><strong>Publisher:</strong> ${song.publisher}</div>` : ''}
+                    ${song.lyricist ? `<div><strong>Lyricist:</strong> ${song.lyricist}</div>` : ''}
+                    ${song.film ? `<div><strong>From film:</strong> ${song.film}</div>` : ''}
+                    ${song.notes ? `<div class="film-partner"><strong>Notes:</strong> ${song.notes}</div>` : ''}
+                </div>
+            </div>
+        `;
+    }).join('');
+}
 
         function renderFilms() {
             const grid = document.getElementById('filmsGrid');
@@ -891,9 +1231,7 @@
             const ctx = document.getElementById('timelineChart');
             if (!ctx) return;
             
-            // Check if Chart.js is loaded
             if (typeof Chart === 'undefined') {
-                console.warn('Chart.js not loaded, showing fallback');
                 ctx.parentElement.innerHTML = '<div style="text-align: center; padding: 60px; color: #6b7280;">Timeline chart will load when Chart.js is available</div>';
                 return;
             }
@@ -1003,11 +1341,11 @@
             chart.update('active');
         }
 
-        // Navigation click handlers
         document.getElementById('nav-overview').onclick = () => showView('overview');
         document.getElementById('nav-timeline').onclick = () => showView('timeline');
         document.getElementById('nav-periods').onclick = () => showView('periods');
         document.getElementById('nav-filmography').onclick = () => showView('filmography');
+        document.getElementById('nav-songs').onclick = () => showView('songs');
     </script>
 </body>
 </html>
