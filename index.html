@@ -203,6 +203,42 @@
             box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.05);
         }
         
+        /* Nowe style dla zdjęcia duetu */
+        .collaboration-photo {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(5px);
+            border-radius: 1.25rem;
+            border: 1px solid rgba(229, 231, 235, 0.4);
+            box-shadow: 0 6px 16px -4px rgba(0, 0, 0, 0.1);
+        }
+
+        .duo-photo {
+            width: 100%;
+            max-width: 400px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+            margin-bottom: 1rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .duo-photo:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+        }
+
+        .photo-caption {
+            font-size: 1rem;
+            color: #6b7280;
+            font-style: italic;
+            font-weight: 300;
+            letter-spacing: 0.025em;
+        }
+        
         .collab-stat {
             text-align: center;
         }
@@ -720,6 +756,8 @@
             .collaboration-stats { grid-template-columns: 1fr; }
             .film-poster { float: none; margin: 0 auto 1rem; display: block; }
             .song-sheet { float: none; margin: 0 auto 0.5rem; display: block; }
+            .duo-photo { max-width: 300px; height: 200px; }
+            .collaboration-photo { padding: 1.5rem; }
         }
     </style>
 </head>
@@ -765,6 +803,16 @@
                 
                 <div class="studio-overview">
                     <h4 class="studio-overview-title">Collaboration Statistics</h4>
+                    
+                    <!-- Zdjęcie Kapera z Jurmannem -->
+                    <div class="collaboration-photo">
+                        <img src="assets/images/portraits/kaper-with-jurmann.jpg" 
+                             alt="Bronisław Kaper and Walter Jurmann" 
+                             class="duo-photo"
+                             onerror="this.style.display='none'">
+                        <p class="photo-caption">Bronisław Kaper & Walter Jurmann - Creative Partnership</p>
+                    </div>
+                    
                     <div class="collaboration-stats">
                         <div class="collab-stat">
                             <div class="collab-number">94%</div>
