@@ -1,230 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bronisław Kaper – Life and Career Timeline</title>
-  <!-- Design adapted to match existing index.html / media.html -->
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-      color: #111827;
-      overflow-x: hidden;
-      min-height: 100vh;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Bronisław Kaper – Interactive Timeline</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; background:linear-gradient(135deg,#f8fafc 0%,#e2e8f0 100%); color:#111827; min-height:100vh; }
+.container { width:100vw; display:flex; flex-direction:column; }
+.header { text-align:center; padding:4rem 2rem; background:linear-gradient(135deg,#1f2937 0%,#374151 100%); color:white; position:relative; overflow:hidden; }
+.header::before { content:''; position:absolute; inset:0; background:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="20" cy="20" r="0.5" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="80" r="0.3" fill="rgba(255,255,255,0.05)"/><circle cx="40" cy="70" r="0.4" fill="rgba(255,255,255,0.08)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>'); opacity:.6; pointer-events:none; }
+.header > * { position:relative; z-index:1; }
+.header-content { display:flex; align-items:center; justify-content:center; gap:3rem; max-width:1200px; margin:0 auto; }
+.header-portrait { width:120px; height:120px; border-radius:50%; object-fit:cover; border:3px solid rgba(255,255,255,.3); box-shadow:0 8px 32px rgba(0,0,0,.3); }
+.header-text { flex:1; }
+.title { font-size:3.5rem; font-weight:200; margin-bottom:.75rem; letter-spacing:-0.025em; text-shadow:0 2px 4px rgba(0,0,0,.1); }
+.period { font-size:1.125rem; color:#d1d5db; font-weight:300; letter-spacing:.05em; }
+.navigation { display:flex; justify-content:center; padding:2rem; background:rgba(255,255,255,.95); backdrop-filter:blur(10px); gap:2rem; border-bottom:1px solid rgba(229,231,235,.6); box-shadow:0 4px 6px -1px rgba(0,0,0,.05); flex-wrap:wrap; }
+.nav-btn { background:none; border:none; font-size:1.125rem; text-transform:uppercase; letter-spacing:.1em; font-weight:500; padding-bottom:.75rem; cursor:pointer; transition:all .3s ease; color:#9ca3af; text-decoration:none; display:inline-block; }
+.nav-btn.active { color:#111827; border-bottom:2px solid #111827; }
+.nav-btn:hover { color:#374151; }
+.nav-btn.primary-link { background:linear-gradient(135deg,#6366f1 0%,#8b5cf6 100%); color:white; padding:.75rem 1.5rem; border-radius:9999px; border-bottom:none; }
+.nav-btn.primary-link:hover { transform:translateY(-2px); box-shadow:0 4px 12px rgba(99,102,241,.4); color:white; }
+.content { flex:1; padding:3rem 4rem; background:rgba(255,255,255,.7); backdrop-filter:blur(10px); margin:2rem; border-radius:1.5rem; box-shadow:0 10px 25px -5px rgba(0,0,0,.1),0 4px 6px -2px rgba(0,0,0,.05); border:1px solid rgba(255,255,255,.8); }
+.filters { display:flex; justify-content:center; gap:1rem; margin-bottom:2rem; flex-wrap:wrap; }
+.filter-btn { background:rgba(255,255,255,.9); backdrop-filter:blur(10px); border:1px solid rgba(209,213,219,.6); padding:.6rem 1.25rem; border-radius:9999px; font-size:.85rem; text-transform:uppercase; letter-spacing:.1em; cursor:pointer; transition:all .3s cubic-bezier(.4,0,.2,1); color:#6b7280; box-shadow:0 2px 4px -1px rgba(0,0,0,.06); }
+.filter-btn.active { background:linear-gradient(135deg,#111827 0%,#374151 100%); color:white; border-color:#111827; box-shadow:0 4px 8px -2px rgba(17,24,39,.4); transform:translateY(-1px); }
+.filter-btn:hover:not(.active) { color:#374151; border-color:#9ca3af; background:rgba(255,255,255,.95); transform:translateY(-1px); box-shadow:0 4px 8px -2px rgba(0,0,0,.1); }
+.timeline-wrapper { position:relative; padding:3rem 0; }
+.timeline-line { position:absolute; left:50%; top:0; transform:translateX(-50%); width:4px; height:100%; background:linear-gradient(180deg,#6366f1 0%,#8b5cf6 100%); border-radius:2px; z-index:0; }
+.timeline-items { display:flex; flex-direction:column; gap:3rem; position:relative; z-index:1; }
+.timeline-item { position:relative; width:45%; padding:1rem 2rem; background:linear-gradient(135deg, rgba(249,250,251,.95) 0%, rgba(255,255,255,.95) 100%); backdrop-filter:blur(10px); border-radius:1.25rem; border:1px solid rgba(229,231,235,.6); box-shadow:0 10px 25px -5px rgba(0,0,0,.1),0 4px 6px -2px rgba(0,0,0,.05); transition:all .4s ease; opacity:0; transform:translateX(50px); }
+.timeline-item.left { align-self:flex-start; margin-right:auto; transform:translateX(-50px); }
+.timeline-item.right { align-self:flex-end; margin-left:auto; }
+.timeline-item::before { content:''; position:absolute; top:1.25rem; width:20px; height:20px; background:#fff; border:4px solid #6366f1; border-radius:50%; z-index:2; cursor:pointer; }
+.timeline-item.left::before { right:-54px; }
+.timeline-item.right::before { left:-54px; }
+.timeline-item .year { font-weight:700; margin-bottom:.25rem; }
+.timeline-item .title-sm { font-size:1.25rem; font-weight:500; margin-bottom:.35rem; }
+.timeline-item .desc { font-size:0.95rem; line-height:1.6; color:#374151; }
+.timeline-item .badges { margin-top:.75rem; display:flex; gap:.25rem; flex-wrap:wrap; }
+.timeline-item .img-wrapper { margin-top:.5rem; }
+.timeline-item .img-wrapper img { width:100%; border-radius:0.75rem; border:1px solid rgba(229,231,235,.6); }
+.timeline-item.show { opacity:1; transform:translateX(0); transition:all 0.6s ease-out; }
+/* Tooltip */
+.timeline-item::after {
+  content: attr(data-tooltip);
+  position:absolute;
+  white-space: nowrap;
+  background: rgba(17,24,39,.9);
+  color: #fff;
+  padding: .4rem .8rem;
+  border-radius: .5rem;
+  font-size: .8rem;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-120%);
+  transition: opacity .3s ease, transform .3s ease;
+}
+.timeline-item.left::after { right:-10px; }
+.timeline-item.right::after { left:-10px; }
+.timeline-item:hover::after { opacity:1; transform:translateY(-150%); }
 
-    .container { width: 100vw; min-height: 100vh; display: flex; flex-direction: column; }
-
-    .header {
-      text-align: center;
-      padding: 4rem 2rem;
-      background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
-      color: white;
-      position: relative;
-      overflow: hidden;
-    }
-    .header::before { content: ''; position: absolute; inset: 0;
-      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="20" cy="20" r="0.5" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="80" r="0.3" fill="rgba(255,255,255,0.05)"/><circle cx="40" cy="70" r="0.4" fill="rgba(255,255,255,0.08)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
-      opacity: .6; pointer-events: none; }
-    .header > * { position: relative; z-index: 1; }
-
-    .header-content { display: flex; align-items: center; justify-content: center; gap: 3rem; max-width: 1200px; margin: 0 auto; }
-    .header-portrait { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 3px solid rgba(255,255,255,.3); box-shadow: 0 8px 32px rgba(0,0,0,.3); }
-    .header-text { flex: 1; }
-    .title { font-size: 3.5rem; font-weight: 200; margin-bottom: .75rem; letter-spacing: -0.025em; text-shadow: 0 2px 4px rgba(0,0,0,.1); }
-    .period { font-size: 1.125rem; color: #d1d5db; font-weight: 300; letter-spacing: .05em; }
-
-    .navigation {
-      display: flex; justify-content: center; padding: 2rem; background: rgba(255,255,255,.95);
-      backdrop-filter: blur(10px); gap: 2rem; border-bottom: 1px solid rgba(229,231,235,.6);
-      box-shadow: 0 4px 6px -1px rgba(0,0,0,.05); flex-wrap: wrap;
-    }
-    .nav-btn { background: none; border: none; font-size: 1.125rem; text-transform: uppercase; letter-spacing: .1em; font-weight: 500; padding-bottom: .75rem; cursor: pointer; transition: all .3s ease; color: #9ca3af; text-decoration: none; display: inline-block; }
-    .nav-btn.active { color: #111827; border-bottom: 2px solid #111827; }
-    .nav-btn:hover { color: #374151; }
-    .nav-btn.primary-link { background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%); color: white; padding: .75rem 1.5rem; border-radius: 9999px; border-bottom: none; }
-    .nav-btn.primary-link:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(99,102,241,.4); color: white; }
-
-    .content { flex: 1; padding: 3rem 4rem; background: rgba(255,255,255,.7); backdrop-filter: blur(10px); margin: 2rem; border-radius: 1.5rem; box-shadow: 0 10px 25px -5px rgba(0,0,0,.1), 0 4px 6px -2px rgba(0,0,0,.05); border: 1px solid rgba(255,255,255,.8); }
-
-    .filters { display: flex; justify-content: center; gap: 1rem; margin-bottom: 2rem; flex-wrap: wrap; }
-    .filter-btn { background: rgba(255,255,255,.9); backdrop-filter: blur(10px); border: 1px solid rgba(209,213,219,.6); padding: .6rem 1.25rem; border-radius: 9999px; font-size: .85rem; text-transform: uppercase; letter-spacing: .1em; cursor: pointer; transition: all .3s cubic-bezier(.4,0,.2,1); color: #6b7280; box-shadow: 0 2px 4px -1px rgba(0,0,0,.06); }
-    .filter-btn.active { background: linear-gradient(135deg, #111827 0%, #374151 100%); color: white; border-color: #111827; box-shadow: 0 4px 8px -2px rgba(17,24,39,.4); transform: translateY(-1px); }
-    .filter-btn:hover:not(.active) { color: #374151; border-color: #9ca3af; background: rgba(255,255,255,.95); transform: translateY(-1px); box-shadow: 0 4px 8px -2px rgba(0,0,0,.1); }
-
-    .timeline { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 1.5rem; }
-
-    .timeline-card {
-      position: relative; overflow: hidden; background: linear-gradient(135deg, rgba(249,250,251,.95) 0%, rgba(255,255,255,.95) 100%);
-      backdrop-filter: blur(10px); border: 1px solid rgba(229,231,235,.6); border-radius: 1.25rem; padding: 1.5rem 1.5rem 1.5rem 1.25rem; transition: all .4s cubic-bezier(.4,0,.2,1);
-    }
-    .timeline-card::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(17,24,39,.02) 0%, rgba(55,65,81,.02) 100%); opacity: 0; transition: opacity .4s ease; }
-    .timeline-card:hover::before { opacity: 1; }
-    .timeline-card:hover { border-color: rgba(156,163,175,.4); box-shadow: 0 12px 28px -4px rgba(0,0,0,.15), 0 4px 12px -2px rgba(0,0,0,.08); transform: translateY(-4px); }
-
-    .year { font-size: 1rem; font-weight: 700; color: #111827; letter-spacing: .08em; text-transform: uppercase; margin-bottom: .25rem; }
-    .title-sm { font-size: 1.25rem; font-weight: 500; color: #111827; margin-bottom: .35rem; }
-    .desc { font-size: .95rem; color: #374151; line-height: 1.6; }
-
-    .badge { display: inline-block; padding: .25rem .6rem; border-radius: 9999px; font-size: .7rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; margin-right: .4rem; }
-    .badge-life { background: #e5e7eb; color: #374151; }
-    .badge-career { background: #111827; color: white; }
-    .badge-warsaw { background: #9ca3af; color: white; }
-    .badge-europe { background: #6b7280; color: white; }
-    .badge-hollywood { background: #111827; color: white; }
-    .badge-approx { background: #fde68a; color: #92400e; }
-
-    .sticky-year {
-      position: absolute; top: 0; right: 0; padding: .5rem .75rem; font-weight: 700; font-size: .9rem; color: rgba(17,24,39,.35);
-    }
-
-    .legend { display: flex; justify-content: center; gap: 1rem; margin: 1.25rem 0 2rem; flex-wrap: wrap; }
-    .legend-item { display: flex; align-items: center; gap: .5rem; font-size: .85rem; color: #6b7280; }
-    .legend-swatch { width: .9rem; height: .9rem; border-radius: .25rem; }
-
-    .section-title { font-size: 2rem; font-weight: 200; text-align: center; margin: .5rem 0 2rem; color: #111827; }
-
-    @media (max-width: 768px) {
-      .title { font-size: 2.4rem; }
-      .header-content { flex-direction: column; gap: 1.5rem; }
-      .header-portrait { width: 84px; height: 84px; }
-      .content { padding: 2rem; margin: 1rem; }
-      .timeline { grid-template-columns: 1fr; }
-    }
-  </style>
+@media(max-width:768px){
+.timeline-item { width:90% !important; margin-left:auto; margin-right:auto; transform:translateX(-20px) !important; }
+.timeline-item.left::before, .timeline-item.right::before { left:-30px; right:auto; }
+.timeline-item::after { left:0; transform:translateY(-130%); }
+.timeline-line { left:20px; }
+}
+.badge { display:inline-block; padding:.25rem .6rem; border-radius:9999px; font-size:.7rem; font-weight:600; letter-spacing:.06em; text-transform:uppercase; margin-right:.4rem; }
+.badge-life { background:#e5e7eb; color:#374151; }
+.badge-career { background:#111827; color:white; }
+.badge-warsaw { background:#9ca3af; color:white; }
+.badge-europe { background:#6b7280; color:white; }
+.badge-hollywood { background:#111827; color:white; }
+.badge-approx { background:#fde68a; color:#92400e; }
+</style>
 </head>
 <body>
-  <div class="container">
-    <div class="header">
-      <div class="header-content">
-        <img src="assets/images/portraits/kaper-young.jpg" alt="Bronisław Kaper" class="header-portrait" onerror="this.style.display='none'" />
-        <div class="header-text">
-          <h1 class="title">Bronisław Kaper: Life & Career Timeline</h1>
-          <h2 class="period">1902–1939</h2>
-        </div>
-      </div>
-    </div>
-
-    <div class="navigation">
-      <a href="index.html" class="nav-btn primary-link">← Back to main presentation</a>
-      <a href="media.html" class="nav-btn primary-link">🎵 Media Gallery</a>
-      <button class="nav-btn active">Timeline</button>
-    </div>
-
-    <div class="content">
-      <h2 class="section-title">Key Milestones</h2>
-
-      <div class="legend">
-        <div class="legend-item"><span class="legend-swatch" style="background:#e5e7eb"></span> Life</div>
-        <div class="legend-item"><span class="legend-swatch" style="background:#111827"></span> Career</div>
-        <div class="legend-item"><span class="legend-swatch" style="background:#9ca3af"></span> Warsaw–Berlin</div>
-        <div class="legend-item"><span class="legend-swatch" style="background:#6b7280"></span> Europe</div>
-        <div class="legend-item"><span class="legend-swatch" style="background:#111827"></span> Hollywood</div>
-        <div class="legend-item"><span class="legend-swatch" style="background:#fde68a"></span> Approximate date</div>
-      </div>
-
-      <div class="filters">
-        <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="life">Life</button>
-        <button class="filter-btn" data-filter="career">Career</button>
-        <button class="filter-btn" data-filter="warsaw">Warsaw–Berlin</button>
-        <button class="filter-btn" data-filter="europe">Europe</button>
-        <button class="filter-btn" data-filter="hollywood">Hollywood</button>
-      </div>
-
-      <div class="timeline" id="timeline"></div>
+<div class="container">
+<div class="header">
+  <div class="header-content">
+    <img src="assets/images/portraits/kaper-young.jpg" alt="Bronisław Kaper" class="header-portrait" onerror="this.style.display='none'" />
+    <div class="header-text">
+      <h1 class="title">Bronisław Kaper: Life & Career Timeline</h1>
+      <h2 class="period">1902–1939</h2>
     </div>
   </div>
+</div>
 
-  <script>
-    const milestones = [
-      { year: '1902', title: 'Birth', desc: 'Born on February 5 in Warsaw. Father – Samuel (Stanisław) Kaper, mother – Maria Mucha.', tags: ['life','warsaw'] },
-      { year: '1919', title: 'High School Graduation', desc: 'Graduates from the Staszic Gymnasium in Warsaw and receives his diploma.', tags: ['life','warsaw'] },
-      { year: '1920', title: 'Baptism', desc: 'On July 14, Kaper is baptized in St. Alexander parish.', tags: ['life','warsaw'] },
-      { year: '1920', title: 'War', desc: 'As a student volunteer, serves in the Polish–Bolshevik war.', tags: ['life','warsaw'] },
-      { year: '1920–1921', title: 'Enrollment – Faculty of Law, UW', desc: 'Begins law studies at the University of Warsaw.', tags: ['life','warsaw'] },
-      { year: 'c. 1923', title: 'Completion of music studies', desc: 'Graduates from the Chopin Music School (piano). Diploma recital: Chopin Piano Concerto in F minor.', approx: true, tags: ['life','warsaw'] },
-      { year: '1923', title: 'First composition', desc: 'Kaper composes Rozmowa – a concert song for voice and piano.', tags: ['career','warsaw'] },
-      { year: '1924', title: 'Legal–judicial exam', desc: 'Passes the final exam qualifying him to work as a lawyer or judge.', tags: ['life','warsaw'] },
-      { year: '1924', title: 'Application to Faculty of Philosophy', desc: 'Attempts to broaden his academic interests.', tags: ['life','warsaw'] },
-      { year: '1925', title: 'Official completion of law studies', desc: 'March 27 – diploma from the Faculty of Law, UW; May 26 – certificate of withdrawal.', tags: ['life','warsaw'] },
-      { year: '1926', title: 'First cabaret songs published', desc: 'Songs for Warsaw cabarets published under the pseudonym Bruno Asper (lyrics by Andrzej Włast).', tags: ['career','warsaw'] },
-      { year: 'c. 1926', title: 'Move to Berlin', desc: 'Leaves Warsaw for Berlin to continue music education.', approx: true, tags: ['life','warsaw'] },
-      { year: '1926–1930', title: 'Start of Berlin career', desc: 'Private studies with Moritz Mayer-Mahr and Walter Gmeindl; collaborations with Fritz Rotter and entry into the Berlin art scene.', tags: ['career','europe'] },
-      { year: '1928', title: 'Performance of piano pieces', desc: 'At the Warsaw Conservatory Hall, Eliza Rozenblum performs three piano pieces by Kaper (titles unknown).', tags: ['career','warsaw'] },
-      { year: '1929', title: 'First publications with Fritz Rotter', desc: 'Tangos and foxtrots by “Dr. Kaper” published in German and Viennese editions.', tags: ['career','europe'] },
-      { year: '1929', title: 'Performance with “Harmonia” choir', desc: '“Kurier Warszawski” reports on a concert by the Berlin choir “Harmonia”, directed by Kaper.', tags: ['career','europe'] },
-      { year: '1930', title: 'First solo film composition', desc: 'Music for “Alraune”, directed by Richard Oswald.', tags: ['career','europe'] },
-      { year: '1931', title: 'Meeting Walter Jurmann', desc: 'Introduced by Fritz Rotter, marking the start of the Jurmann–Kaper duo. First joint project: “Die große Attraktion”.', tags: ['career','europe'] },
-      { year: '1932', title: 'Flourishing Berlin collaboration', desc: 'Numerous German films with Jurmann–Kaper music, including “Hochzeitsreise zu dritt”, “Skandal in der Parkstraße”, “Es wird schon wieder besser”, “Der glückliche Herr Fünf”.', tags: ['career','europe'] },
-      { year: '1933', title: 'Emigration from Berlin to Paris', desc: 'After a Nazi attack, Kaper and his wife leave Berlin. UFA begins terminating Jewish employees’ contracts.', tags: ['life','europe'] },
-      { year: '1933–1934', title: 'Paris period', desc: 'About 18 months of work for French producers; film “Les Nuits moscovites” with hits like “Natascha” and “On n\'aime qu\'une fois”.', tags: ['career','europe'] },
-      { year: '1934', title: 'Path to Hollywood', desc: 'Louis B. Mayer (MGM) offers a contract to Jurmann–Kaper; they arrive in Hollywood in December.', tags: ['life','hollywood'] },
-      { year: '1935', title: 'Hollywood debut', desc: 'Songs for “A Night at the Opera”, “Mutiny on the Bounty”, “Escapade”.', tags: ['career','hollywood'] },
-      { year: '1936', title: 'Year of a big hit', desc: 'Film “San Francisco” – the title song becomes an international hit.', tags: ['career','hollywood'] },
-      { year: '1937', title: 'Continued success', desc: '“Everybody Sing” with “Melody Farm” and “The One I Love”; collaborations with Gus Kahn and Paul Francis Webster.', tags: ['career','hollywood'] },
-      { year: '1938', title: 'End of an era', desc: 'Amicable end of Jurmann–Kaper collaboration; industry changes reduce demand for thematic songs.', tags: ['career','hollywood'] },
-      { year: '1939', title: 'New chapter', desc: 'Kaper remains with MGM, starting a solo career as a film composer.', tags: ['career','hollywood'] },
-    ];
+<div class="navigation">
+  <a href="index.html" class="nav-btn primary-link">← Back to main presentation</a>
+  <a href="media.html" class="nav-btn primary-link">🎵 Media Gallery</a>
+  <button class="nav-btn active">Timeline</button>
+</div>
 
-    function tagBadge(tag) {
-      switch(tag) {
-        case 'life': return '<span class="badge badge-life">Life</span>';
-        case 'career': return '<span class="badge badge-career">Career</span>';
-        case 'warsaw': return '<span class="badge badge-warsaw">Warsaw–Berlin</span>';
-        case 'europe': return '<span class="badge badge-europe">Europe</span>';
-        case 'hollywood': return '<span class="badge badge-hollywood">Hollywood</span>';
-        default: return '';
-      }
-    }
+<div class="content">
+<h2 class="section-title">Key Milestones</h2>
 
-    // Remaining JavaScript unchanged
-    function cardTemplate(m) {
-      const badges = m.tags.map(tagBadge).join(' ');
-      const approx = m.approx ? '<span class="badge badge-approx">approx.</span>' : '';
-      return `
-        <article class="timeline-card" data-tags="${m.tags.join(',')}">
-          <div class="sticky-year">${m.year}</div>
-          <div class="year">${approx ? approx + ' ' : ''}${m.year}</div>
-          <h3 class="title-sm">${m.title}</h3>
-          <p class="desc">${m.desc}</p>
-          <div style="margin-top:.75rem">${badges}</div>
-        </article>
-      `;
-    }
+<div class="filters">
+  <button class="filter-btn active" data-filter="all">All</button>
+  <button class="filter-btn" data-filter="life">Life</button>
+  <button class="filter-btn" data-filter="career">Career</button>
+  <button class="filter-btn" data-filter="warsaw">Warsaw–Berlin</button>
+  <button class="filter-btn" data-filter="europe">Europe</button>
+  <button class="filter-btn" data-filter="hollywood">Hollywood</button>
+</div>
 
-    function render(list = milestones) {
-      const norm = y => {
-        const s = (y+ '').toLowerCase().replace('approx.', '').trim();
-        const first = s.split(/[–/-]/)[0].trim();
-        const n = parseInt(first, 10);
-        return isNaN(n) ? 0 : n;
-      };
-      const sorted = [...list].sort((a,b) => norm(a.year) - norm(b.year));
-      document.getElementById('timeline').innerHTML = sorted.map(cardTemplate).join('');
-    }
+<div class="timeline-wrapper">
+  <div class="timeline-line"></div>
+  <div class="timeline-items" id="timeline"></div>
+</div>
+</div>
+</div>
 
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    function applyFilter(key) {
-      const cards = Array.from(document.querySelectorAll('.timeline-card'));
-      cards.forEach(c => {
-        if (key === 'all') { c.style.display = ''; return; }
-        const tags = (c.getAttribute('data-tags') || '').split(',');
-        c.style.display = tags.includes(key) ? '' : 'none';
-      });
-    }
+<script>
+const milestones = [
+  { year:'1902', title:'Birth', desc:'Born on February 5 in Warsaw. Father – Samuel (Stanisław) Kaper, mother – Maria Mucha.', tags:['life','warsaw'], img:'assets/images/milestones/1902-birth.jpg' },
+  { year:'1919', title:'High School Graduation', desc:'Graduates from the Staszic Gymnasium in Warsaw and receives his diploma.', tags:['life','warsaw'], img:'' },
+  { year:'1920', title:'Baptism', desc:'On July 14, Kaper is baptized in St. Alexander parish.', tags:['life','warsaw'], img:'' },
+  { year:'1920', title:'War', desc:'As a student volunteer, serves in the Polish–Bolshevik war.', tags:['life','warsaw'], img:'' },
+  { year:'1920–1921', title:'Enrollment – Faculty of Law, UW', desc:'Begins law studies at the University of Warsaw.', tags:['life','warsaw'], img:'' },
+  { year:'c. 1923', title:'Completion of music studies', desc:'Graduates from the Chopin Music School (piano). Diploma recital: Chopin Piano Concerto in F minor.', approx:true, tags:['life','warsaw'], img:'' },
+  { year:'1923', title:'First composition', desc:'Kaper composes Rozmowa – a concert song for voice and piano.', tags:['career','warsaw'], img:'' },
+  { year:'1924', title:'Legal–judicial exam', desc:'Passes the final exam qualifying him to work as a lawyer or judge.', tags:['life','warsaw'], img:'' },
+  { year:'1924', title:'Application to Faculty of Philosophy', desc:'Attempts to broaden his academic interests.', tags:['life','warsaw'], img:'' },
+  { year:'1925', title:'Official completion of law studies', desc:'March 27 – diploma from the Faculty of Law, UW; May 26 – certificate of withdrawal.', tags:['life','warsaw'], img:'' },
+  { year:'1926', title:'First cabaret songs published', desc:'Songs for Warsaw cabarets published under the pseudonym Bruno Asper (lyrics by Andrzej Włast).', tags:['career','warsaw'], img:'' },
+  { year:'c. 1926', title:'Move to Berlin', desc:'Leaves Warsaw for Berlin to continue music education.', approx:true, tags:['life','warsaw'], img:'' },
+  { year:'1926–1930', title:'Start of Berlin career', desc:'Private studies with Moritz Mayer-Mahr and Walter Gmeindl; collaborations with Fritz Rotter and entry into the Berlin art scene.', tags:['career','europe'], img:'' },
+  { year:'1928', title:'Performance of piano pieces', desc:'At the Warsaw Conservatory Hall, Eliza Rozenblum performs three piano pieces by Kaper (titles unknown).', tags:['career','warsaw'], img:'' },
+  { year:'1929', title:'First publications with Fritz Rotter', desc:'Tangos and foxtrots by “Dr. Kaper” published in German and Viennese editions.', tags:['career','europe'], img:'' },
+  { year:'1929', title:'Performance with “Harmonia” choir', desc:'“Kurier Warszawski” reports on a concert by the Berlin choir “Harmonia”, directed by Kaper.', tags:['career','europe'], img:'' },
+  { year:'1930', title:'First solo film composition', desc:'Music for “Alraune”, directed by Richard Oswald.', tags:['career','europe'], img:'' },
+  { year:'1931', title:'Meeting Walter Jurmann', desc:'Introduced by Fritz Rotter, marking the start of the Jurmann–Kaper duo. First joint project: “Die große Attraktion”.', tags:['career','europe'], img:'' },
+  { year:'1932', title:'Flourishing Berlin collaboration', desc:'Numerous German films with Jurmann–Kaper music, including “Hochzeitsreise zu dritt”, “Skandal in der Parkstraße”, “Es wird schon wieder besser”, “Der glückliche Herr Fünf”.', tags:['career','europe'], img:'' },
+  { year:'1933', title:'Emigration from Berlin to Paris', desc:'After a Nazi attack, Kaper and his wife leave Berlin. UFA begins terminating Jewish employees’ contracts.', tags:['life','europe'], img:'' },
+  { year:'1933–1934', title:'Paris period', desc:'About 18 months of work for French producers; film “Les Nuits moscovites” with hits like “Natascha” and “On n\'aime qu\'une fois”.', tags:['career','europe'], img:'' },
+  { year:'1934', title:'Path to Hollywood', desc:'Louis B. Mayer (MGM) offers a contract to Jurmann–Kaper; they arrive in Hollywood in December.', tags:['life','hollywood'], img:'' },
+  { year:'1935', title:'Hollywood debut', desc:'Songs for “A Night at the Opera”, “Mutiny on the Bounty”, “Escapade”.', tags:['career','hollywood'], img:'' },
+  { year:'1936', title:'Year of a big hit', desc:'Film “San Francisco” – the title song becomes an international hit.', tags:['career','hollywood'], img:'' },
+  { year:'1937', title:'Continued success', desc:'“Everybody Sing” with “Melody Farm” and “The One I Love”; collaborations with Gus Kahn and Paul Francis Webster.', tags:['career','hollywood'], img:'' },
+  { year:'1938', title:'End of an era', desc:'Amicable end of Jurmann–Kaper collaboration; industry changes reduce demand for thematic songs.', tags:['career','hollywood'], img:'' },
+  { year:'1939', title:'New chapter', desc:'Kaper remains with MGM, starting a solo career as a film composer.', tags:['career','hollywood'], img:'' }
+];
 
-    filterButtons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        filterButtons.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        applyFilter(btn.dataset.filter);
-      });
-    });
+function tagBadge(tag){switch(tag){case 'life':return'<span class="badge badge-life">Life</span>';case 'career':return'<span class="badge badge-career">Career</span>';case 'warsaw':return'<span class="badge badge-warsaw">Warsaw–Berlin</span>';case 'europe':return'<span class="badge badge-europe">Europe</span>';case 'hollywood':return'<span class="badge badge-hollywood">Hollywood</span>';default:return'';}}
 
-    render();
-  </script>
+function renderTimeline(list=milestones){
+  const sorted=[...list].sort((a,b)=>parseInt(a.year)-parseInt(b.year));
+  let html='';
+  sorted.forEach((m,i)=>{
+    const side=i%2===0?'left':'right';
+    const badges=m.tags.map(tagBadge).join(' ');
+    const imgHTML=m.img?`<div class="img-wrapper"><img src="${m.img}" alt="${m.title}" onerror="this.style.display='none'"/></div>`:'';
+    html+=`<div class="timeline-item ${side}" data-tags="${m.tags.join(',')}" data-tooltip="${m.title}: ${m.desc}">
+      <div class="year">${m.year}</div>
+      <h3 class="title-sm">${m.title}</h3>
+      <p class="desc">${m.desc}</p>
+      ${imgHTML}
+      <div class="badges">${badges}</div>
+    </div>`;
+  });
+  document.getElementById('timeline').innerHTML=html;
+}
+renderTimeline();
+
+// Filter buttons
+const filterButtons=document.querySelectorAll('.filter-btn');
+function applyFilter(key){
+  const items=document.querySelectorAll('.timeline-item');
+  items.forEach(i=>{if(key==='all'){i.style.display=''; return;} const tags=(i.dataset.tags||'').split(','); i.style.display=tags.includes(key)?'':'none';});
+}
+filterButtons.forEach(btn=>{btn.addEventListener('click',()=>{filterButtons.forEach(b=>b.classList.remove('active')); btn.classList.add('active'); applyFilter(btn.dataset.filter);});});
+
+// Scroll animation
+function animateOnScroll(){
+  const items=document.querySelectorAll('.timeline-item');
+  const windowBottom=window.innerHeight*0.85;
+  items.forEach(item=>{if(item.getBoundingClientRect().top<windowBottom){item.classList.add('show');}});
+}
+window.addEventListener('scroll',animateOnScroll);
+animateOnScroll();
+</script>
 </body>
 </html>
