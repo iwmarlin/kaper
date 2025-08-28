@@ -283,6 +283,11 @@
             color: white;
         }
         
+        .period-early {
+            background-color: #059669;
+            color: white;
+        }
+        
         .credits-section {
             margin-top: 4rem;
             padding: 2.5rem;
@@ -401,7 +406,6 @@
             <a href="index.html" class="nav-btn back-link">← Back to Main Presentation</a>
             <button class="nav-btn active" onclick="showView('audio')" id="nav-audio">Audio</button>
             <button class="nav-btn" onclick="showView('video')" id="nav-video">Video</button>
-
             <button class="nav-btn" onclick="showView('credits')" id="nav-credits">Credits</button>
         </div>
         
@@ -414,32 +418,19 @@
             </div>
             
             <div id="audio" class="view active">
-                <h2 class="section-title">Song Samples & Musical Heritage</h2>
+                <h2 class="section-title">Song Samples & Early Works</h2>
                 
                 <div class="filters">
                     <button class="filter-btn active" onclick="filterMedia('all')" id="filter-all">All Periods</button>
                     <button class="filter-btn" onclick="filterMedia('european')" id="filter-european">European Period</button>
                     <button class="filter-btn" onclick="filterMedia('hollywood')" id="filter-hollywood">Hollywood Period</button>
+                    <button class="filter-btn" onclick="filterMedia('early')" id="filter-early">Early Works</button>
                 </div>
                 
-                <div class="media-grid" id="audioGrid">
-                    <div class="media-card" data-period="european">
-                        <div class="period-badge period-audio">European Period</div>
-                        <h3 class="media-title">Rozmowa (Conversation)</h3>
-                        <p class="media-info">Cconcert Song for voice and piano (1923) • Lyrics: unknown</p>
-                        <audio controls preload="none" class="media-player">
-                            <source src="assets/audio/samples/rozmowa.mp3" type="audio/mpeg">
-                            Your browser does not support the audio element.
-                        </audio>
-                        <p class="media-description">
-                            Kaper's earliest extant composition was written in Warsaw and survives in manuscript.
-                        </p>
-                    </div>
-                    
-                    <div class="media-card" data-period="european">
+               <div class="media-card" data-period="european">
                         <div class="period-badge period-audio">European Period</div>
                         <h3 class="media-title">Jak się da, to się zrobi</h3>
-                        <p class="media-info">From "Perskie Oko" cabarett repertoire (1926) • Lyrics: Andrzej Włast • as Bruno Asper</p>
+                        <p class="media-info">From "Perskie Oko" cabaret repertoire (1926) • Lyrics: Andrzej Włast • as Bruno Asper</p>
                         <audio controls preload="none" class="media-player">
                             <source src="assets/audio/samples/jak-sie-da.mp3" type="audio/mpeg">
                             Your browser does not support the audio element.
@@ -452,7 +443,7 @@
                      <div class="media-card" data-period="european">
                         <div class="period-badge period-audio">European Period</div>
                         <h3 class="media-title">Süße Mamsell, denkst du noch an das kleine Hotel</h3>
-                        <p class="media-info">Tango (1929) • Lyrics: Fritz Rotter • With Fritz Rotter • lja Livschakoff Tanz-Orchester</p>
+                        <p class="media-info">Tango (1929) • Lyrics: Fritz Rotter • With Fritz Rotter • Ilja Livschakoff Tanz-Orchester</p>
                         <audio controls preload="none" class="media-player">
                             <source src="assets/audio/samples/susse-mamsell_lja-Livschakoff-Tanz orchester_1930.mp3" type="audio/mpeg">
                             Your browser does not support the audio element.
@@ -527,6 +518,33 @@
                             success in creating music that merged European sophistication with American swing, becoming part of the broader jazz repertoire.
                         </p>
                     </div>
+
+                    <!-- Early Works Card (naprawiona klasa okresu) -->
+                    <div class="media-card" data-period="early">
+                        <div class="period-badge period-early">Early Works</div>
+                        <h3 class="media-title">Rozmowa (Conversation)</h3>
+                        <p class="media-info">A Concert Song for voice and piano (1923) • Lyrics: unknown</p>
+                        <audio controls preload="none" class="media-player">
+                            <source src="assets/audio/samples/rozmowa.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                        <p class="media-description">
+                            Kaper's earliest extant composition was written in Warsaw and survives in manuscript.
+                        </p>
+                    </div>
+                    
+                    <div class="media-card" data-period="early">
+                        <div class="period-badge period-early">Early Works</div>
+                        <h3 class="media-title">Etiuda</h3>
+                        <p class="media-info">Composition for piano (1925)</p>
+                        <audio controls preload="none" class="media-player">
+                            <source src="assets/audio/samples/etiuda.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                        <p class="media-description">
+                            This composition by Kaper was written in Warsaw and is preserved in manuscript form.
+                        </p>
+                    </div>
                     
                 </div>
             </div>
@@ -544,7 +562,7 @@
                             Your browser does not support the video element.
                         </video>
                         <p class="media-description">
-                            Neapolitan song by Luigi Denza. Model for the song ‘Così, Cosa’
+                            Neapolitan song by Luigi Denza. Model for the song 'Così, Cosa'
                         </p>
                     </div>
 
@@ -564,13 +582,13 @@
                     <div class="media-card">
                         <div class="period-badge period-video">Historical Context</div>
                         <h3 class="media-title">UFA Studios Fires Jewish Employees</h3>
-                        <p class="media-info">Historical Footage • Cinema’s Exiles www.pbs.org</p>
+                        <p class="media-info">Historical Footage • Cinema's Exiles www.pbs.org</p>
                         <video controls preload="none" class="media-player" poster="assets/images/video-thumbnails/mgm-studios.jpg">
                             <source src="assets/video/samples/cinema-exiles.mp4" type="video/mp4">
                             Your browser does not support the video element.
                         </video>
                         <p class="media-description">
-                            UFA studios, a giant of Berlin’s cinema before World War II, starts firing Jewish employees under pressure from the Nazi party.
+                            UFA studios, a giant of Berlin's cinema before World War II, starts firing Jewish employees under pressure from the Nazi party.
                         </p>
                     </div>
                     
@@ -590,8 +608,8 @@
                     
                     <div class="media-card">
                         <div class="period-badge period-video">Film sample (Hollywood)</div>
-                        <h3 class="media-title">Cosí, Cosa</h3>
-                        <p class="media-info">From "A Night at the Opera" (1935) • With Walter Jurmann • Lyrics: Ned Washington – Educational Use</p>
+                        <h3 class="media-title">Così, Cosa</h3>
+                        <p class="media-info">From "A Night at the Opera" (1935) • With Walter Jurmann • Lyrics: Ned Washington — Educational Use</p>
                         <video controls preload="none" class="media-player" poster="assets/images/video-thumbnails/cosi-cosa.jpg">
                             <source src="assets/video/samples/cosi-cosa.mp4" type="video/mp4">
                             Your browser does not support the video element.
@@ -606,7 +624,7 @@
                     <div class="media-card">
                         <div class="period-badge period-video">Film sample (Hollywood)</div>
                         <h3 class="media-title">San Francisco</h3>
-                        <p class="media-info">From "San Francisco" (1936) • Lyrics: Gus Kahn • MGM Production – Educational Use</p>
+                        <p class="media-info">From "San Francisco" (1936) • Lyrics: Gus Kahn • MGM Production — Educational Use</p>
                         <video controls preload="none" class="media-player" poster="assets/images/video-thumbnails/san-francisco.jpg">
                             <source src="assets/video/samples/san-francisco.mp4" type="video/mp4">
                             Your browser does not support the video element.
@@ -621,7 +639,7 @@
                     <div class="media-card">
                         <div class="period-badge period-video">Film sample (Hollywood)</div>
                         <h3 class="media-title">All God's Chillun Got Rhythm</h3>
-                        <p class="media-info">From "A Day at the Races" (1937) • Lyrics: Gus Kahn • With Walter Jurmann – Educational Use</p>
+                        <p class="media-info">From "A Day at the Races" (1937) • Lyrics: Gus Kahn • With Walter Jurmann — Educational Use</p>
                         <video controls preload="none" class="media-player" poster="assets/images/video-thumbnails/san-francisco.jpg">
                             <source src="assets/video/samples/all-gods.mp4" type="video/mp4">
                             Your browser does not support the video element.
@@ -656,15 +674,6 @@
                         </div>
                         
                         <div class="credit-category">
-                            <h4>📚 Research Sources</h4>
-                            <ul class="credit-list">
-                                <li>BMI Historical Database</li>
-                                <li>Austrian National Library</li>
-                                <li>Polish Music Information Centre</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="credit-category">
                             <h4>⚖️ Legal Notice</h4>
                             <ul class="credit-list">
                                 <li>All content used for educational purposes</li>
@@ -680,63 +689,70 @@
     </div>
     
     <script>
-        let currentView = 'audio';
-        let currentFilter = 'all';
+    let currentView = 'audio';
+    let currentFilter = 'all';
 
-        function showView(viewName) {
-            // Hide all views
-            document.querySelectorAll('.view').forEach(view => {
-                view.classList.remove('active');
-            });
-            
-            // Show selected view
-            const targetView = document.getElementById(viewName);
-            if (targetView) {
-                targetView.classList.add('active');
-            }
-            
-            // Update navigation
-            document.querySelectorAll('.nav-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            
-            const activeNavBtn = document.getElementById('nav-' + viewName);
-            if (activeNavBtn) {
-                activeNavBtn.classList.add('active');
-            }
-            
-            currentView = viewName;
-        }
-
-        function filterMedia(period) {
-            currentFilter = period;
-            
-            // Update filter buttons
-            document.querySelectorAll('.filters .filter-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            
-            const activeBtn = document.getElementById('filter-' + period);
-            if (activeBtn) {
-                activeBtn.classList.add('active');
-            }
-            
-            // Filter media cards
-            const cards = document.querySelectorAll('#audioGrid .media-card');
-            cards.forEach(card => {
-                const cardPeriod = card.dataset.period;
-                if (period === 'all' || cardPeriod === period) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        }
-
-        // Initialize
-        document.addEventListener('DOMContentLoaded', function() {
-            showView('audio');
+    function showView(viewName) {
+        // Ukryj wszystkie widoki
+        document.querySelectorAll('.view').forEach(view => {
+            view.classList.remove('active');
         });
+        
+        // Pokaż wybrany widok
+        const targetView = document.getElementById(viewName);
+        if (targetView) {
+            targetView.classList.add('active');
+        }
+        
+        // Zaktualizuj nawigację
+        document.querySelectorAll('.nav-btn').forEach(btn => {
+            btn.classList.remove('active');
+        });
+        
+        const activeNavBtn = document.getElementById('nav-' + viewName);
+        if (activeNavBtn) {
+            activeNavBtn.classList.add('active');
+        }
+        
+        currentView = viewName;
+        
+        // Jeśli otwieramy sekcję audio, odśwież filtr
+        if (viewName === 'audio') {
+            filterMedia(currentFilter);
+        }
+    }
+
+    function filterMedia(period) {
+        currentFilter = period;
+        
+        // Aktualizuj przyciski filtrów
+        document.querySelectorAll('.filters .filter-btn').forEach(btn => {
+            btn.classList.remove('active');
+        });
+        
+        const activeBtn = document.getElementById('filter-' + period);
+        if (activeBtn) {
+            activeBtn.classList.add('active');
+        }
+        
+        // Pobierz wszystkie karty audio z sekcji #audio
+        const cards = document.querySelectorAll('#audio .media-card');
+        cards.forEach(card => {
+            const cardPeriod = card.dataset.period;
+            if (period === 'all' || cardPeriod === period) {
+                // Przywróć domyślny styl
+                card.style.display = '';
+            } else {
+                // Ukryj karty z innego okresu
+                card.style.display = 'none';
+            }
+        });
+    }
+
+    // Inicjalizacja po załadowaniu DOM
+    document.addEventListener('DOMContentLoaded', function() {
+        showView('audio');
+    });
     </script>
 </body>
 </html>
