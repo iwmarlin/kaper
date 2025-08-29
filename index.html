@@ -356,7 +356,7 @@
             background-size: cover;
             background-position: center;
             border-radius: 1.25rem;
-            opacity: 0.1;
+            opacity: 0.05;
             transition: opacity 0.3s ease;
         }
         
@@ -788,6 +788,17 @@
             .duo-photo { max-width: 300px; height: 200px; }
             .collaboration-photo { padding: 1.5rem; }
         }
+        /* --- Proste powiększenie obrazka po kliknięciu --- */
+.period-image {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.period-image.enlarged {
+  transform: scale(2); /* powiększenie do 200% */
+  z-index: 10;
+  position: relative;
+}
     </style>
 </head>
 <body>
@@ -1563,5 +1574,12 @@
         document.getElementById('nav-filmography').onclick = () => showView('filmography');
         document.getElementById('nav-songs').onclick = () => showView('songs');
     </script>
+    <script>
+  document.querySelectorAll('.period-image').forEach(img => {
+    img.addEventListener('click', () => {
+      img.classList.toggle('enlarged');
+    });
+  });
+</script>
 </body>
 </html>
