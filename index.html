@@ -762,7 +762,49 @@
             text-align: center;
         }
         
-        @media (max-width: 768px) {
+        
+        /* Search input styles (added) */
+        .search-container {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin: 1rem 0 2rem 0;
+        }
+
+        .search-input {
+            flex: 1;
+            max-width: 400px;
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            border: 1px solid rgba(209, 213, 219, 0.6);
+            font-size: 0.875rem;
+            color: #374151;
+            box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: #6366f1;
+            box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.3);
+        }
+
+        .clear-search {
+            background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            cursor: pointer;
+            font-size: 0.875rem;
+            transition: all 0.3s ease;
+        }
+
+        .clear-search:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 10px rgba(220, 38, 38, 0.4);
+        }
+
+@media (max-width: 768px) {
             .title { font-size: 2.5rem; }
             .header-content { flex-direction: column; gap: 1.5rem; }
             .header-portrait { width: 80px; height: 80px; }
@@ -1002,7 +1044,12 @@
                     <button class="filter-btn" onclick="filterFilms('hollywood')" id="films-hollywood">Hollywood Period (22)</button>
                 </div>
                 
-                <div class="films-container">
+                
+                <div class="search-container">
+                    <input type="text" id="filmSearch" placeholder="Search by year (e.g., 1932) or title..." class="search-input">
+                    <button onclick="clearFilmSearch()" class="clear-search">Clear</button>
+                </div>
+<div class="films-container">
                     <div class="films-grid" id="filmsGrid">
                         <!-- Films will be populated by JavaScript -->
                     </div>
@@ -1017,7 +1064,12 @@
                     <button class="filter-btn" onclick="filterSongs('hollywood')" id="songs-hollywood">Hollywood Period (63)</button>
                 </div>
                 
-                <div class="films-container">
+                
+                <div class="search-container">
+                    <input type="text" id="songSearch" placeholder="Search by year (e.g., 1932) or title..." class="search-input">
+                    <button onclick="clearSongSearch()" class="clear-search">Clear</button>
+                </div>
+<div class="films-container">
                     <div class="films-grid" id="songsGrid">
                         <!-- Songs will be populated by JavaScript -->
                     </div>
@@ -1282,7 +1334,7 @@
             ,
             { title: "L'Homme qui ne sait pas dire non", genre: null, year: 1933, publisher: null, lyricist: null, notes: "with Jurmann", film: "L'Homme qui ne sait pas dire non", period: "european" },
             ,
-            { title: "Les charmes chantent, mon violin soupire", genre: null, year: 1933, publisher: null, lyricist: "nieznany", notes: "with Jurmann", film: "L'homme qui ne sait pas dire non", period: "european" },
+            { title: "Les charmes chantent, mon violin soupire", genre: null, year: 1933, publisher: null, lyricist: "unknown", notes: "with Jurmann", film: "L'homme qui ne sait pas dire non", period: "european" },
             ,
             { title: "Ton sourire apaisé", genre: "berceuse", year: 1933, publisher: "Edition Coda", lyricist: "Ninon Steinhoff, Henri-André Legrand", notes: "with Jurmann", film: "Le chant du destin", period: "european" },
             ,
@@ -1567,7 +1619,19 @@
                 }
             }
 
-            grid.innerHTML = filteredSongs.map(song => {
+            
+            // apply search filter
+            const songSearchInput = document.getElementById('songSearch');
+            const songSearchTerm = songSearchInput ? songSearchInput.value.toLowerCase().trim() : '';
+            if (songSearchTerm) {
+                filteredSongs = filteredSongs.filter(song => {
+                    const title = (song.title || '').toString().toLowerCase();
+                    const year = (song.year || '').toString();
+                    return title.includes(songSearchTerm) || year.includes(songSearchTerm);
+                });
+            }
+
+    grid.innerHTML = filteredSongs.map(song => {
                 const periodName = song.year >= 1926 && song.year <= 1929 ? 'warsaw' : song.period;
                 const periodLabel = periodName === 'warsaw' ? 'Warsaw-Berlin' : 
                                   periodName === 'european' ? 'European' : 'Hollywood';
@@ -1603,7 +1667,19 @@
                 filteredFilms = filmData.filter(film => film.period === currentFilmFilter);
             }
 
-            grid.innerHTML = filteredFilms.map(film => {
+            
+            // apply search filter
+            const filmSearchInput = document.getElementById('filmSearch');
+            const filmSearchTerm = filmSearchInput ? filmSearchInput.value.toLowerCase().trim() : '';
+            if (filmSearchTerm) {
+                filteredFilms = filteredFilms.filter(film => {
+                    const title = (film.title || '').toString().toLowerCase();
+                    const year = (film.year || '').toString();
+                    return title.includes(filmSearchTerm) || year.includes(filmSearchTerm);
+                });
+            }
+
+    grid.innerHTML = filteredFilms.map(film => {
                 const posterImage = film.poster ? 
                     `<img src="${film.poster}" alt="Poster for ${film.title}" class="film-poster" onerror="this.style.display='none'">` : '';
                 
@@ -1763,7 +1839,22 @@
         document.getElementById('nav-periods').onclick = () => showView('periods');
         document.getElementById('nav-filmography').onclick = () => showView('filmography');
         document.getElementById('nav-songs').onclick = () => showView('songs');
-    </script>
+    
+    function clearFilmSearch() {
+        const el = document.getElementById('filmSearch');
+        if (el) { el.value = ''; renderFilms(); }
+    }
+    function clearSongSearch() {
+        const el = document.getElementById('songSearch');
+        if (el) { el.value = ''; renderSongs(); }
+    }
+    document.addEventListener('DOMContentLoaded', function() {
+        const f = document.getElementById('filmSearch');
+        if (f) f.addEventListener('input', renderFilms);
+        const s = document.getElementById('songSearch');
+        if (s) s.addEventListener('input', renderSongs);
+    });
+</script>
     <script>
   document.querySelectorAll('.period-image').forEach(img => {
     img.addEventListener('click', () => {
