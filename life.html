@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Bronisław Kaper – Interactive Timeline</title>
+<title>Bronisław Kaper — Interactive Timeline</title>
 <style>
 * { margin:0; padding:0; box-sizing:border-box; }
 body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; background:linear-gradient(135deg,#f8fafc 0%,#e2e8f0 100%); color:#111827; min-height:100vh; }
@@ -91,7 +91,7 @@ body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif
     <img src="assets/images/portraits/kaper-young.jpg" alt="Bronisław Kaper" class="header-portrait" onerror="this.style.display='none'" />
     <div class="header-text">
       <h1 class="title">Bronisław Kaper: Life & Career Timeline</h1>
-      <h2 class="period">1902–1939</h2>
+      <h2 class="period">1902—1939</h2>
     </div>
   </div>
 </div>
@@ -109,7 +109,7 @@ body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif
   <button class="filter-btn active" data-filter="all">All</button>
   <button class="filter-btn" data-filter="life">Life</button>
   <button class="filter-btn" data-filter="career">Career</button>
-  <button class="filter-btn" data-filter="warsaw">Warsaw–Berlin</button>
+  <button class="filter-btn" data-filter="warsaw">Warsaw—Berlin</button>
   <button class="filter-btn" data-filter="europe">Europe</button>
   <button class="filter-btn" data-filter="hollywood">Hollywood</button>
 </div>
@@ -123,38 +123,47 @@ body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif
 
 <script>
 const milestones = [
-  { year:'1902', title:'Birth', desc:'Born on February 5 in Warsaw. Father – Samuel (Stanisław) Kaper, mother – Maria Mucha.', tags:['life','warsaw'], img:'' },
+  { year:'1902', title:'Birth', desc:'Born on February 5 in Warsaw (date uncertain - Kaper himself claimed "1902 or 1904" due to frequent modifications of birth records in Poland). Father — Samuel (Stanisław) Kaper, mother — Maria Mucha.', tags:['life','warsaw'], img:'' },
   { year:'1915', title:'Graduation from a primary school', desc:'Graduates from Skrynnikov private school in Warsaw.', tags:['life','warsaw'], img:'assets/images/timeline/realna.jpg' },
   { year:'1919', title:'High school graduation', desc:'Graduates from the Staszic Gymnasium in Warsaw and receives his diploma (matura certificate).', tags:['life','warsaw'], img:'assets/images/portraits/kaper-young0.jpg' },
   { year:'1920', title:'Baptism', desc:'On July 14, Kaper is baptized in St. Alexander parish.', tags:['life','warsaw'], img:'assets/images/timeline/aleksander.jpg' },
-  { year:'1920', title:'War', desc:'As a student volunteer, serves in the Polish–Bolshevik war.', tags:['life','warsaw'], img:'assets/images/timeline/wojna-1920.jpg' },
-  { year:'1920–1921', title:'Enrollment – Faculty of Law, UW', desc:'Begins law studies at the University of Warsaw.', tags:['life','warsaw'], img:'assets/images/timeline/uw-palac.jpg' },
-  { year:'c. 1923', title:'Completion of music studies', desc:'Graduates from the Chopin Music School (piano). Diploma recital: Chopin Piano Concerto in F minor.', approx:true, tags:['life','warsaw'], img:'assets/images/timeline/filharmonia.jpg' },
-  { year:'1923', title:'First composition', desc:'Kaper composes Rozmowa (Conversation) – a concert song for voice and piano.', tags:['career','warsaw'], img:'' },
-  { year:'1924', title:'Legal–judicial exam', desc:'Passes the final exam qualifying him to work as a lawyer or judge.', tags:['life','warsaw'], img:'' },
+  { year:'1920', title:'War', desc:'As a student volunteer, serves in the Polish—Bolshevik war.', tags:['life','warsaw'], img:'assets/images/timeline/wojna-1920.jpg' },
+  { year:'1920—1921', title:'Enrollment — Faculty of Law, UW', desc:'Begins law studies at the University of Warsaw.', tags:['life','warsaw'], img:'assets/images/timeline/uw-palac.jpg' },
+  { year:'c. 1923', title:'Completion of music studies', desc:'Graduates from the Chopin Music School (piano). Diploma recital: Chopin Piano Concerto in F minor. Achieves exceptional theoretical knowledge - able to identify complex harmonies and progressions by ear alone.', approx:true, tags:['life','warsaw'], img:'assets/images/timeline/filharmonia.jpg' },
+  { year:'1923', title:'First composition', desc:'Kaper composes Rozmowa (Conversation) — a concert song for voice and piano.', tags:['career','warsaw'], img:'' },
+  { year:'1924', title:'Legal—judicial exam', desc:'Passes the final exam qualifying him to work as a lawyer or judge.', tags:['life','warsaw'], img:'' },
   { year:'1924', title:'Application to Faculty of Philosophy', desc:'Attempts to broaden his academic interests.', tags:['life','warsaw'], img:'' },
-  { year:'1925', title:'Official completion of law studies', desc:'March 27 – diploma from the Faculty of Law, UW; May 26 – certificate of withdrawal.', tags:['life','warsaw'], img:'assets/images/timeline/uw-1928.jpg' },
+  { year:'1925', title:'Official completion of law studies', desc:'March 27 — diploma from the Faculty of Law, UW; May 26 — certificate of withdrawal.', tags:['life','warsaw'], img:'assets/images/timeline/uw-1928.jpg' },
   { year:'1926', title:'First cabaret songs published', desc:'Songs for Warsaw cabarets published under the pseudonym Bruno Asper (lyrics by Andrzej Włast).', tags:['career','warsaw'], img:'assets/images/timeline/morskie-oko.jpg' },
   { year:'c. 1926', title:'Move to Berlin', desc:'Leaves Warsaw for Berlin to continue music education.', approx:true, tags:['life','warsaw'], img:'' },
-  { year:'1926–1930', title:'Start of Berlin career', desc:'Private studies with Moritz Mayer-Mahr and Walter Gmeindl; collaborations with Fritz Rotter and entry into the Berlin artistic scene.', tags:['career','europe'], img:'assets/images/portraits/fritz-rotter.jpg' },
+  { year:'1926—1930', title:'Start of Berlin career', desc:'Private studies with Moritz Mayer-Mahr and Walter Gmeindl; collaborations with Fritz Rotter. Early German publications credited to "Dr. Kaper." Meets and befriends boxer Harry Stein (German champion in flyweight division), beginning boxing training that would later save his life.', tags:['career','europe'], img:'assets/images/portraits/fritz-rotter.jpg' },
   { year:'1928', title:'Jazz Piano Partnership', desc:'Along with Hermann Bick, he records piano duo arrangements for Deutsche Grammophon/Polydor. These sessions showcase contemporary American jazz standards including "Miss Annabelle Lee," "The Varsity Drag," and "The Song Is Ended." The collaboration blends classical virtuosity with jazz spontaneity, creating sophisticated interpretations that avoid the trivial "novelty piano" style of the era.', tags:['career','europe'], img:'assets/images/timeline/anabelle.jpg' },
   { year:'1928', title:'Performance of piano pieces', desc:'At the Warsaw Conservatory Hall, Eliza Rozenblum performs three piano pieces by Kaper (titles unknown).', tags:['career','warsaw'], img:'' },
-  { year:'1929', title:'First publications with Fritz Rotter', desc:'Tangos and foxtrots by “Dr. Kaper” published in German and Viennese editions.', tags:['career','europe'], img:'assets/images/sheet-music/auf-wiedersehen.jpg' },
-  { year:'1929', title:'Involvement in Polish cultural life in Berlin', desc:'“Kurier Warszawski” reports on a concert by the Berlin choir “Harmonia”, directed by Kaper.', tags:['career','europe'], img:'' },
-  { year:'1930', title:'First solo film composition', desc:'Music for “Alraune”, directed by Richard Oswald.', tags:['career','europe'], img:'assets/images/film-posters/european-period/alraune.jpg' },
-  { year:'1931', title:'Meeting Walter Jurmann', desc:'Introduced by Fritz Rotter, marking the start of the Jurmann–Kaper duo. First joint project: “Die große Attraktion”, directed by Max Reichmann. Kaper composes the hit slow fox “Du warst mir ein Roman" for Richard Tauber', tags:['career','europe'], img:'assets/images/portraits/kaper-with-jurmann.jpg' },
-  { year:'1932', title:'Flourishing Berlin collaboration', desc:'Numerous German films with Jurmann–Kaper music, including “Hochzeitsreise zu dritt”, “Skandal in der Parkstraße”, “Es wird schon wieder besser”, “Der glückliche Herr Fünf”.', tags:['career','europe'], img:'' },
-  { year:'1933', title:'Emigration from Berlin to Paris', desc:'Kaper and Jurmann flee Nazi persecution after UFA begins terminating Jewish employees' contracts. Following a street attack by Nazi gangs, both composers relocate to Paris.', tags:['life','europe'], img:'' },
-  { year:'1933–1934', title:'Paris period', desc:'About 18 months of work for French producers; film “Les Nuits moscovites” with hits like “Natascha” and “On n\'aime qu\'une fois”; compositions for revue Parade de France.', tags:['career','europe'], img:'assets/images/sheet-music/femme.jpg' },
-  { year:'1934', title:'Path to Hollywood', desc:'Louis B. Mayer (MGM) offers a contract to Jurmann–Kaper; they arrive in Hollywood in December.', tags:['life','hollywood'], img:'assets/images/portraits/louis-mayer.jpg' },
-  { year:'1935', title:'Hollywood debut', desc:'Songs for “A Night at the Opera”, “Mutiny on the Bounty”, “Escapade”. Seven-year contract at $300 weekly.', tags:['career','hollywood'], img:'' },
-  { year:'1936', title:'Year of a big hit', desc:'Film “San Francisco” starring Jeanette MacDonald and Spencer Tracy. The title song becomes an international hit and establishes Kaper's reputation.', tags:['career','hollywood'], img:'assets/images/film-posters/hollywood-period/san-francisco.jpg' },
-  { year:'1937', title:'Continued success', desc:'“Everybody Sing” with “Melody Farm” and “The One I Love”; collaborations with Gus Kahn and Paul Francis Webster.', tags:['career','hollywood'], img:'assets/images/portraits/kahn-garland.jpg' },
-  { year:'1938', title:'End of an era', desc:'Amicable end of Jurmann–Kaper collaboration; industry changes reduce demand for thematic songs.', tags:['career','hollywood'], img:'' },
+  { year:'1929', title:'First publications with Fritz Rotter', desc:'Tangos and foxtrots by "Dr. Kaper" published in German and Viennese editions.', tags:['career','europe'], img:'assets/images/sheet-music/auf-wiedersehen.jpg' },
+  { year:'1929', title:'Involvement in Polish cultural life in Berlin', desc:'"Kurier Warszawski" reports on a concert by the Berlin choir "Harmonia", directed by Kaper.', tags:['career','europe'], img:'' },
+  { year:'1930', title:'First solo film composition', desc:'Music for "Alraune", directed by Richard Oswald.', tags:['career','europe'], img:'assets/images/film-posters/european-period/alraune.jpg' },
+  { year:'1931', title:'Meeting Walter Jurmann', desc:'Introduced by Fritz Rotter, marking the start of the Jurmann—Kaper duo. First joint project: "Die große Attraktion", directed by Max Reichmann. Kaper composes the hit slow fox "Du warst mir ein Roman" for Richard Tauber. Duo uses pseudonyms Bob Handers, Erich Walter Schmidt, and Caspar Paolo due to prolific output.', tags:['career','europe'], img:'assets/images/portraits/kaper-with-jurmann.jpg' },
+  { year:'1932', title:'Flourishing Berlin collaboration', desc:'Numerous German films with Jurmann—Kaper music, including "Hochzeitsreise zu dritt", "Skandal in der Parkstraße", "Es wird schon wieder besser", "Der glückliche Herr Fünf".', tags:['career','europe'], img:'' },
+  { year:'1933', title:'Emigration from Berlin to Paris', desc:'Following Nazi persecution, Kaper and Jurmann flee Berlin after UFA terminates Jewish employees\' contracts. Decisive moment: Kaper and his wife are attacked by Nazi gang on main Berlin street - Kaper\'s boxing skills, learned from champion Harry Stein, enable their survival. Both composers relocate to Paris, using pseudonyms Pierre Candel and Harry Morrell.', tags:['life','europe'], img:'' },
+  { year:'1933—1934', title:'Paris period', desc:'About 18 months of work for French producers; film "Les Nuits moscovites" with hits like "Natascha" and "On n\'aime qu\'une fois"; compositions for revue Parade de France.', tags:['career','europe'], img:'assets/images/sheet-music/femme.jpg' },
+  { year:'1934', title:'Path to Hollywood', desc:'Louis B. Mayer (MGM) offers a contract to Jurmann—Kaper; they arrive in Hollywood in December.', tags:['life','hollywood'], img:'assets/images/portraits/louis-mayer.jpg' },
+  { year:'1935', title:'Hollywood debut', desc:'Songs for "A Night at the Opera", "Mutiny on the Bounty", "Escapade". Seven-year contract at $300 weekly after Louis B. Mayer discovers duo at Hotel Ritz in Paris.', tags:['career','hollywood'], img:'' },
+  { year:'1936', title:'Year of a big hit', desc:'Film "San Francisco" starring Jeanette MacDonald and Spencer Tracy. The title song becomes an international hit and establishes Kaper\'s reputation in Hollywood.', tags:['career','hollywood'], img:'assets/images/film-posters/hollywood-period/san-francisco.jpg' },
+  { year:'1937', title:'Continued success', desc:'"Everybody Sing" with "Melody Farm" and "The One I Love"; collaborations with Gus Kahn and Paul Francis Webster.', tags:['career','hollywood'], img:'assets/images/portraits/kahn-garland.jpg' },
+  { year:'1938', title:'End of an era', desc:'Amicable end of Jurmann—Kaper collaboration; industry changes reduce demand for thematic songs.', tags:['career','hollywood'], img:'' },
   { year:'1939', title:'New chapter', desc:'Kaper remains with MGM, starting a solo career as a film composer.', tags:['career','hollywood'], img:'' }
 ];
 
-function tagBadge(tag){switch(tag){case 'life':return'<span class="badge badge-life">Life</span>';case 'career':return'<span class="badge badge-career">Career</span>';case 'warsaw':return'<span class="badge badge-warsaw">Warsaw–Berlin</span>';case 'europe':return'<span class="badge badge-europe">Europe</span>';case 'hollywood':return'<span class="badge badge-hollywood">Hollywood</span>';default:return'';}}
+function tagBadge(tag){
+  switch(tag){
+    case 'life':return'<span class="badge badge-life">Life</span>';
+    case 'career':return'<span class="badge badge-career">Career</span>';
+    case 'warsaw':return'<span class="badge badge-warsaw">Warsaw—Berlin</span>';
+    case 'europe':return'<span class="badge badge-europe">Europe</span>';
+    case 'hollywood':return'<span class="badge badge-hollywood">Hollywood</span>';
+    default:return'';
+  }
+}
 
 function renderTimeline(list=milestones){
   const sorted=[...list].sort((a,b)=>parseInt(a.year)-parseInt(b.year));
@@ -179,15 +188,32 @@ renderTimeline();
 const filterButtons=document.querySelectorAll('.filter-btn');
 function applyFilter(key){
   const items=document.querySelectorAll('.timeline-item');
-  items.forEach(i=>{if(key==='all'){i.style.display=''; return;} const tags=(i.dataset.tags||'').split(','); i.style.display=tags.includes(key)?'':'none';});
+  items.forEach(i=>{
+    if(key==='all'){
+      i.style.display=''; 
+      return;
+    } 
+    const tags=(i.dataset.tags||'').split(','); 
+    i.style.display=tags.includes(key)?'':'none';
+  });
 }
-filterButtons.forEach(btn=>{btn.addEventListener('click',()=>{filterButtons.forEach(b=>b.classList.remove('active')); btn.classList.add('active'); applyFilter(btn.dataset.filter);});});
+filterButtons.forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    filterButtons.forEach(b=>b.classList.remove('active')); 
+    btn.classList.add('active'); 
+    applyFilter(btn.dataset.filter);
+  });
+});
 
 // Scroll animation
 function animateOnScroll(){
   const items=document.querySelectorAll('.timeline-item');
   const windowBottom=window.innerHeight*0.85;
-  items.forEach(item=>{if(item.getBoundingClientRect().top<windowBottom){item.classList.add('show');}});
+  items.forEach(item=>{
+    if(item.getBoundingClientRect().top<windowBottom){
+      item.classList.add('show');
+    }
+  });
 }
 window.addEventListener('scroll',animateOnScroll);
 animateOnScroll();
