@@ -1115,64 +1115,6 @@
         document.addEventListener('DOMContentLoaded', function() {
             let secretPortrait = document.querySelector('.header-portrait');
             
-            // Force hover effects with JavaScript
-            function addHoverEffects() {
-                // Gallery items hover
-                document.querySelectorAll('.gallery-item').forEach(item => {
-                    item.addEventListener('mouseenter', function() {
-                        this.style.transform = 'translateY(-10px) scale(1.05)';
-                        this.style.boxShadow = '0 25px 50px rgba(0, 0, 0, 0.5), 0 0 0 2px rgba(139, 92, 246, 0.6), 0 0 40px rgba(139, 92, 246, 0.4)';
-                        this.style.transition = 'all 0.3s ease';
-                        
-                        const img = this.querySelector('img');
-                        if (img) {
-                            img.style.transform = 'scale(1.1)';
-                            img.style.transition = 'all 0.3s ease';
-                        }
-                    });
-                    
-                    item.addEventListener('mouseleave', function() {
-                        this.style.transform = 'translateY(0) scale(1)';
-                        this.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.3)';
-                        
-                        const img = this.querySelector('img');
-                        if (img) {
-                            img.style.transform = 'scale(1)';
-                        }
-                    });
-                });
-                
-                // Media cards hover
-                document.querySelectorAll('.media-card').forEach(card => {
-                    card.addEventListener('mouseenter', function() {
-                        this.style.transform = 'translateY(-6px) scale(1.02)';
-                        this.style.borderColor = 'rgba(139, 92, 246, 0.4)';
-                        this.style.boxShadow = '0 20px 40px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(139, 92, 246, 0.3), 0 0 30px rgba(139, 92, 246, 0.2)';
-                        this.style.transition = 'all 0.3s ease';
-                    });
-                    
-                    card.addEventListener('mouseleave', function() {
-                        this.style.transform = 'translateY(0) scale(1)';
-                        this.style.borderColor = 'rgba(139, 92, 246, 0.2)';
-                        this.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.3)';
-                    });
-                });
-                
-                // Portrait hover
-                if (secretPortrait) {
-                    secretPortrait.addEventListener('mouseenter', function() {
-                        this.style.transform = 'scale(1.15)';
-                        this.style.boxShadow = '0 0 60px rgba(139, 92, 246, 0.8), 0 20px 60px rgba(0, 0, 0, 0.8)';
-                        this.style.transition = 'all 0.3s ease';
-                    });
-                    
-                    secretPortrait.addEventListener('mouseleave', function() {
-                        this.style.transform = 'scale(1)';
-                        this.style.boxShadow = '0 0 30px rgba(139, 92, 246, 0.3), 0 8px 32px rgba(0, 0, 0, 0.4)';
-                    });
-                }
-            }
-            
             if (secretPortrait) {
                 secretPortrait.addEventListener('click', function(e) {
                     e.preventDefault();
@@ -1195,12 +1137,6 @@
                     }, 3000);
                 });
             }
-            
-            // Apply hover effects initially
-            addHoverEffects();
-            
-            // Make function globally available
-            window.addHoverEffects = addHoverEffects;
             
             showView('audio');
             
