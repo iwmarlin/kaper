@@ -15,14 +15,38 @@
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
             color: #f8fafc;
+            overflow-x: hidden;
             min-height: 100vh;
+            position: relative;
+        }
+        
+        /* Animated background particles */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><filter id="glow"><feGaussianBlur stdDeviation="3" result="coloredBlur"/><feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs><g filter="url(%23glow)"><circle cx="100" cy="100" r="2" fill="rgba(139,92,246,0.3)" opacity="0.8"><animate attributeName="opacity" values="0.3;0.8;0.3" dur="4s" repeatCount="indefinite"/></circle><circle cx="300" cy="200" r="1.5" fill="rgba(99,102,241,0.4)" opacity="0.6"><animate attributeName="opacity" values="0.2;0.6;0.2" dur="3s" repeatCount="indefinite"/></circle><circle cx="700" cy="150" r="1" fill="rgba(168,85,247,0.5)" opacity="0.7"><animate attributeName="opacity" values="0.4;0.9;0.4" dur="5s" repeatCount="indefinite"/></circle><circle cx="500" cy="400" r="2.5" fill="rgba(147,51,234,0.3)" opacity="0.5"><animate attributeName="opacity" values="0.1;0.7;0.1" dur="6s" repeatCount="indefinite"/></circle><circle cx="800" cy="600" r="1.8" fill="rgba(124,58,237,0.4)" opacity="0.6"><animate attributeName="opacity" values="0.3;0.8;0.3" dur="4.5s" repeatCount="indefinite"/></circle></g></svg>') repeat;
+            opacity: 0.15;
+            pointer-events: none;
+            z-index: 0;
+            animation: float 20s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
         }
         
         .container {
-            width: 100%;
+            width: 100vw;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
+            position: relative;
+            z-index: 1;
         }
         
         .header {
@@ -31,6 +55,25 @@
             background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.9) 50%, rgba(51, 65, 85, 0.85) 100%);
             backdrop-filter: blur(20px);
             border-bottom: 1px solid rgba(139, 92, 246, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 20%, rgba(139, 92, 246, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 80%, rgba(99, 102, 241, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        
+        .header > * {
+            position: relative;
+            z-index: 1;
         }
         
         .header-content {
@@ -40,6 +83,18 @@
             gap: 3rem;
             max-width: 1200px;
             margin: 0 auto;
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
         
         .header-portrait {
@@ -48,8 +103,25 @@
             border-radius: 50%;
             object-fit: cover;
             border: 3px solid rgba(139, 92, 246, 0.4);
-            box-shadow: 0 0 30px rgba(139, 92, 246, 0.3), 0 8px 32px rgba(0, 0, 0, 0.4);
-            cursor: pointer;
+            box-shadow: 0 0 30px rgba(139, 92, 246, 0.3),
+                        0 8px 32px rgba(0, 0, 0, 0.4);
+            transition: all 0.4s ease;
+            animation: pulse 3s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 0 30px rgba(139, 92, 246, 0.3), 0 8px 32px rgba(0, 0, 0, 0.4); }
+            50% { box-shadow: 0 0 40px rgba(139, 92, 246, 0.5), 0 12px 40px rgba(0, 0, 0, 0.5); }
+        }
+        
+        .header-portrait:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 50px rgba(139, 92, 246, 0.6),
+                        0 15px 50px rgba(0, 0, 0, 0.6);
+        }
+        
+        .header-text {
+            flex: 1;
         }
         
         .title {
@@ -61,6 +133,8 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            text-shadow: none;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
         }
         
         .period {
@@ -78,7 +152,11 @@
             backdrop-filter: blur(20px);
             gap: 2rem;
             border-bottom: 1px solid rgba(139, 92, 246, 0.2);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
             flex-wrap: wrap;
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
         
         .nav-btn {
@@ -90,11 +168,29 @@
             font-weight: 500;
             padding: 0.75rem 1.5rem;
             cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             color: #cbd5e1;
             text-decoration: none;
             display: inline-block;
             border-radius: 12px;
             backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .nav-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .nav-btn:hover::before {
+            left: 100%;
         }
         
         .nav-btn.active {
@@ -102,12 +198,26 @@
             color: white;
             border-color: #8b5cf6;
             box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
+            transform: translateY(-2px);
+        }
+        
+        .nav-btn:hover:not(.active) {
+            color: #f8fafc;
+            border-color: #a78bfa;
+            background: rgba(139, 92, 246, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(139, 92, 246, 0.2);
         }
         
         .nav-btn.back-link {
             background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
             color: white;
             border-color: #6366f1;
+        }
+        
+        .nav-btn.back-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(99, 102, 241, 0.5);
         }
         
         .content {
@@ -117,12 +227,38 @@
             backdrop-filter: blur(20px);
             margin: 2rem;
             border-radius: 1.5rem;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3), 
+                        0 0 0 1px rgba(139, 92, 246, 0.1);
             border: 1px solid rgba(139, 92, 246, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 50%, rgba(139, 92, 246, 0.03) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(99, 102, 241, 0.03) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        
+        .content > * {
+            position: relative;
+            z-index: 1;
         }
         
         .view {
             display: none;
+            animation: fadeIn 0.6s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         
         .view.active {
@@ -137,12 +273,30 @@
             border-radius: 1rem;
             border: 1px solid rgba(251, 191, 36, 0.3);
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .warning-banner::before {
+            content: '⚖️';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            font-size: 3rem;
+            opacity: 0.1;
+            transform: rotate(-15deg);
         }
         
         .warning-text {
             color: #fbbf24;
             font-size: 0.875rem;
             font-weight: 500;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .section {
+            margin-bottom: 4rem;
         }
         
         .section-title {
@@ -154,6 +308,7 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
         }
         
         .media-grid {
@@ -168,7 +323,57 @@
             border: 1px solid rgba(139, 92, 246, 0.2);
             border-radius: 1.25rem;
             padding: 2.5rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .media-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.05) 0%, rgba(99, 102, 241, 0.03) 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        
+        .media-card::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent 30%, rgba(139, 92, 246, 0.1) 50%, transparent 70%);
+            transform: rotate(45deg);
+            transition: all 0.6s ease;
+            opacity: 0;
+        }
+        
+        .media-card:hover::before {
+            opacity: 1;
+        }
+        
+        .media-card:hover::after {
+            opacity: 1;
+            transform: rotate(45deg) translate(50%, 50%);
+        }
+        
+        .media-card:hover {
+            border-color: rgba(139, 92, 246, 0.4);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 
+                        0 0 0 1px rgba(139, 92, 246, 0.3),
+                        0 0 30px rgba(139, 92, 246, 0.2);
+            transform: translateY(-8px);
+        }
+        
+        .media-card > * {
+            position: relative;
+            z-index: 2;
         }
         
         .media-title {
@@ -234,152 +439,6 @@
             color: white;
         }
         
-        .filters {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-bottom: 3rem;
-            flex-wrap: wrap;
-        }
-        
-        .filter-btn {
-            background: rgba(30, 41, 59, 0.6);
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(139, 92, 246, 0.3);
-            padding: 0.75rem 1.5rem;
-            border-radius: 9999px;
-            font-size: 0.875rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            cursor: pointer;
-            color: #cbd5e1;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-        }
-        
-        .filter-btn.active {
-            background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
-            color: white;
-            border-color: #8b5cf6;
-            box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
-        }
-        
-        .gallery-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            padding: 1rem;
-        }
-        
-        .gallery-item {
-            position: relative;
-            aspect-ratio: 4/3;
-            border-radius: 1rem;
-            overflow: hidden;
-            cursor: pointer;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(139, 92, 246, 0.2);
-        }
-        
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-        
-        .gallery-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
-            color: white;
-            padding: 1.5rem;
-        }
-        
-        .gallery-title {
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-        
-        .gallery-subtitle {
-            font-size: 0.875rem;
-            color: #cbd5e1;
-        }
-        
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.9);
-        }
-        
-        .modal-content {
-            position: relative;
-            margin: 2% auto;
-            width: 90%;
-            max-width: 900px;
-            background: linear-gradient(135deg, rgba(30, 41, 59, 0.95) 0%, rgba(51, 65, 85, 0.95) 100%);
-            border-radius: 1.5rem;
-            border: 1px solid rgba(139, 92, 246, 0.3);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
-            overflow: hidden;
-        }
-        
-        .modal-close {
-            position: absolute;
-            top: 1rem;
-            right: 1.5rem;
-            color: white;
-            font-size: 2rem;
-            font-weight: bold;
-            cursor: pointer;
-            z-index: 1001;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: rgba(0, 0, 0, 0.5);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        #modalImage {
-            width: 100%;
-            height: auto;
-            max-height: 70vh;
-            object-fit: contain;
-            display: block;
-        }
-        
-        .modal-info {
-            padding: 2rem;
-            background: linear-gradient(135deg, rgba(15, 23, 42, 0.8) 0%, rgba(30, 41, 59, 0.8) 100%);
-        }
-        
-        #modalTitle {
-            font-size: 1.75rem;
-            font-weight: 500;
-            color: #f8fafc;
-            margin-bottom: 1rem;
-        }
-        
-        #modalDescription {
-            font-size: 1rem;
-            color: #cbd5e1;
-            line-height: 1.6;
-        }
-        
         .credits-section {
             margin-top: 4rem;
             padding: 2.5rem;
@@ -406,9 +465,16 @@
         
         .credit-category {
             background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(15px);
             border-radius: 1rem;
             padding: 1.5rem;
             border: 1px solid rgba(139, 92, 246, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .credit-category:hover {
+            border-color: rgba(139, 92, 246, 0.4);
+            box-shadow: 0 8px 25px rgba(139, 92, 246, 0.1);
         }
         
         .credit-category h4 {
@@ -438,6 +504,76 @@
             color: #8b5cf6;
         }
         
+        .filters {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            background: rgba(30, 41, 59, 0.6);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            color: #cbd5e1;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .filter-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .filter-btn:hover::before {
+            left: 100%;
+        }
+        
+        .filter-btn.active {
+            background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+            color: white;
+            border-color: #8b5cf6;
+            box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
+            transform: translateY(-2px);
+        }
+        
+        .filter-btn:hover:not(.active) {
+            color: #f8fafc;
+            border-color: #a78bfa;
+            background: rgba(139, 92, 246, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(139, 92, 246, 0.2);
+        }
+        
+        /* Loading animation for media */
+        .media-card.loading .media-player {
+            position: relative;
+            background: linear-gradient(90deg, rgba(15, 23, 42, 0.6) 25%, rgba(139, 92, 246, 0.1) 50%, rgba(15, 23, 42, 0.6) 75%);
+            background-size: 200% 100%;
+            animation: shimmer 2s infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+        
+        /* Responsive design */
         @media (max-width: 768px) {
             .title { font-size: 2.5rem; }
             .header-content { flex-direction: column; gap: 1.5rem; }
@@ -448,10 +584,24 @@
             .section-title { font-size: 2rem; }
             .credits-grid { grid-template-columns: 1fr; }
             .filters { flex-direction: column; align-items: center; }
-            .gallery-grid { grid-template-columns: 1fr; gap: 1.5rem; padding: 0.5rem; }
-            .modal-content { width: 95%; margin: 5% auto; }
-            .modal-info { padding: 1.5rem; }
-            #modalTitle { font-size: 1.5rem; }
+        }
+        
+        /* Scrollbar styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: rgba(15, 23, 42, 0.3);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, #8b5cf6, #6366f1);
+            border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(135deg, #a78bfa, #818cf8);
         }
     </style>
 </head>
@@ -602,52 +752,52 @@
                     <div class="media-card" data-period="early">
                         <div class="period-badge period-early">Early Works</div>
                         <h3 class="media-title">Rozmowa (Conversation)</h3>
-                        <p class="media-info">MIDI rendering from original manuscript (1923) • Lyrics: unknown</p>
+                        <p class="media-info">A Concert Song for voice and piano (1923) • Lyrics: unknown</p>
                         <audio controls preload="none" class="media-player">
                             <source src="assets/audio/samples/rozmowa.mp3" type="audio/mpeg">
                             Your browser does not support the audio element.
                         </audio>
                         <p class="media-description">
-                            This digital MIDI performance recreates Kaper's earliest surviving composition, preserved in manuscript form from his Warsaw Conservatory years. The realization demonstrates his classical training before transitioning to popular music.
+                            Kaper's earliest extant composition was written in Warsaw and survives in manuscript. This digital MIDI performance recreates the original manuscript, offering insight into Kaper's early compositional style before his commercial career began.
                         </p>
                     </div>
                     
                     <div class="media-card" data-period="early">
                         <div class="period-badge period-early">Early Works</div>
                         <h3 class="media-title">Etiuda for piano</h3>
-                        <p class="media-info">MIDI rendering from original manuscript (1925)</p>
+                        <p class="media-info">Composition dated 1925</p>
                         <audio controls preload="none" class="media-player">
                             <source src="assets/audio/samples/etiuda.mp3" type="audio/mpeg">
                             Your browser does not support the audio element.
                         </audio>
                         <p class="media-description">
-                            A piano study reflecting the rigorous technical training of Warsaw's musical institutions. This MIDI realization shows the young composer developing his craft within European classical traditions, two years before his first commercial successes.
+                            This composition by Kaper was written in Warsaw and is preserved in manuscript form.
                         </p>
                     </div>
 
                     <div class="media-card" data-period="early">
                         <div class="period-badge period-early">Early Works</div>
                         <h3 class="media-title">Sonatina for piano</h3>
-                        <p class="media-info">MIDI rendering from original manuscript - First movement (1927)</p>
+                        <p class="media-info">First movement of a composition dated 1927</p>
                         <audio controls preload="none" class="media-player">
                             <source src="assets/audio/samples/sonatina_1.mp3" type="audio/mpeg">
                             Your browser does not support the audio element.
                         </audio>
                         <p class="media-description">
-                            This multi-movement work represents Kaper's most ambitious early composition, written just as he was beginning his professional career. The classical form contrasts sharply with the popular songs that would soon make his reputation.
+                            This composition by Kaper was written in Warsaw and is preserved in manuscript form.
                         </p>
                     </div>
 
                     <div class="media-card" data-period="early">
                         <div class="period-badge period-early">Early Works</div>
                         <h3 class="media-title">Sonatina for piano</h3>
-                        <p class="media-info">MIDI rendering from original manuscript - Second movement (1927)</p>
+                        <p class="media-info">Second movement of a composition dated 1927</p>
                         <audio controls preload="none" class="media-player">
                             <source src="assets/audio/samples/sonatina_2.mp3" type="audio/mpeg">
                             Your browser does not support the audio element.
                         </audio>
                         <p class="media-description">
-                            The lyrical second movement reveals the melodic sensibility that would become Kaper's signature. Even within classical form, hints of his gift for memorable, emotionally engaging themes are already evident.
+                            This composition by Kaper was written in Warsaw and is preserved in manuscript form.
                         </p>
                     </div>
                 </div>
@@ -770,75 +920,6 @@
                 </div>
             </div>
             
-            <div id="gallery" class="view">
-                <h2 class="section-title">Photo Gallery</h2>
-                
-                <div class="gallery-container">
-                    <div class="gallery-grid">
-                        <div class="gallery-item" onclick="openModal('assets/images/portraits/kaper-young.jpg', 'Young Bronisław Kaper', 'Early portrait from Warsaw period')">
-                            <img src="assets/images/portraits/kaper-young.jpg" alt="Young Kaper" loading="lazy">
-                            <div class="gallery-overlay">
-                                <div class="gallery-title">Young Kaper</div>
-                                <div class="gallery-subtitle">Warsaw Period</div>
-                            </div>
-                        </div>
-                        
-                        <div class="gallery-item" onclick="openModal('assets/images/manuscripts/rozmowa-ms.jpg', 'Rozmowa Manuscript', 'Original handwritten score from 1923')">
-                            <img src="assets/images/manuscripts/rozmowa-ms.jpg" alt="Rozmowa manuscript" loading="lazy">
-                            <div class="gallery-overlay">
-                                <div class="gallery-title">Rozmowa Manuscript</div>
-                                <div class="gallery-subtitle">1923</div>
-                            </div>
-                        </div>
-                        
-                        <div class="gallery-item" onclick="openModal('assets/images/portraits/kaper-jurmann.jpg', 'Kaper & Jurmann', 'The famous songwriting duo at MGM')">
-                            <img src="assets/images/portraits/kaper-jurmann.jpg" alt="Kaper and Jurmann" loading="lazy">
-                            <div class="gallery-overlay">
-                                <div class="gallery-title">Kaper & Jurmann</div>
-                                <div class="gallery-subtitle">MGM Period</div>
-                            </div>
-                        </div>
-                        
-                        <div class="gallery-item" onclick="openModal('assets/images/studios/mgm-lot.jpg', 'MGM Studios', 'The famous studio lot where Kaper worked')">
-                            <img src="assets/images/studios/mgm-lot.jpg" alt="MGM Studios" loading="lazy">
-                            <div class="gallery-overlay">
-                                <div class="gallery-title">MGM Studios</div>
-                                <div class="gallery-subtitle">Hollywood</div>
-                            </div>
-                        </div>
-                        
-                        <div class="gallery-item" onclick="openModal('assets/images/posters/san-francisco-poster.jpg', 'San Francisco Film Poster', 'Movie poster featuring Kapers famous song')">
-                            <img src="assets/images/posters/san-francisco-poster.jpg" alt="San Francisco poster" loading="lazy">
-                            <div class="gallery-overlay">
-                                <div class="gallery-title">San Francisco</div>
-                                <div class="gallery-subtitle">1936 Film</div>
-                            </div>
-                        </div>
-                        
-                        <div class="gallery-item" onclick="openModal('assets/images/sheet-music/cosi-cosa-sheet.jpg', 'Così, Cosa Sheet Music', 'Original sheet music from A Night at the Opera')">
-                            <img src="assets/images/sheet-music/cosi-cosa-sheet.jpg" alt="Così, Cosa sheet music" loading="lazy">
-                            <div class="gallery-overlay">
-                                <div class="gallery-title">Così, Cosa</div>
-                                <div class="gallery-subtitle">Sheet Music</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div id="imageModal" class="modal" onclick="closeModal()">
-                    <div class="modal-content" onclick="event.stopPropagation()">
-                        <span class="modal-close" onclick="closeModal()">&times;</span>
-                        <div class="modal-image-container">
-                            <img id="modalImage" src="" alt="">
-                        </div>
-                        <div class="modal-info">
-                            <h3 id="modalTitle"></h3>
-                            <p id="modalDescription"></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
             <div id="credits" class="view">
                 <div class="credits-section">
                     <h3 class="credits-title">Media Credits & Sources</h3>
@@ -875,174 +956,116 @@
     </div>
     
     <script>
-        let currentView = 'audio';
-        let currentFilter = 'all';
-        let secretClickCount = 0;
-        let secretUnlocked = false;
+    let currentView = 'audio';
+    let currentFilter = 'all';
 
-        function showView(viewName) {
-            document.querySelectorAll('.view').forEach(view => {
-                view.classList.remove('active');
+    function showView(viewName) {
+        // Hide all views
+        document.querySelectorAll('.view').forEach(view => {
+            view.classList.remove('active');
+        });
+        
+        // Show selected view
+        const targetView = document.getElementById(viewName);
+        if (targetView) {
+            targetView.classList.add('active');
+        }
+        
+        // Update navigation
+        document.querySelectorAll('.nav-btn').forEach(btn => {
+            btn.classList.remove('active');
+        });
+        
+        const activeNavBtn = document.getElementById('nav-' + viewName);
+        if (activeNavBtn) {
+            activeNavBtn.classList.add('active');
+        }
+        
+        currentView = viewName;
+        
+        // If opening audio section, refresh filter
+        if (viewName === 'audio') {
+            filterMedia(currentFilter);
+        }
+    }
+
+    function filterMedia(period) {
+        currentFilter = period;
+        
+        // Update filter buttons
+        document.querySelectorAll('.filters .filter-btn').forEach(btn => {
+            btn.classList.remove('active');
+        });
+        
+        const activeBtn = document.getElementById('filter-' + period);
+        if (activeBtn) {
+            activeBtn.classList.add('active');
+        }
+        
+        // Get all audio cards from #audio section
+        const cards = document.querySelectorAll('#audio .media-card');
+        cards.forEach(card => {
+            const cardPeriod = card.dataset.period;
+            if (period === 'all' || cardPeriod === period) {
+                // Restore default style with animation
+                card.style.display = '';
+                card.style.animation = 'fadeIn 0.6s ease-out';
+            } else {
+                // Hide cards from other periods
+                card.style.display = 'none';
+            }
+        });
+    }
+
+    // Enhanced media player interactions
+    document.addEventListener('DOMContentLoaded', function() {
+        showView('audio');
+        
+        // Add loading states to media players
+        const mediaPlayers = document.querySelectorAll('.media-player');
+        mediaPlayers.forEach(player => {
+            player.addEventListener('loadstart', function() {
+                this.closest('.media-card').classList.add('loading');
             });
             
-            const targetView = document.getElementById(viewName);
-            if (targetView) {
-                targetView.classList.add('active');
-            }
-            
-            document.querySelectorAll('.nav-btn').forEach(btn => {
-                btn.classList.remove('active');
+            player.addEventListener('canplay', function() {
+                this.closest('.media-card').classList.remove('loading');
             });
             
-            const activeNavBtn = document.getElementById('nav-' + viewName);
-            if (activeNavBtn) {
-                activeNavBtn.classList.add('active');
-            }
-            
-            currentView = viewName;
-            
-            if (viewName === 'audio') {
-                filterMedia(currentFilter);
-            }
-        }
-
-        function filterMedia(period) {
-            currentFilter = period;
-            
-            document.querySelectorAll('.filters .filter-btn').forEach(btn => {
-                btn.classList.remove('active');
+            // Add hover effects for better UX
+            player.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.02)';
+                this.style.transition = 'transform 0.2s ease';
             });
             
-            const activeBtn = document.getElementById('filter-' + period);
-            if (activeBtn) {
-                activeBtn.classList.add('active');
-            }
-            
-            const cards = document.querySelectorAll('#audio .media-card');
-            cards.forEach(card => {
-                const cardPeriod = card.dataset.period;
-                if (period === 'all' || cardPeriod === period) {
-                    card.style.display = '';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        }
-
-        function openModal(imageSrc, title, description) {
-            const modal = document.getElementById('imageModal');
-            const modalImage = document.getElementById('modalImage');
-            const modalTitle = document.getElementById('modalTitle');
-            const modalDescription = document.getElementById('modalDescription');
-            
-            modalImage.src = imageSrc;
-            modalTitle.textContent = title;
-            modalDescription.textContent = description;
-            
-            modal.style.display = 'block';
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeModal() {
-            const modal = document.getElementById('imageModal');
-            modal.style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }
-
-        function unlockSecretGallery() {
-            secretUnlocked = true;
-            console.log('Gallery unlocked!');
-            
-            const navigation = document.querySelector('.navigation');
-            const creditsBtn = document.getElementById('nav-credits');
-            
-            const galleryBtn = document.createElement('button');
-            galleryBtn.className = 'nav-btn';
-            galleryBtn.id = 'nav-gallery';
-            galleryBtn.textContent = 'Gallery';
-            galleryBtn.onclick = () => showView('gallery');
-            
-            navigation.insertBefore(galleryBtn, creditsBtn);
-            
-            galleryBtn.style.opacity = '0';
-            galleryBtn.style.transform = 'translateY(-20px)';
-            
-            setTimeout(() => {
-                galleryBtn.style.transition = 'all 0.5s ease';
-                galleryBtn.style.opacity = '1';
-                galleryBtn.style.transform = 'translateY(0)';
-            }, 100);
-            
-            const portrait = document.querySelector('.header-portrait');
-            if (portrait) {
-                portrait.style.boxShadow = '0 0 30px rgba(255, 215, 0, 0.8), 0 0 60px rgba(255, 215, 0, 0.6), 0 8px 32px rgba(0, 0, 0, 0.4)';
-            }
-            
-            showSecretNotification();
-        }
-
-        function showSecretNotification() {
-            const notification = document.createElement('div');
-            notification.innerHTML = '✨ Secret Gallery Unlocked! ✨';
-            notification.style.cssText = `
-                position: fixed;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
-                color: #1f2937;
-                padding: 1rem 2rem;
-                border-radius: 2rem;
-                font-weight: bold;
-                z-index: 9999;
-                box-shadow: 0 10px 30px rgba(251, 191, 36, 0.5);
-                font-size: 1.2rem;
-                text-align: center;
-            `;
-            
-            document.body.appendChild(notification);
-            
-            setTimeout(() => {
-                if (document.body.contains(notification)) {
-                    document.body.removeChild(notification);
-                }
-            }, 3000);
-        }
-
-        document.addEventListener('DOMContentLoaded', function() {
-            let secretPortrait = document.querySelector('.header-portrait');
-            
-            if (secretPortrait) {
-                secretPortrait.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    secretClickCount++;
-                    console.log('Portrait clicked! Count:', secretClickCount);
-                    
-                    this.style.transform = 'scale(0.95)';
-                    setTimeout(() => {
-                        this.style.transform = '';
-                    }, 150);
-                    
-                    if (secretClickCount === 3 && !secretUnlocked) {
-                        unlockSecretGallery();
-                    }
-                    
-                    setTimeout(() => {
-                        if (!secretUnlocked) {
-                            secretClickCount = 0;
-                        }
-                    }, 3000);
-                });
-            }
-            
-            showView('audio');
-            
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape') {
-                    closeModal();
-                }
+            player.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1)';
             });
         });
+        
+        // Add smooth scroll behavior for better navigation
+        document.querySelectorAll('.nav-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const content = document.querySelector('.content');
+                content.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+        
+        // Add keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowLeft') {
+                const views = ['audio', 'video', 'credits'];
+                const currentIndex = views.indexOf(currentView);
+                const prevIndex = currentIndex > 0 ? currentIndex - 1 : views.length - 1;
+                showView(views[prevIndex]);
+            } else if (e.key === 'ArrowRight') {
+                const views = ['audio', 'video', 'credits'];
+                const currentIndex = views.indexOf(currentView);
+                const nextIndex = currentIndex < views.length - 1 ? currentIndex + 1 : 0;
+                showView(views[nextIndex]);
+            }
+        });
+    });
     </script>
 </body>
 </html>
