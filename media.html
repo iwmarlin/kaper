@@ -1075,6 +1075,13 @@
             }
             
             showSecretNotification();
+            
+            // Re-apply hover effects after gallery is unlocked
+            setTimeout(() => {
+                if (window.addHoverEffects) {
+                    window.addHoverEffects();
+                }
+            }, 600);
         }
 
         function showSecretNotification() {
