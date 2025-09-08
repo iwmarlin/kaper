@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bronisław Kaper - Photo Gallery</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+            color: #f8fafc;
+            min-height: 100vh;
+        }
+        
+        .container {
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .header {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.9) 50%, rgba(51, 65, 85, 0.85) 100%);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(139, 92, 246, 0.2);
+        }
+        
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header-portrait {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid rgba(139, 92, 246, 0.4);
+            box-shadow: 0 0 30px rgba(139, 92, 246, 0.3), 0 8px 32px rgba(0, 0, 0, 0.4);
+        }
+        
+        .title {
+            font-size: 4rem;
+            font-weight: 200;
+            margin-bottom: 1rem;
+            letter-spacing: -0.025em;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #cbd5e1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .period {
+            font-size: 1.125rem;
+            color: #a5b4fc;
+            font-weight: 300;
+            letter-spacing: 0.05em;
+        }
+        
+        .navigation {
+            display: flex;
+            justify-content: center;
+            padding: 2rem;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(20px);
+            gap: 2rem;
+            border-bottom: 1px solid rgba(139, 92, 246, 0.2);
+            flex-wrap: wrap;
+        }
+        
+        .nav-btn {
+            background: rgba(30, 41, 59, 0.6);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            font-size: 1.125rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 500;
+            padding: 0.75rem 1.5rem;
+            cursor: pointer;
+            color: #cbd5e1;
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .nav-btn.back-link {
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            color: white;
+            border-color: #6366f1;
+        }
+        
+        .content {
+            flex: 1;
+            padding: 3rem 4rem;
+            background: rgba(15, 23, 42, 0.4);
+            backdrop-filter: blur(20px);
+            margin: 2rem;
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(139, 92, 246, 0.2);
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 200;
+            text-align: center;
+            margin-bottom: 3rem;
+            background: linear-gradient(135deg, #f8fafc 0%, #cbd5e1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .gallery-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            padding: 1rem;
+        }
+        
+        .gallery-item {
+            position: relative;
+            aspect-ratio: 4/3;
+            border-radius: 1rem;
+            overflow: hidden;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(139, 92, 246, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5), 0 0 0 2px rgba(139, 92, 246, 0.4);
+            transform: translateY(-4px);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            color: white;
+            padding: 1.5rem;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+        
+        .gallery-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .gallery-subtitle {
+            font-size: 0.875rem;
+            color: #cbd5e1;
+        }
+        
+        .gallery-description {
+            font-size: 0.75rem;
+            color: #94a3b8;
+            margin-top: 0.5rem;
+            line-height: 1.4;
+        }
+        
+        .gallery-info {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.6) 0%, rgba(51, 65, 85, 0.4) 100%);
+            border-radius: 1rem;
+            border: 1px solid rgba(139, 92, 246, 0.2);
+        }
+        
+        .gallery-info h3 {
+            color: #f8fafc;
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+            font-weight: 500;
+        }
+        
+        .gallery-info p {
+            color: #94a3b8;
+            font-style: italic;
+            line-height: 1.6;
+        }
+        
+        .category-section {
+            margin-bottom: 4rem;
+        }
+        
+        .category-title {
+            font-size: 1.75rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+            color: #e2e8f0;
+            text-align: center;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(139, 92, 246, 0.2);
+        }
+        
+        @media (max-width: 768px) {
+            .title { font-size: 2.5rem; }
+            .header-content { flex-direction: column; gap: 1.5rem; }
+            .header-portrait { width: 80px; height: 80px; }
+            .content { padding: 2rem; margin: 1rem; }
+            .navigation { gap: 1rem; flex-direction: column; align-items: center; }
+            .gallery-grid { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; padding: 0.5rem; }
+            .section-title { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-content">
+                <img src="assets/images/portraits/kaper-young.jpg" alt="Bronisław Kaper" class="header-portrait" onerror="this.style.display='none'">
+                <div class="header-text">
+                    <h2 class="title">Bronisław Kaper: Photo Gallery</h2>
+                    <h3 class="period">Visual Archive</h3>
+                </div>
+            </div>
+        </div>
+        
+        <div class="navigation">
+            <a href="media.html" class="nav-btn back-link">← Back to Media Gallery</a>
+            <a href="index.html" class="nav-btn">Main Presentation</a>
+        </div>
+        
+        <div class="content">
+            <h2 class="section-title">Complete Photo Collection</h2>
+            
+            <div class="category-section">
+                <h3 class="category-title">Portraits & Personal</h3>
+                <div class="gallery-container">
+                    <div class="gallery-grid">
+                        <div class="gallery-item" onclick="openImage('assets/images/portraits/kaper-young.jpg')">
+                            <img src="assets/images/portraits/kaper-young.jpg" alt="Young Kaper" loading="lazy">
+                            <div class="gallery-overlay">
+                                <div class="gallery-title">Young Bronisław Kaper</div>
+                                <div class="gallery-subtitle">Warsaw Period</div>
+                                <div class="gallery-description">Early portrait from his conservatory years in Warsaw, showing the young composer before his emigration to Berlin.</div>
+                            </div>
+                        </div>
+                        
+                        <div class="gallery-item" onclick="openImage('assets/images/portraits/kaper-jurmann.jpg')">
+                            <img src="assets/images/portraits/kaper-jurmann.jpg" alt="Kaper and Jurmann" loading="lazy">
+                            <div class="gallery-overlay">
+                                <div class="gallery-title">Kaper & Jurmann</div>
+                                <div class="gallery-subtitle">MGM Period</div>
+                                <div class="gallery-description">The famous songwriting duo at MGM Studios. Their partnership produced some of Hollywood's most memorable songs.</div>
+                            </div>
+                        </div>
+                        
+                        <div class="gallery-item" onclick="openImage('assets/images/portraits/kaper-mature.jpg')">
+                            <img src="assets/images/portraits/kaper-mature.jpg" alt="Mature Kaper" loading="lazy">
+                            <div class="gallery-overlay">
+                                <div class="gallery-title">Bronisław Kaper</div>
+                                <div class="gallery-subtitle">MGM Period</div>
+                                <div class="gallery-description">The composer in his first Hollywood years, having established himself as one of the leading film composers.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="category-section">
+                <h3 class="category-title">Manuscripts & Sheet Music</h3>
+                <div class="gallery-container">
+                    <div class="gallery-grid">
+                        <div class="gallery-item" onclick="openImage('assets/images/manuscripts/rozmowa-ms.jpg')">
+                            <img src="assets/images/manuscripts/rozmowa-ms.jpg" alt="Rozmowa manuscript" loading="lazy">
+                            <div class="gallery-overlay">
+                                <div class="gallery-title">Rozmowa Manuscript</div>
+                                <div class="gallery-subtitle">1923</div>
+                                <div class="gallery-description">Original handwritten score of his earliest surviving composition, written during his studies at Warsaw Conservatory.</div>
+                            </div>
+                        </div>
+                        
+                        <div class="gallery-item" onclick="openImage('assets/images/manuscripts/etiuda-ms.jpg')">
+                            <img src="assets/images/manuscripts/etiuda-ms.jpg" alt="Etiuda manuscript" loading="lazy">
+                            <div class="gallery-overlay">
+                                <div class="gallery-title">Etiuda Manuscript</div>
+                                <div class="gallery-subtitle">1925</div>
+                                <div class="gallery-description">Piano study manuscript showing his classical training and technical development as a composer.</div>
+                            </div>
+                        </div>
+                        
+                        <div class="gallery-item" onclick="openImage('assets/images/sheet-music/cosi-cosa-sheet.jpg')">
+                            <img src="assets/images/sheet-music/cosi-cosa-sheet.jpg" alt="Così, Cosa sheet music" loading="lazy">
+                            <div class="gallery-overlay">
+                                <div class="gallery-title">Così, Cosa</div>
+                                <div class="gallery-subtitle">Sheet Music</div>
+                                <div class="gallery-description">Published sheet music from "A Night at the Opera" showing the professional presentation of his Hollywood work.</div>
+                            </div>
+                        </div>
+                        
+                        <div class="gallery-item" onclick="openImage('assets/images/sheet-music/san-francisco-sheet.jpg')">
+                            <img src="assets/images/sheet-music/san-francisco-sheet.jpg" alt="San Francisco sheet music" loading="lazy">
+                            <div class="gallery-overlay">
+                                <div class="gallery-title">San Francisco</div>
+                                <div class="gallery-subtitle">Sheet Music</div>
+                                <div class="gallery-description">The iconic song that became synonymous with the city, showcasing Kaper's melodic gift.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="gallery-info">
+                <h3>How to View Images</h3>
+                <p>Click on any image to view it in full size in a new tab. You can then zoom, scroll, and save the images as needed. All images are presented for educational and research purposes.</p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function openImage(imageSrc) {
+            window.open(imageSrc, '_blank');
+        }
+        
+        // Add loading animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            
+            galleryItems.forEach((item, index) => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(20px)';
+                
+                setTimeout(() => {
+                    item.style.transition = 'all 0.6s ease';
+                    item.style.opacity = '1';
+                    item.style.transform = 'translateY(0)';
+                }, index * 100);
+            });
+        });
+    </script>
+</body>
+</html>
