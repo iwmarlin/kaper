@@ -61,11 +61,21 @@ body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif
 }
 .timeline-item .img-gallery img { 
   width:100%; 
-  height: 200px;
-  object-fit: cover;
   border-radius:0.75rem; 
   border:1px solid rgba(229,231,235,.6);
   transition: transform 0.3s ease;
+}
+/* Dla pojedynczego obrazka - automatyczna wysokość */
+.timeline-item .img-gallery.single img {
+  height: auto;
+  object-fit: contain;
+}
+/* Dla wielu obrazków - stała wysokość */
+.timeline-item .img-gallery.double img,
+.timeline-item .img-gallery.triple img,
+.timeline-item .img-gallery.quad img {
+  height: 200px;
+  object-fit: cover;
 }
 .timeline-item .img-gallery img:hover {
   transform: scale(1.05);
