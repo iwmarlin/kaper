@@ -439,6 +439,11 @@
             color: white;
         }
         
+        .period-document {
+            background: linear-gradient(135deg, #d97706 0%, #f59e0b 100%);
+            color: white;
+        }
+        
         .credits-section {
             margin-top: 4rem;
             padding: 2.5rem;
@@ -573,6 +578,64 @@
             100% { background-position: 200% 0; }
         }
         
+        /* Document gallery styles */
+        .document-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .document-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        .document-item .document-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 12px;
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(139, 92, 246, 0.2);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            margin-bottom: 0;
+        }
+        
+        .document-item .document-image:hover {
+            transform: scale(1.05);
+        }
+        
+        .document-caption {
+            font-size: 0.75rem;
+            color: #94a3b8;
+            text-align: center;
+            font-style: italic;
+            line-height: 1.4;
+        }
+        
+        /* Single document image (when not in gallery) */
+        .document-image:not(.document-item .document-image) {
+            width: 100%;
+            height: auto;
+            max-height: 500px;
+            object-fit: contain;
+            border-radius: 12px;
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(139, 92, 246, 0.2);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            margin-bottom: 1.5rem;
+        }
+        
+        .document-image:not(.document-item .document-image):hover {
+            transform: scale(1.02);
+        }
+        
         /* Responsive design */
         @media (max-width: 768px) {
             .title { font-size: 2.5rem; }
@@ -584,6 +647,7 @@
             .section-title { font-size: 2rem; }
             .credits-grid { grid-template-columns: 1fr; }
             .filters { flex-direction: column; align-items: center; }
+            .document-gallery { grid-template-columns: 1fr; }
         }
         
         /* Scrollbar styling */
@@ -621,6 +685,7 @@
             <a href="index.html" class="nav-btn back-link">← Back to Main Presentation</a>
             <button class="nav-btn active" onclick="showView('audio')" id="nav-audio">Audio</button>
             <button class="nav-btn" onclick="showView('video')" id="nav-video">Video</button>
+            <button class="nav-btn" onclick="showView('documents')" id="nav-documents">Documents</button>
             <button class="nav-btn" onclick="showView('credits')" id="nav-credits">Credits</button>
         </div>
         
@@ -816,7 +881,7 @@
                             Your browser does not support the video element.
                         </video>
                         <p class="media-description">
-                            The song — a foxtrot from the feature film 'Ein toller Einfall'. This song became one of the popular 
+                            The song – a foxtrot from the feature film 'Ein toller Einfall'. This song became one of the popular 
                             entertainment pieces of the pre-war era, with its light melody and cheerful mood reflecting the lively spirit of the Roaring Twenties.
                         </p>
                     </div>
@@ -877,7 +942,7 @@
                     <div class="media-card">
                         <div class="period-badge period-video">Film sample (Hollywood)</div>
                         <h3 class="media-title">Così, Cosa</h3>
-                        <p class="media-info">From "A Night at the Opera" (1935) • With Walter Jurmann • Lyrics: Ned Washington — Educational Use</p>
+                        <p class="media-info">From "A Night at the Opera" (1935) • With Walter Jurmann • Lyrics: Ned Washington – Educational Use</p>
                         <video controls preload="none" class="media-player" poster="assets/images/video-thumbnails/cosi-cosa.jpg">
                             <source src="assets/video/samples/cosi-cosa.mp4" type="video/mp4">
                             Your browser does not support the video element.
@@ -892,7 +957,7 @@
                     <div class="media-card">
                         <div class="period-badge period-video">Film sample (Hollywood)</div>
                         <h3 class="media-title">San Francisco</h3>
-                        <p class="media-info">From "San Francisco" (1936) • Lyrics: Gus Kahn • MGM Production — Educational Use</p>
+                        <p class="media-info">From "San Francisco" (1936) • Lyrics: Gus Kahn • MGM Production – Educational Use</p>
                         <video controls preload="none" class="media-player" poster="assets/images/video-thumbnails/san-francisco.jpg">
                             <source src="assets/video/samples/san-francisco.mp4" type="video/mp4">
                             Your browser does not support the video element.
@@ -907,7 +972,7 @@
                     <div class="media-card">
                         <div class="period-badge period-video">Film sample (Hollywood)</div>
                         <h3 class="media-title">All God's Chillun Got Rhythm</h3>
-                        <p class="media-info">From "A Day at the Races" (1937) • Lyrics: Gus Kahn • With Walter Jurmann — Educational Use</p>
+                        <p class="media-info">From "A Day at the Races" (1937) • Lyrics: Gus Kahn • With Walter Jurmann – Educational Use</p>
                         <video controls preload="none" class="media-player" poster="assets/images/video-thumbnails/san-francisco.jpg">
                             <source src="assets/video/samples/all-gods.mp4" type="video/mp4">
                             Your browser does not support the video element.
@@ -915,6 +980,168 @@
                         <p class="media-description">
                             A swing-influenced number that demonstrates Kaper's versatility and adaptation 
                             to contemporary American musical trends of the late 1930s.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="documents" class="view">
+                <h2 class="section-title">Press Clippings, Photos & Documents</h2>
+                
+                <div class="media-grid">
+                    <div class="media-card">
+                        <div class="period-badge period-historical">Warsaw Period</div>
+                        <h3 class="media-title">Early Education & Career</h3>
+                        
+                        <div class="document-gallery">
+                            <div class="document-item">
+                                <img src="assets/images/documents/warsaw-university.jpg" alt="University documents" class="document-image" onerror="this.style.display='none'">
+                                <p class="document-caption">University of Warsaw law diploma, 1925</p>
+                            </div>
+                            
+                            <div class="document-item">
+                                <img src="assets/images/documents/warsaw-clipping1.jpg" alt="Warsaw press" class="document-image" onerror="this.style.display='none'">
+                                <p class="document-caption">Early press coverage from Warsaw</p>
+                            </div>
+                            
+                            <div class="document-item">
+                                <img src="assets/images/documents/chopin-school.jpg" alt="Music school" class="document-image" onerror="this.style.display='none'">
+                                <p class="document-caption">Chopin Music School documentation</p>
+                            </div>
+                        </div>
+                        
+                        <p class="media-description">
+                            Documents from Kaper's formative years in Warsaw: law studies at the University of Warsaw and musical education at the Chopin Music School.
+                        </p>
+                    </div>
+                    
+                    <div class="media-card">
+                        <div class="period-badge period-historical">Berlin Period</div>
+                        <h3 class="media-title">UFA Studio Years</h3>
+                        
+                        <div class="document-gallery">
+                            <div class="document-item">
+                                <img src="assets/images/documents/berlin-clipping1.jpg" alt="UFA press" class="document-image" onerror="this.style.display='none'">
+                                <p class="document-caption">UFA film announcement, 1932</p>
+                            </div>
+                            
+                            <div class="document-item">
+                                <img src="assets/images/documents/berlin-clipping2.jpg" alt="Berlin review" class="document-image" onerror="this.style.display='none'">
+                                <p class="document-caption">Review in Berliner Tageblatt</p>
+                            </div>
+                            
+                            <div class="document-item">
+                                <img src="assets/images/documents/ufa-studios.jpg" alt="UFA studios" class="document-image" onerror="this.style.display='none'">
+                                <p class="document-caption">UFA studios, Babelsberg</p>
+                            </div>
+                        </div>
+                        
+                        <p class="media-description">
+                            German press materials and photographs from Kaper's collaboration with UFA studios and Fritz Rotter during 1930-1933.
+                        </p>
+                    </div>
+                    
+                    <div class="media-card">
+                        <div class="period-badge period-document">Partnership with Walter Jurmann</div>
+                        <h3 class="media-title">Kaper & Jurmann Duo</h3>
+                        
+                        <div class="document-gallery">
+                            <div class="document-item">
+                                <img src="assets/images/documents/jurmann-kaper-1.jpg" alt="Kaper and Jurmann" class="document-image" onerror="this.style.display='none'">
+                                <p class="document-caption">Kaper and Jurmann in Berlin, early 1930s</p>
+                            </div>
+                            
+                            <div class="document-item">
+                                <img src="assets/images/documents/jurmann-kaper-2.jpg" alt="Studio photo" class="document-image" onerror="this.style.display='none'">
+                                <p class="document-caption">At work in the studio</p>
+                            </div>
+                            
+                            <div class="document-item">
+                                <img src="assets/images/documents/sheet-music-duo.jpg" alt="Sheet music" class="document-image" onerror="this.style.display='none'">
+                                <p class="document-caption">Published sheet music cover</p>
+                            </div>
+                        </div>
+                        
+                        <p class="media-description">
+                            Photographs and materials documenting the creative partnership between Bronisław Kaper and Walter Jurmann, from their Berlin years through Hollywood success.
+                        </p>
+                    </div>
+                    
+                    <div class="media-card">
+                        <div class="period-badge period-document">Immigration to USA</div>
+                        <h3 class="media-title">Journey to America</h3>
+                        
+                        <div class="document-gallery">
+                            <div class="document-item">
+                                <img src="assets/images/documents/ship-manifest.jpg" alt="Ship manifest" class="document-image" onerror="this.style.display='none'">
+                                <p class="document-caption">Passenger ship manifest</p>
+                            </div>
+                            
+                            <div class="document-item">
+                                <img src="assets/images/documents/declaration-intention.jpg" alt="Declaration document" class="document-image" onerror="this.style.display='none'">
+                                <p class="document-caption">Declaration of Intention, Feb 25, 1935</p>
+                            </div>
+                            
+                            <div class="document-item">
+                                <img src="assets/images/documents/calexico-border.jpg" alt="Border crossing" class="document-image" onerror="this.style.display='none'">
+                                <p class="document-caption">Calexico border crossing, 1934</p>
+                            </div>
+                        </div>
+                        
+                        <p class="media-description">
+                            Official U.S. immigration documents showing Kaper's entry through Calexico, California and his path to American citizenship.
+                        </p>
+                    </div>
+                    
+                    <div class="media-card">
+                        <div class="period-badge period-video">Hollywood Period</div>
+                        <h3 class="media-title">MGM Years</h3>
+                        
+                        <div class="document-gallery">
+                            <div class="document-item">
+                                <img src="assets/images/documents/mgm-contract.jpg" alt="MGM contract" class="document-image" onerror="this.style.display='none'">
+                                <p class="document-caption">MGM studio contract</p>
+                            </div>
+                            
+                            <div class="document-item">
+                                <img src="assets/images/documents/hollywood-portrait.jpg" alt="Studio portrait" class="document-image" onerror="this.style.display='none'">
+                                <p class="document-caption">MGM publicity photo, circa 1936</p>
+                            </div>
+                            
+                            <div class="document-item">
+                                <img src="assets/images/documents/variety-review.jpg" alt="Variety review" class="document-image" onerror="this.style.display='none'">
+                                <p class="document-caption">Variety review of "San Francisco"</p>
+                            </div>
+                        </div>
+                        
+                        <p class="media-description">
+                            Hollywood trade press coverage, studio photographs, and publicity materials from Kaper's work at MGM studios during 1935-1939.
+                        </p>
+                    </div>
+                    
+                    <div class="media-card">
+                        <div class="period-badge period-document">Sheet Music & Publications</div>
+                        <h3 class="media-title">Published Works</h3>
+                        
+                        <div class="document-gallery">
+                            <div class="document-item">
+                                <img src="assets/images/documents/sheet-music-1.jpg" alt="Sheet music 1" class="document-image" onerror="this.style.display='none'">
+                                <p class="document-caption">"San Francisco" sheet music cover</p>
+                            </div>
+                            
+                            <div class="document-item">
+                                <img src="assets/images/documents/sheet-music-2.jpg" alt="Sheet music 2" class="document-image" onerror="this.style.display='none'">
+                                <p class="document-caption">European period publication</p>
+                            </div>
+                            
+                            <div class="document-item">
+                                <img src="assets/images/documents/sheet-music-3.jpg" alt="Sheet music 3" class="document-image" onerror="this.style.display='none'">
+                                <p class="document-caption">German edition tango</p>
+                            </div>
+                        </div>
+                        
+                        <p class="media-description">
+                            Collection of published sheet music covers from various periods of Kaper's career, showing the commercial distribution of his compositions.
                         </p>
                     </div>
                 </div>
@@ -943,9 +1170,10 @@
                         <div class="credit-category">
                             <h4>📸 Additional Resources</h4>
                             <ul class="credit-list">
-                                <li><a href="gallery.html">Image Gallery</a></li>
+                                <li>Historical documents and photographs</li>
                                 <li>Manuscript reproductions</li>
                                 <li>Studio photographs</li>
+                                <li>Press clippings archives</li>
                             </ul>
                         </div>
                         
@@ -1063,16 +1291,23 @@
         // Add keyboard navigation
         document.addEventListener('keydown', function(e) {
             if (e.key === 'ArrowLeft') {
-                const views = ['audio', 'video', 'credits'];
+                const views = ['audio', 'video', 'documents', 'credits'];
                 const currentIndex = views.indexOf(currentView);
                 const prevIndex = currentIndex > 0 ? currentIndex - 1 : views.length - 1;
                 showView(views[prevIndex]);
             } else if (e.key === 'ArrowRight') {
-                const views = ['audio', 'video', 'credits'];
+                const views = ['audio', 'video', 'documents', 'credits'];
                 const currentIndex = views.indexOf(currentView);
                 const nextIndex = currentIndex < views.length - 1 ? currentIndex + 1 : 0;
                 showView(views[nextIndex]);
             }
+        });
+        
+        // Add click-to-enlarge for document images
+        document.querySelectorAll('.document-image').forEach(img => {
+            img.addEventListener('click', function() {
+                window.open(this.src, '_blank');
+            });
         });
     });
     </script>
