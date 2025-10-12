@@ -1483,8 +1483,9 @@
             { title: "Rozmowa", year: 1923, instrumentation: "concert song for voice and piano" },
             { title: "Etude", year: 1925, instrumentation: "piano" },
             { title: "Untitled", year: 1926, instrumentation: "orchestra" },
-            { title: "Sonatina", year: 1927, instrumentation: "piano", movements: ["I. Moderato", "II. Scherzo", "III. Adagio"] },
-            { title: "Untitled", year: 1929, instrumentation: "8 violins and piano" }
+            { title: "Sonatina", year: 1927, instrumentation: "piano", movements: ["Moderato, Allegro"] },
+            { title: "Untitled", year: 1929, instrumentation: "8 violins and piano" },
+            { title: "Coctails", year: 1931, publisher: "Alberti G.m.B.H., Berlin", instrumentation: "Jazz transcriptions for two pianos" }
         ];
         
         let chart;
@@ -1796,7 +1797,8 @@
             <h3 class="film-title">${work.title}</h3>
             <div class="film-year">${work.year}</div>
             <div class="film-details">
-                <div><strong>For:</strong> ${work.instrumentation}</div>
+                <div><strong>Instrumentation:</strong> ${work.instrumentation}</div>
+                ${work.publisher ? `<div><strong>Publisher:</strong> ${work.publisher}</div>` : ''}
                 ${work.movements ? `<div><strong>Contents:</strong><br>${work.movements.map((m, i) => `${m}`).join('<br>')}</div>` : ''}
             </div>
         </div>
