@@ -1480,9 +1480,11 @@
         ];
         
         const otherWorksData = [
-            { title: "Rozmowa", year: 1930, cast: "Artist 1, Artist 2" },
-            { title: "Etiuda", year: 1935, cast: "Artist 3, Artist 4" },
-            { title: "Sonatina", year: 1938, cast: "Artist 5, Artist 6" }
+            { title: "Rozmowa", year: 1923, instrumentation: "concert song for voice and piano" },
+            { title: "Etude", year: 1925, instrumentation: "piano" },
+            { title: "Untitled", year: 1926, instrumentation: "orchestra" },
+            { title: "Sonatina", year: 1927, instrumentation: "piano" },
+            { title: "Untitled", year: 1929, instrumentation: "8 violins and piano" }
         ];
         
         let chart;
@@ -1794,7 +1796,7 @@
                         <h3 class="film-title">${work.title}</h3>
                         <div class="film-year">${work.year}</div>
                         <div class="film-details">
-                            <div><strong>Cast:</strong> ${work.cast}</div>
+                            <div><strong>For:</strong> ${work.instrumentation}</div>
                         </div>
                     </div>
                 `;
