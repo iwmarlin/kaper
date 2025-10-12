@@ -810,7 +810,6 @@
             box-shadow: 0 4px 10px rgba(220, 38, 38, 0.4);
         }
 
-        /* Modal overlay */
         .modal-overlay {
             display: none;
             position: fixed;
@@ -836,7 +835,6 @@
             to { opacity: 1; }
         }
 
-        /* Modal content */
         .modal-content {
             background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(249, 250, 251, 0.98) 100%);
             border-radius: 1.5rem;
@@ -861,7 +859,6 @@
             }
         }
 
-        /* Close button */
         .modal-close {
             position: absolute;
             top: 1.5rem;
@@ -888,7 +885,6 @@
             box-shadow: 0 6px 16px rgba(239, 68, 68, 0.6);
         }
 
-        /* Modal film/song card */
         .modal-card {
             position: relative;
         }
@@ -934,7 +930,6 @@
             font-size: 0.875rem;
         }
 
-        /* Smooth scrollbar for modal */
         .modal-content::-webkit-scrollbar {
             width: 8px;
         }
@@ -1001,6 +996,7 @@
             <button class="nav-btn" id="nav-periods">Periods</button>
             <button class="nav-btn" id="nav-filmography">Filmography</button>
             <button class="nav-btn" id="nav-songs">Songs</button>
+            <button class="nav-btn" id="nav-other">Other</button>
             <a href="media.html" class="nav-btn media-link">🎵 Media Gallery</a>
         </div>
         
@@ -1189,7 +1185,6 @@
                 
                 <div class="films-container">
                     <div class="films-grid" id="filmsGrid">
-                        <!-- Films will be populated by JavaScript -->
                     </div>
                 </div>
             </div>
@@ -1209,14 +1204,24 @@
                 
                 <div class="films-container">
                     <div class="films-grid" id="songsGrid">
-                        <!-- Songs will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+            
+            <div id="other" class="view">
+                <div class="search-container">
+                    <input type="text" id="otherSearch" placeholder="Search by year or title..." class="search-input">
+                    <button onclick="clearOtherSearch()" class="clear-search">Clear</button>
+                </div>
+                
+                <div class="films-container">
+                    <div class="films-grid" id="otherGrid">
                     </div>
                 </div>
             </div>
         </div>
     </div>
     
-    <!-- Modal -->
     <div class="modal-overlay" id="modalOverlay">
         <div class="modal-content" id="modalContent">
             <button class="modal-close" id="modalClose">×</button>
@@ -1474,6 +1479,12 @@
             { title: "J'ai un message pour toi [A Message from the Man in the Moon]", genre: "slow-fox", year: 1937, publisher: null, lyricist: "Jean Féline", notes: "with Jurmann", film: "A day at the races", period: "hollywood" }
         ];
         
+        const otherWorksData = [
+            { title: "Example Work 1", year: 1930, cast: "Artist 1, Artist 2" },
+            { title: "Example Work 2", year: 1935, cast: "Artist 3, Artist 4" },
+            { title: "Example Work 3", year: 1938, cast: "Artist 5, Artist 6" }
+        ];
+        
         let chart;
         let currentFilter = 'all';
         let currentFilmFilter = 'all';
@@ -1483,6 +1494,7 @@
         document.addEventListener('DOMContentLoaded', function() {
             renderFilms();
             renderSongs();
+            renderOther();
             
             const closeBtn = document.getElementById('modalClose');
             if (closeBtn) {
@@ -1508,6 +1520,8 @@
             if (f) f.addEventListener('input', renderFilms);
             const s = document.getElementById('songSearch');
             if (s) s.addEventListener('input', renderSongs);
+            const o = document.getElementById('otherSearch');
+            if (o) o.addEventListener('input', renderOther);
             
             document.querySelectorAll('.period-image').forEach(img => {
                 img.addEventListener('click', () => {
@@ -1613,6 +1627,10 @@
             
             if (viewName === 'songs') {
                 setTimeout(() => renderSongs(), 100);
+            }
+            
+            if (viewName === 'other') {
+                setTimeout(() => renderOther(), 100);
             }
         }
 
@@ -1754,6 +1772,35 @@
             }).join('');
         }
 
+        function renderOther() {
+            const grid = document.getElementById('otherGrid');
+            if (!grid) return;
+
+            let filteredWorks = otherWorksData;
+
+            const searchInput = document.getElementById('otherSearch');
+            const searchTerm = searchInput ? searchInput.value.toLowerCase().trim() : '';
+            if (searchTerm) {
+                filteredWorks = filteredWorks.filter(work => {
+                    const title = (work.title || '').toString().toLowerCase();
+                    const year = (work.year || '').toString();
+                    return title.includes(searchTerm) || year.includes(searchTerm);
+                });
+            }
+
+            grid.innerHTML = filteredWorks.map((work) => {
+                return `
+                    <div class="film-card">
+                        <h3 class="film-title">${work.title}</h3>
+                        <div class="film-year">${work.year}</div>
+                        <div class="film-details">
+                            <div><strong>Cast:</strong> ${work.cast}</div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
         function showPeriodTimeline(period) {
             showView('timeline');
             setTimeout(() => {
@@ -1788,7 +1835,9 @@
             
             if (chart) {
                 chart.destroy();
-            }const data = getFilteredData();
+            }
+            
+            const data = getFilteredData();
             
             chart = new Chart(context, {
                 type: 'line',
@@ -1896,11 +1945,17 @@
             if (el) { el.value = ''; renderSongs(); }
         }
 
+        function clearOtherSearch() {
+            const el = document.getElementById('otherSearch');
+            if (el) { el.value = ''; renderOther(); }
+        }
+
         document.getElementById('nav-overview').onclick = () => showView('overview');
         document.getElementById('nav-timeline').onclick = () => showView('timeline');
         document.getElementById('nav-periods').onclick = () => showView('periods');
         document.getElementById('nav-filmography').onclick = () => showView('filmography');
         document.getElementById('nav-songs').onclick = () => showView('songs');
+        document.getElementById('nav-other').onclick = () => showView('other');
     </script>
 </body>
 </html>
