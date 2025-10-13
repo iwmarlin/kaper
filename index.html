@@ -1686,46 +1686,47 @@
         }
 
         function renderFilms() {
-            const grid = document.getElementById('filmsGrid');
-            if (!grid) return;
+    const grid = document.getElementById('filmsGrid');
+    if (!grid) return;
 
-            let filteredFilms = filmData;
+    let filteredFilms = filmData;
 
-            if (currentFilmFilter !== 'all') {
-                filteredFilms = filmData.filter(film => film.period === currentFilmFilter);
-            }
+    if (currentFilmFilter !== 'all') {
+        filteredFilms = filmData.filter(film => film.period === currentFilmFilter);
+    }
 
-            const filmSearchInput = document.getElementById('filmSearch');
-            const filmSearchTerm = filmSearchInput ? filmSearchInput.value.toLowerCase().trim() : '';
-            if (filmSearchTerm) {
-                filteredFilms = filteredFilms.filter(film => {
-                    const title = (film.title || '').toString().toLowerCase();
-                    const year = (film.year || '').toString();
-                    return title.includes(filmSearchTerm) || year.includes(filmSearchTerm);
-                });
-            }
+    const filmSearchInput = document.getElementById('filmSearch');
+    const filmSearchTerm = filmSearchInput ? filmSearchInput.value.toLowerCase().trim() : '';
+    if (filmSearchTerm) {
+        filteredFilms = filteredFilms.filter(film => {
+            const title = (film.title || '').toString().toLowerCase();
+            const year = (film.year || '').toString();
+            return title.includes(filmSearchTerm) || year.includes(filmSearchTerm);
+        });
+    }
 
-            grid.innerHTML = filteredFilms.map((film) => {
-                const filmIndex = filmData.indexOf(film);
-                const posterImage = film.poster ? 
-                    `<img src="${film.poster}" alt="Poster for ${film.title}" class="film-poster" onerror="this.style.display='none'">` : '';
-                
-                return `
-                    <div class="film-card" onclick="openModal(createFilmModal(filmData[${filmIndex}]))">
-                        <div class="period-badge period-${film.period}">${film.period === 'european' ? 'European' : 'Hollywood'}</div>
-                        ${posterImage}
-                        <h3 class="film-title">${film.title}</h3>
-                        <div class="film-year">${film.year}</div>
-                        <div class="film-details">
-                            <div><strong>Director:</strong> ${film.director}</div>
-                            <div><strong>Production:</strong> ${film.production}</div>
-                            <div class="film-partner"><strong>With Jurmann:</strong> ${film.jurmann}</div>
-                            ${film.version ? `<div class="film-notes"><strong>Version of:</strong> ${film.version}</div>` : ''}
-                        </div>
-                    </div>
-                `;
-            }).join('');
-        }
+    grid.innerHTML = filteredFilms.map((film) => {
+        const filmIndex = filmData.indexOf(film);
+        const posterImage = film.poster ? 
+            `<img src="${film.poster}" alt="Poster for ${film.title}" class="film-poster" onerror="this.style.display='none'">` : '';
+        
+        return `
+            <div class="film-card" onclick="openModal(createFilmModal(filmData[${filmIndex}]))">
+                <div class="period-badge period-${film.period}">${film.period === 'european' ? 'European' : 'Hollywood'}</div>
+                ${posterImage}
+                <h3 class="film-title">${film.title}</h3>
+                <div class="film-year">${film.year}</div>
+                <div class="film-details">
+                    <div><strong>Director:</strong> ${film.director}</div>
+                    <div><strong>Production:</strong> ${film.production}</div>
+                    ${film.credit ? `<div><strong>Credit:</strong> ${film.credit}</div>` : ''}
+                    <div class="film-partner"><strong>With Jurmann:</strong> ${film.jurmann}</div>
+                    ${film.version ? `<div class="film-notes"><strong>Version of:</strong> ${film.version}</div>` : ''}
+                </div>
+            </div>
+        `;
+    }).join('');
+}
 
         function renderSongs() {
             const grid = document.getElementById('songsGrid');
