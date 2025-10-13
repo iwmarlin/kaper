@@ -1559,24 +1559,25 @@
         }
 
         function createFilmModal(film) {
-            const posterImage = film.poster ? 
-                `<img src="${film.poster}" alt="Poster for ${film.title}" class="film-poster" onerror="this.style.display='none'">` : '';
-            
-            return `
-                <div class="modal-card">
-                    <div class="period-badge period-${film.period}">${film.period === 'european' ? 'European' : 'Hollywood'}</div>
-                    ${posterImage}
-                    <h3 class="film-title">${film.title}</h3>
-                    <div class="film-year">${film.year}</div>
-                    <div class="film-details">
-                        <div><strong>Director:</strong> ${film.director}</div>
-                        <div><strong>Production:</strong> ${film.production}</div>
-                        <div class="film-partner"><strong>With Jurmann:</strong> ${film.jurmann}</div>
-                        ${film.version ? `<div class="film-notes"><strong>Version of:</strong> ${film.version}</div>` : ''}
-                    </div>
-                </div>
-            `;
-        }
+    const posterImage = film.poster ? 
+        `<img src="${film.poster}" alt="Poster for ${film.title}" class="film-poster" onerror="this.style.display='none'">` : '';
+    
+    return `
+        <div class="modal-card">
+            <div class="period-badge period-${film.period}">${film.period === 'european' ? 'European' : 'Hollywood'}</div>
+            ${posterImage}
+            <h3 class="film-title">${film.title}</h3>
+            <div class="film-year">${film.year}</div>
+            <div class="film-details">
+                <div><strong>Director:</strong> ${film.director}</div>
+                <div><strong>Production:</strong> ${film.production}</div>
+                ${film.credit ? `<div><strong>Credit:</strong> ${film.credit}</div>` : ''}
+                <div class="film-partner"><strong>With Jurmann:</strong> ${film.jurmann}</div>
+                ${film.version ? `<div class="film-notes"><strong>Version of:</strong> ${film.version}</div>` : ''}
+            </div>
+        </div>
+    `;
+}
 
         function createSongModal(song) {
             const periodName = song.year >= 1926 && song.year <= 1929 ? 'warsaw' : song.period;
