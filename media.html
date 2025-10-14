@@ -601,12 +601,13 @@
             backdrop-filter: blur(10px);
             border: 1px solid rgba(139, 92, 246, 0.2);
             cursor: pointer;
-            transition: transform 0.3s ease;
+            transition: all 0.3s ease;
             margin-bottom: 0;
         }
         
         .document-item .document-image:hover {
             transform: scale(1.05);
+            box-shadow: 0 12px 35px rgba(139, 92, 246, 0.3);
         }
         
         .document-caption {
@@ -635,6 +636,125 @@
         .document-image:not(.document-item .document-image):hover {
             transform: scale(1.02);
         }
+
+        /* Karty Documents na całą szerokość */
+        #documents .media-grid {
+            grid-template-columns: 1fr;
+        }
+
+        /* Modal Gallery Styles */
+        .image-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 10000;
+            overflow: hidden;
+        }
+
+        .modal-close-btn {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            background: rgba(139, 92, 246, 0.8);
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 2rem;
+            cursor: pointer;
+            z-index: 10001;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .modal-close-btn:hover {
+            background: rgba(139, 92, 246, 1);
+            transform: scale(1.1) rotate(90deg);
+            box-shadow: 0 8px 25px rgba(139, 92, 246, 0.4);
+        }
+
+        .modal-nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(139, 92, 246, 0.8);
+            color: white;
+            border: none;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            font-size: 2rem;
+            cursor: pointer;
+            z-index: 10001;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .modal-nav-btn:hover {
+            background: rgba(139, 92, 246, 1);
+            transform: translateY(-50%) scale(1.1);
+            box-shadow: 0 8px 25px rgba(139, 92, 246, 0.4);
+        }
+
+        .modal-prev {
+            left: 2rem;
+        }
+
+        .modal-next {
+            right: 2rem;
+        }
+
+        .modal-image-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            padding: 4rem;
+        }
+
+        .modal-image {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            transition: opacity 0.15s ease;
+        }
+
+        .modal-caption {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(15, 23, 42, 0.9);
+            backdrop-filter: blur(20px);
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            color: #f8fafc;
+            text-align: center;
+            max-width: 80%;
+            border: 1px solid rgba(139, 92, 246, 0.3);
+        }
+
+        .modal-counter {
+            position: absolute;
+            top: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(15, 23, 42, 0.9);
+            backdrop-filter: blur(20px);
+            padding: 0.5rem 1.5rem;
+            border-radius: 9999px;
+            color: #cbd5e1;
+            font-size: 0.875rem;
+            border: 1px solid rgba(139, 92, 246, 0.3);
+        }
         
         /* Responsive design */
         @media (max-width: 768px) {
@@ -648,6 +768,11 @@
             .credits-grid { grid-template-columns: 1fr; }
             .filters { flex-direction: column; align-items: center; }
             .document-gallery { grid-template-columns: 1fr; }
+            .modal-nav-btn { width: 50px; height: 50px; font-size: 1.5rem; }
+            .modal-prev { left: 1rem; }
+            .modal-next { right: 1rem; }
+            .modal-close-btn { width: 40px; height: 40px; font-size: 1.5rem.modal-close-btn { width: 40px; height: 40px; font-size: 1.5rem; top: 1rem; right: 1rem; }
+            .modal-image-container { padding: 2rem; }
         }
         
         /* Scrollbar styling */
@@ -667,11 +792,6 @@
         ::-webkit-scrollbar-thumb:hover {
             background: linear-gradient(135deg, #a78bfa, #818cf8);
         }
-
-        /* Karty Documents na całą szerokość */
-#documents .media-grid {
-    grid-template-columns: 1fr;
-}
     </style>
 </head>
 <body>
@@ -886,7 +1006,7 @@
                             Your browser does not support the video element.
                         </video>
                         <p class="media-description">
-                            The song – a tango from the feature film 'Alraune'.
+                            The song — a tango from the feature film 'Alraune'.
                         </p>
                     </div>
                     
@@ -899,14 +1019,14 @@
                             Your browser does not support the video element.
                         </video>
                         <p class="media-description">
-                            The song – a foxtrot from the feature film 'Ein toller Einfall'. This song became one of the popular 
+                            The song — a foxtrot from the feature film 'Ein toller Einfall'. This song became one of the popular 
                             entertainment pieces of the pre-war era, with its light melody and cheerful mood reflecting the lively spirit of the Roaring Twenties.
                         </p>
                     </div>
                     
                     <div class="media-card">
                         <div class="period-badge period-video">Film sample (European)</div>
-                        <h3 class="media-title">Funiculì funiculà</h3>
+                        <h3 class="media-title">Funiculì funiculà </h3>
                         <p class="media-info">From "Abenteuer am Lido" (1933) • Performer: Alfred Piccaver</p>
                         <video controls preload="none" class="media-player" poster="assets/images/video-thumbnails/mgm-studios.jpg">
                             <source src="assets/video/samples/abenteuer-feniculi-fenicula.mp4" type="video/mp4">
@@ -960,7 +1080,7 @@
                     <div class="media-card">
                         <div class="period-badge period-video">Film sample (Hollywood)</div>
                         <h3 class="media-title">Così, Cosa</h3>
-                        <p class="media-info">From "A Night at the Opera" (1935) • With Walter Jurmann • Lyrics: Ned Washington – Educational Use</p>
+                        <p class="media-info">From "A Night at the Opera" (1935) • With Walter Jurmann • Lyrics: Ned Washington — Educational Use</p>
                         <video controls preload="none" class="media-player" poster="assets/images/video-thumbnails/cosi-cosa.jpg">
                             <source src="assets/video/samples/cosi-cosa.mp4" type="video/mp4">
                             Your browser does not support the video element.
@@ -975,7 +1095,7 @@
                     <div class="media-card">
                         <div class="period-badge period-video">Film sample (Hollywood)</div>
                         <h3 class="media-title">San Francisco</h3>
-                        <p class="media-info">From "San Francisco" (1936) • Lyrics: Gus Kahn • MGM Production – Educational Use</p>
+                        <p class="media-info">From "San Francisco" (1936) • Lyrics: Gus Kahn • MGM Production — Educational Use</p>
                         <video controls preload="none" class="media-player" poster="assets/images/video-thumbnails/san-francisco.jpg">
                             <source src="assets/video/samples/san-francisco.mp4" type="video/mp4">
                             Your browser does not support the video element.
@@ -990,7 +1110,7 @@
                     <div class="media-card">
                         <div class="period-badge period-video">Film sample (Hollywood)</div>
                         <h3 class="media-title">All God's Chillun Got Rhythm</h3>
-                        <p class="media-info">From "A Day at the Races" (1937) • Lyrics: Gus Kahn • With Walter Jurmann – Educational Use</p>
+                        <p class="media-info">From "A Day at the Races" (1937) • Lyrics: Gus Kahn • With Walter Jurmann — Educational Use</p>
                         <video controls preload="none" class="media-player" poster="assets/images/video-thumbnails/san-francisco.jpg">
                             <source src="assets/video/samples/all-gods.mp4" type="video/mp4">
                             Your browser does not support the video element.
@@ -1004,7 +1124,7 @@
                     <div class="media-card">
                         <div class="period-badge period-video">Film sample (Hollywood)</div>
                         <h3 class="media-title">Swing Mr. Mendelssohn</h3>
-                        <p class="media-info">From "Everybody Sing" (1938) • Lyrics: Gus Kahn • With Walter Jurmann – Educational Use</p>
+                        <p class="media-info">From "Everybody Sing" (1938) • Lyrics: Gus Kahn • With Walter Jurmann — Educational Use</p>
                         <video controls preload="none" class="media-player" poster="assets/images/video-thumbnails/san-francisco.jpg">
                             <source src="assets/video/samples/swing-mr-mendelssohn.mp4" type="video/mp4">
                             Your browser does not support the video element.
@@ -1056,7 +1176,7 @@
                         <div class="period-badge period-historical">Berlin Period</div>
                         <h3 class="media-title">Berlin Years</h3>
                         
-                            <div class="document-gallery">
+                        <div class="document-gallery">
                             <div class="document-item">
                                 <img src="assets/images/historical-context/ehe_mfi_19321314.jpg" alt="press" class="document-image" onerror="this.style.display='none'">
                                 <p class="document-caption">Film announcement, Mein Film, 1932</p>
@@ -1113,7 +1233,7 @@
                         <h3 class="media-title">Journey to America</h3>
                             
                         <div class="document-gallery">    
-                        <div class="document-item">
+                            <div class="document-item">
                                 <img src="assets/images/historical-context/certificate-of-arrival.tif" alt="arrival" class="document-image" onerror="this.style.display='none'">
                                 <p class="document-caption">Certificate of arrival, Nov 1, 1935</p>
                             </div>
@@ -1135,60 +1255,60 @@
                     </div>
                     
                     <div class="media-card">
-  <div class="period-badge period-video">Hollywood Period</div>
-  <h3 class="media-title">MGM Years</h3>
+                        <div class="period-badge period-video">Hollywood Period</div>
+                        <h3 class="media-title">MGM Years</h3>
 
-  <div class="document-gallery">
-    <div class="document-item">
-      <img src="assets/images/historical-context/nasz-przeglad-1934-43.jpg" alt="nasz" class="document-image" onerror="this.style.display='none'">
-      <p class="document-caption">Polish press coverage, Nasz Przegląd, 1934</p>
-    </div>
+                        <div class="document-gallery">
+                            <div class="document-item">
+                                <img src="assets/images/historical-context/nasz-przeglad-1934-43.jpg" alt="nasz" class="document-image" onerror="this.style.display='none'">
+                                <p class="document-caption">Polish press coverage, Nasz Przegląd, 1934</p>
+                            </div>
 
-    <div class="document-item">
-      <img src="assets/images/historical-context/Escapade_Times_Union_1935_07_09_7.jpg" alt="escapade" class="document-image" onerror="this.style.display='none'">
-      <p class="document-caption">Press coverage, Times Union, 1935</p>
-    </div>
+                            <div class="document-item">
+                                <img src="assets/images/historical-context/Escapade_Times_Union_1935_07_09_7.jpg" alt="escapade" class="document-image" onerror="this.style.display='none'">
+                                <p class="document-caption">Press coverage, Times Union, 1935</p>
+                            </div>
 
-    <div class="document-item">
-      <img src="assets/images/historical-context/Escapade_Brooklyn_Eagle_1935_07_22_6.jpg" alt="escapade" class="document-image" onerror="this.style.display='none'">
-      <p class="document-caption">Press coverage, Brooklyn Eagle, 1935</p>
-    </div>
+                            <div class="document-item">
+                                <img src="<img src="assets/images/historical-context/Escapade_Brooklyn_Eagle_1935_07_22_6.jpg" alt="escapade" class="document-image" onerror="this.style.display='none'">
+                                <p class="document-caption">Press coverage, Brooklyn Eagle, 1935</p>
+                            </div>
 
-    <div class="document-item">
-      <img src="assets/images/historical-context/Continuation_Times_Union_1936_10_10_15.jpg" alt="continuation" class="document-image" onerror="this.style.display='none'">
-      <p class="document-caption">Press coverage, Times Union, 1936</p>
-    </div>
+                            <div class="document-item">
+                                <img src="assets/images/historical-context/Continuation_Times_Union_1936_10_10_15.jpg" alt="continuation" class="document-image" onerror="this.style.display='none'">
+                                <p class="document-caption">Press coverage, Times Union, 1936</p>
+                            </div>
 
-    <div class="document-item">
-      <img src="assets/images/historical-context/Races_The_Brooklyn_Citizen_1937_06_18_14.jpg" alt="races" class="document-image" onerror="this.style.display='none'">
-      <p class="document-caption">Press coverage, Brooklyn Eagle, 1937</p>
-    </div>
+                            <div class="document-item">
+                                <img src="assets/images/historical-context/Races_The_Brooklyn_Citizen_1937_06_18_14.jpg" alt="races" class="document-image" onerror="this.style.display='none'">
+                                <p class="document-caption">Press coverage, Brooklyn Eagle, 1937</p>
+                            </div>
 
-    <div class="document-item">
-      <img src="assets/images/historical-context/everybody-the Washington daily news, July 13, 1937.jpg" alt="races" class="document-image" onerror="this.style.display='none'">
-      <p class="document-caption">Press coverage, The Washington Daily Newa, 1937</p>
-    </div>
+                            <div class="document-item">
+                                <img src="assets/images/historical-context/everybody-the Washington daily news, July 13, 1937.jpg" alt="races" class="document-image" onerror="this.style.display='none'">
+                                <p class="document-caption">Press coverage, The Washington Daily News, 1937</p>
+                            </div>
 
-    <div class="document-item">
-      <img src="assets/images/historical-context/everybody_evening star (Washington, D.C.), July 4, 1937.jpg" alt="races" class="document-image" onerror="this.style.display='none'">
-      <p class="document-caption">Press coverage, Evening Star, 1937</p>
-    </div>
+                            <div class="document-item">
+                                <img src="assets/images/historical-context/everybody_evening star (Washington, D.C.), July 4, 1937.jpg" alt="races" class="document-image" onerror="this.style.display='none'">
+                                <p class="document-caption">Press coverage, Evening Star, 1937</p>
+                            </div>
 
-    <div class="document-item">
-      <img src="assets/images/historical-context/Everybody_Brooklyn_Eagle_1938_03_17_8.jpg" alt="everybody" class="document-image" onerror="this.style.display='none'">
-      <p class="document-caption">Press coverage, Brooklyn Eagle, 1938</p>
-    </div>
+                            <div class="document-item">
+                                <img src="assets/images/historical-context/Everybody_Brooklyn_Eagle_1938_03_17_8.jpg" alt="everybody" class="document-image" onerror="this.style.display='none'">
+                                <p class="document-caption">Press coverage, Brooklyn Eagle, 1938</p>
+                            </div>
 
-    <div class="document-item">
-      <img src="assets/images/historical-context/anecdote-the Washington times, October 31, 1938.jpg" alt="races" class="document-image" onerror="this.style.display='none'">
-      <p class="document-caption">Press coverage, The Washington Times, 1938</p>
-    </div>
-  </div>
+                            <div class="document-item">
+                                <img src="assets/images/historical-context/anecdote-the Washington times, October 31, 1938.jpg" alt="races" class="document-image" onerror="this.style.display='none'">
+                                <p class="document-caption">Press coverage, The Washington Times, 1938</p>
+                            </div>
+                        </div>
 
-  <p class="media-description">
-    Press coverage, photographs, and publicity materials from Kaper's work at MGM studios during 1935-1939.
-  </p>
-</div>
+                        <p class="media-description">
+                            Press coverage, photographs, and publicity materials from Kaper's work at MGM studios during 1935-1939.
+                        </p>
+                    </div>
                     
                     <div class="media-card">
                         <div class="period-badge period-document">Sheet Music & Publications</div>
@@ -1287,125 +1407,221 @@
             </div>
         </div>
     </div>
+
+    <!-- Modal Gallery -->
+    <div id="imageModal" class="image-modal">
+        <button onclick="closeImageModal()" class="modal-close-btn">×</button>
+        
+        <button onclick="previousImage()" class="modal-nav-btn modal-prev">‹</button>
+        
+        <button onclick="nextImage()" class="modal-nav-btn modal-next">›</button>
+        
+        <div class="modal-image-container">
+            <img id="modalImage" src="" alt="" class="modal-image">
+        </div>
+        
+        <div id="modalCaption" class="modal-caption"></div>
+        
+        <div class="modal-counter">
+            <span id="imageCounter"></span>
+        </div>
+    </div>
     
     <script>
-    let currentView = 'audio';
-    let currentFilter = 'all';
+        let currentView = 'audio';
+        let currentFilter = 'all';
+        let currentImageIndex = 0;
+        let currentGalleryImages = [];
 
-    function showView(viewName) {
-        // Hide all views
-        document.querySelectorAll('.view').forEach(view => {
-            view.classList.remove('active');
-        });
-        
-        // Show selected view
-        const targetView = document.getElementById(viewName);
-        if (targetView) {
-            targetView.classList.add('active');
-        }
-        
-        // Update navigation
-        document.querySelectorAll('.nav-btn').forEach(btn => {
-            btn.classList.remove('active');
-        });
-        
-        const activeNavBtn = document.getElementById('nav-' + viewName);
-        if (activeNavBtn) {
-            activeNavBtn.classList.add('active');
-        }
-        
-        currentView = viewName;
-        
-        // If opening audio section, refresh filter
-        if (viewName === 'audio') {
-            filterMedia(currentFilter);
-        }
-    }
-
-    function filterMedia(period) {
-        currentFilter = period;
-        
-        // Update filter buttons
-        document.querySelectorAll('.filters .filter-btn').forEach(btn => {
-            btn.classList.remove('active');
-        });
-        
-        const activeBtn = document.getElementById('filter-' + period);
-        if (activeBtn) {
-            activeBtn.classList.add('active');
-        }
-        
-        // Get all audio cards from #audio section
-        const cards = document.querySelectorAll('#audio .media-card');
-        cards.forEach(card => {
-            const cardPeriod = card.dataset.period;
-            if (period === 'all' || cardPeriod === period) {
-                // Restore default style with animation
-                card.style.display = '';
-                card.style.animation = 'fadeIn 0.6s ease-out';
-            } else {
-                // Hide cards from other periods
-                card.style.display = 'none';
+        function showView(viewName) {
+            document.querySelectorAll('.view').forEach(view => {
+                view.classList.remove('active');
+            });
+            
+            const targetView = document.getElementById(viewName);
+            if (targetView) {
+                targetView.classList.add('active');
             }
-        });
-    }
-
-    // Enhanced media player interactions
-    document.addEventListener('DOMContentLoaded', function() {
-        showView('audio');
-        
-        // Add loading states to media players
-        const mediaPlayers = document.querySelectorAll('.media-player');
-        mediaPlayers.forEach(player => {
-            player.addEventListener('loadstart', function() {
-                this.closest('.media-card').classList.add('loading');
+            
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.classList.remove('active');
             });
             
-            player.addEventListener('canplay', function() {
-                this.closest('.media-card').classList.remove('loading');
-            });
-            
-            // Add hover effects for better UX
-            player.addEventListener('mouseenter', function() {
-                this.style.transform = 'scale(1.02)';
-                this.style.transition = 'transform 0.2s ease';
-            });
-            
-            player.addEventListener('mouseleave', function() {
-                this.style.transform = 'scale(1)';
-            });
-        });
-        
-        // Add smooth scroll behavior for better navigation
-        document.querySelectorAll('.nav-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
-                const content = document.querySelector('.content');
-                content.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            });
-        });
-        
-        // Add keyboard navigation
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'ArrowLeft') {
-                const views = ['audio', 'video', 'documents', 'credits'];
-                const currentIndex = views.indexOf(currentView);
-                const prevIndex = currentIndex > 0 ? currentIndex - 1 : views.length - 1;
-                showView(views[prevIndex]);
-            } else if (e.key === 'ArrowRight') {
-                const views = ['audio', 'video', 'documents', 'credits'];
-                const currentIndex = views.indexOf(currentView);
-                const nextIndex = currentIndex < views.length - 1 ? currentIndex + 1 : 0;
-                showView(views[nextIndex]);
+            const activeNavBtn = document.getElementById('nav-' + viewName);
+            if (activeNavBtn) {
+                activeNavBtn.classList.add('active');
             }
-        });
-        
-        // Add click-to-enlarge for document images
-        document.querySelectorAll('.document-image').forEach(img => {
-            img.addEventListener('click', function() {
-                window.open(this.src, '_blank');
+            
+            currentView = viewName;
+            
+            if (viewName === 'audio') {
+                filterMedia(currentFilter);
+            }
+        }
+
+        function filterMedia(period) {
+            currentFilter = period;
+            
+            document.querySelectorAll('.filters .filter-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            const activeBtn = document.getElementById('filter-' + period);
+            if (activeBtn) {
+                activeBtn.classList.add('active');
+            }
+            
+            const cards = document.querySelectorAll('#audio .media-card');
+            cards.forEach(card => {
+                const cardPeriod = card.dataset.period;
+                if (period === 'all' || cardPeriod === period) {
+                    card.style.display = '';
+                    card.style.animation = 'fadeIn 0.6s ease-out';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Gallery functions
+        function openImageModal(img, galleryImages) {
+            currentGalleryImages = galleryImages;
+            currentImageIndex = galleryImages.findIndex(item => item.src === img.src);
+            
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            const modalCaption = document.getElementById('modalCaption');
+            const imageCounter = document.getElementById('imageCounter');
+            
+            modal.style.display = 'block';
+            modalImg.src = img.src;
+            modalImg.alt = img.alt;
+            modalCaption.textContent = img.nextElementSibling ? img.nextElementSibling.textContent : img.alt;
+            imageCounter.textContent = `${currentImageIndex + 1} / ${currentGalleryImages.length}`;
+            
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeImageModal() {
+            document.getElementById('imageModal').style.display = 'none';
+            document.body.style.overflow = '';
+        }
+
+        function nextImage() {
+            currentImageIndex = (currentImageIndex + 1) % currentGalleryImages.length;
+            updateModalImage();
+        }
+
+        function previousImage() {
+            currentImageIndex = (currentImageIndex - 1 + currentGalleryImages.length) % currentGalleryImages.length;
+            updateModalImage();
+        }
+
+        function updateModalImage() {
+            const modalImg = document.getElementById('modalImage');
+            const modalCaption = document.getElementById('modalCaption');
+            const imageCounter = document.getElementById('imageCounter');
+            const currentImage = currentGalleryImages[currentImageIndex];
+            
+            modalImg.style.opacity = '0';
+            setTimeout(() => {
+                modalImg.src = currentImage.src;
+                modalImg.alt = currentImage.alt;
+                modalCaption.textContent = currentImage.caption;
+                imageCounter.textContent = `${currentImageIndex + 1} / ${currentGalleryImages.length}`;
+                modalImg.style.opacity = '1';
+            }, 150);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            showView('audio');
+            
+            const mediaPlayers = document.querySelectorAll('.media-player');
+            mediaPlayers.forEach(player => {
+                player.addEventListener('loadstart', function() {
+                    this.closest('.media-card').classList.add('loading');
+                });
+                
+                player.addEventListener('canplay', function() {
+                    this.closest('.media-card').classList.remove('loading');
+                });
+                
+                player.addEventListener('mouseenter', function() {
+                    this.style.transform = 'scale(1.02)';
+                    this.style.transition = 'transform 0.2s ease';
+                });
+                
+                player.addEventListener('mouseleave', function() {
+                    this.style.transform = 'scale(1)';
+                });
+            });
+            
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const content = document.querySelector('.content');
+                    content.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                });
+            });
+            
+            // Keyboard navigation
+            document.addEventListener('keydown', function(e) {
+                const modal = document.getElementById('imageModal');
+                
+                if (modal.style.display === 'block') {
+                    // Gallery navigation
+                    if (e.key === 'ArrowLeft') {
+                        previousImage();
+                    } else if (e.key === 'ArrowRight') {
+                        nextImage();
+                    } else if (e.key === 'Escape') {
+                        closeImageModal();
+                    }
+                } else {
+                    // View navigation
+                    if (e.key === 'ArrowLeft') {
+                        const views = ['audio', 'video', 'documents', 'credits'];
+                        const currentIndex = views.indexOf(currentView);
+                        const prevIndex = currentIndex > 0 ? currentIndex - 1 : views.length - 1;
+                        showView(views[prevIndex]);
+                    } else if (e.key === 'ArrowRight') {
+                        const views = ['audio', 'video', 'documents', 'credits'];
+                        const currentIndex = views.indexOf(currentView);
+                        const nextIndex = currentIndex < views.length - 1 ? currentIndex + 1 : 0;
+                        showView(views[nextIndex]);
+                    }
+                }
+            });
+            
+            // Setup image galleries
+            document.querySelectorAll('.media-card').forEach(card => {
+                const gallery = card.querySelector('.document-gallery');
+                if (gallery) {
+                    const images = Array.from(gallery.querySelectorAll('.document-image'));
+                    const galleryData = images.map(img => ({
+                        src: img.src,
+                        alt: img.alt,
+                        caption: img.nextElementSibling ? img.nextElementSibling.textContent : img.alt
+                    }));
+                    
+                    images.forEach(img => {
+                        img.addEventListener('click', function() {
+                            openImageModal(this, galleryData);
+                        });
+                    });
+                }
+            });
+            
+            // Single images (not in gallery)
+            document.querySelectorAll('.document-image:not(.document-item .document-image)').forEach(img => {
+                img.addEventListener('click', function() {
+                    openImageModal(this, [{
+                        src: this.src,
+                        alt: this.alt,
+                        caption: this.alt
+                    }]);
+                });
             });
         });
-    });
     </script>
 </body>
 </html>
