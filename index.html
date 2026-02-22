@@ -84,10 +84,11 @@
         }
         
         .period {
-            font-size: 1.125rem;
-            color: #d1d5db;
-            font-weight: 300;
-            letter-spacing: 0.05em;
+            font-size: 1.5rem;
+            color: #ffffff;
+            font-weight: 500;
+            letter-spacing: 0.12em;
+            text-shadow: 0 2px 6px rgba(0,0,0,0.35);
         }
         
         .navigation {
@@ -948,6 +949,34 @@
             background: rgba(107, 114, 128, 0.7);
         }
 
+
+        /* Accessibility */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        :focus-visible {
+            outline: 3px solid rgba(17, 24, 39, 0.55);
+            outline-offset: 3px;
+        }
+
+        .nav-btn:focus-visible,
+        .filter-btn:focus-visible,
+        .period-card:focus-visible,
+        .period-detail:focus-visible,
+        .film-card:focus-visible {
+            outline: 3px solid rgba(17, 24, 39, 0.55);
+            outline-offset: 4px;
+        }
+
         @media (max-width: 768px) {
             .title { font-size: 2.5rem; }
             .header-content { flex-direction: column; gap: 1.5rem; }
@@ -1004,19 +1033,19 @@
             <div id="overview" class="view active">
                 <div class="metrics-grid">
                     <div class="metric">
-                        <div class="metric-number">177</div>
+                        <div class="metric-number" id="totalSongs"></div>
                         <div class="metric-label">Total Songs</div>
                         <div class="metric-sublabel">1926–1939</div>
                     </div>
                     <div class="metric">
-                        <div class="metric-number">52</div>
+                        <div class="metric-number" id="totalFilms"></div>
                         <div class="metric-label">Film Titles</div>
                         <div class="metric-sublabel">32 European + 20 Hollywood</div>
                     </div>
                     <div class="metric">
-                        <div class="metric-number">78%</div>
+                        <div class="metric-number" id="songsJurmannPct"></div>
                         <div class="metric-label">Songs with Jurmann</div>
-                        <div class="metric-sublabel">139 of 177 songs</div>
+                        <div class="metric-sublabel" id="songsJurmannDetail"></div>
                     </div>
                 </div>
                 
@@ -1033,9 +1062,9 @@
                     
                     <div class="collaboration-stats">
                         <div class="collab-stat">
-                            <div class="collab-number">92%</div>
+                            <div class="collab-number" id="filmsJurmannPct"></div>
                             <div class="collab-label">Films with Jurmann</div>
-                            <div class="collab-detail">48 of 52 films</div>
+                            <div class="collab-detail" id="filmsJurmannDetail"></div>
                         </div>
                         <div class="collab-stat">
                             <div class="collab-number">78%</div>
@@ -1063,7 +1092,7 @@
                         <div class="period-number" style="background-color: #e5e7eb; color: #374151;">1</div>
                         <h3 class="period-name">Between Warsaw and Berlin</h3>
                         <p class="period-years">1926–1929</p>
-                        <div class="period-stats">14 songs · 0 films</div>
+                        <div class="period-stats"><span id="warsawSummary"></span></div>
                         <p class="period-desc">Early songs with Polish or German lyrics</p>
                     </div>
                     <div class="period-card" onclick="showPeriodTimeline('european')">
@@ -1071,7 +1100,7 @@
                         <div class="period-number" style="background-color: #6b7280;">2</div>
                         <h3 class="period-name">European Period</h3>
                         <p class="period-years">1930–1934</p>
-                        <div class="period-stats">100 songs · 32 films</div>
+                        <div class="period-stats"><span id="europeSummary"></span></div>
                         <p class="period-desc">Berlin, Paris & international films</p>
                         <p class="period-studios">Main studios: UFA, Aafa, Emelka</p>
                     </div>
@@ -1080,7 +1109,7 @@
                         <div class="period-number" style="background-color: #111827;">3</div>
                         <h3 class="period-name">Hollywood Period</h3>
                         <p class="period-years">1935–1939</p>
-                        <div class="period-stats">63 songs · 20 films</div>
+                        <div class="period-stats"><span id="hollywoodSummary"></span></div>
                         <p class="period-desc">MGM studio contract (73% of films)</p>
                         <p class="period-studios">Main studios: MGM, Universal</p>
                     </div>
@@ -1122,7 +1151,7 @@
                             <p class="period-detail-partner">Partners: Andrzej Włast & Fritz Rotter</p>
                         </div>
                         <div class="period-detail-stats">
-                            <div class="period-detail-total">14</div>
+                            <div class="period-detail-total" id="warsawTotal"></div>
                             <div class="period-detail-label">Total Works</div>
                             <div class="period-detail-breakdown">
                                 <div>14 songs</div>
@@ -1141,7 +1170,7 @@
                             <p class="period-detail-studios">Key studios: UFA-Berlin, Aafa-Film, Emelka, Cine-Allianz</p>
                         </div>
                         <div class="period-detail-stats">
-                            <div class="period-detail-total">129</div>
+                            <div class="period-detail-total" id="europeTotal"></div>
                             <div class="period-detail-label">Total Works</div>
                             <div class="period-detail-breakdown">
                                 <div>97 songs</div>
@@ -1160,7 +1189,7 @@
                             <p class="period-detail-studios">MGM dominance: 16/20 films (73%); also Universal, 20th Century Fox</p>
                         </div>
                         <div class="period-detail-stats">
-                            <div class="period-detail-total">85</div>
+                            <div class="period-detail-total" id="hollywoodTotal"></div>
                             <div class="period-detail-label">Total Works</div>
                             <div class="period-detail-breakdown">
                                 <div>63 songs</div>
@@ -1173,7 +1202,7 @@
             
             <div id="filmography" class="view">
                 <div class="filmography-filters">
-                    <button class="filter-btn active" onclick="filterFilms('all')" id="films-all">All Films (52)</button>
+                    <button class="filter-btn active" onclick="filterFilms('all')" id="films-all">All Films (<span id="btnAllFilms"></span>)</button>
                     <button class="filter-btn" onclick="filterFilms('european')" id="films-european">European Period (32)</button>
                     <button class="filter-btn" onclick="filterFilms('hollywood')" id="films-hollywood">Hollywood Period (20)</button>
                 </div>
@@ -1191,7 +1220,7 @@
             
             <div id="songs" class="view">
                 <div class="filmography-filters">
-                    <button class="filter-btn active" onclick="filterSongs('all')" id="songs-all">All Songs (177)</button>
+                    <button class="filter-btn active" onclick="filterSongs('all')" id="songs-all">All Songs (<span id="btnAllSongs"></span>)</button>
                     <button class="filter-btn" onclick="filterSongs('warsaw')" id="songs-warsaw">Warsaw-Berlin (14)</button>
                     <button class="filter-btn" onclick="filterSongs('european')" id="songs-european">European Period (100)</button>
                     <button class="filter-btn" onclick="filterSongs('hollywood')" id="songs-hollywood">Hollywood Period (63)</button>
@@ -1230,47 +1259,8 @@
     </div>
     
     <script>
-        /* ========= Single source of truth =========
-   timelineData is derived from songsData + filmData (no manual syncing).
-*/
-let timelineData = [];
-
-function rebuildTimelineData() {
-    // Prefer the real min/max from data, but keep a stable display range when possible
-    const yearsFromSongs = songsData.map(s => Number(s.year)).filter(Number.isFinite);
-    const yearsFromFilms = filmData.map(f => Number(f.year)).filter(Number.isFinite);
-    const allYears = yearsFromSongs.concat(yearsFromFilms);
-
-    // Fallback to the known project span if something is missing
-    const minYear = allYears.length ? Math.min(...allYears) : 1926;
-    const maxYear = allYears.length ? Math.max(...allYears) : 1939;
-
-    const songCounts = new Map();
-    for (const s of songsData) {
-        const y = Number(s.year);
-        if (!Number.isFinite(y)) continue;
-        songCounts.set(y, (songCounts.get(y) || 0) + 1);
-    }
-
-    const filmCounts = new Map();
-    for (const f of filmData) {
-        const y = Number(f.year);
-        if (!Number.isFinite(y)) continue;
-        filmCounts.set(y, (filmCounts.get(y) || 0) + 1);
-    }
-
-    // Build continuous series (includes years with 0 works)
-    const out = [];
-    for (let y = minYear; y <= maxYear; y++) {
-        out.push({
-            year: y,
-            songs: songCounts.get(y) || 0,
-            films: filmCounts.get(y) || 0
-        });
-    }
-    timelineData = out;
-}
-const filmData = [
+                let timelineData = [];
+        const filmData = [
             { title: "Die lustigen Musikanten (Laubenkolonie)", director: "Max Obal", year: 1930, period: "european", jurmann: "no", production: "Aafa-Film AG (Berlin)", credit: "composer", poster: "assets/images/film-posters/european-period/laubenkolonie.jpg" },
             { title: "Alraune", director: "Richard Oswald", year: 1930, period: "european", jurmann: "no", production: "Richard Oswald-Produktion GmbH (Berlin)", credit: "composer", poster: "assets/images/film-posters/european-period/alraune.jpg" },
             { title: "Der Korvettenkapitän", director: "Rudolf Walther-Fein", year: 1930, period: "european", jurmann: "no", production: "Aafa-Film AG (Berlin)", credit: "composer", poster: "assets/images/film-posters/european-period/korvettenkapitan.jpg" },
@@ -1505,39 +1495,7 @@ const filmData = [
             { title: "J'ai un message pour toi [A Message from the Man in the Moon]", genre: "slow-fox", year: 1937, publisher: null, lyricist: "Jean Féline", notes: "with Jurmann", film: "A day at the races", period: "hollywood" }
         ];
         
-        
-// Build derived structures once data arrays are loaded
-rebuildTimelineData();
-
-function updateFilterButtonCounts() {
-    const set = (id, text) => {
-        const el = document.getElementById(id);
-        if (el) el.textContent = text;
-    };
-
-    // Songs
-    const totalSongs = songsData.length;
-    const warsawSongs = songsData.filter(s => Number(s.year) >= 1926 && Number(s.year) <= 1929).length;
-    const europeanSongs = songsData.filter(s => s.period === 'european').length;
-    const hollywoodSongs = songsData.filter(s => s.period === 'hollywood').length;
-
-    set('songs-all', `All Songs (${totalSongs})`);
-    set('songs-warsaw', `Warsaw-Berlin (${warsawSongs})`);
-    set('songs-european', `European Period (${europeanSongs})`);
-    set('songs-hollywood', `Hollywood Period (${hollywoodSongs})`);
-
-    // Films
-    const totalFilms = filmData.length;
-    const europeanFilms = filmData.filter(f => f.period === 'european').length;
-    const hollywoodFilms = filmData.filter(f => f.period === 'hollywood').length;
-
-    set('films-all', `All Films (${totalFilms})`);
-    set('films-european', `European Period (${europeanFilms})`);
-    set('films-hollywood', `Hollywood Period (${hollywoodFilms})`);
-}
-
-updateFilterButtonCounts();
-const otherWorksData = [
+        const otherWorksData = [
             { title: "Rozmowa", year: 1923, publisher: "manuscript (American Heritage Center, University of Wyoming)", instrumentation: "concert song for voice and piano" },
             { title: "Koszutski Girls", year: 1923, publisher: "manuscript (American Heritage Center, University of Wyoming)", instrumentation: "voice and piano" },
             { title: "Etude", year: 1925, publisher: "manuscript (American Heritage Center, University of Wyoming)", instrumentation: "piano" },
@@ -1973,7 +1931,7 @@ const otherWorksData = [
                     scales: {
                         x: {
                             grid: {
-                                display: false
+                                display: true
                             },
                             ticks: {
                                 color: '#6b7280',
@@ -2017,6 +1975,186 @@ const otherWorksData = [
             const el = document.getElementById('otherSearch');
             if (el) { el.value = ''; renderOther(); }
         }
+
+// --- Single source of truth: build timelineData from songsData + filmData ---
+function rebuildTimelineData() {
+    const years = new Set();
+    songsData.forEach(s => years.add(s.year));
+    filmData.forEach(f => years.add(f.year));
+    const yearList = Array.from(years).sort((a,b) => a-b);
+    const minYear = yearList.length ? yearList[0] : 1926;
+    const maxYear = yearList.length ? yearList[yearList.length - 1] : 1939;
+
+    const songsByYear = {};
+    const filmsByYear = {};
+    for (let y = minYear; y <= maxYear; y++) { songsByYear[y] = 0; filmsByYear[y] = 0; }
+
+    songsData.forEach(s => { if (s.year in songsByYear) songsByYear[s.year]++; });
+    filmData.forEach(f => { if (f.year in filmsByYear) filmsByYear[f.year]++; });
+
+    timelineData = [];
+    for (let y = minYear; y <= maxYear; y++) {
+        timelineData.push({ year: y, songs: songsByYear[y] || 0, films: filmsByYear[y] || 0 });
+    }
+}
+
+// --- Dynamic stats (Overview + Periods) ---
+function calculateStats() {
+    const totalSongs = songsData.length;
+    const totalFilms = filmData.length;
+
+    const ranges = {
+        warsaw: [1926, 1929],
+        european: [1930, 1934],
+        hollywood: [1935, 1939]
+    };
+
+    const countSongsInRange = (start, end) =>
+        songsData.filter(s => s.year >= start && s.year <= end).length;
+
+    const warsawSongs = countSongsInRange(...ranges.warsaw);
+    const europeSongs = countSongsInRange(...ranges.european);
+    const hollywoodSongs = countSongsInRange(...ranges.hollywood);
+
+    const europeFilms = filmData.filter(f => f.period === "european").length;
+    const hollywoodFilms = filmData.filter(f => f.period === "hollywood").length;
+
+    const songsJurmann = songsData.filter(s =>
+        (s.notes || "").toLowerCase().includes("jurmann")
+    ).length;
+
+    const filmsJurmann = filmData.filter(f => f.jurmann === "yes").length;
+
+    const setText = (id, value) => {
+        const el = document.getElementById(id);
+        if (el) el.textContent = value;
+    };
+    const setHTML = (id, html) => {
+        const el = document.getElementById(id);
+        if (el) el.innerHTML = html;
+    };
+
+    // Overview
+    setText("totalSongs", totalSongs);
+    setText("totalFilms", totalFilms);
+
+            // Filter button counts (optional)
+            setText("btnAllSongs", totalSongs);
+            setText("btnAllFilms", totalFilms);
+
+    const songsJurmannPct = totalSongs ? Math.round((songsJurmann / totalSongs) * 100) : 0;
+    const filmsJurmannPct = totalFilms ? Math.round((filmsJurmann / totalFilms) * 100) : 0;
+
+    setText("songsJurmannPct", `${songsJurmannPct}%`);
+    setText("songsJurmannDetail", `${songsJurmann} of ${totalSongs} songs`);
+
+    setText("filmsJurmannPct", `${filmsJurmannPct}%`);
+    setText("filmsJurmannDetail", `${filmsJurmann} of ${totalFilms} films`);
+
+    // Period cards summaries
+    setHTML("warsawSummary", `${warsawSongs} songs · 0 films`);
+    setHTML("europeSummary", `${europeSongs} songs · ${europeFilms} films`);
+    setHTML("hollywoodSummary", `${hollywoodSongs} songs · ${hollywoodFilms} films`);
+
+    // Period details (if IDs exist)
+    setText("warsawTotal", warsawSongs);
+    setText("europeTotal", europeSongs + europeFilms);
+    setText("hollywoodTotal", hollywoodSongs + hollywoodFilms);
+
+    setHTML("warsawBreakdown", `${warsawSongs} songs<br>0 films`);
+    setHTML("europeBreakdown", `${europeSongs} songs<br>${europeFilms} films`);
+    setHTML("hollywoodBreakdown", `${hollywoodSongs} songs<br>${hollywoodFilms} films`);
+}
+
+// --- Accessibility: make all elements with inline onclick keyboard-accessible ---
+function enhanceClickablesForKeyboard() {
+    document.querySelectorAll('[onclick]').forEach(el => {
+        const tag = el.tagName.toLowerCase();
+        if (tag === 'button' || tag === 'a' || tag === 'input' || tag === 'select' || tag === 'textarea') return;
+        if (!el.hasAttribute('tabindex')) el.setAttribute('tabindex', '0');
+        if (!el.getAttribute('role')) el.setAttribute('role', 'button');
+
+        el.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                el.click();
+            }
+        });
+    });
+}
+
+// --- Modal improvements: ESC, click outside, focus restore ---
+let lastFocusedElement = null;
+
+const _openModal = openModal;
+openModal = function(content) {
+    lastFocusedElement = document.activeElement;
+    _openModal(content);
+
+    const overlay = document.getElementById('modalOverlay');
+    if (overlay) {
+        const closeBtn = overlay.querySelector('.modal-close');
+        if (closeBtn) closeBtn.focus();
+    }
+};
+
+const _closeModal = closeModal;
+closeModal = function() {
+    _closeModal();
+    if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') {
+        lastFocusedElement.focus();
+    }
+};
+
+document.addEventListener('keydown', (e) => {
+    const overlay = document.getElementById('modalOverlay');
+    if (e.key === 'Escape' && overlay && overlay.classList.contains('active')) {
+        closeModal();
+    }
+});
+
+document.addEventListener('click', (e) => {
+    const overlay = document.getElementById('modalOverlay');
+    if (overlay && overlay.classList.contains('active') && e.target === overlay) {
+        closeModal();
+    }
+});
+
+// --- Data integrity checks (console warnings only) ---
+function validateData() {
+    const totalSongs = songsData.length;
+    const totalFilms = filmData.length;
+
+    const sumTimelineSongs = timelineData.reduce((acc, d) => acc + (d.songs || 0), 0);
+    const sumTimelineFilms = timelineData.reduce((acc, d) => acc + (d.films || 0), 0);
+
+    if (sumTimelineSongs !== totalSongs) {
+        console.warn('Mismatch: timelineData songs sum', sumTimelineSongs, '!= songsData length', totalSongs);
+    }
+    if (sumTimelineFilms !== totalFilms) {
+        console.warn('Mismatch: timelineData films sum', sumTimelineFilms, '!= filmData length', totalFilms);
+    }
+
+    const badFilms = filmData.filter(f => !['european','hollywood'].includes(f.period));
+    if (badFilms.length) {
+        console.warn('filmData contains entries with unknown period:', badFilms);
+    }
+}
+
+function rebuildAllDerivedData() {
+    rebuildTimelineData();
+    calculateStats();
+    validateData();
+    // If the chart already exists, refresh it
+    if (typeof chart !== 'undefined' && chart) {
+        updateChart();
+    }
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+    rebuildAllDerivedData();
+    enhanceClickablesForKeyboard();
+});
 
         document.getElementById('nav-overview').onclick = () => showView('overview');
         document.getElementById('nav-timeline').onclick = () => showView('timeline');
