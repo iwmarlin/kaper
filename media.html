@@ -771,7 +771,7 @@
             .modal-nav-btn { width: 50px; height: 50px; font-size: 1.5rem; }
             .modal-prev { left: 1rem; }
             .modal-next { right: 1rem; }
-            .modal-close-btn { width: 40px; height: 40px; font-size: 1.5rem.modal-close-btn { width: 40px; height: 40px; font-size: 1.5rem; top: 1rem; right: 1rem; }
+            .modal-close-btn { width: 40px; height: 40px; font-size: 1.5rem; top: 1rem; right: 1rem; }
             .modal-image-container { padding: 2rem; }
         }
         
@@ -792,6 +792,17 @@
         ::-webkit-scrollbar-thumb:hover {
             background: linear-gradient(135deg, #a78bfa, #818cf8);
         }
+    
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.001ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.001ms !important;
+                scroll-behavior: auto !important;
+            }
+            body::before { animation: none !important; }
+        }
+
     </style>
 </head>
 <body>
@@ -808,10 +819,10 @@
         
         <div class="navigation">
             <a href="index.html" class="nav-btn back-link">← Back to Main Presentation</a>
-            <button class="nav-btn active" onclick="showView('audio')" id="nav-audio">Audio</button>
-            <button class="nav-btn" onclick="showView('video')" id="nav-video">Video</button>
-            <button class="nav-btn" onclick="showView('documents')" id="nav-documents">Documents</button>
-            <button class="nav-btn" onclick="showView('credits')" id="nav-credits">Credits</button>
+            <button class="nav-btn active" data-view="audio" id="nav-audio">Audio</button>
+            <button class="nav-btn" data-view="video" id="nav-video">Video</button>
+            <button class="nav-btn" data-view="documents" id="nav-documents">Documents</button>
+            <button class="nav-btn" data-view="credits" id="nav-credits">Credits</button>
         </div>
         
         <div class="content">
@@ -826,10 +837,10 @@
                 <h2 class="section-title">Song Samples & Early Works</h2>
                 
                 <div class="filters">
-                    <button class="filter-btn active" onclick="filterMedia('all')" id="filter-all">All Periods</button>
-                    <button class="filter-btn" onclick="filterMedia('european')" id="filter-european">European Period</button>
-                    <button class="filter-btn" onclick="filterMedia('hollywood')" id="filter-hollywood">Hollywood Period</button>
-                    <button class="filter-btn" onclick="filterMedia('early')" id="filter-early">Early Works</button>
+                    <button class="filter-btn active" data-filter="all" id="filter-all">All Periods</button>
+                    <button class="filter-btn" data-filter="european" id="filter-european">European Period</button>
+                    <button class="filter-btn" data-filter="hollywood" id="filter-hollywood">Hollywood Period</button>
+                    <button class="filter-btn" data-filter="early" id="filter-early">Early Works</button>
                 </div>
                 
                 <div class="media-grid">
@@ -1123,7 +1134,7 @@
                         <h3 class="media-title">Someone to care for me</h3>
                         <p class="media-info">From "Three Smart Girls" (1936) • With Walter Jurmann • Lyrics: Gus Kahn — Educational Use</p>
                         <video controls preload="none" class="media-player" poster="assets/images/video-thumbnails/cosi-cosa.jpg">
-                            <source src="assets/video/samples/someone to care.mp4" type="video/mp4">
+                            <source src="assets/video/samples/someone-to-care.mp4" type="video/mp4">
                             Your browser does not support the video element.
                         </video>
                         <p class="media-description">
@@ -1186,36 +1197,36 @@
                         
                         <div class="document-gallery">
                             <div class="document-item">
-                                <img src="assets/images/timeline/metryka kapera_150 U_920.png" alt="baptism" class="document-image" onerror="this.style.display='none'">
+                                <img src="assets/images/timeline/metryka kapera_150 U_920.png" alt="baptism" class="document-image" onerror="this.style.display='none'" loading="lazy">
                                 <p class="document-caption">Baptism entry in the parish register</p>
                             </div>
                             <div class="document-item">
-                                <img src="assets/images/timeline/biblioteka-UW-1925.jpg" alt="University" class="document-image" onerror="this.style.display='none'">
+                                <img src="assets/images/timeline/biblioteka-UW-1925.jpg" alt="University" class="document-image" onerror="this.style.display='none'" loading="lazy">
                                 <p class="document-caption">University of Warsaw Library</p>
                             </div>
 
                             <div class="document-item">
-                                <img src="assets/images/historical-context/filharmonia.jpg" alt="philharmonic" class="document-image" onerror="this.style.display='none'">
+                                <img src="assets/images/historical-context/filharmonia.jpg" alt="philharmonic" class="document-image" onerror="this.style.display='none'" loading="lazy">
                                 <p class="document-caption">Warsaw Philharmonic Hall</p>
                             </div>
 
                             <div class="document-item">
-                                <img src="assets/images/timeline/uw-1928.jpg" alt="University" class="document-image" onerror="this.style.display='none'">
+                                <img src="assets/images/timeline/uw-1928.jpg" alt="University" class="document-image" onerror="this.style.display='none'" loading="lazy">
                                 <p class="document-caption">University of Warsaw Gate</p>
                             </div>
                             
                             <div class="document-item">
-                                <img src="assets/images/timeline/rozenblum.jpg" alt="Warsaw press" class="document-image" onerror="this.style.display='none'">
+                                <img src="assets/images/timeline/rozenblum.jpg" alt="Warsaw press" class="document-image" onerror="this.style.display='none'" loading="lazy">
                                 <p class="document-caption">Early press coverage from Warsaw, Kurier Warszawski, 1928</p>
                             </div>
                             
                             <div class="document-item">
-                                <img src="assets/images/historical-context/rozenblum1_KW_18011928.jpg" alt="Warsaw press" class="document-image" onerror="this.style.display='none'">
+                                <img src="assets/images/historical-context/rozenblum1_KW_18011928.jpg" alt="Warsaw press" class="document-image" onerror="this.style.display='none'" loading="lazy">
                                 <p class="document-caption">Early press coverage from Warsaw, Kurier Warszawski, 18.01.1928</p>
                             </div>
 
                             <div class="document-item">
-                                <img src="assets/images/historical-context/ti_1.02.1930.jpg" alt="Warsaw press" class="document-image" onerror="this.style.display='none'">
+                                <img src="assets/images/historical-context/ti_1.02.1930.jpg" alt="Warsaw press" class="document-image" onerror="this.style.display='none'" loading="lazy">
                                 <p class="document-caption">Press advertissement from Warsaw, Tygodnik Ilustrowany, 1.02.1930</p>
                             </div>
                         </div>
@@ -1231,42 +1242,42 @@
                         
                         <div class="document-gallery">
                             <div class="document-item">
-                                <img src="assets/images/historical-context/ehe_mfi_19321314.jpg" alt="press" class="document-image" onerror="this.style.display='none'">
+                                <img src="assets/images/historical-context/ehe_mfi_19321314.jpg" alt="press" class="document-image" onerror="this.style.display='none'" loading="lazy">
                                 <p class="document-caption">Film announcement, Mein Film, 1932</p>
                             </div>
                             
                             <div class="document-item">
-                                <img src="assets/images/historical-context/Harmonia_KW_27031929.jpg" alt="press" class="document-image" onerror="this.style.display='none'">
+                                <img src="assets/images/historical-context/Harmonia_KW_27031929.jpg" alt="press" class="document-image" onerror="this.style.display='none'" loading="lazy">
                                 <p class="document-caption">Review in Kurier Warszawski, 27.03.1929</p>
                             </div>
                             
                             <div class="document-item">
-                                <img src="assets/images/historical-context/babelsberg.png" alt="image" class="document-image" onerror="this.style.display='none'">
+                                <img src="assets/images/historical-context/babelsberg.png" alt="image" class="document-image" onerror="this.style.display='none'" loading="lazy">
                                 <p class="document-caption">UFA studios, Babelsberg. Drawing by Helmut Skarbina showing the Tonkreuz in the foreground</p>
                             </div>
 
                             <div class="document-item">
-                                <img src="assets/images/historical-context/Kaper_Berlin_1932_646.jpg" alt="telephone" class="document-image" onerror="this.style.display='none'">
+                                <img src="assets/images/historical-context/Kaper_Berlin_1932_646.jpg" alt="telephone" class="document-image" onerror="this.style.display='none'" loading="lazy">
                                 <p class="document-caption">Berlin telephone book entry for Kaper, 1932.</p>
                             </div>
 
                             <div class="document-item">
-                                <img src="assets/images/historical-context/Kaper_coctail_Kiepura.jpg" alt="Kiepura" class="document-image" onerror="this.style.display='none'">
+                                <img src="assets/images/historical-context/Kaper_coctail_Kiepura.jpg" alt="Kiepura" class="document-image" onerror="this.style.display='none'" loading="lazy">
                                 <p class="document-caption">Kaper with his wife Eleonora and Jan Kiepura in Paris</p>
                             </div>
 
                             <div class="document-item">
-                                <img src="assets/images/historical-context/Niederrheinisches Tageblatt_6.10.1930.jpg" alt="advertisement" class="document-image" onerror="this.style.display='none'">
+                                <img src="assets/images/historical-context/Niederrheinisches Tageblatt_6.10.1930.jpg" alt="advertisement" class="document-image" onerror="this.style.display='none'" loading="lazy">
                                 <p class="document-caption">Press coverage, Niederrheinisches Tageblatt, 6.10.1930</p>
                             </div>
 
                             <div class="document-item">
-                                <img src="assets/images/historical-context/Rhein- und Ruhrzeitung_10.12.1929.jpeg" alt="ERKLA" class="document-image" onerror="this.style.display='none'">
+                                <img src="assets/images/historical-context/Rhein- und Ruhrzeitung_10.12.1929.jpeg" alt="ERKLA" class="document-image" onerror="this.style.display='none'" loading="lazy">
                                 <p class="document-caption">Press review, Rhein- und Ruhrzeitung, 10.12.1929</p>
                             </div>
 
                             <div class="document-item">
-                                <img src="assets/images/historical-context/Rhein- und Ruhrzeitung_14.02.1929.jpeg" alt="ERKLA" class="document-image" onerror="this.style.display='none'">
+                                <img src="assets/images/historical-context/Rhein- und Ruhrzeitung_14.02.1929.jpeg" alt="ERKLA" class="document-image" onerror="this.style.display='none'" loading="lazy">
                                 <p class="document-caption">Press coverage, Rhein- und Ruhrzeitung, 14.02.1929</p>
                             </div>
                         </div>
@@ -1282,22 +1293,22 @@
                             
                         <div class="document-gallery">    
                             <div class="document-item">
-                                <img src="assets/images/historical-context/certificate-of-arrival.tif" alt="arrival" class="document-image" onerror="this.style.display='none'">
+                                <img src="assets/images/historical-context/certificate-of-arrival.tif" alt="arrival" class="document-image" onerror="this.style.display='none'" loading="lazy">
                                 <p class="document-caption">Nov 1, 1935; Certificate of Arrival No. 23-46078, U.S. Department of Labor, INS</p>
                             </div>
                             
                             <div class="document-item">
-                                <img src="assets/images/historical-context/declaration-of-intention.tif" alt="declaration" class="document-image" onerror="this.style.display='none'">
+                                <img src="assets/images/historical-context/declaration-of-intention.tif" alt="declaration" class="document-image" onerror="this.style.display='none'" loading="lazy">
                                 <p class="document-caption">Feb 4, 1936; Declaration of Intention No. 74221, U.S. District Court, Los Angeles</p>
                             </div>
                             
                             <div class="document-item">
-                                <img src="assets/images/historical-context/manifest.jpg" alt="Border crossing" class="document-image" onerror="this.style.display='none'">
+                                <img src="assets/images/historical-context/manifest.jpg" alt="Border crossing" class="document-image" onerror="this.style.display='none'" loading="lazy">
                                 <p class="document-caption">Calexico border crossing manifest, Nov 1, 1935</p>
                             </div>
 
                             <div class="document-item">
-                                <img src="assets/images/historical-context/mexicali-calexico.jpeg" alt="Border crossing" class="document-image" onerror="this.style.display='none'">
+                                <img src="assets/images/historical-context/mexicali-calexico.jpeg" alt="Border crossing" class="document-image" onerror="this.style.display='none'" loading="lazy">
                                 <p class="document-caption">Mexicali-Calexico border, 1936, https://calisphere.org/item/ark:/13030/kt1489p9q0/</p>
                             </div>
                         </div>
@@ -1313,52 +1324,52 @@
 
                         <div class="document-gallery">
                             <div class="document-item">
-                                <img src="assets/images/historical-context/nasz-przeglad-1934-43.jpg" alt="nasz" class="document-image" onerror="this.style.display='none'">
+                                <img src="assets/images/historical-context/nasz-przeglad-1934-43.jpg" alt="nasz" class="document-image" onerror="this.style.display='none'" loading="lazy">
                                 <p class="document-caption">Polish press coverage, Nasz Przegląd, 1934</p>
                             </div>
 
                             <div class="document-item">
-                                <img src="assets/images/historical-context/greetings-califonia.jpg" alt="postcard" class="document-image" onerror="this.style.display='none'">
+                                <img src="assets/images/historical-context/greetings-califonia.jpg" alt="postcard" class="document-image" onerror="this.style.display='none'" loading="lazy">
                                 <p class="document-caption">Historical postcard from California</p>
                             </div>
 
                             <div class="document-item">
-                                <img src="assets/images/historical-context/Escapade_Times_Union_1935_07_09_7.jpg" alt="escapade" class="document-image" onerror="this.style.display='none'">
+                                <img src="assets/images/historical-context/Escapade_Times_Union_1935_07_09_7.jpg" alt="escapade" class="document-image" onerror="this.style.display='none'" loading="lazy">
                                 <p class="document-caption">Press coverage, Times Union, 1935</p>
                             </div>
 
                             <div class="document-item">
-                                <img src="assets/images/historical-context/Escapade_Brooklyn_Eagle_1935_07_22_6.jpg" alt="escapade" class="document-image" onerror="this.style.display='none'">
+                                <img src="assets/images/historical-context/Escapade_Brooklyn_Eagle_1935_07_22_6.jpg" alt="escapade" class="document-image" onerror="this.style.display='none'" loading="lazy">
                                 <p class="document-caption">Press coverage, Brooklyn Eagle, 1935</p>
                             </div>
 
                             <div class="document-item">
-                                <img src="assets/images/historical-context/Continuation_Times_Union_1936_10_10_15.jpg" alt="continuation" class="document-image" onerror="this.style.display='none'">
+                                <img src="assets/images/historical-context/Continuation_Times_Union_1936_10_10_15.jpg" alt="continuation" class="document-image" onerror="this.style.display='none'" loading="lazy">
                                 <p class="document-caption">Press coverage, Times Union, 1936</p>
                             </div>
 
                             <div class="document-item">
-                                <img src="assets/images/historical-context/Races_The_Brooklyn_Citizen_1937_06_18_14.jpg" alt="races" class="document-image" onerror="this.style.display='none'">
+                                <img src="assets/images/historical-context/Races_The_Brooklyn_Citizen_1937_06_18_14.jpg" alt="races" class="document-image" onerror="this.style.display='none'" loading="lazy">
                                 <p class="document-caption">Press coverage, Brooklyn Eagle, 1937</p>
                             </div>
 
                             <div class="document-item">
-                                <img src="assets/images/historical-context/everybody-the Washington daily news, July 13, 1937.jpg" alt="races" class="document-image" onerror="this.style.display='none'">
+                                <img src="assets/images/historical-context/everybody-the Washington daily news, July 13, 1937.jpg" alt="races" class="document-image" onerror="this.style.display='none'" loading="lazy">
                                 <p class="document-caption">Press coverage, The Washington Daily News, 1937</p>
                             </div>
 
                             <div class="document-item">
-                                <img src="assets/images/historical-context/everybody_evening star (Washington, D.C.), July 4, 1937.jpg" alt="races" class="document-image" onerror="this.style.display='none'">
+                                <img src="assets/images/historical-context/everybody_evening star (Washington, D.C.), July 4, 1937.jpg" alt="races" class="document-image" onerror="this.style.display='none'" loading="lazy">
                                 <p class="document-caption">Press coverage, Evening Star, 1937</p>
                             </div>
 
                             <div class="document-item">
-                                <img src="assets/images/historical-context/Everybody_Brooklyn_Eagle_1938_03_17_8.jpg" alt="everybody" class="document-image" onerror="this.style.display='none'">
+                                <img src="assets/images/historical-context/Everybody_Brooklyn_Eagle_1938_03_17_8.jpg" alt="everybody" class="document-image" onerror="this.style.display='none'" loading="lazy">
                                 <p class="document-caption">Press coverage, Brooklyn Eagle, 1938</p>
                             </div>
 
                             <div class="document-item">
-                                <img src="assets/images/historical-context/anecdote-the Washington times, October 31, 1938.jpg" alt="races" class="document-image" onerror="this.style.display='none'">
+                                <img src="assets/images/historical-context/anecdote-the Washington times, October 31, 1938.jpg" alt="races" class="document-image" onerror="this.style.display='none'" loading="lazy">
                                 <p class="document-caption">Press coverage, The Washington Times, 1938</p>
                             </div>
                         </div>
@@ -1374,37 +1385,37 @@
                         
                         <div class="document-gallery">
                             <div class="document-item">
-                                <img src="assets/images/historical-context/to musza.jpg" alt="To musza" class="document-image" onerror="this.style.display='none'">
+                                <img src="assets/images/historical-context/to musza.jpg" alt="To musza" class="document-image" onerror="this.style.display='none'" loading="lazy">
                                 <p class="document-caption">"To muszą śpiewać wszyscy" sheet music</p>
                             </div>
                             
                             <div class="document-item">
-                                <img src="assets/images/historical-context/jak-sie-da.jpg" alt="Jak sie da" class="document-image" onerror="this.style.display='none'">
+                                <img src="assets/images/historical-context/jak-sie-da.jpg" alt="Jak sie da" class="document-image" onerror="this.style.display='none'" loading="lazy">
                                 <p class="document-caption">"Jak się da, to się zrobi" sheet music</p>
                             </div>
 
                             <div class="document-item">
-                                <img src="assets/images/sheet-music/ja nie mam.jpg" alt="Ja nie mam" class="document-image" onerror="this.style.display='none'">
+                                <img src="assets/images/sheet-music/ja nie mam.jpg" alt="Ja nie mam" class="document-image" onerror="this.style.display='none'" loading="lazy">
                                 <p class="document-caption">"Ja nie mam głosu" sheet music</p>
                             </div>
                             
                             <div class="document-item">
-                                <img src="assets/images/historical-context/heut-bin.jpg" alt="Heut" class="document-image" onerror="this.style.display='none'">
+                                <img src="assets/images/historical-context/heut-bin.jpg" alt="Heut" class="document-image" onerror="this.style.display='none'" loading="lazy">
                                 <p class="document-caption">"Heut' bin ich gut aufgelegt!" sheet music</p>
                             </div>
 
                             <div class="document-item">
-                                <img src="assets/images/historical-context/mondnacht.jpg" alt="mondnacht" class="document-image" onerror="this.style.display='none'">
+                                <img src="assets/images/historical-context/mondnacht.jpg" alt="mondnacht" class="document-image" onerror="this.style.display='none'" loading="lazy">
                                 <p class="document-caption">"Mondnacht in Sanssouci" sheet music</p>
                             </div>
 
                             <div class="document-item">
-                                <img src="assets/images/historical-context/blue.jpg" alt="blue" class="document-image" onerror="this.style.display='none'">
+                                <img src="assets/images/historical-context/blue.jpg" alt="blue" class="document-image" onerror="this.style.display='none'" loading="lazy">
                                 <p class="document-caption">"Blue Venetian Waters" sheet music</p>
                             </div>
 
                             <div class="document-item">
-                                <img src="assets/images/historical-context/sagen-kleine.jpg" alt="sagen" class="document-image" onerror="this.style.display='none'">
+                                <img src="assets/images/historical-context/sagen-kleine.jpg" alt="sagen" class="document-image" onerror="this.style.display='none'" loading="lazy">
                                 <p class="document-caption">"Sagen kleine Mädels 'nein'..." sheet music</p>
                             </div>
                         </div>
@@ -1421,21 +1432,15 @@
                     <h3 class="credits-title">Media Credits & Sources</h3>
                     <div class="credits-grid">
                         <div class="credit-category">
-                            <h4>🎵 Audio Sources</h4>
+                            <h4>🎵 🎬 Audio & Video Sources</h4>
                             <ul class="credit-list">
                                 <li>Internet Archive - Public Domain recordings</li>
                                 <li>Educational excerpts under Fair Use provisions</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="credit-category">
-                            <h4>🎬 Video Sources</h4>
-                            <ul class="credit-list">
                                 <li>National Archives - Public Domain pictures</li>
                                 <li>Historical footage under Fair Use</li>
                             </ul>
                         </div>
-                        
+                                                
                         <div class="credit-category">
                             <h4>📸 Additional Resources</h4>
                             <ul class="credit-list">
@@ -1462,12 +1467,12 @@
     </div>
 
     <!-- Modal Gallery -->
-    <div id="imageModal" class="image-modal">
-        <button onclick="closeImageModal()" class="modal-close-btn">×</button>
+    <div id="imageModal" class="image-modal" role="dialog" aria-modal="true" aria-label="Image viewer" aria-hidden="true">
+        <button class="modal-close-btn">×</button>
         
-        <button onclick="previousImage()" class="modal-nav-btn modal-prev">‹</button>
+        <button class="modal-nav-btn modal-prev">‹</button>
         
-        <button onclick="nextImage()" class="modal-nav-btn modal-next">›</button>
+        <button class="modal-nav-btn modal-next">›</button>
         
         <div class="modal-image-container">
             <img id="modalImage" src="" alt="" class="modal-image">
@@ -1485,6 +1490,11 @@
         let currentFilter = 'all';
         let currentImageIndex = 0;
         let currentGalleryImages = [];
+        let lastFocusedElement = null;
+        function getFocusableElements(container){
+            return Array.from(container.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'))
+                .filter(el => !el.hasAttribute('disabled') && el.offsetParent !== null);
+        }
 
         function showView(viewName) {
             document.querySelectorAll('.view').forEach(view => {
@@ -1538,6 +1548,7 @@
 
         // Gallery functions
         function openImageModal(img, galleryImages) {
+            lastFocusedElement = document.activeElement;
             currentGalleryImages = galleryImages;
             currentImageIndex = galleryImages.findIndex(item => item.src === img.src);
             
@@ -1547,17 +1558,25 @@
             const imageCounter = document.getElementById('imageCounter');
             
             modal.style.display = 'block';
+            modal.setAttribute('aria-hidden','false');
             modalImg.src = img.src;
             modalImg.alt = img.alt;
             modalCaption.textContent = img.nextElementSibling ? img.nextElementSibling.textContent : img.alt;
             imageCounter.textContent = `${currentImageIndex + 1} / ${currentGalleryImages.length}`;
             
             document.body.style.overflow = 'hidden';
+            const closeBtn = document.getElementById('modalCloseBtn');
+            if (closeBtn) closeBtn.focus();
         }
 
         function closeImageModal() {
-            document.getElementById('imageModal').style.display = 'none';
+            const modal = document.getElementById('imageModal');
+            modal.style.display = 'none';
+            modal.setAttribute('aria-hidden','true');
             document.body.style.overflow = '';
+            if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') {
+                lastFocusedElement.focus();
+            }
         }
 
         function nextImage() {
@@ -1587,7 +1606,40 @@
         }
 
         document.addEventListener('DOMContentLoaded', function() {
+            const imageModalEl = document.getElementById('imageModal');
+            if (imageModalEl) imageModalEl.setAttribute('aria-hidden','true');
             showView('audio');
+            
+            // Bind view navigation (no inline onclick)
+            document.querySelectorAll('.nav-btn[data-view]').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    // Prevent navigation if it's a link
+                    if (btn.tagName.toLowerCase() === 'a') e.preventDefault();
+                    showView(btn.dataset.view);
+                });
+            });
+
+            // Bind filters (no inline onclick)
+            document.querySelectorAll('.filter-btn[data-filter]').forEach(btn => {
+                btn.addEventListener('click', () => filterMedia(btn.dataset.filter));
+            });
+
+            // Modal button bindings
+            const closeBtn = document.getElementById('modalCloseBtn');
+            const prevBtn = document.getElementById('modalPrevBtn');
+            const nextBtn = document.getElementById('modalNextBtn');
+            if (closeBtn) closeBtn.addEventListener('click', closeImageModal);
+            if (prevBtn) prevBtn.addEventListener('click', previousImage);
+            if (nextBtn) nextBtn.addEventListener('click', nextImage);
+
+            // Close modal on backdrop click
+            const modalEl = imageModalEl || document.getElementById('imageModal');
+            if (modalEl) {
+                modalEl.addEventListener('click', (e) => {
+                    if (e.target === modalEl) closeImageModal();
+                });
+            }
+
             
             const mediaPlayers = document.querySelectorAll('.media-player');
             mediaPlayers.forEach(player => {
@@ -1621,6 +1673,24 @@
                 const modal = document.getElementById('imageModal');
                 
                 if (modal.style.display === 'block') {
+                    // Focus trap
+                    if (e.key === 'Tab') {
+                        const focusables = getFocusableElements(modal);
+                        if (focusables.length) {
+                            const first = focusables[0];
+                            const last = focusables[focusables.length - 1];
+                            if (e.shiftKey && document.activeElement === first) {
+                                e.preventDefault();
+                                last.focus();
+                                return;
+                            }
+                            if (!e.shiftKey && document.activeElement === last) {
+                                e.preventDefault();
+                                first.focus();
+                                return;
+                            }
+                        }
+                    }
                     // Gallery navigation
                     if (e.key === 'ArrowLeft') {
                         previousImage();
