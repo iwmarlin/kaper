@@ -84,11 +84,10 @@
         }
         
         .period {
-            font-size: 1.5rem;              /* większy rozmiar */
-            color: #ffffff;                /* biały */
-            font-weight: 500;              /* półpogrubiony */
-            letter-spacing: 0.1em;         /* większy odstęp */
-            text-shadow: 0 2px 6px rgba(0,0,0,0.4); /* kontrast */
+            font-size: 1.125rem;
+            color: #d1d5db;
+            font-weight: 300;
+            letter-spacing: 0.05em;
         }
         
         .navigation {
@@ -985,7 +984,7 @@
                 <img src="assets/images/portraits/kaper-young.jpg" alt="Bronisław Kaper" class="header-portrait" onerror="this.style.display='none'">
                 <div class="header-text">
                     <h2 class="title">Bronisław Kaper: Works Across Europe and Hollywood</h2>
-                    <h2 class="period">(1926–1939)</h2>
+                    <h2 class="period">1926–1939</h2>
                 </div>
             </div>
         </div>
@@ -1231,23 +1230,47 @@
     </div>
     
     <script>
-        const timelineData = [
-            { year: 1926, songs: 4, films: 0 },
-            { year: 1927, songs: 2, films: 0 },
-            { year: 1929, songs: 7, films: 0 },
-            { year: 1930, songs: 17, films: 3 },
-            { year: 1931, songs: 21, films: 4 },
-            { year: 1932, songs: 22, films: 9 },
-            { year: 1933, songs: 26, films: 12 },
-            { year: 1934, songs: 15, films: 4 },
-            { year: 1935, songs: 13, films: 8 },
-            { year: 1936, songs: 25, films: 4 },
-            { year: 1937, songs: 22, films: 4 },
-            { year: 1938, songs: 1, films: 2 },
-            { year: 1939, songs: 2, films: 2 }
-        ];
+        /* ========= Single source of truth =========
+   timelineData is derived from songsData + filmData (no manual syncing).
+*/
+let timelineData = [];
 
-        const filmData = [
+function rebuildTimelineData() {
+    // Prefer the real min/max from data, but keep a stable display range when possible
+    const yearsFromSongs = songsData.map(s => Number(s.year)).filter(Number.isFinite);
+    const yearsFromFilms = filmData.map(f => Number(f.year)).filter(Number.isFinite);
+    const allYears = yearsFromSongs.concat(yearsFromFilms);
+
+    // Fallback to the known project span if something is missing
+    const minYear = allYears.length ? Math.min(...allYears) : 1926;
+    const maxYear = allYears.length ? Math.max(...allYears) : 1939;
+
+    const songCounts = new Map();
+    for (const s of songsData) {
+        const y = Number(s.year);
+        if (!Number.isFinite(y)) continue;
+        songCounts.set(y, (songCounts.get(y) || 0) + 1);
+    }
+
+    const filmCounts = new Map();
+    for (const f of filmData) {
+        const y = Number(f.year);
+        if (!Number.isFinite(y)) continue;
+        filmCounts.set(y, (filmCounts.get(y) || 0) + 1);
+    }
+
+    // Build continuous series (includes years with 0 works)
+    const out = [];
+    for (let y = minYear; y <= maxYear; y++) {
+        out.push({
+            year: y,
+            songs: songCounts.get(y) || 0,
+            films: filmCounts.get(y) || 0
+        });
+    }
+    timelineData = out;
+}
+const filmData = [
             { title: "Die lustigen Musikanten (Laubenkolonie)", director: "Max Obal", year: 1930, period: "european", jurmann: "no", production: "Aafa-Film AG (Berlin)", credit: "composer", poster: "assets/images/film-posters/european-period/laubenkolonie.jpg" },
             { title: "Alraune", director: "Richard Oswald", year: 1930, period: "european", jurmann: "no", production: "Richard Oswald-Produktion GmbH (Berlin)", credit: "composer", poster: "assets/images/film-posters/european-period/alraune.jpg" },
             { title: "Der Korvettenkapitän", director: "Rudolf Walther-Fein", year: 1930, period: "european", jurmann: "no", production: "Aafa-Film AG (Berlin)", credit: "composer", poster: "assets/images/film-posters/european-period/korvettenkapitan.jpg" },
@@ -1482,7 +1505,39 @@
             { title: "J'ai un message pour toi [A Message from the Man in the Moon]", genre: "slow-fox", year: 1937, publisher: null, lyricist: "Jean Féline", notes: "with Jurmann", film: "A day at the races", period: "hollywood" }
         ];
         
-        const otherWorksData = [
+        
+// Build derived structures once data arrays are loaded
+rebuildTimelineData();
+
+function updateFilterButtonCounts() {
+    const set = (id, text) => {
+        const el = document.getElementById(id);
+        if (el) el.textContent = text;
+    };
+
+    // Songs
+    const totalSongs = songsData.length;
+    const warsawSongs = songsData.filter(s => Number(s.year) >= 1926 && Number(s.year) <= 1929).length;
+    const europeanSongs = songsData.filter(s => s.period === 'european').length;
+    const hollywoodSongs = songsData.filter(s => s.period === 'hollywood').length;
+
+    set('songs-all', `All Songs (${totalSongs})`);
+    set('songs-warsaw', `Warsaw-Berlin (${warsawSongs})`);
+    set('songs-european', `European Period (${europeanSongs})`);
+    set('songs-hollywood', `Hollywood Period (${hollywoodSongs})`);
+
+    // Films
+    const totalFilms = filmData.length;
+    const europeanFilms = filmData.filter(f => f.period === 'european').length;
+    const hollywoodFilms = filmData.filter(f => f.period === 'hollywood').length;
+
+    set('films-all', `All Films (${totalFilms})`);
+    set('films-european', `European Period (${europeanFilms})`);
+    set('films-hollywood', `Hollywood Period (${hollywoodFilms})`);
+}
+
+updateFilterButtonCounts();
+const otherWorksData = [
             { title: "Rozmowa", year: 1923, publisher: "manuscript (American Heritage Center, University of Wyoming)", instrumentation: "concert song for voice and piano" },
             { title: "Koszutski Girls", year: 1923, publisher: "manuscript (American Heritage Center, University of Wyoming)", instrumentation: "voice and piano" },
             { title: "Etude", year: 1925, publisher: "manuscript (American Heritage Center, University of Wyoming)", instrumentation: "piano" },
