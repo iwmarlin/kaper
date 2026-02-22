@@ -1047,12 +1047,12 @@
                         <div class="studio-period">
                             <img src="assets/images/timeline/1930s-berlin.jpg" alt="Berlin 1930s" class="period-image" onerror="this.style.display='none'">
                             <h5>European Period (1930-1934)</h5>
-                            <p>Diverse studio landscape: UFA-Berlin, Aafa-Film, Emelka, Cine-Allianz, and French productions</p>
+                            <p id=\"periodDescEurope\">Diverse studio landscape: UFA-Berlin, Aafa-Film, Emelka, Cine-Allianz, and French productions</p>
                         </div>
                         <div class="studio-period">
                             <img src="assets/images/timeline/hollywood-golden-age.jpg" alt="Hollywood Golden Age" class="period-image" onerror="this.style.display='none'">
                             <h5>Hollywood Period (1935-1939)</h5>
-                            <p>MGM dominance with 16/20 films; additional work at Universal Pictures and 20th Century Fox</p>
+                            <p id=\"periodDescHollywood\">MGM dominance with 16/20 films; additional work at Universal Pictures and 20th Century Fox</p>
                         </div>
                     </div>
                 </div>
@@ -1063,7 +1063,7 @@
                         <div class="period-number" style="background-color: #e5e7eb; color: #374151;">1</div>
                         <h3 class="period-name">Between Warsaw and Berlin</h3>
                         <p class="period-years">1926–1929</p>
-                        <div class="period-stats">14 songs · 0 films</div>
+                        <div class="period-stats"><span id="warsawCardStats"></span></div>
                         <p class="period-desc">Early songs with Polish or German lyrics</p>
                     </div>
                     <div class="period-card" onclick="showPeriodTimeline('european')">
@@ -1071,7 +1071,7 @@
                         <div class="period-number" style="background-color: #6b7280;">2</div>
                         <h3 class="period-name">European Period</h3>
                         <p class="period-years">1930–1934</p>
-                        <div class="period-stats">101 songs · 32 films</div>
+                        <div class="period-stats"><span id="europeCardStats"></span></div>
                         <p class="period-desc">Berlin, Paris & international films</p>
                         <p class="period-studios">Main studios: UFA, Aafa, Emelka</p>
                     </div>
@@ -1080,7 +1080,7 @@
                         <div class="period-number" style="background-color: #111827;">3</div>
                         <h3 class="period-name">Hollywood Period</h3>
                         <p class="period-years">1935–1939</p>
-                        <div class="period-stats">63 songs · 20 films</div>
+                        <div class="period-stats"><span id="hollywoodCardStats"></span></div>
                         <p class="period-desc">MGM studio contract (73% of films)</p>
                         <p class="period-studios">Main studios: MGM, Universal</p>
                     </div>
@@ -1192,8 +1192,8 @@
             <div id="songs" class="view">
                 <div class="filmography-filters">
                     <button class="filter-btn active" onclick="filterSongs('all')" id="songs-all">All Songs (177)</button>
-                    <button class="filter-btn" onclick="filterSongs('warsaw')" id="songs-warsaw">Warsaw-Berlin (13)</button>
-                    <button class="filter-btn" onclick="filterSongs('european')" id="songs-european">European Period (101)</button>
+                    <button class="filter-btn" onclick="filterSongs('warsaw')" id="songs-warsaw">Warsaw-Berlin (14)</button>
+                    <button class="filter-btn" onclick="filterSongs('european')" id="songs-european">European Period (100)</button>
                     <button class="filter-btn" onclick="filterSongs('hollywood')" id="songs-hollywood">Hollywood Period (63)</button>
                 </div>
                 
@@ -1230,22 +1230,6 @@
     </div>
     
     <script>
-        const timelineData = [
-            { year: 1926, songs: 4, films: 0 },
-            { year: 1927, songs: 2, films: 0 },
-            { year: 1929, songs: 7, films: 0 },
-            { year: 1930, songs: 17, films: 3 },
-            { year: 1931, songs: 21, films: 4 },
-            { year: 1932, songs: 22, films: 9 },
-            { year: 1933, songs: 26, films: 12 },
-            { year: 1934, songs: 15, films: 4 },
-            { year: 1935, songs: 13, films: 8 },
-            { year: 1936, songs: 25, films: 4 },
-            { year: 1937, songs: 22, films: 4 },
-            { year: 1938, songs: 1, films: 2 },
-            { year: 1939, songs: 2, films: 2 }
-        ];
-
         const filmData = [
             { title: "Die lustigen Musikanten (Laubenkolonie)", director: "Max Obal", year: 1930, period: "european", jurmann: "no", production: "Aafa-Film AG (Berlin)", credit: "composer", poster: "assets/images/film-posters/european-period/laubenkolonie.jpg" },
             { title: "Alraune", director: "Richard Oswald", year: 1930, period: "european", jurmann: "no", production: "Richard Oswald-Produktion GmbH (Berlin)", credit: "composer", poster: "assets/images/film-posters/european-period/alraune.jpg" },
@@ -1518,6 +1502,68 @@
             setBtn('songs-hollywood', 'Hollywood Period', hollywood);
         }
 
+        function updatePeriodDescriptionCounts() {
+            // European studios: show the most frequent producers
+            const europeFilms = filmData.filter(f => f.period === "european");
+            const hollywoodFilms = filmData.filter(f => f.period === "hollywood");
+
+            const normProd = (p) => (p || "").replace(/\s*\([^)]*\)\s*$/g, "").trim();
+
+            const topProducers = (films, topN=4) => {
+                const counts = new Map();
+                films.forEach(f => {
+                    const key = normProd(f.production);
+                    if (!key) return;
+                    counts.set(key, (counts.get(key) || 0) + 1);
+                });
+                return Array.from(counts.entries())
+                    .sort((a,b)=>b[1]-a[1])
+                    .slice(0, topN);
+            };
+
+            const europeTop = topProducers(europeFilms, 4);
+            // build a compact phrase like "Aafa-Film, UFA, Emelka, Cine-Allianz (2 films each)"
+            let europeText = "Diverse studio landscape";
+            if (europeFilms.length) {
+                const max = europeTop.length ? europeTop[0][1] : 0;
+                const leaders = europeTop.filter(([_,c])=>c===max).map(([n,_])=>n);
+                if (leaders.length) {
+                    europeText = `Diverse studio landscape (${europeFilms.length} films): leading producers include ${leaders.join(", ")} (${max} films each)`;
+                } else {
+                    europeText = `Diverse studio landscape (${europeFilms.length} films)`;
+                }
+            }
+
+            const europeEl = document.getElementById("periodDescEurope");
+            if (europeEl) europeEl.textContent = europeText;
+
+            // Hollywood: MGM share out of total + list other studios
+            const totalH = hollywoodFilms.length;
+            const mgmFilms = hollywoodFilms.filter(f => /MGM|Metro-Goldwyn-Mayer/i.test(f.production || ""));
+            const mgmN = mgmFilms.length;
+
+            const otherCounts = new Map();
+            hollywoodFilms.forEach(f => {
+                const prod = normProd(f.production);
+                if (!prod) return;
+                if (/MGM|Metro-Goldwyn-Mayer/i.test(prod)) return;
+                otherCounts.set(prod, (otherCounts.get(prod) || 0) + 1);
+            });
+            const others = Array.from(otherCounts.entries()).sort((a,b)=>b[1]-a[1]);
+
+            let hollywoodText = "Hollywood studio work";
+            if (totalH) {
+                const otherNames = others.map(([n,c]) => c > 1 ? `${n} (${c})` : n);
+                const tail = otherNames.length ? `; additional work at ${otherNames.join(", ")}` : "";
+                hollywoodText = `MGM dominance with ${mgmN}/${totalH} films${tail}`;
+            }
+
+            const holEl = document.getElementById("periodDescHollywood");
+            if (holEl) holEl.textContent = hollywoodText;
+        }
+
+
+
 
 
         document.addEventListener('DOMContentLoaded', function() {
@@ -1526,6 +1572,7 @@
             renderOther();
             
             updateSongsFilterButtonCounts();
+            updatePeriodDescriptionCounts();
             const closeBtn = document.getElementById('modalClose');
             if (closeBtn) {
                 closeBtn.addEventListener('click', closeModal);
@@ -1842,7 +1889,27 @@
             }, 100);
         }
 
+        function buildTimelineFromData() {
+            // Single source of truth: derive per-year counts from songsData and filmData
+            const startYear = 1926;
+            const endYear = 1939;
+            const years = [];
+            for (let y = startYear; y <= endYear; y++) {
+                const songs = songsData.filter(s => s.year === y).length;
+                const films = filmData.filter(f => f.year === y).length;
+                years.push({ year: y, songs, films });
+            }
+            return years;
+        }
+
+        // Derived timeline data used by the Works Chart (always in sync with songsData/filmData)
+        let timelineData = buildTimelineFromData();
+
+
+
         function getFilteredData() {
+            // Rebuild in case underlying arrays changed (after edits)
+            timelineData = buildTimelineFromData();
             if (currentFilter === 'all') return timelineData;
             
             const ranges = {
@@ -1939,13 +2006,17 @@
                     scales: {
                         x: {
                             grid: {
-                                display: false
+                                display: true,
+                                drawBorder: false
                             },
                             ticks: {
                                 color: '#6b7280',
                                 font: {
-                                    size: 14
-                                }
+                                    size: 13
+                                },
+                                autoSkip: false,
+                                maxRotation: 0,
+                                minRotation: 0
                             }
                         },
                         y: {
