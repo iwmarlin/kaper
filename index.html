@@ -292,7 +292,6 @@
         }
         
         .studio-period {
-            position: relative;
             padding: 1.5rem;
             border-radius: 1rem;
             background: rgba(255, 255, 255, 0.6);
@@ -313,26 +312,50 @@
         }
         
         .period-image {
-            width: 60px;
-            height: 60px;
-            border-radius: 8px;
+            width: 100%;
+            max-width: 180px;
+            height: 120px;
+            border-radius: 12px;
             object-fit: cover;
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            opacity: 0.7;
-            transition: opacity 0.3s ease;
+            display: block;
+            margin-bottom: 1rem;
+            opacity: 0.85;
+            transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
             cursor: pointer;
+            box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.15);
         }
         
         .studio-period:hover .period-image {
             opacity: 1;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px -4px rgba(0, 0, 0, 0.2);
         }
 
-        .period-image.enlarged {
-            transform: scale(2);
-            z-index: 10;
-            position: relative;
+        .image-lightbox-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.75);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            backdrop-filter: blur(4px);
+        }
+
+        .image-lightbox-overlay.active {
+            display: flex;
+        }
+
+        .image-lightbox-overlay img {
+            max-width: 90vw;
+            max-height: 85vh;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            object-fit: contain;
         }
         
         .periods-grid {
@@ -1230,6 +1253,10 @@
         </div>
     </div>
     
+    <!-- Image Lightbox -->
+    <div id="imageLightbox" class="image-lightbox-overlay">
+        <img id="lightboxImg" src="" alt="">
+    </div>
     <script>
         const filmData = [
             { title: "Die lustigen Musikanten (Laubenkolonie)", director: "Max Obal", year: 1930, period: "european", jurmann: "no", production: "Aafa-Film AG (Berlin)", credit: "composer", poster: "assets/images/film-posters/european-period/laubenkolonie.jpg" },
@@ -1662,9 +1689,22 @@
             
             document.querySelectorAll('.period-image').forEach(img => {
                 img.addEventListener('click', () => {
-                    img.classList.toggle('enlarged');
+                    const overlay = document.getElementById('imageLightbox');
+                    const lightboxImg = document.getElementById('lightboxImg');
+                    if (overlay && lightboxImg) {
+                        lightboxImg.src = img.src;
+                        lightboxImg.alt = img.alt;
+                        overlay.classList.add('active');
+                    }
                 });
             });
+
+            const lightboxOverlay = document.getElementById('imageLightbox');
+            if (lightboxOverlay) {
+                lightboxOverlay.addEventListener('click', () => {
+                    lightboxOverlay.classList.remove('active');
+                });
+            }
         });
 
         function openModal(content) {
