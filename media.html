@@ -535,13 +535,17 @@
             left: 0;
             right: 0;
             bottom: 0;
+            overflow-y: auto;
+            overflow-x: hidden;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .modal-image-wrapper {
+            min-height: 100%;
             display: flex;
             align-items: center;
             justify-content: center;
-            overflow-y: auto;
-            overflow-x: hidden;
             padding: 5rem 4rem 6rem;
-            -webkit-overflow-scrolling: touch;
         }
 
         .modal-image-container::-webkit-scrollbar {
@@ -556,22 +560,13 @@
         }
 
         .modal-image {
-            max-width: 90%;
-            max-height: none;
+            display: block;
+            max-width: min(90%, 1200px);
+            width: auto;
+            height: auto;
             object-fit: contain;
             border-radius: 4px;
             transition: opacity 0.15s ease;
-            flex-shrink: 0;
-        }
-
-        /* When image fits in viewport, center it */
-        .modal-image-container.fits-viewport {
-            align-items: center;
-        }
-
-        /* When image is taller than viewport, align to top for scrolling */
-        .modal-image-container.scroll-mode {
-            align-items: flex-start;
         }
 
         .modal-close-btn {
@@ -662,7 +657,7 @@
             .modal-prev { left: 1rem; }
             .modal-next { right: 1rem; }
             .modal-close-btn { width: 40px; height: 40px; font-size: 1.5rem; top: 1rem; right: 1rem; }
-            .modal-image-container { padding: 4rem 2rem 5rem; }
+            .modal-image-wrapper { padding: 4rem 2rem 5rem; }
         }
         
         /* Scrollbar styling */
@@ -1421,7 +1416,9 @@
         <button class="modal-nav-btn modal-next" id="modalNextBtn" aria-label="Next image">›</button>
         
         <div class="modal-image-container">
-            <img id="modalImage" src="" alt="" class="modal-image">
+            <div class="modal-image-wrapper">
+                <img id="modalImage" src="" alt="" class="modal-image">
+            </div>
         </div>
         
         <div id="modalCaption" class="modal-caption"></div>
@@ -1573,34 +1570,7 @@
 
         function adjustModalScroll() {
             const container = document.querySelector('.modal-image-container');
-            const modalImg = document.getElementById('modalImage');
-            if (!container || !modalImg) return;
-
-            // Reset scroll position
-            container.scrollTop = 0;
-
-            // Wait for image to load to get natural dimensions
-            if (modalImg.complete) {
-                applyScrollMode(container, modalImg);
-            } else {
-                modalImg.onload = () => applyScrollMode(container, modalImg);
-            }
-        }
-
-        function applyScrollMode(container, img) {
-            const availableHeight = container.clientHeight;
-            // Check if image natural aspect ratio would make it taller than viewport
-            const displayWidth = Math.min(img.naturalWidth, container.clientWidth * 0.9);
-            const scale = displayWidth / img.naturalWidth;
-            const displayHeight = img.naturalHeight * scale;
-
-            if (displayHeight > availableHeight * 0.95) {
-                container.classList.add('scroll-mode');
-                container.classList.remove('fits-viewport');
-            } else {
-                container.classList.add('fits-viewport');
-                container.classList.remove('scroll-mode');
-            }
+            if (container) container.scrollTop = 0;
         }
 
         document.addEventListener('DOMContentLoaded', function() {
