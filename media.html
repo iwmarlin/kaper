@@ -529,6 +529,51 @@
             overflow: hidden;
         }
 
+        .modal-image-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow-y: auto;
+            overflow-x: hidden;
+            padding: 5rem 4rem 6rem;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .modal-image-container::-webkit-scrollbar {
+            width: 6px;
+        }
+        .modal-image-container::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .modal-image-container::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 3px;
+        }
+
+        .modal-image {
+            max-width: 90%;
+            max-height: none;
+            object-fit: contain;
+            border-radius: 4px;
+            transition: opacity 0.15s ease;
+            flex-shrink: 0;
+        }
+
+        /* When image fits in viewport, center it */
+        .modal-image-container.fits-viewport {
+            align-items: center;
+        }
+
+        /* When image is taller than viewport, align to top for scrolling */
+        .modal-image-container.scroll-mode {
+            align-items: flex-start;
+        }
+
         .modal-close-btn {
             position: absolute;
             top: 2rem;
@@ -617,7 +662,7 @@
             .modal-prev { left: 1rem; }
             .modal-next { right: 1rem; }
             .modal-close-btn { width: 40px; height: 40px; font-size: 1.5rem; top: 1rem; right: 1rem; }
-            .modal-image-container { padding: 2rem; }
+            .modal-image-container { padding: 4rem 2rem 5rem; }
         }
         
         /* Scrollbar styling */
@@ -1484,6 +1529,7 @@
             imageCounter.textContent = `${currentImageIndex + 1} / ${currentGalleryImages.length}`;
             
             document.body.style.overflow = 'hidden';
+            adjustModalScroll();
             const closeBtn = document.getElementById('modalCloseBtn');
             if (closeBtn) closeBtn.focus();
         }
@@ -1521,7 +1567,40 @@
                 modalCaption.textContent = currentImage.caption;
                 imageCounter.textContent = `${currentImageIndex + 1} / ${currentGalleryImages.length}`;
                 modalImg.style.opacity = '1';
+                adjustModalScroll();
             }, 150);
+        }
+
+        function adjustModalScroll() {
+            const container = document.querySelector('.modal-image-container');
+            const modalImg = document.getElementById('modalImage');
+            if (!container || !modalImg) return;
+
+            // Reset scroll position
+            container.scrollTop = 0;
+
+            // Wait for image to load to get natural dimensions
+            if (modalImg.complete) {
+                applyScrollMode(container, modalImg);
+            } else {
+                modalImg.onload = () => applyScrollMode(container, modalImg);
+            }
+        }
+
+        function applyScrollMode(container, img) {
+            const availableHeight = container.clientHeight;
+            // Check if image natural aspect ratio would make it taller than viewport
+            const displayWidth = Math.min(img.naturalWidth, container.clientWidth * 0.9);
+            const scale = displayWidth / img.naturalWidth;
+            const displayHeight = img.naturalHeight * scale;
+
+            if (displayHeight > availableHeight * 0.95) {
+                container.classList.add('scroll-mode');
+                container.classList.remove('fits-viewport');
+            } else {
+                container.classList.add('fits-viewport');
+                container.classList.remove('scroll-mode');
+            }
         }
 
         document.addEventListener('DOMContentLoaded', function() {
