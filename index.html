@@ -99,6 +99,9 @@
             gap: 3rem;
             border-bottom: 1px solid rgba(229, 231, 235, 0.6);
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
         
         .nav-btn {
@@ -959,6 +962,7 @@
             .navigation { 
                 gap: 1rem; 
                 flex-wrap: wrap;
+                padding: 1rem;
             }
             .nav-btn.media-link {
                 order: -1;
@@ -983,15 +987,15 @@
             <div class="header-content">
                 <img src="assets/images/portraits/kaper-young.jpg" alt="Bronisław Kaper" class="header-portrait" onerror="this.style.display='none'">
                 <div class="header-text">
-                    <h2 class="title">Bronisław Kaper: Works Across Europe and Hollywood</h2>
-                    <h2 class="period">1926–1939</h2>
+                    <h1 class="title">Bronisław Kaper: Works Across Europe and Hollywood</h1>
+                    <p class="period">1926–1939</p>
                 </div>
             </div>
         </div>
         
         <div class="navigation">
             <a href="life.html" class="nav-btn media-link">📅 Life & Career Timeline</a>
-            <button class="nav-btn active" id="nav-overview">Overview</button>
+            <button class="nav-btn active" id="nav-overview" aria-current="page">Overview</button>
             <button class="nav-btn" id="nav-timeline">Works Chart</button>
             <button class="nav-btn" id="nav-periods">Periods</button>
             <button class="nav-btn" id="nav-filmography">Filmography</button>
@@ -1004,19 +1008,19 @@
             <div id="overview" class="view active">
                 <div class="metrics-grid">
                     <div class="metric">
-                        <div class="metric-number">177</div>
+                        <div class="metric-number" id="metric-total-songs">177</div>
                         <div class="metric-label">Total Songs</div>
-                        <div class="metric-sublabel">1926–1939</div>
+                        <div class="metric-sublabel" id="metric-songs-sublabel">1926–1939</div>
                     </div>
                     <div class="metric">
-                        <div class="metric-number">52</div>
+                        <div class="metric-number" id="metric-total-films">52</div>
                         <div class="metric-label">Film Titles</div>
-                        <div class="metric-sublabel">32 European + 20 Hollywood</div>
+                        <div class="metric-sublabel" id="metric-films-sublabel">32 European + 20 Hollywood</div>
                     </div>
                     <div class="metric">
-                        <div class="metric-number">78%</div>
+                        <div class="metric-number" id="metric-jurmann-pct">78%</div>
                         <div class="metric-label">Songs with Jurmann</div>
-                        <div class="metric-sublabel">139 of 177 songs</div>
+                        <div class="metric-sublabel" id="metric-jurmann-sublabel">139 of 177 songs</div>
                     </div>
                 </div>
                 
@@ -1033,26 +1037,26 @@
                     
                     <div class="collaboration-stats">
                         <div class="collab-stat">
-                            <div class="collab-number">92%</div>
+                            <div class="collab-number" id="collab-jurmann-films-number">92%</div>
                             <div class="collab-label">Films with Jurmann</div>
-                            <div class="collab-detail">48 of 52 films</div>
+                            <div class="collab-detail" id="collab-jurmann-films-detail">48 of 52 films</div>
                         </div>
                         <div class="collab-stat">
-                            <div class="collab-number">78%</div>
+                            <div class="collab-number" id="collab-jurmann-songs-number">78%</div>
                             <div class="collab-label">Songs with Jurmann</div>
-                            <div class="collab-detail">139 of 177 songs</div>
+                            <div class="collab-detail" id="collab-jurmann-songs-detail">139 of 177 songs</div>
                         </div>
                     </div>
                     <div class="studio-periods">
                         <div class="studio-period">
                             <img src="assets/images/timeline/1930s-berlin.jpg" alt="Berlin 1930s" class="period-image" onerror="this.style.display='none'">
                             <h5>European Period (1930-1934)</h5>
-                            <p id=\"periodDescEurope\">Diverse studio landscape: UFA-Berlin, Aafa-Film, Emelka, Cine-Allianz, and French productions</p>
+                            <p id="periodDescEurope">Diverse studio landscape: UFA-Berlin, Aafa-Film, Emelka, Cine-Allianz, and French productions</p>
                         </div>
                         <div class="studio-period">
                             <img src="assets/images/timeline/hollywood-golden-age.jpg" alt="Hollywood Golden Age" class="period-image" onerror="this.style.display='none'">
                             <h5>Hollywood Period (1935-1939)</h5>
-                            <p id=\"periodDescHollywood\">MGM dominance with 16/20 films; additional work at Universal Pictures and 20th Century Fox</p>
+                            <p id="periodDescHollywood">MGM dominance with 16/20 films; additional work at Universal Pictures and 20th Century Fox</p>
                         </div>
                     </div>
                 </div>
@@ -1122,11 +1126,10 @@
                             <p class="period-detail-partner">Partners: Andrzej Włast & Fritz Rotter</p>
                         </div>
                         <div class="period-detail-stats">
-                            <div class="period-detail-total">14</div>
+                            <div class="period-detail-total" id="warsaw-detail-total">13</div>
                             <div class="period-detail-label">Total Works</div>
-                            <div class="period-detail-breakdown">
-                                <div>14 songs</div>
-                                <div>0 films</div>
+                            <div class="period-detail-breakdown" id="warsaw-detail-breakdown">
+                                <div>13 songs · 0 films</div>
                             </div>
                         </div>
                     </div>
@@ -1141,11 +1144,10 @@
                             <p class="period-detail-studios">Key studios: UFA-Berlin, Aafa-Film, Emelka, Cine-Allianz</p>
                         </div>
                         <div class="period-detail-stats">
-                            <div class="period-detail-total">129</div>
+                            <div class="period-detail-total" id="europe-detail-total">133</div>
                             <div class="period-detail-label">Total Works</div>
-                            <div class="period-detail-breakdown">
-                                <div>97 songs</div>
-                                <div>32 films</div>
+                            <div class="period-detail-breakdown" id="europe-detail-breakdown">
+                                <div>101 songs · 32 films</div>
                             </div>
                         </div>
                     </div>
@@ -1160,11 +1162,10 @@
                             <p class="period-detail-studios">MGM dominance: 16/20 films (73%); also Universal, 20th Century Fox</p>
                         </div>
                         <div class="period-detail-stats">
-                            <div class="period-detail-total">85</div>
+                            <div class="period-detail-total" id="hollywood-detail-total">83</div>
                             <div class="period-detail-label">Total Works</div>
-                            <div class="period-detail-breakdown">
-                                <div>63 songs</div>
-                                <div>22 films</div>
+                            <div class="period-detail-breakdown" id="hollywood-detail-breakdown">
+                                <div>63 songs · 20 films</div>
                             </div>
                         </div>
                     </div>
@@ -1483,6 +1484,65 @@
         let currentSongFilter = 'all';
         let currentModal = null;
 
+        function updateAllCounts() {
+            const set = (id, txt) => { const el = document.getElementById(id); if (el) el.textContent = txt; };
+            const setBtn = (id, label, n) => { const el = document.getElementById(id); if (el) el.textContent = `${label} (${n})`; };
+
+            // --- raw counts ---
+            const totalSongs     = songsData.length;
+            const warsawSongs    = songsData.filter(s => s.year >= 1926 && s.year <= 1929).length;
+            const europeSongs    = songsData.filter(s => s.year >= 1930 && s.year <= 1934).length;
+            const hollywoodSongs = songsData.filter(s => s.year >= 1935 && s.year <= 1939).length;
+
+            const totalFilms     = filmData.length;
+            const europeanFilms  = filmData.filter(f => f.period === 'european').length;
+            const hollywoodFilms = filmData.filter(f => f.period === 'hollywood').length;
+
+            const jurmannFilms = filmData.filter(f => (f.jurmann || '').toLowerCase() === 'yes').length;
+            const jurmannSongs = songsData.filter(s => {
+                const text = JSON.stringify(s).toLowerCase();
+                return text.includes('jurmann');
+            }).length;
+            const jurmannFilmsPct = totalFilms ? Math.round(jurmannFilms / totalFilms * 100) : 0;
+            const jurmannSongsPct = totalSongs ? Math.round(jurmannSongs / totalSongs * 100) : 0;
+
+            // --- Overview metrics ---
+            set('metric-total-songs',      totalSongs);
+            set('metric-total-films',      totalFilms);
+            set('metric-jurmann-pct',      jurmannSongsPct + '%');
+            set('metric-films-sublabel',   `${europeanFilms} European + ${hollywoodFilms} Hollywood`);
+            set('metric-jurmann-sublabel', `${jurmannSongs} of ${totalSongs} songs`);
+
+            // --- Collaboration stats ---
+            set('collab-jurmann-films-number', jurmannFilmsPct + '%');
+            set('collab-jurmann-films-detail', `${jurmannFilms} of ${totalFilms} films`);
+            set('collab-jurmann-songs-number', jurmannSongsPct + '%');
+            set('collab-jurmann-songs-detail', `${jurmannSongs} of ${totalSongs} songs`);
+
+            // --- Overview period cards ---
+            set('warsawCardStats',    `${warsawSongs} songs`);
+            set('europeCardStats',    `${europeSongs} songs · ${europeanFilms} films`);
+            set('hollywoodCardStats', `${hollywoodSongs} songs · ${hollywoodFilms} films`);
+
+            // --- Periods detail view ---
+            set('warsaw-detail-total',        warsawSongs);
+            set('warsaw-detail-breakdown',    `${warsawSongs} songs · 0 films`);
+            set('europe-detail-total',        europeSongs + europeanFilms);
+            set('europe-detail-breakdown',    `${europeSongs} songs · ${europeanFilms} films`);
+            set('hollywood-detail-total',     hollywoodSongs + hollywoodFilms);
+            set('hollywood-detail-breakdown', `${hollywoodSongs} songs · ${hollywoodFilms} films`);
+
+            // --- Song filter buttons ---
+            setBtn('songs-all',       'All Songs',       totalSongs);
+            setBtn('songs-warsaw',    'Warsaw-Berlin',   warsawSongs);
+            setBtn('songs-european',  'European Period', europeSongs);
+            setBtn('songs-hollywood', 'Hollywood Period',hollywoodSongs);
+
+            // --- Film filter buttons ---
+            setBtn('films-all',       'All Films',        totalFilms);
+            setBtn('films-european',  'European Period',  europeanFilms);
+            setBtn('films-hollywood', 'Hollywood Period', hollywoodFilms);
+        }
         function updateSongsFilterButtonCounts() {
             // Counts based on years to avoid relying on the optional "period" field in songsData
             const total = songsData.length;
@@ -1571,7 +1631,7 @@
             renderSongs();
             renderOther();
             
-            updateSongsFilterButtonCounts();
+            updateAllCounts();
             updatePeriodDescriptionCounts();
             const closeBtn = document.getElementById('modalClose');
             if (closeBtn) {
@@ -1688,11 +1748,13 @@
             
             document.querySelectorAll('.nav-btn:not(.media-link)').forEach(btn => {
                 btn.classList.remove('active');
+                btn.removeAttribute('aria-current');
             });
             
             const activeNavBtn = document.getElementById('nav-' + viewName);
             if (activeNavBtn) {
                 activeNavBtn.classList.add('active');
+                activeNavBtn.setAttribute('aria-current', 'page');
             }
             
             if (viewName === 'timeline') {
@@ -1867,7 +1929,7 @@
                 });
             }
 
-            grid.innerHTML = filteredWorks.map((work) => {
+            grid.innerHTML = filteredWorks.map(work => {
                 return `
                     <div class="film-card">
             <h3 class="film-title">${work.title}</h3>
@@ -1875,7 +1937,7 @@
             <div class="film-details">
                 <div><strong>Instrumentation:</strong> ${work.instrumentation}</div>
                 ${work.publisher ? `<div><strong>Publisher:</strong> ${work.publisher}</div>` : ''}
-                ${work.movements ? `<div><strong>Contents:</strong><br>${work.movements.map((m, i) => `${m}`).join('<br>')}</div>` : ''}
+                ${work.movements ? `<div><strong>Contents:</strong><br>${work.movements.map(m => m).join('<br>')}</div>` : ''}
             </div>
         </div>
                 `;
