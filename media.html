@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bronisław Kaper - Media Gallery</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -12,9 +14,9 @@
         }
         
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-            color: #111827;
+            font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #f8f7f4 0%, #e8e6e1 100%);
+            color: #2c2520;
             overflow-x: hidden;
             min-height: 100vh;
             position: relative;
@@ -46,7 +48,7 @@
         .header {
             text-align: center;
             padding: 4rem 2rem;
-            background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
+            background: linear-gradient(135deg, #1a1714 0%, #2c2520 50%, #1a1714 100%);
             color: white;
             position: relative;
             overflow: hidden;
@@ -95,7 +97,7 @@
             height: 120px;
             border-radius: 50%;
             object-fit: cover;
-            border: 3px solid rgba(255, 255, 255, 0.3);
+            border: 3px solid rgba(196, 181, 160, 0.4);
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
         }
         
@@ -104,6 +106,7 @@
         }
         
         .title {
+            font-family: 'Playfair Display', Georgia, serif;
             font-size: 4rem;
             font-weight: 200;
             margin-bottom: 1rem;
@@ -113,7 +116,7 @@
         
         .period {
             font-size: 1.125rem;
-            color: #d1d5db;
+            color: #c4b5a0;
             font-weight: 300;
             letter-spacing: 0.05em;
         }
@@ -149,7 +152,7 @@
         }
         
         .nav-btn.active {
-            color: #111827;
+            color: #2c2520;
             border-bottom: 2px solid #111827;
         }
         
@@ -158,7 +161,7 @@
         }
 
         .nav-btn.back-link {
-            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            background: linear-gradient(135deg, #5c4a32 0%, #7a6245 100%);
             color: white;
             padding: 0.75rem 1.5rem;
             border-radius: 9999px;
@@ -176,12 +179,12 @@
         .content {
             flex: 1;
             padding: 3rem 4rem;
-            background: rgba(255, 255, 255, 0.7);
+            background: rgba(255, 253, 250, 0.8);
             backdrop-filter: blur(10px);
             margin: 2rem;
             border-radius: 1.5rem;
             box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(255, 253, 250, 0.85);
             position: relative;
         }
         
@@ -219,11 +222,12 @@
         }
         
         .section-title {
+            font-family: 'Playfair Display', Georgia, serif;
             font-size: 2rem;
             font-weight: 300;
             text-align: center;
             margin-bottom: 3rem;
-            color: #111827;
+            color: #2c2520;
             letter-spacing: -0.01em;
         }
         
@@ -276,7 +280,7 @@
             font-size: 1.25rem;
             font-weight: 500;
             margin-bottom: 0.75rem;
-            color: #111827;
+            color: #2c2520;
         }
         
         .media-info {
@@ -313,12 +317,12 @@
         }
         
         .period-audio {
-            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            background: linear-gradient(135deg, #5c4a32 0%, #7a6245 100%);
             color: white;
         }
         
         .period-video {
-            background: linear-gradient(135deg, #8b5cf6 0%, #a855f7 100%);
+            background: linear-gradient(135deg, #7a6245 0%, #a855f7 100%);
             color: white;
         }
         
@@ -352,7 +356,7 @@
             font-weight: 300;
             text-align: center;
             margin-bottom: 2rem;
-            color: #111827;
+            color: #2c2520;
         }
         
         .credits-grid {
@@ -362,7 +366,7 @@
         }
         
         .credit-category {
-            background: rgba(255, 255, 255, 0.8);
+            background: rgba(255, 253, 250, 0.85);
             backdrop-filter: blur(5px);
             border-radius: 1rem;
             padding: 1.5rem;
@@ -379,7 +383,7 @@
             font-size: 1.125rem;
             font-weight: 500;
             margin-bottom: 1rem;
-            color: #111827;
+            color: #2c2520;
         }
         
         .credit-list {
@@ -399,7 +403,7 @@
             content: '→';
             position: absolute;
             left: 0;
-            color: #6366f1;
+            color: #5c4a32;
         }
         
         .filters {
@@ -428,7 +432,7 @@
         .filter-btn.active {
             background: linear-gradient(135deg, #111827 0%, #374151 100%);
             color: white;
-            border-color: #111827;
+            border-color: #2c2520;
             box-shadow: 0 4px 8px -2px rgba(17, 24, 39, 0.4);
             transform: translateY(-1px);
         }
@@ -945,7 +949,7 @@
                         </video>
                         <p class="media-description">
                             The song — a tango from the feature film 'Alraune'.
-                            <br><span style="font-size:0.8em; color:#6b7280;">Source: <a href="https://www.youtube.com/watch?v=2OP5AikZuxs" target="_blank" rel="noopener noreferrer" style="color:#6366f1; text-decoration:none;">YouTube ↗</a></span>
+                            <br><span style="font-size:0.8em; color:#6b7280;">Source: <a href="https://www.youtube.com/watch?v=2OP5AikZuxs" target="_blank" rel="noopener noreferrer" style="color:#5c4a32; text-decoration:none;">YouTube ↗</a></span>
                         </p>
                     </div>
 
@@ -1006,7 +1010,7 @@
                         <p class="media-description">
                             The song — a foxtrot from the feature film 'Ein toller Einfall'. This song became one of the popular 
                             entertainment pieces of the pre-war era, with its light melody and cheerful mood reflecting the lively spirit of the Roaring Twenties.
-                            <br><span style="font-size:0.8em; color:#6b7280;">Source: <a href="https://www.youtube.com/watch?v=zLnPzr3MoAY" target="_blank" rel="noopener noreferrer" style="color:#6366f1; text-decoration:none;">YouTube ↗</a></span>
+                            <br><span style="font-size:0.8em; color:#6b7280;">Source: <a href="https://www.youtube.com/watch?v=zLnPzr3MoAY" target="_blank" rel="noopener noreferrer" style="color:#5c4a32; text-decoration:none;">YouTube ↗</a></span>
                         </p>
                     </div>
 
@@ -1168,7 +1172,7 @@
                         </video>
                         <p class="media-description">
                             Neapolitan song by Luigi Denza. Model for the song 'Così, Cosa'
-                            <br><span style="font-size:0.8em; color:#6b7280;">Source: <a href="https://vkvideo.ru/video-80199384_456239028" target="_blank" rel="noopener noreferrer" style="color:#6366f1; text-decoration:none;">VK Video ↗</a></span>
+                            <br><span style="font-size:0.8em; color:#6b7280;">Source: <a href="https://vkvideo.ru/video-80199384_456239028" target="_blank" rel="noopener noreferrer" style="color:#5c4a32; text-decoration:none;">VK Video ↗</a></span>
                         </p>
                     </div>
 
@@ -1182,7 +1186,7 @@
                         </video>
                         <p class="media-description">
                             Foxtrot russe song from Kaper's European period, composed for French cinema during his final years before emigration to Hollywood.
-                            <br><span style="font-size:0.8em; color:#6b7280;">Source: <a href="https://www.youtube.com/watch?v=fBixjVOoN3I" target="_blank" rel="noopener noreferrer" style="color:#6366f1; text-decoration:none;">YouTube ↗</a></span>
+                            <br><span style="font-size:0.8em; color:#6b7280;">Source: <a href="https://www.youtube.com/watch?v=fBixjVOoN3I" target="_blank" rel="noopener noreferrer" style="color:#5c4a32; text-decoration:none;">YouTube ↗</a></span>
                         </p>
                     </div>
 
@@ -1196,7 +1200,7 @@
                         </video>
                         <p class="media-description">
                             UFA studios, a giant of Berlin's cinema before World War II, starts firing Jewish employees under pressure from the Nazi party.
-                            <br><span style="font-size:0.8em; color:#6b7280;">Source: <a href="https://www.pbs.org/wnet/cinemasexiles/video/video-exclusive-ufa-studios-fires-jewish-employees/64/" target="_blank" rel="noopener noreferrer" style="color:#6366f1; text-decoration:none;">PBS – Cinema's Exiles ↗</a></span>
+                            <br><span style="font-size:0.8em; color:#6b7280;">Source: <a href="https://www.pbs.org/wnet/cinemasexiles/video/video-exclusive-ufa-studios-fires-jewish-employees/64/" target="_blank" rel="noopener noreferrer" style="color:#5c4a32; text-decoration:none;">PBS – Cinema's Exiles ↗</a></span>
                         </p>
                     </div>
                     
@@ -1211,7 +1215,7 @@
                         <p class="media-description">
                             Rare footage showing the MGM lot where Kaper worked during his most productive 
                             Hollywood years.
-                            <br><span style="font-size:0.8em; color:#6b7280;">Source: <a href="https://www.youtube.com/watch?v=vnFUeKkApyE" target="_blank" rel="noopener noreferrer" style="color:#6366f1; text-decoration:none;">YouTube ↗</a></span>
+                            <br><span style="font-size:0.8em; color:#6b7280;">Source: <a href="https://www.youtube.com/watch?v=vnFUeKkApyE" target="_blank" rel="noopener noreferrer" style="color:#5c4a32; text-decoration:none;">YouTube ↗</a></span>
                         </p>
                     </div>
                     
@@ -1227,7 +1231,7 @@
                             One of Kaper and Jurmann's most memorable compositions for the Marx Brothers film. 
                             This excerpt showcases their distinctive melodic style that bridged European 
                             sophistication with American entertainment sensibilities.
-                            <br><span style="font-size:0.8em; color:#6b7280;">Source: <a href="https://www.youtube.com/watch?v=GilH6c5TFEA" target="_blank" rel="noopener noreferrer" style="color:#6366f1; text-decoration:none;">YouTube ↗</a></span>
+                            <br><span style="font-size:0.8em; color:#6b7280;">Source: <a href="https://www.youtube.com/watch?v=GilH6c5TFEA" target="_blank" rel="noopener noreferrer" style="color:#5c4a32; text-decoration:none;">YouTube ↗</a></span>
                         </p>
                     </div>
 
@@ -1241,7 +1245,7 @@
                         </video>
                         <p class="media-description">
                             One of Kaper and Jurmann's songs for American musical comedy film directed by Henry Koster, featuring Deana Durbin.
-                            <br><span style="font-size:0.8em; color:#6b7280;">Source: <a href="https://vkvideo.ru/video-68583631_456242062" target="_blank" rel="noopener noreferrer" style="color:#6366f1; text-decoration:none;">VK Video ↗</a></span>
+                            <br><span style="font-size:0.8em; color:#6b7280;">Source: <a href="https://vkvideo.ru/video-68583631_456242062" target="_blank" rel="noopener noreferrer" style="color:#5c4a32; text-decoration:none;">VK Video ↗</a></span>
                         </p>
                     </div>
                     
@@ -1257,7 +1261,7 @@
                             The title song that became synonymous with the city itself. Written during Kaper's 
                             most productive Hollywood period, it exemplifies his successful adaptation to American 
                             musical sensibilities while maintaining his European compositional sophistication.
-                            <br><span style="font-size:0.8em; color:#6b7280;">Source: <a href="https://www.youtube.com/watch?v=dv6mHsXKI2c" target="_blank" rel="noopener noreferrer" style="color:#6366f1; text-decoration:none;">YouTube ↗</a></span>
+                            <br><span style="font-size:0.8em; color:#6b7280;">Source: <a href="https://www.youtube.com/watch?v=dv6mHsXKI2c" target="_blank" rel="noopener noreferrer" style="color:#5c4a32; text-decoration:none;">YouTube ↗</a></span>
                         </p>
                     </div>
 
@@ -1272,7 +1276,7 @@
                         <p class="media-description">
                             A swing-influenced number that demonstrates Kaper's versatility and adaptation 
                             to contemporary American musical trends of the late 1930s.
-                            <br><span style="font-size:0.8em; color:#6b7280;">Source: <a href="https://www.youtube.com/watch?v=h5rZs84VhWo" target="_blank" rel="noopener noreferrer" style="color:#6366f1; text-decoration:none;">YouTube ↗</a></span>
+                            <br><span style="font-size:0.8em; color:#6b7280;">Source: <a href="https://www.youtube.com/watch?v=h5rZs84VhWo" target="_blank" rel="noopener noreferrer" style="color:#5c4a32; text-decoration:none;">YouTube ↗</a></span>
                         </p>
                     </div>
 
@@ -1287,7 +1291,7 @@
                         <p class="media-description">
                             A swing arrangement of Mendelssohn's Spring Song demonstrating Kaper's versatility and adaptation to contemporary 
                             American musical trends of the late 1930s.
-                            <br><span style="font-size:0.8em; color:#6b7280;">Source: <a href="https://www.youtube.com/watch?v=EVwN1M2jZqw" target="_blank" rel="noopener noreferrer" style="color:#6366f1; text-decoration:none;">YouTube ↗</a></span>
+                            <br><span style="font-size:0.8em; color:#6b7280;">Source: <a href="https://www.youtube.com/watch?v=EVwN1M2jZqw" target="_blank" rel="noopener noreferrer" style="color:#5c4a32; text-decoration:none;">YouTube ↗</a></span>
                         </p>
                     </div>
                 </div>
@@ -1485,7 +1489,7 @@
 
                             <div class="document-item">
                                 <img src="assets/images/historical-context/mexicali-calexico.jpeg" alt="Border crossing" class="document-image" onerror="this.style.display='none'" loading="lazy">
-                                <p class="document-caption">Mexicali-Calexico border, 1936, <br><span style="font-size:0.8em; color:#6b7280;">Source: <a href="https://calisphere.org/item/ark:/13030/kt1489p9q0/" target="_blank" rel="noopener noreferrer" style="color:#6366f1; text-decoration:none;">Calisphere ↗</a></span>
+                                <p class="document-caption">Mexicali-Calexico border, 1936, <br><span style="font-size:0.8em; color:#6b7280;">Source: <a href="https://calisphere.org/item/ark:/13030/kt1489p9q0/" target="_blank" rel="noopener noreferrer" style="color:#5c4a32; text-decoration:none;">Calisphere ↗</a></span>
                             </div>
                         </div>
                         
