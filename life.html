@@ -179,7 +179,10 @@ body { font-family:'Source Sans 3',-apple-system,BlinkMacSystemFont,'Segoe UI',R
 .modal-close:hover { transform: scale(1.05) rotate(8deg); }
 </style>
 </head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <body>
+<style>.map-section{margin:0 2rem 2rem;padding:2.5rem;background:rgba(255,253,250,.8);backdrop-filter:blur(10px);border-radius:1.5rem;box-shadow:0 10px 25px -5px rgba(0,0,0,.08);border:1px solid rgba(196,181,160,.2)}.map-section-title{font-family:"Playfair Display",Georgia,serif;font-size:1.6rem;font-weight:400;text-align:center;margin-bottom:1rem;color:#2c2520}.map-subtitle{text-align:center;font-size:.85rem;color:#a09890;margin-bottom:1.5rem;letter-spacing:.05em}#kaperMap{height:420px;border-radius:1rem;border:1px solid rgba(196,181,160,.25);z-index:1}.map-legend{display:flex;justify-content:center;gap:1.5rem;margin-top:1rem;flex-wrap:wrap}.map-legend-item{display:flex;align-items:center;gap:.4rem;font-size:.75rem;color:#6b5e52;text-transform:uppercase;letter-spacing:.08em}.map-legend-dot{width:10px;height:10px;border-radius:50%;border:2px solid}.leaflet-popup-content-wrapper{border-radius:.75rem!important;font-family:"Source Sans 3",sans-serif!important}.leaflet-popup-content{margin:1rem 1.25rem!important;line-height:1.5!important}.popup-title{font-family:"Playfair Display",Georgia,serif;font-size:1.1rem;font-weight:500;color:#2c2520;margin-bottom:.25rem}.popup-years{font-size:.8rem;color:#8b7355;font-weight:600;margin-bottom:.5rem}.popup-desc{font-size:.85rem;color:#4a4035;line-height:1.55}@media(max-width:768px){#kaperMap{height:300px}.map-section{margin:0 1rem 1rem;padding:1.5rem}}</style>
 <style>.header-content{animation:headerFade .8s ease-out}@keyframes headerFade{from{opacity:0;transform:translateY(-12px)}to{opacity:1;transform:translateY(0)}}</style>
 <div class="container">
   <div class="header">
@@ -199,6 +202,8 @@ body { font-family:'Source Sans 3',-apple-system,BlinkMacSystemFont,'Segoe UI',R
   </div>
 
   <div class="content">
+    <div class="map-section"><h2 class="map-section-title">A Composer&#8217;s Journey Across Europe to Hollywood</h2><p class="map-subtitle">Warsaw &#8594; Berlin &#8594; Vienna &#8594; Paris &#8594; New York &#8594; Hollywood</p><div id="kaperMap"></div><div class="map-legend"><div class="map-legend-item"><div class="map-legend-dot" style="background:#c4956a;border-color:#8b6914;"></div> Birth &amp; Youth</div><div class="map-legend-item"><div class="map-legend-dot" style="background:#8b7355;border-color:#5c4a32;"></div> European Career</div><div class="map-legend-item"><div class="map-legend-dot" style="background:#b8860b;border-color:#8b6914;"></div> Hollywood</div></div></div>
+
     <h2 class="section-title">Key Milestones</h2>
 
     <div class="filters" role="group" aria-label="Timeline filters">
@@ -501,6 +506,30 @@ updateCounts();
 renderTimeline(milestones);
 window.addEventListener('scroll', animateOnScroll);
 animateOnScroll();
+</script>
+<script>
+(function(){
+var map=L.map('kaperMap',{scrollWheelZoom:false}).setView([48.5,10],4);
+L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',{attribution:'OpenStreetMap, CARTO',subdomains:'abcd',maxZoom:19}).addTo(map);
+var cities=[
+{name:'Warsaw',lat:52.2297,lng:21.0122,years:'1902–1926',desc:'Born Feb 5, 1902. University of Warsaw, Chopin School of Music. First compositions.',color:'#c4956a',border:'#8b6914',size:18},
+{name:'Berlin',lat:52.52,lng:13.405,years:'1926–1933',desc:'Music studies. Partnership with Walter Jurmann. Cabarets, revues, UFA films. Fled after Nazi rise.',color:'#8b7355',border:'#5c4a32',size:14},
+{name:'Vienna',lat:48.2082,lng:16.3738,years:'1933–1934',desc:'Brief stay. Abenteuer am Lido.',color:'#8b7355',border:'#5c4a32',size:14},
+{name:'Paris',lat:48.8566,lng:2.3522,years:'1934–1935',desc:'French films, cabaret songs. MGM invitation to Hollywood.',color:'#8b7355',border:'#5c4a32',size:14},
+{name:'New York',lat:40.7580,lng:-73.9855,years:'1935',desc:'Arrived from Europe. Brief stay in New York before moving to California for MGM contract.',color:'#8b7355',border:'#5c4a32',size:14},
+{name:'Hollywood',lat:34.0928,lng:-118.3287,years:'1935–1983',desc:'MGM. 100+ films. Oscar for Lili (1953). Green Dolphin Street.',color:'#b8860b',border:'#8b6914',size:18}
+];
+var coords=cities.map(function(c){return[c.lat,c.lng]});
+L.polyline(coords,{color:'#8b7355',weight:2.5,opacity:.5,dashArray:'8,8'}).addTo(map);
+cities.forEach(function(c){
+var icon=L.divIcon({className:'',html:'<div style="width:'+c.size+'px;height:'+c.size+'px;background:'+c.color+';border:3px solid '+c.border+';border-radius:50%;box-shadow:0 2px 8px rgba(0,0,0,.3);cursor:pointer"></div>',iconSize:[c.size,c.size],iconAnchor:[c.size/2,c.size/2]});
+L.marker([c.lat,c.lng],{icon:icon}).addTo(map).bindPopup('<div class="popup-title">'+c.name+'</div><div class="popup-years">'+c.years+'</div><div class="popup-desc">'+c.desc+'</div>',{maxWidth:280});
+});
+map.fitBounds(L.latLngBounds(coords.slice(0,4)).pad(.3));
+var hw=L.control({position:'bottomright'});
+hw.onAdd=function(){var d=L.DomUtil.create('div');d.innerHTML='<div style="background:linear-gradient(135deg,#2c2520,#4a4035);color:#f5f0e8;border:none;padding:.45rem .9rem;border-radius:9999px;font-size:.7rem;cursor:pointer;letter-spacing:.08em;text-transform:uppercase;box-shadow:0 2px 8px rgba(0,0,0,.2)">Show full journey</div>';var s=false;d.onclick=function(){if(!s){map.fitBounds([[34.09,-118.33],[52.52,21.01]],{padding:[40,40]});d.firstChild.textContent='Zoom to Europe'}else{map.fitBounds(L.latLngBounds(coords.slice(0,4)).pad(.3));d.firstChild.textContent='Show full journey'}s=!s};L.DomEvent.disableClickPropagation(d);return d};
+hw.addTo(map);
+})();
 </script>
 </body>
 </html>
