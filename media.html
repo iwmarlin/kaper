@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Media gallery for Bronisław Kaper — audio samples, video sources, documents, and credits.">
     <title>Bronisław Kaper - Media Gallery</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -136,43 +137,78 @@
             z-index: 100;
         }
         
+
+        .nav-site {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            padding: 0.6rem 2rem;
+            background: linear-gradient(135deg, #1a1714 0%, #2c2520 100%);
+        }
+        .nav-site-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            color: #c4b5a0;
+            text-decoration: none;
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            font-weight: 500;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            border: 1px solid rgba(196, 181, 160, 0.2);
+            transition: all 0.3s ease;
+        }
+        .nav-site-link:hover {
+            color: #f5f0e8;
+            border-color: rgba(196, 181, 160, 0.45);
+            background: rgba(255, 255, 255, 0.06);
+        }
+        .nav-site-link.current {
+            color: #f5f0e8;
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(196, 181, 160, 0.4);
+        }
+        .nav-site-sep {
+            width: 1px;
+            height: 16px;
+            background: rgba(196, 181, 160, 0.25);
+        }
+
         .nav-btn {
             background: none;
             border: none;
-            font-size: 1.125rem;
+            font-size: 0.85rem;
             text-transform: uppercase;
-            letter-spacing: 0.1em;
+            letter-spacing: 0.13em;
             font-weight: 500;
-            padding-bottom: 0.75rem;
+            padding: 0.85rem 1rem;
+            position: relative;
+            white-space: nowrap;
             cursor: pointer;
-            transition: all 0.3s ease;
-            color: #9ca3af;
-            text-decoration: none;
-            display: inline-block;
+            transition: all 0.25s ease;
+            color: #a09890;
         }
         
         .nav-btn.active {
-            color: #2c2520;
-            border-bottom: 2px solid #111827;
+            color: #1a1714;
+        }
+
+        .nav-btn.active::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 1rem;
+            right: 1rem;
+            height: 2px;
+            background: #8b7355;
+            border-radius: 1px;
         }
         
-        .nav-btn:hover:not(.active) {
-            color: #374151;
-        }
-
-        .nav-btn.back-link {
-            background: linear-gradient(135deg, #5c4a32 0%, #7a6245 100%);
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 9999px;
-            border-bottom: none;
-            box-shadow: 0 2px 4px rgba(99, 102, 241, 0.2);
-        }
-
-        .nav-btn.back-link:hover {
-            color: white;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(99, 102, 241, 0.4);
+        .nav-btn:hover {
+            color: #4a4035;
         }
         /* removed - replaced above */
         
@@ -656,6 +692,9 @@
         
         /* Responsive design */
         @media (max-width: 768px) {
+            .nav-site { gap: 0.5rem; padding: 0.5rem 1rem; flex-wrap: wrap; }
+            .nav-site-sep { display: none; }
+            .nav-site-link { font-size: 0.65rem; padding: 0.3rem 0.6rem; }
             .title { font-size: 2.5rem; }
             .header-content { flex-direction: column; gap: 1.5rem; }
             .header-portrait { width: 80px; height: 80px; }
@@ -703,8 +742,15 @@
             </div>
         </div>
         
+        <div class="nav-site">
+            <a href="index.html" class="nav-site-link"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg> Works &amp; Films</a>
+            <div class="nav-site-sep"></div>
+            <a href="life.html" class="nav-site-link"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Life &amp; Timeline</a>
+            <div class="nav-site-sep"></div>
+            <a href="media.html" class="nav-site-link current"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg> Media Gallery</a>
+        </div>
+
         <div class="navigation">
-            <a href="index.html" class="nav-btn back-link">← Back to Main Presentation</a>
             <button class="nav-btn active" data-view="audio" id="nav-audio">Audio</button>
             <button class="nav-btn" data-view="video" id="nav-video">Video</button>
             <button class="nav-btn" data-view="documents" id="nav-documents">Documents</button>
@@ -1963,5 +2009,10 @@
             });
         });
     </script>
+
+    <footer style="text-align:center; padding:2rem; color:#a09890; font-size:0.8rem; letter-spacing:0.08em;">
+        <div style="width:60px; height:1px; background:linear-gradient(90deg,transparent,#c4b5a0,transparent); margin:0 auto 1rem;"></div>
+        Bronisław Kaper — Composer · 1902–1983
+    </footer>
 </body>
 </html>

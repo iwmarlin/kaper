@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Life and career timeline of Bronisław Kaper (1902–1983), Polish-American film composer.">
 <title>Bronisław Kaper – Life &amp; Career Timeline</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -20,11 +21,18 @@ body { font-family:'Source Sans 3',-apple-system,BlinkMacSystemFont,'Segoe UI',R
 .period { font-size:1.15rem; color:#c4b5a0; font-weight:400; letter-spacing:.15em; text-transform:uppercase; text-shadow:0 2px 8px rgba(0,0,0,.35); }
 
 .navigation { display:flex; justify-content:center; padding:2rem; background:rgba(255,255,255,.95); backdrop-filter:blur(10px); gap:2rem; border-bottom:1px solid rgba(229,231,235,.6); box-shadow:0 4px 6px -1px rgba(0,0,0,.05); flex-wrap:wrap; }
-.nav-btn { background:none; border:none; font-size:1.125rem; text-transform:uppercase; letter-spacing:.1em; font-weight:500; padding-bottom:.75rem; cursor:pointer; transition:all .3s ease; color:#9ca3af; text-decoration:none; display:inline-block; }
-.nav-btn.active { color:#111827; border-bottom:2px solid #111827; }
-.nav-btn:hover { color:#374151; }
-.nav-btn.primary-link { background:linear-gradient(135deg,#5c4a32 0%,#7a6245 100%); color:white; padding:.75rem 1.5rem; border-radius:9999px; border-bottom:none; }
-.nav-btn.primary-link:hover { transform:translateY(-2px); box-shadow:0 4px 12px rgba(92,74,50,.35); color:white; }
+
+.nav-site { display:flex; align-items:center; justify-content:center; gap:0.75rem; padding:0.6rem 2rem; background:linear-gradient(135deg,#1a1714 0%,#2c2520 100%); }
+.nav-site-link { display:inline-flex; align-items:center; gap:0.4rem; color:#c4b5a0; text-decoration:none; font-size:0.72rem; text-transform:uppercase; letter-spacing:0.12em; font-weight:500; padding:0.35rem 0.85rem; border-radius:9999px; border:1px solid rgba(196,181,160,0.2); transition:all 0.3s ease; }
+.nav-site-link:hover { color:#f5f0e8; border-color:rgba(196,181,160,.45); background:rgba(255,255,255,.06); }
+.nav-site-link.current { color:#f5f0e8; background:rgba(255,255,255,.1); border-color:rgba(196,181,160,.4); }
+.nav-site-sep { width:1px; height:16px; background:rgba(196,181,160,0.25); }
+.nav-btn { background:none; border:none; font-size:0.85rem; text-transform:uppercase; letter-spacing:0.13em; font-weight:500; padding:0.85rem 1rem; position:relative; white-space:nowrap; cursor:pointer; transition:all 0.25s ease; color:#a09890; text-decoration:none; display:inline-block; }
+.nav-btn.active { color:#1a1714; }
+.nav-btn.active::after { content:""; position:absolute; bottom:0; left:1rem; right:1rem; height:2px; background:#8b7355; border-radius:1px; }
+.nav-btn:hover { color:#4a4035; }
+
+
 
 .content { flex:1; padding:3rem 4rem; background:rgba(255,253,250,.8); backdrop-filter:blur(10px); margin:2rem; border-radius:1.5rem; box-shadow:0 10px 25px -5px rgba(0,0,0,.1),0 4px 6px -2px rgba(0,0,0,.05); border:1px solid rgba(255,255,255,.8); }
 .section-title { font-family:'Playfair Display',Georgia,serif; font-size:2rem; font-weight:400; margin-bottom:1.5rem; letter-spacing:-0.01em; color:#111827; }
@@ -109,6 +117,9 @@ body { font-family:'Source Sans 3',-apple-system,BlinkMacSystemFont,'Segoe UI',R
 }
 
 @media(max-width:768px){
+  .nav-site { gap:0.5rem; padding:0.5rem 1rem; flex-wrap:wrap; }
+  .nav-site-sep { display:none; }
+  .nav-site-link { font-size:0.65rem; padding:0.3rem 0.6rem; }
   .content { padding:2rem; margin:1.25rem; }
   .title { font-size:2.5rem; }
   .header-content { flex-direction:column; gap:1.5rem; }
@@ -195,9 +206,15 @@ body { font-family:'Source Sans 3',-apple-system,BlinkMacSystemFont,'Segoe UI',R
     </div>
   </div>
 
+  <div class="nav-site">
+    <a href="index.html" class="nav-site-link"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg> Works &amp; Films</a>
+    <div class="nav-site-sep"></div>
+    <a href="life.html" class="nav-site-link current"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Life &amp; Timeline</a>
+    <div class="nav-site-sep"></div>
+    <a href="media.html" class="nav-site-link"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg> Media Gallery</a>
+  </div>
+
   <div class="navigation">
-    <a href="index.html" class="nav-btn primary-link">← Back to main presentation</a>
-    <a href="media.html" class="nav-btn primary-link">🎵 Media Gallery</a>
     <button class="nav-btn active" type="button" aria-current="page">Timeline</button>
   </div>
 
@@ -531,5 +548,10 @@ hw.onAdd=function(){var d=L.DomUtil.create('div');d.innerHTML='<div style="backg
 hw.addTo(map);
 })();
 </script>
+
+  <footer style="text-align:center; padding:2rem; color:#a09890; font-size:0.8rem; letter-spacing:0.08em;">
+    <div style="width:60px; height:1px; background:linear-gradient(90deg,transparent,#c4b5a0,transparent); margin:0 auto 1rem;"></div>
+    Bronisław Kaper — Composer · 1902–1983
+  </footer>
 </body>
 </html>

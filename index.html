@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Complete catalog of Bronisław Kaper's 177 songs and 52 films. Warsaw-Berlin period through Golden Age Hollywood.">
     <title>Bronisław Kaper - Films and Songs</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -998,6 +999,8 @@
             .collaboration-photo { padding: 1.5rem; }
             .modal-content { padding: 2rem; }
         }
+    
+        @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:0.01ms!important;transition-duration:0.01ms!important;}}
     </style>
 </head>
 <body>
@@ -1244,6 +1247,14 @@
                     <button class="filter-btn" onclick="filterSongs('hollywood')" id="songs-hollywood">Hollywood Period (63)</button>
                 </div>
                 
+                <div style="display:flex;gap:0.5rem;align-items:center;justify-content:center;margin-bottom:0.5rem;">
+                    <span style="font-size:0.72rem;text-transform:uppercase;letter-spacing:0.1em;color:#a09890;font-weight:500;">Sort:</span>
+                    <button onclick="sortSongs('year-asc')" class="filter-btn active" id="sort-song-year-asc" style="font-size:0.75rem;padding:0.4rem 0.8rem;">Year &#8593;</button>
+                    <button onclick="sortSongs('year-desc')" class="filter-btn" id="sort-song-year-desc" style="font-size:0.75rem;padding:0.4rem 0.8rem;">Year &#8595;</button>
+                    <button onclick="sortSongs('title')" class="filter-btn" id="sort-song-title" style="font-size:0.75rem;padding:0.4rem 0.8rem;">A&#8211;Z</button>
+                    <button onclick="sortSongs('genre')" class="filter-btn" id="sort-song-genre" style="font-size:0.75rem;padding:0.4rem 0.8rem;">Genre</button>
+                </div>
+
                 <div class="search-container">
                     <input type="text" id="songSearch" placeholder="Search by year (e.g., 1932) or title..." class="search-input">
                     <button onclick="clearSongSearch()" class="clear-search">Clear</button>
@@ -1891,10 +1902,10 @@
     const grid = document.getElementById('filmsGrid');
     if (!grid) return;
 
-    let filteredFilms = filmData;
+    let filteredFilms = [...filmData];
 
     if (currentFilmFilter !== 'all') {
-        filteredFilms = filmData.filter(film => film.period === currentFilmFilter);
+        filteredFilms = [...filmData].filter(film => film.period === currentFilmFilter);
     }
 
     const filmSearchInput = document.getElementById('filmSearch');
@@ -1938,13 +1949,13 @@
             const grid = document.getElementById('songsGrid');
             if (!grid) return;
 
-            let filteredSongs = songsData;
+            let filteredSongs = [...songsData];
 
             if (currentSongFilter !== 'all') {
                 if (currentSongFilter === 'warsaw') {
-                    filteredSongs = songsData.filter(song => song.year >= 1926 && song.year <= 1929);
+                    filteredSongs = [...songsData].filter(song => song.year >= 1926 && song.year <= 1929);
                 } else {
-                    filteredSongs = songsData.filter(song => song.period === currentSongFilter);
+                    filteredSongs = [...songsData].filter(song => song.period === currentSongFilter);
                 }
             }
 
@@ -1957,6 +1968,12 @@
                     return title.includes(songSearchTerm) || year.includes(songSearchTerm);
                 });
             }
+
+            // Apply sort
+            if (currentSongSort === 'year-desc') filteredSongs.sort((a,b) => b.year - a.year);
+            else if (currentSongSort === 'title') filteredSongs.sort((a,b) => a.title.localeCompare(b.title));
+            else if (currentSongSort === 'genre') filteredSongs.sort((a,b) => (a.genre||'').localeCompare(b.genre||'') || a.year - b.year);
+            else filteredSongs.sort((a,b) => a.year - b.year);
 
             grid.innerHTML = filteredSongs.map((song) => {
                 const songIndex = songsData.indexOf(song);
@@ -2186,6 +2203,15 @@
         function clearFilmSearch() {
             const el = document.getElementById('filmSearch');
             if (el) { el.value = ''; renderFilms(); }
+        }
+
+        let currentSongSort = "year-asc";
+        function sortSongs(mode) {
+            currentSongSort = mode;
+            document.querySelectorAll('[id^="sort-song-"]').forEach(function(b){b.classList.remove('active')});
+            var btn = document.getElementById('sort-song-' + mode);
+            if (btn) btn.classList.add('active');
+            renderSongs();
         }
 
         function clearSongSearch() {
