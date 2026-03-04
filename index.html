@@ -1693,6 +1693,57 @@
 
 
         document.addEventListener('DOMContentLoaded', function() {
+        // Dynamic filter counts
+        function updateFilterCounts() {
+            var el;
+            el = document.getElementById('songs-all');
+            if (el) el.textContent = 'All Songs (' + songsData.length + ')';
+            
+            var warsawSongs = songsData.filter(function(s){ return s.year >= 1926 && s.year <= 1929; }).length;
+            el = document.getElementById('songs-warsaw');
+            if (el) el.textContent = 'Warsaw-Berlin (' + warsawSongs + ')';
+            
+            var euroSongs = songsData.filter(function(s){ return s.period === 'european'; }).length;
+            el = document.getElementById('songs-european');
+            if (el) el.textContent = 'European Period (' + euroSongs + ')';
+            
+            var hwSongs = songsData.filter(function(s){ return s.period === 'hollywood'; }).length;
+            el = document.getElementById('songs-hollywood');
+            if (el) el.textContent = 'Hollywood Period (' + hwSongs + ')';
+
+            el = document.getElementById('films-all');
+            if (el) el.textContent = 'All Films (' + filmData.length + ')';
+            
+            var euroFilms = filmData.filter(function(f){ return f.period === 'european'; }).length;
+            el = document.getElementById('films-european');
+            if (el) el.textContent = 'European Period (' + euroFilms + ')';
+            
+            var hwFilms = filmData.filter(function(f){ return f.period === 'hollywood'; }).length;
+            el = document.getElementById('films-hollywood');
+            if (el) el.textContent = 'Hollywood Period (' + hwFilms + ')';
+        }
+        updateFilterCounts();
+
+        // Dynamic metrics - calculated from data
+        function updateMetrics() {
+            var totalSongs = songsData.length;
+            var totalFilms = filmData.length;
+            var euroFilms = filmData.filter(function(f){ return f.period === 'european'; }).length;
+            var hwFilms = filmData.filter(function(f){ return f.period === 'hollywood'; }).length;
+            var jurmannSongs = songsData.filter(function(s){ return s.notes && s.notes.toLowerCase().indexOf('jurmann') !== -1; }).length;
+            var jurmannPct = Math.round(jurmannSongs / totalSongs * 100);
+            var minYear = Math.min.apply(null, songsData.map(function(s){ return s.year; }));
+            var maxYear = Math.max.apply(null, songsData.map(function(s){ return s.year; }));
+
+            document.getElementById('metric-total-songs').textContent = totalSongs;
+            document.getElementById('metric-songs-sublabel').textContent = minYear + '–' + maxYear;
+            document.getElementById('metric-total-films').textContent = totalFilms;
+            document.getElementById('metric-films-sublabel').textContent = euroFilms + ' European + ' + hwFilms + ' Hollywood';
+            document.getElementById('metric-jurmann-pct').textContent = jurmannPct + '%';
+            document.getElementById('metric-jurmann-sublabel').textContent = jurmannSongs + ' of ' + totalSongs + ' songs';
+        }
+        updateMetrics();
+
             renderFilms();
             renderSongs();
             renderOther();
