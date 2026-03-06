@@ -1001,6 +1001,287 @@
         }
     
         @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:0.01ms!important;transition-duration:0.01ms!important;}}
+
+        /* ===== Overview refresh — safe, only for #overview ===== */
+
+        .overview-hero {
+            display: grid;
+            grid-template-columns: minmax(220px, 320px) 1fr;
+            gap: 2.5rem;
+            align-items: center;
+            margin-bottom: 3rem;
+            padding: 2.25rem;
+            border-radius: 1.5rem;
+            background: linear-gradient(135deg, rgba(248,245,240,0.96) 0%, rgba(239,233,224,0.96) 100%);
+            border: 1px solid rgba(196, 181, 160, 0.28);
+            box-shadow: 0 10px 24px -8px rgba(0,0,0,0.08);
+        }
+
+        .overview-hero-media {
+            text-align: center;
+        }
+
+        .overview-hero-portrait {
+            width: 100%;
+            max-width: 280px;
+            aspect-ratio: 4 / 5;
+            object-fit: cover;
+            border-radius: 1.25rem;
+            display: block;
+            margin: 0 auto 1rem;
+            box-shadow: 0 12px 28px rgba(0,0,0,0.14);
+            border: 1px solid rgba(196, 181, 160, 0.35);
+            background: rgba(255,255,255,0.75);
+        }
+
+        .overview-hero-caption {
+            font-size: 0.9rem;
+            color: #6b7280;
+            font-style: italic;
+        }
+
+        .overview-eyebrow {
+            display: inline-block;
+            margin-bottom: 0.9rem;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+            color: #8b7355;
+            font-weight: 600;
+        }
+
+        .overview-title {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 2.5rem;
+            line-height: 1.12;
+            font-weight: 400;
+            color: #1f1a17;
+            margin-bottom: 1rem;
+        }
+
+        .overview-lead {
+            font-size: 1.08rem;
+            line-height: 1.7;
+            color: #4b5563;
+            max-width: 68ch;
+            margin-bottom: 1.5rem;
+        }
+
+        .overview-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.9rem;
+        }
+
+        .overview-btn {
+            appearance: none;
+            border: 1px solid rgba(44,37,32,0.18);
+            border-radius: 9999px;
+            padding: 0.85rem 1.25rem;
+            background: rgba(255,255,255,0.9);
+            color: #2c2520;
+            font-size: 0.82rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+
+        .overview-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 8px 20px -10px rgba(0,0,0,0.22);
+            border-color: rgba(44,37,32,0.35);
+        }
+
+        .overview-btn.primary {
+            background: linear-gradient(135deg, #2c2520 0%, #4a4035 100%);
+            color: #fff;
+            border-color: #2c2520;
+        }
+
+        .overview-note {
+            margin: 0 0 2rem 0;
+            padding: 1.35rem 1.4rem;
+            border-left: 4px solid #8b7355;
+            border-radius: 0 1rem 1rem 0;
+            background: rgba(255,255,255,0.72);
+            color: #4b5563;
+            line-height: 1.7;
+            box-shadow: 0 6px 16px -10px rgba(0,0,0,0.14);
+        }
+
+        .overview-section-title {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.75rem;
+            font-weight: 400;
+            color: #2c2520;
+            margin-bottom: 0.75rem;
+        }
+
+        .overview-section-intro {
+            color: #6b7280;
+            line-height: 1.65;
+            margin-bottom: 1.75rem;
+            max-width: 75ch;
+        }
+
+        .metrics-grid.overview-metrics {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .overview-metrics .metric {
+            padding: 1.5rem 1.25rem;
+            border-radius: 1.25rem;
+            background: rgba(255,255,255,0.68);
+            border: 1px solid rgba(196,181,160,0.22);
+            box-shadow: 0 8px 18px -12px rgba(0,0,0,0.12);
+        }
+
+        .overview-metrics .metric-number {
+            font-size: 3rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .overview-metrics .metric-sublabel {
+            line-height: 1.5;
+        }
+
+        .periods-grid.overview-periods {
+            margin-top: 1.5rem;
+            gap: 2rem;
+        }
+
+        .overview-periods .period-card {
+            text-align: left;
+            padding: 2rem 1.5rem 1.6rem;
+            overflow: hidden;
+            border: 1px solid rgba(196,181,160,0.22);
+            box-shadow: 0 10px 22px -14px rgba(0,0,0,0.14);
+        }
+
+        .overview-periods .period-number {
+            margin: 0 0 1.25rem 0;
+        }
+
+        .period-meta {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            gap: 0.7rem;
+            margin-top: 1rem;
+        }
+
+        .period-meta-item {
+            font-size: 0.9rem;
+            color: #4b5563;
+            line-height: 1.55;
+        }
+
+        .period-meta-item strong {
+            color: #2c2520;
+            font-weight: 600;
+        }
+
+        .overview-collab {
+            margin: 3rem 0;
+            padding: 2rem;
+            border-radius: 1.5rem;
+            background: linear-gradient(135deg, rgba(248,245,240,0.95) 0%, rgba(241,236,228,0.95) 100%);
+            border: 1px solid rgba(196,181,160,0.25);
+            box-shadow: 0 10px 22px -12px rgba(0,0,0,0.1);
+        }
+
+        .overview-collab-grid {
+            display: grid;
+            grid-template-columns: minmax(260px, 380px) 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .overview-collab-copy {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .collaboration-stats.overview-collab-stats {
+            margin-bottom: 0;
+        }
+
+        .overview-usage {
+            margin-top: 3rem;
+            padding: 1.75rem;
+            border-radius: 1.25rem;
+            background: rgba(255,255,255,0.68);
+            border: 1px solid rgba(196,181,160,0.22);
+        }
+
+        .overview-usage-list {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1rem 2rem;
+            margin-top: 1rem;
+        }
+
+        .overview-usage-item {
+            color: #4b5563;
+            line-height: 1.6;
+            padding-left: 1.1rem;
+            position: relative;
+        }
+
+        .overview-usage-item::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: #8b7355;
+            font-weight: 700;
+        }
+
+        @media (max-width: 1100px) {
+            .metrics-grid.overview-metrics {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .periods-grid.overview-periods {
+                grid-template-columns: 1fr;
+            }
+
+            .overview-collab-grid,
+            .overview-hero {
+                grid-template-columns: 1fr;
+            }
+
+            .overview-collab-copy {
+                order: 2;
+            }
+        }
+
+        @media (max-width: 720px) {
+            .overview-title {
+                font-size: 2rem;
+            }
+
+            .metrics-grid.overview-metrics,
+            .overview-usage-list {
+                grid-template-columns: 1fr;
+            }
+
+            .overview-actions {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .overview-btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -1048,92 +1329,163 @@
         </div>
         
         <div class="content">
+
             <div id="overview" class="view active">
-                <div class="metrics-grid">
-                    <div class="metric">
-                        <div class="metric-number" id="metric-total-songs">177</div>
-                        <div class="metric-label">Total Songs</div>
-                        <div class="metric-sublabel" id="metric-songs-sublabel">1926–1939</div>
-                    </div>
-                    <div class="metric">
-                        <div class="metric-number" id="metric-total-films">52</div>
-                        <div class="metric-label">Film Titles</div>
-                        <div class="metric-sublabel" id="metric-films-sublabel">32 European + 20 Hollywood</div>
-                    </div>
-                    <div class="metric">
-                        <div class="metric-number" id="metric-jurmann-pct">78%</div>
-                        <div class="metric-label">Songs with Jurmann</div>
-                        <div class="metric-sublabel" id="metric-jurmann-sublabel">139 of 177 songs</div>
-                    </div>
-                </div>
-                
-                <div class="studio-overview">
-                    <h4 class="studio-overview-title">Collaboration Statistics</h4>
-                    
-                    <div class="collaboration-photo">
-                        <img src="assets/images/portraits/kaper-with-jurmann.jpg" 
-                             alt="Bronisław Kaper and Walter Jurmann" 
-                             class="duo-photo"
+                <section class="overview-hero">
+                    <div class="overview-hero-media">
+                        <img src="assets/images/portraits/kaper-young.jpg"
+                             alt="Bronisław Kaper portrait"
+                             class="overview-hero-portrait"
                              onerror="this.style.display='none'">
-                        <p class="photo-caption">Bronisław Kaper & Walter Jurmann - Creative Partnership</p>
+                        <p class="overview-hero-caption">Composer and songwriter across Europe and Hollywood</p>
                     </div>
-                    
-                    <div class="collaboration-stats">
-                        <div class="collab-stat">
-                            <div class="collab-number" id="collab-jurmann-films-number">92%</div>
-                            <div class="collab-label">Films with Jurmann</div>
-                            <div class="collab-detail" id="collab-jurmann-films-detail">48 of 52 films</div>
-                        </div>
-                        <div class="collab-stat">
-                            <div class="collab-number" id="collab-jurmann-songs-number">78%</div>
-                            <div class="collab-label">Songs with Jurmann</div>
-                            <div class="collab-detail" id="collab-jurmann-songs-detail">139 of 177 songs</div>
+
+                    <div class="overview-hero-copy">
+                        <span class="overview-eyebrow">Overview</span>
+                        <h2 class="overview-title">Bronisław Kaper — songs, films, and creative networks from Warsaw and Berlin to Hollywood</h2>
+                        <p class="overview-lead">
+                            This portal traces Kaper’s work from 1926 to 1939 through songs, films, and key collaborations.
+                        </p>
+
+                        <div class="overview-actions">
+                            <button class="overview-btn primary" onclick="showView('filmography')">Explore Filmography</button>
+                            <button class="overview-btn" onclick="showView('songs')">Browse Songs</button>
+                            <button class="overview-btn" onclick="showView('periods')">View Periods</button>
                         </div>
                     </div>
-                    <div class="studio-periods">
-                        <div class="studio-period">
-                            <img src="assets/images/timeline/1930s-berlin.jpg" alt="Berlin 1930s" class="period-image" onerror="this.style.display='none'">
-                            <h5>European Period (1930-1934)</h5>
-                            <p id="periodDescEurope">Diverse studio landscape: UFA-Berlin, Aafa-Film, Emelka, Cine-Allianz, and French productions</p>
-                        </div>
-                        <div class="studio-period">
-                            <img src="assets/images/timeline/hollywood-golden-age.jpg" alt="Hollywood Golden Age" class="period-image" onerror="this.style.display='none'">
-                            <h5>Hollywood Period (1935-1939)</h5>
-                            <p id="periodDescHollywood">MGM dominance with 16/20 films; additional work at Universal Pictures and 20th Century Fox</p>
-                        </div>
+                </section>
+
+                <div class="metrics-grid overview-metrics">
+                    <div class="metric">
+                        <div class="metric-number" id="metric-total-songs"></div>
+                        <div class="metric-label">Songs</div>
+                        <div class="metric-sublabel" id="metric-songs-sublabel"></div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-number" id="metric-total-films"></div>
+                        <div class="metric-label">Film Titles</div>
+                        <div class="metric-sublabel" id="metric-films-sublabel"></div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-number" id="metric-creative-periods"></div>
+                        <div class="metric-label">Creative Periods</div>
+                        <div class="metric-sublabel" id="metric-creative-periods-sublabel"></div>
                     </div>
                 </div>
-                
-                <div class="periods-grid">
-                    <div class="period-card" onclick="showPeriodTimeline('warsaw')">
-                        <div class="period-background" style="background-image: url('assets/images/timeline/1920s-warsaw.jpg');"></div>
-                        <div class="period-number" style="background-color: #e5e7eb; color: #374151;">1</div>
-                        <h3 class="period-name">Between Warsaw and Berlin</h3>
-                        <p class="period-years">1926–1929</p>
-                        <div class="period-stats"><span id="warsawCardStats"></span></div>
-                        <p class="period-desc">Early songs with Polish or German lyrics</p>
-                    </div>
-                    <div class="period-card" onclick="showPeriodTimeline('european')">
-                        <div class="period-background" style="background-image: url('assets/images/timeline/1930s-berlin.jpg');"></div>
-                        <div class="period-number" style="background-color: #6b7280;">2</div>
-                        <h3 class="period-name">European Period</h3>
-                        <p class="period-years">1930–1934</p>
-                        <div class="period-stats"><span id="europeCardStats"></span></div>
-                        <p class="period-desc">Berlin, Paris & international films</p>
-                        <p class="period-studios">Main studios: UFA, Aafa, Emelka</p>
-                    </div>
-                    <div class="period-card" onclick="showPeriodTimeline('hollywood')">
-                        <div class="period-background" style="background-image: url('assets/images/timeline/hollywood-golden-age.jpg');"></div>
-                        <div class="period-number" style="background-color: #111827;">3</div>
-                        <h3 class="period-name">Hollywood Period</h3>
-                        <p class="period-years">1935–1939</p>
-                        <div class="period-stats"><span id="hollywoodCardStats"></span></div>
-                        <p class="period-desc">MGM studio contract (73% of films)</p>
-                        <p class="period-studios">Main studios: MGM, Universal</p>
-                    </div>
+
+                <div class="overview-note">
+                    Kaper’s pre-war career falls into three phases: early Warsaw–Berlin songs, a European studio period, and a move into Hollywood.
                 </div>
+
+                <section>
+                    <h3 class="overview-section-title">Three periods at a glance</h3>
+                    <p class="overview-section-intro">
+                        These three phases organize the material across the portal.
+                    </p>
+
+                    <div class="periods-grid overview-periods">
+                        <div class="period-card" onclick="showPeriodTimeline('warsaw')">
+                            <div class="period-background" style="background-image: url('assets/images/timeline/1920s-warsaw.jpg');"></div>
+                            <div class="period-number" style="background-color: #e5e7eb; color: #374151;">1</div>
+                            <h3 class="period-name">Between Warsaw and Berlin</h3>
+                            <p class="period-years">1926–1929</p>
+                            <div class="period-stats"><span id="warsawCardStats"></span></div>
+                            <p class="period-desc">Early songs before the main film cycle.</p>
+
+                            <div class="period-meta">
+                                <div class="period-meta-item"><strong>Cities:</strong> Warsaw, Berlin</div>
+                                <div class="period-meta-item"><strong>Profile:</strong> pre-film phase</div>
+                            </div>
+                        </div>
+
+                        <div class="period-card" onclick="showPeriodTimeline('european')">
+                            <div class="period-background" style="background-image: url('assets/images/timeline/1930s-berlin.jpg');"></div>
+                            <div class="period-number" style="background-color: #6b7280;">2</div>
+                            <h3 class="period-name">European Period</h3>
+                            <p class="period-years">1930–1934</p>
+                            <div class="period-stats"><span id="europeCardStats"></span></div>
+                            <p class="period-desc">Berlin, Paris, and multilingual studio production.</p>
+                            <p class="period-studios">Main studios: UFA, Aafa, Emelka</p>
+
+                            <div class="period-meta">
+                                <div class="period-meta-item"><strong>Cities:</strong> Berlin, Paris, Vienna</div>
+                                <div class="period-meta-item"><strong>Profile:</strong> peak European network</div>
+                            </div>
+                        </div>
+
+                        <div class="period-card" onclick="showPeriodTimeline('hollywood')">
+                            <div class="period-background" style="background-image: url('assets/images/timeline/hollywood-golden-age.jpg');"></div>
+                            <div class="period-number" style="background-color: #111827;">3</div>
+                            <h3 class="period-name">Hollywood Period</h3>
+                            <p class="period-years">1935–1939</p>
+                            <div class="period-stats"><span id="hollywoodCardStats"></span></div>
+                            <p class="period-desc">Studio-based work centered on MGM and Hollywood.</p>
+                            <p class="period-studios">Main studios: MGM, Universal, 20th Century Fox</p>
+
+                            <div class="period-meta">
+                                <div class="period-meta-item"><strong>Center:</strong> Hollywood</div>
+                                <div class="period-meta-item"><strong>Profile:</strong> studio-era consolidation</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="overview-collab">
+                    <h3 class="overview-section-title">Collaboration with Walter Jurmann</h3>
+                    <p class="overview-section-intro">
+                        Jurmann was Kaper’s main collaborator across both songs and films, linking the European years with early Hollywood.
+                    </p>
+
+                    <div class="overview-collab-grid">
+                        <div class="collaboration-photo">
+                            <img src="assets/images/portraits/kaper-with-jurmann.jpg"
+                                 alt="Bronisław Kaper and Walter Jurmann"
+                                 class="duo-photo"
+                                 onerror="this.style.display='none'">
+                            <p class="photo-caption">Bronisław Kaper &amp; Walter Jurmann — creative partnership</p>
+                        </div>
+
+                        <div class="overview-collab-copy">
+                            <div class="collaboration-stats overview-collab-stats">
+                                <div class="collab-stat">
+                                    <div class="collab-number" id="collab-jurmann-films-number"></div>
+                                    <div class="collab-label">Films with Jurmann</div>
+                                    <div class="collab-detail" id="collab-jurmann-films-detail"></div>
+                                </div>
+                                <div class="collab-stat">
+                                    <div class="collab-number" id="collab-jurmann-songs-number"></div>
+                                    <div class="collab-label">Songs with Jurmann</div>
+                                    <div class="collab-detail" id="collab-jurmann-songs-detail"></div>
+                                </div>
+                            </div>
+
+                            <div class="studio-periods">
+                                <div class="studio-period">
+                                    <img src="assets/images/timeline/1930s-berlin.jpg" alt="Berlin 1930s" class="period-image" onerror="this.style.display='none'">
+                                    <h5>European Period (1930–1934)</h5>
+                                    <p id="periodDescEurope">UFA, Aafa, Emelka, and French productions</p>
+                                </div>
+                                <div class="studio-period">
+                                    <img src="assets/images/timeline/hollywood-golden-age.jpg" alt="Hollywood Golden Age" class="period-image" onerror="this.style.display='none'">
+                                    <h5>Hollywood Period (1935–1939)</h5>
+                                    <p id="periodDescHollywood">MGM dominates, with additional work at Universal and 20th Century Fox</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="overview-usage">
+                    <h3 class="overview-section-title">How to use this portal</h3>
+                    <div class="overview-usage-list">
+                        <div class="overview-usage-item">Use <strong>Works Chart</strong> to compare songs and films.</div>
+                        <div class="overview-usage-item">Open <strong>Periods</strong> to view each phase.</div>
+                        <div class="overview-usage-item">Browse <strong>Filmography</strong> by title and production context.</div>
+                        <div class="overview-usage-item">Use <strong>Songs</strong> to trace titles and collaborators.</div>
+                    </div>
+                </section>
             </div>
-            
+
             <div id="timeline" class="view">
                 <div class="filters">
                     <button class="filter-btn active" onclick="filterPeriod('all')" id="filter-all">All Periods</button>
@@ -1169,11 +1521,9 @@
                             <p class="period-detail-partner">Partners: Andrzej Włast & Fritz Rotter</p>
                         </div>
                         <div class="period-detail-stats">
-                            <div class="period-detail-total" id="warsaw-detail-total">13</div>
+                            <div class="period-detail-total" id="warsaw-detail-total"></div>
                             <div class="period-detail-label">Total Works</div>
-                            <div class="period-detail-breakdown" id="warsaw-detail-breakdown">
-                                <div>13 songs · 0 films</div>
-                            </div>
+                            <div class="period-detail-breakdown" id="warsaw-detail-breakdown"></div>
                         </div>
                     </div>
                     
@@ -1187,11 +1537,9 @@
                             <p class="period-detail-studios">Key studios: UFA-Berlin, Aafa-Film, Emelka, Cine-Allianz</p>
                         </div>
                         <div class="period-detail-stats">
-                            <div class="period-detail-total" id="europe-detail-total">133</div>
+                            <div class="period-detail-total" id="europe-detail-total"></div>
                             <div class="period-detail-label">Total Works</div>
-                            <div class="period-detail-breakdown" id="europe-detail-breakdown">
-                                <div>101 songs · 32 films</div>
-                            </div>
+                            <div class="period-detail-breakdown" id="europe-detail-breakdown"></div>
                         </div>
                     </div>
                     
@@ -1202,14 +1550,12 @@
                             <p class="period-detail-years">1935–1939</p>
                             <p class="period-detail-desc">MGM studio contract</p>
                             <p class="period-detail-partner">Partners: Walter Jurmann, Gus Kahn, Ned Washington</p>
-                            <p class="period-detail-studios">MGM dominance: 16/20 films (73%); also Universal, 20th Century Fox</p>
+                            <p class="period-detail-studios">MGM dominance; also Universal, 20th Century Fox</p>
                         </div>
                         <div class="period-detail-stats">
-                            <div class="period-detail-total" id="hollywood-detail-total">83</div>
+                            <div class="period-detail-total" id="hollywood-detail-total"></div>
                             <div class="period-detail-label">Total Works</div>
-                            <div class="period-detail-breakdown" id="hollywood-detail-breakdown">
-                                <div>63 songs · 20 films</div>
-                            </div>
+                            <div class="period-detail-breakdown" id="hollywood-detail-breakdown"></div>
                         </div>
                     </div>
                 </div>
@@ -1574,8 +1920,11 @@
             // --- Overview metrics ---
             set('metric-total-songs',      totalSongs);
             set('metric-total-films',      totalFilms);
+            set('metric-creative-periods', 3);
             set('metric-jurmann-pct',      jurmannSongsPct + '%');
+            set('metric-songs-sublabel',   '1926–1939');
             set('metric-films-sublabel',   `${europeanFilms} European + ${hollywoodFilms} Hollywood`);
+            set('metric-creative-periods-sublabel', 'Warsaw–Berlin, European, Hollywood');
             set('metric-jurmann-sublabel', `${jurmannSongs} of ${totalSongs} songs`);
 
             // --- Collaboration stats ---
@@ -1734,12 +2083,19 @@
             var minYear = Math.min.apply(null, songsData.map(function(s){ return s.year; }));
             var maxYear = Math.max.apply(null, songsData.map(function(s){ return s.year; }));
 
-            document.getElementById('metric-total-songs').textContent = totalSongs;
-            document.getElementById('metric-songs-sublabel').textContent = minYear + '–' + maxYear;
-            document.getElementById('metric-total-films').textContent = totalFilms;
-            document.getElementById('metric-films-sublabel').textContent = euroFilms + ' European + ' + hwFilms + ' Hollywood';
-            document.getElementById('metric-jurmann-pct').textContent = jurmannPct + '%';
-            document.getElementById('metric-jurmann-sublabel').textContent = jurmannSongs + ' of ' + totalSongs + ' songs';
+            var el;
+            el = document.getElementById('metric-total-songs');
+            if (el) el.textContent = totalSongs;
+            el = document.getElementById('metric-songs-sublabel');
+            if (el) el.textContent = minYear + '–' + maxYear;
+            el = document.getElementById('metric-total-films');
+            if (el) el.textContent = totalFilms;
+            el = document.getElementById('metric-films-sublabel');
+            if (el) el.textContent = euroFilms + ' European + ' + hwFilms + ' Hollywood';
+            el = document.getElementById('metric-jurmann-pct');
+            if (el) el.textContent = jurmannPct + '%';
+            el = document.getElementById('metric-jurmann-sublabel');
+            if (el) el.textContent = jurmannSongs + ' of ' + totalSongs + ' songs';
         }
         updateMetrics();
 
