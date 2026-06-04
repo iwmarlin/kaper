@@ -481,11 +481,19 @@
             box-shadow: 0 4px 8px -2px rgba(0, 0, 0, 0.1);
         }
         
-        .media-card a[href*="filmportal"] div:hover {
+        .media-card a[href*="filmportal"] div:hover,
+        .media-card a[href*="youtube"] div:hover,
+        .media-card a[href*="youtu.be"] div:hover,
+        .media-card a[href*="vkvideo"] div:hover,
+        .media-card a[href*="pbs.org"] div:hover {
             background: linear-gradient(135deg, #2d3748 0%, #4a5568 60%, #5a6577 100%) !important;
         }
         
-        .media-card a[href*="filmportal"]:hover div > div {
+        .media-card a[href*="filmportal"]:hover div > div,
+        .media-card a[href*="youtube"]:hover div > div,
+        .media-card a[href*="youtu.be"]:hover div > div,
+        .media-card a[href*="vkvideo"]:hover div > div,
+        .media-card a[href*="pbs.org"]:hover div > div {
             background: rgba(255,255,255,0.25) !important;
             transform: scale(1.1);
         }
@@ -776,71 +784,47 @@
                 </div>
                 
                 <div class="media-grid">
+
                     <div class="media-card" data-period="european">
                         <div class="period-badge period-audio">European Period</div>
                         <h3 class="media-title">Jak się da, to się zrobi</h3>
                         <p class="media-info">From "Perskie Oko" cabaret repertoire (1926) • Lyrics: Andrzej Włast • as Bruno Asper</p>
-                        <audio controls preload="none" class="media-player">
-                            <source src="assets/audio/samples/jak-sie-da.mp3" type="audio/mpeg">
-                            Your browser does not support the audio element.
-                        </audio>
                         <p class="media-description">
                             One of Kaper's earliest commercial songs, published under his stage name during his Warsaw period.
-                            <br><span style="font-size:0.8em; color:#6b7280;">Source: Syrena-Grand-Record: № 17919 mx: 17919, 1926; Performers: Perskie Oko Theatre Orchestra conducted by Zygmunt Wiehler.</span> 
+                            <br><span style="font-size:0.8em; color:#6b7280;">Source: Syrena-Grand-Record: № 17919 mx: 17919, 1926; Performers: Perskie Oko Theatre Orchestra conducted by Zygmunt Wiehler.</span>
                         </p>
                     </div>
-
                     <div class="media-card" data-period="european">
                         <div class="period-badge period-audio">European Period</div>
                         <h3 class="media-title">Miss Anabelle Lee</h3>
                         <p class="media-info">Piano duo arrangement</p>
-                        <audio controls preload="none" class="media-player">
-                            <source src="assets/audio/samples/anabelle.mp3" type="audio/mpeg">
-                            Your browser does not support the audio element.
-                        </audio>
                         <p class="media-description">
-                            This is a popular American song from 1927, written by Sidney Clare, Lew Pollack, and Harry Richman. 
-                            The piece is an example of 'Tin Pan Alley,' representing the popular music of the Roaring Twenties. 
+                            This is a popular American song from 1927, written by Sidney Clare, Lew Pollack, and Harry Richman. The piece is an example of 'Tin Pan Alley,' representing the popular music of the Roaring Twenties.
                             <br><span style="font-size:0.8em; color:#6b7280;">Source: Polydor 21768, 1928; Performers: Hermann Bick and Dr. Kaper.</span>
                         </p>
                     </div>
-
                     <div class="media-card" data-period="european">
                         <div class="period-badge period-audio">European Period</div>
                         <h3 class="media-title">Süße Mamsell, denkst du noch an das kleine Hotel</h3>
                         <p class="media-info">Tango (1929) • Lyrics: Fritz Rotter • With Fritz Rotter</p>
-                        <audio controls preload="none" class="media-player">
-                            <source src="assets/audio/samples/susse-mamsell_lja-Livschakoff-Tanz orchester_1930.mp3" type="audio/mpeg">
-                            Your browser does not support the audio element.
-                        </audio>
                         <p class="media-description">
                             Early collaboration with Fritz Rotter, showcasing Kaper's European tango style before his film career.
                             <br><span style="font-size:0.8em; color:#6b7280;">Source: Grammophon. Eine Schellackplatte aus dem Schallarchiv des Radiomuseum Hardthausen; Performers: Ilja Livschakoff Tanz-Orchester.</span>
                         </p>
                     </div>
-                    
                     <div class="media-card" data-period="european">
                         <div class="period-badge period-audio">European Period</div>
                         <h3 class="media-title">Blaue Jungs von der Marine</h3>
                         <p class="media-info">From "Der Korvettenkapitän" (1930) • Lyrics: Fritz Rotter</p>
-                        <audio controls preload="none" class="media-player">
-                            <source src="assets/audio/samples/blaue-jungs_Kurt-Muhlhardt_Bernard-Ette.mp3" type="audio/mpeg">
-                            Your browser does not support the audio element.
-                        </audio>
                         <p class="media-description">
                             One of Kaper's first compositions for German cinema, marking his transition from independent songwriter to film composer.
-                            <br><span style="font-size:0.8em; color:#6b7280;">Source: Kristall 78N. 1930; Performers: Kurt Mühlhardt & Bernard Etté und sein Orchester.</span>
+                            <br><span style="font-size:0.8em; color:#6b7280;">Source: Kristall 78N. 1930; Performers: Kurt Mühlhardt &amp; Bernard Etté und sein Orchester.</span>
                         </p>
                     </div>
-
                     <div class="media-card" data-period="european">
                         <div class="period-badge period-audio">European Period</div>
                         <h3 class="media-title">Spiel' mir auf der Balalaika einen Russischen Tango</h3>
                         <p class="media-info">Tango (1931) • Lyrics: Fritz Rotter • With Fritz Rotter</p>
-                        <audio controls preload="none" class="media-player">
-                            <source src="assets/audio/samples/balalaika_Weber-Marek_1929.mp3" type="audio/mpeg">
-                            Your browser does not support the audio element.
-                        </audio>
                         <p class="media-description">
                             Popular tango demonstrating Kaper's ability to blend Eastern European musical elements with contemporary dance styles.
                             <br><span style="font-size:0.8em; color:#6b7280;">Source: Electrola E.G.2392, 1931; Performers: Marek Weber und sein Orchester.</span>
@@ -850,55 +834,73 @@
                         <div class="period-badge period-audio">Hollywood Period</div>
                         <h3 class="media-title">You’re All I Need</h3>
                         <p class="media-info">From "Escapade" (1935) • Lyrics: Gus Kahn • With Walter Jurmann</p>
-                        <audio controls preload="none" class="media-player">
-                            <source src="assets/audio/samples/all_i_need.mp3" type="audio/mpeg">
-                            Your browser does not support the audio element.
-                        </audio>
                         <p class="media-description">
-                            Kaper-Jurmann's first American song, written for William Powell's Viennese comedy at MGM. Ranked No. 14 on the ASCAP list of most-played songs of 1935–36, with over 21,000 radio broadcasts on NBC and CBS — placing the newcomers alongside Irving Berlin and Jerome Kern. <br><span style="font-size:0.8em; color:#6b7280;">Source: Victor 25029. Performers: Eddy Duchin & his Orchestra, vocal by Lew Sherwood.</span>
+                            Kaper-Jurmann's first American song, written for William Powell's Viennese comedy at MGM. Ranked No. 14 on the ASCAP list of most-played songs of 1935–36, with over 21,000 radio broadcasts on NBC and CBS — placing the newcomers alongside Irving Berlin and Jerome Kern.
+                            <br><span style="font-size:0.8em; color:#6b7280;">Source: Victor 25029. Performers: Eddy Duchin &amp; his Orchestra, vocal by Lew Sherwood.</span>
                         </p>
                     </div>
-                    
                     <div class="media-card" data-period="hollywood">
                         <div class="period-badge period-audio">Hollywood Period</div>
                         <h3 class="media-title">Someone to Care for Me</h3>
                         <p class="media-info">From "Three Smart Girls" (1936) • Lyrics: Gus Kahn • With Walter Jurmann</p>
-                        <audio controls preload="none" class="media-player">
-                            <source src="assets/audio/samples/someone-to-care_Victor-Silverster.mp3" type="audio/mpeg">
-                            Your browser does not support the audio element.
-                        </audio>
                         <p class="media-description">
                             Song from Deanna Durbin's film debut at Universal Pictures. Demonstrates Kaper-Jurmann's work outside of MGM, showing their adaptability to different studios and performers during their Hollywood period.
                             <br><span style="font-size:0.8em; color:#6b7280;">Source: Parlophone (A6766); Performers: Victor Silvester and His Ballroom Orchestra.</span>
                         </p>
                     </div>
-
                     <div class="media-card" data-period="hollywood">
                         <div class="period-badge period-audio">Hollywood Period</div>
                         <h3 class="media-title">All God's Chillun Got Rhythm</h3>
                         <p class="media-info">From "A Day at the Races" (1937) • Lyrics: Gus Kahn • With Walter Jurmann</p>
-                        <audio controls preload="none" class="media-player">
-                            <source src="assets/audio/samples/all-gods-chillun-got-rhythm_Duke-Ellington.mp3" type="audio/mpeg">
-                            Your browser does not support the audio element.
-                        </audio>
                         <p class="media-description">
-                            Composed for the Marx Brothers film, this song transcended its original context to become a jazz standard. It demonstrates Kaper's remarkable 
-                            success in creating music that merged European sophistication with American swing, becoming part of the broader jazz repertoire.
+                            Composed for the Marx Brothers film, this song transcended its original context to become a jazz standard. It demonstrates Kaper's remarkable success in creating music that merged European sophistication with American swing, becoming part of the broader jazz repertoire.
                             <br><span style="font-size:0.8em; color:#6b7280;">Source: Master (MA 137); Performers: Duke Ellington and His Orchestra.</span>
                         </p>
                     </div>
+
+
+                    
+
+                    
+
                     
                     <div class="media-card" data-period="hollywood">
                         <div class="period-badge period-audio">Hollywood Period</div>
                         <h3 class="media-title">The Duchess Has a Twinkle in Her Eye</h3>
                         <p class="media-info">From "Kind Lady" (1935) &bull; Lyrics: Ned Washington &bull; With Walter Jurmann</p>
-                        <video controls preload="none" class="media-player" poster="assets/images/video-thumbnails/mgm-studios.jpg">
-                            <source src="assets/video/samples/the-duchess.mp4" type="video/mp4">
-                            Your browser does not support the video element.
-                        </video>
+                        <a href="https://www.youtube.com/watch?v=gePgVM7uIIQ" target="_blank" rel="noopener noreferrer" style="display:block; position:relative; margin-bottom:1.5rem; border-radius:8px; overflow:hidden; text-decoration:none;">
+                            <div style="
+                                width:100%;
+                                aspect-ratio:16/9;
+                                background: linear-gradient(135deg, #1f2937 0%, #374151 60%, #4b5563 100%);
+                                display:flex;
+                                flex-direction:column;
+                                align-items:center;
+                                justify-content:center;
+                                gap:0.75rem;
+                                transition: all 0.3s ease;
+                                position:relative;
+                            ">
+                                <div style="
+                                    width:64px; height:64px;
+                                    border-radius:50%;
+                                    background: rgba(255,255,255,0.15);
+                                    backdrop-filter: blur(4px);
+                                    display:flex; align-items:center; justify-content:center;
+                                    border: 2px solid rgba(255,255,255,0.3);
+                                    transition: all 0.3s ease;
+                                ">
+                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="white" style="margin-left:3px;">
+                                        <polygon points="5,3 19,12 5,21"/>
+                                    </svg>
+                                </div>
+                                <span style="color:rgba(255,255,255,0.9); font-size:0.85rem; font-weight:500; letter-spacing:0.03em;">
+                                    ▶ Watch on YouTube
+                                </span>
+                            </div>
+                        </a>
                         <p class="media-description">
                             One of Kaper &amp; Jurmann's earliest Hollywood songs, written for the MGM drama 'Kind Lady' (1935).
-                            <br><span style="font-size:0.8em; color:#6b7280;">Source: <a href="https://www.youtube.com/watch?v=gePgVM7uIIQ" target="_blank" rel="noopener noreferrer" style="color:#8b7355;">YouTube ↗</a></span>
                         </p>
                     </div>
 
@@ -957,6 +959,20 @@
                             Score-to-MIDI rendering
                         </p>
                     </div>
+
+                    <div class="media-card" data-period="early">
+                        <div class="period-badge period-early">Early Works</div>
+                        <h3 class="media-title">Sonatina for piano</h3>
+                        <p class="media-info">Third movement of a composition dated 1927</p>
+                        <audio controls preload="none" class="media-player">
+                            <source src="assets/audio/samples/sonatina_3.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                        <p class="media-description">
+                            This composition by Kaper was written in Warsaw and is preserved in manuscript form.
+                            Score-to-MIDI rendering
+                        </p>
+                    </div>
                 </div>
             </div>
             
@@ -975,13 +991,39 @@
                         <div class="period-badge period-video">Film sample (European)</div>
                         <h3 class="media-title">Wenn mich die Männer betrügen</h3>
                         <p class="media-info">From "Alraune" (1930) • Performer: Brigitte Helm — Educational Use</p>
-                        <video controls preload="none" class="media-player" poster="assets/images/video-thumbnails/mgm-studios.jpg">
-                            <source src="assets/video/samples/wenn-mich.mp4" type="video/mp4">
-                            Your browser does not support the video element.
-                        </video>
+                        <a href="https://www.youtube.com/watch?v=2OP5AikZuxs" target="_blank" rel="noopener noreferrer" style="display:block; position:relative; margin-bottom:1.5rem; border-radius:8px; overflow:hidden; text-decoration:none;">
+                            <div style="
+                                width:100%;
+                                aspect-ratio:16/9;
+                                background: linear-gradient(135deg, #1f2937 0%, #374151 60%, #4b5563 100%);
+                                display:flex;
+                                flex-direction:column;
+                                align-items:center;
+                                justify-content:center;
+                                gap:0.75rem;
+                                transition: all 0.3s ease;
+                                position:relative;
+                            ">
+                                <div style="
+                                    width:64px; height:64px;
+                                    border-radius:50%;
+                                    background: rgba(255,255,255,0.15);
+                                    backdrop-filter: blur(4px);
+                                    display:flex; align-items:center; justify-content:center;
+                                    border: 2px solid rgba(255,255,255,0.3);
+                                    transition: all 0.3s ease;
+                                ">
+                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="white" style="margin-left:3px;">
+                                        <polygon points="5,3 19,12 5,21"/>
+                                    </svg>
+                                </div>
+                                <span style="color:rgba(255,255,255,0.9); font-size:0.85rem; font-weight:500; letter-spacing:0.03em;">
+                                    ▶ Watch on YouTube
+                                </span>
+                            </div>
+                        </a>
                         <p class="media-description">
                             The song — a tango from the feature film 'Alraune'.
-                            <br><span style="font-size:0.8em; color:#6b7280;">Source: <a href="https://www.youtube.com/watch?v=2OP5AikZuxs" target="_blank" rel="noopener noreferrer" style="color:#5c4a32; text-decoration:none;">YouTube ↗</a></span>
                         </p>
                     </div>
 
@@ -1016,7 +1058,7 @@
                                     </svg>
                                 </div>
                                 <span style="color:rgba(255,255,255,0.9); font-size:0.85rem; font-weight:500; letter-spacing:0.03em;">
-                                    ▶ Obejrzyj na filmportal.de
+                                    ▶ Watch on filmportal.de
                                 </span>
                                 <span style="color:rgba(255,255,255,0.5); font-size:0.7rem; letter-spacing:0.05em; text-transform:uppercase;">
                                     Filmanfang • 06:58 min • © DFF – Deutsches Filminstitut &amp; Filmmuseum
@@ -1035,14 +1077,40 @@
                         <div class="period-badge period-video">Film sample (European)</div>
                         <h3 class="media-title">Heut' bin ich gut aufgelegt</h3>
                         <p class="media-info">From "Ein toller Einfall" (1932) • Performer: Willy Fritsch & Rosy Barsony — Educational Use</p>
-                        <video controls preload="none" class="media-player" poster="assets/images/video-thumbnails/mgm-studios.jpg">
-                            <source src="assets/video/samples/heut-bin-ich.mp4" type="video/mp4">
-                            Your browser does not support the video element.
-                        </video>
+                        <a href="https://www.youtube.com/watch?v=zLnPzr3MoAY" target="_blank" rel="noopener noreferrer" style="display:block; position:relative; margin-bottom:1.5rem; border-radius:8px; overflow:hidden; text-decoration:none;">
+                            <div style="
+                                width:100%;
+                                aspect-ratio:16/9;
+                                background: linear-gradient(135deg, #1f2937 0%, #374151 60%, #4b5563 100%);
+                                display:flex;
+                                flex-direction:column;
+                                align-items:center;
+                                justify-content:center;
+                                gap:0.75rem;
+                                transition: all 0.3s ease;
+                                position:relative;
+                            ">
+                                <div style="
+                                    width:64px; height:64px;
+                                    border-radius:50%;
+                                    background: rgba(255,255,255,0.15);
+                                    backdrop-filter: blur(4px);
+                                    display:flex; align-items:center; justify-content:center;
+                                    border: 2px solid rgba(255,255,255,0.3);
+                                    transition: all 0.3s ease;
+                                ">
+                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="white" style="margin-left:3px;">
+                                        <polygon points="5,3 19,12 5,21"/>
+                                    </svg>
+                                </div>
+                                <span style="color:rgba(255,255,255,0.9); font-size:0.85rem; font-weight:500; letter-spacing:0.03em;">
+                                    ▶ Watch on YouTube
+                                </span>
+                            </div>
+                        </a>
                         <p class="media-description">
                             The song — a foxtrot from the feature film 'Ein toller Einfall'. This song became one of the popular 
                             entertainment pieces of the pre-war era, with its light melody and cheerful mood reflecting the lively spirit of the Roaring Twenties.
-                            <br><span style="font-size:0.8em; color:#6b7280;">Source: <a href="https://www.youtube.com/watch?v=zLnPzr3MoAY" target="_blank" rel="noopener noreferrer" style="color:#5c4a32; text-decoration:none;">YouTube ↗</a></span>
                         </p>
                     </div>
 
@@ -1077,7 +1145,7 @@
                                     </svg>
                                 </div>
                                 <span style="color:rgba(255,255,255,0.9); font-size:0.85rem; font-weight:500; letter-spacing:0.03em;">
-                                    ▶ Obejrzyj na filmportal.de
+                                    ▶ Watch on filmportal.de
                                 </span>
                                 <span style="color:rgba(255,255,255,0.5); font-size:0.7rem; letter-spacing:0.05em; text-transform:uppercase;">
                                     Filmanfang • 08:49 min • © Friedrich-Wilhelm-Murnau-Stiftung
@@ -1122,7 +1190,7 @@
                                     </svg>
                                 </div>
                                 <span style="color:rgba(255,255,255,0.9); font-size:0.85rem; font-weight:500; letter-spacing:0.03em;">
-                                    ▶ Obejrzyj na filmportal.de
+                                    ▶ Watch on filmportal.de
                                 </span>
                                 <span style="color:rgba(255,255,255,0.5); font-size:0.7rem; letter-spacing:0.05em; text-transform:uppercase;">
                                     Filmanfang • 12:59 min • © DFF – Deutsches Filminstitut &amp; Filmmuseum
@@ -1136,18 +1204,6 @@
                         </p>
                     </div>
 
-                    <div class="media-card" data-vperiod="european">
-                        <div class="period-badge period-video">Film sample (European)</div>
-                        <h3 class="media-title">Ninon</h3>
-                        <p class="media-info">From "Ein Lied für Dich" (1933) • Performer: Jan Kiepura — Educational Use</p>
-                        <video controls preload="none" class="media-player" poster="assets/images/video-thumbnails/mgm-studios.jpg">
-                            <source src="assets/video/samples/ninon.mp4" type="video/mp4">
-                            Your browser does not support the video element.
-                        </video>
-                        <p class="media-description">
-                            "Ninon (Ninon, Lach mir einmal zu)" from 'Ein Lied für Dich' - one of Kaper's successful songs for the German cinema, co-composed with Walter Jurmann and performed by Jan Kiepura.
-                        </p>
-                    </div>
                     
                     <div class="media-card" data-vperiod="european">
                         <div class="period-badge period-video">Film sample (European)</div>
@@ -1180,7 +1236,7 @@
                                     </svg>
                                 </div>
                                 <span style="color:rgba(255,255,255,0.9); font-size:0.85rem; font-weight:500; letter-spacing:0.03em;">
-                                    ▶ Obejrzyj na filmportal.de
+                                    ▶ Watch on filmportal.de
                                 </span>
                                 <span style="color:rgba(255,255,255,0.5); font-size:0.7rem; letter-spacing:0.05em; text-transform:uppercase;">
                                     Filmanfang • 07:02 min • © Friedrich-Wilhelm-Murnau-Stiftung
@@ -1198,13 +1254,39 @@
                         <div class="period-badge period-video">Film sample (European)</div>
                         <h3 class="media-title">Funiculì funiculà</h3>
                         <p class="media-info">From "Abenteuer am Lido" (1933) • Performer: Alfred Piccaver — Educational Use</p>
-                        <video controls preload="none" class="media-player" poster="assets/images/video-thumbnails/mgm-studios.jpg">
-                            <source src="assets/video/samples/abenteuer-feniculi-fenicula.mp4" type="video/mp4">
-                            Your browser does not support the video element.
-                        </video>
+                        <a href="https://vkvideo.ru/video-80199384_456239028" target="_blank" rel="noopener noreferrer" style="display:block; position:relative; margin-bottom:1.5rem; border-radius:8px; overflow:hidden; text-decoration:none;">
+                            <div style="
+                                width:100%;
+                                aspect-ratio:16/9;
+                                background: linear-gradient(135deg, #1f2937 0%, #374151 60%, #4b5563 100%);
+                                display:flex;
+                                flex-direction:column;
+                                align-items:center;
+                                justify-content:center;
+                                gap:0.75rem;
+                                transition: all 0.3s ease;
+                                position:relative;
+                            ">
+                                <div style="
+                                    width:64px; height:64px;
+                                    border-radius:50%;
+                                    background: rgba(255,255,255,0.15);
+                                    backdrop-filter: blur(4px);
+                                    display:flex; align-items:center; justify-content:center;
+                                    border: 2px solid rgba(255,255,255,0.3);
+                                    transition: all 0.3s ease;
+                                ">
+                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="white" style="margin-left:3px;">
+                                        <polygon points="5,3 19,12 5,21"/>
+                                    </svg>
+                                </div>
+                                <span style="color:rgba(255,255,255,0.9); font-size:0.85rem; font-weight:500; letter-spacing:0.03em;">
+                                    ▶ Watch on VK Video
+                                </span>
+                            </div>
+                        </a>
                         <p class="media-description">
                             Neapolitan song by Luigi Denza. Model for the song 'Così, Cosa'
-                            <br><span style="font-size:0.8em; color:#6b7280;">Source: <a href="https://vkvideo.ru/video-80199384_456239028" target="_blank" rel="noopener noreferrer" style="color:#5c4a32; text-decoration:none;">VK Video ↗</a></span>
                         </p>
                     </div>
 
@@ -1212,13 +1294,39 @@
                         <div class="period-badge period-video">Film sample (European)</div>
                         <h3 class="media-title">Natacha</h3>
                         <p class="media-info">From "Les nuits moscovites" (1934) • Lyrics: André de Badet • With Walter Jurmann — Educational Use</p>
-                        <video controls preload="none" class="media-player" poster="assets/images/video-thumbnails/mgm-studios.jpg">
-                            <source src="assets/video/samples/natascha.mp4" type="video/mp4">
-                            Your browser does not support the video element.
-                        </video>
+                        <a href="https://www.youtube.com/watch?v=fBixjVOoN3I" target="_blank" rel="noopener noreferrer" style="display:block; position:relative; margin-bottom:1.5rem; border-radius:8px; overflow:hidden; text-decoration:none;">
+                            <div style="
+                                width:100%;
+                                aspect-ratio:16/9;
+                                background: linear-gradient(135deg, #1f2937 0%, #374151 60%, #4b5563 100%);
+                                display:flex;
+                                flex-direction:column;
+                                align-items:center;
+                                justify-content:center;
+                                gap:0.75rem;
+                                transition: all 0.3s ease;
+                                position:relative;
+                            ">
+                                <div style="
+                                    width:64px; height:64px;
+                                    border-radius:50%;
+                                    background: rgba(255,255,255,0.15);
+                                    backdrop-filter: blur(4px);
+                                    display:flex; align-items:center; justify-content:center;
+                                    border: 2px solid rgba(255,255,255,0.3);
+                                    transition: all 0.3s ease;
+                                ">
+                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="white" style="margin-left:3px;">
+                                        <polygon points="5,3 19,12 5,21"/>
+                                    </svg>
+                                </div>
+                                <span style="color:rgba(255,255,255,0.9); font-size:0.85rem; font-weight:500; letter-spacing:0.03em;">
+                                    ▶ Watch on YouTube
+                                </span>
+                            </div>
+                        </a>
                         <p class="media-description">
                             Foxtrot russe song from Kaper's European period, composed for French cinema during his final years before emigration to Hollywood.
-                            <br><span style="font-size:0.8em; color:#6b7280;">Source: <a href="https://www.youtube.com/watch?v=fBixjVOoN3I" target="_blank" rel="noopener noreferrer" style="color:#5c4a32; text-decoration:none;">YouTube ↗</a></span>
                         </p>
                     </div>
 
@@ -1226,13 +1334,39 @@
                         <div class="period-badge period-historical">Historical Context</div>
                         <h3 class="media-title">UFA Studios Fires Jewish Employees</h3>
                         <p class="media-info">Historical Footage • Cinema's Exiles www.pbs.org — Educational Use</p>
-                        <video controls preload="none" class="media-player" poster="assets/images/video-thumbnails/mgm-studios.jpg">
-                            <source src="assets/video/samples/cinema-exiles.mp4" type="video/mp4">
-                            Your browser does not support the video element.
-                        </video>
+                        <a href="https://www.pbs.org/wnet/cinemasexiles/video/video-exclusive-ufa-studios-fires-jewish-employees/64/" target="_blank" rel="noopener noreferrer" style="display:block; position:relative; margin-bottom:1.5rem; border-radius:8px; overflow:hidden; text-decoration:none;">
+                            <div style="
+                                width:100%;
+                                aspect-ratio:16/9;
+                                background: linear-gradient(135deg, #1f2937 0%, #374151 60%, #4b5563 100%);
+                                display:flex;
+                                flex-direction:column;
+                                align-items:center;
+                                justify-content:center;
+                                gap:0.75rem;
+                                transition: all 0.3s ease;
+                                position:relative;
+                            ">
+                                <div style="
+                                    width:64px; height:64px;
+                                    border-radius:50%;
+                                    background: rgba(255,255,255,0.15);
+                                    backdrop-filter: blur(4px);
+                                    display:flex; align-items:center; justify-content:center;
+                                    border: 2px solid rgba(255,255,255,0.3);
+                                    transition: all 0.3s ease;
+                                ">
+                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="white" style="margin-left:3px;">
+                                        <polygon points="5,3 19,12 5,21"/>
+                                    </svg>
+                                </div>
+                                <span style="color:rgba(255,255,255,0.9); font-size:0.85rem; font-weight:500; letter-spacing:0.03em;">
+                                    ▶ Watch on PBS
+                                </span>
+                            </div>
+                        </a>
                         <p class="media-description">
                             UFA studios, a giant of Berlin's cinema before World War II, starts firing Jewish employees under pressure from the Nazi party.
-                            <br><span style="font-size:0.8em; color:#6b7280;">Source: <a href="https://www.pbs.org/wnet/cinemasexiles/video/video-exclusive-ufa-studios-fires-jewish-employees/64/" target="_blank" rel="noopener noreferrer" style="color:#5c4a32; text-decoration:none;">PBS – Cinema's Exiles ↗</a></span>
                         </p>
                     </div>
                     
@@ -1240,14 +1374,40 @@
                         <div class="period-badge period-historical">Historical Context</div>
                         <h3 class="media-title">MGM Studios in the 1930s</h3>
                         <p class="media-info">Historical Footage • Public Domain • Circa 1935-1939 — Educational Use</p>
-                        <video controls preload="none" class="media-player" poster="assets/images/video-thumbnails/mgm-studios.jpg">
-                            <source src="assets/video/samples/MGM-studios.mp4" type="video/mp4">
-                            Your browser does not support the video element.
-                        </video>
+                        <a href="https://www.youtube.com/watch?v=vnFUeKkApyE" target="_blank" rel="noopener noreferrer" style="display:block; position:relative; margin-bottom:1.5rem; border-radius:8px; overflow:hidden; text-decoration:none;">
+                            <div style="
+                                width:100%;
+                                aspect-ratio:16/9;
+                                background: linear-gradient(135deg, #1f2937 0%, #374151 60%, #4b5563 100%);
+                                display:flex;
+                                flex-direction:column;
+                                align-items:center;
+                                justify-content:center;
+                                gap:0.75rem;
+                                transition: all 0.3s ease;
+                                position:relative;
+                            ">
+                                <div style="
+                                    width:64px; height:64px;
+                                    border-radius:50%;
+                                    background: rgba(255,255,255,0.15);
+                                    backdrop-filter: blur(4px);
+                                    display:flex; align-items:center; justify-content:center;
+                                    border: 2px solid rgba(255,255,255,0.3);
+                                    transition: all 0.3s ease;
+                                ">
+                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="white" style="margin-left:3px;">
+                                        <polygon points="5,3 19,12 5,21"/>
+                                    </svg>
+                                </div>
+                                <span style="color:rgba(255,255,255,0.9); font-size:0.85rem; font-weight:500; letter-spacing:0.03em;">
+                                    ▶ Watch on YouTube
+                                </span>
+                            </div>
+                        </a>
                         <p class="media-description">
                             Rare footage showing the MGM lot where Kaper worked during his most productive 
                             Hollywood years.
-                            <br><span style="font-size:0.8em; color:#6b7280;">Source: <a href="https://www.youtube.com/watch?v=vnFUeKkApyE" target="_blank" rel="noopener noreferrer" style="color:#5c4a32; text-decoration:none;">YouTube ↗</a></span>
                         </p>
                     </div>
                     
@@ -1255,15 +1415,41 @@
                         <div class="period-badge period-video">Film sample (Hollywood)</div>
                         <h3 class="media-title">Così, Cosa</h3>
                         <p class="media-info">From "A Night at the Opera" (1935) • With Walter Jurmann • Lyrics: Ned Washington — Educational Use</p>
-                        <video controls preload="none" class="media-player" poster="assets/images/video-thumbnails/cosi-cosa.jpg">
-                            <source src="assets/video/samples/cosi-cosa.mp4" type="video/mp4">
-                            Your browser does not support the video element.
-                        </video>
+                        <a href="https://www.youtube.com/watch?v=GilH6c5TFEA" target="_blank" rel="noopener noreferrer" style="display:block; position:relative; margin-bottom:1.5rem; border-radius:8px; overflow:hidden; text-decoration:none;">
+                            <div style="
+                                width:100%;
+                                aspect-ratio:16/9;
+                                background: linear-gradient(135deg, #1f2937 0%, #374151 60%, #4b5563 100%);
+                                display:flex;
+                                flex-direction:column;
+                                align-items:center;
+                                justify-content:center;
+                                gap:0.75rem;
+                                transition: all 0.3s ease;
+                                position:relative;
+                            ">
+                                <div style="
+                                    width:64px; height:64px;
+                                    border-radius:50%;
+                                    background: rgba(255,255,255,0.15);
+                                    backdrop-filter: blur(4px);
+                                    display:flex; align-items:center; justify-content:center;
+                                    border: 2px solid rgba(255,255,255,0.3);
+                                    transition: all 0.3s ease;
+                                ">
+                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="white" style="margin-left:3px;">
+                                        <polygon points="5,3 19,12 5,21"/>
+                                    </svg>
+                                </div>
+                                <span style="color:rgba(255,255,255,0.9); font-size:0.85rem; font-weight:500; letter-spacing:0.03em;">
+                                    ▶ Watch on YouTube
+                                </span>
+                            </div>
+                        </a>
                         <p class="media-description">
                             One of Kaper and Jurmann's most memorable compositions for the Marx Brothers film. 
                             This excerpt showcases their distinctive melodic style that bridged European 
                             sophistication with American entertainment sensibilities.
-                            <br><span style="font-size:0.8em; color:#6b7280;">Source: <a href="https://www.youtube.com/watch?v=GilH6c5TFEA" target="_blank" rel="noopener noreferrer" style="color:#5c4a32; text-decoration:none;">YouTube ↗</a></span>
                         </p>
                     </div>
 
@@ -1271,13 +1457,39 @@
                         <div class="period-badge period-video">Film sample (Hollywood)</div>
                         <h3 class="media-title">Someone to care for me</h3>
                         <p class="media-info">From "Three Smart Girls" (1936) • With Walter Jurmann • Lyrics: Gus Kahn — Educational Use</p>
-                        <video controls preload="none" class="media-player" poster="assets/images/video-thumbnails/cosi-cosa.jpg">
-                            <source src="assets/video/samples/someone-to-care.mp4" type="video/mp4">
-                            Your browser does not support the video element.
-                        </video>
+                        <a href="https://vkvideo.ru/video-68583631_456242062" target="_blank" rel="noopener noreferrer" style="display:block; position:relative; margin-bottom:1.5rem; border-radius:8px; overflow:hidden; text-decoration:none;">
+                            <div style="
+                                width:100%;
+                                aspect-ratio:16/9;
+                                background: linear-gradient(135deg, #1f2937 0%, #374151 60%, #4b5563 100%);
+                                display:flex;
+                                flex-direction:column;
+                                align-items:center;
+                                justify-content:center;
+                                gap:0.75rem;
+                                transition: all 0.3s ease;
+                                position:relative;
+                            ">
+                                <div style="
+                                    width:64px; height:64px;
+                                    border-radius:50%;
+                                    background: rgba(255,255,255,0.15);
+                                    backdrop-filter: blur(4px);
+                                    display:flex; align-items:center; justify-content:center;
+                                    border: 2px solid rgba(255,255,255,0.3);
+                                    transition: all 0.3s ease;
+                                ">
+                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="white" style="margin-left:3px;">
+                                        <polygon points="5,3 19,12 5,21"/>
+                                    </svg>
+                                </div>
+                                <span style="color:rgba(255,255,255,0.9); font-size:0.85rem; font-weight:500; letter-spacing:0.03em;">
+                                    ▶ Watch on VK Video
+                                </span>
+                            </div>
+                        </a>
                         <p class="media-description">
                             One of Kaper and Jurmann's songs for American musical comedy film directed by Henry Koster, featuring Deana Durbin.
-                            <br><span style="font-size:0.8em; color:#6b7280;">Source: <a href="https://vkvideo.ru/video-68583631_456242062" target="_blank" rel="noopener noreferrer" style="color:#5c4a32; text-decoration:none;">VK Video ↗</a></span>
                         </p>
                     </div>
                     
@@ -1285,15 +1497,41 @@
                         <div class="period-badge period-video">Film sample (Hollywood)</div>
                         <h3 class="media-title">San Francisco</h3>
                         <p class="media-info">From "San Francisco" (1936) • With Walter Jurmann • Lyrics: Gus Kahn • MGM Production — Educational Use</p>
-                        <video controls preload="none" class="media-player" poster="assets/images/video-thumbnails/san-francisco.jpg">
-                            <source src="assets/video/samples/san-francisco.mp4" type="video/mp4">
-                            Your browser does not support the video element.
-                        </video>
+                        <a href="https://www.youtube.com/watch?v=dv6mHsXKI2c" target="_blank" rel="noopener noreferrer" style="display:block; position:relative; margin-bottom:1.5rem; border-radius:8px; overflow:hidden; text-decoration:none;">
+                            <div style="
+                                width:100%;
+                                aspect-ratio:16/9;
+                                background: linear-gradient(135deg, #1f2937 0%, #374151 60%, #4b5563 100%);
+                                display:flex;
+                                flex-direction:column;
+                                align-items:center;
+                                justify-content:center;
+                                gap:0.75rem;
+                                transition: all 0.3s ease;
+                                position:relative;
+                            ">
+                                <div style="
+                                    width:64px; height:64px;
+                                    border-radius:50%;
+                                    background: rgba(255,255,255,0.15);
+                                    backdrop-filter: blur(4px);
+                                    display:flex; align-items:center; justify-content:center;
+                                    border: 2px solid rgba(255,255,255,0.3);
+                                    transition: all 0.3s ease;
+                                ">
+                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="white" style="margin-left:3px;">
+                                        <polygon points="5,3 19,12 5,21"/>
+                                    </svg>
+                                </div>
+                                <span style="color:rgba(255,255,255,0.9); font-size:0.85rem; font-weight:500; letter-spacing:0.03em;">
+                                    ▶ Watch on YouTube
+                                </span>
+                            </div>
+                        </a>
                         <p class="media-description">
                             The title song that became synonymous with the city itself. Written during Kaper's 
                             most productive Hollywood period, it exemplifies his successful adaptation to American 
                             musical sensibilities while maintaining his European compositional sophistication.
-                            <br><span style="font-size:0.8em; color:#6b7280;">Source: <a href="https://www.youtube.com/watch?v=dv6mHsXKI2c" target="_blank" rel="noopener noreferrer" style="color:#5c4a32; text-decoration:none;">YouTube ↗</a></span>
                         </p>
                     </div>
 
@@ -1301,14 +1539,40 @@
                         <div class="period-badge period-video">Film sample (Hollywood)</div>
                         <h3 class="media-title">All God's Chillun Got Rhythm</h3>
                         <p class="media-info">From "A Day at the Races" (1937) • Lyrics: Gus Kahn • With Walter Jurmann — Educational Use</p>
-                        <video controls preload="none" class="media-player" poster="assets/images/video-thumbnails/san-francisco.jpg">
-                            <source src="assets/video/samples/all-gods.mp4" type="video/mp4">
-                            Your browser does not support the video element.
-                        </video>
+                        <a href="https://www.youtube.com/watch?v=h5rZs84VhWo" target="_blank" rel="noopener noreferrer" style="display:block; position:relative; margin-bottom:1.5rem; border-radius:8px; overflow:hidden; text-decoration:none;">
+                            <div style="
+                                width:100%;
+                                aspect-ratio:16/9;
+                                background: linear-gradient(135deg, #1f2937 0%, #374151 60%, #4b5563 100%);
+                                display:flex;
+                                flex-direction:column;
+                                align-items:center;
+                                justify-content:center;
+                                gap:0.75rem;
+                                transition: all 0.3s ease;
+                                position:relative;
+                            ">
+                                <div style="
+                                    width:64px; height:64px;
+                                    border-radius:50%;
+                                    background: rgba(255,255,255,0.15);
+                                    backdrop-filter: blur(4px);
+                                    display:flex; align-items:center; justify-content:center;
+                                    border: 2px solid rgba(255,255,255,0.3);
+                                    transition: all 0.3s ease;
+                                ">
+                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="white" style="margin-left:3px;">
+                                        <polygon points="5,3 19,12 5,21"/>
+                                    </svg>
+                                </div>
+                                <span style="color:rgba(255,255,255,0.9); font-size:0.85rem; font-weight:500; letter-spacing:0.03em;">
+                                    ▶ Watch on YouTube
+                                </span>
+                            </div>
+                        </a>
                         <p class="media-description">
                             A swing-influenced number that demonstrates Kaper's versatility and adaptation 
                             to contemporary American musical trends of the late 1930s.
-                            <br><span style="font-size:0.8em; color:#6b7280;">Source: <a href="https://www.youtube.com/watch?v=h5rZs84VhWo" target="_blank" rel="noopener noreferrer" style="color:#5c4a32; text-decoration:none;">YouTube ↗</a></span>
                         </p>
                     </div>
 
@@ -1316,14 +1580,40 @@
                         <div class="period-badge period-video">Film sample (Hollywood)</div>
                         <h3 class="media-title">Swing Mr. Mendelssohn</h3>
                         <p class="media-info">From "Everybody Sing" (1938) • Lyrics: Gus Kahn • With Walter Jurmann — Educational Use</p>
-                        <video controls preload="none" class="media-player" poster="assets/images/video-thumbnails/san-francisco.jpg">
-                            <source src="assets/video/samples/swing-mr-mendelssohn.mp4" type="video/mp4">
-                            Your browser does not support the video element.
-                        </video>
+                        <a href="https://www.youtube.com/watch?v=EVwN1M2jZqw" target="_blank" rel="noopener noreferrer" style="display:block; position:relative; margin-bottom:1.5rem; border-radius:8px; overflow:hidden; text-decoration:none;">
+                            <div style="
+                                width:100%;
+                                aspect-ratio:16/9;
+                                background: linear-gradient(135deg, #1f2937 0%, #374151 60%, #4b5563 100%);
+                                display:flex;
+                                flex-direction:column;
+                                align-items:center;
+                                justify-content:center;
+                                gap:0.75rem;
+                                transition: all 0.3s ease;
+                                position:relative;
+                            ">
+                                <div style="
+                                    width:64px; height:64px;
+                                    border-radius:50%;
+                                    background: rgba(255,255,255,0.15);
+                                    backdrop-filter: blur(4px);
+                                    display:flex; align-items:center; justify-content:center;
+                                    border: 2px solid rgba(255,255,255,0.3);
+                                    transition: all 0.3s ease;
+                                ">
+                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="white" style="margin-left:3px;">
+                                        <polygon points="5,3 19,12 5,21"/>
+                                    </svg>
+                                </div>
+                                <span style="color:rgba(255,255,255,0.9); font-size:0.85rem; font-weight:500; letter-spacing:0.03em;">
+                                    ▶ Watch on YouTube
+                                </span>
+                            </div>
+                        </a>
                         <p class="media-description">
                             A swing arrangement of Mendelssohn's Spring Song demonstrating Kaper's versatility and adaptation to contemporary 
                             American musical trends of the late 1930s.
-                            <br><span style="font-size:0.8em; color:#6b7280;">Source: <a href="https://www.youtube.com/watch?v=EVwN1M2jZqw" target="_blank" rel="noopener noreferrer" style="color:#5c4a32; text-decoration:none;">YouTube ↗</a></span>
                         </p>
                     </div>
 
