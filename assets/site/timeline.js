@@ -84,10 +84,10 @@ try {
     }).join("");
   }
 
-  controls.search.addEventListener("input", debounce(render));
-  for (const control of [controls.period, controls.category]) control.addEventListener("change", render);
-  document.querySelector("#timeline-reset").addEventListener("click", () => {
-    for (const control of Object.values(controls)) control.value = "";
+  controls.search?.addEventListener("input", debounce(render));
+  for (const control of [controls.period, controls.category].filter(Boolean)) control.addEventListener("change", render);
+  document.querySelector("#timeline-reset")?.addEventListener("click", () => {
+    for (const control of Object.values(controls).filter(Boolean)) control.value = "";
     render();
   });
   render();
