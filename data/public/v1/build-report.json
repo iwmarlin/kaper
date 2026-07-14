@@ -1,0 +1,193 @@
+{
+  "ok": true,
+  "errors": [],
+  "warnings": [],
+  "counts": {
+    "People": 109,
+    "Organizations": 107,
+    "Sources": 480,
+    "Media": 184,
+    "Works": 280,
+    "Films": 55,
+    "Songs": 203,
+    "Other Works": 22,
+    "Title Variants": 61,
+    "Work Relations": 190,
+    "Timeline Events": 53,
+    "Places": 42,
+    "Contributions": 983,
+    "Person Name Variants": 35
+  },
+  "galleryStatusCounts": {
+    "detail_only": 34,
+    "eligible": 75,
+    "external_link_only": 18,
+    "selected": 57
+  },
+  "appliedOverrides": [
+    {
+      "table": "Films",
+      "id": "F013",
+      "fields": [
+        "attributionNote"
+      ]
+    },
+    {
+      "table": "Media",
+      "id": "M035",
+      "fields": [
+        "assetPath",
+        "assetPaths"
+      ]
+    },
+    {
+      "table": "Media",
+      "id": "M125",
+      "fields": [
+        "assetPath",
+        "assetPaths"
+      ]
+    },
+    {
+      "table": "Media",
+      "id": "M126",
+      "fields": [
+        "assetPath",
+        "assetPaths"
+      ]
+    },
+    {
+      "table": "Media",
+      "id": "M200",
+      "fields": [
+        "assetPath",
+        "assetPaths"
+      ]
+    },
+    {
+      "table": "Media",
+      "id": "M206",
+      "fields": [
+        "assetPath",
+        "assetPaths"
+      ]
+    },
+    {
+      "table": "Other Works",
+      "id": "O011",
+      "fields": [
+        "publicNote"
+      ]
+    },
+    {
+      "table": "Person Name Variants",
+      "id": "PNV0008",
+      "fields": [
+        "publicNote"
+      ]
+    },
+    {
+      "table": "Places",
+      "id": "PL039",
+      "fields": [
+        "latitude",
+        "longitude",
+        "mapPrecision",
+        "publicNote"
+      ]
+    },
+    {
+      "table": "Timeline Events",
+      "id": "TE0023",
+      "fields": [
+        "longDescription"
+      ]
+    }
+  ],
+  "allowlist": {
+    "People": {
+      "sourceFieldsAvailable": 22,
+      "publicScalarFields": 8,
+      "publicLinkFields": 5,
+      "derivedFields": 1
+    },
+    "Organizations": {
+      "sourceFieldsAvailable": 24,
+      "publicScalarFields": 8,
+      "publicLinkFields": 4,
+      "derivedFields": 1
+    },
+    "Sources": {
+      "sourceFieldsAvailable": 34,
+      "publicScalarFields": 14,
+      "publicLinkFields": 13,
+      "derivedFields": 0
+    },
+    "Media": {
+      "sourceFieldsAvailable": 42,
+      "publicScalarFields": 21,
+      "publicLinkFields": 8,
+      "derivedFields": 0
+    },
+    "Works": {
+      "sourceFieldsAvailable": 35,
+      "publicScalarFields": 13,
+      "publicLinkFields": 6,
+      "derivedFields": 6
+    },
+    "Films": {
+      "sourceFieldsAvailable": 28,
+      "publicScalarFields": 11,
+      "publicLinkFields": 3,
+      "derivedFields": 0
+    },
+    "Songs": {
+      "sourceFieldsAvailable": 34,
+      "publicScalarFields": 15,
+      "publicLinkFields": 3,
+      "derivedFields": 0
+    },
+    "Other Works": {
+      "sourceFieldsAvailable": 26,
+      "publicScalarFields": 13,
+      "publicLinkFields": 2,
+      "derivedFields": 0
+    },
+    "Title Variants": {
+      "sourceFieldsAvailable": 20,
+      "publicScalarFields": 9,
+      "publicLinkFields": 2,
+      "derivedFields": 0
+    },
+    "Work Relations": {
+      "sourceFieldsAvailable": 20,
+      "publicScalarFields": 7,
+      "publicLinkFields": 4,
+      "derivedFields": 0
+    },
+    "Timeline Events": {
+      "sourceFieldsAvailable": 42,
+      "publicScalarFields": 23,
+      "publicLinkFields": 7,
+      "derivedFields": 0
+    },
+    "Places": {
+      "sourceFieldsAvailable": 23,
+      "publicScalarFields": 14,
+      "publicLinkFields": 5,
+      "derivedFields": 0
+    },
+    "Contributions": {
+      "sourceFieldsAvailable": 22,
+      "publicScalarFields": 11,
+      "publicLinkFields": 5,
+      "derivedFields": 0
+    },
+    "Person Name Variants": {
+      "sourceFieldsAvailable": 17,
+      "publicScalarFields": 8,
+      "publicLinkFields": 3,
+      "derivedFields": 0
+    }
+  }
+}

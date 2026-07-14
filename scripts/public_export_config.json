@@ -1,0 +1,734 @@
+{
+  "schemaVersion": "1.0.0",
+  "scope": {
+    "startYear": 1902,
+    "endYear": 1939,
+    "label": "Bronisław Kaper early career, documented through 1939"
+  },
+  "allowedEditorialStatus": "approved",
+  "allowedWorkScopes": [
+    "standalone_page",
+    "context_only"
+  ],
+  "allowedPlaceScopes": [
+    "map_and_detail",
+    "context_only"
+  ],
+  "allowedGalleryStatuses": [
+    "selected",
+    "eligible",
+    "detail_only",
+    "external_link_only"
+  ],
+  "mediaExceptions": {
+    "sourceOptionalForExternalContextCards": [
+      "M024"
+    ]
+  },
+  "publicFiles": {},
+  "bannedPublicKeyFragments": [
+    "review",
+    "internal",
+    "legacy",
+    "airtable",
+    "validationstatus",
+    "dataorigin",
+    "needsreview",
+    "imagepreview",
+    "editorialstatus"
+  ],
+  "forbiddenPublicContentPhrases": [
+    "active review problem",
+    "corrected again after comparison",
+    "do not export",
+    "internal audit",
+    "internally expanded",
+    "marked for review",
+    "needs_review",
+    "review note"
+  ],
+  "forbiddenPublicRecordIds": [
+    "P080",
+    "SRC0113",
+    "SRC0427"
+  ],
+  "tables": {
+    "People": {
+      "file": "people.json",
+      "idField": "Person ID",
+      "required": [
+        "id",
+        "displayName",
+        "slug"
+      ],
+      "derivedFields": [
+        "workIds"
+      ],
+      "fields": {
+        "id": "Person ID",
+        "displayName": "Display Name",
+        "sortName": "Sort Name",
+        "authorizedName": "Authorized Name",
+        "slug": "Slug",
+        "primaryRole": "Primary Role Controlled",
+        "roles": "Roles Controlled",
+        "authorityUrl": "Authority URL"
+      },
+      "links": {
+        "sourceIds": {
+          "field": "Sources",
+          "target": "Sources"
+        },
+        "timelineEventIds": {
+          "field": "Timeline Events",
+          "target": "Timeline Events"
+        },
+        "placeIds": {
+          "field": "Places",
+          "target": "Places"
+        },
+        "contributionIds": {
+          "field": "Contributions",
+          "target": "Contributions"
+        },
+        "nameVariantIds": {
+          "field": "Person Name Variants",
+          "target": "Person Name Variants"
+        }
+      }
+    },
+    "Organizations": {
+      "file": "organizations.json",
+      "idField": "Organization ID",
+      "required": [
+        "id",
+        "displayName",
+        "slug"
+      ],
+      "derivedFields": [
+        "workIds"
+      ],
+      "fields": {
+        "id": "Organization ID",
+        "displayName": "Display Name",
+        "authorizedName": "Authorized Name",
+        "types": "Type",
+        "city": "City",
+        "country": "Country",
+        "slug": "Slug",
+        "nameVariants": "Name Variants"
+      },
+      "links": {
+        "sourceIds": {
+          "field": "Source IDs",
+          "target": "Sources"
+        },
+        "placeIds": {
+          "field": "Places",
+          "target": "Places"
+        },
+        "timelineEventIds": {
+          "field": "Timeline Events",
+          "target": "Timeline Events"
+        },
+        "contributionIds": {
+          "field": "Contributions",
+          "target": "Contributions"
+        }
+      }
+    },
+    "Sources": {
+      "file": "sources.json",
+      "idField": "Source ID",
+      "required": [
+        "id",
+        "shortCitation",
+        "fullCitation",
+        "sourceType",
+        "slug"
+      ],
+      "fields": {
+        "id": "Source ID",
+        "shortCitation": "Short Citation",
+        "fullCitation": "Full Citation / Display Citation",
+        "sourceType": "Source Type",
+        "title": "Title",
+        "creator": "Creator / Author",
+        "repository": "Repository / Archive",
+        "publication": "Publication / Label / Platform",
+        "date": "Date",
+        "url": "URL",
+        "accessDate": "Access Date",
+        "reliability": "Reliability",
+        "sourceStatus": "Status",
+        "slug": "Slug"
+      },
+      "links": {
+        "personIds": {
+          "field": "Related Person IDs",
+          "target": "People"
+        },
+        "organizationIds": {
+          "field": "Related Organization IDs",
+          "target": "Organizations"
+        },
+        "workIds": {
+          "field": "Works",
+          "target": "Works"
+        },
+        "mediaIds": {
+          "field": "Media",
+          "target": "Media"
+        },
+        "timelineEventIds": {
+          "field": "Timeline Events",
+          "target": "Timeline Events"
+        },
+        "otherWorkIds": {
+          "field": "Other Works",
+          "target": "Other Works"
+        },
+        "placeIds": {
+          "field": "Places",
+          "target": "Places"
+        },
+        "filmIds": {
+          "field": "Films",
+          "target": "Films"
+        },
+        "songIds": {
+          "field": "Songs",
+          "target": "Songs"
+        },
+        "workRelationIds": {
+          "field": "Work Relations",
+          "target": "Work Relations"
+        },
+        "titleVariantIds": {
+          "field": "Title Variants",
+          "target": "Title Variants"
+        },
+        "contributionIds": {
+          "field": "Contributions",
+          "target": "Contributions"
+        },
+        "nameVariantIds": {
+          "field": "Person Name Variants",
+          "target": "Person Name Variants"
+        }
+      }
+    },
+    "Media": {
+      "file": "media.json",
+      "idField": "Media ID",
+      "required": [
+        "id",
+        "title",
+        "slug",
+        "mediaType",
+        "storageType",
+        "rightsStatus",
+        "publicCaption",
+        "galleryStatus"
+      ],
+      "fields": {
+        "id": "Media ID",
+        "title": "Title",
+        "mediaType": "Media Type",
+        "storageType": "Storage Type",
+        "period": "Period Key",
+        "description": "Description",
+        "externalUrl": "External URL",
+        "embedUrl": "Embed URL",
+        "assetPath": "Primary Asset Path",
+        "assetPaths": {
+          "source": "Asset Paths",
+          "transform": "asset_paths"
+        },
+        "assetCount": "Asset Count",
+        "altText": "Alt Text",
+        "rightsStatus": "Rights Status",
+        "rightsNote": "Rights Note",
+        "sortOrder": "Sort Order",
+        "slug": "Slug",
+        "publicCaption": "Public Caption",
+        "publicImageText": "Public Image Text",
+        "publicCreditLine": "Public Credit Line",
+        "category": "Media Editorial Category",
+        "galleryStatus": "Gallery Status"
+      },
+      "links": {
+        "organizationIds": {
+          "field": "Organizations",
+          "target": "Organizations"
+        },
+        "sourceIds": {
+          "field": "Sources Linked",
+          "target": "Sources"
+        },
+        "workIds": {
+          "field": "Work Links",
+          "target": "Works"
+        },
+        "songIds": {
+          "field": "Songs",
+          "target": "Songs"
+        },
+        "timelineEventIds": {
+          "field": "Related Timeline Events",
+          "target": "Timeline Events"
+        },
+        "heroTimelineEventIds": {
+          "field": "Hero Timeline Events",
+          "target": "Timeline Events"
+        },
+        "placeIds": {
+          "field": "Places",
+          "target": "Places"
+        },
+        "otherWorkIds": {
+          "field": "Other Works",
+          "target": "Other Works"
+        }
+      }
+    },
+    "Works": {
+      "file": "works.json",
+      "idField": "Work ID",
+      "required": [
+        "id",
+        "title",
+        "slug",
+        "workType",
+        "publicScope"
+      ],
+      "derivedFields": [
+        "personIds",
+        "organizationIds",
+        "relationIds",
+        "filmIds",
+        "songIds",
+        "otherWorkIds"
+      ],
+      "fields": {
+        "id": "Work ID",
+        "title": "Display Title",
+        "slug": "Slug",
+        "sortTitle": "Sort Title",
+        "workType": "Work Type",
+        "year": "Year",
+        "period": "Period",
+        "certainty": "Certainty",
+        "publicNote": "Public Note",
+        "displayOnSite": "Display on Site",
+        "featuredOrder": "Featured Order",
+        "featured": "Featured",
+        "publicScope": "Public Scope"
+      },
+      "links": {
+        "sourceIds": {
+          "field": "Sources Linked",
+          "target": "Sources"
+        },
+        "mediaIds": {
+          "field": "Media",
+          "target": "Media"
+        },
+        "timelineEventIds": {
+          "field": "Timeline Events",
+          "target": "Timeline Events"
+        },
+        "titleVariantIds": {
+          "field": "Title Variants",
+          "target": "Title Variants"
+        },
+        "contributionIds": {
+          "field": "Contributions",
+          "target": "Contributions"
+        },
+        "nameVariantIds": {
+          "field": "Person Name Variants",
+          "target": "Person Name Variants"
+        }
+      }
+    },
+    "Films": {
+      "file": "films.json",
+      "idField": "Film ID",
+      "required": [
+        "id",
+        "title",
+        "slug",
+        "workIds"
+      ],
+      "fields": {
+        "id": "Film ID",
+        "title": "Display Title",
+        "slug": "Slug",
+        "sortTitle": "Sort Title",
+        "year": "Year",
+        "period": "Period Key",
+        "jurmannCollaboration": "Jurmann Collaboration",
+        "creditType": "Credit Type",
+        "attributionNote": "Attribution Note",
+        "publicNote": "Public Note",
+        "certainty": "Certainty"
+      },
+      "links": {
+        "workIds": {
+          "field": "Works Linked",
+          "target": "Works"
+        },
+        "sourceIds": {
+          "field": "Sources Linked",
+          "target": "Sources"
+        },
+        "titleVariantIds": {
+          "field": "Title Variants",
+          "target": "Title Variants"
+        }
+      }
+    },
+    "Songs": {
+      "file": "songs.json",
+      "idField": "Song ID",
+      "required": [
+        "id",
+        "title",
+        "slug",
+        "workIds"
+      ],
+      "fields": {
+        "id": "Song ID",
+        "title": "Display Title",
+        "slug": "Slug",
+        "year": "Year",
+        "period": "Period Key",
+        "genre": "Genre Key",
+        "publisherAsPrinted": "Publisher As Printed",
+        "lyricistAsPrinted": "Lyricist As Printed",
+        "filmTitleAsSource": "Film Title As Source",
+        "jurmannCollaboration": "Jurmann Collaboration",
+        "useStatus": "Use Status",
+        "publicNote": "Public Note",
+        "certainty": "Certainty",
+        "lyricistStatus": "Lyricist Status",
+        "composerStatus": "Composer Status"
+      },
+      "links": {
+        "workIds": {
+          "field": "Works Linked",
+          "target": "Works"
+        },
+        "sourceIds": {
+          "field": "Sources Linked",
+          "target": "Sources"
+        },
+        "titleVariantIds": {
+          "field": "Title Variants",
+          "target": "Title Variants"
+        }
+      }
+    },
+    "Other Works": {
+      "file": "other-works.json",
+      "idField": "Other ID",
+      "required": [
+        "id",
+        "title",
+        "slug",
+        "workIds"
+      ],
+      "fields": {
+        "id": "Other ID",
+        "title": "Display Title",
+        "slug": "Slug",
+        "sortTitle": "Sort Title",
+        "year": "Year",
+        "period": "Period Key",
+        "instrumentation": "Instrumentation",
+        "contents": "Movements / Contents",
+        "publisherOrHoldingAsPrinted": "Publisher or Holding As Printed",
+        "materialStatus": "Material Status",
+        "shelfmark": "Shelfmark",
+        "publicNote": "Public Note",
+        "certainty": "Certainty"
+      },
+      "links": {
+        "workIds": {
+          "field": "Works Linked",
+          "target": "Works"
+        },
+        "sourceIds": {
+          "field": "Sources Linked",
+          "target": "Sources"
+        }
+      }
+    },
+    "Title Variants": {
+      "file": "title-variants.json",
+      "idField": "Title Variant ID",
+      "required": [
+        "id",
+        "variantTitle",
+        "variantType",
+        "workIds"
+      ],
+      "fields": {
+        "id": "Title Variant ID",
+        "variantTitle": "Variant Title",
+        "titleAsSource": "Title As Source",
+        "variantType": "Variant Type",
+        "variantTypeAsSource": "Variant Type As Source",
+        "language": "Language",
+        "languageStatus": "Language Status",
+        "note": "Note",
+        "certainty": "Certainty"
+      },
+      "links": {
+        "workIds": {
+          "field": "Works Linked",
+          "target": "Works"
+        },
+        "sourceIds": {
+          "field": "Sources Linked",
+          "target": "Sources"
+        }
+      }
+    },
+    "Work Relations": {
+      "file": "work-relations.json",
+      "idField": "Relation ID",
+      "required": [
+        "id",
+        "relationType",
+        "sourceWorkIds",
+        "sourceIds"
+      ],
+      "fields": {
+        "id": "Relation ID",
+        "relationType": "Relation Type Key",
+        "targetWorkTitle": "Target Work Title",
+        "targetTitleAsSource": "Target Title As Source",
+        "direction": "Direction",
+        "publicNote": "Public Note",
+        "certainty": "Certainty"
+      },
+      "links": {
+        "sourceWorkIds": {
+          "field": "Source Work",
+          "target": "Works"
+        },
+        "targetWorkIds": {
+          "field": "Target Work",
+          "target": "Works"
+        },
+        "personIds": {
+          "field": "People",
+          "target": "People"
+        },
+        "sourceIds": {
+          "field": "Sources Linked",
+          "target": "Sources"
+        }
+      }
+    },
+    "Timeline Events": {
+      "file": "timeline-events.json",
+      "idField": "Event ID",
+      "required": [
+        "id",
+        "slug",
+        "title",
+        "displayDate",
+        "dateStart",
+        "sourceIds"
+      ],
+      "fields": {
+        "id": "Event ID",
+        "slug": "Slug",
+        "title": "Title",
+        "label": "Timeline Label",
+        "displayDate": "Display Date",
+        "dateStart": "Date Start",
+        "dateEnd": "Date End",
+        "datePrecision": "Date Precision",
+        "sortDate": "Sort Date",
+        "sortOrder": "Sort Order",
+        "displayMode": "Timeline Display Mode",
+        "eventType": "Event Type",
+        "period": "Period",
+        "periodKey": "Period Key",
+        "category": "Category",
+        "filterTags": "Filter Tags",
+        "placeDisplay": "Place Display",
+        "cityKey": "City Key",
+        "shortDescription": "Short Description",
+        "longDescription": "Long Description",
+        "featured": "Featured",
+        "certainty": "Certainty",
+        "roles": "Timeline Event Role"
+      },
+      "links": {
+        "personIds": {
+          "field": "People Linked",
+          "target": "People"
+        },
+        "sourceIds": {
+          "field": "Sources Linked",
+          "target": "Sources"
+        },
+        "workIds": {
+          "field": "Works Linked",
+          "target": "Works"
+        },
+        "mediaIds": {
+          "field": "Media Linked",
+          "target": "Media"
+        },
+        "heroMediaIds": {
+          "field": "Hero Media Linked",
+          "target": "Media"
+        },
+        "placeIds": {
+          "field": "Places",
+          "target": "Places"
+        },
+        "organizationIds": {
+          "field": "Organizations Linked",
+          "target": "Organizations"
+        }
+      }
+    },
+    "Places": {
+      "file": "places.json",
+      "idField": "Place ID",
+      "required": [
+        "id",
+        "displayName",
+        "slug",
+        "publicScope",
+        "mapPrecision",
+        "sourceIds"
+      ],
+      "fields": {
+        "id": "Place ID",
+        "displayName": "Display Name",
+        "authorizedName": "Authorized Name",
+        "placeType": "Place Type",
+        "city": "City",
+        "region": "Region",
+        "country": "Country",
+        "latitude": "Latitude",
+        "longitude": "Longitude",
+        "period": "Period Key",
+        "slug": "Slug",
+        "publicNote": "Public Note",
+        "mapPrecision": "Map Precision",
+        "publicScope": "Public Scope"
+      },
+      "links": {
+        "personIds": {
+          "field": "Related People",
+          "target": "People"
+        },
+        "organizationIds": {
+          "field": "Related Organizations",
+          "target": "Organizations"
+        },
+        "timelineEventIds": {
+          "field": "Timeline Events",
+          "target": "Timeline Events"
+        },
+        "mediaIds": {
+          "field": "Media",
+          "target": "Media"
+        },
+        "sourceIds": {
+          "field": "Sources",
+          "target": "Sources"
+        }
+      }
+    },
+    "Contributions": {
+      "file": "contributions.json",
+      "idField": "Contribution ID",
+      "required": [
+        "id",
+        "workIds",
+        "role",
+        "sourceIds"
+      ],
+      "fields": {
+        "id": "Contribution ID",
+        "role": "Role",
+        "nameAsPrinted": "Name As Printed",
+        "creditAsPrinted": "Credit As Printed",
+        "displayCredit": "Display Credit",
+        "evidenceContext": "Evidence Context",
+        "evidenceLocator": "Evidence Locator",
+        "scopeNote": "Scope Note",
+        "sortOrder": "Sort Order",
+        "certainty": "Certainty",
+        "publicNote": "Public Note"
+      },
+      "links": {
+        "workIds": {
+          "field": "Work",
+          "target": "Works"
+        },
+        "personIds": {
+          "field": "Person",
+          "target": "People"
+        },
+        "organizationIds": {
+          "field": "Organization",
+          "target": "Organizations"
+        },
+        "sourceIds": {
+          "field": "Sources Linked",
+          "target": "Sources"
+        },
+        "nameVariantIds": {
+          "field": "Name Variant Used",
+          "target": "Person Name Variants"
+        }
+      }
+    },
+    "Person Name Variants": {
+      "file": "person-name-variants.json",
+      "idField": "Person Name Variant ID",
+      "required": [
+        "id",
+        "variantName",
+        "variantType",
+        "personIds",
+        "sourceIds"
+      ],
+      "fields": {
+        "id": "Person Name Variant ID",
+        "variantName": "Variant Name",
+        "variantType": "Variant Type",
+        "identityScope": "Identity Scope",
+        "evidenceContext": "Evidence Context",
+        "attestedWording": "Attested Wording",
+        "certainty": "Certainty",
+        "publicNote": "Public Note"
+      },
+      "links": {
+        "personIds": {
+          "field": "People Resolved",
+          "target": "People"
+        },
+        "workIds": {
+          "field": "Applies to Works",
+          "target": "Works"
+        },
+        "sourceIds": {
+          "field": "Sources Linked",
+          "target": "Sources"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,138 @@
+{
+  "schemaVersion": "1.0.0",
+  "scope": {
+    "startYear": 1902,
+    "endYear": 1939,
+    "label": "Bronisław Kaper early career, documented through 1939"
+  },
+  "sourceSnapshot": "2026-07-13T20:56:48.627Z",
+  "sourceRecordCount": 2814,
+  "generator": {
+    "file": "export_public_data.py",
+    "sha256": "89d733cf55029d2d2419c5378c2ce0813fd5614e18235da3d92808d4e44064d9"
+  },
+  "publicInputs": {
+    "allowlist": {
+      "file": "public_export_config.json",
+      "sha256": "6d3ee4752af08d175c934de37f2364b0336a3a8e4463f9d07015b5fc37bdbfd1"
+    },
+    "overrides": {
+      "file": "public_export_overrides.json",
+      "sha256": "68aa6516ad51ff9ffe70e7a2ea8d09b5dc14436d8d1d10ff461d08b04fcce23e",
+      "appliedCount": 10
+    }
+  },
+  "exportPolicy": {
+    "editorialStatus": "approved",
+    "workScopes": [
+      "standalone_page",
+      "context_only"
+    ],
+    "placeScopes": [
+      "map_and_detail",
+      "context_only"
+    ],
+    "galleryStatuses": [
+      "selected",
+      "eligible",
+      "detail_only",
+      "external_link_only"
+    ],
+    "sources": "approved and reachable from the public graph",
+    "authorities": "approved and reachable from the public graph",
+    "legacyAndInternalFields": "excluded by explicit allowlist"
+  },
+  "counts": {
+    "People": 109,
+    "Organizations": 107,
+    "Sources": 480,
+    "Media": 184,
+    "Works": 280,
+    "Films": 55,
+    "Songs": 203,
+    "Other Works": 22,
+    "Title Variants": 61,
+    "Work Relations": 190,
+    "Timeline Events": 53,
+    "Places": 42,
+    "Contributions": 983,
+    "Person Name Variants": 35
+  },
+  "files": [
+    {
+      "file": "build-report.json",
+      "bytes": 3882,
+      "sha256": "459e1a9e27a99d935515f91705d1f43dd1389aba92000d05e7987cb2b9455d91"
+    },
+    {
+      "file": "contributions.json",
+      "bytes": 354376,
+      "sha256": "95fa90fbc1806a4dcceb16ba8412277b2941177346e224bc6b6d2caf71b7a8b8"
+    },
+    {
+      "file": "films.json",
+      "bytes": 35034,
+      "sha256": "49f80651a28d0d87804ca019a5d62a54c432d455e0fe0f9a663cfced7abd9207"
+    },
+    {
+      "file": "media.json",
+      "bytes": 347762,
+      "sha256": "019ba7a439b639c2befa088d026f7a09d310b4c90e7bc63697354ee828a32540"
+    },
+    {
+      "file": "organizations.json",
+      "bytes": 68673,
+      "sha256": "4a1189eb630e3aa3ada2acd52a2e76af809db614e731bb4ae0783973d7609b56"
+    },
+    {
+      "file": "other-works.json",
+      "bytes": 18153,
+      "sha256": "f35ef1ad016ee0f627257b98f093b86b0dd0e7a8e1958a69878a588512eae2f0"
+    },
+    {
+      "file": "people.json",
+      "bytes": 89569,
+      "sha256": "5fbc10f8e918a930f2af435f2610afb01ed3b46ce017cd088d4d0d57745c9cfc"
+    },
+    {
+      "file": "person-name-variants.json",
+      "bytes": 26071,
+      "sha256": "d3456eb4203e5eb39c8b33d0f73115e1039338a0eced7bfbee6b6425736c43de"
+    },
+    {
+      "file": "places.json",
+      "bytes": 34990,
+      "sha256": "d4d213a68df77ac30c041cd8d98442688a1aef1a29f9ce547541290e5c454886"
+    },
+    {
+      "file": "songs.json",
+      "bytes": 122170,
+      "sha256": "a9e49aba3e71b85c70251dae190b656615958206f2bc52043230c12c3d438e08"
+    },
+    {
+      "file": "sources.json",
+      "bytes": 618111,
+      "sha256": "49c5d5745c9821cbd45302d5d1faaa9c132156f7b8551c6ac24bc70ada47b72d"
+    },
+    {
+      "file": "timeline-events.json",
+      "bytes": 79930,
+      "sha256": "c405723a6411b51431293904ee3447d7de761b48ec41998b3d7e529970b81850"
+    },
+    {
+      "file": "title-variants.json",
+      "bytes": 31893,
+      "sha256": "f36dff15b032dbf078fafd69a507d6ff7fbb69a763efc595b60e7b4beba841fe"
+    },
+    {
+      "file": "work-relations.json",
+      "bytes": 87542,
+      "sha256": "7f001cea62c1018b2a742ae5dadb2bf40ab6a39c9e08e11fa3b3d67ecf481b80"
+    },
+    {
+      "file": "works.json",
+      "bytes": 237374,
+      "sha256": "dd809bb1acc7f0b7618a0ac2ea4081a5059b85e5dcb226311c455e8b1483006c"
+    }
+  ]
+}
