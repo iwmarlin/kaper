@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explore places connected with Bronisław Kaper's life and work through 1939.">
+  <meta name="theme-color" content="#152c33">
+  <meta property="og:title" content="Map — Bronisław Kaper, 1902–1939">
+  <meta property="og:description" content="A source-linked map of cities, venues, addresses and studios in Kaper's documented early career.">
+  <link rel="canonical" href="https://iwmarlin.github.io/kaper/map.html">
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="preconnect" href="https://tile.openstreetmap.org">
+  <link rel="stylesheet" href="assets/site/styles.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="anonymous">
+  <title>Map — Bronisław Kaper, 1902–1939</title>
+</head>
+<body>
+  <header class="site-header" data-site-header></header>
+  <main id="main-content">
+    <section class="page-hero">
+      <div class="shell page-hero__grid">
+        <div>
+          <p class="eyebrow">Research geography</p>
+          <h1>Places and routes</h1>
+          <p class="lead">Explore cities, addresses, institutions, venues and studios connected to documented events in Kaper's early career.</p>
+        </div>
+        <div class="scope-note">Coordinates describe the identified place at the stated map precision. The accompanying list remains usable if external map tiles are unavailable.</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="shell">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">42 public places</p>
+            <h2>From Warsaw to Los Angeles</h2>
+          </div>
+        </div>
+        <div class="map-layout">
+          <aside class="map-sidebar" aria-label="Documented places">
+            <div class="map-sidebar__controls">
+              <div class="field">
+                <label for="place-search">Search places</label>
+                <input id="place-search" type="search" placeholder="City, venue or country…" autocomplete="off">
+              </div>
+              <div class="field" style="margin-top:.65rem">
+                <label for="place-country">Country</label>
+                <select id="place-country"><option value="">All countries</option></select>
+              </div>
+              <p id="place-count" style="margin:.8rem 0 0;color:var(--ink-soft);font-size:.78rem" aria-live="polite"></p>
+            </div>
+            <ul class="place-list" id="place-list"></ul>
+          </aside>
+          <div id="research-map" role="region" aria-label="Interactive map of documented places"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer" data-site-footer></footer>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin="anonymous"></script>
+  <script type="module" src="assets/site/map.js"></script>
+</body>
+</html>

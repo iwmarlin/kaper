@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Search Bronisław Kaper's films, songs and other documented works through 1939.">
+  <meta name="theme-color" content="#152c33">
+  <meta property="og:title" content="Works — Bronisław Kaper, 1902–1939">
+  <meta property="og:description" content="A source-based catalogue of films, songs and other works documented through 1939.">
+  <link rel="canonical" href="https://iwmarlin.github.io/kaper/works.html">
+  <link rel="stylesheet" href="assets/site/styles.css">
+  <title>Works — Bronisław Kaper, 1902–1939</title>
+</head>
+<body>
+  <header class="site-header" data-site-header></header>
+  <main id="main-content">
+    <section class="page-hero">
+      <div class="shell page-hero__grid">
+        <div>
+          <p class="eyebrow">Relational catalogue</p>
+          <h1>Works, films and songs</h1>
+          <p class="lead">Search the public catalogue, inspect attribution certainty and follow links between titles, contributors, sources and media.</p>
+        </div>
+        <div class="scope-note">The catalogue reflects documented evidence through 1939. A work may be included as contextual evidence even when Kaper's exact contribution remains qualified.</div>
+      </div>
+    </section>
+
+    <section class="filters" aria-label="Catalogue filters">
+      <div class="shell filters__grid">
+        <div class="field">
+          <label for="work-search">Search title or contributor</label>
+          <input id="work-search" type="search" placeholder="Try Alraune, Roubier, tango…" autocomplete="off">
+        </div>
+        <div class="field">
+          <label for="work-type">Work type</label>
+          <select id="work-type"><option value="">All types</option></select>
+        </div>
+        <div class="field">
+          <label for="work-period">Period</label>
+          <select id="work-period"><option value="">All periods</option></select>
+        </div>
+        <div class="field">
+          <label for="work-certainty">Certainty</label>
+          <select id="work-certainty"><option value="">All levels</option></select>
+        </div>
+        <div class="field">
+          <label for="work-sort">Sort</label>
+          <select id="work-sort">
+            <option value="year-asc">Year, earliest first</option>
+            <option value="year-desc">Year, latest first</option>
+            <option value="title">Title</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="shell">
+        <div class="results-bar">
+          <p id="work-results-count" aria-live="polite">Loading catalogue…</p>
+          <button class="button button--ghost button--small" id="reset-filters" type="button">Reset filters</button>
+        </div>
+        <div id="work-results" class="work-list"></div>
+        <div class="load-more"><button class="button button--ghost" id="load-more" type="button" hidden>Load more</button></div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer" data-site-footer></footer>
+  <script type="module" src="assets/site/works.js"></script>
+</body>
+</html>
