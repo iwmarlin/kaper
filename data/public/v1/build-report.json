@@ -14,7 +14,7 @@
     "Title Variants": 61,
     "Work Relations": 190,
     "Timeline Events": 52,
-    "Places": 42,
+    "Places": 41,
     "Contributions": 983,
     "Person Name Variants": 35
   },
@@ -25,6 +25,20 @@
     "selected": 57
   },
   "appliedOverrides": [
+    {
+      "table": "Contributions",
+      "id": "CON-S190-C-P009",
+      "fields": [
+        "nameAsPrinted"
+      ]
+    },
+    {
+      "table": "Contributions",
+      "id": "CON-S191-C-P009",
+      "fields": [
+        "nameAsPrinted"
+      ]
+    },
     {
       "table": "Films",
       "id": "F013",
@@ -83,6 +97,32 @@
       "table": "Person Name Variants",
       "id": "PNV0008",
       "fields": [
+        "publicNote"
+      ]
+    },
+    {
+      "table": "Person Name Variants",
+      "id": "PNV0025",
+      "fields": [
+        "attestedWording",
+        "publicNote",
+        "variantName"
+      ]
+    },
+    {
+      "table": "Places",
+      "id": "PL025",
+      "fields": [
+        "publicNote"
+      ]
+    },
+    {
+      "table": "Places",
+      "id": "PL037",
+      "fields": [
+        "authorizedName",
+        "displayName",
+        "mapPrecision",
         "publicNote"
       ]
     },

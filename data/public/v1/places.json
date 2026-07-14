@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 42,
+  "count": 41,
   "records": [
     {
       "id": "PL001",
@@ -528,32 +528,6 @@
       ]
     },
     {
-      "id": "PL019",
-      "displayName": "Mokotów, Warsaw — military-service context",
-      "authorizedName": "Mokotów, Warsaw / Warszawa-Mokotów",
-      "placeType": "district",
-      "city": "Warsaw",
-      "region": "Masovian Voivodeship",
-      "country": "Poland",
-      "latitude": 52.1939,
-      "longitude": 21.0456,
-      "period": "warsaw",
-      "slug": "mokotow-warsaw-military-context",
-      "publicNote": "Warsaw district context for Kaper’s 1920 volunteer service in an aviation-regiment setting described as stationed at Mokotów.",
-      "mapPrecision": "district_level",
-      "publicScope": "map_and_detail",
-      "timelineEventIds": [
-        "TE0006"
-      ],
-      "mediaIds": [
-        "M096"
-      ],
-      "sourceIds": [
-        "SRC0438",
-        "SRC0490"
-      ]
-    },
-    {
       "id": "PL020",
       "displayName": "Ufa-Theater Universum, Berlin",
       "authorizedName": "Ufa-Theater Universum, Kurfürstendamm 153, Berlin-Wilmersdorf",
@@ -685,7 +659,7 @@
       "longitude": -74.0122,
       "period": "transnational",
       "slug": "port-of-new-york",
-      "publicNote": "Port-level context for Kaper’s 1934 arrival in New York after the Atlantic crossing from Le Havre.",
+      "publicNote": "Port-level context for Kaper’s 1934 arrival in New York after the Atlantic crossing from Le Havre. The passenger documentation establishes arrival at New York but does not establish that Kaper was processed at Ellis Island.",
       "mapPrecision": "area_level",
       "publicScope": "map_and_detail",
       "timelineEventIds": [
@@ -964,8 +938,8 @@
     },
     {
       "id": "PL037",
-      "displayName": "Sievering-Atelier, Vienna",
-      "authorizedName": "Sievering Studios / Sievering-Atelier, Sievering, Vienna-Döbling",
+      "displayName": "Sievering Film Studio, Sieveringer Straße 135, Vienna",
+      "authorizedName": "Sieveringer Filmatelier / Sievering Studios, Sieveringer Straße 135, 1190 Vienna-Döbling",
       "placeType": "studio",
       "city": "Vienna",
       "region": "Vienna",
@@ -974,8 +948,8 @@
       "longitude": 16.32083,
       "period": "european",
       "slug": "sievering-atelier-vienna",
-      "publicNote": "Vienna studio-production context for the early sound-film multiple-language version system in which Kaper and Jurmann’s work acquired a transnational character. The record refers to the Sievering Studios / Sievering-Atelier in the Sievering area of Vienna-Döbling, not to a verified exact studio entrance.",
-      "mapPrecision": "area_level",
+      "publicNote": "Historical film-studio site at Sieveringer Straße 135 in Vienna’s 19th district, Döbling. The studio complex operated at this address from the Sascha-Film era and no longer survives in its historical form.",
+      "mapPrecision": "address_level",
       "publicScope": "context_only",
       "timelineEventIds": [
         "TE0051"

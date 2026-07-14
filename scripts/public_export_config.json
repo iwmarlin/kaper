@@ -14,6 +14,9 @@
     "map_and_detail",
     "context_only"
   ],
+  "excludedPlaceIds": [
+    "PL019"
+  ],
   "allowedGalleryStatuses": [
     "selected",
     "eligible",

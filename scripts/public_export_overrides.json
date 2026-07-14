@@ -69,15 +69,52 @@
         }
       }
     },
+    "Contributions": {
+      "CON-S190-C-P009": {
+        "reason": "Normalize spacing in the catalogued printed-name transcription without changing its spelling.",
+        "fields": {
+          "nameAsPrinted": "Kaper, Dr. Bronoslaw"
+        }
+      },
+      "CON-S191-C-P009": {
+        "reason": "Normalize spacing in the catalogued printed-name transcription without changing its spelling.",
+        "fields": {
+          "nameAsPrinted": "Kaper, Dr. Bronoslaw"
+        }
+      }
+    },
     "Person Name Variants": {
       "PNV0008": {
         "reason": "State the authority resolution as public prose rather than referring to an internal expansion step.",
         "fields": {
           "publicNote": "Printed lyricist credit “P. Kuckuck,” identified as Peter Kuckuck, a pseudonym used by Fritz Rotter."
         }
+      },
+      "PNV0025": {
+        "reason": "Normalize missing spaces in the catalogued name form while preserving the historically attested spelling Bronoslaw.",
+        "fields": {
+          "variantName": "Kaper, Dr. Bronoslaw",
+          "attestedWording": "Kaper, Dr. Bronoslaw",
+          "publicNote": "Spelling variant used for Bronisław Kaper in the cited scholarly source. Spacing has been normalized for legibility."
+        }
       }
     },
     "Places": {
+      "PL025": {
+        "reason": "Avoid an unsupported substitution of Ellis Island for the documented 1934 New York port arrival.",
+        "fields": {
+          "publicNote": "Port-level context for Kaper’s 1934 arrival in New York after the Atlantic crossing from Le Havre. The passenger documentation establishes arrival at New York but does not establish that Kaper was processed at Ellis Island."
+        }
+      },
+      "PL037": {
+        "reason": "Identify the documented historical address of the Sievering film studio from the City of Vienna account of the site.",
+        "fields": {
+          "displayName": "Sievering Film Studio, Sieveringer Straße 135, Vienna",
+          "authorizedName": "Sieveringer Filmatelier / Sievering Studios, Sieveringer Straße 135, 1190 Vienna-Döbling",
+          "mapPrecision": "address_level",
+          "publicNote": "Historical film-studio site at Sieveringer Straße 135 in Vienna’s 19th district, Döbling. The studio complex operated at this address from the Sascha-Film era and no longer survives in its historical form."
+        }
+      },
       "PL039": {
         "reason": "Map the documented Commercial Hotel context at Mexicali city level while preserving that the exact historic hotel address remains unidentified.",
         "fields": {

@@ -283,9 +283,14 @@ class PublicExporter:
             if self.approved("Timeline Events", record) and self.fields(record).get("Display on Site") is True:
                 self.included["Timeline Events"].add(stable_id)
 
+        excluded_place_ids = set(self.config.get("excludedPlaceIds", []))
         for stable_id, record in self.by_stable["Places"].items():
             scope = selected_name(self.fields(record).get("Public Scope"))
-            if self.approved("Places", record) and scope in self.config["allowedPlaceScopes"]:
+            if (
+                self.approved("Places", record)
+                and scope in self.config["allowedPlaceScopes"]
+                and stable_id not in excluded_place_ids
+            ):
                 self.included["Places"].add(stable_id)
 
         for stable_id, record in self.by_stable["Media"].items():
