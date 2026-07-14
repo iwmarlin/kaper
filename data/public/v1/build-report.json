@@ -95,13 +95,6 @@
         "mapPrecision",
         "publicNote"
       ]
-    },
-    {
-      "table": "Timeline Events",
-      "id": "TE0023",
-      "fields": [
-        "longDescription"
-      ]
     }
   ],
   "allowlist": {
@@ -167,7 +160,7 @@
     },
     "Timeline Events": {
       "sourceFieldsAvailable": 42,
-      "publicScalarFields": 23,
+      "publicScalarFields": 22,
       "publicLinkFields": 7,
       "derivedFields": 0
     },

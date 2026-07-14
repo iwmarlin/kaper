@@ -1,5 +1,4 @@
 import {
-  certaintyBadge,
   debounce,
   escapeHtml,
   humanize,
@@ -23,7 +22,6 @@ const controls = {
   search: document.querySelector("#timeline-search"),
   period: document.querySelector("#timeline-period"),
   category: document.querySelector("#timeline-category"),
-  certainty: document.querySelector("#timeline-certainty"),
 };
 renderLoading(target, "Loading documented events…");
 
@@ -42,7 +40,6 @@ try {
   const peopleById = indexById(people);
   addOptions(controls.period, timelineEvents.map((event) => event.period));
   addOptions(controls.category, timelineEvents.map((event) => event.category));
-  addOptions(controls.certainty, timelineEvents.map((event) => event.certainty));
 
   const indexed = timelineEvents.map((event) => ({
     ...event,
@@ -63,7 +60,6 @@ try {
         (!query || event._search.includes(query))
         && (!controls.period.value || event.period === controls.period.value)
         && (!controls.category.value || event.category === controls.category.value)
-        && (!controls.certainty.value || event.certainty === controls.certainty.value)
       ))
       .sort((a, b) => String(a.sortDate || a.dateStart).localeCompare(String(b.sortDate || b.dateStart)) || Number(a.sortOrder || 0) - Number(b.sortOrder || 0));
 
@@ -78,7 +74,7 @@ try {
         <article class="timeline-item">
           <div class="timeline-item__date">${escapeHtml(event.displayDate || event.dateStart)}</div>
           <div class="timeline-item__body">
-            <div class="meta-row">${typeBadge(event.category || event.eventType)}${periodBadge(event.period)}${certaintyBadge(event.certainty)}</div>
+            <div class="meta-row">${typeBadge(event.category || event.eventType)}${periodBadge(event.period)}</div>
             <h2><a href="${recordUrl("event", event.id)}">${escapeHtml(event.title)}</a></h2>
             ${event.placeDisplay ? `<p class="timeline-item__place">${escapeHtml(event.placeDisplay)}</p>` : ""}
             ${hero ? `<img class="timeline-item__image" src="${escapeHtml(hero.assetPath)}" alt="${escapeHtml(hero.altText || hero.title)}" loading="lazy" decoding="async">` : ""}
@@ -89,7 +85,7 @@ try {
   }
 
   controls.search.addEventListener("input", debounce(render));
-  for (const control of [controls.period, controls.category, controls.certainty]) control.addEventListener("change", render);
+  for (const control of [controls.period, controls.category]) control.addEventListener("change", render);
   document.querySelector("#timeline-reset").addEventListener("click", () => {
     for (const control of Object.values(controls)) control.value = "";
     render();

@@ -1,5 +1,4 @@
 import {
-  certaintyBadge,
   escapeHtml,
   humanize,
   indexById,
@@ -63,7 +62,7 @@ try {
 
   eventsTarget.innerHTML = eventSelection.map((event) => `
     <article class="card">
-      <div class="card__meta">${periodBadge(event.period)}${certaintyBadge(event.certainty)}</div>
+      <div class="card__meta">${periodBadge(event.period)}</div>
       <h3><a href="${recordUrl("event", event.id)}">${escapeHtml(event.title)}</a></h3>
       <p class="card__description">${escapeHtml(event.shortDescription || event.longDescription || "")}</p>
       <div class="card__footer"><span>${escapeHtml(event.displayDate || event.dateStart)}</span><span>${escapeHtml(event.placeDisplay || "")}</span></div>

@@ -14,12 +14,12 @@
   "publicInputs": {
     "allowlist": {
       "file": "public_export_config.json",
-      "sha256": "6d3ee4752af08d175c934de37f2364b0336a3a8e4463f9d07015b5fc37bdbfd1"
+      "sha256": "9cc2c7fe877034ce882a3bf0bfdf038dda3fc59d6d05ed4cbee3d6f6ac587e0d"
     },
     "overrides": {
       "file": "public_export_overrides.json",
-      "sha256": "68aa6516ad51ff9ffe70e7a2ea8d09b5dc14436d8d1d10ff461d08b04fcce23e",
-      "appliedCount": 10
+      "sha256": "ecbed144ee61d9d02475b93db814320c853c0483ac12bd9071aef909e9e8ba99",
+      "appliedCount": 9
     }
   },
   "exportPolicy": {
@@ -61,8 +61,8 @@
   "files": [
     {
       "file": "build-report.json",
-      "bytes": 3882,
-      "sha256": "853b7263ba08d3c575c986c7e62a97aa02359770aa1c7b5ac297c66da1a22760"
+      "bytes": 3761,
+      "sha256": "56cc79fd101fc812c96708f0eab80441aaf35e726d37ee1c4eb41f016bdcdeb4"
     },
     {
       "file": "contributions.json",
@@ -116,8 +116,8 @@
     },
     {
       "file": "timeline-events.json",
-      "bytes": 78892,
-      "sha256": "69610c8fd1dbce2b0db89a4cd8a3ecd95c88f86c091eaaf4395852e724cd61fe"
+      "bytes": 76008,
+      "sha256": "a90def147fa45251531ff5a64a3a5beb592e969c0319fc2c25902843f23935d7"
     },
     {
       "file": "title-variants.json",
