@@ -613,6 +613,12 @@ main {
   gap: 0.75rem;
 }
 
+.filters__grid--timeline {
+  grid-template-columns: minmax(16rem, 2fr) repeat(2, minmax(10rem, 1fr));
+  width: min(100%, 58rem);
+  margin-inline: auto;
+}
+
 .field {
   display: grid;
   gap: 0.3rem;
@@ -1417,6 +1423,10 @@ main {
 
   .filters__grid .field:last-child {
     grid-column: span 3;
+  }
+
+  .filters__grid--timeline .field:last-child {
+    grid-column: auto;
   }
 
   .work-row {
