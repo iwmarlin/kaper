@@ -213,6 +213,37 @@ function mediaRelatedWorks(media, indexes) {
   return [...new Map([...direct, ...subtypeWorks].map((item) => [item.id, item])).values()];
 }
 
+function documentGallery(media, allMedia) {
+  const paths = [...new Set(media.assetPaths || [])].filter(Boolean);
+  if (media.mediaType !== "document_gallery" || paths.length < 2) return "";
+  const items = paths.map((path, index) => {
+    const fileName = String(path).split("/").pop();
+    const member = allMedia.find((item) => (
+      item.id !== media.id
+      && (item.assetPath === path || (item.assetPaths || []).includes(path))
+    )) || allMedia.find((item) => (
+      item.id !== media.id
+      && (item.assetPaths || []).some((candidate) => String(candidate).split("/").pop() === fileName)
+    ));
+    const title = member?.title || `Gallery image ${index + 1}`;
+    const caption = member?.publicCaption || member?.description || `Image ${index + 1} of ${paths.length} in this documentary gallery.`;
+    const credit = member?.publicCreditLine;
+    return `
+      <figure class="record-gallery__item">
+        <a class="record-gallery__image" href="${escapeHtml(path)}" target="_blank" rel="noreferrer" aria-label="Open full image: ${escapeHtml(title)}">
+          <img src="${escapeHtml(path)}" alt="${escapeHtml(member?.altText || title)}" loading="lazy" decoding="async">
+          <span>Open full image <span aria-hidden="true">↗</span></span>
+        </a>
+        <figcaption>
+          <strong>${member ? `<a href="${recordUrl("media", member.id)}">${escapeHtml(title)}</a>` : escapeHtml(title)}</strong>
+          <p>${escapeHtml(caption)}</p>
+          ${credit ? `<small>${escapeHtml(credit)}</small>` : ""}
+        </figcaption>
+      </figure>`;
+  }).join("");
+  return `<div class="record-gallery" aria-label="${escapeHtml(media.title)}">${items}</div>`;
+}
+
 function renderMedia(media, data, indexes) {
   const works = mediaRelatedWorks(media, indexes);
   const events = related(media.timelineEventIds, indexes.timelineEvents);
@@ -220,13 +251,15 @@ function renderMedia(media, data, indexes) {
   const organizations = related(media.organizationIds, indexes.organizations);
   const sources = related(media.sourceIds, indexes.sources);
   const external = safeExternalUrl(media.externalUrl);
+  const gallery = documentGallery(media, data.media);
   return {
     title: media.title,
     label: "Media record",
     badges: `${typeBadge(media.mediaType)}${periodBadge(media.period)}${typeBadge(media.rightsStatus)}`,
-    facts: `${fact("Media type", humanize(media.mediaType))}${fact("Category", humanize(media.category))}${fact("Storage", humanize(media.storageType))}${fact("Gallery scope", humanize(media.galleryStatus))}${fact("Rights status", humanize(media.rightsStatus))}`,
+    facts: `${fact("Media type", humanize(media.mediaType))}${fact("Category", humanize(media.category))}${fact("Items", gallery ? media.assetPaths.length : "")}${fact("Storage", humanize(media.storageType))}${fact("Gallery scope", humanize(media.galleryStatus))}${fact("Rights status", humanize(media.rightsStatus))}`,
     main: [
       section("Caption and context", `${publicText(media.publicCaption, media.description)}${media.publicImageText ? `<p><strong>Image text:</strong> ${escapeHtml(media.publicImageText)}</p>` : ""}${external ? `<p><a class="button button--ghost button--small" href="${escapeHtml(external)}" target="_blank" rel="noreferrer">Open at source institution <span aria-hidden="true">↗</span></a></p>` : ""}`),
+      gallery ? section(`Gallery · ${media.assetPaths.length} images`, gallery, "record-section--gallery") : "",
       section("Rights", rightsPanel(media)),
       section("Related works", entityList(works, "work", (item) => [item.year, item.workType].filter(Boolean).join(" · "))),
       section("Timeline", entityList(events, "event", (item) => item.displayDate || item.dateStart)),

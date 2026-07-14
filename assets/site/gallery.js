@@ -67,16 +67,18 @@ try {
     }
     target.innerHTML = shown.map((item) => {
       const external = safeExternalUrl(item.externalUrl);
+      const isGallery = item.mediaType === "document_gallery" && Array.isArray(item.assetPaths) && item.assetPaths.length > 1;
+      const preview = mediaPreview(item);
       return `
         <article class="media-card">
-          <figure>${mediaPreview(item)}</figure>
+          <figure>${isGallery ? `<a class="media-card__image-link" href="${recordUrl("media", item.id)}">${preview}<span>Open gallery · ${item.assetPaths.length} images</span></a>` : preview}</figure>
           <div class="media-card__body">
             <div class="meta-row">${typeBadge(item.mediaType)}${periodBadge(item.period)}${typeBadge(item.rightsStatus)}</div>
             <h2><a href="${recordUrl("media", item.id)}">${escapeHtml(item.title)}</a></h2>
             <p>${escapeHtml(item.publicCaption || item.description || "")}</p>
             <div class="card__footer"><span>${escapeHtml(humanize(item.category || item.galleryStatus))}</span><span>${escapeHtml(item.id)}</span></div>
             <div class="media-card__actions">
-              <a href="${recordUrl("media", item.id)}">View record <span aria-hidden="true">→</span></a>
+              <a href="${recordUrl("media", item.id)}">${isGallery ? `Open gallery (${item.assetPaths.length})` : "View record"} <span aria-hidden="true">→</span></a>
               ${external ? `<a href="${escapeHtml(external)}" target="_blank" rel="noreferrer">Open external media <span aria-hidden="true">↗</span></a>` : ""}
             </div>
           </div>
