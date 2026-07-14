@@ -10,54 +10,77 @@
   <link rel="canonical" href="https://iwmarlin.github.io/kaper/map.html">
   <link rel="preconnect" href="https://unpkg.com">
   <link rel="preconnect" href="https://tile.openstreetmap.org">
-  <link rel="stylesheet" href="assets/site/styles.css">
+  <link rel="stylesheet" href="assets/site/styles.css?v=20260714-4">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" crossorigin="anonymous">
   <title>Map — Bronisław Kaper, 1902–1939</title>
 </head>
 <body>
   <header class="site-header" data-site-header></header>
   <main id="main-content">
-    <section class="page-hero">
-      <div class="shell page-hero__grid">
+    <section class="page-hero map-hero">
+      <div class="shell map-hero__grid">
         <div>
           <p class="eyebrow">Research geography</p>
           <h1>Places and routes</h1>
-          <p class="lead">Explore cities, addresses, institutions, venues and studios connected to documented events in Kaper's early career.</p>
+          <p class="lead">Explore the cities, addresses, venues and studios that shaped Kaper's documented career through 1939.</p>
         </div>
-        <div class="scope-note">Coordinates describe the identified place at the stated map precision. The accompanying list remains usable if external map tiles are unavailable.</div>
+        <div class="map-hero__summary">
+          <strong id="map-total">42</strong>
+          <span>documented places across Europe and North America</span>
+        </div>
       </div>
     </section>
 
-    <section class="section">
+    <section class="section map-section">
       <div class="shell">
-        <div class="section-heading">
+        <div class="map-toolbar">
           <div>
-            <p class="eyebrow">42 public places</p>
-            <h2>From Warsaw to Los Angeles</h2>
+            <p class="eyebrow">Interactive research map</p>
+            <h2>From Warsaw to Hollywood</h2>
+          </div>
+          <div class="map-toolbar__controls">
+            <div class="field">
+              <label for="place-search">Search places</label>
+              <input id="place-search" type="search" placeholder="City, venue or address…" autocomplete="off">
+            </div>
+            <div class="field">
+              <label for="place-period">Career period</label>
+              <select id="place-period"><option value="">All periods</option></select>
+            </div>
           </div>
         </div>
-        <div class="map-layout">
-          <aside class="map-sidebar" aria-label="Documented places">
-            <div class="map-sidebar__controls">
-              <div class="field">
-                <label for="place-search">Search places</label>
-                <input id="place-search" type="search" placeholder="City, venue or country…" autocomplete="off">
-              </div>
-              <div class="field" style="margin-top:.65rem">
-                <label for="place-country">Country</label>
-                <select id="place-country"><option value="">All countries</option></select>
-              </div>
-              <p id="place-count" style="margin:.8rem 0 0;color:var(--ink-soft);font-size:.78rem" aria-live="polite"></p>
+        <div class="map-explorer">
+          <div class="map-canvas">
+            <div id="research-map" role="region" aria-label="Interactive map of documented places"></div>
+            <div class="map-legend" aria-label="Career-period legend">
+              <span><i class="map-legend__swatch map-legend__swatch--warsaw"></i>Warsaw</span>
+              <span><i class="map-legend__swatch map-legend__swatch--european"></i>European</span>
+              <span><i class="map-legend__swatch map-legend__swatch--transnational"></i>Transnational</span>
+              <span><i class="map-legend__swatch map-legend__swatch--hollywood"></i>Hollywood</span>
+            </div>
+          </div>
+          <aside class="map-panel" aria-label="Documented places">
+            <div class="map-selection" id="place-selection" aria-live="polite">
+              <p class="eyebrow" id="place-selection-kicker">Explore the map</p>
+              <h3 id="place-selection-title">Select a place</h3>
+              <p id="place-selection-meta">Choose a marker or a place from the list to see its role in the archive.</p>
+              <a class="button button--small" id="place-selection-link" href="record.html?type=place" hidden>View place record</a>
+            </div>
+            <div class="map-results-heading">
+              <span>Documented places</span>
+              <strong id="place-count" aria-live="polite">42</strong>
             </div>
             <ul class="place-list" id="place-list"></ul>
           </aside>
-          <div id="research-map" role="region" aria-label="Interactive map of documented places"></div>
         </div>
+        <p class="map-method-note">Coordinates reflect the documented map precision. Nearby addresses are grouped until the map is enlarged; selecting a group reveals its individual places.</p>
       </div>
     </section>
   </main>
   <footer class="site-footer" data-site-footer></footer>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin="anonymous"></script>
-  <script type="module" src="assets/site/map.js"></script>
+  <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js" crossorigin="anonymous"></script>
+  <script type="module" src="assets/site/map-explorer-20260714.js?v=2"></script>
 </body>
 </html>
