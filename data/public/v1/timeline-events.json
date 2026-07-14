@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 53,
+  "count": 52,
   "records": [
     {
       "id": "TE0001",
@@ -182,10 +182,11 @@
       ],
       "mediaIds": [
         "M030",
-        "M094"
+        "M094",
+        "M227"
       ],
       "heroMediaIds": [
-        "M094"
+        "M227"
       ],
       "placeIds": [
         "PL001",
@@ -1182,10 +1183,11 @@
       "mediaIds": [
         "M016",
         "M031",
-        "M036"
+        "M036",
+        "M037"
       ],
       "heroMediaIds": [
-        "M036"
+        "M037"
       ],
       "placeIds": [
         "PL002",
@@ -1567,58 +1569,6 @@
       ]
     },
     {
-      "id": "TE0033",
-      "slug": "1934-path-to-hollywood",
-      "title": "Path to Hollywood",
-      "label": "1934 · Path to Hollywood",
-      "displayDate": "1934",
-      "dateStart": "1934-01-01",
-      "datePrecision": "year",
-      "sortDate": "1934-07-01",
-      "sortOrder": 33,
-      "displayMode": "point",
-      "eventType": "life",
-      "period": "Hollywood",
-      "periodKey": "hollywood",
-      "category": "migration",
-      "filterTags": [
-        "life",
-        "hollywood"
-      ],
-      "placeDisplay": "Hollywood/Los Angeles",
-      "cityKey": "hollywood",
-      "shortDescription": "MGM’s Louis B. Mayer offers Jurmann and Kaper a Hollywood contract.",
-      "longDescription": "Louis B. Mayer (MGM) offers a contract to Jurmann–Kaper in Hollywood.",
-      "certainty": "probable",
-      "roles": [
-        "migration_event",
-        "career_milestone",
-        "professional_network"
-      ],
-      "personIds": [
-        "P009",
-        "P077",
-        "P116"
-      ],
-      "sourceIds": [
-        "SRC0491"
-      ],
-      "mediaIds": [
-        "M034",
-        "M051"
-      ],
-      "heroMediaIds": [
-        "M051"
-      ],
-      "placeIds": [
-        "PL004",
-        "PL005"
-      ],
-      "organizationIds": [
-        "ORG001"
-      ]
-    },
-    {
       "id": "TE0034",
       "slug": "19341936-european-afterlife",
       "title": "European afterlife",
@@ -1627,8 +1577,8 @@
       "dateStart": "1934-01-01",
       "dateEnd": "1936-12-31",
       "datePrecision": "range",
-      "sortDate": "1934-07-01",
-      "sortOrder": 34,
+      "sortDate": "1934-11-20",
+      "sortOrder": 35.6,
       "displayMode": "period band",
       "eventType": "career",
       "period": "European",
@@ -1976,10 +1926,10 @@
       "mediaIds": [
         "M029",
         "M034",
-        "M089"
+        "M140"
       ],
       "heroMediaIds": [
-        "M089"
+        "M140"
       ],
       "placeIds": [
         "PL004",
@@ -2248,10 +2198,17 @@
         "P009"
       ],
       "sourceIds": [
-        "SRC0490"
+        "SRC0490",
+        "SRC0552"
       ],
       "workIds": [
         "W-O002"
+      ],
+      "mediaIds": [
+        "M230"
+      ],
+      "heroMediaIds": [
+        "M230"
       ],
       "placeIds": [
         "PL001"
@@ -2461,7 +2418,8 @@
       ],
       "sourceIds": [
         "SRC0490",
-        "SRC0491"
+        "SRC0491",
+        "SRC0551"
       ],
       "workIds": [
         "W-F007",
@@ -2471,13 +2429,13 @@
       ],
       "mediaIds": [
         "M031",
-        "M046",
         "M155",
         "M167",
-        "M192"
+        "M192",
+        "M229"
       ],
       "heroMediaIds": [
-        "M046"
+        "M229"
       ],
       "placeIds": [
         "PL002",
@@ -2644,14 +2602,19 @@
         "P116"
       ],
       "sourceIds": [
-        "SRC0491"
+        "SRC0491",
+        "SRC0550"
       ],
       "workIds": [
         "W-F033"
       ],
       "mediaIds": [
         "M034",
-        "M051"
+        "M051",
+        "M228"
+      ],
+      "heroMediaIds": [
+        "M228"
       ],
       "placeIds": [
         "PL004",

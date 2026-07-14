@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 107,
+  "count": 108,
   "records": [
     {
       "id": "ORG001",
@@ -35,10 +35,10 @@
         "SRC0171",
         "SRC0174",
         "SRC0176",
-        "SRC0527"
+        "SRC0527",
+        "SRC0550"
       ],
       "timelineEventIds": [
-        "TE0033",
         "TE0038",
         "TE0041",
         "TE0043"
@@ -1917,7 +1917,9 @@
         "SRC0049",
         "SRC0050",
         "SRC0052",
-        "SRC0456"
+        "SRC0456",
+        "SRC0550",
+        "SRC0551"
       ]
     },
     {
@@ -3031,6 +3033,23 @@
       ],
       "timelineEventIds": [
         "TE0041"
+      ]
+    },
+    {
+      "id": "ORG111",
+      "displayName": "Teatr “Perskie Oko”",
+      "authorizedName": "Teatr “Perskie Oko” (Warsaw)",
+      "types": [
+        "publisher"
+      ],
+      "city": [
+        "Warsaw"
+      ],
+      "country": "Poland",
+      "slug": "teatr-perskie-oko-warsaw",
+      "nameVariants": "Perskie Oko; Teatr Perskie Oko",
+      "sourceIds": [
+        "SRC0552"
       ]
     }
   ]

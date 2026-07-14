@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 184,
+  "count": 188,
   "records": [
     {
       "id": "M001",
@@ -1114,7 +1114,6 @@
         "SRC0527"
       ],
       "timelineEventIds": [
-        "TE0033",
         "TE0035",
         "TE0037",
         "TE0038",
@@ -1193,7 +1192,6 @@
         "TE0049"
       ],
       "heroTimelineEventIds": [
-        "TE0025",
         "TE0049"
       ]
     },
@@ -1227,6 +1225,12 @@
       ],
       "workIds": [
         "W-F003"
+      ],
+      "timelineEventIds": [
+        "TE0025"
+      ],
+      "heroTimelineEventIds": [
+        "TE0025"
       ]
     },
     {
@@ -1365,12 +1369,10 @@
         "S039"
       ],
       "timelineEventIds": [
-        "TE0026",
-        "TE0050"
+        "TE0026"
       ],
       "heroTimelineEventIds": [
-        "TE0026",
-        "TE0050"
+        "TE0026"
       ]
     },
     {
@@ -1431,12 +1433,10 @@
         "SRC0364"
       ],
       "timelineEventIds": [
-        "TE0033",
         "TE0052",
         "TE0053"
       ],
       "heroTimelineEventIds": [
-        "TE0033",
         "TE0052"
       ]
     },
@@ -2531,12 +2531,6 @@
       "galleryStatus": "eligible",
       "sourceIds": [
         "SRC0453"
-      ],
-      "timelineEventIds": [
-        "TE0040"
-      ],
-      "heroTimelineEventIds": [
-        "TE0040"
       ]
     },
     {
@@ -2658,7 +2652,6 @@
         "TE0044"
       ],
       "heroTimelineEventIds": [
-        "TE0004",
         "TE0044"
       ]
     },
@@ -3786,6 +3779,12 @@
       ],
       "workIds": [
         "W-F048"
+      ],
+      "timelineEventIds": [
+        "TE0040"
+      ],
+      "heroTimelineEventIds": [
+        "TE0040"
       ]
     },
     {
@@ -6013,6 +6012,146 @@
       ],
       "songIds": [
         "S129"
+      ]
+    },
+    {
+      "id": "M227",
+      "title": "Bronisław Kaper’s University of Warsaw student record book — opening folios, 1920",
+      "mediaType": "image",
+      "storageType": "local",
+      "period": "warsaw",
+      "description": "Opening folios of Bronisław Kaper’s student record book (“Wykaz wykładów i ćwiczeń”) at the University of Warsaw, Faculty of Law and Political Sciences. The spread includes his student portrait and matriculation information. University of Warsaw Archives, Bronisław Kaper student file, RP 6854, fols. 38–39.",
+      "assetPath": "assets/images/timeline/kaper-student-record-book-university-of-warsaw.jpg",
+      "assetPaths": [
+        "assets/images/timeline/kaper-student-record-book-university-of-warsaw.jpg"
+      ],
+      "assetCount": 1,
+      "altText": "Open student record book with a portrait of young Bronisław Kaper and University of Warsaw matriculation details.",
+      "rightsStatus": "ok",
+      "rightsNote": "Reproduced by permission of the University of Warsaw Archives.",
+      "sortOrder": 227,
+      "slug": "bronislaw-kaper-student-record-book-university-of-warsaw",
+      "publicCaption": "Opening folios of Bronisław Kaper’s University of Warsaw student record book (“Wykaz wykładów i ćwiczeń”), 1920.",
+      "publicImageText": "University of Warsaw student record book with Kaper’s portrait and matriculation details.",
+      "publicCreditLine": "Archiwum Uniwersytetu Warszawskiego, Bronisław Kaper student file, RP 6854, fols. 38–39. Reproduced by permission.",
+      "galleryStatus": "eligible",
+      "organizationIds": [
+        "ORG057"
+      ],
+      "sourceIds": [
+        "SRC0110"
+      ],
+      "timelineEventIds": [
+        "TE0004"
+      ],
+      "heroTimelineEventIds": [
+        "TE0004"
+      ]
+    },
+    {
+      "id": "M228",
+      "title": "Motion Picture Daily, 27 October 1934 — Kaper and Jurmann depart for MGM",
+      "mediaType": "image",
+      "storageType": "local",
+      "period": "hollywood",
+      "description": "Clipping from the “Purely Personal” column in Motion Picture Daily, 27 October 1934, p. 2. It reports Walter Jurmann (“Jourmann” in the item) and Bronisław Kaper (“Bron Kaper”) in New York with their wives, awaiting departure for the West Coast to begin work for M-G-M.",
+      "assetPath": "assets/images/historical-context/motion-picture-daily-1934-10-27.jpg",
+      "assetPaths": [
+        "assets/images/historical-context/motion-picture-daily-1934-10-27.jpg"
+      ],
+      "assetCount": 1,
+      "altText": "Newspaper clipping reporting that Walter Jurmann and Bronisław Kaper were preparing to leave New York for MGM in California.",
+      "rightsStatus": "ok",
+      "rightsNote": "Library of Congress reports no known U.S. copyright or other restrictions for the scanned trade publications in this collection after research found that copyright registrations were not renewed. Possible separately protected third-party material and other rights remain the user’s responsibility.",
+      "sortOrder": 228,
+      "slug": "motion-picture-daily-1934-10-27-kaper-jurmann-mgm",
+      "publicCaption": "Contemporary trade-press notice of Kaper and Jurmann preparing to depart New York for MGM, 27 October 1934.",
+      "publicImageText": "Motion Picture Daily notice on Kaper and Jurmann’s MGM-bound departure.",
+      "publicCreditLine": "Library of Congress, National Audio-Visual Conservation Center: Motion Picture Daily, 27 October 1934, p. 2.",
+      "galleryStatus": "eligible",
+      "organizationIds": [
+        "ORG001",
+        "ORG066"
+      ],
+      "sourceIds": [
+        "SRC0550"
+      ],
+      "timelineEventIds": [
+        "TE0053"
+      ],
+      "heroTimelineEventIds": [
+        "TE0053"
+      ]
+    },
+    {
+      "id": "M229",
+      "title": "Richard Tauber — Bain News Service portrait, c. 1920–1925",
+      "mediaType": "image",
+      "storageType": "local",
+      "period": "european",
+      "description": "Portrait of tenor Richard Tauber, photographed between approximately 1920 and 1925. Bain News Service negative; George Grantham Bain Collection, Library of Congress Prints and Photographs Division. LCCN 2014714361; digital ID ggbain.34209.",
+      "assetPath": "assets/images/portraits/richard-tauber-1920s.jpg",
+      "assetPaths": [
+        "assets/images/portraits/richard-tauber-1920s.jpg"
+      ],
+      "assetCount": 1,
+      "altText": "Black-and-white studio portrait of tenor Richard Tauber in a dark three-piece suit.",
+      "rightsStatus": "ok",
+      "rightsNote": "Library of Congress: no known restrictions on publication. George Grantham Bain Collection.",
+      "sortOrder": 229,
+      "slug": "richard-tauber-bain-news-service-portrait-1920s",
+      "publicCaption": "Richard Tauber, c. 1920–1925, photographed by the Bain News Service.",
+      "publicImageText": "Library of Congress portrait of tenor Richard Tauber, c. 1920–1925.",
+      "publicCreditLine": "Bain News Service / Library of Congress Prints and Photographs Division, ggbain.34209.",
+      "galleryStatus": "eligible",
+      "organizationIds": [
+        "ORG066"
+      ],
+      "sourceIds": [
+        "SRC0551"
+      ],
+      "timelineEventIds": [
+        "TE0050"
+      ],
+      "heroTimelineEventIds": [
+        "TE0050"
+      ]
+    },
+    {
+      "id": "M230",
+      "title": "Koszutski Girls in Teatr “Perskie Oko”: przegląd rewji (1926)",
+      "mediaType": "image",
+      "storageType": "local",
+      "period": "warsaw",
+      "description": "Page 8 of the illustrated programme Teatr “Perskie Oko”: przegląd rewji (Warsaw, 1926), with three ensemble photographs labeled “Koszutski-Girls.” The image provides visual context for the troupe named in Kaper’s 1923 manuscript; it does not document the manuscript’s authorship or the “Mus. B. Asper” inscription.",
+      "assetPath": "assets/images/historical-context/koszutski-girls-perskie-oko-1926.jpg",
+      "assetPaths": [
+        "assets/images/historical-context/koszutski-girls-perskie-oko-1926.jpg"
+      ],
+      "assetCount": 1,
+      "altText": "Illustrated theatre-programme page with portraits and three group photographs labeled Koszutski-Girls.",
+      "rightsStatus": "ok",
+      "rightsNote": "Public domain according to the Mazowiecka Biblioteka Cyfrowa catalog record; unrestricted public access.",
+      "sortOrder": 230,
+      "slug": "koszutski-girls-perskie-oko-1926",
+      "publicCaption": "Koszutski Girls in a 1926 illustrated programme of Warsaw’s Teatr “Perskie Oko.”",
+      "publicImageText": "Three photographs of the Koszutski Girls in a 1926 Warsaw theatre programme.",
+      "publicCreditLine": "Mazowiecka Biblioteka Cyfrowa / Biblioteka Publiczna m.st. Warszawy; Teatr “Perskie Oko”: przegląd rewji (1926), p. 8.",
+      "galleryStatus": "eligible",
+      "organizationIds": [
+        "ORG111"
+      ],
+      "sourceIds": [
+        "SRC0552"
+      ],
+      "workIds": [
+        "W-O002"
+      ],
+      "timelineEventIds": [
+        "TE0046"
+      ],
+      "heroTimelineEventIds": [
+        "TE0046"
       ]
     }
   ]

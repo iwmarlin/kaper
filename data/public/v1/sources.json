@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 480,
+  "count": 483,
   "records": [
     {
       "id": "SRC0001",
@@ -3135,7 +3135,8 @@
       ],
       "mediaIds": [
         "M048",
-        "M135"
+        "M135",
+        "M227"
       ],
       "timelineEventIds": [
         "TE0001",
@@ -14665,7 +14666,6 @@
       ],
       "timelineEventIds": [
         "TE0028",
-        "TE0033",
         "TE0035",
         "TE0050",
         "TE0051",
@@ -16312,6 +16312,89 @@
       "nameVariantIds": [
         "PNV0029",
         "PNV0037"
+      ]
+    },
+    {
+      "id": "SRC0550",
+      "shortCitation": "Motion Picture Daily, 27 October 1934, p. 2 — Kaper and Jurmann depart for MGM",
+      "fullCitation": "“Purely Personal.” Motion Picture Daily, vol. 36, no. 100 (27 October 1934), p. 2. Library of Congress, National Audio-Visual Conservation Center, digital scan (PDF page 252).",
+      "sourceType": "press_item",
+      "title": "Motion Picture Daily, 27 October 1934 — Kaper and Jurmann depart for MGM",
+      "creator": "Motion Picture Daily",
+      "repository": "Library of Congress, National Audio-Visual Conservation Center",
+      "publication": "Motion Picture Daily",
+      "date": "1934-10-27",
+      "url": "https://tile.loc.gov/storage-services/public/gdcmassbookdig/motionpicturedai36unse_0/motionpicturedai36unse_0.pdf",
+      "accessDate": "2026-07-14",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "slug": "motion-picture-daily-1934-10-27-kaper-jurmann-mgm",
+      "personIds": [
+        "P009",
+        "P077"
+      ],
+      "organizationIds": [
+        "ORG001",
+        "ORG066"
+      ],
+      "mediaIds": [
+        "M228"
+      ],
+      "timelineEventIds": [
+        "TE0053"
+      ]
+    },
+    {
+      "id": "SRC0551",
+      "shortCitation": "Library of Congress, Bain Collection — Richard Tauber portrait, LCCN 2014714361",
+      "fullCitation": "Bain News Service, publisher. “Tauber.” [Between ca. 1920 and ca. 1925]. Glass negative, LC-B2-5725-4 [P&P], digital ID ggbain.34209, LCCN 2014714361. Library of Congress Prints and Photographs Division.",
+      "sourceType": "image_or_photograph",
+      "title": "Richard Tauber portrait — Bain News Service",
+      "creator": "Bain News Service (publisher)",
+      "repository": "Library of Congress Prints and Photographs Division",
+      "publication": "George Grantham Bain Collection",
+      "date": "[between ca. 1920 and ca. 1925]",
+      "url": "https://www.loc.gov/pictures/item/2014714361/",
+      "accessDate": "2026-07-14",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "slug": "library-of-congress-richard-tauber-lccn-2014714361",
+      "personIds": [
+        "P118"
+      ],
+      "organizationIds": [
+        "ORG066"
+      ],
+      "mediaIds": [
+        "M229"
+      ],
+      "timelineEventIds": [
+        "TE0050"
+      ]
+    },
+    {
+      "id": "SRC0552",
+      "shortCitation": "Teatr “Perskie Oko”: przegląd rewji (Warsaw, 1926), p. 8 — Koszutski Girls",
+      "fullCitation": "Teatr “Perskie Oko”: przegląd rewji [Album Teatru “Perskie Oko”]. Warsaw: Teatr “Perskie Oko,” 1926, p. 8 (PDF page 8). Call no. Szt. DŻS 64; oai:mbc.cyfrowemazowsze.pl:3148. Mazowiecka Biblioteka Cyfrowa / Biblioteka Publiczna m.st. Warszawy — Biblioteka Główna Województwa Mazowieckiego.",
+      "sourceType": "visual_document",
+      "title": "Teatr “Perskie Oko”: przegląd rewji",
+      "creator": "Teatr “Perskie Oko”",
+      "repository": "Mazowiecka Biblioteka Cyfrowa; Biblioteka Publiczna m.st. Warszawy — Biblioteka Główna Województwa Mazowieckiego",
+      "publication": "Teatr “Perskie Oko”",
+      "date": "1926",
+      "url": "https://mbc.cyfrowemazowsze.pl/dlibra/publication/3277/edition/3148",
+      "accessDate": "2026-07-14",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "slug": "teatr-perskie-oko-1926-koszutski-girls",
+      "organizationIds": [
+        "ORG111"
+      ],
+      "mediaIds": [
+        "M230"
+      ],
+      "timelineEventIds": [
+        "TE0046"
       ]
     }
   ]
