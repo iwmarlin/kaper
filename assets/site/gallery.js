@@ -10,6 +10,7 @@ import {
   recordUrl,
   renderError,
   renderLoading,
+  safeExternalUrl,
   typeBadge,
 } from "./core.js";
 
@@ -64,16 +65,23 @@ try {
       target.innerHTML = `<div class="empty-state"><h2>No matching media</h2><p>Try a broader search or another gallery scope.</p></div>`;
       return;
     }
-    target.innerHTML = shown.map((item) => `
-      <article class="media-card">
-        <figure>${mediaPreview(item)}</figure>
-        <div class="media-card__body">
-          <div class="meta-row">${typeBadge(item.mediaType)}${periodBadge(item.period)}${typeBadge(item.rightsStatus)}</div>
-          <h2><a href="${recordUrl("media", item.id)}">${escapeHtml(item.title)}</a></h2>
-          <p>${escapeHtml(item.publicCaption || item.description || "")}</p>
-          <div class="card__footer"><span>${escapeHtml(humanize(item.category || item.galleryStatus))}</span><span>${escapeHtml(item.id)}</span></div>
-        </div>
-      </article>`).join("");
+    target.innerHTML = shown.map((item) => {
+      const external = safeExternalUrl(item.externalUrl);
+      return `
+        <article class="media-card">
+          <figure>${mediaPreview(item)}</figure>
+          <div class="media-card__body">
+            <div class="meta-row">${typeBadge(item.mediaType)}${periodBadge(item.period)}${typeBadge(item.rightsStatus)}</div>
+            <h2><a href="${recordUrl("media", item.id)}">${escapeHtml(item.title)}</a></h2>
+            <p>${escapeHtml(item.publicCaption || item.description || "")}</p>
+            <div class="card__footer"><span>${escapeHtml(humanize(item.category || item.galleryStatus))}</span><span>${escapeHtml(item.id)}</span></div>
+            <div class="media-card__actions">
+              <a href="${recordUrl("media", item.id)}">View record <span aria-hidden="true">→</span></a>
+              ${external ? `<a href="${escapeHtml(external)}" target="_blank" rel="noreferrer">Open external media <span aria-hidden="true">↗</span></a>` : ""}
+            </div>
+          </div>
+        </article>`;
+    }).join("");
   }
 
   const resetAndRender = () => { visible = PAGE_SIZE; render(); };

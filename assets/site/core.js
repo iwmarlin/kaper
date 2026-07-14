@@ -74,6 +74,7 @@ export function escapeHtml(value = "") {
 
 export function safeExternalUrl(value) {
   if (!value) return null;
+  if (/[\r\n]/.test(String(value))) return null;
   try {
     const url = new URL(value);
     return ["http:", "https:"].includes(url.protocol) ? url.href : null;
@@ -276,11 +277,16 @@ export function renderSourceCitation(source) {
 
 export function mediaPreview(media, { eager = false } = {}) {
   const title = escapeHtml(media.altText || media.title || "Media item");
-  if (media.storageType === "local" && media.assetPath) {
+  if (media.assetPath && media.storageType !== "external") {
     if (media.mediaType === "audio") {
       return `<div class="media-preview media-preview--audio"><span aria-hidden="true">♪</span><audio controls preload="none" src="${escapeHtml(media.assetPath)}">Your browser does not support audio.</audio></div>`;
     }
     return `<img src="${escapeHtml(media.assetPath)}" alt="${title}" ${eager ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async">`;
   }
-  return `<div class="media-preview media-preview--external"><span aria-hidden="true">↗</span><span>External ${escapeHtml(humanize(media.mediaType || "media"))}</span></div>`;
+  const external = safeExternalUrl(media.externalUrl);
+  const label = `Open external ${humanize(media.mediaType || "media").toLowerCase()}`;
+  if (external) {
+    return `<a class="media-preview media-preview--external" href="${escapeHtml(external)}" target="_blank" rel="noreferrer" aria-label="${escapeHtml(label)}: ${title}"><span aria-hidden="true">↗</span><span>${escapeHtml(label)}</span></a>`;
+  }
+  return `<div class="media-preview media-preview--external media-preview--unavailable"><span aria-hidden="true">—</span><span>External reference unavailable</span></div>`;
 }
