@@ -46,10 +46,11 @@ const RECORD_TABLES = [
   "people", "organizations", "sources", "media", "works", "films", "songs", "otherWorks",
   "titleVariants", "workRelations", "timelineEvents", "places", "contributions", "personNameVariants",
 ];
+const RECORD_DATA_VERSION = "20260715-2";
 
 async function loadRecordPayload(type, id) {
   const url = new URL(
-    `data/site/records/${encodeURIComponent(type)}/${encodeURIComponent(id)}.json`,
+    `data/site/records/${encodeURIComponent(type)}/${encodeURIComponent(id)}.json?v=${RECORD_DATA_VERSION}`,
     document.baseURI,
   );
   const response = await fetch(url);
@@ -389,7 +390,7 @@ function mediaRelatedWorks(media, indexes) {
   return [...new Map([...direct, ...subtypeWorks].map((item) => [item.id, item])).values()];
 }
 
-function documentGallery(media, allMedia) {
+function documentGallery(media, allMedia, sourceIndex) {
   const paths = [...new Set(media.assetPaths || [])].filter(Boolean);
   if (media.mediaType !== "document_gallery" || paths.length < 2) return "";
   const explicitMembers = (media.galleryMemberIds || [])
@@ -412,7 +413,9 @@ function documentGallery(media, allMedia) {
       ));
     const title = member?.title || `Gallery image ${index + 1}`;
     const caption = member?.publicCaption || member?.description || `Image ${index + 1} of ${paths.length} in this documentary gallery.`;
-    const credit = member?.publicCreditLine;
+    const disclosure = member
+      ? renderMediaDisclosure(member, related(member.sourceIds, sourceIndex), { compact: true })
+      : `<strong>${escapeHtml(title)}</strong><p>${escapeHtml(caption)}</p>`;
     return `
       <figure class="record-gallery__item">
         <a class="record-gallery__image" href="${escapeHtml(path)}" target="_blank" rel="noreferrer" aria-label="Open full image: ${escapeHtml(title)}">
@@ -421,11 +424,7 @@ function documentGallery(media, allMedia) {
           })}
           <span>Open full image <span aria-hidden="true">↗</span></span>
         </a>
-        <figcaption>
-          <strong>${member ? `<a href="${recordUrl("media", member.id)}">${escapeHtml(title)}</a>` : escapeHtml(title)}</strong>
-          <p>${escapeHtml(caption)}</p>
-          ${credit ? `<small>${escapeHtml(credit)}</small>` : ""}
-        </figcaption>
+        <figcaption>${disclosure}</figcaption>
       </figure>`;
   }).join("");
   return `<div class="record-gallery" aria-label="${escapeHtml(media.title)}">${items}</div>`;
@@ -438,7 +437,24 @@ function renderMedia(media, data, indexes) {
   const organizations = related(media.organizationIds, indexes.organizations);
   const sources = related(media.sourceIds, indexes.sources);
   const external = safeExternalUrl(media.externalUrl);
-  const gallery = documentGallery(media, data.media);
+  const gallery = documentGallery(media, data.media, indexes.sources);
+  const isGalleryContainer = media.mediaType === "document_gallery" && Boolean(gallery);
+  const galleryCount = [...new Set(media.assetPaths || [])].filter(Boolean).length;
+  if (isGalleryContainer) {
+    return {
+      title: media.title,
+      label: "Media gallery",
+      badges: `${typeBadge(media.mediaType)}${periodBadge(media.period)}`,
+      facts: `${fact("Images", galleryCount)}${fact("Period", humanize(media.period))}`,
+      main: [
+        section("About this gallery", publicText(media.publicCaption, media.description)),
+        section(`Gallery · ${galleryCount} images`, gallery, "record-section--gallery"),
+        section("Rights and attribution", '<div class="scope-note">Credit, source and rights information are provided with each individual image.</div>'),
+      ].join(""),
+      aside: "",
+      fullWidth: true,
+    };
+  }
   return {
     title: media.title,
     label: "Media record",
@@ -606,7 +622,7 @@ try {
       </div>
     </section>
     <section class="section">
-      <div class="shell record-layout">
+      <div class="shell record-layout${view.fullWidth ? " record-layout--single" : ""}">
         <div>${view.main || `<div class="empty-state"><p>No additional public detail is available.</p></div>`}</div>
         <aside>${view.aside || ""}</aside>
       </div>

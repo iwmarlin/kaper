@@ -26,6 +26,46 @@
           "publicCreditLine": "My Footage, “1930s Metro-Goldwyn-Mayer Studios,” YouTube, published 3 June 2010."
         }
       },
+      "M030": {
+        "reason": "Keep gallery-container audit notes and composite-card workflow text out of the public export; each member medium carries its own public credit, source and rights statement.",
+        "fields": {},
+        "removeFields": [
+          "rightsNote",
+          "publicCreditLine"
+        ]
+      },
+      "M031": {
+        "reason": "Keep gallery-container audit notes and composite-card workflow text out of the public export; each member medium carries its own public credit, source and rights statement.",
+        "fields": {},
+        "removeFields": [
+          "rightsNote",
+          "publicCreditLine"
+        ]
+      },
+      "M032": {
+        "reason": "Keep gallery-container audit notes and composite-card workflow text out of the public export; each member medium carries its own public credit, source and rights statement.",
+        "fields": {},
+        "removeFields": [
+          "rightsNote",
+          "publicCreditLine"
+        ]
+      },
+      "M033": {
+        "reason": "Keep gallery-container audit notes and composite-card workflow text out of the public export; each member medium carries its own public credit, source and rights statement.",
+        "fields": {},
+        "removeFields": [
+          "rightsNote",
+          "publicCreditLine"
+        ]
+      },
+      "M034": {
+        "reason": "Keep gallery-container audit notes and composite-card workflow text out of the public export; each member medium carries its own public credit, source and rights statement.",
+        "fields": {},
+        "removeFields": [
+          "rightsNote",
+          "publicCreditLine"
+        ]
+      },
       "M059": {
         "reason": "Identify the documented studio location as Montrouge rather than Paris while retaining the broader Paris-period context.",
         "fields": {
@@ -47,7 +87,9 @@
           ]
         },
         "removeFields": [
-          "externalUrl"
+          "externalUrl",
+          "rightsNote",
+          "publicCreditLine"
         ]
       },
       "M125": {

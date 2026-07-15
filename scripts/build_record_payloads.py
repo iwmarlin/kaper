@@ -111,7 +111,10 @@ class RecordPayloadBuilder:
                     candidate_paths.add(candidate["assetPath"])
                 if candidate["id"] != media["id"] and paths.intersection(candidate_paths):
                     member_ids.add(candidate["id"])
-        self.add(bundle, "media", sorted(member_ids))
+        members = self.add(bundle, "media", sorted(member_ids))
+        if media.get("mediaType") == "document_gallery":
+            for member in members:
+                self.add(bundle, "sources", record_ids(member, "sourceIds"))
 
     def build(self, record_type: str, record_id: str) -> dict:
         table = RECORD_TYPES[record_type]

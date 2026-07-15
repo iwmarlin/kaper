@@ -1672,6 +1672,14 @@ main {
   gap: 2.25rem;
 }
 
+.record-layout--single {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.record-layout--single > aside {
+  display: none;
+}
+
 .record-layout > *,
 .record-section,
 .citation,

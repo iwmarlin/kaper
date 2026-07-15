@@ -132,6 +132,8 @@ def facts_for(record_type: str, record: dict) -> list[tuple[str, str]]:
     if record_type == "place":
         return [("City", record.get("city")), ("Country", record.get("country")), ("Type", record.get("placeType"))]
     if record_type == "media":
+        if record.get("mediaType") == "document_gallery":
+            return [("Images", len(record.get("assetPaths", []))), ("Period", record.get("period"))]
         return [("Media type", record.get("mediaType")), ("Period", record.get("period")), ("Rights", record.get("rightsStatus"))]
     if record_type == "person":
         return [("Authorized name", record.get("authorizedName")), ("Primary role", record.get("primaryRole"))]
@@ -159,14 +161,22 @@ def static_page(record_type: str, record: dict, tables: dict) -> str:
     summary = summary_for(record_type, record, tables)
     label = TYPE_LABELS[record_type]
     record_id = record["id"]
-    if record_type == "work" and record.get("workType") == "Other":
+    is_gallery = record_type == "media" and record.get("mediaType") == "document_gallery"
+    if is_gallery:
+        record_script_version = "20260715-18"
+        style_version = "20260715-16"
+    elif record_type == "work" and record.get("workType") == "Other":
         record_script_version = "20260715-16"
+        style_version = "20260715-15"
     elif record_type == "work" and record.get("workType") == "Film":
         record_script_version = "20260715-14"
+        style_version = "20260715-15"
     elif record_type == "work" and record.get("workType") == "Song":
         record_script_version = "20260715-13"
+        style_version = "20260715-15"
     else:
         record_script_version = "20260715-12"
+        style_version = "20260715-15"
     route = f"records/{record_type}/{quote(record_id, safe='')}/"
     canonical = f"{ORIGIN}{route}"
     facts = "".join(
@@ -174,7 +184,7 @@ def static_page(record_type: str, record: dict, tables: dict) -> str:
         for label_text, value in facts_for(record_type, record)
         if value not in (None, "", [])
     )
-    sources = source_links(record_type, record, tables)
+    sources = "" if is_gallery else source_links(record_type, record, tables)
     return f"""<!doctype html>
 <html lang="en">
 <head>
@@ -191,7 +201,7 @@ def static_page(record_type: str, record: dict, tables: dict) -> str:
   <meta property="og:type" content="article">
   <meta property="og:url" content="{esc(canonical)}">
   <link rel="canonical" href="{esc(canonical)}">
-  <link rel="stylesheet" href="assets/site/styles.css?v=20260715-15">
+  <link rel="stylesheet" href="assets/site/styles.css?v={style_version}">
   <title>{esc(title)} — Bronisław Kaper, 1902–1939</title>
 </head>
 <body>

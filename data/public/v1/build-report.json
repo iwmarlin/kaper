@@ -70,13 +70,60 @@
     },
     {
       "table": "Media",
+      "id": "M030",
+      "fields": [],
+      "removedFields": [
+        "publicCreditLine",
+        "rightsNote"
+      ]
+    },
+    {
+      "table": "Media",
+      "id": "M031",
+      "fields": [],
+      "removedFields": [
+        "publicCreditLine",
+        "rightsNote"
+      ]
+    },
+    {
+      "table": "Media",
+      "id": "M032",
+      "fields": [],
+      "removedFields": [
+        "publicCreditLine",
+        "rightsNote"
+      ]
+    },
+    {
+      "table": "Media",
+      "id": "M033",
+      "fields": [],
+      "removedFields": [
+        "publicCreditLine",
+        "rightsNote"
+      ]
+    },
+    {
+      "table": "Media",
+      "id": "M034",
+      "fields": [],
+      "removedFields": [
+        "publicCreditLine",
+        "rightsNote"
+      ]
+    },
+    {
+      "table": "Media",
       "id": "M035",
       "fields": [
         "assetPath",
         "assetPaths"
       ],
       "removedFields": [
-        "externalUrl"
+        "externalUrl",
+        "publicCreditLine",
+        "rightsNote"
       ]
     },
     {
