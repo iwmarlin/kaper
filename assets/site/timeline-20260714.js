@@ -16,7 +16,7 @@ import {
   resolveIds,
   responsiveImage,
   typeBadge,
-} from "./core.js?v=20260715-6";
+} from "./core.js?v=20260715-9";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 mountSiteChrome("timeline");
@@ -168,7 +168,10 @@ try {
                   className: "timeline-item__image",
                   sizes: "(max-width: 680px) calc(100vw - 4rem), (max-width: 1100px) 42vw, 28rem",
                 })}
-                <figcaption>${renderMediaDisclosure(hero, heroSources, { compact: true })}</figcaption>
+                <figcaption>${renderMediaDisclosure(hero, heroSources, {
+                  compact: true,
+                  includeFullRightsNote: false,
+                })}</figcaption>
               </figure>
               ${description ? `<p>${escapeHtml(description)}</p>` : ""}
             </div>` : (description ? `<p>${escapeHtml(description)}</p>` : "")}

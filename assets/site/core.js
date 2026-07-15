@@ -173,6 +173,7 @@ function conciseRightsRationale(note = "") {
 export function renderMediaDisclosure(media, sources = [], {
   compact = false,
   includeCaption = true,
+  includeFullRightsNote = true,
   includeTitle = true,
   includeSource = true,
 } = {}) {
@@ -197,7 +198,7 @@ export function renderMediaDisclosure(media, sources = [], {
       ${includeSource && sourceHref ? `<a href="${escapeHtml(sourceHref)}"${sourceAttributes}>${escapeHtml(sourceLabel)}${sourceExternal ? ' <span aria-hidden="true">↗</span>' : ""}</a>` : ""}
     </div>
     ${compact && conciseRationale ? `<p class="media-disclosure__rationale"><strong>Use rationale:</strong> ${escapeHtml(conciseRationale)}</p>` : ""}
-    ${compact && fullRationale ? `<details class="media-disclosure__details"><summary>Full rights and use note</summary><p>${escapeHtml(rationale)}</p></details>` : ""}
+    ${compact && includeFullRightsNote && fullRationale ? `<details class="media-disclosure__details"><summary>Full rights and use note</summary><p>${escapeHtml(rationale)}</p></details>` : ""}
     ${!compact && rationale ? `<p class="media-disclosure__rationale">${mediaIsFairUse(media) ? "<strong>Use rationale:</strong> " : ""}${escapeHtml(rationale)}</p>` : ""}
   </div>`;
 }
