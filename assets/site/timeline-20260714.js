@@ -25,6 +25,67 @@ const controls = {
 };
 renderLoading(target, "Loading documented events…");
 
+const MILESTONE_EVENT_IDS = new Set([
+  "TE0001",
+  "TE0013",
+  "TE0015",
+  "TE0019",
+  "TE0049",
+  "TE0026",
+  "TE0028",
+  "TE0052",
+  "TE0035",
+  "TE0037",
+]);
+
+const TIMELINE_CHAPTERS = {
+  warsaw: {
+    number: "01",
+    title: "Warsaw years",
+    range: "1902–1926",
+    summary: "Formation · law studies · first compositions and songs",
+  },
+  berlin: {
+    number: "02",
+    title: "Berlin years",
+    range: "1926–1933",
+    summary: "Concert networks · recordings · the turn towards film",
+  },
+  paris: {
+    number: "03",
+    title: "Paris years",
+    range: "1933–1934",
+    summary: "French cinema · migration · the route to MGM",
+  },
+  america: {
+    number: "04",
+    title: "America and MGM",
+    range: "1934–1939",
+    summary: "Arrival · Hollywood · continuing transatlantic networks",
+  },
+};
+
+function chapterForEvent(event) {
+  const date = String(event.sortDate || event.dateStart || "");
+  if (event.id === "TE0014" || date < "1926-07-01") return "warsaw";
+  if (date < "1933-07-01") return "berlin";
+  if (date < "1934-10-24") return "paris";
+  return "america";
+}
+
+function chapterMarkup(key) {
+  const chapter = TIMELINE_CHAPTERS[key];
+  return `
+    <div class="timeline-chapter" aria-label="${escapeHtml(`${chapter.title}, ${chapter.range}`)}">
+      <div class="timeline-chapter__inner">
+        <span class="timeline-chapter__number">Chapter ${chapter.number}</span>
+        <h2>${escapeHtml(chapter.title)}</h2>
+        <p class="timeline-chapter__range">${escapeHtml(chapter.range)}</p>
+        <p class="timeline-chapter__summary">${escapeHtml(chapter.summary)}</p>
+      </div>
+    </div>`;
+}
+
 function addOptions(select, values) {
   for (const value of [...new Set(values.filter(Boolean))].sort()) {
     const option = document.createElement("option");
@@ -68,23 +129,40 @@ try {
       target.innerHTML = `<div class="empty-state"><h2>No matching events</h2><p>Try a broader search or remove a filter.</p></div>`;
       return;
     }
-    target.innerHTML = filtered.map((event) => {
+    let currentChapter = "";
+    let ordinaryEventIndex = 0;
+    const timelineMarkup = [];
+    for (const event of filtered) {
+      const chapter = chapterForEvent(event);
+      if (chapter !== currentChapter) {
+        timelineMarkup.push(chapterMarkup(chapter));
+        currentChapter = chapter;
+        ordinaryEventIndex = 0;
+      }
       const hero = (event.heroMediaIds || []).map((id) => mediaById.get(id)).find((item) => item?.assetPath && item.mediaType !== "audio");
       const description = event.shortDescription || event.longDescription || "";
-      return `
-        <article class="timeline-item">
-          <div class="timeline-item__date">${escapeHtml(event.displayDate || event.dateStart)}</div>
+      const isMilestone = MILESTONE_EVENT_IDS.has(event.id);
+      const side = ordinaryEventIndex % 2 === 0 ? "left" : "right";
+      if (!isMilestone) ordinaryEventIndex += 1;
+      timelineMarkup.push(`
+        <article class="timeline-item timeline-item--${isMilestone ? "milestone" : side}" data-event-id="${escapeHtml(event.id)}">
+          <span class="timeline-item__node" aria-hidden="true"></span>
           <div class="timeline-item__body">
+            <div class="timeline-item__topline">
+              ${isMilestone ? `<span class="timeline-item__kicker">Milestone</span>` : ""}
+              <div class="timeline-item__date">${escapeHtml(event.displayDate || event.dateStart)}</div>
+            </div>
             <div class="meta-row">${typeBadge(event.category || event.eventType)}${periodBadge(event.period)}</div>
-            <h2><a href="${recordUrl("event", event.id)}">${escapeHtml(event.title)}</a></h2>
+            <h3><a href="${recordUrl("event", event.id)}">${escapeHtml(event.title)}</a></h3>
             ${event.placeDisplay ? `<p class="timeline-item__place">${escapeHtml(event.placeDisplay)}</p>` : ""}
             ${hero ? `<div class="timeline-item__media-row">
               <img class="timeline-item__image" src="${escapeHtml(hero.assetPath)}" alt="${escapeHtml(hero.altText || hero.title)}" loading="lazy" decoding="async">
               ${description ? `<p>${escapeHtml(description)}</p>` : ""}
             </div>` : (description ? `<p>${escapeHtml(description)}</p>` : "")}
           </div>
-        </article>`;
-    }).join("");
+        </article>`);
+    }
+    target.innerHTML = timelineMarkup.join("");
   }
 
   controls.search?.addEventListener("input", debounce(render));
