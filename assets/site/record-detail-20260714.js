@@ -220,15 +220,24 @@ function mediaRelatedWorks(media, indexes) {
 function documentGallery(media, allMedia) {
   const paths = [...new Set(media.assetPaths || [])].filter(Boolean);
   if (media.mediaType !== "document_gallery" || paths.length < 2) return "";
+  const explicitMembers = (media.galleryMemberIds || [])
+    .map((id) => allMedia.find((item) => item.id === id))
+    .filter(Boolean);
+  const pathMatches = (item, path, fileName) => (
+    item.assetPath === path
+    || (item.assetPaths || []).includes(path)
+    || [item.assetPath, ...(item.assetPaths || [])]
+      .filter(Boolean)
+      .some((candidate) => String(candidate).split("/").pop() === fileName)
+  );
   const items = paths.map((path, index) => {
     const fileName = String(path).split("/").pop();
-    const member = allMedia.find((item) => (
-      item.id !== media.id
-      && (item.assetPath === path || (item.assetPaths || []).includes(path))
-    )) || allMedia.find((item) => (
-      item.id !== media.id
-      && (item.assetPaths || []).some((candidate) => String(candidate).split("/").pop() === fileName)
-    ));
+    const member = explicitMembers.find((item) => pathMatches(item, path, fileName))
+      || allMedia.find((item) => (
+        item.id !== media.id
+        && item.mediaType !== "document_gallery"
+        && pathMatches(item, path, fileName)
+      ));
     const title = member?.title || `Gallery image ${index + 1}`;
     const caption = member?.publicCaption || member?.description || `Image ${index + 1} of ${paths.length} in this documentary gallery.`;
     const credit = member?.publicCreditLine;

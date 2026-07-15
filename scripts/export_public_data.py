@@ -682,6 +682,9 @@ class PublicExporter:
                     )
 
     def _validate_media(self) -> None:
+        media_by_id = {
+            media["id"]: media for media in self.output_records["Media"]
+        }
         for media in self.output_records["Media"]:
             media_id = media["id"]
             gallery = media.get("galleryStatus")
@@ -722,6 +725,49 @@ class PublicExporter:
                     ):
                         self.errors.append(
                             f"Media {media_id}: fair-use record does not document limited resolution"
+                        )
+            if media.get("mediaType") == "document_gallery":
+                paths = media.get("assetPaths", [])
+                member_ids = media.get("galleryMemberIds", [])
+                if media.get("assetCount") != len(paths):
+                    self.errors.append(
+                        f"Media {media_id}: assetCount does not match assetPaths"
+                    )
+                if len(member_ids) != len(paths):
+                    self.errors.append(
+                        f"Media {media_id}: Gallery Members count does not match assetPaths"
+                    )
+                if len(set(member_ids)) != len(member_ids):
+                    self.errors.append(
+                        f"Media {media_id}: duplicate Gallery Members"
+                    )
+                if media_id in member_ids:
+                    self.errors.append(
+                        f"Media {media_id}: gallery links to itself"
+                    )
+                members = []
+                for member_id in member_ids:
+                    member = media_by_id.get(member_id)
+                    if member is None:
+                        self.errors.append(
+                            f"Media {media_id}: missing gallery member {member_id}"
+                        )
+                        continue
+                    if member.get("mediaType") == "document_gallery":
+                        self.errors.append(
+                            f"Media {media_id}: gallery member {member_id} is another document gallery"
+                        )
+                    members.append(member)
+                for path in paths:
+                    matches = [
+                        member["id"]
+                        for member in members
+                        if path == member.get("assetPath")
+                        or path in member.get("assetPaths", [])
+                    ]
+                    if len(matches) != 1:
+                        self.errors.append(
+                            f"Media {media_id}: asset path {path} matches {len(matches)} explicit gallery members"
                         )
 
     @staticmethod
