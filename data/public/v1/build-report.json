@@ -63,8 +63,7 @@
       "fields": [
         "description",
         "publicCaption",
-        "publicCreditLine",
-        "publicImageText"
+        "publicCreditLine"
       ],
       "removedFields": []
     },
@@ -132,7 +131,6 @@
       "fields": [
         "description",
         "publicCaption",
-        "publicImageText",
         "slug",
         "title"
       ],
@@ -304,7 +302,7 @@
     },
     "Media": {
       "sourceFieldsAvailable": 42,
-      "publicScalarFields": 21,
+      "publicScalarFields": 20,
       "publicLinkFields": 9,
       "derivedFields": 0
     },

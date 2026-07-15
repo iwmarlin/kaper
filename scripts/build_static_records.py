@@ -162,9 +162,9 @@ def static_page(record_type: str, record: dict, tables: dict) -> str:
     label = TYPE_LABELS[record_type]
     record_id = record["id"]
     is_gallery = record_type == "media" and record.get("mediaType") == "document_gallery"
-    if is_gallery:
-        record_script_version = "20260715-18"
-        style_version = "20260715-16"
+    if record_type == "media":
+        record_script_version = "20260715-22"
+        style_version = "20260715-16" if is_gallery else "20260715-15"
     elif record_type == "work" and record.get("workType") == "Other":
         record_script_version = "20260715-16"
         style_version = "20260715-15"

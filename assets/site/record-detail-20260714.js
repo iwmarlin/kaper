@@ -24,7 +24,7 @@ import {
   storageLabel,
   typeBadge,
   updateMeta,
-} from "./core.js?v=20260715-6";
+} from "./core.js?v=20260715-8";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 mountSiteChrome("");
@@ -280,6 +280,30 @@ function publicText(...values) {
   return value ? `<p class="lead">${escapeHtml(value)}</p>` : "";
 }
 
+const MEDIA_CONTEXT_INTERNAL_PATTERN = /\b(?:source route|local asset|rights note|publication status|rights status|asset paths?|recorded in SRC\d+|linked through SRC\d+|source SRC\d+|via IMDb|NB\s*:|verify|verification remains open|needs? (?:review|verification))\b/i;
+
+function mediaContext(media) {
+  const sentences = String(media.description || "")
+    .match(/[^.!?]+[.!?]+|[^.!?]+$/g)
+    ?.map((sentence) => sentence.trim())
+    .filter((sentence) => sentence && !MEDIA_CONTEXT_INTERNAL_PATTERN.test(sentence)) || [];
+  const description = sentences.join(" ");
+  if (!description) return "";
+  const comparableTokens = (value) => normalizeSearch(value)
+    .replace(/[^a-z0-9]+/g, " ")
+    .trim()
+    .split(/\s+/)
+    .filter((token) => token.length >= 4);
+  const referenceTokens = new Set(
+    comparableTokens(`${media.title || ""} ${media.publicCaption || ""}`),
+  );
+  const additionalTokens = new Set(
+    comparableTokens(description).filter((token) => !referenceTokens.has(token)),
+  );
+  const hasExplicitContext = /\b(?:not|rather than|reused|used as|context|evidence|documents?|shows?|depicts?|identifies?|attribution|timeline|illustration|distinguish|correction|version|variant)\b/i.test(description);
+  return additionalTokens.size >= 5 || hasExplicitContext ? description : "";
+}
+
 function renderWork(work, data, indexes) {
   const isContextOnly = work.publicScope === "context_only";
   const isSong = work.workType === "Song";
@@ -436,7 +460,6 @@ function renderMedia(media, data, indexes) {
   const places = related(media.placeIds, indexes.places);
   const organizations = related(media.organizationIds, indexes.organizations);
   const sources = related(media.sourceIds, indexes.sources);
-  const external = safeExternalUrl(media.externalUrl);
   const gallery = documentGallery(media, data.media, indexes.sources);
   const isGalleryContainer = media.mediaType === "document_gallery" && Boolean(gallery);
   const galleryCount = [...new Set(media.assetPaths || [])].filter(Boolean).length;
@@ -455,25 +478,29 @@ function renderMedia(media, data, indexes) {
       fullWidth: true,
     };
   }
+  const context = mediaContext(media);
   return {
     title: media.title,
     label: "Media record",
     badges: `${typeBadge(media.mediaType)}${periodBadge(media.period)}${mediaRightsBadge(media)}`,
     facts: `${fact("Media type", humanize(media.mediaType))}${fact("Category", humanize(media.category))}${fact("Items", gallery ? media.assetPaths.length : "")}${fact("Storage", storageLabel(media.storageType))}${fact("Gallery scope", galleryScopeLabel(media.galleryStatus))}${fact("Rights status", mediaRightsLabel(media))}`,
     main: [
-      section("Caption and context", `${publicText(media.publicCaption, media.description)}${media.publicImageText ? `<p><strong>Image text:</strong> ${escapeHtml(media.publicImageText)}</p>` : ""}${external ? `<p><a class="button button--ghost button--small" href="${escapeHtml(external)}" target="_blank" rel="noreferrer">Open source <span aria-hidden="true">↗</span></a></p>` : ""}`),
+      section("About this item", publicText(context)),
       gallery ? section(`Gallery · ${media.assetPaths.length} images`, gallery, "record-section--gallery") : "",
-      section("Rights", renderMediaDisclosure(media, sources, { includeCaption: false })),
+      section("Rights and provenance", `${renderMediaDisclosure(media, sources, {
+        includeCaption: false,
+        includeTitle: false,
+        includeSource: false,
+      })}${sourceList(sources)}`),
       section("Related works", entityList(works, "work", (item) => [item.year, item.workType].filter(Boolean).join(" · "))),
       section("Timeline", entityList(events, "event", (item) => item.displayDate || item.dateStart)),
       section("Places", entityList(places, "place", (item) => [item.city, item.country].filter(Boolean).join(", "))),
       section("Organizations", entityList(organizations, "organization", (item) => (item.types || []).map(humanize).join(", "))),
-      section("Sources and provenance", sourceList(sources)),
     ].join(""),
     aside: `<figure class="record-media">${mediaPreview(media, {
       eager: true,
       sizes: "(max-width: 900px) calc(100vw - 2rem), 20rem",
-    })}<figcaption>${escapeHtml(media.publicCreditLine || media.publicCaption || media.title)}</figcaption></figure>`,
+    })}<figcaption>${escapeHtml(media.publicCaption || media.title)}</figcaption></figure>`,
   };
 }
 

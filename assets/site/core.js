@@ -170,7 +170,12 @@ function conciseRightsRationale(note = "") {
   )) || sentences[0] || "";
 }
 
-export function renderMediaDisclosure(media, sources = [], { compact = false, includeCaption = true } = {}) {
+export function renderMediaDisclosure(media, sources = [], {
+  compact = false,
+  includeCaption = true,
+  includeTitle = true,
+  includeSource = true,
+} = {}) {
   if (!media) return "";
   const source = sources.find((item) => item?.id) || null;
   const sourceExternal = safeExternalUrl(media.externalUrl) || safeExternalUrl(source?.url);
@@ -183,17 +188,17 @@ export function renderMediaDisclosure(media, sources = [], { compact = false, in
   const conciseRationale = mediaIsFairUse(media) ? conciseRightsRationale(rationale) : "";
   const fullRationale = rationale && rationale !== conciseRationale;
   return `<div class="media-disclosure${compact ? " media-disclosure--compact" : ""}">
-    <a class="media-disclosure__title" href="${recordUrl("media", media.id)}">${escapeHtml(media.title || media.id)}</a>
+    ${includeTitle ? `<a class="media-disclosure__title" href="${recordUrl("media", media.id)}">${escapeHtml(media.title || media.id)}</a>` : ""}
     ${includeCaption && caption && caption !== media.title ? `<p class="media-disclosure__caption">${escapeHtml(caption)}</p>` : ""}
     ${credit ? `<p class="media-disclosure__credit"><strong>Credit:</strong> ${escapeHtml(credit)}</p>` : ""}
     <div class="media-disclosure__meta">
       ${mediaRightsBadge(media)}
       ${mediaIsFairUse(media) ? '<span class="media-disclosure__resolution">Reduced-resolution local reference</span>' : ""}
-      ${sourceHref ? `<a href="${escapeHtml(sourceHref)}"${sourceAttributes}>${escapeHtml(sourceLabel)}${sourceExternal ? ' <span aria-hidden="true">↗</span>' : ""}</a>` : ""}
+      ${includeSource && sourceHref ? `<a href="${escapeHtml(sourceHref)}"${sourceAttributes}>${escapeHtml(sourceLabel)}${sourceExternal ? ' <span aria-hidden="true">↗</span>' : ""}</a>` : ""}
     </div>
-    ${conciseRationale ? `<p class="media-disclosure__rationale"><strong>Use rationale:</strong> ${escapeHtml(conciseRationale)}</p>` : ""}
+    ${compact && conciseRationale ? `<p class="media-disclosure__rationale"><strong>Use rationale:</strong> ${escapeHtml(conciseRationale)}</p>` : ""}
     ${compact && fullRationale ? `<details class="media-disclosure__details"><summary>Full rights and use note</summary><p>${escapeHtml(rationale)}</p></details>` : ""}
-    ${!compact && rationale ? `<p class="media-disclosure__rationale">${escapeHtml(rationale)}</p>` : ""}
+    ${!compact && rationale ? `<p class="media-disclosure__rationale">${mediaIsFairUse(media) ? "<strong>Use rationale:</strong> " : ""}${escapeHtml(rationale)}</p>` : ""}
   </div>`;
 }
 
