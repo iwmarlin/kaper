@@ -56,6 +56,17 @@
     },
     {
       "table": "Media",
+      "id": "M059",
+      "fields": [
+        "description",
+        "publicCaption",
+        "publicImageText",
+        "slug",
+        "title"
+      ]
+    },
+    {
+      "table": "Media",
       "id": "M125",
       "fields": [
         "assetPath",
@@ -111,6 +122,13 @@
     },
     {
       "table": "Places",
+      "id": "PL021",
+      "fields": [
+        "publicNote"
+      ]
+    },
+    {
+      "table": "Places",
       "id": "PL025",
       "fields": [
         "publicNote"
@@ -134,6 +152,17 @@
         "longitude",
         "mapPrecision",
         "publicNote"
+      ]
+    },
+    {
+      "table": "Timeline Events",
+      "id": "TE0030",
+      "fields": [
+        "cityKey",
+        "label",
+        "placeDisplay",
+        "slug",
+        "title"
       ]
     }
   ],
