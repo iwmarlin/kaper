@@ -114,8 +114,11 @@ def validate(root: Path) -> dict:
         "sitemap.xml",
         "assets/site/styles.css",
         "assets/site/core.js",
+        "assets/site/image-derivatives.js",
         "data/public/v1/manifest.json",
         "data/public/v1/build-report.json",
+        "data/site/home.json",
+        "data/site/performance-report.json",
     ]
     for filename in required_files:
         if not (root / filename).is_file():
@@ -142,6 +145,21 @@ def validate(root: Path) -> dict:
             for relative in [media.get("assetPath"), *media.get("assetPaths", [])]:
                 if relative and not (root / relative).is_file():
                     errors.append(f"Media {media['id']}: missing asset {relative}")
+
+    performance_path = root / "data/site/performance-report.json"
+    if performance_path.is_file():
+        performance = read_json(performance_path)
+        if performance.get("homePayloadBytes", 0) > 50_000:
+            errors.append("Compact home-page payload exceeds 50 KB")
+        if performance.get("largestDerivative", {}).get("bytes", 0) > 1_200_000:
+            errors.append("A responsive screen derivative exceeds 1.2 MB")
+        portrait_default = performance.get("homePortrait", {}).get("default")
+        if portrait_default:
+            portrait_path = root / portrait_default
+            if not portrait_path.is_file():
+                errors.append("Responsive home portrait is missing")
+            elif portrait_path.stat().st_size > 150_000:
+                errors.append("Default responsive home portrait exceeds 150 KB")
 
     sitemap = (root / "sitemap.xml").read_text(encoding="utf-8") if (root / "sitemap.xml").is_file() else ""
     for filename in PUBLIC_PAGES[:5]:

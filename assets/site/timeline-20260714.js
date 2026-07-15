@@ -1,3 +1,4 @@
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=20260715-1";
 import {
   debounce,
   escapeHtml,
@@ -8,13 +9,16 @@ import {
   normalizeSearch,
   periodBadge,
   recordUrl,
+  registerImageDerivatives,
   renderMediaDisclosure,
   renderError,
   renderLoading,
   resolveIds,
+  responsiveImage,
   typeBadge,
-} from "./core.js?v=20260715-3";
+} from "./core.js?v=20260715-5";
 
+registerImageDerivatives(IMAGE_DERIVATIVES);
 mountSiteChrome("timeline");
 
 const target = document.querySelector("#timeline-results");
@@ -160,7 +164,10 @@ try {
             ${event.placeDisplay ? `<p class="timeline-item__place">${escapeHtml(event.placeDisplay)}</p>` : ""}
             ${hero ? `<div class="timeline-item__media-row">
               <figure class="timeline-item__figure">
-                <img class="timeline-item__image" src="${escapeHtml(hero.assetPath)}" alt="${escapeHtml(hero.altText || hero.title)}" loading="lazy" decoding="async">
+                ${responsiveImage(hero.assetPath, hero.altText || hero.title, {
+                  className: "timeline-item__image",
+                  sizes: "(max-width: 680px) calc(100vw - 4rem), (max-width: 1100px) 42vw, 28rem",
+                })}
                 <figcaption>${renderMediaDisclosure(hero, heroSources, { compact: true })}</figcaption>
               </figure>
               ${description ? `<p>${escapeHtml(description)}</p>` : ""}

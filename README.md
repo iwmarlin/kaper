@@ -17,6 +17,18 @@ python3 -m http.server 4173 --bind 127.0.0.1
 Validate:
 
 ```sh
+python3 scripts/build_site_assets.py --check
 python3 scripts/validate_public_export.py --data data/public/v1 --assets-root .
 python3 scripts/validate_site.py --root .
 ```
+
+After regenerating the public Airtable export or changing a published image,
+rebuild the compact home payload and responsive WebP derivatives:
+
+```sh
+python3 -m pip install -r requirements-site.txt
+python3 scripts/build_site_assets.py --root .
+```
+
+The build preserves the archival source files in `assets/images/`. Browser-sized,
+metadata-free derivatives are written to `assets/generated/responsive/`.

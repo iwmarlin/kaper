@@ -1,3 +1,4 @@
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=20260715-1";
 import {
   debounce,
   escapeHtml,
@@ -11,14 +12,16 @@ import {
   normalizeSearch,
   periodBadge,
   recordUrl,
+  registerImageDerivatives,
   renderMediaDisclosure,
   renderError,
   renderLoading,
   resolveIds,
   safeExternalUrl,
   typeBadge,
-} from "./core.js?v=20260715-3";
+} from "./core.js?v=20260715-5";
 
+registerImageDerivatives(IMAGE_DERIVATIVES);
 mountSiteChrome("media");
 
 const controls = {
@@ -107,7 +110,9 @@ try {
       const isLocalVisual = Boolean(item.assetPath && item.storageType !== "external" && item.mediaType !== "audio");
       const isFairUse = mediaIsFairUse(item);
       const itemSources = resolveIds(item, "sourceIds", sourcesById);
-      const preview = mediaPreview(item);
+      const preview = mediaPreview(item, {
+        sizes: "(max-width: 680px) calc(100vw - 2rem), (max-width: 1100px) 46vw, 27rem",
+      });
       const previewMarkup = isGallery
         ? `<a class="media-card__image-link" href="${recordUrl("media", item.id)}">${preview}<span>Open gallery · ${item.assetPaths.length} images</span></a>`
         : (isLocalVisual

@@ -7,7 +7,7 @@ import {
   normalizeSearch,
   recordUrl,
   renderError,
-} from "./core.js?v=20260715-2";
+} from "./core.js?v=20260715-5";
 
 mountSiteChrome("map");
 

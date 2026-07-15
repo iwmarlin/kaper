@@ -1,4 +1,9 @@
 const DATA_ROOT = "data/public/v1/";
+let imageDerivatives = Object.freeze({});
+
+export function registerImageDerivatives(mapping) {
+  imageDerivatives = mapping && typeof mapping === "object" ? mapping : Object.freeze({});
+}
 
 export const TABLE_FILES = Object.freeze({
   people: "people.json",
@@ -377,7 +382,22 @@ export function renderSourceCitation(source) {
     </li>`;
 }
 
-export function mediaPreview(media, { eager = false } = {}) {
+export function responsiveImage(assetPath, alt, {
+  className = "",
+  eager = false,
+  sizes = "(max-width: 680px) calc(100vw - 2rem), (max-width: 1100px) 48vw, 28rem",
+} = {}) {
+  const title = escapeHtml(alt || "Image");
+  const imageClass = className ? ` class="${escapeHtml(className)}"` : "";
+  const profile = imageDerivatives[assetPath];
+  if (!profile) {
+    return `<img${imageClass} src="${escapeHtml(assetPath)}" alt="${title}" ${eager ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async">`;
+  }
+  const srcset = profile.variants.map((item) => `${escapeHtml(item.path)} ${item.width}w`).join(", ");
+  return `<img${imageClass} src="${escapeHtml(profile.default)}" srcset="${srcset}" sizes="${escapeHtml(sizes)}" width="${profile.width}" height="${profile.height}" alt="${title}" ${eager ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async">`;
+}
+
+export function mediaPreview(media, { eager = false, sizes } = {}) {
   const title = escapeHtml(media.altText || media.title || "Media item");
   if (media.assetPath && media.storageType !== "external") {
     if (media.mediaType === "audio") {
@@ -386,7 +406,7 @@ export function mediaPreview(media, { eager = false } = {}) {
         <audio controls preload="metadata" src="${escapeHtml(media.assetPath)}" aria-label="Play ${title}">Your browser does not support audio.</audio>
       </div>`;
     }
-    return `<img src="${escapeHtml(media.assetPath)}" alt="${title}" ${eager ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async">`;
+    return responsiveImage(media.assetPath, media.altText || media.title, { eager, sizes });
   }
   const external = safeExternalUrl(media.externalUrl);
   const label = `Open external ${humanize(media.mediaType || "media").toLowerCase()}`;

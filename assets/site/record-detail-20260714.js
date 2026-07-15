@@ -1,3 +1,4 @@
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=20260715-1";
 import {
   certaintyBadge,
   escapeHtml,
@@ -12,9 +13,11 @@ import {
   normalizeSearch,
   periodBadge,
   recordUrl,
+  registerImageDerivatives,
   renderError,
   renderMediaDisclosure,
   renderSourceCitation,
+  responsiveImage,
   safeExternalUrl,
   setCanonicalRecordUrl,
   scopeBadge,
@@ -22,8 +25,9 @@ import {
   storageLabel,
   typeBadge,
   updateMeta,
-} from "./core.js?v=20260715-4";
+} from "./core.js?v=20260715-5";
 
+registerImageDerivatives(IMAGE_DERIVATIVES);
 mountSiteChrome("");
 
 const target = document.querySelector("#record-root");
@@ -279,7 +283,9 @@ function documentGallery(media, allMedia) {
     return `
       <figure class="record-gallery__item">
         <a class="record-gallery__image" href="${escapeHtml(path)}" target="_blank" rel="noreferrer" aria-label="Open full image: ${escapeHtml(title)}">
-          <img src="${escapeHtml(path)}" alt="${escapeHtml(member?.altText || title)}" loading="lazy" decoding="async">
+          ${responsiveImage(path, member?.altText || title, {
+            sizes: "(max-width: 680px) calc(100vw - 4rem), (max-width: 900px) 80vw, 34rem",
+          })}
           <span>Open full image <span aria-hidden="true">↗</span></span>
         </a>
         <figcaption>
@@ -315,7 +321,10 @@ function renderMedia(media, data, indexes) {
       section("Organizations", entityList(organizations, "organization", (item) => (item.types || []).map(humanize).join(", "))),
       section("Sources and provenance", sourceList(sources)),
     ].join(""),
-    aside: `<figure class="record-media">${mediaPreview(media, { eager: true })}<figcaption>${escapeHtml(media.publicCreditLine || media.publicCaption || media.title)}</figcaption></figure>`,
+    aside: `<figure class="record-media">${mediaPreview(media, {
+      eager: true,
+      sizes: "(max-width: 900px) calc(100vw - 2rem), 20rem",
+    })}<figcaption>${escapeHtml(media.publicCreditLine || media.publicCaption || media.title)}</figcaption></figure>`,
   };
 }
 
