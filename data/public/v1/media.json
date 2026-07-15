@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 189,
+  "count": 190,
   "records": [
     {
       "id": "M001",
@@ -870,24 +870,25 @@
       "mediaType": "document_gallery",
       "storageType": "multi_local_assets",
       "period": "warsaw",
-      "description": "Document gallery for Kaper's Warsaw years. Includes archival documents, contextual Warsaw images, the 1925 Chopin Music School recital notice, and press items connected with his early musical activity and studies.",
+      "description": "Document gallery for Kaper’s Warsaw years. Includes archival documents, contextual Warsaw images, the 1925 Chopin Music School recital notice, a 1926 Perskie Oko performance photograph, and press items connected with his early musical activity and studies.",
       "assetPath": "assets/images/timeline/metryka-kapera-150-u-920.png",
       "assetPaths": [
         "assets/images/timeline/metryka-kapera-150-u-920.png",
         "assets/images/timeline/biblioteka-UW-1925.jpg",
         "assets/images/timeline/filharmonia.jpg",
         "assets/images/timeline/popis-nasz-przeglad.jpg",
+        "assets/images/historical-context/zula-pogorzelska-my-chcemy-krola-1926.jpg",
         "assets/images/timeline/uw-1928.jpg",
         "assets/images/historical-context/rozenblum1-kw-18011928.jpg",
         "assets/images/historical-context/ti-1-02-1930.jpg"
       ],
-      "assetCount": 7,
+      "assetCount": 8,
       "altText": "Gallery card for Bronisław Kaper’s Warsaw years, combining documents, press items and contextual images.",
       "rightsStatus": "ok",
-      "rightsNote": "Gallery container (collection of member Media records; holds no separate image asset). Verified 2026-07-05: all member images are individually Rights=ok (press clippings from Warsaw-era papers, archival documents, context images). Container rights upgraded to ok; per-member credit lines apply on display. Reconcile Asset Count to match linked Gallery Members.",
+      "rightsNote": "Gallery container assembled from linked Media records; it holds no separate image asset. All eight member images are individually marked Rights Status = ok, and each member carries its own source and public credit line. Asset Count, Gallery Members and Asset Paths were reconciled on 2026-07-15.",
       "sortOrder": 30,
       "slug": "warsaw-years-m030",
-      "publicCaption": "Gallery of documents, press items and contextual images relating to Bronisław Kaper’s Warsaw years, including the 1925 Chopin Music School recital, university study, early Polish sources and first songwriting traces.",
+      "publicCaption": "Gallery of documents, press items and contextual images relating to Bronisław Kaper’s Warsaw years, including the 1925 Chopin Music School recital, university study, early songwriting traces and Zula Pogorzelska in the 1926 Perskie Oko revue “My chcemy króla.”",
       "publicImageText": "Document-gallery entry for the Warsaw Years section.",
       "publicCreditLine": "Composite gallery card assembled for the site from linked source materials; see linked Sources for individual items.",
       "category": "document gallery",
@@ -897,8 +898,10 @@
         "SRC0014",
         "SRC0016",
         "SRC0018",
+        "SRC0082",
         "SRC0111",
-        "SRC0337"
+        "SRC0337",
+        "SRC0554"
       ],
       "timelineEventIds": [
         "TE0001",
@@ -6186,6 +6189,37 @@
       ],
       "heroTimelineEventIds": [
         "TE0019"
+      ]
+    },
+    {
+      "id": "M232",
+      "title": "Zula Pogorzelska in My chcemy króla at Teatr Perskie Oko (1926)",
+      "mediaType": "image",
+      "storageType": "local",
+      "period": "warsaw",
+      "description": "Stage photograph of Zula Pogorzelska in a scene from the revue “My chcemy króla” at Warsaw’s Teatr “Perskie Oko,” April 1926. The photograph provides visual context for the interwar revue environment in which Kaper’s earliest Warsaw songs and professional networks developed; it is not used as evidence for a Kaper credit in this revue.",
+      "externalUrl": "https://www.szukajwarchiwach.gov.pl/jednostka/-/jednostka/5934199",
+      "assetPath": "assets/images/historical-context/zula-pogorzelska-my-chcemy-krola-1926.jpg",
+      "assetPaths": [
+        "assets/images/historical-context/zula-pogorzelska-my-chcemy-krola-1926.jpg"
+      ],
+      "assetCount": 1,
+      "altText": "Black-and-white stage photograph of Zula Pogorzelska posing with a folding fan in an ornate costume and large decorative hat.",
+      "rightsStatus": "ok",
+      "rightsNote": "Public domain according to the Szukaj w Archiwach catalogue record. Photographer unknown. Publish with the NAC collection and reference credit.",
+      "sortOrder": 232,
+      "slug": "zula-pogorzelska-my-chcemy-krola-perskie-oko-1926",
+      "publicCaption": "Zula Pogorzelska in a scene from “My chcemy króla” at Teatr “Perskie Oko,” Warsaw, April 1926. The photograph documents the visual culture of the Warsaw revue stage during Kaper’s early professional period.",
+      "publicImageText": "Zula Pogorzelska · My chcemy króla · Perskie Oko, 1926",
+      "publicCreditLine": "Narodowe Archiwum Cyfrowe, Koncern Ilustrowany Kurier Codzienny — Archiwum Ilustracji, ref. 3/1/0/11/11396/1 (former ref. 1-K-11396). Public domain.",
+      "category": "place / context image",
+      "galleryStatus": "eligible",
+      "organizationIds": [
+        "ORG070",
+        "ORG111"
+      ],
+      "sourceIds": [
+        "SRC0554"
       ]
     }
   ]

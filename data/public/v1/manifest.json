@@ -5,8 +5,8 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "sourceSnapshot": "2026-07-15T09:41:11.526056+00:00",
-  "sourceRecordCount": 2824,
+  "sourceSnapshot": "2026-07-15T10:25:05.165512+00:00",
+  "sourceRecordCount": 2826,
   "generator": {
     "file": "export_public_data.py",
     "sha256": "181bda304d5a4082e5a1c262d0db9bb6d44408a7603f4597b097c884e22b345a"
@@ -18,8 +18,8 @@
     },
     "overrides": {
       "file": "public_export_overrides.json",
-      "sha256": "31ba177ee0c7282bb5597d39df94805ca8b3fe45474bc29944fd04b377263a87",
-      "appliedCount": 18
+      "sha256": "d9c9c5ad75f74808820241e7eb151bf32a30312a80dd419d1ce9eaab116dc35e",
+      "appliedCount": 17
     }
   },
   "exportPolicy": {
@@ -45,8 +45,8 @@
   "counts": {
     "People": 109,
     "Organizations": 108,
-    "Sources": 484,
-    "Media": 189,
+    "Sources": 485,
+    "Media": 190,
     "Works": 280,
     "Films": 55,
     "Songs": 203,
@@ -61,8 +61,8 @@
   "files": [
     {
       "file": "build-report.json",
-      "bytes": 5127,
-      "sha256": "ea64a2e9f323db85d3ff420804023e4e4925d10c63da03b6cb8687d7f64a72df"
+      "bytes": 4953,
+      "sha256": "901f55265e165b0447c10ba96daa6d6bd26a6d847469679c567eb0b1e55aaf27"
     },
     {
       "file": "contributions.json",
@@ -76,13 +76,13 @@
     },
     {
       "file": "media.json",
-      "bytes": 357615,
-      "sha256": "9459dfadf00ecffaa742294f80937ed8674bbf34a134ca790ee4eaaf116dab4c"
+      "bytes": 359806,
+      "sha256": "be582c1bfade1abd85df5689d897b6a711801e76a2a56cac540321549d7f8844"
     },
     {
       "file": "organizations.json",
-      "bytes": 69134,
-      "sha256": "64dc9af3a7b08db6dfe0eed9b7a9770e8dca978e3c243ff59a8e9b6e0b6254b4"
+      "bytes": 69172,
+      "sha256": "5fbe956b55d7c479231c8150cc1955e24fa6db66f58be84a66aa31db039894d7"
     },
     {
       "file": "other-works.json",
@@ -111,8 +111,8 @@
     },
     {
       "file": "sources.json",
-      "bytes": 622836,
-      "sha256": "13a0a705f33218fc967e35b4606be1f7369ef44c5de53108cd84e6016180ece0"
+      "bytes": 624065,
+      "sha256": "a487e7dd4b86c9a8002f8c2c25a78150955b4497ccb973b48a97d786991de437"
     },
     {
       "file": "timeline-events.json",
