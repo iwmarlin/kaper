@@ -159,6 +159,7 @@ def static_page(record_type: str, record: dict, tables: dict) -> str:
     summary = summary_for(record_type, record, tables)
     label = TYPE_LABELS[record_type]
     record_id = record["id"]
+    record_script_version = "20260715-13" if record_type == "work" and record.get("workType") == "Song" else "20260715-12"
     route = f"records/{record_type}/{quote(record_id, safe='')}/"
     canonical = f"{ORIGIN}{route}"
     facts = "".join(
@@ -206,7 +207,7 @@ def static_page(record_type: str, record: dict, tables: dict) -> str:
     </div>
   </main>
   <footer class="site-footer" data-site-footer><div class="shell"><p>Bronisław Kaper research archive · documented through 1939</p></div></footer>
-  <script type="module" src="assets/site/record-detail-20260714.js?v=20260715-12"></script>
+  <script type="module" src="assets/site/record-detail-20260714.js?v={record_script_version}"></script>
 </body>
 </html>
 """
