@@ -355,7 +355,6 @@ function renderPerson(person, data, indexes) {
     .sort((a, b) => Number(a.year || 9999) - Number(b.year || 9999) || String(a.title).localeCompare(String(b.title)));
   const events = related(person.timelineEventIds, indexes.timelineEvents)
     .sort((a, b) => String(a.dateStart || "9999").localeCompare(String(b.dateStart || "9999")) || String(a.title).localeCompare(String(b.title)));
-  const places = related(person.placeIds, indexes.places);
   const sources = related(person.sourceIds, indexes.sources)
     .sort((a, b) => String(a.date || "9999").localeCompare(String(b.date || "9999")) || String(a.shortCitation || a.title).localeCompare(String(b.shortCitation || b.title)));
   const identities = related(person.nameVariantIds, indexes.personNameVariants)
@@ -387,7 +386,6 @@ function renderPerson(person, data, indexes) {
       section("Pseudonyms and documented identities", identities.length ? `<ul class="entity-list identity-list">${identities.map((item) => `<li><span><strong>${escapeHtml(item.variantName)}</strong>${item.publicNote ? `<br><small>${escapeHtml(item.publicNote)}</small>` : ""}</span>${typeBadge(item.variantType)}</li>`).join("")}</ul>` : ""),
       workSections ? section("Related records", `<div class="person-collections">${workSections}</div>`) : "",
       events.length ? section("Documented chronology", personEntityDisclosure("Timeline events", events, "event", (item) => item.displayDate || item.dateStart)) : "",
-      section("Places", entityList(places, "place", (item) => [item.city, item.country].filter(Boolean).join(", "))),
       sources.length ? section("Research sources", personSourceDisclosure(sources)) : "",
     ].join(""),
     aside: `<div class="scope-note">Source-specific spellings and printed credit forms appear only on the relevant work records, where their evidentiary context is visible.</div>`,

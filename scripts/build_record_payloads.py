@@ -151,7 +151,6 @@ class RecordPayloadBuilder:
         elif record_type == "person":
             self.add(bundle, "works", record_ids(root, "workIds"))
             self.add(bundle, "timelineEvents", record_ids(root, "timelineEventIds"))
-            self.add(bundle, "places", record_ids(root, "placeIds"))
             self.add(bundle, "sources", record_ids(root, "sourceIds"))
             self.add(bundle, "personNameVariants", record_ids(root, "nameVariantIds"))
         elif record_type == "organization":
