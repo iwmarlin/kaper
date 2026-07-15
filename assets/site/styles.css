@@ -743,7 +743,7 @@ main {
   z-index: 4;
   display: grid;
   place-items: center;
-  margin: 1.5rem 0 4rem;
+  margin: 1.1rem 0 3rem;
   text-align: center;
 }
 
@@ -752,8 +752,8 @@ main {
 }
 
 .timeline-chapter__inner {
-  width: min(100%, 38rem);
-  padding: 1.2rem 2.2rem 1.35rem;
+  width: min(100%, 32rem);
+  padding: 0.9rem 1.6rem 1rem;
   border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: var(--radius-md);
   background: var(--ink);
@@ -763,7 +763,7 @@ main {
 
 .timeline-chapter__number {
   display: block;
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.2rem;
   color: #e0bc7b;
   font-size: 0.7rem;
   font-weight: 700;
@@ -772,16 +772,16 @@ main {
 }
 
 .timeline-chapter h2 {
-  margin-bottom: 0.15rem;
+  margin-bottom: 0.1rem;
   color: #fffdf8;
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-size: clamp(1.65rem, 3vw, 2.2rem);
 }
 
 .timeline-chapter__range {
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.25rem;
   color: #e0bc7b;
   font-family: var(--serif);
-  font-size: 1.1rem;
+  font-size: 0.98rem;
   font-weight: 600;
   letter-spacing: 0.04em;
 }
@@ -789,7 +789,7 @@ main {
 .timeline-chapter__summary {
   margin: 0;
   color: rgba(255, 253, 248, 0.78);
-  font-size: 0.82rem;
+  font-size: 0.76rem;
   letter-spacing: 0.025em;
 }
 
@@ -932,7 +932,7 @@ main {
 
 .timeline-item--milestone {
   display: grid;
-  padding: 1.6rem 0 5rem;
+  padding: 1.25rem 0 3.8rem;
 }
 
 .timeline-item--milestone::after {
@@ -941,16 +941,16 @@ main {
 
 .timeline-item--milestone .timeline-item__node {
   top: 0.05rem;
-  width: 1.1rem;
+  width: 1rem;
   background: var(--gold);
   box-shadow: 0 0 0 2px var(--paper), 0 0 0 7px rgba(183, 139, 69, 0.2);
 }
 
 .timeline-item--milestone .timeline-item__body {
   grid-column: 1 / -1;
-  width: min(100%, 62rem);
+  width: min(100%, 54rem);
   margin-inline: auto;
-  padding: 1.65rem 2rem 2rem;
+  padding: 1.25rem 1.5rem 1.5rem;
   border-color: rgba(183, 139, 69, 0.72);
   background:
     linear-gradient(135deg, rgba(183, 139, 69, 0.11), transparent 42%),
@@ -962,7 +962,7 @@ main {
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  gap: 0.25rem;
+  gap: 0.15rem;
   text-align: center;
 }
 
@@ -975,7 +975,7 @@ main {
 }
 
 .timeline-item--milestone .timeline-item__date {
-  font-size: clamp(1.65rem, 3vw, 2.25rem);
+  font-size: clamp(1.4rem, 2.4vw, 1.8rem);
 }
 
 .timeline-item--milestone .meta-row {
@@ -988,19 +988,19 @@ main {
 }
 
 .timeline-item--milestone h3 {
-  max-width: 48rem;
-  margin: 0.7rem auto 0.55rem;
-  font-size: clamp(2rem, 4vw, 3rem);
+  max-width: 42rem;
+  margin: 0.55rem auto 0.45rem;
+  font-size: clamp(1.7rem, 3vw, 2.3rem);
 }
 
 .timeline-item--milestone .timeline-item__media-row {
   grid-template-columns: minmax(15rem, 0.9fr) minmax(0, 1.1fr);
   align-items: center;
-  gap: 1.5rem;
+  gap: 1.15rem;
 }
 
 .timeline-item--milestone .timeline-item__image {
-  height: 19rem;
+  height: 15.5rem;
 }
 
 .timeline-item--milestone .timeline-item__media-row p {
@@ -1884,7 +1884,7 @@ main {
   }
 
   .timeline-item--milestone .timeline-item__image {
-    height: 17rem;
+    height: 15rem;
   }
 
   .hero__grid,
@@ -2132,7 +2132,7 @@ main {
   }
 
   .timeline-item--milestone {
-    padding: 1.1rem 0 3.3rem 2rem;
+    padding: 0.95rem 0 2.8rem 2rem;
   }
 
   .timeline-item--milestone .timeline-item__node {
@@ -2144,7 +2144,7 @@ main {
   }
 
   .timeline-item--milestone .timeline-item__body {
-    padding: 1.3rem 1.25rem 1.45rem;
+    padding: 1.05rem 1.1rem 1.2rem;
   }
 
   .timeline-item__media-row,
@@ -2154,12 +2154,12 @@ main {
 
   .timeline-item__image,
   .timeline-item--milestone .timeline-item__image {
-    height: min(17rem, 62vw);
+    height: min(15rem, 58vw);
   }
 
   .timeline-chapter {
     place-items: stretch;
-    margin: 0.5rem 0 2.8rem;
+    margin: 0.4rem 0 2.2rem;
     padding-left: 2rem;
     text-align: left;
   }
@@ -2170,11 +2170,11 @@ main {
 
   .timeline-chapter__inner {
     width: 100%;
-    padding: 1rem 1.2rem 1.1rem;
+    padding: 0.8rem 1rem 0.9rem;
   }
 
   .timeline-chapter h2 {
-    font-size: 2rem;
+    font-size: 1.7rem;
   }
 
   .record-hero h1,
