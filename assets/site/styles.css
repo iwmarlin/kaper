@@ -560,7 +560,9 @@ main {
 }
 
 .badge--confirmed,
-.badge--ok {
+.badge--ok,
+.badge--public_domain,
+.badge--permission_granted {
   border-color: rgba(53, 102, 81, 0.38);
   background: rgba(53, 102, 81, 0.09);
   color: var(--green);
@@ -790,10 +792,33 @@ main {
 
 .timeline-item__image {
   width: 100%;
-  max-height: 18rem;
-  margin: 1rem 0;
+  height: 10.5rem;
+  margin: 0;
   border-radius: var(--radius-sm);
   object-fit: cover;
+}
+
+.timeline-item__media-row {
+  display: grid;
+  grid-template-columns: minmax(13rem, 0.82fr) minmax(0, 1.18fr);
+  align-items: start;
+  gap: 1.2rem;
+  margin-top: 1rem;
+}
+
+.timeline-item__media-row p {
+  display: -webkit-box;
+  margin: 0;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 6;
+}
+
+.timeline-item__image--contain {
+  padding: 0.4rem;
+  border: 1px solid var(--line);
+  background: var(--paper-deep);
+  object-fit: contain;
 }
 
 .map-hero {
@@ -1159,6 +1184,10 @@ main {
   object-fit: contain;
 }
 
+.media-card:has(.media-card__image-link) {
+  border-color: var(--line-dark);
+}
+
 .media-card__image-link {
   position: relative;
   display: block;
@@ -1240,17 +1269,43 @@ main {
 }
 
 .media-preview--audio {
-  gap: 1rem;
-  padding: 2rem 1rem;
+  align-content: center;
+  gap: 1.35rem;
+  padding: 1.7rem 1rem;
+  background:
+    radial-gradient(circle at 20% 15%, rgba(215, 170, 99, 0.2), transparent 30%),
+    linear-gradient(135deg, var(--ink), #294d56);
 }
 
-.media-preview--audio > span {
+.media-preview__audio-mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.media-preview__audio-mark span {
+  display: grid;
+  width: 3.15rem;
+  aspect-ratio: 1;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 50%;
   font-family: var(--serif);
-  font-size: 4rem;
+  font-size: 2rem;
+}
+
+.media-preview__audio-mark strong {
+  color: white;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
 
 .media-preview--audio audio {
   width: min(100%, 22rem);
+  min-height: 2.5rem;
+  filter: sepia(0.1) saturate(0.75);
 }
 
 .media-preview--external span:first-child {
@@ -1293,6 +1348,17 @@ main {
   max-width: 14ch;
   margin-bottom: 1rem;
   font-size: clamp(2.5rem, 6vw, 5rem);
+}
+
+.record-hero--long-title h1 {
+  max-width: 18ch;
+  font-size: clamp(2.35rem, 4.8vw, 4.15rem);
+}
+
+.record-hero--extra-long-title h1 {
+  max-width: 21ch;
+  font-size: clamp(2.15rem, 4.1vw, 3.55rem);
+  line-height: 1.02;
 }
 
 .record-id {
@@ -1841,6 +1907,34 @@ main {
 
   .timeline-item__date {
     text-align: left;
+  }
+
+  .timeline-item__media-row {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline-item__image {
+    height: auto;
+    max-height: 15rem;
+  }
+
+  .timeline-item__image:not(.timeline-item__image--contain) {
+    aspect-ratio: 16 / 9;
+  }
+
+  .record-hero h1,
+  .record-hero--long-title h1,
+  .record-hero--extra-long-title h1 {
+    max-width: none;
+  }
+
+  .record-hero--long-title h1 {
+    font-size: clamp(2.15rem, 10vw, 2.75rem);
+  }
+
+  .record-hero--extra-long-title h1 {
+    font-size: clamp(1.95rem, 9vw, 2.45rem);
+    line-height: 1.04;
   }
 
   .gallery-grid {

@@ -48,6 +48,16 @@
     },
     {
       "table": "Media",
+      "id": "M030",
+      "fields": [
+        "assetCount",
+        "assetPaths",
+        "description",
+        "publicCaption"
+      ]
+    },
+    {
+      "table": "Media",
       "id": "M035",
       "fields": [
         "assetPath",

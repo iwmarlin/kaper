@@ -11,8 +11,12 @@ import {
   recordUrl,
   renderError,
   renderSourceCitation,
+  rightsBadge,
+  rightsLabel,
   safeExternalUrl,
   setCanonicalRecordUrl,
+  galleryScopeLabel,
+  storageLabel,
   typeBadge,
   updateMeta,
 } from "./core.js";
@@ -111,7 +115,7 @@ function rightsPanel(media) {
   if (!media.rightsStatus && !media.rightsNote && !media.publicCreditLine) return "";
   return `<div class="rights-panel">
     <p class="eyebrow">Rights and permitted use</p>
-    <h2>${escapeHtml(humanize(media.rightsStatus || "Rights information"))}</h2>
+    <h2>${escapeHtml(rightsLabel(media.rightsStatus, media.rightsNote))}</h2>
     ${media.publicCreditLine ? `<p><strong>Credit:</strong> ${escapeHtml(media.publicCreditLine)}</p>` : ""}
     ${media.rightsNote ? `<p>${escapeHtml(media.rightsNote)}</p>` : ""}
   </div>`;
@@ -255,8 +259,8 @@ function renderMedia(media, data, indexes) {
   return {
     title: media.title,
     label: "Media record",
-    badges: `${typeBadge(media.mediaType)}${periodBadge(media.period)}${typeBadge(media.rightsStatus)}`,
-    facts: `${fact("Media type", humanize(media.mediaType))}${fact("Category", humanize(media.category))}${fact("Items", gallery ? media.assetPaths.length : "")}${fact("Storage", humanize(media.storageType))}${fact("Gallery scope", humanize(media.galleryStatus))}${fact("Rights status", humanize(media.rightsStatus))}`,
+    badges: `${typeBadge(media.mediaType)}${periodBadge(media.period)}${rightsBadge(media.rightsStatus, media.rightsNote)}`,
+    facts: `${fact("Media type", humanize(media.mediaType))}${fact("Category", humanize(media.category))}${fact("Items", gallery ? media.assetPaths.length : "")}${fact("Storage", storageLabel(media.storageType))}${fact("Gallery scope", galleryScopeLabel(media.galleryStatus))}${fact("Rights status", rightsLabel(media.rightsStatus, media.rightsNote))}`,
     main: [
       section("Caption and context", `${publicText(media.publicCaption, media.description)}${media.publicImageText ? `<p><strong>Image text:</strong> ${escapeHtml(media.publicImageText)}</p>` : ""}${external ? `<p><a class="button button--ghost button--small" href="${escapeHtml(external)}" target="_blank" rel="noreferrer">Open at source institution <span aria-hidden="true">↗</span></a></p>` : ""}`),
       gallery ? section(`Gallery · ${media.assetPaths.length} images`, gallery, "record-section--gallery") : "",
@@ -367,6 +371,8 @@ try {
   if (!record) throw new Error(`No public ${config.label.toLowerCase()} record was found for ${requestedId}.`);
 
   const view = renderers[requestedType](record, data, indexes);
+  const titleLength = Array.from(view.title || "").length;
+  const titleClass = titleLength > 72 ? " record-hero--extra-long-title" : titleLength > 46 ? " record-hero--long-title" : "";
   updateMeta({
     title: view.title,
     description: `${config.label} ${requestedId} in the source-based Bronisław Kaper archive, documented through 1939.`,
@@ -374,7 +380,7 @@ try {
   setCanonicalRecordUrl(requestedType, requestedId);
   target.className = "";
   target.innerHTML = `
-    <section class="record-hero">
+    <section class="record-hero${titleClass}">
       <div class="shell record-hero__grid">
         <div>
           <p class="eyebrow">${escapeHtml(view.label)} · <span class="record-id">${escapeHtml(requestedId)}</span></p>

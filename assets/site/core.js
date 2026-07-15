@@ -110,6 +110,50 @@ export function typeBadge(type) {
   return `<span class="badge badge--type">${escapeHtml(humanize(type))}</span>`;
 }
 
+const RIGHTS_LABELS = Object.freeze({
+  ok: "Rights documented",
+  public_domain: "Public domain",
+  permission_granted: "Permission granted",
+  permission_needed_or_fair_use_claimed: "Fair use / permission",
+  copyright_undetermined: "Copyright undetermined",
+  restricted: "Restricted use",
+});
+
+export function rightsLabel(status, note = "") {
+  if (!status) return "Rights information";
+  const key = String(status).toLowerCase().trim().replaceAll(" ", "_");
+  const normalizedNote = String(note).toLowerCase();
+  if (key === "ok" && /public[ -]domain|rightsstatements\.org\/vocab\/noc/.test(normalizedNote)) return "Public domain";
+  if (key === "ok" && /reproduced by permission|permission (?:was )?granted|used with permission/.test(normalizedNote)) return "Permission granted";
+  if (key === "permission_needed_or_fair_use_claimed" && /fair[ -]use/.test(normalizedNote)) return "Fair use";
+  return RIGHTS_LABELS[key] || humanize(status);
+}
+
+export function rightsBadge(status, note = "") {
+  if (!status) return "";
+  const key = String(status).toLowerCase().trim().replaceAll(" ", "_");
+  return `<span class="badge badge--rights badge--${escapeHtml(key)}">${escapeHtml(rightsLabel(status, note))}</span>`;
+}
+
+export function storageLabel(storageType) {
+  const labels = {
+    local: "Local archival copy",
+    multi_local_assets: "Curated local collection",
+    external: "External reference",
+  };
+  return labels[storageType] || humanize(storageType);
+}
+
+export function galleryScopeLabel(status) {
+  const labels = {
+    selected: "Curated selection",
+    eligible: "Available in the archive",
+    detail_only: "Record detail only",
+    external_link_only: "External reference",
+  };
+  return labels[status] || humanize(status);
+}
+
 export function formatDate(value) {
   if (!value) return "";
   const match = String(value).match(/^(\d{4})(?:-(\d{2}))?(?:-(\d{2}))?/);
@@ -279,7 +323,10 @@ export function mediaPreview(media, { eager = false } = {}) {
   const title = escapeHtml(media.altText || media.title || "Media item");
   if (media.assetPath && media.storageType !== "external") {
     if (media.mediaType === "audio") {
-      return `<div class="media-preview media-preview--audio"><span aria-hidden="true">♪</span><audio controls preload="none" src="${escapeHtml(media.assetPath)}">Your browser does not support audio.</audio></div>`;
+      return `<div class="media-preview media-preview--audio">
+        <div class="media-preview__audio-mark"><span aria-hidden="true">♪</span><strong>Audio sample</strong></div>
+        <audio controls preload="metadata" src="${escapeHtml(media.assetPath)}" aria-label="Play ${title}">Your browser does not support audio.</audio>
+      </div>`;
     }
     return `<img src="${escapeHtml(media.assetPath)}" alt="${title}" ${eager ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async">`;
   }

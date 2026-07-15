@@ -70,6 +70,10 @@ try {
     }
     target.innerHTML = filtered.map((event) => {
       const hero = (event.heroMediaIds || []).map((id) => mediaById.get(id)).find((item) => item?.assetPath && item.mediaType !== "audio");
+      const description = event.shortDescription || event.longDescription || "";
+      const heroPresentation = normalizeSearch([hero?.category, hero?.title, hero?.mediaType].filter(Boolean).join(" "));
+      const photographicHero = /(portrait|photograph|photo\b|exterior view|city view|street view|film still)/.test(heroPresentation);
+      const containHero = hero && !photographicHero;
       return `
         <article class="timeline-item">
           <div class="timeline-item__date">${escapeHtml(event.displayDate || event.dateStart)}</div>
@@ -77,8 +81,10 @@ try {
             <div class="meta-row">${typeBadge(event.category || event.eventType)}${periodBadge(event.period)}</div>
             <h2><a href="${recordUrl("event", event.id)}">${escapeHtml(event.title)}</a></h2>
             ${event.placeDisplay ? `<p class="timeline-item__place">${escapeHtml(event.placeDisplay)}</p>` : ""}
-            ${hero ? `<img class="timeline-item__image" src="${escapeHtml(hero.assetPath)}" alt="${escapeHtml(hero.altText || hero.title)}" loading="lazy" decoding="async">` : ""}
-            <p>${escapeHtml(event.shortDescription || event.longDescription || "")}</p>
+            ${hero ? `<div class="timeline-item__media-row">
+              <img class="timeline-item__image${containHero ? " timeline-item__image--contain" : ""}" src="${escapeHtml(hero.assetPath)}" alt="${escapeHtml(hero.altText || hero.title)}" loading="lazy" decoding="async">
+              ${description ? `<p>${escapeHtml(description)}</p>` : ""}
+            </div>` : (description ? `<p>${escapeHtml(description)}</p>` : "")}
           </div>
         </article>`;
     }).join("");

@@ -10,6 +10,7 @@ import {
   recordUrl,
   renderError,
   renderLoading,
+  rightsBadge,
   safeExternalUrl,
   typeBadge,
 } from "./core.js";
@@ -39,6 +40,27 @@ function addOptions(select, values) {
   }
 }
 
+function compareMedia(a, b) {
+  return Number(a.sortOrder || 99999) - Number(b.sortOrder || 99999)
+    || String(a.title).localeCompare(String(b.title));
+}
+
+function curatedOrder(items) {
+  const collections = items.filter((item) => item.mediaType === "document_gallery").sort(compareMedia);
+  const images = items.filter((item) => item.mediaType === "image").sort(compareMedia);
+  const references = items.filter((item) => ["video", "audio", "sheet music"].includes(item.mediaType)).sort(compareMedia);
+  const other = items.filter((item) => !["document_gallery", "image", "video", "audio", "sheet music"].includes(item.mediaType)).sort(compareMedia);
+  const result = [...collections];
+  let imageIndex = 0;
+  let referenceIndex = 0;
+  while (imageIndex < images.length || referenceIndex < references.length) {
+    result.push(...images.slice(imageIndex, imageIndex + 2));
+    imageIndex += 2;
+    if (referenceIndex < references.length) result.push(references[referenceIndex++]);
+  }
+  return [...result, ...other];
+}
+
 try {
   const { media } = await loadTables(["media"]);
   addOptions(controls.type, media.map((item) => item.mediaType));
@@ -56,8 +78,12 @@ try {
         && (!controls.type.value || item.mediaType === controls.type.value)
         && (!controls.period.value || item.period === controls.period.value)
         && (controls.scope.value === "all" || item.galleryStatus === controls.scope.value)
-      ))
-      .sort((a, b) => Number(a.sortOrder || 99999) - Number(b.sortOrder || 99999) || String(a.title).localeCompare(String(b.title)));
+      ));
+    const isDefaultCuratedView = controls.scope.value === "selected"
+      && !query
+      && !controls.type.value
+      && !controls.period.value;
+    current = isDefaultCuratedView ? curatedOrder(current) : current.sort(compareMedia);
     const shown = current.slice(0, visible);
     countTarget.innerHTML = `<strong>${current.length}</strong> ${current.length === 1 ? "item" : "items"} shown`;
     more.hidden = shown.length >= current.length;
@@ -73,7 +99,7 @@ try {
         <article class="media-card">
           <figure>${isGallery ? `<a class="media-card__image-link" href="${recordUrl("media", item.id)}">${preview}<span>Open gallery · ${item.assetPaths.length} images</span></a>` : preview}</figure>
           <div class="media-card__body">
-            <div class="meta-row">${typeBadge(item.mediaType)}${periodBadge(item.period)}${typeBadge(item.rightsStatus)}</div>
+            <div class="meta-row">${typeBadge(item.mediaType)}${periodBadge(item.period)}${rightsBadge(item.rightsStatus, item.rightsNote)}</div>
             <h2><a href="${recordUrl("media", item.id)}">${escapeHtml(item.title)}</a></h2>
             <p>${escapeHtml(item.publicCaption || item.description || "")}</p>
             <div class="card__footer"><span>${escapeHtml(humanize(item.category || item.galleryStatus))}</span><span>${escapeHtml(item.id)}</span></div>
