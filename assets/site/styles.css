@@ -729,7 +729,7 @@ main {
   position: absolute;
   top: 0;
   bottom: 0;
-  left: 7.25rem;
+  left: 9rem;
   width: 1px;
   background: var(--line-dark);
   content: "";
@@ -738,7 +738,7 @@ main {
 .timeline-item {
   position: relative;
   display: grid;
-  grid-template-columns: 6rem minmax(0, 1fr);
+  grid-template-columns: 7.75rem minmax(0, 1fr);
   gap: 2.5rem;
   padding-bottom: 3rem;
 }
@@ -746,8 +746,8 @@ main {
 .timeline-item::before {
   position: absolute;
   top: 0.5rem;
-  left: 6.93rem;
-  width: 0.65rem;
+  left: 8.62rem;
+  width: 0.78rem;
   aspect-ratio: 1;
   border: 2px solid var(--paper);
   border-radius: 50%;
@@ -760,7 +760,9 @@ main {
   padding-top: 0.12rem;
   color: var(--accent);
   font-family: var(--serif);
-  font-size: 1.05rem;
+  font-size: clamp(1.16rem, 1.45vw, 1.3rem);
+  font-weight: 600;
+  line-height: 1.25;
   text-align: right;
 }
 
@@ -791,11 +793,20 @@ main {
 }
 
 .timeline-item__image {
+  box-sizing: border-box;
   width: 100%;
-  height: 10.5rem;
+  height: auto;
+  aspect-ratio: 16 / 10;
   margin: 0;
+  padding: 0.5rem;
+  border: 1px solid var(--line);
   border-radius: var(--radius-sm);
-  object-fit: cover;
+  background:
+    linear-gradient(145deg, rgba(255, 253, 248, 0.76), rgba(232, 226, 214, 0.78)),
+    var(--paper-deep);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.48);
+  object-fit: contain;
+  object-position: center;
 }
 
 .timeline-item__media-row {
@@ -812,13 +823,6 @@ main {
   overflow: hidden;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 6;
-}
-
-.timeline-item__image--contain {
-  padding: 0.4rem;
-  border: 1px solid var(--line);
-  background: var(--paper-deep);
-  object-fit: contain;
 }
 
 .map-hero {
@@ -1915,11 +1919,8 @@ main {
 
   .timeline-item__image {
     height: auto;
-    max-height: 15rem;
-  }
-
-  .timeline-item__image:not(.timeline-item__image--contain) {
-    aspect-ratio: 16 / 9;
+    max-height: none;
+    aspect-ratio: 16 / 10;
   }
 
   .record-hero h1,
