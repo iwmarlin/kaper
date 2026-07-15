@@ -108,15 +108,15 @@ h4 {
 }
 
 h1 {
-  font-size: clamp(2.55rem, 6vw, 4.8rem);
+  font-size: clamp(2.4rem, 5.2vw, 4.15rem);
 }
 
 h2 {
-  font-size: clamp(1.85rem, 3.8vw, 3rem);
+  font-size: clamp(1.75rem, 3.2vw, 2.65rem);
 }
 
 h3 {
-  font-size: clamp(1.25rem, 2vw, 1.68rem);
+  font-size: clamp(1.22rem, 1.8vw, 1.52rem);
 }
 
 .shell {
@@ -592,7 +592,7 @@ main {
 .page-hero h1 {
   max-width: 12ch;
   margin-bottom: 0.9rem;
-  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-size: clamp(2.3rem, 4.3vw, 3.45rem);
 }
 
 .scope-note {
@@ -932,7 +932,7 @@ main {
 
 .timeline-item--milestone {
   display: grid;
-  padding: 1.1rem 0 3.2rem;
+  padding: 0.9rem 0 2.65rem;
 }
 
 .timeline-item--milestone::after {
@@ -941,21 +941,21 @@ main {
 
 .timeline-item--milestone .timeline-item__node {
   top: 0.05rem;
-  width: 1rem;
+  width: 0.9rem;
   background: var(--gold);
-  box-shadow: 0 0 0 2px var(--paper), 0 0 0 7px rgba(183, 139, 69, 0.2);
+  box-shadow: 0 0 0 2px var(--paper), 0 0 0 6px rgba(183, 139, 69, 0.18);
 }
 
 .timeline-item--milestone .timeline-item__body {
   grid-column: 1 / -1;
-  width: min(100%, 54rem);
+  width: min(100%, 46rem);
   margin-inline: auto;
-  padding: 1.1rem 1.25rem 1.3rem;
+  padding: 0.95rem 1.1rem 1.15rem;
   border-color: rgba(183, 139, 69, 0.72);
   background:
     linear-gradient(135deg, rgba(183, 139, 69, 0.11), transparent 42%),
     var(--surface);
-  box-shadow: var(--shadow-lg);
+  box-shadow: var(--shadow-sm);
 }
 
 .timeline-item--milestone .timeline-item__topline {
@@ -975,7 +975,7 @@ main {
 }
 
 .timeline-item--milestone .timeline-item__date {
-  font-size: clamp(1.4rem, 2.4vw, 1.8rem);
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
 }
 
 .timeline-item--milestone .meta-row {
@@ -988,19 +988,19 @@ main {
 }
 
 .timeline-item--milestone h3 {
-  max-width: 42rem;
+  max-width: 38rem;
   margin: 0.55rem auto 0.45rem;
-  font-size: clamp(1.55rem, 2.5vw, 2rem);
+  font-size: clamp(1.4rem, 2.1vw, 1.72rem);
 }
 
 .timeline-item--milestone .timeline-item__media-row {
-  grid-template-columns: minmax(15rem, 0.9fr) minmax(0, 1.1fr);
+  grid-template-columns: minmax(12rem, 0.75fr) minmax(0, 1.25fr);
   align-items: center;
-  gap: 1.15rem;
+  gap: 1rem;
 }
 
 .timeline-item--milestone .timeline-item__image {
-  height: 14.5rem;
+  height: 11.5rem;
 }
 
 .timeline-item--milestone .timeline-item__media-row p {
@@ -1020,7 +1020,7 @@ main {
 
 .map-hero h1 {
   margin-bottom: 1rem;
-  font-size: clamp(2.65rem, 5vw, 4.05rem);
+  font-size: clamp(2.4rem, 4.4vw, 3.5rem);
 }
 
 .map-hero .lead {
@@ -1066,7 +1066,7 @@ main {
 
 .map-toolbar h2 {
   margin-bottom: 0;
-  font-size: clamp(1.9rem, 3.4vw, 2.65rem);
+  font-size: clamp(1.75rem, 2.9vw, 2.3rem);
 }
 
 .map-toolbar__controls {
@@ -1533,17 +1533,17 @@ main {
 .record-hero h1 {
   max-width: 14ch;
   margin-bottom: 1rem;
-  font-size: clamp(2.4rem, 5vw, 4.1rem);
+  font-size: clamp(2.3rem, 4.4vw, 3.55rem);
 }
 
 .record-hero--long-title h1 {
   max-width: 18ch;
-  font-size: clamp(2.25rem, 4.2vw, 3.5rem);
+  font-size: clamp(2.15rem, 3.7vw, 3.05rem);
 }
 
 .record-hero--extra-long-title h1 {
   max-width: 21ch;
-  font-size: clamp(2.05rem, 3.6vw, 3rem);
+  font-size: clamp(1.95rem, 3.2vw, 2.7rem);
   line-height: 1.02;
 }
 
@@ -1605,7 +1605,7 @@ main {
 
 .record-section h2 {
   margin-bottom: 0.95rem;
-  font-size: 1.55rem;
+  font-size: 1.45rem;
 }
 
 .relation-list,
@@ -2138,11 +2138,11 @@ main {
   }
 
   .timeline-item--milestone {
-    padding: 0.95rem 0 2.8rem 2rem;
+    padding: 0.8rem 0 2.35rem 2rem;
   }
 
   .timeline-item--milestone .timeline-item__node {
-    top: 0.95rem;
+    top: 0.8rem;
   }
 
   .timeline-item--milestone::after {
@@ -2150,7 +2150,7 @@ main {
   }
 
   .timeline-item--milestone .timeline-item__body {
-    padding: 1.05rem 1.1rem 1.2rem;
+    padding: 0.9rem 1rem 1.05rem;
   }
 
   .timeline-item__media-row,
@@ -2158,9 +2158,12 @@ main {
     grid-template-columns: 1fr;
   }
 
-  .timeline-item__image,
-  .timeline-item--milestone .timeline-item__image {
+  .timeline-item__image {
     height: min(15rem, 58vw);
+  }
+
+  .timeline-item--milestone .timeline-item__image {
+    height: min(11.5rem, 48vw);
   }
 
   .timeline-chapter {
@@ -2190,11 +2193,11 @@ main {
   }
 
   .record-hero--long-title h1 {
-    font-size: clamp(2rem, 9vw, 2.55rem);
+    font-size: clamp(1.9rem, 8vw, 2.3rem);
   }
 
   .record-hero--extra-long-title h1 {
-    font-size: clamp(1.85rem, 8.5vw, 2.25rem);
+    font-size: clamp(1.78rem, 7.5vw, 2.08rem);
     line-height: 1.04;
   }
 
