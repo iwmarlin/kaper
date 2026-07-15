@@ -16,7 +16,7 @@ import {
   resolveIds,
   responsiveImage,
   typeBadge,
-} from "./core.js?v=20260715-9";
+} from "./core.js?v=20260715-10";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 mountSiteChrome("timeline");
@@ -170,6 +170,8 @@ try {
                 })}
                 <figcaption>${renderMediaDisclosure(hero, heroSources, {
                   compact: true,
+                  fairUseResolutionLabel: "Low-resolution copy",
+                  includeCaption: false,
                   includeFullRightsNote: false,
                 })}</figcaption>
               </figure>

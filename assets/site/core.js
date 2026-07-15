@@ -164,14 +164,25 @@ export function mediaRightsBadge(media) {
 
 function conciseRightsRationale(note = "") {
   const sentences = String(note).match(/[^.!?]+[.!?]+|[^.!?]+$/g)?.map((sentence) => sentence.trim()).filter(Boolean) || [];
-  return sentences.find((sentence) => (
+  const preferred = sentences.find((sentence) => (
+    /low[- ]resolution|reduced[- ]resolution/i.test(sentence)
+    && /scholarly|contextual|identification|criticism|commentary|documentation|discussion/i.test(sentence)
+    && /use|used|published|approved|reproduce|shown|treat/i.test(sentence)
+  ));
+  return preferred || sentences.find((sentence) => (
     /fair[ -]use|low[- ]resolution|reduced[- ]resolution|scholarly|contextual|identification|criticism|documentation/i.test(sentence)
     && /use|used|published|approved|reproduce|shown|treat/i.test(sentence)
   )) || sentences[0] || "";
 }
 
+function creditIncludesFairUseRationale(credit = "") {
+  return /low[- ]resolution|reduced[- ]resolution/i.test(credit)
+    && /scholarly|contextual|identification|criticism|commentary|documentation|discussion/i.test(credit);
+}
+
 export function renderMediaDisclosure(media, sources = [], {
   compact = false,
+  fairUseResolutionLabel = "Reduced-resolution local reference",
   includeCaption = true,
   includeFullRightsNote = true,
   includeTitle = true,
@@ -186,7 +197,9 @@ export function renderMediaDisclosure(media, sources = [], {
   const caption = media.publicCaption || media.description || "";
   const credit = media.publicCreditLine || "";
   const rationale = media.rightsNote || "";
-  const conciseRationale = mediaIsFairUse(media) ? conciseRightsRationale(rationale) : "";
+  const conciseRationale = mediaIsFairUse(media) && !creditIncludesFairUseRationale(credit)
+    ? conciseRightsRationale(rationale)
+    : "";
   const fullRationale = rationale && rationale !== conciseRationale;
   return `<div class="media-disclosure${compact ? " media-disclosure--compact" : ""}">
     ${includeTitle ? `<a class="media-disclosure__title" href="${recordUrl("media", media.id)}">${escapeHtml(media.title || media.id)}</a>` : ""}
@@ -194,7 +207,7 @@ export function renderMediaDisclosure(media, sources = [], {
     ${credit ? `<p class="media-disclosure__credit"><strong>Credit:</strong> ${escapeHtml(credit)}</p>` : ""}
     <div class="media-disclosure__meta">
       ${mediaRightsBadge(media)}
-      ${mediaIsFairUse(media) ? '<span class="media-disclosure__resolution">Reduced-resolution local reference</span>' : ""}
+      ${mediaIsFairUse(media) ? `<span class="media-disclosure__resolution">${escapeHtml(fairUseResolutionLabel)}</span>` : ""}
       ${includeSource && sourceHref ? `<a href="${escapeHtml(sourceHref)}"${sourceAttributes}>${escapeHtml(sourceLabel)}${sourceExternal ? ' <span aria-hidden="true">↗</span>' : ""}</a>` : ""}
     </div>
     ${compact && conciseRationale ? `<p class="media-disclosure__rationale"><strong>Use rationale:</strong> ${escapeHtml(conciseRationale)}</p>` : ""}
