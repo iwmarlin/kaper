@@ -32,6 +32,8 @@ class ReferenceParser(HTMLParser):
         self.has_viewport = False
         self.has_title = False
         self.canonicals: list[str] = []
+        self.has_csp_meta = False
+        self.referrer_policy: str | None = None
 
     def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
         values = dict(attrs)
@@ -39,6 +41,10 @@ class ReferenceParser(HTMLParser):
             self.lang = values.get("lang")
         if tag == "meta" and values.get("name") == "viewport":
             self.has_viewport = True
+        if tag == "meta" and values.get("http-equiv", "").lower() == "content-security-policy":
+            self.has_csp_meta = bool(values.get("content"))
+        if tag == "meta" and values.get("name") == "referrer":
+            self.referrer_policy = values.get("content")
         if tag == "link" and values.get("rel") == "canonical" and values.get("href"):
             self.canonicals.append(values["href"])
         if tag == "iframe":
@@ -98,6 +104,10 @@ def validate(root: Path) -> dict:
             errors.append(f"{filename}: title is missing")
         if parser.iframes:
             errors.append(f"{filename}: automatic iframe embedding is not allowed")
+        if not parser.has_csp_meta:
+            errors.append(f"{filename}: document CSP fallback is missing")
+        if parser.referrer_policy != "strict-origin-when-cross-origin":
+            errors.append(f"{filename}: referrer policy fallback is missing")
         if filename not in {"404.html", "record.html"} and len(parser.canonicals) != 1:
             errors.append(f"{filename}: expected exactly one canonical URL")
         for attribute, value in parser.references:
@@ -120,6 +130,7 @@ def validate(root: Path) -> dict:
         "data/site/home.json",
         "data/site/performance-report.json",
         "data/site/record-report.json",
+        "data/site/static-record-report.json",
     ]
     for filename in required_files:
         if not (root / filename).is_file():
@@ -176,6 +187,28 @@ def validate(root: Path) -> dict:
                 errors.append(f"Record payload report omits reference record {record_id}")
 
     sitemap = (root / "sitemap.xml").read_text(encoding="utf-8") if (root / "sitemap.xml").is_file() else ""
+    static_report_path = root / "data/site/static-record-report.json"
+    if static_report_path.is_file():
+        static_report = read_json(static_report_path)
+        expected_records = sum(static_report.get("countsByType", {}).values())
+        if static_report.get("recordPageCount") != expected_records:
+            errors.append("Static record report count is inconsistent")
+        static_pages = list((root / "records").glob("*/*/index.html"))
+        if len(static_pages) != expected_records:
+            errors.append("Static record page count does not match its report")
+        sitemap_urls = re.findall(r"<loc>([^<]+)</loc>", sitemap)
+        if len(sitemap_urls) != static_report.get("sitemapUrlCount"):
+            errors.append("Sitemap URL count does not match the static record report")
+        for page in static_pages:
+            relative = page.relative_to(root).parent.as_posix() + "/"
+            expected_url = f"https://iwmarlin.github.io/kaper/{relative}"
+            if expected_url not in sitemap_urls:
+                errors.append(f"Sitemap omits static record {relative}")
+
+    netlify_path = root / "netlify.toml"
+    if netlify_path.is_file() and "frame-ancestors 'self'" not in netlify_path.read_text(encoding="utf-8"):
+        errors.append("Netlify CSP lacks frame-ancestors protection")
+
     for filename in PUBLIC_PAGES[:5]:
         expected = "https://iwmarlin.github.io/kaper/" if filename == "index.html" else f"https://iwmarlin.github.io/kaper/{filename}"
         if expected not in sitemap:

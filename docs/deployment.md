@@ -59,8 +59,10 @@ python3 scripts/validate_public_export.py \
 
 python3 scripts/build_site_assets.py --root .
 python3 scripts/build_record_payloads.py --root .
+python3 scripts/build_static_records.py --root .
 python3 scripts/build_site_assets.py --check
 python3 scripts/build_record_payloads.py --check
+python3 scripts/build_static_records.py --check
 python3 scripts/validate_site.py --root .
 ```
 

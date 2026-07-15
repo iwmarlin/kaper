@@ -89,8 +89,7 @@ export function safeExternalUrl(value) {
 }
 
 export function recordUrl(type, id) {
-  const params = new URLSearchParams({ type, id });
-  return `record.html?${params.toString()}`;
+  return `records/${encodeURIComponent(type)}/${encodeURIComponent(id)}/`;
 }
 
 export function humanize(value = "") {

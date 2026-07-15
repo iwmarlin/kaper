@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://unpkg.com; style-src 'self' 'unsafe-inline' https://unpkg.com; img-src 'self' data: https://*.tile.openstreetmap.org; media-src 'self'; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Explore places connected with Bronisław Kaper's life and work through 1939.">
   <meta name="theme-color" content="#152c33">
@@ -65,7 +67,7 @@
               <p class="eyebrow" id="place-selection-kicker">Explore the map</p>
               <h3 id="place-selection-title">Select a place</h3>
               <p id="place-selection-meta">Choose a marker or a place from the list to see its role in the archive.</p>
-              <a class="button button--small" id="place-selection-link" href="record.html?type=place" hidden>View place record</a>
+              <a class="button button--small" id="place-selection-link" href="map.html" hidden>View place record</a>
             </div>
             <div class="map-results-heading">
               <span>Documented places</span>
@@ -81,6 +83,6 @@
   <footer class="site-footer" data-site-footer></footer>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js" crossorigin="anonymous"></script>
-  <script type="module" src="assets/site/map-explorer-20260714.js?v=20260715-3"></script>
+  <script type="module" src="assets/site/map-explorer-20260714.js?v=20260715-4"></script>
 </body>
 </html>

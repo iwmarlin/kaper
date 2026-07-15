@@ -19,7 +19,7 @@ import {
   resolveIds,
   safeExternalUrl,
   typeBadge,
-} from "./core.js?v=20260715-5";
+} from "./core.js?v=20260715-6";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 mountSiteChrome("media");

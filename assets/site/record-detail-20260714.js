@@ -24,15 +24,15 @@ import {
   storageLabel,
   typeBadge,
   updateMeta,
-} from "./core.js?v=20260715-5";
+} from "./core.js?v=20260715-6";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 mountSiteChrome("");
 
 const target = document.querySelector("#record-root");
 const params = new URLSearchParams(location.search);
-const requestedType = params.get("type");
-const requestedId = params.get("id");
+const requestedType = target?.dataset.recordType || params.get("type");
+const requestedId = target?.dataset.recordId || params.get("id");
 const TYPE_CONFIG = {
   work: { table: "works", label: "Work", title: (item) => item.title },
   event: { table: "timelineEvents", label: "Timeline event", title: (item) => item.title },

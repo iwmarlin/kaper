@@ -18,8 +18,9 @@ unchanged on GitHub Pages at `/kaper/`, on Netlify, and from a local static serv
 | `record.html` | Linked detail view for works, events, places, media, people and sources | Public graph |
 
 The existing `life.html` and `media.html` paths are retained to avoid breaking old
-links. Detail records use query strings, which GitHub Pages serves without rewrite
-rules, for example `record.html?type=work&id=W-F002`.
+links. Every public detail record has a generated, crawlable path such as
+`records/work/W-F002/`. The former `record.html?type=work&id=W-F002` form remains
+as a noindex compatibility route and declares the static path as canonical.
 
 ## Runtime model
 
@@ -31,6 +32,9 @@ rules, for example `record.html?type=work&id=W-F002`.
   `data/site/records/<type>/<id>.json`. The bundle contains the requested record
   and only the directly displayed public relations; it is rebuilt from the
   canonical tables and is never edited by hand.
+- `scripts/build_static_records.py` generates an HTML shell with record-specific
+  title, description, Open Graph metadata, canonical URL and readable fallback
+  content for every public record. It also writes the complete sitemap.
 - All linked records use stable public IDs, never Airtable record IDs.
 - The map uses Leaflet only for the map interface and OpenStreetMap tiles; an
   equivalent searchable place list remains available if the map library or tiles
@@ -52,3 +56,13 @@ branch and is reviewed through a Netlify Deploy Preview. Production changes only
 after an explicit merge to `main`, which preserves the current GitHub Pages URL.
 The GitHub Pages URL is the default canonical origin unless a custom domain is
 chosen before release.
+
+## Security delivery
+
+Netlify applies the complete HTTP-header policy declared in `netlify.toml`,
+including CSP `frame-ancestors`, `X-Content-Type-Options`, `X-Frame-Options` and
+Permissions Policy. GitHub Pages does not expose equivalent per-repository HTTP
+header configuration. Each HTML document therefore carries a CSP meta fallback
+and referrer policy, but meta-delivered CSP cannot provide `frame-ancestors` and
+is not equivalent to the Netlify response headers. Full parity requires serving
+the canonical site through a host or proxy that permits response-header control.
