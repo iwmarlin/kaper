@@ -13,7 +13,7 @@ import {
   renderLoading,
   resolveIds,
   typeBadge,
-} from "./core.js";
+} from "./core.js?v=20260715-2";
 
 mountSiteChrome("works");
 

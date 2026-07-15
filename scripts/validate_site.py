@@ -124,7 +124,7 @@ def validate(root: Path) -> dict:
     for script in (root / "assets/site").glob("*.js"):
         text = script.read_text(encoding="utf-8")
         for imported in re.findall(r'from\s+["\'](\./[^"\']+)["\']', text):
-            target = (script.parent / imported).resolve()
+            target = (script.parent / urlsplit(imported).path).resolve()
             if not target.is_file():
                 errors.append(f"{script.relative_to(root)}: missing module {imported}")
         if "airtableusercontent.com" in text.lower():

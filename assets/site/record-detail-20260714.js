@@ -19,7 +19,7 @@ import {
   storageLabel,
   typeBadge,
   updateMeta,
-} from "./core.js";
+} from "./core.js?v=20260715-2";
 
 mountSiteChrome("");
 
