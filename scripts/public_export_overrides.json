@@ -3,6 +3,12 @@
   "description": "Auditable corrections applied only to public-facing scalar fields when the frozen Airtable snapshot contains superseded wording or asset paths. Relational data is never overridden here.",
   "records": {
     "Films": {
+      "F004": {
+        "reason": "Describe Benjamin Kapper neutrally as an attested source form; uncertainty concerns Kaper's film role and corroboration, not whether the form appears in IMDb.",
+        "fields": {
+          "attributionNote": "Kaper's participation in the German film record remains probable but functionally unresolved. The only positive trace currently documented in the database is IMDb/SRC0520, where he appears under the attested source form “Benjamin Kapper”. Filmportal/SRC0117 and Jurmann estate song-list evidence SRC0306 do not independently confirm Kaper and do not justify assigning an arranger or composer role as fact. Do not infer Kaper's participation mechanically from the confirmed Kaper involvement in the French-language version Son altesse l'amour (F005/W-F005)."
+        }
+      },
       "F013": {
         "reason": "Replace workflow-oriented wording with a public scholarly attribution note without changing the underlying attribution.",
         "fields": {

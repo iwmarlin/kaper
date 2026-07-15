@@ -9,6 +9,7 @@ import {
   mediaRightsLabel,
   mediaPreview,
   mountSiteChrome,
+  normalizeSearch,
   periodBadge,
   recordUrl,
   renderError,
@@ -61,6 +62,50 @@ function entityList(records, type, meta = () => "") {
 
 function sourceList(records) {
   return records.length ? `<ol class="citation-list">${records.map(renderSourceCitation).join("")}</ol>` : "";
+}
+
+function personDisclosure(title, records, renderItem, searchText) {
+  if (!records.length) return "";
+  const items = records.map((item) => {
+    const searchValue = normalizeSearch(searchText(item));
+    return renderItem(item).replace(
+      "<li",
+      `<li data-person-filter-item data-search="${escapeHtml(searchValue)}"`,
+    );
+  }).join("");
+  const citationList = records.some((item) => item.sourceType || item.shortCitation || item.fullCitation);
+  return `<details class="person-collection">
+    <summary>${escapeHtml(title)}</summary>
+    <div class="person-collection__body">
+      <label class="person-collection__search">
+        <span class="sr-only">Search ${escapeHtml(title.toLowerCase())}</span>
+        <input type="search" data-person-filter placeholder="Search ${escapeHtml(title.toLowerCase())}" autocomplete="off">
+      </label>
+      <${citationList ? "ol" : "ul"} class="${citationList ? "citation-list" : "entity-list"}" data-person-filter-list>${items}</${citationList ? "ol" : "ul"}>
+      <p class="person-collection__empty" data-person-filter-empty hidden>No matching records.</p>
+    </div>
+  </details>`;
+}
+
+function personEntityDisclosure(title, records, type, meta = () => "") {
+  return personDisclosure(
+    title,
+    records,
+    (item) => {
+      const itemMeta = meta(item);
+      return `<li><span><a href="${recordUrl(type, item.id)}">${escapeHtml(item.title || item.displayName || item.id)}</a>${itemMeta ? `<br><small>${escapeHtml(itemMeta)}</small>` : ""}</span></li>`;
+    },
+    (item) => [item.title, item.displayName, item.id, meta(item)].filter(Boolean).join(" "),
+  );
+}
+
+function personSourceDisclosure(records) {
+  return personDisclosure(
+    "Sources",
+    records,
+    renderSourceCitation,
+    (item) => [item.id, item.title, item.shortCitation, item.fullCitation, item.creator, item.publication].filter(Boolean).join(" "),
+  );
 }
 
 function related(ids, index) {
@@ -275,30 +320,65 @@ function renderMedia(media, data, indexes) {
 }
 
 function renderPerson(person, data, indexes) {
-  const works = related(person.workIds, indexes.works);
-  const events = related(person.timelineEventIds, indexes.timelineEvents);
+  const works = related(person.workIds, indexes.works)
+    .sort((a, b) => Number(a.year || 9999) - Number(b.year || 9999) || String(a.title).localeCompare(String(b.title)));
+  const events = related(person.timelineEventIds, indexes.timelineEvents)
+    .sort((a, b) => String(a.dateStart || "9999").localeCompare(String(b.dateStart || "9999")) || String(a.title).localeCompare(String(b.title)));
   const places = related(person.placeIds, indexes.places);
-  const sources = related(person.sourceIds, indexes.sources);
-  const variants = related(person.nameVariantIds, indexes.personNameVariants);
-  const authority = safeExternalUrl(person.authorityUrl);
+  const sources = related(person.sourceIds, indexes.sources)
+    .sort((a, b) => String(a.date || "9999").localeCompare(String(b.date || "9999")) || String(a.shortCitation || a.title).localeCompare(String(b.shortCitation || b.title)));
+  const identities = related(person.nameVariantIds, indexes.personNameVariants)
+    .filter((item) => ["pseudonym", "joint_pseudonym", "registration_identity"].includes(item.variantType));
+  const authorityLinks = String(person.authorityUrl || "")
+    .split(/\r?\n/)
+    .map((entry) => {
+      const match = entry.trim().match(/^([^:]+):\s*(https?:\/\/\S+)$/);
+      if (!match) return null;
+      const url = safeExternalUrl(match[2]);
+      return url ? { label: match[1], url } : null;
+    })
+    .filter(Boolean);
   const displayedRoles = [person.primaryRole, ...(person.roles || [])].filter((role, index, roles) => (
     role && roles.findIndex((candidate) => String(candidate).toLowerCase() === String(role).toLowerCase()) === index
   ));
+  const workSections = [
+    ["Film works", works.filter((item) => item.workType === "Film")],
+    ["Songs", works.filter((item) => item.workType === "Song")],
+    ["Other works", works.filter((item) => item.workType === "Other")],
+  ].map(([title, items]) => personEntityDisclosure(title, items, "work", (item) => [item.year, item.workType].filter(Boolean).join(" · "))).join("");
   return {
     title: person.displayName,
     label: "Person",
     badges: displayedRoles.map(typeBadge).join(""),
     facts: `${fact("Authorized name", person.authorizedName)}${fact("Primary role", humanize(person.primaryRole))}${fact("Roles", (person.roles || []).map(humanize))}`,
     main: [
-      authority ? section("Authority record", `<p><a href="${escapeHtml(authority)}" target="_blank" rel="noreferrer">Open authority record <span aria-hidden="true">↗</span></a></p>`) : "",
-      section("Works", entityList(works, "work", (item) => [item.year, item.workType].filter(Boolean).join(" · "))),
-      section("Attested name variants", variants.length ? `<ul class="entity-list">${variants.map((item) => `<li><span><strong>${escapeHtml(item.variantName)}</strong><br><small>${escapeHtml(item.publicNote || item.attestedWording || "")}</small></span>${typeBadge(item.variantType)}</li>`).join("")}</ul>` : ""),
-      section("Timeline", entityList(events, "event", (item) => item.displayDate || item.dateStart)),
+      authorityLinks.length ? section("Authority records", `<ul class="plain-list authority-links">${authorityLinks.map((item) => `<li><a href="${escapeHtml(item.url)}" target="_blank" rel="noreferrer">${escapeHtml(item.label)} <span aria-hidden="true">↗</span></a></li>`).join("")}</ul>`) : "",
+      section("Pseudonyms and documented identities", identities.length ? `<ul class="entity-list identity-list">${identities.map((item) => `<li><span><strong>${escapeHtml(item.variantName)}</strong>${item.publicNote ? `<br><small>${escapeHtml(item.publicNote)}</small>` : ""}</span>${typeBadge(item.variantType)}</li>`).join("")}</ul>` : ""),
+      workSections ? section("Related records", `<div class="person-collections">${workSections}</div>`) : "",
+      events.length ? section("Documented chronology", personEntityDisclosure("Timeline events", events, "event", (item) => item.displayDate || item.dateStart)) : "",
       section("Places", entityList(places, "place", (item) => [item.city, item.country].filter(Boolean).join(", "))),
-      section("Sources", sourceList(sources)),
+      sources.length ? section("Research sources", personSourceDisclosure(sources)) : "",
     ].join(""),
-    aside: `<div class="scope-note">Historical credit forms and role attributions are presented on individual work records, where they can be read with their source context.</div>`,
+    aside: `<div class="scope-note">Source-specific spellings and printed credit forms appear only on the relevant work records, where their evidentiary context is visible.</div>`,
   };
+}
+
+function initializePersonFilters() {
+  target.querySelectorAll("[data-person-filter]").forEach((input) => {
+    input.addEventListener("input", () => {
+      const collection = input.closest(".person-collection");
+      const query = normalizeSearch(input.value.trim());
+      const items = [...collection.querySelectorAll("[data-person-filter-item]")];
+      let hasVisibleItem = false;
+      items.forEach((item) => {
+        const visible = !query || item.dataset.search.includes(query);
+        item.hidden = !visible;
+        hasVisibleItem ||= visible;
+      });
+      const empty = collection.querySelector("[data-person-filter-empty]");
+      if (empty) empty.hidden = hasVisibleItem;
+    });
+  });
 }
 
 function renderOrganization(organization, data, indexes) {
@@ -395,6 +475,7 @@ try {
         <aside>${view.aside || ""}</aside>
       </div>
     </section>`;
+  if (requestedType === "person") initializePersonFilters();
 } catch (error) {
   target.className = "shell";
   renderError(target, error);
