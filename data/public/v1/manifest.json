@@ -9,17 +9,19 @@
   "sourceRecordCount": 2826,
   "generator": {
     "file": "export_public_data.py",
-    "sha256": "a3e2a9671e8e37ae523e4708d60718fe053ba095392ec7f252e563423e819ae9"
+    "sha256": "aa6ab0277442edff9f8f9e60a254e6086b7a38b3ffb757c104b57fd1702f7115"
   },
   "publicInputs": {
     "allowlist": {
       "file": "public_export_config.json",
-      "sha256": "170fc58621f27726aad5d049a1b2b75500815cfc3a4bb321764b9e3c03bd7377"
+      "sha256": "ef31765c34cb592e3cd9e60af7554abd120857cfb6fc171e6abe8eea2e7ce860"
     },
     "overrides": {
       "file": "public_export_overrides.json",
-      "sha256": "9658d9a78fefa196b8a2219bc17bbe7cab1085598bbf8c89e0fb27f0d462a1a2",
-      "appliedCount": 18
+      "sha256": "3e430dadaa32b4f085ea04a23949d1616bfa49f3412e8962edc4a8eadfc13257",
+      "appliedCount": 19,
+      "additionCount": 1,
+      "linkAdditionCount": 1
     }
   },
   "exportPolicy": {
@@ -45,7 +47,7 @@
   "counts": {
     "People": 109,
     "Organizations": 108,
-    "Sources": 485,
+    "Sources": 486,
     "Media": 190,
     "Works": 280,
     "Films": 55,
@@ -61,8 +63,8 @@
   "files": [
     {
       "file": "build-report.json",
-      "bytes": 5062,
-      "sha256": "fe4a614af7a0f1b7594faae6bfe03bb94f5f4702517795c285cf33caabd615b5"
+      "bytes": 6341,
+      "sha256": "fa7b3b64f80056dbbda8f25c11fc3f56a8ca6d85892a8cd0b951304089a89a27"
     },
     {
       "file": "contributions.json",
@@ -76,8 +78,8 @@
     },
     {
       "file": "media.json",
-      "bytes": 360931,
-      "sha256": "a2e0498f86e982dc064ce1cd217410289e430412d978055a9d5a890b283c6173"
+      "bytes": 360869,
+      "sha256": "9ad2a491f29c496598c989428fa47ad5795502213decee91371381d2dc53161a"
     },
     {
       "file": "organizations.json",
@@ -111,8 +113,8 @@
     },
     {
       "file": "sources.json",
-      "bytes": 624217,
-      "sha256": "af725c09d62467630bdfea8a848f6e6a0cd271dda5772dc058e565742a657cfe"
+      "bytes": 625103,
+      "sha256": "002711744d6fd553d928f0cbf858c64699d27a65cc5dc7c6a58febff3b33b319"
     },
     {
       "file": "timeline-events.json",

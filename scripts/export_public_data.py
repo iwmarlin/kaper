@@ -118,6 +118,8 @@ class PublicExporter:
         self.errors: list[str] = []
         self.warnings: list[dict[str, Any]] = []
         self.applied_overrides: list[dict[str, Any]] = []
+        self.applied_additions: list[dict[str, Any]] = []
+        self.applied_link_additions: list[dict[str, Any]] = []
         self._load()
 
     def _load(self) -> None:
@@ -231,6 +233,77 @@ class PublicExporter:
                     if is_empty(value):
                         self.errors.append(
                             f"{table_name} {stable_id}: override value for {key!r} is empty"
+                        )
+                remove_fields = override.get("removeFields", [])
+                if not isinstance(remove_fields, list):
+                    self.errors.append(
+                        f"{table_name} {stable_id}: removeFields must be an array"
+                    )
+                    continue
+                unexpected_removals = set(remove_fields) - allowlisted_scalar_keys
+                if unexpected_removals:
+                    self.errors.append(
+                        f"{table_name} {stable_id}: removeFields contains non-allowlisted scalar keys {sorted(unexpected_removals)}"
+                    )
+                required_removals = set(remove_fields) & set(
+                    self.config["tables"][table_name]["required"]
+                )
+                if required_removals:
+                    self.errors.append(
+                        f"{table_name} {stable_id}: required public fields cannot be removed {sorted(required_removals)}"
+                    )
+
+        for table_name, table_additions in self.overrides.get("additions", {}).items():
+            if table_name not in self.config["tables"]:
+                self.errors.append(f"Additions reference unknown table {table_name!r}")
+                continue
+            allowed = set(self.config["tables"][table_name]["fields"])
+            allowed |= set(self.config["tables"][table_name]["links"])
+            allowed |= set(self.config["tables"][table_name].get("derivedFields", []))
+            for stable_id, addition in table_additions.items():
+                fields = addition.get("fields") if isinstance(addition, dict) else None
+                if stable_id in self.by_stable[table_name]:
+                    self.errors.append(
+                        f"{table_name}: addition duplicates snapshot record {stable_id}"
+                    )
+                if not isinstance(addition, dict) or not addition.get("reason") or not isinstance(fields, dict):
+                    self.errors.append(
+                        f"{table_name} {stable_id}: addition requires a reason and fields object"
+                    )
+                    continue
+                if fields.get("id") != stable_id:
+                    self.errors.append(
+                        f"{table_name} {stable_id}: addition ID must match its stable key"
+                    )
+                unexpected = set(fields) - allowed
+                if unexpected:
+                    self.errors.append(
+                        f"{table_name} {stable_id}: addition contains non-allowlisted keys {sorted(unexpected)}"
+                    )
+
+        for table_name, table_links in self.overrides.get("linkAdditions", {}).items():
+            if table_name not in self.config["tables"]:
+                self.errors.append(f"Link additions reference unknown table {table_name!r}")
+                continue
+            allowed = set(self.config["tables"][table_name]["links"])
+            for stable_id, addition in table_links.items():
+                fields = addition.get("fields") if isinstance(addition, dict) else None
+                if not isinstance(addition, dict) or not addition.get("reason") or not isinstance(fields, dict):
+                    self.errors.append(
+                        f"{table_name} {stable_id}: link addition requires a reason and fields object"
+                    )
+                    continue
+                unexpected = set(fields) - allowed
+                if unexpected:
+                    self.errors.append(
+                        f"{table_name} {stable_id}: link addition contains non-link keys {sorted(unexpected)}"
+                    )
+                for key, values in fields.items():
+                    if not isinstance(values, list) or not all(
+                        isinstance(value, str) and value for value in values
+                    ):
+                        self.errors.append(
+                            f"{table_name} {stable_id}: link addition {key!r} must be an array of stable IDs"
                         )
 
     def fields(self, record: dict[str, Any]) -> dict[str, Any]:
@@ -539,11 +612,52 @@ class PublicExporter:
                     )
                     continue
                 public.update(override["fields"])
+                for key in override.get("removeFields", []):
+                    public.pop(key, None)
                 self.applied_overrides.append(
                     {
                         "table": table_name,
                         "id": stable_id,
                         "fields": sorted(override["fields"]),
+                        "removedFields": sorted(override.get("removeFields", [])),
+                    }
+                )
+
+    def _apply_additions(self) -> None:
+        output_by_id = {
+            table: {record["id"]: record for record in records}
+            for table, records in self.output_records.items()
+        }
+        for table_name, table_additions in self.overrides.get("additions", {}).items():
+            for stable_id, addition in table_additions.items():
+                if stable_id in output_by_id[table_name]:
+                    self.errors.append(
+                        f"{table_name} {stable_id}: public addition duplicates an exported record"
+                    )
+                    continue
+                record = normalized_scalar(addition["fields"])
+                self.output_records[table_name].append(record)
+                output_by_id[table_name][stable_id] = record
+                self.applied_additions.append(
+                    {"table": table_name, "id": stable_id, "fields": sorted(record)}
+                )
+            self.output_records[table_name].sort(key=lambda record: record["id"])
+
+        for table_name, table_links in self.overrides.get("linkAdditions", {}).items():
+            for stable_id, addition in table_links.items():
+                public = output_by_id[table_name].get(stable_id)
+                if public is None:
+                    self.errors.append(
+                        f"{table_name} {stable_id}: link addition target is not in the public graph"
+                    )
+                    continue
+                for key, values in addition["fields"].items():
+                    self._append(public, key, values)
+                self.applied_link_additions.append(
+                    {
+                        "table": table_name,
+                        "id": stable_id,
+                        "fields": sorted(addition["fields"]),
                     }
                 )
 
@@ -604,6 +718,7 @@ class PublicExporter:
             ]
             self.output_records[table_name] = records
         self._apply_overrides()
+        self._apply_additions()
         self._derive_graph_indexes()
 
     def _validate_required(self) -> None:
@@ -688,6 +803,13 @@ class PublicExporter:
         for media in self.output_records["Media"]:
             media_id = media["id"]
             gallery = media.get("galleryStatus")
+            external_url = media.get("externalUrl", "")
+            if external_url and re.search(r"[\r\n]", external_url):
+                self.errors.append(
+                    f"Media {media_id}: externalUrl contains more than one URL"
+                )
+            if not media.get("sourceIds"):
+                self.errors.append(f"Media {media_id}: public medium has no sourceIds")
             if gallery == "external_link_only":
                 if not media.get("externalUrl"):
                     self.errors.append(f"Media {media_id}: external link card has no URL")
@@ -926,6 +1048,14 @@ class PublicExporter:
                 self.applied_overrides,
                 key=lambda item: (item["table"], item["id"]),
             ),
+            "appliedAdditions": sorted(
+                self.applied_additions,
+                key=lambda item: (item["table"], item["id"]),
+            ),
+            "appliedLinkAdditions": sorted(
+                self.applied_link_additions,
+                key=lambda item: (item["table"], item["id"]),
+            ),
             "allowlist": {
                 table_name: {
                     "sourceFieldsAvailable": len(
@@ -974,6 +1104,8 @@ class PublicExporter:
                         "file": self.overrides_path.name,
                         "sha256": sha256(self.overrides_path),
                         "appliedCount": len(self.applied_overrides),
+                        "additionCount": len(self.applied_additions),
+                        "linkAdditionCount": len(self.applied_link_additions),
                     }
                     if self.overrides_path is not None
                     else None

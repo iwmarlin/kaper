@@ -5,7 +5,7 @@
   "counts": {
     "People": 109,
     "Organizations": 108,
-    "Sources": 485,
+    "Sources": 486,
     "Media": 190,
     "Works": 280,
     "Films": 55,
@@ -30,28 +30,43 @@
       "id": "CON-S190-C-P009",
       "fields": [
         "nameAsPrinted"
-      ]
+      ],
+      "removedFields": []
     },
     {
       "table": "Contributions",
       "id": "CON-S191-C-P009",
       "fields": [
         "nameAsPrinted"
-      ]
+      ],
+      "removedFields": []
     },
     {
       "table": "Films",
       "id": "F004",
       "fields": [
         "attributionNote"
-      ]
+      ],
+      "removedFields": []
     },
     {
       "table": "Films",
       "id": "F013",
       "fields": [
         "attributionNote"
-      ]
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Media",
+      "id": "M024",
+      "fields": [
+        "description",
+        "publicCaption",
+        "publicCreditLine",
+        "publicImageText"
+      ],
+      "removedFields": []
     },
     {
       "table": "Media",
@@ -59,6 +74,9 @@
       "fields": [
         "assetPath",
         "assetPaths"
+      ],
+      "removedFields": [
+        "externalUrl"
       ]
     },
     {
@@ -70,7 +88,8 @@
         "publicImageText",
         "slug",
         "title"
-      ]
+      ],
+      "removedFields": []
     },
     {
       "table": "Media",
@@ -78,7 +97,8 @@
       "fields": [
         "assetPath",
         "assetPaths"
-      ]
+      ],
+      "removedFields": []
     },
     {
       "table": "Media",
@@ -86,7 +106,8 @@
       "fields": [
         "assetPath",
         "assetPaths"
-      ]
+      ],
+      "removedFields": []
     },
     {
       "table": "Media",
@@ -94,7 +115,8 @@
       "fields": [
         "assetPath",
         "assetPaths"
-      ]
+      ],
+      "removedFields": []
     },
     {
       "table": "Media",
@@ -102,21 +124,24 @@
       "fields": [
         "assetPath",
         "assetPaths"
-      ]
+      ],
+      "removedFields": []
     },
     {
       "table": "Other Works",
       "id": "O011",
       "fields": [
         "publicNote"
-      ]
+      ],
+      "removedFields": []
     },
     {
       "table": "Person Name Variants",
       "id": "PNV0008",
       "fields": [
         "publicNote"
-      ]
+      ],
+      "removedFields": []
     },
     {
       "table": "Person Name Variants",
@@ -125,21 +150,24 @@
         "attestedWording",
         "publicNote",
         "variantName"
-      ]
+      ],
+      "removedFields": []
     },
     {
       "table": "Places",
       "id": "PL021",
       "fields": [
         "publicNote"
-      ]
+      ],
+      "removedFields": []
     },
     {
       "table": "Places",
       "id": "PL025",
       "fields": [
         "publicNote"
-      ]
+      ],
+      "removedFields": []
     },
     {
       "table": "Places",
@@ -149,7 +177,8 @@
         "displayName",
         "mapPrecision",
         "publicNote"
-      ]
+      ],
+      "removedFields": []
     },
     {
       "table": "Places",
@@ -159,7 +188,8 @@
         "longitude",
         "mapPrecision",
         "publicNote"
-      ]
+      ],
+      "removedFields": []
     },
     {
       "table": "Timeline Events",
@@ -170,6 +200,39 @@
         "placeDisplay",
         "slug",
         "title"
+      ],
+      "removedFields": []
+    }
+  ],
+  "appliedAdditions": [
+    {
+      "table": "Sources",
+      "id": "SRC0555",
+      "fields": [
+        "accessDate",
+        "creator",
+        "date",
+        "fullCitation",
+        "id",
+        "mediaIds",
+        "publication",
+        "reliability",
+        "repository",
+        "shortCitation",
+        "slug",
+        "sourceStatus",
+        "sourceType",
+        "title",
+        "url"
+      ]
+    }
+  ],
+  "appliedLinkAdditions": [
+    {
+      "table": "Media",
+      "id": "M024",
+      "fields": [
+        "sourceIds"
       ]
     }
   ],

@@ -722,7 +722,7 @@
       "mediaType": "video",
       "storageType": "external",
       "period": "hollywood",
-      "description": "External contextual video link concerning MGM Studios in the 1930s. Retained only as background access material; it is not used as documentary evidence for a specific database assertion.",
+      "description": "External contextual video published by My Footage, showing a montage of MGM studio back-lot footage from the 1930s. The clip is retained as background visual context and is not treated as evidence for a specific Kaper attribution.",
       "externalUrl": "https://www.youtube.com/watch?v=vnFUeKkApyE",
       "assetCount": 0,
       "altText": "External contextual video link about MGM Studios in the 1930s.",
@@ -730,11 +730,14 @@
       "rightsNote": "External YouTube context reference. Use as a neutral access card only; no local media asset is used.",
       "sortOrder": 24,
       "slug": "mgm-studios-in-the-1930s-m024",
-      "publicCaption": "External contextual video link about MGM Studios in the 1930s, published as a neutral YouTube link card for background context.",
-      "publicImageText": "Video/context reference for MGM Studios in the 1930s.",
-      "publicCreditLine": "YouTube contextual video link. No separate Source record retained.",
+      "publicCaption": "My Footage montage of MGM studio back-lot footage from the 1930s, published on YouTube on 3 June 2010 and presented here as an external contextual link.",
+      "publicImageText": "External video reference showing MGM studio back lots during the 1930s.",
+      "publicCreditLine": "My Footage, “1930s Metro-Goldwyn-Mayer Studios,” YouTube, published 3 June 2010.",
       "category": "audio/video reference",
-      "galleryStatus": "external_link_only"
+      "galleryStatus": "external_link_only",
+      "sourceIds": [
+        "SRC0555"
+      ]
     },
     {
       "id": "M025",
@@ -1183,7 +1186,6 @@
       "storageType": "multi_local_assets",
       "period": "warsaw",
       "description": "Published document-gallery media using selected local sheet-music pages from early Polish Kaper/Bruno Asper publications, including “To muszą śpiewać wszyscy,” “Jak się da, to się zrobi!” and “Ja nie mam głosu!”. The full Polona source for “To muszą śpiewać wszyscy” is SRC0053; “Jak się da…” is SRC0054; “Ja nie mam głosu!” is SRC0055.",
-      "externalUrl": "https://polona.pl/preview/73ff4cb3-5a32-40ff-bf57-0c4475154db7\nhttps://polona.pl/preview/08d602a1-f3aa-4e43-810d-e37a4ddfe12a\nhttps://polona.pl/preview/1f7b5727-51d9-4d10-8f22-1e6daf03fdaf",
       "assetPath": "assets/images/historical-context/to-musza.png",
       "assetPaths": [
         "assets/images/historical-context/to-musza.png",

@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "description": "Auditable corrections applied only to public-facing scalar fields when the frozen Airtable snapshot contains superseded wording or asset paths. Relational data is never overridden here.",
+  "description": "Auditable public corrections for the frozen Airtable snapshot. Existing records may receive scalar corrections or field removals; documented post-snapshot public records and explicit links may be added through the additions sections.",
   "records": {
     "Films": {
       "F004": {
@@ -17,6 +17,15 @@
       }
     },
     "Media": {
+      "M024": {
+        "reason": "Replace the obsolete no-source wording after documenting the linked My Footage YouTube publication as SRC0555.",
+        "fields": {
+          "description": "External contextual video published by My Footage, showing a montage of MGM studio back-lot footage from the 1930s. The clip is retained as background visual context and is not treated as evidence for a specific Kaper attribution.",
+          "publicCaption": "My Footage montage of MGM studio back-lot footage from the 1930s, published on YouTube on 3 June 2010 and presented here as an external contextual link.",
+          "publicImageText": "External video reference showing MGM studio back lots during the 1930s.",
+          "publicCreditLine": "My Footage, “1930s Metro-Goldwyn-Mayer Studios,” YouTube, published 3 June 2010."
+        }
+      },
       "M059": {
         "reason": "Identify the documented studio location as Montrouge rather than Paris while retaining the broader Paris-period context.",
         "fields": {
@@ -28,7 +37,7 @@
         }
       },
       "M035": {
-        "reason": "Use filename extensions that match the existing PNG image data; image bytes are unchanged.",
+        "reason": "Use filename extensions matching the PNG image data and remove the invalid multi-line externalUrl; the three individual Polona locations remain represented by SRC0053, SRC0054 and SRC0055.",
         "fields": {
           "assetPath": "assets/images/historical-context/to-musza.png",
           "assetPaths": [
@@ -36,7 +45,10 @@
             "assets/images/historical-context/jak-sie-da.png",
             "assets/images/sheet-music/ja-nie-mam.png"
           ]
-        }
+        },
+        "removeFields": [
+          "externalUrl"
+        ]
       },
       "M125": {
         "reason": "Use a filename extension that matches the existing PNG image data; image bytes are unchanged.",
@@ -156,6 +168,44 @@
           "longitude": -115.4523,
           "mapPrecision": "city",
           "publicNote": "Procedural immigration-address context: the Commercial Hotel in Mexicali is given in the article as Kaper’s last permanent residence abroad in the 1935 Calexico border-crossing manifest. The public map uses the Mexicali city centroid; the exact historic hotel address and location have not been verified."
+        }
+      }
+    }
+  },
+  "additions": {
+    "Sources": {
+      "SRC0555": {
+        "reason": "Document the provenance of the external MGM context video M024 after the uploader, title, publication date and reel information were supplied and verified editorially.",
+        "fields": {
+          "id": "SRC0555",
+          "shortCitation": "My Footage, “1930s Metro-Goldwyn-Mayer Studios,” YouTube, 3 June 2010",
+          "fullCitation": "My Footage. “1930s Metro-Goldwyn-Mayer Studios.” YouTube video, published 3 June 2010. Reel 7072, TC 07:28:38–07:28:59. Montage of MGM studio back-lot footage; the uploader identifies the clip as available for licensing.",
+          "sourceType": "online_video_source",
+          "title": "1930s Metro-Goldwyn-Mayer Studios",
+          "creator": "My Footage",
+          "repository": "YouTube",
+          "publication": "My Footage",
+          "date": "2010-06-03",
+          "url": "https://www.youtube.com/watch?v=vnFUeKkApyE",
+          "accessDate": "2026-07-15",
+          "reliability": "medium",
+          "sourceStatus": "verified_with_attribution_note",
+          "slug": "src0555-my-footage-1930s-mgm-studios",
+          "mediaIds": [
+            "M024"
+          ]
+        }
+      }
+    }
+  },
+  "linkAdditions": {
+    "Media": {
+      "M024": {
+        "reason": "Link the external MGM context video to its newly documented public source SRC0555.",
+        "fields": {
+          "sourceIds": [
+            "SRC0555"
+          ]
         }
       }
     }

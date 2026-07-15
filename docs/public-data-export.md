@@ -25,8 +25,9 @@ documented period from 1902 through 1939.
   and fair-use information is taken from the corresponding Media record.
 - `scripts/public_export_overrides.json` contains documented public-field
   corrections required by the frozen snapshot, including normalized asset paths.
-  It cannot modify IDs or relations, and every override must target an allowlisted
-  scalar field and provide a reason.
+  It may also hold explicitly justified post-snapshot public additions and link
+  additions. All keys remain subject to the same allowlist and graph validation;
+  existing stable IDs cannot be changed, and every operation requires a reason.
 
 ## Generate
 

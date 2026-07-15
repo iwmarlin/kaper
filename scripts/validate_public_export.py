@@ -265,6 +265,13 @@ class ExportValidator:
         seen_assets: set[str] = set()
         for media in self.payloads.get("Media", {}).get("records", []):
             media_id = media["id"]
+            external_url = media.get("externalUrl", "")
+            if external_url and re.search(r"[\r\n]", external_url):
+                self.errors.append(
+                    f"Media {media_id}: externalUrl contains more than one URL"
+                )
+            if not media.get("sourceIds"):
+                self.errors.append(f"Media {media_id}: public medium has no sourceIds")
             if media.get("galleryStatus") == "external_link_only":
                 if not media.get("externalUrl"):
                     self.errors.append(f"Media {media_id}: external card has no URL")

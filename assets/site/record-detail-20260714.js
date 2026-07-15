@@ -219,7 +219,7 @@ function renderWork(work, data, indexes) {
     title: work.title,
     label: work.workType || "Work",
     badges: `${typeBadge(work.workType)}${periodBadge(work.period)}${isContextOnly ? scopeBadge(work.publicScope) : certaintyBadge(work.certainty)}`,
-    facts: `${fact("Year", work.year)}${fact("Type", work.workType)}${fact("Period", work.period)}${isContextOnly ? `${fact("Kaper attribution", "Not confirmed")}${fact("Record scope", "Context only")}` : `${fact("Certainty", humanize(work.certainty))}${fact("Public scope", humanize(work.publicScope))}`}`,
+    facts: `${fact("Year", work.year)}${fact("Type", work.workType)}${fact("Period", work.period)}${isContextOnly ? fact("Kaper attribution", "Not confirmed") : fact("Certainty", humanize(work.certainty))}`,
     main,
     aside,
   };
