@@ -1586,12 +1586,20 @@ main {
 .record-facts dd {
   margin: 0;
   font-size: 0.9rem;
+  overflow-wrap: anywhere;
 }
 
 .record-layout {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(15rem, 0.3fr);
   gap: 2.25rem;
+}
+
+.record-layout > *,
+.record-section,
+.citation,
+.citation > * {
+  min-width: 0;
 }
 
 .record-section {
@@ -1639,6 +1647,12 @@ main {
   color: var(--ink-soft);
 }
 
+.relation-list a,
+.entity-list a,
+.record-section p {
+  overflow-wrap: anywhere;
+}
+
 .citation-list {
   display: grid;
   gap: 0.75rem;
@@ -1657,6 +1671,7 @@ main {
 .citation p {
   margin-bottom: 0.35rem;
   font-size: 0.87rem;
+  overflow-wrap: anywhere;
 }
 
 .citation a {
