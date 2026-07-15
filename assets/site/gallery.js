@@ -85,8 +85,13 @@ try {
       && !controls.period.value;
     current = isDefaultCuratedView ? curatedOrder(current) : current.sort(compareMedia);
     const shown = current.slice(0, visible);
-    countTarget.innerHTML = `<strong>${current.length}</strong> ${current.length === 1 ? "item" : "items"} shown`;
+    countTarget.innerHTML = `<strong>Showing ${shown.length}</strong> of ${current.length} ${current.length === 1 ? "item" : "items"}`;
     more.hidden = shown.length >= current.length;
+    if (!more.hidden) {
+      const nextCount = Math.min(PAGE_SIZE, current.length - shown.length);
+      more.textContent = `Load ${nextCount} more`;
+      more.setAttribute("aria-label", `Load ${nextCount} more media items`);
+    }
     if (!shown.length) {
       target.innerHTML = `<div class="empty-state"><h2>No matching media</h2><p>Try a broader search or another gallery scope.</p></div>`;
       return;
@@ -122,7 +127,20 @@ try {
     controls.scope.value = "selected";
     resetAndRender();
   });
-  more.addEventListener("click", () => { visible += PAGE_SIZE; render(); });
+  more.addEventListener("click", () => {
+    const firstNewIndex = Math.min(visible, current.length);
+    visible += PAGE_SIZE;
+    render();
+    const firstNewCard = target.children[firstNewIndex];
+    if (firstNewCard) {
+      firstNewCard.setAttribute("tabindex", "-1");
+      firstNewCard.focus({ preventScroll: true });
+      firstNewCard.scrollIntoView({
+        behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
+        block: "start",
+      });
+    }
+  });
   render();
 } catch (error) {
   countTarget.textContent = "Media unavailable";
