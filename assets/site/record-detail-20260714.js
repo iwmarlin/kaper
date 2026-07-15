@@ -72,6 +72,11 @@ function fact(label, value) {
   return `<div><dt>${escapeHtml(label)}</dt><dd>${escapeHtml(display)}</dd></div>`;
 }
 
+function factHtml(label, value) {
+  if (!value) return "";
+  return `<div><dt>${escapeHtml(label)}</dt><dd>${value}</dd></div>`;
+}
+
 function section(title, content, className = "") {
   if (!content) return "";
   return `<section class="record-section ${className}"><h2>${escapeHtml(title)}</h2>${content}</section>`;
@@ -152,7 +157,12 @@ const GENERIC_FILM_CREDIT_NOTES = new Set([
   "Film-score composition credit.",
 ]);
 
-function contributionList(items, indexes, { conciseCredits = false, redundantNotes = [] } = {}) {
+function contributionList(items, indexes, {
+  conciseCredits = false,
+  redundantNotes = [],
+  creditLabel = "printed as",
+  suppressCatalogueNames = false,
+} = {}) {
   if (!items.length) return "";
   const redundantNoteSet = new Set(redundantNotes.filter(Boolean));
   return `<ul class="entity-list">${items
@@ -164,8 +174,12 @@ function contributionList(items, indexes, { conciseCredits = false, redundantNot
         ...people.map((person) => `<a href="${recordUrl("person", person.id)}">${escapeHtml(person.displayName)}</a>`),
         ...organizations.map((organization) => `<a href="${recordUrl("organization", organization.id)}">${escapeHtml(organization.displayName)}</a>`),
       ];
-      const printed = item.nameAsPrinted && !names.some((name) => name.includes(escapeHtml(item.nameAsPrinted)))
-        ? ` · printed as “${escapeHtml(item.nameAsPrinted)}”`
+      const catalogueName = suppressCatalogueNames && (
+        /\b\d{4}\s*[-–]\s*\d{4}\b/.test(item.nameAsPrinted || "")
+        || /^(?:AU|A2|RIS)\b/i.test(item.creditAsPrinted || "")
+      );
+      const printed = item.nameAsPrinted && !catalogueName && !names.some((name) => name.includes(escapeHtml(item.nameAsPrinted)))
+        ? ` · ${escapeHtml(creditLabel)} “${escapeHtml(item.nameAsPrinted)}”`
         : "";
       const publicNote = item.publicNote && !redundantNoteSet.has(item.publicNote) ? item.publicNote : "";
       let note = conciseCredits
@@ -177,6 +191,65 @@ function contributionList(items, indexes, { conciseCredits = false, redundantNot
         : certaintyBadge(item.certainty);
       return `<li><span><strong>${names.join(" · ") || escapeHtml(item.nameAsPrinted || "Unresolved contributor")}</strong>${printed}${note ? `<br><small>${escapeHtml(note)}</small>` : ""}</span><span>${typeBadge(item.role)} ${certainty}</span></li>`;
     }).join("")}</ul>`;
+}
+
+function contributionEntityLinks(items, indexes) {
+  const seen = new Set();
+  const links = [];
+  for (const item of items) {
+    for (const person of related(item.personIds, indexes.people)) {
+      const key = `person:${person.id}`;
+      if (seen.has(key)) continue;
+      seen.add(key);
+      links.push(`<a href="${recordUrl("person", person.id)}">${escapeHtml(person.displayName)}</a>`);
+    }
+    for (const organization of related(item.organizationIds, indexes.organizations)) {
+      const key = `organization:${organization.id}`;
+      if (seen.has(key)) continue;
+      seen.add(key);
+      links.push(`<a href="${recordUrl("organization", organization.id)}">${escapeHtml(organization.displayName)}</a>`);
+    }
+  }
+  return links.join(" · ");
+}
+
+function publicationPlace(statement) {
+  if (!statement) return "";
+  const colonPlace = statement.match(/^([^:;,]+):/);
+  if (colonPlace) return colonPlace[1].trim();
+  const trailingPlace = statement.match(/,\s*([^,;]+)$/);
+  return trailingPlace ? trailingPlace[1].trim().replace(/\.$/, "") : "";
+}
+
+function catalogueReference(statement) {
+  if (!statement) return "";
+  const match = statement.match(/(?:StabiKat record no\.\s*\d+|Bibliothèque nationale de France, notice\s+[A-Z0-9]+)/i);
+  return match ? match[0] : "";
+}
+
+function otherWorkMaterialSection(subtype, institutionalContributions, indexes) {
+  if (!subtype) return "";
+  const status = subtype.materialStatus;
+  const isManuscript = status === "manuscript";
+  const isPublished = status === "published_print";
+  const institutions = contributionEntityLinks(institutionalContributions, indexes);
+  const materialLabel = isManuscript
+    ? "Manuscript"
+    : isPublished
+      ? "Published score"
+      : status === "press_documented"
+        ? "Documented in contemporary press"
+        : humanize(status);
+  const details = `
+    ${fact("Instrumentation", subtype.instrumentation)}
+    ${fact("Material", materialLabel)}
+    ${isManuscript ? factHtml("Holding institution", institutions) : ""}
+    ${isManuscript ? fact("Collection and shelfmark", subtype.shelfmark) : ""}
+    ${isPublished ? factHtml("Publisher", institutions) : ""}
+    ${isPublished ? fact("Publication place", publicationPlace(subtype.publisherOrHoldingAsPrinted)) : ""}
+    ${isPublished ? fact("Catalogue reference", catalogueReference(subtype.publisherOrHoldingAsPrinted)) : ""}`;
+  const title = isManuscript ? "Material and holding" : isPublished ? "Edition details" : "Material and documentation";
+  return section(title, `<dl class="record-facts">${details}</dl>`);
 }
 
 function relationList(items, work, indexes) {
@@ -204,6 +277,7 @@ function renderWork(work, data, indexes) {
   const isContextOnly = work.publicScope === "context_only";
   const isSong = work.workType === "Song";
   const isFilm = work.workType === "Film";
+  const isOther = work.workType === "Other";
   const hasConciseCredits = isSong || isFilm;
   const subtype = [
     ...related(work.filmIds, indexes.films),
@@ -211,6 +285,12 @@ function renderWork(work, data, indexes) {
     ...related(work.otherWorkIds, indexes.otherWorks),
   ][0];
   const contributions = related(work.contributionIds, indexes.contributions);
+  const institutionalContributions = isOther
+    ? contributions.filter((item) => ["publisher", "holding_institution"].includes(item.role))
+    : [];
+  const displayedContributions = isOther
+    ? contributions.filter((item) => !["publisher", "holding_institution"].includes(item.role))
+    : contributions;
   const variants = related(work.titleVariantIds, indexes.titleVariants);
   const relations = related(work.relationIds, indexes.workRelations);
   const sources = related(work.sourceIds, indexes.sources);
@@ -223,12 +303,15 @@ function renderWork(work, data, indexes) {
     ${fact("Publisher as printed", subtype.publisherAsPrinted || subtype.publisherOrHoldingAsPrinted)}
     ${fact("Instrumentation", subtype.instrumentation)}${fact("Material status", subtype.materialStatus)}${fact("Shelfmark", subtype.shelfmark)}`) : "";
   const overview = publicText(subtype?.publicNote, work.publicNote)
-    + (subtypeFacts.trim() ? `<dl class="record-facts">${subtypeFacts}</dl>` : "");
+    + (!isOther && subtypeFacts.trim() ? `<dl class="record-facts">${subtypeFacts}</dl>` : "");
   const main = [
     section("About this work", overview),
-    section("Contributors and credits", contributionList(contributions, indexes, {
-      conciseCredits: hasConciseCredits,
+    isOther ? otherWorkMaterialSection(subtype, institutionalContributions, indexes) : "",
+    section("Contributors and credits", contributionList(displayedContributions, indexes, {
+      conciseCredits: hasConciseCredits || isOther,
       redundantNotes: [work.publicNote, subtype?.publicNote],
+      creditLabel: isOther ? "credited as" : "printed as",
+      suppressCatalogueNames: isOther,
     })),
     section("Title variants", variantList(variants)),
     section("Related works and versions", relationList(relations, work, indexes)),
