@@ -18,17 +18,22 @@ Validate:
 
 ```sh
 python3 scripts/build_site_assets.py --check
+python3 scripts/build_record_payloads.py --check
 python3 scripts/validate_public_export.py --data data/public/v1 --assets-root .
 python3 scripts/validate_site.py --root .
 ```
 
 After regenerating the public Airtable export or changing a published image,
-rebuild the compact home payload and responsive WebP derivatives:
+rebuild the compact home payload, responsive WebP derivatives and relation-aware
+record payloads:
 
 ```sh
 python3 -m pip install -r requirements-site.txt
 python3 scripts/build_site_assets.py --root .
+python3 scripts/build_record_payloads.py --root .
 ```
 
 The build preserves the archival source files in `assets/images/`. Browser-sized,
 metadata-free derivatives are written to `assets/generated/responsive/`.
+Record pages load compact, generated bundles from `data/site/records/`; the
+canonical public tables in `data/public/v1/` remain the source of truth.

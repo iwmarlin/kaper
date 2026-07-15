@@ -32,7 +32,8 @@ cache rules. It does not redirect or change the existing production domain.
 
 ## Release sequence
 
-1. Run the public-data exporter and both validators.
+1. Run the public-data exporter, rebuild the derived site payloads and run all
+   validators.
 2. Start a local static server and test the six public routes.
 3. Commit the complete feature branch; do not commit the private Airtable backup.
 4. Push the feature branch and open a draft pull request to `main`.
@@ -56,6 +57,10 @@ python3 scripts/validate_public_export.py \
   --data data/public/v1 \
   --assets-root .
 
+python3 scripts/build_site_assets.py --root .
+python3 scripts/build_record_payloads.py --root .
+python3 scripts/build_site_assets.py --check
+python3 scripts/build_record_payloads.py --check
 python3 scripts/validate_site.py --root .
 ```
 

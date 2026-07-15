@@ -25,8 +25,12 @@ rules, for example `record.html?type=work&id=W-F002`.
 
 - No Airtable API calls, authentication tokens or private backup files.
 - No server-side code and no required JavaScript build step.
-- ES modules fetch versioned files from `data/public/v1/` using relative URLs.
-- Data tables are loaded on demand and cached per page.
+- Collection pages fetch versioned files from `data/public/v1/` using relative
+  URLs and cache them for the lifetime of the page.
+- A detail page fetches one generated, relation-aware bundle from
+  `data/site/records/<type>/<id>.json`. The bundle contains the requested record
+  and only the directly displayed public relations; it is rebuilt from the
+  canonical tables and is never edited by hand.
 - All linked records use stable public IDs, never Airtable record IDs.
 - The map uses Leaflet only for the map interface and OpenStreetMap tiles; an
   equivalent searchable place list remains available if the map library or tiles

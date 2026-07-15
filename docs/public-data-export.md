@@ -42,12 +42,23 @@ python3 scripts/export_public_data.py \
 The exporter writes atomically. If any validation fails, the existing public export
 is left untouched and a diagnostic build is retained in a temporary directory.
 
+After a successful export, rebuild the derived website payloads. These files are
+deterministic caches of the canonical public JSON and must not be edited manually:
+
+```sh
+python3 scripts/build_site_assets.py --root .
+python3 scripts/build_record_payloads.py --root .
+```
+
 ## Validate without Airtable
 
 ```sh
 python3 scripts/validate_public_export.py \
   --data data/public/v1 \
   --assets-root .
+
+python3 scripts/build_site_assets.py --check
+python3 scripts/build_record_payloads.py --check
 ```
 
 This independent pass verifies the manifest checksums, table counts, schema and

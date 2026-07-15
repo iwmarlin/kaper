@@ -5,7 +5,6 @@ import {
   getIds,
   humanize,
   indexById,
-  loadTables,
   mediaRightsBadge,
   mediaRightsLabel,
   mediaPreview,
@@ -43,6 +42,29 @@ const TYPE_CONFIG = {
   organization: { table: "organizations", label: "Organization", title: (item) => item.displayName },
   source: { table: "sources", label: "Source", title: (item) => item.title || item.shortCitation },
 };
+const RECORD_TABLES = [
+  "people", "organizations", "sources", "media", "works", "films", "songs", "otherWorks",
+  "titleVariants", "workRelations", "timelineEvents", "places", "contributions", "personNameVariants",
+];
+
+async function loadRecordPayload(type, id) {
+  const url = new URL(
+    `data/site/records/${encodeURIComponent(type)}/${encodeURIComponent(id)}.json`,
+    document.baseURI,
+  );
+  const response = await fetch(url);
+  if (!response.ok) throw new Error(`Record data could not be loaded (${response.status}).`);
+  const payload = await response.json();
+  if (payload.type !== type || payload.id !== id || !payload.tables) {
+    throw new Error("The record data does not match this page.");
+  }
+  for (const table of RECORD_TABLES) {
+    if (!Array.isArray(payload.tables[table])) {
+      throw new Error(`The record data is incomplete (${table}).`);
+    }
+  }
+  return payload.tables;
+}
 
 function fact(label, value) {
   if (value === undefined || value === null || value === "" || (Array.isArray(value) && !value.length)) return "";
@@ -448,12 +470,8 @@ try {
   if (!TYPE_CONFIG[requestedType] || !requestedId) {
     throw new Error("The record URL is incomplete or uses an unsupported record type.");
   }
-  const tableNames = [
-    "people", "organizations", "sources", "media", "works", "films", "songs", "otherWorks",
-    "titleVariants", "workRelations", "timelineEvents", "places", "contributions", "personNameVariants",
-  ];
-  const data = await loadTables(tableNames);
-  const indexes = Object.fromEntries(tableNames.map((name) => [name, indexById(data[name])]));
+  const data = await loadRecordPayload(requestedType, requestedId);
+  const indexes = Object.fromEntries(RECORD_TABLES.map((name) => [name, indexById(data[name])]));
   const config = TYPE_CONFIG[requestedType];
   const record = indexes[config.table].get(requestedId);
   if (!record) throw new Error(`No public ${config.label.toLowerCase()} record was found for ${requestedId}.`);

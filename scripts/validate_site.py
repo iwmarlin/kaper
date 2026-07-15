@@ -119,6 +119,7 @@ def validate(root: Path) -> dict:
         "data/public/v1/build-report.json",
         "data/site/home.json",
         "data/site/performance-report.json",
+        "data/site/record-report.json",
     ]
     for filename in required_files:
         if not (root / filename).is_file():
@@ -160,6 +161,19 @@ def validate(root: Path) -> dict:
                 errors.append("Responsive home portrait is missing")
             elif portrait_path.stat().st_size > 150_000:
                 errors.append("Default responsive home portrait exceeds 150 KB")
+
+    record_report_path = root / "data/site/record-report.json"
+    if record_report_path.is_file():
+        record_report = read_json(record_report_path)
+        baseline = record_report.get("baselineAllTablesBytes", 0)
+        largest = record_report.get("largestPayload", {}).get("bytes", 0)
+        if not record_report.get("recordCount"):
+            errors.append("Record payload report contains no records")
+        if not baseline or largest >= baseline:
+            errors.append("A record payload is not smaller than the all-table baseline")
+        for record_id in ("P009", "W-F004", "M081", "TE0004"):
+            if record_id not in record_report.get("examples", {}):
+                errors.append(f"Record payload report omits reference record {record_id}")
 
     sitemap = (root / "sitemap.xml").read_text(encoding="utf-8") if (root / "sitemap.xml").is_file() else ""
     for filename in PUBLIC_PAGES[:5]:

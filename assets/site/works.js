@@ -152,8 +152,18 @@ try {
     control.addEventListener("change", resetAndRender);
   }
   loadMore.addEventListener("click", () => {
+    const firstNewIndex = Math.min(visibleCount, filtered.length);
     visibleCount += PAGE_SIZE;
     render();
+    const firstNewRecord = target.children[firstNewIndex];
+    if (firstNewRecord) {
+      firstNewRecord.setAttribute("tabindex", "-1");
+      firstNewRecord.focus({ preventScroll: true });
+      firstNewRecord.scrollIntoView({
+        behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
+        block: "start",
+      });
+    }
   });
   resetButton.addEventListener("click", () => {
     controls.search.value = "";
