@@ -110,6 +110,11 @@ export function typeBadge(type) {
   return `<span class="badge badge--type">${escapeHtml(humanize(type))}</span>`;
 }
 
+export function scopeBadge(scope) {
+  if (scope !== "context_only") return "";
+  return '<span class="badge badge--context">Context record</span>';
+}
+
 const RIGHTS_LABELS = Object.freeze({
   ok: "Rights documented",
   public_domain: "Public domain",

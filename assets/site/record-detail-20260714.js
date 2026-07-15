@@ -16,11 +16,12 @@ import {
   renderSourceCitation,
   safeExternalUrl,
   setCanonicalRecordUrl,
+  scopeBadge,
   galleryScopeLabel,
   storageLabel,
   typeBadge,
   updateMeta,
-} from "./core.js?v=20260715-3";
+} from "./core.js?v=20260715-4";
 
 mountSiteChrome("");
 
@@ -115,6 +116,7 @@ function publicText(...values) {
 }
 
 function renderWork(work, data, indexes) {
+  const isContextOnly = work.publicScope === "context_only";
   const subtype = [
     ...related(work.filmIds, indexes.films),
     ...related(work.songIds, indexes.songs),
@@ -126,13 +128,13 @@ function renderWork(work, data, indexes) {
   const sources = related(work.sourceIds, indexes.sources);
   const media = related(work.mediaIds, indexes.media);
   const events = related(work.timelineEventIds, indexes.timelineEvents);
+  const subtypeFacts = subtype ? `
+    ${fact("Genre", subtype.genre)}${isContextOnly ? "" : fact("Credit", subtype.creditType)}${fact("Composer status", subtype.composerStatus)}
+    ${fact("Lyricist as printed", subtype.lyricistAsPrinted)}${fact("Lyricist status", subtype.lyricistStatus)}
+    ${fact("Publisher as printed", subtype.publisherAsPrinted || subtype.publisherOrHoldingAsPrinted)}
+    ${fact("Instrumentation", subtype.instrumentation)}${fact("Material status", subtype.materialStatus)}${fact("Shelfmark", subtype.shelfmark)}` : "";
   const overview = publicText(subtype?.publicNote, work.publicNote)
-    + (subtype ? `<dl class="record-facts">
-      ${fact("Genre", subtype.genre)}${fact("Credit", subtype.creditType)}${fact("Composer status", subtype.composerStatus)}
-      ${fact("Lyricist as printed", subtype.lyricistAsPrinted)}${fact("Lyricist status", subtype.lyricistStatus)}
-      ${fact("Publisher as printed", subtype.publisherAsPrinted || subtype.publisherOrHoldingAsPrinted)}
-      ${fact("Instrumentation", subtype.instrumentation)}${fact("Material status", subtype.materialStatus)}${fact("Shelfmark", subtype.shelfmark)}
-    </dl>` : "");
+    + (subtypeFacts.trim() ? `<dl class="record-facts">${subtypeFacts}</dl>` : "");
   const main = [
     section("About this work", overview),
     section("Contributors and credits", contributionList(contributions, indexes)),
@@ -145,8 +147,8 @@ function renderWork(work, data, indexes) {
   return {
     title: work.title,
     label: work.workType || "Work",
-    badges: `${typeBadge(work.workType)}${periodBadge(work.period)}${certaintyBadge(work.certainty)}`,
-    facts: `${fact("Year", work.year)}${fact("Type", work.workType)}${fact("Period", work.period)}${fact("Certainty", humanize(work.certainty))}${fact("Public scope", humanize(work.publicScope))}`,
+    badges: `${typeBadge(work.workType)}${periodBadge(work.period)}${isContextOnly ? scopeBadge(work.publicScope) : certaintyBadge(work.certainty)}`,
+    facts: `${fact("Year", work.year)}${fact("Type", work.workType)}${fact("Period", work.period)}${isContextOnly ? `${fact("Kaper attribution", "Not confirmed")}${fact("Record scope", "Context only")}` : `${fact("Certainty", humanize(work.certainty))}${fact("Public scope", humanize(work.publicScope))}`}`,
     main,
     aside,
   };

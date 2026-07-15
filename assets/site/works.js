@@ -12,8 +12,9 @@ import {
   renderError,
   renderLoading,
   resolveIds,
+  scopeBadge,
   typeBadge,
-} from "./core.js?v=20260715-2";
+} from "./core.js?v=20260715-4";
 
 mountSiteChrome("works");
 
@@ -125,11 +126,14 @@ try {
       const contributors = resolveIds(work, "personIds", peopleById)
         .map((person) => person.displayName)
         .slice(0, 3);
+      const qualificationBadge = work.publicScope === "context_only"
+        ? scopeBadge(work.publicScope)
+        : certaintyBadge(work.certainty);
       return `
         <article class="work-row">
           <div class="work-row__year">${escapeHtml(work.year || "—")}</div>
           <div>
-            <div class="meta-row">${typeBadge(work.workType)}${certaintyBadge(work.certainty)}</div>
+            <div class="meta-row">${typeBadge(work.workType)}${qualificationBadge}</div>
             <h2><a href="${recordUrl("work", work.id)}">${escapeHtml(work.title)}</a></h2>
           </div>
           <div class="work-row__people">${escapeHtml(contributors.join(" · ") || "Contributor details")}</div>
