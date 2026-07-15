@@ -162,6 +162,7 @@ function contributionList(items, indexes, {
   redundantNotes = [],
   creditLabel = "printed as",
   suppressCatalogueNames = false,
+  suppressConfirmedCreatorNotes = false,
 } = {}) {
   if (!items.length) return "";
   const redundantNoteSet = new Set(redundantNotes.filter(Boolean));
@@ -185,6 +186,11 @@ function contributionList(items, indexes, {
       let note = conciseCredits
         ? publicNote || item.scopeNote || ""
         : item.scopeNote || publicNote || item.evidenceContext || "";
+      if (
+        suppressConfirmedCreatorNotes
+        && ["composer", "arranger"].includes(item.role)
+        && String(item.certainty || "").toLowerCase() === "confirmed"
+      ) note = "";
       if (conciseCredits && GENERIC_FILM_CREDIT_NOTES.has(note)) note = "";
       const certainty = conciseCredits && String(item.certainty || "").toLowerCase() === "confirmed"
         ? ""
@@ -278,7 +284,7 @@ function renderWork(work, data, indexes) {
   const isSong = work.workType === "Song";
   const isFilm = work.workType === "Film";
   const isOther = work.workType === "Other";
-  const hasConciseCredits = isSong || isFilm;
+  const hasConciseCredits = isSong || isFilm || isOther;
   const subtype = [
     ...related(work.filmIds, indexes.films),
     ...related(work.songIds, indexes.songs),
@@ -312,6 +318,7 @@ function renderWork(work, data, indexes) {
       redundantNotes: [work.publicNote, subtype?.publicNote],
       creditLabel: isOther ? "credited as" : "printed as",
       suppressCatalogueNames: isOther,
+      suppressConfirmedCreatorNotes: isOther,
     })),
     section("Title variants", variantList(variants)),
     section("Related works and versions", relationList(relations, work, indexes)),

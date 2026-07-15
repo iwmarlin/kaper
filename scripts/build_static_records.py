@@ -160,7 +160,7 @@ def static_page(record_type: str, record: dict, tables: dict) -> str:
     label = TYPE_LABELS[record_type]
     record_id = record["id"]
     if record_type == "work" and record.get("workType") == "Other":
-        record_script_version = "20260715-15"
+        record_script_version = "20260715-16"
     elif record_type == "work" and record.get("workType") == "Film":
         record_script_version = "20260715-14"
     elif record_type == "work" and record.get("workType") == "Song":
