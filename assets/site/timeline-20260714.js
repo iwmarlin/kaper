@@ -8,11 +8,12 @@ import {
   normalizeSearch,
   periodBadge,
   recordUrl,
+  renderMediaDisclosure,
   renderError,
   renderLoading,
   resolveIds,
   typeBadge,
-} from "./core.js?v=20260715-2";
+} from "./core.js?v=20260715-3";
 
 mountSiteChrome("timeline");
 
@@ -96,9 +97,10 @@ function addOptions(select, values) {
 }
 
 try {
-  const { timelineEvents, media, people } = await loadTables(["timelineEvents", "media", "people"]);
+  const { timelineEvents, media, people, sources } = await loadTables(["timelineEvents", "media", "people", "sources"]);
   const mediaById = indexById(media);
   const peopleById = indexById(people);
+  const sourcesById = indexById(sources);
   addOptions(controls.period, timelineEvents.map((event) => event.period));
   addOptions(controls.category, timelineEvents.map((event) => event.category));
 
@@ -140,6 +142,7 @@ try {
         ordinaryEventIndex = 0;
       }
       const hero = (event.heroMediaIds || []).map((id) => mediaById.get(id)).find((item) => item?.assetPath && item.mediaType !== "audio");
+      const heroSources = hero ? resolveIds(hero, "sourceIds", sourcesById) : [];
       const description = event.shortDescription || event.longDescription || "";
       const isMilestone = MILESTONE_EVENT_IDS.has(event.id);
       const side = ordinaryEventIndex % 2 === 0 ? "left" : "right";
@@ -156,7 +159,10 @@ try {
             <h3><a href="${recordUrl("event", event.id)}">${escapeHtml(event.title)}</a></h3>
             ${event.placeDisplay ? `<p class="timeline-item__place">${escapeHtml(event.placeDisplay)}</p>` : ""}
             ${hero ? `<div class="timeline-item__media-row">
-              <img class="timeline-item__image" src="${escapeHtml(hero.assetPath)}" alt="${escapeHtml(hero.altText || hero.title)}" loading="lazy" decoding="async">
+              <figure class="timeline-item__figure">
+                <img class="timeline-item__image" src="${escapeHtml(hero.assetPath)}" alt="${escapeHtml(hero.altText || hero.title)}" loading="lazy" decoding="async">
+                <figcaption>${renderMediaDisclosure(hero, heroSources, { compact: true })}</figcaption>
+              </figure>
               ${description ? `<p>${escapeHtml(description)}</p>` : ""}
             </div>` : (description ? `<p>${escapeHtml(description)}</p>` : "")}
           </div>

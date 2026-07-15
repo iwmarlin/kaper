@@ -914,6 +914,15 @@ main {
   object-position: center;
 }
 
+.timeline-item__figure {
+  min-width: 0;
+  margin: 0;
+}
+
+.timeline-item__figure figcaption {
+  margin-top: 0.65rem;
+}
+
 .timeline-item__media-row {
   display: grid;
   grid-template-columns: 1fr;
@@ -922,7 +931,7 @@ main {
   margin-top: 1rem;
 }
 
-.timeline-item__media-row p {
+.timeline-item__media-row > p {
   display: -webkit-box;
   margin: 0;
   overflow: hidden;
@@ -1003,7 +1012,7 @@ main {
   height: 11.5rem;
 }
 
-.timeline-item--milestone .timeline-item__media-row p {
+.timeline-item--milestone .timeline-item__media-row > p {
   -webkit-line-clamp: 8;
 }
 
@@ -1720,6 +1729,84 @@ main {
   padding: 1rem;
   color: var(--ink-soft);
   font-size: 0.79rem;
+}
+
+.media-disclosure {
+  min-width: 0;
+  color: var(--ink-soft);
+  font-size: 0.82rem;
+  line-height: 1.48;
+}
+
+.media-disclosure__title {
+  display: inline-block;
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 1rem;
+  font-weight: 650;
+  line-height: 1.25;
+}
+
+.media-disclosure p {
+  margin: 0.45rem 0 0;
+  overflow-wrap: anywhere;
+}
+
+.media-disclosure__credit strong,
+.media-disclosure__rationale strong {
+  color: var(--ink);
+}
+
+.media-disclosure__meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.65rem;
+  margin-top: 0.65rem;
+}
+
+.media-disclosure__meta a {
+  font-size: 0.74rem;
+  font-weight: 700;
+}
+
+.media-disclosure__resolution {
+  color: var(--warning);
+  font-size: 0.65rem;
+  font-weight: 760;
+  letter-spacing: 0.055em;
+  text-transform: uppercase;
+}
+
+.media-disclosure__rationale {
+  padding-left: 0.65rem;
+  border-left: 2px solid rgba(140, 87, 29, 0.45);
+}
+
+.media-disclosure__details {
+  margin-top: 0.55rem;
+  padding-top: 0.45rem;
+  border-top: 1px solid var(--line);
+}
+
+.media-disclosure__details summary {
+  color: var(--accent-dark);
+  cursor: pointer;
+  font-size: 0.72rem;
+  font-weight: 720;
+}
+
+.media-disclosure__details p {
+  color: #5d472d;
+  font-size: 0.76rem;
+}
+
+.media-disclosure--compact {
+  font-size: 0.76rem;
+}
+
+.timeline-item__figure .media-disclosure__title {
+  font-size: 0.9rem;
 }
 
 .record-section--gallery {

@@ -135,6 +135,59 @@ export function rightsBadge(status, note = "") {
   return `<span class="badge badge--rights badge--${escapeHtml(key)}">${escapeHtml(rightsLabel(status, note))}</span>`;
 }
 
+export function mediaIsFairUse(media) {
+  return Boolean(
+    media?.assetPath
+    && String(media.rightsStatus || "").toLowerCase().trim().replaceAll(" ", "_") === "permission_needed_or_fair_use_claimed"
+  );
+}
+
+export function mediaRightsLabel(media) {
+  if (mediaIsFairUse(media)) return "Fair use";
+  return rightsLabel(media?.rightsStatus, media?.rightsNote);
+}
+
+export function mediaRightsBadge(media) {
+  if (!media?.rightsStatus) return "";
+  const key = String(media.rightsStatus).toLowerCase().trim().replaceAll(" ", "_");
+  return `<span class="badge badge--rights badge--${escapeHtml(key)}">${escapeHtml(mediaRightsLabel(media))}</span>`;
+}
+
+function conciseRightsRationale(note = "") {
+  const sentences = String(note).match(/[^.!?]+[.!?]+|[^.!?]+$/g)?.map((sentence) => sentence.trim()).filter(Boolean) || [];
+  return sentences.find((sentence) => (
+    /fair[ -]use|low[- ]resolution|reduced[- ]resolution|scholarly|contextual|identification|criticism|documentation/i.test(sentence)
+    && /use|used|published|approved|reproduce|shown|treat/i.test(sentence)
+  )) || sentences[0] || "";
+}
+
+export function renderMediaDisclosure(media, sources = [], { compact = false, includeCaption = true } = {}) {
+  if (!media) return "";
+  const source = sources.find((item) => item?.id) || null;
+  const sourceExternal = safeExternalUrl(media.externalUrl) || safeExternalUrl(source?.url);
+  const sourceHref = sourceExternal || (source?.id ? recordUrl("source", source.id) : "");
+  const sourceLabel = source?.id ? `Source ${source.id}` : "Original source";
+  const sourceAttributes = sourceExternal ? ' target="_blank" rel="noreferrer"' : "";
+  const caption = media.publicCaption || media.description || "";
+  const credit = media.publicCreditLine || "";
+  const rationale = media.rightsNote || "";
+  const conciseRationale = mediaIsFairUse(media) ? conciseRightsRationale(rationale) : "";
+  const fullRationale = rationale && rationale !== conciseRationale;
+  return `<div class="media-disclosure${compact ? " media-disclosure--compact" : ""}">
+    <a class="media-disclosure__title" href="${recordUrl("media", media.id)}">${escapeHtml(media.title || media.id)}</a>
+    ${includeCaption && caption && caption !== media.title ? `<p class="media-disclosure__caption">${escapeHtml(caption)}</p>` : ""}
+    ${credit ? `<p class="media-disclosure__credit"><strong>Credit:</strong> ${escapeHtml(credit)}</p>` : ""}
+    <div class="media-disclosure__meta">
+      ${mediaRightsBadge(media)}
+      ${mediaIsFairUse(media) ? '<span class="media-disclosure__resolution">Reduced-resolution local reference</span>' : ""}
+      ${sourceHref ? `<a href="${escapeHtml(sourceHref)}"${sourceAttributes}>${escapeHtml(sourceLabel)}${sourceExternal ? ' <span aria-hidden="true">↗</span>' : ""}</a>` : ""}
+    </div>
+    ${conciseRationale ? `<p class="media-disclosure__rationale"><strong>Use rationale:</strong> ${escapeHtml(conciseRationale)}</p>` : ""}
+    ${compact && fullRationale ? `<details class="media-disclosure__details"><summary>Full rights and use note</summary><p>${escapeHtml(rationale)}</p></details>` : ""}
+    ${!compact && rationale ? `<p class="media-disclosure__rationale">${escapeHtml(rationale)}</p>` : ""}
+  </div>`;
+}
+
 export function storageLabel(storageType) {
   const labels = {
     local: "Local archival copy",

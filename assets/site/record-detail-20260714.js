@@ -5,21 +5,22 @@ import {
   humanize,
   indexById,
   loadTables,
+  mediaRightsBadge,
+  mediaRightsLabel,
   mediaPreview,
   mountSiteChrome,
   periodBadge,
   recordUrl,
   renderError,
+  renderMediaDisclosure,
   renderSourceCitation,
-  rightsBadge,
-  rightsLabel,
   safeExternalUrl,
   setCanonicalRecordUrl,
   galleryScopeLabel,
   storageLabel,
   typeBadge,
   updateMeta,
-} from "./core.js?v=20260715-2";
+} from "./core.js?v=20260715-3";
 
 mountSiteChrome("");
 
@@ -65,15 +66,12 @@ function related(ids, index) {
   return [...new Set(ids || [])].map((id) => index.get(id)).filter(Boolean);
 }
 
-function mediaFigures(items) {
+function mediaFigures(items, sourceIndex) {
   if (!items.length) return "";
   return `<div>${items.map((item) => `
     <figure class="record-media">
       ${mediaPreview(item)}
-      <figcaption>
-        <a href="${recordUrl("media", item.id)}">${escapeHtml(item.title)}</a>
-        ${item.publicCaption ? `<p>${escapeHtml(item.publicCaption)}</p>` : ""}
-      </figcaption>
+      <figcaption>${renderMediaDisclosure(item, related(item.sourceIds, sourceIndex), { compact: true })}</figcaption>
     </figure>`).join("")}</div>`;
 }
 
@@ -111,16 +109,6 @@ function variantList(items) {
   return `<ul class="entity-list">${items.map((item) => `<li><span><strong>${escapeHtml(item.variantTitle)}</strong>${item.titleAsSource && item.titleAsSource !== item.variantTitle ? `<br><small>Source form: ${escapeHtml(item.titleAsSource)}</small>` : ""}</span><span>${typeBadge(item.variantType)} ${item.language ? periodBadge(item.language) : ""} ${certaintyBadge(item.certainty)}</span></li>`).join("")}</ul>`;
 }
 
-function rightsPanel(media) {
-  if (!media.rightsStatus && !media.rightsNote && !media.publicCreditLine) return "";
-  return `<div class="rights-panel">
-    <p class="eyebrow">Rights and permitted use</p>
-    <h2>${escapeHtml(rightsLabel(media.rightsStatus, media.rightsNote))}</h2>
-    ${media.publicCreditLine ? `<p><strong>Credit:</strong> ${escapeHtml(media.publicCreditLine)}</p>` : ""}
-    ${media.rightsNote ? `<p>${escapeHtml(media.rightsNote)}</p>` : ""}
-  </div>`;
-}
-
 function publicText(...values) {
   const value = values.find((item) => typeof item === "string" && item.trim());
   return value ? `<p class="lead">${escapeHtml(value)}</p>` : "";
@@ -153,7 +141,7 @@ function renderWork(work, data, indexes) {
     section("Timeline", entityList(events, "event", (item) => item.displayDate || item.dateStart)),
     section("Sources", sourceList(sources)),
   ].join("");
-  const aside = mediaFigures(media) || `<div class="scope-note">No public media are linked to this work.</div>`;
+  const aside = mediaFigures(media, indexes.sources) || `<div class="scope-note">No public media are linked to this work.</div>`;
   return {
     title: work.title,
     label: work.workType || "Work",
@@ -184,7 +172,7 @@ function renderEvent(event, data, indexes) {
       section("Places", entityList(places, "place", (item) => [item.city, item.country].filter(Boolean).join(", "))),
       section("Sources", sourceList(sources)),
     ].join(""),
-    aside: mediaFigures(media),
+    aside: mediaFigures(media, indexes.sources),
   };
 }
 
@@ -204,7 +192,7 @@ function renderPlace(place, data, indexes) {
       section("People", entityList(people, "person", (item) => humanize(item.primaryRole))),
       section("Sources", sourceList(sources)),
     ].join(""),
-    aside: mediaFigures(media),
+    aside: mediaFigures(media, indexes.sources),
   };
 }
 
@@ -268,12 +256,12 @@ function renderMedia(media, data, indexes) {
   return {
     title: media.title,
     label: "Media record",
-    badges: `${typeBadge(media.mediaType)}${periodBadge(media.period)}${rightsBadge(media.rightsStatus, media.rightsNote)}`,
-    facts: `${fact("Media type", humanize(media.mediaType))}${fact("Category", humanize(media.category))}${fact("Items", gallery ? media.assetPaths.length : "")}${fact("Storage", storageLabel(media.storageType))}${fact("Gallery scope", galleryScopeLabel(media.galleryStatus))}${fact("Rights status", rightsLabel(media.rightsStatus, media.rightsNote))}`,
+    badges: `${typeBadge(media.mediaType)}${periodBadge(media.period)}${mediaRightsBadge(media)}`,
+    facts: `${fact("Media type", humanize(media.mediaType))}${fact("Category", humanize(media.category))}${fact("Items", gallery ? media.assetPaths.length : "")}${fact("Storage", storageLabel(media.storageType))}${fact("Gallery scope", galleryScopeLabel(media.galleryStatus))}${fact("Rights status", mediaRightsLabel(media))}`,
     main: [
       section("Caption and context", `${publicText(media.publicCaption, media.description)}${media.publicImageText ? `<p><strong>Image text:</strong> ${escapeHtml(media.publicImageText)}</p>` : ""}${external ? `<p><a class="button button--ghost button--small" href="${escapeHtml(external)}" target="_blank" rel="noreferrer">Open source <span aria-hidden="true">↗</span></a></p>` : ""}`),
       gallery ? section(`Gallery · ${media.assetPaths.length} images`, gallery, "record-section--gallery") : "",
-      section("Rights", rightsPanel(media)),
+      section("Rights", renderMediaDisclosure(media, sources, { includeCaption: false })),
       section("Related works", entityList(works, "work", (item) => [item.year, item.workType].filter(Boolean).join(" · "))),
       section("Timeline", entityList(events, "event", (item) => item.displayDate || item.dateStart)),
       section("Places", entityList(places, "place", (item) => [item.city, item.country].filter(Boolean).join(", "))),
