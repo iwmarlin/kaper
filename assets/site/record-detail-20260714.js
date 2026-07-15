@@ -147,8 +147,14 @@ function mediaFigures(items, sourceIndex) {
     </figure>`).join("")}</div>`;
 }
 
-function contributionList(items, indexes, { conciseSongCredits = false } = {}) {
+const GENERIC_FILM_CREDIT_NOTES = new Set([
+  "Film-music composition credit as documented by the linked film sources.",
+  "Film-score composition credit.",
+]);
+
+function contributionList(items, indexes, { conciseCredits = false, redundantNotes = [] } = {}) {
   if (!items.length) return "";
+  const redundantNoteSet = new Set(redundantNotes.filter(Boolean));
   return `<ul class="entity-list">${items
     .sort((a, b) => Number(a.sortOrder || 999) - Number(b.sortOrder || 999))
     .map((item) => {
@@ -161,8 +167,12 @@ function contributionList(items, indexes, { conciseSongCredits = false } = {}) {
       const printed = item.nameAsPrinted && !names.some((name) => name.includes(escapeHtml(item.nameAsPrinted)))
         ? ` · printed as “${escapeHtml(item.nameAsPrinted)}”`
         : "";
-      const note = item.scopeNote || item.publicNote || (conciseSongCredits ? "" : item.evidenceContext || "");
-      const certainty = conciseSongCredits && String(item.certainty || "").toLowerCase() === "confirmed"
+      const publicNote = item.publicNote && !redundantNoteSet.has(item.publicNote) ? item.publicNote : "";
+      let note = conciseCredits
+        ? publicNote || item.scopeNote || ""
+        : item.scopeNote || publicNote || item.evidenceContext || "";
+      if (conciseCredits && GENERIC_FILM_CREDIT_NOTES.has(note)) note = "";
+      const certainty = conciseCredits && String(item.certainty || "").toLowerCase() === "confirmed"
         ? ""
         : certaintyBadge(item.certainty);
       return `<li><span><strong>${names.join(" · ") || escapeHtml(item.nameAsPrinted || "Unresolved contributor")}</strong>${printed}${note ? `<br><small>${escapeHtml(note)}</small>` : ""}</span><span>${typeBadge(item.role)} ${certainty}</span></li>`;
@@ -193,6 +203,8 @@ function publicText(...values) {
 function renderWork(work, data, indexes) {
   const isContextOnly = work.publicScope === "context_only";
   const isSong = work.workType === "Song";
+  const isFilm = work.workType === "Film";
+  const hasConciseCredits = isSong || isFilm;
   const subtype = [
     ...related(work.filmIds, indexes.films),
     ...related(work.songIds, indexes.songs),
@@ -204,7 +216,7 @@ function renderWork(work, data, indexes) {
   const sources = related(work.sourceIds, indexes.sources);
   const media = related(work.mediaIds, indexes.media);
   const events = related(work.timelineEventIds, indexes.timelineEvents);
-  const subtypeFacts = subtype ? (isSong ? `
+  const subtypeFacts = subtype ? (hasConciseCredits ? `
     ${fact("Instrumentation", subtype.instrumentation)}${fact("Material status", subtype.materialStatus)}${fact("Shelfmark", subtype.shelfmark)}` : `
     ${fact("Genre", subtype.genre)}${isContextOnly ? "" : fact("Credit", subtype.creditType)}${fact("Composer status", subtype.composerStatus)}
     ${fact("Lyricist as printed", subtype.lyricistAsPrinted)}${fact("Lyricist status", subtype.lyricistStatus)}
@@ -214,7 +226,10 @@ function renderWork(work, data, indexes) {
     + (subtypeFacts.trim() ? `<dl class="record-facts">${subtypeFacts}</dl>` : "");
   const main = [
     section("About this work", overview),
-    section("Contributors and credits", contributionList(contributions, indexes, { conciseSongCredits: isSong })),
+    section("Contributors and credits", contributionList(contributions, indexes, {
+      conciseCredits: hasConciseCredits,
+      redundantNotes: [work.publicNote, subtype?.publicNote],
+    })),
     section("Title variants", variantList(variants)),
     section("Related works and versions", relationList(relations, work, indexes)),
     section("Timeline", entityList(events, "event", (item) => item.displayDate || item.dateStart)),
@@ -224,8 +239,8 @@ function renderWork(work, data, indexes) {
   return {
     title: work.title,
     label: work.workType || "Work",
-    badges: `${typeBadge(work.workType)}${periodBadge(work.period)}${isContextOnly ? scopeBadge(work.publicScope) : (isSong && work.certainty === "confirmed" ? "" : certaintyBadge(work.certainty))}`,
-    facts: `${fact("Year", work.year)}${fact("Type", work.workType)}${isSong ? fact("Genre", subtype?.genre) : ""}${fact("Period", work.period)}${isContextOnly ? fact("Kaper attribution", "Not confirmed") : (isSong && work.certainty === "confirmed" ? "" : fact("Certainty", humanize(work.certainty)))}`,
+    badges: `${typeBadge(work.workType)}${periodBadge(work.period)}${isContextOnly ? scopeBadge(work.publicScope) : (hasConciseCredits && work.certainty === "confirmed" ? "" : certaintyBadge(work.certainty))}`,
+    facts: `${fact("Year", work.year)}${fact("Type", work.workType)}${hasConciseCredits ? fact("Genre", subtype?.genre) : ""}${fact("Period", work.period)}${isContextOnly ? fact("Kaper attribution", "Not confirmed") : (hasConciseCredits && work.certainty === "confirmed" ? "" : fact("Certainty", humanize(work.certainty)))}`,
     main,
     aside,
   };

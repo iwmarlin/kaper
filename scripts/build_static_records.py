@@ -159,7 +159,12 @@ def static_page(record_type: str, record: dict, tables: dict) -> str:
     summary = summary_for(record_type, record, tables)
     label = TYPE_LABELS[record_type]
     record_id = record["id"]
-    record_script_version = "20260715-13" if record_type == "work" and record.get("workType") == "Song" else "20260715-12"
+    if record_type == "work" and record.get("workType") == "Film":
+        record_script_version = "20260715-14"
+    elif record_type == "work" and record.get("workType") == "Song":
+        record_script_version = "20260715-13"
+    else:
+        record_script_version = "20260715-12"
     route = f"records/{record_type}/{quote(record_id, safe='')}/"
     canonical = f"{ORIGIN}{route}"
     facts = "".join(
