@@ -262,7 +262,7 @@ function renderMedia(media, data, indexes) {
     badges: `${typeBadge(media.mediaType)}${periodBadge(media.period)}${rightsBadge(media.rightsStatus, media.rightsNote)}`,
     facts: `${fact("Media type", humanize(media.mediaType))}${fact("Category", humanize(media.category))}${fact("Items", gallery ? media.assetPaths.length : "")}${fact("Storage", storageLabel(media.storageType))}${fact("Gallery scope", galleryScopeLabel(media.galleryStatus))}${fact("Rights status", rightsLabel(media.rightsStatus, media.rightsNote))}`,
     main: [
-      section("Caption and context", `${publicText(media.publicCaption, media.description)}${media.publicImageText ? `<p><strong>Image text:</strong> ${escapeHtml(media.publicImageText)}</p>` : ""}${external ? `<p><a class="button button--ghost button--small" href="${escapeHtml(external)}" target="_blank" rel="noreferrer">Open at source institution <span aria-hidden="true">↗</span></a></p>` : ""}`),
+      section("Caption and context", `${publicText(media.publicCaption, media.description)}${media.publicImageText ? `<p><strong>Image text:</strong> ${escapeHtml(media.publicImageText)}</p>` : ""}${external ? `<p><a class="button button--ghost button--small" href="${escapeHtml(external)}" target="_blank" rel="noreferrer">Open source <span aria-hidden="true">↗</span></a></p>` : ""}`),
       gallery ? section(`Gallery · ${media.assetPaths.length} images`, gallery, "record-section--gallery") : "",
       section("Rights", rightsPanel(media)),
       section("Related works", entityList(works, "work", (item) => [item.year, item.workType].filter(Boolean).join(" · "))),
