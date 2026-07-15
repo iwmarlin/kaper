@@ -2,18 +2,22 @@ import {
   debounce,
   escapeHtml,
   humanize,
+  indexById,
   loadTables,
+  mediaIsFairUse,
   mediaPreview,
+  mediaRightsBadge,
   mountSiteChrome,
   normalizeSearch,
   periodBadge,
   recordUrl,
+  renderMediaDisclosure,
   renderError,
   renderLoading,
-  rightsBadge,
+  resolveIds,
   safeExternalUrl,
   typeBadge,
-} from "./core.js?v=20260715-2";
+} from "./core.js?v=20260715-3";
 
 mountSiteChrome("media");
 
@@ -62,7 +66,8 @@ function curatedOrder(items) {
 }
 
 try {
-  const { media } = await loadTables(["media"]);
+  const { media, sources } = await loadTables(["media", "sources"]);
+  const sourcesById = indexById(sources);
   addOptions(controls.type, media.map((item) => item.mediaType));
   addOptions(controls.period, media.map((item) => item.period));
   const indexed = media.map((item) => ({
@@ -99,14 +104,24 @@ try {
     target.innerHTML = shown.map((item) => {
       const external = safeExternalUrl(item.externalUrl);
       const isGallery = item.mediaType === "document_gallery" && Array.isArray(item.assetPaths) && item.assetPaths.length > 1;
+      const isLocalVisual = Boolean(item.assetPath && item.storageType !== "external" && item.mediaType !== "audio");
+      const isFairUse = mediaIsFairUse(item);
+      const itemSources = resolveIds(item, "sourceIds", sourcesById);
       const preview = mediaPreview(item);
+      const previewMarkup = isGallery
+        ? `<a class="media-card__image-link" href="${recordUrl("media", item.id)}">${preview}<span>Open gallery · ${item.assetPaths.length} images</span></a>`
+        : (isLocalVisual
+          ? `<a class="media-card__preview-link" href="${recordUrl("media", item.id)}" aria-label="View media record: ${escapeHtml(item.title)}">${preview}</a>`
+          : preview);
       return `
-        <article class="media-card">
-          <figure>${isGallery ? `<a class="media-card__image-link" href="${recordUrl("media", item.id)}">${preview}<span>Open gallery · ${item.assetPaths.length} images</span></a>` : preview}</figure>
+        <article class="media-card" data-media-id="${escapeHtml(item.id)}">
+          <figure>${previewMarkup}</figure>
           <div class="media-card__body">
-            <div class="meta-row">${typeBadge(item.mediaType)}${periodBadge(item.period)}${rightsBadge(item.rightsStatus, item.rightsNote)}</div>
-            <h2><a href="${recordUrl("media", item.id)}">${escapeHtml(item.title)}</a></h2>
-            <p>${escapeHtml(item.publicCaption || item.description || "")}</p>
+            <div class="meta-row">${typeBadge(item.mediaType)}${periodBadge(item.period)}${isFairUse ? "" : mediaRightsBadge(item)}</div>
+            ${isFairUse
+              ? renderMediaDisclosure(item, itemSources, { compact: true })
+              : `<h2><a href="${recordUrl("media", item.id)}">${escapeHtml(item.title)}</a></h2>
+                <p>${escapeHtml(item.publicCaption || item.description || "")}</p>`}
             <div class="card__footer"><span>${escapeHtml(humanize(item.category || item.galleryStatus))}</span><span>${escapeHtml(item.id)}</span></div>
             <div class="media-card__actions">
               <a href="${recordUrl("media", item.id)}">${isGallery ? `Open gallery (${item.assetPaths.length})` : "View record"} <span aria-hidden="true">→</span></a>
