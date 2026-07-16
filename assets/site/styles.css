@@ -1643,37 +1643,46 @@ main {
 }
 
 .record-hero {
-  padding: clamp(3rem, 5.5vw, 4.3rem) 0 2.4rem;
+  padding: clamp(1.8rem, 3.4vw, 2.7rem) 0 clamp(1.35rem, 2.5vw, 1.9rem);
   border-bottom: 1px solid var(--line);
 }
 
 .record-hero__grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.25fr) minmax(14rem, 0.5fr);
-  gap: 2.25rem;
-  align-items: start;
+  grid-template-columns: minmax(0, 1.45fr) minmax(14rem, 0.55fr);
+  gap: clamp(1.35rem, 3vw, 2.4rem);
+  align-items: center;
 }
 
 .record-hero h1 {
-  max-width: 14ch;
-  margin-bottom: 1rem;
-  font-size: clamp(2.3rem, 4.4vw, 3.55rem);
+  max-width: 20ch;
+  margin-bottom: 0.6rem;
+  font-size: clamp(2.05rem, 3.7vw, 3rem);
+  line-height: 1.07;
 }
 
 .record-hero--long-title h1 {
-  max-width: 18ch;
-  font-size: clamp(2.15rem, 3.7vw, 3.05rem);
+  max-width: 24ch;
+  font-size: clamp(1.9rem, 3.15vw, 2.55rem);
 }
 
 .record-hero--extra-long-title h1 {
-  max-width: 21ch;
-  font-size: clamp(1.95rem, 3.2vw, 2.7rem);
-  line-height: 1.02;
+  max-width: 30ch;
+  font-size: clamp(1.7rem, 2.75vw, 2.25rem);
+  line-height: 1.06;
+}
+
+.record-hero .eyebrow {
+  margin-bottom: 0.42rem;
+}
+
+.record-hero .meta-row {
+  gap: 0.35rem;
 }
 
 .record-id {
   color: var(--ink-soft);
-  font-size: 0.72rem;
+  font-size: 0.68rem;
   font-weight: 720;
   letter-spacing: 0.09em;
   text-transform: uppercase;
@@ -1681,17 +1690,17 @@ main {
 
 .record-facts {
   margin: 0;
-  padding: 1rem;
+  padding: 0.6rem 0.8rem;
   border: 1px solid var(--line);
   border-radius: var(--radius-md);
-  background: var(--surface);
+  background: rgba(255, 253, 248, 0.72);
 }
 
 .record-facts div {
   display: grid;
-  grid-template-columns: minmax(6rem, 0.8fr) 1.2fr;
-  gap: 1rem;
-  padding: 0.52rem 0;
+  grid-template-columns: minmax(5.5rem, 0.72fr) 1.28fr;
+  gap: 0.75rem;
+  padding: 0.35rem 0;
   border-bottom: 1px solid var(--line);
 }
 
@@ -1701,7 +1710,7 @@ main {
 
 .record-facts dt {
   color: var(--ink-soft);
-  font-size: 0.68rem;
+  font-size: 0.62rem;
   font-weight: 740;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -1709,14 +1718,19 @@ main {
 
 .record-facts dd {
   margin: 0;
-  font-size: 0.9rem;
+  font-size: 0.82rem;
+  line-height: 1.42;
   overflow-wrap: anywhere;
+}
+
+#record-root > .section {
+  padding-top: clamp(1.4rem, 2.5vw, 2rem);
 }
 
 .record-layout {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(15rem, 0.3fr);
-  gap: 2.25rem;
+  gap: clamp(1.4rem, 3vw, 2.15rem);
 }
 
 .record-layout--single {
@@ -1735,7 +1749,7 @@ main {
 }
 
 .record-section {
-  padding: 1.5rem 0;
+  padding: 1.15rem 0;
   border-bottom: 1px solid var(--line);
 }
 
@@ -1744,8 +1758,8 @@ main {
 }
 
 .record-section h2 {
-  margin-bottom: 0.95rem;
-  font-size: 1.45rem;
+  margin-bottom: 0.7rem;
+  font-size: 1.3rem;
 }
 
 .relation-list,
