@@ -532,6 +532,15 @@
       "removedFields": []
     },
     {
+      "table": "People",
+      "id": "P105",
+      "fields": [
+        "authorityUrl",
+        "authorizedName"
+      ],
+      "removedFields": []
+    },
+    {
       "table": "Person Name Variants",
       "id": "PNV0008",
       "fields": [
@@ -559,8 +568,72 @@
     },
     {
       "table": "Places",
+      "id": "PL022",
+      "fields": [
+        "displayName"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Places",
+      "id": "PL023",
+      "fields": [
+        "displayName"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Places",
       "id": "PL025",
       "fields": [
+        "authorizedName",
+        "displayName",
+        "latitude",
+        "longitude",
+        "mapPrecision",
+        "publicNote",
+        "region",
+        "slug"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Places",
+      "id": "PL026",
+      "fields": [
+        "publicNote"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Places",
+      "id": "PL033",
+      "fields": [
+        "publicNote"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Places",
+      "id": "PL034",
+      "fields": [
+        "publicNote"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Places",
+      "id": "PL035",
+      "fields": [
+        "publicNote"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Places",
+      "id": "PL036",
+      "fields": [
+        "displayName",
         "publicNote"
       ],
       "removedFields": []
@@ -672,6 +745,14 @@
       "removedFields": []
     },
     {
+      "table": "Timeline Events",
+      "id": "TE0031",
+      "fields": [
+        "placeDisplay"
+      ],
+      "removedFields": []
+    },
+    {
       "table": "Works",
       "id": "W-S077",
       "fields": [
@@ -691,6 +772,53 @@
     }
   ],
   "appliedAdditions": [
+    {
+      "table": "Places",
+      "id": "PL043",
+      "fields": [
+        "authorizedName",
+        "city",
+        "country",
+        "displayName",
+        "id",
+        "latitude",
+        "longitude",
+        "mapPrecision",
+        "mediaIds",
+        "period",
+        "periods",
+        "placeType",
+        "publicNote",
+        "publicScope",
+        "region",
+        "slug",
+        "sourceIds",
+        "timelineEventIds"
+      ]
+    },
+    {
+      "table": "Places",
+      "id": "PL044",
+      "fields": [
+        "authorizedName",
+        "city",
+        "country",
+        "displayName",
+        "id",
+        "latitude",
+        "longitude",
+        "mapPrecision",
+        "period",
+        "periods",
+        "placeType",
+        "publicNote",
+        "publicScope",
+        "region",
+        "slug",
+        "sourceIds",
+        "timelineEventIds"
+      ]
+    },
     {
       "table": "Sources",
       "id": "SRC0555",
@@ -719,6 +847,20 @@
       "id": "M024",
       "fields": [
         "sourceIds"
+      ]
+    },
+    {
+      "table": "Timeline Events",
+      "id": "TE0031",
+      "fields": [
+        "placeIds"
+      ]
+    },
+    {
+      "table": "Timeline Events",
+      "id": "TE0036",
+      "fields": [
+        "placeIds"
       ]
     }
   ],

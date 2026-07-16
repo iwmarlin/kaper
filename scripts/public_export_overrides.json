@@ -533,6 +533,13 @@
           "authorizedName": "Mauprey, André (1881–1939)",
           "authorityUrl": "BnF Catalogue: https://catalogue.bnf.fr/ark:/12148/cb14120019q\nBnF data: https://data.bnf.fr/14120019/andre_mauprey\nVIAF: https://viaf.org/viaf/10056274\nWikidata: https://www.wikidata.org/wiki/Q4759995\nISNI: https://isni.org/isni/0000000071010995"
         }
+      },
+      "P105": {
+        "reason": "Add the verified GND authority for Hermann Scheibenhofer and its directly linked VIAF identity. The GND record identifies Fritz German, Friedrich Frimmel and Harry Waens as pseudonyms; no birth date is added because the authority record and conservatory register disagree.",
+        "fields": {
+          "authorizedName": "Scheibenhofer, Hermann",
+          "authorityUrl": "GND: https://d-nb.info/gnd/1146071264\nVIAF: https://viaf.org/viaf/134151246519744131371"
+        }
       }
     },
     "Places": {
