@@ -566,6 +566,18 @@
           "mapPrecision": "city",
           "publicNote": "Procedural immigration-address context: the Commercial Hotel in Mexicali is given in the article as Kaper’s last permanent residence abroad in the 1935 Calexico border-crossing manifest. The public map uses the Mexicali city centroid; the exact historic hotel address and location have not been verified."
         }
+      },
+      "PL022": {
+        "reason": "Surface the documented street address in the map display name so the George V hotel marker shows its address directly.",
+        "fields": {
+          "displayName": "Hôtel George V, 31 avenue George V, Paris"
+        }
+      },
+      "PL023": {
+        "reason": "Surface the documented street address in the map display name so the Ritz marker shows its address directly.",
+        "fields": {
+          "displayName": "Ritz Paris, 15 place Vendôme, Paris"
+        }
       }
     }
   },
