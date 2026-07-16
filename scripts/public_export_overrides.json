@@ -565,12 +565,12 @@
         }
       },
       "PL039": {
-        "reason": "Map the documented Commercial Hotel context at Mexicali city level while preserving that the exact historic hotel address remains unidentified.",
+        "reason": "Map the documented Commercial Hotel context at Mexicali city level; phrase the note as a neutral public statement rather than referring to “the article”.",
         "fields": {
           "latitude": 32.6245,
           "longitude": -115.4523,
           "mapPrecision": "city",
-          "publicNote": "Procedural immigration-address context: the Commercial Hotel in Mexicali is given in the article as Kaper’s last permanent residence abroad in the 1935 Calexico border-crossing manifest. The public map uses the Mexicali city centroid; the exact historic hotel address and location have not been verified."
+          "publicNote": "Procedural immigration-address context: the Commercial Hotel in Mexicali is given as Kaper's last permanent residence abroad in the 1935 Calexico border-crossing manifest. The public map uses the Mexicali city centroid; the exact historic hotel address and location have not been verified."
         }
       },
       "PL022": {
@@ -592,9 +592,28 @@
         }
       },
       "PL036": {
-        "reason": "Surface the documented street address in the map display name for consistency with the other Paris venue markers (George V, Ritz).",
+        "reason": "Surface the street address in the display name and phrase the public note neutrally rather than referring to “the article”.",
         "fields": {
-          "displayName": "Casino de Paris, 16 rue de Clichy, Paris"
+          "displayName": "Casino de Paris, 16 rue de Clichy, Paris",
+          "publicNote": "Paris revue/music-hall context for the 1933/34 Paris career station of the Jurmann–Kaper duo, documented through Brzoska's account of their revue activity."
+        }
+      },
+      "PL033": {
+        "reason": "Phrase the public note as a neutral statement rather than referring to “the article”.",
+        "fields": {
+          "publicNote": "West Berlin district context for Kaper's settled Berlin position before the 1933 forced departure. His address is identified as Pommersche Straße in Wilmersdorf, an affluent western Berlin residential district."
+        }
+      },
+      "PL034": {
+        "reason": "Phrase the public note as a neutral statement rather than referring to “the article”.",
+        "fields": {
+          "publicNote": "Street-level Berlin residence context: Kaper is reported as living on Pommersche Straße in Wilmersdorf at the threshold of 1933. Coordinates represent the approximate midpoint of the modern street, not Kaper's exact house."
+        }
+      },
+      "PL035": {
+        "reason": "Phrase the public note as a neutral statement rather than referring to “the article”.",
+        "fields": {
+          "publicNote": "Paris hotel/address context given by Kaper on the S.S. Champlain passenger manifest as his home address before arrival in New York; interpreted as a transit hotel address rather than a private residence."
         }
       }
     }
