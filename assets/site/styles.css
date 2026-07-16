@@ -1085,6 +1085,7 @@ main {
 .map-hero h1 {
   margin-bottom: 0.55rem;
   font-size: clamp(2.35rem, 4vw, 3.15rem);
+  white-space: nowrap;
 }
 
 .map-hero .lead {
@@ -2407,6 +2408,10 @@ main {
 
   .map-hero {
     padding: 2.35rem 0 1.9rem;
+  }
+
+  .map-hero h1 {
+    white-space: normal;
   }
 
   .map-hero__summary {
