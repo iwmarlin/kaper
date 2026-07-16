@@ -28,6 +28,49 @@ def sha256(path: Path) -> str:
 def is_empty(value: Any) -> bool:
     return value is None or value == "" or value == [] or value == {}
 
+MEDIA_PUBLIC_WORKFLOW_PATTERN = re.compile(
+    r"(?:"
+    r"assets/|"
+    r"\blocal asset\b|"
+    r"\bsource route\b|"
+    r"\bcurrent local path\b|"
+    r"\bsource SRC\d+\b|"
+    r"\brecorded in SRC\d+\b|"
+    r"\blinked through SRC\d+\b|"
+    r"\blinked works?\s*:|"
+    r"\brelated works?\s*:|"
+    r"\brights note records\b|"
+    r"\bpublication status\b|"
+    r"\bverification remains open\b|"
+    r"\bcurrent asset field\b|"
+    r"\bbibliographic source not yet linked\b|"
+    r"\bsource:\s*|"
+    r"\bidentifiers?:\s*|"
+    r"\bexact visual provenance\b|"
+    r"\b(?:reviewed|checked|updated|revised|confirmed)\s+20\d{2}(?:-\d{2}-\d{2})?\b|"
+    r"\b20\d{2}-\d{2}-\d{2}\b|"
+    r"\bsupplied by user\b|"
+    r"\brights upgraded\b|"
+    r"\bnot legal advice\b|"
+    r"\bcurrent public repository derivative\b|"
+    r"\bwebsite must\b|"
+    r"\bdo not offer\b|"
+    r"\bdo not provide\b|"
+    r"\bdo not rehost\b|"
+    r"\bno rehosting\b|"
+    r"\bdo not reuse\b|"
+    r"\bdo not imply\b|"
+    r"\bindependent verification before publication\b|"
+    r"\bnot a licence or legal determination\b"
+    r")",
+    flags=re.IGNORECASE,
+)
+
+MEDIA_PUBLIC_IDENTIFIER_PATTERN = re.compile(
+    r"(?<![A-Za-z0-9-])(?:SRC\d{4}|W-[A-Z]\d{3}|TE\d{4}|PL\d{3}|M\d{3}|"
+    r"F\d{3}|S\d{3}|O\d{3}|P\d{3}|ORG\d{3})(?![A-Za-z0-9-])"
+)
+
 
 class ExportValidator:
     def __init__(
@@ -265,6 +308,31 @@ class ExportValidator:
         seen_assets: set[str] = set()
         for media in self.payloads.get("Media", {}).get("records", []):
             media_id = media["id"]
+            for key in ("description", "publicCaption", "rightsNote", "publicCreditLine"):
+                value = str(media.get(key, ""))
+                if value and MEDIA_PUBLIC_WORKFLOW_PATTERN.search(value):
+                    self.errors.append(
+                        f"Media {media_id}: public field {key} contains editorial workflow text"
+                    )
+                if value and MEDIA_PUBLIC_IDENTIFIER_PATTERN.search(value):
+                    self.errors.append(
+                        f"Media {media_id}: public field {key} contains a technical record identifier"
+                    )
+            if media.get("rightsStatus") == "ok":
+                rights_text = " ".join(
+                    str(media.get(key, ""))
+                    for key in ("rightsNote", "publicCreditLine")
+                )
+                if re.search(
+                    r"not cleared|personal or research use only|"
+                    r"publication.*(?:permission|rights assessment)|"
+                    r"remain under copyright|confirm before US-based reuse",
+                    rights_text,
+                    flags=re.IGNORECASE,
+                ):
+                    self.errors.append(
+                        f"Media {media_id}: rightsStatus ok conflicts with restrictive public rights text"
+                    )
             external_url = media.get("externalUrl", "")
             if external_url and re.search(r"[\r\n]", external_url):
                 self.errors.append(

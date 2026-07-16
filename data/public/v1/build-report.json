@@ -148,12 +148,80 @@
     },
     {
       "table": "Media",
+      "id": "M058",
+      "fields": [
+        "publicCreditLine",
+        "rightsNote",
+        "rightsStatus"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Media",
       "id": "M059",
       "fields": [
         "description",
         "publicCaption",
         "slug",
         "title"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Media",
+      "id": "M087",
+      "fields": [
+        "description",
+        "publicCaption"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Media",
+      "id": "M092",
+      "fields": [
+        "description",
+        "publicCaption"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Media",
+      "id": "M104",
+      "fields": [
+        "publicCreditLine",
+        "rightsNote",
+        "rightsStatus"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Media",
+      "id": "M105",
+      "fields": [
+        "publicCreditLine",
+        "rightsNote",
+        "rightsStatus"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Media",
+      "id": "M106",
+      "fields": [
+        "publicCreditLine",
+        "rightsNote",
+        "rightsStatus"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Media",
+      "id": "M113",
+      "fields": [
+        "publicCreditLine",
+        "rightsNote",
+        "rightsStatus"
       ],
       "removedFields": []
     },
@@ -177,6 +245,36 @@
     },
     {
       "table": "Media",
+      "id": "M133",
+      "fields": [
+        "description",
+        "publicCaption"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Media",
+      "id": "M143",
+      "fields": [
+        "description",
+        "publicCaption",
+        "publicCreditLine",
+        "rightsNote"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Media",
+      "id": "M180",
+      "fields": [
+        "publicCreditLine",
+        "rightsNote",
+        "rightsStatus"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Media",
       "id": "M200",
       "fields": [
         "assetPath",
@@ -190,6 +288,14 @@
       "fields": [
         "assetPath",
         "assetPaths"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Media",
+      "id": "M231",
+      "fields": [
+        "publicCreditLine"
       ],
       "removedFields": []
     },

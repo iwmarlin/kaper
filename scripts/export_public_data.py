@@ -32,6 +32,65 @@ TABLE_ORDER = [
     "Person Name Variants",
 ]
 
+MEDIA_DESCRIPTION_WORKFLOW_PATTERN = re.compile(
+    r"(?:"
+    r"assets/|"
+    r"\blocal asset\b|"
+    r"\bsource route\b|"
+    r"\bcurrent local path\b|"
+    r"\bsource SRC\d+\b|"
+    r"\brecorded in SRC\d+\b|"
+    r"\blinked through SRC\d+\b|"
+    r"\blinked works?\s*:|"
+    r"\brelated works?\s*:|"
+    r"\brights note records\b|"
+    r"\bpublication status\b|"
+    r"\bverification remains open\b|"
+    r"\bcurrent asset field\b|"
+    r"\bbibliographic source not yet linked\b|"
+    r"\bsource:\s*|"
+    r"\bidentifiers?:\s*|"
+    r"\bexact visual provenance\b"
+    r")",
+    flags=re.IGNORECASE,
+)
+
+MEDIA_RIGHTS_WORKFLOW_PATTERN = re.compile(
+    r"(?:"
+    r"\b(?:reviewed|checked|updated|revised|confirmed)\s+20\d{2}(?:-\d{2}-\d{2})?\b|"
+    r"\b20\d{2}-\d{2}-\d{2}\b|"
+    r"\bsupplied by user\b|"
+    r"\blocal asset path\b|"
+    r"\bsource route\b|"
+    r"\bsource:\s*|"
+    r"\brecorded in SRC\d+\b|"
+    r"\bsource SRC\d+\b|"
+    r"\bpublication status\b|"
+    r"\bverification remains open\b|"
+    r"\brights upgraded\b|"
+    r"\bnot legal advice\b|"
+    r"\bcurrent public repository derivative\b|"
+    r"\bwebsite must\b|"
+    r"\bdo not offer\b|"
+    r"\bdo not provide\b|"
+    r"\bdo not rehost\b|"
+    r"\bno rehosting\b|"
+    r"\bdo not reuse\b|"
+    r"\bdo not imply\b|"
+    r"\bindependent verification before publication\b|"
+    r"\bnot a licence or legal determination\b|"
+    r"\bverify\b|"
+    r"\bmay still be (?:checked|refined)\b|"
+    r"\bif .* later identified\b"
+    r")",
+    flags=re.IGNORECASE,
+)
+
+MEDIA_PUBLIC_IDENTIFIER_PATTERN = re.compile(
+    r"(?<![A-Za-z0-9-])(?:SRC\d{4}|W-[A-Z]\d{3}|TE\d{4}|PL\d{3}|M\d{3}|"
+    r"F\d{3}|S\d{3}|O\d{3}|P\d{3}|ORG\d{3})(?![A-Za-z0-9-])"
+)
+
 
 def read_json(path: Path) -> dict[str, Any]:
     return json.loads(path.read_text(encoding="utf-8"))
@@ -661,6 +720,165 @@ class PublicExporter:
                     }
                 )
 
+    def _normalize_media_public_text(self) -> None:
+        """Project editorial Media notes into concise public-facing prose."""
+        for media in self.output_records["Media"]:
+            description = str(media.get("description", ""))
+            caption = str(media.get("publicCaption", ""))
+            if description and MEDIA_DESCRIPTION_WORKFLOW_PATTERN.search(description):
+                if caption:
+                    media["description"] = caption
+                else:
+                    media.pop("description", None)
+
+            rights_note = str(media.get("rightsNote", ""))
+            fair_use = (
+                media.get("rightsStatus") == "permission_needed_or_fair_use_claimed"
+            )
+            if rights_note and (
+                MEDIA_RIGHTS_WORKFLOW_PATTERN.search(rights_note)
+                or (fair_use and len(rights_note) > 320)
+                or (not fair_use and len(rights_note) > 320)
+            ):
+                folded = rights_note.casefold()
+                if fair_use and media.get("assetPath"):
+                    title = str(media.get("title") or media["id"])
+                    media["rightsNote"] = (
+                        "Reuse rights are not cleared. A reduced-resolution image is "
+                        f"used for scholarly identification and commentary on {title}."
+                    )
+                elif fair_use:
+                    media["rightsNote"] = (
+                        "External media is linked for scholarly reference and is not "
+                        "rehosted; reuse rights are not cleared."
+                    )
+                elif "gallica" in folded or "bibliothèque nationale de france" in folded:
+                    media["rightsNote"] = (
+                        "The digitized item is presented under the reuse terms of "
+                        "Gallica / Bibliothèque nationale de France, with source attribution."
+                    )
+                elif "anno" in folded or "österreichische nationalbibliothek" in folded:
+                    media["rightsNote"] = (
+                        "The digitized item is reused in the accessible web resolution "
+                        "under the terms of ANNO / Österreichische Nationalbibliothek, "
+                        "with source attribution."
+                    )
+                elif "chronicling america" in folded:
+                    media["rightsNote"] = (
+                        "The newspaper issue is identified by Library of Congress / "
+                        "Chronicling America as public-domain or no-known-restrictions "
+                        "material; separately credited content remains distinct."
+                    )
+                elif (
+                    "copyright renew" in folded
+                    or "issue renewals" in folded
+                    or "cce" in folded
+                    or "cprs" in folded
+                ):
+                    media["rightsNote"] = (
+                        "The periodical issue layer is treated as public domain in the "
+                        "United States under the recorded renewal assessment; separately "
+                        "registered photographs, artwork and syndicated contributions "
+                        "remain distinct."
+                    )
+                elif "cc by-nc" in folded:
+                    media["rightsNote"] = (
+                        "Available under CC BY-NC; attribution and the licence’s "
+                        "non-commercial-use condition apply."
+                    )
+                elif "cc by 4.0" in folded or "creative commons attribution 4.0" in folded:
+                    media["rightsNote"] = (
+                        "Available under CC BY 4.0; attribution to the credited creator "
+                        "and source is required."
+                    )
+                elif "cc0" in folded:
+                    media["rightsNote"] = (
+                        "Released under CC0 by the linked source; institutional attribution "
+                        "is retained."
+                    )
+                elif (
+                    "public domain" in folded
+                    or "public-domain" in folded
+                    or "rights: “wygasły”" in folded
+                    or "rights: \"wygasły\"" in folded
+                ):
+                    media["rightsNote"] = (
+                        "The linked source identifies this item as public domain or "
+                        "otherwise free of known copyright restrictions; attribution is retained."
+                    )
+                else:
+                    media.pop("rightsNote", None)
+
+            if media.get("rightsStatus") == "ok" and media.get("publicCreditLine"):
+                credit_parts = [
+                    part.strip()
+                    for part in str(media["publicCreditLine"]).split(";")
+                    if part.strip() and "not cleared" not in part.casefold()
+                ]
+                if credit_parts:
+                    media["publicCreditLine"] = "; ".join(credit_parts).rstrip(".") + "."
+                else:
+                    media.pop("publicCreditLine", None)
+
+            if media.get("publicCreditLine"):
+                credit = str(media["publicCreditLine"])
+                credit = re.sub(
+                    r"reproduction/source route not cleared for reuse",
+                    "reuse rights not cleared",
+                    credit,
+                    flags=re.IGNORECASE,
+                )
+                credit = re.sub(
+                    r"public-domain source route",
+                    "public-domain image",
+                    credit,
+                    flags=re.IGNORECASE,
+                )
+                credit = re.sub(
+                    r"\bsource route\b",
+                    "source",
+                    credit,
+                    flags=re.IGNORECASE,
+                )
+                credit = re.sub(
+                    r"\.\s*Contextual\s+(?:low|reduced)-resolution\s+use\s+under\s+"
+                    r"the project’s scholarly fair-use rationale\.?$",
+                    ".",
+                    credit,
+                    flags=re.IGNORECASE,
+                )
+                media["publicCreditLine"] = credit
+
+            for key in ("description", "publicCaption", "rightsNote", "publicCreditLine"):
+                value = str(media.get(key, ""))
+                if not value or not MEDIA_PUBLIC_IDENTIFIER_PATTERN.search(value):
+                    continue
+                if key == "description" and media.get("publicCaption"):
+                    value = str(media["publicCaption"])
+                value = re.sub(
+                    r",?\s+with\s+[^.]*?\b(?:in|through)\s+SRC\d{4}",
+                    "",
+                    value,
+                    flags=re.IGNORECASE,
+                )
+                value = re.sub(
+                    r"\s*/\s*SRC\d{4}",
+                    "",
+                    value,
+                    flags=re.IGNORECASE,
+                )
+                value = re.sub(
+                    r"\s*\(\s*SRC\d{4}\s*\)",
+                    "",
+                    value,
+                    flags=re.IGNORECASE,
+                )
+                value = MEDIA_PUBLIC_IDENTIFIER_PATTERN.sub("", value)
+                value = re.sub(r"\s+([,.;:])", r"\1", value)
+                value = re.sub(r"([/·])\s*([,.;:])", r"\2", value)
+                value = re.sub(r"\s{2,}", " ", value).strip()
+                media[key] = value
+
     @staticmethod
     def _append(record: dict[str, Any], key: str, values: list[str]) -> None:
         if not values:
@@ -719,6 +937,7 @@ class PublicExporter:
             self.output_records[table_name] = records
         self._apply_overrides()
         self._apply_additions()
+        self._normalize_media_public_text()
         self._derive_graph_indexes()
 
     def _validate_required(self) -> None:
