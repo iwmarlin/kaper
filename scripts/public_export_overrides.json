@@ -30,6 +30,140 @@
           "year": 1933,
           "period": "european"
         }
+      },
+      "W-O001": {
+        "reason": "Remove an overview that repeats the title, year, instrumentation, manuscript status, holding institution and shelfmark already presented in structured fields.",
+        "fields": {},
+        "removeFields": [
+          "publicNote"
+        ]
+      },
+      "W-O002": {
+        "reason": "Retain only the manuscript evidence not represented by the structured material and holding fields.",
+        "fields": {
+          "publicNote": "The title page bears Kaper’s name; the first page of music is marked “Mus. B. Asper.”"
+        }
+      },
+      "W-O003": {
+        "reason": "Remove an overview that repeats the title, period, instrumentation, manuscript status, holding institution and shelfmark already presented in structured fields.",
+        "fields": {},
+        "removeFields": [
+          "publicNote"
+        ]
+      },
+      "W-O004": {
+        "reason": "Retain only the autograph status, which is not expressed by the structured manuscript metadata.",
+        "fields": {
+          "publicNote": "The surviving score is an autograph manuscript."
+        }
+      },
+      "W-O005": {
+        "reason": "Remove an overview that repeats the title, instrumentation, manuscript status, holding institution and shelfmark already presented in structured fields.",
+        "fields": {},
+        "removeFields": [
+          "publicNote"
+        ]
+      },
+      "W-O006": {
+        "reason": "Remove an overview that repeats the title, instrumentation, manuscript status, holding institution and shelfmark already presented in structured fields.",
+        "fields": {},
+        "removeFields": [
+          "publicNote"
+        ]
+      },
+      "W-O008": {
+        "reason": "Remove repeated title and instrumentation while retaining catalogue evidence not represented in the edition facts.",
+        "fields": {
+          "publicNote": "StabiKat records held volume nos. 1–5 as Berlin: Alberti, 1930–31, shelfmark DMS 266613; Hofmeister independently lists individual numbers in 1930 and 1931."
+        }
+      },
+      "W-O009": {
+        "reason": "Remove repeated title, instrumentation, publisher and date while retaining the specific holding and shelfmark.",
+        "fields": {
+          "publicNote": "StabiKat records the held volume at the Staatsbibliothek zu Berlin, Musikabteilung, shelfmark DMS 221677."
+        }
+      },
+      "W-O010": {
+        "reason": "Remove an overview that repeats the title, year, contributors, instrumentation and publisher already presented in structured fields.",
+        "fields": {},
+        "removeFields": [
+          "publicNote"
+        ]
+      },
+      "W-O011": {
+        "reason": "Retain only the evidential qualification not represented by the structured press-documentation fields and linked source.",
+        "fields": {
+          "publicNote": "No manuscript or printed edition has been verified; the work and its approximate date are documented by the 10 December 1929 review."
+        }
+      },
+      "W-O012": {
+        "reason": "Remove an overview that repeats the instrumentation, series, publisher, place and year already presented in structured fields.",
+        "fields": {},
+        "removeFields": [
+          "publicNote"
+        ]
+      },
+      "W-O013": {
+        "reason": "Retain only the original-author information that is not represented by the Kaper arrangement credit and edition facts.",
+        "fields": {
+          "publicNote": "The catalogue’s AU field identifies Nacio Herb Brown as the original author."
+        }
+      },
+      "W-O014": {
+        "reason": "Retain only the original-author information that is not represented by the Kaper arrangement credit and edition facts.",
+        "fields": {
+          "publicNote": "The catalogue’s AU field identifies Nacio Herb Brown as the original author."
+        }
+      },
+      "W-O015": {
+        "reason": "Remove an overview that repeats the instrumentation, series, publisher, place and year already presented in structured fields.",
+        "fields": {},
+        "removeFields": [
+          "publicNote"
+        ]
+      },
+      "W-O016": {
+        "reason": "Remove an overview that repeats the instrumentation, series, publisher, place and year already presented in structured fields.",
+        "fields": {},
+        "removeFields": [
+          "publicNote"
+        ]
+      },
+      "W-O017": {
+        "reason": "Retain only the original-author information that is not represented by the Kaper arrangement credit and edition facts.",
+        "fields": {
+          "publicNote": "The catalogue’s AU field identifies Al Jolson as the original author."
+        }
+      },
+      "W-O018": {
+        "reason": "Retain only the original-author information that is not represented by the Kaper arrangement credit and edition facts.",
+        "fields": {
+          "publicNote": "The catalogue’s AU field identifies Irving Berlin as the original author."
+        }
+      },
+      "W-O019": {
+        "reason": "Retain only the original-work attribution information that is not represented by the Kaper arrangement credit and edition facts.",
+        "fields": {
+          "publicNote": "The catalogue’s AU field identifies Sidney Clare; Lew Pollack and Harry Richman remain associated with the original song."
+        }
+      },
+      "W-O020": {
+        "reason": "Retain only the original-author information that is not represented by the Kaper arrangement credit and edition facts.",
+        "fields": {
+          "publicNote": "The catalogue’s AU field identifies Jesse Greer as the original author."
+        }
+      },
+      "W-O021": {
+        "reason": "Retain only the original-author information that is not represented by the Kaper arrangement credit and edition facts.",
+        "fields": {
+          "publicNote": "The catalogue’s AU field identifies Jesse Greer as the original author."
+        }
+      },
+      "W-O022": {
+        "reason": "Retain only the original-author information that is not represented by the Kaper arrangement credit and edition facts.",
+        "fields": {
+          "publicNote": "The catalogue’s AU field identifies Larry Shay as the original author."
+        }
       }
     },
     "Songs": {
@@ -45,6 +179,142 @@
         "fields": {
           "year": 1933,
           "period": "european"
+        }
+      }
+    },
+    "Other Works": {
+      "O001": {
+        "reason": "Remove an overview that repeats the title, year, instrumentation, manuscript status, holding institution and shelfmark already presented in structured fields.",
+        "fields": {},
+        "removeFields": [
+          "publicNote"
+        ]
+      },
+      "O002": {
+        "reason": "Retain only the manuscript evidence not represented by the structured material and holding fields.",
+        "fields": {
+          "publicNote": "The title page bears Kaper’s name; the first page of music is marked “Mus. B. Asper.”"
+        }
+      },
+      "O003": {
+        "reason": "Remove an overview that repeats the title, period, instrumentation, manuscript status, holding institution and shelfmark already presented in structured fields.",
+        "fields": {},
+        "removeFields": [
+          "publicNote"
+        ]
+      },
+      "O004": {
+        "reason": "Retain only the autograph status, which is not expressed by the structured manuscript metadata.",
+        "fields": {
+          "publicNote": "The surviving score is an autograph manuscript."
+        }
+      },
+      "O005": {
+        "reason": "Remove an overview that repeats the title, instrumentation, manuscript status, holding institution and shelfmark already presented in structured fields.",
+        "fields": {},
+        "removeFields": [
+          "publicNote"
+        ]
+      },
+      "O006": {
+        "reason": "Remove an overview that repeats the title, instrumentation, manuscript status, holding institution and shelfmark already presented in structured fields.",
+        "fields": {},
+        "removeFields": [
+          "publicNote"
+        ]
+      },
+      "O008": {
+        "reason": "Remove repeated title and instrumentation while retaining catalogue evidence not represented in the edition facts.",
+        "fields": {
+          "publicNote": "StabiKat records held volume nos. 1–5 as Berlin: Alberti, 1930–31, shelfmark DMS 266613; Hofmeister independently lists individual numbers in 1930 and 1931."
+        }
+      },
+      "O009": {
+        "reason": "Remove repeated title, instrumentation, publisher and date while retaining the specific holding and shelfmark.",
+        "fields": {
+          "publicNote": "StabiKat records the held volume at the Staatsbibliothek zu Berlin, Musikabteilung, shelfmark DMS 221677."
+        }
+      },
+      "O010": {
+        "reason": "Remove an overview that repeats the title, year, contributors, instrumentation and publisher already presented in structured fields.",
+        "fields": {},
+        "removeFields": [
+          "publicNote"
+        ]
+      },
+      "O011": {
+        "reason": "Retain only the evidential qualification not represented by the structured press-documentation fields and linked source.",
+        "fields": {
+          "publicNote": "No manuscript or printed edition has been verified; the work and its approximate date are documented by the 10 December 1929 review."
+        }
+      },
+      "O012": {
+        "reason": "Remove an overview that repeats the instrumentation, series, publisher, place and year already presented in structured fields.",
+        "fields": {},
+        "removeFields": [
+          "publicNote"
+        ]
+      },
+      "O013": {
+        "reason": "Retain only the original-author information that is not represented by the Kaper arrangement credit and edition facts.",
+        "fields": {
+          "publicNote": "The catalogue’s AU field identifies Nacio Herb Brown as the original author."
+        }
+      },
+      "O014": {
+        "reason": "Retain only the original-author information that is not represented by the Kaper arrangement credit and edition facts.",
+        "fields": {
+          "publicNote": "The catalogue’s AU field identifies Nacio Herb Brown as the original author."
+        }
+      },
+      "O015": {
+        "reason": "Remove an overview that repeats the instrumentation, series, publisher, place and year already presented in structured fields.",
+        "fields": {},
+        "removeFields": [
+          "publicNote"
+        ]
+      },
+      "O016": {
+        "reason": "Remove an overview that repeats the instrumentation, series, publisher, place and year already presented in structured fields.",
+        "fields": {},
+        "removeFields": [
+          "publicNote"
+        ]
+      },
+      "O017": {
+        "reason": "Retain only the original-author information that is not represented by the Kaper arrangement credit and edition facts.",
+        "fields": {
+          "publicNote": "The catalogue’s AU field identifies Al Jolson as the original author."
+        }
+      },
+      "O018": {
+        "reason": "Retain only the original-author information that is not represented by the Kaper arrangement credit and edition facts.",
+        "fields": {
+          "publicNote": "The catalogue’s AU field identifies Irving Berlin as the original author."
+        }
+      },
+      "O019": {
+        "reason": "Retain only the original-work attribution information that is not represented by the Kaper arrangement credit and edition facts.",
+        "fields": {
+          "publicNote": "The catalogue’s AU field identifies Sidney Clare; Lew Pollack and Harry Richman remain associated with the original song."
+        }
+      },
+      "O020": {
+        "reason": "Retain only the original-author information that is not represented by the Kaper arrangement credit and edition facts.",
+        "fields": {
+          "publicNote": "The catalogue’s AU field identifies Jesse Greer as the original author."
+        }
+      },
+      "O021": {
+        "reason": "Retain only the original-author information that is not represented by the Kaper arrangement credit and edition facts.",
+        "fields": {
+          "publicNote": "The catalogue’s AU field identifies Jesse Greer as the original author."
+        }
+      },
+      "O022": {
+        "reason": "Retain only the original-author information that is not represented by the Kaper arrangement credit and edition facts.",
+        "fields": {
+          "publicNote": "The catalogue’s AU field identifies Larry Shay as the original author."
         }
       }
     },
@@ -467,14 +737,6 @@
         "reason": "Retain the earlier Tauber portrait in the European period because it is contextual evidence for the 1931–1933 Sängerfilm and star-singer circuit, not a Kaper event from the portrait's 1920–1925 date range.",
         "fields": {
           "period": "european"
-        }
-      }
-    },
-    "Other Works": {
-      "O011": {
-        "reason": "Replace the superseded duplicate source ID SRC0113 with the canonical source SRC0521 and match the canonical Work record.",
-        "fields": {
-          "publicNote": "Tango for four grand pianos attributed to Bronisław Kaper and associated with the First Piano Quartet (Kaper–Mittmann–Zakin–Pomeranc). The work is documented by a review in the Rhein- und Ruhr-Zeitung, 10 December 1929 (SRC0521). No extant manuscript or printed edition has been verified; the year is approximate and documented by the 1929 review."
         }
       }
     },

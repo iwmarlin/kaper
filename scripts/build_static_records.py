@@ -91,6 +91,7 @@ def title_for(record_type: str, record: dict) -> str:
 
 def summary_for(record_type: str, record: dict, tables: dict) -> str:
     if record_type == "work":
+        is_other_work = any(record["id"] in item.get("workIds", []) for item in tables["otherWorks"])
         subtype = next(
             (
                 item
@@ -103,7 +104,11 @@ def summary_for(record_type: str, record: dict, tables: dict) -> str:
         return compact_text(
             subtype.get("publicNote")
             or record.get("publicNote")
-            or f"A documented {str(record.get('workType') or 'work').lower()} in the Bronisław Kaper research archive."
+            or (
+                ""
+                if is_other_work
+                else f"A documented {str(record.get('workType') or 'work').lower()} in the Bronisław Kaper research archive."
+            )
         )
     if record_type == "event":
         return compact_text(record.get("longDescription") or record.get("shortDescription") or record.get("title"))
@@ -176,6 +181,7 @@ def source_links(record_type: str, record: dict, tables: dict) -> str:
 def static_page(record_type: str, record: dict, tables: dict) -> str:
     title = title_for(record_type, record)
     summary = summary_for(record_type, record, tables)
+    meta_summary = summary or f"{title}, a documented record in the Bronisław Kaper research archive."
     label = TYPE_LABELS[record_type]
     record_id = record["id"]
     is_gallery = record_type == "media" and record.get("mediaType") == "document_gallery"
@@ -189,6 +195,11 @@ def static_page(record_type: str, record: dict, tables: dict) -> str:
         if value not in (None, "", [])
     )
     sources = "" if is_gallery else source_links(record_type, record, tables)
+    summary_section = (
+        f'<section class="record-section"><h2>Summary</h2><p class="lead">{esc(summary)}</p></section>'
+        if summary
+        else ""
+    )
     return f"""<!doctype html>
 <html lang="en">
 <head>
@@ -197,11 +208,11 @@ def static_page(record_type: str, record: dict, tables: dict) -> str:
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <base href="../../../">
-  <meta name="description" content="{esc(compact_text(summary, 180))}">
+  <meta name="description" content="{esc(compact_text(meta_summary, 180))}">
   <meta name="theme-color" content="#152c33">
   <meta name="robots" content="index,follow">
   <meta property="og:title" content="{esc(title)} — Bronisław Kaper archive">
-  <meta property="og:description" content="{esc(compact_text(summary, 200))}">
+  <meta property="og:description" content="{esc(compact_text(meta_summary, 200))}">
   <meta property="og:type" content="article">
   <meta property="og:url" content="{esc(canonical)}">
   <link rel="canonical" href="{esc(canonical)}">
@@ -224,7 +235,7 @@ def static_page(record_type: str, record: dict, tables: dict) -> str:
           <dl class="record-facts">{facts}</dl>
         </div>
       </section>
-      <section class="section"><div class="shell record-layout"><div><section class="record-section"><h2>Summary</h2><p class="lead">{esc(summary)}</p></section>{sources}</div></div></section>
+      <section class="section"><div class="shell record-layout"><div>{summary_section}{sources}</div></div></section>
     </div>
   </main>
   <footer class="site-footer" data-site-footer><div class="shell"><p>Bronisław Kaper research archive · documented through 1939</p></div></footer>
