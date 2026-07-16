@@ -53,8 +53,8 @@ try {
       <div class="home-event-card__footer"><span>${escapeHtml(event.placeDisplay || "")}</span><span aria-hidden="true">→</span></div>
     </article>`).join("");
 
-  mediaTarget.innerHTML = highlights.map((item, index) => `
-    <article class="media-card home-media-card${index === 0 ? " home-media-card--lead" : ""}">
+  mediaTarget.innerHTML = highlights.map((item) => `
+    <article class="media-card home-media-card">
       <figure>${mediaPreview(item, { sizes: "(max-width: 680px) calc(100vw - 2rem), 30vw" })}</figure>
       <div class="media-card__body">
         <div class="meta-row">${typeBadge(item.mediaType)}${periodBadge(item.period)}</div>
