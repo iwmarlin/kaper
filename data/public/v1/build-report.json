@@ -4,9 +4,9 @@
   "warnings": [],
   "counts": {
     "People": 109,
-    "Organizations": 108,
-    "Sources": 487,
-    "Media": 191,
+    "Organizations": 109,
+    "Sources": 488,
+    "Media": 192,
     "Works": 280,
     "Films": 55,
     "Songs": 203,
@@ -19,7 +19,7 @@
     "Person Name Variants": 35
   },
   "galleryStatusCounts": {
-    "detail_only": 35,
+    "detail_only": 36,
     "eligible": 81,
     "external_link_only": 18,
     "selected": 57
@@ -529,7 +529,9 @@
       "fields": [
         "period"
       ],
-      "removedFields": []
+      "removedFields": [
+        "description"
+      ]
     },
     {
       "table": "Media",
@@ -1153,6 +1155,46 @@
       ]
     },
     {
+      "table": "Media",
+      "id": "M234",
+      "fields": [
+        "altText",
+        "assetCount",
+        "assetPath",
+        "assetPaths",
+        "category",
+        "externalUrl",
+        "galleryStatus",
+        "id",
+        "mediaType",
+        "organizationIds",
+        "period",
+        "periods",
+        "publicCaption",
+        "publicCreditLine",
+        "rightsNote",
+        "rightsStatus",
+        "slug",
+        "sourceIds",
+        "storageType",
+        "title"
+      ]
+    },
+    {
+      "table": "Organizations",
+      "id": "ORG112",
+      "fields": [
+        "authorizedName",
+        "city",
+        "country",
+        "displayName",
+        "id",
+        "slug",
+        "sourceIds",
+        "types"
+      ]
+    },
+    {
       "table": "Places",
       "id": "PL043",
       "fields": [
@@ -1240,6 +1282,29 @@
         "title",
         "url"
       ]
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0557",
+      "fields": [
+        "accessDate",
+        "creator",
+        "date",
+        "fullCitation",
+        "id",
+        "mediaIds",
+        "organizationIds",
+        "personIds",
+        "publication",
+        "reliability",
+        "repository",
+        "shortCitation",
+        "slug",
+        "sourceStatus",
+        "sourceType",
+        "title",
+        "url"
+      ]
     }
   ],
   "appliedLinkAdditions": [
@@ -1261,6 +1326,13 @@
     {
       "table": "People",
       "id": "P003",
+      "fields": [
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "People",
+      "id": "P025",
       "fields": [
         "sourceIds"
       ]

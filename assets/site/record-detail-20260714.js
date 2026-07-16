@@ -1,4 +1,4 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=20260715-1";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=20260716-1";
 import {
   certaintyBadge,
   escapeHtml,
@@ -46,7 +46,7 @@ const RECORD_TABLES = [
   "people", "organizations", "sources", "media", "works", "films", "songs", "otherWorks",
   "titleVariants", "workRelations", "timelineEvents", "places", "contributions", "personNameVariants",
 ];
-const RECORD_DATA_VERSION = "20260715-2";
+const RECORD_DATA_VERSION = "20260716-1";
 
 async function loadRecordPayload(type, id) {
   const url = new URL(
@@ -468,6 +468,7 @@ function renderMedia(media, data, indexes) {
   const places = related(media.placeIds, indexes.places);
   const organizations = related(media.organizationIds, indexes.organizations);
   const sources = related(media.sourceIds, indexes.sources);
+  const people = related([...new Set(sources.flatMap((item) => item.personIds || []))], indexes.people);
   const gallery = documentGallery(media, data.media, indexes.sources);
   const isGalleryContainer = media.mediaType === "document_gallery" && Boolean(gallery);
   const galleryCount = [...new Set(media.assetPaths || [])].filter(Boolean).length;
@@ -506,6 +507,7 @@ function renderMedia(media, data, indexes) {
       })}${sourceList(sources)}`),
       section("Related works", entityList(works, "work", (item) => [item.year, item.workType].filter(Boolean).join(" · "))),
       section("Timeline", entityList(events, "event", (item) => item.displayDate || item.dateStart)),
+      section("People", entityList(people, "person", (item) => humanize(item.primaryRole))),
       section("Places", entityList(places, "place", (item) => [item.city, item.country].filter(Boolean).join(", "))),
       section("Organizations", entityList(organizations, "organization", (item) => (item.types || []).map(humanize).join(", "))),
     ].join(""),
@@ -523,6 +525,8 @@ function renderPerson(person, data, indexes) {
     .sort((a, b) => String(a.dateStart || "9999").localeCompare(String(b.dateStart || "9999")) || String(a.title).localeCompare(String(b.title)));
   const sources = related(person.sourceIds, indexes.sources)
     .sort((a, b) => String(a.date || "9999").localeCompare(String(b.date || "9999")) || String(a.shortCitation || a.title).localeCompare(String(b.shortCitation || b.title)));
+  const portrait = data.media.find((item) => item.assetPath && item.category === "portrait");
+  const portraitSources = portrait ? related(portrait.sourceIds, indexes.sources) : [];
   const identities = related(person.nameVariantIds, indexes.personNameVariants)
     .filter((item) => ["pseudonym", "joint_pseudonym", "registration_identity"].includes(item.variantType));
   const authorityLinks = String(person.authorityUrl || "")
@@ -554,7 +558,17 @@ function renderPerson(person, data, indexes) {
       events.length ? section("Documented chronology", personEntityDisclosure("Timeline events", events, "event", (item) => item.displayDate || item.dateStart)) : "",
       sources.length ? section("Research sources", personSourceDisclosure(sources)) : "",
     ].join(""),
-    aside: `<div class="scope-note">Source-specific spellings and printed credit forms appear only on the relevant work records, where their evidentiary context is visible.</div>`,
+    aside: portrait ? `
+      <figure class="record-media">${mediaPreview(portrait, {
+        eager: true,
+        sizes: "(max-width: 900px) calc(100vw - 2rem), 20rem",
+      })}</figure>
+      ${renderMediaDisclosure(portrait, portraitSources, {
+        compact: true,
+        includeFullRightsNote: false,
+        includeResolutionLabel: true,
+      })}
+    ` : `<div class="scope-note">Source-specific spellings and printed credit forms appear only on the relevant work records, where their evidentiary context is visible.</div>`,
   };
 }
 

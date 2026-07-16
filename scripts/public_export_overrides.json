@@ -765,10 +765,13 @@
         }
       },
       "M229": {
-        "reason": "Retain the earlier Tauber portrait in the European period because it is contextual evidence for the 1931–1933 Sängerfilm and star-singer circuit, not a Kaper event from the portrait's 1920–1925 date range.",
+        "reason": "Retain the earlier Tauber portrait in the European period and remove its description because it repeats the caption, credit line and canonical Library of Congress source citation.",
         "fields": {
           "period": "european"
-        }
+        },
+        "removeFields": [
+          "description"
+        ]
       }
     },
     "Contributions": {
@@ -919,6 +922,28 @@
     }
   },
   "additions": {
+    "Organizations": {
+      "ORG112": {
+        "reason": "Add the archival repository responsible for the Gus Kahn Papers and the digital portrait record.",
+        "fields": {
+          "id": "ORG112",
+          "displayName": "Great American Songbook Foundation",
+          "authorizedName": "The Great American Songbook Foundation",
+          "types": [
+            "archive",
+            "foundation"
+          ],
+          "city": [
+            "Carmel, Indiana"
+          ],
+          "country": "United States",
+          "slug": "great-american-songbook-foundation",
+          "sourceIds": [
+            "SRC0557"
+          ]
+        }
+      }
+    },
     "Sources": {
       "SRC0555": {
         "reason": "Document the provenance of the external MGM context video M024 after the uploader, title, publication date and reel information were supplied and verified editorially.",
@@ -965,6 +990,34 @@
           ],
           "mediaIds": [
             "M233"
+          ]
+        }
+      },
+      "SRC0557": {
+        "reason": "Document the archive-provided Gus Kahn portrait thumbnail and the collection-level access and reproduction conditions supplied by the Great American Songbook Foundation.",
+        "fields": {
+          "id": "SRC0557",
+          "shortCitation": "Great American Songbook Foundation, Gus Kahn Papers (Mss 001)",
+          "fullCitation": "Great American Songbook Foundation. Gus Kahn Papers, US US.INSON Mss 001. Digital object kahn02.jpg; archive-provided thumbnail kahn02_142.jpg. Collection dates 1909–2007.",
+          "sourceType": "archival_photo",
+          "title": "Gus Kahn Papers — archival portrait",
+          "creator": "Photographer unidentified",
+          "repository": "Great American Songbook Foundation",
+          "publication": "Gus Kahn Papers, Mss 001",
+          "date": "undated; collection dates 1909–2007",
+          "url": "https://songbook.accesstomemory.org/gus-kahn-collection",
+          "accessDate": "2026-07-16",
+          "reliability": "high",
+          "sourceStatus": "verified_with_attribution_note",
+          "slug": "great-american-songbook-foundation-gus-kahn-papers-mss-001",
+          "personIds": [
+            "P025"
+          ],
+          "organizationIds": [
+            "ORG112"
+          ],
+          "mediaIds": [
+            "M234"
           ]
         }
       }
@@ -1064,6 +1117,39 @@
             "european"
           ]
         }
+      },
+      "M234": {
+        "reason": "Add the archive-provided low-resolution portrait of Gus Kahn as a fair-use identification image on his person record, without including it in a gallery or timeline.",
+        "fields": {
+          "id": "M234",
+          "title": "Gus Kahn — archival portrait",
+          "mediaType": "image",
+          "storageType": "local",
+          "period": "hollywood",
+          "externalUrl": "https://songbook.accesstomemory.org/gus-kahn-collection",
+          "assetPath": "assets/images/portraits/gus-kahn-archival-portrait.jpg",
+          "assetPaths": [
+            "assets/images/portraits/gus-kahn-archival-portrait.jpg"
+          ],
+          "assetCount": 1,
+          "altText": "Black-and-white portrait of lyricist Gus Kahn wearing a jacket, sweater, shirt and tie.",
+          "rightsStatus": "permission_needed_or_fair_use_claimed",
+          "rightsNote": "Photographer and publication history are unidentified; copyright was not transferred to the Foundation. The archive’s 270 × 351 thumbnail is reproduced at its original limited resolution for scholarly identification and discussion of Kahn’s collaborations with Kaper.",
+          "slug": "gus-kahn-archival-portrait-m234",
+          "publicCaption": "Gus Kahn, lyricist and Bronisław Kaper’s Hollywood collaborator.",
+          "publicCreditLine": "Great American Songbook Foundation, Gus Kahn Papers (Mss 001).",
+          "category": "portrait",
+          "galleryStatus": "detail_only",
+          "organizationIds": [
+            "ORG112"
+          ],
+          "sourceIds": [
+            "SRC0557"
+          ],
+          "periods": [
+            "hollywood"
+          ]
+        }
       }
     }
   },
@@ -1113,6 +1199,14 @@
         "fields": {
           "sourceIds": [
             "SRC0556"
+          ]
+        }
+      },
+      "P025": {
+        "reason": "Link Gus Kahn to the archival collection source; the portrait medium is reached through that canonical source relation.",
+        "fields": {
+          "sourceIds": [
+            "SRC0557"
           ]
         }
       }

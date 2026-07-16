@@ -139,7 +139,9 @@ class RecordPayloadBuilder:
             self.add(bundle, "sources", record_ids(root, "sourceIds"))
             self.add_media_with_sources(bundle, record_ids(root, "mediaIds"))
         elif record_type == "media":
-            self.add(bundle, "sources", record_ids(root, "sourceIds"))
+            sources = self.add(bundle, "sources", record_ids(root, "sourceIds"))
+            for source in sources:
+                self.add(bundle, "people", record_ids(source, "personIds"))
             self.add(bundle, "works", record_ids(root, "workIds"))
             subtype_records = [
                 *self.add(bundle, "songs", record_ids(root, "songIds")),
@@ -154,7 +156,14 @@ class RecordPayloadBuilder:
         elif record_type == "person":
             self.add(bundle, "works", record_ids(root, "workIds"))
             self.add(bundle, "timelineEvents", record_ids(root, "timelineEventIds"))
-            self.add(bundle, "sources", record_ids(root, "sourceIds"))
+            sources = self.add(bundle, "sources", record_ids(root, "sourceIds"))
+            for source in sources:
+                portrait_ids = [
+                    media_id
+                    for media_id in record_ids(source, "mediaIds")
+                    if self.indexes["media"].get(media_id, {}).get("category") == "portrait"
+                ]
+                self.add_media_with_sources(bundle, portrait_ids)
             self.add(bundle, "personNameVariants", record_ids(root, "nameVariantIds"))
         elif record_type == "organization":
             self.add(bundle, "works", record_ids(root, "workIds"))

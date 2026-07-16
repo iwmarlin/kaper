@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 191,
+  "count": 192,
   "records": [
     {
       "id": "M001",
@@ -6513,7 +6513,6 @@
       "mediaType": "image",
       "storageType": "local",
       "period": "european",
-      "description": "Portrait of tenor Richard Tauber, photographed between approximately 1920 and 1925. Bain News Service negative; George Grantham Bain Collection, Library of Congress Prints and Photographs Division. LCCN 2014714361; digital ID ggbain.34209.",
       "assetPath": "assets/images/portraits/richard-tauber-1920s.jpg",
       "assetPaths": [
         "assets/images/portraits/richard-tauber-1920s.jpg"
@@ -6682,6 +6681,36 @@
       ],
       "periods": [
         "european"
+      ]
+    },
+    {
+      "id": "M234",
+      "title": "Gus Kahn — archival portrait",
+      "mediaType": "image",
+      "storageType": "local",
+      "period": "hollywood",
+      "externalUrl": "https://songbook.accesstomemory.org/gus-kahn-collection",
+      "assetPath": "assets/images/portraits/gus-kahn-archival-portrait.jpg",
+      "assetPaths": [
+        "assets/images/portraits/gus-kahn-archival-portrait.jpg"
+      ],
+      "assetCount": 1,
+      "altText": "Black-and-white portrait of lyricist Gus Kahn wearing a jacket, sweater, shirt and tie.",
+      "rightsStatus": "permission_needed_or_fair_use_claimed",
+      "rightsNote": "Photographer and publication history are unidentified; copyright was not transferred to the Foundation. The archive’s 270 × 351 thumbnail is reproduced at its original limited resolution for scholarly identification and discussion of Kahn’s collaborations with Kaper.",
+      "slug": "gus-kahn-archival-portrait-m234",
+      "publicCaption": "Gus Kahn, lyricist and Bronisław Kaper’s Hollywood collaborator.",
+      "publicCreditLine": "Great American Songbook Foundation, Gus Kahn Papers (Mss 001).",
+      "category": "portrait",
+      "galleryStatus": "detail_only",
+      "organizationIds": [
+        "ORG112"
+      ],
+      "sourceIds": [
+        "SRC0557"
+      ],
+      "periods": [
+        "hollywood"
       ]
     }
   ]
