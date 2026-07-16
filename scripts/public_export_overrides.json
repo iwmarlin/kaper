@@ -439,11 +439,23 @@
         }
       },
       "M030": {
-        "reason": "Keep gallery-container audit notes out of the public export and avoid presenting Warsaw as an exclusively pre-1927 location when the gallery also contains later Warsaw reception material.",
+        "reason": "Keep gallery-container audit notes out of the public export, avoid presenting Warsaw as an exclusively pre-1927 location, and include the documented NAC portrait of Andrzej Włast as context for Kaper's early Warsaw song network.",
         "fields": {
           "title": "Warsaw — documents and contexts",
           "description": "Selected documents and contextual images connected with Kaper’s Warsaw education, early compositions, songs, and later Warsaw reception.",
-          "publicCaption": "Documents and contextual images connected with Kaper’s Warsaw formation, early work, and later Warsaw reception."
+          "publicCaption": "Documents and contextual images connected with Kaper’s Warsaw formation, early work, and later Warsaw reception.",
+          "assetPaths": [
+            "assets/images/timeline/metryka-kapera-150-u-920.png",
+            "assets/images/timeline/biblioteka-UW-1925.jpg",
+            "assets/images/timeline/filharmonia.jpg",
+            "assets/images/timeline/popis-nasz-przeglad.jpg",
+            "assets/images/historical-context/zula-pogorzelska-my-chcemy-krola-1926.jpg",
+            "assets/images/portraits/andrzej-wlast.jpg",
+            "assets/images/timeline/uw-1928.jpg",
+            "assets/images/historical-context/rozenblum1-kw-18011928.jpg",
+            "assets/images/historical-context/ti-1-02-1930.jpg"
+          ],
+          "assetCount": 9
         },
         "removeFields": [
           "rightsNote",
@@ -546,9 +558,18 @@
         }
       },
       "M089": {
-        "reason": "Classify the portrait explicitly dated 1937 in the Hollywood chronological period.",
+        "reason": "Classify the portrait explicitly dated 1937 in the Hollywood chronological period and keep source metadata out of the contextual description.",
         "fields": {
-          "period": "hollywood"
+          "period": "hollywood",
+          "description": "Portrait photograph of Jerzy Fitelberg, taken by Antoni Sitkowski in 1937.",
+          "rightsNote": "The source catalogue marks the rights as expired."
+        }
+      },
+      "M090": {
+        "reason": "Keep archival identifiers and rights metadata in the source and provenance fields rather than repeating them in the contextual description.",
+        "fields": {
+          "description": "Photograph of Róża Etkin, January 1927.",
+          "rightsNote": "The source catalogue marks the rights as expired."
         }
       },
       "M095": {
@@ -684,9 +705,11 @@
         }
       },
       "M153": {
-        "reason": "Classify the Józef Śmidowicz portrait by its function as context for Kaper's Warsaw music-school formation; the later reproduction date does not redefine the represented relationship.",
+        "reason": "Classify the Józef Śmidowicz portrait by its function as context for Kaper's Warsaw music-school formation and keep archival identifiers and rights metadata out of the contextual description.",
         "fields": {
-          "period": "warsaw"
+          "period": "warsaw",
+          "description": "Portrait crop of Józef Śmidowicz from the photograph “Dni Krakowa,” June 1939.",
+          "rightsNote": "The source catalogue marks the rights as expired; the local file is a portrait crop from the archival photograph."
         }
       },
       "M154": {
@@ -699,6 +722,14 @@
         "reason": "Classify the 1935 French film-periodical issue chronologically in the Hollywood period while retaining its relationship to the earlier European film Le Chant du destin.",
         "fields": {
           "period": "hollywood"
+        }
+      },
+      "M195": {
+        "reason": "Retain the photograph's unique visual and biographical context while moving the archive reference and rights statement to their dedicated fields.",
+        "fields": {
+          "description": "Black-and-white photograph from the series “Jan Kiepura podczas pobytu w Paryżu” (Jan Kiepura during his stay in Paris), November 1933. Guests in evening dress pose at a reception in a Paris hotel; Bronisław Kaper and his wife Eleonora are among those present.",
+          "publicCreditLine": "Narodowe Archiwum Cyfrowe, ref. 3/1/0/11/8270/3.",
+          "rightsNote": "Public domain; the source catalogue records the rights as expired."
         }
       },
       "M198": {
@@ -1001,14 +1032,14 @@
     },
     "Media": {
       "M233": {
-        "reason": "Add the public-domain NAC portrait photograph of Andrzej Włast to the media gallery.",
+        "reason": "Add the public-domain NAC portrait photograph of Andrzej Włast while separating contextual description, source citation, credit and rights status.",
         "fields": {
           "id": "M233",
           "title": "Andrzej Włast — portrait",
           "mediaType": "image",
           "storageType": "local",
           "period": "european",
-          "description": "Portrait photograph of Andrzej Włast (Gustaw Baumritter), poet and lyricist, one of interwar Warsaw's most prolific revue and cabaret song authors and an early collaborator of Bronisław Kaper. Source metadata: Narodowe Archiwum Cyfrowe / Szukaj w Archiwach, unit 5929697, object 264116.",
+          "description": "Andrzej Włast (Gustaw Baumritter) was one of interwar Warsaw's most prolific revue and cabaret lyricists and an early collaborator of Bronisław Kaper.",
           "externalUrl": "https://github.com/iwmarlin/kaper/blob/main/assets/images/portraits/andrzej-wlast.jpg",
           "assetPath": "assets/images/portraits/andrzej-wlast.jpg",
           "assetPaths": [
@@ -1017,7 +1048,7 @@
           "assetCount": 1,
           "altText": "Portrait photograph of Andrzej Włast.",
           "rightsStatus": "ok",
-          "rightsNote": "Public domain. Credit Narodowe Archiwum Cyfrowe (National Digital Archive) / Szukaj w Archiwach.",
+          "rightsNote": "Public domain.",
           "slug": "andrzej-wlast-portrait-m233",
           "publicCaption": "Andrzej Włast — poet and lyricist.",
           "publicCreditLine": "Narodowe Archiwum Cyfrowe / Szukaj w Archiwach.",
@@ -1038,6 +1069,17 @@
   },
   "linkAdditions": {
     "Media": {
+      "M030": {
+        "reason": "Add the Andrzej Włast portrait and its canonical NAC source to the Warsaw documentary gallery.",
+        "fields": {
+          "galleryMemberIds": [
+            "M233"
+          ],
+          "sourceIds": [
+            "SRC0556"
+          ]
+        }
+      },
       "M024": {
         "reason": "Link the external MGM context video to its newly documented public source SRC0555.",
         "fields": {

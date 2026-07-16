@@ -280,7 +280,7 @@ function publicText(...values) {
   return value ? `<p class="lead">${escapeHtml(value)}</p>` : "";
 }
 
-const MEDIA_CONTEXT_INTERNAL_PATTERN = /\b(?:source route|local asset|rights note|publication status|rights status|asset paths?|recorded in SRC\d+|linked through SRC\d+|source\s*:?\s*SRC\d+|linked works?\s*:|related works?\s*:|via IMDb|NB\s*:|verify|verification remains open|needs? (?:review|verification))\b/i;
+const MEDIA_CONTEXT_INTERNAL_PATTERN = /\b(?:source metadata|source route|local asset|archival (?:reference|signature)|rights (?:note|marked|status|expired|remain)|publication status|asset paths?|recorded in SRC\d+|linked through SRC\d+|source\s*:?\s*SRC\d+|linked works?\s*:|related works?\s*:|via IMDb|NB\s*:|verify|verification remains open|needs? (?:review|verification))\b/i;
 
 function mediaContext(media) {
   const sentences = String(media.description || "")

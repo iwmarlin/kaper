@@ -20,7 +20,7 @@
   },
   "galleryStatusCounts": {
     "detail_only": 35,
-    "eligible": 80,
+    "eligible": 81,
     "external_link_only": 18,
     "selected": 57
   },
@@ -103,6 +103,8 @@
       "table": "Media",
       "id": "M030",
       "fields": [
+        "assetCount",
+        "assetPaths",
         "description",
         "publicCaption",
         "title"
@@ -281,7 +283,18 @@
       "table": "Media",
       "id": "M089",
       "fields": [
-        "period"
+        "description",
+        "period",
+        "rightsNote"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Media",
+      "id": "M090",
+      "fields": [
+        "description",
+        "rightsNote"
       ],
       "removedFields": []
     },
@@ -433,7 +446,9 @@
       "table": "Media",
       "id": "M153",
       "fields": [
-        "period"
+        "description",
+        "period",
+        "rightsNote"
       ],
       "removedFields": []
     },
@@ -460,6 +475,16 @@
         "publicCreditLine",
         "rightsNote",
         "rightsStatus"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Media",
+      "id": "M195",
+      "fields": [
+        "description",
+        "publicCreditLine",
+        "rightsNote"
       ],
       "removedFields": []
     },
@@ -1101,6 +1126,33 @@
   ],
   "appliedAdditions": [
     {
+      "table": "Media",
+      "id": "M233",
+      "fields": [
+        "altText",
+        "assetCount",
+        "assetPath",
+        "assetPaths",
+        "category",
+        "description",
+        "externalUrl",
+        "galleryStatus",
+        "id",
+        "mediaType",
+        "period",
+        "periods",
+        "publicCaption",
+        "publicCreditLine",
+        "rightsNote",
+        "rightsStatus",
+        "slug",
+        "sourceIds",
+        "storageType",
+        "timelineEventIds",
+        "title"
+      ]
+    },
+    {
       "table": "Places",
       "id": "PL043",
       "fields": [
@@ -1167,12 +1219,48 @@
         "title",
         "url"
       ]
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0556",
+      "fields": [
+        "accessDate",
+        "fullCitation",
+        "id",
+        "mediaIds",
+        "organizationIds",
+        "personIds",
+        "publication",
+        "reliability",
+        "repository",
+        "shortCitation",
+        "slug",
+        "sourceStatus",
+        "sourceType",
+        "title",
+        "url"
+      ]
     }
   ],
   "appliedLinkAdditions": [
     {
       "table": "Media",
       "id": "M024",
+      "fields": [
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Media",
+      "id": "M030",
+      "fields": [
+        "galleryMemberIds",
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "People",
+      "id": "P003",
       "fields": [
         "sourceIds"
       ]
