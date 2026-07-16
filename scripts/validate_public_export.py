@@ -95,6 +95,30 @@ SOURCE_PUBLIC_WORKFLOW_PATTERN = re.compile(
 )
 
 PERIOD_ORDER = ("warsaw", "european", "hollywood")
+WARSAW_1926_EVENT_IDS = {"TE0014", "TE0047"}
+EUROPEAN_1926_EVENT_IDS = {"TE0015", "TE0016", "TE0048"}
+
+
+def canonical_periods(values: list[str]) -> list[str]:
+    return [period for period in PERIOD_ORDER if period in set(values)]
+
+
+def expected_event_periods(event: dict[str, Any]) -> list[str]:
+    event_id = event["id"]
+    if event_id in WARSAW_1926_EVENT_IDS:
+        return ["warsaw"]
+    if event_id in EUROPEAN_1926_EVENT_IDS:
+        return ["european"]
+    start_year = int(str(event.get("dateStart") or event.get("sortDate"))[:4])
+    end_year = int(str(event.get("dateEnd") or start_year)[:4])
+    periods: list[str] = []
+    if start_year <= 1926:
+        periods.append("warsaw")
+    if end_year >= 1927 and start_year <= 1934:
+        periods.append("european")
+    if end_year >= 1935:
+        periods.append("hollywood")
+    return periods
 
 
 class ExportValidator:
@@ -373,6 +397,84 @@ class ExportValidator:
             if expected and work.get("period") != expected:
                 self.errors.append(
                     f"Works {work['id']}: {year} must use chronological period {expected}"
+                )
+
+        for media in self.payloads.get("Media", {}).get("records", []):
+            if (
+                media.get("mediaType") != "document_gallery"
+                and len(media.get("periods", [])) != 1
+            ):
+                self.errors.append(
+                    f"Media {media['id']}: a non-gallery medium must have one editorial period"
+                )
+
+        events = {
+            record["id"]: record
+            for record in self.payloads.get("Timeline Events", {}).get("records", [])
+        }
+        for event in events.values():
+            expected = expected_event_periods(event)
+            if event.get("periods") != expected:
+                self.errors.append(
+                    f"Timeline Events {event['id']}: expected chronological periods {expected}"
+                )
+
+        works = {
+            record["id"]: record
+            for record in self.payloads.get("Works", {}).get("records", [])
+        }
+        for table_name in ("Films", "Songs", "Other Works"):
+            for record in self.payloads.get(table_name, {}).get("records", []):
+                linked_periods = canonical_periods(
+                    [
+                        period
+                        for work_id in record.get("workIds", [])
+                        for period in works.get(work_id, {}).get("periods", [])
+                    ]
+                )
+                if linked_periods and record.get("periods") != linked_periods:
+                    self.errors.append(
+                        f"{table_name} {record['id']}: periods do not match its canonical Work"
+                    )
+
+        media_records = {
+            record["id"]: record
+            for record in self.payloads.get("Media", {}).get("records", [])
+        }
+        for media in media_records.values():
+            if media.get("mediaType") != "document_gallery":
+                continue
+            expected = canonical_periods(
+                [
+                    period
+                    for member_id in media.get("galleryMemberIds", [])
+                    for period in media_records.get(member_id, {}).get("periods", [])
+                ]
+            )
+            if not expected:
+                expected = canonical_periods(
+                    [
+                        period
+                        for event_id in media.get("timelineEventIds", [])
+                        for period in events.get(event_id, {}).get("periods", [])
+                    ]
+                )
+            if expected and media.get("periods") != expected:
+                self.errors.append(
+                    f"Media {media['id']}: gallery periods do not match its members"
+                )
+
+        for place in self.payloads.get("Places", {}).get("records", []):
+            expected = canonical_periods(
+                [
+                    period
+                    for event_id in place.get("timelineEventIds", [])
+                    for period in events.get(event_id, {}).get("periods", [])
+                ]
+            )
+            if expected and place.get("periods") != expected:
+                self.errors.append(
+                    f"Places {place['id']}: periods do not match linked timeline events"
                 )
 
     @staticmethod

@@ -59,6 +59,38 @@
     },
     {
       "table": "Media",
+      "id": "M001",
+      "fields": [
+        "period"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Media",
+      "id": "M012",
+      "fields": [
+        "period"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Media",
+      "id": "M013",
+      "fields": [
+        "period"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Media",
+      "id": "M014",
+      "fields": [
+        "period"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Media",
       "id": "M024",
       "fields": [
         "description",
@@ -131,10 +163,35 @@
     },
     {
       "table": "Media",
+      "id": "M043",
+      "fields": [
+        "period"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Media",
       "id": "M044",
       "fields": [
         "description",
+        "period",
         "rightsNote"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Media",
+      "id": "M046",
+      "fields": [
+        "period"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Media",
+      "id": "M051",
+      "fields": [
+        "period"
       ],
       "removedFields": []
     },
@@ -173,6 +230,46 @@
     },
     {
       "table": "Media",
+      "id": "M063",
+      "fields": [
+        "period"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Media",
+      "id": "M065",
+      "fields": [
+        "period"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Media",
+      "id": "M075",
+      "fields": [
+        "period"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Media",
+      "id": "M080",
+      "fields": [
+        "period"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Media",
+      "id": "M085",
+      "fields": [
+        "period"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Media",
       "id": "M087",
       "fields": [
         "description",
@@ -182,10 +279,66 @@
     },
     {
       "table": "Media",
+      "id": "M089",
+      "fields": [
+        "period"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Media",
       "id": "M092",
       "fields": [
         "description",
         "publicCaption"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Media",
+      "id": "M095",
+      "fields": [
+        "period"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Media",
+      "id": "M097",
+      "fields": [
+        "period"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Media",
+      "id": "M099",
+      "fields": [
+        "period"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Media",
+      "id": "M100",
+      "fields": [
+        "period"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Media",
+      "id": "M101",
+      "fields": [
+        "period"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Media",
+      "id": "M102",
+      "fields": [
+        "period"
       ],
       "removedFields": []
     },
@@ -231,6 +384,14 @@
     },
     {
       "table": "Media",
+      "id": "M121",
+      "fields": [
+        "period"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Media",
       "id": "M125",
       "fields": [
         "assetPath",
@@ -243,7 +404,8 @@
       "id": "M126",
       "fields": [
         "assetPath",
-        "assetPaths"
+        "assetPaths",
+        "period"
       ],
       "removedFields": []
     },
@@ -269,11 +431,43 @@
     },
     {
       "table": "Media",
+      "id": "M153",
+      "fields": [
+        "period"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Media",
+      "id": "M154",
+      "fields": [
+        "period"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Media",
+      "id": "M173",
+      "fields": [
+        "period"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Media",
       "id": "M180",
       "fields": [
         "publicCreditLine",
         "rightsNote",
         "rightsStatus"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Media",
+      "id": "M198",
+      "fields": [
+        "period"
       ],
       "removedFields": []
     },
@@ -291,7 +485,24 @@
       "id": "M206",
       "fields": [
         "assetPath",
-        "assetPaths"
+        "assetPaths",
+        "period"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Media",
+      "id": "M228",
+      "fields": [
+        "period"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Media",
+      "id": "M229",
+      "fields": [
+        "period"
       ],
       "removedFields": []
     },
@@ -368,6 +579,24 @@
       "removedFields": []
     },
     {
+      "table": "Songs",
+      "id": "S077",
+      "fields": [
+        "period",
+        "year"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Songs",
+      "id": "S079",
+      "fields": [
+        "period",
+        "year"
+      ],
+      "removedFields": []
+    },
+    {
       "table": "Sources",
       "id": "SRC0009",
       "fields": [
@@ -430,6 +659,24 @@
         "placeDisplay",
         "slug",
         "title"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Works",
+      "id": "W-S077",
+      "fields": [
+        "period",
+        "year"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Works",
+      "id": "W-S079",
+      "fields": [
+        "period",
+        "year"
       ],
       "removedFields": []
     }

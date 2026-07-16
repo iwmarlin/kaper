@@ -16,6 +16,38 @@
         }
       }
     },
+    "Works": {
+      "W-S077": {
+        "reason": "Correct the work year to the 1933 Salabert edition documented by the BnF catalogue record SRC0298 and the contemporary 22 June 1934 performance notice SRC0536.",
+        "fields": {
+          "year": 1933,
+          "period": "european"
+        }
+      },
+      "W-S079": {
+        "reason": "Correct the work year to the 1933 Salabert edition documented by the BnF catalogue record SRC0081.",
+        "fields": {
+          "year": 1933,
+          "period": "european"
+        }
+      }
+    },
+    "Songs": {
+      "S077": {
+        "reason": "Correct the song year to the 1933 Salabert edition documented by the BnF catalogue record SRC0298 and the contemporary 22 June 1934 performance notice SRC0536.",
+        "fields": {
+          "year": 1933,
+          "period": "european"
+        }
+      },
+      "S079": {
+        "reason": "Correct the song year to the 1933 Salabert edition documented by the BnF catalogue record SRC0081.",
+        "fields": {
+          "year": 1933,
+          "period": "european"
+        }
+      }
+    },
     "Sources": {
       "SRC0009": {
         "reason": "Keep the archival citation and collection scope while removing private workflow provenance about who supplied the scans.",
@@ -62,12 +94,78 @@
       }
     },
     "Media": {
+      "M001": {
+        "reason": "Classify the listening reference with the documented 1926 Warsaw song rather than with the later European recording and circulation context.",
+        "fields": {
+          "period": "warsaw"
+        }
+      },
+      "M012": {
+        "reason": "Classify the Sonatina movement with the documented 1927 work and Berlin performance.",
+        "fields": {
+          "period": "european"
+        }
+      },
+      "M013": {
+        "reason": "Classify the Sonatina movement with the documented 1927 work and Berlin performance.",
+        "fields": {
+          "period": "european"
+        }
+      },
+      "M014": {
+        "reason": "Classify the Sonatina movement with the documented 1927 work and Berlin performance.",
+        "fields": {
+          "period": "european"
+        }
+      },
       "M024": {
         "reason": "Replace the obsolete no-source wording after documenting the linked My Footage YouTube publication as SRC0555.",
         "fields": {
           "description": "External contextual video published by My Footage, showing a montage of MGM studio back-lot footage from the 1930s. The clip is retained as background visual context and is not treated as evidence for a specific Kaper attribution.",
           "publicCaption": "My Footage montage of MGM studio back-lot footage from the 1930s, published on YouTube on 3 June 2010 and presented here as an external contextual link.",
           "publicCreditLine": "My Footage, “1930s Metro-Goldwyn-Mayer Studios,” YouTube, published 3 June 2010."
+        }
+      },
+      "M043": {
+        "reason": "Classify the Fritz Rotter portrait by its documented role in Kaper's Berlin collaboration beginning in 1926.",
+        "fields": {
+          "period": "european"
+        }
+      },
+      "M051": {
+        "reason": "Classify the Louis B. Mayer portrait with the August 1934 Ritz meeting and MGM contract event; under the revised chronology 1934 remains European.",
+        "fields": {
+          "period": "european"
+        }
+      },
+      "M085": {
+        "reason": "Classify the January 1928 Warsaw performance review chronologically as European while retaining Warsaw as its place.",
+        "fields": {
+          "period": "european"
+        }
+      },
+      "M100": {
+        "reason": "Classify the January 1928 Warsaw review chronologically as European while retaining Warsaw as its place.",
+        "fields": {
+          "period": "european"
+        }
+      },
+      "M101": {
+        "reason": "Classify the January 1928 Warsaw review chronologically as European while retaining Warsaw as its place.",
+        "fields": {
+          "period": "european"
+        }
+      },
+      "M102": {
+        "reason": "Classify the 1934 Kaper portrait chronologically as European; the Hollywood period begins in 1935.",
+        "fields": {
+          "period": "european"
+        }
+      },
+      "M121": {
+        "reason": "Classify the Champlain image by its use as context for Kaper's October 1934 crossing; the later 1938 reproduction date does not redefine the represented event.",
+        "fields": {
+          "period": "european"
         }
       },
       "M030": {
@@ -140,10 +238,65 @@
         ]
       },
       "M044": {
-        "reason": "Remove the redundant stable source ID from the public contextual description; SRC0331 remains available through the canonical Sources relation and the rights-and-provenance section.",
+        "reason": "Remove the redundant stable source ID from the public contextual description and retain the portrait in the European period because it documents Kaper's 1926–1930 Berlin training context rather than the unknown date of the portrait reproduction.",
         "fields": {
+          "period": "european",
           "description": "Portrait of Professor Walther Gmeindl, identified through the Discogs artist page and used in the 1926–1930 “Start of Berlin career” context.",
           "rightsNote": "Photographer and rights holder not identified. Image approved only as a low-resolution contextual portrait for scholarly identification and commentary. Do not mark rights as cleared; replace if a better rights-cleared source is found."
+        }
+      },
+      "M046": {
+        "reason": "Classify the photograph dated circa 1935 in the Hollywood period while preserving its link to the earlier event in which the Kaper–Jurmann partnership began.",
+        "fields": {
+          "period": "hollywood"
+        }
+      },
+      "M063": {
+        "reason": "Classify the precisely dated 27 June 1936 press clipping in the Hollywood chronological period; its subject remains the European afterlife of a 1933 film.",
+        "fields": {
+          "period": "hollywood"
+        }
+      },
+      "M065": {
+        "reason": "Retain the later church photograph in the Warsaw period because it is published solely as contextual evidence for Kaper's 1920 baptism, not as a 1939 career event.",
+        "fields": {
+          "period": "warsaw"
+        }
+      },
+      "M075": {
+        "reason": "Retain the later Warsaw Philharmonic photograph in the Warsaw period because it illustrates Kaper's 1920–1925 musical formation rather than a 1933 career event.",
+        "fields": {
+          "period": "warsaw"
+        }
+      },
+      "M080": {
+        "reason": "Retain the 1928 Morskie Oko context image in the Warsaw period because it illustrates Kaper's 1926 cabaret-song entry rather than a separate 1928 event.",
+        "fields": {
+          "period": "warsaw"
+        }
+      },
+      "M089": {
+        "reason": "Classify the portrait explicitly dated 1937 in the Hollywood chronological period.",
+        "fields": {
+          "period": "hollywood"
+        }
+      },
+      "M095": {
+        "reason": "Retain the postcard in the European period because it is used as place context for Kaper's later Vienna activity; the postcard's own 1922 date is not a Kaper event date.",
+        "fields": {
+          "period": "european"
+        }
+      },
+      "M097": {
+        "reason": "Retain the later Plac Teatralny context image in the Warsaw period because it illustrates Kaper's early Warsaw theatrical environment.",
+        "fields": {
+          "period": "warsaw"
+        }
+      },
+      "M099": {
+        "reason": "Retain the earlier MGM studio photograph in the Hollywood period because it is explicitly published as contextual imagery for Kaper's later MGM environment, not as evidence of a 1928 Kaper event.",
+        "fields": {
+          "period": "hollywood"
         }
       },
       "M053": {
@@ -250,13 +403,38 @@
         }
       },
       "M126": {
-        "reason": "Use filename extensions that match the existing PNG image data; image bytes are unchanged.",
+        "reason": "Use filename extensions that match the existing PNG image data and classify the documented 1927 edition chronologically as European.",
         "fields": {
+          "period": "european",
           "assetPath": "assets/images/historical-context/to-musza.png",
           "assetPaths": [
             "assets/images/historical-context/to-musza.png",
             "assets/images/sheet-music/to-musza.png"
           ]
+        }
+      },
+      "M153": {
+        "reason": "Classify the Józef Śmidowicz portrait by its function as context for Kaper's Warsaw music-school formation; the later reproduction date does not redefine the represented relationship.",
+        "fields": {
+          "period": "warsaw"
+        }
+      },
+      "M154": {
+        "reason": "Classify the 1935 Moscow Nights poster chronologically as Hollywood under the revised period boundaries.",
+        "fields": {
+          "period": "hollywood"
+        }
+      },
+      "M173": {
+        "reason": "Classify the 1935 French film-periodical issue chronologically in the Hollywood period while retaining its relationship to the earlier European film Le Chant du destin.",
+        "fields": {
+          "period": "hollywood"
+        }
+      },
+      "M198": {
+        "reason": "Classify the 1930 sheet-music edition chronologically as European while retaining its Polish publication context.",
+        "fields": {
+          "period": "european"
         }
       },
       "M200": {
@@ -269,13 +447,26 @@
         }
       },
       "M206": {
-        "reason": "Use a filename extension that matches the existing PNG image data; image bytes are unchanged.",
+        "reason": "Use a filename extension that matches the existing PNG image data and classify the documented 1927 edition chronologically as European.",
         "fields": {
+          "period": "european",
           "assetPath": "assets/images/sheet-music/ja-nie-mam.png",
           "assetPaths": [
             "assets/images/sheet-music/ja-nie-mam.png",
             "assets/images/sheet-music/ja-nie-mam-glosu.jpg"
           ]
+        }
+      },
+      "M228": {
+        "reason": "Classify the October 1934 departure notice chronologically as European; the Hollywood period begins in 1935.",
+        "fields": {
+          "period": "european"
+        }
+      },
+      "M229": {
+        "reason": "Retain the earlier Tauber portrait in the European period because it is contextual evidence for the 1931–1933 Sängerfilm and star-singer circuit, not a Kaper event from the portrait's 1920–1925 date range.",
+        "fields": {
+          "period": "european"
         }
       }
     },

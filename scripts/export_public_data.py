@@ -1333,17 +1333,13 @@ class PublicExporter:
         for media in media_records.values():
             if media.get("mediaType") == "document_gallery":
                 continue
-            linked_periods = [
-                period
-                for work_id in media.get("workIds", [])
-                for period in works.get(work_id, {}).get("periods", [])
-            ]
-            linked_periods.extend(
-                period
-                for event_id in media.get("timelineEventIds", [])
-                for period in events.get(event_id, {}).get("periods", [])
-            )
-            set_periods(media, linked_periods)
+            # A medium has one editorially defined historical context. Its many
+            # graph links must not silently broaden that context: a 1927 score
+            # may illustrate a 1925–1926 narrative event, and a later contextual
+            # photograph may document an earlier phase. Ambiguous corrections
+            # belong in the auditable overrides file, not in relation-union
+            # heuristics.
+            set_periods(media, [media.get("period")])
 
         for media in media_records.values():
             if media.get("mediaType") != "document_gallery":
