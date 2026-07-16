@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 41,
+  "count": 42,
   "records": [
     {
       "id": "PL001",
@@ -725,18 +725,18 @@
     },
     {
       "id": "PL025",
-      "displayName": "Port of New York",
-      "authorizedName": "Port of New York, New York Harbor",
+      "displayName": "Pier 57 (French Line), New York",
+      "authorizedName": "French Line Pier 57, North River, foot of West 15th Street, Manhattan, New York",
       "placeType": "port",
       "city": "New York",
-      "region": "New York / New Jersey",
+      "region": "New York",
       "country": "United States",
-      "latitude": 40.7003,
-      "longitude": -74.0122,
+      "latitude": 40.7442,
+      "longitude": -74.0095,
       "period": "european",
-      "slug": "port-of-new-york",
-      "publicNote": "Port-level context for Kaper’s 1934 arrival in New York after the Atlantic crossing from Le Havre. The passenger documentation establishes arrival at New York but does not establish that Kaper was processed at Ellis Island.",
-      "mapPrecision": "area_level",
+      "slug": "pier-57-french-line-new-york",
+      "publicNote": "Precise arrival berth in New York for Kaper and Eleonora's 1934 Atlantic crossing from Le Havre aboard the S.S. Champlain. In this period the French Line (Compagnie Générale Transatlantique) berthed at Pier 57 on the North River, at the foot of West 15th Street; the location is inferred from the line's documented pier rather than a passenger manifest naming the berth. The record establishes arrival at New York but not processing at Ellis Island.",
+      "mapPrecision": "address_level",
       "publicScope": "map_and_detail",
       "timelineEventIds": [
         "TE0035"
@@ -1201,6 +1201,34 @@
       ],
       "periods": [
         "european"
+      ]
+    },
+    {
+      "id": "PL043",
+      "displayName": "Calexico–Mexicali Border Crossing",
+      "authorizedName": "Calexico–Mexicali Port of Entry (Calexico, California / Mexicali, Baja California)",
+      "placeType": "port",
+      "city": "Calexico / Mexicali",
+      "region": "California / Baja California",
+      "country": "United States",
+      "latitude": 32.6651,
+      "longitude": -115.4963,
+      "period": "hollywood",
+      "slug": "calexico-mexicali-border-crossing",
+      "publicNote": "Land border port of entry linking Calexico (California) and Mexicali (Baja California), documented as the point of Kaper and Eleonora's 1935 permanent-residence entry into the United States. The coordinates mark the historic downtown crossing at the foot of Heffernan Avenue, where the 1933 inspection station stood in 1935; the vehicle crossing was moved two blocks west in 1974 and the present buildings are later.",
+      "mapPrecision": "address_level",
+      "publicScope": "map_and_detail",
+      "timelineEventIds": [
+        "TE0036"
+      ],
+      "mediaIds": [
+        "M124"
+      ],
+      "sourceIds": [
+        "SRC0039"
+      ],
+      "periods": [
+        "hollywood"
       ]
     }
   ]
