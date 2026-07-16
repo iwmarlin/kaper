@@ -3,7 +3,6 @@ import {
   escapeHtml,
   humanize,
   loadTables,
-  matchesPeriod,
   mountSiteChrome,
   normalizeSearch,
   PERIOD_ORDER,
@@ -19,14 +18,12 @@ const listTarget = document.querySelector("#place-list");
 const countTarget = document.querySelector("#place-count");
 const totalTarget = document.querySelector("#map-total");
 const search = document.querySelector("#place-search");
-const period = document.querySelector("#place-period");
 const selectionKicker = document.querySelector("#place-selection-kicker");
 const selectionTitle = document.querySelector("#place-selection-title");
 const selectionMeta = document.querySelector("#place-selection-meta");
 const selectionNote = document.querySelector("#place-selection-note");
 const selectionLink = document.querySelector("#place-selection-link");
 const toggleJourney = document.querySelector("#toggle-journey");
-const legendButtons = document.querySelectorAll(".map-legend__item");
 
 let map;
 let markerLayer;
@@ -132,15 +129,6 @@ try {
   const publicPlaces = places;
   totalTarget.textContent = String(publicPlaces.length);
 
-  const periods = [...new Set(publicPlaces.flatMap(periodValues).filter(Boolean))]
-    .sort((a, b) => PERIOD_ORDER.indexOf(a) - PERIOD_ORDER.indexOf(b));
-  for (const value of periods) {
-    const option = document.createElement("option");
-    option.value = value;
-    option.textContent = periodLabel(value);
-    period.append(option);
-  }
-
   if (window.L) {
     map = window.L.map("research-map", {
       scrollWheelZoom: false,
@@ -214,21 +202,6 @@ try {
   }
   applyRoute();
 
-  // Interactive legend: clicking a period swatch filters the map (toggles).
-  function syncLegend() {
-    legendButtons.forEach((button) => {
-      button.setAttribute("aria-pressed", String(button.dataset.period === period.value));
-    });
-  }
-  legendButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-      period.value = period.value === button.dataset.period ? "" : button.dataset.period;
-      syncLegend();
-      render();
-    });
-  });
-  syncLegend();
-
   // Default view favours the dense European cluster; the transatlantic leg is a pan away.
   const europeanBounds = publicPlaces
     .filter((place) => (
@@ -242,14 +215,13 @@ try {
     const query = normalizeSearch(search.value.trim());
     const filtered = publicPlaces
       .filter((place) => (
-        matchesPeriod(place, period.value)
-        && (!query || normalizeSearch([
+        !query || normalizeSearch([
           place.displayName,
           place.city,
           place.region,
           place.country,
           place.placeType,
-        ].filter(Boolean).join(" ")).includes(query))
+        ].filter(Boolean).join(" ")).includes(query)
       ))
       .sort((a, b) => (
         eventCount(b) - eventCount(a)
@@ -272,7 +244,7 @@ try {
               </button>
             </li>`;
         }).join("")
-      : `<li class="place-list__empty">No places match these filters.</li>`;
+      : `<li class="place-list__empty">No places match your search.</li>`;
 
     if (selectedId && !filtered.some((place) => place.id === selectedId)) resetSelection();
 
@@ -296,7 +268,7 @@ try {
     }
 
     if (map && bounds.length) {
-      if (firstView && !query && !period.value && europeanBounds.length > 1) {
+      if (firstView && !query && europeanBounds.length > 1) {
         map.fitBounds(europeanBounds, { padding: [42, 42], maxZoom: 5 });
       } else if (bounds.length === 1) {
         map.setView(bounds[0], 11);
@@ -315,10 +287,6 @@ try {
   }
 
   search.addEventListener("input", debounce(render));
-  period.addEventListener("change", () => {
-    syncLegend();
-    render();
-  });
   render();
 } catch (error) {
   countTarget.textContent = "—";

@@ -46,10 +46,6 @@
               <label for="place-search">Search places</label>
               <input id="place-search" type="search" placeholder="City, venue or address…" autocomplete="off">
             </div>
-            <div class="field">
-              <label for="place-period">Career period</label>
-              <select id="place-period"><option value="">All periods</option></select>
-            </div>
             <div class="field field--toggle">
               <label for="toggle-journey">Journey</label>
               <button id="toggle-journey" type="button" class="map-route-toggle" aria-pressed="true">Hide route</button>
@@ -59,10 +55,10 @@
         <div class="map-explorer">
           <div class="map-canvas">
             <div id="research-map" role="region" aria-label="Interactive map of documented places"></div>
-            <div class="map-legend" aria-label="Filter by career period">
-              <button type="button" class="map-legend__item" data-period="warsaw" aria-pressed="false"><i class="map-legend__swatch map-legend__swatch--warsaw"></i>Warsaw · 1902–1926</button>
-              <button type="button" class="map-legend__item" data-period="european" aria-pressed="false"><i class="map-legend__swatch map-legend__swatch--european"></i>European · 1926–1934</button>
-              <button type="button" class="map-legend__item" data-period="hollywood" aria-pressed="false"><i class="map-legend__swatch map-legend__swatch--hollywood"></i>Hollywood · 1935–1939</button>
+            <div class="map-legend" aria-label="Career-period legend">
+              <span class="map-legend__key"><i class="map-legend__swatch map-legend__swatch--warsaw"></i>Warsaw · 1902–1926</span>
+              <span class="map-legend__key"><i class="map-legend__swatch map-legend__swatch--european"></i>European · 1926–1934</span>
+              <span class="map-legend__key"><i class="map-legend__swatch map-legend__swatch--hollywood"></i>Hollywood · 1935–1939</span>
               <span class="map-legend__key"><i class="map-legend__swatch map-legend__swatch--multiple"></i>Multiple periods</span>
             </div>
           </div>
@@ -81,13 +77,13 @@
             <ul class="place-list" id="place-list"></ul>
           </aside>
         </div>
-        <p class="map-method-note">Coordinates reflect the documented map precision. Nearby addresses are grouped until the map is enlarged; selecting a group reveals its individual places. The dotted line traces Kaper's documented migration from Warsaw to Hollywood; use “Hide route” to remove it. Larger markers carry more linked events, and legend colours can be clicked to filter by period.</p>
+        <p class="map-method-note">Coordinates reflect the documented map precision. Nearby addresses are grouped until the map is enlarged; selecting a group reveals its individual places. The dotted line traces Kaper's documented migration from Warsaw to Hollywood; use “Hide route” to remove it. Larger markers carry more linked events; colours mark the career period(s) in which each place is documented.</p>
       </div>
     </section>
   </main>
   <footer class="site-footer" data-site-footer></footer>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js" crossorigin="anonymous"></script>
-  <script type="module" src="assets/site/map-explorer-20260714.js?v=20260716-3"></script>
+  <script type="module" src="assets/site/map-explorer-20260714.js?v=20260716-4"></script>
 </body>
 </html>
