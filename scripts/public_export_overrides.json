@@ -910,6 +910,32 @@
             "M024"
           ]
         }
+      },
+      "SRC0556": {
+        "reason": "Document the newly added public-domain NAC portrait of Andrzej Włast (poet/lyricist, Kaper's early collaborator), supplied from the National Digital Archive.",
+        "fields": {
+          "id": "SRC0556",
+          "shortCitation": "Narodowe Archiwum Cyfrowe, Andrzej Włast portrait",
+          "fullCitation": "Narodowe Archiwum Cyfrowe (National Digital Archive) / Szukaj w Archiwach. Portrait photograph of Andrzej Włast, poet and lyricist. Photographer unknown. Unit 5929697, object 264116.",
+          "sourceType": "image_or_photograph",
+          "title": "Andrzej Włast portrait — Narodowe Archiwum Cyfrowe",
+          "repository": "Narodowe Archiwum Cyfrowe",
+          "publication": "Szukaj w Archiwach",
+          "url": "https://www.szukajwarchiwach.gov.pl/jednostka/-/jednostka/5929697/obiekty/264116",
+          "accessDate": "2026-07-16",
+          "reliability": "high",
+          "sourceStatus": "verified",
+          "slug": "nac-andrzej-wlast-portrait",
+          "personIds": [
+            "P003"
+          ],
+          "organizationIds": [
+            "ORG070"
+          ],
+          "mediaIds": [
+            "M233"
+          ]
+        }
       }
     },
     "Places": {
@@ -972,6 +998,42 @@
           ]
         }
       }
+    },
+    "Media": {
+      "M233": {
+        "reason": "Add the public-domain NAC portrait photograph of Andrzej Włast to the media gallery.",
+        "fields": {
+          "id": "M233",
+          "title": "Andrzej Włast — portrait",
+          "mediaType": "image",
+          "storageType": "local",
+          "period": "european",
+          "description": "Portrait photograph of Andrzej Włast (Gustaw Baumritter), poet and lyricist, one of interwar Warsaw's most prolific revue and cabaret song authors and an early collaborator of Bronisław Kaper. Source metadata: Narodowe Archiwum Cyfrowe / Szukaj w Archiwach, unit 5929697, object 264116.",
+          "externalUrl": "https://github.com/iwmarlin/kaper/blob/main/assets/images/portraits/andrzej-wlast.jpg",
+          "assetPath": "assets/images/portraits/andrzej-wlast.jpg",
+          "assetPaths": [
+            "assets/images/portraits/andrzej-wlast.jpg"
+          ],
+          "assetCount": 1,
+          "altText": "Portrait photograph of Andrzej Włast.",
+          "rightsStatus": "ok",
+          "rightsNote": "Public domain. Credit Narodowe Archiwum Cyfrowe (National Digital Archive) / Szukaj w Archiwach.",
+          "slug": "andrzej-wlast-portrait-m233",
+          "publicCaption": "Andrzej Włast — poet and lyricist.",
+          "publicCreditLine": "Narodowe Archiwum Cyfrowe / Szukaj w Archiwach.",
+          "category": "portrait",
+          "galleryStatus": "eligible",
+          "sourceIds": [
+            "SRC0556"
+          ],
+          "timelineEventIds": [
+            "TE0014"
+          ],
+          "periods": [
+            "european"
+          ]
+        }
+      }
     }
   },
   "linkAdditions": {
@@ -999,6 +1061,16 @@
         "fields": {
           "placeIds": [
             "PL044"
+          ]
+        }
+      }
+    },
+    "People": {
+      "P003": {
+        "reason": "Link Andrzej Włast to the new NAC portrait source.",
+        "fields": {
+          "sourceIds": [
+            "SRC0556"
           ]
         }
       }
