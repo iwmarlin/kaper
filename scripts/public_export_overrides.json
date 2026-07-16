@@ -90,6 +90,12 @@
           "publicCreditLine"
         ]
       },
+      "M044": {
+        "reason": "Remove the redundant stable source ID from the public contextual description; SRC0331 remains available through the canonical Sources relation and the rights-and-provenance section.",
+        "fields": {
+          "description": "Portrait of Professor Walther Gmeindl, identified through the Discogs artist page and used in the 1926–1930 “Start of Berlin career” context."
+        }
+      },
       "M125": {
         "reason": "Use a filename extension that matches the existing PNG image data; image bytes are unchanged.",
         "fields": {
