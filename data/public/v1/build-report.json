@@ -523,6 +523,15 @@
       "removedFields": []
     },
     {
+      "table": "People",
+      "id": "P005",
+      "fields": [
+        "authorityUrl",
+        "authorizedName"
+      ],
+      "removedFields": []
+    },
+    {
       "table": "Person Name Variants",
       "id": "PNV0008",
       "fields": [

@@ -520,6 +520,15 @@
         }
       }
     },
+    "People": {
+      "P005": {
+        "reason": "Normalize André Mauprey's authority links so the public person record exposes the verified BnF, VIAF, Wikidata and ISNI identities with readable labels.",
+        "fields": {
+          "authorizedName": "Mauprey, André (1881–1939)",
+          "authorityUrl": "BnF Catalogue: https://catalogue.bnf.fr/ark:/12148/cb14120019q\nBnF data: https://data.bnf.fr/14120019/andre_mauprey\nVIAF: https://viaf.org/viaf/10056274\nWikidata: https://www.wikidata.org/wiki/Q4759995\nISNI: https://isni.org/isni/0000000071010995"
+        }
+      }
+    },
     "Places": {
       "PL021": {
         "reason": "State the verified municipality and city-level map precision without assigning the Paris office address or an unverified Montrouge street address to the studio.",
