@@ -104,9 +104,43 @@ export function certaintyBadge(certainty) {
   return `<span class="badge badge--certainty badge--${escapeHtml(key)}">${escapeHtml(humanize(certainty))}</span>`;
 }
 
+export const PERIOD_META = Object.freeze({
+  warsaw: Object.freeze({ label: "Warsaw", range: "1902–1926" }),
+  european: Object.freeze({ label: "European", range: "1926–1934" }),
+  hollywood: Object.freeze({ label: "Hollywood", range: "1935–1939" }),
+});
+export const PERIOD_ORDER = Object.freeze(Object.keys(PERIOD_META));
+
+export function periodValues(value) {
+  const raw = Array.isArray(value)
+    ? value
+    : (value && typeof value === "object"
+      ? (value.periods || [value.period])
+      : [value]);
+  return [...new Set(raw
+    .filter(Boolean)
+    .map((item) => String(item).toLowerCase().replaceAll(" ", "_")))];
+}
+
+export function periodLabel(period) {
+  const key = periodValues(period)[0];
+  const meta = PERIOD_META[key];
+  return meta ? `${meta.label} · ${meta.range}` : humanize(period);
+}
+
+export function matchesPeriod(record, selectedPeriod) {
+  return !selectedPeriod || periodValues(record).includes(selectedPeriod);
+}
+
 export function periodBadge(period) {
-  if (!period) return "";
-  return `<span class="badge badge--period">${escapeHtml(humanize(period))}</span>`;
+  return periodValues(period)
+    .map((key) => {
+      const meta = PERIOD_META[key];
+      const label = meta?.label || humanize(key);
+      const fullLabel = periodLabel(key);
+      return `<span class="badge badge--period" title="${escapeHtml(fullLabel)}" aria-label="${escapeHtml(fullLabel)}">${escapeHtml(label)}</span>`;
+    })
+    .join("");
 }
 
 export function typeBadge(type) {

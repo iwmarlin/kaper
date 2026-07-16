@@ -8,9 +8,13 @@ import {
   mediaIsFairUse,
   mediaPreview,
   mediaRightsBadge,
+  matchesPeriod,
   mountSiteChrome,
   normalizeSearch,
+  PERIOD_ORDER,
   periodBadge,
+  periodLabel,
+  periodValues,
   recordUrl,
   registerImageDerivatives,
   renderMediaDisclosure,
@@ -19,7 +23,7 @@ import {
   resolveIds,
   safeExternalUrl,
   typeBadge,
-} from "./core.js?v=20260715-11";
+} from "./core.js?v=20260716-3";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 mountSiteChrome("media");
@@ -38,11 +42,12 @@ let visible = PAGE_SIZE;
 let current = [];
 renderLoading(target, "Loading curated media…");
 
-function addOptions(select, values) {
-  for (const value of [...new Set(values.filter(Boolean))].sort()) {
+function addOptions(select, values, labeler = humanize, preserveOrder = false) {
+  const uniqueValues = [...new Set(values.filter(Boolean))];
+  for (const value of preserveOrder ? uniqueValues : uniqueValues.sort()) {
     const option = document.createElement("option");
     option.value = value;
-    option.textContent = humanize(value);
+    option.textContent = labeler(value);
     select.append(option);
   }
 }
@@ -72,10 +77,11 @@ try {
   const { media, sources } = await loadTables(["media", "sources"]);
   const sourcesById = indexById(sources);
   addOptions(controls.type, media.map((item) => item.mediaType));
-  addOptions(controls.period, media.map((item) => item.period));
+  const availablePeriods = new Set(media.flatMap(periodValues));
+  addOptions(controls.period, PERIOD_ORDER.filter((value) => availablePeriods.has(value)), periodLabel, true);
   const indexed = media.map((item) => ({
     ...item,
-    _search: normalizeSearch([item.title, item.category, item.publicCaption, item.description, item.period, item.mediaType].filter(Boolean).join(" ")),
+    _search: normalizeSearch([item.title, item.category, item.publicCaption, item.description, ...periodValues(item), item.mediaType].filter(Boolean).join(" ")),
   }));
 
   function render() {
@@ -84,7 +90,7 @@ try {
       .filter((item) => (
         (!query || item._search.includes(query))
         && (!controls.type.value || item.mediaType === controls.type.value)
-        && (!controls.period.value || item.period === controls.period.value)
+        && matchesPeriod(item, controls.period.value)
         && (controls.scope.value === "all" || item.galleryStatus === controls.scope.value)
       ));
     const isDefaultCuratedView = controls.scope.value === "selected"
@@ -122,7 +128,7 @@ try {
         <article class="media-card" data-media-id="${escapeHtml(item.id)}">
           <figure>${previewMarkup}</figure>
           <div class="media-card__body">
-            <div class="meta-row">${typeBadge(item.mediaType)}${periodBadge(item.period)}${isFairUse ? "" : mediaRightsBadge(item)}</div>
+            <div class="meta-row">${typeBadge(item.mediaType)}${periodBadge(item.periods || item.period)}${isFairUse ? "" : mediaRightsBadge(item)}</div>
             ${isFairUse
               ? renderMediaDisclosure(item, itemSources, {
                 compact: true,

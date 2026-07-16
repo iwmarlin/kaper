@@ -3,11 +3,15 @@ import {
   escapeHtml,
   humanize,
   loadTables,
+  matchesPeriod,
   mountSiteChrome,
   normalizeSearch,
+  PERIOD_ORDER,
+  periodLabel,
+  periodValues,
   recordUrl,
   renderError,
-} from "./core.js?v=20260715-6";
+} from "./core.js?v=20260716-3";
 
 mountSiteChrome("map");
 
@@ -21,16 +25,13 @@ const selectionTitle = document.querySelector("#place-selection-title");
 const selectionMeta = document.querySelector("#place-selection-meta");
 const selectionLink = document.querySelector("#place-selection-link");
 
-const periodOrder = ["warsaw", "european", "transnational", "hollywood"];
 let map;
 let markerLayer;
 let selectedId = null;
 const markerById = new Map();
 
 function normalizedPeriod(place) {
-  return String(place.period || place.periodKey || "")
-    .toLowerCase()
-    .replaceAll(" ", "_");
+  return periodValues(place)[0] || "";
 }
 
 function eventCount(place) {
@@ -38,7 +39,7 @@ function eventCount(place) {
 }
 
 function markerIcon(place, selected = false) {
-  const periodKey = normalizedPeriod(place);
+  const periodKey = periodValues(place).join("_") || normalizedPeriod(place);
   const size = Math.min(24, 14 + Math.sqrt(Math.max(eventCount(place), 1)) * 2.2);
   return window.L.divIcon({
     className: "map-place-icon-shell",
@@ -82,8 +83,11 @@ function selectPlace(place, { moveMap = true } = {}) {
   selectionKicker.textContent = humanize(place.placeType || "Documented place");
   selectionTitle.textContent = place.displayName;
   const location = [place.city, place.country].filter(Boolean).join(", ");
+  const careerPeriods = periodValues(place).map(periodLabel).join(" · ");
   const linkedEvents = eventCount(place);
-  selectionMeta.textContent = `${location}${location ? " · " : ""}${linkedEvents} linked ${linkedEvents === 1 ? "event" : "events"}.`;
+  selectionMeta.textContent = [location, careerPeriods, `${linkedEvents} linked ${linkedEvents === 1 ? "event" : "events"}`]
+    .filter(Boolean)
+    .join(" · ");
   selectionLink.href = recordUrl("place", place.id);
   selectionLink.hidden = false;
 
@@ -112,12 +116,12 @@ try {
   const publicPlaces = places;
   totalTarget.textContent = String(publicPlaces.length);
 
-  const periods = [...new Set(publicPlaces.map(normalizedPeriod).filter(Boolean))]
-    .sort((a, b) => periodOrder.indexOf(a) - periodOrder.indexOf(b));
+  const periods = [...new Set(publicPlaces.flatMap(periodValues).filter(Boolean))]
+    .sort((a, b) => PERIOD_ORDER.indexOf(a) - PERIOD_ORDER.indexOf(b));
   for (const value of periods) {
     const option = document.createElement("option");
     option.value = value;
-    option.textContent = humanize(value);
+    option.textContent = periodLabel(value);
     period.append(option);
   }
 
@@ -156,7 +160,7 @@ try {
     const query = normalizeSearch(search.value.trim());
     const filtered = publicPlaces
       .filter((place) => (
-        (!period.value || normalizedPeriod(place) === period.value)
+        matchesPeriod(place, period.value)
         && (!query || normalizeSearch([
           place.displayName,
           place.city,
@@ -167,7 +171,7 @@ try {
       ))
       .sort((a, b) => (
         eventCount(b) - eventCount(a)
-        || periodOrder.indexOf(normalizedPeriod(a)) - periodOrder.indexOf(normalizedPeriod(b))
+        || PERIOD_ORDER.indexOf(normalizedPeriod(a)) - PERIOD_ORDER.indexOf(normalizedPeriod(b))
         || String(a.displayName).localeCompare(String(b.displayName))
       ));
 
@@ -180,7 +184,7 @@ try {
               <button type="button" data-id="${escapeHtml(place.id)}" aria-current="false">
                 <span class="place-list__main">
                   <strong>${escapeHtml(place.displayName)}</strong>
-                  <small>${escapeHtml([place.city, place.country].filter(Boolean).join(", "))} · ${escapeHtml(humanize(place.placeType))}</small>
+                  <small>${escapeHtml([place.city, place.country].filter(Boolean).join(", "))} · ${escapeHtml(humanize(place.placeType))} · ${escapeHtml(periodValues(place).map((value) => periodLabel(value).replace(" · ", " ")).join(" / "))}</small>
                 </span>
                 <span class="place-list__count" aria-label="${linkedEvents} linked ${linkedEvents === 1 ? "event" : "events"}">${linkedEvents}</span>
               </button>

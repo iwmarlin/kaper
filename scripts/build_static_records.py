@@ -32,6 +32,11 @@ TYPE_LABELS = {
     "organization": "Organization",
     "source": "Source",
 }
+PERIOD_META = {
+    "warsaw": ("Warsaw", "1902–1926"),
+    "european": ("European", "1926–1934"),
+    "hollywood": ("Hollywood", "1935–1939"),
+}
 CSP = (
     "default-src 'self'; script-src 'self' https://unpkg.com; "
     "style-src 'self' 'unsafe-inline' https://unpkg.com; "
@@ -43,6 +48,17 @@ CSP = (
 
 def read_json(path: Path):
     return json.loads(path.read_text(encoding="utf-8"))
+
+
+def period_label(value: str) -> str:
+    key = str(value or "").strip().lower().replace(" ", "_")
+    label, year_range = PERIOD_META.get(key, (str(value or ""), ""))
+    return f"{label} · {year_range}" if year_range else label
+
+
+def period_labels(record: dict) -> str:
+    values = record.get("periods") or [record.get("period")]
+    return ", ".join(period_label(value) for value in values if value)
 
 
 def esc(value) -> str:
@@ -122,19 +138,20 @@ def summary_for(record_type: str, record: dict, tables: dict) -> str:
 
 def facts_for(record_type: str, record: dict) -> list[tuple[str, str]]:
     if record_type == "work":
-        return [("Year", record.get("year")), ("Type", record.get("workType")), ("Period", record.get("period"))]
+        return [("Year", record.get("year")), ("Type", record.get("workType")), ("Period", period_labels(record))]
     if record_type == "event":
         return [
             ("Date", record.get("displayDate") or record.get("dateStart")),
+            ("Period", period_labels(record)),
             ("Place", record.get("placeDisplay")),
             ("Category", record.get("category")),
         ]
     if record_type == "place":
-        return [("City", record.get("city")), ("Country", record.get("country")), ("Type", record.get("placeType"))]
+        return [("City", record.get("city")), ("Country", record.get("country")), ("Type", record.get("placeType")), ("Period", period_labels(record))]
     if record_type == "media":
         if record.get("mediaType") == "document_gallery":
-            return [("Images", len(record.get("assetPaths", []))), ("Period", record.get("period"))]
-        return [("Media type", record.get("mediaType")), ("Period", record.get("period")), ("Rights", record.get("rightsStatus"))]
+            return [("Images", len(record.get("assetPaths", []))), ("Period", period_labels(record))]
+        return [("Media type", record.get("mediaType")), ("Period", period_labels(record)), ("Rights", record.get("rightsStatus"))]
     if record_type == "person":
         return [("Authorized name", record.get("authorizedName")), ("Primary role", record.get("primaryRole"))]
     if record_type == "organization":
@@ -162,8 +179,8 @@ def static_page(record_type: str, record: dict, tables: dict) -> str:
     label = TYPE_LABELS[record_type]
     record_id = record["id"]
     is_gallery = record_type == "media" and record.get("mediaType") == "document_gallery"
-    style_version = "20260716-2"
-    record_script_version = "20260716-4"
+    style_version = "20260716-6"
+    record_script_version = "20260716-5"
     route = f"records/{record_type}/{quote(record_id, safe='')}/"
     canonical = f"{ORIGIN}{route}"
     facts = "".join(

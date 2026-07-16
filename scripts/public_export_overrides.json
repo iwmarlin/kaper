@@ -71,8 +71,12 @@
         }
       },
       "M030": {
-        "reason": "Keep gallery-container audit notes and composite-card workflow text out of the public export; each member medium carries its own public credit, source and rights statement.",
-        "fields": {},
+        "reason": "Keep gallery-container audit notes out of the public export and avoid presenting Warsaw as an exclusively pre-1927 location when the gallery also contains later Warsaw reception material.",
+        "fields": {
+          "title": "Warsaw — documents and contexts",
+          "description": "Selected documents and contextual images connected with Kaper’s Warsaw education, early compositions, songs, and later Warsaw reception.",
+          "publicCaption": "Documents and contextual images connected with Kaper’s Warsaw formation, early work, and later Warsaw reception."
+        },
         "removeFields": [
           "rightsNote",
           "publicCreditLine"

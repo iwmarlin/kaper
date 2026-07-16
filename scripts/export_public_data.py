@@ -170,6 +170,15 @@ SOURCE_TRAILING_BRACKET_NOTE_PATTERN = re.compile(
     flags=re.IGNORECASE,
 )
 
+PERIOD_ORDER = ("warsaw", "european", "hollywood")
+PERIOD_YEAR_RANGES = {
+    "warsaw": (1902, 1926),
+    "european": (1926, 1934),
+    "hollywood": (1935, 1939),
+}
+WARSAW_1926_EVENT_IDS = {"TE0014", "TE0047"}
+EUROPEAN_1926_EVENT_IDS = {"TE0015", "TE0016", "TE0048"}
+
 
 def normalized_source_note(note: str) -> str:
     """Turn a trailing editorial bracket into concise public-facing prose."""
@@ -205,6 +214,24 @@ def normalized_source_note(note: str) -> str:
             subject = f"The {subject[0].lower()}{subject[1:]}"
         return f"{subject} have not been established."
     return f"{note}."
+
+
+def normalized_period_key(value: Any) -> str:
+    key = str(value or "").strip().lower().replace(" ", "_")
+    return key if key in PERIOD_ORDER else ""
+
+
+def year_from_value(value: Any) -> int | None:
+    match = re.search(r"\b(19\d{2})\b", str(value or ""))
+    return int(match.group(1)) if match else None
+
+
+def chronological_period_for_year(year: int) -> str:
+    if year <= 1926:
+        return "warsaw"
+    if year <= 1934:
+        return "european"
+    return "hollywood"
 
 
 def read_json(path: Path) -> dict[str, Any]:
@@ -1217,6 +1244,131 @@ class PublicExporter:
                     if work:
                         self._append(work, derived_key, [subtype["id"]])
 
+    def _normalize_periods(self) -> None:
+        """Use one chronological period model throughout the public graph."""
+        output_by_id = {
+            table: {record["id"]: record for record in records}
+            for table, records in self.output_records.items()
+        }
+
+        def set_periods(record: dict[str, Any], values: list[str]) -> None:
+            periods = [
+                key
+                for key in PERIOD_ORDER
+                if key in {normalized_period_key(value) for value in values}
+            ]
+            if not periods:
+                fallback = normalized_period_key(record.get("period"))
+                if fallback:
+                    periods = [fallback]
+            if not periods:
+                return
+            record["periods"] = periods
+            record["period"] = periods[0]
+            if "periodKey" in record:
+                record["periodKey"] = periods[0]
+
+        events = output_by_id["Timeline Events"]
+        for event in events.values():
+            event_id = event["id"]
+            if event_id in WARSAW_1926_EVENT_IDS:
+                periods = ["warsaw"]
+            elif event_id in EUROPEAN_1926_EVENT_IDS:
+                periods = ["european"]
+            else:
+                start_year = year_from_value(event.get("dateStart") or event.get("sortDate"))
+                end_year = year_from_value(event.get("dateEnd")) or start_year
+                periods = []
+                if start_year is not None and end_year is not None:
+                    if start_year <= 1926:
+                        periods.append("warsaw")
+                    if end_year >= 1927 and start_year <= 1934:
+                        periods.append("european")
+                    if end_year >= 1935:
+                        periods.append("hollywood")
+                if start_year == 1926 and end_year == 1926:
+                    existing = normalized_period_key(
+                        event.get("periodKey") or event.get("period")
+                    )
+                    periods = [existing or "warsaw"]
+            set_periods(event, periods)
+
+        works = output_by_id["Works"]
+        for work in works.values():
+            year = year_from_value(work.get("year"))
+            periods: list[str] = []
+            if year == 1926:
+                linked_periods = {
+                    period
+                    for event_id in work.get("timelineEventIds", [])
+                    for period in events.get(event_id, {}).get("periods", [])
+                }
+                periods = [
+                    period
+                    for period in PERIOD_ORDER
+                    if period in linked_periods and period != "hollywood"
+                ]
+            elif year is not None:
+                periods = [chronological_period_for_year(year)]
+            set_periods(work, periods)
+
+        subtype_tables = ("Films", "Songs", "Other Works")
+        for table_name in subtype_tables:
+            for record in output_by_id[table_name].values():
+                linked_periods = [
+                    period
+                    for work_id in record.get("workIds", [])
+                    for period in works.get(work_id, {}).get("periods", [])
+                ]
+                if not linked_periods:
+                    year = year_from_value(record.get("year"))
+                    linked_periods = (
+                        [chronological_period_for_year(year)]
+                        if year is not None
+                        else []
+                    )
+                set_periods(record, linked_periods)
+
+        media_records = output_by_id["Media"]
+        for media in media_records.values():
+            if media.get("mediaType") == "document_gallery":
+                continue
+            linked_periods = [
+                period
+                for work_id in media.get("workIds", [])
+                for period in works.get(work_id, {}).get("periods", [])
+            ]
+            linked_periods.extend(
+                period
+                for event_id in media.get("timelineEventIds", [])
+                for period in events.get(event_id, {}).get("periods", [])
+            )
+            set_periods(media, linked_periods)
+
+        for media in media_records.values():
+            if media.get("mediaType") != "document_gallery":
+                continue
+            member_periods = [
+                period
+                for member_id in media.get("galleryMemberIds", [])
+                for period in media_records.get(member_id, {}).get("periods", [])
+            ]
+            if not member_periods:
+                member_periods = [
+                    period
+                    for event_id in media.get("timelineEventIds", [])
+                    for period in events.get(event_id, {}).get("periods", [])
+                ]
+            set_periods(media, member_periods)
+
+        for place in output_by_id["Places"].values():
+            linked_periods = [
+                period
+                for event_id in place.get("timelineEventIds", [])
+                for period in events.get(event_id, {}).get("periods", [])
+            ]
+            set_periods(place, linked_periods)
+
     def build_records(self) -> None:
         for table_name in TABLE_ORDER:
             records = [
@@ -1229,6 +1381,7 @@ class PublicExporter:
         self._normalize_media_public_text()
         self._normalize_source_public_text()
         self._derive_graph_indexes()
+        self._normalize_periods()
 
     def _validate_required(self) -> None:
         for table_name, table_config in self.config["tables"].items():
@@ -1297,6 +1450,32 @@ class PublicExporter:
                 self.errors.append(
                     f"Works {work['id']}: year {work['year']} exceeds public scope {end_year}"
                 )
+
+        period_tables = (
+            "Works",
+            "Films",
+            "Songs",
+            "Other Works",
+            "Media",
+            "Timeline Events",
+            "Places",
+        )
+        for table_name in period_tables:
+            for record in self.output_records[table_name]:
+                periods = record.get("periods", [])
+                invalid = [period for period in periods if period not in PERIOD_ORDER]
+                if invalid:
+                    self.errors.append(
+                        f"{table_name} {record['id']}: invalid chronological periods {invalid}"
+                    )
+                if periods and record.get("period") != periods[0]:
+                    self.errors.append(
+                        f"{table_name} {record['id']}: primary period does not match periods"
+                    )
+                if normalized_period_key(record.get("period")) not in PERIOD_ORDER:
+                    self.errors.append(
+                        f"{table_name} {record['id']}: missing canonical chronological period"
+                    )
         for event in self.output_records["Timeline Events"]:
             for key in ("dateStart", "dateEnd"):
                 value = event.get(key)

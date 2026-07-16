@@ -5,9 +5,13 @@ import {
   humanize,
   indexById,
   loadTables,
+  matchesPeriod,
   mountSiteChrome,
   normalizeSearch,
+  PERIOD_ORDER,
   periodBadge,
+  periodLabel,
+  periodValues,
   recordUrl,
   registerImageDerivatives,
   renderMediaDisclosure,
@@ -16,7 +20,7 @@ import {
   resolveIds,
   responsiveImage,
   typeBadge,
-} from "./core.js?v=20260716-2";
+} from "./core.js?v=20260716-3";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 mountSiteChrome("timeline");
@@ -91,11 +95,12 @@ function chapterMarkup(key) {
     </div>`;
 }
 
-function addOptions(select, values) {
-  for (const value of [...new Set(values.filter(Boolean))].sort()) {
+function addOptions(select, values, labeler = humanize, preserveOrder = false) {
+  const uniqueValues = [...new Set(values.filter(Boolean))];
+  for (const value of preserveOrder ? uniqueValues : uniqueValues.sort()) {
     const option = document.createElement("option");
     option.value = value;
-    option.textContent = humanize(value);
+    option.textContent = labeler(value);
     select.append(option);
   }
 }
@@ -105,7 +110,8 @@ try {
   const mediaById = indexById(media);
   const peopleById = indexById(people);
   const sourcesById = indexById(sources);
-  addOptions(controls.period, timelineEvents.map((event) => event.period));
+  const availablePeriods = new Set(timelineEvents.flatMap(periodValues));
+  addOptions(controls.period, PERIOD_ORDER.filter((value) => availablePeriods.has(value)), periodLabel, true);
   addOptions(controls.category, timelineEvents.map((event) => event.category));
 
   const indexed = timelineEvents.map((event) => ({
@@ -125,7 +131,7 @@ try {
     const filtered = indexed
       .filter((event) => (
         (!query || event._search.includes(query))
-        && (!controls.period.value || event.period === controls.period.value)
+        && matchesPeriod(event, controls.period.value)
         && (!controls.category.value || event.category === controls.category.value)
       ))
       .sort((a, b) => String(a.sortDate || a.dateStart).localeCompare(String(b.sortDate || b.dateStart)) || Number(a.sortOrder || 0) - Number(b.sortOrder || 0));
@@ -159,7 +165,7 @@ try {
               ${isMilestone ? `<span class="timeline-item__kicker">Milestone</span>` : ""}
               <div class="timeline-item__date">${escapeHtml(event.displayDate || event.dateStart)}</div>
             </div>
-            <div class="meta-row">${typeBadge(event.category || event.eventType)}${periodBadge(event.period)}</div>
+            <div class="meta-row">${typeBadge(event.category || event.eventType)}${periodBadge(event.periods || event.period)}</div>
             <h3><a href="${recordUrl("event", event.id)}">${escapeHtml(event.title)}</a></h3>
             ${event.placeDisplay ? `<p class="timeline-item__place">${escapeHtml(event.placeDisplay)}</p>` : ""}
             ${hero ? `<div class="timeline-item__media-row">

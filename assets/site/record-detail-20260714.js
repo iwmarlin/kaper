@@ -11,6 +11,8 @@ import {
   mountSiteChrome,
   normalizeSearch,
   periodBadge,
+  periodLabel,
+  periodValues,
   recordUrl,
   registerImageDerivatives,
   renderError,
@@ -356,8 +358,8 @@ function renderWork(work, data, indexes) {
   return {
     title: work.title,
     label: work.workType || "Work",
-    badges: `${typeBadge(work.workType)}${periodBadge(work.period)}${isContextOnly ? scopeBadge(work.publicScope) : (hasConciseCredits && work.certainty === "confirmed" ? "" : certaintyBadge(work.certainty))}`,
-    facts: `${fact("Year", work.year)}${fact("Type", work.workType)}${hasConciseCredits ? fact("Genre", subtype?.genre) : ""}${fact("Period", work.period)}${isContextOnly ? fact("Kaper attribution", "Not confirmed") : (hasConciseCredits && work.certainty === "confirmed" ? "" : fact("Certainty", humanize(work.certainty)))}`,
+    badges: `${typeBadge(work.workType)}${periodBadge(work.periods || work.period)}${isContextOnly ? scopeBadge(work.publicScope) : (hasConciseCredits && work.certainty === "confirmed" ? "" : certaintyBadge(work.certainty))}`,
+    facts: `${fact("Year", work.year)}${fact("Type", work.workType)}${hasConciseCredits ? fact("Genre", subtype?.genre) : ""}${fact("Period", periodValues(work).map(periodLabel).join(", "))}${isContextOnly ? fact("Kaper attribution", "Not confirmed") : (hasConciseCredits && work.certainty === "confirmed" ? "" : fact("Certainty", humanize(work.certainty)))}`,
     main,
     aside,
   };
@@ -373,8 +375,8 @@ function renderEvent(event, data, indexes) {
   return {
     title: event.title,
     label: "Timeline event",
-    badges: `${typeBadge(event.category || event.eventType)}${periodBadge(event.period)}`,
-    facts: `${fact("Date", event.displayDate || event.dateStart)}${fact("Precision", humanize(event.datePrecision))}${fact("Place", event.placeDisplay)}${fact("Category", humanize(event.category))}`,
+    badges: `${typeBadge(event.category || event.eventType)}${periodBadge(event.periods || event.period)}`,
+    facts: `${fact("Date", event.displayDate || event.dateStart)}${fact("Period", periodValues(event).map(periodLabel).join(", "))}${fact("Precision", humanize(event.datePrecision))}${fact("Place", event.placeDisplay)}${fact("Category", humanize(event.category))}`,
     main: [
       section("Event", publicText(event.longDescription, event.shortDescription)),
       section("People", entityList(people, "person", (item) => humanize(item.primaryRole))),
@@ -395,8 +397,8 @@ function renderPlace(place, data, indexes) {
   return {
     title: place.displayName,
     label: "Place",
-    badges: `${typeBadge(place.placeType)}${periodBadge(place.period)}`,
-    facts: `${fact("City", place.city)}${fact("Region", place.region)}${fact("Country", place.country)}${fact("Place type", humanize(place.placeType))}${fact("Map precision", humanize(place.mapPrecision))}${fact("Coordinates", place.latitude && place.longitude ? `${place.latitude}, ${place.longitude}` : "")}`,
+    badges: `${typeBadge(place.placeType)}${periodBadge(place.periods || place.period)}`,
+    facts: `${fact("City", place.city)}${fact("Region", place.region)}${fact("Country", place.country)}${fact("Period", periodValues(place).map(periodLabel).join(", "))}${fact("Place type", humanize(place.placeType))}${fact("Map precision", humanize(place.mapPrecision))}${fact("Coordinates", place.latitude && place.longitude ? `${place.latitude}, ${place.longitude}` : "")}`,
     main: [
       section("About this place", publicText(place.publicNote)),
       section("Documented events", entityList(events, "event", (item) => item.displayDate || item.dateStart)),
@@ -473,8 +475,8 @@ function renderMedia(media, data, indexes) {
     return {
       title: media.title,
       label: "Media gallery",
-      badges: `${typeBadge(media.mediaType)}${periodBadge(media.period)}`,
-      facts: `${fact("Images", galleryCount)}${fact("Period", humanize(media.period))}`,
+      badges: `${typeBadge(media.mediaType)}${periodBadge(media.periods || media.period)}`,
+      facts: `${fact("Images", galleryCount)}${fact("Period", periodValues(media).map(periodLabel).join(", "))}`,
       main: [
         section("About this gallery", publicText(media.publicCaption, media.description)),
         section(`Gallery · ${galleryCount} images`, gallery, "record-section--gallery"),
@@ -488,8 +490,8 @@ function renderMedia(media, data, indexes) {
   return {
     title: media.title,
     label: "Media record",
-    badges: `${typeBadge(media.mediaType)}${periodBadge(media.period)}${mediaRightsBadge(media)}`,
-    facts: `${fact("Category", humanize(media.category))}${fact("Items", gallery ? media.assetPaths.length : "")}`,
+    badges: `${typeBadge(media.mediaType)}${periodBadge(media.periods || media.period)}${mediaRightsBadge(media)}`,
+    facts: `${fact("Category", humanize(media.category))}${fact("Period", periodValues(media).map(periodLabel).join(", "))}${fact("Items", gallery ? media.assetPaths.length : "")}`,
     main: [
       section("About this item", publicText(context)),
       gallery ? section(`Gallery · ${media.assetPaths.length} images`, gallery, "record-section--gallery") : "",

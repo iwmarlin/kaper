@@ -94,6 +94,8 @@ SOURCE_PUBLIC_WORKFLOW_PATTERN = re.compile(
     flags=re.IGNORECASE,
 )
 
+PERIOD_ORDER = ("warsaw", "european", "hollywood")
+
 
 class ExportValidator:
     def __init__(
@@ -325,6 +327,53 @@ class ExportValidator:
                     self.errors.append(
                         f"Timeline Events {event['id']}: {key} exceeds {end_year}"
                     )
+
+        for table_name in (
+            "Works",
+            "Films",
+            "Songs",
+            "Other Works",
+            "Media",
+            "Timeline Events",
+            "Places",
+        ):
+            for record in self.payloads.get(table_name, {}).get("records", []):
+                periods = record.get("periods")
+                if not isinstance(periods, list) or not periods:
+                    self.errors.append(
+                        f"{table_name} {record['id']}: missing chronological periods"
+                    )
+                    continue
+                if any(period not in PERIOD_ORDER for period in periods):
+                    self.errors.append(
+                        f"{table_name} {record['id']}: invalid chronological periods {periods}"
+                    )
+                expected_order = [
+                    period for period in PERIOD_ORDER if period in set(periods)
+                ]
+                if periods != expected_order:
+                    self.errors.append(
+                        f"{table_name} {record['id']}: chronological periods are not canonical"
+                    )
+                if record.get("period") != periods[0]:
+                    self.errors.append(
+                        f"{table_name} {record['id']}: primary period does not match periods"
+                    )
+
+        for work in self.payloads.get("Works", {}).get("records", []):
+            year = int(work["year"])
+            if year <= 1925:
+                expected = "warsaw"
+            elif year >= 1935:
+                expected = "hollywood"
+            elif year >= 1927:
+                expected = "european"
+            else:
+                expected = None
+            if expected and work.get("period") != expected:
+                self.errors.append(
+                    f"Works {work['id']}: {year} must use chronological period {expected}"
+                )
 
     @staticmethod
     def _detect_media_type(path: Path) -> str | None:

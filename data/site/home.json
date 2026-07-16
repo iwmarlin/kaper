@@ -35,6 +35,9 @@
     ],
     "heroTimelineEventIds": [
       "TE0003"
+    ],
+    "periods": [
+      "warsaw"
     ]
   },
   "events": [
@@ -50,7 +53,7 @@
       "sortOrder": 1,
       "displayMode": "point",
       "eventType": "life",
-      "period": "Warsaw",
+      "period": "warsaw",
       "periodKey": "warsaw",
       "category": "birth_family",
       "filterTags": [
@@ -82,6 +85,9 @@
       "placeIds": [
         "PL001",
         "PL014"
+      ],
+      "periods": [
+        "warsaw"
       ]
     },
     {
@@ -96,7 +102,7 @@
       "sortOrder": 5,
       "displayMode": "point",
       "eventType": "life",
-      "period": "Warsaw",
+      "period": "warsaw",
       "periodKey": "warsaw",
       "category": "religion_identity",
       "filterTags": [
@@ -129,6 +135,9 @@
       "placeIds": [
         "PL001",
         "PL011"
+      ],
+      "periods": [
+        "warsaw"
       ]
     },
     {
@@ -143,7 +152,7 @@
       "sortOrder": 9.5,
       "displayMode": "point",
       "eventType": "career",
-      "period": "Warsaw",
+      "period": "warsaw",
       "periodKey": "warsaw",
       "category": "warsaw_music",
       "filterTags": [
@@ -177,6 +186,9 @@
       ],
       "placeIds": [
         "PL001"
+      ],
+      "periods": [
+        "warsaw"
       ]
     }
   ],
@@ -216,6 +228,9 @@
       ],
       "heroTimelineEventIds": [
         "TE0025"
+      ],
+      "periods": [
+        "european"
       ]
     },
     {
@@ -247,6 +262,9 @@
       ],
       "heroTimelineEventIds": [
         "TE0003"
+      ],
+      "periods": [
+        "warsaw"
       ]
     },
     {
@@ -288,6 +306,9 @@
       ],
       "heroTimelineEventIds": [
         "TE0021"
+      ],
+      "periods": [
+        "european"
       ]
     }
   ]

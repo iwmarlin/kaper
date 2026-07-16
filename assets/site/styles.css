@@ -14,7 +14,6 @@
   --warning: #8c571d;
   --map-warsaw: var(--accent);
   --map-european: var(--blue);
-  --map-transnational: var(--gold);
   --map-hollywood: var(--green);
   --shadow-sm: 0 8px 24px rgba(21, 44, 51, 0.08);
   --shadow-lg: 0 24px 64px rgba(21, 44, 51, 0.14);
@@ -1552,10 +1551,22 @@ main {
 .map-place-marker--warsaw { background: var(--map-warsaw); }
 .map-legend__swatch--european,
 .map-place-marker--european { background: var(--map-european); }
-.map-legend__swatch--transnational,
-.map-place-marker--transnational { background: var(--map-transnational); }
 .map-legend__swatch--hollywood,
 .map-place-marker--hollywood { background: var(--map-hollywood); }
+.map-legend__swatch--multiple,
+.map-place-marker--warsaw_european {
+  background: conic-gradient(var(--map-warsaw) 0 50%, var(--map-european) 50% 100%);
+}
+.map-place-marker--european_hollywood {
+  background: conic-gradient(var(--map-european) 0 50%, var(--map-hollywood) 50% 100%);
+}
+.map-place-marker--warsaw_european_hollywood {
+  background: conic-gradient(
+    var(--map-warsaw) 0 33.333%,
+    var(--map-european) 33.333% 66.666%,
+    var(--map-hollywood) 66.666% 100%
+  );
+}
 
 .map-place-icon-shell,
 .map-cluster-shell {

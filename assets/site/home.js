@@ -11,7 +11,7 @@ import {
   renderLoading,
   responsiveImage,
   typeBadge,
-} from "./core.js?v=20260716-2";
+} from "./core.js?v=20260716-3";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 mountSiteChrome("home");
@@ -45,7 +45,7 @@ try {
     <article class="home-event-card">
       <div class="home-event-card__topline">
         <span class="home-event-card__number" aria-hidden="true">0${index + 1}</span>
-        ${periodBadge(event.period)}
+        ${periodBadge(event.periods || event.period)}
       </div>
       <p class="home-event-card__date">${escapeHtml(event.displayDate || event.dateStart)}</p>
       <h3><a href="${recordUrl("event", event.id)}">${escapeHtml(event.title)}</a></h3>
@@ -57,7 +57,7 @@ try {
     <article class="media-card home-media-card">
       <figure>${mediaPreview(item, { sizes: "(max-width: 680px) calc(100vw - 2rem), 30vw" })}</figure>
       <div class="media-card__body">
-        <div class="meta-row">${typeBadge(item.mediaType)}${periodBadge(item.period)}</div>
+        <div class="meta-row">${typeBadge(item.mediaType)}${periodBadge(item.periods || item.period)}</div>
         <h2><a href="${recordUrl("media", item.id)}">${escapeHtml(item.title)}</a></h2>
         <p>${escapeHtml(item.publicCaption || item.description || "")}</p>
       </div>

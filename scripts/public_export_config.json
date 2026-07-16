@@ -232,6 +232,9 @@
         "publicCaption",
         "galleryStatus"
       ],
+      "derivedFields": [
+        "periods"
+      ],
       "fields": {
         "id": "Media ID",
         "title": "Title",
@@ -307,6 +310,7 @@
         "publicScope"
       ],
       "derivedFields": [
+        "periods",
         "personIds",
         "organizationIds",
         "relationIds",
@@ -365,6 +369,9 @@
         "slug",
         "workIds"
       ],
+      "derivedFields": [
+        "periods"
+      ],
       "fields": {
         "id": "Film ID",
         "title": "Display Title",
@@ -401,6 +408,9 @@
         "title",
         "slug",
         "workIds"
+      ],
+      "derivedFields": [
+        "periods"
       ],
       "fields": {
         "id": "Song ID",
@@ -442,6 +452,9 @@
         "title",
         "slug",
         "workIds"
+      ],
+      "derivedFields": [
+        "periods"
       ],
       "fields": {
         "id": "Other ID",
@@ -548,6 +561,9 @@
         "dateStart",
         "sourceIds"
       ],
+      "derivedFields": [
+        "periods"
+      ],
       "fields": {
         "id": "Event ID",
         "slug": "Slug",
@@ -613,6 +629,9 @@
         "publicScope",
         "mapPrecision",
         "sourceIds"
+      ],
+      "derivedFields": [
+        "periods"
       ],
       "fields": {
         "id": "Place ID",

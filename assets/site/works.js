@@ -5,16 +5,20 @@ import {
   humanize,
   indexById,
   loadTables,
+  matchesPeriod,
   mountSiteChrome,
   normalizeSearch,
+  PERIOD_ORDER,
   periodBadge,
+  periodLabel,
+  periodValues,
   recordUrl,
   renderError,
   renderLoading,
   resolveIds,
   scopeBadge,
   typeBadge,
-} from "./core.js?v=20260715-6";
+} from "./core.js?v=20260716-3";
 
 mountSiteChrome("works");
 
@@ -35,11 +39,12 @@ let filtered = [];
 
 renderLoading(target, "Loading the catalogue…");
 
-function addOptions(select, values) {
-  for (const value of [...new Set(values.filter(Boolean))].sort()) {
+function addOptions(select, values, labeler = humanize, preserveOrder = false) {
+  const uniqueValues = [...new Set(values.filter(Boolean))];
+  for (const value of preserveOrder ? uniqueValues : uniqueValues.sort()) {
     const option = document.createElement("option");
     option.value = value;
-    option.textContent = humanize(value);
+    option.textContent = labeler(value);
     select.append(option);
   }
 }
@@ -76,7 +81,8 @@ try {
   }
 
   addOptions(controls.type, works.map((work) => work.workType));
-  addOptions(controls.period, works.map((work) => work.period));
+  const availablePeriods = new Set(works.flatMap(periodValues));
+  addOptions(controls.period, PERIOD_ORDER.filter((value) => availablePeriods.has(value)), periodLabel, true);
   addOptions(controls.certainty, works.map((work) => work.certainty));
   loadQuery();
 
@@ -88,7 +94,7 @@ try {
       work.sortTitle,
       work.year,
       work.workType,
-      work.period,
+      ...periodValues(work),
       contributors,
       subtype.genre,
       subtype.lyricistAsPrinted,
@@ -103,7 +109,7 @@ try {
     filtered = indexedWorks.filter((work) => (
       (!query || work._search.includes(query))
       && (!controls.type.value || work.workType === controls.type.value)
-      && (!controls.period.value || work.period === controls.period.value)
+      && matchesPeriod(work, controls.period.value)
       && (!controls.certainty.value || work.certainty === controls.certainty.value)
     ));
 
@@ -137,7 +143,7 @@ try {
             <h2><a href="${recordUrl("work", work.id)}">${escapeHtml(work.title)}</a></h2>
           </div>
           <div class="work-row__people">${escapeHtml(contributors.join(" · ") || "Contributor details")}</div>
-          <div class="work-row__period">${periodBadge(work.period)}</div>
+          <div class="work-row__period">${periodBadge(work.periods || work.period)}</div>
         </article>`;
     }).join("");
     syncQuery();

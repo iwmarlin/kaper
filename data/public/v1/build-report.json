@@ -70,7 +70,11 @@
     {
       "table": "Media",
       "id": "M030",
-      "fields": [],
+      "fields": [
+        "description",
+        "publicCaption",
+        "title"
+      ],
       "removedFields": [
         "publicCreditLine",
         "rightsNote"
@@ -485,31 +489,31 @@
       "sourceFieldsAvailable": 42,
       "publicScalarFields": 20,
       "publicLinkFields": 9,
-      "derivedFields": 0
+      "derivedFields": 1
     },
     "Works": {
       "sourceFieldsAvailable": 35,
       "publicScalarFields": 13,
       "publicLinkFields": 6,
-      "derivedFields": 6
+      "derivedFields": 7
     },
     "Films": {
       "sourceFieldsAvailable": 28,
       "publicScalarFields": 11,
       "publicLinkFields": 3,
-      "derivedFields": 0
+      "derivedFields": 1
     },
     "Songs": {
       "sourceFieldsAvailable": 34,
       "publicScalarFields": 15,
       "publicLinkFields": 3,
-      "derivedFields": 0
+      "derivedFields": 1
     },
     "Other Works": {
       "sourceFieldsAvailable": 26,
       "publicScalarFields": 13,
       "publicLinkFields": 2,
-      "derivedFields": 0
+      "derivedFields": 1
     },
     "Title Variants": {
       "sourceFieldsAvailable": 20,
@@ -527,13 +531,13 @@
       "sourceFieldsAvailable": 42,
       "publicScalarFields": 22,
       "publicLinkFields": 7,
-      "derivedFields": 0
+      "derivedFields": 1
     },
     "Places": {
       "sourceFieldsAvailable": 23,
       "publicScalarFields": 14,
       "publicLinkFields": 5,
-      "derivedFields": 0
+      "derivedFields": 1
     },
     "Contributions": {
       "sourceFieldsAvailable": 22,
