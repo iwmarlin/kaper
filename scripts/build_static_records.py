@@ -162,21 +162,17 @@ def static_page(record_type: str, record: dict, tables: dict) -> str:
     label = TYPE_LABELS[record_type]
     record_id = record["id"]
     is_gallery = record_type == "media" and record.get("mediaType") == "document_gallery"
+    style_version = "20260716-2"
     if record_type == "media":
         record_script_version = "20260716-2"
-        style_version = "20260715-16" if is_gallery else "20260715-15"
     elif record_type == "work" and record.get("workType") == "Other":
         record_script_version = "20260715-16"
-        style_version = "20260715-15"
     elif record_type == "work" and record.get("workType") == "Film":
         record_script_version = "20260715-14"
-        style_version = "20260715-15"
     elif record_type == "work" and record.get("workType") == "Song":
         record_script_version = "20260715-13"
-        style_version = "20260715-15"
     else:
         record_script_version = "20260715-12"
-        style_version = "20260715-15"
     route = f"records/{record_type}/{quote(record_id, safe='')}/"
     canonical = f"{ORIGIN}{route}"
     facts = "".join(
