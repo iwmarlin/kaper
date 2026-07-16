@@ -127,6 +127,15 @@
     },
     {
       "table": "Media",
+      "id": "M044",
+      "fields": [
+        "description",
+        "rightsNote"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Media",
       "id": "M059",
       "fields": [
         "description",
