@@ -20,7 +20,7 @@ import {
   resolveIds,
   responsiveImage,
   typeBadge,
-} from "./core.js?v=20260716-3";
+} from "./core.js?v=20260716-4";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 mountSiteChrome("timeline");
@@ -176,10 +176,11 @@ try {
                 })}
                 <figcaption>${renderMediaDisclosure(hero, heroSources, {
                   compact: true,
-                  fairUseResolutionLabel: "Low-resolution copy",
+                  fairUseResolutionLabel: "Low-resolution scholarly reproduction",
                   includeCaption: false,
                   includeCredit: false,
                   includeFullRightsNote: false,
+                  includeRationale: false,
                 })}</figcaption>
               </figure>
               ${description ? `<p>${escapeHtml(description)}</p>` : ""}

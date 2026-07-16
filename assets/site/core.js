@@ -220,6 +220,7 @@ export function renderMediaDisclosure(media, sources = [], {
   includeCaption = true,
   includeCredit = true,
   includeFullRightsNote = true,
+  includeRationale = true,
   includeResolutionLabel = true,
   includeRightsBadge = true,
   includeTitle = true,
@@ -248,9 +249,9 @@ export function renderMediaDisclosure(media, sources = [], {
     ${includeCaption && caption && caption !== media.title ? `<p class="media-disclosure__caption">${escapeHtml(caption)}</p>` : ""}
     ${includeCredit && credit ? `<p class="media-disclosure__credit"><strong>Credit:</strong> ${escapeHtml(credit)}</p>` : ""}
     ${metaContent ? `<div class="media-disclosure__meta">${metaContent}</div>` : ""}
-    ${compact && conciseRationale ? `<p class="media-disclosure__rationale"><strong>Use rationale:</strong> ${escapeHtml(conciseRationale)}</p>` : ""}
-    ${compact && includeFullRightsNote && fullRationale ? `<details class="media-disclosure__details"><summary>Full rights and use note</summary><p>${escapeHtml(rationale)}</p></details>` : ""}
-    ${!compact && rationale ? `<p class="media-disclosure__rationale">${mediaIsFairUse(media) ? "<strong>Use rationale:</strong> " : ""}${escapeHtml(rationale)}</p>` : ""}
+    ${compact && includeRationale && conciseRationale ? `<p class="media-disclosure__rationale"><strong>Use rationale:</strong> ${escapeHtml(conciseRationale)}</p>` : ""}
+    ${compact && includeRationale && includeFullRightsNote && fullRationale ? `<details class="media-disclosure__details"><summary>Full rights and use note</summary><p>${escapeHtml(rationale)}</p></details>` : ""}
+    ${!compact && includeRationale && rationale ? `<p class="media-disclosure__rationale">${mediaIsFairUse(media) ? "<strong>Use rationale:</strong> " : ""}${escapeHtml(rationale)}</p>` : ""}
   </div>`;
 }
 
