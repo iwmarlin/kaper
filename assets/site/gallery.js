@@ -19,7 +19,7 @@ import {
   resolveIds,
   safeExternalUrl,
   typeBadge,
-} from "./core.js?v=20260715-6";
+} from "./core.js?v=20260715-11";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 mountSiteChrome("media");
@@ -124,7 +124,11 @@ try {
           <div class="media-card__body">
             <div class="meta-row">${typeBadge(item.mediaType)}${periodBadge(item.period)}${isFairUse ? "" : mediaRightsBadge(item)}</div>
             ${isFairUse
-              ? renderMediaDisclosure(item, itemSources, { compact: true })
+              ? renderMediaDisclosure(item, itemSources, {
+                compact: true,
+                fairUseResolutionLabel: "Low-resolution copy",
+                includeFullRightsNote: false,
+              })
               : `<h2><a href="${recordUrl("media", item.id)}">${escapeHtml(item.title)}</a></h2>
                 <p>${escapeHtml(item.publicCaption || item.description || "")}</p>`}
             <div class="card__footer"><span>${escapeHtml(humanize(item.category || item.galleryStatus))}</span><span>${escapeHtml(item.id)}</span></div>

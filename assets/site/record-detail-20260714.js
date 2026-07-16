@@ -6,7 +6,6 @@ import {
   humanize,
   indexById,
   mediaRightsBadge,
-  mediaRightsLabel,
   mediaPreview,
   mountSiteChrome,
   normalizeSearch,
@@ -20,11 +19,9 @@ import {
   safeExternalUrl,
   setCanonicalRecordUrl,
   scopeBadge,
-  galleryScopeLabel,
-  storageLabel,
   typeBadge,
   updateMeta,
-} from "./core.js?v=20260715-8";
+} from "./core.js?v=20260715-11";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 mountSiteChrome("");
@@ -438,7 +435,11 @@ function documentGallery(media, allMedia, sourceIndex) {
     const title = member?.title || `Gallery image ${index + 1}`;
     const caption = member?.publicCaption || member?.description || `Image ${index + 1} of ${paths.length} in this documentary gallery.`;
     const disclosure = member
-      ? renderMediaDisclosure(member, related(member.sourceIds, sourceIndex), { compact: true })
+      ? renderMediaDisclosure(member, related(member.sourceIds, sourceIndex), {
+        compact: true,
+        fairUseResolutionLabel: "Low-resolution copy",
+        includeFullRightsNote: false,
+      })
       : `<strong>${escapeHtml(title)}</strong><p>${escapeHtml(caption)}</p>`;
     return `
       <figure class="record-gallery__item">
@@ -483,12 +484,13 @@ function renderMedia(media, data, indexes) {
     title: media.title,
     label: "Media record",
     badges: `${typeBadge(media.mediaType)}${periodBadge(media.period)}${mediaRightsBadge(media)}`,
-    facts: `${fact("Media type", humanize(media.mediaType))}${fact("Category", humanize(media.category))}${fact("Items", gallery ? media.assetPaths.length : "")}${fact("Storage", storageLabel(media.storageType))}${fact("Gallery scope", galleryScopeLabel(media.galleryStatus))}${fact("Rights status", mediaRightsLabel(media))}`,
+    facts: `${fact("Category", humanize(media.category))}${fact("Items", gallery ? media.assetPaths.length : "")}`,
     main: [
       section("About this item", publicText(context)),
       gallery ? section(`Gallery · ${media.assetPaths.length} images`, gallery, "record-section--gallery") : "",
       section("Rights and provenance", `${renderMediaDisclosure(media, sources, {
         includeCaption: false,
+        includeRightsBadge: false,
         includeTitle: false,
         includeSource: false,
       })}${sourceList(sources)}`),
