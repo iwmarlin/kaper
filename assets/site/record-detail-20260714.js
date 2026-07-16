@@ -21,7 +21,7 @@ import {
   scopeBadge,
   typeBadge,
   updateMeta,
-} from "./core.js?v=20260715-11";
+} from "./core.js?v=20260716-1";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 mountSiteChrome("");
@@ -277,12 +277,16 @@ function publicText(...values) {
   return value ? `<p class="lead">${escapeHtml(value)}</p>` : "";
 }
 
-const MEDIA_CONTEXT_INTERNAL_PATTERN = /\b(?:source route|local asset|rights note|publication status|rights status|asset paths?|recorded in SRC\d+|linked through SRC\d+|source SRC\d+|via IMDb|NB\s*:|verify|verification remains open|needs? (?:review|verification))\b/i;
+const MEDIA_CONTEXT_INTERNAL_PATTERN = /\b(?:source route|local asset|rights note|publication status|rights status|asset paths?|recorded in SRC\d+|linked through SRC\d+|source\s*:?\s*SRC\d+|linked works?\s*:|related works?\s*:|via IMDb|NB\s*:|verify|verification remains open|needs? (?:review|verification))\b/i;
 
 function mediaContext(media) {
   const sentences = String(media.description || "")
     .match(/[^.!?]+[.!?]+|[^.!?]+$/g)
-    ?.map((sentence) => sentence.trim())
+    ?.map((sentence) => sentence
+      .replace(/\s+(?:current\s+)?source(?:\s+route|\s+PDF)?\s*:.*$/i, "")
+      .replace(/\s+source\s+SRC\d+.*$/i, "")
+      .replace(/\s+(?:linked|related)\s+works?\s*:.*$/i, "")
+      .trim())
     .filter((sentence) => sentence && !MEDIA_CONTEXT_INTERNAL_PATTERN.test(sentence)) || [];
   const description = sentences.join(" ");
   if (!description) return "";
@@ -490,6 +494,7 @@ function renderMedia(media, data, indexes) {
       gallery ? section(`Gallery · ${media.assetPaths.length} images`, gallery, "record-section--gallery") : "",
       section("Rights and provenance", `${renderMediaDisclosure(media, sources, {
         includeCaption: false,
+        includeResolutionLabel: false,
         includeRightsBadge: false,
         includeTitle: false,
         includeSource: false,

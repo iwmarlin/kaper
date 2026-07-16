@@ -185,6 +185,7 @@ export function renderMediaDisclosure(media, sources = [], {
   fairUseResolutionLabel = "Reduced-resolution local reference",
   includeCaption = true,
   includeFullRightsNote = true,
+  includeResolutionLabel = true,
   includeRightsBadge = true,
   includeTitle = true,
   includeSource = true,
@@ -204,7 +205,7 @@ export function renderMediaDisclosure(media, sources = [], {
   const fullRationale = rationale && rationale !== conciseRationale;
   const metaContent = [
     includeRightsBadge ? mediaRightsBadge(media) : "",
-    mediaIsFairUse(media) ? `<span class="media-disclosure__resolution">${escapeHtml(fairUseResolutionLabel)}</span>` : "",
+    mediaIsFairUse(media) && includeResolutionLabel ? `<span class="media-disclosure__resolution">${escapeHtml(fairUseResolutionLabel)}</span>` : "",
     includeSource && sourceHref ? `<a href="${escapeHtml(sourceHref)}"${sourceAttributes}>${escapeHtml(sourceLabel)}${sourceExternal ? ' <span aria-hidden="true">↗</span>' : ""}</a>` : "",
   ].filter(Boolean).join("");
   return `<div class="media-disclosure${compact ? " media-disclosure--compact" : ""}">
