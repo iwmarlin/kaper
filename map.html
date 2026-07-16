@@ -12,7 +12,7 @@
   <link rel="canonical" href="https://iwmarlin.github.io/kaper/map.html">
   <link rel="preconnect" href="https://unpkg.com">
   <link rel="preconnect" href="https://tile.openstreetmap.org">
-  <link rel="stylesheet" href="assets/site/styles.css?v=20260716-6">
+  <link rel="stylesheet" href="assets/site/styles.css?v=20260716-7">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="anonymous">
   <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" crossorigin="anonymous">
   <title>Map — Bronisław Kaper, 1902–1939</title>
@@ -28,7 +28,7 @@
           <p class="lead">Explore the cities, addresses, venues and studios that shaped Kaper's documented career through 1939.</p>
         </div>
         <div class="map-hero__summary">
-          <strong id="map-total">42</strong>
+          <strong id="map-total">43</strong>
           <span>documented places across Europe and North America</span>
         </div>
       </div>
@@ -50,6 +50,10 @@
               <label for="place-period">Career period</label>
               <select id="place-period"><option value="">All periods</option></select>
             </div>
+            <div class="field field--toggle">
+              <label for="toggle-journey">Journey</label>
+              <button id="toggle-journey" type="button" class="map-route-toggle" aria-pressed="true">Hide route</button>
+            </div>
           </div>
         </div>
         <div class="map-explorer">
@@ -67,22 +71,23 @@
               <p class="eyebrow" id="place-selection-kicker">Explore the map</p>
               <h3 id="place-selection-title">Select a place</h3>
               <p id="place-selection-meta">Choose a marker or a place from the list to see its role in the archive.</p>
+              <p id="place-selection-note" class="map-selection__note" hidden></p>
               <a class="button button--small" id="place-selection-link" href="map.html" hidden>View place record</a>
             </div>
             <div class="map-results-heading">
               <span>Documented places</span>
-              <strong id="place-count" aria-live="polite">42</strong>
+              <strong id="place-count" aria-live="polite">43</strong>
             </div>
             <ul class="place-list" id="place-list"></ul>
           </aside>
         </div>
-        <p class="map-method-note">Coordinates reflect the documented map precision. Nearby addresses are grouped until the map is enlarged; selecting a group reveals its individual places.</p>
+        <p class="map-method-note">Coordinates reflect the documented map precision. Nearby addresses are grouped until the map is enlarged; selecting a group reveals its individual places. The dotted line traces Kaper's documented migration from Warsaw to Hollywood; use “Hide route” to remove it.</p>
       </div>
     </section>
   </main>
   <footer class="site-footer" data-site-footer></footer>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js" crossorigin="anonymous"></script>
-  <script type="module" src="assets/site/map-explorer-20260714.js?v=20260716-1"></script>
+  <script type="module" src="assets/site/map-explorer-20260714.js?v=20260716-2"></script>
 </body>
 </html>

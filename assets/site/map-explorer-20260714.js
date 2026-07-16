@@ -23,7 +23,9 @@ const period = document.querySelector("#place-period");
 const selectionKicker = document.querySelector("#place-selection-kicker");
 const selectionTitle = document.querySelector("#place-selection-title");
 const selectionMeta = document.querySelector("#place-selection-meta");
+const selectionNote = document.querySelector("#place-selection-note");
 const selectionLink = document.querySelector("#place-selection-link");
+const toggleJourney = document.querySelector("#toggle-journey");
 
 let map;
 let markerLayer;
@@ -62,6 +64,10 @@ function resetSelection() {
   selectionKicker.textContent = "Explore the map";
   selectionTitle.textContent = "Select a place";
   selectionMeta.textContent = "Choose a marker or a place from the list to see its role in the archive.";
+  if (selectionNote) {
+    selectionNote.textContent = "";
+    selectionNote.hidden = true;
+  }
   selectionLink.hidden = true;
 }
 
@@ -88,6 +94,15 @@ function selectPlace(place, { moveMap = true } = {}) {
   selectionMeta.textContent = [location, careerPeriods, `${linkedEvents} linked ${linkedEvents === 1 ? "event" : "events"}`]
     .filter(Boolean)
     .join(" · ");
+  if (selectionNote) {
+    if (place.publicNote) {
+      selectionNote.textContent = place.publicNote;
+      selectionNote.hidden = false;
+    } else {
+      selectionNote.textContent = "";
+      selectionNote.hidden = true;
+    }
+  }
   selectionLink.href = recordUrl("place", place.id);
   selectionLink.hidden = false;
 
@@ -155,6 +170,48 @@ try {
   } else {
     document.querySelector("#research-map").innerHTML = `<div class="map-fallback"><div><h2>Interactive map unavailable</h2><p>Use the complete searchable place list alongside the map.</p></div></div>`;
   }
+
+  // Canonical migration route: Warsaw → Berlin → Vienna → Paris → Le Havre → Pier 57 (NY) → Los Angeles
+  const JOURNEY_IDS = ["PL001", "PL002", "PL030", "PL003", "PL026", "PL025", "PL004"];
+  let routeLayer = null;
+  let routeVisible = true;
+  if (map && window.L) {
+    const points = JOURNEY_IDS
+      .map((id) => publicPlaces.find((place) => place.id === id))
+      .filter((place) => place && Number.isFinite(place.latitude) && Number.isFinite(place.longitude))
+      .map((place) => [place.latitude, place.longitude]);
+    if (points.length > 1) {
+      routeLayer = window.L.polyline(points, {
+        color: "#8a5a2b",
+        weight: 2.5,
+        opacity: 0.85,
+        dashArray: "1 7",
+        lineCap: "round",
+        lineJoin: "round",
+        interactive: false,
+      });
+    }
+  }
+
+  function applyRoute() {
+    if (!toggleJourney) return;
+    if (!routeLayer || !map) {
+      toggleJourney.hidden = true;
+      return;
+    }
+    if (routeVisible) routeLayer.addTo(map);
+    else map.removeLayer(routeLayer);
+    toggleJourney.setAttribute("aria-pressed", String(routeVisible));
+    toggleJourney.textContent = routeVisible ? "Hide route" : "Show route";
+  }
+
+  if (toggleJourney) {
+    toggleJourney.addEventListener("click", () => {
+      routeVisible = !routeVisible;
+      applyRoute();
+    });
+  }
+  applyRoute();
 
   function render() {
     const query = normalizeSearch(search.value.trim());
