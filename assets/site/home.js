@@ -11,7 +11,7 @@ import {
   renderLoading,
   responsiveImage,
   typeBadge,
-} from "./core.js?v=20260715-6";
+} from "./core.js?v=20260716-2";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 mountSiteChrome("home");
@@ -41,16 +41,20 @@ try {
     portraitTarget.hidden = true;
   }
 
-  eventsTarget.innerHTML = eventSelection.map((event) => `
-    <article class="card">
-      <div class="card__meta">${periodBadge(event.period)}</div>
+  eventsTarget.innerHTML = eventSelection.map((event, index) => `
+    <article class="home-event-card">
+      <div class="home-event-card__topline">
+        <span class="home-event-card__number" aria-hidden="true">0${index + 1}</span>
+        ${periodBadge(event.period)}
+      </div>
+      <p class="home-event-card__date">${escapeHtml(event.displayDate || event.dateStart)}</p>
       <h3><a href="${recordUrl("event", event.id)}">${escapeHtml(event.title)}</a></h3>
       <p class="card__description">${escapeHtml(event.shortDescription || event.longDescription || "")}</p>
-      <div class="card__footer"><span>${escapeHtml(event.displayDate || event.dateStart)}</span><span>${escapeHtml(event.placeDisplay || "")}</span></div>
+      <div class="home-event-card__footer"><span>${escapeHtml(event.placeDisplay || "")}</span><span aria-hidden="true">→</span></div>
     </article>`).join("");
 
-  mediaTarget.innerHTML = highlights.map((item) => `
-    <article class="media-card">
+  mediaTarget.innerHTML = highlights.map((item, index) => `
+    <article class="media-card home-media-card${index === 0 ? " home-media-card--lead" : ""}">
       <figure>${mediaPreview(item, { sizes: "(max-width: 680px) calc(100vw - 2rem), 30vw" })}</figure>
       <div class="media-card__body">
         <div class="meta-row">${typeBadge(item.mediaType)}${periodBadge(item.period)}</div>
