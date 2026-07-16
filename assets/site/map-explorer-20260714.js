@@ -26,6 +26,7 @@ const selectionMeta = document.querySelector("#place-selection-meta");
 const selectionNote = document.querySelector("#place-selection-note");
 const selectionLink = document.querySelector("#place-selection-link");
 const toggleJourney = document.querySelector("#toggle-journey");
+const legendButtons = document.querySelectorAll(".map-legend__item");
 
 let map;
 let markerLayer;
@@ -213,6 +214,30 @@ try {
   }
   applyRoute();
 
+  // Interactive legend: clicking a period swatch filters the map (toggles).
+  function syncLegend() {
+    legendButtons.forEach((button) => {
+      button.setAttribute("aria-pressed", String(button.dataset.period === period.value));
+    });
+  }
+  legendButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      period.value = period.value === button.dataset.period ? "" : button.dataset.period;
+      syncLegend();
+      render();
+    });
+  });
+  syncLegend();
+
+  // Default view favours the dense European cluster; the transatlantic leg is a pan away.
+  const europeanBounds = publicPlaces
+    .filter((place) => (
+      Number.isFinite(place.latitude) && Number.isFinite(place.longitude)
+      && place.longitude >= -15 && place.longitude <= 40
+    ))
+    .map((place) => [place.latitude, place.longitude]);
+  let firstView = true;
+
   function render() {
     const query = normalizeSearch(search.value.trim());
     const filtered = publicPlaces
@@ -271,8 +296,14 @@ try {
     }
 
     if (map && bounds.length) {
-      if (bounds.length === 1) map.setView(bounds[0], 11);
-      else map.fitBounds(bounds, { padding: [42, 42], maxZoom: filtered.length > 8 ? 5 : 10 });
+      if (firstView && !query && !period.value && europeanBounds.length > 1) {
+        map.fitBounds(europeanBounds, { padding: [42, 42], maxZoom: 5 });
+      } else if (bounds.length === 1) {
+        map.setView(bounds[0], 11);
+      } else {
+        map.fitBounds(bounds, { padding: [42, 42], maxZoom: filtered.length > 8 ? 5 : 10 });
+      }
+      firstView = false;
     }
 
     listTarget.querySelectorAll("button").forEach((button) => {
@@ -284,7 +315,10 @@ try {
   }
 
   search.addEventListener("input", debounce(render));
-  period.addEventListener("change", render);
+  period.addEventListener("change", () => {
+    syncLegend();
+    render();
+  });
   render();
 } catch (error) {
   countTarget.textContent = "—";
