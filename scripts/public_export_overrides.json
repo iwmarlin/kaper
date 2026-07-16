@@ -16,6 +16,51 @@
         }
       }
     },
+    "Sources": {
+      "SRC0009": {
+        "reason": "Keep the archival citation and collection scope while removing private workflow provenance about who supplied the scans.",
+        "fields": {
+          "fullCitation": "Bronislaw Kaper Papers, Collection 03193. American Heritage Center, University of Wyoming, Laramie. Manuscript holdings for Bronisław Kaper’s early compositions, including item-level material from boxes 1–2."
+        }
+      },
+      "SRC0010": {
+        "reason": "Keep the source citation bibliographic; its contextual relationship to Kaper is represented by public links rather than prose inside the citation.",
+        "fields": {
+          "fullCitation": "PBS / WNET. “UFA Studios Fires Jewish Employees.” Cinema’s Exiles, online video."
+        }
+      },
+      "SRC0358": {
+        "reason": "Keep the citation bibliographic and move database relationships to the canonical relation fields rendered separately on the public Source page.",
+        "fields": {
+          "fullCitation": "Images Musicales. “Tot Weerziens, Mijnheer Jansen (Auf Wiederseh'n Herr Doktor!).” Dutch-language sheet music. Music by Fritz Rotter and B. Kaper; Dutch text by Ferry; cover by Hassel. Vienna: Wiener Boheme Verlag, 1929, W.B.V. 1328, 4 pp."
+        }
+      },
+      "SRC0365": {
+        "reason": "Present the primary portrait and discographical page without exposing the internal decision to retain Geni only as a secondary reproduction route.",
+        "fields": {
+          "fullCitation": "grammophon-platten.de. “Hermann Biek / Ben Berlin.” Biographical and discographical page with a portrait photograph, name variants Biek, Bick, Bik and Byk, and references to recordings by “Hermann Bick & Dr Kaper” at two pianos.",
+          "publication": "grammophon-platten.de",
+          "repository": "grammophon-platten.de"
+        }
+      },
+      "SRC0408": {
+        "reason": "Describe the historical programme issue itself and remove the project’s own asset URL, which is not an independent source.",
+        "fields": {
+          "fullCitation": "Illustrierter Film-Kurier, no. 1720 (1932), programme issue and cover for Ehe mit beschränkter Haftung."
+        },
+        "removeFields": [
+          "url",
+          "accessDate",
+          "repository"
+        ]
+      },
+      "SRC0455": {
+        "reason": "Keep the poster citation and object distinction without referring to internal Media usage or an IMDb image.",
+        "fields": {
+          "fullCitation": "Filmposter-Archiv. Madame wünscht keine Kinder (Austria, 1933), film poster designed by Anton Ziegler, record no. 14466. Poster for the German-language version of Madame ne veut pas d’enfants; distinct from the French poster."
+        }
+      }
+    },
     "Media": {
       "M024": {
         "reason": "Replace the obsolete no-source wording after documenting the linked My Footage YouTube publication as SRC0555.",

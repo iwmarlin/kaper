@@ -91,6 +91,121 @@ MEDIA_PUBLIC_IDENTIFIER_PATTERN = re.compile(
     r"F\d{3}|S\d{3}|O\d{3}|P\d{3}|ORG\d{3})(?![A-Za-z0-9-])"
 )
 
+SOURCE_PUBLIC_IDENTIFIER_PATTERN = re.compile(
+    r"(?<![A-Za-z0-9-])(?:SRC\d{4}|W-[A-Z]\d{3}|TE\d{4}|PL\d{3}|M\d{3}|"
+    r"F\d{3}|S\d{3}|O\d{3}|P\d{3}|ORG\d{3}|TV\d{4}|PNV\d{4}|CON-[A-Z0-9-]+)"
+    r"(?![A-Za-z0-9-])"
+)
+
+SOURCE_TRAILING_EDITORIAL_PATTERNS = [
+    re.compile(
+        r"\s+Source (?:used )?for (?:Media|Work|works|song|the French-language "
+        r"version|replacement|rights-cleared route|Henryk Chwast).*?$",
+        flags=re.IGNORECASE,
+    ),
+    re.compile(
+        r"\s+Used as (?:a )?(?:web |website/list )?source for .*?$",
+        flags=re.IGNORECASE,
+    ),
+    re.compile(
+        r"\s+(?:User-uploaded|English-subtitled user upload).*?"
+        r"referenced as a (?:listening|viewing/listening) source.*?$",
+        flags=re.IGNORECASE,
+    ),
+    re.compile(
+        r"\s+Listening/viewing source for .*?$",
+        flags=re.IGNORECASE,
+    ),
+    re.compile(
+        r"\s+Confirms the identity of, and serves as the source for, .*?$",
+        flags=re.IGNORECASE,
+    ),
+    re.compile(
+        r"\s+Source record created from .*?$",
+        flags=re.IGNORECASE,
+    ),
+    re.compile(
+        r"\s+(?:Data|Metadata) supplied (?:by user|from .*?).*?$",
+        flags=re.IGNORECASE,
+    ),
+    re.compile(
+        r"\s+The local portrait .*?$",
+        flags=re.IGNORECASE,
+    ),
+    re.compile(
+        r"\s+Kaper project media asset\.?",
+        flags=re.IGNORECASE,
+    ),
+    re.compile(
+        r"\s+Source record corrected from .*?$",
+        flags=re.IGNORECASE,
+    ),
+    re.compile(
+        r"\s+Used as a filmographic/songwriting-credit source,.*?$",
+        flags=re.IGNORECASE,
+    ),
+    re.compile(
+        r"\s+Source used as evidence for .*?$",
+        flags=re.IGNORECASE,
+    ),
+    re.compile(
+        r"\s+Source for local context image .*?$",
+        flags=re.IGNORECASE,
+    ),
+    re.compile(
+        r"\s+The same or related portrait is also reproduced through .*?$",
+        flags=re.IGNORECASE,
+    ),
+    re.compile(
+        r"\s+Parent catalogue record: .*?$",
+        flags=re.IGNORECASE,
+    ),
+]
+
+SOURCE_TRAILING_BRACKET_NOTE_PATTERN = re.compile(
+    r"\s+\[((?:Note on|Notice|Clipping|Review|Item|Press item|"
+    r"Broadcast-schedule entry|Production announcement|Premiere advertisement|"
+    r"Robbins advertisement|Exact|Publisher|Credits|Richard Tauber item|"
+    r"Ehe mit beschränkter Haftung|Song title)[^\]]*)\]\.?$",
+    flags=re.IGNORECASE,
+)
+
+
+def normalized_source_note(note: str) -> str:
+    """Turn a trailing editorial bracket into concise public-facing prose."""
+    note = note.strip().rstrip(".")
+    note = re.sub(
+        r";\s*attribution note retained$",
+        "",
+        note,
+        flags=re.IGNORECASE,
+    )
+    if re.fullmatch(
+        r"Song title not specified in this source record",
+        note,
+        flags=re.IGNORECASE,
+    ):
+        return "The source does not identify the song title."
+    if re.search(r"\bto be checked\b", note, flags=re.IGNORECASE):
+        subject = re.sub(
+            r"\s+to be checked$",
+            "",
+            note,
+            flags=re.IGNORECASE,
+        )
+        return f"{subject} have not been established."
+    if re.search(r"\brequire verification\b", note, flags=re.IGNORECASE):
+        subject = re.sub(
+            r"\s+require verification$",
+            "",
+            note,
+            flags=re.IGNORECASE,
+        )
+        if not subject.lower().startswith("the "):
+            subject = f"The {subject[0].lower()}{subject[1:]}"
+        return f"{subject} have not been established."
+    return f"{note}."
+
 
 def read_json(path: Path) -> dict[str, Any]:
     return json.loads(path.read_text(encoding="utf-8"))
@@ -879,6 +994,180 @@ class PublicExporter:
                 value = re.sub(r"\s{2,}", " ", value).strip()
                 media[key] = value
 
+    def _normalize_source_public_text(self) -> None:
+        """Keep source citations bibliographic rather than graph- or workflow-oriented."""
+        for source in self.output_records["Sources"]:
+            for key in ("fullCitation", "shortCitation"):
+                citation = str(source.get(key, "")).strip()
+                if not citation:
+                    continue
+
+                citation = re.sub(
+                    r";\s*retained in this database with resolved .*?$",
+                    ".",
+                    citation,
+                    flags=re.IGNORECASE,
+                )
+                citation = re.sub(
+                    r"\s*Distinct clipping from SRC\d{4}\.?",
+                    "",
+                    citation,
+                    flags=re.IGNORECASE,
+                )
+                for pattern in SOURCE_TRAILING_EDITORIAL_PATTERNS:
+                    citation = pattern.sub("", citation)
+
+                citation = re.sub(
+                    r"\s+Source for [^.]*?(?:"
+                    r"SRC\d{4}|W-[A-Z]\d{3}|M\d{3}|S\d{3}|F\d{3}|"
+                    r"TV\d{4}|PNV\d{4}|CON-[A-Z0-9-]+)[^.]*\.?$",
+                    "",
+                    citation,
+                    flags=re.IGNORECASE,
+                )
+                citation = re.sub(
+                    r"\s+and linked to Work [^.]+\.?$",
+                    "",
+                    citation,
+                    flags=re.IGNORECASE,
+                )
+                citation = re.sub(
+                    r"\s*\((?:Media|Work|Song|Film)\s+"
+                    r"(?:M\d{3}|W-[A-Z]\d{3}|S\d{3}|F\d{3})\)\.?$",
+                    "",
+                    citation,
+                    flags=re.IGNORECASE,
+                )
+                citation = re.sub(
+                    r"\s*,?\s*local asset\s+assets/\S+",
+                    "",
+                    citation,
+                    flags=re.IGNORECASE,
+                )
+                citation = re.sub(
+                    r";?\s*(?:StabiKat data|RIS export|item-level scans?) supplied "
+                    r"by (?:the )?project owner(?: from boxes? [^.;]+)?",
+                    "",
+                    citation,
+                    flags=re.IGNORECASE,
+                )
+                citation = re.sub(
+                    r";?\s*(?:Data|Metadata) supplied by (?:the )?(?:user|project owner)"
+                    r"(?: from [^.;]+)?",
+                    "",
+                    citation,
+                    flags=re.IGNORECASE,
+                )
+                citation = re.sub(
+                    r"\bsource record\b",
+                    "source",
+                    citation,
+                    flags=re.IGNORECASE,
+                )
+                citation = re.sub(
+                    r"\bAccessed and verified\b",
+                    "Accessed",
+                    citation,
+                    flags=re.IGNORECASE,
+                )
+                citation = re.sub(
+                    r"\bsource verified and accessed\b",
+                    "Accessed",
+                    citation,
+                    flags=re.IGNORECASE,
+                )
+                citation = re.sub(
+                    r"this specific book entry has not yet been directly checked",
+                    "the cited book entry has not been directly consulted",
+                    citation,
+                    flags=re.IGNORECASE,
+                )
+                trailing_note = SOURCE_TRAILING_BRACKET_NOTE_PATTERN.search(citation)
+                if trailing_note:
+                    note = normalized_source_note(trailing_note.group(1))
+                    citation = (
+                        citation[: trailing_note.start()].rstrip(" .")
+                        + ". "
+                        + note
+                    )
+                citation = SOURCE_PUBLIC_IDENTIFIER_PATTERN.sub("", citation)
+                citation = re.sub(r"assets/\S+", "", citation, flags=re.IGNORECASE)
+                citation = re.sub(
+                    r"\s*\((?:Media|Work|Song|Film)\s*\)\.?$",
+                    "",
+                    citation,
+                    flags=re.IGNORECASE,
+                )
+                citation = re.sub(r"\s+([,.;:])", r"\1", citation)
+                citation = re.sub(r"([/·])\s*([,.;:])", r"\2", citation)
+                citation = re.sub(r"\s{2,}", " ", citation).strip()
+                citation = re.sub(r"(?:,\s*){2,}", ", ", citation)
+                citation = re.sub(
+                    r",\s*including\.$",
+                    ".",
+                    citation,
+                    flags=re.IGNORECASE,
+                )
+                citation = re.sub(
+                    r"([.?!][”’\"']?)\.+$",
+                    r"\1",
+                    citation,
+                )
+                citation = citation.rstrip(" ,;/")
+                if key == "fullCitation" and citation and citation[-1] not in ".?!":
+                    citation += "."
+                source[key] = citation
+
+            repository = str(source.get("repository", "")).strip()
+            repository = re.sub(
+                r"\s*/\s*source data supplied by (?:the )?user$",
+                "",
+                repository,
+                flags=re.IGNORECASE,
+            )
+            if repository.lower() == "kaper project media asset":
+                repository = ""
+            if repository:
+                source["repository"] = repository
+            else:
+                source.pop("repository", None)
+
+            date = str(source.get("date", "")).strip()
+            date = re.sub(
+                r";\s*source (?:record )?verified \d{4}-\d{2}-\d{2}$",
+                "",
+                date,
+                flags=re.IGNORECASE,
+            )
+            date = re.sub(
+                r";\s*historical recording date not established by this source(?: record)?$",
+                "",
+                date,
+                flags=re.IGNORECASE,
+            )
+            if date:
+                source["date"] = date
+            else:
+                source.pop("date", None)
+
+            creator = str(source.get("creator", "")).strip()
+            creator = re.sub(
+                r"\s*;\s*exact image creator not separately identified in the source\.?$",
+                "; exact image creator not identified",
+                creator,
+                flags=re.IGNORECASE,
+            )
+            creator = re.sub(
+                r"\s*;\s*exact image creator not separately identified in the source record\.?$",
+                "; exact image creator not identified",
+                creator,
+                flags=re.IGNORECASE,
+            )
+            if creator:
+                source["creator"] = creator
+            else:
+                source.pop("creator", None)
+
     @staticmethod
     def _append(record: dict[str, Any], key: str, values: list[str]) -> None:
         if not values:
@@ -938,6 +1227,7 @@ class PublicExporter:
         self._apply_overrides()
         self._apply_additions()
         self._normalize_media_public_text()
+        self._normalize_source_public_text()
         self._derive_graph_indexes()
 
     def _validate_required(self) -> None:
@@ -1223,6 +1513,34 @@ class PublicExporter:
 
         for table_name, records in self.output_records.items():
             walk(records, table_name)
+
+        for source in self.output_records["Sources"]:
+            source_id = source["id"]
+            for key in ("fullCitation", "shortCitation"):
+                value = str(source.get(key, ""))
+                if SOURCE_PUBLIC_IDENTIFIER_PATTERN.search(value):
+                    self.errors.append(
+                        f"Source {source_id}: public field {key} contains a technical record identifier"
+                    )
+                if re.search(
+                    r"assets/|\blocal asset\b|\bsource record\b|"
+                    r"\bproject (?:owner|media asset)\b|"
+                    r"\bretained in this database\b|\b(?:data|metadata) supplied "
+                    r"(?:by (?:the )?(?:user|project)|from)\b|"
+                    r"\bRIS export supplied by (?:the )?project\b|"
+                    r"\bsource (?:used )?for (?:media|work|song)\b|\bused in Media\b|"
+                    r"\breferenced as a (?:listening|viewing/listening) source\b|"
+                    r"\blistening/viewing source for\b|\bdistinct clipping from\b",
+                    value,
+                    flags=re.IGNORECASE,
+                ):
+                    self.errors.append(
+                        f"Source {source_id}: public field {key} contains editorial workflow text"
+                    )
+                if re.search(r"https?:,\s", value, flags=re.IGNORECASE):
+                    self.errors.append(
+                        f"Source {source_id}: public field {key} contains a malformed URL"
+                    )
 
     def validate(self) -> None:
         self._validate_required()

@@ -71,6 +71,29 @@ MEDIA_PUBLIC_IDENTIFIER_PATTERN = re.compile(
     r"F\d{3}|S\d{3}|O\d{3}|P\d{3}|ORG\d{3})(?![A-Za-z0-9-])"
 )
 
+SOURCE_PUBLIC_IDENTIFIER_PATTERN = re.compile(
+    r"(?<![A-Za-z0-9-])(?:SRC\d{4}|W-[A-Z]\d{3}|TE\d{4}|PL\d{3}|M\d{3}|"
+    r"F\d{3}|S\d{3}|O\d{3}|P\d{3}|ORG\d{3}|TV\d{4}|PNV\d{4}|CON-[A-Z0-9-]+)"
+    r"(?![A-Za-z0-9-])"
+)
+
+SOURCE_PUBLIC_WORKFLOW_PATTERN = re.compile(
+    r"(?:"
+    r"assets/|"
+    r"\blocal asset\b|"
+    r"\bsource record\b|"
+    r"\bproject (?:owner|media asset)\b|"
+    r"\bretained in this database\b|"
+    r"\b(?:data|metadata|RIS export) supplied (?:by (?:the )?(?:user|project)|from)\b|"
+    r"\bsource (?:used )?for (?:media|work|song)\b|"
+    r"\bused in Media\b|"
+    r"\breferenced as a (?:listening|viewing/listening) source\b|"
+    r"\blistening/viewing source for\b|"
+    r"\bdistinct clipping from\b"
+    r")",
+    flags=re.IGNORECASE,
+)
+
 
 class ExportValidator:
     def __init__(
@@ -271,6 +294,23 @@ class ExportValidator:
 
         for table_name, payload in self.payloads.items():
             walk(payload.get("records", []), table_name)
+
+        for source in self.payloads.get("Sources", {}).get("records", []):
+            source_id = source["id"]
+            for key in ("fullCitation", "shortCitation"):
+                value = str(source.get(key, ""))
+                if SOURCE_PUBLIC_IDENTIFIER_PATTERN.search(value):
+                    self.errors.append(
+                        f"Source {source_id}: public field {key} contains a technical record identifier"
+                    )
+                if SOURCE_PUBLIC_WORKFLOW_PATTERN.search(value):
+                    self.errors.append(
+                        f"Source {source_id}: public field {key} contains editorial workflow text"
+                    )
+                if re.search(r"https?:,\s", value, flags=re.IGNORECASE):
+                    self.errors.append(
+                        f"Source {source_id}: public field {key} contains a malformed URL"
+                    )
 
     def _validate_scope(self) -> None:
         end_year = self.config["scope"]["endYear"]

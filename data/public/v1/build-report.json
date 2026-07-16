@@ -364,6 +364,60 @@
       "removedFields": []
     },
     {
+      "table": "Sources",
+      "id": "SRC0009",
+      "fields": [
+        "fullCitation"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0010",
+      "fields": [
+        "fullCitation"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0358",
+      "fields": [
+        "fullCitation"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0365",
+      "fields": [
+        "fullCitation",
+        "publication",
+        "repository"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0408",
+      "fields": [
+        "fullCitation"
+      ],
+      "removedFields": [
+        "accessDate",
+        "repository",
+        "url"
+      ]
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0455",
+      "fields": [
+        "fullCitation"
+      ],
+      "removedFields": []
+    },
+    {
       "table": "Timeline Events",
       "id": "TE0030",
       "fields": [

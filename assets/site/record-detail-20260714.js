@@ -603,8 +603,8 @@ function renderSource(source, data, indexes) {
   return {
     title: source.title || source.shortCitation,
     label: "Source",
-    badges: `${typeBadge(source.sourceType)}${typeBadge(source.reliability)}${typeBadge(source.sourceStatus)}`,
-    facts: `${fact("Creator", source.creator)}${fact("Date", source.date)}${fact("Publication", source.publication)}${fact("Repository", source.repository)}${fact("Access date", source.accessDate)}${fact("Reliability", humanize(source.reliability))}`,
+    badges: typeBadge(source.sourceType),
+    facts: `${fact("Creator", source.creator)}${fact("Date", source.date)}${fact("Publication", source.publication)}${fact("Repository", source.repository)}`,
     main: [
       section("Citation", `<p class="lead">${escapeHtml(source.fullCitation || source.shortCitation)}</p>${external ? `<p><a class="button button--ghost button--small" href="${escapeHtml(external)}" target="_blank" rel="noreferrer">Open source <span aria-hidden="true">↗</span></a></p>` : ""}`),
       section("Supported works", entityList(works, "work", (item) => [item.year, item.workType].filter(Boolean).join(" · "))),
@@ -614,7 +614,7 @@ function renderSource(source, data, indexes) {
       section("People", entityList(people, "person", (item) => humanize(item.primaryRole))),
       section("Organizations", entityList(organizations, "organization", (item) => (item.types || []).map(humanize).join(", "))),
     ].join(""),
-    aside: `<div class="scope-note">Stable source ID: <strong>${escapeHtml(source.id)}</strong><br>This record is included because it is approved and reachable from the public research graph.</div>`,
+    aside: "",
   };
 }
 
