@@ -136,6 +136,18 @@
     },
     {
       "table": "Media",
+      "id": "M053",
+      "fields": [
+        "description",
+        "publicCaption",
+        "publicCreditLine",
+        "rightsNote",
+        "rightsStatus"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Media",
       "id": "M059",
       "fields": [
         "description",

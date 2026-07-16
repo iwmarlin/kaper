@@ -5,6 +5,7 @@ import {
   getIds,
   humanize,
   indexById,
+  mediaIsFairUse,
   mediaRightsBadge,
   mediaPreview,
   mountSiteChrome,
@@ -21,7 +22,7 @@ import {
   scopeBadge,
   typeBadge,
   updateMeta,
-} from "./core.js?v=20260716-1";
+} from "./core.js?v=20260716-3";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 mountSiteChrome("");
@@ -493,7 +494,9 @@ function renderMedia(media, data, indexes) {
       section("About this item", publicText(context)),
       gallery ? section(`Gallery · ${media.assetPaths.length} images`, gallery, "record-section--gallery") : "",
       section("Rights and provenance", `${renderMediaDisclosure(media, sources, {
+        compact: mediaIsFairUse(media),
         includeCaption: false,
+        includeFullRightsNote: false,
         includeResolutionLabel: false,
         includeRightsBadge: false,
         includeTitle: false,
