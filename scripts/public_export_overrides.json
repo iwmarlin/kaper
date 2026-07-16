@@ -331,6 +331,12 @@
           "fullCitation": "PBS / WNET. “UFA Studios Fires Jewish Employees.” Cinema’s Exiles, online video."
         }
       },
+      "SRC0038": {
+        "reason": "Correct the declaration number in the public slug to 74224, matching the archival citation and the document.",
+        "fields": {
+          "slug": "declaration-of-intention-no-74224-u-s-district-court-los-angeles-src0038"
+        }
+      },
       "SRC0358": {
         "reason": "Keep the citation bibliographic and move database relationships to the canonical relation fields rendered separately on the public Source page.",
         "fields": {
@@ -436,6 +442,12 @@
         "reason": "Classify the Champlain image by its use as context for Kaper's October 1934 crossing; the later 1938 reproduction date does not redefine the represented event.",
         "fields": {
           "period": "european"
+        }
+      },
+      "M115": {
+        "reason": "Correct the Declaration of Intention number in the public credit line to 74224.",
+        "fields": {
+          "publicCreditLine": "U.S. District Court, Southern District of California, Los Angeles, Declaration of Intention no. 74224; National Archives and Records Administration, NAID 104017224."
         }
       },
       "M030": {
@@ -1150,6 +1162,40 @@
             "hollywood"
           ]
         }
+      },
+      "M235": {
+        "reason": "Publish the existing portrait crop from Kaper's 1936 Declaration of Intention as a clearly identified derivative of M115, not as an independent archival photograph.",
+        "fields": {
+          "id": "M235",
+          "title": "Bronisław Kaper — portrait from Declaration of Intention, 1936",
+          "mediaType": "image",
+          "storageType": "local",
+          "period": "hollywood",
+          "description": "Portrait crop derived from the photograph embedded in Bronisław Kaper’s 1936 Declaration of Intention (M115). It is not a separate archival photograph.",
+          "externalUrl": "https://catalog.archives.gov/id/104017224?objectPage=27#object-thumb--27",
+          "assetPath": "assets/images/portraits/kaper-mature.jpg",
+          "assetPaths": [
+            "assets/images/portraits/kaper-mature.jpg"
+          ],
+          "assetCount": 1,
+          "altText": "Portrait of Bronisław Kaper cropped from his 1936 Declaration of Intention.",
+          "rightsStatus": "ok",
+          "rightsNote": "Public domain: cropped detail from a U.S. federal court naturalization record.",
+          "slug": "bronislaw-kaper-portrait-declaration-of-intention-1936-m235",
+          "publicCaption": "Bronisław Kaper, 1936. Portrait cropped from his Declaration of Intention.",
+          "publicCreditLine": "U.S. District Court, Southern District of California, Los Angeles, Declaration of Intention no. 74224; National Archives and Records Administration, NAID 104017224.",
+          "category": "portrait",
+          "galleryStatus": "selected",
+          "organizationIds": [
+            "ORG069"
+          ],
+          "sourceIds": [
+            "SRC0038"
+          ],
+          "periods": [
+            "hollywood"
+          ]
+        }
       }
     }
   },
@@ -1194,6 +1240,14 @@
       }
     },
     "People": {
+      "P009": {
+        "reason": "Link Bronisław Kaper to the Declaration of Intention source used for the derived 1936 portrait.",
+        "fields": {
+          "sourceIds": [
+            "SRC0038"
+          ]
+        }
+      },
       "P003": {
         "reason": "Link Andrzej Włast to the new NAC portrait source.",
         "fields": {
@@ -1207,6 +1261,19 @@
         "fields": {
           "sourceIds": [
             "SRC0557"
+          ]
+        }
+      }
+    },
+    "Sources": {
+      "SRC0038": {
+        "reason": "Link the Declaration of Intention source to Kaper and to the separately published portrait crop M235 while retaining M115 as the complete document.",
+        "fields": {
+          "personIds": [
+            "P009"
+          ],
+          "mediaIds": [
+            "M235"
           ]
         }
       }

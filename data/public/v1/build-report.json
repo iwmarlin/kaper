@@ -6,7 +6,7 @@
     "People": 109,
     "Organizations": 109,
     "Sources": 488,
-    "Media": 192,
+    "Media": 193,
     "Works": 280,
     "Films": 55,
     "Songs": 203,
@@ -22,7 +22,7 @@
     "detail_only": 36,
     "eligible": 81,
     "external_link_only": 18,
-    "selected": 57
+    "selected": 58
   },
   "appliedOverrides": [
     {
@@ -392,6 +392,14 @@
         "publicCreditLine",
         "rightsNote",
         "rightsStatus"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Media",
+      "id": "M115",
+      "fields": [
+        "publicCreditLine"
       ],
       "removedFields": []
     },
@@ -883,6 +891,14 @@
     },
     {
       "table": "Sources",
+      "id": "SRC0038",
+      "fields": [
+        "slug"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
       "id": "SRC0358",
       "fields": [
         "fullCitation"
@@ -1181,6 +1197,33 @@
       ]
     },
     {
+      "table": "Media",
+      "id": "M235",
+      "fields": [
+        "altText",
+        "assetCount",
+        "assetPath",
+        "assetPaths",
+        "category",
+        "description",
+        "externalUrl",
+        "galleryStatus",
+        "id",
+        "mediaType",
+        "organizationIds",
+        "period",
+        "periods",
+        "publicCaption",
+        "publicCreditLine",
+        "rightsNote",
+        "rightsStatus",
+        "slug",
+        "sourceIds",
+        "storageType",
+        "title"
+      ]
+    },
+    {
       "table": "Organizations",
       "id": "ORG112",
       "fields": [
@@ -1332,9 +1375,24 @@
     },
     {
       "table": "People",
+      "id": "P009",
+      "fields": [
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "People",
       "id": "P025",
       "fields": [
         "sourceIds"
+      ]
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0038",
+      "fields": [
+        "mediaIds",
+        "personIds"
       ]
     },
     {
