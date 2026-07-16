@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 42,
+  "count": 43,
   "records": [
     {
       "id": "PL001",
@@ -1229,6 +1229,31 @@
       ],
       "periods": [
         "hollywood"
+      ]
+    },
+    {
+      "id": "PL044",
+      "displayName": "Montpellier",
+      "authorizedName": "Montpellier, Hérault, France",
+      "placeType": "city",
+      "city": "Montpellier",
+      "region": "Hérault",
+      "country": "France",
+      "latitude": 43.610769,
+      "longitude": 3.876716,
+      "period": "european",
+      "slug": "montpellier",
+      "publicNote": "Southern French city where a jazz orchestra performed the Jurmann–Kaper song “Ninon, quand tu me souris” (from Tout pour l'amour) on an open-air stage at a summer festival on 22 June 1934, documenting the song's move into the French concert/festival repertoire beyond cinema.",
+      "mapPrecision": "city_level",
+      "publicScope": "map_and_detail",
+      "timelineEventIds": [
+        "TE0031"
+      ],
+      "sourceIds": [
+        "SRC0536"
+      ],
+      "periods": [
+        "european"
       ]
     }
   ]

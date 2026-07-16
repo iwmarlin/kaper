@@ -518,6 +518,12 @@
           "placeDisplay": "Montrouge",
           "cityKey": "montrouge"
         }
+      },
+      "TE0031": {
+        "reason": "Update the event place label to include Montpellier, the actual performance site, alongside the Berlin/Paris song-origin context.",
+        "fields": {
+          "placeDisplay": "Berlin / Paris / Montpellier"
+        }
       }
     },
     "People": {
@@ -649,6 +655,34 @@
             "hollywood"
           ]
         }
+      },
+      "PL044": {
+        "reason": "Add Montpellier as the documented open-air festival performance site of the Jurmann–Kaper song “Ninon, quand tu me souris” on 22 June 1934 (event TE0031), previously unmapped.",
+        "fields": {
+          "id": "PL044",
+          "displayName": "Montpellier",
+          "authorizedName": "Montpellier, Hérault, France",
+          "placeType": "city",
+          "city": "Montpellier",
+          "region": "Hérault",
+          "country": "France",
+          "latitude": 43.610769,
+          "longitude": 3.876716,
+          "period": "european",
+          "slug": "montpellier",
+          "publicNote": "Southern French city where a jazz orchestra performed the Jurmann–Kaper song “Ninon, quand tu me souris” (from Tout pour l'amour) on an open-air stage at a summer festival on 22 June 1934, documenting the song's move into the French concert/festival repertoire beyond cinema.",
+          "mapPrecision": "city_level",
+          "publicScope": "map_and_detail",
+          "timelineEventIds": [
+            "TE0031"
+          ],
+          "sourceIds": [
+            "SRC0536"
+          ],
+          "periods": [
+            "european"
+          ]
+        }
       }
     }
   },
@@ -669,6 +703,14 @@
         "fields": {
           "placeIds": [
             "PL043"
+          ]
+        }
+      },
+      "TE0031": {
+        "reason": "Link the newly added Montpellier place (PL044) to the 22 June 1934 performance event.",
+        "fields": {
+          "placeIds": [
+            "PL044"
           ]
         }
       }
