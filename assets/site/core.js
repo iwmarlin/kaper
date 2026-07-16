@@ -184,6 +184,7 @@ export function renderMediaDisclosure(media, sources = [], {
   compact = false,
   fairUseResolutionLabel = "Reduced-resolution local reference",
   includeCaption = true,
+  includeCredit = true,
   includeFullRightsNote = true,
   includeResolutionLabel = true,
   includeRightsBadge = true,
@@ -211,7 +212,7 @@ export function renderMediaDisclosure(media, sources = [], {
   return `<div class="media-disclosure${compact ? " media-disclosure--compact" : ""}">
     ${includeTitle ? `<a class="media-disclosure__title" href="${recordUrl("media", media.id)}">${escapeHtml(media.title || media.id)}</a>` : ""}
     ${includeCaption && caption && caption !== media.title ? `<p class="media-disclosure__caption">${escapeHtml(caption)}</p>` : ""}
-    ${credit ? `<p class="media-disclosure__credit"><strong>Credit:</strong> ${escapeHtml(credit)}</p>` : ""}
+    ${includeCredit && credit ? `<p class="media-disclosure__credit"><strong>Credit:</strong> ${escapeHtml(credit)}</p>` : ""}
     ${metaContent ? `<div class="media-disclosure__meta">${metaContent}</div>` : ""}
     ${compact && conciseRationale ? `<p class="media-disclosure__rationale"><strong>Use rationale:</strong> ${escapeHtml(conciseRationale)}</p>` : ""}
     ${compact && includeFullRightsNote && fullRationale ? `<details class="media-disclosure__details"><summary>Full rights and use note</summary><p>${escapeHtml(rationale)}</p></details>` : ""}
