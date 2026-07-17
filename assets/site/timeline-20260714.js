@@ -15,7 +15,6 @@ import {
   renderLoading,
   resolveIds,
   responsiveImage,
-  typeBadge,
 } from "./core.js?v=20260716-4";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
@@ -41,6 +40,28 @@ const MILESTONE_EVENT_IDS = new Set([
   "TE0035",
   "TE0037",
 ]);
+
+const CATEGORY_GROUPS = {
+  birth_family: "life", family: "life", religion_identity: "life", military: "life", citizenship: "life",
+  education: "education", law_studies: "education", music_education: "education",
+  composition: "music", warsaw_music: "music", concert_life: "music", recording: "music",
+  publication: "music", performance: "music", berlin: "music",
+  film_career: "career", hollywood: "career", professional_network: "career",
+  collaboration: "career", paris: "career", reception: "career",
+  migration: "migration", refugee_support: "migration",
+};
+const GROUP_LABELS = {
+  life: "Life & family",
+  education: "Education",
+  music: "Music & performance",
+  career: "Film & career",
+  migration: "Migration",
+};
+const GROUP_ORDER = ["life", "education", "music", "career", "migration"];
+
+function eventGroup(event) {
+  return CATEGORY_GROUPS[event.category] || (event.eventType === "life" ? "life" : "career");
+}
 
 const TIMELINE_CHAPTERS = {
   warsaw: {
@@ -116,7 +137,12 @@ try {
   const mediaById = indexById(media);
   const peopleById = indexById(people);
   const sourcesById = indexById(sources);
-  addOptions(controls.category, timelineEvents.map((event) => event.category));
+  addOptions(
+    controls.category,
+    GROUP_ORDER.filter((key) => timelineEvents.some((event) => eventGroup(event) === key)),
+    (key) => GROUP_LABELS[key],
+    true,
+  );
 
   const indexed = timelineEvents.map((event) => ({
     ...event,
@@ -135,7 +161,7 @@ try {
     const filtered = indexed
       .filter((event) => (
         (!query || event._search.includes(query))
-        && (!controls.category.value || event.category === controls.category.value)
+        && (!controls.category.value || eventGroup(event) === controls.category.value)
       ))
       .sort((a, b) => String(a.sortDate || a.dateStart).localeCompare(String(b.sortDate || b.dateStart)) || Number(a.sortOrder || 0) - Number(b.sortOrder || 0));
 
@@ -163,7 +189,7 @@ try {
           <span class="timeline-item__node" aria-hidden="true"></span>
           <div class="timeline-item__body">
             ${isMilestone ? `<span class="timeline-item__kicker">Milestone</span>` : ""}
-            <div class="meta-row">${typeBadge(event.category || event.eventType)}${periodBadge(event.periods || event.period)}</div>
+            <div class="meta-row"><span class="badge badge--type">${escapeHtml(GROUP_LABELS[eventGroup(event)])}</span>${periodBadge(event.periods || event.period)}</div>
             <h3><a href="${recordUrl("event", event.id)}">${escapeHtml(event.title)}</a></h3>
             ${event.placeDisplay ? `<p class="timeline-item__place">${escapeHtml(event.placeDisplay)}</p>` : ""}
             ${hero ? `<div class="timeline-item__media-row">
