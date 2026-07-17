@@ -5,13 +5,9 @@ import {
   humanize,
   indexById,
   loadTables,
-  matchesPeriod,
   mountSiteChrome,
   normalizeSearch,
-  PERIOD_ORDER,
   periodBadge,
-  periodLabel,
-  periodValues,
   recordUrl,
   registerImageDerivatives,
   renderMediaDisclosure,
@@ -29,7 +25,6 @@ const target = document.querySelector("#timeline-results");
 const countTarget = document.querySelector("#timeline-count");
 const controls = {
   search: document.querySelector("#timeline-search"),
-  period: document.querySelector("#timeline-period"),
   category: document.querySelector("#timeline-category"),
 };
 renderLoading(target, "Loading documented events…");
@@ -121,8 +116,6 @@ try {
   const mediaById = indexById(media);
   const peopleById = indexById(people);
   const sourcesById = indexById(sources);
-  const availablePeriods = new Set(timelineEvents.flatMap(periodValues));
-  addOptions(controls.period, PERIOD_ORDER.filter((value) => availablePeriods.has(value)), periodLabel, true);
   addOptions(controls.category, timelineEvents.map((event) => event.category));
 
   const indexed = timelineEvents.map((event) => ({
@@ -142,7 +135,6 @@ try {
     const filtered = indexed
       .filter((event) => (
         (!query || event._search.includes(query))
-        && matchesPeriod(event, controls.period.value)
         && (!controls.category.value || event.category === controls.category.value)
       ))
       .sort((a, b) => String(a.sortDate || a.dateStart).localeCompare(String(b.sortDate || b.dateStart)) || Number(a.sortOrder || 0) - Number(b.sortOrder || 0));
@@ -198,7 +190,7 @@ try {
   }
 
   controls.search?.addEventListener("input", debounce(render));
-  for (const control of [controls.period, controls.category].filter(Boolean)) control.addEventListener("change", render);
+  for (const control of [controls.category].filter(Boolean)) control.addEventListener("change", render);
   document.querySelector("#timeline-reset")?.addEventListener("click", () => {
     for (const control of Object.values(controls).filter(Boolean)) control.value = "";
     render();

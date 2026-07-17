@@ -900,8 +900,8 @@ main {
 }
 
 .filters__grid--timeline {
-  grid-template-columns: minmax(16rem, 2fr) repeat(2, minmax(10rem, 1fr));
-  width: min(100%, 58rem);
+  grid-template-columns: minmax(16rem, 2fr) minmax(11rem, 1fr);
+  width: min(100%, 52rem);
   margin-inline: auto;
 }
 
