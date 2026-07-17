@@ -5,7 +5,7 @@ double-hemisphere construction is unsuitable for a continuous transatlantic
 geographic layer. The implemented historical overview is documented in
 `docs/historical-basemap.md`.
 
-## Selected plate
+## Evaluated plate
 
 The selected image is the double-hemisphere world map on pp. 2–3 of *Svensk
 världsatlas*, published in Stockholm by Generalstabens litografiska anstalts
