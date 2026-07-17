@@ -178,6 +178,57 @@ def source_links(record_type: str, record: dict, tables: dict) -> str:
     return f'<section class="record-section"><h2>Sources</h2><ol class="citation-list">{items}</ol></section>'
 
 
+SCHEMA_TYPE = {
+    "person": "Person",
+    "organization": "Organization",
+    "place": "Place",
+    "work": "CreativeWork",
+    "event": "Event",
+    "media": "ImageObject",
+    "source": "CreativeWork",
+}
+
+DEFAULT_OG_IMAGE = f"{ORIGIN}assets/images/portraits/kaper-mature.jpg"
+
+
+def og_image_for(record_type: str, record: dict) -> str:
+    if (
+        record_type == "media"
+        and record.get("mediaType") == "image"
+        and record.get("assetPath")
+    ):
+        return f"{ORIGIN}{record['assetPath']}"
+    return DEFAULT_OG_IMAGE
+
+
+def structured_data(record_type: str, record: dict, canonical: str, title: str, summary: str) -> str:
+    data = {
+        "@context": "https://schema.org",
+        "@type": SCHEMA_TYPE.get(record_type, "CreativeWork"),
+        "name": title,
+        "url": canonical,
+    }
+    if summary:
+        data["description"] = compact_text(summary, 300)
+    if record_type == "person" and record.get("authorityUrl"):
+        data["sameAs"] = record["authorityUrl"]
+    if record_type == "place":
+        lat, lon = record.get("latitude"), record.get("longitude")
+        if isinstance(lat, (int, float)) and isinstance(lon, (int, float)):
+            data["geo"] = {"@type": "GeoCoordinates", "latitude": lat, "longitude": lon}
+        locality = ", ".join(v for v in (record.get("city"), record.get("country")) if v)
+        if locality:
+            data["address"] = locality
+    if record_type == "event" and record.get("dateStart"):
+        data["startDate"] = record["dateStart"]
+    if record_type == "media" and record.get("assetPath"):
+        data["contentUrl"] = f"{ORIGIN}{record['assetPath']}"
+        if record.get("publicCreditLine"):
+            data["creditText"] = record["publicCreditLine"]
+    payload = json.dumps(data, ensure_ascii=False)
+    return f'<script type="application/ld+json">{payload}</script>'
+
+
 def static_page(record_type: str, record: dict, tables: dict) -> str:
     title = title_for(record_type, record)
     summary = summary_for(record_type, record, tables)
@@ -185,7 +236,7 @@ def static_page(record_type: str, record: dict, tables: dict) -> str:
     label = TYPE_LABELS[record_type]
     record_id = record["id"]
     is_gallery = record_type == "media" and record.get("mediaType") == "document_gallery"
-    style_version = "20260716-6"
+    style_version = "20260717-1"
     record_script_version = "20260716-6"
     route = f"records/{record_type}/{quote(record_id, safe='')}/"
     canonical = f"{ORIGIN}{route}"
@@ -200,6 +251,8 @@ def static_page(record_type: str, record: dict, tables: dict) -> str:
         if summary
         else ""
     )
+    og_image = og_image_for(record_type, record)
+    ld_json = structured_data(record_type, record, canonical, title, meta_summary)
     return f"""<!doctype html>
 <html lang="en">
 <head>
@@ -215,9 +268,16 @@ def static_page(record_type: str, record: dict, tables: dict) -> str:
   <meta property="og:description" content="{esc(compact_text(meta_summary, 200))}">
   <meta property="og:type" content="article">
   <meta property="og:url" content="{esc(canonical)}">
+  <meta property="og:image" content="{esc(og_image)}">
+  <meta property="og:image:alt" content="{esc(title)}">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="canonical" href="{esc(canonical)}">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="stylesheet" href="assets/site/styles.css?v={style_version}">
   <title>{esc(title)} — Bronisław Kaper, 1902–1939</title>
+  {ld_json}
 </head>
 <body>
   <header class="site-header" data-site-header>
