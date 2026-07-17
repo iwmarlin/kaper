@@ -964,6 +964,24 @@
         "fields": {
           "publicNote": "Paris hotel/address context given by Kaper on the S.S. Champlain passenger manifest as his home address before arrival in New York; interpreted as a transit hotel address rather than a private residence."
         }
+      },
+      "PL020": {
+        "reason": "Surface the documented street address in the map display name for consistency with the other venue markers.",
+        "fields": {
+          "displayName": "Ufa-Theater Universum, Kurfürstendamm 153, Berlin"
+        }
+      },
+      "PL040": {
+        "reason": "Surface the documented street address in the map display name for consistency with the other venue markers.",
+        "fields": {
+          "displayName": "Consulate General of the Republic of Poland, 19 rue Alphonse-de-Neuville, Paris"
+        }
+      },
+      "PL041": {
+        "reason": "Surface the documented street address in the map display name for consistency with the other venue markers.",
+        "fields": {
+          "displayName": "Bach-Saal, Lützowstraße 76, Berlin"
+        }
       }
     }
   },
