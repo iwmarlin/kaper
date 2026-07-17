@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 490,
+  "count": 493,
   "records": [
     {
       "id": "SRC0001",
@@ -403,6 +403,7 @@
         "M205"
       ],
       "timelineEventIds": [
+        "TE0001",
         "TE0005"
       ],
       "placeIds": [
@@ -3141,6 +3142,7 @@
       "timelineEventIds": [
         "TE0001",
         "TE0004",
+        "TE0005",
         "TE0007",
         "TE0010",
         "TE0011",
@@ -10421,6 +10423,9 @@
       ],
       "mediaIds": [
         "M043"
+      ],
+      "personIds": [
+        "P020"
       ]
     },
     {
@@ -10510,6 +10515,9 @@
       ],
       "mediaIds": [
         "M046"
+      ],
+      "personIds": [
+        "P077"
       ]
     },
     {
@@ -11088,6 +11096,9 @@
       ],
       "mediaIds": [
         "M051"
+      ],
+      "personIds": [
+        "P116"
       ]
     },
     {
@@ -16559,6 +16570,82 @@
       ],
       "placeIds": [
         "PL016"
+      ]
+    },
+    {
+      "id": "SRC0560",
+      "shortCitation": "Los Angeles Times Photographic Collection / UCLA Library, “Jan Kiepura, 1935”",
+      "fullCitation": "Los Angeles Times. “Jan Kiepura, 1935.” Photograph, September 1935. Los Angeles Times Photographic Collection, UCLA Library Digital Collections, ark:/21198/zz002dgfqg; distributed via Wikimedia Commons under CC BY 4.0.",
+      "sourceType": "Wikimedia Commons file",
+      "title": "Jan Kiepura — Los Angeles Times portrait, September 1935",
+      "creator": "Los Angeles Times",
+      "repository": "UCLA Library Digital Collections",
+      "publication": "Los Angeles Times Photographic Collection; Wikimedia Commons",
+      "date": "1935-09",
+      "url": "https://commons.wikimedia.org/wiki/File:Jan_Kiepura,_1935.jpg",
+      "accessDate": "2026-07-17",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "slug": "wikimedia-commons-jan-kiepura-los-angeles-times-portrait-1935",
+      "personIds": [
+        "P117"
+      ],
+      "organizationIds": [
+        "ORG090"
+      ],
+      "mediaIds": [
+        "M238"
+      ]
+    },
+    {
+      "id": "SRC0561",
+      "shortCitation": "Narodowe Archiwum Cyfrowe / Wikimedia Commons, Hans Steinhoff, sygn. 2-13285",
+      "fullCitation": "Narodowe Archiwum Cyfrowe. Hans Steinhoff (1882–1945), photographer and date unidentified, audiovisual collection, signature 2-13285. Digital reproduction distributed via Wikimedia Commons.",
+      "sourceType": "Wikimedia Commons file",
+      "title": "Hans Steinhoff — portrait photograph",
+      "creator": "Photographer unidentified",
+      "repository": "Narodowe Archiwum Cyfrowe",
+      "publication": "NAC audiovisual collection; Wikimedia Commons",
+      "date": "undated",
+      "url": "https://commons.wikimedia.org/wiki/File:Hans_Steinhoff_(1882-1945).jpg",
+      "accessDate": "2026-07-17",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "slug": "wikimedia-commons-hans-steinhoff-nac-2-13285",
+      "personIds": [
+        "P027"
+      ],
+      "organizationIds": [
+        "ORG070",
+        "ORG090"
+      ],
+      "mediaIds": [
+        "M239"
+      ]
+    },
+    {
+      "id": "SRC0562",
+      "shortCitation": "Jules Greenbaum, Richard Oswald in Der Hund von Baskerville (1914), Wikimedia Commons",
+      "fullCitation": "Jules Greenbaum. Richard Oswald in Der Hund von Baskerville, 1914. Film-frame portrait; digital reproduction distributed via Wikimedia Commons.",
+      "sourceType": "Wikimedia Commons file",
+      "title": "Richard Oswald — film-frame portrait, 1914",
+      "creator": "Jules Greenbaum (1867–1924)",
+      "repository": "Wikimedia Commons",
+      "publication": "Der Hund von Baskerville (1914)",
+      "date": "1914",
+      "url": "https://commons.wikimedia.org/wiki/File:Richard_Oswald_1914.jpg",
+      "accessDate": "2026-07-17",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "slug": "wikimedia-commons-richard-oswald-1914-film-frame",
+      "personIds": [
+        "P066"
+      ],
+      "organizationIds": [
+        "ORG090"
+      ],
+      "mediaIds": [
+        "M240"
       ]
     }
   ]

@@ -1210,6 +1210,91 @@
             "PL016"
           ]
         }
+      },
+      "SRC0560": {
+        "reason": "Add the user-selected, freely licensed 1935 Jan Kiepura portrait using the UCLA archival record and Wikimedia Commons file-level license metadata.",
+        "fields": {
+          "id": "SRC0560",
+          "shortCitation": "Los Angeles Times Photographic Collection / UCLA Library, “Jan Kiepura, 1935”",
+          "fullCitation": "Los Angeles Times. “Jan Kiepura, 1935.” Photograph, September 1935. Los Angeles Times Photographic Collection, UCLA Library Digital Collections, ark:/21198/zz002dgfqg; distributed via Wikimedia Commons under CC BY 4.0.",
+          "sourceType": "Wikimedia Commons file",
+          "title": "Jan Kiepura — Los Angeles Times portrait, September 1935",
+          "creator": "Los Angeles Times",
+          "repository": "UCLA Library Digital Collections",
+          "publication": "Los Angeles Times Photographic Collection; Wikimedia Commons",
+          "date": "1935-09",
+          "url": "https://commons.wikimedia.org/wiki/File:Jan_Kiepura,_1935.jpg",
+          "accessDate": "2026-07-17",
+          "reliability": "high",
+          "sourceStatus": "verified",
+          "slug": "wikimedia-commons-jan-kiepura-los-angeles-times-portrait-1935",
+          "personIds": [
+            "P117"
+          ],
+          "organizationIds": [
+            "ORG090"
+          ],
+          "mediaIds": [
+            "M238"
+          ]
+        }
+      },
+      "SRC0561": {
+        "reason": "Add a verified public-domain portrait of film director Hans Steinhoff from the National Digital Archive via Wikimedia Commons.",
+        "fields": {
+          "id": "SRC0561",
+          "shortCitation": "Narodowe Archiwum Cyfrowe / Wikimedia Commons, Hans Steinhoff, sygn. 2-13285",
+          "fullCitation": "Narodowe Archiwum Cyfrowe. Hans Steinhoff (1882–1945), photographer and date unidentified, audiovisual collection, signature 2-13285. Digital reproduction distributed via Wikimedia Commons.",
+          "sourceType": "Wikimedia Commons file",
+          "title": "Hans Steinhoff — portrait photograph",
+          "creator": "Photographer unidentified",
+          "repository": "Narodowe Archiwum Cyfrowe",
+          "publication": "NAC audiovisual collection; Wikimedia Commons",
+          "date": "undated",
+          "url": "https://commons.wikimedia.org/wiki/File:Hans_Steinhoff_(1882-1945).jpg",
+          "accessDate": "2026-07-17",
+          "reliability": "high",
+          "sourceStatus": "verified",
+          "slug": "wikimedia-commons-hans-steinhoff-nac-2-13285",
+          "personIds": [
+            "P027"
+          ],
+          "organizationIds": [
+            "ORG070",
+            "ORG090"
+          ],
+          "mediaIds": [
+            "M239"
+          ]
+        }
+      },
+      "SRC0562": {
+        "reason": "Add a verified public-domain 1914 film-frame portrait of director Richard Oswald from Wikimedia Commons.",
+        "fields": {
+          "id": "SRC0562",
+          "shortCitation": "Jules Greenbaum, Richard Oswald in Der Hund von Baskerville (1914), Wikimedia Commons",
+          "fullCitation": "Jules Greenbaum. Richard Oswald in Der Hund von Baskerville, 1914. Film-frame portrait; digital reproduction distributed via Wikimedia Commons.",
+          "sourceType": "Wikimedia Commons file",
+          "title": "Richard Oswald — film-frame portrait, 1914",
+          "creator": "Jules Greenbaum (1867–1924)",
+          "repository": "Wikimedia Commons",
+          "publication": "Der Hund von Baskerville (1914)",
+          "date": "1914",
+          "url": "https://commons.wikimedia.org/wiki/File:Richard_Oswald_1914.jpg",
+          "accessDate": "2026-07-17",
+          "reliability": "high",
+          "sourceStatus": "verified",
+          "slug": "wikimedia-commons-richard-oswald-1914-film-frame",
+          "personIds": [
+            "P066"
+          ],
+          "organizationIds": [
+            "ORG090"
+          ],
+          "mediaIds": [
+            "M240"
+          ]
+        }
       }
     },
     "Places": {
@@ -1442,6 +1527,99 @@
             "european"
           ]
         }
+      },
+      "M238": {
+        "reason": "Add the user-selected 1935 Jan Kiepura portrait to his person record and the media catalogue with exact CC BY 4.0 attribution.",
+        "fields": {
+          "id": "M238",
+          "title": "Jan Kiepura — Los Angeles Times portrait, September 1935",
+          "mediaType": "image",
+          "storageType": "local",
+          "period": "hollywood",
+          "description": "Jan Kiepura, Polish tenor and film actor, photographed in Los Angeles in September 1935.",
+          "externalUrl": "https://commons.wikimedia.org/wiki/File:Jan_Kiepura,_1935.jpg",
+          "assetPath": "assets/images/portraits/jan-kiepura-1935.jpg",
+          "assetPaths": [
+            "assets/images/portraits/jan-kiepura-1935.jpg"
+          ],
+          "assetCount": 1,
+          "altText": "Black-and-white outdoor portrait of Jan Kiepura smiling and wearing a hat, jacket and tie.",
+          "rightsStatus": "ok",
+          "rightsNote": "Licensed CC BY 4.0 by UCLA Library. This local file is a resized derivative; attribution and a link to the license are retained.",
+          "slug": "jan-kiepura-los-angeles-times-portrait-1935-m238",
+          "publicCaption": "Jan Kiepura in Los Angeles, September 1935.",
+          "publicCreditLine": "Los Angeles Times Photographic Collection, UCLA Library / Wikimedia Commons, CC BY 4.0.",
+          "category": "portrait",
+          "galleryStatus": "eligible",
+          "sourceIds": [
+            "SRC0560"
+          ],
+          "periods": [
+            "hollywood"
+          ]
+        }
+      },
+      "M239": {
+        "reason": "Add the verified public-domain Hans Steinhoff image to his person record and the media catalogue.",
+        "fields": {
+          "id": "M239",
+          "title": "Hans Steinhoff — portrait photograph",
+          "mediaType": "image",
+          "storageType": "local",
+          "period": "european",
+          "description": "Hans Steinhoff, German film director, shown in profile while reading a document.",
+          "externalUrl": "https://commons.wikimedia.org/wiki/File:Hans_Steinhoff_(1882-1945).jpg",
+          "assetPath": "assets/images/portraits/hans-steinhoff.jpg",
+          "assetPaths": [
+            "assets/images/portraits/hans-steinhoff.jpg"
+          ],
+          "assetCount": 1,
+          "altText": "Black-and-white photograph of Hans Steinhoff in profile, reading a document and gesturing, with another man partly visible at right.",
+          "rightsStatus": "ok",
+          "rightsNote": "Public domain under the Wikimedia Commons PD-Poland and PD-US assessments; source institution: Narodowe Archiwum Cyfrowe.",
+          "slug": "hans-steinhoff-portrait-nac-m239",
+          "publicCaption": "Hans Steinhoff, film director.",
+          "publicCreditLine": "Photographer unidentified; Narodowe Archiwum Cyfrowe, sygn. 2-13285 / Wikimedia Commons.",
+          "category": "portrait",
+          "galleryStatus": "eligible",
+          "sourceIds": [
+            "SRC0561"
+          ],
+          "periods": [
+            "european"
+          ]
+        }
+      },
+      "M240": {
+        "reason": "Add the verified public-domain 1914 Richard Oswald film-frame portrait to his person record and the media catalogue.",
+        "fields": {
+          "id": "M240",
+          "title": "Richard Oswald — film-frame portrait, 1914",
+          "mediaType": "image",
+          "storageType": "local",
+          "period": "european",
+          "description": "Richard Oswald in a frame from Der Hund von Baskerville (1914).",
+          "externalUrl": "https://commons.wikimedia.org/wiki/File:Richard_Oswald_1914.jpg",
+          "assetPath": "assets/images/portraits/richard-oswald-1914.jpg",
+          "assetPaths": [
+            "assets/images/portraits/richard-oswald-1914.jpg"
+          ],
+          "assetCount": 1,
+          "altText": "Black-and-white film-frame portrait of Richard Oswald in 1914.",
+          "rightsStatus": "ok",
+          "rightsNote": "Public domain. The credited creator, Jules Greenbaum, died in 1924; the work was published in 1914 and is also public domain in the United States.",
+          "slug": "richard-oswald-film-frame-portrait-1914-m240",
+          "publicCaption": "Richard Oswald in Der Hund von Baskerville (1914).",
+          "publicCreditLine": "Jules Greenbaum, Der Hund von Baskerville (1914) / Wikimedia Commons.",
+          "category": "portrait",
+          "galleryStatus": "eligible",
+          "sourceIds": [
+            "SRC0562"
+          ],
+          "periods": [
+            "european"
+          ]
+        }
       }
     }
   },
@@ -1569,6 +1747,54 @@
             "SRC0558"
           ]
         }
+      },
+      "P020": {
+        "reason": "Connect Fritz Rotter to the existing verified public-domain portrait source SRC0330 so M043 appears on his person record.",
+        "fields": {
+          "sourceIds": [
+            "SRC0330"
+          ]
+        }
+      },
+      "P027": {
+        "reason": "Connect Hans Steinhoff to the newly added verified portrait source SRC0561.",
+        "fields": {
+          "sourceIds": [
+            "SRC0561"
+          ]
+        }
+      },
+      "P066": {
+        "reason": "Connect Richard Oswald to the newly added verified portrait source SRC0562.",
+        "fields": {
+          "sourceIds": [
+            "SRC0562"
+          ]
+        }
+      },
+      "P077": {
+        "reason": "Connect Walter Jurmann to the existing Academy Collection photograph SRC0334 rather than creating a duplicate or using an unverified image.",
+        "fields": {
+          "sourceIds": [
+            "SRC0334"
+          ]
+        }
+      },
+      "P116": {
+        "reason": "Connect Louis B. Mayer to the existing freely licensed portrait source SRC0364 so M051 appears on his person record.",
+        "fields": {
+          "sourceIds": [
+            "SRC0364"
+          ]
+        }
+      },
+      "P117": {
+        "reason": "Connect Jan Kiepura to the user-selected, verified CC BY 4.0 portrait source SRC0560.",
+        "fields": {
+          "sourceIds": [
+            "SRC0560"
+          ]
+        }
       }
     },
     "Sources": {
@@ -1596,6 +1822,30 @@
         "fields": {
           "personIds": [
             "P009"
+          ]
+        }
+      },
+      "SRC0330": {
+        "reason": "Connect the existing Fritz Rotter portrait source to the depicted person so the portrait resolves on his person record.",
+        "fields": {
+          "personIds": [
+            "P020"
+          ]
+        }
+      },
+      "SRC0334": {
+        "reason": "Connect the Academy Collection photograph to Walter Jurmann so the existing joint image resolves as his portrait; Kaper already has dedicated portrait sources.",
+        "fields": {
+          "personIds": [
+            "P077"
+          ]
+        }
+      },
+      "SRC0364": {
+        "reason": "Connect the existing Louis B. Mayer portrait source to the depicted person so the portrait resolves on his person record.",
+        "fields": {
+          "personIds": [
+            "P116"
           ]
         }
       }
