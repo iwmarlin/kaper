@@ -18,11 +18,11 @@
     },
     "overrides": {
       "file": "public_export_overrides.json",
-      "sha256": "1f8e9de28e14bbdac18e491645ed6a44b51448f8283c8fe746a0c09f78f9bc01",
+      "sha256": "e29f807ab7d75eb4ee7c4391be4b3eb3eac27b5202c7b8ac3b648f1a064e090d",
       "appliedCount": 133,
-      "additionCount": 11,
-      "linkAdditionCount": 14,
-      "linkRemovalCount": 3
+      "additionCount": 13,
+      "linkAdditionCount": 16,
+      "linkRemovalCount": 4
     }
   },
   "exportPolicy": {
@@ -48,8 +48,8 @@
   "counts": {
     "People": 109,
     "Organizations": 109,
-    "Sources": 489,
-    "Media": 193,
+    "Sources": 490,
+    "Media": 194,
     "Works": 280,
     "Films": 55,
     "Songs": 203,
@@ -64,8 +64,8 @@
   "files": [
     {
       "file": "build-report.json",
-      "bytes": 29182,
-      "sha256": "2d512eecbf36ee5a46bcb05495128b142e2f20831870f2d72d56cff3d87e22d7"
+      "bytes": 30954,
+      "sha256": "826086fe3d32254ea987d1f39392589730ddc150e29df20ea0f4ea5d21d6d020"
     },
     {
       "file": "contributions.json",
@@ -79,8 +79,8 @@
     },
     {
       "file": "media.json",
-      "bytes": 299925,
-      "sha256": "ab8191d7a2e8ff269aa2679f004d3c87ab71f25708d5092fb2a6729d949454e7"
+      "bytes": 301729,
+      "sha256": "062bd499f0e59f7475d0bd2bc2ea3ba236849b4fdfd341ea24761b781a358624"
     },
     {
       "file": "organizations.json",
@@ -104,8 +104,8 @@
     },
     {
       "file": "places.json",
-      "bytes": 39035,
-      "sha256": "8639b795a2db4ff210171fbb816206aebe77cc7b1ee4fb1063a3b3c36df491a7"
+      "bytes": 39070,
+      "sha256": "cb4ebe523f158653d32fc31c623d8daf6759cec3bfda640922719605477667ec"
     },
     {
       "file": "songs.json",
@@ -114,13 +114,13 @@
     },
     {
       "file": "sources.json",
-      "bytes": 621146,
-      "sha256": "470aa4c042fda65d8e81d20980339294e57db5c010663de4558bbf5915aab6ca"
+      "bytes": 622325,
+      "sha256": "3b809a8a7e92edd904f1f3b5a59ecf5eed225964be8709e1c4456b9745693823"
     },
     {
       "file": "timeline-events.json",
-      "bytes": 78500,
-      "sha256": "0bb3f7e46d866f318bdf83a2cabe828da3084246b4f8e2870672c10ceed8fde4"
+      "bytes": 78516,
+      "sha256": "ccb2563ce487544debcb3031614ede1fb33dcbd8c01bf459d74053aae7bcf3a3"
     },
     {
       "file": "title-variants.json",

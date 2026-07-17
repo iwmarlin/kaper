@@ -458,7 +458,7 @@
         }
       },
       "M030": {
-        "reason": "Keep gallery-container audit notes out of the public export, avoid presenting Warsaw as an exclusively pre-1927 location, and include the documented NAC portrait of Andrzej Włast as context for Kaper's early Warsaw song network.",
+        "reason": "Keep gallery-container audit notes out of the public export, avoid presenting Warsaw as an exclusively pre-1927 location, and include the documented Andrzej Włast portrait and Warsaw Conservatory photograph as relevant historical context.",
         "fields": {
           "title": "Warsaw — documents and contexts",
           "description": "Selected documents and contextual images connected with Kaper’s Warsaw education, early compositions, songs, and later Warsaw reception.",
@@ -468,13 +468,14 @@
             "assets/images/timeline/biblioteka-UW-1925.jpg",
             "assets/images/timeline/filharmonia.jpg",
             "assets/images/timeline/popis-nasz-przeglad.jpg",
+            "assets/images/historical-context/warsaw-conservatory-okolnik-before-1939.jpg",
             "assets/images/historical-context/zula-pogorzelska-my-chcemy-krola-1926.jpg",
             "assets/images/portraits/andrzej-wlast.jpg",
             "assets/images/timeline/uw-1928.jpg",
             "assets/images/historical-context/rozenblum1-kw-18011928.jpg",
             "assets/images/historical-context/ti-1-02-1930.jpg"
           ],
-          "assetCount": 9
+          "assetCount": 10
         },
         "removeFields": [
           "rightsNote",
@@ -1112,6 +1113,34 @@
             "M236"
           ]
         }
+      },
+      "SRC0559": {
+        "reason": "Document the public-domain pre-1939 photograph of the Warsaw Conservatory at 1 Okólnik Street using the file-level source and rights metadata published by Wikimedia Commons.",
+        "fields": {
+          "id": "SRC0559",
+          "shortCitation": "Wikimedia Commons, “Konserwatorium Muzyczne w Warszawie przed 1939”",
+          "fullCitation": "Wikimedia Commons. “Konserwatorium Muzyczne w Warszawie przed 1939.” Anonymous photograph of the Warsaw Conservatory at 1 Okólnik Street, published before 1939; reproduced from Aleksander Janowski, Warszawa, Wydawnictwo Polskie R. Wegner, Poznań, p. 134.",
+          "sourceType": "Wikimedia Commons file",
+          "title": "Warsaw Conservatory at 1 Okólnik Street — before 1939",
+          "creator": "Photographer unidentified",
+          "repository": "Wikimedia Commons",
+          "publication": "Aleksander Janowski, Warszawa, Wydawnictwo Polskie R. Wegner, Poznań, p. 134",
+          "date": "before 1939",
+          "url": "https://commons.wikimedia.org/wiki/File:Konserwatorium_Muzyczne_w_Warszawie_przed_1939.jpg",
+          "accessDate": "2026-07-17",
+          "reliability": "high",
+          "sourceStatus": "verified",
+          "slug": "wikimedia-commons-warsaw-conservatory-okolnik-before-1939",
+          "organizationIds": [
+            "ORG090"
+          ],
+          "mediaIds": [
+            "M237"
+          ],
+          "placeIds": [
+            "PL016"
+          ]
+        }
       }
     },
     "Places": {
@@ -1307,6 +1336,43 @@
             "european"
           ]
         }
+      },
+      "M237": {
+        "reason": "Add a verified public-domain historical view of the Warsaw Conservatory as contextual media for the 1928 performance event, the Okólnik venue and the Warsaw gallery.",
+        "fields": {
+          "id": "M237",
+          "title": "Warsaw Conservatory at 1 Okólnik Street — before 1939",
+          "mediaType": "image",
+          "storageType": "local",
+          "period": "european",
+          "description": "Historical exterior view of the Warsaw Conservatory at 1 Okólnik Street, the venue associated with Eliza Rozenblum’s 1928 performance of three piano pieces by Bronisław Kaper.",
+          "externalUrl": "https://commons.wikimedia.org/wiki/File:Konserwatorium_Muzyczne_w_Warszawie_przed_1939.jpg",
+          "assetPath": "assets/images/historical-context/warsaw-conservatory-okolnik-before-1939.jpg",
+          "assetPaths": [
+            "assets/images/historical-context/warsaw-conservatory-okolnik-before-1939.jpg"
+          ],
+          "assetCount": 1,
+          "altText": "Black-and-white historical exterior view of the Warsaw Conservatory building at 1 Okólnik Street.",
+          "rightsStatus": "ok",
+          "rightsNote": "Public domain under the Wikimedia Commons PD-Poland assessment: an anonymous photograph published in Poland before 1939 without a copyright notice.",
+          "slug": "warsaw-conservatory-okolnik-before-1939-m237",
+          "publicCaption": "The Warsaw Conservatory at 1 Okólnik Street before 1939, associated with the 1928 performance of Kaper’s piano pieces.",
+          "publicCreditLine": "Photographer unidentified; reproduced in Aleksander Janowski, Warszawa, p. 134; Wikimedia Commons.",
+          "category": "place / context image",
+          "galleryStatus": "selected",
+          "sourceIds": [
+            "SRC0559"
+          ],
+          "timelineEventIds": [
+            "TE0020"
+          ],
+          "placeIds": [
+            "PL016"
+          ],
+          "periods": [
+            "european"
+          ]
+        }
       }
     }
   },
@@ -1337,13 +1403,15 @@
         }
       },
       "M030": {
-        "reason": "Add the Andrzej Włast portrait and its canonical NAC source to the Warsaw documentary gallery.",
+        "reason": "Add the Andrzej Włast portrait and Warsaw Conservatory photograph, with their canonical sources, to the Warsaw documentary gallery.",
         "fields": {
           "galleryMemberIds": [
-            "M233"
+            "M233",
+            "M237"
           ],
           "sourceIds": [
-            "SRC0556"
+            "SRC0556",
+            "SRC0559"
           ]
         }
       },
@@ -1357,6 +1425,17 @@
       }
     },
     "Timeline Events": {
+      "TE0020": {
+        "reason": "Link the historical Warsaw Conservatory photograph to the 1928 performance event without treating it as evidence for the performance itself.",
+        "fields": {
+          "mediaIds": [
+            "M237"
+          ],
+          "heroMediaIds": [
+            "M237"
+          ]
+        }
+      },
       "TE0036": {
         "reason": "Link the new Calexico–Mexicali border crossing (PL043) to the Legal Permanent Entry event so the event and place records cross-reference each other.",
         "fields": {
@@ -1370,6 +1449,19 @@
         "fields": {
           "placeIds": [
             "PL044"
+          ]
+        }
+      }
+    },
+    "Places": {
+      "PL016": {
+        "reason": "Link the Warsaw Conservatory venue to its verified historical photograph and file-level Wikimedia Commons source.",
+        "fields": {
+          "mediaIds": [
+            "M237"
+          ],
+          "sourceIds": [
+            "SRC0559"
           ]
         }
       }
@@ -1468,6 +1560,14 @@
       }
     },
     "Timeline Events": {
+      "TE0020": {
+        "reason": "Replace the press clipping as the timeline hero with the historical exterior photograph while retaining M085 among the event's evidentiary media.",
+        "fields": {
+          "heroMediaIds": [
+            "M085"
+          ]
+        }
+      },
       "TE0032": {
         "reason": "Remove SRC0024 and the Berlin gallery M031 because neither belongs to the separate 17 February 1934 cocktail; TE0032 retains SRC0370 and its direct medium M073.",
         "fields": {

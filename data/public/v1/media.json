@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 193,
+  "count": 194,
   "records": [
     {
       "id": "M001",
@@ -934,13 +934,14 @@
         "assets/images/timeline/biblioteka-UW-1925.jpg",
         "assets/images/timeline/filharmonia.jpg",
         "assets/images/timeline/popis-nasz-przeglad.jpg",
+        "assets/images/historical-context/warsaw-conservatory-okolnik-before-1939.jpg",
         "assets/images/historical-context/zula-pogorzelska-my-chcemy-krola-1926.jpg",
         "assets/images/portraits/andrzej-wlast.jpg",
         "assets/images/timeline/uw-1928.jpg",
         "assets/images/historical-context/rozenblum1-kw-18011928.jpg",
         "assets/images/historical-context/ti-1-02-1930.jpg"
       ],
-      "assetCount": 9,
+      "assetCount": 10,
       "altText": "Gallery card for Bronisław Kaper’s Warsaw years, combining documents, press items and contextual images.",
       "rightsStatus": "ok",
       "sortOrder": 30,
@@ -957,7 +958,8 @@
         "SRC0111",
         "SRC0337",
         "SRC0554",
-        "SRC0556"
+        "SRC0556",
+        "SRC0559"
       ],
       "timelineEventIds": [
         "TE0001",
@@ -984,7 +986,8 @@
         "M136",
         "M205",
         "M232",
-        "M233"
+        "M233",
+        "M237"
       ],
       "periods": [
         "warsaw",
@@ -6743,6 +6746,40 @@
       "galleryStatus": "selected",
       "sourceIds": [
         "SRC0558"
+      ],
+      "periods": [
+        "european"
+      ]
+    },
+    {
+      "id": "M237",
+      "title": "Warsaw Conservatory at 1 Okólnik Street — before 1939",
+      "mediaType": "image",
+      "storageType": "local",
+      "period": "european",
+      "description": "Historical exterior view of the Warsaw Conservatory at 1 Okólnik Street, the venue associated with Eliza Rozenblum’s 1928 performance of three piano pieces by Bronisław Kaper.",
+      "externalUrl": "https://commons.wikimedia.org/wiki/File:Konserwatorium_Muzyczne_w_Warszawie_przed_1939.jpg",
+      "assetPath": "assets/images/historical-context/warsaw-conservatory-okolnik-before-1939.jpg",
+      "assetPaths": [
+        "assets/images/historical-context/warsaw-conservatory-okolnik-before-1939.jpg"
+      ],
+      "assetCount": 1,
+      "altText": "Black-and-white historical exterior view of the Warsaw Conservatory building at 1 Okólnik Street.",
+      "rightsStatus": "ok",
+      "rightsNote": "Public domain under the Wikimedia Commons PD-Poland assessment: an anonymous photograph published in Poland before 1939 without a copyright notice.",
+      "slug": "warsaw-conservatory-okolnik-before-1939-m237",
+      "publicCaption": "The Warsaw Conservatory at 1 Okólnik Street before 1939, associated with the 1928 performance of Kaper’s piano pieces.",
+      "publicCreditLine": "Photographer unidentified; reproduced in Aleksander Janowski, Warszawa, p. 134; Wikimedia Commons.",
+      "category": "place / context image",
+      "galleryStatus": "selected",
+      "sourceIds": [
+        "SRC0559"
+      ],
+      "timelineEventIds": [
+        "TE0020"
+      ],
+      "placeIds": [
+        "PL016"
       ],
       "periods": [
         "european"

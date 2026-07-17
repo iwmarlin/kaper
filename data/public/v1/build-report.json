@@ -5,8 +5,8 @@
   "counts": {
     "People": 109,
     "Organizations": 109,
-    "Sources": 489,
-    "Media": 193,
+    "Sources": 490,
+    "Media": 194,
     "Works": 280,
     "Films": 55,
     "Songs": 203,
@@ -22,7 +22,7 @@
     "detail_only": 36,
     "eligible": 79,
     "external_link_only": 18,
-    "selected": 60
+    "selected": 61
   },
   "appliedOverrides": [
     {
@@ -786,6 +786,14 @@
     },
     {
       "table": "Places",
+      "id": "PL020",
+      "fields": [
+        "displayName"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Places",
       "id": "PL021",
       "fields": [
         "publicNote"
@@ -883,6 +891,22 @@
         "longitude",
         "mapPrecision",
         "publicNote"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Places",
+      "id": "PL040",
+      "fields": [
+        "displayName"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Places",
+      "id": "PL041",
+      "fields": [
+        "displayName"
       ],
       "removedFields": []
     },
@@ -1281,6 +1305,34 @@
       ]
     },
     {
+      "table": "Media",
+      "id": "M237",
+      "fields": [
+        "altText",
+        "assetCount",
+        "assetPath",
+        "assetPaths",
+        "category",
+        "description",
+        "externalUrl",
+        "galleryStatus",
+        "id",
+        "mediaType",
+        "period",
+        "periods",
+        "placeIds",
+        "publicCaption",
+        "publicCreditLine",
+        "rightsNote",
+        "rightsStatus",
+        "slug",
+        "sourceIds",
+        "storageType",
+        "timelineEventIds",
+        "title"
+      ]
+    },
+    {
       "table": "Organizations",
       "id": "ORG112",
       "fields": [
@@ -1428,6 +1480,29 @@
         "title",
         "url"
       ]
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0559",
+      "fields": [
+        "accessDate",
+        "creator",
+        "date",
+        "fullCitation",
+        "id",
+        "mediaIds",
+        "organizationIds",
+        "placeIds",
+        "publication",
+        "reliability",
+        "repository",
+        "shortCitation",
+        "slug",
+        "sourceStatus",
+        "sourceType",
+        "title",
+        "url"
+      ]
     }
   ],
   "appliedLinkAdditions": [
@@ -1496,6 +1571,14 @@
       ]
     },
     {
+      "table": "Places",
+      "id": "PL016",
+      "fields": [
+        "mediaIds",
+        "sourceIds"
+      ]
+    },
+    {
       "table": "Sources",
       "id": "SRC0024",
       "fields": [
@@ -1515,6 +1598,14 @@
       "id": "SRC0110",
       "fields": [
         "personIds"
+      ]
+    },
+    {
+      "table": "Timeline Events",
+      "id": "TE0020",
+      "fields": [
+        "heroMediaIds",
+        "mediaIds"
       ]
     },
     {
@@ -1547,6 +1638,13 @@
       "fields": [
         "mediaIds",
         "timelineEventIds"
+      ]
+    },
+    {
+      "table": "Timeline Events",
+      "id": "TE0020",
+      "fields": [
+        "heroMediaIds"
       ]
     },
     {
