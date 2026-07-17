@@ -20,9 +20,9 @@
   },
   "galleryStatusCounts": {
     "detail_only": 36,
-    "eligible": 81,
+    "eligible": 80,
     "external_link_only": 18,
-    "selected": 58
+    "selected": 59
   },
   "appliedOverrides": [
     {
@@ -186,6 +186,15 @@
       "id": "M046",
       "fields": [
         "period"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Media",
+      "id": "M048",
+      "fields": [
+        "publicCreditLine",
+        "rightsNote"
       ],
       "removedFields": []
     },
@@ -436,6 +445,23 @@
       "fields": [
         "description",
         "publicCaption"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Media",
+      "id": "M135",
+      "fields": [
+        "altText",
+        "category",
+        "description",
+        "galleryStatus",
+        "publicCaption",
+        "publicCreditLine",
+        "rightsNote",
+        "rightsStatus",
+        "slug",
+        "title"
       ],
       "removedFields": []
     },
@@ -1367,6 +1393,20 @@
       ]
     },
     {
+      "table": "Media",
+      "id": "M048",
+      "fields": [
+        "organizationIds"
+      ]
+    },
+    {
+      "table": "Media",
+      "id": "M135",
+      "fields": [
+        "organizationIds"
+      ]
+    },
+    {
       "table": "People",
       "id": "P003",
       "fields": [
@@ -1392,6 +1432,13 @@
       "id": "SRC0038",
       "fields": [
         "mediaIds",
+        "personIds"
+      ]
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0110",
+      "fields": [
         "personIds"
       ]
     },

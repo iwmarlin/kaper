@@ -1523,11 +1523,11 @@
       "assetCount": 1,
       "altText": "Portrait of Bronisław Kaper as a young man.",
       "rightsStatus": "ok",
-      "rightsNote": "From the University of Warsaw Archives (same source as the kaper-young portrait, ); used with permission.",
+      "rightsNote": "Reproduced by permission of the University of Warsaw Archives.",
       "sortOrder": 1048,
       "slug": "timeline-high-school-graduation-kaper-young0",
       "publicCaption": "Portrait of Bronisław Kaper as a young man, from his University of Warsaw student-file materials.",
-      "publicCreditLine": "Archiwum Uniwersytetu Warszawskiego; used with permission.",
+      "publicCreditLine": "Archiwum Uniwersytetu Warszawskiego, Bronisław Kaper student file, RP 6854; reproduced by permission.",
       "category": "portrait",
       "galleryStatus": "selected",
       "sourceIds": [
@@ -1538,6 +1538,9 @@
       ],
       "heroTimelineEventIds": [
         "TE0003"
+      ],
+      "organizationIds": [
+        "ORG057"
       ],
       "periods": [
         "warsaw"
@@ -3864,26 +3867,29 @@
     },
     {
       "id": "M135",
-      "title": "Bronisław Kaper — student portrait, University of Warsaw",
+      "title": "Bronisław Kaper — student-file portrait, University of Warsaw Archives",
       "mediaType": "image",
       "storageType": "local",
       "period": "warsaw",
-      "description": "Young portrait of Bronisław Kaper from his student file at the University of Warsaw Archives; used as the website header image. Reproduced with the Archives' permission.",
+      "description": "A second, distinct portrait of Bronisław Kaper preserved in his University of Warsaw student file, RP 6854.",
       "assetPath": "assets/images/portraits/kaper-young.jpg",
       "assetPaths": [
         "assets/images/portraits/kaper-young.jpg"
       ],
       "assetCount": 1,
-      "altText": "Young portrait of Bronisław Kaper.",
+      "altText": "Young Bronisław Kaper seated in a dark suit, in a portrait preserved in his University of Warsaw student file.",
       "rightsStatus": "ok",
-      "rightsNote": "Used with permission of the University of Warsaw Archives (portrait from Kaper's student file).",
-      "slug": "bronislaw-kaper-student-portrait-university-of-warsaw-m135",
-      "publicCaption": "Bronisław Kaper as a young man, photographed in connection with his University of Warsaw student-file materials in the early 1920s.",
-      "publicCreditLine": "Archiwum Uniwersytetu Warszawskiego; used with permission.",
+      "rightsNote": "Reproduced by permission of the University of Warsaw Archives.",
+      "slug": "bronislaw-kaper-student-file-portrait-university-of-warsaw-m135",
+      "publicCaption": "Bronisław Kaper as a young man. Portrait preserved in his University of Warsaw student file, RP 6854.",
+      "publicCreditLine": "Archiwum Uniwersytetu Warszawskiego, Bronisław Kaper student file, RP 6854; reproduced by permission.",
       "category": "portrait",
-      "galleryStatus": "eligible",
+      "galleryStatus": "selected",
       "sourceIds": [
         "SRC0110"
+      ],
+      "organizationIds": [
+        "ORG057"
       ],
       "periods": [
         "warsaw"

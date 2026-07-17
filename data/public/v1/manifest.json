@@ -18,10 +18,10 @@
     },
     "overrides": {
       "file": "public_export_overrides.json",
-      "sha256": "6a5eb34232d3e5f02ea70e2a31bd1f1fcd66ba7991d0b4c5ea95e287d75a7dbe",
-      "appliedCount": 128,
+      "sha256": "cf81fd370a16c93d81b05b3215d8f93969353094b0adea59a582f90635b51a3b",
+      "appliedCount": 130,
       "additionCount": 9,
-      "linkAdditionCount": 8
+      "linkAdditionCount": 11
     }
   },
   "exportPolicy": {
@@ -63,8 +63,8 @@
   "files": [
     {
       "file": "build-report.json",
-      "bytes": 26581,
-      "sha256": "11da766afc1a879118a54e2204e5970cc397ceb1ab911e71f12962161426652a"
+      "bytes": 27394,
+      "sha256": "af150127cedc0d5b0cfe0bf439bcf09f7e04580c936306869a1b819e98a6ada4"
     },
     {
       "file": "contributions.json",
@@ -78,8 +78,8 @@
     },
     {
       "file": "media.json",
-      "bytes": 300013,
-      "sha256": "790bbdf22744b6713e6f91cc63e80acc104ba502a9d41404cb9d6cd699ed90e3"
+      "bytes": 300134,
+      "sha256": "411ac639fd9f8bde8b6b2f290027224b6687edbe6bfe247d560f06dbfb3ac0ad"
     },
     {
       "file": "organizations.json",
@@ -93,8 +93,8 @@
     },
     {
       "file": "people.json",
-      "bytes": 89905,
-      "sha256": "ec4dad1e0d445564671aa1df77a5061ff22ff16d5256e8e9801f8980bbcfb80b"
+      "bytes": 89924,
+      "sha256": "9dea09d78eab2daa2aad52651ff89d5dbb1d64e4cb4345a74a5e717e94dc4d18"
     },
     {
       "file": "person-name-variants.json",
@@ -113,8 +113,8 @@
     },
     {
       "file": "sources.json",
-      "bytes": 620111,
-      "sha256": "e1cc12ef037e9a8c31e003e3c0bab0841320c23f7a453dc1ee644f14a7b31a6e"
+      "bytes": 620156,
+      "sha256": "26b3ef9d023b4baf1121a4dad7085e566e6ce264c622964a18d10560e9a18185"
     },
     {
       "file": "timeline-events.json",

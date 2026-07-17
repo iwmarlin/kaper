@@ -408,6 +408,13 @@
           "period": "european"
         }
       },
+      "M048": {
+        "reason": "Replace the malformed internal cross-reference in the rights note with a concise statement of the University of Warsaw Archives provenance and permission status.",
+        "fields": {
+          "rightsNote": "Reproduced by permission of the University of Warsaw Archives.",
+          "publicCreditLine": "Archiwum Uniwersytetu Warszawskiego, Bronisław Kaper student file, RP 6854; reproduced by permission."
+        }
+      },
       "M051": {
         "reason": "Classify the Louis B. Mayer portrait with the August 1934 Ritz meeting and MGM contract event; under the revised chronology 1934 remains European.",
         "fields": {
@@ -671,6 +678,21 @@
         "fields": {
           "description": "Review or press item for Ehe mit beschränkter Haftung, published in Mein Film in 1932 and digitized by ANNO / Österreichische Nationalbibliothek.",
           "publicCaption": "Review or press item for Ehe mit beschränkter Haftung, published in Mein Film in 1932 and digitized by ANNO / Österreichische Nationalbibliothek."
+        }
+      },
+      "M135": {
+        "reason": "Complete the existing record for the second, distinct young Kaper portrait from the University of Warsaw Archives and make it visible in the curated Media selection without creating a duplicate record.",
+        "fields": {
+          "title": "Bronisław Kaper — student-file portrait, University of Warsaw Archives",
+          "description": "A second, distinct portrait of Bronisław Kaper preserved in his University of Warsaw student file, RP 6854.",
+          "altText": "Young Bronisław Kaper seated in a dark suit, in a portrait preserved in his University of Warsaw student file.",
+          "rightsStatus": "ok",
+          "rightsNote": "Reproduced by permission of the University of Warsaw Archives.",
+          "slug": "bronislaw-kaper-student-file-portrait-university-of-warsaw-m135",
+          "publicCaption": "Bronisław Kaper as a young man. Portrait preserved in his University of Warsaw student file, RP 6854.",
+          "publicCreditLine": "Archiwum Uniwersytetu Warszawskiego, Bronisław Kaper student file, RP 6854; reproduced by permission.",
+          "category": "portrait",
+          "galleryStatus": "selected"
         }
       },
       "M143": {
@@ -1201,6 +1223,22 @@
   },
   "linkAdditions": {
     "Media": {
+      "M048": {
+        "reason": "Link the first young Kaper portrait directly to the University of Warsaw Archives as its holding and permission-granting institution.",
+        "fields": {
+          "organizationIds": [
+            "ORG057"
+          ]
+        }
+      },
+      "M135": {
+        "reason": "Link the second young Kaper portrait directly to the University of Warsaw Archives as its holding and permission-granting institution.",
+        "fields": {
+          "organizationIds": [
+            "ORG057"
+          ]
+        }
+      },
       "M030": {
         "reason": "Add the Andrzej Włast portrait and its canonical NAC source to the Warsaw documentary gallery.",
         "fields": {
@@ -1241,10 +1279,11 @@
     },
     "People": {
       "P009": {
-        "reason": "Link Bronisław Kaper to the Declaration of Intention source used for the derived 1936 portrait.",
+        "reason": "Link Bronisław Kaper to the Declaration of Intention source used for the derived 1936 portrait and to the University of Warsaw student-file source for his two early portraits.",
         "fields": {
           "sourceIds": [
-            "SRC0038"
+            "SRC0038",
+            "SRC0110"
           ]
         }
       },
@@ -1274,6 +1313,14 @@
           ],
           "mediaIds": [
             "M235"
+          ]
+        }
+      },
+      "SRC0110": {
+        "reason": "Link the University of Warsaw student-file source to Bronisław Kaper so both distinct early portrait media resolve to their depicted person.",
+        "fields": {
+          "personIds": [
+            "P009"
           ]
         }
       }
