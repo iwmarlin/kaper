@@ -6,7 +6,7 @@
     "People": 109,
     "Organizations": 109,
     "Sources": 488,
-    "Media": 193,
+    "Media": 192,
     "Works": 280,
     "Films": 55,
     "Songs": 203,
@@ -20,7 +20,7 @@
   },
   "galleryStatusCounts": {
     "detail_only": 36,
-    "eligible": 80,
+    "eligible": 79,
     "external_link_only": 18,
     "selected": 59
   },
@@ -126,7 +126,10 @@
     {
       "table": "Media",
       "id": "M032",
-      "fields": [],
+      "fields": [
+        "assetCount",
+        "assetPaths"
+      ],
       "removedFields": [
         "publicCreditLine",
         "rightsNote"
@@ -516,7 +519,9 @@
       "table": "Media",
       "id": "M195",
       "fields": [
+        "category",
         "description",
+        "externalUrl",
         "publicCreditLine",
         "rightsNote"
       ],
@@ -1407,6 +1412,13 @@
       ]
     },
     {
+      "table": "Media",
+      "id": "M195",
+      "fields": [
+        "organizationIds"
+      ]
+    },
+    {
       "table": "People",
       "id": "P003",
       "fields": [
@@ -1425,6 +1437,13 @@
       "id": "P025",
       "fields": [
         "sourceIds"
+      ]
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0024",
+      "fields": [
+        "personIds"
       ]
     },
     {
@@ -1454,6 +1473,32 @@
       "id": "TE0036",
       "fields": [
         "placeIds"
+      ]
+    }
+  ],
+  "appliedLinkRemovals": [
+    {
+      "table": "Media",
+      "id": "M031",
+      "fields": [
+        "sourceIds",
+        "timelineEventIds"
+      ]
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0024",
+      "fields": [
+        "mediaIds",
+        "timelineEventIds"
+      ]
+    },
+    {
+      "table": "Timeline Events",
+      "id": "TE0032",
+      "fields": [
+        "mediaIds",
+        "sourceIds"
       ]
     }
   ],

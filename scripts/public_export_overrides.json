@@ -490,8 +490,18 @@
         ]
       },
       "M032": {
-        "reason": "Keep gallery-container audit notes and composite-card workflow text out of the public export; each member medium carries its own public credit, source and rights statement.",
-        "fields": {},
+        "reason": "Keep gallery-container audit notes and composite-card workflow text out of the public export; remove the duplicate M216 asset while retaining the canonical M195 photograph.",
+        "fields": {
+          "assetPaths": [
+            "assets/images/historical-context/abenteuer-mfi-19331409.jpg",
+            "assets/images/historical-context/kaper-linformateur-de-seine-1934-03-30.jpg",
+            "assets/images/historical-context/la-critique-cinematographique-1933-07-08.jpg",
+            "assets/images/historical-context/kaper-le-matin-1934-12-14-p4-8.png",
+            "assets/images/timeline/przyjecie-kiepury-1933.jpg",
+            "assets/images/historical-context/frontenac.jpeg"
+          ],
+          "assetCount": 6
+        },
         "removeFields": [
           "rightsNote",
           "publicCreditLine"
@@ -759,11 +769,13 @@
         }
       },
       "M195": {
-        "reason": "Retain the photograph's unique visual and biographical context while moving the archive reference and rights statement to their dedicated fields.",
+        "reason": "Retain M195 as the sole canonical record for the November 1933 NAC reception photograph after removing the byte-identical duplicate M216.",
         "fields": {
           "description": "Black-and-white photograph from the series “Jan Kiepura podczas pobytu w Paryżu” (Jan Kiepura during his stay in Paris), November 1933. Guests in evening dress pose at a reception in a Paris hotel; Bronisław Kaper and his wife Eleonora are among those present.",
+          "externalUrl": "https://www.szukajwarchiwach.gov.pl/jednostka/-/jednostka/5924863/obiekty/374619#opis_obiektu",
           "publicCreditLine": "Narodowe Archiwum Cyfrowe, ref. 3/1/0/11/8270/3.",
-          "rightsNote": "Public domain; the source catalogue records the rights as expired."
+          "rightsNote": "Public domain; the source catalogue records the rights as expired.",
+          "category": "event photograph"
         }
       },
       "M198": {
@@ -1239,6 +1251,14 @@
           ]
         }
       },
+      "M195": {
+        "reason": "Link the retained canonical reception photograph directly to the National Digital Archive in addition to its existing historical production context.",
+        "fields": {
+          "organizationIds": [
+            "ORG070"
+          ]
+        }
+      },
       "M030": {
         "reason": "Add the Andrzej Włast portrait and its canonical NAC source to the Warsaw documentary gallery.",
         "fields": {
@@ -1279,11 +1299,12 @@
     },
     "People": {
       "P009": {
-        "reason": "Link Bronisław Kaper to the Declaration of Intention source used for the derived 1936 portrait and to the University of Warsaw student-file source for his two early portraits.",
+        "reason": "Link Bronisław Kaper to the sources for the 1936 declaration portrait, the two University of Warsaw portraits and the retained November 1933 Kiepura reception photograph.",
         "fields": {
           "sourceIds": [
             "SRC0038",
-            "SRC0110"
+            "SRC0110",
+            "SRC0024"
           ]
         }
       },
@@ -1305,6 +1326,14 @@
       }
     },
     "Sources": {
+      "SRC0024": {
+        "reason": "Link the November 1933 NAC reception photograph source to Bronisław Kaper, who is depicted in the retained canonical medium M195.",
+        "fields": {
+          "personIds": [
+            "P009"
+          ]
+        }
+      },
       "SRC0038": {
         "reason": "Link the Declaration of Intention source to Kaper and to the separately published portrait crop M235 while retaining M115 as the complete document.",
         "fields": {
@@ -1321,6 +1350,47 @@
         "fields": {
           "personIds": [
             "P009"
+          ]
+        }
+      }
+    }
+  },
+  "linkRemovals": {
+    "Media": {
+      "M031": {
+        "reason": "Remove the November 1933 Paris reception source and the February 1934 Paris cocktail event from the Berlin Years gallery; the source and canonical photograph belong to the Paris gallery M032, while TE0032 uses M073 directly.",
+        "fields": {
+          "sourceIds": [
+            "SRC0024"
+          ],
+          "timelineEventIds": [
+            "TE0032"
+          ]
+        }
+      }
+    },
+    "Sources": {
+      "SRC0024": {
+        "reason": "Remove the stale Berlin-gallery and February 1934 event links from the November 1933 NAC photograph source while retaining M032 and M195.",
+        "fields": {
+          "mediaIds": [
+            "M031"
+          ],
+          "timelineEventIds": [
+            "TE0032"
+          ]
+        }
+      }
+    },
+    "Timeline Events": {
+      "TE0032": {
+        "reason": "Remove SRC0024 and the Berlin gallery M031 because neither belongs to the separate 17 February 1934 cocktail; TE0032 retains SRC0370 and its direct medium M073.",
+        "fields": {
+          "sourceIds": [
+            "SRC0024"
+          ],
+          "mediaIds": [
+            "M031"
           ]
         }
       }

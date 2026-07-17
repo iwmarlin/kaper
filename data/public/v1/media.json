@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 193,
+  "count": 192,
   "records": [
     {
       "id": "M001",
@@ -1025,7 +1025,6 @@
         "SRC0020",
         "SRC0021",
         "SRC0023",
-        "SRC0024",
         "SRC0026",
         "SRC0028",
         "SRC0029",
@@ -1049,7 +1048,6 @@
         "TE0028",
         "TE0029",
         "TE0030",
-        "TE0032",
         "TE0034",
         "TE0048",
         "TE0049",
@@ -1087,10 +1085,9 @@
         "assets/images/historical-context/la-critique-cinematographique-1933-07-08.jpg",
         "assets/images/historical-context/kaper-le-matin-1934-12-14-p4-8.png",
         "assets/images/timeline/przyjecie-kiepury-1933.jpg",
-        "assets/images/historical-context/frontenac.jpeg",
-        "assets/images/historical-context/kaper-coctail-kiepura.jpg"
+        "assets/images/historical-context/frontenac.jpeg"
       ],
-      "assetCount": 7,
+      "assetCount": 6,
       "altText": "Gallery card for Bronisław Kaper’s Paris years, combining press items, posters and contextual materials.",
       "rightsStatus": "ok",
       "sortOrder": 32,
@@ -1117,8 +1114,7 @@
         "M122",
         "M123",
         "M195",
-        "M207",
-        "M216"
+        "M207"
       ],
       "periods": [
         "european"
@@ -5515,10 +5511,11 @@
       "slug": "kiepura-paris-reception-1933-m195",
       "publicCaption": "Bronisław and Eleonora Kaper among guests at a reception for Jan Kiepura in Paris, November 1933.",
       "publicCreditLine": "Narodowe Archiwum Cyfrowe, ref. 3/1/0/11/8270/3.",
-      "category": "portrait",
+      "category": "event photograph",
       "galleryStatus": "eligible",
       "organizationIds": [
-        "ORG003"
+        "ORG003",
+        "ORG070"
       ],
       "sourceIds": [
         "SRC0024"
@@ -5527,6 +5524,7 @@
         "W-F023",
         "W-F025"
       ],
+      "externalUrl": "https://www.szukajwarchiwach.gov.pl/jednostka/-/jednostka/5924863/obiekty/374619#opis_obiektu",
       "periods": [
         "european"
       ]
@@ -6082,34 +6080,6 @@
       "galleryStatus": "eligible",
       "sourceIds": [
         "SRC0020"
-      ],
-      "periods": [
-        "european"
-      ]
-    },
-    {
-      "id": "M216",
-      "title": "Jan Kiepura reception in Paris, with Bronisław and Eleonora Kaper — gallery image, November 1933",
-      "mediaType": "image",
-      "storageType": "local",
-      "period": "european",
-      "description": "Local gallery image documenting a Paris reception for Jan Kiepura in November 1933, with Bronisław and Eleonora Kaper among the guests.",
-      "externalUrl": "https://www.szukajwarchiwach.gov.pl/jednostka/-/jednostka/5924863/obiekty/374619#opis_obiektu",
-      "assetPath": "assets/images/historical-context/kaper-coctail-kiepura.jpg",
-      "assetPaths": [
-        "assets/images/historical-context/kaper-coctail-kiepura.jpg"
-      ],
-      "assetCount": 1,
-      "altText": "Black-and-white reception image connected with Jan Kiepura’s stay in Paris, with Bronisław and Eleonora Kaper among the guests.",
-      "rightsStatus": "ok",
-      "rightsNote": "Public domain: Narodowe Archiwum Cyfrowe records the rights to the November 1933 photograph as expired.",
-      "slug": "jan-kiepura-paris-reception-gallery-image-1933-m216",
-      "publicCaption": "Bronisław and Eleonora Kaper among guests at a reception connected with Jan Kiepura’s stay in Paris, November 1933.",
-      "publicCreditLine": "Narodowe Archiwum Cyfrowe, ref. 3/1/0/11/8270/3; public domain.",
-      "category": "portrait",
-      "galleryStatus": "eligible",
-      "sourceIds": [
-        "SRC0024"
       ],
       "periods": [
         "european"

@@ -321,6 +321,7 @@ class PublicExporter:
         self.applied_overrides: list[dict[str, Any]] = []
         self.applied_additions: list[dict[str, Any]] = []
         self.applied_link_additions: list[dict[str, Any]] = []
+        self.applied_link_removals: list[dict[str, Any]] = []
         self._load()
 
     def _load(self) -> None:
@@ -507,6 +508,31 @@ class PublicExporter:
                             f"{table_name} {stable_id}: link addition {key!r} must be an array of stable IDs"
                         )
 
+        for table_name, table_links in self.overrides.get("linkRemovals", {}).items():
+            if table_name not in self.config["tables"]:
+                self.errors.append(f"Link removals reference unknown table {table_name!r}")
+                continue
+            allowed = set(self.config["tables"][table_name]["links"])
+            for stable_id, removal in table_links.items():
+                fields = removal.get("fields") if isinstance(removal, dict) else None
+                if not isinstance(removal, dict) or not removal.get("reason") or not isinstance(fields, dict):
+                    self.errors.append(
+                        f"{table_name} {stable_id}: link removal requires a reason and fields object"
+                    )
+                    continue
+                unexpected = set(fields) - allowed
+                if unexpected:
+                    self.errors.append(
+                        f"{table_name} {stable_id}: link removal contains non-link keys {sorted(unexpected)}"
+                    )
+                for key, values in fields.items():
+                    if not isinstance(values, list) or not all(
+                        isinstance(value, str) and value for value in values
+                    ):
+                        self.errors.append(
+                            f"{table_name} {stable_id}: link removal {key!r} must be an array of stable IDs"
+                        )
+
     def fields(self, record: dict[str, Any]) -> dict[str, Any]:
         return record.get("fieldsByName", {})
 
@@ -567,9 +593,14 @@ class PublicExporter:
             ):
                 self.included["Places"].add(stable_id)
 
+        excluded_media_ids = set(self.config.get("excludedMediaIds", []))
         for stable_id, record in self.by_stable["Media"].items():
             gallery = selected_name(self.fields(record).get("Gallery Status"))
-            if self.approved("Media", record) and gallery in self.config["allowedGalleryStatuses"]:
+            if (
+                self.approved("Media", record)
+                and gallery in self.config["allowedGalleryStatuses"]
+                and stable_id not in excluded_media_ids
+            ):
                 self.included["Media"].add(stable_id)
 
         subtype_specs = {
@@ -859,6 +890,28 @@ class PublicExporter:
                         "table": table_name,
                         "id": stable_id,
                         "fields": sorted(addition["fields"]),
+                    }
+                )
+
+        for table_name, table_links in self.overrides.get("linkRemovals", {}).items():
+            for stable_id, removal in table_links.items():
+                public = output_by_id[table_name].get(stable_id)
+                if public is None:
+                    self.errors.append(
+                        f"{table_name} {stable_id}: link removal target is not in the public graph"
+                    )
+                    continue
+                for key, values in removal["fields"].items():
+                    retained = [value for value in public.get(key, []) if value not in values]
+                    if retained:
+                        public[key] = retained
+                    else:
+                        public.pop(key, None)
+                self.applied_link_removals.append(
+                    {
+                        "table": table_name,
+                        "id": stable_id,
+                        "fields": sorted(removal["fields"]),
                     }
                 )
 
@@ -1768,6 +1821,10 @@ class PublicExporter:
                 self.applied_link_additions,
                 key=lambda item: (item["table"], item["id"]),
             ),
+            "appliedLinkRemovals": sorted(
+                self.applied_link_removals,
+                key=lambda item: (item["table"], item["id"]),
+            ),
             "allowlist": {
                 table_name: {
                     "sourceFieldsAvailable": len(
@@ -1818,6 +1875,7 @@ class PublicExporter:
                         "appliedCount": len(self.applied_overrides),
                         "additionCount": len(self.applied_additions),
                         "linkAdditionCount": len(self.applied_link_additions),
+                        "linkRemovalCount": len(self.applied_link_removals),
                     }
                     if self.overrides_path is not None
                     else None
