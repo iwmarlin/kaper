@@ -572,7 +572,8 @@
       "M065": {
         "reason": "Retain the later church photograph in the Warsaw period because it is published solely as contextual evidence for Kaper's 1920 baptism, not as a 1939 career event.",
         "fields": {
-          "period": "warsaw"
+          "period": "warsaw",
+          "rightsNote": "Public domain: interwar archival photograph held by Szukaj w Archiwach. Credit Szukaj w Archiwach, “Uroczystości święta 3 Maja w Warszawie,” sygn. 3/1/0/6/2877/33."
         }
       },
       "M075": {
@@ -592,14 +593,14 @@
         "fields": {
           "period": "hollywood",
           "description": "Portrait photograph of Jerzy Fitelberg, taken by Antoni Sitkowski in 1937.",
-          "rightsNote": "The source catalogue marks the rights as expired."
+          "rightsNote": "Public domain: the source catalogue (Szukaj w Archiwach) marks the rights as expired. Credit Antoni Sitkowski / Szukaj w Archiwach, sygn. 3/1/0/11/6506/1."
         }
       },
       "M090": {
         "reason": "Keep archival identifiers and rights metadata in the source and provenance fields rather than repeating them in the contextual description.",
         "fields": {
           "description": "Photograph of Róża Etkin, January 1927.",
-          "rightsNote": "The source catalogue marks the rights as expired."
+          "rightsNote": "Public domain: the source catalogue (Szukaj w Archiwach) marks the rights as expired. Credit Szukaj w Archiwach, sygn. 3/1/0/11/6496/1."
         }
       },
       "M095": {
@@ -735,7 +736,8 @@
           "assetPath": "assets/images/historical-context/jak-sie-da.png",
           "assetPaths": [
             "assets/images/historical-context/jak-sie-da.png"
-          ]
+          ],
+          "rightsNote": "Public domain: the linked Polona (Biblioteka Narodowa) record for “Jak się da, to się zrobi!” is marked Domena Publiczna. Credit Biblioteka Narodowa / Polona; printed edition Edition J. Altschuler, Warsaw–Riga, 1926."
         }
       },
       "M126": {
@@ -754,7 +756,7 @@
         "fields": {
           "period": "warsaw",
           "description": "Portrait crop of Józef Śmidowicz from the photograph “Dni Krakowa,” June 1939.",
-          "rightsNote": "The source catalogue marks the rights as expired; the local file is a portrait crop from the archival photograph."
+          "rightsNote": "Public domain: the source catalogue (Szukaj w Archiwach) marks the rights as expired. The local file is a portrait crop from the archival photograph. Credit Szukaj w Archiwach, “Dni Krakowa,” sygn. 3/1/0/6/3688/5."
         }
       },
       "M154": {
@@ -791,7 +793,8 @@
           "assetPath": "assets/images/sheet-music/zgas-lampe.png",
           "assetPaths": [
             "assets/images/sheet-music/zgas-lampe.png"
-          ]
+          ],
+          "rightsNote": "Public domain: the linked Polona (Biblioteka Narodowa) record for “Zgaś lampę!” is marked Domena Publiczna. Credit Biblioteka Narodowa / Polona; printed edition Edition J. Altschuler, Warsaw–Riga, 1926."
         }
       },
       "M206": {
@@ -802,19 +805,22 @@
           "assetPaths": [
             "assets/images/sheet-music/ja-nie-mam.png",
             "assets/images/sheet-music/ja-nie-mam-glosu.jpg"
-          ]
+          ],
+          "rightsNote": "Public domain: Biblioteka Narodowa / Polona present this 1927 Gebethner i Wolff edition as Domena Publiczna. Two local gallery images from the same Polona object (cover and first page) are kept together in one record because they document different parts of the same edition. Credit Biblioteka Narodowa / Polona."
         }
       },
       "M228": {
         "reason": "Assign a public editorial category so the media card footer shows a category rather than a gallery status.",
         "fields": {
-          "category": "press clipping"
+          "category": "press clipping",
+          "rightsNote": "Public domain: the Library of Congress reports no known U.S. copyright or other restrictions for this trade publication (copyright registrations were not renewed). Possible separately protected third-party material remains the user’s responsibility. Credit Library of Congress, National Audio-Visual Conservation Center: Motion Picture Daily, 27 October 1934, p. 2."
         }
       },
       "M229": {
         "reason": "Assign a public editorial category so the media card footer shows a category rather than a gallery status.",
         "fields": {
-          "category": "portrait"
+          "category": "portrait",
+          "rightsNote": "Public domain: the Library of Congress reports no known restrictions on publication. Credit Bain News Service / Library of Congress Prints and Photographs Division (George Grantham Bain Collection), ggbain.34209."
         }
       },
       "M227": {
@@ -827,6 +833,48 @@
         "reason": "Assign a public editorial category so the media card footer shows a category rather than a gallery status.",
         "fields": {
           "category": "press clipping"
+        }
+      },
+      "M070": {
+        "reason": "State the documented public-domain status (Polona / Biblioteka Narodowa mark it Domena Publiczna) as a neutral rights note, replacing internal workflow phrasing; this also makes the card show a “Public domain” badge.",
+        "fields": {
+          "rightsNote": "Public domain: Biblioteka Narodowa / Polona classify this 1920 poster as Domena Publiczna (public domain). Reproduced as a historical context image with attribution to Biblioteka Narodowa / Polona."
+        }
+      },
+      "M094": {
+        "reason": "State the documented public-domain status as a neutral rights note so the media card shows a “Public domain” badge, preserving the source attribution.",
+        "fields": {
+          "rightsNote": "Public domain: archival image from Narodowe Archiwum Cyfrowe / Szukaj w Archiwach. Reproduced with attribution to NAC / Szukaj w Archiwach."
+        }
+      },
+      "M096": {
+        "reason": "State the documented public-domain status as a neutral rights note so the media card shows a “Public domain” badge, preserving the source attribution.",
+        "fields": {
+          "rightsNote": "Public domain: archival image from Narodowe Archiwum Cyfrowe / Szukaj w Archiwach. Reproduced with attribution to NAC / Szukaj w Archiwach."
+        }
+      },
+      "M067": {
+        "reason": "State the documented public-domain status as a neutral rights note so the media card shows a “Public domain” badge, preserving the source attribution.",
+        "fields": {
+          "rightsNote": "Public domain: grouped context image gathering early sheet-music publications printed under the name Bruno Asper, linked through separate Polona (Biblioteka Narodowa) records marked Domena Publiczna. This is a contextual image for the Bruno Asper pseudonym, not a canonical bibliographic record for one work. Credit Biblioteka Narodowa / Polona."
+        }
+      },
+      "M084": {
+        "reason": "State the documented public-domain status as a neutral rights note so the media card shows a “Public domain” badge, preserving the source attribution.",
+        "fields": {
+          "rightsNote": "Public domain: Biblioteka Narodowa / Polona present this school context photograph as Domena Publiczna (public domain). Credit Biblioteka Narodowa / Polona."
+        }
+      },
+      "M199": {
+        "reason": "State the documented public-domain status as a neutral rights note so the media card shows a “Public domain” badge, preserving the source attribution.",
+        "fields": {
+          "rightsNote": "Public domain: the linked Polona (Biblioteka Narodowa) record for “A zresztą niech pan do mnie zadzwoni...” is marked Domena Publiczna. Credit Biblioteka Narodowa / Polona; printed edition Edition J. Altschuler, Warsaw–Riga, 1926."
+        }
+      },
+      "M081": {
+        "reason": "State the documented public-domain status as a neutral rights note so the media card shows a “Public domain” badge, preserving the source attribution.",
+        "fields": {
+          "rightsNote": "Public domain: theatrical-release poster available via Wikimedia Commons under a public-domain assessment. Credit Metro-Goldwyn-Mayer / Wikimedia Commons, file “A Night at the Opera film poster.jpg”."
         }
       }
     },
