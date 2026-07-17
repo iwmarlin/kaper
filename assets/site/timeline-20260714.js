@@ -82,10 +82,21 @@ function chapterForEvent(event) {
   return "america";
 }
 
+const NAV_LABELS = { warsaw: "Warsaw", berlin: "Berlin", paris: "Paris", america: "America" };
+const CHAPTER_ORDER = ["warsaw", "berlin", "paris", "america"];
+
+function navMarkup(chaptersPresent) {
+  if (chaptersPresent.length < 2) return "";
+  const links = chaptersPresent
+    .map((key) => `<a href="#chapter-${key}">${escapeHtml(NAV_LABELS[key])}</a>`)
+    .join("");
+  return `<nav class="timeline-nav" aria-label="Jump to chapter"><span class="timeline-nav__label">Jump to</span>${links}</nav>`;
+}
+
 function chapterMarkup(key) {
   const chapter = TIMELINE_CHAPTERS[key];
   return `
-    <div class="timeline-chapter" aria-label="${escapeHtml(`${chapter.title}, ${chapter.range}`)}">
+    <div class="timeline-chapter" id="chapter-${key}" aria-label="${escapeHtml(`${chapter.title}, ${chapter.range}`)}">
       <div class="timeline-chapter__inner">
         <span class="timeline-chapter__number">Chapter ${chapter.number}</span>
         <h2>${escapeHtml(chapter.title)}</h2>
@@ -141,30 +152,25 @@ try {
       target.innerHTML = `<div class="empty-state"><h2>No matching events</h2><p>Try a broader search or remove a filter.</p></div>`;
       return;
     }
+    const chaptersPresent = CHAPTER_ORDER.filter((key) => filtered.some((event) => chapterForEvent(event) === key));
     let currentChapter = "";
-    let ordinaryEventIndex = 0;
-    const timelineMarkup = [];
+    const timelineMarkup = [navMarkup(chaptersPresent)];
     for (const event of filtered) {
       const chapter = chapterForEvent(event);
       if (chapter !== currentChapter) {
         timelineMarkup.push(chapterMarkup(chapter));
         currentChapter = chapter;
-        ordinaryEventIndex = 0;
       }
       const hero = (event.heroMediaIds || []).map((id) => mediaById.get(id)).find((item) => item?.assetPath && item.mediaType !== "audio");
       const heroSources = hero ? resolveIds(hero, "sourceIds", sourcesById) : [];
       const description = event.shortDescription || event.longDescription || "";
       const isMilestone = MILESTONE_EVENT_IDS.has(event.id);
-      const side = ordinaryEventIndex % 2 === 0 ? "left" : "right";
-      if (!isMilestone) ordinaryEventIndex += 1;
       timelineMarkup.push(`
-        <article class="timeline-item timeline-item--${isMilestone ? "milestone" : side}" data-event-id="${escapeHtml(event.id)}">
+        <article class="timeline-item${isMilestone ? " timeline-item--milestone" : ""}" id="event-${escapeHtml(event.id)}" data-event-id="${escapeHtml(event.id)}">
+          <div class="timeline-item__date">${escapeHtml(event.displayDate || event.dateStart)}</div>
           <span class="timeline-item__node" aria-hidden="true"></span>
           <div class="timeline-item__body">
-            <div class="timeline-item__topline">
-              ${isMilestone ? `<span class="timeline-item__kicker">Milestone</span>` : ""}
-              <div class="timeline-item__date">${escapeHtml(event.displayDate || event.dateStart)}</div>
-            </div>
+            ${isMilestone ? `<span class="timeline-item__kicker">Milestone</span>` : ""}
             <div class="meta-row">${typeBadge(event.category || event.eventType)}${periodBadge(event.periods || event.period)}</div>
             <h3><a href="${recordUrl("event", event.id)}">${escapeHtml(event.title)}</a></h3>
             ${event.placeDisplay ? `<p class="timeline-item__place">${escapeHtml(event.placeDisplay)}</p>` : ""}
@@ -172,7 +178,7 @@ try {
               <figure class="timeline-item__figure">
                 ${responsiveImage(hero.assetPath, hero.altText || hero.title, {
                   className: "timeline-item__image",
-                  sizes: "(max-width: 680px) calc(100vw - 4rem), (max-width: 1100px) 42vw, 28rem",
+                  sizes: "(max-width: 680px) calc(100vw - 3rem), (max-width: 1100px) 46vw, 24rem",
                 })}
                 <figcaption>${renderMediaDisclosure(hero, heroSources, {
                   compact: true,
