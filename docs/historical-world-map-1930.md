@@ -1,7 +1,9 @@
 # Historical world map candidate (1930)
 
-Status: selected and prepared for prototyping. It is not yet integrated into the
-interactive map, georeferenced or converted into map tiles.
+Status: evaluated but not selected as the interactive basemap. Its
+double-hemisphere construction is unsuitable for a continuous transatlantic
+geographic layer. The implemented historical overview is documented in
+`docs/historical-basemap.md`.
 
 ## Selected plate
 
@@ -76,4 +78,3 @@ Recommended credit line:
 > *Svensk världsatlas*, Generalstabens litografiska anstalts förlag, Stockholm,
 > 1930, pp. 2–3, digitized by Project Runeberg. Public-domain assessment based on
 > the available source documentation.
-

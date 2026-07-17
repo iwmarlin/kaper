@@ -24,11 +24,62 @@ const selectionMeta = document.querySelector("#place-selection-meta");
 const selectionNote = document.querySelector("#place-selection-note");
 const selectionLink = document.querySelector("#place-selection-link");
 const toggleJourney = document.querySelector("#toggle-journey");
+const layerStatus = document.querySelector("#map-layer-status");
+const layerStatusLabel = document.querySelector("#map-layer-status-label");
+const layerStatusDetail = document.querySelector("#map-layer-status-detail");
 
 let map;
 let markerLayer;
+let historicalBasemap;
+let referenceBasemap;
+let historicalBasemapAvailable = true;
 let selectedId = null;
 const markerById = new Map();
+
+const HISTORICAL_FULL_ZOOM = 3;
+const REFERENCE_FULL_ZOOM = 5;
+const HISTORICAL_ATTRIBUTION = '<a href="https://www.davidrumsey.com/luna/servlet/detail/RUMSEY~8~1~363901~90131510%3AThe-world-on-Mercator-s-projection-" target="_blank" rel="noopener">Edward Stanford Ltd., 1926</a> · David Rumsey Map Collection';
+const REFERENCE_ATTRIBUTION = '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors';
+const STANFORD_MAP_BOUNDS = [[-70.1, -195.5], [84.5, 183.2]];
+
+function historicalOpacity(zoom) {
+  if (zoom <= HISTORICAL_FULL_ZOOM) return 1;
+  if (zoom >= REFERENCE_FULL_ZOOM) return 0;
+  return (REFERENCE_FULL_ZOOM - zoom) / (REFERENCE_FULL_ZOOM - HISTORICAL_FULL_ZOOM);
+}
+
+function updateAttribution(showHistorical, showReference) {
+  if (!map?.attributionControl) return;
+  map.attributionControl.removeAttribution(HISTORICAL_ATTRIBUTION);
+  map.attributionControl.removeAttribution(REFERENCE_ATTRIBUTION);
+  if (showHistorical) map.attributionControl.addAttribution(HISTORICAL_ATTRIBUTION);
+  if (showReference) map.attributionControl.addAttribution(REFERENCE_ATTRIBUTION);
+}
+
+function updateBasemap(zoom = map?.getZoom()) {
+  if (!map || !Number.isFinite(zoom) || !referenceBasemap) return;
+
+  const historical = historicalBasemapAvailable ? historicalOpacity(zoom) : 0;
+  const reference = 1 - historical;
+  historicalBasemap?.setOpacity(historical);
+  referenceBasemap.setOpacity(reference);
+  updateAttribution(historical > 0.02, reference > 0.02);
+
+  if (!layerStatus || !layerStatusLabel || !layerStatusDetail) return;
+  if (historical >= 0.75) {
+    layerStatus.dataset.mode = "historical";
+    layerStatusLabel.textContent = "Historical map · 1926";
+    layerStatusDetail.textContent = "Edward Stanford Ltd.";
+  } else if (historical > 0.02) {
+    layerStatus.dataset.mode = "transition";
+    layerStatusLabel.textContent = "Historical map + geographic reference";
+    layerStatusDetail.textContent = "The reference layer appears as you zoom in";
+  } else {
+    layerStatus.dataset.mode = "reference";
+    layerStatusLabel.textContent = "Present-day geographic reference";
+    layerStatusDetail.textContent = "Zoom out to return to the 1926 map";
+  }
+}
 
 function normalizedPeriod(place) {
   return periodValues(place)[0] || "";
@@ -135,10 +186,31 @@ try {
       zoomControl: true,
       preferCanvas: true,
     });
-    window.L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    referenceBasemap = window.L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
       maxZoom: 18,
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+      opacity: 0,
     }).addTo(map);
+
+    map.createPane("historicalBasemap");
+    const historicalPane = map.getPane("historicalBasemap");
+    historicalPane.classList.add("historical-basemap-pane");
+    historicalPane.style.zIndex = "250";
+    historicalPane.style.pointerEvents = "none";
+    historicalBasemap = window.L.imageOverlay(
+      "assets/images/maps/world-1926-stanford-mercator.jpg",
+      STANFORD_MAP_BOUNDS,
+      {
+        pane: "historicalBasemap",
+        opacity: 1,
+        alt: "Edward Stanford's 1926 political world map in Mercator projection",
+      },
+    ).addTo(map);
+    historicalBasemap.on("error", () => {
+      historicalBasemapAvailable = false;
+      updateBasemap(map.getZoom());
+    });
+    map.on("zoomanim", (event) => updateBasemap(event.zoom));
+    map.on("zoomend", () => updateBasemap(map.getZoom()));
 
     markerLayer = window.L.markerClusterGroup
       ? window.L.markerClusterGroup({
@@ -162,15 +234,16 @@ try {
 
   // Canonical migration route: Warsaw → Berlin → Vienna → Paris → Le Havre → Pier 57 (NY) → Los Angeles
   const JOURNEY_IDS = ["PL001", "PL002", "PL030", "PL003", "PL026", "PL025", "PL004"];
+  let journeyPoints = [];
   let routeLayer = null;
   let routeVisible = true;
   if (map && window.L) {
-    const points = JOURNEY_IDS
+    journeyPoints = JOURNEY_IDS
       .map((id) => publicPlaces.find((place) => place.id === id))
       .filter((place) => place && Number.isFinite(place.latitude) && Number.isFinite(place.longitude))
       .map((place) => [place.latitude, place.longitude]);
-    if (points.length > 1) {
-      routeLayer = window.L.polyline(points, {
+    if (journeyPoints.length > 1) {
+      routeLayer = window.L.polyline(journeyPoints, {
         color: "#8a5a2b",
         weight: 2.5,
         opacity: 0.85,
@@ -202,13 +275,7 @@ try {
   }
   applyRoute();
 
-  // Default view favours the dense European cluster; the transatlantic leg is a pan away.
-  const europeanBounds = publicPlaces
-    .filter((place) => (
-      Number.isFinite(place.latitude) && Number.isFinite(place.longitude)
-      && place.longitude >= -15 && place.longitude <= 40
-    ))
-    .map((place) => [place.latitude, place.longitude]);
+  // The opening view presents the complete migration route on the historical map.
   let firstView = true;
 
   function render() {
@@ -268,13 +335,14 @@ try {
     }
 
     if (map && bounds.length) {
-      if (firstView && !query && europeanBounds.length > 1) {
-        map.fitBounds(europeanBounds, { padding: [42, 42], maxZoom: 5 });
+      if (firstView && !query && journeyPoints.length > 1) {
+        map.fitBounds(journeyPoints, { padding: [48, 48], maxZoom: HISTORICAL_FULL_ZOOM });
       } else if (bounds.length === 1) {
         map.setView(bounds[0], 11);
       } else {
         map.fitBounds(bounds, { padding: [42, 42], maxZoom: filtered.length > 8 ? 5 : 10 });
       }
+      updateBasemap(map.getZoom());
       firstView = false;
     }
 

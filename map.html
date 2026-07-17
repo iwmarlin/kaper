@@ -12,7 +12,7 @@
   <link rel="canonical" href="https://iwmarlin.github.io/kaper/map.html">
   <link rel="preconnect" href="https://unpkg.com">
   <link rel="preconnect" href="https://tile.openstreetmap.org">
-  <link rel="stylesheet" href="assets/site/styles.css?v=20260717-1">
+  <link rel="stylesheet" href="assets/site/styles.css?v=20260717-2">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="anonymous">
   <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" crossorigin="anonymous">
   <title>Map — Bronisław Kaper, 1902–1939</title>
@@ -62,6 +62,10 @@
         <div class="map-explorer">
           <div class="map-canvas">
             <div id="research-map" role="region" aria-label="Interactive map of documented places"></div>
+            <div class="map-layer-status" id="map-layer-status" data-mode="historical" role="status" aria-live="polite">
+              <strong id="map-layer-status-label">Historical map · 1926</strong>
+              <span id="map-layer-status-detail">Edward Stanford Ltd.</span>
+            </div>
             <div class="map-legend" aria-label="Career-period legend">
               <span class="map-legend__key"><i class="map-legend__swatch map-legend__swatch--warsaw"></i>Warsaw · 1902–1926</span>
               <span class="map-legend__key"><i class="map-legend__swatch map-legend__swatch--european"></i>European · 1926–1934</span>
@@ -85,13 +89,13 @@
             <ul class="place-list" id="place-list"></ul>
           </aside>
         </div>
-        <p class="map-method-note">Coordinates reflect the documented map precision. Nearby addresses are grouped until the map is enlarged; selecting a group reveals its individual places. The dotted line traces Kaper's documented migration from Warsaw to Hollywood; use “Hide route” to remove it. Larger markers carry more linked events; colours mark the career period(s) in which each place is documented.</p>
+        <p class="map-method-note">The overview uses Edward Stanford Ltd.'s 1926 world map. At closer zoom levels it fades into a present-day geographic reference so that addresses remain legible; this reference does not claim to reconstruct the historical street network. Coordinates, markers and the dotted migration route remain fixed through the transition. Nearby addresses are grouped until the map is enlarged; larger markers carry more linked events and colours mark the documented career period(s).</p>
       </div>
     </section>
   </main>
   <footer class="site-footer" data-site-footer></footer>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js" crossorigin="anonymous"></script>
-  <script type="module" src="assets/site/map-explorer-20260714.js?v=20260716-4"></script>
+  <script type="module" src="assets/site/map-explorer-20260714.js?v=20260717-1"></script>
 </body>
 </html>
