@@ -1346,7 +1346,7 @@ main {
 .map-explorer {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(19rem, 0.36fr);
-  height: 39rem;
+  height: 44rem;
   border: 1px solid var(--line);
   border-radius: var(--radius-lg);
   background: var(--surface);
@@ -1480,6 +1480,12 @@ main {
   background: transparent;
   text-align: left;
   cursor: pointer;
+}
+
+@media (min-width: 901px) {
+  .place-list button {
+    padding-block: 0.68rem;
+  }
 }
 
 .place-list button:hover {
