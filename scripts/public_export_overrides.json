@@ -806,19 +806,28 @@
         }
       },
       "M228": {
-        "reason": "Classify the October 1934 departure notice chronologically as European; the Hollywood period begins in 1935.",
+        "reason": "Assign a public editorial category so the media card footer shows a category rather than a gallery status.",
         "fields": {
-          "period": "european"
+          "category": "press clipping"
         }
       },
       "M229": {
-        "reason": "Retain the earlier Tauber portrait in the European period and remove its description because it repeats the caption, credit line and canonical Library of Congress source citation.",
+        "reason": "Assign a public editorial category so the media card footer shows a category rather than a gallery status.",
         "fields": {
-          "period": "european"
-        },
-        "removeFields": [
-          "description"
-        ]
+          "category": "portrait"
+        }
+      },
+      "M227": {
+        "reason": "Assign a public editorial category so the media card footer shows a category rather than a gallery status.",
+        "fields": {
+          "category": "archival document"
+        }
+      },
+      "M230": {
+        "reason": "Assign a public editorial category so the media card footer shows a category rather than a gallery status.",
+        "fields": {
+          "category": "press clipping"
+        }
       }
     },
     "Contributions": {

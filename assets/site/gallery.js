@@ -128,16 +128,18 @@ try {
         <article class="media-card" data-media-id="${escapeHtml(item.id)}">
           <figure>${previewMarkup}</figure>
           <div class="media-card__body">
-            <div class="meta-row">${typeBadge(item.mediaType)}${periodBadge(item.periods || item.period)}${isFairUse ? "" : mediaRightsBadge(item)}</div>
-            ${isFairUse
-              ? renderMediaDisclosure(item, itemSources, {
-                compact: true,
-                fairUseResolutionLabel: "Low-resolution copy",
-                includeFullRightsNote: false,
-              })
-              : `<h2><a href="${recordUrl("media", item.id)}">${escapeHtml(item.title)}</a></h2>
-                <p>${escapeHtml(item.publicCaption || item.description || "")}</p>`}
-            <div class="card__footer"><span>${escapeHtml(humanize(item.category || item.galleryStatus))}</span><span>${escapeHtml(item.id)}</span></div>
+            <div class="meta-row">${typeBadge(item.mediaType)}${periodBadge(item.periods || item.period)}${mediaRightsBadge(item)}</div>
+            <h2><a href="${recordUrl("media", item.id)}">${escapeHtml(item.title)}</a></h2>
+            <p>${escapeHtml(item.publicCaption || item.description || "")}</p>
+            ${isFairUse ? renderMediaDisclosure(item, itemSources, {
+              compact: true,
+              fairUseResolutionLabel: "Low-resolution copy",
+              includeTitle: false,
+              includeCaption: false,
+              includeRightsBadge: false,
+              includeFullRightsNote: false,
+            }) : ""}
+            <div class="card__footer"><span>${escapeHtml(humanize(item.category || item.mediaType))}</span><span>${escapeHtml(item.id)}</span></div>
             <div class="media-card__actions">
               <a href="${recordUrl("media", item.id)}">${isGallery ? `Open gallery (${item.assetPaths.length})` : "View record"} <span aria-hidden="true">→</span></a>
               ${external ? `<a href="${escapeHtml(external)}" target="_blank" rel="noreferrer">Open external media <span aria-hidden="true">↗</span></a>` : ""}
