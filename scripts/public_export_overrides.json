@@ -930,6 +930,30 @@
         "fields": {
           "placeDisplay": "Berlin / Paris / Montpellier"
         }
+      },
+      "TE0019": {
+        "reason": "Kaper was resident in Berlin, not Paris, in 1928-1931; the Paris (PL003) place link is anachronistic and predates his 1933 move to Paris. Remove Paris from these Berlin-period events and correct the placeDisplay from 'Berlin / Paris' to 'Berlin'.",
+        "fields": {
+          "placeDisplay": "Berlin"
+        }
+      },
+      "TE0021": {
+        "reason": "Kaper was resident in Berlin, not Paris, in 1928-1931; the Paris (PL003) place link is anachronistic and predates his 1933 move to Paris. Remove Paris from these Berlin-period events and correct the placeDisplay from 'Berlin / Paris' to 'Berlin'.",
+        "fields": {
+          "placeDisplay": "Berlin"
+        }
+      },
+      "TE0025": {
+        "reason": "Kaper was resident in Berlin, not Paris, in 1928-1931; the Paris (PL003) place link is anachronistic and predates his 1933 move to Paris. Remove Paris from these Berlin-period events and correct the placeDisplay from 'Berlin / Paris' to 'Berlin'.",
+        "fields": {
+          "placeDisplay": "Berlin"
+        }
+      },
+      "TE0026": {
+        "reason": "Kaper was resident in Berlin, not Paris, in 1928-1931; the Paris (PL003) place link is anachronistic and predates his 1933 move to Paris. Remove Paris from these Berlin-period events and correct the placeDisplay from 'Berlin / Paris' to 'Berlin'.",
+        "fields": {
+          "placeDisplay": "Berlin"
+        }
       }
     },
     "People": {
@@ -1698,6 +1722,22 @@
             "PL044"
           ]
         }
+      },
+      "TE0052": {
+        "reason": "Attach Kaper's own AFI/Louis B. Mayer oral history (Atkins, 1975) as the primary-source basis for the London episode and the 'Viennese composers' label. In the transcript Kaper recounts the Sam Spiegel (S.P. Eagle) London film trip with Jurmann for a projected Anthony Asquith picture that collapsed (PL038, TE0052 route to MGM), the Ritz audition for Louis B. Mayer (TE0052), and the partnership with the Viennese Walter Jurmann underlying MGM's Viennese branding (PL030, TE0053).",
+        "fields": {
+          "sourceIds": [
+            "SRC0494"
+          ]
+        }
+      },
+      "TE0053": {
+        "reason": "Attach Kaper's own AFI/Louis B. Mayer oral history (Atkins, 1975) as the primary-source basis for the London episode and the 'Viennese composers' label. In the transcript Kaper recounts the Sam Spiegel (S.P. Eagle) London film trip with Jurmann for a projected Anthony Asquith picture that collapsed (PL038, TE0052 route to MGM), the Ritz audition for Louis B. Mayer (TE0052), and the partnership with the Viennese Walter Jurmann underlying MGM's Viennese branding (PL030, TE0053).",
+        "fields": {
+          "sourceIds": [
+            "SRC0494"
+          ]
+        }
       }
     },
     "Places": {
@@ -1709,6 +1749,22 @@
           ],
           "sourceIds": [
             "SRC0559"
+          ]
+        }
+      },
+      "PL038": {
+        "reason": "Attach Kaper's own AFI/Louis B. Mayer oral history (Atkins, 1975) as the primary-source basis for the London episode and the 'Viennese composers' label. In the transcript Kaper recounts the Sam Spiegel (S.P. Eagle) London film trip with Jurmann for a projected Anthony Asquith picture that collapsed (PL038, TE0052 route to MGM), the Ritz audition for Louis B. Mayer (TE0052), and the partnership with the Viennese Walter Jurmann underlying MGM's Viennese branding (PL030, TE0053).",
+        "fields": {
+          "sourceIds": [
+            "SRC0494"
+          ]
+        }
+      },
+      "PL030": {
+        "reason": "Attach Kaper's own AFI/Louis B. Mayer oral history (Atkins, 1975) as the primary-source basis for the London episode and the 'Viennese composers' label. In the transcript Kaper recounts the Sam Spiegel (S.P. Eagle) London film trip with Jurmann for a projected Anthony Asquith picture that collapsed (PL038, TE0052 route to MGM), the Ritz audition for Louis B. Mayer (TE0052), and the partnership with the Viennese Walter Jurmann underlying MGM's Viennese branding (PL030, TE0053).",
+        "fields": {
+          "sourceIds": [
+            "SRC0494"
           ]
         }
       }
@@ -1848,6 +1904,19 @@
             "P116"
           ]
         }
+      },
+      "SRC0494": {
+        "reason": "Attach Kaper's own AFI/Louis B. Mayer oral history (Atkins, 1975) as the primary-source basis for the London episode and the 'Viennese composers' label. In the transcript Kaper recounts the Sam Spiegel (S.P. Eagle) London film trip with Jurmann for a projected Anthony Asquith picture that collapsed (PL038, TE0052 route to MGM), the Ritz audition for Louis B. Mayer (TE0052), and the partnership with the Viennese Walter Jurmann underlying MGM's Viennese branding (PL030, TE0053).",
+        "fields": {
+          "timelineEventIds": [
+            "TE0052",
+            "TE0053"
+          ],
+          "placeIds": [
+            "PL030",
+            "PL038"
+          ]
+        }
       }
     }
   },
@@ -1895,6 +1964,51 @@
           ],
           "mediaIds": [
             "M031"
+          ]
+        }
+      },
+      "TE0019": {
+        "reason": "Kaper was resident in Berlin, not Paris, in 1928-1931; the Paris (PL003) place link is anachronistic and predates his 1933 move to Paris. Remove Paris from these Berlin-period events and correct the placeDisplay from 'Berlin / Paris' to 'Berlin'.",
+        "fields": {
+          "placeIds": [
+            "PL003"
+          ]
+        }
+      },
+      "TE0021": {
+        "reason": "Kaper was resident in Berlin, not Paris, in 1928-1931; the Paris (PL003) place link is anachronistic and predates his 1933 move to Paris. Remove Paris from these Berlin-period events and correct the placeDisplay from 'Berlin / Paris' to 'Berlin'.",
+        "fields": {
+          "placeIds": [
+            "PL003"
+          ]
+        }
+      },
+      "TE0025": {
+        "reason": "Kaper was resident in Berlin, not Paris, in 1928-1931; the Paris (PL003) place link is anachronistic and predates his 1933 move to Paris. Remove Paris from these Berlin-period events and correct the placeDisplay from 'Berlin / Paris' to 'Berlin'.",
+        "fields": {
+          "placeIds": [
+            "PL003"
+          ]
+        }
+      },
+      "TE0026": {
+        "reason": "Kaper was resident in Berlin, not Paris, in 1928-1931; the Paris (PL003) place link is anachronistic and predates his 1933 move to Paris. Remove Paris from these Berlin-period events and correct the placeDisplay from 'Berlin / Paris' to 'Berlin'.",
+        "fields": {
+          "placeIds": [
+            "PL003"
+          ]
+        }
+      }
+    },
+    "Places": {
+      "PL003": {
+        "reason": "Kaper was resident in Berlin, not Paris, in 1928-1931; the Paris (PL003) place link is anachronistic and predates his 1933 move to Paris. Remove Paris from these Berlin-period events and correct the placeDisplay from 'Berlin / Paris' to 'Berlin'.",
+        "fields": {
+          "timelineEventIds": [
+            "TE0019",
+            "TE0021",
+            "TE0025",
+            "TE0026"
           ]
         }
       }
