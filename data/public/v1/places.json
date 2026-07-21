@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 43,
+  "count": 44,
   "records": [
     {
       "id": "PL001",
@@ -1251,6 +1251,31 @@
       ],
       "sourceIds": [
         "SRC0536"
+      ],
+      "periods": [
+        "european"
+      ]
+    },
+    {
+      "id": "PL045",
+      "displayName": "Hotel Edison, 228 West 47th Street, New York",
+      "authorizedName": "Hotel Edison, 228 West 47th Street, New York, NY",
+      "placeType": "venue",
+      "city": "New York",
+      "region": "New York",
+      "country": "United States",
+      "latitude": 40.7594,
+      "longitude": -73.9857,
+      "period": "european",
+      "slug": "hotel-edison-new-york",
+      "publicNote": "New York hotel where Kaper and his wife Eleonora stayed on arrival from Le Havre before travelling on to Los Angeles. In his 1975 AFI oral history Kaper recalled the Edison Hotel as the studio's $300-a-week accommodation tier.",
+      "mapPrecision": "venue_level",
+      "publicScope": "map_and_detail",
+      "timelineEventIds": [
+        "TE0035"
+      ],
+      "sourceIds": [
+        "SRC0494"
       ],
       "periods": [
         "european"
