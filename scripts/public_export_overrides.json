@@ -340,7 +340,8 @@
       "SRC0358": {
         "reason": "Keep the citation bibliographic and move database relationships to the canonical relation fields rendered separately on the public Source page.",
         "fields": {
-          "fullCitation": "Images Musicales. “Tot Weerziens, Mijnheer Jansen (Auf Wiederseh'n Herr Doktor!).” Dutch-language sheet music. Music by Fritz Rotter and B. Kaper; Dutch text by Ferry; cover by Hassel. Vienna: Wiener Boheme Verlag, 1929, W.B.V. 1328, 4 pp."
+          "fullCitation": "Images Musicales. “Tot Weerziens, Mijnheer Jansen (Auf Wiederseh'n Herr Doktor!).” Dutch-language sheet music. Music by Fritz Rotter and B. Kaper; Dutch text by Ferry; cover by Hassel. Vienna: Wiener Boheme Verlag, 1929, W.B.V. 1328, 4 pp.",
+          "sourceType": "online_database"
         }
       },
       "SRC0365": {
@@ -365,13 +366,530 @@
       "SRC0455": {
         "reason": "Keep the poster citation and object distinction without referring to internal Media usage or an IMDb image.",
         "fields": {
-          "fullCitation": "Filmposter-Archiv. Madame wünscht keine Kinder (Austria, 1933), film poster designed by Anton Ziegler, record no. 14466. Poster for the German-language version of Madame ne veut pas d’enfants; distinct from the French poster."
+          "fullCitation": "Filmposter-Archiv. Madame wünscht keine Kinder (Austria, 1933), film poster designed by Anton Ziegler, record no. 14466. Poster for the German-language version of Madame ne veut pas d’enfants; distinct from the French poster.",
+          "sourceType": "online_database"
         }
       },
       "SRC0110": {
         "reason": "Remove the incorrect statement that the University of Warsaw student file includes the baptism record; the baptism is documented separately by the parish/metrical record (SRC0012).",
         "fields": {
           "fullCitation": "Archiwum Uniwersytetu Warszawskiego, Bronisław Kaper student file, RP 6854. Aggregate archival source for documents from Kaper's University of Warsaw student file, including the young portrait, University of Warsaw matriculation and study records, and the police certificate of 21 April 1920 recording his religion as Mosaic. No public URL; used with permission / archival consultation."
+        }
+      },
+      "SRC0288": {
+        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "fields": {
+          "sourceType": "online_database"
+        }
+      },
+      "SRC0289": {
+        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "fields": {
+          "sourceType": "online_database"
+        }
+      },
+      "SRC0290": {
+        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "fields": {
+          "sourceType": "online_database"
+        }
+      },
+      "SRC0299": {
+        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "fields": {
+          "sourceType": "web_page"
+        }
+      },
+      "SRC0302": {
+        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "fields": {
+          "sourceType": "web_page"
+        }
+      },
+      "SRC0306": {
+        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "fields": {
+          "sourceType": "web_page"
+        }
+      },
+      "SRC0307": {
+        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "fields": {
+          "sourceType": "web_page"
+        }
+      },
+      "SRC0330": {
+        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "fields": {
+          "sourceType": "wikimedia_commons_file"
+        }
+      },
+      "SRC0332": {
+        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "fields": {
+          "sourceType": "web_page"
+        }
+      },
+      "SRC0336": {
+        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "fields": {
+          "sourceType": "wikimedia_commons_file"
+        }
+      },
+      "SRC0338": {
+        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "fields": {
+          "sourceType": "online_database"
+        }
+      },
+      "SRC0339": {
+        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "fields": {
+          "sourceType": "online_database"
+        }
+      },
+      "SRC0340": {
+        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "fields": {
+          "sourceType": "online_database"
+        }
+      },
+      "SRC0342": {
+        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "fields": {
+          "sourceType": "online_database"
+        }
+      },
+      "SRC0343": {
+        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "fields": {
+          "sourceType": "online_database"
+        }
+      },
+      "SRC0346": {
+        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "fields": {
+          "sourceType": "online_database"
+        }
+      },
+      "SRC0351": {
+        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "fields": {
+          "sourceType": "wikimedia_commons_file"
+        }
+      },
+      "SRC0356": {
+        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "fields": {
+          "sourceType": "online_database"
+        }
+      },
+      "SRC0357": {
+        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "fields": {
+          "sourceType": "online_database"
+        }
+      },
+      "SRC0359": {
+        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "fields": {
+          "sourceType": "online_database"
+        }
+      },
+      "SRC0360": {
+        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "fields": {
+          "sourceType": "online_database"
+        }
+      },
+      "SRC0362": {
+        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "fields": {
+          "sourceType": "wikimedia_commons_file"
+        }
+      },
+      "SRC0364": {
+        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "fields": {
+          "sourceType": "wikimedia_commons_file"
+        }
+      },
+      "SRC0366": {
+        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "fields": {
+          "sourceType": "wikimedia_commons_file"
+        }
+      },
+      "SRC0383": {
+        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "fields": {
+          "sourceType": "wikimedia_commons_file"
+        }
+      },
+      "SRC0384": {
+        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "fields": {
+          "sourceType": "wikimedia_commons_file"
+        }
+      },
+      "SRC0387": {
+        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "fields": {
+          "sourceType": "wikimedia_commons_file"
+        }
+      },
+      "SRC0388": {
+        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "fields": {
+          "sourceType": "wikimedia_commons_file"
+        }
+      },
+      "SRC0389": {
+        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "fields": {
+          "sourceType": "wikimedia_commons_file"
+        }
+      },
+      "SRC0391": {
+        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "fields": {
+          "sourceType": "wikimedia_commons_file"
+        }
+      },
+      "SRC0393": {
+        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "fields": {
+          "sourceType": "wikimedia_article_page"
+        }
+      },
+      "SRC0395": {
+        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "fields": {
+          "sourceType": "wikimedia_article_page"
+        }
+      },
+      "SRC0397": {
+        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "fields": {
+          "sourceType": "wikimedia_article_page"
+        }
+      },
+      "SRC0400": {
+        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "fields": {
+          "sourceType": "wikimedia_commons_file"
+        }
+      },
+      "SRC0417": {
+        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "fields": {
+          "sourceType": "digital_collection_item"
+        }
+      },
+      "SRC0421": {
+        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "fields": {
+          "sourceType": "online_database"
+        }
+      },
+      "SRC0422": {
+        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "fields": {
+          "sourceType": "online_database"
+        }
+      },
+      "SRC0425": {
+        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "fields": {
+          "sourceType": "online_database"
+        }
+      },
+      "SRC0426": {
+        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "fields": {
+          "sourceType": "online_database"
+        }
+      },
+      "SRC0428": {
+        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "fields": {
+          "sourceType": "wikimedia_article_page"
+        }
+      },
+      "SRC0429": {
+        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "fields": {
+          "sourceType": "wikimedia_article_page"
+        }
+      },
+      "SRC0430": {
+        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "fields": {
+          "sourceType": "wikimedia_commons_file"
+        }
+      },
+      "SRC0432": {
+        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "fields": {
+          "sourceType": "digital_collection_item"
+        }
+      },
+      "SRC0433": {
+        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "fields": {
+          "sourceType": "digital_collection_item"
+        }
+      },
+      "SRC0434": {
+        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "fields": {
+          "sourceType": "web_page"
+        }
+      },
+      "SRC0435": {
+        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "fields": {
+          "sourceType": "archival_digital_record"
+        }
+      },
+      "SRC0436": {
+        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "fields": {
+          "sourceType": "wikimedia_article_page"
+        }
+      },
+      "SRC0437": {
+        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "fields": {
+          "sourceType": "wikimedia_commons_file"
+        }
+      },
+      "SRC0438": {
+        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "fields": {
+          "sourceType": "archival_digital_record"
+        }
+      },
+      "SRC0439": {
+        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "fields": {
+          "sourceType": "digital_collection_item"
+        }
+      },
+      "SRC0441": {
+        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "fields": {
+          "sourceType": "web_page"
+        }
+      },
+      "SRC0443": {
+        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "fields": {
+          "sourceType": "digital_collection_item"
+        }
+      },
+      "SRC0446": {
+        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "fields": {
+          "sourceType": "online_database"
+        }
+      },
+      "SRC0447": {
+        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "fields": {
+          "sourceType": "online_database"
+        }
+      },
+      "SRC0448": {
+        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "fields": {
+          "sourceType": "wikimedia_article_page"
+        }
+      },
+      "SRC0450": {
+        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "fields": {
+          "sourceType": "online_database"
+        }
+      },
+      "SRC0456": {
+        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "fields": {
+          "sourceType": "wikimedia_commons_file"
+        }
+      },
+      "SRC0477": {
+        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "fields": {
+          "sourceType": "digital_collection_item"
+        }
+      },
+      "SRC0488": {
+        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "fields": {
+          "sourceType": "web_page"
+        }
+      },
+      "SRC0489": {
+        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "fields": {
+          "sourceType": "image_or_photograph"
+        }
+      },
+      "SRC0492": {
+        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "fields": {
+          "sourceType": "web_page"
+        }
+      },
+      "SRC0501": {
+        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "fields": {
+          "sourceType": "web_page"
+        }
+      },
+      "SRC0503": {
+        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "fields": {
+          "sourceType": "web_page"
+        }
+      },
+      "SRC0520": {
+        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "fields": {
+          "sourceType": "online_database"
+        }
+      },
+      "SRC0523": {
+        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "fields": {
+          "sourceType": "web_page"
+        }
+      },
+      "SRC0524": {
+        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "fields": {
+          "sourceType": "web_page"
+        }
+      },
+      "SRC0532": {
+        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "fields": {
+          "sourceType": "wikimedia_article_page"
+        }
+      },
+      "SRC0533": {
+        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "fields": {
+          "sourceType": "wikimedia_article_page"
+        }
+      },
+      "SRC0534": {
+        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "fields": {
+          "sourceType": "web_page"
+        }
+      },
+      "SRC0535": {
+        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "fields": {
+          "sourceType": "digital_collection_item"
+        }
+      },
+      "SRC0537": {
+        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "fields": {
+          "sourceType": "wikimedia_commons_file"
+        }
+      },
+      "SRC0538": {
+        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "fields": {
+          "sourceType": "digital_collection_item"
+        }
+      },
+      "SRC0539": {
+        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "fields": {
+          "sourceType": "digital_collection_item"
+        }
+      },
+      "SRC0540": {
+        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "fields": {
+          "sourceType": "digital_collection_item"
+        }
+      },
+      "SRC0541": {
+        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "fields": {
+          "sourceType": "digital_collection_item"
+        }
+      },
+      "SRC0542": {
+        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "fields": {
+          "sourceType": "digital_collection_item"
+        }
+      },
+      "SRC0543": {
+        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "fields": {
+          "sourceType": "online_database"
+        }
+      },
+      "SRC0544": {
+        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "fields": {
+          "sourceType": "online_database"
+        }
+      },
+      "SRC0545": {
+        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "fields": {
+          "sourceType": "archival_digital_record"
+        }
+      },
+      "SRC0548": {
+        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "fields": {
+          "sourceType": "online_database"
+        }
+      },
+      "SRC0549": {
+        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "fields": {
+          "sourceType": "online_database"
+        }
+      },
+      "SRC0558": {
+        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "fields": {
+          "sourceType": "wikimedia_commons_file"
+        }
+      },
+      "SRC0559": {
+        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "fields": {
+          "sourceType": "wikimedia_commons_file"
+        }
+      },
+      "SRC0560": {
+        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "fields": {
+          "sourceType": "wikimedia_commons_file"
+        }
+      },
+      "SRC0561": {
+        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "fields": {
+          "sourceType": "wikimedia_commons_file"
+        }
+      },
+      "SRC0562": {
+        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "fields": {
+          "sourceType": "wikimedia_commons_file"
         }
       }
     },
