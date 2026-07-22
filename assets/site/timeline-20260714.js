@@ -1,4 +1,4 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=30f3d51e0a";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=3d51d86713";
 import {
   debounce,
   escapeHtml,
@@ -15,7 +15,7 @@ import {
   renderLoading,
   resolveIds,
   responsiveImage,
-} from "./core.js?v=30f3d51e0a";
+} from "./core.js?v=3d51d86713";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 mountSiteChrome("timeline");
@@ -185,14 +185,21 @@ try {
       const heroSources = hero ? resolveIds(hero, "sourceIds", sourcesById) : [];
       const description = event.shortDescription || event.longDescription || "";
       const isMilestone = MILESTONE_EVENT_IDS.has(event.id);
+      const rawDate = event.displayDate || event.dateStart || "";
+      const isCompoundDate = rawDate.includes("/") || (rawDate.includes("\u2013") && /january|february|march|april|may|june|july|august|september|october|november|december/i.test(rawDate));
+      const startYear = String(event.dateStart || "").slice(0, 4);
+      const endYear = String(event.dateEnd || "").slice(0, 4);
+      const railDate = isCompoundDate ? (endYear && endYear !== startYear ? `${startYear}\u2013${endYear}` : startYear) : rawDate;
+      const fullDate = isCompoundDate ? rawDate.replace(/\s*\u2013\s*/g, " \u2013 ").replace(/\s*\/\s*/g, " / ") : "";
       timelineMarkup.push(`
         <article class="timeline-item${isMilestone ? " timeline-item--milestone" : ""}" id="event-${escapeHtml(event.id)}" data-event-id="${escapeHtml(event.id)}">
-          <div class="timeline-item__date">${escapeHtml(event.displayDate || event.dateStart)}</div>
+          <div class="timeline-item__date">${escapeHtml(railDate)}</div>
           <span class="timeline-item__node" aria-hidden="true"></span>
           <div class="timeline-item__body">
             ${isMilestone ? `<span class="timeline-item__kicker">Milestone</span>` : ""}
             <div class="meta-row"><span class="badge badge--type">${escapeHtml(GROUP_LABELS[eventGroup(event)])}</span>${periodBadge(event.periods || event.period)}</div>
             <h3><a href="${recordUrl("event", event.id)}">${escapeHtml(event.title)}</a></h3>
+            ${fullDate ? `<p class="timeline-item__fulldate">${escapeHtml(fullDate)}</p>` : ""}
             ${event.placeDisplay ? `<p class="timeline-item__place">${escapeHtml(event.placeDisplay)}</p>` : ""}
             ${hero ? `<div class="timeline-item__media-row${heroPortrait ? " timeline-item__media-row--portrait" : ""}">
               <figure class="timeline-item__figure">

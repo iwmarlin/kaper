@@ -1197,6 +1197,15 @@ main {
   font-size: 0.8rem;
 }
 
+.timeline-item__fulldate {
+  margin: 0 0 0.55rem;
+  color: var(--accent-dark);
+  font-family: var(--serif);
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
 .timeline-item__media-row {
   display: grid;
   grid-template-columns: 1fr;
