@@ -213,12 +213,33 @@ def home_payload(data_root: Path) -> dict:
     events = read_json(data_root / "timeline-events.json").get("records", [])
     media = read_json(data_root / "media.json").get("records", [])
     counts = manifest["counts"]
-    featured = sorted(
-        (item for item in events if item.get("featured")),
-        key=lambda item: str(item.get("sortDate") or item.get("dateStart") or ""),
-    )[:6]
-    if len(featured) >= 3:
-        event_selection = featured[:3]
+    def event_sort_key(item: dict) -> str:
+        return str(item.get("sortDate") or item.get("dateStart") or "")
+
+    events_by_id = {item["id"]: item for item in events}
+    # Curated signature moments — one per era, chosen for narrative strength, so the
+    # home teaser spans the whole career (Warsaw → Europe → Hollywood):
+    # first published songs → the Jurmann partnership → the Hollywood debut.
+    pinned = [events_by_id.get(event_id) for event_id in ("TE0014", "TE0026", "TE0037")]
+    featured = sorted((item for item in events if item.get("featured")), key=event_sort_key)
+    if all(pinned):
+        event_selection = sorted(pinned, key=event_sort_key)[:3]
+    elif len(featured) >= 3:
+        # Fallback: one featured moment per era so the teaser still spans the career.
+        selection: list[dict] = []
+        chosen: set = set()
+        for era in ("warsaw", "european", "hollywood"):
+            pick = next((item for item in featured if item.get("period") == era), None)
+            if pick and pick["id"] not in chosen:
+                selection.append(pick)
+                chosen.add(pick["id"])
+        for item in featured:
+            if len(selection) >= 3:
+                break
+            if item["id"] not in chosen:
+                selection.append(item)
+                chosen.add(item["id"])
+        event_selection = sorted(selection, key=event_sort_key)[:3]
     else:
         candidates = sorted(
             (item for item in events if item.get("shortDescription")),

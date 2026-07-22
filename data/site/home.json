@@ -45,114 +45,15 @@
   },
   "events": [
     {
-      "id": "TE0001",
-      "slug": "23-january-5-february-1902-birth",
-      "title": "Birth",
-      "label": "5 Feb 1902 · Birth in Warsaw",
-      "displayDate": "23 January / 5 February 1902",
-      "dateStart": "1902-02-05",
-      "datePrecision": "day",
-      "sortDate": "1902-02-05",
-      "sortOrder": 1,
-      "displayMode": "point",
-      "eventType": "life",
-      "period": "warsaw",
-      "periodKey": "warsaw",
-      "category": "birth_family",
-      "filterTags": [
-        "life",
-        "warsaw"
-      ],
-      "placeDisplay": "Warsaw",
-      "cityKey": "warsaw",
-      "shortDescription": "Born in Warsaw to Szmul Moszek Kaper and Maria Mucha, in a Jewish family registered in the city’s non-Christian civil records.",
-      "longDescription": "Born on January 23 (February 5, New Style) in Warsaw. Father – Szmul Moszek (later Stanisław/Samuel) Kaper, bookkeeper, aged 28. Mother – Maria (Mariam) née Mucha, aged 24. The family is of Jewish faith (registered at the Office of Civil Status for Non-Christian Confessions, 8th Jerusalem District, Warsaw).",
-      "featured": true,
-      "roles": [
-        "biographical_event"
-      ],
-      "personIds": [
-        "P009"
-      ],
-      "sourceIds": [
-        "SRC0012",
-        "SRC0110"
-      ],
-      "mediaIds": [
-        "M030",
-        "M087"
-      ],
-      "heroMediaIds": [
-        "M087"
-      ],
-      "placeIds": [
-        "PL001",
-        "PL014"
-      ],
-      "periods": [
-        "warsaw"
-      ]
-    },
-    {
-      "id": "TE0005",
-      "slug": "17-july-1920-baptism",
-      "title": "Baptism",
-      "label": "17 July 1920 · Baptism",
-      "displayDate": "17 July 1920",
-      "dateStart": "1920-07-17",
-      "datePrecision": "day",
-      "sortDate": "1920-07-17",
-      "sortOrder": 5,
-      "displayMode": "point",
-      "eventType": "life",
-      "period": "warsaw",
-      "periodKey": "warsaw",
-      "category": "religion_identity",
-      "filterTags": [
-        "life",
-        "warsaw"
-      ],
-      "placeDisplay": "Warsaw",
-      "cityKey": "warsaw",
-      "shortDescription": "Kaper is baptized at St. Alexander’s parish in Warsaw, marking his conversion to Catholicism.",
-      "longDescription": "On July 17, Kaper is baptized at the Roman Catholic Parish of St. Alexander in Warsaw, at the age of 18. The baptism marks his conversion from Judaism to Catholicism.",
-      "featured": true,
-      "roles": [
-        "biographical_event",
-        "identity_document"
-      ],
-      "personIds": [
-        "P009"
-      ],
-      "sourceIds": [
-        "SRC0012",
-        "SRC0110"
-      ],
-      "mediaIds": [
-        "M030",
-        "M065"
-      ],
-      "heroMediaIds": [
-        "M065"
-      ],
-      "placeIds": [
-        "PL001",
-        "PL011"
-      ],
-      "periods": [
-        "warsaw"
-      ]
-    },
-    {
-      "id": "TE0046",
-      "slug": "koszutski-girls-b-asper-pseudonym",
-      "title": "Koszutski Girls and the B. Asper pseudonym",
-      "label": "Koszutski Girls / B. Asper",
-      "displayDate": "1923",
-      "dateStart": "1923-07-01",
+      "id": "TE0014",
+      "slug": "1926-first-cabaret-songs-published",
+      "title": "First cabaret songs published",
+      "label": "1926 · First cabaret songs",
+      "displayDate": "1926",
+      "dateStart": "1926-01-01",
       "datePrecision": "year",
-      "sortDate": "1923-07-01",
-      "sortOrder": 9.5,
+      "sortDate": "1926-07-01",
+      "sortOrder": 14,
       "displayMode": "point",
       "eventType": "career",
       "period": "warsaw",
@@ -164,34 +65,154 @@
       ],
       "placeDisplay": "Warsaw",
       "cityKey": "warsaw",
-      "shortDescription": "The manuscript Koszutski Girls shows Kaper already working with revue-dance conventions and using the B. Asper signature that would later appear in printed songs.",
-      "longDescription": "Koszutski Girls complicates a simple division between Kaper’s concert training and his later popular-song career. Although preserved as an autograph manuscript, the piece is tied to Warsaw revue culture and to the international fashion for “girls” troupes. Its practical performance marking and the signature “Mus. B. Asper” foreshadow the pseudonymous popular-song activity of 1926–1927, making it a useful early marker of Kaper’s movement between concert idiom, cabaret practice, and commercial entertainment.",
+      "shortDescription": "Kaper’s first Warsaw cabaret songs appear under the pseudonym Bruno Asper.",
+      "longDescription": "Songs for Warsaw cabarets published under the pseudonym Bruno Asper (lyrics by Andrzej Włast).",
       "featured": true,
       "roles": [
-        "work_milestone",
-        "career_mechanism"
+        "publication_event",
+        "career_milestone"
+      ],
+      "personIds": [
+        "P003",
+        "P009"
+      ],
+      "sourceIds": [
+        "SRC0053",
+        "SRC0054",
+        "SRC0055",
+        "SRC0066",
+        "SRC0067"
+      ],
+      "workIds": [
+        "W-S001",
+        "W-S002",
+        "W-S003",
+        "W-S005",
+        "W-S006"
+      ],
+      "mediaIds": [
+        "M030",
+        "M080"
+      ],
+      "heroMediaIds": [
+        "M080"
+      ],
+      "placeIds": [
+        "PL001",
+        "PL018"
+      ],
+      "periods": [
+        "warsaw"
+      ]
+    },
+    {
+      "id": "TE0026",
+      "slug": "1931-meeting-walter-jurmann",
+      "title": "Meeting Walter Jurmann",
+      "label": "1931 · Meeting Walter Jurmann",
+      "displayDate": "1931",
+      "dateStart": "1931-01-01",
+      "datePrecision": "year",
+      "sortDate": "1931-07-01",
+      "sortOrder": 26,
+      "displayMode": "point",
+      "eventType": "career",
+      "period": "european",
+      "periodKey": "european",
+      "category": "collaboration",
+      "filterTags": [
+        "career",
+        "europe"
+      ],
+      "placeDisplay": "Berlin",
+      "cityKey": "europe",
+      "shortDescription": "Kaper meets Walter Jurmann, launching the songwriting partnership that defines his European film career.",
+      "longDescription": "Introduced by Fritz Rotter, marking the start of the Jurmann–Kaper duo. First joint project: “Die große Attraktion,” directed by Max Reichmann. Kaper composes the hit slow fox “Du warst mir ein Roman” for Richard Tauber.",
+      "featured": true,
+      "roles": [
+        "professional_network",
+        "career_milestone"
+      ],
+      "personIds": [
+        "P009",
+        "P020",
+        "P077"
+      ],
+      "sourceIds": [
+        "SRC0490"
+      ],
+      "workIds": [
+        "W-F007",
+        "W-S039"
+      ],
+      "mediaIds": [
+        "M031",
+        "M046"
+      ],
+      "heroMediaIds": [
+        "M046"
+      ],
+      "placeIds": [
+        "PL002"
+      ],
+      "periods": [
+        "european"
+      ]
+    },
+    {
+      "id": "TE0037",
+      "slug": "1935-hollywood-debut",
+      "title": "Hollywood debut",
+      "label": "1935 · Hollywood debut",
+      "displayDate": "1935",
+      "dateStart": "1935-01-01",
+      "datePrecision": "year",
+      "sortDate": "1935-07-01",
+      "sortOrder": 37,
+      "displayMode": "point",
+      "eventType": "career",
+      "period": "hollywood",
+      "periodKey": "hollywood",
+      "category": "hollywood",
+      "filterTags": [
+        "career",
+        "hollywood"
+      ],
+      "placeDisplay": "Hollywood/Los Angeles",
+      "cityKey": "hollywood",
+      "shortDescription": "Kaper makes his Hollywood debut at MGM, contributing to Escapade and other major studio projects.",
+      "longDescription": "First American score: \"Escapade\" (dir. Robert Z. Leonard) with William Powell and Luise Rainer. Press hails \"Two New Composers\" of Kiepura's European hits. Songs also for Marx Brothers' \"A Night at the Opera\" (with Ned Washington) and \"Mutiny on the Bounty\".",
+      "roles": [
+        "career_milestone",
+        "work_milestone"
       ],
       "personIds": [
         "P009"
       ],
       "sourceIds": [
-        "SRC0490",
-        "SRC0552"
+        "SRC0090",
+        "SRC0527"
       ],
       "workIds": [
-        "W-O002"
+        "W-F033",
+        "W-F034",
+        "W-F036"
       ],
       "mediaIds": [
-        "M230"
+        "M034",
+        "M074"
       ],
       "heroMediaIds": [
-        "M230"
+        "M074"
       ],
       "placeIds": [
-        "PL001"
+        "PL004",
+        "PL005",
+        "PL006",
+        "PL012"
       ],
       "periods": [
-        "warsaw"
+        "hollywood"
       ]
     }
   ],
