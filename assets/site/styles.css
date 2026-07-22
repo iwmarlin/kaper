@@ -1003,7 +1003,10 @@ main {
 
 .load-more {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
+  gap: 0.65rem;
   margin-top: 2rem;
 }
 

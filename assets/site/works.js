@@ -18,7 +18,7 @@ import {
   resolveIds,
   scopeBadge,
   typeBadge,
-} from "./core.js?v=3d51d86713";
+} from "./core.js?v=e465b10ba4";
 
 mountSiteChrome("works");
 
@@ -32,9 +32,11 @@ const controls = {
 const target = document.querySelector("#work-results");
 const countTarget = document.querySelector("#work-results-count");
 const loadMore = document.querySelector("#load-more");
+const showAll = document.querySelector("#show-all");
 const resetButton = document.querySelector("#reset-filters");
 const PAGE_SIZE = 36;
 let visibleCount = PAGE_SIZE;
+let showingAll = false;
 let filtered = [];
 
 renderLoading(target, "Loading the catalogue…");
@@ -119,9 +121,18 @@ try {
       return controls.sort.value === "year-desc" ? -yearDifference : yearDifference || String(a.title).localeCompare(String(b.title));
     });
 
-    const shown = filtered.slice(0, visibleCount);
-    countTarget.innerHTML = `<strong>${filtered.length}</strong> ${filtered.length === 1 ? "record" : "records"} found`;
-    loadMore.hidden = shown.length >= filtered.length;
+    const shown = filtered.slice(0, showingAll ? filtered.length : visibleCount);
+    countTarget.innerHTML = `<strong>Showing ${shown.length}</strong> of ${filtered.length} ${filtered.length === 1 ? "record" : "records"}`;
+    const remaining = filtered.length - shown.length;
+    loadMore.hidden = remaining <= 0;
+    showAll.hidden = remaining <= 0;
+    if (remaining > 0) {
+      const nextCount = Math.min(PAGE_SIZE, remaining);
+      loadMore.textContent = `Load ${nextCount} more`;
+      loadMore.setAttribute("aria-label", `Load ${nextCount} more records`);
+      showAll.textContent = `Show all ${filtered.length}`;
+      showAll.setAttribute("aria-label", `Show all ${filtered.length} records`);
+    }
     if (!shown.length) {
       target.innerHTML = `<div class="empty-state"><h2>No matching works</h2><p>Try removing a filter or using a broader search term.</p></div>`;
       syncQuery();
@@ -151,16 +162,14 @@ try {
 
   const resetAndRender = () => {
     visibleCount = PAGE_SIZE;
+    showingAll = false;
     render();
   };
   controls.search.addEventListener("input", debounce(resetAndRender));
   for (const control of [controls.type, controls.period, controls.certainty, controls.sort]) {
     control.addEventListener("change", resetAndRender);
   }
-  loadMore.addEventListener("click", () => {
-    const firstNewIndex = Math.min(visibleCount, filtered.length);
-    visibleCount += PAGE_SIZE;
-    render();
+  function revealFrom(firstNewIndex) {
     const firstNewRecord = target.children[firstNewIndex];
     if (firstNewRecord) {
       firstNewRecord.setAttribute("tabindex", "-1");
@@ -170,6 +179,18 @@ try {
         block: "start",
       });
     }
+  }
+  loadMore.addEventListener("click", () => {
+    const firstNewIndex = Math.min(visibleCount, filtered.length);
+    visibleCount += PAGE_SIZE;
+    render();
+    revealFrom(firstNewIndex);
+  });
+  showAll.addEventListener("click", () => {
+    const firstNewIndex = Math.min(visibleCount, filtered.length);
+    showingAll = true;
+    render();
+    revealFrom(firstNewIndex);
   });
   resetButton.addEventListener("click", () => {
     controls.search.value = "";

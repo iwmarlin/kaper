@@ -1,4 +1,4 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=3d51d86713";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=e465b10ba4";
 import {
   debounce,
   escapeHtml,
@@ -23,7 +23,7 @@ import {
   resolveIds,
   safeExternalUrl,
   typeBadge,
-} from "./core.js?v=3d51d86713";
+} from "./core.js?v=e465b10ba4";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 mountSiteChrome("media");
@@ -37,8 +37,10 @@ const controls = {
 const target = document.querySelector("#media-results");
 const countTarget = document.querySelector("#media-count");
 const more = document.querySelector("#media-more");
+const showAll = document.querySelector("#media-show-all");
 const PAGE_SIZE = 30;
 let visible = PAGE_SIZE;
+let showingAll = false;
 let current = [];
 renderLoading(target, "Loading curated media…");
 
@@ -98,13 +100,17 @@ try {
       && !controls.type.value
       && !controls.period.value;
     current = isDefaultCuratedView ? curatedOrder(current) : current.sort(compareMedia);
-    const shown = current.slice(0, visible);
+    const shown = current.slice(0, showingAll ? current.length : visible);
     countTarget.innerHTML = `<strong>Showing ${shown.length}</strong> of ${current.length} ${current.length === 1 ? "item" : "items"}`;
-    more.hidden = shown.length >= current.length;
-    if (!more.hidden) {
-      const nextCount = Math.min(PAGE_SIZE, current.length - shown.length);
+    const remaining = current.length - shown.length;
+    more.hidden = remaining <= 0;
+    showAll.hidden = remaining <= 0;
+    if (remaining > 0) {
+      const nextCount = Math.min(PAGE_SIZE, remaining);
       more.textContent = `Load ${nextCount} more`;
       more.setAttribute("aria-label", `Load ${nextCount} more media items`);
+      showAll.textContent = `Show all ${current.length}`;
+      showAll.setAttribute("aria-label", `Show all ${current.length} media items`);
     }
     if (!shown.length) {
       target.innerHTML = `<div class="empty-state"><h2>No matching media</h2><p>Try a broader search or another gallery scope.</p></div>`;
@@ -149,7 +155,7 @@ try {
     }).join("");
   }
 
-  const resetAndRender = () => { visible = PAGE_SIZE; render(); };
+  const resetAndRender = () => { visible = PAGE_SIZE; showingAll = false; render(); };
   controls.search.addEventListener("input", debounce(resetAndRender));
   for (const control of [controls.type, controls.period, controls.scope]) control.addEventListener("change", resetAndRender);
   document.querySelector("#media-reset").addEventListener("click", () => {
@@ -159,10 +165,7 @@ try {
     controls.scope.value = "selected";
     resetAndRender();
   });
-  more.addEventListener("click", () => {
-    const firstNewIndex = Math.min(visible, current.length);
-    visible += PAGE_SIZE;
-    render();
+  function revealFrom(firstNewIndex) {
     const firstNewCard = target.children[firstNewIndex];
     if (firstNewCard) {
       firstNewCard.setAttribute("tabindex", "-1");
@@ -172,6 +175,18 @@ try {
         block: "start",
       });
     }
+  }
+  more.addEventListener("click", () => {
+    const firstNewIndex = Math.min(visible, current.length);
+    visible += PAGE_SIZE;
+    render();
+    revealFrom(firstNewIndex);
+  });
+  showAll.addEventListener("click", () => {
+    const firstNewIndex = Math.min(visible, current.length);
+    showingAll = true;
+    render();
+    revealFrom(firstNewIndex);
   });
   render();
 } catch (error) {
