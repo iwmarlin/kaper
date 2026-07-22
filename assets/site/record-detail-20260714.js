@@ -1,4 +1,4 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=40ff5f0230";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=dfb92b22dd";
 import {
   certaintyBadge,
   escapeHtml,
@@ -24,7 +24,7 @@ import {
   scopeBadge,
   typeBadge,
   updateMeta,
-} from "./core.js?v=40ff5f0230";
+} from "./core.js?v=dfb92b22dd";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 mountSiteChrome("");
@@ -46,7 +46,7 @@ const RECORD_TABLES = [
   "people", "organizations", "sources", "media", "works", "films", "songs", "otherWorks",
   "titleVariants", "workRelations", "timelineEvents", "places", "contributions", "personNameVariants",
 ];
-const RECORD_DATA_VERSION = "20260716-1";
+const RECORD_DATA_VERSION = "20260722-1";
 
 async function loadRecordPayload(type, id) {
   const url = new URL(
