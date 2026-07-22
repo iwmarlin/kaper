@@ -1,4 +1,4 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=ddc6df159e";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=cb44c656e5";
 import {
   escapeHtml,
   humanize,
@@ -11,23 +11,61 @@ import {
   renderLoading,
   responsiveImage,
   typeBadge,
-} from "./core.js?v=ddc6df159e";
+} from "./core.js?v=cb44c656e5";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 mountSiteChrome("home");
 
 const eventsTarget = document.querySelector("#featured-events");
 const mediaTarget = document.querySelector("#media-highlights");
+const figuresTarget = document.querySelector("#home-figures");
 renderLoading(eventsTarget, "Loading selected events…");
 renderLoading(mediaTarget, "Loading selected media…");
+
+const numberFormat = new Intl.NumberFormat("en-GB");
+
+function figureGroup(kind, title, rows) {
+  const max = Math.max(...rows.map((row) => row.count), 1);
+  const bars = rows.map((row, index) => `
+    <div class="figure-row${index === 0 ? " is-lead" : ""}">
+      <div class="figure-row__head">
+        <span class="figure-row__label">${escapeHtml(row.label)}${row.note ? ` <span class="figure-row__note">${escapeHtml(row.note)}</span>` : ""}</span>
+        <span class="figure-row__value">${numberFormat.format(row.count)}</span>
+      </div>
+      <div class="figure-bar"><span class="figure-bar__fill" style="width: ${Math.max(3, Math.round((row.count / max) * 100))}%"></span></div>
+    </div>`).join("");
+  return `<div class="figure-group" data-kind="${kind}"><h3 class="figure-group__title">${escapeHtml(title)}</h3>${bars}</div>`;
+}
+
+function renderFigures(data) {
+  if (!figuresTarget) return;
+  if (!data) {
+    figuresTarget.closest("section")?.remove();
+    return;
+  }
+  const groups = [
+    figureGroup("type", "Works by type", data.byType),
+    figureGroup("era", "Works by era", data.byEra),
+    figureGroup("collaborators", "Closest collaborators", (data.collaborators || []).map((person) => ({ label: person.name, count: person.count }))),
+  ].join("");
+  const certainty = data.certainty || {};
+  const footer = `
+    <div class="figures-footer">
+      ${data.span ? `<span class="figures-footer__item"><strong>${data.span.start}–${data.span.end}</strong> documented span</span>` : ""}
+      <span class="figures-footer__item"><strong>${numberFormat.format(certainty.confirmed || 0)}</strong> confirmed · ${certainty.probable || 0} probable · ${certainty.uncertain || 0} uncertain</span>
+      <span class="figures-footer__note">Collaborators counted by shared works, documented.</span>
+    </div>`;
+  figuresTarget.innerHTML = `<div class="figures-groups">${groups}</div>${footer}`;
+}
 
 try {
   const response = await fetch(new URL("data/site/home.json", document.baseURI));
   if (!response.ok) throw new Error(`Could not load home-page data (${response.status})`);
-  const { stats, portrait, events: eventSelection, highlights } = await response.json();
+  const { stats, portrait, events: eventSelection, highlights, atAGlance } = await response.json();
   document.querySelectorAll("#collection-stats strong").forEach((node, index) => {
-    node.textContent = new Intl.NumberFormat("en-GB").format(stats[index]);
+    node.textContent = numberFormat.format(stats[index]);
   });
+  renderFigures(atAGlance);
 
   const portraitTarget = document.querySelector("#hero-portrait");
   if (portrait?.assetPath) {
@@ -65,4 +103,5 @@ try {
 } catch (error) {
   renderError(eventsTarget, error);
   renderError(mediaTarget, error);
+  figuresTarget?.closest("section")?.remove();
 }

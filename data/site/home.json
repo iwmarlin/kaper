@@ -317,5 +317,61 @@
         "european"
       ]
     }
-  ]
+  ],
+  "atAGlance": {
+    "byType": [
+      {
+        "label": "Songs",
+        "count": 203
+      },
+      {
+        "label": "Films",
+        "count": 55
+      },
+      {
+        "label": "Other works",
+        "count": 22
+      }
+    ],
+    "byEra": [
+      {
+        "label": "European period",
+        "note": "1926–33",
+        "count": 176
+      },
+      {
+        "label": "Hollywood",
+        "note": "1934–39",
+        "count": 97
+      },
+      {
+        "label": "Warsaw",
+        "note": "1902–26",
+        "count": 7
+      }
+    ],
+    "collaborators": [
+      {
+        "name": "Walter Jurmann",
+        "count": 146
+      },
+      {
+        "name": "Fritz Rotter",
+        "count": 74
+      },
+      {
+        "name": "Gus Kahn",
+        "count": 30
+      }
+    ],
+    "span": {
+      "start": 1923,
+      "end": 1939
+    },
+    "certainty": {
+      "confirmed": 275,
+      "probable": 4,
+      "uncertain": 1
+    }
+  }
 }
