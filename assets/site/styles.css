@@ -733,13 +733,15 @@ main {
   flex-shrink: 0;
   color: var(--accent-dark);
   font-family: var(--serif);
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   font-weight: 600;
   font-variant-numeric: tabular-nums;
 }
 
 .figure-bar {
-  height: 6px;
+  width: 100%;
+  max-width: 220px;
+  height: 8px;
   border-radius: 999px;
   background: var(--paper-deep);
   overflow: hidden;

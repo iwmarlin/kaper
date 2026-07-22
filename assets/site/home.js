@@ -1,4 +1,4 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=cb44c656e5";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=0b4f408ff0";
 import {
   escapeHtml,
   humanize,
@@ -11,7 +11,7 @@ import {
   renderLoading,
   responsiveImage,
   typeBadge,
-} from "./core.js?v=cb44c656e5";
+} from "./core.js?v=0b4f408ff0";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 mountSiteChrome("home");
@@ -32,7 +32,7 @@ function figureGroup(kind, title, rows) {
         <span class="figure-row__label">${escapeHtml(row.label)}${row.note ? ` <span class="figure-row__note">${escapeHtml(row.note)}</span>` : ""}</span>
         <span class="figure-row__value">${numberFormat.format(row.count)}</span>
       </div>
-      <div class="figure-bar"><span class="figure-bar__fill" style="width: ${Math.max(3, Math.round((row.count / max) * 100))}%"></span></div>
+      <div class="figure-bar"><span class="figure-bar__fill" style="width: ${Math.max(6, Math.round((row.count / max) * 100))}%"></span></div>
     </div>`).join("");
   return `<div class="figure-group" data-kind="${kind}"><h3 class="figure-group__title">${escapeHtml(title)}</h3>${bars}</div>`;
 }

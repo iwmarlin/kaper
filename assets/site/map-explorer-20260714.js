@@ -10,7 +10,7 @@ import {
   periodValues,
   recordUrl,
   renderError,
-} from "./core.js?v=cb44c656e5";
+} from "./core.js?v=0b4f408ff0";
 
 mountSiteChrome("map");
 
