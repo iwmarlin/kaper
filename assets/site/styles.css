@@ -1036,42 +1036,53 @@ main {
   z-index: 6;
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
-  gap: 0.4rem;
-  margin: 0 0 1.6rem calc(-1 * var(--rail));
-  padding: 0.55rem 0;
+  align-items: stretch;
+  gap: 1.6rem;
+  margin: 0 0 1.1rem calc(-1 * var(--rail));
+  padding: 0.1rem 0 0;
   background: rgba(244, 240, 231, 0.92);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--line);
 }
 
-.timeline-nav__label {
-  margin-right: 0.3rem;
+.timeline-nav__tab {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  padding: 0.5rem 0.1rem 0.55rem;
+  border-bottom: 2px solid transparent;
   color: var(--ink-soft);
   font-family: var(--sans);
-  font-size: 0.66rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-
-.timeline-nav a {
-  padding: 0.3rem 0.85rem;
-  border: 1px solid var(--line-dark);
-  border-radius: 999px;
-  background: var(--surface);
-  color: var(--ink);
-  font-family: var(--sans);
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   text-decoration: none;
-  transition: background 150ms ease, border-color 150ms ease, color 150ms ease;
+  transition: color 150ms ease, border-color 150ms ease;
 }
 
-.timeline-nav a:hover,
-.timeline-nav a:focus-visible {
-  border-color: var(--ink);
-  background: var(--ink);
-  color: var(--surface);
+.timeline-nav__tab:hover {
+  color: var(--ink);
+}
+
+.timeline-nav__tab.is-active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+  font-weight: 600;
+}
+
+.timeline-nav__tab:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.timeline-nav__years {
+  color: var(--line-dark);
+  font-size: 0.72rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.timeline-nav__tab.is-active .timeline-nav__years {
+  color: var(--accent);
+  opacity: 0.72;
 }
 
 .timeline-chapter {
@@ -2917,6 +2928,18 @@ main {
 
   .timeline-nav {
     top: 3.6rem;
+    flex-wrap: nowrap;
+    gap: 1.15rem;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .timeline-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .timeline-nav__tab {
+    white-space: nowrap;
   }
 
   .timeline-item__date {

@@ -1,4 +1,4 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=e465b10ba4";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=e8a0bf05f0";
 import {
   debounce,
   escapeHtml,
@@ -15,7 +15,7 @@ import {
   renderLoading,
   resolveIds,
   responsiveImage,
-} from "./core.js?v=e465b10ba4";
+} from "./core.js?v=e8a0bf05f0";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 mountSiteChrome("timeline");
@@ -101,12 +101,36 @@ function chapterForEvent(event) {
 const NAV_LABELS = { warsaw: "Warsaw", berlin: "Berlin", paris: "Paris", america: "America" };
 const CHAPTER_ORDER = ["warsaw", "berlin", "paris", "america"];
 
+function shortRange(range) {
+  const match = String(range || "").match(/^(\d{4})\D+(\d{2})(\d{2})$/);
+  return match ? `${match[1]}–${match[3]}` : range;
+}
+
 function navMarkup(chaptersPresent) {
   if (chaptersPresent.length < 2) return "";
-  const links = chaptersPresent
-    .map((key) => `<a href="#chapter-${key}">${escapeHtml(NAV_LABELS[key])}</a>`)
+  const tabs = chaptersPresent
+    .map((key) => `<a class="timeline-nav__tab" href="#chapter-${key}" data-chapter="${key}"><span class="timeline-nav__era">${escapeHtml(NAV_LABELS[key])}</span><span class="timeline-nav__years">${escapeHtml(shortRange(TIMELINE_CHAPTERS[key].range))}</span></a>`)
     .join("");
-  return `<nav class="timeline-nav" aria-label="Jump to chapter"><span class="timeline-nav__label">Jump to</span>${links}</nav>`;
+  return `<nav class="timeline-nav" aria-label="Jump to era">${tabs}</nav>`;
+}
+
+function updateActiveChapter() {
+  const nav = document.querySelector(".timeline-nav");
+  if (!nav) return;
+  const chapters = [...document.querySelectorAll(".timeline-chapter")];
+  if (!chapters.length) return;
+  const marker = nav.getBoundingClientRect().bottom + 8;
+  let activeKey = chapters[0].id.replace("chapter-", "");
+  for (const chapter of chapters) {
+    if (chapter.getBoundingClientRect().top - marker <= 0) activeKey = chapter.id.replace("chapter-", "");
+    else break;
+  }
+  for (const tab of nav.querySelectorAll(".timeline-nav__tab")) {
+    const isActive = tab.dataset.chapter === activeKey;
+    tab.classList.toggle("is-active", isActive);
+    if (isActive) tab.setAttribute("aria-current", "true");
+    else tab.removeAttribute("aria-current");
+  }
 }
 
 function chapterMarkup(key) {
@@ -222,7 +246,20 @@ try {
         </article>`);
     }
     target.innerHTML = timelineMarkup.join("");
+    updateActiveChapter();
   }
+
+  let scrollScheduled = false;
+  function onScroll() {
+    if (scrollScheduled) return;
+    scrollScheduled = true;
+    requestAnimationFrame(() => {
+      scrollScheduled = false;
+      updateActiveChapter();
+    });
+  }
+  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", onScroll, { passive: true });
 
   controls.search?.addEventListener("input", debounce(render));
   for (const control of [controls.category].filter(Boolean)) control.addEventListener("change", render);
