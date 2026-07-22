@@ -880,12 +880,6 @@
           "sourceType": "wikimedia_commons_file"
         }
       },
-      "SRC0561": {
-        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
-        "fields": {
-          "sourceType": "wikimedia_commons_file"
-        }
-      },
       "SRC0562": {
         "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
         "fields": {
@@ -1782,22 +1776,22 @@
         }
       },
       "SRC0561": {
-        "reason": "Add a verified public-domain portrait of film director Hans Steinhoff from the National Digital Archive via Wikimedia Commons.",
+        "reason": "Correct Hans Steinhoff portrait provenance to NAC sygn. 3/2/0/-/14347 (dawna 2-14347), 1939–1945, per szukajwarchiwach.gov.pl; archive's economic rights: public domain.",
         "fields": {
           "id": "SRC0561",
-          "shortCitation": "Narodowe Archiwum Cyfrowe / Wikimedia Commons, Hans Steinhoff, sygn. 2-13285",
-          "fullCitation": "Narodowe Archiwum Cyfrowe. Hans Steinhoff (1882–1945), photographer and date unidentified, audiovisual collection, signature 2-13285. Digital reproduction distributed via Wikimedia Commons.",
-          "sourceType": "Wikimedia Commons file",
-          "title": "Hans Steinhoff — portrait photograph",
+          "shortCitation": "Narodowe Archiwum Cyfrowe, „Reżyser Hans Steinhoff z książką”, sygn. 3/2/0/-/14347 (dawna 2-14347)",
+          "fullCitation": "Narodowe Archiwum Cyfrowe, dokumentacja fotograficzna, sygn. 3/2/0/-/14347 (dawna sygn. 2-14347): „Reżyser Hans Steinhoff z książką”, 1939–1945. Autorskie prawa majątkowe archiwum do utworu: domena publiczna. Jednostka w Szukaj w Archiwach: https://www.szukajwarchiwach.gov.pl/jednostka/-/jednostka/5899345.",
+          "sourceType": "archival_photo",
+          "title": "Hans Steinhoff — NAC archival portrait (sygn. 3/2/0/-/14347)",
           "creator": "Photographer unidentified",
           "repository": "Narodowe Archiwum Cyfrowe",
-          "publication": "NAC audiovisual collection; Wikimedia Commons",
-          "date": "undated",
-          "url": "https://commons.wikimedia.org/wiki/File:Hans_Steinhoff_(1882-1945).jpg",
-          "accessDate": "2026-07-17",
+          "publication": "Narodowe Archiwum Cyfrowe, dokumentacja fotograficzna",
+          "date": "1939–1945",
+          "url": "https://www.szukajwarchiwach.gov.pl/jednostka/-/jednostka/5899345",
+          "accessDate": "2026-07-22",
           "reliability": "high",
           "sourceStatus": "verified",
-          "slug": "wikimedia-commons-hans-steinhoff-nac-2-13285",
+          "slug": "src0561-nac-hans-steinhoff-3-2-0-14347",
           "personIds": [
             "P027"
           ],
@@ -2187,19 +2181,19 @@
           "mediaType": "image",
           "storageType": "local",
           "period": "european",
-          "description": "Hans Steinhoff, German film director, shown in profile while reading a document.",
+          "description": "Hans Steinhoff, German film director, shown reading a book.",
           "externalUrl": "https://commons.wikimedia.org/wiki/File:Hans_Steinhoff_(1882-1945).jpg",
           "assetPath": "assets/images/portraits/hans-steinhoff.jpg",
           "assetPaths": [
             "assets/images/portraits/hans-steinhoff.jpg"
           ],
           "assetCount": 1,
-          "altText": "Black-and-white photograph of Hans Steinhoff in profile, reading a document and gesturing, with another man partly visible at right.",
+          "altText": "Black-and-white photograph of Hans Steinhoff reading a book and gesturing, with another man partly visible at right.",
           "rightsStatus": "ok",
-          "rightsNote": "Public domain under the Wikimedia Commons PD-Poland and PD-US assessments; source institution: Narodowe Archiwum Cyfrowe.",
+          "rightsNote": "Public domain. Narodowe Archiwum Cyfrowe declares the archive’s economic rights to this photograph as public domain (domena publiczna). Sygn. 3/2/0/-/14347 (dawna 2-14347), 1939–1945.",
           "slug": "hans-steinhoff-portrait-nac-m239",
           "publicCaption": "Hans Steinhoff, film director.",
-          "publicCreditLine": "Photographer unidentified; Narodowe Archiwum Cyfrowe, sygn. 2-13285 / Wikimedia Commons.",
+          "publicCreditLine": "Photographer unidentified; Narodowe Archiwum Cyfrowe, sygn. 3/2/0/-/14347 (dawna 2-14347). Public domain.",
           "category": "portrait",
           "galleryStatus": "eligible",
           "sourceIds": [
