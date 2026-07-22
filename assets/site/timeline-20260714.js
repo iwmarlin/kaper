@@ -180,6 +180,8 @@ try {
         currentChapter = chapter;
       }
       const hero = (event.heroMediaIds || []).map((id) => mediaById.get(id)).find((item) => item?.assetPath && item.mediaType !== "audio");
+      const heroProfile = hero ? IMAGE_DERIVATIVES[hero.assetPath] : null;
+      const heroPortrait = Boolean(heroProfile && heroProfile.height > heroProfile.width);
       const heroSources = hero ? resolveIds(hero, "sourceIds", sourcesById) : [];
       const description = event.shortDescription || event.longDescription || "";
       const isMilestone = MILESTONE_EVENT_IDS.has(event.id);
@@ -192,7 +194,7 @@ try {
             <div class="meta-row"><span class="badge badge--type">${escapeHtml(GROUP_LABELS[eventGroup(event)])}</span>${periodBadge(event.periods || event.period)}</div>
             <h3><a href="${recordUrl("event", event.id)}">${escapeHtml(event.title)}</a></h3>
             ${event.placeDisplay ? `<p class="timeline-item__place">${escapeHtml(event.placeDisplay)}</p>` : ""}
-            ${hero ? `<div class="timeline-item__media-row">
+            ${hero ? `<div class="timeline-item__media-row${heroPortrait ? " timeline-item__media-row--portrait" : ""}">
               <figure class="timeline-item__figure">
                 ${responsiveImage(hero.assetPath, hero.altText || hero.title, {
                   className: "timeline-item__image",
@@ -208,7 +210,7 @@ try {
                 })}</figcaption>
               </figure>
               ${description ? `<p>${escapeHtml(description)}</p>` : ""}
-            </div>` : (description ? `<p>${escapeHtml(description)}</p>` : "")}
+            </div>` : (description ? `<div class="timeline-item__note"><p>${escapeHtml(description)}</p></div>` : "")}
           </div>
         </article>`);
     }

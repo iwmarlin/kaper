@@ -1205,6 +1205,11 @@ main {
   margin-top: 0.85rem;
 }
 
+.timeline-item__media-row--portrait {
+  grid-template-columns: minmax(8rem, 11rem) 1fr;
+  gap: 1.25rem;
+}
+
 .timeline-item__media-row > p {
   margin: 0;
   font-size: 0.9rem;
@@ -1214,6 +1219,7 @@ main {
 .timeline-item__figure {
   min-width: 0;
   margin: 0;
+  text-align: center;
 }
 
 .timeline-item__figure figcaption {
@@ -1222,9 +1228,12 @@ main {
 
 .timeline-item__image {
   box-sizing: border-box;
-  width: 100%;
-  height: 13rem;
-  margin: 0;
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 18rem;
+  margin: 0 auto;
   padding: 0.5rem;
   border: 1px solid var(--line);
   border-radius: var(--radius-sm);
@@ -1233,6 +1242,26 @@ main {
     var(--paper-deep);
   object-fit: contain;
   object-position: center;
+}
+
+.timeline-item__media-row--portrait .timeline-item__image {
+  width: 100%;
+  max-height: 20rem;
+}
+
+.timeline-item__note {
+  margin-top: 0.7rem;
+  border-left: 2px solid var(--gold);
+  padding-left: 0.95rem;
+}
+
+.timeline-item__note p {
+  margin: 0;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.02rem;
+  line-height: 1.55;
+  color: #2c4148;
 }
 
 .timeline-item__kicker {
@@ -2523,12 +2552,13 @@ main {
     padding: 1rem 1.05rem 1.15rem;
   }
 
-  .timeline-item__image {
-    height: 12.5rem;
+  .timeline-item__media-row--portrait {
+    grid-template-columns: minmax(6rem, 8rem) 1fr;
+    gap: 1rem;
   }
 
-  .timeline-item--milestone .timeline-item__image {
-    height: 13.5rem;
+  .timeline-item__image {
+    max-height: 16rem;
   }
 
   .hero__grid,
@@ -2893,8 +2923,18 @@ main {
     top: 0.35rem;
   }
 
+  .timeline-item__media-row--portrait {
+    grid-template-columns: 1fr;
+    gap: 0.9rem;
+  }
+
+  .timeline-item__media-row--portrait .timeline-item__image {
+    width: auto;
+    max-width: min(15rem, 62vw);
+  }
+
   .timeline-item__image {
-    height: min(15rem, 58vw);
+    max-height: none;
   }
 
   .timeline-chapter h2 {
