@@ -236,8 +236,8 @@ def static_page(record_type: str, record: dict, tables: dict) -> str:
     label = TYPE_LABELS[record_type]
     record_id = record["id"]
     is_gallery = record_type == "media" and record.get("mediaType") == "document_gallery"
-    style_version = "e8a0bf05f0"
-    record_script_version = "e8a0bf05f0"
+    style_version = "ddc6df159e"
+    record_script_version = "ddc6df159e"
     route = f"records/{record_type}/{quote(record_id, safe='')}/"
     canonical = f"{ORIGIN}{route}"
     facts = "".join(

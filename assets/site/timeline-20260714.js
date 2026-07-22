@@ -1,4 +1,4 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=e8a0bf05f0";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=ddc6df159e";
 import {
   debounce,
   escapeHtml,
@@ -15,7 +15,7 @@ import {
   renderLoading,
   resolveIds,
   responsiveImage,
-} from "./core.js?v=e8a0bf05f0";
+} from "./core.js?v=ddc6df159e";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 mountSiteChrome("timeline");
@@ -138,9 +138,8 @@ function chapterMarkup(key) {
   return `
     <div class="timeline-chapter" id="chapter-${key}" aria-label="${escapeHtml(`${chapter.title}, ${chapter.range}`)}">
       <div class="timeline-chapter__inner">
-        <span class="timeline-chapter__number">Chapter ${chapter.number}</span>
+        <p class="timeline-chapter__eyebrow"><span class="timeline-chapter__number">Chapter ${chapter.number}</span><span class="timeline-chapter__range">${escapeHtml(chapter.range)}</span></p>
         <h2>${escapeHtml(chapter.title)}</h2>
-        <p class="timeline-chapter__range">${escapeHtml(chapter.range)}</p>
         <p class="timeline-chapter__summary">${escapeHtml(chapter.summary)}</p>
       </div>
     </div>`;
