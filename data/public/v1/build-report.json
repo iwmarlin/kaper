@@ -4,7 +4,7 @@
   "warnings": [],
   "counts": {
     "People": 109,
-    "Organizations": 109,
+    "Organizations": 110,
     "Sources": 495,
     "Media": 200,
     "Works": 280,
@@ -15,7 +15,7 @@
     "Work Relations": 190,
     "Timeline Events": 52,
     "Places": 44,
-    "Contributions": 982,
+    "Contributions": 981,
     "Person Name Variants": 35
   },
   "galleryStatusCounts": {
@@ -36,6 +36,22 @@
     {
       "table": "Contributions",
       "id": "CON-S057-PUB-ORG038",
+      "fields": [
+        "nameAsPrinted"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Contributions",
+      "id": "CON-S074-PUB-ORG030",
+      "fields": [
+        "nameAsPrinted"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Contributions",
+      "id": "CON-S075-PUB-ORG030",
       "fields": [
         "nameAsPrinted"
       ],
@@ -1029,6 +1045,38 @@
     },
     {
       "table": "Songs",
+      "id": "S068",
+      "fields": [
+        "genre"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Songs",
+      "id": "S074",
+      "fields": [
+        "publisherAsPrinted"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Songs",
+      "id": "S075",
+      "fields": [
+        "publisherAsPrinted"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Songs",
+      "id": "S076",
+      "fields": [
+        "lyricistAsPrinted"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Songs",
       "id": "S077",
       "fields": [
         "period",
@@ -1051,6 +1099,15 @@
       "fields": [
         "lyricistAsPrinted",
         "publisherAsPrinted"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Songs",
+      "id": "S094",
+      "fields": [
+        "period",
+        "year"
       ],
       "removedFields": []
     },
@@ -1228,6 +1285,19 @@
     },
     {
       "table": "Sources",
+      "id": "SRC0188",
+      "fields": [
+        "accessDate",
+        "date",
+        "fullCitation",
+        "publication",
+        "repository",
+        "url"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
       "id": "SRC0189",
       "fields": [
         "accessDate",
@@ -1236,6 +1306,45 @@
         "publication",
         "repository",
         "sourceStatus",
+        "url"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0190",
+      "fields": [
+        "accessDate",
+        "date",
+        "fullCitation",
+        "publication",
+        "repository",
+        "url"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0191",
+      "fields": [
+        "accessDate",
+        "date",
+        "fullCitation",
+        "publication",
+        "repository",
+        "url"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0192",
+      "fields": [
+        "accessDate",
+        "date",
+        "fullCitation",
+        "publication",
+        "repository",
         "url"
       ],
       "removedFields": []
@@ -1386,6 +1495,84 @@
     {
       "table": "Sources",
       "id": "SRC0214",
+      "fields": [
+        "accessDate",
+        "date",
+        "fullCitation",
+        "publication",
+        "repository",
+        "url"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0216",
+      "fields": [
+        "accessDate",
+        "date",
+        "fullCitation",
+        "publication",
+        "repository",
+        "url"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0217",
+      "fields": [
+        "accessDate",
+        "date",
+        "fullCitation",
+        "publication",
+        "repository",
+        "url"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0218",
+      "fields": [
+        "accessDate",
+        "date",
+        "fullCitation",
+        "publication",
+        "repository",
+        "url"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0221",
+      "fields": [
+        "accessDate",
+        "date",
+        "fullCitation",
+        "publication",
+        "repository",
+        "url"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0222",
+      "fields": [
+        "accessDate",
+        "date",
+        "fullCitation",
+        "publication",
+        "repository",
+        "url"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0223",
       "fields": [
         "accessDate",
         "date",
@@ -2330,6 +2517,15 @@
         "year"
       ],
       "removedFields": []
+    },
+    {
+      "table": "Works",
+      "id": "W-S094",
+      "fields": [
+        "period",
+        "year"
+      ],
+      "removedFields": []
     }
   ],
   "appliedAdditions": [
@@ -2635,6 +2831,22 @@
         "slug",
         "sourceIds",
         "types"
+      ]
+    },
+    {
+      "table": "Organizations",
+      "id": "ORG113",
+      "fields": [
+        "authorizedName",
+        "city",
+        "contributionIds",
+        "country",
+        "displayName",
+        "id",
+        "slug",
+        "sourceIds",
+        "types",
+        "workIds"
       ]
     },
     {
@@ -2978,6 +3190,20 @@
     },
     {
       "table": "Contributions",
+      "id": "CON-S074-PUB-ORG030",
+      "fields": [
+        "organizationIds"
+      ]
+    },
+    {
+      "table": "Contributions",
+      "id": "CON-S075-PUB-ORG030",
+      "fields": [
+        "organizationIds"
+      ]
+    },
+    {
+      "table": "Contributions",
       "id": "CON-S083-PUB-ORG042",
       "fields": [
         "organizationIds"
@@ -3128,6 +3354,13 @@
     {
       "table": "People",
       "id": "P048",
+      "fields": [
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "People",
+      "id": "P054",
       "fields": [
         "sourceIds"
       ]
@@ -3297,6 +3530,45 @@
     },
     {
       "table": "Sources",
+      "id": "SRC0188",
+      "fields": [
+        "organizationIds",
+        "personIds"
+      ]
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0189",
+      "fields": [
+        "organizationIds"
+      ]
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0190",
+      "fields": [
+        "organizationIds",
+        "personIds"
+      ]
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0191",
+      "fields": [
+        "organizationIds",
+        "personIds"
+      ]
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0192",
+      "fields": [
+        "organizationIds",
+        "personIds"
+      ]
+    },
+    {
+      "table": "Sources",
       "id": "SRC0195",
       "fields": [
         "organizationIds"
@@ -3378,6 +3650,54 @@
     {
       "table": "Sources",
       "id": "SRC0214",
+      "fields": [
+        "organizationIds",
+        "personIds"
+      ]
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0216",
+      "fields": [
+        "organizationIds",
+        "personIds"
+      ]
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0217",
+      "fields": [
+        "organizationIds",
+        "personIds"
+      ]
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0218",
+      "fields": [
+        "organizationIds",
+        "personIds"
+      ]
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0221",
+      "fields": [
+        "organizationIds",
+        "personIds"
+      ]
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0222",
+      "fields": [
+        "organizationIds",
+        "personIds"
+      ]
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0223",
       "fields": [
         "organizationIds",
         "personIds"
@@ -3491,6 +3811,20 @@
     },
     {
       "table": "Contributions",
+      "id": "CON-S074-PUB-ORG030",
+      "fields": [
+        "organizationIds"
+      ]
+    },
+    {
+      "table": "Contributions",
+      "id": "CON-S075-PUB-ORG030",
+      "fields": [
+        "organizationIds"
+      ]
+    },
+    {
+      "table": "Contributions",
       "id": "CON-S083-PUB-ORG042",
       "fields": [
         "organizationIds"
@@ -3506,6 +3840,13 @@
     },
     {
       "table": "Organizations",
+      "id": "ORG030",
+      "fields": [
+        "contributionIds"
+      ]
+    },
+    {
+      "table": "Organizations",
       "id": "ORG033",
       "fields": [
         "sourceIds"
@@ -3514,6 +3855,13 @@
     {
       "table": "Organizations",
       "id": "ORG042",
+      "fields": [
+        "contributionIds"
+      ]
+    },
+    {
+      "table": "People",
+      "id": "P017",
       "fields": [
         "contributionIds"
       ]
@@ -3564,6 +3912,13 @@
     },
     {
       "table": "Sources",
+      "id": "SRC0190",
+      "fields": [
+        "contributionIds"
+      ]
+    },
+    {
+      "table": "Sources",
       "id": "SRC0211",
       "fields": [
         "contributionIds"
@@ -3610,6 +3965,13 @@
       "fields": [
         "mediaIds",
         "sourceIds"
+      ]
+    },
+    {
+      "table": "Works",
+      "id": "W-S076",
+      "fields": [
+        "contributionIds"
       ]
     },
     {

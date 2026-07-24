@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 109,
+  "count": 110,
   "records": [
     {
       "id": "ORG001",
@@ -805,7 +805,11 @@
       "sourceIds": [
         "SRC0182",
         "SRC0187",
+        "SRC0190",
         "SRC0209",
+        "SRC0216",
+        "SRC0217",
+        "SRC0218",
         "SRC0358"
       ],
       "contributionIds": [
@@ -863,8 +867,6 @@
       "slug": "edition-coda",
       "contributionIds": [
         "CON-O010-PUB-ORG030",
-        "CON-S074-PUB-ORG030",
-        "CON-S075-PUB-ORG030",
         "CON-S088-PUB-ORG030",
         "CON-S089-PUB-ORG030",
         "CON-S090-PUB-ORG030",
@@ -883,8 +885,6 @@
       ],
       "workIds": [
         "W-O010",
-        "W-S074",
-        "W-S075",
         "W-S088",
         "W-S089",
         "W-S090",
@@ -983,7 +983,8 @@
         "SRC0180",
         "SRC0185",
         "SRC0213",
-        "SRC0214"
+        "SRC0214",
+        "SRC0223"
       ],
       "contributionIds": [
         "CON-O015-PUB-ORG033",
@@ -1214,6 +1215,7 @@
         "CON-S094-PUB-ORG038"
       ],
       "sourceIds": [
+        "SRC0188",
         "SRC0208",
         "SRC0211"
       ],
@@ -1879,6 +1881,11 @@
         "SRC0185",
         "SRC0186",
         "SRC0187",
+        "SRC0188",
+        "SRC0189",
+        "SRC0190",
+        "SRC0191",
+        "SRC0192",
         "SRC0195",
         "SRC0196",
         "SRC0197",
@@ -1891,6 +1898,12 @@
         "SRC0211",
         "SRC0213",
         "SRC0214",
+        "SRC0216",
+        "SRC0217",
+        "SRC0218",
+        "SRC0221",
+        "SRC0222",
+        "SRC0223",
         "SRC0225",
         "SRC0226",
         "SRC0367",
@@ -3099,6 +3112,32 @@
       "slug": "great-american-songbook-foundation",
       "sourceIds": [
         "SRC0557"
+      ]
+    },
+    {
+      "id": "ORG113",
+      "displayName": "Dacapo-Verlag",
+      "authorizedName": "Dacapo-Verlag",
+      "types": [
+        "publisher"
+      ],
+      "city": [
+        "Vienna"
+      ],
+      "country": "Austria",
+      "slug": "dacapo-verlag-vienna",
+      "sourceIds": [
+        "SRC0192",
+        "SRC0221",
+        "SRC0222"
+      ],
+      "workIds": [
+        "W-S074",
+        "W-S075"
+      ],
+      "contributionIds": [
+        "CON-S074-PUB-ORG030",
+        "CON-S075-PUB-ORG030"
       ]
     }
   ]

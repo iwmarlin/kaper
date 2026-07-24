@@ -38,6 +38,13 @@
           "period": "european"
         }
       },
+      "W-S094": {
+        "reason": "Correct the work year to the February 1933 Hofmeister registration and the 1933 film context documented by SRC0188.",
+        "fields": {
+          "year": 1933,
+          "period": "european"
+        }
+      },
       "W-O001": {
         "reason": "Remove an overview that repeats the title, year, instrumentation, manuscript status, holding institution and shelfmark already presented in structured fields.",
         "fields": {},
@@ -174,6 +181,30 @@
       }
     },
     "Songs": {
+      "S068": {
+        "reason": "Correct the genre to the 6/8 march-foxtrot designation printed in the May 1933 Hofmeister registration.",
+        "fields": {
+          "genre": "fox_march"
+        }
+      },
+      "S076": {
+        "reason": "Remove the unsupported Ernst Marischka lyricist attribution; the detailed May 1933 Hofmeister entry names Fritz Rotter alone for “Ninon, lach mir einmal zu.”",
+        "fields": {
+          "lyricistAsPrinted": "Fritz Rotter"
+        }
+      },
+      "S074": {
+        "reason": "Correct the publisher transcription from the unrelated Paris publisher Edition Coda to the Viennese Dacapo-Verlag printed in the November 1933 Hofmeister registration.",
+        "fields": {
+          "publisherAsPrinted": "Dacapo-Verlag"
+        }
+      },
+      "S075": {
+        "reason": "Correct the publisher transcription from the unrelated Paris publisher Edition Coda to the Viennese Dacapo-Verlag printed in the November 1933 Hofmeister registration.",
+        "fields": {
+          "publisherAsPrinted": "Dacapo-Verlag"
+        }
+      },
       "S057": {
         "reason": "Normalize the public transcription to the publisher and lyricist identified by the December 1932 Hofmeister registration.",
         "fields": {
@@ -197,6 +228,13 @@
       },
       "S079": {
         "reason": "Correct the song year to the 1933 Salabert edition documented by the BnF catalogue record SRC0081.",
+        "fields": {
+          "year": 1933,
+          "period": "european"
+        }
+      },
+      "S094": {
+        "reason": "Correct the song year to the February 1933 Hofmeister registration and the 1933 film context documented by SRC0188.",
         "fields": {
           "year": 1933,
           "period": "european"
@@ -515,6 +553,17 @@
           "accessDate": "2026-07-24"
         }
       },
+      "SRC0188": {
+        "reason": "Replace the unresolved 1933 Hofmeister reference with the exact February issue, page and publisher; preserve the collective lyricist credit exactly as printed.",
+        "fields": {
+          "fullCitation": "Walter Jurmann and B. Kaper, Madame wünscht keine Kinder (Keine Zeit zur Liebe), film songs “Ich geh nie von dir fort” and “Nur Sport.” Words collectively credited to F. Rotter and M. Kolpe; edition for salon orchestra with jazz parts and five-page edition for voice and piano. Berlin: Monopol-Liederverlag, 1933. Registered in Hofmeisters Musikalisch-literarischer Monatsbericht 105, no. 2 (February 1933): 34. ANNO – Austrian Newspapers Online, Österreichische Nationalbibliothek. https://anno.onb.ac.at/cgi-content/anno-plus?aid=hof&datum=19330052.",
+          "repository": "Österreichische Nationalbibliothek / ANNO",
+          "publication": "Monopol-Liederverlag, Berlin",
+          "date": "1933-02",
+          "url": "https://anno.onb.ac.at/cgi-content/anno-plus?aid=hof&datum=19330052",
+          "accessDate": "2026-07-24"
+        }
+      },
       "SRC0189": {
         "reason": "Preserve the exact April 1933 Hofmeister registration already verified in ANNO when rebuilding from the frozen Airtable snapshot.",
         "fields": {
@@ -525,6 +574,39 @@
           "url": "https://anno.onb.ac.at/cgi-content/anno-plus?aid=hof&datum=19330054",
           "accessDate": "2026-07-24",
           "sourceStatus": "verified"
+        }
+      },
+      "SRC0190": {
+        "reason": "Replace the unresolved 1933 Hofmeister reference with the detailed May entry; correct the evidentiary lyricist credit to Fritz Rotter alone.",
+        "fields": {
+          "fullCitation": "B. Kaper and Walter Jurmann, “Ninon, lach mir einmal zu,” slow fox from Ein Lied für dich; words by F. Rotter; arrangement for salon orchestra with jazz parts by W. Borchert. Berlin: Wiener Boheme-Verlag, 1933. Registered in Hofmeisters Musikalisch-literarischer Monatsbericht 105, no. 5 (May 1933): 99. ANNO – Austrian Newspapers Online, Österreichische Nationalbibliothek. https://anno.onb.ac.at/cgi-content/anno-plus?aid=hof&datum=19330055.",
+          "repository": "Österreichische Nationalbibliothek / ANNO",
+          "publication": "Wiener Boheme-Verlag, Berlin",
+          "date": "1933-05",
+          "url": "https://anno.onb.ac.at/cgi-content/anno-plus?aid=hof&datum=19330055",
+          "accessDate": "2026-07-24"
+        }
+      },
+      "SRC0191": {
+        "reason": "Replace the unresolved 1933 Hofmeister reference with the exact July issue, page, publisher and arrangement details.",
+        "fields": {
+          "fullCitation": "Walter Jurmann and B. Kaper, “Kind, ich freu mich auf dein Kommen.” Slow foxtrot; words by F. Rotter; arrangement for salon orchestra with jazz parts by N. Dostal and edition for voice and piano. Berlin: Ufaton-Verlag, 1933. Registered in Hofmeisters Musikalisch-literarischer Monatsbericht 105, no. 7 (July 1933): 139. ANNO – Austrian Newspapers Online, Österreichische Nationalbibliothek. https://anno.onb.ac.at/cgi-content/anno-plus?aid=hof&datum=19330057.",
+          "repository": "Österreichische Nationalbibliothek / ANNO",
+          "publication": "Ufaton-Verlag, Berlin",
+          "date": "1933-07",
+          "url": "https://anno.onb.ac.at/cgi-content/anno-plus?aid=hof&datum=19330057",
+          "accessDate": "2026-07-24"
+        }
+      },
+      "SRC0192": {
+        "reason": "Replace the unresolved 1933 Hofmeister reference with the detailed November entry for both Abenteuer am Lido songs and the Dacapo-Verlag imprint.",
+        "fields": {
+          "fullCitation": "Walter Jurmann and B. Kaper, Abenteuer am Lido, film songs “Adieu, es ist zu schön, um wahr zu sein” (tango) and “Wie schön ist diese Welt” (slow foxtrot); words by F. Rotter; arrangements for salon orchestra with jazz parts by A. Steinbrecher, with a complete edition for voice and piano. Vienna I, Bösendorferstraße 12: Dacapo-Verlag, 1933. Registered in Hofmeisters Musikalisch-literarischer Monatsbericht 105, no. 11 (November 1933): 213. ANNO – Austrian Newspapers Online, Österreichische Nationalbibliothek. https://anno.onb.ac.at/cgi-content/anno-plus?aid=hof&datum=19330061.",
+          "repository": "Österreichische Nationalbibliothek / ANNO",
+          "publication": "Dacapo-Verlag, Vienna",
+          "date": "1933-11",
+          "url": "https://anno.onb.ac.at/cgi-content/anno-plus?aid=hof&datum=19330061",
+          "accessDate": "2026-07-24"
         }
       },
       "SRC0195": {
@@ -656,6 +738,72 @@
           "publication": "Alrobi, Berlin",
           "date": "1932-05",
           "url": "https://anno.onb.ac.at/cgi-content/anno-plus?aid=hof&datum=19320055",
+          "accessDate": "2026-07-24"
+        }
+      },
+      "SRC0216": {
+        "reason": "Complete the generic 1933 Hofmeister reference with the exact May issue and page, and correct the metre from 4/4 to the printed 6/8 march-foxtrot.",
+        "fields": {
+          "fullCitation": "B. Kaper and Walter Jurmann, “Signorina! komm zu mir,” 6/8 march-foxtrot from Ein Lied für dich; words by E. Marischka and F. Rotter; arrangement for salon orchestra with jazz parts by W. Borchert. Berlin: Wiener Boheme-Verlag, 1933. Registered in Hofmeisters Musikalisch-literarischer Monatsbericht 105, no. 5 (May 1933): 99. ANNO – Austrian Newspapers Online, Österreichische Nationalbibliothek. https://anno.onb.ac.at/cgi-content/anno-plus?aid=hof&datum=19330055.",
+          "repository": "Österreichische Nationalbibliothek / ANNO",
+          "publication": "Wiener Boheme-Verlag, Berlin",
+          "date": "1933-05",
+          "url": "https://anno.onb.ac.at/cgi-content/anno-plus?aid=hof&datum=19330055",
+          "accessDate": "2026-07-24"
+        }
+      },
+      "SRC0217": {
+        "reason": "Replace the generic 1933 Hofmeister reference with both exact registrations: the April salon-orchestra edition under Ernst Martin and the May voice-and-piano cross-reference under Paul Mann and Stephan Weiss.",
+        "fields": {
+          "fullCitation": "Ernst Martin [source form associated in this database with Kaper and Jurmann], “Immer, wenn ich glücklich bin, muß ich schrecklich weinen,” foxtrot from Heut kommt’s drauf an; words by F. Rotter; arrangement for salon orchestra with jazz parts by W. Borchert. Berlin: Wiener Boheme-Verlag, 1933. Detailed entry in Hofmeisters Musikalisch-literarischer Monatsbericht 105, no. 4 (April 1933): 81; the voice-and-piano edition is cross-referenced under Paul Mann and Stephan Weiss in 105, no. 5 (May 1933): 101. ANNO – Austrian Newspapers Online, Österreichische Nationalbibliothek. https://anno.onb.ac.at/cgi-content/anno-plus?aid=hof&datum=19330054; https://anno.onb.ac.at/cgi-content/anno-plus?aid=hof&datum=19330055.",
+          "repository": "Österreichische Nationalbibliothek / ANNO",
+          "publication": "Wiener Boheme-Verlag, Berlin",
+          "date": "1933-04",
+          "url": "https://anno.onb.ac.at/cgi-content/anno-plus?aid=hof&datum=19330054",
+          "accessDate": "2026-07-24"
+        }
+      },
+      "SRC0218": {
+        "reason": "Replace the generic 1933 Hofmeister reference with both exact registrations: the April salon-orchestra edition under Ernst Martin and the May voice-and-piano cross-reference under Paul Mann and Stephan Weiss.",
+        "fields": {
+          "fullCitation": "Ernst Martin [source form associated in this database with Kaper and Jurmann], “In 24 Stunden kann soviel geschehn,” tango from Heut kommt’s drauf an; words by F. Rotter; arrangement for salon orchestra with jazz parts by W. Borchert. Berlin: Wiener Boheme-Verlag, 1933. Detailed entry in Hofmeisters Musikalisch-literarischer Monatsbericht 105, no. 4 (April 1933): 81; the voice-and-piano edition is cross-referenced under Paul Mann and Stephan Weiss in 105, no. 5 (May 1933): 101. ANNO – Austrian Newspapers Online, Österreichische Nationalbibliothek. https://anno.onb.ac.at/cgi-content/anno-plus?aid=hof&datum=19330054; https://anno.onb.ac.at/cgi-content/anno-plus?aid=hof&datum=19330055.",
+          "repository": "Österreichische Nationalbibliothek / ANNO",
+          "publication": "Wiener Boheme-Verlag, Berlin",
+          "date": "1933-04",
+          "url": "https://anno.onb.ac.at/cgi-content/anno-plus?aid=hof&datum=19330054",
+          "accessDate": "2026-07-24"
+        }
+      },
+      "SRC0221": {
+        "reason": "Complete the generic 1933 Hofmeister reference with the exact November issue, page, Dacapo-Verlag imprint and arrangement details.",
+        "fields": {
+          "fullCitation": "Walter Jurmann and B. Kaper, “Adieu, es ist zu schön, um wahr zu sein,” tango from Abenteuer am Lido; words by F. Rotter; arrangement for salon orchestra with jazz parts by A. Steinbrecher. Vienna I, Bösendorferstraße 12: Dacapo-Verlag, 1933. Registered in Hofmeisters Musikalisch-literarischer Monatsbericht 105, no. 11 (November 1933): 213. ANNO – Austrian Newspapers Online, Österreichische Nationalbibliothek. https://anno.onb.ac.at/cgi-content/anno-plus?aid=hof&datum=19330061.",
+          "repository": "Österreichische Nationalbibliothek / ANNO",
+          "publication": "Dacapo-Verlag, Vienna",
+          "date": "1933-11",
+          "url": "https://anno.onb.ac.at/cgi-content/anno-plus?aid=hof&datum=19330061",
+          "accessDate": "2026-07-24"
+        }
+      },
+      "SRC0222": {
+        "reason": "Complete the generic 1933 Hofmeister reference with the exact November issue, page, Dacapo-Verlag imprint and arrangement details.",
+        "fields": {
+          "fullCitation": "Walter Jurmann and B. Kaper, “Wie schön ist diese Welt,” slow foxtrot from Abenteuer am Lido; words by F. Rotter; arrangement for salon orchestra with jazz parts by A. Steinbrecher. Vienna I, Bösendorferstraße 12: Dacapo-Verlag, 1933. Registered in Hofmeisters Musikalisch-literarischer Monatsbericht 105, no. 11 (November 1933): 213. ANNO – Austrian Newspapers Online, Österreichische Nationalbibliothek. https://anno.onb.ac.at/cgi-content/anno-plus?aid=hof&datum=19330061.",
+          "repository": "Österreichische Nationalbibliothek / ANNO",
+          "publication": "Dacapo-Verlag, Vienna",
+          "date": "1933-11",
+          "url": "https://anno.onb.ac.at/cgi-content/anno-plus?aid=hof&datum=19330061",
+          "accessDate": "2026-07-24"
+        }
+      },
+      "SRC0223": {
+        "reason": "Complete the generic 1933 Hofmeister reference with the exact May issue and page while preserving the distinct Alrobi imprint.",
+        "fields": {
+          "fullCitation": "B. Kaper and Walter Jurmann, “Einen Sonntag ohne Sorgen,” foxtrot from Ein Lied für dich; words by F. Rotter; arrangement for salon orchestra with jazz parts by G. Mohr and edition for voice and piano. Berlin: Alrobi, 1933. Registered in Hofmeisters Musikalisch-literarischer Monatsbericht 105, no. 5 (May 1933): 99. ANNO – Austrian Newspapers Online, Österreichische Nationalbibliothek. https://anno.onb.ac.at/cgi-content/anno-plus?aid=hof&datum=19330055.",
+          "repository": "Österreichische Nationalbibliothek / ANNO",
+          "publication": "Alrobi, Berlin",
+          "date": "1933-05",
+          "url": "https://anno.onb.ac.at/cgi-content/anno-plus?aid=hof&datum=19330055",
           "accessDate": "2026-07-24"
         }
       },
@@ -1656,6 +1804,18 @@
       }
     },
     "Contributions": {
+      "CON-S074-PUB-ORG030": {
+        "reason": "Correct the publisher transcription to Dacapo-Verlag; the legacy contribution ID is retained as an opaque identifier and reassigned to ORG113 below.",
+        "fields": {
+          "nameAsPrinted": "Dacapo-Verlag"
+        }
+      },
+      "CON-S075-PUB-ORG030": {
+        "reason": "Correct the publisher transcription to Dacapo-Verlag; the legacy contribution ID is retained as an opaque identifier and reassigned to ORG113 below.",
+        "fields": {
+          "nameAsPrinted": "Dacapo-Verlag"
+        }
+      },
       "CON-S057-L-P017": {
         "reason": "Normalize the lyricist transcription to Ernst Marischka, as identified by the December 1932 Hofmeister registration.",
         "fields": {
@@ -1887,6 +2047,35 @@
           "slug": "great-american-songbook-foundation",
           "sourceIds": [
             "SRC0557"
+          ]
+        }
+      },
+      "ORG113": {
+        "reason": "Add the Viennese Dacapo-Verlag documented as publisher of the two Abenteuer am Lido songs in the November 1933 Hofmeister registration; this is not the Paris publisher Edition Coda.",
+        "fields": {
+          "id": "ORG113",
+          "displayName": "Dacapo-Verlag",
+          "authorizedName": "Dacapo-Verlag",
+          "types": [
+            "publisher"
+          ],
+          "city": [
+            "Vienna"
+          ],
+          "country": "Austria",
+          "slug": "dacapo-verlag-vienna",
+          "sourceIds": [
+            "SRC0192",
+            "SRC0221",
+            "SRC0222"
+          ],
+          "workIds": [
+            "W-S074",
+            "W-S075"
+          ],
+          "contributionIds": [
+            "CON-S074-PUB-ORG030",
+            "CON-S075-PUB-ORG030"
           ]
         }
       }
@@ -2635,7 +2824,7 @@
   "linkAdditions": {
     "Organizations": {
       "ORG064": {
-        "reason": "Link the completed 1930–1932 Hofmeister/ANNO source records to the Austrian National Library repository.",
+        "reason": "Link the completed 1930–1933 Hofmeister/ANNO source records to the Austrian National Library repository.",
         "fields": {
           "sourceIds": [
             "SRC0178",
@@ -2648,6 +2837,11 @@
             "SRC0185",
             "SRC0186",
             "SRC0187",
+            "SRC0188",
+            "SRC0189",
+            "SRC0190",
+            "SRC0191",
+            "SRC0192",
             "SRC0195",
             "SRC0196",
             "SRC0197",
@@ -2659,18 +2853,25 @@
             "SRC0210",
             "SRC0211",
             "SRC0213",
-            "SRC0214"
+            "SRC0214",
+            "SRC0216",
+            "SRC0217",
+            "SRC0218",
+            "SRC0221",
+            "SRC0222",
+            "SRC0223"
           ]
         }
       },
       "ORG033": {
-        "reason": "Link Alrobi to the completed Hofmeister records for Trara VIII and the Melodie der Liebe group.",
+        "reason": "Link Alrobi to the completed Hofmeister records for Trara VIII, the Melodie der Liebe group and “Einen Sonntag ohne Sorgen.”",
         "fields": {
           "sourceIds": [
             "SRC0180",
             "SRC0185",
             "SRC0213",
-            "SRC0214"
+            "SRC0214",
+            "SRC0223"
           ]
         }
       },
@@ -2691,10 +2892,14 @@
         }
       },
       "ORG029": {
-        "reason": "Link Wiener Boheme Verlag to the completed Bob Henders Hofmeister source.",
+        "reason": "Link Wiener Boheme Verlag to the completed 1932–1933 Hofmeister sources.",
         "fields": {
           "sourceIds": [
-            "SRC0209"
+            "SRC0190",
+            "SRC0209",
+            "SRC0216",
+            "SRC0217",
+            "SRC0218"
           ]
         }
       },
@@ -2707,9 +2912,10 @@
         }
       },
       "ORG038": {
-        "reason": "Link Monopol-Liederverlag to both completed Hochzeitsreise zu dritt song sources and reassign the W-S083 publisher relationship from ORG042.",
+        "reason": "Link Monopol-Liederverlag to the completed 1932–1933 Hofmeister sources and reassign the W-S083 publisher relationship from ORG042.",
         "fields": {
           "sourceIds": [
+            "SRC0188",
             "SRC0208",
             "SRC0211"
           ],
@@ -2720,6 +2926,22 @@
       }
     },
     "Contributions": {
+      "CON-S074-PUB-ORG030": {
+        "reason": "Reassign the existing publisher contribution from the unrelated Edition Coda to the Viennese Dacapo-Verlag; retain the legacy contribution ID as an opaque identifier.",
+        "fields": {
+          "organizationIds": [
+            "ORG113"
+          ]
+        }
+      },
+      "CON-S075-PUB-ORG030": {
+        "reason": "Reassign the existing publisher contribution from the unrelated Edition Coda to the Viennese Dacapo-Verlag; retain the legacy contribution ID as an opaque identifier.",
+        "fields": {
+          "organizationIds": [
+            "ORG113"
+          ]
+        }
+      },
       "CON-S083-PUB-ORG042": {
         "reason": "Reassign the existing publisher contribution to Monopol-Liederverlag; the legacy contribution ID is retained as an opaque identifier.",
         "fields": {
@@ -2914,16 +3136,27 @@
     },
     "People": {
       "P009": {
-        "reason": "Link Bronisław Kaper to the sources for the 1936 declaration portrait, the two University of Warsaw portraits and the retained November 1933 Kiepura reception photograph.",
+        "reason": "Link Bronisław Kaper to the completed 1932–1933 Hofmeister sources and to the documented portrait sources.",
         "fields": {
           "sourceIds": [
             "SRC0038",
             "SRC0110",
             "SRC0024",
+            "SRC0188",
+            "SRC0189",
+            "SRC0190",
+            "SRC0191",
+            "SRC0192",
             "SRC0208",
             "SRC0211",
             "SRC0213",
             "SRC0214",
+            "SRC0216",
+            "SRC0217",
+            "SRC0218",
+            "SRC0221",
+            "SRC0222",
+            "SRC0223",
             "SRC0226"
           ]
         }
@@ -2953,22 +3186,41 @@
         }
       },
       "P020": {
-        "reason": "Connect Fritz Rotter to the existing verified public-domain portrait source SRC0330 so M043 appears on his person record.",
+        "reason": "Connect Fritz Rotter to the completed Hofmeister sources that print his lyricist credit and to the verified public-domain portrait source SRC0330.",
         "fields": {
           "sourceIds": [
             "SRC0330",
+            "SRC0188",
+            "SRC0190",
+            "SRC0191",
+            "SRC0192",
             "SRC0213",
             "SRC0214",
+            "SRC0216",
+            "SRC0217",
+            "SRC0218",
+            "SRC0221",
+            "SRC0222",
+            "SRC0223",
             "SRC0226"
           ]
         }
       },
       "P017": {
-        "reason": "Link Ernst Marischka directly to the two December 1932 Hofmeister registrations that identify him as lyricist.",
+        "reason": "Link Ernst Marischka directly to the completed Hofmeister registrations that identify him as lyricist.",
         "fields": {
           "sourceIds": [
             "SRC0208",
-            "SRC0211"
+            "SRC0211",
+            "SRC0216"
+          ]
+        }
+      },
+      "P054": {
+        "reason": "Link Max Kolpe to the February 1933 Hofmeister registration that prints the collective Rotter–Kolpe lyricist credit for Madame wünscht keine Kinder.",
+        "fields": {
+          "sourceIds": [
+            "SRC0188"
           ]
         }
       },
@@ -2989,13 +3241,24 @@
         }
       },
       "P077": {
-        "reason": "Connect Walter Jurmann to the existing Academy Collection photograph SRC0334 rather than creating a duplicate or using an unverified image.",
+        "reason": "Connect Walter Jurmann to the completed 1932–1933 Hofmeister sources and to the existing Academy Collection photograph SRC0334.",
         "fields": {
           "sourceIds": [
+            "SRC0188",
+            "SRC0189",
+            "SRC0190",
+            "SRC0191",
+            "SRC0192",
             "SRC0208",
             "SRC0211",
             "SRC0213",
             "SRC0214",
+            "SRC0216",
+            "SRC0217",
+            "SRC0218",
+            "SRC0221",
+            "SRC0222",
+            "SRC0223",
             "SRC0334"
           ]
         }
@@ -3154,6 +3417,71 @@
           ]
         }
       },
+      "SRC0188": {
+        "reason": "Link the completed February 1933 registration to all named contributors, Monopol-Liederverlag and the Austrian National Library / ANNO repository.",
+        "fields": {
+          "personIds": [
+            "P009",
+            "P020",
+            "P054",
+            "P077"
+          ],
+          "organizationIds": [
+            "ORG038",
+            "ORG064"
+          ]
+        }
+      },
+      "SRC0189": {
+        "reason": "Link the already completed April 1933 registration to the Austrian National Library / ANNO repository.",
+        "fields": {
+          "organizationIds": [
+            "ORG064"
+          ]
+        }
+      },
+      "SRC0190": {
+        "reason": "Link the completed May 1933 Ninon registration to the contributors actually named there, Wiener Boheme-Verlag and the Austrian National Library / ANNO repository.",
+        "fields": {
+          "personIds": [
+            "P009",
+            "P020",
+            "P077"
+          ],
+          "organizationIds": [
+            "ORG029",
+            "ORG064"
+          ]
+        }
+      },
+      "SRC0191": {
+        "reason": "Link the completed July 1933 registration to its named contributors, Ufaton-Verlag and the Austrian National Library / ANNO repository.",
+        "fields": {
+          "personIds": [
+            "P009",
+            "P020",
+            "P077"
+          ],
+          "organizationIds": [
+            "ORG036",
+            "ORG064"
+          ]
+        }
+      },
+      "SRC0192": {
+        "reason": "Link the completed November 1933 Abenteuer am Lido group registration to its named contributors, Dacapo-Verlag and the Austrian National Library / ANNO repository.",
+        "fields": {
+          "personIds": [
+            "P009",
+            "P020",
+            "P077"
+          ],
+          "organizationIds": [
+            "ORG064",
+            "ORG113"
+          ]
+        }
+      },
       "SRC0208": {
         "reason": "Link the completed 1932 registration to Monopol-Liederverlag and the Austrian National Library / ANNO repository.",
         "fields": {
@@ -3216,6 +3544,91 @@
       },
       "SRC0214": {
         "reason": "Link the completed 1932 registration to Alrobi and the Austrian National Library / ANNO repository.",
+        "fields": {
+          "personIds": [
+            "P009",
+            "P020",
+            "P077"
+          ],
+          "organizationIds": [
+            "ORG033",
+            "ORG064"
+          ]
+        }
+      },
+      "SRC0216": {
+        "reason": "Link the completed May 1933 Signorina registration to all named contributors, Wiener Boheme-Verlag and the Austrian National Library / ANNO repository.",
+        "fields": {
+          "personIds": [
+            "P009",
+            "P017",
+            "P020",
+            "P077"
+          ],
+          "organizationIds": [
+            "ORG029",
+            "ORG064"
+          ]
+        }
+      },
+      "SRC0217": {
+        "reason": "Link the completed April–May 1933 registration to the canonical contributors, Wiener Boheme-Verlag and the Austrian National Library / ANNO repository while retaining the printed Ernst Martin source form.",
+        "fields": {
+          "personIds": [
+            "P009",
+            "P020",
+            "P077"
+          ],
+          "organizationIds": [
+            "ORG029",
+            "ORG064"
+          ]
+        }
+      },
+      "SRC0218": {
+        "reason": "Link the completed April–May 1933 registration to the canonical contributors, Wiener Boheme-Verlag and the Austrian National Library / ANNO repository while retaining the printed Ernst Martin source form.",
+        "fields": {
+          "personIds": [
+            "P009",
+            "P020",
+            "P077"
+          ],
+          "organizationIds": [
+            "ORG029",
+            "ORG064"
+          ]
+        }
+      },
+      "SRC0221": {
+        "reason": "Link the completed November 1933 song registration to its named contributors, Dacapo-Verlag and the Austrian National Library / ANNO repository.",
+        "fields": {
+          "personIds": [
+            "P009",
+            "P020",
+            "P077"
+          ],
+          "organizationIds": [
+            "ORG064",
+            "ORG113"
+          ]
+        }
+      },
+      "SRC0222": {
+        "reason": "Link the completed November 1933 song registration to its named contributors, Dacapo-Verlag and the Austrian National Library / ANNO repository.",
+        "fields": {
+          "personIds": [
+            "P009",
+            "P020",
+            "P077"
+          ],
+          "organizationIds": [
+            "ORG064",
+            "ORG113"
+          ]
+        }
+      },
+      "SRC0223": {
+        "reason": "Link the completed May 1933 song registration to its named contributors, Alrobi and the Austrian National Library / ANNO repository.",
         "fields": {
           "personIds": [
             "P009",
@@ -3392,9 +3805,25 @@
             "CON-S083-L-P020"
           ]
         }
+      },
+      "SRC0190": {
+        "reason": "Remove the unsupported Ernst Marischka contribution; the detailed May 1933 entry credits Fritz Rotter alone for Ninon.",
+        "fields": {
+          "contributionIds": [
+            "CON-S076-L-P017"
+          ]
+        }
       }
     },
     "Works": {
+      "W-S076": {
+        "reason": "Remove Ernst Marischka and the unsupported contribution from Ninon; the detailed May 1933 Hofmeister entry identifies Fritz Rotter alone.",
+        "fields": {
+          "contributionIds": [
+            "CON-S076-L-P017"
+          ]
+        }
+      },
       "W-S083": {
         "reason": "Remove the unsupported Hofmeister-Figaro publisher and Fritz Rotter lyricist relationships; the linked contemporary registration identifies Monopol-Liederverlag and E. Marischka.",
         "fields": {
@@ -3420,6 +3849,15 @@
             "CON-S083-PUB-ORG042"
           ]
         }
+      },
+      "ORG030": {
+        "reason": "Remove the two Abenteuer am Lido songs and their publisher contributions from Edition Coda; Hofmeister identifies the distinct Viennese Dacapo-Verlag.",
+        "fields": {
+          "contributionIds": [
+            "CON-S074-PUB-ORG030",
+            "CON-S075-PUB-ORG030"
+          ]
+        }
       }
     },
     "People": {
@@ -3438,9 +3876,33 @@
             "SRC0183"
           ]
         }
+      },
+      "P017": {
+        "reason": "Remove the unsupported Ninon lyricist relationship; the detailed May 1933 Hofmeister entry names Fritz Rotter alone.",
+        "fields": {
+          "contributionIds": [
+            "CON-S076-L-P017"
+          ]
+        }
       }
     },
     "Contributions": {
+      "CON-S074-PUB-ORG030": {
+        "reason": "Remove Edition Coda before reassigning the publisher contribution to Dacapo-Verlag.",
+        "fields": {
+          "organizationIds": [
+            "ORG030"
+          ]
+        }
+      },
+      "CON-S075-PUB-ORG030": {
+        "reason": "Remove Edition Coda before reassigning the publisher contribution to Dacapo-Verlag.",
+        "fields": {
+          "organizationIds": [
+            "ORG030"
+          ]
+        }
+      },
       "CON-S055-L-P040": {
         "reason": "The German Hofmeister registration does not document the French lyricist credit; retain SRC0373 as its supporting source.",
         "fields": {
