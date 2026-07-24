@@ -48,7 +48,7 @@
   "counts": {
     "People": 109,
     "Organizations": 109,
-    "Sources": 496,
+    "Sources": 495,
     "Media": 200,
     "Works": 280,
     "Films": 55,
@@ -65,12 +65,12 @@
     {
       "file": "build-report.json",
       "bytes": 36282,
-      "sha256": "9fc99c8375ada6763571dc94032b1660f69b969113ed103bd84ed9b99618e44e"
+      "sha256": "8d0cd5ba4b9b9b709eadcdcce028bb5bbb140d5d4ba948d3e994709e68952dc9"
     },
     {
       "file": "contributions.json",
       "bytes": 354380,
-      "sha256": "237f640723beefdca8249a338cffd5d3a1d5e8511187449a7f7f67d02e6582e9"
+      "sha256": "91e35e1041fc387642239e55fe638a8653aa7e569eeb1dca9edad8b7d05ca6e5"
     },
     {
       "file": "films.json",
@@ -95,12 +95,12 @@
     {
       "file": "people.json",
       "bytes": 90133,
-      "sha256": "6bfd7553dbdab50d79042110b95ea80446f5a269bf04912bacbb3094cf747fda"
+      "sha256": "89351182d38527c1380e887141f17ba249a979fd585b5029bd91d28c618d8764"
     },
     {
       "file": "person-name-variants.json",
       "bytes": 26087,
-      "sha256": "ba22099e73572ee3e38ba12333d4050e3004f16bedf084f10970ca2e566b90ef"
+      "sha256": "faf8594aeaa6f006112486d3d928adee307f2d6b4f1cee333b364509801393cd"
     },
     {
       "file": "places.json",
@@ -110,12 +110,12 @@
     {
       "file": "songs.json",
       "bytes": 131805,
-      "sha256": "bfd00794e11626ed627aff43b2964df51aacccf3237940935b9ed9a8b453c918"
+      "sha256": "926217713c70031d19b4ffdd0d5bfe25596848b1926bcabd1255f0f449ac99af"
     },
     {
       "file": "sources.json",
-      "bytes": 628913,
-      "sha256": "ed825b59e1a402e73a560461a56578ce8d9be05410627052885eb5ac1730768d"
+      "bytes": 628191,
+      "sha256": "3adbba941512ba9fc21ee366466989522153c87906a6c505079a4c409b3dce09"
     },
     {
       "file": "timeline-events.json",
@@ -134,8 +134,8 @@
     },
     {
       "file": "works.json",
-      "bytes": 247959,
-      "sha256": "500ef1322d11cbd0e6757d3840191527dbb1b235b2bb6562609ac1858ce36429"
+      "bytes": 247940,
+      "sha256": "d971e38585a75e79774a4aab18807b41d8c7242440c0aa7be96bf8c62b5c6500"
     }
   ]
 }
