@@ -5,8 +5,8 @@
   "counts": {
     "People": 109,
     "Organizations": 110,
-    "Sources": 495,
-    "Media": 200,
+    "Sources": 496,
+    "Media": 201,
     "Works": 280,
     "Films": 55,
     "Songs": 203,
@@ -22,7 +22,7 @@
     "detail_only": 37,
     "eligible": 84,
     "external_link_only": 18,
-    "selected": 61
+    "selected": 62
   },
   "appliedOverrides": [
     {
@@ -126,6 +126,25 @@
       "id": "M014",
       "fields": [
         "period"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Media",
+      "id": "M015",
+      "fields": [
+        "altText",
+        "publicCaption",
+        "slug",
+        "title"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Media",
+      "id": "M016",
+      "fields": [
+        "description"
       ],
       "removedFields": []
     },
@@ -1031,6 +1050,15 @@
       "id": "PL041",
       "fields": [
         "displayName"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Songs",
+      "id": "S015",
+      "fields": [
+        "slug",
+        "title"
       ],
       "removedFields": []
     },
@@ -2324,6 +2352,18 @@
       "removedFields": []
     },
     {
+      "table": "Timeline Events",
+      "id": "TE0039",
+      "fields": [
+        "label",
+        "longDescription",
+        "shortDescription",
+        "slug",
+        "title"
+      ],
+      "removedFields": []
+    },
+    {
       "table": "Works",
       "id": "W-O001",
       "fields": [],
@@ -2493,6 +2533,16 @@
     },
     {
       "table": "Works",
+      "id": "W-S015",
+      "fields": [
+        "slug",
+        "sortTitle",
+        "title"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Works",
       "id": "W-S043",
       "fields": [
         "sortTitle",
@@ -2604,6 +2654,34 @@
         "slug",
         "sourceIds",
         "storageType",
+        "title"
+      ]
+    },
+    {
+      "table": "Media",
+      "id": "M0244",
+      "fields": [
+        "altText",
+        "assetCount",
+        "assetPath",
+        "assetPaths",
+        "category",
+        "description",
+        "externalUrl",
+        "galleryStatus",
+        "id",
+        "mediaType",
+        "organizationIds",
+        "period",
+        "periods",
+        "publicCaption",
+        "publicCreditLine",
+        "rightsNote",
+        "rightsStatus",
+        "slug",
+        "sourceIds",
+        "storageType",
+        "timelineEventIds",
         "title"
       ]
     },
@@ -3164,6 +3242,29 @@
         "title",
         "url"
       ]
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0566",
+      "fields": [
+        "accessDate",
+        "creator",
+        "date",
+        "fullCitation",
+        "id",
+        "mediaIds",
+        "organizationIds",
+        "publication",
+        "reliability",
+        "repository",
+        "shortCitation",
+        "slug",
+        "sourceStatus",
+        "sourceType",
+        "timelineEventIds",
+        "title",
+        "url"
+      ]
     }
   ],
   "appliedLinkAdditions": [
@@ -3291,6 +3392,13 @@
     {
       "table": "Organizations",
       "id": "ORG064",
+      "fields": [
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Organizations",
+      "id": "ORG069",
       "fields": [
         "sourceIds"
       ]
@@ -3770,6 +3878,14 @@
       "id": "TE0036",
       "fields": [
         "placeIds"
+      ]
+    },
+    {
+      "table": "Timeline Events",
+      "id": "TE0039",
+      "fields": [
+        "mediaIds",
+        "sourceIds"
       ]
     },
     {

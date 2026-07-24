@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 200,
+  "count": 201,
   "records": [
     {
       "id": "M001",
@@ -507,19 +507,19 @@
     },
     {
       "id": "M015",
-      "title": "Wenn mich die Männer betrügen — video reference",
+      "title": "Wenn mich Männer betrügen — video reference",
       "mediaType": "video",
       "storageType": "external",
       "period": "european",
       "description": "The song — a tango from the feature film 'Alraune'.",
       "externalUrl": "https://www.youtube.com/watch?v=2OP5AikZuxs",
       "assetCount": 0,
-      "altText": "Film-excerpt listening reference for “Wenn mich die Männer betrügen”.",
+      "altText": "Film-excerpt listening reference for “Wenn mich Männer betrügen”.",
       "rightsStatus": "permission_needed_or_fair_use_claimed",
       "rightsNote": "External media is linked for scholarly reference and is not rehosted; reuse rights are not cleared.",
       "sortOrder": 15,
-      "slug": "wenn-mich-die-manner-betrugen-m015",
-      "publicCaption": "Film-excerpt listening reference for “Wenn mich die Männer betrügen” from Alraune (1930); the YouTube upload is treated as an access copy, not as rights evidence.",
+      "slug": "wenn-mich-maenner-betruegen-m015",
+      "publicCaption": "Film-excerpt listening reference for “Wenn mich Männer betrügen” from Alraune (1930); the YouTube upload is treated as an access copy, not as rights evidence.",
       "publicCreditLine": "YouTube film-excerpt/listening link;.",
       "category": "audio/video reference",
       "galleryStatus": "external_link_only",
@@ -545,7 +545,7 @@
       "mediaType": "video",
       "storageType": "external",
       "period": "european",
-      "description": "Early sound film directed by Richard Oswald, featuring music by Bronisław Kaper, including the tango \"Wenn mich die Männer betrügen\" performed by Brigitte Helm. The film's opening (first 5 minutes) is available on filmportal.de, digitized in 2021 as part of the Förderprogramm Filmerbe (FFE). Click above to watch on the original source.",
+      "description": "Early sound film directed by Richard Oswald, featuring music by Bronisław Kaper, including the tango “Wenn mich Männer betrügen” performed by Brigitte Helm. The film's opening (first 5 minutes) is available on filmportal.de, digitized in 2021 as part of the Förderprogramm Filmerbe (FFE). Click above to watch on the original source.",
       "externalUrl": "https://www.filmportal.de/video/alraune-19291930",
       "assetCount": 0,
       "altText": "Opening excerpt from Alraune (1929/1930) on Filmportal.de.",
@@ -867,6 +867,40 @@
       ],
       "periods": [
         "european"
+      ]
+    },
+    {
+      "id": "M0244",
+      "title": "Eleonora Kaper — portrait from Declaration of Intention, 1936",
+      "mediaType": "image",
+      "storageType": "local",
+      "period": "hollywood",
+      "description": "Portrait crop derived from the photograph embedded in Eleonora Kaper’s Declaration of Intention no. 74223. It is not a separate archival photograph.",
+      "externalUrl": "https://catalog.archives.gov/id/278166391?objectPage=278#object-thumb--278",
+      "assetPath": "assets/images/portraits/eleonora.jpg",
+      "assetPaths": [
+        "assets/images/portraits/eleonora.jpg"
+      ],
+      "assetCount": 1,
+      "altText": "Portrait of Eleonora Kaper cropped from her 1936 Declaration of Intention.",
+      "rightsStatus": "ok",
+      "rightsNote": "Public domain: cropped detail from a 1936 U.S. federal court naturalization record; no photographer is credited in the document.",
+      "slug": "eleonora-kaper-portrait-declaration-of-intention-1936-m244",
+      "publicCaption": "Eleonora Kaper, 1936. Portrait cropped from her Declaration of Intention.",
+      "publicCreditLine": "U.S. District Court, Southern District of California, Los Angeles, Declaration of Intention no. 74223; National Archives and Records Administration, NAID 278166391, object page 278.",
+      "category": "portrait",
+      "galleryStatus": "selected",
+      "organizationIds": [
+        "ORG069"
+      ],
+      "sourceIds": [
+        "SRC0566"
+      ],
+      "timelineEventIds": [
+        "TE0039"
+      ],
+      "periods": [
+        "hollywood"
       ]
     },
     {

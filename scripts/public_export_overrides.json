@@ -17,6 +17,14 @@
       }
     },
     "Works": {
+      "W-S015": {
+        "reason": "Correct the canonical title to the wording attested by the contemporary Hofmeister registration and the linked source records; remove the unsupported article “die”.",
+        "fields": {
+          "title": "Wenn mich Männer betrügen",
+          "sortTitle": "Wenn mich Männer betrügen",
+          "slug": "wenn-mich-maenner-betruegen"
+        }
+      },
       "W-S043": {
         "reason": "Correct the canonical title from “du glaubst an Liebe” to the wording “du denkst an Liebe” attested by the contemporary Hofmeister registration and already used by the linked Song and Source records; retain the existing slug for URL stability.",
         "fields": {
@@ -181,6 +189,13 @@
       }
     },
     "Songs": {
+      "S015": {
+        "reason": "Synchronize the Song title and slug with the corrected canonical Work title and the wording attested by the linked contemporary sources.",
+        "fields": {
+          "title": "Wenn mich Männer betrügen",
+          "slug": "wenn-mich-maenner-betruegen"
+        }
+      },
       "S068": {
         "reason": "Correct the genre to the 6/8 march-foxtrot designation printed in the May 1933 Hofmeister registration.",
         "fields": {
@@ -1295,6 +1310,21 @@
       }
     },
     "Media": {
+      "M015": {
+        "reason": "Synchronize the media title, alt text and public caption with the corrected canonical song title attested by the contemporary Hofmeister registration.",
+        "fields": {
+          "title": "Wenn mich Männer betrügen — video reference",
+          "altText": "Film-excerpt listening reference for “Wenn mich Männer betrügen”.",
+          "publicCaption": "Film-excerpt listening reference for “Wenn mich Männer betrügen” from Alraune (1930); the YouTube upload is treated as an access copy, not as rights evidence.",
+          "slug": "wenn-mich-maenner-betruegen-m015"
+        }
+      },
+      "M016": {
+        "reason": "Synchronize the contextual Alraune description with the corrected canonical song title.",
+        "fields": {
+          "description": "Early sound film directed by Richard Oswald, featuring music by Bronisław Kaper, including the tango “Wenn mich Männer betrügen” performed by Brigitte Helm. The film's opening (first 5 minutes) is available on filmportal.de, digitized in 2021 as part of the Förderprogramm Filmerbe (FFE). Click above to watch on the original source."
+        }
+      },
       "M001": {
         "reason": "Classify the listening reference with the documented 1926 Warsaw song rather than with the later European recording and circulation context.",
         "fields": {
@@ -1880,6 +1910,16 @@
           "placeDisplay": "Berlin / Paris / Montpellier"
         }
       },
+      "TE0039": {
+        "reason": "Represent the two declarations filed on the same date: the verified NARA records show that both Bronisław and Eleonora Kaper filed Declarations of Intention in Los Angeles on 4 February 1936.",
+        "fields": {
+          "slug": "4-february-1936-declarations-of-intention",
+          "title": "Declarations of Intention",
+          "label": "4 Feb 1936 · Declarations of Intention",
+          "shortDescription": "Bronisław and Eleonora Kaper file Declarations of Intention to become U.S. citizens in Los Angeles.",
+          "longDescription": "On 4 February 1936, Bronisław Kaper and Eleonora Kaper each filed a Declaration of Intention in the U.S. District Court for the Southern District of California, Los Angeles."
+        }
+      },
       "TE0019": {
         "reason": "Kaper was resident in Berlin, not Paris, in 1928-1931; the Paris (PL003) place link is anachronistic and predates his 1933 move to Paris. Remove Paris from these Berlin-period events and correct the placeDisplay from 'Berlin / Paris' to 'Berlin'.",
         "fields": {
@@ -2372,6 +2412,34 @@
             "M0243"
           ]
         }
+      },
+      "SRC0566": {
+        "reason": "Add the independently verified National Archives record for Eleonora Kaper's Declaration of Intention and distinguish it from Bronisław Kaper's separate declaration SRC0038.",
+        "fields": {
+          "id": "SRC0566",
+          "shortCitation": "Declaration of Intention no. 74223, Eleonora Kaper, Los Angeles, 4 February 1936",
+          "fullCitation": "Declaration of Intention no. 74223, Eleonora Kaper, 4 February 1936. U.S. District Court, Southern District of California, Los Angeles; certification no. 23-46079. U.S. National Archives and Records Administration, National Archives Catalog, NAID 278166391, object page 278.",
+          "sourceType": "archival_document",
+          "title": "Declaration of Intention no. 74223 — Eleonora Kaper",
+          "creator": "U.S. District Court, Southern District of California, Los Angeles",
+          "repository": "U.S. National Archives and Records Administration / National Archives Catalog",
+          "publication": "National Archives Catalog",
+          "date": "1936-02-04",
+          "url": "https://catalog.archives.gov/id/278166391?objectPage=278#object-thumb--278",
+          "accessDate": "2026-07-25",
+          "reliability": "high",
+          "sourceStatus": "verified",
+          "slug": "declaration-of-intention-no-74223-eleonora-kaper-src0566",
+          "organizationIds": [
+            "ORG069"
+          ],
+          "mediaIds": [
+            "M0244"
+          ],
+          "timelineEventIds": [
+            "TE0039"
+          ]
+        }
       }
     },
     "Places": {
@@ -2818,11 +2886,56 @@
             "european"
           ]
         }
+      },
+      "M0244": {
+        "reason": "Publish the existing portrait crop from Eleonora Kaper's 1936 Declaration of Intention as a clearly identified derivative of that federal naturalization record, following the treatment of Bronisław Kaper's analogous portrait M235.",
+        "fields": {
+          "id": "M0244",
+          "title": "Eleonora Kaper — portrait from Declaration of Intention, 1936",
+          "mediaType": "image",
+          "storageType": "local",
+          "period": "hollywood",
+          "description": "Portrait crop derived from the photograph embedded in Eleonora Kaper’s Declaration of Intention no. 74223. It is not a separate archival photograph.",
+          "externalUrl": "https://catalog.archives.gov/id/278166391?objectPage=278#object-thumb--278",
+          "assetPath": "assets/images/portraits/eleonora.jpg",
+          "assetPaths": [
+            "assets/images/portraits/eleonora.jpg"
+          ],
+          "assetCount": 1,
+          "altText": "Portrait of Eleonora Kaper cropped from her 1936 Declaration of Intention.",
+          "rightsStatus": "ok",
+          "rightsNote": "Public domain: cropped detail from a 1936 U.S. federal court naturalization record; no photographer is credited in the document.",
+          "slug": "eleonora-kaper-portrait-declaration-of-intention-1936-m244",
+          "publicCaption": "Eleonora Kaper, 1936. Portrait cropped from her Declaration of Intention.",
+          "publicCreditLine": "U.S. District Court, Southern District of California, Los Angeles, Declaration of Intention no. 74223; National Archives and Records Administration, NAID 278166391, object page 278.",
+          "category": "portrait",
+          "galleryStatus": "selected",
+          "organizationIds": [
+            "ORG069"
+          ],
+          "sourceIds": [
+            "SRC0566"
+          ],
+          "timelineEventIds": [
+            "TE0039"
+          ],
+          "periods": [
+            "hollywood"
+          ]
+        }
       }
     }
   },
   "linkAdditions": {
     "Organizations": {
+      "ORG069": {
+        "reason": "Link the National Archives organization record to Eleonora Kaper's Declaration of Intention source.",
+        "fields": {
+          "sourceIds": [
+            "SRC0566"
+          ]
+        }
+      },
       "ORG064": {
         "reason": "Link the completed 1930–1933 Hofmeister/ANNO source records to the Austrian National Library repository.",
         "fields": {
@@ -3069,6 +3182,17 @@
         "fields": {
           "placeIds": [
             "PL043"
+          ]
+        }
+      },
+      "TE0039": {
+        "reason": "Attach Eleonora Kaper's independently documented Declaration of Intention and portrait crop to the existing 4 February 1936 citizenship event; retain Bronisław Kaper's full declaration M115 as the hero image.",
+        "fields": {
+          "sourceIds": [
+            "SRC0566"
+          ],
+          "mediaIds": [
+            "M0244"
           ]
         }
       },
