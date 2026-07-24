@@ -17,6 +17,13 @@
       }
     },
     "Works": {
+      "W-S043": {
+        "reason": "Correct the canonical title from “du glaubst an Liebe” to the wording “du denkst an Liebe” attested by the contemporary Hofmeister registration and already used by the linked Song and Source records; retain the existing slug for URL stability.",
+        "fields": {
+          "title": "Du bist verrückt, mein Schatz, du denkst an Liebe",
+          "sortTitle": "Du bist verrückt, mein Schatz, du denkst an Liebe"
+        }
+      },
       "W-S077": {
         "reason": "Correct the work year to the 1933 Salabert edition documented by the BnF catalogue record SRC0298 and the contemporary 22 June 1934 performance notice SRC0536.",
         "fields": {
@@ -374,6 +381,69 @@
         "reason": "Remove the incorrect statement that the University of Warsaw student file includes the baptism record; the baptism is documented separately by the parish/metrical record (SRC0012).",
         "fields": {
           "fullCitation": "Archiwum Uniwersytetu Warszawskiego, Bronisław Kaper student file, RP 6854. Aggregate archival source for documents from Kaper's University of Warsaw student file, including the young portrait, University of Warsaw matriculation and study records, and the police certificate of 21 April 1920 recording his religion as Mosaic. No public URL; used with permission / archival consultation."
+        }
+      },
+      "SRC0093": {
+        "reason": "Correct the issue number and month: ANNO identifier 19310053 and the scanned issue heading establish March 1931, no. 3, not April, no. 4.",
+        "fields": {
+          "fullCitation": "B. Kaper and Fritz German, “Du lieber Geiger, spiel einen Tango für mich,” from Seitensprünge. Text by F. Rotter. Berlin: Edition Brüll, 1931. Registered in Hofmeisters Musikalisch-literarischer Monatsbericht 103, no. 3 (March 1931): 60. ANNO – Austrian Newspapers Online, Österreichische Nationalbibliothek. https://anno.onb.ac.at/cgi-content/anno-plus?aid=hof&datum=19310053.",
+          "date": "1931-03",
+          "accessDate": "2026-07-24"
+        }
+      },
+      "SRC0178": {
+        "reason": "Replace the unresolved Hofmeister reference with both exact ANNO registrations for the two titles represented by this source.",
+        "fields": {
+          "fullCitation": "Fritz Rotter and B. Kaper, “Du warst mir ein Roman” and “Das verliebte Orchester,” from Die große Attraktion. Berlin: Alrobi, 1931. “Du warst mir ein Roman” is registered in Hofmeisters Musikalisch-literarischer Monatsbericht 103, no. 4 (April 1931): 84; “Das verliebte Orchester” in 103, no. 5 (May 1931): 109. ANNO – Austrian Newspapers Online, Österreichische Nationalbibliothek. https://anno.onb.ac.at/cgi-content/anno-plus?aid=hof&datum=19310054; https://anno.onb.ac.at/cgi-content/anno-plus?aid=hof&datum=19310055.",
+          "repository": "Österreichische Nationalbibliothek / ANNO",
+          "publication": "Alrobi, Berlin",
+          "date": "1931-04",
+          "url": "https://anno.onb.ac.at/cgi-content/anno-plus?aid=hof&datum=19310054",
+          "accessDate": "2026-07-24"
+        }
+      },
+      "SRC0179": {
+        "reason": "Replace the unresolved Hofmeister reference with the first exact registration and retain the later salon-orchestra listing as bibliographic context.",
+        "fields": {
+          "fullCitation": "B. Kaper and Austin Egen, “Ich weiß ein kleines Café.” Tango; text by F. Rotter. Berlin: Drei Masken-Musik, 1931. First registered in Hofmeisters Musikalisch-literarischer Monatsbericht 103, no. 4 (April 1931): 84; a salon-orchestra arrangement is listed in 103, no. 5 (May 1931): 106. ANNO – Austrian Newspapers Online, Österreichische Nationalbibliothek. https://anno.onb.ac.at/cgi-content/anno-plus?aid=hof&datum=19310054; https://anno.onb.ac.at/cgi-content/anno-plus?aid=hof&datum=19310055.",
+          "repository": "Österreichische Nationalbibliothek / ANNO",
+          "publication": "Drei Masken-Musik, Berlin",
+          "date": "1931-04",
+          "url": "https://anno.onb.ac.at/cgi-content/anno-plus?aid=hof&datum=19310054",
+          "accessDate": "2026-07-24"
+        }
+      },
+      "SRC0180": {
+        "reason": "Resolve the missing publisher, issue and page from the complete Trara VIII listing in the April 1931 Hofmeister report.",
+        "fields": {
+          "fullCitation": "Fritz Rotter and B. Kaper, “Ach Otto, Otto.” Foxtrot for wind band, in Trara. Blas-Musik-Album, no. 8, arranged by H. Männecke. Berlin: Alrobi, 1931. Registered in Hofmeisters Musikalisch-literarischer Monatsbericht 103, no. 4 (April 1931): 90, with a cross-reference on p. 88. ANNO – Austrian Newspapers Online, Österreichische Nationalbibliothek. https://anno.onb.ac.at/cgi-content/anno-plus?aid=hof&datum=19310054.",
+          "repository": "Österreichische Nationalbibliothek / ANNO",
+          "publication": "Trara VIII; Alrobi, Berlin",
+          "date": "1931-04",
+          "url": "https://anno.onb.ac.at/cgi-content/anno-plus?aid=hof&datum=19310054",
+          "accessDate": "2026-07-24"
+        }
+      },
+      "SRC0181": {
+        "reason": "Replace the unresolved Hofmeister reference with the exact July 1931 ANNO issue and page.",
+        "fields": {
+          "fullCitation": "Fritz Rotter and B. Kaper, “Margarete, wander’ mit mir.” Foxtrot. Berlin: Edition Brüll, 1931. Registered in Hofmeisters Musikalisch-literarischer Monatsbericht 103, no. 7 (July 1931): 155. ANNO – Austrian Newspapers Online, Österreichische Nationalbibliothek. https://anno.onb.ac.at/cgi-content/anno-plus?aid=hof&datum=19310057.",
+          "repository": "Österreichische Nationalbibliothek / ANNO",
+          "publication": "Edition Brüll, Berlin",
+          "date": "1931-07",
+          "url": "https://anno.onb.ac.at/cgi-content/anno-plus?aid=hof&datum=19310057",
+          "accessDate": "2026-07-24"
+        }
+      },
+      "SRC0182": {
+        "reason": "Replace the unresolved Hofmeister reference with the exact April 1931 ANNO issue and page.",
+        "fields": {
+          "fullCitation": "Fritz Rotter and B. Kaper, “Du bist verrückt, mein Schatz, du denkst an Liebe.” Foxtrot. Vienna: Wiener Boheme-Verlag, 1931. Registered in Hofmeisters Musikalisch-literarischer Monatsbericht 103, no. 4 (April 1931): 88. ANNO – Austrian Newspapers Online, Österreichische Nationalbibliothek. https://anno.onb.ac.at/cgi-content/anno-plus?aid=hof&datum=19310054.",
+          "repository": "Österreichische Nationalbibliothek / ANNO",
+          "publication": "Wiener Boheme-Verlag, Vienna",
+          "date": "1931-04",
+          "url": "https://anno.onb.ac.at/cgi-content/anno-plus?aid=hof&datum=19310054",
+          "accessDate": "2026-07-24"
         }
       },
       "SRC0195": {
@@ -2424,15 +2494,28 @@
   "linkAdditions": {
     "Organizations": {
       "ORG064": {
-        "reason": "Link the six newly completed Hofmeister/ANNO source records to the Austrian National Library repository.",
+        "reason": "Link the completed 1930 and 1931 Hofmeister/ANNO source records to the Austrian National Library repository.",
         "fields": {
           "sourceIds": [
+            "SRC0178",
+            "SRC0179",
+            "SRC0180",
+            "SRC0181",
+            "SRC0182",
             "SRC0195",
             "SRC0196",
             "SRC0197",
             "SRC0198",
             "SRC0199",
             "SRC0201"
+          ]
+        }
+      },
+      "ORG033": {
+        "reason": "Link the newly identified Alrobi publisher of the Trara VIII registration to SRC0180.",
+        "fields": {
+          "sourceIds": [
+            "SRC0180"
           ]
         }
       }
@@ -2699,6 +2782,47 @@
         "fields": {
           "personIds": [
             "P009"
+          ]
+        }
+      },
+      "SRC0178": {
+        "reason": "Link the completed Hofmeister registrations to the Austrian National Library / ANNO repository.",
+        "fields": {
+          "organizationIds": [
+            "ORG064"
+          ]
+        }
+      },
+      "SRC0179": {
+        "reason": "Link the completed Hofmeister registrations to the Austrian National Library / ANNO repository.",
+        "fields": {
+          "organizationIds": [
+            "ORG064"
+          ]
+        }
+      },
+      "SRC0180": {
+        "reason": "Link the completed Trara VIII registration both to its newly confirmed publisher and to the Austrian National Library / ANNO repository.",
+        "fields": {
+          "organizationIds": [
+            "ORG033",
+            "ORG064"
+          ]
+        }
+      },
+      "SRC0181": {
+        "reason": "Link the completed Hofmeister registration to the Austrian National Library / ANNO repository.",
+        "fields": {
+          "organizationIds": [
+            "ORG064"
+          ]
+        }
+      },
+      "SRC0182": {
+        "reason": "Link the completed Hofmeister registration to the Austrian National Library / ANNO repository.",
+        "fields": {
+          "organizationIds": [
+            "ORG064"
           ]
         }
       },
