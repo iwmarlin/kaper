@@ -11,9 +11,10 @@ documented period from 1902 through 1939.
 - Only records with `Editorial Status = approved` enter the public graph. Work,
   place, gallery, timeline, contribution and relation publication controls are
   applied in addition to this status.
-- `excludedPlaceIds` and `excludedMediaIds` in the export configuration support
-  explicit public-map curation and the removal of confirmed duplicate media
-  records without rewriting the frozen private Airtable snapshot.
+- `excludedPlaceIds`, `excludedMediaIds`, `excludedSourceIds`, and
+  `excludedContributionIds` in the export configuration support explicit
+  curation and the removal of confirmed duplicate or superseded records without
+  rewriting the frozen private Airtable snapshot.
 - People, organizations and sources are included only when approved and reachable
   from the selected public graph.
 - Linked Airtable record IDs are replaced with stable project IDs. Links to records

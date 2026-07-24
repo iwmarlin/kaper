@@ -15,16 +15,40 @@
     "Work Relations": 190,
     "Timeline Events": 52,
     "Places": 44,
-    "Contributions": 983,
+    "Contributions": 982,
     "Person Name Variants": 35
   },
   "galleryStatusCounts": {
-    "detail_only": 36,
-    "eligible": 82,
+    "detail_only": 37,
+    "eligible": 84,
     "external_link_only": 18,
     "selected": 61
   },
   "appliedOverrides": [
+    {
+      "table": "Contributions",
+      "id": "CON-S057-L-P017",
+      "fields": [
+        "nameAsPrinted"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Contributions",
+      "id": "CON-S057-PUB-ORG038",
+      "fields": [
+        "nameAsPrinted"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Contributions",
+      "id": "CON-S083-PUB-ORG042",
+      "fields": [
+        "nameAsPrinted"
+      ],
+      "removedFields": []
+    },
     {
       "table": "Contributions",
       "id": "CON-S190-C-P009",
@@ -996,6 +1020,15 @@
     },
     {
       "table": "Songs",
+      "id": "S057",
+      "fields": [
+        "lyricistAsPrinted",
+        "publisherAsPrinted"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Songs",
       "id": "S077",
       "fields": [
         "period",
@@ -1009,6 +1042,15 @@
       "fields": [
         "period",
         "year"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Songs",
+      "id": "S083",
+      "fields": [
+        "lyricistAsPrinted",
+        "publisherAsPrinted"
       ],
       "removedFields": []
     },
@@ -1038,6 +1080,16 @@
     },
     {
       "table": "Sources",
+      "id": "SRC0093",
+      "fields": [
+        "accessDate",
+        "date",
+        "fullCitation"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
       "id": "SRC0110",
       "fields": [
         "fullCitation"
@@ -1046,9 +1098,494 @@
     },
     {
       "table": "Sources",
+      "id": "SRC0178",
+      "fields": [
+        "accessDate",
+        "date",
+        "fullCitation",
+        "publication",
+        "repository",
+        "url"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0179",
+      "fields": [
+        "accessDate",
+        "date",
+        "fullCitation",
+        "publication",
+        "repository",
+        "url"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0180",
+      "fields": [
+        "accessDate",
+        "date",
+        "fullCitation",
+        "publication",
+        "repository",
+        "url"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0181",
+      "fields": [
+        "accessDate",
+        "date",
+        "fullCitation",
+        "publication",
+        "repository",
+        "url"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0182",
+      "fields": [
+        "accessDate",
+        "date",
+        "fullCitation",
+        "publication",
+        "repository",
+        "url"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0183",
+      "fields": [
+        "accessDate",
+        "date",
+        "fullCitation",
+        "publication",
+        "repository",
+        "url"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0184",
+      "fields": [
+        "accessDate",
+        "date",
+        "fullCitation",
+        "publication",
+        "repository",
+        "url"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0185",
+      "fields": [
+        "accessDate",
+        "date",
+        "fullCitation",
+        "publication",
+        "repository",
+        "url"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0186",
+      "fields": [
+        "accessDate",
+        "date",
+        "fullCitation",
+        "publication",
+        "repository",
+        "url"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0187",
+      "fields": [
+        "accessDate",
+        "date",
+        "fullCitation",
+        "publication",
+        "repository",
+        "url"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0189",
+      "fields": [
+        "accessDate",
+        "date",
+        "fullCitation",
+        "publication",
+        "repository",
+        "sourceStatus",
+        "url"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0195",
+      "fields": [
+        "accessDate",
+        "date",
+        "fullCitation",
+        "publication",
+        "repository",
+        "url"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0196",
+      "fields": [
+        "accessDate",
+        "date",
+        "fullCitation",
+        "publication",
+        "repository",
+        "url"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0197",
+      "fields": [
+        "accessDate",
+        "date",
+        "fullCitation",
+        "publication",
+        "repository",
+        "url"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0198",
+      "fields": [
+        "accessDate",
+        "date",
+        "fullCitation",
+        "publication",
+        "repository",
+        "url"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0199",
+      "fields": [
+        "accessDate",
+        "date",
+        "fullCitation",
+        "publication",
+        "repository",
+        "url"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0201",
+      "fields": [
+        "accessDate",
+        "date",
+        "fullCitation",
+        "publication",
+        "repository",
+        "url"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0208",
+      "fields": [
+        "accessDate",
+        "date",
+        "fullCitation",
+        "publication",
+        "repository",
+        "url"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0209",
+      "fields": [
+        "accessDate",
+        "date",
+        "fullCitation",
+        "publication",
+        "repository",
+        "url"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0210",
+      "fields": [
+        "accessDate",
+        "date",
+        "fullCitation",
+        "publication",
+        "repository",
+        "url"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0211",
+      "fields": [
+        "accessDate",
+        "date",
+        "fullCitation",
+        "publication",
+        "repository",
+        "url"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0213",
+      "fields": [
+        "accessDate",
+        "date",
+        "fullCitation",
+        "publication",
+        "repository",
+        "url"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0214",
+      "fields": [
+        "accessDate",
+        "date",
+        "fullCitation",
+        "publication",
+        "repository",
+        "url"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0288",
+      "fields": [
+        "sourceType"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0289",
+      "fields": [
+        "sourceType"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0290",
+      "fields": [
+        "sourceType"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0299",
+      "fields": [
+        "sourceType"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0302",
+      "fields": [
+        "sourceType"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0306",
+      "fields": [
+        "sourceType"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0307",
+      "fields": [
+        "sourceType"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0330",
+      "fields": [
+        "sourceType"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0332",
+      "fields": [
+        "sourceType"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0336",
+      "fields": [
+        "sourceType"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0338",
+      "fields": [
+        "sourceType"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0339",
+      "fields": [
+        "sourceType"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0340",
+      "fields": [
+        "sourceType"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0342",
+      "fields": [
+        "sourceType"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0343",
+      "fields": [
+        "sourceType"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0346",
+      "fields": [
+        "sourceType"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0351",
+      "fields": [
+        "sourceType"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0356",
+      "fields": [
+        "sourceType"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0357",
+      "fields": [
+        "sourceType"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
       "id": "SRC0358",
       "fields": [
-        "fullCitation"
+        "fullCitation",
+        "sourceType"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0359",
+      "fields": [
+        "sourceType"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0360",
+      "fields": [
+        "sourceType"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0362",
+      "fields": [
+        "sourceType"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0364",
+      "fields": [
+        "sourceType"
       ],
       "removedFields": []
     },
@@ -1059,6 +1596,94 @@
         "fullCitation",
         "publication",
         "repository"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0366",
+      "fields": [
+        "sourceType"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0383",
+      "fields": [
+        "sourceType"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0384",
+      "fields": [
+        "sourceType"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0387",
+      "fields": [
+        "sourceType"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0388",
+      "fields": [
+        "sourceType"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0389",
+      "fields": [
+        "sourceType"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0391",
+      "fields": [
+        "sourceType"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0393",
+      "fields": [
+        "sourceType"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0395",
+      "fields": [
+        "sourceType"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0397",
+      "fields": [
+        "sourceType"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0400",
+      "fields": [
+        "sourceType"
       ],
       "removedFields": []
     },
@@ -1076,9 +1701,418 @@
     },
     {
       "table": "Sources",
+      "id": "SRC0417",
+      "fields": [
+        "sourceType"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0421",
+      "fields": [
+        "sourceType"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0422",
+      "fields": [
+        "sourceType"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0425",
+      "fields": [
+        "sourceType"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0426",
+      "fields": [
+        "sourceType"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0428",
+      "fields": [
+        "sourceType"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0429",
+      "fields": [
+        "sourceType"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0430",
+      "fields": [
+        "sourceType"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0432",
+      "fields": [
+        "sourceType"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0433",
+      "fields": [
+        "sourceType"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0434",
+      "fields": [
+        "sourceType"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0435",
+      "fields": [
+        "sourceType"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0436",
+      "fields": [
+        "sourceType"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0437",
+      "fields": [
+        "sourceType"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0438",
+      "fields": [
+        "sourceType"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0439",
+      "fields": [
+        "sourceType"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0441",
+      "fields": [
+        "sourceType"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0443",
+      "fields": [
+        "sourceType"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0446",
+      "fields": [
+        "sourceType"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0447",
+      "fields": [
+        "sourceType"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0448",
+      "fields": [
+        "sourceType"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0450",
+      "fields": [
+        "sourceType"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
       "id": "SRC0455",
       "fields": [
-        "fullCitation"
+        "fullCitation",
+        "sourceType"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0456",
+      "fields": [
+        "sourceType"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0477",
+      "fields": [
+        "sourceType"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0488",
+      "fields": [
+        "sourceType"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0489",
+      "fields": [
+        "sourceType"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0492",
+      "fields": [
+        "sourceType"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0501",
+      "fields": [
+        "sourceType"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0503",
+      "fields": [
+        "sourceType"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0520",
+      "fields": [
+        "sourceType"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0523",
+      "fields": [
+        "sourceType"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0524",
+      "fields": [
+        "sourceType"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0532",
+      "fields": [
+        "sourceType"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0533",
+      "fields": [
+        "sourceType"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0534",
+      "fields": [
+        "sourceType"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0535",
+      "fields": [
+        "sourceType"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0537",
+      "fields": [
+        "sourceType"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0538",
+      "fields": [
+        "sourceType"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0539",
+      "fields": [
+        "sourceType"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0540",
+      "fields": [
+        "sourceType"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0541",
+      "fields": [
+        "sourceType"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0542",
+      "fields": [
+        "sourceType"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0543",
+      "fields": [
+        "sourceType"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0544",
+      "fields": [
+        "sourceType"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0545",
+      "fields": [
+        "sourceType"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0548",
+      "fields": [
+        "sourceType"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0549",
+      "fields": [
+        "sourceType"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Timeline Events",
+      "id": "TE0019",
+      "fields": [
+        "placeDisplay"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Timeline Events",
+      "id": "TE0021",
+      "fields": [
+        "placeDisplay"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Timeline Events",
+      "id": "TE0025",
+      "fields": [
+        "placeDisplay"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Timeline Events",
+      "id": "TE0026",
+      "fields": [
+        "placeDisplay"
       ],
       "removedFields": []
     },
@@ -1272,6 +2306,15 @@
     },
     {
       "table": "Works",
+      "id": "W-S043",
+      "fields": [
+        "sortTitle",
+        "title"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Works",
       "id": "W-S077",
       "fields": [
         "period",
@@ -1290,6 +2333,84 @@
     }
   ],
   "appliedAdditions": [
+    {
+      "table": "Media",
+      "id": "M0241",
+      "fields": [
+        "altText",
+        "assetCount",
+        "assetPath",
+        "assetPaths",
+        "category",
+        "description",
+        "externalUrl",
+        "galleryStatus",
+        "id",
+        "mediaType",
+        "period",
+        "periods",
+        "publicCaption",
+        "publicCreditLine",
+        "rightsNote",
+        "rightsStatus",
+        "slug",
+        "sourceIds",
+        "storageType",
+        "title"
+      ]
+    },
+    {
+      "table": "Media",
+      "id": "M0242",
+      "fields": [
+        "altText",
+        "assetCount",
+        "assetPath",
+        "assetPaths",
+        "category",
+        "description",
+        "externalUrl",
+        "galleryStatus",
+        "id",
+        "mediaType",
+        "period",
+        "periods",
+        "publicCaption",
+        "publicCreditLine",
+        "rightsNote",
+        "rightsStatus",
+        "slug",
+        "sourceIds",
+        "storageType",
+        "title"
+      ]
+    },
+    {
+      "table": "Media",
+      "id": "M0243",
+      "fields": [
+        "altText",
+        "assetCount",
+        "assetPath",
+        "assetPaths",
+        "category",
+        "description",
+        "externalUrl",
+        "galleryStatus",
+        "id",
+        "mediaType",
+        "period",
+        "periods",
+        "publicCaption",
+        "publicCreditLine",
+        "rightsNote",
+        "rightsStatus",
+        "slug",
+        "sourceIds",
+        "storageType",
+        "title"
+      ]
+    },
     {
       "table": "Media",
       "id": "M233",
@@ -1564,6 +2685,29 @@
       ]
     },
     {
+      "table": "Places",
+      "id": "PL045",
+      "fields": [
+        "authorizedName",
+        "city",
+        "country",
+        "displayName",
+        "id",
+        "latitude",
+        "longitude",
+        "mapPrecision",
+        "period",
+        "periods",
+        "placeType",
+        "publicNote",
+        "publicScope",
+        "region",
+        "slug",
+        "sourceIds",
+        "timelineEventIds"
+      ]
+    },
+    {
       "table": "Sources",
       "id": "SRC0555",
       "fields": [
@@ -1742,9 +2886,103 @@
         "title",
         "url"
       ]
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0563",
+      "fields": [
+        "accessDate",
+        "creator",
+        "date",
+        "fullCitation",
+        "id",
+        "mediaIds",
+        "personIds",
+        "publication",
+        "reliability",
+        "repository",
+        "shortCitation",
+        "slug",
+        "sourceStatus",
+        "sourceType",
+        "title",
+        "url"
+      ]
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0564",
+      "fields": [
+        "accessDate",
+        "creator",
+        "date",
+        "fullCitation",
+        "id",
+        "mediaIds",
+        "personIds",
+        "publication",
+        "reliability",
+        "repository",
+        "shortCitation",
+        "slug",
+        "sourceStatus",
+        "sourceType",
+        "title",
+        "url"
+      ]
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0565",
+      "fields": [
+        "accessDate",
+        "creator",
+        "date",
+        "fullCitation",
+        "id",
+        "mediaIds",
+        "personIds",
+        "publication",
+        "reliability",
+        "repository",
+        "shortCitation",
+        "slug",
+        "sourceStatus",
+        "sourceType",
+        "title",
+        "url"
+      ]
     }
   ],
   "appliedLinkAdditions": [
+    {
+      "table": "Contributions",
+      "id": "CON-S023-C-P009",
+      "fields": [
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Contributions",
+      "id": "CON-S023-L-P020",
+      "fields": [
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Contributions",
+      "id": "CON-S023-PUB-ORG033",
+      "fields": [
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Contributions",
+      "id": "CON-S083-PUB-ORG042",
+      "fields": [
+        "organizationIds"
+      ]
+    },
     {
       "table": "Media",
       "id": "M024",
@@ -1782,6 +3020,63 @@
       ]
     },
     {
+      "table": "Organizations",
+      "id": "ORG029",
+      "fields": [
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Organizations",
+      "id": "ORG031",
+      "fields": [
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Organizations",
+      "id": "ORG033",
+      "fields": [
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Organizations",
+      "id": "ORG036",
+      "fields": [
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Organizations",
+      "id": "ORG038",
+      "fields": [
+        "contributionIds",
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Organizations",
+      "id": "ORG044",
+      "fields": [
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Organizations",
+      "id": "ORG064",
+      "fields": [
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "People",
+      "id": "P001",
+      "fields": [
+        "sourceIds"
+      ]
+    },
+    {
       "table": "People",
       "id": "P003",
       "fields": [
@@ -1791,6 +3086,13 @@
     {
       "table": "People",
       "id": "P009",
+      "fields": [
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "People",
+      "id": "P017",
       "fields": [
         "sourceIds"
       ]
@@ -1812,6 +3114,13 @@
     {
       "table": "People",
       "id": "P027",
+      "fields": [
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "People",
+      "id": "P044",
       "fields": [
         "sourceIds"
       ]
@@ -1852,10 +3161,45 @@
       ]
     },
     {
+      "table": "People",
+      "id": "P119",
+      "fields": [
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Person Name Variants",
+      "id": "PNV0019",
+      "fields": [
+        "sourceIds"
+      ]
+    },
+    {
       "table": "Places",
       "id": "PL016",
       "fields": [
         "mediaIds",
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Places",
+      "id": "PL030",
+      "fields": [
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Places",
+      "id": "PL038",
+      "fields": [
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Songs",
+      "id": "S023",
+      "fields": [
         "sourceIds"
       ]
     },
@@ -1883,6 +3227,175 @@
     },
     {
       "table": "Sources",
+      "id": "SRC0178",
+      "fields": [
+        "organizationIds"
+      ]
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0179",
+      "fields": [
+        "organizationIds"
+      ]
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0180",
+      "fields": [
+        "organizationIds"
+      ]
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0181",
+      "fields": [
+        "organizationIds"
+      ]
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0182",
+      "fields": [
+        "organizationIds"
+      ]
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0183",
+      "fields": [
+        "organizationIds"
+      ]
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0184",
+      "fields": [
+        "organizationIds"
+      ]
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0185",
+      "fields": [
+        "organizationIds"
+      ]
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0186",
+      "fields": [
+        "organizationIds"
+      ]
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0187",
+      "fields": [
+        "organizationIds"
+      ]
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0195",
+      "fields": [
+        "organizationIds"
+      ]
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0196",
+      "fields": [
+        "organizationIds"
+      ]
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0197",
+      "fields": [
+        "organizationIds"
+      ]
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0198",
+      "fields": [
+        "organizationIds"
+      ]
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0199",
+      "fields": [
+        "organizationIds"
+      ]
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0201",
+      "fields": [
+        "organizationIds"
+      ]
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0208",
+      "fields": [
+        "organizationIds",
+        "personIds"
+      ]
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0209",
+      "fields": [
+        "organizationIds"
+      ]
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0210",
+      "fields": [
+        "organizationIds"
+      ]
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0211",
+      "fields": [
+        "organizationIds",
+        "personIds"
+      ]
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0213",
+      "fields": [
+        "organizationIds",
+        "personIds"
+      ]
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0214",
+      "fields": [
+        "organizationIds",
+        "personIds"
+      ]
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0226",
+      "fields": [
+        "contributionIds",
+        "nameVariantIds",
+        "personIds",
+        "songIds",
+        "workIds"
+      ]
+    },
+    {
+      "table": "Sources",
       "id": "SRC0330",
       "fields": [
         "personIds"
@@ -1903,6 +3416,14 @@
       ]
     },
     {
+      "table": "Sources",
+      "id": "SRC0494",
+      "fields": [
+        "placeIds",
+        "timelineEventIds"
+      ]
+    },
+    {
       "table": "Timeline Events",
       "id": "TE0020",
       "fields": [
@@ -1919,18 +3440,102 @@
     },
     {
       "table": "Timeline Events",
+      "id": "TE0035",
+      "fields": [
+        "placeIds"
+      ]
+    },
+    {
+      "table": "Timeline Events",
       "id": "TE0036",
       "fields": [
         "placeIds"
+      ]
+    },
+    {
+      "table": "Timeline Events",
+      "id": "TE0052",
+      "fields": [
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Timeline Events",
+      "id": "TE0053",
+      "fields": [
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Works",
+      "id": "W-S023",
+      "fields": [
+        "sourceIds"
       ]
     }
   ],
   "appliedLinkRemovals": [
     {
+      "table": "Contributions",
+      "id": "CON-S055-L-P040",
+      "fields": [
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Contributions",
+      "id": "CON-S055-PUB-ORG039",
+      "fields": [
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Contributions",
+      "id": "CON-S083-PUB-ORG042",
+      "fields": [
+        "organizationIds"
+      ]
+    },
+    {
       "table": "Media",
       "id": "M031",
       "fields": [
         "sourceIds",
+        "timelineEventIds"
+      ]
+    },
+    {
+      "table": "Organizations",
+      "id": "ORG033",
+      "fields": [
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Organizations",
+      "id": "ORG042",
+      "fields": [
+        "contributionIds"
+      ]
+    },
+    {
+      "table": "People",
+      "id": "P020",
+      "fields": [
+        "contributionIds"
+      ]
+    },
+    {
+      "table": "People",
+      "id": "P040",
+      "fields": [
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Places",
+      "id": "PL003",
+      "fields": [
         "timelineEventIds"
       ]
     },
@@ -1943,6 +3548,35 @@
       ]
     },
     {
+      "table": "Sources",
+      "id": "SRC0183",
+      "fields": [
+        "contributionIds",
+        "personIds"
+      ]
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0184",
+      "fields": [
+        "organizationIds"
+      ]
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0211",
+      "fields": [
+        "contributionIds"
+      ]
+    },
+    {
+      "table": "Timeline Events",
+      "id": "TE0019",
+      "fields": [
+        "placeIds"
+      ]
+    },
+    {
       "table": "Timeline Events",
       "id": "TE0020",
       "fields": [
@@ -1951,10 +3585,38 @@
     },
     {
       "table": "Timeline Events",
+      "id": "TE0021",
+      "fields": [
+        "placeIds"
+      ]
+    },
+    {
+      "table": "Timeline Events",
+      "id": "TE0025",
+      "fields": [
+        "placeIds"
+      ]
+    },
+    {
+      "table": "Timeline Events",
+      "id": "TE0026",
+      "fields": [
+        "placeIds"
+      ]
+    },
+    {
+      "table": "Timeline Events",
       "id": "TE0032",
       "fields": [
         "mediaIds",
         "sourceIds"
+      ]
+    },
+    {
+      "table": "Works",
+      "id": "W-S083",
+      "fields": [
+        "contributionIds"
       ]
     }
   ],

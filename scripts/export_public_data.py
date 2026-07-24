@@ -630,6 +630,9 @@ class PublicExporter:
             ):
                 self.included["Work Relations"].add(stable_id)
 
+        excluded_contribution_ids = set(
+            self.config.get("excludedContributionIds", [])
+        )
         for stable_id, record in self.by_stable["Contributions"].items():
             fields = self.fields(record)
             if (
@@ -637,6 +640,7 @@ class PublicExporter:
                 and fields.get("Publishable") is True
                 and selected_name(fields.get("Validation Status")) == "OK"
                 and self.links_any(record, "Work", self.included["Works"])
+                and stable_id not in excluded_contribution_ids
             ):
                 self.included["Contributions"].add(stable_id)
 
@@ -682,7 +686,9 @@ class PublicExporter:
     def _induce_authorities_and_sources(self) -> None:
         approved_people = self._approved_ids("People")
         approved_organizations = self._approved_ids("Organizations")
-        approved_sources = self._approved_ids("Sources")
+        approved_sources = self._approved_ids("Sources") - set(
+            self.config.get("excludedSourceIds", [])
+        )
 
         people_specs = [
             ("Contributions", "Person"),

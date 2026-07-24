@@ -174,6 +174,20 @@
       }
     },
     "Songs": {
+      "S057": {
+        "reason": "Normalize the public transcription to the publisher and lyricist identified by the December 1932 Hofmeister registration.",
+        "fields": {
+          "publisherAsPrinted": "Monopol-Liederverlag",
+          "lyricistAsPrinted": "Ernst Marischka"
+        }
+      },
+      "S083": {
+        "reason": "Align the public publisher and lyricist fields with the contemporary Hofmeister registration for “Wenn ich mal eine Dummheit mache,” which identifies Monopol-Liederverlag and E. Marischka; the prior Hofmeister-Figaro and Fritz Rotter values are not supported by the linked source.",
+        "fields": {
+          "publisherAsPrinted": "Monopol-Liederverlag",
+          "lyricistAsPrinted": "Ernst Marischka"
+        }
+      },
       "S077": {
         "reason": "Correct the song year to the 1933 Salabert edition documented by the BnF catalogue record SRC0298 and the contemporary 22 June 1934 performance notice SRC0536.",
         "fields": {
@@ -446,6 +460,73 @@
           "accessDate": "2026-07-24"
         }
       },
+      "SRC0183": {
+        "reason": "Replace the unresolved 1932 Hofmeister reference with the exact February issue, page, publisher and arrangement details verified in ANNO.",
+        "fields": {
+          "fullCitation": "Walter Jurmann and B. Kaper, Es wird schon wieder besser (Tonfilm): “’s wird schon wieder besser” (foxtrot) and “Wenn ein kleiner Zufall will” (slow fox), words by Fritz Rotter; arrangement for salon orchestra with jazz part by Norbert Dostal and edition for voice and piano. Berlin: Ufaton-Verlag, 1932. Registered in Hofmeisters Musikalisch-literarischer Monatsbericht 104, no. 2 (February 1932): 38. ANNO – Austrian Newspapers Online, Österreichische Nationalbibliothek. https://anno.onb.ac.at/cgi-content/anno-plus?aid=hof&datum=19320052.",
+          "repository": "Österreichische Nationalbibliothek / ANNO",
+          "publication": "Ufaton-Verlag, Berlin",
+          "date": "1932-02",
+          "url": "https://anno.onb.ac.at/cgi-content/anno-plus?aid=hof&datum=19320052",
+          "accessDate": "2026-07-24"
+        }
+      },
+      "SRC0184": {
+        "reason": "Replace the unresolved 1932 Hofmeister reference with the exact February issue, page and publisher; remove the unsupported Alrobi attribution from this source record.",
+        "fields": {
+          "fullCitation": "B. Kaper and Walter Jurmann, Ehe m. b. H.: “Ich frag Madam, wann kommen wir zusamm” (foxtrot) and “Wer weint heut aus Liebe Tränen?” (slow fox), words by Fritz Rotter; arrangements for salon orchestra with jazz part by H. M. Kirchstein and edition for voice and piano. Berlin: Edition Brüll, 1932. Registered in Hofmeisters Musikalisch-literarischer Monatsbericht 104, no. 2 (February 1932): 38. ANNO – Austrian Newspapers Online, Österreichische Nationalbibliothek. https://anno.onb.ac.at/cgi-content/anno-plus?aid=hof&datum=19320052.",
+          "repository": "Österreichische Nationalbibliothek / ANNO",
+          "publication": "Edition Brüll, Berlin",
+          "date": "1932-02",
+          "url": "https://anno.onb.ac.at/cgi-content/anno-plus?aid=hof&datum=19320052",
+          "accessDate": "2026-07-24"
+        }
+      },
+      "SRC0185": {
+        "reason": "Replace the unresolved 1932 Hofmeister reference with the exact May issue, page, publisher and four-title film-song context verified in ANNO.",
+        "fields": {
+          "fullCitation": "B. Kaper and Walter Jurmann, Melodie der Liebe (Tonfilm): “Ein Lied aus meiner Heimat” and “Schade, daß Liebe ein Märchen ist,” words by Fritz Rotter. The same registration also lists “Wie gern möcht ich dich verwöhnen” and “Es war einmal ein Baby” in the four-title song booklet. Berlin: Alrobi, 1932. Registered in Hofmeisters Musikalisch-literarischer Monatsbericht 104, no. 5 (May 1932): 106. ANNO – Austrian Newspapers Online, Österreichische Nationalbibliothek. https://anno.onb.ac.at/cgi-content/anno-plus?aid=hof&datum=19320055.",
+          "repository": "Österreichische Nationalbibliothek / ANNO",
+          "publication": "Alrobi, Berlin",
+          "date": "1932-05",
+          "url": "https://anno.onb.ac.at/cgi-content/anno-plus?aid=hof&datum=19320055",
+          "accessDate": "2026-07-24"
+        }
+      },
+      "SRC0186": {
+        "reason": "Replace the unresolved 1932 Hofmeister reference with the exact November issue, page, publisher and contents verified in ANNO.",
+        "fields": {
+          "fullCitation": "B. Kaper and Walter Jurmann, Der glückliche Herr Fünf (Tonfilm): Schlagerheft containing “Tränen in der Geige” and “Schön ist das ganze Leben,” words by Fritz Rotter. Berlin: Edition Brüll, 1932. Registered in Hofmeisters Musikalisch-literarischer Monatsbericht 104, no. 11 (November 1932): 220. ANNO – Austrian Newspapers Online, Österreichische Nationalbibliothek. https://anno.onb.ac.at/cgi-content/anno-plus?aid=hof&datum=19320061.",
+          "repository": "Österreichische Nationalbibliothek / ANNO",
+          "publication": "Edition Brüll, Berlin",
+          "date": "1932-11",
+          "url": "https://anno.onb.ac.at/cgi-content/anno-plus?aid=hof&datum=19320061",
+          "accessDate": "2026-07-24"
+        }
+      },
+      "SRC0187": {
+        "reason": "Replace the unresolved 1932 Hofmeister reference with the exact December issue and page verified in ANNO.",
+        "fields": {
+          "fullCitation": "Walter Jurmann and B. Kaper, “Du bist in meinem Leben die erste Sensation.” Tango; words by Fritz Rotter; arrangement for salon orchestra with jazz part by W. Borchert and edition for voice and piano. Berlin: Wiener Boheme-Verlag, 1932. Registered in Hofmeisters Musikalisch-literarischer Monatsbericht 104, no. 12 (December 1932): 241. ANNO – Austrian Newspapers Online, Österreichische Nationalbibliothek. https://anno.onb.ac.at/cgi-content/anno-plus?aid=hof&datum=19320062.",
+          "repository": "Österreichische Nationalbibliothek / ANNO",
+          "publication": "Wiener Boheme-Verlag, Berlin",
+          "date": "1932-12",
+          "url": "https://anno.onb.ac.at/cgi-content/anno-plus?aid=hof&datum=19320062",
+          "accessDate": "2026-07-24"
+        }
+      },
+      "SRC0189": {
+        "reason": "Preserve the exact April 1933 Hofmeister registration already verified in ANNO when rebuilding from the frozen Airtable snapshot.",
+        "fields": {
+          "fullCitation": "B. Kaper and Walter Jurmann, “Mein Gorilla hat ’ne Villa im Zoo,” from Heute kommt’s drauf an. Text printed as P. Kuckuck. Berlin: Beboton-Verlag, 1933. Registered in Hofmeisters Musikalisch-literarischer Monatsbericht (April 1933): 79. ANNO – Austrian Newspapers Online, Österreichische Nationalbibliothek. https://anno.onb.ac.at/cgi-content/anno-plus?aid=hof&datum=19330054.",
+          "repository": "Österreichische Nationalbibliothek / ANNO",
+          "publication": "Beboton-Verlag, Berlin",
+          "date": "1933-04",
+          "url": "https://anno.onb.ac.at/cgi-content/anno-plus?aid=hof&datum=19330054",
+          "accessDate": "2026-07-24",
+          "sourceStatus": "verified"
+        }
+      },
       "SRC0195": {
         "reason": "Replace the unresolved Hofmeister reference with the exact ANNO issue and page verified against the April 1930 OCR and page image.",
         "fields": {
@@ -509,6 +590,72 @@
           "publication": "Drei Masken-Verlag, Berlin",
           "date": "1930-11",
           "url": "https://anno.onb.ac.at/cgi-content/anno-plus?aid=hof&datum=19300061",
+          "accessDate": "2026-07-24"
+        }
+      },
+      "SRC0208": {
+        "reason": "Complete the generic 1932 Hofmeister reference with the exact December issue, page and publisher context.",
+        "fields": {
+          "fullCitation": "Walter Jurmann and B. Kaper, “Signorina, ich liebe dich.” Tango from Hochzeitsreise zu dritt; words by Ernst Marischka. Berlin: Monopol-Liederverlag, 1932. Registered in Hofmeisters Musikalisch-literarischer Monatsbericht 104, no. 12 (December 1932): 241. ANNO – Austrian Newspapers Online, Österreichische Nationalbibliothek. https://anno.onb.ac.at/cgi-content/anno-plus?aid=hof&datum=19320062.",
+          "repository": "Österreichische Nationalbibliothek / ANNO",
+          "publication": "Monopol-Liederverlag, Berlin",
+          "date": "1932-12",
+          "url": "https://anno.onb.ac.at/cgi-content/anno-plus?aid=hof&datum=19320062",
+          "accessDate": "2026-07-24"
+        }
+      },
+      "SRC0209": {
+        "reason": "Complete the generic 1932 Hofmeister reference with the exact June issue and page for the work published under the Bob Henders pseudonym.",
+        "fields": {
+          "fullCitation": "Bob Henders [pseudonym for Walter Jurmann and Bronisław Kaper], “Du liebst mich nicht mehr.” Slow fox; words by Fritz Rotter; arrangement for salon orchestra with jazz part by W. Borchert and edition for voice and piano. Berlin: Wiener Boheme-Verlag, 1932. Registered in Hofmeisters Musikalisch-literarischer Monatsbericht 104, no. 6 (June 1932): 125. ANNO – Austrian Newspapers Online, Österreichische Nationalbibliothek. https://anno.onb.ac.at/cgi-content/anno-plus?aid=hof&datum=19320056.",
+          "repository": "Österreichische Nationalbibliothek / ANNO",
+          "publication": "Wiener Boheme-Verlag, Berlin",
+          "date": "1932-06",
+          "url": "https://anno.onb.ac.at/cgi-content/anno-plus?aid=hof&datum=19320056",
+          "accessDate": "2026-07-24"
+        }
+      },
+      "SRC0210": {
+        "reason": "Complete the generic 1932 Hofmeister reference with the exact June issue and page, preserving the printed Bob Handers pseudonym.",
+        "fields": {
+          "fullCitation": "Bob Handers [pseudonym for Walter Jurmann and Bronisław Kaper], “Eine Sommernacht am Meer.” English waltz; German words by Fritz Rotter; arrangement for salon orchestra with jazz part by G. Mohr and edition for voice and piano. Berlin: Beboton-Verlag, 1932. Registered in Hofmeisters Musikalisch-literarischer Monatsbericht 104, no. 6 (June 1932): 124. ANNO – Austrian Newspapers Online, Österreichische Nationalbibliothek. https://anno.onb.ac.at/cgi-content/anno-plus?aid=hof&datum=19320056.",
+          "repository": "Österreichische Nationalbibliothek / ANNO",
+          "publication": "Beboton-Verlag, Berlin",
+          "date": "1932-06",
+          "url": "https://anno.onb.ac.at/cgi-content/anno-plus?aid=hof&datum=19320056",
+          "accessDate": "2026-07-24"
+        }
+      },
+      "SRC0211": {
+        "reason": "Complete the generic 1932 Hofmeister reference with the exact December issue and page; the contemporary entry confirms Ernst Marischka and Monopol-Liederverlag, correcting unsupported linked Rotter and Hofmeister-Figaro attributions.",
+        "fields": {
+          "fullCitation": "Walter Jurmann and B. Kaper, “Wenn ich mal eine Dummheit mache.” Foxtrot from Hochzeitsreise zu dritt; words by Ernst Marischka. Berlin: Monopol-Liederverlag, 1932. Registered in Hofmeisters Musikalisch-literarischer Monatsbericht 104, no. 12 (December 1932): 241. ANNO – Austrian Newspapers Online, Österreichische Nationalbibliothek. https://anno.onb.ac.at/cgi-content/anno-plus?aid=hof&datum=19320062.",
+          "repository": "Österreichische Nationalbibliothek / ANNO",
+          "publication": "Monopol-Liederverlag, Berlin",
+          "date": "1932-12",
+          "url": "https://anno.onb.ac.at/cgi-content/anno-plus?aid=hof&datum=19320062",
+          "accessDate": "2026-07-24"
+        }
+      },
+      "SRC0213": {
+        "reason": "Complete the generic 1932 Hofmeister reference with the exact May issue and page for the Melodie der Liebe song group.",
+        "fields": {
+          "fullCitation": "Walter Jurmann and B. Kaper, “Wie gern möcht ich dich verwöhnen.” Tango from Melodie der Liebe; words by Fritz Rotter. Listed in the four-title Melodie der Liebe song booklet. Berlin: Alrobi, 1932. Registered in Hofmeisters Musikalisch-literarischer Monatsbericht 104, no. 5 (May 1932): 106. ANNO – Austrian Newspapers Online, Österreichische Nationalbibliothek. https://anno.onb.ac.at/cgi-content/anno-plus?aid=hof&datum=19320055.",
+          "repository": "Österreichische Nationalbibliothek / ANNO",
+          "publication": "Alrobi, Berlin",
+          "date": "1932-05",
+          "url": "https://anno.onb.ac.at/cgi-content/anno-plus?aid=hof&datum=19320055",
+          "accessDate": "2026-07-24"
+        }
+      },
+      "SRC0214": {
+        "reason": "Complete the generic 1932 Hofmeister reference with the exact May issue and page for the Melodie der Liebe song group.",
+        "fields": {
+          "fullCitation": "Walter Jurmann and B. Kaper, “Es war einmal ein Baby.” Children’s song from Melodie der Liebe; words by Fritz Rotter. Listed in the four-title Melodie der Liebe song booklet. Berlin: Alrobi, 1932. Registered in Hofmeisters Musikalisch-literarischer Monatsbericht 104, no. 5 (May 1932): 106. ANNO – Austrian Newspapers Online, Österreichische Nationalbibliothek. https://anno.onb.ac.at/cgi-content/anno-plus?aid=hof&datum=19320055.",
+          "repository": "Österreichische Nationalbibliothek / ANNO",
+          "publication": "Alrobi, Berlin",
+          "date": "1932-05",
+          "url": "https://anno.onb.ac.at/cgi-content/anno-plus?aid=hof&datum=19320055",
           "accessDate": "2026-07-24"
         }
       },
@@ -996,30 +1143,6 @@
         "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
         "fields": {
           "sourceType": "online_database"
-        }
-      },
-      "SRC0558": {
-        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
-        "fields": {
-          "sourceType": "wikimedia_commons_file"
-        }
-      },
-      "SRC0559": {
-        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
-        "fields": {
-          "sourceType": "wikimedia_commons_file"
-        }
-      },
-      "SRC0560": {
-        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
-        "fields": {
-          "sourceType": "wikimedia_commons_file"
-        }
-      },
-      "SRC0562": {
-        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
-        "fields": {
-          "sourceType": "wikimedia_commons_file"
         }
       }
     },
@@ -1533,6 +1656,24 @@
       }
     },
     "Contributions": {
+      "CON-S057-L-P017": {
+        "reason": "Normalize the lyricist transcription to Ernst Marischka, as identified by the December 1932 Hofmeister registration.",
+        "fields": {
+          "nameAsPrinted": "Ernst Marischka"
+        }
+      },
+      "CON-S057-PUB-ORG038": {
+        "reason": "Normalize the publisher transcription to Monopol-Liederverlag, as identified by the December 1932 Hofmeister registration.",
+        "fields": {
+          "nameAsPrinted": "Monopol-Liederverlag"
+        }
+      },
+      "CON-S083-PUB-ORG042": {
+        "reason": "Correct the publisher transcription to Monopol-Liederverlag, as printed in the contemporary Hofmeister registration; the relationship is reassigned from ORG042 to ORG038 below.",
+        "fields": {
+          "nameAsPrinted": "Monopol-Liederverlag"
+        }
+      },
       "CON-S190-C-P009": {
         "reason": "Normalize spacing in the catalogued printed-name transcription without changing its spelling.",
         "fields": {
@@ -1833,7 +1974,7 @@
           "id": "SRC0558",
           "shortCitation": "Wikimedia Commons, “Kurt Gerron.jpg” — publicity portrait, 1928",
           "fullCitation": "Wikimedia Commons. “Kurt Gerron.jpg.” Publicity portrait of Kurt Gerron for Die Yacht der sieben Sünden (Yacht of the Seven Sins), 1928. Photographer unidentified; source credited by Wikimedia Commons to Film Fest Gent.",
-          "sourceType": "Wikimedia Commons file",
+          "sourceType": "wikimedia_commons_file",
           "title": "Kurt Gerron — publicity portrait, 1928",
           "creator": "Photographer unidentified",
           "repository": "Wikimedia Commons",
@@ -1861,7 +2002,7 @@
           "id": "SRC0559",
           "shortCitation": "Wikimedia Commons, “Konserwatorium Muzyczne w Warszawie przed 1939”",
           "fullCitation": "Wikimedia Commons. “Konserwatorium Muzyczne w Warszawie przed 1939.” Anonymous photograph of the Warsaw Conservatory at 1 Okólnik Street, published before 1939; reproduced from Aleksander Janowski, Warszawa, Wydawnictwo Polskie R. Wegner, Poznań, p. 134.",
-          "sourceType": "Wikimedia Commons file",
+          "sourceType": "wikimedia_commons_file",
           "title": "Warsaw Conservatory at 1 Okólnik Street — before 1939",
           "creator": "Photographer unidentified",
           "repository": "Wikimedia Commons",
@@ -1889,7 +2030,7 @@
           "id": "SRC0560",
           "shortCitation": "Los Angeles Times Photographic Collection / UCLA Library, “Jan Kiepura, 1935”",
           "fullCitation": "Los Angeles Times. “Jan Kiepura, 1935.” Photograph, September 1935. Los Angeles Times Photographic Collection, UCLA Library Digital Collections, ark:/21198/zz002dgfqg; distributed via Wikimedia Commons under CC BY 4.0.",
-          "sourceType": "Wikimedia Commons file",
+          "sourceType": "wikimedia_commons_file",
           "title": "Jan Kiepura — Los Angeles Times portrait, September 1935",
           "creator": "Los Angeles Times",
           "repository": "UCLA Library Digital Collections",
@@ -1946,7 +2087,7 @@
           "id": "SRC0562",
           "shortCitation": "Jules Greenbaum, Richard Oswald in Der Hund von Baskerville (1914), Wikimedia Commons",
           "fullCitation": "Jules Greenbaum. Richard Oswald in Der Hund von Baskerville, 1914. Film-frame portrait; digital reproduction distributed via Wikimedia Commons.",
-          "sourceType": "Wikimedia Commons file",
+          "sourceType": "wikimedia_commons_file",
           "title": "Richard Oswald — film-frame portrait, 1914",
           "creator": "Jules Greenbaum (1867–1924)",
           "repository": "Wikimedia Commons",
@@ -2494,7 +2635,7 @@
   "linkAdditions": {
     "Organizations": {
       "ORG064": {
-        "reason": "Link the completed 1930 and 1931 Hofmeister/ANNO source records to the Austrian National Library repository.",
+        "reason": "Link the completed 1930–1932 Hofmeister/ANNO source records to the Austrian National Library repository.",
         "fields": {
           "sourceIds": [
             "SRC0178",
@@ -2502,20 +2643,142 @@
             "SRC0180",
             "SRC0181",
             "SRC0182",
+            "SRC0183",
+            "SRC0184",
+            "SRC0185",
+            "SRC0186",
+            "SRC0187",
             "SRC0195",
             "SRC0196",
             "SRC0197",
             "SRC0198",
             "SRC0199",
-            "SRC0201"
+            "SRC0201",
+            "SRC0208",
+            "SRC0209",
+            "SRC0210",
+            "SRC0211",
+            "SRC0213",
+            "SRC0214"
           ]
         }
       },
       "ORG033": {
-        "reason": "Link the newly identified Alrobi publisher of the Trara VIII registration to SRC0180.",
+        "reason": "Link Alrobi to the completed Hofmeister records for Trara VIII and the Melodie der Liebe group.",
         "fields": {
           "sourceIds": [
-            "SRC0180"
+            "SRC0180",
+            "SRC0185",
+            "SRC0213",
+            "SRC0214"
+          ]
+        }
+      },
+      "ORG036": {
+        "reason": "Link Ufaton-Verlag to the completed Es wird schon wieder besser Hofmeister source.",
+        "fields": {
+          "sourceIds": [
+            "SRC0183"
+          ]
+        }
+      },
+      "ORG031": {
+        "reason": "Link Edition Brüll to the completed Der glückliche Herr Fünf Hofmeister source.",
+        "fields": {
+          "sourceIds": [
+            "SRC0186"
+          ]
+        }
+      },
+      "ORG029": {
+        "reason": "Link Wiener Boheme Verlag to the completed Bob Henders Hofmeister source.",
+        "fields": {
+          "sourceIds": [
+            "SRC0209"
+          ]
+        }
+      },
+      "ORG044": {
+        "reason": "Link Beboton Verlag to the completed Bob Handers Hofmeister source.",
+        "fields": {
+          "sourceIds": [
+            "SRC0210"
+          ]
+        }
+      },
+      "ORG038": {
+        "reason": "Link Monopol-Liederverlag to both completed Hochzeitsreise zu dritt song sources and reassign the W-S083 publisher relationship from ORG042.",
+        "fields": {
+          "sourceIds": [
+            "SRC0208",
+            "SRC0211"
+          ],
+          "contributionIds": [
+            "CON-S083-PUB-ORG042"
+          ]
+        }
+      }
+    },
+    "Contributions": {
+      "CON-S083-PUB-ORG042": {
+        "reason": "Reassign the existing publisher contribution to Monopol-Liederverlag; the legacy contribution ID is retained as an opaque identifier.",
+        "fields": {
+          "organizationIds": [
+            "ORG038"
+          ]
+        }
+      },
+      "CON-S023-C-P009": {
+        "reason": "Use the exact ANNO registration SRC0226 instead of its superseded duplicate SRC0200.",
+        "fields": {
+          "sourceIds": [
+            "SRC0226"
+          ]
+        }
+      },
+      "CON-S023-L-P020": {
+        "reason": "Use the exact ANNO registration SRC0226 instead of its superseded duplicate SRC0200.",
+        "fields": {
+          "sourceIds": [
+            "SRC0226"
+          ]
+        }
+      },
+      "CON-S023-PUB-ORG033": {
+        "reason": "Use the exact ANNO registration SRC0226 instead of its superseded duplicate SRC0200.",
+        "fields": {
+          "sourceIds": [
+            "SRC0226"
+          ]
+        }
+      }
+    },
+    "Works": {
+      "W-S023": {
+        "reason": "Use the exact ANNO registration SRC0226 instead of its superseded duplicate SRC0200.",
+        "fields": {
+          "sourceIds": [
+            "SRC0226"
+          ]
+        }
+      }
+    },
+    "Songs": {
+      "S023": {
+        "reason": "Use the exact ANNO registration SRC0226 instead of its superseded duplicate SRC0200.",
+        "fields": {
+          "sourceIds": [
+            "SRC0226"
+          ]
+        }
+      }
+    },
+    "Person Name Variants": {
+      "PNV0019": {
+        "reason": "Attest the printed form “B. Kaper” through the exact ANNO registration SRC0226 rather than its superseded duplicate SRC0200.",
+        "fields": {
+          "sourceIds": [
+            "SRC0226"
           ]
         }
       }
@@ -2656,7 +2919,12 @@
           "sourceIds": [
             "SRC0038",
             "SRC0110",
-            "SRC0024"
+            "SRC0024",
+            "SRC0208",
+            "SRC0211",
+            "SRC0213",
+            "SRC0214",
+            "SRC0226"
           ]
         }
       },
@@ -2688,7 +2956,19 @@
         "reason": "Connect Fritz Rotter to the existing verified public-domain portrait source SRC0330 so M043 appears on his person record.",
         "fields": {
           "sourceIds": [
-            "SRC0330"
+            "SRC0330",
+            "SRC0213",
+            "SRC0214",
+            "SRC0226"
+          ]
+        }
+      },
+      "P017": {
+        "reason": "Link Ernst Marischka directly to the two December 1932 Hofmeister registrations that identify him as lyricist.",
+        "fields": {
+          "sourceIds": [
+            "SRC0208",
+            "SRC0211"
           ]
         }
       },
@@ -2712,6 +2992,10 @@
         "reason": "Connect Walter Jurmann to the existing Academy Collection photograph SRC0334 rather than creating a duplicate or using an unverified image.",
         "fields": {
           "sourceIds": [
+            "SRC0208",
+            "SRC0211",
+            "SRC0213",
+            "SRC0214",
             "SRC0334"
           ]
         }
@@ -2826,6 +3110,147 @@
           ]
         }
       },
+      "SRC0183": {
+        "reason": "Link the completed 1932 registration to Ufaton-Verlag and the Austrian National Library / ANNO repository.",
+        "fields": {
+          "organizationIds": [
+            "ORG036",
+            "ORG064"
+          ]
+        }
+      },
+      "SRC0184": {
+        "reason": "Link the completed 1932 registration to Edition Brüll and the Austrian National Library / ANNO repository.",
+        "fields": {
+          "organizationIds": [
+            "ORG031",
+            "ORG064"
+          ]
+        }
+      },
+      "SRC0185": {
+        "reason": "Link the completed 1932 registration to Alrobi and the Austrian National Library / ANNO repository.",
+        "fields": {
+          "organizationIds": [
+            "ORG033",
+            "ORG064"
+          ]
+        }
+      },
+      "SRC0186": {
+        "reason": "Link the completed 1932 registration to Edition Brüll and the Austrian National Library / ANNO repository.",
+        "fields": {
+          "organizationIds": [
+            "ORG031",
+            "ORG064"
+          ]
+        }
+      },
+      "SRC0187": {
+        "reason": "Link the completed 1932 registration to the Austrian National Library / ANNO repository; Wiener Boheme Verlag is already linked in the frozen snapshot.",
+        "fields": {
+          "organizationIds": [
+            "ORG064"
+          ]
+        }
+      },
+      "SRC0208": {
+        "reason": "Link the completed 1932 registration to Monopol-Liederverlag and the Austrian National Library / ANNO repository.",
+        "fields": {
+          "personIds": [
+            "P009",
+            "P017",
+            "P077"
+          ],
+          "organizationIds": [
+            "ORG038",
+            "ORG064"
+          ]
+        }
+      },
+      "SRC0209": {
+        "reason": "Link the completed 1932 registration to Wiener Boheme Verlag and the Austrian National Library / ANNO repository.",
+        "fields": {
+          "organizationIds": [
+            "ORG029",
+            "ORG064"
+          ]
+        }
+      },
+      "SRC0210": {
+        "reason": "Link the completed 1932 registration to Beboton Verlag and the Austrian National Library / ANNO repository.",
+        "fields": {
+          "organizationIds": [
+            "ORG044",
+            "ORG064"
+          ]
+        }
+      },
+      "SRC0211": {
+        "reason": "Link the completed 1932 registration to Monopol-Liederverlag and the Austrian National Library / ANNO repository.",
+        "fields": {
+          "personIds": [
+            "P009",
+            "P017",
+            "P077"
+          ],
+          "organizationIds": [
+            "ORG038",
+            "ORG064"
+          ]
+        }
+      },
+      "SRC0213": {
+        "reason": "Link the completed 1932 registration to Alrobi and the Austrian National Library / ANNO repository.",
+        "fields": {
+          "personIds": [
+            "P009",
+            "P020",
+            "P077"
+          ],
+          "organizationIds": [
+            "ORG033",
+            "ORG064"
+          ]
+        }
+      },
+      "SRC0214": {
+        "reason": "Link the completed 1932 registration to Alrobi and the Austrian National Library / ANNO repository.",
+        "fields": {
+          "personIds": [
+            "P009",
+            "P020",
+            "P077"
+          ],
+          "organizationIds": [
+            "ORG033",
+            "ORG064"
+          ]
+        }
+      },
+      "SRC0226": {
+        "reason": "Make the exact ANNO registration the sole public source for “Ach Otto, Otto” and restore all canonical reverse links formerly carried by superseded duplicate SRC0200.",
+        "fields": {
+          "personIds": [
+            "P009",
+            "P020"
+          ],
+          "workIds": [
+            "W-S023"
+          ],
+          "songIds": [
+            "S023"
+          ],
+          "contributionIds": [
+            "CON-S023-C-P009",
+            "CON-S023-L-P020",
+            "CON-S023-PUB-ORG033"
+          ],
+          "nameVariantIds": [
+            "PNV0019"
+          ]
+        }
+      },
       "SRC0195": {
         "reason": "Link the completed Hofmeister registration to the Austrian National Library / ANNO repository.",
         "fields": {
@@ -2937,6 +3362,106 @@
           ],
           "timelineEventIds": [
             "TE0032"
+          ]
+        }
+      },
+      "SRC0183": {
+        "reason": "Keep SRC0183 as evidence for the German original and its composers, but remove French-edition lyricist and publisher credits that are supported by SRC0373 instead.",
+        "fields": {
+          "personIds": [
+            "P040"
+          ],
+          "contributionIds": [
+            "CON-S055-L-P040",
+            "CON-S055-PUB-ORG039"
+          ]
+        }
+      },
+      "SRC0184": {
+        "reason": "Remove the unsupported Alrobi link; the February 1932 Hofmeister entry assigns the Ehe m. b. H. editions represented by this source to Edition Brüll.",
+        "fields": {
+          "organizationIds": [
+            "ORG033"
+          ]
+        }
+      },
+      "SRC0211": {
+        "reason": "Remove the unsupported Fritz Rotter contribution from the source; Hofmeister names E. Marischka as lyricist.",
+        "fields": {
+          "contributionIds": [
+            "CON-S083-L-P020"
+          ]
+        }
+      }
+    },
+    "Works": {
+      "W-S083": {
+        "reason": "Remove the unsupported Hofmeister-Figaro publisher and Fritz Rotter lyricist relationships; the linked contemporary registration identifies Monopol-Liederverlag and E. Marischka.",
+        "fields": {
+          "contributionIds": [
+            "CON-S083-L-P020"
+          ]
+        }
+      }
+    },
+    "Organizations": {
+      "ORG033": {
+        "reason": "Remove SRC0184 because the verified Ehe m. b. H. registration is published by Edition Brüll, not Alrobi.",
+        "fields": {
+          "sourceIds": [
+            "SRC0184"
+          ]
+        }
+      },
+      "ORG042": {
+        "reason": "Remove the unsupported W-S083 publisher relationship and its contribution; Hofmeister identifies Monopol-Liederverlag.",
+        "fields": {
+          "contributionIds": [
+            "CON-S083-PUB-ORG042"
+          ]
+        }
+      }
+    },
+    "People": {
+      "P020": {
+        "reason": "Remove Fritz Rotter from W-S083; the contemporary Hofmeister registration attributes the words to E. Marischka.",
+        "fields": {
+          "contributionIds": [
+            "CON-S083-L-P020"
+          ]
+        }
+      },
+      "P040": {
+        "reason": "Remove the German Hofmeister registration SRC0183 from Francis Salabert / Jean Cis; his French-version credit is documented by SRC0373.",
+        "fields": {
+          "sourceIds": [
+            "SRC0183"
+          ]
+        }
+      }
+    },
+    "Contributions": {
+      "CON-S055-L-P040": {
+        "reason": "The German Hofmeister registration does not document the French lyricist credit; retain SRC0373 as its supporting source.",
+        "fields": {
+          "sourceIds": [
+            "SRC0183"
+          ]
+        }
+      },
+      "CON-S055-PUB-ORG039": {
+        "reason": "The German Hofmeister registration does not document the French Salabert edition; retain SRC0373 as its supporting source.",
+        "fields": {
+          "sourceIds": [
+            "SRC0183"
+          ]
+        }
+      },
+      "CON-S083-PUB-ORG042": {
+        "reason": "Remove the old Hofmeister-Figaro organization link before reassigning the contribution to Monopol-Liederverlag.",
+        "fields": {
+          "organizationIds": [
+            "ORG042"
           ]
         }
       }

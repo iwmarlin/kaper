@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 983,
+  "count": 982,
   "records": [
     {
       "id": "CON-F001-C-P009",
@@ -7322,7 +7322,6 @@
         "P040"
       ],
       "sourceIds": [
-        "SRC0183",
         "SRC0373"
       ],
       "nameVariantIds": [
@@ -7342,7 +7341,6 @@
         "ORG039"
       ],
       "sourceIds": [
-        "SRC0183",
         "SRC0373"
       ]
     },
@@ -7448,7 +7446,7 @@
     {
       "id": "CON-S057-L-P017",
       "role": "lyricist",
-      "nameAsPrinted": "Marischka Ernst",
+      "nameAsPrinted": "Ernst Marischka",
       "sortOrder": 1,
       "certainty": "confirmed",
       "workIds": [
@@ -7467,7 +7465,7 @@
     {
       "id": "CON-S057-PUB-ORG038",
       "role": "publisher",
-      "nameAsPrinted": "Monopol Liederverlag",
+      "nameAsPrinted": "Monopol-Liederverlag",
       "evidenceContext": "sheet_music",
       "certainty": "confirmed",
       "workIds": [
@@ -9267,32 +9265,16 @@
       ]
     },
     {
-      "id": "CON-S083-L-P020",
-      "role": "lyricist",
-      "nameAsPrinted": "Fritz Rotter",
-      "sortOrder": 1,
-      "certainty": "confirmed",
-      "workIds": [
-        "W-S083"
-      ],
-      "personIds": [
-        "P020"
-      ],
-      "sourceIds": [
-        "SRC0211"
-      ]
-    },
-    {
       "id": "CON-S083-PUB-ORG042",
       "role": "publisher",
-      "nameAsPrinted": "Friedrich Hofmeister-Figaro-Verlag",
+      "nameAsPrinted": "Monopol-Liederverlag",
       "evidenceContext": "sheet_music",
       "certainty": "confirmed",
       "workIds": [
         "W-S083"
       ],
       "organizationIds": [
-        "ORG042"
+        "ORG038"
       ],
       "sourceIds": [
         "SRC0211"

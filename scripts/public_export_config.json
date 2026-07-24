@@ -20,6 +20,12 @@
   "excludedMediaIds": [
     "M216"
   ],
+  "excludedSourceIds": [
+    "SRC0200"
+  ],
+  "excludedContributionIds": [
+    "CON-S083-L-P020"
+  ],
   "allowedGalleryStatuses": [
     "selected",
     "eligible",
@@ -54,6 +60,7 @@
   "forbiddenPublicRecordIds": [
     "P080",
     "SRC0113",
+    "SRC0200",
     "SRC0427"
   ],
   "tables": {
