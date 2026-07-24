@@ -376,6 +376,72 @@
           "fullCitation": "Archiwum Uniwersytetu Warszawskiego, Bronisław Kaper student file, RP 6854. Aggregate archival source for documents from Kaper's University of Warsaw student file, including the young portrait, University of Warsaw matriculation and study records, and the police certificate of 21 April 1920 recording his religion as Mosaic. No public URL; used with permission / archival consultation."
         }
       },
+      "SRC0195": {
+        "reason": "Replace the unresolved Hofmeister reference with the exact ANNO issue and page verified against the April 1930 OCR and page image.",
+        "fields": {
+          "fullCitation": "Fritz Rotter and B. Kaper, “Auf Wiedersehn Herr Doktor! Auf Wiedersehn Frau Doktor.” Lied und Foxtrott. Vienna: Wiener Boheme-Verlag, 1930. Registered in Hofmeisters Musikalisch-literarischer Monatsbericht (April 1930): 102. ANNO – Austrian Newspapers Online, Österreichische Nationalbibliothek. https://anno.onb.ac.at/cgi-content/anno-plus?aid=hof&datum=19300054.",
+          "repository": "Österreichische Nationalbibliothek / ANNO",
+          "publication": "Wiener Boheme-Verlag, Vienna",
+          "date": "1930-04",
+          "url": "https://anno.onb.ac.at/cgi-content/anno-plus?aid=hof&datum=19300054",
+          "accessDate": "2026-07-24"
+        }
+      },
+      "SRC0196": {
+        "reason": "Replace the unresolved Hofmeister reference with the exact ANNO issue and page verified against the December 1930 OCR and page image.",
+        "fields": {
+          "fullCitation": "B. Kaper, Alraune: Tonfilm; “Nur Tango, nur Tango!” and “Wenn mich Männer betrügen.” Berlin: Alrobi, 1930. Registered in Hofmeisters Musikalisch-literarischer Monatsbericht (December 1930): 294. ANNO – Austrian Newspapers Online, Österreichische Nationalbibliothek. https://anno.onb.ac.at/cgi-content/anno-plus?aid=hof&datum=19300062.",
+          "repository": "Österreichische Nationalbibliothek / ANNO",
+          "publication": "Alrobi, Berlin",
+          "date": "1930-12",
+          "url": "https://anno.onb.ac.at/cgi-content/anno-plus?aid=hof&datum=19300062",
+          "accessDate": "2026-07-24"
+        }
+      },
+      "SRC0197": {
+        "reason": "Replace the unresolved Hofmeister reference with the exact ANNO issue and page verified against the December 1930 OCR and page image.",
+        "fields": {
+          "fullCitation": "B. Kaper, Alraune: Tonfilm; “Wenn mich Männer betrügen” and “Nur Tango, nur Tango!” Berlin: Alrobi, 1930. Registered in Hofmeisters Musikalisch-literarischer Monatsbericht (December 1930): 294. ANNO – Austrian Newspapers Online, Österreichische Nationalbibliothek. https://anno.onb.ac.at/cgi-content/anno-plus?aid=hof&datum=19300062.",
+          "repository": "Österreichische Nationalbibliothek / ANNO",
+          "publication": "Alrobi, Berlin",
+          "date": "1930-12",
+          "url": "https://anno.onb.ac.at/cgi-content/anno-plus?aid=hof&datum=19300062",
+          "accessDate": "2026-07-24"
+        }
+      },
+      "SRC0198": {
+        "reason": "Replace the unresolved Hofmeister reference with the exact ANNO issue and page verified against the November 1930 OCR and page image.",
+        "fields": {
+          "fullCitation": "B. Kaper, “In der Laubenkolonie.” Foxtrot. Berlin: Alrobi, 1930. Registered in Hofmeisters Musikalisch-literarischer Monatsbericht (November 1930): 263. ANNO – Austrian Newspapers Online, Österreichische Nationalbibliothek. https://anno.onb.ac.at/cgi-content/anno-plus?aid=hof&datum=19300061.",
+          "repository": "Österreichische Nationalbibliothek / ANNO",
+          "publication": "Alrobi, Berlin",
+          "date": "1930-11",
+          "url": "https://anno.onb.ac.at/cgi-content/anno-plus?aid=hof&datum=19300061",
+          "accessDate": "2026-07-24"
+        }
+      },
+      "SRC0199": {
+        "reason": "Replace the unresolved Hofmeister reference with the earliest exact registration and retain the later repeated registration as concise bibliographic context.",
+        "fields": {
+          "fullCitation": "Fritz Rotter and B. Kaper, “Herr Lehmann, Herr Lehmann, was macht die Frau Gemahlin in Marienbad.” Lied und Foxtrott. Berlin: Alrobi, 1930. Registered in Hofmeisters Musikalisch-literarischer Monatsbericht (April 1930): 102; the same title and arrangement are listed again in the October 1930 issue: 234. ANNO – Austrian Newspapers Online, Österreichische Nationalbibliothek. https://anno.onb.ac.at/cgi-content/anno-plus?aid=hof&datum=19300054.",
+          "repository": "Österreichische Nationalbibliothek / ANNO",
+          "publication": "Alrobi, Berlin",
+          "date": "1930-04",
+          "url": "https://anno.onb.ac.at/cgi-content/anno-plus?aid=hof&datum=19300054",
+          "accessDate": "2026-07-24"
+        }
+      },
+      "SRC0201": {
+        "reason": "Replace the unresolved Hofmeister reference with the earliest exact registration and retain the separate salon-orchestra listing as concise bibliographic context.",
+        "fields": {
+          "fullCitation": "B. Kaper, “Hab ich dir weh getan – pardon, verzeih.” Tango. Berlin: Drei Masken-Verlag, 1930. Registered in Hofmeisters Musikalisch-literarischer Monatsbericht (November 1930): 263; a separate salon-orchestra arrangement under Fritz Rotter and B. Kaper is listed on p. 269. ANNO – Austrian Newspapers Online, Österreichische Nationalbibliothek. https://anno.onb.ac.at/cgi-content/anno-plus?aid=hof&datum=19300061.",
+          "repository": "Österreichische Nationalbibliothek / ANNO",
+          "publication": "Drei Masken-Verlag, Berlin",
+          "date": "1930-11",
+          "url": "https://anno.onb.ac.at/cgi-content/anno-plus?aid=hof&datum=19300061",
+          "accessDate": "2026-07-24"
+        }
+      },
       "SRC0288": {
         "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
         "fields": {
@@ -2356,6 +2422,21 @@
     }
   },
   "linkAdditions": {
+    "Organizations": {
+      "ORG064": {
+        "reason": "Link the six newly completed Hofmeister/ANNO source records to the Austrian National Library repository.",
+        "fields": {
+          "sourceIds": [
+            "SRC0195",
+            "SRC0196",
+            "SRC0197",
+            "SRC0198",
+            "SRC0199",
+            "SRC0201"
+          ]
+        }
+      }
+    },
     "Media": {
       "M048": {
         "reason": "Link the first young Kaper portrait directly to the University of Warsaw Archives as its holding and permission-granting institution.",
@@ -2618,6 +2699,54 @@
         "fields": {
           "personIds": [
             "P009"
+          ]
+        }
+      },
+      "SRC0195": {
+        "reason": "Link the completed Hofmeister registration to the Austrian National Library / ANNO repository.",
+        "fields": {
+          "organizationIds": [
+            "ORG064"
+          ]
+        }
+      },
+      "SRC0196": {
+        "reason": "Link the completed Hofmeister registration to the Austrian National Library / ANNO repository.",
+        "fields": {
+          "organizationIds": [
+            "ORG064"
+          ]
+        }
+      },
+      "SRC0197": {
+        "reason": "Link the completed Hofmeister registration to the Austrian National Library / ANNO repository.",
+        "fields": {
+          "organizationIds": [
+            "ORG064"
+          ]
+        }
+      },
+      "SRC0198": {
+        "reason": "Link the completed Hofmeister registration to the Austrian National Library / ANNO repository.",
+        "fields": {
+          "organizationIds": [
+            "ORG064"
+          ]
+        }
+      },
+      "SRC0199": {
+        "reason": "Link the completed Hofmeister registration to the Austrian National Library / ANNO repository.",
+        "fields": {
+          "organizationIds": [
+            "ORG064"
+          ]
+        }
+      },
+      "SRC0201": {
+        "reason": "Link the completed Hofmeister registration to the Austrian National Library / ANNO repository.",
+        "fields": {
+          "organizationIds": [
+            "ORG064"
           ]
         }
       },
