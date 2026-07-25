@@ -5,8 +5,8 @@
   "counts": {
     "People": 109,
     "Organizations": 110,
-    "Sources": 496,
-    "Media": 201,
+    "Sources": 497,
+    "Media": 202,
     "Works": 280,
     "Films": 55,
     "Songs": 203,
@@ -19,7 +19,7 @@
     "Person Name Variants": 35
   },
   "galleryStatusCounts": {
-    "detail_only": 37,
+    "detail_only": 38,
     "eligible": 84,
     "external_link_only": 18,
     "selected": 62
@@ -2687,6 +2687,32 @@
     },
     {
       "table": "Media",
+      "id": "M0245",
+      "fields": [
+        "altText",
+        "assetCount",
+        "assetPath",
+        "assetPaths",
+        "category",
+        "description",
+        "externalUrl",
+        "galleryStatus",
+        "id",
+        "mediaType",
+        "period",
+        "periods",
+        "publicCaption",
+        "publicCreditLine",
+        "rightsNote",
+        "rightsStatus",
+        "slug",
+        "sourceIds",
+        "storageType",
+        "title"
+      ]
+    },
+    {
+      "table": "Media",
       "id": "M233",
       "fields": [
         "altText",
@@ -3265,6 +3291,27 @@
         "title",
         "url"
       ]
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0567",
+      "fields": [
+        "accessDate",
+        "creator",
+        "fullCitation",
+        "id",
+        "mediaIds",
+        "personIds",
+        "publication",
+        "reliability",
+        "repository",
+        "shortCitation",
+        "slug",
+        "sourceStatus",
+        "sourceType",
+        "title",
+        "url"
+      ]
     }
   ],
   "appliedLinkAdditions": [
@@ -3469,6 +3516,13 @@
     {
       "table": "People",
       "id": "P054",
+      "fields": [
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "People",
+      "id": "P058",
       "fields": [
         "sourceIds"
       ]
