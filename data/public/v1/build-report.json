@@ -5,8 +5,8 @@
   "counts": {
     "People": 109,
     "Organizations": 110,
-    "Sources": 497,
-    "Media": 202,
+    "Sources": 498,
+    "Media": 203,
     "Works": 280,
     "Films": 55,
     "Songs": 203,
@@ -19,7 +19,7 @@
     "Person Name Variants": 35
   },
   "galleryStatusCounts": {
-    "detail_only": 38,
+    "detail_only": 39,
     "eligible": 84,
     "external_link_only": 18,
     "selected": 62
@@ -2713,6 +2713,31 @@
     },
     {
       "table": "Media",
+      "id": "M0246",
+      "fields": [
+        "altText",
+        "assetCount",
+        "assetPath",
+        "assetPaths",
+        "category",
+        "description",
+        "galleryStatus",
+        "id",
+        "mediaType",
+        "period",
+        "periods",
+        "publicCaption",
+        "publicCreditLine",
+        "rightsNote",
+        "rightsStatus",
+        "slug",
+        "sourceIds",
+        "storageType",
+        "title"
+      ]
+    },
+    {
+      "table": "Media",
       "id": "M233",
       "fields": [
         "altText",
@@ -3311,6 +3336,25 @@
         "sourceType",
         "title",
         "url"
+      ]
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0568",
+      "fields": [
+        "creator",
+        "fullCitation",
+        "id",
+        "mediaIds",
+        "personIds",
+        "publication",
+        "reliability",
+        "repository",
+        "shortCitation",
+        "slug",
+        "sourceStatus",
+        "sourceType",
+        "title"
       ]
     }
   ],

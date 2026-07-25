@@ -2464,6 +2464,28 @@
             "M0245"
           ]
         }
+      },
+      "SRC0568": {
+        "reason": "Document the existing Ernst Marischka portrait as a local research copy with unresolved photographic provenance, without inventing a repository, photographer, date or rights clearance.",
+        "fields": {
+          "id": "SRC0568",
+          "shortCitation": "Ernst Marischka — unidentified portrait photograph, local research copy",
+          "fullCitation": "Portrait photograph of Ernst Marischka (1893–1963). Local research copy; photographer, date, original publication, repository and rights holder have not been identified.",
+          "sourceType": "image_or_photograph",
+          "title": "Ernst Marischka — unidentified portrait photograph",
+          "creator": "Photographer unidentified",
+          "repository": "Local research copy; original repository unidentified",
+          "publication": "Original publication unidentified",
+          "reliability": "low",
+          "sourceStatus": "verified_with_attribution_note",
+          "slug": "ernst-marischka-unidentified-portrait-src0568",
+          "personIds": [
+            "P017"
+          ],
+          "mediaIds": [
+            "M0246"
+          ]
+        }
       }
     },
     "Places": {
@@ -2978,6 +3000,36 @@
             "hollywood"
           ]
         }
+      },
+      "M0246": {
+        "reason": "Show the existing Ernst Marischka portrait on his person record as a low-resolution identification image while explicitly preserving the unresolved provenance and rights status.",
+        "fields": {
+          "id": "M0246",
+          "title": "Ernst Marischka — portrait photograph",
+          "mediaType": "image",
+          "storageType": "local",
+          "period": "european",
+          "description": "Portrait of Austrian screenwriter, director and lyricist Ernst Marischka, whose documented collaborations with Kaper and Jurmann are represented in the catalogue.",
+          "assetPath": "assets/images/portraits/marischka.jpg",
+          "assetPaths": [
+            "assets/images/portraits/marischka.jpg"
+          ],
+          "assetCount": 1,
+          "altText": "Black-and-white head-and-shoulders portrait of Ernst Marischka wearing a suit and tie.",
+          "rightsStatus": "permission_needed_or_fair_use_claimed",
+          "rightsNote": "Photographer, date, original publication, repository and rights holder have not been identified. The existing 600 × 900 pixel research copy is reproduced without enlargement solely for scholarly identification and discussion of Marischka’s documented collaborations with Kaper; it is excluded from galleries and timeline illustration. Replace or update this record if reliable provenance is established.",
+          "slug": "ernst-marischka-portrait-m246",
+          "publicCaption": "Ernst Marischka, screenwriter, director and lyricist.",
+          "publicCreditLine": "Local research copy; photographer and original source unidentified.",
+          "category": "portrait",
+          "galleryStatus": "detail_only",
+          "sourceIds": [
+            "SRC0568"
+          ],
+          "periods": [
+            "european"
+          ]
+        }
       }
     }
   },
@@ -3394,12 +3446,13 @@
         }
       },
       "P017": {
-        "reason": "Link Ernst Marischka directly to the completed Hofmeister registrations that identify him as lyricist.",
+        "reason": "Link Ernst Marischka directly to the completed Hofmeister registrations that identify him as lyricist and to the cautiously documented portrait source.",
         "fields": {
           "sourceIds": [
             "SRC0208",
             "SRC0211",
-            "SRC0216"
+            "SRC0216",
+            "SRC0568"
           ]
         }
       },
