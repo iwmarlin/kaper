@@ -768,9 +768,11 @@
         }
       },
       "SRC0217": {
-        "reason": "Replace the generic 1933 Hofmeister reference with both exact registrations: the April salon-orchestra edition under Ernst Martin and the May voice-and-piano cross-reference under Paul Mann and Stephan Weiss.",
+        "reason": "Describe the two Hofmeister entries exactly as printed and remove the misleading suggestion that Paul Mann and Stephan Weiss wrote this song; their entry concerns the separate song “Ich bin der Hans im Glück” and serves only as a cross-reference for the combined film-song publication.",
         "fields": {
-          "fullCitation": "Ernst Martin [source form associated in this database with Kaper and Jurmann], “Immer, wenn ich glücklich bin, muß ich schrecklich weinen,” foxtrot from Heut kommt’s drauf an; words by F. Rotter; arrangement for salon orchestra with jazz parts by W. Borchert. Berlin: Wiener Boheme-Verlag, 1933. Detailed entry in Hofmeisters Musikalisch-literarischer Monatsbericht 105, no. 4 (April 1933): 81; the voice-and-piano edition is cross-referenced under Paul Mann and Stephan Weiss in 105, no. 5 (May 1933): 101. ANNO – Austrian Newspapers Online, Österreichische Nationalbibliothek. https://anno.onb.ac.at/cgi-content/anno-plus?aid=hof&datum=19330054; https://anno.onb.ac.at/cgi-content/anno-plus?aid=hof&datum=19330055.",
+          "shortCitation": "Ernst Martin, “Immer, wenn ich glücklich bin, muß ich schrecklich weinen” [from Heut kommt’s drauf an], Hofmeister 105, no. 4 (April 1933): 81; no. 5 (May 1933): 101.",
+          "fullCitation": "Martin, Ernst. “Immer, wenn ich glücklich bin, muß ich schrecklich weinen.” Foxtrot from Heut kommt’s drauf an; words by F. Rotter; arrangement for salon orchestra with jazz parts by W. Borchert. Berlin: Wiener Boheme-Verlag, 1933. Hofmeisters Musikalisch-literarischer Monatsbericht 105, no. 4 (April 1933): 81; voice-and-piano edition listed in 105, no. 5 (May 1933): 101. ANNO – Austrian Newspapers Online, Österreichische Nationalbibliothek. https://anno.onb.ac.at/cgi-content/anno-plus?aid=hof&datum=19330054; https://anno.onb.ac.at/cgi-content/anno-plus?aid=hof&datum=19330055.",
+          "creator": "Ernst Martin (composer name printed by Hofmeister); Fritz Rotter (words); W. Borchert (arrangement)",
           "repository": "Österreichische Nationalbibliothek / ANNO",
           "publication": "Wiener Boheme-Verlag, Berlin",
           "date": "1933-04",
@@ -779,9 +781,11 @@
         }
       },
       "SRC0218": {
-        "reason": "Replace the generic 1933 Hofmeister reference with both exact registrations: the April salon-orchestra edition under Ernst Martin and the May voice-and-piano cross-reference under Paul Mann and Stephan Weiss.",
+        "reason": "Describe the two Hofmeister entries exactly as printed and remove the misleading suggestion that Paul Mann and Stephan Weiss wrote this song; their entry concerns the separate song “Ich bin der Hans im Glück” and serves only as a cross-reference for the combined film-song publication.",
         "fields": {
-          "fullCitation": "Ernst Martin [source form associated in this database with Kaper and Jurmann], “In 24 Stunden kann soviel geschehn,” tango from Heut kommt’s drauf an; words by F. Rotter; arrangement for salon orchestra with jazz parts by W. Borchert. Berlin: Wiener Boheme-Verlag, 1933. Detailed entry in Hofmeisters Musikalisch-literarischer Monatsbericht 105, no. 4 (April 1933): 81; the voice-and-piano edition is cross-referenced under Paul Mann and Stephan Weiss in 105, no. 5 (May 1933): 101. ANNO – Austrian Newspapers Online, Österreichische Nationalbibliothek. https://anno.onb.ac.at/cgi-content/anno-plus?aid=hof&datum=19330054; https://anno.onb.ac.at/cgi-content/anno-plus?aid=hof&datum=19330055.",
+          "shortCitation": "Ernst Martin, “In 24 Stunden kann soviel geschehn” [from Heut kommt’s drauf an], Hofmeister 105, no. 4 (April 1933): 81; no. 5 (May 1933): 101.",
+          "fullCitation": "Martin, Ernst. “In 24 Stunden kann soviel geschehn.” Tango from Heut kommt’s drauf an; words by F. Rotter; arrangement for salon orchestra with jazz parts by W. Borchert. Berlin: Wiener Boheme-Verlag, 1933. Hofmeisters Musikalisch-literarischer Monatsbericht 105, no. 4 (April 1933): 81; voice-and-piano edition listed in 105, no. 5 (May 1933): 101. ANNO – Austrian Newspapers Online, Österreichische Nationalbibliothek. https://anno.onb.ac.at/cgi-content/anno-plus?aid=hof&datum=19330054; https://anno.onb.ac.at/cgi-content/anno-plus?aid=hof&datum=19330055.",
+          "creator": "Ernst Martin (composer name printed by Hofmeister); Fritz Rotter (words); W. Borchert (arrangement)",
           "repository": "Österreichische Nationalbibliothek / ANNO",
           "publication": "Wiener Boheme-Verlag, Berlin",
           "date": "1933-04",
@@ -1878,6 +1882,12 @@
       }
     },
     "Person Name Variants": {
+      "PNV0007": {
+        "reason": "Explain the joint-identity resolution through the primary Hofmeister registrations and the existing Buxbaum/Sieghardt work-list authority instead of presenting Ernst Martin as a self-evident or internally defined pseudonym.",
+        "fields": {
+          "publicNote": "Hofmeister registers two songs from Heut kommt’s drauf an under the composer name “Ernst Martin.” The Buxbaum/Sieghardt catalogue attributes the songs to Walter Jurmann and Bronisław Kaper; this catalogue therefore treats “Ernst Martin” as their joint printed identity for these works."
+        }
+      },
       "PNV0008": {
         "reason": "State the authority resolution as public prose rather than referring to an internal expansion step.",
         "fields": {
@@ -3193,6 +3203,54 @@
             "SRC0226"
           ]
         }
+      },
+      "CON-S081-C-P009": {
+        "reason": "Add the existing Buxbaum/Sieghardt work-list authority as the evidence resolving the printed composer name Ernst Martin to Kaper and Jurmann.",
+        "fields": {
+          "sourceIds": [
+            "SRC0373"
+          ]
+        }
+      },
+      "CON-S081-C-P077": {
+        "reason": "Add the existing Buxbaum/Sieghardt work-list authority as the evidence resolving the printed composer name Ernst Martin to Kaper and Jurmann.",
+        "fields": {
+          "sourceIds": [
+            "SRC0373"
+          ]
+        }
+      },
+      "CON-S081-L-P020": {
+        "reason": "Add the existing Buxbaum/Sieghardt work-list authority as supporting evidence for Fritz Rotter's lyricist credit.",
+        "fields": {
+          "sourceIds": [
+            "SRC0373"
+          ]
+        }
+      },
+      "CON-S082-C-P009": {
+        "reason": "Add the existing Buxbaum/Sieghardt work-list authority as the evidence resolving the printed composer name Ernst Martin to Kaper and Jurmann.",
+        "fields": {
+          "sourceIds": [
+            "SRC0373"
+          ]
+        }
+      },
+      "CON-S082-C-P077": {
+        "reason": "Add the existing Buxbaum/Sieghardt work-list authority as the evidence resolving the printed composer name Ernst Martin to Kaper and Jurmann.",
+        "fields": {
+          "sourceIds": [
+            "SRC0373"
+          ]
+        }
+      },
+      "CON-S082-L-P020": {
+        "reason": "Add the existing Buxbaum/Sieghardt work-list authority as supporting evidence for Fritz Rotter's lyricist credit.",
+        "fields": {
+          "sourceIds": [
+            "SRC0373"
+          ]
+        }
       }
     },
     "Works": {
@@ -3201,6 +3259,22 @@
         "fields": {
           "sourceIds": [
             "SRC0226"
+          ]
+        }
+      },
+      "W-S081": {
+        "reason": "Pair the Hofmeister registration under Ernst Martin with the existing Buxbaum/Sieghardt catalogue that resolves the composers as Kaper and Jurmann.",
+        "fields": {
+          "sourceIds": [
+            "SRC0373"
+          ]
+        }
+      },
+      "W-S082": {
+        "reason": "Pair the Hofmeister registration under Ernst Martin with the existing Buxbaum/Sieghardt catalogue that resolves the composers as Kaper and Jurmann.",
+        "fields": {
+          "sourceIds": [
+            "SRC0373"
           ]
         }
       }
@@ -3213,6 +3287,22 @@
             "SRC0226"
           ]
         }
+      },
+      "S081": {
+        "reason": "Pair the Hofmeister registration under Ernst Martin with the existing Buxbaum/Sieghardt catalogue that resolves the composers as Kaper and Jurmann.",
+        "fields": {
+          "sourceIds": [
+            "SRC0373"
+          ]
+        }
+      },
+      "S082": {
+        "reason": "Pair the Hofmeister registration under Ernst Martin with the existing Buxbaum/Sieghardt catalogue that resolves the composers as Kaper and Jurmann.",
+        "fields": {
+          "sourceIds": [
+            "SRC0373"
+          ]
+        }
       }
     },
     "Person Name Variants": {
@@ -3221,6 +3311,14 @@
         "fields": {
           "sourceIds": [
             "SRC0226"
+          ]
+        }
+      },
+      "PNV0007": {
+        "reason": "Pair the two Hofmeister attestations of Ernst Martin with the existing Buxbaum/Sieghardt catalogue that resolves the joint printed identity.",
+        "fields": {
+          "sourceIds": [
+            "SRC0373"
           ]
         }
       }
@@ -3441,7 +3539,8 @@
             "SRC0221",
             "SRC0222",
             "SRC0223",
-            "SRC0226"
+            "SRC0226",
+            "SRC0373"
           ]
         }
       },
@@ -3901,6 +4000,33 @@
           ],
           "nameVariantIds": [
             "PNV0019"
+          ]
+        }
+      },
+      "SRC0373": {
+        "reason": "Reuse the existing Buxbaum/Sieghardt catalogue as the secondary authority resolving the two Heut kommt’s drauf an registrations under Ernst Martin to Kaper and Jurmann; do not create a duplicate source.",
+        "fields": {
+          "personIds": [
+            "P020"
+          ],
+          "workIds": [
+            "W-S081",
+            "W-S082"
+          ],
+          "songIds": [
+            "S081",
+            "S082"
+          ],
+          "contributionIds": [
+            "CON-S081-C-P009",
+            "CON-S081-C-P077",
+            "CON-S081-L-P020",
+            "CON-S082-C-P009",
+            "CON-S082-C-P077",
+            "CON-S082-L-P020"
+          ],
+          "nameVariantIds": [
+            "PNV0007"
           ]
         }
       },

@@ -903,6 +903,14 @@
     },
     {
       "table": "Person Name Variants",
+      "id": "PNV0007",
+      "fields": [
+        "publicNote"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Person Name Variants",
       "id": "PNV0008",
       "fields": [
         "publicNote"
@@ -1551,10 +1559,12 @@
       "id": "SRC0217",
       "fields": [
         "accessDate",
+        "creator",
         "date",
         "fullCitation",
         "publication",
         "repository",
+        "shortCitation",
         "url"
       ],
       "removedFields": []
@@ -1564,10 +1574,12 @@
       "id": "SRC0218",
       "fields": [
         "accessDate",
+        "creator",
         "date",
         "fullCitation",
         "publication",
         "repository",
+        "shortCitation",
         "url"
       ],
       "removedFields": []
@@ -3396,6 +3408,48 @@
     },
     {
       "table": "Contributions",
+      "id": "CON-S081-C-P009",
+      "fields": [
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Contributions",
+      "id": "CON-S081-C-P077",
+      "fields": [
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Contributions",
+      "id": "CON-S081-L-P020",
+      "fields": [
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Contributions",
+      "id": "CON-S082-C-P009",
+      "fields": [
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Contributions",
+      "id": "CON-S082-C-P077",
+      "fields": [
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Contributions",
+      "id": "CON-S082-L-P020",
+      "fields": [
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Contributions",
       "id": "CON-S083-PUB-ORG042",
       "fields": [
         "organizationIds"
@@ -3608,6 +3662,13 @@
     },
     {
       "table": "Person Name Variants",
+      "id": "PNV0007",
+      "fields": [
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Person Name Variants",
       "id": "PNV0019",
       "fields": [
         "sourceIds"
@@ -3638,6 +3699,20 @@
     {
       "table": "Songs",
       "id": "S023",
+      "fields": [
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Songs",
+      "id": "S081",
+      "fields": [
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Songs",
+      "id": "S082",
       "fields": [
         "sourceIds"
       ]
@@ -3943,6 +4018,17 @@
     },
     {
       "table": "Sources",
+      "id": "SRC0373",
+      "fields": [
+        "contributionIds",
+        "nameVariantIds",
+        "personIds",
+        "songIds",
+        "workIds"
+      ]
+    },
+    {
+      "table": "Sources",
       "id": "SRC0494",
       "fields": [
         "placeIds",
@@ -4003,6 +4089,20 @@
     {
       "table": "Works",
       "id": "W-S023",
+      "fields": [
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Works",
+      "id": "W-S081",
+      "fields": [
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Works",
+      "id": "W-S082",
       "fields": [
         "sourceIds"
       ]
