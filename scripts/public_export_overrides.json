@@ -4512,6 +4512,78 @@
       }
     },
     "Sources": {
+      "SRC0106": {
+        "reason": "Keep the item-level Hofmeister entry with the individual song and its song–film relation; remove its redundant direct film and film-credit links because the aggregate Schlagerheft source SRC0108 documents the film-level publication.",
+        "fields": {
+          "workIds": [
+            "W-F012"
+          ],
+          "filmIds": [
+            "F012"
+          ],
+          "contributionIds": [
+            "CON-F012-C-P009",
+            "CON-F012-D-P048",
+            "CON-F012-PC-ORG011"
+          ]
+        }
+      },
+      "SRC0107": {
+        "reason": "Keep the item-level Hofmeister entry with the individual song and its song–film relation; remove its redundant direct film and film-credit links because the aggregate Schlagerheft source SRC0108 documents the film-level publication.",
+        "fields": {
+          "workIds": [
+            "W-F012"
+          ],
+          "filmIds": [
+            "F012"
+          ],
+          "contributionIds": [
+            "CON-F012-C-P009",
+            "CON-F012-D-P048",
+            "CON-F012-PC-ORG011"
+          ]
+        }
+      },
+      "SRC0108": {
+        "reason": "Keep the aggregate Schlagerheft source at film level and remove its redundant item-level links; SRC0107 and SRC0106 provide the precise evidence for W-S052 and W-S053 respectively.",
+        "fields": {
+          "workIds": [
+            "W-S052",
+            "W-S053"
+          ],
+          "songIds": [
+            "S052",
+            "S053"
+          ],
+          "workRelationIds": [
+            "REL0020",
+            "REL0021"
+          ],
+          "contributionIds": [
+            "CON-S052-C-P009",
+            "CON-S052-C-P077",
+            "CON-S052-L-P020",
+            "CON-S052-PUB-ORG036",
+            "CON-S053-C-P009",
+            "CON-S053-C-P077",
+            "CON-S053-L-P020",
+            "CON-S053-PUB-ORG036"
+          ]
+        }
+      },
+      "SRC0192": {
+        "reason": "Keep the aggregate Abenteuer am Lido registration at publication level and remove its redundant item-level work and relation links; SRC0221 and SRC0222 provide the precise evidence for the two songs.",
+        "fields": {
+          "workIds": [
+            "W-S074",
+            "W-S075"
+          ],
+          "workRelationIds": [
+            "REL0039",
+            "REL0040"
+          ]
+        }
+      },
       "SRC0024": {
         "reason": "Remove the stale Berlin-gallery and February 1934 event links from the November 1933 NAC photograph source while retaining M032 and M195.",
         "fields": {
@@ -4608,6 +4680,47 @@
       }
     },
     "Works": {
+      "W-F012": {
+        "reason": "Keep the aggregate Schlagerheft source SRC0108 at film level and remove the two redundant item-level song sources SRC0106 and SRC0107.",
+        "fields": {
+          "sourceIds": [
+            "SRC0106",
+            "SRC0107"
+          ]
+        }
+      },
+      "W-S052": {
+        "reason": "Use the item-level Hofmeister entry SRC0107 for this song and remove the redundant aggregate Schlagerheft source SRC0108.",
+        "fields": {
+          "sourceIds": [
+            "SRC0108"
+          ]
+        }
+      },
+      "W-S053": {
+        "reason": "Use the item-level Hofmeister entry SRC0106 for this song and remove the redundant aggregate Schlagerheft source SRC0108.",
+        "fields": {
+          "sourceIds": [
+            "SRC0108"
+          ]
+        }
+      },
+      "W-S074": {
+        "reason": "Use the item-level Hofmeister entry SRC0221 for this song and remove the redundant aggregate Abenteuer am Lido source SRC0192.",
+        "fields": {
+          "sourceIds": [
+            "SRC0192"
+          ]
+        }
+      },
+      "W-S075": {
+        "reason": "Use the item-level Hofmeister entry SRC0222 for this song and remove the redundant aggregate Abenteuer am Lido source SRC0192.",
+        "fields": {
+          "sourceIds": [
+            "SRC0192"
+          ]
+        }
+      },
       "W-S076": {
         "reason": "Remove Ernst Marischka and the unsupported contribution from Ninon; the detailed May 1933 Hofmeister entry identifies Fritz Rotter alone.",
         "fields": {
@@ -4697,7 +4810,34 @@
         }
       }
     },
+    "Films": {
+      "F012": {
+        "reason": "Keep the aggregate Schlagerheft source SRC0108 at film level and remove the two redundant item-level song sources SRC0106 and SRC0107.",
+        "fields": {
+          "sourceIds": [
+            "SRC0106",
+            "SRC0107"
+          ]
+        }
+      }
+    },
     "Songs": {
+      "S052": {
+        "reason": "Use the item-level Hofmeister entry SRC0107 for this song and remove the redundant aggregate Schlagerheft source SRC0108.",
+        "fields": {
+          "sourceIds": [
+            "SRC0108"
+          ]
+        }
+      },
+      "S053": {
+        "reason": "Use the item-level Hofmeister entry SRC0106 for this song and remove the redundant aggregate Schlagerheft source SRC0108.",
+        "fields": {
+          "sourceIds": [
+            "SRC0108"
+          ]
+        }
+      },
       "S135": {
         "reason": "Use the precise Trouble for Two entry-group citation SRC0307 instead of also repeating the catalogue-level SRC0306.",
         "fields": {
@@ -4825,6 +4965,97 @@
       }
     },
     "Contributions": {
+      "CON-F012-C-P009": {
+        "reason": "At film-credit level retain the aggregate SRC0108 and remove the two item-level song entries SRC0106 and SRC0107.",
+        "fields": {
+          "sourceIds": [
+            "SRC0106",
+            "SRC0107"
+          ]
+        }
+      },
+      "CON-F012-D-P048": {
+        "reason": "At film-credit level retain the aggregate SRC0108 and remove the two item-level song entries SRC0106 and SRC0107.",
+        "fields": {
+          "sourceIds": [
+            "SRC0106",
+            "SRC0107"
+          ]
+        }
+      },
+      "CON-F012-PC-ORG011": {
+        "reason": "At film-credit level retain the aggregate SRC0108 and remove the two item-level song entries SRC0106 and SRC0107.",
+        "fields": {
+          "sourceIds": [
+            "SRC0106",
+            "SRC0107"
+          ]
+        }
+      },
+      "CON-S052-C-P009": {
+        "reason": "Use the item-level SRC0107 for this song credit and remove the redundant aggregate SRC0108.",
+        "fields": {
+          "sourceIds": [
+            "SRC0108"
+          ]
+        }
+      },
+      "CON-S052-C-P077": {
+        "reason": "Use the item-level SRC0107 for this song credit and remove the redundant aggregate SRC0108.",
+        "fields": {
+          "sourceIds": [
+            "SRC0108"
+          ]
+        }
+      },
+      "CON-S052-L-P020": {
+        "reason": "Use the item-level SRC0107 for this song credit and remove the redundant aggregate SRC0108.",
+        "fields": {
+          "sourceIds": [
+            "SRC0108"
+          ]
+        }
+      },
+      "CON-S052-PUB-ORG036": {
+        "reason": "Use the item-level SRC0107 for this song credit and remove the redundant aggregate SRC0108.",
+        "fields": {
+          "sourceIds": [
+            "SRC0108"
+          ]
+        }
+      },
+      "CON-S053-C-P009": {
+        "reason": "Use the item-level SRC0106 for this song credit and remove the redundant aggregate SRC0108.",
+        "fields": {
+          "sourceIds": [
+            "SRC0108"
+          ]
+        }
+      },
+      "CON-S053-C-P077": {
+        "reason": "Use the item-level SRC0106 for this song credit and remove the redundant aggregate SRC0108.",
+        "fields": {
+          "sourceIds": [
+            "SRC0108"
+          ]
+        }
+      },
+      "CON-S053-L-P020": {
+        "reason": "Use the item-level SRC0106 for this song credit and remove the redundant aggregate SRC0108.",
+        "fields": {
+          "sourceIds": [
+            "SRC0108"
+          ]
+        }
+      },
+      "CON-S053-PUB-ORG036": {
+        "reason": "Use the item-level SRC0106 for this song credit and remove the redundant aggregate SRC0108.",
+        "fields": {
+          "sourceIds": [
+            "SRC0108"
+          ]
+        }
+      },
       "CON-S074-PUB-ORG030": {
         "reason": "Remove Edition Coda before reassigning the publisher contribution to Dacapo-Verlag.",
         "fields": {
@@ -5006,6 +5237,40 @@
         "fields": {
           "sourceIds": [
             "SRC0306"
+          ]
+        }
+      }
+    },
+    "Work Relations": {
+      "REL0020": {
+        "reason": "Retain the item-level SRC0107 as evidence for the song–film relation and remove the redundant aggregate SRC0108.",
+        "fields": {
+          "sourceIds": [
+            "SRC0108"
+          ]
+        }
+      },
+      "REL0021": {
+        "reason": "Retain the item-level SRC0106 and independent SRC0356 as evidence for the song–film relation and remove the redundant aggregate SRC0108.",
+        "fields": {
+          "sourceIds": [
+            "SRC0108"
+          ]
+        }
+      },
+      "REL0039": {
+        "reason": "Retain the item-level SRC0221 as evidence for the song–film relation and remove the redundant aggregate SRC0192.",
+        "fields": {
+          "sourceIds": [
+            "SRC0192"
+          ]
+        }
+      },
+      "REL0040": {
+        "reason": "Retain the item-level SRC0222 as evidence for the song–film relation and remove the redundant aggregate SRC0192.",
+        "fields": {
+          "sourceIds": [
+            "SRC0192"
           ]
         }
       }

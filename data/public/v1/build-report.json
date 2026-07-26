@@ -4588,6 +4588,83 @@
   "appliedLinkRemovals": [
     {
       "table": "Contributions",
+      "id": "CON-F012-C-P009",
+      "fields": [
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Contributions",
+      "id": "CON-F012-D-P048",
+      "fields": [
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Contributions",
+      "id": "CON-F012-PC-ORG011",
+      "fields": [
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Contributions",
+      "id": "CON-S052-C-P009",
+      "fields": [
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Contributions",
+      "id": "CON-S052-C-P077",
+      "fields": [
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Contributions",
+      "id": "CON-S052-L-P020",
+      "fields": [
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Contributions",
+      "id": "CON-S052-PUB-ORG036",
+      "fields": [
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Contributions",
+      "id": "CON-S053-C-P009",
+      "fields": [
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Contributions",
+      "id": "CON-S053-C-P077",
+      "fields": [
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Contributions",
+      "id": "CON-S053-L-P020",
+      "fields": [
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Contributions",
+      "id": "CON-S053-PUB-ORG036",
+      "fields": [
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Contributions",
       "id": "CON-S055-L-P040",
       "fields": [
         "sourceIds"
@@ -4748,6 +4825,13 @@
       ]
     },
     {
+      "table": "Films",
+      "id": "F012",
+      "fields": [
+        "sourceIds"
+      ]
+    },
+    {
       "table": "Media",
       "id": "M031",
       "fields": [
@@ -4802,6 +4886,20 @@
       "id": "PL003",
       "fields": [
         "timelineEventIds"
+      ]
+    },
+    {
+      "table": "Songs",
+      "id": "S052",
+      "fields": [
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Songs",
+      "id": "S053",
+      "fields": [
+        "sourceIds"
       ]
     },
     {
@@ -4877,6 +4975,34 @@
     },
     {
       "table": "Sources",
+      "id": "SRC0106",
+      "fields": [
+        "contributionIds",
+        "filmIds",
+        "workIds"
+      ]
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0107",
+      "fields": [
+        "contributionIds",
+        "filmIds",
+        "workIds"
+      ]
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0108",
+      "fields": [
+        "contributionIds",
+        "songIds",
+        "workIds",
+        "workRelationIds"
+      ]
+    },
+    {
+      "table": "Sources",
       "id": "SRC0183",
       "fields": [
         "contributionIds",
@@ -4895,6 +5021,14 @@
       "id": "SRC0190",
       "fields": [
         "contributionIds"
+      ]
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0192",
+      "fields": [
+        "workIds",
+        "workRelationIds"
       ]
     },
     {
@@ -4953,6 +5087,69 @@
       "id": "TE0032",
       "fields": [
         "mediaIds",
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Work Relations",
+      "id": "REL0020",
+      "fields": [
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Work Relations",
+      "id": "REL0021",
+      "fields": [
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Work Relations",
+      "id": "REL0039",
+      "fields": [
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Work Relations",
+      "id": "REL0040",
+      "fields": [
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Works",
+      "id": "W-F012",
+      "fields": [
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Works",
+      "id": "W-S052",
+      "fields": [
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Works",
+      "id": "W-S053",
+      "fields": [
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Works",
+      "id": "W-S074",
+      "fields": [
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Works",
+      "id": "W-S075",
+      "fields": [
         "sourceIds"
       ]
     },
