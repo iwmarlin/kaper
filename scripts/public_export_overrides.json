@@ -917,15 +917,27 @@
         }
       },
       "SRC0289": {
-        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "reason": "Identify the record correctly as an entry in Wolfgang Stanicek's 2010 University of Vienna doctoral dissertation, matching SRC0288, rather than as an online database or a user-supplied research file.",
         "fields": {
-          "sourceType": "online_database"
+          "fullCitation": "Wolfgang Stanicek, Austin Egen: Schlager-Komponist, Sänger und Musikverleger (doctoral dissertation, University of Vienna, 2010), work-catalog entry for “Ich weiß ein kleines Café”: tango; music by Austin Egen and Bronisław Kaper; text by Fritz Rotter; Drei Masken, Berlin, later Universal Music Publishing, Berlin; Roehr release E 12, 14 November 1930, under contract of 8 April 1930; AKM registrations 30 January 1930 and 20 February 1931; GEMA work no. 1689504-001; ISWC T-800.619.517-2; sheet music for voice and piano, Drei Masken, © 1931, D-B 217.735.",
+          "creator": "Wolfgang Stanicek",
+          "repository": "University of Vienna",
+          "publication": "Doctoral dissertation, University of Vienna",
+          "date": "2010",
+          "url": "https://musikwissenschaft.univie.ac.at/forschung/dissertationen/",
+          "sourceType": "book"
         }
       },
       "SRC0290": {
-        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "reason": "Identify the record correctly as an entry in Wolfgang Stanicek's 2010 University of Vienna doctoral dissertation, matching SRC0288, rather than as an online database or a user-supplied research file.",
         "fields": {
-          "sourceType": "online_database"
+          "fullCitation": "Wolfgang Stanicek, Austin Egen: Schlager-Komponist, Sänger und Musikverleger (doctoral dissertation, University of Vienna, 2010), work-catalog entry for “Diese Melodie sing ich nur für Sie”: tango; music by Austin Egen and Bronisław Kaper; text by Fritz Rotter; manuscript source; AKM registration 20 February 1931; no GEMA work number.",
+          "creator": "Wolfgang Stanicek",
+          "repository": "University of Vienna",
+          "publication": "Doctoral dissertation, University of Vienna",
+          "date": "2010",
+          "url": "https://musikwissenschaft.univie.ac.at/forschung/dissertationen/",
+          "sourceType": "book"
         }
       },
       "SRC0299": {

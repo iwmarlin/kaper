@@ -1743,7 +1743,13 @@
       "table": "Sources",
       "id": "SRC0289",
       "fields": [
-        "sourceType"
+        "creator",
+        "date",
+        "fullCitation",
+        "publication",
+        "repository",
+        "sourceType",
+        "url"
       ],
       "removedFields": []
     },
@@ -1751,7 +1757,13 @@
       "table": "Sources",
       "id": "SRC0290",
       "fields": [
-        "sourceType"
+        "creator",
+        "date",
+        "fullCitation",
+        "publication",
+        "repository",
+        "sourceType",
+        "url"
       ],
       "removedFields": []
     },
