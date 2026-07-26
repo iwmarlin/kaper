@@ -1157,6 +1157,27 @@
           "sourceType": "wikimedia_commons_file"
         }
       },
+      "SRC0376": {
+        "reason": "Align the institutional metadata with the other entry-level records from the same 1937 CCE volume while preserving this record's distinct published registration.",
+        "fields": {
+          "repository": "Internet Archive / U.S. Copyright Office",
+          "publication": "Washington, DC: U.S. Government Printing Office"
+        }
+      },
+      "SRC0377": {
+        "reason": "Align the institutional metadata with the other entry-level records from the same 1937 CCE volume while preserving this record's distinct published registration.",
+        "fields": {
+          "repository": "Internet Archive / U.S. Copyright Office",
+          "publication": "Washington, DC: U.S. Government Printing Office"
+        }
+      },
+      "SRC0378": {
+        "reason": "Align the institutional metadata with the other entry-level records from the same 1937 CCE volume while preserving this record's distinct published registration.",
+        "fields": {
+          "repository": "Internet Archive / U.S. Copyright Office",
+          "publication": "Washington, DC: U.S. Government Printing Office"
+        }
+      },
       "SRC0383": {
         "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
         "fields": {
