@@ -4026,6 +4026,20 @@
       ]
     },
     {
+      "table": "Organizations",
+      "id": "ORG070",
+      "fields": [
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Organizations",
+      "id": "ORG090",
+      "fields": [
+        "sourceIds"
+      ]
+    },
+    {
       "table": "People",
       "id": "P001",
       "fields": [
@@ -4207,6 +4221,13 @@
       "fields": [
         "mediaIds",
         "personIds"
+      ]
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0039",
+      "fields": [
+        "placeIds"
       ]
     },
     {
@@ -4510,6 +4531,27 @@
       "fields": [
         "placeIds",
         "timelineEventIds"
+      ]
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0536",
+      "fields": [
+        "placeIds"
+      ]
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0556",
+      "fields": [
+        "mediaIds"
+      ]
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0559",
+      "fields": [
+        "mediaIds"
       ]
     },
     {

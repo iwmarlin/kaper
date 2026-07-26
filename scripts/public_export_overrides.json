@@ -3424,6 +3424,27 @@
   },
   "linkAdditions": {
     "Organizations": {
+      "ORG070": {
+        "reason": "Synchronize the inverse source links for the newly added NAC portrait records whose Sources already identify Narodowe Archiwum Cyfrowe.",
+        "fields": {
+          "sourceIds": [
+            "SRC0556",
+            "SRC0561"
+          ]
+        }
+      },
+      "ORG090": {
+        "reason": "Synchronize the inverse source links for the newly added Wikimedia portrait records whose Sources already identify the Wikimedia Foundation.",
+        "fields": {
+          "sourceIds": [
+            "SRC0558",
+            "SRC0559",
+            "SRC0560",
+            "SRC0561",
+            "SRC0562"
+          ]
+        }
+      },
       "ORG069": {
         "reason": "Link the National Archives organization record to Eleonora Kaper's Declaration of Intention source.",
         "fields": {
@@ -4023,6 +4044,38 @@
       }
     },
     "Sources": {
+      "SRC0039": {
+        "reason": "Synchronize the inverse place link already present from PL043 to this Calexico border-crossing source.",
+        "fields": {
+          "placeIds": [
+            "PL043"
+          ]
+        }
+      },
+      "SRC0536": {
+        "reason": "Synchronize the inverse place link already present from PL044 to this Le Havre departure source.",
+        "fields": {
+          "placeIds": [
+            "PL044"
+          ]
+        }
+      },
+      "SRC0556": {
+        "reason": "Synchronize the inverse media link already present from the Warsaw gallery M030 to the Andrzej Włast portrait source.",
+        "fields": {
+          "mediaIds": [
+            "M030"
+          ]
+        }
+      },
+      "SRC0559": {
+        "reason": "Synchronize the inverse media link already present from the Warsaw gallery M030 to the Warsaw Conservatory image source.",
+        "fields": {
+          "mediaIds": [
+            "M030"
+          ]
+        }
+      },
       "SRC0024": {
         "reason": "Link the November 1933 NAC reception photograph source to Bronisław Kaper, who is depicted in the retained canonical medium M195.",
         "fields": {
