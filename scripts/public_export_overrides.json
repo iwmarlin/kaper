@@ -2235,6 +2235,15 @@
       }
     },
     "Contributions": {
+      "CON-F022-MD-P009": {
+        "reason": "Remove the redundant legacy scope note and order Kaper's existing music-direction credit alongside the restored composer credits.",
+        "fields": {
+          "sortOrder": 42
+        },
+        "removeFields": [
+          "scopeNote"
+        ]
+      },
       "CON-F004-MRU-P009": {
         "reason": "Remove the redundant explanatory scope note from the public credit; the unresolved-role badge, probable certainty and source form “Benjamin Kapper” already communicate the qualified attribution.",
         "fields": {},
@@ -2589,6 +2598,66 @@
       }
     },
     "Contributions": {
+      "CON-F022-C-P009": {
+        "reason": "Add Bronisław Kaper's missing composer credit for Ich will Dich Liebe lehren. Filmportal lists Kaper and Walter Jurmann under both “Musik” and “Musikalische Leitung.”",
+        "fields": {
+          "id": "CON-F022-C-P009",
+          "role": "composer",
+          "evidenceContext": "film_credits",
+          "sortOrder": 40,
+          "certainty": "confirmed",
+          "workIds": [
+            "W-F022"
+          ],
+          "personIds": [
+            "P009"
+          ],
+          "sourceIds": [
+            "SRC0131",
+            "SRC0373"
+          ]
+        }
+      },
+      "CON-F022-C-P077": {
+        "reason": "Add Walter Jurmann's missing composer credit for Ich will Dich Liebe lehren.",
+        "fields": {
+          "id": "CON-F022-C-P077",
+          "role": "composer",
+          "evidenceContext": "film_credits",
+          "sortOrder": 41,
+          "certainty": "confirmed",
+          "workIds": [
+            "W-F022"
+          ],
+          "personIds": [
+            "P077"
+          ],
+          "sourceIds": [
+            "SRC0131",
+            "SRC0373"
+          ]
+        }
+      },
+      "CON-F022-MD-P077": {
+        "reason": "Add Walter Jurmann's missing music-direction credit for Ich will Dich Liebe lehren.",
+        "fields": {
+          "id": "CON-F022-MD-P077",
+          "role": "music_director",
+          "evidenceContext": "film_credits",
+          "sortOrder": 43,
+          "certainty": "confirmed",
+          "workIds": [
+            "W-F022"
+          ],
+          "personIds": [
+            "P077"
+          ],
+          "sourceIds": [
+            "SRC0131",
+            "SRC0373"
+          ]
+        }
+      },
       "CON-F004-C-P077": {
         "reason": "Add Walter Jurmann's missing confirmed composer credit for Ihre Majestät die Liebe. Filmportal explicitly lists Jurmann under “Musik,” and the official Jurmann catalogue independently documents songs written for the film.",
         "fields": {
@@ -3966,6 +4035,16 @@
           ]
         }
       },
+      "W-F022": {
+        "reason": "Restore Filmportal's complete music credits: Kaper and Jurmann as both composers and music directors.",
+        "fields": {
+          "contributionIds": [
+            "CON-F022-C-P009",
+            "CON-F022-C-P077",
+            "CON-F022-MD-P077"
+          ]
+        }
+      },
       "W-S023": {
         "reason": "Use the exact ANNO registration SRC0226 instead of its superseded duplicate SRC0200.",
         "fields": {
@@ -4219,7 +4298,8 @@
             "SRC0226"
           ],
           "contributionIds": [
-            "CON-F009-C-P009"
+            "CON-F009-C-P009",
+            "CON-F022-C-P009"
           ]
         }
       },
@@ -4332,7 +4412,9 @@
             "CON-F010-C-P077",
             "CON-F011-C-P077",
             "CON-F013-C-P077",
-            "CON-F014-C-P077"
+            "CON-F014-C-P077",
+            "CON-F022-C-P077",
+            "CON-F022-MD-P077"
           ]
         }
       },
@@ -4838,6 +4920,16 @@
           ]
         }
       },
+      "SRC0131": {
+        "reason": "Synchronize Filmportal's complete music credits for Ich will Dich Liebe lehren: Kaper and Jurmann under both “Musik” and “Musikalische Leitung.”",
+        "fields": {
+          "contributionIds": [
+            "CON-F022-C-P009",
+            "CON-F022-C-P077",
+            "CON-F022-MD-P077"
+          ]
+        }
+      },
       "SRC0373": {
         "reason": "Reuse the existing Buxbaum/Sieghardt catalogue as the secondary authority resolving the two Heut kommt’s drauf an registrations under Ernst Martin to Kaper and Jurmann; do not create a duplicate source.",
         "fields": {
@@ -4864,7 +4956,10 @@
             "CON-F010-C-P077",
             "CON-F011-C-P077",
             "CON-F013-C-P077",
-            "CON-F014-C-P077"
+            "CON-F014-C-P077",
+            "CON-F022-C-P009",
+            "CON-F022-C-P077",
+            "CON-F022-MD-P077"
           ],
           "nameVariantIds": [
             "PNV0007"

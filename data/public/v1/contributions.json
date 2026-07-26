@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 989,
+  "count": 992,
   "records": [
     {
       "id": "CON-F001-C-P009",
@@ -1446,6 +1446,40 @@
       ]
     },
     {
+      "id": "CON-F022-C-P009",
+      "role": "composer",
+      "evidenceContext": "film_credits",
+      "sortOrder": 40,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-F022"
+      ],
+      "personIds": [
+        "P009"
+      ],
+      "sourceIds": [
+        "SRC0131",
+        "SRC0373"
+      ]
+    },
+    {
+      "id": "CON-F022-C-P077",
+      "role": "composer",
+      "evidenceContext": "film_credits",
+      "sortOrder": 41,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-F022"
+      ],
+      "personIds": [
+        "P077"
+      ],
+      "sourceIds": [
+        "SRC0131",
+        "SRC0373"
+      ]
+    },
+    {
       "id": "CON-F022-D-P030",
       "role": "film_director",
       "nameAsPrinted": "Heinz Hilpert",
@@ -1466,14 +1500,30 @@
       "id": "CON-F022-MD-P009",
       "role": "music_director",
       "evidenceContext": "film_credits",
-      "scopeNote": "Music direction credit; do not reinterpret this record as a composition credit.",
-      "sortOrder": 40,
+      "sortOrder": 42,
       "certainty": "confirmed",
       "workIds": [
         "W-F022"
       ],
       "personIds": [
         "P009"
+      ],
+      "sourceIds": [
+        "SRC0131",
+        "SRC0373"
+      ]
+    },
+    {
+      "id": "CON-F022-MD-P077",
+      "role": "music_director",
+      "evidenceContext": "film_credits",
+      "sortOrder": 43,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-F022"
+      ],
+      "personIds": [
+        "P077"
       ],
       "sourceIds": [
         "SRC0131",

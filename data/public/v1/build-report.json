@@ -15,7 +15,7 @@
     "Work Relations": 190,
     "Timeline Events": 52,
     "Places": 44,
-    "Contributions": 989,
+    "Contributions": 992,
     "Person Name Variants": 35
   },
   "galleryStatusCounts": {
@@ -77,6 +77,16 @@
       "fields": [
         "evidenceContext",
         "role"
+      ],
+      "removedFields": [
+        "scopeNote"
+      ]
+    },
+    {
+      "table": "Contributions",
+      "id": "CON-F022-MD-P009",
+      "fields": [
+        "sortOrder"
       ],
       "removedFields": [
         "scopeNote"
@@ -3266,6 +3276,48 @@
       ]
     },
     {
+      "table": "Contributions",
+      "id": "CON-F022-C-P009",
+      "fields": [
+        "certainty",
+        "evidenceContext",
+        "id",
+        "personIds",
+        "role",
+        "sortOrder",
+        "sourceIds",
+        "workIds"
+      ]
+    },
+    {
+      "table": "Contributions",
+      "id": "CON-F022-C-P077",
+      "fields": [
+        "certainty",
+        "evidenceContext",
+        "id",
+        "personIds",
+        "role",
+        "sortOrder",
+        "sourceIds",
+        "workIds"
+      ]
+    },
+    {
+      "table": "Contributions",
+      "id": "CON-F022-MD-P077",
+      "fields": [
+        "certainty",
+        "evidenceContext",
+        "id",
+        "personIds",
+        "role",
+        "sortOrder",
+        "sourceIds",
+        "workIds"
+      ]
+    },
+    {
       "table": "Media",
       "id": "M0241",
       "fields": [
@@ -4500,6 +4552,13 @@
     },
     {
       "table": "Sources",
+      "id": "SRC0131",
+      "fields": [
+        "contributionIds"
+      ]
+    },
+    {
+      "table": "Sources",
       "id": "SRC0152",
       "fields": [
         "contributionIds"
@@ -4923,6 +4982,13 @@
     {
       "table": "Works",
       "id": "W-F014",
+      "fields": [
+        "contributionIds"
+      ]
+    },
+    {
+      "table": "Works",
+      "id": "W-F022",
       "fields": [
         "contributionIds"
       ]
