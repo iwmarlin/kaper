@@ -15,7 +15,7 @@
     "Work Relations": 190,
     "Timeline Events": 52,
     "Places": 44,
-    "Contributions": 992,
+    "Contributions": 1011,
     "Person Name Variants": 35
   },
   "galleryStatusCounts": {
@@ -78,6 +78,14 @@
         "evidenceContext",
         "role"
       ],
+      "removedFields": [
+        "scopeNote"
+      ]
+    },
+    {
+      "table": "Contributions",
+      "id": "CON-F019-MD-P009",
+      "fields": [],
       "removedFields": [
         "scopeNote"
       ]
@@ -3175,6 +3183,48 @@
     },
     {
       "table": "Contributions",
+      "id": "CON-F005-C-P077",
+      "fields": [
+        "certainty",
+        "evidenceContext",
+        "id",
+        "personIds",
+        "role",
+        "sortOrder",
+        "sourceIds",
+        "workIds"
+      ]
+    },
+    {
+      "table": "Contributions",
+      "id": "CON-F007-C-P077",
+      "fields": [
+        "certainty",
+        "evidenceContext",
+        "id",
+        "personIds",
+        "role",
+        "sortOrder",
+        "sourceIds",
+        "workIds"
+      ]
+    },
+    {
+      "table": "Contributions",
+      "id": "CON-F008-C-P077",
+      "fields": [
+        "certainty",
+        "evidenceContext",
+        "id",
+        "personIds",
+        "role",
+        "sortOrder",
+        "sourceIds",
+        "workIds"
+      ]
+    },
+    {
+      "table": "Contributions",
       "id": "CON-F009-C-P009",
       "fields": [
         "certainty",
@@ -3233,6 +3283,20 @@
     },
     {
       "table": "Contributions",
+      "id": "CON-F012-C-P077",
+      "fields": [
+        "certainty",
+        "evidenceContext",
+        "id",
+        "personIds",
+        "role",
+        "sortOrder",
+        "sourceIds",
+        "workIds"
+      ]
+    },
+    {
+      "table": "Contributions",
       "id": "CON-F013-C-P077",
       "fields": [
         "certainty",
@@ -3277,6 +3341,76 @@
     },
     {
       "table": "Contributions",
+      "id": "CON-F016-C-P077",
+      "fields": [
+        "certainty",
+        "evidenceContext",
+        "id",
+        "personIds",
+        "role",
+        "sortOrder",
+        "sourceIds",
+        "workIds"
+      ]
+    },
+    {
+      "table": "Contributions",
+      "id": "CON-F017-C-P077",
+      "fields": [
+        "certainty",
+        "evidenceContext",
+        "id",
+        "personIds",
+        "role",
+        "sortOrder",
+        "sourceIds",
+        "workIds"
+      ]
+    },
+    {
+      "table": "Contributions",
+      "id": "CON-F019-C-P077",
+      "fields": [
+        "certainty",
+        "evidenceContext",
+        "id",
+        "personIds",
+        "role",
+        "sortOrder",
+        "sourceIds",
+        "workIds"
+      ]
+    },
+    {
+      "table": "Contributions",
+      "id": "CON-F020-C-P077",
+      "fields": [
+        "certainty",
+        "evidenceContext",
+        "id",
+        "personIds",
+        "role",
+        "sortOrder",
+        "sourceIds",
+        "workIds"
+      ]
+    },
+    {
+      "table": "Contributions",
+      "id": "CON-F021-C-P077",
+      "fields": [
+        "certainty",
+        "evidenceContext",
+        "id",
+        "personIds",
+        "role",
+        "sortOrder",
+        "sourceIds",
+        "workIds"
+      ]
+    },
+    {
+      "table": "Contributions",
       "id": "CON-F022-C-P009",
       "fields": [
         "certainty",
@@ -3306,6 +3440,148 @@
     {
       "table": "Contributions",
       "id": "CON-F022-MD-P077",
+      "fields": [
+        "certainty",
+        "evidenceContext",
+        "id",
+        "personIds",
+        "role",
+        "sortOrder",
+        "sourceIds",
+        "workIds"
+      ]
+    },
+    {
+      "table": "Contributions",
+      "id": "CON-F023-C-P077",
+      "fields": [
+        "certainty",
+        "evidenceContext",
+        "id",
+        "personIds",
+        "role",
+        "sortOrder",
+        "sourceIds",
+        "workIds"
+      ]
+    },
+    {
+      "table": "Contributions",
+      "id": "CON-F025-C-P077",
+      "fields": [
+        "certainty",
+        "evidenceContext",
+        "id",
+        "personIds",
+        "role",
+        "sortOrder",
+        "sourceIds",
+        "workIds"
+      ]
+    },
+    {
+      "table": "Contributions",
+      "id": "CON-F026-C-P077",
+      "fields": [
+        "certainty",
+        "evidenceContext",
+        "id",
+        "personIds",
+        "role",
+        "sortOrder",
+        "sourceIds",
+        "workIds"
+      ]
+    },
+    {
+      "table": "Contributions",
+      "id": "CON-F027-C-P077",
+      "fields": [
+        "certainty",
+        "evidenceContext",
+        "id",
+        "personIds",
+        "role",
+        "sortOrder",
+        "sourceIds",
+        "workIds"
+      ]
+    },
+    {
+      "table": "Contributions",
+      "id": "CON-F028-C-P077",
+      "fields": [
+        "certainty",
+        "evidenceContext",
+        "id",
+        "personIds",
+        "role",
+        "sortOrder",
+        "sourceIds",
+        "workIds"
+      ]
+    },
+    {
+      "table": "Contributions",
+      "id": "CON-F029-C-P077",
+      "fields": [
+        "certainty",
+        "evidenceContext",
+        "id",
+        "personIds",
+        "role",
+        "sortOrder",
+        "sourceIds",
+        "workIds"
+      ]
+    },
+    {
+      "table": "Contributions",
+      "id": "CON-F030-C-P077",
+      "fields": [
+        "certainty",
+        "evidenceContext",
+        "id",
+        "nameAsPrinted",
+        "nameVariantIds",
+        "personIds",
+        "role",
+        "sortOrder",
+        "sourceIds",
+        "workIds"
+      ]
+    },
+    {
+      "table": "Contributions",
+      "id": "CON-F031-C-P077",
+      "fields": [
+        "certainty",
+        "evidenceContext",
+        "id",
+        "personIds",
+        "role",
+        "sortOrder",
+        "sourceIds",
+        "workIds"
+      ]
+    },
+    {
+      "table": "Contributions",
+      "id": "CON-F033-C-P077",
+      "fields": [
+        "certainty",
+        "evidenceContext",
+        "id",
+        "personIds",
+        "role",
+        "sortOrder",
+        "sourceIds",
+        "workIds"
+      ]
+    },
+    {
+      "table": "Contributions",
+      "id": "CON-F052-C-P077",
       "fields": [
         "certainty",
         "evidenceContext",
@@ -4530,6 +4806,20 @@
     },
     {
       "table": "Sources",
+      "id": "SRC0118",
+      "fields": [
+        "contributionIds"
+      ]
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0123",
+      "fields": [
+        "contributionIds"
+      ]
+    },
+    {
+      "table": "Sources",
       "id": "SRC0124",
       "fields": [
         "contributionIds"
@@ -4552,6 +4842,34 @@
     },
     {
       "table": "Sources",
+      "id": "SRC0127",
+      "fields": [
+        "contributionIds"
+      ]
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0128",
+      "fields": [
+        "contributionIds"
+      ]
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0129",
+      "fields": [
+        "contributionIds"
+      ]
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0130",
+      "fields": [
+        "contributionIds"
+      ]
+    },
+    {
+      "table": "Sources",
       "id": "SRC0131",
       "fields": [
         "contributionIds"
@@ -4559,7 +4877,88 @@
     },
     {
       "table": "Sources",
+      "id": "SRC0132",
+      "fields": [
+        "contributionIds"
+      ]
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0133",
+      "fields": [
+        "contributionIds"
+      ]
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0135",
+      "fields": [
+        "contributionIds"
+      ]
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0136",
+      "fields": [
+        "contributionIds",
+        "personIds"
+      ]
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0137",
+      "fields": [
+        "contributionIds",
+        "personIds"
+      ]
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0138",
+      "fields": [
+        "contributionIds",
+        "personIds"
+      ]
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0140",
+      "fields": [
+        "contributionIds",
+        "personIds"
+      ]
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0151",
+      "fields": [
+        "contributionIds"
+      ]
+    },
+    {
+      "table": "Sources",
       "id": "SRC0152",
+      "fields": [
+        "contributionIds"
+      ]
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0153",
+      "fields": [
+        "contributionIds"
+      ]
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0162",
+      "fields": [
+        "contributionIds"
+      ]
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0163",
       "fields": [
         "contributionIds"
       ]
@@ -4787,6 +5186,13 @@
     },
     {
       "table": "Sources",
+      "id": "SRC0219",
+      "fields": [
+        "contributionIds"
+      ]
+    },
+    {
+      "table": "Sources",
       "id": "SRC0221",
       "fields": [
         "organizationIds",
@@ -4860,6 +5266,14 @@
         "personIds",
         "songIds",
         "workIds"
+      ]
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0478",
+      "fields": [
+        "contributionIds",
+        "personIds"
       ]
     },
     {
@@ -4951,6 +5365,27 @@
     },
     {
       "table": "Works",
+      "id": "W-F005",
+      "fields": [
+        "contributionIds"
+      ]
+    },
+    {
+      "table": "Works",
+      "id": "W-F007",
+      "fields": [
+        "contributionIds"
+      ]
+    },
+    {
+      "table": "Works",
+      "id": "W-F008",
+      "fields": [
+        "contributionIds"
+      ]
+    },
+    {
+      "table": "Works",
       "id": "W-F009",
       "fields": [
         "contributionIds"
@@ -4973,6 +5408,13 @@
     },
     {
       "table": "Works",
+      "id": "W-F012",
+      "fields": [
+        "contributionIds"
+      ]
+    },
+    {
+      "table": "Works",
       "id": "W-F013",
       "fields": [
         "contributionIds",
@@ -4988,9 +5430,125 @@
     },
     {
       "table": "Works",
+      "id": "W-F016",
+      "fields": [
+        "contributionIds"
+      ]
+    },
+    {
+      "table": "Works",
+      "id": "W-F017",
+      "fields": [
+        "contributionIds"
+      ]
+    },
+    {
+      "table": "Works",
+      "id": "W-F019",
+      "fields": [
+        "contributionIds"
+      ]
+    },
+    {
+      "table": "Works",
+      "id": "W-F020",
+      "fields": [
+        "contributionIds"
+      ]
+    },
+    {
+      "table": "Works",
+      "id": "W-F021",
+      "fields": [
+        "contributionIds",
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Works",
       "id": "W-F022",
       "fields": [
         "contributionIds"
+      ]
+    },
+    {
+      "table": "Works",
+      "id": "W-F023",
+      "fields": [
+        "contributionIds",
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Works",
+      "id": "W-F025",
+      "fields": [
+        "contributionIds",
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Works",
+      "id": "W-F026",
+      "fields": [
+        "contributionIds",
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Works",
+      "id": "W-F027",
+      "fields": [
+        "contributionIds",
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Works",
+      "id": "W-F028",
+      "fields": [
+        "contributionIds",
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Works",
+      "id": "W-F029",
+      "fields": [
+        "contributionIds",
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Works",
+      "id": "W-F030",
+      "fields": [
+        "contributionIds",
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Works",
+      "id": "W-F031",
+      "fields": [
+        "contributionIds",
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Works",
+      "id": "W-F033",
+      "fields": [
+        "contributionIds",
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Works",
+      "id": "W-F052",
+      "fields": [
+        "contributionIds",
+        "sourceIds"
       ]
     },
     {

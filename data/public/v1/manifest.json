@@ -18,10 +18,10 @@
     },
     "overrides": {
       "file": "public_export_overrides.json",
-      "sha256": "43aeb36181a0f8578efd33ff0765bdfb6fd5a5a3c25f1447efb6bf669ef1fee9",
-      "appliedCount": 341,
-      "additionCount": 45,
-      "linkAdditionCount": 123,
+      "sha256": "e3b016f2d2cc9ee69382a6405bab23b59580ba90c1689f7f7d5ea5f3ae4c48a8",
+      "appliedCount": 342,
+      "additionCount": 64,
+      "linkAdditionCount": 161,
       "linkRemovalCount": 92
     }
   },
@@ -58,19 +58,19 @@
     "Work Relations": 190,
     "Timeline Events": 52,
     "Places": 44,
-    "Contributions": 992,
+    "Contributions": 1011,
     "Person Name Variants": 35
   },
   "files": [
     {
       "file": "build-report.json",
-      "bytes": 100626,
-      "sha256": "14b8ac3f4f47afde5da53b970ed269100f1ee1b61af718314dbf975a68de302c"
+      "bytes": 110398,
+      "sha256": "ca928ebeb02f128bea492c2028f4dbb57c893eb37b245013f8b09339f9ed28a4"
     },
     {
       "file": "contributions.json",
-      "bytes": 357012,
-      "sha256": "1466173907f22ba3d31bf17909cc056aad6c4a624a34d947cbd1556cbba85a3e"
+      "bytes": 363485,
+      "sha256": "a7214bcb5da787bfe57859fe2d6c808548ca9be9787b93ad9b55945f1eaa8d05"
     },
     {
       "file": "films.json",
@@ -94,8 +94,8 @@
     },
     {
       "file": "people.json",
-      "bytes": 91868,
-      "sha256": "8be8b550ed1025b1433c5553ecae546a661b07abe338e717538a27805a76e9f0"
+      "bytes": 92818,
+      "sha256": "8ec23d8d675839694539358b1578528b071263f3d29f068753cde361df540497"
     },
     {
       "file": "person-name-variants.json",
@@ -114,8 +114,8 @@
     },
     {
       "file": "sources.json",
-      "bytes": 643833,
-      "sha256": "a0029bfcbd57f3edd460ba6918512d6d69c54381c58d5851434edd02197a4542"
+      "bytes": 645639,
+      "sha256": "d36bd28e25613c725211e267d286cde016f4d21fc69313ea826acc33627b3e29"
     },
     {
       "file": "timeline-events.json",
@@ -134,8 +134,8 @@
     },
     {
       "file": "works.json",
-      "bytes": 248057,
-      "sha256": "7a79702bf0f31f0b293da35c2be9b5336e62a74e6cb966337ac5a96b2a44bbb7"
+      "bytes": 249083,
+      "sha256": "fdf6836b4433ea2d834078558d9684d606e1f9eb10c6efaee16721b93c1b9d45"
     }
   ]
 }

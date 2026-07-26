@@ -2265,6 +2265,13 @@
           "sortOrder": 42
         }
       },
+      "CON-F019-MD-P009": {
+        "reason": "Remove the defensive legacy scope note from the public credit; the MUSIC DIRECTOR role badge already distinguishes Kaper's documented function from Jurmann's composer credit.",
+        "fields": {},
+        "removeFields": [
+          "scopeNote"
+        ]
+      },
       "CON-S074-PUB-ORG030": {
         "reason": "Correct the publisher transcription to Dacapo-Verlag; the legacy contribution ID is retained as an opaque identifier and reassigned to ORG113 below.",
         "fields": {
@@ -2818,6 +2825,401 @@
           ],
           "sourceIds": [
             "SRC0126",
+            "SRC0373"
+          ]
+        }
+      },
+      "CON-F005-C-P077": {
+        "reason": "Add Walter Jurmann's missing confirmed co-composer credit for Son altesse l'amour. Filmportal lists Walter Jurmann and Bronislau Kaper together under “Musik,” independently supported by the Buxbaum/Sieghardt filmography.",
+        "fields": {
+          "id": "CON-F005-C-P077",
+          "role": "composer",
+          "evidenceContext": "film_credits",
+          "sortOrder": 41,
+          "certainty": "confirmed",
+          "workIds": [
+            "W-F005"
+          ],
+          "personIds": [
+            "P077"
+          ],
+          "sourceIds": [
+            "SRC0151",
+            "SRC0373"
+          ]
+        }
+      },
+      "CON-F007-C-P077": {
+        "reason": "Add Walter Jurmann's missing confirmed music credit for Die große Attraktion. Filmportal lists Jurmann with Bronislau Kaper and Nicholas Brodszky under “Musik.”",
+        "fields": {
+          "id": "CON-F007-C-P077",
+          "role": "composer",
+          "evidenceContext": "film_credits",
+          "sortOrder": 41,
+          "certainty": "confirmed",
+          "workIds": [
+            "W-F007"
+          ],
+          "personIds": [
+            "P077"
+          ],
+          "sourceIds": [
+            "SRC0123",
+            "SRC0373"
+          ]
+        }
+      },
+      "CON-F008-C-P077": {
+        "reason": "Add Walter Jurmann's missing confirmed co-composer credit for Ehe mit beschränkter Haftung. Filmportal and the Buxbaum/Sieghardt filmography identify Jurmann and Kaper as the film's composers.",
+        "fields": {
+          "id": "CON-F008-C-P077",
+          "role": "composer",
+          "evidenceContext": "film_credits",
+          "sortOrder": 41,
+          "certainty": "confirmed",
+          "workIds": [
+            "W-F008"
+          ],
+          "personIds": [
+            "P077"
+          ],
+          "sourceIds": [
+            "SRC0478",
+            "SRC0373"
+          ]
+        }
+      },
+      "CON-F012-C-P077": {
+        "reason": "Add Walter Jurmann's missing confirmed co-composer credit for Ein toller Einfall. Filmportal lists Jurmann and Kaper under “Musik,” supported by the Buxbaum/Sieghardt filmography.",
+        "fields": {
+          "id": "CON-F012-C-P077",
+          "role": "composer",
+          "evidenceContext": "film_credits",
+          "sortOrder": 41,
+          "certainty": "confirmed",
+          "workIds": [
+            "W-F012"
+          ],
+          "personIds": [
+            "P077"
+          ],
+          "sourceIds": [
+            "SRC0118",
+            "SRC0373"
+          ]
+        }
+      },
+      "CON-F016-C-P077": {
+        "reason": "Add Walter Jurmann's missing confirmed co-composer credit for Voyage de noces. Filmportal lists Jurmann and Kaper together under “Musik.”",
+        "fields": {
+          "id": "CON-F016-C-P077",
+          "role": "composer",
+          "evidenceContext": "film_credits",
+          "sortOrder": 41,
+          "certainty": "confirmed",
+          "workIds": [
+            "W-F016"
+          ],
+          "personIds": [
+            "P077"
+          ],
+          "sourceIds": [
+            "SRC0127",
+            "SRC0373"
+          ]
+        }
+      },
+      "CON-F017-C-P077": {
+        "reason": "Add Walter Jurmann's missing confirmed co-composer credit for Madame wünscht keine Kinder. Filmportal lists Jurmann and Kaper together under “Musik.”",
+        "fields": {
+          "id": "CON-F017-C-P077",
+          "role": "composer",
+          "evidenceContext": "film_credits",
+          "sortOrder": 41,
+          "certainty": "confirmed",
+          "workIds": [
+            "W-F017"
+          ],
+          "personIds": [
+            "P077"
+          ],
+          "sourceIds": [
+            "SRC0128",
+            "SRC0373"
+          ]
+        }
+      },
+      "CON-F019-C-P077": {
+        "reason": "Add Walter Jurmann's missing confirmed co-composer credit for L'Homme qui ne sait pas dire non while retaining Kaper's separately modelled music-direction credit.",
+        "fields": {
+          "id": "CON-F019-C-P077",
+          "role": "composer",
+          "evidenceContext": "film_credits",
+          "sortOrder": 41,
+          "certainty": "confirmed",
+          "workIds": [
+            "W-F019"
+          ],
+          "personIds": [
+            "P077"
+          ],
+          "sourceIds": [
+            "SRC0130",
+            "SRC0373"
+          ]
+        }
+      },
+      "CON-F020-C-P077": {
+        "reason": "Add Walter Jurmann's missing confirmed co-composer credit for Madame ne veut pas d'enfants. Filmportal lists Jurmann and Kaper together under “Musik.”",
+        "fields": {
+          "id": "CON-F020-C-P077",
+          "role": "composer",
+          "evidenceContext": "film_credits",
+          "sortOrder": 41,
+          "certainty": "confirmed",
+          "workIds": [
+            "W-F020"
+          ],
+          "personIds": [
+            "P077"
+          ],
+          "sourceIds": [
+            "SRC0129",
+            "SRC0373"
+          ]
+        }
+      },
+      "CON-F021-C-P077": {
+        "reason": "Add Walter Jurmann's missing confirmed music credit for Heut' kommt's drauf an. Filmportal lists Jurmann and Kaper under “Musik,” and the official Jurmann catalogue documents their jointly composed film songs.",
+        "fields": {
+          "id": "CON-F021-C-P077",
+          "role": "composer",
+          "evidenceContext": "film_credits_and_song_catalogue",
+          "sortOrder": 41,
+          "certainty": "confirmed",
+          "workIds": [
+            "W-F021"
+          ],
+          "personIds": [
+            "P077"
+          ],
+          "sourceIds": [
+            "SRC0153",
+            "SRC0306",
+            "SRC0373"
+          ]
+        }
+      },
+      "CON-F023-C-P077": {
+        "reason": "Add Walter Jurmann's missing confirmed music credit for Ein Lied für Dich. Filmportal lists Jurmann and Kaper under “Musik,” and the official Jurmann catalogue documents their film songs.",
+        "fields": {
+          "id": "CON-F023-C-P077",
+          "role": "composer",
+          "evidenceContext": "film_credits_and_song_catalogue",
+          "sortOrder": 41,
+          "certainty": "confirmed",
+          "workIds": [
+            "W-F023"
+          ],
+          "personIds": [
+            "P077"
+          ],
+          "sourceIds": [
+            "SRC0132",
+            "SRC0306",
+            "SRC0373"
+          ]
+        }
+      },
+      "CON-F025-C-P077": {
+        "reason": "Add Walter Jurmann's missing confirmed co-composer credit for Tout pour l'amour. Filmportal and the official Jurmann catalogue document the Kaper–Jurmann music.",
+        "fields": {
+          "id": "CON-F025-C-P077",
+          "role": "composer",
+          "evidenceContext": "film_credits_and_song_catalogue",
+          "sortOrder": 41,
+          "certainty": "confirmed",
+          "workIds": [
+            "W-F025"
+          ],
+          "personIds": [
+            "P077"
+          ],
+          "sourceIds": [
+            "SRC0133",
+            "SRC0306",
+            "SRC0373"
+          ]
+        }
+      },
+      "CON-F026-C-P077": {
+        "reason": "Add Walter Jurmann's missing confirmed co-composer credit for Abenteuer am Lido. Filmportal and the official Jurmann catalogue document the Kaper–Jurmann music.",
+        "fields": {
+          "id": "CON-F026-C-P077",
+          "role": "composer",
+          "evidenceContext": "film_credits_and_song_catalogue",
+          "sortOrder": 41,
+          "certainty": "confirmed",
+          "workIds": [
+            "W-F026"
+          ],
+          "personIds": [
+            "P077"
+          ],
+          "sourceIds": [
+            "SRC0135",
+            "SRC0306",
+            "SRC0373"
+          ]
+        }
+      },
+      "CON-F027-C-P077": {
+        "reason": "Add Walter Jurmann's missing confirmed composer contribution for Le chant du destin. The official Jurmann catalogue and BnF records document multiple film songs jointly composed by Kaper and Jurmann under Jurmann's pseudonym Pierre Candel.",
+        "fields": {
+          "id": "CON-F027-C-P077",
+          "role": "composer",
+          "evidenceContext": "film_songs",
+          "sortOrder": 41,
+          "certainty": "confirmed",
+          "workIds": [
+            "W-F027"
+          ],
+          "personIds": [
+            "P077"
+          ],
+          "sourceIds": [
+            "SRC0136",
+            "SRC0219",
+            "SRC0306",
+            "SRC0373"
+          ]
+        }
+      },
+      "CON-F028-C-P077": {
+        "reason": "Add Walter Jurmann's missing confirmed co-composer credit for Une femme au volant. UniFrance lists Walter Jurmann and Bronislau Kaper together as music composers.",
+        "fields": {
+          "id": "CON-F028-C-P077",
+          "role": "composer",
+          "evidenceContext": "film_credits",
+          "sortOrder": 41,
+          "certainty": "confirmed",
+          "workIds": [
+            "W-F028"
+          ],
+          "personIds": [
+            "P077"
+          ],
+          "sourceIds": [
+            "SRC0162",
+            "SRC0306",
+            "SRC0373"
+          ]
+        }
+      },
+      "CON-F029-C-P077": {
+        "reason": "Add Walter Jurmann's missing confirmed co-composer credit for On a volé un homme. Filmportal lists Jurmann and Kaper together under “Musik,” supported by the official Jurmann catalogue.",
+        "fields": {
+          "id": "CON-F029-C-P077",
+          "role": "composer",
+          "evidenceContext": "film_credits_and_song_catalogue",
+          "sortOrder": 41,
+          "certainty": "confirmed",
+          "workIds": [
+            "W-F029"
+          ],
+          "personIds": [
+            "P077"
+          ],
+          "sourceIds": [
+            "SRC0137",
+            "SRC0306",
+            "SRC0373"
+          ]
+        }
+      },
+      "CON-F030-C-P077": {
+        "reason": "Resolve the printed film-music credit Pierre Candel to Walter Jurmann for Le greluchon délicat. UniFrance lists Pierre Candel among the music composers, and the existing name-variant record PNV0014 documents the identity resolution.",
+        "fields": {
+          "id": "CON-F030-C-P077",
+          "role": "composer",
+          "nameAsPrinted": "Pierre Candel",
+          "evidenceContext": "film_credits",
+          "sortOrder": 41,
+          "certainty": "confirmed",
+          "workIds": [
+            "W-F030"
+          ],
+          "personIds": [
+            "P077"
+          ],
+          "sourceIds": [
+            "SRC0163",
+            "SRC0306",
+            "SRC0373"
+          ],
+          "nameVariantIds": [
+            "PNV0014"
+          ]
+        }
+      },
+      "CON-F031-C-P077": {
+        "reason": "Add Walter Jurmann's missing confirmed co-composer credit for Les nuits moscovites. Filmportal and the official Jurmann catalogue document the Kaper–Jurmann music.",
+        "fields": {
+          "id": "CON-F031-C-P077",
+          "role": "composer",
+          "evidenceContext": "film_credits_and_song_catalogue",
+          "sortOrder": 41,
+          "certainty": "confirmed",
+          "workIds": [
+            "W-F031"
+          ],
+          "personIds": [
+            "P077"
+          ],
+          "sourceIds": [
+            "SRC0138",
+            "SRC0306",
+            "SRC0373"
+          ]
+        }
+      },
+      "CON-F033-C-P077": {
+        "reason": "Add Walter Jurmann's missing confirmed co-composer credit for Escapade. AFI credits Kaper and Jurmann with the film score, and the official Jurmann catalogue independently documents their background music.",
+        "fields": {
+          "id": "CON-F033-C-P077",
+          "role": "composer",
+          "evidenceContext": "film_credits_and_background_music",
+          "sortOrder": 41,
+          "certainty": "confirmed",
+          "workIds": [
+            "W-F033"
+          ],
+          "personIds": [
+            "P077"
+          ],
+          "sourceIds": [
+            "SRC0140",
+            "SRC0306",
+            "SRC0373"
+          ]
+        }
+      },
+      "CON-F052-C-P077": {
+        "reason": "Add Walter Jurmann's missing confirmed co-composer credit for Little Boy Blue. The Buxbaum/Sieghardt filmography and official Jurmann catalogue document music by Kaper and Jurmann for the MGM short.",
+        "fields": {
+          "id": "CON-F052-C-P077",
+          "role": "composer",
+          "evidenceContext": "film_credits_and_background_music",
+          "sortOrder": 41,
+          "certainty": "confirmed",
+          "workIds": [
+            "W-F052"
+          ],
+          "personIds": [
+            "P077"
+          ],
+          "sourceIds": [
+            "SRC0306",
             "SRC0373"
           ]
         }
@@ -4045,6 +4447,191 @@
           ]
         }
       },
+      "W-F005": {
+        "reason": "Attach Walter Jurmann's confirmed co-composer contribution to Son altesse l'amour.",
+        "fields": {
+          "contributionIds": [
+            "CON-F005-C-P077"
+          ]
+        }
+      },
+      "W-F007": {
+        "reason": "Attach Walter Jurmann's confirmed music contribution to Die große Attraktion.",
+        "fields": {
+          "contributionIds": [
+            "CON-F007-C-P077"
+          ]
+        }
+      },
+      "W-F008": {
+        "reason": "Attach Walter Jurmann's confirmed co-composer contribution to Ehe mit beschränkter Haftung.",
+        "fields": {
+          "contributionIds": [
+            "CON-F008-C-P077"
+          ]
+        }
+      },
+      "W-F012": {
+        "reason": "Attach Walter Jurmann's confirmed co-composer contribution to Ein toller Einfall.",
+        "fields": {
+          "contributionIds": [
+            "CON-F012-C-P077"
+          ]
+        }
+      },
+      "W-F016": {
+        "reason": "Attach Walter Jurmann's confirmed co-composer contribution to Voyage de noces.",
+        "fields": {
+          "contributionIds": [
+            "CON-F016-C-P077"
+          ]
+        }
+      },
+      "W-F017": {
+        "reason": "Attach Walter Jurmann's confirmed co-composer contribution to Madame wünscht keine Kinder.",
+        "fields": {
+          "contributionIds": [
+            "CON-F017-C-P077"
+          ]
+        }
+      },
+      "W-F019": {
+        "reason": "Attach Walter Jurmann's confirmed co-composer contribution to L'Homme qui ne sait pas dire non while retaining Kaper's separate music-direction role.",
+        "fields": {
+          "contributionIds": [
+            "CON-F019-C-P077"
+          ]
+        }
+      },
+      "W-F020": {
+        "reason": "Attach Walter Jurmann's confirmed co-composer contribution to Madame ne veut pas d'enfants.",
+        "fields": {
+          "contributionIds": [
+            "CON-F020-C-P077"
+          ]
+        }
+      },
+      "W-F021": {
+        "reason": "Attach Walter Jurmann's confirmed music contribution and the official Jurmann catalogue to Heut' kommt's drauf an.",
+        "fields": {
+          "sourceIds": [
+            "SRC0306"
+          ],
+          "contributionIds": [
+            "CON-F021-C-P077"
+          ]
+        }
+      },
+      "W-F023": {
+        "reason": "Attach Walter Jurmann's confirmed music contribution and the official Jurmann catalogue to Ein Lied für Dich.",
+        "fields": {
+          "sourceIds": [
+            "SRC0306"
+          ],
+          "contributionIds": [
+            "CON-F023-C-P077"
+          ]
+        }
+      },
+      "W-F025": {
+        "reason": "Attach Walter Jurmann's confirmed co-composer contribution and the official Jurmann catalogue to Tout pour l'amour.",
+        "fields": {
+          "sourceIds": [
+            "SRC0306"
+          ],
+          "contributionIds": [
+            "CON-F025-C-P077"
+          ]
+        }
+      },
+      "W-F026": {
+        "reason": "Attach Walter Jurmann's confirmed co-composer contribution and the official Jurmann catalogue to Abenteuer am Lido.",
+        "fields": {
+          "sourceIds": [
+            "SRC0306"
+          ],
+          "contributionIds": [
+            "CON-F026-C-P077"
+          ]
+        }
+      },
+      "W-F027": {
+        "reason": "Attach Walter Jurmann's confirmed film-song contribution and the official Jurmann catalogue to Le chant du destin.",
+        "fields": {
+          "sourceIds": [
+            "SRC0306"
+          ],
+          "contributionIds": [
+            "CON-F027-C-P077"
+          ]
+        }
+      },
+      "W-F028": {
+        "reason": "Attach Walter Jurmann's confirmed co-composer contribution and the official Jurmann catalogue to Une femme au volant.",
+        "fields": {
+          "sourceIds": [
+            "SRC0306"
+          ],
+          "contributionIds": [
+            "CON-F028-C-P077"
+          ]
+        }
+      },
+      "W-F029": {
+        "reason": "Attach Walter Jurmann's confirmed co-composer contribution and the official Jurmann catalogue to On a volé un homme.",
+        "fields": {
+          "sourceIds": [
+            "SRC0306"
+          ],
+          "contributionIds": [
+            "CON-F029-C-P077"
+          ]
+        }
+      },
+      "W-F030": {
+        "reason": "Attach Walter Jurmann's confirmed composer contribution under the printed pseudonym Pierre Candel and the official Jurmann catalogue to Le greluchon délicat.",
+        "fields": {
+          "sourceIds": [
+            "SRC0306"
+          ],
+          "contributionIds": [
+            "CON-F030-C-P077"
+          ]
+        }
+      },
+      "W-F031": {
+        "reason": "Attach Walter Jurmann's confirmed co-composer contribution and the official Jurmann catalogue to Les nuits moscovites.",
+        "fields": {
+          "sourceIds": [
+            "SRC0306"
+          ],
+          "contributionIds": [
+            "CON-F031-C-P077"
+          ]
+        }
+      },
+      "W-F033": {
+        "reason": "Attach Walter Jurmann's confirmed co-composer contribution and the official Jurmann catalogue to Escapade.",
+        "fields": {
+          "sourceIds": [
+            "SRC0306"
+          ],
+          "contributionIds": [
+            "CON-F033-C-P077"
+          ]
+        }
+      },
+      "W-F052": {
+        "reason": "Attach Walter Jurmann's confirmed co-composer contribution and the official Jurmann catalogue to Little Boy Blue.",
+        "fields": {
+          "sourceIds": [
+            "SRC0306"
+          ],
+          "contributionIds": [
+            "CON-F052-C-P077"
+          ]
+        }
+      },
       "W-S023": {
         "reason": "Use the exact ANNO registration SRC0226 instead of its superseded duplicate SRC0200.",
         "fields": {
@@ -4389,6 +4976,10 @@
         "fields": {
           "sourceIds": [
             "SRC0306",
+            "SRC0136",
+            "SRC0137",
+            "SRC0138",
+            "SRC0140",
             "SRC0188",
             "SRC0189",
             "SRC0190",
@@ -4404,17 +4995,37 @@
             "SRC0221",
             "SRC0222",
             "SRC0223",
-            "SRC0334"
+            "SRC0334",
+            "SRC0478"
           ],
           "contributionIds": [
             "CON-F004-C-P077",
+            "CON-F005-C-P077",
+            "CON-F007-C-P077",
+            "CON-F008-C-P077",
             "CON-F009-C-P077",
             "CON-F010-C-P077",
             "CON-F011-C-P077",
+            "CON-F012-C-P077",
             "CON-F013-C-P077",
             "CON-F014-C-P077",
+            "CON-F016-C-P077",
+            "CON-F017-C-P077",
+            "CON-F019-C-P077",
+            "CON-F020-C-P077",
+            "CON-F021-C-P077",
             "CON-F022-C-P077",
-            "CON-F022-MD-P077"
+            "CON-F022-MD-P077",
+            "CON-F023-C-P077",
+            "CON-F025-C-P077",
+            "CON-F026-C-P077",
+            "CON-F027-C-P077",
+            "CON-F028-C-P077",
+            "CON-F029-C-P077",
+            "CON-F030-C-P077",
+            "CON-F031-C-P077",
+            "CON-F033-C-P077",
+            "CON-F052-C-P077"
           ]
         }
       },
@@ -4896,11 +5507,33 @@
           ],
           "workIds": [
             "W-F010",
-            "W-F013"
+            "W-F013",
+            "W-F021",
+            "W-F023",
+            "W-F025",
+            "W-F026",
+            "W-F027",
+            "W-F028",
+            "W-F029",
+            "W-F030",
+            "W-F031",
+            "W-F033",
+            "W-F052"
           ],
           "filmIds": [
             "F010",
-            "F013"
+            "F013",
+            "F021",
+            "F023",
+            "F025",
+            "F026",
+            "F027",
+            "F028",
+            "F029",
+            "F030",
+            "F031",
+            "F033",
+            "F052"
           ],
           "contributionIds": [
             "CON-F004-C-P077",
@@ -4908,7 +5541,18 @@
             "CON-F010-C-P077",
             "CON-F011-C-P077",
             "CON-F013-C-P009",
-            "CON-F013-C-P077"
+            "CON-F013-C-P077",
+            "CON-F021-C-P077",
+            "CON-F023-C-P077",
+            "CON-F025-C-P077",
+            "CON-F026-C-P077",
+            "CON-F027-C-P077",
+            "CON-F028-C-P077",
+            "CON-F029-C-P077",
+            "CON-F030-C-P077",
+            "CON-F031-C-P077",
+            "CON-F033-C-P077",
+            "CON-F052-C-P077"
           ]
         }
       },
@@ -4927,6 +5571,173 @@
             "CON-F022-C-P009",
             "CON-F022-C-P077",
             "CON-F022-MD-P077"
+          ]
+        }
+      },
+      "SRC0151": {
+        "reason": "Synchronize Filmportal's Walter Jurmann music credit for Son altesse l'amour with the new confirmed contribution.",
+        "fields": {
+          "contributionIds": [
+            "CON-F005-C-P077"
+          ]
+        }
+      },
+      "SRC0123": {
+        "reason": "Synchronize Filmportal's Walter Jurmann music credit for Die große Attraktion with the new confirmed contribution.",
+        "fields": {
+          "contributionIds": [
+            "CON-F007-C-P077"
+          ]
+        }
+      },
+      "SRC0478": {
+        "reason": "Synchronize Filmportal's Walter Jurmann music credit for Ehe mit beschränkter Haftung with the person and contribution records.",
+        "fields": {
+          "personIds": [
+            "P077"
+          ],
+          "contributionIds": [
+            "CON-F008-C-P077"
+          ]
+        }
+      },
+      "SRC0118": {
+        "reason": "Synchronize Filmportal's Walter Jurmann music credit for Ein toller Einfall with the new confirmed contribution.",
+        "fields": {
+          "contributionIds": [
+            "CON-F012-C-P077"
+          ]
+        }
+      },
+      "SRC0127": {
+        "reason": "Synchronize Filmportal's Walter Jurmann music credit for Voyage de noces with the new confirmed contribution.",
+        "fields": {
+          "contributionIds": [
+            "CON-F016-C-P077"
+          ]
+        }
+      },
+      "SRC0128": {
+        "reason": "Synchronize Filmportal's Walter Jurmann music credit for Madame wünscht keine Kinder with the new confirmed contribution.",
+        "fields": {
+          "contributionIds": [
+            "CON-F017-C-P077"
+          ]
+        }
+      },
+      "SRC0130": {
+        "reason": "Synchronize the Walter Jurmann music credit for L'Homme qui ne sait pas dire non with the new confirmed contribution.",
+        "fields": {
+          "contributionIds": [
+            "CON-F019-C-P077"
+          ]
+        }
+      },
+      "SRC0129": {
+        "reason": "Synchronize Filmportal's Walter Jurmann music credit for Madame ne veut pas d'enfants with the new confirmed contribution.",
+        "fields": {
+          "contributionIds": [
+            "CON-F020-C-P077"
+          ]
+        }
+      },
+      "SRC0153": {
+        "reason": "Synchronize Filmportal's Walter Jurmann music credit for Heut' kommt's drauf an with the new confirmed contribution.",
+        "fields": {
+          "contributionIds": [
+            "CON-F021-C-P077"
+          ]
+        }
+      },
+      "SRC0132": {
+        "reason": "Synchronize Filmportal's Walter Jurmann music credit for Ein Lied für Dich with the new confirmed contribution.",
+        "fields": {
+          "contributionIds": [
+            "CON-F023-C-P077"
+          ]
+        }
+      },
+      "SRC0133": {
+        "reason": "Synchronize Filmportal's Walter Jurmann music credit for Tout pour l'amour with the new confirmed contribution.",
+        "fields": {
+          "contributionIds": [
+            "CON-F025-C-P077"
+          ]
+        }
+      },
+      "SRC0135": {
+        "reason": "Synchronize Filmportal's Walter Jurmann music credit for Abenteuer am Lido with the new confirmed contribution.",
+        "fields": {
+          "contributionIds": [
+            "CON-F026-C-P077"
+          ]
+        }
+      },
+      "SRC0136": {
+        "reason": "Connect the Le chant du destin film record to Walter Jurmann and the new contribution documented by the linked BnF and Jurmann-catalogue evidence.",
+        "fields": {
+          "personIds": [
+            "P077"
+          ],
+          "contributionIds": [
+            "CON-F027-C-P077"
+          ]
+        }
+      },
+      "SRC0219": {
+        "reason": "Synchronize the BnF Le chant du destin song group with Walter Jurmann's new film-level composer contribution under the printed pseudonym Pierre Candel.",
+        "fields": {
+          "contributionIds": [
+            "CON-F027-C-P077"
+          ]
+        }
+      },
+      "SRC0162": {
+        "reason": "Synchronize UniFrance's Walter Jurmann composer credit for Une femme au volant with the new confirmed contribution.",
+        "fields": {
+          "contributionIds": [
+            "CON-F028-C-P077"
+          ]
+        }
+      },
+      "SRC0137": {
+        "reason": "Synchronize Filmportal's Walter Jurmann music credit for On a volé un homme with the person and contribution records.",
+        "fields": {
+          "personIds": [
+            "P077"
+          ],
+          "contributionIds": [
+            "CON-F029-C-P077"
+          ]
+        }
+      },
+      "SRC0163": {
+        "reason": "Synchronize UniFrance's Pierre Candel music credit for Le greluchon délicat with the resolved Walter Jurmann contribution.",
+        "fields": {
+          "contributionIds": [
+            "CON-F030-C-P077"
+          ]
+        }
+      },
+      "SRC0138": {
+        "reason": "Synchronize Filmportal's Walter Jurmann music credit for Les nuits moscovites with the person and contribution records.",
+        "fields": {
+          "personIds": [
+            "P077"
+          ],
+          "contributionIds": [
+            "CON-F031-C-P077"
+          ]
+        }
+      },
+      "SRC0140": {
+        "reason": "Synchronize AFI's Walter Jurmann music-score credit for Escapade with the person and contribution records.",
+        "fields": {
+          "personIds": [
+            "P077"
+          ],
+          "contributionIds": [
+            "CON-F033-C-P077"
           ]
         }
       },
@@ -4951,15 +5762,34 @@
             "CON-S082-C-P009",
             "CON-S082-C-P077",
             "CON-S082-L-P020",
+            "CON-F005-C-P077",
+            "CON-F007-C-P077",
+            "CON-F008-C-P077",
             "CON-F009-C-P009",
             "CON-F009-C-P077",
             "CON-F010-C-P077",
             "CON-F011-C-P077",
+            "CON-F012-C-P077",
             "CON-F013-C-P077",
             "CON-F014-C-P077",
+            "CON-F016-C-P077",
+            "CON-F017-C-P077",
+            "CON-F019-C-P077",
+            "CON-F020-C-P077",
+            "CON-F021-C-P077",
             "CON-F022-C-P009",
             "CON-F022-C-P077",
-            "CON-F022-MD-P077"
+            "CON-F022-MD-P077",
+            "CON-F023-C-P077",
+            "CON-F025-C-P077",
+            "CON-F026-C-P077",
+            "CON-F027-C-P077",
+            "CON-F028-C-P077",
+            "CON-F029-C-P077",
+            "CON-F030-C-P077",
+            "CON-F031-C-P077",
+            "CON-F033-C-P077",
+            "CON-F052-C-P077"
           ],
           "nameVariantIds": [
             "PNV0007"
