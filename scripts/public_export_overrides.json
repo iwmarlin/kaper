@@ -186,6 +186,13 @@
         "fields": {
           "publicNote": "The catalogue’s AU field identifies Larry Shay as the original author."
         }
+      },
+      "W-S097": {
+        "reason": "Correct the canonical French title by restoring the initial accented capital and removing the non-canonical comma.",
+        "fields": {
+          "title": "À Paris tiguidiguidi",
+          "sortTitle": "Paris tiguidiguidi"
+        }
       }
     },
     "Songs": {
@@ -253,6 +260,12 @@
         "fields": {
           "year": 1933,
           "period": "european"
+        }
+      },
+      "S097": {
+        "reason": "Correct the canonical French title by restoring the initial accented capital and removing the non-canonical comma.",
+        "fields": {
+          "title": "À Paris tiguidiguidi"
         }
       }
     },

@@ -1223,6 +1223,14 @@
       "removedFields": []
     },
     {
+      "table": "Songs",
+      "id": "S097",
+      "fields": [
+        "title"
+      ],
+      "removedFields": []
+    },
+    {
       "table": "Sources",
       "id": "SRC0009",
       "fields": [
@@ -3162,6 +3170,15 @@
       "fields": [
         "period",
         "year"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Works",
+      "id": "W-S097",
+      "fields": [
+        "sortTitle",
+        "title"
       ],
       "removedFields": []
     }
