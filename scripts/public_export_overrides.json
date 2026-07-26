@@ -10,9 +10,9 @@
         }
       },
       "F013": {
-        "reason": "Replace workflow-oriented wording with a public scholarly attribution note without changing the underlying attribution.",
+        "reason": "Reconcile the complementary music attributions documented by Filmportal and the official Walter Jurmann catalogue without collapsing a general film credit, background music and song authorship into one unsupported claim.",
         "fields": {
-          "attributionNote": "Filmportal credits Bronislau Kaper and Friedrich Jung under “Musik.” Kaper’s film-level music credit is therefore treated as confirmed, while the Friedrich Jung co-credit and any distinction between background cues remain part of the attribution context."
+          "attributionNote": "Filmportal credits Bronislau Kaper and Friedrich Jung under “Musik.” The official Walter Jurmann catalogue separately attributes the film’s background music and the song “Solange wir gute Freunde sind” to Kaper and Walter Jurmann. The catalogue retains both source-specific attributions rather than treating them as mutually exclusive."
         }
       }
     },
@@ -2277,6 +2277,12 @@
           "nameAsPrinted": "Kaper, Dr. Bronoslaw"
         }
       },
+      "CON-F013-C-P009": {
+        "reason": "Replace the generic film-credit note with a source-specific explanation of the complementary Filmportal and Walter Jurmann catalogue attributions.",
+        "fields": {
+          "scopeNote": "Filmportal credits Bronislau Kaper and Friedrich Jung under “Musik.” The official Walter Jurmann catalogue separately identifies background music and the song “Solange wir gute Freunde sind” as collaborations between Kaper and Walter Jurmann."
+        }
+      },
       "CON-F014-SW-P047": {
         "reason": "Represent Carl Meinhard's contemporary credit accurately as “Dialogleitung” (dialogue direction), rather than broadening it to screenwriting, and remove the internal modelling note from the public record.",
         "fields": {
@@ -2537,7 +2543,72 @@
         }
       }
     },
+    "People": {
+      "P127": {
+        "reason": "Add the verified Austrian composer and conductor Friedrich Jung, whom Filmportal credits under “Musik” for Die Zwei vom Südexpreß. Authority identity is established by GND 142499021 and the corresponding VIAF and BnF records.",
+        "fields": {
+          "id": "P127",
+          "displayName": "Friedrich Jung",
+          "sortName": "Jung, Friedrich",
+          "authorizedName": "Jung, Friedrich (1897–1975)",
+          "slug": "friedrich-jung",
+          "primaryRole": "composer",
+          "roles": [
+            "composer",
+            "conductor"
+          ],
+          "authorityUrl": "GND: https://d-nb.info/gnd/142499021\nVIAF: https://viaf.org/viaf/126272745\nBnF: https://data.bnf.fr/ark:/12148/cb17801932v\nFilmportal: https://www.filmportal.de/person/friedrich-jung_6a89189d67fe4c81acc6eb546769559d",
+          "sourceIds": [
+            "SRC0125"
+          ],
+          "contributionIds": [
+            "CON-F013-C-P127"
+          ]
+        }
+      }
+    },
     "Contributions": {
+      "CON-F013-C-P077": {
+        "reason": "Represent Walter Jurmann's separately documented contribution to Die Zwei vom Südexpreß. The official Walter Jurmann catalogue attributes the background music and “Solange wir gute Freunde sind” to Jurmann in collaboration with Bronislaw Kaper; this complements rather than replaces Filmportal's Kaper–Jung music credit.",
+        "fields": {
+          "id": "CON-F013-C-P077",
+          "role": "composer",
+          "evidenceContext": "background_music_and_song",
+          "scopeNote": "Background music and the song “Solange wir gute Freunde sind,” composed with Bronisław Kaper according to the official Walter Jurmann catalogue. Filmportal separately credits Bronislau Kaper and Friedrich Jung under “Musik.”",
+          "sortOrder": 41,
+          "certainty": "confirmed",
+          "workIds": [
+            "W-F013"
+          ],
+          "personIds": [
+            "P077"
+          ],
+          "sourceIds": [
+            "SRC0306",
+            "SRC0373"
+          ]
+        }
+      },
+      "CON-F013-C-P127": {
+        "reason": "Add Friedrich Jung's documented music credit for Die Zwei vom Südexpreß. Filmportal lists Friedrich Jung and Bronislau Kaper together under “Musik”; the record is retained alongside the separately documented Kaper–Jurmann background-music and song attribution.",
+        "fields": {
+          "id": "CON-F013-C-P127",
+          "role": "composer",
+          "evidenceContext": "film_credits",
+          "scopeNote": "Filmportal credits Friedrich Jung and Bronislau Kaper under “Musik.” The official Walter Jurmann catalogue separately documents Kaper and Jurmann as collaborators on the film’s background music and a song.",
+          "sortOrder": 42,
+          "certainty": "confirmed",
+          "workIds": [
+            "W-F013"
+          ],
+          "personIds": [
+            "P127"
+          ],
+          "sourceIds": [
+            "SRC0125"
+          ]
+        }
+      },
       "CON-F014-C-P077": {
         "reason": "Add Walter Jurmann's missing co-composer credit for Hochzeitsreise zu Dritt. Filmportal lists Walter Jurmann and Bronislau Kaper under Music, and the Buxbaum/Sieghardt filmography independently associates both composers with the film.",
         "fields": {
@@ -3609,6 +3680,14 @@
       }
     },
     "Contributions": {
+      "CON-F013-C-P009": {
+        "reason": "Add the official Walter Jurmann catalogue as source-specific evidence for Kaper's collaboration with Jurmann on the film's background music and a song.",
+        "fields": {
+          "sourceIds": [
+            "SRC0306"
+          ]
+        }
+      },
       "CON-S074-PUB-ORG030": {
         "reason": "Reassign the existing publisher contribution from the unrelated Edition Coda to the Viennese Dacapo-Verlag; retain the legacy contribution ID as an opaque identifier.",
         "fields": {
@@ -3707,6 +3786,18 @@
       }
     },
     "Works": {
+      "W-F013": {
+        "reason": "Attach the verified Friedrich Jung and Walter Jurmann music contributions and the official Jurmann catalogue source to Die Zwei vom Südexpreß.",
+        "fields": {
+          "sourceIds": [
+            "SRC0306"
+          ],
+          "contributionIds": [
+            "CON-F013-C-P077",
+            "CON-F013-C-P127"
+          ]
+        }
+      },
       "W-F014": {
         "reason": "Attach Walter Jurmann's documented co-composer contribution to Hochzeitsreise zu Dritt.",
         "fields": {
@@ -3736,6 +3827,16 @@
         "fields": {
           "sourceIds": [
             "SRC0373"
+          ]
+        }
+      }
+    },
+    "Films": {
+      "F013": {
+        "reason": "Add the official Walter Jurmann catalogue as the source documenting Kaper and Jurmann's background-music and song contribution to Die Zwei vom Südexpreß.",
+        "fields": {
+          "sourceIds": [
+            "SRC0306"
           ]
         }
       }
@@ -4041,9 +4142,10 @@
         }
       },
       "P077": {
-        "reason": "Connect Walter Jurmann to the completed 1932–1933 Hofmeister sources, the existing Academy Collection photograph SRC0334, and his documented co-composer contribution to Hochzeitsreise zu Dritt.",
+        "reason": "Connect Walter Jurmann to the completed 1932–1933 Hofmeister sources, the official Jurmann catalogue, the existing Academy Collection photograph, and his documented film contributions.",
         "fields": {
           "sourceIds": [
+            "SRC0306",
             "SRC0188",
             "SRC0189",
             "SRC0190",
@@ -4062,6 +4164,7 @@
             "SRC0334"
           ],
           "contributionIds": [
+            "CON-F013-C-P077",
             "CON-F014-C-P077"
           ]
         }
@@ -4499,6 +4602,36 @@
           ]
         }
       },
+      "SRC0125": {
+        "reason": "Synchronize Filmportal's explicit Friedrich Jung and Bronislau Kaper music credits with Friedrich Jung's verified person and contribution records.",
+        "fields": {
+          "personIds": [
+            "P127"
+          ],
+          "contributionIds": [
+            "CON-F013-C-P127"
+          ]
+        }
+      },
+      "SRC0306": {
+        "reason": "Link the official Walter Jurmann catalogue to Die Zwei vom Südexpreß and to the Kaper–Jurmann contribution it documents for background music and the song “Solange wir gute Freunde sind.”",
+        "fields": {
+          "personIds": [
+            "P009",
+            "P077"
+          ],
+          "workIds": [
+            "W-F013"
+          ],
+          "filmIds": [
+            "F013"
+          ],
+          "contributionIds": [
+            "CON-F013-C-P009",
+            "CON-F013-C-P077"
+          ]
+        }
+      },
       "SRC0126": {
         "reason": "Synchronize Filmportal's explicit Walter Jurmann and Bronislau Kaper music credits with the new Jurmann contribution record for Hochzeitsreise zu Dritt.",
         "fields": {
@@ -4528,6 +4661,7 @@
             "CON-S082-C-P009",
             "CON-S082-C-P077",
             "CON-S082-L-P020",
+            "CON-F013-C-P077",
             "CON-F014-C-P077"
           ],
           "nameVariantIds": [
@@ -4638,6 +4772,14 @@
       }
     },
     "Sources": {
+      "SRC0125": {
+        "reason": "Remove Walter Jurmann from the inverse person links of the Filmportal record because that specific source credits Bronislau Kaper and Friedrich Jung under “Musik.” Jurmann remains documented through SRC0306 and SRC0373.",
+        "fields": {
+          "personIds": [
+            "P077"
+          ]
+        }
+      },
       "SRC0106": {
         "reason": "Keep the item-level Hofmeister entry with the individual song and its song–film relation; remove its redundant direct film and film-credit links because the aggregate Schlagerheft source SRC0108 documents the film-level publication.",
         "fields": {
@@ -5065,6 +5207,14 @@
       }
     },
     "People": {
+      "P077": {
+        "reason": "Remove SRC0125 from Jurmann's source list because that Filmportal record names Kaper and Friedrich Jung; retain Jurmann's Die Zwei vom Südexpreß contribution through SRC0306 and SRC0373.",
+        "fields": {
+          "sourceIds": [
+            "SRC0125"
+          ]
+        }
+      },
       "P020": {
         "reason": "Remove Fritz Rotter from W-S083; the contemporary Hofmeister registration attributes the words to E. Marischka.",
         "fields": {

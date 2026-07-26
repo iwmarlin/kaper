@@ -3,7 +3,7 @@
   "errors": [],
   "warnings": [],
   "counts": {
-    "People": 109,
+    "People": 110,
     "Organizations": 110,
     "Sources": 498,
     "Media": 203,
@@ -15,7 +15,7 @@
     "Work Relations": 190,
     "Timeline Events": 52,
     "Places": 44,
-    "Contributions": 982,
+    "Contributions": 984,
     "Person Name Variants": 35
   },
   "galleryStatusCounts": {
@@ -38,6 +38,14 @@
     "sameHostDistinctUrls": 23
   },
   "appliedOverrides": [
+    {
+      "table": "Contributions",
+      "id": "CON-F013-C-P009",
+      "fields": [
+        "scopeNote"
+      ],
+      "removedFields": []
+    },
     {
       "table": "Contributions",
       "id": "CON-F014-SW-P047",
@@ -3118,6 +3126,36 @@
   "appliedAdditions": [
     {
       "table": "Contributions",
+      "id": "CON-F013-C-P077",
+      "fields": [
+        "certainty",
+        "evidenceContext",
+        "id",
+        "personIds",
+        "role",
+        "scopeNote",
+        "sortOrder",
+        "sourceIds",
+        "workIds"
+      ]
+    },
+    {
+      "table": "Contributions",
+      "id": "CON-F013-C-P127",
+      "fields": [
+        "certainty",
+        "evidenceContext",
+        "id",
+        "personIds",
+        "role",
+        "scopeNote",
+        "sortOrder",
+        "sourceIds",
+        "workIds"
+      ]
+    },
+    {
+      "table": "Contributions",
       "id": "CON-F014-C-P077",
       "fields": [
         "certainty",
@@ -3530,6 +3568,22 @@
       ]
     },
     {
+      "table": "People",
+      "id": "P127",
+      "fields": [
+        "authorityUrl",
+        "authorizedName",
+        "contributionIds",
+        "displayName",
+        "id",
+        "primaryRole",
+        "roles",
+        "slug",
+        "sortName",
+        "sourceIds"
+      ]
+    },
+    {
       "table": "Places",
       "id": "PL043",
       "fields": [
@@ -3915,6 +3969,13 @@
   "appliedLinkAdditions": [
     {
       "table": "Contributions",
+      "id": "CON-F013-C-P009",
+      "fields": [
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Contributions",
       "id": "CON-S023-C-P009",
       "fields": [
         "sourceIds"
@@ -3995,6 +4056,13 @@
       "id": "CON-S083-PUB-ORG042",
       "fields": [
         "organizationIds"
+      ]
+    },
+    {
+      "table": "Films",
+      "id": "F013",
+      "fields": [
+        "sourceIds"
       ]
     },
     {
@@ -4305,6 +4373,14 @@
     },
     {
       "table": "Sources",
+      "id": "SRC0125",
+      "fields": [
+        "contributionIds",
+        "personIds"
+      ]
+    },
+    {
+      "table": "Sources",
       "id": "SRC0126",
       "fields": [
         "contributionIds"
@@ -4568,6 +4644,16 @@
     },
     {
       "table": "Sources",
+      "id": "SRC0306",
+      "fields": [
+        "contributionIds",
+        "filmIds",
+        "personIds",
+        "workIds"
+      ]
+    },
+    {
+      "table": "Sources",
       "id": "SRC0330",
       "fields": [
         "personIds"
@@ -4675,6 +4761,14 @@
       "table": "Timeline Events",
       "id": "TE0053",
       "fields": [
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Works",
+      "id": "W-F013",
+      "fields": [
+        "contributionIds",
         "sourceIds"
       ]
     },
@@ -5004,6 +5098,13 @@
       ]
     },
     {
+      "table": "People",
+      "id": "P077",
+      "fields": [
+        "sourceIds"
+      ]
+    },
+    {
       "table": "Places",
       "id": "PL003",
       "fields": [
@@ -5121,6 +5222,13 @@
         "songIds",
         "workIds",
         "workRelationIds"
+      ]
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0125",
+      "fields": [
+        "personIds"
       ]
     },
     {

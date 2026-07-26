@@ -3760,7 +3760,7 @@
       "personIds": [
         "P009",
         "P069",
-        "P077"
+        "P127"
       ],
       "organizationIds": [
         "ORG010",
@@ -3777,6 +3777,7 @@
       ],
       "contributionIds": [
         "CON-F013-C-P009",
+        "CON-F013-C-P127",
         "CON-F013-D-P069",
         "CON-F013-PC-ORG010"
       ],
@@ -10110,6 +10111,8 @@
       "sourceStatus": "verified",
       "slug": "src0306-walter-jurmann-official-songs-catalogue",
       "personIds": [
+        "P009",
+        "P077",
         "P079"
       ],
       "organizationIds": [
@@ -10118,6 +10121,7 @@
       "workIds": [
         "W-F004",
         "W-F011",
+        "W-F013",
         "W-F034",
         "W-F035",
         "W-F039",
@@ -10138,6 +10142,7 @@
       "filmIds": [
         "F004",
         "F011",
+        "F013",
         "F034",
         "F035",
         "F039",
@@ -10167,6 +10172,8 @@
         "CON-F011-C-P009",
         "CON-F011-D-P022",
         "CON-F011-PC-ORG028",
+        "CON-F013-C-P009",
+        "CON-F013-C-P077",
         "CON-F034-C-P009",
         "CON-F034-D-P018",
         "CON-F034-PC-ORG001",
@@ -12006,6 +12013,7 @@
         "CON-F012-D-P048",
         "CON-F012-PC-ORG011",
         "CON-F013-C-P009",
+        "CON-F013-C-P077",
         "CON-F013-D-P069",
         "CON-F013-PC-ORG010",
         "CON-F014-C-P009",
