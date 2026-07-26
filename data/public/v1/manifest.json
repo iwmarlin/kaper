@@ -18,11 +18,11 @@
     },
     "overrides": {
       "file": "public_export_overrides.json",
-      "sha256": "9a559f33e44085fc3fbc1415e54d104737bb921cde559a9981b97eccb1aa485b",
+      "sha256": "64302ead011df90f14eece6b013fa28e26df9347688780a3ad1dbfcdc3273a53",
       "appliedCount": 298,
       "additionCount": 33,
       "linkAdditionCount": 101,
-      "linkRemovalCount": 26
+      "linkRemovalCount": 63
     }
   },
   "exportPolicy": {
@@ -64,13 +64,13 @@
   "files": [
     {
       "file": "build-report.json",
-      "bytes": 79570,
-      "sha256": "95876b137892840d2d6d3ac11455f624c774fa31f70d1e87af048084bc20c26c"
+      "bytes": 84257,
+      "sha256": "25c143d0bc991ac21c0c324255a4c65711b1bc96d449223b844bb074843b422a"
     },
     {
       "file": "contributions.json",
-      "bytes": 353841,
-      "sha256": "b60ff439157fdc10415a8f9de0c3cd29a4bb6add33c9210b8a0a8d02666065ce"
+      "bytes": 353499,
+      "sha256": "15186aea1c74653fd70a9849f03c4153e04bb1a3fdff59c93846d756df43e1d4"
     },
     {
       "file": "films.json",
@@ -109,13 +109,13 @@
     },
     {
       "file": "songs.json",
-      "bytes": 131796,
-      "sha256": "4293908e2ab7cd4d12f77f7984bc3c02e8c51b3667c80a9dc2c3b362a97e7095"
+      "bytes": 131625,
+      "sha256": "0337c485f5d62459322c771f5c124174828e7282920b2b899954e9a3f8b2a1a0"
     },
     {
       "file": "sources.json",
-      "bytes": 645290,
-      "sha256": "43cd4f77c4889a85f600e18ae63d884284aac362b5666eff36e500d7d3e0d9af"
+      "bytes": 644848,
+      "sha256": "63a377de6e9fed874d8e8eaf5f78e09e54d134c551ea9a918edffd126ad03b9d"
     },
     {
       "file": "timeline-events.json",
@@ -134,8 +134,8 @@
     },
     {
       "file": "works.json",
-      "bytes": 247878,
-      "sha256": "3c4f36bad16bc0a6de13984d7b247c458db3fb6f022ed03bd5cfa8657a2c9d98"
+      "bytes": 247707,
+      "sha256": "1e230c642a546d689466a6504b8a2d89fbbc6511cdacb32b7785d8216243b51b"
     }
   ]
 }

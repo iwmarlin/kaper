@@ -929,28 +929,50 @@
         }
       },
       "SRC0299": {
-        "reason": "Keep the citation bibliographic, preserve the title form printed by the source and remove the internal note about database normalization; also normalize the sourceType controlled vocabulary.",
+        "reason": "Treat this as an entry-level citation within the Walter Jurmann Songs catalogue, preserve the title form printed by the source and standardize the responsible organization and platform metadata.",
         "fields": {
           "fullCitation": "Verein der Freunde und Förderer des Werks von Walter Jurmann. “Les charmes chantent, mon violin soupire.” Songs catalogue entry, 1933, from L'homme qui ne sait pas dire non; music credited to Walter Jurmann and Bronislaw Kaper; lyricist not identified.",
+          "creator": "Verein der Freunde und Förderer des Werks von Walter Jurmann",
+          "repository": "Verein der Freunde und Förderer des Werks von Walter Jurmann",
+          "publication": "Walter Jurmann official website",
           "date": "1933",
           "sourceType": "web_page"
         }
       },
       "SRC0302": {
-        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "reason": "Treat this as an entry-level citation within the Walter Jurmann Songs catalogue and standardize its date, responsible organization and platform metadata.",
         "fields": {
+          "shortCitation": "Walter Jurmann official Songs catalogue, “Amanda” (1934)",
+          "fullCitation": "Verein der Freunde und Förderer des Werks von Walter Jurmann. “Amanda.” Songs catalogue entry, 1934, from Le greluchon délicat; music credited to Walter Jurmann and Bronislaw Kaper; Walter Jurmann identified under the pseudonym Pierre Candel; lyrics credited to Louis Poterat.",
+          "creator": "Verein der Freunde und Förderer des Werks von Walter Jurmann",
+          "repository": "Verein der Freunde und Förderer des Werks von Walter Jurmann",
+          "publication": "Walter Jurmann official website",
+          "date": "1934",
           "sourceType": "web_page"
         }
       },
       "SRC0306": {
-        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "reason": "Define SRC0306 consistently as the catalogue-level citation for the complete Walter Jurmann Songs page rather than a misleading 1937 Man of the People entry.",
         "fields": {
+          "shortCitation": "Verein der Freunde und Förderer des Werks von Walter Jurmann, “Songs”",
+          "fullCitation": "Verein der Freunde und Förderer des Werks von Walter Jurmann. “Songs.” Official Walter Jurmann works catalogue. Individual entries provide titles, dates, collaborators, lyricists, intended film use, non-use and later reuse. Accessed 13 July 2026.",
+          "creator": "Verein der Freunde und Förderer des Werks von Walter Jurmann",
+          "repository": "Verein der Freunde und Förderer des Werks von Walter Jurmann",
+          "publication": "Walter Jurmann official website",
+          "date": "n.d.",
+          "slug": "src0306-walter-jurmann-official-songs-catalogue",
           "sourceType": "web_page"
         }
       },
       "SRC0307": {
-        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "reason": "Treat this as the entry-group citation for the Trouble for Two songs and cues and standardize its date, responsible organization and platform metadata.",
         "fields": {
+          "shortCitation": "Walter Jurmann official Songs catalogue, Trouble for Two entries (1936)",
+          "fullCitation": "Verein der Freunde und Förderer des Werks von Walter Jurmann. Trouble for Two songs and cues. Songs catalogue entries, 1936, including “Suicide club,” “The bomb,” “The hideout,” “The duel,” “The next morning,” “First deal,” “Second deal,” “Miss Vandeleur” and “A trader”; music credited to Walter Jurmann and Bronislaw Kaper where listed.",
+          "creator": "Verein der Freunde und Förderer des Werks von Walter Jurmann",
+          "repository": "Verein der Freunde und Förderer des Werks von Walter Jurmann",
+          "publication": "Walter Jurmann official website",
+          "date": "1936",
           "sourceType": "web_page"
         }
       },
@@ -4283,6 +4305,53 @@
           ]
         }
       },
+      "SRC0306": {
+        "reason": "Remove redundant Trouble for Two links from the catalogue-level source because the entry-group citation SRC0307 is the more precise evidence for these nine songs, works and composer contributions.",
+        "fields": {
+          "workIds": [
+            "W-S135",
+            "W-S136",
+            "W-S137",
+            "W-S138",
+            "W-S139",
+            "W-S140",
+            "W-S141",
+            "W-S142",
+            "W-S169"
+          ],
+          "songIds": [
+            "S135",
+            "S136",
+            "S137",
+            "S138",
+            "S139",
+            "S140",
+            "S141",
+            "S142",
+            "S169"
+          ],
+          "contributionIds": [
+            "CON-S135-C-P009",
+            "CON-S135-C-P077",
+            "CON-S136-C-P009",
+            "CON-S136-C-P077",
+            "CON-S137-C-P009",
+            "CON-S137-C-P077",
+            "CON-S138-C-P009",
+            "CON-S138-C-P077",
+            "CON-S139-C-P009",
+            "CON-S139-C-P077",
+            "CON-S140-C-P009",
+            "CON-S140-C-P077",
+            "CON-S141-C-P009",
+            "CON-S141-C-P077",
+            "CON-S142-C-P009",
+            "CON-S142-C-P077",
+            "CON-S169-C-P009",
+            "CON-S169-C-P077"
+          ]
+        }
+      },
       "SRC0190": {
         "reason": "Remove the unsupported Ernst Marischka contribution; the detailed May 1933 entry credits Fritz Rotter alone for Ninon.",
         "fields": {
@@ -4306,6 +4375,152 @@
         "fields": {
           "contributionIds": [
             "CON-S083-L-P020"
+          ]
+        }
+      },
+      "W-S135": {
+        "reason": "Use the precise Trouble for Two entry-group citation SRC0307 instead of also repeating the catalogue-level SRC0306.",
+        "fields": {
+          "sourceIds": [
+            "SRC0306"
+          ]
+        }
+      },
+      "W-S136": {
+        "reason": "Use the precise Trouble for Two entry-group citation SRC0307 instead of also repeating the catalogue-level SRC0306.",
+        "fields": {
+          "sourceIds": [
+            "SRC0306"
+          ]
+        }
+      },
+      "W-S137": {
+        "reason": "Use the precise Trouble for Two entry-group citation SRC0307 instead of also repeating the catalogue-level SRC0306.",
+        "fields": {
+          "sourceIds": [
+            "SRC0306"
+          ]
+        }
+      },
+      "W-S138": {
+        "reason": "Use the precise Trouble for Two entry-group citation SRC0307 instead of also repeating the catalogue-level SRC0306.",
+        "fields": {
+          "sourceIds": [
+            "SRC0306"
+          ]
+        }
+      },
+      "W-S139": {
+        "reason": "Use the precise Trouble for Two entry-group citation SRC0307 instead of also repeating the catalogue-level SRC0306.",
+        "fields": {
+          "sourceIds": [
+            "SRC0306"
+          ]
+        }
+      },
+      "W-S140": {
+        "reason": "Use the precise Trouble for Two entry-group citation SRC0307 instead of also repeating the catalogue-level SRC0306.",
+        "fields": {
+          "sourceIds": [
+            "SRC0306"
+          ]
+        }
+      },
+      "W-S141": {
+        "reason": "Use the precise Trouble for Two entry-group citation SRC0307 instead of also repeating the catalogue-level SRC0306.",
+        "fields": {
+          "sourceIds": [
+            "SRC0306"
+          ]
+        }
+      },
+      "W-S142": {
+        "reason": "Use the precise Trouble for Two entry-group citation SRC0307 instead of also repeating the catalogue-level SRC0306.",
+        "fields": {
+          "sourceIds": [
+            "SRC0306"
+          ]
+        }
+      },
+      "W-S169": {
+        "reason": "Use the precise Trouble for Two entry-group citation SRC0307 instead of also repeating the catalogue-level SRC0306.",
+        "fields": {
+          "sourceIds": [
+            "SRC0306"
+          ]
+        }
+      }
+    },
+    "Songs": {
+      "S135": {
+        "reason": "Use the precise Trouble for Two entry-group citation SRC0307 instead of also repeating the catalogue-level SRC0306.",
+        "fields": {
+          "sourceIds": [
+            "SRC0306"
+          ]
+        }
+      },
+      "S136": {
+        "reason": "Use the precise Trouble for Two entry-group citation SRC0307 instead of also repeating the catalogue-level SRC0306.",
+        "fields": {
+          "sourceIds": [
+            "SRC0306"
+          ]
+        }
+      },
+      "S137": {
+        "reason": "Use the precise Trouble for Two entry-group citation SRC0307 instead of also repeating the catalogue-level SRC0306.",
+        "fields": {
+          "sourceIds": [
+            "SRC0306"
+          ]
+        }
+      },
+      "S138": {
+        "reason": "Use the precise Trouble for Two entry-group citation SRC0307 instead of also repeating the catalogue-level SRC0306.",
+        "fields": {
+          "sourceIds": [
+            "SRC0306"
+          ]
+        }
+      },
+      "S139": {
+        "reason": "Use the precise Trouble for Two entry-group citation SRC0307 instead of also repeating the catalogue-level SRC0306.",
+        "fields": {
+          "sourceIds": [
+            "SRC0306"
+          ]
+        }
+      },
+      "S140": {
+        "reason": "Use the precise Trouble for Two entry-group citation SRC0307 instead of also repeating the catalogue-level SRC0306.",
+        "fields": {
+          "sourceIds": [
+            "SRC0306"
+          ]
+        }
+      },
+      "S141": {
+        "reason": "Use the precise Trouble for Two entry-group citation SRC0307 instead of also repeating the catalogue-level SRC0306.",
+        "fields": {
+          "sourceIds": [
+            "SRC0306"
+          ]
+        }
+      },
+      "S142": {
+        "reason": "Use the precise Trouble for Two entry-group citation SRC0307 instead of also repeating the catalogue-level SRC0306.",
+        "fields": {
+          "sourceIds": [
+            "SRC0306"
+          ]
+        }
+      },
+      "S169": {
+        "reason": "Use the precise Trouble for Two entry-group citation SRC0307 instead of also repeating the catalogue-level SRC0306.",
+        "fields": {
+          "sourceIds": [
+            "SRC0306"
           ]
         }
       }
@@ -4401,6 +4616,150 @@
         "fields": {
           "organizationIds": [
             "ORG042"
+          ]
+        }
+      },
+      "CON-S135-C-P009": {
+        "reason": "Use SRC0307 as the precise Trouble for Two evidence and remove the redundant catalogue-level SRC0306.",
+        "fields": {
+          "sourceIds": [
+            "SRC0306"
+          ]
+        }
+      },
+      "CON-S135-C-P077": {
+        "reason": "Use SRC0307 as the precise Trouble for Two evidence and remove the redundant catalogue-level SRC0306.",
+        "fields": {
+          "sourceIds": [
+            "SRC0306"
+          ]
+        }
+      },
+      "CON-S136-C-P009": {
+        "reason": "Use SRC0307 as the precise Trouble for Two evidence and remove the redundant catalogue-level SRC0306.",
+        "fields": {
+          "sourceIds": [
+            "SRC0306"
+          ]
+        }
+      },
+      "CON-S136-C-P077": {
+        "reason": "Use SRC0307 as the precise Trouble for Two evidence and remove the redundant catalogue-level SRC0306.",
+        "fields": {
+          "sourceIds": [
+            "SRC0306"
+          ]
+        }
+      },
+      "CON-S137-C-P009": {
+        "reason": "Use SRC0307 as the precise Trouble for Two evidence and remove the redundant catalogue-level SRC0306.",
+        "fields": {
+          "sourceIds": [
+            "SRC0306"
+          ]
+        }
+      },
+      "CON-S137-C-P077": {
+        "reason": "Use SRC0307 as the precise Trouble for Two evidence and remove the redundant catalogue-level SRC0306.",
+        "fields": {
+          "sourceIds": [
+            "SRC0306"
+          ]
+        }
+      },
+      "CON-S138-C-P009": {
+        "reason": "Use SRC0307 as the precise Trouble for Two evidence and remove the redundant catalogue-level SRC0306.",
+        "fields": {
+          "sourceIds": [
+            "SRC0306"
+          ]
+        }
+      },
+      "CON-S138-C-P077": {
+        "reason": "Use SRC0307 as the precise Trouble for Two evidence and remove the redundant catalogue-level SRC0306.",
+        "fields": {
+          "sourceIds": [
+            "SRC0306"
+          ]
+        }
+      },
+      "CON-S139-C-P009": {
+        "reason": "Use SRC0307 as the precise Trouble for Two evidence and remove the redundant catalogue-level SRC0306.",
+        "fields": {
+          "sourceIds": [
+            "SRC0306"
+          ]
+        }
+      },
+      "CON-S139-C-P077": {
+        "reason": "Use SRC0307 as the precise Trouble for Two evidence and remove the redundant catalogue-level SRC0306.",
+        "fields": {
+          "sourceIds": [
+            "SRC0306"
+          ]
+        }
+      },
+      "CON-S140-C-P009": {
+        "reason": "Use SRC0307 as the precise Trouble for Two evidence and remove the redundant catalogue-level SRC0306.",
+        "fields": {
+          "sourceIds": [
+            "SRC0306"
+          ]
+        }
+      },
+      "CON-S140-C-P077": {
+        "reason": "Use SRC0307 as the precise Trouble for Two evidence and remove the redundant catalogue-level SRC0306.",
+        "fields": {
+          "sourceIds": [
+            "SRC0306"
+          ]
+        }
+      },
+      "CON-S141-C-P009": {
+        "reason": "Use SRC0307 as the precise Trouble for Two evidence and remove the redundant catalogue-level SRC0306.",
+        "fields": {
+          "sourceIds": [
+            "SRC0306"
+          ]
+        }
+      },
+      "CON-S141-C-P077": {
+        "reason": "Use SRC0307 as the precise Trouble for Two evidence and remove the redundant catalogue-level SRC0306.",
+        "fields": {
+          "sourceIds": [
+            "SRC0306"
+          ]
+        }
+      },
+      "CON-S142-C-P009": {
+        "reason": "Use SRC0307 as the precise Trouble for Two evidence and remove the redundant catalogue-level SRC0306.",
+        "fields": {
+          "sourceIds": [
+            "SRC0306"
+          ]
+        }
+      },
+      "CON-S142-C-P077": {
+        "reason": "Use SRC0307 as the precise Trouble for Two evidence and remove the redundant catalogue-level SRC0306.",
+        "fields": {
+          "sourceIds": [
+            "SRC0306"
+          ]
+        }
+      },
+      "CON-S169-C-P009": {
+        "reason": "Use SRC0307 as the precise Trouble for Two evidence and remove the redundant catalogue-level SRC0306.",
+        "fields": {
+          "sourceIds": [
+            "SRC0306"
+          ]
+        }
+      },
+      "CON-S169-C-P077": {
+        "reason": "Use SRC0307 as the precise Trouble for Two evidence and remove the redundant catalogue-level SRC0306.",
+        "fields": {
+          "sourceIds": [
+            "SRC0306"
           ]
         }
       }

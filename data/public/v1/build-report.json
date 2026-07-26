@@ -1759,8 +1759,11 @@
       "table": "Sources",
       "id": "SRC0299",
       "fields": [
+        "creator",
         "date",
         "fullCitation",
+        "publication",
+        "repository",
         "sourceType"
       ],
       "removedFields": []
@@ -1769,6 +1772,12 @@
       "table": "Sources",
       "id": "SRC0302",
       "fields": [
+        "creator",
+        "date",
+        "fullCitation",
+        "publication",
+        "repository",
+        "shortCitation",
         "sourceType"
       ],
       "removedFields": []
@@ -1777,6 +1786,13 @@
       "table": "Sources",
       "id": "SRC0306",
       "fields": [
+        "creator",
+        "date",
+        "fullCitation",
+        "publication",
+        "repository",
+        "shortCitation",
+        "slug",
         "sourceType"
       ],
       "removedFields": []
@@ -1785,6 +1801,12 @@
       "table": "Sources",
       "id": "SRC0307",
       "fields": [
+        "creator",
+        "date",
+        "fullCitation",
+        "publication",
+        "repository",
+        "shortCitation",
         "sourceType"
       ],
       "removedFields": []
@@ -4286,6 +4308,132 @@
       ]
     },
     {
+      "table": "Contributions",
+      "id": "CON-S135-C-P009",
+      "fields": [
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Contributions",
+      "id": "CON-S135-C-P077",
+      "fields": [
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Contributions",
+      "id": "CON-S136-C-P009",
+      "fields": [
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Contributions",
+      "id": "CON-S136-C-P077",
+      "fields": [
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Contributions",
+      "id": "CON-S137-C-P009",
+      "fields": [
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Contributions",
+      "id": "CON-S137-C-P077",
+      "fields": [
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Contributions",
+      "id": "CON-S138-C-P009",
+      "fields": [
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Contributions",
+      "id": "CON-S138-C-P077",
+      "fields": [
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Contributions",
+      "id": "CON-S139-C-P009",
+      "fields": [
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Contributions",
+      "id": "CON-S139-C-P077",
+      "fields": [
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Contributions",
+      "id": "CON-S140-C-P009",
+      "fields": [
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Contributions",
+      "id": "CON-S140-C-P077",
+      "fields": [
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Contributions",
+      "id": "CON-S141-C-P009",
+      "fields": [
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Contributions",
+      "id": "CON-S141-C-P077",
+      "fields": [
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Contributions",
+      "id": "CON-S142-C-P009",
+      "fields": [
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Contributions",
+      "id": "CON-S142-C-P077",
+      "fields": [
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Contributions",
+      "id": "CON-S169-C-P009",
+      "fields": [
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Contributions",
+      "id": "CON-S169-C-P077",
+      "fields": [
+        "sourceIds"
+      ]
+    },
+    {
       "table": "Media",
       "id": "M031",
       "fields": [
@@ -4343,6 +4491,69 @@
       ]
     },
     {
+      "table": "Songs",
+      "id": "S135",
+      "fields": [
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Songs",
+      "id": "S136",
+      "fields": [
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Songs",
+      "id": "S137",
+      "fields": [
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Songs",
+      "id": "S138",
+      "fields": [
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Songs",
+      "id": "S139",
+      "fields": [
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Songs",
+      "id": "S140",
+      "fields": [
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Songs",
+      "id": "S141",
+      "fields": [
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Songs",
+      "id": "S142",
+      "fields": [
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Songs",
+      "id": "S169",
+      "fields": [
+        "sourceIds"
+      ]
+    },
+    {
       "table": "Sources",
       "id": "SRC0024",
       "fields": [
@@ -4377,6 +4588,15 @@
       "id": "SRC0211",
       "fields": [
         "contributionIds"
+      ]
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0306",
+      "fields": [
+        "contributionIds",
+        "songIds",
+        "workIds"
       ]
     },
     {
@@ -4434,6 +4654,69 @@
       "id": "W-S083",
       "fields": [
         "contributionIds"
+      ]
+    },
+    {
+      "table": "Works",
+      "id": "W-S135",
+      "fields": [
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Works",
+      "id": "W-S136",
+      "fields": [
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Works",
+      "id": "W-S137",
+      "fields": [
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Works",
+      "id": "W-S138",
+      "fields": [
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Works",
+      "id": "W-S139",
+      "fields": [
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Works",
+      "id": "W-S140",
+      "fields": [
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Works",
+      "id": "W-S141",
+      "fields": [
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Works",
+      "id": "W-S142",
+      "fields": [
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Works",
+      "id": "W-S169",
+      "fields": [
+        "sourceIds"
       ]
     }
   ],
