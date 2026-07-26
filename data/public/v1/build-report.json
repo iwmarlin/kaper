@@ -15,7 +15,7 @@
     "Work Relations": 190,
     "Timeline Events": 52,
     "Places": 44,
-    "Contributions": 985,
+    "Contributions": 987,
     "Person Name Variants": 35
   },
   "galleryStatusCounts": {
@@ -38,6 +38,15 @@
     "sameHostDistinctUrls": 23
   },
   "appliedOverrides": [
+    {
+      "table": "Contributions",
+      "id": "CON-F009-MD-P009",
+      "fields": [
+        "scopeNote",
+        "sortOrder"
+      ],
+      "removedFields": []
+    },
     {
       "table": "Contributions",
       "id": "CON-F013-C-P009",
@@ -3126,6 +3135,35 @@
   "appliedAdditions": [
     {
       "table": "Contributions",
+      "id": "CON-F009-C-P009",
+      "fields": [
+        "certainty",
+        "evidenceContext",
+        "id",
+        "personIds",
+        "role",
+        "scopeNote",
+        "sortOrder",
+        "sourceIds",
+        "workIds"
+      ]
+    },
+    {
+      "table": "Contributions",
+      "id": "CON-F009-C-P077",
+      "fields": [
+        "certainty",
+        "evidenceContext",
+        "id",
+        "personIds",
+        "role",
+        "sortOrder",
+        "sourceIds",
+        "workIds"
+      ]
+    },
+    {
+      "table": "Contributions",
       "id": "CON-F010-C-P077",
       "fields": [
         "certainty",
@@ -4205,6 +4243,7 @@
       "table": "People",
       "id": "P009",
       "fields": [
+        "contributionIds",
         "sourceIds"
       ]
     },
@@ -4384,6 +4423,13 @@
       "id": "SRC0110",
       "fields": [
         "personIds"
+      ]
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0124",
+      "fields": [
+        "contributionIds"
       ]
     },
     {
@@ -4777,6 +4823,13 @@
       "id": "TE0053",
       "fields": [
         "sourceIds"
+      ]
+    },
+    {
+      "table": "Works",
+      "id": "W-F009",
+      "fields": [
+        "contributionIds"
       ]
     },
     {

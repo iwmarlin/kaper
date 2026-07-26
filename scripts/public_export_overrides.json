@@ -2235,6 +2235,13 @@
       }
     },
     "Contributions": {
+      "CON-F009-MD-P009": {
+        "reason": "Clarify that Kaper's music-direction credit is a separate role alongside his restored composer credit.",
+        "fields": {
+          "scopeNote": "Music direction, separately documented alongside Kaper's composition credit.",
+          "sortOrder": 42
+        }
+      },
       "CON-S074-PUB-ORG030": {
         "reason": "Correct the publisher transcription to Dacapo-Verlag; the legacy contribution ID is retained as an opaque identifier and reassigned to ORG113 below.",
         "fields": {
@@ -2568,6 +2575,47 @@
       }
     },
     "Contributions": {
+      "CON-F009-C-P009": {
+        "reason": "Add Bronisław Kaper's missing composer credit for Es wird schon wieder besser. Filmportal lists both Kaper and Walter Jurmann under “Musik” and separately credits Kaper with “Musikalische Leitung.”",
+        "fields": {
+          "id": "CON-F009-C-P009",
+          "role": "composer",
+          "evidenceContext": "film_credits",
+          "scopeNote": "Composition credit, distinct from Kaper's separately documented music-direction role.",
+          "sortOrder": 40,
+          "certainty": "confirmed",
+          "workIds": [
+            "W-F009"
+          ],
+          "personIds": [
+            "P009"
+          ],
+          "sourceIds": [
+            "SRC0124",
+            "SRC0373"
+          ]
+        }
+      },
+      "CON-F009-C-P077": {
+        "reason": "Add Walter Jurmann's missing composer credit for Es wird schon wieder besser. Filmportal lists Jurmann and Kaper together under “Musik,” independently supported by the Buxbaum/Sieghardt filmography.",
+        "fields": {
+          "id": "CON-F009-C-P077",
+          "role": "composer",
+          "evidenceContext": "film_credits",
+          "sortOrder": 41,
+          "certainty": "confirmed",
+          "workIds": [
+            "W-F009"
+          ],
+          "personIds": [
+            "P077"
+          ],
+          "sourceIds": [
+            "SRC0124",
+            "SRC0373"
+          ]
+        }
+      },
       "CON-F010-C-P077": {
         "reason": "Add Walter Jurmann's missing co-composer contribution for Skandal in der Parkstraße. The official Walter Jurmann catalogue documents the film songs “Du gefällst mir so” and “Ganz ohne Liebe wär’ das Leben so bescheiden” as collaborations with Bronislaw Kaper, while the Buxbaum/Sieghardt filmography associates both composers with the film.",
         "fields": {
@@ -3807,6 +3855,15 @@
       }
     },
     "Works": {
+      "W-F009": {
+        "reason": "Attach Kaper's composer credit and Jurmann's co-composer credit while retaining Kaper's separate music-direction contribution.",
+        "fields": {
+          "contributionIds": [
+            "CON-F009-C-P009",
+            "CON-F009-C-P077"
+          ]
+        }
+      },
       "W-F010": {
         "reason": "Attach Walter Jurmann's documented co-composer contribution and the official Jurmann catalogue to Skandal in der Parkstraße.",
         "fields": {
@@ -4089,6 +4146,9 @@
             "SRC0222",
             "SRC0223",
             "SRC0226"
+          ],
+          "contributionIds": [
+            "CON-F009-C-P009"
           ]
         }
       },
@@ -4196,6 +4256,7 @@
             "SRC0334"
           ],
           "contributionIds": [
+            "CON-F009-C-P077",
             "CON-F010-C-P077",
             "CON-F013-C-P077",
             "CON-F014-C-P077"
@@ -4635,6 +4696,15 @@
           ]
         }
       },
+      "SRC0124": {
+        "reason": "Synchronize Filmportal's explicit credits for Kaper and Jurmann under “Musik” and Kaper under “Musikalische Leitung.”",
+        "fields": {
+          "contributionIds": [
+            "CON-F009-C-P009",
+            "CON-F009-C-P077"
+          ]
+        }
+      },
       "SRC0125": {
         "reason": "Synchronize Filmportal's explicit Friedrich Jung and Bronislau Kaper music credits with Friedrich Jung's verified person and contribution records.",
         "fields": {
@@ -4698,6 +4768,8 @@
             "CON-S082-C-P009",
             "CON-S082-C-P077",
             "CON-S082-L-P020",
+            "CON-F009-C-P009",
+            "CON-F009-C-P077",
             "CON-F010-C-P077",
             "CON-F013-C-P077",
             "CON-F014-C-P077"

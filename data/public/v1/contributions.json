@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 985,
+  "count": 987,
   "records": [
     {
       "id": "CON-F001-C-P009",
@@ -464,6 +464,41 @@
       ]
     },
     {
+      "id": "CON-F009-C-P009",
+      "role": "composer",
+      "evidenceContext": "film_credits",
+      "scopeNote": "Composition credit, distinct from Kaper's separately documented music-direction role.",
+      "sortOrder": 40,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-F009"
+      ],
+      "personIds": [
+        "P009"
+      ],
+      "sourceIds": [
+        "SRC0124",
+        "SRC0373"
+      ]
+    },
+    {
+      "id": "CON-F009-C-P077",
+      "role": "composer",
+      "evidenceContext": "film_credits",
+      "sortOrder": 41,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-F009"
+      ],
+      "personIds": [
+        "P077"
+      ],
+      "sourceIds": [
+        "SRC0124",
+        "SRC0373"
+      ]
+    },
+    {
       "id": "CON-F009-D-P048",
       "role": "film_director",
       "nameAsPrinted": "Kurt Gerron",
@@ -484,8 +519,8 @@
       "id": "CON-F009-MD-P009",
       "role": "music_director",
       "evidenceContext": "film_credits",
-      "scopeNote": "Music direction credit; do not reinterpret this record as a composition credit.",
-      "sortOrder": 40,
+      "scopeNote": "Music direction, separately documented alongside Kaper's composition credit.",
+      "sortOrder": 42,
       "certainty": "confirmed",
       "workIds": [
         "W-F009"
