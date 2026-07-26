@@ -1200,7 +1200,11 @@ class PublicExporter:
                     citation,
                 )
                 citation = citation.rstrip(" ,;/")
-                if key == "fullCitation" and citation and citation[-1] not in ".?!":
+                if (
+                    key == "fullCitation"
+                    and citation
+                    and not re.search(r"""[.?!][”’"']?$""", citation)
+                ):
                     citation += "."
                 source[key] = citation
 

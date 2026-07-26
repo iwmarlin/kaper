@@ -1165,6 +1165,14 @@
     },
     {
       "table": "Sources",
+      "id": "SRC0016",
+      "fields": [
+        "fullCitation"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
       "id": "SRC0038",
       "fields": [
         "slug"
@@ -1208,6 +1216,22 @@
       "id": "SRC0110",
       "fields": [
         "fullCitation"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0115",
+      "fields": [
+        "fullCitation"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0173",
+      "fields": [
+        "accessDate"
       ],
       "removedFields": []
     },
@@ -1647,6 +1671,62 @@
     },
     {
       "table": "Sources",
+      "id": "SRC0228",
+      "fields": [
+        "fullCitation"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0229",
+      "fields": [
+        "fullCitation"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0230",
+      "fields": [
+        "fullCitation"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0231",
+      "fields": [
+        "fullCitation"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0232",
+      "fields": [
+        "fullCitation"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0245",
+      "fields": [
+        "date"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0254",
+      "fields": [
+        "date"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
       "id": "SRC0288",
       "fields": [
         "creator",
@@ -1679,6 +1759,8 @@
       "table": "Sources",
       "id": "SRC0299",
       "fields": [
+        "date",
+        "fullCitation",
         "sourceType"
       ],
       "removedFields": []
@@ -1725,8 +1807,17 @@
     },
     {
       "table": "Sources",
+      "id": "SRC0335",
+      "fields": [
+        "fullCitation"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
       "id": "SRC0336",
       "fields": [
+        "accessDate",
         "sourceType"
       ],
       "removedFields": []
@@ -1938,6 +2029,7 @@
       "table": "Sources",
       "id": "SRC0400",
       "fields": [
+        "accessDate",
         "sourceType"
       ],
       "removedFields": []
@@ -2150,6 +2242,24 @@
     },
     {
       "table": "Sources",
+      "id": "SRC0475",
+      "fields": [
+        "date",
+        "fullCitation"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0476",
+      "fields": [
+        "date",
+        "fullCitation"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
       "id": "SRC0477",
       "fields": [
         "sourceType"
@@ -2192,6 +2302,7 @@
       "table": "Sources",
       "id": "SRC0503",
       "fields": [
+        "accessDate",
         "sourceType"
       ],
       "removedFields": []
@@ -2200,6 +2311,7 @@
       "table": "Sources",
       "id": "SRC0520",
       "fields": [
+        "fullCitation",
         "sourceType"
       ],
       "removedFields": []

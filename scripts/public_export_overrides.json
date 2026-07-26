@@ -405,6 +405,12 @@
           "fullCitation": "PBS / WNET. “UFA Studios Fires Jewish Employees.” Cinema’s Exiles, online video."
         }
       },
+      "SRC0016": {
+        "reason": "Remove the duplicate terminal full stop after the quoted notice while preserving the transcription.",
+        "fields": {
+          "fullCitation": "Kurier Warszawski, R. 108, nr 18 (18 January 1928), evening ed., p. 4. Biblioteka Narodowa / Polona. https://polona.pl/item-view/91b0892b-9073-4e61-a00f-3565adc7bea3?page=3. Notice on B. Kaper: “Trzy utwory fortepianowe B. Kapera zdradzają obiecujący talent młodego autora.”"
+        }
+      },
       "SRC0038": {
         "reason": "Correct the declaration number in the public slug to 74224, matching the archival citation and the document.",
         "fields": {
@@ -427,6 +433,60 @@
           "url": "https://sbc.org.pl/dlibra/publication/305546/edition/288663/nowiny-codzienne-1933-r-23-nr-81",
           "reliability": "high",
           "sourceStatus": "verified"
+        }
+      },
+      "SRC0115": {
+        "reason": "Remove the duplicate terminal full stop after the quoted coupled-side title while preserving the discographic evidence.",
+        "fields": {
+          "fullCitation": "Henry Garat, vocal; orchestra conducted by Bronisław Kaper. “Pourvu qu’on ait vingt ans,” from Une femme au volant. Music by Bronisław Kaper and Walter Jurmann; words by Louis Poterat. Salabert 3384, 78 rpm disc, 7 November 1933. YouTube transfer from the private 78 rpm collection of David Silvestre, channel lysgauty1, video JA57rCoKoyI. Discographic context checked against Gérard Roig, “Discographie d’Henry Garat,” Phonoscopies no. 5 (January 1994): 11, which lists Salabert 3384 for the coupled side “Ninon, quand tu me souris.”"
+        }
+      },
+      "SRC0173": {
+        "reason": "Normalize the access date to the ISO format used throughout the public export.",
+        "fields": {
+          "accessDate": "2026-06-11"
+        }
+      },
+      "SRC0228": {
+        "reason": "Remove the duplicate terminal full stop after the quoted copyright-catalogue transcription.",
+        "fields": {
+          "fullCitation": "U.S. Copyright Office, Catalog of Copyright Entries, New Series. Part 3: Musical Compositions, 1935, vol. 30, nos. 1–12. Washington, DC: U.S. Government Printing Office, 1935, entry no. 14733 for “You’re all I need”: “from Lie like a gentleman, w Gus Kahn, m Bronislaw Kaper and Walter Jurmann; with guit. arr. © June 3, 1935; E pub. 48561; Metro-Goldwyn-Mayer corp., New York.”"
+        }
+      },
+      "SRC0229": {
+        "reason": "Remove the duplicate terminal full stop after the quoted copyright-catalogue transcription.",
+        "fields": {
+          "fullCitation": "U.S. Copyright Office, Catalog of Copyright Entries, New Series. Part 3: Musical Compositions, 1935, vol. 30, nos. 1–12. Washington, DC: U.S. Government Printing Office, 1935, entry no. 11496 for “Love song of Tahiti”: “from Mutiny on the Bounty, w Gus Kahn, m Bronislaw Kaper and Walter Jurmann; with guit. arr. © May 28, 1935; E pub. 48470; Metro-Goldwyn-Mayer corp., New York.”"
+        }
+      },
+      "SRC0230": {
+        "reason": "Remove the duplicate terminal full stop after the quoted copyright-catalogue transcription.",
+        "fields": {
+          "fullCitation": "U.S. Copyright Office, Catalog of Copyright Entries, New Series. Part 3: Musical Compositions, 1935, vol. 30, nos. 1–12. Washington, DC: U.S. Government Printing Office, 1935, entry no. 22435 for “Cosi cosa”: “from A night at the opera, w Ned Washington, m Bronislaw Kaper and Walter Jurmann; with guit. arr. © Oct. 30, 1935; E pub. 51262; Robbins music corp., New York.”"
+        }
+      },
+      "SRC0231": {
+        "reason": "Remove the duplicate terminal full stop after the quoted copyright-catalogue transcription.",
+        "fields": {
+          "fullCitation": "U.S. Copyright Office, Catalog of Copyright Entries, New Series. Part 3: Musical Compositions, 1935, vol. 30, nos. 1–12. Washington, DC: U.S. Government Printing Office, 1935, entry no. 24278 for “There’s something in a big parade”: “from The perfect gentleman, w Ned Washington, m Bronislaw Kaper and Walter Jurmann; with guit. arr. © Oct. 25, 1935; E pub. 51169; Robbins music corp., New York.”"
+        }
+      },
+      "SRC0232": {
+        "reason": "Remove the duplicate terminal full stop after the quoted copyright-catalogue transcription.",
+        "fields": {
+          "fullCitation": "U.S. Copyright Office, Catalog of Copyright Entries, New Series. Part 3: Musical Compositions, 1935, vol. 30, nos. 1–12. Washington, DC: U.S. Government Printing Office, 1935, entry no. 24311 for “Tillie the tight rope walker”: “from The perfect gentleman, w Ned Washington, m Bronislaw Kaper and Walter Jurmann; with guit. arr. © Oct. 25, 1935; E pub. 51170; Robbins music corp., New York.”"
+        }
+      },
+      "SRC0245": {
+        "reason": "Remove the internal scan-check instruction from the public date field while preserving the verified copyright date and registration number.",
+        "fields": {
+          "date": "1936; copyright February 17, 1936; E unp. 118371"
+        }
+      },
+      "SRC0254": {
+        "reason": "Remove the internal scan-check instruction from the public date field while preserving the verified copyright date and registration number.",
+        "fields": {
+          "date": "1936; copyright October 5, 1936; E unp. 138342"
         }
       },
       "SRC0358": {
@@ -869,8 +929,10 @@
         }
       },
       "SRC0299": {
-        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "reason": "Keep the citation bibliographic, preserve the title form printed by the source and remove the internal note about database normalization; also normalize the sourceType controlled vocabulary.",
         "fields": {
+          "fullCitation": "Verein der Freunde und Förderer des Werks von Walter Jurmann. “Les charmes chantent, mon violin soupire.” Songs catalogue entry, 1933, from L'homme qui ne sait pas dire non; music credited to Walter Jurmann and Bronislaw Kaper; lyricist not identified.",
+          "date": "1933",
           "sourceType": "web_page"
         }
       },
@@ -904,9 +966,16 @@
           "sourceType": "web_page"
         }
       },
-      "SRC0336": {
-        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+      "SRC0335": {
+        "reason": "Remove the duplicate terminal full stop after the quoted image title.",
         "fields": {
+          "fullCitation": "PICRYL. “Champ de Mars and the Eiffel Tower from the Trocadero Palace, Paris, France.”"
+        }
+      },
+      "SRC0336": {
+        "reason": "Normalize the sourceType controlled vocabulary and the access date format.",
+        "fields": {
+          "accessDate": "2026-07-08",
           "sourceType": "wikimedia_commons_file"
         }
       },
@@ -1049,8 +1118,9 @@
         }
       },
       "SRC0400": {
-        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "reason": "Normalize the sourceType controlled vocabulary and the access date format.",
         "fields": {
+          "accessDate": "2026-07-08",
           "sourceType": "wikimedia_commons_file"
         }
       },
@@ -1193,6 +1263,20 @@
           "sourceType": "wikimedia_commons_file"
         }
       },
+      "SRC0475": {
+        "reason": "Remove submission-workflow wording from the public citation and separate the undated source from its ISO access date.",
+        "fields": {
+          "fullCitation": "SACEM. Répertoire des œuvres, work-detail entry “REVES D AMOUR.” Accessed 4 July 2026.",
+          "date": "n.d."
+        }
+      },
+      "SRC0476": {
+        "reason": "Remove submission-workflow wording from the public citation and separate the undated source from its ISO access date.",
+        "fields": {
+          "fullCitation": "SACEM. Répertoire des œuvres, work-detail entry “BISTROT DU PORT.” Accessed 4 July 2026.",
+          "date": "n.d."
+        }
+      },
       "SRC0477": {
         "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
         "fields": {
@@ -1224,14 +1308,16 @@
         }
       },
       "SRC0503": {
-        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "reason": "Normalize the sourceType controlled vocabulary and the access date format.",
         "fields": {
+          "accessDate": "2026-07-05",
           "sourceType": "web_page"
         }
       },
       "SRC0520": {
-        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "reason": "Replace submission-workflow wording and the duplicated inline URL with a concise bibliographic citation while preserving the attested credit form; also normalize the sourceType controlled vocabulary.",
         "fields": {
+          "fullCitation": "IMDb. “Ihre Majestät die Liebe” (tt0020994), full cast and crew. Bronislaw Kaper is credited under the source form “Benjamin Kapper” (accessed 9 July 2026).",
           "sourceType": "online_database"
         }
       },
