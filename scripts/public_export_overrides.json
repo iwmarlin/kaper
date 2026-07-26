@@ -2568,6 +2568,27 @@
       }
     },
     "Contributions": {
+      "CON-F010-C-P077": {
+        "reason": "Add Walter Jurmann's missing co-composer contribution for Skandal in der Parkstraße. The official Walter Jurmann catalogue documents the film songs “Du gefällst mir so” and “Ganz ohne Liebe wär’ das Leben so bescheiden” as collaborations with Bronislaw Kaper, while the Buxbaum/Sieghardt filmography associates both composers with the film.",
+        "fields": {
+          "id": "CON-F010-C-P077",
+          "role": "composer",
+          "evidenceContext": "film_songs",
+          "scopeNote": "Co-composer with Bronisław Kaper of the documented film songs “Du gefällst mir so” and “Ganz ohne Liebe wär’ das Leben so bescheiden.”",
+          "sortOrder": 41,
+          "certainty": "confirmed",
+          "workIds": [
+            "W-F010"
+          ],
+          "personIds": [
+            "P077"
+          ],
+          "sourceIds": [
+            "SRC0306",
+            "SRC0373"
+          ]
+        }
+      },
       "CON-F013-C-P077": {
         "reason": "Represent Walter Jurmann's separately documented contribution to Die Zwei vom Südexpreß. The official Walter Jurmann catalogue attributes the background music and “Solange wir gute Freunde sind” to Jurmann in collaboration with Bronislaw Kaper; this complements rather than replaces Filmportal's Kaper–Jung music credit.",
         "fields": {
@@ -3786,6 +3807,17 @@
       }
     },
     "Works": {
+      "W-F010": {
+        "reason": "Attach Walter Jurmann's documented co-composer contribution and the official Jurmann catalogue to Skandal in der Parkstraße.",
+        "fields": {
+          "sourceIds": [
+            "SRC0306"
+          ],
+          "contributionIds": [
+            "CON-F010-C-P077"
+          ]
+        }
+      },
       "W-F013": {
         "reason": "Attach the verified Friedrich Jung and Walter Jurmann music contributions and the official Jurmann catalogue source to Die Zwei vom Südexpreß.",
         "fields": {
@@ -4164,6 +4196,7 @@
             "SRC0334"
           ],
           "contributionIds": [
+            "CON-F010-C-P077",
             "CON-F013-C-P077",
             "CON-F014-C-P077"
           ]
@@ -4614,19 +4647,23 @@
         }
       },
       "SRC0306": {
-        "reason": "Link the official Walter Jurmann catalogue to Die Zwei vom Südexpreß and to the Kaper–Jurmann contribution it documents for background music and the song “Solange wir gute Freunde sind.”",
+        "reason": "Link the official Walter Jurmann catalogue to the Kaper–Jurmann film contributions it documents for Skandal in der Parkstraße and Die Zwei vom Südexpreß.",
         "fields": {
           "personIds": [
             "P009",
             "P077"
           ],
           "workIds": [
+            "W-F010",
             "W-F013"
           ],
           "filmIds": [
+            "F010",
             "F013"
           ],
           "contributionIds": [
+            "CON-F010-C-P009",
+            "CON-F010-C-P077",
             "CON-F013-C-P009",
             "CON-F013-C-P077"
           ]
@@ -4661,6 +4698,7 @@
             "CON-S082-C-P009",
             "CON-S082-C-P077",
             "CON-S082-L-P020",
+            "CON-F010-C-P077",
             "CON-F013-C-P077",
             "CON-F014-C-P077"
           ],

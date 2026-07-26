@@ -15,7 +15,7 @@
     "Work Relations": 190,
     "Timeline Events": 52,
     "Places": 44,
-    "Contributions": 984,
+    "Contributions": 985,
     "Person Name Variants": 35
   },
   "galleryStatusCounts": {
@@ -3126,6 +3126,21 @@
   "appliedAdditions": [
     {
       "table": "Contributions",
+      "id": "CON-F010-C-P077",
+      "fields": [
+        "certainty",
+        "evidenceContext",
+        "id",
+        "personIds",
+        "role",
+        "scopeNote",
+        "sortOrder",
+        "sourceIds",
+        "workIds"
+      ]
+    },
+    {
+      "table": "Contributions",
       "id": "CON-F013-C-P077",
       "fields": [
         "certainty",
@@ -4761,6 +4776,14 @@
       "table": "Timeline Events",
       "id": "TE0053",
       "fields": [
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Works",
+      "id": "W-F010",
+      "fields": [
+        "contributionIds",
         "sourceIds"
       ]
     },

@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 984,
+  "count": 985,
   "records": [
     {
       "id": "CON-F001-C-P009",
@@ -530,6 +530,24 @@
       ],
       "sourceIds": [
         "SRC0119",
+        "SRC0373"
+      ]
+    },
+    {
+      "id": "CON-F010-C-P077",
+      "role": "composer",
+      "evidenceContext": "film_songs",
+      "scopeNote": "Co-composer with Bronisław Kaper of the documented film songs “Du gefällst mir so” and “Ganz ohne Liebe wär’ das Leben so bescheiden.”",
+      "sortOrder": 41,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-F010"
+      ],
+      "personIds": [
+        "P077"
+      ],
+      "sourceIds": [
+        "SRC0306",
         "SRC0373"
       ]
     },
