@@ -396,7 +396,8 @@
       "SRC0009": {
         "reason": "Keep the archival citation and collection scope while removing private workflow provenance about who supplied the scans.",
         "fields": {
-          "fullCitation": "Bronislaw Kaper Papers, Collection 03193. American Heritage Center, University of Wyoming, Laramie. Manuscript holdings for Bronisław Kaper’s early compositions, including item-level material from boxes 1–2."
+          "fullCitation": "Bronislaw Kaper Papers, Collection 03193. American Heritage Center, University of Wyoming, Laramie. Manuscript holdings for Bronisław Kaper’s early compositions, including item-level material from boxes 1–2.",
+          "date": "n.d."
         }
       },
       "SRC0010": {
@@ -501,7 +502,8 @@
         "fields": {
           "fullCitation": "grammophon-platten.de. “Hermann Biek / Ben Berlin.” Biographical and discographical page with a portrait photograph, name variants Biek, Bick, Bik and Byk, and references to recordings by “Hermann Bick & Dr Kaper” at two pianos.",
           "publication": "grammophon-platten.de",
-          "repository": "grammophon-platten.de"
+          "repository": "grammophon-platten.de",
+          "date": "n.d."
         }
       },
       "SRC0408": {
@@ -940,6 +942,60 @@
           "sourceType": "book"
         }
       },
+      "SRC0287": {
+        "reason": "Keep the source date distinct from the access date: no publication or update date is established, while the access date remains in accessDate.",
+        "fields": {
+          "date": "n.d."
+        }
+      },
+      "SRC0292": {
+        "reason": "Keep the source date distinct from work identifiers: the GEMA number and ISWC remain in the citation, while no source publication or update date is established.",
+        "fields": {
+          "date": "n.d."
+        }
+      },
+      "SRC0293": {
+        "reason": "Keep the source date distinct from work identifiers: the GEMA number and ISWC remain in the citation, while no source publication or update date is established.",
+        "fields": {
+          "date": "n.d."
+        }
+      },
+      "SRC0294": {
+        "reason": "Keep the source date distinct from work identifiers: the GEMA number and ISWC remain in the citation, while no source publication or update date is established.",
+        "fields": {
+          "date": "n.d."
+        }
+      },
+      "SRC0295": {
+        "reason": "Keep the source date distinct from work identifiers: the GEMA number, ISWC and duration remain in the citation, while no source publication or update date is established.",
+        "fields": {
+          "date": "n.d."
+        }
+      },
+      "SRC0297": {
+        "reason": "Keep the source date distinct from work identifiers: the work number, ISWC and ISRC remain in the citation, while no source publication or update date is established.",
+        "fields": {
+          "date": "n.d."
+        }
+      },
+      "SRC0298": {
+        "reason": "Normalize the date field to the sheet-music publication year; the Salabert imprint and BnF ARK remain in the citation.",
+        "fields": {
+          "date": "1933"
+        }
+      },
+      "SRC0303": {
+        "reason": "Normalize the date field to the sheet-music publication year; the France-Mélodie imprint, FRBNF identifier and BnF ARK remain in the citation.",
+        "fields": {
+          "date": "1939"
+        }
+      },
+      "SRC0304": {
+        "reason": "Normalize the date field to the sheet-music publication year; the France-Mélodie imprint, FRBNF identifier and BnF ARK remain in the citation.",
+        "fields": {
+          "date": "1939"
+        }
+      },
       "SRC0299": {
         "reason": "Treat this as an entry-level citation within the Walter Jurmann Songs catalogue, preserve the title form printed by the source and standardize the responsible organization and platform metadata.",
         "fields": {
@@ -991,6 +1047,7 @@
       "SRC0330": {
         "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
         "fields": {
+          "date": "n.d.",
           "sourceType": "wikimedia_commons_file"
         }
       },
@@ -1003,7 +1060,8 @@
       "SRC0335": {
         "reason": "Remove the duplicate terminal full stop after the quoted image title.",
         "fields": {
-          "fullCitation": "PICRYL. “Champ de Mars and the Eiffel Tower from the Trocadero Palace, Paris, France.”"
+          "fullCitation": "PICRYL. “Champ de Mars and the Eiffel Tower from the Trocadero Palace, Paris, France.”",
+          "date": "n.d."
         }
       },
       "SRC0336": {
@@ -1068,8 +1126,9 @@
         }
       },
       "SRC0359": {
-        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "reason": "Normalize the source type and use the catalogue's standard undated value rather than the language-specific abbreviation s.d.",
         "fields": {
+          "date": "n.d.",
           "sourceType": "online_database"
         }
       },
@@ -1094,6 +1153,7 @@
       "SRC0366": {
         "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
         "fields": {
+          "date": "n.d.",
           "sourceType": "wikimedia_commons_file"
         }
       },
@@ -1210,36 +1270,42 @@
       "SRC0432": {
         "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
         "fields": {
+          "date": "n.d.",
           "sourceType": "digital_collection_item"
         }
       },
       "SRC0433": {
         "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
         "fields": {
+          "date": "n.d.",
           "sourceType": "digital_collection_item"
         }
       },
       "SRC0434": {
         "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
         "fields": {
+          "date": "n.d.",
           "sourceType": "web_page"
         }
       },
       "SRC0435": {
         "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
         "fields": {
+          "date": "n.d.",
           "sourceType": "archival_digital_record"
         }
       },
       "SRC0436": {
         "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
         "fields": {
+          "date": "n.d.",
           "sourceType": "wikimedia_article_page"
         }
       },
       "SRC0437": {
         "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
         "fields": {
+          "date": "n.d.",
           "sourceType": "wikimedia_commons_file"
         }
       },
@@ -1258,6 +1324,7 @@
       "SRC0441": {
         "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
         "fields": {
+          "date": "n.d.",
           "sourceType": "web_page"
         }
       },
@@ -1312,8 +1379,9 @@
         }
       },
       "SRC0477": {
-        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "reason": "Normalize the source type and replace the prose date value undated with the catalogue's standard n.d.",
         "fields": {
+          "date": "n.d.",
           "sourceType": "digital_collection_item"
         }
       },
@@ -1332,12 +1400,14 @@
       "SRC0492": {
         "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
         "fields": {
+          "date": "n.d.",
           "sourceType": "web_page"
         }
       },
       "SRC0501": {
         "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
         "fields": {
+          "date": "n.d.",
           "sourceType": "web_page"
         }
       },
@@ -1356,20 +1426,29 @@
         }
       },
       "SRC0523": {
-        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "reason": "Normalize the source type and retain the page's last-modified date in date while keeping the separate research access date in accessDate.",
         "fields": {
+          "date": "2026-06-20",
           "sourceType": "web_page"
         }
       },
       "SRC0524": {
-        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "reason": "Normalize the source type and retain the dataset currency date in date while keeping the separate research access date in accessDate.",
         "fields": {
+          "date": "2026-06-21",
           "sourceType": "web_page"
         }
       },
-      "SRC0532": {
-        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+      "SRC0530": {
+        "reason": "Use the film's release year as the source date and remove the unrelated statement that the database entry itself is undated.",
         "fields": {
+          "date": "1939"
+        }
+      },
+      "SRC0532": {
+        "reason": "Normalize the source type and use the film's release year as date; the separate research access date remains in accessDate.",
+        "fields": {
+          "date": "1932",
           "sourceType": "wikimedia_article_page"
         }
       },
@@ -1380,20 +1459,23 @@
         }
       },
       "SRC0534": {
-        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "reason": "Normalize the source type and use the historical sheet-music object's publication year as date; the undated status of the later web record remains implicit in its citation.",
         "fields": {
+          "date": "1937",
           "sourceType": "web_page"
         }
       },
       "SRC0535": {
-        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "reason": "Normalize the source type and use the historical sheet-music object's publication year as date; the undated status of the later digital record remains implicit in its citation.",
         "fields": {
+          "date": "1935",
           "sourceType": "digital_collection_item"
         }
       },
       "SRC0537": {
-        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "reason": "Normalize the source type and retain the historical image date in date; the later upload date remains part of the source citation.",
         "fields": {
+          "date": "1949",
           "sourceType": "wikimedia_commons_file"
         }
       },
@@ -1428,33 +1510,182 @@
         }
       },
       "SRC0543": {
-        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "reason": "Normalize the source type and record the continuously updated authority file as undated rather than placing a maintenance note in the date field.",
         "fields": {
+          "date": "n.d.",
           "sourceType": "online_database"
         }
       },
       "SRC0544": {
-        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "reason": "Normalize the source type and record the continuously updated authority file as undated rather than placing a maintenance note in the date field.",
         "fields": {
+          "date": "n.d.",
           "sourceType": "online_database"
         }
       },
       "SRC0545": {
-        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "reason": "Normalize the source type and retain only the established broad chronology in date; the exact item date remains unknown.",
         "fields": {
+          "date": "after 1945",
           "sourceType": "archival_digital_record"
         }
       },
       "SRC0548": {
-        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "reason": "Normalize the source type and retain the authority record's explicit modification date in ISO format.",
         "fields": {
+          "date": "2026-04-14",
           "sourceType": "online_database"
         }
       },
       "SRC0549": {
-        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "reason": "Normalize the source type and retain the authority record's explicit update date in ISO format.",
         "fields": {
+          "date": "2015-04-01",
           "sourceType": "online_database"
+        }
+      },
+      "SRC0037": {
+        "reason": "Normalize the fully established document date to ISO 8601.",
+        "fields": {
+          "date": "1936-02-04"
+        }
+      },
+      "SRC0457": {
+        "reason": "Replace the language-specific abbreviation s.d. with the catalogue's standard undated value.",
+        "fields": {
+          "date": "n.d."
+        }
+      },
+      "SRC0458": {
+        "reason": "Normalize the fully established photograph date to ISO 8601.",
+        "fields": {
+          "date": "1939-05-03"
+        }
+      },
+      "SRC0460": {
+        "reason": "Normalize the established year and month to ISO 8601 precision.",
+        "fields": {
+          "date": "1939-06"
+        }
+      },
+      "SRC0546": {
+        "reason": "Replace an explanatory unknown-date phrase with the catalogue's standard undated value.",
+        "fields": {
+          "date": "n.d."
+        }
+      },
+      "SRC0551": {
+        "reason": "Normalize the Library of Congress approximate date range while preserving its uncertainty and range.",
+        "fields": {
+          "date": "ca. 1920–1925"
+        }
+      },
+      "SRC0553": {
+        "reason": "Normalize the YouTube publication date to ISO 8601; the publication context remains in the citation.",
+        "fields": {
+          "date": "2026-06-25"
+        }
+      },
+      "SRC0056": {
+        "reason": "Normalize the explanatory unknown-date phrase to the catalogue's standard n.d.",
+        "fields": {
+          "date": "n.d."
+        }
+      },
+      "SRC0314": {
+        "reason": "Normalize the explanatory unknown-date phrase to the catalogue's standard n.d.",
+        "fields": {
+          "date": "n.d."
+        }
+      },
+      "SRC0318": {
+        "reason": "Normalize the explanatory unknown-date phrase to the catalogue's standard n.d.",
+        "fields": {
+          "date": "n.d."
+        }
+      },
+      "SRC0321": {
+        "reason": "Normalize the explanatory unknown-date phrase to the catalogue's standard n.d.",
+        "fields": {
+          "date": "n.d."
+        }
+      },
+      "SRC0331": {
+        "reason": "Normalize the explanatory unknown-date phrase to the catalogue's standard n.d.",
+        "fields": {
+          "date": "n.d."
+        }
+      },
+      "SRC0452": {
+        "reason": "Normalize the explanatory unknown-date phrase to the catalogue's standard n.d.",
+        "fields": {
+          "date": "n.d."
+        }
+      },
+      "SRC0478": {
+        "reason": "Normalize the explanatory unknown-date phrase to the catalogue's standard n.d.",
+        "fields": {
+          "date": "n.d."
+        }
+      },
+      "SRC0479": {
+        "reason": "Normalize the explanatory unknown-date phrase to the catalogue's standard n.d.",
+        "fields": {
+          "date": "n.d."
+        }
+      },
+      "SRC0480": {
+        "reason": "Normalize the explanatory unknown-date phrase to the catalogue's standard n.d.",
+        "fields": {
+          "date": "n.d."
+        }
+      },
+      "SRC0481": {
+        "reason": "Normalize the explanatory unknown-date phrase to the catalogue's standard n.d.",
+        "fields": {
+          "date": "n.d."
+        }
+      },
+      "SRC0482": {
+        "reason": "Normalize the explanatory unknown-date phrase to the catalogue's standard n.d.",
+        "fields": {
+          "date": "n.d."
+        }
+      },
+      "SRC0039": {
+        "reason": "Normalize the fully established manifest date to ISO 8601.",
+        "fields": {
+          "date": "1935-11-01"
+        }
+      },
+      "SRC0154": {
+        "reason": "Expand the abbreviated year range without changing its documented precision.",
+        "fields": {
+          "date": "1930–1931"
+        }
+      },
+      "SRC0227": {
+        "reason": "Expand the abbreviated year range without changing its documented precision.",
+        "fields": {
+          "date": "1929–1932"
+        }
+      },
+      "SRC0334": {
+        "reason": "Normalize the approximate date vocabulary while retaining its uncertainty.",
+        "fields": {
+          "date": "ca. 1935"
+        }
+      },
+      "SRC0459": {
+        "reason": "Normalize the established year and month to ISO 8601 precision.",
+        "fields": {
+          "date": "1927-01"
+        }
+      },
+      "SRC0554": {
+        "reason": "Normalize the established year and month to ISO 8601 precision.",
+        "fields": {
+          "date": "1926-04"
         }
       }
     },
@@ -2308,6 +2539,7 @@
           "title": "Andrzej Włast portrait — Narodowe Archiwum Cyfrowe",
           "repository": "Narodowe Archiwum Cyfrowe",
           "publication": "Szukaj w Archiwach",
+          "date": "n.d.",
           "url": "https://www.szukajwarchiwach.gov.pl/jednostka/-/jednostka/5929697/obiekty/264116",
           "accessDate": "2026-07-16",
           "reliability": "high",
@@ -2335,7 +2567,7 @@
           "creator": "Photographer unidentified",
           "repository": "Great American Songbook Foundation",
           "publication": "Gus Kahn Papers, Mss 001",
-          "date": "undated; collection dates 1909–2007",
+          "date": "n.d.",
           "url": "https://songbook.accesstomemory.org/gus-kahn-collection",
           "accessDate": "2026-07-16",
           "reliability": "high",
@@ -2504,7 +2736,7 @@
           "creator": "Adam Mickiewicz Institute (Culture.pl)",
           "repository": "Culture.pl",
           "publication": "Culture.pl",
-          "date": "2009 / 2021",
+          "date": "2009-09",
           "url": "https://culture.pl/en/artist/henryk-gold",
           "accessDate": "2026-07-22",
           "reliability": "high",
@@ -2607,6 +2839,7 @@
           "creator": "Disney Wiki contributors; photographer unidentified",
           "repository": "Disney Wiki / Fandom",
           "publication": "Disney Wiki",
+          "date": "n.d.",
           "url": "https://disney.fandom.com/wiki/Ned_Washington",
           "accessDate": "2026-07-25",
           "reliability": "medium",
@@ -2631,6 +2864,7 @@
           "creator": "Photographer unidentified",
           "repository": "Local research copy; original repository unidentified",
           "publication": "Original publication unidentified",
+          "date": "n.d.",
           "reliability": "low",
           "sourceStatus": "verified_with_attribution_note",
           "slug": "ernst-marischka-unidentified-portrait-src0568",

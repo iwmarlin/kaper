@@ -1151,6 +1151,7 @@
       "table": "Sources",
       "id": "SRC0009",
       "fields": [
+        "date",
         "fullCitation"
       ],
       "removedFields": []
@@ -1173,9 +1174,33 @@
     },
     {
       "table": "Sources",
+      "id": "SRC0037",
+      "fields": [
+        "date"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
       "id": "SRC0038",
       "fields": [
         "slug"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0039",
+      "fields": [
+        "date"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0056",
+      "fields": [
+        "date"
       ],
       "removedFields": []
     },
@@ -1224,6 +1249,14 @@
       "id": "SRC0115",
       "fields": [
         "fullCitation"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0154",
+      "fields": [
+        "date"
       ],
       "removedFields": []
     },
@@ -1671,6 +1704,14 @@
     },
     {
       "table": "Sources",
+      "id": "SRC0227",
+      "fields": [
+        "date"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
       "id": "SRC0228",
       "fields": [
         "fullCitation"
@@ -1727,6 +1768,14 @@
     },
     {
       "table": "Sources",
+      "id": "SRC0287",
+      "fields": [
+        "date"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
       "id": "SRC0288",
       "fields": [
         "creator",
@@ -1769,6 +1818,54 @@
     },
     {
       "table": "Sources",
+      "id": "SRC0292",
+      "fields": [
+        "date"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0293",
+      "fields": [
+        "date"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0294",
+      "fields": [
+        "date"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0295",
+      "fields": [
+        "date"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0297",
+      "fields": [
+        "date"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0298",
+      "fields": [
+        "date"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
       "id": "SRC0299",
       "fields": [
         "creator",
@@ -1791,6 +1888,22 @@
         "repository",
         "shortCitation",
         "sourceType"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0303",
+      "fields": [
+        "date"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0304",
+      "fields": [
+        "date"
       ],
       "removedFields": []
     },
@@ -1825,9 +1938,42 @@
     },
     {
       "table": "Sources",
+      "id": "SRC0314",
+      "fields": [
+        "date"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0318",
+      "fields": [
+        "date"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0321",
+      "fields": [
+        "date"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
       "id": "SRC0330",
       "fields": [
+        "date",
         "sourceType"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0331",
+      "fields": [
+        "date"
       ],
       "removedFields": []
     },
@@ -1841,8 +1987,17 @@
     },
     {
       "table": "Sources",
+      "id": "SRC0334",
+      "fields": [
+        "date"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
       "id": "SRC0335",
       "fields": [
+        "date",
         "fullCitation"
       ],
       "removedFields": []
@@ -1941,6 +2096,7 @@
       "table": "Sources",
       "id": "SRC0359",
       "fields": [
+        "date",
         "sourceType"
       ],
       "removedFields": []
@@ -1973,6 +2129,7 @@
       "table": "Sources",
       "id": "SRC0365",
       "fields": [
+        "date",
         "fullCitation",
         "publication",
         "repository"
@@ -1983,6 +2140,7 @@
       "table": "Sources",
       "id": "SRC0366",
       "fields": [
+        "date",
         "sourceType"
       ],
       "removedFields": []
@@ -2149,6 +2307,7 @@
       "table": "Sources",
       "id": "SRC0432",
       "fields": [
+        "date",
         "sourceType"
       ],
       "removedFields": []
@@ -2157,6 +2316,7 @@
       "table": "Sources",
       "id": "SRC0433",
       "fields": [
+        "date",
         "sourceType"
       ],
       "removedFields": []
@@ -2165,6 +2325,7 @@
       "table": "Sources",
       "id": "SRC0434",
       "fields": [
+        "date",
         "sourceType"
       ],
       "removedFields": []
@@ -2173,6 +2334,7 @@
       "table": "Sources",
       "id": "SRC0435",
       "fields": [
+        "date",
         "sourceType"
       ],
       "removedFields": []
@@ -2181,6 +2343,7 @@
       "table": "Sources",
       "id": "SRC0436",
       "fields": [
+        "date",
         "sourceType"
       ],
       "removedFields": []
@@ -2189,6 +2352,7 @@
       "table": "Sources",
       "id": "SRC0437",
       "fields": [
+        "date",
         "sourceType"
       ],
       "removedFields": []
@@ -2213,6 +2377,7 @@
       "table": "Sources",
       "id": "SRC0441",
       "fields": [
+        "date",
         "sourceType"
       ],
       "removedFields": []
@@ -2259,6 +2424,14 @@
     },
     {
       "table": "Sources",
+      "id": "SRC0452",
+      "fields": [
+        "date"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
       "id": "SRC0455",
       "fields": [
         "fullCitation",
@@ -2271,6 +2444,38 @@
       "id": "SRC0456",
       "fields": [
         "sourceType"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0457",
+      "fields": [
+        "date"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0458",
+      "fields": [
+        "date"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0459",
+      "fields": [
+        "date"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0460",
+      "fields": [
+        "date"
       ],
       "removedFields": []
     },
@@ -2296,7 +2501,48 @@
       "table": "Sources",
       "id": "SRC0477",
       "fields": [
+        "date",
         "sourceType"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0478",
+      "fields": [
+        "date"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0479",
+      "fields": [
+        "date"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0480",
+      "fields": [
+        "date"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0481",
+      "fields": [
+        "date"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0482",
+      "fields": [
+        "date"
       ],
       "removedFields": []
     },
@@ -2320,6 +2566,7 @@
       "table": "Sources",
       "id": "SRC0492",
       "fields": [
+        "date",
         "sourceType"
       ],
       "removedFields": []
@@ -2328,6 +2575,7 @@
       "table": "Sources",
       "id": "SRC0501",
       "fields": [
+        "date",
         "sourceType"
       ],
       "removedFields": []
@@ -2354,6 +2602,7 @@
       "table": "Sources",
       "id": "SRC0523",
       "fields": [
+        "date",
         "sourceType"
       ],
       "removedFields": []
@@ -2362,7 +2611,16 @@
       "table": "Sources",
       "id": "SRC0524",
       "fields": [
+        "date",
         "sourceType"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0530",
+      "fields": [
+        "date"
       ],
       "removedFields": []
     },
@@ -2370,6 +2628,7 @@
       "table": "Sources",
       "id": "SRC0532",
       "fields": [
+        "date",
         "sourceType"
       ],
       "removedFields": []
@@ -2386,6 +2645,7 @@
       "table": "Sources",
       "id": "SRC0534",
       "fields": [
+        "date",
         "sourceType"
       ],
       "removedFields": []
@@ -2394,6 +2654,7 @@
       "table": "Sources",
       "id": "SRC0535",
       "fields": [
+        "date",
         "sourceType"
       ],
       "removedFields": []
@@ -2402,6 +2663,7 @@
       "table": "Sources",
       "id": "SRC0537",
       "fields": [
+        "date",
         "sourceType"
       ],
       "removedFields": []
@@ -2450,6 +2712,7 @@
       "table": "Sources",
       "id": "SRC0543",
       "fields": [
+        "date",
         "sourceType"
       ],
       "removedFields": []
@@ -2458,6 +2721,7 @@
       "table": "Sources",
       "id": "SRC0544",
       "fields": [
+        "date",
         "sourceType"
       ],
       "removedFields": []
@@ -2466,7 +2730,16 @@
       "table": "Sources",
       "id": "SRC0545",
       "fields": [
+        "date",
         "sourceType"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0546",
+      "fields": [
+        "date"
       ],
       "removedFields": []
     },
@@ -2474,6 +2747,7 @@
       "table": "Sources",
       "id": "SRC0548",
       "fields": [
+        "date",
         "sourceType"
       ],
       "removedFields": []
@@ -2482,7 +2756,32 @@
       "table": "Sources",
       "id": "SRC0549",
       "fields": [
+        "date",
         "sourceType"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0551",
+      "fields": [
+        "date"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0553",
+      "fields": [
+        "date"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0554",
+      "fields": [
+        "date"
       ],
       "removedFields": []
     },
@@ -3261,6 +3560,7 @@
       "id": "SRC0556",
       "fields": [
         "accessDate",
+        "date",
         "fullCitation",
         "id",
         "mediaIds",
@@ -3510,6 +3810,7 @@
       "fields": [
         "accessDate",
         "creator",
+        "date",
         "fullCitation",
         "id",
         "mediaIds",
@@ -3530,6 +3831,7 @@
       "id": "SRC0568",
       "fields": [
         "creator",
+        "date",
         "fullCitation",
         "id",
         "mediaIds",
