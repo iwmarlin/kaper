@@ -2235,6 +2235,13 @@
       }
     },
     "Contributions": {
+      "CON-F004-MRU-P009": {
+        "reason": "Remove the redundant explanatory scope note from the public credit; the unresolved-role badge, probable certainty and source form “Benjamin Kapper” already communicate the qualified attribution.",
+        "fields": {},
+        "removeFields": [
+          "scopeNote"
+        ]
+      },
       "CON-F011-C-P009": {
         "reason": "Remove the defensive legacy scope note; the composer badge and linked sources carry the public-facing distinction without redundant prose.",
         "fields": {},
@@ -2582,6 +2589,26 @@
       }
     },
     "Contributions": {
+      "CON-F004-C-P077": {
+        "reason": "Add Walter Jurmann's missing confirmed composer credit for Ihre Majestät die Liebe. Filmportal explicitly lists Jurmann under “Musik,” and the official Jurmann catalogue independently documents songs written for the film.",
+        "fields": {
+          "id": "CON-F004-C-P077",
+          "role": "composer",
+          "evidenceContext": "film_credits",
+          "sortOrder": 39,
+          "certainty": "confirmed",
+          "workIds": [
+            "W-F004"
+          ],
+          "personIds": [
+            "P077"
+          ],
+          "sourceIds": [
+            "SRC0117",
+            "SRC0306"
+          ]
+        }
+      },
       "CON-F009-C-P009": {
         "reason": "Add Bronisław Kaper's missing composer credit for Es wird schon wieder besser. Filmportal lists both Kaper and Walter Jurmann under “Musik” and separately credits Kaper with “Musikalische Leitung.”",
         "fields": {
@@ -3883,6 +3910,14 @@
       }
     },
     "Works": {
+      "W-F004": {
+        "reason": "Attach Walter Jurmann's confirmed composer contribution while retaining Kaper's separate, qualified unresolved-role attribution.",
+        "fields": {
+          "contributionIds": [
+            "CON-F004-C-P077"
+          ]
+        }
+      },
       "W-F009": {
         "reason": "Attach Kaper's composer credit and Jurmann's co-composer credit while retaining Kaper's separate music-direction contribution.",
         "fields": {
@@ -4292,6 +4327,7 @@
             "SRC0334"
           ],
           "contributionIds": [
+            "CON-F004-C-P077",
             "CON-F009-C-P077",
             "CON-F010-C-P077",
             "CON-F011-C-P077",
@@ -4733,6 +4769,14 @@
           ]
         }
       },
+      "SRC0117": {
+        "reason": "Synchronize Filmportal's explicit Walter Jurmann music credit with the new confirmed composer contribution.",
+        "fields": {
+          "contributionIds": [
+            "CON-F004-C-P077"
+          ]
+        }
+      },
       "SRC0124": {
         "reason": "Synchronize Filmportal's explicit credits for Kaper and Jurmann under “Musik” and Kaper under “Musikalische Leitung.”",
         "fields": {
@@ -4777,6 +4821,7 @@
             "F013"
           ],
           "contributionIds": [
+            "CON-F004-C-P077",
             "CON-F010-C-P009",
             "CON-F010-C-P077",
             "CON-F011-C-P077",

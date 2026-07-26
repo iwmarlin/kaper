@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 988,
+  "count": 989,
   "records": [
     {
       "id": "CON-F001-C-P009",
@@ -158,6 +158,23 @@
       ]
     },
     {
+      "id": "CON-F004-C-P077",
+      "role": "composer",
+      "evidenceContext": "film_credits",
+      "sortOrder": 39,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-F004"
+      ],
+      "personIds": [
+        "P077"
+      ],
+      "sourceIds": [
+        "SRC0117",
+        "SRC0306"
+      ]
+    },
+    {
       "id": "CON-F004-D-P044",
       "role": "film_director",
       "nameAsPrinted": "Joe May",
@@ -180,7 +197,6 @@
       "role": "music_contributor_role_unresolved",
       "nameAsPrinted": "Benjamin Kapper",
       "evidenceContext": "film_credits",
-      "scopeNote": "Probable musical involvement by Bronisław Kaper; the exact work-specific function remains unresolved and must not be displayed as composer, arranger, or music director.",
       "sortOrder": 40,
       "certainty": "probable",
       "publicNote": "Bronisław Kaper’s involvement in this film is currently considered probable, but his role has not been established. The only positive attribution identified so far is IMDb, where he is listed as “Benjamin Kapper”; Filmportal and Walter Jurmann estate materials do not independently confirm the credit.",
