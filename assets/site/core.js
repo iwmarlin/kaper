@@ -228,7 +228,9 @@ export function renderMediaDisclosure(media, sources = [], {
 } = {}) {
   if (!media) return "";
   const source = sources.find((item) => item?.id) || null;
-  const sourceExternal = safeExternalUrl(media.externalUrl) || safeExternalUrl(source?.url);
+  const sourceExternal = safeExternalUrl(media.externalUrl)
+    || safeExternalUrl(source?.primaryUrl)
+    || safeExternalUrl(source?.accessUrl);
   const sourceHref = sourceExternal || (source?.id ? recordUrl("source", source.id) : "");
   const sourceLabel = source?.id ? `Source ${source.id}` : "Original source";
   const sourceAttributes = sourceExternal ? ' target="_blank" rel="noreferrer"' : "";
@@ -428,7 +430,7 @@ export function mountSiteChrome(activePage) {
 }
 
 export function renderSourceCitation(source) {
-  const external = safeExternalUrl(source.url);
+  const external = safeExternalUrl(source.primaryUrl) || safeExternalUrl(source.accessUrl);
   return `
     <li class="citation" id="source-${escapeHtml(source.id)}">
       <a class="citation__id" href="${recordUrl("source", source.id)}" aria-label="Open source record ${escapeHtml(source.id)}">${escapeHtml(source.id)}</a>

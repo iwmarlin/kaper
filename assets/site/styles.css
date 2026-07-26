@@ -2293,6 +2293,13 @@ main {
   font-weight: 680;
 }
 
+.source-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-top: 1rem;
+}
+
 .person-collections {
   display: grid;
   gap: 0.75rem;

@@ -11,6 +11,7 @@ import sys
 from collections import Counter
 from pathlib import Path
 from typing import Any
+from urllib.parse import parse_qsl, urlparse, urlunparse
 
 
 def read_json(path: Path) -> dict[str, Any]:
@@ -93,6 +94,30 @@ SOURCE_PUBLIC_WORKFLOW_PATTERN = re.compile(
     r")",
     flags=re.IGNORECASE,
 )
+
+SOURCE_LITERAL_URL_PATTERN = re.compile(r"https?://[^\s<>]+", flags=re.IGNORECASE)
+
+
+def comparable_source_url(value: str) -> str:
+    try:
+        parsed = urlparse(value)
+    except ValueError:
+        return value
+    path = parsed.path.rstrip("/") or "/"
+    query = "&".join(
+        f"{key}={item}"
+        for key, item in sorted(parse_qsl(parsed.query, keep_blank_values=True))
+    )
+    return urlunparse(
+        (
+            parsed.scheme.lower(),
+            parsed.netloc.lower(),
+            path,
+            parsed.params,
+            query,
+            "",
+        )
+    )
 
 PERIOD_ORDER = ("warsaw", "european", "hollywood")
 WARSAW_1926_EVENT_IDS = {"TE0014", "TE0047"}
@@ -337,6 +362,85 @@ class ExportValidator:
                     self.errors.append(
                         f"Source {source_id}: public field {key} contains a malformed URL"
                     )
+                if SOURCE_LITERAL_URL_PATTERN.search(value):
+                    self.errors.append(
+                        f"Source {source_id}: public field {key} contains a navigational URL"
+                    )
+
+            link_urls: list[str] = []
+            for key in ("primaryUrl", "accessUrl"):
+                value = source.get(key)
+                if not value:
+                    continue
+                parsed = urlparse(str(value))
+                if parsed.scheme not in {"http", "https"} or not parsed.netloc:
+                    self.errors.append(
+                        f"Source {source_id}: {key} is not a valid HTTP(S) URL"
+                    )
+                link_urls.append(str(value))
+
+            additional_links = source.get("additionalLinks", [])
+            if not isinstance(additional_links, list):
+                self.errors.append(
+                    f"Source {source_id}: additionalLinks is not an array"
+                )
+            else:
+                for index, link in enumerate(additional_links):
+                    if not isinstance(link, dict) or set(link) != {
+                        "label",
+                        "url",
+                        "role",
+                    }:
+                        self.errors.append(
+                            f"Source {source_id}: additionalLinks[{index}] is malformed"
+                        )
+                        continue
+                    parsed = urlparse(str(link.get("url", "")))
+                    if (
+                        parsed.scheme not in {"http", "https"}
+                        or not parsed.netloc
+                    ):
+                        self.errors.append(
+                            f"Source {source_id}: additionalLinks[{index}] has an invalid URL"
+                        )
+                    link_urls.append(str(link.get("url", "")))
+
+            comparable_links = [
+                comparable_source_url(url) for url in link_urls if url
+            ]
+            if len(comparable_links) != len(set(comparable_links)):
+                self.errors.append(
+                    f"Source {source_id}: structured source links contain duplicates"
+                )
+
+            identifiers = source.get("identifiers", [])
+            if not isinstance(identifiers, list):
+                self.errors.append(
+                    f"Source {source_id}: identifiers is not an array"
+                )
+            else:
+                seen_identifiers: set[tuple[str, str]] = set()
+                for index, identifier in enumerate(identifiers):
+                    if not isinstance(identifier, dict) or set(identifier) != {
+                        "scheme",
+                        "value",
+                    }:
+                        self.errors.append(
+                            f"Source {source_id}: identifiers[{index}] is malformed"
+                        )
+                        continue
+                    scheme = str(identifier.get("scheme", "")).casefold()
+                    value = str(identifier.get("value", ""))
+                    if scheme not in {"doi", "ark", "naid"} or not value:
+                        self.errors.append(
+                            f"Source {source_id}: identifiers[{index}] has an unsupported scheme or empty value"
+                        )
+                    key = (scheme, value.casefold())
+                    if key in seen_identifiers:
+                        self.errors.append(
+                            f"Source {source_id}: identifiers contain duplicates"
+                        )
+                    seen_identifiers.add(key)
 
     def _validate_scope(self) -> None:
         end_year = self.config["scope"]["endYear"]

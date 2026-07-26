@@ -1,4 +1,4 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=0b4f408ff0";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=7703e0b631";
 import {
   certaintyBadge,
   escapeHtml,
@@ -24,7 +24,7 @@ import {
   scopeBadge,
   typeBadge,
   updateMeta,
-} from "./core.js?v=0b4f408ff0";
+} from "./core.js?v=7703e0b631";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 mountSiteChrome("");
@@ -46,7 +46,7 @@ const RECORD_TABLES = [
   "people", "organizations", "sources", "media", "works", "films", "songs", "otherWorks",
   "titleVariants", "workRelations", "timelineEvents", "places", "contributions", "personNameVariants",
 ];
-const RECORD_DATA_VERSION = "20260722-1";
+const RECORD_DATA_VERSION = "20260726-1";
 
 async function loadRecordPayload(type, id) {
   const url = new URL(
@@ -608,6 +608,27 @@ function renderOrganization(organization, data, indexes) {
   };
 }
 
+function sourceActions(source) {
+  const links = [];
+  const seen = new Set();
+  const add = (url, label) => {
+    const safe = safeExternalUrl(url);
+    if (!safe || seen.has(safe)) return;
+    seen.add(safe);
+    links.push({ url: safe, label });
+  };
+  add(source.primaryUrl, "Open source");
+  add(source.accessUrl, "Open direct view");
+  for (const link of source.additionalLinks || []) {
+    add(link?.url, link?.label || "Open additional source");
+  }
+  if (!links.length) return "";
+  return `<div class="source-actions">${links.map((link, index) => `
+    <a class="button ${index ? "button--ghost" : ""} button--small" href="${escapeHtml(link.url)}" target="_blank" rel="noreferrer">
+      ${escapeHtml(link.label)} <span aria-hidden="true">↗</span>
+    </a>`).join("")}</div>`;
+}
+
 function renderSource(source, data, indexes) {
   const works = related(source.workIds, indexes.works);
   const media = related(source.mediaIds, indexes.media);
@@ -615,14 +636,13 @@ function renderSource(source, data, indexes) {
   const places = related(source.placeIds, indexes.places);
   const people = related(source.personIds, indexes.people);
   const organizations = related(source.organizationIds, indexes.organizations);
-  const external = safeExternalUrl(source.url);
   return {
     title: source.title || source.shortCitation,
     label: "Source",
     badges: typeBadge(source.sourceType),
     facts: `${fact("Creator", source.creator)}${fact("Date", source.date)}${fact("Publication", source.publication)}${fact("Repository", source.repository)}`,
     main: [
-      section("Citation", `<p class="lead">${escapeHtml(source.fullCitation || source.shortCitation)}</p>${external ? `<p><a class="button button--ghost button--small" href="${escapeHtml(external)}" target="_blank" rel="noreferrer">Open source <span aria-hidden="true">↗</span></a></p>` : ""}`),
+      section("Citation", `<p class="lead">${escapeHtml(source.fullCitation || source.shortCitation)}</p>${sourceActions(source)}`),
       section("Supported works", entityList(works, "work", (item) => [item.year, item.workType].filter(Boolean).join(" · "))),
       section("Media", entityList(media, "media", (item) => humanize(item.mediaType))),
       section("Timeline", entityList(events, "event", (item) => item.displayDate || item.dateStart)),

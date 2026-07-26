@@ -228,7 +228,13 @@
           "field": "Person Name Variants",
           "target": "Person Name Variants"
         }
-      }
+      },
+      "derivedFields": [
+        "primaryUrl",
+        "accessUrl",
+        "additionalLinks",
+        "identifiers"
+      ]
     },
     "Media": {
       "file": "media.json",

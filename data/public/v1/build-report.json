@@ -24,6 +24,19 @@
     "external_link_only": 18,
     "selected": 62
   },
+  "sourceCitationNormalization": {
+    "additionalLinkCount": 11,
+    "citationsWithLiteralUrls": 194,
+    "crossHostDistinctUrls": 1,
+    "exactUrlDuplicates": 170,
+    "literalUrlOccurrences": 205,
+    "multiUrlCitations": 11,
+    "recordsWithAccessUrl": 25,
+    "recordsWithAdditionalLinks": 11,
+    "recordsWithIdentifiers": 53,
+    "recordsWithPrimaryUrl": 481,
+    "sameHostDistinctUrls": 23
+  },
   "appliedOverrides": [
     {
       "table": "Contributions",
@@ -5317,7 +5330,7 @@
       "sourceFieldsAvailable": 34,
       "publicScalarFields": 14,
       "publicLinkFields": 13,
-      "derivedFields": 0
+      "derivedFields": 4
     },
     "Media": {
       "sourceFieldsAvailable": 42,

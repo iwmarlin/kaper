@@ -13,6 +13,7 @@ import tempfile
 from collections import Counter, defaultdict
 from pathlib import Path
 from typing import Any
+from urllib.parse import parse_qsl, urlencode, urlparse, urlunparse
 
 
 TABLE_ORDER = [
@@ -96,6 +97,135 @@ SOURCE_PUBLIC_IDENTIFIER_PATTERN = re.compile(
     r"F\d{3}|S\d{3}|O\d{3}|P\d{3}|ORG\d{3}|TV\d{4}|PNV\d{4}|CON-[A-Z0-9-]+)"
     r"(?![A-Za-z0-9-])"
 )
+
+SOURCE_LITERAL_URL_PATTERN = re.compile(r"https?://[^\s<>]+", flags=re.IGNORECASE)
+SOURCE_DOI_PATTERN = re.compile(
+    r"(?<![A-Za-z0-9])(?:DOI\s*:?\s*)?(10\.\d{4,9}/[-._;()/:A-Z0-9]+)",
+    flags=re.IGNORECASE,
+)
+SOURCE_ARK_PATTERN = re.compile(
+    r"(?<![A-Za-z0-9])(?:ARK\s*:?\s*)?(ark:/\d+/[A-Za-z0-9._~-]+)",
+    flags=re.IGNORECASE,
+)
+SOURCE_NAID_PATTERN = re.compile(r"\bNAID\s*:?\s*(\d+)\b", flags=re.IGNORECASE)
+SOURCE_URL_TRAILING_PUNCTUATION = ".,;:)]}"
+
+
+def source_url_from_match(value: str) -> str:
+    return value.rstrip(SOURCE_URL_TRAILING_PUNCTUATION)
+
+
+def source_urls(value: str) -> list[str]:
+    return [
+        source_url_from_match(match.group(0))
+        for match in SOURCE_LITERAL_URL_PATTERN.finditer(value)
+        if source_url_from_match(match.group(0))
+    ]
+
+
+def comparable_source_url(value: str) -> str:
+    """Compare source links without treating a terminal slash as a new resource."""
+    try:
+        parsed = urlparse(value)
+    except ValueError:
+        return value
+    path = parsed.path.rstrip("/") or "/"
+    query = urlencode(
+        sorted(parse_qsl(parsed.query, keep_blank_values=True))
+    )
+    return urlunparse(
+        (
+            parsed.scheme.lower(),
+            parsed.netloc.lower(),
+            path,
+            parsed.params,
+            query,
+            "",
+        )
+    )
+
+
+def source_link_label(url: str) -> tuple[str, str]:
+    """Return a concise public label and semantic role for a secondary link."""
+    parsed = urlparse(url)
+    host = parsed.netloc.lower()
+    path = parsed.path.lower()
+    if "anno.onb.ac.at" in host:
+        return ("Open additional catalogue issue", "additional_issue")
+    if "kppg.waw.pl" in host:
+        return ("Open recording catalogue entry", "catalogue_entry")
+    if "/image/" in path or path.endswith(
+        (".jpg", ".jpeg", ".png", ".tif", ".tiff", ".webp")
+    ):
+        return ("View source image", "source_image")
+    if path.endswith(".pdf"):
+        return ("Open source PDF", "source_document")
+    if "ark.cdlib.org" in host:
+        return ("Open ARK resolver", "persistent_identifier")
+    return ("Open additional source", "additional_source")
+
+
+def source_identifiers(value: str) -> list[dict[str, str]]:
+    identifiers: list[dict[str, str]] = []
+    seen: set[tuple[str, str]] = set()
+
+    def add(scheme: str, identifier: str) -> None:
+        normalized = identifier.rstrip(SOURCE_URL_TRAILING_PUNCTUATION)
+        key = (scheme, normalized.casefold())
+        if normalized and key not in seen:
+            seen.add(key)
+            identifiers.append({"scheme": scheme, "value": normalized})
+
+    for match in SOURCE_DOI_PATTERN.finditer(value):
+        add("doi", match.group(1))
+    for match in SOURCE_ARK_PATTERN.finditer(value):
+        add("ark", match.group(1))
+    for match in SOURCE_NAID_PATTERN.finditer(value):
+        add("naid", match.group(1))
+    return identifiers
+
+
+def citation_without_literal_urls(value: str) -> str:
+    """Remove navigational URLs while retaining DOI/ARK as citation locators."""
+
+    def replace(match: re.Match[str]) -> str:
+        raw = match.group(0)
+        url = source_url_from_match(raw)
+        punctuation = raw[len(url) :]
+        doi = SOURCE_DOI_PATTERN.search(url)
+        if doi:
+            replacement = f"DOI {doi.group(1)}"
+        else:
+            ark = SOURCE_ARK_PATTERN.search(url)
+            if ark:
+                prefix = value[max(0, match.start() - 8) : match.start()]
+                replacement = (
+                    ark.group(1)
+                    if re.search(r"\bARK\s*$", prefix, flags=re.IGNORECASE)
+                    else f"ARK {ark.group(1)}"
+                )
+            else:
+                replacement = ""
+        if "." in punctuation:
+            replacement += "."
+        elif ";" in punctuation:
+            replacement += ";"
+        return replacement
+
+    citation = SOURCE_LITERAL_URL_PATTERN.sub(replace, value)
+    citation = re.sub(
+        r"\s*\b(?:Image URL|Direct image|USC asset page)\s*:\s*\.",
+        "",
+        citation,
+        flags=re.IGNORECASE,
+    )
+    citation = re.sub(r":\s*\.", ".", citation)
+    citation = re.sub(r";\s*\.", ".", citation)
+    citation = re.sub(r":\s+(?=\()", " ", citation)
+    citation = re.sub(r"\.\s+\.", ".", citation)
+    citation = re.sub(r"\s+([,.;:])", r"\1", citation)
+    citation = re.sub(r"\s{2,}", " ", citation).strip()
+    return citation
 
 SOURCE_TRAILING_EDITORIAL_PATTERNS = [
     re.compile(
@@ -322,6 +452,7 @@ class PublicExporter:
         self.applied_additions: list[dict[str, Any]] = []
         self.applied_link_additions: list[dict[str, Any]] = []
         self.applied_link_removals: list[dict[str, Any]] = []
+        self.source_citation_stats: Counter[str] = Counter()
         self._load()
 
     def _load(self) -> None:
@@ -1083,6 +1214,9 @@ class PublicExporter:
     def _normalize_source_public_text(self) -> None:
         """Keep source citations bibliographic rather than graph- or workflow-oriented."""
         for source in self.output_records["Sources"]:
+            original_full_citation = str(source.get("fullCitation", "")).strip()
+            original_url = str(source.get("url", "")).strip()
+            citation_urls: list[str] = []
             for key in ("fullCitation", "shortCitation"):
                 citation = str(source.get(key, "")).strip()
                 if not citation:
@@ -1199,6 +1333,9 @@ class PublicExporter:
                     r"\1",
                     citation,
                 )
+                if key == "fullCitation":
+                    citation_urls = source_urls(citation)
+                    citation = citation_without_literal_urls(citation)
                 citation = citation.rstrip(" ,;/")
                 if (
                     key == "fullCitation"
@@ -1207,6 +1344,111 @@ class PublicExporter:
                 ):
                     citation += "."
                 source[key] = citation
+
+            if citation_urls:
+                self.source_citation_stats["citationsWithLiteralUrls"] += 1
+                self.source_citation_stats["literalUrlOccurrences"] += len(
+                    citation_urls
+                )
+                if len(citation_urls) > 1:
+                    self.source_citation_stats["multiUrlCitations"] += 1
+                if original_url and original_url in original_full_citation:
+                    self.source_citation_stats["exactUrlDuplicates"] += 1
+                elif original_url:
+                    original_host = urlparse(original_url).netloc.casefold()
+                    citation_hosts = {
+                        urlparse(url).netloc.casefold() for url in citation_urls
+                    }
+                    if original_host in citation_hosts:
+                        self.source_citation_stats["sameHostDistinctUrls"] += 1
+                    else:
+                        self.source_citation_stats["crossHostDistinctUrls"] += 1
+
+            unique_citation_urls = list(dict.fromkeys(citation_urls))
+            doi_urls = [
+                url
+                for url in unique_citation_urls
+                if urlparse(url).netloc.casefold() in {"doi.org", "dx.doi.org"}
+            ]
+            primary_url = ""
+            if doi_urls:
+                primary_url = doi_urls[0]
+            elif unique_citation_urls:
+                first_url = unique_citation_urls[0]
+                first_ark = SOURCE_ARK_PATTERN.search(first_url)
+                existing_ark = (
+                    SOURCE_ARK_PATTERN.search(original_url) if original_url else None
+                )
+                if (
+                    first_ark
+                    and original_url
+                    and existing_ark
+                    and urlparse(first_url).netloc.casefold()
+                    != urlparse(original_url).netloc.casefold()
+                    and first_ark.group(1).casefold()
+                    == existing_ark.group(1).casefold()
+                ):
+                    primary_url = original_url
+                else:
+                    primary_url = first_url
+            elif original_url:
+                primary_url = original_url
+
+            if primary_url:
+                source["primaryUrl"] = primary_url
+                self.source_citation_stats["recordsWithPrimaryUrl"] += 1
+
+            used_urls = {
+                comparable_source_url(primary_url)
+            } if primary_url else set()
+            if (
+                original_url
+                and comparable_source_url(original_url) not in used_urls
+            ):
+                source["accessUrl"] = original_url
+                used_urls.add(comparable_source_url(original_url))
+                self.source_citation_stats["recordsWithAccessUrl"] += 1
+
+            additional_links = []
+            for url in unique_citation_urls:
+                comparable = comparable_source_url(url)
+                if comparable in used_urls:
+                    continue
+                label, role = source_link_label(url)
+                additional_links.append(
+                    {"label": label, "url": url, "role": role}
+                )
+                used_urls.add(comparable)
+            if additional_links:
+                source["additionalLinks"] = additional_links
+                self.source_citation_stats["recordsWithAdditionalLinks"] += 1
+                self.source_citation_stats["additionalLinkCount"] += len(
+                    additional_links
+                )
+
+            identifiers = source_identifiers(original_full_citation)
+            if identifiers:
+                source["identifiers"] = identifiers
+                self.source_citation_stats["recordsWithIdentifiers"] += 1
+
+            structured_urls = {
+                comparable_source_url(url)
+                for url in (
+                    source.get("primaryUrl"),
+                    source.get("accessUrl"),
+                    *(
+                        link["url"]
+                        for link in source.get("additionalLinks", [])
+                    ),
+                )
+                if url
+            }
+            for citation_url in citation_urls:
+                if comparable_source_url(citation_url) not in structured_urls:
+                    self.errors.append(
+                        f"Source {source['id']}: citation URL was not preserved in the structured link model"
+                    )
+            source.pop("url", None)
 
             repository = str(source.get("repository", "")).strip()
             repository = re.sub(
@@ -1779,6 +2021,85 @@ class PublicExporter:
                     self.errors.append(
                         f"Source {source_id}: public field {key} contains a malformed URL"
                     )
+                if SOURCE_LITERAL_URL_PATTERN.search(value):
+                    self.errors.append(
+                        f"Source {source_id}: public field {key} contains a navigational URL"
+                    )
+
+            link_urls: list[str] = []
+            for key in ("primaryUrl", "accessUrl"):
+                value = source.get(key)
+                if not value:
+                    continue
+                parsed = urlparse(str(value))
+                if parsed.scheme not in {"http", "https"} or not parsed.netloc:
+                    self.errors.append(
+                        f"Source {source_id}: {key} is not a valid HTTP(S) URL"
+                    )
+                link_urls.append(str(value))
+
+            additional_links = source.get("additionalLinks", [])
+            if not isinstance(additional_links, list):
+                self.errors.append(
+                    f"Source {source_id}: additionalLinks is not an array"
+                )
+            else:
+                for index, link in enumerate(additional_links):
+                    if not isinstance(link, dict) or set(link) != {
+                        "label",
+                        "url",
+                        "role",
+                    }:
+                        self.errors.append(
+                            f"Source {source_id}: additionalLinks[{index}] is malformed"
+                        )
+                        continue
+                    parsed = urlparse(str(link.get("url", "")))
+                    if (
+                        parsed.scheme not in {"http", "https"}
+                        or not parsed.netloc
+                    ):
+                        self.errors.append(
+                            f"Source {source_id}: additionalLinks[{index}] has an invalid URL"
+                        )
+                    link_urls.append(str(link.get("url", "")))
+
+            comparable_links = [
+                comparable_source_url(url) for url in link_urls if url
+            ]
+            if len(comparable_links) != len(set(comparable_links)):
+                self.errors.append(
+                    f"Source {source_id}: structured source links contain duplicates"
+                )
+
+            identifiers = source.get("identifiers", [])
+            if not isinstance(identifiers, list):
+                self.errors.append(
+                    f"Source {source_id}: identifiers is not an array"
+                )
+            else:
+                seen_identifiers: set[tuple[str, str]] = set()
+                for index, identifier in enumerate(identifiers):
+                    if not isinstance(identifier, dict) or set(identifier) != {
+                        "scheme",
+                        "value",
+                    }:
+                        self.errors.append(
+                            f"Source {source_id}: identifiers[{index}] is malformed"
+                        )
+                        continue
+                    scheme = str(identifier.get("scheme", "")).casefold()
+                    value = str(identifier.get("value", ""))
+                    if scheme not in {"doi", "ark", "naid"} or not value:
+                        self.errors.append(
+                            f"Source {source_id}: identifiers[{index}] has an unsupported scheme or empty value"
+                        )
+                    key = (scheme, value.casefold())
+                    if key in seen_identifiers:
+                        self.errors.append(
+                            f"Source {source_id}: identifiers contain duplicates"
+                        )
+                    seen_identifiers.add(key)
 
     def validate(self) -> None:
         self._validate_required()
@@ -1819,6 +2140,9 @@ class PublicExporter:
                 for table_name, records in self.output_records.items()
             },
             "galleryStatusCounts": dict(sorted(gallery_counts.items())),
+            "sourceCitationNormalization": dict(
+                sorted(self.source_citation_stats.items())
+            ),
             "appliedOverrides": sorted(
                 self.applied_overrides,
                 key=lambda item: (item["table"], item["id"]),
