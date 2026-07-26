@@ -1173,6 +1173,28 @@
     },
     {
       "table": "Sources",
+      "id": "SRC0070",
+      "fields": [
+        "fullCitation"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0085",
+      "fields": [
+        "date",
+        "fullCitation",
+        "reliability",
+        "shortCitation",
+        "sourceStatus",
+        "title",
+        "url"
+      ],
+      "removedFields": []
+    },
+    {
+      "table": "Sources",
       "id": "SRC0093",
       "fields": [
         "accessDate",
@@ -1627,7 +1649,13 @@
       "table": "Sources",
       "id": "SRC0288",
       "fields": [
-        "sourceType"
+        "creator",
+        "date",
+        "fullCitation",
+        "publication",
+        "repository",
+        "sourceType",
+        "url"
       ],
       "removedFields": []
     },
@@ -1938,6 +1966,7 @@
       "table": "Sources",
       "id": "SRC0421",
       "fields": [
+        "fullCitation",
         "sourceType"
       ],
       "removedFields": []

@@ -411,6 +411,24 @@
           "slug": "declaration-of-intention-no-74224-u-s-district-court-los-angeles-src0038"
         }
       },
+      "SRC0070": {
+        "reason": "Correct the BnF ARK embedded in the citation so it matches the linked catalogue record for the Tom Waltham orchestral arrangement.",
+        "fields": {
+          "fullCitation": "Walter Jurmann and Bronisław Kaper, \"Dit's-moi, Madam'…\" / \"Dit's-moi, Madame\" (Ich frag', Madam'…), fox-trot from the film E. M. B. H.; arranged by Tom Waltham for orchestra with piano conductor. Paris: M. Eschig, 1934. Bibliothèque nationale de France, Catalogue général, ark:/12148/cb430696019."
+        }
+      },
+      "SRC0085": {
+        "reason": "Replace the incomplete citation and false unresolved-attribution note with the exact article, issue date and page; the digitized article explicitly identifies Bronisław Kaper as the film's composer.",
+        "fields": {
+          "title": "Wielkość talentu Jana Kiepury podbija nawet Berlin i Niemcy",
+          "shortCitation": "“Wielkość talentu Jana Kiepury podbija nawet Berlin i Niemcy,” Nowiny Codzienne 23, no. 81 (21 April 1933): 2",
+          "fullCitation": "“Wielkość talentu Jana Kiepury podbija nawet Berlin i Niemcy.” Nowiny Codzienne 23, no. 81 (21 April 1933): 2. Śląska Biblioteka Cyfrowa, edition 288663.",
+          "date": "1933-04-21",
+          "url": "https://sbc.org.pl/dlibra/publication/305546/edition/288663/nowiny-codzienne-1933-r-23-nr-81",
+          "reliability": "high",
+          "sourceStatus": "verified"
+        }
+      },
       "SRC0358": {
         "reason": "Keep the citation bibliographic and move database relationships to the canonical relation fields rendered separately on the public Source page.",
         "fields": {
@@ -827,9 +845,15 @@
         }
       },
       "SRC0288": {
-        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "reason": "Correct the dissertation author's first name, date and document classification; the title page and University of Vienna dissertation list identify Wolfgang Stanicek as the author in 2010.",
         "fields": {
-          "sourceType": "online_database"
+          "fullCitation": "Wolfgang Stanicek, Austin Egen: Schlager-Komponist, Sänger und Musikverleger (doctoral dissertation, University of Vienna, 2010), discographic entry for “Wer weiß, ob du mich auch liebst”: Orchester Bernard Etté / Heinz Egon, 1931; W 202; music credited to Bronisław Kaper and Hermann Scheibenhofer; text by Fritz Rotter; publisher Edition Karl Brüll.",
+          "creator": "Wolfgang Stanicek",
+          "repository": "University of Vienna",
+          "publication": "Doctoral dissertation, University of Vienna",
+          "date": "2010",
+          "url": "https://musikwissenschaft.univie.ac.at/forschung/dissertationen/",
+          "sourceType": "book"
         }
       },
       "SRC0289": {
@@ -1037,8 +1061,9 @@
         }
       },
       "SRC0421": {
-        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "reason": "Correct the film year in the citation from 1933 to 1932, matching the record's date field and the linked film record.",
         "fields": {
+          "fullCitation": "L'Homme qui ne sait pas dire non (1932) — film poster image/reproduction. IMDb title tt0297172, media viewer image rm3112523008.",
           "sourceType": "online_database"
         }
       },
