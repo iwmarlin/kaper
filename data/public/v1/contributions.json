@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 981,
+  "count": 982,
   "records": [
     {
       "id": "CON-F001-C-P009",
@@ -761,6 +761,23 @@
       ]
     },
     {
+      "id": "CON-F014-C-P077",
+      "role": "composer",
+      "evidenceContext": "film_credits",
+      "sortOrder": 41,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-F014"
+      ],
+      "personIds": [
+        "P077"
+      ],
+      "sourceIds": [
+        "SRC0126",
+        "SRC0373"
+      ]
+    },
+    {
       "id": "CON-F014-D-P015",
       "role": "film_director",
       "nameAsPrinted": "Erich Schmidt",
@@ -800,9 +817,8 @@
     },
     {
       "id": "CON-F014-SW-P047",
-      "role": "screenwriter",
+      "role": "dialogue_director",
       "nameAsPrinted": "Carl Meinhard",
-      "scopeNote": "Credited in the primary source (Österreichische Film-Zeitung, 19 Nov 1932; SRC0109) as „Dialogleitung“ (dialogue direction), and grouped among the film's writers by later reference works (Concise Cinegraph). NOT the film's director — that was Erich Schmidt (CON-F014-D-P015). Recorded here under the nearest controlled role (screenwriter).",
       "sortOrder": 20,
       "certainty": "confirmed",
       "workIds": [
@@ -818,7 +834,8 @@
       ],
       "nameVariantIds": [
         "PNV0033"
-      ]
+      ],
+      "evidenceContext": "film_credits"
     },
     {
       "id": "CON-F015-C-P009",

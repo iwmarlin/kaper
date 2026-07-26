@@ -2276,6 +2276,16 @@
         "fields": {
           "nameAsPrinted": "Kaper, Dr. Bronoslaw"
         }
+      },
+      "CON-F014-SW-P047": {
+        "reason": "Represent Carl Meinhard's contemporary credit accurately as “Dialogleitung” (dialogue direction), rather than broadening it to screenwriting, and remove the internal modelling note from the public record.",
+        "fields": {
+          "role": "dialogue_director",
+          "evidenceContext": "film_credits"
+        },
+        "removeFields": [
+          "scopeNote"
+        ]
       }
     },
     "Person Name Variants": {
@@ -2523,6 +2533,28 @@
           "contributionIds": [
             "CON-S074-PUB-ORG030",
             "CON-S075-PUB-ORG030"
+          ]
+        }
+      }
+    },
+    "Contributions": {
+      "CON-F014-C-P077": {
+        "reason": "Add Walter Jurmann's missing co-composer credit for Hochzeitsreise zu Dritt. Filmportal lists Walter Jurmann and Bronislau Kaper under Music, and the Buxbaum/Sieghardt filmography independently associates both composers with the film.",
+        "fields": {
+          "id": "CON-F014-C-P077",
+          "role": "composer",
+          "evidenceContext": "film_credits",
+          "sortOrder": 41,
+          "certainty": "confirmed",
+          "workIds": [
+            "W-F014"
+          ],
+          "personIds": [
+            "P077"
+          ],
+          "sourceIds": [
+            "SRC0126",
+            "SRC0373"
           ]
         }
       }
@@ -3675,6 +3707,14 @@
       }
     },
     "Works": {
+      "W-F014": {
+        "reason": "Attach Walter Jurmann's documented co-composer contribution to Hochzeitsreise zu Dritt.",
+        "fields": {
+          "contributionIds": [
+            "CON-F014-C-P077"
+          ]
+        }
+      },
       "W-S023": {
         "reason": "Use the exact ANNO registration SRC0226 instead of its superseded duplicate SRC0200.",
         "fields": {
@@ -4001,7 +4041,7 @@
         }
       },
       "P077": {
-        "reason": "Connect Walter Jurmann to the completed 1932–1933 Hofmeister sources and to the existing Academy Collection photograph SRC0334.",
+        "reason": "Connect Walter Jurmann to the completed 1932–1933 Hofmeister sources, the existing Academy Collection photograph SRC0334, and his documented co-composer contribution to Hochzeitsreise zu Dritt.",
         "fields": {
           "sourceIds": [
             "SRC0188",
@@ -4020,6 +4060,9 @@
             "SRC0222",
             "SRC0223",
             "SRC0334"
+          ],
+          "contributionIds": [
+            "CON-F014-C-P077"
           ]
         }
       },
@@ -4456,6 +4499,14 @@
           ]
         }
       },
+      "SRC0126": {
+        "reason": "Synchronize Filmportal's explicit Walter Jurmann and Bronislau Kaper music credits with the new Jurmann contribution record for Hochzeitsreise zu Dritt.",
+        "fields": {
+          "contributionIds": [
+            "CON-F014-C-P077"
+          ]
+        }
+      },
       "SRC0373": {
         "reason": "Reuse the existing Buxbaum/Sieghardt catalogue as the secondary authority resolving the two Heut kommt’s drauf an registrations under Ernst Martin to Kaper and Jurmann; do not create a duplicate source.",
         "fields": {
@@ -4476,7 +4527,8 @@
             "CON-S081-L-P020",
             "CON-S082-C-P009",
             "CON-S082-C-P077",
-            "CON-S082-L-P020"
+            "CON-S082-L-P020",
+            "CON-F014-C-P077"
           ],
           "nameVariantIds": [
             "PNV0007"
