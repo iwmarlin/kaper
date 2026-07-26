@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 987,
+  "count": 988,
   "records": [
     {
       "id": "CON-F001-C-P009",
@@ -624,7 +624,6 @@
       "id": "CON-F011-C-P009",
       "role": "composer",
       "evidenceContext": "film_credits",
-      "scopeNote": "Composition of one or more songs associated with the film; this is not a claim to authorship of the complete film score.",
       "sortOrder": 40,
       "certainty": "confirmed",
       "workIds": [
@@ -639,6 +638,24 @@
         "SRC0373",
         "SRC0483",
         "SRC0485"
+      ]
+    },
+    {
+      "id": "CON-F011-C-P077",
+      "role": "composer",
+      "evidenceContext": "film_song_and_song_catalogue",
+      "sortOrder": 41,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-F011"
+      ],
+      "personIds": [
+        "P077"
+      ],
+      "sourceIds": [
+        "SRC0152",
+        "SRC0306",
+        "SRC0373"
       ]
     },
     {

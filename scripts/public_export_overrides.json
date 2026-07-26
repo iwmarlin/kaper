@@ -2235,6 +2235,13 @@
       }
     },
     "Contributions": {
+      "CON-F011-C-P009": {
+        "reason": "Remove the defensive legacy scope note; the composer badge and linked sources carry the public-facing distinction without redundant prose.",
+        "fields": {},
+        "removeFields": [
+          "scopeNote"
+        ]
+      },
       "CON-F009-MD-P009": {
         "reason": "Clarify that Kaper's music-direction credit is a separate role alongside his restored composer credit.",
         "fields": {
@@ -2612,6 +2619,27 @@
           ],
           "sourceIds": [
             "SRC0124",
+            "SRC0373"
+          ]
+        }
+      },
+      "CON-F011-C-P077": {
+        "reason": "Represent Walter Jurmann's source-specific contribution to Melodie der Liebe without conflating the film-level and song-level evidence. Filmportal credits him specifically for “Schade, daß Liebe ein Märchen ist”; the official Jurmann catalogue documents several songs for the film as collaborations with Bronisław Kaper.",
+        "fields": {
+          "id": "CON-F011-C-P077",
+          "role": "composer",
+          "evidenceContext": "film_song_and_song_catalogue",
+          "sortOrder": 41,
+          "certainty": "confirmed",
+          "workIds": [
+            "W-F011"
+          ],
+          "personIds": [
+            "P077"
+          ],
+          "sourceIds": [
+            "SRC0152",
+            "SRC0306",
             "SRC0373"
           ]
         }
@@ -3875,6 +3903,14 @@
           ]
         }
       },
+      "W-F011": {
+        "reason": "Attach Walter Jurmann's source-specific composer contribution while preserving the distinction between Filmportal's individual film credits and the catalogue's jointly composed songs.",
+        "fields": {
+          "contributionIds": [
+            "CON-F011-C-P077"
+          ]
+        }
+      },
       "W-F013": {
         "reason": "Attach the verified Friedrich Jung and Walter Jurmann music contributions and the official Jurmann catalogue source to Die Zwei vom Südexpreß.",
         "fields": {
@@ -4258,6 +4294,7 @@
           "contributionIds": [
             "CON-F009-C-P077",
             "CON-F010-C-P077",
+            "CON-F011-C-P077",
             "CON-F013-C-P077",
             "CON-F014-C-P077"
           ]
@@ -4705,6 +4742,14 @@
           ]
         }
       },
+      "SRC0152": {
+        "reason": "Synchronize Filmportal's separate film credits: Kaper for music using operatic melodies and Jurmann specifically for “Schade, daß Liebe ein Märchen ist.”",
+        "fields": {
+          "contributionIds": [
+            "CON-F011-C-P077"
+          ]
+        }
+      },
       "SRC0125": {
         "reason": "Synchronize Filmportal's explicit Friedrich Jung and Bronislau Kaper music credits with Friedrich Jung's verified person and contribution records.",
         "fields": {
@@ -4717,7 +4762,7 @@
         }
       },
       "SRC0306": {
-        "reason": "Link the official Walter Jurmann catalogue to the Kaper–Jurmann film contributions it documents for Skandal in der Parkstraße and Die Zwei vom Südexpreß.",
+        "reason": "Link the official Walter Jurmann catalogue to the Kaper–Jurmann film contributions and song-level collaborations it documents.",
         "fields": {
           "personIds": [
             "P009",
@@ -4734,6 +4779,7 @@
           "contributionIds": [
             "CON-F010-C-P009",
             "CON-F010-C-P077",
+            "CON-F011-C-P077",
             "CON-F013-C-P009",
             "CON-F013-C-P077"
           ]
@@ -4771,6 +4817,7 @@
             "CON-F009-C-P009",
             "CON-F009-C-P077",
             "CON-F010-C-P077",
+            "CON-F011-C-P077",
             "CON-F013-C-P077",
             "CON-F014-C-P077"
           ],
