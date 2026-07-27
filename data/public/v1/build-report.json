@@ -15,7 +15,7 @@
     "Work Relations": 190,
     "Timeline Events": 52,
     "Places": 44,
-    "Contributions": 1011,
+    "Contributions": 1019,
     "Person Name Variants": 35
   },
   "galleryStatusCounts": {
@@ -95,6 +95,61 @@
       "id": "CON-F022-MD-P009",
       "fields": [
         "sortOrder"
+      ],
+      "removedFields": [
+        "scopeNote"
+      ]
+    },
+    {
+      "table": "Contributions",
+      "id": "CON-F032-SM-P009",
+      "fields": [
+        "evidenceContext",
+        "role"
+      ],
+      "removedFields": [
+        "scopeNote"
+      ]
+    },
+    {
+      "table": "Contributions",
+      "id": "CON-F034-C-P009",
+      "fields": [
+        "evidenceContext",
+        "role"
+      ],
+      "removedFields": [
+        "scopeNote"
+      ]
+    },
+    {
+      "table": "Contributions",
+      "id": "CON-F035-C-P009",
+      "fields": [
+        "evidenceContext",
+        "role"
+      ],
+      "removedFields": [
+        "scopeNote"
+      ]
+    },
+    {
+      "table": "Contributions",
+      "id": "CON-F036-C-P009",
+      "fields": [
+        "evidenceContext",
+        "role"
+      ],
+      "removedFields": [
+        "scopeNote"
+      ]
+    },
+    {
+      "table": "Contributions",
+      "id": "CON-F037-C-P009",
+      "fields": [
+        "evidenceContext",
+        "role"
       ],
       "removedFields": [
         "scopeNote"
@@ -3584,6 +3639,20 @@
     },
     {
       "table": "Contributions",
+      "id": "CON-F032-SM-P077",
+      "fields": [
+        "certainty",
+        "evidenceContext",
+        "id",
+        "personIds",
+        "role",
+        "sortOrder",
+        "sourceIds",
+        "workIds"
+      ]
+    },
+    {
+      "table": "Contributions",
       "id": "CON-F033-C-P077",
       "fields": [
         "certainty",
@@ -3591,6 +3660,105 @@
         "id",
         "personIds",
         "role",
+        "sortOrder",
+        "sourceIds",
+        "workIds"
+      ]
+    },
+    {
+      "table": "Contributions",
+      "id": "CON-F034-SW-P077",
+      "fields": [
+        "certainty",
+        "evidenceContext",
+        "id",
+        "personIds",
+        "role",
+        "sortOrder",
+        "sourceIds",
+        "workIds"
+      ]
+    },
+    {
+      "table": "Contributions",
+      "id": "CON-F035-BM-P009",
+      "fields": [
+        "certainty",
+        "evidenceContext",
+        "id",
+        "personIds",
+        "role",
+        "sortOrder",
+        "sourceIds",
+        "workIds"
+      ]
+    },
+    {
+      "table": "Contributions",
+      "id": "CON-F035-BM-P077",
+      "fields": [
+        "certainty",
+        "evidenceContext",
+        "id",
+        "personIds",
+        "role",
+        "sortOrder",
+        "sourceIds",
+        "workIds"
+      ]
+    },
+    {
+      "table": "Contributions",
+      "id": "CON-F035-SW-P077",
+      "fields": [
+        "certainty",
+        "evidenceContext",
+        "id",
+        "personIds",
+        "role",
+        "sortOrder",
+        "sourceIds",
+        "workIds"
+      ]
+    },
+    {
+      "table": "Contributions",
+      "id": "CON-F036-SW-P077",
+      "fields": [
+        "certainty",
+        "evidenceContext",
+        "id",
+        "personIds",
+        "role",
+        "sortOrder",
+        "sourceIds",
+        "workIds"
+      ]
+    },
+    {
+      "table": "Contributions",
+      "id": "CON-F037-SW-P077",
+      "fields": [
+        "certainty",
+        "evidenceContext",
+        "id",
+        "personIds",
+        "role",
+        "sortOrder",
+        "sourceIds",
+        "workIds"
+      ]
+    },
+    {
+      "table": "Contributions",
+      "id": "CON-F049-SM-P077",
+      "fields": [
+        "certainty",
+        "evidenceContext",
+        "id",
+        "personIds",
+        "role",
+        "scopeNote",
         "sortOrder",
         "sourceIds",
         "workIds"
@@ -5245,6 +5413,22 @@
     },
     {
       "table": "Sources",
+      "id": "SRC0230",
+      "fields": [
+        "contributionIds",
+        "workIds"
+      ]
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0236",
+      "fields": [
+        "contributionIds",
+        "workIds"
+      ]
+    },
+    {
+      "table": "Sources",
       "id": "SRC0306",
       "fields": [
         "contributionIds",
@@ -5291,6 +5475,13 @@
       "fields": [
         "contributionIds",
         "personIds"
+      ]
+    },
+    {
+      "table": "Sources",
+      "id": "SRC0486",
+      "fields": [
+        "contributionIds"
       ]
     },
     {
@@ -5554,10 +5745,54 @@
     },
     {
       "table": "Works",
+      "id": "W-F032",
+      "fields": [
+        "contributionIds"
+      ]
+    },
+    {
+      "table": "Works",
       "id": "W-F033",
       "fields": [
         "contributionIds",
         "sourceIds"
+      ]
+    },
+    {
+      "table": "Works",
+      "id": "W-F034",
+      "fields": [
+        "contributionIds"
+      ]
+    },
+    {
+      "table": "Works",
+      "id": "W-F035",
+      "fields": [
+        "contributionIds"
+      ]
+    },
+    {
+      "table": "Works",
+      "id": "W-F036",
+      "fields": [
+        "contributionIds",
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Works",
+      "id": "W-F037",
+      "fields": [
+        "contributionIds",
+        "sourceIds"
+      ]
+    },
+    {
+      "table": "Works",
+      "id": "W-F049",
+      "fields": [
+        "contributionIds"
       ]
     },
     {

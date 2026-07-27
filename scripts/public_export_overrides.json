@@ -2285,6 +2285,56 @@
           "scopeNote"
         ]
       },
+      "CON-F032-SM-P009": {
+        "reason": "Normalize Kaper's Moscow Nights credit as stock-music composition rather than an unrestricted film-composer credit; retain the existing certainty and sources.",
+        "fields": {
+          "role": "stock_music_composer",
+          "evidenceContext": "stock_music"
+        },
+        "removeFields": [
+          "scopeNote"
+        ]
+      },
+      "CON-F034-C-P009": {
+        "reason": "Model Kaper's Mutiny on the Bounty contribution at its documented scope: songwriter for “Love Song of Tahiti,” not composer of the complete film score.",
+        "fields": {
+          "role": "songwriter",
+          "evidenceContext": "film_song"
+        },
+        "removeFields": [
+          "scopeNote"
+        ]
+      },
+      "CON-F035-C-P009": {
+        "reason": "Model Kaper's Last of the Pagans contribution at its documented song scope; the separately documented background-music role is represented by its own contribution.",
+        "fields": {
+          "role": "songwriter",
+          "evidenceContext": "film_songs"
+        },
+        "removeFields": [
+          "scopeNote"
+        ]
+      },
+      "CON-F036-C-P009": {
+        "reason": "Model Kaper's A Night at the Opera contribution as songwriting, supported by the linked “Così, cosa” record, rather than as authorship of the complete film score.",
+        "fields": {
+          "role": "songwriter",
+          "evidenceContext": "film_song"
+        },
+        "removeFields": [
+          "scopeNote"
+        ]
+      },
+      "CON-F037-C-P009": {
+        "reason": "Model Kaper's Kind Lady contribution as songwriting, supported by the linked “The duchess has a twinkle in her eye” record, rather than as authorship of the complete film score.",
+        "fields": {
+          "role": "songwriter",
+          "evidenceContext": "film_song"
+        },
+        "removeFields": [
+          "scopeNote"
+        ]
+      },
       "CON-S074-PUB-ORG030": {
         "reason": "Correct the publisher transcription to Dacapo-Verlag; the legacy contribution ID is retained as an opaque identifier and reassigned to ORG113 below.",
         "fields": {
@@ -3233,6 +3283,163 @@
           ],
           "sourceIds": [
             "SRC0306",
+            "SRC0373"
+          ]
+        }
+      },
+      "CON-F032-SM-P077": {
+        "reason": "Add Walter Jurmann alongside Kaper at the same documented stock-music scope for Moscow Nights; the Buxbaum/Sieghardt filmography is the supporting authority.",
+        "fields": {
+          "id": "CON-F032-SM-P077",
+          "role": "stock_music_composer",
+          "evidenceContext": "stock_music",
+          "sortOrder": 41,
+          "certainty": "confirmed",
+          "workIds": [
+            "W-F032"
+          ],
+          "personIds": [
+            "P077"
+          ],
+          "sourceIds": [
+            "SRC0373"
+          ]
+        }
+      },
+      "CON-F034-SW-P077": {
+        "reason": "Add Walter Jurmann as songwriter for Mutiny on the Bounty at the scope established by the published “Love Song of Tahiti” credit and the official Jurmann catalogue.",
+        "fields": {
+          "id": "CON-F034-SW-P077",
+          "role": "songwriter",
+          "evidenceContext": "film_song",
+          "sortOrder": 41,
+          "certainty": "confirmed",
+          "workIds": [
+            "W-F034"
+          ],
+          "personIds": [
+            "P077"
+          ],
+          "sourceIds": [
+            "SRC0306",
+            "SRC0486"
+          ]
+        }
+      },
+      "CON-F035-SW-P077": {
+        "reason": "Add Walter Jurmann as songwriter for Last of the Pagans, supported by the documented Kaper–Jurmann songs “Happy Natives” and “Shadows on the Starlit Waters.”",
+        "fields": {
+          "id": "CON-F035-SW-P077",
+          "role": "songwriter",
+          "evidenceContext": "film_songs",
+          "sortOrder": 41,
+          "certainty": "confirmed",
+          "workIds": [
+            "W-F035"
+          ],
+          "personIds": [
+            "P077"
+          ],
+          "sourceIds": [
+            "SRC0306",
+            "SRC0373"
+          ]
+        }
+      },
+      "CON-F035-BM-P009": {
+        "reason": "Represent Kaper's separately documented background-music contribution to Last of the Pagans without conflating it with the film's song credits or complete score.",
+        "fields": {
+          "id": "CON-F035-BM-P009",
+          "role": "background_music_composer",
+          "evidenceContext": "background_music",
+          "sortOrder": 42,
+          "certainty": "confirmed",
+          "workIds": [
+            "W-F035"
+          ],
+          "personIds": [
+            "P009"
+          ],
+          "sourceIds": [
+            "SRC0306"
+          ]
+        }
+      },
+      "CON-F035-BM-P077": {
+        "reason": "Represent Jurmann's separately documented background-music contribution to Last of the Pagans without conflating it with the film's song credits or complete score.",
+        "fields": {
+          "id": "CON-F035-BM-P077",
+          "role": "background_music_composer",
+          "evidenceContext": "background_music",
+          "sortOrder": 43,
+          "certainty": "confirmed",
+          "workIds": [
+            "W-F035"
+          ],
+          "personIds": [
+            "P077"
+          ],
+          "sourceIds": [
+            "SRC0306"
+          ]
+        }
+      },
+      "CON-F036-SW-P077": {
+        "reason": "Add Walter Jurmann as songwriter for A Night at the Opera, supported by the Buxbaum/Sieghardt filmography and the linked “Così, cosa” sheet-music record.",
+        "fields": {
+          "id": "CON-F036-SW-P077",
+          "role": "songwriter",
+          "evidenceContext": "film_song",
+          "sortOrder": 41,
+          "certainty": "confirmed",
+          "workIds": [
+            "W-F036"
+          ],
+          "personIds": [
+            "P077"
+          ],
+          "sourceIds": [
+            "SRC0230",
+            "SRC0373"
+          ]
+        }
+      },
+      "CON-F037-SW-P077": {
+        "reason": "Add Walter Jurmann as songwriter for Kind Lady, supported by the Buxbaum/Sieghardt filmography and the linked “The duchess has a twinkle in her eye” record.",
+        "fields": {
+          "id": "CON-F037-SW-P077",
+          "role": "songwriter",
+          "evidenceContext": "film_song",
+          "sortOrder": 41,
+          "certainty": "confirmed",
+          "workIds": [
+            "W-F037"
+          ],
+          "personIds": [
+            "P077"
+          ],
+          "sourceIds": [
+            "SRC0236",
+            "SRC0373"
+          ]
+        }
+      },
+      "CON-F049-SM-P077": {
+        "reason": "Add Walter Jurmann to The Spy Ring at the same probable stock/background-music scope already retained for Kaper, without changing the film record, its wording, certainty or sources.",
+        "fields": {
+          "id": "CON-F049-SM-P077",
+          "role": "composer",
+          "evidenceContext": "stock_music",
+          "scopeNote": "Pre-existing, stock, reused, or otherwise non-principal music contribution; this is not a principal film-score credit.",
+          "sortOrder": 41,
+          "certainty": "probable",
+          "workIds": [
+            "W-F049"
+          ],
+          "personIds": [
+            "P077"
+          ],
+          "sourceIds": [
             "SRC0373"
           ]
         }
@@ -4645,6 +4852,62 @@
           ]
         }
       },
+      "W-F032": {
+        "reason": "Attach Walter Jurmann at the same stock-music scope documented for Kaper in Moscow Nights.",
+        "fields": {
+          "contributionIds": [
+            "CON-F032-SM-P077"
+          ]
+        }
+      },
+      "W-F034": {
+        "reason": "Attach Walter Jurmann's documented songwriter contribution for “Love Song of Tahiti” without presenting him as composer of the complete Mutiny on the Bounty score.",
+        "fields": {
+          "contributionIds": [
+            "CON-F034-SW-P077"
+          ]
+        }
+      },
+      "W-F035": {
+        "reason": "Attach the separately modelled Kaper–Jurmann songwriting and background-music contributions for Last of the Pagans.",
+        "fields": {
+          "contributionIds": [
+            "CON-F035-SW-P077",
+            "CON-F035-BM-P009",
+            "CON-F035-BM-P077"
+          ]
+        }
+      },
+      "W-F036": {
+        "reason": "Attach Walter Jurmann's documented songwriting contribution for A Night at the Opera without presenting him as composer of the complete film score.",
+        "fields": {
+          "sourceIds": [
+            "SRC0230"
+          ],
+          "contributionIds": [
+            "CON-F036-SW-P077"
+          ]
+        }
+      },
+      "W-F037": {
+        "reason": "Attach Walter Jurmann's documented songwriting contribution for Kind Lady without presenting him as composer of the complete film score.",
+        "fields": {
+          "sourceIds": [
+            "SRC0236"
+          ],
+          "contributionIds": [
+            "CON-F037-SW-P077"
+          ]
+        }
+      },
+      "W-F049": {
+        "reason": "Add Walter Jurmann to The Spy Ring at the existing probable stock/background-music scope while preserving SRC0373, SRC0482 and every other film and work field unchanged.",
+        "fields": {
+          "contributionIds": [
+            "CON-F049-SM-P077"
+          ]
+        }
+      },
       "W-S023": {
         "reason": "Use the exact ANNO registration SRC0226 instead of its superseded duplicate SRC0200.",
         "fields": {
@@ -4895,11 +5158,16 @@
             "SRC0221",
             "SRC0222",
             "SRC0223",
-            "SRC0226"
+            "SRC0226",
+            "SRC0230",
+            "SRC0236",
+            "SRC0306",
+            "SRC0486"
           ],
           "contributionIds": [
             "CON-F009-C-P009",
-            "CON-F022-C-P009"
+            "CON-F022-C-P009",
+            "CON-F035-BM-P009"
           ]
         }
       },
@@ -5008,8 +5276,11 @@
             "SRC0221",
             "SRC0222",
             "SRC0223",
+            "SRC0230",
+            "SRC0236",
             "SRC0334",
-            "SRC0478"
+            "SRC0478",
+            "SRC0486"
           ],
           "contributionIds": [
             "CON-F004-C-P077",
@@ -5038,7 +5309,14 @@
             "CON-F030-C-P077",
             "CON-F031-C-P077",
             "CON-F033-C-P077",
-            "CON-F052-C-P077"
+            "CON-F052-C-P077",
+            "CON-F032-SM-P077",
+            "CON-F034-SW-P077",
+            "CON-F035-SW-P077",
+            "CON-F035-BM-P077",
+            "CON-F036-SW-P077",
+            "CON-F037-SW-P077",
+            "CON-F049-SM-P077"
           ]
         }
       },
@@ -5565,7 +5843,41 @@
             "CON-F030-C-P077",
             "CON-F031-C-P077",
             "CON-F033-C-P077",
-            "CON-F052-C-P077"
+            "CON-F052-C-P077",
+            "CON-F034-SW-P077",
+            "CON-F035-SW-P077",
+            "CON-F035-BM-P009",
+            "CON-F035-BM-P077"
+          ]
+        }
+      },
+      "SRC0230": {
+        "reason": "Synchronize the “Così, cosa” sheet-music evidence with Jurmann's film-level songwriter contribution for A Night at the Opera.",
+        "fields": {
+          "workIds": [
+            "W-F036"
+          ],
+          "contributionIds": [
+            "CON-F036-SW-P077"
+          ]
+        }
+      },
+      "SRC0236": {
+        "reason": "Synchronize the published “The duchess has a twinkle in her eye” evidence with Jurmann's film-level songwriter contribution for Kind Lady.",
+        "fields": {
+          "workIds": [
+            "W-F037"
+          ],
+          "contributionIds": [
+            "CON-F037-SW-P077"
+          ]
+        }
+      },
+      "SRC0486": {
+        "reason": "Synchronize the published “Love Song of Tahiti” credit with Jurmann's film-level songwriter contribution for Mutiny on the Bounty.",
+        "fields": {
+          "contributionIds": [
+            "CON-F034-SW-P077"
           ]
         }
       },
@@ -5802,7 +6114,12 @@
             "CON-F030-C-P077",
             "CON-F031-C-P077",
             "CON-F033-C-P077",
-            "CON-F052-C-P077"
+            "CON-F052-C-P077",
+            "CON-F032-SM-P077",
+            "CON-F035-SW-P077",
+            "CON-F036-SW-P077",
+            "CON-F037-SW-P077",
+            "CON-F049-SM-P077"
           ],
           "nameVariantIds": [
             "PNV0007"

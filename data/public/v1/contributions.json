@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 1011,
+  "count": 1019,
   "records": [
     {
       "id": "CON-F001-C-P009",
@@ -2453,9 +2453,8 @@
     },
     {
       "id": "CON-F032-SM-P009",
-      "role": "composer",
-      "evidenceContext": "film_credits",
-      "scopeNote": "Pre-existing, stock, reused, or otherwise non-principal music contribution; this is not a principal film-score credit. See the Film attribution note for exact scope.",
+      "role": "stock_music_composer",
+      "evidenceContext": "stock_music",
       "sortOrder": 40,
       "certainty": "confirmed",
       "workIds": [
@@ -2466,6 +2465,22 @@
       ],
       "sourceIds": [
         "SRC0167",
+        "SRC0373"
+      ]
+    },
+    {
+      "id": "CON-F032-SM-P077",
+      "role": "stock_music_composer",
+      "evidenceContext": "stock_music",
+      "sortOrder": 41,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-F032"
+      ],
+      "personIds": [
+        "P077"
+      ],
+      "sourceIds": [
         "SRC0373"
       ]
     },
@@ -2542,9 +2557,8 @@
     },
     {
       "id": "CON-F034-C-P009",
-      "role": "composer",
-      "evidenceContext": "film_credits",
-      "scopeNote": "Composition of one or more songs associated with the film; this is not a claim to authorship of the complete film score.",
+      "role": "songwriter",
+      "evidenceContext": "film_song",
       "sortOrder": 40,
       "certainty": "confirmed",
       "workIds": [
@@ -2599,10 +2613,58 @@
       ]
     },
     {
+      "id": "CON-F034-SW-P077",
+      "role": "songwriter",
+      "evidenceContext": "film_song",
+      "sortOrder": 41,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-F034"
+      ],
+      "personIds": [
+        "P077"
+      ],
+      "sourceIds": [
+        "SRC0306",
+        "SRC0486"
+      ]
+    },
+    {
+      "id": "CON-F035-BM-P009",
+      "role": "background_music_composer",
+      "evidenceContext": "background_music",
+      "sortOrder": 42,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-F035"
+      ],
+      "personIds": [
+        "P009"
+      ],
+      "sourceIds": [
+        "SRC0306"
+      ]
+    },
+    {
+      "id": "CON-F035-BM-P077",
+      "role": "background_music_composer",
+      "evidenceContext": "background_music",
+      "sortOrder": 43,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-F035"
+      ],
+      "personIds": [
+        "P077"
+      ],
+      "sourceIds": [
+        "SRC0306"
+      ]
+    },
+    {
       "id": "CON-F035-C-P009",
-      "role": "composer",
-      "evidenceContext": "film_credits",
-      "scopeNote": "Composition of one or more songs associated with the film; this is not a claim to authorship of the complete film score.",
+      "role": "songwriter",
+      "evidenceContext": "film_songs",
       "sortOrder": 40,
       "certainty": "confirmed",
       "workIds": [
@@ -2650,10 +2712,26 @@
       ]
     },
     {
+      "id": "CON-F035-SW-P077",
+      "role": "songwriter",
+      "evidenceContext": "film_songs",
+      "sortOrder": 41,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-F035"
+      ],
+      "personIds": [
+        "P077"
+      ],
+      "sourceIds": [
+        "SRC0306",
+        "SRC0373"
+      ]
+    },
+    {
       "id": "CON-F036-C-P009",
-      "role": "composer",
-      "evidenceContext": "film_credits",
-      "scopeNote": "Composition of one or more songs associated with the film; this is not a claim to authorship of the complete film score.",
+      "role": "songwriter",
+      "evidenceContext": "film_song",
       "sortOrder": 40,
       "certainty": "confirmed",
       "workIds": [
@@ -2702,10 +2780,26 @@
       ]
     },
     {
+      "id": "CON-F036-SW-P077",
+      "role": "songwriter",
+      "evidenceContext": "film_song",
+      "sortOrder": 41,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-F036"
+      ],
+      "personIds": [
+        "P077"
+      ],
+      "sourceIds": [
+        "SRC0230",
+        "SRC0373"
+      ]
+    },
+    {
       "id": "CON-F037-C-P009",
-      "role": "composer",
-      "evidenceContext": "film_credits",
-      "scopeNote": "Composition of one or more songs associated with the film; this is not a claim to authorship of the complete film score.",
+      "role": "songwriter",
+      "evidenceContext": "film_song",
       "sortOrder": 40,
       "certainty": "confirmed",
       "workIds": [
@@ -2750,6 +2844,23 @@
       ],
       "sourceIds": [
         "SRC0142",
+        "SRC0373"
+      ]
+    },
+    {
+      "id": "CON-F037-SW-P077",
+      "role": "songwriter",
+      "evidenceContext": "film_song",
+      "sortOrder": 41,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-F037"
+      ],
+      "personIds": [
+        "P077"
+      ],
+      "sourceIds": [
+        "SRC0236",
         "SRC0373"
       ]
     },
@@ -3413,6 +3524,23 @@
       ],
       "personIds": [
         "P009"
+      ],
+      "sourceIds": [
+        "SRC0373"
+      ]
+    },
+    {
+      "id": "CON-F049-SM-P077",
+      "role": "composer",
+      "evidenceContext": "stock_music",
+      "scopeNote": "Pre-existing, stock, reused, or otherwise non-principal music contribution; this is not a principal film-score credit.",
+      "sortOrder": 41,
+      "certainty": "probable",
+      "workIds": [
+        "W-F049"
+      ],
+      "personIds": [
+        "P077"
       ],
       "sourceIds": [
         "SRC0373"
