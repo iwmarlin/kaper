@@ -2918,7 +2918,7 @@
       "id": "CON-F040-BM-P009",
       "role": "composer",
       "evidenceContext": "film_credits",
-      "scopeNote": "Background, special, quoted, or cue-level music contribution; this is not a principal film-score credit unless the Film attribution note explicitly says otherwise.",
+      "scopeNote": "Background, quoted or cue-level music; not a principal film-score credit.",
       "sortOrder": 40,
       "certainty": "probable",
       "workIds": [
@@ -3005,7 +3005,7 @@
       "id": "CON-F041-SM-P009",
       "role": "composer",
       "evidenceContext": "film_credits",
-      "scopeNote": "Pre-existing, stock, reused, or otherwise non-principal music contribution; this is not a principal film-score credit. See the Film attribution note for exact scope.",
+      "scopeNote": "Pre-existing or reused music; not a principal film-score credit.",
       "sortOrder": 40,
       "certainty": "confirmed",
       "workIds": [
@@ -3186,7 +3186,7 @@
       "id": "CON-F045-BM-P009",
       "role": "composer",
       "evidenceContext": "film_credits",
-      "scopeNote": "Background, special, quoted, or cue-level music contribution; this is not a principal film-score credit unless the Film attribution note explicitly says otherwise.",
+      "scopeNote": "Background, quoted or cue-level music; not a principal film-score credit.",
       "sortOrder": 40,
       "certainty": "confirmed",
       "publicNote": "Marche militaire from Les nuits moscovites",
@@ -3456,7 +3456,7 @@
       "id": "CON-F049-SM-P009",
       "role": "composer",
       "evidenceContext": "film_credits",
-      "scopeNote": "Pre-existing, stock, reused, or otherwise non-principal music contribution; this is not a principal film-score credit. See the Film attribution note for exact scope.",
+      "scopeNote": "Pre-existing or reused music; not a principal film-score credit.",
       "sortOrder": 40,
       "certainty": "probable",
       "workIds": [
@@ -3473,7 +3473,7 @@
       "id": "CON-F049-SM-P077",
       "role": "composer",
       "evidenceContext": "stock_music",
-      "scopeNote": "Pre-existing, stock, reused, or otherwise non-principal music contribution; this is not a principal film-score credit. See the Film attribution note for exact scope.",
+      "scopeNote": "Pre-existing or reused music; not a principal film-score credit.",
       "sortOrder": 41,
       "certainty": "probable",
       "workIds": [
@@ -17729,7 +17729,7 @@
       "evidenceContext": "film_credits",
       "sortOrder": 41,
       "certainty": "probable",
-      "scopeNote": "Background, special, quoted, or cue-level music contribution; this is not a principal film-score credit unless the Film attribution note explicitly says otherwise.",
+      "scopeNote": "Background, quoted or cue-level music; not a principal film-score credit.",
       "workIds": [
         "W-F040"
       ],
@@ -17746,7 +17746,7 @@
       "evidenceContext": "film_credits",
       "sortOrder": 41,
       "certainty": "confirmed",
-      "scopeNote": "Pre-existing, stock, reused, or otherwise non-principal music contribution; this is not a principal film-score credit. See the Film attribution note for exact scope.",
+      "scopeNote": "Pre-existing or reused music; not a principal film-score credit.",
       "workIds": [
         "W-F041"
       ],
@@ -17821,7 +17821,7 @@
       "evidenceContext": "film_credits",
       "sortOrder": 41,
       "certainty": "confirmed",
-      "scopeNote": "Background, special, quoted, or cue-level music contribution; this is not a principal film-score credit unless the Film attribution note explicitly says otherwise.",
+      "scopeNote": "Background, quoted or cue-level music; not a principal film-score credit.",
       "workIds": [
         "W-F045"
       ],
