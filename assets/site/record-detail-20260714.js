@@ -1,4 +1,4 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=7703e0b631";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=78192fa69b";
 import {
   certaintyBadge,
   escapeHtml,
@@ -24,7 +24,7 @@ import {
   scopeBadge,
   typeBadge,
   updateMeta,
-} from "./core.js?v=7703e0b631";
+} from "./core.js?v=78192fa69b";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 mountSiteChrome("");
@@ -153,11 +153,6 @@ function mediaFigures(items, sourceIndex) {
     </figure>`).join("")}</div>`;
 }
 
-const GENERIC_FILM_CREDIT_NOTES = new Set([
-  "Film-music composition credit as documented by the linked film sources.",
-  "Film-score composition credit.",
-]);
-
 function contributionList(items, indexes, {
   conciseCredits = false,
   redundantNotes = [],
@@ -192,7 +187,6 @@ function contributionList(items, indexes, {
         && ["composer", "arranger"].includes(item.role)
         && String(item.certainty || "").toLowerCase() === "confirmed"
       ) note = "";
-      if (conciseCredits && GENERIC_FILM_CREDIT_NOTES.has(note)) note = "";
       const certainty = conciseCredits && String(item.certainty || "").toLowerCase() === "confirmed"
         ? ""
         : certaintyBadge(item.certainty);
