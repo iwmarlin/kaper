@@ -1866,7 +1866,7 @@
       "roles": [
         "lyricist"
       ],
-      "authorityUrl": "https://viaf.org/viaf/71658265",
+      "authorityUrl": "VIAF: https://viaf.org/viaf/71658265",
       "sourceIds": [
         "SRC0373",
         "SRC0544"
@@ -3286,7 +3286,7 @@
       "roles": [
         "performer"
       ],
-      "authorityUrl": "https://viaf.org/viaf/49423851",
+      "authorityUrl": "VIAF: https://viaf.org/viaf/49423851",
       "sourceIds": [
         "SRC0521",
         "SRC0543"
@@ -3314,7 +3314,7 @@
       "roles": [
         "performer"
       ],
-      "authorityUrl": "https://viaf.org/viaf/100315219",
+      "authorityUrl": "VIAF: https://viaf.org/viaf/100315219",
       "sourceIds": [
         "SRC0521"
       ],
@@ -3341,7 +3341,6 @@
       "roles": [
         "performer"
       ],
-      "authorityUrl": "https://collections.arolsen-archives.org/en/archive/3-2-1-2_03020102-034-283",
       "sourceIds": [
         "SRC0521",
         "SRC0545",
@@ -3361,7 +3360,8 @@
       ],
       "workIds": [
         "W-O011"
-      ]
+      ],
+      "authorityUrl": "Arolsen Archives: https://collections.arolsen-archives.org/en/archive/3-2-1-2_03020102-034-283"
     },
     {
       "id": "P091",
@@ -3603,7 +3603,7 @@
       "roles": [
         "lyricist"
       ],
-      "authorityUrl": "https://catalogue.bnf.fr/ark:/12148/cb165157811\nhttps://data.bnf.fr/ark:/12148/cb165157811",
+      "authorityUrl": "BnF Catalogue: https://catalogue.bnf.fr/ark:/12148/cb165157811\nBnF data: https://data.bnf.fr/ark:/12148/cb165157811",
       "sourceIds": [
         "SRC0373",
         "SRC0549"
@@ -3673,7 +3673,7 @@
       "roles": [
         "lyricist"
       ],
-      "authorityUrl": "VIAF: \nhttp://viaf.org/viaf/221170232",
+      "authorityUrl": "VIAF: http://viaf.org/viaf/221170232",
       "sourceIds": [
         "SRC0373"
       ],
@@ -3873,7 +3873,6 @@
         "pianist",
         "performer"
       ],
-      "authorityUrl": "NIFC / Chopin Biography: chopin.nifc.pl/en/chopin/osoba/24_etkin_roza",
       "sourceIds": [
         "SRC0367",
         "SRC0459",
@@ -3889,7 +3888,8 @@
       ],
       "workIds": [
         "W-O005"
-      ]
+      ],
+      "authorityUrl": "NIFC / Chopin Biography: https://chopin.nifc.pl/en/chopin/osoba/24_etkin_roza"
     },
     {
       "id": "P122",
@@ -3902,7 +3902,7 @@
         "pianist",
         "performer"
       ],
-      "authorityUrl": "LexM (Lexikon verfolgter Musiker und Musikerinnen der NS-Zeit), S. J. Lengowski, 'Mayer-Mahr, Moritz': https://www.scharwenka-stiftung.de/images/pdf/archiv/konservatorien/persoenlichkeiten/mayer_mahr_moritz/mayer_mahr_moritz_metadaten_lexm.pdf\nWikimedia Commons: File:Mayer-Mahr.jpg",
+      "authorityUrl": "LexM (Lexikon verfolgter Musiker und Musikerinnen der NS-Zeit), S. J. Lengowski, 'Mayer-Mahr, Moritz': https://www.scharwenka-stiftung.de/images/pdf/archiv/konservatorien/persoenlichkeiten/mayer_mahr_moritz/mayer_mahr_moritz_metadaten_lexm.pdf\nWikimedia Commons: https://commons.wikimedia.org/wiki/File:Mayer-Mahr.jpg",
       "sourceIds": [
         "SRC0366",
         "SRC0490"
@@ -3922,7 +3922,7 @@
         "composer",
         "conductor"
       ],
-      "authorityUrl": "ÖML (Oesterreichisches Musiklexikon online), Uwe Harten, 'Gmeindl, Walter': https://doi.org/10.1553/0x0001cf41\nDiscogs: artist 6548258",
+      "authorityUrl": "ÖML (Oesterreichisches Musiklexikon online), Uwe Harten, 'Gmeindl, Walter': https://doi.org/10.1553/0x0001cf41\nDiscogs: https://www.discogs.com/artist/6548258",
       "sourceIds": [
         "SRC0331",
         "SRC0490"
@@ -3942,7 +3942,7 @@
         "film director",
         "writer"
       ],
-      "authorityUrl": "https://data.bnf.fr/fr/14129111/serge_de_poligny/",
+      "authorityUrl": "BnF data: https://data.bnf.fr/fr/14129111/serge_de_poligny/",
       "sourceIds": [
         "SRC0532"
       ],
@@ -3987,7 +3987,7 @@
         "composer",
         "writer"
       ],
-      "authorityUrl": "https://d-nb.info/gnd/128793481\nhttps://viaf.org/viaf/61733693\nhttps://isni.org/isni/0000000109078267\nhttps://id.loc.gov/authorities/names/n83134785",
+      "authorityUrl": "GND: https://d-nb.info/gnd/128793481\nVIAF: https://viaf.org/viaf/61733693\nISNI: https://isni.org/isni/0000000109078267\nLibrary of Congress: https://id.loc.gov/authorities/names/n83134785",
       "sourceIds": [
         "SRC0474",
         "SRC0548"
@@ -4042,7 +4042,7 @@
       "timelineEventIds": [
         "TE0054"
       ],
-      "authorityUrl": "https://viaf.org/viaf/66651610"
+      "authorityUrl": "VIAF: https://viaf.org/viaf/66651610"
     }
   ]
 }
