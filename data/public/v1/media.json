@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 202,
+  "count": 203,
   "records": [
     {
       "id": "M001",
@@ -205,7 +205,8 @@
         "ORG001"
       ],
       "sourceIds": [
-        "SRC0006"
+        "SRC0006",
+        "SRC0569"
       ],
       "workIds": [
         "W-S119"
@@ -7016,6 +7017,43 @@
       ],
       "periods": [
         "european"
+      ]
+    },
+    {
+      "id": "M241",
+      "title": "Motion Picture Herald, 5 September 1936 — ASCAP list of songs played over 10,000 times",
+      "slug": "timeline-ascap-songs-played-over-10000-times-motion-picture-herald-5091936",
+      "mediaType": "image",
+      "storageType": "local",
+      "assetPath": "assets/images/historical-context/ascap-1936.jpg",
+      "externalUrl": "https://archive.org/stream/motionpictureher1241unse/motionpictureher1241unse_djvu.txt",
+      "category": "press clipping",
+      "galleryStatus": "eligible",
+      "period": "hollywood",
+      "sortOrder": 241,
+      "altText": "Page from Motion Picture Herald, 5 September 1936, headed “Songs Played Over 10,000 Times”, listing the ASCAP tabulation of the most-broadcast songs of 1935–36.",
+      "publicCaption": "“Songs Played Over 10,000 Times” — the ASCAP tabulation printed in Motion Picture Herald on 5 September 1936. Entry 14 records “You’re All I Need” from Escapade, listed under the source title Lie Like Gentlemen, with 21,424 broadcasts over NBC and CBS and authors given as Bronislaw Kaper, Walter Jarmann and Gus Kahn.",
+      "publicCreditLine": "Motion Picture Herald / Media History Digital Library / Internet Archive.",
+      "rightsStatus": "permission_needed_or_fair_use_claimed",
+      "rightsNote": "Reuse rights are not cleared. A reduced-resolution reproduction (1100 × 1938 px) of the printed page is used for scholarly identification of and commentary on the ASCAP tabulation documenting “You’re All I Need”. Digitised by the Media History Digital Library and hosted by Internet Archive.",
+      "sourceIds": [
+        "SRC0569"
+      ],
+      "workIds": [
+        "W-S119",
+        "W-F033"
+      ],
+      "songIds": [
+        "S119"
+      ],
+      "timelineEventIds": [
+        "TE0055"
+      ],
+      "heroTimelineEventIds": [
+        "TE0055"
+      ],
+      "periods": [
+        "hollywood"
       ]
     }
   ]
