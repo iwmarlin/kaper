@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 110,
+  "count": 111,
   "records": [
     {
       "id": "P001",
@@ -4020,6 +4020,29 @@
       "workIds": [
         "W-F013"
       ]
+    },
+    {
+      "id": "P128",
+      "displayName": "Duke Ellington",
+      "sortName": "Ellington, Duke",
+      "authorizedName": "Ellington, Duke, 1899–1974",
+      "slug": "duke-ellington",
+      "primaryRole": "performer",
+      "roles": [
+        "performer",
+        "composer",
+        "pianist"
+      ],
+      "sourceIds": [
+        "SRC0570"
+      ],
+      "contributionIds": [
+        "CON-S152-P-P128"
+      ],
+      "timelineEventIds": [
+        "TE0054"
+      ],
+      "authorityUrl": "https://viaf.org/viaf/66651610"
     }
   ]
 }
