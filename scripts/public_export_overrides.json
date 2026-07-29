@@ -2665,6 +2665,32 @@
             "CON-F013-C-P127"
           ]
         }
+      },
+      "P128": {
+        "reason": "Preserve the verified Duke Ellington authority record and connect it to the documented 1937 recording, source and performer contribution.",
+        "fields": {
+          "id": "P128",
+          "displayName": "Duke Ellington",
+          "sortName": "Ellington, Duke",
+          "authorizedName": "Ellington, Duke, 1899–1974",
+          "slug": "duke-ellington",
+          "primaryRole": "performer",
+          "roles": [
+            "performer",
+            "composer",
+            "pianist"
+          ],
+          "sourceIds": [
+            "SRC0570"
+          ],
+          "contributionIds": [
+            "CON-S152-P-P128"
+          ],
+          "timelineEventIds": [
+            "TE0054"
+          ],
+          "authorityUrl": "VIAF: https://viaf.org/viaf/66651610"
+        }
       }
     },
     "Contributions": {
@@ -3443,6 +3469,222 @@
             "SRC0373"
           ]
         }
+      },
+      "CON-F038-C-P077": {
+        "reason": "Preserve Walter Jurmann's existing documented film-song contribution to W-F038.",
+        "fields": {
+          "id": "CON-F038-C-P077",
+          "role": "composer",
+          "evidenceContext": "film_credits",
+          "sortOrder": 41,
+          "certainty": "confirmed",
+          "scopeNote": "Composition of one or more songs associated with the film; this is not a claim to authorship of the complete film score.",
+          "workIds": ["W-F038"],
+          "personIds": ["P077"],
+          "sourceIds": ["SRC0148", "SRC0373"]
+        }
+      },
+      "CON-F039-C-P077": {
+        "reason": "Preserve Walter Jurmann's existing documented film-song contribution to W-F039.",
+        "fields": {
+          "id": "CON-F039-C-P077",
+          "role": "composer",
+          "evidenceContext": "film_credits",
+          "sortOrder": 41,
+          "certainty": "confirmed",
+          "scopeNote": "Composition of one or more songs associated with the film; this is not a claim to authorship of the complete film score.",
+          "workIds": ["W-F039"],
+          "personIds": ["P077"],
+          "sourceIds": ["SRC0169", "SRC0306", "SRC0373"]
+        }
+      },
+      "CON-F040-BM-P077": {
+        "reason": "Preserve Walter Jurmann's existing qualified background-music contribution to W-F040.",
+        "fields": {
+          "id": "CON-F040-BM-P077",
+          "role": "composer",
+          "evidenceContext": "film_credits",
+          "sortOrder": 41,
+          "certainty": "probable",
+          "scopeNote": "Background, quoted or cue-level music; not a principal film-score credit.",
+          "workIds": ["W-F040"],
+          "personIds": ["P077"],
+          "sourceIds": ["SRC0306"]
+        }
+      },
+      "CON-F041-SM-P077": {
+        "reason": "Preserve Walter Jurmann's existing documented reused-music contribution to W-F041.",
+        "fields": {
+          "id": "CON-F041-SM-P077",
+          "role": "composer",
+          "evidenceContext": "film_credits",
+          "sortOrder": 41,
+          "certainty": "confirmed",
+          "scopeNote": "Pre-existing or reused music; not a principal film-score credit.",
+          "workIds": ["W-F041"],
+          "personIds": ["P077"],
+          "sourceIds": ["SRC0089", "SRC0171", "SRC0373"]
+        }
+      },
+      "CON-F042-C-P077": {
+        "reason": "Preserve Walter Jurmann's existing documented film-song contribution to W-F042.",
+        "fields": {
+          "id": "CON-F042-C-P077",
+          "role": "composer",
+          "evidenceContext": "film_credits",
+          "sortOrder": 41,
+          "certainty": "confirmed",
+          "scopeNote": "Composition of one or more songs associated with the film; this is not a claim to authorship of the complete film score.",
+          "workIds": ["W-F042"],
+          "personIds": ["P077"],
+          "sourceIds": ["SRC0145", "SRC0373", "SRC0380"]
+        }
+      },
+      "CON-F043-C-P077": {
+        "reason": "Preserve Walter Jurmann's existing documented film-song contribution to W-F043.",
+        "fields": {
+          "id": "CON-F043-C-P077",
+          "role": "composer",
+          "evidenceContext": "film_credits",
+          "sortOrder": 41,
+          "certainty": "confirmed",
+          "scopeNote": "Composition of one or more songs associated with the film; this is not a claim to authorship of the complete film score.",
+          "workIds": ["W-F043"],
+          "personIds": ["P077"],
+          "sourceIds": ["SRC0144", "SRC0373"]
+        }
+      },
+      "CON-F044-C-P077": {
+        "reason": "Preserve Walter Jurmann's existing documented film-song contribution to W-F044.",
+        "fields": {
+          "id": "CON-F044-C-P077",
+          "role": "composer",
+          "evidenceContext": "film_credits",
+          "sortOrder": 41,
+          "certainty": "confirmed",
+          "scopeNote": "Composition of one or more songs associated with the film; this is not a claim to authorship of the complete film score.",
+          "workIds": ["W-F044"],
+          "personIds": ["P077"],
+          "sourceIds": ["SRC0306", "SRC0373", "SRC0480"]
+        }
+      },
+      "CON-F045-BM-P077": {
+        "reason": "Preserve Walter Jurmann's existing documented background-music contribution to W-F045.",
+        "fields": {
+          "id": "CON-F045-BM-P077",
+          "role": "composer",
+          "evidenceContext": "film_credits",
+          "sortOrder": 41,
+          "certainty": "confirmed",
+          "scopeNote": "Background, quoted or cue-level music; not a principal film-score credit.",
+          "workIds": ["W-F045"],
+          "personIds": ["P077"],
+          "sourceIds": ["SRC0173", "SRC0306"]
+        }
+      },
+      "CON-F046-C-P077": {
+        "reason": "Preserve Walter Jurmann's existing documented film-song contribution to W-F046.",
+        "fields": {
+          "id": "CON-F046-C-P077",
+          "role": "composer",
+          "evidenceContext": "film_credits",
+          "sortOrder": 41,
+          "certainty": "confirmed",
+          "scopeNote": "Composition of one or more songs associated with the film; this is not a claim to authorship of the complete film score.",
+          "workIds": ["W-F046"],
+          "personIds": ["P077"],
+          "sourceIds": ["SRC0114", "SRC0141", "SRC0373"]
+        }
+      },
+      "CON-F047-C-P077": {
+        "reason": "Preserve Walter Jurmann's existing documented film-song contribution to W-F047.",
+        "fields": {
+          "id": "CON-F047-C-P077",
+          "role": "composer",
+          "evidenceContext": "film_credits",
+          "sortOrder": 41,
+          "certainty": "confirmed",
+          "scopeNote": "Composition of one or more songs associated with the film; this is not a claim to authorship of the complete film score.",
+          "workIds": ["W-F047"],
+          "personIds": ["P077"],
+          "sourceIds": ["SRC0238", "SRC0240", "SRC0373"]
+        }
+      },
+      "CON-F048-C-P077": {
+        "reason": "Preserve Walter Jurmann's existing documented film-song contribution to W-F048.",
+        "fields": {
+          "id": "CON-F048-C-P077",
+          "role": "composer",
+          "evidenceContext": "film_credits",
+          "sortOrder": 41,
+          "certainty": "confirmed",
+          "scopeNote": "Composition of one or more songs associated with the film; this is not a claim to authorship of the complete film score.",
+          "workIds": ["W-F048"],
+          "personIds": ["P077"],
+          "sourceIds": ["SRC0147", "SRC0373"]
+        }
+      },
+      "CON-F050-C-P077": {
+        "reason": "Preserve Walter Jurmann's existing documented film-song contribution to W-F050.",
+        "fields": {
+          "id": "CON-F050-C-P077",
+          "role": "composer",
+          "evidenceContext": "film_credits",
+          "sortOrder": 41,
+          "certainty": "confirmed",
+          "scopeNote": "Composition of one or more songs associated with the film; this is not a claim to authorship of the complete film score.",
+          "workIds": ["W-F050"],
+          "personIds": ["P077"],
+          "sourceIds": ["SRC0176", "SRC0280", "SRC0373"]
+        }
+      },
+      "CON-F051-C-P077": {
+        "reason": "Preserve Walter Jurmann's existing documented film-song contribution to W-F051.",
+        "fields": {
+          "id": "CON-F051-C-P077",
+          "role": "composer",
+          "evidenceContext": "film_credits",
+          "sortOrder": 41,
+          "certainty": "confirmed",
+          "scopeNote": "Composition of one or more songs associated with the film; this is not a claim to authorship of the complete film score.",
+          "workIds": ["W-F051"],
+          "personIds": ["P077"],
+          "sourceIds": ["SRC0146", "SRC0306"]
+        }
+      },
+      "CON-F054-C-P077": {
+        "reason": "Preserve Walter Jurmann's existing documented film-song contribution to W-F054.",
+        "fields": {
+          "id": "CON-F054-C-P077",
+          "role": "composer",
+          "evidenceContext": "film_credits",
+          "sortOrder": 41,
+          "certainty": "confirmed",
+          "scopeNote": "Composition of one or more songs associated with the film; this is not a claim to authorship of the complete film score.",
+          "workIds": ["W-F054"],
+          "personIds": ["P077"],
+          "sourceIds": ["SRC0373"]
+        }
+      },
+      "CON-S152-P-P128": {
+        "reason": "Preserve Duke Ellington's documented performer contribution to the 8 June 1937 recording of W-S152.",
+        "fields": {
+          "id": "CON-S152-P-P128",
+          "role": "performer",
+          "evidenceContext": "recording_label",
+          "sortOrder": 50,
+          "certainty": "confirmed",
+          "scopeNote": "Recorded the song with his orchestra for Master (MA 137) on 8 June 1937; this documents performance, not authorship of the work.",
+          "workIds": [
+            "W-S152"
+          ],
+          "personIds": [
+            "P128"
+          ],
+          "sourceIds": [
+            "SRC0008"
+          ]
+        }
       }
     },
     "Sources": {
@@ -3812,6 +4054,68 @@
           ],
           "mediaIds": [
             "M0246"
+          ]
+        }
+      },
+      "SRC0569": {
+        "reason": "Preserve the verified Motion Picture Herald source for the 1935–36 ASCAP broadcast tabulation and synchronize all work, event and media links.",
+        "fields": {
+          "id": "SRC0569",
+          "shortCitation": "“Songs Played Over 10,000 Times,” Motion Picture Herald (5 September 1936).",
+          "fullCitation": "“Songs Played Over 10,000 Times.” Motion Picture Herald 124 (5 September 1936). American Society of Composers, Authors and Publishers tabulation of the 112 songs performed at least 10,000 times over the NBC and CBS networks during 1935–36. “You’re All I Need” ranks 14th with 21,424 broadcasts, listed under the source title Lie Like Gentlemen (Escapade) and credited to Bronislaw Kaper, Walter Jarmann [Jurmann] and Gus Kahn, published by Robbins. Internet Archive.",
+          "sourceType": "press_item",
+          "title": "Songs Played Over 10,000 Times — ASCAP tabulation for 1935–36",
+          "publication": "Motion Picture Herald 124",
+          "date": "1936-09-05",
+          "url": "https://archive.org/stream/motionpictureher1241unse/motionpictureher1241unse_djvu.txt",
+          "accessDate": "2026-07-28",
+          "repository": "Internet Archive",
+          "reliability": "high",
+          "sourceStatus": "verified",
+          "slug": "src0569-songs-played-over-10000-times-1936",
+          "workIds": [
+            "W-S119",
+            "W-F033"
+          ],
+          "songIds": [
+            "S119"
+          ],
+          "personIds": [
+            "P009",
+            "P077",
+            "P025"
+          ],
+          "timelineEventIds": [
+            "TE0055"
+          ],
+          "mediaIds": [
+            "M006",
+            "M241"
+          ]
+        }
+      },
+      "SRC0570": {
+        "reason": "Preserve the verified Library of Congress authority source and public-domain portrait for Duke Ellington.",
+        "fields": {
+          "id": "SRC0570",
+          "shortCitation": "Gottlieb, [Portrait of Duke Ellington] ([1938?]), Library of Congress.",
+          "fullCitation": "William P. Gottlieb, photographer. [Portrait of Duke Ellington, Washington, D.C., between 1938 and 1948]. [1938?]. William P. Gottlieb Collection, Music Division, Library of Congress, LCCN 2023867648. The photographs in the Gottlieb collection entered the public domain on 16 February 2010 in accordance with the photographer’s wishes.",
+          "sourceType": "image_or_photograph",
+          "title": "[Portrait of Duke Ellington, Washington, D.C., between 1938 and 1948]",
+          "creator": "Gottlieb, William P.",
+          "date": "[1938?]; between 1938 and 1948",
+          "repository": "Library of Congress, Music Division",
+          "publication": "William P. Gottlieb Collection",
+          "url": "https://www.loc.gov/item/2023867648/",
+          "accessDate": "2026-07-28",
+          "reliability": "high",
+          "sourceStatus": "verified",
+          "slug": "src0570-gottlieb-portrait-duke-ellington",
+          "personIds": [
+            "P128"
+          ],
+          "mediaIds": [
+            "M242"
           ]
         }
       }
@@ -4358,6 +4662,189 @@
             "european"
           ]
         }
+      },
+      "M241": {
+        "reason": "Preserve the documented Motion Picture Herald page illustrating TE0055 and synchronize it with its source and related works.",
+        "fields": {
+          "id": "M241",
+          "title": "Motion Picture Herald, 5 September 1936 — ASCAP list of songs played over 10,000 times",
+          "slug": "timeline-ascap-songs-played-over-10000-times-motion-picture-herald-5091936",
+          "mediaType": "image",
+          "storageType": "local",
+          "assetPath": "assets/images/historical-context/ascap-1936.jpg",
+          "externalUrl": "https://archive.org/stream/motionpictureher1241unse/motionpictureher1241unse_djvu.txt",
+          "category": "press clipping",
+          "galleryStatus": "eligible",
+          "period": "hollywood",
+          "sortOrder": 241,
+          "altText": "Page from Motion Picture Herald, 5 September 1936, headed “Songs Played Over 10,000 Times”, listing the ASCAP tabulation of the most-broadcast songs of 1935–36.",
+          "publicCaption": "“Songs Played Over 10,000 Times” — the ASCAP tabulation printed in Motion Picture Herald on 5 September 1936. Entry 14 records “You’re All I Need” from Escapade, listed under the source title Lie Like Gentlemen, with 21,424 broadcasts over NBC and CBS and authors given as Bronislaw Kaper, Walter Jarmann and Gus Kahn.",
+          "publicCreditLine": "Motion Picture Herald / Media History Digital Library / Internet Archive.",
+          "rightsStatus": "permission_needed_or_fair_use_claimed",
+          "rightsNote": "Reuse rights are not cleared. A reduced-resolution reproduction (1100 × 1938 px) of the printed page is used for scholarly identification of and commentary on the ASCAP tabulation documenting “You’re All I Need”. Digitised by the Media History Digital Library and hosted by Internet Archive.",
+          "sourceIds": [
+            "SRC0569"
+          ],
+          "workIds": [
+            "W-S119",
+            "W-F033"
+          ],
+          "songIds": [
+            "S119"
+          ],
+          "timelineEventIds": [
+            "TE0055"
+          ],
+          "heroTimelineEventIds": [
+            "TE0055"
+          ],
+          "periods": [
+            "hollywood"
+          ]
+        }
+      },
+      "M242": {
+        "reason": "Preserve the verified public-domain Duke Ellington portrait and connect it to his person record and TE0054.",
+        "fields": {
+          "id": "M242",
+          "title": "Duke Ellington — portrait photograph by William P. Gottlieb",
+          "slug": "duke-ellington-portrait-gottlieb-m242",
+          "mediaType": "image",
+          "storageType": "local",
+          "assetPath": "assets/images/portraits/duke-ellington.jpg",
+          "externalUrl": "https://www.loc.gov/item/2023867648/",
+          "category": "portrait",
+          "galleryStatus": "eligible",
+          "period": "hollywood",
+          "sortOrder": 242,
+          "altText": "Black-and-white portrait photograph of Duke Ellington, smiling, photographed by William P. Gottlieb.",
+          "publicCaption": "Duke Ellington photographed by William P. Gottlieb, Washington, D.C. The Library of Congress dates the negative to [1938?], between 1938 and 1948. Ellington’s orchestra recorded “All God’s Chillun Got Rhythm” in June 1937.",
+          "publicCreditLine": "William P. Gottlieb / Ira and Leonore S. Gershwin Fund Collection, Music Division, Library of Congress.",
+          "rightsStatus": "ok",
+          "rightsNote": "Public domain: in accordance with the wishes of the photographer, the William P. Gottlieb collection entered the public domain on 16 February 2010. Rights of privacy and publicity may apply to the subject.",
+          "sourceIds": [
+            "SRC0570"
+          ],
+          "timelineEventIds": [
+            "TE0054"
+          ],
+          "periods": [
+            "hollywood"
+          ]
+        }
+      }
+    },
+    "Timeline Events": {
+      "TE0054": {
+        "reason": "Preserve the documented Duke Ellington recording milestone and its complete graph links.",
+        "fields": {
+          "id": "TE0054",
+          "slug": "8-june-1937-duke-ellington-records-all-gods-chillun-got-rhythm",
+          "title": "Duke Ellington records “All God’s Chillun Got Rhythm”",
+          "label": "8 Jun 1937 · Ellington records “All God’s Chillun Got Rhythm”",
+          "displayDate": "8 June 1937",
+          "dateStart": "1937-06-08",
+          "datePrecision": "day",
+          "sortDate": "1937-06-08",
+          "sortOrder": 44,
+          "displayMode": "point",
+          "eventType": "career",
+          "period": "hollywood",
+          "periodKey": "hollywood",
+          "category": "recording",
+          "filterTags": [
+            "career",
+            "hollywood"
+          ],
+          "placeDisplay": "New York",
+          "cityKey": "hollywood",
+          "shortDescription": "Duke Ellington and His Famous Orchestra record “All God’s Chillun Got Rhythm” in New York, carrying a Kaper–Jurmann film song into the jazz repertoire.",
+          "longDescription": "Duke Ellington and His Famous Orchestra recorded “All God’s Chillun Got Rhythm” in New York on 8 June 1937 for Master (MA 137, matrix M 519-1). Written by Bronisław Kaper and Walter Jurmann with words by Gus Kahn for A Day at the Races, the song passed from the screen into the jazz repertoire within weeks of the film’s release.",
+          "roles": [
+            "reception_publicity",
+            "work_milestone"
+          ],
+          "personIds": [
+            "P009",
+            "P025",
+            "P077",
+            "P128"
+          ],
+          "sourceIds": [
+            "SRC0008"
+          ],
+          "workIds": [
+            "W-S152",
+            "W-F046"
+          ],
+          "mediaIds": [
+            "M008",
+            "M217",
+            "M242"
+          ],
+          "placeIds": [
+            "PL024"
+          ],
+          "periods": [
+            "hollywood"
+          ],
+          "heroMediaIds": [
+            "M217"
+          ]
+        }
+      },
+      "TE0055": {
+        "reason": "Preserve the documented ASCAP broadcast milestone and its complete graph links.",
+        "fields": {
+          "id": "TE0055",
+          "slug": "5-september-1936-youre-all-i-need-among-most-played-songs",
+          "title": "“You’re All I Need” among the most-played songs of 1935–36",
+          "label": "5 Sep 1936 · “You’re All I Need” ranks 14th on the ASCAP list",
+          "displayDate": "5 September 1936",
+          "dateStart": "1936-09-05",
+          "datePrecision": "day",
+          "sortDate": "1936-09-05",
+          "sortOrder": 45,
+          "displayMode": "point",
+          "eventType": "career",
+          "period": "hollywood",
+          "periodKey": "hollywood",
+          "category": "reception",
+          "filterTags": [
+            "career",
+            "hollywood"
+          ],
+          "placeDisplay": "United States",
+          "cityKey": "hollywood",
+          "shortDescription": "Motion Picture Herald publishes the ASCAP tabulation of songs broadcast most often in 1935–36; “You’re All I Need” ranks 14th with 21,424 performances on NBC and CBS.",
+          "longDescription": "On 5 September 1936 Motion Picture Herald printed the American Society of Composers, Authors and Publishers tabulation of the 112 songs performed at least 10,000 times over the NBC and CBS networks during 1935–36. “You’re All I Need,” written for Escapade, ranked 14th with 21,424 broadcasts — placing Kaper and Jurmann’s first American song among that year’s most-played titles, one year after their arrival. The list credits the film under its working title Lie Like Gentlemen and prints Jurmann’s name as “Walter Jarmann.”",
+          "roles": [
+            "reception_publicity",
+            "career_milestone"
+          ],
+          "personIds": [
+            "P009",
+            "P077",
+            "P025"
+          ],
+          "sourceIds": [
+            "SRC0569"
+          ],
+          "workIds": [
+            "W-S119",
+            "W-F033"
+          ],
+          "mediaIds": [
+            "M006",
+            "M241"
+          ],
+          "periods": [
+            "hollywood"
+          ],
+          "heroMediaIds": [
+            "M241"
+          ]
+        }
       }
     }
   },
@@ -4831,13 +5318,16 @@
         }
       },
       "W-F033": {
-        "reason": "Attach Walter Jurmann's confirmed co-composer contribution and the official Jurmann catalogue to Escapade.",
+        "reason": "Attach Walter Jurmann's confirmed co-composer contribution and the official Jurmann catalogue to Escapade, and synchronize the inverse link to TE0055.",
         "fields": {
           "sourceIds": [
             "SRC0306"
           ],
           "contributionIds": [
             "CON-F033-C-P077"
+          ],
+          "timelineEventIds": [
+            "TE0055"
           ]
         }
       },
@@ -4905,6 +5395,111 @@
         "fields": {
           "contributionIds": [
             "CON-F049-SM-P077"
+          ]
+        }
+      },
+      "W-F038": {
+        "reason": "Attach Walter Jurmann's existing documented contribution to the work record.",
+        "fields": {
+          "contributionIds": ["CON-F038-C-P077"]
+        }
+      },
+      "W-F039": {
+        "reason": "Attach Walter Jurmann's existing documented contribution to the work record.",
+        "fields": {
+          "contributionIds": ["CON-F039-C-P077"]
+        }
+      },
+      "W-F040": {
+        "reason": "Attach Walter Jurmann's existing qualified background-music contribution to the work record.",
+        "fields": {
+          "contributionIds": ["CON-F040-BM-P077"]
+        }
+      },
+      "W-F041": {
+        "reason": "Attach Walter Jurmann's existing documented reused-music contribution to the work record.",
+        "fields": {
+          "contributionIds": ["CON-F041-SM-P077"]
+        }
+      },
+      "W-F042": {
+        "reason": "Attach Walter Jurmann's existing documented contribution to the work record.",
+        "fields": {
+          "contributionIds": ["CON-F042-C-P077"]
+        }
+      },
+      "W-F043": {
+        "reason": "Attach Walter Jurmann's existing documented contribution to the work record.",
+        "fields": {
+          "contributionIds": ["CON-F043-C-P077"]
+        }
+      },
+      "W-F044": {
+        "reason": "Attach Walter Jurmann's existing documented contribution to the work record.",
+        "fields": {
+          "contributionIds": ["CON-F044-C-P077"]
+        }
+      },
+      "W-F045": {
+        "reason": "Attach Walter Jurmann's existing documented background-music contribution to the work record.",
+        "fields": {
+          "contributionIds": ["CON-F045-BM-P077"]
+        }
+      },
+      "W-F046": {
+        "reason": "Attach Walter Jurmann's existing documented contribution and synchronize the inverse work-to-event link already documented by TE0054.",
+        "fields": {
+          "contributionIds": [
+            "CON-F046-C-P077"
+          ],
+          "timelineEventIds": [
+            "TE0054"
+          ]
+        }
+      },
+      "W-F047": {
+        "reason": "Attach Walter Jurmann's existing documented contribution to the work record.",
+        "fields": {
+          "contributionIds": ["CON-F047-C-P077"]
+        }
+      },
+      "W-F048": {
+        "reason": "Attach Walter Jurmann's existing documented contribution to the work record.",
+        "fields": {
+          "contributionIds": ["CON-F048-C-P077"]
+        }
+      },
+      "W-F050": {
+        "reason": "Attach Walter Jurmann's existing documented contribution to the work record.",
+        "fields": {
+          "contributionIds": ["CON-F050-C-P077"]
+        }
+      },
+      "W-F051": {
+        "reason": "Attach Walter Jurmann's existing documented contribution to the work record.",
+        "fields": {
+          "contributionIds": ["CON-F051-C-P077"]
+        }
+      },
+      "W-F054": {
+        "reason": "Attach Walter Jurmann's existing documented contribution to the work record.",
+        "fields": {
+          "contributionIds": ["CON-F054-C-P077"]
+        }
+      },
+      "W-S152": {
+        "reason": "Synchronize the inverse work-to-event link already documented by TE0054.",
+        "fields": {
+          "timelineEventIds": [
+            "TE0054"
+          ]
+        }
+      },
+      "W-S119": {
+        "reason": "Synchronize the inverse work-to-event link already documented by TE0055.",
+        "fields": {
+          "timelineEventIds": [
+            "TE0055"
           ]
         }
       },
@@ -5030,6 +5625,41 @@
         "fields": {
           "sourceIds": [
             "SRC0555"
+          ]
+        }
+      },
+      "M008": {
+        "reason": "Synchronize the inverse media-to-event link already documented by TE0054.",
+        "fields": {
+          "timelineEventIds": [
+            "TE0054"
+          ]
+        }
+      },
+      "M217": {
+        "reason": "Synchronize the inverse media-to-event link already documented by TE0054.",
+        "fields": {
+          "timelineEventIds": [
+            "TE0054"
+          ]
+        }
+      },
+      "M006": {
+        "reason": "Synchronize the inverse media links already documented by TE0055 and SRC0569.",
+        "fields": {
+          "sourceIds": [
+            "SRC0569"
+          ],
+          "timelineEventIds": [
+            "TE0055"
+          ]
+        }
+      },
+      "M124": {
+        "reason": "Synchronize the inverse media-to-place link already documented by PL043.",
+        "fields": {
+          "placeIds": [
+            "PL043"
           ]
         }
       }
@@ -5253,7 +5883,7 @@
         }
       },
       "P077": {
-        "reason": "Connect Walter Jurmann to the completed 1932–1933 Hofmeister sources, the official Jurmann catalogue, the existing Academy Collection photograph, and his documented film contributions.",
+        "reason": "Connect Walter Jurmann to the completed 1932–1933 Hofmeister sources, the official Jurmann catalogue, the existing Academy Collection photograph, and synchronize his person record with all documented film contributions.",
         "fields": {
           "sourceIds": [
             "SRC0306",
@@ -5316,7 +5946,21 @@
             "CON-F035-BM-P077",
             "CON-F036-SW-P077",
             "CON-F037-SW-P077",
-            "CON-F049-SM-P077"
+            "CON-F038-C-P077",
+            "CON-F039-C-P077",
+            "CON-F040-BM-P077",
+            "CON-F041-SM-P077",
+            "CON-F042-C-P077",
+            "CON-F043-C-P077",
+            "CON-F044-C-P077",
+            "CON-F045-BM-P077",
+            "CON-F046-C-P077",
+            "CON-F047-C-P077",
+            "CON-F048-C-P077",
+            "CON-F049-SM-P077",
+            "CON-F050-C-P077",
+            "CON-F051-C-P077",
+            "CON-F054-C-P077"
           ]
         }
       },
@@ -5362,6 +6006,26 @@
       }
     },
     "Sources": {
+      "SRC0008": {
+        "reason": "Synchronize the inverse source-to-event link already documented by TE0054.",
+        "fields": {
+          "timelineEventIds": [
+            "TE0054"
+          ]
+        }
+      },
+      "SRC0569": {
+        "reason": "Synchronize the source with TE0055 and with the two media records derived from or documenting the same source.",
+        "fields": {
+          "timelineEventIds": [
+            "TE0055"
+          ],
+          "mediaIds": [
+            "M006",
+            "M241"
+          ]
+        }
+      },
       "SRC0039": {
         "reason": "Synchronize the inverse place link already present from PL043 to this Calexico border-crossing source.",
         "fields": {
