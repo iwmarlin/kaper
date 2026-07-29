@@ -1,4 +1,4 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=78192fa69b";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=ea284ca4fe";
 import {
   debounce,
   escapeHtml,
@@ -15,13 +15,14 @@ import {
   renderLoading,
   resolveIds,
   responsiveImage,
-} from "./core.js?v=78192fa69b";
+} from "./core.js?v=ea284ca4fe";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 mountSiteChrome("timeline");
 
 const target = document.querySelector("#timeline-results");
 const countTarget = document.querySelector("#timeline-count");
+const totalLabelTarget = document.querySelector("#timeline-total-label");
 const controls = {
   search: document.querySelector("#timeline-search"),
   category: document.querySelector("#timeline-category"),
@@ -157,6 +158,9 @@ function addOptions(select, values, labeler = humanize, preserveOrder = false) {
 
 try {
   const { timelineEvents, media, people, sources } = await loadTables(["timelineEvents", "media", "people", "sources"]);
+  if (totalLabelTarget) {
+    totalLabelTarget.textContent = `${timelineEvents.length} published ${timelineEvents.length === 1 ? "event" : "events"}`;
+  }
   const mediaById = indexById(media);
   const peopleById = indexById(people);
   const sourcesById = indexById(sources);

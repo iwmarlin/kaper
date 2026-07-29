@@ -142,9 +142,9 @@ def write_javascript_mapping(path: Path, mapping: dict) -> None:
 
 
 ERA_META = {
-    "warsaw": ("Warsaw", "1902–26"),
-    "european": ("European period", "1926–33"),
-    "hollywood": ("Hollywood", "1934–39"),
+    "warsaw": ("Warsaw", "1902–1926"),
+    "european": ("European period", "1926–1934"),
+    "hollywood": ("Hollywood", "1935–1939"),
 }
 TYPE_LABELS = {"Song": "Songs", "Film": "Films", "Other": "Other works"}
 

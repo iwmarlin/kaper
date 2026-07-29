@@ -1,4 +1,4 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=78192fa69b";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=ea284ca4fe";
 import {
   escapeHtml,
   humanize,
@@ -11,7 +11,7 @@ import {
   renderLoading,
   responsiveImage,
   typeBadge,
-} from "./core.js?v=78192fa69b";
+} from "./core.js?v=ea284ca4fe";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 mountSiteChrome("home");
@@ -65,6 +65,10 @@ try {
   document.querySelectorAll("#collection-stats strong").forEach((node, index) => {
     node.textContent = numberFormat.format(stats[index]);
   });
+  const timelinePathwayCount = document.querySelector("#timeline-pathway-count");
+  if (timelinePathwayCount) {
+    timelinePathwayCount.textContent = `${numberFormat.format(stats[1])} documented events`;
+  }
   renderFigures(atAGlance);
 
   const portraitTarget = document.querySelector("#hero-portrait");
