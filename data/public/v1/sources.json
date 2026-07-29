@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 508,
+  "count": 510,
   "records": [
     {
       "id": "SRC0001",
@@ -583,7 +583,11 @@
       ],
       "mediaIds": [
         "M031",
-        "M106"
+        "M106",
+        "M0254"
+      ],
+      "placeIds": [
+        "PL034"
       ],
       "primaryUrl": "https://digital.zlb.de/viewer/image/15849352_1932/646/"
     },
@@ -17756,6 +17760,50 @@
       ],
       "mediaIds": [
         "M0253"
+      ]
+    },
+    {
+      "id": "SRC0579",
+      "shortCitation": "Geoportal Berlin, Luftbilder 1928, Pommersche Straße at Sächsische Straße.",
+      "fullCitation": "Senatsverwaltung für Stadtentwicklung, Bauen und Wohnen Berlin. Luftbilder 1928, Maßstab 1:4 000: aerial mosaic covering Pommersche Straße at Sächsische Straße, Berlin-Wilmersdorf. Geoportal Berlin WMS, layer c_luftbilder_1928_04_raster. Datenlizenz Deutschland – Zero – Version 2.0.",
+      "sourceType": "digital_collection_item",
+      "title": "Luftbilder 1928 — Pommersche Straße at Sächsische Straße",
+      "creator": "Senatsverwaltung für Stadtentwicklung, Bauen und Wohnen Berlin",
+      "date": "1928",
+      "repository": "Geoportal Berlin",
+      "publication": "Berlin Open Data",
+      "primaryUrl": "https://daten.berlin.de/datensaetze/luftbilder-1928-massstab-1-4-000-wms-bed1a566",
+      "accessDate": "2026-07-29",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "slug": "src0579-geoportal-berlin-aerial-pommersche-strasse-1928",
+      "placeIds": [
+        "PL034"
+      ],
+      "mediaIds": [
+        "M0254"
+      ]
+    },
+    {
+      "id": "SRC0580",
+      "shortCitation": "Bebauungsplan IX-52, Sächsische Straße 48–49 / Pommersche Straße 3–4, Berlin.",
+      "fullCitation": "Bezirksamt Charlottenburg-Wilmersdorf von Berlin. Bebauungsplan IX-52 for the property at Sächsische Straße 48–49, corner of Pommersche Straße 3–4, Berlin-Wilmersdorf; established 19 October 1967. Official planning-record description.",
+      "sourceType": "web_page",
+      "title": "Bebauungsplan IX-52 — Sächsische Straße 48–49 / Pommersche Straße 3–4",
+      "creator": "Bezirksamt Charlottenburg-Wilmersdorf von Berlin",
+      "date": "1967-10-19",
+      "repository": "Bezirksamt Charlottenburg-Wilmersdorf von Berlin",
+      "publication": "Festgesetzte Bebauungspläne",
+      "primaryUrl": "https://www.berlin.de/ba-charlottenburg-wilmersdorf/verwaltung/aemter/stadtentwicklung/vermessung/bebauungsplaene/artikel.202470.php",
+      "accessDate": "2026-07-29",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "slug": "src0580-bebauungsplan-ix-52-pommersche-strasse-3-4",
+      "placeIds": [
+        "PL034"
+      ],
+      "mediaIds": [
+        "M0254"
       ]
     }
   ]

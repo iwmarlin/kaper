@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 212,
+  "count": 213,
   "records": [
     {
       "id": "M001",
@@ -3381,6 +3381,9 @@
       "galleryStatus": "eligible",
       "sourceIds": [
         "SRC0023"
+      ],
+      "placeIds": [
+        "PL034"
       ],
       "periods": [
         "european"
@@ -7326,6 +7329,36 @@
       ],
       "placeIds": [
         "PL037"
+      ],
+      "periods": [
+        "european"
+      ]
+    },
+    {
+      "id": "M0254",
+      "title": "Pommersche Straße 3, Berlin-Wilmersdorf — aerial context, 1928",
+      "slug": "pommersche-strasse-3-berlin-wilmersdorf-aerial-context-1928-m254",
+      "mediaType": "image",
+      "storageType": "local",
+      "assetPath": "assets/images/historical-context/pommersche-strasse-3-1928.jpg",
+      "externalUrl": "https://daten.berlin.de/datensaetze/luftbilder-1928-massstab-1-4-000-wms-bed1a566",
+      "category": "place / context image",
+      "galleryStatus": "eligible",
+      "period": "european",
+      "sortOrder": 254,
+      "description": "Official 1928 aerial mosaic showing the eastern end of Pommersche Straße at Sächsische Straße in Berlin-Wilmersdorf. Kaper’s 1932 address book entry gives Pommersche Straße 3; the historical parcel is identified from the later official plan for Sächsische Straße 48–49 / Pommersche Straße 3–4.",
+      "altText": "Black-and-white aerial photograph from 1928 showing Pommersche Straße running diagonally toward its junction with Sächsische Straße in Berlin-Wilmersdorf.",
+      "publicCaption": "The eastern end of Pommersche Straße at Sächsische Straße, Berlin-Wilmersdorf, in 1928. Kaper was listed at Pommersche Straße 3 in the 1932 Berlin address book; the former corner parcel is located approximately.",
+      "publicCreditLine": "Geoportal Berlin / Senatsverwaltung für Stadtentwicklung, Bauen und Wohnen, Luftbilder 1928; dl-de-zero-2.0.",
+      "rightsStatus": "ok",
+      "rightsNote": "Open government data supplied under Datenlizenz Deutschland – Zero – Version 2.0. The local image is an unaltered crop from the official 1928 WMS aerial mosaic.",
+      "sourceIds": [
+        "SRC0579",
+        "SRC0023",
+        "SRC0580"
+      ],
+      "placeIds": [
+        "PL034"
       ],
       "periods": [
         "european"
