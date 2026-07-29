@@ -1191,12 +1191,6 @@
           "publication": "Washington, DC: U.S. Government Printing Office"
         }
       },
-      "SRC0383": {
-        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
-        "fields": {
-          "sourceType": "wikimedia_commons_file"
-        }
-      },
       "SRC0384": {
         "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
         "fields": {
@@ -1337,10 +1331,19 @@
         }
       },
       "SRC0437": {
-        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "reason": "Use the exact Wikimedia Commons file represented by M081 as the canonical poster source for W-F036; identify the window poster and its illustrator from the Commons file record.",
         "fields": {
-          "date": "n.d.",
-          "sourceType": "wikimedia_commons_file"
+          "shortCitation": "Wikimedia Commons, A Night at the Opera window poster (Al Hirschfeld, 1935)",
+          "fullCitation": "Hirschfeld, Al. Window poster for A Night at the Opera. Distributed by Metro-Goldwyn-Mayer, 1935. Wikimedia Commons, “File:A Night at the Opera film poster.jpg.”",
+          "sourceType": "wikimedia_commons_file",
+          "title": "File:A Night at the Opera film poster.jpg",
+          "creator": "Al Hirschfeld (illustrator); Metro-Goldwyn-Mayer (distributor)",
+          "date": "1935",
+          "reliability": "high",
+          "sourceStatus": "verified",
+          "workIds": [
+            "W-F036"
+          ]
         }
       },
       "SRC0438": {
@@ -2242,9 +2245,14 @@
         }
       },
       "M081": {
-        "reason": "State the documented public-domain status as a neutral rights note so the media card shows a “Public domain” badge, preserving the source attribution.",
+        "reason": "Identify the local 1292 × 1583 image as the Al Hirschfeld window poster documented by canonical source SRC0437, and align its public description, credit and rights statement with the Commons file record.",
         "fields": {
-          "rightsNote": "Public domain: theatrical-release poster available via Wikimedia Commons under a public-domain assessment. Credit Metro-Goldwyn-Mayer / Wikimedia Commons, file “A Night at the Opera film poster.jpg”."
+          "title": "A Night at the Opera (1935) — window poster",
+          "description": "Window poster for A Night at the Opera (Metro-Goldwyn-Mayer, 1935), illustrated by Al Hirschfeld.",
+          "altText": "Al Hirschfeld’s illustrated window poster for the MGM film A Night at the Opera (1935), featuring the Marx Brothers and supporting cast.",
+          "rightsNote": "Public domain in the United States: Wikimedia Commons records the 1935 poster as not renewed and notes that the local file is a faithful reproduction of the two-dimensional work. Copyright may still subsist in jurisdictions that do not apply the rule of the shorter term. Credit Al Hirschfeld / Metro-Goldwyn-Mayer / Wikimedia Commons.",
+          "publicCaption": "Al Hirschfeld’s window poster for A Night at the Opera (Metro-Goldwyn-Mayer, 1935).",
+          "publicCreditLine": "Al Hirschfeld (illustrator); Metro-Goldwyn-Mayer; Wikimedia Commons. Public domain in the United States."
         }
       }
     },

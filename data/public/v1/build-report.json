@@ -5,7 +5,7 @@
   "counts": {
     "People": 111,
     "Organizations": 111,
-    "Sources": 511,
+    "Sources": 510,
     "Media": 214,
     "Works": 280,
     "Films": 55,
@@ -34,7 +34,7 @@
     "recordsWithAccessUrl": 25,
     "recordsWithAdditionalLinks": 11,
     "recordsWithIdentifiers": 53,
-    "recordsWithPrimaryUrl": 481,
+    "recordsWithPrimaryUrl": 480,
     "sameHostDistinctUrls": 23
   },
   "appliedOverrides": [
@@ -484,7 +484,12 @@
       "table": "Media",
       "id": "M081",
       "fields": [
-        "rightsNote"
+        "altText",
+        "description",
+        "publicCaption",
+        "publicCreditLine",
+        "rightsNote",
+        "title"
       ],
       "removedFields": []
     },
@@ -2312,14 +2317,6 @@
     },
     {
       "table": "Sources",
-      "id": "SRC0383",
-      "fields": [
-        "sourceType"
-      ],
-      "removedFields": []
-    },
-    {
-      "table": "Sources",
       "id": "SRC0384",
       "fields": [
         "sourceType"
@@ -2517,8 +2514,15 @@
       "table": "Sources",
       "id": "SRC0437",
       "fields": [
+        "creator",
         "date",
-        "sourceType"
+        "fullCitation",
+        "reliability",
+        "shortCitation",
+        "sourceStatus",
+        "sourceType",
+        "title",
+        "workIds"
       ],
       "removedFields": []
     },
