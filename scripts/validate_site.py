@@ -34,6 +34,7 @@ class ReferenceParser(HTMLParser):
         self.canonicals: list[str] = []
         self.has_csp_meta = False
         self.referrer_policy: str | None = None
+        self.skip_links = 0
 
     def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
         values = dict(attrs)
@@ -49,6 +50,8 @@ class ReferenceParser(HTMLParser):
             self.canonicals.append(values["href"])
         if tag == "iframe":
             self.iframes += 1
+        if tag == "a" and "skip-link" in (values.get("class") or "").split():
+            self.skip_links += 1
         for attribute in ("href", "src"):
             if values.get(attribute):
                 self.references.append((attribute, values[attribute]))
@@ -110,6 +113,10 @@ def validate(root: Path) -> dict:
             errors.append(f"{filename}: referrer policy fallback is missing")
         if filename not in {"404.html", "record.html"} and len(parser.canonicals) != 1:
             errors.append(f"{filename}: expected exactly one canonical URL")
+        if parser.skip_links != 1:
+            errors.append(
+                f"{filename}: expected exactly one skip link, found {parser.skip_links}"
+            )
         for attribute, value in parser.references:
             target = local_target(root, path, value)
             if target is not None and not target.exists():
@@ -204,6 +211,13 @@ def validate(root: Path) -> dict:
             expected_url = f"https://iwmarlin.github.io/kaper/{relative}"
             if expected_url not in sitemap_urls:
                 errors.append(f"Sitemap omits static record {relative}")
+            page_parser = ReferenceParser()
+            page_parser.feed(page.read_text(encoding="utf-8"))
+            if page_parser.skip_links != 1:
+                errors.append(
+                    f"{relative}: expected exactly one skip link, "
+                    f"found {page_parser.skip_links}"
+                )
             parts = page.relative_to(root).parts
             if len(parts) >= 4 and parts[0] == "records" and parts[1] == "person":
                 text = page.read_text(encoding="utf-8")
@@ -241,6 +255,12 @@ def validate(root: Path) -> dict:
     netlify_path = root / "netlify.toml"
     if netlify_path.is_file() and "frame-ancestors 'self'" not in netlify_path.read_text(encoding="utf-8"):
         errors.append("Netlify CSP lacks frame-ancestors protection")
+
+    core_path = root / "assets/site/core.js"
+    if core_path.is_file() and '<a class="skip-link"' in core_path.read_text(
+        encoding="utf-8"
+    ):
+        errors.append("Shared JavaScript shell must not inject a duplicate skip link")
 
     for filename in PUBLIC_PAGES[:5]:
         expected = "https://iwmarlin.github.io/kaper/" if filename == "index.html" else f"https://iwmarlin.github.io/kaper/{filename}"

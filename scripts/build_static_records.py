@@ -262,8 +262,8 @@ def static_page(record_type: str, record: dict, tables: dict) -> str:
     label = TYPE_LABELS[record_type]
     record_id = record["id"]
     is_gallery = record_type == "media" and record.get("mediaType") == "document_gallery"
-    style_version = "ea284ca4fe"
-    record_script_version = "ea284ca4fe"
+    style_version = "475efa5a61"
+    record_script_version = "475efa5a61"
     route = f"records/{record_type}/{quote(record_id, safe='')}/"
     canonical = f"{ORIGIN}{route}"
     facts = "".join(
@@ -306,8 +306,8 @@ def static_page(record_type: str, record: dict, tables: dict) -> str:
   {ld_json}
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   <header class="site-header" data-site-header>
-    <a class="skip-link" href="#main-content">Skip to content</a>
     <div class="site-header__inner shell">
       <a class="brand" href="index.html"><span class="brand__monogram" aria-hidden="true">BK</span><span class="brand__text"><strong>Bronisław Kaper</strong><small>A source-based archive · 1902–1939</small></span></a>
       <nav class="site-nav" aria-label="Primary navigation"><a href="index.html">Home</a><a href="works.html">Works</a><a href="life.html">Timeline</a><a href="map.html">Map</a><a href="media.html">Media</a></nav>

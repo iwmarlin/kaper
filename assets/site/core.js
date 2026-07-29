@@ -373,7 +373,6 @@ export function mountSiteChrome(activePage) {
   const header = document.querySelector("[data-site-header]");
   if (header) {
     header.innerHTML = `
-      <a class="skip-link" href="#main-content">Skip to content</a>
       <div class="site-header__inner shell">
         <a class="brand" href="index.html" aria-label="Bronisław Kaper research archive home">
           <span class="brand__monogram" aria-hidden="true">BK</span>
