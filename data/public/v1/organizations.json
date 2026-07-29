@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 110,
+  "count": 111,
   "records": [
     {
       "id": "ORG001",
@@ -3149,6 +3149,24 @@
       "contributionIds": [
         "CON-S074-PUB-ORG030",
         "CON-S075-PUB-ORG030"
+      ]
+    },
+    {
+      "id": "ORG114",
+      "displayName": "Jagiellonian Library",
+      "authorizedName": "Biblioteka Jagiellońska / Jagiellonian Library",
+      "types": [
+        "library",
+        "digital library"
+      ],
+      "city": [
+        "Kraków"
+      ],
+      "country": "Poland",
+      "slug": "jagiellonian-library",
+      "nameVariants": "Biblioteka Jagiellońska; Jagiellonian Library; Jagiellońska Biblioteka Cyfrowa; Jagiellonian Digital Library; JBC",
+      "sourceIds": [
+        "SRC0577"
       ]
     }
   ]
