@@ -204,6 +204,39 @@ def validate(root: Path) -> dict:
             expected_url = f"https://iwmarlin.github.io/kaper/{relative}"
             if expected_url not in sitemap_urls:
                 errors.append(f"Sitemap omits static record {relative}")
+            parts = page.relative_to(root).parts
+            if len(parts) >= 4 and parts[0] == "records" and parts[1] == "person":
+                text = page.read_text(encoding="utf-8")
+                match = re.search(
+                    r'<script type="application/ld\+json">(.*?)</script>',
+                    text,
+                    flags=re.DOTALL,
+                )
+                if not match:
+                    errors.append(f"{relative}: schema.org JSON-LD is missing")
+                    continue
+                try:
+                    structured = json.loads(match.group(1))
+                except json.JSONDecodeError:
+                    errors.append(f"{relative}: schema.org JSON-LD is invalid JSON")
+                    continue
+                same_as = structured.get("sameAs")
+                if same_as is None:
+                    continue
+                urls = same_as if isinstance(same_as, list) else [same_as]
+                if not urls:
+                    errors.append(f"{relative}: schema.org sameAs is empty")
+                for url in urls:
+                    parsed = urlsplit(url) if isinstance(url, str) else None
+                    if (
+                        not parsed
+                        or parsed.scheme not in {"http", "https"}
+                        or not parsed.netloc
+                        or re.search(r"\s", url)
+                    ):
+                        errors.append(
+                            f"{relative}: schema.org sameAs contains a non-URL value"
+                        )
 
     netlify_path = root / "netlify.toml"
     if netlify_path.is_file() and "frame-ancestors 'self'" not in netlify_path.read_text(encoding="utf-8"):

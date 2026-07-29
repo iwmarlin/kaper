@@ -9,7 +9,7 @@ import json
 import re
 import shutil
 from pathlib import Path
-from urllib.parse import quote
+from urllib.parse import quote, urlsplit
 
 
 ORIGIN = "https://iwmarlin.github.io/kaper/"
@@ -77,6 +77,30 @@ def compact_text(value, limit: int = 300) -> str:
         return text
     shortened = text[: limit + 1].rsplit(" ", 1)[0]
     return f"{shortened}…"
+
+
+AUTHORITY_URL_PATTERN = re.compile(r"https?://[^\s<>\"']+")
+AUTHORITY_URL_TRAILING_PUNCTUATION = ".,;:!?"
+
+
+def authority_urls(value) -> list[str]:
+    """Extract stable HTTP(S) identity links from a labelled authority field."""
+    if isinstance(value, list):
+        candidates = value
+    else:
+        candidates = [value]
+    urls: list[str] = []
+    seen: set[str] = set()
+    for candidate in candidates:
+        for match in AUTHORITY_URL_PATTERN.findall(str(candidate or "")):
+            url = match.rstrip(AUTHORITY_URL_TRAILING_PUNCTUATION)
+            parsed = urlsplit(url)
+            if parsed.scheme not in {"http", "https"} or not parsed.netloc:
+                continue
+            if url not in seen:
+                seen.add(url)
+                urls.append(url)
+    return urls
 
 
 def title_for(record_type: str, record: dict) -> str:
@@ -210,8 +234,10 @@ def structured_data(record_type: str, record: dict, canonical: str, title: str, 
     }
     if summary:
         data["description"] = compact_text(summary, 300)
-    if record_type == "person" and record.get("authorityUrl"):
-        data["sameAs"] = record["authorityUrl"]
+    if record_type == "person":
+        same_as = authority_urls(record.get("authorityUrl"))
+        if same_as:
+            data["sameAs"] = same_as[0] if len(same_as) == 1 else same_as
     if record_type == "place":
         lat, lon = record.get("latitude"), record.get("longitude")
         if isinstance(lat, (int, float)) and isinstance(lon, (int, float)):
