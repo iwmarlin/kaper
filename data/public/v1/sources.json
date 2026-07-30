@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 511,
+  "count": 513,
   "records": [
     {
       "id": "SRC0001",
@@ -17906,6 +17906,63 @@
       ],
       "nameVariantIds": [
         "PNV0041"
+      ]
+    },
+    {
+      "id": "SRC0583",
+      "shortCitation": "DNB / Gesellschaft für Historische Tonträger, Jan Kiepura, “Ninon, lach mir einmal zu,” Odeon O-4661, 1933.",
+      "fullCitation": "Jan Kiepura, tenor, with orchestra conducted by Frieder Weissmann. “Ninon, lach mir einmal zu,” from Ein Lied für Dich. Odeon O-4661, matrix Be 10221, recorded in Berlin on 7 February 1933. The coupled disc and performer are catalogued by the Deutsche Nationalbibliothek; the matrix-level identification is documented in the Odeon discography of the Gesellschaft für Historische Tonträger.",
+      "sourceType": "sound_recording_catalogue",
+      "title": "Jan Kiepura — Ninon, lach mir einmal zu (Odeon O-4661)",
+      "creator": "Deutsche Nationalbibliothek; Gesellschaft für Historische Tonträger",
+      "date": "1933-02-07",
+      "repository": "Deutsche Nationalbibliothek / Gesellschaft für Historische Tonträger",
+      "publication": "DNB catalogue; Odeon matrix discography",
+      "primaryUrl": "https://d-nb.info/380669358",
+      "accessUrl": "https://discography.phonomuseum.at/odeon/odmxBe10000.pdf",
+      "accessDate": "2026-07-31",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "slug": "src0583-kiepura-ninon-odeon-o-4661-1933",
+      "personIds": [
+        "P117"
+      ],
+      "workIds": [
+        "W-S076"
+      ],
+      "songIds": [
+        "S076"
+      ],
+      "contributionIds": [
+        "CON-S076-P-P117"
+      ]
+    },
+    {
+      "id": "SRC0584",
+      "shortCitation": "Real Academia de Bellas Artes de San Fernando, “Ninon… quand tu me souris,” Salabert, 1933.",
+      "fullCitation": "“Ninon… quand tu me souris: slow-fox-trot chanté par Jan Kiepura dans le film Tout pour l’amour.” Music by Bronisław Kaper and Walter Jurmann; film-version words by Georges Clouzot and Serge Veber; concert-version words by Charles-Louis Pothier. Paris: Éditions Salabert, 1933, plate E.A.S. 8814 / 8814 bis. Catalogue of the Real Academia de Bellas Artes de San Fernando, shelfmark M-6824.",
+      "sourceType": "sheet_music_catalogue",
+      "title": "Ninon… quand tu me souris — score performed by Jan Kiepura in Tout pour l'amour",
+      "creator": "Real Academia de Bellas Artes de San Fernando",
+      "date": "1933",
+      "repository": "Real Academia de Bellas Artes de San Fernando",
+      "publication": "Library and Archive catalogue",
+      "primaryUrl": "https://archivoybiblioteca.realacademiabellasartessanfernando.com/cgi-bin/koha/opac-detail.pl?biblionumber=52990",
+      "accessDate": "2026-07-31",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "slug": "src0584-kiepura-ninon-quand-tu-me-souris-salabert-1933",
+      "personIds": [
+        "P117"
+      ],
+      "workIds": [
+        "W-S077"
+      ],
+      "songIds": [
+        "S077"
+      ],
+      "contributionIds": [
+        "CON-S077-P-P117"
       ]
     }
   ]
