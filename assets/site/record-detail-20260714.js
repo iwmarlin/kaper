@@ -1,4 +1,4 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=475efa5a61";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=85a644665a";
 import {
   certaintyBadge,
   escapeHtml,
@@ -24,7 +24,7 @@ import {
   scopeBadge,
   typeBadge,
   updateMeta,
-} from "./core.js?v=475efa5a61";
+} from "./core.js?v=85a644665a";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 mountSiteChrome("");
@@ -47,6 +47,17 @@ const RECORD_TABLES = [
   "titleVariants", "workRelations", "timelineEvents", "places", "contributions", "personNameVariants",
 ];
 const RECORD_DATA_VERSION = "20260726-1";
+const LIST_PREVIEW_LIMIT = 6;
+const LIST_SEARCH_THRESHOLD = 20;
+let progressiveListSequence = 0;
+const ENTITY_LIST_LABELS = {
+  work: "works",
+  event: "events",
+  place: "places",
+  media: "media",
+  person: "people",
+  organization: "organizations",
+};
 
 async function loadRecordPayload(type, id) {
   const url = new URL(
@@ -78,45 +89,110 @@ function factHtml(label, value) {
   return `<div><dt>${escapeHtml(label)}</dt><dd>${value}</dd></div>`;
 }
 
-function section(title, content, className = "") {
+function section(title, content, className = "", count = 0) {
   if (!content) return "";
-  return `<section class="record-section ${className}"><h2>${escapeHtml(title)}</h2>${content}</section>`;
+  const countLabel = count > LIST_PREVIEW_LIMIT
+    ? `<span class="record-section__count" aria-label="${count} records">${count}</span>`
+    : "";
+  return `<section class="record-section ${className}"><h2>${escapeHtml(title)}${countLabel}</h2>${content}</section>`;
 }
 
-function entityList(records, type, meta = () => "") {
+function progressiveList(records, {
+  tag = "ul",
+  className = "entity-list",
+  label = "records",
+  renderItem,
+  searchText = () => "",
+  showTotal = true,
+} = {}) {
   if (!records.length) return "";
-  return `<ul class="entity-list">${records.map((item) => `
+  const isProgressive = records.length > LIST_PREVIEW_LIMIT;
+  const items = records.map((item) => {
+    const searchValue = normalizeSearch(searchText(item));
+    const attributes = isProgressive
+      ? ` data-progressive-item data-search="${escapeHtml(searchValue)}"`
+      : "";
+    return renderItem(item).replace("<li", `<li${attributes}`);
+  });
+  if (!isProgressive) return `<${tag} class="${className}">${items.join("")}</${tag}>`;
+  const searchable = records.length > LIST_SEARCH_THRESHOLD;
+  progressiveListSequence += 1;
+  const panelId = `progressive-list-${progressiveListSequence}`;
+  const initialToggleLabel = showTotal
+    ? `Show all ${records.length} ${escapeHtml(label)}`
+    : `Show more ${escapeHtml(label)}`;
+  const previewItems = items.slice(0, LIST_PREVIEW_LIMIT);
+  const remainingItems = items.slice(LIST_PREVIEW_LIMIT);
+  return `<div class="progressive-list" data-progressive-list data-label="${escapeHtml(label)}" data-total="${records.length}" data-show-total="${showTotal}">
+    <${tag} class="${className} progressive-list__preview">${previewItems.join("")}</${tag}>
+    <div class="progressive-list__controls">
+      <button class="button button--ghost button--small" type="button" data-progressive-toggle aria-expanded="false" aria-controls="${panelId}">
+        ${initialToggleLabel}
+      </button>
+    </div>
+    <div class="progressive-list__panel" id="${panelId}" data-progressive-panel hidden>
+      ${searchable ? `<label class="progressive-list__search">
+      <span>Search ${escapeHtml(label)}</span>
+      <input type="search" data-progressive-search autocomplete="off">
+      </label>` : ""}
+      <${tag} class="${className} progressive-list__remainder"${tag === "ol" ? ` start="${LIST_PREVIEW_LIMIT + 1}"` : ""}>${remainingItems.join("")}</${tag}>
+      <p class="progressive-list__empty" data-progressive-empty hidden>No matching records.</p>
+    </div>
+    <p class="sr-only" data-progressive-status aria-live="polite"></p>
+  </div>`;
+}
+
+function entityList(records, type, meta = () => "", label = ENTITY_LIST_LABELS[type] || "records") {
+  return progressiveList(records, {
+    label,
+    renderItem: (item) => `
     <li>
       <a href="${recordUrl(type, item.id)}">${escapeHtml(item.title || item.displayName || item.shortCitation || item.id)}</a>
       <small>${escapeHtml(meta(item))}</small>
-    </li>`).join("")}</ul>`;
+    </li>`,
+    searchText: (item) => [
+      item.id,
+      item.title,
+      item.displayName,
+      item.shortCitation,
+      meta(item),
+    ].filter(Boolean).join(" "),
+  });
 }
 
-function sourceList(records) {
-  return records.length ? `<ol class="citation-list">${records.map(renderSourceCitation).join("")}</ol>` : "";
+function sourceList(records, { progressive = true } = {}) {
+  if (!records.length) return "";
+  if (!progressive) return `<ol class="citation-list">${records.map(renderSourceCitation).join("")}</ol>`;
+  return progressiveList(records, {
+    tag: "ol",
+    className: "citation-list",
+    label: "sources",
+    renderItem: renderSourceCitation,
+    searchText: (item) => [
+      item.id,
+      item.title,
+      item.shortCitation,
+      item.fullCitation,
+      item.creator,
+      item.publication,
+    ].filter(Boolean).join(" "),
+  });
 }
 
 function personDisclosure(title, records, renderItem, searchText) {
   if (!records.length) return "";
-  const items = records.map((item) => {
-    const searchValue = normalizeSearch(searchText(item));
-    return renderItem(item).replace(
-      "<li",
-      `<li data-person-filter-item data-search="${escapeHtml(searchValue)}"`,
-    );
-  }).join("");
   const citationList = records.some((item) => item.sourceType || item.shortCitation || item.fullCitation);
-  return `<details class="person-collection">
-    <summary>${escapeHtml(title)}</summary>
-    <div class="person-collection__body">
-      <label class="person-collection__search">
-        <span class="sr-only">Search ${escapeHtml(title.toLowerCase())}</span>
-        <input type="search" data-person-filter placeholder="Search ${escapeHtml(title.toLowerCase())}" autocomplete="off">
-      </label>
-      <${citationList ? "ol" : "ul"} class="${citationList ? "citation-list" : "entity-list"}" data-person-filter-list>${items}</${citationList ? "ol" : "ul"}>
-      <p class="person-collection__empty" data-person-filter-empty hidden>No matching records.</p>
-    </div>
-  </details>`;
+  return `<section class="person-collection">
+    <h3>${escapeHtml(title)}</h3>
+    ${progressiveList(records, {
+      tag: citationList ? "ol" : "ul",
+      className: citationList ? "citation-list" : "entity-list",
+      label: title.toLowerCase(),
+      renderItem,
+      searchText,
+      showTotal: false,
+    })}
+  </section>`;
 }
 
 function personEntityDisclosure(title, records, type, meta = () => "") {
@@ -254,19 +330,32 @@ function otherWorkMaterialSection(subtype, institutionalContributions, indexes) 
 }
 
 function relationList(items, work, indexes) {
-  if (!items.length) return "";
-  return `<ul class="entity-list">${items.map((item) => {
+  const relationMeta = (item) => {
     const candidateIds = [...getIds(item, "targetWorkIds"), ...getIds(item, "sourceWorkIds")].filter((id) => id !== work.id);
     const targetWork = candidateIds.map((id) => indexes.works.get(id)).find(Boolean);
     const title = targetWork?.title || item.targetWorkTitle || item.targetTitleAsSource || "Related work";
-    const titleHtml = targetWork ? `<a href="${recordUrl("work", targetWork.id)}">${escapeHtml(title)}</a>` : escapeHtml(title);
-    return `<li><span>${typeBadge(item.relationType)} ${titleHtml}${item.publicNote ? `<br><small>${escapeHtml(item.publicNote)}</small>` : ""}</span>${certaintyBadge(item.certainty)}</li>`;
-  }).join("")}</ul>`;
+    return { targetWork, title };
+  };
+  return progressiveList(items, {
+    label: "related works",
+    renderItem: (item) => {
+      const { targetWork, title } = relationMeta(item);
+      const titleHtml = targetWork ? `<a href="${recordUrl("work", targetWork.id)}">${escapeHtml(title)}</a>` : escapeHtml(title);
+      return `<li><span>${typeBadge(item.relationType)} ${titleHtml}${item.publicNote ? `<br><small>${escapeHtml(item.publicNote)}</small>` : ""}</span>${certaintyBadge(item.certainty)}</li>`;
+    },
+    searchText: (item) => {
+      const { title } = relationMeta(item);
+      return [item.id, title, item.relationType, item.publicNote].filter(Boolean).join(" ");
+    },
+  });
 }
 
 function variantList(items) {
-  if (!items.length) return "";
-  return `<ul class="entity-list">${items.map((item) => `<li><span><strong>${escapeHtml(item.variantTitle)}</strong>${item.titleAsSource && item.titleAsSource !== item.variantTitle ? `<br><small>Source form: ${escapeHtml(item.titleAsSource)}</small>` : ""}</span><span>${typeBadge(item.variantType)} ${item.language ? periodBadge(item.language) : ""} ${certaintyBadge(item.certainty)}</span></li>`).join("")}</ul>`;
+  return progressiveList(items, {
+    label: "title variants",
+    renderItem: (item) => `<li><span><strong>${escapeHtml(item.variantTitle)}</strong>${item.titleAsSource && item.titleAsSource !== item.variantTitle ? `<br><small>Source form: ${escapeHtml(item.titleAsSource)}</small>` : ""}</span><span>${typeBadge(item.variantType)} ${item.language ? periodBadge(item.language) : ""} ${certaintyBadge(item.certainty)}</span></li>`,
+    searchText: (item) => [item.variantTitle, item.titleAsSource, item.variantType, item.language].filter(Boolean).join(" "),
+  });
 }
 
 function publicText(...values) {
@@ -343,10 +432,10 @@ function renderWork(work, data, indexes) {
       suppressCatalogueNames: isOther,
       suppressConfirmedCreatorNotes: isOther,
     })),
-    section("Title variants", variantList(variants)),
-    section("Related works and versions", relationList(relations, work, indexes)),
-    section("Timeline", entityList(events, "event", (item) => item.displayDate || item.dateStart)),
-    section("Sources", sourceList(sources)),
+    section("Title variants", variantList(variants), "", variants.length),
+    section("Related works and versions", relationList(relations, work, indexes), "", relations.length),
+    section("Timeline", entityList(events, "event", (item) => item.displayDate || item.dateStart), "", events.length),
+    section("Sources", sourceList(sources), "", sources.length),
   ].join("");
   const aside = mediaFigures(media, indexes.sources) || `<div class="scope-note">No public media are linked to this work.</div>`;
   return {
@@ -373,11 +462,11 @@ function renderEvent(event, data, indexes) {
     facts: `${fact("Date", event.displayDate || event.dateStart)}${fact("Period", periodValues(event).map(periodLabel).join(", "))}${fact("Precision", humanize(event.datePrecision))}${fact("Place", event.placeDisplay)}${fact("Category", humanize(event.category))}`,
     main: [
       section("Event", publicText(event.longDescription, event.shortDescription)),
-      section("People", entityList(people, "person", (item) => humanize(item.primaryRole))),
-      section("Works", entityList(works, "work", (item) => [item.year, item.workType].filter(Boolean).join(" · "))),
-      section("Organizations", entityList(organizations, "organization", (item) => (item.types || []).map(humanize).join(", "))),
-      section("Places", entityList(places, "place", (item) => [item.city, item.country].filter(Boolean).join(", "))),
-      section("Sources", sourceList(sources)),
+      section("People", entityList(people, "person", (item) => humanize(item.primaryRole)), "", people.length),
+      section("Works", entityList(works, "work", (item) => [item.year, item.workType].filter(Boolean).join(" · ")), "", works.length),
+      section("Organizations", entityList(organizations, "organization", (item) => (item.types || []).map(humanize).join(", ")), "", organizations.length),
+      section("Places", entityList(places, "place", (item) => [item.city, item.country].filter(Boolean).join(", ")), "", places.length),
+      section("Sources", sourceList(sources), "", sources.length),
     ].join(""),
     aside: mediaFigures(media, indexes.sources),
   };
@@ -395,9 +484,9 @@ function renderPlace(place, data, indexes) {
     facts: `${fact("City", place.city)}${fact("Region", place.region)}${fact("Country", place.country)}${fact("Period", periodValues(place).map(periodLabel).join(", "))}${fact("Place type", humanize(place.placeType))}${fact("Map precision", humanize(place.mapPrecision))}${fact("Coordinates", place.latitude && place.longitude ? `${place.latitude}, ${place.longitude}` : "")}`,
     main: [
       section("About this place", publicText(place.publicNote)),
-      section("Documented events", entityList(events, "event", (item) => item.displayDate || item.dateStart)),
-      section("People", entityList(people, "person", (item) => humanize(item.primaryRole))),
-      section("Sources", sourceList(sources)),
+      section("Documented events", entityList(events, "event", (item) => item.displayDate || item.dateStart), "", events.length),
+      section("People", entityList(people, "person", (item) => humanize(item.primaryRole)), "", people.length),
+      section("Sources", sourceList(sources), "", sources.length),
     ].join(""),
     aside: mediaFigures(media, indexes.sources),
   };
@@ -498,12 +587,12 @@ function renderMedia(media, data, indexes) {
         includeRightsBadge: false,
         includeTitle: false,
         includeSource: false,
-      })}${sourceList(sources)}`),
-      section("Related works", entityList(works, "work", (item) => [item.year, item.workType].filter(Boolean).join(" · "))),
-      section("Timeline", entityList(events, "event", (item) => item.displayDate || item.dateStart)),
-      section("People", entityList(people, "person", (item) => humanize(item.primaryRole))),
-      section("Places", entityList(places, "place", (item) => [item.city, item.country].filter(Boolean).join(", "))),
-      section("Organizations", entityList(organizations, "organization", (item) => (item.types || []).map(humanize).join(", "))),
+      })}${sourceList(sources, { progressive: false })}`),
+      section("Related works", entityList(works, "work", (item) => [item.year, item.workType].filter(Boolean).join(" · ")), "", works.length),
+      section("Timeline", entityList(events, "event", (item) => item.displayDate || item.dateStart), "", events.length),
+      section("People", entityList(people, "person", (item) => humanize(item.primaryRole)), "", people.length),
+      section("Places", entityList(places, "place", (item) => [item.city, item.country].filter(Boolean).join(", ")), "", places.length),
+      section("Organizations", entityList(organizations, "organization", (item) => (item.types || []).map(humanize).join(", ")), "", organizations.length),
     ].join(""),
     aside: `<figure class="record-media">${mediaPreview(media, {
       eager: true,
@@ -547,7 +636,13 @@ function renderPerson(person, data, indexes) {
     facts: `${fact("Authorized name", person.authorizedName)}${fact("Primary role", humanize(person.primaryRole))}${fact("Roles", (person.roles || []).map(humanize))}`,
     main: [
       authorityLinks.length ? section("Authority records", `<ul class="plain-list authority-links">${authorityLinks.map((item) => `<li><a href="${escapeHtml(item.url)}" target="_blank" rel="noreferrer">${escapeHtml(item.label)} <span aria-hidden="true">↗</span></a></li>`).join("")}</ul>`) : "",
-      section("Pseudonyms and documented identities", identities.length ? `<ul class="entity-list identity-list">${identities.map((item) => `<li><span><strong>${escapeHtml(item.variantName)}</strong>${item.publicNote ? `<br><small>${escapeHtml(item.publicNote)}</small>` : ""}</span>${typeBadge(item.variantType)}</li>`).join("")}</ul>` : ""),
+      section("Pseudonyms and documented identities", progressiveList(identities, {
+        className: "entity-list identity-list",
+        label: "documented identities",
+        renderItem: (item) => `<li><span><strong>${escapeHtml(item.variantName)}</strong>${item.publicNote ? `<br><small>${escapeHtml(item.publicNote)}</small>` : ""}</span>${typeBadge(item.variantType)}</li>`,
+        searchText: (item) => [item.variantName, item.variantType, item.publicNote].filter(Boolean).join(" "),
+        showTotal: false,
+      })),
       workSections ? section("Related records", `<div class="person-collections">${workSections}</div>`) : "",
       events.length ? section("Documented chronology", personEntityDisclosure("Timeline events", events, "event", (item) => item.displayDate || item.dateStart)) : "",
       sources.length ? section("Research sources", personSourceDisclosure(sources)) : "",
@@ -566,21 +661,57 @@ function renderPerson(person, data, indexes) {
   };
 }
 
-function initializePersonFilters() {
-  target.querySelectorAll("[data-person-filter]").forEach((input) => {
-    input.addEventListener("input", () => {
-      const collection = input.closest(".person-collection");
-      const query = normalizeSearch(input.value.trim());
-      const items = [...collection.querySelectorAll("[data-person-filter-item]")];
-      let hasVisibleItem = false;
+function initializeProgressiveLists() {
+  target.querySelectorAll("[data-progressive-list]").forEach((collection) => {
+    const items = [...collection.querySelectorAll("[data-progressive-item]")];
+    const toggle = collection.querySelector("[data-progressive-toggle]");
+    const panel = collection.querySelector("[data-progressive-panel]");
+    const search = collection.querySelector("[data-progressive-search]");
+    const empty = collection.querySelector("[data-progressive-empty]");
+    const status = collection.querySelector("[data-progressive-status]");
+    const label = collection.dataset.label || "records";
+    const total = Number(collection.dataset.total || items.length);
+    const showTotal = collection.dataset.showTotal !== "false";
+    const collapsedLabel = showTotal ? `Show all ${total} ${label}` : `Show more ${label}`;
+
+    const setStatus = (message) => {
+      if (status) status.textContent = message;
+    };
+    const applySearch = () => {
+      const query = normalizeSearch(search?.value.trim() || "");
+      let visibleCount = 0;
       items.forEach((item) => {
         const visible = !query || item.dataset.search.includes(query);
         item.hidden = !visible;
-        hasVisibleItem ||= visible;
+        if (visible) visibleCount += 1;
       });
-      const empty = collection.querySelector("[data-person-filter-empty]");
-      if (empty) empty.hidden = hasVisibleItem;
+      if (empty) empty.hidden = visibleCount > 0;
+      setStatus(query
+        ? `${visibleCount} of ${total} ${label} match the search.`
+        : `All ${total} ${label} are shown.`);
+    };
+    const expand = () => {
+      if (panel) panel.hidden = false;
+      if (empty) empty.hidden = true;
+      toggle.setAttribute("aria-expanded", "true");
+      toggle.textContent = `Show fewer ${label}`;
+      setStatus(`All ${total} ${label} are shown.`);
+    };
+    const collapse = () => {
+      if (search) search.value = "";
+      if (panel) panel.hidden = true;
+      if (empty) empty.hidden = true;
+      items.forEach((item) => { item.hidden = false; });
+      toggle.setAttribute("aria-expanded", "false");
+      toggle.textContent = collapsedLabel;
+      setStatus(`Showing the first ${LIST_PREVIEW_LIMIT} of ${total} ${label}.`);
+    };
+
+    toggle?.addEventListener("click", () => {
+      if (toggle.getAttribute("aria-expanded") === "true") collapse();
+      else expand();
     });
+    search?.addEventListener("input", applySearch);
   });
 }
 
@@ -594,9 +725,9 @@ function renderOrganization(organization, data, indexes) {
     badges: (organization.types || []).map(typeBadge).join(""),
     facts: `${fact("Authorized name", organization.authorizedName)}${fact("Type", (organization.types || []).map(humanize))}${fact("City", organization.city)}${fact("Country", organization.country)}${fact("Name variants", organization.nameVariants)}`,
     main: [
-      section("Works", entityList(works, "work", (item) => [item.year, item.workType].filter(Boolean).join(" · "))),
-      section("Timeline", entityList(events, "event", (item) => item.displayDate || item.dateStart)),
-      section("Sources", sourceList(sources)),
+      section("Works", entityList(works, "work", (item) => [item.year, item.workType].filter(Boolean).join(" · ")), "", works.length),
+      section("Timeline", entityList(events, "event", (item) => item.displayDate || item.dateStart), "", events.length),
+      section("Sources", sourceList(sources), "", sources.length),
     ].join(""),
     aside: `<div class="scope-note">Organization links are induced from approved public records and their documented contributions.</div>`,
   };
@@ -637,12 +768,12 @@ function renderSource(source, data, indexes) {
     facts: `${fact("Creator", source.creator)}${fact("Date", source.date)}${fact("Publication", source.publication)}${fact("Repository", source.repository)}`,
     main: [
       section("Citation", `<p class="lead">${escapeHtml(source.fullCitation || source.shortCitation)}</p>${sourceActions(source)}`),
-      section("Supported works", entityList(works, "work", (item) => [item.year, item.workType].filter(Boolean).join(" · "))),
-      section("Media", entityList(media, "media", (item) => humanize(item.mediaType))),
-      section("Timeline", entityList(events, "event", (item) => item.displayDate || item.dateStart)),
-      section("Places", entityList(places, "place", (item) => [item.city, item.country].filter(Boolean).join(", "))),
-      section("People", entityList(people, "person", (item) => humanize(item.primaryRole))),
-      section("Organizations", entityList(organizations, "organization", (item) => (item.types || []).map(humanize).join(", "))),
+      section("Supported works", entityList(works, "work", (item) => [item.year, item.workType].filter(Boolean).join(" · ")), "", works.length),
+      section("Media", entityList(media, "media", (item) => humanize(item.mediaType)), "", media.length),
+      section("Timeline", entityList(events, "event", (item) => item.displayDate || item.dateStart), "", events.length),
+      section("Places", entityList(places, "place", (item) => [item.city, item.country].filter(Boolean).join(", ")), "", places.length),
+      section("People", entityList(people, "person", (item) => humanize(item.primaryRole)), "", people.length),
+      section("Organizations", entityList(organizations, "organization", (item) => (item.types || []).map(humanize).join(", ")), "", organizations.length),
     ].join(""),
     aside: "",
   };
@@ -694,7 +825,7 @@ try {
         <aside>${view.aside || ""}</aside>
       </div>
     </section>`;
-  if (requestedType === "person") initializePersonFilters();
+  initializeProgressiveLists();
 } catch (error) {
   target.className = "shell";
   renderError(target, error);

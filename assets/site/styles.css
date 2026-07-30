@@ -2248,8 +2248,20 @@ main {
 }
 
 .record-section h2 {
+  display: flex;
+  align-items: baseline;
+  gap: 0.55rem;
   margin-bottom: 0.7rem;
   font-size: 1.3rem;
+}
+
+.record-section__count {
+  color: var(--ink-soft);
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  font-variant-numeric: tabular-nums;
+  font-weight: 760;
+  letter-spacing: 0.06em;
 }
 
 .relation-list,
@@ -2312,56 +2324,76 @@ main {
   overflow: clip;
 }
 
-.person-collection > summary {
-  position: relative;
-  padding: 0.9rem 3rem 0.9rem 1rem;
+.person-collection > h3 {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 0;
+  padding: 0.9rem 1rem;
+  border-bottom: 1px solid var(--line);
   color: var(--ink);
   font-family: var(--serif);
   font-size: 1.08rem;
   font-weight: 600;
-  cursor: pointer;
-  list-style: none;
 }
 
-.person-collection > summary::-webkit-details-marker {
-  display: none;
+.person-collection > .progressive-list {
+  padding: 0.15rem 1rem 1rem;
 }
 
-.person-collection > summary::after {
-  position: absolute;
-  top: 50%;
-  right: 1rem;
-  color: var(--accent);
-  font-family: var(--sans);
-  font-size: 1.15rem;
-  content: "+";
-  transform: translateY(-50%);
+.person-collection > .entity-list,
+.person-collection > .citation-list {
+  padding: 0.15rem 1rem 1rem;
 }
 
-.person-collection[open] > summary::after {
-  content: "−";
+.progressive-list [hidden] {
+  display: none !important;
 }
 
-.person-collection__body {
-  padding: 0 1rem 1rem;
-  border-top: 1px solid var(--line);
-}
-
-.person-collection__search {
-  display: block;
+.progressive-list__search {
+  display: grid;
+  gap: 0.35rem;
   padding: 0.9rem 0 0.55rem;
+  color: var(--ink-soft);
+  font-size: 0.7rem;
+  font-weight: 760;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
-.person-collection__search input {
+.progressive-list__search input {
   width: min(100%, 28rem);
   min-height: 2.45rem;
   padding: 0.55rem 0.75rem;
   border: 1px solid var(--line-dark);
   border-radius: var(--radius-sm);
   background: var(--paper);
+  color: var(--ink);
+  font-size: 1rem;
+  letter-spacing: normal;
+  text-transform: none;
 }
 
-.person-collection__empty {
+.progressive-list__controls {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 0.85rem;
+}
+
+.progressive-list__panel {
+  margin-top: 0.85rem;
+}
+
+.progressive-list__panel[hidden] {
+  display: none !important;
+}
+
+.progressive-list__remainder {
+  padding-top: 0.15rem;
+}
+
+.progressive-list__empty {
   margin: 0.8rem 0 0;
   color: var(--ink-soft);
 }
