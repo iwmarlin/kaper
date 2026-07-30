@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 111,
+  "count": 114,
   "records": [
     {
       "id": "P001",
@@ -4060,6 +4060,81 @@
         "W-S152"
       ],
       "authorityUrl": "VIAF: https://viaf.org/viaf/66651610"
+    },
+    {
+      "id": "P129",
+      "displayName": "Eleonora Kaper",
+      "sortName": "Kaper, Eleonora",
+      "authorizedName": "Kaper, Eleonora (née Sirot)",
+      "slug": "eleonora-kaper",
+      "primaryRole": "family member",
+      "roles": [
+        "family member"
+      ],
+      "sourceIds": [
+        "SRC0024",
+        "SRC0039",
+        "SRC0313",
+        "SRC0491",
+        "SRC0566"
+      ],
+      "timelineEventIds": [
+        "TE0017",
+        "TE0035",
+        "TE0036",
+        "TE0039"
+      ]
+    },
+    {
+      "id": "P130",
+      "displayName": "Hermann Biek",
+      "sortName": "Biek, Hermann",
+      "authorizedName": "Biek, Hermann (1897–1944)",
+      "slug": "hermann-biek",
+      "primaryRole": "performer",
+      "roles": [
+        "performer",
+        "pianist",
+        "composer",
+        "bandleader"
+      ],
+      "authorityUrl": "GND: https://d-nb.info/gnd/1061731308\nVIAF: https://viaf.org/viaf/311651052\nWikidata: https://www.wikidata.org/wiki/Q18589112\nDeutsche Digitale Bibliothek: https://www.deutsche-digitale-bibliothek.de/person/gnd/1061731308",
+      "sourceIds": [
+        "SRC0002",
+        "SRC0021",
+        "SRC0028",
+        "SRC0365",
+        "SRC0553"
+      ],
+      "timelineEventIds": [
+        "TE0019",
+        "TE0024"
+      ],
+      "nameVariantIds": [
+        "PNV0039",
+        "PNV0040"
+      ]
+    },
+    {
+      "id": "P131",
+      "displayName": "Józef Śmidowicz",
+      "sortName": "Śmidowicz, Józef",
+      "authorizedName": "Śmidowicz, Józef, 1888–1962",
+      "slug": "jozef-smidowicz",
+      "primaryRole": "performer",
+      "roles": [
+        "performer",
+        "pianist",
+        "teacher"
+      ],
+      "authorityUrl": "Polish Music Library: https://polskabibliotekamuzyczna.pl/encyklopedia/smidowicz-jozef/\nVIAF: https://viaf.org/viaf/65892974\nLCCN: https://id.loc.gov/authorities/names/n2006017851\nISNI: https://isni.org/isni/0000000109816346\nWikidata: https://www.wikidata.org/wiki/Q40331145",
+      "sourceIds": [
+        "SRC0082",
+        "SRC0460"
+      ],
+      "timelineEventIds": [
+        "TE0013"
+      ]
     }
   ]
 }

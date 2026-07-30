@@ -2057,6 +2057,14 @@
           "publicCreditLine": "Pomona Public Library, Frasher Foto Postcard Collection, via Calisphere; ARK kt1489p9q0; identifier B3138."
         }
       },
+      "M069": {
+        "reason": "Use Hermann Biek's canonical name in the portrait metadata while retaining Ben Berlin and Hermann Bick as separately modelled documented identities.",
+        "fields": {
+          "description": "Portrait of Hermann Biek, Kaper’s Berlin-era piano-duo partner.",
+          "altText": "Portrait of the pianist Hermann Biek.",
+          "publicCaption": "Hermann Biek, Kaper’s Berlin-era piano-duo partner, who was professionally known as Ben Berlin and credited with Kaper as Hermann Bick."
+        }
+      },
       "M133": {
         "reason": "Remove the filename-based inference note from the public caption; the canonical ANNO source relation carries the bibliographic evidence.",
         "fields": {
@@ -2124,10 +2132,11 @@
         }
       },
       "M153": {
-        "reason": "Classify the Józef Śmidowicz portrait by its function as context for Kaper's Warsaw music-school formation and keep archival identifiers and rights metadata out of the contextual description.",
+        "reason": "Classify the Józef Śmidowicz portrait by its function as context for Kaper's Warsaw music-school formation, keep archival identifiers and rights metadata out of the contextual description, and point the external link to the archival object rather than the repository copy.",
         "fields": {
           "period": "warsaw",
           "description": "Portrait crop of Józef Śmidowicz from the photograph “Dni Krakowa,” June 1939.",
+          "externalUrl": "https://www.szukajwarchiwach.gov.pl/jednostka/-/jednostka/5909846/obiekty/374338#opis_obiektu",
           "rightsNote": "Public domain: the source catalogue (Szukaj w Archiwach) marks the rights as expired. The local file is a portrait crop from the archival photograph. Credit Szukaj w Archiwach, “Dni Krakowa,” sygn. 3/1/0/6/3688/5."
         }
       },
@@ -2453,9 +2462,11 @@
         }
       },
       "TE0019": {
-        "reason": "Kaper was resident in Berlin, not Paris, in 1928-1931; the Paris (PL003) place link is anachronistic and predates his 1933 move to Paris. Remove Paris from these Berlin-period events and correct the placeDisplay from 'Berlin / Paris' to 'Berlin'.",
+        "reason": "Keep the event in Berlin and identify the duo partner by his canonical name, distinguishing Hermann Biek from the historical recording credit Hermann Bick without preserving the unsupported form Bieck.",
         "fields": {
-          "placeDisplay": "Berlin"
+          "placeDisplay": "Berlin",
+          "shortDescription": "Kaper records jazz-influenced piano-duo arrangements with Hermann Biek, credited on the recordings as Hermann Bick, for Polydor.",
+          "longDescription": "Together with pianist Hermann Biek, credited on recordings as Hermann Bick, Kaper records two-piano arrangements for Deutsche Grammophon/Polydor. The documented repertoire includes American popular songs such as “Miss Annabelle Lee” and “The Song Is Ended.”"
         }
       },
       "TE0021": {
@@ -2699,6 +2710,134 @@
             "TE0054"
           ],
           "authorityUrl": "VIAF: https://viaf.org/viaf/66651610"
+        }
+      },
+      "P129": {
+        "reason": "Add Eleonora Kaper as a documented participant in the marriage, migration and naturalization chronology, and connect her to the archival records and photographs that identify or depict her.",
+        "fields": {
+          "id": "P129",
+          "displayName": "Eleonora Kaper",
+          "sortName": "Kaper, Eleonora",
+          "authorizedName": "Kaper, Eleonora (née Sirot)",
+          "slug": "eleonora-kaper",
+          "primaryRole": "family member",
+          "roles": [
+            "family member"
+          ],
+          "sourceIds": [
+            "SRC0024",
+            "SRC0039",
+            "SRC0313",
+            "SRC0491",
+            "SRC0566"
+          ],
+          "timelineEventIds": [
+            "TE0017",
+            "TE0035",
+            "TE0036",
+            "TE0039"
+          ]
+        }
+      },
+      "P130": {
+        "reason": "Add the verified pianist and bandleader Hermann Biek, canonically distinguished from the recording credit Hermann Bick and the professional pseudonym Ben Berlin, and connect him only to the documented Bick–Kaper performances and sources.",
+        "fields": {
+          "id": "P130",
+          "displayName": "Hermann Biek",
+          "sortName": "Biek, Hermann",
+          "authorizedName": "Biek, Hermann (1897–1944)",
+          "slug": "hermann-biek",
+          "primaryRole": "performer",
+          "roles": [
+            "performer",
+            "pianist",
+            "composer",
+            "bandleader"
+          ],
+          "authorityUrl": "GND: https://d-nb.info/gnd/1061731308\nVIAF: https://viaf.org/viaf/311651052\nWikidata: https://www.wikidata.org/wiki/Q18589112\nDeutsche Digitale Bibliothek: https://www.deutsche-digitale-bibliothek.de/person/gnd/1061731308",
+          "sourceIds": [
+            "SRC0002",
+            "SRC0021",
+            "SRC0028",
+            "SRC0365",
+            "SRC0553"
+          ],
+          "timelineEventIds": [
+            "TE0019",
+            "TE0024"
+          ],
+          "nameVariantIds": [
+            "PNV0039",
+            "PNV0040"
+          ]
+        }
+      },
+      "P131": {
+        "reason": "Add the verified Polish pianist and pedagogue Józef Śmidowicz, connect him to Kaper's documented 1925 appearance as his pupil, and expose the existing archival portrait through its canonical source.",
+        "fields": {
+          "id": "P131",
+          "displayName": "Józef Śmidowicz",
+          "sortName": "Śmidowicz, Józef",
+          "authorizedName": "Śmidowicz, Józef, 1888–1962",
+          "slug": "jozef-smidowicz",
+          "primaryRole": "performer",
+          "roles": [
+            "performer",
+            "pianist",
+            "teacher"
+          ],
+          "authorityUrl": "Polish Music Library: https://polskabibliotekamuzyczna.pl/encyklopedia/smidowicz-jozef/\nVIAF: https://viaf.org/viaf/65892974\nLCCN: https://id.loc.gov/authorities/names/n2006017851\nISNI: https://isni.org/isni/0000000109816346\nWikidata: https://www.wikidata.org/wiki/Q40331145",
+          "sourceIds": [
+            "SRC0082",
+            "SRC0460"
+          ],
+          "timelineEventIds": [
+            "TE0013"
+          ]
+        }
+      }
+    },
+    "Person Name Variants": {
+      "PNV0039": {
+        "reason": "Record Ben Berlin as Hermann Biek's verified professional pseudonym without treating the unrelated source form Hermann Bick as the same kind of identity.",
+        "fields": {
+          "id": "PNV0039",
+          "variantName": "Ben Berlin",
+          "variantType": "pseudonym",
+          "identityScope": "single_person",
+          "evidenceContext": "secondary_literature",
+          "attestedWording": "Ben Berlin",
+          "certainty": "confirmed",
+          "publicNote": "Professional pseudonym of the pianist, composer and bandleader Hermann Biek.",
+          "personIds": [
+            "P130"
+          ],
+          "sourceIds": [
+            "SRC0365"
+          ]
+        }
+      },
+      "PNV0040": {
+        "reason": "Record Hermann Bick as the confirmed historical credit form printed in the sources for the Bick–Kaper piano duo.",
+        "fields": {
+          "id": "PNV0040",
+          "variantName": "Hermann Bick",
+          "variantType": "credit_name",
+          "identityScope": "single_person",
+          "evidenceContext": "other",
+          "attestedWording": "Hermann Bick",
+          "certainty": "confirmed",
+          "publicNote": "Historical recording and broadcast credit form for Hermann Biek in the Bick–Kaper piano duo.",
+          "personIds": [
+            "P130"
+          ],
+          "sourceIds": [
+            "SRC0002",
+            "SRC0021",
+            "SRC0028",
+            "SRC0365",
+            "SRC0553"
+          ]
         }
       }
     },
@@ -5686,16 +5825,22 @@
         }
       },
       "TE0036": {
-        "reason": "Link the new Calexico–Mexicali border crossing (PL043) to the Legal Permanent Entry event so the event and place records cross-reference each other.",
+        "reason": "Link the Calexico–Mexicali border crossing and Eleonora Kaper to the permanent-entry event, which documents that she crossed with Kaper.",
         "fields": {
+          "personIds": [
+            "P129"
+          ],
           "placeIds": [
             "PL043"
           ]
         }
       },
       "TE0039": {
-        "reason": "Attach Eleonora Kaper's independently documented Declaration of Intention and portrait crop to the existing 4 February 1936 citizenship event; retain Bronisław Kaper's full declaration M115 as the hero image.",
+        "reason": "Attach Eleonora Kaper, her independently documented Declaration of Intention and portrait crop to the existing 4 February 1936 citizenship event; retain Bronisław Kaper's full declaration M115 as the hero image.",
         "fields": {
+          "personIds": [
+            "P129"
+          ],
           "sourceIds": [
             "SRC0566"
           ],
@@ -5729,10 +5874,45 @@
         }
       },
       "TE0035": {
-        "reason": "Add the Hotel Edison (228 West 47th Street, New York) as the venue where Kaper and Eleonora stayed on arrival before continuing to Los Angeles, per Kaper's 1975 AFI oral history (SRC0494). Modeled on the Paris hotel venues (George V, Ritz).",
+        "reason": "Add Eleonora Kaper and the Hotel Edison (228 West 47th Street, New York) to the documented joint arrival before onward travel to Los Angeles.",
         "fields": {
+          "personIds": [
+            "P129"
+          ],
           "placeIds": [
             "PL045"
+          ]
+        }
+      },
+      "TE0013": {
+        "reason": "Connect Józef Śmidowicz to the 1925 public performance that explicitly identifies Kaper as a pupil of his piano class.",
+        "fields": {
+          "personIds": [
+            "P131"
+          ]
+        }
+      },
+      "TE0017": {
+        "reason": "Connect Eleonora Kaper to the 1927 marriage event in which she is a principal participant.",
+        "fields": {
+          "personIds": [
+            "P129"
+          ]
+        }
+      },
+      "TE0019": {
+        "reason": "Connect Hermann Biek to the documented Bick–Kaper jazz-piano partnership.",
+        "fields": {
+          "personIds": [
+            "P130"
+          ]
+        }
+      },
+      "TE0024": {
+        "reason": "Connect Hermann Biek to the documented Bick–Kaper appearance at the Ufa-Theater Universum premiere.",
+        "fields": {
+          "personIds": [
+            "P130"
           ]
         }
       }
@@ -6036,8 +6216,11 @@
         }
       },
       "SRC0039": {
-        "reason": "Synchronize the inverse place link already present from PL043 to this Calexico border-crossing source.",
+        "reason": "Synchronize the inverse place link already present from PL043 and connect Eleonora Kaper, who accompanied Kaper on foot at the documented permanent-entry crossing.",
         "fields": {
+          "personIds": [
+            "P129"
+          ],
           "placeIds": [
             "PL043"
           ]
@@ -6068,10 +6251,11 @@
         }
       },
       "SRC0024": {
-        "reason": "Link the November 1933 NAC reception photograph source to Bronisław Kaper, who is depicted in the retained canonical medium M195.",
+        "reason": "Link the November 1933 NAC reception photograph source to Bronisław and Eleonora Kaper, both identified in the retained canonical medium M195.",
         "fields": {
           "personIds": [
-            "P009"
+            "P009",
+            "P129"
           ]
         }
       },
@@ -6882,6 +7066,102 @@
             "PL030",
             "PL038",
             "PL045"
+          ]
+        }
+      },
+      "SRC0002": {
+        "reason": "Connect the Polydor label and listening reference to Hermann Biek under the historical recording credit Hermann Bick.",
+        "fields": {
+          "personIds": [
+            "P130"
+          ],
+          "nameVariantIds": [
+            "PNV0040"
+          ]
+        }
+      },
+      "SRC0021": {
+        "reason": "Connect the contemporary broadcast schedule to Hermann Biek under the printed duo credit Bick and Kaper.",
+        "fields": {
+          "personIds": [
+            "P130"
+          ],
+          "nameVariantIds": [
+            "PNV0040"
+          ]
+        }
+      },
+      "SRC0028": {
+        "reason": "Connect the contemporary premiere notice to Hermann Biek under the historical Bick–Kaper duo credit.",
+        "fields": {
+          "personIds": [
+            "P130"
+          ],
+          "nameVariantIds": [
+            "PNV0040"
+          ]
+        }
+      },
+      "SRC0082": {
+        "reason": "Connect the contemporary recital notice to Józef Śmidowicz, whose piano class Kaper represented at the documented performance.",
+        "fields": {
+          "personIds": [
+            "P131"
+          ]
+        }
+      },
+      "SRC0313": {
+        "reason": "Connect the 1927 marriage register to Eleonora Kaper, identified in the record by her birth surname Sirot.",
+        "fields": {
+          "personIds": [
+            "P129"
+          ]
+        }
+      },
+      "SRC0365": {
+        "reason": "Connect the biographical and portrait page to canonical person Hermann Biek and to the two documented public identities it supports.",
+        "fields": {
+          "personIds": [
+            "P130"
+          ],
+          "nameVariantIds": [
+            "PNV0039",
+            "PNV0040"
+          ]
+        }
+      },
+      "SRC0460": {
+        "reason": "Connect the archival Dni Krakowa photograph to the depicted pianist Józef Śmidowicz so the existing portrait resolves on his person card.",
+        "fields": {
+          "personIds": [
+            "P131"
+          ]
+        }
+      },
+      "SRC0491": {
+        "reason": "Connect the migration study to Eleonora Kaper, whose 1934 arrival with Kaper it documents.",
+        "fields": {
+          "personIds": [
+            "P129"
+          ]
+        }
+      },
+      "SRC0553": {
+        "reason": "Connect the Polydor 10237-B label to Hermann Biek under the printed credit Hermann Bick.",
+        "fields": {
+          "personIds": [
+            "P130"
+          ],
+          "nameVariantIds": [
+            "PNV0040"
+          ]
+        }
+      },
+      "SRC0566": {
+        "reason": "Connect Eleonora Kaper's Declaration of Intention and its portrait crop to her canonical person record.",
+        "fields": {
+          "personIds": [
+            "P129"
           ]
         }
       }
