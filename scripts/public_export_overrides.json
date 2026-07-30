@@ -2795,6 +2795,48 @@
             "TE0013"
           ]
         }
+      },
+      "P132": {
+        "reason": "Add the verified French actor and singer Henri Garat and connect him only to the two films and three recordings for which the existing authoritative sources explicitly document his participation.",
+        "fields": {
+          "id": "P132",
+          "displayName": "Henri Garat",
+          "sortName": "Garat, Henri",
+          "authorizedName": "Garat, Henri, 1902–1959",
+          "slug": "henri-garat",
+          "primaryRole": "actor",
+          "roles": [
+            "actor",
+            "singer",
+            "performer"
+          ],
+          "authorityUrl": "BnF: https://data.bnf.fr/ark:/12148/cb138942846\nVIAF: https://viaf.org/viaf/32183198\nGND: https://d-nb.info/gnd/1062023889\nLCCN: https://id.loc.gov/authorities/names/n97123801\nISNI: https://isni.org/isni/0000000035489214\nWikidata: https://www.wikidata.org/wiki/Q3132795",
+          "sourceIds": [
+            "SRC0115",
+            "SRC0137",
+            "SRC0162",
+            "SRC0300",
+            "SRC0501",
+            "SRC0582"
+          ],
+          "contributionIds": [
+            "CON-F028-A-P132",
+            "CON-F029-A-P132",
+            "CON-S096-P-P132",
+            "CON-S097-P-P132",
+            "CON-S116-P-P132"
+          ],
+          "nameVariantIds": [
+            "PNV0041"
+          ],
+          "workIds": [
+            "W-F028",
+            "W-F029",
+            "W-S096",
+            "W-S097",
+            "W-S116"
+          ]
+        }
       }
     },
     "Person Name Variants": {
@@ -2837,6 +2879,30 @@
             "SRC0028",
             "SRC0365",
             "SRC0553"
+          ]
+        }
+      },
+      "PNV0041": {
+        "reason": "Record Henry Garat as the confirmed professional and source form used by the Paramount portrait, APPL page and selected discographic citations while retaining Henri Garat as the canonical display form.",
+        "fields": {
+          "id": "PNV0041",
+          "variantName": "Henry Garat",
+          "variantType": "credit_name",
+          "identityScope": "single_person",
+          "evidenceContext": "other",
+          "attestedWording": "Henry Garat",
+          "certainty": "confirmed",
+          "publicNote": "Professional and source form used in the Paramount portrait and several contemporary or discographic references.",
+          "personIds": [
+            "P132"
+          ],
+          "sourceIds": [
+            "SRC0115",
+            "SRC0501",
+            "SRC0582"
+          ],
+          "workIds": [
+            "W-S116"
           ]
         }
       }
@@ -3833,6 +3899,114 @@
             "SRC0008"
           ]
         }
+      },
+      "CON-F028-A-P132": {
+        "reason": "Record Henri Garat's cast participation in Une femme au volant exactly at the actor level documented by UniFrance.",
+        "fields": {
+          "id": "CON-F028-A-P132",
+          "role": "actor",
+          "nameAsPrinted": "Henri Garat",
+          "evidenceContext": "film_credits",
+          "sortOrder": 60,
+          "certainty": "confirmed",
+          "workIds": [
+            "W-F028"
+          ],
+          "personIds": [
+            "P132"
+          ],
+          "sourceIds": [
+            "SRC0162"
+          ]
+        }
+      },
+      "CON-F029-A-P132": {
+        "reason": "Record Henri Garat's role as Jean de Lafaye in On a volé un homme exactly as documented by Filmportal.",
+        "fields": {
+          "id": "CON-F029-A-P132",
+          "role": "actor",
+          "nameAsPrinted": "Henri Garat",
+          "displayCredit": "Jean de Lafaye",
+          "evidenceContext": "film_credits",
+          "sortOrder": 60,
+          "certainty": "confirmed",
+          "workIds": [
+            "W-F029"
+          ],
+          "personIds": [
+            "P132"
+          ],
+          "sourceIds": [
+            "SRC0137"
+          ]
+        }
+      },
+      "CON-S096-P-P132": {
+        "reason": "Record Henri Garat's vocal performance on the Salabert 3382 recording of Le plus petit baiser documented by the BnF catalogue.",
+        "fields": {
+          "id": "CON-S096-P-P132",
+          "role": "performer",
+          "nameAsPrinted": "Henri Garat",
+          "displayCredit": "Vocal performance",
+          "evidenceContext": "recording_label",
+          "sortOrder": 50,
+          "certainty": "confirmed",
+          "workIds": [
+            "W-S096"
+          ],
+          "personIds": [
+            "P132"
+          ],
+          "sourceIds": [
+            "SRC0300"
+          ]
+        }
+      },
+      "CON-S097-P-P132": {
+        "reason": "Record Henri Garat's vocal performance of À Paris tiguidiguidi from the BnF disc record, corroborated by the linked Paris-song reference.",
+        "fields": {
+          "id": "CON-S097-P-P132",
+          "role": "performer",
+          "nameAsPrinted": "Henri Garat",
+          "displayCredit": "Vocal performance",
+          "evidenceContext": "recording_label",
+          "sortOrder": 50,
+          "certainty": "confirmed",
+          "workIds": [
+            "W-S097"
+          ],
+          "personIds": [
+            "P132"
+          ],
+          "sourceIds": [
+            "SRC0300",
+            "SRC0501"
+          ]
+        }
+      },
+      "CON-S116-P-P132": {
+        "reason": "Record Henry Garat's documented vocal performance of Pourvu qu’on ait vingt ans without confusing performance with authorship.",
+        "fields": {
+          "id": "CON-S116-P-P132",
+          "role": "performer",
+          "nameAsPrinted": "Henry Garat",
+          "displayCredit": "Vocal performance",
+          "evidenceContext": "recording_label",
+          "sortOrder": 50,
+          "certainty": "confirmed",
+          "workIds": [
+            "W-S116"
+          ],
+          "personIds": [
+            "P132"
+          ],
+          "sourceIds": [
+            "SRC0115"
+          ],
+          "nameVariantIds": [
+            "PNV0041"
+          ]
+        }
       }
     },
     "Sources": {
@@ -4264,6 +4438,34 @@
           ],
           "mediaIds": [
             "M242"
+          ]
+        }
+      },
+      "SRC0582": {
+        "reason": "Document the provenance of the user-supplied low-resolution Paramount portrait of Henri Garat through the APPL page while preserving the unresolved photographer, publication and rights information.",
+        "fields": {
+          "id": "SRC0582",
+          "shortCitation": "Paramount Studios, portrait of Henry Garat, reproduced by APPL.",
+          "fullCitation": "Paramount Studios. Portrait photograph of Henri (Henry) Garat. Reproduced by Amis et Passionnés du Père-Lachaise (APPL), “Garat, Henri Garassu, dit Henry (1902–1959).” Photographer, date, original publication and image rights holder not identified.",
+          "sourceType": "image_or_photograph",
+          "title": "Henri Garat — Paramount Studios portrait",
+          "creator": "Paramount Studios; photographer unidentified",
+          "date": "n.d.",
+          "repository": "Amis et Passionnés du Père-Lachaise (APPL)",
+          "publication": "APPL biographical notice",
+          "url": "https://www.appl-lachaise.net/garat-henri-garassu-dit-henry-1902-1959/",
+          "accessDate": "2026-07-31",
+          "reliability": "medium",
+          "sourceStatus": "verified_with_attribution_note",
+          "slug": "src0582-appl-paramount-henri-garat-portrait",
+          "personIds": [
+            "P132"
+          ],
+          "mediaIds": [
+            "M0256"
+          ],
+          "nameVariantIds": [
+            "PNV0041"
           ]
         }
       }
@@ -4880,6 +5082,34 @@
             "hollywood"
           ]
         }
+      },
+      "M0256": {
+        "reason": "Add the user-supplied Paramount portrait to Henri Garat's person record as a low-resolution fair-use identification image, without asserting public-domain status or an unsupported photographer.",
+        "fields": {
+          "id": "M0256",
+          "title": "Henri Garat — Paramount Studios portrait",
+          "slug": "henri-garat-paramount-studios-portrait-m256",
+          "mediaType": "image",
+          "storageType": "local",
+          "assetPath": "assets/images/portraits/henri-garat.jpg",
+          "externalUrl": "https://www.appl-lachaise.net/garat-henri-garassu-dit-henry-1902-1959/",
+          "category": "portrait",
+          "galleryStatus": "detail_only",
+          "period": "european",
+          "sortOrder": 256,
+          "description": "Low-resolution Paramount Studios publicity portrait of French actor and singer Henri Garat.",
+          "altText": "Black-and-white Paramount Studios portrait of Henri Garat wearing a dark suit and patterned bow tie, with his arms folded.",
+          "publicCaption": "Henri Garat, French actor and singer associated with Kaper’s French films and recordings.",
+          "publicCreditLine": "Paramount Studios; reproduced via Amis et Passionnés du Père-Lachaise (APPL). Photographer and original publication unidentified.",
+          "rightsStatus": "permission_needed_or_fair_use_claimed",
+          "rightsNote": "Photographer, date, original publication and image rights holder are not identified on the source page, and APPL does not provide a reuse licence. The supplied 277 × 439 pixel copy is reproduced without enlargement solely for scholarly identification and discussion of Garat’s documented performances in Kaper-related films and recordings; it is excluded from galleries and timeline illustration.",
+          "sourceIds": [
+            "SRC0582"
+          ],
+          "periods": [
+            "european"
+          ]
+        }
       }
     },
     "Timeline Events": {
@@ -5428,7 +5658,8 @@
             "SRC0306"
           ],
           "contributionIds": [
-            "CON-F028-C-P077"
+            "CON-F028-C-P077",
+            "CON-F028-A-P132"
           ]
         }
       },
@@ -5439,7 +5670,35 @@
             "SRC0306"
           ],
           "contributionIds": [
-            "CON-F029-C-P077"
+            "CON-F029-C-P077",
+            "CON-F029-A-P132"
+          ]
+        }
+      },
+      "W-S096": {
+        "reason": "Connect Henri Garat's BnF-documented vocal performance to Le plus petit baiser.",
+        "fields": {
+          "contributionIds": [
+            "CON-S096-P-P132"
+          ]
+        }
+      },
+      "W-S097": {
+        "reason": "Connect Henri Garat's documented vocal performance to À Paris tiguidiguidi.",
+        "fields": {
+          "contributionIds": [
+            "CON-S097-P-P132"
+          ]
+        }
+      },
+      "W-S116": {
+        "reason": "Connect Henry Garat's documented vocal performance and attested credit form to Pourvu qu’on ait vingt ans.",
+        "fields": {
+          "contributionIds": [
+            "CON-S116-P-P132"
+          ],
+          "nameVariantIds": [
+            "PNV0041"
           ]
         }
       },
@@ -6877,8 +7136,12 @@
       "SRC0162": {
         "reason": "Synchronize UniFrance's Walter Jurmann composer credit for Une femme au volant with the new confirmed contribution.",
         "fields": {
+          "personIds": [
+            "P132"
+          ],
           "contributionIds": [
-            "CON-F028-C-P077"
+            "CON-F028-C-P077",
+            "CON-F028-A-P132"
           ]
         }
       },
@@ -6886,10 +7149,12 @@
         "reason": "Synchronize Filmportal's Walter Jurmann music credit for On a volé un homme with the person and contribution records.",
         "fields": {
           "personIds": [
-            "P077"
+            "P077",
+            "P132"
           ],
           "contributionIds": [
-            "CON-F029-C-P077"
+            "CON-F029-C-P077",
+            "CON-F029-A-P132"
           ]
         }
       },
@@ -7162,6 +7427,46 @@
         "fields": {
           "personIds": [
             "P129"
+          ]
+        }
+      },
+      "SRC0115": {
+        "reason": "Connect the Salabert 3384 recording source to its vocalist Henry Garat, his performer contribution and the attested credit form.",
+        "fields": {
+          "personIds": [
+            "P132"
+          ],
+          "contributionIds": [
+            "CON-S116-P-P132"
+          ],
+          "nameVariantIds": [
+            "PNV0041"
+          ]
+        }
+      },
+      "SRC0300": {
+        "reason": "Connect the BnF Salabert 3382 disc record to Henri Garat's two documented vocal performances.",
+        "fields": {
+          "personIds": [
+            "P132"
+          ],
+          "contributionIds": [
+            "CON-S096-P-P132",
+            "CON-S097-P-P132"
+          ]
+        }
+      },
+      "SRC0501": {
+        "reason": "Connect the Paris-song reference to Henry Garat's corroborated performance of À Paris tiguidiguidi and its attested credit form.",
+        "fields": {
+          "personIds": [
+            "P132"
+          ],
+          "contributionIds": [
+            "CON-S097-P-P132"
+          ],
+          "nameVariantIds": [
+            "PNV0041"
           ]
         }
       }

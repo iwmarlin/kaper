@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 510,
+  "count": 511,
   "records": [
     {
       "id": "SRC0001",
@@ -3451,7 +3451,8 @@
       "sourceStatus": "verified_with_attribution_note",
       "slug": "src0115-salabert-3384-pourvu-quon-ait-vingt-ans-1933",
       "personIds": [
-        "P079"
+        "P079",
+        "P132"
       ],
       "organizationIds": [
         "ORG039",
@@ -3473,10 +3474,12 @@
         "CON-S116-C-P009",
         "CON-S116-C-P079",
         "CON-S116-L-P049",
-        "CON-S116-RL-ORG039"
+        "CON-S116-RL-ORG039",
+        "CON-S116-P-P132"
       ],
       "nameVariantIds": [
-        "PNV0020"
+        "PNV0020",
+        "PNV0041"
       ],
       "primaryUrl": "https://www.youtube.com/watch?v=JA57rCoKoyI"
     },
@@ -4281,7 +4284,8 @@
       "slug": "src0137-filmportal-on-a-vole-un-homme-1934",
       "personIds": [
         "P056",
-        "P077"
+        "P077",
+        "P132"
       ],
       "organizationIds": [
         "ORG009",
@@ -4300,7 +4304,8 @@
         "CON-F029-C-P009",
         "CON-F029-C-P077",
         "CON-F029-D-P056",
-        "CON-F029-PC-ORG009"
+        "CON-F029-PC-ORG009",
+        "CON-F029-A-P132"
       ],
       "primaryUrl": "https://www.filmportal.de/film/on-a-vole-un-homme_eca2a4da7771450aab72955757436620"
     },
@@ -5041,7 +5046,8 @@
         "P009",
         "P048",
         "P063",
-        "P077"
+        "P077",
+        "P132"
       ],
       "organizationIds": [
         "ORG018",
@@ -5061,7 +5067,8 @@
         "CON-F028-C-P077",
         "CON-F028-D-P048",
         "CON-F028-D-P063",
-        "CON-F028-PC-ORG018"
+        "CON-F028-PC-ORG018",
+        "CON-F028-A-P132"
       ],
       "primaryUrl": "https://en.unifrance.org/movie/36155/a-woman-at-the-wheel"
     },
@@ -9947,6 +9954,9 @@
       "reliability": "high",
       "sourceStatus": "verified",
       "slug": "src0300-bnf-salabert-3382-a-paris-tiguidiguidi-1934",
+      "personIds": [
+        "P132"
+      ],
       "organizationIds": [
         "ORG062"
       ],
@@ -9967,7 +9977,9 @@
         "CON-S096-C-P077",
         "CON-S096-L-P049",
         "CON-S096-PUB-ORG045",
-        "CON-S097-CON-P009"
+        "CON-S097-CON-P009",
+        "CON-S096-P-P132",
+        "CON-S097-P-P132"
       ],
       "nameVariantIds": [
         "PNV0019",
@@ -15774,8 +15786,17 @@
       "reliability": "medium",
       "sourceStatus": "verified_with_attribution_note",
       "slug": "src0501-chansons-sur-paris-a-paris-tiguidiguidi",
+      "personIds": [
+        "P132"
+      ],
       "workIds": [
         "W-S097"
+      ],
+      "contributionIds": [
+        "CON-S097-P-P132"
+      ],
+      "nameVariantIds": [
+        "PNV0041"
       ],
       "primaryUrl": "https://fr.wikipedia.org/wiki/Chansons_sur_Paris"
     },
@@ -17860,6 +17881,31 @@
       ],
       "mediaIds": [
         "M0255"
+      ]
+    },
+    {
+      "id": "SRC0582",
+      "shortCitation": "Paramount Studios, portrait of Henry Garat, reproduced by APPL.",
+      "fullCitation": "Paramount Studios. Portrait photograph of Henri (Henry) Garat. Reproduced by Amis et Passionnés du Père-Lachaise (APPL), “Garat, Henri Garassu, dit Henry (1902–1959).” Photographer, date, original publication and image rights holder not identified.",
+      "sourceType": "image_or_photograph",
+      "title": "Henri Garat — Paramount Studios portrait",
+      "creator": "Paramount Studios; photographer unidentified",
+      "date": "n.d.",
+      "repository": "Amis et Passionnés du Père-Lachaise (APPL)",
+      "publication": "APPL biographical notice",
+      "url": "https://www.appl-lachaise.net/garat-henri-garassu-dit-henry-1902-1959/",
+      "accessDate": "2026-07-31",
+      "reliability": "medium",
+      "sourceStatus": "verified_with_attribution_note",
+      "slug": "src0582-appl-paramount-henri-garat-portrait",
+      "personIds": [
+        "P132"
+      ],
+      "mediaIds": [
+        "M0256"
+      ],
+      "nameVariantIds": [
+        "PNV0041"
       ]
     }
   ]

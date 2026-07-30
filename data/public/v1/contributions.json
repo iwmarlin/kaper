@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 1031,
+  "count": 1036,
   "records": [
     {
       "id": "CON-F001-C-P009",
@@ -17940,6 +17940,99 @@
       ],
       "sourceIds": [
         "SRC0008"
+      ]
+    },
+    {
+      "id": "CON-F028-A-P132",
+      "role": "actor",
+      "nameAsPrinted": "Henri Garat",
+      "evidenceContext": "film_credits",
+      "sortOrder": 60,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-F028"
+      ],
+      "personIds": [
+        "P132"
+      ],
+      "sourceIds": [
+        "SRC0162"
+      ]
+    },
+    {
+      "id": "CON-F029-A-P132",
+      "role": "actor",
+      "nameAsPrinted": "Henri Garat",
+      "displayCredit": "Jean de Lafaye",
+      "evidenceContext": "film_credits",
+      "sortOrder": 60,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-F029"
+      ],
+      "personIds": [
+        "P132"
+      ],
+      "sourceIds": [
+        "SRC0137"
+      ]
+    },
+    {
+      "id": "CON-S096-P-P132",
+      "role": "performer",
+      "nameAsPrinted": "Henri Garat",
+      "displayCredit": "Vocal performance",
+      "evidenceContext": "recording_label",
+      "sortOrder": 50,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S096"
+      ],
+      "personIds": [
+        "P132"
+      ],
+      "sourceIds": [
+        "SRC0300"
+      ]
+    },
+    {
+      "id": "CON-S097-P-P132",
+      "role": "performer",
+      "nameAsPrinted": "Henri Garat",
+      "displayCredit": "Vocal performance",
+      "evidenceContext": "recording_label",
+      "sortOrder": 50,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S097"
+      ],
+      "personIds": [
+        "P132"
+      ],
+      "sourceIds": [
+        "SRC0300",
+        "SRC0501"
+      ]
+    },
+    {
+      "id": "CON-S116-P-P132",
+      "role": "performer",
+      "nameAsPrinted": "Henry Garat",
+      "displayCredit": "Vocal performance",
+      "evidenceContext": "recording_label",
+      "sortOrder": 50,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S116"
+      ],
+      "personIds": [
+        "P132"
+      ],
+      "sourceIds": [
+        "SRC0115"
+      ],
+      "nameVariantIds": [
+        "PNV0041"
       ]
     }
   ]
