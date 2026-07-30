@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 1038,
+  "count": 1041,
   "records": [
     {
       "id": "CON-F001-C-P009",
@@ -11657,7 +11657,8 @@
       ],
       "sourceIds": [
         "SRC0071",
-        "SRC0373"
+        "SRC0373",
+        "SRC0540"
       ]
     },
     {
@@ -11674,7 +11675,8 @@
       ],
       "sourceIds": [
         "SRC0071",
-        "SRC0373"
+        "SRC0373",
+        "SRC0540"
       ]
     },
     {
@@ -11691,7 +11693,8 @@
       ],
       "sourceIds": [
         "SRC0071",
-        "SRC0373"
+        "SRC0373",
+        "SRC0540"
       ]
     },
     {
@@ -11708,7 +11711,8 @@
       ],
       "sourceIds": [
         "SRC0071",
-        "SRC0373"
+        "SRC0373",
+        "SRC0540"
       ]
     },
     {
@@ -11725,7 +11729,8 @@
       ],
       "sourceIds": [
         "SRC0072",
-        "SRC0373"
+        "SRC0373",
+        "SRC0540"
       ]
     },
     {
@@ -11742,7 +11747,8 @@
       ],
       "sourceIds": [
         "SRC0072",
-        "SRC0373"
+        "SRC0373",
+        "SRC0540"
       ]
     },
     {
@@ -11759,7 +11765,8 @@
       ],
       "sourceIds": [
         "SRC0072",
-        "SRC0373"
+        "SRC0373",
+        "SRC0540"
       ]
     },
     {
@@ -18069,6 +18076,69 @@
       ],
       "sourceIds": [
         "SRC0584"
+      ]
+    },
+    {
+      "id": "CON-S110-P-P132",
+      "role": "performer",
+      "nameAsPrinted": "Henry Garat",
+      "displayCredit": "Vocal performance",
+      "evidenceContext": "sheet_music",
+      "sortOrder": 50,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S110"
+      ],
+      "personIds": [
+        "P132"
+      ],
+      "sourceIds": [
+        "SRC0540"
+      ],
+      "nameVariantIds": [
+        "PNV0041"
+      ]
+    },
+    {
+      "id": "CON-S111-C-P009",
+      "role": "composer",
+      "nameAsPrinted": "B. Kaper",
+      "displayCredit": "Composer",
+      "evidenceContext": "sheet_music",
+      "sortOrder": 10,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S111"
+      ],
+      "personIds": [
+        "P009"
+      ],
+      "sourceIds": [
+        "SRC0540"
+      ],
+      "nameVariantIds": [
+        "PNV0019"
+      ]
+    },
+    {
+      "id": "CON-S111-P-P132",
+      "role": "performer",
+      "nameAsPrinted": "Henry Garat",
+      "displayCredit": "Vocal performance",
+      "evidenceContext": "sheet_music",
+      "sortOrder": 50,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S111"
+      ],
+      "personIds": [
+        "P132"
+      ],
+      "sourceIds": [
+        "SRC0540"
+      ],
+      "nameVariantIds": [
+        "PNV0041"
       ]
     }
   ]

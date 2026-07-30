@@ -2263,6 +2263,12 @@
           "publicCaption": "Al Hirschfeld’s window poster for A Night at the Opera (Metro-Goldwyn-Mayer, 1935).",
           "publicCreditLine": "Al Hirschfeld (illustrator); Metro-Goldwyn-Mayer; Wikimedia Commons. Public domain in the United States."
         }
+      },
+      "M223": {
+        "reason": "Describe only the people and credits printed on this specific sheet-music collection cover; broad film and catalogue sources must not leak unrelated people into the media record.",
+        "fields": {
+          "description": "Sheet-music collection cover for On a volé un homme (1934), advertising “Ni mal, ni bien” and “Un regard de femme.” The cover credits words by René Pujol, music by Walter Jurmann and Bronisław Kaper, and performances by Henry Garat."
+        }
       }
     },
     "Contributions": {
@@ -4049,6 +4055,78 @@
             "SRC0584"
           ]
         }
+      },
+      "CON-S110-P-P132": {
+        "reason": "Record Henry Garat's performance of Ni mal, ni bien as printed on the specific sheet-music collection cover.",
+        "fields": {
+          "id": "CON-S110-P-P132",
+          "role": "performer",
+          "nameAsPrinted": "Henry Garat",
+          "displayCredit": "Vocal performance",
+          "evidenceContext": "sheet_music",
+          "sortOrder": 50,
+          "certainty": "confirmed",
+          "workIds": [
+            "W-S110"
+          ],
+          "personIds": [
+            "P132"
+          ],
+          "sourceIds": [
+            "SRC0540"
+          ],
+          "nameVariantIds": [
+            "PNV0041"
+          ]
+        }
+      },
+      "CON-S111-C-P009": {
+        "reason": "Record Bronisław Kaper's composer credit for Un regard de femme as printed collectively with Walter Jurmann on the specific sheet-music collection cover.",
+        "fields": {
+          "id": "CON-S111-C-P009",
+          "role": "composer",
+          "nameAsPrinted": "B. Kaper",
+          "displayCredit": "Composer",
+          "evidenceContext": "sheet_music",
+          "sortOrder": 10,
+          "certainty": "confirmed",
+          "workIds": [
+            "W-S111"
+          ],
+          "personIds": [
+            "P009"
+          ],
+          "sourceIds": [
+            "SRC0540"
+          ],
+          "nameVariantIds": [
+            "PNV0019"
+          ]
+        }
+      },
+      "CON-S111-P-P132": {
+        "reason": "Record Henry Garat's performance of Un regard de femme as printed on the specific sheet-music collection cover.",
+        "fields": {
+          "id": "CON-S111-P-P132",
+          "role": "performer",
+          "nameAsPrinted": "Henry Garat",
+          "displayCredit": "Vocal performance",
+          "evidenceContext": "sheet_music",
+          "sortOrder": 50,
+          "certainty": "confirmed",
+          "workIds": [
+            "W-S111"
+          ],
+          "personIds": [
+            "P132"
+          ],
+          "sourceIds": [
+            "SRC0540"
+          ],
+          "nameVariantIds": [
+            "PNV0041"
+          ]
+        }
       }
     },
     "Sources": {
@@ -5462,6 +5540,14 @@
             "CON-S083-PUB-ORG042"
           ]
         }
+      },
+      "ORG039": {
+        "reason": "Connect Éditions Salabert to the item-level cover source that prints the publisher and the credits for both songs from On a volé un homme.",
+        "fields": {
+          "sourceIds": [
+            "SRC0540"
+          ]
+        }
       }
     },
     "Contributions": {
@@ -5566,6 +5652,62 @@
         "fields": {
           "sourceIds": [
             "SRC0373"
+          ]
+        }
+      },
+      "CON-S110-C-P009": {
+        "reason": "Add the item-level cover source that prints the joint music credit.",
+        "fields": {
+          "sourceIds": [
+            "SRC0540"
+          ]
+        }
+      },
+      "CON-S110-C-P077": {
+        "reason": "Add the item-level cover source that prints the joint music credit.",
+        "fields": {
+          "sourceIds": [
+            "SRC0540"
+          ]
+        }
+      },
+      "CON-S110-L-P065": {
+        "reason": "Add the item-level cover source that prints René Pujol's words credit.",
+        "fields": {
+          "sourceIds": [
+            "SRC0540"
+          ]
+        }
+      },
+      "CON-S110-PUB-ORG039": {
+        "reason": "Add the item-level cover source that identifies Éditions Salabert.",
+        "fields": {
+          "sourceIds": [
+            "SRC0540"
+          ]
+        }
+      },
+      "CON-S111-C-P077": {
+        "reason": "Add the item-level cover source that prints the joint music credit.",
+        "fields": {
+          "sourceIds": [
+            "SRC0540"
+          ]
+        }
+      },
+      "CON-S111-L-P065": {
+        "reason": "Add the item-level cover source that prints René Pujol's words credit.",
+        "fields": {
+          "sourceIds": [
+            "SRC0540"
+          ]
+        }
+      },
+      "CON-S111-PUB-ORG039": {
+        "reason": "Add the item-level cover source that identifies Éditions Salabert.",
+        "fields": {
+          "sourceIds": [
+            "SRC0540"
           ]
         }
       }
@@ -6060,6 +6202,29 @@
             "SRC0373"
           ]
         }
+      },
+      "W-S110": {
+        "reason": "Attach the item-level cover source and Henry Garat's printed performance credit to Ni mal, ni bien.",
+        "fields": {
+          "sourceIds": [
+            "SRC0540"
+          ],
+          "contributionIds": [
+            "CON-S110-P-P132"
+          ]
+        }
+      },
+      "W-S111": {
+        "reason": "Attach the item-level cover source, Kaper's printed composer credit and Henry Garat's performance credit to Un regard de femme.",
+        "fields": {
+          "sourceIds": [
+            "SRC0540"
+          ],
+          "contributionIds": [
+            "CON-S111-C-P009",
+            "CON-S111-P-P132"
+          ]
+        }
       }
     },
     "Films": {
@@ -6112,6 +6277,22 @@
             "SRC0584"
           ]
         }
+      },
+      "S110": {
+        "reason": "Attach the item-level sheet-music cover source.",
+        "fields": {
+          "sourceIds": [
+            "SRC0540"
+          ]
+        }
+      },
+      "S111": {
+        "reason": "Attach the item-level sheet-music cover source.",
+        "fields": {
+          "sourceIds": [
+            "SRC0540"
+          ]
+        }
       }
     },
     "Person Name Variants": {
@@ -6128,6 +6309,18 @@
         "fields": {
           "sourceIds": [
             "SRC0373"
+          ]
+        }
+      },
+      "PNV0041": {
+        "reason": "Connect the attested form Henry Garat to the cover source and to both songs on which it is printed.",
+        "fields": {
+          "sourceIds": [
+            "SRC0540"
+          ],
+          "workIds": [
+            "W-S110",
+            "W-S111"
           ]
         }
       }
@@ -6210,6 +6403,14 @@
         "fields": {
           "placeIds": [
             "PL043"
+          ]
+        }
+      },
+      "M223": {
+        "reason": "Link the cover to its publisher without broadening its provenance beyond the item-level source SRC0540.",
+        "fields": {
+          "organizationIds": [
+            "ORG039"
           ]
         }
       }
@@ -6383,12 +6584,17 @@
             "SRC0230",
             "SRC0236",
             "SRC0306",
-            "SRC0486"
+            "SRC0486",
+            "SRC0540"
           ],
           "contributionIds": [
             "CON-F009-C-P009",
             "CON-F022-C-P009",
-            "CON-F035-BM-P009"
+            "CON-F035-BM-P009",
+            "CON-S111-C-P009"
+          ],
+          "workIds": [
+            "W-S111"
           ]
         }
       },
@@ -6501,7 +6707,8 @@
             "SRC0236",
             "SRC0334",
             "SRC0478",
-            "SRC0486"
+            "SRC0486",
+            "SRC0540"
           ],
           "contributionIds": [
             "CON-F004-C-P077",
@@ -6602,6 +6809,30 @@
         "fields": {
           "sourceIds": [
             "SRC0565"
+          ]
+        }
+      },
+      "P065": {
+        "reason": "Connect René Pujol to the item-level cover source that prints his words credit for both songs.",
+        "fields": {
+          "sourceIds": [
+            "SRC0540"
+          ]
+        }
+      },
+      "P132": {
+        "reason": "Connect Henri Garat to the item-level cover, his printed credit form and his two documented vocal performances.",
+        "fields": {
+          "sourceIds": [
+            "SRC0540"
+          ],
+          "contributionIds": [
+            "CON-S110-P-P132",
+            "CON-S111-P-P132"
+          ],
+          "workIds": [
+            "W-S110",
+            "W-S111"
           ]
         }
       }
@@ -7622,6 +7853,44 @@
             "PNV0041"
           ]
         }
+      },
+      "SRC0540": {
+        "reason": "Treat the Walter Jurmann cover-gallery record as the item-level provenance for M223 and synchronize only the people, publisher, works, songs and credits visibly documented on that cover.",
+        "fields": {
+          "personIds": [
+            "P009",
+            "P065",
+            "P077",
+            "P132"
+          ],
+          "organizationIds": [
+            "ORG039"
+          ],
+          "workIds": [
+            "W-F029",
+            "W-S110",
+            "W-S111"
+          ],
+          "mediaIds": [
+            "M223"
+          ],
+          "songIds": [
+            "S110",
+            "S111"
+          ],
+          "contributionIds": [
+            "CON-S110-C-P009",
+            "CON-S110-C-P077",
+            "CON-S110-L-P065",
+            "CON-S110-P-P132",
+            "CON-S110-PUB-ORG039",
+            "CON-S111-C-P009",
+            "CON-S111-C-P077",
+            "CON-S111-L-P065",
+            "CON-S111-P-P132",
+            "CON-S111-PUB-ORG039"
+          ]
+        }
       }
     }
   },
@@ -7635,6 +7904,18 @@
           ],
           "timelineEventIds": [
             "TE0032"
+          ]
+        }
+      },
+      "M223": {
+        "reason": "Remove broad catalogue, film-level and unrelated item sources from this specific cover so they cannot inject unrelated people into its public card.",
+        "fields": {
+          "sourceIds": [
+            "SRC0071",
+            "SRC0072",
+            "SRC0137",
+            "SRC0373",
+            "SRC0451"
           ]
         }
       }
@@ -7811,6 +8092,46 @@
         "fields": {
           "contributionIds": [
             "CON-S076-L-P017"
+          ]
+        }
+      },
+      "SRC0071": {
+        "reason": "Remove the inverse M223 link from this song-catalogue source; M223 has its own item-level cover provenance in SRC0540.",
+        "fields": {
+          "mediaIds": [
+            "M223"
+          ]
+        }
+      },
+      "SRC0072": {
+        "reason": "Remove the inverse M223 link from this song-catalogue source; M223 has its own item-level cover provenance in SRC0540.",
+        "fields": {
+          "mediaIds": [
+            "M223"
+          ]
+        }
+      },
+      "SRC0137": {
+        "reason": "Remove the inverse M223 link from the film-level source; M223 has its own item-level cover provenance in SRC0540.",
+        "fields": {
+          "mediaIds": [
+            "M223"
+          ]
+        }
+      },
+      "SRC0373": {
+        "reason": "Remove the inverse M223 link from the aggregate Jurmann catalogue, which otherwise leaks unrelated people into the specific cover record.",
+        "fields": {
+          "mediaIds": [
+            "M223"
+          ]
+        }
+      },
+      "SRC0451": {
+        "reason": "Remove M223 from the source for the separate On a volé un homme image M182.",
+        "fields": {
+          "mediaIds": [
+            "M223"
           ]
         }
       }

@@ -1934,9 +1934,6 @@
       "workIds": [
         "W-S110"
       ],
-      "mediaIds": [
-        "M223"
-      ],
       "songIds": [
         "S110"
       ],
@@ -1978,9 +1975,6 @@
       ],
       "workIds": [
         "W-S111"
-      ],
-      "mediaIds": [
-        "M223"
       ],
       "songIds": [
         "S111"
@@ -4293,9 +4287,6 @@
       ],
       "workIds": [
         "W-F029"
-      ],
-      "mediaIds": [
-        "M223"
       ],
       "filmIds": [
         "F029"
@@ -11983,8 +11974,7 @@
       ],
       "mediaIds": [
         "M221",
-        "M222",
-        "M223"
+        "M222"
       ],
       "timelineEventIds": [
         "TE0042"
@@ -14020,8 +14010,7 @@
         "W-F029"
       ],
       "mediaIds": [
-        "M182",
-        "M223"
+        "M182"
       ],
       "primaryUrl": "https://gallica.bnf.fr/ark:/12148/bpt6k974490z/f22.image.r=%22On%20a%20vole%20un%20homme%22",
       "identifiers": [
@@ -16878,8 +16867,38 @@
       "reliability": "high",
       "sourceStatus": "verified",
       "slug": "src0540-walter-jurmann-cover-on-a-vole-un-homme-1934",
+      "personIds": [
+        "P009",
+        "P065",
+        "P077",
+        "P132"
+      ],
+      "organizationIds": [
+        "ORG039"
+      ],
+      "workIds": [
+        "W-F029",
+        "W-S110",
+        "W-S111"
+      ],
       "mediaIds": [
         "M223"
+      ],
+      "songIds": [
+        "S110",
+        "S111"
+      ],
+      "contributionIds": [
+        "CON-S110-C-P009",
+        "CON-S110-C-P077",
+        "CON-S110-L-P065",
+        "CON-S110-P-P132",
+        "CON-S110-PUB-ORG039",
+        "CON-S111-C-P009",
+        "CON-S111-C-P077",
+        "CON-S111-L-P065",
+        "CON-S111-P-P132",
+        "CON-S111-PUB-ORG039"
       ],
       "primaryUrl": "https://walter-jurmann.com/cover",
       "additionalLinks": [
