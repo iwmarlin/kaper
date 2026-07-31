@@ -113,9 +113,93 @@ def title_for(record_type: str, record: dict) -> str:
     return record.get("title") or record["id"]
 
 
+def _names(ids, index) -> list[str]:
+    return [index[i]["displayName"] for i in (ids or []) if i in index and index[i].get("displayName")]
+
+
+def _people_index(tables: dict) -> dict:
+    return {item["id"]: item for item in tables.get("people", [])}
+
+
+def _org_index(tables: dict) -> dict:
+    return {item["id"]: item for item in tables.get("organizations", [])}
+
+
+def credited(tables: dict, work_id: str, role: str) -> list[str]:
+    """Names credited in a given role on this work, people first then organizations."""
+    people, orgs = _people_index(tables), _org_index(tables)
+    out: list[str] = []
+    for item in sorted(tables.get("contributions", []), key=lambda c: c.get("sortOrder") or 999):
+        if item.get("role") != role or work_id not in (item.get("workIds") or []):
+            continue
+        out.extend(_names(item.get("personIds"), people))
+        out.extend(_names(item.get("organizationIds"), orgs))
+    return list(dict.fromkeys(out))
+
+
+def join_names(names: list[str], limit: int = 3) -> str:
+    if not names:
+        return ""
+    shown = names[:limit]
+    text = " and ".join([", ".join(shown[:-1]), shown[-1]]) if len(shown) > 1 else shown[0]
+    return f"{text} and others" if len(names) > limit else text
+
+
+def related_film_titles(record: dict, tables: dict) -> list[str]:
+    works = {item["id"]: item for item in tables.get("works", [])}
+    titles = []
+    for relation in tables.get("workRelations", []):
+        if relation.get("relationType") != "associated_with_film":
+            continue
+        if record["id"] not in (relation.get("sourceWorkIds") or []):
+            continue
+        for target in relation.get("targetWorkIds") or []:
+            title = works.get(target, {}).get("title")
+            if title:
+                titles.append(title)
+    return list(dict.fromkeys(titles))
+
+
+def work_summary(record: dict, tables: dict, subtype: dict) -> str:
+    """Factual, record-specific summary used when no curated note exists."""
+    work_type = str(record.get("workType") or "Work")
+    year = record.get("year")
+    composers = join_names(credited(tables, record["id"], "composer"))
+    lyricists = join_names(credited(tables, record["id"], "lyricist"))
+    directors = join_names(credited(tables, record["id"], "film_director"))
+    companies = join_names(credited(tables, record["id"], "production_company"), limit=2)
+    publisher = subtype.get("publisherAsPrinted") or join_names(
+        credited(tables, record["id"], "publisher"), limit=1
+    )
+    opening = f"{work_type}" + (f" ({year})" if year else "")
+    parts: list[str] = []
+    if work_type.lower() == "film":
+        if directors:
+            opening += f" directed by {directors}"
+        if companies:
+            opening += f", produced by {companies}"
+        parts.append(opening + ".")
+        if composers:
+            parts.append(f"Music by {composers}.")
+    else:
+        if composers:
+            opening += f" by {composers}"
+        if lyricists:
+            opening += f", words by {lyricists}"
+        parts.append(opening + ".")
+        films = related_film_titles(record, tables)
+        if films:
+            parts.append(f"Associated with the film {join_names(films, limit=2)}.")
+        if publisher:
+            parts.append(f"Published by {publisher}.")
+    count = len(record.get("sourceIds") or [])
+    if count:
+        parts.append(f"{count} linked source{'s' if count != 1 else ''}.")
+    return " ".join(parts)
+
+
 def summary_for(record_type: str, record: dict, tables: dict) -> str:
     if record_type == "work":
-        is_other_work = any(record["id"] in item.get("workIds", []) for item in tables["otherWorks"])
         subtype = next(
             (
                 item
@@ -128,11 +212,7 @@ def summary_for(record_type: str, record: dict, tables: dict) -> str:
         return compact_text(
             subtype.get("publicNote")
             or record.get("publicNote")
-            or (
-                ""
-                if is_other_work
-                else f"A documented {str(record.get('workType') or 'work').lower()} in the Bronisław Kaper research archive."
-            )
+            or work_summary(record, tables, subtype)
         )
     if record_type == "event":
         return compact_text(record.get("longDescription") or record.get("shortDescription") or record.get("title"))
@@ -162,7 +242,13 @@ def summary_for(record_type: str, record: dict, tables: dict) -> str:
             if types or context
             else f"{record.get('displayName')} in the Bronisław Kaper research archive."
         )
-    return compact_text(record.get("fullCitation") or record.get("shortCitation") or record.get("title"))
+    # Sources: lead with the short citation, which identifies the item, because many full
+    # citations share an identical opening (catalogue volumes) and would truncate alike.
+    short = compact_text(record.get("shortCitation") or record.get("title"))
+    full = compact_text(record.get("fullCitation"))
+    if short and full and not full.startswith(short[:40]):
+        return compact_text(f"{short} {full}")
+    return compact_text(full or short)
 
 
 def facts_for(record_type: str, record: dict) -> list[tuple[str, str]]:
@@ -225,7 +311,80 @@ def og_image_for(record_type: str, record: dict) -> str:
     return DEFAULT_OG_IMAGE
 
 
-def structured_data(record_type: str, record: dict, canonical: str, title: str, summary: str) -> str:
+WORK_SCHEMA_TYPE = {"song": "MusicComposition", "film": "Movie"}
+
+
+def agent_entities(tables: dict, work_id: str, role: str) -> list[dict]:
+    """Linked-data entities for a credited role, carrying record URLs and authority IDs."""
+    people, orgs = _people_index(tables), _org_index(tables)
+    out: list[dict] = []
+    seen: set[str] = set()
+    for item in sorted(tables.get("contributions", []), key=lambda c: c.get("sortOrder") or 999):
+        if item.get("role") != role or work_id not in (item.get("workIds") or []):
+            continue
+        for pid in item.get("personIds") or []:
+            person = people.get(pid)
+            if not person or pid in seen:
+                continue
+            seen.add(pid)
+            entity = {
+                "@type": "Person",
+                "name": person.get("displayName"),
+                "@id": f"{ORIGIN}records/person/{quote(pid, safe='')}/",
+            }
+            authorities = authority_urls(person.get("authorityUrl"))
+            if authorities:
+                entity["sameAs"] = authorities[0] if len(authorities) == 1 else authorities
+            out.append(entity)
+        for oid in item.get("organizationIds") or []:
+            org = orgs.get(oid)
+            if not org or oid in seen:
+                continue
+            seen.add(oid)
+            out.append({
+                "@type": "Organization",
+                "name": org.get("displayName"),
+                "@id": f"{ORIGIN}records/organization/{quote(oid, safe='')}/",
+            })
+    return out
+
+
+def work_structured_data(record: dict, tables: dict, data: dict) -> None:
+    work_type = str(record.get("workType") or "").lower()
+    data["@type"] = WORK_SCHEMA_TYPE.get(work_type, "CreativeWork")
+    if record.get("year"):
+        data["datePublished"] = str(record["year"])
+    mapping = (
+        [("director", "film_director"), ("musicBy", "composer"), ("productionCompany", "production_company")]
+        if work_type == "film"
+        else [("composer", "composer"), ("lyricist", "lyricist"), ("publisher", "publisher")]
+    )
+    for key, role in mapping:
+        entities = agent_entities(tables, record["id"], role)
+        if entities:
+            data[key] = entities[0] if len(entities) == 1 else entities
+    works = {item["id"]: item for item in tables.get("works", [])}
+    parents = []
+    for relation in tables.get("workRelations", []):
+        if relation.get("relationType") != "associated_with_film":
+            continue
+        if record["id"] not in (relation.get("sourceWorkIds") or []):
+            continue
+        for target in relation.get("targetWorkIds") or []:
+            film = works.get(target)
+            if film:
+                parents.append({
+                    "@type": "Movie",
+                    "name": film.get("title"),
+                    "@id": f"{ORIGIN}records/work/{quote(target, safe='')}/",
+                })
+    if parents:
+        data["isPartOf"] = parents[0] if len(parents) == 1 else parents
+
+
+def structured_data(
+    record_type: str, record: dict, canonical: str, title: str, summary: str, tables: dict | None = None
+) -> str:
     data = {
         "@context": "https://schema.org",
         "@type": SCHEMA_TYPE.get(record_type, "CreativeWork"),
@@ -234,6 +393,21 @@ def structured_data(record_type: str, record: dict, canonical: str, title: str, 
     }
     if summary:
         data["description"] = compact_text(summary, 300)
+    if record_type == "work":
+        work_structured_data(record, tables or {}, data)
+    if record_type == "source":
+        link = record.get("primaryUrl") or record.get("accessUrl")
+        if link:
+            data["sameAs"] = link
+        # schema.org expects ISO 8601; archival date strings such as "[1938?]" or
+        # "1935; copyright June 3, 1935" are kept out of the machine-readable field.
+        iso = re.match(r"\s*(\d{4}(?:-\d{2}(?:-\d{2})?)?)\s*$", str(record.get("date") or ""))
+        if iso:
+            data["datePublished"] = iso.group(1)
+        if record.get("creator"):
+            data["creator"] = {"@type": "Person", "name": record["creator"]}
+        if record.get("repository"):
+            data["holdingArchive"] = {"@type": "Organization", "name": record["repository"]}
     if record_type == "person":
         same_as = authority_urls(record.get("authorityUrl"))
         if same_as:
@@ -260,6 +434,9 @@ def static_page(record_type: str, record: dict, tables: dict) -> str:
     summary = summary_for(record_type, record, tables)
     meta_summary = summary or f"{title}, a documented record in the Bronisław Kaper research archive."
     label = TYPE_LABELS[record_type]
+    # Media, source and organization titles collide with work titles across the archive;
+    # qualifying them keeps every <title> distinct in search results.
+    page_title = title if record_type in {"work", "person", "place", "event"} else f"{title} ({label.lower()})"
     record_id = record["id"]
     is_gallery = record_type == "media" and record.get("mediaType") == "document_gallery"
     style_version = "85a644665a"
@@ -278,7 +455,7 @@ def static_page(record_type: str, record: dict, tables: dict) -> str:
         else ""
     )
     og_image = og_image_for(record_type, record)
-    ld_json = structured_data(record_type, record, canonical, title, meta_summary)
+    ld_json = structured_data(record_type, record, canonical, title, meta_summary, tables)
     return f"""<!doctype html>
 <html lang="en">
 <head>
@@ -302,7 +479,7 @@ def static_page(record_type: str, record: dict, tables: dict) -> str:
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="stylesheet" href="assets/site/styles.css?v={style_version}">
-  <title>{esc(title)} — Bronisław Kaper, 1902–1939</title>
+  <title>{esc(page_title)} — Bronisław Kaper, 1902–1939</title>
   {ld_json}
 </head>
 <body>
@@ -348,8 +525,16 @@ def expected_outputs(root: Path) -> tuple[dict[Path, str], str, dict]:
             routes.append(f"records/{record_type}/{quote(payload['id'], safe='')}/")
     sitemap_urls = [f"{ORIGIN}{path}" for path in PUBLIC_PAGES]
     sitemap_urls.extend(f"{ORIGIN}{route}" for route in routes)
+    lastmod = ""
+    manifest_path = root / "data/public/v1/manifest.json"
+    if manifest_path.is_file():
+        snapshot = str(read_json(manifest_path).get("sourceSnapshot") or "")
+        match = re.match(r"(\d{4}-\d{2}-\d{2})", snapshot)
+        if match:
+            lastmod = match.group(1)
+    stamp = f"<lastmod>{lastmod}</lastmod>" if lastmod else ""
     sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
-    sitemap += "".join(f"  <url><loc>{esc(url)}</loc></url>\n" for url in sitemap_urls)
+    sitemap += "".join(f"  <url><loc>{esc(url)}</loc>{stamp}</url>\n" for url in sitemap_urls)
     sitemap += "</urlset>\n"
     report = {
         "schemaVersion": "1.0.0",
