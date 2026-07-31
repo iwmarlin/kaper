@@ -1,4 +1,4 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=ac621d3af7";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=ef11864ccf";
 import {
   debounce,
   escapeHtml,
@@ -17,7 +17,7 @@ import {
   renderLoading,
   responsiveImage,
   typeBadge,
-} from "./core.js?v=ac621d3af7";
+} from "./core.js?v=ef11864ccf";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 mountSiteChrome("people");
@@ -192,7 +192,6 @@ try {
     }
 
     target.innerHTML = shown.map((person) => {
-      const extraRoles = person._roles.slice(1);
       const tally = [
         person._works ? `${person._works} ${person._works === 1 ? "work" : "works"}` : "",
         person._sources ? `${person._sources} ${person._sources === 1 ? "source" : "sources"}` : "",
@@ -201,12 +200,10 @@ try {
         <article class="person-row">
           <div class="person-row__avatar">${avatar(person)}</div>
           <div class="person-row__identity">
-            <div class="meta-row">${typeBadge(person.primaryRole)}</div>
-            <h2><a href="${recordUrl("person", person.id)}">${escapeHtml(person.displayName)}</a></h2>
-            <p class="person-row__meta">
-              ${person._dates ? `<span class="person-row__dates">${escapeHtml(person._dates)}</span>` : ""}
-              ${extraRoles.length ? `<span class="person-row__roles">${escapeHtml(extraRoles.map(humanize).join(" · "))}</span>` : ""}
-            </p>
+            <div class="meta-row">${person._roles.map(typeBadge).join("")}</div>
+            <h2><a href="${recordUrl("person", person.id)}">${escapeHtml(person.displayName)}</a>${
+              person._dates ? `<span class="person-row__dates">, ${escapeHtml(person._dates)}</span>` : ""
+            }</h2>
           </div>
           <div class="person-row__count">${escapeHtml(tally)}</div>
           <div class="person-row__period">${periodBadge(person._periods)}</div>

@@ -1171,6 +1171,7 @@ main {
 .person-row h2 {
   margin: 0.12rem 0 0;
   font-size: 1.1rem;
+  text-wrap: balance;
 }
 
 .person-row h2 a {
@@ -1184,17 +1185,19 @@ main {
   content: "";
 }
 
-.person-row__meta {
-  margin: 0.1rem 0 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
+/* Life dates sit inline after the name, as in an authority file heading, so a
+   record without them simply reads as a name rather than a gap in the row. */
+.person-row__dates {
   color: var(--ink-soft);
-  font-size: 0.82rem;
+  font-family: var(--serif);
+  font-size: 0.88rem;
+  font-weight: 400;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
 }
 
-.person-row__dates {
-  font-variant-numeric: tabular-nums;
+.person-row .meta-row {
+  gap: 0.3rem;
 }
 
 .person-row__count,
