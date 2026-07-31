@@ -2143,15 +2143,16 @@
     },
     {
       "id": "P052",
-      "displayName": "Marc Cab",
-      "sortName": "Cab, Marc",
-      "authorizedName": "Marc Cab",
+      "displayName": "Marc-Cab",
+      "sortName": "Marc-Cab",
+      "authorizedName": "Marc-Cab (1901–1978)",
       "slug": "marc-cab",
       "primaryRole": "lyricist",
       "roles": [
-        "lyricist"
+        "lyricist",
+        "writer"
       ],
-      "authorityUrl": "VIAF: https://viaf.org/viaf/54151083\nLCNAF: https://id.loc.gov/authorities/n93028108",
+      "authorityUrl": "BnF: https://data.bnf.fr/fr/ark:/12148/cb11914372q\nVIAF: https://viaf.org/viaf/54151083\nLCNAF: https://id.loc.gov/authorities/n93028108",
       "contributionIds": [
         "CON-S112-L-P052",
         "CON-S113-L-P052",
@@ -2163,6 +2164,12 @@
         "W-S113",
         "W-S115",
         "W-S163"
+      ],
+      "nameVariantIds": [
+        "PNV0042"
+      ],
+      "sourceIds": [
+        "SRC0588"
       ]
     },
     {
