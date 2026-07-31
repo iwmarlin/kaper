@@ -212,6 +212,9 @@
       ],
       "workIds": [
         "W-F032"
+      ],
+      "sourceIds": [
+        "SRC0605"
       ]
     },
     {
@@ -2556,7 +2559,8 @@
       ],
       "authorityUrl": "VIAF: http://viaf.org/viaf/42029827\nLCNAF: https://id.loc.gov/authorities/nr92044526",
       "sourceIds": [
-        "SRC0140"
+        "SRC0140",
+        "SRC0604"
       ],
       "contributionIds": [
         "CON-F033-D-P070",
@@ -4292,7 +4296,7 @@
         "composer",
         "conductor"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n83065680",
+      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n83065680\nVIAF: https://viaf.org/viaf/17409280\nGND: https://d-nb.info/gnd/117156094\nISNI: https://isni.org/isni/0000000108754147",
       "sourceIds": [
         "SRC0141",
         "SRC0176",
@@ -4336,7 +4340,8 @@
       "workIds": [
         "W-F034",
         "W-F036"
-      ]
+      ],
+      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n85151854\nVIAF: https://viaf.org/viaf/100912799\nGND: https://d-nb.info/gnd/134532325\nISNI: https://isni.org/isni/0000000115034359"
     }
   ]
 }
