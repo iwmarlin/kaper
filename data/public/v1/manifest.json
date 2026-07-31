@@ -46,10 +46,10 @@
     "legacyAndInternalFields": "excluded by explicit allowlist"
   },
   "counts": {
-    "People": 115,
+    "People": 117,
     "Organizations": 111,
-    "Sources": 513,
-    "Media": 215,
+    "Sources": 515,
+    "Media": 217,
     "Works": 280,
     "Films": 55,
     "Songs": 203,
@@ -58,19 +58,19 @@
     "Work Relations": 190,
     "Timeline Events": 54,
     "Places": 44,
-    "Contributions": 1041,
+    "Contributions": 1043,
     "Person Name Variants": 38
   },
   "files": [
     {
       "file": "build-report.json",
       "bytes": 114996,
-      "sha256": "41a6fc193c3c9358cd42cf3ce69253c286c53ea3cf16722de93484a8739a9a75"
+      "sha256": "37e581455138d6690b03334809fed2257a8f34fb4d507b6e613a595e342130ae"
     },
     {
       "file": "contributions.json",
-      "bytes": 370026,
-      "sha256": "89ef92d91d139a3c2f1d116a0f5a563987c0a16d3373868f84e79cf8a50e3758"
+      "bytes": 371074,
+      "sha256": "e904e0f53f17e43644b8d14ad9e7d82b694acef253062e46d00442b00a4c3da6"
     },
     {
       "file": "films.json",
@@ -79,8 +79,8 @@
     },
     {
       "file": "media.json",
-      "bytes": 336617,
-      "sha256": "b4a0bef93e9feb57edb336441a3cebaa19ba40d49c85ffd100e16a36717e101c"
+      "bytes": 339204,
+      "sha256": "f15afb57c322991d830647ccdc1b89a5d0cd91325c8f9e88e6054cd5102f1921"
     },
     {
       "file": "organizations.json",
@@ -94,8 +94,8 @@
     },
     {
       "file": "people.json",
-      "bytes": 98409,
-      "sha256": "da7a6690ccd0774749b5d7a3ebd142c7ce1123752ca3b6e65706949eb0b64cbd"
+      "bytes": 99292,
+      "sha256": "dbc2d1c8e8d5491b586a7b0781f5e4bc9122ebcc6af449c8c93388ce97f6d8e2"
     },
     {
       "file": "person-name-variants.json",
@@ -114,8 +114,8 @@
     },
     {
       "file": "sources.json",
-      "bytes": 667326,
-      "sha256": "004e557bc020a00e40b31d2cd84d3b120aa14772602f66386b027501b0bb8118"
+      "bytes": 669294,
+      "sha256": "c1e3126ca8a350f8eb0e328b1ffb2f51bcc35b9321e530e5979fa0739ab08e14"
     },
     {
       "file": "timeline-events.json",
@@ -134,8 +134,8 @@
     },
     {
       "file": "works.json",
-      "bytes": 251045,
-      "sha256": "9e56ea466a5ac8e572332eab3f2808f7f9a83c035775e3ff6d6eb2c3f8eeb82b"
+      "bytes": 251131,
+      "sha256": "3bce68739d1927bfb38718cab011f987616b5b5766570edf6e7785fa98f3ccb7"
     }
   ]
 }

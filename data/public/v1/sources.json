@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 513,
+  "count": 515,
   "records": [
     {
       "id": "SRC0001",
@@ -212,6 +212,7 @@
         "CON-S119-C-P009",
         "CON-S119-C-P077",
         "CON-S119-L-P025",
+        "CON-S119-P-P133",
         "CON-S119-PUB-ORG001"
       ],
       "nameVariantIds": [
@@ -17982,6 +17983,49 @@
       ],
       "contributionIds": [
         "CON-S077-P-P117"
+      ]
+    },
+    {
+      "id": "SRC0585",
+      "shortCitation": "Eddie Duchin, Billboard portrait, Wikimedia Commons.",
+      "fullCitation": "Eddie Duchin. Publicity portrait reproduced in Billboard. Wikimedia Commons, File:Eddie Duchin Billboard.jpg. Public domain.",
+      "sourceType": "wikimedia_commons_file",
+      "title": "File:Eddie Duchin Billboard.jpg",
+      "publication": "Billboard",
+      "repository": "Wikimedia Commons",
+      "primaryUrl": "https://commons.wikimedia.org/wiki/File:Eddie_Duchin_Billboard.jpg",
+      "accessDate": "2026-07-28",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "slug": "src0585-eddie-duchin-billboard-portrait",
+      "personIds": [
+        "P133"
+      ],
+      "mediaIds": [
+        "M244"
+      ]
+    },
+    {
+      "id": "SRC0586",
+      "shortCitation": "Photograph of Ivie Anderson, Bette Cox Collection, UCLA Ethnomusicology Archive.",
+      "fullCitation": "Photograph of Ivie Anderson. Photographer unknown, undated. Slide (photograph), 2 × 2 in. Bette Cox Collection, University of California, Los Angeles, Ethnomusicology Archive, call number calauem_200901_ams0000060. Digitised by California Revealed; copy in the Internet Archive, identifier calauem_006181. Copyright status recorded as unknown.",
+      "sourceType": "image_or_photograph",
+      "title": "Ivie Anderson",
+      "creator": "Unknown",
+      "repository": "University of California, Los Angeles, Ethnomusicology Archive",
+      "publication": "California Revealed",
+      "date": "undated",
+      "primaryUrl": "https://californiarevealed.org/do/e681e8de-1930-4aff-9b9c-a7440dc00e25",
+      "accessUrl": "https://archive.org/details/calauem_006181",
+      "accessDate": "2026-07-28",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "slug": "src0586-photograph-of-ivie-anderson-ucla",
+      "personIds": [
+        "P134"
+      ],
+      "mediaIds": [
+        "M245"
       ]
     }
   ]

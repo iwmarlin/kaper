@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 1041,
+  "count": 1043,
   "records": [
     {
       "id": "CON-F001-C-P009",
@@ -18139,6 +18139,40 @@
       ],
       "nameVariantIds": [
         "PNV0041"
+      ]
+    },
+    {
+      "id": "CON-S119-P-P133",
+      "role": "performer",
+      "evidenceContext": "recording_label",
+      "sortOrder": 50,
+      "certainty": "confirmed",
+      "scopeNote": "Recorded the song with his orchestra for Victor (25029) in 1935, vocal by Lew Sherwood; this documents performance, not authorship of the work.",
+      "workIds": [
+        "W-S119"
+      ],
+      "personIds": [
+        "P133"
+      ],
+      "sourceIds": [
+        "SRC0006"
+      ]
+    },
+    {
+      "id": "CON-S152-P-P134",
+      "role": "performer",
+      "evidenceContext": "film_credits",
+      "sortOrder": 51,
+      "certainty": "confirmed",
+      "scopeNote": "Sang the song in A Day at the Races (MGM, 1937); the UCLA Ethnomusicology Archive notes this as one of the rare occasions when Anderson performed independently of the Duke Ellington orchestra. This documents performance, not authorship of the work.",
+      "workIds": [
+        "W-S152"
+      ],
+      "personIds": [
+        "P134"
+      ],
+      "sourceIds": [
+        "SRC0586"
       ]
     }
   ]
