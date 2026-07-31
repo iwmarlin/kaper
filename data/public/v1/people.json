@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 119,
+  "count": 121,
   "records": [
     {
       "id": "P001",
@@ -4342,6 +4342,64 @@
         "W-F036"
       ],
       "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n85151854\nVIAF: https://viaf.org/viaf/100912799\nGND: https://d-nb.info/gnd/134532325\nISNI: https://isni.org/isni/0000000115034359"
+    },
+    {
+      "id": "P137",
+      "displayName": "Deanna Durbin",
+      "sortName": "Durbin, Deanna",
+      "authorizedName": "Durbin, Deanna, 1921–2013",
+      "slug": "deanna-durbin",
+      "primaryRole": "performer",
+      "roles": [
+        "performer",
+        "singer",
+        "actor"
+      ],
+      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no90008351\nVIAF: https://viaf.org/viaf/162638542\nGND: https://d-nb.info/gnd/1032101164\nISNI: https://isni.org/isni/0000000114945206",
+      "sourceIds": [
+        "SRC0145",
+        "SRC0380",
+        "SRC0606"
+      ],
+      "contributionIds": [
+        "CON-S132-P-P137",
+        "CON-S133-P-P137"
+      ],
+      "nameVariantIds": [
+        "PNV0046"
+      ],
+      "workIds": [
+        "W-S132",
+        "W-S133"
+      ]
+    },
+    {
+      "id": "P138",
+      "displayName": "Judy Garland",
+      "sortName": "Garland, Judy",
+      "authorizedName": "Garland, Judy, 1922–1969",
+      "slug": "judy-garland",
+      "primaryRole": "performer",
+      "roles": [
+        "performer",
+        "singer",
+        "actor"
+      ],
+      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n50015080\nVIAF: https://viaf.org/viaf/49233610\nGND: https://d-nb.info/gnd/11853761X\nISNI: https://isni.org/isni/000000036851668X",
+      "sourceIds": [
+        "SRC0147",
+        "SRC0321",
+        "SRC0607"
+      ],
+      "contributionIds": [
+        "CON-S157-P-P138"
+      ],
+      "nameVariantIds": [
+        "PNV0047"
+      ],
+      "workIds": [
+        "W-S157"
+      ]
     }
   ]
 }

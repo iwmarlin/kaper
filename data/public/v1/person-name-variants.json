@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 42,
+  "count": 44,
   "records": [
     {
       "id": "PNV0001",
@@ -1190,6 +1190,38 @@
       ],
       "sourceIds": [
         "SRC0602"
+      ]
+    },
+    {
+      "id": "PNV0046",
+      "variantName": "Edna May Durbin",
+      "variantType": "other",
+      "identityScope": "single_person",
+      "evidenceContext": "authority_record",
+      "attestedWording": "Edna May Durbin",
+      "certainty": "confirmed",
+      "publicNote": "Birth name. The authority heading is established under the professional name Deanna Durbin, which is also the form used in the press notices in this archive.",
+      "personIds": [
+        "P137"
+      ],
+      "sourceIds": [
+        "SRC0380"
+      ]
+    },
+    {
+      "id": "PNV0047",
+      "variantName": "Frances Ethel Gumm",
+      "variantType": "other",
+      "identityScope": "single_person",
+      "evidenceContext": "authority_record",
+      "attestedWording": "Frances Ethel Gumm",
+      "certainty": "confirmed",
+      "publicNote": "Birth name. The authority heading is established under the stage name Judy Garland, adopted in 1934 and used in the film credits recorded here.",
+      "personIds": [
+        "P138"
+      ],
+      "sourceIds": [
+        "SRC0147"
       ]
     }
   ]
