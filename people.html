@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://unpkg.com; style-src 'self' 'unsafe-inline' https://unpkg.com; img-src 'self' data: https://*.tile.openstreetmap.org; media-src 'self'; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="An index of the composers, lyricists, directors and performers documented alongside Bronisław Kaper through 1939.">
+  <meta name="theme-color" content="#152c33">
+  <meta property="og:title" content="People — Bronisław Kaper, 1902–1939">
+  <meta property="og:description" content="Composers, lyricists, directors and performers documented alongside Bronisław Kaper, with authority records and linked works.">
+  <link rel="canonical" href="https://iwmarlin.github.io/kaper/people.html">
+  <link rel="stylesheet" href="assets/site/styles.css?v=4cf00e4fcd">
+  <title>People — Bronisław Kaper, 1902–1939</title>
+  <meta property="og:image" content="https://iwmarlin.github.io/kaper/assets/images/portraits/kaper-mature.jpg">
+  <meta property="og:image:alt" content="Bronisław Kaper">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="site-header" data-site-header></header>
+  <main id="main-content">
+    <section class="page-hero page-hero--compact">
+      <div class="shell page-hero__grid">
+        <div>
+          <p class="eyebrow">Authority index</p>
+          <h1>People around Kaper</h1>
+          <p class="lead">The collaborators, lyricists, directors, performers and family members documented in this archive. Each name carries an authority record where one exists, and links to every work and source that names them.</p>
+          <p class="lead lead--meta" id="person-total-label">Loading people…</p>
+        </div>
+        <div class="scope-note">Inclusion follows the evidence, not reputation. A person appears here because a source in the archive names them — some carry a single documented credit, others a whole career alongside Kaper.</div>
+      </div>
+    </section>
+
+    <section class="filters" aria-label="People filters">
+      <div class="shell filters__grid">
+        <div class="field">
+          <label for="person-search">Search name or role</label>
+          <input id="person-search" type="search" placeholder="Try Jurmann, Kahn, director…" autocomplete="off">
+        </div>
+        <div class="field">
+          <label for="person-role">Role</label>
+          <select id="person-role"><option value="">All roles</option></select>
+        </div>
+        <div class="field">
+          <label for="person-period">Period</label>
+          <select id="person-period"><option value="">All periods</option></select>
+        </div>
+        <div class="field">
+          <label for="person-sort">Sort</label>
+          <select id="person-sort">
+            <option value="works-desc">Most documented first</option>
+            <option value="name">Name</option>
+            <option value="role">Role</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--listing">
+      <div class="shell">
+        <div class="results-bar">
+          <p id="person-results-count" aria-live="polite">Loading index…</p>
+          <button class="button button--ghost button--small" id="reset-filters" type="button">Reset filters</button>
+        </div>
+        <div id="person-results" class="people-list"></div>
+        <div class="load-more"><button class="button button--ghost" id="load-more" type="button" hidden>Load more</button><button class="button button--ghost button--small" id="show-all" type="button" hidden>Show all</button></div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer" data-site-footer></footer>
+  <script type="module" src="assets/site/people.js?v=4cf00e4fcd"></script>
+</body>
+</html>

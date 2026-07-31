@@ -15,12 +15,16 @@ from urllib.parse import unquote, urlsplit
 PUBLIC_PAGES = [
     "index.html",
     "works.html",
+    "people.html",
     "life.html",
     "map.html",
     "media.html",
     "record.html",
     "404.html",
 ]
+
+# Pages that must appear in sitemap.xml (record.html and 404.html are shells, not routes).
+SITEMAP_PAGES = PUBLIC_PAGES[:6]
 
 
 class ReferenceParser(HTMLParser):
@@ -262,7 +266,7 @@ def validate(root: Path) -> dict:
     ):
         errors.append("Shared JavaScript shell must not inject a duplicate skip link")
 
-    for filename in PUBLIC_PAGES[:5]:
+    for filename in SITEMAP_PAGES:
         expected = "https://iwmarlin.github.io/kaper/" if filename == "index.html" else f"https://iwmarlin.github.io/kaper/{filename}"
         if expected not in sitemap:
             errors.append(f"Sitemap omits {filename}")

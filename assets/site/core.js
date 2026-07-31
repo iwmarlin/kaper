@@ -364,6 +364,7 @@ export function setCanonicalRecordUrl(type, id) {
 const NAV_ITEMS = [
   ["home", "index.html", "Home"],
   ["works", "works.html", "Works"],
+  ["people", "people.html", "People"],
   ["timeline", "life.html", "Timeline"],
   ["map", "map.html", "Map"],
   ["media", "media.html", "Media"],

@@ -13,7 +13,7 @@ from urllib.parse import quote, urlsplit
 
 
 ORIGIN = "https://iwmarlin.github.io/kaper/"
-PUBLIC_PAGES = ["", "works.html", "life.html", "map.html", "media.html"]
+PUBLIC_PAGES = ["", "works.html", "people.html", "life.html", "map.html", "media.html"]
 RECORD_TABLES = {
     "work": "works",
     "event": "timelineEvents",
@@ -439,8 +439,8 @@ def static_page(record_type: str, record: dict, tables: dict) -> str:
     page_title = title if record_type in {"work", "person", "place", "event"} else f"{title} ({label.lower()})"
     record_id = record["id"]
     is_gallery = record_type == "media" and record.get("mediaType") == "document_gallery"
-    style_version = "4ecec84c69"
-    record_script_version = "4ecec84c69"
+    style_version = "4cf00e4fcd"
+    record_script_version = "4cf00e4fcd"
     route = f"records/{record_type}/{quote(record_id, safe='')}/"
     canonical = f"{ORIGIN}{route}"
     facts = "".join(
@@ -487,7 +487,7 @@ def static_page(record_type: str, record: dict, tables: dict) -> str:
   <header class="site-header" data-site-header>
     <div class="site-header__inner shell">
       <a class="brand" href="index.html"><span class="brand__monogram" aria-hidden="true">BK</span><span class="brand__text"><strong>Bronisław Kaper</strong><small>A source-based archive · 1902–1939</small></span></a>
-      <nav class="site-nav" aria-label="Primary navigation"><a href="index.html">Home</a><a href="works.html">Works</a><a href="life.html">Timeline</a><a href="map.html">Map</a><a href="media.html">Media</a></nav>
+      <nav class="site-nav" aria-label="Primary navigation"><a href="index.html">Home</a><a href="works.html">Works</a><a href="people.html">People</a><a href="life.html">Timeline</a><a href="map.html">Map</a><a href="media.html">Media</a></nav>
     </div>
   </header>
   <main id="main-content">
