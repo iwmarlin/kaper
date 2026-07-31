@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 1048,
+  "count": 1049,
   "records": [
     {
       "id": "CON-F001-C-P009",
@@ -2763,7 +2763,7 @@
       "id": "CON-F036-C-P136",
       "role": "composer",
       "nameAsPrinted": "Herbert Stothart",
-      "evidenceContext": "secondary_literature",
+      "evidenceContext": "film_credits",
       "sortOrder": 42,
       "certainty": "confirmed",
       "scopeNote": "Composer of the complete film score; Kaper and Jurmann contributed songs, including “Cosi Cosa”.",
@@ -2774,6 +2774,7 @@
         "P136"
       ],
       "sourceIds": [
+        "SRC0143",
         "SRC0373"
       ]
     },
@@ -3061,10 +3062,10 @@
       "id": "CON-F040-C-P135",
       "role": "composer",
       "nameAsPrinted": "Franz Waxman",
-      "evidenceContext": "background_music_and_song",
+      "evidenceContext": "film_credits",
       "sortOrder": 42,
       "certainty": "confirmed",
-      "scopeNote": "Credited composer of the film score. The Jurmann estate cue list records several cues written “in Zusammenarbeit mit Bronislaw Kaper, Franz Waxman”.",
+      "scopeNote": "Composer of the film score (AFI). The Jurmann estate cue list additionally records several cues written “in Zusammenarbeit mit Bronislaw Kaper, Franz Waxman”.",
       "workIds": [
         "W-F040"
       ],
@@ -3072,7 +3073,8 @@
         "P135"
       ],
       "sourceIds": [
-        "SRC0306"
+        "SRC0306",
+        "SRC0587"
       ]
     },
     {
@@ -3527,6 +3529,24 @@
         "SRC0114",
         "SRC0141",
         "SRC0373"
+      ]
+    },
+    {
+      "id": "CON-F046-MD-P135",
+      "role": "music_director",
+      "nameAsPrinted": "Franz Waxman",
+      "evidenceContext": "film_credits",
+      "sortOrder": 42,
+      "certainty": "confirmed",
+      "scopeNote": "AFI credits Waxman as music director on this film, not as composer; Kaper and Jurmann are credited for music.",
+      "workIds": [
+        "W-F046"
+      ],
+      "personIds": [
+        "P135"
+      ],
+      "sourceIds": [
+        "SRC0141"
       ]
     },
     {

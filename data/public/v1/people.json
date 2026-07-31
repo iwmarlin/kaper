@@ -4252,19 +4252,23 @@
       ],
       "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n83065680",
       "sourceIds": [
+        "SRC0141",
         "SRC0176",
         "SRC0280",
-        "SRC0306"
+        "SRC0306",
+        "SRC0587"
       ],
       "contributionIds": [
-        "CON-S176-C-P135",
         "CON-F040-C-P135",
-        "CON-F050-C-P135"
+        "CON-F046-MD-P135",
+        "CON-F050-C-P135",
+        "CON-S176-C-P135"
       ],
       "workIds": [
-        "W-S176",
         "W-F040",
-        "W-F050"
+        "W-F046",
+        "W-F050",
+        "W-S176"
       ]
     },
     {
@@ -4279,6 +4283,7 @@
         "conductor"
       ],
       "sourceIds": [
+        "SRC0143",
         "SRC0168",
         "SRC0373"
       ],

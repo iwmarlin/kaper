@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 515,
+  "count": 516,
   "records": [
     {
       "id": "SRC0001",
@@ -18031,6 +18031,45 @@
       "mediaIds": [
         "M245"
       ]
+    },
+    {
+      "id": "SRC0587",
+      "shortCitation": "AFI Catalog, \"Trouble for Two\"",
+      "fullCitation": "American Film Institute. \"Trouble for Two.\" AFI Catalog of Feature Films. Accessed 31 July 2026.",
+      "sourceType": "filmographic_database",
+      "title": "Trouble for Two",
+      "creator": "American Film Institute",
+      "repository": "AFI Catalog of Feature Films",
+      "publication": "AFI Catalog",
+      "date": "1936",
+      "accessDate": "2026-07-31",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "slug": "src0587-afi-trouble-for-two-1936",
+      "personIds": [
+        "P009",
+        "P037",
+        "P077",
+        "P135"
+      ],
+      "organizationIds": [
+        "ORG001",
+        "ORG073"
+      ],
+      "workIds": [
+        "W-F040"
+      ],
+      "filmIds": [
+        "F040"
+      ],
+      "contributionIds": [
+        "CON-F040-BM-P009",
+        "CON-F040-BM-P077",
+        "CON-F040-C-P135",
+        "CON-F040-D-P037",
+        "CON-F040-PC-ORG001"
+      ],
+      "primaryUrl": "https://catalog.afi.com/Catalog/moviedetails/7963"
     }
   ]
 }
