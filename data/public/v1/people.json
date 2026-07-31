@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 117,
+  "count": 119,
   "records": [
     {
       "id": "P001",
@@ -4237,6 +4237,58 @@
       ],
       "workIds": [
         "W-S152"
+      ]
+    },
+    {
+      "id": "P135",
+      "displayName": "Franz Waxman",
+      "sortName": "Waxman, Franz",
+      "authorizedName": "Waxman, Franz, 1906–1967",
+      "slug": "franz-waxman",
+      "primaryRole": "composer",
+      "roles": [
+        "composer",
+        "conductor"
+      ],
+      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n83065680",
+      "sourceIds": [
+        "SRC0176",
+        "SRC0280",
+        "SRC0306"
+      ],
+      "contributionIds": [
+        "CON-S176-C-P135",
+        "CON-F040-C-P135",
+        "CON-F050-C-P135"
+      ],
+      "workIds": [
+        "W-S176",
+        "W-F040",
+        "W-F050"
+      ]
+    },
+    {
+      "id": "P136",
+      "displayName": "Herbert Stothart",
+      "sortName": "Stothart, Herbert",
+      "authorizedName": "Stothart, Herbert, 1885–1949",
+      "slug": "herbert-stothart",
+      "primaryRole": "composer",
+      "roles": [
+        "composer",
+        "conductor"
+      ],
+      "sourceIds": [
+        "SRC0168",
+        "SRC0373"
+      ],
+      "contributionIds": [
+        "CON-F034-C-P136",
+        "CON-F036-C-P136"
+      ],
+      "workIds": [
+        "W-F034",
+        "W-F036"
       ]
     }
   ]

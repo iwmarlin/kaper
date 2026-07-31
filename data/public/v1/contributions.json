@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 1043,
+  "count": 1048,
   "records": [
     {
       "id": "CON-F001-C-P009",
@@ -2093,6 +2093,23 @@
       ]
     },
     {
+      "id": "CON-F028-A-P132",
+      "role": "actor",
+      "nameAsPrinted": "Henri Garat",
+      "evidenceContext": "film_credits",
+      "sortOrder": 60,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-F028"
+      ],
+      "personIds": [
+        "P132"
+      ],
+      "sourceIds": [
+        "SRC0162"
+      ]
+    },
+    {
       "id": "CON-F028-C-P009",
       "role": "composer",
       "evidenceContext": "film_credits",
@@ -2180,6 +2197,24 @@
         "SRC0162",
         "SRC0373",
         "SRC0410"
+      ]
+    },
+    {
+      "id": "CON-F029-A-P132",
+      "role": "actor",
+      "nameAsPrinted": "Henri Garat",
+      "displayCredit": "Jean de Lafaye",
+      "evidenceContext": "film_credits",
+      "sortOrder": 60,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-F029"
+      ],
+      "personIds": [
+        "P132"
+      ],
+      "sourceIds": [
+        "SRC0137"
       ]
     },
     {
@@ -2394,6 +2429,39 @@
       ]
     },
     {
+      "id": "CON-F032-C-P009",
+      "role": "composer",
+      "evidenceContext": "stock_music",
+      "sortOrder": 40,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-F032"
+      ],
+      "personIds": [
+        "P009"
+      ],
+      "sourceIds": [
+        "SRC0167",
+        "SRC0373"
+      ]
+    },
+    {
+      "id": "CON-F032-C-P077",
+      "role": "composer",
+      "evidenceContext": "stock_music",
+      "sortOrder": 41,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-F032"
+      ],
+      "personIds": [
+        "P077"
+      ],
+      "sourceIds": [
+        "SRC0373"
+      ]
+    },
+    {
       "id": "CON-F032-D-P007",
       "role": "film_director",
       "nameAsPrinted": "Anthony Asquith",
@@ -2424,39 +2492,6 @@
       ],
       "sourceIds": [
         "SRC0167",
-        "SRC0373"
-      ]
-    },
-    {
-      "id": "CON-F032-C-P009",
-      "role": "composer",
-      "evidenceContext": "stock_music",
-      "sortOrder": 40,
-      "certainty": "confirmed",
-      "workIds": [
-        "W-F032"
-      ],
-      "personIds": [
-        "P009"
-      ],
-      "sourceIds": [
-        "SRC0167",
-        "SRC0373"
-      ]
-    },
-    {
-      "id": "CON-F032-C-P077",
-      "role": "composer",
-      "evidenceContext": "stock_music",
-      "sortOrder": 41,
-      "certainty": "confirmed",
-      "workIds": [
-        "W-F032"
-      ],
-      "personIds": [
-        "P077"
-      ],
-      "sourceIds": [
         "SRC0373"
       ]
     },
@@ -2550,6 +2585,42 @@
       ]
     },
     {
+      "id": "CON-F034-C-P077",
+      "role": "composer",
+      "evidenceContext": "film_song",
+      "sortOrder": 41,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-F034"
+      ],
+      "personIds": [
+        "P077"
+      ],
+      "sourceIds": [
+        "SRC0306",
+        "SRC0486"
+      ]
+    },
+    {
+      "id": "CON-F034-C-P136",
+      "role": "composer",
+      "nameAsPrinted": "Herbert Stothart",
+      "evidenceContext": "film_credits",
+      "sortOrder": 42,
+      "certainty": "confirmed",
+      "scopeNote": "Composer of the complete film score; Kaper and Jurmann contributed at song and background-music level.",
+      "workIds": [
+        "W-F034"
+      ],
+      "personIds": [
+        "P136"
+      ],
+      "sourceIds": [
+        "SRC0168",
+        "SRC0373"
+      ]
+    },
+    {
       "id": "CON-F034-D-P018",
       "role": "film_director",
       "nameAsPrinted": "Frank Lloyd",
@@ -2588,23 +2659,6 @@
       ]
     },
     {
-      "id": "CON-F034-C-P077",
-      "role": "composer",
-      "evidenceContext": "film_song",
-      "sortOrder": 41,
-      "certainty": "confirmed",
-      "workIds": [
-        "W-F034"
-      ],
-      "personIds": [
-        "P077"
-      ],
-      "sourceIds": [
-        "SRC0306",
-        "SRC0486"
-      ]
-    },
-    {
       "id": "CON-F035-C-P009",
       "role": "composer",
       "evidenceContext": "film_songs",
@@ -2615,6 +2669,23 @@
       ],
       "personIds": [
         "P009"
+      ],
+      "sourceIds": [
+        "SRC0306",
+        "SRC0373"
+      ]
+    },
+    {
+      "id": "CON-F035-C-P077",
+      "role": "composer",
+      "evidenceContext": "film_songs",
+      "sortOrder": 41,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-F035"
+      ],
+      "personIds": [
+        "P077"
       ],
       "sourceIds": [
         "SRC0306",
@@ -2655,23 +2726,6 @@
       ]
     },
     {
-      "id": "CON-F035-C-P077",
-      "role": "composer",
-      "evidenceContext": "film_songs",
-      "sortOrder": 41,
-      "certainty": "confirmed",
-      "workIds": [
-        "W-F035"
-      ],
-      "personIds": [
-        "P077"
-      ],
-      "sourceIds": [
-        "SRC0306",
-        "SRC0373"
-      ]
-    },
-    {
       "id": "CON-F036-C-P009",
       "role": "composer",
       "evidenceContext": "film_song",
@@ -2685,6 +2739,41 @@
       ],
       "sourceIds": [
         "SRC0143",
+        "SRC0373"
+      ]
+    },
+    {
+      "id": "CON-F036-C-P077",
+      "role": "composer",
+      "evidenceContext": "film_song",
+      "sortOrder": 41,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-F036"
+      ],
+      "personIds": [
+        "P077"
+      ],
+      "sourceIds": [
+        "SRC0230",
+        "SRC0373"
+      ]
+    },
+    {
+      "id": "CON-F036-C-P136",
+      "role": "composer",
+      "nameAsPrinted": "Herbert Stothart",
+      "evidenceContext": "secondary_literature",
+      "sortOrder": 42,
+      "certainty": "confirmed",
+      "scopeNote": "Composer of the complete film score; Kaper and Jurmann contributed songs, including “Cosi Cosa”.",
+      "workIds": [
+        "W-F036"
+      ],
+      "personIds": [
+        "P136"
+      ],
+      "sourceIds": [
         "SRC0373"
       ]
     },
@@ -2723,23 +2812,6 @@
       ]
     },
     {
-      "id": "CON-F036-C-P077",
-      "role": "composer",
-      "evidenceContext": "film_song",
-      "sortOrder": 41,
-      "certainty": "confirmed",
-      "workIds": [
-        "W-F036"
-      ],
-      "personIds": [
-        "P077"
-      ],
-      "sourceIds": [
-        "SRC0230",
-        "SRC0373"
-      ]
-    },
-    {
       "id": "CON-F037-C-P009",
       "role": "composer",
       "evidenceContext": "film_song",
@@ -2753,6 +2825,23 @@
       ],
       "sourceIds": [
         "SRC0142",
+        "SRC0373"
+      ]
+    },
+    {
+      "id": "CON-F037-C-P077",
+      "role": "composer",
+      "evidenceContext": "film_song",
+      "sortOrder": 41,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-F037"
+      ],
+      "personIds": [
+        "P077"
+      ],
+      "sourceIds": [
+        "SRC0236",
         "SRC0373"
       ]
     },
@@ -2791,23 +2880,6 @@
       ]
     },
     {
-      "id": "CON-F037-C-P077",
-      "role": "composer",
-      "evidenceContext": "film_song",
-      "sortOrder": 41,
-      "certainty": "confirmed",
-      "workIds": [
-        "W-F037"
-      ],
-      "personIds": [
-        "P077"
-      ],
-      "sourceIds": [
-        "SRC0236",
-        "SRC0373"
-      ]
-    },
-    {
       "id": "CON-F038-C-P009",
       "role": "composer",
       "evidenceContext": "film_credits",
@@ -2819,6 +2891,24 @@
       ],
       "personIds": [
         "P009"
+      ],
+      "sourceIds": [
+        "SRC0148",
+        "SRC0373"
+      ]
+    },
+    {
+      "id": "CON-F038-C-P077",
+      "role": "composer",
+      "evidenceContext": "film_credits",
+      "sortOrder": 41,
+      "certainty": "confirmed",
+      "scopeNote": "Composition of one or more songs associated with the film; this is not a claim to authorship of the complete film score.",
+      "workIds": [
+        "W-F038"
+      ],
+      "personIds": [
+        "P077"
       ],
       "sourceIds": [
         "SRC0148",
@@ -2879,6 +2969,25 @@
       ]
     },
     {
+      "id": "CON-F039-C-P077",
+      "role": "composer",
+      "evidenceContext": "film_credits",
+      "sortOrder": 41,
+      "certainty": "confirmed",
+      "scopeNote": "Composition of one or more songs associated with the film; this is not a claim to authorship of the complete film score.",
+      "workIds": [
+        "W-F039"
+      ],
+      "personIds": [
+        "P077"
+      ],
+      "sourceIds": [
+        "SRC0169",
+        "SRC0306",
+        "SRC0373"
+      ]
+    },
+    {
       "id": "CON-F039-D-P078",
       "role": "film_director",
       "nameAsPrinted": "William V. Skall",
@@ -2926,6 +3035,41 @@
       ],
       "personIds": [
         "P009"
+      ],
+      "sourceIds": [
+        "SRC0306"
+      ]
+    },
+    {
+      "id": "CON-F040-BM-P077",
+      "role": "composer",
+      "evidenceContext": "film_credits",
+      "sortOrder": 41,
+      "certainty": "probable",
+      "scopeNote": "Background, quoted or cue-level music; not a principal film-score credit.",
+      "workIds": [
+        "W-F040"
+      ],
+      "personIds": [
+        "P077"
+      ],
+      "sourceIds": [
+        "SRC0306"
+      ]
+    },
+    {
+      "id": "CON-F040-C-P135",
+      "role": "composer",
+      "nameAsPrinted": "Franz Waxman",
+      "evidenceContext": "background_music_and_song",
+      "sortOrder": 42,
+      "certainty": "confirmed",
+      "scopeNote": "Credited composer of the film score. The Jurmann estate cue list records several cues written “in Zusammenarbeit mit Bronislaw Kaper, Franz Waxman”.",
+      "workIds": [
+        "W-F040"
+      ],
+      "personIds": [
+        "P135"
       ],
       "sourceIds": [
         "SRC0306"
@@ -3021,6 +3165,25 @@
       ]
     },
     {
+      "id": "CON-F041-SM-P077",
+      "role": "composer",
+      "evidenceContext": "film_credits",
+      "sortOrder": 41,
+      "certainty": "confirmed",
+      "scopeNote": "Pre-existing or reused music; not a principal film-score credit.",
+      "workIds": [
+        "W-F041"
+      ],
+      "personIds": [
+        "P077"
+      ],
+      "sourceIds": [
+        "SRC0089",
+        "SRC0171",
+        "SRC0373"
+      ]
+    },
+    {
       "id": "CON-F042-C-P009",
       "role": "composer",
       "evidenceContext": "film_credits",
@@ -3032,6 +3195,25 @@
       ],
       "personIds": [
         "P009"
+      ],
+      "sourceIds": [
+        "SRC0145",
+        "SRC0373",
+        "SRC0380"
+      ]
+    },
+    {
+      "id": "CON-F042-C-P077",
+      "role": "composer",
+      "evidenceContext": "film_credits",
+      "sortOrder": 41,
+      "certainty": "confirmed",
+      "scopeNote": "Composition of one or more songs associated with the film; this is not a claim to authorship of the complete film score.",
+      "workIds": [
+        "W-F042"
+      ],
+      "personIds": [
+        "P077"
       ],
       "sourceIds": [
         "SRC0145",
@@ -3094,6 +3276,24 @@
       ]
     },
     {
+      "id": "CON-F043-C-P077",
+      "role": "composer",
+      "evidenceContext": "film_credits",
+      "sortOrder": 41,
+      "certainty": "confirmed",
+      "scopeNote": "Composition of one or more songs associated with the film; this is not a claim to authorship of the complete film score.",
+      "workIds": [
+        "W-F043"
+      ],
+      "personIds": [
+        "P077"
+      ],
+      "sourceIds": [
+        "SRC0144",
+        "SRC0373"
+      ]
+    },
+    {
       "id": "CON-F043-D-P076",
       "role": "film_director",
       "nameAsPrinted": "W.S. Van Dyke",
@@ -3139,6 +3339,25 @@
       ],
       "personIds": [
         "P009"
+      ],
+      "sourceIds": [
+        "SRC0306",
+        "SRC0373",
+        "SRC0480"
+      ]
+    },
+    {
+      "id": "CON-F044-C-P077",
+      "role": "composer",
+      "evidenceContext": "film_credits",
+      "sortOrder": 41,
+      "certainty": "confirmed",
+      "scopeNote": "Composition of one or more songs associated with the film; this is not a claim to authorship of the complete film score.",
+      "workIds": [
+        "W-F044"
+      ],
+      "personIds": [
+        "P077"
       ],
       "sourceIds": [
         "SRC0306",
@@ -3201,6 +3420,24 @@
       ]
     },
     {
+      "id": "CON-F045-BM-P077",
+      "role": "composer",
+      "evidenceContext": "film_credits",
+      "sortOrder": 41,
+      "certainty": "confirmed",
+      "scopeNote": "Background, quoted or cue-level music; not a principal film-score credit.",
+      "workIds": [
+        "W-F045"
+      ],
+      "personIds": [
+        "P077"
+      ],
+      "sourceIds": [
+        "SRC0173",
+        "SRC0306"
+      ]
+    },
+    {
       "id": "CON-F045-D-P029",
       "role": "film_director",
       "nameAsPrinted": "Harold D. Schuster",
@@ -3256,6 +3493,25 @@
       ]
     },
     {
+      "id": "CON-F046-C-P077",
+      "role": "composer",
+      "evidenceContext": "film_credits",
+      "sortOrder": 41,
+      "certainty": "confirmed",
+      "scopeNote": "Composition of one or more songs associated with the film; this is not a claim to authorship of the complete film score.",
+      "workIds": [
+        "W-F046"
+      ],
+      "personIds": [
+        "P077"
+      ],
+      "sourceIds": [
+        "SRC0114",
+        "SRC0141",
+        "SRC0373"
+      ]
+    },
+    {
       "id": "CON-F046-D-P074",
       "role": "film_director",
       "nameAsPrinted": "Sam Wood",
@@ -3303,6 +3559,25 @@
       ],
       "personIds": [
         "P009"
+      ],
+      "sourceIds": [
+        "SRC0238",
+        "SRC0240",
+        "SRC0373"
+      ]
+    },
+    {
+      "id": "CON-F047-C-P077",
+      "role": "composer",
+      "evidenceContext": "film_credits",
+      "sortOrder": 41,
+      "certainty": "confirmed",
+      "scopeNote": "Composition of one or more songs associated with the film; this is not a claim to authorship of the complete film score.",
+      "workIds": [
+        "W-F047"
+      ],
+      "personIds": [
+        "P077"
       ],
       "sourceIds": [
         "SRC0238",
@@ -3379,6 +3654,24 @@
       ],
       "personIds": [
         "P009"
+      ],
+      "sourceIds": [
+        "SRC0147",
+        "SRC0373"
+      ]
+    },
+    {
+      "id": "CON-F048-C-P077",
+      "role": "composer",
+      "evidenceContext": "film_credits",
+      "sortOrder": 41,
+      "certainty": "confirmed",
+      "scopeNote": "Composition of one or more songs associated with the film; this is not a claim to authorship of the complete film score.",
+      "workIds": [
+        "W-F048"
+      ],
+      "personIds": [
+        "P077"
       ],
       "sourceIds": [
         "SRC0147",
@@ -3506,6 +3799,44 @@
       ]
     },
     {
+      "id": "CON-F050-C-P077",
+      "role": "composer",
+      "evidenceContext": "film_credits",
+      "sortOrder": 41,
+      "certainty": "confirmed",
+      "scopeNote": "Composition of one or more songs associated with the film; this is not a claim to authorship of the complete film score.",
+      "workIds": [
+        "W-F050"
+      ],
+      "personIds": [
+        "P077"
+      ],
+      "sourceIds": [
+        "SRC0176",
+        "SRC0280",
+        "SRC0373"
+      ]
+    },
+    {
+      "id": "CON-F050-C-P135",
+      "role": "composer",
+      "nameAsPrinted": "Franz Waxman",
+      "evidenceContext": "film_credits",
+      "sortOrder": 42,
+      "certainty": "confirmed",
+      "scopeNote": "Composer of the complete film score; separately registered with Kaper and Jurmann as a co-author of the song “At night”.",
+      "workIds": [
+        "W-F050"
+      ],
+      "personIds": [
+        "P135"
+      ],
+      "sourceIds": [
+        "SRC0176",
+        "SRC0280"
+      ]
+    },
+    {
       "id": "CON-F050-D-P067",
       "role": "film_director",
       "nameAsPrinted": "Richard Thorpe",
@@ -3557,6 +3888,24 @@
       ],
       "sourceIds": [
         "SRC0146"
+      ]
+    },
+    {
+      "id": "CON-F051-C-P077",
+      "role": "composer",
+      "evidenceContext": "film_credits",
+      "sortOrder": 41,
+      "certainty": "confirmed",
+      "scopeNote": "Composition of one or more songs associated with the film; this is not a claim to authorship of the complete film score.",
+      "workIds": [
+        "W-F051"
+      ],
+      "personIds": [
+        "P077"
+      ],
+      "sourceIds": [
+        "SRC0146",
+        "SRC0306"
       ]
     },
     {
@@ -3668,6 +4017,23 @@
       ],
       "personIds": [
         "P009"
+      ],
+      "sourceIds": [
+        "SRC0373"
+      ]
+    },
+    {
+      "id": "CON-F054-C-P077",
+      "role": "composer",
+      "evidenceContext": "film_credits",
+      "sortOrder": 41,
+      "certainty": "confirmed",
+      "scopeNote": "Composition of one or more songs associated with the film; this is not a claim to authorship of the complete film score.",
+      "workIds": [
+        "W-F054"
+      ],
+      "personIds": [
+        "P077"
       ],
       "sourceIds": [
         "SRC0373"
@@ -9310,6 +9676,24 @@
       ]
     },
     {
+      "id": "CON-S076-P-P117",
+      "role": "performer",
+      "nameAsPrinted": "Jan Kiepura",
+      "displayCredit": "Vocal performance",
+      "evidenceContext": "recording_label",
+      "sortOrder": 50,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S076"
+      ],
+      "personIds": [
+        "P117"
+      ],
+      "sourceIds": [
+        "SRC0583"
+      ]
+    },
+    {
       "id": "CON-S076-PUB-ORG029",
       "role": "publisher",
       "nameAsPrinted": "Wiener Boheme Verlag",
@@ -9374,6 +9758,24 @@
       "sourceIds": [
         "SRC0298",
         "SRC0373"
+      ]
+    },
+    {
+      "id": "CON-S077-P-P117",
+      "role": "performer",
+      "nameAsPrinted": "Jan Kiepura",
+      "displayCredit": "Vocal performance in Tout pour l'amour",
+      "evidenceContext": "sheet_music",
+      "sortOrder": 50,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S077"
+      ],
+      "personIds": [
+        "P117"
+      ],
+      "sourceIds": [
+        "SRC0584"
       ]
     },
     {
@@ -10764,6 +11166,24 @@
       ]
     },
     {
+      "id": "CON-S096-P-P132",
+      "role": "performer",
+      "nameAsPrinted": "Henri Garat",
+      "displayCredit": "Vocal performance",
+      "evidenceContext": "recording_label",
+      "sortOrder": 50,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S096"
+      ],
+      "personIds": [
+        "P132"
+      ],
+      "sourceIds": [
+        "SRC0300"
+      ]
+    },
+    {
       "id": "CON-S096-PUB-ORG045",
       "role": "publisher",
       "nameAsPrinted": "Editions Musicales Echo",
@@ -10850,6 +11270,25 @@
       ],
       "sourceIds": [
         "SRC0306"
+      ]
+    },
+    {
+      "id": "CON-S097-P-P132",
+      "role": "performer",
+      "nameAsPrinted": "Henri Garat",
+      "displayCredit": "Vocal performance",
+      "evidenceContext": "recording_label",
+      "sortOrder": 50,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S097"
+      ],
+      "personIds": [
+        "P132"
+      ],
+      "sourceIds": [
+        "SRC0300",
+        "SRC0501"
       ]
     },
     {
@@ -11698,6 +12137,27 @@
       ]
     },
     {
+      "id": "CON-S110-P-P132",
+      "role": "performer",
+      "nameAsPrinted": "Henry Garat",
+      "displayCredit": "Vocal performance",
+      "evidenceContext": "sheet_music",
+      "sortOrder": 50,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S110"
+      ],
+      "personIds": [
+        "P132"
+      ],
+      "sourceIds": [
+        "SRC0540"
+      ],
+      "nameVariantIds": [
+        "PNV0041"
+      ]
+    },
+    {
       "id": "CON-S110-PUB-ORG039",
       "role": "publisher",
       "nameAsPrinted": "Paris: éditions Salabert",
@@ -11713,6 +12173,27 @@
         "SRC0071",
         "SRC0373",
         "SRC0540"
+      ]
+    },
+    {
+      "id": "CON-S111-C-P009",
+      "role": "composer",
+      "nameAsPrinted": "B. Kaper",
+      "displayCredit": "Composer",
+      "evidenceContext": "sheet_music",
+      "sortOrder": 10,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S111"
+      ],
+      "personIds": [
+        "P009"
+      ],
+      "sourceIds": [
+        "SRC0540"
+      ],
+      "nameVariantIds": [
+        "PNV0019"
       ]
     },
     {
@@ -11749,6 +12230,27 @@
         "SRC0072",
         "SRC0373",
         "SRC0540"
+      ]
+    },
+    {
+      "id": "CON-S111-P-P132",
+      "role": "performer",
+      "nameAsPrinted": "Henry Garat",
+      "displayCredit": "Vocal performance",
+      "evidenceContext": "sheet_music",
+      "sortOrder": 50,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S111"
+      ],
+      "personIds": [
+        "P132"
+      ],
+      "sourceIds": [
+        "SRC0540"
+      ],
+      "nameVariantIds": [
+        "PNV0041"
       ]
     },
     {
@@ -12198,6 +12700,27 @@
       ]
     },
     {
+      "id": "CON-S116-P-P132",
+      "role": "performer",
+      "nameAsPrinted": "Henry Garat",
+      "displayCredit": "Vocal performance",
+      "evidenceContext": "recording_label",
+      "sortOrder": 50,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S116"
+      ],
+      "personIds": [
+        "P132"
+      ],
+      "sourceIds": [
+        "SRC0115"
+      ],
+      "nameVariantIds": [
+        "PNV0041"
+      ]
+    },
+    {
       "id": "CON-S116-RL-ORG039",
       "role": "publisher",
       "nameAsPrinted": "Paris: éditions Salabert",
@@ -12410,6 +12933,23 @@
       "sourceIds": [
         "SRC0006",
         "SRC0228"
+      ]
+    },
+    {
+      "id": "CON-S119-P-P133",
+      "role": "performer",
+      "evidenceContext": "recording_label",
+      "sortOrder": 50,
+      "certainty": "confirmed",
+      "scopeNote": "Recorded the song with his orchestra for Victor (25029) in 1935, vocal by Lew Sherwood; this documents performance, not authorship of the work.",
+      "workIds": [
+        "W-S119"
+      ],
+      "personIds": [
+        "P133"
+      ],
+      "sourceIds": [
+        "SRC0006"
       ]
     },
     {
@@ -14210,6 +14750,40 @@
       ]
     },
     {
+      "id": "CON-S152-P-P128",
+      "role": "performer",
+      "evidenceContext": "recording_label",
+      "sortOrder": 50,
+      "certainty": "confirmed",
+      "scopeNote": "Recorded the song with his orchestra for Master (MA 137) on 8 June 1937; this documents performance, not authorship of the work.",
+      "workIds": [
+        "W-S152"
+      ],
+      "personIds": [
+        "P128"
+      ],
+      "sourceIds": [
+        "SRC0008"
+      ]
+    },
+    {
+      "id": "CON-S152-P-P134",
+      "role": "performer",
+      "evidenceContext": "film_credits",
+      "sortOrder": 51,
+      "certainty": "confirmed",
+      "scopeNote": "Sang the song in A Day at the Races (MGM, 1937); the UCLA Ethnomusicology Archive notes this as one of the rare occasions when Anderson performed independently of the Duke Ellington orchestra. This documents performance, not authorship of the work.",
+      "workIds": [
+        "W-S152"
+      ],
+      "personIds": [
+        "P134"
+      ],
+      "sourceIds": [
+        "SRC0586"
+      ]
+    },
+    {
       "id": "CON-S152-PUB-ORG035",
       "role": "publisher",
       "nameAsPrinted": "Robbins music corp., New York",
@@ -15651,6 +16225,24 @@
       ],
       "personIds": [
         "P077"
+      ],
+      "sourceIds": [
+        "SRC0280"
+      ]
+    },
+    {
+      "id": "CON-S176-C-P135",
+      "role": "composer",
+      "nameAsPrinted": "Franz Waxman",
+      "evidenceContext": "copyright_registration",
+      "sortOrder": 13,
+      "certainty": "confirmed",
+      "scopeNote": "Registered with Kaper and Jurmann as a co-author of this song; Waxman was also the credited composer of the film score.",
+      "workIds": [
+        "W-S176"
+      ],
+      "personIds": [
+        "P135"
       ],
       "sourceIds": [
         "SRC0280"
@@ -17673,506 +18265,6 @@
       ],
       "sourceIds": [
         "SRC0266"
-      ]
-    },
-    {
-      "id": "CON-F038-C-P077",
-      "role": "composer",
-      "evidenceContext": "film_credits",
-      "sortOrder": 41,
-      "certainty": "confirmed",
-      "scopeNote": "Composition of one or more songs associated with the film; this is not a claim to authorship of the complete film score.",
-      "workIds": [
-        "W-F038"
-      ],
-      "personIds": [
-        "P077"
-      ],
-      "sourceIds": [
-        "SRC0148",
-        "SRC0373"
-      ]
-    },
-    {
-      "id": "CON-F039-C-P077",
-      "role": "composer",
-      "evidenceContext": "film_credits",
-      "sortOrder": 41,
-      "certainty": "confirmed",
-      "scopeNote": "Composition of one or more songs associated with the film; this is not a claim to authorship of the complete film score.",
-      "workIds": [
-        "W-F039"
-      ],
-      "personIds": [
-        "P077"
-      ],
-      "sourceIds": [
-        "SRC0169",
-        "SRC0306",
-        "SRC0373"
-      ]
-    },
-    {
-      "id": "CON-F040-BM-P077",
-      "role": "composer",
-      "evidenceContext": "film_credits",
-      "sortOrder": 41,
-      "certainty": "probable",
-      "scopeNote": "Background, quoted or cue-level music; not a principal film-score credit.",
-      "workIds": [
-        "W-F040"
-      ],
-      "personIds": [
-        "P077"
-      ],
-      "sourceIds": [
-        "SRC0306"
-      ]
-    },
-    {
-      "id": "CON-F041-SM-P077",
-      "role": "composer",
-      "evidenceContext": "film_credits",
-      "sortOrder": 41,
-      "certainty": "confirmed",
-      "scopeNote": "Pre-existing or reused music; not a principal film-score credit.",
-      "workIds": [
-        "W-F041"
-      ],
-      "personIds": [
-        "P077"
-      ],
-      "sourceIds": [
-        "SRC0089",
-        "SRC0171",
-        "SRC0373"
-      ]
-    },
-    {
-      "id": "CON-F042-C-P077",
-      "role": "composer",
-      "evidenceContext": "film_credits",
-      "sortOrder": 41,
-      "certainty": "confirmed",
-      "scopeNote": "Composition of one or more songs associated with the film; this is not a claim to authorship of the complete film score.",
-      "workIds": [
-        "W-F042"
-      ],
-      "personIds": [
-        "P077"
-      ],
-      "sourceIds": [
-        "SRC0145",
-        "SRC0373",
-        "SRC0380"
-      ]
-    },
-    {
-      "id": "CON-F043-C-P077",
-      "role": "composer",
-      "evidenceContext": "film_credits",
-      "sortOrder": 41,
-      "certainty": "confirmed",
-      "scopeNote": "Composition of one or more songs associated with the film; this is not a claim to authorship of the complete film score.",
-      "workIds": [
-        "W-F043"
-      ],
-      "personIds": [
-        "P077"
-      ],
-      "sourceIds": [
-        "SRC0144",
-        "SRC0373"
-      ]
-    },
-    {
-      "id": "CON-F044-C-P077",
-      "role": "composer",
-      "evidenceContext": "film_credits",
-      "sortOrder": 41,
-      "certainty": "confirmed",
-      "scopeNote": "Composition of one or more songs associated with the film; this is not a claim to authorship of the complete film score.",
-      "workIds": [
-        "W-F044"
-      ],
-      "personIds": [
-        "P077"
-      ],
-      "sourceIds": [
-        "SRC0306",
-        "SRC0373",
-        "SRC0480"
-      ]
-    },
-    {
-      "id": "CON-F045-BM-P077",
-      "role": "composer",
-      "evidenceContext": "film_credits",
-      "sortOrder": 41,
-      "certainty": "confirmed",
-      "scopeNote": "Background, quoted or cue-level music; not a principal film-score credit.",
-      "workIds": [
-        "W-F045"
-      ],
-      "personIds": [
-        "P077"
-      ],
-      "sourceIds": [
-        "SRC0173",
-        "SRC0306"
-      ]
-    },
-    {
-      "id": "CON-F046-C-P077",
-      "role": "composer",
-      "evidenceContext": "film_credits",
-      "sortOrder": 41,
-      "certainty": "confirmed",
-      "scopeNote": "Composition of one or more songs associated with the film; this is not a claim to authorship of the complete film score.",
-      "workIds": [
-        "W-F046"
-      ],
-      "personIds": [
-        "P077"
-      ],
-      "sourceIds": [
-        "SRC0114",
-        "SRC0141",
-        "SRC0373"
-      ]
-    },
-    {
-      "id": "CON-F047-C-P077",
-      "role": "composer",
-      "evidenceContext": "film_credits",
-      "sortOrder": 41,
-      "certainty": "confirmed",
-      "scopeNote": "Composition of one or more songs associated with the film; this is not a claim to authorship of the complete film score.",
-      "workIds": [
-        "W-F047"
-      ],
-      "personIds": [
-        "P077"
-      ],
-      "sourceIds": [
-        "SRC0238",
-        "SRC0240",
-        "SRC0373"
-      ]
-    },
-    {
-      "id": "CON-F048-C-P077",
-      "role": "composer",
-      "evidenceContext": "film_credits",
-      "sortOrder": 41,
-      "certainty": "confirmed",
-      "scopeNote": "Composition of one or more songs associated with the film; this is not a claim to authorship of the complete film score.",
-      "workIds": [
-        "W-F048"
-      ],
-      "personIds": [
-        "P077"
-      ],
-      "sourceIds": [
-        "SRC0147",
-        "SRC0373"
-      ]
-    },
-    {
-      "id": "CON-F050-C-P077",
-      "role": "composer",
-      "evidenceContext": "film_credits",
-      "sortOrder": 41,
-      "certainty": "confirmed",
-      "scopeNote": "Composition of one or more songs associated with the film; this is not a claim to authorship of the complete film score.",
-      "workIds": [
-        "W-F050"
-      ],
-      "personIds": [
-        "P077"
-      ],
-      "sourceIds": [
-        "SRC0176",
-        "SRC0280",
-        "SRC0373"
-      ]
-    },
-    {
-      "id": "CON-F051-C-P077",
-      "role": "composer",
-      "evidenceContext": "film_credits",
-      "sortOrder": 41,
-      "certainty": "confirmed",
-      "scopeNote": "Composition of one or more songs associated with the film; this is not a claim to authorship of the complete film score.",
-      "workIds": [
-        "W-F051"
-      ],
-      "personIds": [
-        "P077"
-      ],
-      "sourceIds": [
-        "SRC0146",
-        "SRC0306"
-      ]
-    },
-    {
-      "id": "CON-F054-C-P077",
-      "role": "composer",
-      "evidenceContext": "film_credits",
-      "sortOrder": 41,
-      "certainty": "confirmed",
-      "scopeNote": "Composition of one or more songs associated with the film; this is not a claim to authorship of the complete film score.",
-      "workIds": [
-        "W-F054"
-      ],
-      "personIds": [
-        "P077"
-      ],
-      "sourceIds": [
-        "SRC0373"
-      ]
-    },
-    {
-      "id": "CON-S152-P-P128",
-      "role": "performer",
-      "evidenceContext": "recording_label",
-      "sortOrder": 50,
-      "certainty": "confirmed",
-      "scopeNote": "Recorded the song with his orchestra for Master (MA 137) on 8 June 1937; this documents performance, not authorship of the work.",
-      "workIds": [
-        "W-S152"
-      ],
-      "personIds": [
-        "P128"
-      ],
-      "sourceIds": [
-        "SRC0008"
-      ]
-    },
-    {
-      "id": "CON-F028-A-P132",
-      "role": "actor",
-      "nameAsPrinted": "Henri Garat",
-      "evidenceContext": "film_credits",
-      "sortOrder": 60,
-      "certainty": "confirmed",
-      "workIds": [
-        "W-F028"
-      ],
-      "personIds": [
-        "P132"
-      ],
-      "sourceIds": [
-        "SRC0162"
-      ]
-    },
-    {
-      "id": "CON-F029-A-P132",
-      "role": "actor",
-      "nameAsPrinted": "Henri Garat",
-      "displayCredit": "Jean de Lafaye",
-      "evidenceContext": "film_credits",
-      "sortOrder": 60,
-      "certainty": "confirmed",
-      "workIds": [
-        "W-F029"
-      ],
-      "personIds": [
-        "P132"
-      ],
-      "sourceIds": [
-        "SRC0137"
-      ]
-    },
-    {
-      "id": "CON-S096-P-P132",
-      "role": "performer",
-      "nameAsPrinted": "Henri Garat",
-      "displayCredit": "Vocal performance",
-      "evidenceContext": "recording_label",
-      "sortOrder": 50,
-      "certainty": "confirmed",
-      "workIds": [
-        "W-S096"
-      ],
-      "personIds": [
-        "P132"
-      ],
-      "sourceIds": [
-        "SRC0300"
-      ]
-    },
-    {
-      "id": "CON-S097-P-P132",
-      "role": "performer",
-      "nameAsPrinted": "Henri Garat",
-      "displayCredit": "Vocal performance",
-      "evidenceContext": "recording_label",
-      "sortOrder": 50,
-      "certainty": "confirmed",
-      "workIds": [
-        "W-S097"
-      ],
-      "personIds": [
-        "P132"
-      ],
-      "sourceIds": [
-        "SRC0300",
-        "SRC0501"
-      ]
-    },
-    {
-      "id": "CON-S116-P-P132",
-      "role": "performer",
-      "nameAsPrinted": "Henry Garat",
-      "displayCredit": "Vocal performance",
-      "evidenceContext": "recording_label",
-      "sortOrder": 50,
-      "certainty": "confirmed",
-      "workIds": [
-        "W-S116"
-      ],
-      "personIds": [
-        "P132"
-      ],
-      "sourceIds": [
-        "SRC0115"
-      ],
-      "nameVariantIds": [
-        "PNV0041"
-      ]
-    },
-    {
-      "id": "CON-S076-P-P117",
-      "role": "performer",
-      "nameAsPrinted": "Jan Kiepura",
-      "displayCredit": "Vocal performance",
-      "evidenceContext": "recording_label",
-      "sortOrder": 50,
-      "certainty": "confirmed",
-      "workIds": [
-        "W-S076"
-      ],
-      "personIds": [
-        "P117"
-      ],
-      "sourceIds": [
-        "SRC0583"
-      ]
-    },
-    {
-      "id": "CON-S077-P-P117",
-      "role": "performer",
-      "nameAsPrinted": "Jan Kiepura",
-      "displayCredit": "Vocal performance in Tout pour l'amour",
-      "evidenceContext": "sheet_music",
-      "sortOrder": 50,
-      "certainty": "confirmed",
-      "workIds": [
-        "W-S077"
-      ],
-      "personIds": [
-        "P117"
-      ],
-      "sourceIds": [
-        "SRC0584"
-      ]
-    },
-    {
-      "id": "CON-S110-P-P132",
-      "role": "performer",
-      "nameAsPrinted": "Henry Garat",
-      "displayCredit": "Vocal performance",
-      "evidenceContext": "sheet_music",
-      "sortOrder": 50,
-      "certainty": "confirmed",
-      "workIds": [
-        "W-S110"
-      ],
-      "personIds": [
-        "P132"
-      ],
-      "sourceIds": [
-        "SRC0540"
-      ],
-      "nameVariantIds": [
-        "PNV0041"
-      ]
-    },
-    {
-      "id": "CON-S111-C-P009",
-      "role": "composer",
-      "nameAsPrinted": "B. Kaper",
-      "displayCredit": "Composer",
-      "evidenceContext": "sheet_music",
-      "sortOrder": 10,
-      "certainty": "confirmed",
-      "workIds": [
-        "W-S111"
-      ],
-      "personIds": [
-        "P009"
-      ],
-      "sourceIds": [
-        "SRC0540"
-      ],
-      "nameVariantIds": [
-        "PNV0019"
-      ]
-    },
-    {
-      "id": "CON-S111-P-P132",
-      "role": "performer",
-      "nameAsPrinted": "Henry Garat",
-      "displayCredit": "Vocal performance",
-      "evidenceContext": "sheet_music",
-      "sortOrder": 50,
-      "certainty": "confirmed",
-      "workIds": [
-        "W-S111"
-      ],
-      "personIds": [
-        "P132"
-      ],
-      "sourceIds": [
-        "SRC0540"
-      ],
-      "nameVariantIds": [
-        "PNV0041"
-      ]
-    },
-    {
-      "id": "CON-S119-P-P133",
-      "role": "performer",
-      "evidenceContext": "recording_label",
-      "sortOrder": 50,
-      "certainty": "confirmed",
-      "scopeNote": "Recorded the song with his orchestra for Victor (25029) in 1935, vocal by Lew Sherwood; this documents performance, not authorship of the work.",
-      "workIds": [
-        "W-S119"
-      ],
-      "personIds": [
-        "P133"
-      ],
-      "sourceIds": [
-        "SRC0006"
-      ]
-    },
-    {
-      "id": "CON-S152-P-P134",
-      "role": "performer",
-      "evidenceContext": "film_credits",
-      "sortOrder": 51,
-      "certainty": "confirmed",
-      "scopeNote": "Sang the song in A Day at the Races (MGM, 1937); the UCLA Ethnomusicology Archive notes this as one of the rare occasions when Anderson performed independently of the Duke Ellington orchestra. This documents performance, not authorship of the work.",
-      "workIds": [
-        "W-S152"
-      ],
-      "personIds": [
-        "P134"
-      ],
-      "sourceIds": [
-        "SRC0586"
       ]
     }
   ]
