@@ -155,18 +155,21 @@
       "id": "P006",
       "displayName": "André de Badet",
       "sortName": "de Badet, André",
-      "authorizedName": "André de Badet",
+      "authorizedName": "André de Badet (1891–1977)",
       "slug": "andre-de-badet",
       "primaryRole": "lyricist",
       "roles": [
-        "lyricist"
+        "lyricist",
+        "writer"
       ],
-      "authorityUrl": "VIAF: https://viaf.org/viaf/51747991",
+      "authorityUrl": "BnF: https://data.bnf.fr/fr/ark:/12148/cb148356206\nVIAF: https://viaf.org/viaf/51747991",
       "sourceIds": [
         "SRC0283",
         "SRC0475",
         "SRC0525",
-        "SRC0526"
+        "SRC0526",
+        "SRC0589",
+        "SRC0591"
       ],
       "contributionIds": [
         "CON-S102-L-P006",
@@ -185,6 +188,9 @@
         "W-S107",
         "W-S108",
         "W-S117"
+      ],
+      "nameVariantIds": [
+        "PNV0043"
       ]
     },
     {
@@ -1687,13 +1693,15 @@
       "id": "P031",
       "displayName": "Henri Varna",
       "sortName": "Varna, Henri",
-      "authorizedName": "Henri Varna",
+      "authorizedName": "Henri Varna (1887–1969)",
       "slug": "henri-varna",
       "primaryRole": "lyricist",
       "roles": [
-        "lyricist"
+        "lyricist",
+        "actor",
+        "producer"
       ],
-      "authorityUrl": "VIAF: https://viaf.org/viaf/27329711\nLCNAF: https://id.loc.gov/authorities/n97864082",
+      "authorityUrl": "BnF: https://data.bnf.fr/fr/ark:/12148/cb14785637s\nVIAF: https://viaf.org/viaf/27329711\nLCNAF: https://id.loc.gov/authorities/n97864082",
       "contributionIds": [
         "CON-S112-L-P031",
         "CON-S113-L-P031",
@@ -1707,6 +1715,13 @@
         "W-S114",
         "W-S115",
         "W-S163"
+      ],
+      "nameVariantIds": [
+        "PNV0044"
+      ],
+      "sourceIds": [
+        "SRC0590",
+        "SRC0592"
       ]
     },
     {

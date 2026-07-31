@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 517,
+  "count": 521,
   "records": [
     {
       "id": "SRC0001",
@@ -18089,6 +18089,82 @@
         "P052"
       ],
       "primaryUrl": "https://data.bnf.fr/fr/ark:/12148/cb11914372q"
+    },
+    {
+      "id": "SRC0589",
+      "shortCitation": "BnF, authority record for André de Badet (1891-1977)",
+      "fullCitation": "Bibliothèque nationale de France. “André de Badet (1891-1977).” data.bnf.fr, ark:/12148/cb148356206. Accessed 31 July 2026.",
+      "sourceType": "authority_record",
+      "title": "André de Badet (1891-1977)",
+      "creator": "Bibliothèque nationale de France",
+      "repository": "Bibliothèque nationale de France (BnF)",
+      "publication": "data.bnf.fr",
+      "date": "2026",
+      "accessDate": "2026-07-31",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "slug": "src0589-bnf-authority-andre-de-badet",
+      "personIds": [
+        "P006"
+      ],
+      "primaryUrl": "https://data.bnf.fr/fr/ark:/12148/cb148356206"
+    },
+    {
+      "id": "SRC0590",
+      "shortCitation": "BnF, authority record for Henri Varna (1887-1969)",
+      "fullCitation": "Bibliothèque nationale de France. “Henri Varna (1887-1969).” data.bnf.fr, ark:/12148/cb14785637s. Accessed 31 July 2026.",
+      "sourceType": "authority_record",
+      "title": "Henri Varna (1887-1969)",
+      "creator": "Bibliothèque nationale de France",
+      "repository": "Bibliothèque nationale de France (BnF)",
+      "publication": "data.bnf.fr",
+      "date": "2026",
+      "accessDate": "2026-07-31",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "slug": "src0590-bnf-authority-henri-varna",
+      "personIds": [
+        "P031"
+      ],
+      "primaryUrl": "https://data.bnf.fr/fr/ark:/12148/cb14785637s"
+    },
+    {
+      "id": "SRC0591",
+      "shortCitation": "French Wikipedia: André de Badet",
+      "fullCitation": "Wikipedia contributors. “André de Badet.” Wikipédia, l’encyclopédie libre. Gives the nom de plume and the civil-status name Jean Charles André Giot de Badet, citing the état civil. Accessed 31 July 2026.",
+      "sourceType": "wikimedia_article_page",
+      "title": "André de Badet",
+      "creator": "Wikipedia contributors",
+      "repository": "French Wikipedia",
+      "publication": "Wikipédia",
+      "date": "2026",
+      "accessDate": "2026-07-31",
+      "reliability": "medium",
+      "sourceStatus": "verified_with_attribution_note",
+      "slug": "src0591-frwiki-andre-de-badet",
+      "personIds": [
+        "P006"
+      ],
+      "primaryUrl": "https://fr.wikipedia.org/wiki/Andr%C3%A9_de_Badet"
+    },
+    {
+      "id": "SRC0592",
+      "shortCitation": "French Wikipedia: Henri Varna",
+      "fullCitation": "Wikipedia contributors. “Henri Varna.” Wikipédia, l’encyclopédie libre. Gives the stage name and the civil-status name Henri Eugène Vantard. Accessed 31 July 2026.",
+      "sourceType": "wikimedia_article_page",
+      "title": "Henri Varna",
+      "creator": "Wikipedia contributors",
+      "repository": "French Wikipedia",
+      "publication": "Wikipédia",
+      "date": "2026",
+      "accessDate": "2026-07-31",
+      "reliability": "medium",
+      "sourceStatus": "verified_with_attribution_note",
+      "slug": "src0592-frwiki-henri-varna",
+      "personIds": [
+        "P031"
+      ],
+      "primaryUrl": "https://fr.wikipedia.org/wiki/Henri_Varna"
     }
   ]
 }
