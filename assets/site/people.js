@@ -1,4 +1,4 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=ef11864ccf";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=c5cd2675a3";
 import {
   debounce,
   escapeHtml,
@@ -17,7 +17,7 @@ import {
   renderLoading,
   responsiveImage,
   typeBadge,
-} from "./core.js?v=ef11864ccf";
+} from "./core.js?v=c5cd2675a3";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 mountSiteChrome("people");
@@ -65,13 +65,6 @@ function loadQuery() {
   for (const [key, control] of Object.entries(controls)) {
     if (params.has(key)) control.value = params.get(key);
   }
-}
-
-// "Waxman, Franz, 1906–1967" → "1906–1967"; "Kaper, Bronisław, 1902–" → "1902–"
-function lifeDates(authorizedName = "") {
-  const match = String(authorizedName).match(/\b(\d{4})\s*([–-])\s*(\d{4})?/);
-  if (!match) return "";
-  return `${match[1]}–${match[3] || ""}`;
 }
 
 function initials(name = "") {
@@ -126,7 +119,6 @@ try {
       _sources: new Set([...(person.sourceIds || []), ...(sourcesByPerson.get(person.id) || [])]).size,
       _periods: periods,
       _roles: roles,
-      _dates: lifeDates(person.authorizedName),
       _portrait: portraitFor(person),
       _search: normalizeSearch([
         person.displayName,
@@ -201,9 +193,7 @@ try {
           <div class="person-row__avatar">${avatar(person)}</div>
           <div class="person-row__identity">
             <div class="meta-row">${person._roles.map(typeBadge).join("")}</div>
-            <h2><a href="${recordUrl("person", person.id)}">${escapeHtml(person.displayName)}</a>${
-              person._dates ? `<span class="person-row__dates">, ${escapeHtml(person._dates)}</span>` : ""
-            }</h2>
+            <h2><a href="${recordUrl("person", person.id)}">${escapeHtml(person.displayName)}</a></h2>
           </div>
           <div class="person-row__count">${escapeHtml(tally)}</div>
           <div class="person-row__period">${periodBadge(person._periods)}</div>

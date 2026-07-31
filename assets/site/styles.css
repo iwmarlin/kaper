@@ -1185,17 +1185,10 @@ main {
   content: "";
 }
 
-/* Life dates sit inline after the name, as in an authority file heading, so a
-   record without them simply reads as a name rather than a gap in the row. */
-.person-row__dates {
-  color: var(--ink-soft);
-  font-family: var(--serif);
-  font-size: 0.88rem;
-  font-weight: 400;
-  font-variant-numeric: tabular-nums;
-  white-space: nowrap;
-}
-
+/* Life dates deliberately do not appear in this list. Only 19 of 119 records
+   carry them, so showing them made a handful of rows look richer than the rest
+   by accident of which records had been edited recently. They belong on the
+   record page, next to the authority links that establish them. */
 .person-row .meta-row {
   gap: 0.3rem;
 }

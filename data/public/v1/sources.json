@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 529,
+  "count": 531,
   "records": [
     {
       "id": "SRC0001",
@@ -18345,6 +18345,44 @@
         "M253"
       ],
       "primaryUrl": "https://commons.wikimedia.org/wiki/File:Georg_Jacoby_905-6889.jpg"
+    },
+    {
+      "id": "SRC0601",
+      "shortCitation": "IMDb, name entry for René Nazelles",
+      "fullCitation": "IMDb. Name entry nm0623410, “René Nazelles.” Gives his dates as 1888–1975. Corroborated by Encyclopédisque, which records his name as René Cailleteau, and by Éliane Daphy's identification record “René Cailleteau dit René Nazelles (1888-1975) parolier”. The BnF authority heading still reads (18..-19..) and has not been revised. Accessed 31 July 2026.",
+      "sourceType": "filmographic_database",
+      "title": "IMDb name entry nm0623410 — René Nazelles",
+      "creator": "IMDb contributors",
+      "repository": "IMDb",
+      "publication": "IMDb",
+      "date": "2026",
+      "accessDate": "2026-07-31",
+      "reliability": "low",
+      "sourceStatus": "verified",
+      "slug": "src0601-imdb-rene-nazelles-dates",
+      "personIds": [
+        "P093"
+      ],
+      "primaryUrl": "https://www.imdb.com/name/nm0623410/"
+    },
+    {
+      "id": "SRC0602",
+      "shortCitation": "Encyclopédisque, René Nazelles (René Cailleteau)",
+      "fullCitation": "Encyclopédisque. Discographie: René Nazelles (auteur-compositeur), artist 14261. Records his name as René Cailleteau. Éliane Daphy's parolier identification work gives the fuller form “René Cailleteau dit René Nazelles (1888-1975) parolier”. Accessed 31 July 2026.",
+      "sourceType": "filmographic_database",
+      "title": "Encyclopédisque — René Nazelles (auteur-compositeur)",
+      "creator": "Encyclopédisque",
+      "repository": "Encyclopédisque",
+      "publication": "Encyclopédisque",
+      "date": "2026",
+      "accessDate": "2026-07-31",
+      "reliability": "medium",
+      "sourceStatus": "verified",
+      "slug": "src0602-encyclopedisque-rene-nazelles-cailleteau",
+      "personIds": [
+        "P093"
+      ],
+      "primaryUrl": "https://www.encyclopedisque.fr/artiste/14261.html"
     }
   ]
 }
