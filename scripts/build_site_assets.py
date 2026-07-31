@@ -82,28 +82,57 @@ def derivative_directory(output_root: Path, relative: str) -> Path:
     return output_root / f"{stem}-{digest}"
 
 
-def build_images(root: Path, paths: list[str], output_root: Path) -> tuple[dict, dict]:
-    if output_root.exists():
+def derivatives_are_current(source_path: Path, directory: Path, widths: list[int]) -> bool:
+    """True when every expected derivative exists and is newer than the source."""
+    if not directory.is_dir():
+        return False
+    source_mtime = source_path.stat().st_mtime
+    for width in widths:
+        target = directory / f"{width}.webp"
+        if not target.is_file() or target.stat().st_mtime < source_mtime:
+            return False
+    return True
+
+
+def build_images(
+    root: Path, paths: list[str], output_root: Path, incremental: bool = False
+) -> tuple[dict, dict]:
+    # Derivative directories are keyed by the source path, so a full rebuild
+    # re-encodes every image even when one was added. --incremental keeps the
+    # derivatives that are still newer than their source and encodes the rest.
+    if output_root.exists() and not incremental:
         shutil.rmtree(output_root)
     output_root.mkdir(parents=True, exist_ok=True)
     mapping: dict[str, dict] = {}
     original_bytes = 0
     derivative_bytes = 0
     largest_derivative = {"path": "", "bytes": 0}
+    encoded = 0
+    reused = 0
 
     for relative in paths:
         source_path = root / relative
         original_bytes += source_path.stat().st_size
-        image = normalized_image(source_path)
-        source_width, source_height = image.size
         directory = derivative_directory(output_root, relative)
+        with Image.open(source_path) as probe:
+            source_width, source_height = probe.size
+        widths = derivative_widths(source_width)
+        image = None
+        if incremental and derivatives_are_current(source_path, directory, widths):
+            reused += 1
+        else:
+            image = normalized_image(source_path)
+            source_width, source_height = image.size
+            widths = derivative_widths(source_width)
+            encoded += 1
         directory.mkdir(parents=True, exist_ok=True)
         variants = []
-        for width in derivative_widths(source_width):
+        for width in widths:
             height = max(1, round(source_height * width / source_width))
-            resized = image if width == source_width else image.resize((width, height), Image.Resampling.LANCZOS)
             target = directory / f"{width}.webp"
-            resized.save(target, "WEBP", quality=80, method=6, exact=True)
+            if image is not None:
+                resized = image if width == source_width else image.resize((width, height), Image.Resampling.LANCZOS)
+                resized.save(target, "WEBP", quality=80, method=6, exact=True)
             size = target.stat().st_size
             derivative_bytes += size
             if size > largest_derivative["bytes"]:
@@ -122,6 +151,14 @@ def build_images(root: Path, paths: list[str], output_root: Path) -> tuple[dict,
             "variants": variants,
         }
 
+    stale = 0
+    if incremental:
+        keep = {derivative_directory(output_root, relative).name for relative in paths}
+        for child in output_root.iterdir():
+            if child.is_dir() and child.name not in keep:
+                shutil.rmtree(child)
+                stale += 1
+
     report = {
         "sourceImages": len(paths),
         "derivativeFiles": sum(len(item["variants"]) for item in mapping.values()),
@@ -129,6 +166,8 @@ def build_images(root: Path, paths: list[str], output_root: Path) -> tuple[dict,
         "derivativeBytes": derivative_bytes,
         "largestDerivative": largest_derivative,
     }
+    if incremental:
+        report["incremental"] = {"encoded": encoded, "reused": reused, "removedStaleDirectories": stale}
     return mapping, report
 
 
@@ -301,6 +340,13 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--root", type=Path, default=Path(__file__).resolve().parent.parent)
     parser.add_argument("--check", action="store_true")
+    parser.add_argument(
+        "--incremental",
+        action="store_true",
+        help="Reuse derivatives that are still newer than their source image instead of "
+             "re-encoding everything. Use this after adding or replacing a few images; a "
+             "full rebuild takes minutes, this takes seconds.",
+    )
     return parser.parse_args()
 
 
@@ -319,7 +365,7 @@ def main() -> int:
 
     media_payload = read_json(public_data_root / "media.json")
     paths = local_image_paths(media_payload, root)
-    mapping, report = build_images(root, paths, output_root)
+    mapping, report = build_images(root, paths, output_root, incremental=args.incremental)
     write_javascript_mapping(mapping_path, mapping)
     home = home_payload(public_data_root)
     write_json(site_data_root / "home.json", home)
