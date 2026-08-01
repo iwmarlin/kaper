@@ -1096,7 +1096,7 @@ main {
 .work-row {
   position: relative;
   display: grid;
-  grid-template-columns: 5.5rem minmax(0, 1.4fr) minmax(10rem, 0.75fr) 8rem;
+  grid-template-columns: 5.5rem minmax(0, 1fr) 8rem;
   align-items: center;
   gap: 1rem;
   padding: 0.85rem 1rem;
@@ -1117,9 +1117,21 @@ main {
   font-size: 1.25rem;
 }
 
+.work-row__identity {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.34rem;
+}
+
 .work-row h2 {
   margin: 0;
   font-size: 1.13rem;
+  font-weight: 650;
+  letter-spacing: -0.018em;
+  line-height: 1.18;
+  text-wrap: balance;
 }
 
 .work-row h2 a {
@@ -1133,10 +1145,21 @@ main {
   content: "";
 }
 
-.work-row__people,
 .work-row__period {
   color: var(--ink-soft);
   font-size: 0.82rem;
+}
+
+.work-row .meta-row {
+  gap: 0.28rem;
+  margin: 0;
+}
+
+.work-row__identity .badge {
+  padding: 0.2rem 0.48rem;
+  font-size: 0.6rem;
+  font-weight: 620;
+  letter-spacing: 0.045em;
 }
 
 .lead--meta {
@@ -2971,10 +2994,6 @@ main {
 
   .work-row {
     grid-template-columns: 4.5rem minmax(0, 1fr) 7rem;
-  }
-
-  .work-row__people {
-    display: none;
   }
 
   .person-row {
