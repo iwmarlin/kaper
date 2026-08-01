@@ -1,4 +1,4 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=7ff7968c43";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=7c6ef93d7f";
 import {
   certaintyBadge,
   escapeHtml,
@@ -17,14 +17,13 @@ import {
   registerImageDerivatives,
   renderError,
   renderMediaDisclosure,
-  renderSourceCitation,
   responsiveImage,
   safeExternalUrl,
   setCanonicalRecordUrl,
   scopeBadge,
   typeBadge,
   updateMeta,
-} from "./core.js?v=7ff7968c43";
+} from "./core.js?v=7c6ef93d7f";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 mountSiteChrome("");
@@ -213,25 +212,42 @@ function sourceSearchText(source) {
   ].filter(Boolean).join(" ");
 }
 
-function sourceRow(source, index) {
+// One row grammar for every source list: monospaced identifier at the left,
+// citation in the middle, year at the right. Short lists print the full
+// citation outright — there is nothing to scroll past, so hiding the only
+// source a record has behind a disclosure would cost more than it saves.
+// Long lists print the short citation and open the full one on request.
+function sourceRow(source, index, { expanded = false } = {}) {
   const external = safeExternalUrl(source.primaryUrl) || safeExternalUrl(source.accessUrl);
   const summary = source.shortCitation || source.title || source.fullCitation || source.id;
   const full = source.fullCitation || source.shortCitation || source.title || "";
   const year = sourceYear(source);
+  const yearLabel = year ? year : "n.d.";
+  const links = `<p class="source-row__links">
+    <a href="${recordUrl("source", source.id)}">Source record</a>
+    ${external ? `<a href="${escapeHtml(external)}" target="_blank" rel="noreferrer">Open source <span aria-hidden="true">\u2197</span></a>` : ""}
+  </p>`;
+  if (expanded) {
+    return `<li class="source-row source-row--open" id="source-${escapeHtml(source.id)}">
+      <div class="source-row__summary source-row__summary--static">
+        <a class="source-row__id" href="${recordUrl("source", source.id)}" aria-label="Open source record ${escapeHtml(source.id)}">${escapeHtml(source.id)}</a>
+        <span class="source-row__title">${escapeHtml(full)}</span>
+        <span class="source-row__year">${yearLabel}</span>
+      </div>
+      ${external ? `<div class="source-row__detail source-row__detail--static">${links}</div>` : ""}
+    </li>`;
+  }
   const detailId = `source-detail-${escapeHtml(source.id)}-${index}`;
   return `<li class="source-row" id="source-${escapeHtml(source.id)}" data-ledger-item data-search="${escapeHtml(normalizeSearch(sourceSearchText(source)))}">
     <button class="source-row__summary" type="button" data-row-toggle aria-expanded="false" aria-controls="${detailId}">
       <span class="source-row__id">${escapeHtml(source.id)}</span>
       <span class="source-row__title">${escapeHtml(summary)}</span>
-      <span class="source-row__year">${year ? year : "n.d."}</span>
+      <span class="source-row__year">${yearLabel}</span>
       <span class="source-row__chevron" aria-hidden="true">+</span>
     </button>
     <div class="source-row__detail" id="${detailId}" data-row-detail hidden>
       <p>${escapeHtml(full)}</p>
-      <p class="source-row__links">
-        <a href="${recordUrl("source", source.id)}">Source record</a>
-        ${external ? `<a href="${escapeHtml(external)}" target="_blank" rel="noreferrer">Open source <span aria-hidden="true">\u2197</span></a>` : ""}
-      </p>
+      ${links}
     </div>
   </li>`;
 }
@@ -283,7 +299,10 @@ function sourceLedger(records) {
 function sourceList(records, { progressive = true } = {}) {
   if (!records.length) return "";
   if (!progressive || records.length <= LIST_PREVIEW_LIMIT) {
-    return `<ol class="citation-list">${sortSourcesChronologically(records).map(renderSourceCitation).join("")}</ol>`;
+    const rows = sortSourcesChronologically(records)
+      .map((source, index) => sourceRow(source, index, { expanded: true }))
+      .join("");
+    return `<ol class="source-rows source-rows--plain">${rows}</ol>`;
   }
   return sourceLedger(records);
 }

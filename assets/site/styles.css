@@ -3386,6 +3386,35 @@ main {
   list-style: none;
 }
 
+/* Short lists carry the same three-column row, printed open. No border: a
+   border separates, and with one or two records there is nothing to separate
+   from — the record page already supplies the enclosing panel. */
+.source-rows--plain {
+  padding-left: 0;
+}
+
+.source-row__summary--static {
+  align-items: baseline;
+  grid-template-columns: 5.4rem minmax(0, 1fr) 3rem;
+  cursor: default;
+  border-bottom: 0;
+}
+
+.source-row--open + .source-row--open {
+  border-top: 1px solid var(--line);
+}
+
+.source-row--open .source-row__title {
+  font-size: 0.87rem;
+  line-height: 1.55;
+}
+
+.source-row__detail--static {
+  padding-top: 0;
+  padding-bottom: 0.6rem;
+  border-bottom: 0;
+}
+
 .source-rows[hidden] {
   display: none !important;
 }
