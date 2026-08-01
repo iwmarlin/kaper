@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 1053,
+  "count": 1059,
   "records": [
     {
       "id": "CON-F001-C-P009",
@@ -2511,7 +2511,8 @@
         "SRC0140",
         "SRC0373",
         "SRC0527"
-      ]
+      ],
+      "scopeNote": "AFI credits Kaper and Jurmann jointly with the film's musical score, not only with its song “You're all I need”. This is the only film of the period where the archive records them as score composers rather than song contributors."
     },
     {
       "id": "CON-F033-C-P077",
@@ -2529,7 +2530,8 @@
         "SRC0140",
         "SRC0306",
         "SRC0373"
-      ]
+      ],
+      "scopeNote": "AFI credits Kaper and Jurmann jointly with the film's musical score, not only with its song “You're all I need”. This is the only film of the period where the archive records them as score composers rather than song contributors."
     },
     {
       "id": "CON-F033-D-P070",
@@ -2847,6 +2849,24 @@
       ]
     },
     {
+      "id": "CON-F037-C-P141",
+      "role": "composer",
+      "nameAsPrinted": "Edward Ward",
+      "evidenceContext": "film_credits",
+      "sortOrder": 42,
+      "certainty": "confirmed",
+      "scopeNote": "Composer of the film's musical score (AFI). Kaper and Jurmann contributed the song “The duchess has a twinkle in her eye”.",
+      "workIds": [
+        "W-F037"
+      ],
+      "personIds": [
+        "P141"
+      ],
+      "sourceIds": [
+        "SRC0142"
+      ]
+    },
+    {
       "id": "CON-F037-D-P023",
       "role": "film_director",
       "nameAsPrinted": "George B. Seitz",
@@ -2914,6 +2934,24 @@
       "sourceIds": [
         "SRC0148",
         "SRC0373"
+      ]
+    },
+    {
+      "id": "CON-F038-C-P140",
+      "role": "composer",
+      "nameAsPrinted": "Dr. William Axt",
+      "evidenceContext": "film_credits",
+      "sortOrder": 42,
+      "certainty": "confirmed",
+      "scopeNote": "Composer of the film's musical score (AFI). Kaper and Jurmann contributed two songs, “There's something in a big parade” and “Tillie, the tight rope walker”.",
+      "workIds": [
+        "W-F038"
+      ],
+      "personIds": [
+        "P140"
+      ],
+      "sourceIds": [
+        "SRC0148"
       ]
     },
     {
@@ -3313,6 +3351,24 @@
       ]
     },
     {
+      "id": "CON-F043-MD-P136",
+      "role": "music_director",
+      "nameAsPrinted": "Herbert Stothart",
+      "evidenceContext": "film_credits",
+      "sortOrder": 42,
+      "certainty": "confirmed",
+      "scopeNote": "AFI credits Stothart as music director on this film. The title song is credited to Gus Kahn, Kaper and Jurmann; this is a supervisory music credit, not authorship of the song.",
+      "workIds": [
+        "W-F043"
+      ],
+      "personIds": [
+        "P136"
+      ],
+      "sourceIds": [
+        "SRC0144"
+      ]
+    },
+    {
       "id": "CON-F043-PC-ORG001",
       "role": "production_company",
       "nameAsPrinted": "Metro-Goldwyn-Mayer (MGM)",
@@ -3364,6 +3420,24 @@
       "sourceIds": [
         "SRC0306",
         "SRC0373",
+        "SRC0480"
+      ]
+    },
+    {
+      "id": "CON-F044-C-P141",
+      "role": "composer",
+      "nameAsPrinted": "Edward Ward",
+      "evidenceContext": "film_credits",
+      "sortOrder": 42,
+      "certainty": "confirmed",
+      "scopeNote": "Composer of the film's musical score (AFI).",
+      "workIds": [
+        "W-F044"
+      ],
+      "personIds": [
+        "P141"
+      ],
+      "sourceIds": [
         "SRC0480"
       ]
     },
@@ -3713,6 +3787,24 @@
       "sourceIds": [
         "SRC0147",
         "SRC0373"
+      ]
+    },
+    {
+      "id": "CON-F048-MD-P140",
+      "role": "music_director",
+      "nameAsPrinted": "Dr. William Axt",
+      "evidenceContext": "film_credits",
+      "sortOrder": 42,
+      "certainty": "confirmed",
+      "scopeNote": "AFI credits Axt as music director on this film; Kaper and Jurmann wrote four of its songs with Gus Kahn. This is a supervisory music credit, not authorship of those songs.",
+      "workIds": [
+        "W-F048"
+      ],
+      "personIds": [
+        "P140"
+      ],
+      "sourceIds": [
+        "SRC0147"
       ]
     },
     {
@@ -12956,6 +13048,24 @@
       ]
     },
     {
+      "id": "CON-S119-L-P028",
+      "role": "lyricist",
+      "nameAsPrinted": "Harold Adamson",
+      "evidenceContext": "film_credits",
+      "sortOrder": 21,
+      "certainty": "confirmed",
+      "scopeNote": "AFI credits the song's lyrics to Gus Kahn and Harold Adamson; the printed sheet music in this archive names Kahn alone.",
+      "workIds": [
+        "W-S119"
+      ],
+      "personIds": [
+        "P028"
+      ],
+      "sourceIds": [
+        "SRC0140"
+      ]
+    },
+    {
       "id": "CON-S119-P-P133",
       "role": "performer",
       "evidenceContext": "recording_label",
@@ -13611,7 +13721,7 @@
       "evidenceContext": "film_credits",
       "sortOrder": 50,
       "certainty": "confirmed",
-      "scopeNote": "Introduced the title song in San Francisco (MGM, 1936), in which AFI lists her second in the cast; the song became the film's best-known number. This documents performance, not authorship of the work.",
+      "scopeNote": "Introduced the title song in San Francisco (MGM, 1936). AFI lists her second in the cast and its synopsis has her character sing “San Francisco” at the Chickens Ball, immediately before the earthquake sequence. This documents performance, not authorship of the work.",
       "workIds": [
         "W-S130"
       ],

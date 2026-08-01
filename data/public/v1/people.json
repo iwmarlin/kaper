@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 122,
+  "count": 124,
   "records": [
     {
       "id": "P001",
@@ -1648,12 +1648,15 @@
       ],
       "authorityUrl": "VIAF: https://viaf.org/viaf/59243093",
       "contributionIds": [
+        "CON-S119-L-P028",
         "CON-S185-L-P028"
       ],
       "workIds": [
+        "W-S119",
         "W-S185"
       ],
       "sourceIds": [
+        "SRC0140",
         "SRC0603"
       ]
     },
@@ -4330,16 +4333,19 @@
       ],
       "sourceIds": [
         "SRC0143",
+        "SRC0144",
         "SRC0168",
         "SRC0373"
       ],
       "contributionIds": [
         "CON-F034-C-P136",
-        "CON-F036-C-P136"
+        "CON-F036-C-P136",
+        "CON-F043-MD-P136"
       ],
       "workIds": [
         "W-F034",
-        "W-F036"
+        "W-F036",
+        "W-F043"
       ],
       "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n85151854\nVIAF: https://viaf.org/viaf/100912799\nGND: https://d-nb.info/gnd/134532325\nISNI: https://isni.org/isni/0000000115034359"
     },
@@ -4424,6 +4430,56 @@
       ],
       "workIds": [
         "W-S130"
+      ]
+    },
+    {
+      "id": "P140",
+      "displayName": "William Axt",
+      "sortName": "Axt, William",
+      "authorizedName": "Axt, William, 1888–1959",
+      "slug": "william-axt",
+      "primaryRole": "composer",
+      "roles": [
+        "composer",
+        "conductor"
+      ],
+      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n98041902\nVIAF: https://viaf.org/viaf/246752503\nGND: https://d-nb.info/gnd/173766072\nISNI: https://isni.org/isni/0000000059420238",
+      "sourceIds": [
+        "SRC0147",
+        "SRC0148"
+      ],
+      "contributionIds": [
+        "CON-F038-C-P140",
+        "CON-F048-MD-P140"
+      ],
+      "workIds": [
+        "W-F038",
+        "W-F048"
+      ]
+    },
+    {
+      "id": "P141",
+      "displayName": "Edward Ward",
+      "sortName": "Ward, Edward",
+      "authorizedName": "Ward, Edward, 1896–1971",
+      "slug": "edward-ward",
+      "primaryRole": "composer",
+      "roles": [
+        "composer",
+        "conductor"
+      ],
+      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no90009999",
+      "sourceIds": [
+        "SRC0142",
+        "SRC0480"
+      ],
+      "contributionIds": [
+        "CON-F037-C-P141",
+        "CON-F044-C-P141"
+      ],
+      "workIds": [
+        "W-F037",
+        "W-F044"
       ]
     }
   ]
