@@ -1,4 +1,4 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=37e01b56b9";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=323812a7d4";
 import {
   debounce,
   escapeHtml,
@@ -17,7 +17,7 @@ import {
   renderLoading,
   responsiveImage,
   typeBadge,
-} from "./core.js?v=37e01b56b9";
+} from "./core.js?v=323812a7d4";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 mountSiteChrome("people");
@@ -111,7 +111,8 @@ try {
 
   const indexed = people.map((person) => {
     const personWorks = (person.workIds || []).map((id) => worksById.get(id)).filter(Boolean);
-    const periods = [...new Set(personWorks.flatMap((work) => periodValues(work)))];
+    const periodSet = new Set(personWorks.flatMap((work) => periodValues(work)));
+    const periods = PERIOD_ORDER.filter((period) => periodSet.has(period));
     const roles = person.roles?.length ? person.roles : [person.primaryRole].filter(Boolean);
     return {
       ...person,

@@ -1248,6 +1248,20 @@ main {
   font-size: 0.82rem;
 }
 
+.person-row__period {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  gap: 0.22rem;
+}
+
+.person-row__period .badge {
+  padding: 0.18rem 0.3rem;
+  font-size: 0.58rem;
+  font-weight: 680;
+  letter-spacing: 0.035em;
+}
+
 .load-more {
   display: flex;
   flex-wrap: wrap;
