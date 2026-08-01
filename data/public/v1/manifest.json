@@ -18,10 +18,10 @@
     },
     "overrides": {
       "file": "public_export_overrides.json",
-      "sha256": "e86569b1172e3390e4dec816ca80bffc08e63778a17b73595d4ea68de7a9072e",
-      "appliedCount": 350,
-      "additionCount": 115,
-      "linkAdditionCount": 233,
+      "sha256": "6336ef0d6fd41b6bf180e3fed67caaa8b45682b5fdf1013d0758080378b9ba8b",
+      "appliedCount": 353,
+      "additionCount": 116,
+      "linkAdditionCount": 240,
       "linkRemovalCount": 92
     }
   },
@@ -48,7 +48,7 @@
   "counts": {
     "People": 137,
     "Organizations": 111,
-    "Sources": 552,
+    "Sources": 553,
     "Media": 240,
     "Works": 280,
     "Films": 55,
@@ -65,7 +65,7 @@
     {
       "file": "build-report.json",
       "bytes": 114996,
-      "sha256": "e0a70d8fada1d0742a92e5fd1919eadb4253946a2fb051c9b16a1090dc597c1e"
+      "sha256": "ece6fcc0bf393b642996467d5b9a38eab88c5f164213e26e5a671f59f4cc4caf"
     },
     {
       "file": "contributions.json",
@@ -74,8 +74,8 @@
     },
     {
       "file": "films.json",
-      "bytes": 36308,
-      "sha256": "43b497731938a31d39544b0d102855ab812cb26922f3e81e65c4a33063430a91"
+      "bytes": 36147,
+      "sha256": "710fe3e091194c1ec96beb0bab7c0dbf435de168327d32ba4f2e86a0deaa9db7"
     },
     {
       "file": "media.json",
@@ -85,7 +85,7 @@
     {
       "file": "organizations.json",
       "bytes": 71607,
-      "sha256": "651b5bf5aba2d368e3be8e850d17b745d868cff92ca4c8b3505dc68aff621b2f"
+      "sha256": "bc0c64c824c6c2c21cf9eed7c8f7f18b848195df549dd3673669841d60ffe988"
     },
     {
       "file": "other-works.json",
@@ -114,8 +114,8 @@
     },
     {
       "file": "sources.json",
-      "bytes": 712444,
-      "sha256": "b71e995073c7bfdaf5493f80e988da45c411389a55961c2d6fc12154f36f1b95"
+      "bytes": 713879,
+      "sha256": "9f5b1d31e6ad69fe1022b4a845706f8b4add8e23e4eaad54d254d6ac5d8ca7c6"
     },
     {
       "file": "timeline-events.json",
@@ -129,13 +129,13 @@
     },
     {
       "file": "work-relations.json",
-      "bytes": 88777,
-      "sha256": "b4908715fc4452fbff4390e36b124b0c382aa7dbd52fdf619e263b7a0a686c59"
+      "bytes": 88707,
+      "sha256": "63d6f9b5b1e3b1c9208b754ccedae3b80a5328c3652cf565371bf3db3a2abb13"
     },
     {
       "file": "works.json",
-      "bytes": 252884,
-      "sha256": "ce27cdfa4d068ed321f8abef56945bdcc6ab09f0da2a593659634a7581b22f7a"
+      "bytes": 252815,
+      "sha256": "c20e0e352481cf9de05aaf5072da4e840150d4c0bb75ca1b0834e57b64e374e9"
     }
   ]
 }

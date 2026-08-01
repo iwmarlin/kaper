@@ -14,6 +14,25 @@
         "fields": {
           "attributionNote": "Filmportal credits Bronislau Kaper and Friedrich Jung under “Musik.” The official Walter Jurmann catalogue separately attributes the film’s background music and the song “Solange wir gute Freunde sind” to Kaper and Walter Jurmann. The catalogue retains both source-specific attributions rather than treating them as mutually exclusive."
         }
+      },
+      "F056": {
+        "reason": "Separate the confirmed film identity and language-version relationship from the absence of a documented Kaper music credit; do not classify the film itself as uncertain.",
+        "fields": {
+          "attributionNote": "No direct source identifies Bronisław Kaper as composer or confirms reuse of his music in this French-language version. The confirmed language-version relationship is not a music credit.",
+          "publicNote": "French-language version of Schuß im Morgengrauen, directed by Serge de Poligny and released in France in 1932.",
+          "certainty": "confirmed"
+        },
+        "removeFields": [
+          "creditType"
+        ]
+      }
+    },
+    "Work Relations": {
+      "REL0196": {
+        "reason": "State the verified language-version relationship concisely and keep the separate absence of a Kaper music credit out of the relation description.",
+        "fields": {
+          "publicNote": "“Coup de feu à l’aube” is the French-language version of “Schuß im Morgengrauen”."
+        }
       }
     },
     "Works": {
@@ -23,6 +42,14 @@
           "title": "Wenn mich Männer betrügen",
           "sortTitle": "Wenn mich Männer betrügen",
           "slug": "wenn-mich-maenner-betruegen"
+        }
+      },
+      "W-F056": {
+        "reason": "Publish the confirmed French-language film version as an ordinary relational film record while keeping the absence of a Kaper music contribution explicit in the contribution model rather than in an internal public-scope badge.",
+        "fields": {
+          "certainty": "confirmed",
+          "publicNote": "French-language version of Schuß im Morgengrauen, directed by Serge de Poligny and released in France in 1932.",
+          "publicScope": "standalone_page"
         }
       },
       "W-S043": {
@@ -1483,10 +1510,21 @@
         }
       },
       "SRC0532": {
-        "reason": "Normalize the source type and use the film's release year as date; the separate research access date remains in accessDate.",
+        "reason": "Replace the general Wikipedia citation with the authoritative BnF title record for the film's identity, director, production countries, filming year and French release date.",
         "fields": {
+          "shortCitation": "BnF, “Coup de feu à l’aube (film),” FRBNF14664260",
+          "fullCitation": "Bibliothèque nationale de France. “Coup de feu à l’aube (film).” Notice de titre conventionnel, FRBNF14664260, ark:/12148/cb14664260c. French-German film directed by Serge de Poligny; filmed in 1932 and released in France on 17 August 1932. Accessed 1 August 2026.",
+          "sourceType": "authority_record",
+          "title": "Coup de feu à l’aube",
+          "creator": "Bibliothèque nationale de France",
+          "repository": "Bibliothèque nationale de France",
+          "publication": "Catalogue général de la BnF",
           "date": "1932",
-          "sourceType": "wikimedia_article_page"
+          "url": "https://catalogue.bnf.fr/ark:/12148/cb14664260c",
+          "accessDate": "2026-08-01",
+          "reliability": "high",
+          "sourceStatus": "verified",
+          "slug": "src0532-bnf-coup-de-feu-a-laube-film-1932"
         }
       },
       "SRC0533": {
@@ -4651,6 +4689,36 @@
             "CON-S077-P-P117"
           ]
         }
+      },
+      "SRC0624": {
+        "reason": "Add an institutional rights catalogue that explicitly identifies Schuß im Morgengrauen and Coup de feu à l’aube as corresponding titles, independently supporting the language-version relation.",
+        "fields": {
+          "id": "SRC0624",
+          "shortCitation": "Thomas Sessler Verlag, remake-rights title list: Schuß im Morgengrauen = Coup de feu à l’aube",
+          "fullCitation": "Thomas Sessler Verlag. “Filmtitelliste Remakerechte.” The alphabetical rights catalogue identifies “Schuß im Morgengrauen” and “Coup de feu à l’aube” as corresponding titles. Accessed 1 August 2026.",
+          "sourceType": "copyright_catalogue",
+          "title": "Filmtitelliste Remakerechte",
+          "creator": "Thomas Sessler Verlag",
+          "repository": "Thomas Sessler Verlag",
+          "publication": "Remake-rights film-title catalogue",
+          "date": "2026",
+          "accessDate": "2026-08-01",
+          "reliability": "high",
+          "sourceStatus": "verified",
+          "slug": "src0624-sessler-remake-rights-schuss-coup-de-feu",
+          "workIds": [
+            "W-F015",
+            "W-F056"
+          ],
+          "filmIds": [
+            "F015",
+            "F056"
+          ],
+          "workRelationIds": [
+            "REL0196"
+          ],
+          "primaryUrl": "https://sesslerverlag.at/fileadmin/user_upload/news/Filmkataloge/Remakerechte_Filmliste_nach_Titel.pdf"
+        }
       }
     },
     "Places": {
@@ -5411,6 +5479,14 @@
   },
   "linkAdditions": {
     "Organizations": {
+      "ORG062": {
+        "reason": "Link the Bibliothèque nationale de France organization record to the authoritative BnF title record for Coup de feu à l’aube.",
+        "fields": {
+          "sourceIds": [
+            "SRC0532"
+          ]
+        }
+      },
       "ORG070": {
         "reason": "Synchronize the inverse source links for the newly added NAC portrait records whose Sources already identify Narodowe Archiwum Cyfrowe.",
         "fields": {
@@ -5766,6 +5842,22 @@
         "fields": {
           "contributionIds": [
             "CON-F014-C-P077"
+          ]
+        }
+      },
+      "W-F015": {
+        "reason": "Attach the institutional remake-rights catalogue that identifies the corresponding French-language title.",
+        "fields": {
+          "sourceIds": [
+            "SRC0624"
+          ]
+        }
+      },
+      "W-F056": {
+        "reason": "Attach the BnF title authority and the institutional remake-rights catalogue supporting the film identity and language-version relation.",
+        "fields": {
+          "sourceIds": [
+            "SRC0624"
           ]
         }
       },
@@ -6233,6 +6325,22 @@
         "fields": {
           "sourceIds": [
             "SRC0306"
+          ]
+        }
+      },
+      "F015": {
+        "reason": "Attach the institutional remake-rights catalogue that identifies the corresponding French-language version.",
+        "fields": {
+          "sourceIds": [
+            "SRC0624"
+          ]
+        }
+      },
+      "F056": {
+        "reason": "Attach the institutional remake-rights catalogue supporting the language-version relation.",
+        "fields": {
+          "sourceIds": [
+            "SRC0624"
           ]
         }
       }
@@ -6837,7 +6945,25 @@
         }
       }
     },
+    "Work Relations": {
+      "REL0196": {
+        "reason": "Attach the institutional remake-rights catalogue that explicitly pairs the German and French titles.",
+        "fields": {
+          "sourceIds": [
+            "SRC0624"
+          ]
+        }
+      }
+    },
     "Sources": {
+      "SRC0532": {
+        "reason": "Synchronize the converted BnF title record with the Bibliothèque nationale de France organization.",
+        "fields": {
+          "organizationIds": [
+            "ORG062"
+          ]
+        }
+      },
       "SRC0008": {
         "reason": "Synchronize the inverse source-to-event link already documented by TE0054.",
         "fields": {
@@ -7921,6 +8047,14 @@
       }
     },
     "Sources": {
+      "SRC0532": {
+        "reason": "Remove the former Wikimedia repository link after converting SRC0532 into the authoritative BnF title record.",
+        "fields": {
+          "organizationIds": [
+            "ORG090"
+          ]
+        }
+      },
       "SRC0125": {
         "reason": "Remove Walter Jurmann from the inverse person links of the Filmportal record because that specific source credits Bronislau Kaper and Friedrich Jung under “Musik.” Jurmann remains documented through SRC0306 and SRC0373.",
         "fields": {
@@ -8369,6 +8503,14 @@
       }
     },
     "Organizations": {
+      "ORG090": {
+        "reason": "Remove SRC0532 from Wikimedia Foundation after replacing the Wikipedia citation with the BnF title authority record.",
+        "fields": {
+          "sourceIds": [
+            "SRC0532"
+          ]
+        }
+      },
       "ORG033": {
         "reason": "Remove SRC0184 because the verified Ehe m. b. H. registration is published by Edition Brüll, not Alrobi.",
         "fields": {

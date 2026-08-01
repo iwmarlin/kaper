@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 552,
+  "count": 553,
   "records": [
     {
       "id": "SRC0001",
@@ -16634,24 +16634,24 @@
     },
     {
       "id": "SRC0532",
-      "shortCitation": "Wikipedia, “Coup de feu à l’aube”",
-      "fullCitation": "“Coup de feu à l’aube.” Wikipédia, l’encyclopédie libre. Accessed 12 July 2026.",
-      "sourceType": "wikimedia_article_page",
+      "shortCitation": "BnF, “Coup de feu à l’aube (film),” FRBNF14664260",
+      "fullCitation": "Bibliothèque nationale de France. “Coup de feu à l’aube (film).” Notice de titre conventionnel, FRBNF14664260, ark:/12148/cb14664260c. French-German film directed by Serge de Poligny; filmed in 1932 and released in France on 17 August 1932. Accessed 1 August 2026.",
+      "sourceType": "authority_record",
       "title": "Coup de feu à l’aube",
-      "creator": "Wikimedia contributors",
-      "repository": "Wikimedia Foundation",
-      "publication": "Wikipédia (French)",
+      "creator": "Bibliothèque nationale de France",
+      "repository": "Bibliothèque nationale de France",
+      "publication": "Catalogue général de la BnF",
       "date": "1932",
-      "accessDate": "2026-07-12",
-      "reliability": "medium",
-      "sourceStatus": "verified_with_attribution_note",
-      "slug": "src0532-coup-de-feu-a-laube-wikipedia-1932",
+      "accessDate": "2026-08-01",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "slug": "src0532-bnf-coup-de-feu-a-laube-film-1932",
       "personIds": [
         "P124"
       ],
       "organizationIds": [
         "ORG011",
-        "ORG090",
+        "ORG062",
         "ORG109"
       ],
       "workIds": [
@@ -16670,7 +16670,13 @@
         "CON-F056-PC-ORG011",
         "CON-F056-PC-ORG109"
       ],
-      "primaryUrl": "https://fr.wikipedia.org/wiki/Coup_de_feu_%C3%A0_l%27aube"
+      "primaryUrl": "https://catalogue.bnf.fr/ark:/12148/cb14664260c",
+      "identifiers": [
+        {
+          "scheme": "ark",
+          "value": "ark:/12148/cb14664260c"
+        }
+      ]
     },
     {
       "id": "SRC0533",
@@ -18853,6 +18859,33 @@
         "PNV0051"
       ],
       "primaryUrl": "https://isni.org/isni/000000007143777X"
+    },
+    {
+      "id": "SRC0624",
+      "shortCitation": "Thomas Sessler Verlag, remake-rights title list: Schuß im Morgengrauen = Coup de feu à l’aube",
+      "fullCitation": "Thomas Sessler Verlag. “Filmtitelliste Remakerechte.” The alphabetical rights catalogue identifies “Schuß im Morgengrauen” and “Coup de feu à l’aube” as corresponding titles. Accessed 1 August 2026.",
+      "sourceType": "copyright_catalogue",
+      "title": "Filmtitelliste Remakerechte",
+      "creator": "Thomas Sessler Verlag",
+      "repository": "Thomas Sessler Verlag",
+      "publication": "Remake-rights film-title catalogue",
+      "date": "2026",
+      "accessDate": "2026-08-01",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "slug": "src0624-sessler-remake-rights-schuss-coup-de-feu",
+      "workIds": [
+        "W-F015",
+        "W-F056"
+      ],
+      "filmIds": [
+        "F015",
+        "F056"
+      ],
+      "workRelationIds": [
+        "REL0196"
+      ],
+      "primaryUrl": "https://sesslerverlag.at/fileadmin/user_upload/news/Filmkataloge/Remakerechte_Filmliste_nach_Titel.pdf"
     }
   ]
 }

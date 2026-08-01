@@ -748,7 +748,8 @@
         "SRC0166",
         "SRC0516",
         "SRC0528",
-        "SRC0532"
+        "SRC0532",
+        "SRC0624"
       ],
       "mediaIds": [
         "M151"
@@ -2690,11 +2691,12 @@
       "workType": "Film",
       "year": 1932,
       "period": "european",
-      "certainty": "uncertain",
-      "publicNote": "Confirmed French-language version of Schuß im Morgengrauen (F015). No direct source confirms Bronisław Kaper’s musical involvement in this version; the record is included for film-history and language-version context.",
-      "publicScope": "context_only",
+      "certainty": "confirmed",
+      "publicNote": "French-language version of Schuß im Morgengrauen, directed by Serge de Poligny and released in France in 1932.",
+      "publicScope": "standalone_page",
       "sourceIds": [
-        "SRC0532"
+        "SRC0532",
+        "SRC0624"
       ],
       "contributionIds": [
         "CON-F056-D-P124",
