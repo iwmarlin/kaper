@@ -1,4 +1,4 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=323812a7d4";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=f8d881ab30";
 import {
   debounce,
   escapeHtml,
@@ -17,7 +17,7 @@ import {
   renderLoading,
   responsiveImage,
   typeBadge,
-} from "./core.js?v=323812a7d4";
+} from "./core.js?v=f8d881ab30";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 mountSiteChrome("people");
@@ -76,27 +76,15 @@ function initials(name = "") {
 }
 
 try {
-  const { people, works, media, sources, contributions } = await loadTables([
+  const { people, works, media, sources } = await loadTables([
     "people",
     "works",
     "media",
     "sources",
-    "contributions",
   ]);
   const worksById = indexById(works);
   const mediaById = indexById(media);
   const sourcesById = indexById(sources);
-
-  // Most person→source evidence hangs off contributions, not the person record:
-  // only 93 of 119 people carry their own sourceIds, but all 119 are cited somewhere.
-  const sourcesByPerson = new Map();
-  for (const contribution of contributions) {
-    for (const personId of contribution.personIds || []) {
-      const bucket = sourcesByPerson.get(personId) || new Set();
-      for (const sourceId of contribution.sourceIds || []) bucket.add(sourceId);
-      sourcesByPerson.set(personId, bucket);
-    }
-  }
 
   // A person reaches a portrait indirectly: person → sources → media (category "portrait").
   function portraitFor(person) {
@@ -117,7 +105,6 @@ try {
     return {
       ...person,
       _works: personWorks.length,
-      _sources: new Set([...(person.sourceIds || []), ...(sourcesByPerson.get(person.id) || [])]).size,
       _periods: periods,
       _roles: roles,
       _portrait: portraitFor(person),
@@ -185,19 +172,16 @@ try {
     }
 
     target.innerHTML = shown.map((person) => {
-      const tally = [
-        person._works ? `${person._works} ${person._works === 1 ? "work" : "works"}` : "",
-        person._sources ? `${person._sources} ${person._sources === 1 ? "source" : "sources"}` : "",
-      ].filter(Boolean).join(" · ") || "Linked from records";
       return `
         <article class="person-row">
           <div class="person-row__avatar">${avatar(person)}</div>
           <div class="person-row__identity">
             <h2><a href="${recordUrl("person", person.id)}">${escapeHtml(person.displayName)}</a></h2>
-            <div class="meta-row" aria-label="Documented roles">${person._roles.map(typeBadge).join("")}</div>
+            <div class="person-row__metadata">
+              <div class="meta-row" aria-label="Documented roles">${person._roles.map(typeBadge).join("")}</div>
+              <div class="person-row__period" aria-label="Documented periods">${periodBadge(person._periods)}</div>
+            </div>
           </div>
-          <div class="person-row__count">${escapeHtml(tally)}</div>
-          <div class="person-row__period">${periodBadge(person._periods)}</div>
         </article>`;
     }).join("");
     syncQuery();

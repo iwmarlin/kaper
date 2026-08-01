@@ -1154,7 +1154,7 @@ main {
 .person-row {
   position: relative;
   display: grid;
-  grid-template-columns: 3.25rem minmax(0, 1.6fr) minmax(8.5rem, 0.6fr) 8rem;
+  grid-template-columns: 3.25rem minmax(0, 1fr);
   align-items: center;
   gap: 1rem;
   padding: 0.8rem 1rem;
@@ -1203,6 +1203,13 @@ main {
   gap: 0.32rem;
 }
 
+.person-row__metadata {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.28rem 0.52rem;
+}
+
 .person-row h2 {
   margin: 0;
   font-size: 1.1rem;
@@ -1242,13 +1249,9 @@ main {
   letter-spacing: 0.045em;
 }
 
-.person-row__count,
 .person-row__period {
   color: var(--ink-soft);
   font-size: 0.82rem;
-}
-
-.person-row__period {
   display: flex;
   flex-wrap: wrap;
   align-content: center;
@@ -2982,7 +2985,7 @@ main {
   }
 
   .person-row {
-    grid-template-columns: 3.25rem minmax(0, 1fr) 7.5rem;
+    grid-template-columns: 3.25rem minmax(0, 1fr);
   }
 
   .person-row__period {
@@ -3244,10 +3247,6 @@ main {
   .person-row__avatar {
     width: 2.85rem;
     height: 2.85rem;
-  }
-
-  .person-row__count {
-    display: none;
   }
 
   .timeline {
