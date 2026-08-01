@@ -439,8 +439,8 @@ def static_page(record_type: str, record: dict, tables: dict) -> str:
     page_title = title if record_type in {"work", "person", "place", "event"} else f"{title} ({label.lower()})"
     record_id = record["id"]
     is_gallery = record_type == "media" and record.get("mediaType") == "document_gallery"
-    style_version = "977171b2a5"
-    record_script_version = "977171b2a5"
+    style_version = "d436156396"
+    record_script_version = "d436156396"
     route = f"records/{record_type}/{quote(record_id, safe='')}/"
     canonical = f"{ORIGIN}{route}"
     facts = "".join(
