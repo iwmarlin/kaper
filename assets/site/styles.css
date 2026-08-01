@@ -3386,39 +3386,6 @@ main {
   list-style: none;
 }
 
-/* Short lists carry the same three-column row, printed open. No border: a
-   border separates, and with one or two records there is nothing to separate
-   from — the record page already supplies the enclosing panel. */
-.source-rows--plain {
-  padding-left: 0;
-}
-
-.source-row__summary--static {
-  align-items: baseline;
-  grid-template-columns: 5.4rem minmax(0, 1fr) 3rem;
-  cursor: default;
-  border-bottom: 0;
-}
-
-.source-row--open + .source-row--open {
-  border-top: 1px solid var(--line);
-}
-
-.source-row--open .source-row__title {
-  font-size: 0.87rem;
-  line-height: 1.55;
-}
-
-.source-row__detail--static {
-  padding-top: 0;
-  padding-bottom: 0.6rem;
-  border-bottom: 0;
-}
-
-.source-rows[hidden] {
-  display: none !important;
-}
-
 .source-row[hidden] {
   display: none !important;
 }
@@ -3523,4 +3490,55 @@ main {
   .source-row__year { grid-area: year; }
   .source-row__chevron { display: none; }
   .source-row__detail { padding-left: 0.15rem; }
+}
+
+/* Short lists: the same three columns, printed open. The identifier and the
+   year are grid cells; the citation and its link share the middle column, so
+   the only rule on the row divides one source from the next rather than
+   cutting a citation off from its own links. */
+.source-row--open {
+  display: grid;
+  grid-template-columns: 5.4rem minmax(0, 1fr) 3rem;
+  gap: 0.2rem 0.75rem;
+  align-items: baseline;
+  padding: 0.6rem 0.15rem;
+}
+
+.source-row--open + .source-row--open {
+  border-top: 1px solid var(--line);
+}
+
+.source-row--open .source-row__id {
+  align-self: baseline;
+}
+
+.source-row__citation {
+  margin: 0;
+  font-size: 0.87rem;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+}
+
+.source-row--open .source-row__links {
+  margin: 0.3rem 0 0;
+}
+
+.source-row__links a {
+  color: var(--ink-soft);
+  font-size: 0.74rem;
+  font-weight: 600;
+}
+
+.source-row__links a:hover {
+  color: var(--accent);
+}
+
+@media (max-width: 680px) {
+  .source-row--open {
+    grid-template-columns: minmax(0, 1fr) 3rem;
+    grid-template-areas: "id year" "body body";
+  }
+  .source-row--open .source-row__id { grid-area: id; }
+  .source-row--open .source-row__body { grid-area: body; }
+  .source-row--open .source-row__year { grid-area: year; }
 }

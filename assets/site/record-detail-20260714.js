@@ -1,4 +1,4 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=7c6ef93d7f";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=5d87af01c2";
 import {
   certaintyBadge,
   escapeHtml,
@@ -23,7 +23,7 @@ import {
   scopeBadge,
   typeBadge,
   updateMeta,
-} from "./core.js?v=7c6ef93d7f";
+} from "./core.js?v=5d87af01c2";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 mountSiteChrome("");
@@ -229,12 +229,12 @@ function sourceRow(source, index, { expanded = false } = {}) {
   </p>`;
   if (expanded) {
     return `<li class="source-row source-row--open" id="source-${escapeHtml(source.id)}">
-      <div class="source-row__summary source-row__summary--static">
-        <a class="source-row__id" href="${recordUrl("source", source.id)}" aria-label="Open source record ${escapeHtml(source.id)}">${escapeHtml(source.id)}</a>
-        <span class="source-row__title">${escapeHtml(full)}</span>
-        <span class="source-row__year">${yearLabel}</span>
+      <a class="source-row__id" href="${recordUrl("source", source.id)}" aria-label="Open source record ${escapeHtml(source.id)}">${escapeHtml(source.id)}</a>
+      <div class="source-row__body">
+        <p class="source-row__citation">${escapeHtml(full)}</p>
+        ${external ? `<p class="source-row__links"><a href="${escapeHtml(external)}" target="_blank" rel="noreferrer">Open source <span aria-hidden="true">\u2197</span></a></p>` : ""}
       </div>
-      ${external ? `<div class="source-row__detail source-row__detail--static">${links}</div>` : ""}
+      <span class="source-row__year">${yearLabel}</span>
     </li>`;
   }
   const detailId = `source-detail-${escapeHtml(source.id)}-${index}`;
