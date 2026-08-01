@@ -4610,23 +4610,29 @@
     },
     {
       "id": "P147",
-      "displayName": "Mark Lavry",
-      "sortName": "Lavry, Mark",
-      "authorizedName": "Mark Lavry",
-      "slug": "mark-lavry",
+      "displayName": "Marc Lavry",
+      "sortName": "Lavry, Marc",
+      "authorizedName": "Lavry, Marc, 1903–1967",
+      "slug": "marc-lavry",
       "primaryRole": "composer",
       "roles": [
         "composer",
         "conductor"
       ],
       "sourceIds": [
-        "SRC0120"
+        "SRC0120",
+        "SRC0610",
+        "SRC0611"
       ],
       "contributionIds": [
         "CON-F006-MD-P147"
       ],
       "workIds": [
         "W-F006"
+      ],
+      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no90014252\nVIAF: https://viaf.org/viaf/27255691\nGND: https://d-nb.info/gnd/128702915\nISNI: https://isni.org/isni/0000000081063011",
+      "nameVariantIds": [
+        "PNV0048"
       ]
     },
     {
@@ -4749,7 +4755,8 @@
       ],
       "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n81026775\nVIAF: https://viaf.org/viaf/66671093\nGND: https://d-nb.info/gnd/118501402\nISNI: https://isni.org/isni/0000000109111071",
       "sourceIds": [
-        "SRC0153"
+        "SRC0153",
+        "SRC0609"
       ],
       "contributionIds": [
         "CON-F021-A-P153"

@@ -413,7 +413,7 @@
       "evidenceContext": "film_credits",
       "sortOrder": 42,
       "certainty": "confirmed",
-      "scopeNote": "filmportal.de records this credit as “Musikalische Leitung”. It documents musical direction or arrangement on the film, not authorship of Kaper's songs.",
+      "scopeNote": "filmportal.de records this credit as “Musikalische Leitung”, spelling the name Mark Lavry. The Marc Lavry Heritage Society places him in Berlin from 1927 to 1933, conducting the Berliner Sinfonie Orchester and writing film music, which fits this 1931 production. It documents musical direction, not authorship of Kaper's songs.",
       "workIds": [
         "W-F006"
       ],
@@ -421,8 +421,10 @@
         "P147"
       ],
       "sourceIds": [
-        "SRC0120"
-      ]
+        "SRC0120",
+        "SRC0610"
+      ],
+      "nameAsPrinted": "Mark Lavry"
     },
     {
       "id": "CON-F006-PC-ORG027",

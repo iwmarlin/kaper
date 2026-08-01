@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 44,
+  "count": 45,
   "records": [
     {
       "id": "PNV0001",
@@ -1222,6 +1222,23 @@
       ],
       "sourceIds": [
         "SRC0147"
+      ]
+    },
+    {
+      "id": "PNV0048",
+      "variantName": "Mark Lavry",
+      "variantType": "spelling_variant",
+      "identityScope": "single_person",
+      "evidenceContext": "secondary_literature",
+      "attestedWording": "Mark Lavry",
+      "certainty": "confirmed",
+      "publicNote": "Spelling used by filmportal.de for the music director of Seitensprünge (1931). The composer wrote his name Marc; he was born Marcus Levin in Riga and adopted Lavry to avoid confusion with an older conductor.",
+      "personIds": [
+        "P147"
+      ],
+      "sourceIds": [
+        "SRC0120",
+        "SRC0610"
       ]
     }
   ]
