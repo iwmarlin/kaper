@@ -1,3 +1,30 @@
+/* Both families are served from this origin. They have to be: the site's
+   Content-Security-Policy is default-src 'self', so a font from a third-party
+   CDN would be refused. Before this block the stylesheet named Iowan Old
+   Style, Palatino Linotype and Inter without loading any of them, so the
+   heading face was whatever the reader's operating system happened to own —
+   Iowan on macOS, Palatino on Windows, Georgia everywhere else. The archive
+   had no typography of its own.
+
+   Both files are variable. The stylesheet asks for eleven distinct weights,
+   among them 640, 720, 740 and 750; against static faces those all collapse
+   to the nearest of 400 and 700. Against a continuous axis they are real. */
+@font-face {
+  font-family: "Source Serif 4";
+  src: url("../fonts/kaper-serif.woff2") format("woff2");
+  font-weight: 200 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/kaper-sans.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --paper: #f4f0e7;
   --paper-deep: #e9e1d2;
@@ -21,8 +48,8 @@
   --radius-md: 0.9rem;
   --radius-lg: 1.4rem;
   --shell: min(1120px, calc(100% - 2.5rem));
-  --serif: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
-  --sans: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --sans: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
 }
 
 *,
