@@ -1,4 +1,4 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=83e207e822";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=37e01b56b9";
 import {
   debounce,
   escapeHtml,
@@ -17,7 +17,7 @@ import {
   renderLoading,
   responsiveImage,
   typeBadge,
-} from "./core.js?v=83e207e822";
+} from "./core.js?v=37e01b56b9";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 mountSiteChrome("people");
@@ -192,8 +192,8 @@ try {
         <article class="person-row">
           <div class="person-row__avatar">${avatar(person)}</div>
           <div class="person-row__identity">
-            <div class="meta-row">${person._roles.map(typeBadge).join("")}</div>
             <h2><a href="${recordUrl("person", person.id)}">${escapeHtml(person.displayName)}</a></h2>
+            <div class="meta-row" aria-label="Documented roles">${person._roles.map(typeBadge).join("")}</div>
           </div>
           <div class="person-row__count">${escapeHtml(tally)}</div>
           <div class="person-row__period">${periodBadge(person._periods)}</div>
