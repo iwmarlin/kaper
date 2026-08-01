@@ -50,6 +50,7 @@ def main() -> int:
     data_root = root / "data/public/v1"
     config = read_json(root / "scripts/public_export_config.json")
     overrides_path = root / "scripts/public_export_overrides.json"
+    config_path = root / "scripts/public_export_config.json"
 
     manifest_path = data_root / "manifest.json"
     report_path = data_root / "build-report.json"
@@ -93,6 +94,16 @@ def main() -> int:
     if ov_new != ov:
         changes.append("overrides(sha/counts)")
 
+    # 4) allowlist checksum. The field allowlist is meant to be stable, so this
+    # is normally a no-op; it moves only when the public schema itself gains a
+    # field. Reconciling it here keeps that a one-command change rather than a
+    # hand-edited hash.
+    allow = dict(manifest["publicInputs"]["allowlist"])
+    allow_new = dict(allow)
+    allow_new["sha256"] = sha256(config_path)
+    if allow_new != allow:
+        changes.append("allowlist(sha)")
+
     if args.check:
         print("DRIFT:" if changes else "clean:", ", ".join(changes) or "manifest already consistent")
         return 1 if changes else 0
@@ -100,6 +111,7 @@ def main() -> int:
     manifest["counts"] = counts
     manifest["files"] = new_files
     manifest["publicInputs"]["overrides"] = ov_new
+    manifest["publicInputs"]["allowlist"] = allow_new
     report["counts"] = counts
     write_json(manifest_path, manifest)
     write_json(report_path, report)

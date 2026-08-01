@@ -1,4 +1,4 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=3866ccf7c7";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=d8518808b0";
 import {
   certaintyBadge,
   escapeHtml,
@@ -23,7 +23,7 @@ import {
   scopeBadge,
   typeBadge,
   updateMeta,
-} from "./core.js?v=3866ccf7c7";
+} from "./core.js?v=d8518808b0";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 mountSiteChrome("");
@@ -733,6 +733,23 @@ function renderMedia(media, data, indexes) {
   };
 }
 
+// Life dates used to live inside authorizedName, in whichever convention the
+// record happened to be typed in — "Kaper (1902–1983)" beside "Włast, Andrzej,
+// 1895–1943" — so they could never display consistently. They are their own
+// fields now and the display string is generated here, which makes the format
+// a property of the code rather than of whoever entered the record. An open
+// end is written as an en dash with nothing after it; a missing birth year as
+// nothing before it.
+function lifeDates(person) {
+  const { birthYear, deathYear } = person;
+  if (!birthYear && !deathYear) return "";
+  const span = escapeHtml(`${birthYear || ""}\u2013${deathYear || ""}`);
+  if (person.lifeDatesCertainty && person.lifeDatesCertainty !== "confirmed") {
+    return `${span} ${certaintyBadge(person.lifeDatesCertainty)}`;
+  }
+  return span;
+}
+
 function renderPerson(person, data, indexes) {
   const works = related(person.workIds, indexes.works)
     .sort((a, b) => Number(a.year || 9999) - Number(b.year || 9999) || String(a.title).localeCompare(String(b.title)));
@@ -765,7 +782,7 @@ function renderPerson(person, data, indexes) {
     title: person.displayName,
     label: "Person",
     badges: displayedRoles.map(typeBadge).join(""),
-    facts: `${fact("Authorized name", person.authorizedName)}${fact("Primary role", humanize(person.primaryRole))}${fact("Roles", (person.roles || []).map(humanize))}`,
+    facts: `${factHtml("Life dates", lifeDates(person))}${fact("Authorized name", person.authorizedName)}${fact("Primary role", humanize(person.primaryRole))}${fact("Roles", (person.roles || []).map(humanize))}`,
     main: [
       authorityLinks.length ? section("Authority records", `<ul class="plain-list authority-links">${authorityLinks.map((item) => `<li><a href="${escapeHtml(item.url)}" target="_blank" rel="noreferrer">${escapeHtml(item.label)} <span aria-hidden="true">↗</span></a></li>`).join("")}</ul>`) : "",
       section("Pseudonyms and documented identities", progressiveList(identities, {
