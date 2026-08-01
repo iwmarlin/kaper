@@ -1,4 +1,4 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=04ee20c3a7";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=ba41174cb8";
 import {
   certaintyBadge,
   escapeHtml,
@@ -23,7 +23,7 @@ import {
   scopeBadge,
   typeBadge,
   updateMeta,
-} from "./core.js?v=04ee20c3a7";
+} from "./core.js?v=ba41174cb8";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 mountSiteChrome("");
@@ -182,6 +182,15 @@ const SOURCE_TYPE_LABELS = {
 // Sources carry dates in mixed shapes: "1933", "1936-04-21", "n.d.", and a few
 // malformed leftovers. Only a plausible four-digit year is trusted; everything
 // else sorts to the end rather than being guessed at.
+// One disclosure mark for both levels, drawn rather than typed. The glyphs
+// used before — a plus on rows, a solid triangle on group headings — were two
+// metaphors for one action, and the triangle's weight and baseline shift with
+// whatever font happens to render it. A stroked chevron keeps its hairline at
+// any size and rotates to carry the state.
+function chevron(className) {
+  return `<svg class="${className}" viewBox="0 0 12 12" width="12" height="12" aria-hidden="true" focusable="false"><path d="M4.5 2 L8.5 6 L4.5 10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+}
+
 function sourceYear(source) {
   const match = String(source.date || "").match(/\b(1[5-9]\d{2}|20\d{2})\b/);
   return match ? Number(match[1]) : null;
@@ -247,7 +256,7 @@ function sourceRow(source, index, { expanded = false } = {}) {
         <span class="source-row__year">${yearLabel}</span>
       </span>
       <span class="source-row__title">${escapeHtml(summary)}</span>
-      <span class="source-row__chevron" aria-hidden="true">+</span>
+      ${chevron("source-row__chevron")}
     </button>
     <div class="source-row__detail" id="${detailId}" data-row-detail hidden>
       <p>${escapeHtml(full)}</p>
@@ -279,7 +288,7 @@ function sourceLedger(records) {
     const rows = items.map((item) => sourceRow(item, counter += 1)).join("");
     return `<section class="source-group" data-ledger-group>
       <button class="source-group__head" type="button" data-group-toggle aria-expanded="${expanded}" aria-controls="${bodyId}">
-        <span class="source-group__chevron" aria-hidden="true">\u25b8</span>
+        ${chevron("source-group__chevron")}
         <span class="source-group__name">${escapeHtml(SOURCE_TYPE_LABELS[key] || humanize(key))}</span>
         <span class="source-group__count">${items.length}</span>
       </button>

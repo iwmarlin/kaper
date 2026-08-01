@@ -3361,16 +3361,18 @@ main {
 }
 
 .source-group__chevron {
-  display: inline-block;
-  width: 0.75rem;
-  color: var(--ink-soft);
-  font-size: 0.95rem;
-  line-height: 1;
-  transition: transform 120ms ease;
+  flex: none;
+  align-self: center;
+  color: var(--line-dark);
+  transition: transform 140ms ease, color 140ms ease;
 }
 
 .source-group__head[aria-expanded="true"] .source-group__chevron {
   transform: rotate(90deg);
+}
+
+.source-group__head:hover .source-group__chevron {
+  color: var(--accent);
 }
 
 .source-group__count {
@@ -3439,10 +3441,10 @@ main {
 }
 
 .source-row__chevron {
-  color: var(--line-dark);
-  font-size: 1rem;
-  line-height: 1;
-  text-align: right;
+  align-self: center;
+  justify-self: end;
+  color: var(--line);
+  transition: transform 140ms ease, color 140ms ease;
 }
 
 .source-row__summary:hover .source-row__chevron {
@@ -3450,7 +3452,8 @@ main {
 }
 
 .source-row__summary[aria-expanded="true"] .source-row__chevron {
-  visibility: hidden;
+  color: var(--ink-soft);
+  transform: rotate(90deg);
 }
 
 .source-row__detail {
