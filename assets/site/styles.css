@@ -1154,7 +1154,7 @@ main {
 .person-row {
   position: relative;
   display: grid;
-  grid-template-columns: 3.25rem minmax(0, 1fr);
+  grid-template-columns: 3.25rem minmax(0, 1fr) 8rem;
   align-items: center;
   gap: 1rem;
   padding: 0.8rem 1rem;
@@ -1201,13 +1201,6 @@ main {
   flex-direction: column;
   align-items: flex-start;
   gap: 0.32rem;
-}
-
-.person-row__metadata {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.28rem 0.52rem;
 }
 
 .person-row h2 {

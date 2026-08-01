@@ -18,7 +18,7 @@ import {
   resolveIds,
   scopeBadge,
   typeBadge,
-} from "./core.js?v=f8d881ab30";
+} from "./core.js?v=8d91cd7b04";
 
 mountSiteChrome("works");
 
