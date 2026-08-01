@@ -133,7 +133,8 @@
         "SRC0373",
         "SRC0495",
         "SRC0496",
-        "SRC0500"
+        "SRC0500",
+        "SRC0616"
       ],
       "contributionIds": [
         "CON-F018-C-P005",
@@ -152,6 +153,9 @@
         "W-S206",
         "W-S207",
         "W-S211"
+      ],
+      "nameVariantIds": [
+        "PNV0050"
       ]
     },
     {
@@ -172,7 +176,9 @@
         "SRC0525",
         "SRC0526",
         "SRC0589",
-        "SRC0591"
+        "SRC0591",
+        "SRC0615",
+        "SRC0618"
       ],
       "contributionIds": [
         "CON-S102-L-P006",
@@ -1006,7 +1012,7 @@
       "id": "P010",
       "displayName": "Ch.-L. Pothier",
       "sortName": "Pothier, Ch.-L.",
-      "authorizedName": "Charles-Louis Pothier",
+      "authorizedName": "Charles-Louis Pothier (1881–1962)",
       "slug": "ch-l-pothier",
       "primaryRole": "lyricist",
       "roles": [
@@ -1020,6 +1026,9 @@
       "workIds": [
         "W-S077",
         "W-S079"
+      ],
+      "sourceIds": [
+        "SRC0614"
       ]
     },
     {
@@ -1799,7 +1808,8 @@
       ],
       "authorityUrl": "VIAF: https://viaf.org/viaf/12594976",
       "sourceIds": [
-        "SRC0145"
+        "SRC0145",
+        "SRC0620"
       ],
       "contributionIds": [
         "CON-F042-D-P034"
@@ -2439,7 +2449,7 @@
       "id": "P065",
       "displayName": "René Pujol",
       "sortName": "Pujol, René",
-      "authorizedName": "René Pujol",
+      "authorizedName": "René Pujol (1878–1942)",
       "slug": "rene-pujol",
       "primaryRole": "lyricist",
       "roles": [
@@ -2455,7 +2465,12 @@
         "W-S111"
       ],
       "sourceIds": [
-        "SRC0540"
+        "SRC0540",
+        "SRC0613",
+        "SRC0619"
+      ],
+      "nameVariantIds": [
+        "PNV0049"
       ]
     },
     {
@@ -3487,7 +3502,8 @@
         "SRC0498",
         "SRC0499",
         "SRC0601",
-        "SRC0602"
+        "SRC0602",
+        "SRC0617"
       ],
       "contributionIds": [
         "CON-S178-L-P093",

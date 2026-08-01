@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 45,
+  "count": 47,
   "records": [
     {
       "id": "PNV0001",
@@ -1157,7 +1157,8 @@
         "P006"
       ],
       "sourceIds": [
-        "SRC0591"
+        "SRC0591",
+        "SRC0615"
       ]
     },
     {
@@ -1239,6 +1240,38 @@
       "sourceIds": [
         "SRC0120",
         "SRC0610"
+      ]
+    },
+    {
+      "id": "PNV0049",
+      "variantName": "Amédée Ferdinand Pujol",
+      "variantType": "other",
+      "identityScope": "single_person",
+      "evidenceContext": "secondary_literature",
+      "attestedWording": "Amédée Ferdinand Pujol",
+      "certainty": "confirmed",
+      "publicNote": "Civil-status name. The authority heading and every printed credit in this archive use the working name René Pujol.",
+      "personIds": [
+        "P065"
+      ],
+      "sourceIds": [
+        "SRC0613"
+      ]
+    },
+    {
+      "id": "PNV0050",
+      "variantName": "André Jacques Bloch",
+      "variantType": "other",
+      "identityScope": "single_person",
+      "evidenceContext": "secondary_literature",
+      "attestedWording": "André Jacques Bloch",
+      "certainty": "confirmed",
+      "publicNote": "Civil-status name, reported by the Encyclopédie de la comédie musicale, which also gives a birth year of 1891 against the 1881 held by the Bibliothèque nationale de France. This archive keeps the BnF year; the conflict is noted and unresolved.",
+      "personIds": [
+        "P005"
+      ],
+      "sourceIds": [
+        "SRC0616"
       ]
     }
   ]
