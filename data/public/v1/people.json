@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 124,
+  "count": 136,
   "records": [
     {
       "id": "P001",
@@ -4480,6 +4480,282 @@
       "workIds": [
         "W-F037",
         "W-F044"
+      ]
+    },
+    {
+      "id": "P142",
+      "displayName": "Willy Schmidt-Gentner",
+      "sortName": "Schmidt-Gentner, Willy",
+      "authorizedName": "Schmidt-Gentner, Willy, 1894–1964",
+      "slug": "willy-schmidt-gentner",
+      "primaryRole": "composer",
+      "roles": [
+        "composer",
+        "conductor"
+      ],
+      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/nb99134195\nVIAF: https://viaf.org/viaf/22408295\nGND: https://d-nb.info/gnd/119258080\nISNI: https://isni.org/isni/0000000081016469",
+      "sourceIds": [
+        "SRC0117",
+        "SRC0132",
+        "SRC0133"
+      ],
+      "contributionIds": [
+        "CON-F004-MD-P142",
+        "CON-F023-MD-P142",
+        "CON-F025-MD-P142"
+      ],
+      "workIds": [
+        "W-F004",
+        "W-F023",
+        "W-F025"
+      ]
+    },
+    {
+      "id": "P143",
+      "displayName": "Hans J. Salter",
+      "sortName": "Salter, Hans J.",
+      "authorizedName": "Salter, Hans J., 1896–1994",
+      "slug": "hans-j-salter",
+      "primaryRole": "composer",
+      "roles": [
+        "composer",
+        "conductor"
+      ],
+      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no90020684\nVIAF: https://viaf.org/viaf/32196991\nGND: https://d-nb.info/gnd/13508086X\nISNI: https://isni.org/isni/0000000059361338",
+      "sourceIds": [
+        "SRC0128",
+        "SRC0129",
+        "SRC0135"
+      ],
+      "contributionIds": [
+        "CON-F017-MD-P143",
+        "CON-F020-MD-P143",
+        "CON-F026-MD-P143"
+      ],
+      "workIds": [
+        "W-F017",
+        "W-F020",
+        "W-F026"
+      ]
+    },
+    {
+      "id": "P144",
+      "displayName": "Paul Dessau",
+      "sortName": "Dessau, Paul",
+      "authorizedName": "Dessau, Paul, 1894–1979",
+      "slug": "paul-dessau",
+      "primaryRole": "composer",
+      "roles": [
+        "composer",
+        "conductor"
+      ],
+      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n80015505\nVIAF: https://viaf.org/viaf/22327022\nGND: https://d-nb.info/gnd/118524917\nISNI: https://isni.org/isni/000000010878563X",
+      "sourceIds": [
+        "SRC0123",
+        "SRC0152"
+      ],
+      "contributionIds": [
+        "CON-F007-MD-P144",
+        "CON-F011-MD-P144"
+      ],
+      "workIds": [
+        "W-F007",
+        "W-F011"
+      ]
+    },
+    {
+      "id": "P145",
+      "displayName": "Hans-Otto Borgmann",
+      "sortName": "Borgmann, Hans-Otto",
+      "authorizedName": "Borgmann, Hans-Otto, 1901–1977",
+      "slug": "hans-otto-borgmann",
+      "primaryRole": "composer",
+      "roles": [
+        "composer",
+        "conductor"
+      ],
+      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n2008013326\nVIAF: https://viaf.org/viaf/19944306\nGND: https://d-nb.info/gnd/1011430215\nISNI: https://isni.org/isni/0000000120173230",
+      "sourceIds": [
+        "SRC0118",
+        "SRC0134"
+      ],
+      "contributionIds": [
+        "CON-F012-MD-P145",
+        "CON-F024-A-P145"
+      ],
+      "workIds": [
+        "W-F012",
+        "W-F024"
+      ]
+    },
+    {
+      "id": "P146",
+      "displayName": "Felix Günther",
+      "sortName": "Günther, Felix",
+      "authorizedName": "Felix Günther",
+      "slug": "felix-gunther",
+      "primaryRole": "performer",
+      "roles": [
+        "conductor"
+      ],
+      "sourceIds": [
+        "SRC0116"
+      ],
+      "contributionIds": [
+        "CON-F002-MD-P146"
+      ],
+      "workIds": [
+        "W-F002"
+      ]
+    },
+    {
+      "id": "P147",
+      "displayName": "Mark Lavry",
+      "sortName": "Lavry, Mark",
+      "authorizedName": "Mark Lavry",
+      "slug": "mark-lavry",
+      "primaryRole": "composer",
+      "roles": [
+        "composer",
+        "conductor"
+      ],
+      "sourceIds": [
+        "SRC0120"
+      ],
+      "contributionIds": [
+        "CON-F006-MD-P147"
+      ],
+      "workIds": [
+        "W-F006"
+      ]
+    },
+    {
+      "id": "P148",
+      "displayName": "Helmut Wolfes",
+      "sortName": "Wolfes, Helmut",
+      "authorizedName": "Wolfes, Helmut, 1901–1971",
+      "slug": "helmut-wolfes",
+      "primaryRole": "composer",
+      "roles": [
+        "composer",
+        "conductor"
+      ],
+      "authorityUrl": "VIAF: https://viaf.org/viaf/20457838\nGND: https://d-nb.info/gnd/117446882",
+      "sourceIds": [
+        "SRC0153"
+      ],
+      "contributionIds": [
+        "CON-F021-MD-P148"
+      ],
+      "workIds": [
+        "W-F021"
+      ]
+    },
+    {
+      "id": "P149",
+      "displayName": "Franz Grothe",
+      "sortName": "Grothe, Franz",
+      "authorizedName": "Grothe, Franz, 1908–1982",
+      "slug": "franz-grothe",
+      "primaryRole": "composer",
+      "roles": [
+        "composer",
+        "conductor"
+      ],
+      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/nr92000430\nVIAF: https://viaf.org/viaf/5123678\nGND: https://d-nb.info/gnd/118698257\nISNI: https://isni.org/isni/000000008084721X",
+      "sourceIds": [
+        "SRC0123"
+      ],
+      "contributionIds": [
+        "CON-F007-A-P149"
+      ],
+      "workIds": [
+        "W-F007"
+      ]
+    },
+    {
+      "id": "P150",
+      "displayName": "Nicholas Brodszky",
+      "sortName": "Brodszky, Nicholas",
+      "authorizedName": "Brodszky, Nicholas, 1905–1958",
+      "slug": "nicholas-brodszky",
+      "primaryRole": "composer",
+      "roles": [
+        "composer"
+      ],
+      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n82153092\nVIAF: https://viaf.org/viaf/12496228\nGND: https://d-nb.info/gnd/134686039\nISNI: https://isni.org/isni/000000008092027X",
+      "sourceIds": [
+        "SRC0123"
+      ],
+      "contributionIds": [
+        "CON-F007-C-P150"
+      ],
+      "workIds": [
+        "W-F007"
+      ]
+    },
+    {
+      "id": "P151",
+      "displayName": "Paul Mann",
+      "sortName": "Mann, Paul",
+      "authorizedName": "Paul Mann",
+      "slug": "paul-mann",
+      "primaryRole": "composer",
+      "roles": [
+        "composer"
+      ],
+      "sourceIds": [
+        "SRC0153"
+      ],
+      "contributionIds": [
+        "CON-F021-C-P151"
+      ],
+      "workIds": [
+        "W-F021"
+      ]
+    },
+    {
+      "id": "P152",
+      "displayName": "Stefan Weiß",
+      "sortName": "Weiß, Stefan",
+      "authorizedName": "Weiß, Stefan, 1899–1984",
+      "slug": "stefan-weiss",
+      "primaryRole": "composer",
+      "roles": [
+        "composer"
+      ],
+      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n92002003\nVIAF: https://viaf.org/viaf/87423013\nGND: https://d-nb.info/gnd/135157870\nISNI: https://isni.org/isni/0000000120300930",
+      "sourceIds": [
+        "SRC0153"
+      ],
+      "contributionIds": [
+        "CON-F021-C-P152"
+      ],
+      "workIds": [
+        "W-F021"
+      ]
+    },
+    {
+      "id": "P153",
+      "displayName": "Hans Albers",
+      "sortName": "Albers, Hans",
+      "authorizedName": "Albers, Hans, 1891–1960",
+      "slug": "hans-albers",
+      "primaryRole": "actor",
+      "roles": [
+        "actor",
+        "singer",
+        "performer"
+      ],
+      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n81026775\nVIAF: https://viaf.org/viaf/66671093\nGND: https://d-nb.info/gnd/118501402\nISNI: https://isni.org/isni/0000000109111071",
+      "sourceIds": [
+        "SRC0153"
+      ],
+      "contributionIds": [
+        "CON-F021-A-P153"
+      ],
+      "workIds": [
+        "W-F021"
       ]
     }
   ]
