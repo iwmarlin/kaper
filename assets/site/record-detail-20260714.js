@@ -1,4 +1,4 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=d436156396";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=f93de2b42c";
 import {
   certaintyBadge,
   escapeHtml,
@@ -24,7 +24,7 @@ import {
   scopeBadge,
   typeBadge,
   updateMeta,
-} from "./core.js?v=d436156396";
+} from "./core.js?v=f93de2b42c";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 mountSiteChrome("");
@@ -160,23 +160,132 @@ function entityList(records, type, meta = () => "", label = ENTITY_LIST_LABELS[t
   });
 }
 
+const SOURCE_TYPE_LABELS = {
+  sheet_music: "Sheet music",
+  filmographic_database: "Filmographic databases",
+  press_item: "Press items",
+  copyright_catalogue: "Copyright catalogues",
+  online_database: "Online databases",
+  wikimedia_commons_file: "Wikimedia Commons files",
+  wikimedia_article_page: "Wikipedia articles",
+  image_or_photograph: "Images and photographs",
+  archival_photo: "Archival photographs",
+  archival_photograph: "Archival photographs",
+  archival_document: "Archival documents",
+  digital_collection_item: "Digital collection items",
+  recording_discographic_source: "Recordings",
+  online_video_source: "Online video",
+  authority_record: "Authority records",
+  web_page: "Web pages",
+  book: "Books",
+};
+
+// Sources carry dates in mixed shapes: "1933", "1936-04-21", "n.d.", and a few
+// malformed leftovers. Only a plausible four-digit year is trusted; everything
+// else sorts to the end rather than being guessed at.
+function sourceYear(source) {
+  const match = String(source.date || "").match(/\b(1[5-9]\d{2}|20\d{2})\b/);
+  return match ? Number(match[1]) : null;
+}
+
+function sortSourcesChronologically(records) {
+  return [...records].sort((a, b) => {
+    const yearA = sourceYear(a);
+    const yearB = sourceYear(b);
+    if (yearA === null && yearB === null) return a.id.localeCompare(b.id);
+    if (yearA === null) return 1;
+    if (yearB === null) return -1;
+    return yearA - yearB || a.id.localeCompare(b.id);
+  });
+}
+
+function sourceSearchText(source) {
+  return [
+    source.id,
+    source.title,
+    source.shortCitation,
+    source.fullCitation,
+    source.creator,
+    source.publication,
+    source.repository,
+    source.date,
+    SOURCE_TYPE_LABELS[source.sourceType] || humanize(source.sourceType || ""),
+  ].filter(Boolean).join(" ");
+}
+
+function sourceRow(source, index) {
+  const external = safeExternalUrl(source.primaryUrl) || safeExternalUrl(source.accessUrl);
+  const summary = source.shortCitation || source.title || source.fullCitation || source.id;
+  const full = source.fullCitation || source.shortCitation || source.title || "";
+  const year = sourceYear(source);
+  const detailId = `source-detail-${escapeHtml(source.id)}-${index}`;
+  return `<li class="source-row" id="source-${escapeHtml(source.id)}" data-ledger-item data-search="${escapeHtml(normalizeSearch(sourceSearchText(source)))}">
+    <button class="source-row__summary" type="button" data-row-toggle aria-expanded="false" aria-controls="${detailId}">
+      <span class="source-row__id">${escapeHtml(source.id)}</span>
+      <span class="source-row__title">${escapeHtml(summary)}</span>
+      <span class="source-row__year">${year ? year : "n.d."}</span>
+      <span class="source-row__chevron" aria-hidden="true">+</span>
+    </button>
+    <div class="source-row__detail" id="${detailId}" data-row-detail hidden>
+      <p>${escapeHtml(full)}</p>
+      <p class="source-row__links">
+        <a href="${recordUrl("source", source.id)}">Source record</a>
+        ${external ? `<a href="${escapeHtml(external)}" target="_blank" rel="noreferrer">Open source <span aria-hidden="true">\u2197</span></a>` : ""}
+      </p>
+    </div>
+  </li>`;
+}
+
+// Long source lists were previously rendered as one bordered card per citation,
+// each carrying its full text. On the Kaper record that produced 16 000 px of
+// boxes in no particular order. The ledger keeps every record on one page for
+// Ctrl+F and for print, but gives it a spine: grouped by kind, chronological
+// within each group, full citation on request.
+function sourceLedger(records) {
+  const sorted = sortSourcesChronologically(records);
+  const groups = new Map();
+  for (const source of sorted) {
+    const key = source.sourceType || "other";
+    if (!groups.has(key)) groups.set(key, []);
+    groups.get(key).push(source);
+  }
+  const ordered = [...groups.entries()].sort((a, b) => b[1].length - a[1].length);
+  progressiveListSequence += 1;
+  const ledgerId = `source-ledger-${progressiveListSequence}`;
+  let counter = 0;
+  const groupsMarkup = ordered.map(([key, items], groupIndex) => {
+    const bodyId = `${ledgerId}-group-${groupIndex}`;
+    const expanded = ordered.length === 1;
+    const rows = items.map((item) => sourceRow(item, counter += 1)).join("");
+    return `<section class="source-group" data-ledger-group>
+      <button class="source-group__head" type="button" data-group-toggle aria-expanded="${expanded}" aria-controls="${bodyId}">
+        <span class="source-group__chevron" aria-hidden="true">\u25b8</span>
+        <span class="source-group__name">${escapeHtml(SOURCE_TYPE_LABELS[key] || humanize(key))}</span>
+        <span class="source-group__count">${items.length}</span>
+      </button>
+      <ol class="source-rows" id="${bodyId}" data-group-body${expanded ? "" : " hidden"}>${rows}</ol>
+    </section>`;
+  }).join("");
+  return `<div class="source-ledger" data-source-ledger data-total="${sorted.length}" id="${ledgerId}">
+    <div class="source-ledger__bar">
+      <label class="source-ledger__search">
+        <span class="sr-only">Search sources</span>
+        <input type="search" data-ledger-search autocomplete="off" placeholder="Search ${sorted.length} sources by title, publisher or year">
+      </label>
+      <button class="button button--ghost button--small" type="button" data-ledger-expand>Expand all</button>
+    </div>
+    <div class="source-ledger__groups">${groupsMarkup}</div>
+    <p class="source-ledger__empty" data-ledger-empty hidden>No matching sources.</p>
+    <p class="sr-only" data-ledger-status aria-live="polite"></p>
+  </div>`;
+}
+
 function sourceList(records, { progressive = true } = {}) {
   if (!records.length) return "";
-  if (!progressive) return `<ol class="citation-list">${records.map(renderSourceCitation).join("")}</ol>`;
-  return progressiveList(records, {
-    tag: "ol",
-    className: "citation-list",
-    label: "sources",
-    renderItem: renderSourceCitation,
-    searchText: (item) => [
-      item.id,
-      item.title,
-      item.shortCitation,
-      item.fullCitation,
-      item.creator,
-      item.publication,
-    ].filter(Boolean).join(" "),
-  });
+  if (!progressive || records.length <= LIST_PREVIEW_LIMIT) {
+    return `<ol class="citation-list">${sortSourcesChronologically(records).map(renderSourceCitation).join("")}</ol>`;
+  }
+  return sourceLedger(records);
 }
 
 function personDisclosure(title, records, renderItem, searchText) {
@@ -208,12 +317,11 @@ function personEntityDisclosure(title, records, type, meta = () => "") {
 }
 
 function personSourceDisclosure(records) {
-  return personDisclosure(
-    "Sources",
-    records,
-    renderSourceCitation,
-    (item) => [item.id, item.title, item.shortCitation, item.fullCitation, item.creator, item.publication].filter(Boolean).join(" "),
-  );
+  if (!records.length) return "";
+  return `<section class="person-collection">
+    <h3>Sources</h3>
+    ${sourceList(records)}
+  </section>`;
 }
 
 function related(ids, index) {
@@ -661,6 +769,82 @@ function renderPerson(person, data, indexes) {
   };
 }
 
+function initializeSourceLedgers() {
+  target.querySelectorAll("[data-source-ledger]").forEach((ledger) => {
+    const rows = [...ledger.querySelectorAll("[data-ledger-item]")];
+    const groups = [...ledger.querySelectorAll("[data-ledger-group]")];
+    const search = ledger.querySelector("[data-ledger-search]");
+    const expandAll = ledger.querySelector("[data-ledger-expand]");
+    const empty = ledger.querySelector("[data-ledger-empty]");
+    const status = ledger.querySelector("[data-ledger-status]");
+    const total = Number(ledger.dataset.total || rows.length);
+
+    const setGroup = (group, open) => {
+      const toggle = group.querySelector("[data-group-toggle]");
+      const body = group.querySelector("[data-group-body]");
+      toggle.setAttribute("aria-expanded", String(open));
+      body.hidden = !open;
+    };
+    const allOpen = () => groups.every((group) => group.querySelector("[data-group-toggle]").getAttribute("aria-expanded") === "true");
+    const syncExpandLabel = () => {
+      if (expandAll) expandAll.textContent = allOpen() ? "Collapse all" : "Expand all";
+    };
+
+    groups.forEach((group) => {
+      group.querySelector("[data-group-toggle]").addEventListener("click", () => {
+        const open = group.querySelector("[data-group-toggle]").getAttribute("aria-expanded") === "true";
+        setGroup(group, !open);
+        syncExpandLabel();
+      });
+    });
+
+    rows.forEach((row) => {
+      const toggle = row.querySelector("[data-row-toggle]");
+      const detail = row.querySelector("[data-row-detail]");
+      toggle.addEventListener("click", () => {
+        const open = toggle.getAttribute("aria-expanded") === "true";
+        toggle.setAttribute("aria-expanded", String(!open));
+        detail.hidden = open;
+      });
+    });
+
+    expandAll?.addEventListener("click", () => {
+      const open = !allOpen();
+      groups.forEach((group) => setGroup(group, open));
+      syncExpandLabel();
+    });
+
+    // Searching reaches every group, including collapsed ones. A group that
+    // ends up with no match is hidden outright rather than left as an empty
+    // heading the reader has to open to discover is empty.
+    search?.addEventListener("input", () => {
+      const query = normalizeSearch(search.value.trim());
+      let visible = 0;
+      rows.forEach((row) => {
+        const match = !query || row.dataset.search.includes(query);
+        row.hidden = !match;
+        if (match) visible += 1;
+      });
+      groups.forEach((group) => {
+        const groupRows = [...group.querySelectorAll("[data-ledger-item]")];
+        const hits = groupRows.filter((row) => !row.hidden).length;
+        group.hidden = query ? hits === 0 : false;
+        if (query && hits > 0) setGroup(group, true);
+        if (!query) setGroup(group, groups.length === 1);
+      });
+      if (empty) empty.hidden = visible > 0;
+      if (status) {
+        status.textContent = query
+          ? `${visible} of ${total} sources match the search.`
+          : `All ${total} sources are shown, grouped by kind.`;
+      }
+      syncExpandLabel();
+    });
+
+    syncExpandLabel();
+  });
+}
+
 function initializeProgressiveLists() {
   target.querySelectorAll("[data-progressive-list]").forEach((collection) => {
     const items = [...collection.querySelectorAll("[data-progressive-item]")];
@@ -826,6 +1010,7 @@ try {
       </div>
     </section>`;
   initializeProgressiveLists();
+  initializeSourceLedgers();
 } catch (error) {
   target.className = "shell";
   renderError(target, error);

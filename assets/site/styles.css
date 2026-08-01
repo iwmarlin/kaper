@@ -3296,3 +3296,195 @@ main {
     animation-iteration-count: 1 !important;
   }
 }
+
+/* Long source lists.
+   A card per citation reads well up to about six records. Past that the
+   borders stop separating and start crowding: the Kaper record carried 131
+   of them, 16 000 px of boxes in the order they happened to be entered. The
+   ledger below trades the card for a hairline row, groups by kind, sorts
+   chronologically inside each group, and keeps the full citation one click
+   away instead of always open. */
+.source-ledger {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.source-ledger__bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.65rem 0.9rem;
+}
+
+.source-ledger__search {
+  flex: 1 1 18rem;
+}
+
+.source-ledger__search input {
+  width: 100%;
+  min-height: 2.45rem;
+  padding: 0.55rem 0.75rem;
+  border: 1px solid var(--line-dark);
+  border-radius: var(--radius-sm);
+  background: var(--paper);
+  color: var(--ink);
+  font-size: 0.95rem;
+}
+
+.source-group + .source-group {
+  margin-top: 0.35rem;
+}
+
+.source-group[hidden] {
+  display: none !important;
+}
+
+.source-group__head {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  width: 100%;
+  padding: 0.6rem 0.15rem;
+  border: 0;
+  border-bottom: 1px solid var(--line-dark);
+  background: none;
+  color: var(--ink);
+  font-family: inherit;
+  font-size: 0.92rem;
+  font-weight: 680;
+  text-align: left;
+  cursor: pointer;
+}
+
+.source-group__head:hover {
+  color: var(--accent);
+}
+
+.source-group__chevron {
+  display: inline-block;
+  color: var(--ink-soft);
+  font-size: 0.7rem;
+  transition: transform 120ms ease;
+}
+
+.source-group__head[aria-expanded="true"] .source-group__chevron {
+  transform: rotate(90deg);
+}
+
+.source-group__count {
+  margin-left: auto;
+  color: var(--ink-soft);
+  font-variant-numeric: tabular-nums;
+  font-weight: 500;
+}
+
+.source-rows {
+  margin: 0;
+  padding: 0 0 0 1.2rem;
+  list-style: none;
+}
+
+.source-rows[hidden] {
+  display: none !important;
+}
+
+.source-row[hidden] {
+  display: none !important;
+}
+
+.source-row__summary {
+  display: grid;
+  grid-template-columns: 5.4rem minmax(0, 1fr) 3rem 1rem;
+  gap: 0.75rem;
+  align-items: baseline;
+  width: 100%;
+  padding: 0.5rem 0.15rem;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  background: none;
+  color: var(--ink);
+  font-family: inherit;
+  font-size: 0.87rem;
+  line-height: 1.5;
+  text-align: left;
+  cursor: pointer;
+}
+
+.source-row__summary:hover {
+  background: var(--paper);
+}
+
+.source-row__id {
+  color: var(--accent);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.68rem;
+}
+
+.source-row__title {
+  overflow-wrap: anywhere;
+}
+
+.source-row__year {
+  color: var(--ink-soft);
+  font-size: 0.75rem;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+.source-row__chevron {
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+  text-align: right;
+}
+
+.source-row__summary[aria-expanded="true"] .source-row__chevron {
+  visibility: hidden;
+}
+
+.source-row__detail {
+  padding: 0.55rem 0.15rem 0.85rem 6.15rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.source-row__detail[hidden] {
+  display: none !important;
+}
+
+.source-row__detail p {
+  margin: 0 0 0.4rem;
+  font-size: 0.85rem;
+  overflow-wrap: anywhere;
+}
+
+.source-row__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1rem;
+}
+
+.source-row__links a {
+  font-size: 0.76rem;
+  font-weight: 680;
+}
+
+.source-ledger__empty {
+  margin: 0.4rem 0 0;
+  color: var(--ink-soft);
+}
+
+.person-collection > .source-ledger {
+  padding: 0.9rem 1rem 1rem;
+}
+
+@media (max-width: 680px) {
+  .source-row__summary {
+    grid-template-columns: minmax(0, 1fr) 3rem;
+    grid-template-areas: "id year" "title title";
+    gap: 0.2rem 0.6rem;
+  }
+  .source-row__id { grid-area: id; }
+  .source-row__title { grid-area: title; }
+  .source-row__year { grid-area: year; }
+  .source-row__chevron { display: none; }
+  .source-row__detail { padding-left: 0.15rem; }
+}
