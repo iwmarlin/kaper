@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 47,
+  "count": 48,
   "records": [
     {
       "id": "PNV0001",
@@ -56,7 +56,8 @@
         "SRC0054",
         "SRC0066",
         "SRC0067",
-        "SRC0477"
+        "SRC0477",
+        "SRC0623"
       ]
     },
     {
@@ -1272,6 +1273,22 @@
       ],
       "sourceIds": [
         "SRC0616"
+      ]
+    },
+    {
+      "id": "PNV0051",
+      "variantName": "Gustaw Baumritter",
+      "variantType": "other",
+      "identityScope": "single_person",
+      "evidenceContext": "authority_file",
+      "attestedWording": "Baumritter, Gustaw",
+      "certainty": "confirmed",
+      "publicNote": "Birth name. The ISNI registry record lists it under related identities as another identity of the same person, and the VIAF cluster carries it among the alternate forms for the heading Włast, Andrzej. The archive keeps Andrzej Włast as the record name, since that is the form under which the authority heading is established and under which every credit in this archive is printed.",
+      "personIds": [
+        "P003"
+      ],
+      "sourceIds": [
+        "SRC0623"
       ]
     }
   ]
