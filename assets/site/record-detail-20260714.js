@@ -1,4 +1,4 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=5d87af01c2";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=04ee20c3a7";
 import {
   certaintyBadge,
   escapeHtml,
@@ -23,7 +23,7 @@ import {
   scopeBadge,
   typeBadge,
   updateMeta,
-} from "./core.js?v=5d87af01c2";
+} from "./core.js?v=04ee20c3a7";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 mountSiteChrome("");
@@ -229,20 +229,24 @@ function sourceRow(source, index, { expanded = false } = {}) {
   </p>`;
   if (expanded) {
     return `<li class="source-row source-row--open" id="source-${escapeHtml(source.id)}">
-      <a class="source-row__id" href="${recordUrl("source", source.id)}" aria-label="Open source record ${escapeHtml(source.id)}">${escapeHtml(source.id)}</a>
+      <span class="source-row__meta">
+        <a class="source-row__id" href="${recordUrl("source", source.id)}" aria-label="Open source record ${escapeHtml(source.id)}">${escapeHtml(source.id)}</a>
+        <span class="source-row__year">${yearLabel}</span>
+      </span>
       <div class="source-row__body">
         <p class="source-row__citation">${escapeHtml(full)}</p>
         ${external ? `<p class="source-row__links"><a href="${escapeHtml(external)}" target="_blank" rel="noreferrer">Open source <span aria-hidden="true">\u2197</span></a></p>` : ""}
       </div>
-      <span class="source-row__year">${yearLabel}</span>
     </li>`;
   }
   const detailId = `source-detail-${escapeHtml(source.id)}-${index}`;
   return `<li class="source-row" id="source-${escapeHtml(source.id)}" data-ledger-item data-search="${escapeHtml(normalizeSearch(sourceSearchText(source)))}">
     <button class="source-row__summary" type="button" data-row-toggle aria-expanded="false" aria-controls="${detailId}">
-      <span class="source-row__id">${escapeHtml(source.id)}</span>
+      <span class="source-row__meta">
+        <span class="source-row__id">${escapeHtml(source.id)}</span>
+        <span class="source-row__year">${yearLabel}</span>
+      </span>
       <span class="source-row__title">${escapeHtml(summary)}</span>
-      <span class="source-row__year">${yearLabel}</span>
       <span class="source-row__chevron" aria-hidden="true">+</span>
     </button>
     <div class="source-row__detail" id="${detailId}" data-row-detail hidden>
@@ -333,14 +337,6 @@ function personEntityDisclosure(title, records, type, meta = () => "") {
     },
     (item) => [item.title, item.displayName, item.id, meta(item)].filter(Boolean).join(" "),
   );
-}
-
-function personSourceDisclosure(records) {
-  if (!records.length) return "";
-  return `<section class="person-collection">
-    <h3>Sources</h3>
-    ${sourceList(records)}
-  </section>`;
 }
 
 function related(ids, index) {
@@ -772,7 +768,7 @@ function renderPerson(person, data, indexes) {
       })),
       workSections ? section("Related records", `<div class="person-collections">${workSections}</div>`) : "",
       events.length ? section("Documented chronology", personEntityDisclosure("Timeline events", events, "event", (item) => item.displayDate || item.dateStart)) : "",
-      sources.length ? section("Research sources", personSourceDisclosure(sources)) : "",
+      section("Sources", sourceList(sources), "", sources.length),
     ].join(""),
     aside: portrait ? `
       <figure class="record-media">${mediaPreview(portrait, {
