@@ -1151,7 +1151,7 @@
       "roles": [
         "film director"
       ],
-      "authorityUrl": "VIAF: https://viaf.org/viaf/47024991",
+      "authorityUrl": "VIAF: https://viaf.org/viaf/47024991\nWikidata: https://www.wikidata.org/wiki/Q110136563",
       "sourceIds": [
         "SRC0127",
         "SRC0151"
@@ -1165,7 +1165,10 @@
         "W-F005",
         "W-F014",
         "W-F016"
-      ]
+      ],
+      "birthYear": 1892,
+      "deathYear": 1971,
+      "lifeDatesCertainty": "confirmed"
     },
     {
       "id": "P016",
@@ -1176,7 +1179,7 @@
       "roles": [
         "film director"
       ],
-      "authorityUrl": "VIAF: https://viaf.org/viaf/311722343",
+      "authorityUrl": "VIAF: https://viaf.org/viaf/311722343\nWikidata: https://www.wikidata.org/wiki/Q1353606",
       "sourceIds": [
         "SRC0134"
       ],
@@ -1185,7 +1188,10 @@
       ],
       "workIds": [
         "W-F024"
-      ]
+      ],
+      "birthYear": 1902,
+      "deathYear": 1957,
+      "lifeDatesCertainty": "confirmed"
     },
     {
       "id": "P017",
@@ -1197,7 +1203,7 @@
       "roles": [
         "lyricist"
       ],
-      "authorityUrl": "VIAF: https://viaf.org/viaf/2672148\nLCNAF: https://id.loc.gov/authorities/names/n82246137",
+      "authorityUrl": "VIAF: https://viaf.org/viaf/2672148\nLCNAF: https://id.loc.gov/authorities/names/n82246137\nWikidata: https://www.wikidata.org/wiki/Q112121",
       "contributionIds": [
         "CON-S057-L-P017",
         "CON-S068-L-P017",
@@ -1218,7 +1224,10 @@
         "W-S068",
         "W-S078",
         "W-S083"
-      ]
+      ],
+      "birthYear": 1893,
+      "deathYear": 1963,
+      "lifeDatesCertainty": "confirmed"
     },
     {
       "id": "P018",
@@ -1254,7 +1263,7 @@
       "roles": [
         "film director"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n88244633\nISNI: https://isni.org/isni/0000000027714290",
+      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n88244633\nISNI: https://isni.org/isni/0000000027714290\nGND: https://d-nb.info/gnd/118993941",
       "sourceIds": [
         "SRC0119"
       ],
@@ -1265,7 +1274,10 @@
       "workIds": [
         "W-F008",
         "W-F010"
-      ]
+      ],
+      "birthYear": 1893,
+      "deathYear": 1942,
+      "lifeDatesCertainty": "confirmed"
     },
     {
       "id": "P020",
@@ -1277,7 +1289,7 @@
       "roles": [
         "lyricist"
       ],
-      "authorityUrl": "VIAF: https://viaf.org/viaf/10944445\nLCNAF: https://id.loc.gov/authorities/names/n88076507",
+      "authorityUrl": "VIAF: https://viaf.org/viaf/10944445\nLCNAF: https://id.loc.gov/authorities/names/n88076507\nWikidata: https://www.wikidata.org/wiki/Q94068",
       "sourceIds": [
         "SRC0093",
         "SRC0099",
@@ -1478,7 +1490,10 @@
         "W-S193",
         "W-S199",
         "W-S205"
-      ]
+      ],
+      "birthYear": 1900,
+      "deathYear": 1984,
+      "lifeDatesCertainty": "confirmed"
     },
     {
       "id": "P021",
@@ -1499,7 +1514,9 @@
       ],
       "workIds": [
         "W-S098"
-      ]
+      ],
+      "deathYear": 1962,
+      "lifeDatesCertainty": "confirmed"
     },
     {
       "id": "P022",
@@ -1511,7 +1528,7 @@
       "roles": [
         "film director"
       ],
-      "authorityUrl": "VIAF: https://viaf.org/viaf/22403499\nLCNAF: https://id.loc.gov/authorities/names/no94031326",
+      "authorityUrl": "VIAF: https://viaf.org/viaf/22403499\nLCNAF: https://id.loc.gov/authorities/names/no94031326\nWikidata: https://www.wikidata.org/wiki/Q71273",
       "sourceIds": [
         "SRC0152",
         "SRC0600"
@@ -1521,7 +1538,10 @@
       ],
       "workIds": [
         "W-F011"
-      ]
+      ],
+      "birthYear": 1882,
+      "deathYear": 1964,
+      "lifeDatesCertainty": "disputed"
     },
     {
       "id": "P023",
@@ -1556,7 +1576,7 @@
       "roles": [
         "film director"
       ],
-      "authorityUrl": "VIAF: https://viaf.org/viaf/311589708",
+      "authorityUrl": "VIAF: https://viaf.org/viaf/311589708\nWikidata: https://www.wikidata.org/wiki/Q3104109",
       "sourceIds": [
         "SRC0127"
       ],
@@ -1565,7 +1585,10 @@
       ],
       "workIds": [
         "W-F016"
-      ]
+      ],
+      "birthYear": 1905,
+      "deathYear": 1963,
+      "lifeDatesCertainty": "confirmed"
     },
     {
       "id": "P025",
@@ -1913,13 +1936,16 @@
       "roles": [
         "film director"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no2002071774",
+      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no2002071774\nWikidata: https://www.wikidata.org/wiki/Q3156835",
       "contributionIds": [
         "CON-F040-D-P037"
       ],
       "workIds": [
         "W-F040"
-      ]
+      ],
+      "birthYear": 1899,
+      "deathYear": 1942,
+      "lifeDatesCertainty": "confirmed"
     },
     {
       "id": "P038",
@@ -1930,7 +1956,7 @@
       "roles": [
         "lyricist"
       ],
-      "authorityUrl": "VIAF: https://viaf.org/viaf/171703667",
+      "authorityUrl": "VIAF: https://viaf.org/viaf/171703667\nWikidata: https://www.wikidata.org/wiki/Q95772902",
       "contributionIds": [
         "CON-S093-L-P038",
         "CON-S095-L-P038"
@@ -1938,7 +1964,10 @@
       "workIds": [
         "W-S093",
         "W-S095"
-      ]
+      ],
+      "birthYear": 1899,
+      "deathYear": 1979,
+      "lifeDatesCertainty": "confirmed"
     },
     {
       "id": "P039",
@@ -1950,7 +1979,7 @@
       "roles": [
         "film director"
       ],
-      "authorityUrl": "VIAF: https://viaf.org/viaf/226412918\nLCNAF: https://id.loc.gov/authorities/names/n2009014785",
+      "authorityUrl": "VIAF: https://viaf.org/viaf/226412918\nLCNAF: https://id.loc.gov/authorities/names/n2009014785\nWikidata: https://www.wikidata.org/wiki/Q2087649",
       "sourceIds": [
         "SRC0163"
       ],
@@ -1959,7 +1988,10 @@
       ],
       "workIds": [
         "W-F030"
-      ]
+      ],
+      "birthYear": 1887,
+      "deathYear": 1946,
+      "lifeDatesCertainty": "confirmed"
     },
     {
       "id": "P040",
@@ -2004,7 +2036,10 @@
       "workIds": [
         "W-S177"
       ],
-      "authorityUrl": "VIAF: https://viaf.org/viaf/42107405\nLCNAF: https://id.loc.gov/authorities/names/n2008000412"
+      "authorityUrl": "VIAF: https://viaf.org/viaf/42107405\nLCNAF: https://id.loc.gov/authorities/names/n2008000412\nWikidata: https://www.wikidata.org/wiki/Q3172161",
+      "birthYear": 1908,
+      "deathYear": 1945,
+      "lifeDatesCertainty": "disputed"
     },
     {
       "id": "P042",
@@ -2039,7 +2074,7 @@
       "roles": [
         "film director"
       ],
-      "authorityUrl": "VIAF: https://viaf.org/viaf/122085181",
+      "authorityUrl": "VIAF: https://viaf.org/viaf/122085181\nWikidata: https://www.wikidata.org/wiki/Q16028635",
       "sourceIds": [
         "SRC0136"
       ],
@@ -2048,7 +2083,10 @@
       ],
       "workIds": [
         "W-F027"
-      ]
+      ],
+      "birthYear": 1899,
+      "deathYear": 1959,
+      "lifeDatesCertainty": "confirmed"
     },
     {
       "id": "P044",
@@ -2258,7 +2296,7 @@
       "roles": [
         "lyricist"
       ],
-      "authorityUrl": "VIAF: https://viaf.org/viaf/61578443",
+      "authorityUrl": "VIAF: https://viaf.org/viaf/61578443\nWikidata: https://www.wikidata.org/wiki/Q3270509",
       "contributionIds": [
         "CON-S113-L-P051",
         "CON-S115-L-P051"
@@ -2266,7 +2304,10 @@
       "workIds": [
         "W-S113",
         "W-S115"
-      ]
+      ],
+      "birthYear": 1872,
+      "deathYear": 1956,
+      "lifeDatesCertainty": "confirmed"
     },
     {
       "id": "P052",
@@ -2386,7 +2427,7 @@
       "roles": [
         "film director"
       ],
-      "authorityUrl": "VIAF: https://viaf.org/viaf/64757159",
+      "authorityUrl": "VIAF: https://viaf.org/viaf/64757159\nWikidata: https://www.wikidata.org/wiki/Q1796019",
       "sourceIds": [
         "SRC0123"
       ],
@@ -2395,7 +2436,10 @@
       ],
       "workIds": [
         "W-F007"
-      ]
+      ],
+      "birthYear": 1884,
+      "deathYear": 1958,
+      "lifeDatesCertainty": "confirmed"
     },
     {
       "id": "P058",
@@ -2541,13 +2585,16 @@
       "roles": [
         "lyricist"
       ],
-      "authorityUrl": "VIAF: https://viaf.org/viaf/86418275",
+      "authorityUrl": "VIAF: https://viaf.org/viaf/86418275\nWikidata: https://www.wikidata.org/wiki/Q28835692",
       "contributionIds": [
         "CON-S037-L-P064"
       ],
       "workIds": [
         "W-S037"
-      ]
+      ],
+      "birthYear": 1895,
+      "deathYear": 1963,
+      "lifeDatesCertainty": "confirmed"
     },
     {
       "id": "P065",
@@ -2665,7 +2712,7 @@
       "roles": [
         "film director"
       ],
-      "authorityUrl": "VIAF: https://viaf.org/viaf/1187151304644449460008",
+      "authorityUrl": "VIAF: https://viaf.org/viaf/1187151304644449460008\nWikidata: https://www.wikidata.org/wiki/Q2159226",
       "sourceIds": [
         "SRC0125"
       ],
@@ -2674,7 +2721,10 @@
       ],
       "workIds": [
         "W-F013"
-      ]
+      ],
+      "birthYear": 1902,
+      "deathYear": 1987,
+      "lifeDatesCertainty": "confirmed"
     },
     {
       "id": "P070",
@@ -2734,7 +2784,7 @@
       "roles": [
         "lyricist"
       ],
-      "authorityUrl": "VIAF: https://viaf.org/viaf/54353544\nLCNAF: https://id.loc.gov/authorities/names/n86829858\nGND: https://d-nb.info/gnd/1061587908",
+      "authorityUrl": "VIAF: https://viaf.org/viaf/54353544\nLCNAF: https://id.loc.gov/authorities/names/n86829858\nGND: https://d-nb.info/gnd/1061587908\nWikidata: https://www.wikidata.org/wiki/Q3438991",
       "contributionIds": [
         "CON-S093-L-P072",
         "CON-S095-L-P072"
@@ -2742,7 +2792,10 @@
       "workIds": [
         "W-S093",
         "W-S095"
-      ]
+      ],
+      "birthYear": 1904,
+      "deathYear": 1964,
+      "lifeDatesCertainty": "confirmed"
     },
     {
       "id": "P073",
@@ -3366,13 +3419,16 @@
       "roles": [
         "film director"
       ],
-      "authorityUrl": "VIAF: https://viaf.org/viaf/87393602",
+      "authorityUrl": "VIAF: https://viaf.org/viaf/87393602\nWikidata: https://www.wikidata.org/wiki/Q2580846",
       "contributionIds": [
         "CON-F039-D-P078"
       ],
       "workIds": [
         "W-F039"
-      ]
+      ],
+      "birthYear": 1897,
+      "deathYear": 1976,
+      "lifeDatesCertainty": "disputed"
     },
     {
       "id": "P079",
@@ -3405,13 +3461,16 @@
       "roles": [
         "film director"
       ],
-      "authorityUrl": "Wikipedia: https://en.wikipedia.org/wiki/Edmund_Goulding",
+      "authorityUrl": "Wikipedia: https://en.wikipedia.org/wiki/Edmund_Goulding\nGND: https://d-nb.info/gnd/129013846",
       "contributionIds": [
         "CON-F047-D-P082"
       ],
       "workIds": [
         "W-F047"
-      ]
+      ],
+      "birthYear": 1891,
+      "deathYear": 1959,
+      "lifeDatesCertainty": "confirmed"
     },
     {
       "id": "P083",
@@ -3422,7 +3481,7 @@
       "roles": [
         "lyricist"
       ],
-      "authorityUrl": "VIAF: https://viaf.org/viaf/5913380",
+      "authorityUrl": "VIAF: https://viaf.org/viaf/5913380\nWikidata: https://www.wikidata.org/wiki/Q55999018",
       "contributionIds": [
         "CON-S018-L-P083",
         "CON-S030-L-P083"
@@ -3433,7 +3492,10 @@
       "workIds": [
         "W-S018",
         "W-S030"
-      ]
+      ],
+      "birthYear": 1900,
+      "deathYear": 1985,
+      "lifeDatesCertainty": "confirmed"
     },
     {
       "id": "P086",
@@ -3474,7 +3536,7 @@
       "roles": [
         "lyricist"
       ],
-      "authorityUrl": "VIAF: https://viaf.org/viaf/46229981",
+      "authorityUrl": "VIAF: https://viaf.org/viaf/46229981\nWikidata: https://www.wikidata.org/wiki/Q7052313",
       "sourceIds": [
         "SRC0312"
       ],
@@ -3483,7 +3545,10 @@
       ],
       "workIds": [
         "W-S187"
-      ]
+      ],
+      "birthYear": 1908,
+      "deathYear": 1996,
+      "lifeDatesCertainty": "confirmed"
     },
     {
       "id": "P088",
@@ -3524,7 +3589,7 @@
       "roles": [
         "performer"
       ],
-      "authorityUrl": "VIAF: https://viaf.org/viaf/100315219",
+      "authorityUrl": "VIAF: https://viaf.org/viaf/100315219\nWikidata: https://www.wikidata.org/wiki/Q4720448",
       "sourceIds": [
         "SRC0521"
       ],
@@ -3539,7 +3604,10 @@
       ],
       "workIds": [
         "W-O011"
-      ]
+      ],
+      "birthYear": 1903,
+      "deathYear": 1990,
+      "lifeDatesCertainty": "confirmed"
     },
     {
       "id": "P090",
@@ -3717,7 +3785,10 @@
       ],
       "workIds": [
         "W-S193"
-      ]
+      ],
+      "birthYear": 1894,
+      "deathYear": 1962,
+      "lifeDatesCertainty": "confirmed"
     },
     {
       "id": "P098",
@@ -3843,7 +3914,9 @@
       "workIds": [
         "W-S198",
         "W-S200"
-      ]
+      ],
+      "deathYear": 1944,
+      "lifeDatesCertainty": "confirmed"
     },
     {
       "id": "P109",
@@ -3854,7 +3927,7 @@
       "roles": [
         "lyricist"
       ],
-      "authorityUrl": "VIAF: https://viaf.org/viaf/64272092",
+      "authorityUrl": "VIAF: https://viaf.org/viaf/64272092\nWikidata: https://www.wikidata.org/wiki/Q59531795",
       "sourceIds": [
         "SRC0373"
       ],
@@ -3863,7 +3936,10 @@
       ],
       "workIds": [
         "W-S201"
-      ]
+      ],
+      "birthYear": 1911,
+      "deathYear": 1991,
+      "lifeDatesCertainty": "confirmed"
     },
     {
       "id": "P110",
@@ -3883,7 +3959,10 @@
       ],
       "workIds": [
         "W-S201"
-      ]
+      ],
+      "birthYear": 1904,
+      "deathYear": 1981,
+      "lifeDatesCertainty": "disputed"
     },
     {
       "id": "P111",
@@ -3970,7 +4049,10 @@
       ],
       "workIds": [
         "W-S039"
-      ]
+      ],
+      "birthYear": 1895,
+      "deathYear": 1953,
+      "lifeDatesCertainty": "confirmed"
     },
     {
       "id": "P115",
@@ -4002,7 +4084,7 @@
         "studio executive",
         "producer"
       ],
-      "authorityUrl": "Wikipedia: https://en.wikipedia.org/wiki/Louis_B._Mayer",
+      "authorityUrl": "Wikipedia: https://en.wikipedia.org/wiki/Louis_B._Mayer\nGND: https://d-nb.info/gnd/119113236",
       "sourceIds": [
         "SRC0364",
         "SRC0491"
@@ -4010,7 +4092,10 @@
       "timelineEventIds": [
         "TE0052",
         "TE0053"
-      ]
+      ],
+      "birthYear": 1885,
+      "deathYear": 1957,
+      "lifeDatesCertainty": "confirmed"
     },
     {
       "id": "P117",
@@ -4023,7 +4108,7 @@
         "actor",
         "performer"
       ],
-      "authorityUrl": "VIAF: https://viaf.org/viaf/17407853",
+      "authorityUrl": "VIAF: https://viaf.org/viaf/17407853\nWikidata: https://www.wikidata.org/wiki/Q713265",
       "sourceIds": [
         "SRC0024",
         "SRC0370",
@@ -4044,7 +4129,10 @@
       "workIds": [
         "W-S076",
         "W-S077"
-      ]
+      ],
+      "birthYear": 1902,
+      "deathYear": 1966,
+      "lifeDatesCertainty": "confirmed"
     },
     {
       "id": "P118",
@@ -4057,7 +4145,7 @@
         "actor",
         "performer"
       ],
-      "authorityUrl": "VIAF: https://viaf.org/viaf/51876682",
+      "authorityUrl": "VIAF: https://viaf.org/viaf/51876682\nWikidata: https://www.wikidata.org/wiki/Q78632",
       "sourceIds": [
         "SRC0490",
         "SRC0491",
@@ -4065,7 +4153,10 @@
       ],
       "timelineEventIds": [
         "TE0050"
-      ]
+      ],
+      "birthYear": 1891,
+      "deathYear": 1948,
+      "lifeDatesCertainty": "confirmed"
     },
     {
       "id": "P119",
@@ -4086,7 +4177,10 @@
       ],
       "timelineEventIds": [
         "TE0047"
-      ]
+      ],
+      "birthYear": 1902,
+      "deathYear": 1977,
+      "lifeDatesCertainty": "confirmed"
     },
     {
       "id": "P121",
@@ -4114,7 +4208,10 @@
       "workIds": [
         "W-O005"
       ],
-      "authorityUrl": "NIFC / Chopin Biography: https://chopin.nifc.pl/en/chopin/osoba/24_etkin_roza"
+      "authorityUrl": "NIFC / Chopin Biography: https://chopin.nifc.pl/en/chopin/osoba/24_etkin_roza",
+      "birthYear": 1908,
+      "deathYear": 1945,
+      "lifeDatesCertainty": "confirmed"
     },
     {
       "id": "P122",
@@ -4145,14 +4242,17 @@
         "composer",
         "conductor"
       ],
-      "authorityUrl": "ÖML (Oesterreichisches Musiklexikon online), Uwe Harten, 'Gmeindl, Walter': https://doi.org/10.1553/0x0001cf41\nDiscogs: https://www.discogs.com/artist/6548258",
+      "authorityUrl": "ÖML (Oesterreichisches Musiklexikon online), Uwe Harten, 'Gmeindl, Walter': https://doi.org/10.1553/0x0001cf41\nDiscogs: https://www.discogs.com/artist/6548258\nGND: https://d-nb.info/gnd/103895116",
       "sourceIds": [
         "SRC0331",
         "SRC0490"
       ],
       "timelineEventIds": [
         "TE0016"
-      ]
+      ],
+      "birthYear": 1890,
+      "deathYear": 1958,
+      "lifeDatesCertainty": "confirmed"
     },
     {
       "id": "P124",
