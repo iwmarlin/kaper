@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 48,
+  "count": 49,
   "records": [
     {
       "id": "PNV0001",
@@ -1289,6 +1289,23 @@
       ],
       "sourceIds": [
         "SRC0623"
+      ]
+    },
+    {
+      "id": "PNV0052",
+      "variantName": "Tihoti-Ré",
+      "variantType": "pseudonym",
+      "identityScope": "single_person",
+      "evidenceContext": "authority_file",
+      "attestedWording": "Tihoti-Ré",
+      "certainty": "confirmed",
+      "publicNote": "Tahitian pseudonym, given in the BnF person authority record as Tihoti-Ré or Tihoti-Re, with a see-also reference under that form. Tihoti is the Tahitian rendering of Georges. The Pathé disc credits the performing group as Tihoti-ré et son ensemble tahitien and names Tihoti in the vocal duo, so the composer credited as G. Rey and the singer credited as Tihoti are the same man.",
+      "personIds": [
+        "P155"
+      ],
+      "sourceIds": [
+        "SRC0626",
+        "SRC0625"
       ]
     }
   ]
