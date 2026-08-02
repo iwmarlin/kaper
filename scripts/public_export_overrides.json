@@ -28,6 +28,13 @@
       }
     },
     "Work Relations": {
+      "REL0170": {
+        "reason": "Retain the Buxbaum/Sieghardt language-version entry while qualifying it: no item-level French edition or French lyric credit has yet been located.",
+        "fields": {
+          "certainty": "probable",
+          "publicNote": "Buxbaum and Sieghardt catalogue “Cosi Cosa” as a French-language version of “Così, cosa”; an item-level French edition and its lyric credit have not yet been located."
+        }
+      },
       "REL0196": {
         "reason": "State the verified language-version relationship concisely and keep the separate absence of a Kaper music credit out of the relation description.",
         "fields": {
@@ -36,6 +43,19 @@
       }
     },
     "Works": {
+      "W-S196": {
+        "reason": "Correct the French edition from the item-level CCFr/BnF catalogue record: Paris, France-Mélodie, 1936, with French words credited to Ch. Davson.",
+        "fields": {
+          "year": 1936
+        }
+      },
+      "W-S204": {
+        "reason": "Preserve the catalogue-attested French-version record but remove unsupported lyricist and publisher claims and qualify it until an item-level edition is found.",
+        "fields": {
+          "certainty": "probable",
+          "publicNote": "Buxbaum and Sieghardt catalogue this as a French-language version of “Così, cosa”; an item-level French edition and its lyric credit have not yet been located."
+        }
+      },
       "W-S015": {
         "reason": "Correct the canonical title to the wording attested by the contemporary Hofmeister registration and the linked source records; remove the unsupported article “die”.",
         "fields": {
@@ -223,6 +243,26 @@
       }
     },
     "Songs": {
+      "S196": {
+        "reason": "Synchronize the song record with the 1936 France-Mélodie catalogue entry, which credits the French words to Ch. Davson alone.",
+        "fields": {
+          "year": 1936,
+          "publisherAsPrinted": "France-Mélodie, Paris",
+          "lyricistAsPrinted": "Ch. Davson"
+        }
+      },
+      "S204": {
+        "reason": "Qualify the source-attested French-version entry and remove unsupported lyricist and publisher transcriptions until an item-level edition is located.",
+        "fields": {
+          "certainty": "probable",
+          "lyricistStatus": "lyricist unknown / not supplied",
+          "publicNote": "A French-language catalogue entry is documented, but an item-level edition and its lyric credit have not yet been located."
+        },
+        "removeFields": [
+          "publisherAsPrinted",
+          "lyricistAsPrinted"
+        ]
+      },
       "S015": {
         "reason": "Synchronize the Song title and slug with the corrected canonical Work title and the wording attested by the linked contemporary sources.",
         "fields": {
@@ -2310,6 +2350,14 @@
       }
     },
     "Contributions": {
+      "CON-S196-L-P106": {
+        "reason": "Use the printed form and item-level evidence in the 1936 France-Mélodie catalogue record; Charlie Davson is the authority heading for Charles Secchia.",
+        "fields": {
+          "nameAsPrinted": "Ch. Davson",
+          "evidenceContext": "sheet_music",
+          "certainty": "confirmed"
+        }
+      },
       "CON-F022-MD-P009": {
         "reason": "Remove the redundant legacy scope note and order Kaper's existing music-direction credit alongside the restored composer credits.",
         "fields": {
@@ -2545,6 +2593,25 @@
         "fields": {
           "authorizedName": "Scheibenhofer, Hermann",
           "authorityUrl": "GND: https://d-nb.info/gnd/1146071264\nVIAF: https://viaf.org/viaf/134151246519744131371"
+        }
+      },
+      "P106": {
+        "reason": "Normalize the person to the BnF authority heading Charlie Davson while preserving Charles Secchia as the documented real-name variant.",
+        "fields": {
+          "displayName": "Charlie Davson",
+          "sortName": "Davson, Charlie",
+          "authorizedName": "Davson, Charlie",
+          "slug": "charlie-davson",
+          "authorityUrl": "BnF: https://data.bnf.fr/fr/13792811/charlie_davson/"
+        }
+      }
+    },
+    "Title Variants": {
+      "TV0296": {
+        "reason": "Retain the source-attested French title entry but qualify it until an item-level French edition has been located.",
+        "fields": {
+          "certainty": "probable",
+          "note": "Buxbaum and Sieghardt catalogue a French-language version under this title; an item-level French edition and its lyric credit have not yet been located."
         }
       }
     },
@@ -2949,9 +3016,48 @@
             "W-S116"
           ]
         }
+      },
+      "PNV0055": {
+        "reason": "Preserve Charles Secchia as the documented real-name form while using the BnF authority heading Charlie Davson as the canonical person name.",
+        "fields": {
+          "id": "PNV0055",
+          "variantName": "Charles Secchia",
+          "variantType": "other",
+          "identityScope": "single_person",
+          "evidenceContext": "authority_record",
+          "attestedWording": "Charles Secchia",
+          "certainty": "confirmed",
+          "publicNote": "Real name of the songwriter represented in authority records under the professional name Charlie Davson.",
+          "personIds": [
+            "P106"
+          ],
+          "sourceIds": [
+            "SRC0629"
+          ]
+        }
       }
     },
     "Contributions": {
+      "CON-S196-PUB-ORG048": {
+        "reason": "Replace the copied Robbins publisher credit with the publisher printed in the item-level 1936 French edition catalogue record.",
+        "fields": {
+          "id": "CON-S196-PUB-ORG048",
+          "role": "publisher",
+          "nameAsPrinted": "France-Mélodie, Paris",
+          "evidenceContext": "sheet_music",
+          "sortOrder": 50,
+          "certainty": "confirmed",
+          "workIds": [
+            "W-S196"
+          ],
+          "organizationIds": [
+            "ORG048"
+          ],
+          "sourceIds": [
+            "SRC0630"
+          ]
+        }
+      },
       "CON-F022-C-P009": {
         "reason": "Add Bronisław Kaper's missing composer credit for Ich will Dich Liebe lehren. Filmportal lists Kaper and Walter Jurmann under both “Musik” and “Musikalische Leitung.”",
         "fields": {
@@ -4719,6 +4825,80 @@
           ],
           "primaryUrl": "https://sesslerverlag.at/fileadmin/user_upload/news/Filmkataloge/Remakerechte_Filmliste_nach_Titel.pdf"
         }
+      },
+      "SRC0629": {
+        "reason": "Add the authority evidence that identifies Charlie Davson as the professional name of Charles Secchia.",
+        "fields": {
+          "id": "SRC0629",
+          "shortCitation": "BnF authority record for Charlie Davson / Charles Secchia",
+          "fullCitation": "Bibliothèque nationale de France, authority record FRBNF13792811, “Charlie Davson”, pseudonym of Charles Secchia. Accessed 2 August 2026.",
+          "sourceType": "authority_record",
+          "title": "Charlie Davson / Charles Secchia — BnF authority record",
+          "creator": "Bibliothèque nationale de France",
+          "repository": "Bibliothèque nationale de France",
+          "publication": "BnF data",
+          "date": "2026",
+          "accessDate": "2026-08-02",
+          "reliability": "high",
+          "sourceStatus": "verified",
+          "slug": "src0629-authority-charlie-davson-charles-secchia",
+          "personIds": [
+            "P106"
+          ],
+          "organizationIds": [
+            "ORG062"
+          ],
+          "nameVariantIds": [
+            "PNV0055"
+          ],
+          "primaryUrl": "https://data.bnf.fr/fr/13792811/charlie_davson/"
+        }
+      },
+      "SRC0630": {
+        "reason": "Add the item-level CCFr/BnF catalogue record for the 1936 French edition, replacing unsupported copied lyricist and publisher data with the printed credits.",
+        "fields": {
+          "id": "SRC0630",
+          "shortCitation": "CCFr/BnF, “Chanson d'amour de Tahiti,” France-Mélodie, 1936",
+          "fullCitation": "“Chanson d'amour de Tahiti”, rumba; original title “Love Song of Tahiti”; music by Bronisław Kaper and Walter Jurmann; English words by Gus Kahn; French words by Ch. Davson. Paris: Éditions France-Mélodie, 1936. Catalogue collectif de France, Fonds Orgeret, Bibliothèque municipale de Lyon.",
+          "sourceType": "sheet_music_catalogue",
+          "title": "Chanson d'amour de Tahiti — France-Mélodie edition",
+          "creator": "Bronisław Kaper; Walter Jurmann; Gus Kahn; Ch. Davson",
+          "repository": "Bibliothèque municipale de Lyon / Catalogue collectif de France",
+          "publication": "Éditions France-Mélodie, Paris",
+          "date": "1936",
+          "accessDate": "2026-08-02",
+          "reliability": "high",
+          "sourceStatus": "verified",
+          "slug": "src0630-ccfr-chanson-amour-tahiti-france-melodie-1936",
+          "personIds": [
+            "P009",
+            "P077",
+            "P106"
+          ],
+          "organizationIds": [
+            "ORG048",
+            "ORG062"
+          ],
+          "workIds": [
+            "W-S196"
+          ],
+          "songIds": [
+            "S196"
+          ],
+          "workRelationIds": [
+            "REL0162"
+          ],
+          "titleVariantIds": [
+            "TV0288"
+          ],
+          "contributionIds": [
+            "CON-S196-C-P009",
+            "CON-S196-C-P077",
+            "CON-S196-L-P106",
+            "CON-S196-PUB-ORG048"
+          ],
+          "primaryUrl": "https://ccfr.bnf.fr/portailccfr/ark:/16871/004a2132831"
+        }
       }
     },
     "Places": {
@@ -4806,6 +4986,16 @@
           ],
           "periods": [
             "european"
+          ]
+        }
+      }
+    },
+    "Title Variants": {
+      "TV0288": {
+        "reason": "Attach the item-level 1936 France-Mélodie catalogue record to the French title variant.",
+        "fields": {
+          "sourceIds": [
+            "SRC0630"
           ]
         }
       }
@@ -5479,11 +5669,27 @@
   },
   "linkAdditions": {
     "Organizations": {
-      "ORG062": {
-        "reason": "Link the Bibliothèque nationale de France organization record to the authoritative BnF title record for Coup de feu à l’aube.",
+      "ORG048": {
+        "reason": "Link France-Mélodie to the item-level 1936 French edition, its source record and the corrected publisher contribution.",
         "fields": {
           "sourceIds": [
-            "SRC0532"
+            "SRC0630"
+          ],
+          "contributionIds": [
+            "CON-S196-PUB-ORG048"
+          ],
+          "workIds": [
+            "W-S196"
+          ]
+        }
+      },
+      "ORG062": {
+        "reason": "Link the Bibliothèque nationale de France organization record to the authoritative BnF title and authority records.",
+        "fields": {
+          "sourceIds": [
+            "SRC0532",
+            "SRC0629",
+            "SRC0630"
           ]
         }
       },
@@ -5627,6 +5833,33 @@
       }
     },
     "Contributions": {
+      "CON-S196-C-P009": {
+        "reason": "Add the item-level 1936 France-Mélodie catalogue evidence for Kaper's printed composer credit.",
+        "fields": {
+          "sourceIds": [
+            "SRC0630"
+          ]
+        }
+      },
+      "CON-S196-C-P077": {
+        "reason": "Add the item-level 1936 France-Mélodie catalogue evidence for Jurmann's printed composer credit.",
+        "fields": {
+          "sourceIds": [
+            "SRC0630"
+          ]
+        }
+      },
+      "CON-S196-L-P106": {
+        "reason": "Add the item-level 1936 France-Mélodie catalogue evidence for the French lyric credit printed as Ch. Davson.",
+        "fields": {
+          "sourceIds": [
+            "SRC0630"
+          ],
+          "nameVariantIds": [
+            "PNV0055"
+          ]
+        }
+      },
       "CON-F013-C-P009": {
         "reason": "Add the official Walter Jurmann catalogue as source-specific evidence for Kaper's collaboration with Jurmann on the film's background music and a song.",
         "fields": {
@@ -5789,6 +6022,17 @@
       }
     },
     "Works": {
+      "W-S196": {
+        "reason": "Link the corrected French-version work to its item-level source and France-Mélodie publisher contribution.",
+        "fields": {
+          "sourceIds": [
+            "SRC0630"
+          ],
+          "contributionIds": [
+            "CON-S196-PUB-ORG048"
+          ]
+        }
+      },
       "W-F004": {
         "reason": "Attach Walter Jurmann's confirmed composer contribution while retaining Kaper's separate, qualified unresolved-role attribution.",
         "fields": {
@@ -6346,6 +6590,14 @@
       }
     },
     "Songs": {
+      "S196": {
+        "reason": "Link the corrected Song record to the item-level 1936 France-Mélodie catalogue record.",
+        "fields": {
+          "sourceIds": [
+            "SRC0630"
+          ]
+        }
+      },
       "S023": {
         "reason": "Use the exact ANNO registration SRC0226 instead of its superseded duplicate SRC0200.",
         "fields": {
@@ -6693,7 +6945,8 @@
             "SRC0236",
             "SRC0306",
             "SRC0486",
-            "SRC0540"
+            "SRC0540",
+            "SRC0630"
           ],
           "contributionIds": [
             "CON-F009-C-P009",
@@ -6816,7 +7069,8 @@
             "SRC0334",
             "SRC0478",
             "SRC0486",
-            "SRC0540"
+            "SRC0540",
+            "SRC0630"
           ],
           "contributionIds": [
             "CON-F004-C-P077",
@@ -6867,6 +7121,18 @@
             "CON-F050-C-P077",
             "CON-F051-C-P077",
             "CON-F054-C-P077"
+          ]
+        }
+      },
+      "P106": {
+        "reason": "Connect Charlie Davson to the authority evidence, the item-level French score catalogue and his documented real-name variant.",
+        "fields": {
+          "sourceIds": [
+            "SRC0629",
+            "SRC0630"
+          ],
+          "nameVariantIds": [
+            "PNV0055"
           ]
         }
       },
@@ -6946,6 +7212,14 @@
       }
     },
     "Work Relations": {
+      "REL0162": {
+        "reason": "Attach the item-level 1936 France-Mélodie catalogue record that explicitly identifies the French title and the original English title.",
+        "fields": {
+          "sourceIds": [
+            "SRC0630"
+          ]
+        }
+      },
       "REL0196": {
         "reason": "Attach the institutional remake-rights catalogue that explicitly pairs the German and French titles.",
         "fields": {

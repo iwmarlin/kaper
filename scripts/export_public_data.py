@@ -815,7 +815,9 @@ class PublicExporter:
         return result
 
     def _induce_authorities_and_sources(self) -> None:
-        approved_people = self._approved_ids("People")
+        approved_people = self._approved_ids("People") - set(
+            self.config.get("excludedPersonIds", [])
+        )
         approved_organizations = self._approved_ids("Organizations")
         approved_sources = self._approved_ids("Sources") - set(
             self.config.get("excludedSourceIds", [])

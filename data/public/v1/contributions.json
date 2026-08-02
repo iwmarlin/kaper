@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 1079,
+  "count": 1075,
   "records": [
     {
       "id": "CON-F001-C-P009",
@@ -340,6 +340,9 @@
       ],
       "sourceIds": [
         "SRC0151"
+      ],
+      "nameVariantIds": [
+        "PNV0054"
       ]
     },
     {
@@ -17665,7 +17668,8 @@
         "P009"
       ],
       "sourceIds": [
-        "SRC0373"
+        "SRC0373",
+        "SRC0630"
       ]
     },
     {
@@ -17681,13 +17685,15 @@
         "P077"
       ],
       "sourceIds": [
-        "SRC0373"
+        "SRC0373",
+        "SRC0630"
       ]
     },
     {
       "id": "CON-S196-L-P106",
       "role": "lyricist",
-      "nameAsPrinted": "Charles Secchia",
+      "nameAsPrinted": "Ch. Davson",
+      "evidenceContext": "sheet_music",
       "sortOrder": 1,
       "certainty": "confirmed",
       "workIds": [
@@ -17697,39 +17703,28 @@
         "P106"
       ],
       "sourceIds": [
-        "SRC0373"
+        "SRC0373",
+        "SRC0630"
+      ],
+      "nameVariantIds": [
+        "PNV0055"
       ]
     },
     {
-      "id": "CON-S196-L-P107",
-      "role": "lyricist",
-      "nameAsPrinted": "Jean Vella",
-      "sortOrder": 2,
-      "certainty": "confirmed",
-      "workIds": [
-        "W-S196"
-      ],
-      "personIds": [
-        "P107"
-      ],
-      "sourceIds": [
-        "SRC0373"
-      ]
-    },
-    {
-      "id": "CON-S196-PUB-ORG035",
+      "id": "CON-S196-PUB-ORG048",
       "role": "publisher",
-      "nameAsPrinted": "Robbins Music Corporation/1935",
+      "nameAsPrinted": "France-Mélodie, Paris",
       "evidenceContext": "sheet_music",
+      "sortOrder": 50,
       "certainty": "confirmed",
       "workIds": [
         "W-S196"
       ],
       "organizationIds": [
-        "ORG035"
+        "ORG048"
       ],
       "sourceIds": [
-        "SRC0373"
+        "SRC0630"
       ]
     },
     {
@@ -18255,54 +18250,6 @@
       ],
       "personIds": [
         "P077"
-      ],
-      "sourceIds": [
-        "SRC0373"
-      ]
-    },
-    {
-      "id": "CON-S204-L-P106",
-      "role": "lyricist",
-      "nameAsPrinted": "Charles Secchia",
-      "sortOrder": 1,
-      "certainty": "confirmed",
-      "workIds": [
-        "W-S204"
-      ],
-      "personIds": [
-        "P106"
-      ],
-      "sourceIds": [
-        "SRC0373"
-      ]
-    },
-    {
-      "id": "CON-S204-L-P107",
-      "role": "lyricist",
-      "nameAsPrinted": "Jean Vella",
-      "sortOrder": 2,
-      "certainty": "confirmed",
-      "workIds": [
-        "W-S204"
-      ],
-      "personIds": [
-        "P107"
-      ],
-      "sourceIds": [
-        "SRC0373"
-      ]
-    },
-    {
-      "id": "CON-S204-PUB-ORG035",
-      "role": "publisher",
-      "nameAsPrinted": "Robbins Music Corporation/1935",
-      "evidenceContext": "sheet_music",
-      "certainty": "confirmed",
-      "workIds": [
-        "W-S204"
-      ],
-      "organizationIds": [
-        "ORG035"
       ],
       "sourceIds": [
         "SRC0373"

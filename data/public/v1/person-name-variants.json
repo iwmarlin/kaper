@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 50,
+  "count": 52,
   "records": [
     {
       "id": "PNV0001",
@@ -1322,6 +1322,39 @@
       ],
       "sourceIds": [
         "SRC0627"
+      ]
+    },
+    {
+      "id": "PNV0054",
+      "variantName": "Robert Pégy",
+      "variantType": "spelling_variant",
+      "identityScope": "single_person",
+      "evidenceContext": "filmographic_database",
+      "attestedWording": "Robert Pégy",
+      "certainty": "confirmed",
+      "publicNote": "Spelling used by filmportal.de in the credits for Son altesse l'amour, and the form under which this archive first held him. No authority file records it. The GND entry for Péguy links to filmportal's own record for the same director, so the missing u is a transcription in one set of credits rather than a name he worked under.",
+      "personIds": [
+        "P068"
+      ],
+      "sourceIds": [
+        "SRC0628",
+        "SRC0151"
+      ]
+    },
+    {
+      "id": "PNV0055",
+      "variantName": "Charles Secchia",
+      "variantType": "other",
+      "identityScope": "single_person",
+      "evidenceContext": "authority_record",
+      "attestedWording": "Charles Secchia",
+      "certainty": "confirmed",
+      "publicNote": "Real name of the songwriter represented in authority records under the professional name Charlie Davson.",
+      "personIds": [
+        "P106"
+      ],
+      "sourceIds": [
+        "SRC0629"
       ]
     }
   ]

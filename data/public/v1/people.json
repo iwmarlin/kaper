@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 138,
+  "count": 137,
   "records": [
     {
       "id": "P001",
@@ -387,7 +387,8 @@
         "SRC0550",
         "SRC0553",
         "SRC0569",
-        "SRC0540"
+        "SRC0540",
+        "SRC0630"
       ],
       "timelineEventIds": [
         "TE0001",
@@ -2689,21 +2690,30 @@
     },
     {
       "id": "P068",
-      "displayName": "Robert Pégy",
-      "sortName": "Pégy, Robert",
-      "slug": "robert-pegy",
+      "displayName": "Robert Péguy",
+      "sortName": "Péguy, Robert",
+      "slug": "robert-peguy",
       "primaryRole": "film director",
       "roles": [
         "film director"
       ],
       "sourceIds": [
-        "SRC0151"
+        "SRC0151",
+        "SRC0628"
       ],
       "contributionIds": [
         "CON-F005-D-P068"
       ],
       "workIds": [
         "W-F005"
+      ],
+      "authorizedName": "Péguy, Robert",
+      "birthYear": 1883,
+      "deathYear": 1968,
+      "lifeDatesCertainty": "confirmed",
+      "authorityUrl": "GND: https://d-nb.info/gnd/1061685829\nLCNAF: https://id.loc.gov/authorities/names/no2009019373\nVIAF: https://viaf.org/viaf/78937672\nBnF: https://catalogue.bnf.fr/ark:/12148/cb14694617z\nISNI: https://isni.org/isni/0000000055077516\nWikidata: https://www.wikidata.org/wiki/Q3436128",
+      "nameVariantIds": [
+        "PNV0054"
       ]
     },
     {
@@ -2982,7 +2992,8 @@
         "SRC0527",
         "SRC0550",
         "SRC0569",
-        "SRC0540"
+        "SRC0540",
+        "SRC0630"
       ],
       "timelineEventIds": [
         "TE0026",
@@ -3856,44 +3867,28 @@
     },
     {
       "id": "P106",
-      "displayName": "Charles Secchia",
-      "sortName": "Secchia, Charles",
-      "slug": "charles-secchia",
+      "displayName": "Charlie Davson",
+      "sortName": "Davson, Charlie",
+      "authorizedName": "Davson, Charlie",
+      "slug": "charlie-davson",
       "primaryRole": "lyricist",
       "roles": [
         "lyricist"
       ],
+      "authorityUrl": "BnF: https://catalogue.bnf.fr/ark:/12148/cb137928110\nBnF data: https://data.bnf.fr/fr/13792811/charlie_davson/\nISNI: https://isni.org/isni/0000000358309767",
       "sourceIds": [
-        "SRC0373"
+        "SRC0373",
+        "SRC0629",
+        "SRC0630"
       ],
       "contributionIds": [
-        "CON-S196-L-P106",
-        "CON-S204-L-P106"
+        "CON-S196-L-P106"
+      ],
+      "nameVariantIds": [
+        "PNV0055"
       ],
       "workIds": [
-        "W-S196",
-        "W-S204"
-      ]
-    },
-    {
-      "id": "P107",
-      "displayName": "Jean Vella",
-      "sortName": "Vella, Jean",
-      "slug": "jean-vella",
-      "primaryRole": "lyricist",
-      "roles": [
-        "lyricist"
-      ],
-      "sourceIds": [
-        "SRC0373"
-      ],
-      "contributionIds": [
-        "CON-S196-L-P107",
-        "CON-S204-L-P107"
-      ],
-      "workIds": [
-        "W-S196",
-        "W-S204"
+        "W-S196"
       ]
     },
     {

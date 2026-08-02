@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 556,
+  "count": 559,
   "records": [
     {
       "id": "SRC0001",
@@ -11898,7 +11898,6 @@
         "P091",
         "P092",
         "P106",
-        "P107",
         "P108",
         "P109",
         "P110",
@@ -12421,8 +12420,6 @@
         "CON-S196-C-P009",
         "CON-S196-C-P077",
         "CON-S196-L-P106",
-        "CON-S196-L-P107",
-        "CON-S196-PUB-ORG035",
         "CON-S197-C-P009",
         "CON-S197-C-P077",
         "CON-S197-PUB-ORG035",
@@ -12454,10 +12451,7 @@
         "CON-S203-L-P112",
         "CON-S203-PUB-ORG035",
         "CON-S204-C-P009",
-        "CON-S204-C-P077",
-        "CON-S204-L-P106",
-        "CON-S204-L-P107",
-        "CON-S204-PUB-ORG035"
+        "CON-S204-C-P077"
       ],
       "nameVariantIds": [
         "PNV0007",
@@ -18963,6 +18957,96 @@
         "PNV0053"
       ],
       "primaryUrl": "https://d-nb.info/gnd/133442284"
+    },
+    {
+      "id": "SRC0628",
+      "shortCitation": "Authority records for Robert Péguy",
+      "fullCitation": "Deutsche Nationalbibliothek, GND 1061685829, “Péguy, Robert”, director, born 14 December 1883 and died 21 July 1968, with the variant forms “Péguy, Marcel Robert” and “Robert, Marcel”. The Library of Congress heading no2009019373 reads “Péguy, Robert, 1883-1968”. The French Wikipedia article gives the birth name as Marcel Robert Péguy and both the birth and the death in the 17th arrondissement of Paris. Neither authority file records the spelling Pégy; the GND links directly to the filmportal.de record for the same man, so the form printed in the credits of Son altesse l'amour is a transcription of that one film rather than a name he used. Accessed 1 August 2026.",
+      "sourceType": "authority_record",
+      "title": "GND 1061685829 and LCNAF no2009019373 — Péguy, Robert",
+      "creator": "Deutsche Nationalbibliothek; Library of Congress",
+      "repository": "Deutsche Nationalbibliothek",
+      "publication": "Gemeinsame Normdatei",
+      "date": "2026",
+      "accessDate": "2026-08-01",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "slug": "src0628-authority-records-robert-peguy",
+      "personIds": [
+        "P068"
+      ],
+      "nameVariantIds": [
+        "PNV0054"
+      ],
+      "primaryUrl": "https://d-nb.info/gnd/1061685829"
+    },
+    {
+      "id": "SRC0629",
+      "shortCitation": "BnF authority record for Charlie Davson / Charles Secchia",
+      "fullCitation": "Bibliothèque nationale de France, notice de personne “Davson, Charlie”, pseudonyme, forme internationale, FRBNF13792811, ark:/12148/cb137928110. Recorded as the pseudonym of Charles Secchia, parolier, French, male, with responsibilities as author and performer. The BnF states his dates as “Naissance : 18..?” and “Mort : 19..”, that is a nineteenth-century birth and a twentieth-century death, neither year established. The notice cites as its source the printed music “Je ne connais personne”, words by Ch. Davson with German words by Emmerich Lazar and P. Doenen, music by Emeric Lazar, 1938, and gives ISNI 0000 0003 5830 9767. Fifty-six bibliographic records in the BnF are linked to him as author. Accessed 2 August 2026.",
+      "sourceType": "authority_record",
+      "title": "Charlie Davson / Charles Secchia — BnF authority record",
+      "creator": "Bibliothèque nationale de France",
+      "repository": "Bibliothèque nationale de France",
+      "publication": "BnF data",
+      "date": "2026",
+      "accessDate": "2026-08-02",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "slug": "src0629-authority-charlie-davson-charles-secchia",
+      "personIds": [
+        "P106"
+      ],
+      "organizationIds": [
+        "ORG062"
+      ],
+      "nameVariantIds": [
+        "PNV0055"
+      ],
+      "primaryUrl": "https://catalogue.bnf.fr/ark:/12148/cb137928110"
+    },
+    {
+      "id": "SRC0630",
+      "shortCitation": "CCFr/BnF, “Chanson d'amour de Tahiti,” France-Mélodie, 1936",
+      "fullCitation": "“Chanson d'amour de Tahiti”, rumba; original title “Love Song of Tahiti”; music by Bronisław Kaper and Walter Jurmann; English words by Gus Kahn; French words by Ch. Davson. Paris: Éditions France-Mélodie, 1936. Catalogue collectif de France, Fonds Orgeret, Bibliothèque municipale de Lyon.",
+      "sourceType": "sheet_music_catalogue",
+      "title": "Chanson d'amour de Tahiti — France-Mélodie edition",
+      "creator": "Bronisław Kaper; Walter Jurmann; Gus Kahn; Ch. Davson",
+      "repository": "Bibliothèque municipale de Lyon / Catalogue collectif de France",
+      "publication": "Éditions France-Mélodie, Paris",
+      "date": "1936",
+      "accessDate": "2026-08-02",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "slug": "src0630-ccfr-chanson-amour-tahiti-france-melodie-1936",
+      "personIds": [
+        "P009",
+        "P077",
+        "P106"
+      ],
+      "organizationIds": [
+        "ORG048",
+        "ORG062"
+      ],
+      "workIds": [
+        "W-S196"
+      ],
+      "songIds": [
+        "S196"
+      ],
+      "workRelationIds": [
+        "REL0162"
+      ],
+      "titleVariantIds": [
+        "TV0288"
+      ],
+      "contributionIds": [
+        "CON-S196-C-P009",
+        "CON-S196-C-P077",
+        "CON-S196-L-P106",
+        "CON-S196-PUB-ORG048"
+      ],
+      "primaryUrl": "https://ccfr.bnf.fr/portailccfr/ark:/16871/004a2132831"
     }
   ]
 }

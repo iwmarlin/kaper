@@ -8,6 +8,7 @@ export_public_data.py). It recomputes, without touching Airtable:
   - per-table record counts (manifest.counts + build-report.counts)
   - per-file byte sizes and sha256 checksums (manifest.files)
   - the overrides checksum and applied/addition/linkAddition counts
+  - the exporter checksum recorded as the manifest generator
 
 Then run scripts/validate_public_export.py to confirm everything is consistent.
 
@@ -40,6 +41,10 @@ def sha256(path: Path) -> str:
     return digest.hexdigest()
 
 
+def json_bytes(value) -> bytes:
+    return (json.dumps(value, ensure_ascii=False, indent=2) + "\n").encode("utf-8")
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--root", type=Path, default=Path(__file__).resolve().parent.parent)
@@ -69,13 +74,21 @@ def main() -> int:
     if report.get("counts") != counts:
         changes.append("build-report.counts")
 
+    report_new = dict(report)
+    report_new["counts"] = counts
+    report_new_bytes = json_bytes(report_new)
+
     # 2) file bytes + checksums
     new_files = []
     for entry in manifest.get("files", []):
         path = data_root / entry["file"]
         new_entry = dict(entry)
-        new_entry["bytes"] = path.stat().st_size
-        new_entry["sha256"] = sha256(path)
+        if entry["file"] == "build-report.json":
+            new_entry["bytes"] = len(report_new_bytes)
+            new_entry["sha256"] = hashlib.sha256(report_new_bytes).hexdigest()
+        else:
+            new_entry["bytes"] = path.stat().st_size
+            new_entry["sha256"] = sha256(path)
         if new_entry != entry:
             changes.append(f"files:{entry['file']}")
         new_files.append(new_entry)
@@ -104,6 +117,15 @@ def main() -> int:
     if allow_new != allow:
         changes.append("allowlist(sha)")
 
+    # 5) exporter checksum. Manual public-data corrections may be accompanied
+    # by a schema/exporter change, and the manifest must continue to identify
+    # the exact generator that will reproduce the next export.
+    generator_path = root / "scripts/export_public_data.py"
+    generator_new = dict(manifest["generator"])
+    generator_new["sha256"] = sha256(generator_path)
+    if generator_new != manifest["generator"]:
+        changes.append("generator(sha)")
+
     if args.check:
         print("DRIFT:" if changes else "clean:", ", ".join(changes) or "manifest already consistent")
         return 1 if changes else 0
@@ -112,9 +134,9 @@ def main() -> int:
     manifest["files"] = new_files
     manifest["publicInputs"]["overrides"] = ov_new
     manifest["publicInputs"]["allowlist"] = allow_new
-    report["counts"] = counts
+    manifest["generator"] = generator_new
+    write_json(report_path, report_new)
     write_json(manifest_path, manifest)
-    write_json(report_path, report)
 
     print("reconciled:", ", ".join(changes) if changes else "no changes needed")
     print(f"  counts: Places={counts['Places']} Media={counts['Media']} Sources={counts['Sources']}")

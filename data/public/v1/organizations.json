@@ -1096,15 +1096,13 @@
         "CON-S155-PUB-ORG035",
         "CON-S168-PUB-ORG035",
         "CON-S186-PUB-ORG035",
-        "CON-S196-PUB-ORG035",
         "CON-S197-PUB-ORG035",
         "CON-S198-PUB-ORG035",
         "CON-S199-PUB-ORG035",
         "CON-S200-PUB-ORG035",
         "CON-S201-PUB-ORG035",
         "CON-S202-PUB-ORG035",
-        "CON-S203-PUB-ORG035",
-        "CON-S204-PUB-ORG035"
+        "CON-S203-PUB-ORG035"
       ],
       "workIds": [
         "W-S118",
@@ -1118,15 +1116,13 @@
         "W-S155",
         "W-S168",
         "W-S186",
-        "W-S196",
         "W-S197",
         "W-S198",
         "W-S199",
         "W-S200",
         "W-S201",
         "W-S202",
-        "W-S203",
-        "W-S204"
+        "W-S203"
       ]
     },
     {
@@ -1434,13 +1430,18 @@
       "country": "France",
       "slug": "france-melodie",
       "nameVariants": "Paris: France-Mélodie",
+      "sourceIds": [
+        "SRC0630"
+      ],
       "contributionIds": [
         "CON-S163-PUB-ORG048",
-        "CON-S164-PUB-ORG048"
+        "CON-S164-PUB-ORG048",
+        "CON-S196-PUB-ORG048"
       ],
       "workIds": [
         "W-S163",
-        "W-S164"
+        "W-S164",
+        "W-S196"
       ]
     },
     {
@@ -1797,7 +1798,9 @@
         "SRC0504",
         "SRC0525",
         "SRC0526",
-        "SRC0532"
+        "SRC0532",
+        "SRC0629",
+        "SRC0630"
       ]
     },
     {
