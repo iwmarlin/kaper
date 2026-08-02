@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 49,
+  "count": 50,
   "records": [
     {
       "id": "PNV0001",
@@ -1306,6 +1306,22 @@
       "sourceIds": [
         "SRC0626",
         "SRC0625"
+      ]
+    },
+    {
+      "id": "PNV0053",
+      "variantName": "Paul Wechselmann",
+      "variantType": "other",
+      "identityScope": "single_person",
+      "evidenceContext": "authority_file",
+      "attestedWording": "Wechselmann, Paul",
+      "certainty": "confirmed",
+      "publicNote": "Birth name, recorded as a variant form in the GND authority record. The same record carries four further working names — Mawersky, Paul Stephan; Bachinger, Alois; Marois, Jean; and Walden, Peter — which are not entered separately here because no source in this archive attaches any of them to a specific work.",
+      "personIds": [
+        "P151"
+      ],
+      "sourceIds": [
+        "SRC0627"
       ]
     }
   ]
