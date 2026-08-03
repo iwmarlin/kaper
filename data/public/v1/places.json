@@ -1152,26 +1152,32 @@
     },
     {
       "id": "PL039",
-      "displayName": "Commercial Hotel, Mexicali",
-      "authorizedName": "Commercial Hotel, Mexicali, Baja California",
+      "displayName": "Commercial Hotel (formerly Hotel Aldrete), Madero at Azueta, Mexicali",
+      "authorizedName": "Hotel Comercial (formerly Hotel Aldrete), Avenida Francisco I. Madero at Calle José Azueta, Mexicali, Baja California",
       "placeType": "venue",
       "city": "Mexicali",
       "region": "Baja California",
       "country": "Mexico",
       "period": "hollywood",
       "slug": "commercial-hotel-mexicali",
-      "publicNote": "Procedural immigration-address context: the Commercial Hotel in Mexicali is given as Kaper's last permanent residence abroad in the 1935 Calexico border-crossing manifest. The public map uses the Mexicali city centroid; the exact historic hotel address and location have not been verified.",
-      "mapPrecision": "city",
-      "publicScope": "context_only",
+      "publicNote": "Kaper’s 1 November 1935 Calexico manifest records the Commercial Hotel in Mexicali as his last permanent residence abroad. Historical evidence identifies the Hotel Comercial as the renamed Hotel Aldrete on Avenida Francisco I. Madero, between Ayuntamiento and José Azueta, beside Parque Héroes de Chapultepec. The marker represents that documented site; 301 is the present-day parcel number, not a verified 1935 street number.",
+      "mapPrecision": "site_approximate",
+      "publicScope": "map_and_detail",
       "timelineEventIds": [
         "TE0036"
       ],
       "sourceIds": [
         "SRC0039",
-        "SRC0491"
+        "SRC0491",
+        "SRC0637",
+        "SRC0638",
+        "SRC0639"
       ],
-      "latitude": 32.6245,
-      "longitude": -115.4523,
+      "mediaIds": [
+        "M124"
+      ],
+      "latitude": 32.66450519,
+      "longitude": -115.49328652,
       "periods": [
         "hollywood"
       ]
