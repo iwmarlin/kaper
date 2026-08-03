@@ -2708,7 +2708,6 @@
           "publicNote": "Kaper’s 1 November 1935 Calexico manifest records the Commercial Hotel in Mexicali as his last permanent residence abroad. Historical evidence identifies the Hotel Comercial as the renamed Hotel Aldrete on Avenida Francisco I. Madero, between Ayuntamiento and José Azueta, beside Parque Héroes de Chapultepec. The marker represents that documented site; 301 is the present-day parcel number, not a verified 1935 street number.",
           "sourceIds": [
             "SRC0039",
-            "SRC0491",
             "SRC0637",
             "SRC0638",
             "SRC0639",
@@ -8822,6 +8821,14 @@
             "M223"
           ]
         }
+      },
+      "SRC0491": {
+        "reason": "Remove the broad migration study from the inverse links of the specific Hotel Comercial place record; PL039 retains its direct manifest, location-history and postcard sources.",
+        "fields": {
+          "placeIds": [
+            "PL039"
+          ]
+        }
       }
     },
     "Works": {
@@ -9498,6 +9505,14 @@
             "TE0021",
             "TE0025",
             "TE0026"
+          ]
+        }
+      },
+      "PL039": {
+        "reason": "Remove the broad migration study from the specific Hotel Comercial place record; PL039 retains its direct manifest, location-history and postcard sources.",
+        "fields": {
+          "sourceIds": [
+            "SRC0491"
           ]
         }
       }
