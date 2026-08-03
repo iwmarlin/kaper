@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 52,
+  "count": 53,
   "records": [
     {
       "id": "PNV0001",
@@ -1355,6 +1355,23 @@
       ],
       "sourceIds": [
         "SRC0629"
+      ]
+    },
+    {
+      "id": "PNV0056",
+      "variantName": "Ninon Steinhoff",
+      "variantType": "spelling_variant",
+      "identityScope": "single_person",
+      "evidenceContext": "authority_file",
+      "attestedWording": "Ninon Steinhoff",
+      "certainty": "confirmed",
+      "publicNote": "Form printed on the 1934 sheet of “Adieu” and used throughout this archive. The Bibliothèque nationale de France establishes the heading as Steinhof with one f and records Steinhoff expressly as a rejected form.",
+      "personIds": [
+        "P060"
+      ],
+      "sourceIds": [
+        "SRC0631",
+        "SRC0284"
       ]
     }
   ]
