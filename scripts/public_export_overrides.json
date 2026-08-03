@@ -4513,7 +4513,7 @@
             "P119"
           ],
           "mediaIds": [
-            "M0241"
+            "M269"
           ]
         }
       },
@@ -4538,7 +4538,7 @@
             "P044"
           ],
           "mediaIds": [
-            "M0242"
+            "M270"
           ]
         }
       },
@@ -4563,7 +4563,7 @@
             "P001"
           ],
           "mediaIds": [
-            "M0243"
+            "M271"
           ]
         }
       },
@@ -4588,7 +4588,7 @@
             "ORG069"
           ],
           "mediaIds": [
-            "M0244"
+            "M272"
           ],
           "timelineEventIds": [
             "TE0039"
@@ -4616,7 +4616,7 @@
             "P058"
           ],
           "mediaIds": [
-            "M0245"
+            "M273"
           ]
         }
       },
@@ -4639,7 +4639,7 @@
             "P017"
           ],
           "mediaIds": [
-            "M0246"
+            "M274"
           ]
         }
       },
@@ -4726,7 +4726,7 @@
             "P132"
           ],
           "mediaIds": [
-            "M0256"
+            "M284"
           ],
           "nameVariantIds": [
             "PNV0041"
@@ -5263,10 +5263,10 @@
           ]
         }
       },
-      "M0241": {
+      "M269": {
         "reason": "Add Henryk Gold's portrait (public domain per Culture.pl / Adam Mickiewicz Institute; original diapozytyw.pl) and wire it to his person page through the source→portrait chain, so P119 gains a portrait.",
         "fields": {
-          "id": "M0241",
+          "id": "M269",
           "title": "Henryk Gold — portrait photograph",
           "mediaType": "image",
           "storageType": "local",
@@ -5294,10 +5294,10 @@
           ]
         }
       },
-      "M0242": {
+      "M270": {
         "reason": "Add Joe May's portrait (public domain, 1919 Die Herrin der Welt cast-and-crew still via Wikimedia Commons) and wire it to his person page through the source->portrait chain.",
         "fields": {
-          "id": "M0242",
+          "id": "M270",
           "title": "Joe May — portrait (Die Herrin der Welt, 1919)",
           "mediaType": "image",
           "storageType": "local",
@@ -5325,10 +5325,10 @@
           ]
         }
       },
-      "M0243": {
+      "M271": {
         "reason": "Add a fair-use portrait of Alexis Granovsky (P001): non-free low-resolution image from Russian Wikipedia (originally kino-teatr.ru), used for scholarly identification of the director of Moscow Nights, for which Kaper wrote the score. Wired via the source->portrait chain.",
         "fields": {
-          "id": "M0243",
+          "id": "M271",
           "title": "Alexis Granovsky — portrait",
           "mediaType": "image",
           "storageType": "local",
@@ -5356,10 +5356,10 @@
           ]
         }
       },
-      "M0244": {
+      "M272": {
         "reason": "Publish the existing portrait crop from Eleonora Kaper's 1936 Declaration of Intention as a clearly identified derivative of that federal naturalization record, following the treatment of Bronisław Kaper's analogous portrait M235.",
         "fields": {
-          "id": "M0244",
+          "id": "M272",
           "title": "Eleonora Kaper — portrait from Declaration of Intention, 1936",
           "mediaType": "image",
           "storageType": "local",
@@ -5393,10 +5393,10 @@
           ]
         }
       },
-      "M0245": {
+      "M273": {
         "reason": "Add the existing low-resolution Disney Wiki portrait to Ned Washington's person record for scholarly identification, with a conservative fair-use status because the photographer, original publication and image rights holder are not identified.",
         "fields": {
-          "id": "M0245",
+          "id": "M273",
           "title": "Ned Washington — portrait photograph",
           "mediaType": "image",
           "storageType": "local",
@@ -5424,10 +5424,10 @@
           ]
         }
       },
-      "M0246": {
+      "M274": {
         "reason": "Show the existing Ernst Marischka portrait on his person record as a low-resolution identification image while explicitly preserving the unresolved provenance and rights status.",
         "fields": {
-          "id": "M0246",
+          "id": "M274",
           "title": "Ernst Marischka — portrait photograph",
           "mediaType": "image",
           "storageType": "local",
@@ -5524,10 +5524,10 @@
           ]
         }
       },
-      "M0256": {
+      "M284": {
         "reason": "Add the user-supplied Paramount portrait to Henri Garat's person record as a low-resolution fair-use identification image, without asserting public-domain status or an unsupported photographer.",
         "fields": {
-          "id": "M0256",
+          "id": "M284",
           "title": "Henri Garat — Paramount Studios portrait",
           "slug": "henri-garat-paramount-studios-portrait-m256",
           "mediaType": "image",
@@ -6808,7 +6808,7 @@
             "SRC0566"
           ],
           "mediaIds": [
-            "M0244"
+            "M272"
           ]
         }
       },
