@@ -493,9 +493,21 @@
         }
       },
       "SRC0038": {
-        "reason": "Correct the declaration number in the public slug to 74224, matching the archival citation and the document.",
+        "reason": "Correct the declaration number and date, and link the declaration to the documented residence at Château des Fleurs, 6626 Franklin Avenue.",
         "fields": {
-          "slug": "declaration-of-intention-no-74224-u-s-district-court-los-angeles-src0038"
+          "slug": "declaration-of-intention-no-74224-u-s-district-court-los-angeles-src0038",
+          "date": "1936-02-04",
+          "placeIds": [
+            "PL029"
+          ]
+        }
+      },
+      "SRC0566": {
+        "reason": "Link Eleonora Kaper's declaration to the same documented household address at Château des Fleurs, 6626 Franklin Avenue.",
+        "fields": {
+          "placeIds": [
+            "PL029"
+          ]
         }
       },
       "SRC0070": {
@@ -1902,9 +1914,12 @@
         }
       },
       "M115": {
-        "reason": "Correct the Declaration of Intention number in the public credit line to 74224.",
+        "reason": "Correct the Declaration of Intention number and link the document image to the residence address stated in the record.",
         "fields": {
-          "publicCreditLine": "U.S. District Court, Southern District of California, Los Angeles, Declaration of Intention no. 74224; National Archives and Records Administration, NAID 104017224."
+          "publicCreditLine": "U.S. District Court, Southern District of California, Los Angeles, Declaration of Intention no. 74224; National Archives and Records Administration, NAID 104017224.",
+          "placeIds": [
+            "PL029"
+          ]
         }
       },
       "M030": {
@@ -2527,6 +2542,12 @@
       }
     },
     "Timeline Events": {
+      "TE0036": {
+        "reason": "Correct the manifest address after direct inspection of the scan: it reads 6626 Franklin Avenue, the same Château des Fleurs address documented in Kaper's 1936 declaration.",
+        "fields": {
+          "longDescription": "Enters for permanent residence at Calexico, California, from Mexicali on 1 November 1935, travelling on foot with Eleonora. The manifest records 6626 Franklin Ave., Hollywood, as his U.S. destination; his Declaration of Intention four months later records the same address as his residence."
+        }
+      },
       "TE0030": {
         "reason": "Use the documented municipality of Montrouge instead of describing the Salabert studio as being in Paris.",
         "fields": {
@@ -2544,13 +2565,18 @@
         }
       },
       "TE0039": {
-        "reason": "Represent the two declarations filed on the same date: the verified NARA records show that both Bronisław and Eleonora Kaper filed Declarations of Intention in Los Angeles on 4 February 1936.",
+        "reason": "Represent the two declarations filed on the same date and connect the event to Kaper's precisely documented residence at Château des Fleurs, 6626 Franklin Avenue.",
         "fields": {
           "slug": "4-february-1936-declarations-of-intention",
           "title": "Declarations of Intention",
           "label": "4 Feb 1936 · Declarations of Intention",
           "shortDescription": "Bronisław and Eleonora Kaper file Declarations of Intention to become U.S. citizens in Los Angeles.",
-          "longDescription": "On 4 February 1936, Bronisław Kaper and Eleonora Kaper each filed a Declaration of Intention in the U.S. District Court for the Southern District of California, Los Angeles."
+          "longDescription": "On 4 February 1936, Bronisław Kaper and Eleonora Kaper each filed a Declaration of Intention in the U.S. District Court for the Southern District of California, Los Angeles. Bronisław Kaper’s declaration records him as residing at Château des Fleurs, 6626 Franklin Ave., Hollywood.",
+          "placeIds": [
+            "PL004",
+            "PL005",
+            "PL029"
+          ]
         }
       },
       "TE0019": {
@@ -2616,6 +2642,32 @@
       }
     },
     "Places": {
+      "PL029": {
+        "reason": "Correct the misread street number from 6628 to 6626, identify the address as Château des Fleurs, and consolidate its complete documentary, media and timeline graph in the existing place record.",
+        "fields": {
+          "displayName": "Château des Fleurs, 6626 Franklin Ave., Hollywood",
+          "authorizedName": "Château des Fleurs, 6626 Franklin Avenue, Hollywood, Los Angeles",
+          "latitude": 34.105,
+          "longitude": -118.3343,
+          "slug": "chateau-des-fleurs-6626-franklin-ave-hollywood",
+          "publicNote": "French Norman Revival apartment building completed in 1927 and designated Los Angeles Historic-Cultural Monument no. 799. Kaper’s 1 November 1935 immigration manifest records 6626 Franklin Avenue as his U.S. destination, and his Declaration of Intention dated 4 February 1936 records the same address as his residence.",
+          "timelineEventIds": [
+            "TE0036",
+            "TE0039"
+          ],
+          "mediaIds": [
+            "M286",
+            "M124",
+            "M115"
+          ],
+          "sourceIds": [
+            "SRC0039",
+            "SRC0038",
+            "SRC0566",
+            "SRC0636"
+          ]
+        }
+      },
       "PL021": {
         "reason": "State the verified municipality and city-level map precision without assigning the Paris office address or an unverified Montrouge street address to the studio.",
         "fields": {
@@ -4899,6 +4951,42 @@
           ],
           "primaryUrl": "https://ccfr.bnf.fr/portailccfr/ark:/16871/004a2132831"
         }
+      },
+      "SRC0636": {
+        "reason": "Document Château des Fleurs with a contemporary opening advertisement reproduced in an official City of Los Angeles historic-resource report, and connect that evidence to the corrected place and new media records.",
+        "fields": {
+          "id": "SRC0636",
+          "shortCitation": "Los Angeles Times, Château des Fleurs opening advertisement, 10 August 1927",
+          "fullCitation": "“Château des Fleurs” opening advertisement. Los Angeles Times, 10 August 1927. Reproduced in City of Los Angeles Department of City Planning, Historic-Cultural Monument application CHC-2018-5298-HCM, Historic Images, p. 117.",
+          "sourceType": "press_item",
+          "title": "Château des Fleurs opening advertisement",
+          "repository": "City of Los Angeles Department of City Planning",
+          "publication": "Los Angeles Times",
+          "date": "1927-08-10",
+          "accessDate": "2026-08-03",
+          "reliability": "high",
+          "sourceStatus": "verified",
+          "slug": "chateau-des-fleurs-opening-advertisement-1927-src0636",
+          "mediaIds": [
+            "M286"
+          ],
+          "placeIds": [
+            "PL029"
+          ],
+          "primaryUrl": "https://planning.lacity.gov/StaffRpt/InitialRpts/CHC-2018-5298-HCM.pdf",
+          "additionalLinks": [
+            {
+              "label": "Los Angeles Historic Places resource record",
+              "url": "https://hpla.lacity.org/report/0b20862b-39e3-490f-ad35-bf8d95f07b63",
+              "role": "institutional_record"
+            },
+            {
+              "label": "Historic-Cultural Monument designation report",
+              "url": "https://cityclerk.lacity.org/onlinedocs/2005/05-0519_rpt_chc.pdf",
+              "role": "institutional_record"
+            }
+          ]
+        }
       }
     },
     "Places": {
@@ -5549,6 +5637,41 @@
           ],
           "periods": [
             "european"
+          ]
+        }
+      },
+      "M286": {
+        "reason": "Add a contemporary public-domain opening advertisement as the visual record for Château des Fleurs and link it symmetrically to its source and place.",
+        "fields": {
+          "id": "M286",
+          "title": "Château des Fleurs — opening advertisement, 1927",
+          "slug": "chateau-des-fleurs-opening-advertisement-1927-m286",
+          "mediaType": "image",
+          "storageType": "local",
+          "assetPath": "assets/images/historical-context/chateau-des-fleurs-opening-ad-1927.jpg",
+          "assetPaths": [
+            "assets/images/historical-context/chateau-des-fleurs-opening-ad-1927.jpg"
+          ],
+          "assetCount": 1,
+          "externalUrl": "https://planning.lacity.gov/StaffRpt/InitialRpts/CHC-2018-5298-HCM.pdf",
+          "category": "place / context image",
+          "galleryStatus": "selected",
+          "period": "hollywood",
+          "sortOrder": 286,
+          "description": "Opening advertisement for the Hollywood apartment building documented as Bronisław Kaper’s residence in February 1936.",
+          "altText": "Black-and-white 1927 advertisement for Château des Fleurs, with an architectural drawing of the French Norman Revival apartment building above decorative text.",
+          "publicCaption": "Château des Fleurs, Franklin Avenue at Cherokee Street, Hollywood. Opening advertisement, 10 August 1927.",
+          "publicCreditLine": "Los Angeles Times, 10 August 1927; reproduced by the City of Los Angeles Department of City Planning.",
+          "rightsStatus": "ok",
+          "rightsNote": "Public domain in the United States: the advertisement was published in 1927. The displayed image is a crop from the reproduction in an official City of Los Angeles Department of City Planning report.",
+          "sourceIds": [
+            "SRC0636"
+          ],
+          "placeIds": [
+            "PL029"
+          ],
+          "periods": [
+            "hollywood"
           ]
         }
       }

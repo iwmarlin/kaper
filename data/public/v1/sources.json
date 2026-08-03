@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 564,
+  "count": 565,
   "records": [
     {
       "id": "SRC0001",
@@ -825,7 +825,7 @@
       "creator": "U.S. District Court, Los Angeles",
       "repository": "U.S. National Archives and Records Administration / National Archives Catalog",
       "publication": "National Archives Catalog",
-      "date": "1936",
+      "date": "1936-02-04",
       "accessDate": "2026-06-26",
       "reliability": "high",
       "sourceStatus": "verified_with_attribution_note",
@@ -843,6 +843,9 @@
       ],
       "personIds": [
         "P009"
+      ],
+      "placeIds": [
+        "PL029"
       ],
       "primaryUrl": "https://catalog.archives.gov/id/104017224?objectPage=27#object-thumb--27",
       "identifiers": [
@@ -17553,6 +17556,9 @@
       "timelineEventIds": [
         "TE0039"
       ],
+      "placeIds": [
+        "PL029"
+      ],
       "primaryUrl": "https://catalog.archives.gov/id/278166391?objectPage=278#object-thumb--278",
       "identifiers": [
         {
@@ -19184,6 +19190,39 @@
       "primaryUrl": "https://digital.library.ucla.edu/catalog/ark:/21198/zz002d9ndg",
       "placeIds": [
         "PL043"
+      ]
+    },
+    {
+      "id": "SRC0636",
+      "shortCitation": "Los Angeles Times, Château des Fleurs opening advertisement, 10 August 1927",
+      "fullCitation": "“Château des Fleurs” opening advertisement. Los Angeles Times, 10 August 1927. Reproduced in City of Los Angeles Department of City Planning, Historic-Cultural Monument application CHC-2018-5298-HCM, Historic Images, p. 117.",
+      "sourceType": "press_item",
+      "title": "Château des Fleurs opening advertisement",
+      "repository": "City of Los Angeles Department of City Planning",
+      "publication": "Los Angeles Times",
+      "date": "1927-08-10",
+      "accessDate": "2026-08-03",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "slug": "chateau-des-fleurs-opening-advertisement-1927-src0636",
+      "mediaIds": [
+        "M286"
+      ],
+      "placeIds": [
+        "PL029"
+      ],
+      "primaryUrl": "https://planning.lacity.gov/StaffRpt/InitialRpts/CHC-2018-5298-HCM.pdf",
+      "additionalLinks": [
+        {
+          "label": "Los Angeles Historic Places resource record",
+          "url": "https://hpla.lacity.org/report/0b20862b-39e3-490f-ad35-bf8d95f07b63",
+          "role": "institutional_record"
+        },
+        {
+          "label": "Historic-Cultural Monument designation report",
+          "url": "https://cityclerk.lacity.org/onlinedocs/2005/05-0519_rpt_chc.pdf",
+          "role": "institutional_record"
+        }
       ]
     }
   ]

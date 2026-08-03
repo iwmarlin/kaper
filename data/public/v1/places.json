@@ -859,27 +859,33 @@
     },
     {
       "id": "PL029",
-      "displayName": "6628 Franklin Ave., Hollywood",
-      "authorizedName": "6628 Franklin Avenue, Hollywood, Los Angeles",
+      "displayName": "Château des Fleurs, 6626 Franklin Ave., Hollywood",
+      "authorizedName": "Château des Fleurs, 6626 Franklin Avenue, Hollywood, Los Angeles",
       "placeType": "address",
       "city": "Hollywood / Los Angeles",
       "region": "California",
       "country": "United States",
-      "latitude": 34.1053,
-      "longitude": -118.335,
+      "latitude": 34.105,
+      "longitude": -118.3343,
       "period": "hollywood",
-      "slug": "6628-franklin-ave-hollywood",
-      "publicNote": "Hollywood address recorded in Kaper’s 1935 Calexico immigration manifest as his U.S. address/destination context.",
+      "slug": "chateau-des-fleurs-6626-franklin-ave-hollywood",
+      "publicNote": "French Norman Revival apartment building completed in 1927 and designated Los Angeles Historic-Cultural Monument no. 799. Kaper’s 1 November 1935 immigration manifest records 6626 Franklin Avenue as his U.S. destination, and his Declaration of Intention dated 4 February 1936 records the same address as his residence.",
       "mapPrecision": "address_level",
       "publicScope": "map_and_detail",
       "timelineEventIds": [
-        "TE0036"
+        "TE0036",
+        "TE0039"
       ],
       "mediaIds": [
-        "M124"
+        "M286",
+        "M124",
+        "M115"
       ],
       "sourceIds": [
-        "SRC0039"
+        "SRC0039",
+        "SRC0038",
+        "SRC0566",
+        "SRC0636"
       ],
       "periods": [
         "hollywood"

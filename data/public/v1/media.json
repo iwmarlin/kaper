@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 241,
+  "count": 242,
   "records": [
     {
       "id": "M001",
@@ -3902,6 +3902,9 @@
       "galleryStatus": "eligible",
       "sourceIds": [
         "SRC0038"
+      ],
+      "placeIds": [
+        "PL029"
       ],
       "timelineEventIds": [
         "TE0039"
@@ -8175,6 +8178,38 @@
       ],
       "placeIds": [
         "PL043"
+      ]
+    },
+    {
+      "id": "M286",
+      "title": "Château des Fleurs — opening advertisement, 1927",
+      "slug": "chateau-des-fleurs-opening-advertisement-1927-m286",
+      "mediaType": "image",
+      "storageType": "local",
+      "assetPath": "assets/images/historical-context/chateau-des-fleurs-opening-ad-1927.jpg",
+      "assetPaths": [
+        "assets/images/historical-context/chateau-des-fleurs-opening-ad-1927.jpg"
+      ],
+      "assetCount": 1,
+      "externalUrl": "https://planning.lacity.gov/StaffRpt/InitialRpts/CHC-2018-5298-HCM.pdf",
+      "category": "place / context image",
+      "galleryStatus": "selected",
+      "period": "hollywood",
+      "sortOrder": 286,
+      "description": "Opening advertisement for the Hollywood apartment building documented as Bronisław Kaper’s residence in February 1936.",
+      "altText": "Black-and-white 1927 advertisement for Château des Fleurs, with an architectural drawing of the French Norman Revival apartment building above decorative text.",
+      "publicCaption": "Château des Fleurs, Franklin Avenue at Cherokee Street, Hollywood. Opening advertisement, 10 August 1927.",
+      "publicCreditLine": "Los Angeles Times, 10 August 1927; reproduced by the City of Los Angeles Department of City Planning.",
+      "rightsStatus": "ok",
+      "rightsNote": "Public domain in the United States: the advertisement was published in 1927. The displayed image is a crop from the reproduction in an official City of Los Angeles Department of City Planning report.",
+      "sourceIds": [
+        "SRC0636"
+      ],
+      "placeIds": [
+        "PL029"
+      ],
+      "periods": [
+        "hollywood"
       ]
     }
   ]
