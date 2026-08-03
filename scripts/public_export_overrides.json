@@ -2711,9 +2711,11 @@
             "SRC0491",
             "SRC0637",
             "SRC0638",
-            "SRC0639"
+            "SRC0639",
+            "SRC0640"
           ],
           "mediaIds": [
+            "M287",
             "M124"
           ]
         }
@@ -5079,6 +5081,30 @@
           ],
           "primaryUrl": "https://repositorioinstitucional.uabc.mx/bitstream/20.500.12930/5336/1/HIS018732.pdf"
         }
+      },
+      "SRC0640": {
+        "reason": "Add the item-level web record for the historical Hotel Comercial postcard, keeping its unidentified authorship and undated status explicit and linking it symmetrically to the image and place.",
+        "fields": {
+          "id": "SRC0640",
+          "shortCitation": "México en Fotos, “Hotel Comercial — Mexicali, Baja California”, photo MX13895529520026",
+          "fullCitation": "“Hotel Comercial. Mexicali, B.C. / Comercial Hotel.” Undated historical postcard; photographer and publisher unidentified. México en Fotos, photo MX13895529520026; uploaded by centli, 13 January 2014.",
+          "sourceType": "image_or_photograph",
+          "title": "Hotel Comercial — Mexicali, Baja California",
+          "creator": "Photographer and postcard publisher unidentified",
+          "repository": "México en Fotos",
+          "publication": "México en Fotos",
+          "accessDate": "2026-08-03",
+          "reliability": "medium",
+          "sourceStatus": "verified_with_attribution_note",
+          "slug": "hotel-comercial-mexicali-postcard-src0640",
+          "mediaIds": [
+            "M287"
+          ],
+          "placeIds": [
+            "PL039"
+          ],
+          "primaryUrl": "https://www.mexicoenfotos.com/antiguas/baja-california/mexicali/hotel-comercial-MX13895529520026"
+        }
       }
     },
     "Places": {
@@ -5761,6 +5787,41 @@
           ],
           "placeIds": [
             "PL029"
+          ],
+          "periods": [
+            "hollywood"
+          ]
+        }
+      },
+      "M287": {
+        "reason": "Add the historical Hotel Comercial postcard as a limited-resolution fair-use place image, with an item-level source and reciprocal place link; do not claim public-domain status or identified authorship.",
+        "fields": {
+          "id": "M287",
+          "title": "Hotel Comercial, Mexicali — historical postcard",
+          "slug": "hotel-comercial-mexicali-historical-postcard-m287",
+          "mediaType": "image",
+          "storageType": "local",
+          "assetPath": "assets/images/historical-context/hotel-comercial-mexicali.jpg",
+          "assetPaths": [
+            "assets/images/historical-context/hotel-comercial-mexicali.jpg"
+          ],
+          "assetCount": 1,
+          "externalUrl": "https://www.mexicoenfotos.com/antiguas/baja-california/mexicali/hotel-comercial-MX13895529520026",
+          "category": "place / context image",
+          "galleryStatus": "selected",
+          "period": "hollywood",
+          "sortOrder": 123,
+          "description": "Historical postcard view explicitly captioned Hotel Comercial in Mexicali, the hotel recorded as Kaper’s last permanent residence abroad in his 1 November 1935 immigration manifest.",
+          "altText": "Sepia postcard view of the arcaded Hotel Comercial in Mexicali, with palm trees and a water tower beside the building.",
+          "publicCaption": "Hotel Comercial in Mexicali, shown in an undated historical postcard. Kaper’s 1935 immigration manifest records this hotel as his last permanent residence abroad.",
+          "publicCreditLine": "Historical postcard, photographer and publisher unidentified; México en Fotos, photo MX13895529520026, uploaded by centli.",
+          "rightsStatus": "permission_needed_or_fair_use_claimed",
+          "rightsNote": "Copyright status and the original photographer and publisher have not been identified. This 800 × 493 pixel reproduction is retained at limited screen resolution for non-commercial scholarly identification of the Hotel Comercial named in Kaper’s immigration record. It does not substitute for a collectible or archival original; México en Fotos is credited and linked as the immediate source.",
+          "sourceIds": [
+            "SRC0640"
+          ],
+          "placeIds": [
+            "PL039"
           ],
           "periods": [
             "hollywood"
