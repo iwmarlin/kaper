@@ -1,4 +1,4 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=d8518808b0";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=0d2a21aec1";
 import {
   debounce,
   escapeHtml,
@@ -23,16 +23,38 @@ import {
   resolveIds,
   safeExternalUrl,
   typeBadge,
-} from "./core.js?v=d8518808b0";
+} from "./core.js?v=0d2a21aec1";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 mountSiteChrome("media");
 
 const controls = {
   search: document.querySelector("#media-search"),
-  type: document.querySelector("#media-type"),
+  category: document.querySelector("#media-category"),
   period: document.querySelector("#media-period"),
+  rights: document.querySelector("#media-rights"),
   scope: document.querySelector("#media-scope"),
+};
+
+// The gallery used to filter on mediaType, which sorts 240 items into five
+// buckets of which one — image — holds 188 of them, so the control barely
+// discriminated. Category is the axis that actually separates a portrait from
+// a press clipping from a film poster. Rights is exposed because this archive
+// records them per item and a reader looking for a reusable image should be
+// able to ask for one.
+const CATEGORY_LABELS = {
+  "portrait": "Portraits",
+  "press clipping": "Press clippings",
+  "place / context image": "Places and contexts",
+  "film poster": "Film posters",
+  "film-periodical cover": "Film-periodical covers",
+  "audio/video reference": "Audio and video",
+  "sheet music": "Sheet music",
+  "archival document": "Archival documents",
+  "trade advertisement": "Trade advertisements",
+  "document gallery": "Document galleries",
+  "lobby card / title card": "Lobby and title cards",
+  "event photograph": "Event photographs",
 };
 const target = document.querySelector("#media-results");
 const countTarget = document.querySelector("#media-count");
@@ -78,12 +100,12 @@ function curatedOrder(items) {
 try {
   const { media, sources } = await loadTables(["media", "sources"]);
   const sourcesById = indexById(sources);
-  addOptions(controls.type, media.map((item) => item.mediaType));
+  addOptions(controls.category, media.map((item) => item.category), (value) => CATEGORY_LABELS[value] || humanize(value));
   const availablePeriods = new Set(media.flatMap(periodValues));
   addOptions(controls.period, PERIOD_ORDER.filter((value) => availablePeriods.has(value)), periodLabel, true);
   const indexed = media.map((item) => ({
     ...item,
-    _search: normalizeSearch([item.title, item.category, item.publicCaption, item.description, ...periodValues(item), item.mediaType].filter(Boolean).join(" ")),
+    _search: normalizeSearch([item.title, item.category, item.publicCaption, item.description, item.publicCreditLine, ...periodValues(item), item.category].filter(Boolean).join(" ")),
   }));
 
   function render() {
@@ -91,14 +113,16 @@ try {
     current = indexed
       .filter((item) => (
         (!query || item._search.includes(query))
-        && (!controls.type.value || item.mediaType === controls.type.value)
+        && (!controls.category.value || item.category === controls.category.value)
         && matchesPeriod(item, controls.period.value)
+        && (!controls.rights.value || item.rightsStatus === controls.rights.value)
         && (controls.scope.value === "all" || item.galleryStatus === controls.scope.value)
       ));
     const isDefaultCuratedView = controls.scope.value === "selected"
       && !query
-      && !controls.type.value
-      && !controls.period.value;
+      && !controls.category.value
+      && !controls.period.value
+      && !controls.rights.value;
     current = isDefaultCuratedView ? curatedOrder(current) : current.sort(compareMedia);
     const shown = current.slice(0, showingAll ? current.length : visible);
     countTarget.innerHTML = `<strong>Showing ${shown.length}</strong> of ${current.length} ${current.length === 1 ? "item" : "items"}`;
@@ -113,7 +137,7 @@ try {
       showAll.setAttribute("aria-label", `Show all ${current.length} media items`);
     }
     if (!shown.length) {
-      target.innerHTML = `<div class="empty-state"><h2>No matching media</h2><p>Try a broader search or another gallery scope.</p></div>`;
+      target.innerHTML = `<div class="empty-state"><h2>No matching media</h2><p>Try a broader search, another kind, or show all public media.</p></div>`;
       return;
     }
     target.innerHTML = shown.map((item) => {
@@ -157,11 +181,12 @@ try {
 
   const resetAndRender = () => { visible = PAGE_SIZE; showingAll = false; render(); };
   controls.search.addEventListener("input", debounce(resetAndRender));
-  for (const control of [controls.type, controls.period, controls.scope]) control.addEventListener("change", resetAndRender);
+  for (const control of [controls.category, controls.period, controls.rights, controls.scope]) control.addEventListener("change", resetAndRender);
   document.querySelector("#media-reset").addEventListener("click", () => {
     controls.search.value = "";
-    controls.type.value = "";
+    controls.category.value = "";
     controls.period.value = "";
+    controls.rights.value = "";
     controls.scope.value = "selected";
     resetAndRender();
   });

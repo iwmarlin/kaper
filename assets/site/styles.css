@@ -1037,6 +1037,13 @@ main {
   gap: 0.75rem;
 }
 
+/* The media gallery carries one control more than the other listings —
+   kind, period, rights and scope — so it gets its own track count rather
+   than squeezing five fields into four columns. */
+.filters__grid--media {
+  grid-template-columns: minmax(12rem, 1.6fr) repeat(4, minmax(7.5rem, 1fr));
+}
+
 .filters__grid--timeline {
   grid-template-columns: minmax(16rem, 2fr) minmax(11rem, 1fr);
   width: min(100%, 52rem);

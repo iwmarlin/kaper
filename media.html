@@ -12,7 +12,7 @@
   <link rel="canonical" href="https://iwmarlin.github.io/kaper/media.html">
   <link rel="preload" href="assets/fonts/kaper-sans.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/kaper-serif.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/site/styles.css?v=d8518808b0">
+  <link rel="stylesheet" href="assets/site/styles.css?v=0d2a21aec1">
   <title>Media — Bronisław Kaper, 1902–1939</title>
   <meta property="og:image" content="https://iwmarlin.github.io/kaper/assets/images/portraits/kaper-mature.jpg">
   <meta property="og:image:alt" content="Bronisław Kaper">
@@ -43,19 +43,27 @@
           <input id="media-search" type="search" placeholder="Title, category, caption…" autocomplete="off">
         </div>
         <div class="field">
-          <label for="media-type">Media type</label>
-          <select id="media-type"><option value="">All types</option></select>
+          <label for="media-category">Kind</label>
+          <select id="media-category"><option value="">All kinds</option></select>
         </div>
         <div class="field">
           <label for="media-period">Period</label>
           <select id="media-period"><option value="">All periods</option></select>
         </div>
         <div class="field">
-          <label for="media-scope">Gallery scope</label>
+          <label for="media-rights">Rights</label>
+          <select id="media-rights">
+            <option value="">Any rights status</option>
+            <option value="ok">Freely usable</option>
+            <option value="permission_needed_or_fair_use_claimed">Rights not cleared</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="media-scope">Show</label>
           <select id="media-scope">
             <option value="selected">Curated selection</option>
-            <option value="external_link_only">External references</option>
             <option value="all">All public media</option>
+            <option value="external_link_only">External references only</option>
           </select>
         </div>
       </div>
@@ -73,6 +81,6 @@
     </section>
   </main>
   <footer class="site-footer" data-site-footer></footer>
-  <script type="module" src="assets/site/gallery.js?v=d8518808b0"></script>
+  <script type="module" src="assets/site/gallery.js?v=0d2a21aec1"></script>
 </body>
 </html>
