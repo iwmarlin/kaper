@@ -1,10 +1,10 @@
 {
   "schemaVersion": "1.0.0",
   "stats": [
-    280,
+    281,
     54,
     44,
-    559
+    564
   ],
   "portrait": {
     "id": "M048",
@@ -21,7 +21,7 @@
     "altText": "Portrait of Bronisław Kaper as a young man.",
     "rightsStatus": "ok",
     "rightsNote": "Reproduced by permission of the University of Warsaw Archives.",
-    "sortOrder": 1048,
+    "sortOrder": 48,
     "slug": "timeline-high-school-graduation-kaper-young0",
     "publicCaption": "Portrait of Bronisław Kaper as a young man, from his University of Warsaw student-file materials.",
     "publicCreditLine": "Archiwum Uniwersytetu Warszawskiego, Bronisław Kaper student file, RP 6854; reproduced by permission.",
@@ -232,7 +232,7 @@
       "altText": "German trade-press advertisement for the film Der Korvettenkapitän.",
       "rightsStatus": "ok",
       "rightsNote": "Public domain: German trade advertisement published in 1930. Treat as a public-domain press advertisement unless a separately credited photograph or artwork layer is later identified.",
-      "sortOrder": 1037,
+      "sortOrder": 37,
       "slug": "timeline-life-timeline-korvettenkapitan",
       "publicCaption": "Trade-press advertisement for Der Korvettenkapitän, published in Der Kinematograph in 1930.",
       "publicCreditLine": "Der Kinematograph, 1930, public domain.",
@@ -258,6 +258,40 @@
       ]
     },
     {
+      "id": "M043",
+      "title": "Fritz Rotter — portrait",
+      "mediaType": "image",
+      "storageType": "local",
+      "period": "european",
+      "description": "Portrait of Fritz Rotter, the lyricist associated with Kaper’s early German film songs.",
+      "assetPath": "assets/images/portraits/fritz-rotter.jpg",
+      "assetPaths": [
+        "assets/images/portraits/fritz-rotter.jpg"
+      ],
+      "assetCount": 1,
+      "altText": "Portrait of the lyricist Fritz Rotter.",
+      "rightsStatus": "ok",
+      "rightsNote": "The linked source identifies this item as public domain or otherwise free of known copyright restrictions; attribution is retained.",
+      "sortOrder": 43,
+      "slug": "timeline-life-timeline-fritz-rotter",
+      "publicCaption": "Portrait of Fritz Rotter, the lyricist associated with Kaper’s early German film songs.",
+      "publicCreditLine": "Becker & Maass / Wikimedia Commons, public domain.",
+      "category": "portrait",
+      "galleryStatus": "selected",
+      "sourceIds": [
+        "SRC0330"
+      ],
+      "timelineEventIds": [
+        "TE0048"
+      ],
+      "heroTimelineEventIds": [
+        "TE0048"
+      ],
+      "periods": [
+        "european"
+      ]
+    },
+    {
       "id": "M048",
       "title": "Bronisław Kaper — portrait as a young man",
       "mediaType": "image",
@@ -272,7 +306,7 @@
       "altText": "Portrait of Bronisław Kaper as a young man.",
       "rightsStatus": "ok",
       "rightsNote": "Reproduced by permission of the University of Warsaw Archives.",
-      "sortOrder": 1048,
+      "sortOrder": 48,
       "slug": "timeline-high-school-graduation-kaper-young0",
       "publicCaption": "Portrait of Bronisław Kaper as a young man, from his University of Warsaw student-file materials.",
       "publicCreditLine": "Archiwum Uniwersytetu Warszawskiego, Bronisław Kaper student file, RP 6854; reproduced by permission.",
@@ -293,57 +327,13 @@
       "periods": [
         "warsaw"
       ]
-    },
-    {
-      "id": "M053",
-      "title": "Auf Wiedersehen — sheet music cover",
-      "mediaType": "sheet music",
-      "storageType": "local",
-      "period": "european",
-      "description": "Sheet-music cover for “Tot Weerziens, Mijnheer Jansen” (“Auf Wiederseh’n, Herr Doktor!”), Wiener Boheme Verlag, W.B.V. 1328, 1929.",
-      "externalUrl": "https://imagesmusicales.be/search/composer/B.-Kaper/3412/ShowData/8/Submit/",
-      "assetPath": "assets/images/sheet-music/auf-wiedersehen.jpg",
-      "assetPaths": [
-        "assets/images/sheet-music/auf-wiedersehen.jpg"
-      ],
-      "assetCount": 1,
-      "altText": "Sheet-music cover for “Auf Wiedersehen,” published by Wiener Boheme Verlag in 1929.",
-      "rightsStatus": "permission_needed_or_fair_use_claimed",
-      "rightsNote": "The cover artwork is signed Hassel, but the illustrator’s identity and rights history have not been established. A reduced-resolution image is used for scholarly identification and commentary; rights in the underlying music and lyrics are separate.",
-      "sortOrder": 1053,
-      "slug": "timeline-first-publications-and-recordings-with-fritz-rotter-auf-wiedersehen",
-      "publicCaption": "Sheet-music cover for “Tot Weerziens, Mijnheer Jansen” (“Auf Wiederseh’n, Herr Doktor!”), Wiener Boheme Verlag, W.B.V. 1328, 1929.",
-      "publicCreditLine": "Images Musicales; Wiener Boheme Verlag, W.B.V. 1328 (1929); cover artwork signed Hassel.",
-      "category": "sheet music",
-      "galleryStatus": "selected",
-      "organizationIds": [
-        "ORG029"
-      ],
-      "sourceIds": [
-        "SRC0358"
-      ],
-      "workIds": [
-        "W-S010"
-      ],
-      "songIds": [
-        "S010"
-      ],
-      "timelineEventIds": [
-        "TE0021"
-      ],
-      "heroTimelineEventIds": [
-        "TE0021"
-      ],
-      "periods": [
-        "european"
-      ]
     }
   ],
   "atAGlance": {
     "byType": [
       {
         "label": "Songs",
-        "count": 203
+        "count": 204
       },
       {
         "label": "Films",
@@ -358,12 +348,12 @@
       {
         "label": "European period",
         "note": "1926–1934",
-        "count": 176
+        "count": 178
       },
       {
         "label": "Hollywood",
         "note": "1935–1939",
-        "count": 97
+        "count": 96
       },
       {
         "label": "Warsaw",
@@ -374,7 +364,7 @@
     "collaborators": [
       {
         "name": "Walter Jurmann",
-        "count": 193
+        "count": 194
       },
       {
         "name": "Fritz Rotter",
@@ -390,7 +380,7 @@
       "end": 1939
     },
     "certainty": {
-      "confirmed": 275,
+      "confirmed": 276,
       "probable": 5,
       "uncertain": 0
     }

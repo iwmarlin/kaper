@@ -1,13 +1,18 @@
 {
-  "sourceImages": 203,
-  "derivativeFiles": 585,
-  "sourceBytes": 75172750,
-  "derivativeBytes": 45200002,
+  "sourceImages": 204,
+  "derivativeFiles": 589,
+  "sourceBytes": 75403154,
+  "derivativeBytes": 45428434,
   "largestDerivative": {
     "path": "assets/generated/responsive/harmonia-kw-27031929-228d273f069a/1176.webp",
     "bytes": 805840
   },
-  "homePayloadBytes": 11743,
+  "incremental": {
+    "encoded": 1,
+    "reused": 203,
+    "removedStaleDirectories": 0
+  },
+  "homePayloadBytes": 11079,
   "homePortrait": {
     "width": 2499,
     "height": 2421,
