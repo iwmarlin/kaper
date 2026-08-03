@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 1075,
+  "count": 1077,
   "records": [
     {
       "id": "CON-F001-C-P009",
@@ -18780,6 +18780,44 @@
       ],
       "nameVariantIds": [
         "PNV0052"
+      ]
+    },
+    {
+      "id": "CON-S096-CON-P009",
+      "role": "conductor",
+      "nameAsPrinted": "Kaper",
+      "creditAsPrinted": "orch sous la dir du compositeur Kaper",
+      "evidenceContext": "recording_label",
+      "scopeNote": "Orchestra conducted by Bronisław Kaper on Salabert 3382, which couples “À Paris, tiguidiguidi” with “Le plus petit baiser” from Une femme au volant. The credit is printed once for the whole disc and applies to both sides; it was previously recorded only against the coupling. This is not a composer credit for the song.",
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S096"
+      ],
+      "personIds": [
+        "P009"
+      ],
+      "sourceIds": [
+        "SRC0300"
+      ],
+      "nameVariantIds": [
+        "PNV0026"
+      ]
+    },
+    {
+      "id": "CON-S116-CON-P009",
+      "role": "conductor",
+      "nameAsPrinted": "Kaper",
+      "evidenceContext": "recording_label",
+      "scopeNote": "Orchestra conducted by Bronisław Kaper on Salabert 3384, the Henry Garat recording of “Pourvu qu'on ait vingt ans” from Une femme au volant, issued 7 November 1933. The conducting credit is stated in the source already cited for the song's composer, lyricist and publisher, but had not been entered as a contribution. This is a performance credit and separate from his composer credit for the same song.",
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S116"
+      ],
+      "personIds": [
+        "P009"
+      ],
+      "sourceIds": [
+        "SRC0115"
       ]
     }
   ]
