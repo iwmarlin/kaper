@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 279,
+  "count": 281,
   "records": [
     {
       "id": "W-F001",
@@ -1168,7 +1168,8 @@
         "TE0052"
       ],
       "titleVariantIds": [
-        "TV0284"
+        "TV0284",
+        "TV0308"
       ],
       "contributionIds": [
         "CON-F023-C-P009",
@@ -6247,13 +6248,17 @@
         "ORG029"
       ],
       "relationIds": [
-        "REL0036"
+        "REL0036",
+        "REL0198"
       ],
       "songIds": [
         "S068"
       ],
       "periods": [
         "european"
+      ],
+      "titleVariantIds": [
+        "TV0307"
       ]
     },
     {
@@ -6561,7 +6566,8 @@
       ],
       "titleVariantIds": [
         "TV0151",
-        "TV0275"
+        "TV0275",
+        "TV0306"
       ],
       "contributionIds": [
         "CON-S076-C-P009",
@@ -6585,7 +6591,8 @@
       "relationIds": [
         "REL0041",
         "REL0145",
-        "REL0155"
+        "REL0155",
+        "REL0197"
       ],
       "songIds": [
         "S076"
@@ -11877,6 +11884,86 @@
       ],
       "periods": [
         "hollywood"
+      ]
+    },
+    {
+      "id": "W-S214",
+      "title": "Ninon, ach uśmiechnij się!",
+      "slug": "ninon-ach-usmiechnij-sie",
+      "sortTitle": "Ninon, ach uśmiechnij się!",
+      "workType": "Song",
+      "year": 1933,
+      "period": "european",
+      "certainty": "confirmed",
+      "publicNote": "Polish-language version, documented by the Odeon disc O. 236842 sung by Jan Kiepura, which names the film by its Polish release title, Zdobyć cię muszę. The disc is undated beyond the catalogue's [post 1930]; the year given here follows the film.",
+      "displayOnSite": true,
+      "publicScope": "standalone_page",
+      "sourceIds": [
+        "SRC0633"
+      ],
+      "contributionIds": [
+        "CON-S214-C-P009",
+        "CON-S214-C-P077",
+        "CON-S214-L-P156",
+        "CON-S214-P-P117"
+      ],
+      "personIds": [
+        "P009",
+        "P077",
+        "P117",
+        "P156"
+      ],
+      "organizationIds": [
+        "ORG115"
+      ],
+      "relationIds": [
+        "REL0197"
+      ],
+      "songIds": [
+        "S214"
+      ],
+      "periods": [
+        "european"
+      ]
+    },
+    {
+      "id": "W-S215",
+      "title": "Signorina, signorina",
+      "slug": "signorina-signorina-pl",
+      "sortTitle": "Signorina, signorina",
+      "workType": "Song",
+      "year": 1933,
+      "period": "european",
+      "certainty": "confirmed",
+      "publicNote": "Polish-language version, documented by the Odeon disc O. 236842 sung by Jan Kiepura, which names the film by its Polish release title, Zdobyć cię muszę. The disc is undated beyond the catalogue's [post 1930]; the year given here follows the film.",
+      "displayOnSite": true,
+      "publicScope": "standalone_page",
+      "sourceIds": [
+        "SRC0633"
+      ],
+      "contributionIds": [
+        "CON-S215-C-P009",
+        "CON-S215-C-P077",
+        "CON-S215-L-P156",
+        "CON-S215-P-P117"
+      ],
+      "personIds": [
+        "P009",
+        "P077",
+        "P117",
+        "P156"
+      ],
+      "organizationIds": [
+        "ORG115"
+      ],
+      "relationIds": [
+        "REL0198"
+      ],
+      "songIds": [
+        "S215"
+      ],
+      "periods": [
+        "european"
       ]
     }
   ]

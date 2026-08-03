@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 136,
+  "count": 137,
   "records": [
     {
       "id": "P001",
@@ -731,7 +731,9 @@
         "CON-S212-C-P009",
         "CON-S213-C-P009",
         "CON-S096-CON-P009",
-        "CON-S116-CON-P009"
+        "CON-S116-CON-P009",
+        "CON-S214-C-P009",
+        "CON-S215-C-P009"
       ],
       "nameVariantIds": [
         "PNV0001",
@@ -1027,7 +1029,9 @@
         "W-S210",
         "W-S211",
         "W-S212",
-        "W-S213"
+        "W-S213",
+        "W-S214",
+        "W-S215"
       ],
       "birthYear": 1902,
       "deathYear": 1983,
@@ -3214,7 +3218,9 @@
         "CON-S202-C-P077",
         "CON-S204-C-P077",
         "CON-S212-C-P077",
-        "CON-S213-C-P077"
+        "CON-S213-C-P077",
+        "CON-S214-C-P077",
+        "CON-S215-C-P077"
       ],
       "nameVariantIds": [
         "PNV0005",
@@ -3421,7 +3427,9 @@
         "W-S202",
         "W-S204",
         "W-S212",
-        "W-S213"
+        "W-S213",
+        "W-S214",
+        "W-S215"
       ],
       "birthYear": 1903,
       "deathYear": 1971,
@@ -4112,11 +4120,15 @@
       ],
       "contributionIds": [
         "CON-S076-P-P117",
-        "CON-S077-P-P117"
+        "CON-S077-P-P117",
+        "CON-S214-P-P117",
+        "CON-S215-P-P117"
       ],
       "workIds": [
         "W-S076",
-        "W-S077"
+        "W-S077",
+        "W-S214",
+        "W-S215"
       ],
       "birthYear": 1902,
       "deathYear": 1966,
@@ -5145,6 +5157,34 @@
       ],
       "workIds": [
         "W-S123"
+      ]
+    },
+    {
+      "id": "P156",
+      "displayName": "Marcella Halicz",
+      "sortName": "Halicz, Marcella",
+      "authorizedName": "Halicz, Marcella",
+      "slug": "marcella-halicz",
+      "primaryRole": "lyricist",
+      "roles": [
+        "lyricist"
+      ],
+      "authorityUrl": "BN: https://dbn.bn.org.pl/descriptor-details/9810691594205606\nVIAF: https://viaf.org/viaf/302995408\nNUKAT: http://nukat.edu.pl/aut/n2014185547\nISNI: https://isni.org/isni/0000000409396902\nWikidata: https://www.wikidata.org/wiki/Q95678216",
+      "sourceIds": [
+        "SRC0633",
+        "SRC0634"
+      ],
+      "nameVariantIds": [
+        "PNV0057",
+        "PNV0058"
+      ],
+      "contributionIds": [
+        "CON-S214-L-P156",
+        "CON-S215-L-P156"
+      ],
+      "workIds": [
+        "W-S214",
+        "W-S215"
       ]
     }
   ]

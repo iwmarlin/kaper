@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 189,
+  "count": 191,
   "records": [
     {
       "id": "REL0001",
@@ -3383,6 +3383,48 @@
       "sourceIds": [
         "SRC0532",
         "SRC0624"
+      ]
+    },
+    {
+      "id": "REL0197",
+      "relationType": "language_version_of",
+      "targetWorkTitle": "Ninon, lach mir einmal zu",
+      "direction": "source_to_target",
+      "publicNote": "“Ninon, ach uśmiechnij się!” is the Polish-language version of “Ninon, lach mir einmal zu”, documented by the Odeon disc sung by Jan Kiepura.",
+      "certainty": "confirmed",
+      "sourceWorkIds": [
+        "W-S214"
+      ],
+      "targetWorkIds": [
+        "W-S076"
+      ],
+      "personIds": [
+        "P156",
+        "P117"
+      ],
+      "sourceIds": [
+        "SRC0633"
+      ]
+    },
+    {
+      "id": "REL0198",
+      "relationType": "language_version_of",
+      "targetWorkTitle": "Signorina, Signorina, komm zu mir",
+      "direction": "source_to_target",
+      "publicNote": "“Signorina, signorina” is the Polish-language version of “Signorina, Signorina, komm zu mir”, documented by the Odeon disc sung by Jan Kiepura.",
+      "certainty": "confirmed",
+      "sourceWorkIds": [
+        "W-S215"
+      ],
+      "targetWorkIds": [
+        "W-S068"
+      ],
+      "personIds": [
+        "P156",
+        "P117"
+      ],
+      "sourceIds": [
+        "SRC0633"
       ]
     }
   ]

@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 561,
+  "count": 563,
   "records": [
     {
       "id": "SRC0001",
@@ -19081,6 +19081,81 @@
         "P079"
       ],
       "primaryUrl": "https://catalogue.bnf.fr/ark:/12148/cb148429497"
+    },
+    {
+      "id": "SRC0633",
+      "shortCitation": "BN, Odeon O. 236842 — “Ninon, ach uśmiechnij się!” / “Signorina, signorina” (Kiepura)",
+      "fullCitation": "“Ninon, ach uśmiechnij się! : z f-mu «Zdobyć cię muszę». Signorina, signorina : z f-mu «Zdobyć cię muszę» / B. Kaper, W. Jurmann ; M. Halicz.” Jan Kiepura, vocal, with the Odeon symphony orchestra. Warsaw: Polskie Zakłady Fonograficzne “Odeon”, [post 1930]. One 78 rpm disc, 25 cm, publisher's number O. 236842. Biblioteka Narodowa, Magazyn Zbiorów Dźwiękowych i Audiowizualnych, shelfmark Fon.II.11.690; MMS ID 991034500969705066, OCLC 899876292. Language given as Polish, genre as film music. Marcella Halicz is credited “Sł.”, that is for the words. Accessed 2 August 2026.",
+      "sourceType": "recording_discographic_source",
+      "title": "Ninon, ach uśmiechnij się! / Signorina, signorina — Odeon O. 236842",
+      "creator": "Jan Kiepura, vocal; Odeon orchestra",
+      "repository": "Biblioteka Narodowa",
+      "publication": "Odeon",
+      "date": "1933",
+      "accessDate": "2026-08-02",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "slug": "src0633-bn-odeon-236842-ninon-signorina-kiepura",
+      "personIds": [
+        "P009",
+        "P077",
+        "P117",
+        "P156"
+      ],
+      "primaryUrl": "https://katalogi.bn.org.pl/discovery/fulldisplay?docid=alma991034500969705066&vid=48OMNIS_NLOP:48OMNIS_NLOP",
+      "workIds": [
+        "W-S214",
+        "W-S215"
+      ],
+      "songIds": [
+        "S214",
+        "S215"
+      ],
+      "contributionIds": [
+        "CON-S214-C-P009",
+        "CON-S214-C-P077",
+        "CON-S214-L-P156",
+        "CON-S214-P-P117",
+        "CON-S215-C-P009",
+        "CON-S215-C-P077",
+        "CON-S215-L-P156",
+        "CON-S215-P-P117"
+      ],
+      "workRelationIds": [
+        "REL0197",
+        "REL0198"
+      ],
+      "titleVariantIds": [
+        "TV0306",
+        "TV0307",
+        "TV0308"
+      ],
+      "organizationIds": [
+        "ORG115"
+      ]
+    },
+    {
+      "id": "SRC0634",
+      "shortCitation": "Authority records for Marcella Halicz",
+      "fullCitation": "Biblioteka Narodowa, Deskryptory BN, personal descriptor “Halicz, Marcella”, identifier (PL)a0000002111045, control number p 2016350890, MMS ID 9810691594205606, with the variant forms Halicz, M.; Halicz, Marcela; Halicz, Marcelina. The descriptor cites “Manuela / Marceli Halicz”, 1935, and Lerski 2003, and expressly records the Polski Słownik Biograficzny as a source in which no information was found, so no dates are established. Her recorded responsibility in the BN catalogue is translation. The VIAF cluster 302995408 heads her as “Halicz, Marcella, 19/20” — nineteenth to twentieth century, unspecified — and lists her Polish film songs, among them “Ninon” and “Ninon, ach uśmiechnij się”, together with numbers from the Kiepura films “Kocham wszystkie kobiety” and “Dla Ciebie śpiewam”. NUKAT n2014185547, ISNI 0000 0004 0939 6902. Wikidata Q95678216 additionally merges this identity with GND 1061346501, a Marcella Halicz recorded as a screen actress active 1919–1924 and linked to filmportal; that merge is not adopted here, since nothing in the Polish files supports it and the VIAF cluster carries no German material. Accessed 2 August 2026.",
+      "sourceType": "authority_record",
+      "title": "Halicz, Marcella — Deskryptory BN and VIAF 302995408",
+      "creator": "Biblioteka Narodowa; VIAF",
+      "repository": "Biblioteka Narodowa",
+      "publication": "Deskryptory Biblioteki Narodowej",
+      "date": "2026",
+      "accessDate": "2026-08-02",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "slug": "src0634-authority-records-marcella-halicz",
+      "personIds": [
+        "P156"
+      ],
+      "nameVariantIds": [
+        "PNV0057",
+        "PNV0058"
+      ],
+      "primaryUrl": "https://dbn.bn.org.pl/descriptor-details/9810691594205606"
     }
   ]
 }

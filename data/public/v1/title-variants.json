@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 60,
+  "count": 63,
   "records": [
     {
       "id": "TV0002",
@@ -1011,6 +1011,57 @@
       "sourceIds": [
         "SRC0358",
         "SRC0470"
+      ]
+    },
+    {
+      "id": "TV0306",
+      "variantTitle": "Ninon, ach uśmiechnij się!",
+      "titleAsSource": "Ninon, ach uśmiechnij się!",
+      "variantType": "language_version",
+      "variantTypeAsSource": "language version",
+      "language": "pl",
+      "languageStatus": "source",
+      "certainty": "confirmed",
+      "note": "Polish version title for W-S076. Linked version work: W-S214 / S214.",
+      "workIds": [
+        "W-S076"
+      ],
+      "sourceIds": [
+        "SRC0633"
+      ]
+    },
+    {
+      "id": "TV0307",
+      "variantTitle": "Signorina, signorina",
+      "titleAsSource": "Signorina, signorina",
+      "variantType": "language_version",
+      "variantTypeAsSource": "language version",
+      "language": "pl",
+      "languageStatus": "source",
+      "certainty": "confirmed",
+      "note": "Polish version title for W-S068. Linked version work: W-S215 / S215.",
+      "workIds": [
+        "W-S068"
+      ],
+      "sourceIds": [
+        "SRC0633"
+      ]
+    },
+    {
+      "id": "TV0308",
+      "variantTitle": "Zdobyć cię muszę",
+      "titleAsSource": "Zdobyć cię muszę",
+      "variantType": "language_version",
+      "variantTypeAsSource": "Polish release title",
+      "language": "pl",
+      "languageStatus": "source",
+      "certainty": "confirmed",
+      "note": "Title under which Ein Lied für Dich was shown in Poland, as given on the Odeon disc of the two Polish songs from the film.",
+      "workIds": [
+        "W-F023"
+      ],
+      "sourceIds": [
+        "SRC0633"
       ]
     }
   ]

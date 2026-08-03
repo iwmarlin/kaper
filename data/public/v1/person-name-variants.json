@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 53,
+  "count": 55,
   "records": [
     {
       "id": "PNV0001",
@@ -1372,6 +1372,39 @@
       "sourceIds": [
         "SRC0631",
         "SRC0284"
+      ]
+    },
+    {
+      "id": "PNV0057",
+      "variantName": "Marcelina Halicz",
+      "variantType": "other",
+      "identityScope": "single_person",
+      "evidenceContext": "authority_file",
+      "attestedWording": "Halicz, Marcelina",
+      "certainty": "confirmed",
+      "publicNote": "Variant form recorded in the Biblioteka Narodowa descriptor alongside Halicz, Marcela and Halicz, M. Wikidata carries it as an alias of the same identity.",
+      "personIds": [
+        "P156"
+      ],
+      "sourceIds": [
+        "SRC0634"
+      ]
+    },
+    {
+      "id": "PNV0058",
+      "variantName": "M. Halicz",
+      "variantType": "initials",
+      "identityScope": "single_person",
+      "evidenceContext": "recording_label",
+      "attestedWording": "M. Halicz",
+      "certainty": "confirmed",
+      "publicNote": "Form printed on the Odeon disc of “Ninon, ach uśmiechnij się!” and “Signorina, signorina”, where the credit reads B. Kaper, W. Jurmann ; M. Halicz. Also recorded as a variant in the Biblioteka Narodowa descriptor.",
+      "personIds": [
+        "P156"
+      ],
+      "sourceIds": [
+        "SRC0633",
+        "SRC0634"
       ]
     }
   ]
