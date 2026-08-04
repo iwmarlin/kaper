@@ -2675,7 +2675,7 @@
         }
       },
       "PL025": {
-        "reason": "Replace the area-level 'Port of New York' marker with the precise 1934 French Line arrival berth at Pier 57, North River. The French Line (CGT) berthed at Pier 57 (foot of West 15th Street) in this period; the pier is inferred from the line's documented berth, not from a manifest naming it. Ellis Island processing remains unestablished.",
+        "reason": "Replace the area-level 'Port of New York' marker with the historically appropriate French Line pier while classifying it as an approximate site. The 1934 passenger record establishes arrival at New York, but the identification of Pier 57 is inferred from the line's documented berth rather than stated in the manifest. Ellis Island processing remains unestablished.",
         "fields": {
           "displayName": "Pier 57 (French Line), New York",
           "authorizedName": "French Line Pier 57, North River, foot of West 15th Street, Manhattan, New York",
@@ -2683,8 +2683,8 @@
           "latitude": 40.7442,
           "longitude": -74.0095,
           "slug": "pier-57-french-line-new-york",
-          "mapPrecision": "address_level",
-          "publicNote": "Precise arrival berth in New York for Kaper and Eleonora's 1934 Atlantic crossing from Le Havre aboard the S.S. Champlain. In this period the French Line (Compagnie Générale Transatlantique) berthed at Pier 57 on the North River, at the foot of West 15th Street; the location is inferred from the line's documented pier rather than a passenger manifest naming the berth. The record establishes arrival at New York but not processing at Ellis Island."
+          "mapPrecision": "site_approximate",
+          "publicNote": "Approximate arrival site for Kaper and Eleonora's 1934 Atlantic crossing from Le Havre aboard the S.S. Champlain. In this period the French Line (Compagnie Générale Transatlantique) used Pier 57 on the North River, at the foot of West 15th Street; the pier is inferred from the line's documented berth rather than named in the passenger manifest. The record establishes arrival at New York but not processing at Ellis Island."
         }
       },
       "PL037": {
@@ -2763,9 +2763,10 @@
         }
       },
       "PL020": {
-        "reason": "Surface the documented street address in the map display name for consistency with the other venue markers.",
+        "reason": "Surface the documented street address and explain that the coordinates identify the historic cinema site rather than an interior performance position.",
         "fields": {
-          "displayName": "Ufa-Theater Universum, Kurfürstendamm 153, Berlin"
+          "displayName": "Ufa-Theater Universum, Kurfürstendamm 153, Berlin",
+          "publicNote": "Historic cinema site at Kurfürstendamm 153, connected with the 1929 Bick & Kaper appearance at the premiere of Der Adjutant des Zaren. The marker identifies the documented venue site, not a position within the former auditorium."
         }
       },
       "PL040": {
@@ -2775,15 +2776,40 @@
         }
       },
       "PL041": {
-        "reason": "Surface the documented street address in the map display name for consistency with the other venue markers.",
+        "reason": "Surface the documented street address and state the site-level precision of the historical hall complex.",
         "fields": {
-          "displayName": "Bach-Saal, Lützowstraße 76, Berlin"
+          "displayName": "Bach-Saal, Lützowstraße 76, Berlin",
+          "publicNote": "Berlin concert venue where Róża Etkin gave a recital on 3 December 1927 that included the first performance of a work by B. Kaper. The venue is identifiable with the former Blüthner-Saal, renamed Bach-Saal after renovation in autumn 1927, in the Klindworth-Scharwenka / Schwalm hall complex at Lützowstraße 76 / Genthiner Straße. The marker represents the documented complex rather than a reconstructed footprint of the individual hall."
         }
       },
       "PL016": {
         "reason": "Surface the documented Okólnik 1 address in the map display name, now that the conservatory building is documented by media M237/source SRC0559.",
         "fields": {
           "displayName": "Warsaw Conservatory Concert Hall, Okólnik 1, Warsaw"
+        }
+      },
+      "PL006": {
+        "reason": "Explain the site-level precision of the MGM marker without implying an exact stage, office or entrance within the historic studio complex.",
+        "fields": {
+          "publicNote": "Historic MGM studio complex in Culver City associated with Kaper's MGM career and Hollywood film work. The marker represents the studio site as a whole; the surviving evidence does not identify a particular stage, office or entrance for the linked events."
+        }
+      },
+      "PL008": {
+        "reason": "Explain that the University of Warsaw marker is campus-level and does not claim an exact classroom or faculty room.",
+        "fields": {
+          "publicNote": "University of Warsaw campus associated with Kaper's law studies. The marker identifies the historic central university site at campus level; it does not claim a particular Faculty of Law room or classroom."
+        }
+      },
+      "PL010": {
+        "reason": "Explain the site-level precision of the music-school marker within the Warsaw Philharmonic building.",
+        "fields": {
+          "publicNote": "Fryderyk Chopin Higher School of Music at the Warsaw Music Society, associated with Kaper's piano studies and housed in the Warsaw Philharmonic building at Jasna 5. The marker identifies the documented building site, not a specific classroom."
+        }
+      },
+      "PL031": {
+        "reason": "Explain that the Babelsberg coordinates represent the studio complex rather than an undocumented individual production building.",
+        "fields": {
+          "publicNote": "Major German film-production centre associated with the multiple-language version system in early European sound cinema. The marker represents the broader historic Babelsberg studio complex; no individual stage or production building is asserted for the linked context."
         }
       }
     }

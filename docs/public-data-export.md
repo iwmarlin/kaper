@@ -19,6 +19,10 @@ documented period from 1902 through 1939.
   from the selected public graph.
 - Linked Airtable record IDs are replaced with stable project IDs. Links to records
   outside the public graph are dropped and every remaining link is validated.
+- Place `periods` are the canonical union of periods assigned to linked timeline
+  events. They must not be interpreted or labelled as an independently evidenced
+  residence period. `mapPrecision` records whether coordinates identify an
+  address, venue, approximate historical site, district or city.
 - Legacy fields, review flags, internal notes, validation fields, attachment
   metadata and Airtable record IDs are not exported.
 - `Sources → Evidence Note`, `Sources → Rights Note`, and

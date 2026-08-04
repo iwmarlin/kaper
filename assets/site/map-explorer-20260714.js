@@ -10,7 +10,7 @@ import {
   periodValues,
   recordUrl,
   renderError,
-} from "./core.js?v=56c5307dae";
+} from "./core.js?v=2af9f89756";
 
 mountSiteChrome("map");
 
@@ -21,6 +21,9 @@ const search = document.querySelector("#place-search");
 const selectionKicker = document.querySelector("#place-selection-kicker");
 const selectionTitle = document.querySelector("#place-selection-title");
 const selectionMeta = document.querySelector("#place-selection-meta");
+const selectionFacts = document.querySelector("#place-selection-facts");
+const selectionPrecision = document.querySelector("#place-selection-precision");
+const selectionPeriods = document.querySelector("#place-selection-periods");
 const selectionNote = document.querySelector("#place-selection-note");
 const selectionLink = document.querySelector("#place-selection-link");
 const toggleJourney = document.querySelector("#toggle-journey");
@@ -41,6 +44,46 @@ const REFERENCE_FULL_ZOOM = 5;
 const HISTORICAL_ATTRIBUTION = '<a href="https://www.davidrumsey.com/luna/servlet/detail/RUMSEY~8~1~363901~90131510%3AThe-world-on-Mercator-s-projection-" target="_blank" rel="noopener">Edward Stanford Ltd., 1926</a> · David Rumsey Map Collection';
 const REFERENCE_ATTRIBUTION = '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors';
 const STANFORD_MAP_BOUNDS = [[-70.1, -195.5], [84.5, 183.2]];
+
+const PRECISION_META = Object.freeze({
+  address_level: {
+    label: "Address-level coordinates",
+    shortLabel: "Address level",
+    markerClass: "point",
+  },
+  venue_level: {
+    label: "Venue-level coordinates",
+    shortLabel: "Venue level",
+    markerClass: "point",
+  },
+  site_approximate: {
+    label: "Approximate historical site",
+    shortLabel: "Approximate site",
+    markerClass: "approximate",
+  },
+  district_level: {
+    label: "District-level reference point",
+    shortLabel: "District level",
+    markerClass: "area",
+  },
+  city_level: {
+    label: "City-level reference point",
+    shortLabel: "City level",
+    markerClass: "area",
+  },
+});
+
+function precisionMeta(place) {
+  return PRECISION_META[place.mapPrecision] || {
+    label: "Coordinate precision not specified",
+    shortLabel: "Precision not specified",
+    markerClass: "unspecified",
+  };
+}
+
+function linkedPeriodLabel(place) {
+  return periodValues(place).map(periodLabel).join(" · ");
+}
 
 function historicalOpacity(zoom) {
   if (zoom <= HISTORICAL_FULL_ZOOM) return 1;
@@ -91,10 +134,11 @@ function eventCount(place) {
 
 function markerIcon(place, selected = false) {
   const periodKey = periodValues(place).join("_") || normalizedPeriod(place);
+  const precision = precisionMeta(place);
   const size = Math.min(24, 14 + Math.sqrt(Math.max(eventCount(place), 1)) * 2.2);
   return window.L.divIcon({
     className: "map-place-icon-shell",
-    html: `<span class="map-place-marker map-place-marker--${escapeHtml(periodKey)}${selected ? " is-selected" : ""}" style="--marker-size:${size}px" aria-hidden="true"></span>`,
+    html: `<span class="map-place-marker map-place-marker--${escapeHtml(periodKey)} map-place-marker--precision-${escapeHtml(precision.markerClass)}${selected ? " is-selected" : ""}" style="--marker-size:${size}px" aria-hidden="true"></span>`,
     iconSize: [34, 34],
     iconAnchor: [17, 17],
   });
@@ -113,6 +157,7 @@ function resetSelection() {
   selectionKicker.textContent = "Explore the map";
   selectionTitle.textContent = "Select a place";
   selectionMeta.textContent = "Choose a marker or a place from the list to see its role in the archive.";
+  if (selectionFacts) selectionFacts.hidden = true;
   if (selectionNote) {
     selectionNote.textContent = "";
     selectionNote.hidden = true;
@@ -138,11 +183,15 @@ function selectPlace(place, { moveMap = true } = {}) {
   selectionKicker.textContent = humanize(place.placeType || "Documented place");
   selectionTitle.textContent = place.displayName;
   const location = [place.city, place.country].filter(Boolean).join(", ");
-  const careerPeriods = periodValues(place).map(periodLabel).join(" · ");
   const linkedEvents = eventCount(place);
-  selectionMeta.textContent = [location, careerPeriods, `${linkedEvents} linked ${linkedEvents === 1 ? "event" : "events"}`]
+  selectionMeta.textContent = [location, humanize(place.placeType), `${linkedEvents} linked ${linkedEvents === 1 ? "event" : "events"}`]
     .filter(Boolean)
     .join(" · ");
+  if (selectionFacts && selectionPrecision && selectionPeriods) {
+    selectionPrecision.textContent = precisionMeta(place).label;
+    selectionPeriods.textContent = linkedPeriodLabel(place) || "No linked event period";
+    selectionFacts.hidden = false;
+  }
   if (selectionNote) {
     if (place.publicNote) {
       selectionNote.textContent = place.publicNote;
@@ -300,12 +349,15 @@ try {
     listTarget.innerHTML = filtered.length
       ? filtered.map((place) => {
           const linkedEvents = eventCount(place);
+          const precision = precisionMeta(place);
+          const location = [place.city, place.country].filter(Boolean).join(", ");
           return `
             <li>
-              <button type="button" data-id="${escapeHtml(place.id)}" aria-current="false">
+              <button type="button" data-id="${escapeHtml(place.id)}" aria-current="false" aria-label="${escapeHtml(`${place.displayName}; ${precision.label}; ${linkedEvents} linked ${linkedEvents === 1 ? "event" : "events"}`)}">
                 <span class="place-list__main">
                   <strong>${escapeHtml(place.displayName)}</strong>
-                  <small>${escapeHtml([place.city, place.country].filter(Boolean).join(", "))} · ${escapeHtml(humanize(place.placeType))} · ${escapeHtml(periodValues(place).map((value) => periodLabel(value).replace(" · ", " ")).join(" / "))}</small>
+                  <small>${escapeHtml([location, humanize(place.placeType)].filter(Boolean).join(" · "))}</small>
+                  <span class="place-list__precision">${escapeHtml(precision.shortLabel)}</span>
                 </span>
                 <span class="place-list__count" aria-label="${linkedEvents} linked ${linkedEvents === 1 ? "event" : "events"}">${linkedEvents}</span>
               </button>
@@ -320,14 +372,20 @@ try {
     const bounds = [];
     for (const place of filtered) {
       if (!map || !Number.isFinite(place.latitude) || !Number.isFinite(place.longitude)) continue;
+      const precision = precisionMeta(place);
+      const periods = linkedPeriodLabel(place);
+      const accessibleLabel = `${place.displayName} — ${precision.label}${periods ? `; linked-event periods: ${periods}` : ""}`;
       const marker = window.L.marker([place.latitude, place.longitude], {
         icon: markerIcon(place, place.id === selectedId),
         keyboard: true,
-        title: place.displayName,
-        alt: place.displayName,
+        title: accessibleLabel,
+        alt: accessibleLabel,
         placeRecord: place,
       });
-      marker.bindTooltip(place.displayName, { direction: "top", offset: [0, -14], opacity: 0.96 });
+      marker.bindTooltip(
+        `<strong>${escapeHtml(place.displayName)}</strong><span class="leaflet-tooltip__meta">${escapeHtml(precision.shortLabel)}</span>`,
+        { direction: "top", offset: [0, -14], opacity: 0.96 },
+      );
       marker.on("click", () => selectPlace(place, { moveMap: false }));
       marker.addTo(markerLayer);
       markerById.set(place.id, marker);

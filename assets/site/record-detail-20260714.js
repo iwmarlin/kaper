@@ -1,4 +1,4 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=56c5307dae";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=2af9f89756";
 import {
   certaintyBadge,
   escapeHtml,
@@ -23,7 +23,7 @@ import {
   scopeBadge,
   typeBadge,
   updateMeta,
-} from "./core.js?v=56c5307dae";
+} from "./core.js?v=2af9f89756";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 mountSiteChrome("");
@@ -57,6 +57,17 @@ const ENTITY_LIST_LABELS = {
   person: "people",
   organization: "organizations",
 };
+const MAP_PRECISION_LABELS = Object.freeze({
+  address_level: "Address-level coordinates",
+  venue_level: "Venue-level coordinates",
+  site_approximate: "Approximate historical site",
+  district_level: "District-level reference point",
+  city_level: "City-level reference point",
+});
+
+function mapPrecisionLabel(value) {
+  return MAP_PRECISION_LABELS[value] || humanize(value);
+}
 
 async function loadRecordPayload(type, id) {
   const url = new URL(
@@ -612,8 +623,8 @@ function renderPlace(place, data, indexes) {
   return {
     title: place.displayName,
     label: "Place",
-    badges: `${typeBadge(place.placeType)}${periodBadge(place.periods || place.period)}`,
-    facts: `${fact("City", place.city)}${fact("Region", place.region)}${fact("Country", place.country)}${fact("Period", periodValues(place).map(periodLabel).join(", "))}${fact("Place type", humanize(place.placeType))}${fact("Map precision", humanize(place.mapPrecision))}${fact("Coordinates", place.latitude && place.longitude ? `${place.latitude}, ${place.longitude}` : "")}`,
+    badges: typeBadge(place.placeType),
+    facts: `${fact("City", place.city)}${fact("Region", place.region)}${fact("Country", place.country)}${fact("Place type", humanize(place.placeType))}${fact("Coordinate precision", mapPrecisionLabel(place.mapPrecision))}${fact("Reference coordinates", Number.isFinite(place.latitude) && Number.isFinite(place.longitude) ? `${place.latitude}, ${place.longitude}` : "")}${fact("Linked-event periods", periodValues(place).map(periodLabel).join(", "))}`,
     main: [
       section("About this place", publicText(place.publicNote)),
       section("Documented events", entityList(events, "event", (item) => item.displayDate || item.dateStart), "", events.length),

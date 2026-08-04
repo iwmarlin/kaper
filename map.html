@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://tile.openstreetmap.org">
   <link rel="preload" href="assets/fonts/kaper-sans.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/kaper-serif.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/site/styles.css?v=56c5307dae">
+  <link rel="stylesheet" href="assets/site/styles.css?v=2af9f89756">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="anonymous">
   <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" crossorigin="anonymous">
   <title>Map — Bronisław Kaper, 1902–1939</title>
@@ -37,7 +37,7 @@
           <p class="lead">Explore the cities, addresses, venues and studios that shaped Kaper's documented career through 1939.</p>
         </div>
         <div class="map-hero__summary">
-          <strong id="map-total">43</strong>
+          <strong id="map-total">44</strong>
           <span>documented places across Europe and North America</span>
         </div>
       </div>
@@ -68,12 +68,21 @@
               <strong id="map-layer-status-label">Historical map · 1926</strong>
               <span id="map-layer-status-detail">Edward Stanford Ltd.</span>
             </div>
-            <div class="map-legend" aria-label="Career-period legend">
-              <span class="map-legend__key"><i class="map-legend__swatch map-legend__swatch--warsaw"></i>Warsaw · 1902–1926</span>
-              <span class="map-legend__key"><i class="map-legend__swatch map-legend__swatch--european"></i>European · 1926–1934</span>
-              <span class="map-legend__key"><i class="map-legend__swatch map-legend__swatch--hollywood"></i>Hollywood · 1935–1939</span>
-              <span class="map-legend__key"><i class="map-legend__swatch map-legend__swatch--multiple"></i>Multiple periods</span>
-              <small class="map-legend__hint" style="flex-basis:100%;margin-top:0.2rem;color:var(--ink-soft);font-size:0.62rem;line-height:1.3">Periods are dated career phases; a place documented across several shows a split colour.</small>
+            <div class="map-legend" aria-label="Map marker legend">
+              <div class="map-legend__group">
+                <strong class="map-legend__title">Linked-event periods</strong>
+                <span class="map-legend__key"><i class="map-legend__swatch map-legend__swatch--warsaw"></i>Warsaw · 1902–1926</span>
+                <span class="map-legend__key"><i class="map-legend__swatch map-legend__swatch--european"></i>European · 1926–1934</span>
+                <span class="map-legend__key"><i class="map-legend__swatch map-legend__swatch--hollywood"></i>Hollywood · 1935–1939</span>
+                <span class="map-legend__key"><i class="map-legend__swatch map-legend__swatch--multiple"></i>Multiple</span>
+              </div>
+              <div class="map-legend__group map-legend__group--precision">
+                <strong class="map-legend__title">Coordinate precision</strong>
+                <span class="map-legend__key"><i class="map-precision-symbol map-precision-symbol--point"></i>Address / venue</span>
+                <span class="map-legend__key"><i class="map-precision-symbol map-precision-symbol--approximate"></i>Approximate site</span>
+                <span class="map-legend__key"><i class="map-precision-symbol map-precision-symbol--area"></i>City / district</span>
+              </div>
+              <small class="map-legend__hint">Colours indicate the periods of events linked to a place; they do not by themselves establish Kaper's physical presence there.</small>
             </div>
           </div>
           <aside class="map-panel" aria-label="Documented places">
@@ -81,23 +90,33 @@
               <p class="eyebrow" id="place-selection-kicker">Explore the map</p>
               <h3 id="place-selection-title">Select a place</h3>
               <p id="place-selection-meta">Choose a marker or a place from the list to see its role in the archive.</p>
+              <dl class="map-selection__facts" id="place-selection-facts" hidden>
+                <div>
+                  <dt>Coordinate precision</dt>
+                  <dd id="place-selection-precision"></dd>
+                </div>
+                <div>
+                  <dt>Linked-event periods</dt>
+                  <dd id="place-selection-periods"></dd>
+                </div>
+              </dl>
               <p id="place-selection-note" class="map-selection__note" hidden></p>
               <a class="button button--small" id="place-selection-link" href="map.html" hidden>View place record</a>
             </div>
             <div class="map-results-heading">
               <span>Documented places</span>
-              <strong id="place-count" aria-live="polite">43</strong>
+              <strong id="place-count" aria-live="polite">44</strong>
             </div>
             <ul class="place-list" id="place-list"></ul>
           </aside>
         </div>
-        <p class="map-method-note">The overview uses Edward Stanford Ltd.'s 1926 world map. At closer zoom levels it fades into a present-day geographic reference so that addresses remain legible; this reference does not claim to reconstruct the historical street network. Coordinates, markers and the dotted migration route remain fixed through the transition. Nearby addresses are grouped until the map is enlarged; larger markers carry more linked events and colours mark the documented career period(s).</p>
+        <p class="map-method-note">The overview uses Edward Stanford Ltd.'s 1926 world map. At closer zoom levels it fades into a present-day geographic reference so that addresses remain legible; this reference does not reconstruct the historical street network. Marker shapes disclose coordinate precision, from address or venue level to approximate historical sites and city or district reference points. Colours represent the dated periods of linked events—not independent evidence that Kaper was physically present in every period shown. Nearby places are grouped until the map is enlarged, and larger markers carry more linked events.</p>
       </div>
     </section>
   </main>
   <footer class="site-footer" data-site-footer></footer>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js" crossorigin="anonymous"></script>
-  <script type="module" src="assets/site/map-explorer-20260714.js?v=56c5307dae"></script>
+  <script type="module" src="assets/site/map-explorer-20260714.js?v=2af9f89756"></script>
 </body>
 </html>

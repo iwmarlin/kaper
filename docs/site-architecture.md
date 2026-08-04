@@ -40,6 +40,22 @@ as a noindex compatibility route and declares the static path as canonical.
   equivalent searchable place list remains available if the map library or tiles
   are unavailable.
 
+## Map representation
+
+- Place coordinates carry an explicit precision category: `address_level`,
+  `venue_level`, `site_approximate`, `district_level`, or `city_level`. The map
+  distinguishes point-level, approximate-site and area-level markers by shape;
+  the selected-place panel states the full category in text.
+- Additional decimal places are not treated as evidence of historical accuracy.
+  `site_approximate` records explain the documentary limit in their public note.
+- A place's `periods` are derived from its linked public timeline events. They
+  describe the chronology of those links, not an independently asserted span of
+  Kaper's residence or physical presence at that place. The map labels them
+  explicitly as “Linked-event periods”.
+- The historical basemap is contextual. At close zoom it gives way to a
+  present-day geographic reference; neither layer silently changes the fixed
+  project coordinates.
+
 ## Editorial and rights rules
 
 - The visible scope is consistently labelled 1902–1939.

@@ -120,6 +120,13 @@ def comparable_source_url(value: str) -> str:
     )
 
 PERIOD_ORDER = ("warsaw", "european", "hollywood")
+MAP_PRECISION_VALUES = {
+    "address_level",
+    "venue_level",
+    "site_approximate",
+    "district_level",
+    "city_level",
+}
 WARSAW_1926_EVENT_IDS = {"TE0014", "TE0047"}
 EUROPEAN_1926_EVENT_IDS = {"TE0015", "TE0016", "TE0048"}
 
@@ -569,6 +576,17 @@ class ExportValidator:
                 )
 
         for place in self.payloads.get("Places", {}).get("records", []):
+            precision = place.get("mapPrecision")
+            if precision not in MAP_PRECISION_VALUES:
+                self.errors.append(
+                    f"Places {place['id']}: invalid mapPrecision {precision!r}"
+                )
+            if precision == "site_approximate" and not str(
+                place.get("publicNote", "")
+            ).strip():
+                self.errors.append(
+                    f"Places {place['id']}: approximate site requires a public note"
+                )
             expected = canonical_periods(
                 [
                     period

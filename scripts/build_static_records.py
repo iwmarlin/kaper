@@ -61,6 +61,19 @@ def period_labels(record: dict) -> str:
     return ", ".join(period_label(value) for value in values if value)
 
 
+MAP_PRECISION_LABELS = {
+    "address_level": "Address-level coordinates",
+    "venue_level": "Venue-level coordinates",
+    "site_approximate": "Approximate historical site",
+    "district_level": "District-level reference point",
+    "city_level": "City-level reference point",
+}
+
+
+def map_precision_label(value: str) -> str:
+    return MAP_PRECISION_LABELS.get(value, str(value or "").replace("_", " ").title())
+
+
 def esc(value) -> str:
     return html.escape(display_value(value), quote=True)
 
@@ -262,7 +275,17 @@ def facts_for(record_type: str, record: dict) -> list[tuple[str, str]]:
             ("Category", record.get("category")),
         ]
     if record_type == "place":
-        return [("City", record.get("city")), ("Country", record.get("country")), ("Type", record.get("placeType")), ("Period", period_labels(record))]
+        coordinates = ""
+        if record.get("latitude") is not None and record.get("longitude") is not None:
+            coordinates = f"{record['latitude']}, {record['longitude']}"
+        return [
+            ("City", record.get("city")),
+            ("Country", record.get("country")),
+            ("Type", record.get("placeType")),
+            ("Coordinate precision", map_precision_label(record.get("mapPrecision"))),
+            ("Reference coordinates", coordinates),
+            ("Linked-event periods", period_labels(record)),
+        ]
     if record_type == "media":
         if record.get("mediaType") == "document_gallery":
             return [("Images", len(record.get("assetPaths", []))), ("Period", period_labels(record))]
@@ -439,8 +462,8 @@ def static_page(record_type: str, record: dict, tables: dict) -> str:
     page_title = title if record_type in {"work", "person", "place", "event"} else f"{title} ({label.lower()})"
     record_id = record["id"]
     is_gallery = record_type == "media" and record.get("mediaType") == "document_gallery"
-    style_version = "56c5307dae"
-    record_script_version = "56c5307dae"
+    style_version = "2af9f89756"
+    record_script_version = "2af9f89756"
     route = f"records/{record_type}/{quote(record_id, safe='')}/"
     canonical = f"{ORIGIN}{route}"
     facts = "".join(
