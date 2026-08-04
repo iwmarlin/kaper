@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://tile.openstreetmap.org">
   <link rel="preload" href="assets/fonts/kaper-sans.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/kaper-serif.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/site/styles.css?v=2af9f89756">
+  <link rel="stylesheet" href="assets/site/styles.css?v=af1e93751c">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="anonymous">
   <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" crossorigin="anonymous">
   <title>Map — Bronisław Kaper, 1902–1939</title>
@@ -56,7 +56,7 @@
               <input id="place-search" type="search" placeholder="City, venue or address…" autocomplete="off">
             </div>
             <div class="field field--toggle">
-              <label for="toggle-journey">Journey</label>
+              <label for="toggle-journey">Migration stages</label>
               <button id="toggle-journey" type="button" class="map-route-toggle" aria-pressed="true">Hide route</button>
             </div>
           </div>
@@ -110,6 +110,16 @@
             <ul class="place-list" id="place-list"></ul>
           </aside>
         </div>
+        <section class="route-stages" id="route-stages-panel" aria-labelledby="route-stages-title">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Documented movement</p>
+              <h2 id="route-stages-title">Stages of the migration</h2>
+              <p>Each stage below is a dated event with its own sources, and the map draws them as separate segments rather than one line. The archive documents the moves, not the space between them: Kaper reached Los Angeles in October 1934 and re-entered the United States at Calexico thirteen months later, and no source records how he travelled in between.</p>
+            </div>
+          </div>
+          <ol class="route-stage-list" id="route-stages"></ol>
+        </section>
         <p class="map-method-note">The overview uses Edward Stanford Ltd.'s 1926 world map. At closer zoom levels it fades into a present-day geographic reference so that addresses remain legible; this reference does not reconstruct the historical street network. Marker shapes disclose coordinate precision, from address or venue level to approximate historical sites and city or district reference points. Colours represent the dated periods of linked events—not independent evidence that Kaper was physically present in every period shown. Nearby places are grouped until the map is enlarged, and larger markers carry more linked events.</p>
       </div>
     </section>
@@ -117,6 +127,6 @@
   <footer class="site-footer" data-site-footer></footer>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js" crossorigin="anonymous"></script>
-  <script type="module" src="assets/site/map-explorer-20260714.js?v=2af9f89756"></script>
+  <script type="module" src="assets/site/map-explorer-20260714.js?v=af1e93751c"></script>
 </body>
 </html>

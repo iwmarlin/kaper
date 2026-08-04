@@ -645,6 +645,10 @@
         "organizationIds": {
           "field": "Organizations Linked",
           "target": "Organizations"
+        },
+        "routePlaceIds": {
+          "field": "Route Places",
+          "target": "Places"
         }
       }
     },

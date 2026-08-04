@@ -10,7 +10,7 @@ import {
   periodValues,
   recordUrl,
   renderError,
-} from "./core.js?v=2af9f89756";
+} from "./core.js?v=af1e93751c";
 
 mountSiteChrome("map");
 
@@ -225,7 +225,7 @@ function selectPlace(place, { moveMap = true } = {}) {
 }
 
 try {
-  const { places } = await loadTables(["places"]);
+  const { places, timelineEvents } = await loadTables(["places", "timelineEvents"]);
   const publicPlaces = places;
   totalTarget.textContent = String(publicPlaces.length);
 
@@ -281,28 +281,62 @@ try {
     document.querySelector("#research-map").innerHTML = `<div class="map-fallback"><div><h2>Interactive map unavailable</h2><p>Use the complete searchable place list alongside the map.</p></div></div>`;
   }
 
-  // Canonical migration route: Warsaw → Berlin → Vienna → Paris → Le Havre → Pier 57 (NY) → Los Angeles
-  const JOURNEY_IDS = ["PL001", "PL002", "PL030", "PL003", "PL026", "PL025", "PL004"];
-  let journeyPoints = [];
+  // The itinerary is data, not a literal in this file. Every stage is a timeline
+  // event that carries an ordered routePlaceIds, so its dates, description and
+  // sources come from the same record the rest of the archive cites, and the
+  // route cannot drift from the chronology.
+  //
+  // Stages are drawn as separate polylines rather than one continuous line.
+  // Kaper reached Los Angeles in October 1934 and re-entered at Calexico in
+  // November 1935; joining those points would draw a leg no source documents.
+  // The earlier stages are moves between places of residence years apart, which
+  // is a different kind of claim from a single Atlantic crossing, and separate
+  // segments keep them from reading as one continuous trip.
+  const placeById = new Map(publicPlaces.map((place) => [place.id, place]));
+  const routeStages = (timelineEvents || [])
+    .filter((event) => Array.isArray(event.routePlaceIds) && event.routePlaceIds.length > 1)
+    .sort((a, b) => String(a.dateStart).localeCompare(String(b.dateStart)))
+    .map((event) => ({
+      event,
+      places: event.routePlaceIds
+        .map((id) => placeById.get(id))
+        .filter((place) => place && Number.isFinite(place.latitude) && Number.isFinite(place.longitude)),
+    }))
+    .filter((stage) => stage.places.length > 1);
+
+  let journeyPoints = routeStages.flatMap((stage) => stage.places.map((place) => [place.latitude, place.longitude]));
   let routeLayer = null;
   let routeVisible = true;
-  if (map && window.L) {
-    journeyPoints = JOURNEY_IDS
-      .map((id) => publicPlaces.find((place) => place.id === id))
-      .filter((place) => place && Number.isFinite(place.latitude) && Number.isFinite(place.longitude))
-      .map((place) => [place.latitude, place.longitude]);
-    if (journeyPoints.length > 1) {
-      routeLayer = window.L.polyline(journeyPoints, {
-        color: "#8a5a2b",
-        weight: 2.5,
-        opacity: 0.85,
-        dashArray: "1 7",
-        lineCap: "round",
-        lineJoin: "round",
-        interactive: false,
-      });
-    }
+  if (map && window.L && routeStages.length) {
+    routeLayer = window.L.layerGroup(routeStages.map((stage) => {
+      const line = window.L.polyline(
+        stage.places.map((place) => [place.latitude, place.longitude]),
+        { color: "#8a5a2b", weight: 2.5, opacity: 0.85, dashArray: "1 7", lineCap: "round", lineJoin: "round" },
+      );
+      line.bindTooltip(
+        `${escapeHtml(stage.event.title)} · ${escapeHtml(stage.event.displayDate || stage.event.dateStart)}`,
+        { sticky: true },
+      );
+      return line;
+    }));
   }
+
+  function renderRouteStages() {
+    const list = document.querySelector("#route-stages");
+    if (!list) return;
+    if (!routeStages.length) {
+      list.innerHTML = "";
+      return;
+    }
+    list.innerHTML = routeStages.map((stage) => `
+      <li class="route-stage">
+        <p class="route-stage__date">${escapeHtml(stage.event.displayDate || stage.event.dateStart)}</p>
+        <p class="route-stage__path">${stage.places.map((place) => `<a href="${recordUrl("place", place.id)}">${escapeHtml(place.displayName)}</a>`).join(' <span aria-hidden="true">→</span> ')}</p>
+        <p class="route-stage__note">${escapeHtml(stage.event.shortDescription || "")}</p>
+        <p class="route-stage__links"><a href="${recordUrl("event", stage.event.id)}">${escapeHtml(stage.event.title)}</a></p>
+      </li>`).join("");
+  }
+  renderRouteStages();
 
   function applyRoute() {
     if (!toggleJourney) return;
@@ -314,6 +348,8 @@ try {
     else map.removeLayer(routeLayer);
     toggleJourney.setAttribute("aria-pressed", String(routeVisible));
     toggleJourney.textContent = routeVisible ? "Hide route" : "Show route";
+    const stagesPanel = document.querySelector("#route-stages-panel");
+    if (stagesPanel) stagesPanel.hidden = false;
   }
 
   if (toggleJourney) {
@@ -324,7 +360,7 @@ try {
   }
   applyRoute();
 
-  // The opening view presents the complete migration route on the historical map.
+  // The opening view frames the documented stages on the historical map.
   let firstView = true;
 
   function render() {

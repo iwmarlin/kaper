@@ -14,12 +14,12 @@
   "publicInputs": {
     "allowlist": {
       "file": "public_export_config.json",
-      "sha256": "690cf2d8ea4e94eaaf2e4b864e03d5871c27445a08e2a3ac84c5872dc56f599e"
+      "sha256": "a91e6865cddc630323748c11e87997ae1401badac65b9afb9004caf56938e95d"
     },
     "overrides": {
       "file": "public_export_overrides.json",
       "sha256": "a0101cad02824072e73da8377ceba1f9c9c13c052abe2e0fabff9e3221f0046f",
-      "appliedCount": 364,
+      "appliedCount": 368,
       "additionCount": 130,
       "linkAdditionCount": 249,
       "linkRemovalCount": 92
@@ -119,8 +119,8 @@
     },
     {
       "file": "timeline-events.json",
-      "bytes": 82653,
-      "sha256": "63183ac6b6e4454228d6ac4ab15018bf48b8cb28c26fd2b619414049bbc67306"
+      "bytes": 82972,
+      "sha256": "2700a8e3b059c4ba8964347caf79ef50695c0a7c2748d318de82376cc8bd16ff"
     },
     {
       "file": "title-variants.json",

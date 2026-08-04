@@ -3966,3 +3966,91 @@ main {
     width: min(11rem, 100%);
   }
 }
+
+/* The migration stages, printed under the map. The route used to exist only as
+   a dashed line with no dates, no direction and no text equivalent, so a reader
+   who could not see the map got nothing at all. This list is the same data in
+   words, and it also survives printing and a failed tile load. */
+.route-stages {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+}
+
+.route-stage-list {
+  display: grid;
+  gap: 1.1rem;
+  margin: 1.25rem 0 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: route-stage;
+}
+
+.route-stage {
+  display: grid;
+  grid-template-columns: 2rem minmax(0, 1fr);
+  gap: 0.15rem 0.9rem;
+  padding-bottom: 1.1rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.route-stage:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.route-stage::before {
+  counter-increment: route-stage;
+  content: counter(route-stage);
+  grid-row: 1 / span 4;
+  color: var(--line-dark);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+
+.route-stage p {
+  margin: 0;
+  grid-column: 2;
+}
+
+.route-stage__date {
+  color: var(--ink-soft);
+  font-size: 0.75rem;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.route-stage__path {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  line-height: 1.45;
+}
+
+.route-stage__path span {
+  color: var(--line-dark);
+  padding: 0 0.15rem;
+}
+
+.route-stage__note {
+  margin-top: 0.25rem;
+  color: var(--ink-soft);
+  font-size: 0.88rem;
+}
+
+.route-stage__links {
+  margin-top: 0.35rem;
+}
+
+.route-stage__links a {
+  font-size: 0.76rem;
+  font-weight: 680;
+}
+
+@media (max-width: 680px) {
+  .route-stage {
+    grid-template-columns: 1.4rem minmax(0, 1fr);
+    gap: 0.15rem 0.6rem;
+  }
+}
