@@ -15,7 +15,7 @@
   <link rel="preload" href="assets/fonts/kaper-sans.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/kaper-serif.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/site/styles.css?v=af1e93751c">
-  <link rel="stylesheet" href="assets/site/home.css?v=20260804c">
+  <link rel="stylesheet" href="assets/site/home.css?v=20260804">
   <title>Bronisław Kaper — A Source-Based Archive, 1902–1939</title>
   <script type="application/ld+json">
   {
@@ -71,28 +71,103 @@
       </div>
     </section>
 
-    <section class="section home-journey" aria-labelledby="journey-title">
-      <div class="shell">
-        <header class="home-editorial-heading">
-          <p class="eyebrow">Three documented periods</p>
-          <h2 id="journey-title">A documented journey</h2>
-          <p>Kaper’s early career emerges through surviving records rather than a single retrospective narrative. Three periods connect education and cabaret in Warsaw, film work across Europe and the first Hollywood years.</p>
+    <section class="section home-section home-pathways" aria-labelledby="archive-pathways-title">
+      <div class="shell pathways-layout">
+        <header class="pathways-intro">
+          <p class="eyebrow">Research pathways</p>
+          <h2 id="archive-pathways-title">Explore the archive</h2>
+          <p>The archive can be entered through its principal entities. Every published record remains connected to the sources, people, places and media that establish its historical context.</p>
+          <p class="pathways-intro__note">Choose a pathway to browse the relational dataset or move directly between linked records.</p>
         </header>
-        <div class="journey-list" id="home-journey" aria-live="polite"></div>
+
+        <nav class="pathways-nav" aria-labelledby="archive-pathways-title">
+          <ol class="pathways-index">
+            <li>
+              <a class="pathway-row" href="works.html">
+                <span class="pathway-row__number" aria-hidden="true">01</span>
+                <span class="pathway-row__content">
+                  <span class="pathway-row__title">Works</span>
+                  <span class="pathway-row__description">Films, songs and other works, with titles, versions, dates and qualified attributions.</span>
+                </span>
+                <span class="pathway-row__meta">Relational catalogue</span>
+                <span class="pathway-row__arrow" aria-hidden="true">→</span>
+              </a>
+            </li>
+            <li>
+              <a class="pathway-row" href="life.html">
+                <span class="pathway-row__number" aria-hidden="true">02</span>
+                <span class="pathway-row__content">
+                  <span class="pathway-row__title">Timeline</span>
+                  <span class="pathway-row__description">A source-based chronology of education, composition, migration and professional activity.</span>
+                </span>
+                <span class="pathway-row__meta" id="timeline-pathway-count">Documented chronology</span>
+                <span class="pathway-row__arrow" aria-hidden="true">→</span>
+              </a>
+            </li>
+            <li>
+              <a class="pathway-row" href="people.html">
+                <span class="pathway-row__number" aria-hidden="true">03</span>
+                <span class="pathway-row__content">
+                  <span class="pathway-row__title">People</span>
+                  <span class="pathway-row__description">Collaborators and contemporaries represented through stable public authority records.</span>
+                </span>
+                <span class="pathway-row__meta">Authority index</span>
+                <span class="pathway-row__arrow" aria-hidden="true">→</span>
+              </a>
+            </li>
+            <li>
+              <a class="pathway-row" href="map.html">
+                <span class="pathway-row__number" aria-hidden="true">04</span>
+                <span class="pathway-row__content">
+                  <span class="pathway-row__title">Places</span>
+                  <span class="pathway-row__description">Addresses, venues, studios and routes from Warsaw to Berlin, Paris and early Hollywood.</span>
+                </span>
+                <span class="pathway-row__meta">Map and place index</span>
+                <span class="pathway-row__arrow" aria-hidden="true">→</span>
+              </a>
+            </li>
+          </ol>
+        </nav>
+      </div>
+    </section>
+
+    <section class="section section--surface home-section home-chronology">
+      <div class="shell">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Selected chronology</p>
+            <h2>Moments in the archive</h2>
+            <p>Highlights are selected from published timeline records and retain their supporting links.</p>
+          </div>
+          <a class="button button--ghost button--small" href="life.html">View all events</a>
+        </div>
+        <div class="home-event-grid" id="featured-events" aria-live="polite"></div>
       </div>
     </section>
 
     <section class="section home-section home-media">
       <div class="shell">
-        <header class="home-editorial-heading home-editorial-heading--split">
+        <div class="section-heading">
           <div>
-            <p class="eyebrow">Selected evidence</p>
-            <h2>Documents behind the history</h2>
+            <p class="eyebrow">Curated materials</p>
+            <h2>Images, documents and sound</h2>
+            <p>Selected materials are shown with captions, provenance, rights information and links to the records they document.</p>
           </div>
-          <p>Archival documents, press materials and published ephemera provide the visual evidence behind the catalogue and chronology.</p>
-        </header>
-        <div class="home-evidence-grid" id="media-highlights" aria-live="polite"></div>
-        <p class="home-text-link"><a href="media.html">Browse all media <span aria-hidden="true">→</span></a></p>
+          <a class="button button--ghost button--small" href="media.html">Open the gallery</a>
+        </div>
+        <div class="home-media-grid" id="media-highlights" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="section home-section home-figures">
+      <div class="shell">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">From the data</p>
+            <h2>The archive at a glance</h2>
+          </div>
+        </div>
+        <div class="figures-grid" id="home-figures" aria-live="polite"></div>
       </div>
     </section>
 
@@ -110,6 +185,6 @@
     </section>
   </main>
   <footer class="site-footer" data-site-footer></footer>
-  <script type="module" src="assets/site/home.js?v=20260804b"></script>
+  <script type="module" src="assets/site/home.js?v=af1e93751c"></script>
 </body>
 </html>

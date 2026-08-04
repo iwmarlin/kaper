@@ -166,337 +166,157 @@
   line-height: 1.35;
 }
 
-/* The homepage now moves from introduction to evidence, not into a second menu. */
-.home-page .home-editorial-heading {
-  max-width: 48rem;
-  margin-bottom: clamp(1.8rem, 3.2vw, 2.5rem);
+/* Research pathways: a numbered editorial index with explicit hierarchy. */
+.home-page .home-pathways {
+  padding: clamp(3.35rem, 6vw, 5.4rem) 0;
 }
 
-.home-page .home-editorial-heading h2 {
-  margin-bottom: 0.7rem;
-  font-size: clamp(2rem, 3.8vw, 3rem);
-  line-height: 1.05;
+.home-page .pathways-layout {
+  display: grid;
+  grid-template-columns: minmax(15rem, 0.72fr) minmax(0, 1.28fr);
+  gap: clamp(3rem, 7vw, 6.5rem);
+  align-items: start;
 }
 
-.home-page .home-editorial-heading > p:last-child,
-.home-page .home-editorial-heading--split > p {
-  max-width: 44rem;
+.home-page .pathways-intro {
+  position: sticky;
+  top: 7rem;
+  max-width: 25rem;
+}
+
+.home-page .pathways-intro h2 {
+  max-width: 9ch;
+  margin-bottom: 1rem;
+  font-size: clamp(2.15rem, 4vw, 3.25rem);
+  line-height: 1.02;
+}
+
+.home-page .pathways-intro > p:not(.eyebrow) {
   margin-bottom: 0;
   color: var(--ink-soft);
   font-family: var(--serif);
-  font-size: clamp(1rem, 1.45vw, 1.14rem);
+  font-size: 1.04rem;
   line-height: 1.62;
 }
 
-.home-page .home-journey {
-  padding: clamp(3rem, 5.2vw, 4.6rem) 0;
-}
-
-.home-page .journey-list {
-  border-top: 1px solid var(--line-dark);
-}
-
-.home-page .journey-card {
-  display: grid;
-  min-height: 22.5rem;
-  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
-  border-bottom: 1px solid var(--line-dark);
-}
-
-.home-page .journey-card:nth-child(even) .journey-card__figure {
-  grid-column: 2;
-  grid-row: 1;
-  border-right: 0;
-  border-left: 1px solid var(--line);
-}
-
-.home-page .journey-card:nth-child(even) .journey-card__copy {
-  grid-column: 1;
-  grid-row: 1;
-}
-
-.home-page .journey-card__figure {
-  display: grid;
-  min-width: 0;
-  grid-template-rows: minmax(0, 1fr) auto;
-  margin: 0;
-  border-right: 1px solid var(--line);
-  background: var(--paper-deep);
-}
-
-.home-page .journey-card__figure > a {
-  display: block;
-  min-height: 18.5rem;
-  overflow: hidden;
-}
-
-.home-page .journey-card__figure img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 400ms ease;
-}
-
-.home-page .journey-card[data-period="hollywood"] .journey-card__figure img {
-  padding: 1.2rem;
-  background: #e6ded0;
-  object-fit: contain;
-}
-
-.home-page .journey-card__figure > a:hover img,
-.home-page .journey-card__figure > a:focus-visible img {
-  transform: scale(1.018);
-}
-
-.home-page .journey-card__figure figcaption {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 1rem;
-  padding: 0.72rem 0.85rem;
+.home-page .pathways-intro__note {
+  margin-top: 1.35rem !important;
+  padding-top: 1.15rem;
   border-top: 1px solid var(--line);
-  color: var(--ink-soft);
-  font-size: 0.68rem;
-  line-height: 1.4;
+  color: var(--ink-soft) !important;
+  font-family: var(--sans) !important;
+  font-size: 0.76rem !important;
+  line-height: 1.55 !important;
 }
 
-.home-page .journey-card__figure figcaption span:first-child {
+.home-page .pathways-nav {
   min-width: 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
-.home-page .journey-card__figure figcaption a {
-  flex: none;
-  color: var(--accent-dark);
-  font-weight: 720;
-  text-decoration: none;
+.home-page .pathways-index {
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--line-dark);
+  list-style: none;
 }
 
-.home-page .journey-card__copy {
-  display: flex;
-  min-width: 0;
-  flex-direction: column;
-  justify-content: center;
-  padding: clamp(2rem, 4vw, 3.5rem);
+.home-page .pathways-index > li {
+  margin: 0;
+  border-bottom: 1px solid var(--line);
 }
 
-.home-page .journey-card__chapter {
-  display: flex;
-  align-items: baseline;
-  gap: 0.75rem;
-  margin: 0 0 0.4rem;
-  color: var(--accent-dark);
-  font-size: 0.68rem;
-  font-weight: 780;
-  letter-spacing: 0.11em;
-  text-transform: uppercase;
-}
-
-.home-page .journey-card__chapter span {
-  color: var(--gold);
-  font-family: var(--serif);
-  font-size: 1rem;
-  font-weight: 600;
-  letter-spacing: 0;
-}
-
-.home-page .journey-card__years {
-  margin: 0 0 0.8rem;
-  color: var(--ink-soft);
-  font-family: var(--serif);
-  font-size: 1.02rem;
-  font-variant-numeric: tabular-nums;
-}
-
-.home-page .journey-card h3 {
-  margin-bottom: 0.7rem;
-  font-size: clamp(1.8rem, 3vw, 2.45rem);
-  line-height: 1.07;
-}
-
-.home-page .journey-card h3 a {
+.home-page .pathway-row {
+  position: relative;
+  z-index: 0;
+  display: grid;
+  min-height: 8.6rem;
+  grid-template-columns: 3.3rem minmax(0, 1fr) minmax(8.5rem, auto) 1.4rem;
+  align-items: center;
+  gap: clamp(0.85rem, 2vw, 1.4rem);
+  padding: 1.35rem 0.35rem;
   color: var(--ink);
   text-decoration: none;
+  isolation: isolate;
+  transition: color 180ms ease, background 180ms ease;
 }
 
-.home-page .journey-card h3 a:hover,
-.home-page .journey-card h3 a:focus-visible {
+.home-page .pathway-row::before {
+  position: absolute;
+  inset: 0 -0.75rem;
+  z-index: -1;
+  background: rgba(255, 253, 248, 0);
+  content: "";
+  transition: background 180ms ease;
+}
+
+.home-page .pathway-row:hover {
   color: var(--accent-dark);
 }
 
-.home-page .journey-card__copy > p:not([class]) {
-  max-width: 35rem;
-  margin-bottom: 1rem;
-  color: var(--ink-soft);
-  font-size: 0.91rem;
-  line-height: 1.62;
-}
-
-.home-page .journey-card__meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.45rem 1rem;
-  margin: 0 0 1.1rem;
-  color: var(--ink-soft);
-  font-size: 0.7rem;
-  font-weight: 690;
-  letter-spacing: 0.055em;
-  text-transform: uppercase;
-}
-
-.home-page .journey-card__meta span + span::before {
-  margin-right: 1rem;
-  color: var(--gold);
-  content: "·";
-}
-
-.home-page .journey-card__link,
-.home-page .evidence-card__link,
-.home-page .home-text-link a {
-  width: fit-content;
-  color: var(--accent-dark);
-  font-size: 0.74rem;
-  font-weight: 760;
-  letter-spacing: 0.025em;
-  text-decoration: none;
-}
-
-.home-page .journey-card__link:hover,
-.home-page .journey-card__link:focus-visible,
-.home-page .evidence-card__link:hover,
-.home-page .evidence-card__link:focus-visible,
-.home-page .home-text-link a:hover,
-.home-page .home-text-link a:focus-visible {
-  text-decoration: underline;
-  text-underline-offset: 0.22em;
-}
-
-.home-page .home-media {
-  padding: clamp(3rem, 5.2vw, 4.6rem) 0;
-  border-block: 1px solid var(--line);
+.home-page .pathway-row:hover::before,
+.home-page .pathway-row:focus-visible::before {
   background: rgba(255, 253, 248, 0.68);
 }
 
-.home-page .home-editorial-heading--split {
-  display: grid;
-  max-width: none;
-  grid-template-columns: minmax(0, 0.95fr) minmax(18rem, 0.7fr);
-  align-items: end;
-  gap: clamp(2rem, 6vw, 6rem);
+.home-page .pathway-row:focus-visible {
+  border-radius: 0.1rem;
 }
 
-.home-page .home-editorial-heading--split h2 {
-  max-width: 15ch;
-  margin-bottom: 0;
+.home-page .pathway-row__number {
+  align-self: start;
+  padding-top: 0.32rem;
+  color: var(--line-dark);
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  font-variant-numeric: tabular-nums;
+  font-weight: 760;
+  letter-spacing: 0.1em;
 }
 
-.home-page .home-evidence-grid {
-  display: grid;
-  min-height: 36rem;
-  grid-template-columns: minmax(0, 1.55fr) minmax(17rem, 0.75fr);
-  grid-template-rows: repeat(2, minmax(0, 1fr));
-  gap: 1rem;
-}
-
-.home-page .evidence-card {
+.home-page .pathway-row__content {
   display: grid;
   min-width: 0;
-  grid-template-rows: minmax(10rem, 1fr) auto;
-  overflow: hidden;
-  border: 1px solid var(--line);
-  background: var(--surface);
+  gap: 0.45rem;
 }
 
-.home-page .evidence-card--featured {
-  grid-row: 1 / span 2;
-  grid-template-rows: minmax(21rem, 1fr) auto;
+.home-page .pathway-row__title {
+  font-family: var(--serif);
+  font-size: clamp(1.55rem, 2.7vw, 2.15rem);
+  font-weight: 540;
+  letter-spacing: -0.025em;
+  line-height: 1.08;
 }
 
-.home-page .evidence-card__media {
-  display: block;
-  min-height: 0;
-  overflow: hidden;
-  background: var(--paper-deep);
+.home-page .pathway-row__description {
+  max-width: 36rem;
+  color: var(--ink-soft);
+  font-size: 0.84rem;
+  line-height: 1.55;
 }
 
-.home-page .evidence-card__media > *,
-.home-page .evidence-card__media .media-preview {
-  width: 100%;
-  height: 100%;
-}
-
-.home-page .evidence-card__media img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  transition: transform 400ms ease;
-}
-
-.home-page .evidence-card__media:hover img,
-.home-page .evidence-card__media:focus-visible img {
-  transform: scale(1.018);
-}
-
-.home-page .evidence-card__body {
-  padding: 1rem 1.05rem 1.1rem;
-  border-top: 1px solid var(--line);
-}
-
-.home-page .evidence-card--featured .evidence-card__body {
-  padding: 1.25rem 1.35rem 1.35rem;
-}
-
-.home-page .evidence-card__meta {
-  margin: 0 0 0.45rem;
-  color: var(--accent-dark);
-  font-size: 0.62rem;
-  font-weight: 770;
-  letter-spacing: 0.095em;
+.home-page .pathway-row__meta {
+  align-self: center;
+  color: var(--ink-soft);
+  font-size: 0.64rem;
+  font-weight: 720;
+  letter-spacing: 0.075em;
+  line-height: 1.4;
+  text-align: right;
   text-transform: uppercase;
 }
 
-.home-page .evidence-card h3 {
-  margin-bottom: 0.5rem;
-  font-size: 1.15rem;
-  line-height: 1.18;
+.home-page .pathway-row__arrow {
+  color: var(--accent);
+  font-family: var(--serif);
+  font-size: 1.4rem;
+  line-height: 1;
+  transform: translateX(0);
+  transition: transform 180ms ease;
 }
 
-.home-page .evidence-card--featured h3 {
-  font-size: clamp(1.45rem, 2.4vw, 2rem);
-}
-
-.home-page .evidence-card h3 a {
-  color: var(--ink);
-  text-decoration: none;
-}
-
-.home-page .evidence-card h3 a:hover,
-.home-page .evidence-card h3 a:focus-visible {
-  color: var(--accent-dark);
-}
-
-.home-page .evidence-card__body > p:not(.evidence-card__meta) {
-  display: -webkit-box;
-  margin-bottom: 0.75rem;
-  overflow: hidden;
-  color: var(--ink-soft);
-  font-size: 0.78rem;
-  line-height: 1.5;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-}
-
-.home-page .evidence-card--featured .evidence-card__body > p:not(.evidence-card__meta) {
-  max-width: 46rem;
-  font-size: 0.86rem;
-  -webkit-line-clamp: 3;
-}
-
-.home-page .home-text-link {
-  margin: 1.2rem 0 0;
-  text-align: right;
+.home-page .pathway-row:hover .pathway-row__arrow,
+.home-page .pathway-row:focus-visible .pathway-row__arrow {
+  transform: translateX(0.3rem);
 }
 
 @media (max-width: 900px) {
@@ -524,18 +344,27 @@
     border-bottom: 1px solid var(--line);
   }
 
-  .home-page .journey-card__copy {
-    padding: 2rem;
+  .home-page .pathways-layout {
+    grid-template-columns: 1fr;
+    gap: 2.3rem;
   }
 
-  .home-page .home-evidence-grid {
-    min-height: 34rem;
-    grid-template-columns: minmax(0, 1.25fr) minmax(15rem, 0.75fr);
+  .home-page .pathways-intro {
+    position: static;
+    max-width: 42rem;
   }
 
+  .home-page .pathways-intro h2 {
+    max-width: none;
+  }
 }
 
 @media (max-width: 680px) {
+  /*
+   * The phone hero is composed as one compact editorial masthead.
+   * Text and portrait share the title row; the portrait no longer creates a
+   * second, screen-high block beneath the actions.
+   */
   .home-page .hero {
     padding: 1.35rem 0 1.15rem;
   }
@@ -639,6 +468,11 @@
     font-size: 0.77rem;
   }
 
+  /*
+   * The dataset label is useful as a desktop colophon, but on a phone the
+   * statistics already explain themselves and the extra line only delays the
+   * archive navigation.
+   */
   .home-page .home-stats__inner {
     display: block;
   }
@@ -679,90 +513,65 @@
     letter-spacing: 0.055em;
   }
 
-  .home-page .home-journey,
-  .home-page .home-media {
-    padding: 2.45rem 0;
+  .home-page .home-pathways {
+    padding: 1.9rem 0 2.55rem;
   }
 
-  .home-page .home-editorial-heading {
-    margin-bottom: 1.5rem;
-  }
-
-  .home-page .home-editorial-heading h2 {
-    font-size: clamp(1.9rem, 9vw, 2.4rem);
-  }
-
-  .home-page .home-editorial-heading > p:last-child,
-  .home-page .home-editorial-heading--split > p {
-    font-size: 0.98rem;
-  }
-
-  .home-page .home-editorial-heading--split {
-    grid-template-columns: 1fr;
-    gap: 0.7rem;
-  }
-
-  .home-page .journey-card,
-  .home-page .journey-card:nth-child(even) {
-    min-height: 0;
-    grid-template-columns: 1fr;
-  }
-
-  .home-page .journey-card:nth-child(even) .journey-card__figure,
-  .home-page .journey-card__figure {
-    grid-column: 1;
-    grid-row: 1;
-    border-right: 0;
-    border-left: 0;
-    border-bottom: 1px solid var(--line);
-  }
-
-  .home-page .journey-card:nth-child(even) .journey-card__copy,
-  .home-page .journey-card__copy {
-    grid-column: 1;
-    grid-row: 2;
-    padding: 1.55rem 0.2rem 1.8rem;
-  }
-
-  .home-page .journey-card__figure > a {
-    min-height: 0;
-    aspect-ratio: 4 / 3;
-  }
-
-  .home-page .journey-card__figure figcaption {
-    padding-inline: 0.2rem;
-  }
-
-  .home-page .journey-card h3 {
-    font-size: 1.7rem;
-  }
-
-  .home-page .home-evidence-grid {
-    min-height: 0;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
+  .home-page .pathways-layout {
     gap: 0.85rem;
   }
 
-  .home-page .evidence-card,
-  .home-page .evidence-card--featured {
-    grid-row: auto;
-    grid-template-rows: auto auto;
+  .home-page .pathways-intro .eyebrow {
+    margin-bottom: 0.35rem;
+    font-size: 0.64rem;
   }
 
-  .home-page .evidence-card__media {
-    aspect-ratio: 4 / 3;
+  .home-page .pathways-intro h2 {
+    margin-bottom: 0;
+    font-size: clamp(2rem, 10.5vw, 2.55rem);
+    line-height: 1;
   }
 
-  .home-page .evidence-card__body,
-  .home-page .evidence-card--featured .evidence-card__body {
-    padding: 1rem;
+  .home-page .pathways-intro > p:not(.eyebrow) {
+    display: none;
   }
 
-  .home-page .evidence-card--featured h3 {
-    font-size: 1.45rem;
+  .home-page .pathway-row {
+    min-height: 0;
+    grid-template-columns: 1.85rem minmax(0, 1fr) 1rem;
+    gap: 0.65rem;
+    padding: 0.82rem 0;
   }
 
+  .home-page .pathway-row__number {
+    grid-column: 1;
+    grid-row: 1;
+    align-self: start;
+    padding-top: 0.22rem;
+    font-size: 0.6rem;
+  }
+
+  .home-page .pathway-row__content {
+    grid-column: 2;
+    grid-row: 1;
+    gap: 0.18rem;
+  }
+
+  .home-page .pathway-row__title {
+    font-size: 1.38rem;
+  }
+
+  .home-page .pathway-row__description {
+    font-size: 0.75rem;
+    line-height: 1.4;
+  }
+
+  .home-page .pathway-row__arrow {
+    grid-column: 3;
+    grid-row: 1;
+    align-self: center;
+    font-size: 1.1rem;
+  }
 }
 
 @media (max-width: 420px) {
