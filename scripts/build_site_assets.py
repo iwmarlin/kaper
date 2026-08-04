@@ -180,82 +180,17 @@ def write_javascript_mapping(path: Path, mapping: dict) -> None:
     )
 
 
-ERA_META = {
-    "warsaw": ("Warsaw", "1902–1926"),
-    "european": ("European period", "1926–1934"),
-    "hollywood": ("Hollywood", "1935–1939"),
-}
-TYPE_LABELS = {"Song": "Songs", "Film": "Films", "Other": "Other works"}
-
-
-def at_a_glance(data_root: Path) -> dict:
-    works = read_json(data_root / "works.json").get("records", [])
-    people = read_json(data_root / "people.json").get("records", [])
-    contributions = read_json(data_root / "contributions.json").get("records", [])
-
-    type_counts: dict[str, int] = {}
-    era_counts: dict[str, int] = {}
-    certainty = {"confirmed": 0, "probable": 0, "uncertain": 0}
-    years: list[int] = []
-    for work in works:
-        work_type = work.get("workType") or "Other"
-        type_counts[work_type] = type_counts.get(work_type, 0) + 1
-        periods = work.get("periods") or ([work["period"]] if work.get("period") else [])
-        for period in periods:
-            era_counts[period] = era_counts.get(period, 0) + 1
-        level = work.get("certainty")
-        if level in certainty:
-            certainty[level] += 1
-        if str(work.get("year") or "").isdigit():
-            years.append(int(work["year"]))
-
-    by_type = [
-        {"label": TYPE_LABELS.get(name, name), "count": count}
-        for name, count in sorted(type_counts.items(), key=lambda item: item[1], reverse=True)
-    ]
-    by_era = [
-        {"label": ERA_META.get(key, (key.title(), ""))[0], "note": ERA_META.get(key, ("", ""))[1], "count": count}
-        for key, count in sorted(era_counts.items(), key=lambda item: item[1], reverse=True)
-    ]
-
-    kaper = next((person for person in people if person.get("displayName") == "Bronisław Kaper"), None)
-    kaper_id = kaper["id"] if kaper else None
-    work_people: dict[str, set[str]] = {}
-    for contribution in contributions:
-        for work_id in contribution.get("workIds") or []:
-            work_people.setdefault(work_id, set()).update(contribution.get("personIds") or [])
-    people_by_id = {person["id"]: person for person in people}
-    shared: dict[str, int] = {}
-    for work_id, person_ids in work_people.items():
-        if kaper_id and kaper_id not in person_ids:
-            continue
-        for person_id in person_ids:
-            if person_id == kaper_id:
-                continue
-            shared[person_id] = shared.get(person_id, 0) + 1
-    collaborators = [
-        {"name": people_by_id.get(person_id, {}).get("displayName", person_id), "count": count}
-        for person_id, count in sorted(shared.items(), key=lambda item: item[1], reverse=True)[:3]
-    ]
-
-    return {
-        "byType": by_type,
-        "byEra": by_era,
-        "collaborators": collaborators,
-        "span": {"start": min(years), "end": max(years)} if years else None,
-        "certainty": certainty,
-    }
-
-
 def home_payload(data_root: Path) -> dict:
     manifest = read_json(data_root / "manifest.json")
     events = read_json(data_root / "timeline-events.json").get("records", [])
     media = read_json(data_root / "media.json").get("records", [])
     counts = manifest["counts"]
+
     def event_sort_key(item: dict) -> str:
         return str(item.get("sortDate") or item.get("dateStart") or "")
 
     events_by_id = {item["id"]: item for item in events}
+    media_by_id = {item["id"]: item for item in media}
     # Curated signature moments — one per era, chosen for narrative strength, so the
     # home teaser spans the whole career (Warsaw → Europe → Hollywood):
     # first published songs → the Jurmann partnership → the Hollywood debut.
@@ -286,10 +221,28 @@ def home_payload(data_root: Path) -> dict:
         )
         indexes = sorted({0, len(candidates) // 2, max(0, len(candidates) - 1)})
         event_selection = [candidates[index] for index in indexes if candidates][:3]
-    portrait = next((item for item in media if item.get("id") == "M048"), None)
+    journey_media_ids = {
+        "TE0014": "M080",
+        "TE0026": "M046",
+        "TE0037": "M074",
+    }
+    journey = []
+    for event in event_selection:
+        chapter = dict(event)
+        image_id = journey_media_ids.get(event["id"])
+        if image_id and image_id in media_by_id:
+            chapter["image"] = media_by_id[image_id]
+        journey.append(chapter)
+
+    portrait = media_by_id.get("M048")
     if portrait is None:
-        portrait = next((item for item in media if item.get("category") == "portrait" and item.get("assetPath")), None)
-    highlights = sorted(
+        portrait = next(
+            (item for item in media if item.get("category") == "portrait" and item.get("assetPath")),
+            None,
+        )
+    curated_highlight_ids = ("M227", "M037", "M115")
+    highlights = [media_by_id[item_id] for item_id in curated_highlight_ids if item_id in media_by_id]
+    fallback_highlights = sorted(
         (
             item for item in media
             if item.get("galleryStatus") == "selected"
@@ -298,14 +251,21 @@ def home_payload(data_root: Path) -> dict:
             and item.get("mediaType") != "audio"
         ),
         key=lambda item: int(item.get("sortOrder") or 99999),
-    )[:3]
+    )
+    portrait_id = portrait.get("id") if portrait else None
+    highlight_ids = {entry.get("id") for entry in highlights}
+    for item in fallback_highlights:
+        if len(highlights) >= 3:
+            break
+        if item.get("id") != portrait_id and item.get("id") not in highlight_ids:
+            highlights.append(item)
+            highlight_ids.add(item.get("id"))
     return {
         "schemaVersion": manifest.get("schemaVersion", "1.0.0"),
         "stats": [counts["Works"], counts["Timeline Events"], counts["Places"], counts["Sources"]],
         "portrait": portrait,
-        "events": event_selection,
+        "journey": journey,
         "highlights": highlights,
-        "atAGlance": at_a_glance(data_root),
     }
 
 
