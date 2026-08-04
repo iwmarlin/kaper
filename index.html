@@ -15,6 +15,7 @@
   <link rel="preload" href="assets/fonts/kaper-sans.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/kaper-serif.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/site/styles.css?v=af1e93751c">
+  <link rel="stylesheet" href="assets/site/home.css?v=20260804">
   <title>Bronisław Kaper — A Source-Based Archive, 1902–1939</title>
   <script type="application/ld+json">
   {
@@ -34,22 +35,23 @@
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
 </head>
 <body class="home-page">
-    <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   <header class="site-header" data-site-header></header>
   <main id="main-content">
-    <section class="hero">
+    <section class="hero" aria-labelledby="home-title">
       <div class="shell hero__grid">
-        <div>
+        <div class="hero__copy">
           <p class="eyebrow">A source-based research archive · 1902–1939</p>
-          <h1 class="hero-title">
-            <span class="hero-title__primary">Tracing Kaper</span>
-            <span class="hero-title__route">from Warsaw to <em>early Hollywood</em></span>
+          <h1 class="hero-title" id="home-title">
+            <span class="hero-title__primary">Bronisław Kaper</span>
+            <span class="hero-title__route">Warsaw · Berlin · Paris · <em>early Hollywood</em></span>
           </h1>
-          <p class="lead">Works, collaborators, places and surviving evidence illuminate Bronisław Kaper's path from Warsaw through Berlin and Paris to his first years in Hollywood.</p>
+          <p class="lead">A relational archive of works, people, places, events and surviving evidence documenting Kaper’s career from his Warsaw beginnings to his first years in Hollywood.</p>
           <div class="hero__actions">
-            <a class="button" href="works.html">Explore the catalogue <span aria-hidden="true">→</span></a>
-            <a class="button button--ghost" href="life.html">Follow the timeline</a>
+            <a class="button" href="works.html">Search the catalogue <span aria-hidden="true">→</span></a>
+            <a class="button button--ghost" href="life.html">Explore the chronology</a>
           </div>
+          <p class="hero__scope">Public research data · Stable record identifiers · Source-linked evidence</p>
         </div>
         <figure class="hero__portrait" id="hero-portrait" aria-live="polite">
           <div class="loading" role="status"><span class="loading__mark" aria-hidden="true"></span><span>Loading portrait…</span></div>
@@ -57,50 +59,75 @@
       </div>
     </section>
 
-    <section class="home-stats" aria-label="Collection statistics">
-      <div class="shell stats" id="collection-stats">
-        <div class="stat"><strong>—</strong><span>Published works</span></div>
-        <div class="stat"><strong>—</strong><span>Timeline events</span></div>
-        <div class="stat"><strong>—</strong><span>Documented places</span></div>
-        <div class="stat"><strong>—</strong><span>Linked sources</span></div>
+    <section class="home-stats" aria-labelledby="collection-summary-title">
+      <div class="shell home-stats__inner">
+        <p class="home-stats__label" id="collection-summary-title">Current public dataset</p>
+        <div class="stats" id="collection-stats">
+          <div class="stat"><strong>—</strong><span>Published works</span></div>
+          <div class="stat"><strong>—</strong><span>Timeline events</span></div>
+          <div class="stat"><strong>—</strong><span>Documented places</span></div>
+          <div class="stat"><strong>—</strong><span>Linked sources</span></div>
+        </div>
       </div>
     </section>
 
-    <section class="section home-section home-pathways">
-      <div class="shell">
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow">Research pathways</p>
-            <h2>Explore a connected archive</h2>
-            <p>Every public record remains connected to the sources, people, places and media that establish its context.</p>
-          </div>
-        </div>
-        <div class="card-grid home-pathways__grid">
-          <article class="card">
-            <div class="card__meta"><span class="badge badge--type">Catalogue</span></div>
-            <h3><a href="works.html">Films, songs and other works</a></h3>
-            <p class="card__description">Search the complete public catalogue, compare attribution levels and move between related titles and versions.</p>
-            <div class="card__footer"><span>Relational catalogue</span><span aria-hidden="true">→</span></div>
-          </article>
-          <article class="card">
-            <div class="card__meta"><span class="badge badge--type">Chronology</span></div>
-            <h3><a href="life.html">A source-based timeline</a></h3>
-            <p class="card__description">Follow documented events from education and early composition to European cinema and the move to Hollywood.</p>
-            <div class="card__footer"><span id="timeline-pathway-count">Documented chronology</span><span aria-hidden="true">→</span></div>
-          </article>
-          <article class="card">
-            <div class="card__meta"><span class="badge badge--type">People</span></div>
-            <h3><a href="people.html">Collaborators and contemporaries</a></h3>
-            <p class="card__description">Composers, lyricists, directors and performers documented alongside Kaper, each with authority records and linked works.</p>
-            <div class="card__footer"><span>Authority index</span><span aria-hidden="true">→</span></div>
-          </article>
-          <article class="card">
-            <div class="card__meta"><span class="badge badge--type">Geography</span></div>
-            <h3><a href="map.html">Places and professional routes</a></h3>
-            <p class="card__description">Move from Warsaw addresses to Berlin studios, Paris production networks and early American locations.</p>
-            <div class="card__footer"><span>Interactive map and list</span><span aria-hidden="true">→</span></div>
-          </article>
-        </div>
+    <section class="section home-section home-pathways" aria-labelledby="archive-pathways-title">
+      <div class="shell pathways-layout">
+        <header class="pathways-intro">
+          <p class="eyebrow">Research pathways</p>
+          <h2 id="archive-pathways-title">Explore the archive</h2>
+          <p>The archive can be entered through its principal entities. Every published record remains connected to the sources, people, places and media that establish its historical context.</p>
+          <p class="pathways-intro__note">Choose a pathway to browse the relational dataset or move directly between linked records.</p>
+        </header>
+
+        <nav class="pathways-nav" aria-labelledby="archive-pathways-title">
+          <ol class="pathways-index">
+            <li>
+              <a class="pathway-row" href="works.html">
+                <span class="pathway-row__number" aria-hidden="true">01</span>
+                <span class="pathway-row__content">
+                  <span class="pathway-row__title">Works</span>
+                  <span class="pathway-row__description">Films, songs and other works, with titles, versions, dates and qualified attributions.</span>
+                </span>
+                <span class="pathway-row__meta">Relational catalogue</span>
+                <span class="pathway-row__arrow" aria-hidden="true">→</span>
+              </a>
+            </li>
+            <li>
+              <a class="pathway-row" href="life.html">
+                <span class="pathway-row__number" aria-hidden="true">02</span>
+                <span class="pathway-row__content">
+                  <span class="pathway-row__title">Timeline</span>
+                  <span class="pathway-row__description">A source-based chronology of education, composition, migration and professional activity.</span>
+                </span>
+                <span class="pathway-row__meta" id="timeline-pathway-count">Documented chronology</span>
+                <span class="pathway-row__arrow" aria-hidden="true">→</span>
+              </a>
+            </li>
+            <li>
+              <a class="pathway-row" href="people.html">
+                <span class="pathway-row__number" aria-hidden="true">03</span>
+                <span class="pathway-row__content">
+                  <span class="pathway-row__title">People</span>
+                  <span class="pathway-row__description">Collaborators and contemporaries represented through stable public authority records.</span>
+                </span>
+                <span class="pathway-row__meta">Authority index</span>
+                <span class="pathway-row__arrow" aria-hidden="true">→</span>
+              </a>
+            </li>
+            <li>
+              <a class="pathway-row" href="map.html">
+                <span class="pathway-row__number" aria-hidden="true">04</span>
+                <span class="pathway-row__content">
+                  <span class="pathway-row__title">Places</span>
+                  <span class="pathway-row__description">Addresses, venues, studios and routes from Warsaw to Berlin, Paris and early Hollywood.</span>
+                </span>
+                <span class="pathway-row__meta">Map and place index</span>
+                <span class="pathway-row__arrow" aria-hidden="true">→</span>
+              </a>
+            </li>
+          </ol>
+        </nav>
       </div>
     </section>
 

@@ -1,0 +1,598 @@
+/*
+ * Homepage editorial layer
+ * -------------------------
+ * The research archive uses a publication-like homepage rather than a
+ * dashboard of interchangeable cards. These rules are intentionally scoped to
+ * .home-page so the catalogue, timeline, map and record interfaces retain
+ * their established component system.
+ */
+
+.home-page .hero {
+  padding: clamp(3rem, 5.8vw, 4.75rem) 0 clamp(2.6rem, 4.8vw, 3.9rem);
+  background:
+    linear-gradient(90deg, rgba(255, 253, 248, 0.38), transparent 58%),
+    radial-gradient(circle at 82% 22%, rgba(183, 139, 69, 0.11), transparent 21rem);
+}
+
+.home-page .hero::after {
+  top: 3.25rem;
+  right: max(-10rem, calc((100vw - 1180px) / 2 - 17rem));
+  width: min(48vw, 40rem);
+  border-color: rgba(183, 139, 69, 0.28);
+}
+
+.home-page .hero__grid {
+  grid-template-columns: minmax(0, 1.42fr) minmax(15.5rem, 0.58fr);
+  align-items: center;
+  gap: clamp(3rem, 6vw, 5.75rem);
+}
+
+.home-page .hero__copy {
+  max-width: 46rem;
+}
+
+.home-page .hero .eyebrow {
+  margin-bottom: 0.85rem;
+}
+
+.home-page .hero h1 {
+  margin-bottom: 1rem;
+  font-size: clamp(3.15rem, 6vw, 5.25rem);
+  line-height: 0.91;
+  text-wrap: balance;
+}
+
+.home-page .hero-title__primary {
+  letter-spacing: -0.045em;
+}
+
+.home-page .hero-title__route {
+  max-width: none;
+  margin-top: 0.3em;
+  color: var(--ink-soft);
+  font-family: var(--sans);
+  font-size: 0.27em;
+  font-weight: 620;
+  letter-spacing: 0.045em;
+  line-height: 1.35;
+  text-transform: uppercase;
+  white-space: normal;
+}
+
+.home-page .hero-title__route em {
+  font-family: var(--serif);
+  font-size: 1.08em;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.home-page .hero .lead {
+  max-width: 42rem;
+  margin-bottom: 0;
+  color: #354e56;
+  font-size: clamp(1.08rem, 1.75vw, 1.32rem);
+  line-height: 1.54;
+}
+
+.home-page .hero__actions {
+  margin-top: 1.65rem;
+}
+
+.home-page .hero__scope {
+  margin: 1.15rem 0 0;
+  color: var(--ink-soft);
+  font-size: 0.72rem;
+  font-weight: 650;
+  letter-spacing: 0.055em;
+  line-height: 1.45;
+  text-transform: uppercase;
+}
+
+.home-page .hero__portrait {
+  width: min(100%, 18.5rem);
+  padding: 0.42rem;
+  border-color: rgba(169, 153, 132, 0.9);
+  border-radius: var(--radius-sm);
+  background: rgba(255, 253, 248, 0.76);
+  box-shadow: 0 20px 50px rgba(21, 44, 51, 0.11);
+}
+
+.home-page .hero__portrait img {
+  border-radius: 0.16rem;
+}
+
+.home-page .hero__portrait figcaption {
+  padding: 0.7rem 0.35rem 0.25rem;
+  font-size: 0.7rem;
+  line-height: 1.45;
+}
+
+/* Dataset summary: a compact scholarly colophon, not four dashboard tiles. */
+.home-page .home-stats {
+  border-bottom: 1px solid var(--line);
+  background: rgba(255, 253, 248, 0.48);
+}
+
+.home-page .home-stats__inner {
+  display: grid;
+  grid-template-columns: minmax(9.5rem, 0.38fr) minmax(0, 1.62fr);
+  align-items: stretch;
+}
+
+.home-page .home-stats__label {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 1rem 1.5rem 1rem 0;
+  border-right: 1px solid var(--line);
+  color: var(--ink-soft);
+  font-size: 0.67rem;
+  font-weight: 760;
+  letter-spacing: 0.1em;
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+
+.home-page .home-stats .stats {
+  border: 0;
+  background: transparent;
+}
+
+.home-page .home-stats .stat {
+  display: flex;
+  min-width: 0;
+  align-items: baseline;
+  gap: 0.55rem;
+  padding: 0.92rem clamp(0.8rem, 2vw, 1.35rem);
+  border-right: 1px solid var(--line);
+}
+
+.home-page .home-stats .stat:last-child {
+  border-right: 0;
+}
+
+.home-page .home-stats .stat strong {
+  flex: none;
+  margin: 0;
+  color: var(--accent-dark);
+  font-size: clamp(1.45rem, 2.5vw, 2rem);
+  font-variant-numeric: tabular-nums;
+}
+
+.home-page .home-stats .stat span {
+  color: var(--ink-soft);
+  font-size: 0.62rem;
+  letter-spacing: 0.065em;
+  line-height: 1.35;
+}
+
+/* Research pathways: a numbered editorial index with explicit hierarchy. */
+.home-page .home-pathways {
+  padding: clamp(3.35rem, 6vw, 5.4rem) 0;
+}
+
+.home-page .pathways-layout {
+  display: grid;
+  grid-template-columns: minmax(15rem, 0.72fr) minmax(0, 1.28fr);
+  gap: clamp(3rem, 7vw, 6.5rem);
+  align-items: start;
+}
+
+.home-page .pathways-intro {
+  position: sticky;
+  top: 7rem;
+  max-width: 25rem;
+}
+
+.home-page .pathways-intro h2 {
+  max-width: 9ch;
+  margin-bottom: 1rem;
+  font-size: clamp(2.15rem, 4vw, 3.25rem);
+  line-height: 1.02;
+}
+
+.home-page .pathways-intro > p:not(.eyebrow) {
+  margin-bottom: 0;
+  color: var(--ink-soft);
+  font-family: var(--serif);
+  font-size: 1.04rem;
+  line-height: 1.62;
+}
+
+.home-page .pathways-intro__note {
+  margin-top: 1.35rem !important;
+  padding-top: 1.15rem;
+  border-top: 1px solid var(--line);
+  color: var(--ink-soft) !important;
+  font-family: var(--sans) !important;
+  font-size: 0.76rem !important;
+  line-height: 1.55 !important;
+}
+
+.home-page .pathways-nav {
+  min-width: 0;
+}
+
+.home-page .pathways-index {
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--line-dark);
+  list-style: none;
+}
+
+.home-page .pathways-index > li {
+  margin: 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.home-page .pathway-row {
+  position: relative;
+  z-index: 0;
+  display: grid;
+  min-height: 8.6rem;
+  grid-template-columns: 3.3rem minmax(0, 1fr) minmax(8.5rem, auto) 1.4rem;
+  align-items: center;
+  gap: clamp(0.85rem, 2vw, 1.4rem);
+  padding: 1.35rem 0.35rem;
+  color: var(--ink);
+  text-decoration: none;
+  isolation: isolate;
+  transition: color 180ms ease, background 180ms ease;
+}
+
+.home-page .pathway-row::before {
+  position: absolute;
+  inset: 0 -0.75rem;
+  z-index: -1;
+  background: rgba(255, 253, 248, 0);
+  content: "";
+  transition: background 180ms ease;
+}
+
+.home-page .pathway-row:hover {
+  color: var(--accent-dark);
+}
+
+.home-page .pathway-row:hover::before,
+.home-page .pathway-row:focus-visible::before {
+  background: rgba(255, 253, 248, 0.68);
+}
+
+.home-page .pathway-row:focus-visible {
+  border-radius: 0.1rem;
+}
+
+.home-page .pathway-row__number {
+  align-self: start;
+  padding-top: 0.32rem;
+  color: var(--line-dark);
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  font-variant-numeric: tabular-nums;
+  font-weight: 760;
+  letter-spacing: 0.1em;
+}
+
+.home-page .pathway-row__content {
+  display: grid;
+  min-width: 0;
+  gap: 0.45rem;
+}
+
+.home-page .pathway-row__title {
+  font-family: var(--serif);
+  font-size: clamp(1.55rem, 2.7vw, 2.15rem);
+  font-weight: 540;
+  letter-spacing: -0.025em;
+  line-height: 1.08;
+}
+
+.home-page .pathway-row__description {
+  max-width: 36rem;
+  color: var(--ink-soft);
+  font-size: 0.84rem;
+  line-height: 1.55;
+}
+
+.home-page .pathway-row__meta {
+  align-self: center;
+  color: var(--ink-soft);
+  font-size: 0.64rem;
+  font-weight: 720;
+  letter-spacing: 0.075em;
+  line-height: 1.4;
+  text-align: right;
+  text-transform: uppercase;
+}
+
+.home-page .pathway-row__arrow {
+  color: var(--accent);
+  font-family: var(--serif);
+  font-size: 1.4rem;
+  line-height: 1;
+  transform: translateX(0);
+  transition: transform 180ms ease;
+}
+
+.home-page .pathway-row:hover .pathway-row__arrow,
+.home-page .pathway-row:focus-visible .pathway-row__arrow {
+  transform: translateX(0.3rem);
+}
+
+@media (max-width: 900px) {
+  .home-page .hero__grid {
+    grid-template-columns: minmax(0, 1fr) minmax(13.5rem, 0.42fr);
+    gap: 2.5rem;
+  }
+
+  .home-page .hero h1 {
+    font-size: clamp(2.85rem, 8.5vw, 4.35rem);
+  }
+
+  .home-page .hero__portrait {
+    width: min(100%, 16rem);
+    margin-left: auto;
+  }
+
+  .home-page .home-stats__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .home-page .home-stats__label {
+    padding: 0.75rem 0;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .home-page .pathways-layout {
+    grid-template-columns: 1fr;
+    gap: 2.3rem;
+  }
+
+  .home-page .pathways-intro {
+    position: static;
+    max-width: 42rem;
+  }
+
+  .home-page .pathways-intro h2 {
+    max-width: none;
+  }
+}
+
+@media (max-width: 680px) {
+  /*
+   * The phone hero is composed as one compact editorial masthead.
+   * Text and portrait share the title row; the portrait no longer creates a
+   * second, screen-high block beneath the actions.
+   */
+  .home-page .hero {
+    padding: 1.35rem 0 1.15rem;
+  }
+
+  .home-page .hero::after {
+    display: none;
+  }
+
+  .home-page .hero__grid {
+    grid-template-columns: minmax(0, 1fr) 6.75rem;
+    grid-template-rows: auto auto auto auto;
+    align-items: start;
+    gap: 0.72rem 0.85rem;
+  }
+
+  .home-page .hero__copy {
+    display: contents;
+  }
+
+  .home-page .hero .eyebrow {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    margin: 0 0 0.05rem;
+    font-size: 0.64rem;
+    letter-spacing: 0.12em;
+  }
+
+  .home-page .hero h1 {
+    grid-column: 1;
+    grid-row: 2;
+    align-self: center;
+    margin: 0;
+    font-size: clamp(2.55rem, 12.8vw, 3.2rem);
+    line-height: 0.9;
+  }
+
+  .home-page .hero-title__primary {
+    letter-spacing: -0.05em;
+  }
+
+  .home-page .hero-title__route {
+    max-width: 21rem;
+    margin-top: 0.48em;
+    font-size: 0.25em;
+    letter-spacing: 0.035em;
+    line-height: 1.42;
+  }
+
+  .home-page .hero__portrait {
+    grid-column: 2;
+    grid-row: 2;
+    align-self: start;
+    width: 6.75rem;
+    margin: 0;
+    padding: 0.25rem;
+    border-radius: 0.3rem;
+    box-shadow: 0 8px 22px rgba(21, 44, 51, 0.1);
+  }
+
+  .home-page .hero__portrait img {
+    aspect-ratio: 1;
+    border-radius: 0.12rem;
+    object-fit: cover;
+    object-position: 50% 34%;
+  }
+
+  .home-page .hero__portrait figcaption {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .home-page .hero .lead {
+    grid-column: 1 / -1;
+    grid-row: 3;
+    max-width: 32rem;
+    margin: 0.15rem 0 0;
+    font-size: 0.98rem;
+    line-height: 1.46;
+  }
+
+  .home-page .hero__actions {
+    grid-column: 1 / -1;
+    grid-row: 4;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.55rem;
+    margin-top: 0.25rem;
+  }
+
+  .home-page .hero__actions .button {
+    width: 100%;
+    min-height: 2.55rem;
+    padding: 0.52rem 0.7rem;
+    font-size: 0.77rem;
+  }
+
+  /*
+   * The dataset label is useful as a desktop colophon, but on a phone the
+   * statistics already explain themselves and the extra line only delays the
+   * archive navigation.
+   */
+  .home-page .home-stats__inner {
+    display: block;
+  }
+
+  .home-page .home-stats__label {
+    display: none;
+  }
+
+  .home-page .home-stats .stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .home-page .home-stats .stat,
+  .home-page .home-stats .stat:nth-child(2) {
+    display: grid;
+    min-height: 4.55rem;
+    gap: 0.12rem;
+    align-content: center;
+    padding: 0.6rem 0.7rem;
+    border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .home-page .home-stats .stat:nth-child(even) {
+    border-right: 0;
+  }
+
+  .home-page .home-stats .stat:nth-last-child(-n + 2) {
+    border-bottom: 0;
+  }
+
+  .home-page .home-stats .stat strong {
+    font-size: 1.45rem;
+  }
+
+  .home-page .home-stats .stat span {
+    font-size: 0.56rem;
+    letter-spacing: 0.055em;
+  }
+
+  .home-page .home-pathways {
+    padding: 1.9rem 0 2.55rem;
+  }
+
+  .home-page .pathways-layout {
+    gap: 0.85rem;
+  }
+
+  .home-page .pathways-intro .eyebrow {
+    margin-bottom: 0.35rem;
+    font-size: 0.64rem;
+  }
+
+  .home-page .pathways-intro h2 {
+    margin-bottom: 0;
+    font-size: clamp(2rem, 10.5vw, 2.55rem);
+    line-height: 1;
+  }
+
+  .home-page .pathways-intro > p:not(.eyebrow) {
+    display: none;
+  }
+
+  .home-page .pathway-row {
+    min-height: 0;
+    grid-template-columns: 1.85rem minmax(0, 1fr) 1rem;
+    gap: 0.65rem;
+    padding: 0.82rem 0;
+  }
+
+  .home-page .pathway-row__number {
+    grid-column: 1;
+    grid-row: 1;
+    align-self: start;
+    padding-top: 0.22rem;
+    font-size: 0.6rem;
+  }
+
+  .home-page .pathway-row__content {
+    grid-column: 2;
+    grid-row: 1;
+    gap: 0.18rem;
+  }
+
+  .home-page .pathway-row__title {
+    font-size: 1.38rem;
+  }
+
+  .home-page .pathway-row__description {
+    font-size: 0.75rem;
+    line-height: 1.4;
+  }
+
+  .home-page .pathway-row__arrow {
+    grid-column: 3;
+    grid-row: 1;
+    align-self: center;
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .home-page .hero__grid {
+    grid-template-columns: minmax(0, 1fr) 6.15rem;
+    column-gap: 0.7rem;
+  }
+
+  .home-page .hero h1 {
+    font-size: clamp(2.35rem, 12.2vw, 2.9rem);
+  }
+
+  .home-page .hero-title__route {
+    font-size: 0.255em;
+  }
+
+  .home-page .hero__portrait {
+    width: 6.15rem;
+  }
+
+  .home-page .hero__actions .button {
+    font-size: 0.73rem;
+  }
+}
