@@ -65,10 +65,6 @@ try {
   document.querySelectorAll("#collection-stats strong").forEach((node, index) => {
     node.textContent = numberFormat.format(stats[index]);
   });
-  const timelinePathwayCount = document.querySelector("#timeline-pathway-count");
-  if (timelinePathwayCount) {
-    timelinePathwayCount.textContent = `${numberFormat.format(stats[1])} documented events`;
-  }
   renderFigures(atAGlance);
 
   const portraitTarget = document.querySelector("#hero-portrait");
