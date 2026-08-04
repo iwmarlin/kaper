@@ -169,13 +169,13 @@
 /* The homepage now moves from introduction to evidence, not into a second menu. */
 .home-page .home-editorial-heading {
   max-width: 48rem;
-  margin-bottom: clamp(2rem, 4vw, 3.2rem);
+  margin-bottom: clamp(1.8rem, 3.2vw, 2.5rem);
 }
 
 .home-page .home-editorial-heading h2 {
-  margin-bottom: 0.8rem;
-  font-size: clamp(2rem, 4.4vw, 3.45rem);
-  line-height: 1.02;
+  margin-bottom: 0.7rem;
+  font-size: clamp(2rem, 3.8vw, 3rem);
+  line-height: 1.05;
 }
 
 .home-page .home-editorial-heading > p:last-child,
@@ -189,7 +189,7 @@
 }
 
 .home-page .home-journey {
-  padding: clamp(3.5rem, 6.5vw, 5.8rem) 0;
+  padding: clamp(3rem, 5.2vw, 4.6rem) 0;
 }
 
 .home-page .journey-list {
@@ -198,7 +198,7 @@
 
 .home-page .journey-card {
   display: grid;
-  min-height: 26rem;
+  min-height: 22.5rem;
   grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
   border-bottom: 1px solid var(--line-dark);
 }
@@ -226,7 +226,7 @@
 
 .home-page .journey-card__figure > a {
   display: block;
-  min-height: 21rem;
+  min-height: 18.5rem;
   overflow: hidden;
 }
 
@@ -279,7 +279,7 @@
   min-width: 0;
   flex-direction: column;
   justify-content: center;
-  padding: clamp(2rem, 5vw, 4.5rem);
+  padding: clamp(2rem, 4vw, 3.5rem);
 }
 
 .home-page .journey-card__chapter {
@@ -303,7 +303,7 @@
 }
 
 .home-page .journey-card__years {
-  margin: 0 0 1rem;
+  margin: 0 0 0.8rem;
   color: var(--ink-soft);
   font-family: var(--serif);
   font-size: 1.02rem;
@@ -311,9 +311,9 @@
 }
 
 .home-page .journey-card h3 {
-  margin-bottom: 0.75rem;
-  font-size: clamp(1.8rem, 3.4vw, 2.8rem);
-  line-height: 1.05;
+  margin-bottom: 0.7rem;
+  font-size: clamp(1.8rem, 3vw, 2.45rem);
+  line-height: 1.07;
 }
 
 .home-page .journey-card h3 a {
@@ -374,7 +374,7 @@
 }
 
 .home-page .home-media {
-  padding: clamp(3.5rem, 6.5vw, 5.8rem) 0;
+  padding: clamp(3rem, 5.2vw, 4.6rem) 0;
   border-block: 1px solid var(--line);
   background: rgba(255, 253, 248, 0.68);
 }
@@ -394,7 +394,7 @@
 
 .home-page .home-evidence-grid {
   display: grid;
-  min-height: 42rem;
+  min-height: 36rem;
   grid-template-columns: minmax(0, 1.55fr) minmax(17rem, 0.75fr);
   grid-template-rows: repeat(2, minmax(0, 1fr));
   gap: 1rem;
@@ -411,7 +411,7 @@
 
 .home-page .evidence-card--featured {
   grid-row: 1 / span 2;
-  grid-template-rows: minmax(25rem, 1fr) auto;
+  grid-template-rows: minmax(21rem, 1fr) auto;
 }
 
 .home-page .evidence-card__media {
@@ -529,7 +529,7 @@
   }
 
   .home-page .home-evidence-grid {
-    min-height: 38rem;
+    min-height: 34rem;
     grid-template-columns: minmax(0, 1.25fr) minmax(15rem, 0.75fr);
   }
 
@@ -681,15 +681,15 @@
 
   .home-page .home-journey,
   .home-page .home-media {
-    padding: 2.8rem 0;
+    padding: 2.45rem 0;
   }
 
   .home-page .home-editorial-heading {
-    margin-bottom: 1.75rem;
+    margin-bottom: 1.5rem;
   }
 
   .home-page .home-editorial-heading h2 {
-    font-size: clamp(2rem, 10vw, 2.65rem);
+    font-size: clamp(1.9rem, 9vw, 2.4rem);
   }
 
   .home-page .home-editorial-heading > p:last-child,
@@ -734,7 +734,7 @@
   }
 
   .home-page .journey-card h3 {
-    font-size: 1.8rem;
+    font-size: 1.7rem;
   }
 
   .home-page .home-evidence-grid {
