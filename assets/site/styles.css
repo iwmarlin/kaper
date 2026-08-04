@@ -2028,7 +2028,7 @@ main {
 .place-list__precision {
   margin-top: 0.18rem;
   color: var(--accent-dark);
-  font-size: 0.61rem;
+  font-size: 0.72rem;
   font-weight: 720;
   letter-spacing: 0.045em;
   line-height: 1.2;
@@ -2038,18 +2038,16 @@ main {
 .place-list__main strong {
   overflow: hidden;
   color: var(--ink);
-  font-size: 0.86rem;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  font-size: 0.92rem;
+  overflow-wrap: anywhere;
 }
 
 .place-list__main small {
   margin-top: 0.12rem;
   overflow: hidden;
   color: var(--ink-soft);
-  font-size: 0.7rem;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  font-size: 0.78rem;
+  overflow-wrap: anywhere;
 }
 
 .place-list__count {
@@ -4052,5 +4050,109 @@ main {
   .route-stage {
     grid-template-columns: 1.4rem minmax(0, 1fr);
     gap: 0.15rem 0.6rem;
+  }
+}
+
+/* Legend as a disclosure. It used to be a fixed block that ate roughly a fifth
+   of a 384px phone map, and the small print beneath it — the sentence saying
+   that colours mark linked events rather than Kaper's presence — was set to
+   display:none below 680px. The caveat disappeared exactly where the crowding
+   made the colours hardest to read honestly. It is a details element now, open
+   on wide screens and closed on narrow ones, so the qualification is always
+   reachable and never forced. */
+.map-legend > .map-legend__summary {
+  display: none;
+}
+
+.map-legend__body {
+  display: contents;
+}
+
+@media (max-width: 680px) {
+  .map-legend {
+    right: 0.65rem;
+    bottom: 1.4rem;
+    left: 0.65rem;
+    max-width: none;
+  }
+
+  .map-legend > .map-legend__summary {
+    display: block;
+    padding: 0.4rem 0.6rem;
+    color: var(--ink);
+    font-size: 0.74rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    cursor: pointer;
+    list-style: none;
+  }
+
+  .map-legend > .map-legend__summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .map-legend > .map-legend__summary::after {
+    content: " ▾";
+    color: var(--line-dark);
+  }
+
+  .map-legend[open] > .map-legend__summary::after {
+    content: " ▴";
+  }
+
+  .map-legend:not([open]) {
+    padding-block: 0;
+  }
+
+  .map-legend__body {
+    display: grid;
+    gap: 0.5rem;
+    padding: 0 0.6rem 0.6rem;
+  }
+
+  /* The qualification stays. It is the sentence that keeps the colours honest. */
+  .map-legend__hint {
+    display: block;
+    text-align: left;
+  }
+
+  /* One scroll, not two. The panel used to be a fixed 32rem box with its own
+     overflow underneath a 24rem map, so a phone had a scrolling region inside a
+     scrolling page. It now grows with its content and the page scrolls once. */
+  .map-panel {
+    height: auto;
+    max-height: none;
+  }
+
+  .place-list {
+    overflow-y: visible;
+    max-height: none;
+  }
+
+  /* The selected place is what a tap on a marker is asking about, so it sits
+     over the foot of the map instead of below the whole list. */
+  .map-canvas {
+    position: relative;
+  }
+
+  .map-canvas > .map-selection {
+    position: absolute;
+    right: 0.65rem;
+    bottom: 0.65rem;
+    left: 0.65rem;
+    min-height: 0;
+    z-index: 500;
+    max-height: 45%;
+    overflow-y: auto;
+    padding: 0.75rem 0.85rem;
+    border: 1px solid var(--line-dark);
+    border-radius: var(--radius-sm);
+    background: var(--surface);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .page-hero--compact {
+    padding-block: 1.1rem 0.9rem;
   }
 }

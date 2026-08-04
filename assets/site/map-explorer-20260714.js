@@ -363,6 +363,28 @@ try {
   // The opening view frames the documented stages on the historical map.
   let firstView = true;
 
+  // On a phone the selection card used to sit below the map and below the
+  // place list, so tapping a marker moved the answer off-screen. Below 680px
+  // the card is moved into the map canvas and shown as an overlay across the
+  // foot of the map, where the tap happened; above that width it returns to
+  // the top of the side panel, which is where it reads best.
+  function bindSelectionPlacement() {
+    var selection = document.getElementById('place-selection');
+    var canvas = document.querySelector('.map-canvas');
+    var panel = document.querySelector('.map-panel');
+    if (!selection || !canvas || !panel || !window.matchMedia) return;
+    var narrow = window.matchMedia('(max-width: 680px)');
+    function place() {
+      var target = narrow.matches ? canvas : panel;
+      if (selection.parentElement === target) return;
+      if (target === canvas) target.appendChild(selection);
+      else target.insertBefore(selection, target.firstElementChild);
+    }
+    place();
+    if (typeof narrow.addEventListener === 'function') narrow.addEventListener('change', place);
+    else if (typeof narrow.addListener === 'function') narrow.addListener(place);
+  }
+
   function render() {
     const query = normalizeSearch(search.value.trim());
     const filtered = publicPlaces
@@ -428,13 +450,20 @@ try {
       bounds.push([place.latitude, place.longitude]);
     }
 
+    // Typing used to refit the view on every keystroke, and because a zoom
+    // change swaps the 1926 sheet for the modern reference layer, the basemap
+    // flickered underneath the search box. The map now holds still while a
+    // query is being typed and moves only when the result is specific enough
+    // to be worth flying to, or when the field is cleared.
     if (map && bounds.length) {
       if (firstView && !query && journeyPoints.length > 1) {
         map.fitBounds(journeyPoints, { padding: [48, 48], maxZoom: HISTORICAL_FULL_ZOOM });
+      } else if (!query) {
+        map.fitBounds(bounds, { padding: [42, 42], maxZoom: filtered.length > 8 ? 5 : 10 });
       } else if (bounds.length === 1) {
         map.setView(bounds[0], 11);
-      } else {
-        map.fitBounds(bounds, { padding: [42, 42], maxZoom: filtered.length > 8 ? 5 : 10 });
+      } else if (bounds.length <= 4) {
+        map.fitBounds(bounds, { padding: [42, 42], maxZoom: 9 });
       }
       updateBasemap(map.getZoom());
       firstView = false;
@@ -449,6 +478,7 @@ try {
   }
 
   search.addEventListener("input", debounce(render));
+  bindSelectionPlacement();
   render();
 } catch (error) {
   countTarget.textContent = "—";
