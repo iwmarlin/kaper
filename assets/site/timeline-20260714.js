@@ -1,4 +1,4 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=79a9c97a64";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=56c5307dae";
 import {
   debounce,
   escapeHtml,
@@ -15,7 +15,7 @@ import {
   renderLoading,
   resolveIds,
   responsiveImage,
-} from "./core.js?v=79a9c97a64";
+} from "./core.js?v=56c5307dae";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 mountSiteChrome("timeline");
@@ -27,10 +27,15 @@ const controls = {
   search: document.querySelector("#timeline-search"),
   category: document.querySelector("#timeline-category"),
 };
+const viewControls = {
+  highlights: document.querySelector("#timeline-view-highlights"),
+  all: document.querySelector("#timeline-view-all"),
+};
 renderLoading(target, "Loading documented events…");
 
 const MILESTONE_EVENT_IDS = new Set([
   "TE0001",
+  "TE0004",
   "TE0013",
   "TE0015",
   "TE0019",
@@ -39,7 +44,11 @@ const MILESTONE_EVENT_IDS = new Set([
   "TE0028",
   "TE0052",
   "TE0035",
+  "TE0053",
   "TE0037",
+  "TE0038",
+  "TE0041",
+  "TE0043",
 ]);
 
 const CATEGORY_GROUPS = {
@@ -67,40 +76,35 @@ function eventGroup(event) {
 const TIMELINE_CHAPTERS = {
   warsaw: {
     number: "01",
-    title: "Warsaw years",
+    title: "Warsaw · formation",
     range: "1902–1926",
     summary: "Formation · law studies · first compositions and songs",
   },
-  berlin: {
+  european: {
     number: "02",
-    title: "Berlin years",
-    range: "1926–1933",
-    summary: "Concert networks · recordings · the turn towards film",
+    title: "European career",
+    range: "1926–1934",
+    summary: "Berlin and Paris · recordings · cinema · the route to MGM",
   },
-  paris: {
+  hollywood: {
     number: "03",
-    title: "Paris years",
-    range: "1933–1934",
-    summary: "French cinema · migration · the route to MGM",
-  },
-  america: {
-    number: "04",
-    title: "America and MGM",
-    range: "1934–1939",
-    summary: "Arrival · Hollywood · continuing transatlantic networks",
+    title: "Hollywood",
+    range: "1935–1939",
+    summary: "MGM · American film and song · continuing European networks",
   },
 };
 
 function chapterForEvent(event) {
-  const date = String(event.sortDate || event.dateStart || "");
-  if (event.id === "TE0014" || date < "1926-07-01") return "warsaw";
-  if (date < "1933-07-01") return "berlin";
-  if (date < "1934-10-24") return "paris";
-  return "america";
+  const periods = Array.isArray(event.periods) ? event.periods : [event.period].filter(Boolean);
+  const year = Number(String(event.sortDate || event.dateStart || "").slice(0, 4));
+  if (periods.includes("warsaw") && !periods.includes("european")) return "warsaw";
+  if (periods.includes("hollywood") && year >= 1935) return "hollywood";
+  if (periods.includes("european") || (year >= 1926 && year <= 1934)) return "european";
+  return year >= 1935 ? "hollywood" : "warsaw";
 }
 
-const NAV_LABELS = { warsaw: "Warsaw", berlin: "Berlin", paris: "Paris", america: "America" };
-const CHAPTER_ORDER = ["warsaw", "berlin", "paris", "america"];
+const NAV_LABELS = { warsaw: "Warsaw", european: "European", hollywood: "Hollywood" };
+const CHAPTER_ORDER = ["warsaw", "european", "hollywood"];
 
 function shortRange(range) {
   const match = String(range || "").match(/^(\d{4})\D+(\d{2})(\d{2})$/);
@@ -139,8 +143,7 @@ function chapterMarkup(key) {
   return `
     <div class="timeline-chapter" id="chapter-${key}" aria-label="${escapeHtml(`${chapter.title}, ${chapter.range}`)}">
       <div class="timeline-chapter__inner">
-        <p class="timeline-chapter__eyebrow"><span class="timeline-chapter__number">Chapter ${chapter.number}</span><span class="timeline-chapter__range">${escapeHtml(chapter.range)}</span></p>
-        <h2>${escapeHtml(chapter.title)}</h2>
+        <div class="timeline-chapter__eyebrow"><span class="timeline-chapter__number">Chapter ${chapter.number}</span><span class="timeline-chapter__range">${escapeHtml(chapter.range)}</span><h2>${escapeHtml(chapter.title)}</h2></div>
         <p class="timeline-chapter__summary">${escapeHtml(chapter.summary)}</p>
       </div>
     </div>`;
@@ -154,6 +157,64 @@ function addOptions(select, values, labeler = humanize, preserveOrder = false) {
     option.textContent = labeler(value);
     select.append(option);
   }
+}
+
+function eventDates(event) {
+  const rawDate = event.displayDate || event.dateStart || "";
+  const isCompoundDate = rawDate.includes("/") || (rawDate.includes("\u2013") && /january|february|march|april|may|june|july|august|september|october|november|december/i.test(rawDate));
+  const startYear = String(event.dateStart || "").slice(0, 4);
+  const endYear = String(event.dateEnd || "").slice(0, 4);
+  return {
+    railDate: isCompoundDate ? (endYear && endYear !== startYear ? `${startYear}\u2013${endYear}` : startYear) : rawDate,
+    fullDate: isCompoundDate ? rawDate.replace(/\s*\u2013\s*/g, " \u2013 ").replace(/\s*\/\s*/g, " / ") : "",
+  };
+}
+
+function presentationForEvent(event) {
+  if (MILESTONE_EVENT_IDS.has(event.id)) return "milestone";
+  if (event.displayMode === "period band") return "period";
+  if (event.displayMode === "cluster") return "cluster";
+  return "point";
+}
+
+function presentationLabel(presentation) {
+  if (presentation === "milestone") return "Milestone";
+  if (presentation === "period") return "Documented period";
+  if (presentation === "cluster") return "Event group";
+  return "";
+}
+
+function eventCopyMarkup(event, presentation, dates, description, { includeDate = true } = {}) {
+  const label = presentationLabel(presentation);
+  return `
+    ${label ? `<span class="timeline-entry__kicker">${escapeHtml(label)}</span>` : ""}
+    ${includeDate ? `<time class="timeline-entry__date" datetime="${escapeHtml(event.dateStart || event.sortDate || "")}">${escapeHtml(dates.railDate)}</time>` : ""}
+    <div class="meta-row"><span class="badge badge--type">${escapeHtml(GROUP_LABELS[eventGroup(event)])}</span>${periodBadge(event.periods || event.period)}</div>
+    <h3><a href="${recordUrl("event", event.id)}">${escapeHtml(event.title)}</a></h3>
+    ${dates.fullDate ? `<p class="timeline-entry__fulldate">${escapeHtml(dates.fullDate)}</p>` : ""}
+    ${event.placeDisplay ? `<p class="timeline-entry__place">${escapeHtml(event.placeDisplay)}</p>` : ""}
+    ${description ? `<p class="timeline-entry__summary">${escapeHtml(description)}</p>` : ""}
+    ${presentation === "milestone" ? `<a class="timeline-entry__record-link" href="${recordUrl("event", event.id)}">Open event record <span aria-hidden="true">\u2192</span></a>` : ""}`;
+}
+
+function heroMarkup(hero, heroSources, variant = "compact") {
+  if (!hero) return "";
+  return `<figure class="timeline-entry__media timeline-entry__media--${variant}">
+    ${responsiveImage(hero.assetPath, hero.altText || hero.title, {
+      className: "timeline-entry__image",
+      sizes: variant === "feature"
+        ? "(max-width: 760px) calc(100vw - 4.5rem), (max-width: 1100px) 42vw, 30rem"
+        : "(max-width: 760px) 7rem, 8.5rem",
+    })}
+    <figcaption>${renderMediaDisclosure(hero, heroSources, {
+      compact: true,
+      fairUseResolutionLabel: "Low-resolution scholarly reproduction",
+      includeCaption: false,
+      includeCredit: false,
+      includeFullRightsNote: false,
+      includeRationale: false,
+    })}</figcaption>
+  </figure>`;
 }
 
 try {
@@ -183,22 +244,43 @@ try {
     ].filter(Boolean).join(" ")),
   }));
 
+  let activeView = "highlights";
+
+  function setView(view, { renderNow = true } = {}) {
+    activeView = view === "all" ? "all" : "highlights";
+    for (const [key, button] of Object.entries(viewControls)) {
+      if (!button) continue;
+      const isActive = key === activeView;
+      button.classList.toggle("is-active", isActive);
+      button.setAttribute("aria-pressed", String(isActive));
+    }
+    if (renderNow) render();
+  }
+
   function render() {
     const query = normalizeSearch(controls.search.value.trim());
-    const filtered = indexed
+    const matching = indexed
       .filter((event) => (
         (!query || event._search.includes(query))
         && (!controls.category.value || eventGroup(event) === controls.category.value)
       ))
       .sort((a, b) => String(a.sortDate || a.dateStart).localeCompare(String(b.sortDate || b.dateStart)) || Number(a.sortOrder || 0) - Number(b.sortOrder || 0));
+    const filtered = activeView === "highlights"
+      ? matching.filter((event) => MILESTONE_EVENT_IDS.has(event.id))
+      : matching;
 
-    countTarget.innerHTML = `<strong>${filtered.length}</strong> ${filtered.length === 1 ? "event" : "events"} shown`;
+    countTarget.innerHTML = activeView === "highlights"
+      ? `<strong>${filtered.length}</strong> ${filtered.length === 1 ? "highlight" : "highlights"} selected from ${matching.length} matching ${matching.length === 1 ? "event" : "events"}`
+      : `<strong>${filtered.length}</strong> ${filtered.length === 1 ? "event" : "events"} shown`;
     if (!filtered.length) {
-      target.innerHTML = `<div class="empty-state"><h2>No matching events</h2><p>Try a broader search or remove a filter.</p></div>`;
+      target.innerHTML = activeView === "highlights" && matching.length
+        ? `<div class="empty-state"><h2>No highlighted events match</h2><p>Switch to the full chronology to see all ${matching.length} matching ${matching.length === 1 ? "event" : "events"}.</p></div>`
+        : `<div class="empty-state"><h2>No matching events</h2><p>Try a broader search or remove a filter.</p></div>`;
       return;
     }
     const chaptersPresent = CHAPTER_ORDER.filter((key) => filtered.some((event) => chapterForEvent(event) === key));
     let currentChapter = "";
+    let milestoneIndex = 0;
     const timelineMarkup = [navMarkup(chaptersPresent)];
     for (const event of filtered) {
       const chapter = chapterForEvent(event);
@@ -211,42 +293,30 @@ try {
       const heroPortrait = Boolean(heroProfile && heroProfile.height > heroProfile.width);
       const heroSources = hero ? resolveIds(hero, "sourceIds", sourcesById) : [];
       const description = event.shortDescription || event.longDescription || "";
-      const isMilestone = MILESTONE_EVENT_IDS.has(event.id);
-      const rawDate = event.displayDate || event.dateStart || "";
-      const isCompoundDate = rawDate.includes("/") || (rawDate.includes("\u2013") && /january|february|march|april|may|june|july|august|september|october|november|december/i.test(rawDate));
-      const startYear = String(event.dateStart || "").slice(0, 4);
-      const endYear = String(event.dateEnd || "").slice(0, 4);
-      const railDate = isCompoundDate ? (endYear && endYear !== startYear ? `${startYear}\u2013${endYear}` : startYear) : rawDate;
-      const fullDate = isCompoundDate ? rawDate.replace(/\s*\u2013\s*/g, " \u2013 ").replace(/\s*\/\s*/g, " / ") : "";
-      timelineMarkup.push(`
-        <article class="timeline-item${isMilestone ? " timeline-item--milestone" : ""}" id="event-${escapeHtml(event.id)}" data-event-id="${escapeHtml(event.id)}">
-          <div class="timeline-item__date">${escapeHtml(railDate)}</div>
-          <span class="timeline-item__node" aria-hidden="true"></span>
-          <div class="timeline-item__body">
-            ${isMilestone ? `<span class="timeline-item__kicker">Milestone</span>` : ""}
-            <div class="meta-row"><span class="badge badge--type">${escapeHtml(GROUP_LABELS[eventGroup(event)])}</span>${periodBadge(event.periods || event.period)}</div>
-            <h3><a href="${recordUrl("event", event.id)}">${escapeHtml(event.title)}</a></h3>
-            ${fullDate ? `<p class="timeline-item__fulldate">${escapeHtml(fullDate)}</p>` : ""}
-            ${event.placeDisplay ? `<p class="timeline-item__place">${escapeHtml(event.placeDisplay)}</p>` : ""}
-            ${hero ? `<div class="timeline-item__media-row${heroPortrait ? " timeline-item__media-row--portrait" : ""}">
-              <figure class="timeline-item__figure">
-                ${responsiveImage(hero.assetPath, hero.altText || hero.title, {
-                  className: "timeline-item__image",
-                  sizes: "(max-width: 680px) calc(100vw - 3rem), (max-width: 1100px) 46vw, 24rem",
-                })}
-                <figcaption>${renderMediaDisclosure(hero, heroSources, {
-                  compact: true,
-                  fairUseResolutionLabel: "Low-resolution scholarly reproduction",
-                  includeCaption: false,
-                  includeCredit: false,
-                  includeFullRightsNote: false,
-                  includeRationale: false,
-                })}</figcaption>
-              </figure>
-              ${description ? `<p>${escapeHtml(description)}</p>` : ""}
-            </div>` : (description ? `<div class="timeline-item__note"><p>${escapeHtml(description)}</p></div>` : "")}
-          </div>
-        </article>`);
+      const presentation = presentationForEvent(event);
+      const dates = eventDates(event);
+      const copy = eventCopyMarkup(event, presentation, dates, description, { includeDate: presentation === "milestone" });
+
+      if (presentation === "milestone") {
+        const mediaSide = milestoneIndex % 2 === 0 ? "right" : "left";
+        milestoneIndex += 1;
+        timelineMarkup.push(`
+          <article class="timeline-entry timeline-entry--milestone timeline-entry--media-${mediaSide}${heroPortrait ? " timeline-entry--portrait" : ""}${hero ? "" : " timeline-entry--text-only"}" id="event-${escapeHtml(event.id)}" data-event-id="${escapeHtml(event.id)}">
+            <div class="timeline-entry__copy">${copy}</div>
+            <span class="timeline-entry__node" aria-hidden="true"></span>
+            ${heroMarkup(hero, heroSources, "feature")}
+          </article>`);
+      } else {
+        timelineMarkup.push(`
+          <article class="timeline-entry timeline-entry--${presentation}${heroPortrait ? " timeline-entry--portrait" : ""}${hero ? " timeline-entry--has-media" : ""}" id="event-${escapeHtml(event.id)}" data-event-id="${escapeHtml(event.id)}">
+            <time class="timeline-entry__rail-date" datetime="${escapeHtml(event.dateStart || event.sortDate || "")}">${escapeHtml(dates.railDate)}</time>
+            <span class="timeline-entry__node" aria-hidden="true"></span>
+            <div class="timeline-entry__body">
+              <div class="timeline-entry__copy">${copy}</div>
+              ${heroMarkup(hero, heroSources, "compact")}
+            </div>
+          </article>`);
+      }
     }
     target.innerHTML = timelineMarkup.join("");
     updateActiveChapter();
@@ -264,13 +334,22 @@ try {
   window.addEventListener("scroll", onScroll, { passive: true });
   window.addEventListener("resize", onScroll, { passive: true });
 
-  controls.search?.addEventListener("input", debounce(render));
-  for (const control of [controls.category].filter(Boolean)) control.addEventListener("change", render);
-  document.querySelector("#timeline-reset")?.addEventListener("click", () => {
-    for (const control of Object.values(controls).filter(Boolean)) control.value = "";
+  controls.search?.addEventListener("input", debounce(() => {
+    if (controls.search.value.trim() && activeView === "highlights") setView("all", { renderNow: false });
+    render();
+  }));
+  for (const control of [controls.category].filter(Boolean)) control.addEventListener("change", () => {
+    if (control.value && activeView === "highlights") setView("all", { renderNow: false });
     render();
   });
-  render();
+  viewControls.highlights?.addEventListener("click", () => setView("highlights"));
+  viewControls.all?.addEventListener("click", () => setView("all"));
+  document.querySelector("#timeline-reset")?.addEventListener("click", () => {
+    for (const control of Object.values(controls).filter(Boolean)) control.value = "";
+    setView("highlights", { renderNow: false });
+    render();
+  });
+  setView("highlights");
 } catch (error) {
   countTarget.textContent = "Timeline unavailable";
   renderError(target, error);
