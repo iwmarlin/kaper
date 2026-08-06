@@ -14,8 +14,8 @@
   <link rel="canonical" href="https://iwmarlin.github.io/kaper/">
   <link rel="preload" href="assets/fonts/kaper-sans.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/kaper-serif.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/site/styles.css?v=3fc22a94f2">
-  <link rel="stylesheet" href="assets/site/home.css?v=3fc22a94f2">
+  <link rel="stylesheet" href="assets/site/styles.css?v=ce9e756268">
+  <link rel="stylesheet" href="assets/site/home.css?v=ce9e756268">
   <title>Bronisław Kaper — A Source-Based Archive, 1902–1939</title>
   <script type="application/ld+json">
   {
@@ -59,19 +59,7 @@
       </div>
     </section>
 
-    <section class="home-stats" aria-labelledby="collection-summary-title">
-      <div class="shell home-stats__inner">
-        <p class="home-stats__label" id="collection-summary-title">Current public dataset</p>
-        <div class="stats" id="collection-stats">
-          <div class="stat"><strong>—</strong><span>Published works</span></div>
-          <div class="stat"><strong>—</strong><span>Timeline events</span></div>
-          <div class="stat"><strong>—</strong><span>Documented places</span></div>
-          <div class="stat"><strong>—</strong><span>Linked sources</span></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section home-section home-pathways" aria-labelledby="archive-pathways-title">
+    <section class="section section--surface home-section home-pathways" aria-labelledby="archive-pathways-title">
       <div class="shell pathways-layout">
         <header class="pathways-intro">
           <p class="eyebrow">Research pathways</p>
@@ -80,85 +68,22 @@
         </header>
 
         <nav class="pathways-nav" aria-labelledby="archive-pathways-title">
-          <ul class="pathways-index">
-            <li>
-              <a class="pathway-row" href="works.html">
-                <span class="pathway-row__content">
-                  <span class="pathway-row__title">Works</span>
-                  <span class="pathway-row__description">Films, songs and other works</span>
-                </span>
-                <span class="pathway-row__arrow" aria-hidden="true">→</span>
-              </a>
-            </li>
-            <li>
-              <a class="pathway-row" href="life.html">
-                <span class="pathway-row__content">
-                  <span class="pathway-row__title">Timeline</span>
-                  <span class="pathway-row__description">A documented chronology</span>
-                </span>
-                <span class="pathway-row__arrow" aria-hidden="true">→</span>
-              </a>
-            </li>
-            <li>
-              <a class="pathway-row" href="people.html">
-                <span class="pathway-row__content">
-                  <span class="pathway-row__title">People</span>
-                  <span class="pathway-row__description">Collaborators and contemporaries</span>
-                </span>
-                <span class="pathway-row__arrow" aria-hidden="true">→</span>
-              </a>
-            </li>
-            <li>
-              <a class="pathway-row" href="map.html">
-                <span class="pathway-row__content">
-                  <span class="pathway-row__title">Places</span>
-                  <span class="pathway-row__description">Cities, venues and routes</span>
-                </span>
-                <span class="pathway-row__arrow" aria-hidden="true">→</span>
-              </a>
-            </li>
-          </ul>
+          <ul class="pathways-index" id="pathways-index"></ul>
         </nav>
       </div>
     </section>
 
-    <section class="section section--surface home-section home-chronology">
+    <section class="section home-section home-chronology" aria-labelledby="selected-moments-title">
       <div class="shell">
         <div class="section-heading">
           <div>
             <p class="eyebrow">Selected chronology</p>
-            <h2>Moments in the archive</h2>
-            <p>Highlights are selected from published timeline records and retain their supporting links.</p>
+            <h2 id="selected-moments-title">Selected moments</h2>
+            <p>Three moments from the documented chronology, one for each period of the career. Each keeps its supporting sources.</p>
           </div>
-          <a class="button button--ghost button--small" href="life.html">View all events</a>
+          <a class="button button--ghost" href="life.html">View all events</a>
         </div>
         <div class="home-event-grid" id="featured-events" aria-live="polite"></div>
-      </div>
-    </section>
-
-    <section class="section home-section home-media">
-      <div class="shell">
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow">Curated materials</p>
-            <h2>Images, documents and sound</h2>
-            <p>Selected materials are shown with captions, provenance, rights information and links to the records they document.</p>
-          </div>
-          <a class="button button--ghost button--small" href="media.html">Open the gallery</a>
-        </div>
-        <div class="home-media-grid" id="media-highlights" aria-live="polite"></div>
-      </div>
-    </section>
-
-    <section class="section home-section home-figures">
-      <div class="shell">
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow">From the data</p>
-            <h2>The archive at a glance</h2>
-          </div>
-        </div>
-        <div class="figures-grid" id="home-figures" aria-live="polite"></div>
       </div>
     </section>
 
@@ -171,11 +96,12 @@
         </div>
         <div class="scope-note">
           <strong>Scope note.</strong> The present public dataset documents Kaper's life and work through 1939. It is not a complete account of his later Hollywood career.
+          <span class="scope-note__figures" id="method-figures"></span>
         </div>
       </div>
     </section>
   </main>
   <footer class="site-footer" data-site-footer></footer>
-  <script type="module" src="assets/site/home.js?v=3fc22a94f2"></script>
+  <script type="module" src="assets/site/home.js?v=ce9e756268"></script>
 </body>
 </html>

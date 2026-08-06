@@ -1,8 +1,6 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=3fc22a94f2";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=ce9e756268";
 import {
   escapeHtml,
-  humanize,
-  mediaPreview,
   mountSiteChrome,
   periodBadge,
   recordUrl,
@@ -10,98 +8,95 @@ import {
   renderError,
   renderLoading,
   responsiveImage,
-  typeBadge,
-} from "./core.js?v=3fc22a94f2";
+} from "./core.js?v=ce9e756268";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 mountSiteChrome("home");
 
+const pathwaysTarget = document.querySelector("#pathways-index");
 const eventsTarget = document.querySelector("#featured-events");
-const mediaTarget = document.querySelector("#media-highlights");
-const figuresTarget = document.querySelector("#home-figures");
-renderLoading(eventsTarget, "Loading selected events…");
-renderLoading(mediaTarget, "Loading selected media…");
+const portraitTarget = document.querySelector("#hero-portrait");
+const figuresTarget = document.querySelector("#method-figures");
+renderLoading(eventsTarget, "Loading selected moments…");
 
 const numberFormat = new Intl.NumberFormat("en-GB");
 
-function figureGroup(kind, title, rows) {
-  const max = Math.max(...rows.map((row) => row.count), 1);
-  const bars = rows.map((row, index) => `
-    <div class="figure-row${index === 0 ? " is-lead" : ""}">
-      <div class="figure-row__head">
-        <span class="figure-row__label">${escapeHtml(row.label)}${row.note ? ` <span class="figure-row__note">${escapeHtml(row.note)}</span>` : ""}</span>
-        <span class="figure-row__value">${numberFormat.format(row.count)}</span>
-      </div>
-      <div class="figure-bar"><span class="figure-bar__fill" style="width: ${Math.max(6, Math.round((row.count / max) * 100))}%"></span></div>
-    </div>`).join("");
-  return `<div class="figure-group" data-kind="${kind}"><h3 class="figure-group__title">${escapeHtml(title)}</h3>${bars}</div>`;
+// One gateway, one set of figures. The counts used to sit in a band of their own
+// above these links and again in a section of charts below them; here they say
+// how much there is and lead straight to it.
+function renderPathways(pathways) {
+  if (!pathwaysTarget || !Array.isArray(pathways)) return;
+  pathwaysTarget.innerHTML = pathways.map((pathway) => `
+    <li>
+      <a class="pathway-row" href="${escapeHtml(pathway.href)}">
+        <span class="pathway-row__content">
+          <span class="pathway-row__title">${escapeHtml(pathway.label)}</span>
+          <span class="pathway-row__description">${escapeHtml(pathway.description)}</span>
+        </span>
+        <span class="pathway-row__count">${numberFormat.format(pathway.count)}</span>
+        <span class="pathway-row__arrow" aria-hidden="true">→</span>
+      </a>
+    </li>`).join("");
 }
 
-function renderFigures(data) {
-  if (!figuresTarget) return;
-  if (!data) {
-    figuresTarget.closest("section")?.remove();
+function renderPortrait(portrait) {
+  if (!portraitTarget) return;
+  if (!portrait?.assetPath) {
+    portraitTarget.hidden = true;
     return;
   }
-  const groups = [
-    figureGroup("type", "Works by type", data.byType),
-    figureGroup("era", "Works by era", data.byEra),
-    figureGroup("collaborators", "Closest collaborators", (data.collaborators || []).map((person) => ({ label: person.name, count: person.count }))),
-  ].join("");
-  const certainty = data.certainty || {};
-  const footer = `
-    <div class="figures-footer">
-      ${data.span ? `<span class="figures-footer__item"><strong>${data.span.start}–${data.span.end}</strong> documented span</span>` : ""}
-      <span class="figures-footer__item"><strong>${numberFormat.format(certainty.confirmed || 0)}</strong> confirmed · ${certainty.probable || 0} probable · ${certainty.uncertain || 0} uncertain</span>
-      <span class="figures-footer__note">Collaborators counted by shared works, documented.</span>
-    </div>`;
-  figuresTarget.innerHTML = `<div class="figures-groups">${groups}</div>${footer}`;
+  // The one image on the page used to carry neither caption nor link. In a
+  // source-based archive that is the wrong image to leave unattributed.
+  const caption = escapeHtml(portrait.publicCaption || portrait.title || "");
+  portraitTarget.innerHTML = `
+    ${responsiveImage(portrait.assetPath, portrait.altText || portrait.title, {
+      eager: true,
+      sizes: "(max-width: 680px) 9rem, 20rem",
+    })}
+    <figcaption>${caption} <a href="${recordUrl("media", portrait.id)}">See the record</a></figcaption>`;
+}
+
+function renderEvents(events) {
+  if (!eventsTarget) return;
+  eventsTarget.innerHTML = (events || []).map((event) => `
+    <article class="home-event-card">
+      ${event.image ? `<figure class="home-event-card__figure">${responsiveImage(event.image.assetPath, event.image.altText || event.title, {
+        sizes: "(max-width: 680px) calc(100vw - 2.5rem), 22rem",
+      })}</figure>` : ""}
+      <div class="home-event-card__body">
+        <div class="home-event-card__topline">
+          <p class="home-event-card__date">${escapeHtml(event.displayDate || event.dateStart || "")}</p>
+          ${periodBadge(event.periods || event.period)}
+        </div>
+        <h3><a href="${recordUrl("event", event.id)}">${escapeHtml(event.title)}</a></h3>
+        <p class="card__description">${escapeHtml(event.shortDescription || event.longDescription || "")}</p>
+        <div class="home-event-card__footer"><span>${escapeHtml(event.placeDisplay || "")}</span><span aria-hidden="true">→</span></div>
+      </div>
+    </article>`).join("");
+}
+
+// The evidential figures belong to the statement of method, not to a section of
+// their own: they say how firm the record is, not how large it is.
+function renderFigures(glance) {
+  if (!figuresTarget || !glance) return;
+  const parts = [];
+  if (glance.span) parts.push(`<strong>${glance.span.start}–${glance.span.end}</strong> documented span`);
+  const certainty = glance.certainty || {};
+  if (certainty.confirmed) {
+    parts.push(`<strong>${numberFormat.format(certainty.confirmed)}</strong> confirmed · ${certainty.probable || 0} probable · ${certainty.uncertain || 0} uncertain`);
+  }
+  if (glance.sources) parts.push(`<strong>${numberFormat.format(glance.sources)}</strong> linked sources`);
+  figuresTarget.innerHTML = parts.join(" · ");
 }
 
 try {
   const response = await fetch(new URL("data/site/home.json", document.baseURI));
   if (!response.ok) throw new Error(`Could not load home-page data (${response.status})`);
-  const { stats, portrait, events: eventSelection, highlights, atAGlance } = await response.json();
-  document.querySelectorAll("#collection-stats strong").forEach((node, index) => {
-    node.textContent = numberFormat.format(stats[index]);
-  });
-  renderFigures(atAGlance);
-
-  const portraitTarget = document.querySelector("#hero-portrait");
-  if (portrait?.assetPath) {
-    portraitTarget.innerHTML = `
-      ${responsiveImage(portrait.assetPath, portrait.altText || portrait.title, {
-        eager: true,
-        sizes: "(max-width: 680px) calc(100vw - 2rem), 26rem",
-      })}
-      <figcaption>${escapeHtml(portrait.publicCaption || portrait.title)}</figcaption>`;
-  } else {
-    portraitTarget.hidden = true;
-  }
-
-  eventsTarget.innerHTML = eventSelection.map((event, index) => `
-    <article class="home-event-card">
-      <div class="home-event-card__topline">
-        <span class="home-event-card__number" aria-hidden="true">0${index + 1}</span>
-        ${periodBadge(event.periods || event.period)}
-      </div>
-      <p class="home-event-card__date">${escapeHtml(event.displayDate || event.dateStart)}</p>
-      <h3><a href="${recordUrl("event", event.id)}">${escapeHtml(event.title)}</a></h3>
-      <p class="card__description">${escapeHtml(event.shortDescription || event.longDescription || "")}</p>
-      <div class="home-event-card__footer"><span>${escapeHtml(event.placeDisplay || "")}</span><span aria-hidden="true">→</span></div>
-    </article>`).join("");
-
-  mediaTarget.innerHTML = highlights.map((item) => `
-    <article class="media-card home-media-card">
-      <figure>${mediaPreview(item, { sizes: "(max-width: 680px) calc(100vw - 2rem), 30vw" })}</figure>
-      <div class="media-card__body">
-        <div class="meta-row">${typeBadge(item.mediaType)}${periodBadge(item.periods || item.period)}</div>
-        <h2><a href="${recordUrl("media", item.id)}">${escapeHtml(item.title)}</a></h2>
-        <p>${escapeHtml(item.publicCaption || item.description || "")}</p>
-      </div>
-    </article>`).join("");
+  const { pathways, portrait, events, glance } = await response.json();
+  renderPathways(pathways);
+  renderPortrait(portrait);
+  renderEvents(events);
+  renderFigures(glance);
 } catch (error) {
   renderError(eventsTarget, error);
-  renderError(mediaTarget, error);
-  figuresTarget?.closest("section")?.remove();
 }

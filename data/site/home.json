@@ -1,10 +1,36 @@
 {
   "schemaVersion": "1.0.0",
-  "stats": [
-    281,
-    54,
-    44,
-    582
+  "pathways": [
+    {
+      "label": "Works",
+      "description": "Films, songs and other works",
+      "href": "works.html",
+      "count": 281
+    },
+    {
+      "label": "People",
+      "description": "Collaborators and contemporaries",
+      "href": "people.html",
+      "count": 137
+    },
+    {
+      "label": "Timeline",
+      "description": "A documented chronology",
+      "href": "life.html",
+      "count": 54
+    },
+    {
+      "label": "Places",
+      "description": "Cities, venues and routes",
+      "href": "map.html",
+      "count": 44
+    },
+    {
+      "label": "Media",
+      "description": "Images, documents and sound",
+      "href": "gallery.html",
+      "count": 257
+    }
   ],
   "portrait": {
     "id": "M048",
@@ -103,7 +129,12 @@
       ],
       "periods": [
         "warsaw"
-      ]
+      ],
+      "image": {
+        "id": "M080",
+        "assetPath": "assets/images/timeline/morskie-oko.jpg",
+        "altText": "Historical image of the Teatr Morskie Oko building in Warsaw."
+      }
     },
     {
       "id": "TE0026",
@@ -157,7 +188,12 @@
       ],
       "periods": [
         "european"
-      ]
+      ],
+      "image": {
+        "id": "M046",
+        "assetPath": "assets/images/portraits/kaper-with-jurmann.jpg",
+        "altText": "Photograph of Bronisław Kaper with Walter Jurmann."
+      }
     },
     {
       "id": "TE0037",
@@ -213,168 +249,15 @@
       ],
       "periods": [
         "hollywood"
-      ]
+      ],
+      "image": {
+        "id": "M074",
+        "assetPath": "assets/images/sheet-music/you-are-all.jpg",
+        "altText": "Sheet-music cover for “You’re All I Need” from the MGM film Escapade (1935)."
+      }
     }
   ],
-  "highlights": [
-    {
-      "id": "M037",
-      "title": "Der Korvettenkapitän (1930) — Der Kinematograph trade advertisement",
-      "mediaType": "image",
-      "storageType": "local",
-      "period": "european",
-      "description": "Trade-press advertisement from Der Kinematograph for Der Korvettenkapitän (1930), reused as a timeline illustration for Kaper’s early German film work. This is not a theatrical poster.",
-      "assetPath": "assets/images/film-posters/european-period/korvettenkapitan.jpg",
-      "assetPaths": [
-        "assets/images/film-posters/european-period/korvettenkapitan.jpg"
-      ],
-      "assetCount": 1,
-      "altText": "German trade-press advertisement for the film Der Korvettenkapitän.",
-      "rightsStatus": "ok",
-      "rightsNote": "Public domain: German trade advertisement published in 1930. Treat as a public-domain press advertisement unless a separately credited photograph or artwork layer is later identified.",
-      "sortOrder": 37,
-      "slug": "timeline-life-timeline-korvettenkapitan",
-      "publicCaption": "Trade-press advertisement for Der Korvettenkapitän, published in Der Kinematograph in 1930.",
-      "publicCreditLine": "Der Kinematograph, 1930, public domain.",
-      "category": "trade advertisement",
-      "galleryStatus": "selected",
-      "organizationIds": [
-        "ORG021"
-      ],
-      "sourceIds": [
-        "SRC0423"
-      ],
-      "workIds": [
-        "W-F003"
-      ],
-      "timelineEventIds": [
-        "TE0025"
-      ],
-      "heroTimelineEventIds": [
-        "TE0025"
-      ],
-      "periods": [
-        "european"
-      ]
-    },
-    {
-      "id": "M043",
-      "title": "Fritz Rotter — portrait",
-      "mediaType": "image",
-      "storageType": "local",
-      "period": "european",
-      "description": "Portrait of Fritz Rotter, the lyricist associated with Kaper’s early German film songs.",
-      "assetPath": "assets/images/portraits/fritz-rotter.jpg",
-      "assetPaths": [
-        "assets/images/portraits/fritz-rotter.jpg"
-      ],
-      "assetCount": 1,
-      "altText": "Portrait of the lyricist Fritz Rotter.",
-      "rightsStatus": "ok",
-      "rightsNote": "The linked source identifies this item as public domain or otherwise free of known copyright restrictions; attribution is retained.",
-      "sortOrder": 43,
-      "slug": "timeline-life-timeline-fritz-rotter",
-      "publicCaption": "Portrait of Fritz Rotter, the lyricist associated with Kaper’s early German film songs.",
-      "publicCreditLine": "Becker & Maass / Wikimedia Commons, public domain.",
-      "category": "portrait",
-      "galleryStatus": "selected",
-      "sourceIds": [
-        "SRC0330"
-      ],
-      "timelineEventIds": [
-        "TE0048"
-      ],
-      "heroTimelineEventIds": [
-        "TE0048"
-      ],
-      "periods": [
-        "european"
-      ]
-    },
-    {
-      "id": "M048",
-      "title": "Bronisław Kaper — portrait as a young man",
-      "mediaType": "image",
-      "storageType": "local",
-      "period": "warsaw",
-      "description": "Early portrait photograph of Bronisław Kaper from the University of Warsaw Archives, used as a visual context image for the 1919 secondary-school graduation event.",
-      "assetPath": "assets/images/portraits/kaper-young0.jpg",
-      "assetPaths": [
-        "assets/images/portraits/kaper-young0.jpg"
-      ],
-      "assetCount": 1,
-      "altText": "Portrait of Bronisław Kaper as a young man.",
-      "rightsStatus": "ok",
-      "rightsNote": "Reproduced by permission of the University of Warsaw Archives.",
-      "sortOrder": 48,
-      "slug": "timeline-high-school-graduation-kaper-young0",
-      "publicCaption": "Portrait of Bronisław Kaper as a young man, from his University of Warsaw student-file materials.",
-      "publicCreditLine": "Archiwum Uniwersytetu Warszawskiego, Bronisław Kaper student file, RP 6854; reproduced by permission.",
-      "category": "portrait",
-      "galleryStatus": "selected",
-      "sourceIds": [
-        "SRC0110"
-      ],
-      "timelineEventIds": [
-        "TE0003"
-      ],
-      "heroTimelineEventIds": [
-        "TE0003"
-      ],
-      "organizationIds": [
-        "ORG057"
-      ],
-      "periods": [
-        "warsaw"
-      ]
-    }
-  ],
-  "atAGlance": {
-    "byType": [
-      {
-        "label": "Songs",
-        "count": 204
-      },
-      {
-        "label": "Films",
-        "count": 55
-      },
-      {
-        "label": "Other works",
-        "count": 22
-      }
-    ],
-    "byEra": [
-      {
-        "label": "European period",
-        "note": "1926–1934",
-        "count": 178
-      },
-      {
-        "label": "Hollywood",
-        "note": "1935–1939",
-        "count": 96
-      },
-      {
-        "label": "Warsaw",
-        "note": "1902–1926",
-        "count": 7
-      }
-    ],
-    "collaborators": [
-      {
-        "name": "Walter Jurmann",
-        "count": 194
-      },
-      {
-        "name": "Fritz Rotter",
-        "count": 73
-      },
-      {
-        "name": "Gus Kahn",
-        "count": 30
-      }
-    ],
+  "glance": {
     "span": {
       "start": 1923,
       "end": 1939
@@ -383,6 +266,7 @@
       "confirmed": 276,
       "probable": 5,
       "uncertain": 0
-    }
+    },
+    "sources": 582
   }
 }

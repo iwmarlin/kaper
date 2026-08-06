@@ -286,26 +286,44 @@ def home_payload(data_root: Path) -> dict:
         )
         indexes = sorted({0, len(candidates) // 2, max(0, len(candidates) - 1)})
         event_selection = [candidates[index] for index in indexes if candidates][:3]
+    media_by_id = {item["id"]: item for item in media}
+
+    def event_image(event: dict) -> dict | None:
+        """First locally held image linked to the event, for the selected-moments cards."""
+        for media_id in (event.get("heroMediaIds") or []) + (event.get("mediaIds") or []):
+            item = media_by_id.get(media_id)
+            if item and item.get("assetPath") and item.get("mediaType") != "audio":
+                return {
+                    "id": item["id"],
+                    "assetPath": item["assetPath"],
+                    "altText": item.get("altText") or item.get("title"),
+                }
+        return None
+
     portrait = next((item for item in media if item.get("id") == "M048"), None)
     if portrait is None:
         portrait = next((item for item in media if item.get("category") == "portrait" and item.get("assetPath")), None)
-    highlights = sorted(
-        (
-            item for item in media
-            if item.get("galleryStatus") == "selected"
-            and item.get("storageType") == "local"
-            and item.get("assetPath")
-            and item.get("mediaType") != "audio"
-        ),
-        key=lambda item: int(item.get("sortOrder") or 99999),
-    )[:3]
+    glance = at_a_glance(data_root) or {}
+    # One gateway carries the counts, so the figures appear once on the page and
+    # lead somewhere. Sources are reachable from every record and from the header,
+    # and are left out of the gateway deliberately.
+    pathways = [
+        {"label": "Works", "description": "Films, songs and other works", "href": "works.html", "count": counts["Works"]},
+        {"label": "People", "description": "Collaborators and contemporaries", "href": "people.html", "count": counts["People"]},
+        {"label": "Timeline", "description": "A documented chronology", "href": "life.html", "count": counts["Timeline Events"]},
+        {"label": "Places", "description": "Cities, venues and routes", "href": "map.html", "count": counts["Places"]},
+        {"label": "Media", "description": "Images, documents and sound", "href": "gallery.html", "count": counts["Media"]},
+    ]
     return {
         "schemaVersion": manifest.get("schemaVersion", "1.0.0"),
-        "stats": [counts["Works"], counts["Timeline Events"], counts["Places"], counts["Sources"]],
+        "pathways": pathways,
         "portrait": portrait,
-        "events": event_selection,
-        "highlights": highlights,
-        "atAGlance": at_a_glance(data_root),
+        "events": [dict(event, image=event_image(event)) for event in event_selection],
+        "glance": {
+            "span": glance.get("span"),
+            "certainty": glance.get("certainty"),
+            "sources": counts["Sources"],
+        },
     }
 
 
