@@ -1,4 +1,4 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=338c6a98e0";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=448d3c35ec";
 import {
   certaintyBadge,
   escapeHtml,
@@ -23,7 +23,7 @@ import {
   scopeBadge,
   typeBadge,
   updateMeta,
-} from "./core.js?v=338c6a98e0";
+} from "./core.js?v=448d3c35ec";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 mountSiteChrome("");
@@ -799,7 +799,13 @@ function renderPerson(person, data, indexes) {
     plate: portrait ? `<figure class="record-plate">${mediaPreview(portrait, {
       eager: true,
       sizes: "(max-width: 900px) 8rem, 10rem",
-    })}<figcaption>${escapeHtml(portrait.publicCaption || portrait.title || "")} <a href="${recordUrl("media", portrait.id)}">${escapeHtml(portrait.id)}</a></figcaption></figure>` : "",
+    })}<figcaption>${escapeHtml(portrait.publicCaption || portrait.title || "")}</figcaption>${renderMediaDisclosure(portrait, portraitSources, {
+      compact: true,
+      includeTitle: false,
+      includeCaption: false,
+      includeFullRightsNote: false,
+      includeResolutionLabel: true,
+    })}</figure>` : "",
     main: [
       section("Pseudonyms and documented identities", progressiveList(identities, {
         className: "entity-list identity-list",
@@ -817,16 +823,12 @@ function renderPerson(person, data, indexes) {
       }), "", events.length) : "",
       section("Sources", sourceList(sources), "", sources.length),
     ].join(""),
-    aside: `${contentsRail([
+    aside: contentsRail([
       { title: "Pseudonyms and documented identities", count: identities.length },
       { title: "Documented works", count: works.length },
       { title: "Documented chronology", count: events.length },
       { title: "Sources", count: sources.length },
-    ])}${portrait ? renderMediaDisclosure(portrait, portraitSources, {
-      compact: true,
-      includeFullRightsNote: false,
-      includeResolutionLabel: true,
-    }) : ""}`,
+    ]),
   };
 }
 

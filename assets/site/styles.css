@@ -4166,3 +4166,24 @@ main {
     grid-column: 1 / -1;
   }
 }
+
+/* Credit, rights and the link to the media record sit under the plate they
+   describe, in the identity block. */
+.record-plate .media-disclosure {
+  margin-top: 0.5rem;
+  padding: 0;
+  border: 0;
+  background: none;
+}
+
+.record-plate .media-disclosure__credit,
+.record-plate .media-disclosure__rationale {
+  font-size: 0.66rem;
+  line-height: 1.4;
+}
+
+.record-plate .media-disclosure__meta {
+  gap: 0.3rem 0.5rem;
+  margin-top: 0.35rem;
+  font-size: 0.62rem;
+}
