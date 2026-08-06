@@ -1119,7 +1119,8 @@
       ],
       "authorityUrl": "VIAF: https://viaf.org/viaf/49430545\nLCNAF: https://id.loc.gov/authorities/names/no94002454\nGND: https://d-nb.info/gnd/138651450",
       "sourceIds": [
-        "SRC0147"
+        "SRC0147",
+        "SRC0644"
       ],
       "contributionIds": [
         "CON-F044-D-P013",
@@ -1872,7 +1873,8 @@
         "film director"
       ],
       "sourceIds": [
-        "SRC0133"
+        "SRC0133",
+        "SRC0645"
       ],
       "contributionIds": [
         "CON-F025-D-P033"
@@ -2146,7 +2148,10 @@
       ],
       "birthYear": 1907,
       "deathYear": 2000,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "sourceIds": [
+        "SRC0646"
+      ]
     },
     {
       "id": "P046",
@@ -3496,7 +3501,10 @@
       ],
       "birthYear": 1891,
       "deathYear": 1959,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "sourceIds": [
+        "SRC0642"
+      ]
     },
     {
       "id": "P083",
@@ -3564,7 +3572,8 @@
       ],
       "authorityUrl": "VIAF: https://viaf.org/viaf/46229981\nWikidata: https://www.wikidata.org/wiki/Q7052313",
       "sourceIds": [
-        "SRC0312"
+        "SRC0312",
+        "SRC0643"
       ],
       "contributionIds": [
         "CON-S187-L-P087"
