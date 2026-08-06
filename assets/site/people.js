@@ -76,15 +76,17 @@ function initials(name = "") {
 }
 
 try {
-  const { people, works, media, sources } = await loadTables([
+  const { people, works, media, sources, timelineEvents } = await loadTables([
     "people",
     "works",
     "media",
     "sources",
+    "timelineEvents",
   ]);
   const worksById = indexById(works);
   const mediaById = indexById(media);
   const sourcesById = indexById(sources);
+  const eventsById = indexById(timelineEvents);
 
   // A person reaches a portrait indirectly: person → sources → media (category "portrait").
   function portraitFor(person) {
@@ -99,7 +101,15 @@ try {
 
   const indexed = people.map((person) => {
     const personWorks = (person.workIds || []).map((id) => worksById.get(id)).filter(Boolean);
-    const periodSet = new Set(personWorks.flatMap((work) => periodValues(work)));
+    // Periods were read from linked works alone, so anyone documented only
+    // through a dated event — a teacher, a family member, a producer Kaper
+    // worked under rather than with — carried no badge at all. Linked timeline
+    // events are dated and periodised on the same evidence, so they count too.
+    const personEvents = (person.timelineEventIds || []).map((id) => eventsById.get(id)).filter(Boolean);
+    const periodSet = new Set([
+      ...personWorks.flatMap((work) => periodValues(work)),
+      ...personEvents.flatMap((event) => periodValues(event)),
+    ]);
     const periods = PERIOD_ORDER.filter((period) => periodSet.has(period));
     const roles = person.roles?.length ? person.roles : [person.primaryRole].filter(Boolean);
     return {
