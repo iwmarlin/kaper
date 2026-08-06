@@ -311,7 +311,7 @@ try {
     routeLayer = window.L.layerGroup(routeStages.map((stage) => {
       const line = window.L.polyline(
         stage.places.map((place) => [place.latitude, place.longitude]),
-        { color: "#8a5a2b", weight: 2.5, opacity: 0.85, dashArray: "1 7", lineCap: "round", lineJoin: "round" },
+        { color: "#8a5a2b", weight: 3, opacity: 0.9, dashArray: "2 6", lineCap: "round", lineJoin: "round" },
       );
       line.bindTooltip(
         `${escapeHtml(stage.event.title)} · ${escapeHtml(stage.event.displayDate || stage.event.dateStart)}`,

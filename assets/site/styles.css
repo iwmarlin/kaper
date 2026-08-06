@@ -2073,10 +2073,7 @@ main {
   right: 0.9rem;
   bottom: 1.6rem;
   z-index: 500;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  gap: 0.45rem 0.75rem;
+  display: block;
   max-width: 33rem;
   padding: 0.55rem 0.7rem;
   border: 1px solid rgba(169, 153, 132, 0.72);
@@ -4065,7 +4062,10 @@ main {
 }
 
 .map-legend__body {
-  display: contents;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.45rem 0.75rem;
 }
 
 @media (max-width: 680px) {
