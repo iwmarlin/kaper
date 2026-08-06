@@ -1,4 +1,4 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=5d483e810a";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=6082cea481";
 import {
   escapeHtml,
   mountSiteChrome,
@@ -8,7 +8,7 @@ import {
   renderError,
   renderLoading,
   responsiveImage,
-} from "./core.js?v=5d483e810a";
+} from "./core.js?v=6082cea481";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 mountSiteChrome("home");
@@ -76,15 +76,24 @@ function renderEvents(events) {
 }
 
 // The evidential figures belong to the statement of method, not to a section of
-// their own: they say how firm the record is, not how large it is.
+// their own: they say how firm the record is, not how large it is. They report
+// the qualified attributions rather than the confirmed ones, and empty
+// categories are left out — a category with nothing in it says only that the
+// category exists, and "0 uncertain" reads as a claim that nothing here is in
+// doubt, which would misdescribe an archive whose doubts are recorded on
+// individual attributions, scopes and rights.
 function renderFigures(glance) {
   if (!figuresTarget || !glance) return;
-  const parts = [];
-  if (glance.span) parts.push(`<strong>${glance.span.start}–${glance.span.end}</strong> documented works`);
   const certainty = glance.certainty || {};
-  if (certainty.confirmed) {
-    parts.push(`<strong>${numberFormat.format(certainty.confirmed)}</strong> confirmed · ${certainty.probable || 0} probable · ${certainty.uncertain || 0} uncertain`);
+  const total = Object.values(certainty).reduce((sum, value) => sum + (value || 0), 0);
+  const qualified = (certainty.probable || 0) + (certainty.uncertain || 0);
+  const parts = [];
+  if (total) {
+    parts.push(qualified
+      ? `<strong>${numberFormat.format(total)}</strong> works, of which <strong>${qualified}</strong> carry a qualified attribution`
+      : `<strong>${numberFormat.format(total)}</strong> works`);
   }
+  if (glance.span) parts.push(`documented <strong>${glance.span.start}–${glance.span.end}</strong>`);
   if (glance.sources) parts.push(`<strong>${numberFormat.format(glance.sources)}</strong> linked sources`);
   figuresTarget.innerHTML = parts.join(" · ");
 }
