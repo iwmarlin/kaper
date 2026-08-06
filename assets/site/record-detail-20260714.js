@@ -1,4 +1,4 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=c5d9d21a07";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=338c6a98e0";
 import {
   certaintyBadge,
   escapeHtml,
@@ -23,7 +23,7 @@ import {
   scopeBadge,
   typeBadge,
   updateMeta,
-} from "./core.js?v=c5d9d21a07";
+} from "./core.js?v=338c6a98e0";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 mountSiteChrome("");
@@ -791,16 +791,23 @@ function renderPerson(person, data, indexes) {
     title: person.displayName,
     label: "Person",
     badges: displayedRoles.map(typeBadge).join(""),
-    facts: `${factHtml("Life dates", lifeDates(person))}${fact("Authorized name", person.authorizedName)}${fact("Primary role", humanize(person.primaryRole))}${fact("Roles", (person.roles || []).map(humanize))}`,
+    facts: `${factHtml("Life dates", lifeDates(person))}${fact("Authorized name", person.authorizedName)}${fact("Roles", displayedRoles.map(humanize))}${authorityLinks.length ? `<div><dt>Authorities</dt><dd class="record-facts__authorities">${authorityLinks.map((item) => `<a href="${escapeHtml(item.url)}" target="_blank" rel="noreferrer">${escapeHtml(item.label)} <span aria-hidden="true">↗</span></a>`).join("")}</dd></div>` : ""}`,
+    // The portrait belongs to the identity of the record, not to a stack of
+    // boxes below it: it used to sit third in the aside, under a navigation
+    // panel, while the authority links took a section heading of their own for
+    // three links.
+    plate: portrait ? `<figure class="record-plate">${mediaPreview(portrait, {
+      eager: true,
+      sizes: "(max-width: 900px) 8rem, 10rem",
+    })}<figcaption>${escapeHtml(portrait.publicCaption || portrait.title || "")} <a href="${recordUrl("media", portrait.id)}">${escapeHtml(portrait.id)}</a></figcaption></figure>` : "",
     main: [
-      authorityLinks.length ? section("Authority records", `<ul class="plain-list authority-links">${authorityLinks.map((item) => `<li><a href="${escapeHtml(item.url)}" target="_blank" rel="noreferrer">${escapeHtml(item.label)} <span aria-hidden="true">↗</span></a></li>`).join("")}</ul>`) : "",
       section("Pseudonyms and documented identities", progressiveList(identities, {
         className: "entity-list identity-list",
         label: "documented identities",
         renderItem: (item) => `<li><span><strong>${escapeHtml(item.variantName)}</strong>${item.publicNote ? `<br><small>${escapeHtml(item.publicNote)}</small>` : ""}</span>${typeBadge(item.variantType)}</li>`,
         searchText: (item) => [item.variantName, item.variantType, item.publicNote].filter(Boolean).join(" "),
         showTotal: false,
-      })),
+      }), "", identities.length),
       works.length ? section("Documented works", workList, "", works.length) : "",
       events.length ? section("Documented chronology", progressiveList(events, {
         label: "timeline events",
@@ -815,17 +822,11 @@ function renderPerson(person, data, indexes) {
       { title: "Documented works", count: works.length },
       { title: "Documented chronology", count: events.length },
       { title: "Sources", count: sources.length },
-    ])}` + (portrait ? `
-      <figure class="record-media">${mediaPreview(portrait, {
-        eager: true,
-        sizes: "(max-width: 900px) calc(100vw - 2rem), 20rem",
-      })}</figure>
-      ${renderMediaDisclosure(portrait, portraitSources, {
-        compact: true,
-        includeFullRightsNote: false,
-        includeResolutionLabel: true,
-      })}
-    ` : `<div class="scope-note">Source-specific spellings and printed credit forms appear only on the relevant work records, where their evidentiary context is visible.</div>`),
+    ])}${portrait ? renderMediaDisclosure(portrait, portraitSources, {
+      compact: true,
+      includeFullRightsNote: false,
+      includeResolutionLabel: true,
+    }) : ""}`,
   };
 }
 
@@ -1053,8 +1054,9 @@ try {
   setCanonicalRecordUrl(requestedType, requestedId);
   target.className = "";
   target.innerHTML = `
-    <section class="record-hero${titleClass}">
+    <section class="record-hero${titleClass}${view.plate ? " record-hero--identity" : ""}">
       <div class="shell record-hero__grid">
+        ${view.plate || ""}
         <div>
           <p class="eyebrow">${escapeHtml(view.label)} · <span class="record-id">${escapeHtml(requestedId)}</span></p>
           <h1>${escapeHtml(view.title)}</h1>
