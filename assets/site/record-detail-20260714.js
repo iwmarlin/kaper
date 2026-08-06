@@ -1,4 +1,4 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=92b6500b7a";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=c5d9d21a07";
 import {
   certaintyBadge,
   escapeHtml,
@@ -23,7 +23,7 @@ import {
   scopeBadge,
   typeBadge,
   updateMeta,
-} from "./core.js?v=92b6500b7a";
+} from "./core.js?v=c5d9d21a07";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 mountSiteChrome("");
@@ -349,34 +349,6 @@ function sourceList(records, { progressive = true } = {}) {
     return `<ol class="source-rows source-rows--plain">${rows}</ol>`;
   }
   return sourceLedger(records);
-}
-
-function personDisclosure(title, records, renderItem, searchText) {
-  if (!records.length) return "";
-  const citationList = records.some((item) => item.sourceType || item.shortCitation || item.fullCitation);
-  return `<section class="person-collection">
-    <h3>${escapeHtml(title)}</h3>
-    ${progressiveList(records, {
-      tag: citationList ? "ol" : "ul",
-      className: citationList ? "citation-list" : "entity-list",
-      label: title.toLowerCase(),
-      renderItem,
-      searchText,
-      showTotal: false,
-    })}
-  </section>`;
-}
-
-function personEntityDisclosure(title, records, type, meta = () => "") {
-  return personDisclosure(
-    title,
-    records,
-    (item) => {
-      const itemMeta = meta(item);
-      return `<li><span><a href="${recordUrl(type, item.id)}">${escapeHtml(item.title || item.displayName || item.id)}</a>${itemMeta ? `<br><small>${escapeHtml(itemMeta)}</small>` : ""}</span></li>`;
-    },
-    (item) => [item.title, item.displayName, item.id, meta(item)].filter(Boolean).join(" "),
-  );
 }
 
 function related(ids, index) {
@@ -804,11 +776,17 @@ function renderPerson(person, data, indexes) {
   const displayedRoles = [person.primaryRole, ...(person.roles || [])].filter((role, index, roles) => (
     role && roles.findIndex((candidate) => String(candidate).toLowerCase() === String(role).toLowerCase()) === index
   ));
-  const workSections = [
-    ["Film works", works.filter((item) => item.workType === "Film")],
-    ["Songs", works.filter((item) => item.workType === "Song")],
-    ["Other works", works.filter((item) => item.workType === "Other")],
-  ].map(([title, items]) => personEntityDisclosure(title, items, "work", (item) => [item.year, item.workType].filter(Boolean).join(" · "))).join("");
+  // One list, one search, one control. The works were split into Film, Songs and
+  // Other, and each group carried its own search field and its own "show more":
+  // five search boxes on this page, and a query typed into Songs could not find
+  // a work filed under Other. The type is now carried by a badge on the row,
+  // where it can be read without deciding in advance which box to type into.
+  const workList = progressiveList(works, {
+    label: "works",
+    renderItem: (item) => `<li><span><a href="${recordUrl("work", item.id)}">${escapeHtml(item.title)}</a>${item.year ? `<br><small>${escapeHtml(String(item.year))}</small>` : ""}</span>${typeBadge(item.workType)}</li>`,
+    searchText: (item) => [item.title, item.year, item.workType].filter(Boolean).join(" "),
+    showTotal: true,
+  });
   return {
     title: person.displayName,
     label: "Person",
@@ -823,7 +801,7 @@ function renderPerson(person, data, indexes) {
         searchText: (item) => [item.variantName, item.variantType, item.publicNote].filter(Boolean).join(" "),
         showTotal: false,
       })),
-      workSections ? section("Documented works", `<div class="person-collections">${workSections}</div>`, "", works.length) : "",
+      works.length ? section("Documented works", workList, "", works.length) : "",
       events.length ? section("Documented chronology", progressiveList(events, {
         label: "timeline events",
         renderItem: (item) => `<li><span><a href="${recordUrl("event", item.id)}">${escapeHtml(item.title)}</a>${item.displayDate || item.dateStart ? `<br><small>${escapeHtml(item.displayDate || item.dateStart)}</small>` : ""}</span>${periodBadge(item.periods || item.period)}</li>`,
