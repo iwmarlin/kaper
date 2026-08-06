@@ -4066,6 +4066,7 @@ main {
 /* The contents rail. Long records — Kaper carries 275 works, 54 events and 132
    sources — had no index at all; the aside held the portrait and nothing else. */
 .record-contents {
+  margin-top: 1.2rem;
   margin-bottom: 1.4rem;
   padding-left: 0.9rem;
   border-left: 1px solid var(--line-dark);
@@ -4124,33 +4125,6 @@ main {
 /* The identity block: plate, name and facts as one object. The portrait used to
    sit third in the aside, under the contents rail, and the authority links took
    a section heading of their own for three links. */
-.record-hero--identity .record-hero__grid {
-  grid-template-columns: 10rem minmax(0, 1fr) minmax(0, 0.62fr);
-  align-items: start;
-  gap: 1.6rem;
-}
-
-.record-plate {
-  margin: 0;
-}
-
-.record-plate img {
-  display: block;
-  width: 100%;
-  aspect-ratio: 4 / 5;
-  border: 1px solid var(--line-dark);
-  border-radius: 2px;
-  object-fit: cover;
-  object-position: center 22%;
-}
-
-.record-plate figcaption {
-  margin-top: 0.45rem;
-  color: var(--ink-soft);
-  font-size: 0.68rem;
-  line-height: 1.35;
-}
-
 .record-facts__authorities {
   display: flex;
   flex-wrap: wrap;
@@ -4158,32 +4132,7 @@ main {
 }
 
 @media (max-width: 900px) {
-  .record-hero--identity .record-hero__grid {
-    grid-template-columns: 7.5rem minmax(0, 1fr);
-  }
-
-  .record-hero--identity .record-facts {
-    grid-column: 1 / -1;
-  }
 }
 
 /* Credit, rights and the link to the media record sit under the plate they
    describe, in the identity block. */
-.record-plate .media-disclosure {
-  margin-top: 0.5rem;
-  padding: 0;
-  border: 0;
-  background: none;
-}
-
-.record-plate .media-disclosure__credit,
-.record-plate .media-disclosure__rationale {
-  font-size: 0.66rem;
-  line-height: 1.4;
-}
-
-.record-plate .media-disclosure__meta {
-  gap: 0.3rem 0.5rem;
-  margin-top: 0.35rem;
-  font-size: 0.62rem;
-}

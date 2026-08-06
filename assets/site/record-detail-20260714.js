@@ -1,4 +1,4 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=448d3c35ec";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=8c376dfabc";
 import {
   certaintyBadge,
   escapeHtml,
@@ -23,7 +23,7 @@ import {
   scopeBadge,
   typeBadge,
   updateMeta,
-} from "./core.js?v=448d3c35ec";
+} from "./core.js?v=8c376dfabc";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 mountSiteChrome("");
@@ -796,16 +796,6 @@ function renderPerson(person, data, indexes) {
     // boxes below it: it used to sit third in the aside, under a navigation
     // panel, while the authority links took a section heading of their own for
     // three links.
-    plate: portrait ? `<figure class="record-plate">${mediaPreview(portrait, {
-      eager: true,
-      sizes: "(max-width: 900px) 8rem, 10rem",
-    })}<figcaption>${escapeHtml(portrait.publicCaption || portrait.title || "")}</figcaption>${renderMediaDisclosure(portrait, portraitSources, {
-      compact: true,
-      includeTitle: false,
-      includeCaption: false,
-      includeFullRightsNote: false,
-      includeResolutionLabel: true,
-    })}</figure>` : "",
     main: [
       section("Pseudonyms and documented identities", progressiveList(identities, {
         className: "entity-list identity-list",
@@ -823,12 +813,22 @@ function renderPerson(person, data, indexes) {
       }), "", events.length) : "",
       section("Sources", sourceList(sources), "", sources.length),
     ].join(""),
-    aside: contentsRail([
+    // The portrait and its credit stay in the aside: 74 of the 137 people carry
+    // no portrait at all, and an identity block built around an image leaves a
+    // hole on every record that has none.
+    aside: `${portrait ? `<figure class="record-media">${mediaPreview(portrait, {
+      eager: true,
+      sizes: "(max-width: 900px) calc(100vw - 2rem), 20rem",
+    })}</figure>${renderMediaDisclosure(portrait, portraitSources, {
+      compact: true,
+      includeFullRightsNote: false,
+      includeResolutionLabel: true,
+    })}` : ""}${contentsRail([
       { title: "Pseudonyms and documented identities", count: identities.length },
       { title: "Documented works", count: works.length },
       { title: "Documented chronology", count: events.length },
       { title: "Sources", count: sources.length },
-    ]),
+    ])}`,
   };
 }
 
@@ -1056,9 +1056,8 @@ try {
   setCanonicalRecordUrl(requestedType, requestedId);
   target.className = "";
   target.innerHTML = `
-    <section class="record-hero${titleClass}${view.plate ? " record-hero--identity" : ""}">
+    <section class="record-hero${titleClass}">
       <div class="shell record-hero__grid">
-        ${view.plate || ""}
         <div>
           <p class="eyebrow">${escapeHtml(view.label)} · <span class="record-id">${escapeHtml(requestedId)}</span></p>
           <h1>${escapeHtml(view.title)}</h1>
