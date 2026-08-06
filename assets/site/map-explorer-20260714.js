@@ -18,6 +18,7 @@ const listTarget = document.querySelector("#place-list");
 const countTarget = document.querySelector("#place-count");
 const totalTarget = document.querySelector("#map-total");
 const search = document.querySelector("#place-search");
+const selectionPanel = document.querySelector("#place-selection");
 const selectionKicker = document.querySelector("#place-selection-kicker");
 const selectionTitle = document.querySelector("#place-selection-title");
 const selectionMeta = document.querySelector("#place-selection-meta");
@@ -154,6 +155,7 @@ function resetSelection() {
     }
   }
   selectedId = null;
+  if (selectionPanel) selectionPanel.dataset.state = "empty";
   selectionKicker.textContent = "Explore the map";
   selectionTitle.textContent = "Select a place";
   selectionMeta.textContent = "Choose a marker or a place from the list to see its role in the archive.";
@@ -176,6 +178,7 @@ function selectPlace(place, { moveMap = true } = {}) {
   }
 
   selectedId = place.id;
+  if (selectionPanel) selectionPanel.dataset.state = "selected";
   document.querySelectorAll("#place-list button").forEach((button) => {
     button.setAttribute("aria-current", String(button.dataset.id === place.id));
   });
@@ -368,17 +371,34 @@ try {
   // the card is moved into the map canvas and shown as an overlay across the
   // foot of the map, where the tap happened; above that width it returns to
   // the top of the side panel, which is where it reads best.
-  function bindSelectionPlacement() {
+  // On a phone the selection card used to sit below the map and below the
+  // place list, so tapping a marker moved the answer off-screen. Below 680px
+  // the card is moved into the map canvas and shown as an overlay across the
+  // foot of the map, where the tap happened, and the legend is moved the other
+  // way — out of the canvas and into the panel — because two absolutely
+  // positioned blocks were stacking on top of each other at the bottom of a
+  // 24rem map. Above that width both return to where they read best.
+  function bindResponsivePlacement() {
     var selection = document.getElementById('place-selection');
+    var legend = document.getElementById('map-legend');
     var canvas = document.querySelector('.map-canvas');
     var panel = document.querySelector('.map-panel');
-    if (!selection || !canvas || !panel || !window.matchMedia) return;
+    if (!selection || !legend || !canvas || !panel || !window.matchMedia) return;
     var narrow = window.matchMedia('(max-width: 680px)');
     function place() {
-      var target = narrow.matches ? canvas : panel;
-      if (selection.parentElement === target) return;
-      if (target === canvas) target.appendChild(selection);
-      else target.insertBefore(selection, target.firstElementChild);
+      var selTarget = narrow.matches ? canvas : panel;
+      if (selection.parentElement !== selTarget) {
+        if (selTarget === canvas) selTarget.appendChild(selection);
+        else selTarget.insertBefore(selection, selTarget.firstElementChild);
+      }
+      var legTarget = narrow.matches ? panel : canvas;
+      if (legend.parentElement !== legTarget) {
+        if (legTarget === canvas) legTarget.appendChild(legend);
+        else legTarget.insertBefore(legend, legTarget.firstElementChild);
+      }
+      // The summary is hidden on wide screens, so a legend closed on a phone
+      // would otherwise stay shut with no control to reopen it.
+      if (!narrow.matches) legend.open = true;
     }
     place();
     if (typeof narrow.addEventListener === 'function') narrow.addEventListener('change', place);
@@ -478,7 +498,7 @@ try {
   }
 
   search.addEventListener("input", debounce(render));
-  bindSelectionPlacement();
+  bindResponsivePlacement();
   render();
 } catch (error) {
   countTarget.textContent = "—";

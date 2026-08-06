@@ -3265,8 +3265,17 @@ main {
     grid-template-columns: 1fr;
   }
 
+  /* #research-map carries min-height: 30rem for the desktop grid. Below that
+     the canvas is given a fixed height, and the min-height won: a 480px map
+     sat in a 384px box and spilled 96px over the legend and the first entries
+     of the place list. */
   .map-canvas {
     height: 29rem;
+    overflow: hidden;
+  }
+
+  #research-map {
+    min-height: 0;
   }
 
   .map-panel {
@@ -4131,9 +4140,37 @@ main {
   }
 
   /* The selected place is what a tap on a marker is asking about, so it sits
-     over the foot of the map instead of below the whole list. */
+     over the foot of the map instead of below the whole list. In its empty
+     state it has nothing to say and stands down: on a 24rem map the words
+     "Select a place" were covering a third of the visible world. */
   .map-canvas {
     position: relative;
+  }
+
+  .map-canvas > .map-selection[data-state="empty"] {
+    display: none;
+  }
+
+  /* The legend goes the other way — down into the panel, as a collapsible
+     block above the results. Left in the canvas it sat under the selection
+     card, since both were anchored to the bottom edge. */
+  .map-panel > .map-legend {
+    position: static;
+    max-width: none;
+    padding: 0;
+    border: 0;
+    border-bottom: 1px solid var(--line);
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .map-panel > .map-legend > .map-legend__summary {
+    padding: 0.7rem 0.9rem;
+  }
+
+  .map-panel > .map-legend .map-legend__body {
+    padding: 0 0.9rem 0.8rem;
   }
 
   .map-canvas > .map-selection {
