@@ -1,3 +1,3 @@
-import { mountSiteChrome } from "./core.js?v=0c30e19329";
+import { mountSiteChrome } from "./core.js?v=747b54a9c0";
 
 mountSiteChrome("");
