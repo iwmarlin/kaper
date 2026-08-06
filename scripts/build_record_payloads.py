@@ -47,6 +47,26 @@ def record_ids(record: dict, key: str) -> list[str]:
     return value if isinstance(value, list) else []
 
 
+def portrait_belongs_to(media: dict, person: dict, source: dict) -> bool:
+    """Whether a portrait reached through a source actually depicts this person.
+
+    A person reaches media indirectly, through the sources attached to them, and
+    a source can document several people at once: the photograph of the Kiepura
+    reception in Paris carries Kaper, his wife, Kiepura and Halicz. Taking the
+    first portrait found in any of a person's sources therefore put one sitter's
+    face on another person's record. A portrait is claimed here only when its
+    slug is the person's own, which is the convention these records follow, or
+    when the source it comes from names this person and no one else.
+    """
+    if media.get("category") != "portrait":
+        return False
+    slug = str(person.get("slug") or "")
+    if slug and str(media.get("slug") or "").startswith(f"{slug}-"):
+        return True
+    person_ids = record_ids(source, "personIds")
+    return len(person_ids) == 1 and person_ids[0] == person.get("id")
+
+
 class RecordPayloadBuilder:
     def __init__(self, public_root: Path) -> None:
         self.public_root = public_root
@@ -161,7 +181,7 @@ class RecordPayloadBuilder:
                 portrait_ids = [
                     media_id
                     for media_id in record_ids(source, "mediaIds")
-                    if self.indexes["media"].get(media_id, {}).get("category") == "portrait"
+                    if portrait_belongs_to(self.indexes["media"].get(media_id, {}), root, source)
                 ]
                 self.add_media_with_sources(bundle, portrait_ids)
             self.add(bundle, "personNameVariants", record_ids(root, "nameVariantIds"))

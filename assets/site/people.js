@@ -1,4 +1,4 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=6082cea481";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=35f8360d30";
 import {
   debounce,
   escapeHtml,
@@ -17,7 +17,7 @@ import {
   renderLoading,
   responsiveImage,
   typeBadge,
-} from "./core.js?v=6082cea481";
+} from "./core.js?v=35f8360d30";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 mountSiteChrome("people");
@@ -88,15 +88,29 @@ try {
   const sourcesById = indexById(sources);
   const eventsById = indexById(timelineEvents);
 
-  // A person reaches a portrait indirectly: person → sources → media (category "portrait").
+  // A person reaches a portrait indirectly, through the sources attached to
+  // them, and a source can document several people at once: the photograph of
+  // the Kiepura reception in Paris carries Kaper, his wife, Kiepura and Halicz.
+  // Taking the first portrait found in any of a person's sources put one
+  // sitter's face on three other people. A portrait is claimed only when its
+  // slug is the person's own — the convention these records follow — or when
+  // the source it comes from names this person and no one else.
   function portraitFor(person) {
+    const reachable = [];
     for (const sourceId of person.sourceIds || []) {
-      for (const mediaId of sourcesById.get(sourceId)?.mediaIds || []) {
+      const source = sourcesById.get(sourceId);
+      for (const mediaId of source?.mediaIds || []) {
         const item = mediaById.get(mediaId);
-        if (item?.category === "portrait" && item.assetPath && IMAGE_DERIVATIVES[item.assetPath]) return item;
+        if (item?.category === "portrait" && item.assetPath && IMAGE_DERIVATIVES[item.assetPath]) {
+          reachable.push({ item, source });
+        }
       }
     }
-    return null;
+    const own = reachable.find(({ item }) => String(item.slug || "").startsWith(`${person.slug}-`));
+    if (own) return own.item;
+    const sole = reachable.find(({ source }) => (source?.personIds || []).length === 1
+      && source.personIds[0] === person.id);
+    return sole ? sole.item : null;
   }
 
   const indexed = people.map((person) => {

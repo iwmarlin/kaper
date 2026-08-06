@@ -1,4 +1,4 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=6082cea481";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=35f8360d30";
 import {
   certaintyBadge,
   escapeHtml,
@@ -23,7 +23,7 @@ import {
   scopeBadge,
   typeBadge,
   updateMeta,
-} from "./core.js?v=6082cea481";
+} from "./core.js?v=35f8360d30";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 mountSiteChrome("");
@@ -99,12 +99,32 @@ function factHtml(label, value) {
   return `<div><dt>${escapeHtml(label)}</dt><dd>${value}</dd></div>`;
 }
 
+function sectionId(title) {
+  return `section-${String(title).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "")}`;
+}
+
+// Sections announce their size. Only the source ledger used to, so a reader met
+// a heading with three links and a heading with 275 rows set identically, and
+// could not tell before scrolling which was which.
 function section(title, content, className = "", count = 0) {
   if (!content) return "";
-  const countLabel = count > LIST_PREVIEW_LIMIT
+  const countLabel = count
     ? `<span class="record-section__count" aria-label="${count} records">${count}</span>`
     : "";
-  return `<section class="record-section ${className}"><h2>${escapeHtml(title)}${countLabel}</h2>${content}</section>`;
+  const id = sectionId(title);
+  return `<section class="record-section ${className}" id="${id}"><h2>${escapeHtml(title)}${countLabel}</h2>${content}</section>`;
+}
+
+// A contents rail for records that run long. Kaper's page carries 275 works, 54
+// events and 132 sources over nearly five thousand pixels; without an index the
+// only way to learn what is on it is to scroll it.
+function contentsRail(entries) {
+  const items = entries.filter((entry) => entry && entry.count);
+  if (items.length < 3) return "";
+  return `<nav class="record-contents" aria-label="On this record">
+    <p class="record-contents__title">On this record</p>
+    <ul>${items.map((entry) => `<li><a href="#${sectionId(entry.title)}">${escapeHtml(entry.title)}<span>${entry.count}</span></a></li>`).join("")}</ul>
+  </nav>`;
 }
 
 function progressiveList(records, {
@@ -803,11 +823,21 @@ function renderPerson(person, data, indexes) {
         searchText: (item) => [item.variantName, item.variantType, item.publicNote].filter(Boolean).join(" "),
         showTotal: false,
       })),
-      workSections ? section("Related records", `<div class="person-collections">${workSections}</div>`) : "",
-      events.length ? section("Documented chronology", personEntityDisclosure("Timeline events", events, "event", (item) => item.displayDate || item.dateStart)) : "",
+      workSections ? section("Documented works", `<div class="person-collections">${workSections}</div>`, "", works.length) : "",
+      events.length ? section("Documented chronology", progressiveList(events, {
+        label: "timeline events",
+        renderItem: (item) => `<li><span><a href="${recordUrl("event", item.id)}">${escapeHtml(item.title)}</a>${item.displayDate || item.dateStart ? `<br><small>${escapeHtml(item.displayDate || item.dateStart)}</small>` : ""}</span>${periodBadge(item.periods || item.period)}</li>`,
+        searchText: (item) => [item.title, item.displayDate, item.placeDisplay].filter(Boolean).join(" "),
+        showTotal: false,
+      }), "", events.length) : "",
       section("Sources", sourceList(sources), "", sources.length),
     ].join(""),
-    aside: portrait ? `
+    aside: `${contentsRail([
+      { title: "Pseudonyms and documented identities", count: identities.length },
+      { title: "Documented works", count: works.length },
+      { title: "Documented chronology", count: events.length },
+      { title: "Sources", count: sources.length },
+    ])}` + (portrait ? `
       <figure class="record-media">${mediaPreview(portrait, {
         eager: true,
         sizes: "(max-width: 900px) calc(100vw - 2rem), 20rem",
@@ -817,7 +847,7 @@ function renderPerson(person, data, indexes) {
         includeFullRightsNote: false,
         includeResolutionLabel: true,
       })}
-    ` : `<div class="scope-note">Source-specific spellings and printed credit forms appear only on the relevant work records, where their evidentiary context is visible.</div>`,
+    ` : `<div class="scope-note">Source-specific spellings and printed credit forms appear only on the relevant work records, where their evidentiary context is visible.</div>`),
   };
 }
 

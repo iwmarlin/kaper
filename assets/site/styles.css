@@ -4060,3 +4060,63 @@ main {
     padding-block: 1.1rem 0.9rem;
   }
 }
+
+/* The contents rail. Long records — Kaper carries 275 works, 54 events and 132
+   sources — had no index at all; the aside held the portrait and nothing else. */
+.record-contents {
+  margin-bottom: 1.1rem;
+  padding: 0.75rem 0.9rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: rgba(255, 253, 248, 0.72);
+}
+
+.record-contents__title {
+  margin-bottom: 0.5rem;
+  color: var(--ink-soft);
+  font-size: 0.62rem;
+  font-weight: 780;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.record-contents ul {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  gap: 0.1rem;
+  list-style: none;
+}
+
+.record-contents a {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.6rem;
+  padding: 0.28rem 0;
+  border-bottom: 1px solid var(--line);
+  color: var(--ink);
+  font-size: 0.78rem;
+  text-decoration: none;
+}
+
+.record-contents li:last-child a {
+  border-bottom: 0;
+}
+
+.record-contents a:hover {
+  color: var(--accent-dark);
+}
+
+.record-contents a span {
+  color: var(--accent);
+  font-family: var(--serif);
+  font-variant-numeric: tabular-nums;
+}
+
+@media (min-width: 901px) {
+  .record-contents {
+    position: sticky;
+    top: 5.5rem;
+  }
+}
