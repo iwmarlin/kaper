@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 575,
+  "count": 576,
   "records": [
     {
       "id": "SRC0001",
@@ -622,14 +622,16 @@
       "personIds": [
         "P009",
         "P117",
-        "P129"
+        "P129",
+        "P156"
       ],
       "organizationIds": [
         "ORG070"
       ],
       "mediaIds": [
         "M032",
-        "M195"
+        "M195",
+        "M294"
       ],
       "placeIds": [
         "PL022"
@@ -19445,6 +19447,28 @@
       "sourceStatus": "verified",
       "sourceType": "wikimedia_commons_file",
       "title": "File:Joseph H. Lewis (1949).jpg"
+    },
+    {
+      "accessDate": "2026-08-06",
+      "creator": "Max Dupain",
+      "date": "1947-07",
+      "fullCitation": "Max Dupain. Studio portrait of the pianist Alexander Zakin, July 1947. Vintage gelatin silver print, Mitchell Library, State Library of New South Wales, ON 558/Box 13/no. 90. Republished on Wikimedia Commons under the Australian public-domain tag alone; no United States tag is offered, and the photograph was still protected in Australia on the URAA restoration date of 1 January 1996. The library asks to be acknowledged. Accessed 6 August 2026.",
+      "id": "SRC0647",
+      "mediaIds": [
+        "M295"
+      ],
+      "personIds": [
+        "P089"
+      ],
+      "primaryUrl": "https://commons.wikimedia.org/wiki/File:Russian_pianist_Alexander_Zakin,_July_1947_Dupain.jpg",
+      "publication": "Wikimedia Commons",
+      "reliability": "high",
+      "repository": "Mitchell Library, State Library of New South Wales (ON 558/Box 13/no. 90)",
+      "shortCitation": "Max Dupain, studio portrait of Alexander Zakin, July 1947",
+      "slug": "src0647-commons-max-dupain-alexander-zakin-1947",
+      "sourceStatus": "verified",
+      "sourceType": "wikimedia_commons_file",
+      "title": "File:Russian pianist Alexander Zakin, July 1947 Dupain.jpg"
     }
   ]
 }
