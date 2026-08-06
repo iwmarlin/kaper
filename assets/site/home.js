@@ -1,4 +1,4 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=ea62c184fb";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=5d483e810a";
 import {
   escapeHtml,
   mountSiteChrome,
@@ -8,7 +8,7 @@ import {
   renderError,
   renderLoading,
   responsiveImage,
-} from "./core.js?v=ea62c184fb";
+} from "./core.js?v=5d483e810a";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 mountSiteChrome("home");
@@ -80,7 +80,7 @@ function renderEvents(events) {
 function renderFigures(glance) {
   if (!figuresTarget || !glance) return;
   const parts = [];
-  if (glance.span) parts.push(`<strong>${glance.span.start}–${glance.span.end}</strong> documented span`);
+  if (glance.span) parts.push(`<strong>${glance.span.start}–${glance.span.end}</strong> documented works`);
   const certainty = glance.certainty || {};
   if (certainty.confirmed) {
     parts.push(`<strong>${numberFormat.format(certainty.confirmed)}</strong> confirmed · ${certainty.probable || 0} probable · ${certainty.uncertain || 0} uncertain`);
