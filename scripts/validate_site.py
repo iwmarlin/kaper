@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import re
 import sys
@@ -25,6 +26,11 @@ PUBLIC_PAGES = [
 
 # Pages that must appear in sitemap.xml (record.html and 404.html are shells, not routes).
 SITEMAP_PAGES = PUBLIC_PAGES[:6]
+
+ASSET_REFERENCE_RE = re.compile(
+    r'((?:assets/site/|\./)[A-Za-z0-9._/-]+\.(?:css|js))\?v=([A-Za-z0-9._-]+)'
+)
+ASSET_VERSION_RE = re.compile(r'\?v=[A-Za-z0-9._-]+')
 
 
 class ReferenceParser(HTMLParser):
@@ -73,6 +79,32 @@ class ReferenceParser(HTMLParser):
 
 def read_json(path: Path):
     return json.loads(path.read_text(encoding="utf-8"))
+
+
+def expected_asset_version(root: Path) -> str:
+    """Return the content-derived version used by scripts/stamp_assets.py."""
+    site = root / "assets/site"
+    parts: list[str] = []
+    for path in sorted(site.glob("*.css")) + sorted(site.glob("*.js")):
+        normalized = ASSET_VERSION_RE.sub("?v=", path.read_text(encoding="utf-8"))
+        parts.append(path.name + "\0" + normalized)
+    return hashlib.sha256("\0".join(parts).encode("utf-8")).hexdigest()[:10]
+
+
+def stale_asset_references(root: Path, expected: str) -> list[str]:
+    """Find pages or modules that can keep an obsolete CSS/JS bundle cached."""
+    candidates = [*root.glob("*.html"), *(root / "assets/site").glob("*.js")]
+    candidates.extend((root / "records").glob("*/*/index.html"))
+    stale: list[str] = []
+    for path in candidates:
+        text = path.read_text(encoding="utf-8")
+        versions = {
+            version for _, version in ASSET_REFERENCE_RE.findall(text)
+            if version != expected
+        }
+        if versions:
+            stale.append(path.relative_to(root).as_posix())
+    return stale
 
 
 def local_target(root: Path, page: Path, value: str) -> Path | None:
@@ -146,6 +178,18 @@ def validate(root: Path) -> dict:
     for filename in required_files:
         if not (root / filename).is_file():
             errors.append(f"Missing deployment file: {filename}")
+
+    asset_version = expected_asset_version(root)
+    stale_assets = stale_asset_references(root, asset_version)
+    if stale_assets:
+        sample = ", ".join(stale_assets[:5])
+        remainder = len(stale_assets) - min(5, len(stale_assets))
+        suffix = f" and {remainder} more" if remainder else ""
+        errors.append(
+            "Stale cache-busting version in "
+            f"{sample}{suffix}; expected {asset_version}. "
+            "Run scripts/stamp_assets.py and rebuild static records."
+        )
 
     for script in (root / "assets/site").glob("*.js"):
         text = script.read_text(encoding="utf-8")
