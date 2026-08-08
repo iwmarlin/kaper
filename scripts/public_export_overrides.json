@@ -3,6 +3,13 @@
   "description": "Auditable public corrections for the frozen Airtable snapshot. Existing records may receive scalar corrections or field removals; documented post-snapshot public records and explicit links may be added through the additions sections.",
   "records": {
     "Films": {
+      "F052": {
+        "reason": "Correct a conflation of two distinct 1936 shorts titled Little Boy Blue. Buxbaum/Sieghardt documents the animated film produced and directed by Ub Iwerks, with Jurmann background cues, additional music by Carl W. Stalling, and a companion catalogue statement associating the cues with Kaper and Jurmann; it does not name Harold S. Bucquet.",
+        "fields": {
+          "attributionNote": "Buxbaum/Sieghardt identifies Little Boy Blue (also circulated as The Big Bad Wolf) as a 1936 animated short produced and directed by Ub Iwerks. The filmography associates Walter Jurmann with background cues and lists Carl W. Stalling as an additional music contributor; the companion works catalogue identifies the background cues as a Kaper–Jurmann collaboration.",
+          "publicNote": "Animated short, also circulated as The Big Bad Wolf (1936), with background cues associated with Bronisław Kaper and Walter Jurmann; produced by Celebrity Productions–P. A. Powers and distributed by MGM."
+        }
+      },
       "F004": {
         "reason": "Describe Benjamin Kapper neutrally as an attested source form; uncertainty concerns Kaper's film role and corroboration, not whether the form appears in IMDb.",
         "fields": {
@@ -43,6 +50,12 @@
       }
     },
     "Works": {
+      "W-F052": {
+        "reason": "Replace the mixed live-action/animated description with the Buxbaum/Sieghardt record for the Ub Iwerks animated short and its source-specific music credits.",
+        "fields": {
+          "publicNote": "Animated short, also circulated as The Big Bad Wolf (1936). Buxbaum/Sieghardt associates Bronisław Kaper and Walter Jurmann with background cues and lists Carl W. Stalling as an additional music contributor; Ub Iwerks produced and directed the film, which was distributed by MGM."
+        }
+      },
       "W-S196": {
         "reason": "Correct the French edition from the item-level CCFr/BnF catalogue record: Paris, France-Mélodie, 1936, with French words credited to Ch. Davson.",
         "fields": {
@@ -2365,6 +2378,13 @@
       }
     },
     "Contributions": {
+      "CON-F052-C-P009": {
+        "reason": "Describe Kaper's documented contribution to the animated Little Boy Blue at the correct level: background cues jointly catalogued with Walter Jurmann, not an undifferentiated full-score credit.",
+        "fields": {
+          "evidenceContext": "background_music",
+          "scopeNote": "Background cues for the animated short, documented as a Kaper–Jurmann collaboration."
+        }
+      },
       "CON-S196-L-P106": {
         "reason": "Use the printed form and item-level evidence in the 1936 France-Mélodie catalogue record; Charlie Davson is the authority heading for Charles Secchia.",
         "fields": {
@@ -2814,6 +2834,21 @@
       }
     }
   },
+  "exclusions": {
+    "People": {
+      "P091": {
+        "reason": "Remove Harold S. Bucquet from the public graph because his sole relation to Little Boy Blue resulted from conflating two distinct 1936 shorts; Buxbaum/Sieghardt identifies Ub Iwerks, not Bucquet, as producer and director of the animated film associated with Kaper and Jurmann."
+      }
+    },
+    "Contributions": {
+      "CON-F052-D-P091": {
+        "reason": "Remove the false Harold S. Bucquet director contribution created by the same-title film conflation; the documented animated Little Boy Blue was produced and directed by Ub Iwerks."
+      },
+      "CON-F052-PC-ORG001": {
+        "reason": "Remove the false MGM production-company contribution created by the same-title film conflation; the documented animated short was produced by Celebrity Productions–P.A. Powers."
+      }
+    }
+  },
   "additions": {
     "Organizations": {
       "ORG112": {
@@ -2862,6 +2897,29 @@
           "contributionIds": [
             "CON-S074-PUB-ORG030",
             "CON-S075-PUB-ORG030"
+          ]
+        }
+      },
+      "ORG116": {
+        "reason": "Add the production entity named by the surviving Little Boy Blue poster and the Buxbaum/Sieghardt filmography, replacing the false MGM production-company relation created by conflating two 1936 shorts.",
+        "fields": {
+          "id": "ORG116",
+          "displayName": "Celebrity Productions–P.A. Powers",
+          "authorizedName": "Celebrity Productions, Inc. / P. A. Powers",
+          "types": [
+            "production company"
+          ],
+          "country": "United States",
+          "slug": "celebrity-productions-p-a-powers",
+          "sourceIds": [
+            "SRC0373",
+            "SRC0384"
+          ],
+          "workIds": [
+            "W-F052"
+          ],
+          "contributionIds": [
+            "CON-F052-PC-ORG116"
           ]
         }
       }
@@ -3038,6 +3096,64 @@
             "W-S096",
             "W-S097",
             "W-S116"
+          ]
+        }
+      },
+      "P157": {
+        "reason": "Add the authoritative identity of Ub Iwerks, whom Buxbaum/Sieghardt names as producer and director of the animated Little Boy Blue, and connect his verified 1930 publicity portrait.",
+        "fields": {
+          "id": "P157",
+          "displayName": "Ub Iwerks",
+          "sortName": "Iwerks, Ub",
+          "authorizedName": "Iwerks, Ub, 1901–1971",
+          "slug": "ub-iwerks",
+          "primaryRole": "film director",
+          "roles": [
+            "film director",
+            "producer",
+            "animator"
+          ],
+          "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n92036102\nVIAF: https://viaf.org/viaf/66672524\nGND: https://d-nb.info/gnd/124417280\nWikidata: https://www.wikidata.org/wiki/Q336424",
+          "birthYear": 1901,
+          "deathYear": 1971,
+          "lifeDatesCertainty": "confirmed",
+          "sourceIds": [
+            "SRC0373",
+            "SRC0384",
+            "SRC0656"
+          ],
+          "contributionIds": [
+            "CON-F052-D-P157"
+          ],
+          "workIds": [
+            "W-F052"
+          ]
+        }
+      },
+      "P158": {
+        "reason": "Add the authoritative identity of Carl W. Stalling, whom Buxbaum/Sieghardt lists as an additional music contributor to the animated Little Boy Blue.",
+        "fields": {
+          "id": "P158",
+          "displayName": "Carl W. Stalling",
+          "sortName": "Stalling, Carl W.",
+          "authorizedName": "Stalling, Carl W., 1891–1972",
+          "slug": "carl-w-stalling",
+          "primaryRole": "composer",
+          "roles": [
+            "composer"
+          ],
+          "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n85378906\nVIAF: https://viaf.org/viaf/107705214\nGND: https://d-nb.info/gnd/140706925\nWikidata: https://www.wikidata.org/wiki/Q598185",
+          "birthYear": 1891,
+          "deathYear": 1972,
+          "lifeDatesCertainty": "confirmed",
+          "sourceIds": [
+            "SRC0373"
+          ],
+          "contributionIds": [
+            "CON-F052-C-P158"
+          ],
+          "workIds": [
+            "W-F052"
           ]
         }
       }
@@ -3750,11 +3866,12 @@
         }
       },
       "CON-F052-C-P077": {
-        "reason": "Add Walter Jurmann's missing confirmed co-composer credit for Little Boy Blue. The Buxbaum/Sieghardt filmography and official Jurmann catalogue document music by Kaper and Jurmann for the MGM short.",
+        "reason": "Record Walter Jurmann's background-cue contribution to the Ub Iwerks animated short Little Boy Blue. Buxbaum/Sieghardt documents Jurmann's background cues and the companion works catalogue identifies them as a Kaper–Jurmann collaboration.",
         "fields": {
           "id": "CON-F052-C-P077",
           "role": "composer",
-          "evidenceContext": "film_credits_and_background_music",
+          "evidenceContext": "background_music",
+          "scopeNote": "Background cues for the animated short, documented as a Kaper–Jurmann collaboration.",
           "sortOrder": 41,
           "certainty": "confirmed",
           "workIds": [
@@ -3766,6 +3883,87 @@
           "sourceIds": [
             "SRC0306",
             "SRC0373"
+          ]
+        }
+      },
+      "CON-F052-C-P158": {
+        "reason": "Add Carl W. Stalling at the distinct additional-music scope stated in the Buxbaum/Sieghardt filmography for the animated Little Boy Blue.",
+        "fields": {
+          "id": "CON-F052-C-P158",
+          "role": "composer",
+          "evidenceContext": "additional_music",
+          "scopeNote": "Additional music, distinct from the Kaper–Jurmann background cues.",
+          "sortOrder": 42,
+          "certainty": "confirmed",
+          "workIds": [
+            "W-F052"
+          ],
+          "personIds": [
+            "P158"
+          ],
+          "sourceIds": [
+            "SRC0373"
+          ]
+        }
+      },
+      "CON-F052-D-P157": {
+        "reason": "Add Ub Iwerks as the documented director of the animated Little Boy Blue, replacing the false Harold S. Bucquet relation.",
+        "fields": {
+          "id": "CON-F052-D-P157",
+          "role": "film_director",
+          "nameAsPrinted": "Ub Iwerks",
+          "evidenceContext": "film_credits",
+          "sortOrder": 10,
+          "certainty": "confirmed",
+          "workIds": [
+            "W-F052"
+          ],
+          "personIds": [
+            "P157"
+          ],
+          "sourceIds": [
+            "SRC0373"
+          ]
+        }
+      },
+      "CON-F052-DIST-ORG001": {
+        "reason": "Preserve MGM at the distribution scope documented by the Buxbaum/Sieghardt filmography, without misidentifying the studio as the producer of the Ub Iwerks animated short.",
+        "fields": {
+          "id": "CON-F052-DIST-ORG001",
+          "role": "distributor",
+          "nameAsPrinted": "MGM",
+          "evidenceContext": "film_credits",
+          "sortOrder": 61,
+          "certainty": "confirmed",
+          "workIds": [
+            "W-F052"
+          ],
+          "organizationIds": [
+            "ORG001"
+          ],
+          "sourceIds": [
+            "SRC0373"
+          ]
+        }
+      },
+      "CON-F052-PC-ORG116": {
+        "reason": "Add the production company printed on the surviving poster and consistent with the animated-film record, replacing the false MGM production link.",
+        "fields": {
+          "id": "CON-F052-PC-ORG116",
+          "role": "production_company",
+          "nameAsPrinted": "Celebrity Productions–P.A. Powers",
+          "evidenceContext": "film_credits",
+          "sortOrder": 60,
+          "certainty": "confirmed",
+          "workIds": [
+            "W-F052"
+          ],
+          "organizationIds": [
+            "ORG116"
+          ],
+          "sourceIds": [
+            "SRC0373",
+            "SRC0384"
           ]
         }
       },
@@ -5154,6 +5352,31 @@
           ],
           "primaryUrl": "https://www.culvercity.gov/Explore/About-Culver-City/Culver-City-Historic-Images"
         }
+      },
+      "SRC0656": {
+        "reason": "Add an item-level Commons source for the verified 1930 public-domain publicity portrait of Ub Iwerks, separate from the filmographic sources for Little Boy Blue.",
+        "fields": {
+          "id": "SRC0656",
+          "shortCitation": "Official Disney publicity photograph of Ub Iwerks, 1930; Wikimedia Commons",
+          "fullCitation": "Official Disney publicity photograph. Ub Iwerks drawing Mickey Mouse, 1930. Wikimedia Commons, File:Ub Iwerks.jpg. The Commons file page identifies the photograph as published in 1930 and marks it public domain in the United States. Accessed 8 August 2026.",
+          "sourceType": "image_or_photograph",
+          "title": "Ub Iwerks drawing Mickey Mouse — publicity photograph, 1930",
+          "creator": "Official Disney publicity photograph",
+          "repository": "Wikimedia Commons",
+          "publication": "Wikimedia Commons",
+          "date": "1930",
+          "accessDate": "2026-08-08",
+          "reliability": "high",
+          "sourceStatus": "verified",
+          "slug": "src0656-ub-iwerks-publicity-portrait-1930",
+          "mediaIds": [
+            "M304"
+          ],
+          "personIds": [
+            "P157"
+          ],
+          "primaryUrl": "https://commons.wikimedia.org/wiki/File:Ub_Iwerks.jpg"
+        }
       }
     },
     "Places": {
@@ -5911,6 +6134,40 @@
             "hollywood"
           ]
         }
+      },
+      "M304": {
+        "reason": "Add the verified public-domain 1930 publicity portrait of Ub Iwerks and connect it to his person record and the animated Little Boy Blue without treating the image source as evidence for the film's music credits.",
+        "fields": {
+          "id": "M304",
+          "title": "Ub Iwerks drawing Mickey Mouse — publicity photograph, 1930",
+          "slug": "ub-iwerks-publicity-portrait-1930",
+          "mediaType": "image",
+          "storageType": "local",
+          "assetPath": "assets/images/portraits/ub-iwerks.jpg",
+          "assetPaths": [
+            "assets/images/portraits/ub-iwerks.jpg"
+          ],
+          "assetCount": 1,
+          "externalUrl": "https://commons.wikimedia.org/wiki/File:Ub_Iwerks.jpg",
+          "category": "portrait",
+          "galleryStatus": "eligible",
+          "period": "hollywood",
+          "sortOrder": 304,
+          "altText": "Ub Iwerks seated at a drawing table, drawing Mickey Mouse.",
+          "publicCaption": "Ub Iwerks drawing Mickey Mouse in a 1930 publicity photograph. Iwerks produced and directed the animated short Little Boy Blue (1936).",
+          "publicCreditLine": "Official Disney publicity photograph, 1930; Wikimedia Commons.",
+          "rightsStatus": "ok",
+          "rightsNote": "Public domain in the United States. Wikimedia Commons identifies the photograph as an official Disney publicity image published in 1930 and applies the United States public-domain term for works published before 1 January 1931.",
+          "sourceIds": [
+            "SRC0656"
+          ],
+          "workIds": [
+            "W-F052"
+          ],
+          "periods": [
+            "hollywood"
+          ]
+        }
       }
     },
     "Timeline Events": {
@@ -6029,6 +6286,17 @@
   },
   "linkAdditions": {
     "Organizations": {
+      "ORG001": {
+        "reason": "Preserve MGM as the documented distributor of the animated Little Boy Blue, while keeping production with Celebrity Productions–P.A. Powers.",
+        "fields": {
+          "sourceIds": [
+            "SRC0373"
+          ],
+          "contributionIds": [
+            "CON-F052-DIST-ORG001"
+          ]
+        }
+      },
       "ORG048": {
         "reason": "Link France-Mélodie to the item-level 1936 French edition, its source record and the corrected publisher contribution.",
         "fields": {
@@ -6704,13 +6972,20 @@
         }
       },
       "W-F052": {
-        "reason": "Attach Walter Jurmann's confirmed co-composer contribution and the official Jurmann catalogue to Little Boy Blue.",
+        "reason": "Replace the conflated film relations with the documented animated-short graph: Kaper and Jurmann background cues, Carl W. Stalling additional music, Ub Iwerks direction, Celebrity Productions–P.A. Powers production, and MGM distribution.",
         "fields": {
           "sourceIds": [
             "SRC0306"
           ],
+          "mediaIds": [
+            "M304"
+          ],
           "contributionIds": [
-            "CON-F052-C-P077"
+            "CON-F052-C-P077",
+            "CON-F052-C-P158",
+            "CON-F052-D-P157",
+            "CON-F052-DIST-ORG001",
+            "CON-F052-PC-ORG116"
           ]
         }
       },
@@ -7046,6 +7321,14 @@
       }
     },
     "Media": {
+      "M197": {
+        "reason": "Link the surviving animated Little Boy Blue poster to Celebrity Productions–P.A. Powers, replacing the false MGM production relation.",
+        "fields": {
+          "organizationIds": [
+            "ORG116"
+          ]
+        }
+      },
       "M048": {
         "reason": "Link the first young Kaper portrait directly to the University of Warsaw Archives as its holding and permission-granting institution.",
         "fields": {
@@ -8348,10 +8631,16 @@
         }
       },
       "SRC0373": {
-        "reason": "Reuse the existing Buxbaum/Sieghardt catalogue as the secondary authority resolving the two Heut kommt’s drauf an registrations under Ernst Martin to Kaper and Jurmann; do not create a duplicate source.",
+        "reason": "Reuse the existing Buxbaum/Sieghardt catalogue both for the Ernst Martin title-form resolution and for the corrected Little Boy Blue animated-film credits; do not create duplicate catalogue sources.",
         "fields": {
           "personIds": [
-            "P020"
+            "P020",
+            "P157",
+            "P158"
+          ],
+          "organizationIds": [
+            "ORG001",
+            "ORG116"
           ],
           "workIds": [
             "W-S081",
@@ -8396,6 +8685,10 @@
             "CON-F031-C-P077",
             "CON-F033-C-P077",
             "CON-F052-C-P077",
+            "CON-F052-C-P158",
+            "CON-F052-D-P157",
+            "CON-F052-DIST-ORG001",
+            "CON-F052-PC-ORG116",
             "CON-F032-SM-P077",
             "CON-F035-SW-P077",
             "CON-F036-SW-P077",
@@ -8404,6 +8697,21 @@
           ],
           "nameVariantIds": [
             "PNV0007"
+          ]
+        }
+      },
+      "SRC0384": {
+        "reason": "Synchronize the surviving Little Boy Blue poster with the documented animator-director and production entity without treating the poster as evidence for the film's music attribution.",
+        "fields": {
+          "personIds": [
+            "P157"
+          ],
+          "organizationIds": [
+            "ORG116"
+          ],
+          "contributionIds": [
+            "CON-F052-D-P157",
+            "CON-F052-PC-ORG116"
           ]
         }
       },
@@ -8671,6 +8979,14 @@
   },
   "linkRemovals": {
     "Media": {
+      "M197": {
+        "reason": "Remove the false MGM organization link from the poster for the animated Little Boy Blue; the poster names Celebrity Productions–P.A. Powers.",
+        "fields": {
+          "organizationIds": [
+            "ORG001"
+          ]
+        }
+      },
       "M031": {
         "reason": "Remove the November 1933 Paris reception source and the February 1934 Paris cocktail event from the Berlin Years gallery; the source and canonical photograph belong to the Paris gallery M032, while TE0032 uses M073 directly.",
         "fields": {
@@ -8903,10 +9219,17 @@
         }
       },
       "SRC0373": {
-        "reason": "Remove the inverse M223 link from the aggregate Jurmann catalogue, which otherwise leaks unrelated people into the specific cover record.",
+        "reason": "Remove both the inverse M223 gallery leak and the false Harold S. Bucquet/MGM contributions created by the Little Boy Blue same-title conflation.",
         "fields": {
           "mediaIds": [
             "M223"
+          ],
+          "personIds": [
+            "P091"
+          ],
+          "contributionIds": [
+            "CON-F052-D-P091",
+            "CON-F052-PC-ORG001"
           ]
         }
       },
@@ -8928,6 +9251,15 @@
       }
     },
     "Works": {
+      "W-F052": {
+        "reason": "Remove the Harold S. Bucquet and MGM relations inherited from the conflated live-action record; retain and add only the documented animated-film relations.",
+        "fields": {
+          "contributionIds": [
+            "CON-F052-D-P091",
+            "CON-F052-PC-ORG001"
+          ]
+        }
+      },
       "W-F012": {
         "reason": "Keep the aggregate Schlagerheft source SRC0108 at film level and remove the two redundant item-level song sources SRC0106 and SRC0107.",
         "fields": {
@@ -9160,6 +9492,14 @@
       }
     },
     "Organizations": {
+      "ORG001": {
+        "reason": "Remove the false MGM production-company contribution; MGM remains represented separately and precisely as distributor.",
+        "fields": {
+          "contributionIds": [
+            "CON-F052-PC-ORG001"
+          ]
+        }
+      },
       "ORG090": {
         "reason": "Remove SRC0532 from Wikimedia Foundation after replacing the Wikipedia citation with the BnF title authority record.",
         "fields": {

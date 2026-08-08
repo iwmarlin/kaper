@@ -449,6 +449,7 @@ class PublicExporter:
         self.errors: list[str] = []
         self.warnings: list[dict[str, Any]] = []
         self.applied_overrides: list[dict[str, Any]] = []
+        self.applied_exclusions: list[dict[str, Any]] = []
         self.applied_additions: list[dict[str, Any]] = []
         self.applied_link_additions: list[dict[str, Any]] = []
         self.applied_link_removals: list[dict[str, Any]] = []
@@ -612,6 +613,23 @@ class PublicExporter:
                 if unexpected:
                     self.errors.append(
                         f"{table_name} {stable_id}: addition contains non-allowlisted keys {sorted(unexpected)}"
+                    )
+
+        for table_name, table_exclusions in self.overrides.get("exclusions", {}).items():
+            if table_name not in self.config["tables"]:
+                self.errors.append(f"Exclusions reference unknown table {table_name!r}")
+                continue
+            if not isinstance(table_exclusions, dict):
+                self.errors.append(f"Exclusions for {table_name} must be an object")
+                continue
+            for stable_id, exclusion in table_exclusions.items():
+                if stable_id not in self.by_stable[table_name]:
+                    self.errors.append(
+                        f"{table_name}: exclusion references unknown snapshot record {stable_id}"
+                    )
+                if not isinstance(exclusion, dict) or not exclusion.get("reason"):
+                    self.errors.append(
+                        f"{table_name} {stable_id}: exclusion requires an audit reason"
                     )
 
         for table_name, table_links in self.overrides.get("linkAdditions", {}).items():
@@ -993,6 +1011,29 @@ class PublicExporter:
                         "removedFields": sorted(override.get("removeFields", [])),
                     }
                 )
+
+    def _apply_exclusions(self) -> None:
+        for table_name, table_exclusions in self.overrides.get("exclusions", {}).items():
+            excluded_ids = set(table_exclusions)
+            retained = [
+                record
+                for record in self.output_records.get(table_name, [])
+                if record.get("id") not in excluded_ids
+            ]
+            removed_ids = {
+                record.get("id")
+                for record in self.output_records.get(table_name, [])
+            } - {record.get("id") for record in retained}
+            for stable_id in sorted(excluded_ids):
+                if stable_id not in removed_ids:
+                    self.errors.append(
+                        f"{table_name} {stable_id}: configured exclusion was not applied because the record is not in the public graph"
+                    )
+                    continue
+                self.applied_exclusions.append(
+                    {"table": table_name, "id": stable_id}
+                )
+            self.output_records[table_name] = retained
 
     def _apply_additions(self) -> None:
         output_by_id = {
@@ -1679,6 +1720,7 @@ class PublicExporter:
                 for stable_id in sorted(self.included[table_name])
             ]
             self.output_records[table_name] = records
+        self._apply_exclusions()
         self._apply_overrides()
         self._apply_additions()
         self._normalize_media_public_text()
@@ -2147,6 +2189,10 @@ class PublicExporter:
             ),
             "appliedOverrides": sorted(
                 self.applied_overrides,
+                key=lambda item: (item["table"], item["id"]),
+            ),
+            "appliedExclusions": sorted(
+                self.applied_exclusions,
                 key=lambda item: (item["table"], item["id"]),
             ),
             "appliedAdditions": sorted(

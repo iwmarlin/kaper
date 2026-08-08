@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 112,
+  "count": 113,
   "records": [
     {
       "id": "ORG001",
@@ -21,6 +21,7 @@
       "slug": "metro-goldwyn-mayer-mgm",
       "nameVariants": "Metro-Goldwyn-Mayer Studios (MGM)",
       "sourceIds": [
+        "SRC0373",
         "SRC0114",
         "SRC0140",
         "SRC0141",
@@ -44,6 +45,7 @@
         "TE0043"
       ],
       "contributionIds": [
+        "CON-F052-DIST-ORG001",
         "CON-F033-PC-ORG001",
         "CON-F034-PC-ORG001",
         "CON-F035-PC-ORG001",
@@ -59,7 +61,6 @@
         "CON-F047-PC-ORG001",
         "CON-F048-PC-ORG001",
         "CON-F050-PC-ORG001",
-        "CON-F052-PC-ORG001",
         "CON-F055-PC-ORG001",
         "CON-S119-PUB-ORG001",
         "CON-S120-PUB-ORG001",
@@ -85,6 +86,7 @@
         "CON-S202-PUB-ORG001"
       ],
       "workIds": [
+        "W-F052",
         "W-F033",
         "W-F034",
         "W-F035",
@@ -100,7 +102,6 @@
         "W-F047",
         "W-F048",
         "W-F050",
-        "W-F052",
         "W-F055",
         "W-S119",
         "W-S120",
@@ -3187,6 +3188,29 @@
         "W-S215"
       ],
       "authorizedName": "Polskie Zakłady Fonograficzne „Odeon”"
+    },
+    {
+      "id": "ORG116",
+      "displayName": "Celebrity Productions–P. A. Powers",
+      "authorizedName": "Celebrity Productions, Inc. / P. A. Powers",
+      "types": [
+        "film production company"
+      ],
+      "city": [
+        "Los Angeles"
+      ],
+      "country": "United States",
+      "slug": "celebrity-productions-pa-powers",
+      "sourceIds": [
+        "SRC0373",
+        "SRC0384"
+      ],
+      "contributionIds": [
+        "CON-F052-PC-ORG116"
+      ],
+      "workIds": [
+        "W-F052"
+      ]
     }
   ]
 }

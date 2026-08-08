@@ -97,12 +97,14 @@ def main() -> int:
     overrides = read_json(overrides_path)
     applied = sum(len(v) for v in overrides.get("records", {}).values())
     additions = sum(len(v) for v in overrides.get("additions", {}).values())
+    exclusions = sum(len(v) for v in overrides.get("exclusions", {}).values())
     link_additions = sum(len(v) for v in overrides.get("linkAdditions", {}).values())
     ov = dict(manifest["publicInputs"]["overrides"])
     ov_new = dict(ov)
     ov_new["sha256"] = sha256(overrides_path)
     ov_new["appliedCount"] = applied
     ov_new["additionCount"] = additions
+    ov_new["exclusionCount"] = exclusions
     ov_new["linkAdditionCount"] = link_additions
     if ov_new != ov:
         changes.append("overrides(sha/counts)")
@@ -140,7 +142,7 @@ def main() -> int:
 
     print("reconciled:", ", ".join(changes) if changes else "no changes needed")
     print(f"  counts: Places={counts['Places']} Media={counts['Media']} Sources={counts['Sources']}")
-    print(f"  overrides: applied={applied} additions={additions} linkAdditions={link_additions}")
+    print(f"  overrides: applied={applied} exclusions={exclusions} additions={additions} linkAdditions={link_additions}")
     print("Next: python3 scripts/validate_public_export.py --data data/public/v1 "
           "--config scripts/public_export_config.json --overrides scripts/public_export_overrides.json")
     return 0

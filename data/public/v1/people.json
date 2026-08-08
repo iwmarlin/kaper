@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 137,
+  "count": 138,
   "records": [
     {
       "id": "P001",
@@ -3689,30 +3689,6 @@
       "lifeDatesCertainty": "confirmed"
     },
     {
-      "id": "P091",
-      "displayName": "Harold S. Bucquet",
-      "sortName": "Bucquet, Harold S.",
-      "authorizedName": "Bucquet, Harold S.",
-      "slug": "harold-s-bucquet",
-      "primaryRole": "film director",
-      "roles": [
-        "film director"
-      ],
-      "authorityUrl": "VIAF: https://viaf.org/viaf/27327968\nLCNAF: https://id.loc.gov/authorities/names/no97024510",
-      "sourceIds": [
-        "SRC0373"
-      ],
-      "contributionIds": [
-        "CON-F052-D-P091"
-      ],
-      "workIds": [
-        "W-F052"
-      ],
-      "birthYear": 1891,
-      "deathYear": 1946,
-      "lifeDatesCertainty": "confirmed"
-    },
-    {
       "id": "P092",
       "displayName": "Gaston Roudès",
       "sortName": "Roudès, Gaston",
@@ -5213,6 +5189,58 @@
         "W-S214",
         "W-S215"
       ]
+    },
+    {
+      "id": "P157",
+      "displayName": "Ub Iwerks",
+      "sortName": "Iwerks, Ub",
+      "authorizedName": "Iwerks, Ub, 1901–1971",
+      "slug": "ub-iwerks",
+      "primaryRole": "film director",
+      "roles": [
+        "film director",
+        "producer",
+        "animator"
+      ],
+      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n92036102\nVIAF: https://viaf.org/viaf/66672524\nGND: https://d-nb.info/gnd/124417280\nWikidata: https://www.wikidata.org/wiki/Q336424",
+      "sourceIds": [
+        "SRC0373",
+        "SRC0384",
+        "SRC0656"
+      ],
+      "contributionIds": [
+        "CON-F052-D-P157"
+      ],
+      "workIds": [
+        "W-F052"
+      ],
+      "birthYear": 1901,
+      "deathYear": 1971,
+      "lifeDatesCertainty": "confirmed"
+    },
+    {
+      "id": "P158",
+      "displayName": "Carl W. Stalling",
+      "sortName": "Stalling, Carl W.",
+      "authorizedName": "Stalling, Carl W., 1891–1972",
+      "slug": "carl-w-stalling",
+      "primaryRole": "composer",
+      "roles": [
+        "composer"
+      ],
+      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n85378906\nVIAF: https://viaf.org/viaf/107705214\nGND: https://d-nb.info/gnd/140706925\nWikidata: https://www.wikidata.org/wiki/Q598185",
+      "sourceIds": [
+        "SRC0373"
+      ],
+      "contributionIds": [
+        "CON-F052-C-P158"
+      ],
+      "workIds": [
+        "W-F052"
+      ],
+      "birthYear": 1891,
+      "deathYear": 1972,
+      "lifeDatesCertainty": "confirmed"
     }
   ]
 }

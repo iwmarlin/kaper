@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 1081,
+  "count": 1083,
   "records": [
     {
       "id": "CON-F001-C-P009",
@@ -4404,7 +4404,8 @@
     {
       "id": "CON-F052-C-P009",
       "role": "composer",
-      "evidenceContext": "film_credits",
+      "evidenceContext": "background_music",
+      "scopeNote": "Background cues for the animated short, documented as a Kaper–Jurmann collaboration.",
       "sortOrder": 40,
       "certainty": "confirmed",
       "workIds": [
@@ -4420,7 +4421,8 @@
     {
       "id": "CON-F052-C-P077",
       "role": "composer",
-      "evidenceContext": "film_credits_and_background_music",
+      "evidenceContext": "background_music",
+      "scopeNote": "Background cues for the animated short, documented as a Kaper–Jurmann collaboration.",
       "sortOrder": 41,
       "certainty": "confirmed",
       "workIds": [
@@ -4435,26 +4437,45 @@
       ]
     },
     {
-      "id": "CON-F052-D-P091",
-      "role": "film_director",
-      "nameAsPrinted": "Harold S. Bucquet",
-      "sortOrder": 1,
+      "id": "CON-F052-C-P158",
+      "role": "composer",
+      "evidenceContext": "additional_music",
+      "scopeNote": "Listed by Buxbaum/Sieghardt as an additional music contributor.",
+      "sortOrder": 42,
       "certainty": "confirmed",
       "workIds": [
         "W-F052"
       ],
       "personIds": [
-        "P091"
+        "P158"
       ],
       "sourceIds": [
         "SRC0373"
       ]
     },
     {
-      "id": "CON-F052-PC-ORG001",
-      "role": "production_company",
-      "nameAsPrinted": "Metro-Goldwyn-Mayer (MGM)",
+      "id": "CON-F052-D-P157",
+      "role": "film_director",
+      "nameAsPrinted": "Ub Iwerks",
       "evidenceContext": "film_credits",
+      "sortOrder": 10,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-F052"
+      ],
+      "personIds": [
+        "P157"
+      ],
+      "sourceIds": [
+        "SRC0373"
+      ]
+    },
+    {
+      "id": "CON-F052-DIST-ORG001",
+      "role": "distributor",
+      "nameAsPrinted": "MGM",
+      "evidenceContext": "film_credits",
+      "sortOrder": 61,
       "certainty": "confirmed",
       "workIds": [
         "W-F052"
@@ -4464,6 +4485,24 @@
       ],
       "sourceIds": [
         "SRC0373"
+      ]
+    },
+    {
+      "id": "CON-F052-PC-ORG116",
+      "role": "production_company",
+      "nameAsPrinted": "Celebrity Productions–P. A. Powers",
+      "evidenceContext": "film_credits",
+      "sortOrder": 60,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-F052"
+      ],
+      "organizationIds": [
+        "ORG116"
+      ],
+      "sourceIds": [
+        "SRC0373",
+        "SRC0384"
       ]
     },
     {
