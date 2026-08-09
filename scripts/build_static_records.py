@@ -8,7 +8,9 @@ import html
 import json
 import re
 import shutil
+from collections import Counter
 from pathlib import Path
+from typing import Optional
 from urllib.parse import quote, urlsplit
 
 
@@ -211,7 +213,12 @@ def work_summary(record: dict, tables: dict, subtype: dict) -> str:
     return " ".join(parts)
 
 
-def summary_for(record_type: str, record: dict, tables: dict) -> str:
+def summary_for(
+    record_type: str,
+    record: dict,
+    tables: dict,
+    source_description_counts: Optional[dict[str, int]] = None,
+) -> str:
     if record_type == "work":
         subtype = next(
             (
@@ -255,13 +262,16 @@ def summary_for(record_type: str, record: dict, tables: dict) -> str:
             if types or context
             else f"{record.get('displayName')} in the Bronisław Kaper research archive."
         )
-    # Sources: lead with the short citation, which identifies the item, because many full
-    # citations share an identical opening (catalogue volumes) and would truncate alike.
+    # Never concatenate the short and full forms of the same citation. Prefer the
+    # fuller description when its search-result excerpt is unique; catalogue
+    # families whose full citations truncate identically use their concise,
+    # record-specific citation instead.
     short = compact_text(record.get("shortCitation") or record.get("title"))
     full = compact_text(record.get("fullCitation"))
-    if short and full and not full.startswith(short[:40]):
-        return compact_text(f"{short} {full}")
-    return compact_text(full or short)
+    full_excerpt = compact_text(full, 180)
+    if full and (source_description_counts or {}).get(full_excerpt, 1) == 1:
+        return full
+    return short or full
 
 
 def facts_for(record_type: str, record: dict) -> list[tuple[str, str]]:
@@ -499,9 +509,14 @@ def structured_data(
     return f'<script type="application/ld+json">{payload}</script>'
 
 
-def static_page(record_type: str, record: dict, tables: dict) -> str:
+def static_page(
+    record_type: str,
+    record: dict,
+    tables: dict,
+    source_description_counts: dict[str, int],
+) -> str:
     title = title_for(record_type, record)
-    summary = summary_for(record_type, record, tables)
+    summary = summary_for(record_type, record, tables, source_description_counts)
     meta_summary = summary or f"{title}, a documented record in the Bronisław Kaper research archive."
     label = TYPE_LABELS[record_type]
     # Media, source and organization titles collide with work titles across the archive;
@@ -590,6 +605,12 @@ def static_page(record_type: str, record: dict, tables: dict) -> str:
 
 def expected_outputs(root: Path) -> tuple[dict[Path, str], str, dict]:
     record_root = root / "data/site/records"
+    public_sources = read_json(root / "data/public/v1/sources.json").get("records", [])
+    source_description_counts = Counter(
+        compact_text(compact_text(item.get("fullCitation")), 180)
+        for item in public_sources
+        if item.get("fullCitation")
+    )
     outputs: dict[Path, str] = {}
     routes = []
     counts = {}
@@ -601,7 +622,12 @@ def expected_outputs(root: Path) -> tuple[dict[Path, str], str, dict]:
             tables = payload["tables"]
             record = next(item for item in tables[table] if item["id"] == payload["id"])
             output = root / "records" / record_type / payload["id"] / "index.html"
-            outputs[output] = static_page(record_type, record, tables)
+            outputs[output] = static_page(
+                record_type,
+                record,
+                tables,
+                source_description_counts,
+            )
             routes.append(f"records/{record_type}/{quote(payload['id'], safe='')}/")
     sitemap_urls = [f"{ORIGIN}{path}" for path in PUBLIC_PAGES]
     sitemap_urls.extend(f"{ORIGIN}{route}" for route in routes)
