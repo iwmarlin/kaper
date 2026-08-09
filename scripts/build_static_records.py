@@ -321,17 +321,64 @@ SCHEMA_TYPE = {
     "source": "CreativeWork",
 }
 
-DEFAULT_OG_IMAGE = f"{ORIGIN}assets/images/portraits/kaper-mature.jpg"
+NEUTRAL_OG_IMAGE_PATH = "apple-touch-icon.png"
+IMAGE_ASSET_SUFFIXES = {".jpg", ".jpeg", ".png", ".webp", ".gif"}
 
 
-def og_image_for(record_type: str, record: dict) -> str:
-    if (
-        record_type == "media"
-        and record.get("mediaType") == "image"
-        and record.get("assetPath")
-    ):
-        return f"{ORIGIN}{record['assetPath']}"
-    return DEFAULT_OG_IMAGE
+def image_asset_path(media: dict) -> str:
+    """Return the first browser-shareable local image carried by a media record."""
+    candidates = [media.get("assetPath"), *(media.get("assetPaths") or [])]
+    for candidate in candidates:
+        path = str(candidate or "").strip()
+        if Path(urlsplit(path).path).suffix.lower() in IMAGE_ASSET_SUFFIXES:
+            return path
+    return ""
+
+
+def og_image_for(record_type: str, record: dict, tables: dict) -> dict:
+    """Choose a record-specific social image without borrowing another identity.
+
+    Person payloads contain only portraits already verified as belonging to that
+    person by build_record_payloads.py. Works, events and places retain the order
+    of their explicit media links; event hero media take priority. A neutral
+    archive mark is used when no suitable local image exists.
+    """
+    media_by_id = {item["id"]: item for item in tables.get("media", [])}
+    candidates: list[dict] = []
+    if record_type == "media":
+        candidates = [record]
+    elif record_type == "person":
+        candidates = [
+            item for item in tables.get("media", [])
+            if item.get("category") == "portrait"
+        ]
+    elif record_type in {"work", "place", "event"}:
+        hero_ids = (record.get("heroMediaIds") or []) if record_type == "event" else []
+        linked_ids = [
+            *hero_ids,
+            *(record.get("mediaIds") or []),
+        ]
+        candidates = [
+            media_by_id[media_id]
+            for media_id in dict.fromkeys(linked_ids)
+            if media_id in media_by_id
+        ]
+
+    for media in candidates:
+        path = image_asset_path(media)
+        if path:
+            return {
+                "url": f"{ORIGIN}{quote(path, safe='/')}",
+                "alt": media.get("altText") or media.get("title") or title_for(record_type, record),
+                "neutral": False,
+                "portrait": media.get("category") == "portrait",
+            }
+    return {
+        "url": f"{ORIGIN}{NEUTRAL_OG_IMAGE_PATH}",
+        "alt": "Bronisław Kaper research archive",
+        "neutral": True,
+        "portrait": False,
+    }
 
 
 WORK_SCHEMA_TYPE = {"song": "MusicComposition", "film": "Movie"}
@@ -477,7 +524,13 @@ def static_page(record_type: str, record: dict, tables: dict) -> str:
         if summary
         else ""
     )
-    og_image = og_image_for(record_type, record)
+    og_image = og_image_for(record_type, record, tables)
+    og_image_size = (
+        '\n  <meta property="og:image:width" content="180">'
+        '\n  <meta property="og:image:height" content="180">'
+        if og_image["neutral"] else ""
+    )
+    twitter_card = "summary" if og_image["neutral"] or og_image["portrait"] else "summary_large_image"
     ld_json = structured_data(record_type, record, canonical, title, meta_summary, tables)
     return f"""<!doctype html>
 <html lang="en">
@@ -494,9 +547,11 @@ def static_page(record_type: str, record: dict, tables: dict) -> str:
   <meta property="og:description" content="{esc(compact_text(meta_summary, 200))}">
   <meta property="og:type" content="article">
   <meta property="og:url" content="{esc(canonical)}">
-  <meta property="og:image" content="{esc(og_image)}">
-  <meta property="og:image:alt" content="{esc(title)}">
-  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:image" content="{esc(og_image['url'])}">
+  <meta property="og:image:alt" content="{esc(og_image['alt'])}">{og_image_size}
+  <meta name="twitter:card" content="{twitter_card}">
+  <meta name="twitter:image" content="{esc(og_image['url'])}">
+  <meta name="twitter:image:alt" content="{esc(og_image['alt'])}">
   <link rel="canonical" href="{esc(canonical)}">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="icon" href="favicon.ico" sizes="any">
