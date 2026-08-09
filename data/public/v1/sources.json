@@ -4375,6 +4375,8 @@
       "sourceStatus": "verified",
       "slug": "src0140-afi-escapade-1935",
       "personIds": [
+        "P009",
+        "P025",
         "P028",
         "P070",
         "P077"
@@ -4384,16 +4386,24 @@
         "ORG073"
       ],
       "workIds": [
-        "W-F033"
+        "W-F033",
+        "W-S119"
       ],
       "filmIds": [
         "F033"
+      ],
+      "songIds": [
+        "S119"
       ],
       "contributionIds": [
         "CON-F033-C-P009",
         "CON-F033-C-P077",
         "CON-F033-D-P070",
-        "CON-F033-PC-ORG001"
+        "CON-F033-PC-ORG001",
+        "CON-S119-C-P009",
+        "CON-S119-C-P077",
+        "CON-S119-L-P025",
+        "CON-S119-L-P028"
       ],
       "primaryUrl": "https://catalog.afi.com/Film/7214-ESCAPADE?cxt=filmography"
     },
@@ -4518,7 +4528,10 @@
       "sourceStatus": "verified",
       "slug": "src0144-afi-san-francisco-1936",
       "personIds": [
+        "P009",
+        "P025",
         "P076",
+        "P077",
         "P136",
         "P139"
       ],
@@ -4527,16 +4540,24 @@
         "ORG073"
       ],
       "workIds": [
-        "W-F043"
+        "W-F043",
+        "W-S130"
       ],
       "filmIds": [
         "F043"
+      ],
+      "songIds": [
+        "S130"
       ],
       "contributionIds": [
         "CON-F043-C-P009",
         "CON-F043-C-P077",
         "CON-F043-D-P076",
-        "CON-F043-PC-ORG001"
+        "CON-F043-PC-ORG001",
+        "CON-S130-C-P009",
+        "CON-S130-C-P077",
+        "CON-S130-L-P025",
+        "CON-S130-P-P139"
       ],
       "primaryUrl": "https://catalog.afi.com/Film/8263-SAN-FRANCISCO?cxt=filmography"
     },
@@ -16955,6 +16976,9 @@
         "W-F029",
         "W-S110",
         "W-S111"
+      ],
+      "filmIds": [
+        "F029"
       ],
       "mediaIds": [
         "M223"

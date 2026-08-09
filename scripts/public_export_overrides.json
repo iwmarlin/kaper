@@ -6716,6 +6716,54 @@
             "SRC0540"
           ]
         }
+      },
+      "CON-S119-C-P009": {
+        "reason": "Add the AFI Escapade record as direct evidence for Kaper's music credit on You're All I Need.",
+        "fields": {
+          "sourceIds": [
+            "SRC0140"
+          ]
+        }
+      },
+      "CON-S119-C-P077": {
+        "reason": "Add the AFI Escapade record as direct evidence for Jurmann's music credit on You're All I Need.",
+        "fields": {
+          "sourceIds": [
+            "SRC0140"
+          ]
+        }
+      },
+      "CON-S119-L-P025": {
+        "reason": "Add the AFI Escapade record as direct evidence for Gus Kahn's lyric credit on You're All I Need.",
+        "fields": {
+          "sourceIds": [
+            "SRC0140"
+          ]
+        }
+      },
+      "CON-S130-C-P009": {
+        "reason": "Add the AFI San Francisco record as direct evidence for Kaper's authorship of the title song.",
+        "fields": {
+          "sourceIds": [
+            "SRC0144"
+          ]
+        }
+      },
+      "CON-S130-C-P077": {
+        "reason": "Add the AFI San Francisco record as direct evidence for Jurmann's authorship of the title song.",
+        "fields": {
+          "sourceIds": [
+            "SRC0144"
+          ]
+        }
+      },
+      "CON-S130-L-P025": {
+        "reason": "Add the AFI San Francisco record as direct evidence for Gus Kahn's authorship of the title song while retaining the database's role division from the more precise bibliographic sources.",
+        "fields": {
+          "sourceIds": [
+            "SRC0144"
+          ]
+        }
       }
     },
     "Works": {
@@ -6944,10 +6992,11 @@
         }
       },
       "W-F029": {
-        "reason": "Attach Walter Jurmann's confirmed co-composer contribution and the official Jurmann catalogue to On a volé un homme.",
+        "reason": "Attach Walter Jurmann's confirmed co-composer contribution, the official Jurmann catalogue and the item-level cover source that also documents the film On a volé un homme.",
         "fields": {
           "sourceIds": [
-            "SRC0306"
+            "SRC0306",
+            "SRC0540"
           ],
           "contributionIds": [
             "CON-F029-C-P077",
@@ -7268,6 +7317,14 @@
       }
     },
     "Films": {
+      "F029": {
+        "reason": "Link On a volé un homme to the item-level cover source that explicitly documents the film.",
+        "fields": {
+          "sourceIds": [
+            "SRC0540"
+          ]
+        }
+      },
       "F013": {
         "reason": "Add the official Walter Jurmann catalogue as the source documenting Kaper and Jurmann's background-music and song contribution to Die Zwei vom Südexpreß.",
         "fields": {
@@ -7294,6 +7351,22 @@
       }
     },
     "Songs": {
+      "S119": {
+        "reason": "Link You're All I Need to the AFI Escapade record, which explicitly names the song and its four writers.",
+        "fields": {
+          "sourceIds": [
+            "SRC0140"
+          ]
+        }
+      },
+      "S130": {
+        "reason": "Link San Francisco to the AFI film record, which explicitly names the title song, its writers and Jeanette MacDonald's performance.",
+        "fields": {
+          "sourceIds": [
+            "SRC0144"
+          ]
+        }
+      },
       "S196": {
         "reason": "Link the corrected Song record to the item-level 1936 France-Mélodie catalogue record.",
         "fields": {
@@ -7717,12 +7790,14 @@
         }
       },
       "P009": {
-        "reason": "Link Bronisław Kaper to the completed 1932–1933 Hofmeister sources and to the documented portrait sources.",
+        "reason": "Link Bronisław Kaper to the completed 1932–1933 Hofmeister sources, the documented portrait sources and the two AFI song records that explicitly credit him.",
         "fields": {
           "sourceIds": [
             "SRC0038",
             "SRC0110",
             "SRC0024",
+            "SRC0140",
+            "SRC0144",
             "SRC0188",
             "SRC0189",
             "SRC0190",
@@ -7769,9 +7844,11 @@
         }
       },
       "P025": {
-        "reason": "Link Gus Kahn to the archival collection source; the portrait medium is reached through that canonical source relation.",
+        "reason": "Link Gus Kahn to the archival collection source and to the AFI records that explicitly credit his lyrics for You're All I Need and San Francisco.",
         "fields": {
           "sourceIds": [
+            "SRC0140",
+            "SRC0144",
             "SRC0557"
           ]
         }
@@ -7858,6 +7935,7 @@
             "SRC0137",
             "SRC0138",
             "SRC0140",
+            "SRC0144",
             "SRC0188",
             "SRC0189",
             "SRC0190",
@@ -8832,14 +8910,26 @@
         }
       },
       "SRC0140": {
-        "reason": "Synchronize AFI's Walter Jurmann music-score credit for Escapade with the person and contribution records.",
+        "reason": "Treat the AFI Escapade record as direct evidence for You're All I Need and synchronize the song, its four credited writers and their contributions in both directions.",
         "fields": {
           "personIds": [
+            "P009",
+            "P025",
             "P028",
             "P077"
           ],
+          "workIds": [
+            "W-S119"
+          ],
+          "songIds": [
+            "S119"
+          ],
           "contributionIds": [
-            "CON-F033-C-P077"
+            "CON-F033-C-P077",
+            "CON-S119-C-P009",
+            "CON-S119-C-P077",
+            "CON-S119-L-P025",
+            "CON-S119-L-P028"
           ]
         }
       },
@@ -9151,7 +9241,7 @@
         }
       },
       "SRC0540": {
-        "reason": "Treat the Walter Jurmann cover-gallery record as the item-level provenance for M223 and synchronize only the people, publisher, works, songs and credits visibly documented on that cover.",
+        "reason": "Treat the Walter Jurmann cover-gallery record as the item-level provenance for M223 and as evidence for the film and songs visibly documented on that cover.",
         "fields": {
           "personIds": [
             "P009",
@@ -9166,6 +9256,9 @@
             "W-F029",
             "W-S110",
             "W-S111"
+          ],
+          "filmIds": [
+            "F029"
           ],
           "mediaIds": [
             "M223"
@@ -9207,9 +9300,27 @@
         }
       },
       "SRC0144": {
-        "reason": "Synchronize the inverse links from Herbert Stothart and Jeanette MacDonald to the AFI record for San Francisco already exposed on their person records.",
+        "reason": "Treat the AFI San Francisco record as direct evidence for the title song and synchronize its credited writers and Jeanette MacDonald's documented performance in both directions.",
         "fields": {
-          "personIds": ["P136", "P139"]
+          "personIds": [
+            "P009",
+            "P025",
+            "P077",
+            "P136",
+            "P139"
+          ],
+          "workIds": [
+            "W-S130"
+          ],
+          "songIds": [
+            "S130"
+          ],
+          "contributionIds": [
+            "CON-S130-C-P009",
+            "CON-S130-C-P077",
+            "CON-S130-L-P025",
+            "CON-S130-P-P139"
+          ]
         }
       },
       "SRC0145": {
