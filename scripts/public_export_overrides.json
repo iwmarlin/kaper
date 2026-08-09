@@ -6346,10 +6346,11 @@
   "linkAdditions": {
     "Organizations": {
       "ORG001": {
-        "reason": "Preserve MGM as the documented distributor of the animated Little Boy Blue, while keeping production with Celebrity Productions–P.A. Powers.",
+        "reason": "Preserve MGM as the documented distributor of the animated Little Boy Blue, while keeping production with Celebrity Productions–P.A. Powers; also synchronize MGM's inverse link to the AFI Trouble for Two record.",
         "fields": {
           "sourceIds": [
-            "SRC0373"
+            "SRC0373",
+            "SRC0587"
           ],
           "contributionIds": [
             "CON-F052-DIST-ORG001"
@@ -6377,6 +6378,14 @@
             "SRC0532",
             "SRC0629",
             "SRC0630"
+          ]
+        }
+      },
+      "ORG073": {
+        "reason": "Synchronize the American Film Institute organization's inverse link to its AFI Catalog record for Trouble for Two.",
+        "fields": {
+          "sourceIds": [
+            "SRC0587"
           ]
         }
       },
@@ -7443,10 +7452,62 @@
         }
       },
       "M217": {
-        "reason": "Synchronize the inverse media-to-event link already documented by TE0054.",
+        "reason": "Synchronize the inverse media-to-event and hero-image links already documented by TE0054.",
         "fields": {
           "timelineEventIds": [
             "TE0054"
+          ],
+          "heroTimelineEventIds": [
+            "TE0054"
+          ]
+        }
+      },
+      "M027": {
+        "reason": "Link the San Francisco film-excerpt and listening reference symmetrically to the title song it documents, in addition to the film.",
+        "fields": {
+          "workIds": [
+            "W-S130"
+          ],
+          "songIds": [
+            "S130"
+          ]
+        }
+      },
+      "M029": {
+        "reason": "Link the Swing Mister Mendelssohn listening reference symmetrically to the song it documents.",
+        "fields": {
+          "workIds": [
+            "W-S157"
+          ],
+          "songIds": [
+            "S157"
+          ]
+        }
+      },
+      "M237": {
+        "reason": "Identify the Warsaw Conservatory photograph as the reciprocal hero image for TE0020, replacing the earlier clipping in that role.",
+        "fields": {
+          "heroTimelineEventIds": [
+            "TE0020"
+          ]
+        }
+      },
+      "M259": {
+        "reason": "Link Jeanette MacDonald's portrait symmetrically to San Francisco, the song introduced by her and explicitly described in the medium's public caption.",
+        "fields": {
+          "workIds": [
+            "W-S130"
+          ],
+          "songIds": [
+            "S130"
+          ]
+        }
+      },
+      "M285": {
+        "reason": "Synchronize the Calexico border-crossing photograph with the permanent-entry event it illustrates as historical place context.",
+        "fields": {
+          "timelineEventIds": [
+            "TE0036"
           ]
         }
       },
@@ -7483,6 +7544,14 @@
       }
     },
     "Timeline Events": {
+      "TE0014": {
+        "reason": "Link Andrzej Włast's portrait to the first-cabaret-songs event, which already identifies Włast as the lyricist and principal collaborator.",
+        "fields": {
+          "mediaIds": [
+            "M233"
+          ]
+        }
+      },
       "TE0020": {
         "reason": "Link the historical Warsaw Conservatory photograph to the 1928 performance event without treating it as evidence for the performance itself.",
         "fields": {
@@ -7495,13 +7564,16 @@
         }
       },
       "TE0036": {
-        "reason": "Link the Calexico–Mexicali border crossing and Eleonora Kaper to the permanent-entry event, which documents that she crossed with Kaper.",
+        "reason": "Link the Calexico–Mexicali border crossing, its historical photograph and Eleonora Kaper to the permanent-entry event, which documents that she crossed with Kaper.",
         "fields": {
           "personIds": [
             "P129"
           ],
           "placeIds": [
             "PL043"
+          ],
+          "mediaIds": [
+            "M285"
           ]
         }
       },
@@ -9210,6 +9282,22 @@
   },
   "linkRemovals": {
     "Media": {
+      "M002": {
+        "reason": "Remove the obsolete hero-image designation from the external Miss Annabelle Lee reference; TE0019 uses the directly relevant Polydor label image M231 as its hero.",
+        "fields": {
+          "heroTimelineEventIds": [
+            "TE0019"
+          ]
+        }
+      },
+      "M085": {
+        "reason": "Remove the obsolete hero-image designation from the press clipping while retaining it as evidentiary media for TE0020; the Warsaw Conservatory photograph M237 is the current hero.",
+        "fields": {
+          "heroTimelineEventIds": [
+            "TE0020"
+          ]
+        }
+      },
       "M197": {
         "reason": "Remove the false MGM organization link from the poster for the animated Little Boy Blue; the poster names Celebrity Productions–P.A. Powers.",
         "fields": {
