@@ -1,4 +1,4 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=fd074b901f";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=3e6d5d3ade";
 import {
   certaintyBadge,
   escapeHtml,
@@ -23,7 +23,7 @@ import {
   scopeBadge,
   typeBadge,
   updateMeta,
-} from "./core.js?v=fd074b901f";
+} from "./core.js?v=3e6d5d3ade";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 mountSiteChrome("");
@@ -67,6 +67,11 @@ const MAP_PRECISION_LABELS = Object.freeze({
 
 function mapPrecisionLabel(value) {
   return MAP_PRECISION_LABELS[value] || humanize(value);
+}
+
+function genreLabel(value) {
+  const label = String(value || "").replaceAll("_", " ").trim();
+  return label.replace(/^./, (letter) => letter.toLocaleUpperCase("en"));
 }
 
 async function loadRecordPayload(type, id) {
@@ -551,7 +556,7 @@ function renderWork(work, data, indexes) {
   const events = related(work.timelineEventIds, indexes.timelineEvents);
   const subtypeFacts = subtype ? (hasConciseCredits ? `
     ${fact("Instrumentation", subtype.instrumentation)}${fact("Material status", subtype.materialStatus)}${fact("Shelfmark", subtype.shelfmark)}` : `
-    ${fact("Genre", subtype.genre)}${isContextOnly ? "" : fact("Credit", subtype.creditType)}${fact("Composer status", subtype.composerStatus)}
+    ${fact("Genre", genreLabel(subtype.genre))}${isContextOnly ? "" : fact("Credit", subtype.creditType)}${fact("Composer status", subtype.composerStatus)}
     ${fact("Lyricist as printed", subtype.lyricistAsPrinted)}${fact("Lyricist status", subtype.lyricistStatus)}
     ${fact("Publisher as printed", subtype.publisherAsPrinted || subtype.publisherOrHoldingAsPrinted)}
     ${fact("Instrumentation", subtype.instrumentation)}${fact("Material status", subtype.materialStatus)}${fact("Shelfmark", subtype.shelfmark)}`) : "";
@@ -577,7 +582,7 @@ function renderWork(work, data, indexes) {
     title: work.title,
     label: work.workType || "Work",
     badges: `${typeBadge(work.workType)}${periodBadge(work.periods || work.period)}${isContextOnly ? scopeBadge(work.publicScope) : (hasConciseCredits && work.certainty === "confirmed" ? "" : certaintyBadge(work.certainty))}`,
-    facts: `${fact("Year", work.year)}${fact("Type", work.workType)}${hasConciseCredits ? fact("Genre", subtype?.genre) : ""}${fact("Period", periodValues(work).map(periodLabel).join(", "))}${isContextOnly ? fact("Kaper attribution", "Not confirmed") : (hasConciseCredits && work.certainty === "confirmed" ? "" : fact("Certainty", humanize(work.certainty)))}`,
+    facts: `${fact("Year", work.year)}${fact("Type", work.workType)}${hasConciseCredits ? fact("Genre", genreLabel(subtype?.genre)) : ""}${fact("Period", periodValues(work).map(periodLabel).join(", "))}${isContextOnly ? fact("Kaper attribution", "Not confirmed") : (hasConciseCredits && work.certainty === "confirmed" ? "" : fact("Certainty", humanize(work.certainty)))}`,
     main,
     aside,
   };
