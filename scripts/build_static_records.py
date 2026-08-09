@@ -4,11 +4,14 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import html
 import json
 import re
 import shutil
+import subprocess
 from collections import Counter
+from datetime import date
 from pathlib import Path
 from typing import Optional
 from urllib.parse import quote, urlsplit
@@ -16,6 +19,8 @@ from urllib.parse import quote, urlsplit
 
 ORIGIN = "https://iwmarlin.github.io/kaper/"
 PUBLIC_PAGES = ["", "works.html", "people.html", "life.html", "map.html", "media.html"]
+SITEMAP_STATE_PATH = Path("data/site/sitemap-state.json")
+ISO_DATE_PATTERN = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 RECORD_TABLES = {
     "work": "works",
     "event": "timelineEvents",
@@ -50,6 +55,118 @@ CSP = (
 
 def read_json(path: Path):
     return json.loads(path.read_text(encoding="utf-8"))
+
+
+def content_hash(text: str) -> str:
+    """Return a stable digest for the exact public representation of a route."""
+    return hashlib.sha256(text.encode("utf-8")).hexdigest()
+
+
+def read_sitemap_state(root: Path) -> dict:
+    path = root / SITEMAP_STATE_PATH
+    if not path.is_file():
+        return {}
+    payload = read_json(path)
+    if payload.get("schemaVersion") != "1.0.0":
+        return {}
+    entries = payload.get("entries")
+    return entries if isinstance(entries, dict) else {}
+
+
+def sitemap_route_documents(root: Path, outputs: dict[Path, str], routes: list[str]) -> dict[str, str]:
+    """Map each canonical sitemap URL to the HTML whose changes it represents."""
+    documents: dict[str, str] = {}
+    for public_path in PUBLIC_PAGES:
+        disk_path = root / (public_path or "index.html")
+        documents[f"{ORIGIN}{public_path}"] = disk_path.read_text(encoding="utf-8")
+    for route in routes:
+        disk_path = root / route / "index.html"
+        expected = outputs.get(disk_path)
+        if expected is None:
+            raise RuntimeError(f"No generated document found for sitemap route {route}")
+        documents[f"{ORIGIN}{route}"] = expected
+    return documents
+
+
+def sitemap_disk_path(root: Path, url: str) -> Path:
+    relative = url.removeprefix(ORIGIN)
+    if not relative:
+        return root / "index.html"
+    path = root / relative
+    return path / "index.html" if relative.endswith("/") else path
+
+
+def git_lastmod_dates(root: Path, documents: dict[str, str]) -> dict[str, str]:
+    """Seed first-run dates from the latest commit that changed each public page."""
+    paths_by_url: dict[str, Path] = {}
+    for url, expected in documents.items():
+        path = sitemap_disk_path(root, url)
+        # A modified or newly generated page belongs to the upcoming publication,
+        # not to its previous Git commit.
+        if path.is_file() and path.read_text(encoding="utf-8") == expected:
+            paths_by_url[url] = path.relative_to(root)
+    if not paths_by_url:
+        return {}
+    try:
+        result = subprocess.run(
+            [
+                "git",
+                "log",
+                "--format=@@%cs",
+                "--name-only",
+                "--",
+                *(path.as_posix() for path in paths_by_url.values()),
+            ],
+            cwd=root,
+            check=True,
+            capture_output=True,
+            text=True,
+        )
+    except (OSError, subprocess.CalledProcessError):
+        return {}
+    latest_by_path: dict[str, str] = {}
+    current_date = ""
+    for line in result.stdout.splitlines():
+        if line.startswith("@@"):
+            current_date = line[2:]
+        elif line and current_date and line not in latest_by_path:
+            latest_by_path[line] = current_date
+    return {
+        url: latest_by_path.get(path.as_posix(), "")
+        for url, path in paths_by_url.items()
+        if ISO_DATE_PATTERN.fullmatch(latest_by_path.get(path.as_posix(), ""))
+    }
+
+
+def updated_sitemap_state(
+    documents: dict[str, str],
+    previous: dict,
+    publication_date: Optional[str],
+    initial_dates: Optional[dict[str, str]] = None,
+) -> tuple[dict, list[str], int]:
+    """Preserve lastmod for unchanged content and date only new or changed routes."""
+    entries: dict[str, dict[str, str]] = {}
+    stale_routes: list[str] = []
+    updated_count = 0
+    for url, document in documents.items():
+        digest = content_hash(document)
+        old = previous.get(url) if isinstance(previous.get(url), dict) else {}
+        old_date = str(old.get("lastmod") or "")
+        if old.get("contentHash") == digest and ISO_DATE_PATTERN.fullmatch(old_date):
+            lastmod = old_date
+        elif initial_dates and ISO_DATE_PATTERN.fullmatch(initial_dates.get(url, "")):
+            lastmod = initial_dates[url]
+        elif publication_date:
+            lastmod = publication_date
+            updated_count += 1
+        else:
+            # Check mode must never invent a publication date. Retaining the old
+            # value here lets the caller report the precise stale routes while
+            # keeping the expected sitemap structurally comparable.
+            lastmod = old_date
+            stale_routes.append(url)
+        entries[url] = {"contentHash": digest, "lastmod": lastmod}
+    return entries, stale_routes, updated_count
 
 
 def period_label(value: str) -> str:
@@ -603,7 +720,12 @@ def static_page(
 """
 
 
-def expected_outputs(root: Path) -> tuple[dict[Path, str], str, dict]:
+def expected_outputs(
+    root: Path,
+    previous_sitemap_state: dict,
+    publication_date: Optional[str],
+    initial_dates: Optional[dict[str, str]] = None,
+) -> tuple[dict[Path, str], str, dict, dict, list[str]]:
     record_root = root / "data/site/records"
     public_sources = read_json(root / "data/public/v1/sources.json").get("records", [])
     source_description_counts = Counter(
@@ -629,31 +751,60 @@ def expected_outputs(root: Path) -> tuple[dict[Path, str], str, dict]:
                 source_description_counts,
             )
             routes.append(f"records/{record_type}/{quote(payload['id'], safe='')}/")
-    sitemap_urls = [f"{ORIGIN}{path}" for path in PUBLIC_PAGES]
-    sitemap_urls.extend(f"{ORIGIN}{route}" for route in routes)
-    lastmod = ""
-    manifest_path = root / "data/public/v1/manifest.json"
-    if manifest_path.is_file():
-        snapshot = str(read_json(manifest_path).get("sourceSnapshot") or "")
-        match = re.match(r"(\d{4}-\d{2}-\d{2})", snapshot)
-        if match:
-            lastmod = match.group(1)
-    stamp = f"<lastmod>{lastmod}</lastmod>" if lastmod else ""
+    documents = sitemap_route_documents(root, outputs, routes)
+    sitemap_state, stale_routes, updated_count = updated_sitemap_state(
+        documents,
+        previous_sitemap_state,
+        publication_date,
+        initial_dates,
+    )
     sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
-    sitemap += "".join(f"  <url><loc>{esc(url)}</loc>{stamp}</url>\n" for url in sitemap_urls)
+    sitemap += "".join(
+        f"  <url><loc>{esc(url)}</loc><lastmod>{sitemap_state[url]['lastmod']}</lastmod></url>\n"
+        for url in documents
+    )
     sitemap += "</urlset>\n"
+    lastmod_dates = sorted({entry["lastmod"] for entry in sitemap_state.values() if entry["lastmod"]})
     report = {
         "schemaVersion": "1.0.0",
         "recordPageCount": len(outputs),
         "countsByType": counts,
-        "sitemapUrlCount": len(sitemap_urls),
+        "sitemapUrlCount": len(documents),
         "sitemapBytes": len(sitemap.encode("utf-8")),
+        "sitemapLastmod": {
+            "dateCount": len(lastmod_dates),
+            "earliest": lastmod_dates[0] if lastmod_dates else "",
+            "latest": lastmod_dates[-1] if lastmod_dates else "",
+        },
     }
-    return outputs, sitemap, report
+    state_payload = {
+        "schemaVersion": "1.0.0",
+        "entries": sitemap_state,
+    }
+    return outputs, sitemap, report, state_payload, stale_routes
 
 
-def build(root: Path) -> dict:
-    outputs, sitemap, report = expected_outputs(root)
+def build(root: Path, publication_date: str) -> dict:
+    previous_state = read_sitemap_state(root)
+    initial_dates = None
+    if not previous_state:
+        # Render once to identify the exact current route documents, then use Git
+        # only to seed dates for pages whose committed HTML already matches them.
+        seed_outputs, _, _, _, _ = expected_outputs(root, {}, publication_date)
+        seed_routes = [
+            path.relative_to(root).parent.as_posix() + "/"
+            for path in seed_outputs
+        ]
+        initial_dates = git_lastmod_dates(
+            root,
+            sitemap_route_documents(root, seed_outputs, seed_routes),
+        )
+    outputs, sitemap, report, state, _ = expected_outputs(
+        root,
+        previous_state,
+        publication_date,
+        initial_dates,
+    )
     static_root = root / "records"
     if static_root.exists():
         shutil.rmtree(static_root)
@@ -665,12 +816,26 @@ def build(root: Path) -> dict:
         json.dumps(report, ensure_ascii=False, separators=(",", ":")) + "\n",
         encoding="utf-8",
     )
+    (root / SITEMAP_STATE_PATH).write_text(
+        json.dumps(state, ensure_ascii=False, separators=(",", ":"), sort_keys=True) + "\n",
+        encoding="utf-8",
+    )
     return report
 
 
 def check(root: Path) -> list[str]:
-    outputs, sitemap, report = expected_outputs(root)
+    state_path = root / SITEMAP_STATE_PATH
+    previous_state = read_sitemap_state(root)
+    outputs, sitemap, report, state, stale_routes = expected_outputs(
+        root,
+        previous_state,
+        None,
+    )
     errors = []
+    if not state_path.is_file():
+        errors.append(f"Missing sitemap state: {SITEMAP_STATE_PATH}")
+    for url in stale_routes:
+        errors.append(f"Stale sitemap state for route: {url}")
     for path, expected in outputs.items():
         if not path.is_file():
             errors.append(f"Missing static record page: {path.relative_to(root)}")
@@ -685,6 +850,8 @@ def check(root: Path) -> list[str]:
     report_path = root / "data/site/static-record-report.json"
     if not report_path.is_file() or read_json(report_path) != report:
         errors.append("Static record report is stale")
+    if state_path.is_file() and read_json(state_path) != state:
+        errors.append("Sitemap state is stale")
     return errors
 
 
@@ -692,13 +859,26 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--root", type=Path, default=Path(__file__).resolve().parent.parent)
     parser.add_argument("--check", action="store_true")
+    parser.add_argument(
+        "--publication-date",
+        help="ISO date assigned only to routes whose public HTML changed (default: today)",
+    )
     args = parser.parse_args()
     root = args.root.resolve()
     if args.check:
+        if args.publication_date:
+            parser.error("--publication-date cannot be used with --check")
         errors = check(root)
         print(json.dumps({"ok": not errors, "errors": errors}, ensure_ascii=False, indent=2))
         return 0 if not errors else 1
-    report = build(root)
+    publication_date = args.publication_date or date.today().isoformat()
+    if not ISO_DATE_PATTERN.fullmatch(publication_date):
+        parser.error("--publication-date must use YYYY-MM-DD")
+    try:
+        date.fromisoformat(publication_date)
+    except ValueError:
+        parser.error("--publication-date must be a valid calendar date")
+    report = build(root, publication_date)
     print(json.dumps({"ok": True, **report}, ensure_ascii=False, indent=2))
     return 0
 

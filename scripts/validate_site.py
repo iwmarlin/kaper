@@ -8,6 +8,7 @@ import hashlib
 import json
 import re
 import sys
+from datetime import date
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import unquote, urlsplit
@@ -173,6 +174,7 @@ def validate(root: Path) -> dict:
         "data/site/home.json",
         "data/site/performance-report.json",
         "data/site/record-report.json",
+        "data/site/sitemap-state.json",
         "data/site/static-record-report.json",
     ]
     for filename in required_files:
@@ -265,6 +267,7 @@ def validate(root: Path) -> dict:
 
     sitemap = (root / "sitemap.xml").read_text(encoding="utf-8") if (root / "sitemap.xml").is_file() else ""
     static_report_path = root / "data/site/static-record-report.json"
+    sitemap_state_path = root / "data/site/sitemap-state.json"
     if static_report_path.is_file():
         static_report = read_json(static_report_path)
         expected_records = sum(static_report.get("countsByType", {}).values())
@@ -276,6 +279,35 @@ def validate(root: Path) -> dict:
         sitemap_urls = re.findall(r"<loc>([^<]+)</loc>", sitemap)
         if len(sitemap_urls) != static_report.get("sitemapUrlCount"):
             errors.append("Sitemap URL count does not match the static record report")
+        sitemap_entries = dict(
+            re.findall(
+                r"<url><loc>([^<]+)</loc><lastmod>([^<]+)</lastmod></url>",
+                sitemap,
+            )
+        )
+        if len(sitemap_entries) != len(sitemap_urls):
+            errors.append("Every sitemap URL must have exactly one lastmod date")
+        if sitemap_state_path.is_file():
+            sitemap_state = read_json(sitemap_state_path)
+            state_entries = sitemap_state.get("entries", {})
+            if sitemap_state.get("schemaVersion") != "1.0.0":
+                errors.append("Sitemap state has an unsupported schema version")
+            if set(state_entries) != set(sitemap_urls):
+                errors.append("Sitemap state URLs do not match sitemap.xml")
+            for url, entry in state_entries.items():
+                lastmod = entry.get("lastmod") if isinstance(entry, dict) else ""
+                digest = entry.get("contentHash") if isinstance(entry, dict) else ""
+                try:
+                    parsed_date = date.fromisoformat(lastmod)
+                except (TypeError, ValueError):
+                    errors.append(f"Sitemap state has an invalid lastmod date for {url}")
+                else:
+                    if parsed_date > date.today():
+                        errors.append(f"Sitemap state has a future lastmod date for {url}")
+                if not re.fullmatch(r"[0-9a-f]{64}", digest or ""):
+                    errors.append(f"Sitemap state has an invalid content hash for {url}")
+                if sitemap_entries.get(url) != lastmod:
+                    errors.append(f"Sitemap lastmod does not match its state for {url}")
         for page in static_pages:
             relative = page.relative_to(root).parent.as_posix() + "/"
             expected_url = f"https://iwmarlin.github.io/kaper/{relative}"

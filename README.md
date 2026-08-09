@@ -40,4 +40,8 @@ metadata-free derivatives are written to `assets/generated/responsive/`.
 Record pages load compact, generated bundles from `data/site/records/`; the
 canonical public tables in `data/public/v1/` remain the source of truth.
 Crawlable HTML records are generated under `records/`, and the same build writes
-their canonical URLs to `sitemap.xml`.
+their canonical URLs to `sitemap.xml`. Per-route content hashes and publication
+dates are retained in `data/site/sitemap-state.json`: unchanged pages keep their
+existing `lastmod`, while only new or changed pages receive the build date. For a
+dated release prepared on a different day, pass an explicit ISO date, for example
+`python3 scripts/build_static_records.py --root . --publication-date 2026-08-09`.
