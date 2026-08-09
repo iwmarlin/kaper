@@ -179,6 +179,28 @@ def validate(root: Path) -> dict:
         if not (root / filename).is_file():
             errors.append(f"Missing deployment file: {filename}")
 
+    manifest_path = root / "data/public/v1/manifest.json"
+    home_path = root / "data/site/home.json"
+    if manifest_path.is_file() and home_path.is_file():
+        counts = read_json(manifest_path).get("counts", {})
+        home = read_json(home_path)
+        count_keys = {
+            "Works": "Works",
+            "People": "People",
+            "Timeline": "Timeline Events",
+            "Places": "Places",
+            "Media": "Media",
+        }
+        for pathway in home.get("pathways", []):
+            label = pathway.get("label")
+            manifest_key = count_keys.get(label)
+            if manifest_key and pathway.get("count") != counts.get(manifest_key):
+                errors.append(
+                    f"Home-page {label} count does not match the public manifest"
+                )
+        if home.get("glance", {}).get("sources") != counts.get("Sources"):
+            errors.append("Home-page Sources count does not match the public manifest")
+
     asset_version = expected_asset_version(root)
     stale_assets = stale_asset_references(root, asset_version)
     if stale_assets:

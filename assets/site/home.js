@@ -1,4 +1,4 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=ac06ba2e31";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=fd074b901f";
 import {
   escapeHtml,
   mountSiteChrome,
@@ -8,7 +8,7 @@ import {
   renderError,
   renderLoading,
   responsiveImage,
-} from "./core.js?v=ac06ba2e31";
+} from "./core.js?v=fd074b901f";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 mountSiteChrome("home");
@@ -37,6 +37,22 @@ function renderPathways(pathways) {
         <span class="pathway-row__arrow" aria-hidden="true">→</span>
       </a>
     </li>`).join("");
+}
+
+function currentPathways(pathways, counts = {}) {
+  const countKeys = {
+    Works: "Works",
+    People: "People",
+    Timeline: "Timeline Events",
+    Places: "Places",
+    Media: "Media",
+  };
+  return (pathways || []).map((pathway) => {
+    const currentCount = counts[countKeys[pathway.label]];
+    return Number.isFinite(currentCount)
+      ? { ...pathway, count: currentCount }
+      : pathway;
+  });
 }
 
 function renderPortrait(portrait) {
@@ -99,13 +115,21 @@ function renderFigures(glance) {
 }
 
 try {
-  const response = await fetch(new URL("data/site/home.json", document.baseURI));
-  if (!response.ok) throw new Error(`Could not load home-page data (${response.status})`);
-  const { pathways, portrait, events, glance } = await response.json();
-  renderPathways(pathways);
+  const [homeResponse, manifestResponse] = await Promise.all([
+    fetch(new URL("data/site/home.json", document.baseURI)),
+    fetch(new URL("data/public/v1/manifest.json", document.baseURI)),
+  ]);
+  if (!homeResponse.ok) throw new Error(`Could not load home-page data (${homeResponse.status})`);
+  if (!manifestResponse.ok) throw new Error(`Could not load public-data manifest (${manifestResponse.status})`);
+  const [{ pathways, portrait, events, glance }, manifest] = await Promise.all([
+    homeResponse.json(),
+    manifestResponse.json(),
+  ]);
+  const counts = manifest.counts || {};
+  renderPathways(currentPathways(pathways, counts));
   renderPortrait(portrait);
   renderEvents(events);
-  renderFigures(glance);
+  renderFigures({ ...glance, sources: counts.Sources ?? glance?.sources });
 } catch (error) {
   renderError(eventsTarget, error);
 }
