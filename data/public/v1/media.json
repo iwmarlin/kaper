@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 261,
+  "count": 262,
   "records": [
     {
       "id": "M001",
@@ -8688,8 +8688,8 @@
         "W-F052"
       ]
     },
-    {
-      "altText": "Bronze bust of Heinz Hilpert on a stone pedestal outside the Deutsches Theater in Berlin.",
+  {
+    "altText": "Bronze bust of Heinz Hilpert on a stone pedestal outside the Deutsches Theater in Berlin.",
       "assetPath": "assets/images/portraits/heinz-hilpert-bust-cropped.jpeg",
       "category": "portrait",
       "externalUrl": "https://commons.wikimedia.org/wiki/File:Heinz_Hilpert_B%C3%BCste_Deutsches_Theater_Berlin.JPG",
@@ -8710,7 +8710,35 @@
         "SRC0657"
       ],
       "storageType": "local",
-      "title": "Heinz Hilpert — bust at the Deutsches Theater, Berlin"
-    }
-  ]
+    "title": "Heinz Hilpert — bust at the Deutsches Theater, Berlin"
+  },
+  {
+    "id": "M306",
+    "title": "Julian Tuwim — portrait photograph, 1925–1928",
+    "slug": "julian-tuwim-portrait-1925-1928",
+    "mediaType": "image",
+    "storageType": "local",
+    "assetPath": "assets/images/portraits/julian-tuwim-1925-1928.jpg",
+    "assetPaths": [
+      "assets/images/portraits/julian-tuwim-1925-1928.jpg"
+    ],
+    "assetCount": 1,
+    "externalUrl": "https://www.szukajwarchiwach.gov.pl/jednostka/-/jednostka/5898131",
+    "category": "portrait",
+    "galleryStatus": "eligible",
+    "period": "european",
+    "sortOrder": 306,
+    "altText": "Black-and-white profile portrait of Julian Tuwim in a suit and tie.",
+    "publicCaption": "Julian Tuwim in a portrait photograph dated 1925–1928.",
+    "publicCreditLine": "Photographer unidentified; Narodowe Archiwum Cyfrowe, ref. 3/1/0/11/1888/1.",
+    "rightsStatus": "ok",
+    "rightsNote": "Public domain: the supplied Narodowe Archiwum Cyfrowe object metadata states that rights have expired (“Wygasły”).",
+    "sourceIds": [
+      "SRC0659"
+    ],
+    "periods": [
+      "european"
+    ]
+  }
+]
 }

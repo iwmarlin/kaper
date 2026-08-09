@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 191,
+  "count": 192,
   "records": [
     {
       "id": "REL0001",
@@ -3405,8 +3405,8 @@
         "SRC0633"
       ]
     },
-    {
-      "id": "REL0198",
+  {
+    "id": "REL0198",
       "relationType": "language_version_of",
       "targetWorkTitle": "Signorina, Signorina, komm zu mir",
       "direction": "source_to_target",
@@ -3422,9 +3422,30 @@
         "P156",
         "P117"
       ],
-      "sourceIds": [
-        "SRC0633"
-      ]
-    }
-  ]
+    "sourceIds": [
+      "SRC0633"
+    ]
+  },
+  {
+    "id": "REL0199",
+    "relationType": "language_version_of",
+    "targetWorkTitle": "Gib nur acht, über Nacht kommt die Liebe",
+    "targetTitleAsSource": "Gib nur acht, über Nacht kommt die Liebe",
+    "direction": "source_to_target",
+    "publicNote": "“Może tak, może nie” is documented as a Polish-language version of “Gib nur acht, über Nacht kommt die Liebe”.",
+    "certainty": "confirmed",
+    "sourceWorkIds": [
+      "W-S216"
+    ],
+    "targetWorkIds": [
+      "W-S008"
+    ],
+    "personIds": [
+      "P159"
+    ],
+    "sourceIds": [
+      "SRC0658"
+    ]
+  }
+]
 }

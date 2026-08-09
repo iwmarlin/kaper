@@ -3156,6 +3156,35 @@
             "W-F052"
           ]
         }
+      },
+      "P159": {
+        "reason": "Add Julian Tuwim as the identified author of the Polish lyrics to Może tak, może nie, with authority control from national and international identifiers.",
+        "fields": {
+          "id": "P159",
+          "displayName": "Julian Tuwim",
+          "sortName": "Tuwim, Julian",
+          "authorizedName": "Tuwim, Julian, 1894–1953",
+          "slug": "julian-tuwim",
+          "primaryRole": "lyricist",
+          "roles": [
+            "lyricist",
+            "poet",
+            "writer"
+          ],
+          "authorityUrl": "BN Poland: https://dbn.bn.org.pl/descriptor-details/9810671370505606\nLCNAF: https://id.loc.gov/authorities/names/n50049756\nVIAF: https://viaf.org/viaf/46777365\nBnF: https://catalogue.bnf.fr/ark:/12148/cb12037457t\nGND: https://d-nb.info/gnd/11880300X\nISNI: https://isni.org/isni/0000000110260840\nWikidata: https://www.wikidata.org/wiki/Q376278",
+          "birthYear": 1894,
+          "deathYear": 1953,
+          "lifeDatesCertainty": "confirmed",
+          "sourceIds": [
+            "SRC0658"
+          ],
+          "contributionIds": [
+            "CON-S216-L-P159"
+          ],
+          "workIds": [
+            "W-S216"
+          ]
+        }
       }
     },
     "Person Name Variants": {
@@ -4561,6 +4590,48 @@
             "PNV0041"
           ]
         }
+      },
+      "CON-S216-C-P009": {
+        "reason": "Record Bronisław Kaper's composer credit for the Polish-language version Może tak, może nie.",
+        "fields": {
+          "id": "CON-S216-C-P009",
+          "role": "composer",
+          "nameAsPrinted": "Bronisław Kaper",
+          "displayCredit": "Composer",
+          "evidenceContext": "online_catalogue",
+          "sortOrder": 10,
+          "certainty": "confirmed",
+          "workIds": [
+            "W-S216"
+          ],
+          "personIds": [
+            "P009"
+          ],
+          "sourceIds": [
+            "SRC0658"
+          ]
+        }
+      },
+      "CON-S216-L-P159": {
+        "reason": "Record Julian Tuwim's Polish lyric credit for Może tak, może nie.",
+        "fields": {
+          "id": "CON-S216-L-P159",
+          "role": "lyricist",
+          "nameAsPrinted": "Julian Tuwim",
+          "displayCredit": "Polish lyrics",
+          "evidenceContext": "online_catalogue",
+          "sortOrder": 20,
+          "certainty": "confirmed",
+          "workIds": [
+            "W-S216"
+          ],
+          "personIds": [
+            "P159"
+          ],
+          "sourceIds": [
+            "SRC0658"
+          ]
+        }
       }
     },
     "Sources": {
@@ -5405,6 +5476,162 @@
           ],
           "primaryUrl": "https://commons.wikimedia.org/wiki/File:Heinz_Hilpert_B%C3%BCste_Deutsches_Theater_Berlin.JPG"
         }
+      },
+      "SRC0658": {
+        "reason": "Document the Polish-language version Może tak, może nie, Julian Tuwim's lyric credit and the 1932 Columbia recording without importing the reproduced lyrics.",
+        "fields": {
+          "id": "SRC0658",
+          "shortCitation": "Stare Melodie, “Może tak, może nie” — Columbia DM 1624 a (1932)",
+          "fullCitation": "Stare Melodie. “Może tak, może nie.” Polish-language song entry with words by Julian Tuwim, linked there to “Gib nur acht, über Nacht kommt die Liebe”; recording by Zofia Terné, Columbia DM 1624 a, matrix WJ 277, 1932. The page groups Fritz Rotter and Bronisław Kaper under music; the work credits here follow the contemporary German registrations, which assign the music to Kaper and the German words to Rotter. Accessed 9 August 2026.",
+          "sourceType": "recording_discographic_source",
+          "title": "Może tak, może nie — Polish version and Columbia recording",
+          "creator": "Stare Melodie",
+          "repository": "Stare Melodie",
+          "publication": "Stare Melodie",
+          "date": "1932",
+          "accessDate": "2026-08-09",
+          "reliability": "medium",
+          "sourceStatus": "verified_with_attribution_note",
+          "slug": "src0658-stare-melodie-moze-tak-moze-nie-1932",
+          "personIds": [
+            "P009",
+            "P020",
+            "P159"
+          ],
+          "workIds": [
+            "W-S008",
+            "W-S216"
+          ],
+          "songIds": [
+            "S008",
+            "S216"
+          ],
+          "workRelationIds": [
+            "REL0199"
+          ],
+          "contributionIds": [
+            "CON-S216-C-P009",
+            "CON-S216-L-P159"
+          ],
+          "primaryUrl": "https://staremelodie.pl/piosenka/2297/Moze_tak_moze_nie"
+        }
+      },
+      "SRC0659": {
+        "reason": "Add the item-level archival source for Julian Tuwim's portrait using the supplied NAC object metadata, including its date range, reference and expired-rights statement.",
+        "fields": {
+          "id": "SRC0659",
+          "shortCitation": "Narodowe Archiwum Cyfrowe, Julian Tuwim portrait, 1925–1928, ref. 3/1/0/11/1888/1",
+          "fullCitation": "Narodowe Archiwum Cyfrowe. “Julian Tuwim.” Portrait photograph, 1925–1928. Photographer unidentified. Ref. 3/1/0/11/1888/1. The supplied archival object metadata states that rights have expired (“Wygasły”). Szukaj w Archiwach, unit 5898131. Accessed 9 August 2026.",
+          "sourceType": "image_or_photograph",
+          "title": "Julian Tuwim — portrait photograph, 1925–1928",
+          "creator": "Photographer unidentified",
+          "repository": "Narodowe Archiwum Cyfrowe",
+          "publication": "Szukaj w Archiwach",
+          "date": "1925–1928",
+          "accessDate": "2026-08-09",
+          "reliability": "high",
+          "sourceStatus": "verified",
+          "slug": "src0659-julian-tuwim-portrait-1925-1928",
+          "mediaIds": [
+            "M306"
+          ],
+          "organizationIds": [
+            "ORG070"
+          ],
+          "personIds": [
+            "P159"
+          ],
+          "primaryUrl": "https://www.szukajwarchiwach.gov.pl/jednostka/-/jednostka/5898131"
+        }
+      }
+    },
+    "Songs": {
+      "S216": {
+        "reason": "Add the documented 1932 Polish-language version of Gib nur acht, über Nacht kommt die Liebe as a distinct song record.",
+        "fields": {
+          "id": "S216",
+          "title": "Może tak, może nie",
+          "slug": "moze-tak-moze-nie",
+          "year": 1932,
+          "period": "european",
+          "genre": "english_waltz",
+          "lyricistAsPrinted": "Julian Tuwim",
+          "certainty": "confirmed",
+          "lyricistStatus": "lyricist known",
+          "composerStatus": "composer known",
+          "workIds": [
+            "W-S216"
+          ],
+          "sourceIds": [
+            "SRC0658"
+          ],
+          "periods": [
+            "european"
+          ]
+        }
+      }
+    },
+    "Works": {
+      "W-S216": {
+        "reason": "Add the Polish-language work record and connect it to its composer, Polish lyricist, source and German antecedent.",
+        "fields": {
+          "id": "W-S216",
+          "title": "Może tak, może nie",
+          "slug": "moze-tak-moze-nie",
+          "sortTitle": "Może tak, może nie",
+          "workType": "Song",
+          "year": 1932,
+          "period": "european",
+          "certainty": "confirmed",
+          "displayOnSite": true,
+          "publicScope": "standalone_page",
+          "sourceIds": [
+            "SRC0658"
+          ],
+          "contributionIds": [
+            "CON-S216-C-P009",
+            "CON-S216-L-P159"
+          ],
+          "personIds": [
+            "P009",
+            "P159"
+          ],
+          "relationIds": [
+            "REL0199"
+          ],
+          "songIds": [
+            "S216"
+          ],
+          "periods": [
+            "european"
+          ]
+        }
+      }
+    },
+    "Work Relations": {
+      "REL0199": {
+        "reason": "Model Może tak, może nie as the documented Polish-language version of Gib nur acht, über Nacht kommt die Liebe.",
+        "fields": {
+          "id": "REL0199",
+          "relationType": "language_version_of",
+          "targetWorkTitle": "Gib nur acht, über Nacht kommt die Liebe",
+          "targetTitleAsSource": "Gib nur acht, über Nacht kommt die Liebe",
+          "direction": "source_to_target",
+          "publicNote": "“Może tak, może nie” is documented as a Polish-language version of “Gib nur acht, über Nacht kommt die Liebe”.",
+          "certainty": "confirmed",
+          "sourceWorkIds": [
+            "W-S216"
+          ],
+          "targetWorkIds": [
+            "W-S008"
+          ],
+          "personIds": [
+            "P159"
+          ],
+          "sourceIds": [
+            "SRC0658"
+          ]
+        }
       }
     },
     "Places": {
@@ -6227,6 +6454,37 @@
             "european"
           ]
         }
+      },
+      "M306": {
+        "reason": "Add the supplied public-domain archival portrait of Julian Tuwim and expose it on his person record and in the media catalogue.",
+        "fields": {
+          "id": "M306",
+          "title": "Julian Tuwim — portrait photograph, 1925–1928",
+          "slug": "julian-tuwim-portrait-1925-1928",
+          "mediaType": "image",
+          "storageType": "local",
+          "assetPath": "assets/images/portraits/julian-tuwim-1925-1928.jpg",
+          "assetPaths": [
+            "assets/images/portraits/julian-tuwim-1925-1928.jpg"
+          ],
+          "assetCount": 1,
+          "externalUrl": "https://www.szukajwarchiwach.gov.pl/jednostka/-/jednostka/5898131",
+          "category": "portrait",
+          "galleryStatus": "eligible",
+          "period": "european",
+          "sortOrder": 306,
+          "altText": "Black-and-white profile portrait of Julian Tuwim in a suit and tie.",
+          "publicCaption": "Julian Tuwim in a portrait photograph dated 1925–1928.",
+          "publicCreditLine": "Photographer unidentified; Narodowe Archiwum Cyfrowe, ref. 3/1/0/11/1888/1.",
+          "rightsStatus": "ok",
+          "rightsNote": "Public domain: the supplied Narodowe Archiwum Cyfrowe object metadata states that rights have expired (“Wygasły”).",
+          "sourceIds": [
+            "SRC0659"
+          ],
+          "periods": [
+            "european"
+          ]
+        }
       }
     },
     "Timeline Events": {
@@ -6394,7 +6652,8 @@
         "fields": {
           "sourceIds": [
             "SRC0556",
-            "SRC0561"
+            "SRC0561",
+            "SRC0659"
           ]
         }
       },
@@ -6767,6 +7026,17 @@
       }
     },
     "Works": {
+      "W-S008": {
+        "reason": "Link the German song to the documented Polish-language version and its supporting discographic source.",
+        "fields": {
+          "sourceIds": [
+            "SRC0658"
+          ],
+          "relationIds": [
+            "REL0199"
+          ]
+        }
+      },
       "W-S196": {
         "reason": "Link the corrected French-version work to its item-level source and France-Mélodie publisher contribution.",
         "fields": {
@@ -7351,6 +7621,14 @@
       }
     },
     "Songs": {
+      "S008": {
+        "reason": "Link the German song record to the source documenting its Polish-language version.",
+        "fields": {
+          "sourceIds": [
+            "SRC0658"
+          ]
+        }
+      },
       "S119": {
         "reason": "Link You're All I Need to the AFI Escapade record, which explicitly names the song and its four writers.",
         "fields": {
@@ -7822,16 +8100,19 @@
             "SRC0630",
             "SRC0587",
             "SRC0625",
-            "SRC0633"
+            "SRC0633",
+            "SRC0658"
           ],
           "contributionIds": [
             "CON-F009-C-P009",
             "CON-F022-C-P009",
             "CON-F035-BM-P009",
-            "CON-S111-C-P009"
+            "CON-S111-C-P009",
+            "CON-S216-C-P009"
           ],
           "workIds": [
-            "W-S111"
+            "W-S111",
+            "W-S216"
           ]
         }
       },
@@ -7879,7 +8160,23 @@
             "SRC0222",
             "SRC0223",
             "SRC0226",
-            "SRC0373"
+            "SRC0373",
+            "SRC0658"
+          ]
+        }
+      },
+      "P159": {
+        "reason": "Connect Julian Tuwim to the Polish song work, lyric contribution and supporting source.",
+        "fields": {
+          "sourceIds": [
+            "SRC0658",
+            "SRC0659"
+          ],
+          "contributionIds": [
+            "CON-S216-L-P159"
+          ],
+          "workIds": [
+            "W-S216"
           ]
         }
       },
