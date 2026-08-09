@@ -7766,6 +7766,14 @@
           ]
         }
       },
+      "P019": {
+        "reason": "Expose the existing Filmportal source for Ehe mit beschränkter Haftung on Franz Wenzler's person record, matching his documented directing contribution to W-F008.",
+        "fields": {
+          "sourceIds": [
+            "SRC0478"
+          ]
+        }
+      },
       "P077": {
         "reason": "Connect Walter Jurmann to the completed 1932–1933 Hofmeister sources, the official Jurmann catalogue, the existing Academy Collection photograph, and synchronize his person record with all documented film contributions.",
         "fields": {
@@ -8542,9 +8550,10 @@
         }
       },
       "SRC0478": {
-        "reason": "Synchronize Filmportal's Walter Jurmann music credit for Ehe mit beschränkter Haftung with the person and contribution records.",
+        "reason": "Synchronize Filmportal's Franz Wenzler directing credit and Walter Jurmann music credit for Ehe mit beschränkter Haftung with the person and contribution records.",
         "fields": {
           "personIds": [
+            "P019",
             "P077"
           ],
           "contributionIds": [
