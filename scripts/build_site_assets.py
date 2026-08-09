@@ -312,7 +312,7 @@ def home_payload(data_root: Path) -> dict:
         {"label": "People", "description": "Collaborators and contemporaries", "href": "people.html", "count": counts["People"]},
         {"label": "Timeline", "description": "A documented chronology", "href": "life.html", "count": counts["Timeline Events"]},
         {"label": "Places", "description": "Cities, venues and routes", "href": "map.html", "count": counts["Places"]},
-        {"label": "Media", "description": "Images, documents and sound", "href": "gallery.html", "count": counts["Media"]},
+        {"label": "Media", "description": "Images, documents and sound", "href": "media.html", "count": counts["Media"]},
     ]
     return {
         "schemaVersion": manifest.get("schemaVersion", "1.0.0"),
