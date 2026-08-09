@@ -7672,7 +7672,10 @@
             "SRC0306",
             "SRC0486",
             "SRC0540",
-            "SRC0630"
+            "SRC0630",
+            "SRC0587",
+            "SRC0625",
+            "SRC0633"
           ],
           "contributionIds": [
             "CON-F009-C-P009",
@@ -7804,7 +7807,10 @@
             "SRC0478",
             "SRC0486",
             "SRC0540",
-            "SRC0630"
+            "SRC0630",
+            "SRC0587",
+            "SRC0625",
+            "SRC0633"
           ],
           "contributionIds": [
             "CON-F004-C-P077",
@@ -7884,7 +7890,8 @@
           "sourceIds": [
             "SRC0560",
             "SRC0583",
-            "SRC0584"
+            "SRC0584",
+            "SRC0633"
           ],
           "contributionIds": [
             "CON-S076-P-P117",
@@ -7941,6 +7948,14 @@
           "workIds": [
             "W-S110",
             "W-S111"
+          ]
+        }
+      },
+      "P037": {
+        "reason": "Synchronize J. Walter Ruben's inverse link to the verified Trouble for Two source already connected to his directing contribution.",
+        "fields": {
+          "sourceIds": [
+            "SRC0587"
           ]
         }
       }
@@ -8392,6 +8407,9 @@
         "fields": {
           "contributionIds": [
             "CON-F004-C-P077"
+          ],
+          "personIds": [
+            "P142"
           ]
         }
       },
@@ -8409,6 +8427,9 @@
         "fields": {
           "contributionIds": [
             "CON-F011-C-P077"
+          ],
+          "personIds": [
+            "P144"
           ]
         }
       },
@@ -8493,6 +8514,10 @@
           ],
           "contributionIds": [
             "CON-F036-SW-P077"
+          ],
+          "personIds": [
+            "P009",
+            "P077"
           ]
         }
       },
@@ -8504,6 +8529,10 @@
           ],
           "contributionIds": [
             "CON-F037-SW-P077"
+          ],
+          "personIds": [
+            "P009",
+            "P077"
           ]
         }
       },
@@ -8512,6 +8541,10 @@
         "fields": {
           "contributionIds": [
             "CON-F034-SW-P077"
+          ],
+          "personIds": [
+            "P009",
+            "P077"
           ]
         }
       },
@@ -8546,6 +8579,11 @@
         "fields": {
           "contributionIds": [
             "CON-F007-C-P077"
+          ],
+          "personIds": [
+            "P144",
+            "P149",
+            "P150"
           ]
         }
       },
@@ -8566,6 +8604,9 @@
         "fields": {
           "contributionIds": [
             "CON-F012-C-P077"
+          ],
+          "personIds": [
+            "P145"
           ]
         }
       },
@@ -8582,6 +8623,9 @@
         "fields": {
           "contributionIds": [
             "CON-F017-C-P077"
+          ],
+          "personIds": [
+            "P143"
           ]
         }
       },
@@ -8598,6 +8642,9 @@
         "fields": {
           "contributionIds": [
             "CON-F020-C-P077"
+          ],
+          "personIds": [
+            "P143"
           ]
         }
       },
@@ -8606,6 +8653,12 @@
         "fields": {
           "contributionIds": [
             "CON-F021-C-P077"
+          ],
+          "personIds": [
+            "P148",
+            "P151",
+            "P152",
+            "P153"
           ]
         }
       },
@@ -8614,6 +8667,9 @@
         "fields": {
           "contributionIds": [
             "CON-F023-C-P077"
+          ],
+          "personIds": [
+            "P142"
           ]
         }
       },
@@ -8622,6 +8678,9 @@
         "fields": {
           "contributionIds": [
             "CON-F025-C-P077"
+          ],
+          "personIds": [
+            "P142"
           ]
         }
       },
@@ -8630,6 +8689,10 @@
         "fields": {
           "contributionIds": [
             "CON-F026-C-P077"
+          ],
+          "personIds": [
+            "P143",
+            "P154"
           ]
         }
       },
@@ -8700,6 +8763,7 @@
         "reason": "Synchronize AFI's Walter Jurmann music-score credit for Escapade with the person and contribution records.",
         "fields": {
           "personIds": [
+            "P028",
             "P077"
           ],
           "contributionIds": [
@@ -9051,6 +9115,96 @@
             "CON-S111-PUB-ORG039"
           ]
         }
+      },
+      "SRC0141": {
+        "reason": "Synchronize Franz Waxman's inverse link to the AFI record for A Day at the Races already exposed on his person record.",
+        "fields": {
+          "personIds": ["P135"]
+        }
+      },
+      "SRC0280": {
+        "reason": "Synchronize Franz Waxman's inverse link to the Catalog of Copyright Entries record for At Night already exposed on his person record.",
+        "fields": {
+          "personIds": ["P135"]
+        }
+      },
+      "SRC0143": {
+        "reason": "Synchronize Herbert Stothart's inverse link to the AFI record for A Night at the Opera already exposed on his person record.",
+        "fields": {
+          "personIds": ["P136"]
+        }
+      },
+      "SRC0144": {
+        "reason": "Synchronize the inverse links from Herbert Stothart and Jeanette MacDonald to the AFI record for San Francisco already exposed on their person records.",
+        "fields": {
+          "personIds": ["P136", "P139"]
+        }
+      },
+      "SRC0145": {
+        "reason": "Synchronize Deanna Durbin's inverse link to the AFI record for Three Smart Girls already exposed on her person record.",
+        "fields": {
+          "personIds": ["P137"]
+        }
+      },
+      "SRC0380": {
+        "reason": "Synchronize Deanna Durbin's inverse link to the One Smart Girl source already exposed on her person record.",
+        "fields": {
+          "personIds": ["P137"]
+        }
+      },
+      "SRC0147": {
+        "reason": "Synchronize the inverse links from Judy Garland and William Axt to the AFI record for Everybody Sing already exposed on their person records.",
+        "fields": {
+          "personIds": ["P138", "P140"]
+        }
+      },
+      "SRC0321": {
+        "reason": "Synchronize Judy Garland's inverse link to the documented Swing Mister Mendelssohn performance source already exposed on her person record.",
+        "fields": {
+          "personIds": ["P138"]
+        }
+      },
+      "SRC0319": {
+        "reason": "Synchronize Jeanette MacDonald's inverse link to the documented San Francisco performance source already exposed on her person record.",
+        "fields": {
+          "personIds": ["P139"]
+        }
+      },
+      "SRC0148": {
+        "reason": "Synchronize William Axt's inverse link to the AFI record for The Perfect Gentleman already exposed on his person record.",
+        "fields": {
+          "personIds": ["P140"]
+        }
+      },
+      "SRC0142": {
+        "reason": "Synchronize Edward Ward's inverse link to the AFI record for Kind Lady already exposed on his person record.",
+        "fields": {
+          "personIds": ["P141"]
+        }
+      },
+      "SRC0480": {
+        "reason": "Synchronize Edward Ward's inverse link to the AFI record for Man of the People already exposed on his person record.",
+        "fields": {
+          "personIds": ["P141"]
+        }
+      },
+      "SRC0134": {
+        "reason": "Synchronize Hans-Otto Borgmann's inverse link to the Filmportal record for Kind, ich freu' mich auf Dein Kommen already exposed on his person record.",
+        "fields": {
+          "personIds": ["P145"]
+        }
+      },
+      "SRC0116": {
+        "reason": "Synchronize Felix Günther's inverse link to the Filmportal record for Alraune already exposed on his person record.",
+        "fields": {
+          "personIds": ["P146"]
+        }
+      },
+      "SRC0120": {
+        "reason": "Synchronize Marc Lavry's inverse link to the Filmportal record for Seitensprünge already exposed on his person record.",
+        "fields": {
+          "personIds": ["P147"]
+        }
       }
     }
   },
@@ -9323,6 +9477,14 @@
         "fields": {
           "placeIds": [
             "PL039"
+          ]
+        }
+      },
+      "SRC0334": {
+        "reason": "Remove the false Franz Wenzler link from the Academy Collection photograph, which depicts Walter Jurmann and Bronislau Kaper circa 1935 and provides no evidence concerning Wenzler.",
+        "fields": {
+          "personIds": [
+            "P019"
           ]
         }
       }
