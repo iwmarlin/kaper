@@ -15,11 +15,16 @@ import re
 import shutil
 from pathlib import Path
 
-from PIL import Image, ImageCms, ImageOps
-
 
 IMAGE_EXTENSIONS = {".jpg", ".jpeg", ".png", ".tif", ".tiff", ".webp"}
 TARGET_WIDTHS = (320, 640, 960, 1440)
+HOME_PATHWAYS = (
+    ("Works", "Films, songs and other works", "works.html", "Works"),
+    ("People", "Collaborators and contemporaries", "people.html", "People"),
+    ("Timeline", "A documented chronology", "life.html", "Timeline Events"),
+    ("Places", "Cities, venues and routes", "map.html", "Places"),
+    ("Media", "Images, documents and sound", "media.html", "Media"),
+)
 
 
 def read_json(path: Path):
@@ -48,7 +53,9 @@ def local_image_paths(media_payload: dict, root: Path) -> list[str]:
     return sorted(paths)
 
 
-def normalized_image(path: Path) -> Image.Image:
+def normalized_image(path: Path):
+    from PIL import Image, ImageCms, ImageOps
+
     with Image.open(path) as source:
         source.load()
         image = ImageOps.exif_transpose(source)
@@ -97,6 +104,8 @@ def derivatives_are_current(source_path: Path, directory: Path, widths: list[int
 def build_images(
     root: Path, paths: list[str], output_root: Path, incremental: bool = False
 ) -> tuple[dict, dict]:
+    from PIL import Image
+
     # Derivative directories are keyed by the source path, so a full rebuild
     # re-encodes every image even when one was added. --incremental keeps the
     # derivatives that are still newer than their source and encodes the rest.
@@ -308,11 +317,13 @@ def home_payload(data_root: Path) -> dict:
     # lead somewhere. Sources are reachable from every record and from the header,
     # and are left out of the gateway deliberately.
     pathways = [
-        {"label": "Works", "description": "Films, songs and other works", "href": "works.html", "count": counts["Works"]},
-        {"label": "People", "description": "Collaborators and contemporaries", "href": "people.html", "count": counts["People"]},
-        {"label": "Timeline", "description": "A documented chronology", "href": "life.html", "count": counts["Timeline Events"]},
-        {"label": "Places", "description": "Cities, venues and routes", "href": "map.html", "count": counts["Places"]},
-        {"label": "Media", "description": "Images, documents and sound", "href": "media.html", "count": counts["Media"]},
+        {
+            "label": label,
+            "description": description,
+            "href": href,
+            "count": counts[count_key],
+        }
+        for label, description, href, count_key in HOME_PATHWAYS
     ]
     return {
         "schemaVersion": manifest.get("schemaVersion", "1.0.0"),
@@ -325,6 +336,47 @@ def home_payload(data_root: Path) -> dict:
             "sources": counts["Sources"],
         },
     }
+
+
+def validate_home_payload(root: Path, public_data_root: Path, home_path: Path) -> list[str]:
+    """Validate the complete generated home payload against its public inputs."""
+    if not home_path.is_file():
+        return ["Missing compact home-page payload"]
+
+    errors: list[str] = []
+    actual = read_json(home_path)
+    expected = home_payload(public_data_root)
+
+    if actual.get("schemaVersion") != expected.get("schemaVersion"):
+        errors.append("Home-page schema version does not match the public manifest")
+    if actual.get("pathways") != expected.get("pathways"):
+        errors.append(
+            "Home-page pathways are stale or invalid (labels, descriptions, links, order, or counts)"
+        )
+    if actual.get("portrait") != expected.get("portrait"):
+        errors.append("Home-page portrait does not match the current public media record")
+    if actual.get("events") != expected.get("events"):
+        errors.append("Home-page featured events do not match the current public records")
+    if actual.get("glance") != expected.get("glance"):
+        errors.append("Home-page research summary does not match the current public data")
+    if set(actual) != set(expected):
+        errors.append("Home-page payload has missing or unexpected top-level fields")
+
+    pathways = actual.get("pathways")
+    if isinstance(pathways, list):
+        for pathway in pathways:
+            if not isinstance(pathway, dict):
+                errors.append("Home-page pathways must contain objects")
+                continue
+            href = pathway.get("href")
+            if not isinstance(href, str) or not re.fullmatch(r"[a-z0-9-]+\.html", href):
+                errors.append(f"Home-page pathway has an unsafe or invalid link: {href!r}")
+            elif not (root / href).is_file():
+                errors.append(f"Home-page pathway points to a missing page: {href}")
+    else:
+        errors.append("Home-page pathways must be a list")
+
+    return errors
 
 
 def validate(root: Path, public_data_root: Path, site_data_root: Path, mapping_path: Path, report_path: Path) -> list[str]:
@@ -347,8 +399,7 @@ def validate(root: Path, public_data_root: Path, site_data_root: Path, mapping_p
                 errors.append(f"Missing derivative for {source}: {variant['path']}")
             elif target.stat().st_size != variant["bytes"]:
                 errors.append(f"Derivative size mismatch: {variant['path']}")
-    if not (site_data_root / "home.json").is_file():
-        errors.append("Missing compact home-page payload")
+    errors.extend(validate_home_payload(root, public_data_root, site_data_root / "home.json"))
     if not report_path.is_file():
         errors.append("Missing image performance report")
     return errors
