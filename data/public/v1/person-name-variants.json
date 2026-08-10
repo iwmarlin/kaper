@@ -94,7 +94,7 @@
       "evidenceContext": "sheet_music_or_printed_credit",
       "attestedWording": "Harry Morell",
       "certainty": "confirmed",
-      "publicNote": "Printed composer pseudonym resolved to Bronisław Kaper for this work.",
+      "publicNote": "The printed composer name “Harry Morell” is identified as Bronisław Kaper on “Wer weiß, ob du mich auch liebst”.",
       "personIds": [
         "P009"
       ],
@@ -154,7 +154,7 @@
       "evidenceContext": "sheet_music_or_printed_credit",
       "attestedWording": "Ernst Martin",
       "certainty": "confirmed",
-      "publicNote": "Hofmeister registers two songs from Heut kommt’s drauf an under the composer name “Ernst Martin.” The Buxbaum/Sieghardt catalogue attributes the songs to Walter Jurmann and Bronisław Kaper; this catalogue therefore treats “Ernst Martin” as their joint printed identity for these works.",
+      "publicNote": "Hofmeister registers “Immer, wenn ich glücklich bin, muß ich schrecklich weinen” and “In 24 Stunden kann soviel gescheh'n” under the composer name “Ernst Martin.” The Buxbaum/Sieghardt catalogue attributes both songs to Walter Jurmann and Bronisław Kaper, identifying “Ernst Martin” as their joint printed identity in this context.",
       "personIds": [
         "P009",
         "P077"
@@ -220,7 +220,7 @@
       "evidenceContext": "sheet_music_or_printed_credit",
       "attestedWording": "Pierre Candel",
       "certainty": "confirmed",
-      "publicNote": "For these non-Le chant du destin songs, the printed name Pierre Candel is resolved to Bronisław Kaper and Walter Jurmann jointly.",
+      "publicNote": "On “Le bistrot du port” and “Rêves d'amour”, the printed name Pierre Candel is identified jointly with Bronisław Kaper and Walter Jurmann.",
       "personIds": [
         "P009",
         "P077"
@@ -293,7 +293,7 @@
       "evidenceContext": "sheet_music_or_printed_credit",
       "attestedWording": "Pierre Candel",
       "certainty": "confirmed",
-      "publicNote": "In the context of Le greluchon délicat / Le Valet de cœur, the printed name Pierre Candel is resolved to Walter Jurmann for indexing.",
+      "publicNote": "On “Le greluchon délicat” / “Le Valet de cœur”, the printed music credit Pierre Candel is identified with Walter Jurmann.",
       "personIds": [
         "P077"
       ],
@@ -314,7 +314,7 @@
       "evidenceContext": "authority_record",
       "attestedWording": "Jean Cis",
       "certainty": "confirmed",
-      "publicNote": "Jean Cis is a documented pseudonym of Francis Salabert. The printed lyric credit for “Ça va déjà mieux” is retained under this name while the contributor resolves to canonical person P040.",
+      "publicNote": "Jean Cis is a documented pseudonym of Francis Salabert. “Ça va déjà mieux” carries Jean Cis as the printed lyricist credit; authority sources identify the name with Salabert.",
       "personIds": [
         "P040"
       ],
@@ -879,7 +879,7 @@
       "evidenceContext": "secondary_literature",
       "attestedWording": "Didier Bloch",
       "certainty": "confirmed",
-      "publicNote": "BnF identifies Didier Mauprey as a pseudonym of Didier Bloch. The form “Didier Bloch” is retained as printed for W-S198 and resolves to canonical person P108.",
+      "publicNote": "BnF identifies Didier Mauprey as a pseudonym of Didier Bloch. “Sous le ciel de Venice” carries Didier Bloch as the printed lyricist credit.",
       "personIds": [
         "P108"
       ],
@@ -958,7 +958,7 @@
       "evidenceContext": "other",
       "attestedWording": "Karl Meinhardt",
       "certainty": "confirmed",
-      "publicNote": "Germanised form previously used as the canonical name in this archive. The printed credit on Hochzeitsreise zu Dritt, the VIAF cluster and the GND record all give Carl Meinhard, which is now the form used here.",
+      "publicNote": "The printed credit on “Hochzeitsreise zu Dritt”, together with the VIAF cluster and GND record, gives Carl Meinhard. “Karl Meinhardt” is a Germanised variant.",
       "personIds": [
         "P047"
       ],
@@ -1058,7 +1058,7 @@
       "evidenceContext": "other",
       "attestedWording": "Benjamin Kapper",
       "certainty": "confirmed",
-      "publicNote": "IMDb lists Bronisław Kaper under the source form “Benjamin Kapper” for Ihre Majestät die Liebe; the spelling is retained as an attested database credit variant, while the exact musical function remains unresolved.",
+      "publicNote": "IMDb lists Bronisław Kaper under the source form “Benjamin Kapper” for “Ihre Majestät die Liebe”. The spelling is attested there; his exact musical function remains unresolved.",
       "personIds": [
         "P009"
       ],
@@ -1153,7 +1153,7 @@
       "evidenceContext": "secondary_literature",
       "attestedWording": "Jean Charles André Giot de Badet",
       "certainty": "confirmed",
-      "publicNote": "Civil-status name. The authority heading is established under the nom de plume André de Badet, which is also the form printed on the songs in this archive.",
+      "publicNote": "Civil-status name. The authority heading is established under the nom de plume André de Badet; the linked song credits use André de Badet.",
       "personIds": [
         "P006"
       ],
@@ -1170,7 +1170,7 @@
       "evidenceContext": "secondary_literature",
       "attestedWording": "Henri Eugène Vantard",
       "certainty": "confirmed",
-      "publicNote": "Civil-status name. The authority heading is established under the stage name Henri Varna, which is also the form printed on the songs in this archive.",
+      "publicNote": "Civil-status name. The authority heading is established under the stage name Henri Varna; the linked song credits use Henri Varna.",
       "personIds": [
         "P031"
       ],
@@ -1186,7 +1186,7 @@
       "evidenceContext": "secondary_literature",
       "attestedWording": "René Cailleteau",
       "certainty": "confirmed",
-      "publicNote": "Civil-status name. Encyclopédisque records it directly; Éliane Daphy's identification work gives “René Cailleteau dit René Nazelles”. The songs in this archive are printed under the pseudonym.",
+      "publicNote": "Civil-status name. Encyclopédisque records it directly; Éliane Daphy's identification work gives “René Cailleteau dit René Nazelles”. The linked song credits use the pseudonym René Nazelles.",
       "personIds": [
         "P093"
       ],
@@ -1202,7 +1202,7 @@
       "evidenceContext": "authority_record",
       "attestedWording": "Edna May Durbin",
       "certainty": "confirmed",
-      "publicNote": "Birth name. The authority heading is established under the professional name Deanna Durbin, which is also the form used in the press notices in this archive.",
+      "publicNote": "Birth name. The authority heading is established under the professional name Deanna Durbin; the linked press notices use Deanna Durbin.",
       "personIds": [
         "P137"
       ],
@@ -1251,7 +1251,7 @@
       "evidenceContext": "secondary_literature",
       "attestedWording": "Amédée Ferdinand Pujol",
       "certainty": "confirmed",
-      "publicNote": "Civil-status name. The authority heading and every printed credit in this archive use the working name René Pujol.",
+      "publicNote": "Civil-status name. The authority heading and linked printed credits use the working name René Pujol.",
       "personIds": [
         "P065"
       ],
@@ -1267,7 +1267,7 @@
       "evidenceContext": "secondary_literature",
       "attestedWording": "André Jacques Bloch",
       "certainty": "confirmed",
-      "publicNote": "Civil-status name, reported by the Encyclopédie de la comédie musicale, which also gives a birth year of 1891 against the 1881 held by the Bibliothèque nationale de France. This archive keeps the BnF year; the conflict is noted and unresolved.",
+      "publicNote": "Civil-status name. The Encyclopédie de la comédie musicale gives a birth year of 1891, while the Bibliothèque nationale de France gives 1881. The preferred year is 1881; the discrepancy remains unresolved.",
       "personIds": [
         "P005"
       ],
@@ -1283,7 +1283,7 @@
       "evidenceContext": "authority_file",
       "attestedWording": "Baumritter, Gustaw",
       "certainty": "confirmed",
-      "publicNote": "Birth name. The ISNI registry record lists it under related identities as another identity of the same person, and the VIAF cluster carries it among the alternate forms for the heading Włast, Andrzej. The archive keeps Andrzej Włast as the record name, since that is the form under which the authority heading is established and under which every credit in this archive is printed.",
+      "publicNote": "Birth name. ISNI lists Gustaw Baumritter as another identity of the same person, and VIAF includes it among the alternate forms for Włast, Andrzej. Andrzej Włast remains the preferred name because it is the established authority heading and the form used in the linked credits.",
       "personIds": [
         "P003"
       ],
@@ -1316,7 +1316,7 @@
       "evidenceContext": "authority_file",
       "attestedWording": "Wechselmann, Paul",
       "certainty": "confirmed",
-      "publicNote": "Birth name, recorded as a variant form in the GND authority record. The same record carries four further working names — Mawersky, Paul Stephan; Bachinger, Alois; Marois, Jean; and Walden, Peter — which are not entered separately here because no source in this archive attaches any of them to a specific work.",
+      "publicNote": "Birth name, recorded as a variant in GND. The same record lists four further working names — Mawersky, Paul Stephan; Bachinger, Alois; Marois, Jean; and Walden, Peter — but none of the linked sources associates those forms with a specific work.",
       "personIds": [
         "P151"
       ],
@@ -1332,7 +1332,7 @@
       "evidenceContext": "filmographic_database",
       "attestedWording": "Robert Pégy",
       "certainty": "confirmed",
-      "publicNote": "Spelling used by filmportal.de in the credits for Son altesse l'amour, and the form under which this archive first held him. No authority file records it. The GND entry for Péguy links to filmportal's own record for the same director, so the missing u is a transcription in one set of credits rather than a name he worked under.",
+      "publicNote": "Spelling used by filmportal.de in the credits for “Son altesse l'amour”. No authority file records it. The GND entry for Péguy links to filmportal's record for the same director, indicating that the missing u is a transcription in one credit record rather than a working name.",
       "personIds": [
         "P068"
       ],
@@ -1365,7 +1365,7 @@
       "evidenceContext": "authority_file",
       "attestedWording": "Ninon Steinhoff",
       "certainty": "confirmed",
-      "publicNote": "Form printed on the 1934 sheet of “Adieu” and used throughout this archive. The Bibliothèque nationale de France establishes the heading as Steinhof with one f and records Steinhoff expressly as a rejected form.",
+      "publicNote": "Form printed on the 1934 sheet of “Adieu”. The Bibliothèque nationale de France establishes the heading as Steinhof with one f and expressly records Steinhoff as a rejected form.",
       "personIds": [
         "P060"
       ],

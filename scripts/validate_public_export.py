@@ -29,6 +29,37 @@ def sha256(path: Path) -> str:
 def is_empty(value: Any) -> bool:
     return value is None or value == "" or value == [] or value == {}
 
+
+PUBLIC_NARRATIVE_FIELDS = {
+    "People": ("publicNote", "biography"),
+    "Organizations": ("publicNote", "description"),
+    "Sources": ("shortCitation", "fullCitation"),
+    "Media": ("description", "publicCaption", "publicCreditLine", "rightsNote"),
+    "Works": ("publicNote",),
+    "Films": ("publicNote", "attributionNote"),
+    "Songs": ("publicNote",),
+    "Other Works": ("publicNote",),
+    "Work Relations": ("publicNote",),
+    "Timeline Events": ("shortDescription", "longDescription", "publicNote"),
+    "Places": ("description", "publicNote", "publicSummary"),
+    "Contributions": ("scopeNote", "publicNote"),
+    "Person Name Variants": ("publicNote",),
+}
+
+PUBLIC_EDITORIAL_NARRATOR_PATTERN = re.compile(
+    r"(?:"
+    r"\bfor (?:this|these) works?\b|"
+    r"\bthis catalogue\b|"
+    r"\bthis archive\b|"
+    r"\bthis database\b|"
+    r"\bthe archive (?:keeps|holds|records|reproduces)\b|"
+    r"\bfor indexing\b|"
+    r"\bcanonical person P\d+\b|"
+    r"\bthe supplied archival object metadata\b"
+    r")",
+    flags=re.IGNORECASE,
+)
+
 MEDIA_PUBLIC_WORKFLOW_PATTERN = re.compile(
     r"(?:"
     r"assets/|"
@@ -352,6 +383,17 @@ class ExportValidator:
 
         for table_name, payload in self.payloads.items():
             walk(payload.get("records", []), table_name)
+
+        for table_name, fields in PUBLIC_NARRATIVE_FIELDS.items():
+            for record in self.payloads.get(table_name, {}).get("records", []):
+                record_id = record.get("id", "unknown")
+                for field_name in fields:
+                    value = record.get(field_name)
+                    if isinstance(value, str) and PUBLIC_EDITORIAL_NARRATOR_PATTERN.search(value):
+                        self.errors.append(
+                            f"{table_name} {record_id}: public field {field_name} "
+                            "contains context-dependent editorial narration"
+                        )
 
         for source in self.payloads.get("Sources", {}).get("records", []):
             source_id = source["id"]
