@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 282,
+  "count": 283,
   "records": [
     {
       "id": "W-F001",
@@ -3969,45 +3969,32 @@
       "sourceIds": [
         "SRC0112",
         "SRC0195",
-        "SRC0358",
-        "SRC0470",
-        "SRC0504"
+        "SRC0470"
       ],
       "mediaIds": [
-        "M053",
         "M137"
       ],
       "timelineEventIds": [
         "TE0021"
       ],
-      "titleVariantIds": [
-        "TV0297",
-        "TV0305"
-      ],
       "contributionIds": [
         "CON-S010-C-P009",
-        "CON-S010-C-P020",
-        "CON-S010-L-P009",
         "CON-S010-L-P020",
-        "CON-S010-L-P096",
-        "CON-S010-L-P115",
         "CON-S010-PUB-ORG029"
       ],
       "nameVariantIds": [
-        "PNV0019",
-        "PNV0031"
+        "PNV0019"
       ],
       "personIds": [
         "P009",
-        "P020",
-        "P096",
-        "P115"
+        "P020"
       ],
       "organizationIds": [
         "ORG029"
       ],
       "relationIds": [
-        "REL0171"
+        "REL0171",
+        "REL0200"
       ],
       "songIds": [
         "S010"
@@ -11564,11 +11551,12 @@
       "displayOnSite": true,
       "publicScope": "standalone_page",
       "sourceIds": [
+        "SRC0470",
         "SRC0504"
       ],
       "contributionIds": [
         "CON-S205-C-P009",
-        "CON-S205-C-P020",
+        "CON-S205-L-P020",
         "CON-S205-L-P115",
         "CON-S205-PUB-ORG055"
       ],
@@ -11978,8 +11966,8 @@
       "european"
     ]
   },
-  {
-    "id": "W-S216",
+    {
+      "id": "W-S216",
     "title": "Może tak, może nie",
     "slug": "moze-tak-moze-nie",
     "sortTitle": "Może tak, może nie",
@@ -12006,9 +11994,58 @@
     "songIds": [
       "S216"
     ],
-    "periods": [
-      "european"
-    ]
-  }
+      "periods": [
+        "european"
+      ]
+    },
+    {
+      "id": "W-S217",
+      "title": "Tot Weerziens, Mijnheer Jansen",
+      "slug": "tot-weerziens-mijnheer-jansen",
+      "sortTitle": "Tot Weerziens, Mijnheer Jansen",
+      "workType": "Song",
+      "year": 1929,
+      "period": "european",
+      "certainty": "confirmed",
+      "displayOnSite": true,
+      "publicScope": "standalone_page",
+      "sourceIds": [
+        "SRC0358",
+        "SRC0470"
+      ],
+      "mediaIds": [
+        "M053"
+      ],
+      "timelineEventIds": [
+        "TE0021"
+      ],
+      "contributionIds": [
+        "CON-S217-C-P009",
+        "CON-S217-L-P020",
+        "CON-S217-L-P096",
+        "CON-S217-PUB-ORG029"
+      ],
+      "nameVariantIds": [
+        "PNV0019",
+        "PNV0031"
+      ],
+      "personIds": [
+        "P009",
+        "P020",
+        "P096"
+      ],
+      "organizationIds": [
+        "ORG029"
+      ],
+      "relationIds": [
+        "REL0200"
+      ],
+      "songIds": [
+        "S217"
+      ],
+      "periods": [
+        "european"
+      ]
+    }
 ]
 }

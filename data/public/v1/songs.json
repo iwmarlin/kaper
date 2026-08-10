@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 205,
+  "count": 206,
   "records": [
     {
       "id": "S001",
@@ -219,8 +219,7 @@
       "period": "european",
       "genre": "foxtrot",
       "publisherAsPrinted": "Wiener Boheme Verlag",
-      "lyricistAsPrinted": "Fritz Rotter (German original); Ferry (Dutch text); B. Kaper (qualified catalogue attribution)",
-      "publicNote": "The 1929 Dutch edition uses the title “Tot Weerziens, Mijnheer Jansen” and explicitly credits Ferry with the Dutch text. For the German original, the U.S. Copyright Office credits words to Fritz Rotter and music to Bronisław Kaper. Images Musicales metadata additionally parses Rotter and Kaper as co-composers and Rotter, Kaper and Ferry as lyricists; those additional role attributions are retained as qualified contributions.",
+      "lyricistAsPrinted": "Fritz Rotter",
       "certainty": "confirmed",
       "lyricistStatus": "lyricist known",
       "composerStatus": "composer known",
@@ -229,12 +228,7 @@
       ],
       "sourceIds": [
         "SRC0195",
-        "SRC0358",
         "SRC0470"
-      ],
-      "titleVariantIds": [
-        "TV0297",
-        "TV0305"
       ],
       "periods": [
         "european"
@@ -4828,10 +4822,8 @@
         "W-S205"
       ],
       "sourceIds": [
+        "SRC0470",
         "SRC0504"
-      ],
-      "titleVariantIds": [
-        "TV0297"
       ],
       "periods": [
         "european"
@@ -5088,8 +5080,8 @@
       "european"
     ]
   },
-  {
-    "id": "S216",
+    {
+      "id": "S216",
     "title": "Może tak, może nie",
     "slug": "moze-tak-moze-nie",
     "year": 1932,
@@ -5105,9 +5097,32 @@
     "sourceIds": [
       "SRC0658"
     ],
-    "periods": [
-      "european"
-    ]
-  }
+      "periods": [
+        "european"
+      ]
+    },
+    {
+      "id": "S217",
+      "title": "Tot Weerziens, Mijnheer Jansen",
+      "slug": "tot-weerziens-mijnheer-jansen",
+      "year": 1929,
+      "period": "european",
+      "genre": "foxtrot",
+      "publisherAsPrinted": "Wiener Boheme Verlag",
+      "lyricistAsPrinted": "Ferry (Dutch text); Fritz Rotter (German original)",
+      "certainty": "confirmed",
+      "lyricistStatus": "lyricist known",
+      "composerStatus": "composer known",
+      "workIds": [
+        "W-S217"
+      ],
+      "sourceIds": [
+        "SRC0358",
+        "SRC0470"
+      ],
+      "periods": [
+        "european"
+      ]
+    }
 ]
 }

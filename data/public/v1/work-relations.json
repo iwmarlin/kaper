@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 192,
+  "count": 193,
   "records": [
     {
       "id": "REL0001",
@@ -3445,6 +3445,27 @@
     ],
     "sourceIds": [
       "SRC0658"
+    ]
+  },
+  {
+    "id": "REL0200",
+    "relationType": "language_version_of",
+    "targetWorkTitle": "Auf wiederseh'n, Herr Doktor, auf wiederseh'n, Frau Doktor",
+    "targetTitleAsSource": "Auf wiederseh'n, Herr Doktor, auf wiederseh'n, Frau Doktor",
+    "direction": "source_to_target",
+    "publicNote": "“Tot Weerziens, Mijnheer Jansen” is the Dutch-language version of “Auf wiederseh'n, Herr Doktor, auf wiederseh'n, Frau Doktor”.",
+    "certainty": "confirmed",
+    "sourceWorkIds": [
+      "W-S217"
+    ],
+    "targetWorkIds": [
+      "W-S010"
+    ],
+    "personIds": [
+      "P096"
+    ],
+    "sourceIds": [
+      "SRC0358"
     ]
   }
 ]

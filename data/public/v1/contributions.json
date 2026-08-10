@@ -6061,50 +6061,6 @@
       ],
       "sourceIds": [
         "SRC0195",
-        "SRC0358",
-        "SRC0470"
-      ],
-      "nameVariantIds": [
-        "PNV0019"
-      ]
-    },
-    {
-      "id": "CON-S010-C-P020",
-      "role": "composer",
-      "nameAsPrinted": "Fritz Rotter",
-      "scopeNote": "Qualified attribution derived from Images Musicales catalogue metadata for the Dutch edition.",
-      "sortOrder": 11,
-      "certainty": "probable",
-      "publicNote": "Images Musicales metadata lists Fritz Rotter among the composers of the Dutch edition, but the cover itself does not divide the original music and text credits, and the U.S. Copyright Office credits the German music to Bronisław Kaper. Rotter’s music contribution is therefore retained as probable.",
-      "workIds": [
-        "W-S010"
-      ],
-      "personIds": [
-        "P020"
-      ],
-      "sourceIds": [
-        "SRC0195",
-        "SRC0358",
-        "SRC0470"
-      ]
-    },
-    {
-      "id": "CON-S010-L-P009",
-      "role": "lyricist",
-      "nameAsPrinted": "B. Kaper",
-      "scopeNote": "Qualified attribution derived from Images Musicales catalogue metadata for the Dutch edition.",
-      "sortOrder": 21,
-      "certainty": "probable",
-      "publicNote": "Images Musicales metadata lists Bronisław Kaper among the lyricists of the Dutch edition, but the cover itself does not divide the original music and text credits, and the U.S. Copyright Office credits the German words to Fritz Rotter. Kaper’s lyric contribution is therefore retained as probable.",
-      "workIds": [
-        "W-S010"
-      ],
-      "personIds": [
-        "P009"
-      ],
-      "sourceIds": [
-        "SRC0195",
-        "SRC0358",
         "SRC0470"
       ],
       "nameVariantIds": [
@@ -6126,51 +6082,7 @@
       ],
       "sourceIds": [
         "SRC0195",
-        "SRC0358",
         "SRC0470"
-      ]
-    },
-    {
-      "id": "CON-S010-L-P096",
-      "role": "lyricist",
-      "nameAsPrinted": "Ferry",
-      "evidenceLocator": "Front cover: “Hollandsche tekst van Ferry”",
-      "scopeNote": "Dutch-language edition only.",
-      "sortOrder": 22,
-      "certainty": "confirmed",
-      "publicNote": "Ferry is explicitly credited with the Dutch text of “Tot Weerziens, Mijnheer Jansen.” This credit does not apply to the German original.",
-      "workIds": [
-        "W-S010"
-      ],
-      "personIds": [
-        "P096"
-      ],
-      "sourceIds": [
-        "SRC0195",
-        "SRC0358",
-        "SRC0470"
-      ],
-      "nameVariantIds": [
-        "PNV0031"
-      ]
-    },
-    {
-      "id": "CON-S010-L-P115",
-      "role": "lyricist",
-      "nameAsPrinted": "A. Oliver",
-      "evidenceContext": "sheet_music",
-      "scopeNote": "French-language edition only.",
-      "sortOrder": 23,
-      "certainty": "confirmed",
-      "publicNote": "A. Oliver is explicitly credited with the French words of “Quand une femm’ vous plaque.” This credit does not apply to the German original.",
-      "workIds": [
-        "W-S010"
-      ],
-      "personIds": [
-        "P115"
-      ],
-      "sourceIds": [
-        "SRC0504"
       ]
     },
     {
@@ -6187,7 +6099,6 @@
       ],
       "sourceIds": [
         "SRC0195",
-        "SRC0358",
         "SRC0470"
       ]
     },
@@ -18268,6 +18179,7 @@
         "P009"
       ],
       "sourceIds": [
+        "SRC0470",
         "SRC0504"
       ],
       "nameVariantIds": [
@@ -18275,11 +18187,14 @@
       ]
     },
     {
-      "id": "CON-S205-C-P020",
-      "role": "composer",
+      "id": "CON-S205-L-P020",
+      "role": "lyricist",
       "nameAsPrinted": "Fritz Rotter",
-      "sortOrder": 11,
+      "evidenceContext": "sheet_music",
+      "scopeNote": "German original text.",
+      "sortOrder": 20,
       "certainty": "confirmed",
+      "publicNote": "German original text.",
       "workIds": [
         "W-S205"
       ],
@@ -18287,6 +18202,7 @@
         "P020"
       ],
       "sourceIds": [
+        "SRC0470",
         "SRC0504"
       ]
     },
@@ -18294,7 +18210,7 @@
       "id": "CON-S205-L-P115",
       "role": "lyricist",
       "nameAsPrinted": "A. Oliver",
-      "scopeNote": "French lyrics by A. Oliver for Quand une femm’ vous plaque (French version of Auf Wiederseh’n, Herr Doktor!), as credited in the 1931 BnF catalogue record FRBNF43244717.",
+      "scopeNote": "French text.",
       "sortOrder": 1,
       "certainty": "confirmed",
       "workIds": [
@@ -18977,6 +18893,87 @@
     ],
     "sourceIds": [
       "SRC0658"
+    ]
+  },
+  {
+    "id": "CON-S217-C-P009",
+    "role": "composer",
+    "nameAsPrinted": "B. Kaper",
+    "evidenceContext": "sheet_music",
+    "sortOrder": 10,
+    "certainty": "confirmed",
+    "workIds": [
+      "W-S217"
+    ],
+    "personIds": [
+      "P009"
+    ],
+    "sourceIds": [
+      "SRC0358",
+      "SRC0470"
+    ],
+    "nameVariantIds": [
+      "PNV0019"
+    ]
+  },
+  {
+    "id": "CON-S217-L-P020",
+    "role": "lyricist",
+    "nameAsPrinted": "Fritz Rotter",
+    "evidenceContext": "sheet_music",
+    "scopeNote": "German original text.",
+    "sortOrder": 20,
+    "certainty": "confirmed",
+    "publicNote": "German original text.",
+    "workIds": [
+      "W-S217"
+    ],
+    "personIds": [
+      "P020"
+    ],
+    "sourceIds": [
+      "SRC0358",
+      "SRC0470"
+    ]
+  },
+  {
+    "id": "CON-S217-L-P096",
+    "role": "lyricist",
+    "nameAsPrinted": "Ferry",
+    "evidenceContext": "sheet_music",
+    "evidenceLocator": "Front cover: “Hollandsche tekst van Ferry”",
+    "scopeNote": "Dutch text.",
+    "sortOrder": 21,
+    "certainty": "confirmed",
+    "publicNote": "Dutch text.",
+    "workIds": [
+      "W-S217"
+    ],
+    "personIds": [
+      "P096"
+    ],
+    "sourceIds": [
+      "SRC0358"
+    ],
+    "nameVariantIds": [
+      "PNV0031"
+    ]
+  },
+  {
+    "id": "CON-S217-PUB-ORG029",
+    "role": "publisher",
+    "nameAsPrinted": "Wiener Boheme Verlag",
+    "evidenceContext": "sheet_music",
+    "sortOrder": 50,
+    "certainty": "confirmed",
+    "workIds": [
+      "W-S217"
+    ],
+    "organizationIds": [
+      "ORG029"
+    ],
+    "sourceIds": [
+      "SRC0358"
     ]
   }
 ]

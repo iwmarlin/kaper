@@ -545,7 +545,6 @@
         "CON-S008-C-P009",
         "CON-S009-C-P009",
         "CON-S010-C-P009",
-        "CON-S010-L-P009",
         "CON-S011-C-P009",
         "CON-S012-C-P009",
         "CON-S013-C-P009",
@@ -740,7 +739,8 @@
         "CON-S116-CON-P009",
         "CON-S214-C-P009",
     "CON-S215-C-P009",
-    "CON-S216-C-P009"
+    "CON-S216-C-P009",
+        "CON-S217-C-P009"
       ],
       "nameVariantIds": [
         "PNV0001",
@@ -1039,7 +1039,8 @@
         "W-S213",
         "W-S214",
     "W-S215",
-    "W-S216"
+    "W-S216",
+        "W-S217"
       ],
       "birthYear": 1902,
       "deathYear": 1983,
@@ -1359,7 +1360,6 @@
         "CON-S004-L-P020",
         "CON-S008-L-P020",
         "CON-S009-L-P020",
-        "CON-S010-C-P020",
         "CON-S010-L-P020",
         "CON-S011-L-P020",
         "CON-S013-L-P020",
@@ -1430,7 +1430,8 @@
         "CON-S191-L-P020",
         "CON-S193-C-P020",
         "CON-S199-L-P020",
-        "CON-S205-C-P020"
+        "CON-S205-L-P020",
+        "CON-S217-L-P020"
       ],
       "nameVariantIds": [
         "PNV0008",
@@ -1509,7 +1510,8 @@
         "W-S191",
         "W-S193",
         "W-S199",
-        "W-S205"
+        "W-S205",
+        "W-S217"
       ],
       "birthYear": 1900,
       "deathYear": 1984,
@@ -3801,14 +3803,17 @@
         "lyricist"
       ],
       "authorityUrl": "Wreed en Plezant pseudonyms list: https://wreed-en-plezant.leefdaal.be/bronnen/pseudoniemen/",
+      "sourceIds": [
+        "SRC0358"
+      ],
       "contributionIds": [
-        "CON-S010-L-P096"
+        "CON-S217-L-P096"
       ],
       "nameVariantIds": [
         "PNV0031"
       ],
       "workIds": [
-        "W-S010"
+        "W-S217"
       ],
       "birthYear": 1892,
       "deathYear": 1965,
@@ -4082,11 +4087,9 @@
         "SRC0504"
       ],
       "contributionIds": [
-        "CON-S010-L-P115",
         "CON-S205-L-P115"
       ],
       "workIds": [
-        "W-S010",
         "W-S205"
       ]
     },

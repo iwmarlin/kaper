@@ -1,4 +1,4 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=7326a57747";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=05b2ff712e";
 import {
   certaintyBadge,
   escapeHtml,
@@ -23,7 +23,7 @@ import {
   scopeBadge,
   typeBadge,
   updateMeta,
-} from "./core.js?v=7326a57747";
+} from "./core.js?v=05b2ff712e";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 let target = null;
@@ -476,7 +476,12 @@ function relationList(items, work, indexes) {
     renderItem: (item) => {
       const { targetWork, title } = relationMeta(item);
       const titleHtml = targetWork ? `<a href="${recordUrl("work", targetWork.id)}">${escapeHtml(title)}</a>` : escapeHtml(title);
-      return `<li><span>${typeBadge(item.relationType)} ${titleHtml}${item.publicNote ? `<br><small>${escapeHtml(item.publicNote)}</small>` : ""}</span>${certaintyBadge(item.certainty)}</li>`;
+      const relationType = getIds(item, "sourceWorkIds").includes(work.id)
+        ? item.relationType
+        : item.relationType === "language_version_of"
+          ? "language_version"
+          : item.relationType;
+      return `<li><span>${typeBadge(relationType)} ${titleHtml}${item.publicNote ? `<br><small>${escapeHtml(item.publicNote)}</small>` : ""}</span>${certaintyBadge(item.certainty)}</li>`;
     },
     searchText: (item) => {
       const { title } = relationMeta(item);

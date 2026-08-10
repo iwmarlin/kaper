@@ -6291,22 +6291,22 @@
         "P020"
       ],
       "workIds": [
-        "W-S010"
+        "W-S010",
+        "W-S205",
+        "W-S217"
       ],
       "songIds": [
-        "S010"
+        "S010",
+        "S205",
+        "S217"
       ],
       "contributionIds": [
         "CON-S010-C-P009",
-        "CON-S010-C-P020",
-        "CON-S010-L-P009",
         "CON-S010-L-P020",
-        "CON-S010-L-P096",
         "CON-S010-PUB-ORG029"
       ],
       "nameVariantIds": [
-        "PNV0019",
-        "PNV0031"
+        "PNV0019"
       ],
       "repository": "Österreichische Nationalbibliothek / ANNO",
       "accessDate": "2026-07-24",
@@ -11602,7 +11602,7 @@
         "ORG096"
       ],
       "workIds": [
-        "W-S010"
+        "W-S217"
       ],
       "mediaIds": [
         "M053"
@@ -11611,22 +11611,23 @@
         "TE0021"
       ],
       "songIds": [
-        "S010"
-      ],
-      "titleVariantIds": [
-        "TV0305"
+        "S217"
       ],
       "contributionIds": [
-        "CON-S010-C-P009",
-        "CON-S010-C-P020",
-        "CON-S010-L-P009",
-        "CON-S010-L-P020",
-        "CON-S010-L-P096",
-        "CON-S010-PUB-ORG029"
+        "CON-S217-C-P009",
+        "CON-S217-L-P020",
+        "CON-S217-L-P096",
+        "CON-S217-PUB-ORG029"
       ],
       "nameVariantIds": [
         "PNV0019",
         "PNV0031"
+      ],
+      "workRelationIds": [
+        "REL0200"
+      ],
+      "personIds": [
+        "P096"
       ],
       "primaryUrl": "https://imagesmusicales.be/search/composer/B.-Kaper/3412/ShowData/8/Submit/"
     },
@@ -14662,7 +14663,7 @@
       "shortCitation": "CCE 1930, “Auf Wiedersehn, Herr Doktor!”",
       "fullCitation": "U.S. Copyright Office, Catalogue of Copyright Entries, New Series. Part 3: Musical Compositions, vol. 25, nos. 1–12, for the year 1930. Washington, DC: U.S. Government Printing Office, 1931, entry no. 28400 for “Auf wiederseh’n, Herr Doktor! Auf wiederseh’n, Frau Doktor!”: fox trot, words by Fritz Rotter, music by B. Kaper, of Poland. © February 10, 1930; 1 copy received November 4, 1930; E for. 14549; Wiener Bohème-Verlag, Vienna. Digitized via Internet Archive.",
       "sourceType": "copyright_catalogue",
-      "title": "CCE 1930 - Auf wiedersehn Herr Doktor",
+      "title": "Catalogue of Copyright Entries 1930 — Auf wiederseh’n, Herr Doktor!",
       "creator": "U.S. Copyright Office",
       "repository": "Internet Archive",
       "publication": "Catalog of Copyright Entries / U.S. Government Printing Office",
@@ -14676,27 +14677,28 @@
         "ORG068"
       ],
       "workIds": [
-        "W-S010"
+        "W-S010",
+        "W-S205",
+        "W-S217"
       ],
       "songIds": [
-        "S010"
-      ],
-      "titleVariantIds": [
-        "TV0305"
+        "S010",
+        "S205",
+        "S217"
       ],
       "contributionIds": [
         "CON-S010-C-P009",
-        "CON-S010-C-P020",
-        "CON-S010-L-P009",
         "CON-S010-L-P020",
-        "CON-S010-L-P096",
-        "CON-S010-PUB-ORG029"
+        "CON-S010-PUB-ORG029",
+        "CON-S205-C-P009",
+        "CON-S205-L-P020",
+        "CON-S217-C-P009",
+        "CON-S217-L-P020"
       ],
       "nameVariantIds": [
-        "PNV0019",
-        "PNV0031"
+        "PNV0019"
       ],
-      "primaryUrl": "https://archive.org/details/catalogofcopyrig253libr"
+      "primaryUrl": "https://archive.org/details/catalogofcopyrig253libr/page/1466/mode/2up?q=%22Auf+wiederseh%27n%2C+Herr+Doktor%2C+auf+wiederseh%27n%2C+Frau+Doktor%22"
     },
     {
       "id": "SRC0471",
@@ -15924,7 +15926,6 @@
         "ORG062"
       ],
       "workIds": [
-        "W-S010",
         "W-S205"
       ],
       "songIds": [
@@ -15933,13 +15934,9 @@
       "workRelationIds": [
         "REL0171"
       ],
-      "titleVariantIds": [
-        "TV0297"
-      ],
       "contributionIds": [
-        "CON-S010-L-P115",
         "CON-S205-C-P009",
-        "CON-S205-C-P020",
+        "CON-S205-L-P020",
         "CON-S205-L-P115",
         "CON-S205-PUB-ORG055"
       ],

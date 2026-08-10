@@ -268,6 +268,15 @@
       }
     },
     "Songs": {
+      "S010": {
+        "reason": "Keep the German original bibliographically self-contained. Dutch and French adaptations are represented as separate Song/Work records and language-version relations, so their lyric credits and editorial explanation do not belong in the German Song note.",
+        "fields": {
+          "lyricistAsPrinted": "Fritz Rotter"
+        },
+        "removeFields": [
+          "publicNote"
+        ]
+      },
       "S196": {
         "reason": "Synchronize the song record with the 1936 France-Mélodie catalogue entry, which credits the French words to Ch. Davson alone.",
         "fields": {
@@ -498,6 +507,13 @@
       }
     },
     "Sources": {
+      "SRC0470": {
+        "reason": "Link directly to the page containing entry no. 28400 and use a descriptive public title for the primary copyright-catalogue evidence for the German original.",
+        "fields": {
+          "title": "Catalogue of Copyright Entries 1930 — Auf wiederseh’n, Herr Doktor!",
+          "url": "https://archive.org/details/catalogofcopyrig253libr/page/1466/mode/2up?q=%22Auf+wiederseh%27n%2C+Herr+Doktor%2C+auf+wiederseh%27n%2C+Frau+Doktor%22"
+        }
+      },
       "SRC0009": {
         "reason": "Keep the archival citation and collection scope while removing private workflow provenance about who supplied the scans.",
         "fields": {
@@ -2160,9 +2176,11 @@
         }
       },
       "M053": {
-        "reason": "Replace obsolete workflow text and the unsupported anonymous-work public-domain rationale. SRC0358 identifies the cover artwork with the signature Hassel, but the illustrator and rights history have not been resolved.",
+        "reason": "Identify the displayed object by its actual Dutch edition title and retain the conservative rights assessment for the signed cover artwork.",
         "fields": {
+          "title": "Tot Weerziens, Mijnheer Jansen — sheet-music cover",
           "description": "Sheet-music cover for “Tot Weerziens, Mijnheer Jansen” (“Auf Wiederseh’n, Herr Doktor!”), Wiener Boheme Verlag, W.B.V. 1328, 1929.",
+          "altText": "Sheet-music cover for the Dutch-language edition “Tot Weerziens, Mijnheer Jansen”.",
           "publicCaption": "Sheet-music cover for “Tot Weerziens, Mijnheer Jansen” (“Auf Wiederseh’n, Herr Doktor!”), Wiener Boheme Verlag, W.B.V. 1328, 1929.",
           "publicCreditLine": "Images Musicales; Wiener Boheme Verlag, W.B.V. 1328 (1929); cover artwork signed Hassel.",
           "rightsStatus": "permission_needed_or_fair_use_claimed",
@@ -2543,6 +2561,12 @@
       }
     },
     "Contributions": {
+      "CON-S205-L-P115": {
+        "reason": "Present the French-version credit concisely on the dedicated Work; the full bibliographic evidence remains in SRC0504.",
+        "fields": {
+          "scopeNote": "French text."
+        }
+      },
       "CON-F052-C-P009": {
         "reason": "Describe Kaper's documented contribution to the animated Little Boy Blue at the correct level: background cues jointly catalogued with Walter Jurmann, not an undifferentiated full-score credit.",
         "fields": {
@@ -3155,6 +3179,26 @@
       },
       "CON-F052-PC-ORG001": {
         "reason": "Remove the false MGM production-company contribution created by the same-title film conflation; the documented animated short was produced by Celebrity Productions–P.A. Powers."
+      },
+      "CON-S010-C-P020": {
+        "reason": "Remove the probable Rotter composer credit from the German original. It was inferred from undivided Dutch-edition metadata, while the role-specific U.S. Copyright Office entry identifies Kaper as composer and Rotter as lyricist."
+      },
+      "CON-S010-L-P009": {
+        "reason": "Remove the probable Kaper lyricist credit from the German original. It was inferred from undivided Dutch-edition metadata, while the role-specific U.S. Copyright Office entry identifies Rotter as lyricist and Kaper as composer."
+      },
+      "CON-S010-L-P096": {
+        "reason": "Replace the Ferry credit attached to the German original with a version-specific contribution on the separate Dutch-language work W-S217."
+      },
+      "CON-S205-C-P020": {
+        "reason": "Replace the collective composer interpretation of the BnF wording with a source-specific original-lyric credit for Rotter on the French version; the U.S. Copyright Office explicitly divides the German roles."
+      }
+    },
+    "Title Variants": {
+      "TV0297": {
+        "reason": "The French title is now represented by the dedicated public work W-S205 and relation REL0171; retaining the same title as a variant of the German original would duplicate and blur that model."
+      },
+      "TV0305": {
+        "reason": "The Dutch title is now represented by the dedicated public work W-S217 and relation REL0200; retaining it as a variant of the German original would duplicate and blur that model."
       }
     }
   },
@@ -3584,25 +3628,119 @@
       }
     },
     "Contributions": {
-      "CON-S010-L-P115": {
-        "reason": "Represent A. Oliver's French-language lyric credit on the parent song card in the same contribution model used for Ferry's Dutch-language credit, while explicitly limiting its scope to the French version.",
+      "CON-S205-L-P020": {
+        "reason": "Represent Fritz Rotter's authorship of the German source text on the dedicated French-version record without misclassifying him as a co-composer.",
         "fields": {
-          "id": "CON-S010-L-P115",
+          "id": "CON-S205-L-P020",
           "role": "lyricist",
-          "nameAsPrinted": "A. Oliver",
+          "nameAsPrinted": "Fritz Rotter",
           "evidenceContext": "sheet_music",
-          "scopeNote": "French-language edition only.",
-          "sortOrder": 23,
+          "scopeNote": "German original text.",
+          "sortOrder": 20,
           "certainty": "confirmed",
-          "publicNote": "A. Oliver is explicitly credited with the French words of “Quand une femm’ vous plaque.” This credit does not apply to the German original.",
+          "publicNote": "German original text.",
           "workIds": [
-            "W-S010"
+            "W-S205"
           ],
           "personIds": [
-            "P115"
+            "P020"
           ],
           "sourceIds": [
+            "SRC0470",
             "SRC0504"
+          ]
+        }
+      },
+      "CON-S217-C-P009": {
+        "reason": "Carry the documented composer credit for the German original into the separately modelled Dutch-language edition.",
+        "fields": {
+          "id": "CON-S217-C-P009",
+          "role": "composer",
+          "nameAsPrinted": "B. Kaper",
+          "evidenceContext": "sheet_music",
+          "sortOrder": 10,
+          "certainty": "confirmed",
+          "workIds": [
+            "W-S217"
+          ],
+          "personIds": [
+            "P009"
+          ],
+          "sourceIds": [
+            "SRC0358",
+            "SRC0470"
+          ],
+          "nameVariantIds": [
+            "PNV0019"
+          ]
+        }
+      },
+      "CON-S217-L-P020": {
+        "reason": "Record Fritz Rotter as author of the German source text underlying the separately modelled Dutch adaptation.",
+        "fields": {
+          "id": "CON-S217-L-P020",
+          "role": "lyricist",
+          "nameAsPrinted": "Fritz Rotter",
+          "evidenceContext": "sheet_music",
+          "scopeNote": "German original text.",
+          "sortOrder": 20,
+          "certainty": "confirmed",
+          "publicNote": "German original text.",
+          "workIds": [
+            "W-S217"
+          ],
+          "personIds": [
+            "P020"
+          ],
+          "sourceIds": [
+            "SRC0358",
+            "SRC0470"
+          ]
+        }
+      },
+      "CON-S217-L-P096": {
+        "reason": "Attach Ferry van Delden's explicitly printed Dutch-text credit to the Dutch version rather than to the German original.",
+        "fields": {
+          "id": "CON-S217-L-P096",
+          "role": "lyricist",
+          "nameAsPrinted": "Ferry",
+          "evidenceContext": "sheet_music",
+          "evidenceLocator": "Front cover: “Hollandsche tekst van Ferry”",
+          "scopeNote": "Dutch text.",
+          "sortOrder": 21,
+          "certainty": "confirmed",
+          "publicNote": "Dutch text.",
+          "workIds": [
+            "W-S217"
+          ],
+          "personIds": [
+            "P096"
+          ],
+          "sourceIds": [
+            "SRC0358"
+          ],
+          "nameVariantIds": [
+            "PNV0031"
+          ]
+        }
+      },
+      "CON-S217-PUB-ORG029": {
+        "reason": "Attach the publisher printed on the documented Dutch-language edition.",
+        "fields": {
+          "id": "CON-S217-PUB-ORG029",
+          "role": "publisher",
+          "nameAsPrinted": "Wiener Boheme Verlag",
+          "evidenceContext": "sheet_music",
+          "sortOrder": 50,
+          "certainty": "confirmed",
+          "workIds": [
+            "W-S217"
+          ],
+          "organizationIds": [
+            "ORG029"
+          ],
+          "sourceIds": [
+            "SRC0358"
           ]
         }
       },
@@ -5933,6 +6071,32 @@
             "european"
           ]
         }
+      },
+      "S217": {
+        "reason": "Add the documented Dutch-language edition as a distinct Song record, parallel to the existing French-language version rather than as prose on the German original.",
+        "fields": {
+          "id": "S217",
+          "title": "Tot Weerziens, Mijnheer Jansen",
+          "slug": "tot-weerziens-mijnheer-jansen",
+          "year": 1929,
+          "period": "european",
+          "genre": "foxtrot",
+          "publisherAsPrinted": "Wiener Boheme Verlag",
+          "lyricistAsPrinted": "Ferry (Dutch text); Fritz Rotter (German original)",
+          "certainty": "confirmed",
+          "lyricistStatus": "lyricist known",
+          "composerStatus": "composer known",
+          "workIds": [
+            "W-S217"
+          ],
+          "sourceIds": [
+            "SRC0358",
+            "SRC0470"
+          ],
+          "periods": [
+            "european"
+          ]
+        }
       }
     },
     "Works": {
@@ -5970,6 +6134,58 @@
             "european"
           ]
         }
+      },
+      "W-S217": {
+        "reason": "Add the Dutch-language edition as a standalone Work with its own source, credits, cover and language-version relation to the German original.",
+        "fields": {
+          "id": "W-S217",
+          "title": "Tot Weerziens, Mijnheer Jansen",
+          "slug": "tot-weerziens-mijnheer-jansen",
+          "sortTitle": "Tot Weerziens, Mijnheer Jansen",
+          "workType": "Song",
+          "year": 1929,
+          "period": "european",
+          "certainty": "confirmed",
+          "displayOnSite": true,
+          "publicScope": "standalone_page",
+          "sourceIds": [
+            "SRC0358",
+            "SRC0470"
+          ],
+          "mediaIds": [
+            "M053"
+          ],
+          "timelineEventIds": [
+            "TE0021"
+          ],
+          "contributionIds": [
+            "CON-S217-C-P009",
+            "CON-S217-L-P020",
+            "CON-S217-L-P096",
+            "CON-S217-PUB-ORG029"
+          ],
+          "nameVariantIds": [
+            "PNV0019",
+            "PNV0031"
+          ],
+          "personIds": [
+            "P009",
+            "P020",
+            "P096"
+          ],
+          "organizationIds": [
+            "ORG029"
+          ],
+          "relationIds": [
+            "REL0200"
+          ],
+          "songIds": [
+            "S217"
+          ],
+          "periods": [
+            "european"
+          ]
+        }
       }
     },
     "Work Relations": {
@@ -5994,6 +6210,30 @@
           ],
           "sourceIds": [
             "SRC0658"
+          ]
+        }
+      },
+      "REL0200": {
+        "reason": "Model Tot Weerziens, Mijnheer Jansen as the documented Dutch-language version of Auf wiederseh'n, Herr Doktor, auf wiederseh'n, Frau Doktor.",
+        "fields": {
+          "id": "REL0200",
+          "relationType": "language_version_of",
+          "targetWorkTitle": "Auf wiederseh'n, Herr Doktor, auf wiederseh'n, Frau Doktor",
+          "targetTitleAsSource": "Auf wiederseh'n, Herr Doktor, auf wiederseh'n, Frau Doktor",
+          "direction": "source_to_target",
+          "publicNote": "“Tot Weerziens, Mijnheer Jansen” is the Dutch-language version of “Auf wiederseh'n, Herr Doktor, auf wiederseh'n, Frau Doktor”.",
+          "certainty": "confirmed",
+          "sourceWorkIds": [
+            "W-S217"
+          ],
+          "targetWorkIds": [
+            "W-S010"
+          ],
+          "personIds": [
+            "P096"
+          ],
+          "sourceIds": [
+            "SRC0358"
           ]
         }
       }
@@ -7142,7 +7382,7 @@
         }
       },
       "ORG029": {
-        "reason": "Link Wiener Boheme Verlag to the completed 1932–1933 Hofmeister sources.",
+        "reason": "Link Wiener Boheme Verlag to the completed Hofmeister sources and to the separately modelled Dutch-language edition it published.",
         "fields": {
           "sourceIds": [
             "SRC0190",
@@ -7150,6 +7390,12 @@
             "SRC0216",
             "SRC0217",
             "SRC0218"
+          ],
+          "workIds": [
+            "W-S217"
+          ],
+          "contributionIds": [
+            "CON-S217-PUB-ORG029"
           ]
         }
       },
@@ -7184,6 +7430,14 @@
       }
     },
     "Contributions": {
+      "CON-S205-C-P009": {
+        "reason": "Add the role-specific Copyright Office entry as supporting evidence for Kaper's composer credit on the German composition carried by the French adaptation.",
+        "fields": {
+          "sourceIds": [
+            "SRC0470"
+          ]
+        }
+      },
       "CON-S196-C-P009": {
         "reason": "Add the item-level 1936 France-Mélodie catalogue evidence for Kaper's printed composer credit.",
         "fields": {
@@ -7422,13 +7676,21 @@
     },
     "Works": {
       "W-S010": {
-        "reason": "Expose A. Oliver's documented French-version lyric credit in Contributors and credits and attach the BnF edition that supports it.",
+        "reason": "Link the German original to the newly separated Dutch-language version; version-specific sources and contributors remain on their own Work records.",
+        "fields": {
+          "relationIds": [
+            "REL0200"
+          ]
+        }
+      },
+      "W-S205": {
+        "reason": "Replace the collective Rotter composer interpretation with a source-specific original-lyric contribution on the dedicated French-language Work.",
         "fields": {
           "sourceIds": [
-            "SRC0504"
+            "SRC0470"
           ],
           "contributionIds": [
-            "CON-S010-L-P115"
+            "CON-S205-L-P020"
           ]
         }
       },
@@ -8027,6 +8289,14 @@
       }
     },
     "Songs": {
+      "S205": {
+        "reason": "Expose the role-specific Copyright Office entry alongside the item-level BnF record because it resolves the German original's composer and lyricist roles carried by the French adaptation.",
+        "fields": {
+          "sourceIds": [
+            "SRC0470"
+          ]
+        }
+      },
       "S008": {
         "reason": "Link the German song record to the source documenting its Polish-language version.",
         "fields": {
@@ -8118,10 +8388,24 @@
     },
     "Person Name Variants": {
       "PNV0019": {
-        "reason": "Attest the printed form “B. Kaper” through the exact ANNO registration SRC0226 rather than its superseded duplicate SRC0200.",
+        "reason": "Attest the printed form “B. Kaper” through the exact ANNO registration and connect it to the separately modelled Dutch edition on which that form appears.",
         "fields": {
           "sourceIds": [
             "SRC0226"
+          ],
+          "workIds": [
+            "W-S217"
+          ]
+        }
+      },
+      "PNV0031": {
+        "reason": "Move the printed credit form “Ferry” to the dedicated Dutch-language Work and its item-level source.",
+        "fields": {
+          "workIds": [
+            "W-S217"
+          ],
+          "sourceIds": [
+            "SRC0358"
           ]
         }
       },
@@ -8147,6 +8431,17 @@
       }
     },
     "Media": {
+      "M053": {
+        "reason": "Attach the Dutch sheet-music cover to the dedicated Dutch Work and Song rather than to the German original.",
+        "fields": {
+          "workIds": [
+            "W-S217"
+          ],
+          "songIds": [
+            "S217"
+          ]
+        }
+      },
       "M197": {
         "reason": "Link the surviving animated Little Boy Blue poster to Celebrity Productions–P.A. Powers, replacing the false MGM production relation.",
         "fields": {
@@ -8301,6 +8596,14 @@
       }
     },
     "Timeline Events": {
+      "TE0021": {
+        "reason": "Connect the first-publications event to the separately modelled Dutch edition illustrated by its existing hero medium.",
+        "fields": {
+          "workIds": [
+            "W-S217"
+          ]
+        }
+      },
       "TE0014": {
         "reason": "Link Andrzej Włast's portrait to the first-cabaret-songs event, which already identifies Włast as the lyricist and principal collaborator.",
         "fields": {
@@ -8457,14 +8760,6 @@
       }
     },
     "People": {
-      "P115": {
-        "reason": "Synchronize A. Oliver's inverse contribution link to the parent song record carrying the explicitly scoped French-language lyric credit.",
-        "fields": {
-          "contributionIds": [
-            "CON-S010-L-P115"
-          ]
-        }
-      },
       "P030": {
         "reason": "Expose the licensed bust photograph on Heinz Hilpert's person page through its dedicated item-level source.",
         "fields": {
@@ -8482,7 +8777,7 @@
         }
       },
       "P009": {
-        "reason": "Link Bronisław Kaper to the completed 1932–1933 Hofmeister sources, the documented portrait sources and the two AFI song records that explicitly credit him.",
+        "reason": "Link Bronisław Kaper to the completed sources and documented public additions, including his composer credit on the separately modelled Dutch-language edition.",
         "fields": {
           "sourceIds": [
             "SRC0038",
@@ -8522,11 +8817,13 @@
             "CON-F022-C-P009",
             "CON-F035-BM-P009",
             "CON-S111-C-P009",
-            "CON-S216-C-P009"
+            "CON-S216-C-P009",
+            "CON-S217-C-P009"
           ],
           "workIds": [
             "W-S111",
-            "W-S216"
+            "W-S216",
+            "W-S217"
           ]
         }
       },
@@ -8557,7 +8854,7 @@
         }
       },
       "P020": {
-        "reason": "Connect Fritz Rotter to the completed Hofmeister sources that print his lyricist credit and to the verified public-domain portrait source SRC0330.",
+        "reason": "Connect Fritz Rotter to the completed Hofmeister sources, his verified portrait and the correctly scoped original-lyric credits on the French and Dutch adaptations.",
         "fields": {
           "sourceIds": [
             "SRC0330",
@@ -8576,6 +8873,27 @@
             "SRC0226",
             "SRC0373",
             "SRC0658"
+          ],
+          "contributionIds": [
+            "CON-S205-L-P020",
+            "CON-S217-L-P020"
+          ],
+          "workIds": [
+            "W-S217"
+          ]
+        }
+      },
+      "P096": {
+        "reason": "Move Ferry van Delden's Dutch-text credit from the German original to the dedicated Dutch-language version.",
+        "fields": {
+          "contributionIds": [
+            "CON-S217-L-P096"
+          ],
+          "workIds": [
+            "W-S217"
+          ],
+          "sourceIds": [
+            "SRC0358"
           ]
         }
       },
@@ -8848,14 +9166,53 @@
       }
     },
     "Sources": {
-      "SRC0504": {
-        "reason": "Synchronize the BnF French-edition source with the parent song and its explicitly scoped A. Oliver contribution.",
+      "SRC0358": {
+        "reason": "Connect the item-level Dutch sheet-music record to the dedicated Dutch Work, Song, cover, relation and version-specific contributions.",
         "fields": {
           "workIds": [
-            "W-S010"
+            "W-S217"
+          ],
+          "songIds": [
+            "S217"
+          ],
+          "workRelationIds": [
+            "REL0200"
           ],
           "contributionIds": [
-            "CON-S010-L-P115"
+            "CON-S217-C-P009",
+            "CON-S217-L-P020",
+            "CON-S217-L-P096",
+            "CON-S217-PUB-ORG029"
+          ],
+          "personIds": [
+            "P096"
+          ]
+        }
+      },
+      "SRC0470": {
+        "reason": "Use the role-specific Copyright Office entry as supporting evidence for the German authorship carried into the French and Dutch adaptations, while keeping the edition-specific sources distinct.",
+        "fields": {
+          "workIds": [
+            "W-S205",
+            "W-S217"
+          ],
+          "songIds": [
+            "S205",
+            "S217"
+          ],
+          "contributionIds": [
+            "CON-S205-C-P009",
+            "CON-S205-L-P020",
+            "CON-S217-C-P009",
+            "CON-S217-L-P020"
+          ]
+        }
+      },
+      "SRC0504": {
+        "reason": "Keep the BnF source on the dedicated French-language Work and synchronize the corrected original-lyric contribution for Fritz Rotter.",
+        "fields": {
+          "contributionIds": [
+            "CON-S205-L-P020"
           ]
         }
       },
@@ -10123,6 +10480,17 @@
   },
   "linkRemovals": {
     "Media": {
+      "M053": {
+        "reason": "Remove the Dutch cover from the German original after promoting the Dutch edition to W-S217 / S217.",
+        "fields": {
+          "workIds": [
+            "W-S010"
+          ],
+          "songIds": [
+            "S010"
+          ]
+        }
+      },
       "M002": {
         "reason": "Remove the obsolete hero-image designation from the external Miss Annabelle Lee reference; TE0019 uses the directly relevant Polydor label image M231 as its hero.",
         "fields": {
@@ -10172,6 +10540,68 @@
       }
     },
     "Sources": {
+      "SRC0195": {
+        "reason": "Keep the Hofmeister registration on the German original and remove contribution/name-form links that were imported from the separate Dutch edition.",
+        "fields": {
+          "contributionIds": [
+            "CON-S010-C-P020",
+            "CON-S010-L-P009",
+            "CON-S010-L-P096"
+          ],
+          "nameVariantIds": [
+            "PNV0031"
+          ]
+        }
+      },
+      "SRC0358": {
+        "reason": "Move the Dutch item-level source from the German original to W-S217 / S217 and replace the German-record contributions with version-specific Dutch contributions.",
+        "fields": {
+          "workIds": [
+            "W-S010"
+          ],
+          "songIds": [
+            "S010"
+          ],
+          "titleVariantIds": [
+            "TV0305"
+          ],
+          "contributionIds": [
+            "CON-S010-C-P009",
+            "CON-S010-C-P020",
+            "CON-S010-L-P009",
+            "CON-S010-L-P020",
+            "CON-S010-L-P096",
+            "CON-S010-PUB-ORG029"
+          ]
+        }
+      },
+      "SRC0470": {
+        "reason": "Keep the Copyright Office record on the German original and remove the Dutch-title and Dutch-text links that do not belong to that source.",
+        "fields": {
+          "titleVariantIds": [
+            "TV0305"
+          ],
+          "contributionIds": [
+            "CON-S010-C-P020",
+            "CON-S010-L-P009",
+            "CON-S010-L-P096"
+          ],
+          "nameVariantIds": [
+            "PNV0031"
+          ]
+        }
+      },
+      "SRC0504": {
+        "reason": "Keep the BnF catalogue record on the dedicated French version and remove its obsolete French-title variant and superseded Rotter composer interpretation.",
+        "fields": {
+          "titleVariantIds": [
+            "TV0297"
+          ],
+          "contributionIds": [
+            "CON-S205-C-P020"
+          ]
+        }
+      },
       "SRC0532": {
         "reason": "Remove the former Wikimedia repository link after converting SRC0532 into the authoritative BnF title record.",
         "fields": {
@@ -10419,6 +10849,40 @@
       }
     },
     "Works": {
+      "W-S010": {
+        "reason": "Keep the German original free of Dutch/French edition sources, cover, title variants and version-specific or metadata-derived contributor claims.",
+        "fields": {
+          "sourceIds": [
+            "SRC0358"
+          ],
+          "mediaIds": [
+            "M053"
+          ],
+          "titleVariantIds": [
+            "TV0297",
+            "TV0305"
+          ],
+          "contributionIds": [
+            "CON-S010-C-P020",
+            "CON-S010-L-P009",
+            "CON-S010-L-P096"
+          ],
+          "nameVariantIds": [
+            "PNV0031"
+          ],
+          "personIds": [
+            "P096"
+          ]
+        }
+      },
+      "W-S205": {
+        "reason": "Remove the superseded collective Rotter composer interpretation from the French version before adding his correctly scoped original-lyric contribution.",
+        "fields": {
+          "contributionIds": [
+            "CON-S205-C-P020"
+          ]
+        }
+      },
       "W-F052": {
         "reason": "Remove the Harold S. Bucquet and MGM relations inherited from the conflated live-action record; retain and add only the documented animated-film relations.",
         "fields": {
@@ -10570,6 +11034,26 @@
       }
     },
     "Songs": {
+      "S010": {
+        "reason": "Keep the German Song record linked only to its own sources; French and Dutch titles are now standalone language-version Works.",
+        "fields": {
+          "sourceIds": [
+            "SRC0358"
+          ],
+          "titleVariantIds": [
+            "TV0297",
+            "TV0305"
+          ]
+        }
+      },
+      "S205": {
+        "reason": "Remove the duplicate French title-variant link because the French title is already the canonical title of S205 / W-S205.",
+        "fields": {
+          "titleVariantIds": [
+            "TV0297"
+          ]
+        }
+      },
       "S052": {
         "reason": "Use the item-level Hofmeister entry SRC0107 for this song and remove the redundant aggregate Schlagerheft source SRC0108.",
         "fields": {
@@ -10703,6 +11187,25 @@
       }
     },
     "People": {
+      "P009": {
+        "reason": "Remove the probable German-original lyricist contribution inferred from undivided Dutch-edition metadata; Kaper remains the confirmed composer.",
+        "fields": {
+          "contributionIds": [
+            "CON-S010-L-P009"
+          ]
+        }
+      },
+      "P096": {
+        "reason": "Move Ferry van Delden's Work and contribution links from the German original to the dedicated Dutch-language version.",
+        "fields": {
+          "workIds": [
+            "W-S010"
+          ],
+          "contributionIds": [
+            "CON-S010-L-P096"
+          ]
+        }
+      },
       "P077": {
         "reason": "Remove SRC0125 from Jurmann's source list because that Filmportal record names Kaper and Friedrich Jung; retain Jurmann's Die Zwei vom Südexpreß contribution through SRC0306 and SRC0373.",
         "fields": {
@@ -10712,10 +11215,12 @@
         }
       },
       "P020": {
-        "reason": "Remove Fritz Rotter from W-S083; the contemporary Hofmeister registration attributes the words to E. Marischka.",
+        "reason": "Remove the unsupported W-S083 lyric credit and the two superseded composer interpretations replaced by source-specific lyric credits.",
         "fields": {
           "contributionIds": [
-            "CON-S083-L-P020"
+            "CON-S083-L-P020",
+            "CON-S010-C-P020",
+            "CON-S205-C-P020"
           ]
         }
       },
@@ -10732,6 +11237,20 @@
         "fields": {
           "contributionIds": [
             "CON-S076-L-P017"
+          ]
+        }
+      }
+    },
+    "Person Name Variants": {
+      "PNV0031": {
+        "reason": "Keep the printed form “Ferry” with the Dutch item-level source and remove its obsolete German-original and German-source links.",
+        "fields": {
+          "workIds": [
+            "W-S010"
+          ],
+          "sourceIds": [
+            "SRC0195",
+            "SRC0470"
           ]
         }
       }
