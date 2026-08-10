@@ -1,4 +1,4 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=7326a57747";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=d896f2ec8d";
 import {
   certaintyBadge,
   escapeHtml,
@@ -23,7 +23,7 @@ import {
   scopeBadge,
   typeBadge,
   updateMeta,
-} from "./core.js?v=7326a57747";
+} from "./core.js?v=d896f2ec8d";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 let target = null;
@@ -476,11 +476,20 @@ function relationList(items, work, indexes) {
     renderItem: (item) => {
       const { targetWork, title } = relationMeta(item);
       const titleHtml = targetWork ? `<a href="${recordUrl("work", targetWork.id)}">${escapeHtml(title)}</a>` : escapeHtml(title);
-      return `<li><span>${typeBadge(item.relationType)} ${titleHtml}${item.publicNote ? `<br><small>${escapeHtml(item.publicNote)}</small>` : ""}</span>${certaintyBadge(item.certainty)}</li>`;
+      const linkedPeople = getIds(item, "personIds")
+        .map((id) => indexes.people.get(id))
+        .filter(Boolean);
+      const linkedPeopleHtml = linkedPeople.length
+        ? `<br><small>Associated people: ${linkedPeople.map((person) => `<a href="${recordUrl("person", person.id)}">${escapeHtml(person.displayName)}</a>`).join(", ")}</small>`
+        : "";
+      return `<li><span>${typeBadge(item.relationType)} ${titleHtml}${linkedPeopleHtml}${item.publicNote ? `<br><small>${escapeHtml(item.publicNote)}</small>` : ""}</span>${certaintyBadge(item.certainty)}</li>`;
     },
     searchText: (item) => {
       const { title } = relationMeta(item);
-      return [item.id, title, item.relationType, item.publicNote].filter(Boolean).join(" ");
+      const linkedPeople = getIds(item, "personIds")
+        .map((id) => indexes.people.get(id)?.displayName)
+        .filter(Boolean);
+      return [item.id, title, item.relationType, item.publicNote, ...linkedPeople].filter(Boolean).join(" ");
     },
   });
 }
