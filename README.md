@@ -45,3 +45,7 @@ dates are retained in `data/site/sitemap-state.json`: unchanged pages keep their
 existing `lastmod`, while only new or changed pages receive the build date. For a
 dated release prepared on a different day, pass an explicit ISO date, for example
 `python3 scripts/build_static_records.py --root . --publication-date 2026-08-09`.
+The static-record step requires Node.js 18 or newer because it executes the same renderer as
+the browser. This keeps the complete prerendered HTML and the enhanced view
+identical; Node is used directly and no package installation or bundling step is
+required.

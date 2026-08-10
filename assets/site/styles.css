@@ -2730,6 +2730,21 @@ main {
   color: var(--ink-soft);
 }
 
+/* Complete records remain readable when JavaScript is unavailable. The
+   browser module adds .js before activating disclosure and search controls;
+   without it, every relation stays visible and inert controls stay out of the
+   reading order. */
+html:not(.js) .progressive-list__controls,
+html:not(.js) .progressive-list__search,
+html:not(.js) .source-ledger__bar,
+html:not(.js) .source-row__summary {
+  display: none !important;
+}
+
+html:not(.js) .source-group__head {
+  pointer-events: none;
+}
+
 .identity-list li {
   align-items: flex-start;
 }

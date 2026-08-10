@@ -28,6 +28,87 @@ PUBLIC_PAGES = [
 # Pages that must appear in sitemap.xml (record.html and 404.html are shells, not routes).
 SITEMAP_PAGES = PUBLIC_PAGES[:6]
 
+PRERENDERED_RELATION_SECTIONS = {
+    "work": {
+        "contributionIds": "Contributors and credits",
+        "titleVariantIds": "Title variants",
+        "relationIds": "Related works and versions",
+        "timelineEventIds": "Timeline",
+        "sourceIds": "Sources",
+    },
+    "event": {
+        "personIds": "People",
+        "workIds": "Works",
+        "organizationIds": "Organizations",
+        "placeIds": "Places",
+        "sourceIds": "Sources",
+    },
+    "place": {
+        "timelineEventIds": "Documented events",
+        "personIds": "People",
+        "sourceIds": "Sources",
+    },
+    "media": {
+        "workIds": "Related works",
+        "timelineEventIds": "Timeline",
+        "placeIds": "Places",
+        "organizationIds": "Organizations",
+    },
+    "person": {
+        "workIds": "Documented works",
+        "timelineEventIds": "Documented chronology",
+        "sourceIds": "Sources",
+    },
+    "organization": {
+        "workIds": "Works",
+        "timelineEventIds": "Timeline",
+        "sourceIds": "Sources",
+    },
+    "source": {
+        "workIds": "Supported works",
+        "mediaIds": "Media",
+        "timelineEventIds": "Timeline",
+        "placeIds": "Places",
+        "personIds": "People",
+        "organizationIds": "Organizations",
+    },
+}
+
+PRERENDERED_RELATION_LINKS = {
+    "work": {"timelineEventIds": "event", "sourceIds": "source", "mediaIds": "media"},
+    "event": {
+        "personIds": "person",
+        "workIds": "work",
+        "organizationIds": "organization",
+        "placeIds": "place",
+        "sourceIds": "source",
+        "mediaIds": "media",
+    },
+    "place": {
+        "timelineEventIds": "event",
+        "personIds": "person",
+        "sourceIds": "source",
+        "mediaIds": "media",
+    },
+    "media": {
+        "workIds": "work",
+        "timelineEventIds": "event",
+        "placeIds": "place",
+        "organizationIds": "organization",
+        "sourceIds": "source",
+    },
+    "person": {"workIds": "work", "timelineEventIds": "event", "sourceIds": "source"},
+    "organization": {"workIds": "work", "timelineEventIds": "event", "sourceIds": "source"},
+    "source": {
+        "workIds": "work",
+        "mediaIds": "media",
+        "timelineEventIds": "event",
+        "placeIds": "place",
+        "personIds": "person",
+        "organizationIds": "organization",
+    },
+}
+
 ASSET_REFERENCE_RE = re.compile(
     r'((?:assets/site/|\./)[A-Za-z0-9._/-]+\.(?:css|js))\?v=([A-Za-z0-9._-]+)'
 )
@@ -273,6 +354,10 @@ def validate(root: Path) -> dict:
         expected_records = sum(static_report.get("countsByType", {}).values())
         if static_report.get("recordPageCount") != expected_records:
             errors.append("Static record report count is inconsistent")
+        if static_report.get("completePrerenderedPageCount") != expected_records:
+            errors.append("Not every static record is reported as completely prerendered")
+        if static_report.get("progressiveEnhancement") is not True:
+            errors.append("Static record report does not confirm progressive enhancement")
         static_pages = list((root / "records").glob("*/*/index.html"))
         if len(static_pages) != expected_records:
             errors.append("Static record page count does not match its report")
@@ -314,15 +399,100 @@ def validate(root: Path) -> dict:
             if expected_url not in sitemap_urls:
                 errors.append(f"Sitemap omits static record {relative}")
             page_parser = ReferenceParser()
-            page_parser.feed(page.read_text(encoding="utf-8"))
+            text = page.read_text(encoding="utf-8")
+            page_parser.feed(text)
             if page_parser.skip_links != 1:
                 errors.append(
                     f"{relative}: expected exactly one skip link, "
                     f"found {page_parser.skip_links}"
                 )
             parts = page.relative_to(root).parts
+            if 'data-prerendered="true"' not in text:
+                errors.append(f"{relative}: complete record content is not prerendered")
+            if '<section class="record-hero' not in text or '<div class="shell record-layout' not in text:
+                errors.append(f"{relative}: prerendered record structure is incomplete")
+            for hidden_relation in (
+                "data-progressive-panel hidden",
+                "data-group-body hidden",
+                "data-row-detail hidden",
+            ):
+                if hidden_relation in text:
+                    errors.append(
+                        f"{relative}: prerendered relations are hidden without JavaScript"
+                    )
+            if len(parts) >= 4 and parts[0] == "records":
+                record_type, record_id = parts[1], parts[2]
+                payload_path = root / "data/site/records" / record_type / f"{record_id}.json"
+                if not payload_path.is_file():
+                    errors.append(f"{relative}: record payload is missing")
+                else:
+                    payload = read_json(payload_path)
+                    table_name = {
+                        "work": "works",
+                        "event": "timelineEvents",
+                        "place": "places",
+                        "media": "media",
+                        "person": "people",
+                        "organization": "organizations",
+                        "source": "sources",
+                    }.get(record_type)
+                    record = next(
+                        (
+                            item
+                            for item in payload.get("tables", {}).get(table_name, [])
+                            if item.get("id") == record_id
+                        ),
+                        None,
+                    )
+                    if not record:
+                        errors.append(f"{relative}: primary record is missing from its payload")
+                    else:
+                        for field, heading in PRERENDERED_RELATION_SECTIONS.get(record_type, {}).items():
+                            if record.get(field) and f"<h2>{heading}" not in text:
+                                errors.append(
+                                    f"{relative}: prerendered relation section {heading!r} is missing"
+                                )
+                        for field, linked_type in PRERENDERED_RELATION_LINKS.get(record_type, {}).items():
+                            for linked_id in record.get(field) or []:
+                                href = f'href="records/{linked_type}/{linked_id}/"'
+                                if href not in text:
+                                    errors.append(
+                                        f"{relative}: prerendered relation {field} -> {linked_id} is missing"
+                                    )
+                        if record_type == "work":
+                            contributions = {
+                                item.get("id"): item
+                                for item in payload.get("tables", {}).get("contributions", [])
+                            }
+                            for contribution_id in record.get("contributionIds") or []:
+                                contribution = contributions.get(contribution_id) or {}
+                                for linked_type, field in (
+                                    ("person", "personIds"),
+                                    ("organization", "organizationIds"),
+                                ):
+                                    for linked_id in contribution.get(field) or []:
+                                        if f'href="records/{linked_type}/{linked_id}/"' not in text:
+                                            errors.append(
+                                                f"{relative}: contribution {contribution_id} omits {linked_id}"
+                                            )
+                            relations = {
+                                item.get("id"): item
+                                for item in payload.get("tables", {}).get("workRelations", [])
+                            }
+                            for relation_id in record.get("relationIds") or []:
+                                relation = relations.get(relation_id) or {}
+                                linked_ids = {
+                                    *(relation.get("sourceWorkIds") or []),
+                                    *(relation.get("targetWorkIds") or []),
+                                } - {record_id}
+                                if linked_ids and not any(
+                                    f'href="records/work/{linked_id}/"' in text
+                                    for linked_id in linked_ids
+                                ):
+                                    errors.append(
+                                        f"{relative}: work relation {relation_id} has no linked work"
+                                    )
             if len(parts) >= 4 and parts[0] == "records" and parts[1] == "person":
-                text = page.read_text(encoding="utf-8")
                 match = re.search(
                     r'<script type="application/ld\+json">(.*?)</script>',
                     text,

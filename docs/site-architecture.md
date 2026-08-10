@@ -25,16 +25,23 @@ as a noindex compatibility route and declares the static path as canonical.
 ## Runtime model
 
 - No Airtable API calls, authentication tokens or private backup files.
-- No server-side code and no required JavaScript build step.
+- No server-side code and no client-side JavaScript requirement for access to
+  record content. The publication build uses Node.js only to execute the shared
+  record renderer; it does not bundle or transform the site.
 - Collection pages fetch versioned files from `data/public/v1/` using relative
   URLs and cache them for the lifetime of the page.
 - A detail page fetches one generated, relation-aware bundle from
   `data/site/records/<type>/<id>.json`. The bundle contains the requested record
   and only the directly displayed public relations; it is rebuilt from the
   canonical tables and is never edited by hand.
-- `scripts/build_static_records.py` generates an HTML shell with record-specific
-  title, description, Open Graph metadata, canonical URL and readable fallback
-  content for every public record. It also writes the complete sitemap.
+- `scripts/build_static_records.py` generates complete HTML for every public
+  record: facts, contributions, relations, media and sources are present before
+  JavaScript runs. The build-time runner and the browser use the same renderer,
+  preventing the static and interactive versions from drifting apart. It also
+  writes record-specific metadata and the complete sitemap.
+- Record pages use progressive enhancement. Without JavaScript every published
+  relation and citation remains visible; with JavaScript, long lists gain
+  disclosure controls and search without replacing the prerendered record.
 - All linked records use stable public IDs, never Airtable record IDs.
 - The map uses Leaflet only for the map interface and OpenStreetMap tiles; an
   equivalent searchable place list remains available if the map library or tiles

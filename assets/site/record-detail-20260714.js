@@ -1,4 +1,4 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=3e6d5d3ade";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=bcb78afb97";
 import {
   certaintyBadge,
   escapeHtml,
@@ -23,15 +23,10 @@ import {
   scopeBadge,
   typeBadge,
   updateMeta,
-} from "./core.js?v=3e6d5d3ade";
+} from "./core.js?v=bcb78afb97";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
-mountSiteChrome("");
-
-const target = document.querySelector("#record-root");
-const params = new URLSearchParams(location.search);
-const requestedType = target?.dataset.recordType || params.get("type");
-const requestedId = target?.dataset.recordId || params.get("id");
+let target = null;
 const TYPE_CONFIG = {
   work: { table: "works", label: "Work", title: (item) => item.title },
   event: { table: "timelineEvents", label: "Timeline event", title: (item) => item.title },
@@ -165,7 +160,7 @@ function progressiveList(records, {
         ${initialToggleLabel}
       </button>
     </div>
-    <div class="progressive-list__panel" id="${panelId}" data-progressive-panel hidden>
+    <div class="progressive-list__panel" id="${panelId}" data-progressive-panel>
       ${searchable ? `<label class="progressive-list__search">
       <span>Search ${escapeHtml(label)}</span>
       <input type="search" data-progressive-search autocomplete="off">
@@ -294,7 +289,7 @@ function sourceRow(source, index, { expanded = false } = {}) {
       <span class="source-row__title">${escapeHtml(summary)}</span>
       ${chevron("source-row__chevron")}
     </button>
-    <div class="source-row__detail" id="${detailId}" data-row-detail hidden>
+    <div class="source-row__detail" id="${detailId}" data-row-detail>
       <p>${escapeHtml(full)}</p>
       ${links}
     </div>
@@ -320,15 +315,15 @@ function sourceLedger(records) {
   let counter = 0;
   const groupsMarkup = ordered.map(([key, items], groupIndex) => {
     const bodyId = `${ledgerId}-group-${groupIndex}`;
-    const expanded = ordered.length === 1;
+    const expanded = true;
     const rows = items.map((item) => sourceRow(item, counter += 1)).join("");
     return `<section class="source-group" data-ledger-group>
-      <button class="source-group__head" type="button" data-group-toggle aria-expanded="${expanded}" aria-controls="${bodyId}">
+      <button class="source-group__head" type="button" data-group-toggle aria-expanded="${expanded}" aria-controls="${bodyId}" aria-disabled="true" tabindex="-1">
         ${chevron("source-group__chevron")}
         <span class="source-group__name">${escapeHtml(SOURCE_TYPE_LABELS[key] || humanize(key))}</span>
         <span class="source-group__count">${items.length}</span>
       </button>
-      <ol class="source-rows" id="${bodyId}" data-group-body${expanded ? "" : " hidden"}>${rows}</ol>
+      <ol class="source-rows" id="${bodyId}" data-group-body>${rows}</ol>
     </section>`;
   }).join("");
   return `<div class="source-ledger" data-source-ledger data-total="${sorted.length}" id="${ledgerId}">
@@ -705,6 +700,11 @@ function renderMedia(media, data, indexes) {
         section("About this gallery", publicText(media.publicCaption, media.description)),
         section(`Gallery · ${galleryCount} images`, gallery, "record-section--gallery"),
         section("Rights and attribution", '<div class="scope-note">Credit, source and rights information are provided with each individual image.</div>'),
+        section("Related works", entityList(works, "work", (item) => [item.year, item.workType].filter(Boolean).join(" · ")), "", works.length),
+        section("Timeline", entityList(events, "event", (item) => item.displayDate || item.dateStart), "", events.length),
+        section("Places", entityList(places, "place", (item) => [item.city, item.country].filter(Boolean).join(", ")), "", places.length),
+        section("Organizations", entityList(organizations, "organization", (item) => (item.types || []).map(humanize).join(", ")), "", organizations.length),
+        section("Sources", sourceList(sources), "", sources.length),
       ].join(""),
       aside: "",
       fullWidth: true,
@@ -859,6 +859,13 @@ function initializeSourceLedgers() {
     };
 
     groups.forEach((group) => {
+      const toggle = group.querySelector("[data-group-toggle]");
+      toggle.removeAttribute("aria-disabled");
+      toggle.removeAttribute("tabindex");
+      setGroup(group, groups.length === 1);
+    });
+
+    groups.forEach((group) => {
       group.querySelector("[data-group-toggle]").addEventListener("click", () => {
         const open = group.querySelector("[data-group-toggle]").getAttribute("aria-expanded") === "true";
         setGroup(group, !open);
@@ -869,6 +876,8 @@ function initializeSourceLedgers() {
     rows.forEach((row) => {
       const toggle = row.querySelector("[data-row-toggle]");
       const detail = row.querySelector("[data-row-detail]");
+      toggle.setAttribute("aria-expanded", "false");
+      detail.hidden = true;
       toggle.addEventListener("click", () => {
         const open = toggle.getAttribute("aria-expanded") === "true";
         toggle.setAttribute("aria-expanded", String(!open));
@@ -964,6 +973,7 @@ function initializeProgressiveLists() {
       else expand();
     });
     search?.addEventListener("input", applySearch);
+    collapse();
   });
 }
 
@@ -1041,26 +1051,25 @@ const renderers = {
   source: renderSource,
 };
 
-try {
+export function renderRecordView(requestedType, requestedId, data) {
   if (!TYPE_CONFIG[requestedType] || !requestedId) {
     throw new Error("The record URL is incomplete or uses an unsupported record type.");
   }
-  const data = await loadRecordPayload(requestedType, requestedId);
+  progressiveListSequence = 0;
   const indexes = Object.fromEntries(RECORD_TABLES.map((name) => [name, indexById(data[name])]));
   const config = TYPE_CONFIG[requestedType];
   const record = indexes[config.table].get(requestedId);
   if (!record) throw new Error(`No public ${config.label.toLowerCase()} record was found for ${requestedId}.`);
+  return {
+    config,
+    view: renderers[requestedType](record, data, indexes),
+  };
+}
 
-  const view = renderers[requestedType](record, data, indexes);
+export function renderRecordMarkup(view, requestedId) {
   const titleLength = Array.from(view.title || "").length;
   const titleClass = titleLength > 72 ? " record-hero--extra-long-title" : titleLength > 46 ? " record-hero--long-title" : "";
-  updateMeta({
-    title: view.title,
-    description: `${config.label} ${requestedId} in the source-based Bronisław Kaper archive, documented through 1939.`,
-  });
-  setCanonicalRecordUrl(requestedType, requestedId);
-  target.className = "";
-  target.innerHTML = `
+  return `
     <section class="record-hero${titleClass}">
       <div class="shell record-hero__grid">
         <div>
@@ -1076,10 +1085,50 @@ try {
         <div>${view.main || `<div class="empty-state"><p>No additional public detail is available.</p></div>`}</div>
         <aside>${view.aside || ""}</aside>
       </div>
-    </section>`;
-  initializeProgressiveLists();
-  initializeSourceLedgers();
-} catch (error) {
-  target.className = "shell";
-  renderError(target, error);
+    </section>`.replace(/[ \t]+$/gm, "");
+}
+
+async function bootstrapRecordPage() {
+  mountSiteChrome("");
+  target = document.querySelector("#record-root");
+  if (target?.dataset.prerendered === "true") {
+    // Canonical record routes already contain the complete scholarly record.
+    // JavaScript only enhances their existing controls; a failed data request
+    // must never replace or hide content that is already present in the HTML.
+    initializeProgressiveLists();
+    initializeSourceLedgers();
+    return;
+  }
+  const params = new URLSearchParams(location.search);
+  const requestedType = target?.dataset.recordType || params.get("type");
+  const requestedId = target?.dataset.recordId || params.get("id");
+  try {
+    if (!target) throw new Error("The record page is missing its content container.");
+    if (!TYPE_CONFIG[requestedType] || !requestedId) {
+      throw new Error("The record URL is incomplete or uses an unsupported record type.");
+    }
+    const data = await loadRecordPayload(requestedType, requestedId);
+    const { config, view } = renderRecordView(requestedType, requestedId, data);
+    updateMeta({
+      title: view.title,
+      description: `${config.label} ${requestedId} in the source-based Bronisław Kaper archive, documented through 1939.`,
+    });
+    setCanonicalRecordUrl(requestedType, requestedId);
+    target.className = "";
+    if (target.dataset.prerendered !== "true") {
+      target.innerHTML = renderRecordMarkup(view, requestedId);
+    }
+    initializeProgressiveLists();
+    initializeSourceLedgers();
+  } catch (error) {
+    if (target) {
+      target.className = "shell";
+      renderError(target, error);
+    }
+  }
+}
+
+if (typeof document !== "undefined") {
+  document.documentElement.classList.add("js");
+  bootstrapRecordPage();
 }

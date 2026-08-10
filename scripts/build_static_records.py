@@ -39,11 +39,6 @@ TYPE_LABELS = {
     "organization": "Organization",
     "source": "Source",
 }
-PERIOD_META = {
-    "warsaw": ("Warsaw", "1902–1926"),
-    "european": ("European", "1926–1934"),
-    "hollywood": ("Hollywood", "1935–1939"),
-}
 CSP = (
     "default-src 'self'; script-src 'self' https://unpkg.com; "
     "style-src 'self' 'unsafe-inline' https://unpkg.com; "
@@ -55,6 +50,45 @@ CSP = (
 
 def read_json(path: Path):
     return json.loads(path.read_text(encoding="utf-8"))
+
+
+def render_static_record_bodies(root: Path) -> dict[str, str]:
+    """Render every record with the browser's canonical view templates.
+
+    This keeps crawlable HTML and the JavaScript-enhanced view structurally
+    identical instead of maintaining a second, abbreviated Python template.
+    """
+    node = shutil.which("node")
+    if not node:
+        bundled = (
+            Path.home()
+            / ".cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node"
+        )
+        if bundled.is_file():
+            node = str(bundled)
+    if not node:
+        raise RuntimeError(
+            "Node.js is required to prerender complete record pages with the shared renderer"
+        )
+    runner = root / "scripts/render_static_record_bodies.mjs"
+    try:
+        result = subprocess.run(
+            [node, str(runner), str(root)],
+            cwd=root,
+            check=True,
+            capture_output=True,
+            text=True,
+        )
+        rendered = json.loads(result.stdout)
+    except (OSError, subprocess.CalledProcessError, json.JSONDecodeError) as error:
+        detail = getattr(error, "stderr", "") or str(error)
+        raise RuntimeError(f"Complete record prerendering failed: {detail.strip()}") from error
+    if not isinstance(rendered, dict) or not all(
+        isinstance(key, str) and isinstance(value, str)
+        for key, value in rendered.items()
+    ):
+        raise RuntimeError("Complete record prerendering returned an invalid payload")
+    return rendered
 
 
 def content_hash(text: str) -> str:
@@ -167,30 +201,6 @@ def updated_sitemap_state(
             stale_routes.append(url)
         entries[url] = {"contentHash": digest, "lastmod": lastmod}
     return entries, stale_routes, updated_count
-
-
-def period_label(value: str) -> str:
-    key = str(value or "").strip().lower().replace(" ", "_")
-    label, year_range = PERIOD_META.get(key, (str(value or ""), ""))
-    return f"{label} · {year_range}" if year_range else label
-
-
-def period_labels(record: dict) -> str:
-    values = record.get("periods") or [record.get("period")]
-    return ", ".join(period_label(value) for value in values if value)
-
-
-MAP_PRECISION_LABELS = {
-    "address_level": "Address-level coordinates",
-    "venue_level": "Venue-level coordinates",
-    "site_approximate": "Approximate historical site",
-    "district_level": "District-level reference point",
-    "city_level": "City-level reference point",
-}
-
-
-def map_precision_label(value: str) -> str:
-    return MAP_PRECISION_LABELS.get(value, str(value or "").replace("_", " ").title())
 
 
 def esc(value) -> str:
@@ -391,53 +401,6 @@ def summary_for(
     return short or full
 
 
-def facts_for(record_type: str, record: dict) -> list[tuple[str, str]]:
-    if record_type == "work":
-        return [("Year", record.get("year")), ("Type", record.get("workType")), ("Period", period_labels(record))]
-    if record_type == "event":
-        return [
-            ("Date", record.get("displayDate") or record.get("dateStart")),
-            ("Period", period_labels(record)),
-            ("Place", record.get("placeDisplay")),
-            ("Category", record.get("category")),
-        ]
-    if record_type == "place":
-        coordinates = ""
-        if record.get("latitude") is not None and record.get("longitude") is not None:
-            coordinates = f"{record['latitude']}, {record['longitude']}"
-        return [
-            ("City", record.get("city")),
-            ("Country", record.get("country")),
-            ("Type", record.get("placeType")),
-            ("Coordinate precision", map_precision_label(record.get("mapPrecision"))),
-            ("Reference coordinates", coordinates),
-            ("Linked-event periods", period_labels(record)),
-        ]
-    if record_type == "media":
-        if record.get("mediaType") == "document_gallery":
-            return [("Images", len(record.get("assetPaths", []))), ("Period", period_labels(record))]
-        return [("Media type", record.get("mediaType")), ("Period", period_labels(record)), ("Rights", record.get("rightsStatus"))]
-    if record_type == "person":
-        return [("Authorized name", record.get("authorizedName")), ("Primary role", record.get("primaryRole"))]
-    if record_type == "organization":
-        return [("Authorized name", record.get("authorizedName")), ("City", record.get("city")), ("Country", record.get("country"))]
-    return [("Creator", record.get("creator")), ("Date", record.get("date")), ("Repository", record.get("repository"))]
-
-
-def source_links(record_type: str, record: dict, tables: dict) -> str:
-    if record_type in {"person", "organization", "source"}:
-        return ""
-    source_by_id = {item["id"]: item for item in tables["sources"]}
-    sources = [source_by_id[source_id] for source_id in record.get("sourceIds", []) if source_id in source_by_id]
-    if not sources:
-        return ""
-    items = "".join(
-        f'<li><a href="records/source/{quote(source["id"], safe="")}/">{esc(source.get("shortCitation") or source.get("title") or source["id"])}</a></li>'
-        for source in sources
-    )
-    return f'<section class="record-section"><h2>Sources</h2><ol class="citation-list">{items}</ol></section>'
-
-
 SCHEMA_TYPE = {
     "person": "Person",
     "organization": "Organization",
@@ -631,6 +594,7 @@ def static_page(
     record: dict,
     tables: dict,
     source_description_counts: dict[str, int],
+    body_markup: str,
 ) -> str:
     title = title_for(record_type, record)
     summary = summary_for(record_type, record, tables, source_description_counts)
@@ -640,22 +604,10 @@ def static_page(
     # qualifying them keeps every <title> distinct in search results.
     page_title = title if record_type in {"work", "person", "place", "event"} else f"{title} ({label.lower()})"
     record_id = record["id"]
-    is_gallery = record_type == "media" and record.get("mediaType") == "document_gallery"
-    style_version = "3e6d5d3ade"
-    record_script_version = "3e6d5d3ade"
+    style_version = "bcb78afb97"
+    record_script_version = "bcb78afb97"
     route = f"records/{record_type}/{quote(record_id, safe='')}/"
     canonical = f"{ORIGIN}{route}"
-    facts = "".join(
-        f"<div><dt>{esc(label_text)}</dt><dd>{esc(value)}</dd></div>"
-        for label_text, value in facts_for(record_type, record)
-        if value not in (None, "", [])
-    )
-    sources = "" if is_gallery else source_links(record_type, record, tables)
-    summary_section = (
-        f'<section class="record-section"><h2>Summary</h2><p class="lead">{esc(summary)}</p></section>'
-        if summary
-        else ""
-    )
     og_image = og_image_for(record_type, record, tables)
     og_image_size = (
         '\n  <meta property="og:image:width" content="180">'
@@ -703,15 +655,7 @@ def static_page(
     </div>
   </header>
   <main id="main-content">
-    <div id="record-root" data-record-type="{esc(record_type)}" data-record-id="{esc(record_id)}">
-      <section class="record-hero">
-        <div class="shell record-hero__grid">
-          <div><p class="eyebrow">{esc(label)} · <span class="record-id">{esc(record_id)}</span></p><h1>{esc(title)}</h1></div>
-          <dl class="record-facts">{facts}</dl>
-        </div>
-      </section>
-      <section class="section"><div class="shell record-layout"><div>{summary_section}{sources}</div></div></section>
-    </div>
+    <div id="record-root" data-record-type="{esc(record_type)}" data-record-id="{esc(record_id)}" data-prerendered="true">{body_markup}</div>
   </main>
   <footer class="site-footer" data-site-footer><div class="shell"><p>Bronisław Kaper research archive · documented through 1939</p></div></footer>
   <script type="module" src="assets/site/record-detail-20260714.js?v={record_script_version}"></script>
@@ -733,6 +677,7 @@ def expected_outputs(
         for item in public_sources
         if item.get("fullCitation")
     )
+    rendered_bodies = render_static_record_bodies(root)
     outputs: dict[Path, str] = {}
     routes = []
     counts = {}
@@ -744,11 +689,15 @@ def expected_outputs(
             tables = payload["tables"]
             record = next(item for item in tables[table] if item["id"] == payload["id"])
             output = root / "records" / record_type / payload["id"] / "index.html"
+            body_key = f"{record_type}/{payload['id']}"
+            if body_key not in rendered_bodies:
+                raise RuntimeError(f"Missing prerendered record body: {body_key}")
             outputs[output] = static_page(
                 record_type,
                 record,
                 tables,
                 source_description_counts,
+                rendered_bodies[body_key],
             )
             routes.append(f"records/{record_type}/{quote(payload['id'], safe='')}/")
     documents = sitemap_route_documents(root, outputs, routes)
@@ -768,6 +717,8 @@ def expected_outputs(
     report = {
         "schemaVersion": "1.0.0",
         "recordPageCount": len(outputs),
+        "completePrerenderedPageCount": len(outputs),
+        "progressiveEnhancement": True,
         "countsByType": counts,
         "sitemapUrlCount": len(documents),
         "sitemapBytes": len(sitemap.encode("utf-8")),
