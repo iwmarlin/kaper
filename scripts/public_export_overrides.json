@@ -5853,6 +5853,38 @@
           ],
           "primaryUrl": "https://www.szukajwarchiwach.gov.pl/jednostka/-/jednostka/5898131"
         }
+      },
+      "SRC0660": {
+        "reason": "Add the exact periodical article and page containing the supplied 1928 portrait of Nicholas Brodszky, using the verified issue date, printed page number and historical Hungarian name form.",
+        "fields": {
+          "id": "SRC0660",
+          "shortCitation": "Délibáb 2, no. 45 (10 November 1928), 29 — interview and portrait of Bródszky Miklós",
+          "fullCitation": "“Magyar dalt fog énekelni Budapesten a suttogó bariton.” Délibáb 2, no. 45 (10 November 1928): 29. Interview with and portrait of Bródszky Miklós (Nicholas Brodszky). Electronic Periodicals Archive and Database (EPA), National Széchényi Library.",
+          "sourceType": "periodical_article",
+          "title": "Magyar dalt fog énekelni Budapesten a suttogó bariton",
+          "creator": "Délibáb",
+          "repository": "Electronic Periodicals Archive and Database (EPA), National Széchényi Library",
+          "publication": "Délibáb",
+          "date": "1928-11-10",
+          "accessDate": "2026-08-10",
+          "reliability": "high",
+          "sourceStatus": "verified",
+          "slug": "src0660-delibab-nicholas-brodszky-interview-portrait-1928",
+          "mediaIds": [
+            "M307"
+          ],
+          "personIds": [
+            "P150"
+          ],
+          "primaryUrl": "https://epa.oszk.hu/05700/05709/00098/pdf/EPA05709_delibab_1928_045.pdf",
+          "additionalLinks": [
+            {
+              "label": "Délibáb archive, 1927–1944",
+              "url": "https://epa.oszk.hu/05700/05709/",
+              "role": "repository_record"
+            }
+          ]
+        }
       }
     },
     "Songs": {
@@ -6790,6 +6822,37 @@
           "rightsNote": "Public domain: the Narodowe Archiwum Cyfrowe object record states that rights have expired (“Wygasły”).",
           "sourceIds": [
             "SRC0659"
+          ],
+          "periods": [
+            "european"
+          ]
+        }
+      },
+      "M307": {
+        "reason": "Add the supplied reduced-resolution portrait crop of Nicholas Brodszky from its verified 1928 Délibáb article and expose it on his person record and in the media catalogue.",
+        "fields": {
+          "id": "M307",
+          "title": "Nicholas Brodszky — portrait in Délibáb, 1928",
+          "slug": "nicholas-brodszky-portrait-delibab-1928",
+          "mediaType": "image",
+          "storageType": "local",
+          "assetPath": "assets/images/portraits/brodszky.jpg",
+          "assetPaths": [
+            "assets/images/portraits/brodszky.jpg"
+          ],
+          "assetCount": 1,
+          "externalUrl": "https://epa.oszk.hu/05700/05709/00098/pdf/EPA05709_delibab_1928_045.pdf",
+          "category": "portrait",
+          "galleryStatus": "eligible",
+          "period": "european",
+          "sortOrder": 307,
+          "altText": "Sepia-toned head-and-shoulders portrait of the young Nicholas Brodszky in formal evening dress.",
+          "publicCaption": "Nicholas Brodszky, printed as Bródszky Miklós, in Délibáb on 10 November 1928. The portrait accompanied an interview about his work for Budapest's Városi Színház.",
+          "publicCreditLine": "Photographer unidentified; Délibáb, 2nd year, no. 45 (10 November 1928), p. 29; Electronic Periodicals Archive, National Széchényi Library.",
+          "rightsStatus": "ok",
+          "rightsNote": "Public domain. The source does not identify the photographer; the anonymous photograph was published in Hungary in 1928, and the applicable 70-year term has expired. It is also public domain in the United States because it was published before 1931. The local file is a reduced-resolution crop of the digitized periodical page.",
+          "sourceIds": [
+            "SRC0660"
           ],
           "periods": [
             "european"
@@ -8487,6 +8550,14 @@
           ],
           "workIds": [
             "W-S216"
+          ]
+        }
+      },
+      "P150": {
+        "reason": "Connect Nicholas Brodszky to the exact 1928 Délibáb article and portrait so his verified image appears on the person record without borrowing media from another identity.",
+        "fields": {
+          "sourceIds": [
+            "SRC0660"
           ]
         }
       },
