@@ -3584,6 +3584,28 @@
       }
     },
     "Contributions": {
+      "CON-S010-L-P115": {
+        "reason": "Represent A. Oliver's French-language lyric credit on the parent song card in the same contribution model used for Ferry's Dutch-language credit, while explicitly limiting its scope to the French version.",
+        "fields": {
+          "id": "CON-S010-L-P115",
+          "role": "lyricist",
+          "nameAsPrinted": "A. Oliver",
+          "evidenceContext": "sheet_music",
+          "scopeNote": "French-language edition only.",
+          "sortOrder": 23,
+          "certainty": "confirmed",
+          "publicNote": "A. Oliver is explicitly credited with the French words of “Quand une femm’ vous plaque.” This credit does not apply to the German original.",
+          "workIds": [
+            "W-S010"
+          ],
+          "personIds": [
+            "P115"
+          ],
+          "sourceIds": [
+            "SRC0504"
+          ]
+        }
+      },
       "CON-S196-PUB-ORG048": {
         "reason": "Replace the copied Robbins publisher credit with the publisher printed in the item-level 1936 French edition catalogue record.",
         "fields": {
@@ -7399,6 +7421,17 @@
       }
     },
     "Works": {
+      "W-S010": {
+        "reason": "Expose A. Oliver's documented French-version lyric credit in Contributors and credits and attach the BnF edition that supports it.",
+        "fields": {
+          "sourceIds": [
+            "SRC0504"
+          ],
+          "contributionIds": [
+            "CON-S010-L-P115"
+          ]
+        }
+      },
       "W-S008": {
         "reason": "Link the German song to the documented Polish-language version and its supporting discographic source.",
         "fields": {
@@ -8424,6 +8457,14 @@
       }
     },
     "People": {
+      "P115": {
+        "reason": "Synchronize A. Oliver's inverse contribution link to the parent song record carrying the explicitly scoped French-language lyric credit.",
+        "fields": {
+          "contributionIds": [
+            "CON-S010-L-P115"
+          ]
+        }
+      },
       "P030": {
         "reason": "Expose the licensed bust photograph on Heinz Hilpert's person page through its dedicated item-level source.",
         "fields": {
@@ -8797,14 +8838,6 @@
           ]
         }
       },
-      "REL0171": {
-        "reason": "Identify A. Oliver at the language-version relation level so the French lyricist is discoverable from the German parent song without misattributing the German text.",
-        "fields": {
-          "personIds": [
-            "P115"
-          ]
-        }
-      },
       "REL0196": {
         "reason": "Attach the institutional remake-rights catalogue that explicitly pairs the German and French titles.",
         "fields": {
@@ -8815,6 +8848,17 @@
       }
     },
     "Sources": {
+      "SRC0504": {
+        "reason": "Synchronize the BnF French-edition source with the parent song and its explicitly scoped A. Oliver contribution.",
+        "fields": {
+          "workIds": [
+            "W-S010"
+          ],
+          "contributionIds": [
+            "CON-S010-L-P115"
+          ]
+        }
+      },
       "SRC0532": {
         "reason": "Synchronize the converted BnF title record with the Bibliothèque nationale de France organization.",
         "fields": {

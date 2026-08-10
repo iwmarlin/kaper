@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 1085,
+  "count": 1086,
   "records": [
     {
       "id": "CON-F001-C-P009",
@@ -736,7 +736,6 @@
       ],
       "sourceIds": [
         "SRC0119",
-        "SRC0306",
         "SRC0373"
       ],
       "scopeNote": "Co-composer with Walter Jurmann of the documented film songs “Du gefällst mir so” and “Ganz ohne Liebe wär’ das Leben so bescheiden.”"
@@ -3426,8 +3425,7 @@
         "P009"
       ],
       "sourceIds": [
-        "SRC0306",
-        "SRC0587"
+        "SRC0306"
       ]
     },
     {
@@ -3444,8 +3442,7 @@
         "P077"
       ],
       "sourceIds": [
-        "SRC0306",
-        "SRC0587"
+        "SRC0306"
       ]
     },
     {
@@ -3482,8 +3479,7 @@
       "sourceIds": [
         "SRC0170",
         "SRC0306",
-        "SRC0373",
-        "SRC0587"
+        "SRC0373"
       ]
     },
     {
@@ -3499,8 +3495,7 @@
         "ORG001"
       ],
       "sourceIds": [
-        "SRC0170",
-        "SRC0587"
+        "SRC0170"
       ]
     },
     {
@@ -4472,8 +4467,7 @@
         "P157"
       ],
       "sourceIds": [
-        "SRC0373",
-        "SRC0384"
+        "SRC0373"
       ]
     },
     {
@@ -6158,6 +6152,25 @@
       ],
       "nameVariantIds": [
         "PNV0031"
+      ]
+    },
+    {
+      "id": "CON-S010-L-P115",
+      "role": "lyricist",
+      "nameAsPrinted": "A. Oliver",
+      "evidenceContext": "sheet_music",
+      "scopeNote": "French-language edition only.",
+      "sortOrder": 23,
+      "certainty": "confirmed",
+      "publicNote": "A. Oliver is explicitly credited with the French words of “Quand une femm’ vous plaque.” This credit does not apply to the German original.",
+      "workIds": [
+        "W-S010"
+      ],
+      "personIds": [
+        "P115"
+      ],
+      "sourceIds": [
+        "SRC0504"
       ]
     },
     {
@@ -18914,8 +18927,8 @@
         "SRC0633"
       ]
     },
-    {
-      "id": "CON-S215-P-P117",
+  {
+    "id": "CON-S215-P-P117",
       "role": "performer",
       "nameAsPrinted": "Jan Kiepura",
       "evidenceContext": "recording_label",
@@ -18926,45 +18939,45 @@
       "personIds": [
         "P117"
       ],
-      "sourceIds": [
-        "SRC0633"
-      ]
-    },
-    {
-      "id": "CON-S216-C-P009",
-      "role": "composer",
-      "nameAsPrinted": "Bronisław Kaper",
-      "displayCredit": "Composer",
-      "evidenceContext": "online_catalogue",
-      "sortOrder": 10,
-      "certainty": "confirmed",
-      "workIds": [
-        "W-S216"
-      ],
-      "personIds": [
-        "P009"
-      ],
-      "sourceIds": [
-        "SRC0658"
-      ]
-    },
-    {
-      "id": "CON-S216-L-P159",
-      "role": "lyricist",
-      "nameAsPrinted": "Julian Tuwim",
-      "displayCredit": "Polish lyrics",
-      "evidenceContext": "online_catalogue",
-      "sortOrder": 20,
-      "certainty": "confirmed",
-      "workIds": [
-        "W-S216"
-      ],
-      "personIds": [
-        "P159"
-      ],
-      "sourceIds": [
-        "SRC0658"
-      ]
-    }
-  ]
+    "sourceIds": [
+      "SRC0633"
+    ]
+  },
+  {
+    "id": "CON-S216-C-P009",
+    "role": "composer",
+    "nameAsPrinted": "Bronisław Kaper",
+    "displayCredit": "Composer",
+    "evidenceContext": "online_catalogue",
+    "sortOrder": 10,
+    "certainty": "confirmed",
+    "workIds": [
+      "W-S216"
+    ],
+    "personIds": [
+      "P009"
+    ],
+    "sourceIds": [
+      "SRC0658"
+    ]
+  },
+  {
+    "id": "CON-S216-L-P159",
+    "role": "lyricist",
+    "nameAsPrinted": "Julian Tuwim",
+    "displayCredit": "Polish lyrics",
+    "evidenceContext": "online_catalogue",
+    "sortOrder": 20,
+    "certainty": "confirmed",
+    "workIds": [
+      "W-S216"
+    ],
+    "personIds": [
+      "P159"
+    ],
+    "sourceIds": [
+      "SRC0658"
+    ]
+  }
+]
 }

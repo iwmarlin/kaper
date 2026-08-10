@@ -115,8 +115,6 @@ class RecordPayloadBuilder:
                 *record_ids(relation, "targetWorkIds"),
             ]
             self.add(bundle, "works", related_ids)
-            self.add(bundle, "people", record_ids(relation, "personIds"))
-            self.add(bundle, "organizations", record_ids(relation, "organizationIds"))
         self.add(bundle, "sources", record_ids(work, "sourceIds"))
         self.add_media_with_sources(bundle, record_ids(work, "mediaIds"))
         self.add(bundle, "timelineEvents", record_ids(work, "timelineEventIds"))

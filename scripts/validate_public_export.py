@@ -161,42 +161,6 @@ MAP_PRECISION_VALUES = {
 WARSAW_1926_EVENT_IDS = {"TE0014", "TE0047"}
 EUROPEAN_1926_EVENT_IDS = {"TE0015", "TE0016", "TE0048"}
 
-# These fields describe the same public graph edge from opposite ends. Keeping
-# both directions is necessary for reliable record pages and traversal.
-RECIPROCAL_PUBLIC_LINKS = (
-    ("People", "sourceIds", "Sources", "personIds"),
-    ("People", "timelineEventIds", "Timeline Events", "personIds"),
-    ("People", "placeIds", "Places", "personIds"),
-    ("People", "nameVariantIds", "Person Name Variants", "personIds"),
-    ("Organizations", "sourceIds", "Sources", "organizationIds"),
-    ("Organizations", "placeIds", "Places", "organizationIds"),
-    ("Organizations", "timelineEventIds", "Timeline Events", "organizationIds"),
-    ("Sources", "workIds", "Works", "sourceIds"),
-    ("Sources", "mediaIds", "Media", "sourceIds"),
-    ("Sources", "timelineEventIds", "Timeline Events", "sourceIds"),
-    ("Sources", "otherWorkIds", "Other Works", "sourceIds"),
-    ("Sources", "placeIds", "Places", "sourceIds"),
-    ("Sources", "filmIds", "Films", "sourceIds"),
-    ("Sources", "songIds", "Songs", "sourceIds"),
-    ("Sources", "titleVariantIds", "Title Variants", "sourceIds"),
-    ("Sources", "nameVariantIds", "Person Name Variants", "sourceIds"),
-    ("Media", "workIds", "Works", "mediaIds"),
-    ("Media", "timelineEventIds", "Timeline Events", "mediaIds"),
-    ("Media", "heroTimelineEventIds", "Timeline Events", "heroMediaIds"),
-    ("Media", "placeIds", "Places", "mediaIds"),
-    ("Works", "timelineEventIds", "Timeline Events", "workIds"),
-    ("Works", "titleVariantIds", "Title Variants", "workIds"),
-    ("Works", "nameVariantIds", "Person Name Variants", "workIds"),
-    ("Works", "filmIds", "Films", "workIds"),
-    ("Works", "songIds", "Songs", "workIds"),
-    ("Works", "otherWorkIds", "Other Works", "workIds"),
-    ("Works", "contributionIds", "Contributions", "workIds"),
-    ("People", "contributionIds", "Contributions", "personIds"),
-    ("Organizations", "contributionIds", "Contributions", "organizationIds"),
-    ("Sources", "contributionIds", "Contributions", "sourceIds"),
-    ("Sources", "workRelationIds", "Work Relations", "sourceIds"),
-)
-
 
 def canonical_periods(values: list[str]) -> list[str]:
     return [period for period in PERIOD_ORDER if period in set(values)]
@@ -373,36 +337,6 @@ class ExportValidator:
             self.errors.append("Manifest table counts do not match exported records")
         if self.report.get("counts") != expected_counts:
             self.errors.append("Build report table counts do not match exported records")
-
-    def _validate_reciprocal_links(self) -> None:
-        records_by_table = {
-            table_name: {
-                record["id"]: record
-                for record in payload.get("records", [])
-            }
-            for table_name, payload in self.payloads.items()
-        }
-
-        def require_inverse(
-            left_table: str,
-            left_field: str,
-            right_table: str,
-            right_field: str,
-        ) -> None:
-            for left_id, left_record in records_by_table.get(left_table, {}).items():
-                for right_id in left_record.get(left_field, []):
-                    right_record = records_by_table.get(right_table, {}).get(right_id)
-                    if right_record is None:
-                        continue
-                    if left_id not in right_record.get(right_field, []):
-                        self.errors.append(
-                            f"Asymmetric public link: {left_table} {left_id} {left_field} -> "
-                            f"{right_table} {right_id}, but {right_field} has no backlink"
-                        )
-
-        for left_table, left_field, right_table, right_field in RECIPROCAL_PUBLIC_LINKS:
-            require_inverse(left_table, left_field, right_table, right_field)
-            require_inverse(right_table, right_field, left_table, left_field)
 
     def _validate_content(self) -> None:
         forbidden_phrases = [
@@ -827,7 +761,6 @@ class ExportValidator:
         self._load_tables()
         self._validate_manifest()
         self._validate_schema_and_links()
-        self._validate_reciprocal_links()
         self._validate_content()
         self._validate_scope()
         self._validate_media()

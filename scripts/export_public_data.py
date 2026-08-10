@@ -339,40 +339,6 @@ PERIOD_YEAR_RANGES = {
 WARSAW_1926_EVENT_IDS = {"TE0014", "TE0047"}
 EUROPEAN_1926_EVENT_IDS = {"TE0015", "TE0016", "TE0048"}
 
-RECIPROCAL_PUBLIC_LINKS = (
-    ("People", "sourceIds", "Sources", "personIds"),
-    ("People", "timelineEventIds", "Timeline Events", "personIds"),
-    ("People", "placeIds", "Places", "personIds"),
-    ("People", "nameVariantIds", "Person Name Variants", "personIds"),
-    ("Organizations", "sourceIds", "Sources", "organizationIds"),
-    ("Organizations", "placeIds", "Places", "organizationIds"),
-    ("Organizations", "timelineEventIds", "Timeline Events", "organizationIds"),
-    ("Sources", "workIds", "Works", "sourceIds"),
-    ("Sources", "mediaIds", "Media", "sourceIds"),
-    ("Sources", "timelineEventIds", "Timeline Events", "sourceIds"),
-    ("Sources", "otherWorkIds", "Other Works", "sourceIds"),
-    ("Sources", "placeIds", "Places", "sourceIds"),
-    ("Sources", "filmIds", "Films", "sourceIds"),
-    ("Sources", "songIds", "Songs", "sourceIds"),
-    ("Sources", "titleVariantIds", "Title Variants", "sourceIds"),
-    ("Sources", "nameVariantIds", "Person Name Variants", "sourceIds"),
-    ("Media", "workIds", "Works", "mediaIds"),
-    ("Media", "timelineEventIds", "Timeline Events", "mediaIds"),
-    ("Media", "heroTimelineEventIds", "Timeline Events", "heroMediaIds"),
-    ("Media", "placeIds", "Places", "mediaIds"),
-    ("Works", "timelineEventIds", "Timeline Events", "workIds"),
-    ("Works", "titleVariantIds", "Title Variants", "workIds"),
-    ("Works", "nameVariantIds", "Person Name Variants", "workIds"),
-    ("Works", "filmIds", "Films", "workIds"),
-    ("Works", "songIds", "Songs", "workIds"),
-    ("Works", "otherWorkIds", "Other Works", "workIds"),
-    ("Works", "contributionIds", "Contributions", "workIds"),
-    ("People", "contributionIds", "Contributions", "personIds"),
-    ("Organizations", "contributionIds", "Contributions", "organizationIds"),
-    ("Sources", "contributionIds", "Contributions", "sourceIds"),
-    ("Sources", "workRelationIds", "Work Relations", "sourceIds"),
-)
-
 
 def normalized_source_note(note: str) -> str:
     """Turn a trailing editorial bracket into concise public-facing prose."""
@@ -1623,59 +1589,26 @@ class PublicExporter:
             work_ids = contribution.get("workIds", [])
             person_ids = contribution.get("personIds", [])
             organization_ids = contribution.get("organizationIds", [])
-            source_ids = contribution.get("sourceIds", [])
-            for work_id in work_ids:
-                work = output_by_id["Works"].get(work_id)
-                if work:
-                    self._append(work, "contributionIds", [contribution["id"]])
-                    self._append(work, "personIds", person_ids)
-                    self._append(work, "organizationIds", organization_ids)
+            if not work_ids:
+                continue
+            work = output_by_id["Works"].get(work_ids[0])
+            if work:
+                self._append(work, "personIds", person_ids)
+                self._append(work, "organizationIds", organization_ids)
             for person_id in person_ids:
                 person = output_by_id["People"].get(person_id)
                 if person:
-                    self._append(person, "contributionIds", [contribution["id"]])
                     self._append(person, "workIds", work_ids)
             for organization_id in organization_ids:
                 organization = output_by_id["Organizations"].get(organization_id)
                 if organization:
-                    self._append(organization, "contributionIds", [contribution["id"]])
                     self._append(organization, "workIds", work_ids)
-            for source_id in source_ids:
-                source = output_by_id["Sources"].get(source_id)
-                if source:
-                    self._append(source, "contributionIds", [contribution["id"]])
-
-        # A frozen snapshot and later audited overrides may contribute either
-        # side of a legitimate edge. Complete the inverse fields here so every
-        # public Contribution remains traversable in both directions.
-        contribution_backlinks = (
-            ("Works", "contributionIds", "workIds"),
-            ("People", "contributionIds", "personIds"),
-            ("Organizations", "contributionIds", "organizationIds"),
-            ("Sources", "contributionIds", "sourceIds"),
-        )
-        for table_name, record_field, contribution_field in contribution_backlinks:
-            for record in self.output_records[table_name]:
-                for contribution_id in record.get(record_field, []):
-                    contribution = output_by_id["Contributions"].get(contribution_id)
-                    if contribution:
-                        self._append(contribution, contribution_field, [record["id"]])
 
         for relation in self.output_records["Work Relations"]:
             for work_id in relation.get("sourceWorkIds", []) + relation.get("targetWorkIds", []):
                 work = output_by_id["Works"].get(work_id)
                 if work:
                     self._append(work, "relationIds", [relation["id"]])
-            for source_id in relation.get("sourceIds", []):
-                source = output_by_id["Sources"].get(source_id)
-                if source:
-                    self._append(source, "workRelationIds", [relation["id"]])
-
-        for source in self.output_records["Sources"]:
-            for relation_id in source.get("workRelationIds", []):
-                relation = output_by_id["Work Relations"].get(relation_id)
-                if relation:
-                    self._append(relation, "sourceIds", [source["id"]])
 
         subtype_targets = {
             "Films": "filmIds",
@@ -1688,26 +1621,6 @@ class PublicExporter:
                     work = output_by_id["Works"].get(work_id)
                     if work:
                         self._append(work, derived_key, [subtype["id"]])
-
-        # Complete every explicitly reciprocal public edge after all audited
-        # additions, removals and derived subtype indexes have been applied.
-        # This makes navigation deterministic regardless of which side was
-        # populated in the frozen source snapshot.
-        def synchronize(
-            left_table: str,
-            left_field: str,
-            right_table: str,
-            right_field: str,
-        ) -> None:
-            for left_record in self.output_records[left_table]:
-                for right_id in left_record.get(left_field, []):
-                    right_record = output_by_id[right_table].get(right_id)
-                    if right_record:
-                        self._append(right_record, right_field, [left_record["id"]])
-
-        for left_table, left_field, right_table, right_field in RECIPROCAL_PUBLIC_LINKS:
-            synchronize(left_table, left_field, right_table, right_field)
-            synchronize(right_table, right_field, left_table, left_field)
 
     def _normalize_periods(self) -> None:
         """Use one chronological period model throughout the public graph."""

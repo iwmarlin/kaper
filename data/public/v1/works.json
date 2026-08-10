@@ -3885,8 +3885,8 @@
       "publicScope": "standalone_page",
       "sourceIds": [
         "SRC0102",
-        "SRC0464",
-        "SRC0658"
+    "SRC0464",
+    "SRC0658"
       ],
       "contributionIds": [
         "CON-S008-C-P009",
@@ -3903,13 +3903,13 @@
       "organizationIds": [
         "ORG029"
       ],
-      "songIds": [
-        "S008"
-      ],
-      "relationIds": [
-        "REL0199"
-      ],
-      "periods": [
+  "songIds": [
+    "S008"
+  ],
+  "relationIds": [
+    "REL0199"
+  ],
+  "periods": [
         "european"
       ]
     },
@@ -3970,7 +3970,8 @@
         "SRC0112",
         "SRC0195",
         "SRC0358",
-        "SRC0470"
+        "SRC0470",
+        "SRC0504"
       ],
       "mediaIds": [
         "M053",
@@ -3989,6 +3990,7 @@
         "CON-S010-L-P009",
         "CON-S010-L-P020",
         "CON-S010-L-P096",
+        "CON-S010-L-P115",
         "CON-S010-PUB-ORG029"
       ],
       "nameVariantIds": [
@@ -3998,7 +4000,8 @@
       "personIds": [
         "P009",
         "P020",
-        "P096"
+        "P096",
+        "P115"
       ],
       "organizationIds": [
         "ORG029"
@@ -8021,9 +8024,6 @@
       ],
       "periods": [
         "european"
-      ],
-      "nameVariantIds": [
-        "PNV0041"
       ]
     },
     {
@@ -8069,9 +8069,6 @@
       ],
       "periods": [
         "european"
-      ],
-      "nameVariantIds": [
-        "PNV0041"
       ]
     },
     {
@@ -11941,8 +11938,8 @@
         "european"
       ]
     },
-    {
-      "id": "W-S215",
+  {
+    "id": "W-S215",
       "title": "Signorina, signorina",
       "slug": "signorina-signorina-pl",
       "sortTitle": "Signorina, signorina",
@@ -11977,41 +11974,41 @@
       "songIds": [
         "S215"
       ],
-      "periods": [
-        "european"
-      ]
-    },
-    {
-      "id": "W-S216",
-      "title": "Może tak, może nie",
-      "slug": "moze-tak-moze-nie",
-      "sortTitle": "Może tak, może nie",
-      "workType": "Song",
-      "year": 1932,
-      "period": "european",
-      "certainty": "confirmed",
-      "displayOnSite": true,
-      "publicScope": "standalone_page",
-      "sourceIds": [
-        "SRC0658"
-      ],
-      "contributionIds": [
-        "CON-S216-C-P009",
-        "CON-S216-L-P159"
-      ],
-      "personIds": [
-        "P009",
-        "P159"
-      ],
-      "relationIds": [
-        "REL0199"
-      ],
-      "songIds": [
-        "S216"
-      ],
-      "periods": [
-        "european"
-      ]
-    }
-  ]
+    "periods": [
+      "european"
+    ]
+  },
+  {
+    "id": "W-S216",
+    "title": "Może tak, może nie",
+    "slug": "moze-tak-moze-nie",
+    "sortTitle": "Może tak, może nie",
+    "workType": "Song",
+    "year": 1932,
+    "period": "european",
+    "certainty": "confirmed",
+    "displayOnSite": true,
+    "publicScope": "standalone_page",
+    "sourceIds": [
+      "SRC0658"
+    ],
+    "contributionIds": [
+      "CON-S216-C-P009",
+      "CON-S216-L-P159"
+    ],
+    "personIds": [
+      "P009",
+      "P159"
+    ],
+    "relationIds": [
+      "REL0199"
+    ],
+    "songIds": [
+      "S216"
+    ],
+    "periods": [
+      "european"
+    ]
+  }
+]
 }
