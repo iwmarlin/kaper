@@ -1810,9 +1810,30 @@ main {
 }
 
 .map-selection {
+  position: relative;
   min-height: 10rem;
   padding: 1rem;
   border-bottom: 1px solid var(--line);
+}
+
+.map-selection__close {
+  display: none;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: var(--surface);
+  color: var(--ink);
+  font-size: 1.35rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.map-selection__close:hover,
+.map-selection__close:focus-visible {
+  border-color: var(--accent);
+  color: var(--accent-dark);
 }
 
 .map-selection h3 {
@@ -1880,6 +1901,37 @@ main {
 .map-results-heading strong {
   color: var(--ink);
   font-size: 0.82rem;
+}
+
+.map-results-heading__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.map-list-toggle {
+  display: none;
+  min-height: 2.5rem;
+  padding: 0.35rem 0.65rem;
+  border: 1px solid var(--line-dark);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  letter-spacing: 0.035em;
+  text-transform: none;
+  cursor: pointer;
+}
+
+.map-list-toggle:hover,
+.map-list-toggle:focus-visible {
+  border-color: var(--accent);
+  color: var(--accent-dark);
+}
+
+.map-list-toggle[hidden],
+.place-list > li[hidden] {
+  display: none;
 }
 
 .place-list {
@@ -3202,6 +3254,26 @@ html:not(.js) .source-group__head {
   }
 }
 
+/* A tablet is wide enough to preserve the relationship between a marker and
+   its record. Keeping the map and directory beside one another also removes
+   the former 29rem + 30rem vertical stack. */
+@media (min-width: 761px) and (max-width: 900px) {
+  .map-explorer {
+    height: clamp(32rem, 70svh, 40rem);
+    grid-template-columns: minmax(0, 1fr) minmax(17rem, 0.44fr);
+  }
+
+  .map-canvas,
+  .map-panel {
+    height: auto;
+  }
+
+  .map-panel {
+    border-top: 0;
+    border-left: 1px solid var(--line);
+  }
+}
+
 @media (max-width: 680px) {
   :root {
     --shell: min(100% - 1.25rem, 1120px);
@@ -3961,7 +4033,7 @@ html:not(.js) .source-group__head {
   gap: 0.45rem 0.75rem;
 }
 
-@media (max-width: 680px) {
+@media (max-width: 760px) {
   .map-legend {
     right: 0.65rem;
     bottom: 1.4rem;
@@ -4029,6 +4101,8 @@ html:not(.js) .source-group__head {
      "Select a place" were covering a third of the visible world. */
   .map-canvas {
     position: relative;
+    height: 29rem;
+    height: clamp(25rem, 58svh, 31rem);
   }
 
   .map-canvas > .map-selection[data-state="empty"] {
@@ -4064,17 +4138,54 @@ html:not(.js) .source-group__head {
     left: 0.65rem;
     min-height: 0;
     z-index: 500;
-    max-height: 45%;
+    max-height: min(42%, 20rem);
     overflow-y: auto;
-    padding: 0.75rem 0.85rem;
+    padding: 0.75rem 3.7rem 0.75rem 0.85rem;
     border: 1px solid var(--line-dark);
     border-radius: var(--radius-sm);
     background: var(--surface);
     box-shadow: var(--shadow-sm);
+    overscroll-behavior: contain;
   }
 
+  .map-canvas > .map-selection .map-selection__close:not([hidden]) {
+    position: absolute;
+    top: 0.45rem;
+    right: 0.45rem;
+    display: grid;
+    place-items: center;
+  }
+
+  .map-results-heading {
+    min-height: 3.8rem;
+  }
+
+  .map-list-toggle:not([hidden]) {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .place-list {
+    border-bottom: 1px solid var(--line);
+  }
+}
+
+@media (max-width: 680px) {
   .page-hero--compact {
     padding-block: 1.1rem 0.9rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .map-results-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.45rem;
+  }
+
+  .map-results-heading__actions {
+    width: 100%;
+    justify-content: space-between;
   }
 }
 

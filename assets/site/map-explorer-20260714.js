@@ -10,7 +10,7 @@ import {
   periodValues,
   recordUrl,
   renderError,
-} from "./core.js?v=112bdf15b1";
+} from "./core.js?v=f442b2e3af";
 
 mountSiteChrome("map");
 
@@ -27,6 +27,8 @@ const selectionPrecision = document.querySelector("#place-selection-precision");
 const selectionPeriods = document.querySelector("#place-selection-periods");
 const selectionNote = document.querySelector("#place-selection-note");
 const selectionLink = document.querySelector("#place-selection-link");
+const selectionClose = document.querySelector("#place-selection-close");
+const placeListToggle = document.querySelector("#place-list-toggle");
 const toggleJourney = document.querySelector("#toggle-journey");
 const layerStatus = document.querySelector("#map-layer-status");
 const layerStatusLabel = document.querySelector("#map-layer-status-label");
@@ -39,6 +41,9 @@ let referenceBasemap;
 let historicalBasemapAvailable = true;
 let selectedId = null;
 const markerById = new Map();
+const compactMapLayout = window.matchMedia?.("(max-width: 760px)") || null;
+const COLLAPSED_PLACE_LIMIT = 8;
+let placeListExpanded = false;
 
 const HISTORICAL_FULL_ZOOM = 3;
 const REFERENCE_FULL_ZOOM = 5;
@@ -156,6 +161,9 @@ function resetSelection() {
   }
   selectedId = null;
   if (selectionPanel) selectionPanel.dataset.state = "empty";
+  document.querySelectorAll("#place-list button").forEach((button) => {
+    button.setAttribute("aria-current", "false");
+  });
   selectionKicker.textContent = "Explore the map";
   selectionTitle.textContent = "Select a place";
   selectionMeta.textContent = "Choose a marker or a place from the list to see its role in the archive.";
@@ -165,6 +173,20 @@ function resetSelection() {
     selectionNote.hidden = true;
   }
   selectionLink.hidden = true;
+  if (selectionClose) selectionClose.hidden = true;
+}
+
+function keepMarkerAboveSelection(marker) {
+  if (!map || !marker || !selectionPanel || !compactMapLayout?.matches) return;
+  window.requestAnimationFrame(() => {
+    if (!compactMapLayout.matches || selectionPanel.dataset.state !== "selected") return;
+    const panelHeight = Math.min(selectionPanel.offsetHeight, map.getContainer().clientHeight * 0.42);
+    map.panInside(marker.getLatLng(), {
+      paddingTopLeft: [24, 24],
+      paddingBottomRight: [24, panelHeight + 24],
+      animate: true,
+    });
+  });
 }
 
 function selectPlace(place, { moveMap = true } = {}) {
@@ -206,6 +228,7 @@ function selectPlace(place, { moveMap = true } = {}) {
   }
   selectionLink.href = recordUrl("place", place.id);
   selectionLink.hidden = false;
+  if (selectionClose) selectionClose.hidden = false;
 
   const marker = markerById.get(place.id);
   if (marker) {
@@ -217,12 +240,17 @@ function selectPlace(place, { moveMap = true } = {}) {
           marker.setIcon(markerIcon(place, true));
           marker.setZIndexOffset(1000);
           marker.openTooltip();
+          keepMarkerAboveSelection(marker);
         });
       } else {
         const zoom = place.placeType === "city" ? 8 : place.placeType === "district" ? 11 : 13;
+        map.once("moveend", () => keepMarkerAboveSelection(marker));
         map.flyTo([place.latitude, place.longitude], Math.max(map.getZoom(), zoom), { duration: 0.65 });
         marker.openTooltip();
+        keepMarkerAboveSelection(marker);
       }
+    } else {
+      keepMarkerAboveSelection(marker);
     }
   }
 }
@@ -363,46 +391,83 @@ try {
   }
   applyRoute();
 
+  if (selectionClose) {
+    selectionClose.addEventListener("click", () => {
+      resetSelection();
+      map?.getContainer()?.focus({ preventScroll: true });
+    });
+  }
+
+  document.addEventListener("keydown", (event) => {
+    if (
+      event.key !== "Escape"
+      || selectionPanel?.dataset.state !== "selected"
+      || !compactMapLayout?.matches
+    ) return;
+    const focusWasInSelection = selectionPanel.contains(document.activeElement);
+    resetSelection();
+    if (focusWasInSelection) map?.getContainer()?.focus({ preventScroll: true });
+  });
+
+  if (placeListToggle) {
+    placeListToggle.addEventListener("click", () => {
+      placeListExpanded = !placeListExpanded;
+      updatePlaceListDisclosure();
+    });
+  }
+
   // The opening view frames the documented stages on the historical map.
   let firstView = true;
 
-  // On a phone the selection card used to sit below the map and below the
-  // place list, so tapping a marker moved the answer off-screen. Below 680px
-  // the card is moved into the map canvas and shown as an overlay across the
-  // foot of the map, where the tap happened; above that width it returns to
-  // the top of the side panel, which is where it reads best.
-  // On a phone the selection card used to sit below the map and below the
-  // place list, so tapping a marker moved the answer off-screen. Below 680px
-  // the card is moved into the map canvas and shown as an overlay across the
-  // foot of the map, where the tap happened, and the legend is moved the other
-  // way — out of the canvas and into the panel — because two absolutely
-  // positioned blocks were stacking on top of each other at the bottom of a
-  // 24rem map. Above that width both return to where they read best.
+  // Compact screens keep the selected place with its marker: the selection
+  // becomes a non-modal sheet over the foot of the map, while the legend moves
+  // into the document flow. Tablets retain the side-by-side desktop model so
+  // the map and the place directory remain visible at the same time.
   function bindResponsivePlacement() {
     var selection = document.getElementById('place-selection');
     var legend = document.getElementById('map-legend');
     var canvas = document.querySelector('.map-canvas');
     var panel = document.querySelector('.map-panel');
-    if (!selection || !legend || !canvas || !panel || !window.matchMedia) return;
-    var narrow = window.matchMedia('(max-width: 680px)');
+    if (!selection || !legend || !canvas || !panel || !compactMapLayout) return;
+    var wasCompact = compactMapLayout.matches;
     function place() {
-      var selTarget = narrow.matches ? canvas : panel;
+      var isCompact = compactMapLayout.matches;
+      var selTarget = isCompact ? canvas : panel;
       if (selection.parentElement !== selTarget) {
         if (selTarget === canvas) selTarget.appendChild(selection);
         else selTarget.insertBefore(selection, selTarget.firstElementChild);
       }
-      var legTarget = narrow.matches ? panel : canvas;
+      var legTarget = isCompact ? panel : canvas;
       if (legend.parentElement !== legTarget) {
         if (legTarget === canvas) legTarget.appendChild(legend);
         else legTarget.insertBefore(legend, legTarget.firstElementChild);
       }
-      // The summary is hidden on wide screens, so a legend closed on a phone
-      // would otherwise stay shut with no control to reopen it.
-      if (!narrow.matches) legend.open = true;
+      legend.open = !isCompact;
+      if (isCompact && !wasCompact) placeListExpanded = false;
+      wasCompact = isCompact;
+      updatePlaceListDisclosure();
+      window.requestAnimationFrame(() => {
+        map?.invalidateSize({ pan: false });
+        if (isCompact && selectedId) keepMarkerAboveSelection(markerById.get(selectedId));
+      });
     }
     place();
-    if (typeof narrow.addEventListener === 'function') narrow.addEventListener('change', place);
-    else if (typeof narrow.addListener === 'function') narrow.addListener(place);
+    if (typeof compactMapLayout.addEventListener === 'function') compactMapLayout.addEventListener('change', place);
+    else if (typeof compactMapLayout.addListener === 'function') compactMapLayout.addListener(place);
+  }
+
+  function updatePlaceListDisclosure() {
+    if (!placeListToggle || !listTarget) return;
+    const items = [...listTarget.children].filter((item) => !item.classList.contains("place-list__empty"));
+    const queryActive = Boolean(search.value.trim());
+    const canCollapse = Boolean(compactMapLayout?.matches && !queryActive && items.length > COLLAPSED_PLACE_LIMIT);
+    const expanded = canCollapse && placeListExpanded;
+    items.forEach((item, index) => {
+      item.hidden = canCollapse && !expanded && index >= COLLAPSED_PLACE_LIMIT;
+    });
+    placeListToggle.hidden = !canCollapse;
+    placeListToggle.setAttribute("aria-expanded", String(expanded));
+    placeListToggle.textContent = expanded ? "Show fewer places" : `Show all ${items.length} places`;
   }
 
   function render() {
@@ -431,7 +496,7 @@ try {
           const location = [place.city, place.country].filter(Boolean).join(", ");
           return `
             <li>
-              <button type="button" data-id="${escapeHtml(place.id)}" aria-current="false" aria-label="${escapeHtml(`${place.displayName}; ${precision.label}; ${linkedEvents} linked ${linkedEvents === 1 ? "event" : "events"}`)}">
+              <button type="button" data-id="${escapeHtml(place.id)}" aria-current="${String(place.id === selectedId)}" aria-label="${escapeHtml(`${place.displayName}; ${precision.label}; ${linkedEvents} linked ${linkedEvents === 1 ? "event" : "events"}`)}">
                 <span class="place-list__main">
                   <strong>${escapeHtml(place.displayName)}</strong>
                   <small>${escapeHtml([location, humanize(place.placeType)].filter(Boolean).join(" · "))}</small>
@@ -442,6 +507,7 @@ try {
             </li>`;
         }).join("")
       : `<li class="place-list__empty">No places match your search.</li>`;
+    updatePlaceListDisclosure();
 
     if (selectedId && !filtered.some((place) => place.id === selectedId)) resetSelection();
 
