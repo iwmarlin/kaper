@@ -604,8 +604,8 @@ def static_page(
     # qualifying them keeps every <title> distinct in search results.
     page_title = title if record_type in {"work", "person", "place", "event"} else f"{title} ({label.lower()})"
     record_id = record["id"]
-    style_version = "bcb78afb97"
-    record_script_version = "bcb78afb97"
+    style_version = "112bdf15b1"
+    record_script_version = "112bdf15b1"
     route = f"records/{record_type}/{quote(record_id, safe='')}/"
     canonical = f"{ORIGIN}{route}"
     og_image = og_image_for(record_type, record, tables)
