@@ -385,6 +385,17 @@ def validate(root: Path) -> dict:
             errors.append("Not every static record is reported as completely prerendered")
         if static_report.get("progressiveEnhancement") is not True:
             errors.append("Static record report does not confirm progressive enhancement")
+        work_seo = static_report.get("workSeo", {})
+        if work_seo.get("recordCount") != static_report.get("countsByType", {}).get("work"):
+            errors.append("Work SEO report does not cover every static Work page")
+        if work_seo.get("longestMetaDescription", 0) > work_seo.get(
+            "metaDescriptionLimit", 0
+        ):
+            errors.append("A Work meta description exceeds its declared length limit")
+        if work_seo.get("descriptions", {}).get("duplicateGroupCount") != 0:
+            errors.append("Static Work pages contain duplicate meta descriptions")
+        if work_seo.get("pageTitles", {}).get("duplicateGroupCount") != 0:
+            errors.append("Static Work pages contain duplicate HTML titles")
         static_pages = list((root / "records").glob("*/*/index.html"))
         if len(static_pages) != expected_records:
             errors.append("Static record page count does not match its report")

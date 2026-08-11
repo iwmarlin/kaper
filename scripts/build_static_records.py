@@ -21,6 +21,9 @@ ORIGIN = "https://iwmarlin.github.io/kaper/"
 PUBLIC_PAGES = ["", "works.html", "people.html", "life.html", "map.html", "media.html"]
 SITEMAP_STATE_PATH = Path("data/site/sitemap-state.json")
 ISO_DATE_PATTERN = re.compile(r"^\d{4}-\d{2}-\d{2}$")
+META_DESCRIPTION_LIMIT = 160
+OG_DESCRIPTION_LIMIT = 180
+PAGE_TITLE_SUFFIX = "Kaper Archive"
 RECORD_TABLES = {
     "work": "works",
     "event": "timelineEvents",
@@ -217,8 +220,22 @@ def compact_text(value, limit: int = 300) -> str:
     text = re.sub(r"\s+", " ", str(value or "")).strip()
     if len(text) <= limit:
         return text
-    shortened = text[: limit + 1].rsplit(" ", 1)[0]
+    if limit <= 1:
+        return "…"[:limit]
+    # Reserve one character for the ellipsis so the returned value never
+    # exceeds the advertised limit, including for a single long token.
+    shortened = text[: limit - 1].rsplit(" ", 1)[0]
     return f"{shortened}…"
+
+
+def duplicate_metrics(values: list[str]) -> dict[str, int]:
+    """Summarize exact duplicate groups for generated SEO regression checks."""
+    duplicates = [count for count in Counter(values).values() if count > 1]
+    return {
+        "duplicateGroupCount": len(duplicates),
+        "duplicateRecordCount": sum(duplicates),
+        "largestDuplicateGroup": max(duplicates, default=0),
+    }
 
 
 AUTHORITY_URL_PATTERN = re.compile(r"https?://[^\s<>\"']+")
@@ -304,7 +321,9 @@ def related_film_titles(record: dict, tables: dict) -> list[str]:
 
 def work_summary(record: dict, tables: dict, subtype: dict) -> str:
     """Factual, record-specific summary used when no curated note exists."""
+    title = record.get("title") or record["id"]
     work_type = str(record.get("workType") or "Work")
+    work_kind = "work" if work_type.lower() == "other" else work_type.lower()
     year = record.get("year")
     composers = join_names(credited(tables, record["id"], "composer"))
     lyricists = join_names(credited(tables, record["id"], "lyricist"))
@@ -313,7 +332,8 @@ def work_summary(record: dict, tables: dict, subtype: dict) -> str:
     publisher = subtype.get("publisherAsPrinted") or join_names(
         credited(tables, record["id"], "publisher"), limit=1
     )
-    opening = f"{work_type}" + (f" ({year})" if year else "")
+    descriptor = f"a {year} {work_kind}" if year else f"a documented {work_kind}"
+    opening = f"{title} — {descriptor}"
     parts: list[str] = []
     if work_type.lower() == "film":
         if directors:
@@ -327,17 +347,25 @@ def work_summary(record: dict, tables: dict, subtype: dict) -> str:
         if composers:
             opening += f" by {composers}"
         if lyricists:
-            opening += f", words by {lyricists}"
+            opening += f", with words by {lyricists}"
         parts.append(opening + ".")
         films = related_film_titles(record, tables)
         if films:
             parts.append(f"Associated with the film {join_names(films, limit=2)}.")
         if publisher:
             parts.append(f"Published by {publisher}.")
-    count = len(record.get("sourceIds") or [])
-    if count:
-        parts.append(f"{count} linked source{'s' if count != 1 else ''}.")
     return " ".join(parts)
+
+
+def title_prefixed_work_summary(record: dict, summary: str) -> str:
+    """Keep every Work search excerpt identifiable without inventing new prose."""
+    title = compact_text(record.get("title") or record["id"])
+    summary = compact_text(summary)
+    if not summary:
+        return title
+    if summary.casefold().startswith(title.casefold()):
+        return summary
+    return f"{title} — {summary}"
 
 
 def summary_for(
@@ -357,9 +385,12 @@ def summary_for(
             {},
         )
         return compact_text(
-            subtype.get("publicNote")
-            or record.get("publicNote")
-            or work_summary(record, tables, subtype)
+            title_prefixed_work_summary(
+                record,
+                subtype.get("publicNote")
+                or record.get("publicNote")
+                or work_summary(record, tables, subtype),
+            )
         )
     if record_type == "event":
         return compact_text(record.get("longDescription") or record.get("shortDescription") or record.get("title"))
@@ -600,9 +631,20 @@ def static_page(
     summary = summary_for(record_type, record, tables, source_description_counts)
     meta_summary = summary or f"{title}, a documented record in the Bronisław Kaper research archive."
     label = TYPE_LABELS[record_type]
-    # Media, source and organization titles collide with work titles across the archive;
-    # qualifying them keeps every <title> distinct in search results.
-    page_title = title if record_type in {"work", "person", "place", "event"} else f"{title} ({label.lower()})"
+    # Work titles can name both a film and a song, and the same song title can
+    # recur in different years. A concise year/type qualifier is meaningful to
+    # readers and keeps search-result titles distinct without exposing IDs.
+    if record_type == "work":
+        work_kind = str(record.get("workType") or "work").lower()
+        if work_kind == "other":
+            work_kind = "work"
+        qualifier = " ".join(filter(None, [display_value(record.get("year")), work_kind]))
+        page_title = f"{title} — {qualifier}" if qualifier else title
+    elif record_type in {"person", "place", "event"}:
+        page_title = title
+    else:
+        page_title = f"{title} ({label.lower()})"
+    browser_title = f"{page_title} | {PAGE_TITLE_SUFFIX}"
     record_id = record["id"]
     style_version = "7760050c5f"
     record_script_version = "7760050c5f"
@@ -624,11 +666,11 @@ def static_page(
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <base href="../../../">
-  <meta name="description" content="{esc(compact_text(meta_summary, 180))}">
+  <meta name="description" content="{esc(compact_text(meta_summary, META_DESCRIPTION_LIMIT))}">
   <meta name="theme-color" content="#152c33">
   <meta name="robots" content="index,follow">
-  <meta property="og:title" content="{esc(title)} — Bronisław Kaper archive">
-  <meta property="og:description" content="{esc(compact_text(meta_summary, 200))}">
+  <meta property="og:title" content="{esc(browser_title)}">
+  <meta property="og:description" content="{esc(compact_text(meta_summary, OG_DESCRIPTION_LIMIT))}">
   <meta property="og:type" content="article">
   <meta property="og:url" content="{esc(canonical)}">
   <meta property="og:image" content="{esc(og_image['url'])}">
@@ -643,7 +685,7 @@ def static_page(
   <link rel="preload" href="assets/fonts/kaper-sans.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/kaper-serif.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/site/styles.css?v={style_version}">
-  <title>{esc(page_title)} — Bronisław Kaper, 1902–1939</title>
+  <title>{esc(browser_title)}</title>
   {ld_json}
 </head>
 <body>
@@ -681,6 +723,8 @@ def expected_outputs(
     outputs: dict[Path, str] = {}
     routes = []
     counts = {}
+    work_meta_descriptions: list[str] = []
+    work_page_titles: list[str] = []
     for record_type, table in RECORD_TABLES.items():
         payload_paths = sorted((record_root / record_type).glob("*.json"))
         counts[record_type] = len(payload_paths)
@@ -692,13 +736,23 @@ def expected_outputs(
             body_key = f"{record_type}/{payload['id']}"
             if body_key not in rendered_bodies:
                 raise RuntimeError(f"Missing prerendered record body: {body_key}")
-            outputs[output] = static_page(
+            document = static_page(
                 record_type,
                 record,
                 tables,
                 source_description_counts,
                 rendered_bodies[body_key],
             )
+            outputs[output] = document
+            if record_type == "work":
+                description_match = re.search(
+                    r'<meta name="description" content="([^"]*)">', document
+                )
+                title_match = re.search(r"<title>([^<]*)</title>", document)
+                if not description_match or not title_match:
+                    raise RuntimeError(f"Missing Work SEO metadata: {record['id']}")
+                work_meta_descriptions.append(html.unescape(description_match.group(1)))
+                work_page_titles.append(html.unescape(title_match.group(1)))
             routes.append(f"records/{record_type}/{quote(payload['id'], safe='')}/")
     documents = sitemap_route_documents(root, outputs, routes)
     sitemap_state, stale_routes, updated_count = updated_sitemap_state(
@@ -726,6 +780,13 @@ def expected_outputs(
             "dateCount": len(lastmod_dates),
             "earliest": lastmod_dates[0] if lastmod_dates else "",
             "latest": lastmod_dates[-1] if lastmod_dates else "",
+        },
+        "workSeo": {
+            "recordCount": len(work_meta_descriptions),
+            "metaDescriptionLimit": META_DESCRIPTION_LIMIT,
+            "longestMetaDescription": max(map(len, work_meta_descriptions), default=0),
+            "descriptions": duplicate_metrics(work_meta_descriptions),
+            "pageTitles": duplicate_metrics(work_page_titles),
         },
     }
     state_payload = {
