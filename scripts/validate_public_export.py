@@ -126,6 +126,32 @@ SOURCE_PUBLIC_WORKFLOW_PATTERN = re.compile(
     flags=re.IGNORECASE,
 )
 
+# Source citations identify and locate an object.  The legal assessment belongs
+# to the linked Media record, where it can be presented once with its credit
+# line and use rationale.  Keep this deliberately narrower than a generic
+# search for words such as "copyright": a historical copyright notice printed
+# on sheet music can be bibliographic evidence rather than editorial analysis.
+SOURCE_IMAGE_RIGHTS_ANALYSIS_PATTERN = re.compile(
+    r"(?:"
+    r"\bright[s]?\s*:\s*(?:expired|unknown|not cleared)|"
+    r"\b(?:rights|copyright) status (?:shown|recorded|unknown|unverified)|"
+    r"\bright[s]? have expired\b|"
+    r"\bcopyright (?:was not renewed|in the collection was deeded|not renewed)\b|"
+    r"\bpublic domain (?:in|according to|worldwide|under)\b|"
+    r"\b(?:marks|labels|identifies|released?|releasing|made available)"
+    r"[^.]{0,120}\bpublic domain\b|"
+    r"\b(?:licensed|distributed|made available|published|republished|supplied|uploaded)"
+    r"[^.]{0,120}\b(?:CC0|CC BY|Creative Commons|PD-US)\b|"
+    r"\bunder (?:the )?(?:CC0|CC BY|Creative Commons|PD-US)\b|"
+    r"\b(?:non-free|fair[ -]use)\b|"
+    r"\bgrants no licence\b|"
+    r"\bthe non-free rationale\b|"
+    r"\bunderlying rights status\b|"
+    r"\bimage rights holder\b"
+    r")",
+    flags=re.IGNORECASE,
+)
+
 SOURCE_LITERAL_URL_PATTERN = re.compile(r"https?://[^\s<>]+", flags=re.IGNORECASE)
 
 
@@ -397,8 +423,17 @@ class ExportValidator:
                             "contains context-dependent editorial narration"
                         )
 
+        image_media_ids = {
+            record["id"]
+            for record in self.payloads.get("Media", {}).get("records", [])
+            if record.get("mediaType") == "image"
+        }
+
         for source in self.payloads.get("Sources", {}).get("records", []):
             source_id = source["id"]
+            is_image_source = bool(
+                image_media_ids.intersection(source.get("mediaIds", []))
+            )
             for key in ("fullCitation", "shortCitation"):
                 value = str(source.get(key, ""))
                 if SOURCE_PUBLIC_IDENTIFIER_PATTERN.search(value):
@@ -416,6 +451,11 @@ class ExportValidator:
                 if SOURCE_LITERAL_URL_PATTERN.search(value):
                     self.errors.append(
                         f"Source {source_id}: public field {key} contains a navigational URL"
+                    )
+                if is_image_source and SOURCE_IMAGE_RIGHTS_ANALYSIS_PATTERN.search(value):
+                    self.errors.append(
+                        f"Source {source_id}: photographic field {key} contains rights "
+                        "analysis that belongs in the linked Media record"
                     )
 
             link_urls: list[str] = []

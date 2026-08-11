@@ -725,9 +725,9 @@
         }
       },
       "SRC0110": {
-        "reason": "Remove the incorrect statement that the University of Warsaw student file includes the baptism record; the baptism is documented separately by the parish/metrical record (SRC0012).",
+        "reason": "Remove the incorrect baptism-record claim and keep the permission statement exclusively with the linked media while retaining the archival consultation context.",
         "fields": {
-          "fullCitation": "Archiwum Uniwersytetu Warszawskiego, Bronisław Kaper student file, RP 6854. Aggregate archival source for documents from Kaper's University of Warsaw student file, including the young portrait, University of Warsaw matriculation and study records, and the police certificate of 21 April 1920 recording his religion as Mosaic. No public URL; used with permission / archival consultation."
+          "fullCitation": "Archiwum Uniwersytetu Warszawskiego, Bronisław Kaper student file, RP 6854. Aggregate archival source for documents from Kaper's University of Warsaw student file, including the young portrait, University of Warsaw matriculation and study records, and the police certificate of 21 April 1920 recording his religion as Mosaic. Consulted in the archive; no public URL."
         }
       },
       "SRC0093": {
@@ -1385,8 +1385,9 @@
         }
       },
       "SRC0387": {
-        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "reason": "Normalize the source type and keep the short citation bibliographic, with the public-domain assessment exclusively at the linked medium.",
         "fields": {
+          "shortCitation": "Wikimedia Commons, Trouble for Two poster (1936)",
           "sourceType": "wikimedia_commons_file"
         }
       },
@@ -1409,8 +1410,10 @@
         }
       },
       "SRC0393": {
-        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "reason": "Normalize the source type and keep the poster citation bibliographic, with the non-free and fair-use assessment exclusively at the linked medium.",
         "fields": {
+          "fullCitation": "Kind Lady (1935). Theatrical-release poster reproduced on the English Wikipedia article for the film.",
+          "shortCitation": "English Wikipedia, Kind Lady theatrical-release poster (1935)",
           "sourceType": "wikimedia_article_page"
         }
       },
@@ -1421,8 +1424,10 @@
         }
       },
       "SRC0397": {
-        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "reason": "Normalize the source type and keep the poster citation bibliographic, with the non-free and fair-use assessment exclusively at the linked medium.",
         "fields": {
+          "fullCitation": "Man of the People (1937). Theatrical-release poster reproduced on English Wikipedia, File: Man of the People poster.jpg.",
+          "shortCitation": "English Wikipedia, Man of the People theatrical-release poster (1937)",
           "sourceType": "wikimedia_article_page"
         }
       },
@@ -1434,8 +1439,9 @@
         }
       },
       "SRC0417": {
-        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "reason": "Normalize the source type and keep Filmportal's copyright-status statement exclusively with the linked medium.",
         "fields": {
+          "fullCitation": "Kind, ich freu’ mich auf Dein Kommen (Germany, 1933) — Filmplakat material page. Filmportal.de, material node 746992; source shown as DIF.",
           "sourceType": "digital_collection_item"
         }
       },
@@ -1477,8 +1483,10 @@
         }
       },
       "SRC0430": {
-        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "reason": "Normalize the source type and keep the bibliographic citation separate from the rights analysis already published with the linked medium.",
         "fields": {
+          "fullCitation": "Bettmann. Photograph of Jackie, the MGM lion, being recorded for the studio roar, 28 December 1928. Wikimedia Commons, File:Leo the MGM lion 1928.jpg.",
+          "shortCitation": "Wikimedia Commons, Leo the MGM lion 1928",
           "sourceType": "wikimedia_commons_file"
         }
       },
@@ -1540,8 +1548,9 @@
         }
       },
       "SRC0439": {
-        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "reason": "Normalize the source type and keep the CC0 declaration exclusively with the linked medium while retaining maker and object metadata.",
         "fields": {
+          "fullCitation": "“Wien I. - Graben.” Descriptive title: “1., Graben - Blick vom Stock-im-Eisen-Platz, Ansichtskarte.” Wien Museum Online Sammlung, inv. no. 203214. Postcard used in 1922; maker unidentified.",
           "sourceType": "digital_collection_item"
         }
       },
@@ -1583,8 +1592,9 @@
         }
       },
       "SRC0456": {
-        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "reason": "Normalize the source type and keep the Library of Congress rights statement exclusively with the linked medium.",
         "fields": {
+          "fullCitation": "Wikimedia Commons, File:St Alexander's Church2.jpg. Historical photochrom of St. Alexander's Church, Warsaw, dated between 1890 and 1905. Library of Congress Prints and Photographs Division, Photochrom Prints Collection, reproduction no. LC-DIG-ppmsc-03918.",
           "sourceType": "wikimedia_commons_file"
         }
       },
@@ -1711,10 +1721,236 @@
         }
       },
       "SRC0537": {
-        "reason": "Normalize the source type and retain the historical image date in date; the later upload date remains part of the source citation.",
+        "reason": "Normalize the source type, retain the historical image and upload dates, and keep the public-domain assessment exclusively with the linked medium.",
         "fields": {
           "date": "1949",
+          "fullCitation": "Wikimedia Commons. “File: Ernst Lubitsch smoking a cigar.tiff.” Portrait photograph of Ernst Lubitsch smoking a cigar. Photographer unidentified. Arquivo Nacional (Brazil), Fundo Correio da Manhã. Date listed: 1949; uploaded 27 September 2018.",
           "sourceType": "wikimedia_commons_file"
+        }
+      },
+      "SRC0571": {
+        "reason": "Keep the historical photograph citation bibliographic and retain the public-domain assessment exclusively with the linked medium.",
+        "fields": {
+          "fullCitation": "Hôtel Ritz, Place Vendôme, Paris, 1900. Photographer unidentified. Wikimedia Commons, File:Hotel Ritz Paris 1900.jpg."
+        }
+      },
+      "SRC0024": {
+        "reason": "Retain the NAC series, reference and object identifiers in the citation while keeping the expired-rights statement exclusively with the linked media.",
+        "fields": {
+          "fullCitation": "Photographs from the series 'Jan Kiepura podczas pobytu w Paryżu' (Jan Kiepura during his stay in Paris), November 1933, including a reception photograph with Bronisław Kaper and his wife Eleonora. Narodowe Archiwum Cyfrowe (NAC), Koncern Ilustrowany Kurier Codzienny – Archiwum Ilustracji, ref. 3/1/0/11/8270 (image 3/1/0/11/8270/3). Also catalogued on Szukaj w Archiwach as unit 5924863, object 374619."
+        }
+      },
+      "SRC0574": {
+        "reason": "Keep the Paris Musées object citation bibliographic and retain the CC0 declaration exclusively with the linked medium.",
+        "fields": {
+          "fullCitation": "Neurdein Frères. “565 Paris. – La Rue Alphonse-de-Neuville (Plaine Monceau).” Illustrated postcard, phototype on card, early twentieth century. Musée Carnavalet – Histoire de Paris, Paris Musées, inventory no. 2021.0.335."
+        }
+      },
+      "SRC0586": {
+        "reason": "Retain the unidentified photographer and complete UCLA/California Revealed object metadata while keeping the institution's unknown-copyright statement exclusively with the linked medium.",
+        "fields": {
+          "fullCitation": "Photograph of Ivie Anderson. Photographer unidentified; undated. Slide (photograph), 2 × 2 in. Bette Cox Collection, University of California, Los Angeles, Ethnomusicology Archive, call number calauem_200901_ams0000060. Digitised by California Revealed; copy in the Internet Archive, identifier calauem_006181."
+        }
+      },
+      "SRC0593": {
+        "reason": "Keep the periodical portrait citation bibliographic and retain the public-domain assessment exclusively with the linked medium.",
+        "fields": {
+          "shortCitation": "Wikimedia Commons / BnF, portrait of Henri Varna in “Féerie de Paris” (1937)"
+        }
+      },
+      "SRC0594": {
+        "reason": "Retain the UCLA collection and ARK in the citation while keeping the CC BY 4.0 declaration exclusively with the linked medium.",
+        "fields": {
+          "fullCitation": "W. S. Van Dyke, 1933. Los Angeles Times Photographic Collection, UCLA Library Special Collections, ark:/21198/zz002cpv37. Republished on Wikimedia Commons. Accessed 31 July 2026.",
+          "shortCitation": "Los Angeles Times Photographic Collection (UCLA Library), W. S. Van Dyke, 1933"
+        }
+      },
+      "SRC0605": {
+        "reason": "Keep the Imperial War Museums catalogue citation bibliographic and retain the expired Crown-copyright analysis exclusively with the linked medium.",
+        "fields": {
+          "fullCitation": "Channel Incident: the production of a Ministry of Information film, UK, September 1940. Anthony Asquith directs Peggy Ashcroft and Gordon Harker in a film about the evacuation of Dunkirk, made by Denham and Pinewood Studios for the Ministry of Information. Photograph D 1076A, Ministry of Information Second World War Official Collection, Imperial War Museums. Accessed 1 August 2026.",
+          "shortCitation": "Imperial War Museums D 1076A, Anthony Asquith directing Channel Incident, September 1940"
+        }
+      },
+      "SRC0609": {
+        "reason": "Keep the Bundesarchiv provenance and crop attribution in the citation while retaining the exact licence exclusively with the linked medium.",
+        "fields": {
+          "fullCitation": "Hans Albers photographed in Berlin, walking Unter den Linden. Bundesarchiv, Bild 102-00586A, 1924, from the Georg Pahl collection; supplied to Wikimedia Commons through the German Federal Archive cooperation project. The published crop is by Wikimedia Commons user Janericloebe. Accessed 1 August 2026.",
+          "shortCitation": "Bundesarchiv Bild 102-00586A, Hans Albers, 1924"
+        }
+      },
+      "SRC0603": {
+        "reason": "Preserve the host page, upstream source and unresolved photographic provenance in the citation while keeping the non-free and fair-use assessment exclusively with the linked medium.",
+        "fields": {
+          "fullCitation": "Harold Adamson — portrait photograph on English Wikipedia, sourced from the Songwriters Hall of Fame profile page. Photographer, date and original publication unidentified. Accessed 31 July 2026.",
+          "shortCitation": "English Wikipedia, portrait of Harold Adamson"
+        }
+      },
+      "SRC0619": {
+        "reason": "Preserve the identified photographer, programme, date and collection in the citation while keeping the site's rights statement exclusively with the linked medium.",
+        "fields": {
+          "fullCitation": "Henri Manuel (1874–1947). Portrait of René Pujol in the programme of La Pouponnière, Bouffes-Parisiens, 1932. Collection Jacques Gana; reproduced in the Encyclopédie multimédia de la comédie musicale théâtrale en France. Accessed 1 August 2026."
+        }
+      },
+      "SRC0621": {
+        "reason": "Keep the Academy photograph citation bibliographic and retain the public-domain tag and term analysis exclusively with the linked medium.",
+        "fields": {
+          "fullCitation": "Academy of Motion Picture Arts and Sciences. Photograph of Frank Lloyd holding the Best Director award for The Divine Lady, second Academy Awards ceremony, 3 April 1930. Published by the Academy at oscars.org and republished on Wikimedia Commons. Accessed 1 August 2026."
+        }
+      },
+      "SRC0646": {
+        "reason": "Preserve the subject, date, Wikimedia/Flickr chain and unresolved photographer and publication in the citation while keeping the disputed licence analysis exclusively with the linked medium.",
+        "fields": {
+          "fullCitation": "Joseph H. Lewis on the set of The Undercover Man, 1949. Photographer and original publication unidentified. Wikimedia Commons file derived from a Flickr upload. Accessed 6 August 2026."
+        }
+      },
+      "SRC0649": {
+        "reason": "Keep the periodical caption and repository provenance bibliographic and retain the United States copyright-term analysis exclusively with the linked medium.",
+        "fields": {
+          "fullCitation": "\"This New Age.\" Picture Play Magazine, vol. 31–32 (January–June 1930), p. 97. Photograph captioned \"Herbert Stothart, right, goes over a new song with Ramon Novarro, who sings several numbers in 'Devil May Care.'\" Digitised by the Media History Digital Library from the copy held by the Museum of Modern Art Library, New York. Accessed 6 August 2026."
+        }
+      },
+      "SRC0654": {
+        "reason": "Preserve the periodical caption, date, historical context and unidentified photographer in the citation while keeping the rights and fair-use assessment exclusively with the linked medium.",
+        "fields": {
+          "fullCitation": "Portrait of Louis Poterat announcing a broadcast, captioned “Louis POTERAT / que vous entendrez aujourd'hui à 14 h.” Les Ondes (Paris), 20 July 1941. The issue appeared in Paris under German occupation. Digitised scan at World Radio History; photographer unidentified. Accessed 6 August 2026."
+        }
+      },
+      "SRC0655": {
+        "reason": "Preserve the biographical page, collection caption and unidentified photographer in the citation while keeping the site's rights statement exclusively with the linked medium.",
+        "fields": {
+          "fullCitation": "Author page for Marc-Cab (Marcel Cabridens, Nice 1901 – Bandol 1978), Encyclopédie multimédia de la comédie musicale théâtrale en France, edited by Jacques Gana. Undated portrait captioned “Marc Cab — Photo coll. ANAO”; photographer unidentified. Accessed 6 August 2026."
+        }
+      },
+      "SRC0667": {
+        "reason": "Preserve the Wikipedia file, upstream BIFI source and unresolved photographer and original publication in the citation while keeping the cautious rights assessment exclusively with the linked medium.",
+        "fields": {
+          "fullCitation": "“Gaston Roudès.” Portrait photograph; photographer and original publication unidentified. English Wikipedia, File:Gaston Roudès.jpg; upstream source identified there as the former BIFI personalities database."
+        }
+      },
+      "SRC0612": {
+        "reason": "Keep the Library of Congress object citation bibliographic and retain the public-domain tag and legal assessment exclusively with the linked medium.",
+        "fields": {
+          "fullCitation": "Portrait of Alfred Piccaver, photographer unidentified, published by the Bain News Service. Library of Congress, George Grantham Bain Collection, image ggbain.34250; republished on Wikimedia Commons. Accessed 1 August 2026.",
+          "shortCitation": "Bain News Service, portrait of Alfred Piccaver, Library of Congress"
+        }
+      },
+      "SRC0585": {
+        "reason": "Keep the publicity-portrait citation bibliographic and retain the public-domain assessment exclusively with the linked medium.",
+        "fields": {
+          "fullCitation": "Eddie Duchin. Publicity portrait reproduced in Billboard. Wikimedia Commons, File:Eddie Duchin Billboard.jpg."
+        }
+      },
+      "SRC0595": {
+        "reason": "Retain the uploader and object provenance in the citation while keeping the rights declaration exclusively with the linked medium.",
+        "fields": {
+          "fullCitation": "Autogrammkarte von Alfred Zeisler, 1932. Uploaded to Wikimedia Commons by the user Azeisler as own work. Accessed 31 July 2026.",
+          "shortCitation": "Wikimedia Commons, autograph card of Alfred Zeisler, 1932"
+        }
+      },
+      "SRC0596": {
+        "reason": "Retain the photographer, institutional identifier and repository in the citation while keeping the VRT-backed rights assessment exclusively with the linked medium.",
+        "fields": {
+          "fullCitation": "Max Ophüls, photographed by Studio Harcourt, 1950s. Réunion des musées nationaux — Grand Palais, ark:/36255/08-538083. Wikimedia Commons. Accessed 31 July 2026.",
+          "shortCitation": "Studio Harcourt, portrait of Max Ophüls, 1950s"
+        }
+      },
+      "SRC0598": {
+        "reason": "Keep the publicity-still citation bibliographic and retain the United States copyright analysis exclusively with the linked medium.",
+        "fields": {
+          "fullCitation": "Director Richard Thorpe on the set of Cheating Cheaters (1934). Universal Pictures publicity still; photographer unidentified. Cropped on Wikimedia Commons from File:Cheating Cheaters (1934) set 1.jpg. Accessed 31 July 2026.",
+          "shortCitation": "Wikimedia Commons, publicity still of Richard Thorpe on the set of Cheating Cheaters (1934)"
+        }
+      },
+      "SRC0599": {
+        "reason": "Keep the production-photograph citation bibliographic and retain the United States copyright analysis exclusively with the linked medium.",
+        "fields": {
+          "fullCitation": "Sam Wood directing Beyond the Rocks (1922). Famous Players-Lasky Corporation / Paramount Pictures; photographer unidentified. Cropped on Wikimedia Commons from File:Beyond the Rocks (1922) 2.jpg. Accessed 31 July 2026.",
+          "shortCitation": "Wikimedia Commons, Sam Wood directing Beyond the Rocks (1922)"
+        }
+      },
+      "SRC0600": {
+        "reason": "Keep the photographic-agency citation bibliographic and retain the Creative Commons licence exclusively with the linked medium.",
+        "fields": {
+          "fullCitation": "Georg Jacoby during filming of Die geschiedene Frau in the Dutch bulb-growing region, 26 April 1953. Photograph by [...] van Oorschot for Anefo. Nationaal Archief / Spaarnestad Photo, item 905-6889, cropped on Wikimedia Commons from the file Die geschiedene Frau 905-6889.jpg. Accessed 31 July 2026.",
+          "shortCitation": "Nationaal Archief / Anefo, Georg Jacoby on location, 1953"
+        }
+      },
+      "SRC0604": {
+        "reason": "Keep the periodical portrait citation bibliographic and retain the copyright-term analysis exclusively with the linked medium.",
+        "fields": {
+          "fullCitation": "Portrait of Robert Z. Leonard, photographer unidentified. Published in The Motion Picture Director, July 1926; digitised by the Internet Archive. Accessed 1 August 2026.",
+          "shortCitation": "Wikimedia Commons, portrait of Robert Z. Leonard from The Motion Picture Director, July 1926"
+        }
+      },
+      "SRC0606": {
+        "reason": "Keep the periodical portrait citation bibliographic and retain the renewal analysis exclusively with the linked medium.",
+        "fields": {
+          "fullCitation": "Jose M. Recoder. Cover portrait of Deanna Durbin. Cine Mundial, February 1938; digitised by the Internet Archive. Accessed 1 August 2026.",
+          "shortCitation": "Cine Mundial, February 1938 — cover portrait of Deanna Durbin by Jose M. Recoder"
+        }
+      },
+      "SRC0607": {
+        "reason": "Keep the publicity-photograph citation bibliographic and retain the copyright-notice analysis exclusively with the linked medium.",
+        "fields": {
+          "fullCitation": "Publicity photograph of Judy Garland issued in connection with Pigskin Parade (20th Century Fox, 1936), her feature debut. Offered by Heritage Auctions and published on Wikimedia Commons, where the copy has been digitally cleaned. Accessed 1 August 2026.",
+          "shortCitation": "20th Century Fox publicity photograph of Judy Garland, 1936"
+        }
+      },
+      "SRC0608": {
+        "reason": "Retain the unidentified photographer and approximate date as provenance while keeping the jurisdictional rights analysis exclusively with the linked medium.",
+        "fields": {
+          "fullCitation": "Studio portrait of Jeanette MacDonald, photographer unidentified, dated on the Wikimedia Commons file to the 1930s. Accessed 1 August 2026.",
+          "shortCitation": "Wikimedia Commons, studio portrait of Jeanette MacDonald, 1930s"
+        }
+      },
+      "SRC0611": {
+        "reason": "Keep the photographer, subject, date and repositories in the citation while retaining the Israeli copyright-term analysis exclusively with the linked medium.",
+        "fields": {
+          "fullCitation": "Helmar Lerski. Portrait of Marc Lavry, 1944. Marc Lavry Heritage Society; Wikimedia Commons. Accessed 1 August 2026.",
+          "shortCitation": "Helmar Lerski, portrait of Marc Lavry, 1944"
+        }
+      },
+      "SRC0620": {
+        "reason": "Keep the press-photograph citation bibliographic and retain the renewal analysis exclusively with the linked medium.",
+        "fields": {
+          "fullCitation": "Universal-International. Press photograph of director Henry Koster for Flower Drum Song, published 1961. Cropped detail via Wikimedia Commons. Accessed 1 August 2026."
+        }
+      },
+      "SRC0643": {
+        "reason": "Keep the official-photograph citation bibliographic and retain the expired Crown-copyright analysis exclusively with the linked medium.",
+        "fields": {
+          "fullCitation": "Royal Navy official photographer. Noel Coward Entertains the Men of the Eastern Fleet, HMS Victorious, Trincomalee, Ceylon, 1 August 1944. Imperial War Museums, photograph A 25390. Cropped detail showing Norman Hackforth at the piano via Wikimedia Commons. Accessed 6 August 2026."
+        }
+      },
+      "SRC0650": {
+        "reason": "Keep the photographer, periodical and digitisation details in the citation while retaining the renewal analysis exclusively with the linked medium.",
+        "fields": {
+          "fullCitation": "Dave Pell. Photograph of Franz Waxman rehearsing with Les Brown for the 1955 Los Angeles Music Festival. Musical Courier, vol. 152, no. 1 (July 1955), p. 27. Summy-Birchard Publishing Company; scanned copy at the Internet Archive. Accessed 6 August 2026."
+        }
+      },
+      "SRC0651": {
+        "reason": "Keep the studio reference-book citation bibliographic and retain the copyright-notice analysis exclusively with the linked medium.",
+        "fields": {
+          "fullCitation": "Who's Who at Metro-Goldwyn-Mayer. Culver City: Metro-Goldwyn-Mayer, 1937, entry “J. WALTER RUBEN.” Studio publicity reference book issued under Howard Dietz and Howard Strickling. Digitised by the Media History Digital Library from the copy in the Karl Thiede collection, Internet Archive identifier whoswhoatmetrogo00metr. Accessed 6 August 2026."
+        }
+      },
+      "SRC0652": {
+        "reason": "Keep the studio reference-book citation bibliographic and retain the copyright-notice analysis exclusively with the linked medium.",
+        "fields": {
+          "fullCitation": "Who's Who at Metro-Goldwyn-Mayer. Culver City: Metro-Goldwyn-Mayer, 1937, entry “GEORGE B. SEITZ.” Studio publicity reference book issued under Howard Dietz and Howard Strickling. Digitised by the Media History Digital Library from the copy in the Karl Thiede collection, Internet Archive identifier whoswhoatmetrogo00metr. Accessed 6 August 2026."
+        }
+      },
+      "SRC0653": {
+        "reason": "Keep the studio reference-book citation bibliographic and retain the copyright-notice analysis exclusively with the linked medium.",
+        "fields": {
+          "fullCitation": "Who's Who at Metro-Goldwyn-Mayer. Culver City: Metro-Goldwyn-Mayer, 1937, entry “REINHOLD SCHÜNZEL.” Studio publicity reference book issued under Howard Dietz and Howard Strickling. Digitised by the Media History Digital Library from the copy in the Karl Thiede collection, Internet Archive identifier whoswhoatmetrogo00metr. Accessed 6 August 2026."
+        }
+      },
+      "SRC0668": {
+        "reason": "Keep the anonymous-photograph provenance in the citation and retain the public-domain analysis exclusively with the linked medium.",
+        "fields": {
+          "fullCitation": "“Lucien Boyer 1.jpg.” Full-length portrait of the chansonnier Lucien Boyer. Anonymous photograph, c. 1900; original publication unidentified and described on the file page as an old book. Wikimedia Commons."
         }
       },
       "SRC0538": {
@@ -2038,9 +2274,9 @@
         }
       },
       "SRC0644": {
-        "reason": "Describe the published crop directly rather than referring to an internal archive operation.",
+        "reason": "Describe the published crop directly and keep the copyright assessment exclusively with the linked medium.",
         "fields": {
-          "fullCitation": "Unknown photographer for Universal Pictures. Edwin L. Marin and Elisabeth Bergner on the set of Paris Calling, publicity still, 1941. Republished on Wikimedia Commons under the public-domain tag for United States works published without a copyright notice; the local image is a detail cropped to Marin. Accessed 6 August 2026."
+          "fullCitation": "Universal Pictures, photographer unidentified. Edwin L. Marin and Elisabeth Bergner on the set of Paris Calling, publicity still, 1941. Portrait detail cropped to Marin via Wikimedia Commons. Accessed 6 August 2026."
         }
       }
     },
@@ -5415,11 +5651,11 @@
         }
       },
       "SRC0560": {
-        "reason": "Add the user-selected, freely licensed 1935 Jan Kiepura portrait using the UCLA archival record and Wikimedia Commons file-level license metadata.",
+        "reason": "Add the user-selected 1935 Jan Kiepura portrait using the UCLA archival record; keep the CC BY 4.0 declaration exclusively with the linked medium.",
         "fields": {
           "id": "SRC0560",
           "shortCitation": "Los Angeles Times Photographic Collection / UCLA Library, “Jan Kiepura, 1935”",
-          "fullCitation": "Los Angeles Times. “Jan Kiepura, 1935.” Photograph, September 1935. Los Angeles Times Photographic Collection, UCLA Library Digital Collections, ark:/21198/zz002dgfqg; distributed via Wikimedia Commons under CC BY 4.0.",
+          "fullCitation": "Los Angeles Times. “Jan Kiepura, 1935.” Photograph, September 1935. Los Angeles Times Photographic Collection, UCLA Library Digital Collections, ark:/21198/zz002dgfqg; distributed via Wikimedia Commons.",
           "sourceType": "wikimedia_commons_file",
           "title": "Jan Kiepura — Los Angeles Times portrait, September 1935",
           "creator": "Los Angeles Times",
@@ -5500,11 +5736,11 @@
         }
       },
       "SRC0563": {
-        "reason": "Add Henryk Gold's portrait (public domain per Culture.pl / Adam Mickiewicz Institute; original diapozytyw.pl) and wire it to his person page through the source→portrait chain, so P119 gains a portrait.",
+        "reason": "Add Henryk Gold's portrait and wire it to his person page through the source→portrait chain; keep the public-domain assessment exclusively with the linked medium.",
         "fields": {
           "id": "SRC0563",
-          "shortCitation": "Culture.pl (Adam Mickiewicz Institute), “Henryk Gold” — portrait (public domain)",
-          "fullCitation": "Adam Mickiewicz Institute. “Henryk Gold.” Culture.pl. Portrait photograph captioned and published as public domain (original source: diapozytyw.pl, September 2009). https://culture.pl/en/artist/henryk-gold.",
+          "shortCitation": "Culture.pl (Adam Mickiewicz Institute), “Henryk Gold” — portrait",
+          "fullCitation": "Adam Mickiewicz Institute. “Henryk Gold.” Culture.pl. Portrait photograph; original source: diapozytyw.pl, September 2009.",
           "sourceType": "web_page",
           "title": "Henryk Gold — portrait (Culture.pl)",
           "creator": "Adam Mickiewicz Institute (Culture.pl)",
@@ -5525,11 +5761,11 @@
         }
       },
       "SRC0564": {
-        "reason": "Add Joe May's portrait (public domain, 1919 Die Herrin der Welt cast-and-crew still via Wikimedia Commons) and wire it to his person page through the source->portrait chain.",
+        "reason": "Add Joe May's portrait from the 1919 Die Herrin der Welt cast-and-crew still and wire it to his person page; keep the public-domain assessment exclusively with the linked medium.",
         "fields": {
           "id": "SRC0564",
           "shortCitation": "Wikimedia Commons, Joe May — Die Herrin der Welt cast-and-crew (cropped), 1919",
-          "fullCitation": "“Joe May – The Mistress of the World – Cast and Crew (cropped).jpg.” Wikimedia Commons. Cropped detail of a 1919 cast-and-crew photograph for Die Herrin der Welt; public domain. https://commons.wikimedia.org/wiki/File:Joe_May_-_The_Mistress_of_the_World_-_Cast_and_Crew_(cropped).jpg.",
+          "fullCitation": "“Joe May – The Mistress of the World – Cast and Crew (cropped).jpg.” Wikimedia Commons. Cropped detail of a 1919 cast-and-crew photograph for Die Herrin der Welt.",
           "sourceType": "wikimedia_commons_file",
           "title": "Joe May — portrait (Die Herrin der Welt, 1919)",
           "creator": "Photographer unidentified",
@@ -5550,11 +5786,11 @@
         }
       },
       "SRC0565": {
-        "reason": "Add a fair-use portrait of Alexis Granovsky (P001): non-free low-resolution image from Russian Wikipedia (originally kino-teatr.ru), used for scholarly identification of the director of Moscow Nights, for which Kaper wrote the score. Wired via the source->portrait chain.",
+        "reason": "Add the low-resolution Alexis Granovsky portrait and preserve its unresolved photographer and upstream provenance in the citation; keep the non-free and fair-use assessment exclusively with the linked medium.",
         "fields": {
           "id": "SRC0565",
-          "shortCitation": "Russian Wikipedia, „Алексей Грановский” (non-free portrait, fair use)",
-          "fullCitation": "„Файл:Алексей Грановский.jpg.” Русская Википедия. Non-free portrait (fair use) of Alexis Granovsky (1890–1937); photographer unidentified, created before 1938; originally from kino-teatr.ru. https://ru.wikipedia.org/wiki/Файл:Алексей_Грановский.jpg.",
+          "shortCitation": "Russian Wikipedia, „Алексей Грановский” — portrait",
+          "fullCitation": "“Файл:Алексей Грановский.jpg.” Russian Wikipedia. Portrait of Alexis Granovsky (1890–1937), created before 1938; photographer unidentified. Upstream source: kino-teatr.ru.",
           "sourceType": "image_or_photograph",
           "title": "Alexis Granovsky — portrait (Russian Wikipedia, fair use)",
           "creator": "Photographer unidentified",
@@ -5603,11 +5839,11 @@
         }
       },
       "SRC0567": {
-        "reason": "Document the Disney Wiki / Fandom page and its low-resolution portrait of Ned Washington without treating the page's CC BY-SA text license as a license for the photograph.",
+        "reason": "Document the Disney Wiki / Fandom page and preserve the portrait's unresolved photographer, date and publication in the citation; keep the rights assessment exclusively with the linked medium.",
         "fields": {
           "id": "SRC0567",
           "shortCitation": "Disney Wiki, “Ned Washington” — unidentified portrait photograph",
-          "fullCitation": "Disney Wiki contributors. “Ned Washington.” Disney Wiki, Fandom. Biographical page with an unidentified 297 × 396 pixel portrait photograph; photographer, date, original publication and image rights holder are not stated. https://disney.fandom.com/wiki/Ned_Washington.",
+          "fullCitation": "Disney Wiki contributors. “Ned Washington.” Disney Wiki, Fandom. Biographical page containing a 297 × 396 pixel portrait photograph; photographer, date and original publication unidentified.",
           "sourceType": "web_page",
           "title": "Ned Washington — Disney Wiki portrait",
           "creator": "Disney Wiki contributors; photographer unidentified",
@@ -5628,11 +5864,11 @@
         }
       },
       "SRC0568": {
-        "reason": "Document the existing Ernst Marischka portrait as a local research copy with unresolved photographic provenance, without inventing a repository, photographer, date or rights clearance.",
+        "reason": "Document the existing Ernst Marischka portrait as a local research copy with unresolved photographic provenance; keep the rights assessment exclusively with the linked medium.",
         "fields": {
           "id": "SRC0568",
           "shortCitation": "Ernst Marischka — unidentified portrait photograph, local research copy",
-          "fullCitation": "Portrait photograph of Ernst Marischka (1893–1963). Local research copy; photographer, date, original publication, repository and rights holder have not been identified.",
+          "fullCitation": "Portrait photograph of Ernst Marischka (1893–1963). Local research copy; photographer, date, original publication and repository unidentified.",
           "sourceType": "image_or_photograph",
           "title": "Ernst Marischka — unidentified portrait photograph",
           "creator": "Photographer unidentified",
@@ -5688,11 +5924,11 @@
         }
       },
       "SRC0570": {
-        "reason": "Preserve the verified Library of Congress authority source and public-domain portrait for Duke Ellington.",
+        "reason": "Preserve the verified Library of Congress authority source and portrait for Duke Ellington; keep the donor's public-domain declaration exclusively with the linked medium.",
         "fields": {
           "id": "SRC0570",
           "shortCitation": "Gottlieb, [Portrait of Duke Ellington] ([1938?]), Library of Congress.",
-          "fullCitation": "William P. Gottlieb, photographer. [Portrait of Duke Ellington, Washington, D.C., between 1938 and 1948]. [1938?]. William P. Gottlieb Collection, Music Division, Library of Congress, LCCN 2023867648. The photographs in the Gottlieb collection entered the public domain on 16 February 2010 in accordance with the photographer’s wishes.",
+          "fullCitation": "William P. Gottlieb, photographer. [Portrait of Duke Ellington, Washington, D.C., between 1938 and 1948]. [1938?]. William P. Gottlieb Collection, Music Division, Library of Congress, LCCN 2023867648.",
           "sourceType": "image_or_photograph",
           "title": "[Portrait of Duke Ellington, Washington, D.C., between 1938 and 1948]",
           "creator": "Gottlieb, William P.",
@@ -5713,11 +5949,11 @@
         }
       },
       "SRC0582": {
-        "reason": "Document the provenance of the user-supplied low-resolution Paramount portrait of Henri Garat through the APPL page while preserving the unresolved photographer, publication and rights information.",
+        "reason": "Document the provenance of the user-supplied low-resolution Paramount portrait of Henri Garat through the APPL page while preserving the unresolved photographer, date and publication; keep the rights assessment exclusively with the linked medium.",
         "fields": {
           "id": "SRC0582",
           "shortCitation": "Paramount Studios, portrait of Henry Garat, reproduced by APPL.",
-          "fullCitation": "Paramount Studios. Portrait photograph of Henri (Henry) Garat. Reproduced by Amis et Passionnés du Père-Lachaise (APPL), “Garat, Henri Garassu, dit Henry (1902–1959).” Photographer, date, original publication and image rights holder not identified.",
+          "fullCitation": "Paramount Studios. Portrait photograph of Henri (Henry) Garat. Reproduced by Amis et Passionnés du Père-Lachaise (APPL), “Garat, Henri Garassu, dit Henry (1902–1959).” Photographer, date and original publication unidentified.",
           "sourceType": "image_or_photograph",
           "title": "Henri Garat — Paramount Studios portrait",
           "creator": "Paramount Studios; photographer unidentified",
@@ -6073,11 +6309,11 @@
         }
       },
       "SRC0656": {
-        "reason": "Add an item-level Commons source for the verified 1930 public-domain publicity portrait of Ub Iwerks, separate from the filmographic sources for Little Boy Blue.",
+        "reason": "Add an item-level Commons source for the 1930 publicity portrait of Ub Iwerks, separate from the filmographic sources for Little Boy Blue; keep the rights assessment exclusively with the linked medium.",
         "fields": {
           "id": "SRC0656",
           "shortCitation": "Official Disney publicity photograph of Ub Iwerks, 1930; Wikimedia Commons",
-          "fullCitation": "Official Disney publicity photograph. Ub Iwerks drawing Mickey Mouse, 1930. Wikimedia Commons, File:Ub Iwerks.jpg. The Commons file page identifies the photograph as published in 1930 and marks it public domain in the United States. Accessed 8 August 2026.",
+          "fullCitation": "Official Disney publicity photograph. Ub Iwerks drawing Mickey Mouse, 1930. Wikimedia Commons, File:Ub Iwerks.jpg. Accessed 8 August 2026.",
           "sourceType": "image_or_photograph",
           "title": "Ub Iwerks drawing Mickey Mouse — publicity photograph, 1930",
           "creator": "Official Disney publicity photograph",
@@ -6098,11 +6334,11 @@
         }
       },
       "SRC0657": {
-        "reason": "Add the item-level Commons source for the licensed photograph of Eberhard Bachmann's Heinz Hilpert bust and preserve photographer, sculptor, modification and share-alike attribution.",
+        "reason": "Add the item-level Commons source for the photograph of Eberhard Bachmann's Heinz Hilpert bust; preserve photographer and sculptor in the citation and keep modification and share-alike requirements with the linked medium.",
         "fields": {
           "id": "SRC0657",
           "shortCitation": "Kvikk, photograph of Eberhard Bachmann's bust of Heinz Hilpert, 2012; Wikimedia Commons",
-          "fullCitation": "Kvikk. Photograph of Eberhard Bachmann's bust of Heinz Hilpert outside the Deutsches Theater, Berlin, 11 May 2012. Cropped and reduced-resolution local version. Wikimedia Commons, File:Heinz Hilpert Büste Deutsches Theater Berlin.JPG. Licensed under CC BY-SA 3.0 Unported. Accessed 9 August 2026.",
+          "fullCitation": "Kvikk. Photograph of Eberhard Bachmann's bust of Heinz Hilpert outside the Deutsches Theater, Berlin, 11 May 2012. Wikimedia Commons, File:Heinz Hilpert Büste Deutsches Theater Berlin.JPG. Accessed 9 August 2026.",
           "sourceType": "wikimedia_commons_file",
           "title": "Heinz Hilpert bust at the Deutsches Theater, Berlin — Wikimedia Commons",
           "creator": "Kvikk (photographer); Eberhard Bachmann (sculptor)",
@@ -6165,11 +6401,11 @@
         }
       },
       "SRC0659": {
-        "reason": "Add the item-level archival source for Julian Tuwim's portrait using the supplied NAC object metadata, including its date range, reference and expired-rights statement.",
+        "reason": "Add the item-level archival source for Julian Tuwim's portrait using the supplied NAC object metadata; keep the expired-rights statement exclusively with the linked medium.",
         "fields": {
           "id": "SRC0659",
           "shortCitation": "Narodowe Archiwum Cyfrowe, Julian Tuwim portrait, 1925–1928, ref. 3/1/0/11/1888/1",
-          "fullCitation": "Narodowe Archiwum Cyfrowe. “Julian Tuwim.” Portrait photograph, 1925–1928. Photographer unidentified. Ref. 3/1/0/11/1888/1. The Narodowe Archiwum Cyfrowe object record states that rights have expired (“Wygasły”). Szukaj w Archiwach, unit 5898131. Accessed 9 August 2026.",
+          "fullCitation": "Narodowe Archiwum Cyfrowe. “Julian Tuwim.” Portrait photograph, 1925–1928. Photographer unidentified. Ref. 3/1/0/11/1888/1. Szukaj w Archiwach, unit 5898131. Accessed 9 August 2026.",
           "sourceType": "image_or_photograph",
           "title": "Julian Tuwim — portrait photograph, 1925–1928",
           "creator": "Photographer unidentified",
@@ -6225,11 +6461,11 @@
         }
       },
       "SRC0662": {
-        "reason": "Add the supplied William Axt portrait with its documented Russian Wikipedia file page, the upstream source named there, and a cautious rights note because the photographer and original publication remain unidentified.",
+        "reason": "Add the supplied William Axt portrait with its documented Russian Wikipedia file page and upstream source while preserving the unresolved photographer and original publication; keep the cautious rights assessment exclusively with the linked medium.",
         "fields": {
           "id": "SRC0662",
           "shortCitation": "Russian Wikipedia, File:William Axt.jpg — portrait of William Axt, 1920s",
-          "fullCitation": "“William Axt.” Portrait photograph, 1920s; photographer unidentified. Russian Wikipedia, File:William Axt.jpg. The file page names Monstrous Movie Music as its source and labels the image public domain, but does not identify the photographer or document the original publication.",
+          "fullCitation": "“William Axt.” Portrait photograph, 1920s; photographer and original publication unidentified. Russian Wikipedia, File:William Axt.jpg; upstream source identified there as Monstrous Movie Music.",
           "sourceType": "image_or_photograph",
           "title": "William Axt — portrait photograph, 1920s",
           "creator": "Photographer unidentified",
@@ -6331,11 +6567,11 @@
         }
       },
       "SRC0666": {
-        "reason": "Add the supplied Bundesarchiv photograph as a dedicated source for Paul Dessau, preserving the exact archive credit, event date, CC BY-SA 3.0 DE licence and crop disclosure.",
+        "reason": "Add the supplied Bundesarchiv photograph as a dedicated source for Paul Dessau, preserving the exact archive credit and event date while keeping the licence and crop disclosure with the linked medium.",
         "fields": {
           "id": "SRC0666",
           "shortCitation": "Bundesarchiv, Bild 183-N1215-0008 — Paul Dessau at the Berliner Ensemble, 15 December 1974",
-          "fullCitation": "Katscherowski (verehel. Stark). “Berlin, Solidaritätskonzert im ‘Berliner Ensemble’.” Photograph, 15 December 1974. Allgemeiner Deutscher Nachrichtendienst – Zentralbild, Bundesarchiv, Bild 183-N1215-0008. Wikimedia Commons. Licensed CC BY-SA 3.0 DE.",
+          "fullCitation": "Katscherowski (verehel. Stark). “Berlin, Solidaritätskonzert im ‘Berliner Ensemble’.” Photograph, 15 December 1974. Allgemeiner Deutscher Nachrichtendienst – Zentralbild, Bundesarchiv, Bild 183-N1215-0008. Wikimedia Commons.",
           "sourceType": "image_or_photograph",
           "title": "Paul Dessau at a solidarity concert in the Berliner Ensemble, 1974",
           "creator": "Katscherowski (verehel. Stark)",
