@@ -646,8 +646,8 @@ def static_page(
         page_title = f"{title} ({label.lower()})"
     browser_title = f"{page_title} | {PAGE_TITLE_SUFFIX}"
     record_id = record["id"]
-    style_version = "4a3f7db285"
-    record_script_version = "4a3f7db285"
+    style_version = "c99075b57d"
+    record_script_version = "c99075b57d"
     route = f"records/{record_type}/{quote(record_id, safe='')}/"
     canonical = f"{ORIGIN}{route}"
     og_image = og_image_for(record_type, record, tables)
@@ -689,7 +689,7 @@ def static_page(
   {ld_json}
 </head>
 <body>
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a class="skip-link" href="{esc(route)}#main-content">Skip to main content</a>
   <header class="site-header" data-site-header>
     <div class="site-header__inner shell">
       <a class="brand" href="index.html"><span class="brand__monogram" aria-hidden="true">BK</span><span class="brand__text"><strong>Bronisław Kaper</strong><small>A source-based archive · 1902–1939</small></span></a>

@@ -1,4 +1,4 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=4a3f7db285";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=c99075b57d";
 import {
   certaintyBadge,
   escapeHtml,
@@ -23,7 +23,7 @@ import {
   scopeBadge,
   typeBadge,
   updateMeta,
-} from "./core.js?v=4a3f7db285";
+} from "./core.js?v=c99075b57d";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 let target = null;
@@ -118,12 +118,12 @@ function section(title, content, className = "", count = 0) {
 // A contents rail for records that run long. Kaper's page carries 275 works, 54
 // events and 132 sources over nearly five thousand pixels; without an index the
 // only way to learn what is on it is to scroll it.
-function contentsRail(entries) {
+function contentsRail(entries, currentRecordUrl) {
   const items = entries.filter((entry) => entry && entry.count);
   if (items.length < 3) return "";
   return `<nav class="record-contents" aria-label="On this record">
     <p class="record-contents__title">On this record</p>
-    <ul>${items.map((entry) => `<li><a href="#${sectionId(entry.title)}">${escapeHtml(entry.title)}<span>${entry.count}</span></a></li>`).join("")}</ul>
+    <ul>${items.map((entry) => `<li><a href="${escapeHtml(currentRecordUrl)}#${sectionId(entry.title)}">${escapeHtml(entry.title)}<span>${entry.count}</span></a></li>`).join("")}</ul>
   </nav>`;
 }
 
@@ -906,7 +906,7 @@ function renderPerson(person, data, indexes) {
       { title: "Documented chronology", count: events.length },
       { title: "Evidence for documented credits", count: creditEvidence.items.length },
       { title: "Sources linked directly to this person", count: sources.length },
-    ])}`,
+    ], recordUrl("person", person.id))}`,
   };
 }
 

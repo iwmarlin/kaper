@@ -442,6 +442,10 @@ def validate(root: Path) -> dict:
                     f"{relative}: expected exactly one skip link, "
                     f"found {page_parser.skip_links}"
                 )
+            if "<base " in text and re.search(r'href=["\']#', text):
+                errors.append(
+                    f"{relative}: fragment-only link resolves against <base> instead of this record"
+                )
             parts = page.relative_to(root).parts
             if 'data-prerendered="true"' not in text:
                 errors.append(f"{relative}: complete record content is not prerendered")
