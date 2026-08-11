@@ -2679,6 +2679,95 @@ main {
   color: var(--ink-soft);
 }
 
+.record-section__intro {
+  max-width: 52rem;
+  margin: -0.15rem 0 0.9rem;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+}
+
+.credit-evidence-list {
+  display: grid;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.credit-evidence {
+  padding: 0.8rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.credit-evidence:last-child {
+  border-bottom: 0;
+}
+
+.credit-evidence__work {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.credit-evidence__work > span:first-child {
+  min-width: 0;
+}
+
+.credit-evidence__work a {
+  font-weight: 680;
+}
+
+.credit-evidence__work small {
+  display: block;
+  margin-top: 0.15rem;
+  color: var(--ink-soft);
+}
+
+.credit-evidence__badges {
+  display: flex;
+  flex: 0 0 auto;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.3rem;
+}
+
+.credit-evidence__sources {
+  display: grid;
+  gap: 0.35rem;
+  margin: 0.65rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.credit-evidence__sources li {
+  display: grid;
+  grid-template-columns: 4.7rem minmax(0, 1fr);
+  gap: 0.65rem;
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+  line-height: 1.45;
+}
+
+.credit-evidence__source-id {
+  align-self: start;
+  color: var(--accent);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.72rem;
+  font-weight: 650;
+}
+
+@media (max-width: 560px) {
+  .credit-evidence__work {
+    align-items: flex-start;
+  }
+
+  .credit-evidence__sources li {
+    grid-template-columns: 4.25rem minmax(0, 1fr);
+    gap: 0.5rem;
+  }
+}
+
 .authority-links {
   display: flex;
   flex-wrap: wrap;

@@ -1,4 +1,4 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=ef3ac6d557";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=a653d92b88";
 import {
   certaintyBadge,
   escapeHtml,
@@ -23,7 +23,7 @@ import {
   scopeBadge,
   typeBadge,
   updateMeta,
-} from "./core.js?v=ef3ac6d557";
+} from "./core.js?v=a653d92b88";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 let target = null;
@@ -40,7 +40,7 @@ const RECORD_TABLES = [
   "people", "organizations", "sources", "media", "works", "films", "songs", "otherWorks",
   "titleVariants", "workRelations", "timelineEvents", "places", "contributions", "personNameVariants",
 ];
-const RECORD_DATA_VERSION = "20260726-1";
+const RECORD_DATA_VERSION = "20260811-1";
 const LIST_PREVIEW_LIMIT = 6;
 const LIST_SEARCH_THRESHOLD = 20;
 let progressiveListSequence = 0;
@@ -425,6 +425,64 @@ function contributionEntityLinks(items, indexes) {
   return links.join(" · ");
 }
 
+// Person-level sources and credit-level sources answer different questions.
+// The former document the person directly; the latter document a role in a
+// particular work.  Keep contribution evidence grouped by work instead of
+// copying its source IDs onto the person record, which would erase that
+// distinction and make every source look biographical.
+function personCreditEvidence(person, indexes) {
+  const contributions = related(person.contributionIds, indexes.contributions)
+    .filter((item) => (item.sourceIds || []).length && (item.workIds || []).length);
+  const groups = new Map();
+  for (const contribution of contributions) {
+    for (const work of related(contribution.workIds, indexes.works)) {
+      if (!groups.has(work.id)) {
+        groups.set(work.id, {
+          work,
+          roles: new Set(),
+          certainties: new Set(),
+          sourceIds: new Set(),
+        });
+      }
+      const group = groups.get(work.id);
+      if (contribution.role) group.roles.add(contribution.role);
+      if (contribution.certainty && contribution.certainty !== "confirmed") {
+        group.certainties.add(contribution.certainty);
+      }
+      for (const sourceId of contribution.sourceIds || []) group.sourceIds.add(sourceId);
+    }
+  }
+  const items = [...groups.values()]
+    .map((group) => ({
+      ...group,
+      sources: sortSourcesChronologically(related([...group.sourceIds], indexes.sources)),
+    }))
+    .filter((group) => group.sources.length)
+    .sort((a, b) => Number(a.work.year || 9999) - Number(b.work.year || 9999)
+      || String(a.work.title).localeCompare(String(b.work.title)));
+  const list = progressiveList(items, {
+    className: "credit-evidence-list",
+    label: "credit records",
+    renderItem: (item) => `<li class="credit-evidence">
+      <div class="credit-evidence__work">
+        <span><a href="${recordUrl("work", item.work.id)}">${escapeHtml(item.work.title)}</a>${item.work.year ? `<small>${escapeHtml(String(item.work.year))}</small>` : ""}</span>
+        <span class="credit-evidence__badges">${[...item.roles].map(typeBadge).join("")}${[...item.certainties].map(certaintyBadge).join("")}</span>
+      </div>
+      <ul class="credit-evidence__sources" aria-label="Sources supporting this credit">
+        ${item.sources.map((source) => `<li><a class="credit-evidence__source-id" href="${recordUrl("source", source.id)}">${escapeHtml(source.id)}</a><span>${escapeHtml(source.shortCitation || source.title || source.fullCitation || source.id)}</span></li>`).join("")}
+      </ul>
+    </li>`,
+    searchText: (item) => [
+      item.work.title,
+      item.work.year,
+      ...item.roles,
+      ...item.sources.map(sourceSearchText),
+    ].filter(Boolean).join(" "),
+    showTotal: true,
+  });
+  return { items, list };
+}
+
 function publicationPlace(statement) {
   if (!statement) return "";
   const colonPlace = statement.match(/^([^:;,]+):/);
@@ -772,6 +830,7 @@ function renderPerson(person, data, indexes) {
     .sort((a, b) => String(a.date || "9999").localeCompare(String(b.date || "9999")) || String(a.shortCitation || a.title).localeCompare(String(b.shortCitation || b.title)));
   const portrait = data.media.find((item) => item.assetPath && item.category === "portrait");
   const portraitSources = portrait ? related(portrait.sourceIds, indexes.sources) : [];
+  const creditEvidence = personCreditEvidence(person, indexes);
   const identities = related(person.nameVariantIds, indexes.personNameVariants)
     .filter((item) => ["pseudonym", "joint_pseudonym", "registration_identity"].includes(item.variantType));
   const authorityLinks = String(person.authorityUrl || "")
@@ -821,7 +880,15 @@ function renderPerson(person, data, indexes) {
         searchText: (item) => [item.title, item.displayDate, item.placeDisplay].filter(Boolean).join(" "),
         showTotal: false,
       }), "", events.length) : "",
-      section("Sources", sourceList(sources), "", sources.length),
+      section(
+        "Evidence for documented credits",
+        creditEvidence.list
+          ? `<p class="record-section__intro">Each citation supports this person’s credit for the linked work; it is not presented as a biographical source.</p>${creditEvidence.list}`
+          : "",
+        "record-section--credit-evidence",
+        creditEvidence.items.length,
+      ),
+      section("Sources linked directly to this person", sourceList(sources), "", sources.length),
     ].join(""),
     // The portrait and its credit stay in the aside: 74 of the 137 people carry
     // no portrait at all, and an identity block built around an image leaves a
@@ -837,7 +904,8 @@ function renderPerson(person, data, indexes) {
       { title: "Pseudonyms and documented identities", count: identities.length },
       { title: "Documented works", count: works.length },
       { title: "Documented chronology", count: events.length },
-      { title: "Sources", count: sources.length },
+      { title: "Evidence for documented credits", count: creditEvidence.items.length },
+      { title: "Sources linked directly to this person", count: sources.length },
     ])}`,
   };
 }

@@ -176,6 +176,20 @@ class RecordPayloadBuilder:
         elif record_type == "person":
             self.add(bundle, "works", record_ids(root, "workIds"))
             self.add(bundle, "timelineEvents", record_ids(root, "timelineEventIds"))
+            # A person's own sourceIds are deliberately reserved for sources
+            # linked directly to that person (authority, biography, portrait,
+            # and comparable person-level documentation).  Evidence for an
+            # individual credit belongs to the contribution instead.  Include
+            # those contribution records and their sources in the compact page
+            # payload so the public card can present the two kinds of evidence
+            # separately without manufacturing person-to-source relations.
+            contributions = self.add(
+                bundle,
+                "contributions",
+                record_ids(root, "contributionIds"),
+            )
+            for contribution in contributions:
+                self.add(bundle, "sources", record_ids(contribution, "sourceIds"))
             sources = self.add(bundle, "sources", record_ids(root, "sourceIds"))
             for source in sources:
                 portrait_ids = [
@@ -283,6 +297,36 @@ def validate(root: Path) -> list[str]:
                 errors.append(f"Incomplete record payload tables: {record_type}/{record['id']}")
             if payload != builder.build(record_type, record["id"]):
                 errors.append(f"Stale record payload: {record_type}/{record['id']}")
+            if record_type == "person":
+                payload_contribution_ids = {
+                    item.get("id")
+                    for item in payload.get("tables", {}).get("contributions", [])
+                }
+                expected_contribution_ids = set(record_ids(record, "contributionIds"))
+                missing_contributions = expected_contribution_ids - payload_contribution_ids
+                if missing_contributions:
+                    errors.append(
+                        f"Person payload omits contribution evidence: {record['id']} -> "
+                        f"{', '.join(sorted(missing_contributions))}"
+                    )
+                payload_source_ids = {
+                    item.get("id")
+                    for item in payload.get("tables", {}).get("sources", [])
+                }
+                evidence_source_ids = {
+                    source_id
+                    for contribution_id in expected_contribution_ids
+                    for source_id in record_ids(
+                        builder.indexes["contributions"].get(contribution_id, {}),
+                        "sourceIds",
+                    )
+                }
+                missing_sources = evidence_source_ids - payload_source_ids
+                if missing_sources:
+                    errors.append(
+                        f"Person payload omits credit sources: {record['id']} -> "
+                        f"{', '.join(sorted(missing_sources))}"
+                    )
     actual_paths = set(output_root.glob("*/*.json")) if output_root.is_dir() else set()
     for path in sorted(actual_paths - expected_paths):
         errors.append(f"Unexpected record payload: {path.relative_to(output_root)}")

@@ -57,7 +57,8 @@ PRERENDERED_RELATION_SECTIONS = {
     "person": {
         "workIds": "Documented works",
         "timelineEventIds": "Documented chronology",
-        "sourceIds": "Sources",
+        "contributionIds": "Evidence for documented credits",
+        "sourceIds": "Sources linked directly to this person",
     },
     "organization": {
         "workIds": "Works",
@@ -530,6 +531,18 @@ def validate(root: Path) -> dict:
                                     errors.append(
                                         f"{relative}: work relation {relation_id} has no linked work"
                                     )
+                        if record_type == "person":
+                            contributions = {
+                                item.get("id"): item
+                                for item in payload.get("tables", {}).get("contributions", [])
+                            }
+                            for contribution_id in record.get("contributionIds") or []:
+                                contribution = contributions.get(contribution_id) or {}
+                                for source_id in contribution.get("sourceIds") or []:
+                                    if f'href="records/source/{source_id}/"' not in text:
+                                        errors.append(
+                                            f"{relative}: contribution {contribution_id} omits source {source_id}"
+                                        )
             if len(parts) >= 4 and parts[0] == "records" and parts[1] == "person":
                 match = re.search(
                     r'<script type="application/ld\+json">(.*?)</script>',
