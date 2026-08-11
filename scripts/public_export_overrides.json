@@ -10559,8 +10559,16 @@
         }
       },
       "SRC0195": {
-        "reason": "Keep the Hofmeister registration on the German original and remove contribution/name-form links that were imported from the separate Dutch edition.",
+        "reason": "Keep the Hofmeister registration on the German original and remove work/song, contribution and name-form links imported from the separately sourced French and Dutch versions.",
         "fields": {
+          "workIds": [
+            "W-S205",
+            "W-S217"
+          ],
+          "songIds": [
+            "S205",
+            "S217"
+          ],
           "contributionIds": [
             "CON-S010-C-P020",
             "CON-S010-L-P009",
@@ -10867,6 +10875,14 @@
       }
     },
     "Works": {
+      "W-S086": {
+        "reason": "Keep M020 with W-F024 because it is an official excerpt from the film rather than an item-level medium for the separately catalogued song; W-S086 retains its directly relevant sheet-music medium M225.",
+        "fields": {
+          "mediaIds": [
+            "M020"
+          ]
+        }
+      },
       "W-S010": {
         "reason": "Keep the German original free of Dutch/French edition sources, cover, title variants and version-specific or metadata-derived contributor claims.",
         "fields": {
