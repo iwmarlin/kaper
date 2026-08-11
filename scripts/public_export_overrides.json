@@ -6115,6 +6115,80 @@
             }
           ]
         }
+      },
+      "SRC0663": {
+        "reason": "Add the supplied Max Kolpe portrait graphic with the article that identifies its provenance; retain a cautious fair-use status because the artist, original date and reuse rights are not supplied.",
+        "fields": {
+          "id": "SRC0663",
+          "shortCitation": "Claudia Karner, “Max Colpet im Porträt,” Deutsche Songtexte, 10 February 2016",
+          "fullCitation": "Claudia Karner. “Max Colpet im Porträt.” Deutsche Songtexte / Songtexte schreiben lernen, 10 February 2016. The article reproduces an unsigned portrait graphic from Max Colpet’s book …wenn man trotzdem lacht.",
+          "sourceType": "web_article",
+          "title": "Max Colpet im Porträt",
+          "creator": "Claudia Karner",
+          "repository": "Deutsche Songtexte / Songtexte schreiben lernen",
+          "publication": "Deutsche Songtexte",
+          "date": "2016-02-10",
+          "accessDate": "2026-08-11",
+          "reliability": "medium",
+          "sourceStatus": "verified_with_attribution_note",
+          "slug": "src0663-max-colpet-portrait-graphic",
+          "mediaIds": [
+            "M310"
+          ],
+          "personIds": [
+            "P054"
+          ],
+          "primaryUrl": "https://songtexte-schreiben-lernen.de/blog/2016/02/10/max-colpet-im-portraet/"
+        }
+      },
+      "SRC0664": {
+        "reason": "Add the supplied public-domain Carl Meinhard portrait from its canonical Wikimedia Commons record and connect it only to the identified person.",
+        "fields": {
+          "id": "SRC0664",
+          "shortCitation": "Berliner Leben, no. 9 (1908) — portrait of Carl Meinhard",
+          "fullCitation": "Carl Meinhard. Portrait photograph by an unidentified photographer, published in Berliner Leben, no. 9 (1908). Wikimedia Commons, File:Carl Meinhard (BerlLeben 1908-09).jpg.",
+          "sourceType": "image_or_photograph",
+          "title": "Carl Meinhard — portrait in Berliner Leben, 1908",
+          "creator": "Photographer unidentified",
+          "repository": "Wikimedia Commons",
+          "publication": "Berliner Leben, no. 9",
+          "date": "1908",
+          "accessDate": "2026-08-11",
+          "reliability": "high",
+          "sourceStatus": "verified",
+          "slug": "src0664-carl-meinhard-portrait-berliner-leben-1908",
+          "mediaIds": [
+            "M311"
+          ],
+          "personIds": [
+            "P047"
+          ],
+          "primaryUrl": "https://commons.wikimedia.org/wiki/File:Carl_Meinhard_(BerlLeben_1908-09).jpg"
+        }
+      },
+      "SRC0665": {
+        "reason": "Add the supplied Roger Féral portrait from the foundation page that explicitly identifies Roger Boris Lazareff as Roger Féral; retain a cautious fair-use status because no image license, photographer or date is supplied.",
+        "fields": {
+          "id": "SRC0665",
+          "shortCitation": "Aristides de Sousa Mendes Foundation, Lazareff/Raudnitz family page — portrait of Roger Féral",
+          "fullCitation": "“Lazareff/Raudnitz.” Aristides de Sousa Mendes Foundation. Family history page identifying Roger Boris Lazareff as Roger Féral and reproducing his portrait; photographer and date unidentified.",
+          "sourceType": "image_or_photograph",
+          "title": "Roger Féral — portrait on the Lazareff/Raudnitz family page",
+          "creator": "Photographer unidentified",
+          "repository": "Aristides de Sousa Mendes Foundation",
+          "publication": "Lazareff/Raudnitz family page",
+          "accessDate": "2026-08-11",
+          "reliability": "high",
+          "sourceStatus": "verified_with_attribution_note",
+          "slug": "src0665-roger-feral-portrait-sousa-mendes-foundation",
+          "mediaIds": [
+            "M312"
+          ],
+          "personIds": [
+            "P072"
+          ],
+          "primaryUrl": "https://sousamendesfoundation.org/family/lazareff-raudnitz"
+        }
       }
     },
     "Songs": {
@@ -7219,6 +7293,99 @@
           ],
           "periods": [
             "hollywood"
+          ]
+        }
+      },
+      "M310": {
+        "reason": "Add the supplied reduced-resolution portrait graphic of Max Kolpe and expose it through its dedicated provenance source on his person record and in the media catalogue.",
+        "fields": {
+          "id": "M310",
+          "title": "Max Kolpe (Max Colpet) — portrait graphic",
+          "slug": "max-kolpe-max-colpet-portrait-graphic",
+          "mediaType": "image",
+          "storageType": "local",
+          "assetPath": "assets/images/portraits/max-kolpe.jpg",
+          "assetPaths": [
+            "assets/images/portraits/max-kolpe.jpg"
+          ],
+          "assetCount": 1,
+          "externalUrl": "https://songtexte-schreiben-lernen.de/blog/2016/02/10/max-colpet-im-portraet/",
+          "category": "portrait",
+          "galleryStatus": "eligible",
+          "period": "european",
+          "sortOrder": 310,
+          "altText": "Grayscale profile drawing of an elderly Max Kolpe, also known as Max Colpet, wearing glasses.",
+          "publicCaption": "Max Kolpe (Max Colpet), lyricist and screenwriter, in an unsigned portrait graphic reproduced in his book …wenn man trotzdem lacht.",
+          "publicCreditLine": "Unsigned graphic reproduced in Max Colpet’s book …wenn man trotzdem lacht; via Claudia Karner, “Max Colpet im Porträt,” Deutsche Songtexte, 10 February 2016.",
+          "rightsStatus": "permission_needed_or_fair_use_claimed",
+          "rightsNote": "The source article identifies the graphic as reproduced from Max Colpet’s book but gives no artist, original date or reuse license. This reduced-resolution image is used for scholarly identification of a documented Kaper collaborator, with attribution and a link to the available provenance.",
+          "sourceIds": [
+            "SRC0663"
+          ],
+          "periods": [
+            "european"
+          ]
+        }
+      },
+      "M311": {
+        "reason": "Add the supplied public-domain Carl Meinhard portrait and expose it through its dedicated source on his person record and in the media catalogue.",
+        "fields": {
+          "id": "M311",
+          "title": "Carl Meinhard — portrait, 1908 or earlier",
+          "slug": "carl-meinhard-portrait-1908",
+          "mediaType": "image",
+          "storageType": "local",
+          "assetPath": "assets/images/portraits/carl-meinhard.jpg",
+          "assetPaths": [
+            "assets/images/portraits/carl-meinhard.jpg"
+          ],
+          "assetCount": 1,
+          "externalUrl": "https://commons.wikimedia.org/wiki/File:Carl_Meinhard_(BerlLeben_1908-09).jpg",
+          "category": "portrait",
+          "galleryStatus": "eligible",
+          "period": "european",
+          "sortOrder": 311,
+          "altText": "Black-and-white head-and-shoulders portrait of Carl Meinhard in a dark suit and bow tie.",
+          "publicCaption": "Carl Meinhard (also Karl Meinhardt), Austrian actor and theatre director, in a portrait published in Berliner Leben in 1908.",
+          "publicCreditLine": "Photographer unidentified; Berliner Leben, no. 9 (1908); Wikimedia Commons.",
+          "rightsStatus": "ok",
+          "rightsNote": "Public domain. Wikimedia Commons identifies the photograph as published in Berliner Leben in 1908 or earlier, credits an unidentified photographer and marks it free of known copyright restrictions (Public Domain Mark 1.0). It is also public domain in the United States because it was published before 1931.",
+          "sourceIds": [
+            "SRC0664"
+          ],
+          "periods": [
+            "european"
+          ]
+        }
+      },
+      "M312": {
+        "reason": "Add the supplied low-resolution portrait of Roger Féral and expose it through the foundation source on his person record and in the media catalogue.",
+        "fields": {
+          "id": "M312",
+          "title": "Roger Féral — portrait photograph",
+          "slug": "roger-feral-portrait-sousa-mendes-foundation",
+          "mediaType": "image",
+          "storageType": "local",
+          "assetPath": "assets/images/portraits/roger-feral.jpg",
+          "assetPaths": [
+            "assets/images/portraits/roger-feral.jpg"
+          ],
+          "assetCount": 1,
+          "externalUrl": "https://sousamendesfoundation.org/family/lazareff-raudnitz",
+          "category": "portrait",
+          "galleryStatus": "eligible",
+          "period": "european",
+          "sortOrder": 312,
+          "altText": "Small black-and-white portrait of Roger Féral looking downward, wearing a light jacket and dark tie.",
+          "publicCaption": "Roger Féral (born Roger Boris Lazareff), French lyricist, journalist and playwright.",
+          "publicCreditLine": "Photographer and date unidentified; Aristides de Sousa Mendes Foundation, Lazareff/Raudnitz family page.",
+          "rightsStatus": "permission_needed_or_fair_use_claimed",
+          "rightsNote": "The foundation page identifies Roger Boris Lazareff as Roger Féral and reproduces this portrait, but provides no photographer, date or reuse license. The unchanged low-resolution image is used for scholarly identification of a documented Kaper collaborator, with attribution and a link to the source page.",
+          "sourceIds": [
+            "SRC0665"
+          ],
+          "periods": [
+            "european"
           ]
         }
       }
@@ -9041,10 +9208,27 @@
         }
       },
       "P054": {
-        "reason": "Link Max Kolpe to the February 1933 Hofmeister registration that prints the collective Rotter–Kolpe lyricist credit for Madame wünscht keine Kinder.",
+        "reason": "Link Max Kolpe to the February 1933 Hofmeister registration and to the dedicated portrait-provenance source.",
         "fields": {
           "sourceIds": [
-            "SRC0188"
+            "SRC0188",
+            "SRC0663"
+          ]
+        }
+      },
+      "P047": {
+        "reason": "Connect Carl Meinhard to the dedicated Berliner Leben portrait source so his own public-domain image appears on the person record.",
+        "fields": {
+          "sourceIds": [
+            "SRC0664"
+          ]
+        }
+      },
+      "P072": {
+        "reason": "Connect Roger Féral to the dedicated foundation portrait source so his own identified image appears on the person record.",
+        "fields": {
+          "sourceIds": [
+            "SRC0665"
           ]
         }
       },
