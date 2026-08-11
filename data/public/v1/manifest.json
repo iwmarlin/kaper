@@ -5,21 +5,20 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "sourceSnapshot": "2026-07-15T11:43:04.514521+00:00",
-  "sourceRecordCount": 2826,
+  "publicDataUpdatedAt": "2026-08-11",
   "generator": {
     "file": "export_public_data.py",
-    "sha256": "74f6ce5ac9bbb0112407576b6d67ac86a36a8ccd1fd266bac87d831ce417f762"
+    "sha256": "016572c0de79fdb606fe7f7dc9670df659635082a8d3bc92944982b7871a3b2b"
   },
   "publicInputs": {
     "allowlist": {
       "file": "public_export_config.json",
-      "sha256": "a91e6865cddc630323748c11e87997ae1401badac65b9afb9004caf56938e95d"
+      "sha256": "2ef97da9a7a25eb34422f88b79b21f7011b88b04fbb5f5511f3030fa18c77d28"
     },
     "overrides": {
       "file": "public_export_overrides.json",
-      "sha256": "346985cf07a6543fa421ffc3b2d75c150c5fa0e09e50c4fb7f1e180169556754",
-      "appliedCount": 438,
+      "sha256": "fb6e8874ba0ebdd9860a236923e56e226be8d0ae7c7e75a9b851419d9b19ef9b",
+      "appliedCount": 445,
       "additionCount": 170,
       "linkAdditionCount": 316,
       "linkRemovalCount": 125,
@@ -115,8 +114,8 @@
     },
     {
       "file": "sources.json",
-      "bytes": 772993,
-      "sha256": "d310cf04ec6c6f61011a6dbc808df8e93b6b3ce33390256c441d240695c2af16"
+      "bytes": 773824,
+      "sha256": "16695013b6bd7b3a79c3ea812f36cc8e28783b83cf9c305302a9ddf658f03652"
     },
     {
       "file": "timeline-events.json",

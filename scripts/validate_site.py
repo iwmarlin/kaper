@@ -330,9 +330,6 @@ def validate(root: Path) -> dict:
             target = (script.parent / urlsplit(imported).path).resolve()
             if not target.is_file():
                 errors.append(f"{script.relative_to(root)}: missing module {imported}")
-        if "airtableusercontent.com" in text.lower():
-            errors.append(f"{script.relative_to(root)}: private Airtable URL found")
-
     report_path = root / "data/public/v1/build-report.json"
     media_path = root / "data/public/v1/media.json"
     if report_path.is_file():

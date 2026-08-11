@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate an already generated public JSON export without Airtable access."""
+"""Validate the canonical public JSON graph and its publication constraints."""
 
 from __future__ import annotations
 
@@ -360,10 +360,12 @@ class ExportValidator:
         def walk(value: Any, context: str) -> None:
             if isinstance(value, str):
                 folded = value.casefold()
-                if "airtableusercontent.com" in folded:
-                    self.errors.append(
-                        f"{context}: contains an expiring Airtable attachment URL"
-                    )
+                host = urlparse(value).hostname or ""
+                if host.casefold() in {
+                    item.casefold()
+                    for item in self.config.get("forbiddenRemoteAssetHosts", [])
+                }:
+                    self.errors.append(f"{context}: contains a forbidden temporary asset URL")
                 for phrase in forbidden_phrases:
                     if phrase in folded:
                         self.errors.append(

@@ -24,7 +24,7 @@ as a noindex compatibility route and declares the static path as canonical.
 
 ## Runtime model
 
-- No Airtable API calls, authentication tokens or private backup files.
+- No external database calls, authentication tokens or private research files.
 - No server-side code and no client-side JavaScript requirement for access to
   record content. The publication build uses Node.js only to execute the shared
   record renderer; it does not bundle or transform the site.
@@ -42,7 +42,7 @@ as a noindex compatibility route and declares the static path as canonical.
 - Record pages use progressive enhancement. Without JavaScript every published
   relation and citation remains visible; with JavaScript, long lists gain
   disclosure controls and search without replacing the prerendered record.
-- All linked records use stable public IDs, never Airtable record IDs.
+- All linked records use stable public project IDs.
 - The map uses Leaflet only for the map interface and OpenStreetMap tiles; an
   equivalent searchable place list remains available if the map library or tiles
   are unavailable.

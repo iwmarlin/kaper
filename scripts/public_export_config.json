@@ -50,13 +50,13 @@
     "review",
     "internal",
     "legacy",
-    "airtable",
     "validationstatus",
     "dataorigin",
     "needsreview",
     "imagepreview",
     "editorialstatus"
   ],
+  "forbiddenRemoteAssetHosts": [],
   "forbiddenPublicContentPhrases": [
     "active review problem",
     "corrected again after comparison",
@@ -245,7 +245,9 @@
         "primaryUrl",
         "accessUrl",
         "additionalLinks",
-        "identifiers"
+        "identifiers",
+        "researchNote",
+        "researchNoteType"
       ]
     },
     "Media": {

@@ -2785,6 +2785,36 @@ main {
   margin-top: 1rem;
 }
 
+.source-research-note {
+  margin: 0 0 2rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+}
+
+.source-research-note summary {
+  padding: 0.9rem 1rem;
+  color: var(--ink);
+  cursor: pointer;
+  font-weight: 680;
+}
+
+.source-research-note summary::marker {
+  color: var(--accent);
+}
+
+.source-research-note__body {
+  padding: 0 1rem 1rem;
+  border-top: 1px solid var(--line);
+}
+
+.source-research-note__body p {
+  max-width: 72ch;
+  margin: 0;
+  padding-top: 0.85rem;
+  color: var(--ink-soft);
+}
+
 .person-collections {
   display: grid;
   gap: 0.75rem;

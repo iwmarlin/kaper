@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "description": "Auditable public corrections for the frozen Airtable snapshot. Existing records may receive scalar corrections or field removals; documented post-snapshot public records and explicit links may be added through the additions sections.",
+  "description": "Auditable corrections for the canonical public graph. Existing records may receive scalar corrections or field removals; documented public records and explicit links may be added through the additions sections.",
   "records": {
     "Films": {
       "F052": {
@@ -860,7 +860,7 @@
         }
       },
       "SRC0189": {
-        "reason": "Preserve the exact April 1933 Hofmeister registration already verified in ANNO when rebuilding from the frozen Airtable snapshot.",
+        "reason": "Preserve the exact April 1933 Hofmeister registration already verified in ANNO when rebuilding the canonical public graph.",
         "fields": {
           "fullCitation": "B. Kaper and Walter Jurmann, “Mein Gorilla hat ’ne Villa im Zoo,” from Heute kommt’s drauf an. Text printed as P. Kuckuck. Berlin: Beboton-Verlag, 1933. Registered in Hofmeisters Musikalisch-literarischer Monatsbericht (April 1933): 79. ANNO – Austrian Newspapers Online, Österreichische Nationalbibliothek. https://anno.onb.ac.at/cgi-content/anno-plus?aid=hof&datum=19330054.",
           "repository": "Österreichische Nationalbibliothek / ANNO",
@@ -1629,10 +1629,13 @@
         }
       },
       "SRC0501": {
-        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "reason": "Normalize the source type and separate the webpage citation from the explicit verification limitation concerning its cited secondary source.",
         "fields": {
           "date": "n.d.",
-          "sourceType": "web_page"
+          "sourceType": "web_page",
+          "fullCitation": "“Chansons sur Paris.” Wikipedia, entry for “À Paris tiguidiguidi.” Accessed 28 June 2026.",
+          "researchNote": "The entry lists “À Paris tiguidiguidi” as a 1933 song written by Louis Poterat and Walter Jurmann, performed by Henry Garat. The page cites Jean-Claude Marcadet, 700 chansons de Paris (Paris: Parigramme, 2012), but the cited book entry has not been directly consulted.",
+          "researchNoteType": "verification_note"
         }
       },
       "SRC0503": {
@@ -1924,15 +1927,35 @@
         }
       },
       "SRC0300": {
-        "reason": "State the unresolved disc-date discrepancy as bibliographic analysis rather than as a comment about the catalogue's own decision-making.",
+        "reason": "Separate the stable discographic citation from the unresolved date assessment so the public citation remains bibliographic and the inference remains available as labelled research documentation.",
         "fields": {
-          "fullCitation": "Henri Garat, vocal; orchestra conducted by Bronisław Kaper. “À Paris, tiguidiguidi” / “Le plus petit baiser,” from the film Une femme au volant. [Paris]: [Nouveau Disque Salabert], [1934]. 1 disc: 78 rpm, 25 cm. Commercial reference Salabert 3382; matrices S.S. 1727 and S.S. 1728. Bibliothèque nationale de France, Catalogue général, notice no. FRBNF38020911, ARK ark:/12148/cb380209111. Date note: the BnF catalogue dates the disc 1932, while Une femme au volant is dated 1933. Because a disc of songs from the film cannot predate the film, the BnF year is doubtful; [1934] is an inferred issue date rather than a printed date. The discrepancy remains unresolved."
+          "fullCitation": "Henri Garat, vocal; orchestra conducted by Bronisław Kaper. “À Paris, tiguidiguidi” / “Le plus petit baiser,” from the film Une femme au volant. [Paris]: [Nouveau Disque Salabert], [1934]. 1 disc: 78 rpm, 25 cm. Commercial reference Salabert 3382; matrices S.S. 1727 and S.S. 1728. Bibliothèque nationale de France, Catalogue général, notice no. FRBNF38020911, ARK ark:/12148/cb380209111.",
+          "researchNote": "The BnF catalogue dates the disc 1932, while Une femme au volant is dated 1933. Because a disc of songs from the film cannot predate the film, the BnF year is doubtful; [1934] is an inferred issue date rather than a printed date. The discrepancy remains unresolved.",
+          "researchNoteType": "date_assessment"
+        }
+      },
+      "SRC0463": {
+        "reason": "Separate the catalogue-volume citation from the detailed evidence transcribed from its two registrations for The Orchestra in Love.",
+        "fields": {
+          "fullCitation": "U.S. Copyright Office. Catalogue of Copyright Entries, New Series, Part 3: Musical Compositions, vol. 26, nos. 1–12 (1931). Washington, DC: U.S. Government Printing Office, 1932, entries nos. 22781 and 27700, “The Orchestra in Love.” Digitized via Internet Archive.",
+          "researchNote": "Entry no. 22781 records “The Orchestra in Love”: words and music by Fritz Rotter and B. Kaper, English words by H. Hailey-Simpson, of Great Britain; copyright 18 September 1931, one copy received 21 September 1931, E for. 20550, Chappell & Co. Ltd., London. Entry no. 27700 records “The Orchestra in Love” as a romantic-orchestra fox-trot intermezzo: words and music by Fritz Rotter and B. Kaper, English words by H. Hailey-Simpson, of Great Britain, 4to; copyright 16 October 1931, one copy received 29 October 1931, E for. 20990, Chappell & Co. Ltd., London.",
+          "researchNoteType": "evidence_note"
+        }
+      },
+      "SRC0601": {
+        "reason": "Separate the IMDb name-entry citation from the cross-source identity assessment for René Nazelles.",
+        "fields": {
+          "fullCitation": "IMDb. Name entry nm0623410, “René Nazelles.” Accessed 31 July 2026.",
+          "researchNote": "IMDb gives his dates as 1888–1975. This is corroborated by Encyclopédisque, which records his name as René Cailleteau, and by Éliane Daphy's identification record “René Cailleteau dit René Nazelles (1888-1975) parolier”. The BnF authority heading still reads (18..-19..) and has not been revised.",
+          "researchNoteType": "identity_assessment"
         }
       },
       "SRC0613": {
-        "reason": "Present the conflicting birth years as a transparent comparison of authority sources, without referring to an internal catalogue choice.",
+        "reason": "Separate the webpage citation from the documented comparison of conflicting authority dates while preserving the unresolved assessment in full.",
         "fields": {
-          "fullCitation": "Gana, Jacques. “PUJOL (René).” Encyclopédie multimédia de la comédie musicale théâtrale en France. Gives the civil-status name Amédée Ferdinand Pujol and the dates Bordeaux, 15 May 1878 – Paris, 21 January 1942, together with a list of stage works and press articles. Accessed 1 August 2026. The birth year conflicts across authority sources: the Library of Congress record no2009029783 gives 1888 and GND 1062158474 gives 18 August 1888, while VIAF 44567556 and this encyclopedia give 1878, the latter with the precise date 15 May. All sources agree on the death date, 21 January 1942. The preferred birth year is 1878; the discrepancy remains unresolved."
+          "fullCitation": "Gana, Jacques. “PUJOL (René).” Encyclopédie multimédia de la comédie musicale théâtrale en France. Accessed 1 August 2026.",
+          "researchNote": "The page gives the civil-status name Amédée Ferdinand Pujol and the dates Bordeaux, 15 May 1878 – Paris, 21 January 1942, together with a list of stage works and press articles. The birth year conflicts across authority sources: the Library of Congress record no2009029783 gives 1888 and GND 1062158474 gives 18 August 1888, while VIAF 44567556 and this encyclopedia give 1878, the latter with the precise date 15 May. All sources agree on the death date, 21 January 1942. The preferred birth year is 1878; the discrepancy remains unresolved.",
+          "researchNoteType": "date_assessment"
         }
       },
       "SRC0615": {
@@ -1942,27 +1965,76 @@
         }
       },
       "SRC0616": {
-        "reason": "Describe the unresolved birth-year conflict directly and identify the preferred authority without referring to internal archival practice.",
+        "reason": "Separate the webpage citation from the documented comparison of conflicting authority dates while preserving the unresolved assessment in full.",
         "fields": {
-          "fullCitation": "Gana, Jacques. “MAUPREY (André).” Encyclopédie multimédia de la comédie musicale théâtrale en France. Gives the civil-status name André Jacques Bloch and the dates Paris, 19 August 1891 – Paris, 3 February 1939. The birth year conflicts with the Bibliothèque nationale de France and Wikidata, which both give 1881; day, month and date of death agree across all three sources, so the discrepancy is confined to one digit. The BnF-supported year 1881 is preferred; the conflict remains unresolved. Accessed 1 August 2026."
+          "fullCitation": "Gana, Jacques. “MAUPREY (André).” Encyclopédie multimédia de la comédie musicale théâtrale en France. Accessed 1 August 2026.",
+          "researchNote": "The page gives the civil-status name André Jacques Bloch and the dates Paris, 19 August 1891 – Paris, 3 February 1939. The birth year conflicts with the Bibliothèque nationale de France and Wikidata, which both give 1881; day, month and date of death agree across all three sources, so the discrepancy is confined to one digit. The BnF-supported year 1881 is preferred; the conflict remains unresolved.",
+          "researchNoteType": "date_assessment"
         }
       },
       "SRC0623": {
-        "reason": "Replace an internal majority-rule statement with a precise comparison of the conflicting authority files.",
+        "reason": "Separate the ISNI citation and recorded name forms from the documented comparison of conflicting birth years.",
         "fields": {
-          "fullCitation": "ISNI International Agency. Registry record 0000 0000 7143 777X, name forms Włast; Włast, A.; Włast, Andrzej, dates 1895-1943?. Under related identities the record gives “Baumritter, Gustaw (other identity, same person)” and “Willy (other identity, same person)”. Contributing sources: VIAF, NUKAT, BnF. Accessed 1 August 2026. The birth year is contested: ISNI, VIAF and the Library of Congress give 1895, while GND 1203212704 gives 17 March 1885 and Wikidata follows it. The preferred year is 1895; the discrepancy remains unresolved."
+          "fullCitation": "ISNI International Agency. Registry record 0000 0000 7143 777X, name forms Włast; Włast, A.; Włast, Andrzej, dates 1895-1943?. Under related identities the record gives “Baumritter, Gustaw (other identity, same person)” and “Willy (other identity, same person)”. Contributing sources: VIAF, NUKAT, BnF. Accessed 1 August 2026.",
+          "researchNote": "The birth year is contested: ISNI, VIAF and the Library of Congress give 1895, while GND 1203212704 gives 17 March 1885 and Wikidata follows it. The preferred year is 1895; the discrepancy remains unresolved.",
+          "researchNoteType": "date_assessment"
+        }
+      },
+      "SRC0622": {
+        "reason": "Separate the programme-image citation from the photographer identity assessment; the reuse status remains documented in the linked medium's rights fields.",
+        "fields": {
+          "fullCitation": "Portrait of Charles-Louis Pothier, photograph credited to Pierre Carles, in the programme of Flossie, Bouffes-Parisiens, Paris, 1929; collection Jacques Gana, reproduced in the Encyclopédie multimédia de la comédie musicale théâtrale en France. Accessed 1 August 2026.",
+          "researchNote": "The photographer could not be traced: no authority record, Wikidata item or Wikimedia Commons attribution for a Paris theatre photographer of this name was found, and he appears as a creator nowhere in the digitised holdings of the Bibliothèque nationale de France.",
+          "researchNoteType": "identity_assessment"
+        }
+      },
+      "SRC0627": {
+        "reason": "Separate the authority citation and recorded name forms from the unresolved discrepancy in Paul Mann's day and month of birth.",
+        "fields": {
+          "fullCitation": "Deutsche Nationalbibliothek, GND 133442284, “Mann, Paul”, composer, born 1910 in Vienna and died 27 May 1983 in New York. Variant forms: Wechselmann, Paul; Mawersky, Paul Stephan; Bachinger, Alois; Marois, Jean; and Walden, Peter. Linked records include BnF ark:/12148/cb14768347k, LCNAF nb2003055670, VIAF 3662538 and Wikidata Q31202678. Accessed 1 August 2026.",
+          "researchNote": "The Library of Congress heading reads “Mann, Paul, 1910-1983” and cites the 1944 sheet “Tell me I'm the only one you care for”. The day and month of birth are contested: the German Wikipedia article gives 3 September 1910 while the GND gives 3 October 1910; both agree on the year and on the death date, 27 May 1983.",
+          "researchNoteType": "date_assessment"
+        }
+      },
+      "SRC0628": {
+        "reason": "Separate the authority citations for Robert Péguy from the assessment of the isolated printed spelling Pégy.",
+        "fields": {
+          "fullCitation": "Deutsche Nationalbibliothek, GND 1061685829, “Péguy, Robert”, director, born 14 December 1883 and died 21 July 1968; variant forms “Péguy, Marcel Robert” and “Robert, Marcel”. Library of Congress heading no2009019373, “Péguy, Robert, 1883-1968”. Accessed 1 August 2026.",
+          "researchNote": "The French Wikipedia article gives the birth name as Marcel Robert Péguy and locates both his birth and death in the 17th arrondissement of Paris. Neither authority file records the spelling Pégy; the GND links directly to the filmportal.de record for the same man. The form printed in the credits of Son altesse l'amour is therefore treated as a source-specific spelling rather than as a name he is known to have used elsewhere.",
+          "researchNoteType": "identity_assessment"
         }
       },
       "SRC0631": {
-        "reason": "Remove the catalogue-relative aside from the authority citation while retaining every bibliographic fact supplied by BnF.",
+        "reason": "Separate the concise BnF citation from the authority record's detailed identity evidence without discarding any documented information.",
         "fields": {
-          "fullCitation": "Bibliothèque nationale de France, notice de personne “Steinhof, Ninon”, pseudonyme, forme internationale, FRBNF14700943, ark:/12148/cb14700943p. Female, writing in French and translating from German, described as a translator. The BnF gives the dates as “Naissance : 18..?” and “Mort : 19..”, indicating a nineteenth-century birth and a twentieth-century death, with neither year established. “Steinhoff, Ninon” is recorded as a rejected form. The notice cites two sources: the printed music “Adieu”, music by Pierre Candel, words by Ninon Steinhoff and André Legrand, 1934; and the French adaptation of Ferdinand Bruckner's play “Les criminels”, made with André Mauprey in 1950. ISNI 0000 0001 1982 6820. Sixteen bibliographic records are linked to her as author. Accessed 2 August 2026."
+          "fullCitation": "Bibliothèque nationale de France. Notice de personne “Steinhof, Ninon”, FRBNF14700943, ark:/12148/cb14700943p. Accessed 2 August 2026.",
+          "researchNote": "The BnF records “Steinhof, Ninon” as a pseudonym and international form, identifies her as a woman writing in French and translating from German, and describes her as a translator. It gives the dates as “Naissance : 18..?” and “Mort : 19..”, indicating a nineteenth-century birth and a twentieth-century death, with neither year established; “Steinhoff, Ninon” is a rejected form. The notice cites two sources: the printed music “Adieu”, music by Pierre Candel, words by Ninon Steinhoff and André Legrand, 1934; and the French adaptation of Ferdinand Bruckner's play “Les criminels”, made with André Mauprey in 1950. ISNI 0000 0001 1982 6820. Sixteen bibliographic records are linked to her as author.",
+          "researchNoteType": "authority_note"
         }
       },
       "SRC0632": {
-        "reason": "Make the candidate identification intelligible on its own and remove references to internal database treatment without asserting an unverified identity.",
+        "reason": "Separate the BnF authority citation from the cautious identity assessment, retaining the negative conclusion and all evidence without asserting an unverified identity.",
         "fields": {
-          "fullCitation": "Bibliothèque nationale de France, notice de personne “Roubier d'Hérembault, André-Paul (18..-1961)”, FRBNF14842949, ark:/12148/cb148429497. Male, composer and lyricist, birth undetermined in the nineteenth century, death in 1961, recorded from SACEM in 1980, with the rejected forms “Charline, Paul (18..-1961)”, a pseudonym, and “Hérembault, André-Paul Roubier d'”. ISNI 0000 0000 1013 0301. This remains only a candidate identification for André Roubier: the uncommon surname, period and professional milieu agree, but BnF's single linked bibliographic record, the 1937 film song “Un carnet de bal / Valse grise”, credits him as lyricist under the name Paul Charline, whereas the linked Kaper records identify André Roubier as a composer. The BnF disc notice for “À Paris, tiguidiguidi” names neither Roubier nor any composer, crediting only Henri Garat as singer and Bronisław Kaper as conductor. No identity resolution is asserted. Accessed 2 August 2026."
+          "shortCitation": "BnF authority record for Roubier d'Hérembault, André-Paul",
+          "fullCitation": "Bibliothèque nationale de France. Notice de personne “Roubier d'Hérembault, André-Paul (18..-1961)”, FRBNF14842949, ark:/12148/cb148429497. ISNI 0000 0000 1013 0301. Accessed 2 August 2026.",
+          "researchNote": "The BnF records a male composer and lyricist, born at an undetermined date in the nineteenth century and deceased in 1961, from SACEM information received in 1980; rejected forms are “Charline, Paul (18..-1961)”, a pseudonym, and “Hérembault, André-Paul Roubier d'”. This remains only a candidate identification for André Roubier: the uncommon surname, period and professional milieu agree, but BnF's single linked bibliographic record, the 1937 film song “Un carnet de bal / Valse grise”, credits him as lyricist under the name Paul Charline, whereas the Kaper-related records identify André Roubier as a composer. The BnF disc notice for “À Paris, tiguidiguidi” names neither Roubier nor any composer, crediting only Henri Garat as singer and Bronisław Kaper as conductor. No identity resolution is asserted.",
+          "researchNoteType": "identity_assessment"
+        }
+      },
+      "SRC0634": {
+        "reason": "Separate the authority citation from the identity assessment, preserving name variants, negative search results and the explicit decision not to merge an unsupported screen-actress identity.",
+        "fields": {
+          "fullCitation": "Biblioteka Narodowa, Deskryptory BN, personal descriptor “Halicz, Marcella”, identifier (PL)a0000002111045, control number p 2016350890, MMS ID 9810691594205606. VIAF 302995408; NUKAT n2014185547; ISNI 0000 0004 0939 6902. Accessed 2 August 2026.",
+          "researchNote": "The BN descriptor records the variant forms Halicz, M.; Halicz, Marcela; and Halicz, Marcelina. It cites “Manuela / Marceli Halicz”, 1935, and Lerski 2003, and expressly records the Polski Słownik Biograficzny as a source in which no information was found, so no dates are established; her recorded responsibility is translation. VIAF heads her as “Halicz, Marcella, 19/20” — nineteenth to twentieth century, unspecified — and lists her Polish film songs, including “Ninon” and “Ninon, ach uśmiechnij się”, with numbers from the Kiepura films Kocham wszystkie kobiety and Dla Ciebie śpiewam. Wikidata Q95678216 additionally merges this identity with GND 1061346501, a Marcella Halicz recorded as a screen actress active in 1919–1924 and linked to filmportal. That merge is not adopted: nothing in the Polish authority evidence supports it, and the VIAF cluster carries no German material.",
+          "researchNoteType": "identity_assessment"
+        }
+      },
+      "SRC0635": {
+        "reason": "Separate the archival-photograph citation from its visual and publication-context evidence; reuse terms remain documented in the linked medium's rights fields.",
+        "fields": {
+          "fullCitation": "“United States-Mexico border crossing, Calexico, [1927?].” Los Angeles Times Photographic Collection, Library Special Collections, Charles E. Young Research Library, University of California, Los Angeles. Black-and-white nitrate negative, local identifier uclamss_1429_0385, ark:/21198/zz002d9ndg. Accessed 3 August 2026.",
+          "researchNote": "The bird's-eye view shows two security booths, cars and pedestrians, an arcaded building on the Mexican side and a sign arching over the road reading “Mexico”, with further signs for Mexicali, Southern Club Cafe, Cafe Gabrinus and Climax Cafe. The negative sleeve is annotated “Mexican American Line, Calexico, Mexicali” and “California, Calexico-Mexicali”. UCLA suggests a possible connection to two Los Angeles Times reports from Calexico, “No Permit Needed at Mexican Border” of 6 July 1927 and “New Regulations in Force at Border” of 14 July 1927, but does not confirm publication.",
+          "researchNoteType": "object_context"
         }
       },
       "SRC0644": {
@@ -5762,11 +5834,13 @@
         }
       },
       "SRC0629": {
-        "reason": "Add the authority evidence that identifies Charlie Davson as the professional name of Charles Secchia.",
+        "reason": "Add the authority evidence that identifies Charlie Davson as the professional name of Charles Secchia, separating the concise citation from the authority record's detailed contents.",
         "fields": {
           "id": "SRC0629",
           "shortCitation": "BnF authority record for Charlie Davson / Charles Secchia",
           "fullCitation": "Bibliothèque nationale de France, authority record FRBNF13792811, “Charlie Davson”, pseudonym of Charles Secchia. Accessed 2 August 2026.",
+          "researchNote": "The BnF records Charlie Davson as the pseudonym of Charles Secchia, a French male lyricist, with responsibilities as author and performer. It gives his dates as “Naissance : 18..?” and “Mort : 19..”, indicating a nineteenth-century birth and a twentieth-century death, with neither year established. The notice cites the printed music “Je ne connais personne”, words by Ch. Davson with German words by Emmerich Lazar and P. Doenen, music by Emeric Lazar, 1938, and gives ISNI 0000 0003 5830 9767. Fifty-six BnF bibliographic records are linked to him as author.",
+          "researchNoteType": "authority_note",
           "sourceType": "authority_record",
           "title": "Charlie Davson / Charles Secchia — BnF authority record",
           "creator": "Bibliothèque nationale de France",

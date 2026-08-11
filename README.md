@@ -3,9 +3,9 @@
 A source-based static research site documenting Bronisław Kaper's works,
 professional networks, places and career through 1939.
 
-The public website reads versioned JSON from `data/public/v1/`. It has no runtime
-connection to Airtable, no private credentials and no required build process. See
-`docs/public-data-export.md`, `docs/site-architecture.md` and
+The public website reads versioned JSON from `data/public/v1/`. This canonical
+dataset is self-contained and requires neither private credentials nor a runtime
+database connection. See `docs/public-data-export.md`, `docs/site-architecture.md` and
 `docs/deployment.md` for the data policy, architecture and release procedure.
 
 Run locally:
@@ -24,9 +24,9 @@ python3 scripts/validate_public_export.py --data data/public/v1 --assets-root .
 python3 scripts/validate_site.py --root .
 ```
 
-After regenerating the public Airtable export or changing a published image,
-rebuild the compact home payload, responsive WebP derivatives and relation-aware
-record payloads:
+After changing the canonical public data or a published image, rebuild the
+compact home payload, responsive WebP derivatives and relation-aware record
+payloads:
 
 ```sh
 python3 -m pip install -r requirements-site.txt

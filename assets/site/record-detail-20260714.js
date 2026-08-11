@@ -1,4 +1,4 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=a653d92b88";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=4a3f7db285";
 import {
   certaintyBadge,
   escapeHtml,
@@ -23,7 +23,7 @@ import {
   scopeBadge,
   typeBadge,
   updateMeta,
-} from "./core.js?v=a653d92b88";
+} from "./core.js?v=4a3f7db285";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 let target = null;
@@ -1089,6 +1089,24 @@ function sourceActions(source) {
     </a>`).join("")}</div>`;
 }
 
+const SOURCE_RESEARCH_NOTE_LABELS = {
+  authority_note: "Authority note",
+  date_assessment: "Date assessment",
+  evidence_note: "Evidence recorded in this source",
+  identity_assessment: "Identity assessment",
+  object_context: "Object context",
+  verification_note: "Verification note",
+};
+
+function sourceResearchNote(source) {
+  if (!source.researchNote) return "";
+  const label = SOURCE_RESEARCH_NOTE_LABELS[source.researchNoteType] || "Research note";
+  return `<details class="source-research-note">
+    <summary>${escapeHtml(label)}</summary>
+    <div class="source-research-note__body"><p>${escapeHtml(source.researchNote)}</p></div>
+  </details>`;
+}
+
 function renderSource(source, data, indexes) {
   const works = related(source.workIds, indexes.works);
   const media = related(source.mediaIds, indexes.media);
@@ -1103,6 +1121,7 @@ function renderSource(source, data, indexes) {
     facts: `${fact("Creator", source.creator)}${fact("Date", source.date)}${fact("Publication", source.publication)}${fact("Repository", source.repository)}`,
     main: [
       section("Citation", `<p class="lead">${escapeHtml(source.fullCitation || source.shortCitation)}</p>${sourceActions(source)}`),
+      sourceResearchNote(source),
       section("Supported works", entityList(works, "work", (item) => [item.year, item.workType].filter(Boolean).join(" · ")), "", works.length),
       section("Media", entityList(media, "media", (item) => humanize(item.mediaType)), "", media.length),
       section("Timeline", entityList(events, "event", (item) => item.displayDate || item.dateStart), "", events.length),

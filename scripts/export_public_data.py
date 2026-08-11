@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Create a deterministic, public-only JSON export from the private Airtable backup."""
+"""Create a deterministic public JSON graph from a compatible source package."""
 
 from __future__ import annotations
 
@@ -36,7 +36,7 @@ TABLE_ORDER = [
 PUBLIC_NARRATIVE_FIELDS = {
     "People": ("publicNote", "biography"),
     "Organizations": ("publicNote", "description"),
-    "Sources": ("shortCitation", "fullCitation"),
+    "Sources": ("shortCitation", "fullCitation", "researchNote"),
     "Media": ("description", "publicCaption", "publicCreditLine", "rightsNote"),
     "Works": ("publicNote",),
     "Films": ("publicNote", "attributionNote"),
@@ -139,6 +139,14 @@ SOURCE_ARK_PATTERN = re.compile(
 )
 SOURCE_NAID_PATTERN = re.compile(r"\bNAID\s*:?\s*(\d+)\b", flags=re.IGNORECASE)
 SOURCE_URL_TRAILING_PUNCTUATION = ".,;:)]}"
+SOURCE_RESEARCH_NOTE_TYPES = {
+    "authority_note",
+    "date_assessment",
+    "evidence_note",
+    "identity_assessment",
+    "object_context",
+    "verification_note",
+}
 
 
 def source_url_from_match(value: str) -> str:
@@ -424,6 +432,19 @@ def is_empty(value: Any) -> bool:
     return value is None or value == "" or value == [] or value == {}
 
 
+def source_record_id(record: dict[str, Any]) -> str | None:
+    """Return the source-system key without coupling the public model to its name."""
+    explicit = record.get("sourceRecordId")
+    if explicit:
+        return str(explicit)
+    candidates = [
+        value
+        for key, value in record.items()
+        if key != "stableId" and key.casefold().endswith("recordid") and value
+    ]
+    return str(candidates[0]) if len(candidates) == 1 else None
+
+
 def normalized_scalar(value: Any) -> Any:
     if isinstance(value, dict):
         if "name" in value:
@@ -502,17 +523,22 @@ class PublicExporter:
             self.by_stable[table_name] = {}
             for record in table_records:
                 stable_id = record.get("stableId")
+                record_id = source_record_id(record)
                 if not stable_id:
-                    self.errors.append(f"{table_name}: record {record['airtableRecordId']} has no stable ID")
+                    self.errors.append(
+                        f"{table_name}: source record {record_id or '[unidentified]'} has no stable ID"
+                    )
+                    continue
+                if not record_id:
+                    self.errors.append(f"{table_name}: {stable_id} has no unambiguous source record ID")
                     continue
                 if stable_id in self.by_stable[table_name]:
                     self.errors.append(f"{table_name}: duplicate stable ID {stable_id}")
                 self.by_stable[table_name][stable_id] = record
-                airtable_id = record["airtableRecordId"]
-                if airtable_id in self.stable_by_record_id:
-                    self.errors.append(f"Duplicate Airtable record ID {airtable_id}")
-                self.stable_by_record_id[airtable_id] = stable_id
-                self.table_by_record_id[airtable_id] = table_name
+                if record_id in self.stable_by_record_id:
+                    self.errors.append(f"Duplicate source record ID {record_id}")
+                self.stable_by_record_id[record_id] = stable_id
+                self.table_by_record_id[record_id] = table_name
         self._validate_config()
         self._validate_overrides()
 
@@ -568,6 +594,9 @@ class PublicExporter:
                 self.errors.append(f"Overrides for {table_name} must be an object")
                 continue
             allowlisted_scalar_keys = set(self.config["tables"][table_name]["fields"])
+            allowlisted_scalar_keys |= set(
+                self.config["tables"][table_name].get("derivedFields", [])
+            )
             for stable_id, override in table_overrides.items():
                 if stable_id not in self.by_stable[table_name]:
                     self.errors.append(
@@ -738,7 +767,7 @@ class PublicExporter:
             stable_id = self.stable_by_record_id.get(link["id"])
             if stable_id is None:
                 self.errors.append(
-                    f"{record.get('stableId')}: unresolved Airtable link {link['id']} in {field_name!r}"
+                    f"{record.get('stableId')}: unresolved source-record link {link['id']} in {field_name!r}"
                 )
                 continue
             result.append(stable_id)
@@ -2006,10 +2035,12 @@ class PublicExporter:
     def _validate_no_private_urls(self) -> None:
         def walk(value: Any, context: str) -> None:
             if isinstance(value, str):
-                if "airtableusercontent.com" in value.lower():
-                    self.errors.append(
-                        f"{context}: contains an expiring Airtable attachment URL"
-                    )
+                host = urlparse(value).hostname or ""
+                if host.casefold() in {
+                    item.casefold()
+                    for item in self.config.get("forbiddenRemoteAssetHosts", [])
+                }:
+                    self.errors.append(f"{context}: contains a forbidden temporary asset URL")
             elif isinstance(value, dict):
                 for key, item in value.items():
                     walk(item, f"{context}.{key}")
@@ -2081,7 +2112,18 @@ class PublicExporter:
 
         for source in self.output_records["Sources"]:
             source_id = source["id"]
-            for key in ("fullCitation", "shortCitation"):
+            research_note = str(source.get("researchNote", "")).strip()
+            research_note_type = str(source.get("researchNoteType", "")).strip()
+            if bool(research_note) != bool(research_note_type):
+                self.errors.append(
+                    f"Source {source_id}: researchNote and researchNoteType must be supplied together"
+                )
+            if research_note_type and research_note_type not in SOURCE_RESEARCH_NOTE_TYPES:
+                self.errors.append(
+                    f"Source {source_id}: unsupported researchNoteType {research_note_type!r}"
+                )
+
+            for key in ("fullCitation", "shortCitation", "researchNote"):
                 value = str(source.get(key, ""))
                 if SOURCE_PUBLIC_IDENTIFIER_PATTERN.search(value):
                     self.errors.append(
@@ -2280,8 +2322,7 @@ class PublicExporter:
         manifest = {
             "schemaVersion": self.config["schemaVersion"],
             "scope": self.config["scope"],
-            "sourceSnapshot": self.database_index["exportedAt"],
-            "sourceRecordCount": self.database_index["totalRecordCount"],
+            "publicDataUpdatedAt": self.database_index["exportedAt"],
             "generator": {
                 "file": Path(__file__).name,
                 "sha256": sha256(Path(__file__).resolve()),
@@ -2371,7 +2412,7 @@ def parse_args() -> argparse.Namespace:
         "--backup",
         required=True,
         type=Path,
-        help="Private Airtable backup directory",
+        help="Compatible private source-package directory",
     )
     parser.add_argument(
         "--output",
@@ -2394,7 +2435,7 @@ def parse_args() -> argparse.Namespace:
         "--overrides",
         type=Path,
         default=Path(__file__).with_name("public_export_overrides.json"),
-        help="Auditable public-text overrides for the frozen source snapshot",
+        help="Auditable corrections and additions for the public graph",
     )
     return parser.parse_args()
 

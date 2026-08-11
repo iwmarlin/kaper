@@ -32,10 +32,10 @@ cache rules. It does not redirect or change the existing production domain.
 
 ## Release sequence
 
-1. Run the public-data exporter, rebuild the derived site payloads and run all
-   validators.
+1. Reconcile the canonical public dataset, rebuild the derived site payloads and
+   run all validators.
 2. Start a local static server and test the six public routes.
-3. Commit the complete feature branch; do not commit the private Airtable backup.
+3. Commit the complete feature branch without private research files.
 4. Push the feature branch and open a draft pull request to `main`.
 5. Review the Netlify Deploy Preview on desktop and mobile.
 6. Confirm catalogue search, timeline filters, map/list, media rights blocks and
@@ -48,18 +48,15 @@ cache rules. It does not redirect or change the existing production domain.
 ## Pre-release commands
 
 ```sh
-python3 scripts/export_public_data.py \
-  --backup ../Kaper-Airtable-Backup-PRIVATE-2026-07-13 \
-  --output data/public/v1 \
-  --assets-root .
-
+python3 scripts/reconcile_manifest.py
 python3 scripts/validate_public_export.py \
   --data data/public/v1 \
   --assets-root .
 
 python3 scripts/build_site_assets.py --root .
 python3 scripts/build_record_payloads.py --root .
-python3 scripts/build_static_records.py --root .
+python3 scripts/stamp_assets.py
+python3 scripts/build_static_records.py --root . --publication-date YYYY-MM-DD
 python3 scripts/build_site_assets.py --check
 python3 scripts/build_record_payloads.py --check
 python3 scripts/build_static_records.py --check

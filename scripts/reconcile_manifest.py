@@ -3,12 +3,12 @@
 
 Run this after any *manual* edit to data/public/v1/*.json or
 scripts/public_export_overrides.json (i.e. when you did not run the full
-export_public_data.py). It recomputes, without touching Airtable:
+export_public_data.py). It recomputes directly from the canonical public files:
 
   - per-table record counts (manifest.counts + build-report.counts)
   - per-file byte sizes and sha256 checksums (manifest.files)
   - the overrides checksum and applied/addition/linkAddition counts
-  - the exporter checksum recorded as the manifest generator
+  - the generator checksum recorded in the manifest
 
 Then run scripts/validate_public_export.py to confirm everything is consistent.
 
@@ -64,7 +64,7 @@ def main() -> int:
 
     changes: list[str] = []
 
-    # 1) counts per table (keyed by Airtable table display name)
+    # 1) counts per table (keyed by the public table display name)
     counts = {}
     for table_name, table_cfg in config["tables"].items():
         payload = read_json(data_root / table_cfg["file"])
