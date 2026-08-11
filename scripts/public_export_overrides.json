@@ -514,6 +514,38 @@
           "url": "https://archive.org/details/catalogofcopyrig253libr/page/1466/mode/2up?q=%22Auf+wiederseh%27n%2C+Herr+Doktor%2C+auf+wiederseh%27n%2C+Frau+Doktor%22"
         }
       },
+      "SRC0053": {
+        "reason": "Identify the printed Bruno Asper credit neutrally and remove internal attribution wording while retaining the established Bronisław Kaper identity resolution.",
+        "fields": {
+          "shortCitation": "Polona/BN, To muszą śpiewać wszyscy (music credited to Bruno Asper), 1927",
+          "fullCitation": "Bruno Asper (Bronisław Kaper), To muszą śpiewać wszyscy (foxtrot), words by Andrzej Włast. Warsaw: Gebethner & Wolff, 1927. Biblioteka Narodowa / Polona.",
+          "creator": "Bruno Asper (Bronisław Kaper) (music); Andrzej Włast (words)"
+        }
+      },
+      "SRC0054": {
+        "reason": "Identify the printed composer and lyricist pseudonyms neutrally, without public-facing editorial attribution language.",
+        "fields": {
+          "creator": "Br. Asper (Bronisław Kaper) (music); Willy (Andrzej Włast) (words)"
+        }
+      },
+      "SRC0055": {
+        "reason": "Identify the printed Bruno Asper composer credit neutrally, without public-facing editorial attribution language.",
+        "fields": {
+          "creator": "Bruno Asper (Bronisław Kaper) (music); Andrzej Włast (words)"
+        }
+      },
+      "SRC0066": {
+        "reason": "Identify the printed composer and lyricist pseudonyms neutrally, without public-facing editorial attribution language.",
+        "fields": {
+          "creator": "Br. Asper (Bronisław Kaper) (music); Willy (Andrzej Włast) (words)"
+        }
+      },
+      "SRC0067": {
+        "reason": "Identify the printed composer and lyricist pseudonyms neutrally, without public-facing editorial attribution language.",
+        "fields": {
+          "creator": "Br. Asper (Bronisław Kaper) (music); Willy (Andrzej Włast) (words)"
+        }
+      },
       "SRC0009": {
         "reason": "Keep the archival citation and collection scope while removing private workflow provenance about who supplied the scans.",
         "fields": {
@@ -2590,6 +2622,12 @@
         "removeFields": [
           "scopeNote"
         ]
+      },
+      "CON-F023-CB-ORG011": {
+        "reason": "Replace internal role-model terminology with the concise historical distinction printed by Filmportal.",
+        "fields": {
+          "scopeNote": "Filmportal lists UFA under “im Auftrag von” (“commissioned by”)."
+        }
       },
       "CON-F004-MRU-P009": {
         "reason": "Remove the redundant explanatory scope note from the public credit; the unresolved-role badge, probable certainty and source form “Benjamin Kapper” already communicate the qualified attribution.",
