@@ -262,6 +262,33 @@ def validate(root: Path) -> dict:
         if not (root / filename).is_file():
             errors.append(f"Missing deployment file: {filename}")
 
+    # The compact phone portrait may visually hide its long caption, but it
+    # must never hide the focusable record link with the entire figcaption.
+    home_js_path = root / "assets/site/home.js"
+    home_css_path = root / "assets/site/home.css"
+    if home_js_path.is_file() and home_css_path.is_file():
+        home_js = home_js_path.read_text(encoding="utf-8")
+        home_css = home_css_path.read_text(encoding="utf-8")
+        if not re.search(
+            r'<span class="hero__portrait-caption">.*?</span>\s*'
+            r'<a href=',
+            home_js,
+            flags=re.DOTALL,
+        ):
+            errors.append(
+                "Home portrait must keep the record link outside its visually "
+                "hidden caption text"
+            )
+        if re.search(
+            r"\.home-page\s+\.hero__portrait\s+figcaption\s*\{[^}]*"
+            r"width:\s*1px",
+            home_css,
+            flags=re.DOTALL,
+        ):
+            errors.append(
+                "Home portrait figcaption hides a focusable record link on phones"
+            )
+
     manifest_path = root / "data/public/v1/manifest.json"
     home_path = root / "data/site/home.json"
     if manifest_path.is_file() and home_path.is_file():

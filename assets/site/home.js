@@ -1,4 +1,4 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=fa561e8e80";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=7760050c5f";
 import {
   escapeHtml,
   mountSiteChrome,
@@ -8,7 +8,7 @@ import {
   renderError,
   renderLoading,
   responsiveImage,
-} from "./core.js?v=fa561e8e80";
+} from "./core.js?v=7760050c5f";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 mountSiteChrome("home");
@@ -69,7 +69,10 @@ function renderPortrait(portrait) {
       eager: true,
       sizes: "(max-width: 680px) 9rem, 20rem",
     })}
-    <figcaption>${caption} <a href="${recordUrl("media", portrait.id)}">See the record</a></figcaption>`;
+    <figcaption>
+      <span class="hero__portrait-caption">${caption}</span>
+      <a href="${recordUrl("media", portrait.id)}">See the record</a>
+    </figcaption>`;
 }
 
 function renderEvents(events) {
