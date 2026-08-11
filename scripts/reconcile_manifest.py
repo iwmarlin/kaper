@@ -99,6 +99,7 @@ def main() -> int:
     additions = sum(len(v) for v in overrides.get("additions", {}).values())
     exclusions = sum(len(v) for v in overrides.get("exclusions", {}).values())
     link_additions = sum(len(v) for v in overrides.get("linkAdditions", {}).values())
+    link_removals = sum(len(v) for v in overrides.get("linkRemovals", {}).values())
     ov = dict(manifest["publicInputs"]["overrides"])
     ov_new = dict(ov)
     ov_new["sha256"] = sha256(overrides_path)
@@ -106,6 +107,7 @@ def main() -> int:
     ov_new["additionCount"] = additions
     ov_new["exclusionCount"] = exclusions
     ov_new["linkAdditionCount"] = link_additions
+    ov_new["linkRemovalCount"] = link_removals
     if ov_new != ov:
         changes.append("overrides(sha/counts)")
 

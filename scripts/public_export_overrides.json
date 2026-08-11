@@ -10540,6 +10540,24 @@
       }
     },
     "Sources": {
+      "SRC0110": {
+        "reason": "Remove TE0007 and TE0010 after those superseded University of Warsaw timeline records were excluded from the public chronology; retain the source and all links to the surviving documented events.",
+        "fields": {
+          "timelineEventIds": [
+            "TE0007",
+            "TE0010"
+          ]
+        }
+      },
+      "SRC0490": {
+        "reason": "Remove TE0007 and TE0010 after those superseded timeline records were excluded from the public chronology; retain the source and all links to the surviving documented events.",
+        "fields": {
+          "timelineEventIds": [
+            "TE0007",
+            "TE0010"
+          ]
+        }
+      },
       "SRC0195": {
         "reason": "Keep the Hofmeister registration on the German original and remove contribution/name-form links that were imported from the separate Dutch edition.",
         "fields": {
@@ -11188,10 +11206,14 @@
     },
     "People": {
       "P009": {
-        "reason": "Remove the probable German-original lyricist contribution inferred from undivided Dutch-edition metadata; Kaper remains the confirmed composer.",
+        "reason": "Remove the probable German-original lyricist contribution inferred from undivided Dutch-edition metadata; Kaper remains the confirmed composer. Also remove TE0007 and TE0010 after those superseded timeline records were excluded from the public chronology.",
         "fields": {
           "contributionIds": [
             "CON-S010-L-P009"
+          ],
+          "timelineEventIds": [
+            "TE0007",
+            "TE0010"
           ]
         }
       },
@@ -11620,6 +11642,24 @@
       }
     },
     "Places": {
+      "PL001": {
+        "reason": "Remove TE0007 and TE0010 after those superseded Warsaw timeline records were excluded from the public chronology; retain Warsaw's links to all surviving events.",
+        "fields": {
+          "timelineEventIds": [
+            "TE0007",
+            "TE0010"
+          ]
+        }
+      },
+      "PL008": {
+        "reason": "Remove TE0007 and TE0010 after those superseded University of Warsaw timeline records were excluded from the public chronology; retain the place's links to all surviving events.",
+        "fields": {
+          "timelineEventIds": [
+            "TE0007",
+            "TE0010"
+          ]
+        }
+      },
       "PL003": {
         "reason": "Kaper was resident in Berlin, not Paris, in 1928-1931; the Paris (PL003) place link is anachronistic and predates his 1933 move to Paris. Remove Paris from these Berlin-period events and correct the placeDisplay from 'Berlin / Paris' to 'Berlin'.",
         "fields": {
