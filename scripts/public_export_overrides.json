@@ -554,10 +554,45 @@
         }
       },
       "SRC0010": {
-        "reason": "Keep the source citation bibliographic; its contextual relationship to Kaper is represented by public links rather than prose inside the citation.",
+        "reason": "Keep the source citation bibliographic, record the PBS publication date rather than the 1933 subject date, and leave the video as general UFA context rather than evidence about Kaper personally.",
         "fields": {
-          "fullCitation": "PBS / WNET. “UFA Studios Fires Jewish Employees.” Cinema’s Exiles, online video."
+          "fullCitation": "PBS / WNET. “UFA Studios Fires Jewish Employees.” Cinema’s Exiles: From Hitler to Hollywood, online video, published 1 December 2008.",
+          "date": "2008-12-01"
         }
+      },
+      "SRC0018": {
+        "reason": "Identify the digitized page as a specific publisher advertisement and name the Kaper–Włast song that makes it directly relevant to the catalogue.",
+        "fields": {
+          "title": "Tygodnik Ilustrowany, 1 February 1930 — Morskie Oko sheet-music advertisement",
+          "fullCitation": "Advertisement for five recent dance numbers from the Morskie Oko revue, including “O tem wróble świergocą” (words by Andrzej Włast; music by Bronisław Kaper). Tygodnik Ilustrowany (Warsaw), 1 February 1930, no. 6, p. III. Biblioteka Cyfrowa Uniwersytetu Łódzkiego (dLibra)."
+        }
+      },
+      "SRC0041": {
+        "reason": "Describe the illustrated-weekly item as a direct press source for Kaper and for the accompanying MGM engagement announcement.",
+        "fields": {
+          "title": "Bronisław Kaper press portrait and MGM engagement notice — Nasz Przegląd Ilustrowany, 28 October 1934",
+          "fullCitation": "Nasz Przegląd Ilustrowany (special supplement), R. 12, no. 43, 28 October 1934, p. 3. Press portrait of Bronisław Kaper with a caption announcing his engagement by Metro-Goldwyn-Mayer in the United States. Biblioteka Narodowa / Polona."
+        }
+      },
+      "SRC0369": {
+        "reason": "Correct the item-level citation: the notice concerns an ERKLA-Quartett concert but does not name Bronisław Kaper and must remain contextual only.",
+        "fields": {
+          "fullCitation": "Stuttgarter Neues Tagblatt, 13 April 1929, p. 6. Notice for an ERKLA-Quartett concert at the Liederhalle in Stuttgart on 23 April 1929. Deutsches Zeitungsportal (Deutsche Digitale Bibliothek)."
+        }
+      },
+      "SRC0453": {
+        "reason": "Align the portrait source with the official Narodowe Archiwum Cyfrowe object metadata supplied by the archive, add the stable object URL, and remove the unverified photographer attribution.",
+        "fields": {
+          "shortCitation": "Narodowe Archiwum Cyfrowe, Jerzy Fitelberg portrait (1937), sygn. 3/1/0/11/6506/1",
+          "fullCitation": "Narodowe Archiwum Cyfrowe / Szukaj w Archiwach. “Jerzy Fitelberg — kompozytor. Fotografia portretowa. Profil.” Photograph, 1937. Unit 3/1/0/11/6506; object 3/1/0/11/6506/1. Koncern Ilustrowany Kurier Codzienny — Archiwum Ilustracji.",
+          "title": "Jerzy Fitelberg — portrait photograph, 1937",
+          "repository": "Narodowe Archiwum Cyfrowe",
+          "publication": "Szukaj w Archiwach",
+          "primaryUrl": "https://www.szukajwarchiwach.gov.pl/jednostka/-/jednostka/5909530/obiekty/374096"
+        },
+        "removeFields": [
+          "creator"
+        ]
       },
       "SRC0016": {
         "reason": "Remove the duplicate terminal full stop after the quoted notice while preserving the transcription.",
@@ -1448,9 +1483,9 @@
         }
       },
       "SRC0432": {
-        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "reason": "Normalize the source type and record the 1920 date of the public-domain Polish anti-Bolshevik recruitment poster.",
         "fields": {
-          "date": "n.d.",
+          "date": "1920",
           "sourceType": "digital_collection_item"
         }
       },
@@ -2023,9 +2058,36 @@
         }
       },
       "M102": {
-        "reason": "Classify the 1934 Kaper portrait chronologically as European; the Hollywood period begins in 1935.",
+        "reason": "Identify the object as a press portrait accompanied by a contemporary MGM engagement notice, while retaining the 1934 item in the European chronological period.",
         "fields": {
-          "period": "european"
+          "title": "Bronisław Kaper — press portrait and MGM engagement notice, 1934",
+          "period": "european",
+          "description": "Press portrait of Bronisław Kaper accompanied by a Polish caption announcing his engagement by Metro-Goldwyn-Mayer in the United States, published in Nasz Przegląd Ilustrowany on 28 October 1934.",
+          "altText": "Press clipping showing a portrait of Bronisław Kaper with a Polish announcement of his engagement by Metro-Goldwyn-Mayer in 1934.",
+          "publicCaption": "Bronisław Kaper’s press portrait with a Polish announcement of his engagement by Metro-Goldwyn-Mayer, 28 October 1934.",
+          "category": "press clipping"
+        }
+      },
+      "M023": {
+        "reason": "Retain the official PBS video as external historical context about UFA, but remove it from the curated media selection because it does not document Kaper or Jurmann directly.",
+        "fields": {
+          "galleryStatus": "external_link_only"
+        }
+      },
+      "M057": {
+        "reason": "Retain the Stuttgart ERKLA-Quartett notice as contextual press material only; the notice does not name Kaper and must not be linked to P009, TE0023, Hamborn or Vierflügeltango.",
+        "fields": {
+          "galleryStatus": "detail_only"
+        }
+      },
+      "M128": {
+        "reason": "Replace the generic contextual description with an item-level account of the publisher advertisement and the Kaper–Włast song visibly documented on the page.",
+        "fields": {
+          "title": "Morskie Oko sheet-music advertisement — Tygodnik Ilustrowany, 1 February 1930",
+          "description": "Full-page advertisement for five recent dance numbers from the Morskie Oko revue, published by Gebethner i Wolff. It includes “O tem wróble świergocą,” with words by Andrzej Włast and music by Bronisław Kaper.",
+          "altText": "Full-page Tygodnik Ilustrowany advertisement for five Morskie Oko dance numbers, including O tem wróble świergocą by Andrzej Włast and Bronisław Kaper.",
+          "publicCaption": "Gebethner i Wolff advertisement for five Morskie Oko dance numbers, including “O tem wróble świergocą” by Andrzej Włast and Bronisław Kaper, 1 February 1930.",
+          "category": "trade advertisement"
         }
       },
       "M121": {
@@ -2175,11 +2237,15 @@
         }
       },
       "M089": {
-        "reason": "Classify the portrait explicitly dated 1937 in the Hollywood chronological period and keep source metadata out of the contextual description.",
+        "reason": "Align the portrait with the official NAC object metadata and public-domain statement, remove an unverified photographer attribution, and keep the unrelated portrait outside the curated public selection.",
         "fields": {
           "period": "hollywood",
-          "description": "Portrait photograph of Jerzy Fitelberg, taken by Antoni Sitkowski in 1937.",
-          "rightsNote": "Public domain: the source catalogue (Szukaj w Archiwach) marks the rights as expired. Credit Antoni Sitkowski / Szukaj w Archiwach, sygn. 3/1/0/11/6506/1."
+          "description": "Portrait photograph in profile of the composer Jerzy Fitelberg, 1937.",
+          "externalUrl": "https://www.szukajwarchiwach.gov.pl/jednostka/-/jednostka/5909530/obiekty/374096",
+          "rightsNote": "Public domain. Narodowe Archiwum Cyfrowe / Szukaj w Archiwach states that the work may be reproduced, modified and distributed, including commercially, without permission.",
+          "publicCaption": "Jerzy Fitelberg — portrait photograph in profile, 1937.",
+          "publicCreditLine": "Narodowe Archiwum Cyfrowe / Szukaj w Archiwach, sygn. 3/1/0/11/6506/1.",
+          "galleryStatus": "detail_only"
         }
       },
       "M090": {
@@ -2434,7 +2500,7 @@
         }
       },
       "M070": {
-        "reason": "State the documented public-domain status (Polona / Biblioteka Narodowa mark it Domena Publiczna) as a neutral rights note, replacing internal workflow phrasing; this also makes the card show a “Public domain” badge.",
+        "reason": "State the documented public-domain status and retain the 1920 recruitment poster as supplementary historical context for the Polish–Soviet War service event.",
         "fields": {
           "rightsNote": "Public domain: Biblioteka Narodowa / Polona classify this 1920 poster as Domena Publiczna (public domain). Reproduced as a historical context image with attribution to Biblioteka Narodowa / Polona."
         }
@@ -7569,6 +7635,14 @@
   },
   "linkAdditions": {
     "Organizations": {
+      "ORG051": {
+        "reason": "Connect Gebethner i Wolff to the 1930 publisher advertisement that explicitly presents its Morskie Oko sheet-music editions, including the Kaper–Włast song.",
+        "fields": {
+          "sourceIds": [
+            "SRC0018"
+          ]
+        }
+      },
       "ORG001": {
         "reason": "Preserve MGM as the documented distributor of the animated Little Boy Blue, while keeping production with Celebrity Productions–P.A. Powers; also synchronize MGM's inverse link to the AFI Trouble for Two record.",
         "fields": {
@@ -7761,6 +7835,30 @@
       }
     },
     "Contributions": {
+      "CON-S022-C-P009": {
+        "reason": "Add the contemporary publisher advertisement as direct evidence for Kaper's printed music credit on “O tem wróble świergocą”.",
+        "fields": {
+          "sourceIds": [
+            "SRC0018"
+          ]
+        }
+      },
+      "CON-S022-L-P003": {
+        "reason": "Add the contemporary publisher advertisement as direct evidence for Andrzej Włast's printed words credit on “O tem wróble świergocą”.",
+        "fields": {
+          "sourceIds": [
+            "SRC0018"
+          ]
+        }
+      },
+      "CON-S022-PUB-ORG051": {
+        "reason": "Add the contemporary advertisement as direct evidence that Gebethner i Wolff published the advertised edition.",
+        "fields": {
+          "sourceIds": [
+            "SRC0018"
+          ]
+        }
+      },
       "CON-S205-C-P009": {
         "reason": "Add the role-specific Copyright Office entry as supporting evidence for Kaper's composer credit on the German composition carried by the French adaptation.",
         "fields": {
@@ -8006,6 +8104,17 @@
       }
     },
     "Works": {
+      "W-S022": {
+        "reason": "Connect the work to the contemporary advertisement that prints its title, lyricist, composer and publisher, and to the corresponding page image.",
+        "fields": {
+          "sourceIds": [
+            "SRC0018"
+          ],
+          "mediaIds": [
+            "M128"
+          ]
+        }
+      },
       "W-S010": {
         "reason": "Link the German original to the newly separated Dutch-language version; version-specific sources and contributors remain on their own Work records.",
         "fields": {
@@ -8620,6 +8729,14 @@
       }
     },
     "Songs": {
+      "S022": {
+        "reason": "Connect the Song record to the contemporary advertisement that prints its title and credits.",
+        "fields": {
+          "sourceIds": [
+            "SRC0018"
+          ]
+        }
+      },
       "S205": {
         "reason": "Expose the role-specific Copyright Office entry alongside the item-level BnF record because it resolves the German original's composer and lyricist roles carried by the French adaptation.",
         "fields": {
@@ -8762,6 +8879,25 @@
       }
     },
     "Media": {
+      "M070": {
+        "reason": "Use the 1920 public-domain recruitment poster as supplementary historical context for the Polish–Soviet War service event; M096 remains the event's hero image.",
+        "fields": {
+          "timelineEventIds": [
+            "TE0006"
+          ]
+        }
+      },
+      "M128": {
+        "reason": "Connect the advertisement image only to the Kaper–Włast song visibly documented on the page, without importing the other four advertised songs into the Kaper catalogue.",
+        "fields": {
+          "workIds": [
+            "W-S022"
+          ],
+          "songIds": [
+            "S022"
+          ]
+        }
+      },
       "M053": {
         "reason": "Attach the Dutch sheet-music cover to the dedicated Dutch Work and Song rather than to the German original.",
         "fields": {
@@ -8927,6 +9063,14 @@
       }
     },
     "Timeline Events": {
+      "TE0006": {
+        "reason": "Add the 1920 recruitment poster as supplementary historical context for Kaper's documented Polish–Soviet War service while retaining M096 as the hero medium.",
+        "fields": {
+          "mediaIds": [
+            "M070"
+          ]
+        }
+      },
       "TE0021": {
         "reason": "Connect the first-publications event to the separately modelled Dutch edition illustrated by its existing hero medium.",
         "fields": {
@@ -9112,6 +9256,7 @@
         "fields": {
           "sourceIds": [
             "SRC0038",
+            "SRC0041",
             "SRC0110",
             "SRC0024",
             "SRC0140",
@@ -9530,6 +9675,33 @@
       }
     },
     "Sources": {
+      "SRC0018": {
+        "reason": "Connect the item-level publisher advertisement to the Kaper–Włast song, its Song record, the three printed credits and Gebethner i Wolff; do not treat the other four advertised songs as Kaper works.",
+        "fields": {
+          "organizationIds": [
+            "ORG051"
+          ],
+          "workIds": [
+            "W-S022"
+          ],
+          "songIds": [
+            "S022"
+          ],
+          "contributionIds": [
+            "CON-S022-C-P009",
+            "CON-S022-L-P003",
+            "CON-S022-PUB-ORG051"
+          ]
+        }
+      },
+      "SRC0041": {
+        "reason": "Link the 1934 illustrated-weekly portrait and MGM engagement announcement directly to Bronisław Kaper.",
+        "fields": {
+          "personIds": [
+            "P009"
+          ]
+        }
+      },
       "SRC0358": {
         "reason": "Connect the item-level Dutch sheet-music record to the dedicated Dutch Work, Song, cover, relation and version-specific contributions.",
         "fields": {

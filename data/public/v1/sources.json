@@ -372,13 +372,13 @@
     {
       "id": "SRC0010",
       "shortCitation": "PBS / WNET, “UFA Studios Fires Jewish Employees”",
-      "fullCitation": "PBS / WNET. “UFA Studios Fires Jewish Employees.” Cinema’s Exiles, online video.",
+      "fullCitation": "PBS / WNET. “UFA Studios Fires Jewish Employees.” Cinema’s Exiles: From Hitler to Hollywood, online video, published 1 December 2008.",
       "sourceType": "online_video_source",
       "title": "UFA Studios Fires Jewish Employees — PBS / Cinema’s Exiles",
       "creator": "PBS / WNET",
       "repository": "PBS / WNET",
       "publication": "PBS / WNET, Cinema’s Exiles",
-      "date": "1933",
+      "date": "2008-12-01",
       "accessDate": "2026-07-13",
       "reliability": "high",
       "sourceStatus": "verified",
@@ -476,9 +476,9 @@
     {
       "id": "SRC0018",
       "shortCitation": "Tygodnik Ilustrowany (Warsaw), 1 February 1930, no. 6, p. III",
-      "fullCitation": "Advertisement. Tygodnik Ilustrowany (Warsaw), 1 February 1930, no. 6, p. III. Biblioteka Cyfrowa Uniwersytetu Łódzkiego (dLibra).",
+      "fullCitation": "Advertisement for five recent dance numbers from the Morskie Oko revue, including “O tem wróble świergocą” (words by Andrzej Włast; music by Bronisław Kaper). Tygodnik Ilustrowany (Warsaw), 1 February 1930, no. 6, p. III. Biblioteka Cyfrowa Uniwersytetu Łódzkiego (dLibra).",
       "sourceType": "press_item",
-      "title": "Tygodnik Ilustrowany, 1 February 1930 (advertisement)",
+      "title": "Tygodnik Ilustrowany, 1 February 1930 — Morskie Oko sheet-music advertisement",
       "repository": "Biblioteka Cyfrowa Uniwersytetu Łódzkiego (dLibra)",
       "publication": "Tygodnik Ilustrowany",
       "date": "1930-02-01",
@@ -487,11 +487,23 @@
       "sourceStatus": "verified_with_attribution_note",
       "slug": "src0018-tygodnik-ilustrowany-1930",
       "organizationIds": [
-        "ORG083"
+        "ORG083",
+        "ORG051"
       ],
       "mediaIds": [
         "M030",
         "M128"
+      ],
+      "workIds": [
+        "W-S022"
+      ],
+      "songIds": [
+        "S022"
+      ],
+      "contributionIds": [
+        "CON-S022-C-P009",
+        "CON-S022-L-P003",
+        "CON-S022-PUB-ORG051"
       ],
       "primaryUrl": "https://bcul.lib.uni.lodz.pl/dlibra/publication/321/edition/187/content",
       "accessUrl": "https://bcul.lib.uni.lodz.pl/dlibra/publication/321/edition/187/content?ref=struct"
@@ -903,9 +915,9 @@
     {
       "id": "SRC0041",
       "shortCitation": "Nasz Przegląd Ilustrowany, R. 12, nr 43, 28 X 1934",
-      "fullCitation": "Nasz Przegląd Ilustrowany (dodatek specjalny), R. 12, nr 43, 28 October 1934, p. 3. Biblioteka Narodowa / Polona.",
+      "fullCitation": "Nasz Przegląd Ilustrowany (special supplement), R. 12, no. 43, 28 October 1934, p. 3. Press portrait of Bronisław Kaper with a caption announcing his engagement by Metro-Goldwyn-Mayer in the United States. Biblioteka Narodowa / Polona.",
       "sourceType": "press_item",
-      "title": "Nasz Przegląd Ilustrowany, R. 12 nr 43",
+      "title": "Bronisław Kaper press portrait and MGM engagement notice — Nasz Przegląd Ilustrowany, 28 October 1934",
       "repository": "Biblioteka Narodowa / Polona",
       "publication": "Nasz Przegląd Ilustrowany",
       "date": "1934-10-28",
@@ -919,6 +931,9 @@
       "mediaIds": [
         "M034",
         "M102"
+      ],
+      "personIds": [
+        "P009"
       ],
       "primaryUrl": "https://polona.pl/item-view/9d384c54-56ff-412a-992b-85ade339f122?page=3"
     },
@@ -11864,7 +11879,7 @@
     {
       "id": "SRC0369",
       "shortCitation": "Stuttgarter Neues Tagblatt, 13 April 1929",
-      "fullCitation": "Stuttgarter Neues Tagblatt, 13 April 1929, p. 6. Deutsches Zeitungsportal (Deutsche Digitale Bibliothek). Notice on an ERKLA-Quartett concert mentioning Kaper.",
+      "fullCitation": "Stuttgarter Neues Tagblatt, 13 April 1929, p. 6. Notice for an ERKLA-Quartett concert at the Liederhalle in Stuttgart on 23 April 1929. Deutsches Zeitungsportal (Deutsche Digitale Bibliothek).",
       "sourceType": "press_item",
       "title": "Stuttgarter Neues Tagblatt, 13 April 1929 — ERKLA-Quartett concert",
       "repository": "Deutsche Digitale Bibliothek / Deutsches Zeitungsportal",
@@ -13704,7 +13719,7 @@
       "title": "Bolszewik",
       "repository": "Biblioteka Narodowa / Polona",
       "publication": "Polona",
-      "date": "n.d.",
+      "date": "1920",
       "accessDate": "2026-06-24",
       "reliability": "high",
       "sourceStatus": "verified_with_attribution_note",
@@ -14137,12 +14152,11 @@
     },
     {
       "id": "SRC0453",
-      "shortCitation": "Szukaj w Archiwach, Jerzy Fitelberg portrait photograph (1937)",
-      "fullCitation": "Szukaj w Archiwach. “Jerzy Fitelberg.” Photograph by Antoni Sitkowski, 1937. Archival signature 3/1/0/11/6506/1.",
+      "shortCitation": "Narodowe Archiwum Cyfrowe, Jerzy Fitelberg portrait (1937), sygn. 3/1/0/11/6506/1",
+      "fullCitation": "Narodowe Archiwum Cyfrowe / Szukaj w Archiwach. “Jerzy Fitelberg — kompozytor. Fotografia portretowa. Profil.” Photograph, 1937. Unit 3/1/0/11/6506; object 3/1/0/11/6506/1. Koncern Ilustrowany Kurier Codzienny — Archiwum Ilustracji.",
       "sourceType": "image_or_photograph",
-      "title": "Jerzy Fitelberg portrait photograph, 1937 — Szukaj w Archiwach",
-      "creator": "Antoni Sitkowski",
-      "repository": "Szukaj w Archiwach",
+      "title": "Jerzy Fitelberg — portrait photograph, 1937",
+      "repository": "Narodowe Archiwum Cyfrowe",
       "publication": "Szukaj w Archiwach",
       "date": "1937",
       "accessDate": "2026-07-01",
@@ -14154,7 +14168,8 @@
       ],
       "mediaIds": [
         "M089"
-      ]
+      ],
+      "primaryUrl": "https://www.szukajwarchiwach.gov.pl/jednostka/-/jednostka/5909530/obiekty/374096"
     },
     {
       "id": "SRC0454",

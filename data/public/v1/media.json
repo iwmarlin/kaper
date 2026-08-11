@@ -756,7 +756,7 @@
       "publicCaption": "Official PBS/WNET contextual video from Cinema’s Exiles on UFA’s dismissal of Jewish employees under Nazi pressure.",
       "publicCreditLine": "PBS / WNET, Cinema’s Exiles: From Hitler to Hollywood.",
       "category": "audio/video reference",
-      "galleryStatus": "selected",
+      "galleryStatus": "external_link_only",
       "sourceIds": [
         "SRC0010"
       ],
@@ -2199,7 +2199,7 @@
       "publicCaption": "Press notice for an ERKLA-Quartett concert, published in Stuttgarter Neues Tagblatt on 13 April 1929.",
       "publicCreditLine": "Stuttgarter Neues Tagblatt / Deutsches Zeitungsportal — Deutsche Digitale Bibliothek, public domain.",
       "category": "press clipping",
-      "galleryStatus": "selected",
+      "galleryStatus": "detail_only",
       "sourceIds": [
         "SRC0369"
       ],
@@ -2597,6 +2597,9 @@
       "galleryStatus": "selected",
       "sourceIds": [
         "SRC0432"
+      ],
+      "timelineEventIds": [
+        "TE0006"
       ],
       "periods": [
         "warsaw"
@@ -3198,8 +3201,8 @@
       "mediaType": "image",
       "storageType": "local",
       "period": "hollywood",
-      "description": "Portrait photograph of Jerzy Fitelberg, taken by Antoni Sitkowski in 1937.",
-      "externalUrl": "https://github.com/iwmarlin/kaper/blob/main/assets/images/portraits/fitelberg.jpg",
+      "description": "Portrait photograph in profile of the composer Jerzy Fitelberg, 1937.",
+      "externalUrl": "https://www.szukajwarchiwach.gov.pl/jednostka/-/jednostka/5909530/obiekty/374096",
       "assetPath": "assets/images/portraits/fitelberg.jpg",
       "assetPaths": [
         "assets/images/portraits/fitelberg.jpg"
@@ -3207,12 +3210,12 @@
       "assetCount": 1,
       "altText": "Portrait photograph of Jerzy Fitelberg, 1937.",
       "rightsStatus": "ok",
-      "rightsNote": "Public domain: the source catalogue (Szukaj w Archiwach) marks the rights as expired. Credit Antoni Sitkowski / Szukaj w Archiwach, sygn. 3/1/0/11/6506/1.",
+      "rightsNote": "Public domain. Narodowe Archiwum Cyfrowe / Szukaj w Archiwach states that the work may be reproduced, modified and distributed, including commercially, without permission.",
       "slug": "jerzy-fitelberg-portrait-1937",
-      "publicCaption": "Portrait photograph of Jerzy Fitelberg, taken by Antoni Sitkowski in 1937.",
-      "publicCreditLine": "Antoni Sitkowski / Szukaj w Archiwach, sygn. 3/1/0/11/6506/1.",
+      "publicCaption": "Jerzy Fitelberg — portrait photograph in profile, 1937.",
+      "publicCreditLine": "Narodowe Archiwum Cyfrowe / Szukaj w Archiwach, sygn. 3/1/0/11/6506/1.",
       "category": "portrait",
-      "galleryStatus": "selected",
+      "galleryStatus": "detail_only",
       "sourceIds": [
         "SRC0453"
       ],
@@ -3544,23 +3547,23 @@
     },
     {
       "id": "M102",
-      "title": "Bronisław Kaper — portrait crop from Nasz Przegląd Ilustrowany, 1934",
+      "title": "Bronisław Kaper — press portrait and MGM engagement notice, 1934",
       "mediaType": "image",
       "storageType": "local",
       "period": "european",
-      "description": "Cropped portrait of Bronisław Kaper from Nasz Przegląd Ilustrowany, R. 12, no. 43, 28 October 1934.",
+      "description": "Press portrait of Bronisław Kaper accompanied by a Polish caption announcing his engagement by Metro-Goldwyn-Mayer in the United States, published in Nasz Przegląd Ilustrowany on 28 October 1934.",
       "assetPath": "assets/images/historical-context/nasz-przeglad-1934-43.jpg",
       "assetPaths": [
         "assets/images/historical-context/nasz-przeglad-1934-43.jpg"
       ],
       "assetCount": 1,
-      "altText": "Cropped press portrait of Bronisław Kaper from Nasz Przegląd Ilustrowany, 1934.",
+      "altText": "Press clipping showing a portrait of Bronisław Kaper with a Polish announcement of his engagement by Metro-Goldwyn-Mayer in 1934.",
       "rightsStatus": "ok",
       "rightsNote": "Biblioteka Narodowa / Polona marks the source object as public domain.",
       "slug": "kaper-clipped-image-from-nasz-przeglad-1934-m102",
-      "publicCaption": "Cropped portrait of Bronisław Kaper from Nasz Przegląd Ilustrowany, R. 12, no. 43, 28 October 1934.",
+      "publicCaption": "Bronisław Kaper’s press portrait with a Polish announcement of his engagement by Metro-Goldwyn-Mayer, 28 October 1934.",
       "publicCreditLine": "Nasz Przegląd Ilustrowany / Biblioteka Narodowa / Polona, public domain.",
-      "category": "portrait",
+      "category": "press clipping",
       "galleryStatus": "selected",
       "sourceIds": [
         "SRC0041"
@@ -4281,26 +4284,32 @@
     },
     {
       "id": "M128",
-      "title": "Tygodnik Ilustrowany, 1 February 1930 — press clipping",
+      "title": "Morskie Oko sheet-music advertisement — Tygodnik Ilustrowany, 1 February 1930",
       "mediaType": "image",
       "storageType": "local",
       "period": "european",
-      "description": "Press clipping from Tygodnik Ilustrowany, 1 February 1930, used as a contextual press item connected with Kaper’s Warsaw–Berlin period.",
+      "description": "Full-page advertisement for five recent dance numbers from the Morskie Oko revue, published by Gebethner i Wolff. It includes “O tem wróble świergocą,” with words by Andrzej Włast and music by Bronisław Kaper.",
       "assetPath": "assets/images/historical-context/ti-1-02-1930.jpg",
       "assetPaths": [
         "assets/images/historical-context/ti-1-02-1930.jpg"
       ],
       "assetCount": 1,
-      "altText": "Polish illustrated-weekly clipping from Tygodnik Ilustrowany, 1 February 1930.",
+      "altText": "Full-page Tygodnik Ilustrowany advertisement for five Morskie Oko dance numbers, including O tem wróble świergocą by Andrzej Włast and Bronisław Kaper.",
       "rightsStatus": "ok",
       "rightsNote": "Public domain: anonymous press item, 1930. Anonymous works are PD 70 years after publication (expired); also PD in the US (published through 1930).",
       "slug": "ti-1-february-1930-historical-context-image-m128",
-      "publicCaption": "Press clipping from Tygodnik Ilustrowany, 1 February 1930, used as a contextual press item connected with Kaper’s Warsaw–Berlin period.",
+      "publicCaption": "Gebethner i Wolff advertisement for five Morskie Oko dance numbers, including “O tem wróble świergocą” by Andrzej Włast and Bronisław Kaper, 1 February 1930.",
       "publicCreditLine": "Tygodnik Ilustrowany, 1 February 1930, no. 6, p. III; Biblioteka Cyfrowa Uniwersytetu Łódzkiego / dLibra, public domain.",
-      "category": "press clipping",
+      "category": "trade advertisement",
       "galleryStatus": "selected",
       "sourceIds": [
         "SRC0018"
+      ],
+      "workIds": [
+        "W-S022"
+      ],
+      "songIds": [
+        "S022"
       ],
       "periods": [
         "european"
