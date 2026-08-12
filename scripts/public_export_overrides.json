@@ -3,6 +3,12 @@
   "description": "Auditable corrections for the canonical public graph. Existing records may receive scalar corrections or field removals; documented public records and explicit links may be added through the additions sections.",
   "records": {
     "Films": {
+      "F051": {
+        "reason": "Replace the provisional note with an explicit song-to-film relation. AFI lists “All God's Children Got Rhythm” among the songs used in Birthright and credits Bronislau Kaper, Walter Jurmann and Gus Kahn.",
+        "removeFields": [
+          "publicNote"
+        ]
+      },
       "F052": {
         "reason": "Correct a conflation of two distinct 1936 shorts titled Little Boy Blue. Buxbaum/Sieghardt documents the animated film produced and directed by Ub Iwerks, with Jurmann background cues, additional music by Carl W. Stalling, and a companion catalogue statement associating the cues with Kaper and Jurmann; it does not name Harold S. Bucquet.",
         "fields": {
@@ -62,6 +68,12 @@
       }
     },
     "Works": {
+      "W-F051": {
+        "reason": "Replace the provisional free-text song reference with the explicit, source-backed relation REL0201.",
+        "removeFields": [
+          "publicNote"
+        ]
+      },
       "W-F052": {
         "reason": "Replace the mixed live-action/animated description with the Buxbaum/Sieghardt record for the Ub Iwerks animated short and its source-specific music credits.",
         "fields": {
@@ -507,6 +519,13 @@
       }
     },
     "Sources": {
+      "SRC0146": {
+        "reason": "Make the AFI citation self-contained for both the film record and the documented song reuse without importing unrelated language-version credits.",
+        "fields": {
+          "shortCitation": "AFI Catalog, Birthright — film record and song credits",
+          "fullCitation": "American Film Institute. “Birthright.” AFI Catalog of Feature Films. The record lists “All God's Children Got Rhythm” among the film's songs and credits music to Bronislau Kaper and Walter Jurmann and lyrics to Gus Kahn. Accessed 10 June 2026."
+        }
+      },
       "SRC0470": {
         "reason": "Link directly to the page containing entry no. 28400 and use a descriptive public title for the primary copyright-catalogue evidence for the German original.",
         "fields": {
@@ -2967,6 +2986,12 @@
       }
     },
     "Contributions": {
+      "CON-F051-C-P009": {
+        "reason": "The song-to-film connection is represented by REL0201; remove the redundant provisional public note while retaining the scoped composer contribution documented by AFI.",
+        "removeFields": [
+          "publicNote"
+        ]
+      },
       "CON-S205-L-P115": {
         "reason": "Present the French-version credit concisely on the dedicated Work; the full bibliographic evidence remains in SRC0504.",
         "fields": {
@@ -6816,6 +6841,27 @@
             "SRC0358"
           ]
         }
+      },
+      "REL0201": {
+        "reason": "Represent the reuse of All God's Chillun Got Rhythm in Birthright as a source-backed song-to-film relation rather than as an unexplained public note or a complete film-score attribution.",
+        "fields": {
+          "id": "REL0201",
+          "relationType": "associated_with_film",
+          "targetWorkTitle": "Birthright",
+          "targetTitleAsSource": "Birthright",
+          "direction": "source_to_target",
+          "publicNote": "“All God's Chillun Got Rhythm” is listed among the songs used in Birthright.",
+          "certainty": "confirmed",
+          "sourceWorkIds": [
+            "W-S152"
+          ],
+          "targetWorkIds": [
+            "W-F051"
+          ],
+          "sourceIds": [
+            "SRC0146"
+          ]
+        }
       }
     },
     "Places": {
@@ -8989,9 +9035,10 @@
         }
       },
       "W-F051": {
-        "reason": "Attach Walter Jurmann's existing documented contribution to the work record.",
+        "reason": "Attach Walter Jurmann's documented contribution and the explicit AFI-supported song-to-film relation.",
         "fields": {
-          "contributionIds": ["CON-F051-C-P077"]
+          "contributionIds": ["CON-F051-C-P077"],
+          "relationIds": ["REL0201"]
         }
       },
       "W-F054": {
@@ -9001,10 +9048,16 @@
         }
       },
       "W-S152": {
-        "reason": "Synchronize the inverse work-to-event link already documented by TE0054.",
+        "reason": "Synchronize the event link and the AFI-supported reuse of the song in Birthright.",
         "fields": {
           "timelineEventIds": [
             "TE0054"
+          ],
+          "sourceIds": [
+            "SRC0146"
+          ],
+          "relationIds": [
+            "REL0201"
           ]
         }
       },
@@ -10035,6 +10088,14 @@
       }
     },
     "Work Relations": {
+      "REL0201": {
+        "reason": "Synchronize the source side of the AFI-supported song-to-film relation.",
+        "fields": {
+          "sourceIds": [
+            "SRC0146"
+          ]
+        }
+      },
       "REL0162": {
         "reason": "Attach the item-level 1936 France-Mélodie catalogue record that explicitly identifies the French title and the original English title.",
         "fields": {
@@ -10053,6 +10114,20 @@
       }
     },
     "Sources": {
+      "SRC0146": {
+        "reason": "AFI lists All God's Children Got Rhythm among the songs used in Birthright and names the songwriters; synchronize the source with the song and explicit work relation.",
+        "fields": {
+          "workIds": [
+            "W-S152"
+          ],
+          "songIds": [
+            "S152"
+          ],
+          "workRelationIds": [
+            "REL0201"
+          ]
+        }
+      },
       "SRC0018": {
         "reason": "Connect the item-level publisher advertisement to the Kaper–Włast song, its Song record, the three printed credits and Gebethner i Wolff; do not treat the other four advertised songs as Kaper works.",
         "fields": {

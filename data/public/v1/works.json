@@ -2547,7 +2547,6 @@
       "year": 1939,
       "period": "hollywood",
       "certainty": "confirmed",
-      "publicNote": "All God's Chillun Got Rhythm from A Day at the Races",
       "displayOnSite": true,
       "publicScope": "standalone_page",
       "sourceIds": [
@@ -2566,6 +2565,9 @@
       ],
       "organizationIds": [
         "ORG004"
+      ],
+      "relationIds": [
+        "REL0201"
       ],
       "filmIds": [
         "F051"
@@ -9652,6 +9654,7 @@
       "publicScope": "standalone_page",
       "sourceIds": [
         "SRC0008",
+        "SRC0146",
         "SRC0259",
         "SRC0261",
         "SRC0376",
@@ -9691,7 +9694,8 @@
       ],
       "relationIds": [
         "REL0106",
-        "REL0167"
+        "REL0167",
+        "REL0201"
       ],
       "songIds": [
         "S152"

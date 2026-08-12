@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 193,
+  "count": 194,
   "records": [
     {
       "id": "REL0001",
@@ -3466,6 +3466,24 @@
     ],
     "sourceIds": [
       "SRC0358"
+    ]
+  },
+  {
+    "id": "REL0201",
+    "relationType": "associated_with_film",
+    "targetWorkTitle": "Birthright",
+    "targetTitleAsSource": "Birthright",
+    "direction": "source_to_target",
+    "publicNote": "“All God's Chillun Got Rhythm” is listed among the songs used in Birthright.",
+    "certainty": "confirmed",
+    "sourceWorkIds": [
+      "W-S152"
+    ],
+    "targetWorkIds": [
+      "W-F051"
+    ],
+    "sourceIds": [
+      "SRC0146"
     ]
   }
 ]
