@@ -3460,6 +3460,49 @@
       }
     },
     "People": {
+      "P004": {
+        "reason": "Add André Saudemont's verified VIAF authority identifier.",
+        "fields": {
+          "authorityUrl": "VIAF: https://viaf.org/viaf/204922750"
+        }
+      },
+      "P013": {
+        "reason": "The established 1899–1951 life dates for Edwin L. Marin agree with the linked authority records; remove the obsolete disputed flag.",
+        "fields": {
+          "lifeDatesCertainty": "confirmed"
+        }
+      },
+      "P022": {
+        "reason": "Add Georg Jacoby's verified GND identifier and mark his authority-supported 1882–1964 life dates as confirmed.",
+        "fields": {
+          "authorityUrl": "VIAF: https://viaf.org/viaf/22403499\nLCNAF: https://id.loc.gov/authorities/names/no94031326\nGND: https://d-nb.info/gnd/119410974\nWikidata: https://www.wikidata.org/wiki/Q71273",
+          "lifeDatesCertainty": "confirmed"
+        }
+      },
+      "P133": {
+        "reason": "Add Eddy Duchin's verified VIAF, LCNAF and GND authority identifiers.",
+        "fields": {
+          "authorityUrl": "VIAF: https://viaf.org/viaf/34643027\nLCNAF: https://id.loc.gov/authorities/names/n85072685\nGND: https://d-nb.info/gnd/135949033"
+        }
+      },
+      "P134": {
+        "reason": "Add Ivie Anderson's verified VIAF, LCNAF and GND authority identifiers.",
+        "fields": {
+          "authorityUrl": "VIAF: https://viaf.org/viaf/54331573\nLCNAF: https://id.loc.gov/authorities/names/n94068176\nGND: https://d-nb.info/gnd/134314662"
+        }
+      },
+      "P140": {
+        "reason": "The established 1888–1959 life dates for William Axt agree with the linked authority records; remove the obsolete disputed flag.",
+        "fields": {
+          "lifeDatesCertainty": "confirmed"
+        }
+      },
+      "P146": {
+        "reason": "Add Felix Günther's verified VIAF, GND and Wikidata authority identifiers.",
+        "fields": {
+          "authorityUrl": "VIAF: https://viaf.org/viaf/15742834\nGND: https://d-nb.info/gnd/124394515\nWikidata: https://www.wikidata.org/wiki/Q22681971"
+        }
+      },
       "P005": {
         "reason": "Normalize André Mauprey's authority links so the public person record exposes the verified BnF, VIAF, Wikidata and ISNI identities with readable labels.",
         "fields": {
