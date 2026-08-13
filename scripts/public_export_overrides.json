@@ -8401,17 +8401,6 @@
     }
   },
   "linkAdditions": {
-    "Timeline Events": {
-      "TE0040": {
-        "reason": "Synchronize the event with its two documented collaborators and retain only Everybody Sing as the linked work.",
-        "fields": {
-          "personIds": [
-            "P025",
-            "P077"
-          ]
-        }
-      }
-    },
     "Organizations": {
       "ORG051": {
         "reason": "Connect Gebethner i Wolff to the 1930 publisher advertisement that explicitly presents its Morskie Oko sheet-music editions, including the Kaper–Włast song.",
@@ -9980,6 +9969,66 @@
             "P130"
           ]
         }
+      },
+      "TE0040": {
+        "reason": "Synchronize the event with its two documented collaborators and retain only Everybody Sing as the linked work.",
+        "fields": {
+          "personIds": [
+            "P025",
+            "P077"
+          ]
+        }
+      },
+      "TE0025": {
+        "reason": "Link the two directors explicitly named in the event description to the films represented by this event.",
+        "fields": {
+          "personIds": [
+            "P066",
+            "P073"
+          ]
+        }
+      },
+      "TE0026": {
+        "reason": "Link Max Reichmann and Richard Tauber, both explicitly named in the event description and documented through the event's film and song context.",
+        "fields": {
+          "personIds": [
+            "P057",
+            "P118"
+          ]
+        }
+      },
+      "TE0030": {
+        "reason": "Link Henri Garat, whose Salabert recording session is explicitly described by the event.",
+        "fields": {
+          "personIds": [
+            "P132"
+          ]
+        }
+      },
+      "TE0037": {
+        "reason": "Link Ned Washington and Robert Z. Leonard, both explicitly named in the Hollywood-debut description.",
+        "fields": {
+          "personIds": [
+            "P058",
+            "P070"
+          ]
+        }
+      },
+      "TE0038": {
+        "reason": "Link Deanna Durbin, explicitly named in the event's documented Three Smart Girls context.",
+        "fields": {
+          "personIds": [
+            "P137"
+          ]
+        }
+      },
+      "TE0048": {
+        "reason": "Link Walter Jurmann, explicitly identified in the description as the later collaborator introduced to Kaper by Fritz Rotter.",
+        "fields": {
+          "personIds": [
+            "P077"
+          ]
+        }
       }
     },
     "Places": {
@@ -10056,10 +10105,13 @@
         }
       },
       "P073": {
-        "reason": "Expose the identified Rudolf Walther-Fein portrait on his existing person page through its dedicated item-level source without adding unsupported work or event relations.",
+        "reason": "Expose Rudolf Walther-Fein's identified portrait and synchronize his inverse link to the first-film-compositions event that explicitly names him.",
         "fields": {
           "sourceIds": [
             "SRC0672"
+          ],
+          "timelineEventIds": [
+            "TE0025"
           ]
         }
       },
@@ -10080,10 +10132,29 @@
         }
       },
       "P058": {
-        "reason": "Connect Ned Washington to the documented Disney Wiki portrait source so the portrait appears on his person record.",
+        "reason": "Connect Ned Washington to the documented portrait source and synchronize his inverse link to the Hollywood-debut event that explicitly names him.",
         "fields": {
           "sourceIds": [
             "SRC0567"
+          ],
+          "timelineEventIds": [
+            "TE0037"
+          ]
+        }
+      },
+      "P057": {
+        "reason": "Synchronize Max Reichmann's inverse link to the meeting-with-Jurmann event, whose description explicitly identifies him as director of the first joint project.",
+        "fields": {
+          "timelineEventIds": [
+            "TE0026"
+          ]
+        }
+      },
+      "P070": {
+        "reason": "Synchronize Robert Z. Leonard's inverse link to the Hollywood-debut event, whose description explicitly identifies him as director of Escapade.",
+        "fields": {
+          "timelineEventIds": [
+            "TE0037"
           ]
         }
       },
@@ -10296,10 +10367,13 @@
         }
       },
       "P066": {
-        "reason": "Connect Richard Oswald to the newly added verified portrait source SRC0562.",
+        "reason": "Connect Richard Oswald to the verified portrait source and synchronize his inverse link to the first-film-compositions event that explicitly names him.",
         "fields": {
           "sourceIds": [
             "SRC0562"
+          ],
+          "timelineEventIds": [
+            "TE0025"
           ]
         }
       },
@@ -10312,7 +10386,7 @@
         }
       },
       "P077": {
-        "reason": "Connect Walter Jurmann to the completed 1932–1933 Hofmeister sources, the official Jurmann catalogue, the existing Academy Collection photograph, and synchronize his person record with all documented film contributions.",
+        "reason": "Connect Walter Jurmann to the completed sources and documented film contributions, and synchronize the inverse event links that explicitly identify his collaborations with Kaper.",
         "fields": {
           "sourceIds": [
             "SRC0306",
@@ -10398,7 +10472,8 @@
             "CON-F054-C-P077"
           ],
           "timelineEventIds": [
-            "TE0040"
+            "TE0040",
+            "TE0048"
           ]
         }
       },
@@ -10474,7 +10549,7 @@
         }
       },
       "P132": {
-        "reason": "Connect Henri Garat to the item-level cover, his printed credit form and his two documented vocal performances.",
+        "reason": "Connect Henri Garat to the item-level cover and documented performances, and synchronize his inverse link to the Salabert recording-session event that explicitly names him.",
         "fields": {
           "sourceIds": [
             "SRC0540"
@@ -10486,6 +10561,25 @@
           "workIds": [
             "W-S110",
             "W-S111"
+          ],
+          "timelineEventIds": [
+            "TE0030"
+          ]
+        }
+      },
+      "P118": {
+        "reason": "Synchronize Richard Tauber's inverse link to the meeting-with-Jurmann event, whose description explicitly identifies the song composed for him.",
+        "fields": {
+          "timelineEventIds": [
+            "TE0026"
+          ]
+        }
+      },
+      "P137": {
+        "reason": "Synchronize Deanna Durbin's inverse link to the San Francisco and Three Smart Girls event, whose description explicitly identifies her performance context.",
+        "fields": {
+          "timelineEventIds": [
+            "TE0038"
           ]
         }
       },
