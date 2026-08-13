@@ -3377,6 +3377,24 @@
       }
     },
     "Timeline Events": {
+      "TE0040": {
+        "reason": "Replace the mixed-year career summary with a source-defined Everybody Sing collaboration spanning the first surviving assignment report on 13 July 1937 and the release notice on 17 March 1938; identify Kaper, Walter Jurmann and Gus Kahn, and remove Paul Francis Webster from the unsupported public description.",
+        "fields": {
+          "slug": "1937-1938-everybody-sing-with-gus-kahn",
+          "title": "Everybody Sing with Gus Kahn",
+          "label": "Jul 1937–Mar 1938 · Everybody Sing with Gus Kahn",
+          "displayDate": "13 July 1937–17 March 1938",
+          "dateStart": "1937-07-13",
+          "dateEnd": "1938-03-17",
+          "datePrecision": "range",
+          "sortDate": "1937-07-13",
+          "displayMode": "cluster",
+          "placeDisplay": "MGM Studios, Culver City",
+          "cityKey": "culver-city",
+          "shortDescription": "Kaper and Walter Jurmann collaborate with lyricist Gus Kahn on songs for the MGM musical Everybody Sing.",
+          "longDescription": "On 13 July 1937, The Washington Daily News reported that Gus Kahn was studying musical notation with Kaper and Jurmann while they worked on The Ugly Duckling, the working title of Everybody Sing. A Brooklyn Daily Eagle notice of 17 March 1938 documents the released film and credits songs to Kaper and Jurmann."
+        }
+      },
       "TE0036": {
         "reason": "Correct the manifest address after direct inspection of the scan: it reads 6626 Franklin Avenue, the same Château des Fleurs address documented in Kaper's 1936 declaration.",
         "fields": {
@@ -8383,6 +8401,17 @@
     }
   },
   "linkAdditions": {
+    "Timeline Events": {
+      "TE0040": {
+        "reason": "Synchronize the event with its two documented collaborators and retain only Everybody Sing as the linked work.",
+        "fields": {
+          "personIds": [
+            "P025",
+            "P077"
+          ]
+        }
+      }
+    },
     "Organizations": {
       "ORG051": {
         "reason": "Connect Gebethner i Wolff to the 1930 publisher advertisement that explicitly presents its Morskie Oko sheet-music editions, including the Kaper–Włast song.",
@@ -9358,9 +9387,10 @@
         }
       },
       "W-F048": {
-        "reason": "Attach Walter Jurmann's existing documented contribution to the work record.",
+        "reason": "Attach Walter Jurmann's existing documented contribution and synchronize Everybody Sing with the source-defined 1937–1938 timeline event.",
         "fields": {
-          "contributionIds": ["CON-F048-C-P077"]
+          "contributionIds": ["CON-F048-C-P077"],
+          "timelineEventIds": ["TE0040"]
         }
       },
       "W-F050": {
@@ -9954,13 +9984,16 @@
     },
     "Places": {
       "PL006": {
-        "reason": "Link MGM Studios in Culver City to its official-city historical street-view image and item-level source.",
+        "reason": "Link MGM Studios in Culver City to its official-city historical street-view image, item-level source and the source-defined Everybody Sing timeline event.",
         "fields": {
           "mediaIds": [
             "M288"
           ],
           "sourceIds": [
             "SRC0641"
+          ],
+          "timelineEventIds": [
+            "TE0040"
           ]
         }
       },
@@ -10115,12 +10148,15 @@
         }
       },
       "P025": {
-        "reason": "Link Gus Kahn to the archival collection source and to the AFI records that explicitly credit his lyrics for You're All I Need and San Francisco.",
+        "reason": "Link Gus Kahn to the archival collection source, the AFI records that explicitly credit his lyrics for You're All I Need and San Francisco, and the source-defined Everybody Sing timeline event.",
         "fields": {
           "sourceIds": [
             "SRC0140",
             "SRC0144",
             "SRC0557"
+          ],
+          "timelineEventIds": [
+            "TE0040"
           ]
         }
       },
@@ -10360,6 +10396,9 @@
             "CON-F050-C-P077",
             "CON-F051-C-P077",
             "CON-F054-C-P077"
+          ],
+          "timelineEventIds": [
+            "TE0040"
           ]
         }
       },
@@ -12966,6 +13005,19 @@
       }
     },
     "Timeline Events": {
+      "TE0040": {
+        "reason": "Remove the unrelated 1936 songs and the over-broad Los Angeles/Hollywood place links from the newly source-defined Everybody Sing event.",
+        "fields": {
+          "workIds": [
+            "W-S147",
+            "W-S148"
+          ],
+          "placeIds": [
+            "PL004",
+            "PL005"
+          ]
+        }
+      },
       "TE0020": {
         "reason": "Replace the press clipping as the timeline hero with the historical exterior photograph while retaining M085 among the event's evidentiary media.",
         "fields": {
