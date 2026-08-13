@@ -7328,6 +7328,41 @@
           ],
           "primaryUrl": "https://digitaler-lesesaal.bundesarchiv.de/video/38122/665451"
         }
+      },
+      "SRC0682": {
+        "reason": "Add the Bundesarchiv Digital Reading Room record and complete institutional access copy for Die Zwei vom Südexpreß, including the filmwork identifier, archival signature, runtime and the explicit Kaper–Jurmann–Jung music credit.",
+        "fields": {
+          "id": "SRC0682",
+          "shortCitation": "Bundesarchiv, Digitaler Lesesaal, Die Zwei vom Südexpress — complete film, Filmwerk 2999",
+          "fullCitation": "Bundesarchiv, Digitaler Lesesaal. Die Zwei vom Südexpress (Originaltitel). Filmwerk 2999, signature 60809. Münchener Lichtspielkunst AG (Emelka/MLK), 1932; directed by Robert Wohlmuth; music by Walter Jurmann, Bronislau Kaper and Friedrich Jung. Digital access copy, black and white, German, 75 minutes 51 seconds.",
+          "sourceType": "online_video_source",
+          "title": "Die Zwei vom Südexpress — complete film, Bundesarchiv",
+          "creator": "Münchener Lichtspielkunst AG (Emelka/MLK)",
+          "repository": "Bundesarchiv, Digitaler Lesesaal",
+          "publication": "Digitaler Lesesaal",
+          "date": "1932",
+          "accessDate": "2026-08-13",
+          "reliability": "high",
+          "sourceStatus": "verified",
+          "slug": "src0682-bundesarchiv-die-zwei-vom-suedexpress-complete-film",
+          "workIds": [
+            "W-F013"
+          ],
+          "filmIds": [
+            "F013"
+          ],
+          "mediaIds": [
+            "M327"
+          ],
+          "contributionIds": [
+            "CON-F013-C-P009",
+            "CON-F013-C-P077",
+            "CON-F013-C-P127",
+            "CON-F013-D-P069",
+            "CON-F013-PC-ORG010"
+          ],
+          "primaryUrl": "https://digitaler-lesesaal.bundesarchiv.de/video/2999/700262"
+        }
       }
     },
     "Songs": {
@@ -8926,6 +8961,37 @@
             "european"
           ]
         }
+      },
+      "M327": {
+        "reason": "Add the complete film in the Bundesarchiv Digital Reading Room as an external institutional video reference linked to Die Zwei vom Südexpreß; the film remains on the Bundesarchiv site and is not rehosted or embedded.",
+        "fields": {
+          "id": "M327",
+          "title": "Die Zwei vom Südexpreß — complete film, Bundesarchiv",
+          "slug": "die-zwei-vom-suedexpress-complete-film-bundesarchiv-m327",
+          "mediaType": "video",
+          "storageType": "external",
+          "externalUrl": "https://digitaler-lesesaal.bundesarchiv.de/video/2999/700262",
+          "assetCount": 0,
+          "category": "audio/video reference",
+          "galleryStatus": "selected",
+          "period": "european",
+          "sortOrder": 327,
+          "altText": "External access link to the complete film Die Zwei vom Südexpreß in the Bundesarchiv Digital Reading Room.",
+          "description": "Complete 75-minute 51-second black-and-white German-language access copy of Die Zwei vom Südexpreß in the Bundesarchiv Digital Reading Room.",
+          "publicCaption": "Complete institutional access copy of Die Zwei vom Südexpreß. The Bundesarchiv record gives production year 1932 and credits Walter Jurmann, Bronislau Kaper and Friedrich Jung with the music.",
+          "publicCreditLine": "Bundesarchiv, Digitaler Lesesaal; Filmwerk 2999, signature 60809.",
+          "rightsStatus": "permission_needed_or_fair_use_claimed",
+          "rightsNote": "The film is linked as an external institutional access copy and is not downloaded, rehosted or automatically embedded. Viewing and further use are governed by the Bundesarchiv Digital Reading Room terms.",
+          "sourceIds": [
+            "SRC0682"
+          ],
+          "workIds": [
+            "W-F013"
+          ],
+          "periods": [
+            "european"
+          ]
+        }
       }
     },
     "Timeline Events": {
@@ -9335,10 +9401,43 @@
         }
       },
       "CON-F013-C-P009": {
-        "reason": "Add the official Walter Jurmann catalogue as source-specific evidence for Kaper's collaboration with Jurmann on the film's background music and a song.",
+        "reason": "Add the official Walter Jurmann catalogue and the Bundesarchiv full-film record as source-specific evidence for Kaper's music credit.",
         "fields": {
           "sourceIds": [
-            "SRC0306"
+            "SRC0306",
+            "SRC0682"
+          ]
+        }
+      },
+      "CON-F013-C-P077": {
+        "reason": "Add the Bundesarchiv full-film record as direct institutional evidence for Jurmann's music credit.",
+        "fields": {
+          "sourceIds": [
+            "SRC0682"
+          ]
+        }
+      },
+      "CON-F013-C-P127": {
+        "reason": "Add the Bundesarchiv full-film record as direct institutional evidence for Friedrich Jung's music credit.",
+        "fields": {
+          "sourceIds": [
+            "SRC0682"
+          ]
+        }
+      },
+      "CON-F013-D-P069": {
+        "reason": "Add the Bundesarchiv full-film record as direct institutional evidence for Robert Wohlmuth's directing credit.",
+        "fields": {
+          "sourceIds": [
+            "SRC0682"
+          ]
+        }
+      },
+      "CON-F013-PC-ORG010": {
+        "reason": "Add the Bundesarchiv full-film record as direct institutional evidence for the Emelka production credit.",
+        "fields": {
+          "sourceIds": [
+            "SRC0682"
           ]
         }
       },
@@ -9673,10 +9772,14 @@
         }
       },
       "W-F013": {
-        "reason": "Attach the verified Friedrich Jung and Walter Jurmann music contributions and the official Jurmann catalogue source to Die Zwei vom Südexpreß.",
+        "reason": "Attach the verified Friedrich Jung and Walter Jurmann music contributions, the official Jurmann catalogue, and the Bundesarchiv full-film source and external access medium to Die Zwei vom Südexpreß.",
         "fields": {
           "sourceIds": [
-            "SRC0306"
+            "SRC0306",
+            "SRC0682"
+          ],
+          "mediaIds": [
+            "M327"
           ],
           "contributionIds": [
             "CON-F013-C-P077",
@@ -10209,10 +10312,11 @@
         }
       },
       "F013": {
-        "reason": "Add the official Walter Jurmann catalogue as the source documenting Kaper and Jurmann's background-music and song contribution to Die Zwei vom Südexpreß.",
+        "reason": "Add the official Walter Jurmann catalogue and the Bundesarchiv full-film record as sources documenting the music credits for Die Zwei vom Südexpreß.",
         "fields": {
           "sourceIds": [
-            "SRC0306"
+            "SRC0306",
+            "SRC0682"
           ]
         }
       },
