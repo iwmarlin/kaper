@@ -629,9 +629,25 @@
         ]
       },
       "SRC0016": {
-        "reason": "Remove the duplicate terminal full stop after the quoted notice while preserving the transcription.",
+        "reason": "Remove the duplicate terminal full stop after the quoted notice while preserving the transcription, and connect the notice to the pianist whose recital it reviews.",
         "fields": {
-          "fullCitation": "Kurier Warszawski, R. 108, nr 18 (18 January 1928), evening ed., p. 4. Biblioteka Narodowa / Polona. https://polona.pl/item-view/91b0892b-9073-4e61-a00f-3565adc7bea3?page=3. Notice on B. Kaper: “Trzy utwory fortepianowe B. Kapera zdradzają obiecujący talent młodego autora.”"
+          "fullCitation": "Kurier Warszawski, R. 108, nr 18 (18 January 1928), evening ed., p. 4. Biblioteka Narodowa / Polona. Review of Eliza Rozenblum’s recital. On B. Kaper: “Trzy utwory fortepianowe B. Kapera zdradzają obiecujący talent młodego autora.”"
+        }
+      },
+      "SRC0068": {
+        "reason": "Correct the Polona item URL so it resolves to Robotnik rather than Rzeczpospolita, and identify the recital context without adding unsupported biographical claims.",
+        "fields": {
+          "fullCitation": "Robotnik: centralny organ P.P.S. (Warsaw), R. 34, no. 21, 21 January 1928, p. 5. Biblioteka Narodowa / Polona. Review of a piano recital by Eliza Rozenblum, mentioning B. Kaper.",
+          "primaryUrl": "https://polona.pl/item-view/c6d71bfb-176c-46f7-9c9f-f81458ba9b20?page=4",
+          "accessUrl": "https://polona.pl/item-view/c6d71bfb-176c-46f7-9c9f-f81458ba9b20?page=4&searchQuery=%22B.%20Kapera%22"
+        }
+      },
+      "SRC0069": {
+        "reason": "Correct the Polona item URL so it resolves to Rzeczpospolita and record the article's explicit identification of Eliza Rozenblum as Zbigniew Drzewiecki's pupil.",
+        "fields": {
+          "fullCitation": "Rzeczpospolita (Warsaw), R. 9, no. 19, 19 January 1928, p. 5. Biblioteka Narodowa / Polona. Review of Eliza Rozenblum’s recital, identifying her as a pupil of Zbigniew Drzewiecki and mentioning three piano pieces by B. Kaper.",
+          "primaryUrl": "https://polona.pl/item-view/86884264-15cc-4187-9a54-103bc126e7eb?page=4",
+          "accessUrl": "https://polona.pl/item-view/86884264-15cc-4187-9a54-103bc126e7eb?page=4&searchQuery=%22Eliza%20Rozenblum%22"
         }
       },
       "SRC0038": {
@@ -4087,6 +4103,34 @@
             "W-S216"
           ]
         }
+      },
+      "P160": {
+        "reason": "Add pianist Eliza Rozenblum from contemporary Warsaw press evidence and connect her to the documented 1928 performance of Kaper's unidentified piano pieces without inventing biographical dates or a portrait.",
+        "fields": {
+          "id": "P160",
+          "displayName": "Eliza Rozenblum",
+          "sortName": "Rozenblum, Eliza",
+          "authorizedName": "Rozenblum, Eliza",
+          "slug": "eliza-rozenblum",
+          "primaryRole": "pianist",
+          "roles": [
+            "pianist",
+            "performer"
+          ],
+          "sourceIds": [
+            "SRC0016",
+            "SRC0068",
+            "SRC0069",
+            "SRC0674",
+            "SRC0675"
+          ],
+          "nameVariantIds": [
+            "PNV0059"
+          ],
+          "timelineEventIds": [
+            "TE0020"
+          ]
+        }
       }
     },
     "Person Name Variants": {
@@ -4172,6 +4216,26 @@
           ],
           "sourceIds": [
             "SRC0629"
+          ]
+        }
+      },
+      "PNV0059": {
+        "reason": "Retain Rosenblum as a cautious search variant while using Rozenblum, the spelling attested in the contemporary Polish press, as the canonical form.",
+        "fields": {
+          "id": "PNV0059",
+          "variantName": "Eliza Rosenblum",
+          "variantType": "spelling_variant",
+          "identityScope": "single_person",
+          "evidenceContext": "other",
+          "attestedWording": "Eliza Rosenblum",
+          "certainty": "probable",
+          "publicNote": "Alternative surname spelling. The contemporary Polish press sources cited for this record use the form Rozenblum.",
+          "personIds": [
+            "P160"
+          ],
+          "sourceIds": [
+            "SRC0674",
+            "SRC0675"
           ]
         }
       }
@@ -6890,6 +6954,54 @@
             }
           ]
         }
+      },
+      "SRC0674": {
+        "reason": "Add the contemporary Kurjer Warszawski notice documenting Eliza Rozenblum as a pianist associated with contemporary repertoire; do not conflate this separate 1926 recital with the 1928 Kaper performance.",
+        "fields": {
+          "id": "SRC0674",
+          "shortCitation": "Kurjer Warszawski, 1 December 1926 — Eliza Rozenblum recital notice",
+          "fullCitation": "Kurjer Warszawski (Warsaw), R. 106, no. 330, morning ed., 1 December 1926, p. 3. Notice presenting pianist Eliza Rozenblum as a young exponent of contemporary piano music and announcing her recital. Biblioteka Narodowa / Polona.",
+          "sourceType": "press_item",
+          "title": "Kurjer Warszawski, 1 December 1926 — Eliza Rozenblum recital notice",
+          "repository": "Biblioteka Narodowa / Polona",
+          "publication": "Kurjer Warszawski",
+          "date": "1926-12-01",
+          "accessDate": "2026-08-13",
+          "reliability": "high",
+          "sourceStatus": "verified",
+          "slug": "src0674-kurjer-warszawski-eliza-rozenblum-1926",
+          "personIds": [
+            "P160"
+          ],
+          "organizationIds": [
+            "ORG063"
+          ],
+          "primaryUrl": "https://polona.pl/item-view/2e9eaee3-afdb-4de2-afa9-19dff553191d?page=2&searchQuery=%22Eliza%20rozenblum%22"
+        }
+      },
+      "SRC0675": {
+        "reason": "Add the contemporary Nasz Przegląd notice documenting Eliza Rozenblum's performance of contemporary repertoire; keep it as direct person evidence rather than attaching it to the distinct 1928 Kaper event.",
+        "fields": {
+          "id": "SRC0675",
+          "shortCitation": "Nasz Przegląd, 19 March 1925 — Eliza Rozenblum contemporary-music recital",
+          "fullCitation": "Nasz Przegląd: organ niezależny (Warsaw), R. 3, no. 78, 19 March 1925, p. 8. Notice announcing a recital by Eliza Rozenblum featuring contemporary works. Biblioteka Narodowa / Polona.",
+          "sourceType": "press_item",
+          "title": "Nasz Przegląd, 19 March 1925 — Eliza Rozenblum recital notice",
+          "repository": "Biblioteka Narodowa / Polona",
+          "publication": "Nasz Przegląd",
+          "date": "1925-03-19",
+          "accessDate": "2026-08-13",
+          "reliability": "high",
+          "sourceStatus": "verified",
+          "slug": "src0675-nasz-przeglad-eliza-rozenblum-1925",
+          "personIds": [
+            "P160"
+          ],
+          "organizationIds": [
+            "ORG063"
+          ],
+          "primaryUrl": "https://polona.pl/item-view/86975f05-c08f-446b-8840-59a653b7ccd4?page=7&searchQuery=%22Eliza%20rozenblum%22"
+        }
       }
     },
     "Songs": {
@@ -8445,6 +8557,15 @@
   },
   "linkAdditions": {
     "Organizations": {
+      "ORG063": {
+        "reason": "Synchronize the National Library of Poland / Polona with the two newly added contemporary press records for Eliza Rozenblum.",
+        "fields": {
+          "sourceIds": [
+            "SRC0674",
+            "SRC0675"
+          ]
+        }
+      },
       "ORG051": {
         "reason": "Connect Gebethner i Wolff to the 1930 publisher advertisement that explicitly presents its Morskie Oko sheet-music editions, including the Kaper–Włast song.",
         "fields": {
@@ -9908,8 +10029,11 @@
         }
       },
       "TE0020": {
-        "reason": "Link the historical Warsaw Conservatory photograph to the 1928 performance event without treating it as evidence for the performance itself.",
+        "reason": "Link the historical Warsaw Conservatory photograph and pianist Eliza Rozenblum to the 1928 performance event without inventing titles for the three Kaper pieces.",
         "fields": {
+          "personIds": [
+            "P160"
+          ],
           "mediaIds": [
             "M237"
           ],
@@ -10341,6 +10465,24 @@
           ]
         }
       },
+      "P160": {
+        "reason": "Synchronize Eliza Rozenblum with the five contemporary press sources, her cautious spelling variant and the 1928 Kaper performance event.",
+        "fields": {
+          "sourceIds": [
+            "SRC0016",
+            "SRC0068",
+            "SRC0069",
+            "SRC0674",
+            "SRC0675"
+          ],
+          "nameVariantIds": [
+            "PNV0059"
+          ],
+          "timelineEventIds": [
+            "TE0020"
+          ]
+        }
+      },
       "P150": {
         "reason": "Connect Nicholas Brodszky to the exact 1928 Délibáb article and portrait so his verified image appears on the person record without borrowing media from another identity.",
         "fields": {
@@ -10673,6 +10815,30 @@
           ],
           "workRelationIds": [
             "REL0201"
+          ]
+        }
+      },
+      "SRC0016": {
+        "reason": "Synchronize the 1928 Kurier Warszawski notice with Eliza Rozenblum, whose recital it reviews.",
+        "fields": {
+          "personIds": [
+            "P160"
+          ]
+        }
+      },
+      "SRC0068": {
+        "reason": "Synchronize the corrected Robotnik recital review with Eliza Rozenblum.",
+        "fields": {
+          "personIds": [
+            "P160"
+          ]
+        }
+      },
+      "SRC0069": {
+        "reason": "Synchronize the corrected Rzeczpospolita recital review with Eliza Rozenblum.",
+        "fields": {
+          "personIds": [
+            "P160"
           ]
         }
       },

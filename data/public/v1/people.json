@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 138,
+  "count": 139,
   "records": [
     {
       "id": "P001",
@@ -5319,6 +5319,31 @@
       "birthYear": 1894,
       "deathYear": 1953,
       "lifeDatesCertainty": "confirmed"
+    },
+    {
+      "id": "P160",
+      "displayName": "Eliza Rozenblum",
+      "sortName": "Rozenblum, Eliza",
+      "authorizedName": "Rozenblum, Eliza",
+      "slug": "eliza-rozenblum",
+      "primaryRole": "pianist",
+      "roles": [
+        "pianist",
+        "performer"
+      ],
+      "sourceIds": [
+        "SRC0016",
+        "SRC0068",
+        "SRC0069",
+        "SRC0674",
+        "SRC0675"
+      ],
+      "nameVariantIds": [
+        "PNV0059"
+      ],
+      "timelineEventIds": [
+        "TE0020"
+      ]
     }
   ]
 }

@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 602,
+  "count": 604,
   "records": [
     {
       "id": "SRC0001",
@@ -447,7 +447,7 @@
     {
       "id": "SRC0016",
       "shortCitation": "Polona, Kurier Warszawski, 18.01.1928 — review mentioning B. Kaper",
-      "fullCitation": "Kurier Warszawski, R. 108, nr 18 (18 January 1928), evening ed., p. 4. Biblioteka Narodowa / Polona. Notice on B. Kaper: “Trzy utwory fortepianowe B. Kapera zdradzają obiecujący talent młodego autora.”",
+      "fullCitation": "Kurier Warszawski, R. 108, nr 18 (18 January 1928), evening ed., p. 4. Biblioteka Narodowa / Polona. Review of Eliza Rozenblum’s recital. On B. Kaper: “Trzy utwory fortepianowe B. Kapera zdradzają obiecujący talent młodego autora.”",
       "sourceType": "press_item",
       "title": "Kurier Warszawski, 18 January 1928",
       "repository": "Biblioteka Narodowa / Polona",
@@ -457,6 +457,9 @@
       "reliability": "high",
       "sourceStatus": "verified",
       "slug": "src0016-kurier-warszawski-1928",
+      "personIds": [
+        "P160"
+      ],
       "organizationIds": [
         "ORG063"
       ],
@@ -1823,7 +1826,7 @@
     {
       "id": "SRC0068",
       "shortCitation": "Robotnik (Warsaw), 21 January 1928",
-      "fullCitation": "Robotnik: centralny organ P.P.S. (Warsaw), R. 34, no. 21, 21 January 1928, p. 5. Biblioteka Narodowa / Polona. Notice mentioning B. Kaper.",
+      "fullCitation": "Robotnik: centralny organ P.P.S. (Warsaw), R. 34, no. 21, 21 January 1928, p. 5. Biblioteka Narodowa / Polona. Review of a piano recital by Eliza Rozenblum, mentioning B. Kaper.",
       "sourceType": "press_item",
       "title": "Robotnik, R. 34 no. 21, 21 January 1928",
       "repository": "Biblioteka Narodowa / Polona",
@@ -1834,7 +1837,8 @@
       "sourceStatus": "verified",
       "slug": "src0068-robotnik-1928",
       "personIds": [
-        "P009"
+        "P009",
+        "P160"
       ],
       "organizationIds": [
         "ORG063"
@@ -1848,13 +1852,13 @@
       "placeIds": [
         "PL016"
       ],
-      "primaryUrl": "https://polona.pl/item-view/86884264-15cc-4187-9a54-103bc126e7eb?page=4",
-      "accessUrl": "https://polona.pl/item-view/86884264-15cc-4187-9a54-103bc126e7eb?page=4&searchQuery=%22B.%20Kapera%22"
+      "primaryUrl": "https://polona.pl/item-view/c6d71bfb-176c-46f7-9c9f-f81458ba9b20?page=4",
+      "accessUrl": "https://polona.pl/item-view/c6d71bfb-176c-46f7-9c9f-f81458ba9b20?page=4&searchQuery=%22B.%20Kapera%22"
     },
     {
       "id": "SRC0069",
       "shortCitation": "Rzeczpospolita (Warsaw), 19 January 1928",
-      "fullCitation": "Rzeczpospolita (Warsaw), R. 9, no. 19, 19 January 1928, p. 5. Biblioteka Narodowa / Polona. Review of Eliza Rozenblum’s recital, referencing B. Kaper.",
+      "fullCitation": "Rzeczpospolita (Warsaw), R. 9, no. 19, 19 January 1928, p. 5. Biblioteka Narodowa / Polona. Review of Eliza Rozenblum’s recital, identifying her as a pupil of Zbigniew Drzewiecki and mentioning three piano pieces by B. Kaper.",
       "sourceType": "press_item",
       "title": "Rzeczpospolita, R. 9 no. 19, 19 January 1928",
       "repository": "Biblioteka Narodowa / Polona",
@@ -1865,7 +1869,8 @@
       "sourceStatus": "verified",
       "slug": "src0069-rzeczpospolita-1928",
       "personIds": [
-        "P009"
+        "P009",
+        "P160"
       ],
       "organizationIds": [
         "ORG063"
@@ -1879,8 +1884,8 @@
       "placeIds": [
         "PL016"
       ],
-      "primaryUrl": "https://polona.pl/item-view/c6d71bfb-176c-46f7-9c9f-f81458ba9b20?page=4",
-      "accessUrl": "https://polona.pl/item-view/c6d71bfb-176c-46f7-9c9f-f81458ba9b20?page=4&searchQuery=%22B.%20Kapera%22"
+      "primaryUrl": "https://polona.pl/item-view/86884264-15cc-4187-9a54-103bc126e7eb?page=4",
+      "accessUrl": "https://polona.pl/item-view/86884264-15cc-4187-9a54-103bc126e7eb?page=4&searchQuery=%22Eliza%20Rozenblum%22"
     },
     {
       "id": "SRC0070",
@@ -20250,6 +20255,48 @@
           "role": "related_context"
         }
       ]
+    },
+    {
+      "id": "SRC0674",
+      "shortCitation": "Kurjer Warszawski, 1 December 1926 — Eliza Rozenblum recital notice",
+      "fullCitation": "Kurjer Warszawski (Warsaw), R. 106, no. 330, morning ed., 1 December 1926, p. 3. Notice presenting pianist Eliza Rozenblum as a young exponent of contemporary piano music and announcing her recital. Biblioteka Narodowa / Polona.",
+      "sourceType": "press_item",
+      "title": "Kurjer Warszawski, 1 December 1926 — Eliza Rozenblum recital notice",
+      "repository": "Biblioteka Narodowa / Polona",
+      "publication": "Kurjer Warszawski",
+      "date": "1926-12-01",
+      "accessDate": "2026-08-13",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "slug": "src0674-kurjer-warszawski-eliza-rozenblum-1926",
+      "personIds": [
+        "P160"
+      ],
+      "organizationIds": [
+        "ORG063"
+      ],
+      "primaryUrl": "https://polona.pl/item-view/2e9eaee3-afdb-4de2-afa9-19dff553191d?page=2&searchQuery=%22Eliza%20rozenblum%22"
+    },
+    {
+      "id": "SRC0675",
+      "shortCitation": "Nasz Przegląd, 19 March 1925 — Eliza Rozenblum contemporary-music recital",
+      "fullCitation": "Nasz Przegląd: organ niezależny (Warsaw), R. 3, no. 78, 19 March 1925, p. 8. Notice announcing a recital by Eliza Rozenblum featuring contemporary works. Biblioteka Narodowa / Polona.",
+      "sourceType": "press_item",
+      "title": "Nasz Przegląd, 19 March 1925 — Eliza Rozenblum recital notice",
+      "repository": "Biblioteka Narodowa / Polona",
+      "publication": "Nasz Przegląd",
+      "date": "1925-03-19",
+      "accessDate": "2026-08-13",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "slug": "src0675-nasz-przeglad-eliza-rozenblum-1925",
+      "personIds": [
+        "P160"
+      ],
+      "organizationIds": [
+        "ORG063"
+      ],
+      "primaryUrl": "https://polona.pl/item-view/86975f05-c08f-446b-8840-59a653b7ccd4?page=7&searchQuery=%22Eliza%20rozenblum%22"
     }
   ]
 }

@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 55,
+  "count": 56,
   "records": [
     {
       "id": "PNV0001",
@@ -1402,6 +1402,23 @@
       "sourceIds": [
         "SRC0633",
         "SRC0634"
+      ]
+    },
+    {
+      "id": "PNV0059",
+      "variantName": "Eliza Rosenblum",
+      "variantType": "spelling_variant",
+      "identityScope": "single_person",
+      "evidenceContext": "other",
+      "attestedWording": "Eliza Rosenblum",
+      "certainty": "probable",
+      "publicNote": "Alternative surname spelling. The contemporary Polish press sources cited for this record use the form Rozenblum.",
+      "personIds": [
+        "P160"
+      ],
+      "sourceIds": [
+        "SRC0674",
+        "SRC0675"
       ]
     }
   ]
