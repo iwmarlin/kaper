@@ -7363,6 +7363,41 @@
           ],
           "primaryUrl": "https://digitaler-lesesaal.bundesarchiv.de/video/2999/700262"
         }
+      },
+      "SRC0683": {
+        "reason": "Add the Bundesarchiv Digital Reading Room record and complete institutional access copy for Die große Attraktion, including the filmwork identifier, archival signature, runtime and explicit filmographic credits.",
+        "fields": {
+          "id": "SRC0683",
+          "shortCitation": "Bundesarchiv, Digitaler Lesesaal, Die große Attraktion — complete film, Filmwerk 1114",
+          "fullCitation": "Bundesarchiv, Digitaler Lesesaal. Die große Attraktion. Filmwerk 1114, signature 100884. Richard Tauber-Tonfilm GmbH, Berlin, and Emelka-Konzern, Munich, 1931; produced by Richard Tauber; directed by Max Reichmann; music by Franz Grothe, Walter Jurmann, Bronislau Kaper and Nicholas Brodszky. Digital access copy, black and white, 80 minutes 53 seconds.",
+          "sourceType": "online_video_source",
+          "title": "Die große Attraktion — complete film, Bundesarchiv",
+          "creator": "Richard Tauber-Tonfilm GmbH, Berlin; Emelka-Konzern, Munich",
+          "repository": "Bundesarchiv, Digitaler Lesesaal",
+          "publication": "Digitaler Lesesaal",
+          "date": "1931",
+          "accessDate": "2026-08-13",
+          "reliability": "high",
+          "sourceStatus": "verified",
+          "slug": "src0683-bundesarchiv-die-grosse-attraktion-complete-film",
+          "workIds": [
+            "W-F007"
+          ],
+          "filmIds": [
+            "F007"
+          ],
+          "mediaIds": [
+            "M328"
+          ],
+          "contributionIds": [
+            "CON-F007-C-P009",
+            "CON-F007-C-P077",
+            "CON-F007-C-P150",
+            "CON-F007-D-P057",
+            "CON-F007-PC-ORG010"
+          ],
+          "primaryUrl": "https://digitaler-lesesaal.bundesarchiv.de/video/1114/738744"
+        }
       }
     },
     "Songs": {
@@ -8992,6 +9027,37 @@
             "european"
           ]
         }
+      },
+      "M328": {
+        "reason": "Add the complete film in the Bundesarchiv Digital Reading Room as an external institutional video reference linked to Die große Attraktion; the film remains on the Bundesarchiv site and is not rehosted or embedded.",
+        "fields": {
+          "id": "M328",
+          "title": "Die große Attraktion — complete film, Bundesarchiv",
+          "slug": "die-grosse-attraktion-complete-film-bundesarchiv-m328",
+          "mediaType": "video",
+          "storageType": "external",
+          "externalUrl": "https://digitaler-lesesaal.bundesarchiv.de/video/1114/738744",
+          "assetCount": 0,
+          "category": "audio/video reference",
+          "galleryStatus": "selected",
+          "period": "european",
+          "sortOrder": 328,
+          "altText": "External access link to the complete film Die große Attraktion in the Bundesarchiv Digital Reading Room.",
+          "description": "Complete 80-minute 53-second black-and-white access copy of Die große Attraktion in the Bundesarchiv Digital Reading Room.",
+          "publicCaption": "Complete institutional access copy of Die große Attraktion. The Bundesarchiv record gives production year 1931 and credits Franz Grothe, Walter Jurmann, Bronislau Kaper and Nicholas Brodszky with the music.",
+          "publicCreditLine": "Bundesarchiv, Digitaler Lesesaal; Filmwerk 1114, signature 100884.",
+          "rightsStatus": "permission_needed_or_fair_use_claimed",
+          "rightsNote": "The film is linked as an external institutional access copy and is not downloaded, rehosted or automatically embedded. Viewing and further use are governed by the Bundesarchiv Digital Reading Room terms.",
+          "sourceIds": [
+            "SRC0683"
+          ],
+          "workIds": [
+            "W-F007"
+          ],
+          "periods": [
+            "european"
+          ]
+        }
       }
     },
     "Timeline Events": {
@@ -9441,6 +9507,46 @@
           ]
         }
       },
+      "CON-F007-C-P009": {
+        "reason": "Add the Bundesarchiv full-film record as direct institutional evidence for Kaper's music credit.",
+        "fields": {
+          "sourceIds": [
+            "SRC0683"
+          ]
+        }
+      },
+      "CON-F007-C-P077": {
+        "reason": "Add the Bundesarchiv full-film record as direct institutional evidence for Jurmann's music credit.",
+        "fields": {
+          "sourceIds": [
+            "SRC0683"
+          ]
+        }
+      },
+      "CON-F007-C-P150": {
+        "reason": "Add the Bundesarchiv full-film record as direct institutional evidence for Nicholas Brodszky's music credit.",
+        "fields": {
+          "sourceIds": [
+            "SRC0683"
+          ]
+        }
+      },
+      "CON-F007-D-P057": {
+        "reason": "Add the Bundesarchiv full-film record as direct institutional evidence for Max Reichmann's directing credit.",
+        "fields": {
+          "sourceIds": [
+            "SRC0683"
+          ]
+        }
+      },
+      "CON-F007-PC-ORG010": {
+        "reason": "Add the Bundesarchiv full-film record as direct institutional evidence for the Emelka production credit.",
+        "fields": {
+          "sourceIds": [
+            "SRC0683"
+          ]
+        }
+      },
       "CON-S074-PUB-ORG030": {
         "reason": "Reassign the existing publisher contribution from the unrelated Edition Coda to the Viennese Dacapo-Verlag; retain the legacy contribution ID as an opaque identifier.",
         "fields": {
@@ -9830,8 +9936,14 @@
         }
       },
       "W-F007": {
-        "reason": "Attach Walter Jurmann's confirmed music contribution to Die große Attraktion.",
+        "reason": "Attach Walter Jurmann's confirmed music contribution and the Bundesarchiv full-film source and external access medium to Die große Attraktion.",
         "fields": {
+          "sourceIds": [
+            "SRC0683"
+          ],
+          "mediaIds": [
+            "M328"
+          ],
           "contributionIds": [
             "CON-F007-C-P077"
           ]
@@ -10303,6 +10415,14 @@
       }
     },
     "Films": {
+      "F007": {
+        "reason": "Connect the Film record to the Bundesarchiv full-film source for Die große Attraktion.",
+        "fields": {
+          "sourceIds": [
+            "SRC0683"
+          ]
+        }
+      },
       "F029": {
         "reason": "Link On a volé un homme to the item-level cover source that explicitly documents the film.",
         "fields": {
