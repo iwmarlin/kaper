@@ -6729,6 +6729,49 @@
           ],
           "primaryUrl": "https://www.ecmf.fr/cm/index44ac.html"
         }
+      },
+      "SRC0671": {
+        "reason": "Add the BnF/Gallica press-clipping page as the item-level source for a directly captioned 1937 image of Pierre Billon; keep it as portrait evidence for the person and do not attach the unrelated Courrier Sud production to a Kaper work.",
+        "fields": {
+          "id": "SRC0671",
+          "shortCitation": "BnF/Gallica, Courrier Sud press-clipping page identifying Pierre Billon, 1937",
+          "fullCitation": "Bibliothèque nationale de France. Recueil. “Courrier Sud” film de Pierre Billon. Press-clipping scrapbook, 1937, page 5 of 28. The contemporary printed caption identifies Pierre Billon, director of Courrier Sud, during production. Gallica, ark:/12148/btv1b105104644; digital file reproduced via Wikimedia Commons.",
+          "sourceType": "wikimedia_commons_file",
+          "title": "Courrier Sud — press-clipping page identifying Pierre Billon, 1937",
+          "creator": "Photographer and original periodical unidentified",
+          "repository": "Bibliothèque nationale de France / Gallica",
+          "publication": "Recueil. “Courrier Sud” film de Pierre Billon; Wikimedia Commons",
+          "date": "1937",
+          "accessDate": "2026-08-13",
+          "reliability": "high",
+          "sourceStatus": "verified_with_attribution_note",
+          "slug": "src0671-bnf-gallica-pierre-billon-courrier-sud-1937",
+          "personIds": [
+            "P063"
+          ],
+          "mediaIds": [
+            "M319"
+          ],
+          "primaryUrl": "https://commons.wikimedia.org/wiki/File:Recueil._%22Courrier_Sud%22_film_de_Pierre_Billon_-_btv1b105104644_(05_of_28).jpg",
+          "identifiers": [
+            {
+              "scheme": "ark",
+              "value": "ark:/12148/btv1b105104644"
+            }
+          ],
+          "additionalLinks": [
+            {
+              "label": "Gallica collection record",
+              "url": "https://gallica.bnf.fr/ark:/12148/btv1b105104644",
+              "role": "source_record"
+            },
+            {
+              "label": "Public Domain Mark 1.0",
+              "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+              "role": "rights_statement"
+            }
+          ]
+        }
       }
     },
     "Songs": {
@@ -8071,6 +8114,37 @@
           ],
           "periods": [
             "european"
+          ]
+        }
+      },
+      "M319": {
+        "reason": "Add a faithful portrait crop of Pierre Billon from the directly captioned 1937 Courrier Sud press-clipping page, while retaining the complete archival page and its identifying caption through the linked BnF/Commons source.",
+        "fields": {
+          "id": "M319",
+          "title": "Pierre Billon on the set of Courrier Sud — portrait detail, 1937",
+          "slug": "pierre-billon-courrier-sud-portrait-detail-1937",
+          "mediaType": "image",
+          "storageType": "local",
+          "assetPath": "assets/images/portraits/pierre-billon-courrier-sud-1937.jpg",
+          "assetPaths": [
+            "assets/images/portraits/pierre-billon-courrier-sud-1937.jpg"
+          ],
+          "assetCount": 1,
+          "externalUrl": "https://commons.wikimedia.org/wiki/File:Recueil._%22Courrier_Sud%22_film_de_Pierre_Billon_-_btv1b105104644_(05_of_28).jpg",
+          "category": "portrait",
+          "galleryStatus": "eligible",
+          "period": "hollywood",
+          "sortOrder": 319,
+          "altText": "Sepia-toned halftone portrait detail of film director Pierre Billon during production of Courrier Sud in 1937.",
+          "publicCaption": "Pierre Billon during production of Courrier Sud, 1937. Portrait detail from a press-clipping page whose contemporary caption identifies him as the film’s director.",
+          "publicCreditLine": "Portrait detail from Bibliothèque nationale de France / Gallica, Recueil. “Courrier Sud” film de Pierre Billon, 1937, page 5 of 28; via Wikimedia Commons.",
+          "rightsStatus": "ok",
+          "rightsNote": "Public domain according to the Wikimedia Commons file record (PD France) for the 1937 press-clipping page from the Bibliothèque nationale de France / Gallica collection. The photographer and original periodical of the embedded photograph are not identified in the item metadata. The local image is an unretouched crop of Pierre Billon from that page; the linked source record preserves the complete page and its contemporary identifying caption.",
+          "sourceIds": [
+            "SRC0671"
+          ],
+          "periods": [
+            "hollywood"
           ]
         }
       }
@@ -9818,6 +9892,14 @@
         "fields": {
           "sourceIds": [
             "SRC0669"
+          ]
+        }
+      },
+      "P063": {
+        "reason": "Expose Pierre Billon's directly captioned 1937 portrait detail on his existing person page without linking the unrelated Courrier Sud production to a Kaper work.",
+        "fields": {
+          "sourceIds": [
+            "SRC0671"
           ]
         }
       },

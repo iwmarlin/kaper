@@ -30,8 +30,10 @@ payloads:
 
 ```sh
 python3 -m pip install -r requirements-site.txt
+python3 scripts/reconcile_manifest.py
 python3 scripts/build_site_assets.py --root .
 python3 scripts/build_record_payloads.py --root .
+python3 scripts/stamp_assets.py
 python3 scripts/build_static_records.py --root .
 ```
 

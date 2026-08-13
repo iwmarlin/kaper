@@ -26,6 +26,20 @@ HOME_PATHWAYS = (
     ("Media", "Images, documents and sound", "media.html", "Media"),
 )
 
+# The home page is a view of the canonical public tables, not of their manifest.
+# Reading counts from manifest.json made a correct UI depend on a fragile command
+# order: a newly added record remained invisible in the counters until the
+# manifest had first been reconciled.  The manifest is still validated
+# independently, while these counts always reflect the records being rendered.
+PUBLIC_COUNT_FILES = {
+    "Works": "works.json",
+    "People": "people.json",
+    "Timeline Events": "timeline-events.json",
+    "Places": "places.json",
+    "Media": "media.json",
+    "Sources": "sources.json",
+}
+
 
 def read_json(path: Path):
     return json.loads(path.read_text(encoding="utf-8"))
@@ -189,6 +203,13 @@ def write_javascript_mapping(path: Path, mapping: dict) -> None:
     )
 
 
+def public_record_counts(data_root: Path) -> dict[str, int]:
+    return {
+        table: len(read_json(data_root / filename).get("records", []))
+        for table, filename in PUBLIC_COUNT_FILES.items()
+    }
+
+
 ERA_META = {
     "warsaw": ("Warsaw", "1902–1926"),
     "european": ("European period", "1926–1934"),
@@ -260,7 +281,7 @@ def home_payload(data_root: Path) -> dict:
     manifest = read_json(data_root / "manifest.json")
     events = read_json(data_root / "timeline-events.json").get("records", [])
     media = read_json(data_root / "media.json").get("records", [])
-    counts = manifest["counts"]
+    counts = public_record_counts(data_root)
     def event_sort_key(item: dict) -> str:
         return str(item.get("sortDate") or item.get("dateStart") or "")
 
