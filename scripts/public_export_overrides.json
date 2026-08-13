@@ -2241,11 +2241,15 @@
         }
       },
       "SRC0616": {
-        "reason": "Separate the webpage citation from the documented comparison of conflicting authority dates while preserving the unresolved assessment in full.",
+        "reason": "Separate the webpage citation from the documented comparison of conflicting authority dates, preserve the unresolved assessment, and document the supplied Intran Studio portrait without creating a duplicate source for the same ECMF page.",
         "fields": {
-          "fullCitation": "Gana, Jacques. “MAUPREY (André).” Encyclopédie multimédia de la comédie musicale théâtrale en France. Accessed 1 August 2026.",
+          "shortCitation": "Encyclopédie de la comédie musicale, André Mauprey author entry and 1935 portrait",
+          "fullCitation": "Gana, Jacques. “MAUPREY (André).” Encyclopédie multimédia de la comédie musicale théâtrale en France. Includes a portrait credited to Intran Studio, reproduced from the original programme of La Chanson du bonheur (Gaîté-Lyrique, 1935), collection Jacques Gana. Accessed 1 August 2026.",
           "researchNote": "The page gives the civil-status name André Jacques Bloch and the dates Paris, 19 August 1891 – Paris, 3 February 1939. The birth year conflicts with the Bibliothèque nationale de France and Wikidata, which both give 1881; day, month and date of death agree across all three sources, so the discrepancy is confined to one digit. The BnF-supported year 1881 is preferred; the conflict remains unresolved.",
-          "researchNoteType": "date_assessment"
+          "researchNoteType": "date_assessment",
+          "mediaIds": [
+            "M317"
+          ]
         }
       },
       "SRC0623": {
@@ -7977,6 +7981,37 @@
           ],
           "periods": [
             "hollywood"
+          ]
+        }
+      },
+      "M317": {
+        "reason": "Add the supplied 1935 Intran Studio portrait of André Mauprey, reuse the existing ECMF source record for the same author page, and expose the image on his person record and in the media catalogue with a conservative rights assessment.",
+        "fields": {
+          "id": "M317",
+          "title": "André Mauprey — portrait, La Chanson du bonheur programme, 1935",
+          "slug": "andre-mauprey-portrait-la-chanson-du-bonheur-1935",
+          "mediaType": "image",
+          "storageType": "local",
+          "assetPath": "assets/images/portraits/andre-mauprey.jpg",
+          "assetPaths": [
+            "assets/images/portraits/andre-mauprey.jpg"
+          ],
+          "assetCount": 1,
+          "externalUrl": "https://www.ecmf.fr/cm/index609d.html",
+          "category": "portrait",
+          "galleryStatus": "eligible",
+          "period": "european",
+          "sortOrder": 317,
+          "altText": "Black-and-white head-and-shoulders portrait of André Mauprey resting his chin on his hand.",
+          "publicCaption": "André Mauprey in a studio portrait reproduced in the original programme of La Chanson du bonheur at the Gaîté-Lyrique, 1935.",
+          "publicCreditLine": "Intran Studio; programme of La Chanson du bonheur, Gaîté-Lyrique, 1935; collection Jacques Gana; via the Encyclopédie de la comédie musicale.",
+          "rightsStatus": "permission_needed_or_fair_use_claimed",
+          "rightsNote": "Reuse rights are not cleared. The source credits Intran Studio and the collection of Jacques Gana but supplies no open licence; its footer states that illustrations remain the copyright of their respective publishers and rightsholders. The 700 × 599 pixel local reproduction is used for scholarly identification of a documented Kaper collaborator, with the creator, programme provenance, collection and source page identified.",
+          "sourceIds": [
+            "SRC0616"
+          ],
+          "periods": [
+            "european"
           ]
         }
       }
