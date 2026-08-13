@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 608,
+  "count": 609,
   "records": [
     {
       "id": "SRC0001",
@@ -4595,7 +4595,8 @@
       "slug": "src0145-afi-three-smart-girls-1936",
       "personIds": [
         "P034",
-        "P137"
+        "P137",
+        "P163"
       ],
       "organizationIds": [
         "ORG002",
@@ -4611,7 +4612,11 @@
         "CON-F042-C-P009",
         "CON-F042-C-P077",
         "CON-F042-D-P034",
-        "CON-F042-PC-ORG002"
+        "CON-F042-PC-ORG002",
+        "CON-F042-AP-P163"
+      ],
+      "timelineEventIds": [
+        "TE0038"
       ],
       "primaryUrl": "https://catalog.afi.com/Film/7012-THREE-SMART-GIRLS?cxt=filmography"
     },
@@ -20417,6 +20422,31 @@
         "ORG090"
       ],
       "primaryUrl": "https://en.wikipedia.org/wiki/File:Carlstalling.jpg"
+    },
+    {
+      "id": "SRC0680",
+      "shortCitation": "Wikimedia Commons, Joe Pasternak (1957) — MGM publicity still",
+      "fullCitation": "“Joe Pasternak (1957).” MGM publicity still of film producer Joe Pasternak, 1957. Photographer unidentified. Wikimedia Commons, File:Joe_Pasternak_(1957).jpg.",
+      "sourceType": "image_or_photograph",
+      "title": "Joe Pasternak (1957) — MGM publicity still",
+      "creator": "MGM publicity photograph; photographer unidentified",
+      "repository": "Wikimedia Commons",
+      "publication": "MGM publicity still",
+      "date": "1957",
+      "accessDate": "2026-08-13",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "slug": "src0680-wikimedia-commons-joe-pasternak-1957",
+      "personIds": [
+        "P163"
+      ],
+      "mediaIds": [
+        "M325"
+      ],
+      "organizationIds": [
+        "ORG090"
+      ],
+      "primaryUrl": "https://commons.wikimedia.org/wiki/File:Joe_Pasternak_(1957).jpg"
     }
   ]
 }

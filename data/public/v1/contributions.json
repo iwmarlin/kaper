@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 1085,
+  "count": 1086,
   "records": [
     {
       "id": "CON-F001-C-P009",
@@ -18939,8 +18939,8 @@
       "PNV0031"
     ]
   },
-  {
-    "id": "CON-S217-PUB-ORG029",
+    {
+      "id": "CON-S217-PUB-ORG029",
     "role": "publisher",
     "nameAsPrinted": "Wiener Boheme Verlag",
     "evidenceContext": "sheet_music",
@@ -18952,9 +18952,26 @@
     "organizationIds": [
       "ORG029"
     ],
-    "sourceIds": [
-      "SRC0358"
-    ]
-  }
+      "sourceIds": [
+        "SRC0358"
+      ]
+    },
+    {
+      "id": "CON-F042-AP-P163",
+      "role": "associate_producer",
+      "nameAsPrinted": "Joseph Pasternak",
+      "evidenceContext": "film_credits",
+      "sortOrder": 20,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-F042"
+      ],
+      "personIds": [
+        "P163"
+      ],
+      "sourceIds": [
+        "SRC0145"
+      ]
+    }
 ]
 }
