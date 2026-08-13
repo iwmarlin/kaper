@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 139,
+  "count": 140,
   "records": [
     {
       "id": "P001",
@@ -5344,6 +5344,29 @@
       "timelineEventIds": [
         "TE0020"
       ]
+    },
+    {
+      "id": "P161",
+      "displayName": "Carl Laemmle",
+      "sortName": "Laemmle, Carl",
+      "authorizedName": "Laemmle, Carl, 1867–1939",
+      "slug": "carl-laemmle",
+      "primaryRole": "film producer",
+      "roles": [
+        "film producer",
+        "studio founder"
+      ],
+      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n86075524\nVIAF: https://viaf.org/viaf/62355509\nGND: https://d-nb.info/gnd/119306336\nBnF: https://catalogue.bnf.fr/ark:/12148/cb14647302s\nISNI: https://isni.org/isni/0000000123208849\nWikidata: https://www.wikidata.org/wiki/Q61074\nFilmportal: https://www.filmportal.de/person/carl-laemmle_5223deebdd1f4a8a96ef02994d621b41",
+      "sourceIds": [
+        "SRC0492",
+        "SRC0676"
+      ],
+      "timelineEventIds": [
+        "TE0041"
+      ],
+      "birthYear": 1867,
+      "deathYear": 1939,
+      "lifeDatesCertainty": "confirmed"
     }
   ]
 }

@@ -3393,6 +3393,12 @@
       }
     },
     "Timeline Events": {
+      "TE0041": {
+        "reason": "Correct the European Film Fund description by replacing the unsupported Charlotte Dieterle attribution with Carl Laemmle, and retain the existing account of Kaper's participation.",
+        "fields": {
+          "longDescription": "Founding member of the European Film Fund (EFF), established by Paul Kohner, Ernst Lubitsch, and Carl Laemmle to aid refugees arriving from Europe. Despite his relatively secure position at MGM, Kaper joined the inner circle of organizers during the critical surge of refugee arrivals in 1938–1941."
+        }
+      },
       "TE0040": {
         "reason": "Replace the mixed-year career summary with a source-defined Everybody Sing collaboration spanning the first surviving assignment report on 13 July 1937 and the release notice on 17 March 1938; identify Kaper, Walter Jurmann and Gus Kahn, and remove Paul Francis Webster from the unsupported public description.",
         "fields": {
@@ -4129,6 +4135,32 @@
           ],
           "timelineEventIds": [
             "TE0020"
+          ]
+        }
+      },
+      "P161": {
+        "reason": "Add Carl Laemmle as a documented European Film Fund organizer, with authority control and a dedicated public-domain portrait source.",
+        "fields": {
+          "id": "P161",
+          "displayName": "Carl Laemmle",
+          "sortName": "Laemmle, Carl",
+          "authorizedName": "Laemmle, Carl, 1867–1939",
+          "slug": "carl-laemmle",
+          "primaryRole": "film producer",
+          "roles": [
+            "film producer",
+            "studio founder"
+          ],
+          "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n86075524\nVIAF: https://viaf.org/viaf/62355509\nGND: https://d-nb.info/gnd/119306336\nBnF: https://catalogue.bnf.fr/ark:/12148/cb14647302s\nISNI: https://isni.org/isni/0000000123208849\nWikidata: https://www.wikidata.org/wiki/Q61074\nFilmportal: https://www.filmportal.de/person/carl-laemmle_5223deebdd1f4a8a96ef02994d621b41",
+          "birthYear": 1867,
+          "deathYear": 1939,
+          "lifeDatesCertainty": "confirmed",
+          "sourceIds": [
+            "SRC0492",
+            "SRC0676"
+          ],
+          "timelineEventIds": [
+            "TE0041"
           ]
         }
       }
@@ -7002,6 +7034,41 @@
           ],
           "primaryUrl": "https://polona.pl/item-view/86975f05-c08f-446b-8840-59a653b7ccd4?page=7&searchQuery=%22Eliza%20rozenblum%22"
         }
+      },
+      "SRC0676": {
+        "reason": "Add the canonical Wikimedia Commons file record as the dedicated portrait source for Carl Laemmle, preserving the unidentified photographer and original publication rather than inventing missing provenance.",
+        "fields": {
+          "id": "SRC0676",
+          "shortCitation": "Wikimedia Commons, File:CarlLaemmle.jpg — portrait of Carl Laemmle",
+          "fullCitation": "“CarlLaemmle.jpg.” Portrait photograph of film producer Carl Laemmle (1867–1939). Photographer, date and original publication unidentified. Wikimedia Commons.",
+          "sourceType": "wikimedia_commons_file",
+          "title": "Carl Laemmle — portrait photograph",
+          "creator": "Photographer unidentified",
+          "repository": "Wikimedia Commons",
+          "publication": "File:CarlLaemmle.jpg",
+          "date": "n.d.",
+          "accessDate": "2026-08-13",
+          "reliability": "medium",
+          "sourceStatus": "verified_with_attribution_note",
+          "slug": "src0676-wikimedia-commons-carl-laemmle-portrait",
+          "personIds": [
+            "P161"
+          ],
+          "mediaIds": [
+            "M322"
+          ],
+          "organizationIds": [
+            "ORG090"
+          ],
+          "primaryUrl": "https://commons.wikimedia.org/wiki/File:CarlLaemmle.jpg",
+          "additionalLinks": [
+            {
+              "label": "Public Domain Mark 1.0",
+              "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+              "role": "rights_statement"
+            }
+          ]
+        }
       }
     },
     "Songs": {
@@ -8439,6 +8506,40 @@
             "european"
           ]
         }
+      },
+      "M322": {
+        "reason": "Add the supplied Carl Laemmle portrait as a dedicated person image and contextual medium for the European Film Fund event, using the Commons public-domain assessment without inventing a photographer or date.",
+        "fields": {
+          "id": "M322",
+          "title": "Carl Laemmle — portrait photograph",
+          "slug": "carl-laemmle-portrait-photograph",
+          "mediaType": "image",
+          "storageType": "local",
+          "assetPath": "assets/images/portraits/carl-laemmle.jpg",
+          "assetPaths": [
+            "assets/images/portraits/carl-laemmle.jpg"
+          ],
+          "assetCount": 1,
+          "externalUrl": "https://commons.wikimedia.org/wiki/File:CarlLaemmle.jpg",
+          "category": "portrait",
+          "galleryStatus": "eligible",
+          "period": "hollywood",
+          "sortOrder": 322,
+          "altText": "Black-and-white head-and-shoulders portrait of film producer Carl Laemmle in a suit and tie.",
+          "publicCaption": "Carl Laemmle (1867–1939), film producer and founder of Universal Pictures.",
+          "publicCreditLine": "Photographer, date and original publication unidentified; via Wikimedia Commons.",
+          "rightsStatus": "ok",
+          "rightsNote": "Public domain according to the Wikimedia Commons file record (Public Domain Mark 1.0). The file page does not identify the photographer, date or original publication; those details remain explicitly unresolved.",
+          "sourceIds": [
+            "SRC0676"
+          ],
+          "timelineEventIds": [
+            "TE0041"
+          ],
+          "periods": [
+            "hollywood"
+          ]
+        }
       }
     },
     "Timeline Events": {
@@ -8638,7 +8739,8 @@
             "SRC0561",
             "SRC0562",
             "SRC0657",
-            "SRC0669"
+            "SRC0669",
+            "SRC0676"
           ]
         }
       },
@@ -10004,6 +10106,17 @@
       }
     },
     "Timeline Events": {
+      "TE0041": {
+        "reason": "Synchronize the corrected European Film Fund event with Carl Laemmle and his portrait while retaining Ernst Lubitsch's portrait as the hero medium.",
+        "fields": {
+          "personIds": [
+            "P161"
+          ],
+          "mediaIds": [
+            "M322"
+          ]
+        }
+      },
       "TE0006": {
         "reason": "Add the 1920 recruitment poster as supplementary historical context for Kaper's documented Polish–Soviet War service while retaining M096 as the hero medium.",
         "fields": {
@@ -10804,6 +10917,14 @@
       }
     },
     "Sources": {
+      "SRC0492": {
+        "reason": "Synchronize the European Film Fund institutional source with Carl Laemmle after correcting the event description.",
+        "fields": {
+          "personIds": [
+            "P161"
+          ]
+        }
+      },
       "SRC0146": {
         "reason": "AFI lists All God's Children Got Rhythm among the songs used in Birthright and names the songwriters; synchronize the source with the song and explicit work relation.",
         "fields": {

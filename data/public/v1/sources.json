@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 604,
+  "count": 605,
   "records": [
     {
       "id": "SRC0001",
@@ -15511,7 +15511,8 @@
       "sourceStatus": "verified",
       "slug": "src0492-european-film-fund-kuenste-im-exil",
       "personIds": [
-        "P125"
+        "P125",
+        "P161"
       ],
       "organizationIds": [
         "ORG074",
@@ -20297,6 +20298,38 @@
         "ORG063"
       ],
       "primaryUrl": "https://polona.pl/item-view/86975f05-c08f-446b-8840-59a653b7ccd4?page=7&searchQuery=%22Eliza%20rozenblum%22"
+    },
+    {
+      "id": "SRC0676",
+      "shortCitation": "Wikimedia Commons, File:CarlLaemmle.jpg — portrait of Carl Laemmle",
+      "fullCitation": "“CarlLaemmle.jpg.” Portrait photograph of film producer Carl Laemmle (1867–1939). Photographer, date and original publication unidentified. Wikimedia Commons.",
+      "sourceType": "wikimedia_commons_file",
+      "title": "Carl Laemmle — portrait photograph",
+      "creator": "Photographer unidentified",
+      "repository": "Wikimedia Commons",
+      "publication": "File:CarlLaemmle.jpg",
+      "date": "n.d.",
+      "accessDate": "2026-08-13",
+      "reliability": "medium",
+      "sourceStatus": "verified_with_attribution_note",
+      "slug": "src0676-wikimedia-commons-carl-laemmle-portrait",
+      "personIds": [
+        "P161"
+      ],
+      "mediaIds": [
+        "M322"
+      ],
+      "organizationIds": [
+        "ORG090"
+      ],
+      "primaryUrl": "https://commons.wikimedia.org/wiki/File:CarlLaemmle.jpg",
+      "additionalLinks": [
+        {
+          "label": "Public Domain Mark 1.0",
+          "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+          "role": "rights_statement"
+        }
+      ]
     }
   ]
 }
