@@ -4093,7 +4093,8 @@
           "deathYear": 1972,
           "lifeDatesCertainty": "confirmed",
           "sourceIds": [
-            "SRC0373"
+            "SRC0373",
+            "SRC0679"
           ],
           "contributionIds": [
             "CON-F052-C-P158"
@@ -7185,6 +7186,34 @@
             }
           ]
         }
+      },
+      "SRC0679": {
+        "reason": "Add the English Wikipedia file page as the dedicated provenance record for the supplied low-resolution Carl W. Stalling portrait, explicitly distinguishing Wikipedia's non-free rationale from this site's independent fair-use assessment.",
+        "fields": {
+          "id": "SRC0679",
+          "shortCitation": "English Wikipedia, File:Carlstalling.jpg — Carl W. Stalling portrait from Bugs Bunny on Broadway",
+          "fullCitation": "“Carlstalling.jpg.” Portrait photograph of composer Carl W. Stalling at a piano, reproduced from an inlay page of Bugs Bunny on Broadway, The Warner Bros. Symphony Orchestra (Warner Bros. Records, 1991). Photographer unidentified; scan credited to Wikipedia user Try0yrt. English Wikipedia.",
+          "sourceType": "image_or_photograph",
+          "title": "Carl W. Stalling at a piano — portrait reproduced from Bugs Bunny on Broadway",
+          "creator": "Photographer unidentified; scan by Try0yrt",
+          "repository": "English Wikipedia",
+          "publication": "Bugs Bunny on Broadway, album inlay (Warner Bros. Records)",
+          "date": "1991",
+          "accessDate": "2026-08-13",
+          "reliability": "medium",
+          "sourceStatus": "verified_with_attribution_note",
+          "slug": "src0679-english-wikipedia-carl-stalling-portrait",
+          "personIds": [
+            "P158"
+          ],
+          "mediaIds": [
+            "M324"
+          ],
+          "organizationIds": [
+            "ORG090"
+          ],
+          "primaryUrl": "https://en.wikipedia.org/wiki/File:Carlstalling.jpg"
+        }
       }
     },
     "Songs": {
@@ -8690,6 +8719,37 @@
             "european"
           ]
         }
+      },
+      "M324": {
+        "reason": "Add the supplied source-resolution Carl W. Stalling portrait to his person card with a narrow, independently stated scholarly fair-use rationale and without falsely attaching the photograph itself to Little Boy Blue.",
+        "fields": {
+          "id": "M324",
+          "title": "Carl W. Stalling at a piano — portrait photograph",
+          "slug": "carl-w-stalling-at-piano-portrait",
+          "mediaType": "image",
+          "storageType": "local",
+          "assetPath": "assets/images/portraits/carl-stalling.jpg",
+          "assetPaths": [
+            "assets/images/portraits/carl-stalling.jpg"
+          ],
+          "assetCount": 1,
+          "externalUrl": "https://en.wikipedia.org/wiki/File:Carlstalling.jpg",
+          "category": "portrait",
+          "galleryStatus": "eligible",
+          "period": "hollywood",
+          "sortOrder": 324,
+          "altText": "Black-and-white photograph of composer Carl W. Stalling seated at a piano, holding a pencil beside a page of music.",
+          "publicCaption": "Carl W. Stalling at a piano, in a photograph reproduced in the 1991 Bugs Bunny on Broadway album booklet.",
+          "publicCreditLine": "Photographer unidentified; reproduced from Bugs Bunny on Broadway, Warner Bros. Records, 1991; via English Wikipedia.",
+          "rightsStatus": "permission_needed_or_fair_use_claimed",
+          "rightsNote": "Copyright is not cleared. English Wikipedia identifies the image as a scan from the 1991 Warner Bros. Records album booklet and treats it as non-free content; that Wikipedia rationale does not license reuse elsewhere. This site relies on a separate, limited fair-use assessment: the unchanged 317 × 320 pixel source-resolution image is shown only to identify Carl W. Stalling, a documented contributor in the research graph; it is not used as album artwork, cannot substitute for the commercial recording or booklet, and is accompanied by source, ownership and rights information.",
+          "sourceIds": [
+            "SRC0679"
+          ],
+          "periods": [
+            "hollywood"
+          ]
+        }
       }
     },
     "Timeline Events": {
@@ -8891,7 +8951,8 @@
             "SRC0657",
             "SRC0669",
             "SRC0676",
-            "SRC0677"
+            "SRC0677",
+            "SRC0679"
           ]
         }
       },
