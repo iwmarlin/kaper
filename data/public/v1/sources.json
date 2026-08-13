@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 605,
+  "count": 607,
   "records": [
     {
       "id": "SRC0001",
@@ -15512,7 +15512,8 @@
       "slug": "src0492-european-film-fund-kuenste-im-exil",
       "personIds": [
         "P125",
-        "P161"
+        "P161",
+        "P162"
       ],
       "organizationIds": [
         "ORG074",
@@ -20328,6 +20329,67 @@
           "label": "Public Domain Mark 1.0",
           "url": "https://creativecommons.org/publicdomain/mark/1.0/",
           "role": "rights_statement"
+        }
+      ]
+    },
+    {
+      "id": "SRC0677",
+      "shortCitation": "Wikimedia Commons, File:Fanck udet riefenstahl kohner.png — Paul Kohner portrait crop, 1932",
+      "fullCitation": "Unknown photographer. Arnold Fanck, Ernst Udet, Leni Riefenstahl and Paul Kohner, 1932. Private Archive of Matthias Fanck. Portrait crop of Paul Kohner from the right side of the group photograph. Wikimedia Commons.",
+      "sourceType": "wikimedia_commons_file",
+      "title": "Paul Kohner with Arnold Fanck, Ernst Udet and Leni Riefenstahl — group photograph, 1932",
+      "creator": "Photographer unidentified",
+      "repository": "Private Archive of Matthias Fanck / Wikimedia Commons",
+      "publication": "File:Fanck udet riefenstahl kohner.png",
+      "date": "1932",
+      "accessDate": "2026-08-13",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "slug": "src0677-wikimedia-commons-paul-kohner-group-photograph-1932",
+      "personIds": [
+        "P162"
+      ],
+      "mediaIds": [
+        "M323"
+      ],
+      "organizationIds": [
+        "ORG090"
+      ],
+      "primaryUrl": "https://commons.wikimedia.org/wiki/File:Fanck_udet_riefenstahl_kohner.png",
+  "additionalLinks": []
+    },
+    {
+      "id": "SRC0678",
+      "shortCitation": "European Film Fund donor list, 1 May 1941–30 April 1942 — Kaper and Kohner entries",
+      "fullCitation": "Stiftung Deutsche Kinemathek – Museum für Film und Fernsehen, Sammlung Paul Kohner Agency. “Spendenliste von Mitgliedern des European Film Fund zwischen dem 1. Mai 1941 und dem 30. April 1942.” Typescript list of 69 members and their donations; entries include “Kaper, Bronislaw” ($120) and “Kohner, Paul” ($213). Presented in Künste im Exil, Deutsche Nationalbibliothek.",
+      "sourceType": "archival_document",
+      "title": "European Film Fund donor list, 1 May 1941–30 April 1942",
+      "creator": "European Film Fund",
+      "repository": "Stiftung Deutsche Kinemathek – Museum für Film und Fernsehen, Sammlung Paul Kohner Agency",
+      "publication": "Künste im Exil",
+      "date": "1941–1942",
+      "accessDate": "2026-08-13",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "slug": "src0678-european-film-fund-donor-list-1941-1942",
+      "personIds": [
+        "P009",
+        "P162"
+      ],
+      "organizationIds": [
+        "ORG074",
+        "ORG110",
+        "ORG117"
+      ],
+      "timelineEventIds": [
+        "TE0041"
+      ],
+      "primaryUrl": "https://kuenste-im-exil.de/KIE/Content/DE/Themen/european-film-fund.html?catalog=1",
+      "additionalLinks": [
+        {
+          "label": "Object description",
+          "url": "https://kuenste-im-exil.de/KIE/Content/DE/Bilder/Themen/european-film-fund.html",
+          "role": "object_record"
         }
       ]
     }

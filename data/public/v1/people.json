@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 140,
+  "count": 141,
   "records": [
     {
       "id": "P001",
@@ -5308,7 +5308,8 @@
       "authorityUrl": "BN Poland: https://dbn.bn.org.pl/descriptor-details/9810671370505606\nLCNAF: https://id.loc.gov/authorities/names/n50049756\nVIAF: https://viaf.org/viaf/46777365\nBnF: https://catalogue.bnf.fr/ark:/12148/cb12037457t\nGND: https://d-nb.info/gnd/11880300X\nISNI: https://isni.org/isni/0000000110260840\nWikidata: https://www.wikidata.org/wiki/Q376278",
       "sourceIds": [
         "SRC0658",
-        "SRC0659"
+        "SRC0659",
+        "SRC0678"
       ],
       "contributionIds": [
         "CON-S216-L-P159"
@@ -5367,6 +5368,30 @@
       "birthYear": 1867,
       "deathYear": 1939,
       "lifeDatesCertainty": "confirmed"
+    },
+    {
+      "id": "P162",
+      "displayName": "Paul Kohner",
+      "sortName": "Kohner, Paul",
+      "authorizedName": "Kohner, Paul, 1902–1988",
+      "slug": "paul-kohner",
+      "primaryRole": "film producer",
+      "roles": [
+        "film producer",
+        "talent agent"
+      ],
+      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no2007147390\nVIAF: https://viaf.org/viaf/67213739\nGND: https://d-nb.info/gnd/116308869\nISNI: https://isni.org/isni/0000000010488266\nWikidata: https://www.wikidata.org/wiki/Q86560\nFilmportal: https://www.filmportal.de/person/paul-kohner_30c888ac7f4b4b9ea7f2fb464dee7559",
+      "sourceIds": [
+        "SRC0492",
+        "SRC0677",
+        "SRC0678"
+      ],
+      "timelineEventIds": [
+        "TE0041"
+      ],
+      "birthYear": 1902,
+      "deathYear": 1988,
+      "lifeDatesCertainty": "disputed"
     }
   ]
 }

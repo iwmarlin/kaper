@@ -3394,9 +3394,10 @@
     },
     "Timeline Events": {
       "TE0041": {
-        "reason": "Correct the European Film Fund description by replacing the unsupported Charlotte Dieterle attribution with Carl Laemmle, and retain the existing account of Kaper's participation.",
+        "reason": "Describe the European Film Fund with its documented founders and replace the unsupported claim that Kaper was a founding organizer with the direct evidence of his participation in the surviving 1941–1942 donor list.",
         "fields": {
-          "longDescription": "Founding member of the European Film Fund (EFF), established by Paul Kohner, Ernst Lubitsch, and Carl Laemmle to aid refugees arriving from Europe. Despite his relatively secure position at MGM, Kaper joined the inner circle of organizers during the critical surge of refugee arrivals in 1938–1941."
+          "shortDescription": "Kaper participates in the European Film Fund, helping support refugees from the European film community.",
+          "longDescription": "The European Film Fund was established in 1938 by Paul Kohner, Ernst Lubitsch, and Carl Laemmle to aid refugees arriving from Europe. Kaper participated in the Fund despite his relatively secure position at MGM. A surviving donor list for 1 May 1941–30 April 1942 records “Kaper, Bronislaw” and a contribution of $120, providing direct documentary evidence of his involvement."
         }
       },
       "TE0040": {
@@ -3846,6 +3847,27 @@
             "CON-F052-PC-ORG116"
           ]
         }
+      },
+      "ORG117": {
+        "reason": "Add the holding institution named by the European Film Fund donor-list object record, preserving the Paul Kohner Agency collection provenance.",
+        "fields": {
+          "id": "ORG117",
+          "displayName": "Stiftung Deutsche Kinemathek",
+          "authorizedName": "Stiftung Deutsche Kinemathek – Museum für Film und Fernsehen",
+          "types": [
+            "archive",
+            "museum"
+          ],
+          "city": [
+            "Berlin"
+          ],
+          "country": "Germany",
+          "slug": "stiftung-deutsche-kinemathek",
+          "nameVariants": "Deutsche Kinemathek; Museum für Film und Fernsehen; Sammlung Paul Kohner Agency",
+          "sourceIds": [
+            "SRC0678"
+          ]
+        }
       }
     },
     "People": {
@@ -4158,6 +4180,33 @@
           "sourceIds": [
             "SRC0492",
             "SRC0676"
+          ],
+          "timelineEventIds": [
+            "TE0041"
+          ]
+        }
+      },
+      "P162": {
+        "reason": "Add Paul Kohner as a documented co-founder of the European Film Fund, with authority control and a dedicated public-domain portrait crop from the identified 1932 group photograph.",
+        "fields": {
+          "id": "P162",
+          "displayName": "Paul Kohner",
+          "sortName": "Kohner, Paul",
+          "authorizedName": "Kohner, Paul, 1902–1988",
+          "slug": "paul-kohner",
+          "primaryRole": "film producer",
+          "roles": [
+            "film producer",
+            "talent agent"
+          ],
+          "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no2007147390\nVIAF: https://viaf.org/viaf/67213739\nGND: https://d-nb.info/gnd/116308869\nISNI: https://isni.org/isni/0000000010488266\nWikidata: https://www.wikidata.org/wiki/Q86560\nFilmportal: https://www.filmportal.de/person/paul-kohner_30c888ac7f4b4b9ea7f2fb464dee7559",
+          "birthYear": 1902,
+          "deathYear": 1988,
+          "lifeDatesCertainty": "disputed",
+          "sourceIds": [
+            "SRC0492",
+            "SRC0677",
+            "SRC0678"
           ],
           "timelineEventIds": [
             "TE0041"
@@ -7069,6 +7118,73 @@
             }
           ]
         }
+      },
+      "SRC0677": {
+        "reason": "Add the canonical Commons file record as the dedicated source for Paul Kohner's portrait crop, retaining the complete group composition, named archive and unidentified photographer.",
+        "fields": {
+          "id": "SRC0677",
+          "shortCitation": "Wikimedia Commons, File:Fanck udet riefenstahl kohner.png — Paul Kohner portrait crop, 1932",
+          "fullCitation": "Unknown photographer. Arnold Fanck, Ernst Udet, Leni Riefenstahl and Paul Kohner, 1932. Private Archive of Matthias Fanck. Portrait crop of Paul Kohner from the right side of the group photograph. Wikimedia Commons.",
+          "sourceType": "wikimedia_commons_file",
+          "title": "Paul Kohner with Arnold Fanck, Ernst Udet and Leni Riefenstahl — group photograph, 1932",
+          "creator": "Photographer unidentified",
+          "repository": "Private Archive of Matthias Fanck / Wikimedia Commons",
+          "publication": "File:Fanck udet riefenstahl kohner.png",
+          "date": "1932",
+          "accessDate": "2026-08-13",
+          "reliability": "high",
+          "sourceStatus": "verified",
+          "slug": "src0677-wikimedia-commons-paul-kohner-group-photograph-1932",
+          "personIds": [
+            "P162"
+          ],
+          "mediaIds": [
+            "M323"
+          ],
+          "organizationIds": [
+            "ORG090"
+          ],
+          "primaryUrl": "https://commons.wikimedia.org/wiki/File:Fanck_udet_riefenstahl_kohner.png",
+          "additionalLinks": []
+        }
+      },
+      "SRC0678": {
+        "reason": "Add the item-level institutional record for the surviving European Film Fund donor list that directly documents both Bronisław Kaper and Paul Kohner; do not create a local media copy because the host restricts the scan to its online exhibition.",
+        "fields": {
+          "id": "SRC0678",
+          "shortCitation": "European Film Fund donor list, 1 May 1941–30 April 1942 — Kaper and Kohner entries",
+          "fullCitation": "Stiftung Deutsche Kinemathek – Museum für Film und Fernsehen, Sammlung Paul Kohner Agency. “Spendenliste von Mitgliedern des European Film Fund zwischen dem 1. Mai 1941 und dem 30. April 1942.” Typescript list of 69 members and their donations; entries include “Kaper, Bronislaw” ($120) and “Kohner, Paul” ($213). Presented in Künste im Exil, Deutsche Nationalbibliothek.",
+          "sourceType": "archival_document",
+          "title": "European Film Fund donor list, 1 May 1941–30 April 1942",
+          "creator": "European Film Fund",
+          "repository": "Stiftung Deutsche Kinemathek – Museum für Film und Fernsehen, Sammlung Paul Kohner Agency",
+          "publication": "Künste im Exil",
+          "date": "1941–1942",
+          "accessDate": "2026-08-13",
+          "reliability": "high",
+          "sourceStatus": "verified",
+          "slug": "src0678-european-film-fund-donor-list-1941-1942",
+          "personIds": [
+            "P009",
+            "P162"
+          ],
+          "organizationIds": [
+            "ORG074",
+            "ORG110",
+            "ORG117"
+          ],
+          "timelineEventIds": [
+            "TE0041"
+          ],
+          "primaryUrl": "https://kuenste-im-exil.de/KIE/Content/DE/Themen/european-film-fund.html?catalog=1",
+          "additionalLinks": [
+            {
+              "label": "Object description",
+              "url": "https://kuenste-im-exil.de/KIE/Content/DE/Bilder/Themen/european-film-fund.html",
+              "role": "object_record"
+            }
+          ]
+        }
       }
     },
     "Songs": {
@@ -8540,6 +8656,40 @@
             "hollywood"
           ]
         }
+      },
+      "M323": {
+        "reason": "Add an exact portrait crop of Paul Kohner from the identified 1932 group photograph and link it to its complete Commons source and the European Film Fund event.",
+        "fields": {
+          "id": "M323",
+          "title": "Paul Kohner — portrait detail from group photograph, 1932",
+          "slug": "paul-kohner-portrait-detail-1932",
+          "mediaType": "image",
+          "storageType": "local",
+          "assetPath": "assets/images/portraits/paul-kohner.jpg",
+          "assetPaths": [
+            "assets/images/portraits/paul-kohner.jpg"
+          ],
+          "assetCount": 1,
+          "externalUrl": "https://commons.wikimedia.org/wiki/File:Fanck_udet_riefenstahl_kohner.png",
+          "category": "portrait",
+          "galleryStatus": "eligible",
+          "period": "european",
+          "sortOrder": 323,
+          "altText": "Black-and-white portrait detail of film producer and talent agent Paul Kohner seated at a table in 1932.",
+          "publicCaption": "Paul Kohner in 1932, at right in a group photograph with Arnold Fanck, Ernst Udet and Leni Riefenstahl.",
+          "publicCreditLine": "Unknown photographer; Private Archive of Matthias Fanck, via Wikimedia Commons. Portrait crop from the 1932 group photograph.",
+          "rightsStatus": "ok",
+          "rightsNote": "Public domain according to the Wikimedia Commons file record (PD-anon-70-EU). The photographer is unidentified. This local image is an unretouched crop of the rightmost figure from the source photograph; the full composition remains available through the linked Commons record.",
+          "sourceIds": [
+            "SRC0677"
+          ],
+          "timelineEventIds": [
+            "TE0041"
+          ],
+          "periods": [
+            "european"
+          ]
+        }
       }
     },
     "Timeline Events": {
@@ -8740,7 +8890,24 @@
             "SRC0562",
             "SRC0657",
             "SRC0669",
-            "SRC0676"
+            "SRC0676",
+            "SRC0677"
+          ]
+        }
+      },
+      "ORG074": {
+        "reason": "Link Deutsche Nationalbibliothek to the Künste im Exil object record that it publishes.",
+        "fields": {
+          "sourceIds": [
+            "SRC0678"
+          ]
+        }
+      },
+      "ORG110": {
+        "reason": "Link the European Film Fund organization to the surviving donor-list source documenting its members and contributions.",
+        "fields": {
+          "sourceIds": [
+            "SRC0678"
           ]
         }
       },
@@ -10107,13 +10274,18 @@
     },
     "Timeline Events": {
       "TE0041": {
-        "reason": "Synchronize the corrected European Film Fund event with Carl Laemmle and his portrait while retaining Ernst Lubitsch's portrait as the hero medium.",
+        "reason": "Synchronize the European Film Fund event with Paul Kohner, Carl Laemmle, their portrait media and the donor-list source while retaining Ernst Lubitsch's portrait as the hero medium.",
         "fields": {
           "personIds": [
-            "P161"
+            "P161",
+            "P162"
           ],
           "mediaIds": [
-            "M322"
+            "M322",
+            "M323"
+          ],
+          "sourceIds": [
+            "SRC0678"
           ]
         }
       },
@@ -10439,7 +10611,7 @@
         }
       },
       "P009": {
-        "reason": "Link Bronisław Kaper to the completed sources and documented public additions, including his composer credit on the separately modelled Dutch-language edition.",
+        "reason": "Link Bronisław Kaper to the completed sources and documented public additions, including his composer credit on the separately modelled Dutch-language edition and the European Film Fund donor list.",
         "fields": {
           "sourceIds": [
             "SRC0038",
@@ -10473,7 +10645,8 @@
             "SRC0587",
             "SRC0625",
             "SRC0633",
-            "SRC0658"
+            "SRC0658",
+            "SRC0678"
           ],
           "contributionIds": [
             "CON-F009-C-P009",
@@ -10918,10 +11091,11 @@
     },
     "Sources": {
       "SRC0492": {
-        "reason": "Synchronize the European Film Fund institutional source with Carl Laemmle after correcting the event description.",
+        "reason": "Synchronize the European Film Fund institutional source with the documented co-founders Carl Laemmle and Paul Kohner.",
         "fields": {
           "personIds": [
-            "P161"
+            "P161",
+            "P162"
           ]
         }
       },

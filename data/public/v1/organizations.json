@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 113,
+  "count": 114,
   "records": [
     {
       "id": "ORG001",
@@ -2355,7 +2355,8 @@
       "slug": "deutsche-nationalbibliothek",
       "nameVariants": "DNB; German National Library; Künste im Exil",
       "sourceIds": [
-        "SRC0492"
+        "SRC0492",
+        "SRC0678"
       ]
     },
     {
@@ -2683,8 +2684,9 @@
         "SRC0572",
         "SRC0657",
         "SRC0669",
-        "SRC0676"
-      ]
+      "SRC0676",
+      "SRC0677"
+    ]
     },
     {
       "id": "ORG091",
@@ -3098,7 +3100,8 @@
       "slug": "european-film-fund",
       "nameVariants": "European Relief Fund",
       "sourceIds": [
-        "SRC0492"
+        "SRC0492",
+        "SRC0678"
       ],
       "timelineEventIds": [
         "TE0041"
@@ -3222,6 +3225,24 @@
       ],
       "workIds": [
         "W-F052"
+      ]
+    },
+    {
+      "id": "ORG117",
+      "displayName": "Stiftung Deutsche Kinemathek",
+      "authorizedName": "Stiftung Deutsche Kinemathek – Museum für Film und Fernsehen",
+      "types": [
+        "archive",
+        "museum"
+      ],
+      "city": [
+        "Berlin"
+      ],
+      "country": "Germany",
+      "slug": "stiftung-deutsche-kinemathek",
+      "nameVariants": "Deutsche Kinemathek; Museum für Film und Fernsehen; Sammlung Paul Kohner Agency",
+      "sourceIds": [
+        "SRC0678"
       ]
     }
   ]
