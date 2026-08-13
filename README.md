@@ -24,18 +24,20 @@ python3 scripts/validate_public_export.py --data data/public/v1 --assets-root .
 python3 scripts/validate_site.py --root .
 ```
 
-After changing the canonical public data or a published image, rebuild the
-compact home payload, responsive WebP derivatives and relation-aware record
-payloads:
+After changing canonical public data, export overrides, or a published image,
+use the canonical rebuild command:
 
 ```sh
 python3 -m pip install -r requirements-site.txt
-python3 scripts/reconcile_manifest.py
-python3 scripts/build_site_assets.py --root .
-python3 scripts/build_record_payloads.py --root .
-python3 scripts/stamp_assets.py
-python3 scripts/build_static_records.py --root .
+python3 scripts/rebuild_site.py --root .
 ```
+
+This command enforces the required order: manifest reconciliation, responsive
+images and home data, per-record payloads, content-derived cache versions,
+static record pages and sitemap, followed by every freshness and relation
+validator. It stops at the first failure, so a partial rebuild is never
+reported as ready. Responsive images are incremental by default; use
+`--full-images` only when every derivative must be re-encoded.
 
 The build preserves the archival source files in `assets/images/`. Browser-sized,
 metadata-free derivatives are written to `assets/generated/responsive/`.
