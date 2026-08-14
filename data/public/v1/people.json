@@ -1118,7 +1118,12 @@
       ],
       "birthYear": 1895,
       "deathYear": 1939,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "sourceIds": [
+        "SRC0308",
+        "SRC0462",
+        "SRC0468"
+      ]
     },
     {
       "id": "P013",
@@ -1164,7 +1169,11 @@
         "W-S012"
       ],
       "authorizedName": "Schubert, Egon",
-      "authorizedNameSource": "VIAF main heading"
+      "authorizedNameSource": "VIAF main heading",
+      "sourceIds": [
+        "SRC0202",
+        "SRC0373"
+      ]
     },
     {
       "id": "P015",
@@ -1794,7 +1803,12 @@
       ],
       "birthYear": 1902,
       "deathYear": 1986,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "sourceIds": [
+        "SRC0173",
+        "SRC0373",
+        "SRC0481"
+      ]
     },
     {
       "id": "P030",
@@ -2016,7 +2030,12 @@
       "deathYear": 1979,
       "lifeDatesCertainty": "confirmed",
       "authorizedName": "Monteux, Jacques",
-      "authorizedNameSource": "GND"
+      "authorizedNameSource": "GND",
+      "sourceIds": [
+        "SRC0079",
+        "SRC0080",
+        "SRC0373"
+      ]
     },
     {
       "id": "P039",
@@ -2092,7 +2111,10 @@
       "authorityUrl": "VIAF: https://viaf.org/viaf/42107405\nLCNAF: https://id.loc.gov/authorities/names/n2008000412\nWikidata: https://www.wikidata.org/wiki/Q3172161",
       "birthYear": 1908,
       "deathYear": 1945,
-      "lifeDatesCertainty": "disputed"
+      "lifeDatesCertainty": "disputed",
+      "sourceIds": [
+        "SRC0373"
+      ]
     },
     {
       "id": "P042",
@@ -2375,7 +2397,12 @@
       "deathYear": 1956,
       "lifeDatesCertainty": "confirmed",
       "authorizedName": "Lelièvre, Léo",
-      "authorizedNameSource": "GND"
+      "authorizedNameSource": "GND",
+      "sourceIds": [
+        "SRC0058",
+        "SRC0060",
+        "SRC0065"
+      ]
     },
     {
       "id": "P052",
@@ -2687,7 +2714,10 @@
       "deathYear": 1963,
       "lifeDatesCertainty": "confirmed",
       "authorizedName": "Connelly, Reg. (Reginald)",
-      "authorizedNameSource": "LCNAF"
+      "authorizedNameSource": "LCNAF",
+      "sourceIds": [
+        "SRC0212"
+      ]
     },
     {
       "id": "P065",
@@ -2880,7 +2910,10 @@
       ],
       "birthYear": 1905,
       "deathYear": 1970,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "sourceIds": [
+        "SRC0275"
+      ]
     },
     {
       "id": "P072",
@@ -3613,7 +3646,13 @@
       "deathYear": 1985,
       "lifeDatesCertainty": "confirmed",
       "authorizedName": "Robinson, Armin L.",
-      "authorizedNameSource": "LCNAF"
+      "authorizedNameSource": "LCNAF",
+      "sourceIds": [
+        "SRC0204",
+        "SRC0207",
+        "SRC0461",
+        "SRC0471"
+      ]
     },
     {
       "id": "P086",
@@ -4794,7 +4833,8 @@
         "TE0038"
       ],
       "birthYear": 1921,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "deathYear": 2013
     },
     {
       "id": "P138",
