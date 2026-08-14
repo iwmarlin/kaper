@@ -129,7 +129,8 @@
       "birthYear": 1900,
       "deathYear": 1970,
       "lifeDatesCertainty": "confirmed",
-      "authorizedName": "Saudemont, André"
+      "authorizedName": "Saudemont, André",
+      "authorizedNameSource": "VIAF main heading"
     },
     {
       "id": "P005",
@@ -1093,7 +1094,8 @@
       "workIds": [
         "W-F020"
       ],
-      "authorizedName": "Landau, Constantin"
+      "authorizedName": "Landau, Constantin",
+      "authorizedNameSource": "GND"
     },
     {
       "id": "P012",
@@ -1161,7 +1163,8 @@
       "workIds": [
         "W-S012"
       ],
-      "authorizedName": "Schubert, Egon"
+      "authorizedName": "Schubert, Egon",
+      "authorizedNameSource": "VIAF main heading"
     },
     {
       "id": "P015",
@@ -1190,7 +1193,8 @@
       "birthYear": 1892,
       "deathYear": 1971,
       "lifeDatesCertainty": "confirmed",
-      "authorizedName": "Schmidt, Erich"
+      "authorizedName": "Schmidt, Erich",
+      "authorizedNameSource": "GND"
     },
     {
       "id": "P016",
@@ -1214,7 +1218,8 @@
       "birthYear": 1902,
       "deathYear": 1957,
       "lifeDatesCertainty": "confirmed",
-      "authorizedName": "Neusser, Erich von"
+      "authorizedName": "Neusser, Erich von",
+      "authorizedNameSource": "GND"
     },
     {
       "id": "P017",
@@ -1544,7 +1549,8 @@
       ],
       "deathYear": 1962,
       "lifeDatesCertainty": "confirmed",
-      "authorizedName": "Groener, Gaston"
+      "authorizedName": "Groener, Gaston",
+      "authorizedNameSource": "VIAF main heading"
     },
     {
       "id": "P022",
@@ -1618,7 +1624,8 @@
       "birthYear": 1905,
       "deathYear": 1963,
       "lifeDatesCertainty": "confirmed",
-      "authorizedName": "Fried, Germain"
+      "authorizedName": "Fried, Germain",
+      "authorizedNameSource": "LCNAF"
     },
     {
       "id": "P025",
@@ -2008,7 +2015,8 @@
       "birthYear": 1899,
       "deathYear": 1979,
       "lifeDatesCertainty": "confirmed",
-      "authorizedName": "Monteux, Jacques"
+      "authorizedName": "Monteux, Jacques",
+      "authorizedNameSource": "GND"
     },
     {
       "id": "P039",
@@ -2062,7 +2070,8 @@
       "birthYear": 1884,
       "deathYear": 1946,
       "lifeDatesCertainty": "confirmed",
-      "authorizedName": "Salabert, Francis"
+      "authorizedName": "Salabert, Francis",
+      "authorizedNameSource": "LCNAF"
     },
     {
       "id": "P041",
@@ -2131,7 +2140,8 @@
       "birthYear": 1899,
       "deathYear": 1959,
       "lifeDatesCertainty": "confirmed",
-      "authorizedName": "Legrand, Jean-René"
+      "authorizedName": "Legrand, Jean-René",
+      "authorizedNameSource": "LCNAF"
     },
     {
       "id": "P044",
@@ -2364,7 +2374,8 @@
       "birthYear": 1872,
       "deathYear": 1956,
       "lifeDatesCertainty": "confirmed",
-      "authorizedName": "Lelièvre, Léo"
+      "authorizedName": "Lelièvre, Léo",
+      "authorizedNameSource": "GND"
     },
     {
       "id": "P052",
@@ -2502,7 +2513,8 @@
       "birthYear": 1884,
       "deathYear": 1958,
       "lifeDatesCertainty": "confirmed",
-      "authorizedName": "Reichmann, Max"
+      "authorizedName": "Reichmann, Max",
+      "authorizedNameSource": "GND"
     },
     {
       "id": "P058",
@@ -2598,7 +2610,12 @@
       ],
       "workIds": [
         "W-S037"
-      ]
+      ],
+      "authorizedName": "Perry, Oliver",
+      "sourceIds": [
+        "SRC0212"
+      ],
+      "authorizedNameSource": "local"
     },
     {
       "id": "P062",
@@ -2669,7 +2686,8 @@
       "birthYear": 1895,
       "deathYear": 1963,
       "lifeDatesCertainty": "confirmed",
-      "authorizedName": "Connelly, Reg. (Reginald)"
+      "authorizedName": "Connelly, Reg. (Reginald)",
+      "authorizedNameSource": "LCNAF"
     },
     {
       "id": "P065",
@@ -2809,7 +2827,9 @@
       ],
       "birthYear": 1902,
       "deathYear": 1987,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "authorizedName": "Wohlmuth, Robert",
+      "authorizedNameSource": "BnF"
     },
     {
       "id": "P070",
@@ -2913,7 +2933,8 @@
       "birthYear": 1875,
       "deathYear": 1933,
       "lifeDatesCertainty": "confirmed",
-      "authorizedName": "Walther-Fein, Rudolf"
+      "authorizedName": "Walther-Fein, Rudolf",
+      "authorizedNameSource": "GND"
     },
     {
       "id": "P074",
@@ -3538,7 +3559,9 @@
       "workIds": [
         "W-S097",
         "W-S116"
-      ]
+      ],
+      "authorizedName": "Roubier, André",
+      "authorizedNameSource": "local"
     },
     {
       "id": "P082",
@@ -3562,7 +3585,8 @@
       "sourceIds": [
         "SRC0642"
       ],
-      "authorizedName": "Goulding, Edmund"
+      "authorizedName": "Goulding, Edmund",
+      "authorizedNameSource": "GND"
     },
     {
       "id": "P083",
@@ -3588,7 +3612,8 @@
       "birthYear": 1900,
       "deathYear": 1985,
       "lifeDatesCertainty": "confirmed",
-      "authorizedName": "Robinson, Armin L."
+      "authorizedName": "Robinson, Armin L.",
+      "authorizedNameSource": "LCNAF"
     },
     {
       "id": "P086",
@@ -3643,7 +3668,8 @@
       "birthYear": 1908,
       "deathYear": 1996,
       "lifeDatesCertainty": "confirmed",
-      "authorizedName": "Hackforth, Norman P."
+      "authorizedName": "Hackforth, Norman P.",
+      "authorizedNameSource": "LCNAF"
     },
     {
       "id": "P088",
@@ -3674,7 +3700,8 @@
       "birthYear": 1904,
       "deathYear": 1976,
       "lifeDatesCertainty": "confirmed",
-      "authorizedName": "Mittman, Leopold"
+      "authorizedName": "Mittman, Leopold",
+      "authorizedNameSource": "GND"
     },
     {
       "id": "P089",
@@ -3705,7 +3732,8 @@
       "birthYear": 1903,
       "deathYear": 1990,
       "lifeDatesCertainty": "confirmed",
-      "authorizedName": "Zakin, Alexander"
+      "authorizedName": "Zakin, Alexander",
+      "authorizedNameSource": "LCNAF"
     },
     {
       "id": "P090",
@@ -3801,7 +3829,8 @@
       "birthYear": 1888,
       "deathYear": 1975,
       "lifeDatesCertainty": "confirmed",
-      "authorizedName": "Nazelles, René"
+      "authorizedName": "Nazelles, René",
+      "authorizedNameSource": "BnF"
     },
     {
       "id": "P095",
@@ -3852,7 +3881,8 @@
       "birthYear": 1892,
       "deathYear": 1965,
       "lifeDatesCertainty": "confirmed",
-      "authorizedName": "Delden, Ferry van"
+      "authorizedName": "Delden, Ferry van",
+      "authorizedNameSource": "VIAF main heading"
     },
     {
       "id": "P097",
@@ -3895,7 +3925,9 @@
       ],
       "workIds": [
         "W-S194"
-      ]
+      ],
+      "authorizedName": "Hailey-Simpson, H.",
+      "authorizedNameSource": "local"
     },
     {
       "id": "P105",
@@ -4012,7 +4044,8 @@
       "birthYear": 1911,
       "deathYear": 1991,
       "lifeDatesCertainty": "confirmed",
-      "authorizedName": "Lemarchand, Henry"
+      "authorizedName": "Lemarchand, Henry",
+      "authorizedNameSource": "GND"
     },
     {
       "id": "P110",
@@ -4036,7 +4069,8 @@
       "birthYear": 1904,
       "deathYear": 1981,
       "lifeDatesCertainty": "disputed",
-      "authorizedName": "Vimont, Fernand"
+      "authorizedName": "Vimont, Fernand",
+      "authorizedNameSource": "BnF"
     },
     {
       "id": "P111",
@@ -4064,7 +4098,8 @@
       "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n95108582\nBnF catalogue: https://catalogue.bnf.fr/ark:/12148/cb16557102j",
       "nameVariantIds": [
         "PNV0060"
-      ]
+      ],
+      "authorizedNameSource": "LCNAF"
     },
     {
       "id": "P113",
@@ -4094,7 +4129,8 @@
       "birthYear": 1893,
       "deathYear": 1943,
       "lifeDatesCertainty": "confirmed",
-      "authorizedName": "May, Karl Michael"
+      "authorizedName": "May, Karl Michael",
+      "authorizedNameSource": "BnF"
     },
     {
       "id": "P114",
@@ -4119,7 +4155,8 @@
       "birthYear": 1895,
       "deathYear": 1953,
       "lifeDatesCertainty": "confirmed",
-      "authorizedName": "Brüll, Karl"
+      "authorizedName": "Brüll, Karl",
+      "authorizedNameSource": "LexM"
     },
     {
       "id": "P115",
@@ -4163,7 +4200,8 @@
       "birthYear": 1885,
       "deathYear": 1957,
       "lifeDatesCertainty": "confirmed",
-      "authorizedName": "Mayer, Louis B."
+      "authorizedName": "Mayer, Louis B.",
+      "authorizedNameSource": "GND"
     },
     {
       "id": "P117",
@@ -4205,7 +4243,8 @@
       "birthYear": 1902,
       "deathYear": 1966,
       "lifeDatesCertainty": "confirmed",
-      "authorizedName": "Kiepura, Jan"
+      "authorizedName": "Kiepura, Jan",
+      "authorizedNameSource": "LCNAF"
     },
     {
       "id": "P118",
@@ -4230,7 +4269,8 @@
       "birthYear": 1891,
       "deathYear": 1948,
       "lifeDatesCertainty": "confirmed",
-      "authorizedName": "Tauber, Richard"
+      "authorizedName": "Tauber, Richard",
+      "authorizedNameSource": "LCNAF"
     },
     {
       "id": "P119",
@@ -4254,7 +4294,8 @@
       "birthYear": 1902,
       "deathYear": 1977,
       "lifeDatesCertainty": "confirmed",
-      "authorizedName": "Gold, Henry (Composer)"
+      "authorizedName": "Gold, Henry (Composer)",
+      "authorizedNameSource": "LCNAF"
     },
     {
       "id": "P121",
@@ -4285,7 +4326,8 @@
       "birthYear": 1908,
       "deathYear": 1945,
       "lifeDatesCertainty": "confirmed",
-      "authorizedName": "Etkin, Róża"
+      "authorizedName": "Etkin, Róża",
+      "authorizedNameSource": "BN"
     },
     {
       "id": "P122",
@@ -4308,7 +4350,8 @@
       "birthYear": 1869,
       "deathYear": 1947,
       "lifeDatesCertainty": "confirmed",
-      "authorizedName": "Mayer-Mahr, Moritz"
+      "authorizedName": "Mayer-Mahr, Moritz",
+      "authorizedNameSource": "LCNAF"
     },
     {
       "id": "P123",
@@ -4332,7 +4375,8 @@
       "birthYear": 1890,
       "deathYear": 1958,
       "lifeDatesCertainty": "confirmed",
-      "authorizedName": "Gmeindl, Walther"
+      "authorizedName": "Gmeindl, Walther",
+      "authorizedNameSource": "GND"
     },
     {
       "id": "P124",
@@ -4357,7 +4401,8 @@
       "birthYear": 1903,
       "deathYear": 1983,
       "lifeDatesCertainty": "confirmed",
-      "authorizedName": "Poligny, Serge de"
+      "authorizedName": "Poligny, Serge de",
+      "authorizedNameSource": "BnF"
     },
     {
       "id": "P125",
@@ -5001,7 +5046,8 @@
       "birthYear": 1886,
       "deathYear": 1951,
       "lifeDatesCertainty": "confirmed",
-      "authorizedName": "Günther, Felix"
+      "authorizedName": "Günther, Felix",
+      "authorizedNameSource": "GND"
     },
     {
       "id": "P147",
