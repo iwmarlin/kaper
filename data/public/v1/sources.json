@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 612,
+  "count": 614,
   "records": [
     {
       "id": "SRC0001",
@@ -20361,7 +20361,7 @@
         "ORG090"
       ],
       "primaryUrl": "https://commons.wikimedia.org/wiki/File:Fanck_udet_riefenstahl_kohner.png",
-  "additionalLinks": []
+      "additionalLinks": []
     },
     {
       "id": "SRC0678",
@@ -20543,6 +20543,46 @@
         "CON-F007-PC-ORG010"
       ],
       "primaryUrl": "https://digitaler-lesesaal.bundesarchiv.de/video/1114/738744"
+    },
+    {
+      "accessDate": "2026-08-06",
+      "creator": "Uwe Harten",
+      "date": "",
+      "fullCitation": "Uwe Harten. \"Gmeindl, Walter.\" Oesterreichisches Musiklexikon online. Vienna: Verlag der Österreichischen Akademie der Wissenschaften. doi:10.1553/0x0001cf41. The article gives 31 December 1890 at Hainburg an der Donau as the date of birth and 1 September 1958 at Hainburg as the date of death, and traces the appointments at the Munich Hofoper from 1915, the teaching post under Schreker in Berlin from 1922 and the professorship of composition from 1929. The lexicon spells the forename Walter, without the h carried by this record. Accessed 6 August 2026.",
+      "id": "SRC0684",
+      "mediaIds": [],
+      "personIds": [
+        "P123"
+      ],
+      "primaryUrl": "https://doi.org/10.1553/0x0001cf41",
+      "publication": "Oesterreichisches Musiklexikon online",
+      "reliability": "high",
+      "repository": "Verlag der Österreichischen Akademie der Wissenschaften",
+      "shortCitation": "Harten, \"Gmeindl, Walter\", Oesterreichisches Musiklexikon online",
+      "slug": "src0684-oeml-harten-walter-gmeindl",
+      "sourceStatus": "verified",
+      "sourceType": "online_database",
+      "title": "Oesterreichisches Musiklexikon online — Gmeindl, Walter"
+    },
+    {
+      "accessDate": "2026-08-06",
+      "creator": "S. J. Lengowski",
+      "date": "",
+      "fullCitation": "S. J. Lengowski. \"Mayer-Mahr, Moritz.\" Lexikon verfolgter Musiker und Musikerinnen der NS-Zeit (LexM), Universität Hamburg. Consulted as the PDF copy served by the Xaver-Scharwenka-Stiftung among its conservatory papers; the copy carries the author and title given here, and the entry was not checked against the LexM site itself. Accessed 6 August 2026.",
+      "id": "SRC0685",
+      "mediaIds": [],
+      "personIds": [
+        "P122"
+      ],
+      "primaryUrl": "https://www.scharwenka-stiftung.de/images/pdf/archiv/konservatorien/persoenlichkeiten/mayer_mahr_moritz/mayer_mahr_moritz_metadaten_lexm.pdf",
+      "publication": "Lexikon verfolgter Musiker und Musikerinnen der NS-Zeit",
+      "reliability": "high",
+      "repository": "Xaver-Scharwenka-Stiftung",
+      "shortCitation": "Lengowski, \"Mayer-Mahr, Moritz\", LexM",
+      "slug": "src0685-lexm-lengowski-moriz-mayer-mahr",
+      "sourceStatus": "verified_with_attribution_note",
+      "sourceType": "online_database",
+      "title": "LexM — Mayer-Mahr, Moritz"
     }
   ]
 }
