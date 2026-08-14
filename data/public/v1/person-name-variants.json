@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 57,
+  "count": 59,
   "records": [
     {
       "id": "PNV0001",
@@ -1438,6 +1438,39 @@
       ],
       "sourceIds": [
         "SRC0686"
+      ]
+    },
+    {
+      "id": "PNV0061",
+      "variantName": "Yudel Pomeranc",
+      "variantType": "transliteration",
+      "identityScope": "single_person",
+      "evidenceContext": "secondary_literature",
+      "attestedWording": "Yudel Pomeranc",
+      "certainty": "confirmed",
+      "publicNote": "Name form in the records of the Vilnius Jewish Rabbinate, given in Russian. Rupeikaitė lists it as the earliest of four institutional forms of the same name, alongside Yehuda Pomeranc in Berlin, Julian Pomeranc at the Klindworth-Scharwenka Conservatory and Giuliano Pomeranz in the Arolsen Archives.",
+      "personIds": [
+        "P090"
+      ],
+      "sourceIds": [
+        "SRC0546"
+      ]
+    },
+    {
+      "id": "PNV0062",
+      "variantName": "Yehuda Pomeranc",
+      "variantType": "registration_identity",
+      "identityScope": "single_person",
+      "evidenceContext": "secondary_literature",
+      "attestedWording": "Yehuda Pomeranc",
+      "certainty": "confirmed",
+      "publicNote": "Name form under which he was registered at the State Academic University of Music in Berlin. He changed it to Julian while living in Berlin, and to the Italian Giuliano after settling in Italy in 1936. The life dates recorded here follow Rupeikaitė, who gives 1900–1996; the Arolsen Archives file states 21 March 1901 in Wilno as the date of birth, and the two are left in disagreement rather than reconciled.",
+      "personIds": [
+        "P090"
+      ],
+      "sourceIds": [
+        "SRC0546",
+        "SRC0545"
       ]
     }
   ]
