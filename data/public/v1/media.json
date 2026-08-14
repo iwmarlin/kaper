@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 286,
+  "count": 287,
   "records": [
     {
       "id": "M001",
@@ -1487,9 +1487,10 @@
         "assets/images/historical-context/rhein-und-ruhrzeitung-1929-12-10.jpeg",
         "assets/images/timeline/rhein-und-ruhrzeitung-1929-02-14.jpeg",
         "assets/images/historical-context/tauber-das-kino-journal-1930-12-20.jpg",
-        "assets/images/historical-context/ns-kurier-25071933.jpg"
+        "assets/images/historical-context/ns-kurier-25071933.jpg",
+        "assets/images/film-posters/european-period/herr-funf.jpg"
       ],
-      "assetCount": 11,
+      "assetCount": 12,
       "altText": "Gallery card for Bronisław Kaper’s Berlin years, combining documents, press items and film-periodical sources.",
       "rightsStatus": "ok",
       "sortOrder": 31,
@@ -1508,7 +1509,8 @@
         "SRC0030",
         "SRC0112",
         "SRC0352",
-        "SRC0521"
+        "SRC0521",
+        "SRC0690"
       ],
       "timelineEventIds": [
         "TE0016",
@@ -1542,7 +1544,8 @@
         "M137",
         "M138",
         "M212",
-        "M215"
+        "M215",
+        "M331"
       ],
       "periods": [
         "european"
@@ -9416,6 +9419,34 @@
       ],
       "storageType": "local",
       "title": "Metro-Goldwyn-Mayer Studios, Culver City — airplane view of lot number one"
+    },
+    {
+      "id": "M331",
+      "mediaType": "image",
+      "category": "trade advertisement",
+      "storageType": "local",
+      "assetPath": "assets/images/film-posters/european-period/herr-funf.jpg",
+      "period": "european",
+      "periods": [
+        "european"
+      ],
+      "galleryStatus": "eligible",
+      "title": "Der glückliche Herr Fünf (1932 announcement) — Der Kinematograph trade advertisement",
+      "altText": "Trade advertisement announcing the forthcoming film Der glückliche Herr Fünf, with credits to Heinz Hilpert and to Kaper and Jurmann.",
+      "publicCaption": "Trade advertisement announcing the film as forthcoming under the title \"Der glückliche Herr Fünf\", after Alice Berend's novel, with Heinz Hilpert directing, music by Dr. Kaper and Walter Jurmann, and Willi Domgraf-Fassbaender in the lead. It was released in 1933 as Ich will Dich Liebe lehren.",
+      "description": "Full-page advertisement for Pax-Film GmbH, Berlin SW 68, Friedrichstr. 43, with Tobis sound and distribution by Bayerische Film München and Société des Films Osso, Paris. The credits name Friedrich Raff and Julius Urgiss for the screenplay, Curt Courant and Reimar Kuntze for photography, Hans Grimm and A. Jansen for sound and Theo Otto for sets.",
+      "publicCreditLine": "Der Kinematograph (Berlin), August 1932, p. 118; digitised issue at the Internet Archive.",
+      "rightsNote": "Reuse rights are not cleared for all jurisdictions. The advertisement appeared in a German trade journal in 1932 and names no rights holder for the artwork; a German work of that date was still protected in Germany on the United States restoration date of 1 January 1996, so its United States copyright was restored by the URAA. A reduced-resolution reproduction (760 × 1923 px, from 1167 × 2952 px) is used for scholarly identification of a documented Kaper film.",
+      "rightsStatus": "permission_needed_or_fair_use_claimed",
+      "sortOrder": 331,
+      "slug": "der-glueckliche-herr-fuenf-kinematograph-1932-m331",
+      "externalUrl": "https://archive.org/details/kinematograph-1932-08/page/29/mode/2up",
+      "sourceIds": [
+        "SRC0690"
+      ],
+      "workIds": [
+        "W-F022"
+      ]
     }
   ]
 }

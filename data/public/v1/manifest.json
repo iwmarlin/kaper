@@ -48,13 +48,13 @@
   "counts": {
     "People": 142,
     "Organizations": 114,
-    "Sources": 618,
-    "Media": 286,
+    "Sources": 619,
+    "Media": 287,
     "Works": 283,
     "Films": 55,
     "Songs": 206,
     "Other Works": 22,
-    "Title Variants": 61,
+    "Title Variants": 62,
     "Work Relations": 194,
     "Timeline Events": 52,
     "Places": 44,
@@ -65,7 +65,7 @@
     {
       "file": "build-report.json",
       "bytes": 114990,
-      "sha256": "8931f47175c9febb60779ce3bf1228f908a9a04644b297ed3d4f237e9ffc9a31"
+      "sha256": "30441b53277ce5271b65c07c32787b08a111836881e81cec8179b3a823888f98"
     },
     {
       "file": "contributions.json",
@@ -74,13 +74,13 @@
     },
     {
       "file": "films.json",
-      "bytes": 36409,
-      "sha256": "0a55e6daebdad7a47927c226b479a4d0854c2ba42e0e6da7065963ef89c20f44"
+      "bytes": 36428,
+      "sha256": "1bc84056f8747f7928c69b584b9161de2ce1b6921dd06c2f8e37ae852e25a8d9"
     },
     {
       "file": "media.json",
-      "bytes": 455447,
-      "sha256": "02cf1e8bd1669020332150562fdfc06b8b149a859967c79ab8e98d59014f7961"
+      "bytes": 457780,
+      "sha256": "02cd9b176b63019f59e23ca8a2c0f6c0536999d000cd7f8f5efa5cfcb45b49cd"
     },
     {
       "file": "organizations.json",
@@ -114,8 +114,8 @@
     },
     {
       "file": "sources.json",
-      "bytes": 796082,
-      "sha256": "305c5ae6b8bfef90cbc054043d4a40f0910bd8d19938da89eed053e41b64579a"
+      "bytes": 797340,
+      "sha256": "313397abaffc73909e9a65e9ec4df13f549a81dc27df207c514194c5731a4a39"
     },
     {
       "file": "timeline-events.json",
@@ -124,8 +124,8 @@
     },
     {
       "file": "title-variants.json",
-      "bytes": 31218,
-      "sha256": "c9c85fe3d467dacefd002dbbb9a545cf2a49c0005374886b3ce6efb2961b93df"
+      "bytes": 31631,
+      "sha256": "a3a7b563445b0e28fbd78d9642ad566ea8ef9c5afb72fb80126442c777da53a5"
     },
     {
       "file": "work-relations.json",
@@ -134,8 +134,8 @@
     },
     {
       "file": "works.json",
-      "bytes": 254905,
-      "sha256": "e0e12525ae5eb598e5327f513973e840e815c9b34c07ff577f53c99c28a789c8"
+      "bytes": 254958,
+      "sha256": "42b4b48949f13fe77c7a3eeb4035b7705e7dadf15b76118526c8012e69778032"
     }
   ]
 }
