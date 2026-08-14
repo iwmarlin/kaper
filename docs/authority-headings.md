@@ -24,6 +24,16 @@ not always agree. Take the first register that has a record for the person:
 3. **BnF** — `catalogue.bnf.fr` or `data.bnf.fr` (UNIMARC field 200, `$a` and
    `$b`; the date qualifier sits in `$f` and is dropped)
 4. **BN** — `dbn.bn.org.pl`
+5. **Any other register the VIAF cluster gathers**, when none of the four holds
+   the person. Ferry van Delden is known only to the Dutch national thesaurus,
+   whose heading `Delden, Ferry van` the cluster carries as its main one. Name
+   the register in `authorityUrl` so that the heading's origin stays visible.
+
+For a person of the Polish language area, **BN comes before GND**. The general
+order would have given Róża Etkin the Germanised `Etkin, Rosa`, since the
+Library of Congress holds no record for her; the national library that
+catalogues her in her own language is the better authority for the form of her
+name.
 
 VIAF itself is never the source of a heading. It is a hub: use it, or Wikidata,
 to find which register records belong to the person, then read the heading from
