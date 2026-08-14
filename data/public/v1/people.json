@@ -1187,7 +1187,8 @@
       ],
       "birthYear": 1892,
       "deathYear": 1971,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "authorizedName": "Schmidt, Erich"
     },
     {
       "id": "P016",
@@ -1210,7 +1211,8 @@
       ],
       "birthYear": 1902,
       "deathYear": 1957,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "authorizedName": "Neusser, Erich von"
     },
     {
       "id": "P017",
@@ -1612,7 +1614,8 @@
       ],
       "birthYear": 1905,
       "deathYear": 1963,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "authorizedName": "Fried, Germain"
     },
     {
       "id": "P025",
@@ -2001,7 +2004,8 @@
       ],
       "birthYear": 1899,
       "deathYear": 1979,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "authorizedName": "Monteux, Jacques"
     },
     {
       "id": "P039",
@@ -2054,7 +2058,8 @@
       ],
       "birthYear": 1884,
       "deathYear": 1946,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "authorizedName": "Salabert, Francis"
     },
     {
       "id": "P041",
@@ -2122,7 +2127,8 @@
       ],
       "birthYear": 1899,
       "deathYear": 1959,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "authorizedName": "Legrand, Jean-René"
     },
     {
       "id": "P044",
@@ -2354,7 +2360,8 @@
       ],
       "birthYear": 1872,
       "deathYear": 1956,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "authorizedName": "Lelièvre, Léo"
     },
     {
       "id": "P052",
@@ -2491,7 +2498,8 @@
       ],
       "birthYear": 1884,
       "deathYear": 1958,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "authorizedName": "Reichmann, Max"
     },
     {
       "id": "P058",
@@ -2657,7 +2665,8 @@
       ],
       "birthYear": 1895,
       "deathYear": 1963,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "authorizedName": "Connelly, Reg. (Reginald)"
     },
     {
       "id": "P065",
@@ -3575,7 +3584,8 @@
       ],
       "birthYear": 1900,
       "deathYear": 1985,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "authorizedName": "Robinson, Armin L."
     },
     {
       "id": "P086",
@@ -3629,7 +3639,8 @@
       ],
       "birthYear": 1908,
       "deathYear": 1996,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "authorizedName": "Hackforth, Norman P."
     },
     {
       "id": "P088",
@@ -3659,7 +3670,8 @@
       ],
       "birthYear": 1904,
       "deathYear": 1976,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "authorizedName": "Mittman, Leopold"
     },
     {
       "id": "P089",
@@ -3689,7 +3701,8 @@
       ],
       "birthYear": 1903,
       "deathYear": 1990,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "authorizedName": "Zakin, Alexander"
     },
     {
       "id": "P090",
@@ -3820,7 +3833,7 @@
       "roles": [
         "lyricist"
       ],
-      "authorityUrl": "Wreed en Plezant pseudonyms list: https://wreed-en-plezant.leefdaal.be/bronnen/pseudoniemen/",
+      "authorityUrl": "Wreed en Plezant pseudonyms list: https://wreed-en-plezant.leefdaal.be/bronnen/pseudoniemen/\nVIAF: https://viaf.org/viaf/287771697\nISNI: https://isni.org/isni/0000000393504437\nWikidata: https://www.wikidata.org/entity/Q2600682",
       "sourceIds": [
         "SRC0358"
       ],
@@ -3835,7 +3848,8 @@
       ],
       "birthYear": 1892,
       "deathYear": 1965,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "authorizedName": "Delden, Ferry van"
     },
     {
       "id": "P097",
@@ -3994,7 +4008,8 @@
       ],
       "birthYear": 1911,
       "deathYear": 1991,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "authorizedName": "Lemarchand, Henry"
     },
     {
       "id": "P110",
@@ -4021,21 +4036,30 @@
     },
     {
       "id": "P111",
-      "displayName": "Marylis",
-      "sortName": "Marylis",
-      "slug": "marylis",
-      "primaryRole": "lyricist",
+      "displayName": "Joseph-Ermend Bonnal",
+      "sortName": "Bonnal, Joseph-Ermend",
+      "slug": "joseph-ermend-bonnal",
+      "primaryRole": "composer",
       "roles": [
+        "composer",
         "lyricist"
       ],
       "sourceIds": [
-        "SRC0373"
+        "SRC0373",
+        "SRC0686"
       ],
       "contributionIds": [
         "CON-S202-L-P111"
       ],
       "workIds": [
         "W-S202"
+      ],
+      "authorizedName": "Bonnal, Ermend",
+      "birthYear": 1880,
+      "deathYear": 1944,
+      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n95108582\nBnF catalogue: https://catalogue.bnf.fr/ark:/12148/cb16557102j",
+      "nameVariantIds": [
+        "PNV0060"
       ]
     },
     {
@@ -4175,7 +4199,8 @@
       ],
       "birthYear": 1902,
       "deathYear": 1966,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "authorizedName": "Kiepura, Jan"
     },
     {
       "id": "P118",
@@ -4199,7 +4224,8 @@
       ],
       "birthYear": 1891,
       "deathYear": 1948,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "authorizedName": "Tauber, Richard"
     },
     {
       "id": "P119",
@@ -4212,7 +4238,7 @@
         "arranger",
         "conductor"
       ],
-      "authorityUrl": "Wikipedia: https://en.wikipedia.org/wiki/Henryk_Gold",
+      "authorityUrl": "Wikipedia: https://en.wikipedia.org/wiki/Henryk_Gold\nVIAF: https://viaf.org/viaf/166883945\nLCNAF: https://id.loc.gov/authorities/names/n2014038235\nGND: https://d-nb.info/gnd/1078704368\nBnF catalogue: https://catalogue.bnf.fr/ark:/12148/cb13796928z",
       "sourceIds": [
         "SRC0490",
         "SRC0563"
@@ -4222,7 +4248,8 @@
       ],
       "birthYear": 1902,
       "deathYear": 1977,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "authorizedName": "Gold, Henry (Composer)"
     },
     {
       "id": "P121",
@@ -4249,10 +4276,11 @@
       "workIds": [
         "W-O005"
       ],
-      "authorityUrl": "NIFC: https://chopin.nifc.pl/en/chopin/osoba/24_etkin_roza",
+      "authorityUrl": "NIFC: https://chopin.nifc.pl/en/chopin/osoba/24_etkin_roza\nVIAF: https://viaf.org/viaf/300510330\nGND: https://d-nb.info/gnd/1156571219\nBN: https://dbn.bn.org.pl/descriptor-details/a0000001973447",
       "birthYear": 1908,
       "deathYear": 1945,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "authorizedName": "Etkin, Rosa"
     },
     {
       "id": "P122",
@@ -4263,7 +4291,7 @@
       "roles": [
         "pianist"
       ],
-      "authorityUrl": "LexM: https://www.scharwenka-stiftung.de/images/pdf/archiv/konservatorien/persoenlichkeiten/mayer_mahr_moritz/mayer_mahr_moritz_metadaten_lexm.pdf\nWikimedia Commons: https://commons.wikimedia.org/wiki/File:Mayer-Mahr.jpg",
+      "authorityUrl": "LexM: https://www.scharwenka-stiftung.de/images/pdf/archiv/konservatorien/persoenlichkeiten/mayer_mahr_moritz/mayer_mahr_moritz_metadaten_lexm.pdf\nWikimedia Commons: https://commons.wikimedia.org/wiki/File:Mayer-Mahr.jpg\nVIAF: https://viaf.org/viaf/71657465\nLCNAF: https://id.loc.gov/authorities/names/no93020803\nGND: https://d-nb.info/gnd/116963670\nBnF catalogue: https://catalogue.bnf.fr/ark:/12148/cb14769221v",
       "sourceIds": [
         "SRC0366",
         "SRC0490",
@@ -4274,7 +4302,8 @@
       ],
       "birthYear": 1869,
       "deathYear": 1947,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "authorizedName": "Mayer-Mahr, Moritz"
     },
     {
       "id": "P123",

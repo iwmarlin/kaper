@@ -18095,6 +18095,9 @@
       ],
       "sourceIds": [
         "SRC0373"
+      ],
+      "nameVariantIds": [
+        "PNV0060"
       ]
     },
     {
@@ -18838,8 +18841,8 @@
         "SRC0633"
       ]
     },
-  {
-    "id": "CON-S215-P-P117",
+    {
+      "id": "CON-S215-P-P117",
       "role": "performer",
       "nameAsPrinted": "Jan Kiepura",
       "evidenceContext": "recording_label",
@@ -18850,123 +18853,123 @@
       "personIds": [
         "P117"
       ],
-    "sourceIds": [
-      "SRC0633"
-    ]
-  },
-  {
-    "id": "CON-S216-C-P009",
-    "role": "composer",
-    "nameAsPrinted": "Bronisław Kaper",
-    "displayCredit": "Composer",
-    "evidenceContext": "online_catalogue",
-    "sortOrder": 10,
-    "certainty": "confirmed",
-    "workIds": [
-      "W-S216"
-    ],
-    "personIds": [
-      "P009"
-    ],
-    "sourceIds": [
-      "SRC0658"
-    ]
-  },
-  {
-    "id": "CON-S216-L-P159",
-    "role": "lyricist",
-    "nameAsPrinted": "Julian Tuwim",
-    "displayCredit": "Polish lyrics",
-    "evidenceContext": "online_catalogue",
-    "sortOrder": 20,
-    "certainty": "confirmed",
-    "workIds": [
-      "W-S216"
-    ],
-    "personIds": [
-      "P159"
-    ],
-    "sourceIds": [
-      "SRC0658"
-    ]
-  },
-  {
-    "id": "CON-S217-C-P009",
-    "role": "composer",
-    "nameAsPrinted": "B. Kaper",
-    "evidenceContext": "sheet_music",
-    "sortOrder": 10,
-    "certainty": "confirmed",
-    "workIds": [
-      "W-S217"
-    ],
-    "personIds": [
-      "P009"
-    ],
-    "sourceIds": [
-      "SRC0358",
-      "SRC0470"
-    ],
-    "nameVariantIds": [
-      "PNV0019"
-    ]
-  },
-  {
-    "id": "CON-S217-L-P020",
-    "role": "lyricist",
-    "nameAsPrinted": "Fritz Rotter",
-    "evidenceContext": "sheet_music",
-    "scopeNote": "German original text.",
-    "sortOrder": 20,
-    "certainty": "confirmed",
-    "publicNote": "German original text.",
-    "workIds": [
-      "W-S217"
-    ],
-    "personIds": [
-      "P020"
-    ],
-    "sourceIds": [
-      "SRC0358",
-      "SRC0470"
-    ]
-  },
-  {
-    "id": "CON-S217-L-P096",
-    "role": "lyricist",
-    "nameAsPrinted": "Ferry",
-    "evidenceContext": "sheet_music",
-    "evidenceLocator": "Front cover: “Hollandsche tekst van Ferry”",
-    "scopeNote": "Dutch text.",
-    "sortOrder": 21,
-    "certainty": "confirmed",
-    "publicNote": "Dutch text.",
-    "workIds": [
-      "W-S217"
-    ],
-    "personIds": [
-      "P096"
-    ],
-    "sourceIds": [
-      "SRC0358"
-    ],
-    "nameVariantIds": [
-      "PNV0031"
-    ]
-  },
+      "sourceIds": [
+        "SRC0633"
+      ]
+    },
+    {
+      "id": "CON-S216-C-P009",
+      "role": "composer",
+      "nameAsPrinted": "Bronisław Kaper",
+      "displayCredit": "Composer",
+      "evidenceContext": "online_catalogue",
+      "sortOrder": 10,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S216"
+      ],
+      "personIds": [
+        "P009"
+      ],
+      "sourceIds": [
+        "SRC0658"
+      ]
+    },
+    {
+      "id": "CON-S216-L-P159",
+      "role": "lyricist",
+      "nameAsPrinted": "Julian Tuwim",
+      "displayCredit": "Polish lyrics",
+      "evidenceContext": "online_catalogue",
+      "sortOrder": 20,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S216"
+      ],
+      "personIds": [
+        "P159"
+      ],
+      "sourceIds": [
+        "SRC0658"
+      ]
+    },
+    {
+      "id": "CON-S217-C-P009",
+      "role": "composer",
+      "nameAsPrinted": "B. Kaper",
+      "evidenceContext": "sheet_music",
+      "sortOrder": 10,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S217"
+      ],
+      "personIds": [
+        "P009"
+      ],
+      "sourceIds": [
+        "SRC0358",
+        "SRC0470"
+      ],
+      "nameVariantIds": [
+        "PNV0019"
+      ]
+    },
+    {
+      "id": "CON-S217-L-P020",
+      "role": "lyricist",
+      "nameAsPrinted": "Fritz Rotter",
+      "evidenceContext": "sheet_music",
+      "scopeNote": "German original text.",
+      "sortOrder": 20,
+      "certainty": "confirmed",
+      "publicNote": "German original text.",
+      "workIds": [
+        "W-S217"
+      ],
+      "personIds": [
+        "P020"
+      ],
+      "sourceIds": [
+        "SRC0358",
+        "SRC0470"
+      ]
+    },
+    {
+      "id": "CON-S217-L-P096",
+      "role": "lyricist",
+      "nameAsPrinted": "Ferry",
+      "evidenceContext": "sheet_music",
+      "evidenceLocator": "Front cover: “Hollandsche tekst van Ferry”",
+      "scopeNote": "Dutch text.",
+      "sortOrder": 21,
+      "certainty": "confirmed",
+      "publicNote": "Dutch text.",
+      "workIds": [
+        "W-S217"
+      ],
+      "personIds": [
+        "P096"
+      ],
+      "sourceIds": [
+        "SRC0358"
+      ],
+      "nameVariantIds": [
+        "PNV0031"
+      ]
+    },
     {
       "id": "CON-S217-PUB-ORG029",
-    "role": "publisher",
-    "nameAsPrinted": "Wiener Boheme Verlag",
-    "evidenceContext": "sheet_music",
-    "sortOrder": 50,
-    "certainty": "confirmed",
-    "workIds": [
-      "W-S217"
-    ],
-    "organizationIds": [
-      "ORG029"
-    ],
+      "role": "publisher",
+      "nameAsPrinted": "Wiener Boheme Verlag",
+      "evidenceContext": "sheet_music",
+      "sortOrder": 50,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S217"
+      ],
+      "organizationIds": [
+        "ORG029"
+      ],
       "sourceIds": [
         "SRC0358"
       ]
@@ -18988,5 +18991,5 @@
         "SRC0145"
       ]
     }
-]
+  ]
 }

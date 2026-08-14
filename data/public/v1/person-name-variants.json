@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 56,
+  "count": 57,
   "records": [
     {
       "id": "PNV0001",
@@ -1419,6 +1419,25 @@
       "sourceIds": [
         "SRC0674",
         "SRC0675"
+      ]
+    },
+    {
+      "id": "PNV0060",
+      "variantName": "Guy Marylis",
+      "variantType": "pseudonym",
+      "identityScope": "single_person",
+      "evidenceContext": "sheet_music_or_printed_credit",
+      "attestedWording": "Marylis",
+      "certainty": "confirmed",
+      "publicNote": "Pseudonym of Joseph-Ermend Bonnal, printed as Marylis on the French lyric recorded here. The Library of Congress holds a separate authority record for the pseudonymous identity, Marylis, Guy, 1880-1944, and the VIAF cluster that carries it also carries the Bibliothèque nationale heading Bonnal, Ermend, 1880-1944, compositeur, with a cross-reference between them.",
+      "personIds": [
+        "P111"
+      ],
+      "workIds": [
+        "W-S202"
+      ],
+      "sourceIds": [
+        "SRC0686"
       ]
     }
   ]
