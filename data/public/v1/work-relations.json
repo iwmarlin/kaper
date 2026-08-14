@@ -3405,8 +3405,8 @@
         "SRC0633"
       ]
     },
-  {
-    "id": "REL0198",
+    {
+      "id": "REL0198",
       "relationType": "language_version_of",
       "targetWorkTitle": "Signorina, Signorina, komm zu mir",
       "direction": "source_to_target",
@@ -3422,69 +3422,69 @@
         "P156",
         "P117"
       ],
-    "sourceIds": [
-      "SRC0633"
-    ]
-  },
-  {
-    "id": "REL0199",
-    "relationType": "language_version_of",
-    "targetWorkTitle": "Gib nur acht, über Nacht kommt die Liebe",
-    "targetTitleAsSource": "Gib nur acht, über Nacht kommt die Liebe",
-    "direction": "source_to_target",
-    "publicNote": "“Może tak, może nie” is documented as a Polish-language version of “Gib nur acht, über Nacht kommt die Liebe”.",
-    "certainty": "confirmed",
-    "sourceWorkIds": [
-      "W-S216"
-    ],
-    "targetWorkIds": [
-      "W-S008"
-    ],
-    "personIds": [
-      "P159"
-    ],
-    "sourceIds": [
-      "SRC0658"
-    ]
-  },
-  {
-    "id": "REL0200",
-    "relationType": "language_version_of",
-    "targetWorkTitle": "Auf wiederseh'n, Herr Doktor, auf wiederseh'n, Frau Doktor",
-    "targetTitleAsSource": "Auf wiederseh'n, Herr Doktor, auf wiederseh'n, Frau Doktor",
-    "direction": "source_to_target",
-    "publicNote": "“Tot Weerziens, Mijnheer Jansen” is the Dutch-language version of “Auf wiederseh'n, Herr Doktor, auf wiederseh'n, Frau Doktor”.",
-    "certainty": "confirmed",
-    "sourceWorkIds": [
-      "W-S217"
-    ],
-    "targetWorkIds": [
-      "W-S010"
-    ],
-    "personIds": [
-      "P096"
-    ],
-    "sourceIds": [
-      "SRC0358"
-    ]
-  },
-  {
-    "id": "REL0201",
-    "relationType": "associated_with_film",
-    "targetWorkTitle": "Birthright",
-    "targetTitleAsSource": "Birthright",
-    "direction": "source_to_target",
-    "publicNote": "“All God's Chillun Got Rhythm” is listed among the songs used in Birthright.",
-    "certainty": "confirmed",
-    "sourceWorkIds": [
-      "W-S152"
-    ],
-    "targetWorkIds": [
-      "W-F051"
-    ],
-    "sourceIds": [
-      "SRC0146"
-    ]
-  }
-]
+      "sourceIds": [
+        "SRC0633"
+      ]
+    },
+    {
+      "id": "REL0199",
+      "relationType": "language_version_of",
+      "targetWorkTitle": "Gib nur acht, über Nacht kommt die Liebe",
+      "targetTitleAsSource": "Gib nur acht, über Nacht kommt die Liebe",
+      "direction": "source_to_target",
+      "publicNote": "“Może tak, może nie” is documented as a Polish-language version of “Gib nur acht, über Nacht kommt die Liebe”.",
+      "certainty": "confirmed",
+      "sourceWorkIds": [
+        "W-S216"
+      ],
+      "targetWorkIds": [
+        "W-S008"
+      ],
+      "personIds": [
+        "P159"
+      ],
+      "sourceIds": [
+        "SRC0658"
+      ]
+    },
+    {
+      "id": "REL0200",
+      "relationType": "language_version_of",
+      "targetWorkTitle": "Auf wiederseh'n, Herr Doktor, auf wiederseh'n, Frau Doktor",
+      "targetTitleAsSource": "Auf wiederseh'n, Herr Doktor, auf wiederseh'n, Frau Doktor",
+      "direction": "source_to_target",
+      "publicNote": "“Tot Weerziens, Mijnheer Jansen” is the Dutch-language version of “Auf wiederseh'n, Herr Doktor, auf wiederseh'n, Frau Doktor”.",
+      "certainty": "confirmed",
+      "sourceWorkIds": [
+        "W-S217"
+      ],
+      "targetWorkIds": [
+        "W-S010"
+      ],
+      "personIds": [
+        "P096"
+      ],
+      "sourceIds": [
+        "SRC0358"
+      ]
+    },
+    {
+      "id": "REL0201",
+      "relationType": "associated_with_film",
+      "targetWorkTitle": "Birthright",
+      "targetTitleAsSource": "Birthright",
+      "direction": "source_to_target",
+      "publicNote": "“All God's Chillun Got Rhythm” is listed among the songs used in Birthright.",
+      "certainty": "confirmed",
+      "sourceWorkIds": [
+        "W-S152"
+      ],
+      "targetWorkIds": [
+        "W-F051"
+      ],
+      "sourceIds": [
+        "SRC0146"
+      ]
+    }
+  ]
 }

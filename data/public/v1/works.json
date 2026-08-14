@@ -3893,8 +3893,8 @@
       "publicScope": "standalone_page",
       "sourceIds": [
         "SRC0102",
-    "SRC0464",
-    "SRC0658"
+        "SRC0464",
+        "SRC0658"
       ],
       "contributionIds": [
         "CON-S008-C-P009",
@@ -3911,13 +3911,13 @@
       "organizationIds": [
         "ORG029"
       ],
-  "songIds": [
-    "S008"
-  ],
-  "relationIds": [
-    "REL0199"
-  ],
-  "periods": [
+      "songIds": [
+        "S008"
+      ],
+      "relationIds": [
+        "REL0199"
+      ],
+      "periods": [
         "european"
       ]
     },
@@ -6894,7 +6894,7 @@
         "CON-S083-C-P009",
         "CON-S083-C-P077",
         "CON-S083-L-P017",
-        "CON-S083-PUB-ORG042"
+        "CON-S083-PUB-ORG038"
       ],
       "personIds": [
         "P009",
@@ -11930,8 +11930,8 @@
         "european"
       ]
     },
-  {
-    "id": "W-S215",
+    {
+      "id": "W-S215",
       "title": "Signorina, signorina",
       "slug": "signorina-signorina-pl",
       "sortTitle": "Signorina, signorina",
@@ -11966,38 +11966,38 @@
       "songIds": [
         "S215"
       ],
-    "periods": [
-      "european"
-    ]
-  },
+      "periods": [
+        "european"
+      ]
+    },
     {
       "id": "W-S216",
-    "title": "Może tak, może nie",
-    "slug": "moze-tak-moze-nie",
-    "sortTitle": "Może tak, może nie",
-    "workType": "Song",
-    "year": 1932,
-    "period": "european",
-    "certainty": "confirmed",
-    "displayOnSite": true,
-    "publicScope": "standalone_page",
-    "sourceIds": [
-      "SRC0658"
-    ],
-    "contributionIds": [
-      "CON-S216-C-P009",
-      "CON-S216-L-P159"
-    ],
-    "personIds": [
-      "P009",
-      "P159"
-    ],
-    "relationIds": [
-      "REL0199"
-    ],
-    "songIds": [
-      "S216"
-    ],
+      "title": "Może tak, może nie",
+      "slug": "moze-tak-moze-nie",
+      "sortTitle": "Może tak, może nie",
+      "workType": "Song",
+      "year": 1932,
+      "period": "european",
+      "certainty": "confirmed",
+      "displayOnSite": true,
+      "publicScope": "standalone_page",
+      "sourceIds": [
+        "SRC0658"
+      ],
+      "contributionIds": [
+        "CON-S216-C-P009",
+        "CON-S216-L-P159"
+      ],
+      "personIds": [
+        "P009",
+        "P159"
+      ],
+      "relationIds": [
+        "REL0199"
+      ],
+      "songIds": [
+        "S216"
+      ],
       "periods": [
         "european"
       ]
@@ -12051,5 +12051,5 @@
         "european"
       ]
     }
-]
+  ]
 }
