@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 59,
+  "count": 58,
   "records": [
     {
       "id": "PNV0001",
@@ -190,37 +190,40 @@
     },
     {
       "id": "PNV0009",
-      "variantName": "Pierre Candel",
+      "variantName": "Pierre Candel (Walter Jurmann)",
       "variantType": "pseudonym",
-      "identityScope": "context_dependent",
+      "identityScope": "single_person",
       "evidenceContext": "sheet_music_or_printed_credit",
       "attestedWording": "Pierre Candel",
       "certainty": "confirmed",
-      "publicNote": "In the Le chant du destin song group, the printed name Pierre Candel is resolved to Walter Jurmann.",
+      "publicNote": "Printed music credit on the four songs of Le chant du destin (1933) and on Le greluchon délicat (1934), where it stands for Walter Jurmann alone.",
       "personIds": [
         "P077"
       ],
       "workIds": [
+        "W-F030",
         "W-S088",
         "W-S089",
         "W-S090",
         "W-S091"
       ],
       "sourceIds": [
+        "SRC0163",
         "SRC0219",
         "SRC0284",
-        "SRC0373"
+        "SRC0373",
+        "SRC0411"
       ]
     },
     {
       "id": "PNV0010",
-      "variantName": "Pierre Candel",
+      "variantName": "Pierre Candel (Bronisław Kaper and Walter Jurmann)",
       "variantType": "joint_pseudonym",
-      "identityScope": "context_dependent",
+      "identityScope": "joint_identity",
       "evidenceContext": "sheet_music_or_printed_credit",
       "attestedWording": "Pierre Candel",
       "certainty": "confirmed",
-      "publicNote": "On “Le bistrot du port” and “Rêves d'amour”, the printed name Pierre Candel is identified jointly with Bronisław Kaper and Walter Jurmann.",
+      "publicNote": "Printed music credit on Le bistrot du port (1933) and Rêves d'amour (1934), where the same name stands for Kaper and Jurmann together; the SACEM repertoire records both behind it.",
       "personIds": [
         "P009",
         "P077"
@@ -283,27 +286,6 @@
       "sourceIds": [
         "SRC0009",
         "SRC0490"
-      ]
-    },
-    {
-      "id": "PNV0014",
-      "variantName": "Pierre Candel",
-      "variantType": "pseudonym",
-      "identityScope": "context_dependent",
-      "evidenceContext": "sheet_music_or_printed_credit",
-      "attestedWording": "Pierre Candel",
-      "certainty": "confirmed",
-      "publicNote": "On “Le greluchon délicat” / “Le Valet de cœur”, the printed music credit Pierre Candel is identified with Walter Jurmann.",
-      "personIds": [
-        "P077"
-      ],
-      "workIds": [
-        "W-F030"
-      ],
-      "sourceIds": [
-        "SRC0163",
-        "SRC0373",
-        "SRC0411"
       ]
     },
     {
