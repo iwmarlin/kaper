@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 142,
+  "count": 143,
   "records": [
     {
       "id": "P001",
@@ -5543,6 +5543,36 @@
       "birthYear": 1901,
       "deathYear": 1991,
       "lifeDatesCertainty": "confirmed"
+    },
+    {
+      "id": "P164",
+      "displayName": "Willi Domgraf-Fassbaender",
+      "sortName": "Domgraf-Fassbaender, Willi",
+      "authorizedName": "Domgraf-Fassbaender, Willi",
+      "authorizedNameSource": "LCNAF",
+      "slug": "willi-domgraf-fassbaender",
+      "primaryRole": "singer",
+      "roles": [
+        "singer",
+        "actor"
+      ],
+      "birthYear": 1897,
+      "deathYear": 1978,
+      "lifeDatesCertainty": "confirmed",
+      "authorityUrl": "VIAF: https://viaf.org/viaf/29717722\nLCNAF: https://id.loc.gov/authorities/names/n82162725\nGND: https://d-nb.info/gnd/116176156\nISNI: https://isni.org/isni/0000000073649506\nWikidata: https://www.wikidata.org/entity/Q84510",
+      "sourceIds": [
+        "SRC0186",
+        "SRC0690",
+        "SRC0691"
+      ],
+      "contributionIds": [
+        "CON-S058-PERF-P164",
+        "CON-S084-PERF-P164"
+      ],
+      "workIds": [
+        "W-S058",
+        "W-S084"
+      ]
     }
   ]
 }

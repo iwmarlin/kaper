@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 619,
+  "count": 620,
   "records": [
     {
       "id": "SRC0001",
@@ -6010,7 +6010,8 @@
       "slug": "src0186-der-glueckliche-herr-fuenf-1932",
       "personIds": [
         "P009",
-        "P077"
+        "P077",
+        "P164"
       ],
       "workIds": [
         "W-S058",
@@ -6031,10 +6032,12 @@
         "CON-S058-C-P009",
         "CON-S058-C-P077",
         "CON-S058-L-P020",
+        "CON-S058-PERF-P164",
         "CON-S058-PUB-ORG031",
         "CON-S084-C-P009",
         "CON-S084-C-P077",
         "CON-S084-L-P020",
+        "CON-S084-PERF-P164",
         "CON-S084-PUB-ORG031"
       ],
       "nameVariantIds": [
@@ -20696,7 +20699,8 @@
       "slug": "src0690-kinematograph-1932-08-der-glueckliche-herr-fuenf",
       "personIds": [
         "P009",
-        "P077"
+        "P077",
+        "P164"
       ],
       "workIds": [
         "W-F022"
@@ -20706,6 +20710,32 @@
       ],
       "titleVariantIds": [
         "TV0035"
+      ],
+      "contributionIds": [
+        "CON-S058-PERF-P164",
+        "CON-S084-PERF-P164"
+      ]
+    },
+    {
+      "id": "SRC0691",
+      "accessDate": "2026-08-06",
+      "creator": "Photographer unknown",
+      "date": "c. 1928",
+      "title": "File:Domgraf-Fassbaender.jpg",
+      "shortCitation": "Ross Verlag artist postcard of Willi Domgraf-Fassbaender as Figaro, c. 1928",
+      "fullCitation": "Signed artist postcard, Willi Domgraf-Fassbaender as Figaro in Rossini's Der Barbier von Sevilla. Ross Verlag, Berlin, about 1928; photographer unknown; private collection. Republished on Wikimedia Commons under the public-domain tags for anonymous works published more than seventy years ago and for works published before 1 January 1931. Accessed 6 August 2026.",
+      "publication": "Ross Verlag",
+      "repository": "Wikimedia Commons",
+      "primaryUrl": "https://commons.wikimedia.org/wiki/File:Domgraf-Fassbaender.jpg",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "sourceType": "wikimedia_commons_file",
+      "slug": "src0691-commons-ross-verlag-domgraf-fassbaender-postcard",
+      "personIds": [
+        "P164"
+      ],
+      "mediaIds": [
+        "M332"
       ]
     }
   ]
