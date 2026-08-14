@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 113,
+  "count": 114,
   "records": [
     {
       "id": "ORG001",
@@ -1031,7 +1031,6 @@
       "contributionIds": [
         "CON-O015-PUB-ORG033",
         "CON-O016-PUB-ORG033",
-        "CON-S007-PUB-ORG033",
         "CON-S009-PUB-ORG033",
         "CON-S013-PUB-ORG033",
         "CON-S015-PUB-ORG033",
@@ -1059,7 +1058,6 @@
       "workIds": [
         "W-O015",
         "W-O016",
-        "W-S007",
         "W-S009",
         "W-S013",
         "W-S015",
@@ -3357,6 +3355,30 @@
       "nameVariants": "Deutsche Kinemathek; Museum für Film und Fernsehen; Sammlung Paul Kohner Agency",
       "sourceIds": [
         "SRC0678"
+      ]
+    },
+    {
+      "id": "ORG118",
+      "displayName": "Roehr A.-G.",
+      "authorizedName": "Roehr A.-G.",
+      "types": [
+        "publisher"
+      ],
+      "city": [
+        "Berlin"
+      ],
+      "country": "Germany",
+      "slug": "roehr-ag",
+      "nameVariants": "Roehr; Roehr, A. G.; Verlag Roehr",
+      "sourceIds": [
+        "SRC0177",
+        "SRC0689"
+      ],
+      "contributionIds": [
+        "CON-S007-PUB-ORG118"
+      ],
+      "workIds": [
+        "W-S007"
       ]
     }
   ]

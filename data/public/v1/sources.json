@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 617,
+  "count": 618,
   "records": [
     {
       "id": "SRC0001",
@@ -5588,15 +5588,15 @@
     },
     {
       "id": "SRC0177",
-      "shortCitation": "Kaper, \"Nimm diesen Strauß Vergißmeinnicht\" (Berlin: Roehr, 1929).",
-      "fullCitation": "B. Kaper, “Nimm diesen Strauß Vergißmeinnicht.” Slow fox. Berlin: Roehr, 1929. Registered in Hofmeisters Musikalisch-literarischer Monatsbericht (December 1929): 288. ANNO – Austrian Newspapers Online, Österreichische Nationalbibliothek.",
-      "sourceType": "sheet_music",
-      "title": "Nimm diesen Strauß Vergißmeinnicht",
+      "shortCitation": "Hofmeisters Monatsbericht, May 1929, p. 118 — Nimm diesen Strauß Vergißmeinnicht",
+      "fullCitation": "“Kaper, B. Nimm diesen Strauß Vergißmeinnicht. Slow Fox, f. Orch. m. Jazz-St. bearb. v. F. Ralph M 3. — f. Salonorch. m. Jazz-St. bearb. v. F. Ralph M 2. — f. Pfte, 2 V., Vcllo, Kbaß bearb. v. F. Ralph M 1. — f. Ges. m. Pfte M 1,80. Berlin, Roehr.” Hofmeisters Musikalisch-literarischer Monatsbericht, May 1929, p. 118; the classified index of the same issue lists the piano-quintet arrangement under salon quintet on p. 131. ANNO – Austrian Newspapers Online, Österreichische Nationalbibliothek. Accessed 6 August 2026.",
+      "sourceType": "sheet_music_catalogue",
+      "title": "Hofmeisters Musikalisch-literarischer Monatsbericht, May 1929, p. 118",
       "creator": "Kaper, B.",
       "repository": "Österreichische Nationalbibliothek / ANNO",
-      "publication": "Roehr, Berlin",
+      "publication": "Hofmeisters Musikalisch-literarischer Monatsbericht",
       "date": "1929",
-      "accessDate": "2026-07-13",
+      "accessDate": "2026-08-06",
       "reliability": "high",
       "sourceStatus": "verified",
       "slug": "src0177-nimm-diesen-strauss-vergissmeinnicht-1929",
@@ -5604,7 +5604,8 @@
         "P009"
       ],
       "organizationIds": [
-        "ORG064"
+        "ORG064",
+        "ORG118"
       ],
       "workIds": [
         "W-S007"
@@ -5614,13 +5615,12 @@
       ],
       "contributionIds": [
         "CON-S007-C-P009",
-        "CON-S007-L-P009",
-        "CON-S007-PUB-ORG033"
+        "CON-S007-PUB-ORG118"
       ],
       "nameVariantIds": [
         "PNV0019"
       ],
-      "primaryUrl": "https://anno.onb.ac.at/cgi-content/anno-plus?aid=hof&datum=19290062"
+      "primaryUrl": "https://anno.onb.ac.at/cgi-content/anno-plus?aid=hof&datum=19290055"
     },
     {
       "id": "SRC0178",
@@ -20643,6 +20643,41 @@
       "sourceStatus": "verified_with_attribution_note",
       "sourceType": "image_or_photograph",
       "title": "Airplane view of lot number one, Metro-Goldwyn-Mayer, Culver City"
+    },
+    {
+      "id": "SRC0689",
+      "accessDate": "2026-08-06",
+      "creator": "United States Copyright Office",
+      "date": "1929",
+      "fullCitation": "“Nimm diesen strauss vergissmeinnicht; fox-trot und lied, text von Fritz Rotter, musik von B. Kaper, of Germany. © Feb. 14, 1929; 1 c. June 12; E for. 5136; Roehr, a. g., Berlin.” Catalog of Copyright Entries, Part 3: Musical Compositions, new series, vol. 24 (1929), no. 14041, p. 734. Library of Congress, Copyright Office; digitised copy at the Internet Archive. Accessed 6 August 2026.",
+      "shortCitation": "CCE 1929, no. 14041 — Nimm diesen Strauß Vergißmeinnicht",
+      "title": "Catalog of Copyright Entries, Musical Compositions, 1929 — entry 14041",
+      "publication": "Catalog of Copyright Entries",
+      "repository": "Library of Congress / Internet Archive",
+      "primaryUrl": "https://archive.org/details/catalogofcopyrig243libr/page/734/mode/2up",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "sourceType": "copyright_catalogue",
+      "slug": "src0689-cce-1929-nimm-diesen-strauss-vergissmeinnicht",
+      "personIds": [
+        "P009",
+        "P020"
+      ],
+      "organizationIds": [
+        "ORG118"
+      ],
+      "workIds": [
+        "W-S007"
+      ],
+      "songIds": [
+        "S007"
+      ],
+      "mediaIds": [],
+      "contributionIds": [
+        "CON-S007-C-P009",
+        "CON-S007-L-P020",
+        "CON-S007-PUB-ORG118"
+      ]
     }
   ]
 }

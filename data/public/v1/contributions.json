@@ -5889,53 +5889,21 @@
       "role": "composer",
       "nameAsPrinted": "B. Kaper",
       "sortOrder": 10,
-      "certainty": "probable",
-      "publicNote": "The source attributes the work to Bronisław Kaper but does not distinguish music from text; the music contribution is retained as probable.",
-      "workIds": [
-        "W-S007"
-      ],
-      "personIds": [
-        "P009"
-      ],
-      "sourceIds": [
-        "SRC0177"
-      ],
-      "nameVariantIds": [
-        "PNV0019"
-      ]
-    },
-    {
-      "id": "CON-S007-L-P009",
-      "role": "lyricist",
-      "nameAsPrinted": "Bronisław Kaper",
-      "sortOrder": 20,
-      "certainty": "probable",
-      "publicNote": "The source attributes the work to Bronisław Kaper but does not distinguish music from text; the lyric contribution is retained as probable.",
-      "workIds": [
-        "W-S007"
-      ],
-      "personIds": [
-        "P009"
-      ],
-      "sourceIds": [
-        "SRC0177"
-      ]
-    },
-    {
-      "id": "CON-S007-PUB-ORG033",
-      "role": "publisher",
-      "nameAsPrinted": "Alrobi Musikverlag",
-      "evidenceContext": "sheet_music",
       "certainty": "confirmed",
       "workIds": [
         "W-S007"
       ],
-      "organizationIds": [
-        "ORG033"
+      "personIds": [
+        "P009"
       ],
       "sourceIds": [
-        "SRC0177"
-      ]
+        "SRC0177",
+        "SRC0689"
+      ],
+      "nameVariantIds": [
+        "PNV0019"
+      ],
+      "evidenceContext": "copyright_catalogue"
     },
     {
       "id": "CON-S008-C-P009",
@@ -18989,6 +18957,41 @@
       ],
       "sourceIds": [
         "SRC0145"
+      ]
+    },
+    {
+      "id": "CON-S007-L-P020",
+      "role": "lyricist",
+      "nameAsPrinted": "Fritz Rotter",
+      "sortOrder": 20,
+      "certainty": "confirmed",
+      "evidenceContext": "copyright_catalogue",
+      "workIds": [
+        "W-S007"
+      ],
+      "personIds": [
+        "P020"
+      ],
+      "sourceIds": [
+        "SRC0689"
+      ]
+    },
+    {
+      "id": "CON-S007-PUB-ORG118",
+      "role": "publisher",
+      "nameAsPrinted": "Roehr",
+      "sortOrder": 30,
+      "certainty": "confirmed",
+      "evidenceContext": "sheet_music",
+      "workIds": [
+        "W-S007"
+      ],
+      "organizationIds": [
+        "ORG118"
+      ],
+      "sourceIds": [
+        "SRC0177",
+        "SRC0689"
       ]
     }
   ]
