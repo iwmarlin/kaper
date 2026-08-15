@@ -196,7 +196,8 @@ def apply_disc(media: dict, source: dict, *, disc: dict, work_title: str, host: 
     catalogue = disc.get("catalogue") or ""
     order = disc.get("order_number") or ""
     performer = disc.get("performer_credit") or ""
-    repository = disc.get("repository") or RADIOMUSEUM_REPOSITORY
+    from_description = bool(disc.get("from_description"))
+    repository = disc.get("repository") or ("" if from_description else RADIOMUSEUM_REPOSITORY)
 
     numbers = ", ".join(
         part for part in (
@@ -223,9 +224,11 @@ def apply_disc(media: dict, source: dict, *, disc: dict, work_title: str, host: 
         f"label credit{'s' if ' and ' in printed else ''} {printed}." if printed else "",
         f"{physical}, n.d.",
         f"{disc['uploader_note']}." if disc.get("uploader_note") else "",
-        f"Shellac disc from the Schallarchiv of the {RADIOMUSEUM_CHANNEL}, its label filmed in the "
-        f"{host} upload." if repository == RADIOMUSEUM_REPOSITORY else
-        f"Disc held by {repository}, its label filmed in the {host} upload.",
+        (f"Discographic detail as given in the uploader's description; the label is not shown in the "
+         f"{host} upload." if from_description else
+         f"Shellac disc from the Schallarchiv of the {RADIOMUSEUM_CHANNEL}, its label filmed in the "
+         f"{host} upload." if repository == RADIOMUSEUM_REPOSITORY else
+         f"Disc held by {repository}, its label filmed in the {host} upload."),
     ]
     catalogued = f"{label} {catalogue}".strip()
     separator = " / " if catalogue else ", "
@@ -238,10 +241,13 @@ def apply_disc(media: dict, source: dict, *, disc: dict, work_title: str, host: 
     source["sourceType"] = "recording_discographic_source"
     source["title"] = f"{disc_title} — {catalogued}"
     source["creator"] = performer or source.get("creator", "")
-    source["repository"] = repository
+    if repository:
+        source["repository"] = repository
     source["publication"] = label
     source["date"] = disc.get("date") or "n.d."
-    source["reliability"] = "high"
+    source["reliability"] = "medium" if from_description else "high"
+    if from_description:
+        source["sourceStatus"] = "verified_with_attribution_note"
     source["slug"] = f"{source['id'].lower()}-{slugify(catalogued or label, 30)}-{slugify(disc_title, 40)}"
     organizations = list(source.get("organizationIds") or [])
     if RADIOMUSEUM_CHANNEL.lower() in (disc.get("channel") or "").lower():
@@ -252,16 +258,23 @@ def apply_disc(media: dict, source: dict, *, disc: dict, work_title: str, host: 
 
     media["title"] = f"{work_title} — {reference.split(' / ')[0]}, listening reference"
     media["description"] = (
-        f"Shellac disc of “{disc_title}”"
+        f"Recording of “{disc_title}”"
         + (f" by {performer}" if performer else "")
-        + f", filmed in play with the {label} label in view."
+        + (f", issued on {label}, linked as an external listening reference." if from_description
+           else f", filmed in play with the {label} label in view.")
     )
-    media["altText"] = f"Listening reference for “{work_title}”, showing the {label} disc label."
+    media["altText"] = (
+        f"Listening reference for “{work_title}”."
+        if from_description
+        else f"Listening reference for “{work_title}”, showing the {label} disc label."
+    )
     media["publicCaption"] = (
         f"Listening reference for “{work_title}”"
         + (f" in the recording by {performer}" if performer else "")
-        + f". The video shows the {reference} disc label"
-        + (f", which prints the credit{'s' if ' and ' in printed else ''} {printed}." if printed else ".")
+        + (f". The upload identifies the disc as {reference} in its description, without showing the label."
+           if from_description
+           else f". The video shows the {reference} disc label"
+                + (f", which prints the credit{'s' if ' and ' in printed else ''} {printed}." if printed else "."))
     )
     media["publicCreditLine"] = (
         f"{host} / {disc.get('channel') or repository} listening link; {reference}."
@@ -540,6 +553,9 @@ def main() -> int:
     disc.add_argument("--date", help="date field, e.g. “n.d. [recorded 1929 according to the uploader]”")
     disc.add_argument("--uploader-note", help="what the uploader states but the label does not print")
     disc.add_argument("--repository", help=f"holding archive; defaults to “{RADIOMUSEUM_REPOSITORY}”")
+    disc.add_argument("--from-description", action="store_true",
+                      help="the label is not shown in the upload and the numbers come from its "
+                           "description: reliability drops to medium and the record says so")
     disc.add_argument("--link-contributions", action="store_true",
                       help="attach the source to every contribution of the work — use when the label "
                            "prints the credits, since the disc then corroborates them")
@@ -551,11 +567,12 @@ def main() -> int:
         "genre": args.genre, "performer_credit": args.performer_credit, "credit": args.credit,
         "publisher_credit": args.publisher_credit, "publisher_org": args.publisher_org,
         "disc_title": args.disc_title, "date": args.date, "uploader_note": args.uploader_note,
-        "repository": args.repository,
+        "repository": args.repository, "from_description": args.from_description,
     }
     disc_details = disc_fields if any(
-        value for key, value in disc_fields.items() if key != "electrical"
-    ) or args.electrical else None
+        value for key, value in disc_fields.items()
+        if key not in ("electrical", "from_description")
+    ) or args.electrical or args.from_description else None
     if disc_details and args.batch:
         parser.error("disc label details describe one disc; give them with --url, not --batch")
 

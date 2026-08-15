@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 625,
+  "count": 626,
   "records": [
     {
       "id": "SRC0001",
@@ -6035,12 +6035,12 @@
         "CON-S058-C-P009",
         "CON-S058-C-P077",
         "CON-S058-L-P020",
-        "CON-S058-PERF-P164",
+        "CON-S058-P-P164",
         "CON-S058-PUB-ORG031",
         "CON-S084-C-P009",
         "CON-S084-C-P077",
         "CON-S084-L-P020",
-        "CON-S084-PERF-P164",
+        "CON-S084-P-P164",
         "CON-S084-PUB-ORG031"
       ],
       "nameVariantIds": [
@@ -20717,8 +20717,8 @@
         "TV0035"
       ],
       "contributionIds": [
-        "CON-S058-PERF-P164",
-        "CON-S084-PERF-P164"
+        "CON-S058-P-P164",
+        "CON-S084-P-P164"
       ]
     },
     {
@@ -20883,6 +20883,34 @@
         "CON-S046-C-P009",
         "CON-S046-L-P020",
         "CON-S046-PUB-ORG033"
+      ]
+    },
+    {
+      "id": "SRC0697",
+      "shortCitation": "Odeon O-11811, “Mein Gorilla hat 'ne Villa im Zoo”",
+      "fullCitation": "Hans Albers, with the Odeon-Künstler-Orchester under Otto Dobrindt. “Mein Gorilla hat 'ne Villa im Zoo.” Paso Doble; Odeon, Katalog-Nr. O-11811, n.d. The description gives the matrix number Be 10227. Discographic detail as given in the uploader's description; the label is not shown in the YouTube upload.",
+      "sourceType": "recording_discographic_source",
+      "title": "Mein Gorilla hat 'ne Villa im Zoo — Odeon O-11811",
+      "creator": "Hans Albers, with the Odeon-Künstler-Orchester under Otto Dobrindt",
+      "repository": "YouTube",
+      "publication": "Odeon",
+      "accessDate": "2026-08-15",
+      "reliability": "medium",
+      "sourceStatus": "verified_with_attribution_note",
+      "slug": "src0697-odeon-o-11811-mein-gorilla-hat-ne-villa-im-zoo",
+      "organizationIds": [
+        "ORG093"
+      ],
+      "mediaIds": [
+        "M338"
+      ],
+      "primaryUrl": "https://www.youtube.com/watch?v=isgPXvTHsGE",
+      "date": "n.d.",
+      "contributionIds": [
+        "CON-S080-P-P153"
+      ],
+      "personIds": [
+        "P153"
       ]
     }
   ],
