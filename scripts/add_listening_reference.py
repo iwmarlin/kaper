@@ -227,18 +227,22 @@ def apply_disc(media: dict, source: dict, *, disc: dict, work_title: str, host: 
         f"{host} upload." if repository == RADIOMUSEUM_REPOSITORY else
         f"Disc held by {repository}, its label filmed in the {host} upload.",
     ]
-    reference = " / ".join(part for part in (f"{label} {catalogue}".strip(), f"Bestell-Nr. {order}" if order else "") if part)
+    catalogued = f"{label} {catalogue}".strip()
+    separator = " / " if catalogue else ", "
+    reference = separator.join(
+        part for part in (catalogued, f"Bestell-Nr. {order}" if order else "") if part
+    )
 
     source["shortCitation"] = f"{reference}, “{disc_title}”"
     source["fullCitation"] = " ".join(part for part in sentences if part)
     source["sourceType"] = "recording_discographic_source"
-    source["title"] = f"{disc_title} — {label} {catalogue}".strip()
+    source["title"] = f"{disc_title} — {catalogued}"
     source["creator"] = performer or source.get("creator", "")
     source["repository"] = repository
     source["publication"] = label
     source["date"] = disc.get("date") or "n.d."
     source["reliability"] = "high"
-    source["slug"] = f"{source['id'].lower()}-{slugify(label + ' ' + catalogue, 30)}-{slugify(disc_title, 40)}"
+    source["slug"] = f"{source['id'].lower()}-{slugify(catalogued or label, 30)}-{slugify(disc_title, 40)}"
     organizations = list(source.get("organizationIds") or [])
     if RADIOMUSEUM_CHANNEL.lower() in (disc.get("channel") or "").lower():
         organizations.append(RADIOMUSEUM_ORG)
@@ -259,7 +263,9 @@ def apply_disc(media: dict, source: dict, *, disc: dict, work_title: str, host: 
         + f". The video shows the {reference} disc label"
         + (f", which prints the credit{'s' if ' and ' in printed else ''} {printed}." if printed else ".")
     )
-    media["publicCreditLine"] = f"{host} / {disc.get('channel') or repository} listening link; {label} {catalogue}.".replace("  ", " ")
+    media["publicCreditLine"] = (
+        f"{host} / {disc.get('channel') or repository} listening link; {reference}."
+    )
     if disc.get("publisher_org"):
         media["organizationIds"] = sorted(set((media.get("organizationIds") or []) + [disc["publisher_org"]]))
 
