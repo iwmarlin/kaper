@@ -298,7 +298,7 @@
     },
     {
       "id": "PL009",
-      "displayName": "Stanisław Staszic Gymnasium, Polna 60, Warsaw",
+      "displayName": "Stanisław Staszic Gymnasium, Polna 60 / Noakowskiego 6, Warsaw",
       "authorizedName": "Gimnazjum im. Stanisława Staszica w Warszawie, ul. Polna 60",
       "placeType": "institution",
       "city": "Warsaw",
@@ -308,18 +308,20 @@
       "longitude": 21.0175,
       "period": "warsaw",
       "slug": "stanislaw-staszic-gymnasium-polna-60-warsaw",
-      "publicNote": "School associated with Kaper’s secondary education and matura, identified as Gimnazjum im. Stanisława Staszica w Warszawie at ul. Polna 60. The coordinates indicate the address area without establishing continuity of the historical school building.",
+      "publicNote": "School associated with Kaper’s secondary education and matura, identified as Gimnazjum im. Stanisława Staszica w Warszawie. The building carries two addresses for the same site: ul. Polna 60 in Kaper’s school years, and ul. Noakowskiego 6 after part of Polna Street was renamed for Stanisław Noakowski in 1938. Warszawa1939.pl documents it under the later address, and its bibliography pairs both forms. Built in 1914–16, burned after the Warsaw Uprising and rebuilt with an added storey, so the standing structure is not the pre-war fabric. The coordinates indicate the address area.",
       "mapPrecision": "site_approximate",
       "publicScope": "map_and_detail",
       "timelineEventIds": [
         "TE0003"
       ],
       "sourceIds": [
+        "SRC0434",
         "SRC0490",
         "SRC0524",
         "SRC0577"
       ],
       "mediaIds": [
+        "M092",
         "M280"
       ],
       "periods": [
@@ -382,7 +384,8 @@
         "warsaw"
       ],
       "mediaIds": [
-        "M065"
+        "M065",
+        "M213"
       ]
     },
     {
@@ -564,7 +567,8 @@
         "TE0013"
       ],
       "mediaIds": [
-        "M083"
+        "M083",
+        "M109"
       ],
       "sourceIds": [
         "SRC0082"
