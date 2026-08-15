@@ -1,4 +1,4 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=0ae10c4e5f";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=406e327fe2";
 import {
   certaintyBadge,
   escapeHtml,
@@ -23,7 +23,7 @@ import {
   scopeBadge,
   typeBadge,
   updateMeta,
-} from "./core.js?v=0ae10c4e5f";
+} from "./core.js?v=406e327fe2";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 let target = null;
