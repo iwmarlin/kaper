@@ -169,6 +169,7 @@ def build_records(
     media_id: str,
     source_id: str,
     person_id: str | None,
+    performer: str | None,
     media_type: str,
     inherit_organizations: bool,
 ) -> tuple[dict, dict]:
@@ -191,8 +192,9 @@ def build_records(
         "an auto-generated YouTube artist channel" if auto_generated
         else host + (f" by {channel}" if channel else "")
     )
+    sung_by = f" sung by {performer}" if performer else ""
     caption = (
-        f"Listening reference for “{work_title}”, published as “{title}” on {where}. "
+        f"Listening reference for “{work_title}”{sung_by}, published as “{title}” on {where}. "
         "The upload carries no discographic detail, so the recording it transfers "
         "is not identified here; it is an access copy, not rights evidence."
     )
@@ -205,14 +207,14 @@ def build_records(
 
     media = {
         "id": media_id,
-        "title": f"{work_title} — listening reference",
+        "title": f"{work_title} — {performer + ', ' if performer else ''}listening reference",
         "mediaType": media_type,
         "storageType": "external",
         "period": period,
-        "description": f"Recording of “{work_title}” linked as an external listening reference.",
+        "description": f"Recording of “{work_title}”{sung_by}, linked as an external listening reference.",
         "externalUrl": url,
         "assetCount": 0,
-        "altText": f"Listening reference for “{work_title}”.",
+        "altText": f"Listening reference for “{work_title}”{sung_by}.",
         "rightsStatus": RIGHTS_STATUS,
         "rightsNote": RIGHTS_NOTE,
         "sortOrder": int(media_id[1:]),
@@ -245,7 +247,7 @@ def build_records(
             else f"“{title}.” {citation_tail}"
         ),
         "sourceType": "online_video_source",
-        "title": f"{title} — {host}",
+        "title": f"{title} — {performer + ', ' if performer else ''}{host}",
         "creator": channel_label,
         "repository": host,
         "publication": host,
@@ -311,6 +313,7 @@ def register(
         media_id=media_id,
         source_id=source_id,
         person_id=person_id,
+        performer=people[person_id]["displayName"] if person_id else None,
         media_type=media_type,
         inherit_organizations=inherit_organizations,
     )
@@ -381,7 +384,8 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--url", help="URL of the recording")
     parser.add_argument("--work", help="work identifier, e.g. W-S031")
-    parser.add_argument("--person", help="performer's person identifier, e.g. P118")
+    parser.add_argument("--person", help="performer's person identifier, e.g. P118; the name is "
+                        "carried into the title, caption and alt text, and the source is linked to them")
     parser.add_argument("--batch", type=Path, help="tab-separated file of url / work / person")
     parser.add_argument("--title", help="upload title, when it cannot be read automatically")
     parser.add_argument("--channel", help="uploader, when it cannot be read automatically")
