@@ -17,6 +17,24 @@ The batch file is tab-separated, one reference per line, comments with `#`:
     https://www.youtube.com/watch?v=…	W-S031	P118
     https://www.youtube.com/watch?v=…	W-S042
 
+When the upload films the disc label — as the Radiomuseum Hardthausen uploads do
+— pass what the label prints. The record then becomes a discographic source of
+high reliability, because the evidence is the disc and the video only the way to
+it, and --link-contributions attaches it to the work's contributions, which the
+printed credits corroborate:
+
+    python3 scripts/add_listening_reference.py --url URL --work W-S007 \
+        --label Grammophon --catalogue "B 50959" --order-number 22222 --side 2 \
+        --electrical --genre "Fox-trot" \
+        --performer-credit "Ben Berlin und sein Orchester" \
+        --credit "(Kaper – Rotter)" \
+        --publisher-credit "(Verlag: Roehr A.-G., Berlin)" --publisher-org ORG118 \
+        --uploader-note "The uploader gives Berlin, 1929 as the recording" \
+        --link-contributions
+
+Transcribe those values from the label itself. Anything only the uploader
+asserts belongs in --uploader-note, so that the citation keeps the two apart.
+
 Metadata comes from YouTube's oEmbed endpoint (title and channel, no API key)
 and, when reachable, from the `uploadDate` in the watch page. Nothing is
 invented: if the title cannot be read, the script stops rather than writing a
@@ -43,6 +61,9 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data" / "public" / "v1"
 YOUTUBE_ORG = "ORG093"
+RADIOMUSEUM_ORG = "ORG104"
+RADIOMUSEUM_CHANNEL = "Radiomuseum Hardthausen"
+RADIOMUSEUM_REPOSITORY = "Radiomuseum Hardthausen / Schallarchiv"
 USER_AGENT = "Mozilla/5.0 (compatible; kaper-archive/1.0)"
 
 RIGHTS_STATUS = "permission_needed_or_fair_use_claimed"
@@ -161,6 +182,88 @@ def slugify(text: str, limit: int = 60) -> str:
 # --------------------------------------------------------------- record making
 
 
+def apply_disc(media: dict, source: dict, *, disc: dict, work_title: str, host: str) -> None:
+    """Turn a plain listening reference into a discographic record.
+
+    When the upload films the label, the disc is the evidence and the video only
+    the way to it. Such a record is a recording_discographic_source of high
+    reliability, and what the label prints belongs in the citation: performer,
+    catalogue and order numbers, side, series, and the printed credits, which
+    are what makes the source worth having.
+    """
+    label = disc.get("label") or "Grammophon"
+    disc_title = disc.get("disc_title") or work_title
+    catalogue = disc.get("catalogue") or ""
+    order = disc.get("order_number") or ""
+    performer = disc.get("performer_credit") or ""
+    repository = disc.get("repository") or RADIOMUSEUM_REPOSITORY
+
+    numbers = ", ".join(
+        part for part in (
+            f"Katalog-Nr. {catalogue}" if catalogue else "",
+            f"Bestell-Nr. {order}" if order else "",
+            f"side marked {disc['side']}" if disc.get("side") else "",
+        ) if part
+    )
+    printed = " and ".join(
+        f"“{value}”" for value in (disc.get("credit"), disc.get("publisher_credit")) if value
+    )
+    physical = ", ".join(
+        part for part in (
+            label,
+            "elektrische Aufnahme" if disc.get("electrical") else "",
+            f"Serie {disc['series']}" if disc.get("series") else "",
+            numbers,
+        ) if part
+    )
+    sentences = [
+        f"{performer}." if performer else "",
+        f"“{disc_title}.”",
+        f"{disc['genre']};" if disc.get("genre") else "",
+        f"label credit{'s' if ' and ' in printed else ''} {printed}." if printed else "",
+        f"{physical}, n.d.",
+        f"{disc['uploader_note']}." if disc.get("uploader_note") else "",
+        f"Shellac disc from the Schallarchiv of the {RADIOMUSEUM_CHANNEL}, its label filmed in the "
+        f"{host} upload." if repository == RADIOMUSEUM_REPOSITORY else
+        f"Disc held by {repository}, its label filmed in the {host} upload.",
+    ]
+    reference = " / ".join(part for part in (f"{label} {catalogue}".strip(), f"Bestell-Nr. {order}" if order else "") if part)
+
+    source["shortCitation"] = f"{reference}, “{disc_title}”"
+    source["fullCitation"] = " ".join(part for part in sentences if part)
+    source["sourceType"] = "recording_discographic_source"
+    source["title"] = f"{disc_title} — {label} {catalogue}".strip()
+    source["creator"] = performer or source.get("creator", "")
+    source["repository"] = repository
+    source["publication"] = label
+    source["date"] = disc.get("date") or "n.d."
+    source["reliability"] = "high"
+    source["slug"] = f"{source['id'].lower()}-{slugify(label + ' ' + catalogue, 30)}-{slugify(disc_title, 40)}"
+    organizations = list(source.get("organizationIds") or [])
+    if RADIOMUSEUM_CHANNEL.lower() in (disc.get("channel") or "").lower():
+        organizations.append(RADIOMUSEUM_ORG)
+    if disc.get("publisher_org"):
+        organizations.append(disc["publisher_org"])
+    source["organizationIds"] = sorted(set(organizations))
+
+    media["title"] = f"{work_title} — {reference.split(' / ')[0]}, listening reference"
+    media["description"] = (
+        f"Shellac disc of “{disc_title}”"
+        + (f" by {performer}" if performer else "")
+        + f", filmed in play with the {label} label in view."
+    )
+    media["altText"] = f"Listening reference for “{work_title}”, showing the {label} disc label."
+    media["publicCaption"] = (
+        f"Listening reference for “{work_title}”"
+        + (f" in the recording by {performer}" if performer else "")
+        + f". The video shows the {reference} disc label"
+        + (f", which prints the credit{'s' if ' and ' in printed else ''} {printed}." if printed else ".")
+    )
+    media["publicCreditLine"] = f"{host} / {disc.get('channel') or repository} listening link; {label} {catalogue}.".replace("  ", " ")
+    if disc.get("publisher_org"):
+        media["organizationIds"] = sorted(set((media.get("organizationIds") or []) + [disc["publisher_org"]]))
+
+
 def build_records(
     *,
     url: str,
@@ -172,6 +275,7 @@ def build_records(
     performer: str | None,
     media_type: str,
     inherit_organizations: bool,
+    disc: dict | None = None,
 ) -> tuple[dict, dict]:
     title = meta["title"]
     channel = meta.get("channel", "")
@@ -261,6 +365,8 @@ def build_records(
     }
     if person_id:
         source["personIds"] = [person_id]
+    if disc:
+        apply_disc(media, source, disc={**disc, "channel": channel}, work_title=work_title, host=host)
     return media, source
 
 
@@ -277,8 +383,10 @@ def register(
     media_type: str,
     inherit_organizations: bool,
     dry_run: bool,
+    disc: dict | None = None,
+    link_contributions: bool = False,
 ) -> bool:
-    tables = {name: load(name) for name in ("media", "sources", "works", "songs", "people")}
+    tables = {name: load(name) for name in ("media", "sources", "works", "songs", "people", "contributions")}
     media_table, source_table = tables["media"], tables["sources"]
     works, people = by_id(tables["works"]), by_id(tables["people"])
 
@@ -316,12 +424,18 @@ def register(
         performer=people[person_id]["displayName"] if person_id else None,
         media_type=media_type,
         inherit_organizations=inherit_organizations,
+        disc=disc,
     )
+
+    contributions = list(work.get("contributionIds") or []) if link_contributions else []
+    if contributions:
+        source["contributionIds"] = sorted(contributions)
 
     print(f"  {media_id} ← {meta['title']}")
     print(f"  {source_id}   {source['fullCitation']}")
     print(f"  linked to {work_id} “{work['title']}”"
-          + (f", {person_id} “{people[person_id]['displayName']}”" if person_id else ""))
+          + (f", {person_id} “{people[person_id]['displayName']}”" if person_id else "")
+          + (f", contributions {', '.join(contributions)}" if contributions else ""))
     if dry_run:
         print("  (dry run, nothing written)")
         return False
@@ -339,6 +453,9 @@ def register(
         for record in tables["people"]["records"]:
             if record["id"] == person_id:
                 add_link(record, "sourceIds", source_id)
+    for record in tables["contributions"]["records"]:
+        if record["id"] in contributions:
+            add_link(record, "sourceIds", source_id)
     for name, table in tables.items():
         save(name, table)
     return True
@@ -394,7 +511,47 @@ def main() -> int:
                         help="do not copy the work's organizations onto the media record")
     parser.add_argument("--no-build", action="store_true", help="write records only")
     parser.add_argument("--dry-run", action="store_true")
+
+    disc = parser.add_argument_group(
+        "disc label",
+        "For uploads that film the label — Radiomuseum Hardthausen and the like. Giving any of "
+        "these makes the source a recording_discographic_source of high reliability, because the "
+        "evidence is then the disc, not the video. Transcribe from the label, not from the "
+        "uploader's description; what only the description says goes in --uploader-note.",
+    )
+    disc.add_argument("--label", help="record label as printed, e.g. Grammophon")
+    disc.add_argument("--catalogue", help="Katalog-Nr., e.g. “B 50959”")
+    disc.add_argument("--order-number", help="Bestell-Nr., e.g. “22222”")
+    disc.add_argument("--side", help="side number printed on the label")
+    disc.add_argument("--series", help="series line, e.g. “Polyfar „R“ Orchester”")
+    disc.add_argument("--electrical", action="store_true", help="label says elektrische Aufnahme")
+    disc.add_argument("--genre", help="genre as printed, e.g. Fox-trot")
+    disc.add_argument("--performer-credit", help="performer as printed, e.g. “Ben Berlin und sein Orchester”")
+    disc.add_argument("--credit", help="authorship credit as printed, e.g. “(Kaper – Rotter)”")
+    disc.add_argument("--publisher-credit", help="publisher line as printed, e.g. “(Verlag: Roehr A.-G., Berlin)”")
+    disc.add_argument("--publisher-org", help="organization identifier for that publisher, e.g. ORG118")
+    disc.add_argument("--disc-title", help="title as printed, when it differs from the work title")
+    disc.add_argument("--date", help="date field, e.g. “n.d. [recorded 1929 according to the uploader]”")
+    disc.add_argument("--uploader-note", help="what the uploader states but the label does not print")
+    disc.add_argument("--repository", help=f"holding archive; defaults to “{RADIOMUSEUM_REPOSITORY}”")
+    disc.add_argument("--link-contributions", action="store_true",
+                      help="attach the source to every contribution of the work — use when the label "
+                           "prints the credits, since the disc then corroborates them")
     args = parser.parse_args()
+
+    disc_fields = {
+        "label": args.label, "catalogue": args.catalogue, "order_number": args.order_number,
+        "side": args.side, "series": args.series, "electrical": args.electrical,
+        "genre": args.genre, "performer_credit": args.performer_credit, "credit": args.credit,
+        "publisher_credit": args.publisher_credit, "publisher_org": args.publisher_org,
+        "disc_title": args.disc_title, "date": args.date, "uploader_note": args.uploader_note,
+        "repository": args.repository,
+    }
+    disc_details = disc_fields if any(
+        value for key, value in disc_fields.items() if key != "electrical"
+    ) or args.electrical else None
+    if disc_details and args.batch:
+        parser.error("disc label details describe one disc; give them with --url, not --batch")
 
     if args.batch:
         entries = parse_batch(args.batch)
@@ -415,6 +572,8 @@ def main() -> int:
             media_type=args.media_type,
             inherit_organizations=not args.no_inherit_organizations,
             dry_run=args.dry_run,
+            disc=disc_details,
+            link_contributions=args.link_contributions,
         ):
             written += 1
 
