@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 1091,
+  "count": 1092,
   "records": [
     {
       "id": "CON-F001-C-P009",
@@ -5974,7 +5974,8 @@
         "P009"
       ],
       "sourceIds": [
-        "SRC0103"
+        "SRC0103",
+        "SRC0707"
       ],
       "nameVariantIds": [
         "PNV0019"
@@ -5993,7 +5994,8 @@
         "P020"
       ],
       "sourceIds": [
-        "SRC0103"
+        "SRC0103",
+        "SRC0707"
       ]
     },
     {
@@ -6009,7 +6011,8 @@
         "ORG033"
       ],
       "sourceIds": [
-        "SRC0103"
+        "SRC0103",
+        "SRC0707"
       ]
     },
     {
@@ -19111,6 +19114,25 @@
         "SRC0699"
       ],
       "scopeNote": "Sang the song on Odeon O-11811 a with the Odeon-Künstler-Orchester under Otto Dobrindt; he also played the lead in Heut’ kommt’s drauf an, the film named on the label."
+    },
+    {
+      "id": "CON-S009-P-P086",
+      "role": "performer",
+      "nameAsPrinted": "Austin Egen",
+      "displayCredit": "Refrain vocal",
+      "evidenceContext": "online_catalogue",
+      "sortOrder": 50,
+      "certainty": "probable",
+      "workIds": [
+        "W-S009"
+      ],
+      "personIds": [
+        "P086"
+      ],
+      "sourceIds": [
+        "SRC0707"
+      ],
+      "scopeNote": "Sang the refrain with Marek Weber und sein Orchester on the His Master's Voice (Electrola) recording, on the evidence of an online transfer whose label is not shown and which gives no catalogue number; recorded as probable until the disc itself is documented."
     }
   ]
 }
