@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 1158,
+  "count": 1163,
   "records": [
     {
       "id": "CON-F001-C-P009",
@@ -20409,6 +20409,101 @@
         "SRC0705"
       ],
       "scopeNote": "Issued the recording; the disc carries the imprint “Pathé”."
+    },
+    {
+      "id": "CON-S021-P-ORG135",
+      "role": "performer",
+      "nameAsPrinted": "Karkoff-Orchester mit Refraingesang",
+      "displayCredit": "Orchestra",
+      "evidenceContext": "recording_label",
+      "sortOrder": 56,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S021"
+      ],
+      "organizationIds": [
+        "ORG135"
+      ],
+      "sourceIds": [
+        "SRC0724"
+      ],
+      "scopeNote": "Recorded the song for Derby; the label bills the ensemble as “Karkoff-Orchester mit Refraingesang”."
+    },
+    {
+      "id": "CON-S021-LAB-ORG136",
+      "role": "record_label",
+      "nameAsPrinted": "Derby",
+      "displayCredit": "Issuing label",
+      "evidenceContext": "recording_label",
+      "sortOrder": 60,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S021"
+      ],
+      "organizationIds": [
+        "ORG136"
+      ],
+      "sourceIds": [
+        "SRC0724"
+      ],
+      "scopeNote": "Issued the recording; the disc carries the imprint “Derby” with the note “Nur für Deutschland”."
+    },
+    {
+      "id": "CON-S048-P-P086",
+      "role": "performer",
+      "nameAsPrinted": "Austin Egen",
+      "displayCredit": "Vocal performance",
+      "evidenceContext": "recording_label",
+      "sortOrder": 55,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S048"
+      ],
+      "personIds": [
+        "P086"
+      ],
+      "sourceIds": [
+        "SRC0725"
+      ],
+      "scopeNote": "Sang the tango he had composed with Kaper, accompanied by the Odeon-Tango-Orchester on Odeon O-11439 a."
+    },
+    {
+      "id": "CON-S048-P-ORG137",
+      "role": "performer",
+      "nameAsPrinted": "Odeon-Tango-Orchester",
+      "displayCredit": "Orchestra",
+      "evidenceContext": "recording_label",
+      "sortOrder": 56,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S048"
+      ],
+      "organizationIds": [
+        "ORG137"
+      ],
+      "sourceIds": [
+        "SRC0725"
+      ],
+      "scopeNote": "Accompanied Austin Egen on Odeon O-11439 a, billed on the label as “Begleitung: Odeon-Tango-Orchester”."
+    },
+    {
+      "id": "CON-S048-LAB-ORG128",
+      "role": "record_label",
+      "nameAsPrinted": "Odeon",
+      "displayCredit": "Issuing label",
+      "evidenceContext": "recording_label",
+      "sortOrder": 60,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S048"
+      ],
+      "organizationIds": [
+        "ORG128"
+      ],
+      "sourceIds": [
+        "SRC0725"
+      ],
+      "scopeNote": "Issued the recording; the disc carries the imprint “Odeon”, a label of Carl Lindström AG."
     }
   ]
 }

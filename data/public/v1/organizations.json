@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 129,
+  "count": 132,
   "records": [
     {
       "id": "ORG001",
@@ -2891,7 +2891,10 @@
         "SRC0320",
         "SRC0321",
         "SRC0493",
-        "SRC0553"
+        "SRC0553",
+        "SRC0724",
+        "SRC0725",
+        "SRC0726"
       ]
     },
     {
@@ -3105,7 +3108,8 @@
       "slug": "radiomuseum-hardthausen",
       "nameVariants": "Radiomuseum Hardthausen; Schallarchiv",
       "sourceIds": [
-        "SRC0003"
+        "SRC0003",
+        "SRC0724"
       ]
     },
     {
@@ -3708,10 +3712,12 @@
         "SRC0699",
         "SRC0700",
         "SRC0716",
-        "SRC0720"
+        "SRC0720",
+        "SRC0725"
       ],
       "workIds": [
         "W-S024",
+        "W-S048",
         "W-S078",
         "W-S080",
         "W-S081",
@@ -3723,6 +3729,7 @@
       "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no00081029\nGND: https://d-nb.info/gnd/7670622-9\nVIAF: https://viaf.org/viaf/129647371\nISNI: https://isni.org/isni/0000000121561999",
       "contributionIds": [
         "CON-S024-LAB-ORG128",
+        "CON-S048-LAB-ORG128",
         "CON-S078-LAB-ORG128",
         "CON-S080-LAB-ORG128",
         "CON-S081-LAB-ORG128",
@@ -3854,6 +3861,81 @@
       ],
       "contributionIds": [
         "CON-S024-P-ORG134"
+      ]
+    },
+    {
+      "id": "ORG135",
+      "displayName": "Karkoff-Orchester",
+      "authorizedName": "Karkoff-Orchester",
+      "types": [
+        "ensemble",
+        "dance orchestra"
+      ],
+      "city": [
+        "Berlin"
+      ],
+      "country": "Germany",
+      "slug": "karkoff-orchester",
+      "nameVariants": "Karkoff-Orchester mit Refraingesang",
+      "authorizedNameSource": "GND",
+      "authorityUrl": "GND: https://d-nb.info/gnd/10334704-5\nVIAF: https://viaf.org/viaf/125119852",
+      "sourceIds": [
+        "SRC0724"
+      ],
+      "workIds": [
+        "W-S021"
+      ],
+      "contributionIds": [
+        "CON-S021-P-ORG135"
+      ]
+    },
+    {
+      "id": "ORG136",
+      "displayName": "Derby",
+      "authorizedName": "Derby (local heading)",
+      "types": [
+        "record_label"
+      ],
+      "city": [
+        "Berlin"
+      ],
+      "country": "Germany",
+      "slug": "derby",
+      "authorizedNameSource": "local heading",
+      "nameVariants": "Derby; Derby Schallplatte, nur für Deutschland. The company behind the imprint is not resolved here",
+      "sourceIds": [
+        "SRC0724"
+      ],
+      "workIds": [
+        "W-S021"
+      ],
+      "contributionIds": [
+        "CON-S021-LAB-ORG136"
+      ]
+    },
+    {
+      "id": "ORG137",
+      "displayName": "Odeon-Tango-Orchester",
+      "authorizedName": "Odeon-Tango-Orchester (local heading)",
+      "types": [
+        "ensemble",
+        "house orchestra"
+      ],
+      "city": [
+        "Berlin"
+      ],
+      "country": "Germany",
+      "slug": "odeon-tango-orchester",
+      "authorizedNameSource": "local heading",
+      "nameVariants": "Odeon-Tango-Orchester; Odeon Tango Orchester",
+      "sourceIds": [
+        "SRC0725"
+      ],
+      "workIds": [
+        "W-S048"
+      ],
+      "contributionIds": [
+        "CON-S048-P-ORG137"
       ]
     }
   ]
