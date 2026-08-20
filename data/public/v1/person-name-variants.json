@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 59,
+  "count": 61,
   "records": [
     {
       "id": "PNV0001",
@@ -1472,6 +1472,42 @@
       ],
       "sourceIds": [
         "SRC0710"
+      ]
+    },
+    {
+      "id": "PNV0064",
+      "variantName": "Dobbri",
+      "variantType": "pseudonym",
+      "identityScope": "single_person",
+      "evidenceContext": "recording_label",
+      "attestedWording": "Saxophon Orchester Dobbri",
+      "certainty": "confirmed",
+      "publicNote": "Recording name under which Otto Dobrindt issued productions for Carl Lindström AG from 1925.",
+      "personIds": [
+        "P167"
+      ],
+      "workIds": [
+        "W-S024"
+      ],
+      "sourceIds": [
+        "SRC0716",
+        "SRC0720"
+      ]
+    },
+    {
+      "id": "PNV0065",
+      "variantName": "Eddie Saxon",
+      "variantType": "pseudonym",
+      "identityScope": "single_person",
+      "evidenceContext": "secondary_literature",
+      "attestedWording": "Eddie Saxon",
+      "certainty": "confirmed",
+      "publicNote": "One of the recording names Otto Dobrindt used for his own productions.",
+      "personIds": [
+        "P167"
+      ],
+      "sourceIds": [
+        "SRC0720"
       ]
     }
   ]
