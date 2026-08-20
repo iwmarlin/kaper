@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 1163,
+  "count": 1169,
   "records": [
     {
       "id": "CON-F001-C-P009",
@@ -20504,6 +20504,120 @@
         "SRC0724"
       ],
       "scopeNote": "Issued the recording; the disc carries the imprint “Derby” with the note “Nur für Deutschland”."
+    },
+    {
+      "id": "CON-S030-CON-P167",
+      "role": "conductor",
+      "nameAsPrinted": "Otto Dobrindt",
+      "displayCredit": "Directed the orchestra",
+      "evidenceContext": "online_catalogue",
+      "sortOrder": 55,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S030"
+      ],
+      "personIds": [
+        "P167"
+      ],
+      "sourceIds": [
+        "SRC0727"
+      ],
+      "scopeNote": "Named in the upload as the leader of the band billed on the disc as Gloria-Tanz-Orchester, with John Hendrik singing; the label is not shown."
+    },
+    {
+      "id": "CON-S076-P-ORG120",
+      "role": "performer",
+      "nameAsPrinted": "Odeon-Künstler-Orchester",
+      "displayCredit": "Orchestra",
+      "evidenceContext": "online_catalogue",
+      "sortOrder": 56,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S076"
+      ],
+      "organizationIds": [
+        "ORG120"
+      ],
+      "sourceIds": [
+        "SRC0730"
+      ],
+      "scopeNote": "Accompanied Jan Kiepura on the Odeon pressing of 1933, under Dr. Weissmann; the label is not shown."
+    },
+    {
+      "id": "CON-S076-LAB-ORG128",
+      "role": "record_label",
+      "nameAsPrinted": "Odeon",
+      "displayCredit": "Issuing label",
+      "evidenceContext": "online_catalogue",
+      "sortOrder": 60,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S076"
+      ],
+      "organizationIds": [
+        "ORG128"
+      ],
+      "sourceIds": [
+        "SRC0730"
+      ],
+      "scopeNote": "Issued the recording on its red label in 1933, according to the upload; no catalogue number is given."
+    },
+    {
+      "id": "CON-S054-LAB-ORG126",
+      "role": "record_label",
+      "nameAsPrinted": "His Master's Voice",
+      "displayCredit": "Issuing label",
+      "evidenceContext": "online_catalogue",
+      "sortOrder": 60,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S054"
+      ],
+      "organizationIds": [
+        "ORG126"
+      ],
+      "sourceIds": [
+        "SRC0731"
+      ],
+      "scopeNote": "Issued the recording as His Master's Voice E.G. 2481, the Electrola series, according to the upload."
+    },
+    {
+      "id": "CON-S074-P-ORG121",
+      "role": "performer",
+      "nameAsPrinted": "Bernhard Etté mit seinem Tanz-Orchester",
+      "displayCredit": "Orchestra",
+      "evidenceContext": "online_catalogue",
+      "sortOrder": 56,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S074"
+      ],
+      "organizationIds": [
+        "ORG121"
+      ],
+      "sourceIds": [
+        "SRC0735"
+      ],
+      "scopeNote": "Recorded the tango with Wolfgang Schmidt singing; the upload describes a Lindström recording of 1933."
+    },
+    {
+      "id": "CON-S074-LAB-ORG138",
+      "role": "record_label",
+      "nameAsPrinted": "Gloria",
+      "displayCredit": "Issuing label",
+      "evidenceContext": "online_catalogue",
+      "sortOrder": 60,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S074"
+      ],
+      "organizationIds": [
+        "ORG138"
+      ],
+      "sourceIds": [
+        "SRC0735"
+      ],
+      "scopeNote": "Issued the German pressing on Gloria; the upload adds that the same recording appeared abroad on Odeon."
     }
   ]
 }
