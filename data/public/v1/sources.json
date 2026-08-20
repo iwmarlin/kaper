@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 638,
+  "count": 639,
   "records": [
     {
       "id": "SRC0001",
@@ -20999,11 +20999,13 @@
       ],
       "primaryUrl": "https://www.youtube.com/watch?v=PcIz6O46Bfs",
       "personIds": [
-        "P164"
+        "P164",
+        "P165"
       ],
       "date": "1932 or 1933 [reissued 2013]",
       "contributionIds": [
-        "CON-S084-P-P164"
+        "CON-S084-P-P164",
+        "CON-S084-P-P165"
       ]
     },
     {
@@ -21027,11 +21029,13 @@
       ],
       "primaryUrl": "https://www.youtube.com/watch?v=KzebnN1DJzU",
       "personIds": [
-        "P164"
+        "P164",
+        "P165"
       ],
       "date": "1932 or 1933 [reissued 2013]",
       "contributionIds": [
-        "CON-S058-P-P164"
+        "CON-S058-P-P164",
+        "CON-S058-P-P165"
       ]
     },
     {
@@ -21153,13 +21157,15 @@
       ],
       "primaryUrl": "https://www.youtube.com/watch?v=c1mLHhIMIyo",
       "personIds": [
-        "P086"
+        "P086",
+        "P165"
       ],
       "date": "1929",
       "contributionIds": [
         "CON-S009-C-P009",
         "CON-S009-L-P020",
         "CON-S009-P-P086",
+        "CON-S009-P-P165",
         "CON-S009-PUB-ORG033"
       ]
     },
@@ -21193,9 +21199,13 @@
         "CON-S038-C-P009",
         "CON-S038-C-P105",
         "CON-S038-L-P020",
+        "CON-S038-P-P165",
         "CON-S038-PUB-ORG031"
       ],
-      "primaryUrl": "https://www.youtube.com/watch?v=WuLkSvYs1qA"
+      "primaryUrl": "https://www.youtube.com/watch?v=WuLkSvYs1qA",
+      "personIds": [
+        "P165"
+      ]
     },
     {
       "id": "SRC0709",
@@ -21256,8 +21266,34 @@
         "CON-S049-C-P009",
         "CON-S049-L-P009",
         "CON-S049-L-P020",
+        "CON-S049-P-P165",
         "CON-S049-PUB-ORG031"
+      ],
+      "personIds": [
+        "P165"
       ]
+    },
+    {
+      "id": "SRC0711",
+      "shortCitation": "Merkelbach, photograph of Marek Weber, 1934",
+      "fullCitation": "Jacob Merkelbach (1877–1942), photographer. Portrait of Marek Weber, 1934. Beeldbank, Stadsarchief Amsterdam; republished on Wikimedia Commons as File:MarekWeberMerkelbach1934.jpg, original 2124 × 2862 px. Accessed 20 August 2026.",
+      "sourceType": "image_or_photograph",
+      "title": "Marek Weber — photograph by Jacob Merkelbach, 1934",
+      "creator": "Jacob Merkelbach (1877–1942)",
+      "repository": "Stadsarchief Amsterdam / Wikimedia Commons",
+      "publication": "Beeldbank Stadsarchief Amsterdam",
+      "date": "1934",
+      "accessDate": "2026-08-20",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "slug": "src0711-merkelbach-marek-weber-1934",
+      "personIds": [
+        "P165"
+      ],
+      "mediaIds": [
+        "M350"
+      ],
+      "primaryUrl": "https://commons.wikimedia.org/wiki/File:MarekWeberMerkelbach1934.jpg"
     }
   ],
   "recordCount": null

@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 143,
+  "count": 144,
   "records": [
     {
       "id": "P001",
@@ -5590,6 +5590,46 @@
       "workIds": [
         "W-S058",
         "W-S084"
+      ]
+    },
+    {
+      "id": "P165",
+      "displayName": "Marek Weber",
+      "authorizedName": "Weber, Marek",
+      "authorizedNameSource": "LCNAF",
+      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n80163850\nVIAF: https://viaf.org/viaf/40686005\nGND: https://d-nb.info/gnd/1052923755\nISNI: https://isni.org/isni/0000000059542630",
+      "sortName": "Weber, Marek",
+      "slug": "marek-weber",
+      "birthYear": 1888,
+      "deathYear": 1964,
+      "lifeDatesCertainty": "confirmed",
+      "primaryRole": "conductor",
+      "roles": [
+        "conductor",
+        "violinist",
+        "bandleader"
+      ],
+      "workIds": [
+        "W-S009",
+        "W-S038",
+        "W-S049",
+        "W-S058",
+        "W-S084"
+      ],
+      "contributionIds": [
+        "CON-S009-P-P165",
+        "CON-S038-P-P165",
+        "CON-S049-P-P165",
+        "CON-S058-P-P165",
+        "CON-S084-P-P165"
+      ],
+      "sourceIds": [
+        "SRC0701",
+        "SRC0702",
+        "SRC0707",
+        "SRC0708",
+        "SRC0710",
+        "SRC0711"
       ]
     }
   ],
