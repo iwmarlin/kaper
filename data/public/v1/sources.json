@@ -97,7 +97,8 @@
       "slug": "src0003-grammophon-b-51043-suesse-mamsell",
       "organizationIds": [
         "ORG093",
-        "ORG104"
+        "ORG104",
+        "ORG124"
       ],
       "workIds": [
         "W-S011"
@@ -111,6 +112,7 @@
       "contributionIds": [
         "CON-S011-C-P009",
         "CON-S011-L-P020",
+        "CON-S011-P-ORG124",
         "CON-S011-PUB-ORG029"
       ],
       "nameVariantIds": [
@@ -21425,13 +21427,17 @@
       "sourceStatus": "verified_with_attribution_note",
       "slug": "src0714-challenge-reissue-jack-hylton-herr-lehmann",
       "organizationIds": [
-        "ORG093"
+        "ORG093",
+        "ORG125"
       ],
       "mediaIds": [
         "M353"
       ],
       "primaryUrl": "https://www.youtube.com/watch?v=B9oLQZhaLiE",
-      "date": "1926–1930 [reissued 2000]"
+      "date": "1926–1930 [reissued 2000]",
+      "contributionIds": [
+        "CON-S025-P-ORG125"
+      ]
     },
     {
       "id": "SRC0715",

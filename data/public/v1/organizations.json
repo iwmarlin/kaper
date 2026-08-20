@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 119,
+  "count": 121,
   "records": [
     {
       "id": "ORG001",
@@ -3545,6 +3545,58 @@
       ],
       "contributionIds": [
         "CON-S002-P-ORG123"
+      ]
+    },
+    {
+      "id": "ORG124",
+      "displayName": "Ilja Livschakoff Tanz-Orchester",
+      "authorizedName": "Ilja Livschakoff Orchester",
+      "types": [
+        "ensemble",
+        "dance orchestra"
+      ],
+      "city": [
+        "Berlin"
+      ],
+      "country": "Germany",
+      "slug": "ilja-livschakoff-tanz-orchester",
+      "nameVariants": "Tanzorchester Ilja Livschakoff; Ilja Livschakoff und Sein Tanzorchester; Ilja Livschakoff Künstler-Orchester; Livschakoff-Tanz-Orchester",
+      "authorizedNameSource": "LCNAF",
+      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no2008155927\nGND: https://d-nb.info/gnd/10024110-4\nVIAF: https://viaf.org/viaf/121171439\nISNI: https://isni.org/isni/0000000107380980",
+      "sourceIds": [
+        "SRC0003"
+      ],
+      "workIds": [
+        "W-S011"
+      ],
+      "contributionIds": [
+        "CON-S011-P-ORG124"
+      ]
+    },
+    {
+      "id": "ORG125",
+      "displayName": "Jack Hylton and His Orchestra",
+      "authorizedName": "Jack Hylton Orchestra",
+      "types": [
+        "ensemble",
+        "dance orchestra"
+      ],
+      "city": [
+        "London"
+      ],
+      "country": "United Kingdom",
+      "slug": "jack-hylton-and-his-orchestra",
+      "nameVariants": "The Jack Hylton Orchestra; Jack Hylton und Sein Orchester; Orchester Jack Hylton; Hylton and His Orchestra",
+      "authorizedNameSource": "LCNAF",
+      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no2009093927\nGND: https://d-nb.info/gnd/10283785-5\nVIAF: https://viaf.org/viaf/157308545\nISNI: https://isni.org/isni/0000000105039121\nBnF: https://catalogue.bnf.fr/ark:/12148/cb140058124",
+      "sourceIds": [
+        "SRC0714"
+      ],
+      "workIds": [
+        "W-S025"
+      ],
+      "contributionIds": [
+        "CON-S025-P-ORG125"
       ]
     }
   ]

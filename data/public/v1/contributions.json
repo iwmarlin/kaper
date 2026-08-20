@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 1123,
+  "count": 1125,
   "records": [
     {
       "id": "CON-F001-C-P009",
@@ -19749,6 +19749,44 @@
         "SRC0005"
       ],
       "scopeNote": "The disc is billed “Marek Weber und sein Orchester”, naming him at the head of the band; the orchestra is recorded separately as the performing body."
+    },
+    {
+      "id": "CON-S011-P-ORG124",
+      "role": "performer",
+      "nameAsPrinted": "Ilja Livschakoff Tanz-Orchester",
+      "displayCredit": "Orchestra",
+      "evidenceContext": "recording_label",
+      "sortOrder": 56,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S011"
+      ],
+      "organizationIds": [
+        "ORG124"
+      ],
+      "sourceIds": [
+        "SRC0003"
+      ],
+      "scopeNote": "Recorded the song; the ensemble is named on the disc as “Ilja Livschakoff Tanz-Orchester”."
+    },
+    {
+      "id": "CON-S025-P-ORG125",
+      "role": "performer",
+      "nameAsPrinted": "Jack Hylton and His Orchestra",
+      "displayCredit": "Orchestra",
+      "evidenceContext": "recording_label",
+      "sortOrder": 56,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S025"
+      ],
+      "organizationIds": [
+        "ORG125"
+      ],
+      "sourceIds": [
+        "SRC0714"
+      ],
+      "scopeNote": "Recorded the song; the ensemble is credited on the reissue as “The Jack Hylton Orchestra”, directed by Jack Hylton."
     }
   ]
 }
