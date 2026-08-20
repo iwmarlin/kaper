@@ -3596,17 +3596,22 @@
       "publicScope": "standalone_page",
       "sourceIds": [
         "SRC0067",
-        "SRC0477"
+        "SRC0477",
+        "SRC0736"
       ],
       "mediaIds": [
-        "M199"
+        "M199",
+        "M375"
       ],
       "timelineEventIds": [
         "TE0014"
       ],
       "contributionIds": [
         "CON-S001-C-P009",
+        "CON-S001-CON-P169",
         "CON-S001-L-P003",
+        "CON-S001-LAB-ORG132",
+        "CON-S001-P-ORG123",
         "CON-S001-PUB-ORG034"
       ],
       "nameVariantIds": [
@@ -3619,7 +3624,9 @@
         "P009"
       ],
       "organizationIds": [
-        "ORG034"
+        "ORG034",
+        "ORG123",
+        "ORG132"
       ],
       "songIds": [
         "S001"

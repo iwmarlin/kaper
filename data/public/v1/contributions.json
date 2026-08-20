@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 1169,
+  "count": 1172,
   "records": [
     {
       "id": "CON-F001-C-P009",
@@ -5564,7 +5564,9 @@
       ],
       "nameVariantIds": [
         "PNV0001"
-      ]
+      ],
+      "evidenceContext": "sheet_music",
+      "scopeNote": "The 1926 sheet music carries the pseudonym Bruno Asper alone. Stare Melodie, publishing the Syrena transfer, reads that pseudonym as Henryk Chwast."
     },
     {
       "id": "CON-S001-L-P003",
@@ -20618,6 +20620,63 @@
         "SRC0735"
       ],
       "scopeNote": "Issued the German pressing on Gloria; the upload adds that the same recording appeared abroad on Odeon."
+    },
+    {
+      "id": "CON-S001-P-ORG123",
+      "role": "performer",
+      "nameAsPrinted": "Orkiestra teatru „Perskie Oko”",
+      "displayCredit": "Orchestra",
+      "evidenceContext": "online_catalogue",
+      "sortOrder": 56,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S001"
+      ],
+      "organizationIds": [
+        "ORG123"
+      ],
+      "sourceIds": [
+        "SRC0736"
+      ],
+      "scopeNote": "Recorded the shimmy for Syrena in 1926; the transfer's publisher names the theatre orchestra and its conductor."
+    },
+    {
+      "id": "CON-S001-CON-P169",
+      "role": "conductor",
+      "nameAsPrinted": "Zygmunt Wiehler",
+      "displayCredit": "Directed the orchestra",
+      "evidenceContext": "online_catalogue",
+      "sortOrder": 55,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S001"
+      ],
+      "personIds": [
+        "P169"
+      ],
+      "sourceIds": [
+        "SRC0736"
+      ],
+      "scopeNote": "Conducted the Perskie Oko theatre orchestra on Syrena Grand Record 17921, as on 17919 recorded in the same year."
+    },
+    {
+      "id": "CON-S001-LAB-ORG132",
+      "role": "record_label",
+      "nameAsPrinted": "Syrena Grand Record",
+      "displayCredit": "Issuing label",
+      "evidenceContext": "online_catalogue",
+      "sortOrder": 60,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S001"
+      ],
+      "organizationIds": [
+        "ORG132"
+      ],
+      "sourceIds": [
+        "SRC0736"
+      ],
+      "scopeNote": "Issued the recording as no. 17921 with matrix 17921 in 1926."
     }
   ]
 }
