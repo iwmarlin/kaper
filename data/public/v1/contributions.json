@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 1100,
+  "count": 1102,
   "records": [
     {
       "id": "CON-F001-C-P009",
@@ -7867,7 +7867,8 @@
         "P009"
       ],
       "sourceIds": [
-        "SRC0182"
+        "SRC0182",
+        "SRC0712"
       ],
       "nameVariantIds": [
         "PNV0019"
@@ -7886,7 +7887,8 @@
         "P020"
       ],
       "sourceIds": [
-        "SRC0182"
+        "SRC0182",
+        "SRC0712"
       ]
     },
     {
@@ -7902,7 +7904,8 @@
         "ORG029"
       ],
       "sourceIds": [
-        "SRC0182"
+        "SRC0182",
+        "SRC0712"
       ]
     },
     {
@@ -19295,6 +19298,44 @@
         "SRC0002"
       ],
       "scopeNote": "Played the second piano in the duet recorded for Polydor 21768, of which he also made the published arrangement."
+    },
+    {
+      "id": "CON-S043-L-P009",
+      "role": "lyricist",
+      "nameAsPrinted": "Dr. B. Kaper",
+      "displayCredit": "Words, as credited on the Novaphon label",
+      "evidenceContext": "recording_label",
+      "sortOrder": 30,
+      "certainty": "probable",
+      "workIds": [
+        "W-S043"
+      ],
+      "personIds": [
+        "P009"
+      ],
+      "sourceIds": [
+        "SRC0712"
+      ],
+      "scopeNote": "The Novaphon label reads “Musik und Text von Fritz Rotter und Dr. B. Kaper”, crediting both men for words and music alike. The sheet music names Kaper as composer and Rotter as lyricist alone, so the label's joint wording is recorded as a probable attribution rather than a correction."
+    },
+    {
+      "id": "CON-S070-P-P165",
+      "role": "performer",
+      "nameAsPrinted": "Marek Weber und sein Orchester",
+      "displayCredit": "Orchestra under his direction",
+      "evidenceContext": "online_catalogue",
+      "sortOrder": 55,
+      "certainty": "probable",
+      "workIds": [
+        "W-S070"
+      ],
+      "personIds": [
+        "P165"
+      ],
+      "sourceIds": [
+        "SRC0713"
+      ],
+      "scopeNote": "The upload names Marek Weber und sein Orchester with John Hendrik singing and gives Electrola EG 2508, matrix E-OD 795 / I, recorded 17 February 1932; the label is not shown."
     }
   ]
 }
