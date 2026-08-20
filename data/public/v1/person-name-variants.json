@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 58,
+  "count": 59,
   "records": [
     {
       "id": "PNV0001",
@@ -1453,6 +1453,25 @@
       "sourceIds": [
         "SRC0546",
         "SRC0545"
+      ]
+    },
+    {
+      "id": "PNV0063",
+      "variantName": "Leo Moll",
+      "variantType": "pseudonym",
+      "identityScope": "single_person",
+      "evidenceContext": "recording_label",
+      "attestedWording": "Refrain: Leo Moll",
+      "certainty": "confirmed",
+      "publicNote": "Recording pseudonym of the singer Leo Monosson, printed on Electrola labels.",
+      "personIds": [
+        "P166"
+      ],
+      "workIds": [
+        "W-S049"
+      ],
+      "sourceIds": [
+        "SRC0710"
       ]
     }
   ]

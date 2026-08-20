@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 144,
+  "count": 148,
   "records": [
     {
       "id": "P001",
@@ -5658,6 +5658,125 @@
         "SRC0711",
         "SRC0713",
         "SRC0717"
+      ]
+    },
+    {
+      "id": "P166",
+      "displayName": "Leo Monosson",
+      "authorizedName": "Monosson, Leo",
+      "authorizedNameSource": "LCNAF",
+      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no2012128023\nGND: https://d-nb.info/gnd/134465385\nVIAF: https://viaf.org/viaf/79633937\nISNI: https://isni.org/isni/0000000058167947\nBnF: https://catalogue.bnf.fr/ark:/12148/cb14208026p",
+      "sortName": "Monosson, Leo",
+      "slug": "leo-monosson",
+      "birthYear": 1897,
+      "deathYear": 1967,
+      "lifeDatesCertainty": "confirmed",
+      "primaryRole": "singer",
+      "roles": [
+        "singer",
+        "actor"
+      ],
+      "workIds": [
+        "W-S011",
+        "W-S049"
+      ],
+      "contributionIds": [
+        "CON-S011-P-P166",
+        "CON-S049-P-P166"
+      ],
+      "sourceIds": [
+        "SRC0003",
+        "SRC0710"
+      ],
+      "nameVariantIds": [
+        "PNV0063"
+      ]
+    },
+    {
+      "id": "P167",
+      "displayName": "Otto Dobrindt",
+      "authorizedName": "Dobrindt, Otto",
+      "authorizedNameSource": "LCNAF",
+      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no93003006\nGND: https://d-nb.info/gnd/134360052\nVIAF: https://viaf.org/viaf/24798475\nISNI: https://isni.org/isni/0000000059200323\nBnF: https://catalogue.bnf.fr/ark:/12148/cb140036212",
+      "sortName": "Dobrindt, Otto",
+      "slug": "otto-dobrindt",
+      "birthYear": 1886,
+      "deathYear": 1963,
+      "lifeDatesCertainty": "confirmed",
+      "primaryRole": "conductor",
+      "roles": [
+        "conductor",
+        "composer"
+      ],
+      "workIds": [
+        "W-S024",
+        "W-S080",
+        "W-S081",
+        "W-S082"
+      ],
+      "contributionIds": [
+        "CON-S024-CON-P167",
+        "CON-S080-CON-P167",
+        "CON-S081-CON-P167",
+        "CON-S082-CON-P167"
+      ],
+      "sourceIds": [
+        "SRC0697",
+        "SRC0699",
+        "SRC0700",
+        "SRC0716"
+      ]
+    },
+    {
+      "id": "P168",
+      "displayName": "Josephine Baker",
+      "authorizedName": "Baker, Josephine",
+      "authorizedNameSource": "LCNAF",
+      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n50020892\nGND: https://d-nb.info/gnd/118506099\nVIAF: https://viaf.org/viaf/41836198\nISNI: https://isni.org/isni/0000000116279884",
+      "sortName": "Baker, Josephine",
+      "slug": "josephine-baker",
+      "birthYear": 1906,
+      "deathYear": 1975,
+      "lifeDatesCertainty": "confirmed",
+      "primaryRole": "singer",
+      "roles": [
+        "singer",
+        "actor"
+      ],
+      "workIds": [
+        "W-S177"
+      ],
+      "contributionIds": [
+        "CON-S177-P-P168"
+      ],
+      "sourceIds": [
+        "SRC0301"
+      ]
+    },
+    {
+      "id": "P169",
+      "displayName": "Zygmunt Wiehler",
+      "authorizedName": "Wiehler, Zygmunt",
+      "authorizedNameSource": "BN",
+      "authorityUrl": "BN: https://dbn.bn.org.pl/descriptor-details/a0000002314253\nGND: https://d-nb.info/gnd/1136994033\nVIAF: https://viaf.org/viaf/166390710\nISNI: https://isni.org/isni/0000000113821260\nBnF: https://catalogue.bnf.fr/ark:/12148/cb138154385",
+      "sortName": "Wiehler, Zygmunt",
+      "slug": "zygmunt-wiehler",
+      "birthYear": 1890,
+      "deathYear": 1977,
+      "lifeDatesCertainty": "confirmed",
+      "primaryRole": "conductor",
+      "roles": [
+        "conductor",
+        "composer"
+      ],
+      "workIds": [
+        "W-S002"
+      ],
+      "contributionIds": [
+        "CON-S002-CON-P169"
+      ],
+      "sourceIds": [
+        "SRC0001"
       ]
     }
   ],

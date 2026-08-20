@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 121,
+  "count": 130,
   "records": [
     {
       "id": "ORG001",
@@ -3603,6 +3603,237 @@
       "contributionIds": [
         "CON-S025-P-ORG125",
         "CON-S046-P-ORG125"
+      ]
+    },
+    {
+      "id": "ORG126",
+      "displayName": "Electrola-Gesellschaft",
+      "authorizedName": "Electrola-Gesellschaft",
+      "types": [
+        "record_label"
+      ],
+      "city": [
+        "Berlin"
+      ],
+      "country": "Germany",
+      "slug": "electrola-gesellschaft",
+      "nameVariants": "Electrola; Electrola-Gesellschaft m.b.H.; E.G. record series; from 1972 EMI Electrola",
+      "authorizedNameSource": "GND",
+      "sourceIds": [
+        "SRC0005",
+        "SRC0707",
+        "SRC0708",
+        "SRC0710",
+        "SRC0713",
+        "SRC0717",
+        "SRC0718"
+      ],
+      "workIds": [
+        "W-S009",
+        "W-S038",
+        "W-S042",
+        "W-S045",
+        "W-S046",
+        "W-S049",
+        "W-S070"
+      ],
+      "authorityUrl": "GND: https://d-nb.info/gnd/7784531-6\nVIAF: https://viaf.org/viaf/215919516"
+    },
+    {
+      "id": "ORG127",
+      "displayName": "Deutsche Grammophon-Aktiengesellschaft",
+      "authorizedName": "Deutsche Grammophon-Aktiengesellschaft (Berlin)",
+      "types": [
+        "record_label"
+      ],
+      "city": [
+        "Berlin"
+      ],
+      "country": "Germany",
+      "slug": "deutsche-grammophon-aktiengesellschaft",
+      "nameVariants": "Grammophon; Polydor; Deutsche Grammophon AG; Grammophon-Aktiengesellschaft",
+      "authorizedNameSource": "GND",
+      "sourceIds": [
+        "SRC0002",
+        "SRC0003",
+        "SRC0553",
+        "SRC0694",
+        "SRC0695",
+        "SRC0719"
+      ],
+      "workIds": [
+        "W-O019",
+        "W-S007",
+        "W-S010",
+        "W-S011",
+        "W-S064"
+      ],
+      "authorityUrl": "GND: https://d-nb.info/gnd/1094330-4\nVIAF: https://viaf.org/viaf/134331272"
+    },
+    {
+      "id": "ORG128",
+      "displayName": "Carl Lindström AG",
+      "authorizedName": "Carl Lindström AG",
+      "types": [
+        "record_label"
+      ],
+      "city": [
+        "Berlin"
+      ],
+      "country": "Germany",
+      "slug": "carl-lindstrom-ag",
+      "nameVariants": "Odeon; Parlophon; Parlophone; Carl Lindström A.-G.; Lindström",
+      "authorizedNameSource": "GND",
+      "sourceIds": [
+        "SRC0007",
+        "SRC0487",
+        "SRC0633",
+        "SRC0697",
+        "SRC0699",
+        "SRC0700",
+        "SRC0716"
+      ],
+      "workIds": [
+        "W-S024",
+        "W-S078",
+        "W-S080",
+        "W-S081",
+        "W-S082",
+        "W-S133",
+        "W-S214",
+        "W-S215"
+      ],
+      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no00081029\nGND: https://d-nb.info/gnd/7670622-9\nVIAF: https://viaf.org/viaf/129647371\nISNI: https://isni.org/isni/0000000121561999"
+    },
+    {
+      "id": "ORG129",
+      "displayName": "Kristall-Schallplatten",
+      "authorizedName": "Kristall-Schallplatten (local heading)",
+      "types": [
+        "record_label"
+      ],
+      "city": [
+        "Berlin"
+      ],
+      "country": "Germany",
+      "slug": "kristall-schallplatten",
+      "nameVariants": "Kristall; Kristall Schallplatte",
+      "authorizedNameSource": "local heading",
+      "sourceIds": [
+        "SRC0004"
+      ],
+      "workIds": [
+        "W-S017"
+      ]
+    },
+    {
+      "id": "ORG130",
+      "displayName": "Novaphon Electro Record",
+      "authorizedName": "Novaphon Electro Record (local heading)",
+      "types": [
+        "record_label"
+      ],
+      "city": [
+        "Vienna"
+      ],
+      "country": "Austria",
+      "slug": "novaphon-electro-record",
+      "nameVariants": "Novaphon; Novaphon Electro Record, Made in Austria",
+      "authorizedNameSource": "local heading",
+      "sourceIds": [
+        "SRC0712"
+      ],
+      "workIds": [
+        "W-S043"
+      ]
+    },
+    {
+      "id": "ORG131",
+      "displayName": "Rot-Blau",
+      "authorizedName": "Rot-Blau (local heading)",
+      "types": [
+        "record_label"
+      ],
+      "city": [
+        "Vienna"
+      ],
+      "country": "Austria",
+      "slug": "rot-blau",
+      "nameVariants": "Rot-Blau; Rot-Blau Schallplatte",
+      "authorizedNameSource": "local heading",
+      "sourceIds": [
+        "SRC0696"
+      ],
+      "workIds": [
+        "W-S046"
+      ]
+    },
+    {
+      "id": "ORG132",
+      "displayName": "Syrena-Grand-Record",
+      "authorizedName": "Syrena-Grand-Record (local heading)",
+      "types": [
+        "record_label"
+      ],
+      "city": [
+        "Warsaw"
+      ],
+      "country": "Poland",
+      "slug": "syrena-grand-record",
+      "nameVariants": "Syrena Record; Syrena-Electro; Syrena-Grand-Record",
+      "authorizedNameSource": "local heading",
+      "sourceIds": [
+        "SRC0001"
+      ],
+      "workIds": [
+        "W-S002"
+      ]
+    },
+    {
+      "id": "ORG133",
+      "displayName": "Pathé",
+      "authorizedName": "Pathé (local heading)",
+      "types": [
+        "record_label"
+      ],
+      "city": [
+        "Paris"
+      ],
+      "country": "France",
+      "slug": "pathe",
+      "nameVariants": "Pathé; Pathé disques",
+      "authorizedNameSource": "local heading",
+      "sourceIds": [
+        "SRC0705"
+      ],
+      "workIds": [
+        "W-S112"
+      ]
+    },
+    {
+      "id": "ORG134",
+      "displayName": "Saxophonorchester Dobbri",
+      "authorizedName": "Saxophonorchester Dobbri",
+      "types": [
+        "ensemble",
+        "dance orchestra"
+      ],
+      "city": [
+        "Berlin"
+      ],
+      "country": "Germany",
+      "slug": "saxophonorchester-dobbri",
+      "nameVariants": "Saxophon-Orchester Dobbri; Tanz-Orchester Dobbri; Dobbri",
+      "authorizedNameSource": "GND",
+      "authorityUrl": "GND: https://d-nb.info/gnd/10025557-7",
+      "sourceIds": [
+        "SRC0716"
+      ],
+      "workIds": [
+        "W-S024"
+      ],
+      "contributionIds": [
+        "CON-S024-P-ORG134"
       ]
     }
   ]

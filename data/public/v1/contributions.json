@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 1127,
+  "count": 1136,
   "records": [
     {
       "id": "CON-F001-C-P009",
@@ -19828,6 +19828,177 @@
         "SRC0719"
       ],
       "scopeNote": "Named in the upload as the orchestra on Polydor 24604, matrix 4735 BD VII, recorded in Berlin about May 1932; the label is not shown."
+    },
+    {
+      "id": "CON-S011-P-P166",
+      "role": "performer",
+      "nameAsPrinted": "L. Monosson",
+      "displayCredit": "Refrain vocal",
+      "evidenceContext": "recording_label",
+      "sortOrder": 55,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S011"
+      ],
+      "sourceIds": [
+        "SRC0003"
+      ],
+      "scopeNote": "Sang the German refrain with the Ilja Livschakoff Tanz-Orchester on Grammophon B 51043.",
+      "personIds": [
+        "P166"
+      ]
+    },
+    {
+      "id": "CON-S049-P-P166",
+      "role": "performer",
+      "nameAsPrinted": "Leo Moll",
+      "displayCredit": "Refrain vocal",
+      "evidenceContext": "recording_label",
+      "sortOrder": 55,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S049"
+      ],
+      "sourceIds": [
+        "SRC0710"
+      ],
+      "scopeNote": "Sang the refrain with Marek Weber und sein Orchester on Electrola E.G. 2400, billed on the label under his recording pseudonym Leo Moll.",
+      "personIds": [
+        "P166"
+      ]
+    },
+    {
+      "id": "CON-S080-CON-P167",
+      "role": "conductor",
+      "nameAsPrinted": "Otto Dobrindt",
+      "displayCredit": "Directed the orchestra",
+      "evidenceContext": "recording_label",
+      "sortOrder": 55,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S080"
+      ],
+      "sourceIds": [
+        "SRC0697"
+      ],
+      "scopeNote": "Directed the Odeon-Künstler-Orchester on Odeon O-11811, the reverse of the disc whose label names him as Kapellmeister.",
+      "personIds": [
+        "P167"
+      ]
+    },
+    {
+      "id": "CON-S081-CON-P167",
+      "role": "conductor",
+      "nameAsPrinted": "Kapellmeister O. Dobrindt",
+      "displayCredit": "Directed the orchestra",
+      "evidenceContext": "recording_label",
+      "sortOrder": 55,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S081"
+      ],
+      "sourceIds": [
+        "SRC0699"
+      ],
+      "scopeNote": "Named on the label of Odeon O-11811 a as “Leitg.: Kapellmeister O. Dobrindt”.",
+      "personIds": [
+        "P167"
+      ]
+    },
+    {
+      "id": "CON-S082-CON-P167",
+      "role": "conductor",
+      "nameAsPrinted": "O. Dobrindt",
+      "displayCredit": "Directed the orchestra",
+      "evidenceContext": "online_catalogue",
+      "sortOrder": 55,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S082"
+      ],
+      "sourceIds": [
+        "SRC0700"
+      ],
+      "scopeNote": "Credited as conductor of the Odeon-Künstler-Orchester in the Discogs entry for Odeon O-11 810.",
+      "personIds": [
+        "P167"
+      ]
+    },
+    {
+      "id": "CON-S024-CON-P167",
+      "role": "conductor",
+      "nameAsPrinted": "Dobbri",
+      "displayCredit": "Directed the orchestra",
+      "evidenceContext": "online_catalogue",
+      "sortOrder": 55,
+      "certainty": "probable",
+      "workIds": [
+        "W-S024"
+      ],
+      "sourceIds": [
+        "SRC0716"
+      ],
+      "scopeNote": "The Parlophone label names only the Saxophon Orchester Dobbri. The GND authority record links Otto Dobrindt to that band, and the identification rests on it alone.",
+      "personIds": [
+        "P167"
+      ]
+    },
+    {
+      "id": "CON-S177-P-P168",
+      "role": "performer",
+      "nameAsPrinted": "Joséphine Baker",
+      "displayCredit": "Vocal performance",
+      "evidenceContext": "online_catalogue",
+      "sortOrder": 55,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S177"
+      ],
+      "sourceIds": [
+        "SRC0301"
+      ],
+      "scopeNote": "Sang the song; the recording is published on the Jube Pops compilation Musical Moments to Remember: Joséphine Baker, which does not identify the original disc.",
+      "personIds": [
+        "P168"
+      ]
+    },
+    {
+      "id": "CON-S002-CON-P169",
+      "role": "conductor",
+      "nameAsPrinted": "Zygmunt Wiehler",
+      "displayCredit": "Directed the orchestra",
+      "evidenceContext": "recording_label",
+      "sortOrder": 55,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S002"
+      ],
+      "sourceIds": [
+        "SRC0001"
+      ],
+      "scopeNote": "Conducted the Perskie Oko theatre orchestra on Syrena-Grand-Record 17919, the earliest recording of a Kaper song in the archive.",
+      "personIds": [
+        "P169"
+      ]
+    },
+    {
+      "id": "CON-S024-P-ORG134",
+      "role": "performer",
+      "nameAsPrinted": "Saxophon Orchester Dobbri",
+      "displayCredit": "Orchestra",
+      "evidenceContext": "recording_label",
+      "sortOrder": 56,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S024"
+      ],
+      "sourceIds": [
+        "SRC0716"
+      ],
+      "scopeNote": "Named on the Parlophone label as “Saxophon Orchester Dobbri”, with Max Mensing singing.",
+      "organizationIds": [
+        "ORG134"
+      ]
     }
   ]
 }
