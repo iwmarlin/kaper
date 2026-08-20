@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 1096,
+  "count": 1100,
   "records": [
     {
       "id": "CON-F001-C-P009",
@@ -19219,6 +19219,82 @@
         "SRC0708"
       ],
       "scopeNote": "The upload names Marek Weber and describes a dance orchestra with refrain vocal; the label is not shown and gives no orchestra."
+    },
+    {
+      "id": "CON-S007-P-P130",
+      "role": "performer",
+      "nameAsPrinted": "Ben Berlin und sein Orchester",
+      "displayCredit": "Orchestra under his direction",
+      "evidenceContext": "recording_label",
+      "sortOrder": 55,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S007"
+      ],
+      "personIds": [
+        "P130"
+      ],
+      "sourceIds": [
+        "SRC0695"
+      ],
+      "scopeNote": "Led the orchestra on Grammophon B 50959 under his professional pseudonym Ben Berlin."
+    },
+    {
+      "id": "CON-S010-P-P130",
+      "role": "performer",
+      "nameAsPrinted": "Ben Berlin und sein Orchester",
+      "displayCredit": "Orchestra under his direction",
+      "evidenceContext": "recording_label",
+      "sortOrder": 55,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S010"
+      ],
+      "personIds": [
+        "P130"
+      ],
+      "sourceIds": [
+        "SRC0694"
+      ],
+      "scopeNote": "Led the orchestra on Grammophon B 51823 under his professional pseudonym Ben Berlin."
+    },
+    {
+      "id": "CON-O019-P-P130",
+      "role": "performer",
+      "nameAsPrinted": "Hermann Bick",
+      "displayCredit": "Piano",
+      "evidenceContext": "recording_label",
+      "sortOrder": 55,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-O019"
+      ],
+      "personIds": [
+        "P130"
+      ],
+      "sourceIds": [
+        "SRC0002"
+      ],
+      "scopeNote": "Recorded the piece as a two-piano duet with Kaper for Polydor 21768, the label crediting him as Hermann Bick."
+    },
+    {
+      "id": "CON-O019-P-P009",
+      "role": "performer",
+      "nameAsPrinted": "Dr. Kaper",
+      "displayCredit": "Piano",
+      "evidenceContext": "recording_label",
+      "sortOrder": 55,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-O019"
+      ],
+      "personIds": [
+        "P009"
+      ],
+      "sourceIds": [
+        "SRC0002"
+      ],
+      "scopeNote": "Played the second piano in the duet recorded for Polydor 21768, of which he also made the published arrangement."
     }
   ]
 }

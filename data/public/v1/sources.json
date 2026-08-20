@@ -58,6 +58,7 @@
         "ORG093"
       ],
       "personIds": [
+        "P009",
         "P130"
       ],
       "mediaIds": [
@@ -69,7 +70,14 @@
       "timelineEventIds": [
         "TE0019"
       ],
-      "primaryUrl": "https://www.youtube.com/watch?v=YAHw4_KS-3o&list=RDYAHw4_KS-3o&start_radio=1"
+      "primaryUrl": "https://www.youtube.com/watch?v=YAHw4_KS-3o&list=RDYAHw4_KS-3o&start_radio=1",
+      "contributionIds": [
+        "CON-O019-P-P009",
+        "CON-O019-P-P130"
+      ],
+      "workIds": [
+        "W-O019"
+      ]
     },
     {
       "id": "SRC0003",
@@ -20791,9 +20799,13 @@
       ],
       "contributionIds": [
         "CON-S010-C-P009",
-        "CON-S010-L-P020"
+        "CON-S010-L-P020",
+        "CON-S010-P-P130"
       ],
-      "primaryUrl": "https://www.youtube.com/watch?v=Ds2JlZynlS8"
+      "primaryUrl": "https://www.youtube.com/watch?v=Ds2JlZynlS8",
+      "personIds": [
+        "P130"
+      ]
     },
     {
       "id": "SRC0695",
@@ -20826,9 +20838,13 @@
       "contributionIds": [
         "CON-S007-C-P009",
         "CON-S007-L-P020",
+        "CON-S007-P-P130",
         "CON-S007-PUB-ORG118"
       ],
-      "primaryUrl": "https://www.youtube.com/watch?v=yNzSzgDWFbk"
+      "primaryUrl": "https://www.youtube.com/watch?v=yNzSzgDWFbk",
+      "personIds": [
+        "P130"
+      ]
     },
     {
       "id": "SRC0696",

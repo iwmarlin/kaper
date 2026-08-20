@@ -260,6 +260,7 @@
       ],
       "authorityUrl": "VIAF: https://viaf.org/viaf/59273738\nLCNAF: https://id.loc.gov/authorities/names/n79075647\nBnF data: https://data.bnf.fr/fr/ark:/12148/cb139401963",
       "sourceIds": [
+        "SRC0002",
         "SRC0024",
         "SRC0038",
         "SRC0041",
@@ -535,6 +536,7 @@
         "CON-O017-A-P009",
         "CON-O018-A-P009",
         "CON-O019-A-P009",
+        "CON-O019-P-P009",
         "CON-O020-A-P009",
         "CON-O021-A-P009",
         "CON-O022-A-P009",
@@ -4604,7 +4606,9 @@
         "SRC0021",
         "SRC0028",
         "SRC0365",
-        "SRC0553"
+        "SRC0553",
+        "SRC0694",
+        "SRC0695"
       ],
       "timelineEventIds": [
         "TE0019",
@@ -4616,7 +4620,17 @@
       ],
       "birthYear": 1897,
       "deathYear": 1944,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "contributionIds": [
+        "CON-O019-P-P130",
+        "CON-S007-P-P130",
+        "CON-S010-P-P130"
+      ],
+      "workIds": [
+        "W-O019",
+        "W-S007",
+        "W-S010"
+      ]
     },
     {
       "id": "P131",
