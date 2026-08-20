@@ -3890,30 +3890,6 @@
       ]
     },
     {
-      "id": "ORG136",
-      "displayName": "Derby",
-      "authorizedName": "Derby (local heading)",
-      "types": [
-        "record_label"
-      ],
-      "city": [
-        "Berlin"
-      ],
-      "country": "Germany",
-      "slug": "derby",
-      "authorizedNameSource": "local heading",
-      "nameVariants": "Derby; Derby Schallplatte, nur für Deutschland. The company behind the imprint is not resolved here",
-      "sourceIds": [
-        "SRC0724"
-      ],
-      "workIds": [
-        "W-S021"
-      ],
-      "contributionIds": [
-        "CON-S021-LAB-ORG136"
-      ]
-    },
-    {
       "id": "ORG137",
       "displayName": "Odeon-Tango-Orchester",
       "authorizedName": "Odeon-Tango-Orchester (local heading)",
@@ -3936,6 +3912,30 @@
       ],
       "contributionIds": [
         "CON-S048-P-ORG137"
+      ]
+    },
+    {
+      "id": "ORG136",
+      "displayName": "Derby",
+      "authorizedName": "Derby (local heading)",
+      "types": [
+        "record_label"
+      ],
+      "city": [
+        "Berlin"
+      ],
+      "country": "Germany",
+      "slug": "derby",
+      "authorizedNameSource": "local heading",
+      "nameVariants": "Derby; Derby, nur für Deutschland. The company behind the imprint is not read from the label here",
+      "sourceIds": [
+        "SRC0724"
+      ],
+      "workIds": [
+        "W-S021"
+      ],
+      "contributionIds": [
+        "CON-S021-LAB-ORG136"
       ]
     }
   ]

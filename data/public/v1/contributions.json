@@ -20430,25 +20430,6 @@
       "scopeNote": "Recorded the song for Derby; the label bills the ensemble as “Karkoff-Orchester mit Refraingesang”."
     },
     {
-      "id": "CON-S021-LAB-ORG136",
-      "role": "record_label",
-      "nameAsPrinted": "Derby",
-      "displayCredit": "Issuing label",
-      "evidenceContext": "recording_label",
-      "sortOrder": 60,
-      "certainty": "confirmed",
-      "workIds": [
-        "W-S021"
-      ],
-      "organizationIds": [
-        "ORG136"
-      ],
-      "sourceIds": [
-        "SRC0724"
-      ],
-      "scopeNote": "Issued the recording; the disc carries the imprint “Derby” with the note “Nur für Deutschland”."
-    },
-    {
       "id": "CON-S048-P-P086",
       "role": "performer",
       "nameAsPrinted": "Austin Egen",
@@ -20503,7 +20484,26 @@
       "sourceIds": [
         "SRC0725"
       ],
-      "scopeNote": "Issued the recording; the disc carries the imprint “Odeon”, a label of Carl Lindström AG."
+      "scopeNote": "Issued the recording; the disc carries the imprint “Odeon” and reads “Carl Lindström A.-G.” along the foot of the label."
+    },
+    {
+      "id": "CON-S021-LAB-ORG136",
+      "role": "record_label",
+      "nameAsPrinted": "Derby",
+      "displayCredit": "Issuing label",
+      "evidenceContext": "recording_label",
+      "sortOrder": 60,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S021"
+      ],
+      "organizationIds": [
+        "ORG136"
+      ],
+      "sourceIds": [
+        "SRC0724"
+      ],
+      "scopeNote": "Issued the recording; the disc carries the imprint “Derby” with the note “Nur für Deutschland”."
     }
   ]
 }
