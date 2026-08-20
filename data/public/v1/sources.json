@@ -6536,28 +6536,6 @@
       "primaryUrl": "https://anno.onb.ac.at/cgi-content/anno-plus?aid=hof&datum=19300061"
     },
     {
-      "id": "SRC0202",
-      "shortCitation": "\"Denks du nach am jeden Tag,\" in 1000 Takte Tanz – Band 02 (Berlin: Alrobi-Musikverlag / Edition Meisel, ca. 1939).",
-      "fullCitation": "\"Denks du nach am jeden Tag.\" In 1000 Takte Tanz – Band 02: 22 der populärsten Tanz- und Gesangs-Schlager (Grossformat). Berlin: Alrobi-Musikverlag GmbH / Edition Meisel & Co., GmbH, ca. 1939.",
-      "sourceType": "sheet_music",
-      "title": "Denks du nach am jeden Tag",
-      "date": "1939",
-      "reliability": "high",
-      "sourceStatus": "verified",
-      "slug": "denks-du-nach-am-jeden-tag-1000-takte-tanz-band-02-ca-1939",
-      "workIds": [
-        "W-S012"
-      ],
-      "songIds": [
-        "S012"
-      ],
-      "contributionIds": [
-        "CON-S012-C-P009",
-        "CON-S012-C-P077",
-        "CON-S012-L-P014"
-      ]
-    },
-    {
       "id": "SRC0203",
       "shortCitation": "\"Wenn wir nicht beide in Gesellschaft wären, würde ich dir Liebe schwören,\" in 1000 Takte Tanz – Band 02",
       "fullCitation": "\"Wenn wir nicht beide in Gesellschaft wären, würde ich dir Liebe schwören.\" In 1000 Takte Tanz – Band 02: 22 der populärsten Tanz- und Gesangs-Schlager (Grossformat). Berlin: Alrobi-Musikverlag GmbH / Edition Meisel & Co., GmbH, ca. 1939.",
@@ -12063,7 +12041,6 @@
         "W-F050",
         "W-F052",
         "W-F054",
-        "W-S012",
         "W-S013",
         "W-S032",
         "W-S036",
@@ -12151,7 +12128,6 @@
         "F054"
       ],
       "songIds": [
-        "S012",
         "S013",
         "S032",
         "S036",
@@ -12436,9 +12412,6 @@
         "CON-F054-C-P077",
         "CON-F054-D-P092",
         "CON-F054-PC-ORG061",
-        "CON-S012-C-P009",
-        "CON-S012-C-P077",
-        "CON-S012-L-P014",
         "CON-S013-C-P009",
         "CON-S013-C-P077",
         "CON-S013-L-P020",
@@ -21223,6 +21196,39 @@
         "CON-S038-PUB-ORG031"
       ],
       "primaryUrl": "https://www.youtube.com/watch?v=WuLkSvYs1qA"
+    },
+    {
+      "id": "SRC0709",
+      "shortCitation": "“Denkst Du noch an jeden Tag,” manuscript, Kaper Papers 03193, box 1",
+      "fullCitation": "“Denkst Du noch an jeden Tag.” Fox-trott. Manuscript in Bronisław Kaper's hand, headed “Text: Egon Schubert / Mus. B. Kaper” and dated “Berlin 1929”; piano and voice. Bronislaw Kaper Papers, Collection 03193, box 1. American Heritage Center, University of Wyoming, Laramie. Copies carry the Center's notice that the material may be restricted by United States copyright law. Finding aid consulted 20 August 2026.",
+      "sourceType": "archival_manuscript_holding",
+      "title": "Denkst Du noch an jeden Tag — manuscript, Kaper Papers",
+      "creator": "Bronisław Kaper",
+      "repository": "American Heritage Center, University of Wyoming",
+      "publication": "Bronislaw Kaper Papers, Collection 03193",
+      "date": "1929",
+      "accessDate": "2026-08-20",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "slug": "src0709-kaper-papers-03193-denkst-du-noch-an-jeden-tag",
+      "organizationIds": [
+        "ORG056"
+      ],
+      "personIds": [
+        "P009",
+        "P014"
+      ],
+      "workIds": [
+        "W-S012"
+      ],
+      "songIds": [
+        "S012"
+      ],
+      "contributionIds": [
+        "CON-S012-C-P009",
+        "CON-S012-L-P014"
+      ],
+      "primaryUrl": "https://www.uwyo.edu/ahc/_files/pdffa/03193.pdf"
     }
   ],
   "recordCount": null
