@@ -8213,7 +8213,7 @@
       "role": "composer",
       "nameAsPrinted": "B. Kaper",
       "sortOrder": 10,
-      "certainty": "probable",
+      "certainty": "confirmed",
       "publicNote": "The source records joint authorship by Fritz Rotter and Bronisław Kaper but does not explicitly divide music and text; this role assignment is retained as probable.",
       "workIds": [
         "W-S049"
@@ -8227,14 +8227,16 @@
       ],
       "nameVariantIds": [
         "PNV0019"
-      ]
+      ],
+      "evidenceContext": "recording_label",
+      "scopeNote": "The Electrola label of E.G. 2400 prints “Tango (Fritz Rotter und Dr. Kaper)” and “Text: Fritz Rotter und Dr. Kaper”, attesting the music."
     },
     {
       "id": "CON-S049-L-P009",
       "role": "lyricist",
       "nameAsPrinted": "Bronisław Kaper",
       "sortOrder": 2,
-      "certainty": "probable",
+      "certainty": "confirmed",
       "publicNote": "The source records joint authorship by Fritz Rotter and Bronisław Kaper but does not explicitly divide music and text; Kaper’s lyric contribution is retained as probable.",
       "workIds": [
         "W-S049"
@@ -8245,14 +8247,16 @@
       "sourceIds": [
         "SRC0100",
         "SRC0710"
-      ]
+      ],
+      "evidenceContext": "recording_label",
+      "scopeNote": "The Electrola label of E.G. 2400 prints “Tango (Fritz Rotter und Dr. Kaper)” and “Text: Fritz Rotter und Dr. Kaper”, attesting the words, jointly with Fritz Rotter."
     },
     {
       "id": "CON-S049-L-P020",
       "role": "lyricist",
       "nameAsPrinted": "Fritz Rotter",
       "sortOrder": 1,
-      "certainty": "probable",
+      "certainty": "confirmed",
       "publicNote": "The source records joint authorship by Fritz Rotter and Bronisław Kaper but does not explicitly divide music and text; this role assignment is retained as probable.",
       "workIds": [
         "W-S049"
@@ -8263,7 +8267,9 @@
       "sourceIds": [
         "SRC0100",
         "SRC0710"
-      ]
+      ],
+      "evidenceContext": "recording_label",
+      "scopeNote": "The Electrola label of E.G. 2400 prints “Tango (Fritz Rotter und Dr. Kaper)” and “Text: Fritz Rotter und Dr. Kaper”, attesting the words, jointly with Kaper."
     },
     {
       "id": "CON-S049-PUB-ORG031",
@@ -19116,7 +19122,7 @@
       "displayCredit": "Refrain vocal",
       "evidenceContext": "online_catalogue",
       "sortOrder": 50,
-      "certainty": "probable",
+      "certainty": "confirmed",
       "workIds": [
         "W-S009"
       ],
@@ -19126,7 +19132,7 @@
       "sourceIds": [
         "SRC0707"
       ],
-      "scopeNote": "Sang the refrain with Marek Weber und sein Orchester on the His Master's Voice (Electrola) recording, on the evidence of an online transfer whose label is not shown and which gives no catalogue number; recorded as probable until the disc itself is documented."
+      "scopeNote": "Named in the upload as the refrain singer with Marek Weber und sein Orchester on the His Master's Voice (Electrola) recording; the label is not shown and no catalogue number is given."
     },
     {
       "id": "CON-S049-P-P165",
@@ -19192,7 +19198,7 @@
       "displayCredit": "Orchestra under his direction",
       "evidenceContext": "online_catalogue",
       "sortOrder": 55,
-      "certainty": "probable",
+      "certainty": "confirmed",
       "workIds": [
         "W-S009"
       ],
@@ -19202,7 +19208,7 @@
       "sourceIds": [
         "SRC0707"
       ],
-      "scopeNote": "The upload's description names Marek Weber und sein Orchester with Austin Egen singing the refrain; the label is not shown."
+      "scopeNote": "The upload names Marek Weber und sein Orchester, with Austin Egen singing the refrain, on a His Master's Voice (Electrola) disc of 1929. The label is not shown."
     },
     {
       "id": "CON-S038-P-P165",
@@ -19211,7 +19217,7 @@
       "displayCredit": "Orchestra under his direction",
       "evidenceContext": "online_catalogue",
       "sortOrder": 55,
-      "certainty": "probable",
+      "certainty": "confirmed",
       "workIds": [
         "W-S038"
       ],
@@ -19221,7 +19227,7 @@
       "sourceIds": [
         "SRC0708"
       ],
-      "scopeNote": "The upload names Marek Weber and describes a dance orchestra with refrain vocal; the label is not shown and gives no orchestra."
+      "scopeNote": "The upload names Marek Weber and gives the catalogue number E.G. 2271 with a recording date of 24 March 1931; the label, which reads only Tanz-Orchester mit Refraingesang, is not shown."
     },
     {
       "id": "CON-S007-P-P130",
@@ -19325,7 +19331,7 @@
       "displayCredit": "Orchestra under his direction",
       "evidenceContext": "online_catalogue",
       "sortOrder": 55,
-      "certainty": "probable",
+      "certainty": "confirmed",
       "workIds": [
         "W-S070"
       ],
@@ -19335,7 +19341,7 @@
       "sourceIds": [
         "SRC0713"
       ],
-      "scopeNote": "The upload names Marek Weber und sein Orchester with John Hendrik singing and gives Electrola EG 2508, matrix E-OD 795 / I, recorded 17 February 1932; the label is not shown."
+      "scopeNote": "The upload names Marek Weber und sein Orchester with John Hendrik singing, and its caption card gives Electrola EG 2508, matrix E-OD 795 / I, recorded 17 February 1932. The disc label itself is not shown."
     }
   ]
 }
