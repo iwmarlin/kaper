@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 114,
+  "count": 119,
   "records": [
     {
       "id": "ORG001",
@@ -3379,6 +3379,172 @@
       ],
       "workIds": [
         "W-S007"
+      ]
+    },
+    {
+      "id": "ORG119",
+      "displayName": "Marek Weber und sein Orchester",
+      "authorizedName": "Marek Weber und Sein Orchester",
+      "types": [
+        "ensemble",
+        "dance orchestra"
+      ],
+      "city": [
+        "Berlin"
+      ],
+      "country": "Germany",
+      "slug": "marek-weber-und-sein-orchester",
+      "nameVariants": "Marek Weber & sein Orchester; Orchester Marek Weber; Marek Weber Orchestra; Tanzorchester Marek Weber; Marek Weber mit Seiner Künstlerkapelle vom Esplanade",
+      "authorizedNameSource": "GND",
+      "authorityUrl": "GND: https://d-nb.info/gnd/5283847-X\nVIAF: https://viaf.org/viaf/263589821\nISNI: https://isni.org/isni/0000000105437701",
+      "sourceIds": [
+        "SRC0005",
+        "SRC0701",
+        "SRC0702",
+        "SRC0707",
+        "SRC0708",
+        "SRC0710",
+        "SRC0713",
+        "SRC0717"
+      ],
+      "workIds": [
+        "W-S009",
+        "W-S038",
+        "W-S042",
+        "W-S045",
+        "W-S049",
+        "W-S058",
+        "W-S070",
+        "W-S084"
+      ],
+      "contributionIds": [
+        "CON-S009-P-ORG119",
+        "CON-S038-P-ORG119",
+        "CON-S042-P-ORG119",
+        "CON-S045-P-ORG119",
+        "CON-S049-P-ORG119",
+        "CON-S058-P-ORG119",
+        "CON-S070-P-ORG119",
+        "CON-S084-P-ORG119"
+      ]
+    },
+    {
+      "id": "ORG120",
+      "displayName": "Odeon-Künstler-Orchester",
+      "authorizedName": "Odeon-Künstler-Orchester",
+      "types": [
+        "ensemble",
+        "house orchestra"
+      ],
+      "city": [
+        "Berlin"
+      ],
+      "country": "Germany",
+      "slug": "odeon-kunstler-orchester",
+      "nameVariants": "Odeon Künstler-Orchester; Odeon-Künstlerorchester",
+      "authorizedNameSource": "LCNAF",
+      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no2013029878\nGND: https://d-nb.info/gnd/10280831-4\nVIAF: https://viaf.org/viaf/312726209\nISNI: https://isni.org/isni/0000000088101535\nBnF: https://catalogue.bnf.fr/ark:/12148/cb140071747",
+      "sourceIds": [
+        "SRC0487",
+        "SRC0697",
+        "SRC0698",
+        "SRC0699",
+        "SRC0700"
+      ],
+      "workIds": [
+        "W-S078",
+        "W-S080",
+        "W-S081",
+        "W-S082"
+      ],
+      "contributionIds": [
+        "CON-S078-P-ORG120",
+        "CON-S080-P-ORG120",
+        "CON-S081-P-ORG120",
+        "CON-S082-P-ORG120"
+      ]
+    },
+    {
+      "id": "ORG121",
+      "displayName": "Tanzorchester Bernard Etté",
+      "authorizedName": "Tanzorchester Bernard Etté",
+      "types": [
+        "ensemble",
+        "dance orchestra"
+      ],
+      "city": [
+        "Berlin"
+      ],
+      "country": "Germany",
+      "slug": "tanzorchester-bernard-ette",
+      "nameVariants": "Bernhard Etté mit Seinem Tanzorchester; Bernard Etté mit Seinem Tanzorchester; Bernhard Etté & sein Tanzorchester; Etté mit Seinem großen Schauorchester",
+      "authorizedNameSource": "LCNAF",
+      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no2011165075\nGND: https://d-nb.info/gnd/6125978-0\nVIAF: https://viaf.org/viaf/122769964\nISNI: https://isni.org/isni/0000000106797952",
+      "sourceIds": [
+        "SRC0004",
+        "SRC0288"
+      ],
+      "workIds": [
+        "W-S017",
+        "W-S182"
+      ],
+      "contributionIds": [
+        "CON-S017-P-ORG121",
+        "CON-S182-P-ORG121"
+      ]
+    },
+    {
+      "id": "ORG122",
+      "displayName": "Ben Berlin und sein Orchester",
+      "authorizedName": "Ben Berlin Und Sein Orchester",
+      "types": [
+        "ensemble",
+        "dance orchestra"
+      ],
+      "city": [
+        "Berlin"
+      ],
+      "country": "Germany",
+      "slug": "ben-berlin-und-sein-orchester",
+      "nameVariants": "Ben Berlin Tanzorchester; Orchester Ben Berlin",
+      "authorizedNameSource": "GND",
+      "authorityUrl": "GND: https://d-nb.info/gnd/10346956-4\nVIAF: https://viaf.org/viaf/139420324",
+      "sourceIds": [
+        "SRC0694",
+        "SRC0695"
+      ],
+      "workIds": [
+        "W-S007",
+        "W-S010"
+      ],
+      "contributionIds": [
+        "CON-S007-P-ORG122",
+        "CON-S010-P-ORG122"
+      ]
+    },
+    {
+      "id": "ORG123",
+      "displayName": "Orkiestra teatru „Perskie Oko”",
+      "authorizedName": "Orkiestra teatru „Perskie Oko” (Warszawa)",
+      "types": [
+        "ensemble",
+        "theatre orchestra"
+      ],
+      "city": [
+        "Warsaw"
+      ],
+      "country": "Poland",
+      "slug": "orkiestra-teatru-perskie-oko",
+      "nameVariants": "Orkiestra Teatru Perskie Oko; Perskie Oko Theatre Orchestra",
+      "authorizedNameSource": "local heading",
+      "sourceIds": [
+        "SRC0001"
+      ],
+      "workIds": [
+        "W-S002"
+      ],
+      "contributionIds": [
+        "CON-S002-P-ORG123"
       ]
     }
   ]

@@ -4628,8 +4628,8 @@
       "lifeDatesCertainty": "confirmed",
       "contributionIds": [
         "CON-O019-P-P130",
-        "CON-S007-P-P130",
-        "CON-S010-P-P130"
+        "CON-S007-CON-P130",
+        "CON-S010-CON-P130"
       ],
       "workIds": [
         "W-O019",
@@ -5632,21 +5632,24 @@
         "W-S009",
         "W-S038",
         "W-S042",
+        "W-S045",
         "W-S049",
         "W-S058",
         "W-S070",
         "W-S084"
       ],
       "contributionIds": [
-        "CON-S009-P-P165",
-        "CON-S038-P-P165",
-        "CON-S042-P-P165",
-        "CON-S049-P-P165",
-        "CON-S058-P-P165",
-        "CON-S070-P-P165",
-        "CON-S084-P-P165"
+        "CON-S009-CON-P165",
+        "CON-S038-CON-P165",
+        "CON-S042-CON-P165",
+        "CON-S045-CON-P165",
+        "CON-S049-CON-P165",
+        "CON-S058-CON-P165",
+        "CON-S070-CON-P165",
+        "CON-S084-CON-P165"
       ],
       "sourceIds": [
+        "SRC0005",
         "SRC0701",
         "SRC0702",
         "SRC0707",
