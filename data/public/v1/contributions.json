@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 1102,
+  "count": 1105,
   "records": [
     {
       "id": "CON-F001-C-P009",
@@ -6822,7 +6822,8 @@
       ],
       "sourceIds": [
         "SRC0098",
-        "SRC0466"
+        "SRC0466",
+        "SRC0716"
       ],
       "nameVariantIds": [
         "PNV0019"
@@ -6842,7 +6843,8 @@
       ],
       "sourceIds": [
         "SRC0098",
-        "SRC0466"
+        "SRC0466",
+        "SRC0716"
       ]
     },
     {
@@ -6859,7 +6861,8 @@
       ],
       "sourceIds": [
         "SRC0098",
-        "SRC0466"
+        "SRC0466",
+        "SRC0716"
       ]
     },
     {
@@ -6951,7 +6954,8 @@
       "sourceIds": [
         "SRC0292",
         "SRC0465"
-      ]
+      ],
+      "scopeNote": "Credited as co-composer in the printed sources; the 2011 online transfer of the Theo Mackeben recording names Kaper alone for the music."
     },
     {
       "id": "CON-S026-L-P020",
@@ -7816,7 +7820,8 @@
         "P009"
       ],
       "sourceIds": [
-        "SRC0181"
+        "SRC0181",
+        "SRC0717"
       ],
       "nameVariantIds": [
         "PNV0019"
@@ -7835,7 +7840,8 @@
         "P020"
       ],
       "sourceIds": [
-        "SRC0181"
+        "SRC0181",
+        "SRC0717"
       ]
     },
     {
@@ -7851,7 +7857,8 @@
         "ORG031"
       ],
       "sourceIds": [
-        "SRC0181"
+        "SRC0181",
+        "SRC0717"
       ]
     },
     {
@@ -19342,6 +19349,63 @@
         "SRC0713"
       ],
       "scopeNote": "The upload names Marek Weber und sein Orchester with John Hendrik singing, and its caption card gives Electrola EG 2508, matrix E-OD 795 / I, recorded 17 February 1932. The disc label itself is not shown."
+    },
+    {
+      "id": "CON-S026-P-P077",
+      "role": "performer",
+      "nameAsPrinted": "Walter Jurmann",
+      "displayCredit": "Refrain vocal",
+      "evidenceContext": "online_catalogue",
+      "sortOrder": 55,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S026"
+      ],
+      "personIds": [
+        "P077"
+      ],
+      "sourceIds": [
+        "SRC0715"
+      ],
+      "scopeNote": "Named in the upload as the refrain singer with Theo Mackeben und sein Jazz-Orchester; no label is shown and no catalogue number given. He is also recorded as co-composer of other songs with Kaper, but not of this one."
+    },
+    {
+      "id": "CON-S042-P-P165",
+      "role": "performer",
+      "nameAsPrinted": "Marek Weber und sein Orchester",
+      "displayCredit": "Orchestra under his direction",
+      "evidenceContext": "recording_label",
+      "sortOrder": 55,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S042"
+      ],
+      "personIds": [
+        "P165"
+      ],
+      "sourceIds": [
+        "SRC0717"
+      ],
+      "scopeNote": "Billed on the Electrola label of E.G. 2406 as “Marek Weber und sein Orchester”, a dance orchestra with refrain vocal; the refrain singer is not named."
+    },
+    {
+      "id": "CON-S042-L-P009",
+      "role": "lyricist",
+      "nameAsPrinted": "Dr. B. Kaper",
+      "displayCredit": "Words, as credited on the Electrola label",
+      "evidenceContext": "recording_label",
+      "sortOrder": 30,
+      "certainty": "probable",
+      "workIds": [
+        "W-S042"
+      ],
+      "personIds": [
+        "P009"
+      ],
+      "sourceIds": [
+        "SRC0717"
+      ],
+      "scopeNote": "The Electrola label reads “Fox-Trot (Fritz Rotter und Dr. B. Kaper)” and “Text: Fritz Rotter und Dr. B. Kaper”, crediting both men for words and music alike, while the sheet music names Kaper for the music and Rotter for the words. Recorded as probable, with the two readings side by side."
     }
   ]
 }
