@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 1125,
+  "count": 1127,
   "records": [
     {
       "id": "CON-F001-C-P009",
@@ -8053,7 +8053,8 @@
       ],
       "sourceIds": [
         "SRC0178",
-        "SRC0696"
+        "SRC0696",
+        "SRC0718"
       ],
       "nameVariantIds": [
         "PNV0019"
@@ -8073,7 +8074,8 @@
       ],
       "sourceIds": [
         "SRC0178",
-        "SRC0696"
+        "SRC0696",
+        "SRC0718"
       ]
     },
     {
@@ -8090,7 +8092,8 @@
       ],
       "sourceIds": [
         "SRC0178",
-        "SRC0696"
+        "SRC0696",
+        "SRC0718"
       ]
     },
     {
@@ -19787,6 +19790,44 @@
         "SRC0714"
       ],
       "scopeNote": "Recorded the song; the ensemble is credited on the reissue as “The Jack Hylton Orchestra”, directed by Jack Hylton."
+    },
+    {
+      "id": "CON-S046-P-ORG125",
+      "role": "performer",
+      "nameAsPrinted": "Jack Hylton und sein Orchester",
+      "displayCredit": "Orchestra",
+      "evidenceContext": "recording_label",
+      "sortOrder": 56,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S046"
+      ],
+      "organizationIds": [
+        "ORG125"
+      ],
+      "sourceIds": [
+        "SRC0718"
+      ],
+      "scopeNote": "Recorded the song for Electrola; the label bills the ensemble as “Jack Hylton und sein Orchester”, with Siegfried Arno singing the refrain."
+    },
+    {
+      "id": "CON-S064-P-ORG124",
+      "role": "performer",
+      "nameAsPrinted": "Ilja Livschakoff Tanzorchester",
+      "displayCredit": "Orchestra",
+      "evidenceContext": "online_catalogue",
+      "sortOrder": 56,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S064"
+      ],
+      "organizationIds": [
+        "ORG124"
+      ],
+      "sourceIds": [
+        "SRC0719"
+      ],
+      "scopeNote": "Named in the upload as the orchestra on Polydor 24604, matrix 4735 BD VII, recorded in Berlin about May 1932; the label is not shown."
     }
   ]
 }
