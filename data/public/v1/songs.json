@@ -425,7 +425,8 @@
       ],
       "sourceIds": [
         "SRC0204",
-        "SRC0471"
+        "SRC0471",
+        "SRC0758"
       ],
       "titleVariantIds": [
         "TV0302"
@@ -1078,7 +1079,8 @@
         "W-S047"
       ],
       "sourceIds": [
-        "SRC0095"
+        "SRC0095",
+        "SRC0760"
       ],
       "periods": [
         "european"
@@ -3177,8 +3179,8 @@
         "SRC0251"
       ],
       "titleVariantIds": [
-        "TV0291",
-        "TV0292"
+        "TV0292",
+        "TV0309"
       ],
       "periods": [
         "hollywood"
@@ -4696,33 +4698,6 @@
       ]
     },
     {
-      "id": "S199",
-      "title": "San Francisco, du bist die Stadt für mich",
-      "slug": "san-francisco-du-bist-die-stadt-fuer-mich",
-      "year": 1936,
-      "period": "hollywood",
-      "genre": "foxtrot",
-      "publisherAsPrinted": "Robbins Music Corporation/1936; Francis, Day & Hunter 1.9.1936–31.12.1977; Big 3 Musik (Germany) 1.1.1978; Josef Weinberger, Wien 1.7.1960–31.12.1972",
-      "lyricistAsPrinted": "Fritz Rotter",
-      "filmTitleAsSource": "San Francisco",
-      "jurmannCollaboration": true,
-      "certainty": "confirmed",
-      "lyricistStatus": "lyricist known",
-      "composerStatus": "composer known",
-      "workIds": [
-        "W-S199"
-      ],
-      "sourceIds": [
-        "SRC0373"
-      ],
-      "titleVariantIds": [
-        "TV0291"
-      ],
-      "periods": [
-        "hollywood"
-      ]
-    },
-    {
       "id": "S200",
       "title": "San Francisco, sur notre terre immense il est un coin",
       "slug": "san-francisco-sur-notre-terre-immense-il-est-un-coin",
@@ -5120,6 +5095,32 @@
       ],
       "periods": [
         "european"
+      ]
+    },
+    {
+      "id": "S218",
+      "title": "San Francisco",
+      "slug": "san-francisco-pl",
+      "year": 1937,
+      "period": "hollywood",
+      "genre": "foxtrot",
+      "lyricistAsPrinted": "Emanuel Schlechter",
+      "filmTitleAsSource": "San Francisco",
+      "jurmannCollaboration": true,
+      "certainty": "confirmed",
+      "lyricistStatus": "lyricist known",
+      "composerStatus": "composer known",
+      "workIds": [
+        "W-S218"
+      ],
+      "periods": [
+        "hollywood"
+      ],
+      "sourceIds": [
+        "SRC0759"
+      ],
+      "titleVariantIds": [
+        "TV0309"
       ]
     }
   ],

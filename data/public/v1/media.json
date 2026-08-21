@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 346,
+  "count": 348,
   "records": [
     {
       "id": "M001",
@@ -11346,6 +11346,71 @@
       "organizationIds": [
         "ORG033",
         "ORG145"
+      ]
+    },
+    {
+      "id": "M392",
+      "title": "Sagen kleine Mädels \"nein\" — Kristall 78N, listening reference",
+      "mediaType": "video",
+      "storageType": "external",
+      "period": "european",
+      "description": "Recording of “Sagen kleine Mädels \"nein\"” by Kurt Mühlhardt mit Bernard Etté und sein Orchester, issued on Kristall, linked as an external listening reference.",
+      "externalUrl": "https://www.youtube.com/watch?v=9r6w-mcm2Rk",
+      "assetCount": 0,
+      "altText": "Listening reference for “Sagen kleine Mädels \"nein\"”.",
+      "rightsStatus": "permission_needed_or_fair_use_claimed",
+      "rightsNote": "External media is linked for scholarly reference and is not rehosted; reuse rights are not cleared.",
+      "sortOrder": 392,
+      "slug": "sagen-kleine-madels-nein-m392",
+      "publicCaption": "Listening reference for “Sagen kleine Mädels \"nein\"” in the recording by Kurt Mühlhardt mit Bernard Etté und sein Orchester. The upload identifies the disc as Kristall 78N in its description, without showing the label.",
+      "publicCreditLine": "YouTube / Wunschkonzert listening link; Kristall 78N.",
+      "category": "audio/video reference",
+      "galleryStatus": "external_link_only",
+      "sourceIds": [
+        "SRC0758"
+      ],
+      "workIds": [
+        "W-S018"
+      ],
+      "periods": [
+        "european"
+      ],
+      "songIds": [
+        "S018"
+      ],
+      "organizationIds": [
+        "ORG033"
+      ]
+    },
+    {
+      "id": "M393",
+      "title": "San Francisco — Syrena Record, listening reference",
+      "mediaType": "video",
+      "storageType": "external",
+      "period": "hollywood",
+      "description": "Recording of “San Francisco” by Orkiestra taneczna, issued on Syrena Record, linked as an external listening reference.",
+      "externalUrl": "https://www.youtube.com/watch?v=Grn0ZgH9c-w",
+      "assetCount": 0,
+      "altText": "Listening reference for “San Francisco”.",
+      "rightsStatus": "permission_needed_or_fair_use_claimed",
+      "rightsNote": "External media is linked for scholarly reference and is not rehosted; reuse rights are not cleared.",
+      "sortOrder": 393,
+      "slug": "san-francisco-m393",
+      "publicCaption": "Listening reference for “San Francisco” in the recording by Orkiestra taneczna. The upload identifies the disc as Syrena Record in its description, without showing the label.",
+      "publicCreditLine": "YouTube / syrenarecord listening link; Syrena Record.",
+      "category": "audio/video reference",
+      "galleryStatus": "external_link_only",
+      "sourceIds": [
+        "SRC0759"
+      ],
+      "workIds": [
+        "W-S218"
+      ],
+      "periods": [
+        "hollywood"
+      ],
+      "songIds": [
+        "S218"
       ]
     }
   ],

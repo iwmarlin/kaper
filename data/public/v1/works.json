@@ -4365,7 +4365,8 @@
       "publicScope": "standalone_page",
       "sourceIds": [
         "SRC0204",
-        "SRC0471"
+        "SRC0471",
+        "SRC0758"
       ],
       "titleVariantIds": [
         "TV0302"
@@ -4374,7 +4375,10 @@
         "CON-S018-C-P009",
         "CON-S018-L-P020",
         "CON-S018-L-P083",
-        "CON-S018-PUB-ORG033"
+        "CON-S018-PUB-ORG033",
+        "CON-S018-P-P176",
+        "CON-S018-P-ORG121",
+        "CON-S018-LAB-ORG129"
       ],
       "nameVariantIds": [
         "PNV0019"
@@ -4385,7 +4389,9 @@
         "P083"
       ],
       "organizationIds": [
-        "ORG033"
+        "ORG033",
+        "ORG121",
+        "ORG129"
       ],
       "relationIds": [
         "REL0004",
@@ -4396,6 +4402,9 @@
       ],
       "periods": [
         "european"
+      ],
+      "mediaIds": [
+        "M392"
       ]
     },
     {
@@ -5550,12 +5559,14 @@
       "displayOnSite": true,
       "publicScope": "standalone_page",
       "sourceIds": [
-        "SRC0095"
+        "SRC0095",
+        "SRC0760"
       ],
       "contributionIds": [
         "CON-S047-C-P009",
         "CON-S047-L-P020",
-        "CON-S047-PUB-ORG052"
+        "CON-S047-PUB-ORG052",
+        "CON-S047-LAB-ORG138"
       ],
       "nameVariantIds": [
         "PNV0019"
@@ -5565,7 +5576,8 @@
         "P020"
       ],
       "organizationIds": [
-        "ORG052"
+        "ORG052",
+        "ORG138"
       ],
       "songIds": [
         "S047"
@@ -9182,8 +9194,8 @@
         "SRC0319"
       ],
       "titleVariantIds": [
-        "TV0291",
-        "TV0292"
+        "TV0292",
+        "TV0309"
       ],
       "contributionIds": [
         "CON-S130-C-P009",
@@ -9206,8 +9218,8 @@
       ],
       "relationIds": [
         "REL0090",
-        "REL0165",
-        "REL0166"
+        "REL0166",
+        "REL0202"
       ],
       "songIds": [
         "S130"
@@ -11683,44 +11695,6 @@
       ]
     },
     {
-      "id": "W-S199",
-      "title": "San Francisco, du bist die Stadt für mich",
-      "slug": "san-francisco-du-bist-die-stadt-fuer-mich",
-      "sortTitle": "San Francisco, du bist die Stadt für mich",
-      "workType": "Song",
-      "year": 1936,
-      "period": "hollywood",
-      "certainty": "confirmed",
-      "displayOnSite": true,
-      "publicScope": "standalone_page",
-      "sourceIds": [
-        "SRC0373"
-      ],
-      "contributionIds": [
-        "CON-S199-C-P009",
-        "CON-S199-C-P077",
-        "CON-S199-L-P020",
-        "CON-S199-PUB-ORG035"
-      ],
-      "personIds": [
-        "P009",
-        "P020",
-        "P077"
-      ],
-      "organizationIds": [
-        "ORG035"
-      ],
-      "relationIds": [
-        "REL0165"
-      ],
-      "songIds": [
-        "S199"
-      ],
-      "periods": [
-        "hollywood"
-      ]
-    },
-    {
       "id": "W-S200",
       "title": "San Francisco, sur notre terre immense il est un coin",
       "slug": "san-francisco-sur-notre-terre-immense-il-est-un-coin",
@@ -12357,6 +12331,47 @@
       ],
       "periods": [
         "european"
+      ]
+    },
+    {
+      "id": "W-S218",
+      "title": "San Francisco",
+      "slug": "san-francisco-pl",
+      "sortTitle": "San Francisco [pl]",
+      "workType": "Song",
+      "year": 1937,
+      "period": "hollywood",
+      "certainty": "confirmed",
+      "displayOnSite": true,
+      "publicScope": "standalone_page",
+      "contributionIds": [
+        "CON-S218-C-P009",
+        "CON-S218-C-P077",
+        "CON-S218-L-P175",
+        "CON-S218-LAB-ORG132"
+      ],
+      "personIds": [
+        "P009",
+        "P077",
+        "P175"
+      ],
+      "songIds": [
+        "S218"
+      ],
+      "periods": [
+        "hollywood"
+      ],
+      "mediaIds": [
+        "M393"
+      ],
+      "sourceIds": [
+        "SRC0759"
+      ],
+      "organizationIds": [
+        "ORG132"
+      ],
+      "relationIds": [
+        "REL0202"
       ]
     }
   ],

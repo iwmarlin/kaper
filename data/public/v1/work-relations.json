@@ -2819,23 +2819,6 @@
       ]
     },
     {
-      "id": "REL0165",
-      "relationType": "language_version_of",
-      "targetWorkTitle": "San Francisco",
-      "direction": "source_to_target",
-      "publicNote": "“San Francisco, du bist die Stadt für mich” is documented as a language version of “San Francisco”.",
-      "certainty": "confirmed",
-      "sourceWorkIds": [
-        "W-S199"
-      ],
-      "targetWorkIds": [
-        "W-S130"
-      ],
-      "sourceIds": [
-        "SRC0373"
-      ]
-    },
-    {
       "id": "REL0166",
       "relationType": "language_version_of",
       "targetWorkTitle": "San Francisco",
@@ -3467,6 +3450,23 @@
       ],
       "sourceIds": [
         "SRC0146"
+      ]
+    },
+    {
+      "id": "REL0202",
+      "relationType": "language_version_of",
+      "targetWorkTitle": "San Francisco",
+      "direction": "source_to_target",
+      "publicNote": "The Polish version, with words by Emanuel Schlechter, was issued on Syrena Record in 1937.",
+      "certainty": "confirmed",
+      "sourceWorkIds": [
+        "W-S218"
+      ],
+      "targetWorkIds": [
+        "W-S130"
+      ],
+      "sourceIds": [
+        "SRC0759"
       ]
     }
   ]

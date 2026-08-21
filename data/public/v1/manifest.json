@@ -46,10 +46,10 @@
     "legacyAndInternalFields": "excluded by explicit allowlist"
   },
   "counts": {
-    "People": 153,
+    "People": 155,
     "Organizations": 140,
-    "Sources": 683,
-    "Media": 346,
+    "Sources": 686,
+    "Media": 348,
     "Works": 281,
     "Films": 55,
     "Songs": 204,
@@ -58,19 +58,19 @@
     "Work Relations": 193,
     "Timeline Events": 52,
     "Places": 44,
-    "Contributions": 1200,
-    "Person Name Variants": 62
+    "Contributions": 1204,
+    "Person Name Variants": 63
   },
   "files": [
     {
       "file": "build-report.json",
       "bytes": 114990,
-      "sha256": "a0a9ac95d5af10718337da552bcb2da16870908958ea757d4e61193b4ef85d75"
+      "sha256": "cbcfbeed35f7a9c629416badb675ce7c1a7007ae772efa9cae176a701725920c"
     },
     {
       "file": "contributions.json",
-      "bytes": 458494,
-      "sha256": "ddfe652a7f0dbf9ec506e5ec3c062c05df9dcccbfa996d962a06aa61fb0188bb"
+      "bytes": 460872,
+      "sha256": "f3babb8e68163aadb840ec574f7f87e7f29eb694f324a44882f8855eb37a3b46"
     },
     {
       "file": "films.json",
@@ -79,13 +79,13 @@
     },
     {
       "file": "media.json",
-      "bytes": 556217,
-      "sha256": "2bf8158ceb182902ed8c5f891e241298104a9f42a7d115a98aeadd7c2b0936d0"
+      "bytes": 559010,
+      "sha256": "a9c0c59aaf3159a2ca82aa45ba4b7794bef6f26d70553cb84cf55c1cdb034510"
     },
     {
       "file": "organizations.json",
-      "bytes": 97535,
-      "sha256": "f69eb4a00f3c5d3542ee24187f5a43cbc2ae92bc5d42da3d2ec92f34ca91a4ba"
+      "bytes": 97756,
+      "sha256": "09efc15b4a8a678184a6c7fc279694046ece737b72a4affd1eba9199be97ffa0"
     },
     {
       "file": "other-works.json",
@@ -94,13 +94,13 @@
     },
     {
       "file": "people.json",
-      "bytes": 151398,
-      "sha256": "eecdeb7d17ec1e6fb7616cb7bb3aab64c93d8e58c8a87ab22c9d0e6e5774a3d9"
+      "bytes": 152789,
+      "sha256": "0d7bce8b68570af64cc9755e189d60923ef4e1f34c940cc31ce8479e364dbd8f"
     },
     {
       "file": "person-name-variants.json",
-      "bytes": 43112,
-      "sha256": "6d036825fe372e7ae029a546e64ec75fdf7564841255cbc233d610566042e5e6"
+      "bytes": 43583,
+      "sha256": "26dba509fa8134934067e7bdfda7dd0aaa1348c333832018844107feae208757"
     },
     {
       "file": "places.json",
@@ -109,13 +109,13 @@
     },
     {
       "file": "songs.json",
-      "bytes": 131894,
-      "sha256": "57e883d9548933e8ed6f17f0dcab06ffc984f7497d364a2d4d0e84a6216e5010"
+      "bytes": 131699,
+      "sha256": "5d45b1a4208c8965e1d5d3ce52de0f4904a7ade9c1ff2fd53356905851d1165d"
     },
     {
       "file": "sources.json",
-      "bytes": 890036,
-      "sha256": "dfea036878e5436639f9150e93240eb6e0fb626ae06815cd90e95cfcc90a4416"
+      "bytes": 894164,
+      "sha256": "0b3457c7bcff638ec7702d2a3cc41196f7755e1cfead39a9c3f7664ee1f92fae"
     },
     {
       "file": "timeline-events.json",
@@ -124,18 +124,18 @@
     },
     {
       "file": "title-variants.json",
-      "bytes": 30631,
-      "sha256": "aff58a00e78634b68097751da4dcebf1035921ee54776cabd47eaf0a214e16c9"
+      "bytes": 30525,
+      "sha256": "43116d7d2a28f443ce40e7ae4ce28c2e2fd282034858a92a0212d4046ead4818"
     },
     {
       "file": "work-relations.json",
-      "bytes": 90827,
-      "sha256": "2103895d0e743743976e28953656fbd2be67fd2d384dc0bcca8682f0385f2d71"
+      "bytes": 90809,
+      "sha256": "843ff9f69fdbc0d612d84fe7cbf3b5fb033a32db27c72b487564e42f685233eb"
     },
     {
       "file": "works.json",
-      "bytes": 261351,
-      "sha256": "1f6de59358c324210fa62eac9010099eb3f3402ecbcda13ee1d4401a072ea128"
+      "bytes": 261571,
+      "sha256": "d208528f8915957a3e0588a2abfd845cf3ec3f10d7e78fa7082c8d869b2b3a28"
     }
   ]
 }

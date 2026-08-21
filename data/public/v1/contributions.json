@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 1200,
+  "count": 1204,
   "records": [
     {
       "id": "CON-F001-C-P009",
@@ -6479,7 +6479,8 @@
       ],
       "sourceIds": [
         "SRC0204",
-        "SRC0471"
+        "SRC0471",
+        "SRC0758"
       ],
       "nameVariantIds": [
         "PNV0019"
@@ -6499,7 +6500,8 @@
       ],
       "sourceIds": [
         "SRC0204",
-        "SRC0471"
+        "SRC0471",
+        "SRC0758"
       ]
     },
     {
@@ -6516,7 +6518,8 @@
       ],
       "sourceIds": [
         "SRC0204",
-        "SRC0471"
+        "SRC0471",
+        "SRC0758"
       ]
     },
     {
@@ -6533,7 +6536,8 @@
       ],
       "sourceIds": [
         "SRC0204",
-        "SRC0471"
+        "SRC0471",
+        "SRC0758"
       ]
     },
     {
@@ -17793,70 +17797,6 @@
       ]
     },
     {
-      "id": "CON-S199-C-P009",
-      "role": "composer",
-      "nameAsPrinted": "Bronisław Kaper",
-      "sortOrder": 10,
-      "certainty": "confirmed",
-      "workIds": [
-        "W-S199"
-      ],
-      "personIds": [
-        "P009"
-      ],
-      "sourceIds": [
-        "SRC0373"
-      ]
-    },
-    {
-      "id": "CON-S199-C-P077",
-      "role": "composer",
-      "nameAsPrinted": "Walter Jurmann",
-      "sortOrder": 11,
-      "certainty": "confirmed",
-      "workIds": [
-        "W-S199"
-      ],
-      "personIds": [
-        "P077"
-      ],
-      "sourceIds": [
-        "SRC0373"
-      ]
-    },
-    {
-      "id": "CON-S199-L-P020",
-      "role": "lyricist",
-      "nameAsPrinted": "Fritz Rotter",
-      "sortOrder": 1,
-      "certainty": "confirmed",
-      "workIds": [
-        "W-S199"
-      ],
-      "personIds": [
-        "P020"
-      ],
-      "sourceIds": [
-        "SRC0373"
-      ]
-    },
-    {
-      "id": "CON-S199-PUB-ORG035",
-      "role": "publisher",
-      "nameAsPrinted": "Robbins Music Corporation/1936; Francis, Day & Hunter 1.9.1936–31.12.1977; Big 3 Musik (Germany) 1.1.1978; Josef Weinberger, Wien 1.7.1960–31.12.1972",
-      "evidenceContext": "sheet_music",
-      "certainty": "confirmed",
-      "workIds": [
-        "W-S199"
-      ],
-      "organizationIds": [
-        "ORG035"
-      ],
-      "sourceIds": [
-        "SRC0373"
-      ]
-    },
-    {
       "id": "CON-S200-C-P009",
       "role": "composer",
       "nameAsPrinted": "Bronislaw Kaper",
@@ -21241,6 +21181,158 @@
         "SRC0757"
       ],
       "scopeNote": "Issued the dance-band version as Rot-Blau 9713."
+    },
+    {
+      "id": "CON-S018-P-P176",
+      "role": "performer",
+      "nameAsPrinted": "Kurt Mühlhardt",
+      "displayCredit": "Vocal performance",
+      "evidenceContext": "recording_label",
+      "sortOrder": 55,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S018"
+      ],
+      "personIds": [
+        "P176"
+      ],
+      "sourceIds": [
+        "SRC0758"
+      ],
+      "scopeNote": "Sang the waltz on the Kristall disc with Bernard Etté's orchestra."
+    },
+    {
+      "id": "CON-S018-P-ORG121",
+      "role": "performer",
+      "nameAsPrinted": "Bernard Etté und sein Orchester",
+      "displayCredit": "Orchestra",
+      "evidenceContext": "recording_label",
+      "sortOrder": 56,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S018"
+      ],
+      "organizationIds": [
+        "ORG121"
+      ],
+      "sourceIds": [
+        "SRC0758"
+      ],
+      "scopeNote": "Accompanied Kurt Mühlhardt on the Kristall recording of 1930."
+    },
+    {
+      "id": "CON-S018-LAB-ORG129",
+      "role": "record_label",
+      "nameAsPrinted": "Kristall",
+      "displayCredit": "Issuing label",
+      "evidenceContext": "recording_label",
+      "sortOrder": 60,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S018"
+      ],
+      "organizationIds": [
+        "ORG129"
+      ],
+      "sourceIds": [
+        "SRC0758"
+      ],
+      "scopeNote": "Issued the disc."
+    },
+    {
+      "id": "CON-S218-C-P009",
+      "role": "composer",
+      "nameAsPrinted": "Bronisław Kaper",
+      "displayCredit": "Music",
+      "evidenceContext": "recording_label",
+      "sortOrder": 10,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S218"
+      ],
+      "personIds": [
+        "P009"
+      ],
+      "sourceIds": [
+        "SRC0759"
+      ],
+      "scopeNote": "Composed the music, which the Polish version keeps unchanged."
+    },
+    {
+      "id": "CON-S218-C-P077",
+      "role": "composer",
+      "nameAsPrinted": "Walter Jurmann",
+      "displayCredit": "Music",
+      "evidenceContext": "recording_label",
+      "sortOrder": 11,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S218"
+      ],
+      "personIds": [
+        "P077"
+      ],
+      "sourceIds": [
+        "SRC0759"
+      ],
+      "scopeNote": "Composed the music with Kaper."
+    },
+    {
+      "id": "CON-S218-L-P175",
+      "role": "lyricist",
+      "nameAsPrinted": "Emanuel Schlechter",
+      "displayCredit": "Polish words",
+      "evidenceContext": "recording_label",
+      "sortOrder": 20,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S218"
+      ],
+      "personIds": [
+        "P175"
+      ],
+      "sourceIds": [
+        "SRC0759"
+      ],
+      "scopeNote": "Wrote the Polish words for the Syrena Record issue."
+    },
+    {
+      "id": "CON-S218-LAB-ORG132",
+      "role": "record_label",
+      "nameAsPrinted": "Syrena Record",
+      "displayCredit": "Issuing label",
+      "evidenceContext": "recording_label",
+      "sortOrder": 60,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S218"
+      ],
+      "organizationIds": [
+        "ORG132"
+      ],
+      "sourceIds": [
+        "SRC0759"
+      ],
+      "scopeNote": "Issued the Polish version in Warsaw."
+    },
+    {
+      "id": "CON-S047-LAB-ORG138",
+      "role": "record_label",
+      "nameAsPrinted": "Gloria",
+      "displayCredit": "Issuing label",
+      "evidenceContext": "discography",
+      "sortOrder": 60,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S047"
+      ],
+      "organizationIds": [
+        "ORG138"
+      ],
+      "sourceIds": [
+        "SRC0760"
+      ],
+      "scopeNote": "Issued the disc as G.O. 10155."
     }
   ]
 }

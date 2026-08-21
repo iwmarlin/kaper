@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 153,
+  "count": 155,
   "records": [
     {
       "id": "P001",
@@ -731,7 +731,6 @@
         "CON-S196-C-P009",
         "CON-S197-C-P009",
         "CON-S198-C-P009",
-        "CON-S199-C-P009",
         "CON-S200-C-P009",
         "CON-S201-C-P009",
         "CON-S202-C-P009",
@@ -1028,7 +1027,6 @@
         "W-S196",
         "W-S197",
         "W-S198",
-        "W-S199",
         "W-S200",
         "W-S201",
         "W-S202",
@@ -1451,7 +1449,6 @@
         "CON-S183-L-P020",
         "CON-S191-L-P020",
         "CON-S193-C-P020",
-        "CON-S199-L-P020",
         "CON-S205-L-P020",
         "CON-S217-L-P020"
       ],
@@ -1531,7 +1528,6 @@
         "W-S183",
         "W-S191",
         "W-S193",
-        "W-S199",
         "W-S205",
         "W-S217"
       ],
@@ -3353,7 +3349,6 @@
         "CON-S196-C-P077",
         "CON-S197-C-P077",
         "CON-S198-C-P077",
-        "CON-S199-C-P077",
         "CON-S200-C-P077",
         "CON-S201-C-P077",
         "CON-S202-C-P077",
@@ -3559,7 +3554,6 @@
         "W-S196",
         "W-S197",
         "W-S198",
-        "W-S199",
         "W-S200",
         "W-S201",
         "W-S202",
@@ -5961,6 +5955,63 @@
       ],
       "nameVariantIds": [
         "PNV0067"
+      ]
+    },
+    {
+      "id": "P175",
+      "displayName": "Emanuel Schlechter",
+      "authorizedName": "Schlechter, Emanuel",
+      "authorizedNameSource": "BN",
+      "authorityUrl": "BN: https://dbn.bn.org.pl/descriptor-details/a0000002795762\nVIAF: https://viaf.org/viaf/88381066\nGND: https://d-nb.info/gnd/111679516",
+      "sortName": "Schlechter, Emanuel",
+      "slug": "emanuel-schlechter",
+      "birthYear": 1904,
+      "deathYear": 1943,
+      "lifeDatesCertainty": "confirmed",
+      "primaryRole": "lyricist",
+      "roles": [
+        "lyricist",
+        "screenwriter",
+        "satirist"
+      ],
+      "workIds": [
+        "W-S218"
+      ],
+      "contributionIds": [
+        "CON-S218-L-P175"
+      ],
+      "sourceIds": [
+        "SRC0759"
+      ]
+    },
+    {
+      "id": "P176",
+      "displayName": "Kurt Mühlhardt",
+      "authorizedName": "Mühlhardt, Kurt",
+      "authorizedNameSource": "LCNAF",
+      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no2013014106\nGND: https://d-nb.info/gnd/135183472",
+      "sortName": "Mühlhardt, Kurt",
+      "slug": "kurt-muehlhardt",
+      "birthYear": 1903,
+      "deathYear": 1980,
+      "lifeDatesCertainty": "confirmed",
+      "primaryRole": "singer",
+      "roles": [
+        "singer",
+        "refrain singer",
+        "actor"
+      ],
+      "workIds": [
+        "W-S018"
+      ],
+      "contributionIds": [
+        "CON-S018-P-P176"
+      ],
+      "sourceIds": [
+        "SRC0758"
+      ],
+      "nameVariantIds": [
+        "PNV0068"
       ]
     }
   ],
