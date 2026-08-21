@@ -4,8 +4,9 @@
 The archive keeps recordings it cannot rehost as external media records: the
 file stays where it is, the record carries the citation, the rights note and
 the link. Doing that by hand means allocating two identifiers, writing two
-records in the house pattern, linking four tables and remembering to bump the
-`count` header. This script does all of it from a URL and a work identifier.
+records in the house pattern, updating every reciprocal endpoint and
+remembering to bump the `count` header. This script does all of it from a URL
+and a work identifier.
 
     python3 scripts/add_listening_reference.py --url URL --work W-S031
     python3 scripts/add_listening_reference.py --url URL --work W-S031 --person P118
@@ -20,8 +21,7 @@ The batch file is tab-separated, one reference per line, comments with `#`:
 When the upload films the disc label — as the Radiomuseum Hardthausen uploads do
 — pass what the label prints. The record then becomes a discographic source of
 high reliability, because the evidence is the disc and the video only the way to
-it, and --link-contributions attaches it to the work's contributions, which the
-printed credits corroborate:
+it. Link only the individual contributions that the label actually corroborates:
 
     python3 scripts/add_listening_reference.py --url URL --work W-S007 \
         --label Grammophon --catalogue "B 50959" --order-number 22222 --side 2 \
@@ -30,7 +30,8 @@ printed credits corroborate:
         --credit "(Kaper – Rotter)" \
         --publisher-credit "(Verlag: Roehr A.-G., Berlin)" --publisher-org ORG118 \
         --uploader-note "The uploader gives Berlin, 1929 as the recording" \
-        --link-contributions
+        --contribution CON-S007-C-P009 \
+        --contribution CON-S007-L-P020
 
 Transcribe those values from the label itself. Anything only the uploader
 asserts belongs in --uploader-note, so that the citation keeps the two apart.
@@ -49,9 +50,11 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import re
 import subprocess
 import sys
+import tempfile
 import unicodedata
 import urllib.parse
 import urllib.request
@@ -90,12 +93,24 @@ def load(name: str) -> dict:
 
 
 def save(name: str, table: dict) -> None:
+    """Replace one JSON table without exposing a partial file."""
     if "count" in table:
         table["count"] = len(table["records"])
     path = DATA / f"{name}.json"
-    path.write_text(
-        json.dumps(table, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+    text = json.dumps(table, ensure_ascii=False, indent=2) + "\n"
+    descriptor, temporary_name = tempfile.mkstemp(
+        prefix=f".{path.name}.", suffix=".tmp", dir=path.parent
     )
+    temporary = Path(temporary_name)
+    try:
+        with os.fdopen(descriptor, "w", encoding="utf-8") as handle:
+            handle.write(text)
+            handle.flush()
+            os.fsync(handle.fileno())
+        temporary.replace(path)
+    except Exception:
+        temporary.unlink(missing_ok=True)
+        raise
 
 
 def by_id(table: dict) -> dict:
@@ -113,6 +128,35 @@ def next_id(table: dict, prefix: str, width: int) -> str:
 
 def add_link(record: dict, key: str, value: str) -> None:
     record[key] = sorted(set((record.get(key) or []) + [value]))
+
+
+def canonical_external_url(value: str) -> str:
+    """Return a stable URL for duplicate detection and public storage.
+
+    YouTube playlist, radio and timestamp parameters identify a viewing state,
+    not a different recording.  Removing them prevents duplicate Media records
+    such as the same video with and without ``&t=3s``.
+    """
+    parsed = urllib.parse.urlparse(value.strip())
+    host = parsed.netloc.casefold().removeprefix("www.")
+    if host in {"youtube.com", "m.youtube.com", "music.youtube.com"}:
+        video_id = urllib.parse.parse_qs(parsed.query).get("v", [""])[0]
+        if video_id:
+            return f"https://www.youtube.com/watch?v={video_id}"
+    if host == "youtu.be":
+        video_id = parsed.path.strip("/").split("/", 1)[0]
+        if video_id:
+            return f"https://www.youtube.com/watch?v={video_id}"
+    query = urllib.parse.urlencode(
+        [
+            (key, item)
+            for key, item in urllib.parse.parse_qsl(parsed.query, keep_blank_values=True)
+            if not key.casefold().startswith("utm_")
+        ]
+    )
+    return urllib.parse.urlunparse(
+        (parsed.scheme.casefold(), parsed.netloc.casefold(), parsed.path, "", query, "")
+    )
 
 
 # ------------------------------------------------------------------- metadata
@@ -294,6 +338,8 @@ def build_records(
     performer: str | None,
     media_type: str,
     inherit_organizations: bool,
+    source_organization_ids: list[str] | None = None,
+    contribution_ids: list[str] | None = None,
     disc: dict | None = None,
 ) -> tuple[dict, dict]:
     title = meta["title"]
@@ -355,7 +401,8 @@ def build_records(
     if inherit_organizations and work.get("organizationIds"):
         media["organizationIds"] = list(work["organizationIds"])
 
-    medium = "YouTube video" if youtube else f"Online video, {host}"
+    medium_kind = "audio reference" if media_type == "audio" else "video"
+    medium = f"YouTube {medium_kind}" if youtube else f"Online {medium_kind}, {host}"
     citation_tail = (
         f"{medium}, uploaded {human_date(upload)}. Accessed {accessed}."
         if upload
@@ -378,12 +425,20 @@ def build_records(
         "reliability": "low",
         "sourceStatus": "verified",
         "slug": f"{source_id.lower()}-{slugify(host, 20)}-{slugify(title, 50)}",
-        "organizationIds": [YOUTUBE_ORG] if youtube else [],
+        "organizationIds": sorted(
+            set(([YOUTUBE_ORG] if youtube else []) + (source_organization_ids or []))
+        ),
         "mediaIds": [media_id],
+        "workIds": [work["id"]],
         "primaryUrl": url,
     }
+    for subtype_key in ("filmIds", "songIds", "otherWorkIds"):
+        if work.get(subtype_key):
+            source[subtype_key] = list(work[subtype_key])
     if person_id:
         source["personIds"] = [person_id]
+    if contribution_ids:
+        source["contributionIds"] = sorted(set(contribution_ids))
     if disc:
         apply_disc(media, source, disc={**disc, "channel": channel}, work_title=work_title, host=host)
     return media, source
@@ -403,38 +458,84 @@ def register(
     inherit_organizations: bool,
     dry_run: bool,
     disc: dict | None = None,
-    link_contributions: bool = False,
-) -> bool:
-    tables = {name: load(name) for name in ("media", "sources", "works", "songs", "people", "contributions")}
+    contribution_ids: list[str] | None = None,
+    source_organization_ids: list[str] | None = None,
+) -> str:
+    table_names = (
+        "media",
+        "sources",
+        "works",
+        "films",
+        "songs",
+        "other-works",
+        "people",
+        "organizations",
+        "contributions",
+    )
+    tables = {name: load(name) for name in table_names}
     media_table, source_table = tables["media"], tables["sources"]
-    works, people = by_id(tables["works"]), by_id(tables["people"])
+    works = by_id(tables["works"])
+    people = by_id(tables["people"])
+    organizations = by_id(tables["organizations"])
+    contributions = by_id(tables["contributions"])
 
     if work_id not in works:
         print(f"  ! no work {work_id}", file=sys.stderr)
-        return False
+        return "error"
     if person_id and person_id not in people:
         print(f"  ! no person {person_id}", file=sys.stderr)
-        return False
+        return "error"
+    requested_contributions = sorted(set(contribution_ids or []))
+    for contribution_id in requested_contributions:
+        contribution = contributions.get(contribution_id)
+        if not contribution:
+            print(f"  ! no contribution {contribution_id}", file=sys.stderr)
+            return "error"
+        if work_id not in (contribution.get("workIds") or []):
+            print(
+                f"  ! contribution {contribution_id} is not linked to {work_id}",
+                file=sys.stderr,
+            )
+            return "error"
+    requested_organizations = sorted(set(source_organization_ids or []))
+    for organization_id in requested_organizations:
+        if organization_id not in organizations:
+            print(f"  ! no organization {organization_id}", file=sys.stderr)
+            return "error"
+    canonical_url = canonical_external_url(url)
+    parsed_url = urllib.parse.urlparse(canonical_url)
+    if parsed_url.scheme not in {"http", "https"} or not parsed_url.netloc:
+        print(f"  ! invalid external URL: {url}", file=sys.stderr)
+        return "error"
     existing = next(
-        (r for r in media_table["records"] if (r.get("externalUrl") or "") == url), None
+        (
+            record
+            for record in media_table["records"]
+            if record.get("externalUrl")
+            and canonical_external_url(record["externalUrl"]) == canonical_url
+        ),
+        None,
     )
     if existing:
-        print(f"  = already registered as {existing['id']}, nothing to do")
-        return False
+        print(
+            f"  = already registered as {existing['id']} (canonical URL {canonical_url}), "
+            "nothing to do"
+        )
+        return "skipped"
 
     meta = {"title": title or "", "channel": channel or ""}
     if not title or not channel:
-        fetched = youtube_metadata(url)
+        fetched = youtube_metadata(canonical_url)
         meta = {**fetched, **{k: v for k, v in meta.items() if v}}
     if not meta.get("title"):
         print("  ! could not read a title; pass --title and --channel", file=sys.stderr)
-        return False
+        return "error"
 
     work = works[work_id]
     media_id = next_id(media_table, "M", 3)
     source_id = next_id(source_table, "SRC", 4)
     media, source = build_records(
-        url=url,
+        url=canonical_url,
         work=work,
         meta=meta,
         media_id=media_id,
@@ -443,21 +544,29 @@ def register(
         performer=people[person_id]["displayName"] if person_id else None,
         media_type=media_type,
         inherit_organizations=inherit_organizations,
+        source_organization_ids=requested_organizations,
+        contribution_ids=requested_contributions,
         disc=disc,
     )
 
-    contributions = list(work.get("contributionIds") or []) if link_contributions else []
-    if contributions:
-        source["contributionIds"] = sorted(contributions)
+    unknown_source_organizations = sorted(
+        set(source.get("organizationIds") or []) - set(organizations)
+    )
+    if unknown_source_organizations:
+        print(
+            f"  ! source refers to unknown organizations: {', '.join(unknown_source_organizations)}",
+            file=sys.stderr,
+        )
+        return "error"
 
     print(f"  {media_id} ← {meta['title']}")
     print(f"  {source_id}   {source['fullCitation']}")
     print(f"  linked to {work_id} “{work['title']}”"
           + (f", {person_id} “{people[person_id]['displayName']}”" if person_id else "")
-          + (f", contributions {', '.join(contributions)}" if contributions else ""))
+          + (f", contributions {', '.join(requested_contributions)}" if requested_contributions else ""))
     if dry_run:
         print("  (dry run, nothing written)")
-        return False
+        return "dry-run"
 
     media_table["records"].append(media)
     source_table["records"].append(source)
@@ -468,16 +577,26 @@ def register(
     for record in tables["songs"]["records"]:
         if record["id"] in (work.get("songIds") or []):
             add_link(record, "sourceIds", source_id)
+    for table_name, subtype_key in (
+        ("films", "filmIds"),
+        ("other-works", "otherWorkIds"),
+    ):
+        for record in tables[table_name]["records"]:
+            if record["id"] in (work.get(subtype_key) or []):
+                add_link(record, "sourceIds", source_id)
     if person_id:
         for record in tables["people"]["records"]:
             if record["id"] == person_id:
                 add_link(record, "sourceIds", source_id)
+    for record in tables["organizations"]["records"]:
+        if record["id"] in (source.get("organizationIds") or []):
+            add_link(record, "sourceIds", source_id)
     for record in tables["contributions"]["records"]:
-        if record["id"] in contributions:
+        if record["id"] in requested_contributions:
             add_link(record, "sourceIds", source_id)
     for name, table in tables.items():
         save(name, table)
-    return True
+    return "written"
 
 
 def run_pipeline() -> int:
@@ -525,7 +644,24 @@ def main() -> int:
     parser.add_argument("--batch", type=Path, help="tab-separated file of url / work / person")
     parser.add_argument("--title", help="upload title, when it cannot be read automatically")
     parser.add_argument("--channel", help="uploader, when it cannot be read automatically")
-    parser.add_argument("--media-type", default="video", choices=["video", "audio"])
+    parser.add_argument(
+        "--media-type",
+        default="audio",
+        choices=["video", "audio"],
+        help="public media kind; audio is the safe default for listening references",
+    )
+    parser.add_argument(
+        "--contribution",
+        action="append",
+        default=[],
+        help="contribution ID explicitly corroborated by this source; repeat as needed",
+    )
+    parser.add_argument(
+        "--source-organization",
+        action="append",
+        default=[],
+        help="organization directly represented by or responsible for the source; repeat as needed",
+    )
     parser.add_argument("--no-inherit-organizations", action="store_true",
                         help="do not copy the work's organizations onto the media record")
     parser.add_argument("--no-build", action="store_true", help="write records only")
@@ -556,9 +692,11 @@ def main() -> int:
     disc.add_argument("--from-description", action="store_true",
                       help="the label is not shown in the upload and the numbers come from its "
                            "description: reliability drops to medium and the record says so")
-    disc.add_argument("--link-contributions", action="store_true",
-                      help="attach the source to every contribution of the work — use when the label "
-                           "prints the credits, since the disc then corroborates them")
+    disc.add_argument(
+        "--link-contributions",
+        action="store_true",
+        help=argparse.SUPPRESS,
+    )
     args = parser.parse_args()
 
     disc_fields = {
@@ -575,6 +713,16 @@ def main() -> int:
     ) or args.electrical or args.from_description else None
     if disc_details and args.batch:
         parser.error("disc label details describe one disc; give them with --url, not --batch")
+    if args.link_contributions:
+        parser.error(
+            "--link-contributions was removed because it linked unverified credits; "
+            "use one --contribution ID for each credit explicitly supported by the source"
+        )
+    if args.batch and (args.contribution or args.source_organization):
+        parser.error(
+            "--contribution and --source-organization describe one source; "
+            "use them with --url, not --batch"
+        )
 
     if args.batch:
         entries = parse_batch(args.batch)
@@ -584,9 +732,10 @@ def main() -> int:
         parser.error("give either --url and --work, or --batch")
 
     written = 0
+    failures = 0
     for url, work_id, person_id in entries:
         print(f"{url}")
-        if register(
+        outcome = register(
             url=url,
             work_id=work_id,
             person_id=person_id,
@@ -596,14 +745,20 @@ def main() -> int:
             inherit_organizations=not args.no_inherit_organizations,
             dry_run=args.dry_run,
             disc=disc_details,
-            link_contributions=args.link_contributions,
-        ):
+            contribution_ids=args.contribution,
+            source_organization_ids=args.source_organization,
+        )
+        if outcome == "written":
             written += 1
+        elif outcome == "error":
+            failures += 1
 
     print(f"\n{written} reference{'' if written == 1 else 's'} written")
     if written and not args.no_build and not args.dry_run:
-        return run_pipeline()
-    return 0
+        pipeline_status = run_pipeline()
+        if pipeline_status:
+            return pipeline_status
+    return 1 if failures else 0
 
 
 if __name__ == "__main__":

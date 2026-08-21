@@ -276,6 +276,7 @@
       "sourceStatus": "verified_with_attribution_note",
       "slug": "src0007-parlophone-a6766-victor-silvester-1937",
       "organizationIds": [
+        "ORG040",
         "ORG094",
         "ORG128"
       ],
@@ -315,6 +316,7 @@
       "sourceStatus": "verified",
       "slug": "src0008-master-ma137-all-gods-chillun-got-rhythm-1937",
       "organizationIds": [
+        "ORG035",
         "ORG067"
       ],
       "workIds": [
@@ -1372,6 +1374,7 @@
       "sourceStatus": "verified",
       "slug": "src0057-vivons-lamour-vivons-la-vie-1934",
       "organizationIds": [
+        "ORG030",
         "ORG062"
       ],
       "workIds": [
@@ -1413,6 +1416,7 @@
       "sourceStatus": "verified",
       "slug": "src0058-cest-chez-nous-1934",
       "organizationIds": [
+        "ORG030",
         "ORG062"
       ],
       "workIds": [
@@ -1438,6 +1442,9 @@
           "scheme": "ark",
           "value": "ark:/12148/cb43069635m"
         }
+      ],
+      "personIds": [
+        "P051"
       ]
     },
     {
@@ -1455,6 +1462,7 @@
       "sourceStatus": "verified",
       "slug": "src0059-cest-ton-amour-1934",
       "organizationIds": [
+        "ORG030",
         "ORG062"
       ],
       "workIds": [
@@ -1496,6 +1504,7 @@
       "sourceStatus": "verified",
       "slug": "src0060-un-baiser-de-femme-sous-un-ciel-de-feu-1934",
       "organizationIds": [
+        "ORG030",
         "ORG062"
       ],
       "workIds": [
@@ -1521,6 +1530,9 @@
           "scheme": "ark",
           "value": "ark:/12148/cb43070915v"
         }
+      ],
+      "personIds": [
+        "P051"
       ]
     },
     {
@@ -1718,6 +1730,7 @@
       "sourceStatus": "verified",
       "slug": "src0065-parade-de-france-1934",
       "organizationIds": [
+        "ORG030",
         "ORG062"
       ],
       "workIds": [
@@ -1772,7 +1785,10 @@
         "CON-S115-L-P052",
         "CON-S115-PUB-ORG030"
       ],
-      "primaryUrl": "https://catalogue.bnf.fr/ark:/12148/cb43070914h"
+      "primaryUrl": "https://catalogue.bnf.fr/ark:/12148/cb43070914h",
+      "personIds": [
+        "P051"
+      ]
     },
     {
       "id": "SRC0066",
@@ -1948,6 +1964,7 @@
         "P009"
       ],
       "organizationIds": [
+        "ORG047",
         "ORG062"
       ],
       "workIds": [
@@ -2081,6 +2098,7 @@
         "P009"
       ],
       "organizationIds": [
+        "ORG047",
         "ORG062"
       ],
       "workIds": [
@@ -2124,6 +2142,7 @@
         "P009"
       ],
       "organizationIds": [
+        "ORG030",
         "ORG062"
       ],
       "workIds": [
@@ -2173,6 +2192,7 @@
         "P009"
       ],
       "organizationIds": [
+        "ORG030",
         "ORG062"
       ],
       "workIds": [
@@ -2219,6 +2239,7 @@
         "P009"
       ],
       "organizationIds": [
+        "ORG030",
         "ORG062"
       ],
       "workIds": [
@@ -2261,6 +2282,7 @@
         "P009"
       ],
       "organizationIds": [
+        "ORG030",
         "ORG062"
       ],
       "workIds": [
@@ -2310,6 +2332,7 @@
         "P009"
       ],
       "organizationIds": [
+        "ORG030",
         "ORG062"
       ],
       "workIds": [
@@ -2356,7 +2379,8 @@
       "sourceStatus": "verified",
       "slug": "src0079-en-premieres-en-secondes-en-troisiemes-1933",
       "personIds": [
-        "P009"
+        "P009",
+        "P038"
       ],
       "organizationIds": [
         "ORG062"
@@ -2403,7 +2427,8 @@
       "sourceStatus": "verified",
       "slug": "src0080-sport-nur-sport-1933",
       "personIds": [
-        "P009"
+        "P009",
+        "P038"
       ],
       "organizationIds": [
         "ORG062"
@@ -2876,6 +2901,7 @@
       "sourceStatus": "verified",
       "slug": "src0095-mondnacht-in-sanssouci-1931",
       "organizationIds": [
+        "ORG052",
         "ORG064"
       ],
       "workIds": [
@@ -2909,6 +2935,7 @@
       "sourceStatus": "verified",
       "slug": "src0096-es-wird-ein-fruehling-sein-1930",
       "organizationIds": [
+        "ORG049",
         "ORG064"
       ],
       "workIds": [
@@ -3580,6 +3607,7 @@
       "contributionIds": [
         "CON-F002-C-P009",
         "CON-F002-D-P066",
+        "CON-F002-MD-P146",
         "CON-F002-PC-ORG013"
       ],
       "primaryUrl": "https://www.filmportal.de/film/alraune_60e0c76d220a499cb1a222dd286d6b82"
@@ -3618,6 +3646,7 @@
       "contributionIds": [
         "CON-F004-C-P077",
         "CON-F004-D-P044",
+        "CON-F004-MD-P142",
         "CON-F004-PC-ORG006",
         "CON-F004-PC-ORG007"
       ],
@@ -3657,6 +3686,7 @@
         "CON-F012-C-P009",
         "CON-F012-C-P077",
         "CON-F012-D-P048",
+        "CON-F012-MD-P145",
         "CON-F012-PC-ORG011"
       ],
       "primaryUrl": "https://www.filmportal.de/film/ein-toller-einfall_691c6980cb3b4da8951de15c06e418e6"
@@ -3729,9 +3759,13 @@
       "contributionIds": [
         "CON-F006-C-P009",
         "CON-F006-D-P036",
+        "CON-F006-MD-P147",
         "CON-F006-PC-ORG027"
       ],
-      "primaryUrl": "https://www.filmportal.de/film/seitenspruenge_3d4f5e185229498b8dfc155773781934"
+      "primaryUrl": "https://www.filmportal.de/film/seitenspruenge_3d4f5e185229498b8dfc155773781934",
+      "nameVariantIds": [
+        "PNV0048"
+      ]
     },
     {
       "id": "SRC0122",
@@ -3810,9 +3844,12 @@
         "REL0010"
       ],
       "contributionIds": [
+        "CON-F007-A-P149",
         "CON-F007-C-P009",
         "CON-F007-C-P077",
+        "CON-F007-C-P150",
         "CON-F007-D-P057",
+        "CON-F007-MD-P144",
         "CON-F007-PC-ORG010"
       ],
       "primaryUrl": "https://www.filmportal.de/film/die-grosse-attraktion_8726881c6343480397d3d21038d606e2"
@@ -4017,6 +4054,7 @@
         "CON-F017-C-P009",
         "CON-F017-C-P077",
         "CON-F017-D-P027",
+        "CON-F017-MD-P143",
         "CON-F017-PC-ORG014"
       ],
       "primaryUrl": "https://www.filmportal.de/film/madame-wuenscht-keine-kinder_c294a98983e449bb96d62e564e4c2d9a"
@@ -4058,6 +4096,7 @@
         "CON-F020-C-P077",
         "CON-F020-D-P011",
         "CON-F020-D-P027",
+        "CON-F020-MD-P143",
         "CON-F020-PC-ORG008",
         "CON-F020-PC-ORG014"
       ],
@@ -4179,6 +4218,7 @@
         "CON-F023-C-P077",
         "CON-F023-CB-ORG011",
         "CON-F023-D-P044",
+        "CON-F023-MD-P142",
         "CON-F023-PC-ORG003"
       ],
       "primaryUrl": "https://www.filmportal.de/film/ein-lied-fuer-dich_fb19a5449ee44bddb31b4fcd487cc4a2"
@@ -4222,6 +4262,7 @@
         "CON-F025-C-P077",
         "CON-F025-D-P033",
         "CON-F025-D-P044",
+        "CON-F025-MD-P142",
         "CON-F025-PC-ORG003"
       ],
       "primaryUrl": "https://www.filmportal.de/film/tout-pour-lamour_8d402e0cbd0c4739a094c07c493cf371"
@@ -4261,6 +4302,7 @@
         "TV0039"
       ],
       "contributionIds": [
+        "CON-F024-A-P145",
         "CON-F024-C-P009",
         "CON-F024-C-P077",
         "CON-F024-D-P016",
@@ -4304,9 +4346,11 @@
         "F026"
       ],
       "contributionIds": [
+        "CON-F026-A-P154",
         "CON-F026-C-P009",
         "CON-F026-C-P077",
         "CON-F026-D-P066",
+        "CON-F026-MD-P143",
         "CON-F026-PC-ORG015"
       ],
       "primaryUrl": "https://www.filmportal.de/film/abenteuer-am-lido_565fd63b690a4b2e8640630827f4e1c4"
@@ -4503,6 +4547,7 @@
         "CON-F046-C-P009",
         "CON-F046-C-P077",
         "CON-F046-D-P074",
+        "CON-F046-MD-P135",
         "CON-F046-PC-ORG001"
       ],
       "primaryUrl": "https://catalog.afi.com/Film/6823-A-DAY-AT-THE-RACES?cxt=filmography"
@@ -4537,6 +4582,7 @@
       ],
       "contributionIds": [
         "CON-F037-C-P009",
+        "CON-F037-C-P141",
         "CON-F037-D-P023",
         "CON-F037-PC-ORG001"
       ],
@@ -4572,6 +4618,7 @@
       ],
       "contributionIds": [
         "CON-F036-C-P009",
+        "CON-F036-C-P136",
         "CON-F036-D-P074",
         "CON-F036-PC-ORG001"
       ],
@@ -4617,6 +4664,7 @@
         "CON-F043-C-P009",
         "CON-F043-C-P077",
         "CON-F043-D-P076",
+        "CON-F043-MD-P136",
         "CON-F043-PC-ORG001",
         "CON-S130-C-P009",
         "CON-S130-C-P077",
@@ -4655,11 +4703,13 @@
         "F042"
       ],
       "contributionIds": [
+        "CON-F042-AP-P163",
         "CON-F042-C-P009",
         "CON-F042-C-P077",
         "CON-F042-D-P034",
         "CON-F042-PC-ORG002",
-        "CON-F042-AP-P163"
+        "CON-S132-P-P137",
+        "CON-S133-P-P137"
       ],
       "timelineEventIds": [
         "TE0038"
@@ -4741,9 +4791,14 @@
         "CON-F048-C-P009",
         "CON-F048-C-P077",
         "CON-F048-D-P013",
-        "CON-F048-PC-ORG001"
+        "CON-F048-MD-P140",
+        "CON-F048-PC-ORG001",
+        "CON-S157-P-P138"
       ],
-      "primaryUrl": "https://catalog.afi.com/Film/5358-EVERYBODY-SING?cxt=filmography"
+      "primaryUrl": "https://catalog.afi.com/Film/5358-EVERYBODY-SING?cxt=filmography",
+      "nameVariantIds": [
+        "PNV0047"
+      ]
     },
     {
       "id": "SRC0148",
@@ -4776,6 +4831,7 @@
       "contributionIds": [
         "CON-F038-C-P009",
         "CON-F038-C-P077",
+        "CON-F038-C-P140",
         "CON-F038-D-P075",
         "CON-F038-PC-ORG001"
       ],
@@ -4893,7 +4949,10 @@
         "CON-F005-PC-ORG005",
         "CON-F005-PC-ORG006"
       ],
-      "primaryUrl": "https://www.filmportal.de/film/son-altesse-lamour_0f6109f1199d436eac336bc3be7565f0"
+      "primaryUrl": "https://www.filmportal.de/film/son-altesse-lamour_0f6109f1199d436eac336bc3be7565f0",
+      "nameVariantIds": [
+        "PNV0054"
+      ]
     },
     {
       "id": "SRC0152",
@@ -4932,6 +4991,7 @@
         "CON-F011-C-P009",
         "CON-F011-C-P077",
         "CON-F011-D-P022",
+        "CON-F011-MD-P144",
         "CON-F011-PC-ORG028"
       ],
       "primaryUrl": "https://www.filmportal.de/film/melodie-der-liebe_e795f975773f41ef8793b6469f005040"
@@ -4977,9 +5037,13 @@
         "TV0033"
       ],
       "contributionIds": [
+        "CON-F021-A-P153",
         "CON-F021-C-P009",
         "CON-F021-C-P077",
+        "CON-F021-C-P151",
+        "CON-F021-C-P152",
         "CON-F021-D-P048",
+        "CON-F021-MD-P148",
         "CON-F021-PC-ORG022"
       ],
       "primaryUrl": "https://www.filmportal.de/film/heut-kommts-drauf-an_bbf263c8dff247b4af100a0d36c6a9a5"
@@ -4999,6 +5063,7 @@
       "sourceStatus": "verified",
       "slug": "src0154-jazz-drops-1-5-1930-1931",
       "organizationIds": [
+        "ORG054",
         "ORG065"
       ],
       "workIds": [
@@ -5030,6 +5095,7 @@
       "sourceStatus": "verified",
       "slug": "src0155-jazz-tricks-1-5-1932",
       "organizationIds": [
+        "ORG054",
         "ORG065"
       ],
       "workIds": [
@@ -5298,6 +5364,7 @@
         "P077"
       ],
       "organizationIds": [
+        "ORG012",
         "ORG059"
       ],
       "workIds": [
@@ -5369,6 +5436,7 @@
         "P077"
       ],
       "organizationIds": [
+        "ORG020",
         "ORG073"
       ],
       "workIds": [
@@ -5418,6 +5486,7 @@
       ],
       "contributionIds": [
         "CON-F034-C-P009",
+        "CON-F034-C-P136",
         "CON-F034-D-P018",
         "CON-F034-PC-ORG001"
       ],
@@ -5542,9 +5611,11 @@
       "slug": "src0173-imdb-soundtrack-wings-of-the-morning-1937",
       "personIds": [
         "P009",
+        "P029",
         "P077"
       ],
       "organizationIds": [
+        "ORG026",
         "ORG092"
       ],
       "workIds": [
@@ -5627,6 +5698,7 @@
       "contributionIds": [
         "CON-F050-C-P009",
         "CON-F050-C-P077",
+        "CON-F050-C-P135",
         "CON-F050-D-P067",
         "CON-F050-PC-ORG001"
       ],
@@ -6601,6 +6673,9 @@
         "CON-S013-L-P020",
         "CON-S013-PUB-ORG033",
         "CON-S013-PUB-ORG049"
+      ],
+      "organizationIds": [
+        "ORG049"
       ]
     },
     {
@@ -6632,6 +6707,9 @@
       ],
       "nameVariantIds": [
         "PNV0019"
+      ],
+      "personIds": [
+        "P083"
       ]
     },
     {
@@ -6724,6 +6802,9 @@
       ],
       "nameVariantIds": [
         "PNV0036"
+      ],
+      "personIds": [
+        "P083"
       ]
     },
     {
@@ -6904,6 +6985,7 @@
       "sourceStatus": "verified",
       "slug": "src0212-stay-way-from-my-arms-bnf",
       "organizationIds": [
+        "ORG055",
         "ORG067",
         "ORG068"
       ],
@@ -6920,7 +7002,11 @@
         "CON-S037-L-P064",
         "CON-S037-PUB-ORG055"
       ],
-      "primaryUrl": "https://archive.org/details/catalogofcopyrig273libr/mode/2up?q=%22Stay+%27way+from+my+arms%22"
+      "primaryUrl": "https://archive.org/details/catalogofcopyrig273libr/mode/2up?q=%22Stay+%27way+from+my+arms%22",
+      "personIds": [
+        "P061",
+        "P064"
+      ]
     },
     {
       "id": "SRC0213",
@@ -7170,6 +7256,7 @@
         "P077"
       ],
       "organizationIds": [
+        "ORG030",
         "ORG062"
       ],
       "workIds": [
@@ -7409,6 +7496,7 @@
       "sourceStatus": "verified",
       "slug": "src0227-cocktails-stabikat-linked-records-1929-1932",
       "organizationIds": [
+        "ORG054",
         "ORG065"
       ],
       "workIds": [
@@ -7535,6 +7623,7 @@
       "sourceStatus": "verified",
       "slug": "cce-1935-cosi-cosa",
       "organizationIds": [
+        "ORG035",
         "ORG067",
         "ORG068"
       ],
@@ -7582,6 +7671,7 @@
       "sourceStatus": "verified",
       "slug": "cce-1935-theres-something-in-a-big-parade",
       "organizationIds": [
+        "ORG035",
         "ORG067",
         "ORG068"
       ],
@@ -7620,6 +7710,7 @@
       "sourceStatus": "verified",
       "slug": "cce-1935-tillie-the-tight-rope-walker",
       "organizationIds": [
+        "ORG035",
         "ORG067",
         "ORG068"
       ],
@@ -7804,6 +7895,7 @@
       "sourceStatus": "verified",
       "slug": "cce-1936-keep-the-magic-of-maytime",
       "organizationIds": [
+        "ORG035",
         "ORG067",
         "ORG068"
       ],
@@ -7929,6 +8021,7 @@
       "sourceStatus": "verified",
       "slug": "cce-1936-the-one-i-love",
       "organizationIds": [
+        "ORG040",
         "ORG067",
         "ORG068"
       ],
@@ -7964,6 +8057,7 @@
       "sourceStatus": "verified",
       "slug": "cce-1936-san-francisco-unpublished",
       "organizationIds": [
+        "ORG035",
         "ORG067",
         "ORG068"
       ],
@@ -8037,6 +8131,7 @@
       "sourceStatus": "verified",
       "slug": "cce-1936-theres-something-in-a-big-parade-unpublished",
       "organizationIds": [
+        "ORG035",
         "ORG067",
         "ORG068"
       ],
@@ -8072,6 +8167,7 @@
       "sourceStatus": "verified_with_attribution_note",
       "slug": "cce-1936-tillie-the-tight-rope-walker-unpublished",
       "organizationIds": [
+        "ORG035",
         "ORG067",
         "ORG068"
       ],
@@ -8282,6 +8378,7 @@
       "sourceStatus": "verified",
       "slug": "cce-1936-san-francisco-published",
       "organizationIds": [
+        "ORG035",
         "ORG067",
         "ORG068"
       ],
@@ -8320,6 +8417,7 @@
       "sourceStatus": "verified",
       "slug": "cce-1936-beyond-my-fondest-dreams",
       "organizationIds": [
+        "ORG035",
         "ORG067",
         "ORG068"
       ],
@@ -8390,6 +8488,7 @@
       "sourceStatus": "verified_with_attribution_note",
       "slug": "cce-1936-someone-to-care-for-me",
       "organizationIds": [
+        "ORG040",
         "ORG067",
         "ORG068"
       ],
@@ -8428,6 +8527,7 @@
       "sourceStatus": "verified",
       "slug": "cce-1936-blue-venetian-waters",
       "organizationIds": [
+        "ORG035",
         "ORG067",
         "ORG068"
       ],
@@ -8463,6 +8563,7 @@
       "sourceStatus": "verified",
       "slug": "cce-1936-to-morrow-is-another-day",
       "organizationIds": [
+        "ORG035",
         "ORG067",
         "ORG068"
       ],
@@ -8498,6 +8599,7 @@
       "sourceStatus": "verified",
       "slug": "cce-1936-a-message-from-the-man-in-the-moon",
       "organizationIds": [
+        "ORG035",
         "ORG067",
         "ORG068"
       ],
@@ -8533,6 +8635,7 @@
       "sourceStatus": "verified",
       "slug": "cce-1936-my-heart-is-singing",
       "organizationIds": [
+        "ORG040",
         "ORG067",
         "ORG068"
       ],
@@ -8571,6 +8674,7 @@
       "sourceStatus": "verified_with_attribution_note",
       "slug": "cce-1937-all-gods-chillun-got-rhythm-mgm-unpublished",
       "organizationIds": [
+        "ORG035",
         "ORG067",
         "ORG068"
       ],
@@ -8641,6 +8745,7 @@
       "sourceStatus": "verified",
       "slug": "cce-1937-all-gods-chillun-got-rhythm-robbins-unpublished",
       "organizationIds": [
+        "ORG035",
         "ORG067",
         "ORG068"
       ],
@@ -8679,6 +8784,7 @@
       "sourceStatus": "verified",
       "slug": "cce-1937-blue-venetian-waters-robbins-unpublished",
       "organizationIds": [
+        "ORG035",
         "ORG067",
         "ORG068"
       ],
@@ -8717,6 +8823,7 @@
       "sourceStatus": "verified",
       "slug": "cce-1937-a-message-from-the-man-in-the-moon-robbins-unpublished",
       "organizationIds": [
+        "ORG035",
         "ORG067",
         "ORG068"
       ],
@@ -8755,6 +8862,7 @@
       "sourceStatus": "verified",
       "slug": "cce-1937-a-message-from-the-man-in-the-moon-guitar-arrangement",
       "organizationIds": [
+        "ORG035",
         "ORG067",
         "ORG068"
       ],
@@ -8793,6 +8901,7 @@
       "sourceStatus": "verified",
       "slug": "cce-1937-my-heart-is-singing-orchestration",
       "organizationIds": [
+        "ORG040",
         "ORG067",
         "ORG068"
       ],
@@ -9010,6 +9119,7 @@
       "sourceStatus": "verified_with_attribution_note",
       "slug": "cce-1937-melody-farm-revised",
       "organizationIds": [
+        "ORG040",
         "ORG067",
         "ORG068"
       ],
@@ -9112,6 +9222,7 @@
       "sourceStatus": "verified",
       "slug": "cce-1937-the-one-i-love-everybody-sing",
       "organizationIds": [
+        "ORG040",
         "ORG067",
         "ORG068"
       ],
@@ -9169,7 +9280,10 @@
       "nameVariantIds": [
         "PNV0020"
       ],
-      "primaryUrl": "https://archive.org/details/catalogofcopyrig323libr"
+      "primaryUrl": "https://archive.org/details/catalogofcopyrig323libr",
+      "personIds": [
+        "P071"
+      ]
     },
     {
       "id": "SRC0276",
@@ -9186,6 +9300,7 @@
       "sourceStatus": "verified_with_attribution_note",
       "slug": "cce-1937-swing-mister-mendelssohn",
       "organizationIds": [
+        "ORG040",
         "ORG067",
         "ORG068"
       ],
@@ -9221,6 +9336,7 @@
       "sourceStatus": "verified",
       "slug": "cce-1938-melody-farm-published",
       "organizationIds": [
+        "ORG040",
         "ORG067",
         "ORG068"
       ],
@@ -9292,6 +9408,7 @@
       "sourceStatus": "verified",
       "slug": "cce-1938-swing-mister-mendelssohn-published",
       "organizationIds": [
+        "ORG040",
         "ORG067",
         "ORG068"
       ],
@@ -9330,6 +9447,7 @@
       "sourceStatus": "verified_with_attribution_note",
       "slug": "cce-1939-at-night",
       "organizationIds": [
+        "ORG041",
         "ORG067",
         "ORG068"
       ],
@@ -9349,10 +9467,12 @@
       "contributionIds": [
         "CON-F050-C-P009",
         "CON-F050-C-P077",
+        "CON-F050-C-P135",
         "CON-F050-D-P067",
         "CON-F050-PC-ORG001",
         "CON-S176-C-P009",
         "CON-S176-C-P077",
+        "CON-S176-C-P135",
         "CON-S176-PUB-ORG041"
       ],
       "nameVariantIds": [
@@ -9382,6 +9502,7 @@
         "P025"
       ],
       "organizationIds": [
+        "ORG041",
         "ORG067",
         "ORG068"
       ],
@@ -9465,6 +9586,7 @@
         "P077"
       ],
       "organizationIds": [
+        "ORG030",
         "ORG062"
       ],
       "workIds": [
@@ -9510,6 +9632,7 @@
         "P077"
       ],
       "organizationIds": [
+        "ORG030",
         "ORG062"
       ],
       "workIds": [
@@ -9528,7 +9651,8 @@
         "CON-S091-PUB-ORG030"
       ],
       "nameVariantIds": [
-        "PNV0009"
+        "PNV0009",
+        "PNV0056"
       ],
       "primaryUrl": "https://catalogue.bnf.fr/ark:/12148/cb424250618",
       "identifiers": [
@@ -9559,6 +9683,7 @@
         "P077"
       ],
       "organizationIds": [
+        "ORG030",
         "ORG062"
       ],
       "workIds": [
@@ -9852,6 +9977,7 @@
       "sourceStatus": "verified_with_attribution_note",
       "slug": "src0294-gema-work-entry",
       "organizationIds": [
+        "ORG049",
         "ORG086"
       ],
       "workIds": [
@@ -10077,6 +10203,7 @@
         "P132"
       ],
       "organizationIds": [
+        "ORG045",
         "ORG062"
       ],
       "workIds": [
@@ -10164,6 +10291,7 @@
       "sourceStatus": "verified",
       "slug": "src0302-amanda-jurmann-songs-list-1934",
       "organizationIds": [
+        "ORG032",
         "ORG099"
       ],
       "workIds": [
@@ -10407,9 +10535,18 @@
         "S184"
       ],
       "workRelationIds": [
+        "REL0094",
+        "REL0097",
+        "REL0098",
+        "REL0099",
+        "REL0100",
+        "REL0108",
+        "REL0110",
+        "REL0114",
         "REL0119",
         "REL0120",
-        "REL0121"
+        "REL0121",
+        "REL0122"
       ],
       "contributionIds": [
         "CON-F004-C-P077",
@@ -10444,6 +10581,7 @@
         "CON-F039-PC-ORG001",
         "CON-F040-BM-P009",
         "CON-F040-BM-P077",
+        "CON-F040-C-P135",
         "CON-F040-D-P037",
         "CON-F044-C-P009",
         "CON-F044-C-P077",
@@ -10604,7 +10742,10 @@
       "nameVariantIds": [
         "PNV0019"
       ],
-      "primaryUrl": "https://archive.org/details/catalogofcopyrig283libr"
+      "primaryUrl": "https://archive.org/details/catalogofcopyrig283libr",
+      "personIds": [
+        "P012"
+      ]
     },
     {
       "id": "SRC0309",
@@ -10707,6 +10848,7 @@
       "sourceStatus": "verified",
       "slug": "src0311-adieu-english-version-cce-1935",
       "organizationIds": [
+        "ORG035",
         "ORG067",
         "ORG068"
       ],
@@ -10751,6 +10893,7 @@
         "P087"
       ],
       "organizationIds": [
+        "ORG060",
         "ORG067",
         "ORG068"
       ],
@@ -10935,6 +11078,9 @@
       ],
       "personIds": [
         "P139"
+      ],
+      "contributionIds": [
+        "CON-S130-P-P139"
       ]
     },
     {
@@ -10985,6 +11131,9 @@
       ],
       "personIds": [
         "P138"
+      ],
+      "contributionIds": [
+        "CON-S157-P-P138"
       ]
     },
     {
@@ -11710,6 +11859,7 @@
       "sourceStatus": "verified",
       "slug": "src0359-le-plus-petit-baiser-sheet-music",
       "organizationIds": [
+        "ORG045",
         "ORG096",
         "ORG106"
       ],
@@ -12034,8 +12184,12 @@
       "personIds": [
         "P005",
         "P009",
+        "P014",
         "P020",
+        "P029",
+        "P038",
         "P040",
+        "P041",
         "P077",
         "P092",
         "P106",
@@ -12049,6 +12203,14 @@
       ],
       "organizationIds": [
         "ORG001",
+        "ORG012",
+        "ORG020",
+        "ORG026",
+        "ORG030",
+        "ORG035",
+        "ORG047",
+        "ORG049",
+        "ORG061",
         "ORG116"
       ],
       "workIds": [
@@ -12389,6 +12551,7 @@
         "CON-F033-D-P070",
         "CON-F033-PC-ORG001",
         "CON-F034-C-P009",
+        "CON-F034-C-P136",
         "CON-F034-D-P018",
         "CON-F034-PC-ORG001",
         "CON-F035-C-P009",
@@ -12396,6 +12559,7 @@
         "CON-F035-D-P067",
         "CON-F036-C-P009",
         "CON-F036-C-P077",
+        "CON-F036-C-P136",
         "CON-F036-D-P074",
         "CON-F036-PC-ORG001",
         "CON-F037-C-P009",
@@ -12633,6 +12797,7 @@
       "sourceStatus": "verified",
       "slug": "src0376-cce-all-gods-chillun-got-rhythm-1937",
       "organizationIds": [
+        "ORG035",
         "ORG067",
         "ORG068"
       ],
@@ -12674,6 +12839,7 @@
       "sourceStatus": "verified",
       "slug": "src0377-cce-blue-venetian-waters-1937",
       "organizationIds": [
+        "ORG035",
         "ORG067",
         "ORG068"
       ],
@@ -12712,6 +12878,7 @@
       "sourceStatus": "verified",
       "slug": "src0378-cce-to-morrow-is-another-day-1937",
       "organizationIds": [
+        "ORG035",
         "ORG067",
         "ORG068"
       ],
@@ -12813,9 +12980,14 @@
         "CON-F042-C-P009",
         "CON-F042-C-P077",
         "CON-F042-D-P034",
-        "CON-F042-PC-ORG002"
+        "CON-F042-PC-ORG002",
+        "CON-S132-P-P137",
+        "CON-S133-P-P137"
       ],
-      "primaryUrl": "https://bklyn.newspapers.com/image/52928131"
+      "primaryUrl": "https://bklyn.newspapers.com/image/52928131",
+      "nameVariantIds": [
+        "PNV0046"
+      ]
     },
     {
       "id": "SRC0384",
@@ -13803,7 +13975,10 @@
       "mediaIds": [
         "M092"
       ],
-      "primaryUrl": "https://www.warszawa1939.pl/obiekt/noakowskiego-6"
+      "primaryUrl": "https://www.warszawa1939.pl/obiekt/noakowskiego-6",
+      "placeIds": [
+        "PL009"
+      ]
     },
     {
       "id": "SRC0435",
@@ -14400,7 +14575,10 @@
       "nameVariantIds": [
         "PNV0036"
       ],
-      "primaryUrl": "https://archive.org/details/Musikalisch-literarischerMonatsbericht1931/page/n33/mode/2up"
+      "primaryUrl": "https://archive.org/details/Musikalisch-literarischerMonatsbericht1931/page/n33/mode/2up",
+      "personIds": [
+        "P083"
+      ]
     },
     {
       "id": "SRC0462",
@@ -14418,6 +14596,7 @@
       "slug": "src0462-cce-its-for-you-only-you-that-ive-waited-1931",
       "personIds": [
         "P009",
+        "P012",
         "P020",
         "P097"
       ],
@@ -14663,7 +14842,10 @@
       "nameVariantIds": [
         "PNV0019"
       ],
-      "primaryUrl": "https://archive.org/details/catalogofcopyrig253libr"
+      "primaryUrl": "https://archive.org/details/catalogofcopyrig253libr",
+      "personIds": [
+        "P012"
+      ]
     },
     {
       "id": "SRC0469",
@@ -14680,6 +14862,7 @@
       "sourceStatus": "verified",
       "slug": "src0469-cce-1930-es-wird-ein-fruehling-sein",
       "organizationIds": [
+        "ORG049",
         "ORG067",
         "ORG068"
       ],
@@ -14789,7 +14972,10 @@
       "nameVariantIds": [
         "PNV0019"
       ],
-      "primaryUrl": "https://archive.org/details/catalogofcopyrig253libr"
+      "primaryUrl": "https://archive.org/details/catalogofcopyrig253libr",
+      "personIds": [
+        "P083"
+      ]
     },
     {
       "id": "SRC0472",
@@ -14924,6 +15110,7 @@
         "P077"
       ],
       "organizationIds": [
+        "ORG030",
         "ORG085"
       ],
       "workIds": [
@@ -14964,6 +15151,7 @@
         "P077"
       ],
       "organizationIds": [
+        "ORG030",
         "ORG085"
       ],
       "workIds": [
@@ -15034,6 +15222,7 @@
       "sourceStatus": "verified",
       "slug": "src0478-filmportal-ehe-mit-beschraenkter-haftung-1932",
       "organizationIds": [
+        "ORG012",
         "ORG072"
       ],
       "workIds": [
@@ -15122,6 +15311,7 @@
       "contributionIds": [
         "CON-F044-C-P009",
         "CON-F044-C-P077",
+        "CON-F044-C-P141",
         "CON-F044-D-P013",
         "CON-F044-PC-ORG001"
       ],
@@ -15145,6 +15335,7 @@
       "sourceStatus": "verified",
       "slug": "src0481-afi-wings-of-the-morning-1937",
       "organizationIds": [
+        "ORG026",
         "ORG073"
       ],
       "workIds": [
@@ -15157,7 +15348,10 @@
         "CON-F045-D-P029",
         "CON-F045-PC-ORG026"
       ],
-      "primaryUrl": "https://catalog.afi.com/Catalog/moviedetails/2941"
+      "primaryUrl": "https://catalog.afi.com/Catalog/moviedetails/2941",
+      "personIds": [
+        "P029"
+      ]
     },
     {
       "id": "SRC0482",
@@ -15405,7 +15599,10 @@
       "nameVariantIds": [
         "PNV0020"
       ],
-      "primaryUrl": "https://www.abebooks.fr/edition-originale/Partition-San-Francisco-fox-trot-cr%C3%A9%C3%A9-Bouillon/31315786000/bd"
+      "primaryUrl": "https://www.abebooks.fr/edition-originale/Partition-San-Francisco-fox-trot-cr%C3%A9%C3%A9-Bouillon/31315786000/bd",
+      "organizationIds": [
+        "ORG035"
+      ]
     },
     {
       "id": "SRC0490",
@@ -15468,7 +15665,12 @@
         "PL042"
       ],
       "nameVariantIds": [
+        "PNV0001",
+        "PNV0011",
         "PNV0013"
+      ],
+      "contributionIds": [
+        "CON-S001-C-P009"
       ]
     },
     {
@@ -15653,6 +15855,7 @@
         "P009"
       ],
       "organizationIds": [
+        "ORG047",
         "ORG062"
       ],
       "workIds": [
@@ -15697,6 +15900,7 @@
         "P105"
       ],
       "organizationIds": [
+        "ORG047",
         "ORG062"
       ],
       "workIds": [
@@ -15869,6 +16073,7 @@
         "P114"
       ],
       "organizationIds": [
+        "ORG047",
         "ORG062"
       ],
       "workIds": [
@@ -15969,6 +16174,7 @@
         "P115"
       ],
       "organizationIds": [
+        "ORG055",
         "ORG062"
       ],
       "workIds": [
@@ -16012,6 +16218,7 @@
       "sourceStatus": "verified",
       "slug": "src0505-fiesta-bianca-rumba-1932",
       "organizationIds": [
+        "ORG054",
         "ORG065"
       ],
       "workIds": [
@@ -16047,6 +16254,7 @@
       "sourceStatus": "verified",
       "slug": "src0506-pagan-love-song-singin-in-the-rain-1930",
       "organizationIds": [
+        "ORG054",
         "ORG065"
       ],
       "workIds": [
@@ -16082,6 +16290,7 @@
       "sourceStatus": "verified",
       "slug": "src0507-wedding-of-the-painted-doll-1930",
       "organizationIds": [
+        "ORG054",
         "ORG065"
       ],
       "workIds": [
@@ -16187,6 +16396,7 @@
       "sourceStatus": "verified",
       "slug": "src0510-sonny-boy-1929",
       "organizationIds": [
+        "ORG054",
         "ORG065"
       ],
       "workIds": [
@@ -16222,6 +16432,7 @@
       "sourceStatus": "verified",
       "slug": "src0511-sunshine-slow-foxtrot-1929",
       "organizationIds": [
+        "ORG054",
         "ORG065"
       ],
       "workIds": [
@@ -16257,6 +16468,7 @@
       "sourceStatus": "verified",
       "slug": "src0512-miss-annabelle-lee-jazz-1929",
       "organizationIds": [
+        "ORG054",
         "ORG065"
       ],
       "workIds": [
@@ -16292,6 +16504,7 @@
       "sourceStatus": "verified",
       "slug": "src0513-one-step-to-heaven-1929",
       "organizationIds": [
+        "ORG054",
         "ORG065"
       ],
       "workIds": [
@@ -16327,6 +16540,7 @@
       "sourceStatus": "verified",
       "slug": "src0514-raquel-waltz-1929",
       "organizationIds": [
+        "ORG054",
         "ORG065"
       ],
       "workIds": [
@@ -16362,6 +16576,7 @@
       "sourceStatus": "verified",
       "slug": "src0515-get-out-and-get-under-the-moon-1929",
       "organizationIds": [
+        "ORG054",
         "ORG065"
       ],
       "workIds": [
@@ -16583,6 +16798,7 @@
         "P077"
       ],
       "organizationIds": [
+        "ORG030",
         "ORG062"
       ],
       "workIds": [
@@ -16638,6 +16854,7 @@
         "P077"
       ],
       "organizationIds": [
+        "ORG030",
         "ORG062"
       ],
       "workIds": [
@@ -17051,6 +17268,9 @@
           "url": "https://walter-jurmann.com/wp-content/uploads/cover/28wj-cover-On-a_vole_un_homme1934.jpg",
           "role": "source_image"
         }
+      ],
+      "nameVariantIds": [
+        "PNV0041"
       ]
     },
     {
@@ -17163,7 +17383,10 @@
       "personIds": [
         "P090"
       ],
-      "primaryUrl": "https://collections.arolsen-archives.org/en/archive/3-2-1-2_03020102-034-283"
+      "primaryUrl": "https://collections.arolsen-archives.org/en/archive/3-2-1-2_03020102-034-283",
+      "nameVariantIds": [
+        "PNV0062"
+      ]
     },
     {
       "id": "SRC0546",
@@ -17183,7 +17406,9 @@
         "P090"
       ],
       "nameVariantIds": [
-        "PNV0016"
+        "PNV0016",
+        "PNV0061",
+        "PNV0062"
       ],
       "primaryUrl": "https://scriptamusica.lv/index.php/mar/article/download/47/410/1003"
     },
@@ -18172,6 +18397,9 @@
       ],
       "mediaIds": [
         "M245"
+      ],
+      "contributionIds": [
+        "CON-S152-P-P134"
       ]
     },
     {
@@ -18230,7 +18458,10 @@
       "personIds": [
         "P052"
       ],
-      "primaryUrl": "https://data.bnf.fr/fr/ark:/12148/cb11914372q"
+      "primaryUrl": "https://data.bnf.fr/fr/ark:/12148/cb11914372q",
+      "nameVariantIds": [
+        "PNV0042"
+      ]
     },
     {
       "id": "SRC0589",
@@ -18287,7 +18518,10 @@
       "personIds": [
         "P006"
       ],
-      "primaryUrl": "https://fr.wikipedia.org/wiki/Andr%C3%A9_de_Badet"
+      "primaryUrl": "https://fr.wikipedia.org/wiki/Andr%C3%A9_de_Badet",
+      "nameVariantIds": [
+        "PNV0043"
+      ]
     },
     {
       "id": "SRC0592",
@@ -18306,7 +18540,10 @@
       "personIds": [
         "P031"
       ],
-      "primaryUrl": "https://fr.wikipedia.org/wiki/Henri_Varna"
+      "primaryUrl": "https://fr.wikipedia.org/wiki/Henri_Varna",
+      "nameVariantIds": [
+        "PNV0044"
+      ]
     },
     {
       "id": "SRC0593",
@@ -18526,7 +18763,10 @@
       "personIds": [
         "P093"
       ],
-      "primaryUrl": "https://www.encyclopedisque.fr/artiste/14261.html"
+      "primaryUrl": "https://www.encyclopedisque.fr/artiste/14261.html",
+      "nameVariantIds": [
+        "PNV0045"
+      ]
     },
     {
       "id": "SRC0603",
@@ -18702,7 +18942,13 @@
       "personIds": [
         "P147"
       ],
-      "primaryUrl": "https://marclavry.org/biography/"
+      "primaryUrl": "https://marclavry.org/biography/",
+      "contributionIds": [
+        "CON-F006-MD-P147"
+      ],
+      "nameVariantIds": [
+        "PNV0048"
+      ]
     },
     {
       "id": "SRC0611",
@@ -19301,6 +19547,9 @@
       ],
       "mediaIds": [
         "M373"
+      ],
+      "nameVariantIds": [
+        "PNV0058"
       ]
     },
     {
@@ -20307,7 +20556,10 @@
       "organizationIds": [
         "ORG063"
       ],
-      "primaryUrl": "https://polona.pl/item-view/2e9eaee3-afdb-4de2-afa9-19dff553191d?page=2&searchQuery=%22Eliza%20rozenblum%22"
+      "primaryUrl": "https://polona.pl/item-view/2e9eaee3-afdb-4de2-afa9-19dff553191d?page=2&searchQuery=%22Eliza%20rozenblum%22",
+      "nameVariantIds": [
+        "PNV0059"
+      ]
     },
     {
       "id": "SRC0675",
@@ -20328,7 +20580,10 @@
       "organizationIds": [
         "ORG063"
       ],
-      "primaryUrl": "https://polona.pl/item-view/86975f05-c08f-446b-8840-59a653b7ccd4?page=7&searchQuery=%22Eliza%20rozenblum%22"
+      "primaryUrl": "https://polona.pl/item-view/86975f05-c08f-446b-8840-59a653b7ccd4?page=7&searchQuery=%22Eliza%20rozenblum%22",
+      "nameVariantIds": [
+        "PNV0059"
+      ]
     },
     {
       "id": "SRC0676",
@@ -20404,6 +20659,7 @@
       "slug": "src0678-european-film-fund-donor-list-1941-1942",
       "personIds": [
         "P009",
+        "P159",
         "P162"
       ],
       "organizationIds": [
@@ -20627,7 +20883,10 @@
       "slug": "src0686-lcnaf-marylis-guy-pseudonym-of-ermend-bonnal",
       "sourceStatus": "verified",
       "sourceType": "authority_record",
-      "title": "LCNAF — Marylis, Guy, 1880-1944"
+      "title": "LCNAF — Marylis, Guy, 1880-1944",
+      "nameVariantIds": [
+        "PNV0060"
+      ]
     },
     {
       "accessDate": "2026-08-06",
@@ -20726,9 +20985,12 @@
         "P164"
       ],
       "workIds": [
-        "W-F022"
+        "W-F022",
+        "W-S058",
+        "W-S084"
       ],
       "mediaIds": [
+        "M031",
         "M331"
       ],
       "titleVariantIds": [
@@ -20737,6 +20999,13 @@
       "contributionIds": [
         "CON-S058-P-P164",
         "CON-S084-P-P164"
+      ],
+      "filmIds": [
+        "F022"
+      ],
+      "songIds": [
+        "S058",
+        "S084"
       ]
     },
     {
@@ -20805,7 +21074,13 @@
       "mediaIds": [
         "M334"
       ],
-      "primaryUrl": "https://www.youtube.com/watch?v=AE5JcrOluxA"
+      "primaryUrl": "https://www.youtube.com/watch?v=AE5JcrOluxA",
+      "workIds": [
+        "W-S031"
+      ],
+      "songIds": [
+        "S031"
+      ]
     },
     {
       "id": "SRC0694",
@@ -20958,6 +21233,12 @@
       "contributionIds": [
         "CON-S082-P-ORG120",
         "CON-S082-P-P153"
+      ],
+      "workIds": [
+        "W-S082"
+      ],
+      "songIds": [
+        "S082"
       ]
     },
     {
@@ -21073,6 +21354,12 @@
         "CON-S084-P-ORG119",
         "CON-S084-P-P164",
         "CON-S084-CON-P165"
+      ],
+      "workIds": [
+        "W-S084"
+      ],
+      "songIds": [
+        "S084"
       ]
     },
     {
@@ -21105,6 +21392,12 @@
         "CON-S058-P-ORG119",
         "CON-S058-P-P164",
         "CON-S058-CON-P165"
+      ],
+      "workIds": [
+        "W-S058"
+      ],
+      "songIds": [
+        "S058"
       ]
     },
     {
@@ -21244,6 +21537,12 @@
         "CON-S009-P-ORG119",
         "CON-S009-P-P086",
         "CON-S009-PUB-ORG033"
+      ],
+      "workIds": [
+        "W-S009"
+      ],
+      "songIds": [
+        "S009"
       ]
     },
     {
@@ -21358,6 +21657,15 @@
       "personIds": [
         "P165",
         "P166"
+      ],
+      "workIds": [
+        "W-S049"
+      ],
+      "songIds": [
+        "S049"
+      ],
+      "nameVariantIds": [
+        "PNV0063"
       ]
     },
     {
@@ -21414,6 +21722,12 @@
       ],
       "personIds": [
         "P009"
+      ],
+      "workIds": [
+        "W-S043"
+      ],
+      "songIds": [
+        "S043"
       ]
     },
     {
@@ -21446,6 +21760,12 @@
       ],
       "personIds": [
         "P165"
+      ],
+      "workIds": [
+        "W-S070"
+      ],
+      "songIds": [
+        "S070"
       ]
     },
     {
@@ -21472,6 +21792,12 @@
       "date": "1926–1930 [reissued 2000]",
       "contributionIds": [
         "CON-S025-P-ORG125"
+      ],
+      "workIds": [
+        "W-S025"
+      ],
+      "songIds": [
+        "S025"
       ]
     },
     {
@@ -21499,6 +21825,12 @@
       ],
       "contributionIds": [
         "CON-S026-P-P077"
+      ],
+      "workIds": [
+        "W-S026"
+      ],
+      "songIds": [
+        "S026"
       ]
     },
     {
@@ -21535,6 +21867,15 @@
       ],
       "personIds": [
         "P167"
+      ],
+      "workIds": [
+        "W-S024"
+      ],
+      "songIds": [
+        "S024"
+      ],
+      "nameVariantIds": [
+        "PNV0064"
       ]
     },
     {
@@ -21573,6 +21914,12 @@
       "personIds": [
         "P009",
         "P165"
+      ],
+      "workIds": [
+        "W-S042"
+      ],
+      "songIds": [
+        "S042"
       ]
     },
     {
@@ -21605,6 +21952,12 @@
         "CON-S046-LAB-ORG126",
         "CON-S046-P-ORG125",
         "CON-S046-PUB-ORG033"
+      ],
+      "workIds": [
+        "W-S046"
+      ],
+      "songIds": [
+        "S046"
       ]
     },
     {
@@ -21633,6 +21986,12 @@
       "contributionIds": [
         "CON-S064-LAB-ORG127",
         "CON-S064-P-ORG124"
+      ],
+      "workIds": [
+        "W-S064"
+      ],
+      "songIds": [
+        "S064"
       ]
     },
     {
@@ -21655,7 +22014,14 @@
         "ORG128",
         "ORG134"
       ],
-      "primaryUrl": "https://de.wikipedia.org/wiki/Otto_Dobrindt"
+      "primaryUrl": "https://de.wikipedia.org/wiki/Otto_Dobrindt",
+      "contributionIds": [
+        "CON-S024-CON-P167"
+      ],
+      "nameVariantIds": [
+        "PNV0064",
+        "PNV0065"
+      ]
     },
     {
       "id": "SRC0721",
@@ -21856,6 +22222,9 @@
       ],
       "personIds": [
         "P167"
+      ],
+      "songIds": [
+        "S030"
       ]
     },
     {
@@ -21881,7 +22250,10 @@
       "mediaIds": [
         "M366"
       ],
-      "primaryUrl": "https://www.youtube.com/watch?v=Cgd-8y90tM4"
+      "primaryUrl": "https://www.youtube.com/watch?v=Cgd-8y90tM4",
+      "songIds": [
+        "S182"
+      ]
     },
     {
       "id": "SRC0729",
@@ -21906,7 +22278,10 @@
       "mediaIds": [
         "M367"
       ],
-      "primaryUrl": "https://www.youtube.com/watch?v=OAmRSt_CkUA"
+      "primaryUrl": "https://www.youtube.com/watch?v=OAmRSt_CkUA",
+      "songIds": [
+        "S123"
+      ]
     },
     {
       "id": "SRC0730",
@@ -21937,6 +22312,9 @@
       "contributionIds": [
         "CON-S076-LAB-ORG128",
         "CON-S076-P-ORG120"
+      ],
+      "songIds": [
+        "S076"
       ]
     },
     {
@@ -21966,6 +22344,9 @@
       "primaryUrl": "https://www.youtube.com/watch?v=aFMmmCDLKLw",
       "contributionIds": [
         "CON-S054-LAB-ORG126"
+      ],
+      "songIds": [
+        "S054"
       ]
     },
     {
@@ -21991,7 +22372,10 @@
       "mediaIds": [
         "M370"
       ],
-      "primaryUrl": "https://www.youtube.com/watch?v=p_eEayNR-0g"
+      "primaryUrl": "https://www.youtube.com/watch?v=p_eEayNR-0g",
+      "songIds": [
+        "S056"
+      ]
     },
     {
       "id": "SRC0733",
@@ -22016,7 +22400,10 @@
       "mediaIds": [
         "M371"
       ],
-      "primaryUrl": "https://www.youtube.com/watch?v=1EF5w0lugS4"
+      "primaryUrl": "https://www.youtube.com/watch?v=1EF5w0lugS4",
+      "songIds": [
+        "S074"
+      ]
     },
     {
       "id": "SRC0735",
@@ -22047,6 +22434,9 @@
       "contributionIds": [
         "CON-S074-LAB-ORG138",
         "CON-S074-P-ORG121"
+      ],
+      "songIds": [
+        "S074"
       ]
     },
     {
@@ -22086,7 +22476,11 @@
         "CON-S001-CON-P169",
         "CON-S001-LAB-ORG132"
       ],
-      "primaryUrl": "https://www.youtube.com/watch?v=g-DISloEAvU"
+      "primaryUrl": "https://www.youtube.com/watch?v=g-DISloEAvU",
+      "nameVariantIds": [
+        "PNV0001",
+        "PNV0011"
+      ]
     },
     {
       "id": "SRC0737",
@@ -22119,8 +22513,15 @@
         "P169"
       ],
       "contributionIds": [
+        "CON-S002-CON-P169",
         "CON-S002-LAB-ORG132",
         "CON-S002-P-ORG123"
+      ],
+      "songIds": [
+        "S002"
+      ],
+      "nameVariantIds": [
+        "PNV0011"
       ]
     },
     {
@@ -22154,6 +22555,12 @@
       "contributionIds": [
         "CON-S003-CON-P119",
         "CON-S003-LAB-ORG132"
+      ],
+      "songIds": [
+        "S003"
+      ],
+      "nameVariantIds": [
+        "PNV0011"
       ]
     },
     {
@@ -22179,7 +22586,10 @@
       "mediaIds": [
         "M378"
       ],
-      "primaryUrl": "https://www.youtube.com/watch?v=E9Xp6sS4oq0"
+      "primaryUrl": "https://www.youtube.com/watch?v=E9Xp6sS4oq0",
+      "songIds": [
+        "S119"
+      ]
     },
     {
       "id": "SRC0740",
@@ -22204,7 +22614,10 @@
       "mediaIds": [
         "M379"
       ],
-      "primaryUrl": "https://www.youtube.com/watch?v=T-R--xCBo7E"
+      "primaryUrl": "https://www.youtube.com/watch?v=T-R--xCBo7E",
+      "songIds": [
+        "S129"
+      ]
     },
     {
       "id": "SRC0741",
@@ -22641,6 +23054,12 @@
       ],
       "personIds": [
         "P077"
+      ],
+      "workIds": [
+        "W-S034"
+      ],
+      "songIds": [
+        "S034"
       ]
     },
     {
@@ -22681,6 +23100,12 @@
       ],
       "nameVariantIds": [
         "PNV0067"
+      ],
+      "workIds": [
+        "W-S057"
+      ],
+      "songIds": [
+        "S057"
       ]
     },
     {
@@ -22717,6 +23142,12 @@
       ],
       "personIds": [
         "P165"
+      ],
+      "workIds": [
+        "W-S067"
+      ],
+      "songIds": [
+        "S067"
       ]
     },
     {
@@ -22828,6 +23259,12 @@
       ],
       "nameVariantIds": [
         "PNV0068"
+      ],
+      "workIds": [
+        "W-S018"
+      ],
+      "songIds": [
+        "S018"
       ]
     },
     {

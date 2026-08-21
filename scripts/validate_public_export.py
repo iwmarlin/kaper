@@ -187,6 +187,45 @@ MAP_PRECISION_VALUES = {
 WARSAW_1926_EVENT_IDS = {"TE0014", "TE0047"}
 EUROPEAN_1926_EVENT_IDS = {"TE0015", "TE0016", "TE0048"}
 
+# These fields represent the same graph edge from opposite ends.  They are not
+# merely denormalized search helpers: both ends are used independently by the
+# public record views, so a one-sided edge produces different evidence
+# depending on which record the reader opens.
+SYMMETRIC_LINKS = (
+    ("People", "sourceIds", "Sources", "personIds"),
+    ("People", "timelineEventIds", "Timeline Events", "personIds"),
+    ("People", "placeIds", "Places", "personIds"),
+    ("People", "contributionIds", "Contributions", "personIds"),
+    ("People", "nameVariantIds", "Person Name Variants", "personIds"),
+    ("Organizations", "sourceIds", "Sources", "organizationIds"),
+    ("Organizations", "placeIds", "Places", "organizationIds"),
+    ("Organizations", "timelineEventIds", "Timeline Events", "organizationIds"),
+    ("Organizations", "contributionIds", "Contributions", "organizationIds"),
+    ("Sources", "workIds", "Works", "sourceIds"),
+    ("Sources", "mediaIds", "Media", "sourceIds"),
+    ("Sources", "timelineEventIds", "Timeline Events", "sourceIds"),
+    ("Sources", "otherWorkIds", "Other Works", "sourceIds"),
+    ("Sources", "placeIds", "Places", "sourceIds"),
+    ("Sources", "filmIds", "Films", "sourceIds"),
+    ("Sources", "songIds", "Songs", "sourceIds"),
+    ("Sources", "workRelationIds", "Work Relations", "sourceIds"),
+    ("Sources", "titleVariantIds", "Title Variants", "sourceIds"),
+    ("Sources", "contributionIds", "Contributions", "sourceIds"),
+    ("Sources", "nameVariantIds", "Person Name Variants", "sourceIds"),
+    ("Media", "workIds", "Works", "mediaIds"),
+    ("Media", "timelineEventIds", "Timeline Events", "mediaIds"),
+    ("Media", "heroTimelineEventIds", "Timeline Events", "heroMediaIds"),
+    ("Media", "placeIds", "Places", "mediaIds"),
+    ("Works", "timelineEventIds", "Timeline Events", "workIds"),
+    ("Works", "titleVariantIds", "Title Variants", "workIds"),
+    ("Works", "contributionIds", "Contributions", "workIds"),
+    ("Works", "nameVariantIds", "Person Name Variants", "workIds"),
+    ("Films", "workIds", "Works", "filmIds"),
+    ("Songs", "workIds", "Works", "songIds"),
+    ("Other Works", "workIds", "Works", "otherWorkIds"),
+    ("Timeline Events", "placeIds", "Places", "timelineEventIds"),
+)
+
 
 def canonical_periods(values: list[str]) -> list[str]:
     return [period for period in PERIOD_ORDER if period in set(values)]
@@ -363,6 +402,76 @@ class ExportValidator:
             self.errors.append("Manifest table counts do not match exported records")
         if self.report.get("counts") != expected_counts:
             self.errors.append("Build report table counts do not match exported records")
+
+    def _validate_symmetric_links(self) -> None:
+        records_by_table = {
+            table_name: {
+                record["id"]: record
+                for record in payload.get("records", [])
+                if record.get("id")
+            }
+            for table_name, payload in self.payloads.items()
+        }
+
+        def check_direction(
+            source_table: str,
+            source_field: str,
+            target_table: str,
+            target_field: str,
+        ) -> None:
+            source_records = records_by_table.get(source_table, {})
+            target_records = records_by_table.get(target_table, {})
+            for source_id, source in source_records.items():
+                for target_id in source.get(source_field, []) or []:
+                    target = target_records.get(target_id)
+                    # Dangling targets are reported by _validate_schema_and_links.
+                    if target is None:
+                        continue
+                    if source_id not in (target.get(target_field, []) or []):
+                        self.errors.append(
+                            f"Asymmetric relation: {source_table} {source_id}.{source_field} "
+                            f"contains {target_id}, but {target_table} "
+                            f"{target_id}.{target_field} omits {source_id}"
+                        )
+
+        for left_table, left_field, right_table, right_field in SYMMETRIC_LINKS:
+            check_direction(left_table, left_field, right_table, right_field)
+            check_direction(right_table, right_field, left_table, left_field)
+
+        # Work Relations have two directional endpoints but a single inverse
+        # list on Works.  They cannot be expressed as a simple field pair
+        # above: requiring every relation to be both a source and a target
+        # would destroy the direction of the relation.
+        works = records_by_table.get("Works", {})
+        relations = records_by_table.get("Work Relations", {})
+        for relation_id, relation in relations.items():
+            endpoint_ids = set(relation.get("sourceWorkIds", []) or []) | set(
+                relation.get("targetWorkIds", []) or []
+            )
+            for work_id in endpoint_ids:
+                work = works.get(work_id)
+                if work is None:
+                    continue
+                if relation_id not in (work.get("relationIds", []) or []):
+                    self.errors.append(
+                        f"Asymmetric relation: Work Relations {relation_id} references "
+                        f"Works {work_id}, but Works {work_id}.relationIds omits "
+                        f"{relation_id}"
+                    )
+        for work_id, work in works.items():
+            for relation_id in work.get("relationIds", []) or []:
+                relation = relations.get(relation_id)
+                if relation is None:
+                    continue
+                endpoint_ids = set(relation.get("sourceWorkIds", []) or []) | set(
+                    relation.get("targetWorkIds", []) or []
+                )
+                if work_id not in endpoint_ids:
+                    self.errors.append(
+                        f"Asymmetric relation: Works {work_id}.relationIds contains "
+                        f"{relation_id}, but Work Relations {relation_id} has no endpoint "
+                        f"for {work_id}"
+                    )
 
     def _validate_content(self) -> None:
         forbidden_phrases = [
@@ -803,6 +912,7 @@ class ExportValidator:
         self._load_tables()
         self._validate_manifest()
         self._validate_schema_and_links()
+        self._validate_symmetric_links()
         self._validate_content()
         self._validate_scope()
         self._validate_media()
