@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 1185,
+  "count": 1189,
   "records": [
     {
       "id": "CON-F001-C-P009",
@@ -18104,7 +18104,8 @@
         "P009"
       ],
       "sourceIds": [
-        "SRC0373"
+        "SRC0373",
+        "SRC0748"
       ]
     },
     {
@@ -18120,7 +18121,8 @@
         "P077"
       ],
       "sourceIds": [
-        "SRC0373"
+        "SRC0373",
+        "SRC0748"
       ]
     },
     {
@@ -20934,6 +20936,82 @@
         "SRC0746"
       ],
       "scopeNote": "Issued the disc as G.O. 10197, the side marked b."
+    },
+    {
+      "id": "CON-S204-P-P173",
+      "role": "performer",
+      "nameAsPrinted": "Allan Jones",
+      "displayCredit": "Vocal performance",
+      "evidenceContext": "recording_label",
+      "sortOrder": 50,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S204"
+      ],
+      "personIds": [
+        "P173"
+      ],
+      "sourceIds": [
+        "SRC0748"
+      ],
+      "scopeNote": "Sang the song on the Victor disc; the credit is transcribed from the label by the uploader of the transfer, who does not show the disc."
+    },
+    {
+      "id": "CON-S204-LAB-ORG141",
+      "role": "record_label",
+      "nameAsPrinted": "Victor",
+      "displayCredit": "Issuing label",
+      "evidenceContext": "recording_label",
+      "sortOrder": 60,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S204"
+      ],
+      "organizationIds": [
+        "ORG141"
+      ],
+      "sourceIds": [
+        "SRC0748"
+      ],
+      "scopeNote": "Issued the disc as Victor 4381; by 1938 the Victor label was manufactured by RCA."
+    },
+    {
+      "id": "CON-S153-P-P173",
+      "role": "performer",
+      "nameAsPrinted": "Allan Jones",
+      "displayCredit": "Vocal performance",
+      "evidenceContext": "film_song",
+      "sortOrder": 50,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S153"
+      ],
+      "personIds": [
+        "P173"
+      ],
+      "sourceIds": [
+        "SRC0749"
+      ],
+      "scopeNote": "Recorded the song for A Day at the Races; the number was cut from the finished film and survives as an outtake."
+    },
+    {
+      "id": "CON-S185-LAB-ORG142",
+      "role": "record_label",
+      "nameAsPrinted": "Decca",
+      "displayCredit": "Issuing label",
+      "evidenceContext": "discography",
+      "sortOrder": 60,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S185"
+      ],
+      "organizationIds": [
+        "ORG142"
+      ],
+      "sourceIds": [
+        "SRC0750"
+      ],
+      "scopeNote": "Issued the disc as Decca 466 in the American series."
     }
   ]
 }

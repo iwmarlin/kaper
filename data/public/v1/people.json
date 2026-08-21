@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 151,
+  "count": 152,
   "records": [
     {
       "id": "P001",
@@ -5887,6 +5887,36 @@
       ],
       "sourceIds": [
         "SRC0744"
+      ]
+    },
+    {
+      "id": "P173",
+      "displayName": "Allan Jones",
+      "authorizedName": "Jones, Allan",
+      "authorizedNameSource": "LCNAF",
+      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n85151534",
+      "sortName": "Jones, Allan",
+      "slug": "allan-jones",
+      "birthYear": 1907,
+      "deathYear": 1992,
+      "lifeDatesCertainty": "confirmed",
+      "primaryRole": "singer",
+      "roles": [
+        "tenor",
+        "actor",
+        "singer"
+      ],
+      "workIds": [
+        "W-S153",
+        "W-S204"
+      ],
+      "contributionIds": [
+        "CON-S153-P-P173",
+        "CON-S204-P-P173"
+      ],
+      "sourceIds": [
+        "SRC0748",
+        "SRC0749"
       ]
     }
   ],

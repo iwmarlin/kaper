@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 135,
+  "count": 137,
   "records": [
     {
       "id": "ORG001",
@@ -4063,6 +4063,58 @@
       ],
       "contributionIds": [
         "CON-S033-P-ORG140"
+      ]
+    },
+    {
+      "id": "ORG141",
+      "displayName": "RCA Manufacturing Company",
+      "authorizedName": "RCA Manufacturing Company",
+      "types": [
+        "record label",
+        "company"
+      ],
+      "city": [
+        "Camden"
+      ],
+      "country": "United States",
+      "slug": "rca-manufacturing-company",
+      "nameVariants": "Victor; RCA Victor; RCA Manufacturing Co., Inc.",
+      "authorizedNameSource": "LCNAF",
+      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n81120295",
+      "sourceIds": [
+        "SRC0748"
+      ],
+      "workIds": [
+        "W-S204"
+      ],
+      "contributionIds": [
+        "CON-S204-LAB-ORG141"
+      ]
+    },
+    {
+      "id": "ORG142",
+      "displayName": "Decca Records",
+      "authorizedName": "Decca Records (Firm)",
+      "types": [
+        "record label",
+        "company"
+      ],
+      "city": [
+        "New York"
+      ],
+      "country": "United States",
+      "slug": "decca-records",
+      "nameVariants": "Decca Records, Inc.; Decca",
+      "authorizedNameSource": "LCNAF",
+      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n89641558",
+      "sourceIds": [
+        "SRC0750"
+      ],
+      "workIds": [
+        "W-S185"
+      ],
+      "contributionIds": [
+        "CON-S185-LAB-ORG142"
       ]
     }
   ]

@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 673,
+  "count": 676,
   "records": [
     {
       "id": "SRC0001",
@@ -20652,7 +20652,6 @@
       "mediaIds": [
         "M329"
       ],
-      "personIds": [],
       "primaryUrl": "https://www.davidrumsey.com/luna/servlet/detail/RUMSEY~8~1~363901~90131510%3AThe-world-on-Mercator-s-projection-",
       "publication": "Stanford's London Atlas of Universal Geography",
       "reliability": "high",
@@ -20672,7 +20671,6 @@
       "mediaIds": [
         "M330"
       ],
-      "personIds": [],
       "primaryUrl": "",
       "publication": "",
       "reliability": "low",
@@ -22463,6 +22461,100 @@
       ],
       "mediaIds": [
         "M382"
+      ]
+    },
+    {
+      "id": "SRC0748",
+      "shortCitation": "Victor 4381, “Cosi Cosa”",
+      "fullCitation": "Allan Jones, tenor, with orchestra conducted by Nathaniel Shilkret. “Cosi Cosa.” Victor, Katalog-Nr. 4381, side marked B, 1938. The description gives the recording date as 13 January 1938 and identifies the side as the version Jones sang in the MGM film „Everybody Sings“, three years after he introduced the song in „A Night at the Opera“. Discographic detail as given in the uploader's description; the label is not shown in the YouTube upload.",
+      "sourceType": "recording_discographic_source",
+      "title": "Cosi Cosa — Victor 4381",
+      "creator": "Allan Jones, tenor, with orchestra conducted by Nathaniel Shilkret",
+      "repository": "YouTube",
+      "publication": "Victor",
+      "accessDate": "2026-08-21",
+      "reliability": "medium",
+      "sourceStatus": "verified_with_attribution_note",
+      "slug": "src0748-victor-4381-cosi-cosa",
+      "organizationIds": [
+        "ORG093",
+        "ORG141"
+      ],
+      "mediaIds": [
+        "M383"
+      ],
+      "primaryUrl": "https://www.youtube.com/watch?v=tfZbfbB192E",
+      "date": "1938",
+      "contributionIds": [
+        "CON-S204-C-P009",
+        "CON-S204-C-P077",
+        "CON-S204-P-P173",
+        "CON-S204-LAB-ORG141"
+      ],
+      "personIds": [
+        "P173"
+      ]
+    },
+    {
+      "id": "SRC0749",
+      "shortCitation": "“A Message from the Man in the Moon”, MGM outtake sung by Allan Jones, 1937",
+      "fullCitation": "Allan Jones, vocal; orchestra conducted by Georgie Stoll; orchestration by Maurice DePackh. “A Message from the Man in the Moon (from A Day at the Races)”, outtake, 2006 remaster. On That's Entertainment: The Ultimate Soundtrack Anthology of MGM Musicals; phonogram right 1937 Turner Entertainment Co.; distributed by WaterTower Music. The number was recorded for the film but cut before release. Credits as supplied by the rights holder to the distributing channel. Accessed 21 August 2026.",
+      "sourceType": "recording_discographic_source",
+      "title": "A Message from the Man in the Moon — MGM outtake, Allan Jones",
+      "creator": "Allan Jones, vocal; Georgie Stoll, conductor",
+      "repository": "YouTube",
+      "publication": "WaterTower Music",
+      "accessDate": "2026-08-21",
+      "reliability": "medium",
+      "sourceStatus": "verified",
+      "slug": "src0749-mgm-outtake-message-from-the-man-in-the-moon",
+      "organizationIds": [
+        "ORG093"
+      ],
+      "mediaIds": [
+        "M384"
+      ],
+      "primaryUrl": "https://www.youtube.com/watch?v=pBu_5-aoUIU",
+      "date": "1937",
+      "personIds": [
+        "P173"
+      ],
+      "workIds": [
+        "W-S153"
+      ],
+      "songIds": [
+        "S153"
+      ],
+      "contributionIds": [
+        "CON-S153-P-P173"
+      ]
+    },
+    {
+      "id": "SRC0750",
+      "shortCitation": "Decca 466, “Ninon” (Guy Lombardo, 1935)",
+      "fullCitation": "Guy Lombardo. “Ninon.” Decca 466, matrix DLA-144; recorded in Los Angeles on 23 March 1935. The entry credits the song to Kaper and Jurmann with words by Harold Adamson, which identifies it as the English version of the song written for the film Ein Lied für dich. Title list at musiktiteldb.de, compiled by Henry König from discographic and trade sources. Accessed 21 August 2026.",
+      "sourceType": "recording_discographic_source",
+      "title": "Ninon — Decca 466, Guy Lombardo",
+      "creator": "Guy Lombardo",
+      "repository": "musiktiteldb.de",
+      "publication": "Decca",
+      "date": "1935",
+      "accessDate": "2026-08-21",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "slug": "src0750-decca-466-ninon-guy-lombardo",
+      "primaryUrl": "http://musiktiteldb.de/musiktitel/titel_Nichts-Nobles.html",
+      "workIds": [
+        "W-S185"
+      ],
+      "songIds": [
+        "S185"
+      ],
+      "organizationIds": [
+        "ORG142"
+      ],
+      "contributionIds": [
+        "CON-S185-LAB-ORG142"
       ]
     }
   ],
