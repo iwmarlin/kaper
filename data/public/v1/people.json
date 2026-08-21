@@ -402,7 +402,8 @@
         "SRC0658",
         "SRC0689",
         "SRC0709",
-        "SRC0717"
+        "SRC0717",
+        "SRC0737"
       ],
       "timelineEventIds": [
         "TE0001",
@@ -4341,7 +4342,8 @@
       "authorityUrl": "Wikipedia: https://en.wikipedia.org/wiki/Henryk_Gold\nVIAF: https://viaf.org/viaf/166883945\nLCNAF: https://id.loc.gov/authorities/names/n2014038235\nGND: https://d-nb.info/gnd/1078704368\nBnF catalogue: https://catalogue.bnf.fr/ark:/12148/cb13796928z",
       "sourceIds": [
         "SRC0490",
-        "SRC0563"
+        "SRC0563",
+        "SRC0738"
       ],
       "timelineEventIds": [
         "TE0047"
@@ -4350,7 +4352,13 @@
       "deathYear": 1977,
       "lifeDatesCertainty": "confirmed",
       "authorizedName": "Gold, Henry (Composer)",
-      "authorizedNameSource": "LCNAF"
+      "authorizedNameSource": "LCNAF",
+      "contributionIds": [
+        "CON-S003-CON-P119"
+      ],
+      "workIds": [
+        "W-S003"
+      ]
     },
     {
       "id": "P121",
@@ -5788,7 +5796,8 @@
       ],
       "sourceIds": [
         "SRC0001",
-        "SRC0736"
+        "SRC0736",
+        "SRC0737"
       ]
     }
   ],

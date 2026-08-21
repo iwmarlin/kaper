@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 1172,
+  "count": 1174,
   "records": [
     {
       "id": "CON-F001-C-P009",
@@ -19686,7 +19686,8 @@
         "ORG123"
       ],
       "sourceIds": [
-        "SRC0001"
+        "SRC0001",
+        "SRC0737"
       ],
       "scopeNote": "Recorded the song; the ensemble is named on the disc as “Orkiestra teatru „Perskie Oko””."
     },
@@ -19931,7 +19932,8 @@
         "W-S002"
       ],
       "sourceIds": [
-        "SRC0001"
+        "SRC0001",
+        "SRC0737"
       ],
       "scopeNote": "Conducted the Perskie Oko theatre orchestra on Syrena-Grand-Record 17919, the earliest recording of a Kaper song in the archive.",
       "personIds": [
@@ -20390,7 +20392,8 @@
         "ORG132"
       ],
       "sourceIds": [
-        "SRC0001"
+        "SRC0001",
+        "SRC0737"
       ],
       "scopeNote": "Issued the recording; the disc carries the imprint “Syrena-Grand-Record”."
     },
@@ -20678,6 +20681,44 @@
         "SRC0736"
       ],
       "scopeNote": "Issued the recording as no. 17921 with matrix 17921 in 1926."
+    },
+    {
+      "id": "CON-S003-CON-P119",
+      "role": "conductor",
+      "nameAsPrinted": "Henryk Gold",
+      "displayCredit": "Directed the ensemble",
+      "evidenceContext": "online_catalogue",
+      "certainty": "confirmed",
+      "sortOrder": 55,
+      "workIds": [
+        "W-S003"
+      ],
+      "sourceIds": [
+        "SRC0738"
+      ],
+      "scopeNote": "Named in the upload as the leader of the ensemble that recorded the instrumental version for Syrena in 1926.",
+      "personIds": [
+        "P119"
+      ]
+    },
+    {
+      "id": "CON-S003-LAB-ORG132",
+      "role": "record_label",
+      "nameAsPrinted": "Syrena Record",
+      "displayCredit": "Issuing label",
+      "evidenceContext": "online_catalogue",
+      "certainty": "confirmed",
+      "sortOrder": 60,
+      "workIds": [
+        "W-S003"
+      ],
+      "sourceIds": [
+        "SRC0738"
+      ],
+      "scopeNote": "Issued the recording in Warsaw in 1926.",
+      "organizationIds": [
+        "ORG132"
+      ]
     }
   ]
 }
