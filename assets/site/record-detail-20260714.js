@@ -1,4 +1,4 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=1dda46d7e8";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=679f75da7a";
 import {
   certaintyBadge,
   escapeHtml,
@@ -23,7 +23,7 @@ import {
   scopeBadge,
   typeBadge,
   updateMeta,
-} from "./core.js?v=1dda46d7e8";
+} from "./core.js?v=679f75da7a";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 let target = null;
@@ -1060,6 +1060,7 @@ function renderOrganization(organization, data, indexes) {
     badges: (organization.types || []).map(typeBadge).join(""),
     facts: `${fact("Authorized name", organization.authorizedName)}${fact("Type", (organization.types || []).map(humanize))}${fact("City", organization.city)}${fact("Country", organization.country)}${fact("Name variants", organization.nameVariants)}`,
     main: [
+      section("Note", organization.publicNote ? `<p class="lead">${escapeHtml(organization.publicNote)}</p>` : ""),
       section("Works", entityList(works, "work", (item) => [item.year, item.workType].filter(Boolean).join(" · ")), "", works.length),
       section("Timeline", entityList(events, "event", (item) => item.displayDate || item.dateStart), "", events.length),
       section("Sources", sourceList(sources), "", sources.length),
@@ -1092,6 +1093,7 @@ function sourceActions(source) {
 const SOURCE_RESEARCH_NOTE_LABELS = {
   authority_note: "Authority note",
   date_assessment: "Date assessment",
+  discographic_note: "Discographic note",
   evidence_note: "Evidence recorded in this source",
   identity_assessment: "Identity assessment",
   object_context: "Object context",

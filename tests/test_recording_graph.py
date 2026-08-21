@@ -77,6 +77,67 @@ class RecordingGraphTests(unittest.TestCase):
         self.assertEqual(media["rightsStatus"], "external_content_not_rehosted")
         self.assertIn("no local copy is hosted", media["rightsNote"])
 
+    def test_discographic_assessment_is_separate_from_citation(self) -> None:
+        works = json.loads(
+            (ROOT / "data/public/v1/works.json").read_text(encoding="utf-8")
+        )["records"]
+        work = next(record for record in works if record["id"] == "W-S002")
+        _, source = build_records(
+            url="https://www.youtube.com/watch?v=example",
+            work=work,
+            meta={"title": "Test transfer", "channel": "Test archive"},
+            media_id="M999",
+            source_id="SRC9999",
+            person_id=None,
+            performer=None,
+            media_type="audio",
+            inherit_organizations=False,
+            disc={
+                "label": "Test label",
+                "catalogue": "123",
+                "date": "1931",
+                "performer_credit": "Test orchestra",
+                "uploader_note": "The uploader gives Berlin as the recording place",
+                "from_description": True,
+            },
+        )
+
+        self.assertNotIn("uploader", source["fullCitation"].casefold())
+        self.assertEqual(source["researchNoteType"], "discographic_note")
+        self.assertIn("not transcribed from the disc label", source["researchNote"])
+        self.assertIn("label is not shown", source["researchNote"])
+
+    def test_record_labels_and_recording_notes_use_canonical_fields(self) -> None:
+        organizations = json.loads(
+            (ROOT / "data/public/v1/organizations.json").read_text(encoding="utf-8")
+        )["records"]
+        sources = json.loads(
+            (ROOT / "data/public/v1/sources.json").read_text(encoding="utf-8")
+        )["records"]
+        organizations_by_id = {record["id"]: record for record in organizations}
+        sources_by_id = {record["id"]: record for record in sources}
+
+        self.assertFalse(any(
+            "record label" in (record.get("types") or [])
+            for record in organizations
+        ))
+        for organization_id in ("ORG133", "ORG136", "ORG138"):
+            organization = organizations_by_id[organization_id]
+            self.assertTrue(organization.get("publicNote"))
+            self.assertNotRegex(
+                organization.get("nameVariants", ""),
+                r"\b(?:The record business|The company|Described by)\b",
+            )
+
+        for source_id in ("SRC0694", "SRC0698", "SRC0753", "SRC0754"):
+            source = sources_by_id[source_id]
+            self.assertTrue(source.get("researchNote"))
+            self.assertTrue(source.get("researchNoteType"))
+        self.assertNotIn("zusamm'?.", sources_by_id["SRC0753"]["fullCitation"])
+
+        for source_id in ("SRC0693", "SRC0698", "SRC0715", "SRC0726", "SRC0761"):
+            self.assertTrue(sources_by_id[source_id].get("date"))
+
     def test_validator_rejects_fair_use_status_for_external_recording(self) -> None:
         validator = object.__new__(ExportValidator)
         validator.errors = []

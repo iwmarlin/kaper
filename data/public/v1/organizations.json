@@ -479,7 +479,8 @@
       ],
       "country": "Austria / Czechoslovakia",
       "slug": "pan-film-kg",
-      "nameVariants": "Pan-Film KG (Wien + Prag); Pan-Film A.G. (Wien VII., Neubaugasse 64 — probable affiliated/parent Viennese entity, HR B 13/140, 1922–1940)",
+      "nameVariants": "Pan-Film KG; Pan-Film A.G.",
+      "publicNote": "Pan-Film A.G., registered at Neubaugasse 64 in Vienna under HR B 13/140 (1922–1940), was probably affiliated with or the parent entity of Pan-Film KG, which operated in Vienna and Prague; the exact corporate relationship remains unconfirmed.",
       "sourceIds": [
         "SRC0135",
         "SRC0136"
@@ -3698,7 +3699,8 @@
       ],
       "country": "Germany",
       "slug": "electrola-gesellschaft",
-      "nameVariants": "Electrola; Electrola-Gesellschaft m.b.H.; E.G. record series; from 1972 EMI Electrola",
+      "nameVariants": "Electrola; Electrola-Gesellschaft m.b.H.; EMI Electrola",
+      "publicNote": "The company adopted the name EMI Electrola in 1972. E.G. is a record-series designation rather than an organization name.",
       "authorizedNameSource": "GND",
       "sourceIds": [
         "SRC0005",
@@ -3937,7 +3939,8 @@
       ],
       "country": "France",
       "slug": "pathe",
-      "nameVariants": "Pathé; Pathé disques. The record business of Pathé passed to Columbia Graphophone in 1928 and became Pathé-Marconi in 1936, so the 1934 imprint is not the same body as Pathé Frères, which holds the authority record",
+      "nameVariants": "Pathé; Pathé disques",
+      "publicNote": "Pathé's record business passed to Columbia Graphophone in 1928 and became Pathé-Marconi in 1936. The 1934 record imprint represented here is therefore distinguished from the earlier Pathé Frères authority entity.",
       "authorizedNameSource": "local heading",
       "sourceIds": [
         "SRC0705"
@@ -4040,7 +4043,8 @@
       "country": "Germany",
       "slug": "derby",
       "authorizedNameSource": "local heading",
-      "nameVariants": "Derby; Derby, nur für Deutschland. The company behind the imprint is not read from the label here",
+      "nameVariants": "Derby; Derby, nur für Deutschland",
+      "publicNote": "The company responsible for this Derby imprint has not been identified from the consulted label evidence.",
       "sourceIds": [
         "SRC0724"
       ],
@@ -4064,7 +4068,8 @@
       "country": "Germany",
       "slug": "gloria",
       "authorizedNameSource": "local heading",
-      "nameVariants": "Gloria; Gloria-Schallplatte. Described by the uploader as carrying Lindström recordings for the German market",
+      "nameVariants": "Gloria; Gloria-Schallplatte",
+      "publicNote": "The linked recording description identifies Gloria as the German-market imprint used for this Lindström recording.",
       "sourceIds": [
         "SRC0735",
         "SRC0746",
@@ -4137,7 +4142,7 @@
       "displayName": "RCA Manufacturing Company",
       "authorizedName": "RCA Manufacturing Company",
       "types": [
-        "record label",
+        "record_label",
         "company"
       ],
       "city": [
@@ -4163,7 +4168,7 @@
       "displayName": "Decca Records",
       "authorizedName": "Decca Records (Firm)",
       "types": [
-        "record label",
+        "record_label",
         "company"
       ],
       "city": [
@@ -4241,7 +4246,7 @@
       "displayName": "Rot-Blau",
       "authorizedName": "Rot-Blau (Schallplattenmarke)",
       "types": [
-        "record label"
+        "record_label"
       ],
       "city": [
         "Berlin"

@@ -33,7 +33,7 @@ def is_empty(value: Any) -> bool:
 PUBLIC_NARRATIVE_FIELDS = {
     "People": ("publicNote", "biography"),
     "Organizations": ("publicNote", "description"),
-    "Sources": ("shortCitation", "fullCitation"),
+    "Sources": ("shortCitation", "fullCitation", "researchNote"),
     "Media": ("description", "publicCaption", "publicCreditLine", "rightsNote"),
     "Works": ("publicNote",),
     "Films": ("publicNote", "attributionNote"),
@@ -108,6 +108,16 @@ SOURCE_PUBLIC_IDENTIFIER_PATTERN = re.compile(
     r"F\d{3}|S\d{3}|O\d{3}|P\d{3}|ORG\d{3}|TV\d{4}|PNV\d{4}|CON-[A-Z0-9-]+)"
     r"(?![A-Za-z0-9-])"
 )
+
+SOURCE_RESEARCH_NOTE_TYPES = {
+    "authority_note",
+    "date_assessment",
+    "discographic_note",
+    "evidence_note",
+    "identity_assessment",
+    "object_context",
+    "verification_note",
+}
 
 SOURCE_PUBLIC_WORKFLOW_PATTERN = re.compile(
     r"(?:"
@@ -540,6 +550,20 @@ class ExportValidator:
 
         for source in self.payloads.get("Sources", {}).get("records", []):
             source_id = source["id"]
+            research_note = str(source.get("researchNote", "")).strip()
+            research_note_type = str(source.get("researchNoteType", "")).strip()
+            if bool(research_note) != bool(research_note_type):
+                self.errors.append(
+                    f"Source {source_id}: researchNote and researchNoteType must be supplied together"
+                )
+            if (
+                research_note_type
+                and research_note_type not in SOURCE_RESEARCH_NOTE_TYPES
+            ):
+                self.errors.append(
+                    f"Source {source_id}: unsupported researchNoteType "
+                    f"{research_note_type!r}"
+                )
             is_image_source = bool(
                 image_media_ids.intersection(source.get("mediaIds", []))
             )
@@ -641,6 +665,25 @@ class ExportValidator:
                             f"Source {source_id}: identifiers contain duplicates"
                         )
                     seen_identifiers.add(key)
+
+        for organization in self.payloads.get("Organizations", {}).get("records", []):
+            organization_id = organization["id"]
+            organization_types = organization.get("types", []) or []
+            if "record label" in organization_types:
+                self.errors.append(
+                    f"Organization {organization_id}: use canonical type 'record_label', "
+                    "not 'record label'"
+                )
+            name_variants = str(organization.get("nameVariants", ""))
+            if re.search(
+                r"\b(?:the company|the record business|described by|according to|"
+                r"probable affiliated|record series|from \d{4}|became|passed to)\b",
+                name_variants,
+                flags=re.IGNORECASE,
+            ):
+                self.errors.append(
+                    f"Organization {organization_id}: nameVariants contains narrative text"
+                )
 
     def _validate_scope(self) -> None:
         end_year = self.config["scope"]["endYear"]

@@ -261,19 +261,28 @@ def apply_disc(media: dict, source: dict, *, disc: dict, work_title: str, host: 
             numbers,
         ) if part
     )
-    sentences = [
+    citation_sentences = [
         f"{performer}." if performer else "",
         f"“{disc_title}.”",
         f"{disc['genre']};" if disc.get("genre") else "",
         f"label credit{'s' if ' and ' in printed else ''} {printed}." if printed else "",
         f"{physical}, {disc['date'] if re.fullmatch(r'[0-9]{4}', str(disc.get('date') or '')) else 'n.d.'}.",
-        f"{disc['uploader_note']}." if disc.get("uploader_note") else "",
-        (f"Discographic detail as given in the uploader's description; the label is not shown in the "
-         f"{host} upload." if from_description else
-         f"Shellac disc from the Schallarchiv of the {RADIOMUSEUM_CHANNEL}, its label filmed in the "
-         f"{host} upload." if repository == RADIOMUSEUM_REPOSITORY else
-         f"Disc held by {repository}, its label filmed in the {host} upload."),
+        (f"Digital transfer published on {host} by {disc.get('channel')}."
+         if disc.get("channel") else f"Digital transfer published on {host}."),
+        f"Accessed {human_date(source['accessDate'])}.",
     ]
+    research_notes = []
+    if disc.get("uploader_note"):
+        statement = str(disc["uploader_note"]).strip().rstrip(".")
+        research_notes.append(
+            "Uploader-supplied information, not transcribed from the disc label: "
+            f"{statement}."
+        )
+    if from_description:
+        research_notes.append(
+            "The discographic details are taken from the uploader's description; "
+            "the label is not shown in the external recording."
+        )
     catalogued = f"{label} {catalogue}".strip()
     separator = " / " if catalogue else ", "
     reference = separator.join(
@@ -281,7 +290,10 @@ def apply_disc(media: dict, source: dict, *, disc: dict, work_title: str, host: 
     )
 
     source["shortCitation"] = f"{reference}, “{disc_title}”"
-    source["fullCitation"] = " ".join(part for part in sentences if part)
+    source["fullCitation"] = " ".join(part for part in citation_sentences if part)
+    if research_notes:
+        source["researchNote"] = " ".join(research_notes)
+        source["researchNoteType"] = "discographic_note"
     source["sourceType"] = "recording_discographic_source"
     source["title"] = f"{disc_title} — {catalogued}"
     source["creator"] = performer or source.get("creator", "")

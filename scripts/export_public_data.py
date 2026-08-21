@@ -142,6 +142,7 @@ SOURCE_URL_TRAILING_PUNCTUATION = ".,;:)]}"
 SOURCE_RESEARCH_NOTE_TYPES = {
     "authority_note",
     "date_assessment",
+    "discographic_note",
     "evidence_note",
     "identity_assessment",
     "object_context",
