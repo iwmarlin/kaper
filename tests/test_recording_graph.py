@@ -73,6 +73,38 @@ class RecordingGraphTests(unittest.TestCase):
         self.assertEqual(source["personIds"], ["P009"])
         self.assertEqual(source["contributionIds"], ["CON-S002-C-P009"])
         self.assertEqual(source["organizationIds"], ["ORG034", "ORG093"])
+        self.assertEqual(media["mediaType"], "audio")
+        self.assertEqual(media["rightsStatus"], "external_content_not_rehosted")
+        self.assertIn("no local copy is hosted", media["rightsNote"])
+
+    def test_validator_rejects_fair_use_status_for_external_recording(self) -> None:
+        validator = object.__new__(ExportValidator)
+        validator.errors = []
+        validator.warnings = []
+        validator.assets_root = None
+        validator.config = {"mediaExceptions": {}}
+        validator.payloads = {
+            "Media": {
+                "records": [{
+                    "id": "MTEST",
+                    "mediaType": "audio",
+                    "storageType": "external",
+                    "galleryStatus": "external_link_only",
+                    "externalUrl": "https://example.org/recording",
+                    "sourceIds": ["SRCTEST"],
+                    "rightsStatus": "permission_needed_or_fair_use_claimed",
+                    "rightsNote": "Reuse rights are not cleared.",
+                    "publicCreditLine": "External recording.",
+                }]
+            }
+        }
+
+        validator._validate_media()
+
+        self.assertTrue(any(
+            "external audio/video must use rightsStatus external_content_not_rehosted" in error
+            for error in validator.errors
+        ))
 
     def test_validator_rejects_one_sided_links(self) -> None:
         validator = object.__new__(ExportValidator)

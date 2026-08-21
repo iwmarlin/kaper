@@ -855,6 +855,37 @@ class ExportValidator:
                     )
             if media.get("storageType") == "local" and not media.get("assetPath"):
                 self.errors.append(f"Media {media_id}: local record has no asset path")
+            is_external_av = (
+                media.get("storageType") == "external"
+                and media.get("mediaType") in {"audio", "video"}
+            )
+            if is_external_av:
+                if media.get("rightsStatus") != "external_content_not_rehosted":
+                    self.errors.append(
+                        f"Media {media_id}: external audio/video must use "
+                        "rightsStatus external_content_not_rehosted"
+                    )
+                rights_note = str(media.get("rightsNote", "")).casefold()
+                if "no local copy is hosted" not in rights_note:
+                    self.errors.append(
+                        f"Media {media_id}: external audio/video rights note must "
+                        "state that no local copy is hosted"
+                    )
+                if media.get("mediaType") == "audio":
+                    public_text = " ".join(
+                        str(media.get(key, ""))
+                        for key in ("title", "description", "publicCaption", "altText")
+                    )
+                    if re.search(r"film[- ]excerpt|opening excerpt|complete film", public_text, re.I):
+                        self.errors.append(
+                            f"Media {media_id}: an external film excerpt or complete film "
+                            "cannot be classified as audio"
+                        )
+            elif media.get("rightsStatus") == "external_content_not_rehosted":
+                self.errors.append(
+                    f"Media {media_id}: external_content_not_rehosted is reserved "
+                    "for externally hosted audio/video"
+                )
             if media.get("rightsStatus") == "permission_needed_or_fair_use_claimed":
                 required = ["rightsNote", "publicCreditLine"]
                 if media_id not in exceptions:

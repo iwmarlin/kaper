@@ -69,10 +69,10 @@ RADIOMUSEUM_CHANNEL = "Radiomuseum Hardthausen"
 RADIOMUSEUM_REPOSITORY = "Radiomuseum Hardthausen / Schallarchiv"
 USER_AGENT = "Mozilla/5.0 (compatible; kaper-archive/1.0)"
 
-RIGHTS_STATUS = "permission_needed_or_fair_use_claimed"
+RIGHTS_STATUS = "external_content_not_rehosted"
 RIGHTS_NOTE = (
-    "External media is linked for scholarly reference and is not rehosted; "
-    "reuse rights are not cleared."
+    "External content remains on the provider's website; no local copy is hosted. "
+    "Copyright and access conditions are governed by the provider."
 )
 
 BUILD_STEPS = [

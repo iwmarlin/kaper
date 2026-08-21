@@ -1157,6 +1157,15 @@ class PublicExporter:
     def _normalize_media_public_text(self) -> None:
         """Project editorial Media notes into concise public-facing prose."""
         for media in self.output_records["Media"]:
+            if (
+                media.get("storageType") == "external"
+                and media.get("mediaType") in {"audio", "video"}
+            ):
+                media["rightsStatus"] = "external_content_not_rehosted"
+                media["rightsNote"] = (
+                    "External content remains on the provider's website; no local copy "
+                    "is hosted. Copyright and access conditions are governed by the provider."
+                )
             description = str(media.get("description", ""))
             caption = str(media.get("publicCaption", ""))
             if description and MEDIA_DESCRIPTION_WORKFLOW_PATTERN.search(description):
@@ -1909,6 +1918,37 @@ class PublicExporter:
                     self.errors.append(f"Media {media_id}: external link card contains embedUrl")
             if media.get("storageType") == "local" and not media.get("assetPath"):
                 self.errors.append(f"Media {media_id}: local media has no assetPath")
+            is_external_av = (
+                media.get("storageType") == "external"
+                and media.get("mediaType") in {"audio", "video"}
+            )
+            if is_external_av:
+                if media.get("rightsStatus") != "external_content_not_rehosted":
+                    self.errors.append(
+                        f"Media {media_id}: external audio/video must use "
+                        "rightsStatus external_content_not_rehosted"
+                    )
+                rights_note = str(media.get("rightsNote", "")).casefold()
+                if "no local copy is hosted" not in rights_note:
+                    self.errors.append(
+                        f"Media {media_id}: external audio/video rights note must state "
+                        "that no local copy is hosted"
+                    )
+                if media.get("mediaType") == "audio":
+                    public_text = " ".join(
+                        str(media.get(key, ""))
+                        for key in ("title", "description", "publicCaption", "altText")
+                    )
+                    if re.search(r"film[- ]excerpt|opening excerpt|complete film", public_text, re.I):
+                        self.errors.append(
+                            f"Media {media_id}: an external film excerpt or complete film "
+                            "cannot be classified as audio"
+                        )
+            elif media.get("rightsStatus") == "external_content_not_rehosted":
+                self.errors.append(
+                    f"Media {media_id}: external_content_not_rehosted is reserved "
+                    "for externally hosted audio/video"
+                )
             if media.get("rightsStatus") == "permission_needed_or_fair_use_claimed":
                 source_optional = media_id in set(
                     self.config.get("mediaExceptions", {}).get(

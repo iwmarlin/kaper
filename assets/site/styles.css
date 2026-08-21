@@ -829,6 +829,12 @@ main {
   color: var(--ink-soft);
 }
 
+.badge--external_content_not_rehosted {
+  border-color: rgba(72, 96, 103, 0.34);
+  background: rgba(72, 96, 103, 0.07);
+  color: var(--ink-soft);
+}
+
 .badge--period {
   border-color: rgba(183, 139, 69, 0.4);
   background: rgba(183, 139, 69, 0.1);

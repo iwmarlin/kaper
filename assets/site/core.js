@@ -158,6 +158,7 @@ const RIGHTS_LABELS = Object.freeze({
   public_domain: "Public domain",
   permission_granted: "Permission granted",
   permission_needed_or_fair_use_claimed: "Fair use / permission",
+  external_content_not_rehosted: "External content · not hosted",
   copyright_undetermined: "Copyright undetermined",
   restricted: "Restricted use",
 });
@@ -493,9 +494,15 @@ export function mediaPreview(media, { eager = false, sizes } = {}) {
     return responsiveImage(media.assetPath, media.altText || media.title, { eager, sizes });
   }
   const external = safeExternalUrl(media.externalUrl);
-  const label = `Open external ${humanize(media.mediaType || "media").toLowerCase()}`;
+  const label = externalMediaActionLabel(media);
   if (external) {
     return `<a class="media-preview media-preview--external" href="${escapeHtml(external)}" target="_blank" rel="noreferrer" aria-label="${escapeHtml(label)}: ${title}"><span aria-hidden="true">↗</span><span>${escapeHtml(label)}</span></a>`;
   }
   return `<div class="media-preview media-preview--external media-preview--unavailable"><span aria-hidden="true">—</span><span>External reference unavailable</span></div>`;
+}
+
+export function externalMediaActionLabel(media) {
+  if (media?.mediaType === "audio") return "Listen to recording";
+  if (media?.mediaType === "video") return "Watch video";
+  return "Open external media";
 }

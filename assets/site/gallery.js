@@ -1,7 +1,8 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=d0a3af33db";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=1dda46d7e8";
 import {
   debounce,
   escapeHtml,
+  externalMediaActionLabel,
   humanize,
   indexById,
   loadTables,
@@ -23,7 +24,7 @@ import {
   resolveIds,
   safeExternalUrl,
   typeBadge,
-} from "./core.js?v=d0a3af33db";
+} from "./core.js?v=1dda46d7e8";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 mountSiteChrome("media");
@@ -172,7 +173,7 @@ try {
             <div class="card__footer"><span>${escapeHtml(humanize(item.category || item.mediaType))}</span><span>${escapeHtml(item.id)}</span></div>
             <div class="media-card__actions">
               <a href="${recordUrl("media", item.id)}">${isGallery ? `Open gallery (${item.assetPaths.length})` : "View record"} <span aria-hidden="true">→</span></a>
-              ${external ? `<a href="${escapeHtml(external)}" target="_blank" rel="noreferrer">Open external media <span aria-hidden="true">↗</span></a>` : ""}
+              ${external ? `<a href="${escapeHtml(external)}" target="_blank" rel="noreferrer">${escapeHtml(externalMediaActionLabel(item))} <span aria-hidden="true">↗</span></a>` : ""}
             </div>
           </div>
         </article>`;
