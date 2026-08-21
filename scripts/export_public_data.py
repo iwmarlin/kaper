@@ -184,6 +184,24 @@ def comparable_source_url(value: str) -> str:
     )
 
 
+def comparable_external_media_url(value: str) -> str:
+    """Normalize provider URLs without conflating distinct media objects."""
+    try:
+        parsed = urlparse(value.strip())
+    except ValueError:
+        return value.strip()
+    host = parsed.netloc.casefold().removeprefix("www.")
+    if host in {"youtube.com", "m.youtube.com", "music.youtube.com"}:
+        video_id = dict(parse_qsl(parsed.query, keep_blank_values=True)).get("v", "")
+        if video_id:
+            return f"https://youtube.com/watch?v={video_id}"
+    if host == "youtu.be":
+        video_id = parsed.path.strip("/").split("/", 1)[0]
+        if video_id:
+            return f"https://youtube.com/watch?v={video_id}"
+    return comparable_source_url(value.strip())
+
+
 def source_link_label(url: str) -> tuple[str, str]:
     """Return a concise public label and semantic role for a secondary link."""
     parsed = urlparse(url)
@@ -1902,6 +1920,9 @@ class PublicExporter:
         media_by_id = {
             media["id"]: media for media in self.output_records["Media"]
         }
+        sources_by_id = {
+            source["id"]: source for source in self.output_records["Sources"]
+        }
         for media in self.output_records["Media"]:
             media_id = media["id"]
             gallery = media.get("galleryStatus")
@@ -1924,6 +1945,20 @@ class PublicExporter:
                 and media.get("mediaType") in {"audio", "video"}
             )
             if is_external_av:
+                external_key = comparable_external_media_url(str(external_url))
+                has_access_source = any(
+                    comparable_external_media_url(
+                        str(sources_by_id.get(source_id, {}).get("primaryUrl", ""))
+                    )
+                    == external_key
+                    for source_id in media.get("sourceIds", [])
+                    if external_key and source_id in sources_by_id
+                )
+                if not has_access_source:
+                    self.errors.append(
+                        f"Media {media_id}: external audio/video has no linked Source "
+                        "whose primaryUrl identifies the same external object"
+                    )
                 if media.get("rightsStatus") != "external_content_not_rehosted":
                     self.errors.append(
                         f"Media {media_id}: external audio/video must use "

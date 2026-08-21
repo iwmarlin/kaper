@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 687,
+  "count": 690,
   "records": [
     {
       "id": "SRC0001",
@@ -282,9 +282,6 @@
       ],
       "workIds": [
         "W-S133"
-      ],
-      "mediaIds": [
-        "M007"
       ],
       "songIds": [
         "S133"
@@ -10238,9 +10235,6 @@
           "scheme": "ark",
           "value": "ark:/12148/cb380209111"
         }
-      ],
-      "mediaIds": [
-        "M374"
       ]
     },
     {
@@ -11246,9 +11240,6 @@
       "slug": "src0327-tcm-someone-to-care-for-me-1936",
       "workIds": [
         "W-S133"
-      ],
-      "mediaIds": [
-        "M007"
       ],
       "primaryUrl": "https://www.tcm.com/watchtcm/titles/93159"
     },
@@ -19545,9 +19536,6 @@
         "ORG115",
         "ORG128"
       ],
-      "mediaIds": [
-        "M373"
-      ],
       "nameVariantIds": [
         "PNV0058"
       ]
@@ -23471,6 +23459,99 @@
         "P117"
       ],
       "date": "n.d."
+    },
+    {
+      "id": "SRC0762",
+      "shortCitation": "YouTube, “Someone to Care for Me” — Deanna Durbin",
+      "fullCitation": "Deanna Durbin. “Someone to Care for Me.” YouTube audio release supplied by Deanna Durbin – Topic. Accessed 21 August 2026.",
+      "sourceType": "online_video_source",
+      "title": "Someone to Care for Me — Deanna Durbin, YouTube",
+      "creator": "Deanna Durbin – Topic",
+      "repository": "YouTube",
+      "publication": "YouTube",
+      "date": "n.d.",
+      "accessDate": "2026-08-21",
+      "reliability": "medium",
+      "sourceStatus": "verified",
+      "slug": "src0762-youtube-deanna-durbin-someone-to-care-for-me",
+      "primaryUrl": "https://www.youtube.com/watch?v=VW3a5jYp0fM",
+      "organizationIds": [
+        "ORG093"
+      ],
+      "personIds": [
+        "P137"
+      ],
+      "mediaIds": [
+        "M007"
+      ],
+      "workIds": [
+        "W-S133"
+      ],
+      "songIds": [
+        "S133"
+      ]
+    },
+    {
+      "id": "SRC0763",
+      "shortCitation": "YouTube, “Ninon, ach uśmiechnij się!” — Jan Kiepura",
+      "fullCitation": "jurek46pink, uploader. “Ninon, ach uśmiechnij się!” performed by Jan Kiepura. YouTube audio reference. Accessed 21 August 2026.",
+      "sourceType": "online_video_source",
+      "title": "Ninon, ach uśmiechnij się! — Jan Kiepura, YouTube",
+      "creator": "jurek46pink",
+      "repository": "YouTube",
+      "publication": "YouTube",
+      "date": "n.d.",
+      "accessDate": "2026-08-21",
+      "reliability": "low",
+      "sourceStatus": "verified",
+      "slug": "src0763-youtube-jan-kiepura-ninon-ach-usmiechnij-sie",
+      "primaryUrl": "https://www.youtube.com/watch?v=lhYhERQquMU",
+      "organizationIds": [
+        "ORG093"
+      ],
+      "personIds": [
+        "P117"
+      ],
+      "mediaIds": [
+        "M373"
+      ],
+      "workIds": [
+        "W-S214"
+      ],
+      "songIds": [
+        "S214"
+      ]
+    },
+    {
+      "id": "SRC0764",
+      "shortCitation": "YouTube, “Le plus petit baiser” — Henri Garat",
+      "fullCitation": "lysgauty1 collection disques David Silvestre, uploader. “Le plus petit baiser” performed by Henri Garat. YouTube audio reference. Accessed 21 August 2026.",
+      "sourceType": "online_video_source",
+      "title": "Le plus petit baiser — Henri Garat, YouTube",
+      "creator": "lysgauty1 collection disques David Silvestre",
+      "repository": "YouTube",
+      "publication": "YouTube",
+      "date": "n.d.",
+      "accessDate": "2026-08-21",
+      "reliability": "low",
+      "sourceStatus": "verified",
+      "slug": "src0764-youtube-henri-garat-le-plus-petit-baiser",
+      "primaryUrl": "https://www.youtube.com/watch?v=ybyZ6qnw0gU",
+      "organizationIds": [
+        "ORG093"
+      ],
+      "personIds": [
+        "P132"
+      ],
+      "mediaIds": [
+        "M374"
+      ],
+      "workIds": [
+        "W-S096"
+      ],
+      "songIds": [
+        "S096"
+      ]
     }
   ],
   "recordCount": null
