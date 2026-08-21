@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 676,
+  "count": 678,
   "records": [
     {
       "id": "SRC0001",
@@ -12126,8 +12126,7 @@
         "W-S199",
         "W-S200",
         "W-S201",
-        "W-S202",
-        "W-S204"
+        "W-S202"
       ],
       "mediaIds": [
         "M221",
@@ -12211,8 +12210,7 @@
         "S199",
         "S200",
         "S201",
-        "S202",
-        "S204"
+        "S202"
       ],
       "workRelationIds": [
         "REL0010",
@@ -12257,7 +12255,6 @@
         "REL0166",
         "REL0167",
         "REL0168",
-        "REL0170",
         "REL0195"
       ],
       "titleVariantIds": [
@@ -12284,8 +12281,7 @@
         "TV0291",
         "TV0292",
         "TV0293",
-        "TV0294",
-        "TV0296"
+        "TV0294"
       ],
       "contributionIds": [
         "CON-F005-C-P077",
@@ -12583,9 +12579,7 @@
         "CON-S202-C-P077",
         "CON-S202-L-P111",
         "CON-S202-PUB-ORG001",
-        "CON-S202-PUB-ORG035",
-        "CON-S204-C-P009",
-        "CON-S204-C-P077"
+        "CON-S202-PUB-ORG035"
       ],
       "nameVariantIds": [
         "PNV0007",
@@ -22486,13 +22480,20 @@
       "primaryUrl": "https://www.youtube.com/watch?v=tfZbfbB192E",
       "date": "1938",
       "contributionIds": [
-        "CON-S204-C-P009",
-        "CON-S204-C-P077",
-        "CON-S204-P-P173",
-        "CON-S204-LAB-ORG141"
+        "CON-S118-C-P009",
+        "CON-S118-C-P077",
+        "CON-S118-L-P058",
+        "CON-S118-P-P173",
+        "CON-S118-LAB-ORG141"
       ],
       "personIds": [
         "P173"
+      ],
+      "workIds": [
+        "W-S118"
+      ],
+      "songIds": [
+        "S118"
       ]
     },
     {
@@ -22555,6 +22556,62 @@
       ],
       "contributionIds": [
         "CON-S185-LAB-ORG142"
+      ]
+    },
+    {
+      "id": "SRC0751",
+      "shortCitation": "“Tomorrow Is Another Day”, Allan Jones with chorus (reissue)",
+      "fullCitation": "Allan Jones with chorus. “Tomorrow Is Another Day.” On Sympathy, Blue Mood, distributed by Kontor New Media, released 12 July 2016; the release credits the music to Kaper and Jurmann and the words to Gus Kahn. A modern transfer of the performance recorded for the MGM film A Day at the Races in 1937; no contemporary disc of the song under Jones's name is recorded in the discographic literature, which lists only the versions by Ted Fio Rito and Hal Kemp. Credits as supplied by the distributor to the channel. Accessed 21 August 2026.",
+      "sourceType": "recording_discographic_source",
+      "title": "Tomorrow Is Another Day — Allan Jones with chorus",
+      "creator": "Allan Jones, vocal, with chorus",
+      "repository": "YouTube",
+      "publication": "Blue Mood",
+      "accessDate": "2026-08-21",
+      "reliability": "medium",
+      "sourceStatus": "verified_with_attribution_note",
+      "slug": "src0751-tomorrow-is-another-day-allan-jones",
+      "organizationIds": [
+        "ORG093"
+      ],
+      "mediaIds": [
+        "M385"
+      ],
+      "primaryUrl": "https://www.youtube.com/watch?v=Vlv7NH9HPMc",
+      "personIds": [
+        "P173"
+      ],
+      "date": "1937",
+      "workIds": [
+        "W-S155"
+      ],
+      "songIds": [
+        "S155"
+      ],
+      "contributionIds": [
+        "CON-S155-P-P173"
+      ]
+    },
+    {
+      "id": "SRC0752",
+      "shortCitation": "Publicity photograph of Allan Jones, 23 April 1945",
+      "fullCitation": "Publicity photograph of the actor and tenor Allan Jones, dated 23 April 1945, issued by the Frederick Brothers Agency, his management. Republished on Wikimedia Commons from a copy offered for sale, under the public-domain tag for works published in the United States between 1931 and 1977 without a copyright notice. Accessed 21 August 2026.",
+      "sourceType": "wikimedia_commons_file",
+      "title": "File:Allan Jones 1945.JPG",
+      "creator": "Frederick Brothers Agency",
+      "repository": "Wikimedia Commons",
+      "publication": "Frederick Brothers Agency",
+      "date": "1945",
+      "accessDate": "2026-08-21",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "slug": "src0752-commons-allan-jones-1945",
+      "primaryUrl": "https://commons.wikimedia.org/wiki/File:Allan_Jones_1945.JPG",
+      "personIds": [
+        "P173"
+      ],
+      "mediaIds": [
+        "M386"
       ]
     }
   ],

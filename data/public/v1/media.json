@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 339,
+  "count": 341,
   "records": [
     {
       "id": "M001",
@@ -11073,13 +11073,13 @@
         "SRC0748"
       ],
       "workIds": [
-        "W-S204"
+        "W-S118"
       ],
       "periods": [
         "hollywood"
       ],
       "songIds": [
-        "S204"
+        "S118"
       ],
       "organizationIds": [
         "ORG141"
@@ -11117,6 +11117,64 @@
       ],
       "organizationIds": [
         "ORG035"
+      ]
+    },
+    {
+      "id": "M385",
+      "title": "Tomorrow is another day — Allan Jones, listening reference",
+      "mediaType": "audio",
+      "storageType": "external",
+      "period": "hollywood",
+      "description": "Recording of “Tomorrow is another day” sung by Allan Jones with chorus, linked as an external listening reference.",
+      "externalUrl": "https://www.youtube.com/watch?v=Vlv7NH9HPMc",
+      "assetCount": 0,
+      "altText": "Listening reference for “Tomorrow is another day”, sung by Allan Jones.",
+      "rightsStatus": "permission_needed_or_fair_use_claimed",
+      "rightsNote": "External media is linked for scholarly reference and is not rehosted; reuse rights are not cleared.",
+      "sortOrder": 385,
+      "slug": "tomorrow-is-another-day-m385",
+      "publicCaption": "Listening reference for “Tomorrow is another day” sung by Allan Jones with chorus, in a modern transfer of the performance recorded for A Day at the Races. The reissue credits the music to Kaper and Jurmann and the words to Gus Kahn.",
+      "publicCreditLine": "YouTube, auto-generated “Allan Jones - Topic” channel; access copy only.",
+      "category": "audio/video reference",
+      "galleryStatus": "external_link_only",
+      "sourceIds": [
+        "SRC0751"
+      ],
+      "workIds": [
+        "W-S155"
+      ],
+      "periods": [
+        "hollywood"
+      ],
+      "songIds": [
+        "S155"
+      ],
+      "organizationIds": [
+        "ORG035"
+      ]
+    },
+    {
+      "id": "M386",
+      "mediaType": "image",
+      "category": "portrait",
+      "storageType": "local",
+      "assetPath": "assets/images/portraits/allan-jones.jpeg",
+      "period": "hollywood",
+      "periods": [
+        "hollywood"
+      ],
+      "galleryStatus": "eligible",
+      "sortOrder": 386,
+      "slug": "allan-jones-portrait-m386",
+      "title": "Allan Jones — publicity photograph, 1945",
+      "altText": "Publicity photograph of the tenor and film actor Allan Jones.",
+      "publicCaption": "Allan Jones in a management photograph of April 1945. He introduced “Così, cosa” in A Night at the Opera and sang “Tomorrow is another day” and the outtake “A message from the man in the moon” in A Day at the Races.",
+      "publicCreditLine": "Frederick Brothers Agency publicity photograph, 1945, via Wikimedia Commons.",
+      "rightsStatus": "ok",
+      "rightsNote": "Public domain. The photograph was published in the United States in 1945 without a copyright notice, which places it out of copyright there; the agency that issued it is named, but no photographer is credited.",
+      "externalUrl": "https://commons.wikimedia.org/wiki/File:Allan_Jones_1945.JPG",
+      "sourceIds": [
+        "SRC0752"
       ]
     }
   ],

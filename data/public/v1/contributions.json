@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 1189,
+  "count": 1188,
   "records": [
     {
       "id": "CON-F001-C-P009",
@@ -18092,40 +18092,6 @@
       ]
     },
     {
-      "id": "CON-S204-C-P009",
-      "role": "composer",
-      "nameAsPrinted": "Bronisław Kaper",
-      "sortOrder": 10,
-      "certainty": "confirmed",
-      "workIds": [
-        "W-S204"
-      ],
-      "personIds": [
-        "P009"
-      ],
-      "sourceIds": [
-        "SRC0373",
-        "SRC0748"
-      ]
-    },
-    {
-      "id": "CON-S204-C-P077",
-      "role": "composer",
-      "nameAsPrinted": "Walter Jurmann",
-      "sortOrder": 11,
-      "certainty": "confirmed",
-      "workIds": [
-        "W-S204"
-      ],
-      "personIds": [
-        "P077"
-      ],
-      "sourceIds": [
-        "SRC0373",
-        "SRC0748"
-      ]
-    },
-    {
       "id": "CON-S205-C-P009",
       "role": "composer",
       "nameAsPrinted": "B. Kaper",
@@ -20938,7 +20904,7 @@
       "scopeNote": "Issued the disc as G.O. 10197, the side marked b."
     },
     {
-      "id": "CON-S204-P-P173",
+      "id": "CON-S118-P-P173",
       "role": "performer",
       "nameAsPrinted": "Allan Jones",
       "displayCredit": "Vocal performance",
@@ -20946,7 +20912,7 @@
       "sortOrder": 50,
       "certainty": "confirmed",
       "workIds": [
-        "W-S204"
+        "W-S118"
       ],
       "personIds": [
         "P173"
@@ -20957,7 +20923,7 @@
       "scopeNote": "Sang the song on the Victor disc; the credit is transcribed from the label by the uploader of the transfer, who does not show the disc."
     },
     {
-      "id": "CON-S204-LAB-ORG141",
+      "id": "CON-S118-LAB-ORG141",
       "role": "record_label",
       "nameAsPrinted": "Victor",
       "displayCredit": "Issuing label",
@@ -20965,7 +20931,7 @@
       "sortOrder": 60,
       "certainty": "confirmed",
       "workIds": [
-        "W-S204"
+        "W-S118"
       ],
       "organizationIds": [
         "ORG141"
@@ -21012,6 +20978,25 @@
         "SRC0750"
       ],
       "scopeNote": "Issued the disc as Decca 466 in the American series."
+    },
+    {
+      "id": "CON-S155-P-P173",
+      "role": "performer",
+      "nameAsPrinted": "Allan Jones",
+      "displayCredit": "Vocal performance",
+      "evidenceContext": "film_song",
+      "sortOrder": 50,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S155"
+      ],
+      "personIds": [
+        "P173"
+      ],
+      "sourceIds": [
+        "SRC0751"
+      ],
+      "scopeNote": "Sang the song in A Day at the Races; the performance survives through later transfers, not through a contemporary disc under his name."
     }
   ]
 }

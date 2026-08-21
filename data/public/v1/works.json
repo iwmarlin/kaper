@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 282,
+  "count": 281,
   "records": [
     {
       "id": "W-F001",
@@ -8640,20 +8640,21 @@
       "publicScope": "standalone_page",
       "sourceIds": [
         "SRC0230",
-        "SRC0535"
+        "SRC0535",
+        "SRC0748"
       ],
       "mediaIds": [
         "M025",
-        "M218"
-      ],
-      "titleVariantIds": [
-        "TV0296"
+        "M218",
+        "M383"
       ],
       "contributionIds": [
         "CON-S118-C-P009",
         "CON-S118-C-P077",
         "CON-S118-L-P058",
-        "CON-S118-PUB-ORG035"
+        "CON-S118-PUB-ORG035",
+        "CON-S118-P-P173",
+        "CON-S118-LAB-ORG141"
       ],
       "nameVariantIds": [
         "PNV0020"
@@ -8664,11 +8665,11 @@
         "P077"
       ],
       "organizationIds": [
-        "ORG035"
+        "ORG035",
+        "ORG141"
       ],
       "relationIds": [
-        "REL0078",
-        "REL0170"
+        "REL0078"
       ],
       "songIds": [
         "S118"
@@ -10119,7 +10120,8 @@
       "publicScope": "standalone_page",
       "sourceIds": [
         "SRC0256",
-        "SRC0378"
+        "SRC0378",
+        "SRC0751"
       ],
       "titleVariantIds": [
         "TV0294"
@@ -10128,7 +10130,8 @@
         "CON-S155-C-P009",
         "CON-S155-C-P077",
         "CON-S155-L-P025",
-        "CON-S155-PUB-ORG035"
+        "CON-S155-PUB-ORG035",
+        "CON-S155-P-P173"
       ],
       "nameVariantIds": [
         "PNV0020"
@@ -10150,6 +10153,9 @@
       ],
       "periods": [
         "hollywood"
+      ],
+      "mediaIds": [
+        "M385"
       ]
     },
     {
@@ -11800,47 +11806,6 @@
       ],
       "periods": [
         "hollywood"
-      ]
-    },
-    {
-      "id": "W-S204",
-      "title": "Cosi Cosa",
-      "slug": "cosi-cosa-fr",
-      "sortTitle": "Cosi Cosa [fr]",
-      "workType": "Song",
-      "year": 1935,
-      "period": "hollywood",
-      "certainty": "probable",
-      "displayOnSite": true,
-      "publicScope": "standalone_page",
-      "sourceIds": [
-        "SRC0373",
-        "SRC0748"
-      ],
-      "contributionIds": [
-        "CON-S204-C-P009",
-        "CON-S204-C-P077",
-        "CON-S204-P-P173",
-        "CON-S204-LAB-ORG141"
-      ],
-      "personIds": [
-        "P009",
-        "P077"
-      ],
-      "relationIds": [
-        "REL0170"
-      ],
-      "songIds": [
-        "S204"
-      ],
-      "periods": [
-        "hollywood"
-      ],
-      "mediaIds": [
-        "M383"
-      ],
-      "organizationIds": [
-        "ORG141"
       ]
     },
     {
