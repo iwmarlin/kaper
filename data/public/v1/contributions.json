@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 1183,
+  "count": 1185,
   "records": [
     {
       "id": "CON-F001-C-P009",
@@ -7261,7 +7261,8 @@
         "P009"
       ],
       "sourceIds": [
-        "SRC0184"
+        "SRC0184",
+        "SRC0746"
       ],
       "nameVariantIds": [
         "PNV0019"
@@ -7280,7 +7281,8 @@
         "P077"
       ],
       "sourceIds": [
-        "SRC0184"
+        "SRC0184",
+        "SRC0746"
       ]
     },
     {
@@ -7296,7 +7298,8 @@
         "P020"
       ],
       "sourceIds": [
-        "SRC0184"
+        "SRC0184",
+        "SRC0746"
       ]
     },
     {
@@ -7312,7 +7315,8 @@
         "ORG031"
       ],
       "sourceIds": [
-        "SRC0184"
+        "SRC0184",
+        "SRC0746"
       ]
     },
     {
@@ -20892,6 +20896,44 @@
         "SRC0741"
       ],
       "scopeNote": "Sang the refrain on the Electrola disc; the credit stands under the recording name Leo Moll, used by Leo Monosson on Electrola labels."
+    },
+    {
+      "id": "CON-S033-P-ORG140",
+      "role": "performer",
+      "nameAsPrinted": "Melody Gents, modernes Schlager-Quartett mit Orchester",
+      "displayCredit": "Vocal quartet with orchestra",
+      "evidenceContext": "recording_label",
+      "sortOrder": 56,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S033"
+      ],
+      "organizationIds": [
+        "ORG140"
+      ],
+      "sourceIds": [
+        "SRC0746"
+      ],
+      "scopeNote": "Recorded the song for Gloria; the credit is transcribed from the label by the uploader of the transfer, who does not show the disc."
+    },
+    {
+      "id": "CON-S033-LAB-ORG138",
+      "role": "record_label",
+      "nameAsPrinted": "Gloria",
+      "displayCredit": "Issuing label",
+      "evidenceContext": "recording_label",
+      "sortOrder": 60,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S033"
+      ],
+      "organizationIds": [
+        "ORG138"
+      ],
+      "sourceIds": [
+        "SRC0746"
+      ],
+      "scopeNote": "Issued the disc as G.O. 10197, the side marked b."
     }
   ]
 }

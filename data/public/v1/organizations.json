@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 134,
+  "count": 135,
   "records": [
     {
       "id": "ORG001",
@@ -4002,13 +4002,16 @@
       "authorizedNameSource": "local heading",
       "nameVariants": "Gloria; Gloria-Schallplatte. Described by the uploader as carrying Lindström recordings for the German market",
       "sourceIds": [
-        "SRC0735"
+        "SRC0735",
+        "SRC0746"
       ],
       "workIds": [
-        "W-S074"
+        "W-S074",
+        "W-S033"
       ],
       "contributionIds": [
-        "CON-S074-LAB-ORG138"
+        "CON-S074-LAB-ORG138",
+        "CON-S033-LAB-ORG138"
       ]
     },
     {
@@ -4034,6 +4037,32 @@
       ],
       "contributionIds": [
         "CON-S030-P-ORG139"
+      ]
+    },
+    {
+      "id": "ORG140",
+      "displayName": "Melody Gents",
+      "authorizedName": "Melody Gents (Musical group)",
+      "types": [
+        "ensemble",
+        "vocal group"
+      ],
+      "city": [
+        "Berlin"
+      ],
+      "country": "Germany",
+      "slug": "melody-gents",
+      "nameVariants": "Melody Gents, modernes Schlager-Quartett",
+      "authorizedNameSource": "LCNAF",
+      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n2025013741\nGND: https://d-nb.info/gnd/5535969-3",
+      "sourceIds": [
+        "SRC0746"
+      ],
+      "workIds": [
+        "W-S033"
+      ],
+      "contributionIds": [
+        "CON-S033-P-ORG140"
       ]
     }
   ]
