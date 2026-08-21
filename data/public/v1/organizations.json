@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 137,
+  "count": 139,
   "records": [
     {
       "id": "ORG001",
@@ -3424,7 +3424,8 @@
         "SRC0713",
         "SRC0717",
         "SRC0741",
-        "SRC0743"
+        "SRC0743",
+        "SRC0755"
       ],
       "workIds": [
         "W-S009",
@@ -3435,7 +3436,8 @@
         "W-S049",
         "W-S058",
         "W-S070",
-        "W-S084"
+        "W-S084",
+        "W-S067"
       ],
       "contributionIds": [
         "CON-S009-P-ORG119",
@@ -3446,7 +3448,8 @@
         "CON-S049-P-ORG119",
         "CON-S058-P-ORG119",
         "CON-S070-P-ORG119",
-        "CON-S084-P-ORG119"
+        "CON-S084-P-ORG119",
+        "CON-S067-P-ORG119"
       ]
     },
     {
@@ -3662,7 +3665,8 @@
         "SRC0731",
         "SRC0741",
         "SRC0743",
-        "SRC0744"
+        "SRC0744",
+        "SRC0755"
       ],
       "workIds": [
         "W-S009",
@@ -3674,7 +3678,8 @@
         "W-S046",
         "W-S049",
         "W-S054",
-        "W-S070"
+        "W-S070",
+        "W-S067"
       ],
       "authorityUrl": "GND: https://d-nb.info/gnd/7784531-6\nVIAF: https://viaf.org/viaf/215919516",
       "contributionIds": [
@@ -3687,7 +3692,8 @@
         "CON-S046-LAB-ORG126",
         "CON-S049-LAB-ORG126",
         "CON-S054-LAB-ORG126",
-        "CON-S070-LAB-ORG126"
+        "CON-S070-LAB-ORG126",
+        "CON-S067-LAB-ORG126"
       ]
     },
     {
@@ -3753,7 +3759,8 @@
         "SRC0720",
         "SRC0725",
         "SRC0730",
-        "SRC0742"
+        "SRC0742",
+        "SRC0754"
       ],
       "workIds": [
         "W-S024",
@@ -3765,7 +3772,8 @@
         "W-S082",
         "W-S133",
         "W-S214",
-        "W-S215"
+        "W-S215",
+        "W-S057"
       ],
       "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no00081029\nGND: https://d-nb.info/gnd/7670622-9\nVIAF: https://viaf.org/viaf/129647371\nISNI: https://isni.org/isni/0000000121561999",
       "contributionIds": [
@@ -3778,7 +3786,8 @@
         "CON-S082-LAB-ORG128",
         "CON-S133-LAB-ORG128",
         "CON-S214-LAB-ORG128",
-        "CON-S215-LAB-ORG128"
+        "CON-S215-LAB-ORG128",
+        "CON-S057-LAB-ORG128"
       ]
     },
     {
@@ -3796,13 +3805,16 @@
       "nameVariants": "Kristall; Kristall Schallplatte",
       "authorizedNameSource": "local heading",
       "sourceIds": [
-        "SRC0004"
+        "SRC0004",
+        "SRC0753"
       ],
       "workIds": [
-        "W-S017"
+        "W-S017",
+        "W-S034"
       ],
       "contributionIds": [
-        "CON-S017-LAB-ORG129"
+        "CON-S017-LAB-ORG129",
+        "CON-S034-LAB-ORG129"
       ]
     },
     {
@@ -4115,6 +4127,58 @@
       ],
       "contributionIds": [
         "CON-S185-LAB-ORG142"
+      ]
+    },
+    {
+      "id": "ORG143",
+      "displayName": "George Nettelmann und sein Orchester",
+      "authorizedName": "George Nettelmann und sein Orchester",
+      "types": [
+        "ensemble",
+        "dance orchestra"
+      ],
+      "city": [
+        "Berlin"
+      ],
+      "country": "Germany",
+      "slug": "george-nettelmann-und-sein-orchester",
+      "nameVariants": "Georg Nettelmann und sein Orchester; Nettelmann, George & sein Orchester",
+      "authorizedNameSource": "GND",
+      "authorityUrl": "GND: https://d-nb.info/gnd/10327748-1",
+      "sourceIds": [
+        "SRC0753"
+      ],
+      "workIds": [
+        "W-S034"
+      ],
+      "contributionIds": [
+        "CON-S034-P-ORG143"
+      ]
+    },
+    {
+      "id": "ORG144",
+      "displayName": "Dajos-Béla-Tanzorchester",
+      "authorizedName": "Dajos-Béla-Tanzorchester",
+      "types": [
+        "ensemble",
+        "dance orchestra"
+      ],
+      "city": [
+        "Berlin"
+      ],
+      "country": "Germany",
+      "slug": "dajos-bela-tanzorchester",
+      "nameVariants": "Tanz-Orchester Dajos Béla; Béla, Dajos & sein Tanz-Orchester; Orchester Dajos Béla",
+      "authorizedNameSource": "GND",
+      "authorityUrl": "GND: https://d-nb.info/gnd/10147469-6",
+      "sourceIds": [
+        "SRC0754"
+      ],
+      "workIds": [
+        "W-S057"
+      ],
+      "contributionIds": [
+        "CON-S057-P-ORG144"
       ]
     }
   ]

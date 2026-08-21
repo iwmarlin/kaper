@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 61,
+  "count": 62,
   "records": [
     {
       "id": "PNV0001",
@@ -1516,6 +1516,25 @@
       ],
       "sourceIds": [
         "SRC0743"
+      ]
+    },
+    {
+      "id": "PNV0067",
+      "variantName": "Fred Lustig",
+      "variantType": "pseudonym",
+      "identityScope": "single_person",
+      "evidenceContext": "recording_label",
+      "attestedWording": "Gesang: Fred Lustig",
+      "certainty": "confirmed",
+      "publicNote": "Recording name under which Luigi Bernauer sang on Odeon labels; the transfer of the Odeon disc names him behind it.",
+      "personIds": [
+        "P174"
+      ],
+      "workIds": [
+        "W-S057"
+      ],
+      "sourceIds": [
+        "SRC0754"
       ]
     }
   ]

@@ -4999,7 +4999,8 @@
       "publicScope": "standalone_page",
       "sourceIds": [
         "SRC0070",
-        "SRC0184"
+        "SRC0184",
+        "SRC0753"
       ],
       "titleVariantIds": [
         "TV0124"
@@ -5008,7 +5009,10 @@
         "CON-S034-C-P009",
         "CON-S034-C-P077",
         "CON-S034-L-P020",
-        "CON-S034-PUB-ORG031"
+        "CON-S034-PUB-ORG031",
+        "CON-S034-P-ORG143",
+        "CON-S034-P-P077",
+        "CON-S034-LAB-ORG129"
       ],
       "nameVariantIds": [
         "PNV0019"
@@ -5019,7 +5023,9 @@
         "P077"
       ],
       "organizationIds": [
-        "ORG031"
+        "ORG031",
+        "ORG143",
+        "ORG129"
       ],
       "relationIds": [
         "REL0012",
@@ -5030,6 +5036,9 @@
       ],
       "periods": [
         "european"
+      ],
+      "mediaIds": [
+        "M387"
       ]
     },
     {
@@ -5974,13 +5983,17 @@
       "displayOnSite": true,
       "publicScope": "standalone_page",
       "sourceIds": [
-        "SRC0208"
+        "SRC0208",
+        "SRC0754"
       ],
       "contributionIds": [
         "CON-S057-C-P009",
         "CON-S057-C-P077",
         "CON-S057-L-P017",
-        "CON-S057-PUB-ORG038"
+        "CON-S057-PUB-ORG038",
+        "CON-S057-P-ORG144",
+        "CON-S057-P-P174",
+        "CON-S057-LAB-ORG128"
       ],
       "nameVariantIds": [
         "PNV0034"
@@ -5991,7 +6004,9 @@
         "P077"
       ],
       "organizationIds": [
-        "ORG038"
+        "ORG038",
+        "ORG144",
+        "ORG128"
       ],
       "relationIds": [
         "REL0025"
@@ -6001,6 +6016,9 @@
       ],
       "periods": [
         "european"
+      ],
+      "mediaIds": [
+        "M388"
       ]
     },
     {
@@ -6413,13 +6431,17 @@
       "displayOnSite": true,
       "publicScope": "standalone_page",
       "sourceIds": [
-        "SRC0105"
+        "SRC0105",
+        "SRC0755"
       ],
       "contributionIds": [
         "CON-S067-C-P009",
         "CON-S067-C-P077",
         "CON-S067-L-P020",
-        "CON-S067-PUB-ORG029"
+        "CON-S067-PUB-ORG029",
+        "CON-S067-P-ORG119",
+        "CON-S067-CON-P165",
+        "CON-S067-LAB-ORG126"
       ],
       "nameVariantIds": [
         "PNV0019"
@@ -6430,7 +6452,9 @@
         "P077"
       ],
       "organizationIds": [
-        "ORG029"
+        "ORG029",
+        "ORG119",
+        "ORG126"
       ],
       "relationIds": [
         "REL0035"
@@ -6440,6 +6464,9 @@
       ],
       "periods": [
         "european"
+      ],
+      "mediaIds": [
+        "M389"
       ]
     },
     {

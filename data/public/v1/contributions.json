@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 1188,
+  "count": 1197,
   "records": [
     {
       "id": "CON-F001-C-P009",
@@ -7332,7 +7332,8 @@
         "P009"
       ],
       "sourceIds": [
-        "SRC0184"
+        "SRC0184",
+        "SRC0753"
       ],
       "nameVariantIds": [
         "PNV0019"
@@ -7351,7 +7352,8 @@
         "P077"
       ],
       "sourceIds": [
-        "SRC0184"
+        "SRC0184",
+        "SRC0753"
       ]
     },
     {
@@ -7367,7 +7369,8 @@
         "P020"
       ],
       "sourceIds": [
-        "SRC0184"
+        "SRC0184",
+        "SRC0753"
       ]
     },
     {
@@ -7383,7 +7386,8 @@
         "ORG031"
       ],
       "sourceIds": [
-        "SRC0184"
+        "SRC0184",
+        "SRC0753"
       ]
     },
     {
@@ -8770,7 +8774,8 @@
         "P009"
       ],
       "sourceIds": [
-        "SRC0208"
+        "SRC0208",
+        "SRC0754"
       ]
     },
     {
@@ -8786,7 +8791,8 @@
         "P077"
       ],
       "sourceIds": [
-        "SRC0208"
+        "SRC0208",
+        "SRC0754"
       ]
     },
     {
@@ -8802,7 +8808,8 @@
         "P017"
       ],
       "sourceIds": [
-        "SRC0208"
+        "SRC0208",
+        "SRC0754"
       ],
       "nameVariantIds": [
         "PNV0034"
@@ -8821,7 +8828,8 @@
         "ORG038"
       ],
       "sourceIds": [
-        "SRC0208"
+        "SRC0208",
+        "SRC0754"
       ]
     },
     {
@@ -9437,7 +9445,8 @@
         "P009"
       ],
       "sourceIds": [
-        "SRC0105"
+        "SRC0105",
+        "SRC0755"
       ],
       "nameVariantIds": [
         "PNV0019"
@@ -9456,7 +9465,8 @@
         "P077"
       ],
       "sourceIds": [
-        "SRC0105"
+        "SRC0105",
+        "SRC0755"
       ]
     },
     {
@@ -9472,7 +9482,8 @@
         "P020"
       ],
       "sourceIds": [
-        "SRC0105"
+        "SRC0105",
+        "SRC0755"
       ]
     },
     {
@@ -9488,7 +9499,8 @@
         "ORG029"
       ],
       "sourceIds": [
-        "SRC0105"
+        "SRC0105",
+        "SRC0755"
       ]
     },
     {
@@ -20997,6 +21009,177 @@
         "SRC0751"
       ],
       "scopeNote": "Sang the song in A Day at the Races; the performance survives through later transfers, not through a contemporary disc under his name."
+    },
+    {
+      "id": "CON-S034-P-ORG143",
+      "role": "performer",
+      "nameAsPrinted": "George Nettelmann und sein Orchester",
+      "displayCredit": "Orchestra",
+      "evidenceContext": "recording_label",
+      "sortOrder": 56,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S034"
+      ],
+      "organizationIds": [
+        "ORG143"
+      ],
+      "sourceIds": [
+        "SRC0753"
+      ],
+      "scopeNote": "Recorded the song for Kristall in Berlin; the ensemble is named on the filmed label."
+    },
+    {
+      "id": "CON-S034-P-P077",
+      "role": "performer",
+      "nameAsPrinted": "Walter Jurmann",
+      "displayCredit": "Refrain vocal",
+      "evidenceContext": "recording_label",
+      "sortOrder": 55,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S034"
+      ],
+      "personIds": [
+        "P077"
+      ],
+      "sourceIds": [
+        "SRC0753"
+      ],
+      "scopeNote": "Sang the refrain on the Kristall disc of a song he had composed with Kaper."
+    },
+    {
+      "id": "CON-S034-LAB-ORG129",
+      "role": "record_label",
+      "nameAsPrinted": "Kristall",
+      "displayCredit": "Issuing label",
+      "evidenceContext": "recording_label",
+      "sortOrder": 60,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S034"
+      ],
+      "organizationIds": [
+        "ORG129"
+      ],
+      "sourceIds": [
+        "SRC0753"
+      ],
+      "scopeNote": "Issued the disc; the title list gives the number as Kristall 3229."
+    },
+    {
+      "id": "CON-S057-P-ORG144",
+      "role": "performer",
+      "nameAsPrinted": "Tanz-Orchester Dajos Béla",
+      "displayCredit": "Orchestra",
+      "evidenceContext": "recording_label",
+      "sortOrder": 56,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S057"
+      ],
+      "organizationIds": [
+        "ORG144"
+      ],
+      "sourceIds": [
+        "SRC0754"
+      ],
+      "scopeNote": "Recorded the tango for Odeon in Berlin; the ensemble is named on the filmed label."
+    },
+    {
+      "id": "CON-S057-P-P174",
+      "role": "performer",
+      "nameAsPrinted": "Fred Lustig",
+      "displayCredit": "Vocal performance",
+      "evidenceContext": "recording_label",
+      "sortOrder": 55,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S057"
+      ],
+      "personIds": [
+        "P174"
+      ],
+      "sourceIds": [
+        "SRC0754"
+      ],
+      "scopeNote": "Sang on the Odeon disc; the label prints the recording name Fred Lustig, which the transfer identifies as Luigi Bernauer."
+    },
+    {
+      "id": "CON-S057-LAB-ORG128",
+      "role": "record_label",
+      "nameAsPrinted": "Odeon",
+      "displayCredit": "Issuing label",
+      "evidenceContext": "recording_label",
+      "sortOrder": 60,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S057"
+      ],
+      "organizationIds": [
+        "ORG128"
+      ],
+      "sourceIds": [
+        "SRC0754"
+      ],
+      "scopeNote": "Issued the disc on Odeon, the label of Carl Lindström AG."
+    },
+    {
+      "id": "CON-S067-P-ORG119",
+      "role": "performer",
+      "nameAsPrinted": "Marek Weber und sein Orchester",
+      "displayCredit": "Orchestra",
+      "evidenceContext": "recording_label",
+      "sortOrder": 56,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S067"
+      ],
+      "organizationIds": [
+        "ORG119"
+      ],
+      "sourceIds": [
+        "SRC0755"
+      ],
+      "scopeNote": "Recorded the song for Electrola in Berlin in about March 1932."
+    },
+    {
+      "id": "CON-S067-CON-P165",
+      "role": "conductor",
+      "nameAsPrinted": "Marek Weber",
+      "displayCredit": "Directed the orchestra",
+      "evidenceContext": "recording_label",
+      "sortOrder": 55,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S067"
+      ],
+      "personIds": [
+        "P165"
+      ],
+      "sourceIds": [
+        "SRC0755"
+      ],
+      "scopeNote": "Led his orchestra in the Electrola recording."
+    },
+    {
+      "id": "CON-S067-LAB-ORG126",
+      "role": "record_label",
+      "nameAsPrinted": "Electrola",
+      "displayCredit": "Issuing label",
+      "evidenceContext": "recording_label",
+      "sortOrder": 60,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S067"
+      ],
+      "organizationIds": [
+        "ORG126"
+      ],
+      "sourceIds": [
+        "SRC0755"
+      ],
+      "scopeNote": "Issued the disc as E.G. 2532."
     }
   ]
 }

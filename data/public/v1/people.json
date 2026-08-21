@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 152,
+  "count": 153,
   "records": [
     {
       "id": "P001",
@@ -3140,7 +3140,8 @@
         "SRC0625",
         "SRC0630",
         "SRC0633",
-        "SRC0715"
+        "SRC0715",
+        "SRC0753"
       ],
       "timelineEventIds": [
         "TE0026",
@@ -3359,7 +3360,8 @@
         "CON-S212-C-P077",
         "CON-S213-C-P077",
         "CON-S214-C-P077",
-        "CON-S215-C-P077"
+        "CON-S215-C-P077",
+        "CON-S034-P-P077"
       ],
       "nameVariantIds": [
         "PNV0005",
@@ -5638,7 +5640,8 @@
         "W-S049",
         "W-S058",
         "W-S070",
-        "W-S084"
+        "W-S084",
+        "W-S067"
       ],
       "contributionIds": [
         "CON-S009-CON-P165",
@@ -5649,7 +5652,8 @@
         "CON-S049-CON-P165",
         "CON-S058-CON-P165",
         "CON-S070-CON-P165",
-        "CON-S084-CON-P165"
+        "CON-S084-CON-P165",
+        "CON-S067-CON-P165"
       ],
       "sourceIds": [
         "SRC0005",
@@ -5662,7 +5666,8 @@
         "SRC0713",
         "SRC0717",
         "SRC0741",
-        "SRC0743"
+        "SRC0743",
+        "SRC0755"
       ]
     },
     {
@@ -5917,6 +5922,35 @@
         "SRC0749",
         "SRC0751",
         "SRC0752"
+      ]
+    },
+    {
+      "id": "P174",
+      "displayName": "Luigi Bernauer",
+      "authorizedName": "Bernauer, Luigi",
+      "authorizedNameSource": "LCNAF",
+      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no2012128487\nGND: https://d-nb.info/gnd/134327594",
+      "sortName": "Bernauer, Luigi",
+      "slug": "luigi-bernauer",
+      "birthYear": 1899,
+      "deathYear": 1945,
+      "lifeDatesCertainty": "confirmed",
+      "primaryRole": "singer",
+      "roles": [
+        "singer",
+        "actor"
+      ],
+      "workIds": [
+        "W-S057"
+      ],
+      "contributionIds": [
+        "CON-S057-P-P174"
+      ],
+      "sourceIds": [
+        "SRC0754"
+      ],
+      "nameVariantIds": [
+        "PNV0067"
       ]
     }
   ],
