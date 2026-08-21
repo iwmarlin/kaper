@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 133,
+  "count": 134,
   "records": [
     {
       "id": "ORG001",
@@ -3422,10 +3422,13 @@
         "SRC0708",
         "SRC0710",
         "SRC0713",
-        "SRC0717"
+        "SRC0717",
+        "SRC0741",
+        "SRC0743"
       ],
       "workIds": [
         "W-S009",
+        "W-S023",
         "W-S038",
         "W-S042",
         "W-S045",
@@ -3436,6 +3439,7 @@
       ],
       "contributionIds": [
         "CON-S009-P-ORG119",
+        "CON-S023-P-ORG119",
         "CON-S038-P-ORG119",
         "CON-S042-P-ORG119",
         "CON-S045-P-ORG119",
@@ -3467,7 +3471,8 @@
         "SRC0698",
         "SRC0699",
         "SRC0700",
-        "SRC0730"
+        "SRC0730",
+        "SRC0742"
       ],
       "workIds": [
         "W-S076",
@@ -3654,10 +3659,15 @@
         "SRC0713",
         "SRC0717",
         "SRC0718",
-        "SRC0731"
+        "SRC0731",
+        "SRC0741",
+        "SRC0743",
+        "SRC0744"
       ],
       "workIds": [
         "W-S009",
+        "W-S023",
+        "W-S030",
         "W-S038",
         "W-S042",
         "W-S045",
@@ -3669,6 +3679,8 @@
       "authorityUrl": "GND: https://d-nb.info/gnd/7784531-6\nVIAF: https://viaf.org/viaf/215919516",
       "contributionIds": [
         "CON-S009-LAB-ORG126",
+        "CON-S023-LAB-ORG126",
+        "CON-S030-LAB-ORG126",
         "CON-S038-LAB-ORG126",
         "CON-S042-LAB-ORG126",
         "CON-S045-LAB-ORG126",
@@ -3740,7 +3752,8 @@
         "SRC0716",
         "SRC0720",
         "SRC0725",
-        "SRC0730"
+        "SRC0730",
+        "SRC0742"
       ],
       "workIds": [
         "W-S024",
@@ -3996,6 +4009,31 @@
       ],
       "contributionIds": [
         "CON-S074-LAB-ORG138"
+      ]
+    },
+    {
+      "id": "ORG139",
+      "displayName": "Mitja Nikisch und sein Orchester",
+      "authorizedName": "Mitja Nikisch und sein Orchester",
+      "types": [
+        "ensemble",
+        "dance orchestra"
+      ],
+      "city": [
+        "Berlin"
+      ],
+      "country": "Germany",
+      "slug": "mitja-nikisch-und-sein-orchester",
+      "nameVariants": "Nikisch, Mitja & sein Orchester",
+      "authorizedNameSource": "local heading",
+      "sourceIds": [
+        "SRC0744"
+      ],
+      "workIds": [
+        "W-S030"
+      ],
+      "contributionIds": [
+        "CON-S030-P-ORG139"
       ]
     }
   ]

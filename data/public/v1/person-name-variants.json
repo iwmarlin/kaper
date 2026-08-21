@@ -114,37 +114,19 @@
       "variantType": "joint_pseudonym",
       "identityScope": "joint_identity",
       "evidenceContext": "sheet_music_or_printed_credit",
-      "attestedWording": "Bob Henders",
+      "attestedWording": "Bob Henders / Bob Handers",
       "certainty": "confirmed",
-      "publicNote": "Joint printed composer identity resolved to Bronisław Kaper and Walter Jurmann.",
+      "publicNote": "Joint printed composer identity resolved to Bronisław Kaper and Walter Jurmann. The two prints of 1932 spell it differently: “Bob Henders” on Du liebst mich nicht mehr, “Bob Handers” on Eine Sommernacht am Meer.",
       "personIds": [
         "P009",
         "P077"
       ],
       "workIds": [
-        "W-S071"
-      ],
-      "sourceIds": [
-        "SRC0209"
-      ]
-    },
-    {
-      "id": "PNV0006",
-      "variantName": "Bob Handers",
-      "variantType": "joint_pseudonym",
-      "identityScope": "joint_identity",
-      "evidenceContext": "sheet_music_or_printed_credit",
-      "attestedWording": "Bob Handers",
-      "certainty": "confirmed",
-      "publicNote": "Joint printed composer identity resolved to Bronisław Kaper and Walter Jurmann.",
-      "personIds": [
-        "P009",
-        "P077"
-      ],
-      "workIds": [
+        "W-S071",
         "W-S072"
       ],
       "sourceIds": [
+        "SRC0209",
         "SRC0210"
       ]
     },
@@ -1472,10 +1454,13 @@
         "P166"
       ],
       "workIds": [
+        "W-S045",
         "W-S049"
       ],
       "sourceIds": [
-        "SRC0710"
+        "SRC0005",
+        "SRC0710",
+        "SRC0741"
       ]
     },
     {
@@ -1512,6 +1497,25 @@
       ],
       "sourceIds": [
         "SRC0720"
+      ]
+    },
+    {
+      "id": "PNV0066",
+      "variantName": "Siegfried Arno",
+      "variantType": "credit_name",
+      "identityScope": "single_person",
+      "evidenceContext": "recording_label",
+      "attestedWording": "Arno, Siegfried",
+      "certainty": "confirmed",
+      "publicNote": "The Berlin form of the actor's name, under which he sang on German records before his emigration; the Library of Congress heading gives the later American form Sig Arno.",
+      "personIds": [
+        "P170"
+      ],
+      "workIds": [
+        "W-S023"
+      ],
+      "sourceIds": [
+        "SRC0743"
       ]
     }
   ]

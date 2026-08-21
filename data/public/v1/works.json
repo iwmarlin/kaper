@@ -4589,11 +4589,17 @@
       "sourceIds": [
         "SRC0180",
         "SRC0226",
-        "SRC0472"
+        "SRC0472",
+        "SRC0743",
+        "SRC0745"
       ],
       "contributionIds": [
         "CON-S023-C-P009",
+        "CON-S023-CON-P165",
         "CON-S023-L-P020",
+        "CON-S023-LAB-ORG126",
+        "CON-S023-P-ORG119",
+        "CON-S023-P-P170",
         "CON-S023-PUB-ORG033"
       ],
       "nameVariantIds": [
@@ -4604,13 +4610,18 @@
         "P020"
       ],
       "organizationIds": [
-        "ORG033"
+        "ORG033",
+        "ORG119",
+        "ORG126"
       ],
       "songIds": [
         "S023"
       ],
       "periods": [
         "european"
+      ],
+      "mediaIds": [
+        "M380"
       ]
     },
     {
@@ -4795,14 +4806,19 @@
       "sourceIds": [
         "SRC0207",
         "SRC0461",
-        "SRC0727"
+        "SRC0727",
+        "SRC0744"
       ],
       "contributionIds": [
         "CON-S030-C-P009",
         "CON-S030-C-P077",
         "CON-S030-CON-P167",
+        "CON-S030-CON-P171",
         "CON-S030-L-P020",
         "CON-S030-L-P083",
+        "CON-S030-LAB-ORG126",
+        "CON-S030-P-ORG139",
+        "CON-S030-P-P172",
         "CON-S030-PUB-ORG033"
       ],
       "nameVariantIds": [
@@ -4815,7 +4831,9 @@
         "P083"
       ],
       "organizationIds": [
-        "ORG033"
+        "ORG033",
+        "ORG126",
+        "ORG139"
       ],
       "relationIds": [
         "REL0008"
@@ -5101,7 +5119,8 @@
       "publicScope": "standalone_page",
       "sourceIds": [
         "SRC0093",
-        "SRC0708"
+        "SRC0708",
+        "SRC0741"
       ],
       "titleVariantIds": [
         "TV0299"
@@ -5416,7 +5435,8 @@
       "sourceIds": [
         "SRC0005",
         "SRC0101",
-        "SRC0286"
+        "SRC0286",
+        "SRC0741"
       ],
       "mediaIds": [
         "M005"
@@ -5427,6 +5447,7 @@
         "CON-S045-L-P020",
         "CON-S045-LAB-ORG126",
         "CON-S045-P-ORG119",
+        "CON-S045-P-P166",
         "CON-S045-PUB-ORG029"
       ],
       "nameVariantIds": [
@@ -6611,7 +6632,7 @@
         "CON-S072-PUB-ORG044"
       ],
       "nameVariantIds": [
-        "PNV0006"
+        "PNV0005"
       ],
       "personIds": [
         "P009",
@@ -6980,7 +7001,8 @@
       "publicScope": "standalone_page",
       "sourceIds": [
         "SRC0189",
-        "SRC0697"
+        "SRC0697",
+        "SRC0742"
       ],
       "contributionIds": [
         "CON-S080-C-P009",
@@ -7033,7 +7055,8 @@
       "sourceIds": [
         "SRC0217",
         "SRC0373",
-        "SRC0699"
+        "SRC0699",
+        "SRC0742"
       ],
       "contributionIds": [
         "CON-S081-C-P009",
@@ -7086,7 +7109,8 @@
         "SRC0218",
         "SRC0373",
         "SRC0698",
-        "SRC0700"
+        "SRC0700",
+        "SRC0742"
       ],
       "contributionIds": [
         "CON-S082-C-P009",

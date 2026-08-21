@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 1174,
+  "count": 1183,
   "records": [
     {
       "id": "CON-F001-C-P009",
@@ -9791,7 +9791,7 @@
         "SRC0210"
       ],
       "nameVariantIds": [
-        "PNV0006"
+        "PNV0005"
       ]
     },
     {
@@ -9810,7 +9810,7 @@
         "SRC0210"
       ],
       "nameVariantIds": [
-        "PNV0006"
+        "PNV0005"
       ]
     },
     {
@@ -20002,9 +20002,9 @@
       "role": "record_label",
       "nameAsPrinted": "Electrola",
       "displayCredit": "Issuing label",
-      "evidenceContext": "online_catalogue",
+      "evidenceContext": "discography",
       "sortOrder": 60,
-      "certainty": "probable",
+      "certainty": "confirmed",
       "workIds": [
         "W-S038"
       ],
@@ -20012,9 +20012,10 @@
         "ORG126"
       ],
       "sourceIds": [
-        "SRC0708"
+        "SRC0708",
+        "SRC0741"
       ],
-      "scopeNote": "The catalogue number E.G. 2271 belongs to the Electrola series, but the upload does not name the label and the disc is not shown, so the imprint is inferred from the numbering."
+      "scopeNote": "Issued the disc; the Electrola label list gives E.G. 2271 in the label's own EG series with matrix and session data."
     },
     {
       "id": "CON-S049-LAB-ORG126",
@@ -20719,6 +20720,178 @@
       "organizationIds": [
         "ORG132"
       ]
+    },
+    {
+      "id": "CON-S023-CON-P165",
+      "role": "conductor",
+      "nameAsPrinted": "Marek Weber",
+      "displayCredit": "Directed the orchestra",
+      "evidenceContext": "discography",
+      "sortOrder": 55,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S023"
+      ],
+      "personIds": [
+        "P165"
+      ],
+      "sourceIds": [
+        "SRC0743"
+      ],
+      "scopeNote": "Led his orchestra in the Electrola recording."
+    },
+    {
+      "id": "CON-S023-LAB-ORG126",
+      "role": "record_label",
+      "nameAsPrinted": "Electrola",
+      "displayCredit": "Issuing label",
+      "evidenceContext": "discography",
+      "sortOrder": 60,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S023"
+      ],
+      "organizationIds": [
+        "ORG126"
+      ],
+      "sourceIds": [
+        "SRC0743"
+      ],
+      "scopeNote": "Issued the disc as EG 2135 in January 1931, with a parallel His Master's Voice issue."
+    },
+    {
+      "id": "CON-S023-P-ORG119",
+      "role": "performer",
+      "nameAsPrinted": "Marek Weber und sein Orchester",
+      "displayCredit": "Orchestra",
+      "evidenceContext": "discography",
+      "sortOrder": 56,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S023"
+      ],
+      "organizationIds": [
+        "ORG119"
+      ],
+      "sourceIds": [
+        "SRC0743"
+      ],
+      "scopeNote": "Recorded the song for Electrola in the Beethoven-Saal, Berlin; the discography names the ensemble as Marek Weber und sein Orchester."
+    },
+    {
+      "id": "CON-S023-P-P170",
+      "role": "performer",
+      "nameAsPrinted": "Siegfried Arno",
+      "displayCredit": "Refrain vocal",
+      "evidenceContext": "discography",
+      "sortOrder": 55,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S023"
+      ],
+      "personIds": [
+        "P170"
+      ],
+      "sourceIds": [
+        "SRC0743"
+      ],
+      "scopeNote": "Sang the refrain on the Electrola disc, credited in the Berlin form of his name."
+    },
+    {
+      "id": "CON-S030-CON-P171",
+      "role": "conductor",
+      "nameAsPrinted": "Mitja Nikisch",
+      "displayCredit": "Directed the orchestra",
+      "evidenceContext": "discography",
+      "sortOrder": 55,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S030"
+      ],
+      "personIds": [
+        "P171"
+      ],
+      "sourceIds": [
+        "SRC0744"
+      ],
+      "scopeNote": "Led his orchestra in the Electrola recording."
+    },
+    {
+      "id": "CON-S030-LAB-ORG126",
+      "role": "record_label",
+      "nameAsPrinted": "Electrola",
+      "displayCredit": "Issuing label",
+      "evidenceContext": "discography",
+      "sortOrder": 60,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S030"
+      ],
+      "organizationIds": [
+        "ORG126"
+      ],
+      "sourceIds": [
+        "SRC0744"
+      ],
+      "scopeNote": "Issued the disc as EG 2228, with parallel His Master's Voice issues."
+    },
+    {
+      "id": "CON-S030-P-ORG139",
+      "role": "performer",
+      "nameAsPrinted": "Mitja Nikisch und sein Orchester",
+      "displayCredit": "Orchestra",
+      "evidenceContext": "discography",
+      "sortOrder": 56,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S030"
+      ],
+      "organizationIds": [
+        "ORG139"
+      ],
+      "sourceIds": [
+        "SRC0744"
+      ],
+      "scopeNote": "Recorded the song for Electrola in Berlin on 15 March 1931."
+    },
+    {
+      "id": "CON-S030-P-P172",
+      "role": "performer",
+      "nameAsPrinted": "Paul Dorn",
+      "displayCredit": "Refrain vocal",
+      "evidenceContext": "discography",
+      "sortOrder": 55,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S030"
+      ],
+      "personIds": [
+        "P172"
+      ],
+      "sourceIds": [
+        "SRC0744"
+      ],
+      "scopeNote": "Sang the refrain on the Electrola disc."
+    },
+    {
+      "id": "CON-S045-P-P166",
+      "role": "performer",
+      "nameAsPrinted": "Leo Moll",
+      "displayCredit": "Refrain vocal",
+      "evidenceContext": "recording_label",
+      "sortOrder": 55,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S045"
+      ],
+      "personIds": [
+        "P166"
+      ],
+      "sourceIds": [
+        "SRC0005",
+        "SRC0741"
+      ],
+      "scopeNote": "Sang the refrain on the Electrola disc; the credit stands under the recording name Leo Moll, used by Leo Monosson on Electrola labels."
     }
   ]
 }

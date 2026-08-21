@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 148,
+  "count": 151,
   "records": [
     {
       "id": "P001",
@@ -754,7 +754,6 @@
         "PNV0001",
         "PNV0004",
         "PNV0005",
-        "PNV0006",
         "PNV0007",
         "PNV0010",
         "PNV0011",
@@ -3367,7 +3366,6 @@
       ],
       "nameVariantIds": [
         "PNV0005",
-        "PNV0006",
         "PNV0007",
         "PNV0009",
         "PNV0010",
@@ -5303,7 +5301,8 @@
         "SRC0697",
         "SRC0698",
         "SRC0699",
-        "SRC0700"
+        "SRC0700",
+        "SRC0742"
       ],
       "contributionIds": [
         "CON-F021-A-P153",
@@ -5636,6 +5635,7 @@
       ],
       "workIds": [
         "W-S009",
+        "W-S023",
         "W-S038",
         "W-S042",
         "W-S045",
@@ -5646,6 +5646,7 @@
       ],
       "contributionIds": [
         "CON-S009-CON-P165",
+        "CON-S023-CON-P165",
         "CON-S038-CON-P165",
         "CON-S042-CON-P165",
         "CON-S045-CON-P165",
@@ -5663,7 +5664,9 @@
         "SRC0710",
         "SRC0711",
         "SRC0713",
-        "SRC0717"
+        "SRC0717",
+        "SRC0741",
+        "SRC0743"
       ]
     },
     {
@@ -5684,16 +5687,20 @@
       ],
       "workIds": [
         "W-S011",
+        "W-S045",
         "W-S049"
       ],
       "contributionIds": [
         "CON-S011-P-P166",
+        "CON-S045-P-P166",
         "CON-S049-P-P166"
       ],
       "sourceIds": [
         "SRC0003",
+        "SRC0005",
         "SRC0710",
-        "SRC0722"
+        "SRC0722",
+        "SRC0741"
       ],
       "nameVariantIds": [
         "PNV0063"
@@ -5736,7 +5743,8 @@
         "SRC0716",
         "SRC0720",
         "SRC0723",
-        "SRC0727"
+        "SRC0727",
+        "SRC0742"
       ],
       "nameVariantIds": [
         "PNV0064",
@@ -5798,6 +5806,86 @@
         "SRC0001",
         "SRC0736",
         "SRC0737"
+      ]
+    },
+    {
+      "id": "P170",
+      "displayName": "Sig Arno",
+      "authorizedName": "Arno, Sig",
+      "authorizedNameSource": "LCNAF",
+      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n88100641",
+      "sortName": "Arno, Sig",
+      "slug": "sig-arno",
+      "birthYear": 1895,
+      "deathYear": 1975,
+      "lifeDatesCertainty": "confirmed",
+      "primaryRole": "actor",
+      "roles": [
+        "actor",
+        "comedian",
+        "singer"
+      ],
+      "workIds": [
+        "W-S023"
+      ],
+      "contributionIds": [
+        "CON-S023-P-P170"
+      ],
+      "sourceIds": [
+        "SRC0743",
+        "SRC0745"
+      ],
+      "nameVariantIds": [
+        "PNV0066"
+      ]
+    },
+    {
+      "id": "P171",
+      "displayName": "Mitja Nikisch",
+      "authorizedName": "Nikisch, Mitja",
+      "authorizedNameSource": "LCNAF",
+      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no2012032865\nGND: https://d-nb.info/gnd/138243549",
+      "sortName": "Nikisch, Mitja",
+      "slug": "mitja-nikisch",
+      "birthYear": 1899,
+      "deathYear": 1936,
+      "lifeDatesCertainty": "confirmed",
+      "primaryRole": "conductor",
+      "roles": [
+        "pianist",
+        "bandleader",
+        "conductor"
+      ],
+      "workIds": [
+        "W-S030"
+      ],
+      "contributionIds": [
+        "CON-S030-CON-P171"
+      ],
+      "sourceIds": [
+        "SRC0744"
+      ]
+    },
+    {
+      "id": "P172",
+      "displayName": "Paul Dorn",
+      "authorizedName": "Dorn, Paul (Vocalist)",
+      "authorizedNameSource": "LCNAF",
+      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no2013029867",
+      "sortName": "Dorn, Paul",
+      "slug": "paul-dorn",
+      "primaryRole": "singer",
+      "roles": [
+        "singer"
+      ],
+      "workIds": [
+        "W-S030"
+      ],
+      "contributionIds": [
+        "CON-S030-P-P172"
+      ],
+      "sourceIds": [
+        "SRC0744"
       ]
     }
   ],
