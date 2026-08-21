@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 1197,
+  "count": 1200,
   "records": [
     {
       "id": "CON-F001-C-P009",
@@ -8912,7 +8912,8 @@
         "P009"
       ],
       "sourceIds": [
-        "SRC0185"
+        "SRC0185",
+        "SRC0757"
       ],
       "nameVariantIds": [
         "PNV0019"
@@ -8931,7 +8932,8 @@
         "P077"
       ],
       "sourceIds": [
-        "SRC0185"
+        "SRC0185",
+        "SRC0757"
       ]
     },
     {
@@ -8947,7 +8949,8 @@
         "P020"
       ],
       "sourceIds": [
-        "SRC0185"
+        "SRC0185",
+        "SRC0757"
       ]
     },
     {
@@ -8963,7 +8966,8 @@
         "ORG033"
       ],
       "sourceIds": [
-        "SRC0185"
+        "SRC0185",
+        "SRC0757"
       ]
     },
     {
@@ -21180,6 +21184,63 @@
         "SRC0755"
       ],
       "scopeNote": "Issued the disc as E.G. 2532."
+    },
+    {
+      "id": "CON-S059-P-P118",
+      "role": "performer",
+      "nameAsPrinted": "Richard Tauber",
+      "displayCredit": "Vocal performance",
+      "evidenceContext": "film_song",
+      "sortOrder": 50,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S059"
+      ],
+      "personIds": [
+        "P118"
+      ],
+      "sourceIds": [
+        "SRC0756"
+      ],
+      "scopeNote": "Sang the song in Melodie der Liebe and recorded it; the recording survives through a later reissue that carries no disc data."
+    },
+    {
+      "id": "CON-S059-CON-P144",
+      "role": "conductor",
+      "nameAsPrinted": "Paul Dessau",
+      "displayCredit": "Directed the accompaniment",
+      "evidenceContext": "film_song",
+      "sortOrder": 55,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S059"
+      ],
+      "personIds": [
+        "P144"
+      ],
+      "sourceIds": [
+        "SRC0756"
+      ],
+      "scopeNote": "Named on the reissue as the artist accompanying Tauber; he was the film's musical director."
+    },
+    {
+      "id": "CON-S059-LAB-ORG145",
+      "role": "record_label",
+      "nameAsPrinted": "Rot-Blau",
+      "displayCredit": "Issuing label",
+      "evidenceContext": "recording_label",
+      "sortOrder": 60,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S059"
+      ],
+      "organizationIds": [
+        "ORG145"
+      ],
+      "sourceIds": [
+        "SRC0757"
+      ],
+      "scopeNote": "Issued the dance-band version as Rot-Blau 9713."
     }
   ]
 }

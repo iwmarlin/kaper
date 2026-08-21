@@ -6084,7 +6084,9 @@
       "displayOnSite": true,
       "publicScope": "standalone_page",
       "sourceIds": [
-        "SRC0185"
+        "SRC0185",
+        "SRC0756",
+        "SRC0757"
       ],
       "titleVariantIds": [
         "TV0147",
@@ -6094,7 +6096,10 @@
         "CON-S059-C-P009",
         "CON-S059-C-P077",
         "CON-S059-L-P020",
-        "CON-S059-PUB-ORG033"
+        "CON-S059-PUB-ORG033",
+        "CON-S059-P-P118",
+        "CON-S059-CON-P144",
+        "CON-S059-LAB-ORG145"
       ],
       "nameVariantIds": [
         "PNV0019"
@@ -6105,7 +6110,8 @@
         "P077"
       ],
       "organizationIds": [
-        "ORG033"
+        "ORG033",
+        "ORG145"
       ],
       "relationIds": [
         "REL0027",
@@ -6117,6 +6123,10 @@
       ],
       "periods": [
         "european"
+      ],
+      "mediaIds": [
+        "M390",
+        "M391"
       ]
     },
     {

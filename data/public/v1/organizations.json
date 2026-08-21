@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 139,
+  "count": 140,
   "records": [
     {
       "id": "ORG001",
@@ -4179,6 +4179,30 @@
       ],
       "contributionIds": [
         "CON-S057-P-ORG144"
+      ]
+    },
+    {
+      "id": "ORG145",
+      "displayName": "Rot-Blau",
+      "authorizedName": "Rot-Blau (Schallplattenmarke)",
+      "types": [
+        "record label"
+      ],
+      "city": [
+        "Berlin"
+      ],
+      "country": "Germany",
+      "slug": "rot-blau",
+      "nameVariants": "Rot-Blau Schallplatte",
+      "authorizedNameSource": "local heading",
+      "sourceIds": [
+        "SRC0757"
+      ],
+      "workIds": [
+        "W-S059"
+      ],
+      "contributionIds": [
+        "CON-S059-LAB-ORG145"
       ]
     }
   ]
