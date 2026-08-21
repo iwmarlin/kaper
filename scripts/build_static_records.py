@@ -438,8 +438,15 @@ SCHEMA_TYPE = {
     "place": "Place",
     "work": "CreativeWork",
     "event": "Event",
-    "media": "ImageObject",
     "source": "CreativeWork",
+}
+
+MEDIA_SCHEMA_TYPE = {
+    "audio": "AudioObject",
+    "video": "VideoObject",
+    "image": "ImageObject",
+    "sheet music": "ImageObject",
+    "document_gallery": "CollectionPage",
 }
 
 NEUTRAL_OG_IMAGE_PATH = "apple-touch-icon.png"
@@ -454,6 +461,57 @@ def image_asset_path(media: dict) -> str:
         if Path(urlsplit(path).path).suffix.lower() in IMAGE_ASSET_SUFFIXES:
             return path
     return ""
+
+
+def media_schema_type(record: dict) -> str:
+    """Map the catalogue's controlled media type to a schema.org class."""
+    media_type = str(record.get("mediaType") or "").strip().casefold()
+    return MEDIA_SCHEMA_TYPE.get(media_type, "MediaObject")
+
+
+def public_http_url(value) -> str:
+    """Return a safe public HTTP(S) URL, or an empty string."""
+    url = str(value or "").strip()
+    parsed = urlsplit(url)
+    if (
+        parsed.scheme not in {"http", "https"}
+        or not parsed.netloc
+        or re.search(r"\s", url)
+    ):
+        return ""
+    return url
+
+
+def media_structured_data(record: dict, data: dict) -> None:
+    """Add type-appropriate properties to a Media record's JSON-LD."""
+    schema_type = media_schema_type(record)
+    data["@type"] = schema_type
+
+    paths = [
+        str(path).strip()
+        for path in [record.get("assetPath"), *(record.get("assetPaths") or [])]
+        if str(path or "").strip()
+    ]
+    paths = list(dict.fromkeys(paths))
+
+    if schema_type == "CollectionPage":
+        if paths:
+            data["hasPart"] = [
+                {
+                    "@type": "ImageObject",
+                    "contentUrl": f"{ORIGIN}{quote(path, safe='/')}",
+                    "position": position,
+                }
+                for position, path in enumerate(paths, start=1)
+            ]
+    elif paths:
+        data["contentUrl"] = f"{ORIGIN}{quote(paths[0], safe='/')}"
+
+    external_url = public_http_url(record.get("externalUrl"))
+    if external_url:
+        data["sameAs"] = external_url
+    if record.get("publicCreditLine"):
+        data["creditText"] = record["publicCreditLine"]
 
 
 def og_image_for(record_type: str, record: dict, tables: dict) -> dict:
@@ -586,6 +644,8 @@ def structured_data(
         data["description"] = compact_text(summary, 300)
     if record_type == "work":
         work_structured_data(record, tables or {}, data)
+    if record_type == "media":
+        media_structured_data(record, data)
     if record_type == "source":
         link = record.get("primaryUrl") or record.get("accessUrl")
         if link:
@@ -612,10 +672,6 @@ def structured_data(
             data["address"] = locality
     if record_type == "event" and record.get("dateStart"):
         data["startDate"] = record["dateStart"]
-    if record_type == "media" and record.get("assetPath"):
-        data["contentUrl"] = f"{ORIGIN}{record['assetPath']}"
-        if record.get("publicCreditLine"):
-            data["creditText"] = record["publicCreditLine"]
     payload = json.dumps(data, ensure_ascii=False)
     return f'<script type="application/ld+json">{payload}</script>'
 

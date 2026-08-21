@@ -110,6 +110,14 @@ PRERENDERED_RELATION_LINKS = {
     },
 }
 
+MEDIA_SCHEMA_TYPES = {
+    "audio": "AudioObject",
+    "video": "VideoObject",
+    "image": "ImageObject",
+    "sheet music": "ImageObject",
+    "document_gallery": "CollectionPage",
+}
+
 ASSET_REFERENCE_RE = re.compile(
     r'((?:assets/site/|\./)[A-Za-z0-9._/-]+\.(?:css|js))\?v=([A-Za-z0-9._-]+)'
 )
@@ -487,6 +495,34 @@ def validate(root: Path) -> dict:
                     if not record:
                         errors.append(f"{relative}: primary record is missing from its payload")
                     else:
+                        if record_type == "media":
+                            match = re.search(
+                                r'<script type="application/ld\+json">(.*?)</script>',
+                                text,
+                                flags=re.DOTALL,
+                            )
+                            if not match:
+                                errors.append(f"{relative}: schema.org JSON-LD is missing")
+                            else:
+                                try:
+                                    structured = json.loads(match.group(1))
+                                except json.JSONDecodeError:
+                                    errors.append(
+                                        f"{relative}: schema.org JSON-LD is invalid JSON"
+                                    )
+                                else:
+                                    media_type = record.get("mediaType")
+                                    expected_schema_type = MEDIA_SCHEMA_TYPES.get(media_type)
+                                    if expected_schema_type is None:
+                                        errors.append(
+                                            f"{relative}: unsupported mediaType {media_type!r}"
+                                        )
+                                    elif structured.get("@type") != expected_schema_type:
+                                        errors.append(
+                                            f"{relative}: schema.org type must be "
+                                            f"{expected_schema_type}, found "
+                                            f"{structured.get('@type')!r}"
+                                        )
                         for field, heading in PRERENDERED_RELATION_SECTIONS.get(record_type, {}).items():
                             if record.get(field) and f"<h2>{heading}" not in text:
                                 errors.append(

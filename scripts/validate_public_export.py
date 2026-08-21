@@ -119,6 +119,8 @@ SOURCE_RESEARCH_NOTE_TYPES = {
     "verification_note",
 }
 
+MEDIA_TYPES = {"audio", "video", "image", "sheet music", "document_gallery"}
+
 SOURCE_PUBLIC_WORKFLOW_PATTERN = re.compile(
     r"(?:"
     r"assets/|"
@@ -747,6 +749,10 @@ class ExportValidator:
                 )
 
         for media in self.payloads.get("Media", {}).get("records", []):
+            if media.get("mediaType") not in MEDIA_TYPES:
+                self.errors.append(
+                    f"Media {media['id']}: unsupported mediaType {media.get('mediaType')!r}"
+                )
             if (
                 media.get("mediaType") != "document_gallery"
                 and len(media.get("periods", [])) != 1
