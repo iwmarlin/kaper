@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 690,
+  "count": 691,
   "records": [
     {
       "id": "SRC0001",
@@ -10268,6 +10268,9 @@
       "primaryUrl": "https://www.youtube.com/watch?v=9cnM8MHAvco",
       "personIds": [
         "P168"
+      ],
+      "mediaIds": [
+        "M396"
       ]
     },
     {
@@ -15520,10 +15523,17 @@
         "CON-S078-L-P020",
         "CON-S078-LAB-ORG128",
         "CON-S078-P-ORG120",
+        "CON-S078-P-P117",
         "CON-S078-PUB-ORG029"
       ],
       "nameVariantIds": [
         "PNV0020"
+      ],
+      "personIds": [
+        "P117"
+      ],
+      "mediaIds": [
+        "M395"
       ],
       "primaryUrl": "https://archive.org/details/78_oh-madonna_jan-kiepura-odeon-knstler-orchester-b-kaper-und-walter-jurmann-fritz_gbia7014687a"
     },
@@ -23551,6 +23561,37 @@
       ],
       "songIds": [
         "S096"
+      ]
+    },
+    {
+      "id": "SRC0765",
+      "shortCitation": "YouTube, “Henri Garat - A Paris Tiguidiguidi”",
+      "fullCitation": "Chansons, Folklore et Variété, uploader. “Henri Garat - A Paris Tiguidiguidi.” YouTube audio reference. Accessed 21 August 2026.",
+      "sourceType": "online_video_source",
+      "title": "À Paris tiguidiguidi — Henri Garat, YouTube",
+      "creator": "Chansons, Folklore et Variété",
+      "repository": "YouTube",
+      "publication": "YouTube",
+      "date": "n.d.",
+      "accessDate": "2026-08-21",
+      "reliability": "low",
+      "sourceStatus": "verified",
+      "slug": "src0765-youtube-henri-garat-a-paris-tiguidiguidi",
+      "primaryUrl": "https://www.youtube.com/watch?v=emMhpldtHKs",
+      "organizationIds": [
+        "ORG093"
+      ],
+      "personIds": [
+        "P132"
+      ],
+      "mediaIds": [
+        "M397"
+      ],
+      "workIds": [
+        "W-S097"
+      ],
+      "songIds": [
+        "S097"
       ]
     }
   ],
