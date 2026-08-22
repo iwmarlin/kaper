@@ -9892,6 +9892,14 @@
       }
     },
     "Works": {
+      "W-F024": {
+        "reason": "Attach the Filmportal/DFF opening excerpt source to the film it documents; the separately catalogued song retains its own bibliographic sources.",
+        "fields": {
+          "sourceIds": [
+            "SRC0325"
+          ]
+        }
+      },
       "W-S022": {
         "reason": "Connect the work to the contemporary advertisement that prints its title, lyricist, composer and publisher, and to the corresponding page image.",
         "fields": {
@@ -10538,6 +10546,14 @@
       }
     },
     "Films": {
+      "F024": {
+        "reason": "Attach the Filmportal/DFF opening excerpt source to the corresponding Film record.",
+        "fields": {
+          "sourceIds": [
+            "SRC0325"
+          ]
+        }
+      },
       "F007": {
         "reason": "Connect the Film record to the Bundesarchiv full-film source for Die große Attraktion.",
         "fields": {
@@ -11744,6 +11760,17 @@
       }
     },
     "Sources": {
+      "SRC0325": {
+        "reason": "Model the Filmportal/DFF opening excerpt as documentation of the film W-F024 / F024, not of the separately catalogued song W-S086.",
+        "fields": {
+          "workIds": [
+            "W-F024"
+          ],
+          "filmIds": [
+            "F024"
+          ]
+        }
+      },
       "SRC0492": {
         "reason": "Synchronize the European Film Fund institutional source with the documented co-founders Carl Laemmle and Paul Kohner.",
         "fields": {
@@ -13228,6 +13255,14 @@
       }
     },
     "Sources": {
+      "SRC0325": {
+        "reason": "Remove the song link because the Filmportal/DFF record and excerpt document the film Kind, ich freu' mich auf Dein Kommen.",
+        "fields": {
+          "workIds": [
+            "W-S086"
+          ]
+        }
+      },
       "SRC0110": {
         "reason": "Remove TE0007 and TE0010 after those superseded University of Warsaw timeline records were excluded from the public chronology; retain the source and all links to the surviving documented events.",
         "fields": {
@@ -13564,8 +13599,11 @@
     },
     "Works": {
       "W-S086": {
-        "reason": "Keep M020 with W-F024 because it is an official excerpt from the film rather than an item-level medium for the separately catalogued song; W-S086 retains its directly relevant sheet-music medium M225.",
+        "reason": "Keep the Filmportal/DFF excerpt and its source with W-F024; W-S086 retains its directly relevant bibliographic sources and sheet-music medium M225.",
         "fields": {
+          "sourceIds": [
+            "SRC0325"
+          ],
           "mediaIds": [
             "M020"
           ]
