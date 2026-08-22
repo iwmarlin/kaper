@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 1205,
+  "count": 1207,
   "records": [
     {
       "id": "CON-F001-C-P009",
@@ -11641,19 +11641,18 @@
       ]
     },
     {
-      "id": "CON-S096-PUB-ORG045",
+      "id": "CON-S096-PUB-ORG106",
       "role": "publisher",
-      "nameAsPrinted": "Editions Musicales Echo",
+      "nameAsPrinted": "Choudens, Editeur",
       "evidenceContext": "sheet_music",
       "certainty": "confirmed",
       "workIds": [
         "W-S096"
       ],
       "organizationIds": [
-        "ORG045"
+        "ORG106"
       ],
       "sourceIds": [
-        "SRC0300",
         "SRC0359"
       ]
     },
@@ -21364,6 +21363,44 @@
       "sourceIds": [
         "SRC0487"
       ]
+    },
+    {
+      "id": "CON-S096-LAB-ORG039",
+      "role": "record_label",
+      "nameAsPrinted": "Nouveau Disque Salabert",
+      "displayCredit": "Issuing label",
+      "evidenceContext": "online_catalogue",
+      "sortOrder": 60,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S096"
+      ],
+      "organizationIds": [
+        "ORG039"
+      ],
+      "sourceIds": [
+        "SRC0300"
+      ],
+      "scopeNote": "Issued as one side of Salabert 3382."
+    },
+    {
+      "id": "CON-S097-LAB-ORG039",
+      "role": "record_label",
+      "nameAsPrinted": "Nouveau Disque Salabert",
+      "displayCredit": "Issuing label",
+      "evidenceContext": "online_catalogue",
+      "sortOrder": 60,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S097"
+      ],
+      "organizationIds": [
+        "ORG039"
+      ],
+      "sourceIds": [
+        "SRC0300"
+      ],
+      "scopeNote": "Issued as one side of Salabert 3382."
     }
   ]
 }

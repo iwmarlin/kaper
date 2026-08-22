@@ -7807,9 +7807,10 @@
         "CON-S096-C-P009",
         "CON-S096-C-P077",
         "CON-S096-L-P049",
-        "CON-S096-PUB-ORG045",
+        "CON-S096-PUB-ORG106",
         "CON-S096-P-P132",
-        "CON-S096-CON-P009"
+        "CON-S096-CON-P009",
+        "CON-S096-LAB-ORG039"
       ],
       "nameVariantIds": [
         "PNV0019"
@@ -7821,7 +7822,8 @@
         "P132"
       ],
       "organizationIds": [
-        "ORG045"
+        "ORG039",
+        "ORG106"
       ],
       "relationIds": [
         "REL0061"
@@ -7858,7 +7860,8 @@
         "CON-S097-C-P079",
         "CON-S097-CON-P009",
         "CON-S097-L-P049",
-        "CON-S097-P-P132"
+        "CON-S097-P-P132",
+        "CON-S097-LAB-ORG039"
       ],
       "nameVariantIds": [
         "PNV0026"
@@ -7868,6 +7871,9 @@
         "P049",
         "P079",
         "P132"
+      ],
+      "organizationIds": [
+        "ORG039"
       ],
       "relationIds": [
         "REL0062"

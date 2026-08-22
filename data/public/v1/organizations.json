@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 140,
+  "count": 139,
   "records": [
     {
       "id": "ORG001",
@@ -1290,7 +1290,8 @@
       "displayName": "Éditions Salabert",
       "authorizedName": "Éditions Salabert",
       "types": [
-        "publisher"
+        "publisher",
+        "record_label"
       ],
       "city": [
         "Paris"
@@ -1300,6 +1301,7 @@
       "nameVariants": "Paris: éditions Salabert; Editions Salabert",
       "sourceIds": [
         "SRC0115",
+        "SRC0300",
         "SRC0357",
         "SRC0540",
         "SRC0670"
@@ -1318,6 +1320,8 @@
         "CON-S087-PUB-ORG039",
         "CON-S093-PUB-ORG039",
         "CON-S095-PUB-ORG039",
+        "CON-S096-LAB-ORG039",
+        "CON-S097-LAB-ORG039",
         "CON-S110-PUB-ORG039",
         "CON-S111-PUB-ORG039",
         "CON-S116-RL-ORG039",
@@ -1337,6 +1341,8 @@
         "W-S087",
         "W-S093",
         "W-S095",
+        "W-S096",
+        "W-S097",
         "W-S110",
         "W-S111",
         "W-S116",
@@ -1434,29 +1440,6 @@
       "workIds": [
         "W-S072",
         "W-S080"
-      ]
-    },
-    {
-      "id": "ORG045",
-      "displayName": "Editions Musicales Echo",
-      "authorizedName": "Editions Musicales Echo",
-      "types": [
-        "publisher"
-      ],
-      "city": [
-        "Paris"
-      ],
-      "country": "France",
-      "slug": "editions-musicales-echo",
-      "contributionIds": [
-        "CON-S096-PUB-ORG045"
-      ],
-      "workIds": [
-        "W-S096"
-      ],
-      "sourceIds": [
-        "SRC0300",
-        "SRC0359"
       ]
     },
     {
@@ -3204,6 +3187,12 @@
       "nameVariants": "Choudens; Choudens, Éditeur; Choudens, Editeur",
       "sourceIds": [
         "SRC0359"
+      ],
+      "contributionIds": [
+        "CON-S096-PUB-ORG106"
+      ],
+      "workIds": [
+        "W-S096"
       ]
     },
     {
