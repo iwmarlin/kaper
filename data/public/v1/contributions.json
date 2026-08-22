@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 1207,
+  "count": 1209,
   "records": [
     {
       "id": "CON-F001-C-P009",
@@ -21401,6 +21401,43 @@
         "SRC0300"
       ],
       "scopeNote": "Issued as one side of Salabert 3382."
+    },
+    {
+      "id": "CON-S008-P-ORG134",
+      "role": "performer",
+      "nameAsPrinted": "Saxophon-Orchester Dobbri",
+      "displayCredit": "Orchestral performance",
+      "evidenceContext": "online_recording",
+      "sortOrder": 50,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S008"
+      ],
+      "organizationIds": [
+        "ORG134"
+      ],
+      "sourceIds": [
+        "SRC0766"
+      ]
+    },
+    {
+      "id": "CON-S022-LAB-ORG132",
+      "role": "record_label",
+      "nameAsPrinted": "Syrena-Electro",
+      "displayCredit": "Issuing label",
+      "evidenceContext": "discography",
+      "sortOrder": 60,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S022"
+      ],
+      "organizationIds": [
+        "ORG132"
+      ],
+      "sourceIds": [
+        "SRC0767"
+      ],
+      "scopeNote": "Issued the Tadeusz Faliszewski recording as catalogue no. 3461, matrix 20876."
     }
   ]
 }

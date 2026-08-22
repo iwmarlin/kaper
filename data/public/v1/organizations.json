@@ -2926,7 +2926,8 @@
         "SRC0762",
         "SRC0763",
         "SRC0764",
-        "SRC0765"
+        "SRC0765",
+        "SRC0766"
       ]
     },
     {
@@ -3904,12 +3905,14 @@
         "SRC0736",
         "SRC0737",
         "SRC0738",
-        "SRC0759"
+        "SRC0759",
+        "SRC0767"
       ],
       "workIds": [
         "W-S001",
         "W-S002",
         "W-S003",
+        "W-S022",
         "W-S218"
       ],
       "authorityUrl": "BN: https://dbn.bn.org.pl/descriptor-details/a0000001996595\nVIAF: https://viaf.org/viaf/241007973",
@@ -3917,6 +3920,7 @@
         "CON-S001-LAB-ORG132",
         "CON-S002-LAB-ORG132",
         "CON-S003-LAB-ORG132",
+        "CON-S022-LAB-ORG132",
         "CON-S218-LAB-ORG132"
       ]
     },
@@ -3963,12 +3967,15 @@
       "authorityUrl": "GND: https://d-nb.info/gnd/10025557-7",
       "sourceIds": [
         "SRC0716",
-        "SRC0720"
+        "SRC0720",
+        "SRC0766"
       ],
       "workIds": [
+        "W-S008",
         "W-S024"
       ],
       "contributionIds": [
+        "CON-S008-P-ORG134",
         "CON-S024-P-ORG134"
       ]
     },

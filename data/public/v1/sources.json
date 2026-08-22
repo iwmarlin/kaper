@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 691,
+  "count": 693,
   "records": [
     {
       "id": "SRC0001",
@@ -20137,6 +20137,9 @@
         "CON-S216-C-P009",
         "CON-S216-L-P159"
       ],
+      "mediaIds": [
+        "M399"
+      ],
       "primaryUrl": "https://staremelodie.pl/piosenka/2297/Moze_tak_moze_nie"
     },
     {
@@ -23592,6 +23595,69 @@
       ],
       "songIds": [
         "S097"
+      ]
+    },
+    {
+      "id": "SRC0766",
+      "shortCitation": "YouTube, “Saxophon-Orchester Dobbri - Gib nur acht über Nacht kommt die Liebe”",
+      "fullCitation": "Musicaviennensis, uploader. “Saxophon-Orchester Dobbri - Gib nur acht über Nacht kommt die Liebe.” YouTube audio reference. Accessed 22 August 2026.",
+      "sourceType": "online_video_source",
+      "title": "Gib nur acht, über Nacht kommt die Liebe — Saxophon-Orchester Dobbri, YouTube",
+      "creator": "Musicaviennensis",
+      "repository": "YouTube",
+      "publication": "YouTube",
+      "date": "n.d.",
+      "accessDate": "2026-08-22",
+      "reliability": "low",
+      "sourceStatus": "verified",
+      "slug": "src0766-youtube-dobbri-gib-nur-acht-ueber-nacht-kommt-die-liebe",
+      "primaryUrl": "https://www.youtube.com/watch?v=UYUU01yuj80",
+      "organizationIds": [
+        "ORG093",
+        "ORG134"
+      ],
+      "mediaIds": [
+        "M398"
+      ],
+      "workIds": [
+        "W-S008"
+      ],
+      "songIds": [
+        "S008"
+      ],
+      "contributionIds": [
+        "CON-S008-P-ORG134"
+      ]
+    },
+    {
+      "id": "SRC0767",
+      "shortCitation": "Stare Melodie, “O tym już wróble świergocą na dachu” — Syrena-Electro 3461 (1930)",
+      "fullCitation": "Stare Melodie. “O tym już wróble świergocą na dachu.” Recording by Tadeusz Faliszewski with the orchestra of Towarzystwo Syrena Record, March 1930. Syrena-Electro 3461, matrix 20876. Accessed 22 August 2026.",
+      "sourceType": "recording_discographic_source",
+      "title": "O tym już wróble świergocą na dachu — Syrena-Electro recording",
+      "creator": "Stare Melodie",
+      "repository": "Stare Melodie",
+      "publication": "Stare Melodie",
+      "date": "1930",
+      "accessDate": "2026-08-22",
+      "reliability": "medium",
+      "sourceStatus": "verified",
+      "slug": "src0767-stare-melodie-o-tym-juz-wroble-swiergoca-na-dachu",
+      "primaryUrl": "https://staremelodie.pl/piosenka/2788/O_tym_juz_wroble_swiergoca_na_dachu",
+      "organizationIds": [
+        "ORG132"
+      ],
+      "mediaIds": [
+        "M400"
+      ],
+      "workIds": [
+        "W-S022"
+      ],
+      "songIds": [
+        "S022"
+      ],
+      "contributionIds": [
+        "CON-S022-LAB-ORG132"
       ]
     }
   ],

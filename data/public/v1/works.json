@@ -3932,12 +3932,14 @@
       "sourceIds": [
         "SRC0102",
         "SRC0464",
-        "SRC0658"
+        "SRC0658",
+        "SRC0766"
       ],
       "contributionIds": [
         "CON-S008-C-P009",
         "CON-S008-L-P020",
-        "CON-S008-PUB-ORG029"
+        "CON-S008-PUB-ORG029",
+        "CON-S008-P-ORG134"
       ],
       "nameVariantIds": [
         "PNV0019"
@@ -3947,7 +3949,8 @@
         "P020"
       ],
       "organizationIds": [
-        "ORG029"
+        "ORG029",
+        "ORG134"
       ],
       "songIds": [
         "S008"
@@ -3957,6 +3960,9 @@
       ],
       "periods": [
         "european"
+      ],
+      "mediaIds": [
+        "M398"
       ]
     },
     {
@@ -4556,16 +4562,19 @@
       "publicScope": "standalone_page",
       "sourceIds": [
         "SRC0018",
-        "SRC0379"
+        "SRC0379",
+        "SRC0767"
       ],
       "mediaIds": [
         "M128",
-        "M198"
+        "M198",
+        "M400"
       ],
       "contributionIds": [
         "CON-S022-C-P009",
         "CON-S022-L-P003",
-        "CON-S022-PUB-ORG051"
+        "CON-S022-PUB-ORG051",
+        "CON-S022-LAB-ORG132"
       ],
       "nameVariantIds": [
         "PNV0035"
@@ -4575,7 +4584,8 @@
         "P009"
       ],
       "organizationIds": [
-        "ORG051"
+        "ORG051",
+        "ORG132"
       ],
       "songIds": [
         "S022"
@@ -12321,6 +12331,9 @@
       ],
       "periods": [
         "european"
+      ],
+      "mediaIds": [
+        "M399"
       ]
     },
     {
