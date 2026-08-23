@@ -241,7 +241,14 @@ def apply_disc(media: dict, source: dict, *, disc: dict, work_title: str, host: 
     order = disc.get("order_number") or ""
     performer = disc.get("performer_credit") or ""
     from_description = bool(disc.get("from_description"))
-    repository = disc.get("repository") or ("" if from_description else RADIOMUSEUM_REPOSITORY)
+    # A digitising library that catalogues the disc it transfers — the Great 78
+    # Project and its like — reads the label for us. The evidence is still the
+    # disc, but the recording shows nothing, so the records must not claim a
+    # label in view.
+    catalogued_by = (disc.get("catalogued_by") or "").strip()
+    repository = disc.get("repository") or (
+        "" if (from_description or catalogued_by) else RADIOMUSEUM_REPOSITORY
+    )
 
     numbers = ", ".join(
         part for part in (
@@ -261,12 +268,16 @@ def apply_disc(media: dict, source: dict, *, disc: dict, work_title: str, host: 
             numbers,
         ) if part
     )
+    # A supplied date is printed as given — "1931", but also "n.d. [recorded
+    # 1929]" — and loses its own final stop so that the sentence keeps exactly
+    # one.
+    dated = (str(disc.get("date") or "").strip() or "n.d.").rstrip(".")
     citation_sentences = [
         f"{performer}." if performer else "",
         f"“{disc_title}.”",
         f"{disc['genre']};" if disc.get("genre") else "",
         f"label credit{'s' if ' and ' in printed else ''} {printed}." if printed else "",
-        f"{physical}, {disc['date'] if re.fullmatch(r'[0-9]{4}', str(disc.get('date') or '')) else 'n.d.'}.",
+        f"{physical}, {dated}.",
         (f"Digital transfer published on {host} by {disc.get('channel')}."
          if disc.get("channel") else f"Digital transfer published on {host}."),
         f"Accessed {human_date(source['accessDate'])}.",
@@ -282,6 +293,11 @@ def apply_disc(media: dict, source: dict, *, disc: dict, work_title: str, host: 
         research_notes.append(
             "The discographic details are taken from the uploader's description; "
             "the label is not shown in the external recording."
+        )
+    elif catalogued_by:
+        research_notes.append(
+            f"The discographic details were catalogued from the disc by {catalogued_by}; "
+            "the transfer carries sound alone, so the label is not shown in the external recording."
         )
     catalogued = f"{label} {catalogue}".strip()
     separator = " / " if catalogue else ", "
@@ -313,25 +329,47 @@ def apply_disc(media: dict, source: dict, *, disc: dict, work_title: str, host: 
     source["organizationIds"] = sorted(set(organizations))
 
     media["title"] = f"{work_title} — {reference.split(' / ')[0]}, listening reference"
-    media["description"] = (
-        f"Recording of “{disc_title}”"
-        + (f" by {performer}" if performer else "")
-        + (f", issued on {label}, linked as an external listening reference." if from_description
-           else f", filmed in play with the {label} label in view.")
-    )
-    media["altText"] = (
-        f"Listening reference for “{work_title}”."
-        if from_description
-        else f"Listening reference for “{work_title}”, showing the {label} disc label."
-    )
-    media["publicCaption"] = (
-        f"Listening reference for “{work_title}”"
-        + (f" in the recording by {performer}" if performer else "")
-        + (f". The upload identifies the disc as {reference} in its description, without showing the label."
-           if from_description
-           else f". The video shows the {reference} disc label"
-                + (f", which prints the credit{'s' if ' and ' in printed else ''} {printed}." if printed else "."))
-    )
+    if from_description:
+        media["description"] = (
+            f"Recording of “{disc_title}”"
+            + (f" by {performer}" if performer else "")
+            + f", issued on {label}, linked as an external listening reference."
+        )
+        media["altText"] = f"Listening reference for “{work_title}”."
+        media["publicCaption"] = (
+            f"Listening reference for “{work_title}”"
+            + (f" in the recording by {performer}" if performer else "")
+            + f". The upload identifies the disc as {reference} in its description, without showing the label."
+        )
+    elif catalogued_by:
+        media["description"] = (
+            f"Recording of “{disc_title}”"
+            + (f" by {performer}" if performer else "")
+            + f", issued on {label}, in a digital transfer of the disc linked as an external listening reference."
+        )
+        media["altText"] = f"Listening reference for “{work_title}”."
+        media["publicCaption"] = (
+            f"Listening reference for “{work_title}”"
+            + (f" in the recording by {performer}" if performer else "")
+            + f". {catalogued_by} transferred the disc and catalogued it from the label as {reference}"
+            + (f", which prints the credit{'s' if ' and ' in printed else ''} {printed}" if printed else "")
+            + "; the transfer carries sound alone."
+        )
+    else:
+        media["description"] = (
+            f"Recording of “{disc_title}”"
+            + (f" by {performer}" if performer else "")
+            + f", filmed in play with the {label} label in view."
+        )
+        media["altText"] = (
+            f"Listening reference for “{work_title}”, showing the {label} disc label."
+        )
+        media["publicCaption"] = (
+            f"Listening reference for “{work_title}”"
+            + (f" in the recording by {performer}" if performer else "")
+            + f". The video shows the {reference} disc label"
+            + (f", which prints the credit{'s' if ' and ' in printed else ''} {printed}." if printed else ".")
+        )
     media["publicCreditLine"] = (
         f"{host} / {disc.get('channel') or repository} listening link; {reference}."
     )
@@ -705,6 +743,10 @@ def main() -> int:
     disc.add_argument("--from-description", action="store_true",
                       help="the label is not shown in the upload and the numbers come from its "
                            "description: reliability drops to medium and the record says so")
+    disc.add_argument("--catalogued-by",
+                      help="digitising library that transferred the disc and catalogued it from the "
+                           "label, e.g. “the Great 78 Project”: the evidence stays the disc, but the "
+                           "records say that the transfer carries sound alone")
     disc.add_argument(
         "--link-contributions",
         action="store_true",
@@ -719,6 +761,7 @@ def main() -> int:
         "publisher_credit": args.publisher_credit, "publisher_org": args.publisher_org,
         "disc_title": args.disc_title, "date": args.date, "uploader_note": args.uploader_note,
         "repository": args.repository, "from_description": args.from_description,
+        "catalogued_by": args.catalogued_by,
     }
     disc_details = disc_fields if any(
         value for key, value in disc_fields.items()

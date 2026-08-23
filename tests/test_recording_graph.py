@@ -108,6 +108,38 @@ class RecordingGraphTests(unittest.TestCase):
         self.assertIn("not transcribed from the disc label", source["researchNote"])
         self.assertIn("label is not shown", source["researchNote"])
 
+    def test_disc_citation_keeps_one_stop_and_the_supplied_date(self) -> None:
+        works = json.loads(
+            (ROOT / "data/public/v1/works.json").read_text(encoding="utf-8")
+        )["records"]
+        work = next(record for record in works if record["id"] == "W-S002")
+
+        def citation(date_value: str | None) -> str:
+            disc = {"label": "Parlophone", "catalogue": "A3436"}
+            if date_value is not None:
+                disc["date"] = date_value
+            _, source = build_records(
+                url="https://archive.org/details/example",
+                work=work,
+                meta={"title": "Test transfer", "channel": "Great 78 Project"},
+                media_id="M999",
+                source_id="SRC9999",
+                person_id=None,
+                performer=None,
+                media_type="audio",
+                inherit_organizations=False,
+                disc=disc,
+            )
+            return source["fullCitation"]
+
+        undated = citation(None)
+        self.assertIn("Parlophone, Katalog-Nr. A3436, n.d.", undated)
+        self.assertNotIn("..", undated)
+        self.assertIn("A3436, 1931.", citation("1931"))
+        self.assertIn(
+            "A3436, n.d. [recorded 1929].", citation("n.d. [recorded 1929]")
+        )
+
     def test_record_labels_and_recording_notes_use_canonical_fields(self) -> None:
         organizations = json.loads(
             (ROOT / "data/public/v1/organizations.json").read_text(encoding="utf-8")

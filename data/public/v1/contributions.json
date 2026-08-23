@@ -8128,7 +8128,8 @@
         "P009"
       ],
       "sourceIds": [
-        "SRC0095"
+        "SRC0095",
+        "SRC0782"
       ],
       "nameVariantIds": [
         "PNV0019"
@@ -8147,7 +8148,8 @@
         "P020"
       ],
       "sourceIds": [
-        "SRC0095"
+        "SRC0095",
+        "SRC0782"
       ]
     },
     {
@@ -22011,10 +22013,18 @@
       "evidenceLocator": "Jazz Drops no. 6, M.V.A. 5824",
       "sortOrder": 10,
       "certainty": "confirmed",
-      "workIds": ["W-O028"],
-      "personIds": ["P009"],
-      "sourceIds": ["SRC0775"],
-      "nameVariantIds": ["PNV0019"]
+      "workIds": [
+        "W-O028"
+      ],
+      "personIds": [
+        "P009"
+      ],
+      "sourceIds": [
+        "SRC0775"
+      ],
+      "nameVariantIds": [
+        "PNV0019"
+      ]
     },
     {
       "id": "CON-O028-C-P194",
@@ -22025,9 +22035,15 @@
       "evidenceLocator": "Jazz Drops no. 6, M.V.A. 5824",
       "sortOrder": 20,
       "certainty": "confirmed",
-      "workIds": ["W-O028"],
-      "personIds": ["P194"],
-      "sourceIds": ["SRC0775"]
+      "workIds": [
+        "W-O028"
+      ],
+      "personIds": [
+        "P194"
+      ],
+      "sourceIds": [
+        "SRC0775"
+      ]
     },
     {
       "id": "CON-O028-PUB-ORG054",
@@ -22036,9 +22052,15 @@
       "evidenceContext": "sheet_music",
       "sortOrder": 60,
       "certainty": "confirmed",
-      "workIds": ["W-O028"],
-      "organizationIds": ["ORG054"],
-      "sourceIds": ["SRC0775"]
+      "workIds": [
+        "W-O028"
+      ],
+      "organizationIds": [
+        "ORG054"
+      ],
+      "sourceIds": [
+        "SRC0775"
+      ]
     },
     {
       "id": "CON-O029-A-P009",
@@ -22050,10 +22072,18 @@
       "evidenceLocator": "Hofmeister 1931, p. 258",
       "sortOrder": 10,
       "certainty": "confirmed",
-      "workIds": ["W-O029"],
-      "personIds": ["P009"],
-      "sourceIds": ["SRC0776"],
-      "nameVariantIds": ["PNV0019"]
+      "workIds": [
+        "W-O029"
+      ],
+      "personIds": [
+        "P009"
+      ],
+      "sourceIds": [
+        "SRC0776"
+      ],
+      "nameVariantIds": [
+        "PNV0019"
+      ]
     },
     {
       "id": "CON-O029-C-P195",
@@ -22063,9 +22093,15 @@
       "evidenceLocator": "Hofmeister 1931, p. 258",
       "sortOrder": 20,
       "certainty": "confirmed",
-      "workIds": ["W-O029"],
-      "personIds": ["P195"],
-      "sourceIds": ["SRC0776"]
+      "workIds": [
+        "W-O029"
+      ],
+      "personIds": [
+        "P195"
+      ],
+      "sourceIds": [
+        "SRC0776"
+      ]
     },
     {
       "id": "CON-O029-PUB-ORG054",
@@ -22074,9 +22110,15 @@
       "evidenceContext": "sheet_music",
       "sortOrder": 60,
       "certainty": "confirmed",
-      "workIds": ["W-O029"],
-      "organizationIds": ["ORG054"],
-      "sourceIds": ["SRC0776"]
+      "workIds": [
+        "W-O029"
+      ],
+      "organizationIds": [
+        "ORG054"
+      ],
+      "sourceIds": [
+        "SRC0776"
+      ]
     }
   ]
 }

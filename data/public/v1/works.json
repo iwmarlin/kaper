@@ -5604,7 +5604,8 @@
       "publicScope": "standalone_page",
       "sourceIds": [
         "SRC0095",
-        "SRC0760"
+        "SRC0760",
+        "SRC0782"
       ],
       "contributionIds": [
         "CON-S047-C-P009",
@@ -5628,6 +5629,9 @@
       ],
       "periods": [
         "european"
+      ],
+      "mediaIds": [
+        "M406"
       ]
     },
     {
@@ -12666,14 +12670,33 @@
       "certainty": "confirmed",
       "displayOnSite": true,
       "publicScope": "standalone_page",
-      "sourceIds": ["SRC0775"],
-      "contributionIds": ["CON-O028-A-P009", "CON-O028-PUB-ORG054", "CON-O028-C-P194"],
-      "nameVariantIds": ["PNV0019"],
-      "personIds": ["P009", "P194"],
-      "organizationIds": ["ORG054"],
-      "relationIds": ["REL0208"],
-      "otherWorkIds": ["O028"],
-      "periods": ["european"]
+      "sourceIds": [
+        "SRC0775"
+      ],
+      "contributionIds": [
+        "CON-O028-A-P009",
+        "CON-O028-PUB-ORG054",
+        "CON-O028-C-P194"
+      ],
+      "nameVariantIds": [
+        "PNV0019"
+      ],
+      "personIds": [
+        "P009",
+        "P194"
+      ],
+      "organizationIds": [
+        "ORG054"
+      ],
+      "relationIds": [
+        "REL0208"
+      ],
+      "otherWorkIds": [
+        "O028"
+      ],
+      "periods": [
+        "european"
+      ]
     },
     {
       "id": "W-O029",
@@ -12686,14 +12709,33 @@
       "certainty": "confirmed",
       "displayOnSite": true,
       "publicScope": "standalone_page",
-      "sourceIds": ["SRC0776"],
-      "contributionIds": ["CON-O029-A-P009", "CON-O029-PUB-ORG054", "CON-O029-C-P195"],
-      "nameVariantIds": ["PNV0019"],
-      "personIds": ["P009", "P195"],
-      "organizationIds": ["ORG054"],
-      "relationIds": ["REL0209"],
-      "otherWorkIds": ["O029"],
-      "periods": ["european"]
+      "sourceIds": [
+        "SRC0776"
+      ],
+      "contributionIds": [
+        "CON-O029-A-P009",
+        "CON-O029-PUB-ORG054",
+        "CON-O029-C-P195"
+      ],
+      "nameVariantIds": [
+        "PNV0019"
+      ],
+      "personIds": [
+        "P009",
+        "P195"
+      ],
+      "organizationIds": [
+        "ORG054"
+      ],
+      "relationIds": [
+        "REL0209"
+      ],
+      "otherWorkIds": [
+        "O029"
+      ],
+      "periods": [
+        "european"
+      ]
     }
   ],
   "recordCount": null
