@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 1240,
+  "count": 1246,
   "records": [
     {
       "id": "CON-F001-C-P009",
@@ -22000,6 +22000,83 @@
       "sourceIds": [
         "SRC0772"
       ]
+    },
+    {
+      "id": "CON-O028-A-P009",
+      "role": "arranger",
+      "nameAsPrinted": "Dr. B. Kaper",
+      "creditAsPrinted": "Concert-Transkription von Dr. B. Kaper",
+      "displayCredit": "Piano concert transcription",
+      "evidenceContext": "sheet_music",
+      "evidenceLocator": "Jazz Drops no. 6, M.V.A. 5824",
+      "sortOrder": 10,
+      "certainty": "confirmed",
+      "workIds": ["W-O028"],
+      "personIds": ["P009"],
+      "sourceIds": ["SRC0775"],
+      "nameVariantIds": ["PNV0019"]
+    },
+    {
+      "id": "CON-O028-C-P194",
+      "role": "composer",
+      "nameAsPrinted": "Pete Wendling",
+      "creditAsPrinted": "Music Pete Wendling",
+      "evidenceContext": "original_composition",
+      "evidenceLocator": "Jazz Drops no. 6, M.V.A. 5824",
+      "sortOrder": 20,
+      "certainty": "confirmed",
+      "workIds": ["W-O028"],
+      "personIds": ["P194"],
+      "sourceIds": ["SRC0775"]
+    },
+    {
+      "id": "CON-O028-PUB-ORG054",
+      "role": "publisher",
+      "nameAsPrinted": "Alberti G.m.B.H. Berlin W.50",
+      "evidenceContext": "sheet_music",
+      "sortOrder": 60,
+      "certainty": "confirmed",
+      "workIds": ["W-O028"],
+      "organizationIds": ["ORG054"],
+      "sourceIds": ["SRC0775"]
+    },
+    {
+      "id": "CON-O029-A-P009",
+      "role": "arranger",
+      "nameAsPrinted": "B. Kaper",
+      "creditAsPrinted": "Konzert-Transkript. v. B. Kaper",
+      "displayCredit": "Piano concert transcription",
+      "evidenceContext": "sheet_music",
+      "evidenceLocator": "Hofmeister 1931, p. 258",
+      "sortOrder": 10,
+      "certainty": "confirmed",
+      "workIds": ["W-O029"],
+      "personIds": ["P009"],
+      "sourceIds": ["SRC0776"],
+      "nameVariantIds": ["PNV0019"]
+    },
+    {
+      "id": "CON-O029-C-P195",
+      "role": "composer",
+      "nameAsPrinted": "John W. Green",
+      "evidenceContext": "original_composition",
+      "evidenceLocator": "Hofmeister 1931, p. 258",
+      "sortOrder": 20,
+      "certainty": "confirmed",
+      "workIds": ["W-O029"],
+      "personIds": ["P195"],
+      "sourceIds": ["SRC0776"]
+    },
+    {
+      "id": "CON-O029-PUB-ORG054",
+      "role": "publisher",
+      "nameAsPrinted": "Berlin, Alberti",
+      "evidenceContext": "sheet_music",
+      "sortOrder": 60,
+      "certainty": "confirmed",
+      "workIds": ["W-O029"],
+      "organizationIds": ["ORG054"],
+      "sourceIds": ["SRC0776"]
     }
   ]
 }

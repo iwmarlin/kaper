@@ -178,9 +178,9 @@
         ]
       },
       "W-O008": {
-        "reason": "Remove repeated title and instrumentation while retaining catalogue evidence not represented in the edition facts.",
+        "reason": "Distinguish the seven independently documented item-level issues from no. 8, which is listed on the surviving series cover but has not been located as a separate issue.",
         "fields": {
-          "publicNote": "StabiKat records held volume nos. 1–5 as Berlin: Alberti, 1930–31, shelfmark DMS 266613; Hofmeister independently lists individual numbers in 1930 and 1931."
+          "publicNote": "StabiKat records nos. 1–5 under shelfmark DMS 266613. The surviving no. 6 score in the Bronislaw Kaper Papers preserves a series cover listing nos. 1–8, and Hofmeister independently confirms no. 7. A separately issued copy of no. 8 has not yet been located."
         }
       },
       "W-O009": {
@@ -431,9 +431,10 @@
         ]
       },
       "O008": {
-        "reason": "Remove repeated title and instrumentation while retaining catalogue evidence not represented in the edition facts.",
+        "reason": "Distinguish the seven independently documented item-level issues from no. 8, which is listed on the surviving series cover but has not been located as a separate issue.",
         "fields": {
-          "publicNote": "StabiKat records held volume nos. 1–5 as Berlin: Alberti, 1930–31, shelfmark DMS 266613; Hofmeister independently lists individual numbers in 1930 and 1931."
+          "publicNote": "StabiKat records nos. 1–5 under shelfmark DMS 266613. The surviving no. 6 score in the Bronislaw Kaper Papers preserves a series cover listing nos. 1–8, and Hofmeister independently confirms no. 7. A separately issued copy of no. 8 has not yet been located.",
+          "sourceIds": ["SRC0154", "SRC0775", "SRC0776"]
         }
       },
       "O009": {
@@ -4295,7 +4296,9 @@
       "P190": {"reason": "Add Harry Brooks for the original music credit documented by the Jazz Drops source.", "fields": {"id": "P190", "displayName": "Harry Brooks", "authorizedName": "Brooks, Harry, 1895–1970", "sortName": "Brooks, Harry", "slug": "harry-brooks", "birthYear": 1895, "deathYear": 1970, "lifeDatesCertainty": "confirmed", "primaryRole": "composer", "roles": ["composer"], "authorityUrl": "Wikidata: https://www.wikidata.org/wiki/Q5667534", "workIds": ["W-O024"], "contributionIds": ["CON-O024-C-P190"]}},
       "P191": {"reason": "Add Hugo Riesenfeld for the original music credit documented by the Jazz Drops source.", "fields": {"id": "P191", "displayName": "Hugo Riesenfeld", "authorizedName": "Riesenfeld, Hugo, 1879–1939", "sortName": "Riesenfeld, Hugo", "slug": "hugo-riesenfeld", "birthYear": 1879, "deathYear": 1939, "lifeDatesCertainty": "confirmed", "primaryRole": "composer", "roles": ["composer"], "authorityUrl": "Wikidata: https://www.wikidata.org/wiki/Q79043", "workIds": ["W-O025"], "contributionIds": ["CON-O025-C-P191"]}},
       "P192": {"reason": "Add Ralph Benatzky for the original music credit documented by the Jazz Drops source.", "fields": {"id": "P192", "displayName": "Ralph Benatzky", "authorizedName": "Benatzky, Ralph, 1884–1957", "sortName": "Benatzky, Ralph", "slug": "ralph-benatzky", "birthYear": 1884, "deathYear": 1957, "lifeDatesCertainty": "confirmed", "primaryRole": "composer", "roles": ["composer"], "authorityUrl": "Wikidata: https://www.wikidata.org/wiki/Q213592", "workIds": ["W-O025"], "contributionIds": ["CON-O025-C-P192"]}},
-      "P193": {"reason": "Add Jack King for the original music credit documented by the Jazz Drops source.", "fields": {"id": "P193", "displayName": "Jack King", "authorizedName": "King, Jack, 1903–1943", "sortName": "King, Jack", "slug": "jack-king", "birthYear": 1903, "deathYear": 1943, "lifeDatesCertainty": "confirmed", "primaryRole": "composer", "roles": ["composer"], "workIds": ["W-O027"], "contributionIds": ["CON-O027-C-P193"]}}
+      "P193": {"reason": "Add Jack King for the original music credit documented by the Jazz Drops source.", "fields": {"id": "P193", "displayName": "Jack King", "authorizedName": "King, Jack, 1903–1943", "sortName": "King, Jack", "slug": "jack-king", "birthYear": 1903, "deathYear": 1943, "lifeDatesCertainty": "confirmed", "primaryRole": "composer", "roles": ["composer"], "workIds": ["W-O027"], "contributionIds": ["CON-O027-C-P193"]}},
+      "P194": {"reason": "Add Pete Wendling for the original music credit printed in the surviving Jazz Drops no. 6 score.", "fields": {"id": "P194", "displayName": "Pete Wendling", "authorizedName": "Wendling, Pete, 1888–1974", "sortName": "Wendling, Pete", "slug": "pete-wendling", "birthYear": 1888, "deathYear": 1974, "lifeDatesCertainty": "confirmed", "primaryRole": "composer", "roles": ["composer"], "authorityUrl": "Wikidata: https://www.wikidata.org/wiki/Q7172330\nVIAF: https://viaf.org/viaf/36121606\nLCNAF: https://id.loc.gov/authorities/names/n93012042\nGND: https://d-nb.info/gnd/1161770364\nISNI: https://isni.org/isni/0000000073594859", "workIds": ["W-O028"], "contributionIds": ["CON-O028-C-P194"]}},
+      "P195": {"reason": "Add Johnny Green for the original music credit in Hofmeister's item-level entry for Jazz Drops no. 7, printed as John W. Green.", "fields": {"id": "P195", "displayName": "Johnny Green", "authorizedName": "Green, Johnny, 1908–1989", "sortName": "Green, Johnny", "slug": "johnny-green", "birthYear": 1908, "deathYear": 1989, "lifeDatesCertainty": "confirmed", "primaryRole": "composer", "roles": ["composer"], "authorityUrl": "Wikidata: https://www.wikidata.org/wiki/Q664592\nVIAF: https://viaf.org/viaf/76502811\nLCNAF: https://id.loc.gov/authorities/names/n81072979\nGND: https://d-nb.info/gnd/134265823\nISNI: https://isni.org/isni/0000000116755641", "workIds": ["W-O029"], "contributionIds": ["CON-O029-C-P195"]}}
     },
     "Person Name Variants": {
       "PNV0039": {
@@ -6043,6 +6046,30 @@
         "reason": "Record Alberti as publisher of Jazz Drops no. 5.",
         "fields": {"id": "CON-O027-PUB-ORG054", "role": "publisher", "nameAsPrinted": "Berlin, Alberti", "evidenceContext": "sheet_music", "sortOrder": 60, "certainty": "confirmed", "workIds": ["W-O027"], "organizationIds": ["ORG054"], "sourceIds": ["SRC0772"]}
       },
+      "CON-O028-A-P009": {
+        "reason": "Record Kaper's piano concert transcription credit printed in the surviving Jazz Drops no. 6 score.",
+        "fields": {"id": "CON-O028-A-P009", "role": "arranger", "nameAsPrinted": "Dr. B. Kaper", "creditAsPrinted": "Concert-Transkription von Dr. B. Kaper", "displayCredit": "Piano concert transcription", "evidenceContext": "sheet_music", "evidenceLocator": "Jazz Drops no. 6, M.V.A. 5824", "sortOrder": 10, "certainty": "confirmed", "workIds": ["W-O028"], "personIds": ["P009"], "sourceIds": ["SRC0775"], "nameVariantIds": ["PNV0019"]}
+      },
+      "CON-O028-C-P194": {
+        "reason": "Record Pete Wendling's original music credit printed in the surviving Jazz Drops no. 6 score.",
+        "fields": {"id": "CON-O028-C-P194", "role": "composer", "nameAsPrinted": "Pete Wendling", "creditAsPrinted": "Music Pete Wendling", "evidenceContext": "original_composition", "evidenceLocator": "Jazz Drops no. 6, M.V.A. 5824", "sortOrder": 20, "certainty": "confirmed", "workIds": ["W-O028"], "personIds": ["P194"], "sourceIds": ["SRC0775"]}
+      },
+      "CON-O028-PUB-ORG054": {
+        "reason": "Record Alberti as publisher of the surviving Jazz Drops no. 6 score.",
+        "fields": {"id": "CON-O028-PUB-ORG054", "role": "publisher", "nameAsPrinted": "Alberti G.m.B.H. Berlin W.50", "evidenceContext": "sheet_music", "sortOrder": 60, "certainty": "confirmed", "workIds": ["W-O028"], "organizationIds": ["ORG054"], "sourceIds": ["SRC0775"]}
+      },
+      "CON-O029-A-P009": {
+        "reason": "Record Kaper's piano concert transcription credit in Hofmeister's item-level entry for Jazz Drops no. 7.",
+        "fields": {"id": "CON-O029-A-P009", "role": "arranger", "nameAsPrinted": "B. Kaper", "creditAsPrinted": "Konzert-Transkript. v. B. Kaper", "displayCredit": "Piano concert transcription", "evidenceContext": "sheet_music", "evidenceLocator": "Hofmeister 1931, p. 258", "sortOrder": 10, "certainty": "confirmed", "workIds": ["W-O029"], "personIds": ["P009"], "sourceIds": ["SRC0776"], "nameVariantIds": ["PNV0019"]}
+      },
+      "CON-O029-C-P195": {
+        "reason": "Record John W. Green's original music credit in Hofmeister's item-level entry for Jazz Drops no. 7.",
+        "fields": {"id": "CON-O029-C-P195", "role": "composer", "nameAsPrinted": "John W. Green", "evidenceContext": "original_composition", "evidenceLocator": "Hofmeister 1931, p. 258", "sortOrder": 20, "certainty": "confirmed", "workIds": ["W-O029"], "personIds": ["P195"], "sourceIds": ["SRC0776"]}
+      },
+      "CON-O029-PUB-ORG054": {
+        "reason": "Record Alberti as publisher of Jazz Drops no. 7 from Hofmeister's item-level entry.",
+        "fields": {"id": "CON-O029-PUB-ORG054", "role": "publisher", "nameAsPrinted": "Berlin, Alberti", "evidenceContext": "sheet_music", "sortOrder": 60, "certainty": "confirmed", "workIds": ["W-O029"], "organizationIds": ["ORG054"], "sourceIds": ["SRC0776"]}
+      },
       "CON-O012-C-P177": {
         "reason": "Record Walter G. Samuels as a composer of the original song Fiesta (Bianca), distinct from Kaper's two-piano transcription.",
         "fields": {"id": "CON-O012-C-P177", "role": "composer", "nameAsPrinted": "W. G. Samuels", "evidenceContext": "original_composition", "sortOrder": 20, "certainty": "confirmed", "workIds": ["W-O012"], "personIds": ["P177"], "sourceIds": ["SRC0773"]}
@@ -6148,6 +6175,14 @@
       "O027": {
         "reason": "Model Jazz Drops no. 5 as an item-level piano transcription.",
         "fields": {"id": "O027", "title": "How Am I to Know?", "slug": "how-am-i-to-know-jazz-drops-no-5", "sortTitle": "How Am I to Know", "year": 1931, "period": "european", "instrumentation": "piano concert transcription; Jazz Drops no. 5", "publisherOrHoldingAsPrinted": "Berlin: Alberti, 1931; Hofmeister, pp. 35–36", "materialStatus": "published_print", "certainty": "confirmed", "workIds": ["W-O027"], "sourceIds": ["SRC0772"], "periods": ["european"]}
+      },
+      "O028": {
+        "reason": "Model the surviving Jazz Drops no. 6 score as an item-level piano transcription and retain its archival shelfmark and plate number.",
+        "fields": {"id": "O028", "title": "Swinging in a Hammock", "slug": "swinging-in-a-hammock-jazz-drops-no-6", "sortTitle": "Swinging in a Hammock", "year": 1931, "period": "european", "instrumentation": "piano concert transcription; Jazz Drops no. 6", "publisherOrHoldingAsPrinted": "Berlin: Alberti, 1931; M.V.A. 5824; Bronislaw Kaper Papers, Collection 03193, box 1", "materialStatus": "published_print", "certainty": "confirmed", "workIds": ["W-O028"], "sourceIds": ["SRC0775"], "periods": ["european"]}
+      },
+      "O029": {
+        "reason": "Model Jazz Drops no. 7 as an item-level piano transcription from Hofmeister's exact 1931 entry.",
+        "fields": {"id": "O029", "title": "I’m Yours", "slug": "im-yours-jazz-drops-no-7", "sortTitle": "Im Yours", "year": 1931, "period": "european", "instrumentation": "piano concert transcription; Jazz Drops no. 7", "publisherOrHoldingAsPrinted": "Berlin: Alberti, 1931; Hofmeister, p. 258", "materialStatus": "published_print", "certainty": "confirmed", "workIds": ["W-O029"], "sourceIds": ["SRC0776"], "periods": ["european"]}
       }
     },
     "Sources": {
@@ -7726,6 +7761,14 @@
       "SRC0774": {
         "reason": "Add the item-level sheet-music record that distinguishes Ray Henderson's music credit for Sonny Boy.",
         "fields": {"id": "SRC0774", "shortCitation": "University of Maine, sheet-music record for “Sonny Boy” (1928)", "fullCitation": "University of Maine, Vocal Popular Sheet Music Collection. “Sonny Boy,” theme song from The Singing Fool. Music by Ray Henderson; associated songwriting credits to B. G. De Sylva, Lew Brown and Al Jolson. New York: De Sylva, Brown and Henderson, 1928. Score VP_005091.", "sourceType": "sheet_music", "title": "Sonny Boy", "creator": "Ray Henderson; B. G. De Sylva; Lew Brown; Al Jolson", "repository": "University of Maine, Vocal Popular Sheet Music Collection", "publication": "De Sylva, Brown and Henderson, New York", "date": "1928", "accessDate": "2026-08-23", "reliability": "high", "sourceStatus": "verified", "slug": "src0774-university-of-maine-sonny-boy-ray-henderson", "primaryUrl": "https://digitalcommons.library.umaine.edu/mmb-vp/6492/", "workIds": ["W-O017"], "otherWorkIds": ["O017"], "contributionIds": ["CON-O017-C-P182"]}
+      },
+      "SRC0775": {
+        "reason": "Add the surviving archival score as item-level evidence for Jazz Drops no. 6 and as evidence that the series cover lists nos. 1–8.",
+        "fields": {"id": "SRC0775", "shortCitation": "Wendling, “Swinging in a Hammock,” Jazz Drops no. 6 (Alberti, 1931; transcription by Dr. B. Kaper)", "fullCitation": "Pete Wendling, “Swinging in a Hammock.” Music by Pete Wendling; concert transcription by Dr. B. Kaper. Jazz Drops, no. 6. Berlin: Alberti, 1931. Plate M.V.A. 5824. Bronislaw Kaper Papers, Collection 03193, box 1. American Heritage Center, University of Wyoming, Laramie.", "sourceType": "sheet_music", "title": "Swinging in a Hammock — Jazz Drops no. 6", "creator": "Pete Wendling (original composition); Dr. B. Kaper (piano transcription)", "repository": "American Heritage Center, University of Wyoming", "publication": "Alberti, Berlin", "date": "1931", "accessDate": "2026-08-23", "reliability": "high", "sourceStatus": "verified", "slug": "src0775-ahc-jazz-drops-no-6-swinging-in-a-hammock", "primaryUrl": "https://www.uwyo.edu/ahc/_files/pdffa/03193.pdf", "organizationIds": ["ORG054", "ORG056"], "workIds": ["W-O008", "W-O028"], "otherWorkIds": ["O008", "O028"], "workRelationIds": ["REL0208"], "contributionIds": ["CON-O028-A-P009", "CON-O028-C-P194", "CON-O028-PUB-ORG054"], "nameVariantIds": ["PNV0019"]}
+      },
+      "SRC0776": {
+        "reason": "Add item-level Hofmeister evidence for Jazz Drops no. 7 without creating an unsupported item record for no. 8.",
+        "fields": {"id": "SRC0776", "shortCitation": "Green, “I’m Yours,” Jazz Drops no. 7 (Alberti, 1931; transcription by B. Kaper)", "fullCitation": "John W. Green, “I’m Yours.” For piano; concert transcription by B. Kaper. Jazz Drops, no. 7. Berlin: Alberti, 1931. Hofmeisters Musikalisch-literarischer Monatsbericht (1931): 258.", "sourceType": "sheet_music", "title": "I’m Yours — Jazz Drops no. 7", "creator": "John W. Green (original composition); B. Kaper (piano transcription)", "repository": "Internet Archive / Friedrich Hofmeister", "publication": "Alberti, Berlin", "date": "1931", "accessDate": "2026-08-23", "reliability": "high", "sourceStatus": "verified", "slug": "src0776-hofmeister-jazz-drops-no-7-im-yours", "primaryUrl": "https://archive.org/details/Musikalisch-literarischerMonatsbericht1931/page/n257/mode/2up", "organizationIds": ["ORG054", "ORG067"], "workIds": ["W-O008", "W-O029"], "otherWorkIds": ["O008", "O029"], "workRelationIds": ["REL0209"], "contributionIds": ["CON-O029-A-P009", "CON-O029-C-P195", "CON-O029-PUB-ORG054"], "nameVariantIds": ["PNV0019"]}
       }
     },
     "Songs": {
@@ -7887,6 +7930,14 @@
       "W-O027": {
         "reason": "Publish Jazz Drops no. 5 as an item-level Work linked to the series parent.",
         "fields": {"id": "W-O027", "title": "How Am I to Know?", "slug": "how-am-i-to-know-jazz-drops-no-5", "sortTitle": "How Am I to Know", "workType": "Other", "year": 1931, "period": "european", "certainty": "confirmed", "displayOnSite": true, "publicScope": "standalone_page", "sourceIds": ["SRC0772"], "contributionIds": ["CON-O027-A-P009", "CON-O027-PUB-ORG054", "CON-O027-C-P193"], "nameVariantIds": ["PNV0019"], "personIds": ["P009", "P193"], "organizationIds": ["ORG054"], "relationIds": ["REL0207"], "otherWorkIds": ["O027"], "periods": ["european"]}
+      },
+      "W-O028": {
+        "reason": "Publish the surviving Jazz Drops no. 6 score as an item-level Work linked to the series parent.",
+        "fields": {"id": "W-O028", "title": "Swinging in a Hammock", "slug": "swinging-in-a-hammock-jazz-drops-no-6", "sortTitle": "Swinging in a Hammock", "workType": "Other", "year": 1931, "period": "european", "certainty": "confirmed", "displayOnSite": true, "publicScope": "standalone_page", "sourceIds": ["SRC0775"], "contributionIds": ["CON-O028-A-P009", "CON-O028-PUB-ORG054", "CON-O028-C-P194"], "nameVariantIds": ["PNV0019"], "personIds": ["P009", "P194"], "organizationIds": ["ORG054"], "relationIds": ["REL0208"], "otherWorkIds": ["O028"], "periods": ["european"]}
+      },
+      "W-O029": {
+        "reason": "Publish Jazz Drops no. 7 as an item-level Work linked to the series parent.",
+        "fields": {"id": "W-O029", "title": "I’m Yours", "slug": "im-yours-jazz-drops-no-7", "sortTitle": "Im Yours", "workType": "Other", "year": 1931, "period": "european", "certainty": "confirmed", "displayOnSite": true, "publicScope": "standalone_page", "sourceIds": ["SRC0776"], "contributionIds": ["CON-O029-A-P009", "CON-O029-PUB-ORG054", "CON-O029-C-P195"], "nameVariantIds": ["PNV0019"], "personIds": ["P009", "P195"], "organizationIds": ["ORG054"], "relationIds": ["REL0209"], "otherWorkIds": ["O029"], "periods": ["european"]}
       }
     },
     "Work Relations": {
@@ -7978,6 +8029,14 @@
       "REL0207": {
         "reason": "Link the fifth item-level Jazz Drops transcription to its series parent.",
         "fields": {"id": "REL0207", "relationType": "part_of_series", "targetWorkTitle": "Jazz Drops", "targetTitleAsSource": "Jazz drops. Transcriptions for piano by Dr. B. Kaper", "direction": "source_to_target", "publicNote": "“How Am I to Know?” is no. 5 of the “Jazz Drops” series.", "certainty": "confirmed", "sourceWorkIds": ["W-O027"], "targetWorkIds": ["W-O008"], "sourceIds": ["SRC0154", "SRC0772"]}
+      },
+      "REL0208": {
+        "reason": "Link the sixth item-level Jazz Drops transcription to its series parent using the surviving score.",
+        "fields": {"id": "REL0208", "relationType": "part_of_series", "targetWorkTitle": "Jazz Drops", "targetTitleAsSource": "Jazz drops. Concert transcriptions by Dr. B. Kaper", "direction": "source_to_target", "publicNote": "“Swinging in a Hammock” is no. 6 of the “Jazz Drops” series.", "certainty": "confirmed", "sourceWorkIds": ["W-O028"], "targetWorkIds": ["W-O008"], "sourceIds": ["SRC0775"]}
+      },
+      "REL0209": {
+        "reason": "Link the seventh item-level Jazz Drops transcription to its series parent using Hofmeister's exact item entry.",
+        "fields": {"id": "REL0209", "relationType": "part_of_series", "targetWorkTitle": "Jazz Drops", "targetTitleAsSource": "Jazz drops. Concert transcriptions by Dr. B. Kaper", "direction": "source_to_target", "publicNote": "“I’m Yours” is no. 7 of the “Jazz Drops” series.", "certainty": "confirmed", "sourceWorkIds": ["W-O029"], "targetWorkIds": ["W-O008"], "sourceIds": ["SRC0776"]}
       }
     },
     "Places": {
@@ -9545,17 +9604,23 @@
   "linkAdditions": {
     "Organizations": {
       "ORG054": {
-        "reason": "Synchronize Alberti with the five item-level Jazz Drops works, Hofmeister sources and publisher credits.",
+        "reason": "Synchronize Alberti with the seven verified item-level Jazz Drops works, their sources and publisher credits.",
         "fields": {
-          "sourceIds": ["SRC0768", "SRC0769", "SRC0770", "SRC0771", "SRC0772"],
-          "workIds": ["W-O023", "W-O024", "W-O025", "W-O026", "W-O027"],
-          "contributionIds": ["CON-O023-PUB-ORG054", "CON-O024-PUB-ORG054", "CON-O025-PUB-ORG054", "CON-O026-PUB-ORG054", "CON-O027-PUB-ORG054"]
+          "sourceIds": ["SRC0768", "SRC0769", "SRC0770", "SRC0771", "SRC0772", "SRC0775", "SRC0776"],
+          "workIds": ["W-O023", "W-O024", "W-O025", "W-O026", "W-O027", "W-O028", "W-O029"],
+          "contributionIds": ["CON-O023-PUB-ORG054", "CON-O024-PUB-ORG054", "CON-O025-PUB-ORG054", "CON-O026-PUB-ORG054", "CON-O027-PUB-ORG054", "CON-O028-PUB-ORG054", "CON-O029-PUB-ORG054"]
         }
       },
       "ORG067": {
-        "reason": "Synchronize Internet Archive with the five digitized Hofmeister item records used for Jazz Drops nos. 1–5.",
+        "reason": "Synchronize Internet Archive with the six digitized Hofmeister item records used for Jazz Drops nos. 1–5 and 7.",
         "fields": {
-          "sourceIds": ["SRC0768", "SRC0769", "SRC0770", "SRC0771", "SRC0772"]
+          "sourceIds": ["SRC0768", "SRC0769", "SRC0770", "SRC0771", "SRC0772", "SRC0776"]
+        }
+      },
+      "ORG056": {
+        "reason": "Synchronize the American Heritage Center with the surviving Jazz Drops no. 6 score in the Bronislaw Kaper Papers.",
+        "fields": {
+          "sourceIds": ["SRC0775"]
         }
       },
       "ORG063": {
@@ -10183,9 +10248,10 @@
       "W-O021": {"reason": "Add the original composer credit for the Cocktails transcription.", "fields": {"contributionIds": ["CON-O021-C-P187"], "personIds": ["P187"]}},
       "W-O022": {"reason": "Add the original composer credit for the Cocktails transcription.", "fields": {"contributionIds": ["CON-O022-C-P188"], "personIds": ["P188"]}},
       "W-O008": {
-        "reason": "Expose Jazz Drops nos. 1–5 as item-level related works on the series parent.",
+        "reason": "Expose the seven verified item-level Jazz Drops transcriptions on the series parent and attach the archival cover evidence for nos. 6–8.",
         "fields": {
-          "relationIds": ["REL0203", "REL0204", "REL0205", "REL0206", "REL0207"]
+          "sourceIds": ["SRC0775", "SRC0776"],
+          "relationIds": ["REL0203", "REL0204", "REL0205", "REL0206", "REL0207", "REL0208", "REL0209"]
         }
       },
       "W-F024": {
@@ -11008,7 +11074,7 @@
     },
     "Person Name Variants": {
       "PNV0019": {
-        "reason": "Attest the printed form “B. Kaper” through the exact ANNO registration and connect it to the separately modelled Dutch edition on which that form appears.",
+        "reason": "Attest the printed form “B. Kaper” through the exact item-level sources, including the Dutch edition and Jazz Drops nos. 1–7.",
         "fields": {
           "sourceIds": [
             "SRC0226",
@@ -11016,7 +11082,9 @@
             "SRC0769",
             "SRC0770",
             "SRC0771",
-            "SRC0772"
+            "SRC0772",
+            "SRC0775",
+            "SRC0776"
           ],
           "workIds": [
             "W-S217",
@@ -11024,7 +11092,9 @@
             "W-O024",
             "W-O025",
             "W-O026",
-            "W-O027"
+            "W-O027",
+            "W-O028",
+            "W-O029"
           ]
         }
       },
@@ -11598,7 +11668,7 @@
         }
       },
       "P009": {
-        "reason": "Link Bronisław Kaper to the completed sources and documented public additions, including his composer credit on the separately modelled Dutch-language edition and the European Film Fund donor list.",
+        "reason": "Link Bronisław Kaper to the completed sources and documented public additions, including his composer credit on the Dutch-language edition, the European Film Fund donor list and Jazz Drops nos. 6–7.",
         "fields": {
           "sourceIds": [
             "SRC0038",
@@ -11646,7 +11716,9 @@
             "CON-O024-A-P009",
             "CON-O025-A-P009",
             "CON-O026-A-P009",
-            "CON-O027-A-P009"
+            "CON-O027-A-P009",
+            "CON-O028-A-P009",
+            "CON-O029-A-P009"
           ],
           "workIds": [
             "W-S111",
@@ -11656,7 +11728,9 @@
             "W-O024",
             "W-O025",
             "W-O026",
-            "W-O027"
+            "W-O027",
+            "W-O028",
+            "W-O029"
           ]
         }
       },

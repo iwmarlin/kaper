@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 700,
+  "count": 702,
   "records": [
     {
       "id": "SRC0001",
@@ -23922,6 +23922,50 @@
       "contributionIds": [
         "CON-O017-C-P182"
       ]
+    },
+    {
+      "id": "SRC0775",
+      "shortCitation": "Wendling, “Swinging in a Hammock,” Jazz Drops no. 6 (Alberti, 1931; transcription by Dr. B. Kaper)",
+      "fullCitation": "Pete Wendling, “Swinging in a Hammock.” Music by Pete Wendling; concert transcription by Dr. B. Kaper. Jazz Drops, no. 6. Berlin: Alberti, 1931. Plate M.V.A. 5824. Bronislaw Kaper Papers, Collection 03193, box 1. American Heritage Center, University of Wyoming, Laramie.",
+      "sourceType": "sheet_music",
+      "title": "Swinging in a Hammock — Jazz Drops no. 6",
+      "creator": "Pete Wendling (original composition); Dr. B. Kaper (piano transcription)",
+      "repository": "American Heritage Center, University of Wyoming",
+      "publication": "Alberti, Berlin",
+      "date": "1931",
+      "accessDate": "2026-08-23",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "slug": "src0775-ahc-jazz-drops-no-6-swinging-in-a-hammock",
+      "primaryUrl": "https://www.uwyo.edu/ahc/_files/pdffa/03193.pdf",
+      "organizationIds": ["ORG054", "ORG056"],
+      "workIds": ["W-O008", "W-O028"],
+      "otherWorkIds": ["O008", "O028"],
+      "workRelationIds": ["REL0208"],
+      "contributionIds": ["CON-O028-A-P009", "CON-O028-C-P194", "CON-O028-PUB-ORG054"],
+      "nameVariantIds": ["PNV0019"]
+    },
+    {
+      "id": "SRC0776",
+      "shortCitation": "Green, “I’m Yours,” Jazz Drops no. 7 (Alberti, 1931; transcription by B. Kaper)",
+      "fullCitation": "John W. Green, “I’m Yours.” For piano; concert transcription by B. Kaper. Jazz Drops, no. 7. Berlin: Alberti, 1931. Hofmeisters Musikalisch-literarischer Monatsbericht (1931): 258.",
+      "sourceType": "sheet_music",
+      "title": "I’m Yours — Jazz Drops no. 7",
+      "creator": "John W. Green (original composition); B. Kaper (piano transcription)",
+      "repository": "Internet Archive / Friedrich Hofmeister",
+      "publication": "Alberti, Berlin",
+      "date": "1931",
+      "accessDate": "2026-08-23",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "slug": "src0776-hofmeister-jazz-drops-no-7-im-yours",
+      "primaryUrl": "https://archive.org/details/Musikalisch-literarischerMonatsbericht1931/page/n257/mode/2up",
+      "organizationIds": ["ORG054", "ORG067"],
+      "workIds": ["W-O008", "W-O029"],
+      "otherWorkIds": ["O008", "O029"],
+      "workRelationIds": ["REL0209"],
+      "contributionIds": ["CON-O029-A-P009", "CON-O029-C-P195", "CON-O029-PUB-ORG054"],
+      "nameVariantIds": ["PNV0019"]
     }
   ],
   "recordCount": null

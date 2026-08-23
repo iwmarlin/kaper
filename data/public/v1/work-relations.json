@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 198,
+  "count": 200,
   "records": [
     {
       "id": "REL0001",
@@ -3528,6 +3528,30 @@
       "sourceWorkIds": ["W-O027"],
       "targetWorkIds": ["W-O008"],
       "sourceIds": ["SRC0154", "SRC0772"]
+    },
+    {
+      "id": "REL0208",
+      "relationType": "part_of_series",
+      "targetWorkTitle": "Jazz Drops",
+      "targetTitleAsSource": "Jazz drops. Concert transcriptions by Dr. B. Kaper",
+      "direction": "source_to_target",
+      "publicNote": "“Swinging in a Hammock” is no. 6 of the “Jazz Drops” series.",
+      "certainty": "confirmed",
+      "sourceWorkIds": ["W-O028"],
+      "targetWorkIds": ["W-O008"],
+      "sourceIds": ["SRC0775"]
+    },
+    {
+      "id": "REL0209",
+      "relationType": "part_of_series",
+      "targetWorkTitle": "Jazz Drops",
+      "targetTitleAsSource": "Jazz drops. Concert transcriptions by Dr. B. Kaper",
+      "direction": "source_to_target",
+      "publicNote": "“I’m Yours” is no. 7 of the “Jazz Drops” series.",
+      "certainty": "confirmed",
+      "sourceWorkIds": ["W-O029"],
+      "targetWorkIds": ["W-O008"],
+      "sourceIds": ["SRC0776"]
     }
   ]
 }

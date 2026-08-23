@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 27,
+  "count": 29,
   "records": [
     {
       "id": "O001",
@@ -177,13 +177,15 @@
       "contents": "1. The Wedding of the Painted Doll (comp. N. H. Brown); 2. Ain't Misbehavin' (comp. Harry Brooks, Thomas Waller); 3. Drei Musketiere (comp. H. Riesenfeld, R. Benatzky); 4. Singin' in the Rain (comp. N. H. Brown); 5. How am I to Know (comp. Jack King); 6. Swingin' in a Hammock (comp. P. Wendling); 7. I'm Yours (comp. John W. Green); 8. Cuban Love Song",
       "publisherOrHoldingAsPrinted": "Alberti G.m.B.H., Berlin",
       "materialStatus": "published_print",
-      "publicNote": "StabiKat records held volume nos. 1–5 as Berlin: Alberti, 1930–31, shelfmark DMS 266613; Hofmeister independently lists individual numbers in 1930 and 1931.",
+      "publicNote": "StabiKat records nos. 1–5 under shelfmark DMS 266613. The surviving no. 6 score in the Bronislaw Kaper Papers preserves a series cover listing nos. 1–8, and Hofmeister independently confirms no. 7. A separately issued copy of no. 8 has not yet been located.",
       "certainty": "confirmed",
       "workIds": [
         "W-O008"
       ],
       "sourceIds": [
-        "SRC0154"
+        "SRC0154",
+        "SRC0775",
+        "SRC0776"
       ],
       "periods": [
         "european"
@@ -587,6 +589,48 @@
       ],
       "sourceIds": [
         "SRC0772"
+      ],
+      "periods": [
+        "european"
+      ]
+    },
+    {
+      "id": "O028",
+      "title": "Swinging in a Hammock",
+      "slug": "swinging-in-a-hammock-jazz-drops-no-6",
+      "sortTitle": "Swinging in a Hammock",
+      "year": 1931,
+      "period": "european",
+      "instrumentation": "piano concert transcription; Jazz Drops no. 6",
+      "publisherOrHoldingAsPrinted": "Berlin: Alberti, 1931; M.V.A. 5824; Bronislaw Kaper Papers, Collection 03193, box 1",
+      "materialStatus": "published_print",
+      "certainty": "confirmed",
+      "workIds": [
+        "W-O028"
+      ],
+      "sourceIds": [
+        "SRC0775"
+      ],
+      "periods": [
+        "european"
+      ]
+    },
+    {
+      "id": "O029",
+      "title": "I’m Yours",
+      "slug": "im-yours-jazz-drops-no-7",
+      "sortTitle": "Im Yours",
+      "year": 1931,
+      "period": "european",
+      "instrumentation": "piano concert transcription; Jazz Drops no. 7",
+      "publisherOrHoldingAsPrinted": "Berlin: Alberti, 1931; Hofmeister, p. 258",
+      "materialStatus": "published_print",
+      "certainty": "confirmed",
+      "workIds": [
+        "W-O029"
+      ],
+      "sourceIds": [
+        "SRC0776"
       ],
       "periods": [
         "european"

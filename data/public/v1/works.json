@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 286,
+  "count": 288,
   "records": [
     {
       "id": "W-F001",
@@ -3014,11 +3014,13 @@
       "year": 1930,
       "period": "european",
       "certainty": "confirmed",
-      "publicNote": "StabiKat records held volume nos. 1–5 as Berlin: Alberti, 1930–31, shelfmark DMS 266613; Hofmeister independently lists individual numbers in 1930 and 1931.",
+      "publicNote": "StabiKat records nos. 1–5 under shelfmark DMS 266613. The surviving no. 6 score in the Bronislaw Kaper Papers preserves a series cover listing nos. 1–8, and Hofmeister independently confirms no. 7. A separately issued copy of no. 8 has not yet been located.",
       "displayOnSite": true,
       "publicScope": "standalone_page",
       "sourceIds": [
-        "SRC0154"
+        "SRC0154",
+        "SRC0775",
+        "SRC0776"
       ],
       "contributionIds": [
         "CON-O008-A-P009",
@@ -3038,7 +3040,9 @@
         "REL0204",
         "REL0205",
         "REL0206",
-        "REL0207"
+        "REL0207",
+        "REL0208",
+        "REL0209"
       ],
       "otherWorkIds": [
         "O008"
@@ -12650,6 +12654,46 @@
       "periods": [
         "european"
       ]
+    },
+    {
+      "id": "W-O028",
+      "title": "Swinging in a Hammock",
+      "slug": "swinging-in-a-hammock-jazz-drops-no-6",
+      "sortTitle": "Swinging in a Hammock",
+      "workType": "Other",
+      "year": 1931,
+      "period": "european",
+      "certainty": "confirmed",
+      "displayOnSite": true,
+      "publicScope": "standalone_page",
+      "sourceIds": ["SRC0775"],
+      "contributionIds": ["CON-O028-A-P009", "CON-O028-PUB-ORG054", "CON-O028-C-P194"],
+      "nameVariantIds": ["PNV0019"],
+      "personIds": ["P009", "P194"],
+      "organizationIds": ["ORG054"],
+      "relationIds": ["REL0208"],
+      "otherWorkIds": ["O028"],
+      "periods": ["european"]
+    },
+    {
+      "id": "W-O029",
+      "title": "I’m Yours",
+      "slug": "im-yours-jazz-drops-no-7",
+      "sortTitle": "Im Yours",
+      "workType": "Other",
+      "year": 1931,
+      "period": "european",
+      "certainty": "confirmed",
+      "displayOnSite": true,
+      "publicScope": "standalone_page",
+      "sourceIds": ["SRC0776"],
+      "contributionIds": ["CON-O029-A-P009", "CON-O029-PUB-ORG054", "CON-O029-C-P195"],
+      "nameVariantIds": ["PNV0019"],
+      "personIds": ["P009", "P195"],
+      "organizationIds": ["ORG054"],
+      "relationIds": ["REL0209"],
+      "otherWorkIds": ["O029"],
+      "periods": ["european"]
     }
   ],
   "recordCount": null
