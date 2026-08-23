@@ -184,6 +184,51 @@ class RecordingGraphTests(unittest.TestCase):
         self.assertEqual(len(validator.errors), 1)
         self.assertIn("Sources SRCTEST.personIds omits PTEST", validator.errors[0])
 
+    def test_validator_rejects_media_work_not_supported_by_its_sources(self) -> None:
+        validator = object.__new__(ExportValidator)
+        validator.errors = []
+        validator.payloads = {
+            name: {"records": []}
+            for name in TABLE_NAMES
+        }
+        validator.payloads["Media"]["records"] = [{
+            "id": "MTEST",
+            "mediaType": "audio",
+            "storageType": "external",
+            "sourceIds": ["SRCTEST"],
+            "workIds": ["W-WRONG", "W-RIGHT"],
+        }]
+        validator.payloads["Sources"]["records"] = [{
+            "id": "SRCTEST",
+            "workIds": ["W-RIGHT"],
+        }]
+
+        validator._validate_media_source_work_support()
+
+        self.assertEqual(len(validator.errors), 1)
+        self.assertIn("W-WRONG", validator.errors[0])
+
+    def test_miss_annabelle_lee_is_linked_to_cocktails_not_jazz_drops(self) -> None:
+        media = json.loads(
+            (ROOT / "data/public/v1/media.json").read_text(encoding="utf-8")
+        )["records"]
+        works = json.loads(
+            (ROOT / "data/public/v1/works.json").read_text(encoding="utf-8")
+        )["records"]
+        relations = json.loads(
+            (ROOT / "data/public/v1/work-relations.json").read_text(encoding="utf-8")
+        )["records"]
+        media_by_id = {record["id"]: record for record in media}
+        works_by_id = {record["id"]: record for record in works}
+        relations_by_id = {record["id"]: record for record in relations}
+
+        self.assertEqual(media_by_id["M002"]["workIds"], ["W-O019"])
+        self.assertEqual(media_by_id["M002"]["otherWorkIds"], ["O019"])
+        self.assertNotIn("mediaIds", works_by_id["W-O008"])
+        self.assertIn("M002", works_by_id["W-O019"]["mediaIds"])
+        self.assertEqual(relations_by_id["REL0185"]["sourceWorkIds"], ["W-O019"])
+        self.assertEqual(relations_by_id["REL0185"]["targetWorkIds"], ["W-O007"])
+
     def test_validator_preserves_directional_work_relations(self) -> None:
         validator = object.__new__(ExportValidator)
         validator.errors = []

@@ -534,6 +534,12 @@
       }
     },
     "Sources": {
+      "SRC0002": {
+        "reason": "Use the canonical YouTube URL for the Polydor 21768 listening source without an auto-generated playlist context.",
+        "fields": {
+          "primaryUrl": "https://www.youtube.com/watch?v=YAHw4_KS-3o"
+        }
+      },
       "SRC0146": {
         "reason": "Make the AFI citation self-contained for both the film record and the documented song reuse without importing unrelated language-version credits.",
         "fields": {
@@ -2341,6 +2347,14 @@
       }
     },
     "Media": {
+      "M002": {
+        "reason": "Correct the Miss Annabelle Lee listening reference against the Staatsbibliothek zu Berlin catalogue: the recording belongs with the dedicated work, whose 1929 two-piano transcription is no. 1 of Cocktails, not with the separate Jazz Drops series.",
+        "fields": {
+          "externalUrl": "https://www.youtube.com/watch?v=YAHw4_KS-3o",
+          "slug": "miss-annabelle-lee-m002",
+          "publicCaption": "Listening reference for “Miss Annabelle Lee” (Polydor 21768, 1927), performed by Hermann Bick and Dr. Kaper on two pianos. Kaper’s printed two-piano transcription was subsequently issued by Alberti in 1929 as no. 1 of the Cocktails series."
+        }
+      },
       "M015": {
         "reason": "Synchronize the media title, alt text and public caption with the corrected canonical song title attested by the contemporary Hofmeister registration.",
         "fields": {
@@ -10755,6 +10769,17 @@
       }
     },
     "Media": {
+      "M002": {
+        "reason": "Preserve only the verified work and subtype links for Miss Annabelle Lee after removing the stale Jazz Drops association.",
+        "fields": {
+          "workIds": [
+            "W-O019"
+          ],
+          "otherWorkIds": [
+            "O019"
+          ]
+        }
+      },
       "M070": {
         "reason": "Use the 1920 public-domain recruitment poster as supplementary historical context for the Polish–Soviet War service event; M096 remains the event's hero image.",
         "fields": {
@@ -13207,8 +13232,14 @@
         }
       },
       "M002": {
-        "reason": "Remove the obsolete hero-image designation from the external Miss Annabelle Lee reference; TE0019 uses the directly relevant Polydor label image M231 as its hero.",
+        "reason": "Remove both the stale Jazz Drops association and the obsolete hero-image designation from the external Miss Annabelle Lee reference; the verified work is W-O019, part of Cocktails, while TE0019 uses M231 as its hero.",
         "fields": {
+          "workIds": [
+            "W-O008"
+          ],
+          "otherWorkIds": [
+            "O008"
+          ],
           "heroTimelineEventIds": [
             "TE0019"
           ]
@@ -13598,6 +13629,14 @@
       }
     },
     "Works": {
+      "W-O008": {
+        "reason": "Remove the Miss Annabelle Lee listening reference from Jazz Drops; the Staatsbibliothek catalogue identifies Miss Annabelle Lee as no. 1 of the separate Cocktails series.",
+        "fields": {
+          "mediaIds": [
+            "M002"
+          ]
+        }
+      },
       "W-S086": {
         "reason": "Keep the Filmportal/DFF excerpt and its source with W-F024; W-S086 retains its directly relevant bibliographic sources and sheet-music medium M225.",
         "fields": {

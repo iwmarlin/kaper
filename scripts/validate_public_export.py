@@ -503,6 +503,51 @@ class ExportValidator:
                         f"for {work_id}"
                     )
 
+    def _validate_media_source_work_support(self) -> None:
+        """Reject media-to-work links contradicted by item-level source links.
+
+        The rule is deliberately limited to externally linked audio recordings:
+        composite visual media may legitimately combine film- and song-level
+        context.  Some recording sources do not identify a work at all, so an
+        empty source-side work set is not an error.  Once at least one linked
+        source does identify works, however, every work assigned to the recording
+        must occur in that combined source evidence.  This catches stale but
+        technically symmetric links such as attaching a recording to the wrong
+        publication series.
+        """
+        media = {
+            record["id"]: record
+            for record in self.payloads.get("Media", {}).get("records", [])
+            if record.get("id")
+        }
+        sources = {
+            record["id"]: record
+            for record in self.payloads.get("Sources", {}).get("records", [])
+            if record.get("id")
+        }
+        for media_id, item in media.items():
+            if not (
+                item.get("mediaType") == "audio"
+                and item.get("storageType") == "external"
+            ):
+                continue
+            supported_work_ids: set[str] = set()
+            for source_id in item.get("sourceIds", []) or []:
+                source = sources.get(source_id)
+                if source is not None:
+                    supported_work_ids.update(source.get("workIds", []) or [])
+            if not supported_work_ids:
+                continue
+            unsupported = sorted(
+                set(item.get("workIds", []) or []) - supported_work_ids
+            )
+            if unsupported:
+                self.errors.append(
+                    f"Unsupported media relation: Media {media_id}.workIds contains "
+                    f"{', '.join(unsupported)}, but none of its linked Sources "
+                    "documents that Work"
+                )
+
     def _validate_content(self) -> None:
         forbidden_phrases = [
             item.casefold()
@@ -1029,6 +1074,7 @@ class ExportValidator:
         self._validate_manifest()
         self._validate_schema_and_links()
         self._validate_symmetric_links()
+        self._validate_media_source_work_support()
         self._validate_content()
         self._validate_scope()
         self._validate_media()
