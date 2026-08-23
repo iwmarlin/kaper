@@ -210,16 +210,14 @@
         ]
       },
       "W-O013": {
-        "reason": "Retain only the original-author information that is not represented by the Kaper arrangement credit and edition facts.",
-        "fields": {
-          "publicNote": "The catalogue’s AU field identifies Nacio Herb Brown as the original author."
-        }
+        "reason": "Replace the catalogue-facing prose with a structured composer contribution for Nacio Herb Brown.",
+        "fields": {},
+        "removeFields": ["publicNote"]
       },
       "W-O014": {
-        "reason": "Retain only the original-author information that is not represented by the Kaper arrangement credit and edition facts.",
-        "fields": {
-          "publicNote": "The catalogue’s AU field identifies Nacio Herb Brown as the original author."
-        }
+        "reason": "Replace the catalogue-facing prose with a structured composer contribution for Nacio Herb Brown.",
+        "fields": {},
+        "removeFields": ["publicNote"]
       },
       "W-O015": {
         "reason": "Remove an overview that repeats the instrumentation, series, publisher, place and year already presented in structured fields.",
@@ -236,40 +234,34 @@
         ]
       },
       "W-O017": {
-        "reason": "Retain only the original-author information that is not represented by the Kaper arrangement credit and edition facts.",
-        "fields": {
-          "publicNote": "The catalogue’s AU field identifies Al Jolson as the original author."
-        }
+        "reason": "Replace the catalogue-facing prose with a structured composer contribution for Al Jolson.",
+        "fields": {},
+        "removeFields": ["publicNote"]
       },
       "W-O018": {
-        "reason": "Retain only the original-author information that is not represented by the Kaper arrangement credit and edition facts.",
-        "fields": {
-          "publicNote": "The catalogue’s AU field identifies Irving Berlin as the original author."
-        }
+        "reason": "Replace the catalogue-facing prose with a structured composer contribution for Irving Berlin.",
+        "fields": {},
+        "removeFields": ["publicNote"]
       },
       "W-O019": {
-        "reason": "Retain only the original-work attribution information that is not represented by the Kaper arrangement credit and edition facts.",
-        "fields": {
-          "publicNote": "The catalogue’s AU field identifies Sidney Clare; Lew Pollack and Harry Richman remain associated with the original song."
-        }
+        "reason": "Replace catalogue-field commentary with structured composer contributions confirmed by the printed Cocktails score.",
+        "fields": {},
+        "removeFields": ["publicNote"]
       },
       "W-O020": {
-        "reason": "Retain only the original-author information that is not represented by the Kaper arrangement credit and edition facts.",
-        "fields": {
-          "publicNote": "The catalogue’s AU field identifies Jesse Greer as the original author."
-        }
+        "reason": "Replace the catalogue-facing prose with a structured composer contribution for Jesse Greer.",
+        "fields": {},
+        "removeFields": ["publicNote"]
       },
       "W-O021": {
-        "reason": "Retain only the original-author information that is not represented by the Kaper arrangement credit and edition facts.",
-        "fields": {
-          "publicNote": "The catalogue’s AU field identifies Jesse Greer as the original author."
-        }
+        "reason": "Replace the catalogue-facing prose with a structured composer contribution for Jesse Greer.",
+        "fields": {},
+        "removeFields": ["publicNote"]
       },
       "W-O022": {
-        "reason": "Retain only the original-author information that is not represented by the Kaper arrangement credit and edition facts.",
-        "fields": {
-          "publicNote": "The catalogue’s AU field identifies Larry Shay as the original author."
-        }
+        "reason": "Replace the catalogue-facing prose with a structured composer contribution for Larry Shay.",
+        "fields": {},
+        "removeFields": ["publicNote"]
       },
       "W-S097": {
         "reason": "Correct the canonical French title by restoring the initial accented capital and removing the non-canonical comma.",
@@ -464,23 +456,23 @@
         }
       },
       "O012": {
-        "reason": "Remove an overview that repeats the instrumentation, series, publisher, place and year already presented in structured fields.",
-        "fields": {},
+        "reason": "Remove redundant overview prose and attach the independent Fiesta composer evidence.",
+        "fields": {
+          "sourceIds": ["SRC0505", "SRC0773"]
+        },
         "removeFields": [
           "publicNote"
         ]
       },
       "O013": {
-        "reason": "Retain only the original-author information that is not represented by the Kaper arrangement credit and edition facts.",
-        "fields": {
-          "publicNote": "The catalogue’s AU field identifies Nacio Herb Brown as the original author."
-        }
+        "reason": "Replace the catalogue-facing prose with a structured composer contribution for Nacio Herb Brown.",
+        "fields": {"instrumentation": "transcription for two pianos; Cocktails series"},
+        "removeFields": ["publicNote"]
       },
       "O014": {
-        "reason": "Retain only the original-author information that is not represented by the Kaper arrangement credit and edition facts.",
-        "fields": {
-          "publicNote": "The catalogue’s AU field identifies Nacio Herb Brown as the original author."
-        }
+        "reason": "Replace the catalogue-facing prose with a structured composer contribution for Nacio Herb Brown.",
+        "fields": {"instrumentation": "foxtrot transcription for two pianos; Cocktails series"},
+        "removeFields": ["publicNote"]
       },
       "O015": {
         "reason": "Remove an overview that repeats the instrumentation, series, publisher, place and year already presented in structured fields.",
@@ -497,40 +489,34 @@
         ]
       },
       "O017": {
-        "reason": "Retain only the original-author information that is not represented by the Kaper arrangement credit and edition facts.",
-        "fields": {
-          "publicNote": "The catalogue’s AU field identifies Al Jolson as the original author."
-        }
+        "reason": "Replace the catalogue-facing prose with Ray Henderson's source-backed composer contribution.",
+        "fields": {"instrumentation": "transcription for two pianos; Cocktails series", "sourceIds": ["SRC0510", "SRC0774"]},
+        "removeFields": ["publicNote"]
       },
       "O018": {
-        "reason": "Retain only the original-author information that is not represented by the Kaper arrangement credit and edition facts.",
-        "fields": {
-          "publicNote": "The catalogue’s AU field identifies Irving Berlin as the original author."
-        }
+        "reason": "Replace the catalogue-facing prose with a structured composer contribution for Irving Berlin.",
+        "fields": {"instrumentation": "slow-foxtrot transcription for two pianos; Cocktails series"},
+        "removeFields": ["publicNote"]
       },
       "O019": {
-        "reason": "Retain only the original-work attribution information that is not represented by the Kaper arrangement credit and edition facts.",
-        "fields": {
-          "publicNote": "The catalogue’s AU field identifies Sidney Clare; Lew Pollack and Harry Richman remain associated with the original song."
-        }
+        "reason": "Replace catalogue-field commentary with structured composer contributions confirmed by the printed Cocktails score.",
+        "fields": {"instrumentation": "jazz transcription for two pianos; Cocktails series"},
+        "removeFields": ["publicNote"]
       },
       "O020": {
-        "reason": "Retain only the original-author information that is not represented by the Kaper arrangement credit and edition facts.",
-        "fields": {
-          "publicNote": "The catalogue’s AU field identifies Jesse Greer as the original author."
-        }
+        "reason": "Replace the catalogue-facing prose with a structured composer contribution for Jesse Greer.",
+        "fields": {"instrumentation": "foxtrot transcription for two pianos; Cocktails series"},
+        "removeFields": ["publicNote"]
       },
       "O021": {
-        "reason": "Retain only the original-author information that is not represented by the Kaper arrangement credit and edition facts.",
-        "fields": {
-          "publicNote": "The catalogue’s AU field identifies Jesse Greer as the original author."
-        }
+        "reason": "Replace the catalogue-facing prose with a structured composer contribution for Jesse Greer.",
+        "fields": {"instrumentation": "waltz transcription for two pianos; Cocktails series"},
+        "removeFields": ["publicNote"]
       },
       "O022": {
-        "reason": "Retain only the original-author information that is not represented by the Kaper arrangement credit and edition facts.",
-        "fields": {
-          "publicNote": "The catalogue’s AU field identifies Larry Shay as the original author."
-        }
+        "reason": "Replace the catalogue-facing prose with a structured composer contribution for Larry Shay.",
+        "fields": {"instrumentation": "foxtrot transcription for two pianos; Cocktails series"},
+        "removeFields": ["publicNote"]
       }
     },
     "Sources": {
@@ -2343,6 +2329,40 @@
         "reason": "Describe the published crop directly and keep the copyright assessment exclusively with the linked medium.",
         "fields": {
           "fullCitation": "Universal Pictures, photographer unidentified. Edwin L. Marin and Elisabeth Bergner on the set of Paris Calling, publicity still, 1941. Portrait detail cropped to Marin via Wikimedia Commons. Accessed 6 August 2026."
+        }
+      },
+      "SRC0508": {
+        "reason": "Replace technical RIS-field wording with a bibliographic description and identify Strauss as Johann Strauss II, following the printed score and the curator's identification.",
+        "fields": {
+          "fullCitation": "Bronisław Kaper, “Austrian Cocktail: Foxtrot Transcription on Famous Strauss Melodies: For 2 Pianos.” Transcription for two pianos by Dr. B. Kaper. Berlin: Alrobi, 1930. Staatsbibliothek zu Berlin / StabiKat, record no. 1916551769.",
+          "creator": "Johann Strauss II (music); Bronisław Kaper (transcription for two pianos)"
+        }
+      },
+      "SRC0509": {
+        "reason": "Replace technical RIS-field wording with a bibliographic description and normalize the credited composer name.",
+        "fields": {
+          "fullCitation": "Bronisław Kaper, “Russian Cocktail: Foxtrot Transcription on Celebrated Tchaikovsky Melodies: For 2 Pianos.” Transcription for two pianos by Dr. B. Kaper. Berlin: Alrobi, 1930. Staatsbibliothek zu Berlin / StabiKat, record no. 1916551904.",
+          "creator": "Pyotr Ilyich Tchaikovsky (music); Bronisław Kaper (transcription for two pianos)"
+        }
+      },
+      "SRC0510": {
+        "reason": "Retain the catalogue's association with Al Jolson without misrepresenting it as the music credit; Ray Henderson's composer credit is documented separately.",
+        "fields": {
+          "creator": "Al Jolson; Bronisław Kaper (transcription for two pianos)"
+        }
+      },
+      "SRC0511": {
+        "reason": "Replace technical catalogue-role wording with normalized responsibility statements.",
+        "fields": {
+          "creator": "Irving Berlin (music); Bronisław Kaper (transcription for two pianos)"
+        }
+      },
+      "SRC0512": {
+        "reason": "Use the explicit responsibility statement printed in the Cocktails score instead of exposing ambiguous RIS AU/A2 fields.",
+        "fields": {
+          "shortCitation": "Clare, Pollack and Richman, “Miss Annabelle Lee” (Alberti, 1929; transcription by Dr. B. Kaper)",
+          "fullCitation": "Sidney Clare, Lew Pollack and Harry Richman, “Who’s Wonderful, Who’s Marvelous? Miss Annabelle Lee.” Music by Sidney Clare, Lew Pollack and Harry Richman; transcription for two pianos by Dr. B. Kaper. In Cocktails. Berlin: Alberti, 1929. Staatsbibliothek zu Berlin / StabiKat, record no. 1877032239.",
+          "creator": "Sidney Clare, Lew Pollack and Harry Richman (music); Bronisław Kaper (transcription for two pianos)"
         }
       }
     },
@@ -4258,7 +4278,24 @@
             "TE0038"
           ]
         }
-      }
+      },
+      "P177": {"reason": "Add the co-composer of Fiesta (Bianca) documented by the National Museum discography.", "fields": {"id": "P177", "displayName": "Walter G. Samuels", "authorizedName": "Samuels, Walter G.", "sortName": "Samuels, Walter G.", "slug": "walter-g-samuels", "primaryRole": "composer", "roles": ["composer"], "workIds": ["W-O012"], "contributionIds": ["CON-O012-C-P177"]}},
+      "P178": {"reason": "Add the co-composer of Fiesta (Bianca) documented by the National Museum discography.", "fields": {"id": "P178", "displayName": "Leonard Whitcup", "authorizedName": "Whitcup, Leonard", "sortName": "Whitcup, Leonard", "slug": "leonard-whitcup", "primaryRole": "composer", "roles": ["composer"], "workIds": ["W-O012"], "contributionIds": ["CON-O012-C-P178"]}},
+      "P179": {"reason": "Add Nacio Herb Brown for the original music credits documented by the Cocktails and Jazz Drops sources.", "fields": {"id": "P179", "displayName": "Nacio Herb Brown", "authorizedName": "Brown, Nacio Herb", "sortName": "Brown, Nacio Herb", "slug": "nacio-herb-brown", "birthYear": 1896, "deathYear": 1964, "lifeDatesCertainty": "confirmed", "primaryRole": "composer", "roles": ["composer"], "authorityUrl": "Wikidata: https://www.wikidata.org/wiki/Q1282487\nVIAF: https://viaf.org/viaf/71577259", "workIds": ["W-O013", "W-O014", "W-O023", "W-O026"], "contributionIds": ["CON-O013-C-P179", "CON-O014-C-P179", "CON-O023-C-P179", "CON-O026-C-P179"]}},
+      "P180": {"reason": "Add Johann Strauss II as the composer identified by the curator for the Strauss melodies transcribed in Austrian Cocktail.", "fields": {"id": "P180", "displayName": "Johann Strauss II", "authorizedName": "Strauss, Johann, 1825–1899", "sortName": "Strauss, Johann", "slug": "johann-strauss-ii", "birthYear": 1825, "deathYear": 1899, "lifeDatesCertainty": "confirmed", "primaryRole": "composer", "roles": ["composer"], "authorityUrl": "Wikidata: https://www.wikidata.org/wiki/Q83309", "workIds": ["W-O015"], "contributionIds": ["CON-O015-C-P180"]}},
+      "P181": {"reason": "Add Tchaikovsky for the melodies transcribed in Russian Cocktail.", "fields": {"id": "P181", "displayName": "Pyotr Ilyich Tchaikovsky", "authorizedName": "Tchaikovsky, Pyotr Ilyich, 1840–1893", "sortName": "Tchaikovsky, Pyotr Ilyich", "slug": "pyotr-ilyich-tchaikovsky", "birthYear": 1840, "deathYear": 1893, "lifeDatesCertainty": "confirmed", "primaryRole": "composer", "roles": ["composer"], "authorityUrl": "Wikidata: https://www.wikidata.org/wiki/Q7315", "workIds": ["W-O016"], "contributionIds": ["CON-O016-C-P181"]}},
+      "P182": {"reason": "Add Ray Henderson as the documented composer of Sonny Boy.", "fields": {"id": "P182", "displayName": "Ray Henderson", "authorizedName": "Henderson, Ray, 1896–1970", "sortName": "Henderson, Ray", "slug": "ray-henderson", "birthYear": 1896, "deathYear": 1970, "lifeDatesCertainty": "confirmed", "primaryRole": "composer", "roles": ["composer"], "authorityUrl": "Wikidata: https://www.wikidata.org/wiki/Q1980821\nVIAF: https://viaf.org/viaf/37106197\nLCNAF: https://id.loc.gov/authorities/names/n80063358", "workIds": ["W-O017"], "contributionIds": ["CON-O017-C-P182"]}},
+      "P183": {"reason": "Add Irving Berlin for the original music credit documented by the Cocktails catalogue record.", "fields": {"id": "P183", "displayName": "Irving Berlin", "authorizedName": "Berlin, Irving, 1888–1989", "sortName": "Berlin, Irving", "slug": "irving-berlin", "birthYear": 1888, "deathYear": 1989, "lifeDatesCertainty": "confirmed", "primaryRole": "composer", "roles": ["composer"], "authorityUrl": "Wikidata: https://www.wikidata.org/wiki/Q128746", "workIds": ["W-O018"], "contributionIds": ["CON-O018-C-P183"]}},
+      "P184": {"reason": "Add Sidney Clare for the music credit printed in the Cocktails score.", "fields": {"id": "P184", "displayName": "Sidney Clare", "authorizedName": "Clare, Sidney, 1892–1972", "sortName": "Clare, Sidney", "slug": "sidney-clare", "birthYear": 1892, "deathYear": 1972, "lifeDatesCertainty": "confirmed", "primaryRole": "composer", "roles": ["composer"], "authorityUrl": "Wikidata: https://www.wikidata.org/wiki/Q7508990\nVIAF: https://viaf.org/viaf/63011172", "workIds": ["W-O019"], "contributionIds": ["CON-O019-C-P184"]}},
+      "P185": {"reason": "Add Lew Pollack for the music credit printed in the Cocktails score.", "fields": {"id": "P185", "displayName": "Lew Pollack", "authorizedName": "Pollack, Lew, 1895–1946", "sortName": "Pollack, Lew", "slug": "lew-pollack", "birthYear": 1895, "deathYear": 1946, "lifeDatesCertainty": "confirmed", "primaryRole": "composer", "roles": ["composer"], "authorityUrl": "Wikidata: https://www.wikidata.org/wiki/Q1568143\nVIAF: https://viaf.org/viaf/29716551", "workIds": ["W-O019"], "contributionIds": ["CON-O019-C-P185"]}},
+      "P186": {"reason": "Add Harry Richman for the music credit printed in the Cocktails score.", "fields": {"id": "P186", "displayName": "Harry Richman", "authorizedName": "Richman, Harry, 1895–1972", "sortName": "Richman, Harry", "slug": "harry-richman", "birthYear": 1895, "deathYear": 1972, "lifeDatesCertainty": "confirmed", "primaryRole": "composer", "roles": ["composer"], "authorityUrl": "Wikidata: https://www.wikidata.org/wiki/Q5671934\nVIAF: https://viaf.org/viaf/61975239", "workIds": ["W-O019"], "contributionIds": ["CON-O019-C-P186"]}},
+      "P187": {"reason": "Add Jesse Greer for the original music credits documented by the Cocktails catalogue records.", "fields": {"id": "P187", "displayName": "Jesse Greer", "authorizedName": "Greer, Jesse", "sortName": "Greer, Jesse", "slug": "jesse-greer", "primaryRole": "composer", "roles": ["composer"], "authorityUrl": "Wikidata: https://www.wikidata.org/wiki/Q16006764", "workIds": ["W-O020", "W-O021"], "contributionIds": ["CON-O020-C-P187", "CON-O021-C-P187"]}},
+      "P188": {"reason": "Add Larry Shay for the original music credit documented by the Cocktails catalogue record.", "fields": {"id": "P188", "displayName": "Larry Shay", "authorizedName": "Shay, Larry, 1897–1988", "sortName": "Shay, Larry", "slug": "larry-shay", "birthYear": 1897, "deathYear": 1988, "lifeDatesCertainty": "confirmed", "primaryRole": "composer", "roles": ["composer"], "authorityUrl": "Wikidata: https://www.wikidata.org/wiki/Q6491101", "workIds": ["W-O022"], "contributionIds": ["CON-O022-C-P188"]}},
+      "P189": {"reason": "Add Fats Waller for the original music credit documented by the Jazz Drops source.", "fields": {"id": "P189", "displayName": "Fats Waller", "authorizedName": "Waller, Fats, 1904–1943", "sortName": "Waller, Fats", "slug": "fats-waller", "birthYear": 1904, "deathYear": 1943, "lifeDatesCertainty": "confirmed", "primaryRole": "composer", "roles": ["composer"], "authorityUrl": "Wikidata: https://www.wikidata.org/wiki/Q310476\nVIAF: https://viaf.org/viaf/54334148", "workIds": ["W-O024"], "contributionIds": ["CON-O024-C-P189"]}},
+      "P190": {"reason": "Add Harry Brooks for the original music credit documented by the Jazz Drops source.", "fields": {"id": "P190", "displayName": "Harry Brooks", "authorizedName": "Brooks, Harry, 1895–1970", "sortName": "Brooks, Harry", "slug": "harry-brooks", "birthYear": 1895, "deathYear": 1970, "lifeDatesCertainty": "confirmed", "primaryRole": "composer", "roles": ["composer"], "authorityUrl": "Wikidata: https://www.wikidata.org/wiki/Q5667534", "workIds": ["W-O024"], "contributionIds": ["CON-O024-C-P190"]}},
+      "P191": {"reason": "Add Hugo Riesenfeld for the original music credit documented by the Jazz Drops source.", "fields": {"id": "P191", "displayName": "Hugo Riesenfeld", "authorizedName": "Riesenfeld, Hugo, 1879–1939", "sortName": "Riesenfeld, Hugo", "slug": "hugo-riesenfeld", "birthYear": 1879, "deathYear": 1939, "lifeDatesCertainty": "confirmed", "primaryRole": "composer", "roles": ["composer"], "authorityUrl": "Wikidata: https://www.wikidata.org/wiki/Q79043", "workIds": ["W-O025"], "contributionIds": ["CON-O025-C-P191"]}},
+      "P192": {"reason": "Add Ralph Benatzky for the original music credit documented by the Jazz Drops source.", "fields": {"id": "P192", "displayName": "Ralph Benatzky", "authorizedName": "Benatzky, Ralph, 1884–1957", "sortName": "Benatzky, Ralph", "slug": "ralph-benatzky", "birthYear": 1884, "deathYear": 1957, "lifeDatesCertainty": "confirmed", "primaryRole": "composer", "roles": ["composer"], "authorityUrl": "Wikidata: https://www.wikidata.org/wiki/Q213592", "workIds": ["W-O025"], "contributionIds": ["CON-O025-C-P192"]}},
+      "P193": {"reason": "Add Jack King for the original music credit documented by the Jazz Drops source.", "fields": {"id": "P193", "displayName": "Jack King", "authorizedName": "King, Jack, 1903–1943", "sortName": "King, Jack", "slug": "jack-king", "birthYear": 1903, "deathYear": 1943, "lifeDatesCertainty": "confirmed", "primaryRole": "composer", "roles": ["composer"], "workIds": ["W-O027"], "contributionIds": ["CON-O027-C-P193"]}}
     },
     "Person Name Variants": {
       "PNV0039": {
@@ -6005,28 +6042,112 @@
       "CON-O027-PUB-ORG054": {
         "reason": "Record Alberti as publisher of Jazz Drops no. 5.",
         "fields": {"id": "CON-O027-PUB-ORG054", "role": "publisher", "nameAsPrinted": "Berlin, Alberti", "evidenceContext": "sheet_music", "sortOrder": 60, "certainty": "confirmed", "workIds": ["W-O027"], "organizationIds": ["ORG054"], "sourceIds": ["SRC0772"]}
+      },
+      "CON-O012-C-P177": {
+        "reason": "Record Walter G. Samuels as a composer of the original song Fiesta (Bianca), distinct from Kaper's two-piano transcription.",
+        "fields": {"id": "CON-O012-C-P177", "role": "composer", "nameAsPrinted": "W. G. Samuels", "evidenceContext": "original_composition", "sortOrder": 20, "certainty": "confirmed", "workIds": ["W-O012"], "personIds": ["P177"], "sourceIds": ["SRC0773"]}
+      },
+      "CON-O012-C-P178": {
+        "reason": "Record Leonard Whitcup as a composer of the original song Fiesta (Bianca), distinct from Kaper's two-piano transcription.",
+        "fields": {"id": "CON-O012-C-P178", "role": "composer", "nameAsPrinted": "L. Whitcup", "evidenceContext": "original_composition", "sortOrder": 20, "certainty": "confirmed", "workIds": ["W-O012"], "personIds": ["P178"], "sourceIds": ["SRC0773"]}
+      },
+      "CON-O013-C-P179": {
+        "reason": "Record Nacio Herb Brown as composer of the original Wedding of the Painted Doll melody.",
+        "fields": {"id": "CON-O013-C-P179", "role": "composer", "nameAsPrinted": "Nacio Herb Brown", "evidenceContext": "original_composition", "sortOrder": 20, "certainty": "confirmed", "workIds": ["W-O013"], "personIds": ["P179"], "sourceIds": ["SRC0506"]}
+      },
+      "CON-O014-C-P179": {
+        "reason": "Record Nacio Herb Brown as composer of the original Pagan Love Song melody.",
+        "fields": {"id": "CON-O014-C-P179", "role": "composer", "nameAsPrinted": "Nacio Herb Brown", "evidenceContext": "original_composition", "sortOrder": 20, "certainty": "confirmed", "workIds": ["W-O014"], "personIds": ["P179"], "sourceIds": ["SRC0507"]}
+      },
+      "CON-O015-C-P180": {
+        "reason": "Identify the famous Strauss melodies used in Austrian Cocktail with the authorized person Johann Strauss II.",
+        "fields": {"id": "CON-O015-C-P180", "role": "composer", "nameAsPrinted": "Strauss", "evidenceContext": "original_composition", "sortOrder": 20, "certainty": "confirmed", "workIds": ["W-O015"], "personIds": ["P180"], "sourceIds": ["SRC0508"]}
+      },
+      "CON-O016-C-P181": {
+        "reason": "Record Pyotr Ilyich Tchaikovsky as composer of the melodies transcribed in Russian Cocktail.",
+        "fields": {"id": "CON-O016-C-P181", "role": "composer", "nameAsPrinted": "Tschaikowsky", "evidenceContext": "original_composition", "sortOrder": 20, "certainty": "confirmed", "workIds": ["W-O016"], "personIds": ["P181"], "sourceIds": ["SRC0509"]}
+      },
+      "CON-O017-C-P182": {
+        "reason": "Record Ray Henderson as composer of the original Sonny Boy song, distinct from associated songwriting credits.",
+        "fields": {"id": "CON-O017-C-P182", "role": "composer", "nameAsPrinted": "Ray Henderson", "evidenceContext": "original_composition", "sortOrder": 20, "certainty": "confirmed", "workIds": ["W-O017"], "personIds": ["P182"], "sourceIds": ["SRC0774"]}
+      },
+      "CON-O018-C-P183": {
+        "reason": "Record Irving Berlin as composer of the original Sunshine song.",
+        "fields": {"id": "CON-O018-C-P183", "role": "composer", "nameAsPrinted": "Irving Berlin", "evidenceContext": "original_composition", "sortOrder": 20, "certainty": "confirmed", "workIds": ["W-O018"], "personIds": ["P183"], "sourceIds": ["SRC0511"]}
+      },
+      "CON-O019-C-P184": {
+        "reason": "Record Sidney Clare's music credit printed in the surviving Miss Annabelle Lee score.",
+        "fields": {"id": "CON-O019-C-P184", "role": "composer", "nameAsPrinted": "Sidney Clare", "evidenceContext": "original_composition", "sortOrder": 20, "certainty": "confirmed", "workIds": ["W-O019"], "personIds": ["P184"], "sourceIds": ["SRC0512"]}
+      },
+      "CON-O019-C-P185": {
+        "reason": "Record Lew Pollack's music credit printed in the surviving Miss Annabelle Lee score.",
+        "fields": {"id": "CON-O019-C-P185", "role": "composer", "nameAsPrinted": "Lew Pollack", "evidenceContext": "original_composition", "sortOrder": 20, "certainty": "confirmed", "workIds": ["W-O019"], "personIds": ["P185"], "sourceIds": ["SRC0512"]}
+      },
+      "CON-O019-C-P186": {
+        "reason": "Record Harry Richman's music credit printed in the surviving Miss Annabelle Lee score.",
+        "fields": {"id": "CON-O019-C-P186", "role": "composer", "nameAsPrinted": "Harry Richman", "evidenceContext": "original_composition", "sortOrder": 20, "certainty": "confirmed", "workIds": ["W-O019"], "personIds": ["P186"], "sourceIds": ["SRC0512"]}
+      },
+      "CON-O020-C-P187": {
+        "reason": "Record Jesse Greer as composer of the original One Step to Heaven song.",
+        "fields": {"id": "CON-O020-C-P187", "role": "composer", "nameAsPrinted": "Jesse Greer", "evidenceContext": "original_composition", "sortOrder": 20, "certainty": "confirmed", "workIds": ["W-O020"], "personIds": ["P187"], "sourceIds": ["SRC0513"]}
+      },
+      "CON-O021-C-P187": {
+        "reason": "Record Jesse Greer as composer of the original Raquel song.",
+        "fields": {"id": "CON-O021-C-P187", "role": "composer", "nameAsPrinted": "Jesse Greer", "evidenceContext": "original_composition", "sortOrder": 20, "certainty": "confirmed", "workIds": ["W-O021"], "personIds": ["P187"], "sourceIds": ["SRC0514"]}
+      },
+      "CON-O022-C-P188": {
+        "reason": "Record Larry Shay as composer of the original Get Out and Get Under the Moon song.",
+        "fields": {"id": "CON-O022-C-P188", "role": "composer", "nameAsPrinted": "Larry Shay", "evidenceContext": "original_composition", "sortOrder": 20, "certainty": "confirmed", "workIds": ["W-O022"], "personIds": ["P188"], "sourceIds": ["SRC0515"]}
+      },
+      "CON-O023-C-P179": {
+        "reason": "Record Nacio Herb Brown as composer of the original song transcribed as Jazz Drops no. 1.",
+        "fields": {"id": "CON-O023-C-P179", "role": "composer", "nameAsPrinted": "Nacio Herbert Brown", "evidenceContext": "original_composition", "sortOrder": 20, "certainty": "confirmed", "workIds": ["W-O023"], "personIds": ["P179"], "sourceIds": ["SRC0768"]}
+      },
+      "CON-O024-C-P190": {
+        "reason": "Record Harry Brooks as a composer of Ain't Misbehavin', transcribed as Jazz Drops no. 2.",
+        "fields": {"id": "CON-O024-C-P190", "role": "composer", "nameAsPrinted": "Harry Brooks", "evidenceContext": "original_composition", "sortOrder": 20, "certainty": "confirmed", "workIds": ["W-O024"], "personIds": ["P190"], "sourceIds": ["SRC0769"]}
+      },
+      "CON-O024-C-P189": {
+        "reason": "Record Fats Waller as a composer of Ain't Misbehavin', transcribed as Jazz Drops no. 2.",
+        "fields": {"id": "CON-O024-C-P189", "role": "composer", "nameAsPrinted": "Thomas Waller", "evidenceContext": "original_composition", "sortOrder": 20, "certainty": "confirmed", "workIds": ["W-O024"], "personIds": ["P189"], "sourceIds": ["SRC0769"]}
+      },
+      "CON-O025-C-P191": {
+        "reason": "Record Hugo Riesenfeld as a composer of Drei Musketiere, transcribed as Jazz Drops no. 3.",
+        "fields": {"id": "CON-O025-C-P191", "role": "composer", "nameAsPrinted": "Hugo Riesenfeld", "evidenceContext": "original_composition", "sortOrder": 20, "certainty": "confirmed", "workIds": ["W-O025"], "personIds": ["P191"], "sourceIds": ["SRC0770"]}
+      },
+      "CON-O025-C-P192": {
+        "reason": "Record Ralph Benatzky as a composer of Drei Musketiere, transcribed as Jazz Drops no. 3.",
+        "fields": {"id": "CON-O025-C-P192", "role": "composer", "nameAsPrinted": "Ralph Benatzky", "evidenceContext": "original_composition", "sortOrder": 20, "certainty": "confirmed", "workIds": ["W-O025"], "personIds": ["P192"], "sourceIds": ["SRC0770"]}
+      },
+      "CON-O026-C-P179": {
+        "reason": "Record Nacio Herb Brown as composer of Singin' in the Rain, transcribed as Jazz Drops no. 4.",
+        "fields": {"id": "CON-O026-C-P179", "role": "composer", "nameAsPrinted": "Nacio Herbert Brown", "evidenceContext": "original_composition", "sortOrder": 20, "certainty": "confirmed", "workIds": ["W-O026"], "personIds": ["P179"], "sourceIds": ["SRC0771"]}
+      },
+      "CON-O027-C-P193": {
+        "reason": "Record Jack King as composer of How Am I to Know?, transcribed as Jazz Drops no. 5.",
+        "fields": {"id": "CON-O027-C-P193", "role": "composer", "nameAsPrinted": "Jack King", "evidenceContext": "original_composition", "sortOrder": 20, "certainty": "confirmed", "workIds": ["W-O027"], "personIds": ["P193"], "sourceIds": ["SRC0772"]}
       }
     },
     "Other Works": {
       "O023": {
         "reason": "Model Jazz Drops no. 1 as an item-level piano transcription, distinct from the two-piano Cocktails edition of the same underlying song.",
-        "fields": {"id": "O023", "title": "Puppenhochzeit (The Wedding of the Painted Doll)", "slug": "puppenhochzeit-jazz-drops-no-1", "sortTitle": "Puppenhochzeit Wedding of the Painted Doll", "year": 1930, "period": "european", "instrumentation": "piano concert transcription; Jazz Drops no. 1", "publisherOrHoldingAsPrinted": "Berlin: Alberti, 1930; Hofmeister, pp. 219 and 226", "materialStatus": "published_print", "publicNote": "Nacio Herb Brown is identified as the composer of the original foxtrot.", "certainty": "confirmed", "workIds": ["W-O023"], "sourceIds": ["SRC0768"], "periods": ["european"]}
+        "fields": {"id": "O023", "title": "Puppenhochzeit (The Wedding of the Painted Doll)", "slug": "puppenhochzeit-jazz-drops-no-1", "sortTitle": "Puppenhochzeit Wedding of the Painted Doll", "year": 1930, "period": "european", "instrumentation": "piano concert transcription; Jazz Drops no. 1", "publisherOrHoldingAsPrinted": "Berlin: Alberti, 1930; Hofmeister, pp. 219 and 226", "materialStatus": "published_print", "certainty": "confirmed", "workIds": ["W-O023"], "sourceIds": ["SRC0768"], "periods": ["european"]}
       },
       "O024": {
         "reason": "Model Jazz Drops no. 2 as an item-level piano transcription.",
-        "fields": {"id": "O024", "title": "Mein kleines Fräulein, Sie sind nervös! (Ain’t Misbehavin’)", "slug": "mein-kleines-fraeulein-jazz-drops-no-2", "sortTitle": "Mein kleines Fraulein Sie sind nervos Aint Misbehavin", "year": 1930, "period": "european", "instrumentation": "piano concert transcription; Jazz Drops no. 2", "publisherOrHoldingAsPrinted": "Berlin: Alberti, 1930; Hofmeister, pp. 219 and 226", "materialStatus": "published_print", "publicNote": "Harry Brooks and Thomas Waller are identified as the composers of the original slow fox.", "certainty": "confirmed", "workIds": ["W-O024"], "sourceIds": ["SRC0769"], "periods": ["european"]}
+        "fields": {"id": "O024", "title": "Mein kleines Fräulein, Sie sind nervös! (Ain’t Misbehavin’)", "slug": "mein-kleines-fraeulein-jazz-drops-no-2", "sortTitle": "Mein kleines Fraulein Sie sind nervos Aint Misbehavin", "year": 1930, "period": "european", "instrumentation": "piano concert transcription; Jazz Drops no. 2", "publisherOrHoldingAsPrinted": "Berlin: Alberti, 1930; Hofmeister, pp. 219 and 226", "materialStatus": "published_print", "certainty": "confirmed", "workIds": ["W-O024"], "sourceIds": ["SRC0769"], "periods": ["european"]}
       },
       "O025": {
         "reason": "Model Jazz Drops no. 3 as an item-level piano transcription.",
-        "fields": {"id": "O025", "title": "Drei Musketiere", "slug": "drei-musketiere-jazz-drops-no-3", "sortTitle": "Drei Musketiere", "year": 1930, "period": "european", "instrumentation": "piano concert transcription; Jazz Drops no. 3", "publisherOrHoldingAsPrinted": "Berlin: Alberti, 1930; Hofmeister, pp. 226 and 233", "materialStatus": "published_print", "publicNote": "Hugo Riesenfeld and Ralph Benatzky are identified as the composers of the original march.", "certainty": "confirmed", "workIds": ["W-O025"], "sourceIds": ["SRC0770"], "periods": ["european"]}
+        "fields": {"id": "O025", "title": "Drei Musketiere", "slug": "drei-musketiere-jazz-drops-no-3", "sortTitle": "Drei Musketiere", "year": 1930, "period": "european", "instrumentation": "piano concert transcription; Jazz Drops no. 3", "publisherOrHoldingAsPrinted": "Berlin: Alberti, 1930; Hofmeister, pp. 226 and 233", "materialStatus": "published_print", "certainty": "confirmed", "workIds": ["W-O025"], "sourceIds": ["SRC0770"], "periods": ["european"]}
       },
       "O026": {
         "reason": "Model Jazz Drops no. 4 as an item-level piano transcription, distinct from the Cocktails pairing that also includes Singin’ in the Rain.",
-        "fields": {"id": "O026", "title": "Singin’ in the Rain", "slug": "singin-in-the-rain-jazz-drops-no-4", "sortTitle": "Singin in the Rain", "year": 1930, "period": "european", "instrumentation": "piano concert transcription; Jazz Drops no. 4", "publisherOrHoldingAsPrinted": "Berlin: Alberti, 1930; Hofmeister, pp. 289 and 294", "materialStatus": "published_print", "publicNote": "Nacio Herb Brown is identified as the composer of the original foxtrot.", "certainty": "confirmed", "workIds": ["W-O026"], "sourceIds": ["SRC0771"], "periods": ["european"]}
+        "fields": {"id": "O026", "title": "Singin’ in the Rain", "slug": "singin-in-the-rain-jazz-drops-no-4", "sortTitle": "Singin in the Rain", "year": 1930, "period": "european", "instrumentation": "piano concert transcription; Jazz Drops no. 4", "publisherOrHoldingAsPrinted": "Berlin: Alberti, 1930; Hofmeister, pp. 289 and 294", "materialStatus": "published_print", "certainty": "confirmed", "workIds": ["W-O026"], "sourceIds": ["SRC0771"], "periods": ["european"]}
       },
       "O027": {
         "reason": "Model Jazz Drops no. 5 as an item-level piano transcription.",
-        "fields": {"id": "O027", "title": "How Am I to Know?", "slug": "how-am-i-to-know-jazz-drops-no-5", "sortTitle": "How Am I to Know", "year": 1931, "period": "european", "instrumentation": "piano concert transcription; Jazz Drops no. 5", "publisherOrHoldingAsPrinted": "Berlin: Alberti, 1931; Hofmeister, pp. 35–36", "materialStatus": "published_print", "publicNote": "Jack King is identified as the composer of the original song.", "certainty": "confirmed", "workIds": ["W-O027"], "sourceIds": ["SRC0772"], "periods": ["european"]}
+        "fields": {"id": "O027", "title": "How Am I to Know?", "slug": "how-am-i-to-know-jazz-drops-no-5", "sortTitle": "How Am I to Know", "year": 1931, "period": "european", "instrumentation": "piano concert transcription; Jazz Drops no. 5", "publisherOrHoldingAsPrinted": "Berlin: Alberti, 1931; Hofmeister, pp. 35–36", "materialStatus": "published_print", "certainty": "confirmed", "workIds": ["W-O027"], "sourceIds": ["SRC0772"], "periods": ["european"]}
       }
     },
     "Sources": {
@@ -7580,23 +7701,31 @@
       },
       "SRC0768": {
         "reason": "Add item-level Hofmeister evidence for Jazz Drops no. 1.",
-        "fields": {"id": "SRC0768", "shortCitation": "Brown, “Puppenhochzeit (The Wedding of the Painted Doll),” Jazz Drops no. 1 (Alberti, 1930; transcription by B. Kaper)", "fullCitation": "Nacio Herbert Brown, “Puppenhochzeit (The Wedding of the Painted Doll).” Foxtrot for piano; concert transcription by B. Kaper. Jazz Drops, no. 1. Berlin: Alberti, 1930. Hofmeisters Musikalisch-literarischer Monatsbericht (1930): 219, 226.", "sourceType": "sheet_music", "title": "Puppenhochzeit (The Wedding of the Painted Doll) — Jazz Drops no. 1", "creator": "Nacio Herbert Brown (original composition); B. Kaper (piano transcription)", "repository": "Internet Archive / Friedrich Hofmeister", "publication": "Alberti, Berlin", "date": "1930", "accessDate": "2026-08-23", "reliability": "high", "sourceStatus": "verified", "slug": "src0768-hofmeister-jazz-drops-no-1-puppenhochzeit", "primaryUrl": "https://archive.org/details/Musikalisch-literarischerMonatsbericht1930/page/n218/mode/2up", "organizationIds": ["ORG054", "ORG067"], "workIds": ["W-O023"], "otherWorkIds": ["O023"], "workRelationIds": ["REL0203"], "contributionIds": ["CON-O023-A-P009", "CON-O023-PUB-ORG054"], "nameVariantIds": ["PNV0019"]}
+        "fields": {"id": "SRC0768", "shortCitation": "Brown, “Puppenhochzeit (The Wedding of the Painted Doll),” Jazz Drops no. 1 (Alberti, 1930; transcription by B. Kaper)", "fullCitation": "Nacio Herbert Brown, “Puppenhochzeit (The Wedding of the Painted Doll).” Foxtrot for piano; concert transcription by B. Kaper. Jazz Drops, no. 1. Berlin: Alberti, 1930. Hofmeisters Musikalisch-literarischer Monatsbericht (1930): 219, 226.", "sourceType": "sheet_music", "title": "Puppenhochzeit (The Wedding of the Painted Doll) — Jazz Drops no. 1", "creator": "Nacio Herbert Brown (original composition); B. Kaper (piano transcription)", "repository": "Internet Archive / Friedrich Hofmeister", "publication": "Alberti, Berlin", "date": "1930", "accessDate": "2026-08-23", "reliability": "high", "sourceStatus": "verified", "slug": "src0768-hofmeister-jazz-drops-no-1-puppenhochzeit", "primaryUrl": "https://archive.org/details/Musikalisch-literarischerMonatsbericht1930/page/n218/mode/2up", "organizationIds": ["ORG054", "ORG067"], "workIds": ["W-O023"], "otherWorkIds": ["O023"], "workRelationIds": ["REL0203"], "contributionIds": ["CON-O023-A-P009", "CON-O023-C-P179", "CON-O023-PUB-ORG054"], "nameVariantIds": ["PNV0019"]}
       },
       "SRC0769": {
         "reason": "Add item-level Hofmeister evidence for Jazz Drops no. 2.",
-        "fields": {"id": "SRC0769", "shortCitation": "Brooks and Waller, “Mein kleines Fräulein, Sie sind nervös! (Ain’t Misbehavin’),” Jazz Drops no. 2 (Alberti, 1930; transcription by B. Kaper)", "fullCitation": "Harry Brooks and Thomas Waller, “Mein kleines Fräulein, Sie sind nervös! (Ain’t Misbehavin’).” Slow fox for piano; concert transcription by B. Kaper. Jazz Drops, no. 2. Berlin: Alberti, 1930. Hofmeisters Musikalisch-literarischer Monatsbericht (1930): 219, 226.", "sourceType": "sheet_music", "title": "Mein kleines Fräulein, Sie sind nervös! (Ain’t Misbehavin’) — Jazz Drops no. 2", "creator": "Harry Brooks and Thomas Waller (original composition); B. Kaper (piano transcription)", "repository": "Internet Archive / Friedrich Hofmeister", "publication": "Alberti, Berlin", "date": "1930", "accessDate": "2026-08-23", "reliability": "high", "sourceStatus": "verified", "slug": "src0769-hofmeister-jazz-drops-no-2-aint-misbehavin", "primaryUrl": "https://archive.org/details/Musikalisch-literarischerMonatsbericht1930/page/n218/mode/2up", "organizationIds": ["ORG054", "ORG067"], "workIds": ["W-O024"], "otherWorkIds": ["O024"], "workRelationIds": ["REL0204"], "contributionIds": ["CON-O024-A-P009", "CON-O024-PUB-ORG054"], "nameVariantIds": ["PNV0019"]}
+        "fields": {"id": "SRC0769", "shortCitation": "Brooks and Waller, “Mein kleines Fräulein, Sie sind nervös! (Ain’t Misbehavin’),” Jazz Drops no. 2 (Alberti, 1930; transcription by B. Kaper)", "fullCitation": "Harry Brooks and Thomas Waller, “Mein kleines Fräulein, Sie sind nervös! (Ain’t Misbehavin’).” Slow fox for piano; concert transcription by B. Kaper. Jazz Drops, no. 2. Berlin: Alberti, 1930. Hofmeisters Musikalisch-literarischer Monatsbericht (1930): 219, 226.", "sourceType": "sheet_music", "title": "Mein kleines Fräulein, Sie sind nervös! (Ain’t Misbehavin’) — Jazz Drops no. 2", "creator": "Harry Brooks and Thomas Waller (original composition); B. Kaper (piano transcription)", "repository": "Internet Archive / Friedrich Hofmeister", "publication": "Alberti, Berlin", "date": "1930", "accessDate": "2026-08-23", "reliability": "high", "sourceStatus": "verified", "slug": "src0769-hofmeister-jazz-drops-no-2-aint-misbehavin", "primaryUrl": "https://archive.org/details/Musikalisch-literarischerMonatsbericht1930/page/n218/mode/2up", "organizationIds": ["ORG054", "ORG067"], "workIds": ["W-O024"], "otherWorkIds": ["O024"], "workRelationIds": ["REL0204"], "contributionIds": ["CON-O024-A-P009", "CON-O024-C-P190", "CON-O024-C-P189", "CON-O024-PUB-ORG054"], "nameVariantIds": ["PNV0019"]}
       },
       "SRC0770": {
         "reason": "Add item-level Hofmeister evidence for Jazz Drops no. 3.",
-        "fields": {"id": "SRC0770", "shortCitation": "Riesenfeld and Benatzky, “Drei Musketiere,” Jazz Drops no. 3 (Alberti, 1930; transcription by B. Kaper)", "fullCitation": "Hugo Riesenfeld and Ralph Benatzky, “Drei Musketiere.” March for piano; concert transcription by B. Kaper. Jazz Drops, no. 3. Berlin: Alberti, 1930. Hofmeisters Musikalisch-literarischer Monatsbericht (1930): 226, 233.", "sourceType": "sheet_music", "title": "Drei Musketiere — Jazz Drops no. 3", "creator": "Hugo Riesenfeld and Ralph Benatzky (original composition); B. Kaper (piano transcription)", "repository": "Internet Archive / Friedrich Hofmeister", "publication": "Alberti, Berlin", "date": "1930", "accessDate": "2026-08-23", "reliability": "high", "sourceStatus": "verified", "slug": "src0770-hofmeister-jazz-drops-no-3-drei-musketiere", "primaryUrl": "https://archive.org/details/Musikalisch-literarischerMonatsbericht1930/page/n232/mode/2up", "organizationIds": ["ORG054", "ORG067"], "workIds": ["W-O025"], "otherWorkIds": ["O025"], "workRelationIds": ["REL0205"], "contributionIds": ["CON-O025-A-P009", "CON-O025-PUB-ORG054"], "nameVariantIds": ["PNV0019"]}
+        "fields": {"id": "SRC0770", "shortCitation": "Riesenfeld and Benatzky, “Drei Musketiere,” Jazz Drops no. 3 (Alberti, 1930; transcription by B. Kaper)", "fullCitation": "Hugo Riesenfeld and Ralph Benatzky, “Drei Musketiere.” March for piano; concert transcription by B. Kaper. Jazz Drops, no. 3. Berlin: Alberti, 1930. Hofmeisters Musikalisch-literarischer Monatsbericht (1930): 226, 233.", "sourceType": "sheet_music", "title": "Drei Musketiere — Jazz Drops no. 3", "creator": "Hugo Riesenfeld and Ralph Benatzky (original composition); B. Kaper (piano transcription)", "repository": "Internet Archive / Friedrich Hofmeister", "publication": "Alberti, Berlin", "date": "1930", "accessDate": "2026-08-23", "reliability": "high", "sourceStatus": "verified", "slug": "src0770-hofmeister-jazz-drops-no-3-drei-musketiere", "primaryUrl": "https://archive.org/details/Musikalisch-literarischerMonatsbericht1930/page/n232/mode/2up", "organizationIds": ["ORG054", "ORG067"], "workIds": ["W-O025"], "otherWorkIds": ["O025"], "workRelationIds": ["REL0205"], "contributionIds": ["CON-O025-A-P009", "CON-O025-C-P191", "CON-O025-C-P192", "CON-O025-PUB-ORG054"], "nameVariantIds": ["PNV0019"]}
       },
       "SRC0771": {
         "reason": "Add item-level Hofmeister evidence for Jazz Drops no. 4.",
-        "fields": {"id": "SRC0771", "shortCitation": "Brown, “Singin’ in the Rain,” Jazz Drops no. 4 (Alberti, 1930; transcription by B. Kaper)", "fullCitation": "Nacio Herbert Brown, “Singin’ in the Rain.” Foxtrot for piano; concert transcription by B. Kaper. Jazz Drops, no. 4. Berlin: Alberti, 1930. Hofmeisters Musikalisch-literarischer Monatsbericht (1930): 289, 294.", "sourceType": "sheet_music", "title": "Singin’ in the Rain — Jazz Drops no. 4", "creator": "Nacio Herbert Brown (original composition); B. Kaper (piano transcription)", "repository": "Internet Archive / Friedrich Hofmeister", "publication": "Alberti, Berlin", "date": "1930", "accessDate": "2026-08-23", "reliability": "high", "sourceStatus": "verified", "slug": "src0771-hofmeister-jazz-drops-no-4-singin-in-the-rain", "primaryUrl": "https://archive.org/details/Musikalisch-literarischerMonatsbericht1930/page/n288/mode/2up", "organizationIds": ["ORG054", "ORG067"], "workIds": ["W-O026"], "otherWorkIds": ["O026"], "workRelationIds": ["REL0206"], "contributionIds": ["CON-O026-A-P009", "CON-O026-PUB-ORG054"], "nameVariantIds": ["PNV0019"]}
+        "fields": {"id": "SRC0771", "shortCitation": "Brown, “Singin’ in the Rain,” Jazz Drops no. 4 (Alberti, 1930; transcription by B. Kaper)", "fullCitation": "Nacio Herbert Brown, “Singin’ in the Rain.” Foxtrot for piano; concert transcription by B. Kaper. Jazz Drops, no. 4. Berlin: Alberti, 1930. Hofmeisters Musikalisch-literarischer Monatsbericht (1930): 289, 294.", "sourceType": "sheet_music", "title": "Singin’ in the Rain — Jazz Drops no. 4", "creator": "Nacio Herbert Brown (original composition); B. Kaper (piano transcription)", "repository": "Internet Archive / Friedrich Hofmeister", "publication": "Alberti, Berlin", "date": "1930", "accessDate": "2026-08-23", "reliability": "high", "sourceStatus": "verified", "slug": "src0771-hofmeister-jazz-drops-no-4-singin-in-the-rain", "primaryUrl": "https://archive.org/details/Musikalisch-literarischerMonatsbericht1930/page/n288/mode/2up", "organizationIds": ["ORG054", "ORG067"], "workIds": ["W-O026"], "otherWorkIds": ["O026"], "workRelationIds": ["REL0206"], "contributionIds": ["CON-O026-A-P009", "CON-O026-C-P179", "CON-O026-PUB-ORG054"], "nameVariantIds": ["PNV0019"]}
       },
       "SRC0772": {
         "reason": "Add item-level Hofmeister evidence for Jazz Drops no. 5.",
-        "fields": {"id": "SRC0772", "shortCitation": "King, “How Am I to Know?,” Jazz Drops no. 5 (Alberti, 1931; transcription by B. Kaper)", "fullCitation": "Jack King, “How Am I to Know?” For piano; concert transcription by B. Kaper. Jazz Drops, no. 5. Berlin: Alberti, 1931. Hofmeisters Musikalisch-literarischer Monatsbericht (1931): 35–36.", "sourceType": "sheet_music", "title": "How Am I to Know? — Jazz Drops no. 5", "creator": "Jack King (original composition); B. Kaper (piano transcription)", "repository": "Internet Archive / Friedrich Hofmeister", "publication": "Alberti, Berlin", "date": "1931", "accessDate": "2026-08-23", "reliability": "high", "sourceStatus": "verified", "slug": "src0772-hofmeister-jazz-drops-no-5-how-am-i-to-know", "primaryUrl": "https://archive.org/details/Musikalisch-literarischerMonatsbericht1931/page/n35/mode/2up", "organizationIds": ["ORG054", "ORG067"], "workIds": ["W-O027"], "otherWorkIds": ["O027"], "workRelationIds": ["REL0207"], "contributionIds": ["CON-O027-A-P009", "CON-O027-PUB-ORG054"], "nameVariantIds": ["PNV0019"]}
+        "fields": {"id": "SRC0772", "shortCitation": "King, “How Am I to Know?,” Jazz Drops no. 5 (Alberti, 1931; transcription by B. Kaper)", "fullCitation": "Jack King, “How Am I to Know?” For piano; concert transcription by B. Kaper. Jazz Drops, no. 5. Berlin: Alberti, 1931. Hofmeisters Musikalisch-literarischer Monatsbericht (1931): 35–36.", "sourceType": "sheet_music", "title": "How Am I to Know? — Jazz Drops no. 5", "creator": "Jack King (original composition); B. Kaper (piano transcription)", "repository": "Internet Archive / Friedrich Hofmeister", "publication": "Alberti, Berlin", "date": "1931", "accessDate": "2026-08-23", "reliability": "high", "sourceStatus": "verified", "slug": "src0772-hofmeister-jazz-drops-no-5-how-am-i-to-know", "primaryUrl": "https://archive.org/details/Musikalisch-literarischerMonatsbericht1931/page/n35/mode/2up", "organizationIds": ["ORG054", "ORG067"], "workIds": ["W-O027"], "otherWorkIds": ["O027"], "workRelationIds": ["REL0207"], "contributionIds": ["CON-O027-A-P009", "CON-O027-C-P193", "CON-O027-PUB-ORG054"], "nameVariantIds": ["PNV0019"]}
+      },
+      "SRC0773": {
+        "reason": "Add independent discographic evidence for the original composers of Fiesta (Bianca).",
+        "fields": {"id": "SRC0773", "shortCitation": "National Museum, Prague, discography entry for “Fiesta (Bianca)”", "fullCitation": "National Museum, Prague, discographic database. “Fiesta (Bianca),” matrix 18145; music by W. G. Samuels and L. Whitcup; recording conducted by Efim Schachmeister.", "sourceType": "discography", "title": "Fiesta (Bianca)", "creator": "W. G. Samuels and L. Whitcup", "repository": "National Museum, Prague", "date": "1931", "accessDate": "2026-08-23", "reliability": "high", "sourceStatus": "verified", "slug": "src0773-national-museum-fiesta-bianca-samuels-whitcup", "primaryUrl": "https://diskografie.nm.cz/osoby/l-whitcup/", "workIds": ["W-O012"], "otherWorkIds": ["O012"], "contributionIds": ["CON-O012-C-P177", "CON-O012-C-P178"]}
+      },
+      "SRC0774": {
+        "reason": "Add the item-level sheet-music record that distinguishes Ray Henderson's music credit for Sonny Boy.",
+        "fields": {"id": "SRC0774", "shortCitation": "University of Maine, sheet-music record for “Sonny Boy” (1928)", "fullCitation": "University of Maine, Vocal Popular Sheet Music Collection. “Sonny Boy,” theme song from The Singing Fool. Music by Ray Henderson; associated songwriting credits to B. G. De Sylva, Lew Brown and Al Jolson. New York: De Sylva, Brown and Henderson, 1928. Score VP_005091.", "sourceType": "sheet_music", "title": "Sonny Boy", "creator": "Ray Henderson; B. G. De Sylva; Lew Brown; Al Jolson", "repository": "University of Maine, Vocal Popular Sheet Music Collection", "publication": "De Sylva, Brown and Henderson, New York", "date": "1928", "accessDate": "2026-08-23", "reliability": "high", "sourceStatus": "verified", "slug": "src0774-university-of-maine-sonny-boy-ray-henderson", "primaryUrl": "https://digitalcommons.library.umaine.edu/mmb-vp/6492/", "workIds": ["W-O017"], "otherWorkIds": ["O017"], "contributionIds": ["CON-O017-C-P182"]}
       }
     },
     "Songs": {
@@ -7741,23 +7870,23 @@
       },
       "W-O023": {
         "reason": "Publish Jazz Drops no. 1 as an item-level Work linked to the series parent.",
-        "fields": {"id": "W-O023", "title": "Puppenhochzeit (The Wedding of the Painted Doll)", "slug": "puppenhochzeit-jazz-drops-no-1", "sortTitle": "Puppenhochzeit Wedding of the Painted Doll", "workType": "Other", "year": 1930, "period": "european", "certainty": "confirmed", "publicNote": "Nacio Herb Brown is identified as the composer of the original foxtrot.", "displayOnSite": true, "publicScope": "standalone_page", "sourceIds": ["SRC0768"], "contributionIds": ["CON-O023-A-P009", "CON-O023-PUB-ORG054"], "nameVariantIds": ["PNV0019"], "personIds": ["P009"], "organizationIds": ["ORG054"], "relationIds": ["REL0203"], "otherWorkIds": ["O023"], "periods": ["european"]}
+        "fields": {"id": "W-O023", "title": "Puppenhochzeit (The Wedding of the Painted Doll)", "slug": "puppenhochzeit-jazz-drops-no-1", "sortTitle": "Puppenhochzeit Wedding of the Painted Doll", "workType": "Other", "year": 1930, "period": "european", "certainty": "confirmed", "displayOnSite": true, "publicScope": "standalone_page", "sourceIds": ["SRC0768"], "contributionIds": ["CON-O023-A-P009", "CON-O023-PUB-ORG054", "CON-O023-C-P179"], "nameVariantIds": ["PNV0019"], "personIds": ["P009", "P179"], "organizationIds": ["ORG054"], "relationIds": ["REL0203"], "otherWorkIds": ["O023"], "periods": ["european"]}
       },
       "W-O024": {
         "reason": "Publish Jazz Drops no. 2 as an item-level Work linked to the series parent.",
-        "fields": {"id": "W-O024", "title": "Mein kleines Fräulein, Sie sind nervös! (Ain’t Misbehavin’)", "slug": "mein-kleines-fraeulein-jazz-drops-no-2", "sortTitle": "Mein kleines Fraulein Sie sind nervos Aint Misbehavin", "workType": "Other", "year": 1930, "period": "european", "certainty": "confirmed", "publicNote": "Harry Brooks and Thomas Waller are identified as the composers of the original slow fox.", "displayOnSite": true, "publicScope": "standalone_page", "sourceIds": ["SRC0769"], "contributionIds": ["CON-O024-A-P009", "CON-O024-PUB-ORG054"], "nameVariantIds": ["PNV0019"], "personIds": ["P009"], "organizationIds": ["ORG054"], "relationIds": ["REL0204"], "otherWorkIds": ["O024"], "periods": ["european"]}
+        "fields": {"id": "W-O024", "title": "Mein kleines Fräulein, Sie sind nervös! (Ain’t Misbehavin’)", "slug": "mein-kleines-fraeulein-jazz-drops-no-2", "sortTitle": "Mein kleines Fraulein Sie sind nervos Aint Misbehavin", "workType": "Other", "year": 1930, "period": "european", "certainty": "confirmed", "displayOnSite": true, "publicScope": "standalone_page", "sourceIds": ["SRC0769"], "contributionIds": ["CON-O024-A-P009", "CON-O024-PUB-ORG054", "CON-O024-C-P190", "CON-O024-C-P189"], "nameVariantIds": ["PNV0019"], "personIds": ["P009", "P190", "P189"], "organizationIds": ["ORG054"], "relationIds": ["REL0204"], "otherWorkIds": ["O024"], "periods": ["european"]}
       },
       "W-O025": {
         "reason": "Publish Jazz Drops no. 3 as an item-level Work linked to the series parent.",
-        "fields": {"id": "W-O025", "title": "Drei Musketiere", "slug": "drei-musketiere-jazz-drops-no-3", "sortTitle": "Drei Musketiere", "workType": "Other", "year": 1930, "period": "european", "certainty": "confirmed", "publicNote": "Hugo Riesenfeld and Ralph Benatzky are identified as the composers of the original march.", "displayOnSite": true, "publicScope": "standalone_page", "sourceIds": ["SRC0770"], "contributionIds": ["CON-O025-A-P009", "CON-O025-PUB-ORG054"], "nameVariantIds": ["PNV0019"], "personIds": ["P009"], "organizationIds": ["ORG054"], "relationIds": ["REL0205"], "otherWorkIds": ["O025"], "periods": ["european"]}
+        "fields": {"id": "W-O025", "title": "Drei Musketiere", "slug": "drei-musketiere-jazz-drops-no-3", "sortTitle": "Drei Musketiere", "workType": "Other", "year": 1930, "period": "european", "certainty": "confirmed", "displayOnSite": true, "publicScope": "standalone_page", "sourceIds": ["SRC0770"], "contributionIds": ["CON-O025-A-P009", "CON-O025-PUB-ORG054", "CON-O025-C-P191", "CON-O025-C-P192"], "nameVariantIds": ["PNV0019"], "personIds": ["P009", "P191", "P192"], "organizationIds": ["ORG054"], "relationIds": ["REL0205"], "otherWorkIds": ["O025"], "periods": ["european"]}
       },
       "W-O026": {
         "reason": "Publish Jazz Drops no. 4 as an item-level Work linked to the series parent.",
-        "fields": {"id": "W-O026", "title": "Singin’ in the Rain", "slug": "singin-in-the-rain-jazz-drops-no-4", "sortTitle": "Singin in the Rain", "workType": "Other", "year": 1930, "period": "european", "certainty": "confirmed", "publicNote": "Nacio Herb Brown is identified as the composer of the original foxtrot.", "displayOnSite": true, "publicScope": "standalone_page", "sourceIds": ["SRC0771"], "contributionIds": ["CON-O026-A-P009", "CON-O026-PUB-ORG054"], "nameVariantIds": ["PNV0019"], "personIds": ["P009"], "organizationIds": ["ORG054"], "relationIds": ["REL0206"], "otherWorkIds": ["O026"], "periods": ["european"]}
+        "fields": {"id": "W-O026", "title": "Singin’ in the Rain", "slug": "singin-in-the-rain-jazz-drops-no-4", "sortTitle": "Singin in the Rain", "workType": "Other", "year": 1930, "period": "european", "certainty": "confirmed", "displayOnSite": true, "publicScope": "standalone_page", "sourceIds": ["SRC0771"], "contributionIds": ["CON-O026-A-P009", "CON-O026-PUB-ORG054", "CON-O026-C-P179"], "nameVariantIds": ["PNV0019"], "personIds": ["P009", "P179"], "organizationIds": ["ORG054"], "relationIds": ["REL0206"], "otherWorkIds": ["O026"], "periods": ["european"]}
       },
       "W-O027": {
         "reason": "Publish Jazz Drops no. 5 as an item-level Work linked to the series parent.",
-        "fields": {"id": "W-O027", "title": "How Am I to Know?", "slug": "how-am-i-to-know-jazz-drops-no-5", "sortTitle": "How Am I to Know", "workType": "Other", "year": 1931, "period": "european", "certainty": "confirmed", "publicNote": "Jack King is identified as the composer of the original song.", "displayOnSite": true, "publicScope": "standalone_page", "sourceIds": ["SRC0772"], "contributionIds": ["CON-O027-A-P009", "CON-O027-PUB-ORG054"], "nameVariantIds": ["PNV0019"], "personIds": ["P009"], "organizationIds": ["ORG054"], "relationIds": ["REL0207"], "otherWorkIds": ["O027"], "periods": ["european"]}
+        "fields": {"id": "W-O027", "title": "How Am I to Know?", "slug": "how-am-i-to-know-jazz-drops-no-5", "sortTitle": "How Am I to Know", "workType": "Other", "year": 1931, "period": "european", "certainty": "confirmed", "displayOnSite": true, "publicScope": "standalone_page", "sourceIds": ["SRC0772"], "contributionIds": ["CON-O027-A-P009", "CON-O027-PUB-ORG054", "CON-O027-C-P193"], "nameVariantIds": ["PNV0019"], "personIds": ["P009", "P193"], "organizationIds": ["ORG054"], "relationIds": ["REL0207"], "otherWorkIds": ["O027"], "periods": ["european"]}
       }
     },
     "Work Relations": {
@@ -10042,6 +10171,17 @@
       }
     },
     "Works": {
+      "W-O012": {"reason": "Add the verified original composers of Fiesta (Bianca), separately from Kaper's transcription credit.", "fields": {"sourceIds": ["SRC0773"], "contributionIds": ["CON-O012-C-P177", "CON-O012-C-P178"], "personIds": ["P177", "P178"]}},
+      "W-O013": {"reason": "Add the original composer credit for the Cocktails transcription.", "fields": {"contributionIds": ["CON-O013-C-P179"], "personIds": ["P179"]}},
+      "W-O014": {"reason": "Add the original composer credit for the Cocktails transcription.", "fields": {"contributionIds": ["CON-O014-C-P179"], "personIds": ["P179"]}},
+      "W-O015": {"reason": "Identify Strauss as Johann Strauss II and link the original music credit.", "fields": {"contributionIds": ["CON-O015-C-P180"], "personIds": ["P180"]}},
+      "W-O016": {"reason": "Add the original composer credit for the Tchaikovsky transcription.", "fields": {"contributionIds": ["CON-O016-C-P181"], "personIds": ["P181"]}},
+      "W-O017": {"reason": "Add Ray Henderson's documented original music credit and its item-level source.", "fields": {"sourceIds": ["SRC0774"], "contributionIds": ["CON-O017-C-P182"], "personIds": ["P182"]}},
+      "W-O018": {"reason": "Add the original composer credit for the Cocktails transcription.", "fields": {"contributionIds": ["CON-O018-C-P183"], "personIds": ["P183"]}},
+      "W-O019": {"reason": "Add all three original music credits printed in the surviving score.", "fields": {"contributionIds": ["CON-O019-C-P184", "CON-O019-C-P185", "CON-O019-C-P186"], "personIds": ["P184", "P185", "P186"]}},
+      "W-O020": {"reason": "Add the original composer credit for the Cocktails transcription.", "fields": {"contributionIds": ["CON-O020-C-P187"], "personIds": ["P187"]}},
+      "W-O021": {"reason": "Add the original composer credit for the Cocktails transcription.", "fields": {"contributionIds": ["CON-O021-C-P187"], "personIds": ["P187"]}},
+      "W-O022": {"reason": "Add the original composer credit for the Cocktails transcription.", "fields": {"contributionIds": ["CON-O022-C-P188"], "personIds": ["P188"]}},
       "W-O008": {
         "reason": "Expose Jazz Drops nos. 1–5 as item-level related works on the series parent.",
         "fields": {
@@ -11947,6 +12087,15 @@
       }
     },
     "Sources": {
+      "SRC0506": {"reason": "Synchronize the source with Nacio Herb Brown's original music credit.", "fields": {"contributionIds": ["CON-O013-C-P179"]}},
+      "SRC0507": {"reason": "Synchronize the source with Nacio Herb Brown's original music credit.", "fields": {"contributionIds": ["CON-O014-C-P179"]}},
+      "SRC0508": {"reason": "Synchronize the score citation with Johann Strauss II's original music credit.", "fields": {"contributionIds": ["CON-O015-C-P180"]}},
+      "SRC0509": {"reason": "Synchronize the score citation with Tchaikovsky's original music credit.", "fields": {"contributionIds": ["CON-O016-C-P181"]}},
+      "SRC0511": {"reason": "Synchronize the source with Irving Berlin's original music credit.", "fields": {"contributionIds": ["CON-O018-C-P183"]}},
+      "SRC0512": {"reason": "Synchronize the surviving score with its three printed music credits.", "fields": {"contributionIds": ["CON-O019-C-P184", "CON-O019-C-P185", "CON-O019-C-P186"]}},
+      "SRC0513": {"reason": "Synchronize the source with Jesse Greer's original music credit.", "fields": {"contributionIds": ["CON-O020-C-P187"]}},
+      "SRC0514": {"reason": "Synchronize the source with Jesse Greer's original music credit.", "fields": {"contributionIds": ["CON-O021-C-P187"]}},
+      "SRC0515": {"reason": "Synchronize the source with Larry Shay's original music credit.", "fields": {"contributionIds": ["CON-O022-C-P188"]}},
       "SRC0154": {
         "reason": "Synchronize the Jazz Drops collection-level catalogue record with the five item relations and Kaper arrangement credits.",
         "fields": {

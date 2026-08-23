@@ -30,7 +30,7 @@ SITEMAP_PAGES = PUBLIC_PAGES[:6]
 
 PRERENDERED_RELATION_SECTIONS = {
     "work": {
-        "contributionIds": "Contributors and credits",
+        "contributionIds": ("Contributors and credits", "Music and arrangement"),
         "titleVariantIds": "Title variants",
         "relationIds": "Related works and versions",
         "timelineEventIds": "Timeline",
@@ -524,9 +524,13 @@ def validate(root: Path) -> dict:
                                             f"{structured.get('@type')!r}"
                                         )
                         for field, heading in PRERENDERED_RELATION_SECTIONS.get(record_type, {}).items():
-                            if record.get(field) and f"<h2>{heading}" not in text:
+                            accepted_headings = (heading,) if isinstance(heading, str) else heading
+                            if record.get(field) and not any(
+                                f"<h2>{candidate}" in text for candidate in accepted_headings
+                            ):
                                 errors.append(
-                                    f"{relative}: prerendered relation section {heading!r} is missing"
+                                    f"{relative}: prerendered relation section "
+                                    f"{' or '.join(repr(item) for item in accepted_headings)} is missing"
                                 )
                         for field, linked_type in PRERENDERED_RELATION_LINKS.get(record_type, {}).items():
                             for linked_id in record.get(field) or []:

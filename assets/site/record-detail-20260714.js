@@ -1,4 +1,4 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=679f75da7a";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=ff7766ec0a";
 import {
   certaintyBadge,
   escapeHtml,
@@ -23,7 +23,7 @@ import {
   scopeBadge,
   typeBadge,
   updateMeta,
-} from "./core.js?v=679f75da7a";
+} from "./core.js?v=ff7766ec0a";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 let target = null;
@@ -604,8 +604,14 @@ function renderWork(work, data, indexes) {
   const institutionalContributions = isOther
     ? contributions.filter((item) => ["publisher", "holding_institution"].includes(item.role))
     : [];
+  const hasOriginalCompositionCredits = isOther
+    && contributions.some((item) => item.evidenceContext === "original_composition");
+  const musicAndArrangementContributions = hasOriginalCompositionCredits
+    ? contributions.filter((item) => ["composer", "arranger"].includes(item.role))
+    : [];
   const displayedContributions = isOther
-    ? contributions.filter((item) => !["publisher", "holding_institution"].includes(item.role))
+    ? contributions.filter((item) => !["publisher", "holding_institution"].includes(item.role)
+      && !musicAndArrangementContributions.includes(item))
     : contributions;
   const variants = related(work.titleVariantIds, indexes.titleVariants);
   const relations = related(work.relationIds, indexes.workRelations);
@@ -623,6 +629,12 @@ function renderWork(work, data, indexes) {
   const main = [
     section("About this work", overview),
     isOther ? otherWorkMaterialSection(subtype, institutionalContributions, indexes) : "",
+    section("Music and arrangement", contributionList(musicAndArrangementContributions, indexes, {
+      conciseCredits: true,
+      creditLabel: "credited as",
+      suppressCatalogueNames: true,
+      suppressConfirmedCreatorNotes: true,
+    })),
     section("Contributors and credits", contributionList(displayedContributions, indexes, {
       conciseCredits: hasConciseCredits || isOther,
       redundantNotes: [work.publicNote, subtype?.publicNote],
