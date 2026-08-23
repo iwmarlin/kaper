@@ -67,6 +67,7 @@ class RecordingGraphTests(unittest.TestCase):
         )
 
         self.assertEqual(media["workIds"], ["W-S002"])
+        self.assertEqual(media["songIds"], work["songIds"])
         self.assertEqual(source["workIds"], ["W-S002"])
         self.assertEqual(source["songIds"], work["songIds"])
         self.assertEqual(source["mediaIds"], ["M999"])
@@ -183,6 +184,40 @@ class RecordingGraphTests(unittest.TestCase):
 
         self.assertEqual(len(validator.errors), 1)
         self.assertIn("Sources SRCTEST.personIds omits PTEST", validator.errors[0])
+
+    def test_validator_rejects_one_sided_media_song_links(self) -> None:
+        validator = object.__new__(ExportValidator)
+        validator.errors = []
+        validator.payloads = {
+            name: {"records": []}
+            for name in TABLE_NAMES
+        }
+        validator.payloads["Media"]["records"] = [
+            {"id": "MTEST", "songIds": ["STEST"]}
+        ]
+        validator.payloads["Songs"]["records"] = [{"id": "STEST"}]
+
+        validator._validate_symmetric_links()
+
+        self.assertEqual(len(validator.errors), 1)
+        self.assertIn("Songs STEST.mediaIds omits MTEST", validator.errors[0])
+
+    def test_public_media_song_links_are_fully_symmetric(self) -> None:
+        media = json.loads(
+            (ROOT / "data/public/v1/media.json").read_text(encoding="utf-8")
+        )["records"]
+        songs = json.loads(
+            (ROOT / "data/public/v1/songs.json").read_text(encoding="utf-8")
+        )["records"]
+        media_by_id = {record["id"]: record for record in media}
+        songs_by_id = {record["id"]: record for record in songs}
+
+        for media_id, medium in media_by_id.items():
+            for song_id in medium.get("songIds", []):
+                self.assertIn(media_id, songs_by_id[song_id].get("mediaIds", []))
+        for song_id, song in songs_by_id.items():
+            for media_id in song.get("mediaIds", []):
+                self.assertIn(song_id, media_by_id[media_id].get("songIds", []))
 
     def test_validator_rejects_media_work_not_supported_by_its_sources(self) -> None:
         validator = object.__new__(ExportValidator)

@@ -13538,6 +13538,14 @@
   },
   "linkRemovals": {
     "Media": {
+      "M046": {
+        "reason": "Remove the stale song relation from the circa-1935 Kaper–Jurmann portrait; the photograph documents the partnership and timeline event, not the 1931 song S039.",
+        "fields": {
+          "songIds": [
+            "S039"
+          ]
+        }
+      },
       "M053": {
         "reason": "Remove the Dutch cover from the German original after promoting the Dutch edition to W-S217 / S217.",
         "fields": {

@@ -589,6 +589,7 @@ def register(
     for record in tables["songs"]["records"]:
         if record["id"] in (work.get("songIds") or []):
             add_link(record, "sourceIds", source_id)
+            add_link(record, "mediaIds", media_id)
     for table_name, subtype_key in (
         ("films", "filmIds"),
         ("other-works", "otherWorkIds"),

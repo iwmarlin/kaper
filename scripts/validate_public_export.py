@@ -243,6 +243,7 @@ SYMMETRIC_LINKS = (
     ("Sources", "contributionIds", "Contributions", "sourceIds"),
     ("Sources", "nameVariantIds", "Person Name Variants", "sourceIds"),
     ("Media", "workIds", "Works", "mediaIds"),
+    ("Media", "songIds", "Songs", "mediaIds"),
     ("Media", "timelineEventIds", "Timeline Events", "mediaIds"),
     ("Media", "heroTimelineEventIds", "Timeline Events", "heroMediaIds"),
     ("Media", "placeIds", "Places", "mediaIds"),

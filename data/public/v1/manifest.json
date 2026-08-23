@@ -13,15 +13,15 @@
   "publicInputs": {
     "allowlist": {
       "file": "public_export_config.json",
-      "sha256": "d6f9b55d224f1f0ad03e4c94a33eb54fec94a4aaf0e6b4764eb83ffc2f283e17"
+      "sha256": "4b590b713acfab6bc3080f8a59920af915235152d1f3757eb65790f04b610271"
     },
     "overrides": {
       "file": "public_export_overrides.json",
-      "sha256": "28d0ada4d26d4080a24f1c36c7452919b5602d7511f0d3fedd885664b7cc3bb1",
+      "sha256": "b56b2e07f182a0f29314d113439a2d611287bbcab44a94ece1aa5481657420c2",
       "appliedCount": 507,
       "additionCount": 276,
       "linkAdditionCount": 387,
-      "linkRemovalCount": 128,
+      "linkRemovalCount": 129,
       "exclusionCount": 9
     }
   },
@@ -79,8 +79,8 @@
     },
     {
       "file": "media.json",
-      "bytes": 568884,
-      "sha256": "712e8d48a05f54d0a48c9758ac89f60d3ab6ccf75fefefbe60ed07092c9988a3"
+      "bytes": 569357,
+      "sha256": "e68a1133822aab87c57c301400375f9a0d496563010bee504fa927b05ed9ba19"
     },
     {
       "file": "organizations.json",
@@ -109,8 +109,8 @@
     },
     {
       "file": "songs.json",
-      "bytes": 131942,
-      "sha256": "cab4be3948d8f872afb9567161bdf2b73c3ccf425f2353cfebb208742129a194"
+      "bytes": 135798,
+      "sha256": "6614a28db3cf4bf9afce802dfcd86dd0795fa836ef44c9422ad2006d89a615bf"
     },
     {
       "file": "sources.json",
