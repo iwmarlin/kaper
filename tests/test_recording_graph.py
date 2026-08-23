@@ -229,6 +229,39 @@ class RecordingGraphTests(unittest.TestCase):
         self.assertEqual(relations_by_id["REL0185"]["sourceWorkIds"], ["W-O019"])
         self.assertEqual(relations_by_id["REL0185"]["targetWorkIds"], ["W-O007"])
 
+    def test_jazz_drops_first_five_are_distinct_item_level_works(self) -> None:
+        works = json.loads(
+            (ROOT / "data/public/v1/works.json").read_text(encoding="utf-8")
+        )["records"]
+        sources = json.loads(
+            (ROOT / "data/public/v1/sources.json").read_text(encoding="utf-8")
+        )["records"]
+        relations = json.loads(
+            (ROOT / "data/public/v1/work-relations.json").read_text(encoding="utf-8")
+        )["records"]
+        works_by_id = {record["id"]: record for record in works}
+        sources_by_id = {record["id"]: record for record in sources}
+        relations_by_id = {record["id"]: record for record in relations}
+
+        item_ids = ["W-O023", "W-O024", "W-O025", "W-O026", "W-O027"]
+        relation_ids = ["REL0203", "REL0204", "REL0205", "REL0206", "REL0207"]
+        source_ids = ["SRC0768", "SRC0769", "SRC0770", "SRC0771", "SRC0772"]
+
+        self.assertEqual(works_by_id["W-O008"]["relationIds"], relation_ids)
+        for work_id, relation_id, source_id in zip(item_ids, relation_ids, source_ids):
+            work = works_by_id[work_id]
+            relation = relations_by_id[relation_id]
+            source = sources_by_id[source_id]
+            self.assertEqual(work["relationIds"], [relation_id])
+            self.assertEqual(relation["sourceWorkIds"], [work_id])
+            self.assertEqual(relation["targetWorkIds"], ["W-O008"])
+            self.assertEqual(source["workIds"], [work_id])
+            self.assertEqual(source["workRelationIds"], [relation_id])
+            self.assertIn("Hofmeisters Musikalisch-literarischer Monatsbericht", source["fullCitation"])
+
+        self.assertNotEqual(works_by_id["W-O023"]["slug"], works_by_id["W-O014"]["slug"])
+        self.assertNotEqual(works_by_id["W-O026"]["id"], "W-O013")
+
     def test_validator_preserves_directional_work_relations(self) -> None:
         validator = object.__new__(ExportValidator)
         validator.errors = []

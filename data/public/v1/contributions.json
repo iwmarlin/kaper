@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 1209,
+  "count": 1219,
   "records": [
     {
       "id": "CON-F001-C-P009",
@@ -21438,6 +21438,136 @@
         "SRC0767"
       ],
       "scopeNote": "Issued the Tadeusz Faliszewski recording as catalogue no. 3461, matrix 20876."
+    },
+    {
+      "id": "CON-O023-A-P009",
+      "role": "arranger",
+      "nameAsPrinted": "B. Kaper",
+      "creditAsPrinted": "Konzert-Transkr. v. B. Kaper",
+      "displayCredit": "Piano concert transcription",
+      "evidenceContext": "sheet_music",
+      "evidenceLocator": "Hofmeister 1930, pp. 219 and 226",
+      "sortOrder": 10,
+      "certainty": "confirmed",
+      "workIds": ["W-O023"],
+      "personIds": ["P009"],
+      "sourceIds": ["SRC0154", "SRC0768"],
+      "nameVariantIds": ["PNV0019"]
+    },
+    {
+      "id": "CON-O023-PUB-ORG054",
+      "role": "publisher",
+      "nameAsPrinted": "Berlin, Alberti",
+      "evidenceContext": "sheet_music",
+      "sortOrder": 60,
+      "certainty": "confirmed",
+      "workIds": ["W-O023"],
+      "organizationIds": ["ORG054"],
+      "sourceIds": ["SRC0768"]
+    },
+    {
+      "id": "CON-O024-A-P009",
+      "role": "arranger",
+      "nameAsPrinted": "B. Kaper",
+      "creditAsPrinted": "Konzert-Transkr. v. B. Kaper",
+      "displayCredit": "Piano concert transcription",
+      "evidenceContext": "sheet_music",
+      "evidenceLocator": "Hofmeister 1930, pp. 219 and 226",
+      "sortOrder": 10,
+      "certainty": "confirmed",
+      "workIds": ["W-O024"],
+      "personIds": ["P009"],
+      "sourceIds": ["SRC0154", "SRC0769"],
+      "nameVariantIds": ["PNV0019"]
+    },
+    {
+      "id": "CON-O024-PUB-ORG054",
+      "role": "publisher",
+      "nameAsPrinted": "Berlin, Alberti",
+      "evidenceContext": "sheet_music",
+      "sortOrder": 60,
+      "certainty": "confirmed",
+      "workIds": ["W-O024"],
+      "organizationIds": ["ORG054"],
+      "sourceIds": ["SRC0769"]
+    },
+    {
+      "id": "CON-O025-A-P009",
+      "role": "arranger",
+      "nameAsPrinted": "B. Kaper",
+      "creditAsPrinted": "Konzert-Transkr. v. B. Kaper",
+      "displayCredit": "Piano concert transcription",
+      "evidenceContext": "sheet_music",
+      "evidenceLocator": "Hofmeister 1930, pp. 226 and 233",
+      "sortOrder": 10,
+      "certainty": "confirmed",
+      "workIds": ["W-O025"],
+      "personIds": ["P009"],
+      "sourceIds": ["SRC0154", "SRC0770"],
+      "nameVariantIds": ["PNV0019"]
+    },
+    {
+      "id": "CON-O025-PUB-ORG054",
+      "role": "publisher",
+      "nameAsPrinted": "Berlin, Alberti",
+      "evidenceContext": "sheet_music",
+      "sortOrder": 60,
+      "certainty": "confirmed",
+      "workIds": ["W-O025"],
+      "organizationIds": ["ORG054"],
+      "sourceIds": ["SRC0770"]
+    },
+    {
+      "id": "CON-O026-A-P009",
+      "role": "arranger",
+      "nameAsPrinted": "B. Kaper",
+      "creditAsPrinted": "Konzert-Transkr. v. B. Kaper",
+      "displayCredit": "Piano concert transcription",
+      "evidenceContext": "sheet_music",
+      "evidenceLocator": "Hofmeister 1930, pp. 289 and 294",
+      "sortOrder": 10,
+      "certainty": "confirmed",
+      "workIds": ["W-O026"],
+      "personIds": ["P009"],
+      "sourceIds": ["SRC0154", "SRC0771"],
+      "nameVariantIds": ["PNV0019"]
+    },
+    {
+      "id": "CON-O026-PUB-ORG054",
+      "role": "publisher",
+      "nameAsPrinted": "Berlin, Alberti",
+      "evidenceContext": "sheet_music",
+      "sortOrder": 60,
+      "certainty": "confirmed",
+      "workIds": ["W-O026"],
+      "organizationIds": ["ORG054"],
+      "sourceIds": ["SRC0771"]
+    },
+    {
+      "id": "CON-O027-A-P009",
+      "role": "arranger",
+      "nameAsPrinted": "B. Kaper",
+      "creditAsPrinted": "Konzert-Transkr. v. B. Kaper",
+      "displayCredit": "Piano concert transcription",
+      "evidenceContext": "sheet_music",
+      "evidenceLocator": "Hofmeister 1931, pp. 35–36",
+      "sortOrder": 10,
+      "certainty": "confirmed",
+      "workIds": ["W-O027"],
+      "personIds": ["P009"],
+      "sourceIds": ["SRC0154", "SRC0772"],
+      "nameVariantIds": ["PNV0019"]
+    },
+    {
+      "id": "CON-O027-PUB-ORG054",
+      "role": "publisher",
+      "nameAsPrinted": "Berlin, Alberti",
+      "evidenceContext": "sheet_music",
+      "sortOrder": 60,
+      "certainty": "confirmed",
+      "workIds": ["W-O027"],
+      "organizationIds": ["ORG054"],
+      "sourceIds": ["SRC0772"]
     }
   ]
 }

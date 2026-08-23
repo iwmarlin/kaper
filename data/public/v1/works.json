@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 281,
+  "count": 286,
   "records": [
     {
       "id": "W-F001",
@@ -3032,6 +3032,13 @@
       ],
       "organizationIds": [
         "ORG054"
+      ],
+      "relationIds": [
+        "REL0203",
+        "REL0204",
+        "REL0205",
+        "REL0206",
+        "REL0207"
       ],
       "otherWorkIds": [
         "O008"
@@ -12422,6 +12429,111 @@
       "relationIds": [
         "REL0202"
       ]
+    },
+    {
+      "id": "W-O023",
+      "title": "Puppenhochzeit (The Wedding of the Painted Doll)",
+      "slug": "puppenhochzeit-jazz-drops-no-1",
+      "sortTitle": "Puppenhochzeit Wedding of the Painted Doll",
+      "workType": "Other",
+      "year": 1930,
+      "period": "european",
+      "certainty": "confirmed",
+      "publicNote": "Nacio Herb Brown is identified as the composer of the original foxtrot.",
+      "displayOnSite": true,
+      "publicScope": "standalone_page",
+      "sourceIds": ["SRC0768"],
+      "contributionIds": ["CON-O023-A-P009", "CON-O023-PUB-ORG054"],
+      "nameVariantIds": ["PNV0019"],
+      "personIds": ["P009"],
+      "organizationIds": ["ORG054"],
+      "relationIds": ["REL0203"],
+      "otherWorkIds": ["O023"],
+      "periods": ["european"]
+    },
+    {
+      "id": "W-O024",
+      "title": "Mein kleines Fräulein, Sie sind nervös! (Ain’t Misbehavin’)",
+      "slug": "mein-kleines-fraeulein-jazz-drops-no-2",
+      "sortTitle": "Mein kleines Fraulein Sie sind nervos Aint Misbehavin",
+      "workType": "Other",
+      "year": 1930,
+      "period": "european",
+      "certainty": "confirmed",
+      "publicNote": "Harry Brooks and Thomas Waller are identified as the composers of the original slow fox.",
+      "displayOnSite": true,
+      "publicScope": "standalone_page",
+      "sourceIds": ["SRC0769"],
+      "contributionIds": ["CON-O024-A-P009", "CON-O024-PUB-ORG054"],
+      "nameVariantIds": ["PNV0019"],
+      "personIds": ["P009"],
+      "organizationIds": ["ORG054"],
+      "relationIds": ["REL0204"],
+      "otherWorkIds": ["O024"],
+      "periods": ["european"]
+    },
+    {
+      "id": "W-O025",
+      "title": "Drei Musketiere",
+      "slug": "drei-musketiere-jazz-drops-no-3",
+      "sortTitle": "Drei Musketiere",
+      "workType": "Other",
+      "year": 1930,
+      "period": "european",
+      "certainty": "confirmed",
+      "publicNote": "Hugo Riesenfeld and Ralph Benatzky are identified as the composers of the original march.",
+      "displayOnSite": true,
+      "publicScope": "standalone_page",
+      "sourceIds": ["SRC0770"],
+      "contributionIds": ["CON-O025-A-P009", "CON-O025-PUB-ORG054"],
+      "nameVariantIds": ["PNV0019"],
+      "personIds": ["P009"],
+      "organizationIds": ["ORG054"],
+      "relationIds": ["REL0205"],
+      "otherWorkIds": ["O025"],
+      "periods": ["european"]
+    },
+    {
+      "id": "W-O026",
+      "title": "Singin’ in the Rain",
+      "slug": "singin-in-the-rain-jazz-drops-no-4",
+      "sortTitle": "Singin in the Rain",
+      "workType": "Other",
+      "year": 1930,
+      "period": "european",
+      "certainty": "confirmed",
+      "publicNote": "Nacio Herb Brown is identified as the composer of the original foxtrot.",
+      "displayOnSite": true,
+      "publicScope": "standalone_page",
+      "sourceIds": ["SRC0771"],
+      "contributionIds": ["CON-O026-A-P009", "CON-O026-PUB-ORG054"],
+      "nameVariantIds": ["PNV0019"],
+      "personIds": ["P009"],
+      "organizationIds": ["ORG054"],
+      "relationIds": ["REL0206"],
+      "otherWorkIds": ["O026"],
+      "periods": ["european"]
+    },
+    {
+      "id": "W-O027",
+      "title": "How Am I to Know?",
+      "slug": "how-am-i-to-know-jazz-drops-no-5",
+      "sortTitle": "How Am I to Know",
+      "workType": "Other",
+      "year": 1931,
+      "period": "european",
+      "certainty": "confirmed",
+      "publicNote": "Jack King is identified as the composer of the original song.",
+      "displayOnSite": true,
+      "publicScope": "standalone_page",
+      "sourceIds": ["SRC0772"],
+      "contributionIds": ["CON-O027-A-P009", "CON-O027-PUB-ORG054"],
+      "nameVariantIds": ["PNV0019"],
+      "personIds": ["P009"],
+      "organizationIds": ["ORG054"],
+      "relationIds": ["REL0207"],
+      "otherWorkIds": ["O027"],
+      "periods": ["european"]
     }
   ],
   "recordCount": null

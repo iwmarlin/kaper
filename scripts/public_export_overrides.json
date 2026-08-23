@@ -5965,6 +5965,68 @@
             "SRC0658"
           ]
         }
+      },
+      "CON-O023-A-P009": {
+        "reason": "Record Kaper's piano concert transcription credit for Jazz Drops no. 1 from the item-level Hofmeister entry.",
+        "fields": {"id": "CON-O023-A-P009", "role": "arranger", "nameAsPrinted": "B. Kaper", "creditAsPrinted": "Konzert-Transkr. v. B. Kaper", "displayCredit": "Piano concert transcription", "evidenceContext": "sheet_music", "evidenceLocator": "Hofmeister 1930, pp. 219 and 226", "sortOrder": 10, "certainty": "confirmed", "workIds": ["W-O023"], "personIds": ["P009"], "sourceIds": ["SRC0154", "SRC0768"], "nameVariantIds": ["PNV0019"]}
+      },
+      "CON-O023-PUB-ORG054": {
+        "reason": "Record Alberti as publisher of Jazz Drops no. 1.",
+        "fields": {"id": "CON-O023-PUB-ORG054", "role": "publisher", "nameAsPrinted": "Berlin, Alberti", "evidenceContext": "sheet_music", "sortOrder": 60, "certainty": "confirmed", "workIds": ["W-O023"], "organizationIds": ["ORG054"], "sourceIds": ["SRC0768"]}
+      },
+      "CON-O024-A-P009": {
+        "reason": "Record Kaper's piano concert transcription credit for Jazz Drops no. 2 from the item-level Hofmeister entry.",
+        "fields": {"id": "CON-O024-A-P009", "role": "arranger", "nameAsPrinted": "B. Kaper", "creditAsPrinted": "Konzert-Transkr. v. B. Kaper", "displayCredit": "Piano concert transcription", "evidenceContext": "sheet_music", "evidenceLocator": "Hofmeister 1930, pp. 219 and 226", "sortOrder": 10, "certainty": "confirmed", "workIds": ["W-O024"], "personIds": ["P009"], "sourceIds": ["SRC0154", "SRC0769"], "nameVariantIds": ["PNV0019"]}
+      },
+      "CON-O024-PUB-ORG054": {
+        "reason": "Record Alberti as publisher of Jazz Drops no. 2.",
+        "fields": {"id": "CON-O024-PUB-ORG054", "role": "publisher", "nameAsPrinted": "Berlin, Alberti", "evidenceContext": "sheet_music", "sortOrder": 60, "certainty": "confirmed", "workIds": ["W-O024"], "organizationIds": ["ORG054"], "sourceIds": ["SRC0769"]}
+      },
+      "CON-O025-A-P009": {
+        "reason": "Record Kaper's piano concert transcription credit for Jazz Drops no. 3 from the item-level Hofmeister entry.",
+        "fields": {"id": "CON-O025-A-P009", "role": "arranger", "nameAsPrinted": "B. Kaper", "creditAsPrinted": "Konzert-Transkr. v. B. Kaper", "displayCredit": "Piano concert transcription", "evidenceContext": "sheet_music", "evidenceLocator": "Hofmeister 1930, pp. 226 and 233", "sortOrder": 10, "certainty": "confirmed", "workIds": ["W-O025"], "personIds": ["P009"], "sourceIds": ["SRC0154", "SRC0770"], "nameVariantIds": ["PNV0019"]}
+      },
+      "CON-O025-PUB-ORG054": {
+        "reason": "Record Alberti as publisher of Jazz Drops no. 3.",
+        "fields": {"id": "CON-O025-PUB-ORG054", "role": "publisher", "nameAsPrinted": "Berlin, Alberti", "evidenceContext": "sheet_music", "sortOrder": 60, "certainty": "confirmed", "workIds": ["W-O025"], "organizationIds": ["ORG054"], "sourceIds": ["SRC0770"]}
+      },
+      "CON-O026-A-P009": {
+        "reason": "Record Kaper's piano concert transcription credit for Jazz Drops no. 4 from the item-level Hofmeister entry.",
+        "fields": {"id": "CON-O026-A-P009", "role": "arranger", "nameAsPrinted": "B. Kaper", "creditAsPrinted": "Konzert-Transkr. v. B. Kaper", "displayCredit": "Piano concert transcription", "evidenceContext": "sheet_music", "evidenceLocator": "Hofmeister 1930, pp. 289 and 294", "sortOrder": 10, "certainty": "confirmed", "workIds": ["W-O026"], "personIds": ["P009"], "sourceIds": ["SRC0154", "SRC0771"], "nameVariantIds": ["PNV0019"]}
+      },
+      "CON-O026-PUB-ORG054": {
+        "reason": "Record Alberti as publisher of Jazz Drops no. 4.",
+        "fields": {"id": "CON-O026-PUB-ORG054", "role": "publisher", "nameAsPrinted": "Berlin, Alberti", "evidenceContext": "sheet_music", "sortOrder": 60, "certainty": "confirmed", "workIds": ["W-O026"], "organizationIds": ["ORG054"], "sourceIds": ["SRC0771"]}
+      },
+      "CON-O027-A-P009": {
+        "reason": "Record Kaper's piano concert transcription credit for Jazz Drops no. 5 from the item-level Hofmeister entry.",
+        "fields": {"id": "CON-O027-A-P009", "role": "arranger", "nameAsPrinted": "B. Kaper", "creditAsPrinted": "Konzert-Transkr. v. B. Kaper", "displayCredit": "Piano concert transcription", "evidenceContext": "sheet_music", "evidenceLocator": "Hofmeister 1931, pp. 35–36", "sortOrder": 10, "certainty": "confirmed", "workIds": ["W-O027"], "personIds": ["P009"], "sourceIds": ["SRC0154", "SRC0772"], "nameVariantIds": ["PNV0019"]}
+      },
+      "CON-O027-PUB-ORG054": {
+        "reason": "Record Alberti as publisher of Jazz Drops no. 5.",
+        "fields": {"id": "CON-O027-PUB-ORG054", "role": "publisher", "nameAsPrinted": "Berlin, Alberti", "evidenceContext": "sheet_music", "sortOrder": 60, "certainty": "confirmed", "workIds": ["W-O027"], "organizationIds": ["ORG054"], "sourceIds": ["SRC0772"]}
+      }
+    },
+    "Other Works": {
+      "O023": {
+        "reason": "Model Jazz Drops no. 1 as an item-level piano transcription, distinct from the two-piano Cocktails edition of the same underlying song.",
+        "fields": {"id": "O023", "title": "Puppenhochzeit (The Wedding of the Painted Doll)", "slug": "puppenhochzeit-jazz-drops-no-1", "sortTitle": "Puppenhochzeit Wedding of the Painted Doll", "year": 1930, "period": "european", "instrumentation": "piano concert transcription; Jazz Drops no. 1", "publisherOrHoldingAsPrinted": "Berlin: Alberti, 1930; Hofmeister, pp. 219 and 226", "materialStatus": "published_print", "publicNote": "Nacio Herb Brown is identified as the composer of the original foxtrot.", "certainty": "confirmed", "workIds": ["W-O023"], "sourceIds": ["SRC0768"], "periods": ["european"]}
+      },
+      "O024": {
+        "reason": "Model Jazz Drops no. 2 as an item-level piano transcription.",
+        "fields": {"id": "O024", "title": "Mein kleines Fräulein, Sie sind nervös! (Ain’t Misbehavin’)", "slug": "mein-kleines-fraeulein-jazz-drops-no-2", "sortTitle": "Mein kleines Fraulein Sie sind nervos Aint Misbehavin", "year": 1930, "period": "european", "instrumentation": "piano concert transcription; Jazz Drops no. 2", "publisherOrHoldingAsPrinted": "Berlin: Alberti, 1930; Hofmeister, pp. 219 and 226", "materialStatus": "published_print", "publicNote": "Harry Brooks and Thomas Waller are identified as the composers of the original slow fox.", "certainty": "confirmed", "workIds": ["W-O024"], "sourceIds": ["SRC0769"], "periods": ["european"]}
+      },
+      "O025": {
+        "reason": "Model Jazz Drops no. 3 as an item-level piano transcription.",
+        "fields": {"id": "O025", "title": "Drei Musketiere", "slug": "drei-musketiere-jazz-drops-no-3", "sortTitle": "Drei Musketiere", "year": 1930, "period": "european", "instrumentation": "piano concert transcription; Jazz Drops no. 3", "publisherOrHoldingAsPrinted": "Berlin: Alberti, 1930; Hofmeister, pp. 226 and 233", "materialStatus": "published_print", "publicNote": "Hugo Riesenfeld and Ralph Benatzky are identified as the composers of the original march.", "certainty": "confirmed", "workIds": ["W-O025"], "sourceIds": ["SRC0770"], "periods": ["european"]}
+      },
+      "O026": {
+        "reason": "Model Jazz Drops no. 4 as an item-level piano transcription, distinct from the Cocktails pairing that also includes Singin’ in the Rain.",
+        "fields": {"id": "O026", "title": "Singin’ in the Rain", "slug": "singin-in-the-rain-jazz-drops-no-4", "sortTitle": "Singin in the Rain", "year": 1930, "period": "european", "instrumentation": "piano concert transcription; Jazz Drops no. 4", "publisherOrHoldingAsPrinted": "Berlin: Alberti, 1930; Hofmeister, pp. 289 and 294", "materialStatus": "published_print", "publicNote": "Nacio Herb Brown is identified as the composer of the original foxtrot.", "certainty": "confirmed", "workIds": ["W-O026"], "sourceIds": ["SRC0771"], "periods": ["european"]}
+      },
+      "O027": {
+        "reason": "Model Jazz Drops no. 5 as an item-level piano transcription.",
+        "fields": {"id": "O027", "title": "How Am I to Know?", "slug": "how-am-i-to-know-jazz-drops-no-5", "sortTitle": "How Am I to Know", "year": 1931, "period": "european", "instrumentation": "piano concert transcription; Jazz Drops no. 5", "publisherOrHoldingAsPrinted": "Berlin: Alberti, 1931; Hofmeister, pp. 35–36", "materialStatus": "published_print", "publicNote": "Jack King is identified as the composer of the original song.", "certainty": "confirmed", "workIds": ["W-O027"], "sourceIds": ["SRC0772"], "periods": ["european"]}
       }
     },
     "Sources": {
@@ -7515,6 +7577,26 @@
           ],
           "primaryUrl": "https://digitaler-lesesaal.bundesarchiv.de/video/1114/738744"
         }
+      },
+      "SRC0768": {
+        "reason": "Add item-level Hofmeister evidence for Jazz Drops no. 1.",
+        "fields": {"id": "SRC0768", "shortCitation": "Brown, “Puppenhochzeit (The Wedding of the Painted Doll),” Jazz Drops no. 1 (Alberti, 1930; transcription by B. Kaper)", "fullCitation": "Nacio Herbert Brown, “Puppenhochzeit (The Wedding of the Painted Doll).” Foxtrot for piano; concert transcription by B. Kaper. Jazz Drops, no. 1. Berlin: Alberti, 1930. Hofmeisters Musikalisch-literarischer Monatsbericht (1930): 219, 226.", "sourceType": "sheet_music", "title": "Puppenhochzeit (The Wedding of the Painted Doll) — Jazz Drops no. 1", "creator": "Nacio Herbert Brown (original composition); B. Kaper (piano transcription)", "repository": "Internet Archive / Friedrich Hofmeister", "publication": "Alberti, Berlin", "date": "1930", "accessDate": "2026-08-23", "reliability": "high", "sourceStatus": "verified", "slug": "src0768-hofmeister-jazz-drops-no-1-puppenhochzeit", "primaryUrl": "https://archive.org/details/Musikalisch-literarischerMonatsbericht1930/page/n218/mode/2up", "organizationIds": ["ORG054", "ORG067"], "workIds": ["W-O023"], "otherWorkIds": ["O023"], "workRelationIds": ["REL0203"], "contributionIds": ["CON-O023-A-P009", "CON-O023-PUB-ORG054"], "nameVariantIds": ["PNV0019"]}
+      },
+      "SRC0769": {
+        "reason": "Add item-level Hofmeister evidence for Jazz Drops no. 2.",
+        "fields": {"id": "SRC0769", "shortCitation": "Brooks and Waller, “Mein kleines Fräulein, Sie sind nervös! (Ain’t Misbehavin’),” Jazz Drops no. 2 (Alberti, 1930; transcription by B. Kaper)", "fullCitation": "Harry Brooks and Thomas Waller, “Mein kleines Fräulein, Sie sind nervös! (Ain’t Misbehavin’).” Slow fox for piano; concert transcription by B. Kaper. Jazz Drops, no. 2. Berlin: Alberti, 1930. Hofmeisters Musikalisch-literarischer Monatsbericht (1930): 219, 226.", "sourceType": "sheet_music", "title": "Mein kleines Fräulein, Sie sind nervös! (Ain’t Misbehavin’) — Jazz Drops no. 2", "creator": "Harry Brooks and Thomas Waller (original composition); B. Kaper (piano transcription)", "repository": "Internet Archive / Friedrich Hofmeister", "publication": "Alberti, Berlin", "date": "1930", "accessDate": "2026-08-23", "reliability": "high", "sourceStatus": "verified", "slug": "src0769-hofmeister-jazz-drops-no-2-aint-misbehavin", "primaryUrl": "https://archive.org/details/Musikalisch-literarischerMonatsbericht1930/page/n218/mode/2up", "organizationIds": ["ORG054", "ORG067"], "workIds": ["W-O024"], "otherWorkIds": ["O024"], "workRelationIds": ["REL0204"], "contributionIds": ["CON-O024-A-P009", "CON-O024-PUB-ORG054"], "nameVariantIds": ["PNV0019"]}
+      },
+      "SRC0770": {
+        "reason": "Add item-level Hofmeister evidence for Jazz Drops no. 3.",
+        "fields": {"id": "SRC0770", "shortCitation": "Riesenfeld and Benatzky, “Drei Musketiere,” Jazz Drops no. 3 (Alberti, 1930; transcription by B. Kaper)", "fullCitation": "Hugo Riesenfeld and Ralph Benatzky, “Drei Musketiere.” March for piano; concert transcription by B. Kaper. Jazz Drops, no. 3. Berlin: Alberti, 1930. Hofmeisters Musikalisch-literarischer Monatsbericht (1930): 226, 233.", "sourceType": "sheet_music", "title": "Drei Musketiere — Jazz Drops no. 3", "creator": "Hugo Riesenfeld and Ralph Benatzky (original composition); B. Kaper (piano transcription)", "repository": "Internet Archive / Friedrich Hofmeister", "publication": "Alberti, Berlin", "date": "1930", "accessDate": "2026-08-23", "reliability": "high", "sourceStatus": "verified", "slug": "src0770-hofmeister-jazz-drops-no-3-drei-musketiere", "primaryUrl": "https://archive.org/details/Musikalisch-literarischerMonatsbericht1930/page/n232/mode/2up", "organizationIds": ["ORG054", "ORG067"], "workIds": ["W-O025"], "otherWorkIds": ["O025"], "workRelationIds": ["REL0205"], "contributionIds": ["CON-O025-A-P009", "CON-O025-PUB-ORG054"], "nameVariantIds": ["PNV0019"]}
+      },
+      "SRC0771": {
+        "reason": "Add item-level Hofmeister evidence for Jazz Drops no. 4.",
+        "fields": {"id": "SRC0771", "shortCitation": "Brown, “Singin’ in the Rain,” Jazz Drops no. 4 (Alberti, 1930; transcription by B. Kaper)", "fullCitation": "Nacio Herbert Brown, “Singin’ in the Rain.” Foxtrot for piano; concert transcription by B. Kaper. Jazz Drops, no. 4. Berlin: Alberti, 1930. Hofmeisters Musikalisch-literarischer Monatsbericht (1930): 289, 294.", "sourceType": "sheet_music", "title": "Singin’ in the Rain — Jazz Drops no. 4", "creator": "Nacio Herbert Brown (original composition); B. Kaper (piano transcription)", "repository": "Internet Archive / Friedrich Hofmeister", "publication": "Alberti, Berlin", "date": "1930", "accessDate": "2026-08-23", "reliability": "high", "sourceStatus": "verified", "slug": "src0771-hofmeister-jazz-drops-no-4-singin-in-the-rain", "primaryUrl": "https://archive.org/details/Musikalisch-literarischerMonatsbericht1930/page/n288/mode/2up", "organizationIds": ["ORG054", "ORG067"], "workIds": ["W-O026"], "otherWorkIds": ["O026"], "workRelationIds": ["REL0206"], "contributionIds": ["CON-O026-A-P009", "CON-O026-PUB-ORG054"], "nameVariantIds": ["PNV0019"]}
+      },
+      "SRC0772": {
+        "reason": "Add item-level Hofmeister evidence for Jazz Drops no. 5.",
+        "fields": {"id": "SRC0772", "shortCitation": "King, “How Am I to Know?,” Jazz Drops no. 5 (Alberti, 1931; transcription by B. Kaper)", "fullCitation": "Jack King, “How Am I to Know?” For piano; concert transcription by B. Kaper. Jazz Drops, no. 5. Berlin: Alberti, 1931. Hofmeisters Musikalisch-literarischer Monatsbericht (1931): 35–36.", "sourceType": "sheet_music", "title": "How Am I to Know? — Jazz Drops no. 5", "creator": "Jack King (original composition); B. Kaper (piano transcription)", "repository": "Internet Archive / Friedrich Hofmeister", "publication": "Alberti, Berlin", "date": "1931", "accessDate": "2026-08-23", "reliability": "high", "sourceStatus": "verified", "slug": "src0772-hofmeister-jazz-drops-no-5-how-am-i-to-know", "primaryUrl": "https://archive.org/details/Musikalisch-literarischerMonatsbericht1931/page/n35/mode/2up", "organizationIds": ["ORG054", "ORG067"], "workIds": ["W-O027"], "otherWorkIds": ["O027"], "workRelationIds": ["REL0207"], "contributionIds": ["CON-O027-A-P009", "CON-O027-PUB-ORG054"], "nameVariantIds": ["PNV0019"]}
       }
     },
     "Songs": {
@@ -7656,6 +7738,26 @@
             "european"
           ]
         }
+      },
+      "W-O023": {
+        "reason": "Publish Jazz Drops no. 1 as an item-level Work linked to the series parent.",
+        "fields": {"id": "W-O023", "title": "Puppenhochzeit (The Wedding of the Painted Doll)", "slug": "puppenhochzeit-jazz-drops-no-1", "sortTitle": "Puppenhochzeit Wedding of the Painted Doll", "workType": "Other", "year": 1930, "period": "european", "certainty": "confirmed", "publicNote": "Nacio Herb Brown is identified as the composer of the original foxtrot.", "displayOnSite": true, "publicScope": "standalone_page", "sourceIds": ["SRC0768"], "contributionIds": ["CON-O023-A-P009", "CON-O023-PUB-ORG054"], "nameVariantIds": ["PNV0019"], "personIds": ["P009"], "organizationIds": ["ORG054"], "relationIds": ["REL0203"], "otherWorkIds": ["O023"], "periods": ["european"]}
+      },
+      "W-O024": {
+        "reason": "Publish Jazz Drops no. 2 as an item-level Work linked to the series parent.",
+        "fields": {"id": "W-O024", "title": "Mein kleines Fräulein, Sie sind nervös! (Ain’t Misbehavin’)", "slug": "mein-kleines-fraeulein-jazz-drops-no-2", "sortTitle": "Mein kleines Fraulein Sie sind nervos Aint Misbehavin", "workType": "Other", "year": 1930, "period": "european", "certainty": "confirmed", "publicNote": "Harry Brooks and Thomas Waller are identified as the composers of the original slow fox.", "displayOnSite": true, "publicScope": "standalone_page", "sourceIds": ["SRC0769"], "contributionIds": ["CON-O024-A-P009", "CON-O024-PUB-ORG054"], "nameVariantIds": ["PNV0019"], "personIds": ["P009"], "organizationIds": ["ORG054"], "relationIds": ["REL0204"], "otherWorkIds": ["O024"], "periods": ["european"]}
+      },
+      "W-O025": {
+        "reason": "Publish Jazz Drops no. 3 as an item-level Work linked to the series parent.",
+        "fields": {"id": "W-O025", "title": "Drei Musketiere", "slug": "drei-musketiere-jazz-drops-no-3", "sortTitle": "Drei Musketiere", "workType": "Other", "year": 1930, "period": "european", "certainty": "confirmed", "publicNote": "Hugo Riesenfeld and Ralph Benatzky are identified as the composers of the original march.", "displayOnSite": true, "publicScope": "standalone_page", "sourceIds": ["SRC0770"], "contributionIds": ["CON-O025-A-P009", "CON-O025-PUB-ORG054"], "nameVariantIds": ["PNV0019"], "personIds": ["P009"], "organizationIds": ["ORG054"], "relationIds": ["REL0205"], "otherWorkIds": ["O025"], "periods": ["european"]}
+      },
+      "W-O026": {
+        "reason": "Publish Jazz Drops no. 4 as an item-level Work linked to the series parent.",
+        "fields": {"id": "W-O026", "title": "Singin’ in the Rain", "slug": "singin-in-the-rain-jazz-drops-no-4", "sortTitle": "Singin in the Rain", "workType": "Other", "year": 1930, "period": "european", "certainty": "confirmed", "publicNote": "Nacio Herb Brown is identified as the composer of the original foxtrot.", "displayOnSite": true, "publicScope": "standalone_page", "sourceIds": ["SRC0771"], "contributionIds": ["CON-O026-A-P009", "CON-O026-PUB-ORG054"], "nameVariantIds": ["PNV0019"], "personIds": ["P009"], "organizationIds": ["ORG054"], "relationIds": ["REL0206"], "otherWorkIds": ["O026"], "periods": ["european"]}
+      },
+      "W-O027": {
+        "reason": "Publish Jazz Drops no. 5 as an item-level Work linked to the series parent.",
+        "fields": {"id": "W-O027", "title": "How Am I to Know?", "slug": "how-am-i-to-know-jazz-drops-no-5", "sortTitle": "How Am I to Know", "workType": "Other", "year": 1931, "period": "european", "certainty": "confirmed", "publicNote": "Jack King is identified as the composer of the original song.", "displayOnSite": true, "publicScope": "standalone_page", "sourceIds": ["SRC0772"], "contributionIds": ["CON-O027-A-P009", "CON-O027-PUB-ORG054"], "nameVariantIds": ["PNV0019"], "personIds": ["P009"], "organizationIds": ["ORG054"], "relationIds": ["REL0207"], "otherWorkIds": ["O027"], "periods": ["european"]}
       }
     },
     "Work Relations": {
@@ -7727,6 +7829,26 @@
             "SRC0146"
           ]
         }
+      },
+      "REL0203": {
+        "reason": "Link the first item-level Jazz Drops transcription to its series parent.",
+        "fields": {"id": "REL0203", "relationType": "part_of_series", "targetWorkTitle": "Jazz Drops", "targetTitleAsSource": "Jazz drops. Transcriptions for piano", "direction": "source_to_target", "publicNote": "“Puppenhochzeit (The Wedding of the Painted Doll)” is no. 1 of the “Jazz Drops” series.", "certainty": "confirmed", "sourceWorkIds": ["W-O023"], "targetWorkIds": ["W-O008"], "sourceIds": ["SRC0154", "SRC0768"]}
+      },
+      "REL0204": {
+        "reason": "Link the second item-level Jazz Drops transcription to its series parent.",
+        "fields": {"id": "REL0204", "relationType": "part_of_series", "targetWorkTitle": "Jazz Drops", "targetTitleAsSource": "Jazz drops. Transcriptions for piano", "direction": "source_to_target", "publicNote": "“Mein kleines Fräulein, Sie sind nervös! (Ain’t Misbehavin’)” is no. 2 of the “Jazz Drops” series.", "certainty": "confirmed", "sourceWorkIds": ["W-O024"], "targetWorkIds": ["W-O008"], "sourceIds": ["SRC0154", "SRC0769"]}
+      },
+      "REL0205": {
+        "reason": "Link the third item-level Jazz Drops transcription to its series parent.",
+        "fields": {"id": "REL0205", "relationType": "part_of_series", "targetWorkTitle": "Jazz Drops", "targetTitleAsSource": "Jazz drops. Transcriptions for piano", "direction": "source_to_target", "publicNote": "“Drei Musketiere” is no. 3 of the “Jazz Drops” series.", "certainty": "confirmed", "sourceWorkIds": ["W-O025"], "targetWorkIds": ["W-O008"], "sourceIds": ["SRC0154", "SRC0770"]}
+      },
+      "REL0206": {
+        "reason": "Link the fourth item-level Jazz Drops transcription to its series parent.",
+        "fields": {"id": "REL0206", "relationType": "part_of_series", "targetWorkTitle": "Jazz Drops", "targetTitleAsSource": "Jazz drops. Transcriptions for piano", "direction": "source_to_target", "publicNote": "“Singin’ in the Rain” is no. 4 of the “Jazz Drops” series.", "certainty": "confirmed", "sourceWorkIds": ["W-O026"], "targetWorkIds": ["W-O008"], "sourceIds": ["SRC0154", "SRC0771"]}
+      },
+      "REL0207": {
+        "reason": "Link the fifth item-level Jazz Drops transcription to its series parent.",
+        "fields": {"id": "REL0207", "relationType": "part_of_series", "targetWorkTitle": "Jazz Drops", "targetTitleAsSource": "Jazz drops. Transcriptions for piano by Dr. B. Kaper", "direction": "source_to_target", "publicNote": "“How Am I to Know?” is no. 5 of the “Jazz Drops” series.", "certainty": "confirmed", "sourceWorkIds": ["W-O027"], "targetWorkIds": ["W-O008"], "sourceIds": ["SRC0154", "SRC0772"]}
       }
     },
     "Places": {
@@ -9293,6 +9415,20 @@
   },
   "linkAdditions": {
     "Organizations": {
+      "ORG054": {
+        "reason": "Synchronize Alberti with the five item-level Jazz Drops works, Hofmeister sources and publisher credits.",
+        "fields": {
+          "sourceIds": ["SRC0768", "SRC0769", "SRC0770", "SRC0771", "SRC0772"],
+          "workIds": ["W-O023", "W-O024", "W-O025", "W-O026", "W-O027"],
+          "contributionIds": ["CON-O023-PUB-ORG054", "CON-O024-PUB-ORG054", "CON-O025-PUB-ORG054", "CON-O026-PUB-ORG054", "CON-O027-PUB-ORG054"]
+        }
+      },
+      "ORG067": {
+        "reason": "Synchronize Internet Archive with the five digitized Hofmeister item records used for Jazz Drops nos. 1–5.",
+        "fields": {
+          "sourceIds": ["SRC0768", "SRC0769", "SRC0770", "SRC0771", "SRC0772"]
+        }
+      },
       "ORG063": {
         "reason": "Synchronize the National Library of Poland / Polona with the two newly added contemporary press records for Eliza Rozenblum.",
         "fields": {
@@ -9906,6 +10042,12 @@
       }
     },
     "Works": {
+      "W-O008": {
+        "reason": "Expose Jazz Drops nos. 1–5 as item-level related works on the series parent.",
+        "fields": {
+          "relationIds": ["REL0203", "REL0204", "REL0205", "REL0206", "REL0207"]
+        }
+      },
       "W-F024": {
         "reason": "Attach the Filmportal/DFF opening excerpt source to the film it documents; the separately catalogued song retains its own bibliographic sources.",
         "fields": {
@@ -10729,10 +10871,20 @@
         "reason": "Attest the printed form “B. Kaper” through the exact ANNO registration and connect it to the separately modelled Dutch edition on which that form appears.",
         "fields": {
           "sourceIds": [
-            "SRC0226"
+            "SRC0226",
+            "SRC0768",
+            "SRC0769",
+            "SRC0770",
+            "SRC0771",
+            "SRC0772"
           ],
           "workIds": [
-            "W-S217"
+            "W-S217",
+            "W-O023",
+            "W-O024",
+            "W-O025",
+            "W-O026",
+            "W-O027"
           ]
         }
       },
@@ -11349,12 +11501,22 @@
             "CON-F035-BM-P009",
             "CON-S111-C-P009",
             "CON-S216-C-P009",
-            "CON-S217-C-P009"
+            "CON-S217-C-P009",
+            "CON-O023-A-P009",
+            "CON-O024-A-P009",
+            "CON-O025-A-P009",
+            "CON-O026-A-P009",
+            "CON-O027-A-P009"
           ],
           "workIds": [
             "W-S111",
             "W-S216",
-            "W-S217"
+            "W-S217",
+            "W-O023",
+            "W-O024",
+            "W-O025",
+            "W-O026",
+            "W-O027"
           ]
         }
       },
@@ -11785,6 +11947,13 @@
       }
     },
     "Sources": {
+      "SRC0154": {
+        "reason": "Synchronize the Jazz Drops collection-level catalogue record with the five item relations and Kaper arrangement credits.",
+        "fields": {
+          "workRelationIds": ["REL0203", "REL0204", "REL0205", "REL0206", "REL0207"],
+          "contributionIds": ["CON-O023-A-P009", "CON-O024-A-P009", "CON-O025-A-P009", "CON-O026-A-P009", "CON-O027-A-P009"]
+        }
+      },
       "SRC0325": {
         "reason": "Model the Filmportal/DFF opening excerpt as documentation of the film W-F024 / F024, not of the separately catalogued song W-S086.",
         "fields": {

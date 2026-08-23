@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 693,
+  "count": 698,
   "records": [
     {
       "id": "SRC0001",
@@ -5069,9 +5069,21 @@
       "otherWorkIds": [
         "O008"
       ],
+      "workRelationIds": [
+        "REL0203",
+        "REL0204",
+        "REL0205",
+        "REL0206",
+        "REL0207"
+      ],
       "contributionIds": [
         "CON-O008-A-P009",
-        "CON-O008-PUB-ORG054"
+        "CON-O008-PUB-ORG054",
+        "CON-O023-A-P009",
+        "CON-O024-A-P009",
+        "CON-O025-A-P009",
+        "CON-O026-A-P009",
+        "CON-O027-A-P009"
       ],
       "nameVariantIds": [
         "PNV0019"
@@ -23662,6 +23674,116 @@
       "contributionIds": [
         "CON-S022-LAB-ORG132"
       ]
+    },
+    {
+      "id": "SRC0768",
+      "shortCitation": "Brown, “Puppenhochzeit (The Wedding of the Painted Doll),” Jazz Drops no. 1 (Alberti, 1930; transcription by B. Kaper)",
+      "fullCitation": "Nacio Herbert Brown, “Puppenhochzeit (The Wedding of the Painted Doll).” Foxtrot for piano; concert transcription by B. Kaper. Jazz Drops, no. 1. Berlin: Alberti, 1930. Hofmeisters Musikalisch-literarischer Monatsbericht (1930): 219, 226.",
+      "sourceType": "sheet_music",
+      "title": "Puppenhochzeit (The Wedding of the Painted Doll) — Jazz Drops no. 1",
+      "creator": "Nacio Herbert Brown (original composition); B. Kaper (piano transcription)",
+      "repository": "Internet Archive / Friedrich Hofmeister",
+      "publication": "Alberti, Berlin",
+      "date": "1930",
+      "accessDate": "2026-08-23",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "slug": "src0768-hofmeister-jazz-drops-no-1-puppenhochzeit",
+      "primaryUrl": "https://archive.org/details/Musikalisch-literarischerMonatsbericht1930/page/n218/mode/2up",
+      "organizationIds": ["ORG054", "ORG067"],
+      "workIds": ["W-O023"],
+      "otherWorkIds": ["O023"],
+      "workRelationIds": ["REL0203"],
+      "contributionIds": ["CON-O023-A-P009", "CON-O023-PUB-ORG054"],
+      "nameVariantIds": ["PNV0019"]
+    },
+    {
+      "id": "SRC0769",
+      "shortCitation": "Brooks and Waller, “Mein kleines Fräulein, Sie sind nervös! (Ain’t Misbehavin’),” Jazz Drops no. 2 (Alberti, 1930; transcription by B. Kaper)",
+      "fullCitation": "Harry Brooks and Thomas Waller, “Mein kleines Fräulein, Sie sind nervös! (Ain’t Misbehavin’).” Slow fox for piano; concert transcription by B. Kaper. Jazz Drops, no. 2. Berlin: Alberti, 1930. Hofmeisters Musikalisch-literarischer Monatsbericht (1930): 219, 226.",
+      "sourceType": "sheet_music",
+      "title": "Mein kleines Fräulein, Sie sind nervös! (Ain’t Misbehavin’) — Jazz Drops no. 2",
+      "creator": "Harry Brooks and Thomas Waller (original composition); B. Kaper (piano transcription)",
+      "repository": "Internet Archive / Friedrich Hofmeister",
+      "publication": "Alberti, Berlin",
+      "date": "1930",
+      "accessDate": "2026-08-23",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "slug": "src0769-hofmeister-jazz-drops-no-2-aint-misbehavin",
+      "primaryUrl": "https://archive.org/details/Musikalisch-literarischerMonatsbericht1930/page/n218/mode/2up",
+      "organizationIds": ["ORG054", "ORG067"],
+      "workIds": ["W-O024"],
+      "otherWorkIds": ["O024"],
+      "workRelationIds": ["REL0204"],
+      "contributionIds": ["CON-O024-A-P009", "CON-O024-PUB-ORG054"],
+      "nameVariantIds": ["PNV0019"]
+    },
+    {
+      "id": "SRC0770",
+      "shortCitation": "Riesenfeld and Benatzky, “Drei Musketiere,” Jazz Drops no. 3 (Alberti, 1930; transcription by B. Kaper)",
+      "fullCitation": "Hugo Riesenfeld and Ralph Benatzky, “Drei Musketiere.” March for piano; concert transcription by B. Kaper. Jazz Drops, no. 3. Berlin: Alberti, 1930. Hofmeisters Musikalisch-literarischer Monatsbericht (1930): 226, 233.",
+      "sourceType": "sheet_music",
+      "title": "Drei Musketiere — Jazz Drops no. 3",
+      "creator": "Hugo Riesenfeld and Ralph Benatzky (original composition); B. Kaper (piano transcription)",
+      "repository": "Internet Archive / Friedrich Hofmeister",
+      "publication": "Alberti, Berlin",
+      "date": "1930",
+      "accessDate": "2026-08-23",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "slug": "src0770-hofmeister-jazz-drops-no-3-drei-musketiere",
+      "primaryUrl": "https://archive.org/details/Musikalisch-literarischerMonatsbericht1930/page/n232/mode/2up",
+      "organizationIds": ["ORG054", "ORG067"],
+      "workIds": ["W-O025"],
+      "otherWorkIds": ["O025"],
+      "workRelationIds": ["REL0205"],
+      "contributionIds": ["CON-O025-A-P009", "CON-O025-PUB-ORG054"],
+      "nameVariantIds": ["PNV0019"]
+    },
+    {
+      "id": "SRC0771",
+      "shortCitation": "Brown, “Singin’ in the Rain,” Jazz Drops no. 4 (Alberti, 1930; transcription by B. Kaper)",
+      "fullCitation": "Nacio Herbert Brown, “Singin’ in the Rain.” Foxtrot for piano; concert transcription by B. Kaper. Jazz Drops, no. 4. Berlin: Alberti, 1930. Hofmeisters Musikalisch-literarischer Monatsbericht (1930): 289, 294.",
+      "sourceType": "sheet_music",
+      "title": "Singin’ in the Rain — Jazz Drops no. 4",
+      "creator": "Nacio Herbert Brown (original composition); B. Kaper (piano transcription)",
+      "repository": "Internet Archive / Friedrich Hofmeister",
+      "publication": "Alberti, Berlin",
+      "date": "1930",
+      "accessDate": "2026-08-23",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "slug": "src0771-hofmeister-jazz-drops-no-4-singin-in-the-rain",
+      "primaryUrl": "https://archive.org/details/Musikalisch-literarischerMonatsbericht1930/page/n288/mode/2up",
+      "organizationIds": ["ORG054", "ORG067"],
+      "workIds": ["W-O026"],
+      "otherWorkIds": ["O026"],
+      "workRelationIds": ["REL0206"],
+      "contributionIds": ["CON-O026-A-P009", "CON-O026-PUB-ORG054"],
+      "nameVariantIds": ["PNV0019"]
+    },
+    {
+      "id": "SRC0772",
+      "shortCitation": "King, “How Am I to Know?,” Jazz Drops no. 5 (Alberti, 1931; transcription by B. Kaper)",
+      "fullCitation": "Jack King, “How Am I to Know?” For piano; concert transcription by B. Kaper. Jazz Drops, no. 5. Berlin: Alberti, 1931. Hofmeisters Musikalisch-literarischer Monatsbericht (1931): 35–36.",
+      "sourceType": "sheet_music",
+      "title": "How Am I to Know? — Jazz Drops no. 5",
+      "creator": "Jack King (original composition); B. Kaper (piano transcription)",
+      "repository": "Internet Archive / Friedrich Hofmeister",
+      "publication": "Alberti, Berlin",
+      "date": "1931",
+      "accessDate": "2026-08-23",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "slug": "src0772-hofmeister-jazz-drops-no-5-how-am-i-to-know",
+      "primaryUrl": "https://archive.org/details/Musikalisch-literarischerMonatsbericht1931/page/n35/mode/2up",
+      "organizationIds": ["ORG054", "ORG067"],
+      "workIds": ["W-O027"],
+      "otherWorkIds": ["O027"],
+      "workRelationIds": ["REL0207"],
+      "contributionIds": ["CON-O027-A-P009", "CON-O027-PUB-ORG054"],
+      "nameVariantIds": ["PNV0019"]
     }
   ],
   "recordCount": null
