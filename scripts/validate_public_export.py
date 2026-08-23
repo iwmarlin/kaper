@@ -98,6 +98,10 @@ MEDIA_PUBLIC_WORKFLOW_PATTERN = re.compile(
     flags=re.IGNORECASE,
 )
 
+PERSON_AUTHORIZED_NAME_DATES_PATTERN = re.compile(
+    r"(?:,\s*|\s*\()\d{4}\s*[–—-]\s*\d{4}\)?\s*$"
+)
+
 MEDIA_PUBLIC_IDENTIFIER_PATTERN = re.compile(
     r"(?<![A-Za-z0-9-])(?:SRC\d{4}|W-[A-Z]\d{3}|TE\d{4}|PL\d{3}|M\d{3}|"
     r"F\d{3}|S\d{3}|O\d{3}|P\d{3}|ORG\d{3})(?![A-Za-z0-9-])"
@@ -596,6 +600,18 @@ class ExportValidator:
 
         for table_name, payload in self.payloads.items():
             walk(payload.get("records", []), table_name)
+
+        for person in self.payloads.get("People", {}).get("records", []):
+            authorized_name = str(person.get("authorizedName", "")).strip()
+            if (
+                person.get("birthYear") is not None
+                and person.get("deathYear") is not None
+                and PERSON_AUTHORIZED_NAME_DATES_PATTERN.search(authorized_name)
+            ):
+                self.errors.append(
+                    f"People {person.get('id', 'unknown')}: authorizedName duplicates "
+                    "the structured birthYear/deathYear values"
+                )
 
         for table_name, fields in PUBLIC_NARRATIVE_FIELDS.items():
             for record in self.payloads.get(table_name, {}).get("records", []):
