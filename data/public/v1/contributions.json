@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 1246,
+  "count": 1247,
   "records": [
     {
       "id": "CON-F001-C-P009",
@@ -13291,7 +13291,8 @@
       ],
       "sourceIds": [
         "SRC0230",
-        "SRC0748"
+        "SRC0748",
+        "SRC0784"
       ],
       "nameVariantIds": [
         "PNV0020"
@@ -13311,7 +13312,8 @@
       ],
       "sourceIds": [
         "SRC0230",
-        "SRC0748"
+        "SRC0748",
+        "SRC0784"
       ]
     },
     {
@@ -13328,7 +13330,8 @@
       ],
       "sourceIds": [
         "SRC0230",
-        "SRC0748"
+        "SRC0748",
+        "SRC0784"
       ]
     },
     {
@@ -15729,7 +15732,8 @@
       ],
       "sourceIds": [
         "SRC0241",
-        "SRC0274"
+        "SRC0274",
+        "SRC0783"
       ],
       "nameVariantIds": [
         "PNV0020"
@@ -15749,7 +15753,8 @@
       ],
       "sourceIds": [
         "SRC0241",
-        "SRC0274"
+        "SRC0274",
+        "SRC0783"
       ]
     },
     {
@@ -15766,7 +15771,8 @@
       ],
       "sourceIds": [
         "SRC0241",
-        "SRC0274"
+        "SRC0274",
+        "SRC0783"
       ]
     },
     {
@@ -20888,7 +20894,8 @@
         "P173"
       ],
       "sourceIds": [
-        "SRC0748"
+        "SRC0748",
+        "SRC0784"
       ],
       "scopeNote": "Sang the song on the Victor disc; the credit is transcribed from the label by the uploader of the transfer, who does not show the disc."
     },
@@ -22119,6 +22126,25 @@
       "sourceIds": [
         "SRC0776"
       ]
+    },
+    {
+      "id": "CON-S158-P-P173",
+      "role": "performer",
+      "nameAsPrinted": "Allan Jones",
+      "displayCredit": "Vocal performance",
+      "evidenceContext": "recording_label",
+      "sortOrder": 50,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S158"
+      ],
+      "personIds": [
+        "P173"
+      ],
+      "sourceIds": [
+        "SRC0783"
+      ],
+      "scopeNote": "Sang the song on the His Master's Voice disc, the British issue of his 1938 Victor session."
     }
   ]
 }
