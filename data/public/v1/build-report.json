@@ -5,8 +5,8 @@
   "counts": {
     "People": 173,
     "Organizations": 143,
-    "Sources": 737,
-    "Media": 378,
+    "Sources": 736,
+    "Media": 379,
     "Works": 287,
     "Films": 55,
     "Songs": 203,
@@ -2873,24 +2873,6 @@
       "table": "Sources",
       "id": "SRC0542",
       "fields": [
-        "sourceType"
-      ],
-      "removedFields": []
-    },
-    {
-      "table": "Sources",
-      "id": "SRC0543",
-      "fields": [
-        "date",
-        "sourceType"
-      ],
-      "removedFields": []
-    },
-    {
-      "table": "Sources",
-      "id": "SRC0544",
-      "fields": [
-        "date",
         "sourceType"
       ],
       "removedFields": []

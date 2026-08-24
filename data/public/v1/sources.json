@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 737,
+  "count": 736,
   "records": [
     {
       "id": "SRC0001",
@@ -17351,47 +17351,6 @@
       ]
     },
     {
-      "id": "SRC0543",
-      "shortCitation": "VIAF 49423851 — Leopold Mittmann / Mittman (1904–1976)",
-      "fullCitation": "VIAF (Virtual International Authority File), authority cluster 49423851, “Mittman, Leopold, 1904–1976,” OCLC, accessed 13 July 2026.",
-      "sourceType": "online_database",
-      "title": "Leopold Mittmann / Mittman — VIAF authority record",
-      "creator": "VIAF contributors",
-      "repository": "VIAF",
-      "publication": "OCLC",
-      "date": "n.d.",
-      "accessDate": "2026-07-13",
-      "reliability": "high",
-      "sourceStatus": "verified",
-      "slug": "src0543-viaf-leopold-mittmann-49423851",
-      "personIds": [
-        "P088"
-      ],
-      "primaryUrl": "https://viaf.org/viaf/49423851"
-    },
-    {
-      "id": "SRC0544",
-      "shortCitation": "VIAF 71658265 — Francis Salabert (1884–1946), related name Jean Cis",
-      "fullCitation": "VIAF (Virtual International Authority File), authority cluster 71658265, “Salabert, Francis, 1884–1946,” OCLC, accessed 13 July 2026. Corroborated by BnF authority FRBNF14797342.",
-      "sourceType": "online_database",
-      "title": "Francis Salabert / Jean Cis — VIAF authority record",
-      "creator": "VIAF contributors",
-      "repository": "VIAF",
-      "publication": "OCLC",
-      "date": "n.d.",
-      "accessDate": "2026-07-13",
-      "reliability": "high",
-      "sourceStatus": "verified",
-      "slug": "src0544-viaf-francis-salabert-jean-cis-71658265",
-      "personIds": [
-        "P040"
-      ],
-      "nameVariantIds": [
-        "PNV0015"
-      ],
-      "primaryUrl": "https://viaf.org/viaf/71658265"
-    },
-    {
       "id": "SRC0545",
       "shortCitation": "Arolsen Archives — personal file of Pomeranz, Giuliano",
       "fullCitation": "Arolsen Archives, ITS Digital Archive, 3.2.1.2, listing for the personal file of POMERANZ, GIULIANO, born 21 March 1901 in Wilno, accessed 13 July 2026.",
@@ -25146,6 +25105,28 @@
           "url": "https://archive.org/details/variety95-1929-06/page/n161/mode/1up",
           "role": "digitized_primary_source"
         }
+      ]
+    },
+    {
+      "id": "SRC0814",
+      "shortCitation": "Saint Petersburg Philharmonia — Giuliano Pomeranz portrait and performer page",
+      "fullCitation": "Saint Petersburg Academic Philharmonia. “Giuliano Pomeranz.” Performer page in the digital project 100 Years of the Philharmonia. Photographer and photograph date unidentified. Accessed 24 August 2026.",
+      "sourceType": "image_or_photograph",
+      "title": "Giuliano Pomeranz — performer page and portrait",
+      "creator": "Photographer unknown",
+      "repository": "Saint Petersburg Academic Philharmonia",
+      "publication": "100 Years of the Philharmonia",
+      "date": "n.d.",
+      "accessDate": "2026-08-24",
+      "reliability": "high",
+      "sourceStatus": "verified_with_attribution_note",
+      "slug": "src0814-saint-petersburg-philharmonia-giuliano-pomeranz-portrait",
+      "primaryUrl": "https://100philharmonia.spb.ru/persons/39774/",
+      "personIds": [
+        "P090"
+      ],
+      "mediaIds": [
+        "M429"
       ]
     }
   ],
