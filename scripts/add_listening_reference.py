@@ -18,6 +18,16 @@ The batch file is tab-separated, one reference per line, comments with `#`:
     https://www.youtube.com/watch?v=…	W-S031	P118
     https://www.youtube.com/watch?v=…	W-S042
 
+One external audio reference is allowed per work. The script refuses a second
+one so that alternate performances do not accumulate without an editorial
+decision. Exceptional multiplicity must be documented explicitly in
+``public_export_config.json`` and is checked by the public-export validator.
+
+Organizations are never inferred from the work. Pass
+``--inherit-work-organizations`` only when every organization already attached
+to the work is also directly represented by the recording; normally the more
+precise ``--source-organization`` and ``--publisher-org`` options are used.
+
 When the upload films the disc label — as the Radiomuseum Hardthausen uploads do
 — pass what the label prints. The record then becomes a discographic source of
 high reliability, because the evidence is the disc and the video only the way to
@@ -157,6 +167,17 @@ def canonical_external_url(value: str) -> str:
     return urllib.parse.urlunparse(
         (parsed.scheme.casefold(), parsed.netloc.casefold(), parsed.path, "", query, "")
     )
+
+
+def external_audio_media_for_work(records: list[dict], work_id: str) -> list[dict]:
+    """Return external listening references already attached to one work."""
+    return [
+        record
+        for record in records
+        if record.get("storageType") == "external"
+        and record.get("mediaType") == "audio"
+        and work_id in (record.get("workIds") or [])
+    ]
 
 
 # ------------------------------------------------------------------- metadata
@@ -577,6 +598,18 @@ def register(
         )
         return "skipped"
 
+    if media_type == "audio":
+        existing_audio = external_audio_media_for_work(media_table["records"], work_id)
+        if existing_audio:
+            identifiers = ", ".join(record["id"] for record in existing_audio)
+            print(
+                f"  ! {work_id} already has an external listening reference "
+                f"({identifiers}); the archive permits one external audio reference "
+                "per work. Review the existing reference before replacing it.",
+                file=sys.stderr,
+            )
+            return "error"
+
     meta = {"title": title or "", "channel": channel or ""}
     if not title or not channel:
         fetched = youtube_metadata(canonical_url)
@@ -717,8 +750,23 @@ def main() -> int:
         default=[],
         help="organization directly represented by or responsible for the source; repeat as needed",
     )
-    parser.add_argument("--no-inherit-organizations", action="store_true",
-                        help="do not copy the work's organizations onto the media record")
+    organization_inheritance = parser.add_mutually_exclusive_group()
+    organization_inheritance.add_argument(
+        "--inherit-work-organizations",
+        action="store_true",
+        help=(
+            "exceptionally copy every organization linked to the work onto the media; "
+            "off by default because work-level publishers and companies usually do not "
+            "describe the specific recording"
+        ),
+    )
+    organization_inheritance.add_argument(
+        "--no-inherit-organizations",
+        dest="inherit_work_organizations",
+        action="store_false",
+        help=argparse.SUPPRESS,
+    )
+    parser.set_defaults(inherit_work_organizations=False)
     parser.add_argument("--no-build", action="store_true", help="write records only")
     parser.add_argument("--dry-run", action="store_true")
 
@@ -802,7 +850,7 @@ def main() -> int:
             title=args.title,
             channel=args.channel,
             media_type=args.media_type,
-            inherit_organizations=not args.no_inherit_organizations,
+            inherit_organizations=args.inherit_work_organizations,
             dry_run=args.dry_run,
             disc=disc_details,
             contribution_ids=args.contribution,

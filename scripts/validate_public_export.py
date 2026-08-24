@@ -8,7 +8,7 @@ import hashlib
 import json
 import re
 import sys
-from collections import Counter
+from collections import Counter, defaultdict
 from pathlib import Path
 from typing import Any
 from urllib.parse import parse_qsl, urlparse, urlunparse
@@ -951,8 +951,15 @@ class ExportValidator:
             for source in self.payloads.get("Sources", {}).get("records", [])
         }
         seen_assets: set[str] = set()
+        external_audio_by_work: dict[str, list[str]] = defaultdict(list)
         for media in self.payloads.get("Media", {}).get("records", []):
             media_id = media["id"]
+            if (
+                media.get("storageType") == "external"
+                and media.get("mediaType") == "audio"
+            ):
+                for work_id in media.get("workIds", []):
+                    external_audio_by_work[work_id].append(media_id)
             for key in ("description", "publicCaption", "rightsNote", "publicCreditLine"):
                 value = str(media.get(key, ""))
                 if value and MEDIA_PUBLIC_WORKFLOW_PATTERN.search(value):
@@ -1140,6 +1147,45 @@ class ExportValidator:
                             "contentIs": actual,
                         }
                     )
+
+        multiplicity_exceptions = self.config.get("mediaExceptions", {}).get(
+            "externalAudioMultiplicityExceptions", {}
+        )
+        works_by_id = {
+            work["id"]: work
+            for work in self.payloads.get("Works", {}).get("records", [])
+        }
+        for work_id, media_ids in sorted(external_audio_by_work.items()):
+            actual = sorted(set(media_ids))
+            if len(actual) <= 1:
+                continue
+            exception = multiplicity_exceptions.get(work_id)
+            expected = sorted(set((exception or {}).get("mediaIds", [])))
+            rationale = str((exception or {}).get("rationale", "")).strip()
+            if expected != actual or len(rationale) < 40:
+                self.errors.append(
+                    f"Works {work_id}: multiple external audio references "
+                    f"({', '.join(actual)}) require an exact media exception and "
+                    "a substantive rationale in public_export_config.json"
+                )
+
+        for work_id, exception in sorted(multiplicity_exceptions.items()):
+            if work_id not in works_by_id:
+                self.errors.append(f"Media exception {work_id}: work does not exist")
+                continue
+            actual = sorted(set(external_audio_by_work.get(work_id, [])))
+            expected = sorted(set(exception.get("mediaIds", [])))
+            if len(actual) <= 1:
+                self.errors.append(
+                    f"Media exception {work_id}: stale exception; the work no longer "
+                    "has multiple external audio references"
+                )
+            elif expected != actual:
+                self.errors.append(
+                    f"Media exception {work_id}: configured mediaIds "
+                    f"{', '.join(expected) or '(none)'} do not match "
+                    f"{', '.join(actual)}"
+                )
 
     def run(self) -> dict[str, Any]:
         self._load_tables()

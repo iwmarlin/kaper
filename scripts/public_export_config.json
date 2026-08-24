@@ -48,7 +48,23 @@
     "external_link_only"
   ],
   "mediaExceptions": {
-    "sourceOptionalForExternalContextCards": []
+    "sourceOptionalForExternalContextCards": [],
+    "externalAudioMultiplicityExceptions": {
+      "W-S059": {
+        "mediaIds": [
+          "M391",
+          "M410"
+        ],
+        "rationale": "Two distinct 1932 commercial recordings are retained pending an editorial decision about which performance best represents the work."
+      },
+      "W-S119": {
+        "mediaIds": [
+          "M006",
+          "M378"
+        ],
+        "rationale": "Two distinct 1935 performance references are retained pending an editorial decision; no additional listening reference is permitted."
+      }
+    }
   },
   "publicFiles": {},
   "bannedPublicKeyFragments": [

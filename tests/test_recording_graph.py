@@ -9,7 +9,11 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from add_listening_reference import build_records, canonical_external_url  # noqa: E402
+from add_listening_reference import (  # noqa: E402
+    build_records,
+    canonical_external_url,
+    external_audio_media_for_work,
+)
 from validate_public_export import ExportValidator  # noqa: E402
 
 
@@ -45,6 +49,91 @@ class RecordingGraphTests(unittest.TestCase):
                 "https://youtu.be/MylHacBQYXE?utm_source=example&t=99"
             ),
             expected,
+        )
+
+    def test_existing_external_audio_is_detected_per_work(self) -> None:
+        records = [
+            {
+                "id": "M-AUDIO",
+                "mediaType": "audio",
+                "storageType": "external",
+                "workIds": ["W-ONE"],
+            },
+            {
+                "id": "M-VIDEO",
+                "mediaType": "video",
+                "storageType": "external",
+                "workIds": ["W-ONE"],
+            },
+            {
+                "id": "M-LOCAL",
+                "mediaType": "audio",
+                "storageType": "local",
+                "workIds": ["W-ONE"],
+            },
+        ]
+
+        self.assertEqual(
+            [record["id"] for record in external_audio_media_for_work(records, "W-ONE")],
+            ["M-AUDIO"],
+        )
+
+    def test_work_organizations_require_explicit_opt_in(self) -> None:
+        work = {
+            "id": "W-TEST",
+            "title": "Test work",
+            "period": "european",
+            "organizationIds": ["ORG-WORK"],
+        }
+        media, _ = build_records(
+            url="https://example.org/recording",
+            work=work,
+            meta={"title": "Test recording", "channel": "Test archive"},
+            media_id="M999",
+            source_id="SRC9999",
+            person_id=None,
+            performer=None,
+            media_type="audio",
+            inherit_organizations=False,
+        )
+
+        self.assertNotIn("organizationIds", media)
+
+    def test_validator_requires_explicit_exception_for_multiple_audio(self) -> None:
+        validator = object.__new__(ExportValidator)
+        validator.errors = []
+        validator.warnings = []
+        validator.assets_root = None
+        validator.config = {"mediaExceptions": {}}
+        validator.payloads = {
+            "Works": {"records": [{"id": "W-TEST"}]},
+            "Sources": {"records": []},
+            "Media": {
+                "records": [
+                    {
+                        "id": media_id,
+                        "mediaType": "audio",
+                        "storageType": "external",
+                        "assetCount": 0,
+                        "galleryStatus": "external_link_only",
+                        "externalUrl": f"https://example.org/{media_id}",
+                        "sourceIds": [f"SRC-{media_id}"],
+                        "rightsStatus": "external_content_not_rehosted",
+                        "rightsNote": "External content; no local copy is hosted.",
+                        "workIds": ["W-TEST"],
+                    }
+                    for media_id in ("M-ONE", "M-TWO")
+                ]
+            },
+        }
+
+        validator._validate_media()
+
+        self.assertTrue(
+            any(
+                "multiple external audio references" in error
+                for error in validator.errors
+            )
         )
 
     def test_generated_source_carries_explicit_graph_endpoints(self) -> None:
