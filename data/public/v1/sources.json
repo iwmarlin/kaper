@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 733,
+  "count": 735,
   "records": [
     {
       "id": "SRC0001",
@@ -25033,6 +25033,69 @@
       "contributionIds": [
         "CON-S161-P-P138"
       ]
+    },
+    {
+      "id": "SRC0810",
+      "shortCitation": "Audiomack, Allan Jones, “The Show Must Go On”",
+      "fullCitation": "Allan Jones. “The Show Must Go On.” Track on A Pretty Girl Is Like a Melody, digital issue dated 12 April 2016. Audiomack. Accessed 24 August 2026.",
+      "sourceType": "online_audio_source",
+      "title": "The Show Must Go On — Allan Jones, Audiomack",
+      "creator": "Allan Jones",
+      "repository": "Audiomack",
+      "publication": "A Pretty Girl Is Like a Melody",
+      "date": "2016-04-12 (digital issue)",
+      "accessDate": "2026-08-24",
+      "reliability": "medium",
+      "sourceStatus": "verified_with_attribution_note",
+      "slug": "src0810-audiomack-allan-jones-the-show-must-go-on",
+      "primaryUrl": "https://audiomack.com/allan-jones-9/song/the-show-must-go-on",
+      "personIds": [
+        "P173"
+      ],
+      "mediaIds": [
+        "M425"
+      ],
+      "workIds": [
+        "W-S162"
+      ],
+      "songIds": [
+        "S162"
+      ],
+      "researchNote": "Audiomack identifies the track and performer and dates this digital issue, but does not identify the historical recording session, original label, catalogue number or matrix. The page is therefore used only as an access source for the performance, not as a discographic authority.",
+      "researchNoteType": "discographic_note"
+    },
+    {
+      "id": "SRC0811",
+      "shortCitation": "YouTube, Allan Jones, “Blue Venetian Waters”",
+      "fullCitation": "Allan Jones. “Blue Venetian Waters.” Audio transfer uploaded by Archiveradio1930 to YouTube and described there as a 1937 broadcast. Accessed 24 August 2026.",
+      "sourceType": "online_audio_source",
+      "title": "Blue Venetian Waters — Allan Jones, YouTube",
+      "creator": "Allan Jones; Archiveradio1930 (uploader)",
+      "repository": "YouTube",
+      "publication": "YouTube",
+      "date": "n.d.",
+      "accessDate": "2026-08-24",
+      "reliability": "low",
+      "sourceStatus": "verified_with_attribution_note",
+      "slug": "src0811-youtube-allan-jones-blue-venetian-waters",
+      "primaryUrl": "https://www.youtube.com/watch?v=5JJlr-DRFdw",
+      "organizationIds": [
+        "ORG093"
+      ],
+      "personIds": [
+        "P173"
+      ],
+      "mediaIds": [
+        "M426"
+      ],
+      "workIds": [
+        "W-S129"
+      ],
+      "songIds": [
+        "S129"
+      ],
+      "researchNote": "Contemporary film documentation independently identifies Allan Jones as the performer who introduced the song in A Day at the Races. The upload title calls this transfer a 1937 broadcast, but gives no programme, broadcast date, label, catalogue number or matrix; those details are not asserted by this record.",
+      "researchNoteType": "discographic_note"
     }
   ],
   "recordCount": null

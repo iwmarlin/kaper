@@ -49,7 +49,15 @@
   ],
   "mediaExceptions": {
     "sourceOptionalForExternalContextCards": [],
-    "externalAudioMultiplicityExceptions": {}
+    "externalAudioMultiplicityExceptions": {
+      "W-S129": {
+        "mediaIds": [
+          "M379",
+          "M426"
+        ],
+        "rationale": "Two historically distinct performances are retained: Allan Jones introduced the song in A Day at the Races, while the Ted Fio Rito recording documents its independent contemporary circulation."
+      }
+    }
   },
   "publicFiles": {},
   "bannedPublicKeyFragments": [
