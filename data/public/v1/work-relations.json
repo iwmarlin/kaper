@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 199,
+  "count": 200,
   "records": [
     {
       "id": "REL0001",
@@ -3582,6 +3582,24 @@
       ],
       "sourceIds": [
         "SRC0776"
+      ]
+    },
+    {
+      "id": "REL0210",
+      "relationType": "language_version_of",
+      "targetWorkTitle": "Nuits moscovites",
+      "targetTitleAsSource": "Nuits moscovites",
+      "direction": "source_to_target",
+      "publicNote": "“Heut' ist Karneval” is documented as the German-language version of “Nuits moscovites”.",
+      "certainty": "confirmed",
+      "sourceWorkIds": [
+        "W-S102"
+      ],
+      "targetWorkIds": [
+        "W-S105"
+      ],
+      "sourceIds": [
+        "SRC0296"
       ]
     }
   ]
