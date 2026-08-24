@@ -1,4 +1,4 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=0ff0269149";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=3dfd72a7be";
 import {
   certaintyBadge,
   escapeHtml,
@@ -23,7 +23,7 @@ import {
   scopeBadge,
   typeBadge,
   updateMeta,
-} from "./core.js?v=0ff0269149";
+} from "./core.js?v=3dfd72a7be";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 let target = null;
@@ -916,11 +916,15 @@ function renderPerson(person, data, indexes) {
     .sort((a, b) => Number(a.year || 9999) - Number(b.year || 9999) || String(a.title).localeCompare(String(b.title)));
   const events = related(person.timelineEventIds, indexes.timelineEvents)
     .sort((a, b) => String(a.dateStart || "9999").localeCompare(String(b.dateStart || "9999")) || String(a.title).localeCompare(String(b.title)));
+  const creditEvidence = personCreditEvidence(person, indexes);
+  const creditEvidenceSourceIds = new Set(
+    creditEvidence.items.flatMap((item) => item.sources.map((source) => source.id)),
+  );
   const sources = related(person.sourceIds, indexes.sources)
+    .filter((source) => !creditEvidenceSourceIds.has(source.id))
     .sort((a, b) => String(a.date || "9999").localeCompare(String(b.date || "9999")) || String(a.shortCitation || a.title).localeCompare(String(b.shortCitation || b.title)));
   const portrait = data.media.find((item) => item.assetPath && item.category === "portrait");
   const portraitSources = portrait ? related(portrait.sourceIds, indexes.sources) : [];
-  const creditEvidence = personCreditEvidence(person, indexes);
   const identities = related(person.nameVariantIds, indexes.personNameVariants)
     .filter((item) => ["pseudonym", "joint_pseudonym", "registration_identity"].includes(item.variantType));
   const authorityLinks = String(person.authorityUrl || "")

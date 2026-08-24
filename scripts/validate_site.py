@@ -539,6 +539,18 @@ def validate(root: Path) -> dict:
                                     if contributions_by_id.get(contribution_id, {}).get("role")
                                     not in WORK_RECORDING_CONTRIBUTION_ROLES
                                 ]
+                            if record_type == "person" and field == "sourceIds":
+                                credit_source_ids = {
+                                    source_id
+                                    for contribution_id in record.get("contributionIds") or []
+                                    for source_id in (
+                                        contributions_by_id.get(contribution_id, {}).get("sourceIds") or []
+                                    )
+                                }
+                                linked_ids = [
+                                    source_id for source_id in linked_ids
+                                    if source_id not in credit_source_ids
+                                ]
                             if linked_ids and not any(
                                 f"<h2>{candidate}" in text for candidate in accepted_headings
                             ):
