@@ -4626,6 +4626,28 @@
           ]
         }
       },
+      "CON-F022-A-P164": {
+        "reason": "Record Willi Domgraf-Fassbaender's leading acting role in Ich will Dich Liebe lehren, documented independently by Filmportal and the contemporary Der Kinematograph advertisement.",
+        "fields": {
+          "id": "CON-F022-A-P164",
+          "role": "actor",
+          "nameAsPrinted": "Willi Domgraf-Faßbaender",
+          "displayCredit": "Hermann Schroeck",
+          "evidenceContext": "film_credits",
+          "sortOrder": 60,
+          "certainty": "confirmed",
+          "workIds": [
+            "W-F022"
+          ],
+          "personIds": [
+            "P164"
+          ],
+          "sourceIds": [
+            "SRC0131",
+            "SRC0690"
+          ]
+        }
+      },
       "CON-F004-C-P077": {
         "reason": "Add Walter Jurmann's missing confirmed composer credit for Ihre Majestät die Liebe. Filmportal explicitly lists Jurmann under “Musik,” and the official Jurmann catalogue independently documents songs written for the film.",
         "fields": {
@@ -10485,9 +10507,10 @@
         }
       },
       "W-F022": {
-        "reason": "Restore Filmportal's complete music credits: Kaper and Jurmann as both composers and music directors.",
+        "reason": "Restore Filmportal's complete music credits and attach Willi Domgraf-Fassbaender's independently documented leading acting role.",
         "fields": {
           "contributionIds": [
+            "CON-F022-A-P164",
             "CON-F022-C-P009",
             "CON-F022-C-P077",
             "CON-F022-MD-P077"
@@ -11934,6 +11957,20 @@
           ]
         }
       },
+      "P164": {
+        "reason": "Connect Willi Domgraf-Fassbaender to his documented leading acting role in Ich will Dich Liebe lehren and to the Filmportal record that identifies his character.",
+        "fields": {
+          "sourceIds": [
+            "SRC0131"
+          ],
+          "contributionIds": [
+            "CON-F022-A-P164"
+          ],
+          "workIds": [
+            "W-F022"
+          ]
+        }
+      },
       "P150": {
         "reason": "Connect Nicholas Brodszky to the exact 1928 Délibáb article and portrait so his verified image appears on the person record without borrowing media from another identity.",
         "fields": {
@@ -12992,12 +13029,24 @@
         }
       },
       "SRC0131": {
-        "reason": "Synchronize Filmportal's complete music credits for Ich will Dich Liebe lehren: Kaper and Jurmann under both “Musik” and “Musikalische Leitung.”",
+        "reason": "Synchronize Filmportal's complete music credits and its cast credit for Willi Domgraf-Fassbaender as Hermann Schroeck.",
         "fields": {
+          "personIds": [
+            "P164"
+          ],
           "contributionIds": [
+            "CON-F022-A-P164",
             "CON-F022-C-P009",
             "CON-F022-C-P077",
             "CON-F022-MD-P077"
+          ]
+        }
+      },
+      "SRC0690": {
+        "reason": "Synchronize the contemporary advertisement's explicit billing of Willi Domgraf-Fassbaender in the leading role with the film-level acting contribution.",
+        "fields": {
+          "contributionIds": [
+            "CON-F022-A-P164"
           ]
         }
       },
