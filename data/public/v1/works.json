@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 288,
+  "count": 287,
   "records": [
     {
       "id": "W-F001",
@@ -6153,7 +6153,8 @@
       "sourceIds": [
         "SRC0185",
         "SRC0756",
-        "SRC0757"
+        "SRC0757",
+        "SRC0788"
       ],
       "titleVariantIds": [
         "TV0147",
@@ -6182,8 +6183,7 @@
       ],
       "relationIds": [
         "REL0027",
-        "REL0143",
-        "REL0161"
+        "REL0143"
       ],
       "songIds": [
         "S059"
@@ -6192,8 +6192,8 @@
         "european"
       ],
       "mediaIds": [
-        "M390",
-        "M391"
+        "M391",
+        "M410"
       ]
     },
     {
@@ -11626,42 +11626,6 @@
       ],
       "songIds": [
         "S194"
-      ],
-      "periods": [
-        "european"
-      ]
-    },
-    {
-      "id": "W-S195",
-      "title": "Love Is a Fairy Tale",
-      "slug": "love-is-a-fairy-tale",
-      "sortTitle": "Love Is a Fairy Tale",
-      "workType": "Song",
-      "year": 1932,
-      "period": "european",
-      "certainty": "confirmed",
-      "displayOnSite": true,
-      "publicScope": "standalone_page",
-      "sourceIds": [
-        "SRC0373"
-      ],
-      "contributionIds": [
-        "CON-S195-C-P009",
-        "CON-S195-C-P077",
-        "CON-S195-PUB-ORG033"
-      ],
-      "personIds": [
-        "P009",
-        "P077"
-      ],
-      "organizationIds": [
-        "ORG033"
-      ],
-      "relationIds": [
-        "REL0161"
-      ],
-      "songIds": [
-        "S195"
       ],
       "periods": [
         "european"

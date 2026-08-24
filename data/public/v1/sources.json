@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 713,
+  "count": 714,
   "records": [
     {
       "id": "SRC0001",
@@ -12289,7 +12289,6 @@
         "W-S131",
         "W-S168",
         "W-S177",
-        "W-S195",
         "W-S196",
         "W-S197",
         "W-S198",
@@ -12372,7 +12371,6 @@
         "S131",
         "S168",
         "S177",
-        "S195",
         "S196",
         "S197",
         "S198",
@@ -12415,7 +12413,6 @@
         "REL0149",
         "REL0154",
         "REL0159",
-        "REL0161",
         "REL0162",
         "REL0163",
         "REL0164",
@@ -12716,9 +12713,6 @@
         "CON-S177-C-P009",
         "CON-S177-C-P077",
         "CON-S177-L-P041",
-        "CON-S195-C-P009",
-        "CON-S195-C-P077",
-        "CON-S195-PUB-ORG033",
         "CON-S196-C-P009",
         "CON-S196-C-P077",
         "CON-S196-L-P106",
@@ -23279,9 +23273,6 @@
       "organizationIds": [
         "ORG093"
       ],
-      "mediaIds": [
-        "M390"
-      ],
       "primaryUrl": "https://www.youtube.com/watch?v=lpLgE6_0VHk",
       "personIds": [
         "P118",
@@ -23298,7 +23289,7 @@
         "CON-S059-P-P118",
         "CON-S059-CON-P144"
       ],
-      "researchNote": "The modern release credits Jurmann, Kaper and Rotter and names Musikverlag Alrobi as publisher, but gives neither the label, catalogue number nor matrix of Tauber's original recording.",
+      "researchNote": "The reissue carries neither catalogue nor matrix number for the disc it transfers. Its listening link was withdrawn in favour of the digitised Parlophone pressing of the same recording, which the label data identify.",
       "researchNoteType": "discographic_note"
     },
     {
@@ -24342,6 +24333,47 @@
       ],
       "titleVariantIds": [
         "TV0311"
+      ]
+    },
+    {
+      "id": "SRC0788",
+      "shortCitation": "Parlophone AR 206, “Love Is a Fairy Tale”",
+      "fullCitation": "Richard Tauber, tenor, with orchestra. “Love Is a Fairy Tale.” label credit “Kaper; Jurmann; Rotter”. Parlophone, Katalog-Nr. AR 206, 1932. Digital transfer published on archive.org by Great 78 Project. Accessed 24 August 2026.",
+      "sourceType": "recording_discographic_source",
+      "title": "Love Is a Fairy Tale — Parlophone AR 206",
+      "creator": "Richard Tauber, tenor, with orchestra",
+      "repository": "Internet Archive, Great 78 Project",
+      "publication": "Parlophone",
+      "accessDate": "2026-08-24",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "slug": "src0788-parlophone-ar-206-love-is-a-fairy-tale",
+      "organizationIds": [],
+      "mediaIds": [
+        "M410"
+      ],
+      "workIds": [
+        "W-S059"
+      ],
+      "primaryUrl": "https://archive.org/details/78_love-is-a-fairy-tale_richard-tauber-kaper-jurmann-rotter-paul-dessau_gbia3031401a",
+      "songIds": [
+        "S059"
+      ],
+      "personIds": [
+        "P118"
+      ],
+      "contributionIds": [
+        "CON-S059-C-P009",
+        "CON-S059-C-P077",
+        "CON-S059-CON-P144",
+        "CON-S059-L-P020",
+        "CON-S059-P-P118"
+      ],
+      "researchNote": "The discographic details were catalogued from the disc by The Great 78 Project; the transfer carries sound alone, so the label is not shown in the external recording. The item records the matrix number Be 9887 and states that the side is sung in German, from the film released in English as The Right to Happiness. That matrix belongs to Tauber's Berlin session of 5 April 1932, issued in Germany as Odeon O-4507 under the German title; the English title belongs to the export pressing, not to an English text. The reverse side, matrix Be 9889, carries “Es war einmal ein Baby” under the English title “Once There Was a Baby”.",
+      "researchNoteType": "discographic_note",
+      "date": "1932",
+      "titleVariantIds": [
+        "TV0287"
       ]
     }
   ],

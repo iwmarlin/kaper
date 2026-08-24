@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 1246,
+  "count": 1243,
   "records": [
     {
       "id": "CON-F001-C-P009",
@@ -8918,7 +8918,8 @@
       ],
       "sourceIds": [
         "SRC0185",
-        "SRC0757"
+        "SRC0757",
+        "SRC0788"
       ],
       "nameVariantIds": [
         "PNV0019"
@@ -8938,7 +8939,8 @@
       ],
       "sourceIds": [
         "SRC0185",
-        "SRC0757"
+        "SRC0757",
+        "SRC0788"
       ]
     },
     {
@@ -8955,7 +8957,8 @@
       ],
       "sourceIds": [
         "SRC0185",
-        "SRC0757"
+        "SRC0757",
+        "SRC0788"
       ]
     },
     {
@@ -17573,54 +17576,6 @@
       ]
     },
     {
-      "id": "CON-S195-C-P009",
-      "role": "composer",
-      "nameAsPrinted": "Bronisław Kaper",
-      "sortOrder": 10,
-      "certainty": "confirmed",
-      "workIds": [
-        "W-S195"
-      ],
-      "personIds": [
-        "P009"
-      ],
-      "sourceIds": [
-        "SRC0373"
-      ]
-    },
-    {
-      "id": "CON-S195-C-P077",
-      "role": "composer",
-      "nameAsPrinted": "Walter Jurmann",
-      "sortOrder": 11,
-      "certainty": "confirmed",
-      "workIds": [
-        "W-S195"
-      ],
-      "personIds": [
-        "P077"
-      ],
-      "sourceIds": [
-        "SRC0373"
-      ]
-    },
-    {
-      "id": "CON-S195-PUB-ORG033",
-      "role": "publisher",
-      "nameAsPrinted": "Alrobi Musikverlag/1932",
-      "evidenceContext": "sheet_music",
-      "certainty": "confirmed",
-      "workIds": [
-        "W-S195"
-      ],
-      "organizationIds": [
-        "ORG033"
-      ],
-      "sourceIds": [
-        "SRC0373"
-      ]
-    },
-    {
       "id": "CON-S196-C-P009",
       "role": "composer",
       "nameAsPrinted": "Bronisław Kaper",
@@ -21153,7 +21108,8 @@
         "P118"
       ],
       "sourceIds": [
-        "SRC0756"
+        "SRC0756",
+        "SRC0788"
       ],
       "scopeNote": "Sang the song in Melodie der Liebe and recorded it; the recording survives through a later reissue that carries no disc data."
     },
@@ -21172,7 +21128,8 @@
         "P144"
       ],
       "sourceIds": [
-        "SRC0756"
+        "SRC0756",
+        "SRC0788"
       ],
       "scopeNote": "Named on the reissue as the artist accompanying Tauber; he was the film's musical director."
     },
