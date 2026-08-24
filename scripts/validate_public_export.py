@@ -13,6 +13,8 @@ from pathlib import Path
 from typing import Any
 from urllib.parse import parse_qsl, urlparse, urlunparse
 
+from recording_organizations import expected_audio_organization_ids
+
 
 def read_json(path: Path) -> dict[str, Any]:
     return json.loads(path.read_text(encoding="utf-8"))
@@ -552,6 +554,38 @@ class ExportValidator:
                     f"Unsupported media relation: Media {media_id}.workIds contains "
                     f"{', '.join(unsupported)}, but none of its linked Sources "
                     "documents that Work"
+                )
+
+    def _validate_audio_organization_support(self) -> None:
+        """Keep recording agents separate from work and access organizations."""
+
+        sources_by_id = {
+            record["id"]: record
+            for record in self.payloads.get("Sources", {}).get("records", [])
+        }
+        organizations_by_id = {
+            record["id"]: record
+            for record in self.payloads.get("Organizations", {}).get("records", [])
+        }
+        contributions = self.payloads.get("Contributions", {}).get("records", [])
+        for media in self.payloads.get("Media", {}).get("records", []):
+            if not (
+                media.get("mediaType") == "audio"
+                and media.get("storageType") == "external"
+            ):
+                continue
+            expected = expected_audio_organization_ids(
+                media,
+                sources_by_id=sources_by_id,
+                organizations_by_id=organizations_by_id,
+                contributions=contributions,
+            )
+            actual = sorted(set(media.get("organizationIds") or []))
+            if actual != expected:
+                self.errors.append(
+                    f"Media {media['id']}: external audio organizationIds "
+                    f"{actual or '[]'} do not match the exact recording agents "
+                    f"supported by its Sources {expected or '[]'}"
                 )
 
     def _validate_content(self) -> None:
@@ -1193,6 +1227,7 @@ class ExportValidator:
         self._validate_schema_and_links()
         self._validate_symmetric_links()
         self._validate_media_source_work_support()
+        self._validate_audio_organization_support()
         self._validate_content()
         self._validate_scope()
         self._validate_media()

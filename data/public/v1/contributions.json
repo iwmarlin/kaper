@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 1256,
+  "count": 1258,
   "records": [
     {
       "id": "CON-F001-C-P009",
@@ -20101,7 +20101,7 @@
         "W-S078"
       ],
       "organizationIds": [
-        "ORG128"
+        "ORG150"
       ],
       "sourceIds": [
         "SRC0487"
@@ -20120,7 +20120,7 @@
         "W-S214"
       ],
       "organizationIds": [
-        "ORG128"
+        "ORG150"
       ],
       "sourceIds": [
         "SRC0633"
@@ -20139,7 +20139,7 @@
         "W-S215"
       ],
       "organizationIds": [
-        "ORG128"
+        "ORG150"
       ],
       "sourceIds": [
         "SRC0633"
@@ -20158,7 +20158,7 @@
         "W-S080"
       ],
       "organizationIds": [
-        "ORG128"
+        "ORG150"
       ],
       "sourceIds": [
         "SRC0697"
@@ -20177,7 +20177,7 @@
         "W-S081"
       ],
       "organizationIds": [
-        "ORG128"
+        "ORG150"
       ],
       "sourceIds": [
         "SRC0699"
@@ -20196,7 +20196,7 @@
         "W-S082"
       ],
       "organizationIds": [
-        "ORG128"
+        "ORG150"
       ],
       "sourceIds": [
         "SRC0700"
@@ -20215,7 +20215,7 @@
         "W-S133"
       ],
       "organizationIds": [
-        "ORG128"
+        "ORG146"
       ],
       "sourceIds": [
         "SRC0007"
@@ -20234,7 +20234,7 @@
         "W-S024"
       ],
       "organizationIds": [
-        "ORG128"
+        "ORG146"
       ],
       "sourceIds": [
         "SRC0716"
@@ -20387,7 +20387,7 @@
         "W-S048"
       ],
       "organizationIds": [
-        "ORG128"
+        "ORG150"
       ],
       "sourceIds": [
         "SRC0725"
@@ -20463,7 +20463,7 @@
         "W-S076"
       ],
       "organizationIds": [
-        "ORG128"
+        "ORG150"
       ],
       "sourceIds": [
         "SRC0730"
@@ -21035,7 +21035,7 @@
         "W-S057"
       ],
       "organizationIds": [
-        "ORG128"
+        "ORG150"
       ],
       "sourceIds": [
         "SRC0754"
@@ -22265,7 +22265,7 @@
         "W-S071"
       ],
       "organizationIds": [
-        "ORG128"
+        "ORG150"
       ],
       "sourceIds": [
         "SRC0790"
@@ -22347,6 +22347,44 @@
         "SRC0131",
         "SRC0690"
       ]
+    },
+    {
+      "id": "CON-S116-LAB-ORG039",
+      "role": "record_label",
+      "nameAsPrinted": "Salabert",
+      "displayCredit": "Issuing label",
+      "evidenceContext": "recording_label",
+      "sortOrder": 60,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S116"
+      ],
+      "organizationIds": [
+        "ORG039"
+      ],
+      "sourceIds": [
+        "SRC0115"
+      ],
+      "scopeNote": "Issued Henry Garat’s recording as Salabert 3384."
+    },
+    {
+      "id": "CON-S092-LAB-ORG138",
+      "role": "record_label",
+      "nameAsPrinted": "Gloria",
+      "displayCredit": "Issuing label",
+      "evidenceContext": "recording_discography",
+      "sortOrder": 60,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S092"
+      ],
+      "organizationIds": [
+        "ORG138"
+      ],
+      "sourceIds": [
+        "SRC0792"
+      ],
+      "scopeNote": "Issued the Fred Bird recording as Gloria G.O. 10725."
     }
   ]
 }

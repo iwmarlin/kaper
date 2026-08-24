@@ -15,6 +15,7 @@ from add_listening_reference import (  # noqa: E402
     external_audio_media_for_work,
 )
 from validate_public_export import ExportValidator  # noqa: E402
+from recording_organizations import expected_audio_organization_ids  # noqa: E402
 
 
 TABLE_NAMES = (
@@ -259,6 +260,84 @@ class RecordingGraphTests(unittest.TestCase):
 
         for source_id in ("SRC0693", "SRC0698", "SRC0715", "SRC0726", "SRC0761"):
             self.assertTrue(sources_by_id[source_id].get("date"))
+
+    def test_lindstrom_odeon_and_parlophone_are_distinct_entities(self) -> None:
+        organizations = json.loads(
+            (ROOT / "data/public/v1/organizations.json").read_text(encoding="utf-8")
+        )["records"]
+        organizations_by_id = {record["id"]: record for record in organizations}
+
+        self.assertEqual(organizations_by_id["ORG128"]["types"], ["record_company"])
+        self.assertEqual(organizations_by_id["ORG146"]["types"], ["record_label"])
+        self.assertEqual(organizations_by_id["ORG150"]["types"], ["record_label"])
+        self.assertNotIn(
+            "Parlophone", organizations_by_id["ORG128"].get("nameVariants", "")
+        )
+        self.assertNotIn(
+            "Odeon;", organizations_by_id["ORG128"].get("nameVariants", "")
+        )
+
+    def test_specific_parlophone_media_exclude_other_issues_and_publishers(self) -> None:
+        media = json.loads(
+            (ROOT / "data/public/v1/media.json").read_text(encoding="utf-8")
+        )["records"]
+        media_by_id = {record["id"]: record for record in media}
+
+        self.assertEqual(media_by_id["M406"]["organizationIds"], ["ORG146", "ORG149"])
+        self.assertEqual(media_by_id["M410"]["organizationIds"], ["ORG146"])
+
+    def test_audio_organization_rule_excludes_platforms_and_work_publishers(self) -> None:
+        media = {"id": "MTEST", "sourceIds": ["SRCTEST"]}
+        sources = {
+            "SRCTEST": {
+                "id": "SRCTEST",
+                "organizationIds": ["ORG-LABEL", "ORG-ENSEMBLE", "ORG-PLATFORM"],
+            }
+        }
+        organizations = {
+            "ORG-LABEL": {"id": "ORG-LABEL", "types": ["record_label"]},
+            "ORG-ENSEMBLE": {"id": "ORG-ENSEMBLE", "types": ["ensemble"]},
+            "ORG-PLATFORM": {"id": "ORG-PLATFORM", "types": ["database"]},
+            "ORG-PUBLISHER": {"id": "ORG-PUBLISHER", "types": ["publisher"]},
+        }
+
+        self.assertEqual(
+            expected_audio_organization_ids(
+                media,
+                sources_by_id=sources,
+                organizations_by_id=organizations,
+            ),
+            ["ORG-ENSEMBLE", "ORG-LABEL"],
+        )
+
+    def test_validator_rejects_inherited_audio_organizations(self) -> None:
+        validator = object.__new__(ExportValidator)
+        validator.errors = []
+        validator.payloads = {
+            name: {"records": []}
+            for name in TABLE_NAMES
+        }
+        validator.payloads["Organizations"]["records"] = [
+            {"id": "ORG-PUBLISHER", "types": ["publisher"]},
+            {"id": "ORG-LABEL", "types": ["record_label"]},
+        ]
+        validator.payloads["Sources"]["records"] = [{
+            "id": "SRCTEST",
+            "organizationIds": ["ORG-LABEL"],
+        }]
+        validator.payloads["Media"]["records"] = [{
+            "id": "MTEST",
+            "mediaType": "audio",
+            "storageType": "external",
+            "sourceIds": ["SRCTEST"],
+            "organizationIds": ["ORG-PUBLISHER"],
+        }]
+
+        validator._validate_audio_organization_support()
+
+        self.assertEqual(len(validator.errors), 1)
+        self.assertIn("ORG-PUBLISHER", validator.errors[0])
+        self.assertIn("ORG-LABEL", validator.errors[0])
 
     def test_validator_rejects_fair_use_status_for_external_recording(self) -> None:
         validator = object.__new__(ExportValidator)

@@ -23,10 +23,10 @@ one so that alternate performances do not accumulate without an editorial
 decision. Exceptional multiplicity must be documented explicitly in
 ``public_export_config.json`` and is checked by the public-export validator.
 
-Organizations are never inferred from the work. Pass
-``--inherit-work-organizations`` only when every organization already attached
-to the work is also directly represented by the recording; normally the more
-precise ``--source-organization`` and ``--publisher-org`` options are used.
+Organizations are never inferred from the work for audio references. Pass a
+precise ``--source-organization`` for a label or ensemble documented by this
+recording. ``--publisher-org`` describes a sheet-music publisher printed on a
+disc label and therefore stays on the Source rather than the audio Media.
 
 When the upload films the disc label — as the Radiomuseum Hardthausen uploads do
 — pass what the label prints. The record then becomes a discographic source of
@@ -70,6 +70,11 @@ import urllib.parse
 import urllib.request
 from datetime import date
 from pathlib import Path
+
+from recording_organizations import (
+    RECORDING_CONTRIBUTION_ROLES,
+    is_recording_label_or_ensemble,
+)
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data" / "public" / "v1"
@@ -394,8 +399,6 @@ def apply_disc(media: dict, source: dict, *, disc: dict, work_title: str, host: 
     media["publicCreditLine"] = (
         f"{host} / {disc.get('channel') or repository} listening link; {reference}."
     )
-    if disc.get("publisher_org"):
-        media["organizationIds"] = sorted(set((media.get("organizationIds") or []) + [disc["publisher_org"]]))
 
 
 def build_records(
@@ -577,6 +580,23 @@ def register(
         if organization_id not in organizations:
             print(f"  ! no organization {organization_id}", file=sys.stderr)
             return "error"
+    if media_type == "audio" and inherit_organizations:
+        print(
+            "  ! audio media cannot inherit organizations from the work; "
+            "use --source-organization for the exact label or ensemble",
+            file=sys.stderr,
+        )
+        return "error"
+
+    # A selected source-specific recording contribution is also evidence that
+    # its organization belongs on the Source.  Person contributions add no
+    # organization here.
+    for contribution_id in requested_contributions:
+        contribution = contributions[contribution_id]
+        if contribution.get("role") not in RECORDING_CONTRIBUTION_ROLES:
+            continue
+        requested_organizations.extend(contribution.get("organizationIds") or [])
+    requested_organizations = sorted(set(requested_organizations))
     canonical_url = canonical_external_url(url)
     parsed_url = urllib.parse.urlparse(canonical_url)
     if parsed_url.scheme not in {"http", "https"} or not parsed_url.netloc:
@@ -645,6 +665,17 @@ def register(
             file=sys.stderr,
         )
         return "error"
+
+    if media_type == "audio":
+        recording_organizations = sorted(
+            organization_id
+            for organization_id in requested_organizations
+            if is_recording_label_or_ensemble(organizations[organization_id])
+        )
+        if recording_organizations:
+            media["organizationIds"] = recording_organizations
+        else:
+            media.pop("organizationIds", None)
 
     print(f"  {media_id} ← {meta['title']}")
     print(f"  {source_id}   {source['fullCitation']}")
@@ -755,9 +786,8 @@ def main() -> int:
         "--inherit-work-organizations",
         action="store_true",
         help=(
-            "exceptionally copy every organization linked to the work onto the media; "
-            "off by default because work-level publishers and companies usually do not "
-            "describe the specific recording"
+            "video-only exception: copy organizations linked to the work onto the media; "
+            "audio references reject this option"
         ),
     )
     organization_inheritance.add_argument(
