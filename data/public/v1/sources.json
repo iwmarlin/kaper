@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 711,
+  "count": 712,
   "records": [
     {
       "id": "SRC0001",
@@ -5980,12 +5980,10 @@
       ],
       "workIds": [
         "W-S054",
-        "W-S055",
         "W-S056"
       ],
       "songIds": [
         "S054",
-        "S055",
         "S056"
       ],
       "workRelationIds": [
@@ -5997,15 +5995,12 @@
         "CON-S054-C-P077",
         "CON-S054-L-P020",
         "CON-S054-PUB-ORG036",
-        "CON-S055-C-P009",
-        "CON-S055-C-P077",
         "CON-S056-C-P009",
         "CON-S056-C-P077",
         "CON-S056-L-P020",
         "CON-S056-PUB-ORG036"
       ],
       "nameVariantIds": [
-        "PNV0015",
         "PNV0019"
       ],
       "publication": "Ufaton-Verlag, Berlin",
@@ -12448,7 +12443,8 @@
         "TV0290",
         "TV0292",
         "TV0293",
-        "TV0294"
+        "TV0294",
+        "TV0310"
       ],
       "contributionIds": [
         "CON-F005-C-P077",
@@ -24261,6 +24257,48 @@
       "researchNote": "The item gives the catalogue number D 4431 and the matrix number Bi 644 but does not name the label, and the transfer carries sound alone. The matrix identifies the master as the Gloria issue G.O. 10303, recorded in Berlin, studio 4, on 11 June 1932 and released in November 1932 according to the title list at musiktiteldb.de; the Danish wording of the performer credit belongs to the pressing, not to that recording session.",
       "researchNoteType": "discographic_note",
       "date": "1932"
+    },
+    {
+      "id": "SRC0786",
+      "shortCitation": "Jurmann and Kaper, “Ça va déjà bien mieux !” (Paris: Salabert)",
+      "fullCitation": "Walter Jurmann and Bronislau Kaper, “Ça va déjà bien mieux !” Fox-trot; French words by Jean Cis. [Paris]: Salabert, [1956]; the date is taken from the legal-deposit declaration. Bibliothèque nationale de France, Musique, FOL-VM16-11590. The record gives “’S wird schon wieder besser” as another form of the title and enters Jean Cis under Francis Salabert (1884–1946) as author of the words.",
+      "sourceType": "sheet_music",
+      "title": "Ça va déjà bien mieux ! — fox-trot",
+      "creator": "Walter Jurmann; Bronislau Kaper; Jean Cis, words",
+      "repository": "Bibliothèque nationale de France",
+      "publication": "Salabert",
+      "date": "1956",
+      "accessDate": "2026-08-24",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "slug": "src0786-bnf-ca-va-deja-bien-mieux",
+      "primaryUrl": "https://catalogue.bnf.fr/ark:/12148/cb39702785f",
+      "workIds": [
+        "W-S055"
+      ],
+      "songIds": [
+        "S055"
+      ],
+      "personIds": [
+        "P009",
+        "P040",
+        "P077"
+      ],
+      "organizationIds": [
+        "ORG039"
+      ],
+      "contributionIds": [
+        "CON-S055-C-P009",
+        "CON-S055-C-P077",
+        "CON-S055-L-P040",
+        "CON-S055-PUB-ORG039"
+      ],
+      "nameVariantIds": [
+        "PNV0015"
+      ],
+      "titleVariantIds": [
+        "TV0310"
+      ]
     }
   ],
   "recordCount": null

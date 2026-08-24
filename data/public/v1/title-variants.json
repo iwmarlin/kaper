@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 60,
+  "count": 61,
   "records": [
     {
       "id": "TV0002",
@@ -1010,6 +1010,24 @@
       ],
       "sourceIds": [
         "SRC0759"
+      ]
+    },
+    {
+      "id": "TV0310",
+      "variantTitle": "Ça va déjà mieux",
+      "titleAsSource": "Ca va dija mieux",
+      "variantType": "catalogue_form",
+      "variantTypeAsSource": "Buxbaum/Sieghardt work list",
+      "language": "fr",
+      "languageStatus": "source",
+      "note": "Short form of the title under which the song is listed in the Jurmann work catalogue; the Paris print reads “Ça va déjà bien mieux !”.",
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S055"
+      ],
+      "sourceIds": [
+        "SRC0373",
+        "SRC0786"
       ]
     }
   ]
