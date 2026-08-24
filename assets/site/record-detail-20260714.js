@@ -1,4 +1,4 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=c17d941a26";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=334537ba50";
 import {
   certaintyBadge,
   escapeHtml,
@@ -23,7 +23,7 @@ import {
   scopeBadge,
   typeBadge,
   updateMeta,
-} from "./core.js?v=c17d941a26";
+} from "./core.js?v=334537ba50";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 let target = null;
@@ -522,6 +522,65 @@ function otherWorkMaterialSection(subtype, institutionalContributions, indexes) 
   return section(title, `<dl class="record-facts">${details}</dl>`);
 }
 
+function seriesContentsSection(subtype, relations, work, indexes) {
+  const seriesRelations = relations.filter((item) => item.relationType === "part_of_series");
+  if (!subtype?.contents || !seriesRelations.length) return "";
+
+  const entries = String(subtype.contents)
+    .split(/\s*;\s*/)
+    .map((entry) => {
+      const match = entry.trim().match(/^\s*\d+\.\s*(.+)$/);
+      if (!match) return null;
+      const text = match[1].trim();
+      const creditMatch = text.match(/^(.*?)\s+\((comp\..+)\)$/i);
+      return {
+        title: creditMatch ? creditMatch[1].trim() : text,
+        credit: creditMatch ? creditMatch[2].replace(/^comp\.\s*/i, "Music by ").trim() : "",
+      };
+    })
+    .filter(Boolean);
+  if (!entries.length) return "";
+
+  const relationTargets = seriesRelations
+    .map((relation) => {
+      const candidateIds = [...getIds(relation, "targetWorkIds"), ...getIds(relation, "sourceWorkIds")]
+        .filter((id) => id !== work.id);
+      const targetWork = candidateIds.map((id) => indexes.works.get(id)).find(Boolean);
+      const numberMatch = String(relation.publicNote || "").match(/\bis no\.\s*(\d+)\b/i);
+      return { relation, targetWork, number: numberMatch ? Number(numberMatch[1]) : null };
+    })
+    .filter((item) => item.targetWork);
+  const usedTargetIds = new Set();
+  const comparableTitle = (value) => normalizeSearch(value)
+    .replace(/\bcoctail\b/g, "cocktail")
+    .replace(/[^a-z0-9]+/g, " ")
+    .trim();
+
+  const items = entries.map((entry, index) => {
+    const itemNumber = index + 1;
+    const entryTitle = comparableTitle(entry.title);
+    let target = relationTargets.find((item) => item.number === itemNumber && !usedTargetIds.has(item.targetWork.id));
+    if (!target) {
+      target = relationTargets.find((item) => {
+        if (usedTargetIds.has(item.targetWork.id)) return false;
+        const targetTitle = comparableTitle(item.targetWork.title);
+        return targetTitle.includes(entryTitle) || entryTitle.includes(targetTitle);
+      });
+    }
+    if (target) usedTargetIds.add(target.targetWork.id);
+    const titleHtml = target
+      ? `<a href="${recordUrl("work", target.targetWork.id)}">${escapeHtml(entry.title)}</a>`
+      : `<span>${escapeHtml(entry.title)}</span>`;
+    const creditHtml = entry.credit ? `<small>${escapeHtml(entry.credit)}</small>` : "";
+    const statusHtml = target
+      ? ""
+      : `<small class="series-contents__status">Listed in the documented series contents; no separately issued copy has been located.</small>`;
+    return `<li><span class="series-contents__entry">${titleHtml}${creditHtml}${statusHtml}</span></li>`;
+  }).join("");
+
+  return section("Series contents", `<ol class="series-contents">${items}</ol>`);
+}
+
 function relationList(items, work, indexes) {
   const relationMeta = (item) => {
     const candidateIds = [...getIds(item, "targetWorkIds"), ...getIds(item, "sourceWorkIds")].filter((id) => id !== work.id);
@@ -629,6 +688,7 @@ function renderWork(work, data, indexes) {
   const main = [
     section("About this work", overview),
     isOther ? otherWorkMaterialSection(subtype, institutionalContributions, indexes) : "",
+    isOther ? seriesContentsSection(subtype, relations, work, indexes) : "",
     section("Music and arrangement", contributionList(musicAndArrangementContributions, indexes, {
       conciseCredits: true,
       creditLabel: "credited as",

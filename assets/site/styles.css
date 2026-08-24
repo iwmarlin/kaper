@@ -2685,6 +2685,43 @@ main {
   color: var(--ink-soft);
 }
 
+.series-contents {
+  display: grid;
+  gap: 0;
+  margin: 0;
+  padding-left: 2.15rem;
+}
+
+.series-contents li {
+  padding: 0.72rem 0 0.72rem 0.25rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.series-contents li:last-child {
+  border-bottom: 0;
+}
+
+.series-contents li::marker {
+  color: var(--accent);
+  font-family: var(--serif);
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+}
+
+.series-contents__entry {
+  display: grid;
+  gap: 0.2rem;
+}
+
+.series-contents__entry > small {
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+}
+
+.series-contents__status {
+  font-style: italic;
+}
+
 .record-section__intro {
   max-width: 52rem;
   margin: -0.15rem 0 0.9rem;

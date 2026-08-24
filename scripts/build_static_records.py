@@ -702,8 +702,8 @@ def static_page(
         page_title = f"{title} ({label.lower()})"
     browser_title = f"{page_title} | {PAGE_TITLE_SUFFIX}"
     record_id = record["id"]
-    style_version = "c17d941a26"
-    record_script_version = "c17d941a26"
+    style_version = "334537ba50"
+    record_script_version = "334537ba50"
     route = f"records/{record_type}/{quote(record_id, safe='')}/"
     canonical = f"{ORIGIN}{route}"
     og_image = og_image_for(record_type, record, tables)
