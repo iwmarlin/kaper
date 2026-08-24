@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 142,
+  "count": 143,
   "records": [
     {
       "id": "ORG001",
@@ -1923,7 +1923,10 @@
         "SRC0526",
         "SRC0532",
         "SRC0629",
-        "SRC0630"
+        "SRC0630",
+        "SRC0801",
+        "SRC0802",
+        "SRC0805"
       ]
     },
     {
@@ -2206,7 +2209,11 @@
         "SRC0770",
         "SRC0771",
         "SRC0772",
-        "SRC0776"
+        "SRC0776",
+        "SRC0800",
+        "SRC0803",
+        "SRC0804",
+        "SRC0806"
       ]
     },
     {
@@ -2969,7 +2976,8 @@
         "SRC0790",
         "SRC0791",
         "SRC0796",
-        "SRC0797"
+        "SRC0797",
+        "SRC0799"
       ]
     },
     {
@@ -4397,6 +4405,37 @@
         "CON-S082-LAB-ORG128",
         "CON-S214-LAB-ORG128",
         "CON-S215-LAB-ORG128"
+      ]
+    },
+    {
+      "id": "ORG151",
+      "displayName": "Columbia",
+      "authorizedName": "Columbia (record label)",
+      "types": [
+        "record_label"
+      ],
+      "slug": "columbia-record-label",
+      "nameVariants": "Columbia; Columbia Graphophone",
+      "authorizedNameSource": "local heading",
+      "publicNote": "Columbia record-label imprint used for the French DF series, including DF 1606, DF 1610 and DF 1622.",
+      "sourceIds": [
+        "SRC0801",
+        "SRC0802",
+        "SRC0805"
+      ],
+      "workIds": [
+        "W-S105",
+        "W-S106",
+        "W-S112",
+        "W-S114",
+        "W-S115"
+      ],
+      "contributionIds": [
+        "CON-S105-LAB-ORG151",
+        "CON-S106-LAB-ORG151",
+        "CON-S112-LAB-ORG151",
+        "CON-S114-LAB-ORG151",
+        "CON-S115-LAB-ORG151"
       ]
     }
   ]

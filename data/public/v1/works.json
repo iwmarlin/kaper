@@ -8267,7 +8267,9 @@
       "sourceIds": [
         "SRC0074",
         "SRC0525",
-        "SRC0526"
+        "SRC0526",
+        "SRC0800",
+        "SRC0801"
       ],
       "timelineEventIds": [
         "TE0029"
@@ -8276,7 +8278,9 @@
         "CON-S105-C-P009",
         "CON-S105-C-P077",
         "CON-S105-L-P006",
-        "CON-S105-PUB-ORG030"
+        "CON-S105-PUB-ORG030",
+        "CON-S105-P-P198",
+        "CON-S105-LAB-ORG151"
       ],
       "nameVariantIds": [
         "PNV0019",
@@ -8288,7 +8292,8 @@
         "P077"
       ],
       "organizationIds": [
-        "ORG030"
+        "ORG030",
+        "ORG151"
       ],
       "relationIds": [
         "REL0066"
@@ -8298,6 +8303,9 @@
       ],
       "periods": [
         "european"
+      ],
+      "mediaIds": [
+        "M420"
       ]
     },
     {
@@ -8313,13 +8321,17 @@
       "publicScope": "standalone_page",
       "sourceIds": [
         "SRC0078",
-        "SRC0525"
+        "SRC0525",
+        "SRC0799",
+        "SRC0801"
       ],
       "contributionIds": [
         "CON-S106-C-P009",
         "CON-S106-C-P077",
         "CON-S106-L-P006",
-        "CON-S106-PUB-ORG030"
+        "CON-S106-PUB-ORG030",
+        "CON-S106-P-P198",
+        "CON-S106-LAB-ORG151"
       ],
       "nameVariantIds": [
         "PNV0019",
@@ -8331,7 +8343,8 @@
         "P077"
       ],
       "organizationIds": [
-        "ORG030"
+        "ORG030",
+        "ORG151"
       ],
       "relationIds": [
         "REL0067"
@@ -8341,6 +8354,9 @@
       ],
       "periods": [
         "european"
+      ],
+      "mediaIds": [
+        "M419"
       ]
     },
     {
@@ -8535,7 +8551,9 @@
       "sourceIds": [
         "SRC0057",
         "SRC0065",
-        "SRC0705"
+        "SRC0705",
+        "SRC0802",
+        "SRC0803"
       ],
       "contributionIds": [
         "CON-S112-C-P009",
@@ -8543,6 +8561,8 @@
         "CON-S112-L-P031",
         "CON-S112-L-P052",
         "CON-S112-LAB-ORG133",
+        "CON-S112-P-P198",
+        "CON-S112-LAB-ORG151",
         "CON-S112-PUB-ORG030"
       ],
       "personIds": [
@@ -8553,7 +8573,8 @@
       ],
       "organizationIds": [
         "ORG030",
-        "ORG133"
+        "ORG133",
+        "ORG151"
       ],
       "relationIds": [
         "REL0073"
@@ -8624,13 +8645,17 @@
       "publicScope": "standalone_page",
       "sourceIds": [
         "SRC0059",
-        "SRC0065"
+        "SRC0065",
+        "SRC0805",
+        "SRC0806"
       ],
       "contributionIds": [
         "CON-S114-C-P009",
         "CON-S114-C-P077",
         "CON-S114-L-P031",
         "CON-S114-L-P049",
+        "CON-S114-P-P198",
+        "CON-S114-LAB-ORG151",
         "CON-S114-PUB-ORG030"
       ],
       "personIds": [
@@ -8640,7 +8665,8 @@
         "P077"
       ],
       "organizationIds": [
-        "ORG030"
+        "ORG030",
+        "ORG151"
       ],
       "relationIds": [
         "REL0075"
@@ -8650,6 +8676,9 @@
       ],
       "periods": [
         "european"
+      ],
+      "mediaIds": [
+        "M422"
       ]
     },
     {
@@ -8666,10 +8695,13 @@
       "sourceIds": [
         "SRC0060",
         "SRC0065",
-        "SRC0441"
+        "SRC0441",
+        "SRC0802",
+        "SRC0804"
       ],
       "mediaIds": [
-        "M054"
+        "M054",
+        "M421"
       ],
       "contributionIds": [
         "CON-S115-C-P009",
@@ -8677,6 +8709,8 @@
         "CON-S115-L-P031",
         "CON-S115-L-P051",
         "CON-S115-L-P052",
+        "CON-S115-P-P198",
+        "CON-S115-LAB-ORG151",
         "CON-S115-PUB-ORG030"
       ],
       "personIds": [
@@ -8687,7 +8721,8 @@
         "P077"
       ],
       "organizationIds": [
-        "ORG030"
+        "ORG030",
+        "ORG151"
       ],
       "relationIds": [
         "REL0076"

@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 1252,
+  "count": 1262,
   "records": [
     {
       "id": "CON-F001-C-P009",
@@ -12250,7 +12250,8 @@
       "sourceIds": [
         "SRC0074",
         "SRC0525",
-        "SRC0526"
+        "SRC0526",
+        "SRC0801"
       ],
       "nameVariantIds": [
         "PNV0019"
@@ -12273,7 +12274,8 @@
       "sourceIds": [
         "SRC0074",
         "SRC0525",
-        "SRC0526"
+        "SRC0526",
+        "SRC0801"
       ],
       "nameVariantIds": [
         "PNV0022"
@@ -12329,7 +12331,8 @@
       ],
       "sourceIds": [
         "SRC0078",
-        "SRC0525"
+        "SRC0525",
+        "SRC0801"
       ],
       "nameVariantIds": [
         "PNV0019"
@@ -12351,7 +12354,8 @@
       ],
       "sourceIds": [
         "SRC0078",
-        "SRC0525"
+        "SRC0525",
+        "SRC0801"
       ],
       "nameVariantIds": [
         "PNV0022"
@@ -12739,7 +12743,8 @@
       "sourceIds": [
         "SRC0057",
         "SRC0065",
-        "SRC0705"
+        "SRC0705",
+        "SRC0802"
       ]
     },
     {
@@ -12757,7 +12762,8 @@
       "sourceIds": [
         "SRC0057",
         "SRC0065",
-        "SRC0705"
+        "SRC0705",
+        "SRC0802"
       ]
     },
     {
@@ -12930,7 +12936,8 @@
       ],
       "sourceIds": [
         "SRC0059",
-        "SRC0065"
+        "SRC0065",
+        "SRC0805"
       ]
     },
     {
@@ -12947,7 +12954,8 @@
       ],
       "sourceIds": [
         "SRC0059",
-        "SRC0065"
+        "SRC0065",
+        "SRC0805"
       ]
     },
     {
@@ -13015,7 +13023,8 @@
       ],
       "sourceIds": [
         "SRC0060",
-        "SRC0065"
+        "SRC0065",
+        "SRC0802"
       ]
     },
     {
@@ -13032,7 +13041,8 @@
       ],
       "sourceIds": [
         "SRC0060",
-        "SRC0065"
+        "SRC0065",
+        "SRC0802"
       ]
     },
     {
@@ -22266,6 +22276,201 @@
         "SRC0792"
       ],
       "scopeNote": "Issued the Fred Bird recording as Gloria G.O. 10725."
+    },
+    {
+      "id": "CON-S105-P-P198",
+      "role": "performer",
+      "nameAsPrinted": "Tino Rossi",
+      "displayCredit": "Vocal performance",
+      "evidenceContext": "discography",
+      "sortOrder": 50,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S105"
+      ],
+      "personIds": [
+        "P198"
+      ],
+      "sourceIds": [
+        "SRC0800",
+        "SRC0801"
+      ],
+      "scopeNote": "BnF catalogues Rossi’s recording with Orchestre de Tango Rafaelo on Columbia DF 1622; the linked Internet Archive file provides the listening copy."
+    },
+    {
+      "id": "CON-S106-P-P198",
+      "role": "performer",
+      "nameAsPrinted": "Tino Rossi",
+      "displayCredit": "Vocal performance",
+      "evidenceContext": "discography",
+      "sortOrder": 50,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S106"
+      ],
+      "personIds": [
+        "P198"
+      ],
+      "sourceIds": [
+        "SRC0799",
+        "SRC0801"
+      ],
+      "scopeNote": "BnF catalogues Rossi with Orchestre de Tango Rafaelo on Columbia DF 1622. The linked transfer description identifies the same singer, orchestra and label, but does not show the catalogue number."
+    },
+    {
+      "id": "CON-S105-LAB-ORG151",
+      "role": "record_label",
+      "nameAsPrinted": "Columbia",
+      "displayCredit": "Issuing label",
+      "evidenceContext": "discography",
+      "sortOrder": 60,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S105"
+      ],
+      "organizationIds": [
+        "ORG151"
+      ],
+      "sourceIds": [
+        "SRC0801"
+      ],
+      "scopeNote": "Issued Tino Rossi’s recording on Columbia DF 1622."
+    },
+    {
+      "id": "CON-S106-LAB-ORG151",
+      "role": "record_label",
+      "nameAsPrinted": "Columbia",
+      "displayCredit": "Issuing label",
+      "evidenceContext": "discography",
+      "sortOrder": 60,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S106"
+      ],
+      "organizationIds": [
+        "ORG151"
+      ],
+      "sourceIds": [
+        "SRC0801"
+      ],
+      "scopeNote": "Issued Tino Rossi’s recording on Columbia DF 1622."
+    },
+    {
+      "id": "CON-S112-P-P198",
+      "role": "performer",
+      "nameAsPrinted": "Tino Rossi",
+      "displayCredit": "Vocal performance",
+      "evidenceContext": "discography",
+      "sortOrder": 50,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S112"
+      ],
+      "personIds": [
+        "P198"
+      ],
+      "sourceIds": [
+        "SRC0802",
+        "SRC0803"
+      ],
+      "scopeNote": "BnF catalogues Rossi’s recording on Columbia DF 1606; the linked Internet Archive file provides the listening copy."
+    },
+    {
+      "id": "CON-S114-P-P198",
+      "role": "performer",
+      "nameAsPrinted": "Tino Rossi",
+      "displayCredit": "Vocal performance",
+      "evidenceContext": "discography",
+      "sortOrder": 50,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S114"
+      ],
+      "personIds": [
+        "P198"
+      ],
+      "sourceIds": [
+        "SRC0805",
+        "SRC0806"
+      ],
+      "scopeNote": "BnF catalogues Rossi’s recording with orchestra conducted by Marcel Cariven on Columbia DF 1610; the linked Internet Archive file provides the listening copy."
+    },
+    {
+      "id": "CON-S115-P-P198",
+      "role": "performer",
+      "nameAsPrinted": "Tino Rossi",
+      "displayCredit": "Vocal performance",
+      "evidenceContext": "discography",
+      "sortOrder": 50,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S115"
+      ],
+      "personIds": [
+        "P198"
+      ],
+      "sourceIds": [
+        "SRC0802",
+        "SRC0804"
+      ],
+      "scopeNote": "BnF catalogues Rossi’s recording on Columbia DF 1606; the linked Internet Archive file provides the listening copy."
+    },
+    {
+      "id": "CON-S112-LAB-ORG151",
+      "role": "record_label",
+      "nameAsPrinted": "Columbia",
+      "displayCredit": "Issuing label",
+      "evidenceContext": "discography",
+      "sortOrder": 60,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S112"
+      ],
+      "organizationIds": [
+        "ORG151"
+      ],
+      "sourceIds": [
+        "SRC0802"
+      ],
+      "scopeNote": "Issued Tino Rossi’s recording on Columbia DF 1606."
+    },
+    {
+      "id": "CON-S114-LAB-ORG151",
+      "role": "record_label",
+      "nameAsPrinted": "Columbia",
+      "displayCredit": "Issuing label",
+      "evidenceContext": "discography",
+      "sortOrder": 60,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S114"
+      ],
+      "organizationIds": [
+        "ORG151"
+      ],
+      "sourceIds": [
+        "SRC0805"
+      ],
+      "scopeNote": "Issued Tino Rossi’s recording on Columbia DF 1610."
+    },
+    {
+      "id": "CON-S115-LAB-ORG151",
+      "role": "record_label",
+      "nameAsPrinted": "Columbia",
+      "displayCredit": "Issuing label",
+      "evidenceContext": "discography",
+      "sortOrder": 60,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S115"
+      ],
+      "organizationIds": [
+        "ORG151"
+      ],
+      "sourceIds": [
+        "SRC0802"
+      ],
+      "scopeNote": "Issued Tino Rossi’s recording on Columbia DF 1606."
     }
   ]
 }

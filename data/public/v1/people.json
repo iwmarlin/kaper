@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 172,
+  "count": 173,
   "records": [
     {
       "id": "P001",
@@ -4277,8 +4277,7 @@
       "slug": "jan-kiepura",
       "primaryRole": "singer",
       "roles": [
-        "singer",
-        "actor"
+        "singer"
       ],
       "authorityUrl": "VIAF: https://viaf.org/viaf/17407853\nWikidata: https://www.wikidata.org/wiki/Q713265",
       "sourceIds": [
@@ -6408,6 +6407,47 @@
       ],
       "sourceIds": [
         "SRC0785"
+      ]
+    },
+    {
+      "id": "P198",
+      "displayName": "Tino Rossi",
+      "authorizedName": "Rossi, Tino",
+      "authorizedNameSource": "BnF",
+      "sortName": "Rossi, Tino",
+      "slug": "tino-rossi",
+      "birthYear": 1907,
+      "deathYear": 1983,
+      "lifeDatesCertainty": "confirmed",
+      "primaryRole": "singer",
+      "roles": [
+        "singer",
+        "actor"
+      ],
+      "authorityUrl": "Wikidata: https://www.wikidata.org/wiki/Q359026\nVIAF: https://viaf.org/viaf/7575151\nLCNAF: https://id.loc.gov/authorities/names/n84076760\nGND: https://d-nb.info/gnd/119213575\nBnF: https://catalogue.bnf.fr/ark:/12148/cb13899206m\nISNI: https://isni.org/isni/0000000083544476",
+      "workIds": [
+        "W-S105",
+        "W-S106",
+        "W-S112",
+        "W-S114",
+        "W-S115"
+      ],
+      "contributionIds": [
+        "CON-S105-P-P198",
+        "CON-S106-P-P198",
+        "CON-S112-P-P198",
+        "CON-S114-P-P198",
+        "CON-S115-P-P198"
+      ],
+      "sourceIds": [
+        "SRC0799",
+        "SRC0800",
+        "SRC0801",
+        "SRC0802",
+        "SRC0803",
+        "SRC0804",
+        "SRC0805",
+        "SRC0806"
       ]
     }
   ],
