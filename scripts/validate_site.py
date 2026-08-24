@@ -118,6 +118,8 @@ MEDIA_SCHEMA_TYPES = {
     "document_gallery": "CollectionPage",
 }
 
+WORK_RECORDING_CONTRIBUTION_ROLES = {"performer", "conductor", "record_label"}
+
 ASSET_REFERENCE_RE = re.compile(
     r'((?:assets/site/|\./)[A-Za-z0-9._/-]+\.(?:css|js))\?v=([A-Za-z0-9._-]+)'
 )
@@ -495,6 +497,10 @@ def validate(root: Path) -> dict:
                     if not record:
                         errors.append(f"{relative}: primary record is missing from its payload")
                     else:
+                        contributions_by_id = {
+                            item.get("id"): item
+                            for item in payload.get("tables", {}).get("contributions", [])
+                        }
                         if record_type == "media":
                             match = re.search(
                                 r'<script type="application/ld\+json">(.*?)</script>',
@@ -525,7 +531,15 @@ def validate(root: Path) -> dict:
                                         )
                         for field, heading in PRERENDERED_RELATION_SECTIONS.get(record_type, {}).items():
                             accepted_headings = (heading,) if isinstance(heading, str) else heading
-                            if record.get(field) and not any(
+                            linked_ids = record.get(field) or []
+                            if record_type == "work" and field == "contributionIds":
+                                linked_ids = [
+                                    contribution_id
+                                    for contribution_id in linked_ids
+                                    if contributions_by_id.get(contribution_id, {}).get("role")
+                                    not in WORK_RECORDING_CONTRIBUTION_ROLES
+                                ]
+                            if linked_ids and not any(
                                 f"<h2>{candidate}" in text for candidate in accepted_headings
                             ):
                                 errors.append(
@@ -540,12 +554,16 @@ def validate(root: Path) -> dict:
                                         f"{relative}: prerendered relation {field} -> {linked_id} is missing"
                                     )
                         if record_type == "work":
-                            contributions = {
-                                item.get("id"): item
-                                for item in payload.get("tables", {}).get("contributions", [])
-                            }
+                            for recording_role in WORK_RECORDING_CONTRIBUTION_ROLES:
+                                if f'data-contribution-role="{recording_role}"' in text:
+                                    errors.append(
+                                        f"{relative}: recording-level role {recording_role} "
+                                        "is exposed in Work contributors"
+                                    )
                             for contribution_id in record.get("contributionIds") or []:
-                                contribution = contributions.get(contribution_id) or {}
+                                contribution = contributions_by_id.get(contribution_id) or {}
+                                if contribution.get("role") in WORK_RECORDING_CONTRIBUTION_ROLES:
+                                    continue
                                 for linked_type, field in (
                                     ("person", "personIds"),
                                     ("organization", "organizationIds"),

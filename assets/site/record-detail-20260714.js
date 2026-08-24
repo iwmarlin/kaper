@@ -1,4 +1,4 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=0fdc8b56a3";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=0b8fd56d7c";
 import {
   certaintyBadge,
   escapeHtml,
@@ -23,7 +23,7 @@ import {
   scopeBadge,
   typeBadge,
   updateMeta,
-} from "./core.js?v=0fdc8b56a3";
+} from "./core.js?v=0b8fd56d7c";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 let target = null;
@@ -401,7 +401,7 @@ function contributionList(items, indexes, {
       const certainty = conciseCredits && String(item.certainty || "").toLowerCase() === "confirmed"
         ? ""
         : certaintyBadge(item.certainty);
-      return `<li><span><strong>${names.join(" · ") || escapeHtml(item.nameAsPrinted || "Unresolved contributor")}</strong>${printed}${note ? `<br><small>${escapeHtml(note)}</small>` : ""}</span><span>${typeBadge(item.role)} ${certainty}</span></li>`;
+      return `<li data-contribution-role="${escapeHtml(item.role || "unresolved")}"><span><strong>${names.join(" · ") || escapeHtml(item.nameAsPrinted || "Unresolved contributor")}</strong>${printed}${note ? `<br><small>${escapeHtml(note)}</small>` : ""}</span><span>${typeBadge(item.role)} ${certainty}</span></li>`;
     }).join("")}</ul>`;
 }
 
@@ -423,6 +423,19 @@ function contributionEntityLinks(items, indexes) {
     }
   }
   return links.join(" · ");
+}
+
+// A Work describes authorship and production of the work itself. Performers,
+// conductors and record labels describe a particular recording and therefore
+// belong with its Media/Source evidence, not in the Work's creator credits.
+const WORK_RECORDING_CONTRIBUTION_ROLES = new Set([
+  "performer",
+  "conductor",
+  "record_label",
+]);
+
+function workLevelContributions(items) {
+  return items.filter((item) => !WORK_RECORDING_CONTRIBUTION_ROLES.has(item.role));
 }
 
 // Person-level sources and credit-level sources answer different questions.
@@ -662,7 +675,9 @@ function renderWork(work, data, indexes) {
     ...related(work.songIds, indexes.songs),
     ...related(work.otherWorkIds, indexes.otherWorks),
   ][0];
-  const contributions = related(work.contributionIds, indexes.contributions);
+  const contributions = workLevelContributions(
+    related(work.contributionIds, indexes.contributions),
+  );
   const institutionalContributions = isOther
     ? contributions.filter((item) => ["publisher", "holding_institution"].includes(item.role))
     : [];

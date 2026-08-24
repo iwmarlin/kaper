@@ -1,4 +1,4 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=0fdc8b56a3";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=0b8fd56d7c";
 import {
   debounce,
   escapeHtml,
@@ -17,7 +17,7 @@ import {
   renderLoading,
   responsiveImage,
   typeBadge,
-} from "./core.js?v=0fdc8b56a3";
+} from "./core.js?v=0b8fd56d7c";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 mountSiteChrome("people");
