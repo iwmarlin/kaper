@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 1243,
+  "count": 1255,
   "records": [
     {
       "id": "CON-F001-C-P009",
@@ -11242,7 +11242,8 @@
         "P009"
       ],
       "sourceIds": [
-        "SRC0188"
+        "SRC0188",
+        "SRC0792"
       ],
       "nameVariantIds": [
         "PNV0019"
@@ -11261,7 +11262,8 @@
         "P077"
       ],
       "sourceIds": [
-        "SRC0188"
+        "SRC0188",
+        "SRC0792"
       ]
     },
     {
@@ -11277,7 +11279,8 @@
         "P020"
       ],
       "sourceIds": [
-        "SRC0188"
+        "SRC0188",
+        "SRC0792"
       ]
     },
     {
@@ -11293,7 +11296,8 @@
         "P054"
       ],
       "sourceIds": [
-        "SRC0188"
+        "SRC0188",
+        "SRC0792"
       ]
     },
     {
@@ -22096,6 +22100,234 @@
         "SRC0783"
       ],
       "scopeNote": "Sang the song on the His Master's Voice disc, the British issue of his 1938 Victor session."
+    },
+    {
+      "id": "CON-S047-P-ORG148",
+      "role": "performer",
+      "nameAsPrinted": "Eric Harden und sein Tanz-Orchester",
+      "displayCredit": "Orchestra",
+      "evidenceContext": "discography",
+      "sortOrder": 56,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S047"
+      ],
+      "organizationIds": [
+        "ORG148"
+      ],
+      "sourceIds": [
+        "SRC0760"
+      ],
+      "scopeNote": "Recorded the song for Gloria in Berlin on 29 April 1931."
+    },
+    {
+      "id": "CON-S047-P-P196",
+      "role": "performer",
+      "nameAsPrinted": "John Hendrik",
+      "displayCredit": "Refrain vocal",
+      "evidenceContext": "discography",
+      "sortOrder": 55,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S047"
+      ],
+      "personIds": [
+        "P196"
+      ],
+      "sourceIds": [
+        "SRC0760"
+      ],
+      "scopeNote": "Sang the refrain on the Gloria disc."
+    },
+    {
+      "id": "CON-S047-P-ORG149",
+      "role": "performer",
+      "nameAsPrinted": "Orchestra Mascotte",
+      "displayCredit": "Orchestra",
+      "evidenceContext": "recording_label",
+      "sortOrder": 57,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S047"
+      ],
+      "organizationIds": [
+        "ORG149"
+      ],
+      "sourceIds": [
+        "SRC0782"
+      ],
+      "scopeNote": "Named on the Parlophone export pressing; the name is a house name and does not identify the players."
+    },
+    {
+      "id": "CON-S047-LAB-ORG146",
+      "role": "record_label",
+      "nameAsPrinted": "Parlophone",
+      "displayCredit": "Issuing label",
+      "evidenceContext": "recording_label",
+      "sortOrder": 61,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S047"
+      ],
+      "organizationIds": [
+        "ORG146"
+      ],
+      "sourceIds": [
+        "SRC0782"
+      ],
+      "scopeNote": "Issued the export pressing as A3436."
+    },
+    {
+      "id": "CON-S060-P-ORG148",
+      "role": "performer",
+      "nameAsPrinted": "Eric Harden's danseorkester",
+      "displayCredit": "Orchestra",
+      "evidenceContext": "recording_label",
+      "sortOrder": 56,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S060"
+      ],
+      "organizationIds": [
+        "ORG148"
+      ],
+      "sourceIds": [
+        "SRC0785"
+      ],
+      "scopeNote": "Recorded the song in Berlin in June 1932; the transferred pressing gives the band name in Danish."
+    },
+    {
+      "id": "CON-S060-P-P197",
+      "role": "performer",
+      "nameAsPrinted": "Carljohann Volbach",
+      "displayCredit": "Refrain vocal",
+      "evidenceContext": "recording_label",
+      "sortOrder": 55,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S060"
+      ],
+      "personIds": [
+        "P197"
+      ],
+      "sourceIds": [
+        "SRC0785"
+      ],
+      "scopeNote": "Sang the refrain on the recording."
+    },
+    {
+      "id": "CON-S060-LAB-ORG138",
+      "role": "record_label",
+      "nameAsPrinted": "Gloria",
+      "displayCredit": "Issuing label",
+      "evidenceContext": "discography",
+      "sortOrder": 60,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S060"
+      ],
+      "organizationIds": [
+        "ORG138"
+      ],
+      "sourceIds": [
+        "SRC0785"
+      ],
+      "scopeNote": "Issued the recording as G.O. 10303; the transferred pressing is a foreign issue of the same master, numbered D 4431."
+    },
+    {
+      "id": "CON-S071-P-ORG144",
+      "role": "performer",
+      "nameAsPrinted": "Tanz-Orchester Dajos Béla",
+      "displayCredit": "Orchestra",
+      "evidenceContext": "recording_label",
+      "sortOrder": 56,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S071"
+      ],
+      "organizationIds": [
+        "ORG144"
+      ],
+      "sourceIds": [
+        "SRC0790"
+      ],
+      "scopeNote": "Recorded the song for Odeon in Berlin on 10 June 1932."
+    },
+    {
+      "id": "CON-S071-LAB-ORG128",
+      "role": "record_label",
+      "nameAsPrinted": "Odeon",
+      "displayCredit": "Issuing label",
+      "evidenceContext": "recording_label",
+      "sortOrder": 60,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S071"
+      ],
+      "organizationIds": [
+        "ORG128"
+      ],
+      "sourceIds": [
+        "SRC0790"
+      ],
+      "scopeNote": "Issued the disc on Odeon, the label of Carl Lindström AG, as O-11667."
+    },
+    {
+      "id": "CON-S118-LAB-ORG147",
+      "role": "record_label",
+      "nameAsPrinted": "His Master's Voice",
+      "displayCredit": "Issuing label",
+      "evidenceContext": "recording_label",
+      "sortOrder": 61,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S118"
+      ],
+      "organizationIds": [
+        "ORG147"
+      ],
+      "sourceIds": [
+        "SRC0784"
+      ],
+      "scopeNote": "Issued the British pressing of the Victor recording as B.8724."
+    },
+    {
+      "id": "CON-S158-LAB-ORG147",
+      "role": "record_label",
+      "nameAsPrinted": "His Master's Voice",
+      "displayCredit": "Issuing label",
+      "evidenceContext": "recording_label",
+      "sortOrder": 60,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S158"
+      ],
+      "organizationIds": [
+        "ORG147"
+      ],
+      "sourceIds": [
+        "SRC0783"
+      ],
+      "scopeNote": "Issued the British pressing of the Victor recording as B.8724."
+    },
+    {
+      "id": "CON-S059-LAB-ORG146",
+      "role": "record_label",
+      "nameAsPrinted": "Parlophone",
+      "displayCredit": "Issuing label",
+      "evidenceContext": "recording_label",
+      "sortOrder": 61,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S059"
+      ],
+      "organizationIds": [
+        "ORG146"
+      ],
+      "sourceIds": [
+        "SRC0788"
+      ],
+      "scopeNote": "Issued the export pressing of Tauber's German recording as AR 206."
     }
   ]
 }

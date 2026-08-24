@@ -5613,8 +5613,12 @@
       "contributionIds": [
         "CON-S047-C-P009",
         "CON-S047-L-P020",
-        "CON-S047-PUB-ORG052",
-        "CON-S047-LAB-ORG138"
+        "CON-S047-LAB-ORG138",
+        "CON-S047-LAB-ORG146",
+        "CON-S047-P-ORG148",
+        "CON-S047-P-ORG149",
+        "CON-S047-P-P196",
+        "CON-S047-PUB-ORG052"
       ],
       "nameVariantIds": [
         "PNV0019"
@@ -5625,7 +5629,10 @@
       ],
       "organizationIds": [
         "ORG052",
-        "ORG138"
+        "ORG138",
+        "ORG146",
+        "ORG148",
+        "ORG149"
       ],
       "songIds": [
         "S047"
@@ -6168,11 +6175,12 @@
       "contributionIds": [
         "CON-S059-C-P009",
         "CON-S059-C-P077",
-        "CON-S059-L-P020",
-        "CON-S059-PUB-ORG033",
-        "CON-S059-P-P118",
         "CON-S059-CON-P144",
-        "CON-S059-LAB-ORG145"
+        "CON-S059-L-P020",
+        "CON-S059-LAB-ORG145",
+        "CON-S059-LAB-ORG146",
+        "CON-S059-P-P118",
+        "CON-S059-PUB-ORG033"
       ],
       "nameVariantIds": [
         "PNV0019"
@@ -6184,7 +6192,8 @@
       ],
       "organizationIds": [
         "ORG033",
-        "ORG145"
+        "ORG145",
+        "ORG146"
       ],
       "relationIds": [
         "REL0027",
@@ -6223,6 +6232,9 @@
         "CON-S060-C-P009",
         "CON-S060-C-P077",
         "CON-S060-L-P020",
+        "CON-S060-LAB-ORG138",
+        "CON-S060-P-ORG148",
+        "CON-S060-P-P197",
         "CON-S060-PUB-ORG033"
       ],
       "personIds": [
@@ -6231,7 +6243,9 @@
         "P077"
       ],
       "organizationIds": [
-        "ORG033"
+        "ORG033",
+        "ORG138",
+        "ORG148"
       ],
       "relationIds": [
         "REL0028",
@@ -6713,6 +6727,8 @@
         "CON-S071-C-P009",
         "CON-S071-C-P077",
         "CON-S071-L-P020",
+        "CON-S071-LAB-ORG128",
+        "CON-S071-P-ORG144",
         "CON-S071-PUB-ORG029"
       ],
       "nameVariantIds": [
@@ -6724,7 +6740,9 @@
         "P077"
       ],
       "organizationIds": [
-        "ORG029"
+        "ORG029",
+        "ORG128",
+        "ORG144"
       ],
       "songIds": [
         "S071"
@@ -7683,7 +7701,9 @@
       "displayOnSite": true,
       "publicScope": "standalone_page",
       "sourceIds": [
-        "SRC0188"
+        "SRC0188",
+        "SRC0792",
+        "SRC0793"
       ],
       "titleVariantIds": [
         "TV0168"
@@ -7716,6 +7736,9 @@
       ],
       "periods": [
         "european"
+      ],
+      "mediaIds": [
+        "M413"
       ]
     },
     {
@@ -8791,9 +8814,10 @@
         "CON-S118-C-P009",
         "CON-S118-C-P077",
         "CON-S118-L-P058",
-        "CON-S118-PUB-ORG035",
+        "CON-S118-LAB-ORG141",
+        "CON-S118-LAB-ORG147",
         "CON-S118-P-P173",
-        "CON-S118-LAB-ORG141"
+        "CON-S118-PUB-ORG035"
       ],
       "nameVariantIds": [
         "PNV0020"
@@ -8805,7 +8829,8 @@
       ],
       "organizationIds": [
         "ORG035",
-        "ORG141"
+        "ORG141",
+        "ORG147"
       ],
       "relationIds": [
         "REL0078"
@@ -10411,6 +10436,7 @@
         "CON-S158-C-P009",
         "CON-S158-C-P077",
         "CON-S158-L-P025",
+        "CON-S158-LAB-ORG147",
         "CON-S158-P-P173",
         "CON-S158-PUB-ORG040"
       ],
@@ -10423,7 +10449,8 @@
         "P077"
       ],
       "organizationIds": [
-        "ORG040"
+        "ORG040",
+        "ORG147"
       ],
       "relationIds": [
         "REL0112",

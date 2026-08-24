@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 364,
+  "count": 365,
   "records": [
     {
       "id": "M001",
@@ -11762,7 +11762,9 @@
       ],
       "organizationIds": [
         "ORG052",
-        "ORG138"
+        "ORG138",
+        "ORG146",
+        "ORG149"
       ]
     },
     {
@@ -11796,7 +11798,8 @@
         "S158"
       ],
       "organizationIds": [
-        "ORG040"
+        "ORG040",
+        "ORG147"
       ]
     },
     {
@@ -11831,7 +11834,8 @@
       ],
       "organizationIds": [
         "ORG035",
-        "ORG141"
+        "ORG141",
+        "ORG147"
       ]
     },
     {
@@ -11865,7 +11869,9 @@
         "S060"
       ],
       "organizationIds": [
-        "ORG033"
+        "ORG033",
+        "ORG138",
+        "ORG148"
       ]
     },
     {
@@ -11900,7 +11906,8 @@
       ],
       "organizationIds": [
         "ORG033",
-        "ORG145"
+        "ORG145",
+        "ORG146"
       ]
     },
     {
@@ -11934,7 +11941,9 @@
         "S071"
       ],
       "organizationIds": [
-        "ORG029"
+        "ORG029",
+        "ORG128",
+        "ORG144"
       ]
     },
     {
@@ -11969,6 +11978,41 @@
       ],
       "organizationIds": [
         "ORG036"
+      ]
+    },
+    {
+      "id": "M413",
+      "title": "Ich geh' nie von Dir fort, denn ich lieb' Dich! — Fred Bird, listening reference",
+      "mediaType": "audio",
+      "storageType": "external",
+      "period": "european",
+      "description": "Recording of “Ich geh' nie von Dir fort, denn ich lieb' Dich!” performed by Max Mensing with Fred Bird and his dance orchestra, linked through a digital reissue on Spotify.",
+      "externalUrl": "https://open.spotify.com/track/5FScTPZ4BKsyPcwBugLovx",
+      "assetCount": 0,
+      "altText": "Listening reference for “Ich geh' nie von Dir fort, denn ich lieb' Dich!” performed by Max Mensing with Fred Bird and his dance orchestra.",
+      "rightsStatus": "external_content_not_rehosted",
+      "rightsNote": "External content remains on the provider's website; no local copy is hosted. Copyright and access conditions are governed by the provider.",
+      "sortOrder": 413,
+      "slug": "ich-geh-nie-von-dir-fort-fred-bird-m413",
+      "publicCaption": "Listening reference for “Ich geh' nie von Dir fort, denn ich lieb' Dich!” performed by Max Mensing with Fred Bird and his dance orchestra. The original recording is documented as Gloria G.O. 10725; Spotify provides the 2013 digital reissue.",
+      "publicCreditLine": "Spotify / 78 Revival listening link; original issue Gloria G.O. 10725.",
+      "category": "audio/video reference",
+      "galleryStatus": "external_link_only",
+      "sourceIds": [
+        "SRC0792",
+        "SRC0793"
+      ],
+      "workIds": [
+        "W-S092"
+      ],
+      "periods": [
+        "european"
+      ],
+      "songIds": [
+        "S092"
+      ],
+      "organizationIds": [
+        "ORG138"
       ]
     }
   ],
