@@ -75,6 +75,7 @@ MEDIA_PUBLIC_WORKFLOW_PATTERN = re.compile(
     r"\bpublication status\b|"
     r"\bverification remains open\b|"
     r"\bcurrent asset field\b|"
+    r"\bclick (?:above|below)\b|"
     r"\bbibliographic source not yet linked\b|"
     r"\bsource:\s*|"
     r"\bidentifiers?:\s*|"
@@ -632,6 +633,11 @@ class ExportValidator:
 
         for source in self.payloads.get("Sources", {}).get("records", []):
             source_id = source["id"]
+            if source.get("sourceType") == "discography":
+                self.errors.append(
+                    f"Source {source_id}: legacy sourceType 'discography' must be "
+                    "normalized to recording_discographic_source"
+                )
             research_note = str(source.get("researchNote", "")).strip()
             research_note_type = str(source.get("researchNoteType", "")).strip()
             if bool(research_note) != bool(research_note_type):
@@ -977,6 +983,29 @@ class ExportValidator:
                 self.errors.append(
                     f"Media {media_id}: externalUrl contains more than one URL"
                 )
+            if media.get("storageType") == "external":
+                if media.get("assetPath") or media.get("assetPaths"):
+                    self.errors.append(
+                        f"Media {media_id}: external medium cannot carry local asset paths"
+                    )
+                if media.get("assetCount") != 0:
+                    self.errors.append(
+                        f"Media {media_id}: external medium must declare assetCount 0"
+                    )
+                parsed_external = urlparse(str(external_url))
+                if parsed_external.netloc.casefold().removeprefix("www.") in {
+                    "youtube.com",
+                    "m.youtube.com",
+                    "music.youtube.com",
+                }:
+                    youtube_query = dict(
+                        parse_qsl(parsed_external.query, keep_blank_values=True)
+                    )
+                    if any(key in youtube_query for key in ("list", "start_radio")):
+                        self.errors.append(
+                            f"Media {media_id}: YouTube URL must identify only the "
+                            "canonical video, without playlist or radio parameters"
+                        )
             if not media.get("sourceIds"):
                 self.errors.append(f"Media {media_id}: public medium has no sourceIds")
             if media.get("galleryStatus") == "external_link_only":
@@ -1006,6 +1035,32 @@ class ExportValidator:
                     self.errors.append(
                         f"Media {media_id}: external audio/video has no linked Source "
                         "whose primaryUrl identifies the same external object"
+                    )
+                access_sources = [
+                    sources_by_id[source_id]
+                    for source_id in media.get("sourceIds", [])
+                    if source_id in sources_by_id
+                    and comparable_external_media_url(
+                        str(sources_by_id[source_id].get("primaryUrl", ""))
+                    )
+                    == external_key
+                ]
+                expected_access_type = (
+                    "online_audio_source"
+                    if media.get("mediaType") == "audio"
+                    else "online_video_source"
+                )
+                incompatible_access_sources = [
+                    source.get("id")
+                    for source in access_sources
+                    if source.get("sourceType")
+                    in {"online_audio_source", "online_video_source"}
+                    and source.get("sourceType") != expected_access_type
+                ]
+                if incompatible_access_sources:
+                    self.errors.append(
+                        f"Media {media_id}: access Source type conflicts with "
+                        f"mediaType ({', '.join(incompatible_access_sources)})"
                     )
                 if media.get("rightsStatus") != "external_content_not_rehosted":
                     self.errors.append(

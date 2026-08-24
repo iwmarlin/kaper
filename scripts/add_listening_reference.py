@@ -466,7 +466,11 @@ def build_records(
             if channel
             else f"“{title}.” {citation_tail}"
         ),
-        "sourceType": "online_video_source",
+        "sourceType": (
+            "online_audio_source"
+            if media_type == "audio"
+            else "online_video_source"
+        ),
         "title": f"{title} — {performer + ', ' if performer else ''}{host}",
         "creator": channel_label,
         "repository": host,

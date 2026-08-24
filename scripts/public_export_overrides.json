@@ -2136,7 +2136,8 @@
       "SRC0314": {
         "reason": "Normalize the explanatory unknown-date phrase to the catalogue's standard n.d.",
         "fields": {
-          "date": "n.d."
+          "date": "n.d.",
+          "sourceType": "online_audio_source"
         }
       },
       "SRC0318": {
@@ -2406,7 +2407,7 @@
       "M016": {
         "reason": "Synchronize the contextual Alraune description with the corrected canonical song title.",
         "fields": {
-          "description": "Early sound film directed by Richard Oswald, featuring music by Bronisław Kaper, including the tango “Wenn mich Männer betrügen” performed by Brigitte Helm. The film's opening (first 5 minutes) is available on filmportal.de, digitized in 2021 as part of the Förderprogramm Filmerbe (FFE). Click above to watch on the original source."
+          "description": "Early sound film directed by Richard Oswald, featuring music by Bronisław Kaper, including the tango “Wenn mich Männer betrügen” performed by Brigitte Helm. Filmportal.de provides the opening five-minute excerpt, digitized in 2021 as part of the Förderprogramm Filmerbe (FFE)."
         }
       },
       "M001": {
@@ -2795,8 +2796,9 @@
         "fields": {
           "description": "External listening reference for Henry Garat’s recording of “Pourvu qu’on ait vingt ans” from Une femme au volant.",
           "publicCaption": "External listening reference for Henry Garat’s “Pourvu qu’on ait vingt ans” from Une femme au volant.",
-          "rightsNote": "The YouTube upload is linked as an external listening reference and is not rehosted; reuse rights are not cleared.",
-          "publicCreditLine": "Henry Garat, vocal; orchestra conducted by Bronisław Kaper; “Pourvu qu’on ait vingt ans,” Salabert 3384; external YouTube transfer."
+          "rightsNote": "External content remains on the provider's website; no local copy is hosted. Copyright and access conditions are governed by the provider.",
+          "publicCreditLine": "Henry Garat, vocal; orchestra conducted by Bronisław Kaper; “Pourvu qu’on ait vingt ans,” Salabert 3384; external YouTube transfer.",
+          "assetCount": 0
         }
       },
       "M180": {
@@ -2953,7 +2955,9 @@
       "M199": {
         "reason": "State the documented public-domain status as a neutral rights note so the media card shows a “Public domain” badge, preserving the source attribution.",
         "fields": {
-          "rightsNote": "Public domain: the linked Polona (Biblioteka Narodowa) record for “A zresztą niech pan do mnie zadzwoni...” is marked Domena Publiczna. Credit Biblioteka Narodowa / Polona; printed edition Edition J. Altschuler, Warsaw–Riga, 1926."
+          "rightsNote": "Public domain: the linked Polona (Biblioteka Narodowa) record for “A zresztą niech pan do mnie zadzwoni...” is marked Domena Publiczna. Credit Biblioteka Narodowa / Polona; printed edition Edition J. Altschuler, Warsaw–Riga, 1926.",
+          "storageType": "local",
+          "assetCount": 1
         }
       },
       "M081": {
@@ -7774,7 +7778,7 @@
       },
       "SRC0773": {
         "reason": "Add independent discographic evidence for the original composers of Fiesta (Bianca).",
-        "fields": {"id": "SRC0773", "shortCitation": "National Museum, Prague, discography entry for “Fiesta (Bianca)”", "fullCitation": "National Museum, Prague, discographic database. “Fiesta (Bianca),” matrix 18145; music by W. G. Samuels and L. Whitcup; recording conducted by Efim Schachmeister.", "sourceType": "discography", "title": "Fiesta (Bianca)", "creator": "W. G. Samuels and L. Whitcup", "repository": "National Museum, Prague", "date": "1931", "accessDate": "2026-08-23", "reliability": "high", "sourceStatus": "verified", "slug": "src0773-national-museum-fiesta-bianca-samuels-whitcup", "primaryUrl": "https://diskografie.nm.cz/osoby/l-whitcup/", "workIds": ["W-O012"], "otherWorkIds": ["O012"], "contributionIds": ["CON-O012-C-P177", "CON-O012-C-P178"]}
+        "fields": {"id": "SRC0773", "shortCitation": "National Museum, Prague, discography entry for “Fiesta (Bianca)”", "fullCitation": "National Museum, Prague, discographic database. “Fiesta (Bianca),” matrix 18145; music by W. G. Samuels and L. Whitcup; recording conducted by Efim Schachmeister.", "sourceType": "recording_discographic_source", "title": "Fiesta (Bianca)", "creator": "W. G. Samuels and L. Whitcup", "repository": "National Museum, Prague", "date": "1931", "accessDate": "2026-08-23", "reliability": "high", "sourceStatus": "verified", "slug": "src0773-national-museum-fiesta-bianca-samuels-whitcup", "primaryUrl": "https://diskografie.nm.cz/osoby/l-whitcup/", "workIds": ["W-O012"], "otherWorkIds": ["O012"], "contributionIds": ["CON-O012-C-P177", "CON-O012-C-P178"]}
       },
       "SRC0774": {
         "reason": "Add the item-level sheet-music record that distinguishes Ray Henderson's music credit for Sonny Boy.",
