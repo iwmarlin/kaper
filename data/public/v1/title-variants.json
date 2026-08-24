@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 61,
+  "count": 62,
   "records": [
     {
       "id": "TV0002",
@@ -1028,6 +1028,24 @@
       "sourceIds": [
         "SRC0373",
         "SRC0786"
+      ]
+    },
+    {
+      "id": "TV0311",
+      "variantTitle": "Vergißmeinnicht",
+      "titleAsSource": "(Vergißmeinnicht)",
+      "variantType": "parallel_title",
+      "variantTypeAsSource": "parenthetical title in the printed collection",
+      "language": "de",
+      "languageStatus": "source",
+      "note": "Short title printed with the song in 1000 Takte-Tanz, Band 2.",
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S013"
+      ],
+      "sourceIds": [
+        "SRC0203",
+        "SRC0787"
       ]
     }
   ]

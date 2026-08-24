@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 1247,
+  "count": 1246,
   "records": [
     {
       "id": "CON-F001-C-P009",
@@ -6184,24 +6184,8 @@
       ],
       "sourceIds": [
         "SRC0203",
-        "SRC0373"
-      ]
-    },
-    {
-      "id": "CON-S013-C-P077",
-      "role": "composer",
-      "nameAsPrinted": "Walter Jurmann",
-      "sortOrder": 11,
-      "certainty": "confirmed",
-      "workIds": [
-        "W-S013"
-      ],
-      "personIds": [
-        "P077"
-      ],
-      "sourceIds": [
-        "SRC0203",
-        "SRC0373"
+        "SRC0373",
+        "SRC0787"
       ]
     },
     {
@@ -6218,13 +6202,14 @@
       ],
       "sourceIds": [
         "SRC0203",
-        "SRC0373"
+        "SRC0373",
+        "SRC0787"
       ]
     },
     {
       "id": "CON-S013-PUB-ORG033",
       "role": "publisher",
-      "nameAsPrinted": "Alrobi-Musikverlag / Edition Meisel",
+      "nameAsPrinted": "Alrobi-Musikverlag",
       "evidenceContext": "sheet_music",
       "certainty": "confirmed",
       "workIds": [
@@ -6235,13 +6220,14 @@
       ],
       "sourceIds": [
         "SRC0203",
-        "SRC0373"
+        "SRC0373",
+        "SRC0787"
       ]
     },
     {
       "id": "CON-S013-PUB-ORG049",
       "role": "publisher",
-      "nameAsPrinted": "Alrobi-Musikverlag / Edition Meisel",
+      "nameAsPrinted": "Edition Meisel & Co.",
       "evidenceContext": "sheet_music",
       "certainty": "confirmed",
       "workIds": [
@@ -6252,7 +6238,8 @@
       ],
       "sourceIds": [
         "SRC0203",
-        "SRC0373"
+        "SRC0373",
+        "SRC0787"
       ]
     },
     {
