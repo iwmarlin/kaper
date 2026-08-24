@@ -1,4 +1,4 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=334537ba50";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=c13b74c86a";
 import {
   certaintyBadge,
   escapeHtml,
@@ -23,7 +23,7 @@ import {
   scopeBadge,
   typeBadge,
   updateMeta,
-} from "./core.js?v=334537ba50";
+} from "./core.js?v=c13b74c86a";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 let target = null;
@@ -578,7 +578,10 @@ function seriesContentsSection(subtype, relations, work, indexes) {
     return `<li><span class="series-contents__entry">${titleHtml}${creditHtml}${statusHtml}</span></li>`;
   }).join("");
 
-  return section("Series contents", `<ol class="series-contents">${items}</ol>`);
+  const heading = work.id === "W-O007"
+    ? "Contents of the original two-booklet edition"
+    : "Series contents";
+  return section(heading, `<ol class="series-contents">${items}</ol>`);
 }
 
 function relationList(items, work, indexes) {

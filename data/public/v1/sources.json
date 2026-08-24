@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 714,
+  "count": 715,
   "records": [
     {
       "id": "SRC0001",
@@ -12748,14 +12748,14 @@
     },
     {
       "id": "SRC0375",
-      "shortCitation": "Pfau, Lexikon der deutschen Tanzmusik 1925–1945, vol. 6",
-      "fullCitation": "Henner Pfau, Lexikon der deutschen Tanzmusik 1925–1945. 10 vols. Uelzen: self-published; from vol. 2 Leverkusen: Pfau, 1987–2018. Vol. 6, (Foxtrott u.ä.) L–Q (2003), pp. 659–862, is the volume that covers titles beginning with M. Digitised in the Digitale Bibliothek Thüringen from the copy in the Lippmann + Rau-Musikarchiv.",
+      "shortCitation": "Pfau, Lexikon der deutschen Tanzmusik, vol. 6, p. 780",
+      "fullCitation": "Henner Pfau, Lexikon der deutschen Tanzmusik 1925–1945. 10 vols. Uelzen: self-published; from vol. 2 Leverkusen: Pfau, 1987–2018. Vol. 6, (Foxtrott u.ä.) L–Q (2003), p. 780, entry “Mit dir möchte ich ziehn bis zum Ende der Welt”, marked SF: Germany, 1931, music Kaper, Dr. B., words Rotter, Fritz, with the remark “Details unbekannt” and no discs listed. Digitised in the Digitale Bibliothek Thüringen from the copy in the Lippmann + Rau-Musikarchiv.",
       "sourceType": "book",
       "title": "Pfau, Lexikon der deutschen Tanzmusik 1925–1945, vol. 6: (Foxtrott u.ä.) L–Q",
       "creator": "Henner Pfau",
       "date": "2003",
       "reliability": "high",
-      "sourceStatus": "verified_with_attribution_note",
+      "sourceStatus": "verified",
       "slug": "src0375-pfau-lexikon-der-deutschen-tanzmusik-vol-6",
       "workIds": [
         "W-S191"
@@ -12780,7 +12780,7 @@
       "publication": "Pfau",
       "repository": "Digitale Bibliothek Thüringen",
       "primaryUrl": "https://doi.org/10.22032/dbt.57691",
-      "researchNote": "The citation as first recorded named eight volumes dated 1987 and carried the DOI of vol. 1, which covers titles A–C and cannot hold this entry. The set runs to ten volumes published between 1987 and 2018, and the volume for M is vol. 6 of 2003. The entry itself has not been read: neither its page nor its wording is recorded here, and the song is absent from the German national bibliography, from the discographic title lists and from the indexes of printed song collections. A similar but distinct title, “Mit dir möcht' ich geh'n bis an's Ende der Welt”, was composed by J. Pfeil and recorded in 1938.",
+      "researchNote": "The citation as first recorded named eight volumes dated 1987 and carried the DOI of vol. 1, which covers titles A–C; the set runs to ten volumes published between 1987 and 2018, and the entry stands in vol. 6 of 2003. The entry has now been read in the digitised volume. Pfau lists no records for the song and notes that details are unknown, which is consistent with its absence from the German national bibliography, the discographic title lists and the indexes of printed song collections. A similar but distinct title, “Mit dir möcht' ich geh'n bis an's Ende der Welt”, was composed by J. Pfeil and recorded in 1938.",
       "researchNoteType": "evidence_note"
     },
     {
@@ -24373,6 +24373,36 @@
       "date": "1932",
       "titleVariantIds": [
         "TV0287"
+      ]
+    },
+    {
+      "id": "SRC0789",
+      "shortCitation": "Kaper, “Cocktails” cover and “Fiesta” score (Alberti, 1929–1932); Bronislaw Kaper Papers, box 1",
+      "fullCitation": "Bronisław Kaper. “Cocktails: Jazz Transcriptions for Two Pianos,” original two-booklet cover, and “Fiesta: Rumba,” headed “Ein neuer Cocktail.” Berlin: Alberti, 1929–1932. Bronislaw Kaper Papers, Collection 03193, box 1, American Heritage Center, University of Wyoming, Laramie.",
+      "sourceType": "archival_document",
+      "title": "Cocktails cover and Fiesta score",
+      "creator": "Bronisław Kaper",
+      "repository": "American Heritage Center, University of Wyoming",
+      "publication": "Alberti, Berlin",
+      "date": "1929–1932",
+      "accessDate": "2026-08-24",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "slug": "src0789-ahc-cocktails-cover-fiesta-score",
+      "organizationIds": [
+        "ORG054",
+        "ORG056"
+      ],
+      "workIds": [
+        "W-O007",
+        "W-O012"
+      ],
+      "otherWorkIds": [
+        "O007",
+        "O012"
+      ],
+      "workRelationIds": [
+        "REL0178"
       ]
     }
   ],

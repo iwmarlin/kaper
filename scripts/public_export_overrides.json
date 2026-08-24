@@ -60,6 +60,12 @@
           "publicNote": "Buxbaum and Sieghardt catalogue “Cosi Cosa” as a French-language version of “Così, cosa”; an item-level French edition and its lyric credit have not yet been located."
         }
       },
+      "REL0178": {
+        "reason": "Distinguish the ten titles printed on the original two-booklet Cocktails cover from Fiesta, a later associated issue explicitly headed ‘Ein neuer Cocktail’ in the surviving 1932 score.",
+        "fields": {
+          "publicNote": "“Fiesta (Bianca),” issued in 1932 under the heading “Ein neuer Cocktail,” is a later publication associated with the “Cocktails” series; it is not listed in the original two-booklet contents."
+        }
+      },
       "REL0196": {
         "reason": "State the verified language-version relationship concisely and keep the separate absence of a Kaper music credit out of the relation description.",
         "fields": {
@@ -176,6 +182,12 @@
         "removeFields": [
           "publicNote"
         ]
+      },
+      "W-O007": {
+        "reason": "Distinguish the ten transcriptions printed on the original two-booklet cover from Fiesta, the later 1932 issue headed ‘Ein neuer Cocktail’ and retained as an associated work.",
+        "fields": {
+          "publicNote": "The original “Cocktails” cover lists ten transcriptions in two booklets, five in each, and credits “Transcriptions by Dr. B. Kaper.” “Fiesta (Bianca),” published in 1932 under the heading “Ein neuer Cocktail,” is a later associated issue and therefore appears under Related works rather than in the original contents."
+        }
       },
       "W-O008": {
         "reason": "Distinguish the seven independently documented item-level issues from no. 8, which is listed on the surviving series cover but has not been located as a separate issue.",
@@ -429,6 +441,12 @@
         "removeFields": [
           "publicNote"
         ]
+      },
+      "O007": {
+        "reason": "Distinguish the ten transcriptions printed on the original two-booklet cover from Fiesta, the later 1932 issue headed ‘Ein neuer Cocktail’ and retained as an associated work.",
+        "fields": {
+          "publicNote": "The original “Cocktails” cover lists ten transcriptions in two booklets, five in each, and credits “Transcriptions by Dr. B. Kaper.” “Fiesta (Bianca),” published in 1932 under the heading “Ein neuer Cocktail,” is a later associated issue and therefore appears under Related works rather than in the original contents."
+        }
       },
       "O008": {
         "reason": "Distinguish the seven independently documented item-level issues from no. 8, which is listed on the surviving series cover but has not been located as a separate issue.",
@@ -7789,6 +7807,28 @@
       "SRC0781": {
         "reason": "Document the uploaded Johnny Green portrait and connect it to his person record.",
         "fields": {"id": "SRC0781", "shortCitation": "Los Angeles Times, Johnny Green at the piano, 31 July 1970; UCLA Library", "fullCitation": "Los Angeles Times. Johnny Green seated at a piano examining sheet music, 31 July 1970. Los Angeles Times Photographic Collection, UCLA Library, ark:/21198/zz0002w3q4.", "sourceType": "wikimedia_commons_file", "title": "Johnny Green at the piano — Los Angeles Times photograph", "creator": "Los Angeles Times", "repository": "UCLA Library / Wikimedia Commons", "publication": "Los Angeles Times Photographic Collection", "date": "1970-07-31", "accessDate": "2026-08-23", "reliability": "high", "sourceStatus": "verified", "slug": "src0781-commons-johnny-green-portrait-1970", "primaryUrl": "https://commons.wikimedia.org/wiki/File:Johnny_Green,_composer.jpg", "personIds": ["P195"], "organizationIds": ["ORG090"], "mediaIds": ["M405"]}
+      },
+      "SRC0789": {
+        "reason": "Document the surviving Cocktails cover and the later Fiesta score used to distinguish the original ten-title, two-booklet contents from the 1932 associated issue.",
+        "fields": {
+          "id": "SRC0789",
+          "shortCitation": "Kaper, “Cocktails” cover and “Fiesta” score (Alberti, 1929–1932); Bronislaw Kaper Papers, box 1",
+          "fullCitation": "Bronisław Kaper. “Cocktails: Jazz Transcriptions for Two Pianos,” original two-booklet cover, and “Fiesta: Rumba,” headed “Ein neuer Cocktail.” Berlin: Alberti, 1929–1932. Bronislaw Kaper Papers, Collection 03193, box 1, American Heritage Center, University of Wyoming, Laramie.",
+          "sourceType": "archival_document",
+          "title": "Cocktails cover and Fiesta score",
+          "creator": "Bronisław Kaper",
+          "repository": "American Heritage Center, University of Wyoming",
+          "publication": "Alberti, Berlin",
+          "date": "1929–1932",
+          "accessDate": "2026-08-24",
+          "reliability": "high",
+          "sourceStatus": "verified",
+          "slug": "src0789-ahc-cocktails-cover-fiesta-score",
+          "organizationIds": ["ORG054", "ORG056"],
+          "workIds": ["W-O007", "W-O012"],
+          "otherWorkIds": ["O007", "O012"],
+          "workRelationIds": ["REL0178"]
+        }
       }
     },
     "Songs": {
@@ -9644,9 +9684,9 @@
   "linkAdditions": {
     "Organizations": {
       "ORG054": {
-        "reason": "Synchronize Alberti with the seven verified item-level Jazz Drops works, their sources and publisher credits.",
+        "reason": "Synchronize Alberti with the verified Jazz Drops item records and with the archival source documenting the original Cocktails edition and the later Fiesta issue.",
         "fields": {
-          "sourceIds": ["SRC0768", "SRC0769", "SRC0770", "SRC0771", "SRC0772", "SRC0775", "SRC0776"],
+          "sourceIds": ["SRC0768", "SRC0769", "SRC0770", "SRC0771", "SRC0772", "SRC0775", "SRC0776", "SRC0789"],
           "workIds": ["W-O023", "W-O024", "W-O025", "W-O026", "W-O027", "W-O028", "W-O029"],
           "contributionIds": ["CON-O023-PUB-ORG054", "CON-O024-PUB-ORG054", "CON-O025-PUB-ORG054", "CON-O026-PUB-ORG054", "CON-O027-PUB-ORG054", "CON-O028-PUB-ORG054", "CON-O029-PUB-ORG054"]
         }
@@ -9658,9 +9698,9 @@
         }
       },
       "ORG056": {
-        "reason": "Synchronize the American Heritage Center with the surviving Jazz Drops no. 6 score in the Bronislaw Kaper Papers.",
+        "reason": "Synchronize the American Heritage Center with the surviving Jazz Drops score and the Cocktails materials in the Bronislaw Kaper Papers.",
         "fields": {
-          "sourceIds": ["SRC0775"]
+          "sourceIds": ["SRC0775", "SRC0789"]
         }
       },
       "ORG063": {
@@ -10280,8 +10320,13 @@
         }
       }
     },
+    "Other Works": {
+      "O007": {"reason": "Attach the archival source that distinguishes the ten titles printed on the original Cocktails cover from the later Fiesta issue.", "fields": {"sourceIds": ["SRC0789"]}},
+      "O012": {"reason": "Attach the surviving Fiesta score headed Ein neuer Cocktail.", "fields": {"sourceIds": ["SRC0789"]}}
+    },
     "Works": {
-      "W-O012": {"reason": "Add the verified original composers of Fiesta (Bianca), separately from Kaper's transcription credit.", "fields": {"sourceIds": ["SRC0773"], "contributionIds": ["CON-O012-C-P177", "CON-O012-C-P178"], "personIds": ["P177", "P178"]}},
+      "W-O007": {"reason": "Attach the archival source that distinguishes the ten-title original Cocktails edition from the later associated Fiesta issue.", "fields": {"sourceIds": ["SRC0789"]}},
+      "W-O012": {"reason": "Add the verified original composers of Fiesta (Bianca), separately from Kaper's transcription credit, and attach the surviving score headed Ein neuer Cocktail.", "fields": {"sourceIds": ["SRC0773", "SRC0789"], "contributionIds": ["CON-O012-C-P177", "CON-O012-C-P178"], "personIds": ["P177", "P178"]}},
       "W-O013": {"reason": "Add the original composer credit for the Cocktails transcription.", "fields": {"contributionIds": ["CON-O013-C-P179"], "personIds": ["P179"]}},
       "W-O014": {"reason": "Add the original composer credit for the Cocktails transcription.", "fields": {"contributionIds": ["CON-O014-C-P179"], "personIds": ["P179"]}},
       "W-O015": {"reason": "Identify Strauss as Johann Strauss II and link the original music credit.", "fields": {"contributionIds": ["CON-O015-C-P180"], "personIds": ["P180"]}},
@@ -12180,6 +12225,14 @@
       }
     },
     "Work Relations": {
+      "REL0178": {
+        "reason": "Attach the archival evidence that Fiesta is a later Cocktails-associated issue rather than one of the ten titles printed on the original two-booklet cover.",
+        "fields": {
+          "sourceIds": [
+            "SRC0789"
+          ]
+        }
+      },
       "REL0201": {
         "reason": "Synchronize the source side of the AFI-supported song-to-film relation.",
         "fields": {
