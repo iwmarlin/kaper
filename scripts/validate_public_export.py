@@ -404,6 +404,7 @@ class ExportValidator:
                 self.errors.append(
                     f"{table_name}: duplicate slugs {duplicate_slugs}"
                 )
+
             for record in records:
                 record_id = record.get("id", "<missing-id>")
                 unexpected = set(record) - allowed
@@ -440,6 +441,52 @@ class ExportValidator:
             self.errors.append("Manifest table counts do not match exported records")
         if self.report.get("counts") != expected_counts:
             self.errors.append("Build report table counts do not match exported records")
+
+    def _validate_work_titles(self) -> None:
+        """Keep canonical display titles stable and synchronized across tables.
+
+        Exact source capitalization belongs in citations and source-form fields.
+        Public Work titles are normalized editorial access points; their linked
+        Film, Song or Other Work record must therefore use the same display title.
+        The explicit title map is deliberately curated instead of applying an
+        English title-case algorithm to multilingual data.
+        """
+        works = {
+            record["id"]: record
+            for record in self.payloads.get("Works", {}).get("records", [])
+        }
+        canonical = self.config.get("titleStyle", {}).get(
+            "canonicalDisplayTitles", {}
+        )
+        for work_id, expected in sorted(canonical.items()):
+            work = works.get(work_id)
+            if work is None:
+                self.errors.append(
+                    f"Canonical title rule {work_id}: Work does not exist"
+                )
+            elif work.get("title") != expected:
+                self.errors.append(
+                    f"Works {work_id}: canonical display title must be {expected!r}"
+                )
+
+        linked_tables = (
+            ("filmIds", "Films"),
+            ("songIds", "Songs"),
+            ("otherWorkIds", "Other Works"),
+        )
+        for link_field, table_name in linked_tables:
+            related = {
+                record["id"]: record
+                for record in self.payloads.get(table_name, {}).get("records", [])
+            }
+            for work_id, work in works.items():
+                for related_id in work.get(link_field, []):
+                    record = related.get(related_id)
+                    if record is not None and record.get("title") != work.get("title"):
+                        self.errors.append(
+                            f"Works {work_id} and {table_name} {related_id}: "
+                            "display titles do not match"
+                        )
 
     def _validate_symmetric_links(self) -> None:
         records_by_table = {
@@ -1225,6 +1272,7 @@ class ExportValidator:
         self._load_tables()
         self._validate_manifest()
         self._validate_schema_and_links()
+        self._validate_work_titles()
         self._validate_symmetric_links()
         self._validate_media_source_work_support()
         self._validate_audio_organization_support()
