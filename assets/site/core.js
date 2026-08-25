@@ -409,6 +409,62 @@ export function workSearchText(work, lookup = {}) {
   ].filter(Boolean).join(" "));
 }
 
+// How a person enters this archive. The role fields describe who someone was;
+// these families describe what the sources credit them with here, which is what
+// a reader filters by. People documented only through dated events — a teacher,
+// a relative, a studio head Kaper worked under — keep a family of their own so
+// that no filter hides them.
+export const PERSON_FUNCTIONS = Object.freeze({
+  creators: Object.freeze({
+    label: "Creators",
+    roles: Object.freeze([
+      "composer",
+      "lyricist",
+      "arranger",
+      "music_contributor_role_unresolved",
+    ]),
+  }),
+  performers: Object.freeze({
+    label: "Performers",
+    roles: Object.freeze(["performer", "conductor", "actor"]),
+  }),
+  film: Object.freeze({
+    label: "Film production",
+    roles: Object.freeze([
+      "film_director",
+      "music_director",
+      "producer",
+      "associate_producer",
+      "dialogue_director",
+    ]),
+  }),
+  documented: Object.freeze({ label: "Documented without credits", roles: Object.freeze([]) }),
+});
+
+export const PERSON_FUNCTION_ORDER = Object.freeze(Object.keys(PERSON_FUNCTIONS));
+
+const FUNCTION_BY_ROLE = new Map(
+  Object.entries(PERSON_FUNCTIONS).flatMap(([key, family]) =>
+    family.roles.map((role) => [role, key])),
+);
+
+export function functionLabel(key) {
+  return PERSON_FUNCTIONS[key]?.label || humanize(key);
+}
+
+/** The families a person is credited in, in a stable order. */
+export function personFunctions(person, contributionsById = new Map()) {
+  const found = new Set();
+  for (const contributionId of getIds(person, "contributionIds")) {
+    const contribution = contributionsById.get(contributionId);
+    if (!contribution) continue;
+    const family = FUNCTION_BY_ROLE.get(contribution.role);
+    if (family) found.add(family);
+  }
+  if (!found.size) found.add("documented");
+  return PERSON_FUNCTION_ORDER.filter((key) => found.has(key));
+}
+
 export function debounce(callback, delay = 120) {
   let timer;
   return (...args) => {

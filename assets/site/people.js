@@ -1,25 +1,29 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=32394ba84e";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=7f873d29f3";
 import {
   compareText,
   debounce,
   escapeHtml,
+  functionLabel,
   humanize,
   indexById,
+  indexText,
   loadTables,
   mountSiteChrome,
   nameKey,
   normalizeSearch,
-  PERIOD_ORDER,
   periodBadge,
   periodLabel,
   periodValues,
+  PERIOD_ORDER,
+  personFunctions,
+  PERSON_FUNCTION_ORDER,
   recordUrl,
   registerImageDerivatives,
   renderError,
   renderLoading,
   responsiveImage,
   typeBadge,
-} from "./core.js?v=32394ba84e";
+} from "./core.js?v=7f873d29f3";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 mountSiteChrome("people");
@@ -78,14 +82,25 @@ function initials(name = "") {
 }
 
 try {
-  const { people, works, media, sources, timelineEvents } = await loadTables([
+  const { people, works, media, sources, timelineEvents, contributions, personNameVariants } = await loadTables([
     "people",
     "works",
     "media",
     "sources",
     "timelineEvents",
+    "contributions",
+    "personNameVariants",
   ]);
   const worksById = indexById(works);
+  const contributionsById = indexById(contributions);
+  const nameVariantsByPersonId = new Map();
+  for (const variant of personNameVariants) {
+    for (const personId of variant.personIds || []) {
+      const existing = nameVariantsByPersonId.get(personId) || [];
+      existing.push(variant.variantName, variant.attestedWording);
+      nameVariantsByPersonId.set(personId, existing);
+    }
+  }
   const mediaById = indexById(media);
   const sourcesById = indexById(sources);
   const eventsById = indexById(timelineEvents);
@@ -128,17 +143,25 @@ try {
     ]);
     const periods = PERIOD_ORDER.filter((period) => periodSet.has(period));
     const roles = person.roles?.length ? person.roles : [person.primaryRole].filter(Boolean);
+    const functions = personFunctions(person, contributionsById);
+    // The names a person worked under are part of finding them: the archive
+    // documents Kaper as Chwast, Jurmann as Bob Henders, Bernauer as Fred
+    // Lustig, and a reader who knows only the pseudonym must arrive somewhere.
+    const usedNames = (nameVariantsByPersonId.get(person.id) || []).filter(Boolean);
     return {
       ...person,
       _works: personWorks.length,
       _periods: periods,
       _roles: roles,
+      _functions: functions,
       _portrait: portraitFor(person),
-      _search: normalizeSearch([
+      _search: indexText([
         person.displayName,
         person.sortName,
         person.authorizedName,
+        ...usedNames,
         ...roles,
+        ...functions.map(functionLabel),
       ].filter(Boolean).join(" ")),
     };
   });
@@ -147,7 +170,13 @@ try {
     totalLabelTarget.textContent = `${people.length} documented ${people.length === 1 ? "person" : "people"}`;
   }
 
-  addOptions(controls.role, indexed.flatMap((person) => person._roles));
+  const availableFunctions = new Set(indexed.flatMap((person) => person._functions));
+  addOptions(
+    controls.role,
+    PERSON_FUNCTION_ORDER.filter((value) => availableFunctions.has(value)),
+    functionLabel,
+    true,
+  );
   const availablePeriods = new Set(indexed.flatMap((person) => person._periods));
   addOptions(controls.period, PERIOD_ORDER.filter((value) => availablePeriods.has(value)), periodLabel, true);
   loadQuery();
@@ -166,7 +195,7 @@ try {
     const query = normalizeSearch(controls.search.value.trim());
     filtered = indexed.filter((person) => (
       (!query || person._search.includes(query))
-      && (!controls.role.value || person._roles.includes(controls.role.value))
+      && (!controls.role.value || person._functions.includes(controls.role.value))
       && (!controls.period.value || person._periods.includes(controls.period.value))
     ));
 
@@ -174,7 +203,8 @@ try {
       const byName = compareText(nameKey(a), nameKey(b));
       if (controls.sort.value === "name") return byName;
       if (controls.sort.value === "role") {
-        return compareText(a.primaryRole, b.primaryRole) || byName;
+        const rank = (person) => PERSON_FUNCTION_ORDER.indexOf(person._functions[0] || "documented");
+        return rank(a) - rank(b) || byName;
       }
       return b._works - a._works || byName;
     });
