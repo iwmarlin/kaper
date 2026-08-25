@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 743,
+  "count": 749,
   "records": [
     {
       "id": "SRC0001",
@@ -25246,10 +25246,10 @@
     },
     {
       "id": "SRC0820",
-      "shortCitation": "Portrait of Léo Lelièvre fils, L’Ami du peuple, 12 May 1929",
-      "fullCitation": "“Léo Lelièvre fils.” Portrait photograph by Henri Manuel. L’Ami du peuple (Paris), 12 May 1929, p. 9. Digitised press collection of the Bibliothèque nationale de France. Accessed 25 August 2026.",
+      "shortCitation": "“M. Léo Lelièvre fils,” L’Ami du peuple, 12 May 1929",
+      "fullCitation": "“M. Léo Lelièvre fils.” Portrait photograph by Henri Manuel. L’Ami du peuple (Paris), 12 May 1929, p. 9. Digitised press collection of the Bibliothèque nationale de France. Accessed 25 August 2026.",
       "sourceType": "press_item",
-      "title": "Léo Lelièvre fils",
+      "title": "M. Léo Lelièvre fils",
       "creator": "Henri Manuel (photographer)",
       "repository": "Bibliothèque nationale de France",
       "publication": "L’Ami du peuple",
@@ -25265,8 +25265,8 @@
         "M431"
       ],
       "primaryUrl": "https://www.retronews.fr/journal/lami-du-peuple/12-mai-1929/9/5c1625bc-67ea-46cc-a32b-48af336e18bc",
-      "researchNote": "The studio credit “(Photo Henri Manuel)” is printed beneath the image. The page was retrieved under the distinguishing form “Léo Lelièvre fils”, which separates the sitter from his father, the chansonnier Léo Lelièvre (1872-1956); in 1929, the year of the portrait, the son was thirty and had been writing for the Casino de Paris beside Henri Varna.",
-      "researchNoteType": "object_context"
+      "researchNote": "The caption reads “M. Léo Lelièvre fils”, so the newspaper itself distinguishes the sitter from his father, the chansonnier Léo Lelièvre (1872-1956). The studio credit “(Photo Henri Manuel)” is printed beneath the image. In 1929 the son was thirty and had been writing for the Casino de Paris beside Henri Varna.",
+      "researchNoteType": "identity_assessment"
     },
     {
       "id": "SRC0821",
@@ -25314,6 +25314,132 @@
       ],
       "primaryUrl": "https://musee.sacem.fr/index.php/Detail/entities/3868",
       "researchNote": "The biography spells the surname “Monteaux” while the heading of the same record, the membership photograph and the authority files read Monteux. The dates of birth and death agree with the authority files to the day. Admission on 2 March 1926 places the start of his registered authorship seven years before the two Kaper and Jurmann songs he wrote for the French version of “Madame ne veut pas d’enfants”.",
+      "researchNoteType": "authority_note"
+    },
+    {
+      "sourceType": "online_database",
+      "creator": "Société des auteurs, compositeurs et éditeurs de musique",
+      "repository": "Musée SACEM",
+      "publication": "Musée SACEM",
+      "date": "2026",
+      "accessDate": "2026-08-25",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "id": "SRC0823",
+      "shortCitation": "Musée SACEM, creator record for Henri Varna",
+      "fullCitation": "Société des auteurs, compositeurs et éditeurs de musique. “Henri Varna.” Musée SACEM, Les créateurs. Author, born in Marseille on 31 October 1887, died in Paris on 10 April 1969; elected full member of SACEM on 30 August 1918. Accessed 25 August 2026.",
+      "title": "Henri Varna",
+      "slug": "src0823-musee-sacem-henri-varna",
+      "personIds": [
+        "P031"
+      ],
+      "primaryUrl": "https://musee.sacem.fr/index.php/Detail/entities/2689",
+      "researchNote": "The membership register places his admission to the society in 1918, nine years before he took over the direction of the Casino de Paris, and gives his birth and death to the day.",
+      "researchNoteType": "authority_note"
+    },
+    {
+      "sourceType": "online_database",
+      "creator": "Société des auteurs, compositeurs et éditeurs de musique",
+      "repository": "Musée SACEM",
+      "publication": "Musée SACEM",
+      "date": "2026",
+      "accessDate": "2026-08-25",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "id": "SRC0824",
+      "shortCitation": "Musée SACEM, creator record for André de Badet",
+      "fullCitation": "Société des auteurs, compositeurs et éditeurs de musique. “André de Badet.” Musée SACEM, Les créateurs. Author, born at Escos on 30 June 1891, died at Clamart on 7 April 1977; elected full member of SACEM as author on 29 April 1933; Prix Célestin Joubert, 1964. Accessed 25 August 2026.",
+      "title": "André de Badet",
+      "slug": "src0824-musee-sacem-andre-de-badet",
+      "personIds": [
+        "P006"
+      ],
+      "primaryUrl": "https://musee.sacem.fr/index.php/Detail/entities/2993",
+      "researchNote": "The society dates his standing as a full member from April 1933, the season of the French songs he wrote for Kaper and Jurmann, and confirms the places of birth and death that the authority heading leaves out.",
+      "researchNoteType": "authority_note"
+    },
+    {
+      "sourceType": "online_database",
+      "creator": "Société des auteurs, compositeurs et éditeurs de musique",
+      "repository": "Musée SACEM",
+      "publication": "Musée SACEM",
+      "date": "2026",
+      "accessDate": "2026-08-25",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "id": "SRC0825",
+      "shortCitation": "Musée SACEM, creator record for Louis Poterat",
+      "fullCitation": "Société des auteurs, compositeurs et éditeurs de musique. “Louis Poterat.” Musée SACEM, Les créateurs. Author, born at Troyes on 2 June 1901, died at Geneva on 6 January 1982; elected full member of SACEM on 27 April 1928; administrator of SACEM, vice-president and secretary general of the SDRM; Prix Albert Willemetz, 1946. Accessed 25 August 2026.",
+      "title": "Louis Poterat",
+      "slug": "src0825-musee-sacem-louis-poterat",
+      "personIds": [
+        "P049"
+      ],
+      "primaryUrl": "https://musee.sacem.fr/index.php/Detail/entities/3842",
+      "researchNote": "Besides the dates, the register records the offices he later held in the society and in the mechanical rights body, which no other record consulted for him mentions.",
+      "researchNoteType": "authority_note"
+    },
+    {
+      "sourceType": "online_database",
+      "creator": "Société des auteurs, compositeurs et éditeurs de musique",
+      "repository": "Musée SACEM",
+      "publication": "Musée SACEM",
+      "date": "2026",
+      "accessDate": "2026-08-25",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "id": "SRC0826",
+      "shortCitation": "Musée SACEM, creator record for Marc Cab",
+      "fullCitation": "Société des auteurs, compositeurs et éditeurs de musique. “Marc Cab.” Musée SACEM, Les créateurs. Author, born at Nice on 11 December 1901, died at Bandol on 18 October 1978; admitted to SACEM as author on 21 November 1923; Prix Albert Willemetz, 1949. Accessed 25 August 2026.",
+      "title": "Marc Cab",
+      "slug": "src0826-musee-sacem-marc-cab",
+      "personIds": [
+        "P052"
+      ],
+      "primaryUrl": "https://musee.sacem.fr/index.php/Detail/entities/3141",
+      "researchNote": "The society spells the name without a hyphen and supplies the places of birth and death, which the authority heading reduces to years alone.",
+      "researchNoteType": "authority_note"
+    },
+    {
+      "sourceType": "online_database",
+      "creator": "Société des auteurs, compositeurs et éditeurs de musique",
+      "repository": "Musée SACEM",
+      "publication": "Musée SACEM",
+      "date": "2026",
+      "accessDate": "2026-08-25",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "id": "SRC0827",
+      "shortCitation": "Musée SACEM, creator record for René Nazelles",
+      "fullCitation": "Société des auteurs, compositeurs et éditeurs de musique. “René Nazelles.” Musée SACEM, Les créateurs. Author and composer, born in Paris on 8 October 1888, died on 11 September 1975; elected full member of SACEM on 13 September 1911; Prix Salabert, 1958. Accessed 25 August 2026.",
+      "title": "René Nazelles",
+      "slug": "src0827-musee-sacem-rene-nazelles",
+      "personIds": [
+        "P093"
+      ],
+      "primaryUrl": "https://musee.sacem.fr/index.php/Detail/entities/4243",
+      "researchNote": "The register settles the life dates that the BnF heading still gives as an open span, agreeing with the years recorded by the film and record databases, and dates his standing in the society from 1911.",
+      "researchNoteType": "authority_note"
+    },
+    {
+      "sourceType": "online_database",
+      "creator": "Société des auteurs, compositeurs et éditeurs de musique",
+      "repository": "Musée SACEM",
+      "publication": "Musée SACEM",
+      "date": "2026",
+      "accessDate": "2026-08-25",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "id": "SRC0828",
+      "shortCitation": "Musée SACEM, creator record for Charles-Louis Pothier",
+      "fullCitation": "Société des auteurs, compositeurs et éditeurs de musique. “Charles-Louis Pothier.” Musée SACEM, Les créateurs. Author, born at Bordeaux on 18 April 1881, died at Clichy on 3 November 1962; elected full member of SACEM on 17 February 1912; Prix Trebitsch, 1943; Prix Albert Willemetz, 1947; Prix Centenaire, 1950; Prix Célestin Joubert, 1956; Grand Prix de la Chanson, 1958. Accessed 25 August 2026.",
+      "title": "Charles-Louis Pothier",
+      "slug": "src0828-musee-sacem-charles-louis-pothier",
+      "personIds": [
+        "P010"
+      ],
+      "primaryUrl": "https://musee.sacem.fr/index.php/Detail/entities/3084",
+      "researchNote": "The list of society prizes, running from 1943 to 1958, documents a standing in the profession that the catalogue records do not show, and the register confirms the places of birth and death.",
       "researchNoteType": "authority_note"
     }
   ],
