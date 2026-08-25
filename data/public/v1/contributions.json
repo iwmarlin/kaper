@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 1263,
+  "count": 1264,
   "records": [
     {
       "id": "CON-F001-C-P009",
@@ -16015,7 +16015,8 @@
         "P009"
       ],
       "sourceIds": [
-        "SRC0275"
+        "SRC0275",
+        "SRC0815"
       ],
       "nameVariantIds": [
         "PNV0020"
@@ -16034,7 +16035,8 @@
         "P077"
       ],
       "sourceIds": [
-        "SRC0275"
+        "SRC0275",
+        "SRC0815"
       ]
     },
     {
@@ -16050,7 +16052,8 @@
         "P025"
       ],
       "sourceIds": [
-        "SRC0275"
+        "SRC0275",
+        "SRC0815"
       ]
     },
     {
@@ -16066,7 +16069,8 @@
         "P071"
       ],
       "sourceIds": [
-        "SRC0275"
+        "SRC0275",
+        "SRC0815"
       ]
     },
     {
@@ -22485,6 +22489,25 @@
       "sourceIds": [
         "SRC0809"
       ]
+    },
+    {
+      "id": "CON-S162-P-P173",
+      "role": "performer",
+      "nameAsPrinted": "Allan Jones",
+      "displayCredit": "Vocal performance",
+      "evidenceContext": "film_song",
+      "sortOrder": 50,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S162"
+      ],
+      "personIds": [
+        "P173"
+      ],
+      "sourceIds": [
+        "SRC0815"
+      ],
+      "scopeNote": "Sang the song in Everybody Sing; the performance survives through later issues rather than a contemporary disc."
     }
   ]
 }
