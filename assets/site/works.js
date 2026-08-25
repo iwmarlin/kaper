@@ -16,11 +16,11 @@ import {
   recordUrl,
   renderError,
   renderLoading,
-  resolveIds,
   scopeBadge,
   sortKey,
   typeBadge,
-} from "./core.js?v=21302a48d4";
+  workSearchText,
+} from "./core.js?v=32394ba84e";
 
 mountSiteChrome("works");
 
@@ -71,14 +71,18 @@ function loadQuery() {
 }
 
 try {
-  const { works, people, films, songs, otherWorks } = await loadTables([
+  const { works, people, films, songs, otherWorks, contributions, titleVariants } = await loadTables([
     "works",
     "people",
     "films",
     "songs",
     "otherWorks",
+    "contributions",
+    "titleVariants",
   ]);
   const peopleById = indexById(people);
+  const contributionsById = indexById(contributions);
+  const titleVariantsById = indexById(titleVariants);
   const subtypeByWorkId = new Map();
   for (const subtype of [...films, ...songs, ...otherWorks]) {
     for (const workId of subtype.workIds || []) subtypeByWorkId.set(workId, subtype);
@@ -90,23 +94,9 @@ try {
   addOptions(controls.certainty, works.map((work) => work.certainty));
   loadQuery();
 
-  function searchableWork(work) {
-    const contributors = resolveIds(work, "personIds", peopleById).map((person) => person.displayName).join(" ");
-    const subtype = subtypeByWorkId.get(work.id) || {};
-    return normalizeSearch([
-      work.title,
-      work.sortTitle,
-      work.year,
-      work.workType,
-      ...periodValues(work),
-      contributors,
-      subtype.genre,
-      subtype.lyricistAsPrinted,
-      subtype.publisherAsPrinted,
-    ].filter(Boolean).join(" "));
-  }
+  const searchLookup = { peopleById, subtypeByWorkId, contributionsById, titleVariantsById };
 
-  const indexedWorks = works.map((work) => ({ ...work, _search: searchableWork(work) }));
+  const indexedWorks = works.map((work) => ({ ...work, _search: workSearchText(work, searchLookup) }));
 
   function render() {
     const query = normalizeSearch(controls.search.value.trim());

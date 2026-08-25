@@ -293,10 +293,40 @@ export function formatDate(value) {
 }
 
 export function normalizeSearch(value = "") {
+  // Search must not turn on punctuation: a reader types "cosi cosa" for
+  // "Così, cosa" and "gods chillun" for "God's Chillun". Apostrophes close up,
+  // every other separator becomes one break, and diacritics are stripped.
   return String(value)
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "")
-    .toLowerCase();
+    .toLowerCase()
+    .replace(/['’‘`´]/g, "")
+    .replace(/[^\p{L}\p{N}]+/gu, " ")
+    .trim();
+}
+
+// German titles are written both ways: Vergi\u00dfmeinnicht and Vergissmeinnicht,
+// M\u00fchlhardt and Muehlhardt. Stripping the diacritic answers only half of that,
+// so an index carries the transliterated form beside the plain one and a reader
+// finds the record whichever spelling is typed.
+const GERMAN_FOLDINGS = [
+  [/\u00df/g, "ss"],
+  [/\u00e4/g, "ae"],
+  [/\u00f6/g, "oe"],
+  [/\u00fc/g, "ue"],
+  [/\u00c4/g, "Ae"],
+  [/\u00d6/g, "Oe"],
+  [/\u00dc/g, "Ue"],
+];
+
+export function indexText(value = "") {
+  const plain = normalizeSearch(value);
+  let transliterated = String(value);
+  for (const [pattern, replacement] of GERMAN_FOLDINGS) {
+    transliterated = transliterated.replace(pattern, replacement);
+  }
+  const folded = normalizeSearch(transliterated);
+  return folded === plain ? plain : `${plain} ${folded}`;
 }
 
 // One ordering for the whole archive. The material is German, French, Polish
@@ -321,6 +351,62 @@ export function sortKey(record) {
 /** Filing name: the inverted form when one is recorded, the display name otherwise. */
 export function nameKey(record) {
   return String(record?.sortName || record?.displayName || "");
+}
+
+/**
+ * Free-text index for one Work.
+ *
+ * A reader searches for what the record shows: the title in any of the forms
+ * the sources print, and the people credited on it — the singer and the
+ * conductor as much as the composer. Credits carried by an organization are
+ * left out on purpose. A label or an ensemble belongs to one issue of one
+ * recording, not to the work, and a house name such as Metro-Goldwyn-Mayer or
+ * Alrobi would answer a third of the catalogue at once; those records have
+ * pages of their own that gather their works properly.
+ */
+export function workSearchText(work, lookup = {}) {
+  const {
+    peopleById = new Map(),
+    subtypeByWorkId = new Map(),
+    contributionsById = new Map(),
+    titleVariantsById = new Map(),
+  } = lookup;
+  const subtype = subtypeByWorkId.get(work.id) || {};
+  const variantIds = [
+    ...getIds(work, "titleVariantIds"),
+    ...getIds(subtype, "titleVariantIds"),
+  ];
+  const variantTitles = [...new Set(variantIds)]
+    .map((id) => titleVariantsById.get(id))
+    .filter(Boolean)
+    .flatMap((variant) => [variant.variantTitle, variant.titleAsSource]);
+
+  const creditNames = [];
+  for (const contributionId of getIds(work, "contributionIds")) {
+    const contribution = contributionsById.get(contributionId);
+    const personIds = getIds(contribution, "personIds");
+    if (!personIds.length) continue;
+    creditNames.push(contribution.nameAsPrinted);
+    for (const personId of personIds) {
+      const person = peopleById.get(personId);
+      if (person) creditNames.push(person.displayName, person.authorizedName);
+    }
+  }
+  for (const person of getIds(work, "personIds").map((id) => peopleById.get(id))) {
+    if (person) creditNames.push(person.displayName);
+  }
+
+  return indexText([
+    work.title,
+    work.sortTitle,
+    ...variantTitles,
+    work.year,
+    work.workType,
+    ...periodValues(work),
+    ...creditNames,
+    subtype.genre,
+    subtype.lyricistAsPrinted,
+  ].filter(Boolean).join(" "));
 }
 
 export function debounce(callback, delay = 120) {
