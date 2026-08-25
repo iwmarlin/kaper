@@ -2129,13 +2129,15 @@
       "workIds": [
         "W-S177"
       ],
-      "authorityUrl": "VIAF: https://viaf.org/viaf/42107405\nLCNAF: https://id.loc.gov/authorities/names/n2008000412\nWikidata: https://www.wikidata.org/wiki/Q3172161",
+      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n2008000412\nVIAF: https://viaf.org/viaf/42107405\nISNI: https://isni.org/isni/0000000373276166\nWikidata: https://www.wikidata.org/wiki/Q3172161",
       "birthYear": 1908,
       "deathYear": 1945,
-      "lifeDatesCertainty": "disputed",
+      "lifeDatesCertainty": "confirmed",
       "sourceIds": [
-        "SRC0373"
-      ]
+        "SRC0373",
+        "SRC0819"
+      ],
+      "authorizedNameSource": "LCNAF"
     },
     {
       "id": "P042",
@@ -2405,24 +2407,32 @@
       "roles": [
         "lyricist"
       ],
-      "authorityUrl": "VIAF: https://viaf.org/viaf/61578443\nWikidata: https://www.wikidata.org/wiki/Q3270509",
+      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n2010078826\nVIAF: https://viaf.org/viaf/275360\nGND: https://d-nb.info/gnd/140364778X\nBnF data: https://data.bnf.fr/fr/ark:/12148/cb147911725\nWikidata: https://www.wikidata.org/wiki/Q110225870",
       "contributionIds": [
         "CON-S113-L-P051",
-        "CON-S115-L-P051"
+        "CON-S115-L-P051",
+        "CON-S112-L-P051"
       ],
       "workIds": [
         "W-S113",
-        "W-S115"
+        "W-S115",
+        "W-S112"
       ],
-      "birthYear": 1872,
-      "deathYear": 1956,
+      "birthYear": 1899,
+      "deathYear": 1966,
       "lifeDatesCertainty": "confirmed",
       "authorizedName": "Lelièvre, Léo",
-      "authorizedNameSource": "GND",
+      "authorizedNameSource": "LCNAF",
       "sourceIds": [
         "SRC0058",
         "SRC0060",
-        "SRC0065"
+        "SRC0065",
+        "SRC0802",
+        "SRC0817",
+        "SRC0818"
+      ],
+      "nameVariantIds": [
+        "PNV0068"
       ]
     },
     {

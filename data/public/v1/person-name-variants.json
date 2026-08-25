@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 62,
+  "count": 63,
   "records": [
     {
       "id": "PNV0001",
@@ -1549,6 +1549,22 @@
       ],
       "sourceIds": [
         "SRC0754"
+      ]
+    },
+    {
+      "id": "PNV0068",
+      "variantName": "Léo Lelièvre fils",
+      "variantType": "credit_name",
+      "identityScope": "single_person",
+      "evidenceContext": "authority_record",
+      "attestedWording": "Léo Lelièvre fils",
+      "certainty": "confirmed",
+      "publicNote": "Distinguishing form printed on Casino de Paris covers to separate him from his father, the chansonnier Léo Lelièvre (1872-1956).",
+      "personIds": [
+        "P051"
+      ],
+      "sourceIds": [
+        "SRC0817"
       ]
     }
   ]
