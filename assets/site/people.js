@@ -1,11 +1,13 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=13984c0ef5";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=21302a48d4";
 import {
+  compareText,
   debounce,
   escapeHtml,
   humanize,
   indexById,
   loadTables,
   mountSiteChrome,
+  nameKey,
   normalizeSearch,
   PERIOD_ORDER,
   periodBadge,
@@ -17,7 +19,7 @@ import {
   renderLoading,
   responsiveImage,
   typeBadge,
-} from "./core.js?v=13984c0ef5";
+} from "./core.js?v=21302a48d4";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 mountSiteChrome("people");
@@ -169,10 +171,10 @@ try {
     ));
 
     filtered.sort((a, b) => {
-      const byName = String(a.sortName || a.displayName).localeCompare(String(b.sortName || b.displayName), "pl");
+      const byName = compareText(nameKey(a), nameKey(b));
       if (controls.sort.value === "name") return byName;
       if (controls.sort.value === "role") {
-        return String(a.primaryRole || "").localeCompare(String(b.primaryRole || "")) || byName;
+        return compareText(a.primaryRole, b.primaryRole) || byName;
       }
       return b._works - a._works || byName;
     });

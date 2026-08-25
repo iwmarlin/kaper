@@ -299,6 +299,30 @@ export function normalizeSearch(value = "") {
     .toLowerCase();
 }
 
+// One ordering for the whole archive. The material is German, French, Polish
+// and English at once, so browsing lists must not each fall back to a
+// different collation: names and titles are compared with the same rules, and
+// punctuation — the apostrophes, commas and guillemets that open many of these
+// titles — is ignored rather than allowed to decide the order.
+const TEXT_COLLATOR = new Intl.Collator("pl", {
+  numeric: true,
+  ignorePunctuation: true,
+});
+
+export function compareText(left, right) {
+  return TEXT_COLLATOR.compare(String(left ?? ""), String(right ?? ""));
+}
+
+/** Filing title: the sort form when one is recorded, the display title otherwise. */
+export function sortKey(record) {
+  return String(record?.sortTitle || record?.title || "");
+}
+
+/** Filing name: the inverted form when one is recorded, the display name otherwise. */
+export function nameKey(record) {
+  return String(record?.sortName || record?.displayName || "");
+}
+
 export function debounce(callback, delay = 120) {
   let timer;
   return (...args) => {

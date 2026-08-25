@@ -1,5 +1,6 @@
 import {
   certaintyBadge,
+  compareText,
   debounce,
   escapeHtml,
   humanize,
@@ -17,8 +18,9 @@ import {
   renderLoading,
   resolveIds,
   scopeBadge,
+  sortKey,
   typeBadge,
-} from "./core.js?v=13984c0ef5";
+} from "./core.js?v=21302a48d4";
 
 mountSiteChrome("works");
 
@@ -116,9 +118,10 @@ try {
     ));
 
     filtered.sort((a, b) => {
-      if (controls.sort.value === "title") return String(a.sortTitle || a.title).localeCompare(String(b.sortTitle || b.title), "en");
+      const byTitle = compareText(sortKey(a), sortKey(b));
+      if (controls.sort.value === "title") return byTitle;
       const yearDifference = Number(a.year || 9999) - Number(b.year || 9999);
-      return controls.sort.value === "year-desc" ? -yearDifference : yearDifference || String(a.title).localeCompare(String(b.title));
+      return controls.sort.value === "year-desc" ? -yearDifference || byTitle : yearDifference || byTitle;
     });
 
     const shown = filtered.slice(0, showingAll ? filtered.length : visibleCount);
