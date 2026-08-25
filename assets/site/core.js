@@ -423,10 +423,29 @@ export const PERSON_FUNCTIONS = Object.freeze({
       "arranger",
       "music_contributor_role_unresolved",
     ]),
+    described: Object.freeze([
+      "composer",
+      "lyricist",
+      "arranger",
+      "poet",
+      "satirist",
+      "screenwriter",
+      "writer",
+    ]),
   }),
   performers: Object.freeze({
     label: "Performers",
     roles: Object.freeze(["performer", "conductor", "actor"]),
+    described: Object.freeze([
+      "performer",
+      "singer",
+      "pianist",
+      "violinist",
+      "conductor",
+      "bandleader",
+      "actor",
+      "comedian",
+    ]),
   }),
   film: Object.freeze({
     label: "Film production",
@@ -437,8 +456,20 @@ export const PERSON_FUNCTIONS = Object.freeze({
       "associate_producer",
       "dialogue_director",
     ]),
+    described: Object.freeze([
+      "film director",
+      "producer",
+      "studio executive",
+      "studio founder",
+      "animator",
+      "talent agent",
+    ]),
   }),
-  documented: Object.freeze({ label: "Documented without credits", roles: Object.freeze([]) }),
+  documented: Object.freeze({
+    label: "Documented without credits",
+    roles: Object.freeze([]),
+    described: Object.freeze([]),
+  }),
 });
 
 export const PERSON_FUNCTION_ORDER = Object.freeze(Object.keys(PERSON_FUNCTIONS));
@@ -448,21 +479,45 @@ const FUNCTION_BY_ROLE = new Map(
     family.roles.map((role) => [role, key])),
 );
 
+const FUNCTION_BY_DESCRIBED_ROLE = new Map(
+  Object.entries(PERSON_FUNCTIONS).flatMap(([key, family]) =>
+    family.described.map((role) => [role, key])),
+);
+
 export function functionLabel(key) {
   return PERSON_FUNCTIONS[key]?.label || humanize(key);
 }
 
-/** The families a person is credited in, in a stable order. */
+/**
+ * The families a person belongs to, in a stable order.
+ *
+ * Credits come first, because they are what the sources prove. Someone the
+ * archive holds only through a dated event still has a place: a pianist who
+ * played at the school concert, a producer Kaper worked under, are filed by
+ * the role their record states. Only a person with neither — Kaper's mother,
+ * say — falls to the residual family, which exists so that no filter hides
+ * anybody.
+ */
 export function personFunctions(person, contributionsById = new Map()) {
-  const found = new Set();
+  const credited = new Set();
   for (const contributionId of getIds(person, "contributionIds")) {
     const contribution = contributionsById.get(contributionId);
     if (!contribution) continue;
     const family = FUNCTION_BY_ROLE.get(contribution.role);
-    if (family) found.add(family);
+    if (family) credited.add(family);
   }
-  if (!found.size) found.add("documented");
-  return PERSON_FUNCTION_ORDER.filter((key) => found.has(key));
+  if (credited.size) return PERSON_FUNCTION_ORDER.filter((key) => credited.has(key));
+
+  const described = new Set();
+  const roles = person?.roles?.length
+    ? person.roles
+    : [person?.primaryRole].filter(Boolean);
+  for (const role of roles) {
+    const family = FUNCTION_BY_DESCRIBED_ROLE.get(role);
+    if (family) described.add(family);
+  }
+  if (!described.size) described.add("documented");
+  return PERSON_FUNCTION_ORDER.filter((key) => described.has(key));
 }
 
 export function debounce(callback, delay = 120) {

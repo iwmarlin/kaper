@@ -124,6 +124,8 @@ class PersonFunctionFacetTests(unittest.TestCase):
             counts,
             unplaced,
             order: PERSON_FUNCTION_ORDER,
+            performersFamily: people.filter((person) => personFunctions(person, contributionsById).includes("performers")).map((person) => person.id),
+            filmFamily: people.filter((person) => personFunctions(person, contributionsById).includes("film")).map((person) => person.id),
             pseudonym: hits("Chwast"),
             printedName: hits("Fred Lustig"),
             recordingName: hits("Leo Moll"),
@@ -133,23 +135,29 @@ class PersonFunctionFacetTests(unittest.TestCase):
     def test_every_person_lands_in_a_family(self) -> None:
         self.assertEqual(self.payload["unplaced"], [])
 
-    def test_the_families_are_large_enough_to_filter_by(self) -> None:
+    def test_the_working_families_are_large_enough_to_filter_by(self) -> None:
         counts = self.payload["counts"]
         self.assertEqual(sorted(counts), sorted(self.payload["order"]))
-        for family, size in counts.items():
+        for family in ("creators", "performers", "film"):
             with self.subTest(family=family):
-                self.assertGreater(size, 1)
+                self.assertGreater(counts[family], 10)
 
-    def test_people_known_only_from_events_keep_a_family_of_their_own(self) -> None:
+    def test_people_without_credits_are_filed_by_the_role_they_are_given(self) -> None:
+        """A pianist known from one concert notice is still a performer.
+
+        Only someone whose record states no working role at all — Kaper's
+        mother, documented as family — falls to the residual family, which
+        exists so that no filter hides anybody.
+        """
         without_credits = [
-            person["id"]
+            person
             for person in records("people.json")
             if not person.get("contributionIds")
         ]
-        self.assertEqual(
-            self.payload["counts"]["documented"], len(without_credits)
-        )
         self.assertGreater(len(without_credits), 0)
+        self.assertEqual(self.payload["counts"]["documented"], 1)
+        self.assertIn("P131", self.payload["performersFamily"])
+        self.assertIn("P161", self.payload["filmFamily"])
 
     def test_a_person_is_findable_under_the_names_they_worked_with(self) -> None:
         self.assertIn("P009", self.payload["pseudonym"])
