@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 143,
+  "count": 145,
   "records": [
     {
       "id": "ORG001",
@@ -4443,6 +4443,54 @@
         "CON-S112-LAB-ORG151",
         "CON-S114-LAB-ORG151",
         "CON-S115-LAB-ORG151"
+      ]
+    },
+    {
+      "id": "ORG152",
+      "displayName": "Ultraphon",
+      "authorizedName": "Ultraphon (Firm)",
+      "types": [
+        "record_label"
+      ],
+      "city": [
+        "Berlin"
+      ],
+      "country": "Germany",
+      "slug": "ultraphon",
+      "nameVariants": "Ultraphon; Küchenmeister’s Internationale Ultraphoon Maatschappij",
+      "authorizedNameSource": "LCNAF",
+      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no2024052021",
+      "publicNote": "Recording label of the Küchenmeister group, issued jointly from Amsterdam and Berlin.",
+      "sourceIds": [
+        "SRC0829"
+      ],
+      "workIds": [
+        "W-S016"
+      ],
+      "contributionIds": [
+        "CON-S016-LAB-ORG152"
+      ]
+    },
+    {
+      "id": "ORG153",
+      "displayName": "Alfred Beres mit seinem Orchester",
+      "authorizedName": "Alfred Beres mit seinem Orchester",
+      "types": [
+        "ensemble",
+        "dance orchestra"
+      ],
+      "slug": "alfred-beres-mit-seinem-orchester",
+      "nameVariants": "Alfred Beres mit Orchester",
+      "authorizedNameSource": "local heading",
+      "publicNote": "Dance orchestra of the conductor Alfred Beres, who is established in the Library of Congress name file; the band carries no heading of its own, so the form printed on the label is used.",
+      "sourceIds": [
+        "SRC0829"
+      ],
+      "workIds": [
+        "W-S016"
+      ],
+      "contributionIds": [
+        "CON-S016-P-ORG153"
       ]
     }
   ]

@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 1266,
+  "count": 1268,
   "records": [
     {
       "id": "CON-F001-C-P009",
@@ -22544,6 +22544,40 @@
       ],
       "sourceIds": [
         "SRC0802"
+      ]
+    },
+    {
+      "id": "CON-S016-LAB-ORG152",
+      "role": "record_label",
+      "nameAsPrinted": "Ultraphon",
+      "evidenceContext": "discography",
+      "sortOrder": 60,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S016"
+      ],
+      "organizationIds": [
+        "ORG152"
+      ],
+      "sourceIds": [
+        "SRC0829"
+      ]
+    },
+    {
+      "id": "CON-S016-P-ORG153",
+      "role": "performer",
+      "nameAsPrinted": "Alfred Beres mit Orchester",
+      "evidenceContext": "discography",
+      "sortOrder": 50,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S016"
+      ],
+      "organizationIds": [
+        "ORG153"
+      ],
+      "sourceIds": [
+        "SRC0829"
       ]
     }
   ]
