@@ -1,4 +1,4 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=40132acd96";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=13984c0ef5";
 import {
   debounce,
   escapeHtml,
@@ -24,7 +24,7 @@ import {
   resolveIds,
   safeExternalUrl,
   typeBadge,
-} from "./core.js?v=40132acd96";
+} from "./core.js?v=13984c0ef5";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 mountSiteChrome("media");
@@ -101,7 +101,15 @@ function curatedOrder(items) {
 try {
   const { media, sources } = await loadTables(["media", "sources"]);
   const sourcesById = indexById(sources);
-  addOptions(controls.category, media.map((item) => item.category), (value) => CATEGORY_LABELS[value] || humanize(value));
+  const categoryCounts = new Map();
+  for (const item of media) {
+    if (item.category) categoryCounts.set(item.category, (categoryCounts.get(item.category) || 0) + 1);
+  }
+  addOptions(
+    controls.category,
+    media.map((item) => item.category),
+    (value) => `${CATEGORY_LABELS[value] || humanize(value)} (${categoryCounts.get(value) || 0})`,
+  );
   const availablePeriods = new Set(media.flatMap(periodValues));
   addOptions(controls.period, PERIOD_ORDER.filter((value) => availablePeriods.has(value)), periodLabel, true);
   const indexed = media.map((item) => ({
@@ -181,8 +189,17 @@ try {
   }
 
   const resetAndRender = () => { visible = PAGE_SIZE; showingAll = false; render(); };
-  controls.search.addEventListener("input", debounce(resetAndRender));
-  for (const control of [controls.category, controls.period, controls.rights, controls.scope]) control.addEventListener("change", resetAndRender);
+  const startDiscovery = () => {
+    // The curated selection is the landing view, not a hidden limit on a
+    // reader's query. Once a reader searches or chooses a facet, search the
+    // complete public media set and reflect that change in the visible scope
+    // control. The reader can still select Curated selection afterwards.
+    if (controls.scope.value === "selected") controls.scope.value = "all";
+    resetAndRender();
+  };
+  controls.search.addEventListener("input", debounce(startDiscovery));
+  for (const control of [controls.category, controls.period, controls.rights]) control.addEventListener("change", startDiscovery);
+  controls.scope.addEventListener("change", resetAndRender);
   document.querySelector("#media-reset").addEventListener("click", () => {
     controls.search.value = "";
     controls.category.value = "";
