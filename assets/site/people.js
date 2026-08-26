@@ -1,4 +1,4 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=568d70a02f";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=7e9c13da85";
 import {
   compareText,
   debounce,
@@ -23,7 +23,7 @@ import {
   renderLoading,
   responsiveImage,
   typeBadge,
-} from "./core.js?v=568d70a02f";
+} from "./core.js?v=7e9c13da85";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 mountSiteChrome("people");
@@ -270,7 +270,9 @@ try {
             <h2><a href="${recordUrl("person", person.id)}">${escapeHtml(person.displayName)}</a></h2>
             <div class="meta-row" aria-label="Documented roles">${person._roles.map(typeBadge).join("")}</div>
           </div>
-          <div class="person-row__period" aria-label="Documented periods">${periodBadge(person._periods)}</div>
+          ${person._periods.length
+            ? `<div class="person-row__period" aria-label="Documented periods">${periodBadge(person._periods)}</div>`
+            : ""}
         </article>`;
     }).join("");
     syncQuery();

@@ -1196,7 +1196,7 @@ main {
 .person-row {
   position: relative;
   display: grid;
-  grid-template-columns: 3rem minmax(0, 1fr) 8rem;
+  grid-template-columns: 3rem minmax(0, 1fr) 13rem;
   align-items: center;
   gap: 1rem;
   padding: 0.8rem 1rem;
@@ -1297,8 +1297,9 @@ main {
   color: var(--ink-soft);
   font-size: 0.82rem;
   display: flex;
-  flex-wrap: wrap;
-  align-content: center;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: flex-end;
   gap: 0.22rem;
 }
 
@@ -1307,6 +1308,7 @@ main {
   font-size: 0.58rem;
   font-weight: 680;
   letter-spacing: 0.035em;
+  white-space: nowrap;
 }
 
 .load-more {
@@ -3529,7 +3531,14 @@ html:not(.js) .source-group__head {
   }
 
   .person-row__period {
-    display: none;
+    grid-column: 2;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-top: 0.1rem;
+  }
+
+  .person-row__period .badge {
+    font-size: 0.62rem;
   }
 
   .map-toolbar {
