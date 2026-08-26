@@ -1,4 +1,4 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=7e00136947";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=e9d6115c0e";
 import {
   compareText,
   debounce,
@@ -23,7 +23,7 @@ import {
   renderLoading,
   responsiveImage,
   typeBadge,
-} from "./core.js?v=7e00136947";
+} from "./core.js?v=e9d6115c0e";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 mountSiteChrome("people");
@@ -40,6 +40,15 @@ const loadMore = document.querySelector("#load-more");
 const showAll = document.querySelector("#show-all");
 const resetButton = document.querySelector("#reset-filters");
 const totalLabelTarget = document.querySelector("#person-total-label");
+const filterToggle = document.querySelector("#person-filter-toggle");
+const advancedFilters = document.querySelector("#person-filter-options");
+const activeFilters = document.querySelector("#person-active-filters");
+const filterCount = document.querySelector("#person-filter-count");
+const filterOptions = [
+  { key: "role", label: "Function", defaultValue: "" },
+  { key: "period", label: "Period", defaultValue: "" },
+  { key: "sort", label: "Sort", defaultValue: "works-desc" },
+];
 const PAGE_SIZE = 48;
 let visibleCount = PAGE_SIZE;
 let showingAll = false;
@@ -71,6 +80,31 @@ function loadQuery() {
   for (const [key, control] of Object.entries(controls)) {
     if (params.has(key)) control.value = params.get(key);
   }
+}
+
+function selectedOptionLabel(control) {
+  return control.options[control.selectedIndex]?.textContent?.trim() || control.value;
+}
+
+function renderFilterChrome() {
+  const selected = filterOptions.filter(({ key, defaultValue }) => controls[key].value !== defaultValue);
+  const hasSearch = Boolean(controls.search.value.trim());
+
+  filterCount.textContent = String(selected.length);
+  filterCount.hidden = selected.length === 0;
+  filterToggle.setAttribute(
+    "aria-label",
+    selected.length ? `Filters and sort, ${selected.length} active` : "Filters and sort",
+  );
+  resetButton.hidden = !hasSearch && selected.length === 0;
+
+  activeFilters.hidden = selected.length === 0;
+  activeFilters.innerHTML = selected.map(({ key, label }) => `
+    <button class="active-filter" type="button" data-filter-key="${escapeHtml(key)}"
+      aria-label="Remove ${escapeHtml(label)} filter: ${escapeHtml(selectedOptionLabel(controls[key]))}">
+      <span>${escapeHtml(label)}: ${escapeHtml(selectedOptionLabel(controls[key]))}</span>
+      <span class="active-filter__remove" aria-hidden="true">×</span>
+    </button>`).join("");
 }
 
 function initials(name = "") {
@@ -192,6 +226,7 @@ try {
   }
 
   function render() {
+    renderFilterChrome();
     const query = normalizeSearch(controls.search.value.trim());
     filtered = indexed.filter((person) => (
       (!query || person._search.includes(query))
@@ -250,6 +285,19 @@ try {
   for (const control of [controls.role, controls.period, controls.sort]) {
     control.addEventListener("change", resetAndRender);
   }
+  filterToggle.addEventListener("click", () => {
+    const open = !advancedFilters.classList.contains("filters__advanced--open");
+    advancedFilters.classList.toggle("filters__advanced--open", open);
+    filterToggle.setAttribute("aria-expanded", String(open));
+  });
+  activeFilters.addEventListener("click", (event) => {
+    const chip = event.target.closest("[data-filter-key]");
+    if (!chip || !activeFilters.contains(chip)) return;
+    const option = filterOptions.find(({ key }) => key === chip.dataset.filterKey);
+    if (!option) return;
+    controls[option.key].value = option.defaultValue;
+    resetAndRender();
+  });
   function revealFrom(firstNewIndex) {
     const firstNewRecord = target.children[firstNewIndex];
     if (firstNewRecord) {
@@ -278,6 +326,8 @@ try {
     controls.role.value = "";
     controls.period.value = "";
     controls.sort.value = "works-desc";
+    advancedFilters.classList.remove("filters__advanced--open");
+    filterToggle.setAttribute("aria-expanded", "false");
     resetAndRender();
   });
   render();

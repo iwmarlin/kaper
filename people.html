@@ -12,7 +12,7 @@
   <link rel="canonical" href="https://iwmarlin.github.io/kaper/people.html">
   <link rel="preload" href="assets/fonts/kaper-sans.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/kaper-serif.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/site/styles.css?v=7e00136947">
+  <link rel="stylesheet" href="assets/site/styles.css?v=e9d6115c0e">
   <title>People — Bronisław Kaper, 1902–1939</title>
   <meta property="og:image" content="https://iwmarlin.github.io/kaper/assets/images/portraits/kaper-mature.jpg">
   <meta property="og:image:alt" content="Bronisław Kaper">
@@ -37,28 +37,35 @@
       </div>
     </section>
 
-    <section class="filters" aria-label="People filters">
-      <div class="shell filters__grid">
-        <div class="field">
+    <section class="filters filters--catalogue" aria-label="People filters">
+      <div class="shell filters__shell filters__shell--people">
+        <div class="field filters__search">
           <label for="person-search">Search name, alias or role</label>
           <input id="person-search" type="search" placeholder="Try Jurmann, Chwast, conductor…" autocomplete="off">
         </div>
-        <div class="field">
-          <label for="person-role">Documented as</label>
-          <select id="person-role"><option value="">Any documented function</option></select>
+        <button class="filters__toggle" id="person-filter-toggle" type="button" aria-expanded="false" aria-controls="person-filter-options">
+          <span>Filters</span>
+          <span class="filters__toggle-count" id="person-filter-count" hidden>0</span>
+        </button>
+        <div class="filters__advanced filters__advanced--people" id="person-filter-options">
+          <div class="field">
+            <label for="person-role">Documented as</label>
+            <select id="person-role"><option value="">Any documented function</option></select>
+          </div>
+          <div class="field">
+            <label for="person-period">Period</label>
+            <select id="person-period"><option value="">All periods</option></select>
+          </div>
+          <div class="field">
+            <label for="person-sort">Sort</label>
+            <select id="person-sort">
+              <option value="works-desc">Most documented first</option>
+              <option value="name">Name</option>
+              <option value="role">Documented function</option>
+            </select>
+          </div>
         </div>
-        <div class="field">
-          <label for="person-period">Period</label>
-          <select id="person-period"><option value="">All periods</option></select>
-        </div>
-        <div class="field">
-          <label for="person-sort">Sort</label>
-          <select id="person-sort">
-            <option value="works-desc">Most documented first</option>
-            <option value="name">Name</option>
-            <option value="role">Documented function</option>
-          </select>
-        </div>
+        <div class="active-filters" id="person-active-filters" aria-label="Active people options" aria-live="polite" hidden></div>
       </div>
     </section>
 
@@ -66,7 +73,7 @@
       <div class="shell">
         <div class="results-bar">
           <p id="person-results-count" aria-live="polite">Loading index…</p>
-          <button class="button button--ghost button--small" id="reset-filters" type="button">Reset filters</button>
+          <button class="button button--ghost button--small" id="reset-filters" type="button" hidden>Reset filters</button>
         </div>
         <div id="person-results" class="people-list"></div>
         <div class="load-more"><button class="button button--ghost" id="load-more" type="button" hidden>Load more</button><button class="button button--ghost button--small" id="show-all" type="button" hidden>Show all</button></div>
@@ -74,6 +81,6 @@
     </section>
   </main>
   <footer class="site-footer" data-site-footer></footer>
-  <script type="module" src="assets/site/people.js?v=7e00136947"></script>
+  <script type="module" src="assets/site/people.js?v=e9d6115c0e"></script>
 </body>
 </html>

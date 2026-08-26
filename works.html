@@ -12,7 +12,7 @@
   <link rel="canonical" href="https://iwmarlin.github.io/kaper/works.html">
   <link rel="preload" href="assets/fonts/kaper-sans.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/kaper-serif.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/site/styles.css?v=7e00136947">
+  <link rel="stylesheet" href="assets/site/styles.css?v=e9d6115c0e">
   <title>Works — Bronisław Kaper, 1902–1939</title>
   <meta property="og:image" content="https://iwmarlin.github.io/kaper/assets/images/portraits/kaper-mature.jpg">
   <meta property="og:image:alt" content="Bronisław Kaper">
@@ -36,32 +36,39 @@
       </div>
     </section>
 
-    <section class="filters" aria-label="Catalogue filters">
-      <div class="shell filters__grid filters__grid--works">
-        <div class="field">
+    <section class="filters filters--catalogue" aria-label="Catalogue filters">
+      <div class="shell filters__shell filters__shell--works">
+        <div class="field filters__search">
           <label for="work-search">Search title or contributor</label>
           <input id="work-search" type="search" placeholder="Try Alraune, Roubier, tango…" autocomplete="off">
         </div>
-        <div class="field">
-          <label for="work-type">Work type</label>
-          <select id="work-type"><option value="">All types</option></select>
+        <button class="filters__toggle" id="work-filter-toggle" type="button" aria-expanded="false" aria-controls="work-filter-options">
+          <span>Filters</span>
+          <span class="filters__toggle-count" id="work-filter-count" hidden>0</span>
+        </button>
+        <div class="filters__advanced filters__advanced--works" id="work-filter-options">
+          <div class="field">
+            <label for="work-type">Work type</label>
+            <select id="work-type"><option value="">All types</option></select>
+          </div>
+          <div class="field">
+            <label for="work-period">Period</label>
+            <select id="work-period"><option value="">All periods</option></select>
+          </div>
+          <div class="field">
+            <label for="work-certainty">Certainty</label>
+            <select id="work-certainty"><option value="">All levels</option></select>
+          </div>
+          <div class="field">
+            <label for="work-sort">Sort</label>
+            <select id="work-sort">
+              <option value="year-asc">Year, earliest first</option>
+              <option value="year-desc">Year, latest first</option>
+              <option value="title">Title</option>
+            </select>
+          </div>
         </div>
-        <div class="field">
-          <label for="work-period">Period</label>
-          <select id="work-period"><option value="">All periods</option></select>
-        </div>
-        <div class="field">
-          <label for="work-certainty">Certainty</label>
-          <select id="work-certainty"><option value="">All levels</option></select>
-        </div>
-        <div class="field">
-          <label for="work-sort">Sort</label>
-          <select id="work-sort">
-            <option value="year-asc">Year, earliest first</option>
-            <option value="year-desc">Year, latest first</option>
-            <option value="title">Title</option>
-          </select>
-        </div>
+        <div class="active-filters" id="work-active-filters" aria-label="Active catalogue options" aria-live="polite" hidden></div>
       </div>
     </section>
 
@@ -69,7 +76,7 @@
       <div class="shell">
         <div class="results-bar">
           <p id="work-results-count" aria-live="polite">Loading catalogue…</p>
-          <button class="button button--ghost button--small" id="reset-filters" type="button">Reset filters</button>
+          <button class="button button--ghost button--small" id="reset-filters" type="button" hidden>Reset filters</button>
         </div>
         <div id="work-results" class="work-list"></div>
         <div class="load-more"><button class="button button--ghost" id="load-more" type="button" hidden>Load more</button><button class="button button--ghost button--small" id="show-all" type="button" hidden>Show all</button></div>
@@ -77,6 +84,6 @@
     </section>
   </main>
   <footer class="site-footer" data-site-footer></footer>
-  <script type="module" src="assets/site/works.js?v=7e00136947"></script>
+  <script type="module" src="assets/site/works.js?v=e9d6115c0e"></script>
 </body>
 </html>

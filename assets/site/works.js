@@ -20,7 +20,7 @@ import {
   sortKey,
   typeBadge,
   workSearchText,
-} from "./core.js?v=7e00136947";
+} from "./core.js?v=e9d6115c0e";
 
 mountSiteChrome("works");
 
@@ -36,6 +36,16 @@ const countTarget = document.querySelector("#work-results-count");
 const loadMore = document.querySelector("#load-more");
 const showAll = document.querySelector("#show-all");
 const resetButton = document.querySelector("#reset-filters");
+const filterToggle = document.querySelector("#work-filter-toggle");
+const advancedFilters = document.querySelector("#work-filter-options");
+const activeFilters = document.querySelector("#work-active-filters");
+const filterCount = document.querySelector("#work-filter-count");
+const filterOptions = [
+  { key: "type", label: "Type", defaultValue: "" },
+  { key: "period", label: "Period", defaultValue: "" },
+  { key: "certainty", label: "Certainty", defaultValue: "" },
+  { key: "sort", label: "Sort", defaultValue: "year-asc" },
+];
 const PAGE_SIZE = 36;
 let visibleCount = PAGE_SIZE;
 let showingAll = false;
@@ -70,6 +80,31 @@ function loadQuery() {
   }
 }
 
+function selectedOptionLabel(control) {
+  return control.options[control.selectedIndex]?.textContent?.trim() || control.value;
+}
+
+function renderFilterChrome() {
+  const selected = filterOptions.filter(({ key, defaultValue }) => controls[key].value !== defaultValue);
+  const hasSearch = Boolean(controls.search.value.trim());
+
+  filterCount.textContent = String(selected.length);
+  filterCount.hidden = selected.length === 0;
+  filterToggle.setAttribute(
+    "aria-label",
+    selected.length ? `Filters and sort, ${selected.length} active` : "Filters and sort",
+  );
+  resetButton.hidden = !hasSearch && selected.length === 0;
+
+  activeFilters.hidden = selected.length === 0;
+  activeFilters.innerHTML = selected.map(({ key, label }) => `
+    <button class="active-filter" type="button" data-filter-key="${escapeHtml(key)}"
+      aria-label="Remove ${escapeHtml(label)} filter: ${escapeHtml(selectedOptionLabel(controls[key]))}">
+      <span>${escapeHtml(label)}: ${escapeHtml(selectedOptionLabel(controls[key]))}</span>
+      <span class="active-filter__remove" aria-hidden="true">×</span>
+    </button>`).join("");
+}
+
 try {
   const { works, people, films, songs, otherWorks, contributions, titleVariants } = await loadTables([
     "works",
@@ -99,6 +134,7 @@ try {
   const indexedWorks = works.map((work) => ({ ...work, _search: workSearchText(work, searchLookup) }));
 
   function render() {
+    renderFilterChrome();
     const query = normalizeSearch(controls.search.value.trim());
     filtered = indexedWorks.filter((work) => (
       (!query || work._search.includes(query))
@@ -159,6 +195,19 @@ try {
   for (const control of [controls.type, controls.period, controls.certainty, controls.sort]) {
     control.addEventListener("change", resetAndRender);
   }
+  filterToggle.addEventListener("click", () => {
+    const open = !advancedFilters.classList.contains("filters__advanced--open");
+    advancedFilters.classList.toggle("filters__advanced--open", open);
+    filterToggle.setAttribute("aria-expanded", String(open));
+  });
+  activeFilters.addEventListener("click", (event) => {
+    const chip = event.target.closest("[data-filter-key]");
+    if (!chip || !activeFilters.contains(chip)) return;
+    const option = filterOptions.find(({ key }) => key === chip.dataset.filterKey);
+    if (!option) return;
+    controls[option.key].value = option.defaultValue;
+    resetAndRender();
+  });
   function revealFrom(firstNewIndex) {
     const firstNewRecord = target.children[firstNewIndex];
     if (firstNewRecord) {
@@ -188,6 +237,8 @@ try {
     controls.period.value = "";
     controls.certainty.value = "";
     controls.sort.value = "year-asc";
+    advancedFilters.classList.remove("filters__advanced--open");
+    filterToggle.setAttribute("aria-expanded", "false");
     resetAndRender();
   });
   render();
