@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 65,
+  "count": 66,
   "records": [
     {
       "id": "PNV0001",
@@ -1548,7 +1548,8 @@
         "W-S057"
       ],
       "sourceIds": [
-        "SRC0754"
+        "SRC0754",
+        "SRC0849"
       ]
     },
     {
@@ -1598,6 +1599,22 @@
       "sourceIds": [
         "SRC0847",
         "SRC0848"
+      ]
+    },
+    {
+      "id": "PNV0071",
+      "variantName": "Ludwig Bernhuber",
+      "variantType": "pseudonym",
+      "identityScope": "single_person",
+      "evidenceContext": "secondary_literature",
+      "attestedWording": "Ludwig Bernhuber",
+      "certainty": "confirmed",
+      "publicNote": "Second recording pseudonym of Luigi Bernauer, recorded in the literature beside Fred Lustig.",
+      "personIds": [
+        "P174"
+      ],
+      "sourceIds": [
+        "SRC0849"
       ]
     }
   ]
