@@ -1,4 +1,4 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=7e9c13da85";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=0a1cb20204";
 import {
   compareText,
   debounce,
@@ -23,7 +23,7 @@ import {
   renderLoading,
   responsiveImage,
   typeBadge,
-} from "./core.js?v=7e9c13da85";
+} from "./core.js?v=0a1cb20204";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 mountSiteChrome("people");
@@ -47,7 +47,7 @@ const filterCount = document.querySelector("#person-filter-count");
 const filterOptions = [
   { key: "role", label: "Function", defaultValue: "" },
   { key: "period", label: "Period", defaultValue: "" },
-  { key: "sort", label: "Sort", defaultValue: "works-desc" },
+  { key: "sort", label: "Sort", defaultValue: "name" },
 ];
 const PAGE_SIZE = 48;
 let visibleCount = PAGE_SIZE;
@@ -69,7 +69,7 @@ function addOptions(select, values, labeler = humanize, preserveOrder = false) {
 function syncQuery() {
   const params = new URLSearchParams();
   for (const [key, control] of Object.entries(controls)) {
-    const defaultValue = key === "sort" ? "works-desc" : "";
+    const defaultValue = key === "sort" ? "name" : "";
     if (control.value && control.value !== defaultValue) params.set(key, control.value);
   }
   history.replaceState(null, "", params.toString() ? `?${params}` : location.pathname);
@@ -236,12 +236,15 @@ try {
 
     filtered.sort((a, b) => {
       const byName = compareText(nameKey(a), nameKey(b));
-      if (controls.sort.value === "name") return byName;
+      // The counted quantity is the number of works a person is linked to,
+      // which is what the option now says; sources, media and dated events are
+      // not weighed, so the index files by name unless asked otherwise.
+      if (controls.sort.value === "works-desc") return b._works - a._works || byName;
       if (controls.sort.value === "role") {
         const rank = (person) => PERSON_FUNCTION_ORDER.indexOf(person._functions[0] || "documented");
         return rank(a) - rank(b) || byName;
       }
-      return b._works - a._works || byName;
+      return byName;
     });
 
     const shown = filtered.slice(0, showingAll ? filtered.length : visibleCount);
@@ -332,7 +335,7 @@ try {
     controls.search.value = "";
     controls.role.value = "";
     controls.period.value = "";
-    controls.sort.value = "works-desc";
+    controls.sort.value = "name";
     advancedFilters.classList.remove("filters__advanced--open");
     filterToggle.setAttribute("aria-expanded", "false");
     resetAndRender();
