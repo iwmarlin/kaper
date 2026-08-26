@@ -977,7 +977,7 @@ main {
 
 .filters__toggle {
   display: none;
-  min-height: 2.35rem;
+  min-height: 2.75rem;
   align-items: center;
   justify-content: center;
   gap: 0.42rem;
@@ -3407,6 +3407,17 @@ html:not(.js) .source-group__head {
 @media (max-width: 900px) {
   .filters--catalogue {
     position: static;
+  }
+
+  .active-filter {
+    min-height: 2.5rem;
+    padding: 0.4rem 0.5rem 0.4rem 0.75rem;
+    font-size: 0.76rem;
+  }
+
+  .active-filter__remove {
+    width: 1.25rem;
+    height: 1.25rem;
   }
 
   .filters__shell {

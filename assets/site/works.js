@@ -20,7 +20,7 @@ import {
   sortKey,
   typeBadge,
   workSearchText,
-} from "./core.js?v=e9d6115c0e";
+} from "./core.js?v=568d70a02f";
 
 mountSiteChrome("works");
 
@@ -207,6 +207,11 @@ try {
     if (!option) return;
     controls[option.key].value = option.defaultValue;
     resetAndRender();
+    // The chip has just been removed from the document, so focus would fall to
+    // the body. Return it to the control the reader was working with: the
+    // toggle when the panel is collapsed, otherwise the select itself.
+    const fallback = filterToggle.offsetParent ? filterToggle : controls[option.key];
+    fallback.focus({ preventScroll: true });
   });
   function revealFrom(firstNewIndex) {
     const firstNewRecord = target.children[firstNewIndex];
