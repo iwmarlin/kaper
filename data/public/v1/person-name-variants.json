@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 64,
+  "count": 65,
   "records": [
     {
       "id": "PNV0001",
@@ -1581,6 +1581,23 @@
       ],
       "sourceIds": [
         "SRC0821"
+      ]
+    },
+    {
+      "id": "PNV0070",
+      "variantName": "Helmuth Wolfes",
+      "variantType": "spelling_variant",
+      "identityScope": "single_person",
+      "evidenceContext": "authority_file",
+      "attestedWording": "Helmuth Wolfes",
+      "certainty": "confirmed",
+      "publicNote": "Form used in the United States and adopted as the heading by the Library of Congress, beside the German spelling under which he worked before the emigration.",
+      "personIds": [
+        "P148"
+      ],
+      "sourceIds": [
+        "SRC0847",
+        "SRC0848"
       ]
     }
   ]

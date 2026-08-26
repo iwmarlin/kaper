@@ -5229,16 +5229,18 @@
       "id": "P148",
       "displayName": "Helmut Wolfes",
       "sortName": "Wolfes, Helmut",
-      "authorizedName": "Wolfes, Helmut",
+      "authorizedName": "Wolfes, Helmuth",
       "slug": "helmut-wolfes",
       "primaryRole": "composer",
       "roles": [
         "composer",
         "conductor"
       ],
-      "authorityUrl": "VIAF: https://viaf.org/viaf/20457838\nGND: https://d-nb.info/gnd/117446882",
+      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n2009033210\nGND: https://d-nb.info/gnd/117446882\nVIAF: https://viaf.org/viaf/20457838",
       "sourceIds": [
-        "SRC0153"
+        "SRC0153",
+        "SRC0847",
+        "SRC0848"
       ],
       "contributionIds": [
         "CON-F021-MD-P148"
@@ -5248,7 +5250,11 @@
       ],
       "birthYear": 1901,
       "deathYear": 1971,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "authorizedNameSource": "LCNAF",
+      "nameVariantIds": [
+        "PNV0070"
+      ]
     },
     {
       "id": "P149",
@@ -6243,9 +6249,11 @@
       "birthYear": 1895,
       "deathYear": 1972,
       "lifeDatesCertainty": "confirmed",
-      "authorityUrl": "Wikidata: https://www.wikidata.org/wiki/Q5671934\nVIAF: https://viaf.org/viaf/61975239",
-      "primaryRole": "composer",
+      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n92081775\nWikidata: https://www.wikidata.org/wiki/Q5671934\nVIAF: https://viaf.org/viaf/61975239",
+      "primaryRole": "singer",
       "roles": [
+        "singer",
+        "actor",
         "composer"
       ],
       "workIds": [
@@ -6253,6 +6261,10 @@
       ],
       "contributionIds": [
         "CON-O019-C-P186"
+      ],
+      "authorizedNameSource": "LCNAF",
+      "sourceIds": [
+        "SRC0846"
       ]
     },
     {
