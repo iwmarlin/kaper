@@ -1,4 +1,4 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=3b5645e07c";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=3b206fc2b4";
 import {
   authorityLinkList,
   certaintyBadge,
@@ -28,7 +28,7 @@ import {
   sourceStatusLabel,
   typeBadge,
   updateMeta,
-} from "./core.js?v=3b5645e07c";
+} from "./core.js?v=3b206fc2b4";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 let target = null;
@@ -209,7 +209,9 @@ const SOURCE_TYPE_LABELS = {
   wikimedia_commons_file: "Wikimedia Commons files",
   wikimedia_article_page: "Wikipedia articles",
   image_or_photograph: "Images and photographs",
-  archival_photo: "Archival photographs",
+  // "archival_photo" and "archival_photograph" were two spellings of one kind,
+  // reconciled here rather than in the data until now. The thirteen records are
+  // on the longer form and the shorter one is gone.
   archival_photograph: "Archival photographs",
   archival_document: "Archival documents",
   digital_collection_item: "Digital collection items",
@@ -218,6 +220,23 @@ const SOURCE_TYPE_LABELS = {
   authority_record: "Authority records",
   web_page: "Web pages",
   book: "Books",
+  // Eleven types had no entry here, so their headings were made from the
+  // technical name: "Online Audio Source", in title case and the singular,
+  // standing beside "Recordings" and "Online video". The grouping is a real
+  // distinction — a catalogued disc heard on an upload is not the same kind of
+  // source as an upload with no disc behind it — and the mismatched headings
+  // made it look arbitrary.
+  online_audio_source: "Online audio",
+  visual_document: "Visual documents",
+  sound_recording_catalogue: "Sound recording catalogues",
+  sheet_music_catalogue: "Sheet music catalogues",
+  soundtrack_database: "Soundtrack databases",
+  secondary_literature: "Secondary literature",
+  periodical_article: "Periodical articles",
+  archival_digital_record: "Archival digital records",
+  archival_manuscript_holding: "Archival manuscript holdings",
+  web_article: "Web articles",
+  other: "Other sources",
 };
 
 // Sources carry dates in mixed shapes: "1933", "1936-04-21", "n.d.", and a few
