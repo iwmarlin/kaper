@@ -831,7 +831,7 @@
     {
       "id": "ORG029",
       "displayName": "Wiener Boheme Verlag",
-      "authorizedName": "Wiener Boheme Verlag",
+      "authorizedName": "Wiener Bohème Verlag",
       "types": [
         "publisher"
       ],
@@ -892,7 +892,9 @@
         "W-S082",
         "W-S185",
         "W-S217"
-      ]
+      ],
+      "authorityUrl": "GND: https://d-nb.info/gnd/1064328784\nVIAF: https://viaf.org/viaf/305221456",
+      "authorizedNameSource": "GND"
     },
     {
       "id": "ORG030",
@@ -965,12 +967,13 @@
         "SRC0476",
         "SRC0525",
         "SRC0526"
-      ]
+      ],
+      "authorizedNameSource": "local heading"
     },
     {
       "id": "ORG031",
       "displayName": "Edition Karl Brüll",
-      "authorizedName": "Edition Karl Brüll",
+      "authorizedName": "Edition Karl Brüll (Berliner Bohème-Verlag) (Berlin)",
       "types": [
         "publisher"
       ],
@@ -1009,7 +1012,9 @@
         "W-S182",
         "W-S207",
         "W-S211"
-      ]
+      ],
+      "authorityUrl": "GND: https://d-nb.info/gnd/107295706X\nVIAF: https://viaf.org/viaf/311832467",
+      "authorizedNameSource": "GND"
     },
     {
       "id": "ORG032",
@@ -1036,7 +1041,7 @@
     {
       "id": "ORG033",
       "displayName": "Alrobi Musikverlag",
-      "authorizedName": "Alrobi Musikverlag",
+      "authorizedName": "Alrobi-Musikverlag",
       "types": [
         "publisher"
       ],
@@ -1106,7 +1111,9 @@
         "W-S069",
         "W-S099",
         "W-S101"
-      ]
+      ],
+      "authorityUrl": "GND: https://d-nb.info/gnd/1314189921\nVIAF: https://viaf.org/viaf/311491280",
+      "authorizedNameSource": "GND"
     },
     {
       "id": "ORG034",
@@ -1248,12 +1255,13 @@
         "W-S056",
         "W-S085",
         "W-S086"
-      ]
+      ],
+      "authorizedNameSource": "local heading"
     },
     {
       "id": "ORG037",
       "displayName": "Drei-Masken Verlag",
-      "authorizedName": "Drei-Masken Verlag",
+      "authorizedName": "Drei Masken Verlag",
       "types": [
         "publisher"
       ],
@@ -1276,7 +1284,9 @@
         "W-S027",
         "W-S048",
         "W-S051"
-      ]
+      ],
+      "authorityUrl": "GND: https://d-nb.info/gnd/508928-1\nVIAF: https://viaf.org/viaf/128492642",
+      "authorizedNameSource": "GND"
     },
     {
       "id": "ORG038",
@@ -1307,7 +1317,8 @@
         "W-S083",
         "W-S092",
         "W-S094"
-      ]
+      ],
+      "authorizedNameSource": "local heading"
     },
     {
       "id": "ORG039",
@@ -1450,7 +1461,7 @@
     {
       "id": "ORG044",
       "displayName": "Beboton Verlag",
-      "authorizedName": "Beboton Verlag",
+      "authorizedName": "Beboton-Verlag (Berlin)",
       "types": [
         "publisher"
       ],
@@ -1470,7 +1481,9 @@
       "workIds": [
         "W-S072",
         "W-S080"
-      ]
+      ],
+      "authorityUrl": "GND: https://d-nb.info/gnd/1073076032\nVIAF: https://viaf.org/viaf/311348957",
+      "authorizedNameSource": "GND"
     },
     {
       "id": "ORG047",
@@ -1719,7 +1732,8 @@
         "SRC0775",
         "SRC0776",
         "SRC0789"
-      ]
+      ],
+      "authorizedNameSource": "local heading"
     },
     {
       "id": "ORG055",
@@ -3421,7 +3435,8 @@
       "contributionIds": [
         "CON-S074-PUB-ORG030",
         "CON-S075-PUB-ORG030"
-      ]
+      ],
+      "authorizedNameSource": "local heading"
     },
     {
       "id": "ORG114",
