@@ -1,4 +1,4 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=5a932851b5";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=1cc1111e1b";
 import {
   debounce,
   escapeHtml,
@@ -15,7 +15,7 @@ import {
   renderLoading,
   resolveIds,
   responsiveImage,
-} from "./core.js?v=5a932851b5";
+} from "./core.js?v=1cc1111e1b";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 mountSiteChrome("timeline");
