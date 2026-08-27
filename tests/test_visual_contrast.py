@@ -78,6 +78,29 @@ class PaletteContrastTests(unittest.TestCase):
                 )
 
 
+class TypeFloorTests(unittest.TestCase):
+    """The apparatus is the part of this archive that gets read closely — field
+    labels, badges, record identifiers, citation years. It was also the part set
+    smallest, down to 9.3px."""
+
+    FLOOR = 0.75
+
+    def test_no_type_is_set_below_twelve_pixels(self):
+        css = STYLES.read_text(encoding="utf-8")
+        offenders = sorted(
+            {float(size) for size in re.findall(r"font-size:\s*([\d.]+)rem", css) if float(size) < self.FLOOR}
+        )
+        self.assertEqual(offenders, [], "type is set below the readable floor")
+
+    def test_the_period_column_can_hold_what_it_is_given(self):
+        # One person in the archive carries all three periods. At the floor those
+        # three badges are wider than the column, so the column must wrap rather
+        # than clip them.
+        css = re.sub(r"/\*.*?\*/", "", STYLES.read_text(encoding="utf-8"), flags=re.DOTALL)
+        body = next(body for selector, body in rules(css) if selector == ".person-row__period")
+        self.assertIn("flex-wrap: wrap", body)
+
+
 class MapPeriodChannelTests(unittest.TestCase):
     """Precision is drawn in the marker's outline; the period had colour and
     nothing else, and terracotta against green is the pair that closes up under
