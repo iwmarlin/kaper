@@ -183,6 +183,22 @@ export function sourceStatusLabel(status) {
   return SOURCE_STATUS_LABELS[key] || humanize(status);
 }
 
+// Authority control is recorded as a stack of "SCHEME: url" lines. The person
+// card has parsed it since it was written; the organization card never did, so
+// twenty-one organizations carried complete LCNAF, GND, VIAF, ISNI and BnF
+// records that no reader could reach. One parser now serves both.
+export function authorityLinkList(value) {
+  return String(value || "")
+    .split(/\r?\n/)
+    .map((entry) => {
+      const match = entry.trim().match(/^([^:]+):\s*(https?:\/\/\S+)$/);
+      if (!match) return null;
+      const url = safeExternalUrl(match[2]);
+      return url ? { label: match[1], url } : null;
+    })
+    .filter(Boolean);
+}
+
 export function sourceReliabilityBadge(reliability) {
   if (String(reliability || "").toLowerCase().trim() !== "low") return "";
   return '<span class="badge badge--reliability badge--reliability-low" title="Cited for the record it documents; not treated as independent authority.">Low reliability</span>';

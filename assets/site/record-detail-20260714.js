@@ -1,5 +1,6 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=b15c8a3b72";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=44e7727561";
 import {
+  authorityLinkList,
   certaintyBadge,
   escapeHtml,
   formatDate,
@@ -27,7 +28,7 @@ import {
   sourceStatusLabel,
   typeBadge,
   updateMeta,
-} from "./core.js?v=b15c8a3b72";
+} from "./core.js?v=44e7727561";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 let target = null;
@@ -1052,15 +1053,6 @@ function renderPerson(person, data, indexes) {
   const portraitSources = portrait ? related(portrait.sourceIds, indexes.sources) : [];
   const identities = related(person.nameVariantIds, indexes.personNameVariants)
     .filter((item) => ["pseudonym", "joint_pseudonym", "registration_identity"].includes(item.variantType));
-  const authorityLinks = String(person.authorityUrl || "")
-    .split(/\r?\n/)
-    .map((entry) => {
-      const match = entry.trim().match(/^([^:]+):\s*(https?:\/\/\S+)$/);
-      if (!match) return null;
-      const url = safeExternalUrl(match[2]);
-      return url ? { label: match[1], url } : null;
-    })
-    .filter(Boolean);
   const displayedRoles = [person.primaryRole, ...(person.roles || [])].filter((role, index, roles) => (
     role && roles.findIndex((candidate) => String(candidate).toLowerCase() === String(role).toLowerCase()) === index
   ));
@@ -1068,7 +1060,7 @@ function renderPerson(person, data, indexes) {
     title: person.displayName,
     label: "Person",
     badges: displayedRoles.map(typeBadge).join(""),
-    facts: `${factHtml("Life dates", lifeDates(person))}${fact("Authorized name", person.authorizedName)}${fact("Roles", displayedRoles.map(humanize))}${authorityLinks.length ? `<div><dt>Authorities</dt><dd class="record-facts__authorities">${authorityLinks.map((item) => `<a href="${escapeHtml(item.url)}" target="_blank" rel="noreferrer">${escapeHtml(item.label)} <span aria-hidden="true">↗</span></a>`).join("")}</dd></div>` : ""}`,
+    facts: `${factHtml("Life dates", lifeDates(person))}${fact("Roles", displayedRoles.map(humanize))}${authorityFacts(person)}`,
     // The portrait belongs to the identity of the record, not to a stack of
     // boxes below it: it used to sit third in the aside, under a navigation
     // panel, while the authority links took a section heading of their own for
@@ -1297,7 +1289,9 @@ function renderOrganization(organization, data, indexes) {
     title: organization.displayName,
     label: "Organization",
     badges: (organization.types || []).map(typeBadge).join(""),
-    facts: `${fact("Authorized name", organization.authorizedName)}${fact("Type", (organization.types || []).map(humanize))}${fact("City", organization.city)}${fact("Country", organization.country)}${fact("Name variants", organization.nameVariants)}`,
+    // The type was set twice, as a badge and again as a fact. The badge keeps
+    // it; the row that repeated it is gone, as it went from the work card.
+    facts: `${authorityFacts(organization)}${fact("City", organization.city)}${fact("Country", organization.country)}${fact("Name variants", organization.nameVariants)}`,
     main: [
       section("Note", organization.publicNote ? `<p class="lead">${escapeHtml(organization.publicNote)}</p>` : ""),
       section("Works", entityList(works, "work", (item) => [item.year, item.workType].filter(Boolean).join(" · ")), "", works.length),
@@ -1310,6 +1304,21 @@ function renderOrganization(organization, data, indexes) {
       { title: "Sources", count: sources.length },
     ], recordUrl("organization", organization.id))}`,
   };
+}
+
+// The three facts that establish a heading are orthogonal and each is shown
+// only where it says something: the controlled form when it differs from the
+// name the card is titled with, the register the form was taken from, and the
+// authority records themselves. A heading with no stated source is not called
+// an authorized name, because it is not one: for the 113 organizations that
+// carry no register, the name is a working label the archive assigned.
+function authorityFacts(record) {
+  const displayName = String(record.displayName || "").trim();
+  const authorizedName = String(record.authorizedName || "").trim();
+  const links = authorityLinkList(record.authorityUrl);
+  return `${authorizedName && authorizedName !== displayName ? fact("Authorized name", authorizedName) : ""}
+    ${fact("Heading source", record.authorizedNameSource)}
+    ${links.length ? `<div><dt>Authorities</dt><dd class="record-facts__authorities">${links.map((item) => `<a href="${escapeHtml(item.url)}" target="_blank" rel="noreferrer">${escapeHtml(item.label)} <span aria-hidden="true">↗</span></a>`).join("")}</dd></div>` : ""}`;
 }
 
 const SOURCE_IDENTIFIER_LABELS = Object.freeze({
