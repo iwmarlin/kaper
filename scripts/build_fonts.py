@@ -17,6 +17,7 @@ import sys
 from pathlib import Path
 from fontTools.ttLib import TTFont
 from fontTools.subset import Subsetter, Options, parse_unicodes
+from fontTools.varLib import instancer
 
 ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / "assets" / "fonts" / "src"
@@ -38,23 +39,52 @@ UNICODES = (
     "U+2030,U+2039-203A,U+20AC,U+2122,U+2197,U+2212,U+FEFF,U+FFFD"
 )
 
+# Fraunces and Archivo each ship axes this archive has no use for, and both
+# default to a value it must not inherit. Fraunces arrives at wght 900 with
+# WONK 1 — black, and with the swashed forms switched on — which is a display
+# mannerism, not the voice of a catalogue. SOFT and WONK are therefore pinned
+# at zero and Archivo's width at normal, before subsetting: a pinned axis is
+# removed from the file, so the settings cannot be overridden by accident and
+# the file is smaller for their absence.
+PINNED = {
+    "Fraunces": {"SOFT": 0, "WONK": 0},
+    "Archivo": {"wdth": 100},
+}
+
 TARGETS = {
-    "SourceSerif4": "kaper-serif",
-    "Inter": "kaper-sans",
+    ("Fraunces", False): "kaper-serif",
+    ("Fraunces", True): "kaper-serif-italic",
+    ("Archivo", False): "kaper-sans",
+    ("Archivo", True): "kaper-sans-italic",
 }
 
 
-def pick(prefix: str) -> Path | None:
+def pick(prefix: str, italic: bool) -> Path | None:
     candidates = sorted(
         p for p in SRC.glob("*.ttf")
         if p.stem.replace("-", "").replace("_", "").lower().startswith(prefix.lower())
-        and "italic" not in p.stem.lower()
+        and ("italic" in p.stem.lower()) == italic
     )
     return candidates[0] if candidates else None
 
 
-def build(source: Path, stem: str) -> dict:
+def build(source: Path, stem: str, pins: dict) -> dict:
     font = TTFont(source)
+    if pins and "fvar" in font:
+        present = {axis.axisTag for axis in font["fvar"].axes}
+        applicable = {tag: value for tag, value in pins.items() if tag in present}
+        if applicable:
+            font = instancer.instantiateVariableFont(font, applicable, updateFontNames=False)
+    # Fraunces carries glyphs that have no entry in gvar at all — ĝ among them,
+    # a Latin Extended-A form that never moves along any axis. The subsetter
+    # looks every retained glyph up in that table and raises on the first one
+    # missing, so the table is filled out with empty deltas first.
+    if "gvar" in font:
+        gvar = font["gvar"]
+        gvar.variations = {
+            name: gvar.variations[name] if name in gvar.variations else []
+            for name in font.getGlyphOrder()
+        }
     options = Options()
     options.flavor = "woff2"
     # The default feature set is kept on purpose: it includes ccmp, mark and
@@ -83,12 +113,13 @@ def main() -> int:
         print(f"missing {SRC}", file=sys.stderr)
         return 1
     results = []
-    for prefix, stem in TARGETS.items():
-        source = pick(prefix)
+    for (prefix, italic), stem in TARGETS.items():
+        source = pick(prefix, italic)
         if not source:
-            print(f"no variable .ttf found for {prefix} in {SRC}", file=sys.stderr)
+            style = "italic" if italic else "roman"
+            print(f"no variable {style} .ttf found for {prefix} in {SRC}", file=sys.stderr)
             return 1
-        results.append(build(source, stem))
+        results.append(build(source, stem, PINNED.get(prefix, {})))
     for item in results:
         print(
             f"{item['source']} -> {item['output']}  "
