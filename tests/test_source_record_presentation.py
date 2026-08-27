@@ -56,6 +56,58 @@ class SourceAssessmentTests(unittest.TestCase):
         self.assertEqual(flagged, expected)
 
 
+class SourceApparatusTests(unittest.TestCase):
+    """A persistent identifier buried in an href, and an access date recorded but
+    never printed, are apparatus the archive holds and the reader cannot use."""
+
+    def test_the_access_date_is_shown_where_the_citation_is_silent(self):
+        shown = set()
+        expected = set()
+        for source in read_records("sources.json"):
+            page = RECORDS / source["id"] / "index.html"
+            if not page.is_file():
+                continue
+            citation = (source.get("fullCitation") or "").lower()
+            if source.get("accessDate") and "accessed" not in citation:
+                expected.add(source["id"])
+            if "<dt>Accessed</dt>" in page.read_text(encoding="utf-8"):
+                shown.add(source["id"])
+        self.assertTrue(expected, "the fixture must contain undated-in-citation sources")
+        self.assertEqual(shown, expected)
+
+    def test_the_access_date_is_never_stated_twice(self):
+        for source in read_records("sources.json"):
+            if "accessed" not in (source.get("fullCitation") or "").lower():
+                continue
+            page = RECORDS / source["id"] / "index.html"
+            if not page.is_file():
+                continue
+            self.assertNotIn(
+                "<dt>Accessed</dt>",
+                page.read_text(encoding="utf-8"),
+                f"{source['id']} states its access date in the citation and again as a fact",
+            )
+
+    def test_identifiers_are_printed_as_text_and_not_as_a_second_link(self):
+        labels = {"ark": "ARK", "doi": "DOI", "naid": "NAID"}
+        checked = 0
+        for source in read_records("sources.json"):
+            identifiers = source.get("identifiers") or []
+            if not identifiers:
+                continue
+            page = RECORDS / source["id"] / "index.html"
+            if not page.is_file():
+                continue
+            text = page.read_text(encoding="utf-8")
+            for item in identifiers:
+                label = labels.get(item.get("scheme"))
+                self.assertIsNotNone(label, f"unlabelled identifier scheme: {item.get('scheme')}")
+                self.assertIn(f"<dt>{label}</dt><dd>{item['value']}</dd>", text)
+                self.assertNotIn(f'href="{item["value"]}"', text)
+                checked += 1
+        self.assertEqual(checked, 60, "every registered identifier must be on its card")
+
+
 class SourceCreditLedgerTests(unittest.TestCase):
     """A source card used to name only the people linked to the source itself.
     The credits it underwrites live on the contributions, and those named people

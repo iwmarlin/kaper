@@ -1,7 +1,8 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=88497a24e8";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=b15c8a3b72";
 import {
   certaintyBadge,
   escapeHtml,
+  formatDate,
   getIds,
   humanize,
   indexById,
@@ -26,7 +27,7 @@ import {
   sourceStatusLabel,
   typeBadge,
   updateMeta,
-} from "./core.js?v=88497a24e8";
+} from "./core.js?v=b15c8a3b72";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 let target = null;
@@ -1311,6 +1312,38 @@ function renderOrganization(organization, data, indexes) {
   };
 }
 
+const SOURCE_IDENTIFIER_LABELS = Object.freeze({
+  ark: "ARK",
+  doi: "DOI",
+  naid: "NAID",
+});
+
+// The archive holds a persistent identifier for sixty of its sources, and on
+// fifty-eight of them that identifier is already inside the source's own URL —
+// where it is neither visible nor selectable, because the link is a button
+// reading "Open source". The identifier is therefore printed as text, so it can
+// be read and copied into a citation, and deliberately not linked: the page it
+// resolves to is the page the button already opens.
+function sourceIdentifierFacts(source) {
+  return (source.identifiers || [])
+    .filter((item) => item && item.value)
+    .map((item) => fact(
+      SOURCE_IDENTIFIER_LABELS[item.scheme] || humanize(item.scheme) || "Identifier",
+      item.value,
+    ))
+    .join("");
+}
+
+// Every online source records the day it was consulted. Three hundred and
+// twenty-nine citations state it in the citation itself, as they should; on the
+// remaining four hundred and twenty-nine the date was held and never shown. The
+// row appears only where the citation is silent, so the card never states the
+// same thing twice.
+function sourceAccessFact(source) {
+  if (!source.accessDate || /accessed/i.test(source.fullCitation || "")) return "";
+  return fact("Accessed", formatDate(source.accessDate));
+}
+
 function sourceActions(source) {
   const links = [];
   const seen = new Set();
@@ -1427,7 +1460,7 @@ function renderSource(source, data, indexes) {
     title: source.title || source.shortCitation,
     label: "Source",
     badges: `${typeBadge(source.sourceType)}${sourceReliabilityBadge(source.reliability)}`,
-    facts: `${fact("Creator", source.creator)}${fact("Date", source.date)}${fact("Publication", source.publication)}${fact("Repository", source.repository)}${fact("Reliability", sourceReliabilityLabel(source.reliability))}${fact("Verification", sourceStatusLabel(source.sourceStatus))}`,
+    facts: `${fact("Creator", source.creator)}${fact("Date", source.date)}${fact("Publication", source.publication)}${fact("Repository", source.repository)}${sourceIdentifierFacts(source)}${sourceAccessFact(source)}${fact("Reliability", sourceReliabilityLabel(source.reliability))}${fact("Verification", sourceStatusLabel(source.sourceStatus))}`,
     main: [
       section("Citation", `<p class="lead">${escapeHtml(source.fullCitation || source.shortCitation)}</p>${sourceActions(source)}`),
       sourceResearchNote(source),
