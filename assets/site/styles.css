@@ -2693,7 +2693,7 @@ main {
 
 .record-facts div {
   display: grid;
-  grid-template-columns: minmax(5.5rem, 0.72fr) 1.28fr;
+  grid-template-columns: minmax(min-content, 0.72fr) minmax(0, 1.28fr);
   gap: 0.75rem;
   padding: 0.35rem 0;
   border-bottom: 1px solid var(--line);
@@ -2911,7 +2911,7 @@ main {
 
 .credit-evidence__source-id {
   align-self: start;
-  color: var(--accent);
+  color: var(--ink-soft);
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
   font-size: 0.72rem;
   font-weight: 650;

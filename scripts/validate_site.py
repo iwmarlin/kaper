@@ -55,9 +55,11 @@ PRERENDERED_RELATION_SECTIONS = {
         "organizationIds": "Organizations",
     },
     "person": {
-        "workIds": "Documented works",
+        # Works and the citations that support each credit are one section on
+        # the person card: the work is stated once and its evidence follows it.
+        "workIds": "Documented works and their evidence",
         "timelineEventIds": "Documented chronology",
-        "contributionIds": "Evidence for documented credits",
+        "contributionIds": "Documented works and their evidence",
         "sourceIds": "Sources linked directly to this person",
     },
     "organization": {

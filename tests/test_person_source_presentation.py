@@ -53,7 +53,13 @@ class PersonSourcePresentationTests(unittest.TestCase):
 
         self.assertEqual(result.stdout.count('href="records/source/SEVIDENCE/"'), 1)
         self.assertNotIn('id="source-SEVIDENCE"', result.stdout)
-        self.assertIn("Evidence for documented credits", result.stdout)
+        # The work is stated once, with its evidence beneath it. Two sections
+        # naming the same works — one bare, one with citations — made the
+        # reader check whether the second list said anything new; on 161 of the
+        # 163 people who carried both, it did not.
+        self.assertEqual(result.stdout.count('href="records/work/WTEST/"'), 1)
+        self.assertIn("Documented works and their evidence", result.stdout)
+        self.assertNotIn("Evidence for documented credits", result.stdout)
         self.assertIn("Sources linked directly to this person", result.stdout)
         self.assertIn("SDIRECT", result.stdout)
 

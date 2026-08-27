@@ -1,4 +1,4 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=0a1cb20204";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=f059f6467b";
 import {
   certaintyBadge,
   escapeHtml,
@@ -23,7 +23,7 @@ import {
   scopeBadge,
   typeBadge,
   updateMeta,
-} from "./core.js?v=0a1cb20204";
+} from "./core.js?v=f059f6467b";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 let target = null;
@@ -473,21 +473,47 @@ function personCreditEvidence(person, indexes) {
     .filter((group) => group.sources.length)
     .sort((a, b) => Number(a.work.year || 9999) - Number(b.work.year || 9999)
       || String(a.work.title).localeCompare(String(b.work.title)));
+  return items;
+}
+
+// One list where there were two. The card used to print the works, and then
+// print them again under the credits with their citations: on 161 of the 163
+// people who carry both, the two lists named exactly the same works in the
+// same order. The work is stated once and its evidence sits beneath it; the
+// role is set as text, so the badge on the right keeps one meaning, the kind
+// of work.
+function personWorkLedger(person, indexes) {
+  const evidence = personCreditEvidence(person, indexes);
+  const byWorkId = new Map(evidence.map((item) => [item.work.id, item]));
+  for (const work of related(person.workIds, indexes.works)) {
+    if (!byWorkId.has(work.id)) {
+      byWorkId.set(work.id, { work, roles: new Set(), certainties: new Set(), sources: [] });
+    }
+  }
+  const items = [...byWorkId.values()].sort((a, b) => (
+    Number(a.work.year || 9999) - Number(b.work.year || 9999)
+      || String(a.work.title).localeCompare(String(b.work.title))
+  ));
   const list = progressiveList(items, {
     className: "credit-evidence-list",
-    label: "credit records",
-    renderItem: (item) => `<li class="credit-evidence">
+    label: "works",
+    renderItem: (item) => {
+      const roles = [...item.roles].map(humanize).join(", ");
+      const meta = [item.work.year ? String(item.work.year) : "", roles].filter(Boolean).join(" \u00b7 ");
+      return `<li class="credit-evidence">
       <div class="credit-evidence__work">
-        <span><a href="${recordUrl("work", item.work.id)}">${escapeHtml(item.work.title)}</a>${item.work.year ? `<small>${escapeHtml(String(item.work.year))}</small>` : ""}</span>
-        <span class="credit-evidence__badges">${[...item.roles].map(typeBadge).join("")}${[...item.certainties].map(certaintyBadge).join("")}</span>
+        <span><a href="${recordUrl("work", item.work.id)}">${escapeHtml(item.work.title)}</a>${meta ? `<small>${escapeHtml(meta)}</small>` : ""}</span>
+        <span class="credit-evidence__badges">${typeBadge(item.work.workType)}${[...item.certainties].map(certaintyBadge).join("")}</span>
       </div>
-      <ul class="credit-evidence__sources" aria-label="Sources supporting this credit">
-        ${item.sources.map((source) => `<li><a class="credit-evidence__source-id" href="${recordUrl("source", source.id)}">${escapeHtml(source.id)}</a><span>${escapeHtml(source.shortCitation || source.title || source.fullCitation || source.id)}</span></li>`).join("")}
-      </ul>
-    </li>`,
+      ${item.sources.length ? `<ul class="credit-evidence__sources" aria-label="Sources supporting this credit">
+        ${item.sources.map((source) => `<li><span class="credit-evidence__source-id">${escapeHtml(source.id)}</span><a href="${recordUrl("source", source.id)}">${escapeHtml(source.shortCitation || source.title || source.fullCitation || source.id)}</a></li>`).join("")}
+      </ul>` : ""}
+    </li>`;
+    },
     searchText: (item) => [
       item.work.title,
       item.work.year,
+      item.work.workType,
       ...item.roles,
       ...item.sources.map(sourceSearchText),
     ].filter(Boolean).join(" "),
@@ -916,9 +942,9 @@ function renderPerson(person, data, indexes) {
     .sort((a, b) => Number(a.year || 9999) - Number(b.year || 9999) || String(a.title).localeCompare(String(b.title)));
   const events = related(person.timelineEventIds, indexes.timelineEvents)
     .sort((a, b) => String(a.dateStart || "9999").localeCompare(String(b.dateStart || "9999")) || String(a.title).localeCompare(String(b.title)));
-  const creditEvidence = personCreditEvidence(person, indexes);
+  const ledger = personWorkLedger(person, indexes);
   const creditEvidenceSourceIds = new Set(
-    creditEvidence.items.flatMap((item) => item.sources.map((source) => source.id)),
+    ledger.items.flatMap((item) => item.sources.map((source) => source.id)),
   );
   const sources = related(person.sourceIds, indexes.sources)
     .filter((source) => !creditEvidenceSourceIds.has(source.id))
@@ -939,17 +965,6 @@ function renderPerson(person, data, indexes) {
   const displayedRoles = [person.primaryRole, ...(person.roles || [])].filter((role, index, roles) => (
     role && roles.findIndex((candidate) => String(candidate).toLowerCase() === String(role).toLowerCase()) === index
   ));
-  // One list, one search, one control. The works were split into Film, Songs and
-  // Other, and each group carried its own search field and its own "show more":
-  // five search boxes on this page, and a query typed into Songs could not find
-  // a work filed under Other. The type is now carried by a badge on the row,
-  // where it can be read without deciding in advance which box to type into.
-  const workList = progressiveList(works, {
-    label: "works",
-    renderItem: (item) => `<li><span><a href="${recordUrl("work", item.id)}">${escapeHtml(item.title)}</a>${item.year ? `<br><small>${escapeHtml(String(item.year))}</small>` : ""}</span>${typeBadge(item.workType)}</li>`,
-    searchText: (item) => [item.title, item.year, item.workType].filter(Boolean).join(" "),
-    showTotal: true,
-  });
   return {
     title: person.displayName,
     label: "Person",
@@ -967,21 +982,20 @@ function renderPerson(person, data, indexes) {
         searchText: (item) => [item.variantName, item.variantType, item.publicNote].filter(Boolean).join(" "),
         showTotal: false,
       }), "", identities.length),
-      works.length ? section("Documented works", workList, "", works.length) : "",
+      ledger.items.length
+        ? section(
+          "Documented works and their evidence",
+          `<p class="record-section__intro">Each work is followed by the citations that support this person\u2019s credit for it; they are not presented as biographical sources.</p>${ledger.list}`,
+          "record-section--credit-evidence",
+          ledger.items.length,
+        )
+        : "",
       events.length ? section("Documented chronology", progressiveList(events, {
         label: "timeline events",
         renderItem: (item) => `<li><span><a href="${recordUrl("event", item.id)}">${escapeHtml(item.title)}</a>${item.displayDate || item.dateStart ? `<br><small>${escapeHtml(item.displayDate || item.dateStart)}</small>` : ""}</span>${periodBadge(item.periods || item.period)}</li>`,
         searchText: (item) => [item.title, item.displayDate, item.placeDisplay].filter(Boolean).join(" "),
         showTotal: false,
       }), "", events.length) : "",
-      section(
-        "Evidence for documented credits",
-        creditEvidence.list
-          ? `<p class="record-section__intro">Each citation supports this person’s credit for the linked work; it is not presented as a biographical source.</p>${creditEvidence.list}`
-          : "",
-        "record-section--credit-evidence",
-        creditEvidence.items.length,
-      ),
       section("Sources linked directly to this person", sourceList(sources), "", sources.length),
     ].join(""),
     // The portrait and its credit stay in the aside: 74 of the 137 people carry
@@ -996,9 +1010,8 @@ function renderPerson(person, data, indexes) {
       includeResolutionLabel: true,
     })}` : ""}${contentsRail([
       { title: "Pseudonyms and documented identities", count: identities.length },
-      { title: "Documented works", count: works.length },
+      { title: "Documented works and their evidence", count: ledger.items.length },
       { title: "Documented chronology", count: events.length },
-      { title: "Evidence for documented credits", count: creditEvidence.items.length },
       { title: "Sources linked directly to this person", count: sources.length },
     ], recordUrl("person", person.id))}`,
   };
