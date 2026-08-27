@@ -67,5 +67,37 @@ class AuthorityHeadingTests(unittest.TestCase):
         self.assertNotIn("local", headings, "'local' and 'local heading' name the same thing")
 
 
+class OrganizationScopeTests(unittest.TestCase):
+    """Two kinds of body share the organization table. A card that carries no
+    works because a library composes nothing should say so, instead of reading
+    as a subject record with its content missing."""
+
+    REPOSITORY_TYPES = {"archive", "database", "library", "digital_library", "museum"}
+    NOTE = "A repository consulted by the archive"
+
+    def test_repositories_say_what_they_are_and_subjects_do_not(self):
+        for record in read_records("organizations.json"):
+            page = ROOT / "records/organization" / record["id"] / "index.html"
+            if not page.is_file():
+                continue
+            is_repository = bool(set(record.get("types") or []) & self.REPOSITORY_TYPES)
+            self.assertEqual(
+                self.NOTE in page.read_text(encoding="utf-8"),
+                is_repository,
+                f"{record['id']} is described as the wrong kind of organization",
+            )
+
+    def test_the_distinction_is_taken_from_the_type_and_not_from_missing_links(self):
+        # The American Heritage Center holds Kaper's manuscripts, so custody
+        # gives it work links. It is still a repository, and a rule that read
+        # the absence of links would call it a subject.
+        record = next(
+            item for item in read_records("organizations.json") if item["id"] == "ORG056"
+        )
+        self.assertTrue(record.get("workIds"), "ORG056 must still carry its custodial links")
+        page = ROOT / "records/organization/ORG056/index.html"
+        self.assertIn(self.NOTE, page.read_text(encoding="utf-8"))
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -1,4 +1,4 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=44e7727561";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=210197ea53";
 import {
   authorityLinkList,
   certaintyBadge,
@@ -28,7 +28,7 @@ import {
   sourceStatusLabel,
   typeBadge,
   updateMeta,
-} from "./core.js?v=44e7727561";
+} from "./core.js?v=210197ea53";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 let target = null;
@@ -1281,6 +1281,28 @@ function initializeProgressiveLists() {
   });
 }
 
+// Two kinds of body share this table and the cards did not distinguish them.
+// Ninety organizations are subjects of the research - the studios, publishers,
+// labels and orchestras Kaper worked with. Fifty-five are the repositories and
+// databases the research was done in, and their cards carry no works and no
+// chronology because there are none to carry: a library holds sources, it does
+// not compose. Read as a subject record, such a card looks empty; read for what
+// it is, it is complete. The distinction is taken from the archive's own type
+// vocabulary rather than guessed from the absence of links, because an archive
+// that holds Kaper's manuscripts does acquire work links through its custody
+// of them.
+const REPOSITORY_TYPES = Object.freeze(["archive", "database", "library", "digital_library", "museum"]);
+
+function organizationIsRepository(organization) {
+  return (organization.types || []).some((type) => REPOSITORY_TYPES.includes(type));
+}
+
+function organizationScopeNote(organization) {
+  return organizationIsRepository(organization)
+    ? "A repository consulted by the archive. This record identifies the body that holds or serves the sources listed below; it is not a subject of the research, and carries no works or chronology of its own."
+    : "Organization links are induced from approved public records and their documented contributions.";
+}
+
 function renderOrganization(organization, data, indexes) {
   const works = related(organization.workIds, indexes.works);
   const events = related(organization.timelineEventIds, indexes.timelineEvents);
@@ -1298,7 +1320,7 @@ function renderOrganization(organization, data, indexes) {
       section("Timeline", entityList(events, "event", (item) => item.displayDate || item.dateStart), "", events.length),
       section("Sources", sourceList(sources), "", sources.length),
     ].join(""),
-    aside: `<div class="scope-note">Organization links are induced from approved public records and their documented contributions.</div>${contentsRail([
+    aside: `<div class="scope-note">${organizationScopeNote(organization)}</div>${contentsRail([
       { title: "Works", count: works.length },
       { title: "Timeline", count: events.length },
       { title: "Sources", count: sources.length },
