@@ -1,4 +1,4 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=b29aa58eff";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=48d5278b63";
 import {
   authorityLinkList,
   certaintyBadge,
@@ -29,7 +29,7 @@ import {
   sourceStatusLabel,
   typeBadge,
   updateMeta,
-} from "./core.js?v=b29aa58eff";
+} from "./core.js?v=48d5278b63";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 let target = null;
@@ -1411,8 +1411,18 @@ function organizationScopeNote(organization) {
 function renderOrganization(organization, data, indexes) {
   const works = related(organization.workIds, indexes.works);
   const events = related(organization.timelineEventIds, indexes.timelineEvents);
-  const sources = related(organization.sourceIds, indexes.sources);
   const credits = organizationWorkLedger(organization, indexes);
+  // A source already shown as the evidence for a credit is not repeated in a
+  // list headed "Sources": Aafa-Film AG carried one direct source, the same
+  // Filmportal page that documents its production credit, and the card printed
+  // it twice while announcing "1" beside a section whose neighbour showed
+  // three. The heading also says which sources these are, as the person card
+  // does, so a count of nothing is never read as a count of everything.
+  const creditEvidenceSourceIds = new Set(
+    credits.items.flatMap((item) => item.sources.map((source) => source.id)),
+  );
+  const sources = related(organization.sourceIds, indexes.sources)
+    .filter((source) => !creditEvidenceSourceIds.has(source.id));
   const parents = related(organization.parentOrganizationIds, indexes.organizations);
   const imprints = related(organization.imprintIds, indexes.organizations)
     .sort((a, b) => String(a.displayName).localeCompare(String(b.displayName)));
@@ -1428,13 +1438,13 @@ function renderOrganization(organization, data, indexes) {
       section("Imprints", entityList(imprints, "organization", (item) => (item.types || []).map(humanize).join(", ")), "", imprints.length),
       section("Works", credits.list, "", credits.items.length),
       section("Timeline", entityList(events, "event", (item) => item.displayDate || item.dateStart), "", events.length),
-      section("Sources", sourceList(sources), "", sources.length),
+      section("Sources linked directly to this organization", sourceList(sources), "", sources.length),
     ].join(""),
     aside: `<div class="scope-note">${organizationScopeNote(organization)}</div>${contentsRail([
       { title: "Imprints", count: imprints.length },
       { title: "Works", count: credits.items.length },
       { title: "Timeline", count: events.length },
-      { title: "Sources", count: sources.length },
+      { title: "Sources linked directly to this organization", count: sources.length },
     ], recordUrl("organization", organization.id))}`,
   };
 }

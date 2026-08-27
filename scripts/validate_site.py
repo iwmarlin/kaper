@@ -73,7 +73,9 @@ PRERENDERED_RELATION_SECTIONS = {
         "workIds": "Works",
         "contributionIds": "Works",
         "timelineEventIds": "Timeline",
-        "sourceIds": "Sources",
+        # As on the person card: a source already shown as the evidence for a
+        # credit is not repeated here, so only the rest need their own section.
+        "sourceIds": "Sources linked directly to this organization",
     },
     "source": {
         "workIds": "Supported works",
@@ -599,7 +601,7 @@ def validate(root: Path) -> dict:
                                         )
                                     )
                                 ]
-                            if record_type == "person" and field == "sourceIds":
+                            if record_type in {"person", "organization"} and field == "sourceIds":
                                 credit_source_ids = {
                                     source_id
                                     for contribution_id in record.get("contributionIds") or []
