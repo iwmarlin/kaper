@@ -10,7 +10,7 @@ import {
   periodValues,
   recordUrl,
   renderError,
-} from "./core.js?v=6e268d4ea1";
+} from "./core.js?v=2944b8da32";
 
 mountSiteChrome("map");
 
@@ -111,7 +111,12 @@ function updateBasemap(zoom = map?.getZoom()) {
   const historical = historicalBasemapAvailable ? historicalOpacity(zoom) : 0;
   const reference = 1 - historical;
   historicalBasemap?.setOpacity(historical);
-  referenceBasemap.setOpacity(reference);
+  if (reference > 0.02) {
+    if (!map.hasLayer(referenceBasemap)) referenceBasemap.addTo(map);
+    referenceBasemap.setOpacity(reference);
+  } else if (map.hasLayer(referenceBasemap)) {
+    map.removeLayer(referenceBasemap);
+  }
   updateAttribution(historical > 0.02, reference > 0.02);
 
   if (!layerStatus || !layerStatusLabel || !layerStatusDetail) return;
@@ -184,7 +189,7 @@ function keepMarkerAboveSelection(marker) {
     map.panInside(marker.getLatLng(), {
       paddingTopLeft: [24, 24],
       paddingBottomRight: [24, panelHeight + 24],
-      animate: true,
+      animate: !window.matchMedia?.("(prefers-reduced-motion: reduce)").matches,
     });
   });
 }
@@ -245,7 +250,11 @@ function selectPlace(place, { moveMap = true } = {}) {
       } else {
         const zoom = place.placeType === "city" ? 8 : place.placeType === "district" ? 11 : 13;
         map.once("moveend", () => keepMarkerAboveSelection(marker));
-        map.flyTo([place.latitude, place.longitude], Math.max(map.getZoom(), zoom), { duration: 0.65 });
+        const stillness = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
+        map.flyTo([place.latitude, place.longitude], Math.max(map.getZoom(), zoom), {
+          duration: 0.65,
+          animate: !stillness,
+        });
         marker.openTooltip();
         keepMarkerAboveSelection(marker);
       }
@@ -266,10 +275,14 @@ try {
       zoomControl: true,
       preferCanvas: true,
     });
+    // The reference tiles are invisible until the historical sheet starts to
+    // fade, so they are not asked for until then: at world zoom the page used
+    // to fetch fifteen tiles nobody could see, and send a reader's address to
+    // a third party for them.
     referenceBasemap = window.L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
       maxZoom: 18,
       opacity: 0,
-    }).addTo(map);
+    });
 
     map.createPane("historicalBasemap");
     const historicalPane = map.getPane("historicalBasemap");
@@ -277,7 +290,7 @@ try {
     historicalPane.style.zIndex = "250";
     historicalPane.style.pointerEvents = "none";
     historicalBasemap = window.L.imageOverlay(
-      "assets/images/maps/world-1926-stanford-mercator.jpg",
+      "assets/images/maps/world-1926-stanford-mercator.webp",
       STANFORD_MAP_BOUNDS,
       {
         pane: "historicalBasemap",
@@ -285,7 +298,14 @@ try {
         alt: "Edward Stanford's 1926 political world map in Mercator projection",
       },
     ).addTo(map);
+    let historicalFallbackTried = false;
     historicalBasemap.on("error", () => {
+      // A browser that cannot read WebP still gets the plate.
+      if (!historicalFallbackTried) {
+        historicalFallbackTried = true;
+        historicalBasemap.setUrl("assets/images/maps/world-1926-stanford-mercator.jpg");
+        return;
+      }
       historicalBasemapAvailable = false;
       updateBasemap(map.getZoom());
     });

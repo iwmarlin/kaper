@@ -42,9 +42,12 @@ TYPE_LABELS = {
     "organization": "Organization",
     "source": "Source",
 }
+# Leaflet and its clustering plugin are served from assets/vendor, so no
+# third-party origin remains in the policy: the map is now as self-contained
+# as the fonts, and an outage at a package host cannot take it out.
 CSP = (
-    "default-src 'self'; script-src 'self' https://unpkg.com; "
-    "style-src 'self' 'unsafe-inline' https://unpkg.com; "
+    "default-src 'self'; script-src 'self'; "
+    "style-src 'self' 'unsafe-inline'; "
     "img-src 'self' data: https://*.tile.openstreetmap.org; media-src 'self'; "
     "connect-src 'self'; frame-src 'none'; object-src 'none'; "
     "base-uri 'self'; form-action 'self'"
@@ -702,8 +705,8 @@ def static_page(
         page_title = f"{title} ({label.lower()})"
     browser_title = f"{page_title} | {PAGE_TITLE_SUFFIX}"
     record_id = record["id"]
-    style_version = "6e268d4ea1"
-    record_script_version = "6e268d4ea1"
+    style_version = "2944b8da32"
+    record_script_version = "2944b8da32"
     route = f"records/{record_type}/{quote(record_id, safe='')}/"
     canonical = f"{ORIGIN}{route}"
     og_image = og_image_for(record_type, record, tables)
