@@ -10,9 +10,9 @@
   <meta property="og:title" content="Archive record — Bronisław Kaper, 1902–1939">
   <meta property="og:description" content="Sources, people, places, media and relationships for a public archive record.">
   <meta name="robots" content="noindex,follow">
-  <link rel="preload" href="assets/fonts/kaper-sans.woff2?v=2c759e122a" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="assets/fonts/kaper-serif.woff2?v=2c759e122a" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/site/styles.css?v=2c759e122a">
+  <link rel="preload" href="assets/fonts/kaper-sans.woff2?v=54430f50fb" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/kaper-serif.woff2?v=54430f50fb" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/site/styles.css?v=54430f50fb">
   <title>Archive record — Bronisław Kaper, 1902–1939</title>
   <meta property="og:image" content="https://iwmarlin.github.io/kaper/assets/images/portraits/kaper-mature.jpg">
   <meta property="og:image:alt" content="Bronisław Kaper">
@@ -26,10 +26,16 @@
   <header class="site-header" data-site-header></header>
   <main id="main-content">
     <div class="shell" id="record-root">
+      <!-- The record is fetched and rendered by script, and until it arrives
+           this route had no heading at all — the one page of 1881 without one.
+           A reader arriving with a screen reader, or before the script runs,
+           met a document that did not say what it was. The placeholder names
+           the route; the renderer replaces it with the record's own title. -->
+      <h1 class="loading__heading">Archive record</h1>
       <div class="loading" role="status"><span class="loading__mark" aria-hidden="true"></span><span>Loading linked record…</span></div>
     </div>
   </main>
   <footer class="site-footer" data-site-footer></footer>
-  <script type="module" src="assets/site/record-detail-20260714.js?v=2c759e122a"></script>
+  <script type="module" src="assets/site/record-detail-20260714.js?v=54430f50fb"></script>
 </body>
 </html>
