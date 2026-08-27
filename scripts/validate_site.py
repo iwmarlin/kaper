@@ -6,6 +6,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+from html import escape
 import re
 import sys
 from datetime import date
@@ -503,6 +504,10 @@ def validate(root: Path) -> dict:
                             item.get("id"): item
                             for item in payload.get("tables", {}).get("contributions", [])
                         }
+                        title_variants_by_id = {
+                            item.get("id"): item
+                            for item in payload.get("tables", {}).get("titleVariants", [])
+                        }
                         if record_type == "media":
                             match = re.search(
                                 r'<script type="application/ld\+json">(.*?)</script>',
@@ -540,6 +545,19 @@ def validate(root: Path) -> dict:
                                     for contribution_id in linked_ids
                                     if contributions_by_id.get(contribution_id, {}).get("role")
                                     not in WORK_RECORDING_CONTRIBUTION_ROLES
+                                ]
+                            if record_type == "work" and field == "titleVariantIds":
+                                # A variant that names a related work is shown
+                                # on that work's row, with its language and its
+                                # printed form, instead of a second time in a
+                                # list of names. What matters is that the name
+                                # is on the page, not which section carries it.
+                                lowered = text.lower()
+                                linked_ids = [
+                                    variant_id for variant_id in linked_ids
+                                    if escape(
+                                        (title_variants_by_id.get(variant_id, {}) or {}).get("variantTitle", "\u0000")
+                                    ).lower() not in lowered
                                 ]
                             if record_type == "person" and field == "sourceIds":
                                 credit_source_ids = {

@@ -1,4 +1,4 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=f059f6467b";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=d6d9201f7f";
 import {
   certaintyBadge,
   escapeHtml,
@@ -23,7 +23,7 @@ import {
   scopeBadge,
   typeBadge,
   updateMeta,
-} from "./core.js?v=f059f6467b";
+} from "./core.js?v=d6d9201f7f";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 let target = null;
@@ -623,7 +623,34 @@ function seriesContentsSection(subtype, relations, work, indexes) {
   return section(heading, `<ol class="series-contents">${items}</ol>`);
 }
 
-function relationList(items, work, indexes) {
+// A relation note earns its place by adding something the badge and the two
+// titles do not already say. Forty of them read "X is documented as a language
+// version of Y" under a badge that says Language Version, beside a link that
+// says Y. Only that exact template is dropped: a note that names the language,
+// the country or the evidence is kept.
+function relationNoteRestatesTheLabel(note, relationTypes) {
+  const text = String(note || "").trim();
+  if (!text) return true;
+  return relationTypes.filter(Boolean).some((relationType) => {
+    const label = String(relationType).replace(/_of$/, "").replace(/_/g, " ").trim();
+    if (!label) return false;
+    const escaped = label.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    // The titles themselves may carry quotation marks — Sagen kleine Mädels
+    // "nein" — so the template is matched on its structure, and only within a
+    // single clause, which keeps a note that adds a sentence of its own.
+    // A title may itself hold a full stop — "En premières, en secondes, en
+    // troisièmes..." — so the clause runs up to a sentence break, a stop
+    // followed by a space, rather than to any stop at all.
+    const clause = "(?:(?!\\.\\s)[^;])+?";
+    const pattern = new RegExp(
+      `^${clause}\\s+is\\s+(?:documented\\s+as\\s+)?(?:a|the)\\s+${escaped}\\s+(?:of|for)\\s+${clause}\\.?$`,
+      "i",
+    );
+    return pattern.test(text);
+  });
+}
+
+function relationList(items, work, indexes, variantsByTitle = new Map()) {
   const relationMeta = (item) => {
     const candidateIds = [...getIds(item, "targetWorkIds"), ...getIds(item, "sourceWorkIds")].filter((id) => id !== work.id);
     const targetWork = candidateIds.map((id) => indexes.works.get(id)).find(Boolean);
@@ -640,7 +667,21 @@ function relationList(items, work, indexes) {
         : item.relationType === "language_version_of"
           ? "language_version"
           : item.relationType;
-      return `<li><span>${typeBadge(relationType)} ${titleHtml}${item.publicNote ? `<br><small>${escapeHtml(item.publicNote)}</small>` : ""}</span>${certaintyBadge(item.certainty)}</li>`;
+      const note = relationNoteRestatesTheLabel(item.publicNote, [item.relationType, relationType])
+        ? ""
+        : item.publicNote;
+      // Where a title variant carries the same title, its language and its
+      // printed form are shown here rather than a second time in a list of
+      // names.
+      const variant = variantsByTitle.get(normalizeSearch(title));
+      const sourceForm = variant
+        && variant.titleAsSource
+        && normalizeSearch(variant.titleAsSource) !== normalizeSearch(variant.variantTitle)
+        && normalizeSearch(variant.titleAsSource) !== normalizeSearch(title)
+        ? `Source form: ${variant.titleAsSource}`
+        : "";
+      const detail = [sourceForm, note].filter(Boolean).join(" \u00b7 ");
+      return `<li><span>${typeBadge(relationType)} ${titleHtml}${variant && variant.language ? ` ${periodBadge(variant.language)}` : ""}${detail ? `<br><small>${escapeHtml(detail)}</small>` : ""}</span>${certaintyBadge(item.certainty)}</li>`;
     },
     searchText: (item) => {
       const { title } = relationMeta(item);
@@ -716,8 +757,22 @@ function renderWork(work, data, indexes) {
     ? contributions.filter((item) => !["publisher", "holding_institution"].includes(item.role)
       && !musicAndArrangementContributions.includes(item))
     : contributions;
-  const variants = related(work.titleVariantIds, indexes.titleVariants);
   const relations = related(work.relationIds, indexes.workRelations);
+  // Title variants are the names of this record; relations are other records.
+  // A variant that carries the title of a related work was being printed
+  // twice, once as a name and once as a link, on 36 works.
+  const relatedTitles = new Set(relations.flatMap((relation) => [
+    ...getIds(relation, "targetWorkIds"),
+    ...getIds(relation, "sourceWorkIds"),
+  ]).filter((id) => id !== work.id)
+    .map((id) => indexes.works.get(id))
+    .filter(Boolean)
+    .map((item) => normalizeSearch(item.title)));
+  const allVariants = related(work.titleVariantIds, indexes.titleVariants);
+  const variants = allVariants.filter((item) => !relatedTitles.has(normalizeSearch(item.variantTitle)));
+  const variantsByRelatedTitle = new Map(allVariants
+    .filter((item) => relatedTitles.has(normalizeSearch(item.variantTitle)))
+    .map((item) => [normalizeSearch(item.variantTitle), item]));
   const sources = related(work.sourceIds, indexes.sources);
   const media = related(work.mediaIds, indexes.media);
   const events = related(work.timelineEventIds, indexes.timelineEvents);
@@ -747,16 +802,19 @@ function renderWork(work, data, indexes) {
       suppressConfirmedCreatorNotes: isOther,
     })),
     section("Title variants", variantList(variants), "", variants.length),
-    section("Related works and versions", relationList(relations, work, indexes), "", relations.length),
+    section("Related works and versions", relationList(relations, work, indexes, variantsByRelatedTitle), "", relations.length),
     section("Timeline", entityList(events, "event", (item) => item.displayDate || item.dateStart), "", events.length),
     section("Sources", sourceList(sources), "", sources.length),
   ].join("");
-  const aside = mediaFigures(media, indexes.sources) || `<div class="scope-note">No public media are linked to this work.</div>`;
+  const aside = mediaFigures(media, indexes.sources);
   return {
     title: work.title,
     label: work.workType || "Work",
-    badges: `${typeBadge(work.workType)}${periodBadge(work.periods || work.period)}${isContextOnly ? scopeBadge(work.publicScope) : (hasConciseCredits && work.certainty === "confirmed" ? "" : certaintyBadge(work.certainty))}`,
-    facts: `${fact("Year", work.year)}${fact("Type", work.workType)}${hasConciseCredits ? fact("Genre", genreLabel(subtype?.genre)) : ""}${fact("Period", periodValues(work).map(periodLabel).join(", "))}${isContextOnly ? fact("Kaper attribution", "Not confirmed") : (hasConciseCredits && work.certainty === "confirmed" ? "" : fact("Certainty", humanize(work.certainty)))}`,
+    // The kicker above the title already names the type and the fact box gives
+    // the period with its range, so the badge row is left to what qualifies the
+    // record rather than what classifies it.
+    badges: `${isContextOnly ? scopeBadge(work.publicScope) : (hasConciseCredits && work.certainty === "confirmed" ? "" : certaintyBadge(work.certainty))}`,
+    facts: `${fact("Year", work.year)}${hasConciseCredits ? fact("Genre", genreLabel(subtype?.genre)) : ""}${fact("Period", periodValues(work).map(periodLabel).join(", "))}${isContextOnly ? fact("Kaper attribution", "Not confirmed") : ""}`,
     main,
     aside,
   };
