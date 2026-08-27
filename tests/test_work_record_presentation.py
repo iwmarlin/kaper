@@ -53,6 +53,16 @@ class WorkRecordPresentationTests(unittest.TestCase):
                 offenders.append(work_id)
         self.assertEqual(offenders[:5], [])
 
+    def test_every_work_page_carries_a_contents_rail_that_starts_hidden(self) -> None:
+        """The rail is written for the page and revealed by it, once the page
+        knows it will scroll; a section count cannot tell how long a record is."""
+        missing = [work_id for work_id, text in self.pages.items()
+                   if "data-contents-rail" not in text]
+        self.assertEqual(missing[:5], [])
+        unhidden = [work_id for work_id, text in self.pages.items()
+                    if "data-contents-rail" in text and 'data-contents-rail hidden' not in text]
+        self.assertEqual(unhidden[:5], [])
+
     def test_absence_of_media_is_not_announced(self) -> None:
         announced = [work_id for work_id, text in self.pages.items()
                      if "No public media are linked to this work" in text]

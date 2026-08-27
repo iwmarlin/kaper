@@ -1,4 +1,4 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=d6d9201f7f";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=615fbf6371";
 import {
   certaintyBadge,
   escapeHtml,
@@ -23,7 +23,7 @@ import {
   scopeBadge,
   typeBadge,
   updateMeta,
-} from "./core.js?v=d6d9201f7f";
+} from "./core.js?v=615fbf6371";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 let target = null;
@@ -118,10 +118,15 @@ function section(title, content, className = "", count = 0) {
 // A contents rail for records that run long. Kaper's page carries 275 works, 54
 // events and 132 sources over nearly five thousand pixels; without an index the
 // only way to learn what is on it is to scroll it.
+// Whether a record needs an index is a question about its length, and length
+// is not knowable from the number of sections: the median record lists three
+// items in three sections and fits on a screen, while a handful run to
+// hundreds. The rail is therefore written for every record that has more than
+// one section and revealed by the page itself, once it knows it will scroll.
 function contentsRail(entries, currentRecordUrl) {
   const items = entries.filter((entry) => entry && entry.count);
-  if (items.length < 3) return "";
-  return `<nav class="record-contents" aria-label="On this record">
+  if (items.length < 2) return "";
+  return `<nav class="record-contents" data-contents-rail hidden aria-label="On this record">
     <p class="record-contents__title">On this record</p>
     <ul>${items.map((entry) => `<li><a href="${escapeHtml(currentRecordUrl)}#${sectionId(entry.title)}">${escapeHtml(entry.title)}<span>${entry.count}</span></a></li>`).join("")}</ul>
   </nav>`;
@@ -806,7 +811,14 @@ function renderWork(work, data, indexes) {
     section("Timeline", entityList(events, "event", (item) => item.displayDate || item.dateStart), "", events.length),
     section("Sources", sourceList(sources), "", sources.length),
   ].join("");
-  const aside = mediaFigures(media, indexes.sources);
+  const aside = `${mediaFigures(media, indexes.sources)}${contentsRail([
+    { title: "About this work", count: overview.trim() ? 1 : 0 },
+    { title: "Contributors and credits", count: displayedContributions.length },
+    { title: "Title variants", count: variants.length },
+    { title: "Related works and versions", count: relations.length },
+    { title: "Timeline", count: events.length },
+    { title: "Sources", count: sources.length },
+  ], recordUrl("work", work.id))}`;
   return {
     title: work.title,
     label: work.workType || "Work",
@@ -840,7 +852,13 @@ function renderEvent(event, data, indexes) {
       section("Places", entityList(places, "place", (item) => [item.city, item.country].filter(Boolean).join(", ")), "", places.length),
       section("Sources", sourceList(sources), "", sources.length),
     ].join(""),
-    aside: mediaFigures(media, indexes.sources),
+    aside: `${mediaFigures(media, indexes.sources)}${contentsRail([
+      { title: "People", count: people.length },
+      { title: "Works", count: works.length },
+      { title: "Organizations", count: organizations.length },
+      { title: "Places", count: places.length },
+      { title: "Sources", count: sources.length },
+    ], recordUrl("event", event.id))}`,
   };
 }
 
@@ -860,7 +878,11 @@ function renderPlace(place, data, indexes) {
       section("People", entityList(people, "person", (item) => humanize(item.primaryRole)), "", people.length),
       section("Sources", sourceList(sources), "", sources.length),
     ].join(""),
-    aside: mediaFigures(media, indexes.sources),
+    aside: `${mediaFigures(media, indexes.sources)}${contentsRail([
+      { title: "Documented events", count: events.length },
+      { title: "People", count: people.length },
+      { title: "Sources", count: sources.length },
+    ], recordUrl("place", place.id))}`,
   };
 }
 
@@ -943,7 +965,13 @@ function renderMedia(media, data, indexes) {
         section("Organizations", entityList(organizations, "organization", (item) => (item.types || []).map(humanize).join(", ")), "", organizations.length),
         section("Sources", sourceList(sources), "", sources.length),
       ].join(""),
-      aside: "",
+      aside: contentsRail([
+        { title: "Related works", count: works.length },
+        { title: "Timeline", count: events.length },
+        { title: "Places", count: places.length },
+        { title: "Organizations", count: organizations.length },
+        { title: "Sources", count: sources.length },
+      ], recordUrl("media", media.id)),
       fullWidth: true,
     };
   }
@@ -974,7 +1002,13 @@ function renderMedia(media, data, indexes) {
     aside: `<figure class="record-media">${mediaPreview(media, {
       eager: true,
       sizes: "(max-width: 900px) calc(100vw - 2rem), 20rem",
-    })}<figcaption>${escapeHtml(media.publicCaption || media.title)}</figcaption></figure>`,
+    })}<figcaption>${escapeHtml(media.publicCaption || media.title)}</figcaption></figure>${contentsRail([
+      { title: "Related works", count: works.length },
+      { title: "Timeline", count: events.length },
+      { title: "People", count: people.length },
+      { title: "Places", count: places.length },
+      { title: "Organizations", count: organizations.length },
+    ], recordUrl("media", media.id))}`,
   };
 }
 
@@ -1160,6 +1194,39 @@ function initializeSourceLedgers() {
   });
 }
 
+function initializeContentsRail() {
+  const rail = target.querySelector("[data-contents-rail]");
+  if (!rail) return;
+  const links = [...rail.querySelectorAll("a")];
+  const sections = links
+    .map((link) => ({ link, section: document.getElementById(link.hash.slice(1)) }))
+    .filter((entry) => entry.section);
+  if (!sections.length) return;
+
+  // A rail earns its place when the reader cannot see the whole record at
+  // once. Two screenfuls is the point at which the first section has left the
+  // viewport by the time the last one arrives.
+  const decide = () => {
+    const longEnough = document.documentElement.scrollHeight > window.innerHeight * 2;
+    const wideEnough = window.matchMedia("(min-width: 901px)").matches;
+    rail.hidden = !(longEnough && wideEnough);
+  };
+  decide();
+  window.addEventListener("resize", decide, { passive: true });
+
+  if (!("IntersectionObserver" in window)) return;
+  const observer = new IntersectionObserver((entries) => {
+    for (const entry of entries) {
+      if (!entry.isIntersecting) continue;
+      const match = sections.find((item) => item.section === entry.target);
+      if (!match) continue;
+      for (const { link } of sections) link.removeAttribute("aria-current");
+      match.link.setAttribute("aria-current", "true");
+    }
+  }, { rootMargin: "-88px 0px -70% 0px" });
+  for (const { section } of sections) observer.observe(section);
+}
+
 function initializeProgressiveLists() {
   target.querySelectorAll("[data-progressive-list]").forEach((collection) => {
     const items = [...collection.querySelectorAll("[data-progressive-item]")];
@@ -1230,7 +1297,11 @@ function renderOrganization(organization, data, indexes) {
       section("Timeline", entityList(events, "event", (item) => item.displayDate || item.dateStart), "", events.length),
       section("Sources", sourceList(sources), "", sources.length),
     ].join(""),
-    aside: `<div class="scope-note">Organization links are induced from approved public records and their documented contributions.</div>`,
+    aside: `<div class="scope-note">Organization links are induced from approved public records and their documented contributions.</div>${contentsRail([
+      { title: "Works", count: works.length },
+      { title: "Timeline", count: events.length },
+      { title: "Sources", count: sources.length },
+    ], recordUrl("organization", organization.id))}`,
   };
 }
 
@@ -1296,7 +1367,14 @@ function renderSource(source, data, indexes) {
       section("People", entityList(people, "person", (item) => humanize(item.primaryRole)), "", people.length),
       section("Organizations", entityList(organizations, "organization", (item) => (item.types || []).map(humanize).join(", ")), "", organizations.length),
     ].join(""),
-    aside: "",
+    aside: contentsRail([
+      { title: "Supported works", count: works.length },
+      { title: "Media", count: media.length },
+      { title: "Timeline", count: events.length },
+      { title: "Places", count: places.length },
+      { title: "People", count: people.length },
+      { title: "Organizations", count: organizations.length },
+    ], recordUrl("source", source.id)),
   };
 }
 
@@ -1356,6 +1434,7 @@ async function bootstrapRecordPage() {
     // must never replace or hide content that is already present in the HTML.
     initializeProgressiveLists();
     initializeSourceLedgers();
+    initializeContentsRail();
     return;
   }
   const params = new URLSearchParams(location.search);
@@ -1379,6 +1458,7 @@ async function bootstrapRecordPage() {
     }
     initializeProgressiveLists();
     initializeSourceLedgers();
+    initializeContentsRail();
   } catch (error) {
     if (target) {
       target.className = "shell";

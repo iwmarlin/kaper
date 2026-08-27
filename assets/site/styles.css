@@ -4573,7 +4573,26 @@ html:not(.js) .source-group__head {
   .record-contents {
     position: sticky;
     top: 5.5rem;
+    max-height: calc(100vh - 7rem);
+    overflow-y: auto;
   }
+}
+
+/* Below the breakpoint the aside falls under the record, where an index of
+   sections the reader has already passed is of no use. */
+@media (max-width: 900px) {
+  .record-contents {
+    display: none;
+  }
+}
+
+.record-contents a[aria-current] {
+  color: var(--accent-dark);
+  font-weight: 700;
+}
+
+.record-contents a[aria-current] span {
+  color: var(--accent-dark);
 }
 
 /* The identity block: plate, name and facts as one object. The portrait used to
