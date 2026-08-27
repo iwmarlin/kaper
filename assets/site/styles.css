@@ -2875,22 +2875,26 @@ main {
   border-bottom: 0;
 }
 
-.credit-evidence__work {
+.credit-evidence__work,
+.credit-evidence__subject {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
   gap: 1rem;
 }
 
-.credit-evidence__work > span:first-child {
+.credit-evidence__work > span:first-child,
+.credit-evidence__subject > span:first-child {
   min-width: 0;
 }
 
-.credit-evidence__work a {
+.credit-evidence__work a,
+.credit-evidence__subject a {
   font-weight: 680;
 }
 
-.credit-evidence__work small {
+.credit-evidence__work small,
+.credit-evidence__subject small {
   display: block;
   margin-top: 0.15rem;
   color: var(--ink-soft);
@@ -2929,8 +2933,54 @@ main {
   font-weight: 650;
 }
 
+/* On a source card the nesting runs the other way: the person is named once
+   and the works the source credits them with sit beneath the name. */
+.credit-evidence__works {
+  display: grid;
+  gap: 0.35rem;
+  margin: 0.65rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.credit-evidence__works li {
+  display: flex;
+  align-items: baseline;
+  gap: 0.65rem;
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+  line-height: 1.45;
+}
+
+.credit-evidence__work-year {
+  flex: 0 0 auto;
+  color: var(--ink-soft);
+  font-variant-numeric: tabular-nums;
+  font-size: 0.78rem;
+}
+
+/* An exception flag, not a rating: only sources the archive declines to treat
+   as independent authority are marked, so the mark keeps its meaning. */
+.badge--reliability {
+  border-color: color-mix(in srgb, var(--warning) 40%, transparent);
+  background: color-mix(in srgb, var(--warning) 8%, transparent);
+  color: var(--warning);
+}
+
+.credit-evidence__sources .badge--reliability {
+  margin-left: 0.4rem;
+  font-size: 0.66rem;
+}
+
+.source-row__meta .badge--reliability {
+  display: inline-block;
+  margin-top: 0.2rem;
+  font-size: 0.66rem;
+}
+
 @media (max-width: 560px) {
-  .credit-evidence__work {
+  .credit-evidence__work,
+  .credit-evidence__subject {
     align-items: flex-start;
   }
 

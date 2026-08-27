@@ -210,6 +210,19 @@ class RecordPayloadBuilder:
             self.add(bundle, "places", record_ids(root, "placeIds"))
             self.add(bundle, "people", record_ids(root, "personIds"))
             self.add(bundle, "organizations", record_ids(root, "organizationIds"))
+            # The credit statements a source underwrites are held on the
+            # contributions, not on the source's own personIds.  Carry those
+            # records, and the people and works they name, so the card can
+            # present the attributions the source documents instead of only
+            # the people linked to it directly.
+            contributions = self.add(
+                bundle,
+                "contributions",
+                record_ids(root, "contributionIds"),
+            )
+            for contribution in contributions:
+                self.add(bundle, "people", record_ids(contribution, "personIds"))
+                self.add(bundle, "works", record_ids(contribution, "workIds"))
 
         return {
             "schemaVersion": "1.0.0",

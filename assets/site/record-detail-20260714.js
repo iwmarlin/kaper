@@ -1,4 +1,4 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=3837bf33f0";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=88497a24e8";
 import {
   certaintyBadge,
   escapeHtml,
@@ -21,9 +21,12 @@ import {
   safeExternalUrl,
   setCanonicalRecordUrl,
   scopeBadge,
+  sourceReliabilityBadge,
+  sourceReliabilityLabel,
+  sourceStatusLabel,
   typeBadge,
   updateMeta,
-} from "./core.js?v=3837bf33f0";
+} from "./core.js?v=88497a24e8";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 let target = null;
@@ -272,11 +275,13 @@ function sourceRow(source, index, { expanded = false } = {}) {
     <a href="${recordUrl("source", source.id)}">Source record</a>
     ${external ? `<a href="${escapeHtml(external)}" target="_blank" rel="noreferrer">Open source <span aria-hidden="true">\u2197</span></a>` : ""}
   </p>`;
+  const reliabilityFlag = sourceReliabilityBadge(source.reliability);
   if (expanded) {
     return `<li class="source-row source-row--open" id="source-${escapeHtml(source.id)}">
       <span class="source-row__meta">
         <a class="source-row__id" href="${recordUrl("source", source.id)}" aria-label="Open source record ${escapeHtml(source.id)}">${escapeHtml(source.id)}</a>
         <span class="source-row__year">${yearLabel}</span>
+        ${reliabilityFlag}
       </span>
       <div class="source-row__body">
         <p class="source-row__citation">${escapeHtml(full)}</p>
@@ -290,6 +295,7 @@ function sourceRow(source, index, { expanded = false } = {}) {
       <span class="source-row__meta">
         <span class="source-row__id">${escapeHtml(source.id)}</span>
         <span class="source-row__year">${yearLabel}</span>
+        ${reliabilityFlag}
       </span>
       <span class="source-row__title">${escapeHtml(summary)}</span>
       ${chevron("source-row__chevron")}
@@ -511,7 +517,7 @@ function personWorkLedger(person, indexes) {
         <span class="credit-evidence__badges">${typeBadge(item.work.workType)}${[...item.certainties].map(certaintyBadge).join("")}</span>
       </div>
       ${item.sources.length ? `<ul class="credit-evidence__sources" aria-label="Sources supporting this credit">
-        ${item.sources.map((source) => `<li><span class="credit-evidence__source-id">${escapeHtml(source.id)}</span><a href="${recordUrl("source", source.id)}">${escapeHtml(source.shortCitation || source.title || source.fullCitation || source.id)}</a></li>`).join("")}
+        ${item.sources.map((source) => `<li><span class="credit-evidence__source-id">${escapeHtml(source.id)}</span><span><a href="${recordUrl("source", source.id)}">${escapeHtml(source.shortCitation || source.title || source.fullCitation || source.id)}</a>${sourceReliabilityBadge(source.reliability)}</span></li>`).join("")}
       </ul>` : ""}
     </li>`;
     },
@@ -1345,18 +1351,83 @@ function sourceResearchNote(source) {
   </details>`;
 }
 
+// A source card used to answer "who is this source about?" with the person
+// links held on the source itself, and stopped there. The credit statements the
+// source actually underwrites live on the contributions, and on 264 of the 772
+// sources those name people the card never mentioned — 678 attributions that
+// the archive had documented and the reader could not see. People and credits
+// are therefore one list, on the same principle as the person card: the person
+// is named once, and the credits this source supports sit beneath the name.
+function sourceCreditLedger(source, indexes) {
+  const entries = new Map();
+  const entryFor = (person) => {
+    if (!entries.has(person.id)) {
+      entries.set(person.id, { person, roles: new Set(), certainties: new Set(), works: new Map() });
+    }
+    return entries.get(person.id);
+  };
+  for (const person of related(source.personIds, indexes.people)) entryFor(person);
+  for (const contribution of related(source.contributionIds, indexes.contributions)) {
+    for (const person of related(contribution.personIds, indexes.people)) {
+      const entry = entryFor(person);
+      if (contribution.role) entry.roles.add(contribution.role);
+      if (contribution.certainty && contribution.certainty !== "confirmed") {
+        entry.certainties.add(contribution.certainty);
+      }
+      for (const work of related(contribution.workIds, indexes.works)) entry.works.set(work.id, work);
+    }
+  }
+  const items = [...entries.values()]
+    .map((entry) => ({
+      ...entry,
+      works: [...entry.works.values()].sort((a, b) => (
+        Number(a.year || 9999) - Number(b.year || 9999) || String(a.title).localeCompare(String(b.title))
+      )),
+    }))
+    .sort((a, b) => String(a.person.displayName).localeCompare(String(b.person.displayName)));
+  const list = progressiveList(items, {
+    className: "credit-evidence-list",
+    label: "people",
+    renderItem: (item) => {
+      // Where the source documents a credit, the role comes from that credit.
+      // Where it only mentions the person, the person's own primary role is
+      // shown instead, so the two kinds of link stay distinguishable.
+      const roles = item.roles.size
+        ? [...item.roles].map(humanize).join(", ")
+        : humanize(item.person.primaryRole || "");
+      return `<li class="credit-evidence">
+      <div class="credit-evidence__subject">
+        <span><a href="${recordUrl("person", item.person.id)}">${escapeHtml(item.person.displayName)}</a>${roles ? `<small>${escapeHtml(roles)}</small>` : ""}</span>
+        <span class="credit-evidence__badges">${[...item.certainties].map(certaintyBadge).join("")}</span>
+      </div>
+      ${item.works.length ? `<ul class="credit-evidence__works" aria-label="Credits this source documents">
+        ${item.works.map((work) => `<li><a href="${recordUrl("work", work.id)}">${escapeHtml(work.title)}</a>${work.year ? `<span class="credit-evidence__work-year">${escapeHtml(String(work.year))}</span>` : ""}</li>`).join("")}
+      </ul>` : ""}
+    </li>`;
+    },
+    searchText: (item) => [
+      item.person.displayName,
+      item.person.primaryRole,
+      ...item.roles,
+      ...item.works.map((work) => `${work.title} ${work.year || ""}`),
+    ].filter(Boolean).join(" "),
+    showTotal: true,
+  });
+  return { items, list };
+}
+
 function renderSource(source, data, indexes) {
   const works = related(source.workIds, indexes.works);
   const media = related(source.mediaIds, indexes.media);
   const events = related(source.timelineEventIds, indexes.timelineEvents);
   const places = related(source.placeIds, indexes.places);
-  const people = related(source.personIds, indexes.people);
   const organizations = related(source.organizationIds, indexes.organizations);
+  const credits = sourceCreditLedger(source, indexes);
   return {
     title: source.title || source.shortCitation,
     label: "Source",
-    badges: typeBadge(source.sourceType),
-    facts: `${fact("Creator", source.creator)}${fact("Date", source.date)}${fact("Publication", source.publication)}${fact("Repository", source.repository)}`,
+    badges: `${typeBadge(source.sourceType)}${sourceReliabilityBadge(source.reliability)}`,
+    facts: `${fact("Creator", source.creator)}${fact("Date", source.date)}${fact("Publication", source.publication)}${fact("Repository", source.repository)}${fact("Reliability", sourceReliabilityLabel(source.reliability))}${fact("Verification", sourceStatusLabel(source.sourceStatus))}`,
     main: [
       section("Citation", `<p class="lead">${escapeHtml(source.fullCitation || source.shortCitation)}</p>${sourceActions(source)}`),
       sourceResearchNote(source),
@@ -1364,7 +1435,7 @@ function renderSource(source, data, indexes) {
       section("Media", entityList(media, "media", (item) => humanize(item.mediaType)), "", media.length),
       section("Timeline", entityList(events, "event", (item) => item.displayDate || item.dateStart), "", events.length),
       section("Places", entityList(places, "place", (item) => [item.city, item.country].filter(Boolean).join(", ")), "", places.length),
-      section("People", entityList(people, "person", (item) => humanize(item.primaryRole)), "", people.length),
+      section("People and credits", credits.list, "", credits.items.length),
       section("Organizations", entityList(organizations, "organization", (item) => (item.types || []).map(humanize).join(", ")), "", organizations.length),
     ].join(""),
     aside: contentsRail([
@@ -1372,7 +1443,7 @@ function renderSource(source, data, indexes) {
       { title: "Media", count: media.length },
       { title: "Timeline", count: events.length },
       { title: "Places", count: places.length },
-      { title: "People", count: people.length },
+      { title: "People and credits", count: credits.items.length },
       { title: "Organizations", count: organizations.length },
     ], recordUrl("source", source.id)),
   };

@@ -153,6 +153,41 @@ export function scopeBadge(scope) {
   return '<span class="badge badge--context">Context record</span>';
 }
 
+// Every source in the archive carries an assessment of how much weight it can
+// bear and whether its own attribution was accepted without reservation. Both
+// judgements were recorded and neither was ever shown, so a YouTube upload and
+// a National Digital Archive negative were cited on identical rows. The
+// assessment is stated in full on the source's own record, where a reader is
+// weighing that source; in the citation lists on other records only the
+// exception is flagged, because a mark carried by three quarters of the rows
+// tells a reader nothing.
+const SOURCE_RELIABILITY_LABELS = Object.freeze({
+  high: "High",
+  medium: "Medium",
+  low: "Low",
+});
+const SOURCE_STATUS_LABELS = Object.freeze({
+  verified: "Verified",
+  verified_with_attribution_note: "Verified, with an attribution note",
+});
+
+export function sourceReliabilityLabel(reliability) {
+  if (!reliability) return "";
+  const key = String(reliability).toLowerCase().trim();
+  return SOURCE_RELIABILITY_LABELS[key] || humanize(reliability);
+}
+
+export function sourceStatusLabel(status) {
+  if (!status) return "";
+  const key = String(status).toLowerCase().trim();
+  return SOURCE_STATUS_LABELS[key] || humanize(status);
+}
+
+export function sourceReliabilityBadge(reliability) {
+  if (String(reliability || "").toLowerCase().trim() !== "low") return "";
+  return '<span class="badge badge--reliability badge--reliability-low" title="Cited for the record it documents; not treated as independent authority.">Low reliability</span>';
+}
+
 const RIGHTS_LABELS = Object.freeze({
   ok: "Rights documented",
   public_domain: "Public domain",

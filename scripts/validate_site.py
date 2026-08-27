@@ -73,7 +73,11 @@ PRERENDERED_RELATION_SECTIONS = {
         "mediaIds": "Media",
         "timelineEventIds": "Timeline",
         "placeIds": "Places",
-        "personIds": "People",
+        # People linked to the source and the credits the source documents are
+        # one section, so that an attribution recorded on a contribution is not
+        # invisible on the card of the source that proves it.
+        "personIds": "People and credits",
+        "contributionIds": "People and credits",
         "organizationIds": "Organizations",
     },
 }
@@ -508,6 +512,10 @@ def validate(root: Path) -> dict:
                             item.get("id"): item
                             for item in payload.get("tables", {}).get("titleVariants", [])
                         }
+                        payload_person_ids = {
+                            item.get("id")
+                            for item in payload.get("tables", {}).get("people", [])
+                        }
                         if record_type == "media":
                             match = re.search(
                                 r'<script type="application/ld\+json">(.*?)</script>',
@@ -558,6 +566,22 @@ def validate(root: Path) -> dict:
                                     if escape(
                                         (title_variants_by_id.get(variant_id, {}) or {}).get("variantTitle", "\u0000")
                                     ).lower() not in lowered
+                                ]
+                            if record_type == "source" and field == "contributionIds":
+                                # A source's contributions carry credits for
+                                # people and for organizations alike. Only the
+                                # ones that name a person belong in the section
+                                # that lists people; an organization-only
+                                # credit is shown under Organizations instead.
+                                linked_ids = [
+                                    contribution_id
+                                    for contribution_id in linked_ids
+                                    if any(
+                                        person_id in payload_person_ids
+                                        for person_id in (
+                                            contributions_by_id.get(contribution_id, {}).get("personIds") or []
+                                        )
+                                    )
                                 ]
                             if record_type == "person" and field == "sourceIds":
                                 credit_source_ids = {
