@@ -68,7 +68,10 @@ PRERENDERED_RELATION_SECTIONS = {
         # side is a fact row, because a label has one parent and a company has
         # a list of marks.
         "imprintIds": "Imprints",
+        # The works an organization stands behind and the citations that
+        # document each of those credits are one section, as on the person card.
         "workIds": "Works",
+        "contributionIds": "Works",
         "timelineEventIds": "Timeline",
         "sourceIds": "Sources",
     },

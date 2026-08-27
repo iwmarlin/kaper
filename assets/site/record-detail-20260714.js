@@ -1,4 +1,4 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=3b206fc2b4";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=0c9a53fdae";
 import {
   authorityLinkList,
   certaintyBadge,
@@ -6,6 +6,7 @@ import {
   formatDate,
   getIds,
   humanize,
+  languageBadge,
   indexById,
   mediaIsFairUse,
   mediaRightsBadge,
@@ -28,7 +29,7 @@ import {
   sourceStatusLabel,
   typeBadge,
   updateMeta,
-} from "./core.js?v=3b206fc2b4";
+} from "./core.js?v=0c9a53fdae";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 let target = null;
@@ -682,6 +683,8 @@ function relationNoteRestatesTheLabel(note, relationTypes) {
   });
 }
 
+const MERGEABLE_RELATION_TYPES = new Set(["language_version_of", "remake_of"]);
+
 function relationList(items, work, indexes, variantsByTitle = new Map()) {
   const relationMeta = (item) => {
     const candidateIds = [...getIds(item, "targetWorkIds"), ...getIds(item, "sourceWorkIds")].filter((id) => id !== work.id);
@@ -704,8 +707,14 @@ function relationList(items, work, indexes, variantsByTitle = new Map()) {
         : item.publicNote;
       // Where a title variant carries the same title, its language and its
       // printed form are shown here rather than a second time in a list of
-      // names.
-      const variant = variantsByTitle.get(normalizeSearch(title));
+      // names. Only where the related work really is this work under another
+      // title, though: on a language version or a remake the variant and the
+      // related record describe one thing, but a song and the film it belongs
+      // to are two, and matching their titles put the film's alternative
+      // German release title on the row of a song of nearly the same name, and
+      // a song's Polish title on the row of the film.
+      const sameWorkUnderAnotherTitle = MERGEABLE_RELATION_TYPES.has(item.relationType);
+      const variant = sameWorkUnderAnotherTitle ? variantsByTitle.get(normalizeSearch(title)) : undefined;
       const sourceForm = variant
         && variant.titleAsSource
         && normalizeSearch(variant.titleAsSource) !== normalizeSearch(variant.variantTitle)
@@ -713,7 +722,7 @@ function relationList(items, work, indexes, variantsByTitle = new Map()) {
         ? `Source form: ${variant.titleAsSource}`
         : "";
       const detail = [sourceForm, note].filter(Boolean).join(" \u00b7 ");
-      return `<li><span>${typeBadge(relationType)} ${titleHtml}${variant && variant.language ? ` ${periodBadge(variant.language)}` : ""}${detail ? `<br><small>${escapeHtml(detail)}</small>` : ""}</span>${certaintyBadge(item.certainty)}</li>`;
+      return `<li><span>${typeBadge(relationType)} ${titleHtml}${variant && variant.language ? ` ${languageBadge(variant.language)}` : ""}${detail ? `<br><small>${escapeHtml(detail)}</small>` : ""}</span>${certaintyBadge(item.certainty)}</li>`;
     },
     searchText: (item) => {
       const { title } = relationMeta(item);
@@ -725,7 +734,7 @@ function relationList(items, work, indexes, variantsByTitle = new Map()) {
 function variantList(items) {
   return progressiveList(items, {
     label: "title variants",
-    renderItem: (item) => `<li><span><strong>${escapeHtml(item.variantTitle)}</strong>${item.titleAsSource && item.titleAsSource !== item.variantTitle ? `<br><small>Source form: ${escapeHtml(item.titleAsSource)}</small>` : ""}</span><span>${typeBadge(item.variantType)} ${item.language ? periodBadge(item.language) : ""} ${certaintyBadge(item.certainty)}</span></li>`,
+    renderItem: (item) => `<li><span><strong>${escapeHtml(item.variantTitle)}</strong>${item.titleAsSource && item.titleAsSource !== item.variantTitle ? `<br><small>Source form: ${escapeHtml(item.titleAsSource)}</small>` : ""}</span><span>${typeBadge(item.variantType)} ${item.language ? languageBadge(item.language) : ""} ${certaintyBadge(item.certainty)}</span></li>`,
     searchText: (item) => [item.variantTitle, item.titleAsSource, item.variantType, item.language].filter(Boolean).join(" "),
   });
 }
@@ -1300,6 +1309,67 @@ function initializeProgressiveLists() {
   });
 }
 
+// The works section named the films and songs an organization stands behind
+// and stopped there, while the evidence for each of those links sat on the
+// contribution: Aafa-Film AG showed two films and one source, when the
+// production credit for Der Korvettenkapitaen alone rests on two more. The
+// work is stated once, its role beneath it, and the citations that document
+// the organization's part in it below that — the same shape the person card
+// and the source card use.
+function organizationWorkLedger(organization, indexes) {
+  const entries = new Map();
+  const entryFor = (work) => {
+    if (!entries.has(work.id)) {
+      entries.set(work.id, { work, roles: new Set(), certainties: new Set(), sourceIds: new Set() });
+    }
+    return entries.get(work.id);
+  };
+  for (const work of related(organization.workIds, indexes.works)) entryFor(work);
+  for (const contribution of related(organization.contributionIds, indexes.contributions)) {
+    for (const work of related(contribution.workIds, indexes.works)) {
+      const entry = entryFor(work);
+      if (contribution.role) entry.roles.add(contribution.role);
+      if (contribution.certainty && contribution.certainty !== "confirmed") {
+        entry.certainties.add(contribution.certainty);
+      }
+      for (const sourceId of contribution.sourceIds || []) entry.sourceIds.add(sourceId);
+    }
+  }
+  const items = [...entries.values()]
+    .map((entry) => ({
+      ...entry,
+      sources: sortSourcesChronologically(related([...entry.sourceIds], indexes.sources)),
+    }))
+    .sort((a, b) => Number(a.work.year || 9999) - Number(b.work.year || 9999)
+      || String(a.work.title).localeCompare(String(b.work.title)));
+  const list = progressiveList(items, {
+    className: "credit-evidence-list",
+    label: "works",
+    renderItem: (item) => {
+      const roles = [...item.roles].map(humanize).join(", ");
+      const meta = [item.work.year ? String(item.work.year) : "", roles].filter(Boolean).join(" \u00b7 ");
+      return `<li class="credit-evidence">
+      <div class="credit-evidence__work">
+        <span><a href="${recordUrl("work", item.work.id)}">${escapeHtml(item.work.title)}</a>${meta ? `<small>${escapeHtml(meta)}</small>` : ""}</span>
+        <span class="credit-evidence__badges">${typeBadge(item.work.workType)}${[...item.certainties].map(certaintyBadge).join("")}</span>
+      </div>
+      ${item.sources.length ? `<ul class="credit-evidence__sources" aria-label="Sources documenting this credit">
+        ${item.sources.map((source) => `<li><span class="credit-evidence__source-id">${escapeHtml(source.id)}</span><span><a href="${recordUrl("source", source.id)}">${escapeHtml(source.shortCitation || source.title || source.fullCitation || source.id)}</a>${sourceReliabilityBadge(source.reliability)}</span></li>`).join("")}
+      </ul>` : ""}
+    </li>`;
+    },
+    searchText: (item) => [
+      item.work.title,
+      item.work.year,
+      item.work.workType,
+      ...item.roles,
+      ...item.sources.map(sourceSearchText),
+    ].filter(Boolean).join(" "),
+    showTotal: true,
+  });
+  return { items, list };
+}
+
 // Two kinds of body share this table and the cards did not distinguish them.
 // Ninety organizations are subjects of the research - the studios, publishers,
 // labels and orchestras Kaper worked with. Fifty-five are the repositories and
@@ -1333,6 +1403,7 @@ function renderOrganization(organization, data, indexes) {
   const works = related(organization.workIds, indexes.works);
   const events = related(organization.timelineEventIds, indexes.timelineEvents);
   const sources = related(organization.sourceIds, indexes.sources);
+  const credits = organizationWorkLedger(organization, indexes);
   const parents = related(organization.parentOrganizationIds, indexes.organizations);
   const imprints = related(organization.imprintIds, indexes.organizations)
     .sort((a, b) => String(a.displayName).localeCompare(String(b.displayName)));
@@ -1346,13 +1417,13 @@ function renderOrganization(organization, data, indexes) {
     main: [
       section("Note", organization.publicNote ? `<p class="lead">${escapeHtml(organization.publicNote)}</p>` : ""),
       section("Imprints", entityList(imprints, "organization", (item) => (item.types || []).map(humanize).join(", ")), "", imprints.length),
-      section("Works", entityList(works, "work", (item) => [item.year, item.workType].filter(Boolean).join(" · ")), "", works.length),
+      section("Works", credits.list, "", credits.items.length),
       section("Timeline", entityList(events, "event", (item) => item.displayDate || item.dateStart), "", events.length),
       section("Sources", sourceList(sources), "", sources.length),
     ].join(""),
     aside: `<div class="scope-note">${organizationScopeNote(organization)}</div>${contentsRail([
       { title: "Imprints", count: imprints.length },
-      { title: "Works", count: works.length },
+      { title: "Works", count: credits.items.length },
       { title: "Timeline", count: events.length },
       { title: "Sources", count: sources.length },
     ], recordUrl("organization", organization.id))}`,

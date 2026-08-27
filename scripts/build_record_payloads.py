@@ -210,6 +210,15 @@ class RecordPayloadBuilder:
                 "organizations",
                 [*record_ids(root, "parentOrganizationIds"), *record_ids(root, "imprintIds")],
             )
+            # The evidence for an organization's part in a work sits on the
+            # contribution, not on the organization, so the card cannot show it
+            # unless those records and their sources travel with the payload.
+            contributions = self.add(
+                bundle, "contributions", record_ids(root, "contributionIds")
+            )
+            for contribution in contributions:
+                self.add(bundle, "works", record_ids(contribution, "workIds"))
+                self.add(bundle, "sources", record_ids(contribution, "sourceIds"))
         elif record_type == "source":
             self.add(bundle, "works", record_ids(root, "workIds"))
             self.add(bundle, "media", record_ids(root, "mediaIds"))

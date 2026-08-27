@@ -143,6 +143,38 @@ export function periodBadge(period) {
     .join("");
 }
 
+// A language was being drawn with the period badge — the one that says Warsaw,
+// European, Hollywood. Given "de" it produced a gold plaque reading "De", with
+// "De" as its accessible name too, so a reader was told a two-letter word and
+// nothing about what it meant. Languages get their own mark, and it says the
+// language in full.
+const LANGUAGE_NAMES = Object.freeze({
+  de: "German",
+  en: "English",
+  fr: "French",
+  pl: "Polish",
+  it: "Italian",
+  es: "Spanish",
+  cs: "Czech",
+  hu: "Hungarian",
+  nl: "Dutch",
+  ru: "Russian",
+  sv: "Swedish",
+  da: "Danish",
+  yi: "Yiddish",
+});
+
+export function languageName(code) {
+  const key = String(code || "").toLowerCase().trim();
+  return LANGUAGE_NAMES[key] || humanize(code);
+}
+
+export function languageBadge(code) {
+  if (!code) return "";
+  const name = languageName(code);
+  return `<span class="badge badge--language" title="${escapeHtml(name)}" aria-label="${escapeHtml(name)}">${escapeHtml(name)}</span>`;
+}
+
 export function typeBadge(type) {
   if (!type) return "";
   return `<span class="badge badge--type">${escapeHtml(humanize(type))}</span>`;
