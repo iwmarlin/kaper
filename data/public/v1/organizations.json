@@ -10,7 +10,7 @@
     {
       "id": "ORG001",
       "displayName": "Metro-Goldwyn-Mayer (MGM)",
-      "authorizedName": "Metro-Goldwyn-Mayer (MGM)",
+      "authorizedName": "Metro-Goldwyn-Mayer",
       "types": [
         "film_studio"
       ],
@@ -19,7 +19,9 @@
       ],
       "country": "United States",
       "slug": "metro-goldwyn-mayer-mgm",
-      "nameVariants": "Metro-Goldwyn-Mayer Studios (MGM)",
+      "nameVariants": "MGM; Metro-Goldwyn-Mayer Studios",
+      "authorizedNameSource": "LCNAF",
+      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n80015727\nGND: https://d-nb.info/gnd/10290848-5\nISNI: https://isni.org/isni/0000000405252995",
       "sourceIds": [
         "SRC0373",
         "SRC0114",
@@ -738,16 +740,16 @@
     },
     {
       "id": "ORG026",
-      "displayName": "New World Pictures",
-      "authorizedName": "New World Pictures",
+      "displayName": "New World Pictures, Ltd.",
+      "authorizedName": "New World Pictures, Ltd.",
       "types": [
         "film_studio"
       ],
-      "city": [
-        "Los Angeles"
-      ],
-      "country": "United States",
+      "country": "United Kingdom",
       "slug": "new-world-pictures",
+      "nameVariants": "New World Pictures",
+      "authorizedNameSource": "AFI Catalog",
+      "publicNote": "British production company identified by the AFI Catalog as a subsidiary of Twentieth Century-Fox for Wings of the Morning (1937); it is not the later American company of the same name.",
       "contributionIds": [
         "CON-F045-PC-ORG026"
       ],
@@ -1398,20 +1400,23 @@
     },
     {
       "id": "ORG041",
-      "displayName": "Loew’s Inc. / Metro-Goldwyn-Mayer",
-      "authorizedName": "Loew’s Inc. / Metro-Goldwyn-Mayer",
+      "displayName": "Loew’s Incorporated",
+      "authorizedName": "Loew's Incorporated",
       "types": [
         "film_studio"
       ],
       "city": [
-        "Culver City / New York City"
+        "New York City"
       ],
       "country": "United States",
-      "slug": "mgm-loews-inc",
-      "nameVariants": "MGM-Loews Inc.; Loew’s Inc.; Metro-Goldwyn-Mayer",
+      "slug": "loews-incorporated",
+      "nameVariants": "Loew’s, Inc.; Loew's Inc.; Loew's",
+      "authorizedNameSource": "LCNAF",
+      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n85376712\nGND: https://d-nb.info/gnd/1214666965\nISNI: https://isni.org/isni/0000000106665300",
+      "publicNote": "The 1939 copyright entries name Loew’s, Inc. as copyright proprietor of the songs. This record is kept distinct from Metro-Goldwyn-Mayer, although the companies were corporately related.",
       "contributionIds": [
-        "CON-S175-PUB-ORG041",
-        "CON-S176-PUB-ORG041"
+        "CON-S175-CC-ORG041",
+        "CON-S176-CC-ORG041"
       ],
       "workIds": [
         "W-S175",
@@ -3434,8 +3439,8 @@
     },
     {
       "id": "ORG116",
-      "displayName": "Celebrity Productions–P. A. Powers",
-      "authorizedName": "Celebrity Productions, Inc. / P. A. Powers",
+      "displayName": "Celebrity Productions, Inc.",
+      "authorizedName": "Celebrity Productions, Inc.",
       "types": [
         "film_production_company"
       ],
@@ -3444,6 +3449,8 @@
       ],
       "country": "United States",
       "slug": "celebrity-productions-pa-powers",
+      "nameVariants": "Celebrity Productions",
+      "publicNote": "The Little Boy Blue poster credit associates Celebrity Productions with P. A. Powers. Powers is retained in the work-specific printed credit and is not treated as part of the corporate name.",
       "sourceIds": [
         "SRC0373",
         "SRC0384"
