@@ -1,4 +1,4 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=0c9a53fdae";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=b29aa58eff";
 import {
   authorityLinkList,
   certaintyBadge,
@@ -29,7 +29,7 @@ import {
   sourceStatusLabel,
   typeBadge,
   updateMeta,
-} from "./core.js?v=0c9a53fdae";
+} from "./core.js?v=b29aa58eff";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 let target = null;
@@ -802,10 +802,19 @@ function renderWork(work, data, indexes) {
   // Title variants are the names of this record; relations are other records.
   // A variant that carries the title of a related work was being printed
   // twice, once as a name and once as a link, on 36 works.
-  const relatedTitles = new Set(relations.flatMap((relation) => [
-    ...getIds(relation, "targetWorkIds"),
-    ...getIds(relation, "sourceWorkIds"),
-  ]).filter((id) => id !== work.id)
+  //
+  // Only the relations that carry the variant may take it out of the list.
+  // When the merge was narrowed to versions and remakes, this filter was left
+  // matching every relation, and the alternative German release title of Der
+  // Korvettenkapitaen fell out of both places at once: suppressed here because
+  // a song of nearly the same name is related, and no longer shown on that
+  // song's row because a song is not a version of a film.
+  const relatedTitles = new Set(relations
+    .filter((relation) => MERGEABLE_RELATION_TYPES.has(relation.relationType))
+    .flatMap((relation) => [
+      ...getIds(relation, "targetWorkIds"),
+      ...getIds(relation, "sourceWorkIds"),
+    ]).filter((id) => id !== work.id)
     .map((id) => indexes.works.get(id))
     .filter(Boolean)
     .map((item) => normalizeSearch(item.title)));

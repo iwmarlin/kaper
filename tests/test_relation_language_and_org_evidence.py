@@ -81,6 +81,43 @@ class RelationLanguageTests(unittest.TestCase):
                 self.assertGreater(len(label), 3, f"{page.parent.name}: language shown as {label!r}")
 
 
+class TitleVariantVisibilityTests(unittest.TestCase):
+    """A variant is taken out of the list of names only because it is shown on a
+    relation row instead. When the merge was narrowed to versions and remakes
+    and this filter was not, the alternative German release title of Der
+    Korvettenkapitän fell out of both places at once and appeared nowhere."""
+
+    def test_every_variant_is_shown_somewhere_on_its_work(self):
+        works = {item["id"]: item for item in read("works.json")}
+        variants = {item["id"]: item for item in read("title-variants.json")}
+        invisible = []
+        for work in works.values():
+            page = ROOT / "records/work" / work["id"] / "index.html"
+            if not page.is_file():
+                continue
+            text = page.read_text(encoding="utf-8")
+            shown = ""
+            for pattern in (
+                r'id="section-title-variants".*?</section>',
+                r'id="section-related-works-and-versions".*?</section>',
+            ):
+                found = re.search(pattern, text, re.S)
+                if found:
+                    shown += found.group(0)
+            for variant_id in work.get("titleVariantIds") or []:
+                variant = variants.get(variant_id)
+                if not variant:
+                    continue
+                # The merge shows the related work's own spelling, which can
+                # differ from the variant's in capitalisation alone — "L'homme"
+                # against "L'Homme". They are the same name, so the comparison
+                # is made on the normalised form.
+                wanted = normalize(variant["variantTitle"])
+                if wanted and wanted not in normalize(re.sub(r"<[^>]+>", " ", shown)):
+                    invisible.append(f"{work['id']}/{variant_id}: {variant['variantTitle']!r}")
+        self.assertEqual(invisible, [], "a recorded title variant is shown on no part of its work's card")
+
+
 class OrganizationCreditEvidenceTests(unittest.TestCase):
     """The works section named what an organization stood behind and stopped
     there, while the evidence for each link sat on the contribution. Aafa-Film
