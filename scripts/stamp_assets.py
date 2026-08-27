@@ -33,6 +33,17 @@ SITE = ROOT / "assets" / "site"
 
 REF_RE = re.compile(r'((?:assets/site/|\./)[A-Za-z0-9._/-]+\.(?:css|js))\?v=[A-Za-z0-9._-]+')
 STRIP_RE = re.compile(r'\?v=[A-Za-z0-9._-]+')
+# The font files are referenced from inside the stylesheet, and they were the
+# one asset this script did not stamp. The stylesheet's own URL changes on
+# every build, so a reader always received the new CSS — pointing at a font
+# URL that had not changed since the first visit. A returning reader therefore
+# kept the font that was cached the first time, and no change of typeface
+# could ever reach them. The reference is rewritten whether or not it already
+# carries a version, since these had none to begin with.
+FONT_RE = re.compile(
+    r'((?:\.\./fonts/|assets/fonts/)[A-Za-z0-9._-]+\.woff2)(?:\?v=[A-Za-z0-9._-]+)?'
+)
+FONTS = ROOT / "assets" / "fonts"
 
 
 def build_id() -> str:
@@ -40,11 +51,17 @@ def build_id() -> str:
     for path in sorted(SITE.glob("*.css")) + sorted(SITE.glob("*.js")):
         normalized = STRIP_RE.sub("?v=", path.read_text(encoding="utf-8"))
         parts.append(path.name + "\0" + normalized)
+    # The fonts are part of the build: changing a typeface without changing a
+    # line of CSS must still produce a new id, or the stamp it is written into
+    # would not move and the old file would stay cached.
+    for path in sorted(FONTS.glob("*.woff2")):
+        parts.append(path.name + "\0" + hashlib.sha256(path.read_bytes()).hexdigest())
     return hashlib.sha256("\0".join(parts).encode("utf-8")).hexdigest()[:10]
 
 
 def stamp_text(text: str, version: str) -> str:
-    return REF_RE.sub(rf"\1?v={version}", text)
+    text = REF_RE.sub(rf"\1?v={version}", text)
+    return FONT_RE.sub(rf"\1?v={version}", text)
 
 
 def main() -> int:
@@ -65,9 +82,19 @@ def main() -> int:
             js.write_text(new, encoding="utf-8")
             changed.append(f"assets/site/{js.name}")
 
+    # The stylesheets were never rewritten, because until the fonts were
+    # stamped they held no reference that needed it.
+    for css in sorted(SITE.glob("*.css")):
+        text = css.read_text(encoding="utf-8")
+        new = stamp_text(text, version)
+        if new != text:
+            css.write_text(new, encoding="utf-8")
+            changed.append(f"assets/site/{css.name}")
+
     gen = ROOT / "scripts" / "build_static_records.py"
     text = gen.read_text(encoding="utf-8")
-    new = re.sub(r'(style_version = ")[^"]*(")', rf"\g<1>{version}\g<2>", text)
+    new = stamp_text(text, version)
+    new = re.sub(r'(style_version = ")[^"]*(")', rf"\g<1>{version}\g<2>", new)
     new = re.sub(r'(record_script_version = ")[^"]*(")', rf"\g<1>{version}\g<2>", new)
     if new != text:
         gen.write_text(new, encoding="utf-8")

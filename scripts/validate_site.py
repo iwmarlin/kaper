@@ -182,12 +182,21 @@ def read_json(path: Path):
 
 
 def expected_asset_version(root: Path) -> str:
-    """Return the content-derived version used by scripts/stamp_assets.py."""
+    """Return the content-derived version used by scripts/stamp_assets.py.
+
+    The fonts count towards it. They are referenced from inside the stylesheet
+    and were the one asset the stamp never reached, so a reader who had visited
+    once kept the typeface they were first served no matter what the archive
+    changed. Changing a font must move the id, or the stamp it is written into
+    does not move either.
+    """
     site = root / "assets/site"
     parts: list[str] = []
     for path in sorted(site.glob("*.css")) + sorted(site.glob("*.js")):
         normalized = ASSET_VERSION_RE.sub("?v=", path.read_text(encoding="utf-8"))
         parts.append(path.name + "\0" + normalized)
+    for path in sorted((root / "assets/fonts").glob("*.woff2")):
+        parts.append(path.name + "\0" + hashlib.sha256(path.read_bytes()).hexdigest())
     return hashlib.sha256("\0".join(parts).encode("utf-8")).hexdigest()[:10]
 
 
