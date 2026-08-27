@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 1268,
+  "count": 1269,
   "records": [
     {
       "id": "CON-F001-C-P009",
@@ -248,7 +248,7 @@
     {
       "id": "CON-F004-PC-ORG006",
       "role": "production_company",
-      "nameAsPrinted": "Maxim-Film GmbH | May-Film AG",
+      "nameAsPrinted": "Joe May-Film A.-G.",
       "evidenceContext": "film_credits",
       "certainty": "confirmed",
       "workIds": [
@@ -264,7 +264,7 @@
     {
       "id": "CON-F004-PC-ORG007",
       "role": "production_company",
-      "nameAsPrinted": "Maxim-Film GmbH | May-Film AG",
+      "nameAsPrinted": "Maxim-Film GmbH",
       "evidenceContext": "film_credits",
       "certainty": "confirmed",
       "workIds": [
@@ -348,7 +348,7 @@
     {
       "id": "CON-F005-PC-ORG005",
       "role": "production_company",
-      "nameAsPrinted": "International Standard Film | May-Film AG",
+      "nameAsPrinted": "International Standard Film",
       "evidenceContext": "film_credits",
       "certainty": "confirmed",
       "workIds": [
@@ -364,7 +364,7 @@
     {
       "id": "CON-F005-PC-ORG006",
       "role": "production_company",
-      "nameAsPrinted": "International Standard Film | May-Film AG",
+      "nameAsPrinted": "Joe May-Film A.-G.",
       "evidenceContext": "film_credits",
       "certainty": "confirmed",
       "workIds": [
@@ -1297,7 +1297,7 @@
     {
       "id": "CON-F016-PC-ORG016",
       "role": "production_company",
-      "nameAsPrinted": "Mondial Internationale Filmindustrie AG | Société Internationale Cinématographique",
+      "nameAsPrinted": "Mondial Internationale Filmindustrie AG",
       "evidenceContext": "film_credits",
       "certainty": "confirmed",
       "workIds": [
@@ -1314,7 +1314,7 @@
     {
       "id": "CON-F016-PC-ORG024",
       "role": "production_company",
-      "nameAsPrinted": "Mondial Internationale Filmindustrie AG | Société Internationale Cinématographique",
+      "nameAsPrinted": "Société Internationale Cinématographique",
       "evidenceContext": "film_credits",
       "certainty": "confirmed",
       "workIds": [
@@ -1558,7 +1558,7 @@
     {
       "id": "CON-F019-PC-ORG019",
       "role": "production_company",
-      "nameAsPrinted": "Pax-Film GmbH | Société des Films Osso",
+      "nameAsPrinted": "Pax-Film GmbH",
       "evidenceContext": "film_credits",
       "certainty": "confirmed",
       "workIds": [
@@ -1575,7 +1575,7 @@
     {
       "id": "CON-F019-PC-ORG025",
       "role": "production_company",
-      "nameAsPrinted": "Pax-Film GmbH | Société des Films Osso",
+      "nameAsPrinted": "La Société des Films Osso",
       "evidenceContext": "film_credits",
       "certainty": "confirmed",
       "workIds": [
@@ -1682,7 +1682,7 @@
     {
       "id": "CON-F020-PC-ORG008",
       "role": "production_company",
-      "nameAsPrinted": "Vandor-Film | Lothar Stark-Film GmbH",
+      "nameAsPrinted": "Vandor-Film",
       "evidenceContext": "film_credits",
       "certainty": "confirmed",
       "workIds": [
@@ -1700,7 +1700,7 @@
     {
       "id": "CON-F020-PC-ORG014",
       "role": "production_company",
-      "nameAsPrinted": "Vandor-Film | Lothar Stark-Film GmbH",
+      "nameAsPrinted": "Lothar Stark-Film GmbH",
       "evidenceContext": "film_credits",
       "certainty": "confirmed",
       "workIds": [
@@ -2166,6 +2166,7 @@
       "role": "production_company",
       "nameAsPrinted": "Universum-Film AG (UFA)",
       "evidenceContext": "film_credits",
+      "scopeNote": "Filmportal specifies Günther Stapenhorst’s production unit (Herstellungsgruppe) within UFA.",
       "certainty": "confirmed",
       "workIds": [
         "W-F024"
@@ -2725,6 +2726,22 @@
       ]
     },
     {
+      "id": "CON-F030-PC-ORG024",
+      "role": "production_company",
+      "nameAsPrinted": "Société Internationale Cinématographique (SIC)",
+      "evidenceContext": "film_credits",
+      "certainty": "confirmed",
+      "workIds": [
+        "W-F030"
+      ],
+      "organizationIds": [
+        "ORG024"
+      ],
+      "sourceIds": [
+        "SRC0163"
+      ]
+    },
+    {
       "id": "CON-F031-C-P009",
       "role": "composer",
       "evidenceContext": "film_credits",
@@ -2846,7 +2863,7 @@
     {
       "id": "CON-F032-PC-ORG020",
       "role": "production_company",
-      "nameAsPrinted": "London Film Productions",
+      "nameAsPrinted": "London Film Productions, Ltd.",
       "evidenceContext": "film_credits",
       "certainty": "confirmed",
       "workIds": [
@@ -3633,7 +3650,7 @@
     {
       "id": "CON-F042-PC-ORG002",
       "role": "production_company",
-      "nameAsPrinted": "Universal Pictures",
+      "nameAsPrinted": "Universal Pictures Corp.",
       "evidenceContext": "film_credits",
       "certainty": "confirmed",
       "workIds": [
@@ -4195,7 +4212,7 @@
     {
       "id": "CON-F049-PC-ORG002",
       "role": "production_company",
-      "nameAsPrinted": "Universal Pictures",
+      "nameAsPrinted": "Universal Pictures Co.",
       "evidenceContext": "film_credits",
       "certainty": "confirmed",
       "workIds": [
@@ -4389,7 +4406,7 @@
     {
       "id": "CON-F051-PC-ORG004",
       "role": "production_company",
-      "nameAsPrinted": "Micheaux Pictures",
+      "nameAsPrinted": "Micheaux Pictures Corp.",
       "evidenceContext": "film_credits",
       "certainty": "confirmed",
       "workIds": [

@@ -142,9 +142,13 @@
       ],
       "country": "United States",
       "slug": "universal-pictures",
+      "nameVariants": "Universal Pictures Corp.; Universal Pictures Co.",
+      "authorizedNameSource": "AFI Catalog",
+      "publicNote": "AFI credits Three Smart Girls (1936) to Universal Pictures Corp. and The Spy Ring (1938) to Universal Pictures Co. These exact historical forms are retained with their respective films.",
       "sourceIds": [
         "SRC0145",
-        "SRC0380"
+        "SRC0380",
+        "SRC0482"
       ],
       "timelineEventIds": [
         "TE0038"
@@ -170,7 +174,7 @@
       ],
       "country": "Germany",
       "slug": "cine-allianz-tonfilm-gmbh",
-      "nameVariants": "Cine-Allianz Tonfilm GmbH (Berlin)",
+      "authorizedNameSource": "Filmportal.de",
       "sourceIds": [
         "SRC0132",
         "SRC0133"
@@ -187,7 +191,7 @@
     {
       "id": "ORG004",
       "displayName": "Micheaux Pictures Corporation",
-      "authorizedName": "Micheaux Pictures Corporation",
+      "authorizedName": "Micheaux Film Corporation",
       "types": [
         "film_studio"
       ],
@@ -196,7 +200,9 @@
       ],
       "country": "United States",
       "slug": "micheaux-pictures",
-      "nameVariants": "Micheaux Pictures; Micheaux Film Corporation",
+      "nameVariants": "Micheaux Pictures Corp.; Micheaux Film Corp.; Micheaux Film Company",
+      "authorizedNameSource": "LCNAF",
+      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n85138402",
       "sourceIds": [
         "SRC0146"
       ],
@@ -219,7 +225,7 @@
       ],
       "country": "France",
       "slug": "international-standard-film",
-      "nameVariants": "International Standard Film (Paris)",
+      "authorizedNameSource": "Filmportal.de",
       "sourceIds": [
         "SRC0151"
       ],
@@ -232,8 +238,8 @@
     },
     {
       "id": "ORG006",
-      "displayName": "May-Film AG",
-      "authorizedName": "May-Film AG",
+      "displayName": "Joe May-Film AG",
+      "authorizedName": "Joe May-Film AG",
       "types": [
         "film_studio"
       ],
@@ -241,8 +247,9 @@
         "Berlin"
       ],
       "country": "Germany",
-      "slug": "may-film-ag",
-      "nameVariants": "Joe May-Film AG; May-Film AG (Berlin)",
+      "slug": "joe-may-film-ag",
+      "nameVariants": "Joe May-Film A.-G.",
+      "authorizedNameSource": "Filmportal.de",
       "sourceIds": [
         "SRC0117",
         "SRC0151"
@@ -268,6 +275,7 @@
       ],
       "country": "Germany",
       "slug": "maxim-film-gmbh",
+      "authorizedNameSource": "Filmportal.de",
       "sourceIds": [
         "SRC0117"
       ],
@@ -290,7 +298,7 @@
       ],
       "country": "France",
       "slug": "vandor-film",
-      "nameVariants": "Vandor-Film, France; Vandor-Film (Paris)",
+      "authorizedNameSource": "Filmportal.de",
       "sourceIds": [
         "SRC0129",
         "SRC0161"
@@ -316,7 +324,7 @@
       ],
       "country": "France",
       "slug": "fox-film-europa",
-      "nameVariants": "Fox Film Europa (Paris)",
+      "authorizedNameSource": "Filmportal.de",
       "sourceIds": [
         "SRC0137"
       ],
@@ -339,7 +347,7 @@
       ],
       "country": "Germany",
       "slug": "emelka-konzern",
-      "nameVariants": "Emelka-Konzern (München)",
+      "authorizedNameSource": "Filmportal.de",
       "sourceIds": [
         "SRC0123",
         "SRC0125"
@@ -356,7 +364,7 @@
     {
       "id": "ORG011",
       "displayName": "Universum-Film AG (UFA)",
-      "authorizedName": "Universum-Film AG (UFA)",
+      "authorizedName": "Universum-Film AG",
       "types": [
         "film_studio"
       ],
@@ -365,7 +373,9 @@
       ],
       "country": "Germany",
       "slug": "universum-film-ag-ufa",
-      "nameVariants": "Universum-Film AG (UFA) (Berlin); Universum-Film AG (UFA) (Berlin) (Herstellungsgruppe Günther Stapenhorst)",
+      "nameVariants": "Ufa; Universum Film; Universum-Film Aktiengesellschaft zu Berlin",
+      "authorizedNameSource": "GND",
+      "authorityUrl": "GND: https://d-nb.info/gnd/19944-8",
       "sourceIds": [
         "SRC0010",
         "SRC0118",
@@ -407,7 +417,7 @@
       ],
       "country": "Germany",
       "slug": "t-k-tonfilm-produktion-gmbh",
-      "nameVariants": "T. K. Tonfilm-Produktion GmbH (Berlin)",
+      "authorizedNameSource": "Filmportal.de",
       "contributionIds": [
         "CON-F008-PC-ORG012"
       ],
@@ -432,7 +442,7 @@
       ],
       "country": "Germany",
       "slug": "richard-oswald-produktion-gmbh",
-      "nameVariants": "Richard Oswald-Produktion GmbH (Berlin)",
+      "authorizedNameSource": "Filmportal.de",
       "sourceIds": [
         "SRC0116"
       ],
@@ -455,7 +465,7 @@
       ],
       "country": "Germany",
       "slug": "lothar-stark-film-gmbh",
-      "nameVariants": "Lothar Stark-Film GmbH (Berlin)",
+      "authorizedNameSource": "Filmportal.de",
       "sourceIds": [
         "SRC0128",
         "SRC0129"
@@ -481,7 +491,7 @@
       ],
       "country": "Austria / Czechoslovakia",
       "slug": "pan-film-kg",
-      "nameVariants": "Pan-Film KG; Pan-Film A.G.",
+      "authorizedNameSource": "Filmportal.de",
       "publicNote": "Pan-Film A.G., registered at Neubaugasse 64 in Vienna under HR B 13/140 (1922–1940), was probably affiliated with or the parent entity of Pan-Film KG, which operated in Vienna and Prague; the exact corporate relationship remains unconfirmed.",
       "sourceIds": [
         "SRC0135",
@@ -508,7 +518,8 @@
       ],
       "country": "Austria",
       "slug": "mondial-internationale-filmindustrie-ag",
-      "nameVariants": "Mondial Internationale Filmindustrie; Mondial Internationale Filmindustrie AG (Wien)",
+      "nameVariants": "Mondial Internationale Filmindustrie",
+      "authorizedNameSource": "Filmportal.de",
       "sourceIds": [
         "SRC0126",
         "SRC0127"
@@ -534,7 +545,7 @@
       ],
       "country": "Germany",
       "slug": "kreis-film",
-      "nameVariants": "Kreis-Film, Berlin",
+      "authorizedNameSource": "Filmportal.de",
       "sourceIds": [
         "SRC0119"
       ],
@@ -557,7 +568,8 @@
       ],
       "country": "France",
       "slug": "films-rp",
-      "nameVariants": "Films RP; Les Films R.P.; Films R.P. (FR)",
+      "nameVariants": "Films RP; Les Films R.P.",
+      "authorizedNameSource": "UniFrance",
       "sourceIds": [
         "SRC0162",
         "SRC0163"
@@ -583,7 +595,7 @@
       ],
       "country": "Germany",
       "slug": "pax-film-gmbh",
-      "nameVariants": "Pax-Film GmbH (Berlin)",
+      "authorizedNameSource": "Filmportal.de",
       "sourceIds": [
         "SRC0130",
         "SRC0131"
@@ -609,6 +621,9 @@
       ],
       "country": "United Kingdom",
       "slug": "london-film-productions",
+      "nameVariants": "London Film Productions, Ltd.; London Films",
+      "authorizedNameSource": "LCNAF",
+      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no96052797\nGND: https://d-nb.info/gnd/10358740-8\nISNI: https://isni.org/isni/0000000105110135",
       "contributionIds": [
         "CON-F032-PC-ORG020"
       ],
@@ -632,7 +647,7 @@
       ],
       "country": "Germany",
       "slug": "aafa-film-ag",
-      "nameVariants": "Aafa-Film AG (Berlin)",
+      "authorizedNameSource": "Filmportal.de",
       "sourceIds": [
         "SRC0122"
       ],
@@ -657,7 +672,7 @@
       ],
       "country": "Germany",
       "slug": "boston-films-company-mbh",
-      "nameVariants": "Boston-Films Company mbH (Berlin)",
+      "authorizedNameSource": "Filmportal.de",
       "sourceIds": [
         "SRC0153"
       ],
@@ -670,8 +685,8 @@
     },
     {
       "id": "ORG023",
-      "displayName": "G.G. Films",
-      "authorizedName": "G.G. Films",
+      "displayName": "GG Films",
+      "authorizedName": "GG Films",
       "types": [
         "film_studio"
       ],
@@ -680,7 +695,8 @@
       ],
       "country": "France",
       "slug": "gg-films",
-      "nameVariants": "GG Films; G.G. Films (Paris)",
+      "nameVariants": "G.G. Films",
+      "authorizedNameSource": "Filmportal.de",
       "sourceIds": [
         "SRC0138"
       ],
@@ -704,21 +720,24 @@
       "country": "France",
       "slug": "societe-internationale-cinematographique",
       "nameVariants": "Société Internationale Cinématographique; S.I.C.; SIC",
+      "authorizedNameSource": "UniFrance",
       "sourceIds": [
         "SRC0127",
         "SRC0163"
       ],
       "contributionIds": [
-        "CON-F016-PC-ORG024"
+        "CON-F016-PC-ORG024",
+        "CON-F030-PC-ORG024"
       ],
       "workIds": [
-        "W-F016"
+        "W-F016",
+        "W-F030"
       ]
     },
     {
       "id": "ORG025",
       "displayName": "Société des Films Osso",
-      "authorizedName": "Société des Films Osso",
+      "authorizedName": "La Société des Films Osso",
       "types": [
         "film_studio"
       ],
@@ -727,7 +746,8 @@
       ],
       "country": "France",
       "slug": "societe-des-films-osso",
-      "nameVariants": "La Société des Films Osso (Paris)",
+      "nameVariants": "Société des Films Osso",
+      "authorizedNameSource": "Filmportal.de",
       "sourceIds": [
         "SRC0130"
       ],
@@ -774,7 +794,7 @@
       ],
       "country": "Germany",
       "slug": "cicero-film-gmbh",
-      "nameVariants": "Cicero-Film GmbH (Berlin)",
+      "authorizedNameSource": "Filmportal.de",
       "sourceIds": [
         "SRC0120"
       ],
@@ -797,7 +817,7 @@
       ],
       "country": "Germany",
       "slug": "reichsliga-film-gmbh",
-      "nameVariants": "Reichsliga-Film GmbH (München)",
+      "authorizedNameSource": "Filmportal.de",
       "sourceIds": [
         "SRC0152"
       ],
@@ -1856,6 +1876,7 @@
       ],
       "country": "France",
       "slug": "cineproduction",
+      "authorizedNameSource": "Buxbaum / Sieghardt",
       "contributionIds": [
         "CON-F054-PC-ORG061"
       ],
@@ -3301,13 +3322,15 @@
     {
       "id": "ORG109",
       "displayName": "Alliance Cinématographique Européenne (A.C.E.)",
-      "authorizedName": "Alliance Cinématographique Européenne",
+      "authorizedName": "Alliance cinématographique européenne",
       "types": [
         "film_studio"
       ],
       "country": "France",
       "slug": "alliance-cinematographique-europeenne-ace",
       "nameVariants": "A.C.E.; ACE; L’Alliance Cinématographique Européenne",
+      "authorizedNameSource": "LCNAF",
+      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no2013104836",
       "sourceIds": [
         "SRC0532"
       ],
