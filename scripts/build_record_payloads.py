@@ -203,6 +203,13 @@ class RecordPayloadBuilder:
             self.add(bundle, "works", record_ids(root, "workIds"))
             self.add(bundle, "timelineEvents", record_ids(root, "timelineEventIds"))
             self.add(bundle, "sources", record_ids(root, "sourceIds"))
+            # A label and the company behind it are both organizations, so the
+            # relation has to carry its own table.
+            self.add(
+                bundle,
+                "organizations",
+                [*record_ids(root, "parentOrganizationIds"), *record_ids(root, "imprintIds")],
+            )
         elif record_type == "source":
             self.add(bundle, "works", record_ids(root, "workIds"))
             self.add(bundle, "media", record_ids(root, "mediaIds"))

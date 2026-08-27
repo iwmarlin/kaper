@@ -3817,7 +3817,11 @@
       "nameVariants": "Deutsche Grammophon AG; Grammophon-Aktiengesellschaft",
       "authorizedNameSource": "GND",
       "authorityUrl": "GND: https://d-nb.info/gnd/1094330-4\nVIAF: https://viaf.org/viaf/134331272",
-      "publicNote": "German record company established in Berlin in 1900. Grammophon and Polydor were record-label imprints and are represented separately from the corporate body."
+      "publicNote": "German record company established in Berlin in 1900. Grammophon and Polydor were record-label imprints and are represented separately from the corporate body.",
+      "imprintIds": [
+        "ORG154",
+        "ORG155"
+      ]
     },
     {
       "id": "ORG128",
@@ -3837,7 +3841,11 @@
         "SRC0720"
       ],
       "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no00081029\nGND: https://d-nb.info/gnd/7670622-9\nVIAF: https://viaf.org/viaf/129647371\nISNI: https://isni.org/isni/0000000121561999",
-      "publicNote": "German record-manufacturing company. Odeon and Parlophon/Parlophone are represented separately as recording labels rather than as variant corporate names."
+      "publicNote": "German record-manufacturing company. Odeon and Parlophon/Parlophone are represented separately as recording labels rather than as variant corporate names.",
+      "imprintIds": [
+        "ORG146",
+        "ORG150"
+      ]
     },
     {
       "id": "ORG129",
@@ -4143,7 +4151,10 @@
       "nameVariants": "RCA Manufacturing Co., Inc.",
       "authorizedNameSource": "LCNAF",
       "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n81120295",
-      "publicNote": "American manufacturing company formed in 1934 from RCA Victor Company and RCA Radiotron Company. It manufactured Victor records but was a corporate body rather than the name of the Victor record-label imprint."
+      "publicNote": "American manufacturing company formed in 1934 from RCA Victor Company and RCA Radiotron Company. It manufactured Victor records but was a corporate body rather than the name of the Victor record-label imprint.",
+      "imprintIds": [
+        "ORG156"
+      ]
     },
     {
       "id": "ORG142",
@@ -4259,6 +4270,9 @@
         "CON-S047-LAB-ORG146",
         "CON-S059-LAB-ORG146",
         "CON-S133-LAB-ORG128"
+      ],
+      "parentOrganizationIds": [
+        "ORG128"
       ]
     },
     {
@@ -4393,6 +4407,9 @@
         "CON-S082-LAB-ORG128",
         "CON-S214-LAB-ORG128",
         "CON-S215-LAB-ORG128"
+      ],
+      "parentOrganizationIds": [
+        "ORG128"
       ]
     },
     {
@@ -4502,6 +4519,9 @@
         "CON-S007-LAB-ORG154",
         "CON-S010-LAB-ORG154",
         "CON-S011-LAB-ORG154"
+      ],
+      "parentOrganizationIds": [
+        "ORG127"
       ]
     },
     {
@@ -4531,6 +4551,9 @@
       "contributionIds": [
         "CON-O019-LAB-ORG155",
         "CON-S064-LAB-ORG155"
+      ],
+      "parentOrganizationIds": [
+        "ORG127"
       ]
     },
     {
@@ -4553,6 +4576,9 @@
       ],
       "contributionIds": [
         "CON-S118-LAB-ORG156"
+      ],
+      "parentOrganizationIds": [
+        "ORG141"
       ]
     }
   ]

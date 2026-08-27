@@ -234,6 +234,10 @@ SYMMETRIC_LINKS = (
     ("People", "placeIds", "Places", "personIds"),
     ("People", "contributionIds", "Contributions", "personIds"),
     ("People", "nameVariantIds", "Person Name Variants", "personIds"),
+    # A label and the company behind it: the relation the notes had always
+    # stated in prose, and which the graph could not express. Both ends live in
+    # the same table, so the pair is its own inverse.
+    ("Organizations", "parentOrganizationIds", "Organizations", "imprintIds"),
     ("Organizations", "sourceIds", "Sources", "organizationIds"),
     ("Organizations", "placeIds", "Places", "organizationIds"),
     ("Organizations", "timelineEventIds", "Timeline Events", "organizationIds"),

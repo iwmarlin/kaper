@@ -99,5 +99,62 @@ class OrganizationScopeTests(unittest.TestCase):
         self.assertIn(self.NOTE, page.read_text(encoding="utf-8"))
 
 
+class ImprintRelationTests(unittest.TestCase):
+    """Odeon is kept apart from the Greek company of the same name, Grammophon
+    and Polydor are imprints of one Berlin firm, Victor was pressed by RCA.
+    Every one of those relations was written into a note and none was in the
+    graph, so the companies carried no links at all and read as records nobody
+    had finished."""
+
+    def test_the_relation_is_stated_at_both_ends(self):
+        records = {item["id"]: item for item in read_records("organizations.json")}
+        pairs = 0
+        for record in records.values():
+            for parent_id in record.get("parentOrganizationIds") or []:
+                pairs += 1
+                self.assertIn(parent_id, records, f"{record['id']} names a company that is not a record")
+                self.assertIn(
+                    record["id"],
+                    records[parent_id].get("imprintIds") or [],
+                    f"{parent_id} does not name {record['id']} back",
+                )
+            for imprint_id in record.get("imprintIds") or []:
+                self.assertIn(
+                    record["id"],
+                    records[imprint_id].get("parentOrganizationIds") or [],
+                    f"{imprint_id} does not name {record['id']} back",
+                )
+        self.assertGreaterEqual(pairs, 5, "the documented imprint relations must be recorded")
+
+    def test_both_ends_are_reachable_from_the_card(self):
+        for record in read_records("organizations.json"):
+            page = ROOT / "records/organization" / record["id"] / "index.html"
+            if not page.is_file():
+                continue
+            text = page.read_text(encoding="utf-8")
+            for parent_id in record.get("parentOrganizationIds") or []:
+                self.assertIn("<dt>Imprint of</dt>", text, f"{record['id']} hides its company")
+                self.assertIn(f'href="records/organization/{parent_id}/"', text)
+            if record.get("imprintIds"):
+                self.assertIn("<h2>Imprints", text, f"{record['id']} hides its labels")
+
+    def test_no_organization_is_left_without_a_single_link(self):
+        # This is the check that produced the false alarm: two companies held no
+        # links of any kind, and were read as records nobody had finished, when
+        # what they lacked was a relation the schema could not express.
+        stranded = []
+        for record in read_records("organizations.json"):
+            linked = any(
+                record.get(field)
+                for field in (
+                    "sourceIds", "workIds", "contributionIds", "timelineEventIds",
+                    "placeIds", "parentOrganizationIds", "imprintIds",
+                )
+            )
+            if not linked:
+                stranded.append(record["id"])
+        self.assertEqual(stranded, [], "an organization sits outside the graph entirely")
+
+
 if __name__ == "__main__":
     unittest.main()

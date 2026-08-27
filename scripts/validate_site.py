@@ -64,6 +64,10 @@ PRERENDERED_RELATION_SECTIONS = {
         "sourceIds": "Sources linked directly to this person",
     },
     "organization": {
+        # The company's side of the imprint relation is a section; the label's
+        # side is a fact row, because a label has one parent and a company has
+        # a list of marks.
+        "imprintIds": "Imprints",
         "workIds": "Works",
         "timelineEventIds": "Timeline",
         "sourceIds": "Sources",

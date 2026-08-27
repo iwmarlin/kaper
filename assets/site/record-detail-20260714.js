@@ -1,4 +1,4 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=54430f50fb";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=3b5645e07c";
 import {
   authorityLinkList,
   certaintyBadge,
@@ -28,7 +28,7 @@ import {
   sourceStatusLabel,
   typeBadge,
   updateMeta,
-} from "./core.js?v=54430f50fb";
+} from "./core.js?v=3b5645e07c";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 let target = null;
@@ -1303,24 +1303,36 @@ function organizationScopeNote(organization) {
     : "Organization links are induced from approved public records and their documented contributions.";
 }
 
+// A record label and the company that manufactured for it are two records
+// here, deliberately: Odeon is kept apart from the Greek company of the same
+// name, Grammophon and Polydor are imprints of one Berlin firm, Victor was
+// pressed by RCA. Every one of those relations was written into a note and
+// none of them was in the graph, so the companies held no links at all and
+// read as records nobody had finished. The relation is now stated on both
+// ends and can be followed in either direction.
 function renderOrganization(organization, data, indexes) {
   const works = related(organization.workIds, indexes.works);
   const events = related(organization.timelineEventIds, indexes.timelineEvents);
   const sources = related(organization.sourceIds, indexes.sources);
+  const parents = related(organization.parentOrganizationIds, indexes.organizations);
+  const imprints = related(organization.imprintIds, indexes.organizations)
+    .sort((a, b) => String(a.displayName).localeCompare(String(b.displayName)));
   return {
     title: organization.displayName,
     label: "Organization",
     badges: (organization.types || []).map(typeBadge).join(""),
     // The type was set twice, as a badge and again as a fact. The badge keeps
     // it; the row that repeated it is gone, as it went from the work card.
-    facts: `${authorityFacts(organization)}${fact("City", organization.city)}${fact("Country", organization.country)}${fact("Name variants", organization.nameVariants)}`,
+    facts: `${authorityFacts(organization)}${factHtml("Imprint of", parents.map((item) => `<a href="${recordUrl("organization", item.id)}">${escapeHtml(item.displayName)}</a>`).join(", "))}${fact("City", organization.city)}${fact("Country", organization.country)}${fact("Name variants", organization.nameVariants)}`,
     main: [
       section("Note", organization.publicNote ? `<p class="lead">${escapeHtml(organization.publicNote)}</p>` : ""),
+      section("Imprints", entityList(imprints, "organization", (item) => (item.types || []).map(humanize).join(", ")), "", imprints.length),
       section("Works", entityList(works, "work", (item) => [item.year, item.workType].filter(Boolean).join(" · ")), "", works.length),
       section("Timeline", entityList(events, "event", (item) => item.displayDate || item.dateStart), "", events.length),
       section("Sources", sourceList(sources), "", sources.length),
     ].join(""),
     aside: `<div class="scope-note">${organizationScopeNote(organization)}</div>${contentsRail([
+      { title: "Imprints", count: imprints.length },
       { title: "Works", count: works.length },
       { title: "Timeline", count: events.length },
       { title: "Sources", count: sources.length },

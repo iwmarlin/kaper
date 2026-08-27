@@ -228,6 +228,14 @@
         "contributionIds": {
           "field": "Contributions",
           "target": "Contributions"
+        },
+        "parentOrganizationIds": {
+          "field": "Parent Organization",
+          "target": "Organizations"
+        },
+        "imprintIds": {
+          "field": "Imprints",
+          "target": "Organizations"
         }
       }
     },
