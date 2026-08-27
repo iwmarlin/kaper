@@ -62,3 +62,14 @@ class MapDependencyTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class MapZoomContractTests(unittest.TestCase):
+    """The clustering plugin refuses to run on a map without a zoom ceiling."""
+
+    def test_the_map_declares_its_own_zoom_range(self) -> None:
+        source = (ROOT / "assets/site/map-explorer-20260714.js").read_text(encoding="utf-8")
+        options = re.search(r'window\.L\.map\("research-map",\s*\{(.*?)\}\)', source, re.S)
+        self.assertIsNotNone(options, "the map is no longer created here")
+        self.assertIn("maxZoom", options.group(1))
+        self.assertIn("minZoom", options.group(1))

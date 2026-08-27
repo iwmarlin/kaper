@@ -10,7 +10,7 @@ import {
   periodValues,
   recordUrl,
   renderError,
-} from "./core.js?v=2944b8da32";
+} from "./core.js?v=3837bf33f0";
 
 mountSiteChrome("map");
 
@@ -270,10 +270,16 @@ try {
   totalTarget.textContent = String(publicPlaces.length);
 
   if (window.L) {
+    // The zoom ceiling belongs to the map, not to whichever layer happens to
+    // be attached. While the reference tiles were added at startup, Leaflet
+    // took the ceiling from them; deferring that layer left the map with no
+    // maximum, and the clustering plugin refuses to work without one.
     map = window.L.map("research-map", {
       scrollWheelZoom: false,
       zoomControl: true,
       preferCanvas: true,
+      minZoom: 2,
+      maxZoom: 18,
     });
     // The reference tiles are invisible until the historical sheet starts to
     // fade, so they are not asked for until then: at world zoom the page used
