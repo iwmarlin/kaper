@@ -36,6 +36,7 @@
   --accent: #a64228;
   --accent-dark: #74301f;
   --gold: #b78b45;
+  --gold-deep: #896834;
   --blue: #285f72;
   --green: #356651;
   --warning: #8c571d;
@@ -1435,7 +1436,7 @@ main {
 }
 
 .timeline-nav__years {
-  color: var(--line-dark);
+  color: var(--ink-soft);
   font-size: 0.68rem;
   font-variant-numeric: tabular-nums;
 }
@@ -1486,7 +1487,7 @@ main {
 }
 
 .timeline-chapter__range {
-  color: var(--gold);
+  color: var(--gold-deep);
   font-family: var(--sans);
   font-size: 0.68rem;
   font-variant-numeric: tabular-nums;
@@ -2224,12 +2225,27 @@ main {
   background: var(--ink-soft);
 }
 
+/* Precision is carried by the marker's outline — dashed for an approximate
+   site, squared for a district or city. The period was carried by colour and
+   by nothing else, and terracotta against green is the pair that closes up
+   under the commonest form of colour blindness, so a reader who could not
+   separate red from green could not tell Warsaw from Hollywood. Each period
+   now also has a fill: Warsaw solid, European pierced, Hollywood barred. The
+   figures are stated as percentages so they hold at every marker size, and the
+   legend swatches carry the same three fills, since a key that does not show
+   the distinction cannot teach it. */
 .map-legend__swatch--warsaw,
-.map-place-marker--warsaw { background: var(--map-warsaw); }
+.map-place-marker--warsaw { background-color: var(--map-warsaw); }
 .map-legend__swatch--european,
-.map-place-marker--european { background: var(--map-european); }
+.map-place-marker--european {
+  background-color: var(--map-european);
+  background-image: radial-gradient(circle at 50% 50%, var(--surface) 0 24%, transparent 24%);
+}
 .map-legend__swatch--hollywood,
-.map-place-marker--hollywood { background: var(--map-hollywood); }
+.map-place-marker--hollywood {
+  background-color: var(--map-hollywood);
+  background-image: linear-gradient(0deg, transparent 0 36%, var(--surface) 36% 64%, transparent 64%);
+}
 .map-legend__swatch--multiple {
   background: conic-gradient(
     var(--map-warsaw) 0 33.333%,
@@ -4118,7 +4134,7 @@ html:not(.js) .source-group__head {
 .source-group__chevron {
   flex: none;
   align-self: center;
-  color: var(--line-dark);
+  color: var(--ink-soft);
   transition: transform 140ms ease, color 140ms ease;
 }
 
@@ -4353,7 +4369,7 @@ html:not(.js) .source-group__head {
   counter-increment: route-stage;
   content: counter(route-stage);
   grid-row: 1 / span 4;
-  color: var(--line-dark);
+  color: var(--ink-soft);
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
   font-size: 0.8rem;
   line-height: 1.6;
@@ -4379,7 +4395,7 @@ html:not(.js) .source-group__head {
 }
 
 .route-stage__path span {
-  color: var(--line-dark);
+  color: var(--ink-soft);
   padding: 0 0.15rem;
 }
 
@@ -4449,7 +4465,7 @@ html:not(.js) .source-group__head {
 
   .map-legend > .map-legend__summary::after {
     content: " ▾";
-    color: var(--line-dark);
+    color: var(--ink-soft);
   }
 
   .map-legend[open] > .map-legend__summary::after {
