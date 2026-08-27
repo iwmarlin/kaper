@@ -1260,7 +1260,7 @@
         "W-S086"
       ],
       "authorizedNameSource": "GND",
-      "authorityUrl": "GND: https://d-nb.info/gnd/1064298664\nVIAF: https://viaf.org/viaf/313264119"
+      "authorityUrl": "GND: https://d-nb.info/gnd/1064298664\nVIAF: https://viaf.org/viaf/313264119\nLC Providers: https://id.loc.gov/entities/providers/798d67233b6773327cfb16c2b1c602bd"
     },
     {
       "id": "ORG037",
@@ -1295,7 +1295,7 @@
     {
       "id": "ORG038",
       "displayName": "Monopol-Liederverlag Ernst Wengraf GmbH",
-      "authorizedName": "Monopol-Liederverlag Ernst Wengraf GmbH",
+      "authorizedName": "Monopol-Liederverlag",
       "types": [
         "publisher"
       ],
@@ -1322,7 +1322,8 @@
         "W-S092",
         "W-S094"
       ],
-      "authorizedNameSource": "local heading"
+      "authorizedNameSource": "LC Providers",
+      "authorityUrl": "LC Providers: https://id.loc.gov/entities/providers/c18e9cf1f250a4afe675fe2fec015bc8"
     },
     {
       "id": "ORG039",
