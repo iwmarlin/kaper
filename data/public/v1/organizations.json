@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 145,
+  "count": 148,
   "records": [
     {
       "id": "ORG001",
@@ -1301,6 +1301,7 @@
       "country": "France",
       "slug": "editions-salabert",
       "nameVariants": "Paris: éditions Salabert; Editions Salabert",
+      "publicNote": "The Salabert enterprise combined sheet-music publishing under Éditions Salabert with record issues bearing the Salabert or Nouveau Disque Salabert imprint.",
       "sourceIds": [
         "SRC0115",
         "SRC0300",
@@ -3421,6 +3422,7 @@
       ],
       "city": "Warszawa",
       "country": "Poland",
+      "publicNote": "The Biblioteka Narodowa catalogue identifies this Warsaw record company on Odeon issue O.236842. It is represented separately from the Odeon label and from the German company Carl Lindström AG.",
       "sourceIds": [
         "SRC0633"
       ],
@@ -3747,15 +3749,16 @@
       "displayName": "Electrola-Gesellschaft",
       "authorizedName": "Electrola-Gesellschaft",
       "types": [
-        "record_label"
+        "record_label",
+        "record_company"
       ],
       "city": [
         "Berlin"
       ],
       "country": "Germany",
       "slug": "electrola-gesellschaft",
-      "nameVariants": "Electrola; Electrola-Gesellschaft m.b.H.; EMI Electrola",
-      "publicNote": "The company adopted the name EMI Electrola in 1972. E.G. is a record-series designation rather than an organization name.",
+      "nameVariants": "Electrola; Electrola-Gesellschaft m.b.H.",
+      "publicNote": "German recording company active from 1925 to 1972; the linked discs use Electrola as their imprint. In 1972 Electrola-Gesellschaft and Carl Lindström GmbH were merged into the successor company EMI Electrola. The designation E.G. belongs to a record series, not to the organization’s name.",
       "authorizedNameSource": "GND",
       "sourceIds": [
         "SRC0005",
@@ -3804,38 +3807,17 @@
       "displayName": "Deutsche Grammophon-Aktiengesellschaft",
       "authorizedName": "Deutsche Grammophon-Aktiengesellschaft (Berlin)",
       "types": [
-        "record_label"
+        "record_company"
       ],
       "city": [
         "Berlin"
       ],
       "country": "Germany",
       "slug": "deutsche-grammophon-aktiengesellschaft",
-      "nameVariants": "Grammophon; Polydor; Deutsche Grammophon AG; Grammophon-Aktiengesellschaft",
+      "nameVariants": "Deutsche Grammophon AG; Grammophon-Aktiengesellschaft",
       "authorizedNameSource": "GND",
-      "sourceIds": [
-        "SRC0002",
-        "SRC0003",
-        "SRC0553",
-        "SRC0694",
-        "SRC0695",
-        "SRC0719"
-      ],
-      "workIds": [
-        "W-O019",
-        "W-S007",
-        "W-S010",
-        "W-S011",
-        "W-S064"
-      ],
       "authorityUrl": "GND: https://d-nb.info/gnd/1094330-4\nVIAF: https://viaf.org/viaf/134331272",
-      "contributionIds": [
-        "CON-O019-LAB-ORG127",
-        "CON-S007-LAB-ORG127",
-        "CON-S010-LAB-ORG127",
-        "CON-S011-LAB-ORG127",
-        "CON-S064-LAB-ORG127"
-      ]
+      "publicNote": "German record company established in Berlin in 1900. Grammophon and Polydor were record-label imprints and are represented separately from the corporate body."
     },
     {
       "id": "ORG128",
@@ -3871,6 +3853,7 @@
       "slug": "kristall-schallplatten",
       "nameVariants": "Kristall; Kristall Schallplatte",
       "authorizedNameSource": "local heading",
+      "publicNote": "Local heading for the Kristall imprint printed on the linked discs. The cited label evidence does not by itself establish a separate legal company of this name.",
       "sourceIds": [
         "SRC0004",
         "SRC0753",
@@ -3901,6 +3884,7 @@
       "slug": "novaphon-electro-record",
       "nameVariants": "Novaphon; Novaphon Electro Record, Made in Austria",
       "authorizedNameSource": "local heading",
+      "publicNote": "Local heading for the Novaphon Electro Record imprint printed on the linked Austrian disc. The cited label evidence does not identify the responsible legal company.",
       "sourceIds": [
         "SRC0712"
       ],
@@ -3916,15 +3900,17 @@
       "displayName": "Syrena-Grand-Record",
       "authorizedName": "Syrena Record",
       "types": [
-        "record_label"
+        "record_label",
+        "record_company"
       ],
       "city": [
         "Warsaw"
       ],
       "country": "Poland",
       "slug": "syrena-grand-record",
-      "nameVariants": "Syrena-Grand-Record; Sirena-Grand-Record; Syrena Rekord; Syrena Electro; Towarzystwo „Syrena Record”; Melodia Record; Olimpia; Balto",
+      "nameVariants": "Syrena-Grand-Record; Sirena-Grand-Record; Syrena Rekord; Syrena Electro; Towarzystwo „Syrena Record”",
       "authorizedNameSource": "BN",
+      "publicNote": "Warsaw record company represented in the linked evidence by the Syrena Record, Syrena-Grand-Record and Syrena-Electro imprints. Melodia Record, Olimpia and Balto were associated labels rather than alternative names of Syrena Record.",
       "sourceIds": [
         "SRC0001",
         "SRC0736",
@@ -4147,7 +4133,6 @@
       "displayName": "RCA Manufacturing Company",
       "authorizedName": "RCA Manufacturing Company",
       "types": [
-        "record_label",
         "record_company"
       ],
       "city": [
@@ -4155,18 +4140,10 @@
       ],
       "country": "United States",
       "slug": "rca-manufacturing-company",
-      "nameVariants": "Victor; RCA Victor; RCA Manufacturing Co., Inc.",
+      "nameVariants": "RCA Manufacturing Co., Inc.",
       "authorizedNameSource": "LCNAF",
       "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n81120295",
-      "sourceIds": [
-        "SRC0748"
-      ],
-      "workIds": [
-        "W-S118"
-      ],
-      "contributionIds": [
-        "CON-S118-LAB-ORG141"
-      ]
+      "publicNote": "American manufacturing company formed in 1934 from RCA Victor Company and RCA Radiotron Company. It manufactured Victor records but was a corporate body rather than the name of the Victor record-label imprint."
     },
     {
       "id": "ORG142",
@@ -4184,6 +4161,7 @@
       "nameVariants": "Decca Records, Inc.; Decca",
       "authorizedNameSource": "LCNAF",
       "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n89641558",
+      "publicNote": "The Library of Congress heading identifies the United States firm founded in 1934. Its name also appears as the label imprint on Decca 466. The American firm was separate from the British Decca company.",
       "sourceIds": [
         "SRC0750"
       ],
@@ -4425,9 +4403,9 @@
         "record_label"
       ],
       "slug": "columbia-record-label",
-      "nameVariants": "Columbia; Columbia Graphophone",
+      "nameVariants": "Columbia",
       "authorizedNameSource": "local heading",
-      "publicNote": "Columbia record-label imprint used for the French DF series, including DF 1606, DF 1610 and DF 1622.",
+      "publicNote": "Columbia record-label imprint used for the French DF series, including DF 1606, DF 1610 and DF 1622. Columbia Graphophone was the associated corporate body, not an alternative form of the label name.",
       "sourceIds": [
         "SRC0801",
         "SRC0802",
@@ -4451,7 +4429,7 @@
     {
       "id": "ORG152",
       "displayName": "Ultraphon",
-      "authorizedName": "Ultraphon (Firm)",
+      "authorizedName": "Ultraphon (local heading)",
       "types": [
         "record_label"
       ],
@@ -4460,10 +4438,9 @@
       ],
       "country": "Germany",
       "slug": "ultraphon",
-      "nameVariants": "Ultraphon; Küchenmeister’s Internationale Ultraphoon Maatschappij",
-      "authorizedNameSource": "LCNAF",
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no2024052021",
-      "publicNote": "Recording label of the Küchenmeister group, issued jointly from Amsterdam and Berlin.",
+      "nameVariants": "Ultraphon",
+      "authorizedNameSource": "local heading",
+      "publicNote": "The linked 1930 disc bears the Ultraphon imprint and was issued by N.V. Küchenmeister’s Internationale Ultraphoon Maatschappij in Amsterdam and Berlin. This imprint should not be confused with the later Prague firm Ultraphon, established in 1933 and described in LCNAF no2024052021.",
       "sourceIds": [
         "SRC0829"
       ],
@@ -4494,6 +4471,88 @@
       ],
       "contributionIds": [
         "CON-S016-P-ORG153"
+      ]
+    },
+    {
+      "id": "ORG154",
+      "displayName": "Grammophon",
+      "authorizedName": "Grammophon (record label)",
+      "types": [
+        "record_label"
+      ],
+      "city": [
+        "Berlin"
+      ],
+      "country": "Germany",
+      "slug": "grammophon-record-label",
+      "nameVariants": "Grammophon",
+      "authorizedNameSource": "local heading",
+      "publicNote": "Record-label imprint of Deutsche Grammophon-Aktiengesellschaft, printed as Grammophon on the linked German discs.",
+      "sourceIds": [
+        "SRC0003",
+        "SRC0694",
+        "SRC0695"
+      ],
+      "workIds": [
+        "W-S007",
+        "W-S010",
+        "W-S011"
+      ],
+      "contributionIds": [
+        "CON-S007-LAB-ORG154",
+        "CON-S010-LAB-ORG154",
+        "CON-S011-LAB-ORG154"
+      ]
+    },
+    {
+      "id": "ORG155",
+      "displayName": "Polydor",
+      "authorizedName": "Polydor (record label)",
+      "types": [
+        "record_label"
+      ],
+      "city": [
+        "Berlin"
+      ],
+      "country": "Germany",
+      "slug": "polydor-record-label",
+      "nameVariants": "Polydor",
+      "authorizedNameSource": "local heading",
+      "publicNote": "Record-label imprint of Deutsche Grammophon-Aktiengesellschaft, printed as Polydor on the linked German and export issues.",
+      "sourceIds": [
+        "SRC0002",
+        "SRC0553",
+        "SRC0719"
+      ],
+      "workIds": [
+        "W-O019",
+        "W-S064"
+      ],
+      "contributionIds": [
+        "CON-O019-LAB-ORG155",
+        "CON-S064-LAB-ORG155"
+      ]
+    },
+    {
+      "id": "ORG156",
+      "displayName": "Victor",
+      "authorizedName": "Victor (record label)",
+      "types": [
+        "record_label"
+      ],
+      "country": "United States",
+      "slug": "victor-record-label",
+      "nameVariants": "Victor",
+      "authorizedNameSource": "local heading",
+      "publicNote": "American record-label imprint. Victor 4381 was manufactured by RCA Manufacturing Company in 1938; the label is represented separately from that corporate body.",
+      "sourceIds": [
+        "SRC0748"
+      ],
+      "workIds": [
+        "W-S118"
+      ],
+      "contributionIds": [
+        "CON-S118-LAB-ORG156"
       ]
     }
   ]
