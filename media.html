@@ -12,7 +12,7 @@
   <link rel="canonical" href="https://iwmarlin.github.io/kaper/media.html">
   <link rel="preload" href="assets/fonts/kaper-sans.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/kaper-serif.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/site/styles.css?v=615fbf6371">
+  <link rel="stylesheet" href="assets/site/styles.css?v=6e268d4ea1">
   <title>Media — Bronisław Kaper, 1902–1939</title>
   <meta property="og:image" content="https://iwmarlin.github.io/kaper/assets/images/portraits/kaper-mature.jpg">
   <meta property="og:image:alt" content="Bronisław Kaper">
@@ -36,12 +36,17 @@
       </div>
     </section>
 
-    <section class="filters" aria-label="Media filters">
-      <div class="shell filters__grid filters__grid--media">
-        <div class="field">
+    <section class="filters filters--catalogue" aria-label="Media filters">
+      <div class="shell filters__shell filters__shell--media">
+        <div class="field filters__search">
           <label for="media-search">Search media</label>
           <input id="media-search" type="search" placeholder="Title, category, caption…" autocomplete="off">
         </div>
+        <button class="filters__toggle" id="media-filter-toggle" type="button" aria-expanded="false" aria-controls="media-filter-options">
+          <span>Filters</span>
+          <span class="filters__toggle-count" id="media-filter-count" hidden>0</span>
+        </button>
+        <div class="filters__advanced filters__advanced--media" id="media-filter-options">
         <div class="field">
           <label for="media-category">Kind</label>
           <select id="media-category"><option value="">All kinds</option></select>
@@ -67,6 +72,8 @@
             <option value="external_link_only">External references only</option>
           </select>
         </div>
+        </div>
+        <div class="active-filters" id="media-active-filters" aria-label="Active media options" hidden></div>
       </div>
     </section>
 
@@ -74,7 +81,7 @@
       <div class="shell">
         <div class="results-bar">
           <p id="media-count" aria-live="polite">Loading media…</p>
-          <button class="button button--ghost button--small" id="media-reset" type="button">Reset filters</button>
+          <button class="button button--ghost button--small" id="media-reset" type="button" hidden>Reset filters</button>
         </div>
         <div class="gallery-grid" id="media-results"></div>
         <div class="load-more"><button class="button button--ghost" id="media-more" type="button" hidden>Load more</button><button class="button button--ghost button--small" id="media-show-all" type="button" hidden>Show all</button></div>
@@ -82,6 +89,6 @@
     </section>
   </main>
   <footer class="site-footer" data-site-footer></footer>
-  <script type="module" src="assets/site/gallery.js?v=615fbf6371"></script>
+  <script type="module" src="assets/site/gallery.js?v=6e268d4ea1"></script>
 </body>
 </html>

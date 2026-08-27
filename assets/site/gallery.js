@@ -1,4 +1,4 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=615fbf6371";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=6e268d4ea1";
 import {
   debounce,
   escapeHtml,
@@ -24,7 +24,7 @@ import {
   resolveIds,
   safeExternalUrl,
   typeBadge,
-} from "./core.js?v=615fbf6371";
+} from "./core.js?v=6e268d4ea1";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 mountSiteChrome("media");
@@ -57,6 +57,21 @@ const CATEGORY_LABELS = {
   "lobby card / title card": "Lobby and title cards",
   "event photograph": "Event photographs",
 };
+const filterToggle = document.querySelector("#media-filter-toggle");
+const advancedFilters = document.querySelector("#media-filter-options");
+const activeFilters = document.querySelector("#media-active-filters");
+const filterCount = document.querySelector("#media-filter-count");
+const resetButton = document.querySelector("#media-reset");
+// The gallery carries one control more than the catalogue, so it uses the same
+// pattern: the search stays in reach and the facets fold away on a narrow
+// screen. "Show" defaults to the curated selection rather than to nothing,
+// which is why it declares its own default here.
+const filterOptions = [
+  { key: "category", label: "Kind", defaultValue: "" },
+  { key: "period", label: "Period", defaultValue: "" },
+  { key: "rights", label: "Rights", defaultValue: "" },
+  { key: "scope", label: "Show", defaultValue: "selected" },
+];
 const target = document.querySelector("#media-results");
 const countTarget = document.querySelector("#media-count");
 const more = document.querySelector("#media-more");
@@ -66,6 +81,32 @@ let visible = PAGE_SIZE;
 let showingAll = false;
 let current = [];
 renderLoading(target, "Loading curated media…");
+
+
+function selectedOptionLabel(control) {
+  return control.options[control.selectedIndex]?.textContent?.trim() || control.value;
+}
+
+function renderFilterChrome() {
+  const selected = filterOptions.filter(({ key, defaultValue }) => controls[key].value !== defaultValue);
+  const hasSearch = Boolean(controls.search.value.trim());
+
+  filterCount.textContent = String(selected.length);
+  filterCount.hidden = selected.length === 0;
+  filterToggle.setAttribute(
+    "aria-label",
+    selected.length ? `Filters, ${selected.length} active` : "Filters",
+  );
+  resetButton.hidden = !hasSearch && selected.length === 0;
+
+  activeFilters.hidden = selected.length === 0;
+  activeFilters.innerHTML = selected.map(({ key, label }) => `
+    <button class="active-filter" type="button" data-filter-key="${escapeHtml(key)}"
+      aria-label="Remove ${escapeHtml(label)} filter: ${escapeHtml(selectedOptionLabel(controls[key]))}">
+      <span>${escapeHtml(label)}: ${escapeHtml(selectedOptionLabel(controls[key]))}</span>
+      <span class="active-filter__remove" aria-hidden="true">×</span>
+    </button>`).join("");
+}
 
 function addOptions(select, values, labeler = humanize, preserveOrder = false) {
   const uniqueValues = [...new Set(values.filter(Boolean))];
@@ -118,6 +159,7 @@ try {
   }));
 
   function render() {
+    renderFilterChrome();
     const query = normalizeSearch(controls.search.value.trim());
     current = indexed
       .filter((item) => (
@@ -200,12 +242,29 @@ try {
   controls.search.addEventListener("input", debounce(startDiscovery));
   for (const control of [controls.category, controls.period, controls.rights]) control.addEventListener("change", startDiscovery);
   controls.scope.addEventListener("change", resetAndRender);
-  document.querySelector("#media-reset").addEventListener("click", () => {
+  filterToggle.addEventListener("click", () => {
+    const open = !advancedFilters.classList.contains("filters__advanced--open");
+    advancedFilters.classList.toggle("filters__advanced--open", open);
+    filterToggle.setAttribute("aria-expanded", String(open));
+  });
+  activeFilters.addEventListener("click", (event) => {
+    const chip = event.target.closest("[data-filter-key]");
+    if (!chip || !activeFilters.contains(chip)) return;
+    const option = filterOptions.find(({ key }) => key === chip.dataset.filterKey);
+    if (!option) return;
+    controls[option.key].value = option.defaultValue;
+    resetAndRender();
+    const fallback = filterToggle.offsetParent ? filterToggle : controls[option.key];
+    fallback.focus({ preventScroll: true });
+  });
+  resetButton.addEventListener("click", () => {
     controls.search.value = "";
     controls.category.value = "";
     controls.period.value = "";
     controls.rights.value = "";
     controls.scope.value = "selected";
+    advancedFilters.classList.remove("filters__advanced--open");
+    filterToggle.setAttribute("aria-expanded", "false");
     resetAndRender();
   });
   function revealFrom(firstNewIndex) {

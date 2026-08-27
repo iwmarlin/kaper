@@ -942,9 +942,17 @@ main {
 }
 
 .filters__grid--timeline {
-  grid-template-columns: minmax(16rem, 2fr) minmax(11rem, 1fr);
+  grid-template-columns: minmax(15rem, 1.55fr) minmax(11rem, 1.4fr);
+  gap: 0.65rem 0.75rem;
+  align-items: end;
   width: min(100%, 52rem);
   margin-inline: auto;
+}
+
+@media (max-width: 900px) {
+  .filters__grid--timeline {
+    grid-template-columns: minmax(0, 1fr);
+  }
 }
 
 .filters__grid--works {
@@ -973,6 +981,10 @@ main {
 
 .filters__advanced--people {
   grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.filters__advanced--media {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .filters__toggle {
