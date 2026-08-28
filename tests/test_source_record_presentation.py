@@ -105,7 +105,11 @@ class SourceApparatusTests(unittest.TestCase):
                 self.assertIn(f"<dt>{label}</dt><dd>{item['value']}</dd>", text)
                 self.assertNotIn(f'href="{item["value"]}"', text)
                 checked += 1
-        self.assertEqual(checked, 60, "every registered identifier must be on its card")
+        # The count is taken from the data, not fixed here: the archive gains
+        # sources, and a hard number turns a growing fixture into a failure.
+        registered = sum(len(record.get("identifiers") or []) for record in read_records("sources.json"))
+        self.assertEqual(checked, registered, "every registered identifier must be on its card")
+        self.assertGreater(registered, 50, "the fixture must exercise identifiers")
 
 
 class SourceCreditLedgerTests(unittest.TestCase):

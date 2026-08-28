@@ -638,7 +638,7 @@
     {
       "id": "ORG021",
       "displayName": "Aafa-Film AG",
-      "authorizedName": "Aafa-Film AG",
+      "authorizedName": "AAFA-Film AG (Berlin)",
       "types": [
         "film_studio"
       ],
@@ -647,7 +647,7 @@
       ],
       "country": "Germany",
       "slug": "aafa-film-ag",
-      "authorizedNameSource": "Filmportal.de",
+      "authorizedNameSource": "GND",
       "sourceIds": [
         "SRC0122"
       ],
@@ -658,7 +658,9 @@
       "workIds": [
         "W-F001",
         "W-F003"
-      ]
+      ],
+      "authorityUrl": "GND: https://d-nb.info/gnd/6039961-2\nVIAF: https://viaf.org/viaf/138192832",
+      "nameVariants": "AAFA"
     },
     {
       "id": "ORG022",
