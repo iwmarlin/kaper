@@ -699,6 +699,29 @@ class ExportValidator:
                     "the structured birthYear/deathYear values"
                 )
 
+        # Publisher contributions are public graph identifiers, not opaque
+        # import handles: the role token and organization suffix are used when
+        # tracing the same edge across Works, Sources and Organizations.  A
+        # mismatched suffix previously left Dacapo credits carrying Edition
+        # Coda identifiers, while an RL token concealed a publisher role.
+        for contribution in self.payloads.get("Contributions", {}).get("records", []):
+            if contribution.get("role") != "publisher":
+                continue
+            organization_ids = contribution.get("organizationIds", []) or []
+            contribution_id = str(contribution.get("id", ""))
+            if len(organization_ids) != 1:
+                self.errors.append(
+                    f"Contribution {contribution_id}: publisher role requires exactly "
+                    "one organizationIds value"
+                )
+                continue
+            expected_suffix = f"-PUB-{organization_ids[0]}"
+            if not contribution_id.endswith(expected_suffix):
+                self.errors.append(
+                    f"Contribution {contribution_id}: publisher identifier must end "
+                    f"with {expected_suffix}"
+                )
+
         for table_name, fields in PUBLIC_NARRATIVE_FIELDS.items():
             for record in self.payloads.get(table_name, {}).get("records", []):
                 record_id = record.get("id", "unknown")

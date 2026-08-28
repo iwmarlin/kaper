@@ -1051,7 +1051,7 @@
       ],
       "country": "Germany",
       "slug": "alrobi-musikverlag",
-      "nameVariants": "UFA Musikverlag, Alrobi Musikverlag",
+      "nameVariants": "Alrobi; Alrobi-Musikverlag; Alrobi Musikverlag GmbH; Alrobi-Musikverlag GmbH",
       "sourceIds": [
         "SRC0178",
         "SRC0180",
@@ -1156,7 +1156,7 @@
       ],
       "country": "United States",
       "slug": "robbins-music-corporation",
-      "nameVariants": "Robbins Music Corporation, New York",
+      "nameVariants": "Robbins Music Corp.; Robbins Music Corporation, Inc.",
       "contributionIds": [
         "CON-S118-PUB-ORG035",
         "CON-S124-PUB-ORG035",
@@ -1216,8 +1216,7 @@
         "SRC0373",
         "SRC0376",
         "SRC0377",
-        "SRC0378",
-        "SRC0489"
+        "SRC0378"
       ],
       "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no2013107113",
       "authorizedNameSource": "LCNAF"
@@ -1338,7 +1337,7 @@
       ],
       "country": "France",
       "slug": "editions-salabert",
-      "nameVariants": "Paris: éditions Salabert; Editions Salabert",
+      "nameVariants": "Editions Salabert; Éditions Francis Salabert; Editions Francis Salabert",
       "publicNote": "The Salabert enterprise combined sheet-music publishing under Éditions Salabert with record issues bearing the Salabert or Nouveau Disque Salabert imprint.",
       "sourceIds": [
         "SRC0115",
@@ -1367,7 +1366,7 @@
         "CON-S110-PUB-ORG039",
         "CON-S111-PUB-ORG039",
         "CON-S116-LAB-ORG039",
-        "CON-S116-RL-ORG039",
+        "CON-S116-PUB-ORG039",
         "CON-S178-PUB-ORG039",
         "CON-S208-PUB-ORG039",
         "CON-S209-PUB-ORG039",
@@ -1506,7 +1505,7 @@
       ],
       "country": "France",
       "slug": "editions-max-eschig",
-      "nameVariants": "Paris: éditions Max Eschig",
+      "nameVariants": "Editions Max Eschig; Éditions Max Eschig et Cie; Max Eschig",
       "contributionIds": [
         "CON-S036-PUB-ORG047",
         "CON-S050-PUB-ORG047",
@@ -1544,19 +1543,22 @@
       ],
       "country": "France",
       "slug": "france-melodie",
-      "nameVariants": "Paris: France-Mélodie",
+      "nameVariants": "Éditions France-Mélodie; Editions France-Mélodie",
       "sourceIds": [
+        "SRC0489",
         "SRC0630"
       ],
       "contributionIds": [
         "CON-S163-PUB-ORG048",
         "CON-S164-PUB-ORG048",
-        "CON-S196-PUB-ORG048"
+        "CON-S196-PUB-ORG048",
+        "CON-S200-PUB-ORG048"
       ],
       "workIds": [
         "W-S163",
         "W-S164",
-        "W-S196"
+        "W-S196",
+        "W-S200"
       ],
       "authorityUrl": "BnF: https://catalogue.bnf.fr/ark:/12148/cb14605880n",
       "authorizedNameSource": "BnF"
@@ -1633,7 +1635,7 @@
       ],
       "country": "Poland",
       "slug": "gebethner-wolff",
-      "nameVariants": "Gebethner and Wolff, Warszawa",
+      "nameVariants": "Gebethner i Wolff; Gebethner and Wolff",
       "sourceIds": [
         "SRC0018",
         "SRC0055",
@@ -1761,7 +1763,7 @@
     {
       "id": "ORG055",
       "displayName": "Campbell Connelly & Co. Ltd.",
-      "authorizedName": "Campbell Connelly & Co. Ltd.",
+      "authorizedName": "Campbell, Connelly & Co",
       "types": [
         "publisher"
       ],
@@ -1769,8 +1771,8 @@
         "London"
       ],
       "country": "United Kingdom",
-      "slug": "reg-connelly-campbell-connelly-co",
-      "nameVariants": "Reg Connelly Campbell Connelly & Co.; Campbell Connelly & Co.; Campbell, Connelly & Co.; Reg Connelly",
+      "slug": "campbell-connelly-co",
+      "nameVariants": "Campbell, Connelly and Co; Campbell & Connelly; Campbell Connelly & Co.; Campbell, Connelly & Co. Ltd.; Éditions Campbell-Connelly",
       "contributionIds": [
         "CON-S037-PUB-ORG055",
         "CON-S205-PUB-ORG055"
@@ -1783,7 +1785,8 @@
         "SRC0212",
         "SRC0504"
       ],
-      "authorizedNameSource": "local heading"
+      "authorityUrl": "BnF: https://catalogue.bnf.fr/ark:/12148/cb142776167",
+      "authorizedNameSource": "BnF"
     },
     {
       "id": "ORG056",
@@ -3329,15 +3332,17 @@
       "displayName": "European Architectural History Network",
       "authorizedName": "European Architectural History Network",
       "types": [
-        "publisher",
-        "database"
+        "scholarly_network"
       ],
       "city": [
         "Glasgow"
       ],
       "country": "United Kingdom",
       "slug": "european-architectural-history-network",
-      "nameVariants": "EAHN; EAHN Journal; Architectural Histories",
+      "nameVariants": "EAHN",
+      "publicNote": "Architectural Histories is the journal of the European Architectural History Network; the journal title is not an alternative name of the organization. Since 2021, the journal has been formally published by the Open Library of Humanities.",
+      "authorityUrl": "Official website: https://eahn.org/about/",
+      "authorizedNameSource": "EAHN",
       "sourceIds": [
         "SRC0352"
       ]
@@ -3459,8 +3464,8 @@
         "W-S075"
       ],
       "contributionIds": [
-        "CON-S074-PUB-ORG030",
-        "CON-S075-PUB-ORG030"
+        "CON-S074-PUB-ORG113",
+        "CON-S075-PUB-ORG113"
       ],
       "authorizedNameSource": "local heading"
     },

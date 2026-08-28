@@ -5,7 +5,7 @@ Run this after any *manual* edit to data/public/v1/*.json or
 scripts/public_export_overrides.json (i.e. when you did not run the full
 export_public_data.py). It recomputes directly from the canonical public files:
 
-  - per-table record counts (manifest.counts + build-report.counts)
+  - per-table record counts (payload.count + manifest.counts + build-report.counts)
   - per-file byte sizes and sha256 checksums (manifest.files)
   - the overrides checksum and applied/addition/linkAddition counts
   - the generator checksum recorded in the manifest
@@ -66,9 +66,17 @@ def main() -> int:
 
     # 1) counts per table (keyed by the public table display name)
     counts = {}
+    corrected_payloads: dict[str, bytes] = {}
     for table_name, table_cfg in config["tables"].items():
-        payload = read_json(data_root / table_cfg["file"])
-        counts[table_name] = len(payload.get("records", []))
+        file_name = table_cfg["file"]
+        payload = read_json(data_root / file_name)
+        record_count = len(payload.get("records", []))
+        counts[table_name] = record_count
+        if payload.get("count") != record_count:
+            payload = dict(payload)
+            payload["count"] = record_count
+            corrected_payloads[file_name] = json_bytes(payload)
+            changes.append(f"{file_name}:count")
     if manifest.get("counts") != counts:
         changes.append("manifest.counts")
     if report.get("counts") != counts:
@@ -86,6 +94,10 @@ def main() -> int:
         if entry["file"] == "build-report.json":
             new_entry["bytes"] = len(report_new_bytes)
             new_entry["sha256"] = hashlib.sha256(report_new_bytes).hexdigest()
+        elif entry["file"] in corrected_payloads:
+            payload_bytes = corrected_payloads[entry["file"]]
+            new_entry["bytes"] = len(payload_bytes)
+            new_entry["sha256"] = hashlib.sha256(payload_bytes).hexdigest()
         else:
             new_entry["bytes"] = path.stat().st_size
             new_entry["sha256"] = sha256(path)
@@ -133,6 +145,9 @@ def main() -> int:
     if args.check:
         print("DRIFT:" if changes else "clean:", ", ".join(changes) or "manifest already consistent")
         return 1 if changes else 0
+
+    for file_name, payload_bytes in corrected_payloads.items():
+        (data_root / file_name).write_bytes(payload_bytes)
 
     manifest["counts"] = counts
     manifest["files"] = new_files

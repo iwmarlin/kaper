@@ -290,6 +290,32 @@
       }
     },
     "Songs": {
+      "S036": {"reason": "Keep Paris in the organization record and source citation, not in the publisher transcription.", "fields": {"publisherAsPrinted": "Éditions Max Eschig"}},
+      "S037": {"reason": "Remove the lyricist Reg Connelly from the publisher transcription and use the company name documented in the copyright entry.", "fields": {"publisherAsPrinted": "Campbell, Connelly & Co., Ltd."}},
+      "S050": {"reason": "Keep Paris in the organization record and source citation, not in the publisher transcription.", "fields": {"publisherAsPrinted": "Éditions Max Eschig"}},
+      "S061": {"reason": "Keep Paris in the organization record and source citation, not in the publisher transcription.", "fields": {"publisherAsPrinted": "Éditions Salabert"}},
+      "S063": {"reason": "Remove place and year commentary from the publisher transcription.", "fields": {"publisherAsPrinted": "Éditions Salabert"}},
+      "S065": {"reason": "Keep Paris in the organization record and source citation, not in the publisher transcription.", "fields": {"publisherAsPrinted": "Éditions Salabert"}},
+      "S073": {"reason": "Keep Paris in the organization record and source citation, not in the publisher transcription.", "fields": {"publisherAsPrinted": "Éditions Salabert"}},
+      "S087": {"reason": "Keep Paris in the organization record and source citation, not in the publisher transcription.", "fields": {"publisherAsPrinted": "Éditions Salabert"}},
+      "S093": {"reason": "Keep Paris in the organization record and source citation, not in the publisher transcription.", "fields": {"publisherAsPrinted": "Éditions Salabert"}},
+      "S095": {"reason": "Keep Paris in the organization record and source citation, not in the publisher transcription.", "fields": {"publisherAsPrinted": "Éditions Salabert"}},
+      "S110": {"reason": "Keep Paris in the organization record and source citation, not in the publisher transcription.", "fields": {"publisherAsPrinted": "Éditions Salabert"}},
+      "S111": {"reason": "Keep Paris in the organization record and source citation, not in the publisher transcription.", "fields": {"publisherAsPrinted": "Éditions Salabert"}},
+      "S116": {"reason": "Keep Paris in the organization record and source citation, not in the publisher transcription.", "fields": {"publisherAsPrinted": "Éditions Salabert"}},
+      "S163": {"reason": "Keep Paris in the organization record and source citation, not in the publisher transcription.", "fields": {"publisherAsPrinted": "France-Mélodie"}},
+      "S164": {"reason": "Keep Paris in the organization record and source citation, not in the publisher transcription.", "fields": {"publisherAsPrinted": "France-Mélodie"}},
+      "S197": {"reason": "Remove the catalogue year from the publisher transcription.", "fields": {"publisherAsPrinted": "Robbins Music Corporation"}},
+      "S198": {"reason": "Remove the catalogue year from the publisher transcription.", "fields": {"publisherAsPrinted": "Robbins Music Corporation"}},
+      "S201": {"reason": "Remove country and year codes from the publisher transcription.", "fields": {"publisherAsPrinted": "Robbins Music Corporation"}},
+      "S202": {"reason": "Replace the aggregate catalogue string with the two publishers represented by separate organization contributions.", "fields": {"publisherAsPrinted": "MGM Corporation; Robbins Music Corporation"}},
+      "S205": {"reason": "Keep Paris in the source citation and retain only the edition name in the publisher field.", "fields": {"publisherAsPrinted": "Éditions Campbell-Connelly"}},
+      "S206": {"reason": "Keep Paris in the source citation and retain only the edition name in the publisher field.", "fields": {"publisherAsPrinted": "Éditions Max Eschig"}},
+      "S207": {"reason": "Separate the two publishers from the aggregate catalogue statement.", "fields": {"publisherAsPrinted": "Édition Charles Brüll; Éditions Max Eschig"}},
+      "S208": {"reason": "Keep Paris in the source citation and retain only the edition name in the publisher field.", "fields": {"publisherAsPrinted": "Éditions Francis Salabert"}},
+      "S209": {"reason": "Keep Paris in the source citation and retain only the edition name in the publisher field.", "fields": {"publisherAsPrinted": "Éditions Francis Salabert"}},
+      "S210": {"reason": "Keep Paris in the source citation and retain only the edition name in the publisher field.", "fields": {"publisherAsPrinted": "Éditions Francis Salabert"}},
+      "S211": {"reason": "Separate the two publishers from the aggregate catalogue statement.", "fields": {"publisherAsPrinted": "Éditions Charles Brüll; Éditions Max Eschig et Cie"}},
       "S010": {
         "reason": "Keep the German original bibliographically self-contained. Dutch and French adaptations are represented as separate Song/Work records and language-version relations, so their lyric credits and editorial explanation do not belong in the German Song note.",
         "fields": {
@@ -365,17 +391,19 @@
         }
       },
       "S077": {
-        "reason": "Correct the song year to the 1933 Salabert edition documented by the BnF catalogue record SRC0298 and the contemporary 22 June 1934 performance notice SRC0536.",
+        "reason": "Correct the song year to the 1933 Salabert edition and keep Paris outside the publisher transcription.",
         "fields": {
           "year": 1933,
-          "period": "european"
+          "period": "european",
+          "publisherAsPrinted": "Éditions Salabert"
         }
       },
       "S079": {
-        "reason": "Correct the song year to the 1933 Salabert edition documented by the BnF catalogue record SRC0081.",
+        "reason": "Correct the song year to the 1933 Salabert edition and keep Paris outside the publisher transcription.",
         "fields": {
           "year": 1933,
-          "period": "european"
+          "period": "european",
+          "publisherAsPrinted": "Éditions Salabert"
         }
       },
       "S094": {
@@ -392,9 +420,10 @@
         }
       },
       "S200": {
-        "reason": "Synchronize the legacy printed-lyricist field with the 1936 French sheet-music cover, which credits André and Didier Mauprey, and remove the superseded identity-assessment note.",
+        "reason": "Synchronize the lyricist field with the 1936 French cover and represent the two documented publication contexts without catalogue date-range commentary.",
         "fields": {
-          "lyricistAsPrinted": "André Mauprey; Didier Mauprey"
+          "lyricistAsPrinted": "André Mauprey; Didier Mauprey",
+          "publisherAsPrinted": "Robbins Music Corporation; Éditions France Mélodie"
         },
         "removeFields": [
           "publicNote"
@@ -462,8 +491,8 @@
         }
       },
       "O010": {
-        "reason": "Remove an overview that repeats the title, year, contributors, instrumentation and publisher already presented in structured fields.",
-        "fields": {},
+        "reason": "Remove redundant overview prose and keep the BnF notice in the source citation rather than in the publisher field.",
+        "fields": {"publisherOrHoldingAsPrinted": "Coda"},
         "removeFields": [
           "publicNote"
         ]
@@ -475,8 +504,9 @@
         }
       },
       "O012": {
-        "reason": "Remove redundant overview prose and attach the independent Fiesta composer evidence.",
+        "reason": "Remove redundant overview prose, attach the independent Fiesta evidence and keep StabiKat metadata in the source citation.",
         "fields": {
+          "publisherOrHoldingAsPrinted": "Alberti",
           "sourceIds": ["SRC0505", "SRC0773"]
         },
         "removeFields": [
@@ -485,56 +515,56 @@
       },
       "O013": {
         "reason": "Replace the catalogue-facing prose with a structured composer contribution for Nacio Herb Brown.",
-        "fields": {"instrumentation": "transcription for two pianos; Cocktails series"},
+        "fields": {"instrumentation": "transcription for two pianos; Cocktails series", "publisherOrHoldingAsPrinted": "Alberti"},
         "removeFields": ["publicNote"]
       },
       "O014": {
         "reason": "Replace the catalogue-facing prose with a structured composer contribution for Nacio Herb Brown.",
-        "fields": {"instrumentation": "foxtrot transcription for two pianos; Cocktails series"},
+        "fields": {"instrumentation": "foxtrot transcription for two pianos; Cocktails series", "publisherOrHoldingAsPrinted": "Alberti"},
         "removeFields": ["publicNote"]
       },
       "O015": {
-        "reason": "Remove an overview that repeats the instrumentation, series, publisher, place and year already presented in structured fields.",
-        "fields": {},
+        "reason": "Remove redundant overview prose and keep StabiKat metadata in the source citation.",
+        "fields": {"publisherOrHoldingAsPrinted": "Alrobi"},
         "removeFields": [
           "publicNote"
         ]
       },
       "O016": {
-        "reason": "Remove an overview that repeats the instrumentation, series, publisher, place and year already presented in structured fields.",
-        "fields": {},
+        "reason": "Remove redundant overview prose and keep StabiKat metadata in the source citation.",
+        "fields": {"publisherOrHoldingAsPrinted": "Alrobi"},
         "removeFields": [
           "publicNote"
         ]
       },
       "O017": {
         "reason": "Replace the catalogue-facing prose with Ray Henderson's source-backed composer contribution.",
-        "fields": {"instrumentation": "transcription for two pianos; Cocktails series", "sourceIds": ["SRC0510", "SRC0774"]},
+        "fields": {"instrumentation": "transcription for two pianos; Cocktails series", "publisherOrHoldingAsPrinted": "Alberti", "sourceIds": ["SRC0510", "SRC0774"]},
         "removeFields": ["publicNote"]
       },
       "O018": {
         "reason": "Replace the catalogue-facing prose with a structured composer contribution for Irving Berlin.",
-        "fields": {"instrumentation": "slow-foxtrot transcription for two pianos; Cocktails series"},
+        "fields": {"instrumentation": "slow-foxtrot transcription for two pianos; Cocktails series", "publisherOrHoldingAsPrinted": "Alberti"},
         "removeFields": ["publicNote"]
       },
       "O019": {
         "reason": "Replace catalogue-field commentary with structured composer contributions confirmed by the printed Cocktails score.",
-        "fields": {"instrumentation": "jazz transcription for two pianos; Cocktails series"},
+        "fields": {"instrumentation": "jazz transcription for two pianos; Cocktails series", "publisherOrHoldingAsPrinted": "Alberti"},
         "removeFields": ["publicNote"]
       },
       "O020": {
         "reason": "Replace the catalogue-facing prose with a structured composer contribution for Jesse Greer.",
-        "fields": {"instrumentation": "foxtrot transcription for two pianos; Cocktails series"},
+        "fields": {"instrumentation": "foxtrot transcription for two pianos; Cocktails series", "publisherOrHoldingAsPrinted": "Alberti"},
         "removeFields": ["publicNote"]
       },
       "O021": {
         "reason": "Replace the catalogue-facing prose with a structured composer contribution for Jesse Greer.",
-        "fields": {"instrumentation": "waltz transcription for two pianos; Cocktails series"},
+        "fields": {"instrumentation": "waltz transcription for two pianos; Cocktails series", "publisherOrHoldingAsPrinted": "Alberti"},
         "removeFields": ["publicNote"]
       },
       "O022": {
         "reason": "Replace the catalogue-facing prose with a structured composer contribution for Larry Shay.",
-        "fields": {"instrumentation": "foxtrot transcription for two pianos; Cocktails series"},
+        "fields": {"instrumentation": "foxtrot transcription for two pianos; Cocktails series", "publisherOrHoldingAsPrinted": "Alberti"},
         "removeFields": ["publicNote"]
       }
     },
@@ -3069,7 +3099,110 @@
         }
       }
     },
+    "Organizations": {
+      "ORG033": {
+        "reason": "Retain only genuine forms of the Alrobi name; UFA Musikverlag is a distinct organization, not an alternative name for the 1929–1933 publisher.",
+        "fields": {
+          "nameVariants": "Alrobi; Alrobi-Musikverlag; Alrobi Musikverlag GmbH; Alrobi-Musikverlag GmbH"
+        }
+      },
+      "ORG035": {
+        "reason": "Separate genuine corporate-name variants from the New York place of publication.",
+        "fields": {
+          "nameVariants": "Robbins Music Corp.; Robbins Music Corporation, Inc."
+        }
+      },
+      "ORG039": {
+        "reason": "Retain only name forms of the Salabert publishing enterprise; Paris belongs in the structured city field.",
+        "fields": {
+          "nameVariants": "Editions Salabert; Éditions Francis Salabert; Editions Francis Salabert"
+        }
+      },
+      "ORG047": {
+        "reason": "Retain only genuine Max Eschig name forms; Paris belongs in the structured city field.",
+        "fields": {
+          "nameVariants": "Editions Max Eschig; Éditions Max Eschig et Cie; Max Eschig"
+        }
+      },
+      "ORG048": {
+        "reason": "Retain the attested publisher forms and move Paris out of the name-variant field.",
+        "fields": {
+          "nameVariants": "Éditions France-Mélodie; Editions France-Mélodie"
+        }
+      },
+      "ORG051": {
+        "reason": "Retain the Polish and English name forms while keeping Warsaw in the structured city field.",
+        "fields": {
+          "nameVariants": "Gebethner i Wolff; Gebethner and Wolff"
+        }
+      },
+      "ORG055": {
+        "reason": "Use the BnF authority heading for Campbell, Connelly & Co and remove Reg Connelly, a person, from the organization's name variants.",
+        "fields": {
+          "authorizedName": "Campbell, Connelly & Co",
+          "slug": "campbell-connelly-co",
+          "nameVariants": "Campbell, Connelly and Co; Campbell & Connelly; Campbell Connelly & Co.; Campbell, Connelly & Co. Ltd.; Éditions Campbell-Connelly",
+          "authorityUrl": "BnF: https://catalogue.bnf.fr/ark:/12148/cb142776167",
+          "authorizedNameSource": "BnF"
+        }
+      },
+      "ORG107": {
+        "reason": "Model EAHN as the scholarly network that owns Architectural Histories, not as a database or the journal title itself; record the current formal publisher in a public identity note.",
+        "fields": {
+          "types": [
+            "scholarly_network"
+          ],
+          "nameVariants": "EAHN",
+          "publicNote": "Architectural Histories is the journal of the European Architectural History Network; the journal title is not an alternative name of the organization. Since 2021, the journal has been formally published by the Open Library of Humanities.",
+          "authorityUrl": "Official website: https://eahn.org/about/",
+          "authorizedNameSource": "EAHN"
+        }
+      }
+    },
     "Contributions": {
+      "CON-O010-PUB-ORG030": {"reason": "Keep only the publisher name in the printed-name field; the BnF notice belongs in the source citation.", "fields": {"nameAsPrinted": "Coda"}},
+      "CON-O012-PUB-ORG054": {"reason": "Keep only the publisher name in the printed-name field; city, date and StabiKat number belong in the source citation.", "fields": {"nameAsPrinted": "Alberti"}},
+      "CON-O013-PUB-ORG054": {"reason": "Keep only the publisher name in the printed-name field; city, date and StabiKat number belong in the source citation.", "fields": {"nameAsPrinted": "Alberti"}},
+      "CON-O014-PUB-ORG054": {"reason": "Keep only the publisher name in the printed-name field; city, date and StabiKat number belong in the source citation.", "fields": {"nameAsPrinted": "Alberti"}},
+      "CON-O015-PUB-ORG033": {"reason": "Keep only the publisher name in the printed-name field; city, date and StabiKat number belong in the source citation.", "fields": {"nameAsPrinted": "Alrobi"}},
+      "CON-O016-PUB-ORG033": {"reason": "Keep only the publisher name in the printed-name field; city, date and StabiKat number belong in the source citation.", "fields": {"nameAsPrinted": "Alrobi"}},
+      "CON-O017-PUB-ORG054": {"reason": "Keep only the publisher name in the printed-name field; city, date and StabiKat number belong in the source citation.", "fields": {"nameAsPrinted": "Alberti"}},
+      "CON-O018-PUB-ORG054": {"reason": "Keep only the publisher name in the printed-name field; city, date and StabiKat number belong in the source citation.", "fields": {"nameAsPrinted": "Alberti"}},
+      "CON-O019-PUB-ORG054": {"reason": "Keep only the publisher name in the printed-name field; city, date and StabiKat number belong in the source citation.", "fields": {"nameAsPrinted": "Alberti"}},
+      "CON-O020-PUB-ORG054": {"reason": "Keep only the publisher name in the printed-name field; city, date and StabiKat number belong in the source citation.", "fields": {"nameAsPrinted": "Alberti"}},
+      "CON-O021-PUB-ORG054": {"reason": "Keep only the publisher name in the printed-name field; city, date and StabiKat number belong in the source citation.", "fields": {"nameAsPrinted": "Alberti"}},
+      "CON-O022-PUB-ORG054": {"reason": "Keep only the publisher name in the printed-name field; city, date and StabiKat number belong in the source citation.", "fields": {"nameAsPrinted": "Alberti"}},
+      "CON-S036-PUB-ORG047": {"reason": "Keep Paris in the organization record and source citation, not in the printed publisher name.", "fields": {"nameAsPrinted": "Éditions Max Eschig"}},
+      "CON-S037-PUB-ORG055": {"reason": "Remove the lyricist Reg Connelly from the publisher transcription and use the company name documented in the copyright entry.", "fields": {"nameAsPrinted": "Campbell, Connelly & Co., Ltd."}},
+      "CON-S050-PUB-ORG047": {"reason": "Keep Paris in the organization record and source citation, not in the printed publisher name.", "fields": {"nameAsPrinted": "Éditions Max Eschig"}},
+      "CON-S061-PUB-ORG039": {"reason": "Keep Paris in the organization record and source citation, not in the printed publisher name.", "fields": {"nameAsPrinted": "Éditions Salabert"}},
+      "CON-S063-PUB-ORG039": {"reason": "Remove the place and year commentary from the printed publisher name.", "fields": {"nameAsPrinted": "Éditions Salabert"}},
+      "CON-S065-PUB-ORG039": {"reason": "Keep Paris in the organization record and source citation, not in the printed publisher name.", "fields": {"nameAsPrinted": "Éditions Salabert"}},
+      "CON-S073-PUB-ORG039": {"reason": "Keep Paris in the organization record and source citation, not in the printed publisher name.", "fields": {"nameAsPrinted": "Éditions Salabert"}},
+      "CON-S077-PUB-ORG039": {"reason": "Keep Paris in the organization record and source citation, not in the printed publisher name.", "fields": {"nameAsPrinted": "Éditions Salabert"}},
+      "CON-S079-PUB-ORG039": {"reason": "Keep Paris in the organization record and source citation, not in the printed publisher name.", "fields": {"nameAsPrinted": "Éditions Salabert"}},
+      "CON-S087-PUB-ORG039": {"reason": "Keep Paris in the organization record and source citation, not in the printed publisher name.", "fields": {"nameAsPrinted": "Éditions Salabert"}},
+      "CON-S093-PUB-ORG039": {"reason": "Keep Paris in the organization record and source citation, not in the printed publisher name.", "fields": {"nameAsPrinted": "Éditions Salabert"}},
+      "CON-S095-PUB-ORG039": {"reason": "Keep Paris in the organization record and source citation, not in the printed publisher name.", "fields": {"nameAsPrinted": "Éditions Salabert"}},
+      "CON-S110-PUB-ORG039": {"reason": "Keep Paris in the organization record and source citation, not in the printed publisher name.", "fields": {"nameAsPrinted": "Éditions Salabert"}},
+      "CON-S111-PUB-ORG039": {"reason": "Keep Paris in the organization record and source citation, not in the printed publisher name.", "fields": {"nameAsPrinted": "Éditions Salabert"}},
+      "CON-S163-PUB-ORG048": {"reason": "Keep Paris in the organization record and source citation, not in the printed publisher name.", "fields": {"nameAsPrinted": "France-Mélodie"}},
+      "CON-S164-PUB-ORG048": {"reason": "Keep Paris in the organization record and source citation, not in the printed publisher name.", "fields": {"nameAsPrinted": "France-Mélodie"}},
+      "CON-S197-PUB-ORG035": {"reason": "Remove the catalogue year from the printed publisher name.", "fields": {"nameAsPrinted": "Robbins Music Corporation"}},
+      "CON-S198-PUB-ORG035": {"reason": "Remove the catalogue year from the printed publisher name.", "fields": {"nameAsPrinted": "Robbins Music Corporation"}},
+      "CON-S200-PUB-ORG035": {"reason": "Limit this source-specific contribution to the Robbins publication context and remove catalogue date-range commentary from the printed name.", "fields": {"nameAsPrinted": "Robbins Music Corporation"}},
+      "CON-S201-PUB-ORG035": {"reason": "Remove country and year codes from the printed publisher name.", "fields": {"nameAsPrinted": "Robbins Music Corporation"}},
+      "CON-S202-PUB-ORG001": {"reason": "Split the aggregate catalogue string into the publisher name represented by this organization contribution.", "fields": {"nameAsPrinted": "MGM Corporation"}},
+      "CON-S202-PUB-ORG035": {"reason": "Split the aggregate catalogue string into the publisher name represented by this organization contribution.", "fields": {"nameAsPrinted": "Robbins Music Corporation"}},
+      "CON-S205-PUB-ORG055": {"reason": "Keep Paris in the source citation and retain only the edition name in the printed publisher field.", "fields": {"nameAsPrinted": "Éditions Campbell-Connelly"}},
+      "CON-S206-PUB-ORG047": {"reason": "Keep Paris in the source citation and retain only the edition name in the printed publisher field.", "fields": {"nameAsPrinted": "Éditions Max Eschig"}},
+      "CON-S207-PUB-ORG031": {"reason": "Split the combined catalogue statement into the name represented by this publisher contribution.", "fields": {"nameAsPrinted": "Édition Charles Brüll"}},
+      "CON-S207-PUB-ORG047": {"reason": "Split the combined catalogue statement into the name represented by this publisher contribution.", "fields": {"nameAsPrinted": "Éditions Max Eschig"}},
+      "CON-S208-PUB-ORG039": {"reason": "Keep Paris in the source citation and retain only the edition name in the printed publisher field.", "fields": {"nameAsPrinted": "Éditions Francis Salabert"}},
+      "CON-S209-PUB-ORG039": {"reason": "Keep Paris in the source citation and retain only the edition name in the printed publisher field.", "fields": {"nameAsPrinted": "Éditions Francis Salabert"}},
+      "CON-S210-PUB-ORG039": {"reason": "Keep Paris in the source citation and retain only the edition name in the printed publisher field.", "fields": {"nameAsPrinted": "Éditions Francis Salabert"}},
+      "CON-S211-PUB-ORG031": {"reason": "Split the combined catalogue statement into the name represented by this publisher contribution.", "fields": {"nameAsPrinted": "Éditions Charles Brüll"}},
+      "CON-S211-PUB-ORG047": {"reason": "Split the combined catalogue statement into the name represented by this publisher contribution.", "fields": {"nameAsPrinted": "Éditions Max Eschig et Cie"}},
       "CON-F051-C-P009": {
         "reason": "The song-to-film connection is represented by REL0201; remove the redundant provisional public note while retaining the scoped composer contribution documented by AFI.",
         "removeFields": [
@@ -3189,18 +3322,6 @@
         "removeFields": [
           "scopeNote"
         ]
-      },
-      "CON-S074-PUB-ORG030": {
-        "reason": "Correct the publisher transcription to Dacapo-Verlag; the legacy contribution ID is retained as an opaque identifier and reassigned to ORG113 below.",
-        "fields": {
-          "nameAsPrinted": "Dacapo-Verlag"
-        }
-      },
-      "CON-S075-PUB-ORG030": {
-        "reason": "Correct the publisher transcription to Dacapo-Verlag; the legacy contribution ID is retained as an opaque identifier and reassigned to ORG113 below.",
-        "fields": {
-          "nameAsPrinted": "Dacapo-Verlag"
-        }
       },
       "CON-S057-L-P017": {
         "reason": "Normalize the lyricist transcription to Ernst Marischka, as identified by the December 1932 Hofmeister registration.",
@@ -3789,6 +3910,15 @@
       }
     },
     "Contributions": {
+      "CON-S116-RL-ORG039": {
+        "reason": "Replace the legacy contribution identifier whose role token does not match its publisher role."
+      },
+      "CON-S074-PUB-ORG030": {
+        "reason": "Replace the legacy publisher contribution whose identifier names Edition Coda even though the contribution belongs to Dacapo-Verlag."
+      },
+      "CON-S075-PUB-ORG030": {
+        "reason": "Replace the legacy publisher contribution whose identifier names Edition Coda even though the contribution belongs to Dacapo-Verlag."
+      },
       "CON-F052-D-P091": {
         "reason": "Remove the false Harold S. Bucquet director contribution created by the same-title film conflation; the documented animated Little Boy Blue was produced and directed by Ub Iwerks."
       },
@@ -3863,8 +3993,8 @@
             "W-S075"
           ],
           "contributionIds": [
-            "CON-S074-PUB-ORG030",
-            "CON-S075-PUB-ORG030"
+            "CON-S074-PUB-ORG113",
+            "CON-S075-PUB-ORG113"
           ]
         }
       },
@@ -4416,6 +4546,82 @@
       }
     },
     "Contributions": {
+      "CON-S116-PUB-ORG039": {
+        "reason": "Replace the misleading legacy identifier with a contribution whose role token and public role both identify a publisher.",
+        "fields": {
+          "id": "CON-S116-PUB-ORG039",
+          "role": "publisher",
+          "nameAsPrinted": "Éditions Salabert",
+          "evidenceContext": "sheet_music",
+          "certainty": "confirmed",
+          "workIds": [
+            "W-S116"
+          ],
+          "organizationIds": [
+            "ORG039"
+          ],
+          "sourceIds": [
+            "SRC0115"
+          ]
+        }
+      },
+      "CON-S074-PUB-ORG113": {
+        "reason": "Replace the misleading legacy identifier with a publisher contribution whose identifier and organization relation both name Dacapo-Verlag.",
+        "fields": {
+          "id": "CON-S074-PUB-ORG113",
+          "role": "publisher",
+          "nameAsPrinted": "Dacapo-Verlag",
+          "evidenceContext": "sheet_music",
+          "certainty": "confirmed",
+          "workIds": [
+            "W-S074"
+          ],
+          "organizationIds": [
+            "ORG113"
+          ],
+          "sourceIds": [
+            "SRC0221"
+          ]
+        }
+      },
+      "CON-S075-PUB-ORG113": {
+        "reason": "Replace the misleading legacy identifier with a publisher contribution whose identifier and organization relation both name Dacapo-Verlag.",
+        "fields": {
+          "id": "CON-S075-PUB-ORG113",
+          "role": "publisher",
+          "nameAsPrinted": "Dacapo-Verlag",
+          "evidenceContext": "sheet_music",
+          "certainty": "confirmed",
+          "workIds": [
+            "W-S075"
+          ],
+          "organizationIds": [
+            "ORG113"
+          ],
+          "sourceIds": [
+            "SRC0222"
+          ]
+        }
+      },
+      "CON-S200-PUB-ORG048": {
+        "reason": "Model the publisher printed on the item-level 1936 French sheet-music cover separately from the Robbins publication context recorded in the aggregate work catalogue.",
+        "fields": {
+          "id": "CON-S200-PUB-ORG048",
+          "role": "publisher",
+          "nameAsPrinted": "Éditions France Mélodie",
+          "evidenceContext": "sheet_music",
+          "certainty": "confirmed",
+          "workIds": [
+            "W-S200"
+          ],
+          "organizationIds": [
+            "ORG048"
+          ],
+          "sourceIds": [
+            "SRC0489"
+          ]
+        }
+      },
       "CON-S205-L-P020": {
         "reason": "Represent Fritz Rotter's authorship of the German source text on the dedicated French-version record without misclassifying him as a co-composer.",
         "fields": {
@@ -9745,16 +9951,19 @@
         }
       },
       "ORG048": {
-        "reason": "Link France-Mélodie to the item-level 1936 French edition, its source record and the corrected publisher contribution.",
+        "reason": "Link France-Mélodie to the item-level French editions and their corrected publisher contributions.",
         "fields": {
           "sourceIds": [
+            "SRC0489",
             "SRC0630"
           ],
           "contributionIds": [
-            "CON-S196-PUB-ORG048"
+            "CON-S196-PUB-ORG048",
+            "CON-S200-PUB-ORG048"
           ],
           "workIds": [
-            "W-S196"
+            "W-S196",
+            "W-S200"
           ]
         }
       },
@@ -9941,11 +10150,14 @@
         }
       },
       "ORG039": {
-        "reason": "Connect Éditions Salabert both to the item-level cover source that prints the publisher and to the ECMF profile documenting the publishing house and Francis Salabert.",
+        "reason": "Connect Éditions Salabert to the item-level cover, the ECMF profile and the corrected W-S116 publisher contribution.",
         "fields": {
           "sourceIds": [
             "SRC0540",
             "SRC0670"
+          ],
+          "contributionIds": [
+            "CON-S116-PUB-ORG039"
           ]
         }
       }
@@ -10088,22 +10300,6 @@
         "fields": {
           "sourceIds": [
             "SRC0683"
-          ]
-        }
-      },
-      "CON-S074-PUB-ORG030": {
-        "reason": "Reassign the existing publisher contribution from the unrelated Edition Coda to the Viennese Dacapo-Verlag; retain the legacy contribution ID as an opaque identifier.",
-        "fields": {
-          "organizationIds": [
-            "ORG113"
-          ]
-        }
-      },
-      "CON-S075-PUB-ORG030": {
-        "reason": "Reassign the existing publisher contribution from the unrelated Edition Coda to the Viennese Dacapo-Verlag; retain the legacy contribution ID as an opaque identifier.",
-        "fields": {
-          "organizationIds": [
-            "ORG113"
           ]
         }
       },
@@ -10337,6 +10533,30 @@
       "O012": {"reason": "Attach the surviving Fiesta score headed Ein neuer Cocktail.", "fields": {"sourceIds": ["SRC0789"]}}
     },
     "Works": {
+      "W-S074": {
+        "reason": "Replace the excluded legacy Dacapo publisher contribution with its corrected stable identifier.",
+        "fields": {
+          "contributionIds": [
+            "CON-S074-PUB-ORG113"
+          ]
+        }
+      },
+      "W-S075": {
+        "reason": "Replace the excluded legacy Dacapo publisher contribution with its corrected stable identifier.",
+        "fields": {
+          "contributionIds": [
+            "CON-S075-PUB-ORG113"
+          ]
+        }
+      },
+      "W-S200": {
+        "reason": "Expose the separately documented France-Mélodie publication context on the French San Francisco song record.",
+        "fields": {
+          "contributionIds": [
+            "CON-S200-PUB-ORG048"
+          ]
+        }
+      },
       "W-O007": {"reason": "Attach the archival source that distinguishes the ten-title original Cocktails edition from the later associated Fiesta issue.", "fields": {"sourceIds": ["SRC0789"]}},
       "W-O012": {"reason": "Add the verified original composers of Fiesta (Bianca), separately from Kaper's transcription credit, and attach the surviving score headed Ein neuer Cocktail.", "fields": {"sourceIds": ["SRC0773", "SRC0789"], "contributionIds": ["CON-O012-C-P177", "CON-O012-C-P178"], "personIds": ["P177", "P178"]}},
       "W-O013": {"reason": "Add the original composer credit for the Cocktails transcription.", "fields": {"contributionIds": ["CON-O013-C-P179"], "personIds": ["P179"]}},
@@ -10695,10 +10915,11 @@
         }
       },
       "W-S116": {
-        "reason": "Connect Henry Garat's documented vocal performance and attested credit form to Pourvu qu’on ait vingt ans.",
+        "reason": "Connect Henry Garat's performance, attested credit form and the corrected publisher contribution to Pourvu qu’on ait vingt ans.",
         "fields": {
           "contributionIds": [
-            "CON-S116-P-P132"
+            "CON-S116-P-P132",
+            "CON-S116-PUB-ORG039"
           ],
           "nameVariantIds": [
             "PNV0041"
@@ -12286,6 +12507,17 @@
       }
     },
     "Sources": {
+      "SRC0489": {
+        "reason": "Link the item-level 1936 French sheet-music cover to France-Mélodie and its source-specific publisher contribution.",
+        "fields": {
+          "organizationIds": [
+            "ORG048"
+          ],
+          "contributionIds": [
+            "CON-S200-PUB-ORG048"
+          ]
+        }
+      },
       "SRC0506": {"reason": "Synchronize the source with Nacio Herb Brown's original music credit.", "fields": {"contributionIds": ["CON-O013-C-P179"]}},
       "SRC0507": {"reason": "Synchronize the source with Nacio Herb Brown's original music credit.", "fields": {"contributionIds": ["CON-O014-C-P179"]}},
       "SRC0508": {"reason": "Synchronize the score citation with Johann Strauss II's original music credit.", "fields": {"contributionIds": ["CON-O015-C-P180"]}},
@@ -12796,7 +13028,7 @@
         }
       },
       "SRC0221": {
-        "reason": "Link the completed November 1933 song registration to its named contributors, Dacapo-Verlag and the Austrian National Library / ANNO repository.",
+        "reason": "Link the completed November 1933 song registration to its named contributors, Dacapo-Verlag, the corrected publisher contribution and the Austrian National Library / ANNO repository.",
         "fields": {
           "personIds": [
             "P009",
@@ -12806,11 +13038,14 @@
           "organizationIds": [
             "ORG064",
             "ORG113"
+          ],
+          "contributionIds": [
+            "CON-S074-PUB-ORG113"
           ]
         }
       },
       "SRC0222": {
-        "reason": "Link the completed November 1933 song registration to its named contributors, Dacapo-Verlag and the Austrian National Library / ANNO repository.",
+        "reason": "Link the completed November 1933 song registration to its named contributors, Dacapo-Verlag, the corrected publisher contribution and the Austrian National Library / ANNO repository.",
         "fields": {
           "personIds": [
             "P009",
@@ -12820,6 +13055,9 @@
           "organizationIds": [
             "ORG064",
             "ORG113"
+          ],
+          "contributionIds": [
+            "CON-S075-PUB-ORG113"
           ]
         }
       },
@@ -13521,13 +13759,14 @@
         }
       },
       "SRC0115": {
-        "reason": "Connect the Salabert 3384 recording source to its vocalist Henry Garat, his performer contribution and the attested credit form.",
+        "reason": "Connect the Salabert 3384 source to Henry Garat, his performer contribution, the corrected publisher contribution and the attested credit form.",
         "fields": {
           "personIds": [
             "P132"
           ],
           "contributionIds": [
-            "CON-S116-P-P132"
+            "CON-S116-P-P132",
+            "CON-S116-PUB-ORG039"
           ],
           "nameVariantIds": [
             "PNV0041"
@@ -13823,6 +14062,41 @@
       }
     },
     "Sources": {
+      "SRC0115": {
+        "reason": "Remove the excluded legacy W-S116 publisher contribution after replacing it with the corrected stable identifier.",
+        "fields": {
+          "contributionIds": [
+            "CON-S116-RL-ORG039"
+          ]
+        }
+      },
+      "SRC0221": {
+        "reason": "Remove the excluded legacy Dacapo contribution after replacing it with the corrected stable identifier.",
+        "fields": {
+          "contributionIds": [
+            "CON-S074-PUB-ORG030"
+          ]
+        }
+      },
+      "SRC0222": {
+        "reason": "Remove the excluded legacy Dacapo contribution after replacing it with the corrected stable identifier.",
+        "fields": {
+          "contributionIds": [
+            "CON-S075-PUB-ORG030"
+          ]
+        }
+      },
+      "SRC0489": {
+        "reason": "Remove the aggregate Robbins publisher relation from the item-level France-Mélodie cover source.",
+        "fields": {
+          "organizationIds": [
+            "ORG035"
+          ],
+          "contributionIds": [
+            "CON-S200-PUB-ORG035"
+          ]
+        }
+      },
       "SRC0325": {
         "reason": "Remove the song link because the Filmportal/DFF record and excerpt document the film Kind, ich freu' mich auf Dein Kommen.",
         "fields": {
@@ -14254,18 +14528,32 @@
         }
       },
       "W-S074": {
-        "reason": "Use the item-level Hofmeister entry SRC0221 for this song and remove the redundant aggregate Abenteuer am Lido source SRC0192.",
+        "reason": "Use the item-level Hofmeister entry SRC0221 and replace the excluded legacy Dacapo contribution with its corrected stable identifier.",
         "fields": {
           "sourceIds": [
             "SRC0192"
+          ],
+          "contributionIds": [
+            "CON-S074-PUB-ORG030"
+          ]
+        }
+      },
+      "W-S116": {
+        "reason": "Remove the excluded legacy publisher contribution after replacing it with the corrected stable identifier.",
+        "fields": {
+          "contributionIds": [
+            "CON-S116-RL-ORG039"
           ]
         }
       },
       "W-S075": {
-        "reason": "Use the item-level Hofmeister entry SRC0222 for this song and remove the redundant aggregate Abenteuer am Lido source SRC0192.",
+        "reason": "Use the item-level Hofmeister entry SRC0222 and replace the excluded legacy Dacapo contribution with its corrected stable identifier.",
         "fields": {
           "sourceIds": [
             "SRC0192"
+          ],
+          "contributionIds": [
+            "CON-S075-PUB-ORG030"
           ]
         }
       },
@@ -14480,6 +14768,22 @@
       }
     },
     "Organizations": {
+      "ORG039": {
+        "reason": "Remove the excluded legacy W-S116 publisher contribution after replacing it with the corrected stable identifier.",
+        "fields": {
+          "contributionIds": [
+            "CON-S116-RL-ORG039"
+          ]
+        }
+      },
+      "ORG035": {
+        "reason": "Remove the item-level France-Mélodie cover from Robbins Music Corporation; Robbins remains documented by the aggregate Buxbaum/Sieghardt catalogue.",
+        "fields": {
+          "sourceIds": [
+            "SRC0489"
+          ]
+        }
+      },
       "ORG001": {
         "reason": "Remove the false MGM production-company contribution; MGM remains represented separately and precisely as distributor.",
         "fields": {
@@ -14596,6 +14900,14 @@
       }
     },
     "Contributions": {
+      "CON-S200-PUB-ORG035": {
+        "reason": "Limit the Robbins publisher contribution to the aggregate catalogue that actually documents it; the item-level cover is represented by a separate France-Mélodie contribution.",
+        "fields": {
+          "sourceIds": [
+            "SRC0489"
+          ]
+        }
+      },
       "CON-F012-C-P009": {
         "reason": "At film-credit level retain the aggregate SRC0108 and remove the two item-level song entries SRC0106 and SRC0107.",
         "fields": {
@@ -14684,22 +14996,6 @@
         "fields": {
           "sourceIds": [
             "SRC0108"
-          ]
-        }
-      },
-      "CON-S074-PUB-ORG030": {
-        "reason": "Remove Edition Coda before reassigning the publisher contribution to Dacapo-Verlag.",
-        "fields": {
-          "organizationIds": [
-            "ORG030"
-          ]
-        }
-      },
-      "CON-S075-PUB-ORG030": {
-        "reason": "Remove Edition Coda before reassigning the publisher contribution to Dacapo-Verlag.",
-        "fields": {
-          "organizationIds": [
-            "ORG030"
           ]
         }
       },
