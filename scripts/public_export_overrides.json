@@ -290,6 +290,12 @@
       }
     },
     "Songs": {
+      "S047": {
+        "reason": "Represent the two documented publication contexts separately: the 1931 Alrobi registration and the later Sirius-Mappen issue from Sirius-Verlag Franz Sobotka.",
+        "fields": {
+          "publisherAsPrinted": "Alrobi; Sirius-Verlag Franz Sobotka"
+        }
+      },
       "S036": {"reason": "Keep Paris in the organization record and source citation, not in the publisher transcription.", "fields": {"publisherAsPrinted": "Éditions Max Eschig"}},
       "S037": {"reason": "Remove the lyricist Reg Connelly from the publisher transcription and use the company name documented in the copyright entry.", "fields": {"publisherAsPrinted": "Campbell, Connelly & Co., Ltd."}},
       "S050": {"reason": "Keep Paris in the organization record and source citation, not in the publisher transcription.", "fields": {"publisherAsPrinted": "Éditions Max Eschig"}},
@@ -569,6 +575,15 @@
       }
     },
     "Sources": {
+      "SRC0854": {
+        "reason": "Identify the publisher of the Sirius-Mappen from the historical imprint form catalogued by the Austrian National Library and remove the superseded claim that the publishing house was unresolved.",
+        "fields": {
+          "fullCitation": "Sirius-Verlag Franz Sobotka. Sirius-Mappen (36 Hefte). Wien–Berlin, 1927–January 1933. Six annual series. Digitised set with an indexed list of 278 titles, Internet Archive. Accessed 27 August 2026.",
+          "creator": "Sirius-Verlag Franz Sobotka",
+          "publication": "Sirius-Verlag Franz Sobotka, Wien–Berlin",
+          "researchNote": "The indexed contents name eight Kaper titles, each with its series and issue number: “Auf Wiederseh’n, Herr Doktor! Auf Wiederseh’n, Frau Doktor!” (4-05), “Sagen kleine Mädels ‘nein’” (5-07), “Mondnacht in Sanssouci” (6-02), “Heut’ bin ich gut aufgelegt!”, “Ich weiß ein kleines Café” and “Es wird schon wieder besser” (all 6-09), “Wer weint heut’ aus Liebe Tränen” (6-10) and “Tränen in der Geige” (7-01). All eight use lyrics by Fritz Rotter. The number 7-01 falls outside the six annual Sirius-Mappen series and requires separate interpretation. Contemporary Sirius imprints are catalogued by the Austrian National Library under Sirius Verlag Franz Sobotka."
+        }
+      },
       "SRC0002": {
         "reason": "Use the canonical YouTube URL for the Polydor 21768 listening source without an auto-generated playlist context.",
         "fields": {
@@ -3100,6 +3115,91 @@
       }
     },
     "Organizations": {
+      "ORG030": {
+        "reason": "Use the French publisher form printed in the 1934 BnF records and distinguish this Paris house from the later Swiss Edition Coda AG.",
+        "fields": {
+          "displayName": "Éditions Coda",
+          "authorizedName": "Éditions Coda",
+          "nameVariants": "Coda; Edition Coda",
+          "authorizedNameSource": "BnF bibliographic records",
+          "publicNote": "Paris music publisher documented on French sheet-music editions of 1934. It is not identified with the later Swiss company Edition Coda AG of Zürich, which is a separate same-name organization."
+        },
+        "removeFields": [
+          "authorityUrl"
+        ]
+      },
+      "ORG031": {
+        "reason": "Correct the publisher's place and corporate heading from contemporary Berlin imprints and historical business records without inventing a formal authority identifier.",
+        "fields": {
+          "authorizedName": "Edition Karl Brüll",
+          "city": [
+            "Berlin"
+          ],
+          "country": "Germany",
+          "nameVariants": "Berliner Bohème-Verlag; Edition Karl Brüll (Berliner Bohème-Verlag)",
+          "authorizedNameSource": "contemporary imprints and historical business records",
+          "publicNote": "Berlin music publisher documented under the names Edition Karl Brüll and Berliner Bohème-Verlag. No matching formal GND or VIAF corporate authority has been identified."
+        }
+      },
+      "ORG032": {
+        "reason": "Use the exact corporate form printed in the BnF bibliographic record for the 1932 Paris edition without treating that item record as a formal name authority.",
+        "fields": {
+          "displayName": "Éditions musicales universelles",
+          "authorizedName": "Éditions musicales universelles (S. A.)",
+          "nameVariants": "Editions Musicales Universelles; Éditions musicales universelles",
+          "authorizedNameSource": "BnF bibliographic record"
+        }
+      },
+      "ORG034": {
+        "reason": "Add the VIAF corporate authority that combines the Polish National Library and NUKAT headings for Edition J. Altschuler.",
+        "fields": {
+          "nameVariants": "Edition J. Altschuler Warszawa; Rīga",
+          "authorityUrl": "VIAF: https://viaf.org/viaf/311373916",
+          "authorizedNameSource": "VIAF"
+        }
+      },
+      "ORG049": {
+        "reason": "Add the GND and VIAF corporate authorities for the Berlin music publisher while retaining the concise historical display name used in the catalogue.",
+        "fields": {
+          "authorizedName": "Edition Meisel GmbH",
+          "authorityUrl": "GND: https://d-nb.info/gnd/1065096380\nVIAF: https://viaf.org/viaf/313423303",
+          "authorizedNameSource": "GND"
+        }
+      },
+      "ORG052": {
+        "reason": "Replace the incomplete local heading with the publisher form documented by the Austrian National Library and remove the superseded identity warning.",
+        "fields": {
+          "displayName": "Sirius-Verlag Franz Sobotka",
+          "authorizedName": "Sirius-Verlag Franz Sobotka",
+          "nameVariants": "Sirius-Verlag; Sirius Verlag Franz Sobotka; Sirius-Verlag F. Sobotka",
+          "authorizedNameSource": "Österreichische Nationalbibliothek",
+          "publicNote": "Music publisher owned by Franz Sobotka. Historical imprints use the forms Sirius Verlag Franz Sobotka and Sirius-Verlag F. Sobotka; the house issued the Sirius-Mappen and the successor periodical Tonfilm Theater Tanz. No matching formal GND or VIAF corporate authority has been identified."
+        }
+      },
+      "ORG054": {
+        "reason": "Use the full historical imprint form for Viktor Alberti's Berlin music dealership and publishing house; no formal corporate authority was found.",
+        "fields": {
+          "displayName": "Alberti",
+          "authorizedName": "Musikalienhandlung Alberti G.m.b.H.",
+          "nameVariants": "Alberti; Alberti G.m.b.H.; Alberti GmbH; Musikhaus Alberti",
+          "authorizedNameSource": "contemporary imprints",
+          "publicNote": "Berlin music dealership and publishing house of Viktor Alberti (1884–1942). Contemporary imprints identify it as Musikalienhandlung Alberti G.m.b.H.; the shorter form Alberti is used throughout the associated sheet music. The house also issued the jazz periodical Musik-Echo. No matching formal corporate authority has been identified."
+        }
+      },
+      "ORG060": {
+        "reason": "Document the historical London publisher from contemporary imprints and trade listings while recording that no formal corporate authority was found.",
+        "fields": {
+          "authorizedNameSource": "contemporary imprints and music-trade listings",
+          "publicNote": "London music publisher documented in contemporary sheet-music imprints and music-trade listings as Dix Ltd. No matching formal GND or VIAF corporate authority has been identified."
+        }
+      },
+      "ORG118": {
+        "reason": "Distinguish the publisher Roehr A.-G. from Curt Max Roehr's separate C. M. Roehr Musikverlag and record the historical heading without inventing an authority identifier.",
+        "fields": {
+          "authorizedNameSource": "contemporary imprints and trade records",
+          "publicNote": "Berlin music publisher documented as Roehr A.-G. and Verlag Roehr. It is distinct from the short-lived C. M. Roehr Musikverlag GmbH established separately by Curt Max Roehr in 1927. No matching formal GND or VIAF corporate authority has been identified."
+        }
+      },
       "ORG033": {
         "reason": "Retain only genuine forms of the Alrobi name; UFA Musikverlag is a distinct organization, not an alternative name for the 1929–1933 publisher.",
         "fields": {
@@ -3160,6 +3260,15 @@
       }
     },
     "Contributions": {
+      "CON-S047-PUB-ORG052": {
+        "reason": "Move the Sirius publisher evidence from the Alrobi Hofmeister registration to the Sirius-Mappen source that actually documents this publication context.",
+        "fields": {
+          "nameAsPrinted": "Sirius-Verlag Franz Sobotka",
+          "sourceIds": [
+            "SRC0854"
+          ]
+        }
+      },
       "CON-O010-PUB-ORG030": {"reason": "Keep only the publisher name in the printed-name field; the BnF notice belongs in the source citation.", "fields": {"nameAsPrinted": "Coda"}},
       "CON-O012-PUB-ORG054": {"reason": "Keep only the publisher name in the printed-name field; city, date and StabiKat number belong in the source citation.", "fields": {"nameAsPrinted": "Alberti"}},
       "CON-O013-PUB-ORG054": {"reason": "Keep only the publisher name in the printed-name field; city, date and StabiKat number belong in the source citation.", "fields": {"nameAsPrinted": "Alberti"}},
@@ -3975,6 +4084,9 @@
           "id": "ORG113",
           "displayName": "Dacapo-Verlag",
           "authorizedName": "Dacapo-Verlag",
+          "nameVariants": "Dacapo Verlag",
+          "authorizedNameSource": "contemporary registrations and historical publishing research",
+          "publicNote": "Vienna music publisher founded in spring 1933 by Erwin Hein together with Universal Edition. It specialized in popular song, sound-film and operetta publishing and operated at Bösendorferstraße 12. No matching formal GND or VIAF corporate authority has been identified.",
           "types": [
             "publisher"
           ],
@@ -4546,6 +4658,25 @@
       }
     },
     "Contributions": {
+      "CON-S047-PUB-ORG033": {
+        "reason": "Model the Alrobi publisher named in the 1931 Hofmeister registration separately from the later Sirius-Mappen publication.",
+        "fields": {
+          "id": "CON-S047-PUB-ORG033",
+          "role": "publisher",
+          "nameAsPrinted": "Alrobi",
+          "evidenceContext": "sheet_music",
+          "certainty": "confirmed",
+          "workIds": [
+            "W-S047"
+          ],
+          "organizationIds": [
+            "ORG033"
+          ],
+          "sourceIds": [
+            "SRC0095"
+          ]
+        }
+      },
       "CON-S116-PUB-ORG039": {
         "reason": "Replace the misleading legacy identifier with a contribution whose role token and public role both identify a publisher.",
         "fields": {
@@ -10083,14 +10214,21 @@
         }
       },
       "ORG033": {
-        "reason": "Link Alrobi to the completed Hofmeister records for Trara VIII, the Melodie der Liebe group and “Einen Sonntag ohne Sorgen.”",
+        "reason": "Link Alrobi to the completed Hofmeister records, including its 1931 publication context for “Mondnacht in Sanssouci.”",
         "fields": {
           "sourceIds": [
+            "SRC0095",
             "SRC0180",
             "SRC0185",
             "SRC0213",
             "SRC0214",
             "SRC0223"
+          ],
+          "workIds": [
+            "W-S047"
+          ],
+          "contributionIds": [
+            "CON-S047-PUB-ORG033"
           ]
         }
       },
@@ -10533,6 +10671,17 @@
       "O012": {"reason": "Attach the surviving Fiesta score headed Ein neuer Cocktail.", "fields": {"sourceIds": ["SRC0789"]}}
     },
     "Works": {
+      "W-S047": {
+        "reason": "Expose the Alrobi publisher documented by Hofmeister alongside the separate Sirius-Mappen publication context.",
+        "fields": {
+          "organizationIds": [
+            "ORG033"
+          ],
+          "contributionIds": [
+            "CON-S047-PUB-ORG033"
+          ]
+        }
+      },
       "W-S074": {
         "reason": "Replace the excluded legacy Dacapo publisher contribution with its corrected stable identifier.",
         "fields": {
@@ -12507,6 +12656,25 @@
       }
     },
     "Sources": {
+      "SRC0095": {
+        "reason": "Link the Hofmeister registration to Alrobi, the publisher printed in this source, rather than to the later Sirius-Mappen publication.",
+        "fields": {
+          "organizationIds": [
+            "ORG033"
+          ],
+          "contributionIds": [
+            "CON-S047-PUB-ORG033"
+          ]
+        }
+      },
+      "SRC0854": {
+        "reason": "Synchronize the Sirius-Mappen source with the source-specific Sirius-Verlag Franz Sobotka publisher contribution.",
+        "fields": {
+          "contributionIds": [
+            "CON-S047-PUB-ORG052"
+          ]
+        }
+      },
       "SRC0489": {
         "reason": "Link the item-level 1936 French sheet-music cover to France-Mélodie and its source-specific publisher contribution.",
         "fields": {
@@ -14062,6 +14230,17 @@
       }
     },
     "Sources": {
+      "SRC0095": {
+        "reason": "Remove the Sirius organization and contribution from the Alrobi Hofmeister registration after separating the two publication contexts.",
+        "fields": {
+          "organizationIds": [
+            "ORG052"
+          ],
+          "contributionIds": [
+            "CON-S047-PUB-ORG052"
+          ]
+        }
+      },
       "SRC0115": {
         "reason": "Remove the excluded legacy W-S116 publisher contribution after replacing it with the corrected stable identifier.",
         "fields": {
@@ -14768,6 +14947,14 @@
       }
     },
     "Organizations": {
+      "ORG052": {
+        "reason": "Remove the Alrobi Hofmeister registration from Sirius-Verlag Franz Sobotka; Sirius remains linked through the separate Sirius-Mappen source.",
+        "fields": {
+          "sourceIds": [
+            "SRC0095"
+          ]
+        }
+      },
       "ORG039": {
         "reason": "Remove the excluded legacy W-S116 publisher contribution after replacing it with the corrected stable identifier.",
         "fields": {

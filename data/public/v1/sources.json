@@ -2896,7 +2896,7 @@
       "sourceStatus": "verified",
       "slug": "src0095-mondnacht-in-sanssouci-1931",
       "organizationIds": [
-        "ORG052",
+        "ORG033",
         "ORG064"
       ],
       "workIds": [
@@ -2908,7 +2908,7 @@
       "contributionIds": [
         "CON-S047-C-P009",
         "CON-S047-L-P020",
-        "CON-S047-PUB-ORG052"
+        "CON-S047-PUB-ORG033"
       ],
       "nameVariantIds": [
         "PNV0019"
@@ -26038,10 +26038,10 @@
     {
       "id": "SRC0854",
       "shortCitation": "Sirius-Mappen (36 Hefte), 1927–1933",
-      "fullCitation": "Sirius-Mappen (36 Hefte). Wien–Berlin, 1927–January 1933. Six annual series. Digitised set with an indexed list of 278 titles, Internet Archive. Accessed 27 August 2026.",
+      "fullCitation": "Sirius-Verlag Franz Sobotka. Sirius-Mappen (36 Hefte). Wien–Berlin, 1927–January 1933. Six annual series. Digitised set with an indexed list of 278 titles, Internet Archive. Accessed 27 August 2026.",
       "title": "Sirius-Mappen (36 Hefte)",
-      "creator": "",
-      "publication": "Sirius-Mappen",
+      "creator": "Sirius-Verlag Franz Sobotka",
+      "publication": "Sirius-Verlag Franz Sobotka, Wien–Berlin",
       "repository": "Internet Archive",
       "date": "1927–1933",
       "accessDate": "2026-08-27",
@@ -26050,10 +26050,13 @@
       "reliability": "medium",
       "sourceStatus": "verified_with_attribution_note",
       "slug": "src0854-sirius-mappen-sirius-verlag-wien-berlin",
-      "researchNote": "The indexed contents name eight Kaper titles, each with its series and issue number: “Auf Wiederseh’n, Herr Doktor! Auf Wiederseh’n, Frau Doktor!” (4-05), “Sagen kleine Mädels ‘nein’” (5-07), “Mondnacht in Sanssouci” (6-02), “Heut’ bin ich gut aufgelegt!”, “Ich weiß ein kleines Café” and “Es wird schon wieder besser” (all 6-09), “Wer weint heut’ aus Liebe Tränen” (6-10) and “Tränen in der Geige” (7-01). All eight are lyrics by Fritz Rotter. The Sirius-Mappen ran to six annual series; the number 7-01 falls outside them. The digitised description names no publisher and states that the successor publication Tonfilm Theater Tanz came from the same house. The title page has not been examined for an imprint line.",
+      "researchNote": "The indexed contents name eight Kaper titles, each with its series and issue number: “Auf Wiederseh’n, Herr Doktor! Auf Wiederseh’n, Frau Doktor!” (4-05), “Sagen kleine Mädels ‘nein’” (5-07), “Mondnacht in Sanssouci” (6-02), “Heut’ bin ich gut aufgelegt!”, “Ich weiß ein kleines Café” and “Es wird schon wieder besser” (all 6-09), “Wer weint heut’ aus Liebe Tränen” (6-10) and “Tränen in der Geige” (7-01). All eight use lyrics by Fritz Rotter. The number 7-01 falls outside the six annual Sirius-Mappen series and requires separate interpretation. Contemporary Sirius imprints are catalogued by the Austrian National Library under Sirius Verlag Franz Sobotka.",
       "researchNoteType": "evidence_note",
       "organizationIds": [
         "ORG052"
+      ],
+      "contributionIds": [
+        "CON-S047-PUB-ORG052"
       ],
       "workIds": [
         "W-S010",

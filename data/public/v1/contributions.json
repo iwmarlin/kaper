@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 1270,
+  "count": 1271,
   "records": [
     {
       "id": "CON-F001-C-P009",
@@ -8153,9 +8153,25 @@
       ]
     },
     {
+      "id": "CON-S047-PUB-ORG033",
+      "role": "publisher",
+      "nameAsPrinted": "Alrobi",
+      "evidenceContext": "sheet_music",
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S047"
+      ],
+      "organizationIds": [
+        "ORG033"
+      ],
+      "sourceIds": [
+        "SRC0095"
+      ]
+    },
+    {
       "id": "CON-S047-PUB-ORG052",
       "role": "publisher",
-      "nameAsPrinted": "Sirius-Verlag",
+      "nameAsPrinted": "Sirius-Verlag Franz Sobotka",
       "evidenceContext": "sheet_music",
       "certainty": "confirmed",
       "workIds": [
@@ -8165,7 +8181,7 @@
         "ORG052"
       ],
       "sourceIds": [
-        "SRC0095"
+        "SRC0854"
       ]
     },
     {

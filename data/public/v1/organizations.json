@@ -898,8 +898,8 @@
     },
     {
       "id": "ORG030",
-      "displayName": "Edition Coda",
-      "authorizedName": "Edition Coda",
+      "displayName": "Éditions Coda",
+      "authorizedName": "Éditions Coda",
       "types": [
         "publisher"
       ],
@@ -908,6 +908,7 @@
       ],
       "country": "France",
       "slug": "edition-coda",
+      "nameVariants": "Coda; Edition Coda",
       "contributionIds": [
         "CON-O010-PUB-ORG030",
         "CON-S088-PUB-ORG030",
@@ -968,20 +969,22 @@
         "SRC0525",
         "SRC0526"
       ],
-      "authorizedNameSource": "local heading"
+      "publicNote": "Paris music publisher documented on French sheet-music editions of 1934. It is not identified with the later Swiss company Edition Coda AG of Zürich, which is a separate same-name organization.",
+      "authorizedNameSource": "BnF bibliographic records"
     },
     {
       "id": "ORG031",
       "displayName": "Edition Karl Brüll",
-      "authorizedName": "Edition Karl Brüll (Berliner Bohème-Verlag) (Berlin)",
+      "authorizedName": "Edition Karl Brüll",
       "types": [
         "publisher"
       ],
       "city": [
-        "Vienna"
+        "Berlin"
       ],
-      "country": "Austria",
+      "country": "Germany",
       "slug": "edition-karl-brull",
+      "nameVariants": "Berliner Bohème-Verlag; Edition Karl Brüll (Berliner Bohème-Verlag)",
       "sourceIds": [
         "SRC0181",
         "SRC0184",
@@ -1013,13 +1016,13 @@
         "W-S207",
         "W-S211"
       ],
-      "authorityUrl": "GND: https://d-nb.info/gnd/107295706X\nVIAF: https://viaf.org/viaf/311832467",
-      "authorizedNameSource": "GND"
+      "publicNote": "Berlin music publisher documented under the names Edition Karl Brüll and Berliner Bohème-Verlag. No matching formal GND or VIAF corporate authority has been identified.",
+      "authorizedNameSource": "contemporary imprints and historical business records"
     },
     {
       "id": "ORG032",
-      "displayName": "Editions Musicales Universelles",
-      "authorizedName": "Editions Musicales Universelles",
+      "displayName": "Éditions musicales universelles",
+      "authorizedName": "Éditions musicales universelles (S. A.)",
       "types": [
         "publisher"
       ],
@@ -1028,6 +1031,7 @@
       ],
       "country": "France",
       "slug": "editions-musicales-universelles",
+      "nameVariants": "Editions Musicales Universelles; Éditions musicales universelles",
       "contributionIds": [
         "CON-S103-PUB-ORG032"
       ],
@@ -1037,7 +1041,7 @@
       "sourceIds": [
         "SRC0302"
       ],
-      "authorizedNameSource": "local heading"
+      "authorizedNameSource": "BnF bibliographic record"
     },
     {
       "id": "ORG033",
@@ -1053,6 +1057,7 @@
       "slug": "alrobi-musikverlag",
       "nameVariants": "Alrobi; Alrobi-Musikverlag; Alrobi Musikverlag GmbH; Alrobi-Musikverlag GmbH",
       "sourceIds": [
+        "SRC0095",
         "SRC0178",
         "SRC0180",
         "SRC0185",
@@ -1064,6 +1069,7 @@
       "contributionIds": [
         "CON-O015-PUB-ORG033",
         "CON-O016-PUB-ORG033",
+        "CON-S047-PUB-ORG033",
         "CON-S009-PUB-ORG033",
         "CON-S013-PUB-ORG033",
         "CON-S015-PUB-ORG033",
@@ -1105,6 +1111,7 @@
         "W-S031",
         "W-S032",
         "W-S046",
+        "W-S047",
         "W-S059",
         "W-S060",
         "W-S062",
@@ -1128,6 +1135,7 @@
       ],
       "country": "Poland",
       "slug": "edition-j-altschuler",
+      "nameVariants": "Edition J. Altschuler Warszawa; Rīga",
       "sourceIds": [
         "SRC0054",
         "SRC0066",
@@ -1142,7 +1150,9 @@
         "W-S001",
         "W-S002",
         "W-S003"
-      ]
+      ],
+      "authorityUrl": "VIAF: https://viaf.org/viaf/311373916",
+      "authorizedNameSource": "VIAF"
     },
     {
       "id": "ORG035",
@@ -1566,7 +1576,7 @@
     {
       "id": "ORG049",
       "displayName": "Edition Meisel",
-      "authorizedName": "Edition Meisel",
+      "authorizedName": "Edition Meisel GmbH",
       "types": [
         "publisher"
       ],
@@ -1593,7 +1603,9 @@
         "SRC0373",
         "SRC0469",
         "SRC0787"
-      ]
+      ],
+      "authorityUrl": "GND: https://d-nb.info/gnd/1065096380\nVIAF: https://viaf.org/viaf/313423303",
+      "authorizedNameSource": "GND"
     },
     {
       "id": "ORG050",
@@ -1656,8 +1668,8 @@
     },
     {
       "id": "ORG052",
-      "displayName": "Sirius-Verlag",
-      "authorizedName": "Sirius-Verlag",
+      "displayName": "Sirius-Verlag Franz Sobotka",
+      "authorizedName": "Sirius-Verlag Franz Sobotka",
       "types": [
         "publisher"
       ],
@@ -1666,6 +1678,7 @@
       ],
       "country": "Austria / Germany",
       "slug": "sirius-verlag",
+      "nameVariants": "Sirius-Verlag; Sirius Verlag Franz Sobotka; Sirius-Verlag F. Sobotka",
       "contributionIds": [
         "CON-S047-PUB-ORG052"
       ],
@@ -1673,17 +1686,16 @@
         "W-S047"
       ],
       "sourceIds": [
-        "SRC0095",
         "SRC0854",
         "SRC0855"
       ],
-      "publicNote": "Music publishing house recorded in Vienna and Berlin. The Sirius-Mappen appeared in six annual series from 1927 to January 1933 and the successor publication Tonfilm Theater Tanz from 1933 to 1943, from the same house; whether that house is this one rests on the shared name and has not been read from an imprint line. No name register carries the firm: the GND holds three bodies called Sirius, one German, one unplaced and one an Austrian company registered under a legal form introduced in 2007, and none of them is this house.",
-      "authorizedNameSource": "local heading"
+      "publicNote": "Music publisher owned by Franz Sobotka. Historical imprints use the forms Sirius Verlag Franz Sobotka and Sirius-Verlag F. Sobotka; the house issued the Sirius-Mappen and the successor periodical Tonfilm Theater Tanz. No matching formal GND or VIAF corporate authority has been identified.",
+      "authorizedNameSource": "Österreichische Nationalbibliothek"
     },
     {
       "id": "ORG054",
-      "displayName": "Alberti GmbH",
-      "authorizedName": "Alberti GmbH",
+      "displayName": "Alberti",
+      "authorizedName": "Musikalienhandlung Alberti G.m.b.H.",
       "types": [
         "publisher"
       ],
@@ -1692,6 +1704,7 @@
       ],
       "country": "Germany",
       "slug": "alberti-gmbh",
+      "nameVariants": "Alberti; Alberti G.m.b.H.; Alberti GmbH; Musikhaus Alberti",
       "contributionIds": [
         "CON-O007-PUB-ORG054",
         "CON-O008-PUB-ORG054",
@@ -1757,8 +1770,8 @@
         "SRC0789",
         "SRC0853"
       ],
-      "authorizedNameSource": "local heading",
-      "publicNote": "Music and theatre publishing house of Viktor Alberti (1884–1942), a Hungarian-born publisher and music dealer working in Berlin; the house issued the first German jazz periodical, Musik-Echo, between 1930 and 1934. No name register carries the firm — the GND holds only Max Alberti's Verlag of Hanau, a different house — so the heading is a local one."
+      "authorizedNameSource": "contemporary imprints",
+      "publicNote": "Berlin music dealership and publishing house of Viktor Alberti (1884–1942). Contemporary imprints identify it as Musikalienhandlung Alberti G.m.b.H.; the shorter form Alberti is used throughout the associated sheet music. The house also issued the jazz periodical Musik-Echo. No matching formal GND or VIAF corporate authority has been identified."
     },
     {
       "id": "ORG055",
@@ -1903,7 +1916,9 @@
       ],
       "sourceIds": [
         "SRC0312"
-      ]
+      ],
+      "publicNote": "London music publisher documented in contemporary sheet-music imprints and music-trade listings as Dix Ltd. No matching formal GND or VIAF corporate authority has been identified.",
+      "authorizedNameSource": "contemporary imprints and music-trade listings"
     },
     {
       "id": "ORG061",
@@ -3454,6 +3469,7 @@
       ],
       "country": "Austria",
       "slug": "dacapo-verlag-vienna",
+      "nameVariants": "Dacapo Verlag",
       "sourceIds": [
         "SRC0192",
         "SRC0221",
@@ -3467,7 +3483,8 @@
         "CON-S074-PUB-ORG113",
         "CON-S075-PUB-ORG113"
       ],
-      "authorizedNameSource": "local heading"
+      "publicNote": "Vienna music publisher founded in spring 1933 by Erwin Hein together with Universal Edition. It specialized in popular song, sound-film and operetta publishing and operated at Bösendorferstraße 12. No matching formal GND or VIAF corporate authority has been identified.",
+      "authorizedNameSource": "contemporary registrations and historical publishing research"
     },
     {
       "id": "ORG114",
@@ -3572,7 +3589,9 @@
       ],
       "workIds": [
         "W-S007"
-      ]
+      ],
+      "publicNote": "Berlin music publisher documented as Roehr A.-G. and Verlag Roehr. It is distinct from the short-lived C. M. Roehr Musikverlag GmbH established separately by Curt Max Roehr in 1927. No matching formal GND or VIAF corporate authority has been identified.",
+      "authorizedNameSource": "contemporary imprints and trade records"
     },
     {
       "id": "ORG119",
