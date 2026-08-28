@@ -657,17 +657,362 @@
           "fullCitation": "Advertisement for five recent dance numbers from the Morskie Oko revue, including “O tem wróble świergocą” (words by Andrzej Włast; music by Bronisław Kaper). Tygodnik Ilustrowany (Warsaw), 1 February 1930, no. 6, p. III. Biblioteka Cyfrowa Uniwersytetu Łódzkiego (dLibra)."
         }
       },
-      "SRC0041": {
-        "reason": "Describe the illustrated-weekly item as a direct press source for Kaper and for the accompanying MGM engagement announcement.",
+      "SRC0020": {
+        "reason": "Normalize the titled press article to the shared citation order and replace the Roman-numeral date abbreviation in its short display form.",
         "fields": {
-          "title": "Bronisław Kaper press portrait and MGM engagement notice — Nasz Przegląd Ilustrowany, 28 October 1934",
-          "fullCitation": "Nasz Przegląd Ilustrowany (special supplement), R. 12, no. 43, 28 October 1934, p. 3. Press portrait of Bronisław Kaper with a caption announcing his engagement by Metro-Goldwyn-Mayer in the United States. Biblioteka Narodowa / Polona."
+          "shortCitation": "“Kolonja polska w Berlinie” — Kurjer Warszawski",
+          "fullCitation": "“Kolonja polska w Berlinie.” Kurjer Warszawski (Warsaw), vol. 109, no. 85, evening ed., 27 March 1929, p. 3. Biblioteka Narodowa / Polona."
+        }
+      },
+      "SRC0021": {
+        "reason": "Normalize the press citation and move the statement about the documented performance into a dedicated evidence note.",
+        "fields": {
+          "shortCitation": "Bick and Kaper broadcast listing — Radjo",
+          "fullCitation": "[Broadcast listing for Bick and Kaper]. Radjo: ilustrowany tygodnik dla wszystkich (Warsaw), vol. 4, no. 47, 24 November 1929, p. 22. Biblioteka Narodowa / Polona.",
+          "title": "Bick and Kaper broadcast listing",
+          "researchNote": "The broadcast schedule lists Bick and Kaper performing jazz on two pianos.",
+          "researchNoteType": "evidence_note"
+        }
+      },
+      "SRC0031": {
+        "reason": "Retain the exactly dated canonical record for the Abenteuer am Lido advertisement, add its page-specific ANNO URL, and separate the explicit music-credit evidence from the bibliography.",
+        "fields": {
+          "shortCitation": "Advertisement for Abenteuer am Lido — Mein Film",
+          "fullCitation": "[Advertisement for Abenteuer am Lido]. Mein Film (Vienna), 14 September 1933, p. 1021. Österreichische Nationalbibliothek / ANNO.",
+          "title": "Advertisement for Abenteuer am Lido",
+          "primaryUrl": "https://anno.onb.ac.at/cgi-content/anno-plus?aid=mfi&datum=19331409&seite=1021",
+          "researchNote": "The advertisement explicitly credits the film’s music to Kaper and Jurmann.",
+          "researchNoteType": "evidence_note"
+        }
+      },
+      "SRC0034": {
+        "reason": "Normalize the Gallica press citation and separate its work-credit evidence from the bibliography.",
+        "fields": {
+          "shortCitation": "“Les Films R.P.” — La Critique cinématographique",
+          "fullCitation": "“Les Films R.P.” La Critique cinématographique (Paris), 8 July 1933, f. 13. Bibliothèque nationale de France / Gallica, ARK ark:/12148/bpt6k4547926m.",
+          "researchNote": "The production announcement for Une femme au volant credits the film’s music to Walter Jurmann and Bronisław Kaper.",
+          "researchNoteType": "evidence_note"
+        }
+      },
+      "SRC0084": {
+        "reason": "Normalize the Gallica press citation and separate its evidence about the film's later circulation from the bibliography.",
+        "fields": {
+          "shortCitation": "“Le cinéma de restauration” — Journal de Vichy",
+          "fullCitation": "“Le cinéma de restauration.” Journal de Vichy, 27 June 1936, f. 3. Bibliothèque nationale de France / Gallica, ARK ark:/12148/bd6t52695246j.",
+          "researchNote": "The item documents the later circulation of Tout pour l’amour.",
+          "researchNoteType": "evidence_note"
+        }
+      },
+      "SRC0086": {
+        "reason": "Retain the single canonical record for the illustrated Mein Film review, use the exact issue URL, and separate its explicit music-credit evidence from the bibliography.",
+        "fields": {
+          "shortCitation": "Review of Ehe mit beschränkter Haftung — Mein Film",
+          "fullCitation": "[Review of Ehe mit beschränkter Haftung]. Mein Film (Vienna), no. 314, 1932, p. 9. Österreichische Nationalbibliothek / ANNO.",
+          "title": "Review of Ehe mit beschränkter Haftung",
+          "reliability": "high",
+          "sourceStatus": "verified",
+          "primaryUrl": "https://anno.onb.ac.at/cgi-content/anno-plus?aid=mfi&datum=19321314&seite=9",
+          "researchNote": "The illustrated review and plot synopsis explicitly credits the music to Dr. B. Kaper and Walter Jurmann.",
+          "researchNoteType": "evidence_note"
+        },
+        "removeFields": [
+          "accessUrl"
+        ]
+      },
+      "SRC0109": {
+        "reason": "Normalize the ANNO trade-press advertisement and keep its explicit music-credit statement in a dedicated evidence note.",
+        "fields": {
+          "shortCitation": "Advertisement for Hochzeitsreise zu Dritt — Österreichische Film-Zeitung",
+          "fullCitation": "[Advertisement for Hochzeitsreise zu Dritt]. Österreichische Film-Zeitung (Vienna), 19 November 1932, p. 3. Österreichische Nationalbibliothek / ANNO.",
+          "title": "Advertisement for Hochzeitsreise zu Dritt",
+          "researchNote": "The advertisement explicitly credits the film’s music to Walter Jurmann and Dr. B. Kaper.",
+          "researchNoteType": "evidence_note"
+        }
+      },
+      "SRC0367": {
+        "reason": "Replace the publication-only title with a neutral item title, normalize the ANNO citation and move its Kaper evidence into a dedicated note.",
+        "fields": {
+          "shortCitation": "Review of Róża Etkin’s Berlin recital — Signale für die musikalische Welt",
+          "fullCitation": "[Review of Róża Etkin’s Berlin recital]. Signale für die musikalische Welt, vol. 85, no. 20, 20 January 1927, p. 744. Österreichische Nationalbibliothek / ANNO.",
+          "title": "Review of Róża Etkin’s Berlin recital",
+          "researchNote": "The review reports that Róża Etkin performed a Berlin piano recital devoted partly to Chopin and partly to newer Polish composers, naming Szymanowski and B. Kaper.",
+          "researchNoteType": "evidence_note"
+        }
+      },
+      "SRC0454": {
+        "reason": "Use the printed article heading, normalize the ANNO citation and move the production and music-credit details into a dedicated evidence note.",
+        "fields": {
+          "shortCitation": "“Der neue Tauber-Film” — Das Kino-Journal",
+          "fullCitation": "“Der neue Tauber-Film.” Das Kino-Journal (Vienna), 20 December 1930, p. 12. Österreichische Nationalbibliothek / ANNO.",
+          "title": "Der neue Tauber-Film",
+          "primaryUrl": "https://anno.onb.ac.at/cgi-content/anno?aid=dkj&datum=19301220&seite=12",
+          "researchNote": "The production notice announces the forthcoming Richard Tauber sound film directed by Max Reichmann. It names Paul Dessau for musical direction, Fritz Rotter for the song texts and Dr. Kaper for the song music, and states that filming was to begin at Tempelhof on 2 January.",
+          "researchNoteType": "evidence_note"
+        }
+      },
+      "SRC0835": {
+        "reason": "Normalize the Die Bühne citation and identify ANNO consistently as the Austrian National Library access service while retaining the existing object-context note.",
+        "fields": {
+          "shortCitation": "Wien-Film press reception — Die Bühne",
+          "fullCitation": "“Anläßlich eines Presseempfanges sprach der stellvertretende Produktionschef der Wien-Film Erich von Neusser über das Wiener Filmschaffen” [caption]. Photographs credited “Aufn. Wiener Bühne – Strof.” Die Bühne (Vienna), no. 6, 1940, p. 11. Österreichische Nationalbibliothek / ANNO. Accessed 26 August 2026.",
+          "repository": "Österreichische Nationalbibliothek / ANNO"
+        }
+      },
+      "SRC0836": {
+        "reason": "Normalize the titled Die Bühne citation and identify ANNO consistently as the Austrian National Library access service while retaining the existing identity assessment.",
+        "fields": {
+          "shortCitation": "“Kleine Bilder vom Semmering-Rennen” — Die Bühne",
+          "fullCitation": "“Kleine Bilder vom Semmering-Rennen.” Drawings by Hans Schaukal; the caricature of Franz Wenzler is captioned “Direktor Franz Wenzler.” Die Bühne (Vienna), no. 203, 1928, p. 20. Österreichische Nationalbibliothek / ANNO. Accessed 26 August 2026.",
+          "repository": "Österreichische Nationalbibliothek / ANNO"
+        }
+      },
+      "SRC0091": {
+        "reason": "Normalize the Gallica press citation and remove the malformed redundant clipping note.",
+        "fields": {
+          "shortCitation": "“Kaper et Jurmann” — L’Informateur de Seine",
+          "fullCitation": "“Kaper et Jurmann.” L’Informateur de Seine, 30 March 1934, f. 2. Bibliothèque nationale de France / Gallica, ARK ark:/12148/bpt6k51808859."
+        }
+      },
+      "SRC0092": {
+        "reason": "Normalize the titled Gallica press citation to the shared display and bibliographic order.",
+        "fields": {
+          "shortCitation": "“La musique des Nuits moscovites” — Le Matin",
+          "fullCitation": "“La musique des Nuits moscovites.” Le Matin, 14 December 1934, p. 4. Bibliothèque nationale de France / Gallica, ARK ark:/12148/bpt6k578560h."
+        }
+      },
+      "SRC0370": {
+        "reason": "Normalize the Gallica press citation and move its account of the reception and music credits into a dedicated evidence note.",
+        "fields": {
+          "shortCitation": "“Un cocktail avec Jan Kiepura” — L’Afrique du Nord illustrée",
+          "fullCitation": "“Un cocktail avec Jan Kiepura.” L’Afrique du Nord illustrée: journal hebdomadaire d’actualités nord-africaines: Algérie, Tunisie, Maroc, 1934, f. 56. Bibliothèque nationale de France / Gallica, ARK ark:/12148/bpt6k57957694.",
+          "researchNote": "The item reports a reception given by the Alliance Cinématographique Européenne for Jan Kiepura at the Hôtel George V on 17 February 1934 and names Bronisław Kaper and Walter Jurmann as composers of the music for Tout pour l’Amour.",
+          "researchNoteType": "evidence_note"
+        }
+      },
+      "SRC0371": {
+        "reason": "Normalize the Gallica press citation and state explicitly that the later liner feature is contextual rather than direct evidence about Kaper.",
+        "fields": {
+          "shortCitation": "“Paquebot Champlain” — Jeunesse magazine",
+          "fullCitation": "“Paquebot Champlain.” Jeunesse magazine, 11 December 1938, f. 12. Bibliothèque nationale de France / Gallica, ARK ark:/12148/bpt6k1038798m.",
+          "researchNote": "The feature documents the appearance of the liner Champlain and is used as contextual evidence for Kaper’s 1934 transatlantic crossing aboard that ship; it does not document Kaper directly.",
+          "researchNoteType": "object_context"
+        }
+      },
+      "SRC0442": {
+        "reason": "Mark the English item title as a descriptive supplied title, normalize the Gallica citation, and keep its evidentiary statement outside the bibliography.",
+        "fields": {
+          "shortCitation": "Kaper at the Salabert studio — Paris-Soir",
+          "fullCitation": "[Photograph and caption showing Bronisław Kaper at the Salabert studio in Montrouge]. Paris-Soir, 23 December 1933, p. 8. Bibliothèque nationale de France / Gallica, ARK ark:/12148/bpt6k76389483.",
+          "researchNote": "The clipping shows Bronisław Kaper at the Salabert studio in Montrouge during his Paris period.",
+          "researchNoteType": "evidence_note"
+        }
+      },
+      "SRC0451": {
+        "reason": "Replace the ambiguous image/slash wording with a neutral supplied title and normalize the Gallica press citation.",
+        "fields": {
+          "shortCitation": "Press illustration for On a volé un homme — L’Image",
+          "fullCitation": "[Press illustration for On a volé un homme]. L’Image: magazine hebdomadaire, 1 January 1933, p. 22. Bibliothèque nationale de France / Gallica, ARK ark:/12148/bpt6k974490z.",
+          "title": "Press illustration for On a volé un homme"
+        }
+      },
+      "SRC0483": {
+        "reason": "Normalize the titled Gallica press citation and remove the publication and date duplicated in the title field.",
+        "fields": {
+          "shortCitation": "“Mélodie d’amour” — Le Film",
+          "fullCitation": "“Mélodie d’amour.” Le Film: revue mensuelle, 1 October 1932, f. 18. Bibliothèque nationale de France / Gallica, ARK ark:/12148/bpt6k66246208.",
+          "title": "Mélodie d’amour"
+        }
+      },
+      "SRC0536": {
+        "reason": "Identify L’Éclair rather than Gallica as the publication, normalize the repository name, and move the programme's evidentiary relevance into a dedicated note.",
+        "fields": {
+          "shortCitation": "Montpellier summer-festival programme — L’Éclair",
+          "fullCitation": "[Montpellier summer-festival programme]. L’Éclair (Montpellier), 22 June 1934, p. 5. Bibliothèque nationale de France / Gallica, ARK ark:/12148/bd6t53742947h.",
+          "title": "Montpellier summer-festival programme",
+          "repository": "Bibliothèque nationale de France / Gallica",
+          "publication": "L’Éclair",
+          "researchNote": "The programme documents a Montpellier summer festival at which a jazz orchestra performed “Ninon, quand tu me souris.”",
+          "researchNoteType": "evidence_note"
+        }
+      },
+      "SRC0617": {
+        "reason": "Normalize the photograph citation and Gallica repository, add the stable ARK identifier, and separate the caption's name resolution from the bibliography.",
+        "fields": {
+          "shortCitation": "“MM. Chantrier et Nazelle, les auteurs du Fruit Défendu” — La Rampe",
+          "fullCitation": "Unsigned photograph. “MM. Chantrier et Nazelle, les auteurs du Fruit Défendu.” La Rampe (Paris), 9 January 1921, p. 12. Bibliothèque nationale de France / Gallica, ARK ark:/12148/bpt6k55821649. Accessed 1 August 2026.",
+          "title": "MM. Chantrier et Nazelle, les auteurs du Fruit Défendu",
+          "creator": "Photographer uncredited",
+          "repository": "Bibliothèque nationale de France / Gallica",
+          "identifiers": [
+            {
+              "scheme": "ark",
+              "value": "ark:/12148/bpt6k55821649"
+            }
+          ],
+          "researchNote": "The photograph accompanies a notice of the operetta Le Fruit défendu at the Théâtre Cluny. The printed caption gives the lyricist’s surname as “Nazelle”; the person is René Nazelles.",
+          "researchNoteType": "identity_assessment"
+        }
+      },
+      "SRC0820": {
+        "reason": "Normalize the RetroNews press citation, avoid repeating row-level date metadata in the short label, and connect the source to the BnF organization while retaining the identity assessment.",
+        "fields": {
+          "shortCitation": "“M. Léo Lelièvre fils” — L’Ami du peuple",
+          "fullCitation": "“M. Léo Lelièvre fils.” Portrait photograph by Henri Manuel. L’Ami du peuple (Paris), 12 May 1929, p. 9. Bibliothèque nationale de France / RetroNews. Accessed 25 August 2026.",
+          "organizationIds": [
+            "ORG062"
+          ]
+        }
+      },
+      "SRC0830": {
+        "reason": "Normalize the RetroNews press citation, use a concise descriptive display label, and connect the source to the BnF organization while retaining the object-context note.",
+        "fields": {
+          "shortCitation": "Jean Choux on sound cinema — Excelsior",
+          "fullCitation": "“Les metteurs en scène devant l’évolution du cinéma: Le cinéma, depuis qu’il parle, fait à l’homme et à ses propos une part exhorbitante, déclare M. Jean Choux.” Excelsior (Paris), 25 December 1936, p. 4. With a photograph captioned “Jean Choux dirigeant l’exécution d’une prise de vues.” Bibliothèque nationale de France / RetroNews. Accessed 25 August 2026.",
+          "organizationIds": [
+            "ORG062"
+          ]
+        }
+      },
+      "SRC0831": {
+        "reason": "Mark the untitled portrait description as supplied, normalize the uncredited photographer wording, remove retrieval-workflow language from the contextual note, and connect the source to the BnF organization.",
+        "fields": {
+          "shortCitation": "Portrait of Jean de Limur — Comœdia",
+          "fullCitation": "[Portrait of Jean de Limur]. Comœdia (Paris), 12 December 1924, p. 4. Bibliothèque nationale de France / RetroNews. Accessed 25 August 2026.",
+          "creator": "Photographer uncredited",
+          "organizationIds": [
+            "ORG062"
+          ],
+          "researchNote": "No photographer or agency is credited beside the image. The portrait is the earliest likeness of him gathered here: it dates from his American years, nine years before the Paris sound film on which he worked with Kaper."
+        }
+      },
+      "SRC0833": {
+        "reason": "Normalize the RetroNews press citation and uncredited photographer wording, remove access-workflow commentary from the contextual note, and connect the source to the BnF organization.",
+        "fields": {
+          "shortCitation": "“Retour des Baléares” — Pour vous",
+          "fullCitation": "“Retour des Baléares. A bord du navire: Bourdelle, le metteur en scène Serge de Poligny et Jean Gabin.” Photograph. Pour vous: l’hebdomadaire du cinéma (Paris), 9 March 1933, p. 7. Bibliothèque nationale de France / RetroNews. Accessed 25 August 2026.",
+          "creator": "Photographer uncredited",
+          "organizationIds": [
+            "ORG062"
+          ],
+          "researchNote": "The caption names the three men on deck and calls de Poligny the director, without naming a film. The occasion can be identified: in 1933 he directed L’Étoile de Valencia, a French version made for the European branch of Universum-Film, whose story runs from a cabaret in Palma to a ship of the same name, with Thomy Bourdelle as Captain Mendoza and Jean Gabin as the ship’s mechanic. The photograph therefore shows the unit returning from the Balearic locations of that film, four months after the French release of the picture he had made with music by Kaper and Jurmann. No photographer or agency is credited beside it."
+        }
+      },
+      "SRC0841": {
+        "reason": "Normalize the CDNC press citation and repository form, record the printed newspaper credit without inferring an individual photographer, and remove database-process language from the identity assessment.",
+        "fields": {
+          "shortCitation": "“At the Beachcomber on opening night” — Desert Sun",
+          "fullCitation": "“At the Beachcomber on opening night was Hoagy Carmichael, center. Here he is chatting with a fellow songwriter Sidney Clare, left, and Arthur Gordon, of Fleishman Distilleries.” Photograph. Desert Sun (Palm Springs, Calif.), vol. 30, no. 38, 13 October 1956, p. 6. University of California, Riverside / California Digital Newspaper Collection. Accessed 26 August 2026.",
+          "creator": "Desert Sun (photograph credit)",
+          "repository": "University of California, Riverside / California Digital Newspaper Collection",
+          "researchNote": "The caption identifies Sidney Clare as “a fellow songwriter” beside Hoagy Carmichael, distinguishing him from namesakes. The photograph documents Clare in Palm Springs later in life; the occasion is the opening of the Beachcomber, not a professional gathering."
+        }
+      },
+      "SRC0842": {
+        "reason": "Normalize the CDNC press citation and repository form, distinguish an uncredited photographer from an unidentified sitter, and remove database-process language from the contextual note.",
+        "fields": {
+          "shortCitation": "“Song Writers to Perform” — Santa Ana Journal",
+          "fullCitation": "“Song Writers to Perform: Lew Pollack and Sidney Mitchell, authors of song hits, who will be among the featured artists at the President’s Ball. The ball opens at 8:45 tonight at the Valencia Ball Room and the proceeds will be devoted to the fight against infantile paralysis.” Photograph with caption. Santa Ana Journal (Santa Ana, Calif.), vol. 3, no. 231, 27 January 1938, p. 7. University of California, Riverside / California Digital Newspaper Collection. Accessed 26 August 2026.",
+          "creator": "Photographer uncredited",
+          "repository": "University of California, Riverside / California Digital Newspaper Collection",
+          "researchNote": "The two men appear as working songwriters scheduled to perform at a President’s Birthday Ball benefiting the campaign against infantile paralysis. The caption names Lew Pollack and Sidney Mitchell but does not distinguish which man is which; the image therefore documents the pair rather than serving as an individually identified portrait."
+        }
+      },
+      "SRC0846": {
+        "reason": "Normalize the CDNC press citation and repository form, use the consistent uncredited-photographer wording, and rewrite the evidence note as a source-based biographical summary.",
+        "fields": {
+          "shortCitation": "“Harry Richman sings love songs in earnest now” — Madera Daily Tribune",
+          "fullCitation": "“Harry Richman sings love songs in earnest now.” With a photograph of Richman and Clara Bow. Madera Daily Tribune and Madera Mercury (Madera, Calif.), vol. 44, no. 84, 8 August 1929, p. 4. University of California, Riverside / California Digital Newspaper Collection. Accessed 26 August 2026.",
+          "creator": "Photographer uncredited",
+          "repository": "University of California, Riverside / California Digital Newspaper Collection",
+          "researchNote": "The notice describes Harry Richman as a star of the Scandals, a Brunswick recording artist who had recently recorded “Now I’m in Love” and “My Dear” in Los Angeles, a singer active on stage, on records and in nightclubs, and a performer under contract to United Artists for a film then titled The Song of Broadway. The accompanying paragraph also reports his engagement to Clara Bow."
+        }
+      },
+      "SRC0850": {
+        "reason": "Normalize the CDNC press citation and repository form and use the consistent uncredited-photographer wording while retaining the source-based evidence note.",
+        "fields": {
+          "shortCitation": "“It pays to be wacky” — Santa Ana Journal",
+          "fullCitation": "“It pays to be wacky, so — ‘The fly outflew the flea’.” Chicago dispatch, with a photograph captioned “‘The lyric is lousy’ — so said Terry Shand, left. But neither Larry Shay, center, who helped Shand write the music, nor Jimmie Eaton, right, who wrote the words to ‘The fly outflew the flea’ care so long as the public likes the song.” Santa Ana Journal (Santa Ana, Calif.), vol. 3, no. 60, 9 July 1937, p. 18. University of California, Riverside / California Digital Newspaper Collection. Accessed 26 August 2026.",
+          "creator": "Photographer uncredited",
+          "repository": "University of California, Riverside / California Digital Newspaper Collection"
+        }
+      },
+      "SRC0832": {
+        "reason": "Normalize the Gallica citation while retaining the existing source-based contextual assessment in its dedicated field.",
+        "fields": {
+          "shortCitation": "Robert Péguy on the film decree — La Critique cinématographique",
+          "fullCitation": "Robert Péguy. [Statement on Édouard Herriot’s film decree], with a portrait captioned “M. Robert Péguy.” La Critique cinématographique: publication corporative hebdomadaire (Paris), no. 67, 3 March 1928, p. 8. Marpon & Cie. Bibliothèque nationale de France / Gallica, ARK ark:/12148/bpt6k4548254t. Accessed 25 August 2026."
+        }
+      },
+      "SRC0041": {
+        "reason": "Normalize the press citation and separate the item’s evidentiary relevance from its bibliographic description.",
+        "fields": {
+          "shortCitation": "Bronisław Kaper portrait and MGM engagement notice — Nasz Przegląd Ilustrowany",
+          "fullCitation": "[Bronisław Kaper portrait and MGM engagement notice]. Nasz Przegląd Ilustrowany (Warsaw), special supplement, vol. 12, no. 43, 28 October 1934, p. 3. Biblioteka Narodowa / Polona.",
+          "title": "Bronisław Kaper portrait and MGM engagement notice",
+          "researchNote": "The item combines a press portrait of Bronisław Kaper with a caption announcing his engagement by Metro-Goldwyn-Mayer in the United States.",
+          "researchNoteType": "evidence_note"
+        }
+      },
+      "SRC0028": {
+        "reason": "Normalize the untitled newspaper notice, mark its descriptive title as supplied, and identify the Deutsche Digitale Bibliothek newspaper service consistently.",
+        "fields": {
+          "shortCitation": "Bick and Kaper notice — Rhein- und Ruhr-Zeitung",
+          "fullCitation": "[Notice mentioning Bick and Kaper]. Rhein- und Ruhr-Zeitung (Duisburg), 14 February 1929, p. 11. Deutsche Digitale Bibliothek / Deutsches Zeitungsportal.",
+          "title": "Notice mentioning Bick and Kaper",
+          "repository": "Deutsche Digitale Bibliothek / Deutsches Zeitungsportal"
+        }
+      },
+      "SRC0030": {
+        "reason": "Normalize the cinema advertisement citation, mark its descriptive title as supplied, and identify the Deutsche Digitale Bibliothek newspaper service consistently.",
+        "fields": {
+          "shortCitation": "Advertisement for Kind, ich freu’ mich auf Dein Kommen — NS-Kurier",
+          "fullCitation": "[Ufa-Palast advertisement for Kind, ich freu’ mich auf Dein Kommen]. NS-Kurier (Stuttgart), 25 July 1933, p. 8. Deutsche Digitale Bibliothek / Deutsches Zeitungsportal.",
+          "title": "Ufa-Palast advertisement for Kind, ich freu’ mich auf Dein Kommen",
+          "repository": "Deutsche Digitale Bibliothek / Deutsches Zeitungsportal"
+        }
+      },
+      "SRC0083": {
+        "reason": "Replace the publication-and-date title with a neutral item title, mark that title as supplied in the bibliography, and remove relationship wording from the citation.",
+        "fields": {
+          "shortCitation": "Press item on Madame wird kinderlieb — Stuttgarter Neues Tagblatt",
+          "fullCitation": "[Press item on Madame wird kinderlieb]. Stuttgarter Neues Tagblatt, 7 September 1934, p. 6. Deutsche Digitale Bibliothek / Deutsches Zeitungsportal.",
+          "title": "Press item on Madame wird kinderlieb"
+        }
+      },
+      "SRC0112": {
+        "reason": "Replace the publication-and-date title with a neutral item title, mark that title as supplied in the bibliography, and remove relationship wording from the citation.",
+        "fields": {
+          "shortCitation": "Notice on Auf wiederseh’n, Herr Doktor — Niederrheinisches Tageblatt",
+          "fullCitation": "[Notice referring to Auf wiederseh’n, Herr Doktor, auf wiederseh’n, Frau Doktor]. Niederrheinisches Tageblatt, 6 October 1930, p. 4. Deutsche Digitale Bibliothek / Deutsches Zeitungsportal.",
+          "title": "Notice referring to Auf wiederseh’n, Herr Doktor, auf wiederseh’n, Frau Doktor"
         }
       },
       "SRC0369": {
-        "reason": "Correct the item-level citation: the notice concerns an ERKLA-Quartett concert but does not name Bronisław Kaper and must remain contextual only.",
+        "reason": "Normalize the item-level citation and state separately that the contextual ERKLA-Quartett notice does not name Bronisław Kaper.",
         "fields": {
-          "fullCitation": "Stuttgarter Neues Tagblatt, 13 April 1929, p. 6. Notice for an ERKLA-Quartett concert at the Liederhalle in Stuttgart on 23 April 1929. Deutsches Zeitungsportal (Deutsche Digitale Bibliothek)."
+          "shortCitation": "ERKLA-Quartett concert notice — Stuttgarter Neues Tagblatt",
+          "fullCitation": "[ERKLA-Quartett concert notice]. Stuttgarter Neues Tagblatt, 13 April 1929, p. 6. Deutsche Digitale Bibliothek / Deutsches Zeitungsportal.",
+          "title": "ERKLA-Quartett concert notice",
+          "researchNote": "The notice announces an ERKLA-Quartett concert at the Liederhalle in Stuttgart on 23 April 1929. It does not name Bronisław Kaper and is retained only as contextual evidence for the ensemble.",
+          "researchNoteType": "evidence_note"
+        }
+      },
+      "SRC0416": {
+        "reason": "Normalize the cinema advertisement citation, mark its descriptive title as supplied, and identify the Deutsche Digitale Bibliothek newspaper service consistently while retaining the data provider.",
+        "fields": {
+          "shortCitation": "Advertisement for Ich will dich Liebe lehren — Mitteldeutsche Nationalzeitung",
+          "fullCitation": "[Advertisement for Ich will dich Liebe lehren]. Mitteldeutsche Nationalzeitung, 29 September 1933, p. 10. Deutsche Digitale Bibliothek / Deutsches Zeitungsportal; data provider: Martin-Luther-Universität Halle-Wittenberg, Universitäts- und Landesbibliothek Sachsen-Anhalt.",
+          "title": "Advertisement for Ich will dich Liebe lehren",
+          "repository": "Deutsche Digitale Bibliothek / Deutsches Zeitungsportal"
+        }
+      },
+      "SRC0521": {
+        "reason": "Normalize the titled concert-review citation and use one consistent publication and repository form.",
+        "fields": {
+          "shortCitation": "“Jazz auf vier Flügeln” — Rhein- und Ruhr-Zeitung",
+          "fullCitation": "Dr. Funk. “Jazz auf vier Flügeln.” Rhein- und Ruhr-Zeitung, 10 December 1929, p. 12. Deutsche Digitale Bibliothek / Deutsches Zeitungsportal. Accessed 10 July 2026.",
+          "repository": "Deutsche Digitale Bibliothek / Deutsches Zeitungsportal",
+          "publication": "Rhein- und Ruhr-Zeitung"
         }
       },
       "SRC0453": {
@@ -685,25 +1030,48 @@
         ]
       },
       "SRC0016": {
-        "reason": "Remove the duplicate terminal full stop after the quoted notice while preserving the transcription, and connect the notice to the pianist whose recital it reviews.",
+        "reason": "Normalize the press citation, retain the historical newspaper title, and move the evidentiary summary and quotation into a dedicated research note.",
         "fields": {
-          "fullCitation": "Kurier Warszawski, R. 108, nr 18 (18 January 1928), evening ed., p. 4. Biblioteka Narodowa / Polona. Review of Eliza Rozenblum’s recital. On B. Kaper: “Trzy utwory fortepianowe B. Kapera zdradzają obiecujący talent młodego autora.”"
+          "shortCitation": "Review of Eliza Rozenblum’s recital — Kurjer Warszawski",
+          "fullCitation": "[Review of Eliza Rozenblum’s recital]. Kurjer Warszawski (Warsaw), vol. 108, no. 18, evening ed., 18 January 1928, p. 4. Biblioteka Narodowa / Polona.",
+          "title": "Review of Eliza Rozenblum’s recital",
+          "publication": "Kurjer Warszawski",
+          "researchNote": "The review concerns Eliza Rozenblum’s recital and describes three piano pieces by B. Kaper as revealing the young composer’s promising talent: “Trzy utwory fortepianowe B. Kapera zdradzają obiecujący talent młodego autora.”",
+          "researchNoteType": "evidence_note"
         }
       },
       "SRC0068": {
-        "reason": "Correct the Polona item URL so it resolves to Robotnik rather than Rzeczpospolita, and identify the recital context without adding unsupported biographical claims.",
+        "reason": "Keep the corrected Polona URL, normalize the press citation, and separate its evidentiary description from the bibliography.",
         "fields": {
-          "fullCitation": "Robotnik: centralny organ P.P.S. (Warsaw), R. 34, no. 21, 21 January 1928, p. 5. Biblioteka Narodowa / Polona. Review of a piano recital by Eliza Rozenblum, mentioning B. Kaper.",
+          "shortCitation": "Review of Eliza Rozenblum’s recital — Robotnik",
+          "fullCitation": "[Review of Eliza Rozenblum’s recital]. Robotnik: centralny organ P.P.S. (Warsaw), vol. 34, no. 21, 21 January 1928, p. 5. Biblioteka Narodowa / Polona.",
+          "title": "Review of Eliza Rozenblum’s recital",
           "primaryUrl": "https://polona.pl/item-view/c6d71bfb-176c-46f7-9c9f-f81458ba9b20?page=4",
-          "accessUrl": "https://polona.pl/item-view/c6d71bfb-176c-46f7-9c9f-f81458ba9b20?page=4&searchQuery=%22B.%20Kapera%22"
+          "accessUrl": "https://polona.pl/item-view/c6d71bfb-176c-46f7-9c9f-f81458ba9b20?page=4&searchQuery=%22B.%20Kapera%22",
+          "researchNote": "The review concerns a piano recital by Eliza Rozenblum and mentions music by B. Kaper.",
+          "researchNoteType": "evidence_note"
         }
       },
       "SRC0069": {
-        "reason": "Correct the Polona item URL so it resolves to Rzeczpospolita and record the article's explicit identification of Eliza Rozenblum as Zbigniew Drzewiecki's pupil.",
+        "reason": "Keep the corrected Polona URL, normalize the press citation, and move the biographical evidence into a dedicated research note.",
         "fields": {
-          "fullCitation": "Rzeczpospolita (Warsaw), R. 9, no. 19, 19 January 1928, p. 5. Biblioteka Narodowa / Polona. Review of Eliza Rozenblum’s recital, identifying her as a pupil of Zbigniew Drzewiecki and mentioning three piano pieces by B. Kaper.",
+          "shortCitation": "Review of Eliza Rozenblum’s recital — Rzeczpospolita",
+          "fullCitation": "[Review of Eliza Rozenblum’s recital]. Rzeczpospolita (Warsaw), vol. 9, no. 19, 19 January 1928, p. 5. Biblioteka Narodowa / Polona.",
+          "title": "Review of Eliza Rozenblum’s recital",
           "primaryUrl": "https://polona.pl/item-view/86884264-15cc-4187-9a54-103bc126e7eb?page=4",
-          "accessUrl": "https://polona.pl/item-view/86884264-15cc-4187-9a54-103bc126e7eb?page=4&searchQuery=%22Eliza%20Rozenblum%22"
+          "accessUrl": "https://polona.pl/item-view/86884264-15cc-4187-9a54-103bc126e7eb?page=4&searchQuery=%22Eliza%20Rozenblum%22",
+          "researchNote": "The review identifies Eliza Rozenblum as a pupil of Zbigniew Drzewiecki and mentions three piano pieces by B. Kaper.",
+          "researchNoteType": "evidence_note"
+        }
+      },
+      "SRC0082": {
+        "reason": "Normalize the untitled press notice and move its description of the documented public performance into a dedicated evidence note.",
+        "fields": {
+          "shortCitation": "Chopin Music School public-performance notice — Nasz Przegląd",
+          "fullCitation": "[Chopin Music School public-performance notice]. Nasz Przegląd (Warsaw), 1925, p. 5. Biblioteka Narodowa / Polona.",
+          "title": "Chopin Music School public-performance notice",
+          "researchNote": "The notice announces a public performance (popis) at the Chopin Music School concert.",
+          "researchNoteType": "evidence_note"
         }
       },
       "SRC0038": {
@@ -1417,6 +1785,31 @@
         "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
         "fields": {
           "sourceType": "wikimedia_commons_file"
+        }
+      },
+      "SRC0354": {
+        "reason": "Replace the secondary Warszawa1939 reference with the direct Biblioteka Narodowa / Polona record and describe the digitized 1933 company publication as the source of the cropped Philharmonic image.",
+        "fields": {
+          "shortCitation": "Warszawskie Przedsiębiorstwo Budowlane S.A., company publication (Warsaw, 1933), p. 4 — Polona",
+          "fullCitation": "Warszawskie Przedsiębiorstwo Budowlane spółka akcyjna = Entreprise de Construction de Varsovie société anonyme. Warszawa: B. Wierzbicki, 1933, p. 4. Biblioteka Narodowa / Polona.",
+          "sourceType": "book",
+          "title": "Warszawskie Przedsiębiorstwo Budowlane spółka akcyjna = Entreprise de Construction de Varsovie société anonyme",
+          "creator": "Warszawskie Przedsiębiorstwo Budowlane S.A.",
+          "repository": "Biblioteka Narodowa / Polona",
+          "publication": "Warszawa: B. Wierzbicki, 1933",
+          "accessDate": "2026-08-28",
+          "organizationIds": [
+            "ORG063"
+          ],
+          "mediaIds": [
+            "M030",
+            "M075"
+          ],
+          "placeIds": [
+            "PL010",
+            "PL017"
+          ],
+          "primaryUrl": "https://polona.pl/item-view/63ce2fca-a0f7-45ad-be04-da61906f501c?page=4"
         }
       },
       "SRC0356": {
@@ -2418,6 +2811,14 @@
       }
     },
     "Media": {
+      "M031": {
+        "reason": "Replace two excluded duplicate records for the Mein Film review with the single canonical source SRC0086.",
+        "fields": {
+          "sourceIds": [
+            "SRC0086"
+          ]
+        }
+      },
       "M002": {
         "reason": "Correct the Miss Annabelle Lee listening reference against the Staatsbibliothek zu Berlin catalogue: the recording belongs with the dedicated work, whose 1929 two-piano transcription is no. 1 of Cocktails, not with the separate Jazz Drops series.",
         "fields": {
@@ -2567,7 +2968,7 @@
           "assetPaths": [
             "assets/images/timeline/metryka-kapera-150-u-920.png",
             "assets/images/timeline/biblioteka-UW-1925.jpg",
-            "assets/images/timeline/filharmonia.jpg",
+            "assets/images/timeline/sienkiewicza-jasna.png",
             "assets/images/timeline/popis-nasz-przeglad.jpg",
             "assets/images/historical-context/warsaw-conservatory-okolnik-before-1939.jpg",
             "assets/images/historical-context/zula-pogorzelska-my-chcemy-krola-1926.jpg",
@@ -2576,7 +2977,20 @@
             "assets/images/historical-context/rozenblum1-kw-18011928.jpg",
             "assets/images/historical-context/ti-1-02-1930.jpg"
           ],
-          "assetCount": 10
+          "assetCount": 10,
+          "sourceIds": [
+            "SRC0012",
+            "SRC0014",
+            "SRC0016",
+            "SRC0018",
+            "SRC0082",
+            "SRC0111",
+            "SRC0337",
+            "SRC0354",
+            "SRC0554",
+            "SRC0556",
+            "SRC0559"
+          ]
         },
         "removeFields": [
           "rightsNote",
@@ -2632,6 +3046,26 @@
           "description": "Press clipping for the 23 December 1933 event “At the Salabert studio in Montrouge,” from Paris-Soir, 23 December 1933, p./f. 8. Source route: Gallica / Bibliothèque nationale de France.",
           "slug": "timeline-at-the-salabert-studio-in-montrouge-kaper-paris-soir-23-12-1933-f",
           "publicCaption": "Press clipping from Paris-Soir, 23 December 1933, showing Kaper at the Salabert studio in Montrouge during his Paris period."
+        }
+      },
+      "M075": {
+        "reason": "Replace the mismatched NAC photograph with the user-supplied crop from the direct 1933 Polona source and synchronize the image with both records for the Philharmonic building.",
+        "fields": {
+          "title": "Warsaw Philharmonic at Jasna and Sienkiewicza streets — published 1933",
+          "description": "Historical street view of the Warsaw Philharmonic building at the corner of Jasna and Henryka Sienkiewicza streets, reproduced on p. 4 of the 1933 company publication. It provides architectural context for the Chopin School of Music housed in the building during Kaper’s Warsaw training.",
+          "externalUrl": "https://polona.pl/item-view/63ce2fca-a0f7-45ad-be04-da61906f501c?page=4",
+          "assetPath": "assets/images/timeline/sienkiewicza-jasna.png",
+          "assetPaths": [
+            "assets/images/timeline/sienkiewicza-jasna.png"
+          ],
+          "altText": "Sepia street view of the Warsaw Philharmonic building at the corner of Jasna and Henryka Sienkiewicza streets, with pedestrians in the foreground.",
+          "rightsNote": "Public domain as marked by Biblioteka Narodowa / Polona. Cropped from p. 4 of the 1933 publication; photographer not identified.",
+          "publicCaption": "The Warsaw Philharmonic building at the corner of Jasna and Henryka Sienkiewicza streets, published in a 1933 company publication.",
+          "publicCreditLine": "Warszawskie Przedsiębiorstwo Budowlane S.A., 1933; Biblioteka Narodowa / Polona, public domain.",
+          "placeIds": [
+            "PL010",
+            "PL017"
+          ]
         }
       },
       "M035": {
@@ -2800,11 +3234,25 @@
           "publicCaption": "Hermann Biek, Kaper’s Berlin-era piano-duo partner, who was professionally known as Ben Berlin and credited with Kaper as Hermann Bick."
         }
       },
-      "M133": {
-        "reason": "Remove the filename-based inference note from the public caption; the canonical ANNO source relation carries the bibliographic evidence.",
+      "M116": {
+        "reason": "Identify the object consistently as a full-page trade advertisement and align its caption and credit with canonical source SRC0031.",
         "fields": {
-          "description": "Review or press item for Ehe mit beschränkter Haftung, published in Mein Film in 1932 and digitized by ANNO / Österreichische Nationalbibliothek.",
-          "publicCaption": "Review or press item for Ehe mit beschränkter Haftung, published in Mein Film in 1932 and digitized by ANNO / Österreichische Nationalbibliothek."
+          "title": "Abenteuer am Lido — advertisement in Mein Film, 14 September 1933",
+          "description": "Full-page advertisement for Abenteuer am Lido in Mein Film, 14 September 1933, explicitly crediting the music to Kaper and Jurmann.",
+          "altText": "Full-page Mein Film advertisement for Abenteuer am Lido, with a film still and the music credit to Kaper and Jurmann.",
+          "publicCaption": "Advertisement for Abenteuer am Lido, published in Mein Film on 14 September 1933, with music credited to Kaper and Jurmann.",
+          "publicCreditLine": "Mein Film, 14 September 1933, p. 1021; ANNO / Österreichische Nationalbibliothek.",
+          "category": "trade advertisement"
+        }
+      },
+      "M133": {
+        "reason": "Identify the object consistently as an illustrated review and plot synopsis, and align its caption and credit with canonical source SRC0086.",
+        "fields": {
+          "title": "Ehe mit beschränkter Haftung — review in Mein Film, no. 314 (1932)",
+          "description": "Illustrated review and plot synopsis for Ehe mit beschränkter Haftung in Mein Film, no. 314 (1932), explicitly crediting the music to Dr. B. Kaper and Walter Jurmann.",
+          "altText": "Illustrated Mein Film review of Ehe mit beschränkter Haftung, with a film still, plot synopsis and music credit.",
+          "publicCaption": "Illustrated review of Ehe mit beschränkter Haftung in Mein Film, no. 314 (1932), crediting the music to Kaper and Jurmann.",
+          "publicCreditLine": "Mein Film, no. 314 (1932), p. 9; ANNO / Österreichische Nationalbibliothek."
         }
       },
       "M135": {
@@ -4016,6 +4464,17 @@
     "People": {
       "P091": {
         "reason": "Remove Harold S. Bucquet from the public graph because his sole relation to Little Boy Blue resulted from conflating two distinct 1936 shorts; Buxbaum/Sieghardt identifies Ub Iwerks, not Bucquet, as producer and director of the animated film associated with Kaper and Jurmann."
+      }
+    },
+    "Sources": {
+      "SRC0019": {
+        "reason": "Remove the false advertisement record: it duplicates the illustrated Mein Film review retained canonically as SRC0086."
+      },
+      "SRC0029": {
+        "reason": "Remove the duplicate and internally inconsistent record for the same Mein Film no. 314 page retained canonically as SRC0086."
+      },
+      "SRC0087": {
+        "reason": "Remove the duplicate record for the Abenteuer am Lido advertisement retained canonically, with its exact date, as SRC0031."
       }
     },
     "Contributions": {
@@ -7791,13 +8250,13 @@
         }
       },
       "SRC0674": {
-        "reason": "Add the contemporary Kurjer Warszawski notice documenting Eliza Rozenblum as a pianist associated with contemporary repertoire; do not conflate this separate 1926 recital with the 1928 Kaper performance.",
+        "reason": "Add the contemporary Kurjer Warszawski notice, normalize its press citation, and keep its evidentiary description separate from the bibliography.",
         "fields": {
           "id": "SRC0674",
-          "shortCitation": "Kurjer Warszawski, 1 December 1926 — Eliza Rozenblum recital notice",
-          "fullCitation": "Kurjer Warszawski (Warsaw), R. 106, no. 330, morning ed., 1 December 1926, p. 3. Notice presenting pianist Eliza Rozenblum as a young exponent of contemporary piano music and announcing her recital. Biblioteka Narodowa / Polona.",
+          "shortCitation": "Eliza Rozenblum recital notice — Kurjer Warszawski",
+          "fullCitation": "[Eliza Rozenblum recital notice]. Kurjer Warszawski (Warsaw), vol. 106, no. 330, morning ed., 1 December 1926, p. 3. Biblioteka Narodowa / Polona.",
           "sourceType": "press_item",
-          "title": "Kurjer Warszawski, 1 December 1926 — Eliza Rozenblum recital notice",
+          "title": "Eliza Rozenblum recital notice",
           "repository": "Biblioteka Narodowa / Polona",
           "publication": "Kurjer Warszawski",
           "date": "1926-12-01",
@@ -7811,17 +8270,19 @@
           "organizationIds": [
             "ORG063"
           ],
-          "primaryUrl": "https://polona.pl/item-view/2e9eaee3-afdb-4de2-afa9-19dff553191d?page=2&searchQuery=%22Eliza%20rozenblum%22"
+          "primaryUrl": "https://polona.pl/item-view/2e9eaee3-afdb-4de2-afa9-19dff553191d?page=2&searchQuery=%22Eliza%20rozenblum%22",
+          "researchNote": "The notice presents Eliza Rozenblum as a young exponent of contemporary piano music and announces her recital.",
+          "researchNoteType": "evidence_note"
         }
       },
       "SRC0675": {
-        "reason": "Add the contemporary Nasz Przegląd notice documenting Eliza Rozenblum's performance of contemporary repertoire; keep it as direct person evidence rather than attaching it to the distinct 1928 Kaper event.",
+        "reason": "Add the contemporary Nasz Przegląd notice, normalize its press citation, and keep its evidentiary description separate from the bibliography.",
         "fields": {
           "id": "SRC0675",
-          "shortCitation": "Nasz Przegląd, 19 March 1925 — Eliza Rozenblum contemporary-music recital",
-          "fullCitation": "Nasz Przegląd: organ niezależny (Warsaw), R. 3, no. 78, 19 March 1925, p. 8. Notice announcing a recital by Eliza Rozenblum featuring contemporary works. Biblioteka Narodowa / Polona.",
+          "shortCitation": "Eliza Rozenblum contemporary-music recital notice — Nasz Przegląd",
+          "fullCitation": "[Eliza Rozenblum contemporary-music recital notice]. Nasz Przegląd: organ niezależny (Warsaw), vol. 3, no. 78, 19 March 1925, p. 8. Biblioteka Narodowa / Polona.",
           "sourceType": "press_item",
-          "title": "Nasz Przegląd, 19 March 1925 — Eliza Rozenblum recital notice",
+          "title": "Eliza Rozenblum contemporary-music recital notice",
           "repository": "Biblioteka Narodowa / Polona",
           "publication": "Nasz Przegląd",
           "date": "1925-03-19",
@@ -7835,7 +8296,9 @@
           "organizationIds": [
             "ORG063"
           ],
-          "primaryUrl": "https://polona.pl/item-view/86975f05-c08f-446b-8840-59a653b7ccd4?page=7&searchQuery=%22Eliza%20rozenblum%22"
+          "primaryUrl": "https://polona.pl/item-view/86975f05-c08f-446b-8840-59a653b7ccd4?page=7&searchQuery=%22Eliza%20rozenblum%22",
+          "researchNote": "The notice announces an Eliza Rozenblum recital featuring contemporary works.",
+          "researchNoteType": "evidence_note"
         }
       },
       "SRC0676": {
@@ -10099,12 +10562,16 @@
         }
       },
       "ORG062": {
-        "reason": "Link the Bibliothèque nationale de France organization record to the authoritative BnF title and authority records.",
+        "reason": "Link the Bibliothèque nationale de France organization record to the authoritative BnF title, authority and digitized press records.",
         "fields": {
           "sourceIds": [
             "SRC0532",
             "SRC0629",
-            "SRC0630"
+            "SRC0630",
+            "SRC0820",
+            "SRC0830",
+            "SRC0831",
+            "SRC0833"
           ]
         }
       },
@@ -10174,7 +10641,7 @@
         }
       },
       "ORG064": {
-        "reason": "Link the completed 1930–1933 Hofmeister/ANNO source records to the Austrian National Library repository.",
+        "reason": "Link the completed Hofmeister/ANNO and Die Bühne source records to the Austrian National Library repository.",
         "fields": {
           "sourceIds": [
             "SRC0178",
@@ -10209,7 +10676,9 @@
             "SRC0218",
             "SRC0221",
             "SRC0222",
-            "SRC0223"
+            "SRC0223",
+            "SRC0835",
+            "SRC0836"
           ]
         }
       },
@@ -10881,10 +11350,11 @@
         }
       },
       "W-F007": {
-        "reason": "Attach Walter Jurmann's confirmed music contribution and the Bundesarchiv full-film source and external access medium to Die große Attraktion.",
+        "reason": "Attach Walter Jurmann's confirmed music contribution, the Bundesarchiv full-film source and the contemporary production notice to Die große Attraktion.",
         "fields": {
           "sourceIds": [
-            "SRC0683"
+            "SRC0683",
+            "SRC0454"
           ],
           "mediaIds": [
             "M328"
@@ -10895,8 +11365,11 @@
         }
       },
       "W-F008": {
-        "reason": "Attach Walter Jurmann's confirmed co-composer contribution to Ehe mit beschränkter Haftung.",
+        "reason": "Attach Walter Jurmann's confirmed co-composer contribution and replace the excluded duplicate press source with canonical SRC0086.",
         "fields": {
+          "sourceIds": [
+            "SRC0086"
+          ],
           "contributionIds": [
             "CON-F008-C-P077"
           ]
@@ -10979,10 +11452,11 @@
         }
       },
       "W-F026": {
-        "reason": "Attach Walter Jurmann's confirmed co-composer contribution and the official Jurmann catalogue to Abenteuer am Lido.",
+        "reason": "Attach Walter Jurmann's confirmed co-composer contribution, the official Jurmann catalogue and the canonical Mein Film advertisement to Abenteuer am Lido.",
         "fields": {
           "sourceIds": [
-            "SRC0306"
+            "SRC0306",
+            "SRC0031"
           ],
           "contributionIds": [
             "CON-F026-C-P077"
@@ -11381,6 +11855,14 @@
       }
     },
     "Films": {
+      "F026": {
+        "reason": "Attach the exactly dated canonical Mein Film advertisement source to the corresponding Film record.",
+        "fields": {
+          "sourceIds": [
+            "SRC0031"
+          ]
+        }
+      },
       "F024": {
         "reason": "Attach the Filmportal/DFF opening excerpt source to the corresponding Film record.",
         "fields": {
@@ -11390,10 +11872,11 @@
         }
       },
       "F007": {
-        "reason": "Connect the Film record to the Bundesarchiv full-film source for Die große Attraktion.",
+        "reason": "Connect the Film record to the Bundesarchiv full-film source and contemporary production notice for Die große Attraktion.",
         "fields": {
           "sourceIds": [
-            "SRC0683"
+            "SRC0683",
+            "SRC0454"
           ]
         }
       },
@@ -11623,6 +12106,14 @@
           ]
         }
       },
+      "M116": {
+        "reason": "Replace excluded duplicate SRC0087 with the exactly dated canonical advertisement source SRC0031.",
+        "fields": {
+          "sourceIds": [
+            "SRC0031"
+          ]
+        }
+      },
       "M128": {
         "reason": "Connect the advertisement image only to the Kaper–Włast song visibly documented on the page, without importing the other four advertised songs into the Kaper catalogue.",
         "fields": {
@@ -11642,6 +12133,14 @@
           ],
           "songIds": [
             "S217"
+          ]
+        }
+      },
+      "M116": {
+        "reason": "Remove excluded duplicate SRC0087 after replacing it with canonical SRC0031.",
+        "fields": {
+          "sourceIds": [
+            "SRC0087"
           ]
         }
       },
@@ -12014,6 +12513,25 @@
       }
     },
     "Places": {
+      "PL010": {
+        "reason": "Synchronize the music-school place record with the direct 1933 Polona publication that supplies its contextual image.",
+        "fields": {
+          "sourceIds": [
+            "SRC0354"
+          ]
+        }
+      },
+      "PL017": {
+        "reason": "Link the Warsaw Philharmonic venue to the direct 1933 Polona source and the image reproduced from that publication.",
+        "fields": {
+          "mediaIds": [
+            "M075"
+          ],
+          "sourceIds": [
+            "SRC0354"
+          ]
+        }
+      },
       "PL006": {
         "reason": "Link MGM Studios in Culver City to its official-city historical street-view image, item-level source and the source-defined Everybody Sing timeline event.",
         "fields": {
@@ -12656,6 +13174,90 @@
       }
     },
     "Sources": {
+      "SRC0835": {
+        "reason": "Synchronize the Die Bühne press photograph source with the Austrian National Library / ANNO repository.",
+        "fields": {
+          "organizationIds": [
+            "ORG064"
+          ]
+        }
+      },
+      "SRC0836": {
+        "reason": "Synchronize the Die Bühne caricature source with the Austrian National Library / ANNO repository.",
+        "fields": {
+          "organizationIds": [
+            "ORG064"
+          ]
+        }
+      },
+      "SRC0820": {
+        "reason": "Synchronize the L’Ami du peuple portrait source with the Bibliothèque nationale de France / RetroNews repository.",
+        "fields": {
+          "organizationIds": [
+            "ORG062"
+          ]
+        }
+      },
+      "SRC0830": {
+        "reason": "Synchronize the Excelsior interview and photograph source with the Bibliothèque nationale de France / RetroNews repository.",
+        "fields": {
+          "organizationIds": [
+            "ORG062"
+          ]
+        }
+      },
+      "SRC0831": {
+        "reason": "Synchronize the Comœdia portrait source with the Bibliothèque nationale de France / RetroNews repository.",
+        "fields": {
+          "organizationIds": [
+            "ORG062"
+          ]
+        }
+      },
+      "SRC0833": {
+        "reason": "Synchronize the Pour vous photograph source with the Bibliothèque nationale de France / RetroNews repository.",
+        "fields": {
+          "organizationIds": [
+            "ORG062"
+          ]
+        }
+      },
+      "SRC0454": {
+        "reason": "Connect the contemporary production notice to the film it announces.",
+        "fields": {
+          "workIds": [
+            "W-F007"
+          ],
+          "filmIds": [
+            "F007"
+          ]
+        }
+      },
+      "SRC0031": {
+        "reason": "Synchronize the canonical Abenteuer am Lido advertisement with the film, film subtype, Paris Years gallery and individual clipping medium.",
+        "fields": {
+          "workIds": [
+            "W-F026"
+          ],
+          "filmIds": [
+            "F026"
+          ],
+          "mediaIds": [
+            "M116"
+          ]
+        }
+      },
+      "SRC0086": {
+        "reason": "Synchronize the canonical Mein Film review with the film and Berlin Years gallery after excluding its duplicate source records.",
+        "fields": {
+          "workIds": [
+            "W-F008"
+          ],
+          "mediaIds": [
+            "M031"
+          ]
+        }
+      },
       "SRC0095": {
         "reason": "Link the Hofmeister registration to Alrobi, the publisher printed in this source, rather than to the later Sirius-Mappen publication.",
         "fields": {
@@ -14206,9 +14808,11 @@
         }
       },
       "M031": {
-        "reason": "Remove the November 1933 Paris reception source and the February 1934 Paris cocktail event from the Berlin Years gallery; the source and canonical photograph belong to the Paris gallery M032, while TE0032 uses M073 directly.",
+        "reason": "Remove the excluded duplicate Mein Film sources, the November 1933 Paris reception source and the February 1934 Paris cocktail event from the Berlin Years gallery.",
         "fields": {
           "sourceIds": [
+            "SRC0019",
+            "SRC0029",
             "SRC0024"
           ],
           "timelineEventIds": [
@@ -14619,6 +15223,14 @@
       }
     },
     "Works": {
+      "W-F008": {
+        "reason": "Replace excluded duplicate SRC0019 with the canonical Mein Film review SRC0086.",
+        "fields": {
+          "sourceIds": [
+            "SRC0019"
+          ]
+        }
+      },
       "W-O008": {
         "reason": "Remove the Miss Annabelle Lee listening reference from Jazz Drops; the Staatsbibliothek catalogue identifies Miss Annabelle Lee as no. 1 of the separate Cocktails series.",
         "fields": {
@@ -14947,6 +15559,24 @@
       }
     },
     "Organizations": {
+      "ORG064": {
+        "reason": "Remove the excluded duplicate records for two Mein Film pages from the Austrian National Library source list; canonical SRC0086 and SRC0031 remain linked.",
+        "fields": {
+          "sourceIds": [
+            "SRC0019",
+            "SRC0029",
+            "SRC0087"
+          ]
+        }
+      },
+      "ORG102": {
+        "reason": "Remove SRC0354 from Warszawa1939.pl after replacing that secondary reference with the direct Biblioteka Narodowa / Polona source.",
+        "fields": {
+          "sourceIds": [
+            "SRC0354"
+          ]
+        }
+      },
       "ORG052": {
         "reason": "Remove the Alrobi Hofmeister registration from Sirius-Verlag Franz Sobotka; Sirius remains linked through the separate Sirius-Mappen source.",
         "fields": {
