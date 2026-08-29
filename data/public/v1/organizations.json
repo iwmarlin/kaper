@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 148,
+  "count": 150,
   "records": [
     {
       "id": "ORG001",
@@ -4696,6 +4696,49 @@
       ],
       "parentOrganizationIds": [
         "ORG141"
+      ]
+    },
+    {
+      "id": "ORG157",
+      "displayName": "California Digital Newspaper Collection",
+      "authorizedName": "California Digital Newspaper Collection",
+      "types": [
+        "archive",
+        "database"
+      ],
+      "city": [
+        "Riverside"
+      ],
+      "country": "United States",
+      "slug": "california-digital-newspaper-collection",
+      "nameVariants": "CDNC",
+      "authorizedNameSource": "Official project page",
+      "authorityUrl": "Official website: https://cbsrinfo.ucr.edu/CDNC",
+      "publicNote": "Freely accessible repository of digitized California newspapers established by the Center for Bibliographical Studies and Research at the University of California, Riverside. The repository is represented separately from the newspaper titles and other institutions that supplied particular issues.",
+      "sourceIds": [
+        "SRC0841",
+        "SRC0842",
+        "SRC0846",
+        "SRC0850"
+      ]
+    },
+    {
+      "id": "ORG158",
+      "displayName": "World Radio History",
+      "authorizedName": "World Radio History",
+      "types": [
+        "archive",
+        "database"
+      ],
+      "country": "United States",
+      "slug": "world-radio-history",
+      "nameVariants": "WorldRadioHistory; WorldRadioHistory.com",
+      "authorizedNameSource": "Official website",
+      "authorityUrl": "Official website: https://www.worldradiohistory.com/",
+      "publicNote": "Non-profit online library of digitized publications concerning radio, broadcasting, recorded music and related technologies, created and published by David E. F. Gleason.",
+      "sourceIds": [
+        "SRC0843",
+        "SRC0844"
       ]
     }
   ]

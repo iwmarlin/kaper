@@ -754,7 +754,7 @@
         "reason": "Normalize the Die Bühne citation and identify ANNO consistently as the Austrian National Library access service while retaining the existing object-context note.",
         "fields": {
           "shortCitation": "Wien-Film press reception — Die Bühne",
-          "fullCitation": "“Anläßlich eines Presseempfanges sprach der stellvertretende Produktionschef der Wien-Film Erich von Neusser über das Wiener Filmschaffen” [caption]. Photographs credited “Aufn. Wiener Bühne – Strof.” Die Bühne (Vienna), no. 6, 1940, p. 11. Österreichische Nationalbibliothek / ANNO. Accessed 26 August 2026.",
+          "fullCitation": "“Anläßlich eines Presseempfanges sprach der stellvertretende Produktionschef der Wien-Film Erich von Neusser über das Wiener Filmschaffen” [caption]. Photographs credited “Aufn. Wiener Bühne – Strof.” Die Bühne (Vienna), no. 6, 1940, p. 11. Österreichische Nationalbibliothek / ANNO.",
           "repository": "Österreichische Nationalbibliothek / ANNO"
         }
       },
@@ -762,7 +762,7 @@
         "reason": "Normalize the titled Die Bühne citation and identify ANNO consistently as the Austrian National Library access service while retaining the existing identity assessment.",
         "fields": {
           "shortCitation": "“Kleine Bilder vom Semmering-Rennen” — Die Bühne",
-          "fullCitation": "“Kleine Bilder vom Semmering-Rennen.” Drawings by Hans Schaukal; the caricature of Franz Wenzler is captioned “Direktor Franz Wenzler.” Die Bühne (Vienna), no. 203, 1928, p. 20. Österreichische Nationalbibliothek / ANNO. Accessed 26 August 2026.",
+          "fullCitation": "“Kleine Bilder vom Semmering-Rennen.” Drawings by Hans Schaukal; the caricature of Franz Wenzler is captioned “Direktor Franz Wenzler.” Die Bühne (Vienna), no. 203, 1928, p. 20. Österreichische Nationalbibliothek / ANNO.",
           "repository": "Österreichische Nationalbibliothek / ANNO"
         }
       },
@@ -901,9 +901,12 @@
         "reason": "Normalize the CDNC press citation and repository form, record the printed newspaper credit without inferring an individual photographer, and remove database-process language from the identity assessment.",
         "fields": {
           "shortCitation": "“At the Beachcomber on opening night” — Desert Sun",
-          "fullCitation": "“At the Beachcomber on opening night was Hoagy Carmichael, center. Here he is chatting with a fellow songwriter Sidney Clare, left, and Arthur Gordon, of Fleishman Distilleries.” Photograph. Desert Sun (Palm Springs, Calif.), vol. 30, no. 38, 13 October 1956, p. 6. University of California, Riverside / California Digital Newspaper Collection. Accessed 26 August 2026.",
+          "fullCitation": "“At the Beachcomber on opening night was Hoagy Carmichael, center. Here he is chatting with a fellow songwriter Sidney Clare, left, and Arthur Gordon, of Fleishman Distilleries.” Photograph. Desert Sun (Palm Springs, Calif.), vol. 30, no. 38, 13 October 1956, p. 6. California Digital Newspaper Collection, Center for Bibliographical Studies and Research, University of California, Riverside.",
           "creator": "Desert Sun (photograph credit)",
-          "repository": "University of California, Riverside / California Digital Newspaper Collection",
+          "repository": "California Digital Newspaper Collection, Center for Bibliographical Studies and Research, University of California, Riverside",
+          "organizationIds": [
+            "ORG157"
+          ],
           "researchNote": "The caption identifies Sidney Clare as “a fellow songwriter” beside Hoagy Carmichael, distinguishing him from namesakes. The photograph documents Clare in Palm Springs later in life; the occasion is the opening of the Beachcomber, not a professional gathering."
         }
       },
@@ -911,19 +914,45 @@
         "reason": "Normalize the CDNC press citation and repository form, distinguish an uncredited photographer from an unidentified sitter, and remove database-process language from the contextual note.",
         "fields": {
           "shortCitation": "“Song Writers to Perform” — Santa Ana Journal",
-          "fullCitation": "“Song Writers to Perform: Lew Pollack and Sidney Mitchell, authors of song hits, who will be among the featured artists at the President’s Ball. The ball opens at 8:45 tonight at the Valencia Ball Room and the proceeds will be devoted to the fight against infantile paralysis.” Photograph with caption. Santa Ana Journal (Santa Ana, Calif.), vol. 3, no. 231, 27 January 1938, p. 7. University of California, Riverside / California Digital Newspaper Collection. Accessed 26 August 2026.",
+          "fullCitation": "“Song Writers to Perform: Lew Pollack and Sidney Mitchell, authors of song hits, who will be among the featured artists at the President’s Ball. The ball opens at 8:45 tonight at the Valencia Ball Room and the proceeds will be devoted to the fight against infantile paralysis.” Photograph with caption. Santa Ana Journal (Santa Ana, Calif.), vol. 3, no. 231, 27 January 1938, p. 7. California Digital Newspaper Collection, Center for Bibliographical Studies and Research, University of California, Riverside.",
           "creator": "Photographer uncredited",
-          "repository": "University of California, Riverside / California Digital Newspaper Collection",
+          "repository": "California Digital Newspaper Collection, Center for Bibliographical Studies and Research, University of California, Riverside",
+          "organizationIds": [
+            "ORG157"
+          ],
           "researchNote": "The two men appear as working songwriters scheduled to perform at a President’s Birthday Ball benefiting the campaign against infantile paralysis. The caption names Lew Pollack and Sidney Mitchell but does not distinguish which man is which; the image therefore documents the pair rather than serving as an individually identified portrait."
+        }
+      },
+      "SRC0843": {
+        "reason": "Normalize the World Radio History press citation, retain retrieval separately in accessDate and link the source to the shared digital repository record.",
+        "fields": {
+          "fullCitation": "“Leonard Whitcup has been appointed managing director of Music, Music, Music, Inc., publishers of S/Sgt. Barry Sadler’s songs. In his new post, Whitcup will be responsible for developing new talent and writers. Whitcup, who is also a songwriter, is currently executive vice-president of the American Guild of Authors & Composers.” With a portrait captioned “Whitcup”. Billboard, 14 May 1966, p. 3. World Radio History.",
+          "repository": "World Radio History",
+          "organizationIds": [
+            "ORG158"
+          ]
+        }
+      },
+      "SRC0844": {
+        "reason": "Normalize the World Radio History press citation, retain retrieval separately in accessDate and link the source to the shared digital repository record.",
+        "fields": {
+          "fullCitation": "Photograph of the songwriters Pete Wendling and Jimmy Monaco, connected with the Pathé film Words and Music. The Talking Machine World 23, no. 10 (October 1927): 137, illustration 8. World Radio History.",
+          "repository": "World Radio History",
+          "organizationIds": [
+            "ORG158"
+          ]
         }
       },
       "SRC0846": {
         "reason": "Normalize the CDNC press citation and repository form, use the consistent uncredited-photographer wording, and rewrite the evidence note as a source-based biographical summary.",
         "fields": {
           "shortCitation": "“Harry Richman sings love songs in earnest now” — Madera Daily Tribune",
-          "fullCitation": "“Harry Richman sings love songs in earnest now.” With a photograph of Richman and Clara Bow. Madera Daily Tribune and Madera Mercury (Madera, Calif.), vol. 44, no. 84, 8 August 1929, p. 4. University of California, Riverside / California Digital Newspaper Collection. Accessed 26 August 2026.",
+          "fullCitation": "“Harry Richman sings love songs in earnest now.” With a photograph of Richman and Clara Bow. Madera Daily Tribune and Madera Mercury (Madera, Calif.), vol. 44, no. 84, 8 August 1929, p. 4. California Digital Newspaper Collection, Center for Bibliographical Studies and Research, University of California, Riverside.",
           "creator": "Photographer uncredited",
-          "repository": "University of California, Riverside / California Digital Newspaper Collection",
+          "repository": "California Digital Newspaper Collection, Center for Bibliographical Studies and Research, University of California, Riverside",
+          "organizationIds": [
+            "ORG157"
+          ],
           "researchNote": "The notice describes Harry Richman as a star of the Scandals, a Brunswick recording artist who had recently recorded “Now I’m in Love” and “My Dear” in Los Angeles, a singer active on stage, on records and in nightclubs, and a performer under contract to United Artists for a film then titled The Song of Broadway. The accompanying paragraph also reports his engagement to Clara Bow."
         }
       },
@@ -931,9 +960,12 @@
         "reason": "Normalize the CDNC press citation and repository form and use the consistent uncredited-photographer wording while retaining the source-based evidence note.",
         "fields": {
           "shortCitation": "“It pays to be wacky” — Santa Ana Journal",
-          "fullCitation": "“It pays to be wacky, so — ‘The fly outflew the flea’.” Chicago dispatch, with a photograph captioned “‘The lyric is lousy’ — so said Terry Shand, left. But neither Larry Shay, center, who helped Shand write the music, nor Jimmie Eaton, right, who wrote the words to ‘The fly outflew the flea’ care so long as the public likes the song.” Santa Ana Journal (Santa Ana, Calif.), vol. 3, no. 60, 9 July 1937, p. 18. University of California, Riverside / California Digital Newspaper Collection. Accessed 26 August 2026.",
+          "fullCitation": "“It pays to be wacky, so — ‘The fly outflew the flea’.” Chicago dispatch, with a photograph captioned “‘The lyric is lousy’ — so said Terry Shand, left. But neither Larry Shay, center, who helped Shand write the music, nor Jimmie Eaton, right, who wrote the words to ‘The fly outflew the flea’ care so long as the public likes the song.” Santa Ana Journal (Santa Ana, Calif.), vol. 3, no. 60, 9 July 1937, p. 18. California Digital Newspaper Collection, Center for Bibliographical Studies and Research, University of California, Riverside.",
           "creator": "Photographer uncredited",
-          "repository": "University of California, Riverside / California Digital Newspaper Collection"
+          "repository": "California Digital Newspaper Collection, Center for Bibliographical Studies and Research, University of California, Riverside",
+          "organizationIds": [
+            "ORG157"
+          ]
         }
       },
       "SRC0047": {
@@ -1111,7 +1143,7 @@
         "reason": "Normalize the titled concert-review citation and use one consistent publication and repository form.",
         "fields": {
           "shortCitation": "“Jazz auf vier Flügeln” — Rhein- und Ruhr-Zeitung",
-          "fullCitation": "Dr. Funk. “Jazz auf vier Flügeln.” Rhein- und Ruhr-Zeitung, 10 December 1929, p. 12. Deutsche Digitale Bibliothek / Deutsches Zeitungsportal. Accessed 10 July 2026.",
+          "fullCitation": "Dr. Funk. “Jazz auf vier Flügeln.” Rhein- und Ruhr-Zeitung, 10 December 1929, p. 12. Deutsche Digitale Bibliothek / Deutsches Zeitungsportal.",
           "repository": "Deutsche Digitale Bibliothek / Deutsches Zeitungsportal",
           "publication": "Rhein- und Ruhr-Zeitung"
         }
@@ -4779,6 +4811,55 @@
           "nameVariants": "Deutsche Kinemathek; Museum für Film und Fernsehen; Sammlung Paul Kohner Agency",
           "sourceIds": [
             "SRC0678"
+          ]
+        }
+      },
+      "ORG157": {
+        "reason": "Add the shared repository record for the California Digital Newspaper Collection sources rather than repeating the platform only as source text.",
+        "fields": {
+          "id": "ORG157",
+          "displayName": "California Digital Newspaper Collection",
+          "authorizedName": "California Digital Newspaper Collection",
+          "types": [
+            "archive",
+            "database"
+          ],
+          "city": [
+            "Riverside"
+          ],
+          "country": "United States",
+          "slug": "california-digital-newspaper-collection",
+          "nameVariants": "CDNC",
+          "authorizedNameSource": "Official project page",
+          "authorityUrl": "Official website: https://cbsrinfo.ucr.edu/CDNC",
+          "publicNote": "Freely accessible repository of digitized California newspapers established by the Center for Bibliographical Studies and Research at the University of California, Riverside. The repository is represented separately from the newspaper titles and other institutions that supplied particular issues.",
+          "sourceIds": [
+            "SRC0841",
+            "SRC0842",
+            "SRC0846",
+            "SRC0850"
+          ]
+        }
+      },
+      "ORG158": {
+        "reason": "Add the shared repository record for the World Radio History sources rather than repeating the platform only as source text.",
+        "fields": {
+          "id": "ORG158",
+          "displayName": "World Radio History",
+          "authorizedName": "World Radio History",
+          "types": [
+            "archive",
+            "database"
+          ],
+          "country": "United States",
+          "slug": "world-radio-history",
+          "nameVariants": "WorldRadioHistory; WorldRadioHistory.com",
+          "authorizedNameSource": "Official website",
+          "authorityUrl": "Official website: https://www.worldradiohistory.com/",
+          "publicNote": "Non-profit online library of digitized publications concerning radio, broadcasting, recorded music and related technologies, created and published by David E. F. Gleason.",
+          "sourceIds": [
+            "SRC0843",
+            "SRC0844"
           ]
         }
       }
