@@ -936,6 +936,107 @@
           "repository": "University of California, Riverside / California Digital Newspaper Collection"
         }
       },
+      "SRC0047": {
+        "reason": "Normalize the titled Brooklyn press item and identify Newspapers.com and the Brooklyn Public Library consistently as access service and repository.",
+        "fields": {
+          "shortCitation": "“Composers Continue” — Times Union",
+          "fullCitation": "“Composers Continue.” Times Union (Brooklyn, NY), 10 October 1936, p. 13. Newspapers.com / Brooklyn Public Library.",
+          "repository": "Newspapers.com / Brooklyn Public Library"
+        }
+      },
+      "SRC0049": {
+        "reason": "Normalize the Library of Congress press citation, mark the descriptive item title as supplied, and identify Chronicling America consistently as the access service.",
+        "fields": {
+          "shortCitation": "Gus Kahn studies with Kaper and Jurmann — The Washington Daily News",
+          "fullCitation": "[Item on Gus Kahn studying with Bronisław Kaper and Walter Jurmann]. The Washington Daily News (Washington, DC), 13 July 1937, p. 9. Library of Congress / Chronicling America.",
+          "title": "Gus Kahn studies with Kaper and Jurmann",
+          "repository": "Library of Congress / Chronicling America"
+        }
+      },
+      "SRC0050": {
+        "reason": "Normalize the Library of Congress press citation, mark the descriptive notice title as supplied, and identify Chronicling America consistently as the access service.",
+        "fields": {
+          "shortCitation": "Kahn, Kaper and Jurmann song assignment — Evening Star",
+          "fullCitation": "[Notice concerning a song assignment for Gus Kahn, Bronisław Kaper and Walter Jurmann]. Evening Star (Washington, DC), Sunday ed., 4 July 1937. Library of Congress / Chronicling America.",
+          "title": "Kahn, Kaper and Jurmann song assignment",
+          "repository": "Library of Congress / Chronicling America"
+        }
+      },
+      "SRC0051": {
+        "reason": "Normalize the titled Brooklyn press citation and move its evidentiary summary out of the bibliography into a dedicated evidence note.",
+        "fields": {
+          "shortCitation": "“Everybody Sing” — Brooklyn Daily Eagle",
+          "fullCitation": "“Everybody Sing.” Brooklyn Daily Eagle (Brooklyn, NY), 17 March 1938, p. 8. Newspapers.com.",
+          "researchNote": "The notice identifies Edwin L. Marin as director of the MGM film and credits songs to Kaper and Jurmann, and to Kalmar and Ruby.",
+          "researchNoteType": "evidence_note"
+        }
+      },
+      "SRC0052": {
+        "reason": "Normalize the Library of Congress press citation, mark its descriptive title as supplied, and identify Chronicling America consistently as the access service.",
+        "fields": {
+          "shortCitation": "Bronisław Kaper’s “Machine Gun Department” anecdote — The Washington Times",
+          "fullCitation": "[Bronisław Kaper’s “Machine Gun Department” anecdote]. The Washington Times (Washington, DC), 31 October 1938, p. 14. Library of Congress / Chronicling America.",
+          "title": "Bronisław Kaper’s “Machine Gun Department” anecdote",
+          "repository": "Library of Congress / Chronicling America"
+        }
+      },
+      "SRC0089": {
+        "reason": "Normalize the titled Brooklyn press citation and move the notice's relevance to the linked film into a dedicated evidence note.",
+        "fields": {
+          "shortCitation": "“Coming to Rialto” — Times Union",
+          "fullCitation": "“Coming to Rialto.” Times Union (Brooklyn, NY), 22 July 1936, p. 4. Newspapers.com / Brooklyn Public Library.",
+          "repository": "Newspapers.com / Brooklyn Public Library",
+          "researchNote": "The notice announces the MGM film We Went to College at the Rialto.",
+          "researchNoteType": "evidence_note"
+        }
+      },
+      "SRC0090": {
+        "reason": "Normalize the Brooklyn press citation, mark the clipping description as supplied, and remove relationship wording from the bibliography.",
+        "fields": {
+          "shortCitation": "Escapade clipping — Times Union",
+          "fullCitation": "[Clipping mentioning Bronisław Kaper in connection with Escapade]. Times Union (Brooklyn, NY), 9 July 1935, p. 7. Newspapers.com / Brooklyn Public Library.",
+          "title": "Escapade clipping mentioning Bronisław Kaper",
+          "repository": "Newspapers.com / Brooklyn Public Library",
+          "publication": "Times Union"
+        }
+      },
+      "SRC0114": {
+        "reason": "Normalize the titled Brooklyn cast-and-credits notice and identify Newspapers.com and the Brooklyn Public Library consistently.",
+        "fields": {
+          "shortCitation": "“A Day at the Races” — The Brooklyn Citizen",
+          "fullCitation": "“A Day at the Races.” Cast and credits notice. The Brooklyn Citizen (Brooklyn, NY), 18 June 1937, p. 14. Newspapers.com / Brooklyn Public Library.",
+          "repository": "Newspapers.com / Brooklyn Public Library"
+        }
+      },
+      "SRC0380": {
+        "reason": "Normalize the titled Brooklyn press citation and identify Newspapers.com and the Brooklyn Public Library consistently.",
+        "fields": {
+          "shortCitation": "“One Smart Girl” — Brooklyn Daily Eagle",
+          "fullCitation": "“One Smart Girl.” Brooklyn Daily Eagle (Brooklyn, NY), 24 January 1937, p. 57. Newspapers.com / Brooklyn Public Library.",
+          "repository": "Newspapers.com / Brooklyn Public Library",
+          "publication": "Brooklyn Daily Eagle"
+        }
+      },
+      "SRC0527": {
+        "reason": "Normalize the Brooklyn press citation, mark the clipping description as supplied, and identify the access service and repository consistently.",
+        "fields": {
+          "shortCitation": "Escapade clipping — Brooklyn Daily Eagle",
+          "fullCitation": "[Clipping mentioning Bronisław Kaper in connection with Escapade]. Brooklyn Daily Eagle (Brooklyn, NY), 22 July 1935, p. 6. Newspapers.com / Brooklyn Public Library.",
+          "title": "Escapade clipping mentioning Bronisław Kaper",
+          "repository": "Newspapers.com / Brooklyn Public Library"
+        }
+      },
+      "SRC0550": {
+        "reason": "Use the printed column title for the Library of Congress citation and move the report of Kaper and Jurmann's departure for MGM into a dedicated evidence note.",
+        "fields": {
+          "shortCitation": "“Purely Personal” — Motion Picture Daily",
+          "fullCitation": "“Purely Personal.” Motion Picture Daily 36, no. 100 (27 October 1934): 2. Library of Congress / National Audio-Visual Conservation Center, digital scan (PDF p. 252).",
+          "title": "Purely Personal",
+          "repository": "Library of Congress / National Audio-Visual Conservation Center",
+          "researchNote": "The item reports that Walter Jurmann and Bronisław Kaper were preparing to leave New York for MGM in California.",
+          "researchNoteType": "evidence_note"
+        }
+      },
       "SRC0832": {
         "reason": "Normalize the Gallica citation while retaining the existing source-based contextual assessment in its dedicated field.",
         "fields": {
@@ -10616,6 +10717,22 @@
           ]
         }
       },
+      "ORG095": {
+        "reason": "Synchronize Newspapers.com with the Brooklyn Daily Eagle Escapade clipping after normalizing its repository metadata.",
+        "fields": {
+          "sourceIds": [
+            "SRC0527"
+          ]
+        }
+      },
+      "ORG100": {
+        "reason": "Synchronize the Brooklyn Public Library with the Brooklyn Daily Eagle Escapade clipping accessed through Newspapers.com.",
+        "fields": {
+          "sourceIds": [
+            "SRC0527"
+          ]
+        }
+      },
       "ORG074": {
         "reason": "Link Deutsche Nationalbibliothek to the Künste im Exil object record that it publishes.",
         "fields": {
@@ -13174,6 +13291,15 @@
       }
     },
     "Sources": {
+      "SRC0527": {
+        "reason": "Synchronize the Brooklyn Daily Eagle Escapade clipping with Newspapers.com and the Brooklyn Public Library, which are named in its repository metadata.",
+        "fields": {
+          "organizationIds": [
+            "ORG095",
+            "ORG100"
+          ]
+        }
+      },
       "SRC0835": {
         "reason": "Synchronize the Die Bühne press photograph source with the Austrian National Library / ANNO repository.",
         "fields": {
