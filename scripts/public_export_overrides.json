@@ -750,6 +750,25 @@
           "researchNoteType": "evidence_note"
         }
       },
+      "SRC0406": {
+        "reason": "Replace the Wikipedia-based identification with a citation of the primary periodical issue and an exact commercial listing that independently documents the same physical issue and matching cover.",
+        "fields": {
+          "shortCitation": "Le Chant du destin — Le Film complet du samedi, no. 1619",
+          "fullCitation": "Le Chant du destin. Le Film complet du samedi, 14e année, no. 1619, 30 March 1935. 16 pp.; cover featuring Lucien Muratore. Physical copy and matching cover documented in eBay listing no. 302126350044.",
+          "title": "Le Chant du destin — Le Film complet du samedi no. 1619",
+          "repository": "Private collection (commercial listing via eBay)",
+          "publication": "Le Film complet du samedi",
+          "accessDate": "2026-08-30",
+          "reliability": "medium",
+          "primaryUrl": "https://www.ebay.fr/itm/302126350044",
+          "researchNote": "The local scan itself supplies the periodical title, issue number, date and cover title. The commercial listing independently documents a physical copy of the same issue and displays the matching cover, but it does not establish the provenance of the local image file.",
+          "researchNoteType": "object_context"
+        },
+        "removeFields": [
+          "creator",
+          "organizationIds"
+        ]
+      },
       "SRC0834": {
         "reason": "Distinguish the source-copy holder, digitization repository and access interface; normalize the press citation and move the printed image caption into the existing object-context note.",
         "fields": {
@@ -3547,8 +3566,13 @@
       "M173": {
         "reason": "Classify the 1935 French film-periodical issue chronologically in the Hollywood period while retaining its relationship to the earlier European film Le Chant du destin.",
         "fields": {
-          "period": "hollywood"
-        }
+          "period": "hollywood",
+          "publicCaption": "Cover of Le Film complet du samedi, 14e année, no. 1619 (30 March 1935), devoted to Le Chant du destin and featuring Lucien Muratore.",
+          "publicCreditLine": "Le Film complet du samedi, 14e année, no. 1619, 30 March 1935; reuse rights not cleared."
+        },
+        "removeFields": [
+          "externalUrl"
+        ]
       },
       "M195": {
         "reason": "Retain M195 as the sole canonical record for the November 1933 NAC reception photograph after removing the byte-identical duplicate M216.",
@@ -16288,9 +16312,10 @@
         }
       },
       "ORG090": {
-        "reason": "Remove SRC0532 from Wikimedia Foundation after replacing the Wikipedia citation with the BnF title authority record.",
+        "reason": "Remove sources whose Wikipedia-based citations have been replaced by direct or authoritative evidence.",
         "fields": {
           "sourceIds": [
+            "SRC0406",
             "SRC0532"
           ]
         }
