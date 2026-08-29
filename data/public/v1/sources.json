@@ -674,11 +674,11 @@
     },
     {
       "id": "SRC0026",
-      "shortCitation": "Der Kinematograph (Berlin), 1932 (no. 2)",
-      "fullCitation": "Der Kinematograph (Berlin), 1932, no. 2. Lantern / Media History Digital Library. Premiere advertisement for Es wird schon wieder besser… at the UFA Gloria-Palast.",
+      "shortCitation": "Premiere advertisement for Es wird schon wieder besser… — Der Kinematograph",
+      "fullCitation": "[Premiere advertisement for Es wird schon wieder besser…]. Der Kinematograph (Berlin), no. 2 (1932), scan leaf 18. Media History Digital Library / Lantern.",
       "sourceType": "press_item",
-      "title": "Der Kinematograph, 1932, no. 2 — Es wird schon wieder besser advertisement",
-      "repository": "Lantern / Media History Digital Library",
+      "title": "Premiere advertisement for Es wird schon wieder besser…",
+      "repository": "Media History Digital Library / Lantern",
       "publication": "Der Kinematograph",
       "date": "1932",
       "accessDate": "2026-07-13",
@@ -692,7 +692,15 @@
         "M031",
         "M104"
       ],
-      "primaryUrl": "https://lantern.mediahist.org/catalog/kinematograph-1932-02_0018"
+      "primaryUrl": "https://lantern.mediahist.org/catalog/kinematograph-1932-02_0018",
+      "workIds": [
+        "W-F009"
+      ],
+      "filmIds": [
+        "F009"
+      ],
+      "researchNote": "The advertisement announces Es wird schon wieder besser… at the UFA Gloria-Palast.",
+      "researchNoteType": "evidence_note"
     },
     {
       "id": "SRC0028",
@@ -953,10 +961,10 @@
     },
     {
       "id": "SRC0045",
-      "shortCitation": "Variety, 27 November 1935 — Last of the Pagans",
-      "fullCitation": "Variety (New York), 27 November 1935. Internet Archive / Media History Digital Library. Note on the Kaper–Jurmann tune “Music on the Starlit Water,” theme for MGM’s Last of the Pagans; lyrics by Ned Washington.",
+      "shortCitation": "“Music on the Starlit Water” notice — Variety",
+      "fullCitation": "[Music note on “Music on the Starlit Water”]. Variety (New York), vol. 120, 27 November 1935, p. 44. Internet Archive / Media History Digital Library.",
       "sourceType": "press_item",
-      "title": "Variety, 27 November 1935 (Last of the Pagans)",
+      "title": "Music on the Starlit Water notice",
       "repository": "Internet Archive / Media History Digital Library",
       "publication": "Variety",
       "date": "1935-11-27",
@@ -973,14 +981,23 @@
         "M208"
       ],
       "primaryUrl": "https://archive.org/details/variety120-1935-11/page/n243/mode/2up",
-      "accessUrl": "https://archive.org/details/variety120-1935-11/page/n243/mode/2up?q=kaper"
+      "accessUrl": "https://archive.org/details/variety120-1935-11/page/n243/mode/2up?q=kaper",
+      "workIds": [
+        "W-F035"
+      ],
+      "filmIds": [
+        "F035"
+      ],
+      "researchNote": "The item identifies “Music on the Starlit Water” as a Bronisław Kaper–Walter Jurmann tune used as the theme for MGM’s Last of the Pagans and credits Ned Washington with the lyrics.",
+      "researchNoteType": "evidence_note"
     },
     {
       "id": "SRC0046",
-      "shortCitation": "Variety, 27 November 1935 — Love Song of Tahiti",
-      "fullCitation": "Variety (New York), 27 November 1935. Internet Archive / Media History Digital Library. Robbins advertisement for “Love Song of Tahiti” by Gus Kahn, Walter Jurmann, and Bronisław Kaper.",
+      "shortCitation": "“Love Song of Tahiti” advertisement — Variety",
+      "fullCitation": "Robbins Music Corporation. “Love Song of Tahiti.” Advertisement. Variety (New York), vol. 120, 27 November 1935, p. 44. Internet Archive / Media History Digital Library.",
       "sourceType": "press_item",
-      "title": "Variety, 27 November 1935 (Love Song of Tahiti)",
+      "title": "Love Song of Tahiti advertisement",
+      "creator": "Robbins Music Corporation",
       "repository": "Internet Archive / Media History Digital Library",
       "publication": "Variety",
       "date": "1935-11-27",
@@ -990,14 +1007,27 @@
       "slug": "src0046-variety-1935-tahiti",
       "organizationIds": [
         "ORG067",
-        "ORG091"
+        "ORG091",
+        "ORG035"
       ],
       "mediaIds": [
         "M034",
         "M209"
       ],
       "primaryUrl": "https://archive.org/details/variety120-1935-11/page/n243/mode/2up",
-      "accessUrl": "https://archive.org/details/variety120-1935-11/page/n243/mode/2up?q=kaper"
+      "accessUrl": "https://archive.org/details/variety120-1935-11/page/n243/mode/2up?q=kaper",
+      "workIds": [
+        "W-F034",
+        "W-S123"
+      ],
+      "filmIds": [
+        "F034"
+      ],
+      "songIds": [
+        "S123"
+      ],
+      "researchNote": "The advertisement credits Gus Kahn, Walter Jurmann and Bronisław Kaper and promotes the song as a theme used throughout MGM’s Mutiny on the Bounty.",
+      "researchNoteType": "evidence_note"
     },
     {
       "id": "SRC0047",
@@ -11314,28 +11344,33 @@
     },
     {
       "id": "SRC0333",
-      "shortCitation": "Illustrierter Film-Kurier no. 431 — Skandal in der Parkstraße (1932)",
-      "fullCitation": "Illustrierter Film-Kurier, no. 431 (1932). Programme for Skandal in der Parkstraße (dir. Franz Wenzler). Internet Archive.",
+      "shortCitation": "Skandal in der Parkstraße — Illustrierter Film-Kurier no. 1759",
+      "fullCitation": "Skandal in der Parkstraße. Illustrierter Film-Kurier, no. 1759 (1932). Film programme. University of Warwick copy, digitized by Internet Archive.",
       "sourceType": "press_item",
-      "title": "Illustrierter Film-Kurier, no. 431 — Skandal in der Parkstraße",
+      "title": "Skandal in der Parkstraße — Illustrierter Film-Kurier no. 1759",
       "repository": "Internet Archive",
       "publication": "Illustrierter Film-Kurier",
       "date": "1932",
       "accessDate": "2026-06-26",
       "reliability": "medium",
       "sourceStatus": "verified_with_attribution_note",
-      "slug": "src0333-illustrierter-film-kurier-431-1932",
+      "slug": "src0333-illustrierter-film-kurier-1759-1932",
       "organizationIds": [
         "ORG067"
       ],
       "workIds": [
         "W-F010"
       ],
+      "filmIds": [
+        "F010"
+      ],
       "mediaIds": [
         "M165"
       ],
       "primaryUrl": "https://archive.org/details/skandalinderpark0000illu",
-      "accessUrl": "https://archive.org/details/skandalinderpark0000illu/mode/2up?q=Jurmann"
+      "accessUrl": "https://archive.org/details/skandalinderpark0000illu/mode/2up?q=Jurmann",
+      "researchNote": "The credit page names Franz Wenzler as director, Dr. B. Kaper and Walter Jurmann for the music, and Fritz Rotter for the lyrics.",
+      "researchNoteType": "evidence_note"
     },
     {
       "id": "SRC0334",
@@ -13388,10 +13423,10 @@
     },
     {
       "id": "SRC0407",
-      "shortCitation": "Illustrierter Film-Kurier no. 1819 — Die Zwei vom Südexpress",
-      "fullCitation": "Illustrierter Film-Kurier, no. 1819 (14. Jahrgang, 1932), programme issue for Die Zwei vom Südexpress, page n7. Internet Archive.",
+      "shortCitation": "Die Zwei vom Südexpress — Illustrierter Film-Kurier no. 1819",
+      "fullCitation": "Die Zwei vom Südexpress. Illustrierter Film-Kurier, no. 1819, 14. Jahrgang (1932). Film programme. University of Warwick copy, digitized by Internet Archive.",
       "sourceType": "press_item",
-      "title": "Illustrierter Film-Kurier: Die Zwei vom Südexpress",
+      "title": "Die Zwei vom Südexpress — Illustrierter Film-Kurier no. 1819",
       "repository": "Internet Archive",
       "publication": "Illustrierter Film-Kurier",
       "date": "1932",
@@ -13430,7 +13465,9 @@
       "nameVariantIds": [
         "PNV0020"
       ],
-      "primaryUrl": "https://archive.org/details/diezweivomsdexpr0000illu/page/n7/mode/2up"
+      "primaryUrl": "https://archive.org/details/diezweivomsdexpr0000illu/page/n7/mode/2up",
+      "researchNote": "The credit page names Robert Wohlmuth as director, Friedrich Jung for the compositions, Jurmann, Kaper and Rotter for the popular songs, and Hans Wenning for musical direction.",
+      "researchNoteType": "evidence_note"
     },
     {
       "id": "SRC0408",
@@ -13452,10 +13489,10 @@
     },
     {
       "id": "SRC0409",
-      "shortCitation": "Illustrierter Film-Kurier no. 1951 — Ein Lied für Dich",
-      "fullCitation": "Illustrierter Film-Kurier, no. 1951 (15. Jahrgang, 1933), programme issue for Ein Lied für Dich. Internet Archive.",
+      "shortCitation": "Ein Lied für Dich — Illustrierter Film-Kurier no. 1957",
+      "fullCitation": "Ein Lied für Dich. Illustrierter Film-Kurier, no. 1957, 15. Jahrgang (1933). Film programme. University of Warwick copy, digitized by Internet Archive.",
       "sourceType": "press_item",
-      "title": "Illustrierter Film-Kurier: Ein Lied für Dich",
+      "title": "Ein Lied für Dich — Illustrierter Film-Kurier no. 1957",
       "repository": "Internet Archive",
       "publication": "Illustrierter Film-Kurier",
       "date": "1933",
@@ -13482,7 +13519,9 @@
         "CON-F023-PC-ORG003"
       ],
       "primaryUrl": "https://archive.org/details/einliedfrdich0000illu/mode/2up",
-      "accessUrl": "https://archive.org/details/einliedfrdich0000illu/mode/2up?q=Kaper"
+      "accessUrl": "https://archive.org/details/einliedfrdich0000illu/mode/2up?q=Kaper",
+      "researchNote": "The programme credits Joe May as director and Willy Schmidt-Gentner with musical direction; its song page prints lyrics by Ernst Marischka and Fritz Rotter and music by Jurmann and Kaper.",
+      "researchNoteType": "evidence_note"
     },
     {
       "id": "SRC0410",
@@ -13747,11 +13786,11 @@
     },
     {
       "id": "SRC0423",
-      "shortCitation": "Der Kinematograph, May 1930 — Der Korvettenkapitän advertisement",
-      "fullCitation": "Advertisement for Der Korvettenkapitän / Blaue Jungs von der Marine. Der Kinematograph, May 1930. Internet Archive. Credits music to Dr. B. Kaper.",
+      "shortCitation": "Der Korvettenkapitän advertisement — Der Kinematograph",
+      "fullCitation": "[Advertisement for Der Korvettenkapitän (Blaue Jungs von der Marine)]. Der Kinematograph (Berlin), May 1930, scan leaf 51. Internet Archive / Media History Digital Library.",
       "sourceType": "press_item",
-      "title": "Der Korvettenkapitän / Blaue Jungs von der Marine advertisement",
-      "repository": "Internet Archive",
+      "title": "Der Korvettenkapitän (Blaue Jungs von der Marine) advertisement",
+      "repository": "Internet Archive / Media History Digital Library",
       "publication": "Der Kinematograph",
       "date": "1930-05",
       "accessDate": "2026-06-24",
@@ -13759,7 +13798,14 @@
       "sourceStatus": "verified_with_attribution_note",
       "slug": "src0423-der-kinematograph-1930-korvettenkapitaen",
       "organizationIds": [
-        "ORG067"
+        "ORG067",
+        "ORG091"
+      ],
+      "workIds": [
+        "W-F003"
+      ],
+      "filmIds": [
+        "F003"
       ],
       "mediaIds": [
         "M037"
@@ -13767,14 +13813,16 @@
       "timelineEventIds": [
         "TE0025"
       ],
-      "primaryUrl": "https://archive.org/details/kinematograph-1930-05/mode/2up?q=%22blaue+jungs+von+der+marine%22"
+      "primaryUrl": "https://archive.org/details/kinematograph-1930-05/page/n51/mode/2up",
+      "researchNote": "The advertisement identifies Rudolf Walther-Fein as director, Fritz Rotter and Dr. B. Kaper for the new song, and Dr. B. Kaper for the musical composition.",
+      "researchNoteType": "evidence_note"
     },
     {
       "id": "SRC0424",
-      "shortCitation": "Illustrierter Film-Kurier — Melodie der Liebe",
-      "fullCitation": "Illustrierter Film-Kurier [issue for Melodie der Liebe] (1932). Internet Archive.",
+      "shortCitation": "Melodie der Liebe — Illustrierter Film-Kurier no. 1766",
+      "fullCitation": "Melodie der Liebe. Illustrierter Film-Kurier, no. 1766 (1932). Film programme. University of Warwick copy, digitized by Internet Archive.",
       "sourceType": "press_item",
-      "title": "Illustrierter Film-Kurier — Melodie der Liebe",
+      "title": "Melodie der Liebe — Illustrierter Film-Kurier no. 1766",
       "repository": "Internet Archive",
       "publication": "Illustrierter Film-Kurier",
       "date": "1932",
@@ -13785,11 +13833,19 @@
       "organizationIds": [
         "ORG067"
       ],
+      "workIds": [
+        "W-F011"
+      ],
+      "filmIds": [
+        "F011"
+      ],
       "mediaIds": [
         "M155"
       ],
       "primaryUrl": "https://archive.org/details/melodiederliebe0000illu",
-      "accessUrl": "https://archive.org/details/melodiederliebe0000illu/mode/2up?q=%22melodie+der+liebe%22"
+      "accessUrl": "https://archive.org/details/melodiederliebe0000illu/mode/2up?q=%22melodie+der+liebe%22",
+      "researchNote": "The credit page names Dr. Kaper and Walter Jurmann for the songs, Fritz Rotter for the lyrics, Paul Dessau for musical direction and arrangement, and Alrobi-Verlag as music publisher.",
+      "researchNoteType": "evidence_note"
     },
     {
       "id": "SRC0425",
@@ -14240,11 +14296,11 @@
     },
     {
       "id": "SRC0449",
-      "shortCitation": "Der Kinematograph, October 1930 — Laubenkolonie advertisement",
-      "fullCitation": "Advertisement for Laubenkolonie / Die lustigen Musikanten. Der Kinematograph, October 1930. Internet Archive.",
+      "shortCitation": "Laubenkolonie premiere advertisement — Der Kinematograph",
+      "fullCitation": "[Premiere advertisement for Laubenkolonie (Die lustigen Musikanten)]. Der Kinematograph (Berlin), October 1930, scan leaf 123. Internet Archive / Media History Digital Library.",
       "sourceType": "press_item",
-      "title": "Laubenkolonie / Die lustigen Musikanten advertisement",
-      "repository": "Internet Archive",
+      "title": "Laubenkolonie (Die lustigen Musikanten) premiere advertisement",
+      "repository": "Internet Archive / Media History Digital Library",
       "publication": "Der Kinematograph",
       "date": "1930-10",
       "accessDate": "2026-06-24",
@@ -14252,15 +14308,21 @@
       "sourceStatus": "verified_with_attribution_note",
       "slug": "src0449-der-kinematograph-1930-laubenkolonie",
       "organizationIds": [
-        "ORG067"
+        "ORG067",
+        "ORG091"
       ],
       "workIds": [
         "W-F001"
       ],
+      "filmIds": [
+        "F001"
+      ],
       "mediaIds": [
         "M188"
       ],
-      "primaryUrl": "https://archive.org/details/kinematograph-1930-10/mode/2up?q=%22die+lustigen+Musikanten%22"
+      "primaryUrl": "https://archive.org/details/kinematograph-1930-10/page/n123/mode/2up",
+      "researchNote": "The advertisement credits Dr. B. Kaper with the music and announces the premiere at the Primus-Palast, Potsdamer Straße, on Friday, 24 October 1930.",
+      "researchNoteType": "evidence_note"
     },
     {
       "id": "SRC0450",
@@ -17949,18 +18011,23 @@
     },
     {
       "id": "SRC0569",
-      "shortCitation": "“Songs Played Over 10,000 Times,” Motion Picture Herald (5 September 1936).",
-      "fullCitation": "“Songs Played Over 10,000 Times.” Motion Picture Herald 124 (5 September 1936). American Society of Composers, Authors and Publishers tabulation of the 112 songs performed at least 10,000 times over the NBC and CBS networks during 1935–36. “You’re All I Need” ranks 14th with 21,424 broadcasts, listed under the source title Lie Like Gentlemen (Escapade) and credited to Bronislaw Kaper, Walter Jarmann [Jurmann] and Gus Kahn, published by Robbins. Internet Archive.",
+      "shortCitation": "“Songs Played Over 10,000 Times” — Motion Picture Herald",
+      "fullCitation": "“Songs Played Over 10,000 Times.” Motion Picture Herald, vol. 124, 5 September 1936, p. 14. Internet Archive / Media History Digital Library; scan contributed by the Library of Congress, MBRS, Moving Image Section.",
       "sourceType": "press_item",
-      "title": "Songs Played Over 10,000 Times — ASCAP tabulation for 1935–36",
-      "publication": "Motion Picture Herald 124",
+      "title": "Songs Played Over 10,000 Times",
+      "publication": "Motion Picture Herald",
       "date": "1936-09-05",
-      "primaryUrl": "https://archive.org/stream/motionpictureher1241unse/motionpictureher1241unse_djvu.txt",
+      "primaryUrl": "https://archive.org/details/motionpictureher1241unse/page/n19/mode/2up",
       "accessDate": "2026-07-28",
-      "repository": "Internet Archive",
+      "repository": "Internet Archive / Media History Digital Library",
       "reliability": "high",
       "sourceStatus": "verified",
       "slug": "src0569-songs-played-over-10000-times-1936",
+      "organizationIds": [
+        "ORG067",
+        "ORG091",
+        "ORG066"
+      ],
       "workIds": [
         "W-S119",
         "W-F033"
@@ -17979,7 +18046,9 @@
       "mediaIds": [
         "M006",
         "M241"
-      ]
+      ],
+      "researchNote": "The ASCAP tabulation ranks “You’re All I Need” fourteenth with 21,424 network broadcasts. It prints the source title as Lie Like Gentlemen (Escapade), Walter Jurmann’s surname as “Jarmann,” and credits Bronisław Kaper, Walter Jurmann and Gus Kahn; the publisher is Robbins.",
+      "researchNoteType": "evidence_note"
     },
     {
       "id": "SRC0570",
@@ -20967,16 +21036,20 @@
       "accessDate": "2026-08-06",
       "creator": "Pax-Film GmbH",
       "date": "1932-08",
-      "title": "Der Kinematograph (Berlin), August 1932, p. 118",
-      "shortCitation": "Der Kinematograph, August 1932, p. 118 — Der glückliche Herr Fünf advertisement",
-      "fullCitation": "Advertisement, “Demnächst erscheint: Der glückliche Herr Fünf, nach dem Roman Herr Fünf von Alice Berend. Regie: Heinz Hilpert. Musik: Dr. Kaper und Walter Jurmann. In der Hauptrolle: Willi Domgraf-Fassbaender. Produktion: Pax Film GmbH, Berlin SW 68.” Der Kinematograph (Berlin), August 1932, p. 118. Digitised issue at the Internet Archive. The film was released in 1933 as Ich will Dich Liebe lehren. Accessed 6 August 2026.",
+      "title": "Der glückliche Herr Fünf advertisement",
+      "shortCitation": "Der glückliche Herr Fünf advertisement — Der Kinematograph",
+      "fullCitation": "[Advertisement for Der glückliche Herr Fünf]. Der Kinematograph (Berlin), August 1932, scan leaf 118. Internet Archive / Media History Digital Library.",
       "publication": "Der Kinematograph",
-      "repository": "Internet Archive",
-      "primaryUrl": "https://archive.org/details/kinematograph-1932-08/page/29/mode/2up",
+      "repository": "Internet Archive / Media History Digital Library",
+      "primaryUrl": "https://archive.org/details/kinematograph-1932-08/page/n118/mode/2up",
       "reliability": "high",
       "sourceStatus": "verified",
       "sourceType": "press_item",
       "slug": "src0690-kinematograph-1932-08-der-glueckliche-herr-fuenf",
+      "organizationIds": [
+        "ORG067",
+        "ORG091"
+      ],
       "personIds": [
         "P009",
         "P077",
@@ -21005,7 +21078,9 @@
       "songIds": [
         "S058",
         "S084"
-      ]
+      ],
+      "researchNote": "The advertisement uses the pre-release title Der glückliche Herr Fünf, after Alice Berend’s novel Herr Fünf. It credits Heinz Hilpert as director, Bronisław Kaper and Walter Jurmann with the music, Willi Domgraf-Fassbaender in the leading role, and Pax Film GmbH as producer. The released film is documented elsewhere as Ich will Dich Liebe lehren.",
+      "researchNoteType": "evidence_note"
     },
     {
       "id": "SRC0691",
@@ -21419,11 +21494,11 @@
     },
     {
       "id": "SRC0703",
-      "shortCitation": "Film-Magazin (Berlin), 1929 — portrait of Willy Schmidt-Gentner",
-      "fullCitation": "Film-Magazin, vereinigt mit Filmwelt (Berlin), volume 3, 1929. Photograph of Willy Schmidt-Gentner captioned “Kapellmeister Willy Schmidt-Gentner bei der Komposition der Begleitmusik zu dem Fritz-Lang-Film der Ufa „Frau im Mond“”, credited “Phot. Ufa”; scan leaf 1084 of 1241. Digitised from the Museum of Modern Art Library copy for the Media History Digital Library; copy at the Internet Archive. Accessed 16 August 2026.",
+      "shortCitation": "Willy Schmidt-Gentner composing for Frau im Mond — Film-Magazin",
+      "fullCitation": "[Willy Schmidt-Gentner composing the accompaniment for Frau im Mond]. Photograph credited “Phot. Ufa.” Film-Magazin, vereinigt mit Filmwelt (Berlin), vol. 3 (1929), scan leaf 1084. Museum of Modern Art Library copy; Internet Archive / Media History Digital Library.",
       "sourceType": "press_item",
-      "title": "Willy Schmidt-Gentner at work on the music for Frau im Mond — Film-Magazin, 1929",
-      "creator": "Film-Magazin, vereinigt mit Filmwelt; photograph credited to Ufa",
+      "title": "Willy Schmidt-Gentner composing for Frau im Mond",
+      "creator": "Ufa (photograph credit)",
       "repository": "Internet Archive / Media History Digital Library",
       "publication": "Film-Magazin, vereinigt mit Filmwelt",
       "date": "1929",
@@ -21431,13 +21506,20 @@
       "reliability": "high",
       "sourceStatus": "verified",
       "slug": "src0703-film-magazin-1929-willy-schmidt-gentner",
+      "organizationIds": [
+        "ORG067",
+        "ORG091",
+        "ORG011"
+      ],
       "personIds": [
         "P142"
       ],
       "mediaIds": [
         "M343"
       ],
-      "primaryUrl": "https://archive.org/details/filmmag03berl/page/n1084"
+      "primaryUrl": "https://archive.org/details/filmmag03berl/page/n1084",
+      "researchNote": "The printed caption identifies “Kapellmeister Willy Schmidt-Gentner” while composing the accompaniment to Ufa’s Fritz Lang film Frau im Mond.",
+      "researchNoteType": "evidence_note"
     },
     {
       "id": "SRC0704",

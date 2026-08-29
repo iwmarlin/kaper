@@ -2912,6 +2912,62 @@
       }
     },
     "Media": {
+      "M155": {
+        "reason": "Add the verified Illustrierter Film-Kurier issue number 1766 consistently across the public media record.",
+        "fields": {
+          "title": "Melodie der Liebe (1932) — Illustrierter Film-Kurier, no. 1766",
+          "description": "Illustrierter Film-Kurier programme cover for Melodie der Liebe (1932), issue no. 1766.",
+          "publicCaption": "Illustrierter Film-Kurier programme cover for Melodie der Liebe (1932), issue no. 1766.",
+          "publicCreditLine": "Illustrierter Film-Kurier, no. 1766."
+        }
+      },
+      "M165": {
+        "reason": "Correct the programme number from 431 to the verified Illustrierter Film-Kurier no. 1759 consistently across the public media record.",
+        "fields": {
+          "title": "Skandal in der Parkstraße (1932) — Illustrierter Film-Kurier, no. 1759",
+          "description": "Illustrierter Film-Kurier programme cover for Skandal in der Parkstraße (1932), issue no. 1759.",
+          "publicCaption": "Illustrierter Film-Kurier programme cover for Skandal in der Parkstraße (1932), issue no. 1759.",
+          "publicCreditLine": "Illustrierter Film-Kurier, no. 1759."
+        }
+      },
+      "M192": {
+        "reason": "Correct the programme number from 1951 to the verified Illustrierter Film-Kurier no. 1957 consistently across the public media record.",
+        "fields": {
+          "title": "Ein Lied für Dich (1933) — Illustrierter Film-Kurier, no. 1957",
+          "description": "Cover of Illustrierter Film-Kurier, no. 1957, devoted to Ein Lied für Dich (1933), Joe May’s film with Jan Kiepura and Jenny Jugo and music by Walter Jurmann and Bronisław Kaper. This is a film-program/periodical cover, not a standard theatrical poster.",
+          "publicCaption": "Illustrierter Film-Kurier programme cover for Ein Lied für Dich (1933), issue no. 1957.",
+          "publicCreditLine": "Illustrierter Film-Kurier, no. 1957; reproduction via Internet Archive."
+        }
+      },
+      "M209": {
+        "reason": "Correct the clipping's identity and graph placement: it is a Robbins advertisement for Love Song of Tahiti associated with Mutiny on the Bounty, not a Last of the Pagans / Tahiti item.",
+        "fields": {
+          "title": "Variety, 27 November 1935 — Love Song of Tahiti advertisement",
+          "description": "Robbins Music Corporation advertisement for “Love Song of Tahiti” in Variety (New York), 27 November 1935. The advertisement credits Gus Kahn, Walter Jurmann and Bronisław Kaper and identifies the song as a theme used throughout Mutiny on the Bounty. Digitized by Internet Archive / Media History Digital Library.",
+          "slug": "variety-love-song-of-tahiti-advertisement-1935",
+          "publicCaption": "Robbins Music Corporation advertisement for “Love Song of Tahiti” in Variety, 27 November 1935, crediting Gus Kahn, Walter Jurmann and Bronisław Kaper and associating the song with Mutiny on the Bounty.",
+          "organizationIds": [
+            "ORG001",
+            "ORG035"
+          ],
+          "workIds": [
+            "W-F034",
+            "W-S123"
+          ],
+          "songIds": [
+            "S123"
+          ]
+        }
+      },
+      "M343": {
+        "reason": "Use the verified Film-Magazin caption and connect the image to the credited studio Ufa; its sitter remains linked through SRC0703, following the portrait model used throughout the export.",
+        "fields": {
+          "description": "Willy Schmidt-Gentner composing the accompaniment for Ufa’s Frau im Mond, as captioned in Film-Magazin in 1929. The photograph is credited “Phot. Ufa”.",
+          "organizationIds": [
+            "ORG011"
+          ]
+        }
+      },
       "M031": {
         "reason": "Replace two excluded duplicate records for the Mein Film review with the single canonical source SRC0086.",
         "fields": {
@@ -7434,6 +7490,73 @@
           ]
         }
       },
+      "SRC0026": {
+        "reason": "Normalize the item-level citation to the verified Der Kinematograph issue and leaf while preserving the existing Lantern access point.",
+        "fields": {
+          "shortCitation": "Premiere advertisement for Es wird schon wieder besser… — Der Kinematograph",
+          "fullCitation": "[Premiere advertisement for Es wird schon wieder besser…]. Der Kinematograph (Berlin), no. 2 (1932), scan leaf 18. Media History Digital Library / Lantern.",
+          "title": "Premiere advertisement for Es wird schon wieder besser…",
+          "repository": "Media History Digital Library / Lantern",
+          "researchNote": "The advertisement announces Es wird schon wieder besser… at the UFA Gloria-Palast.",
+          "researchNoteType": "evidence_note"
+        }
+      },
+      "SRC0045": {
+        "reason": "Separate the bibliographic citation from the verified item-level evidence on the Variety page.",
+        "fields": {
+          "shortCitation": "“Music on the Starlit Water” notice — Variety",
+          "fullCitation": "[Music note on “Music on the Starlit Water”]. Variety (New York), vol. 120, 27 November 1935, p. 44. Internet Archive / Media History Digital Library.",
+          "title": "Music on the Starlit Water notice",
+          "repository": "Internet Archive / Media History Digital Library",
+          "primaryUrl": "https://archive.org/details/variety120-1935-11/page/n243/mode/2up",
+          "researchNote": "The item identifies “Music on the Starlit Water” as a Bronisław Kaper–Walter Jurmann tune used as the theme for MGM’s Last of the Pagans and credits Ned Washington with the lyrics.",
+          "researchNoteType": "evidence_note"
+        }
+      },
+      "SRC0046": {
+        "reason": "Correct the clipping's identity: it is a Robbins advertisement for Love Song of Tahiti associated with Mutiny on the Bounty, not Last of the Pagans.",
+        "fields": {
+          "shortCitation": "“Love Song of Tahiti” advertisement — Variety",
+          "fullCitation": "Robbins Music Corporation. “Love Song of Tahiti.” Advertisement. Variety (New York), vol. 120, 27 November 1935, p. 44. Internet Archive / Media History Digital Library.",
+          "title": "Love Song of Tahiti advertisement",
+          "creator": "Robbins Music Corporation",
+          "repository": "Internet Archive / Media History Digital Library",
+          "primaryUrl": "https://archive.org/details/variety120-1935-11/page/n243/mode/2up",
+          "researchNote": "The advertisement credits Gus Kahn, Walter Jurmann and Bronisław Kaper and promotes the song as a theme used throughout MGM’s Mutiny on the Bounty.",
+          "researchNoteType": "evidence_note"
+        }
+      },
+      "SRC0333": {
+        "reason": "Correct the programme number from 431 to the verified Illustrierter Film-Kurier no. 1759 and separate its credits into an evidence note.",
+        "fields": {
+          "shortCitation": "Skandal in der Parkstraße — Illustrierter Film-Kurier no. 1759",
+          "fullCitation": "Skandal in der Parkstraße. Illustrierter Film-Kurier, no. 1759 (1932). Film programme. University of Warwick copy, digitized by Internet Archive.",
+          "title": "Skandal in der Parkstraße — Illustrierter Film-Kurier no. 1759",
+          "slug": "src0333-illustrierter-film-kurier-1759-1932",
+          "researchNote": "The credit page names Franz Wenzler as director, Dr. B. Kaper and Walter Jurmann for the music, and Fritz Rotter for the lyrics.",
+          "researchNoteType": "evidence_note"
+        }
+      },
+      "SRC0407": {
+        "reason": "Normalize the programme citation and keep its source-specific allocation of composition, songs and musical direction in an evidence note.",
+        "fields": {
+          "shortCitation": "Die Zwei vom Südexpress — Illustrierter Film-Kurier no. 1819",
+          "fullCitation": "Die Zwei vom Südexpress. Illustrierter Film-Kurier, no. 1819, 14. Jahrgang (1932). Film programme. University of Warwick copy, digitized by Internet Archive.",
+          "title": "Die Zwei vom Südexpress — Illustrierter Film-Kurier no. 1819",
+          "researchNote": "The credit page names Robert Wohlmuth as director, Friedrich Jung for the compositions, Jurmann, Kaper and Rotter for the popular songs, and Hans Wenning for musical direction.",
+          "researchNoteType": "evidence_note"
+        }
+      },
+      "SRC0409": {
+        "reason": "Correct the programme number from 1951 to the verified Illustrierter Film-Kurier no. 1957 and separate item-level credits from the citation.",
+        "fields": {
+          "shortCitation": "Ein Lied für Dich — Illustrierter Film-Kurier no. 1957",
+          "fullCitation": "Ein Lied für Dich. Illustrierter Film-Kurier, no. 1957, 15. Jahrgang (1933). Film programme. University of Warwick copy, digitized by Internet Archive.",
+          "title": "Ein Lied für Dich — Illustrierter Film-Kurier no. 1957",
+          "researchNote": "The programme credits Joe May as director and Willy Schmidt-Gentner with musical direction; its song page prints lyrics by Ernst Marischka and Fritz Rotter and music by Jurmann and Kaper.",
+          "researchNoteType": "evidence_note"
+        }
+      },
       "SRC0567": {
         "reason": "Document the Disney Wiki / Fandom page and preserve the portrait's unresolved photographer, date and publication in the citation; keep the rights assessment exclusively with the linked medium.",
         "fields": {
@@ -7482,22 +7605,61 @@
           ]
         }
       },
+      "SRC0423": {
+        "reason": "Normalize the Der Kinematograph citation to the verified scan leaf and separate the printed credits from the bibliography.",
+        "fields": {
+          "shortCitation": "Der Korvettenkapitän advertisement — Der Kinematograph",
+          "fullCitation": "[Advertisement for Der Korvettenkapitän (Blaue Jungs von der Marine)]. Der Kinematograph (Berlin), May 1930, scan leaf 51. Internet Archive / Media History Digital Library.",
+          "title": "Der Korvettenkapitän (Blaue Jungs von der Marine) advertisement",
+          "repository": "Internet Archive / Media History Digital Library",
+          "primaryUrl": "https://archive.org/details/kinematograph-1930-05/page/n51/mode/2up",
+          "researchNote": "The advertisement identifies Rudolf Walther-Fein as director, Fritz Rotter and Dr. B. Kaper for the new song, and Dr. B. Kaper for the musical composition.",
+          "researchNoteType": "evidence_note"
+        }
+      },
+      "SRC0424": {
+        "reason": "Add the verified Illustrierter Film-Kurier number 1766 and separate the programme's item-level credits from its citation.",
+        "fields": {
+          "shortCitation": "Melodie der Liebe — Illustrierter Film-Kurier no. 1766",
+          "fullCitation": "Melodie der Liebe. Illustrierter Film-Kurier, no. 1766 (1932). Film programme. University of Warwick copy, digitized by Internet Archive.",
+          "title": "Melodie der Liebe — Illustrierter Film-Kurier no. 1766",
+          "researchNote": "The credit page names Dr. Kaper and Walter Jurmann for the songs, Fritz Rotter for the lyrics, Paul Dessau for musical direction and arrangement, and Alrobi-Verlag as music publisher.",
+          "researchNoteType": "evidence_note"
+        }
+      },
+      "SRC0449": {
+        "reason": "Normalize the Der Kinematograph citation to the verified scan leaf and preserve the printed music credit and premiere data as evidence.",
+        "fields": {
+          "shortCitation": "Laubenkolonie premiere advertisement — Der Kinematograph",
+          "fullCitation": "[Premiere advertisement for Laubenkolonie (Die lustigen Musikanten)]. Der Kinematograph (Berlin), October 1930, scan leaf 123. Internet Archive / Media History Digital Library.",
+          "title": "Laubenkolonie (Die lustigen Musikanten) premiere advertisement",
+          "repository": "Internet Archive / Media History Digital Library",
+          "primaryUrl": "https://archive.org/details/kinematograph-1930-10/page/n123/mode/2up",
+          "researchNote": "The advertisement credits Dr. B. Kaper with the music and announces the premiere at the Primus-Palast, Potsdamer Straße, on Friday, 24 October 1930.",
+          "researchNoteType": "evidence_note"
+        }
+      },
       "SRC0569": {
-        "reason": "Preserve the verified Motion Picture Herald source for the 1935–36 ASCAP broadcast tabulation and synchronize all work, event and media links.",
+        "reason": "Normalize the verified Motion Picture Herald citation to printed page 14, record the scan provenance, and separate the tabulation details from the bibliography.",
         "fields": {
           "id": "SRC0569",
-          "shortCitation": "“Songs Played Over 10,000 Times,” Motion Picture Herald (5 September 1936).",
-          "fullCitation": "“Songs Played Over 10,000 Times.” Motion Picture Herald 124 (5 September 1936). American Society of Composers, Authors and Publishers tabulation of the 112 songs performed at least 10,000 times over the NBC and CBS networks during 1935–36. “You’re All I Need” ranks 14th with 21,424 broadcasts, listed under the source title Lie Like Gentlemen (Escapade) and credited to Bronislaw Kaper, Walter Jarmann [Jurmann] and Gus Kahn, published by Robbins. Internet Archive.",
+          "shortCitation": "“Songs Played Over 10,000 Times” — Motion Picture Herald",
+          "fullCitation": "“Songs Played Over 10,000 Times.” Motion Picture Herald, vol. 124, 5 September 1936, p. 14. Internet Archive / Media History Digital Library; scan contributed by the Library of Congress, MBRS, Moving Image Section.",
           "sourceType": "press_item",
-          "title": "Songs Played Over 10,000 Times — ASCAP tabulation for 1935–36",
-          "publication": "Motion Picture Herald 124",
+          "title": "Songs Played Over 10,000 Times",
+          "publication": "Motion Picture Herald",
           "date": "1936-09-05",
-          "url": "https://archive.org/stream/motionpictureher1241unse/motionpictureher1241unse_djvu.txt",
+          "primaryUrl": "https://archive.org/details/motionpictureher1241unse/page/n19/mode/2up",
           "accessDate": "2026-07-28",
-          "repository": "Internet Archive",
+          "repository": "Internet Archive / Media History Digital Library",
           "reliability": "high",
           "sourceStatus": "verified",
           "slug": "src0569-songs-played-over-10000-times-1936",
+          "organizationIds": [
+            "ORG067",
+            "ORG091",
+            "ORG066"
+          ],
           "workIds": [
             "W-S119",
             "W-F033"
@@ -7516,7 +7678,37 @@
           "mediaIds": [
             "M006",
             "M241"
-          ]
+          ],
+          "researchNote": "The ASCAP tabulation ranks “You’re All I Need” fourteenth with 21,424 network broadcasts. It prints the source title as Lie Like Gentlemen (Escapade), Walter Jurmann’s surname as “Jarmann,” and credits Bronisław Kaper, Walter Jurmann and Gus Kahn; the publisher is Robbins.",
+          "researchNoteType": "evidence_note"
+        },
+        "removeFields": [
+          "url"
+        ]
+      },
+      "SRC0690": {
+        "reason": "Correct the direct scan leaf for the verified Der glückliche Herr Fünf advertisement and separate the printed credits from the bibliography.",
+        "fields": {
+          "shortCitation": "Der glückliche Herr Fünf advertisement — Der Kinematograph",
+          "fullCitation": "[Advertisement for Der glückliche Herr Fünf]. Der Kinematograph (Berlin), August 1932, scan leaf 118. Internet Archive / Media History Digital Library.",
+          "title": "Der glückliche Herr Fünf advertisement",
+          "repository": "Internet Archive / Media History Digital Library",
+          "primaryUrl": "https://archive.org/details/kinematograph-1932-08/page/n118/mode/2up",
+          "researchNote": "The advertisement uses the pre-release title Der glückliche Herr Fünf, after Alice Berend’s novel Herr Fünf. It credits Heinz Hilpert as director, Bronisław Kaper and Walter Jurmann with the music, Willi Domgraf-Fassbaender in the leading role, and Pax Film GmbH as producer. The released film is documented elsewhere as Ich will Dich Liebe lehren.",
+          "researchNoteType": "evidence_note"
+        }
+      },
+      "SRC0703": {
+        "reason": "Normalize the Film-Magazin photograph citation to the verified caption, scan leaf and institutional provenance.",
+        "fields": {
+          "shortCitation": "Willy Schmidt-Gentner composing for Frau im Mond — Film-Magazin",
+          "fullCitation": "[Willy Schmidt-Gentner composing the accompaniment for Frau im Mond]. Photograph credited “Phot. Ufa.” Film-Magazin, vereinigt mit Filmwelt (Berlin), vol. 3 (1929), scan leaf 1084. Museum of Modern Art Library copy; Internet Archive / Media History Digital Library.",
+          "title": "Willy Schmidt-Gentner composing for Frau im Mond",
+          "creator": "Ufa (photograph credit)",
+          "repository": "Internet Archive / Media History Digital Library",
+          "primaryUrl": "https://archive.org/details/filmmag03berl/page/n1084",
+          "researchNote": "The printed caption identifies “Kapellmeister Willy Schmidt-Gentner” while composing the accompaniment to Ufa’s Fritz Lang film Frau im Mond.",
+          "researchNoteType": "evidence_note"
         }
       },
       "SRC0570": {
@@ -10605,9 +10797,33 @@
         }
       },
       "ORG067": {
-        "reason": "Synchronize Internet Archive with the six digitized Hofmeister item records used for Jazz Drops nos. 1–5 and 7.",
+        "reason": "Synchronize Internet Archive with the digitized Hofmeister items and with the verified Motion Picture Herald, Der Kinematograph and Film-Magazin records hosted by the archive.",
         "fields": {
-          "sourceIds": ["SRC0768", "SRC0769", "SRC0770", "SRC0771", "SRC0772", "SRC0776"]
+          "sourceIds": ["SRC0569", "SRC0690", "SRC0703", "SRC0768", "SRC0769", "SRC0770", "SRC0771", "SRC0772", "SRC0776"]
+        }
+      },
+      "ORG091": {
+        "reason": "Synchronize Media History Digital Library with the verified trade-press records drawn from its digitized collections and Lantern index.",
+        "fields": {
+          "sourceIds": ["SRC0423", "SRC0449", "SRC0569", "SRC0690", "SRC0703"]
+        }
+      },
+      "ORG066": {
+        "reason": "Link the Library of Congress to the Motion Picture Herald scan it contributed through MBRS, Moving Image Section.",
+        "fields": {
+          "sourceIds": ["SRC0569"]
+        }
+      },
+      "ORG035": {
+        "reason": "Link Robbins Music Corporation to its verified Love Song of Tahiti advertisement in Variety.",
+        "fields": {
+          "sourceIds": ["SRC0046"]
+        }
+      },
+      "ORG011": {
+        "reason": "Link Ufa to the Film-Magazin photograph explicitly credited “Phot. Ufa.”",
+        "fields": {
+          "sourceIds": ["SRC0703"]
         }
       },
       "ORG056": {
@@ -11257,6 +11473,19 @@
       "O012": {"reason": "Attach the surviving Fiesta score headed Ein neuer Cocktail.", "fields": {"sourceIds": ["SRC0789"]}}
     },
     "Works": {
+      "W-F003": {
+        "reason": "Attach the verified Der Kinematograph advertisement to Der Korvettenkapitän.",
+        "fields": {
+          "sourceIds": ["SRC0423"]
+        }
+      },
+      "W-S123": {
+        "reason": "Attach the verified Variety advertisement and its image to Love Song of Tahiti.",
+        "fields": {
+          "sourceIds": ["SRC0046"],
+          "mediaIds": ["M209"]
+        }
+      },
       "W-S047": {
         "reason": "Expose the Alrobi publisher documented by Hofmeister alongside the separate Sirius-Mappen publication context.",
         "fields": {
@@ -11380,8 +11609,11 @@
         }
       },
       "W-F009": {
-        "reason": "Attach Kaper's composer credit and Jurmann's co-composer credit while retaining Kaper's separate music-direction contribution.",
+        "reason": "Attach the verified premiere advertisement, Kaper's composer credit and Jurmann's co-composer credit while retaining Kaper's separate music-direction contribution.",
         "fields": {
+          "sourceIds": [
+            "SRC0026"
+          ],
           "contributionIds": [
             "CON-F009-C-P009",
             "CON-F009-C-P077"
@@ -11400,8 +11632,11 @@
         }
       },
       "W-F011": {
-        "reason": "Attach Walter Jurmann's source-specific composer contribution while preserving the distinction between Filmportal's individual film credits and the catalogue's jointly composed songs.",
+        "reason": "Attach the corrected film programme and Walter Jurmann's source-specific composer contribution while preserving the distinction between Filmportal's individual film credits and the catalogue's jointly composed songs.",
         "fields": {
+          "sourceIds": [
+            "SRC0424"
+          ],
           "contributionIds": [
             "CON-F011-C-P077"
           ]
@@ -11729,16 +11964,25 @@
         }
       },
       "W-F034": {
-        "reason": "Attach Walter Jurmann's documented songwriter contribution for “Love Song of Tahiti” without presenting him as composer of the complete Mutiny on the Bounty score.",
+        "reason": "Attach the verified Love Song of Tahiti advertisement and image, and Walter Jurmann's documented songwriter contribution, without presenting him as composer of the complete Mutiny on the Bounty score.",
         "fields": {
+          "sourceIds": [
+            "SRC0046"
+          ],
+          "mediaIds": [
+            "M209"
+          ],
           "contributionIds": [
             "CON-F034-SW-P077"
           ]
         }
       },
       "W-F035": {
-        "reason": "Attach the separately modelled Kaper–Jurmann songwriting and background-music contributions for Last of the Pagans.",
+        "reason": "Attach the verified Music on the Starlit Water notice and the separately modelled Kaper–Jurmann songwriting and background-music contributions for Last of the Pagans.",
         "fields": {
+          "sourceIds": [
+            "SRC0045"
+          ],
           "contributionIds": [
             "CON-F035-SW-P077",
             "CON-F035-BM-P009",
@@ -11972,6 +12216,34 @@
       }
     },
     "Films": {
+      "F001": {
+        "reason": "Synchronize the film-level record with the verified Laubenkolonie premiere advertisement.",
+        "fields": {"sourceIds": ["SRC0449"]}
+      },
+      "F003": {
+        "reason": "Synchronize the film-level record with the verified Der Korvettenkapitän advertisement.",
+        "fields": {"sourceIds": ["SRC0423"]}
+      },
+      "F009": {
+        "reason": "Synchronize the film-level record with the verified Es wird schon wieder besser premiere advertisement.",
+        "fields": {"sourceIds": ["SRC0026"]}
+      },
+      "F010": {
+        "reason": "Synchronize the film-level record with the corrected Illustrierter Film-Kurier programme for Skandal in der Parkstraße.",
+        "fields": {"sourceIds": ["SRC0333"]}
+      },
+      "F011": {
+        "reason": "Synchronize the film-level record with the corrected Illustrierter Film-Kurier programme for Melodie der Liebe.",
+        "fields": {"sourceIds": ["SRC0424"]}
+      },
+      "F034": {
+        "reason": "Synchronize Mutiny on the Bounty with the verified Love Song of Tahiti advertisement.",
+        "fields": {"sourceIds": ["SRC0046"]}
+      },
+      "F035": {
+        "reason": "Synchronize Last of the Pagans with the verified Music on the Starlit Water notice.",
+        "fields": {"sourceIds": ["SRC0045"]}
+      },
       "F026": {
         "reason": "Attach the exactly dated canonical Mein Film advertisement source to the corresponding Film record.",
         "fields": {
@@ -12040,6 +12312,13 @@
       }
     },
     "Songs": {
+      "S123": {
+        "reason": "Synchronize Love Song of Tahiti with the verified Variety advertisement and its image.",
+        "fields": {
+          "sourceIds": ["SRC0046"],
+          "mediaIds": ["M209"]
+        }
+      },
       "S022": {
         "reason": "Connect the Song record to the contemporary advertisement that prints its title and credits.",
         "fields": {
@@ -13291,6 +13570,63 @@
       }
     },
     "Sources": {
+      "SRC0026": {
+        "reason": "Link the verified premiere advertisement to the film record and its public Work counterpart.",
+        "fields": {
+          "workIds": ["W-F009"],
+          "filmIds": ["F009"]
+        }
+      },
+      "SRC0045": {
+        "reason": "Link the verified Variety notice to Last of the Pagans without conflating it with the separate Love Song of Tahiti advertisement on the same page.",
+        "fields": {
+          "workIds": ["W-F035"],
+          "filmIds": ["F035"]
+        }
+      },
+      "SRC0046": {
+        "reason": "Link the verified Robbins advertisement to Love Song of Tahiti, Mutiny on the Bounty and Robbins Music Corporation.",
+        "fields": {
+          "organizationIds": ["ORG035"],
+          "workIds": ["W-F034", "W-S123"],
+          "filmIds": ["F034"],
+          "songIds": ["S123"]
+        }
+      },
+      "SRC0333": {
+        "reason": "Synchronize the corrected film programme with the film-level record for Skandal in der Parkstraße.",
+        "fields": {
+          "filmIds": ["F010"]
+        }
+      },
+      "SRC0423": {
+        "reason": "Synchronize the Der Korvettenkapitän advertisement with Media History Digital Library and with both film representations.",
+        "fields": {
+          "organizationIds": ["ORG091"],
+          "workIds": ["W-F003"],
+          "filmIds": ["F003"]
+        }
+      },
+      "SRC0424": {
+        "reason": "Synchronize the corrected Melodie der Liebe programme with both film representations.",
+        "fields": {
+          "workIds": ["W-F011"],
+          "filmIds": ["F011"]
+        }
+      },
+      "SRC0449": {
+        "reason": "Synchronize the Laubenkolonie premiere advertisement with Media History Digital Library and the film-level record.",
+        "fields": {
+          "organizationIds": ["ORG091"],
+          "filmIds": ["F001"]
+        }
+      },
+      "SRC0703": {
+        "reason": "Synchronize the verified Film-Magazin photograph with Internet Archive, Media History Digital Library and Ufa.",
+        "fields": {
+          "organizationIds": ["ORG067", "ORG091", "ORG011"]
+        }
+      },
       "SRC0527": {
         "reason": "Synchronize the Brooklyn Daily Eagle Escapade clipping with Newspapers.com and the Brooklyn Public Library, which are named in its repository metadata.",
         "fields": {
@@ -13582,8 +13918,13 @@
         }
       },
       "SRC0569": {
-        "reason": "Synchronize the source with TE0055 and with the two media records derived from or documenting the same source.",
+        "reason": "Synchronize the source with its repositories, TE0055 and the two media records derived from or documenting the same source.",
         "fields": {
+          "organizationIds": [
+            "ORG067",
+            "ORG091",
+            "ORG066"
+          ],
           "timelineEventIds": [
             "TE0055"
           ],
@@ -14163,8 +14504,12 @@
         }
       },
       "SRC0690": {
-        "reason": "Synchronize the contemporary advertisement's explicit billing of Willi Domgraf-Fassbaender in the leading role with the film-level acting contribution.",
+        "reason": "Synchronize the contemporary advertisement with its digital repositories and its explicit billing of Willi Domgraf-Fassbaender in the leading role.",
         "fields": {
+          "organizationIds": [
+            "ORG067",
+            "ORG091"
+          ],
           "contributionIds": [
             "CON-F022-A-P164"
           ]
@@ -14884,6 +15229,13 @@
   },
   "linkRemovals": {
     "Media": {
+      "M209": {
+        "reason": "Remove the misidentified Last of the Pagans and Tahiti links; the clipping is the separate Love Song of Tahiti advertisement associated with Mutiny on the Bounty.",
+        "fields": {
+          "workIds": ["W-F035", "W-S167"],
+          "songIds": ["S167"]
+        }
+      },
       "M046": {
         "reason": "Remove the stale song relation from the circa-1935 Kaper–Jurmann portrait; the photograph documents the partnership and timeline event, not the 1931 song S039.",
         "fields": {
@@ -15349,6 +15701,18 @@
       }
     },
     "Works": {
+      "W-F035": {
+        "reason": "Remove the Love Song of Tahiti advertisement image from Last of the Pagans; that film retains the separate Music on the Starlit Water clipping.",
+        "fields": {
+          "mediaIds": ["M209"]
+        }
+      },
+      "W-S167": {
+        "reason": "Remove the unrelated 1935 Love Song of Tahiti advertisement from the distinct 1937 instrumental Tahiti.",
+        "fields": {
+          "mediaIds": ["M209"]
+        }
+      },
       "W-F008": {
         "reason": "Replace excluded duplicate SRC0019 with the canonical Mein Film review SRC0086.",
         "fields": {
@@ -15575,6 +15939,12 @@
       }
     },
     "Songs": {
+      "S167": {
+        "reason": "Remove the unrelated 1935 Love Song of Tahiti advertisement from the distinct 1937 instrumental Tahiti.",
+        "fields": {
+          "mediaIds": ["M209"]
+        }
+      },
       "S010": {
         "reason": "Keep the German Song record linked only to its own sources; French and Dutch titles are now standalone language-version Works.",
         "fields": {
