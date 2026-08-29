@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 150,
+  "count": 152,
   "records": [
     {
       "id": "ORG001",
@@ -4739,6 +4739,48 @@
       "sourceIds": [
         "SRC0843",
         "SRC0844"
+      ]
+    },
+    {
+      "id": "ORG159",
+      "displayName": "Deutsches Literaturarchiv Marbach",
+      "authorizedName": "Deutsches Literaturarchiv Marbach",
+      "types": [
+        "archive",
+        "library"
+      ],
+      "city": [
+        "Marbach am Neckar"
+      ],
+      "country": "Germany",
+      "slug": "deutsches-literaturarchiv-marbach",
+      "nameVariants": "DLA; DLA Marbach; German Literature Archive Marbach",
+      "authorizedNameSource": "Official website",
+      "authorityUrl": "Official website: https://www.dla-marbach.de/",
+      "publicNote": "Literary archive, research library and museum in Marbach am Neckar. The arthistoricum metadata identifies its copy of Das Leben as the source copy (‘Vorlage’) used for the digitization of the September 1928 issue cited here.",
+      "sourceIds": [
+        "SRC0834"
+      ]
+    },
+    {
+      "id": "ORG160",
+      "displayName": "SLUB Dresden",
+      "authorizedName": "Sächsische Landesbibliothek – Staats- und Universitätsbibliothek Dresden",
+      "types": [
+        "library",
+        "digital_library"
+      ],
+      "city": [
+        "Dresden"
+      ],
+      "country": "Germany",
+      "slug": "slub-dresden",
+      "nameVariants": "SLUB; SLUB Dresden; Saxon State and University Library Dresden",
+      "authorizedNameSource": "Official website",
+      "authorityUrl": "Official website: https://www.slub-dresden.de/",
+      "publicNote": "State and university library responsible for the digitization and digital presentation of Illustrierte Magazine der Klassischen Moderne. The physical source copy of the September 1928 issue of Das Leben is held by Deutsches Literaturarchiv Marbach; access is provided through arthistoricum.net.",
+      "sourceIds": [
+        "SRC0834"
       ]
     }
   ]
