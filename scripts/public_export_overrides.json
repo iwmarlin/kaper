@@ -2167,10 +2167,18 @@
         }
       },
       "SRC0433": {
-        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "reason": "Correct the legacy source-type and n.d. override from the supplied CRISPA object metadata, separate the bibliographic citation from the evidentiary note, and link the digital object to its responsible library.",
         "fields": {
-          "date": "n.d.",
-          "sourceType": "digital_collection_item"
+          "shortCitation": "Skrynnikowa school examination notice — Kurjer Warszawski",
+          "fullCitation": "“P. ob. Dyrektora Warszawskiego 7-go gimnazjum męskiego…” [examination notice]. Kurjer Warszawski (Warsaw), R. 94, no. 318, 1914. Biblioteka Uniwersytecka w Warszawie / CRISPA, object 235954; OAI: oai:crispa.uw.edu.pl:235954.",
+          "sourceType": "press_item",
+          "repository": "Biblioteka Uniwersytecka w Warszawie / CRISPA",
+          "date": "1914",
+          "organizationIds": [
+            "ORG161"
+          ],
+          "researchNote": "The notice states that entrance and resit examinations at A. M. Skrynnikowa’s seven-grade boys’ gymnasium were to begin on 18 November in the school building at Żórawia 49, Warsaw.",
+          "researchNoteType": "evidence_note"
         }
       },
       "SRC0434": {
@@ -2417,6 +2425,20 @@
         "fields": {
           "fullCitation": "Neurdein Frères. “565 Paris. – La Rue Alphonse-de-Neuville (Plaine Monceau).” Illustrated postcard, phototype on card, early twentieth century. Musée Carnavalet – Histoire de Paris, Paris Musées, inventory no. 2021.0.335."
         }
+      },
+      "SRC0575": {
+        "reason": "Represent the actual public access route as a secondary reproduction and retain the Cinémathèque de Toulouse attribution only at the level supported by the accessible page, without inventing a direct institutional object record.",
+        "fields": {
+          "shortCitation": "“Une excuse de moins” — Pour Vous",
+          "fullCitation": "Jacques Lefebvre. “Une excuse de moins: la France a l’un des plus beaux studios du monde.” Pour Vous, no. 9, 17 January 1929, p. 4. Article and images reproduced by La Belle Équipe, which credits the source copy to the Bibliothèque numérique de la Cinémathèque de Toulouse.",
+          "reliability": "medium",
+          "sourceStatus": "verified_with_attribution_note",
+          "researchNote": "The accessible La Belle Équipe page reproduces and transcribes the periodical article and identifies the source as the Bibliothèque numérique de la Cinémathèque de Toulouse, but it supplies no direct catalogue or object URL for that copy. The institutional attribution is therefore retained as reported, not represented as a directly verified holding record.",
+          "researchNoteType": "verification_note"
+        },
+        "removeFields": [
+          "repository"
+        ]
       },
       "SRC0586": {
         "reason": "Retain the unidentified photographer and complete UCLA/California Revealed object metadata while keeping the institution's unknown-copyright statement exclusively with the linked medium.",
@@ -3664,9 +3686,16 @@
         }
       },
       "M084": {
-        "reason": "State the documented public-domain status as a neutral rights note so the media card shows a “Public domain” badge, preserving the source attribution.",
+        "reason": "Correct the library attribution inherited from an unrelated Polona rule and align the public credit with the supplied CRISPA object metadata.",
         "fields": {
-          "rightsNote": "Public domain: Biblioteka Narodowa / Polona present this school context photograph as Domena Publiczna (public domain). Credit Biblioteka Narodowa / Polona."
+          "rightsNote": "Public-domain newspaper notice published in 1914. The local image is a cropped faithful reproduction from the CRISPA digital copy held by Biblioteka Uniwersytecka w Warszawie.",
+          "publicCreditLine": "Kurjer Warszawski, R. 94, no. 318 (1914); Biblioteka Uniwersytecka w Warszawie / CRISPA, public domain."
+        }
+      },
+      "M278": {
+        "reason": "Qualify the image credit according to the actual access chain: La Belle Équipe supplies the accessible reproduction and attributes its source copy to the Cinémathèque de Toulouse without linking an institutional object record.",
+        "fields": {
+          "publicCreditLine": "Anonymous press photograph, Pour Vous, no. 9, 17 January 1929, p. 4; reproduced by La Belle Équipe, which credits the source copy to the Bibliothèque numérique de la Cinémathèque de Toulouse."
         }
       },
       "M199": {
@@ -4951,6 +4980,29 @@
           "publicNote": "State and university library responsible for the digitization and digital presentation of Illustrierte Magazine der Klassischen Moderne. The physical source copy of the September 1928 issue of Das Leben is held by Deutsches Literaturarchiv Marbach; access is provided through arthistoricum.net.",
           "sourceIds": [
             "SRC0834"
+          ]
+        }
+      },
+      "ORG161": {
+        "reason": "Add the responsible institution named in the supplied CRISPA object metadata and distinguish the University of Warsaw Library from its CRISPA access platform.",
+        "fields": {
+          "id": "ORG161",
+          "displayName": "Biblioteka Uniwersytecka w Warszawie",
+          "authorizedName": "Biblioteka Uniwersytecka w Warszawie",
+          "types": [
+            "library"
+          ],
+          "city": [
+            "Warsaw"
+          ],
+          "country": "Poland",
+          "slug": "biblioteka-uniwersytecka-w-warszawie",
+          "nameVariants": "BUW; University of Warsaw Library",
+          "authorizedNameSource": "Official website",
+          "authorityUrl": "Official website: https://www.buw.uw.edu.pl/\nCRISPA: https://crispa.uw.edu.pl/",
+          "publicNote": "The University of Warsaw Library operates CRISPA, the University of Warsaw digital library. The institution is represented separately from the CRISPA access platform named in individual digital-object citations.",
+          "sourceIds": [
+            "SRC0433"
           ]
         }
       }
@@ -8121,11 +8173,10 @@
         "reason": "Document Château des Fleurs with a contemporary opening advertisement reproduced in an official City of Los Angeles historic-resource report, and connect that evidence to the corrected place and new media records.",
         "fields": {
           "id": "SRC0636",
-          "shortCitation": "Los Angeles Times, Château des Fleurs opening advertisement, 10 August 1927",
-          "fullCitation": "“Château des Fleurs” opening advertisement. Los Angeles Times, 10 August 1927. Reproduced in City of Los Angeles Department of City Planning, Historic-Cultural Monument application CHC-2018-5298-HCM, Historic Images, p. 117.",
+          "shortCitation": "Château des Fleurs opening advertisement — Los Angeles Times",
+          "fullCitation": "“Château des Fleurs” [opening advertisement]. Los Angeles Times, 10 August 1927. Reproduced in Historic-Cultural Monument application CHC-2018-5298-HCM, Historic Images, p. 117. Los Angeles: City of Los Angeles Department of City Planning.",
           "sourceType": "press_item",
           "title": "Château des Fleurs opening advertisement",
-          "repository": "City of Los Angeles Department of City Planning",
           "publication": "Los Angeles Times",
           "date": "1927-08-10",
           "accessDate": "2026-08-03",
@@ -8150,7 +8201,9 @@
               "url": "https://cityclerk.lacity.org/onlinedocs/2005/05-0519_rpt_chc.pdf",
               "role": "institutional_record"
             }
-          ]
+          ],
+          "researchNote": "The linked municipal PDF is the access carrier for a reproduction of the 1927 newspaper advertisement; it is not the repository of the original newspaper. The advertisement documents the opening of Château des Fleurs at Franklin Avenue and Cherokee Street.",
+          "researchNoteType": "object_context"
         }
       },
       "SRC0637": {

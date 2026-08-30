@@ -13983,11 +13983,11 @@
     },
     {
       "id": "SRC0433",
-      "shortCitation": "Kurjer Warszawski 94, no. 318 (1914) — A. M. Skrynnikowa school examination notice",
-      "fullCitation": "“P. ob. Dyrektora Warszawskiego 7-go gimnazjum męskiego…” Examination notice for A. M. Skrynnikowa’s seven-grade boys’ gymnasium at Żórawia 49, Warsaw. Kurjer Warszawski 94, no. 318 (1914). University of Warsaw Library, CRISPA, object 235954; OAI identifier oai:crispa.uw.edu.pl:235954.",
+      "shortCitation": "Skrynnikowa school examination notice — Kurjer Warszawski",
+      "fullCitation": "“P. ob. Dyrektora Warszawskiego 7-go gimnazjum męskiego…” [examination notice]. Kurjer Warszawski (Warsaw), R. 94, no. 318, 1914. Biblioteka Uniwersytecka w Warszawie / CRISPA, object 235954; OAI: oai:crispa.uw.edu.pl:235954.",
       "sourceType": "press_item",
       "title": "A. M. Skrynnikowa school examination notice",
-      "repository": "Biblioteka Uniwersytecka w Warszawie / University of Warsaw Library",
+      "repository": "Biblioteka Uniwersytecka w Warszawie / CRISPA",
       "publication": "Kurjer Warszawski, R. 94, no. 318",
       "date": "1914",
       "accessDate": "2026-07-29",
@@ -14000,8 +14000,13 @@
       "placeIds": [
         "PL015"
       ],
+      "organizationIds": [
+        "ORG161"
+      ],
       "primaryUrl": "https://crispa.uw.edu.pl/object/files/235954/display/Default",
-      "accessUrl": "https://crispa.uw.edu.pl/object/files/235954/display/PDF?pageNumber=1"
+      "accessUrl": "https://crispa.uw.edu.pl/object/files/235954/display/PDF?pageNumber=1",
+      "researchNote": "The notice states that entrance and resit examinations at A. M. Skrynnikowa’s seven-grade boys’ gymnasium were to begin on 18 November in the school building at Żórawia 49, Warsaw.",
+      "researchNoteType": "evidence_note"
     },
     {
       "id": "SRC0434",
@@ -18170,25 +18175,26 @@
     },
     {
       "id": "SRC0575",
-      "shortCitation": "Jacques Lefebvre, “Une excuse de moins: la France a l’un des plus beaux studios du monde,” Pour Vous, no. 9, 17 January 1929, p. 4.",
-      "fullCitation": "Jacques Lefebvre. “Une excuse de moins: la France a l’un des plus beaux studios du monde.” Pour Vous, no. 9, 17 January 1929, p. 4. Industrial report on the Société des Cinéromans studios at Joinville-le-Pont, illustrated with uncredited press photographs. Digital copy: Bibliothèque numérique de la Cinémathèque de Toulouse; article and image reproduced by La Belle Équipe.",
+      "shortCitation": "“Une excuse de moins” — Pour Vous",
+      "fullCitation": "Jacques Lefebvre. “Une excuse de moins: la France a l’un des plus beaux studios du monde.” Pour Vous, no. 9, 17 January 1929, p. 4. Article and images reproduced by La Belle Équipe, which credits the source copy to the Bibliothèque numérique de la Cinémathèque de Toulouse.",
       "sourceType": "press_item",
       "title": "Une excuse de moins: la France a l’un des plus beaux studios du monde",
       "creator": "Jacques Lefebvre",
       "date": "1929-01-17",
-      "repository": "Bibliothèque numérique de la Cinémathèque de Toulouse",
       "publication": "Pour Vous, no. 9",
       "primaryUrl": "https://www.la-belle-equipe.fr/2016/05/03/les-studios-pathe-a-joinville-pour-vous-1929/",
       "accessDate": "2026-07-29",
-      "reliability": "high",
-      "sourceStatus": "verified",
+      "reliability": "medium",
+      "sourceStatus": "verified_with_attribution_note",
       "slug": "src0575-lefebvre-joinville-studios-pour-vous-1929",
       "placeIds": [
         "PL032"
       ],
       "mediaIds": [
         "M278"
-      ]
+      ],
+      "researchNote": "The accessible La Belle Équipe page reproduces and transcribes the periodical article and identifies the source as the Bibliothèque numérique de la Cinémathèque de Toulouse, but it supplies no direct catalogue or object URL for that copy. The institutional attribution is therefore retained as reported, not represented as a directly verified holding record.",
+      "researchNoteType": "verification_note"
     },
     {
       "id": "SRC0576",
@@ -19672,11 +19678,10 @@
     },
     {
       "id": "SRC0636",
-      "shortCitation": "Los Angeles Times, Château des Fleurs opening advertisement, 10 August 1927",
-      "fullCitation": "“Château des Fleurs” opening advertisement. Los Angeles Times, 10 August 1927. Reproduced in City of Los Angeles Department of City Planning, Historic-Cultural Monument application CHC-2018-5298-HCM, Historic Images, p. 117.",
+      "shortCitation": "Château des Fleurs opening advertisement — Los Angeles Times",
+      "fullCitation": "“Château des Fleurs” [opening advertisement]. Los Angeles Times, 10 August 1927. Reproduced in Historic-Cultural Monument application CHC-2018-5298-HCM, Historic Images, p. 117. Los Angeles: City of Los Angeles Department of City Planning.",
       "sourceType": "press_item",
       "title": "Château des Fleurs opening advertisement",
-      "repository": "City of Los Angeles Department of City Planning",
       "publication": "Los Angeles Times",
       "date": "1927-08-10",
       "accessDate": "2026-08-03",
@@ -19701,7 +19706,9 @@
           "url": "https://cityclerk.lacity.org/onlinedocs/2005/05-0519_rpt_chc.pdf",
           "role": "institutional_record"
         }
-      ]
+      ],
+      "researchNote": "The linked municipal PDF is the access carrier for a reproduction of the 1927 newspaper advertisement; it is not the repository of the original newspaper. The advertisement documents the opening of Château des Fleurs at Franklin Avenue and Cherokee Street.",
+      "researchNoteType": "object_context"
     },
     {
       "id": "SRC0637",

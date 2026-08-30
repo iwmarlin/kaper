@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 152,
+  "count": 153,
   "records": [
     {
       "id": "ORG001",
@@ -4780,6 +4780,26 @@
       "publicNote": "State and university library responsible for the digitization and digital presentation of Illustrierte Magazine der Klassischen Moderne. The physical source copy of the September 1928 issue of Das Leben is held by Deutsches Literaturarchiv Marbach; access is provided through arthistoricum.net.",
       "sourceIds": [
         "SRC0834"
+      ]
+    },
+    {
+      "id": "ORG161",
+      "displayName": "Biblioteka Uniwersytecka w Warszawie",
+      "authorizedName": "Biblioteka Uniwersytecka w Warszawie",
+      "types": [
+        "library"
+      ],
+      "city": [
+        "Warsaw"
+      ],
+      "country": "Poland",
+      "slug": "biblioteka-uniwersytecka-w-warszawie",
+      "nameVariants": "BUW; University of Warsaw Library",
+      "authorizedNameSource": "Official website",
+      "authorityUrl": "Official website: https://www.buw.uw.edu.pl/\nCRISPA: https://crispa.uw.edu.pl/",
+      "publicNote": "The University of Warsaw Library operates CRISPA, the University of Warsaw digital library. The institution is represented separately from the CRISPA access platform named in individual digital-object citations.",
+      "sourceIds": [
+        "SRC0433"
       ]
     }
   ]
