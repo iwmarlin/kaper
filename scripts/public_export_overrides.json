@@ -3144,6 +3144,25 @@
           "creator": "Sidney Clare, Lew Pollack and Harry Richman (music); Bronisław Kaper (transcription for two pianos)"
         }
       },
+      "SRC0688": {
+        "reason": "Replace the unprovenanced local promotional-folder page with the stable NYPL record for a documented aerial photograph of the MGM studio lot; preserve NYPL's unresolved-copyright assessment and do not treat MGM as the repository or issuing body.",
+        "fields": {
+          "shortCitation": "NYPL, aerial view of MGM Studios, Culver City (1930–1960)",
+          "fullCitation": "Billy Rose Theatre Division, The New York Public Library. “Aerial view of MGM studios in Culver City, CA.” Photograph, 1930–1960. Billy Rose Theatre Division photograph file, subcollection Cinema: Studios: U.S.: Metro-Goldwyn-Mayer, shelf locator *T PHO B, image ID ps_the_2774. New York Public Library Digital Collections.",
+          "creator": "Photographer unidentified",
+          "repository": "Billy Rose Theatre Division, The New York Public Library",
+          "publication": "New York Public Library Digital Collections",
+          "date": "1930–1960",
+          "accessDate": "2026-08-30",
+          "primaryUrl": "https://digitalcollections.nypl.org/items/b19a0150-ffc5-012f-e436-58d385a7bc34",
+          "reliability": "high",
+          "sourceStatus": "verified",
+          "title": "Aerial view of MGM studios in Culver City, CA."
+        },
+        "removeFields": [
+          "organizationIds"
+        ]
+      },
       "SRC0522": {
         "reason": "Normalize the repository to the official Śląska Biblioteka Cyfrowa name and keep the periodical citation independent of the dLibra software used by the service.",
         "fields": {
@@ -3994,6 +4013,25 @@
         "fields": {
           "description": "The clipping retains the printed caption below the portrait — “Louis POTERAT / que vous entendrez aujourd'hui à 14 h.” — because it identifies the sitter."
         }
+      },
+      "M330": {
+        "reason": "Replace the unprovenanced local promotional-folder image with a stable external NYPL photograph record, retain the place relationship, and avoid rehosting an item whose copyright status NYPL could not determine.",
+        "fields": {
+          "title": "Metro-Goldwyn-Mayer Studios, Culver City — aerial view",
+          "altText": "Aerial view of the Metro-Goldwyn-Mayer studio lot in Culver City, California.",
+          "assetCount": 0,
+          "storageType": "external",
+          "externalUrl": "https://digitalcollections.nypl.org/items/b19a0150-ffc5-012f-e436-58d385a7bc34",
+          "galleryStatus": "external_link_only",
+          "publicCaption": "Aerial view of the Metro-Goldwyn-Mayer studio lot in Culver City, dated by the New York Public Library to 1930–1960. Kaper joined MGM in 1935.",
+          "publicCreditLine": "Billy Rose Theatre Division, The New York Public Library; Billy Rose Theatre Division photograph file, image ID ps_the_2774.",
+          "rightsNote": "External link only; the image is not copied or hosted by this site. The New York Public Library reviewed the item but could not determine its copyright status. Any reuse must comply with the copyright and related-rights law applicable to the intended use.",
+          "rightsStatus": "copyright_undetermined"
+        },
+        "removeFields": [
+          "assetPath",
+          "organizationIds"
+        ]
       },
       "M437": {
         "reason": "Distinguish the physical source copy, digitization repository and access interface consistently with SRC0834.",
@@ -11361,7 +11399,7 @@
         }
       },
       "ORG001": {
-        "reason": "Preserve MGM as the documented distributor of the animated Little Boy Blue, while keeping production with Celebrity Productions–P.A. Powers; also synchronize MGM's inverse link to the AFI Trouble for Two record.",
+        "reason": "Preserve MGM as the documented distributor of the animated Little Boy Blue, while keeping production with Celebrity Productions–P.A. Powers; synchronize MGM's inverse link to the AFI Trouble for Two record.",
         "fields": {
           "sourceIds": [
             "SRC0373",
