@@ -1108,10 +1108,10 @@
     {
       "id": "SRC0051",
       "shortCitation": "“Everybody Sing” — Brooklyn Daily Eagle",
-      "fullCitation": "“Everybody Sing.” Brooklyn Daily Eagle (Brooklyn, NY), 17 March 1938, p. 8. Newspapers.com.",
+      "fullCitation": "“Everybody Sing.” Brooklyn Daily Eagle (Brooklyn, NY), 17 March 1938, p. 8. Newspapers.com / Brooklyn Public Library.",
       "sourceType": "press_item",
       "title": "Everybody Sing",
-      "repository": "Newspapers.com",
+      "repository": "Newspapers.com / Brooklyn Public Library",
       "publication": "Brooklyn Daily Eagle",
       "date": "1938-03-17",
       "accessDate": "2026-07-13",
@@ -1119,7 +1119,8 @@
       "sourceStatus": "verified",
       "slug": "src0051-brooklyn-daily-eagle-1938",
       "organizationIds": [
-        "ORG095"
+        "ORG095",
+        "ORG100"
       ],
       "mediaIds": [
         "M034",
@@ -2610,7 +2611,7 @@
       "fullCitation": "“Wielkość talentu Jana Kiepury podbija nawet Berlin i Niemcy.” Nowiny Codzienne 23, no. 81 (21 April 1933): 2. Śląska Biblioteka Cyfrowa, edition 288663.",
       "sourceType": "press_item",
       "title": "Wielkość talentu Jana Kiepury podbija nawet Berlin i Niemcy",
-      "repository": "Śląska Biblioteka Cyfrowa (dLibra)",
+      "repository": "Śląska Biblioteka Cyfrowa",
       "publication": "Nowiny Codzienne",
       "date": "1933-04-21",
       "accessDate": "2026-07-13",
@@ -18180,16 +18181,18 @@
     {
       "id": "SRC0575",
       "shortCitation": "“Une excuse de moins” — Pour Vous",
-      "fullCitation": "Jacques Lefebvre. “Une excuse de moins: la France a l’un des plus beaux studios du monde.” Pour Vous, no. 9, 17 January 1929, p. 4. Article and images reproduced by La Belle Équipe, which credits the source copy to the Bibliothèque numérique de la Cinémathèque de Toulouse.",
+      "fullCitation": "Jacques Lefebvre. “Une excuse de moins: la France a l’un des plus beaux studios du monde.” Pour Vous, no. 9, 17 January 1929, p. 4. Bibliothèque numérique de la Cinémathèque de Toulouse, Pour Vous N0009. Article and images also reproduced by La Belle Équipe.",
       "sourceType": "press_item",
       "title": "Une excuse de moins: la France a l’un des plus beaux studios du monde",
       "creator": "Jacques Lefebvre",
+      "repository": "Bibliothèque numérique de la Cinémathèque de Toulouse",
       "date": "1929-01-17",
       "publication": "Pour Vous, no. 9",
-      "primaryUrl": "https://www.la-belle-equipe.fr/2016/05/03/les-studios-pathe-a-joinville-pour-vous-1929/",
+      "primaryUrl": "https://bib-num.cinemathequetoulouse.fr/records/?search=%22Pour%20Vous%20N0009%22",
+      "accessUrl": "https://www.la-belle-equipe.fr/2016/05/03/les-studios-pathe-a-joinville-pour-vous-1929/",
       "accessDate": "2026-07-29",
-      "reliability": "medium",
-      "sourceStatus": "verified_with_attribution_note",
+      "reliability": "high",
+      "sourceStatus": "verified",
       "slug": "src0575-lefebvre-joinville-studios-pour-vous-1929",
       "placeIds": [
         "PL032"
@@ -18197,8 +18200,11 @@
       "mediaIds": [
         "M278"
       ],
-      "researchNote": "The accessible La Belle Équipe page reproduces and transcribes the periodical article and identifies the source as the Bibliothèque numérique de la Cinémathèque de Toulouse, but it supplies no direct catalogue or object URL for that copy. The institutional attribution is therefore retained as reported, not represented as a directly verified holding record.",
-      "researchNoteType": "verification_note"
+      "organizationIds": [
+        "ORG163"
+      ],
+      "researchNote": "The Cinémathèque de Toulouse digital library independently catalogs Pour Vous N0009, dated 17 January 1929, in its digitized periodical holdings. La Belle Équipe provides a convenient page-level reproduction and transcription of the article; it is treated as an access copy, not as the holding institution.",
+      "researchNoteType": "object_context"
     },
     {
       "id": "SRC0576",
@@ -19686,6 +19692,7 @@
       "fullCitation": "“Château des Fleurs” [opening advertisement]. Los Angeles Times, 10 August 1927. Reproduced in Historic-Cultural Monument application CHC-2018-5298-HCM, Historic Images, p. 117. Los Angeles: City of Los Angeles Department of City Planning.",
       "sourceType": "press_item",
       "title": "Château des Fleurs opening advertisement",
+      "repository": "City of Los Angeles Department of City Planning",
       "publication": "Los Angeles Times",
       "date": "1927-08-10",
       "accessDate": "2026-08-03",

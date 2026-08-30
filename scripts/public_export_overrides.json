@@ -1027,10 +1027,15 @@
         }
       },
       "SRC0051": {
-        "reason": "Normalize the titled Brooklyn press citation and move its evidentiary summary out of the bibliography into a dedicated evidence note.",
+        "reason": "Normalize the titled Brooklyn press citation, identify Newspapers.com and the Brooklyn Public Library consistently as access service and repository, and move its evidentiary summary into a dedicated evidence note.",
         "fields": {
           "shortCitation": "“Everybody Sing” — Brooklyn Daily Eagle",
-          "fullCitation": "“Everybody Sing.” Brooklyn Daily Eagle (Brooklyn, NY), 17 March 1938, p. 8. Newspapers.com.",
+          "fullCitation": "“Everybody Sing.” Brooklyn Daily Eagle (Brooklyn, NY), 17 March 1938, p. 8. Newspapers.com / Brooklyn Public Library.",
+          "repository": "Newspapers.com / Brooklyn Public Library",
+          "organizationIds": [
+            "ORG095",
+            "ORG100"
+          ],
           "researchNote": "The notice identifies Edwin L. Marin as director of the MGM film and credits songs to Kaper and Jurmann, and to Kalmar and Ruby.",
           "researchNoteType": "evidence_note"
         }
@@ -1264,11 +1269,12 @@
         }
       },
       "SRC0085": {
-        "reason": "Replace the incomplete citation and false unresolved-attribution note with the exact article, issue date and page; the digitized article explicitly identifies Bronisław Kaper as the film's composer.",
+        "reason": "Replace the incomplete citation and false unresolved-attribution note with the exact article, issue date and page, and normalize the repository to its official name without treating dLibra software as part of that name.",
         "fields": {
           "title": "Wielkość talentu Jana Kiepury podbija nawet Berlin i Niemcy",
           "shortCitation": "“Wielkość talentu Jana Kiepury podbija nawet Berlin i Niemcy,” Nowiny Codzienne 23, no. 81 (21 April 1933): 2",
           "fullCitation": "“Wielkość talentu Jana Kiepury podbija nawet Berlin i Niemcy.” Nowiny Codzienne 23, no. 81 (21 April 1933): 2. Śląska Biblioteka Cyfrowa, edition 288663.",
+          "repository": "Śląska Biblioteka Cyfrowa",
           "date": "1933-04-21",
           "url": "https://sbc.org.pl/dlibra/publication/305546/edition/288663/nowiny-codzienne-1933-r-23-nr-81",
           "reliability": "high",
@@ -2427,18 +2433,21 @@
         }
       },
       "SRC0575": {
-        "reason": "Represent the actual public access route as a secondary reproduction and retain the Cinémathèque de Toulouse attribution only at the level supported by the accessible page, without inventing a direct institutional object record.",
+        "reason": "Use the independently verified Cinémathèque de Toulouse digital-periodical record as the institutional source and retain La Belle Équipe as a convenient page-level reproduction and transcription.",
         "fields": {
           "shortCitation": "“Une excuse de moins” — Pour Vous",
-          "fullCitation": "Jacques Lefebvre. “Une excuse de moins: la France a l’un des plus beaux studios du monde.” Pour Vous, no. 9, 17 January 1929, p. 4. Article and images reproduced by La Belle Équipe, which credits the source copy to the Bibliothèque numérique de la Cinémathèque de Toulouse.",
-          "reliability": "medium",
-          "sourceStatus": "verified_with_attribution_note",
-          "researchNote": "The accessible La Belle Équipe page reproduces and transcribes the periodical article and identifies the source as the Bibliothèque numérique de la Cinémathèque de Toulouse, but it supplies no direct catalogue or object URL for that copy. The institutional attribution is therefore retained as reported, not represented as a directly verified holding record.",
-          "researchNoteType": "verification_note"
-        },
-        "removeFields": [
-          "repository"
-        ]
+          "fullCitation": "Jacques Lefebvre. “Une excuse de moins: la France a l’un des plus beaux studios du monde.” Pour Vous, no. 9, 17 January 1929, p. 4. Bibliothèque numérique de la Cinémathèque de Toulouse, Pour Vous N0009. Article and images also reproduced by La Belle Équipe.",
+          "repository": "Bibliothèque numérique de la Cinémathèque de Toulouse",
+          "primaryUrl": "https://bib-num.cinemathequetoulouse.fr/records/?search=%22Pour%20Vous%20N0009%22",
+          "accessUrl": "https://www.la-belle-equipe.fr/2016/05/03/les-studios-pathe-a-joinville-pour-vous-1929/",
+          "organizationIds": [
+            "ORG163"
+          ],
+          "reliability": "high",
+          "sourceStatus": "verified",
+          "researchNote": "The Cinémathèque de Toulouse digital library independently catalogs Pour Vous N0009, dated 17 January 1929, in its digitized periodical holdings. La Belle Équipe provides a convenient page-level reproduction and transcription of the article; it is treated as an access copy, not as the holding institution.",
+          "researchNoteType": "object_context"
+        }
       },
       "SRC0586": {
         "reason": "Retain the unidentified photographer and complete UCLA/California Revealed object metadata while keeping the institution's unknown-copyright statement exclusively with the linked medium.",
@@ -2999,6 +3008,12 @@
           "shortCitation": "Clare, Pollack and Richman, “Miss Annabelle Lee” (Alberti, 1929; transcription by Dr. B. Kaper)",
           "fullCitation": "Sidney Clare, Lew Pollack and Harry Richman, “Who’s Wonderful, Who’s Marvelous? Miss Annabelle Lee.” Music by Sidney Clare, Lew Pollack and Harry Richman; transcription for two pianos by Dr. B. Kaper. In Cocktails. Berlin: Alberti, 1929. Staatsbibliothek zu Berlin / StabiKat, record no. 1877032239.",
           "creator": "Sidney Clare, Lew Pollack and Harry Richman (music); Bronisław Kaper (transcription for two pianos)"
+        }
+      },
+      "SRC0522": {
+        "reason": "Normalize the repository to the official Śląska Biblioteka Cyfrowa name and keep the periodical citation independent of the dLibra software used by the service.",
+        "fields": {
+          "repository": "Śląska Biblioteka Cyfrowa"
         }
       }
     },
@@ -3866,6 +3881,18 @@
         "removeFields": [
           "authorityUrl"
         ]
+      },
+      "ORG077": {
+        "reason": "Use the institution's official name and classification and record its official site without presenting the dLibra software platform as an organization name variant.",
+        "fields": {
+          "types": [
+            "digital_library"
+          ],
+          "nameVariants": "ŚBC; SBC; Silesian Digital Library",
+          "authorizedNameSource": "Official website and cooperation agreement",
+          "authorityUrl": "Official website: https://sbc.org.pl/dlibra\nCooperation agreement: https://sbc.org.pl/doc/porozumienie-sbc-pl.pdf",
+          "publicNote": "Regional digital library created and maintained by participating cultural and academic institutions to provide online access to digitized collections concerning Silesia and materials held in the region. The service uses dLibra software; dLibra is not part of the institution's authorized name."
+        }
       },
       "ORG031": {
         "reason": "Correct the publisher's place and corporate heading from contemporary Berlin imprints and historical business records without inventing a formal authority identifier.",
@@ -5047,6 +5074,30 @@
             "SRC0407",
             "SRC0409",
             "SRC0424"
+          ]
+        }
+      },
+      "ORG163": {
+        "reason": "Add the verified holding institution and digital library for the Pour Vous issue used by SRC0575, replacing an earlier attribution based only on a secondary reproduction page.",
+        "fields": {
+          "id": "ORG163",
+          "displayName": "Cinémathèque de Toulouse",
+          "authorizedName": "La Cinémathèque de Toulouse",
+          "types": [
+            "archive",
+            "library"
+          ],
+          "city": [
+            "Toulouse"
+          ],
+          "country": "France",
+          "slug": "cinematheque-de-toulouse",
+          "nameVariants": "Cinémathèque de Toulouse; Bibliothèque de la Cinémathèque de Toulouse; Bibliothèque numérique de la Cinémathèque de Toulouse",
+          "authorizedNameSource": "Official website",
+          "authorityUrl": "Official website: https://www.lacinemathequedetoulouse.com/\nDigital library: https://bib-num.cinemathequetoulouse.fr/",
+          "publicNote": "Film archive and research library in Toulouse. Its digital library provides access to digitized books and periodicals, including the Pour Vous run containing issue N0009 of 17 January 1929.",
+          "sourceIds": [
+            "SRC0575"
           ]
         }
       }
@@ -8241,6 +8292,7 @@
           "fullCitation": "“Château des Fleurs” [opening advertisement]. Los Angeles Times, 10 August 1927. Reproduced in Historic-Cultural Monument application CHC-2018-5298-HCM, Historic Images, p. 117. Los Angeles: City of Los Angeles Department of City Planning.",
           "sourceType": "press_item",
           "title": "Château des Fleurs opening advertisement",
+          "repository": "City of Los Angeles Department of City Planning",
           "publication": "Los Angeles Times",
           "date": "1927-08-10",
           "accessDate": "2026-08-03",
@@ -11246,9 +11298,10 @@
         }
       },
       "ORG100": {
-        "reason": "Synchronize the Brooklyn Public Library with the Brooklyn Daily Eagle Escapade clipping accessed through Newspapers.com.",
+        "reason": "Synchronize the Brooklyn Public Library with the normalized Brooklyn Daily Eagle clippings accessed through Newspapers.com.",
         "fields": {
           "sourceIds": [
+            "SRC0051",
             "SRC0527"
           ]
         }

@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 154,
+  "count": 155,
   "records": [
     {
       "id": "ORG001",
@@ -2631,15 +2631,17 @@
       "displayName": "Śląska Biblioteka Cyfrowa",
       "authorizedName": "Śląska Biblioteka Cyfrowa",
       "types": [
-        "archive",
-        "database"
+        "digital_library"
       ],
       "city": [
         "Katowice"
       ],
       "country": "Poland",
       "slug": "slaska-biblioteka-cyfrowa",
-      "nameVariants": "ŚBC; SBC; Śląska Biblioteka Cyfrowa; dLibra",
+      "nameVariants": "ŚBC; SBC; Silesian Digital Library",
+      "authorizedNameSource": "Official website and cooperation agreement",
+      "authorityUrl": "Official website: https://sbc.org.pl/dlibra\nCooperation agreement: https://sbc.org.pl/doc/porozumienie-sbc-pl.pdf",
+      "publicNote": "Regional digital library created and maintained by participating cultural and academic institutions to provide online access to digitized collections concerning Silesia and materials held in the region. The service uses dLibra software; dLibra is not part of the institution's authorized name.",
       "sourceIds": [
         "SRC0085",
         "SRC0522"
@@ -3227,6 +3229,7 @@
       "nameVariants": "BPL; Brooklyn Public Library; Brooklyn Newspapers",
       "sourceIds": [
         "SRC0047",
+        "SRC0051",
         "SRC0089",
         "SRC0090",
         "SRC0114",
@@ -4823,6 +4826,27 @@
         "SRC0407",
         "SRC0409",
         "SRC0424"
+      ]
+    },
+    {
+      "id": "ORG163",
+      "displayName": "Cinémathèque de Toulouse",
+      "authorizedName": "La Cinémathèque de Toulouse",
+      "types": [
+        "archive",
+        "library"
+      ],
+      "city": [
+        "Toulouse"
+      ],
+      "country": "France",
+      "slug": "cinematheque-de-toulouse",
+      "nameVariants": "Cinémathèque de Toulouse; Bibliothèque de la Cinémathèque de Toulouse; Bibliothèque numérique de la Cinémathèque de Toulouse",
+      "authorizedNameSource": "Official website",
+      "authorityUrl": "Official website: https://www.lacinemathequedetoulouse.com/\nDigital library: https://bib-num.cinemathequetoulouse.fr/",
+      "publicNote": "Film archive and research library in Toulouse. Its digital library provides access to digitized books and periodicals, including the Pour Vous run containing issue N0009 of 17 January 1929.",
+      "sourceIds": [
+        "SRC0575"
       ]
     }
   ]
