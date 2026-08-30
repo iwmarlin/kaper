@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 153,
+  "count": 154,
   "records": [
     {
       "id": "ORG001",
@@ -4800,6 +4800,29 @@
       "publicNote": "The University of Warsaw Library operates CRISPA, the University of Warsaw digital library. The institution is represented separately from the CRISPA access platform named in individual digital-object citations.",
       "sourceIds": [
         "SRC0433"
+      ]
+    },
+    {
+      "id": "ORG162",
+      "displayName": "University of Warwick Library",
+      "authorizedName": "University of Warwick Library",
+      "types": [
+        "library"
+      ],
+      "city": [
+        "Coventry"
+      ],
+      "country": "United Kingdom",
+      "slug": "university-of-warwick-library",
+      "nameVariants": "Warwick Library; The Library, University of Warwick",
+      "authorizedNameSource": "Official website and Internet Archive object metadata",
+      "authorityUrl": "Official website: https://warwick.ac.uk/services/library/",
+      "publicNote": "The library of the University of Warwick and the contributing institution identified in the Internet Archive metadata for these Illustrierter Film-Kurier copies. Internet Archive digitized and provides access to the digital objects.",
+      "sourceIds": [
+        "SRC0333",
+        "SRC0407",
+        "SRC0409",
+        "SRC0424"
       ]
     }
   ]

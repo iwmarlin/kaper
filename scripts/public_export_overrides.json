@@ -3004,12 +3004,15 @@
     },
     "Media": {
       "M155": {
-        "reason": "Add the verified Illustrierter Film-Kurier issue number 1766 consistently across the public media record.",
+        "reason": "Add the verified Illustrierter Film-Kurier issue number 1766 and replace the unsupported public-domain statement with a source-specific reuse assessment.",
         "fields": {
           "title": "Melodie der Liebe (1932) — Illustrierter Film-Kurier, no. 1766",
           "description": "Illustrierter Film-Kurier programme cover for Melodie der Liebe (1932), issue no. 1766.",
           "publicCaption": "Illustrierter Film-Kurier programme cover for Melodie der Liebe (1932), issue no. 1766.",
-          "publicCreditLine": "Illustrierter Film-Kurier, no. 1766."
+          "publicCreditLine": "Illustrierter Film-Kurier, no. 1766; University of Warwick Library copy, digitized by Internet Archive.",
+          "rightsStatus": "permission_needed_or_fair_use_claimed",
+          "rightsNote": "The Internet Archive object metadata does not supply a reuse licence. This reduced-resolution programme cover is retained for scholarly identification and discussion; the source copy was contributed by the University of Warwick and digitized by Internet Archive.",
+          "galleryStatus": "detail_only"
         }
       },
       "M159": {
@@ -3020,21 +3023,36 @@
         }
       },
       "M165": {
-        "reason": "Correct the programme number from 431 to the verified Illustrierter Film-Kurier no. 1759 consistently across the public media record.",
+        "reason": "Correct the programme number from 431 to the verified Illustrierter Film-Kurier no. 1759 and replace the unsupported public-domain statement with a source-specific reuse assessment.",
         "fields": {
           "title": "Skandal in der Parkstraße (1932) — Illustrierter Film-Kurier, no. 1759",
           "description": "Illustrierter Film-Kurier programme cover for Skandal in der Parkstraße (1932), issue no. 1759.",
           "publicCaption": "Illustrierter Film-Kurier programme cover for Skandal in der Parkstraße (1932), issue no. 1759.",
-          "publicCreditLine": "Illustrierter Film-Kurier, no. 1759."
+          "publicCreditLine": "Illustrierter Film-Kurier, no. 1759; University of Warwick Library copy, digitized by Internet Archive.",
+          "rightsStatus": "permission_needed_or_fair_use_claimed",
+          "rightsNote": "The Internet Archive object metadata does not supply a reuse licence. This reduced-resolution programme cover is retained for scholarly identification and discussion; the source copy was contributed by the University of Warwick and digitized by Internet Archive.",
+          "galleryStatus": "detail_only"
+        }
+      },
+      "M181": {
+        "reason": "Replace the unsupported public-domain statement for the Illustrierter Film-Kurier programme with a source-specific reuse assessment.",
+        "fields": {
+          "publicCreditLine": "Illustrierter Film-Kurier, no. 1819; University of Warwick Library copy, digitized by Internet Archive.",
+          "rightsStatus": "permission_needed_or_fair_use_claimed",
+          "rightsNote": "The Internet Archive object metadata does not supply a reuse licence. This reduced-resolution programme image is retained for scholarly identification and discussion; the source copy was contributed by the University of Warwick and digitized by Internet Archive.",
+          "galleryStatus": "detail_only"
         }
       },
       "M192": {
-        "reason": "Correct the programme number from 1951 to the verified Illustrierter Film-Kurier no. 1957 consistently across the public media record.",
+        "reason": "Correct the programme number from 1951 to the verified Illustrierter Film-Kurier no. 1957 and replace the unsupported public-domain statement with a source-specific reuse assessment.",
         "fields": {
           "title": "Ein Lied für Dich (1933) — Illustrierter Film-Kurier, no. 1957",
           "description": "Cover of Illustrierter Film-Kurier, no. 1957, devoted to Ein Lied für Dich (1933), Joe May’s film with Jan Kiepura and Jenny Jugo and music by Walter Jurmann and Bronisław Kaper. This is a film-program/periodical cover, not a standard theatrical poster.",
           "publicCaption": "Illustrierter Film-Kurier programme cover for Ein Lied für Dich (1933), issue no. 1957.",
-          "publicCreditLine": "Illustrierter Film-Kurier, no. 1957; reproduction via Internet Archive."
+          "publicCreditLine": "Illustrierter Film-Kurier, no. 1957; University of Warwick Library copy, digitized by Internet Archive.",
+          "rightsStatus": "permission_needed_or_fair_use_claimed",
+          "rightsNote": "The Internet Archive object metadata does not supply a reuse licence. This reduced-resolution programme cover is retained for scholarly identification and discussion; the source copy was contributed by the University of Warwick and digitized by Internet Archive.",
+          "galleryStatus": "detail_only"
         }
       },
       "M209": {
@@ -5003,6 +5021,32 @@
           "publicNote": "The University of Warsaw Library operates CRISPA, the University of Warsaw digital library. The institution is represented separately from the CRISPA access platform named in individual digital-object citations.",
           "sourceIds": [
             "SRC0433"
+          ]
+        }
+      },
+      "ORG162": {
+        "reason": "Represent the library named as contributor in the Internet Archive metadata for four Illustrierter Film-Kurier copies, separately from the Internet Archive digitization and access platform.",
+        "fields": {
+          "id": "ORG162",
+          "displayName": "University of Warwick Library",
+          "authorizedName": "University of Warwick Library",
+          "types": [
+            "library"
+          ],
+          "city": [
+            "Coventry"
+          ],
+          "country": "United Kingdom",
+          "slug": "university-of-warwick-library",
+          "nameVariants": "Warwick Library; The Library, University of Warwick",
+          "authorizedNameSource": "Official website and Internet Archive object metadata",
+          "authorityUrl": "Official website: https://warwick.ac.uk/services/library/",
+          "publicNote": "The library of the University of Warwick and the contributing institution identified in the Internet Archive metadata for these Illustrierter Film-Kurier copies. Internet Archive digitized and provides access to the digital objects.",
+          "sourceIds": [
+            "SRC0333",
+            "SRC0407",
+            "SRC0409",
+            "SRC0424"
           ]
         }
       }
@@ -7766,9 +7810,14 @@
         "reason": "Correct the programme number from 431 to the verified Illustrierter Film-Kurier no. 1759 and separate its credits into an evidence note.",
         "fields": {
           "shortCitation": "Skandal in der Parkstraße — Illustrierter Film-Kurier no. 1759",
-          "fullCitation": "Skandal in der Parkstraße. Illustrierter Film-Kurier, no. 1759 (1932). Film programme. University of Warwick copy, digitized by Internet Archive.",
+          "fullCitation": "Skandal in der Parkstraße. Illustrierter Film-Kurier, no. 1759 (1932). Film programme. University of Warwick Library copy; digitized by Internet Archive, identifier skandalinderpark0000illu.",
           "title": "Skandal in der Parkstraße — Illustrierter Film-Kurier no. 1759",
           "slug": "src0333-illustrierter-film-kurier-1759-1932",
+          "repository": "University of Warwick Library",
+          "organizationIds": [
+            "ORG067",
+            "ORG162"
+          ],
           "researchNote": "The credit page names Franz Wenzler as director, Dr. B. Kaper and Walter Jurmann for the music, and Fritz Rotter for the lyrics.",
           "researchNoteType": "evidence_note"
         }
@@ -7777,8 +7826,13 @@
         "reason": "Normalize the programme citation and keep its source-specific allocation of composition, songs and musical direction in an evidence note.",
         "fields": {
           "shortCitation": "Die Zwei vom Südexpress — Illustrierter Film-Kurier no. 1819",
-          "fullCitation": "Die Zwei vom Südexpress. Illustrierter Film-Kurier, no. 1819, 14. Jahrgang (1932). Film programme. University of Warwick copy, digitized by Internet Archive.",
+          "fullCitation": "Die Zwei vom Südexpress. Illustrierter Film-Kurier, no. 1819, 14. Jahrgang (1932). Film programme. University of Warwick Library copy; digitized by Internet Archive, identifier diezweivomsdexpr0000illu.",
           "title": "Die Zwei vom Südexpress — Illustrierter Film-Kurier no. 1819",
+          "repository": "University of Warwick Library",
+          "organizationIds": [
+            "ORG067",
+            "ORG162"
+          ],
           "researchNote": "The credit page names Robert Wohlmuth as director, Friedrich Jung for the compositions, Jurmann, Kaper and Rotter for the popular songs, and Hans Wenning for musical direction.",
           "researchNoteType": "evidence_note"
         }
@@ -7787,8 +7841,13 @@
         "reason": "Correct the programme number from 1951 to the verified Illustrierter Film-Kurier no. 1957 and separate item-level credits from the citation.",
         "fields": {
           "shortCitation": "Ein Lied für Dich — Illustrierter Film-Kurier no. 1957",
-          "fullCitation": "Ein Lied für Dich. Illustrierter Film-Kurier, no. 1957, 15. Jahrgang (1933). Film programme. University of Warwick copy, digitized by Internet Archive.",
+          "fullCitation": "Ein Lied für Dich. Illustrierter Film-Kurier, no. 1957, 15. Jahrgang (1933). Film programme. University of Warwick Library copy; digitized by Internet Archive, identifier einliedfrdich0000illu.",
           "title": "Ein Lied für Dich — Illustrierter Film-Kurier no. 1957",
+          "repository": "University of Warwick Library",
+          "organizationIds": [
+            "ORG067",
+            "ORG162"
+          ],
           "researchNote": "The programme credits Joe May as director and Willy Schmidt-Gentner with musical direction; its song page prints lyrics by Ernst Marischka and Fritz Rotter and music by Jurmann and Kaper.",
           "researchNoteType": "evidence_note"
         }
@@ -7857,8 +7916,13 @@
         "reason": "Add the verified Illustrierter Film-Kurier number 1766 and separate the programme's item-level credits from its citation.",
         "fields": {
           "shortCitation": "Melodie der Liebe — Illustrierter Film-Kurier no. 1766",
-          "fullCitation": "Melodie der Liebe. Illustrierter Film-Kurier, no. 1766 (1932). Film programme. University of Warwick copy, digitized by Internet Archive.",
+          "fullCitation": "Melodie der Liebe. Illustrierter Film-Kurier, no. 1766 (1932). Film programme. University of Warwick Library copy; digitized by Internet Archive, identifier melodiederliebe0000illu.",
           "title": "Melodie der Liebe — Illustrierter Film-Kurier no. 1766",
+          "repository": "University of Warwick Library",
+          "organizationIds": [
+            "ORG067",
+            "ORG162"
+          ],
           "researchNote": "The credit page names Dr. Kaper and Walter Jurmann for the songs, Fritz Rotter for the lyrics, Paul Dessau for musical direction and arrangement, and Alrobi-Verlag as music publisher.",
           "researchNoteType": "evidence_note"
         }
