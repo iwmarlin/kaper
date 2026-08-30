@@ -1388,6 +1388,40 @@
           "accessDate": "2026-07-24"
         }
       },
+      "SRC0157": {
+        "reason": "Identify this record as a Hofmeister catalogue entry rather than an examined sheet-music copy, and supply the exact issue, page and ANNO repository.",
+        "fields": {
+          "shortCitation": "Hofmeister, January 1931, p. 14 — “Schöne Frau, gute Nacht”",
+          "fullCitation": "Fritz Rotter and B. Kaper, “Schöne Frau, gute Nacht.” Boston; editions for orchestra arranged by W. Borchert, salon orchestra with jazz instruments, and voice with piano. Vienna: Wiener Boheme-Verlag, 1931. Registered in Hofmeisters Musikalisch-literarischer Monatsbericht 103, no. 1 (January 1931): 14. ANNO – Austrian Newspapers Online, Österreichische Nationalbibliothek.",
+          "sourceType": "sheet_music_catalogue",
+          "repository": "Österreichische Nationalbibliothek / ANNO",
+          "publication": "Wiener Boheme-Verlag, Vienna",
+          "date": "1931-01",
+          "accessDate": "2026-08-30",
+          "primaryUrl": "https://anno.onb.ac.at/cgi-content/anno-plus?aid=hof&datum=19310051",
+          "organizationIds": [
+            "ORG029",
+            "ORG064"
+          ]
+        }
+      },
+      "SRC0160": {
+        "reason": "Identify this record as a Hofmeister catalogue entry rather than an examined sheet-music copy, and supply the exact issue, page and ANNO repository.",
+        "fields": {
+          "shortCitation": "Hofmeister, January 1931, p. 14 — “Große Liebe wird jetzt wieder modern”",
+          "fullCitation": "Fritz Rotter and B. Kaper, “Große Liebe wird jetzt wieder modern.” Tango; editions for salon orchestra with jazz instruments, arranged by F. Ralph, and voice with piano. Berlin: Drei Masken-Verlag, 1931. Registered in Hofmeisters Musikalisch-literarischer Monatsbericht 103, no. 1 (January 1931): 14. ANNO – Austrian Newspapers Online, Österreichische Nationalbibliothek.",
+          "sourceType": "sheet_music_catalogue",
+          "repository": "Österreichische Nationalbibliothek / ANNO",
+          "publication": "Drei Masken-Verlag, Berlin",
+          "date": "1931-01",
+          "accessDate": "2026-08-30",
+          "primaryUrl": "https://anno.onb.ac.at/cgi-content/anno-plus?aid=hof&datum=19310051",
+          "organizationIds": [
+            "ORG037",
+            "ORG064"
+          ]
+        }
+      },
       "SRC0178": {
         "reason": "Replace the unresolved Hofmeister reference with both exact ANNO registrations for the two titles represented by this source.",
         "fields": {
@@ -1618,6 +1652,98 @@
           "date": "1930-11",
           "url": "https://anno.onb.ac.at/cgi-content/anno-plus?aid=hof&datum=19300061",
           "accessDate": "2026-07-24"
+        }
+      },
+      "SRC0203": {
+        "reason": "Anchor the physical score citation in a verified institutional holding and distinguish it from the separate Deutsches Lied catalogue record SRC0787.",
+        "fields": {
+          "shortCitation": "1000 Takte-Tanz, Band 2 (Alrobi, 1929), p. 12 — NYPL, Alfred Grunwald Papers",
+          "fullCitation": "1000 Takte-Tanz, Band 2: 22 der populärsten Tanz- und Gesangs-Schlager. Berlin: Alrobi-Musikverlag, 1929. Piano-vocal score; “Wenn wir nicht beide in Gesellschaft wären, würde ich dir Liebe schwören (Vergißmeinnicht),” music by Bronisław Kaper and words by Fritz Rotter, appears on p. 12. Alfred Grunwald Papers, *T-Mss 1998-030, series IV, box 17, folder 1, Billy Rose Theatre Division, The New York Public Library for the Performing Arts.",
+          "title": "1000 Takte-Tanz, Band 2",
+          "creator": "Bronisław Kaper (music); Fritz Rotter (words)",
+          "repository": "Billy Rose Theatre Division, The New York Public Library for the Performing Arts",
+          "publication": "Alrobi-Musikverlag, Berlin",
+          "accessDate": "2026-08-30",
+          "primaryUrl": "https://nyplorg-data-archives.s3.amazonaws.com/uploads/collection/pdf_finding_aid/thegrunw.pdf",
+          "organizationIds": [
+            "ORG033",
+            "ORG049",
+            "ORG164"
+          ],
+          "researchNote": "The volume was previously dated here to about 1939. Contemporary trade evidence places Band 2 in 1929. The NYPL finding aid documents a physical piano-vocal copy in box 17, folder 1; SRC0787 remains the separate Deutsches Lied index record for the song and its page-level metadata.",
+          "researchNoteType": "date_assessment"
+        }
+      },
+      "SRC0204": {
+        "reason": "Replace an uncited description of an assumed sheet-music copy with the exact Hofmeister catalogue entry and institutional access record.",
+        "fields": {
+          "shortCitation": "Hofmeister, October 1930, p. 226 — “Sagen kleine Mädels ‘nein’”",
+          "fullCitation": "B. Kaper, Der Korvettenkapitän (Blaue Jungs von der Marine), film songs. The entry lists “Sagen kleine Mädels ‘nein’” as an English waltz, paired with “Was braucht denn jede Frau leider unbedingt?” for salon orchestra with jazz instruments, arranged by F. Stolzenwald; it is also included in the four-title edition for voice and piano. Berlin: Alrobi, 1930. Registered in Hofmeisters Musikalisch-literarischer Monatsbericht 102, no. 10 (October 1930): 226. ANNO – Austrian Newspapers Online, Österreichische Nationalbibliothek.",
+          "sourceType": "sheet_music_catalogue",
+          "creator": "B. Kaper",
+          "repository": "Österreichische Nationalbibliothek / ANNO",
+          "publication": "Alrobi, Berlin",
+          "date": "1930-10",
+          "accessDate": "2026-08-30",
+          "primaryUrl": "https://anno.onb.ac.at/cgi-content/anno-plus?aid=hof&datum=19300060",
+          "organizationIds": [
+            "ORG033",
+            "ORG064"
+          ]
+        }
+      },
+      "SRC0205": {
+        "reason": "Replace an uncited description of an assumed sheet-music copy with the exact Hofmeister catalogue entry and institutional access record.",
+        "fields": {
+          "shortCitation": "Hofmeister, October 1930, p. 226 — “Von einem bißchen Glück träumt jedes Mädchen”",
+          "fullCitation": "B. Kaper, Der Korvettenkapitän (Blaue Jungs von der Marine), film songs. The entry lists “Von einem bißchen Glück träumt jedes Mädchen” as a slow fox, paired with “Blaue Jungs von der Marine” for salon orchestra with jazz instruments, arranged by F. Stolzenwald; it is also included in the four-title edition for voice and piano. Berlin: Alrobi, 1930. Registered in Hofmeisters Musikalisch-literarischer Monatsbericht 102, no. 10 (October 1930): 226. ANNO – Austrian Newspapers Online, Österreichische Nationalbibliothek.",
+          "sourceType": "sheet_music_catalogue",
+          "creator": "B. Kaper",
+          "repository": "Österreichische Nationalbibliothek / ANNO",
+          "publication": "Alrobi, Berlin",
+          "date": "1930-10",
+          "accessDate": "2026-08-30",
+          "primaryUrl": "https://anno.onb.ac.at/cgi-content/anno-plus?aid=hof&datum=19300060",
+          "organizationIds": [
+            "ORG033",
+            "ORG064"
+          ]
+        }
+      },
+      "SRC0206": {
+        "reason": "Replace an uncited description of an assumed sheet-music copy with the exact Hofmeister catalogue entry and institutional access record.",
+        "fields": {
+          "shortCitation": "Hofmeister, October 1930, p. 226 — “Was braucht denn jede Frau leider unbedingt?”",
+          "fullCitation": "B. Kaper, Der Korvettenkapitän (Blaue Jungs von der Marine), film songs. The entry lists “Was braucht denn jede Frau leider unbedingt?” as a foxtrot, paired with “Sagen kleine Mädels ‘nein’” for salon orchestra with jazz instruments, arranged by F. Stolzenwald; it is also included in the four-title edition for voice and piano. Berlin: Alrobi, 1930. Registered in Hofmeisters Musikalisch-literarischer Monatsbericht 102, no. 10 (October 1930): 226. ANNO – Austrian Newspapers Online, Österreichische Nationalbibliothek.",
+          "sourceType": "sheet_music_catalogue",
+          "creator": "B. Kaper",
+          "repository": "Österreichische Nationalbibliothek / ANNO",
+          "publication": "Alrobi, Berlin",
+          "date": "1930-10",
+          "accessDate": "2026-08-30",
+          "primaryUrl": "https://anno.onb.ac.at/cgi-content/anno-plus?aid=hof&datum=19300060",
+          "organizationIds": [
+            "ORG033",
+            "ORG064"
+          ]
+        }
+      },
+      "SRC0207": {
+        "reason": "Replace the generic sheet-music description with the exact Hofmeister catalogue entry and institutional access record.",
+        "fields": {
+          "shortCitation": "Hofmeister, February 1931, p. 35 — “Ich steh im Schnee und wart auf dich”",
+          "fullCitation": "B. Kaper, Die große Attraktion, film song “Ich steh im Schnee und wart auf dich.” Foxtrot; words by Fritz Rotter and Armin Robinson; arrangement for salon orchestra with jazz instruments by Norbert Dostal and edition for voice and piano. Berlin: Alrobi, 1931. Registered in Hofmeisters Musikalisch-literarischer Monatsbericht 103, no. 2 (February 1931): 35. ANNO – Austrian Newspapers Online, Österreichische Nationalbibliothek.",
+          "sourceType": "sheet_music_catalogue",
+          "creator": "B. Kaper (music); Fritz Rotter and Armin Robinson (words)",
+          "repository": "Österreichische Nationalbibliothek / ANNO",
+          "publication": "Alrobi, Berlin",
+          "date": "1931-02",
+          "accessDate": "2026-08-30",
+          "primaryUrl": "https://anno.onb.ac.at/cgi-content/anno-plus?aid=hof&datum=19310052",
+          "organizationIds": [
+            "ORG033",
+            "ORG064"
+          ]
         }
       },
       "SRC0208": {
@@ -5098,6 +5224,30 @@
           "publicNote": "Film archive and research library in Toulouse. Its digital library provides access to digitized books and periodicals, including the Pour Vous run containing issue N0009 of 17 January 1929.",
           "sourceIds": [
             "SRC0575"
+          ]
+        }
+      },
+      "ORG164": {
+        "reason": "Add the verified institutional holder of the 1000 Takte-Tanz, Band 2 piano-vocal score cited by SRC0203.",
+        "fields": {
+          "id": "ORG164",
+          "displayName": "The New York Public Library for the Performing Arts",
+          "authorizedName": "The New York Public Library for the Performing Arts",
+          "types": [
+            "archive",
+            "library"
+          ],
+          "city": [
+            "New York"
+          ],
+          "country": "United States",
+          "slug": "new-york-public-library-for-the-performing-arts",
+          "nameVariants": "NYPL for the Performing Arts; Billy Rose Theatre Division",
+          "authorizedNameSource": "Official finding aid",
+          "authorityUrl": "Official website: https://www.nypl.org/locations/lpa\nFinding aid: https://nyplorg-data-archives.s3.amazonaws.com/uploads/collection/pdf_finding_aid/thegrunw.pdf",
+          "publicNote": "Research library and archive at Lincoln Center. Its Billy Rose Theatre Division holds the Alfred Grunwald Papers (*T-Mss 1998-030), including a piano-vocal copy of 1000 Takte-Tanz, Band 2 in series IV, box 17, folder 1.",
+          "sourceIds": [
+            "SRC0203"
           ]
         }
       }
@@ -11334,6 +11484,8 @@
         "reason": "Link the completed Hofmeister/ANNO and Die Bühne source records to the Austrian National Library repository.",
         "fields": {
           "sourceIds": [
+            "SRC0157",
+            "SRC0160",
             "SRC0178",
             "SRC0179",
             "SRC0180",
@@ -11355,6 +11507,10 @@
             "SRC0198",
             "SRC0199",
             "SRC0201",
+            "SRC0204",
+            "SRC0205",
+            "SRC0206",
+            "SRC0207",
             "SRC0208",
             "SRC0209",
             "SRC0210",
@@ -11377,6 +11533,11 @@
         "fields": {
           "sourceIds": [
             "SRC0095",
+            "SRC0203",
+            "SRC0204",
+            "SRC0205",
+            "SRC0206",
+            "SRC0207",
             "SRC0180",
             "SRC0185",
             "SRC0213",
@@ -11411,6 +11572,7 @@
         "reason": "Link Wiener Boheme Verlag to the completed Hofmeister sources and to the separately modelled Dutch-language edition it published.",
         "fields": {
           "sourceIds": [
+            "SRC0157",
             "SRC0190",
             "SRC0209",
             "SRC0216",
@@ -11422,6 +11584,14 @@
           ],
           "contributionIds": [
             "CON-S217-PUB-ORG029"
+          ]
+        }
+      },
+      "ORG037": {
+        "reason": "Link Drei Masken-Verlag to the exact January 1931 Hofmeister entry for Große Liebe wird jetzt wieder modern.",
+        "fields": {
+          "sourceIds": [
+            "SRC0160"
           ]
         }
       },

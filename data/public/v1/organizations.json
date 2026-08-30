@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 155,
+  "count": 156,
   "records": [
     {
       "id": "ORG001",
@@ -845,6 +845,7 @@
       "slug": "wiener-boheme-verlag",
       "nameVariants": "Wiener Bohème Verlag",
       "sourceIds": [
+        "SRC0157",
         "SRC0182",
         "SRC0187",
         "SRC0190",
@@ -1064,6 +1065,11 @@
         "SRC0178",
         "SRC0180",
         "SRC0185",
+        "SRC0203",
+        "SRC0204",
+        "SRC0205",
+        "SRC0206",
+        "SRC0207",
         "SRC0213",
         "SRC0214",
         "SRC0223",
@@ -1288,6 +1294,7 @@
       "country": "Germany",
       "slug": "drei-masken-verlag",
       "sourceIds": [
+        "SRC0160",
         "SRC0179"
       ],
       "contributionIds": [
@@ -2118,6 +2125,10 @@
         "SRC0198",
         "SRC0199",
         "SRC0201",
+        "SRC0204",
+        "SRC0205",
+        "SRC0206",
+        "SRC0207",
         "SRC0208",
         "SRC0209",
         "SRC0210",
@@ -4847,6 +4858,27 @@
       "publicNote": "Film archive and research library in Toulouse. Its digital library provides access to digitized books and periodicals, including the Pour Vous run containing issue N0009 of 17 January 1929.",
       "sourceIds": [
         "SRC0575"
+      ]
+    },
+    {
+      "id": "ORG164",
+      "displayName": "The New York Public Library for the Performing Arts",
+      "authorizedName": "The New York Public Library for the Performing Arts",
+      "types": [
+        "archive",
+        "library"
+      ],
+      "city": [
+        "New York"
+      ],
+      "country": "United States",
+      "slug": "new-york-public-library-for-the-performing-arts",
+      "nameVariants": "NYPL for the Performing Arts; Billy Rose Theatre Division",
+      "authorizedNameSource": "Official finding aid",
+      "authorityUrl": "Official website: https://www.nypl.org/locations/lpa\nFinding aid: https://nyplorg-data-archives.s3.amazonaws.com/uploads/collection/pdf_finding_aid/thegrunw.pdf",
+      "publicNote": "Research library and archive at Lincoln Center. Its Billy Rose Theatre Division holds the Alfred Grunwald Papers (*T-Mss 1998-030), including a piano-vocal copy of 1000 Takte-Tanz, Band 2 in series IV, box 17, folder 1.",
+      "sourceIds": [
+        "SRC0203"
       ]
     }
   ]
