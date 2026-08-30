@@ -1388,6 +1388,14 @@
           "accessDate": "2026-07-24"
         }
       },
+      "SRC0155": {
+        "reason": "Link the physical sheet-music holding to the exact StabiKat component record returned by the verified shelfmark search for DMS 221677, rather than to a results page or the parent series record.",
+        "fields": {
+          "fullCitation": "Bronisław Kaper, Jazz-Tricks: Transcriptions for 4 hands (Piano), nos. 1–5. Berlin: Alberti, [1932]. Staatsbibliothek zu Berlin, Musikabteilung, Unter den Linden, shelfmark DMS 221677; StabiKat PPN 1916427405.",
+          "primaryUrl": "https://stabikat.de/Record/1916427405",
+          "accessDate": "2026-08-30"
+        }
+      },
       "SRC0157": {
         "reason": "Identify this record as a Hofmeister catalogue entry rather than an examined sheet-music copy, and supply the exact issue, page and ANNO repository.",
         "fields": {
