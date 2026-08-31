@@ -25,6 +25,16 @@ from filmographic_sources import (
     source_hostname,
 )
 from recording_organizations import expected_audio_organization_ids
+from recording_sources import (
+    RECORDING_ORGANIZATION_BY_HOST,
+    recording_hostname,
+)
+from visual_sources import (
+    VISUAL_RIGHTS_NARRATIVE_PATTERN,
+    WIKIMEDIA_ORGANIZATION_ID,
+    is_normalized_visual_source,
+    is_wikimedia_source,
+)
 
 
 def read_json(path: Path) -> dict[str, Any]:
@@ -798,7 +808,7 @@ class ExportValidator:
                     )
                 if (
                     source.get("accessDate")
-                    and TRAILING_ACCESSED_PATTERN.search(full_citation)
+                    and re.search(r"\bAccessed\b", full_citation, re.IGNORECASE)
                 ):
                     self.errors.append(
                         f"Source {source_id}: fullCitation repeats the structured accessDate"
@@ -826,6 +836,56 @@ class ExportValidator:
                     self.errors.append(
                         f"Source {source_id}: missing authority organization "
                         f"{authority_organization} for {authority_host}"
+                    )
+            if source.get("sourceType") == "recording_discographic_source":
+                if not source.get("accessDate"):
+                    self.errors.append(
+                        f"Source {source_id}: recording source lacks accessDate"
+                    )
+                if (
+                    source.get("accessDate")
+                    and TRAILING_ACCESSED_PATTERN.search(full_citation)
+                ):
+                    self.errors.append(
+                        f"Source {source_id}: fullCitation repeats the structured accessDate"
+                    )
+                recording_organization = RECORDING_ORGANIZATION_BY_HOST.get(
+                    recording_hostname(source)
+                )
+                if (
+                    recording_organization
+                    and recording_organization
+                    not in source.get("organizationIds", [])
+                ):
+                    self.errors.append(
+                        f"Source {source_id}: missing recording repository organization "
+                        f"{recording_organization}"
+                    )
+            if is_normalized_visual_source(source):
+                if source.get("primaryUrl") and not source.get("accessDate"):
+                    self.errors.append(
+                        f"Source {source_id}: online visual source lacks accessDate"
+                    )
+                if (
+                    source.get("accessDate")
+                    and re.search(r"\bAccessed\b", full_citation, re.IGNORECASE)
+                ):
+                    self.errors.append(
+                        f"Source {source_id}: fullCitation repeats the structured accessDate"
+                    )
+                if VISUAL_RIGHTS_NARRATIVE_PATTERN.search(full_citation):
+                    self.errors.append(
+                        f"Source {source_id}: fullCitation contains rights analysis "
+                        "that belongs in the linked Media record"
+                    )
+                if (
+                    is_wikimedia_source(source)
+                    and WIKIMEDIA_ORGANIZATION_ID
+                    not in source.get("organizationIds", [])
+                ):
+                    self.errors.append(
+                        f"Source {source_id}: missing Wikimedia repository organization "
+                        f"{WIKIMEDIA_ORGANIZATION_ID}"
                     )
             hostname = source_hostname(source)
             expected_repository = CANONICAL_REPOSITORY_BY_HOST.get(hostname)

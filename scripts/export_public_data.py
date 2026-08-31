@@ -17,6 +17,8 @@ from urllib.parse import parse_qsl, urlencode, urlparse, urlunparse
 
 from authority_sources import normalize_authority_source
 from filmographic_sources import normalize_filmographic_source
+from recording_sources import normalize_recording_source
+from visual_sources import normalize_visual_source
 
 
 TABLE_ORDER = [
@@ -1347,8 +1349,11 @@ class PublicExporter:
     def _normalize_source_public_text(self) -> None:
         """Keep source citations bibliographic rather than graph- or workflow-oriented."""
         for source in self.output_records["Sources"]:
+            normalize_visual_source(source)
             if source.get("sourceType") == "authority_record":
                 normalize_authority_source(source)
+            if source.get("sourceType") == "recording_discographic_source":
+                normalize_recording_source(source)
             if source.get("sourceType") == "filmographic_database" or source.get(
                 "id"
             ) in {"SRC0174", "SRC0602"}:

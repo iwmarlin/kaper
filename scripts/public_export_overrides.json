@@ -11442,9 +11442,9 @@
         }
       },
       "ORG067": {
-        "reason": "Synchronize Internet Archive with the digitized Hofmeister items and with the verified Motion Picture Herald, Der Kinematograph and Film-Magazin records hosted by the archive.",
+        "reason": "Synchronize Internet Archive with the digitized Hofmeister and film-trade sources and with the Great 78 Project and Leif Druedahl recording items hosted by the archive.",
         "fields": {
-          "sourceIds": ["SRC0569", "SRC0690", "SRC0703", "SRC0768", "SRC0769", "SRC0770", "SRC0771", "SRC0772", "SRC0776"]
+          "sourceIds": ["SRC0569", "SRC0690", "SRC0703", "SRC0768", "SRC0769", "SRC0770", "SRC0771", "SRC0772", "SRC0776", "SRC0782", "SRC0783", "SRC0784", "SRC0785", "SRC0788"]
         }
       },
       "ORG091": {
@@ -11482,6 +11482,7 @@
         "fields": {
           "sourceIds": [
             "SRC0634",
+            "SRC0633",
             "SRC0674",
             "SRC0675"
           ]
@@ -11535,6 +11536,7 @@
             "SRC0589",
             "SRC0590",
             "SRC0617",
+            "SRC0625",
             "SRC0626",
             "SRC0629",
             "SRC0630",
@@ -11577,25 +11579,78 @@
         }
       },
       "ORG090": {
-        "reason": "Synchronize the inverse source links for the newly added Wikimedia portrait records whose Sources already identify the Wikimedia Foundation.",
+        "reason": "Synchronize Wikimedia Foundation with every normalized source accessed through Wikimedia Commons or a Wikipedia file/article page; holding institutions remain separately attributed in Source and Media metadata.",
         "fields": {
           "sourceIds": [
+            "SRC0174",
+            "SRC0362",
+            "SRC0501",
+            "SRC0523",
+            "SRC0533",
+            "SRC0537",
             "SRC0558",
             "SRC0559",
             "SRC0560",
             "SRC0561",
             "SRC0562",
+            "SRC0564",
+            "SRC0565",
+            "SRC0571",
+            "SRC0585",
+            "SRC0591",
+            "SRC0592",
+            "SRC0593",
+            "SRC0594",
+            "SRC0595",
+            "SRC0596",
+            "SRC0597",
+            "SRC0598",
+            "SRC0599",
+            "SRC0600",
+            "SRC0603",
+            "SRC0604",
+            "SRC0605",
+            "SRC0606",
+            "SRC0607",
+            "SRC0608",
+            "SRC0609",
+            "SRC0611",
+            "SRC0612",
+            "SRC0620",
+            "SRC0621",
+            "SRC0642",
+            "SRC0643",
+            "SRC0644",
+            "SRC0645",
+            "SRC0646",
+            "SRC0647",
+            "SRC0648",
+            "SRC0656",
             "SRC0657",
+            "SRC0662",
+            "SRC0664",
+            "SRC0666",
+            "SRC0667",
+            "SRC0668",
             "SRC0669",
+            "SRC0671",
             "SRC0676",
             "SRC0677",
             "SRC0679",
             "SRC0680",
+            "SRC0691",
+            "SRC0711",
+            "SRC0720",
+            "SRC0721",
+            "SRC0747",
+            "SRC0752",
             "SRC0777",
             "SRC0778",
             "SRC0779",
             "SRC0780",
-            "SRC0781"
+            "SRC0781",
+            "SRC0813",
+            "SRC0838"
           ]
         }
       },
