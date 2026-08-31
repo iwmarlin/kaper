@@ -17126,11 +17126,11 @@
     {
       "id": "SRC0532",
       "shortCitation": "BnF, “Coup de feu à l’aube (film),” FRBNF14664260",
-      "fullCitation": "Bibliothèque nationale de France. “Coup de feu à l’aube (film).” Notice de titre conventionnel, FRBNF14664260, ark:/12148/cb14664260c. French-German film directed by Serge de Poligny; filmed in 1932 and released in France on 17 August 1932. Accessed 1 August 2026.",
+      "fullCitation": "Bibliothèque nationale de France. “Coup de feu à l’aube (film).” Notice de titre conventionnel, FRBNF14664260, ark:/12148/cb14664260c.",
       "sourceType": "authority_record",
       "title": "Coup de feu à l’aube",
       "creator": "Bibliothèque nationale de France",
-      "repository": "Bibliothèque nationale de France",
+      "repository": "Bibliothèque nationale de France (BnF)",
       "publication": "Catalogue général de la BnF",
       "date": "1932",
       "accessDate": "2026-08-01",
@@ -17167,7 +17167,9 @@
           "scheme": "ark",
           "value": "ark:/12148/cb14664260c"
         }
-      ]
+      ],
+      "researchNote": "The record identifies the film as a French-German production directed by Serge de Poligny, filmed in 1932 and released in France on 17 August 1932.",
+      "researchNoteType": "evidence_note"
     },
     {
       "id": "SRC0533",
@@ -18580,8 +18582,8 @@
     },
     {
       "id": "SRC0588",
-      "shortCitation": "BnF, authority record for Marc-Cab (1901–1978)",
-      "fullCitation": "Bibliothèque nationale de France. “Marc-Cab (1901-1978).” data.bnf.fr, ark:/12148/cb11914372q. The heading is established under the pseudonym; BnF catalogue notices for La belle de Cadix and La belle Arabelle credit the lyrics to Marcel Cabridens. Accessed 31 July 2026.",
+      "shortCitation": "BnF, authority record “Marc-Cab (1901–1978)”",
+      "fullCitation": "Bibliothèque nationale de France. “Marc-Cab (1901–1978).” data.bnf.fr, ark:/12148/cb11914372q.",
       "sourceType": "authority_record",
       "title": "Marc-Cab (1901-1978)",
       "creator": "Bibliothèque nationale de France",
@@ -18598,12 +18600,17 @@
       "primaryUrl": "https://data.bnf.fr/fr/ark:/12148/cb11914372q",
       "nameVariantIds": [
         "PNV0042"
+      ],
+      "researchNote": "The heading is established under the pseudonym Marc-Cab. BnF catalogue records for La belle de Cadix and La belle Arabelle credit the lyrics to Marcel Cabridens.",
+      "researchNoteType": "authority_note",
+      "organizationIds": [
+        "ORG062"
       ]
     },
     {
       "id": "SRC0589",
-      "shortCitation": "BnF, authority record for André de Badet (1891-1977)",
-      "fullCitation": "Bibliothèque nationale de France. “André de Badet (1891-1977).” data.bnf.fr, ark:/12148/cb148356206. Accessed 31 July 2026.",
+      "shortCitation": "BnF, authority record “André de Badet (1891–1977)”",
+      "fullCitation": "Bibliothèque nationale de France. “André de Badet (1891–1977).” data.bnf.fr, ark:/12148/cb148356206.",
       "sourceType": "authority_record",
       "title": "André de Badet (1891-1977)",
       "creator": "Bibliothèque nationale de France",
@@ -18617,12 +18624,15 @@
       "personIds": [
         "P006"
       ],
-      "primaryUrl": "https://data.bnf.fr/fr/ark:/12148/cb148356206"
+      "primaryUrl": "https://data.bnf.fr/fr/ark:/12148/cb148356206",
+      "organizationIds": [
+        "ORG062"
+      ]
     },
     {
       "id": "SRC0590",
-      "shortCitation": "BnF, authority record for Henri Varna (1887-1969)",
-      "fullCitation": "Bibliothèque nationale de France. “Henri Varna (1887-1969).” data.bnf.fr, ark:/12148/cb14785637s. Accessed 31 July 2026.",
+      "shortCitation": "BnF, authority record “Henri Varna (1887–1969)”",
+      "fullCitation": "Bibliothèque nationale de France. “Henri Varna (1887–1969).” data.bnf.fr, ark:/12148/cb14785637s.",
       "sourceType": "authority_record",
       "title": "Henri Varna (1887-1969)",
       "creator": "Bibliothèque nationale de France",
@@ -18636,7 +18646,10 @@
       "personIds": [
         "P031"
       ],
-      "primaryUrl": "https://data.bnf.fr/fr/ark:/12148/cb14785637s"
+      "primaryUrl": "https://data.bnf.fr/fr/ark:/12148/cb14785637s",
+      "organizationIds": [
+        "ORG062"
+      ]
     },
     {
       "id": "SRC0591",
@@ -19376,9 +19389,9 @@
     },
     {
       "id": "SRC0623",
-      "shortCitation": "ISNI registry record for Andrzej Włast",
-      "fullCitation": "ISNI International Agency. Registry record 0000 0000 7143 777X, name forms Włast; Włast, A.; Włast, Andrzej, dates 1895-1943?. Under related identities the record gives “Baumritter, Gustaw (other identity, same person)” and “Willy (other identity, same person)”. Contributing sources: VIAF, NUKAT, BnF. Accessed 1 August 2026.",
-      "researchNote": "The birth year is contested: ISNI, VIAF and the Library of Congress give 1895, while GND 1203212704 gives 17 March 1885 and Wikidata follows it. The preferred year is 1895; the discrepancy remains unresolved.",
+      "shortCitation": "ISNI, Andrzej Włast, 0000 0000 7143 777X",
+      "fullCitation": "ISNI International Agency. “Włast, Andrzej.” ISNI 0000 0000 7143 777X.",
+      "researchNote": "The registry supplies the forms Włast; Włast, A.; and Włast, Andrzej. It relates Gustaw Baumritter and Willy as other identities of the same person and cites VIAF, NUKAT and BnF as contributing sources. The birth year is contested: ISNI, VIAF and the Library of Congress give 1895, while GND 1203212704 gives 17 March 1885 and Wikidata follows it. The preferred year is 1895; the discrepancy remains unresolved.",
       "researchNoteType": "date_assessment",
       "sourceType": "authority_record",
       "title": "ISNI 000000007143777X — Włast, Andrzej",
@@ -19397,7 +19410,8 @@
         "PNV0002",
         "PNV0051"
       ],
-      "primaryUrl": "https://isni.org/isni/000000007143777X"
+      "primaryUrl": "https://isni.org/isni/000000007143777X",
+      "organizationIds": []
     },
     {
       "id": "SRC0624",
@@ -19461,12 +19475,12 @@
     },
     {
       "id": "SRC0626",
-      "shortCitation": "BnF person authority record for Georges Rey",
-      "fullCitation": "Bibliothèque nationale de France, notice de personne “Rey, Georges (1908-2011)”, forme internationale, FRBNF16974300. Born 27 May 1908 in Papeete, Tahiti; died 6 January 2011 in Bazas, Gironde. Described as a Tahitian composer, singer and musician who worked as an assistant book-keeper in an American camp in the Gironde, and known also under the pseudonym Tihoti-Ré, or Tihoti-Re. The notice cites as its sources the Pathé disc of “O chant d’amour de Tahiti !” and Claude Lestrade, “Quelques souvenirs de Tahiti de 1942 à 1945 (2e partie),” Journal de la Société des océanistes 95 (1992), pp. 251–274. Accessed 1 August 2026.",
+      "shortCitation": "BnF, authority record “Georges Rey (1908–2011)”",
+      "fullCitation": "Bibliothèque nationale de France. Notice de personne “Rey, Georges (1908–2011)”, FRBNF16974300, ark:/12148/cb16974300s.",
       "sourceType": "authority_record",
       "title": "Rey, Georges (1908-2011) — notice de personne",
       "creator": "Bibliothèque nationale de France",
-      "repository": "Bibliothèque nationale de France",
+      "repository": "Bibliothèque nationale de France (BnF)",
       "publication": "Catalogue général de la BnF",
       "date": "2026",
       "accessDate": "2026-08-01",
@@ -19479,19 +19493,24 @@
       "nameVariantIds": [
         "PNV0052"
       ],
-      "primaryUrl": "https://catalogue.bnf.fr/ark:/12148/cb16974300s"
+      "primaryUrl": "https://catalogue.bnf.fr/ark:/12148/cb16974300s",
+      "researchNote": "The notice gives 27 May 1908 in Papeete, Tahiti, and 6 January 2011 in Bazas, Gironde. It describes Rey as a Tahitian composer, singer and musician and records Tihoti-Ré and Tihoti-Re as pseudonymous forms. Its cited sources include the Pathé disc of “O chant d’amour de Tahiti !” and Claude Lestrade’s 1992 article in the Journal de la Société des océanistes.",
+      "researchNoteType": "authority_note",
+      "organizationIds": [
+        "ORG062"
+      ]
     },
     {
       "id": "SRC0627",
-      "shortCitation": "GND authority record for Paul Mann, composer",
-      "fullCitation": "Deutsche Nationalbibliothek, GND 133442284, “Mann, Paul”, composer, born 1910 in Vienna and died 27 May 1983 in New York. Variant forms: Wechselmann, Paul; Mawersky, Paul Stephan; Bachinger, Alois; Marois, Jean; and Walden, Peter. Linked records include BnF ark:/12148/cb14768347k, LCNAF nb2003055670, VIAF 3662538 and Wikidata Q31202678. Accessed 1 August 2026.",
-      "researchNote": "The Library of Congress heading reads “Mann, Paul, 1910-1983” and cites the 1944 sheet “Tell me I’m the only one you care for”. The day and month of birth are contested: the German Wikipedia article gives 3 September 1910 while the GND gives 3 October 1910; both agree on the year and on the death date, 27 May 1983.",
+      "shortCitation": "GND, authority record “Mann, Paul,” 133442284",
+      "fullCitation": "Deutsche Nationalbibliothek. “Mann, Paul.” Gemeinsame Normdatei, GND 133442284.",
+      "researchNote": "The GND records the composer as born in Vienna in 1910 and deceased in New York on 27 May 1983. It gives the variants Wechselmann, Paul; Mawersky, Paul Stephan; Bachinger, Alois; Marois, Jean; and Walden, Peter, and links BnF ark:/12148/cb14768347k, LCNAF nb2003055670, VIAF 3662538 and Wikidata Q31202678. The Library of Congress heading reads “Mann, Paul, 1910–1983” and cites the 1944 sheet “Tell me I’m the only one you care for”. The day and month of birth are contested: German Wikipedia gives 3 September 1910 while the GND gives 3 October 1910; both agree on the year and on the death date.",
       "researchNoteType": "date_assessment",
       "sourceType": "authority_record",
       "title": "GND 133442284 — Mann, Paul",
       "creator": "Deutsche Nationalbibliothek",
-      "repository": "Deutsche Nationalbibliothek",
-      "publication": "Gemeinsame Normdatei",
+      "repository": "Deutsche Nationalbibliothek (GND)",
+      "publication": "Gemeinsame Normdatei (GND)",
       "date": "2026",
       "accessDate": "2026-08-01",
       "reliability": "high",
@@ -19503,19 +19522,22 @@
       "nameVariantIds": [
         "PNV0053"
       ],
-      "primaryUrl": "https://d-nb.info/gnd/133442284"
+      "primaryUrl": "https://d-nb.info/gnd/133442284",
+      "organizationIds": [
+        "ORG074"
+      ]
     },
     {
       "id": "SRC0628",
-      "shortCitation": "Authority records for Robert Péguy",
-      "fullCitation": "Deutsche Nationalbibliothek, GND 1061685829, “Péguy, Robert”, director, born 14 December 1883 and died 21 July 1968; variant forms “Péguy, Marcel Robert” and “Robert, Marcel”. Library of Congress heading no2009019373, “Péguy, Robert, 1883-1968”. Accessed 1 August 2026.",
-      "researchNote": "The French Wikipedia article gives the birth name as Marcel Robert Péguy and locates both his birth and death in the 17th arrondissement of Paris. Neither authority file records the spelling Pégy; the GND links directly to the filmportal.de record for the same man. The form printed in the credits of Son altesse l’amour is therefore treated as a source-specific spelling rather than as a name he is known to have used elsewhere.",
+      "shortCitation": "GND and LCNAF authority records for Robert Péguy",
+      "fullCitation": "Deutsche Nationalbibliothek. “Péguy, Robert.” Gemeinsame Normdatei, GND 1061685829. Library of Congress. “Péguy, Robert, 1883–1968.” LCNAF no2009019373.",
+      "researchNote": "The GND records Robert Péguy as a director born 14 December 1883 and deceased 21 July 1968, with the variants Péguy, Marcel Robert and Robert, Marcel; LCNAF agrees on the years 1883–1968. The French Wikipedia article gives the birth name as Marcel Robert Péguy and locates both his birth and death in the 17th arrondissement of Paris. Neither authority file records the spelling Pégy; the GND links directly to the filmportal.de record for the same man. The form printed in the credits of Son altesse l’amour is therefore treated as a source-specific spelling rather than as a name he is known to have used elsewhere.",
       "researchNoteType": "identity_assessment",
       "sourceType": "authority_record",
       "title": "GND 1061685829 and LCNAF no2009019373 — Péguy, Robert",
-      "creator": "Deutsche Nationalbibliothek; Library of Congress",
-      "repository": "Deutsche Nationalbibliothek",
-      "publication": "Gemeinsame Normdatei",
+      "creator": "Deutsche Nationalbibliothek",
+      "repository": "Deutsche Nationalbibliothek (GND)",
+      "publication": "Gemeinsame Normdatei (GND)",
       "date": "2026",
       "accessDate": "2026-08-01",
       "reliability": "high",
@@ -19527,19 +19549,23 @@
       "nameVariantIds": [
         "PNV0054"
       ],
-      "primaryUrl": "https://d-nb.info/gnd/1061685829"
+      "primaryUrl": "https://d-nb.info/gnd/1061685829",
+      "organizationIds": [
+        "ORG074",
+        "ORG066"
+      ]
     },
     {
       "id": "SRC0629",
       "shortCitation": "BnF authority record for Charlie Davson / Charles Secchia",
-      "fullCitation": "Bibliothèque nationale de France, authority record FRBNF13792811, “Charlie Davson”, pseudonym of Charles Secchia. Accessed 2 August 2026.",
+      "fullCitation": "Bibliothèque nationale de France. “Charlie Davson.” Authority record FRBNF13792811, ark:/12148/cb137928110.",
       "researchNote": "The BnF records Charlie Davson as the pseudonym of Charles Secchia, a French male lyricist, with responsibilities as author and performer. It gives his dates as “Naissance : 18..?” and “Mort : 19..”, indicating a nineteenth-century birth and a twentieth-century death, with neither year established. The notice cites the printed music “Je ne connais personne”, words by Ch. Davson with German words by Emmerich Lazar and P. Doenen, music by Emeric Lazar, 1938, and gives ISNI 0000 0003 5830 9767. Fifty-six BnF bibliographic records are linked to him as author.",
       "researchNoteType": "authority_note",
       "sourceType": "authority_record",
       "title": "Charlie Davson / Charles Secchia — BnF authority record",
       "creator": "Bibliothèque nationale de France",
-      "repository": "Bibliothèque nationale de France",
-      "publication": "BnF data",
+      "repository": "Bibliothèque nationale de France (BnF)",
+      "publication": "Catalogue général de la BnF",
       "date": "2026",
       "accessDate": "2026-08-02",
       "reliability": "high",
@@ -19602,13 +19628,13 @@
     {
       "id": "SRC0631",
       "shortCitation": "BnF authority record for Ninon Steinhof",
-      "fullCitation": "Bibliothèque nationale de France. Notice de personne “Steinhof, Ninon”, FRBNF14700943, ark:/12148/cb14700943p. Accessed 2 August 2026.",
+      "fullCitation": "Bibliothèque nationale de France. Notice de personne “Steinhof, Ninon”, FRBNF14700943, ark:/12148/cb14700943p.",
       "researchNote": "The BnF records “Steinhof, Ninon” as a pseudonym and international form, identifies her as a woman writing in French and translating from German, and describes her as a translator. It gives the dates as “Naissance : 18..?” and “Mort : 19..”, indicating a nineteenth-century birth and a twentieth-century death, with neither year established; “Steinhoff, Ninon” is a rejected form. The notice cites two sources: the printed music “Adieu”, music by Pierre Candel, words by Ninon Steinhoff and André Legrand, 1934; and the French adaptation of Ferdinand Bruckner’s play “Les criminels”, made with André Mauprey in 1950. ISNI 0000 0001 1982 6820. Sixteen bibliographic records are linked to her as author.",
       "researchNoteType": "authority_note",
       "sourceType": "authority_record",
       "title": "Steinhof, Ninon — notice de personne",
       "creator": "Bibliothèque nationale de France",
-      "repository": "Bibliothèque nationale de France",
+      "repository": "Bibliothèque nationale de France (BnF)",
       "publication": "Catalogue général de la BnF",
       "date": "2026",
       "accessDate": "2026-08-02",
@@ -19621,18 +19647,21 @@
       "nameVariantIds": [
         "PNV0056"
       ],
-      "primaryUrl": "https://catalogue.bnf.fr/ark:/12148/cb14700943p"
+      "primaryUrl": "https://catalogue.bnf.fr/ark:/12148/cb14700943p",
+      "organizationIds": [
+        "ORG062"
+      ]
     },
     {
       "id": "SRC0632",
       "shortCitation": "BnF authority record for Roubier d’Hérembault, André-Paul",
-      "fullCitation": "Bibliothèque nationale de France. Notice de personne “Roubier d’Hérembault, André-Paul (18..-1961)”, FRBNF14842949, ark:/12148/cb148429497. ISNI 0000 0000 1013 0301. Accessed 2 August 2026.",
+      "fullCitation": "Bibliothèque nationale de France. Notice de personne “Roubier d’Hérembault, André-Paul (18..–1961)”, FRBNF14842949, ark:/12148/cb148429497. ISNI 0000 0000 1013 0301.",
       "researchNote": "The BnF records a male composer and lyricist, born at an undetermined date in the nineteenth century and deceased in 1961, from SACEM information received in 1980; rejected forms are “Charline, Paul (18..-1961)”, a pseudonym, and “Hérembault, André-Paul Roubier d’”. This remains only a candidate identification for André Roubier: the uncommon surname, period and professional milieu agree, but BnF’s single linked bibliographic record, the 1937 film song “Un carnet de bal / Valse grise”, credits him as lyricist under the name Paul Charline, whereas the Kaper-related records identify André Roubier as a composer. The BnF disc notice for “À Paris, tiguidiguidi” names neither Roubier nor any composer, crediting only Henri Garat as singer and Bronisław Kaper as conductor. No identity resolution is asserted.",
       "researchNoteType": "identity_assessment",
       "sourceType": "authority_record",
       "title": "Roubier d’Hérembault, André-Paul (18..-1961) — notice de personne",
       "creator": "Bibliothèque nationale de France",
-      "repository": "Bibliothèque nationale de France",
+      "repository": "Bibliothèque nationale de France (BnF)",
       "publication": "Catalogue général de la BnF",
       "date": "2026",
       "accessDate": "2026-08-02",
@@ -19642,7 +19671,10 @@
       "personIds": [
         "P079"
       ],
-      "primaryUrl": "https://catalogue.bnf.fr/ark:/12148/cb148429497"
+      "primaryUrl": "https://catalogue.bnf.fr/ark:/12148/cb148429497",
+      "organizationIds": [
+        "ORG062"
+      ]
     },
     {
       "id": "SRC0633",
@@ -19705,13 +19737,13 @@
     {
       "id": "SRC0634",
       "shortCitation": "Authority records for Marcella Halicz",
-      "fullCitation": "Biblioteka Narodowa, Deskryptory BN, personal descriptor “Halicz, Marcella”, identifier (PL)a0000002111045, control number p 2016350890, MMS ID 9810691594205606. VIAF 302995408; NUKAT n2014185547; ISNI 0000 0004 0939 6902. Accessed 2 August 2026.",
+      "fullCitation": "Biblioteka Narodowa. Deskryptory BN, personal descriptor “Halicz, Marcella”, identifier (PL)a0000002111045, control number p 2016350890, MMS ID 9810691594205606. VIAF 302995408; NUKAT n2014185547; ISNI 0000 0004 0939 6902.",
       "researchNote": "The BN descriptor records the variant forms Halicz, M.; Halicz, Marcela; and Halicz, Marcelina. It cites “Manuela / Marceli Halicz”, 1935, and Lerski 2003, and expressly records the Polski Słownik Biograficzny as a source in which no information was found, so no dates are established; her recorded responsibility is translation. VIAF heads her as “Halicz, Marcella, 19/20” — nineteenth to twentieth century, unspecified — and lists her Polish film songs, including “Ninon” and “Ninon, ach uśmiechnij się”, with numbers from the Kiepura films Kocham wszystkie kobiety and Dla Ciebie śpiewam. Wikidata Q95678216 additionally merges this identity with GND 1061346501, a Marcella Halicz recorded as a screen actress active in 1919–1924 and linked to filmportal. That merge is not adopted: nothing in the Polish authority evidence supports it, and the VIAF cluster carries no German material.",
       "researchNoteType": "identity_assessment",
       "sourceType": "authority_record",
       "title": "Halicz, Marcella — Deskryptory BN and VIAF 302995408",
-      "creator": "Biblioteka Narodowa; VIAF",
-      "repository": "Biblioteka Narodowa",
+      "creator": "Biblioteka Narodowa",
+      "repository": "Biblioteka Narodowa (Deskryptory BN)",
       "publication": "Deskryptory Biblioteki Narodowej",
       "date": "2026",
       "accessDate": "2026-08-02",
@@ -19725,7 +19757,10 @@
         "PNV0057",
         "PNV0058"
       ],
-      "primaryUrl": "https://dbn.bn.org.pl/descriptor-details/9810691594205606"
+      "primaryUrl": "https://dbn.bn.org.pl/descriptor-details/9810691594205606",
+      "organizationIds": [
+        "ORG063"
+      ]
     },
     {
       "id": "SRC0635",
@@ -21033,23 +21068,28 @@
       "accessDate": "2026-08-06",
       "creator": "Library of Congress",
       "date": "",
-      "fullCitation": "Library of Congress name authority record for the pseudonymous identity Marylis, Guy, 1880-1944 (LCCN n2017060192). The VIAF cluster that gathers it, VIAF 221170232, also carries the Bibliothèque nationale de France heading Bonnal, Ermend, 1880-1944, compositeur (ark:/12148/cb16557102j), with a see-also reference between the two names, which is the evidence that Guy Marylis is a name of Joseph-Ermend Bonnal. Accessed 6 August 2026.",
+      "fullCitation": "Library of Congress. “Marylis, Guy, 1880–1944.” Library of Congress Name Authority File, LCCN n2017060192.",
       "id": "SRC0686",
       "mediaIds": [],
       "personIds": [
         "P111"
       ],
       "primaryUrl": "https://id.loc.gov/authorities/names/n2017060192",
-      "publication": "Library of Congress Name Authority File",
+      "publication": "Library of Congress Name Authority File (LCNAF)",
       "reliability": "high",
-      "repository": "Library of Congress",
-      "shortCitation": "LCNAF n2017060192, Marylis, Guy, 1880-1944",
+      "repository": "Library of Congress (LCNAF)",
+      "shortCitation": "LCNAF, “Marylis, Guy, 1880–1944,” n2017060192",
       "slug": "src0686-lcnaf-marylis-guy-pseudonym-of-ermend-bonnal",
       "sourceStatus": "verified",
       "sourceType": "authority_record",
       "title": "LCNAF — Marylis, Guy, 1880-1944",
       "nameVariantIds": [
         "PNV0060"
+      ],
+      "researchNote": "The VIAF cluster 221170232 also carries the Bibliothèque nationale de France heading “Bonnal, Ermend, 1880–1944, compositeur” (ark:/12148/cb16557102j), with a see-also reference between the two names. This supports identifying Guy Marylis as a name used by Joseph-Ermend Bonnal.",
+      "researchNoteType": "identity_assessment",
+      "organizationIds": [
+        "ORG066"
       ]
     },
     {
@@ -25364,12 +25404,12 @@
     {
       "id": "SRC0817",
       "shortCitation": "Authority records for Léo Lelièvre fils (1899–1966)",
-      "fullCitation": "Bibliothèque nationale de France. “Léo Lelièvre (1899-1966).” data.bnf.fr, ark:/12148/cb147911725. Library of Congress. “Lelièvre, Léo.” Library of Congress Name Authority File, n2010078826. Deutsche Nationalbibliothek, GND 140364778X. Wikidata, Q110225870. Accessed 25 August 2026.",
+      "fullCitation": "Bibliothèque nationale de France. “Léo Lelièvre (1899–1966).” data.bnf.fr, ark:/12148/cb147911725. Library of Congress. “Lelièvre, Léo.” LCNAF n2010078826. Deutsche Nationalbibliothek. “Lelièvre, Léo.” GND 140364778X. Wikidata Q110225870.",
       "sourceType": "authority_record",
       "title": "Léo Lelièvre (1899-1966)",
-      "creator": "Bibliothèque nationale de France; Library of Congress",
-      "repository": "Bibliothèque nationale de France (BnF); Library of Congress",
-      "publication": "data.bnf.fr; id.loc.gov",
+      "creator": "Bibliothèque nationale de France",
+      "repository": "Bibliothèque nationale de France (BnF)",
+      "publication": "data.bnf.fr",
       "date": "2026",
       "accessDate": "2026-08-25",
       "reliability": "high",
@@ -25389,7 +25429,12 @@
         }
       ],
       "researchNote": "Two lyricists of the same name were at work in Paris in the 1930s: the chansonnier Léo Lelièvre (1872-1956), born in Reims, and his son Léo Edmond Lelièvre (1899-1966), a member of SACEM from November 1919, who wrote for the Casino de Paris beside Henri Varna and whose covers name him “Léo Lelièvre fils”, among them “Gosse de Paris” (1929) and “Le Tambour-major” from the revue “Paris qui brille” (1931). Both men worked on “Parade de France” in 1934: the Salabert prints of Maïotte Almaby’s créole numbers “La Vraie Créola” and “Ma Goulou Goulou” read “paroles françaises de Léo Lelièvre père”, while the Coda prints of the Jurmann–Kaper songs carry the undifferentiated form. The BnF catalogue is divided over those Coda prints: the notices for the illustrated issues and for the chant-et-piano prints of “C’est chez nous” and “Un baiser de femme sous un ciel de feu” link the son, whereas notices for three further printings of “Un baiser de femme sous un ciel de feu”, including Paul Saegel’s orchestral arrangement, still link the father. The son is preferred on three grounds: the printed “père” used for the other Lelièvre inside the same revue, the continuity of the Varna partnership at the Casino de Paris from 1929 onwards, and the weight of the revised catalogue notices.",
-      "researchNoteType": "identity_assessment"
+      "researchNoteType": "identity_assessment",
+      "organizationIds": [
+        "ORG062",
+        "ORG066",
+        "ORG074"
+      ]
     },
     {
       "id": "SRC0818",
@@ -26078,12 +26123,12 @@
     {
       "id": "SRC0845",
       "shortCitation": "LCNAF authority record for Leonard Whitcup",
-      "fullCitation": "Library of Congress. “Whitcup, Leonard, 1903-1979.” Library of Congress Name Authority File, n88172772. Accessed 26 August 2026.",
+      "fullCitation": "Library of Congress. “Whitcup, Leonard, 1903–1979.” Library of Congress Name Authority File, LCCN n88172772.",
       "sourceType": "authority_record",
       "title": "Whitcup, Leonard, 1903-1979",
       "creator": "Library of Congress",
-      "repository": "Library of Congress",
-      "publication": "id.loc.gov",
+      "repository": "Library of Congress (LCNAF)",
+      "publication": "Library of Congress Name Authority File (LCNAF)",
       "date": "2026",
       "accessDate": "2026-08-26",
       "reliability": "high",
@@ -26094,7 +26139,10 @@
       ],
       "primaryUrl": "https://id.loc.gov/authorities/names/n88172772",
       "researchNote": "The heading supplies the life dates 1903 to 1979, which no other record gathered for him gave; the form used here follows the archive’s practice of taking the heading without the dates.",
-      "researchNoteType": "authority_note"
+      "researchNoteType": "authority_note",
+      "organizationIds": [
+        "ORG066"
+      ]
     },
     {
       "id": "SRC0846",
@@ -26125,13 +26173,13 @@
     },
     {
       "id": "SRC0847",
-      "shortCitation": "Authority records for Helmut Wolfes",
-      "fullCitation": "Library of Congress. “Wolfes, Helmuth, 1901-1971.” Library of Congress Name Authority File, n2009033210. Deutsche Nationalbibliothek. “Wolfes, Helmut.” Gemeinsame Normdatei, 117446882: conductor and composer, born 22 April 1901 in Hanover, died 4 September 1971 in Cleveland, Ohio; country codes Germany and the United States; place of exile, the United States; variant forms Wolfes, Helmut Ernst and Wolfes, Helmuth. Accessed 26 August 2026.",
+      "shortCitation": "LCNAF and GND authority records for Helmuth Wolfes",
+      "fullCitation": "Library of Congress. “Wolfes, Helmuth, 1901–1971.” LCNAF n2009033210. Deutsche Nationalbibliothek. “Wolfes, Helmut.” Gemeinsame Normdatei, GND 117446882.",
       "sourceType": "authority_record",
       "title": "Wolfes, Helmuth, 1901-1971",
-      "creator": "Library of Congress; Deutsche Nationalbibliothek",
-      "repository": "Library of Congress; Deutsche Nationalbibliothek",
-      "publication": "id.loc.gov; lobid-gnd",
+      "creator": "Library of Congress",
+      "repository": "Library of Congress (LCNAF)",
+      "publication": "Library of Congress Name Authority File (LCNAF)",
       "date": "2026",
       "accessDate": "2026-08-26",
       "reliability": "high",
@@ -26144,8 +26192,12 @@
         "PNV0070"
       ],
       "primaryUrl": "https://id.loc.gov/authorities/names/n2009033210",
-      "researchNote": "The German file gives the birth at Hanover, the death at Cleveland and the United States as his place of exile, which together turn the music director of a Berlin film of 1933 into an émigré musician of the American Midwest. The heading is taken from the Library of Congress, which spells the forename Helmuth; the German form Helmut, under which he worked before the emigration, is kept as the display name.",
-      "researchNoteType": "authority_note"
+      "researchNote": "The GND identifies him as a conductor and composer, born 22 April 1901 in Hanover and deceased 4 September 1971 in Cleveland, Ohio; it records Germany and the United States and identifies the United States as his place of exile. Its variant forms are Wolfes, Helmut Ernst and Wolfes, Helmuth. The heading is taken from the Library of Congress, which spells the forename Helmuth; the German form Helmut, under which he worked before emigration, remains the display name.",
+      "researchNoteType": "authority_note",
+      "organizationIds": [
+        "ORG066",
+        "ORG074"
+      ]
     },
     {
       "id": "SRC0848",

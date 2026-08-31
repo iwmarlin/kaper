@@ -13,6 +13,11 @@ from pathlib import Path
 from typing import Any
 from urllib.parse import parse_qsl, urlparse, urlunparse
 
+from authority_sources import (
+    AUTHORITY_ORGANIZATION_BY_HOST,
+    AUTHORITY_REPOSITORY_BY_HOST,
+    authority_hostname,
+)
 from filmographic_sources import (
     CANONICAL_REPOSITORY_BY_HOST,
     REPOSITORY_ORGANIZATION_BY_HOST,
@@ -786,6 +791,42 @@ class ExportValidator:
                 self.errors.append(
                     f"Source {source_id}: filmographic database source lacks accessDate"
                 )
+            if source.get("sourceType") == "authority_record":
+                if not source.get("accessDate"):
+                    self.errors.append(
+                        f"Source {source_id}: authority record lacks accessDate"
+                    )
+                if (
+                    source.get("accessDate")
+                    and TRAILING_ACCESSED_PATTERN.search(full_citation)
+                ):
+                    self.errors.append(
+                        f"Source {source_id}: fullCitation repeats the structured accessDate"
+                    )
+                authority_host = authority_hostname(source)
+                authority_repository = AUTHORITY_REPOSITORY_BY_HOST.get(
+                    authority_host
+                )
+                if (
+                    authority_repository
+                    and source.get("repository") != authority_repository
+                ):
+                    self.errors.append(
+                        f"Source {source_id}: repository must be "
+                        f"{authority_repository!r} for {authority_host}"
+                    )
+                authority_organization = AUTHORITY_ORGANIZATION_BY_HOST.get(
+                    authority_host
+                )
+                if (
+                    authority_organization
+                    and authority_organization
+                    not in source.get("organizationIds", [])
+                ):
+                    self.errors.append(
+                        f"Source {source_id}: missing authority organization "
+                        f"{authority_organization} for {authority_host}"
+                    )
             hostname = source_hostname(source)
             expected_repository = CANONICAL_REPOSITORY_BY_HOST.get(hostname)
             if (

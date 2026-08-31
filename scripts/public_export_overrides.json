@@ -11454,9 +11454,9 @@
         }
       },
       "ORG066": {
-        "reason": "Link the Library of Congress to the Motion Picture Herald scan it contributed through MBRS, Moving Image Section.",
+        "reason": "Link the Library of Congress to the Motion Picture Herald scan it contributed through MBRS and to authority records published through LCNAF.",
         "fields": {
-          "sourceIds": ["SRC0569"]
+          "sourceIds": ["SRC0569", "SRC0628", "SRC0686", "SRC0817", "SRC0845", "SRC0847"]
         }
       },
       "ORG035": {
@@ -11478,9 +11478,10 @@
         }
       },
       "ORG063": {
-        "reason": "Synchronize the National Library of Poland / Polona with the two newly added contemporary press records for Eliza Rozenblum.",
+        "reason": "Synchronize the National Library of Poland / Polona with the contemporary press records for Eliza Rozenblum and with the Deskryptory BN authority record.",
         "fields": {
           "sourceIds": [
+            "SRC0634",
             "SRC0674",
             "SRC0675"
           ]
@@ -11525,14 +11526,21 @@
         }
       },
       "ORG062": {
-        "reason": "Link the Bibliothèque nationale de France organization record to the authoritative BnF title, authority and complete Gallica and RetroNews press families.",
+        "reason": "Link the Bibliothèque nationale de France organization record to the complete set of cited BnF title and name authority records and to the normalized Gallica and RetroNews press families.",
         "fields": {
           "sourceIds": [
             "SRC0532",
             "SRC0536",
+            "SRC0588",
+            "SRC0589",
+            "SRC0590",
             "SRC0617",
+            "SRC0626",
             "SRC0629",
             "SRC0630",
+            "SRC0631",
+            "SRC0632",
+            "SRC0817",
             "SRC0820",
             "SRC0830",
             "SRC0831",
@@ -11609,10 +11617,14 @@
         }
       },
       "ORG074": {
-        "reason": "Link Deutsche Nationalbibliothek to the Künste im Exil object record that it publishes.",
+        "reason": "Link Deutsche Nationalbibliothek to the Künste im Exil object record and to the cited GND authority records it publishes.",
         "fields": {
           "sourceIds": [
-            "SRC0678"
+            "SRC0627",
+            "SRC0628",
+            "SRC0678",
+            "SRC0817",
+            "SRC0847"
           ]
         }
       },
@@ -14620,6 +14632,84 @@
           "organizationIds": [
             "ORG062"
           ]
+        }
+      },
+      "SRC0588": {
+        "reason": "Synchronize the BnF authority record with the Bibliothèque nationale de France organization.",
+        "fields": {
+          "organizationIds": ["ORG062"]
+        }
+      },
+      "SRC0589": {
+        "reason": "Synchronize the BnF authority record with the Bibliothèque nationale de France organization.",
+        "fields": {
+          "organizationIds": ["ORG062"]
+        }
+      },
+      "SRC0590": {
+        "reason": "Synchronize the BnF authority record with the Bibliothèque nationale de France organization.",
+        "fields": {
+          "organizationIds": ["ORG062"]
+        }
+      },
+      "SRC0626": {
+        "reason": "Synchronize the BnF authority record with the Bibliothèque nationale de France organization.",
+        "fields": {
+          "organizationIds": ["ORG062"]
+        }
+      },
+      "SRC0627": {
+        "reason": "Synchronize the GND authority record with the Deutsche Nationalbibliothek organization.",
+        "fields": {
+          "organizationIds": ["ORG074"]
+        }
+      },
+      "SRC0628": {
+        "reason": "Synchronize the combined GND and LCNAF authority source with both publishing institutions.",
+        "fields": {
+          "organizationIds": ["ORG066", "ORG074"]
+        }
+      },
+      "SRC0631": {
+        "reason": "Synchronize the BnF authority record with the Bibliothèque nationale de France organization.",
+        "fields": {
+          "organizationIds": ["ORG062"]
+        }
+      },
+      "SRC0632": {
+        "reason": "Synchronize the BnF authority record with the Bibliothèque nationale de France organization.",
+        "fields": {
+          "organizationIds": ["ORG062"]
+        }
+      },
+      "SRC0634": {
+        "reason": "Synchronize the Deskryptory BN authority record with the Biblioteka Narodowa organization.",
+        "fields": {
+          "organizationIds": ["ORG063"]
+        }
+      },
+      "SRC0686": {
+        "reason": "Synchronize the LCNAF authority record with the Library of Congress organization.",
+        "fields": {
+          "organizationIds": ["ORG066"]
+        }
+      },
+      "SRC0817": {
+        "reason": "Synchronize the combined BnF, LCNAF and GND authority source with all three publishing institutions.",
+        "fields": {
+          "organizationIds": ["ORG062", "ORG066", "ORG074"]
+        }
+      },
+      "SRC0845": {
+        "reason": "Synchronize the LCNAF authority record with the Library of Congress organization.",
+        "fields": {
+          "organizationIds": ["ORG066"]
+        }
+      },
+      "SRC0847": {
+        "reason": "Synchronize the combined LCNAF and GND authority source with both publishing institutions.",
+        "fields": {
+          "organizationIds": ["ORG066", "ORG074"]
         }
       },
       "SRC0008": {

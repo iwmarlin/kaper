@@ -15,6 +15,7 @@ from pathlib import Path
 from typing import Any
 from urllib.parse import parse_qsl, urlencode, urlparse, urlunparse
 
+from authority_sources import normalize_authority_source
 from filmographic_sources import normalize_filmographic_source
 
 
@@ -1346,6 +1347,8 @@ class PublicExporter:
     def _normalize_source_public_text(self) -> None:
         """Keep source citations bibliographic rather than graph- or workflow-oriented."""
         for source in self.output_records["Sources"]:
+            if source.get("sourceType") == "authority_record":
+                normalize_authority_source(source)
             if source.get("sourceType") == "filmographic_database" or source.get(
                 "id"
             ) in {"SRC0174", "SRC0602"}:
