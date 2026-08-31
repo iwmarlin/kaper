@@ -591,10 +591,31 @@
         }
       },
       "SRC0146": {
-        "reason": "Make the AFI citation self-contained for both the film record and the documented song reuse without importing unrelated language-version credits.",
+        "reason": "Separate the AFI bibliographic citation from the evidence for the song's reuse and credits in Birthright.",
         "fields": {
-          "shortCitation": "AFI Catalog, Birthright — film record and song credits",
-          "fullCitation": "American Film Institute. “Birthright.” AFI Catalog of Feature Films. The record lists “All God's Children Got Rhythm” among the film's songs and credits music to Bronislau Kaper and Walter Jurmann and lyrics to Gus Kahn. Accessed 10 June 2026."
+          "shortCitation": "AFI Catalog, “Birthright”",
+          "fullCitation": "American Film Institute. “Birthright.” AFI Catalog of Feature Films, record 2314.",
+          "researchNote": "The record lists “All God’s Children Got Rhythm” among the film’s songs and credits music to Bronislau Kaper and Walter Jurmann and lyrics to Gus Kahn.",
+          "researchNoteType": "evidence_note"
+        }
+      },
+      "SRC0174": {
+        "reason": "Classify the Maytime page as a Wikimedia article rather than a filmographic database and repair its incomplete URL.",
+        "fields": {
+          "shortCitation": "Wikipedia, “Maytime (1937 film)”",
+          "fullCitation": "Wikipedia contributors. “Maytime (1937 film).” Wikipedia, The Free Encyclopedia.",
+          "sourceType": "wikimedia_article_page",
+          "primaryUrl": "https://en.wikipedia.org/wiki/Maytime_(1937_film)"
+        },
+        "removeFields": [
+          "accessUrl"
+        ]
+      },
+      "SRC0402": {
+        "reason": "Separate the AFI bibliographic citation from the production-company evidence recorded for Last of the Pagans.",
+        "fields": {
+          "researchNote": "The record documents Metro-Goldwyn-Mayer as the film’s production company.",
+          "researchNoteType": "evidence_note"
         }
       },
       "SRC0470": {
@@ -2507,9 +2528,14 @@
         }
       },
       "SRC0530": {
-        "reason": "Use the film's release year as the source date and remove the unrelated statement that the database entry itself is undated.",
+        "reason": "Use the film's release year, normalize the TCM repository name and separate the title-page citation from its MGM production-company evidence.",
         "fields": {
-          "date": "1939"
+          "date": "1939",
+          "fullCitation": "Turner Classic Movies (TCM). “Balalaika” (1939). Watch TCM title page.",
+          "repository": "Turner Classic Movies (TCM)",
+          "publication": "Turner Classic Movies (TCM)",
+          "researchNote": "The title page identifies Metro-Goldwyn-Mayer as the production company.",
+          "researchNoteType": "evidence_note"
         }
       },
       "SRC0532": {
@@ -3018,8 +3044,18 @@
       "SRC0601": {
         "reason": "Separate the IMDb name-entry citation from the cross-source identity assessment for René Nazelles.",
         "fields": {
-          "fullCitation": "IMDb. Name entry nm0623410, “René Nazelles.” Accessed 31 July 2026.",
+          "fullCitation": "IMDb. “René Nazelles.” Name entry nm0623410.",
           "researchNote": "IMDb gives his dates as 1888–1975. This is corroborated by Encyclopédisque, which records his name as René Cailleteau, and by Éliane Daphy's identification record “René Cailleteau dit René Nazelles (1888-1975) parolier”. The BnF authority heading still reads (18..-19..) and has not been revised.",
+          "researchNoteType": "identity_assessment"
+        }
+      },
+      "SRC0602": {
+        "reason": "Classify the artist discography as an online database and separate its citation from the cross-source identity assessment.",
+        "fields": {
+          "shortCitation": "Encyclopédisque, René Nazelles",
+          "fullCitation": "Encyclopédisque. “René Nazelles (auteur-compositeur).” Discographie, artist 14261.",
+          "sourceType": "online_database",
+          "researchNote": "The entry records the lyricist under his civil name, René Cailleteau. Éliane Daphy’s identification record gives the fuller form “René Cailleteau dit René Nazelles (1888–1975), parolier”.",
           "researchNoteType": "identity_assessment"
         }
       },
@@ -11459,10 +11495,11 @@
         }
       },
       "ORG001": {
-        "reason": "Preserve MGM as the documented distributor of the animated Little Boy Blue, while keeping production with Celebrity Productions–P.A. Powers; synchronize MGM's inverse link to the AFI Trouble for Two record.",
+        "reason": "Preserve MGM as the documented distributor of the animated Little Boy Blue, keep production with Celebrity Productions–P.A. Powers, and synchronize MGM's inverse links to the AFI Trouble for Two record and the TCM Balalaika record.",
         "fields": {
           "sourceIds": [
             "SRC0373",
+            "SRC0530",
             "SRC0587"
           ],
           "contributionIds": [
@@ -11509,6 +11546,15 @@
         "fields": {
           "sourceIds": [
             "SRC0587"
+          ]
+        }
+      },
+      "ORG092": {
+        "reason": "Synchronize IMDb with the company-credits and name-entry sources that were missing the repository relation.",
+        "fields": {
+          "sourceIds": [
+            "SRC0528",
+            "SRC0601"
           ]
         }
       },
@@ -12780,6 +12826,14 @@
           ]
         }
       },
+      "W-F055": {
+        "reason": "Link Balalaika to the TCM title-page source that documents its MGM production credit.",
+        "fields": {
+          "sourceIds": [
+            "SRC0530"
+          ]
+        }
+      },
       "W-S152": {
         "reason": "Synchronize the event link and the AFI-supported reuse of the song in Birthright.",
         "fields": {
@@ -12926,6 +12980,14 @@
         "fields": {
           "sourceIds": [
             "SRC0624"
+          ]
+        }
+      },
+      "F055": {
+        "reason": "Link the Balalaika film record to the TCM title-page source that documents its MGM production credit.",
+        "fields": {
+          "sourceIds": [
+            "SRC0530"
           ]
         }
       },
@@ -15860,6 +15922,36 @@
         "fields": {
           "personIds": [
             "P145"
+          ]
+        }
+      },
+      "SRC0528": {
+        "reason": "Link the IMDb company-credits page to the IMDb repository organization.",
+        "fields": {
+          "organizationIds": [
+            "ORG092"
+          ]
+        }
+      },
+      "SRC0530": {
+        "reason": "Synchronize the TCM Balalaika source with the film, its canonical work and the documented MGM production-company credit.",
+        "fields": {
+          "organizationIds": [
+            "ORG001"
+          ],
+          "workIds": [
+            "W-F055"
+          ],
+          "filmIds": [
+            "F055"
+          ]
+        }
+      },
+      "SRC0601": {
+        "reason": "Link the IMDb name entry to the IMDb repository organization.",
+        "fields": {
+          "organizationIds": [
+            "ORG092"
           ]
         }
       },

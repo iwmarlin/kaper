@@ -8,7 +8,7 @@
   "publicDataUpdatedAt": "2026-08-11",
   "generator": {
     "file": "export_public_data.py",
-    "sha256": "2c1dd7150bddf2cfb73cc2b4309bb5d8f8042b1eed11310fc35691198624bcf0"
+    "sha256": "f0a75ffd90bc97ae063f97ee186c1f914d3d7fa88c9a09e55460f2d20d98f819"
   },
   "publicInputs": {
     "allowlist": {
@@ -17,10 +17,10 @@
     },
     "overrides": {
       "file": "public_export_overrides.json",
-      "sha256": "ffdf3e273ac8a849f8e1642c30c1ef502a7f13a08955c366e8226af5978bd82a",
-      "appliedCount": 672,
+      "sha256": "b035934390e1079a984be9868d65ebfed07c6cfbc8532989c18dfd7f08f2ee8f",
+      "appliedCount": 675,
       "additionCount": 328,
-      "linkAdditionCount": 441,
+      "linkAdditionCount": 447,
       "linkRemovalCount": 144,
       "exclusionCount": 15
     }
@@ -74,8 +74,8 @@
     },
     {
       "file": "films.json",
-      "bytes": 36900,
-      "sha256": "6042e40de4961c7f204121d6453b4c445f8be085a879a39d6d9d62650c8b1723"
+      "bytes": 36919,
+      "sha256": "87fe1f3696d58c40d54e7322f8043e4549a4f2993b5744a15cdf723241b34998"
     },
     {
       "file": "media.json",
@@ -84,8 +84,8 @@
     },
     {
       "file": "organizations.json",
-      "bytes": 127099,
-      "sha256": "20a117f0e92f2925e77251c1150a1dbeb9b4002e44cfcadd2723dbaa35a1b606"
+      "bytes": 127156,
+      "sha256": "aba14f383da848a996437767b0e35359c0872b2f9845f007d8d654ec184bd0a5"
     },
     {
       "file": "other-works.json",
@@ -114,8 +114,8 @@
     },
     {
       "file": "sources.json",
-      "bytes": 1051869,
-      "sha256": "21291e42743fbc2d3bc81c393e406477f99cc5e2f77b2b7d5d28711b48389f56"
+      "bytes": 1051905,
+      "sha256": "e1eed11f6b73c15fe9f76d52743087945f1772117f275c1e0a768d77b497e0c1"
     },
     {
       "file": "timeline-events.json",
@@ -134,8 +134,8 @@
     },
     {
       "file": "works.json",
-      "bytes": 271528,
-      "sha256": "8c165ea83b3e0dadb9a550431db88a5b13fcc24c67dc05063fe433a76711249f"
+      "bytes": 271547,
+      "sha256": "154e625f71d5e4d829ca392520094349fa4ce72998c875fa6af12f08beddbf5a"
     }
   ]
 }

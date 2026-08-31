@@ -13,6 +13,12 @@ from pathlib import Path
 from typing import Any
 from urllib.parse import parse_qsl, urlparse, urlunparse
 
+from filmographic_sources import (
+    CANONICAL_REPOSITORY_BY_HOST,
+    REPOSITORY_ORGANIZATION_BY_HOST,
+    TRAILING_ACCESSED_PATTERN,
+    source_hostname,
+)
 from recording_organizations import expected_audio_organization_ids
 
 
@@ -759,6 +765,50 @@ class ExportValidator:
                 self.errors.append(
                     f"Source {source_id}: unsupported researchNoteType "
                     f"{research_note_type!r}"
+                )
+            is_normalized_filmographic_source = (
+                source.get("sourceType") == "filmographic_database"
+                or source_id in {"SRC0174", "SRC0602"}
+            )
+            full_citation = str(source.get("fullCitation", ""))
+            if (
+                is_normalized_filmographic_source
+                and source.get("accessDate")
+                and TRAILING_ACCESSED_PATTERN.search(full_citation)
+            ):
+                self.errors.append(
+                    f"Source {source_id}: fullCitation repeats the structured accessDate"
+                )
+            if (
+                source.get("sourceType") == "filmographic_database"
+                and not source.get("accessDate")
+            ):
+                self.errors.append(
+                    f"Source {source_id}: filmographic database source lacks accessDate"
+                )
+            hostname = source_hostname(source)
+            expected_repository = CANONICAL_REPOSITORY_BY_HOST.get(hostname)
+            if (
+                source.get("sourceType") == "filmographic_database"
+                and expected_repository
+                and source.get("repository") != expected_repository
+            ):
+                self.errors.append(
+                    f"Source {source_id}: repository must be {expected_repository!r} "
+                    f"for {hostname}"
+                )
+            expected_repository_organization = REPOSITORY_ORGANIZATION_BY_HOST.get(
+                hostname
+            )
+            if (
+                source.get("sourceType") == "filmographic_database"
+                and expected_repository_organization
+                and expected_repository_organization
+                not in source.get("organizationIds", [])
+            ):
+                self.errors.append(
+                    f"Source {source_id}: missing repository organization "
+                    f"{expected_repository_organization} for {hostname}"
                 )
             is_image_source = bool(
                 image_media_ids.intersection(source.get("mediaIds", []))
