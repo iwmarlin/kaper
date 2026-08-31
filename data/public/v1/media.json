@@ -940,24 +940,21 @@
     },
     {
       "id": "M274",
-      "title": "Ernst Marischka — portrait photograph",
+      "title": "Ernst Marischka — portrait in Kinematographische Rundschau (1913)",
       "mediaType": "image",
-      "storageType": "local",
+      "storageType": "external",
       "period": "european",
-      "description": "Portrait of Austrian screenwriter, director and lyricist Ernst Marischka, whose documented collaborations with Kaper and Jurmann are represented in the catalogue.",
-      "assetPath": "assets/images/portraits/marischka.jpg",
-      "assetPaths": [
-        "assets/images/portraits/marischka.jpg"
-      ],
-      "assetCount": 1,
-      "altText": "Black-and-white head-and-shoulders portrait of Ernst Marischka wearing a suit and tie.",
-      "rightsStatus": "permission_needed_or_fair_use_claimed",
-      "rightsNote": "Reuse rights are not cleared. A reduced-resolution image is used for scholarly identification and commentary on Ernst Marischka — portrait photograph.",
+      "description": "Portrait of Austrian screenwriter, director and lyricist Ernst Marischka, published in Kinematographische Rundschau in 1913 and reproduced in the Theatermuseum press material for Showbiz Made in Vienna: The Marischkas.",
+      "externalUrl": "https://www.theatermuseum.at/fileadmin/content/tm/ausstellungen/2023/Showbiz_made_in_Vienna/THEATERMUSEUM_PT_Showbiz_Made_in_Vienna_en_17102023_f.pdf#page=6",
+      "assetCount": 0,
+      "altText": "Portrait of Ernst Marischka published in Kinematographische Rundschau in 1913.",
+      "rightsStatus": "restricted",
+      "rightsNote": "External link only; no copy of the portrait is hosted by this site. The Theatermuseum press material credits the reproduction to the Österreichisches Filmmuseum and permits the supplied press photographs free of charge only in connection with press coverage of the exhibition.",
       "slug": "ernst-marischka-portrait-m246",
-      "publicCaption": "Ernst Marischka, screenwriter, director and lyricist.",
-      "publicCreditLine": "Local research copy; photographer and original source unidentified.",
+      "publicCaption": "Ernst Marischka, portrait published in Kinematographische Rundschau, Girardi-Nummer, 1913.",
+      "publicCreditLine": "Photographer unidentified; Kinematographische Rundschau, Girardi-Nummer, 1913; reproduction © Österreichisches Filmmuseum, via Theatermuseum.",
       "category": "portrait",
-      "galleryStatus": "detail_only",
+      "galleryStatus": "external_link_only",
       "sourceIds": [
         "SRC0568"
       ],
@@ -5221,26 +5218,27 @@
     },
     {
       "id": "M159",
-      "title": "Ehe mit beschränkter Haftung (1932) — Illustrierter Film-Kurier no. 1720 cover",
+      "title": "Ehe mit beschränkter Haftung — advertisement in Mein Film, no. 314 (1932)",
       "mediaType": "image",
       "storageType": "local",
       "period": "european",
-      "description": "Cover of Illustrierter Film-Kurier devoted to Ehe mit beschränkter Haftung (1932), a European-period film with music by Bronisław Kaper. This is a film-program/periodical cover, not a standard theatrical poster.",
-      "assetPath": "assets/images/film-posters/european-period/ehe.jpg",
+      "description": "Advertisement for Ehe mit beschränkter Haftung in Mein Film, no. 314 (1932), naming Franz Wenzler as director, Fritz Rotter as lyricist, and Dr. B. Kaper and Walter Jurmann as composers.",
+      "assetPath": "assets/images/historical-context/ehe-mein-film-1932-advertisement.jpg",
       "assetPaths": [
-        "assets/images/film-posters/european-period/ehe.jpg"
+        "assets/images/historical-context/ehe-mein-film-1932-advertisement.jpg"
       ],
       "assetCount": 1,
-      "altText": "Illustrated Film-Kurier cover for Ehe mit beschränkter Haftung, showing film-promotion artwork and issue text.",
+      "externalUrl": "https://anno.onb.ac.at/cgi-content/anno-plus?aid=mfi&datum=19321314&seite=14",
+      "altText": "Mein Film advertisement for Ehe mit beschränkter Haftung, with large title lettering and credits to director Franz Wenzler, lyricist Fritz Rotter, and composers Bronisław Kaper and Walter Jurmann.",
       "rightsStatus": "ok",
-      "rightsNote": "The linked source identifies this item as public domain or otherwise free of known copyright restrictions; attribution is retained.",
-      "slug": "ehe-poster",
-      "publicCaption": "Illustrierter Film-Kurier programme cover for Ehe mit beschränkter Haftung (1932), issue no. 1720.",
-      "publicCreditLine": "Illustrierter Film-Kurier, no. 1720.",
-      "category": "film-periodical cover",
+      "rightsNote": "The Österreichische Nationalbibliothek permits reuse of its digitized holdings in the web resolution it provides and claims no separate exploitation right in the digital copy. The library notes that any third-party rights in the underlying 1932 advertisement must be assessed by the user. Source attribution is retained.",
+      "slug": "ehe-mein-film-advertisement-1932",
+      "publicCaption": "Advertisement for Ehe mit beschränkter Haftung in Mein Film, no. 314 (1932), explicitly crediting Fritz Rotter for the song lyrics and Bronisław Kaper and Walter Jurmann for the music.",
+      "publicCreditLine": "Mein Film, no. 314 (1932), p. 14; ANNO / Österreichische Nationalbibliothek.",
+      "category": "trade advertisement",
       "galleryStatus": "selected",
       "organizationIds": [
-        "ORG012"
+        "ORG016"
       ],
       "sourceIds": [
         "SRC0408"

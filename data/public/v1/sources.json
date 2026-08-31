@@ -13512,26 +13512,30 @@
     },
     {
       "id": "SRC0408",
-      "shortCitation": "Ehe m.b.H. — Illustrierter Film-Kurier no. 1720",
-      "fullCitation": "Ehe m.b.H. Illustrierter Film-Kurier, no. 1720, 14. Jahrgang (1932). Film programme.",
+      "shortCitation": "Advertisement for Ehe mit beschränkter Haftung — Mein Film",
+      "fullCitation": "[Advertisement for Ehe mit beschränkter Haftung]. Mein Film (Vienna), no. 314, 1932, p. 14. Österreichische Nationalbibliothek / ANNO.",
       "sourceType": "press_item",
-      "title": "Ehe m.b.H. — Illustrierter Film-Kurier no. 1720",
-      "repository": "Private collection (commercial listing via eBay)",
-      "publication": "Illustrierter Film-Kurier",
+      "title": "Advertisement for Ehe mit beschränkter Haftung",
+      "repository": "Österreichische Nationalbibliothek / ANNO",
+      "publication": "Mein Film",
       "date": "1932",
-      "accessDate": "2026-08-29",
-      "reliability": "medium",
-      "sourceStatus": "verified_with_attribution_note",
-      "slug": "src0408-illustrierter-film-kurier-ehe-1932",
+      "accessDate": "2026-08-31",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "slug": "src0408-mein-film-ehe-advertisement-1932",
+      "organizationIds": [
+        "ORG016",
+        "ORG064"
+      ],
       "workIds": [
         "W-F008"
       ],
       "mediaIds": [
         "M159"
       ],
-      "primaryUrl": "https://www.ebay.de/sch/i.html?_nkw=BFK+1720+EHE+M.B.H",
-      "researchNote": "The accessible commercial listing corroborates the programme title and number ‘BFK 1720’; it is an access route to a reproduced copy, not an archival holding.",
-      "researchNoteType": "object_context"
+      "primaryUrl": "https://anno.onb.ac.at/cgi-content/anno-plus?aid=mfi&datum=19321314&seite=14",
+      "researchNote": "The advertisement presents the film under the Mondial-Film name and explicitly credits Franz Wenzler as director, Fritz Rotter for the song lyrics, and Dr. B. Kaper and Walter Jurmann for the music. ‘Mondial-Film bringt’ documents the Austrian presentation or distribution context; it is not treated as a production-company credit.",
+      "researchNoteType": "evidence_note"
     },
     {
       "id": "SRC0409",
@@ -18047,16 +18051,18 @@
     },
     {
       "id": "SRC0568",
-      "shortCitation": "Ernst Marischka — unidentified portrait photograph, local research copy",
-      "fullCitation": "Portrait photograph of Ernst Marischka (1893–1963). Local research copy; photographer, date, original publication and repository unidentified.",
+      "shortCitation": "Ernst Marischka portrait — Kinematographische Rundschau, Girardi-Nummer (1913)",
+      "fullCitation": "“Ernst Marischka.” Portrait photograph, photographer unidentified. Kinematographische Rundschau, Girardi-Nummer, 1913. Reproduced in Theatermuseum, Showbiz Made in Vienna: The Marischkas, press material for the exhibition 18 October 2023–9 September 2024, p. 6; reproduction © Österreichisches Filmmuseum.",
       "sourceType": "image_or_photograph",
-      "title": "Ernst Marischka — unidentified portrait photograph",
-      "creator": "Photographer unidentified",
-      "repository": "Local research copy; original repository unidentified",
-      "publication": "Original publication unidentified",
-      "date": "n.d.",
-      "reliability": "low",
-      "sourceStatus": "verified_with_attribution_note",
+      "title": "Ernst Marischka — portrait in Kinematographische Rundschau (1913)",
+      "creator": "Photographer unidentified; reproduction credited to Österreichisches Filmmuseum",
+      "repository": "Theatermuseum, KHM-Museumsverband",
+      "publication": "Kinematographische Rundschau, Girardi-Nummer",
+      "date": "1913",
+      "accessDate": "2026-08-31",
+      "primaryUrl": "https://www.theatermuseum.at/fileadmin/content/tm/ausstellungen/2023/Showbiz_made_in_Vienna/THEATERMUSEUM_PT_Showbiz_Made_in_Vienna_en_17102023_f.pdf#page=6",
+      "reliability": "high",
+      "sourceStatus": "verified",
       "slug": "ernst-marischka-unidentified-portrait-src0568",
       "personIds": [
         "P017"
@@ -20328,12 +20334,13 @@
       "sourceType": "image_or_photograph",
       "title": "Valéry e Claudel. Uma conferência no “Lycée Français”",
       "creator": "Photographer unidentified",
-      "repository": "Digitized issue of Diário de Notícias (Rio de Janeiro)",
+      "repository": "Hemeroteca Digital Brasileira, Fundação Biblioteca Nacional",
       "publication": "Diário de Notícias (Rio de Janeiro), ano I, no. 36",
       "date": "1930-07-17",
       "accessDate": "2026-08-10",
       "reliability": "high",
       "sourceStatus": "verified",
+      "primaryUrl": "https://hemeroteca-pdf.bn.gov.br/093718/per093718_1930_00036.pdf#page=15",
       "slug": "src0661-diario-de-noticias-1930-ninon-steinhof",
       "personIds": [
         "P060"

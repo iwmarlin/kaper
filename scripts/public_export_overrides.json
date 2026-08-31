@@ -1352,16 +1352,26 @@
         }
       },
       "SRC0408": {
-        "reason": "Describe the historical programme issue itself, replace the project’s own asset URL with the public listing that corroborates the issue number, and distinguish that access route from an archival holding.",
+        "reason": "Replace the misidentified Illustrierter Film-Kurier programme and unrelated commercial-search URL with the page-specific Mein Film advertisement preserved by ANNO, while distinguishing Mondial-Film's presentation or distribution wording from a production-company credit.",
         "fields": {
-          "shortCitation": "Ehe m.b.H. — Illustrierter Film-Kurier no. 1720",
-          "fullCitation": "Ehe m.b.H. Illustrierter Film-Kurier, no. 1720, 14. Jahrgang (1932). Film programme.",
-          "title": "Ehe m.b.H. — Illustrierter Film-Kurier no. 1720",
-          "repository": "Private collection (commercial listing via eBay)",
-          "primaryUrl": "https://www.ebay.de/sch/i.html?_nkw=BFK+1720+EHE+M.B.H",
-          "accessDate": "2026-08-29",
-          "researchNote": "The accessible commercial listing corroborates the programme title and number ‘BFK 1720’; it is an access route to a reproduced copy, not an archival holding.",
-          "researchNoteType": "object_context"
+          "shortCitation": "Advertisement for Ehe mit beschränkter Haftung — Mein Film",
+          "fullCitation": "[Advertisement for Ehe mit beschränkter Haftung]. Mein Film (Vienna), no. 314, 1932, p. 14. Österreichische Nationalbibliothek / ANNO.",
+          "sourceType": "press_item",
+          "title": "Advertisement for Ehe mit beschränkter Haftung",
+          "repository": "Österreichische Nationalbibliothek / ANNO",
+          "publication": "Mein Film",
+          "date": "1932",
+          "accessDate": "2026-08-31",
+          "reliability": "high",
+          "sourceStatus": "verified",
+          "slug": "src0408-mein-film-ehe-advertisement-1932",
+          "organizationIds": [
+            "ORG016",
+            "ORG064"
+          ],
+          "primaryUrl": "https://anno.onb.ac.at/cgi-content/anno-plus?aid=mfi&datum=19321314&seite=14",
+          "researchNote": "The advertisement presents the film under the Mondial-Film name and explicitly credits Franz Wenzler as director, Fritz Rotter for the song lyrics, and Dr. B. Kaper and Walter Jurmann for the music. ‘Mondial-Film bringt’ documents the Austrian presentation or distribution context; it is not treated as a production-company credit.",
+          "researchNoteType": "evidence_note"
         },
         "removeFields": [
           "url"
@@ -3144,6 +3154,13 @@
           "creator": "Sidney Clare, Lew Pollack and Harry Richman (music); Bronisław Kaper (transcription for two pianos)"
         }
       },
+      "SRC0661": {
+        "reason": "Add the stable Hemeroteca Digital Brasileira issue URL and identify the digitizing repository for the 17 July 1930 Diário de Notícias portrait of Ninon Steinhof.",
+        "fields": {
+          "repository": "Hemeroteca Digital Brasileira, Fundação Biblioteca Nacional",
+          "primaryUrl": "https://hemeroteca-pdf.bn.gov.br/093718/per093718_1930_00036.pdf#page=15"
+        }
+      },
       "SRC0688": {
         "reason": "Replace the unprovenanced local promotional-folder page with the stable NYPL record for a documented aerial photograph of the MGM studio lot; preserve NYPL's unresolved-copyright assessment and do not treat MGM as the repository or issuing body.",
         "fields": {
@@ -3184,10 +3201,33 @@
         }
       },
       "M159": {
-        "reason": "Replace the truncated public caption and identify the programme issue consistently with its source record.",
+        "reason": "Replace the obsolete Illustrierter Film-Kurier cover with the user-supplied page-specific Mein Film advertisement and align its description, source, rights wording and organizational context.",
         "fields": {
-          "publicCaption": "Illustrierter Film-Kurier programme cover for Ehe mit beschränkter Haftung (1932), issue no. 1720.",
-          "publicCreditLine": "Illustrierter Film-Kurier, no. 1720."
+          "title": "Ehe mit beschränkter Haftung — advertisement in Mein Film, no. 314 (1932)",
+          "description": "Advertisement for Ehe mit beschränkter Haftung in Mein Film, no. 314 (1932), naming Franz Wenzler as director, Fritz Rotter as lyricist, and Dr. B. Kaper and Walter Jurmann as composers.",
+          "assetPath": "assets/images/historical-context/ehe-mein-film-1932-advertisement.jpg",
+          "assetPaths": [
+            "assets/images/historical-context/ehe-mein-film-1932-advertisement.jpg"
+          ],
+          "assetCount": 1,
+          "externalUrl": "https://anno.onb.ac.at/cgi-content/anno-plus?aid=mfi&datum=19321314&seite=14",
+          "altText": "Mein Film advertisement for Ehe mit beschränkter Haftung, with large title lettering and credits to director Franz Wenzler, lyricist Fritz Rotter, and composers Bronisław Kaper and Walter Jurmann.",
+          "rightsStatus": "ok",
+          "rightsNote": "The Österreichische Nationalbibliothek permits reuse of its digitized holdings in the web resolution it provides and claims no separate exploitation right in the digital copy. The library notes that any third-party rights in the underlying 1932 advertisement must be assessed by the user. Source attribution is retained.",
+          "slug": "ehe-mein-film-advertisement-1932",
+          "publicCaption": "Advertisement for Ehe mit beschränkter Haftung in Mein Film, no. 314 (1932), explicitly crediting Fritz Rotter for the song lyrics and Bronisław Kaper and Walter Jurmann for the music.",
+          "publicCreditLine": "Mein Film, no. 314 (1932), p. 14; ANNO / Österreichische Nationalbibliothek.",
+          "category": "trade advertisement",
+          "galleryStatus": "selected",
+          "organizationIds": [
+            "ORG016"
+          ],
+          "sourceIds": [
+            "SRC0408"
+          ],
+          "workIds": [
+            "W-F008"
+          ]
         }
       },
       "M165": {
@@ -4041,6 +4081,12 @@
       }
     },
     "Organizations": {
+      "ORG016": {
+        "reason": "Record the abbreviated Mondial-Film form printed in the 1932 Mein Film advertisement without changing the company's authorized name or treating the advertisement as a production credit.",
+        "fields": {
+          "nameVariants": "Mondial Internationale Filmindustrie; Mondial-Film"
+        }
+      },
       "ORG030": {
         "reason": "Use the French publisher form printed in the 1934 BnF records and distinguish this Paris house from the later Swiss Edition Coda AG.",
         "fields": {
@@ -8125,19 +8171,21 @@
         }
       },
       "SRC0568": {
-        "reason": "Document the existing Ernst Marischka portrait as a local research copy with unresolved photographic provenance; keep the rights assessment exclusively with the linked medium.",
+        "reason": "Replace the unprovenanced local portrait with the documented 1913 portrait reproduced in official Theatermuseum press material and credited to the Österreichisches Filmmuseum.",
         "fields": {
           "id": "SRC0568",
-          "shortCitation": "Ernst Marischka — unidentified portrait photograph, local research copy",
-          "fullCitation": "Portrait photograph of Ernst Marischka (1893–1963). Local research copy; photographer, date, original publication and repository unidentified.",
+          "shortCitation": "Ernst Marischka portrait — Kinematographische Rundschau, Girardi-Nummer (1913)",
+          "fullCitation": "“Ernst Marischka.” Portrait photograph, photographer unidentified. Kinematographische Rundschau, Girardi-Nummer, 1913. Reproduced in Theatermuseum, Showbiz Made in Vienna: The Marischkas, press material for the exhibition 18 October 2023–9 September 2024, p. 6; reproduction © Österreichisches Filmmuseum.",
           "sourceType": "image_or_photograph",
-          "title": "Ernst Marischka — unidentified portrait photograph",
-          "creator": "Photographer unidentified",
-          "repository": "Local research copy; original repository unidentified",
-          "publication": "Original publication unidentified",
-          "date": "n.d.",
-          "reliability": "low",
-          "sourceStatus": "verified_with_attribution_note",
+          "title": "Ernst Marischka — portrait in Kinematographische Rundschau (1913)",
+          "creator": "Photographer unidentified; reproduction credited to Österreichisches Filmmuseum",
+          "repository": "Theatermuseum, KHM-Museumsverband",
+          "publication": "Kinematographische Rundschau, Girardi-Nummer",
+          "date": "1913",
+          "accessDate": "2026-08-31",
+          "primaryUrl": "https://www.theatermuseum.at/fileadmin/content/tm/ausstellungen/2023/Showbiz_made_in_Vienna/THEATERMUSEUM_PT_Showbiz_Made_in_Vienna_en_17102023_f.pdf#page=6",
+          "reliability": "high",
+          "sourceStatus": "verified",
           "slug": "ernst-marischka-unidentified-portrait-src0568",
           "personIds": [
             "P017"
@@ -10277,34 +10325,35 @@
         }
       },
       "M274": {
-        "reason": "Show the existing Ernst Marischka portrait on his person record as a low-resolution identification image while explicitly preserving the unresolved provenance and rights status.",
+        "reason": "Replace the unprovenanced local portrait with an external reference to the documented 1913 portrait in official Theatermuseum press material; do not rehost the reproduction credited to the Österreichisches Filmmuseum.",
         "fields": {
           "id": "M274",
-          "title": "Ernst Marischka — portrait photograph",
+          "title": "Ernst Marischka — portrait in Kinematographische Rundschau (1913)",
           "mediaType": "image",
-          "storageType": "local",
+          "storageType": "external",
           "period": "european",
-          "description": "Portrait of Austrian screenwriter, director and lyricist Ernst Marischka, whose documented collaborations with Kaper and Jurmann are represented in the catalogue.",
-          "assetPath": "assets/images/portraits/marischka.jpg",
-          "assetPaths": [
-            "assets/images/portraits/marischka.jpg"
-          ],
-          "assetCount": 1,
-          "altText": "Black-and-white head-and-shoulders portrait of Ernst Marischka wearing a suit and tie.",
-          "rightsStatus": "permission_needed_or_fair_use_claimed",
-          "rightsNote": "Photographer, date, original publication, repository and rights holder have not been identified. The existing 600 × 900 pixel research copy is reproduced without enlargement solely for scholarly identification and discussion of Marischka’s documented collaborations with Kaper; it is excluded from galleries and timeline illustration. Replace or update this record if reliable provenance is established.",
+          "description": "Portrait of Austrian screenwriter, director and lyricist Ernst Marischka, published in Kinematographische Rundschau in 1913 and reproduced in the Theatermuseum press material for Showbiz Made in Vienna: The Marischkas.",
+          "externalUrl": "https://www.theatermuseum.at/fileadmin/content/tm/ausstellungen/2023/Showbiz_made_in_Vienna/THEATERMUSEUM_PT_Showbiz_Made_in_Vienna_en_17102023_f.pdf#page=6",
+          "assetCount": 0,
+          "altText": "Portrait of Ernst Marischka published in Kinematographische Rundschau in 1913.",
+          "rightsStatus": "restricted",
+          "rightsNote": "External link only; no copy of the portrait is hosted by this site. The Theatermuseum press material credits the reproduction to the Österreichisches Filmmuseum and permits the supplied press photographs free of charge only in connection with press coverage of the exhibition.",
           "slug": "ernst-marischka-portrait-m246",
-          "publicCaption": "Ernst Marischka, screenwriter, director and lyricist.",
-          "publicCreditLine": "Local research copy; photographer and original source unidentified.",
+          "publicCaption": "Ernst Marischka, portrait published in Kinematographische Rundschau, Girardi-Nummer, 1913.",
+          "publicCreditLine": "Photographer unidentified; Kinematographische Rundschau, Girardi-Nummer, 1913; reproduction © Österreichisches Filmmuseum, via Theatermuseum.",
           "category": "portrait",
-          "galleryStatus": "detail_only",
+          "galleryStatus": "external_link_only",
           "sourceIds": [
             "SRC0568"
           ],
           "periods": [
             "european"
           ]
-        }
+        },
+        "removeFields": [
+          "assetPath",
+          "assetPaths"
+        ]
       },
       "M241": {
         "reason": "Preserve the documented Motion Picture Herald page illustrating TE0055 and synchronize it with its source and related works.",
@@ -11337,6 +11386,14 @@
   },
   "linkAdditions": {
     "Organizations": {
+      "ORG016": {
+        "reason": "Link Mondial Internationale Filmindustrie AG to the Mein Film advertisement that names Mondial-Film as the Austrian presenting or distributing company.",
+        "fields": {
+          "sourceIds": [
+            "SRC0408"
+          ]
+        }
+      },
       "ORG054": {
         "reason": "Synchronize Alberti with the verified Jazz Drops item records and with the archival source documenting the original Cocktails edition and the later Fiesta issue.",
         "fields": {
@@ -11530,6 +11587,7 @@
         "reason": "Link the completed Hofmeister/ANNO and Die Bühne source records to the Austrian National Library repository.",
         "fields": {
           "sourceIds": [
+            "SRC0408",
             "SRC0157",
             "SRC0160",
             "SRC0178",

@@ -20,7 +20,7 @@ import {
   sortKey,
   typeBadge,
   workSearchText,
-} from "./core.js?v=29c6833e6e";
+} from "./core.js?v=a56f0a6fdc";
 
 mountSiteChrome("works");
 
