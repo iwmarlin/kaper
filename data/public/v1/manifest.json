@@ -8,7 +8,7 @@
   "publicDataUpdatedAt": "2026-08-11",
   "generator": {
     "file": "export_public_data.py",
-    "sha256": "ead73d5bb148af76771d9ff8edd1e4fd88077407ed4a636e47c071c2035196aa"
+    "sha256": "dd78e446f827337728d47c00515ddcfe728bc5a9248b45d618fd8179576353ab"
   },
   "publicInputs": {
     "allowlist": {
@@ -17,10 +17,10 @@
     },
     "overrides": {
       "file": "public_export_overrides.json",
-      "sha256": "4d762b1d2f0894e1f784efa78ad24a03e9230d3c21a2dd515450f170a3a7b79e",
+      "sha256": "130286922f0f8e08eade2362accd180e6fb6dac85a633415a75f09e817509f93",
       "appliedCount": 747,
       "additionCount": 328,
-      "linkAdditionCount": 460,
+      "linkAdditionCount": 496,
       "linkRemovalCount": 145,
       "exclusionCount": 16
     }
@@ -84,8 +84,8 @@
     },
     {
       "file": "organizations.json",
-      "bytes": 128600,
-      "sha256": "7d98eac2a6778b31dc518c461e1935405ee19536ce8a38a390a8cf503bcaf7d1"
+      "bytes": 129227,
+      "sha256": "50f89635e4361d79fade9a775ce10ee6f5af1526456a8cb6b4e5c36276c35d81"
     },
     {
       "file": "other-works.json",
@@ -114,8 +114,8 @@
     },
     {
       "file": "sources.json",
-      "bytes": 1050457,
-      "sha256": "797052973be409ec56def1b3a9149e7c1a662db5dc575e1e8e18cf0a056b4be1"
+      "bytes": 1051891,
+      "sha256": "1c30ef4816851b167a64464a4808aac72f5799f4d0511b74792a2a7622c52d13"
     },
     {
       "file": "timeline-events.json",

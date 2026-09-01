@@ -29,6 +29,7 @@ from recording_sources import (
     RECORDING_ORGANIZATION_BY_HOST,
     recording_hostname,
 )
+from repository_organizations import expected_repository_organization_ids
 from visual_sources import (
     VISUAL_RIGHTS_NARRATIVE_PATTERN,
     WIKIMEDIA_ORGANIZATION_ID,
@@ -773,6 +774,12 @@ class ExportValidator:
 
         for source in self.payloads.get("Sources", {}).get("records", []):
             source_id = source["id"]
+            for organization_id in expected_repository_organization_ids(source):
+                if organization_id not in (source.get("organizationIds") or []):
+                    self.errors.append(
+                        f"Source {source_id}: repository field requires organization "
+                        f"relation {organization_id}"
+                    )
             if source.get("sourceType") == "discography":
                 self.errors.append(
                     f"Source {source_id}: legacy sourceType 'discography' must be "

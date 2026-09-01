@@ -18,6 +18,7 @@ from urllib.parse import parse_qsl, urlencode, urlparse, urlunparse
 from authority_sources import normalize_authority_source
 from filmographic_sources import normalize_filmographic_source
 from recording_sources import normalize_recording_source
+from repository_organizations import expected_repository_organization_ids
 from visual_sources import normalize_visual_source
 
 
@@ -2232,6 +2233,12 @@ class PublicExporter:
 
         for source in self.output_records["Sources"]:
             source_id = source["id"]
+            for organization_id in expected_repository_organization_ids(source):
+                if organization_id not in (source.get("organizationIds") or []):
+                    self.errors.append(
+                        f"Source {source_id}: repository field requires organization "
+                        f"relation {organization_id}"
+                    )
             research_note = str(source.get("researchNote", "")).strip()
             research_note_type = str(source.get("researchNoteType", "")).strip()
             if bool(research_note) != bool(research_note_type):

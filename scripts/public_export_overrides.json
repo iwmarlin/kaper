@@ -12036,9 +12036,9 @@
         }
       },
       "ORG067": {
-        "reason": "Synchronize Internet Archive with the digitized Hofmeister and film-trade sources and with the Great 78 Project and Leif Druedahl recording items hosted by the archive.",
+        "reason": "Synchronize Internet Archive with every source whose structured repository field identifies Internet Archive, including digitized catalogues, film-trade publications, recorded-sound items and authority material.",
         "fields": {
-          "sourceIds": ["SRC0569", "SRC0690", "SRC0703", "SRC0768", "SRC0769", "SRC0770", "SRC0771", "SRC0772", "SRC0776", "SRC0782", "SRC0783", "SRC0784", "SRC0785", "SRC0788"]
+          "sourceIds": ["SRC0569", "SRC0604", "SRC0606", "SRC0650", "SRC0651", "SRC0652", "SRC0653", "SRC0689", "SRC0690", "SRC0692", "SRC0703", "SRC0706", "SRC0768", "SRC0769", "SRC0770", "SRC0771", "SRC0772", "SRC0776", "SRC0782", "SRC0783", "SRC0784", "SRC0785", "SRC0788", "SRC0854", "SRC0855"]
         }
       },
       "ORG091": {
@@ -12121,21 +12121,26 @@
         }
       },
       "ORG062": {
-        "reason": "Link the Bibliothèque nationale de France organization record to the complete set of cited BnF title and name authority records and to the normalized Gallica and RetroNews press families.",
+        "reason": "Link the Bibliothèque nationale de France organization record to every source whose structured repository field identifies BnF, including title and name authority records and the normalized Gallica and RetroNews press families.",
         "fields": {
           "sourceIds": [
             "SRC0532",
             "SRC0536",
+            "SRC0549",
             "SRC0588",
             "SRC0589",
             "SRC0590",
+            "SRC0593",
             "SRC0617",
+            "SRC0618",
             "SRC0625",
             "SRC0626",
             "SRC0629",
             "SRC0630",
             "SRC0631",
             "SRC0632",
+            "SRC0671",
+            "SRC0786",
             "SRC0817",
             "SRC0820",
             "SRC0830",
@@ -12266,15 +12271,42 @@
         }
       },
       "ORG074": {
-        "reason": "Link Deutsche Nationalbibliothek to the Künste im Exil object record and to the cited GND authority records it publishes.",
+        "reason": "Link Deutsche Nationalbibliothek to every source whose structured repository field identifies DNB or GND, including the Künste im Exil object record and the cited authority records.",
         "fields": {
           "sourceIds": [
+            "SRC0548",
+            "SRC0583",
             "SRC0627",
             "SRC0628",
             "SRC0678",
             "SRC0817",
+            "SRC0829",
             "SRC0847"
           ]
+        }
+      },
+      "ORG080": {
+        "reason": "Synchronize USC Libraries with sources whose structured repository field identifies the USC Digital Library.",
+        "fields": {
+          "sourceIds": ["SRC0535", "SRC0542"]
+        }
+      },
+      "ORG085": {
+        "reason": "Synchronize SACEM with the ten authority records whose structured repository field identifies the SACEM repertoire database.",
+        "fields": {
+          "sourceIds": ["SRC0818", "SRC0819", "SRC0821", "SRC0822", "SRC0823", "SRC0824", "SRC0825", "SRC0826", "SRC0827", "SRC0828"]
+        }
+      },
+      "ORG093": {
+        "reason": "Synchronize YouTube with the source whose structured repository field explicitly identifies the platform.",
+        "fields": {
+          "sourceIds": ["SRC0555"]
+        }
+      },
+      "ORG158": {
+        "reason": "Synchronize World Radio History with the source whose structured repository field identifies that archive.",
+        "fields": {
+          "sourceIds": ["SRC0654"]
         }
       },
       "ORG110": {
@@ -15097,14 +15129,49 @@
           ]
         }
       },
+      "SRC0535": {"reason": "Link the source to USC Libraries, identified in its structured repository field.", "fields": {"organizationIds": ["ORG080"]}},
+      "SRC0542": {"reason": "Link the source to USC Libraries, identified in its structured repository field.", "fields": {"organizationIds": ["ORG080"]}},
+      "SRC0548": {"reason": "Link the authority source to Deutsche Nationalbibliothek, identified in its structured repository field.", "fields": {"organizationIds": ["ORG074"]}},
+      "SRC0549": {"reason": "Link the source to the Bibliothèque nationale de France, identified in its structured repository field.", "fields": {"organizationIds": ["ORG062"]}},
+      "SRC0555": {"reason": "Link the source to YouTube, explicitly identified in its structured repository field.", "fields": {"organizationIds": ["ORG093"]}},
+      "SRC0583": {"reason": "Link the authority source to Deutsche Nationalbibliothek, identified in its structured repository field.", "fields": {"organizationIds": ["ORG074"]}},
+      "SRC0593": {"reason": "Link the source to the Bibliothèque nationale de France, identified in its structured repository field.", "fields": {"organizationIds": ["ORG062"]}},
+      "SRC0604": {"reason": "Link the source to Internet Archive, identified in its structured repository field.", "fields": {"organizationIds": ["ORG067"]}},
+      "SRC0606": {"reason": "Link the source to Internet Archive, identified in its structured repository field.", "fields": {"organizationIds": ["ORG067"]}},
+      "SRC0618": {"reason": "Link the source to the Bibliothèque nationale de France, identified in its structured repository field.", "fields": {"organizationIds": ["ORG062"]}},
+      "SRC0650": {"reason": "Link the source to Internet Archive, identified in its structured repository field.", "fields": {"organizationIds": ["ORG067"]}},
+      "SRC0651": {"reason": "Link the source to Internet Archive, identified in its structured repository field.", "fields": {"organizationIds": ["ORG067"]}},
+      "SRC0652": {"reason": "Link the source to Internet Archive, identified in its structured repository field.", "fields": {"organizationIds": ["ORG067"]}},
+      "SRC0653": {"reason": "Link the source to Internet Archive, identified in its structured repository field.", "fields": {"organizationIds": ["ORG067"]}},
+      "SRC0654": {"reason": "Link the source to World Radio History, identified in its structured repository field.", "fields": {"organizationIds": ["ORG158"]}},
+      "SRC0671": {"reason": "Link the source to the Bibliothèque nationale de France, identified in its structured repository field.", "fields": {"organizationIds": ["ORG062"]}},
+      "SRC0689": {"reason": "Link the source to Internet Archive, identified in its structured repository field.", "fields": {"organizationIds": ["ORG067"]}},
+      "SRC0692": {"reason": "Link the source to Internet Archive, identified in its structured repository field.", "fields": {"organizationIds": ["ORG067"]}},
+      "SRC0706": {"reason": "Link the source to Internet Archive, identified in its structured repository field.", "fields": {"organizationIds": ["ORG067"]}},
+      "SRC0786": {"reason": "Link the source to the Bibliothèque nationale de France, identified in its structured repository field.", "fields": {"organizationIds": ["ORG062"]}},
+      "SRC0818": {"reason": "Link the authority source to SACEM, identified in its structured repository field.", "fields": {"organizationIds": ["ORG085"]}},
+      "SRC0819": {"reason": "Link the authority source to SACEM, identified in its structured repository field.", "fields": {"organizationIds": ["ORG085"]}},
+      "SRC0821": {"reason": "Link the authority source to SACEM, identified in its structured repository field.", "fields": {"organizationIds": ["ORG085"]}},
+      "SRC0822": {"reason": "Link the authority source to SACEM, identified in its structured repository field.", "fields": {"organizationIds": ["ORG085"]}},
+      "SRC0823": {"reason": "Link the authority source to SACEM, identified in its structured repository field.", "fields": {"organizationIds": ["ORG085"]}},
+      "SRC0824": {"reason": "Link the authority source to SACEM, identified in its structured repository field.", "fields": {"organizationIds": ["ORG085"]}},
+      "SRC0825": {"reason": "Link the authority source to SACEM, identified in its structured repository field.", "fields": {"organizationIds": ["ORG085"]}},
+      "SRC0826": {"reason": "Link the authority source to SACEM, identified in its structured repository field.", "fields": {"organizationIds": ["ORG085"]}},
+      "SRC0827": {"reason": "Link the authority source to SACEM, identified in its structured repository field.", "fields": {"organizationIds": ["ORG085"]}},
+      "SRC0828": {"reason": "Link the authority source to SACEM, identified in its structured repository field.", "fields": {"organizationIds": ["ORG085"]}},
+      "SRC0829": {"reason": "Link the authority source to Deutsche Nationalbibliothek, identified in its structured repository field.", "fields": {"organizationIds": ["ORG074"]}},
       "SRC0854": {
-        "reason": "Synchronize the Sirius-Mappen source with the source-specific Sirius-Verlag Franz Sobotka publisher contribution.",
+        "reason": "Synchronize the Sirius-Mappen source with Internet Archive and with the source-specific Sirius-Verlag Franz Sobotka publisher contribution.",
         "fields": {
+          "organizationIds": [
+            "ORG067"
+          ],
           "contributionIds": [
             "CON-S047-PUB-ORG052"
           ]
         }
       },
+      "SRC0855": {"reason": "Link the source to Internet Archive, identified in its structured repository field.", "fields": {"organizationIds": ["ORG067"]}},
       "SRC0489": {
         "reason": "Link the item-level 1936 French sheet-music cover to France-Mélodie and its source-specific publisher contribution.",
         "fields": {
