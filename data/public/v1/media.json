@@ -1610,7 +1610,6 @@
       "storageType": "multi_local_assets",
       "period": "european",
       "description": "Document gallery for Kaper’s journey to America and early U.S. immigration record. Includes the Certificate of Arrival no. 23-46078, Declaration of Intention no. 74224, Border-crossing manifest from Calexico, and related contextual images.",
-      "externalUrl": "https://calisphere.org/item/ark:/13030/kt1489p9q0/",
       "assetPath": "assets/images/historical-context/jeunesse-magazine-champlain.jpeg",
       "assetPaths": [
         "assets/images/historical-context/jeunesse-magazine-champlain.jpeg",
@@ -4427,7 +4426,7 @@
       "publicCaption": "Trade-press advertisement for Hochzeitsreise zu Dritt (1932), published in Österreichische Film-Zeitung, 19 November 1932, p. 3.",
       "publicCreditLine": "ANNO / Österreichische Nationalbibliothek; Österreichische Film-Zeitung, 19 November 1932, p. 3.",
       "category": "trade advertisement",
-      "galleryStatus": "selected",
+      "galleryStatus": "external_link_only",
       "organizationIds": [
         "ORG016"
       ],
@@ -6327,7 +6326,7 @@
       "publicCaption": "Press clipping from the Brooklyn Daily Eagle, 24 January 1937, reporting that Kaper and Jurmann wrote two special songs for Three Smart Girls.",
       "publicCreditLine": "Brooklyn Eagle / Newspapers.com, via Brooklyn Public Library; U.S. issue copyright not renewed according to UPenn/Ockerbloom CCE periodicals data.",
       "category": "press clipping",
-      "galleryStatus": "eligible",
+      "galleryStatus": "external_link_only",
       "organizationIds": [
         "ORG002"
       ],
@@ -8849,7 +8848,8 @@
       ],
       "periods": [
         "european"
-      ]
+      ],
+      "sortOrder": 308
     },
     {
       "id": "M309",

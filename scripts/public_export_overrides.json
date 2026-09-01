@@ -2124,12 +2124,6 @@
           "sourceType": "online_database"
         }
       },
-      "SRC0346": {
-        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
-        "fields": {
-          "sourceType": "online_database"
-        }
-      },
       "SRC0351": {
         "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
         "fields": {
@@ -2913,9 +2907,19 @@
         }
       },
       "SRC0546": {
-        "reason": "Replace an explanatory unknown-date phrase with the catalogue's standard undated value.",
+        "reason": "Replace the provisional source description with the complete item-level metadata supplied by the journal and separate the identity evidence from the bibliographic citation.",
         "fields": {
-          "date": "n.d."
+          "shortCitation": "Rupeikaitė, “Reconstructing Biography of Violinist Daniel Pomeranz,” Mūzikas akadēmijas raksti 22 (2024)",
+          "fullCitation": "Kamilė Rupeikaitė. “From the History of 20th Century Popular Music in Lithuania: Reconstructing Biography of Violinist Daniel Pomeranz (1904–1981).” Mūzikas akadēmijas raksti 22 (2024): 49–74.",
+          "sourceType": "periodical_article",
+          "repository": "Mūzikas akadēmijas raksti / Scriptamusica.lv",
+          "publication": "Mūzikas akadēmijas raksti, vol. 22 (2024)",
+          "date": "2024",
+          "primaryUrl": "https://www.scriptamusica.lv/index.php/mar/article/view/47",
+          "accessUrl": "https://www.scriptamusica.lv/index.php/mar/article/download/47/410/1003",
+          "sourceStatus": "verified",
+          "researchNote": "The documented Giuliano Pomeranz name forms are discussed in note 20 on pp. 53–54.",
+          "researchNoteType": "identity_assessment"
         }
       },
       "SRC0551": {
@@ -3599,12 +3603,15 @@
         ]
       },
       "M033": {
-        "reason": "Represent the gallery honestly as a mixed-rights container while directing users to the item-level statements.",
+        "reason": "Represent the gallery honestly as a mixed-rights container, direct users to item-level statements, and remove the misleading container URL that identified only member M113.",
         "fields": {
           "rightsStatus": "mixed_rights",
           "rightsNote": "This gallery has no single rights status. Each member medium carries its own public-domain, licensed, restricted or unresolved-copyright statement; reuse must be assessed item by item.",
           "publicCreditLine": "Item-level credits identify the holding institution and source for every gallery member."
-        }
+        },
+        "removeFields": [
+          "externalUrl"
+        ]
       },
       "M034": {
         "reason": "Keep gallery-container audit notes and composite-card workflow text out of the public export; each member medium carries its own public credit, source and rights statement.",
@@ -3901,6 +3908,12 @@
           "publicCreditLine": "Mein Film, no. 314 (1932), p. 9; ANNO / Österreichische Nationalbibliothek."
         }
       },
+      "M134": {
+        "reason": "Classify the ANNO item as an external link card because the site does not host a local image asset.",
+        "fields": {
+          "galleryStatus": "external_link_only"
+        }
+      },
       "M135": {
         "reason": "Complete the existing record for the second, distinct young Kaper portrait from the University of Warsaw Archives and make it visible in the curated Media selection without creating a duplicate record.",
         "fields": {
@@ -4023,6 +4036,12 @@
             "assets/images/sheet-music/zgas-lampe.png"
           ],
           "rightsNote": "Public domain: the linked Polona (Biblioteka Narodowa) record for “Zgaś lampę!” is marked Domena Publiczna. Credit Biblioteka Narodowa / Polona; printed edition Edition J. Altschuler, Warsaw–Riga, 1926."
+        }
+      },
+      "M202": {
+        "reason": "Classify the Newspapers.com item as an external link card because the site does not host a local image asset.",
+        "fields": {
+          "galleryStatus": "external_link_only"
         }
       },
       "M206": {
@@ -4545,6 +4564,12 @@
         "fields": {
           "rightsStatus": "copyright_undetermined",
           "galleryStatus": "detail_only"
+        }
+      },
+      "M308": {
+        "reason": "Supply the missing deterministic display order so every public Media record participates in the same ordering contract.",
+        "fields": {
+          "sortOrder": 308
         }
       },
       "M309": {
@@ -5613,6 +5638,9 @@
       },
       "SRC0087": {
         "reason": "Remove the duplicate record for the Abenteuer am Lido advertisement retained canonically, with its exact date, as SRC0031."
+      },
+      "SRC0346": {
+        "reason": "Remove the obsolete IMDb media-viewer record because it documents no retained Media, Work or other subject entity in the public graph; item-level evidence for Escapade remains represented by sources linked directly to the film and its materials."
       }
     },
     "Contributions": {
@@ -17504,6 +17532,14 @@
       }
     },
     "Organizations": {
+      "ORG092": {
+        "reason": "Remove the inverse IMDb link to excluded source SRC0346; the organization remains linked to its retained title, company-credit and name records.",
+        "fields": {
+          "sourceIds": [
+            "SRC0346"
+          ]
+        }
+      },
       "ORG064": {
         "reason": "Remove the excluded duplicate records for two Mein Film pages from the Austrian National Library source list; canonical SRC0086 and SRC0031 remain linked.",
         "fields": {

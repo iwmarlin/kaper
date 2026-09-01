@@ -1224,6 +1224,11 @@ class ExportValidator:
         external_audio_by_work: dict[str, list[str]] = defaultdict(list)
         for media in self.payloads.get("Media", {}).get("records", []):
             media_id = media["id"]
+            sort_order = media.get("sortOrder")
+            if isinstance(sort_order, bool) or not isinstance(sort_order, int):
+                self.errors.append(
+                    f"Media {media_id}: sortOrder must be an integer"
+                )
             if (
                 media.get("storageType") == "external"
                 and media.get("mediaType") == "audio"
@@ -1260,6 +1265,11 @@ class ExportValidator:
                 self.errors.append(
                     f"Media {media_id}: externalUrl contains more than one URL"
                 )
+            if media.get("mediaType") == "document_gallery" and external_url:
+                self.errors.append(
+                    f"Media {media_id}: a document-gallery container cannot carry "
+                    "an item-level externalUrl"
+                )
             if media.get("storageType") == "external":
                 if media.get("assetPath") or media.get("assetPaths"):
                     self.errors.append(
@@ -1283,6 +1293,15 @@ class ExportValidator:
                             f"Media {media_id}: YouTube URL must identify only the "
                             "canonical video, without playlist or radio parameters"
                         )
+            if (
+                media.get("storageType") == "external"
+                and media.get("mediaType") == "image"
+                and media.get("galleryStatus") != "external_link_only"
+            ):
+                self.errors.append(
+                    f"Media {media_id}: an externally hosted image without a local "
+                    "asset must use galleryStatus external_link_only"
+                )
             if not media.get("sourceIds"):
                 self.errors.append(f"Media {media_id}: public medium has no sourceIds")
             if media.get("galleryStatus") == "external_link_only":

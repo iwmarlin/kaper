@@ -1952,12 +1952,31 @@ class PublicExporter:
             media_id = media["id"]
             gallery = media.get("galleryStatus")
             external_url = media.get("externalUrl", "")
+            sort_order = media.get("sortOrder")
+            if isinstance(sort_order, bool) or not isinstance(sort_order, int):
+                self.errors.append(
+                    f"Media {media_id}: sortOrder must be an integer"
+                )
             if external_url and re.search(r"[\r\n]", external_url):
                 self.errors.append(
                     f"Media {media_id}: externalUrl contains more than one URL"
                 )
+            if media.get("mediaType") == "document_gallery" and external_url:
+                self.errors.append(
+                    f"Media {media_id}: a document-gallery container cannot carry "
+                    "an item-level externalUrl"
+                )
             if not media.get("sourceIds"):
                 self.errors.append(f"Media {media_id}: public medium has no sourceIds")
+            if (
+                media.get("storageType") == "external"
+                and media.get("mediaType") == "image"
+                and gallery != "external_link_only"
+            ):
+                self.errors.append(
+                    f"Media {media_id}: an externally hosted image without a local "
+                    "asset must use galleryStatus external_link_only"
+                )
             if gallery == "external_link_only":
                 if not media.get("externalUrl"):
                     self.errors.append(f"Media {media_id}: external link card has no URL")
