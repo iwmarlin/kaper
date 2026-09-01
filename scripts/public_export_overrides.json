@@ -1144,6 +1144,14 @@
           "researchNoteType": "evidence_note"
         }
       },
+      "SRC0023": {
+        "reason": "Replace the erroneous telephone-directory URL with the verified 1932 Berliner Adreßbuch page in the ZLB Digital Collections and retain the item-level Public Domain Mark.",
+        "fields": {
+          "primaryUrl": "https://digital.zlb.de/viewer/image/34115495_1932/646/",
+          "repository": "Zentral- und Landesbibliothek Berlin / Digitale Landesbibliothek Berlin",
+          "fullCitation": "Berliner Adreßbuch 1932, p. 646. Entry for B. Kaper, Komponist, Wilmersdorf, Pommersche Str. 3. Zentral- und Landesbibliothek Berlin / Digitale Landesbibliothek Berlin."
+        }
+      },
       "SRC0028": {
         "reason": "Normalize the untitled newspaper notice, mark its descriptive title as supplied, and identify the Deutsche Digitale Bibliothek newspaper service consistently.",
         "fields": {
@@ -3225,14 +3233,14 @@
     },
     "Media": {
       "M155": {
-        "reason": "Add the verified Illustrierter Film-Kurier issue number 1766 and replace the unsupported public-domain statement with a source-specific reuse assessment.",
+        "reason": "Add the verified Illustrierter Film-Kurier issue number 1766 and record the unresolved copyright status without presenting it as fair use.",
         "fields": {
           "title": "Melodie der Liebe (1932) — Illustrierter Film-Kurier, no. 1766",
           "description": "Illustrierter Film-Kurier programme cover for Melodie der Liebe (1932), issue no. 1766.",
           "publicCaption": "Illustrierter Film-Kurier programme cover for Melodie der Liebe (1932), issue no. 1766.",
           "publicCreditLine": "Illustrierter Film-Kurier, no. 1766; University of Warwick Library copy, digitized by Internet Archive.",
-          "rightsStatus": "permission_needed_or_fair_use_claimed",
-          "rightsNote": "The Internet Archive object metadata does not supply a reuse licence. This reduced-resolution programme cover is retained for scholarly identification and discussion; the source copy was contributed by the University of Warwick and digitized by Internet Archive.",
+          "rightsStatus": "copyright_undetermined",
+          "rightsNote": "The Internet Archive object metadata supplies neither a licence nor an item-level copyright statement. The 1932 programme is therefore not treated as public domain; reuse requires a separate rights assessment.",
           "galleryStatus": "detail_only"
         }
       },
@@ -3267,35 +3275,35 @@
         }
       },
       "M165": {
-        "reason": "Correct the programme number from 431 to the verified Illustrierter Film-Kurier no. 1759 and replace the unsupported public-domain statement with a source-specific reuse assessment.",
+        "reason": "Correct the programme number from 431 to the verified Illustrierter Film-Kurier no. 1759 and record the unresolved copyright status without presenting it as fair use.",
         "fields": {
           "title": "Skandal in der Parkstraße (1932) — Illustrierter Film-Kurier, no. 1759",
           "description": "Illustrierter Film-Kurier programme cover for Skandal in der Parkstraße (1932), issue no. 1759.",
           "publicCaption": "Illustrierter Film-Kurier programme cover for Skandal in der Parkstraße (1932), issue no. 1759.",
           "publicCreditLine": "Illustrierter Film-Kurier, no. 1759; University of Warwick Library copy, digitized by Internet Archive.",
-          "rightsStatus": "permission_needed_or_fair_use_claimed",
-          "rightsNote": "The Internet Archive object metadata does not supply a reuse licence. This reduced-resolution programme cover is retained for scholarly identification and discussion; the source copy was contributed by the University of Warwick and digitized by Internet Archive.",
+          "rightsStatus": "copyright_undetermined",
+          "rightsNote": "The Internet Archive object metadata supplies neither a licence nor an item-level copyright statement. The 1932 programme is therefore not treated as public domain; reuse requires a separate rights assessment.",
           "galleryStatus": "detail_only"
         }
       },
       "M181": {
-        "reason": "Replace the unsupported public-domain statement for the Illustrierter Film-Kurier programme with a source-specific reuse assessment.",
+        "reason": "Replace the unsupported public-domain statement for the Illustrierter Film-Kurier programme with an explicit unresolved-copyright assessment.",
         "fields": {
           "publicCreditLine": "Illustrierter Film-Kurier, no. 1819; University of Warwick Library copy, digitized by Internet Archive.",
-          "rightsStatus": "permission_needed_or_fair_use_claimed",
-          "rightsNote": "The Internet Archive object metadata does not supply a reuse licence. This reduced-resolution programme image is retained for scholarly identification and discussion; the source copy was contributed by the University of Warwick and digitized by Internet Archive.",
+          "rightsStatus": "copyright_undetermined",
+          "rightsNote": "The Internet Archive object metadata supplies neither a licence nor an item-level copyright statement. The 1932 programme is therefore not treated as public domain; reuse requires a separate rights assessment.",
           "galleryStatus": "detail_only"
         }
       },
       "M192": {
-        "reason": "Correct the programme number from 1951 to the verified Illustrierter Film-Kurier no. 1957 and replace the unsupported public-domain statement with a source-specific reuse assessment.",
+        "reason": "Correct the programme number from 1951 to the verified Illustrierter Film-Kurier no. 1957 and record the unresolved copyright status without presenting it as fair use.",
         "fields": {
           "title": "Ein Lied für Dich (1933) — Illustrierter Film-Kurier, no. 1957",
           "description": "Cover of Illustrierter Film-Kurier, no. 1957, devoted to Ein Lied für Dich (1933), Joe May’s film with Jan Kiepura and Jenny Jugo and music by Walter Jurmann and Bronisław Kaper. This is a film-program/periodical cover, not a standard theatrical poster.",
           "publicCaption": "Illustrierter Film-Kurier programme cover for Ein Lied für Dich (1933), issue no. 1957.",
           "publicCreditLine": "Illustrierter Film-Kurier, no. 1957; University of Warwick Library copy, digitized by Internet Archive.",
-          "rightsStatus": "permission_needed_or_fair_use_claimed",
-          "rightsNote": "The Internet Archive object metadata does not supply a reuse licence. This reduced-resolution programme cover is retained for scholarly identification and discussion; the source copy was contributed by the University of Warwick and digitized by Internet Archive.",
+          "rightsStatus": "copyright_undetermined",
+          "rightsNote": "The Internet Archive object metadata supplies neither a licence nor an item-level copyright statement. The 1933 programme is therefore not treated as public domain; reuse requires a separate rights assessment.",
           "galleryStatus": "detail_only"
         }
       },
@@ -3320,20 +3328,78 @@
         }
       },
       "M343": {
-        "reason": "Use the verified Film-Magazin caption and connect the image to the credited studio Ufa; its sitter remains linked through SRC0703, following the portrait model used throughout the export.",
+        "reason": "Use the verified Film-Magazin caption, connect the image to Ufa and document the Media History Digital Library reuse terms instead of an unqualified fair-use claim.",
         "fields": {
           "description": "Willy Schmidt-Gentner composing the accompaniment for Ufa’s Frau im Mond, as captioned in Film-Magazin in 1929. The photograph is credited “Phot. Ufa”.",
+          "rightsStatus": "permission_granted",
+          "rightsNote": "Media History Digital Library states that material in its collection may be used in teaching, research and publications without requesting permission or paying a fee; full source files should not be rehosted. This record uses an attributed excerpt from the digitized page.",
+          "publicCreditLine": "Photograph credited “Phot. Ufa”; Film-Magazin, 1929; Museum of Modern Art Library copy; Media History Digital Library / Internet Archive.",
           "organizationIds": [
             "ORG011"
           ]
         }
       },
+      "M331": {
+        "reason": "Replace the generic fair-use claim with the official Media History Digital Library reuse terms for the attributed page excerpt.",
+        "fields": {
+          "rightsStatus": "permission_granted",
+          "rightsNote": "Media History Digital Library states that material in its collection may be used in teaching, research and publications without requesting permission or paying a fee; full source files should not be rehosted. This record uses an attributed excerpt from the digitized page.",
+          "publicCreditLine": "Der Kinematograph (Berlin), August 1932, p. 118; Media History Digital Library / Internet Archive."
+        }
+      },
+      "M333": {
+        "reason": "Replace the generic fair-use claim with the item-specific result: the Internet Archive record supplies no reuse licence and the photographer is unidentified.",
+        "fields": {
+          "rightsStatus": "copyright_undetermined",
+          "rightsNote": "The Internet Archive object metadata supplies no reuse licence, and the 1932 portrait names no photographer. Copyright status cannot be determined from the available evidence; reuse requires a separate rights assessment.",
+          "publicCreditLine": "Photographer unidentified; Universal Filmlexikon 1932, p. 80; digitized copy at Internet Archive.",
+          "galleryStatus": "detail_only"
+        }
+      },
+      "M346": {
+        "reason": "Record the known in-copyright status of the 1978 periodical instead of presenting the crop under a generic fair-use label.",
+        "fields": {
+          "rightsStatus": "restricted",
+          "rightsNote": "Cinefantastique, vol. 7, no. 2 (1978), remains in copyright and the portrait carries no photographer credit or separate licence. Reuse requires permission or another applicable legal basis.",
+          "publicCreditLine": "Photographer unidentified; Cinefantastique 7, no. 2 (Summer 1978), p. 10; digitized copy at Internet Archive.",
+          "galleryStatus": "detail_only"
+        }
+      },
+      "M264": {
+        "reason": "Replace the generic fair-use claim with the item-specific result: neither the BnF record nor the partly legible studio blindstamp identifies a photographer or supplies a reuse licence for the portrait.",
+        "fields": {
+          "rightsStatus": "copyright_undetermined",
+          "rightsNote": "The 1941 programme is digitized by the Bibliothèque nationale de France, but neither the catalogue record nor the partly legible studio blindstamp identifies the photographer or supplies a licence for the underlying portrait. Copyright status cannot be determined from the available evidence.",
+          "galleryStatus": "detail_only"
+        }
+      },
+      "M438": {
+        "reason": "Replace the generic fair-use claim with the item-specific result: the 1940 press photograph is credited but the photographer cannot yet be identified, so copyright remains undetermined.",
+        "fields": {
+          "rightsStatus": "copyright_undetermined",
+          "rightsNote": "The page credits the photograph “Aufn. Wiener Bühne – Strof”, but the photographer’s identity and dates have not been established. ANNO supplies the digitized page without clearing third-party rights in the underlying photograph; reuse therefore requires a separate rights assessment.",
+          "publicCreditLine": "Photograph credited “Aufn. Wiener Bühne – Strof”; Die Bühne, no. 6 (1940), p. 11; Österreichische Nationalbibliothek / ANNO.",
+          "galleryStatus": "detail_only"
+        }
+      },
+      "M439": {
+        "reason": "Record the known copyright term of Hans Schaukal's caricature instead of presenting the local reproduction under a generic fair-use label.",
+        "fields": {
+          "rightsStatus": "restricted",
+          "rightsNote": "The caricature is credited to Hans Schaukal (1900–1981). Copyright in the underlying drawing runs through 31 December 2051 in life-plus-70 jurisdictions; ANNO does not supply a separate reuse licence for that work.",
+          "publicCreditLine": "Drawing by Hans Schaukal; Die Bühne, no. 203 (1928), p. 20; Österreichische Nationalbibliothek / ANNO.",
+          "galleryStatus": "detail_only"
+        }
+      },
       "M031": {
-        "reason": "Replace two excluded duplicate records for the Mein Film review with the single canonical source SRC0086.",
+        "reason": "Replace two excluded duplicate records for the Mein Film review with the single canonical source SRC0086, and represent the gallery honestly as a mixed-rights container while directing users to the item-level statements.",
         "fields": {
           "sourceIds": [
             "SRC0086"
-          ]
+          ],
+          "rightsStatus": "mixed_rights",
+          "rightsNote": "This gallery has no single rights status. Each member medium carries its own public-domain, licensed, restricted or unresolved-copyright statement; reuse must be assessed item by item.",
+          "publicCreditLine": "Item-level credits identify the holding institution and source for every gallery member."
         }
       },
       "M002": {
@@ -3514,14 +3580,6 @@
           "publicCreditLine"
         ]
       },
-      "M031": {
-        "reason": "Keep gallery-container audit notes and composite-card workflow text out of the public export; each member medium carries its own public credit, source and rights statement.",
-        "fields": {},
-        "removeFields": [
-          "rightsNote",
-          "publicCreditLine"
-        ]
-      },
       "M032": {
         "reason": "Keep gallery-container audit notes and composite-card workflow text out of the public export; remove the duplicate M216 asset while retaining the canonical M195 photograph.",
         "fields": {
@@ -3541,12 +3599,12 @@
         ]
       },
       "M033": {
-        "reason": "Keep gallery-container audit notes and composite-card workflow text out of the public export; each member medium carries its own public credit, source and rights statement.",
-        "fields": {},
-        "removeFields": [
-          "rightsNote",
-          "publicCreditLine"
-        ]
+        "reason": "Represent the gallery honestly as a mixed-rights container while directing users to the item-level statements.",
+        "fields": {
+          "rightsStatus": "mixed_rights",
+          "rightsNote": "This gallery has no single rights status. Each member medium carries its own public-domain, licensed, restricted or unresolved-copyright statement; reuse must be assessed item by item.",
+          "publicCreditLine": "Item-level credits identify the holding institution and source for every gallery member."
+        }
       },
       "M034": {
         "reason": "Keep gallery-container audit notes and composite-card workflow text out of the public export; each member medium carries its own public credit, source and rights statement.",
@@ -3579,6 +3637,7 @@
           "rightsNote": "Public domain as marked by Biblioteka Narodowa / Polona. Cropped from p. 4 of the 1933 publication; photographer not identified.",
           "publicCaption": "The Warsaw Philharmonic building at the corner of Jasna and Henryka Sienkiewicza streets, published in a 1933 company publication.",
           "publicCreditLine": "Warszawskie Przedsiębiorstwo Budowlane S.A., 1933; Biblioteka Narodowa / Polona, public domain.",
+          "period": "warsaw",
           "placeIds": [
             "PL010",
             "PL017"
@@ -3606,13 +3665,18 @@
         "fields": {
           "period": "european",
           "description": "Portrait of Professor Walther Gmeindl, identified through the Discogs artist page and used in the 1926–1930 “Start of Berlin career” context.",
-          "rightsNote": "Photographer and rights holder not identified. Image approved only as a low-resolution contextual portrait for scholarly identification and commentary. Do not mark rights as cleared; replace if a better rights-cleared source is found."
+          "rightsNote": "Photographer and rights holder not identified. Image approved only as a low-resolution contextual portrait for scholarly identification and commentary. Do not mark rights as cleared; replace if a better rights-cleared source is found.",
+          "rightsStatus": "copyright_undetermined",
+          "galleryStatus": "detail_only"
         }
       },
       "M046": {
         "reason": "Classify the photograph dated circa 1935 in the Hollywood period while preserving its link to the earlier event in which the Kaper–Jurmann partnership began.",
         "fields": {
-          "period": "hollywood"
+          "period": "hollywood",
+          "rightsStatus": "copyright_undetermined",
+          "galleryStatus": "detail_only",
+          "rightsNote": "The Margaret Herrick Library holding establishes the photograph’s archival provenance but does not identify a photographer, original publication, or licence in the public record cited here. Physical custody is not copyright ownership; the local copy is therefore classified as copyright undetermined and confined to the linked records."
         }
       },
       "M063": {
@@ -3626,12 +3690,6 @@
         "fields": {
           "period": "warsaw",
           "rightsNote": "Public domain: interwar archival photograph held by Szukaj w Archiwach. Credit Szukaj w Archiwach, “Uroczystości święta 3 Maja w Warszawie,” sygn. 3/1/0/6/2877/33."
-        }
-      },
-      "M075": {
-        "reason": "Retain the later Warsaw Philharmonic photograph in the Warsaw period because it illustrates Kaper's 1920–1925 musical formation rather than a 1933 career event.",
-        "fields": {
-          "period": "warsaw"
         }
       },
       "M080": {
@@ -3685,16 +3743,18 @@
           "altText": "Sheet-music cover for the Dutch-language edition “Tot Weerziens, Mijnheer Jansen”.",
           "publicCaption": "Sheet-music cover for “Tot Weerziens, Mijnheer Jansen” (“Auf Wiederseh’n, Herr Doktor!”), Wiener Boheme Verlag, W.B.V. 1328, 1929.",
           "publicCreditLine": "Images Musicales; Wiener Boheme Verlag, W.B.V. 1328 (1929); cover artwork signed Hassel.",
-          "rightsStatus": "permission_needed_or_fair_use_claimed",
-          "rightsNote": "The cover artwork is signed Hassel, but the illustrator’s identity and rights history have not been established. A reduced-resolution image is used for scholarly identification and commentary; rights in the underlying music and lyrics are separate."
+          "rightsStatus": "copyright_undetermined",
+          "rightsNote": "The cover artwork is signed Hassel, but the illustrator’s identity and rights history have not been established. A reduced-resolution image is used for scholarly identification and commentary; rights in the underlying music and lyrics are separate.",
+          "galleryStatus": "detail_only"
         }
       },
       "M058": {
-        "reason": "Use a conservative fair-use status because the existing rights note explicitly states that U.S.-based reuse may remain restricted through 2029.",
+        "reason": "Follow the item-level Deutsche Digitale Bibliothek rights statement: the issue is marked In Copyright, so it must not be presented as public domain or as automatically covered by fair use.",
         "fields": {
-          "rightsStatus": "permission_needed_or_fair_use_claimed",
-          "rightsNote": "Reuse rights are not cleared for all jurisdictions. A reduced-resolution clipping is used for scholarly identification and commentary on Madame wünscht keine Kinder.",
-          "publicCreditLine": "Stuttgarter Neues Tagblatt / Deutsches Zeitungsportal — Deutsche Digitale Bibliothek."
+          "rightsStatus": "restricted",
+          "rightsNote": "The Deutsche Digitale Bibliothek marks this newspaper issue In Copyright (InC 1.0) and supplies no reuse licence. Reuse requires permission or another applicable legal basis.",
+          "publicCreditLine": "Stuttgarter Neues Tagblatt, 7 September 1934, p. 6; Deutsches Zeitungsportal / Deutsche Digitale Bibliothek.",
+          "galleryStatus": "detail_only"
         }
       },
       "M087": {
@@ -3712,35 +3772,101 @@
         }
       },
       "M104": {
-        "reason": "Use a conservative fair-use status because the recorded assessment does not establish unrestricted U.S.-based reuse of the 1932 trade advertisement.",
+        "reason": "Apply the official Media History Digital Library reuse policy and correct the repository credit, which previously named the Deutsche Digitale Bibliothek in error.",
         "fields": {
-          "rightsStatus": "permission_needed_or_fair_use_claimed",
-          "rightsNote": "Reuse rights are not cleared for all jurisdictions. A reduced-resolution advertisement is used for scholarly identification and commentary on Es wird schon wieder besser.",
-          "publicCreditLine": "Der Kinematograph / Deutsches Zeitungsportal — Deutsche Digitale Bibliothek."
+          "rightsStatus": "permission_granted",
+          "rightsNote": "Media History Digital Library states that material in its collection may be used in teaching, research and publications without requesting permission or paying a fee; full source files should not be rehosted. This record uses an attributed excerpt from the digitized page.",
+          "publicCreditLine": "Der Kinematograph, no. 2 (1932), scan leaf 18; Media History Digital Library / Lantern."
         }
       },
       "M105": {
-        "reason": "Use a conservative fair-use status because the recorded assessment does not establish unrestricted U.S.-based reuse of the 1933 newspaper advertisement.",
+        "reason": "Follow the item-level Deutsche Digitale Bibliothek rights statement and correct the newspaper credit, which previously named Mitteldeutsche Nationalzeitung in error.",
         "fields": {
-          "rightsStatus": "permission_needed_or_fair_use_claimed",
-          "rightsNote": "Reuse rights are not cleared for all jurisdictions. A reduced-resolution advertisement is used for scholarly identification and commentary on Kaper’s 1933 film work.",
-          "publicCreditLine": "Mitteldeutsche Nationalzeitung / Deutsches Zeitungsportal — Deutsche Digitale Bibliothek."
+          "rightsStatus": "restricted",
+          "rightsNote": "The Deutsche Digitale Bibliothek marks this newspaper issue In Copyright (InC 1.0) and supplies no reuse licence. Reuse requires permission or another applicable legal basis.",
+          "publicCreditLine": "NS-Kurier (Stuttgart), 25 July 1933, p. 8; Deutsches Zeitungsportal / Deutsche Digitale Bibliothek.",
+          "galleryStatus": "detail_only"
         }
       },
       "M106": {
-        "reason": "Use a conservative fair-use status because the existing note expressly leaves U.S.-based reuse unresolved, despite the factual character of the directory entry.",
+        "reason": "Replace the erroneous telephone-directory route with the verified 1932 Berliner Adreßbuch page and follow the Public Domain Mark supplied by ZLB and DDB.",
         "fields": {
-          "rightsStatus": "permission_needed_or_fair_use_claimed",
-          "rightsNote": "Reuse rights are not cleared for all jurisdictions. A reduced-resolution directory excerpt is used for scholarly identification of Kaper’s 1932 Berlin address.",
-          "publicCreditLine": "Berliner Adreßbuch 1932 / ZLB Digital Collections."
+          "externalUrl": "https://digital.zlb.de/viewer/image/34115495_1932/646/",
+          "rightsStatus": "public_domain",
+          "rightsNote": "Public Domain Mark 1.0, as supplied for the 1932 Berliner Adreßbuch by the Zentral- und Landesbibliothek Berlin and the Deutsche Digitale Bibliothek.",
+          "publicCreditLine": "Berliner Adreßbuch 1932, p. 646; Zentral- und Landesbibliothek Berlin / Digitale Landesbibliothek Berlin."
         }
       },
       "M113": {
-        "reason": "Correct the rights status to match the Pomona Public Library notice, which limits the supplied image to personal or research use and does not clear online publication.",
+        "reason": "Follow the item-level Pomona Public Library notice, which limits the supplied image to personal or research use and warns that online publication may require permission.",
         "fields": {
-          "rightsStatus": "permission_needed_or_fair_use_claimed",
-          "rightsNote": "Pomona Public Library does not clear online publication rights. A reduced-resolution contextual image is used for scholarly discussion of the Calexico border-crossing setting.",
-          "publicCreditLine": "Pomona Public Library, Frasher Foto Postcard Collection, via Calisphere; ARK kt1489p9q0; identifier B3138."
+          "rightsStatus": "restricted",
+          "rightsNote": "Pomona Public Library makes no assertion that it owns copyright and supplies the image for personal or research use only. Online publication may require additional permission; no open reuse licence is supplied.",
+          "publicCreditLine": "Pomona Public Library, Frasher Foto Postcard Collection, via Calisphere; ARK kt1489p9q0; identifier B3138.",
+          "galleryStatus": "detail_only"
+        }
+      },
+      "M074": {
+        "reason": "Follow the USC Digital Library item-level RightsStatements.org status and educational-use condition instead of describing the image generically as fair use.",
+        "fields": {
+          "rightsStatus": "copyright_undetermined",
+          "rightsNote": "The USC Digital Library assigns RightsStatements.org Copyright Undetermined (UND 1.0) and limits the partial score to educational use; no broader reuse licence is supplied.",
+          "publicCreditLine": "University of Southern California Digital Library, DamView record DocRID 2A3BF1X8GAHTY; Copyright Undetermined (UND 1.0), educational use only.",
+          "galleryStatus": "detail_only"
+        }
+      },
+      "M218": {
+        "reason": "Follow the USC Digital Library item-level RightsStatements.org status and educational-use condition, and remove the unsupported public fair-use claim.",
+        "fields": {
+          "rightsStatus": "copyright_undetermined",
+          "rightsNote": "The USC Digital Library assigns RightsStatements.org Copyright Undetermined (UND 1.0) and limits the partial score to educational use; no broader reuse licence is supplied.",
+          "publicCreditLine": "University of Southern California Digital Library, DamView record DocRID 2A3BF1X8Z8LXZ; Copyright Undetermined (UND 1.0), educational use only. Bibliographic identification verified against the U.S. Copyright Office Catalog of Copyright Entries (1935).",
+          "galleryStatus": "detail_only"
+        }
+      },
+      "M241": {
+        "reason": "Record the Media History Digital Library reuse policy as an affirmative permission for the attributed page excerpt.",
+        "fields": {
+          "rightsStatus": "permission_granted",
+          "rightsNote": "Media History Digital Library states that material in its collection may be used in teaching, research and publications without requesting permission or paying a fee; full source files should not be rehosted. This record uses an attributed excerpt from the digitized page.",
+          "publicCreditLine": "Motion Picture Herald / Media History Digital Library / Internet Archive."
+        }
+      },
+      "M245": {
+        "reason": "Use the explicit unknown-copyright assessment supplied by UCLA and California Revealed and keep the portrait out of the general gallery while reuse remains unresolved.",
+        "fields": {
+          "rightsStatus": "copyright_undetermined",
+          "rightsNote": "Reuse rights are not cleared. The UCLA Ethnomusicology Archive records the copyright status as unknown, states that the work is accessible for education and research, and reports that it searched for rights owners without success. A reduced-resolution reproduction (1100 × 1197 px) is used here for scholarly identification of the singer who introduced “All God’s Chillun Got Rhythm” on screen.",
+          "publicCreditLine": "Bette Cox Collection, University of California, Los Angeles, Ethnomusicology Archive; digitised by California Revealed.",
+          "galleryStatus": "detail_only"
+        }
+      },
+      "M283": {
+        "reason": "The supplied Mapping NYC image URL does not expose the MCNY Collections Portal accession number or item-level rights record required by the museum's low-resolution reuse terms; keep the image on detail pages until those metadata are recovered.",
+        "fields": {
+          "rightsStatus": "copyright_undetermined",
+          "galleryStatus": "detail_only"
+        }
+      },
+      "M292": {
+        "reason": "Distinguish the Commons public-domain assessment in France from the restored United States copyright applicable to a 1947 Studio Harcourt collective work.",
+        "fields": {
+          "rightsStatus": "restricted",
+          "galleryStatus": "detail_only"
+        }
+      },
+      "M350": {
+        "reason": "Record the unresolved United States status separately from the photograph's expired European copyright.",
+        "fields": {
+          "rightsStatus": "copyright_undetermined",
+          "galleryStatus": "detail_only"
+        }
+      },
+      "M359": {
+        "reason": "Distinguish the Commons public-domain assessment in France from the restored United States copyright applicable to a 1940 Studio Harcourt collective work.",
+        "fields": {
+          "rightsStatus": "restricted",
+          "galleryStatus": "detail_only"
         }
       },
       "M069": {
@@ -3748,7 +3874,10 @@
         "fields": {
           "description": "Portrait of Hermann Biek, Kaper’s Berlin-era piano-duo partner.",
           "altText": "Portrait of the pianist Hermann Biek.",
-          "publicCaption": "Hermann Biek, Kaper’s Berlin-era piano-duo partner, who was professionally known as Ben Berlin and credited with Kaper as Hermann Bick."
+          "publicCaption": "Hermann Biek, Kaper’s Berlin-era piano-duo partner, who was professionally known as Ben Berlin and credited with Kaper as Hermann Bick.",
+          "rightsStatus": "copyright_undetermined",
+          "galleryStatus": "detail_only",
+          "rightsNote": "The collectors’ site grammophon-platten.de identifies Hermann Biek but supplies no photographer, date, original publication, or reusable licence for the portrait. Its copyright status remains undetermined and the local copy is confined to the person record."
         }
       },
       "M116": {
@@ -3798,17 +3927,20 @@
         }
       },
       "M180": {
-        "reason": "Use a conservative fair-use status because the recorded assessment does not establish unrestricted U.S.-based reuse of the 1933 newspaper advertisement.",
+        "reason": "Follow the item-level Public Domain Mark supplied by the Deutsche Digitale Bibliothek for the cited newspaper issue.",
         "fields": {
-          "rightsStatus": "permission_needed_or_fair_use_claimed",
-          "rightsNote": "Reuse rights are not cleared for all jurisdictions. A reduced-resolution advertisement is used for scholarly identification and commentary on Ich will Dich Liebe lehren.",
+          "rightsStatus": "public_domain",
+          "rightsNote": "Public Domain Mark 1.0, as supplied by the Deutsche Digitale Bibliothek for the cited issue of Mitteldeutsche Nationalzeitung.",
           "publicCreditLine": "Mitteldeutsche Nationalzeitung / Deutsches Zeitungsportal — Deutsche Digitale Bibliothek."
         }
       },
       "M231": {
         "reason": "Keep the public credit concise; the full uploader title, date and URL remain available through the canonical Source relation.",
         "fields": {
-          "publicCreditLine": "YouTube still by 梅園 真澄; historical object: Polydor 10237-B; reduced-resolution scholarly use."
+          "publicCreditLine": "YouTube still by 梅園 真澄; historical object: Polydor 10237-B; reduced-resolution scholarly use.",
+          "rightsStatus": "copyright_undetermined",
+          "galleryStatus": "detail_only",
+          "rightsNote": "The YouTube upload documents the historical Polydor label but supplies no reusable licence for the video frame, and the photographer or scanner of the disc is not identified. Rights in the modern frame capture and in the historical label cannot be established from the supplied metadata, so the image remains copyright undetermined."
         }
       },
       "M125": {
@@ -3844,7 +3976,10 @@
       "M154": {
         "reason": "Classify the 1935 Moscow Nights poster chronologically as Hollywood under the revised period boundaries.",
         "fields": {
-          "period": "hollywood"
+          "period": "hollywood",
+          "rightsStatus": "restricted",
+          "galleryStatus": "detail_only",
+          "rightsNote": "English Wikipedia treats this 1935 poster as non-free content. That project-specific rationale does not license reuse on this site, so the local image is classified as restricted and confined to the film record."
         }
       },
       "M173": {
@@ -3852,7 +3987,10 @@
         "fields": {
           "period": "hollywood",
           "publicCaption": "Cover of Le Film complet du samedi, 14e année, no. 1619 (30 March 1935), devoted to Le Chant du destin and featuring Lucien Muratore.",
-          "publicCreditLine": "Le Film complet du samedi, 14e année, no. 1619, 30 March 1935; reuse rights not cleared."
+          "publicCreditLine": "Le Film complet du samedi, 14e année, no. 1619, 30 March 1935; reuse rights not cleared.",
+          "rightsStatus": "restricted",
+          "galleryStatus": "detail_only",
+          "rightsNote": "Le Film complet du samedi published this cover in France in 1935. No photographer or illustrator and no reuse licence are supplied; an anonymous French work of that date remained protected on 1 January 1996 and therefore received restored United States copyright under the URAA. The local reproduction is classified as restricted."
         },
         "removeFields": [
           "externalUrl"
@@ -3871,7 +4009,10 @@
       "M198": {
         "reason": "Classify the 1930 sheet-music edition chronologically as European while retaining its Polish publication context.",
         "fields": {
-          "period": "european"
+          "period": "european",
+          "rightsStatus": "copyright_undetermined",
+          "galleryStatus": "detail_only",
+          "rightsNote": "Stare Melodie supplies a scan of the 1930 Gebethner i Wolff edition but no reusable licence or item-level rights statement. The cover designer and complete first-publication evidence are not recorded there, while copyright in the underlying music and lyrics follows a separate analysis. The media record therefore remains copyright undetermined."
         }
       },
       "M200": {
@@ -3982,7 +4123,10 @@
       "M223": {
         "reason": "Describe only the people and credits printed on this specific sheet-music collection cover; broad film and catalogue sources must not leak unrelated people into the media record.",
         "fields": {
-          "description": "Sheet-music collection cover for On a volé un homme (1934), advertising “Ni mal, ni bien” and “Un regard de femme.” The cover credits words by René Pujol, music by Walter Jurmann and Bronisław Kaper, and performances by Henry Garat."
+          "description": "Sheet-music collection cover for On a volé un homme (1934), advertising “Ni mal, ni bien” and “Un regard de femme.” The cover credits words by René Pujol, music by Walter Jurmann and Bronisław Kaper, and performances by Henry Garat.",
+          "rightsStatus": "restricted",
+          "galleryStatus": "detail_only",
+          "rightsNote": "The Walter Jurmann cover gallery documents this 1934 European sheet-music collection cover but supplies no open reuse licence. The graphic work was still protected in its source country on 1 January 1996 and therefore received restored United States copyright under the URAA. The local image is classified as restricted."
         }
       },
       "M220": {
@@ -4041,9 +4185,11 @@
         }
       },
       "M293": {
-        "reason": "State the qualified film-music relationship directly rather than describing how the catalogue records it.",
+        "reason": "State the qualified film-music relationship directly and do not rely on a Flickr user's CC BY-SA claim for an unidentified 1949 studio production still.",
         "fields": {
-          "publicCaption": "Joseph H. Lewis, director of The Spy Ring (1938), photographed on the set of The Undercover Man in 1949. The Spy Ring is linked to Kaper only as probable stock-music context, not as a confirmed Kaper credit."
+          "publicCaption": "Joseph H. Lewis, director of The Spy Ring (1938), photographed on the set of The Undercover Man in 1949. The Spy Ring is linked to Kaper only as probable stock-music context, not as a confirmed Kaper credit.",
+          "rightsStatus": "copyright_undetermined",
+          "galleryStatus": "detail_only"
         }
       },
       "M294": {
@@ -4053,9 +4199,11 @@
         }
       },
       "M295": {
-        "reason": "Replace catalogue-relative wording with a direct account of Zakin's documented Kaper connections.",
+        "reason": "Replace catalogue-relative wording with a direct account of Zakin's documented Kaper connections and distinguish Australian public-domain status from restored United States copyright.",
         "fields": {
-          "publicCaption": "Alexander Zakin performed in the 1929 Vierflügeltango for four grand pianos and in the ERKLA-Quartett concert at Hamborn in December 1929, where he played alongside Kaper. Max Dupain made this later portrait in July 1947."
+          "publicCaption": "Alexander Zakin performed in the 1929 Vierflügeltango for four grand pianos and in the ERKLA-Quartett concert at Hamborn in December 1929, where he played alongside Kaper. Max Dupain made this later portrait in July 1947.",
+          "rightsStatus": "restricted",
+          "galleryStatus": "detail_only"
         }
       },
       "M298": {
@@ -4087,7 +4235,9 @@
       "M302": {
         "reason": "Describe the retained printed caption directly instead of referring to an internal reproduction choice.",
         "fields": {
-          "description": "The clipping retains the printed caption below the portrait — “Louis POTERAT / que vous entendrez aujourd'hui à 14 h.” — because it identifies the sitter."
+          "description": "The clipping retains the printed caption below the portrait — “Louis POTERAT / que vous entendrez aujourd'hui à 14 h.” — because it identifies the sitter.",
+          "rightsStatus": "restricted",
+          "galleryStatus": "detail_only"
         }
       },
       "M330": {
@@ -4112,9 +4262,425 @@
       "M437": {
         "reason": "Distinguish the physical source copy, digitization repository and access interface consistently with SRC0834.",
         "fields": {
-          "publicCreditLine": "Photographer uncredited; Das Leben 6 (1928/29), no. 3, September 1928, p. 46. Source copy: Deutsches Literaturarchiv Marbach; digitization: SLUB Dresden; access via arthistoricum.net."
+          "publicCreditLine": "Photographer uncredited; Das Leben 6 (1928/29), no. 3, September 1928, p. 46. Source copy: Deutsches Literaturarchiv Marbach; digitization: SLUB Dresden; access via arthistoricum.net.",
+          "rightsStatus": "restricted",
+          "galleryStatus": "detail_only"
+        }
+      },
+      "M038": {
+        "reason": "Replace the legacy blanket rights flag with an explicit undetermined-copyright classification after item-level provenance review; keep the local reproduction on detail pages only.",
+        "fields": {
+          "rightsStatus": "copyright_undetermined",
+          "galleryStatus": "detail_only",
+          "rightsNote": "The English Wikipedia article displays this MGM poster but does not supply a transferable free licence or evidence establishing the poster’s United States renewal history. The copyright status is therefore undetermined, and the local copy is confined to the film record."
+        }
+      },
+      "M054": {
+        "reason": "Replace the legacy blanket rights flag with an explicit undetermined-copyright classification after item-level provenance review; keep the local reproduction on detail pages only.",
+        "fields": {
+          "rightsStatus": "copyright_undetermined",
+          "galleryStatus": "detail_only",
+          "rightsNote": "Chansons-net reproduces the cover but does not identify its designer, document the exact source copy’s rights history, or grant a reusable licence. Copyright in the cover image is therefore undetermined and is kept separate from copyright in the underlying music and lyrics."
+        }
+      },
+      "M076": {
+        "reason": "Replace the legacy blanket rights flag with an explicit undetermined-copyright classification after item-level provenance review; keep the local reproduction on detail pages only.",
+        "fields": {
+          "rightsStatus": "copyright_undetermined",
+          "galleryStatus": "detail_only",
+          "rightsNote": "English Wikipedia reproduces this 1936 Universal lobby card without supplying a transferable free licence; the original United States publication and renewal history have not been verified. The copyright status is therefore undetermined and the local copy is confined to the film record."
+        }
+      },
+      "M086": {
+        "reason": "Replace the legacy blanket rights flag with the explicit restricted classification established by the record’s item-level rights assessment; keep the local reproduction on detail pages only.",
+        "fields": {
+          "rightsStatus": "restricted",
+          "galleryStatus": "detail_only",
+          "rightsNote": "The Ufa poster was published in Germany in 1932 and the IMDb reproduction grants no reuse licence. An anonymous 1932 German graphic work was still protected in its source country on 1 January 1996, so United States copyright would have been restored under the URAA and can run for ninety-five years from publication. The poster is therefore treated as restricted."
+        }
+      },
+      "M110": {
+        "reason": "Replace the legacy blanket rights flag with the explicit restricted classification established by the record’s item-level rights assessment; keep the local reproduction on detail pages only.",
+        "fields": {
+          "rightsStatus": "restricted",
+          "galleryStatus": "detail_only",
+          "rightsNote": "Filmposter-Archiv identifies Anton Ziegler as the designer of this 1933 Austrian poster but grants no reuse licence. Because the work has an identified creator, it cannot be treated as an expired anonymous publication; the local reproduction is classified as restricted."
+        }
+      },
+      "M144": {
+        "reason": "Replace the legacy blanket rights flag with the explicit restricted classification established by the record’s item-level rights assessment; keep the local reproduction on detail pages only.",
+        "fields": {
+          "rightsStatus": "restricted",
+          "galleryStatus": "detail_only",
+          "rightsNote": "Images Musicales documents the 1932 Ufaton edition but grants no reuse licence for the cover. A German graphic work published in 1932 was still protected in its source country on 1 January 1996, so United States copyright was restored under the URAA; rights in the underlying song are separate. The image is classified as restricted."
+        }
+      },
+      "M145": {
+        "reason": "Replace the legacy blanket rights flag with the explicit restricted classification established by the record’s item-level rights assessment; keep the local reproduction on detail pages only.",
+        "fields": {
+          "rightsStatus": "restricted",
+          "galleryStatus": "detail_only",
+          "rightsNote": "English Wikipedia holds this poster as non-free content. Its project-specific rationale does not license republication elsewhere, so the local image is classified as restricted and confined to the film record."
+        }
+      },
+      "M147": {
+        "reason": "Replace the legacy blanket rights flag with the explicit restricted classification established by the record’s item-level rights assessment; keep the local reproduction on detail pages only.",
+        "fields": {
+          "rightsStatus": "restricted",
+          "galleryStatus": "detail_only",
+          "rightsNote": "The English Wikipedia local file does not provide a transferable free licence for this 1933 poster. Its availability on that project is not independent rights clearance, so the local reproduction is classified as restricted."
+        }
+      },
+      "M150": {
+        "reason": "Replace the legacy blanket rights flag with the explicit restricted classification established by the record’s item-level rights assessment; keep the local reproduction on detail pages only.",
+        "fields": {
+          "rightsStatus": "restricted",
+          "galleryStatus": "detail_only",
+          "rightsNote": "IMDb supplies only a viewing route and no reuse licence for this French poster published in 1933. A French anonymous graphic work of that date remained protected on 1 January 1996, causing United States restoration under the URAA for up to ninety-five years from publication; an identified artist could produce a longer source-country term. The image is classified as restricted."
+        }
+      },
+      "M157": {
+        "reason": "Replace the legacy blanket rights flag with the explicit restricted classification established by the record’s item-level rights assessment; keep the local reproduction on detail pages only.",
+        "fields": {
+          "rightsStatus": "restricted",
+          "galleryStatus": "detail_only",
+          "rightsNote": "UniFrance identifies and reproduces this French theatrical poster but supplies no open licence. A French graphic work published in 1933 remained protected on 1 January 1996, so United States copyright was restored under the URAA for up to ninety-five years from publication. The local image is classified as restricted."
+        }
+      },
+      "M158": {
+        "reason": "Replace the legacy blanket rights flag with the explicit restricted classification established by the record’s item-level rights assessment; keep the local reproduction on detail pages only.",
+        "fields": {
+          "rightsStatus": "restricted",
+          "galleryStatus": "detail_only",
+          "rightsNote": "The Illustrierter Film-Kurier cover was published in Germany in 1932; IMDb supplies no reuse licence. An anonymous German graphic work of that date was protected on 1 January 1996 and therefore received restored United States copyright under the URAA. The local reproduction is classified as restricted."
+        }
+      },
+      "M162": {
+        "reason": "Replace the legacy blanket rights flag with the explicit restricted classification established by the record’s item-level rights assessment; keep the local reproduction on detail pages only.",
+        "fields": {
+          "rightsStatus": "restricted",
+          "galleryStatus": "detail_only",
+          "rightsNote": "The Illustrierter Film-Kurier cover was published in Germany in 1933, and the English Wikipedia file provides no transferable free licence. The work remained protected in its source country on 1 January 1996, so United States copyright was restored under the URAA. The local reproduction is classified as restricted."
+        }
+      },
+      "M163": {
+        "reason": "Replace the legacy blanket rights flag with the explicit restricted classification established by the record’s item-level rights assessment; keep the local reproduction on detail pages only.",
+        "fields": {
+          "rightsStatus": "restricted",
+          "galleryStatus": "detail_only",
+          "rightsNote": "IMDb supplies no reuse licence for this French sheet-music cover published in 1934. A French anonymous graphic work of that date remained protected on 1 January 1996, so United States copyright was restored under the URAA for up to ninety-five years from publication; rights in the underlying music and lyrics are separate. The image is classified as restricted."
+        }
+      },
+      "M172": {
+        "reason": "Replace the legacy blanket rights flag with the explicit restricted classification established by the record’s item-level rights assessment; keep the local reproduction on detail pages only.",
+        "fields": {
+          "rightsStatus": "restricted",
+          "galleryStatus": "detail_only",
+          "rightsNote": "UniFrance identifies and reproduces this French poster but supplies no open licence. A French graphic work published in 1933 remained protected on 1 January 1996, so United States copyright was restored under the URAA for up to ninety-five years from publication. The local image is classified as restricted."
+        }
+      },
+      "M179": {
+        "reason": "Replace the legacy blanket rights flag with the explicit restricted classification established by the record’s item-level rights assessment; keep the local reproduction on detail pages only.",
+        "fields": {
+          "rightsStatus": "restricted",
+          "galleryStatus": "detail_only",
+          "rightsNote": "UniFrance identifies and reproduces this French poster but supplies no open licence. A French graphic work published in 1934 remained protected on 1 January 1996, so United States copyright was restored under the URAA for up to ninety-five years from publication. The local image is classified as restricted."
+        }
+      },
+      "M183": {
+        "reason": "Replace the legacy blanket rights flag with the explicit restricted classification established by the record’s item-level rights assessment; keep the local reproduction on detail pages only.",
+        "fields": {
+          "rightsStatus": "restricted",
+          "galleryStatus": "detail_only",
+          "rightsNote": "Filmportal.de identifies this German poster but supplies no open reuse licence. A German graphic work published in 1933 remained protected on 1 January 1996, so United States copyright was restored under the URAA for up to ninety-five years from publication. The local image is classified as restricted."
+        }
+      },
+      "M186": {
+        "reason": "Replace the legacy blanket rights flag with the explicit restricted classification established by the record’s item-level rights assessment; keep the local reproduction on detail pages only.",
+        "fields": {
+          "rightsStatus": "restricted",
+          "galleryStatus": "detail_only",
+          "rightsNote": "UniFrance identifies and reproduces this French poster but supplies no open licence. A French graphic work published in 1933 remained protected on 1 January 1996, so United States copyright was restored under the URAA for up to ninety-five years from publication. The local image is classified as restricted."
+        }
+      },
+      "M187": {
+        "reason": "Replace the legacy blanket rights flag with an explicit undetermined-copyright classification after item-level provenance review; keep the local reproduction on detail pages only.",
+        "fields": {
+          "rightsStatus": "copyright_undetermined",
+          "galleryStatus": "detail_only",
+          "rightsNote": "English Wikipedia reproduces this 1937 United States poster without a transferable free licence. Its original copyright notice and renewal history have not been verified, so the copyright status remains undetermined rather than being asserted as either free or protected."
+        }
+      },
+      "M189": {
+        "reason": "Replace the legacy blanket rights flag with the explicit restricted classification established by the record’s item-level rights assessment; keep the local reproduction on detail pages only.",
+        "fields": {
+          "rightsStatus": "restricted",
+          "galleryStatus": "detail_only",
+          "rightsNote": "IMDb supplies no reuse licence for this French poster published in 1931. The work was protected in France on 1 January 1996, so United States copyright was restored under the URAA and can run through the end of 2026 for a 1931 publication. The local image is classified as restricted."
+        }
+      },
+      "M190": {
+        "reason": "Replace the legacy blanket rights flag with the explicit restricted classification established by the record’s item-level rights assessment; keep the local reproduction on detail pages only.",
+        "fields": {
+          "rightsStatus": "restricted",
+          "galleryStatus": "detail_only",
+          "rightsNote": "IMDb supplies no reuse licence for this French poster published in 1933. A French graphic work of that date remained protected on 1 January 1996, so United States copyright was restored under the URAA for up to ninety-five years from publication. The local image is classified as restricted."
+        }
+      },
+      "M217": {
+        "reason": "Replace the legacy blanket rights flag with an explicit undetermined-copyright classification after item-level provenance review; keep the local reproduction on detail pages only.",
+        "fields": {
+          "rightsStatus": "copyright_undetermined",
+          "galleryStatus": "detail_only",
+          "rightsNote": "That’s My Sheet Music credits the Richard Kraft collection but supplies no reusable licence for this 1937 United States cover. The cover artwork’s authorship and the publication’s copyright notice and renewal history have not been verified, so the media record is classified as copyright undetermined rather than as a general fair-use claim.",
+          "publicCreditLine": "Image reproduced from That’s My Sheet Music, courtesy of the Richard Kraft collection; bibliographic identification verified against the U.S. Copyright Office Catalog of Copyright Entries (1937)."
+        }
+      },
+      "M221": {
+        "reason": "Replace the legacy blanket rights flag with the explicit restricted classification established by the record’s item-level rights assessment; keep the local reproduction on detail pages only.",
+        "fields": {
+          "rightsStatus": "restricted",
+          "galleryStatus": "detail_only",
+          "rightsNote": "The Walter Jurmann cover gallery documents this German promotional cover but supplies no open reuse licence. A graphic work published in Germany in 1933 remained protected on 1 January 1996, so United States copyright was restored under the URAA. The local image is classified as restricted."
+        }
+      },
+      "M222": {
+        "reason": "Replace the legacy blanket rights flag with the explicit restricted classification established by the record’s item-level rights assessment; keep the local reproduction on detail pages only.",
+        "fields": {
+          "rightsStatus": "restricted",
+          "galleryStatus": "detail_only",
+          "rightsNote": "The Walter Jurmann cover gallery documents this German promotional cover but supplies no open reuse licence. A graphic work published in Germany in 1933 remained protected on 1 January 1996, so United States copyright was restored under the URAA. The local image is classified as restricted."
+        }
+      },
+      "M225": {
+        "reason": "Replace the legacy blanket rights flag with the explicit restricted classification established by the record’s item-level rights assessment; keep the local reproduction on detail pages only.",
+        "fields": {
+          "rightsStatus": "restricted",
+          "galleryStatus": "detail_only",
+          "rightsNote": "The Walter Jurmann cover gallery documents this German promotional cover but supplies no open reuse licence. A graphic work published in Germany in 1933 remained protected on 1 January 1996, so United States copyright was restored under the URAA. The local image is classified as restricted."
+        }
+      },
+      "M226": {
+        "reason": "Replace the legacy blanket rights flag with an explicit undetermined-copyright classification after item-level provenance review; keep the local reproduction on detail pages only.",
+        "fields": {
+          "rightsStatus": "copyright_undetermined",
+          "galleryStatus": "detail_only",
+          "rightsNote": "The USC Digital Library assigns this sheet-music cover RightsStatements.org Copyright Undetermined (UND 1.0) and limits access to educational use; it supplies no broader reuse licence. The local image therefore remains copyright undetermined and confined to the work record."
+        }
+      },
+      "M234": {
+        "reason": "Replace the legacy blanket rights flag with an explicit undetermined-copyright classification after item-level provenance review; keep the local reproduction on detail pages only.",
+        "fields": {
+          "rightsStatus": "copyright_undetermined",
+          "galleryStatus": "detail_only",
+          "rightsNote": "Disney Wiki / Fandom identifies Ned Washington but supplies neither the photographer, the date and original publication, nor a reusable licence. The portrait’s copyright status therefore remains undetermined; the local copy is confined to the person record."
+        }
+      },
+      "M250": {
+        "reason": "Replace the legacy blanket rights flag with the explicit restricted classification established by the record’s item-level rights assessment; keep the local reproduction on detail pages only.",
+        "fields": {
+          "rightsStatus": "restricted",
+          "galleryStatus": "detail_only"
+        }
+      },
+      "M271": {
+        "reason": "Record the item-level provenance assessment and replace the legacy blanket rights flag with an explicit classification.",
+        "fields": {
+          "rightsStatus": "copyright_undetermined",
+          "rightsNote": "The Russian Wikipedia file and its upstream Kino-Teatr.Ru page do not identify the photographer, the original publication, or a reusable licence. The portrait’s copyright status therefore cannot be verified; the local low-resolution copy is confined to the person record and is not presented as rights-cleared.",
+          "galleryStatus": "detail_only"
+        }
+      },
+      "M254": {
+        "reason": "Replace the legacy blanket rights flag with the explicit restricted classification established by the record’s item-level rights assessment; keep the local reproduction on detail pages only.",
+        "fields": {
+          "rightsStatus": "restricted",
+          "galleryStatus": "detail_only"
+        }
+      },
+      "M265": {
+        "reason": "Replace the legacy blanket rights flag with the explicit restricted classification established by the record’s item-level rights assessment; keep the local reproduction on detail pages only.",
+        "fields": {
+          "rightsStatus": "restricted",
+          "galleryStatus": "detail_only"
+        }
+      },
+      "M268": {
+        "reason": "Replace the legacy blanket rights flag with an explicit undetermined-copyright classification after item-level provenance review; keep the local reproduction on detail pages only.",
+        "fields": {
+          "rightsStatus": "copyright_undetermined",
+          "galleryStatus": "detail_only"
+        }
+      },
+      "M273": {
+        "reason": "Replace the legacy blanket rights flag with an explicit undetermined-copyright classification after item-level provenance review; keep the local reproduction on detail pages only.",
+        "fields": {
+          "rightsStatus": "copyright_undetermined",
+          "galleryStatus": "detail_only"
+        }
+      },
+      "M284": {
+        "reason": "Replace the legacy blanket rights flag with an explicit undetermined-copyright classification after item-level provenance review; keep the local reproduction on detail pages only.",
+        "fields": {
+          "rightsStatus": "copyright_undetermined",
+          "galleryStatus": "detail_only"
+        }
+      },
+      "M287": {
+        "reason": "Replace the legacy blanket rights flag with an explicit undetermined-copyright classification after item-level provenance review; keep the local reproduction on detail pages only.",
+        "fields": {
+          "rightsStatus": "copyright_undetermined",
+          "galleryStatus": "detail_only"
+        }
+      },
+      "M288": {
+        "reason": "Replace the legacy blanket rights flag with an explicit undetermined-copyright classification after item-level provenance review; keep the local reproduction on detail pages only.",
+        "fields": {
+          "rightsStatus": "copyright_undetermined",
+          "galleryStatus": "detail_only"
+        }
+      },
+      "M303": {
+        "reason": "Replace the legacy blanket rights flag with an explicit undetermined-copyright classification after item-level provenance review; keep the local reproduction on detail pages only.",
+        "fields": {
+          "rightsStatus": "copyright_undetermined",
+          "galleryStatus": "detail_only"
+        }
+      },
+      "M309": {
+        "reason": "Replace the legacy blanket rights flag with an explicit undetermined-copyright classification after item-level provenance review; keep the local reproduction on detail pages only.",
+        "fields": {
+          "rightsStatus": "copyright_undetermined",
+          "galleryStatus": "detail_only"
+        }
+      },
+      "M310": {
+        "reason": "Replace the legacy blanket rights flag with an explicit undetermined-copyright classification after item-level provenance review; keep the local reproduction on detail pages only.",
+        "fields": {
+          "rightsStatus": "copyright_undetermined",
+          "galleryStatus": "detail_only"
+        }
+      },
+      "M312": {
+        "reason": "Replace the legacy blanket rights flag with an explicit undetermined-copyright classification after item-level provenance review; keep the local reproduction on detail pages only.",
+        "fields": {
+          "rightsStatus": "copyright_undetermined",
+          "galleryStatus": "detail_only"
+        }
+      },
+      "M314": {
+        "reason": "Replace the legacy blanket rights flag with an explicit undetermined-copyright classification after item-level provenance review; keep the local reproduction on detail pages only.",
+        "fields": {
+          "rightsStatus": "copyright_undetermined",
+          "galleryStatus": "detail_only"
+        }
+      },
+      "M317": {
+        "reason": "Replace the legacy blanket rights flag with the explicit restricted classification established by the record’s item-level rights assessment; keep the local reproduction on detail pages only.",
+        "fields": {
+          "rightsStatus": "restricted",
+          "galleryStatus": "detail_only"
+        }
+      },
+      "M318": {
+        "reason": "Replace the legacy blanket rights flag with an explicit undetermined-copyright classification after item-level provenance review; keep the local reproduction on detail pages only.",
+        "fields": {
+          "rightsStatus": "copyright_undetermined",
+          "galleryStatus": "detail_only"
+        }
+      },
+      "M320": {
+        "reason": "Replace the legacy blanket rights flag with an explicit undetermined-copyright classification after item-level provenance review; keep the local reproduction on detail pages only.",
+        "fields": {
+          "rightsStatus": "copyright_undetermined",
+          "galleryStatus": "detail_only"
+        }
+      },
+      "M321": {
+        "reason": "Replace the legacy blanket rights flag with the explicit restricted classification established by the record’s item-level rights assessment; keep the local reproduction on detail pages only.",
+        "fields": {
+          "rightsStatus": "restricted",
+          "galleryStatus": "detail_only"
+        }
+      },
+      "M324": {
+        "reason": "Retain this as one of the two explicit, individually assessed fair-use exceptions and exclude it from the general gallery.",
+        "fields": {
+          "rightsStatus": "permission_needed_or_fair_use_claimed",
+          "galleryStatus": "detail_only"
+        }
+      },
+      "M344": {
+        "reason": "Replace the legacy blanket rights flag with the explicit restricted classification established by the record’s item-level rights assessment; keep the local reproduction on detail pages only.",
+        "fields": {
+          "rightsStatus": "restricted",
+          "galleryStatus": "detail_only"
+        }
+      },
+      "M360": {
+        "reason": "Replace the legacy blanket rights flag with an explicit undetermined-copyright classification after item-level provenance review; keep the local reproduction on detail pages only.",
+        "fields": {
+          "rightsStatus": "copyright_undetermined",
+          "galleryStatus": "detail_only"
+        }
+      },
+      "M361": {
+        "reason": "Replace the legacy blanket rights flag with an explicit undetermined-copyright classification after item-level provenance review; keep the local reproduction on detail pages only.",
+        "fields": {
+          "rightsStatus": "copyright_undetermined",
+          "galleryStatus": "detail_only"
+        }
+      },
+      "M429": {
+        "reason": "Replace the legacy blanket rights flag with an explicit undetermined-copyright classification after item-level provenance review; keep the local reproduction on detail pages only.",
+        "fields": {
+          "rightsStatus": "copyright_undetermined",
+          "galleryStatus": "detail_only"
+        }
+      },
+      "M432": {
+        "reason": "Replace the legacy blanket rights flag with the explicit restricted classification established by the record’s item-level rights assessment; keep the local reproduction on detail pages only.",
+        "fields": {
+          "rightsStatus": "restricted",
+          "galleryStatus": "detail_only"
+        }
+      },
+      "M441": {
+        "reason": "Retain this as one of the two explicit, individually assessed fair-use exceptions and exclude it from the general gallery.",
+        "fields": {
+          "rightsStatus": "permission_needed_or_fair_use_claimed",
+          "galleryStatus": "detail_only"
+        }
+      },
+      "M444": {
+        "reason": "Replace the legacy blanket rights flag with an explicit undetermined-copyright classification after item-level provenance review; keep the local reproduction on detail pages only.",
+        "fields": {
+          "rightsStatus": "copyright_undetermined",
+          "galleryStatus": "detail_only"
+        }
+      },
+      "M445": {
+        "reason": "Replace the legacy blanket rights flag with an explicit undetermined-copyright classification after item-level provenance review; keep the local reproduction on detail pages only.",
+        "fields": {
+          "rightsStatus": "copyright_undetermined",
+          "galleryStatus": "detail_only"
+        }
+      },
+      "M446": {
+        "reason": "Replace the legacy blanket rights flag with the explicit restricted classification established by the record’s item-level rights assessment; keep the local reproduction on detail pages only.",
+        "fields": {
+          "rightsStatus": "restricted",
+          "galleryStatus": "detail_only"
+        }
+      },
+      "M449": {
+        "reason": "Replace the legacy blanket rights flag with the explicit restricted classification established by the record’s item-level rights assessment; keep the local reproduction on detail pages only.",
+        "fields": {
+          "rightsStatus": "restricted",
+          "galleryStatus": "detail_only"
         }
       }
+
     },
     "Organizations": {
       "ORG016": {
@@ -10395,7 +10961,7 @@
         }
       },
       "M241": {
-        "reason": "Preserve the documented Motion Picture Herald page illustrating TE0055 and synchronize it with its source and related works.",
+        "reason": "Preserve the documented Motion Picture Herald page, synchronize its graph relations and apply the official Media History Digital Library reuse policy.",
         "fields": {
           "id": "M241",
           "title": "Motion Picture Herald, 5 September 1936 — ASCAP list of songs played over 10,000 times",
@@ -10411,8 +10977,8 @@
           "altText": "Page from Motion Picture Herald, 5 September 1936, headed “Songs Played Over 10,000 Times”, listing the ASCAP tabulation of the most-broadcast songs of 1935–36.",
           "publicCaption": "“Songs Played Over 10,000 Times” — the ASCAP tabulation printed in Motion Picture Herald on 5 September 1936. Entry 14 records “You’re All I Need” from Escapade, listed under the source title Lie Like Gentlemen, with 21,424 broadcasts over NBC and CBS and authors given as Bronislaw Kaper, Walter Jarmann and Gus Kahn.",
           "publicCreditLine": "Motion Picture Herald / Media History Digital Library / Internet Archive.",
-          "rightsStatus": "permission_needed_or_fair_use_claimed",
-          "rightsNote": "Reuse rights are not cleared. A reduced-resolution reproduction (1100 × 1938 px) of the printed page is used for scholarly identification of and commentary on the ASCAP tabulation documenting “You’re All I Need”. Digitised by the Media History Digital Library and hosted by Internet Archive.",
+          "rightsStatus": "permission_granted",
+          "rightsNote": "Media History Digital Library states that material in its collection may be used in teaching, research and publications without requesting permission or paying a fee; full source files should not be rehosted. This record uses an attributed excerpt from the digitized page.",
           "sourceIds": [
             "SRC0569"
           ],
@@ -13293,14 +13859,6 @@
           ],
           "songIds": [
             "S217"
-          ]
-        }
-      },
-      "M116": {
-        "reason": "Remove excluded duplicate SRC0087 after replacing it with canonical SRC0031.",
-        "fields": {
-          "sourceIds": [
-            "SRC0087"
           ]
         }
       },

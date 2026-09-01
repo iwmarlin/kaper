@@ -38,7 +38,18 @@ from visual_sources import (
 
 
 def read_json(path: Path) -> dict[str, Any]:
-    return json.loads(path.read_text(encoding="utf-8"))
+    def reject_duplicate_keys(pairs: list[tuple[str, Any]]) -> dict[str, Any]:
+        result: dict[str, Any] = {}
+        for key, value in pairs:
+            if key in result:
+                raise ValueError(f"{path}: duplicate JSON key {key!r}")
+            result[key] = value
+        return result
+
+    return json.loads(
+        path.read_text(encoding="utf-8"),
+        object_pairs_hook=reject_duplicate_keys,
+    )
 
 
 def sha256(path: Path) -> str:
@@ -1361,7 +1372,7 @@ class ExportValidator:
                 for key in required:
                     if is_empty(media.get(key)):
                         self.errors.append(
-                            f"Media {media_id}: fair-use record lacks {key}"
+                            f"Media {media_id}: uncleared-rights record lacks {key}"
                         )
                 if media.get("storageType") == "local":
                     rationale = " ".join(
@@ -1376,6 +1387,34 @@ class ExportValidator:
                         self.errors.append(
                             f"Media {media_id}: limited resolution is not documented"
                         )
+            if media.get("rightsStatus") in {
+                "copyright_undetermined",
+                "restricted",
+                "mixed_rights",
+            }:
+                required = ["rightsNote", "publicCreditLine"]
+                if media_id not in exceptions:
+                    required.append("sourceIds")
+                for key in required:
+                    if is_empty(media.get(key)):
+                        self.errors.append(
+                            f"Media {media_id}: {media.get('rightsStatus')} record lacks {key}"
+                        )
+            if (
+                media.get("storageType") == "local"
+                and media.get("rightsStatus")
+                in {
+                    "permission_needed_or_fair_use_claimed",
+                    "copyright_undetermined",
+                    "restricted",
+                    "mixed_rights",
+                }
+                and media.get("galleryStatus") != "detail_only"
+            ):
+                self.errors.append(
+                    f"Media {media_id}: locally hosted material with unresolved or "
+                    "restricted rights must use galleryStatus detail_only"
+                )
             if self.assets_root is None:
                 continue
             paths = ([media["assetPath"]] if media.get("assetPath") else [])

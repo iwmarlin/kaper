@@ -240,10 +240,11 @@ const RIGHTS_LABELS = Object.freeze({
   ok: "Rights documented",
   public_domain: "Public domain",
   permission_granted: "Permission granted",
-  permission_needed_or_fair_use_claimed: "Fair use / permission",
+  permission_needed_or_fair_use_claimed: "Rights not cleared",
   external_content_not_rehosted: "External content · not hosted",
   copyright_undetermined: "Copyright undetermined",
   restricted: "Restricted use",
+  mixed_rights: "Mixed rights",
 });
 
 export function rightsLabel(status, note = "") {
@@ -266,6 +267,7 @@ export function mediaIsFairUse(media) {
   return Boolean(
     media?.assetPath
     && String(media.rightsStatus || "").toLowerCase().trim().replaceAll(" ", "_") === "permission_needed_or_fair_use_claimed"
+    && /fair[ -]use/i.test(String(media.rightsNote || ""))
   );
 }
 

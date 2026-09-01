@@ -26,7 +26,18 @@ from pathlib import Path
 
 
 def read_json(path: Path):
-    return json.loads(path.read_text(encoding="utf-8"))
+    def reject_duplicate_keys(pairs):
+        result = {}
+        for key, value in pairs:
+            if key in result:
+                raise ValueError(f"{path}: duplicate JSON key {key!r}")
+            result[key] = value
+        return result
+
+    return json.loads(
+        path.read_text(encoding="utf-8"),
+        object_pairs_hook=reject_duplicate_keys,
+    )
 
 
 def write_json(path: Path, value) -> None:
