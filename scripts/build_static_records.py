@@ -653,11 +653,35 @@ def structured_data(
         link = record.get("primaryUrl") or record.get("accessUrl")
         if link:
             data["sameAs"] = link
-        # schema.org expects ISO 8601; archival date strings such as "[1938?]" or
-        # "1935; copyright June 3, 1935" are kept out of the machine-readable field.
-        iso = re.match(r"\s*(\d{4}(?:-\d{2}(?:-\d{2})?)?)\s*$", str(record.get("date") or ""))
-        if iso:
-            data["datePublished"] = iso.group(1)
+        # The controlled Source date model distinguishes publication from the
+        # date of a photographed object, recording, catalogue record or
+        # digitization.  Publishing every one as datePublished would silently
+        # change that meaning for search engines.
+        iso = re.fullmatch(
+            r"\d{4}(?:-\d{2}(?:-\d{2})?)?",
+            str(record.get("date") or ""),
+        )
+        if iso and record.get("dateQualifier") == "confirmed":
+            value = iso.group(0)
+            role = record.get("dateRole")
+            if record.get("dateEnd"):
+                data["temporalCoverage"] = f"{value}/{record['dateEnd']}"
+            elif role in {
+                "catalogue_volume",
+                "digital_publication",
+                "issue",
+                "publication",
+            }:
+                data["datePublished"] = value
+            elif role == "record_update":
+                data["dateModified"] = value
+            elif role in {
+                "creation",
+                "digitization",
+                "record_creation",
+                "recording",
+            }:
+                data["dateCreated"] = value
         if record.get("creator"):
             data["creator"] = {"@type": "Person", "name": record["creator"]}
         if record.get("repository"):
@@ -705,8 +729,8 @@ def static_page(
         page_title = f"{title} ({label.lower()})"
     browser_title = f"{page_title} | {PAGE_TITLE_SUFFIX}"
     record_id = record["id"]
-    style_version = "ee803afc1a"
-    record_script_version = "ee803afc1a"
+    style_version = "c899f6ed5c"
+    record_script_version = "c899f6ed5c"
     route = f"records/{record_type}/{quote(record_id, safe='')}/"
     canonical = f"{ORIGIN}{route}"
     og_image = og_image_for(record_type, record, tables)
@@ -741,8 +765,8 @@ def static_page(
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <link rel="preload" href="assets/fonts/kaper-sans.woff2?v=ee803afc1a" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="assets/fonts/kaper-serif.woff2?v=ee803afc1a" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/kaper-sans.woff2?v=c899f6ed5c" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/kaper-serif.woff2?v=c899f6ed5c" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/site/styles.css?v={style_version}">
   <title>{esc(browser_title)}</title>
   {ld_json}

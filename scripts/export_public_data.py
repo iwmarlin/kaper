@@ -19,6 +19,12 @@ from authority_sources import normalize_authority_source
 from filmographic_sources import normalize_filmographic_source
 from recording_sources import normalize_recording_source
 from repository_organizations import expected_repository_organization_ids
+from source_dates import (
+    SOURCE_IDENTIFIER_SCHEMES,
+    normalized_source_date_fields,
+    source_date_errors,
+    usco_identifiers,
+)
 from visual_sources import normalize_visual_source
 
 
@@ -1582,10 +1588,27 @@ class PublicExporter:
                     additional_links
                 )
 
-            identifiers = source_identifiers(original_full_citation)
+            identifiers = []
+            seen_identifiers: set[tuple[str, str]] = set()
+            for identifier in (
+                *(source.get("identifiers") or []),
+                *source_identifiers(original_full_citation),
+                *usco_identifiers(source),
+            ):
+                if not isinstance(identifier, dict):
+                    continue
+                scheme = str(identifier.get("scheme", "")).strip().casefold()
+                value = str(identifier.get("value", "")).strip()
+                key = (scheme, value.casefold())
+                if not scheme or not value or key in seen_identifiers:
+                    continue
+                seen_identifiers.add(key)
+                identifiers.append({"scheme": scheme, "value": value})
             if identifiers:
                 source["identifiers"] = identifiers
                 self.source_citation_stats["recordsWithIdentifiers"] += 1
+            else:
+                source.pop("identifiers", None)
 
             structured_urls = {
                 comparable_source_url(url)
@@ -1620,23 +1643,30 @@ class PublicExporter:
             else:
                 source.pop("repository", None)
 
-            date = str(source.get("date", "")).strip()
-            date = re.sub(
+            legacy_date = str(source.get("date", "")).strip()
+            legacy_date = re.sub(
                 r";\s*source (?:record )?verified \d{4}-\d{2}-\d{2}$",
                 "",
-                date,
+                legacy_date,
                 flags=re.IGNORECASE,
             )
-            date = re.sub(
+            legacy_date = re.sub(
                 r";\s*historical recording date not established by this source(?: record)?$",
                 "",
-                date,
+                legacy_date,
                 flags=re.IGNORECASE,
             )
-            if date:
-                source["date"] = date
-            else:
-                source.pop("date", None)
+            source["date"] = legacy_date
+            normalized_dates = normalized_source_date_fields(source)
+            for key in (
+                "date",
+                "dateEnd",
+                "dateRole",
+                "dateQualifier",
+                "dateDisplay",
+            ):
+                source.pop(key, None)
+            source.update(normalized_dates)
 
             creator = str(source.get("creator", "")).strip()
             creator = re.sub(
@@ -2233,6 +2263,8 @@ class PublicExporter:
 
         for source in self.output_records["Sources"]:
             source_id = source["id"]
+            for error in source_date_errors(source):
+                self.errors.append(f"Source {source_id}: {error}")
             for organization_id in expected_repository_organization_ids(source):
                 if organization_id not in (source.get("organizationIds") or []):
                     self.errors.append(
@@ -2344,7 +2376,7 @@ class PublicExporter:
                         continue
                     scheme = str(identifier.get("scheme", "")).casefold()
                     value = str(identifier.get("value", ""))
-                    if scheme not in {"doi", "ark", "naid"} or not value:
+                    if scheme not in SOURCE_IDENTIFIER_SCHEMES or not value:
                         self.errors.append(
                             f"Source {source_id}: identifiers[{index}] has an unsupported scheme or empty value"
                         )

@@ -1,4 +1,4 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=ee803afc1a";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=c899f6ed5c";
 import {
   authorityLinkList,
   certaintyBadge,
@@ -29,7 +29,7 @@ import {
   sourceStatusLabel,
   typeBadge,
   updateMeta,
-} from "./core.js?v=ee803afc1a";
+} from "./core.js?v=c899f6ed5c";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 let target = null;
@@ -240,9 +240,48 @@ const SOURCE_TYPE_LABELS = {
   other: "Other sources",
 };
 
-// Sources carry dates in mixed shapes: "1933", "1936-04-21", "n.d.", and a few
-// malformed leftovers. Only a plausible four-digit year is trusted; everything
-// else sorts to the end rather than being guessed at.
+const SOURCE_DATE_ROLE_LABELS = Object.freeze({
+  catalogue_volume: "Catalogue volume",
+  creation: "Creation of the object",
+  data_currency: "Currency of the described data",
+  described_item: "Described item",
+  digital_publication: "Digital publication",
+  digitization: "Digitization",
+  issue: "Issue or edition",
+  publication: "Publication",
+  record_creation: "Creation of the catalogue record",
+  record_update: "Update of the catalogue record",
+  recording: "Recording",
+});
+
+function sourceDateRoleLabel(value) {
+  return SOURCE_DATE_ROLE_LABELS[value] || humanize(value || "");
+}
+
+function sourceDateDisplay(source, { compact = false } = {}) {
+  if (!compact && source.dateDisplay) return source.dateDisplay;
+  const qualifier = source.dateQualifier || "confirmed";
+  if (qualifier === "unknown") return "n.d.";
+  if (qualifier === "forthcoming" && !source.date) return "forthcoming";
+  if (!source.date) return "n.d.";
+
+  const start = compact ? String(source.date).slice(0, 4) : formatDate(source.date);
+  const end = source.dateEnd
+    ? (compact ? String(source.dateEnd).slice(0, 4) : formatDate(source.dateEnd))
+    : "";
+  const range = end && end !== start ? `${start}\u2013${end}` : start;
+  const prefix = {
+    after: "after ",
+    approximate: "c. ",
+    before: "before ",
+    not_before: "not before ",
+  }[qualifier] || "";
+  if (qualifier === "forthcoming") return `${range} (forthcoming)`;
+  if (qualifier === "reported") return `${range} (reported)`;
+  if (qualifier === "uncertain") return `${range}?`;
+  return `${prefix}${range}`;
+}
+
 // One disclosure mark for both levels, drawn rather than typed. The glyphs
 // used before — a plus on rows, a solid triangle on group headings — were two
 // metaphors for one action, and the triangle's weight and baseline shift with
@@ -253,7 +292,7 @@ function chevron(className) {
 }
 
 function sourceYear(source) {
-  const match = String(source.date || "").match(/\b(1[5-9]\d{2}|20\d{2})\b/);
+  const match = String(source.date || "").match(/^(\d{4})(?:-|$)/);
   return match ? Number(match[1]) : null;
 }
 
@@ -278,6 +317,10 @@ function sourceSearchText(source) {
     source.publication,
     source.repository,
     source.date,
+    source.dateEnd,
+    source.dateDisplay,
+    sourceDateRoleLabel(source.dateRole),
+    source.dateQualifier,
     SOURCE_TYPE_LABELS[source.sourceType] || humanize(source.sourceType || ""),
   ].filter(Boolean).join(" ");
 }
@@ -291,8 +334,7 @@ function sourceRow(source, index, { expanded = false } = {}) {
   const external = safeExternalUrl(source.primaryUrl) || safeExternalUrl(source.accessUrl);
   const summary = source.shortCitation || source.title || source.fullCitation || source.id;
   const full = source.fullCitation || source.shortCitation || source.title || "";
-  const year = sourceYear(source);
-  const yearLabel = year ? year : "n.d.";
+  const yearLabel = sourceDateDisplay(source, { compact: true });
   const links = `<p class="source-row__links">
     <a href="${recordUrl("source", source.id)}">Source record</a>
     ${external ? `<a href="${escapeHtml(external)}" target="_blank" rel="noreferrer">Open source <span aria-hidden="true">\u2197</span></a>` : ""}
@@ -302,7 +344,7 @@ function sourceRow(source, index, { expanded = false } = {}) {
     return `<li class="source-row source-row--open" id="source-${escapeHtml(source.id)}">
       <span class="source-row__meta">
         <a class="source-row__id" href="${recordUrl("source", source.id)}" aria-label="Open source record ${escapeHtml(source.id)}">${escapeHtml(source.id)}</a>
-        <span class="source-row__year">${yearLabel}</span>
+        <span class="source-row__year">${escapeHtml(yearLabel)}</span>
         ${reliabilityFlag}
       </span>
       <div class="source-row__body">
@@ -316,7 +358,7 @@ function sourceRow(source, index, { expanded = false } = {}) {
     <button class="source-row__summary" type="button" data-row-toggle aria-expanded="false" aria-controls="${detailId}">
       <span class="source-row__meta">
         <span class="source-row__id">${escapeHtml(source.id)}</span>
-        <span class="source-row__year">${yearLabel}</span>
+        <span class="source-row__year">${escapeHtml(yearLabel)}</span>
         ${reliabilityFlag}
       </span>
       <span class="source-row__title">${escapeHtml(summary)}</span>
@@ -1468,6 +1510,8 @@ const SOURCE_IDENTIFIER_LABELS = Object.freeze({
   ark: "ARK",
   doi: "DOI",
   naid: "NAID",
+  usco_registration: "U.S. copyright registration",
+  usco_renewal: "U.S. copyright renewal",
 });
 
 // The archive holds a persistent identifier for sixty of its sources, and on
@@ -1612,7 +1656,7 @@ function renderSource(source, data, indexes) {
     title: source.title || source.shortCitation,
     label: "Source",
     badges: `${typeBadge(source.sourceType)}${sourceReliabilityBadge(source.reliability)}`,
-    facts: `${fact("Creator", source.creator)}${fact("Date", source.date)}${fact("Publication", source.publication)}${fact("Repository", source.repository)}${sourceIdentifierFacts(source)}${sourceAccessFact(source)}${fact("Reliability", sourceReliabilityLabel(source.reliability))}${fact("Verification", sourceStatusLabel(source.sourceStatus))}`,
+    facts: `${fact("Creator", source.creator)}${fact("Date", sourceDateDisplay(source))}${fact("Date represents", sourceDateRoleLabel(source.dateRole))}${fact("Publication", source.publication)}${fact("Repository", source.repository)}${sourceIdentifierFacts(source)}${sourceAccessFact(source)}${fact("Reliability", sourceReliabilityLabel(source.reliability))}${fact("Verification", sourceStatusLabel(source.sourceStatus))}`,
     main: [
       section("Citation", `<p class="lead">${escapeHtml(source.fullCitation || source.shortCitation)}</p>${sourceActions(source)}`),
       sourceResearchNote(source),

@@ -89,7 +89,13 @@ class SourceApparatusTests(unittest.TestCase):
             )
 
     def test_identifiers_are_printed_as_text_and_not_as_a_second_link(self):
-        labels = {"ark": "ARK", "doi": "DOI", "naid": "NAID"}
+        labels = {
+            "ark": "ARK",
+            "doi": "DOI",
+            "naid": "NAID",
+            "usco_registration": "U.S. copyright registration",
+            "usco_renewal": "U.S. copyright renewal",
+        }
         checked = 0
         for source in read_records("sources.json"):
             identifiers = source.get("identifiers") or []

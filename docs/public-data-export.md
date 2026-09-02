@@ -23,6 +23,18 @@ derived from these files and are never the source of truth.
   events. They must not be interpreted or labelled as an independently evidenced
   residence period. `mapPrecision` records whether coordinates identify an
   address, venue, approximate historical site, district or city.
+- Source dates use a controlled, sortable model. `date` and optional `dateEnd`
+  contain only `YYYY`, `YYYY-MM` or `YYYY-MM-DD`; `dateRole` states whether the
+  value dates the publication, issue, recording, described item, catalogue
+  volume, object creation, catalogue-record creation or update, data currency,
+  digitization or digital publication; `dateQualifier`
+  records certainty. Unknown dates omit `date` rather than storing `n.d.` in a
+  sortable field. Rare wording that cannot be reconstructed from those fields
+  is retained in `dateDisplay`.
+- U.S. Copyright Office registration and renewal numbers are structured Source
+  identifiers (`usco_registration` and `usco_renewal`). The copyright date may
+  remain part of the bibliographic citation, while a copyright-catalogue
+  Source's `date` identifies the catalogue volume itself.
 - Legacy fields, review flags, internal notes, validation fields and attachment
   metadata are excluded from the public schema.
 - `Sources → Evidence Note`, `Sources → Rights Note`, and

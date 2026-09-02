@@ -259,7 +259,13 @@ class RecordingGraphTests(unittest.TestCase):
         self.assertNotIn("zusamm'?.", sources_by_id["SRC0753"]["fullCitation"])
 
         for source_id in ("SRC0693", "SRC0698", "SRC0715", "SRC0726", "SRC0761"):
-            self.assertTrue(sources_by_id[source_id].get("date"))
+            source = sources_by_id[source_id]
+            self.assertTrue(source.get("dateRole"))
+            self.assertTrue(source.get("dateQualifier"))
+            if source["dateQualifier"] == "unknown":
+                self.assertNotIn("date", source)
+            else:
+                self.assertTrue(source.get("date"))
 
     def test_lindstrom_odeon_and_parlophone_are_distinct_entities(self) -> None:
         organizations = json.loads(

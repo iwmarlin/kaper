@@ -247,6 +247,8 @@
         "shortCitation",
         "fullCitation",
         "sourceType",
+        "dateRole",
+        "dateQualifier",
         "slug"
       ],
       "fields": {
@@ -324,6 +326,10 @@
         "accessUrl",
         "additionalLinks",
         "identifiers",
+        "dateEnd",
+        "dateRole",
+        "dateQualifier",
+        "dateDisplay",
         "researchNote",
         "researchNoteType"
       ]

@@ -30,6 +30,7 @@ from recording_sources import (
     recording_hostname,
 )
 from repository_organizations import expected_repository_organization_ids
+from source_dates import SOURCE_IDENTIFIER_SCHEMES, source_date_errors
 from visual_sources import (
     VISUAL_RIGHTS_NARRATIVE_PATTERN,
     WIKIMEDIA_ORGANIZATION_ID,
@@ -774,6 +775,8 @@ class ExportValidator:
 
         for source in self.payloads.get("Sources", {}).get("records", []):
             source_id = source["id"]
+            for error in source_date_errors(source):
+                self.errors.append(f"Source {source_id}: {error}")
             for organization_id in expected_repository_organization_ids(source):
                 if organization_id not in (source.get("organizationIds") or []):
                     self.errors.append(
@@ -1020,7 +1023,7 @@ class ExportValidator:
                         continue
                     scheme = str(identifier.get("scheme", "")).casefold()
                     value = str(identifier.get("value", ""))
-                    if scheme not in {"doi", "ark", "naid"} or not value:
+                    if scheme not in SOURCE_IDENTIFIER_SCHEMES or not value:
                         self.errors.append(
                             f"Source {source_id}: identifiers[{index}] has an unsupported scheme or empty value"
                         )
