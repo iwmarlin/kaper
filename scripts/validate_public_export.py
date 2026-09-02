@@ -174,7 +174,10 @@ SOURCE_PUBLIC_WORKFLOW_PATTERN = re.compile(
     r"\bused in Media\b|"
     r"\breferenced as a (?:listening|viewing/listening) source\b|"
     r"\blistening/viewing source for\b|"
-    r"\bdistinct clipping from\b"
+    r"\bdistinct clipping from\b|"
+    r"\bused here\b|"
+    r"\b(?:entry|record|source|item) (?:was )?not (?:independently )?"
+    r"(?:checked|verified) against\b"
     r")",
     flags=re.IGNORECASE,
 )

@@ -141,6 +141,15 @@ SOURCE_PUBLIC_IDENTIFIER_PATTERN = re.compile(
     r"(?![A-Za-z0-9-])"
 )
 
+SOURCE_CITATION_EDITORIAL_ASSESSMENT_PATTERN = re.compile(
+    r"(?:"
+    r"\bused here\b|"
+    r"\b(?:entry|record|source|item) (?:was )?not (?:independently )?"
+    r"(?:checked|verified) against\b"
+    r")",
+    flags=re.IGNORECASE,
+)
+
 SOURCE_LITERAL_URL_PATTERN = re.compile(r"https?://[^\s<>]+", flags=re.IGNORECASE)
 SOURCE_DOI_PATTERN = re.compile(
     r"(?<![A-Za-z0-9])(?:DOI\s*:?\s*)?(10\.\d{4,9}/[-._;()/:A-Z0-9]+)",
@@ -2307,6 +2316,14 @@ class PublicExporter:
                 ):
                     self.errors.append(
                         f"Source {source_id}: public field {key} contains editorial workflow text"
+                    )
+                if (
+                    key in {"fullCitation", "shortCitation"}
+                    and SOURCE_CITATION_EDITORIAL_ASSESSMENT_PATTERN.search(value)
+                ):
+                    self.errors.append(
+                        f"Source {source_id}: public field {key} contains an editorial "
+                        "assessment that belongs in researchNote"
                     )
                 if re.search(r"https?:,\s", value, flags=re.IGNORECASE):
                     self.errors.append(
