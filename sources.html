@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://*.tile.openstreetmap.org; media-src 'self'; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Search the documentary, bibliographic and audiovisual sources supporting the Bronisław Kaper research archive through 1939.">
+  <meta name="theme-color" content="#152c33">
+  <meta property="og:title" content="Sources — Bronisław Kaper, 1902–1939">
+  <meta property="og:description" content="A searchable index of the evidence supporting the Bronisław Kaper research archive.">
+  <link rel="canonical" href="https://iwmarlin.github.io/kaper/sources.html">
+  <link rel="preload" href="assets/fonts/kaper-sans.woff2?v=6ea9ae4d34" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/kaper-serif.woff2?v=6ea9ae4d34" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/site/styles.css?v=6ea9ae4d34">
+  <title>Sources — Bronisław Kaper, 1902–1939</title>
+  <meta property="og:image" content="https://iwmarlin.github.io/kaper/assets/images/portraits/kaper-mature.jpg">
+  <meta property="og:image:alt" content="Bronisław Kaper">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="site-header" data-site-header></header>
+  <main id="main-content">
+    <section class="page-hero page-hero--compact">
+      <div class="shell page-hero__grid">
+        <div>
+          <p class="eyebrow">Research apparatus</p>
+          <h1>Sources and evidence</h1>
+          <p class="lead">Search the archival records, publications, catalogues, recordings and visual documents that support the public archive.</p>
+          <p class="lead lead--meta" id="source-total-label">Loading sources…</p>
+        </div>
+        <div class="scope-note">A source record identifies and locates evidence. Interpretive assessments, unresolved identities and discographic qualifications are kept separately in research notes on the individual record.</div>
+      </div>
+    </section>
+
+    <section class="filters filters--catalogue" aria-label="Source filters">
+      <div class="shell filters__shell filters__shell--sources">
+        <div class="field filters__search">
+          <label for="source-search">Search citation, creator or repository</label>
+          <input id="source-search" type="search" placeholder="Try Polona, Odeon, Filmportal…" autocomplete="off">
+        </div>
+        <button class="filters__toggle" id="source-filter-toggle" type="button" aria-expanded="false" aria-controls="source-filter-options">
+          <span>Filters</span>
+          <span class="filters__toggle-count" id="source-filter-count" hidden>0</span>
+        </button>
+        <div class="filters__advanced filters__advanced--sources" id="source-filter-options">
+          <div class="field">
+            <label for="source-type">Source type</label>
+            <select id="source-type"><option value="">All source types</option></select>
+          </div>
+          <div class="field">
+            <label for="source-date-role">Date represents</label>
+            <select id="source-date-role"><option value="">Any date role</option></select>
+          </div>
+          <div class="field">
+            <label for="source-access">Access</label>
+            <select id="source-access">
+              <option value="">All access modes</option>
+              <option value="online">Online source</option>
+              <option value="record-only">Record only</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="source-sort">Sort</label>
+            <select id="source-sort">
+              <option value="date-asc">Date, earliest first</option>
+              <option value="date-desc">Date, latest first</option>
+              <option value="title">Title</option>
+              <option value="type">Source type</option>
+              <option value="id">Record ID</option>
+            </select>
+          </div>
+        </div>
+        <div class="active-filters" id="source-active-filters" aria-label="Active source options" hidden></div>
+      </div>
+    </section>
+
+    <section class="section section--listing">
+      <div class="shell">
+        <div class="results-bar">
+          <p id="source-results-count" aria-live="polite">Loading index…</p>
+          <button class="button button--ghost button--small" id="source-reset" type="button" hidden>Reset filters</button>
+        </div>
+        <div id="source-results" class="source-index-list"></div>
+        <noscript><div class="empty-state"><h2>JavaScript is required for this index</h2><p>Individual source records remain available through the works, people, media and events they document.</p></div></noscript>
+        <div class="load-more"><button class="button button--ghost" id="source-more" type="button" hidden>Load more</button><button class="button button--ghost button--small" id="source-show-all" type="button" hidden>Show all</button></div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer" data-site-footer></footer>
+  <script type="module" src="assets/site/sources.js?v=6ea9ae4d34"></script>
+</body>
+</html>

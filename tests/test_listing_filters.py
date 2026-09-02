@@ -7,7 +7,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 
-# Works, People and Media each list a collection and each carries more controls
+# Works, People, Media and Sources each list a collection and each carries more controls
 # than fit a narrow screen. They share one pattern: the search field stays in
 # reach, the facets fold behind a labelled toggle, and the choices in force are
 # shown as chips that remove themselves.
@@ -15,6 +15,7 @@ LISTINGS = {
     "works.html": "work",
     "people.html": "person",
     "media.html": "media",
+    "sources.html": "source",
 }
 
 
