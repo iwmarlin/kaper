@@ -19,6 +19,7 @@ from authority_sources import normalize_authority_source
 from filmographic_sources import normalize_filmographic_source
 from recording_sources import normalize_recording_source
 from repository_organizations import expected_repository_organization_ids
+from source_access_dates import normalize_access_citation
 from source_dates import (
     SOURCE_IDENTIFIER_SCHEMES,
     normalized_source_date_fields,
@@ -1376,6 +1377,10 @@ class PublicExporter:
                 "id"
             ) in {"SRC0174", "SRC0602"}:
                 normalize_filmographic_source(source)
+            if source.get("accessDate"):
+                source["fullCitation"] = normalize_access_citation(
+                    source.get("fullCitation")
+                )
             original_full_citation = str(source.get("fullCitation", "")).strip()
             original_url = str(source.get("url", "")).strip()
             citation_urls: list[str] = []

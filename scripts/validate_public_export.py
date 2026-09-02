@@ -21,7 +21,6 @@ from authority_sources import (
 from filmographic_sources import (
     CANONICAL_REPOSITORY_BY_HOST,
     REPOSITORY_ORGANIZATION_BY_HOST,
-    TRAILING_ACCESSED_PATTERN,
     source_hostname,
 )
 from recording_organizations import expected_audio_organization_ids
@@ -31,6 +30,7 @@ from recording_sources import (
 )
 from repository_organizations import expected_repository_organization_ids
 from source_dates import SOURCE_IDENTIFIER_SCHEMES, source_date_errors
+from source_access_dates import has_redundant_access_date
 from visual_sources import (
     VISUAL_RIGHTS_NARRATIVE_PATTERN,
     WIKIMEDIA_ORGANIZATION_ID,
@@ -807,10 +807,8 @@ class ExportValidator:
                 or source_id in {"SRC0174", "SRC0602"}
             )
             full_citation = str(source.get("fullCitation", ""))
-            if (
-                is_normalized_filmographic_source
-                and source.get("accessDate")
-                and TRAILING_ACCESSED_PATTERN.search(full_citation)
+            if source.get("accessDate") and has_redundant_access_date(
+                full_citation
             ):
                 self.errors.append(
                     f"Source {source_id}: fullCitation repeats the structured accessDate"
@@ -826,13 +824,6 @@ class ExportValidator:
                 if not source.get("accessDate"):
                     self.errors.append(
                         f"Source {source_id}: authority record lacks accessDate"
-                    )
-                if (
-                    source.get("accessDate")
-                    and re.search(r"\bAccessed\b", full_citation, re.IGNORECASE)
-                ):
-                    self.errors.append(
-                        f"Source {source_id}: fullCitation repeats the structured accessDate"
                     )
                 authority_host = authority_hostname(source)
                 authority_repository = AUTHORITY_REPOSITORY_BY_HOST.get(
@@ -863,13 +854,6 @@ class ExportValidator:
                     self.errors.append(
                         f"Source {source_id}: recording source lacks accessDate"
                     )
-                if (
-                    source.get("accessDate")
-                    and TRAILING_ACCESSED_PATTERN.search(full_citation)
-                ):
-                    self.errors.append(
-                        f"Source {source_id}: fullCitation repeats the structured accessDate"
-                    )
                 recording_organization = RECORDING_ORGANIZATION_BY_HOST.get(
                     recording_hostname(source)
                 )
@@ -886,13 +870,6 @@ class ExportValidator:
                 if source.get("primaryUrl") and not source.get("accessDate"):
                     self.errors.append(
                         f"Source {source_id}: online visual source lacks accessDate"
-                    )
-                if (
-                    source.get("accessDate")
-                    and re.search(r"\bAccessed\b", full_citation, re.IGNORECASE)
-                ):
-                    self.errors.append(
-                        f"Source {source_id}: fullCitation repeats the structured accessDate"
                     )
                 if VISUAL_RIGHTS_NARRATIVE_PATTERN.search(full_citation):
                     self.errors.append(

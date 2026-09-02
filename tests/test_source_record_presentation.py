@@ -60,33 +60,19 @@ class SourceApparatusTests(unittest.TestCase):
     """A persistent identifier buried in an href, and an access date recorded but
     never printed, are apparatus the archive holds and the reader cannot use."""
 
-    def test_the_access_date_is_shown_where_the_citation_is_silent(self):
+    def test_every_structured_access_date_is_shown(self):
         shown = set()
         expected = set()
         for source in read_records("sources.json"):
             page = RECORDS / source["id"] / "index.html"
             if not page.is_file():
                 continue
-            citation = (source.get("fullCitation") or "").lower()
-            if source.get("accessDate") and "accessed" not in citation:
+            if source.get("accessDate"):
                 expected.add(source["id"])
             if "<dt>Accessed</dt>" in page.read_text(encoding="utf-8"):
                 shown.add(source["id"])
-        self.assertTrue(expected, "the fixture must contain undated-in-citation sources")
+        self.assertTrue(expected, "the fixture must contain online sources")
         self.assertEqual(shown, expected)
-
-    def test_the_access_date_is_never_stated_twice(self):
-        for source in read_records("sources.json"):
-            if "accessed" not in (source.get("fullCitation") or "").lower():
-                continue
-            page = RECORDS / source["id"] / "index.html"
-            if not page.is_file():
-                continue
-            self.assertNotIn(
-                "<dt>Accessed</dt>",
-                page.read_text(encoding="utf-8"),
-                f"{source['id']} states its access date in the citation and again as a fact",
-            )
 
     def test_identifiers_are_printed_as_text_and_not_as_a_second_link(self):
         labels = {

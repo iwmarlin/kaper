@@ -1,4 +1,4 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=c899f6ed5c";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=290d52406f";
 import {
   escapeHtml,
   mountSiteChrome,
@@ -8,7 +8,7 @@ import {
   renderError,
   renderLoading,
   responsiveImage,
-} from "./core.js?v=c899f6ed5c";
+} from "./core.js?v=290d52406f";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 mountSiteChrome("home");

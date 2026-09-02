@@ -1,4 +1,4 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=c899f6ed5c";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=290d52406f";
 import {
   authorityLinkList,
   certaintyBadge,
@@ -29,7 +29,7 @@ import {
   sourceStatusLabel,
   typeBadge,
   updateMeta,
-} from "./core.js?v=c899f6ed5c";
+} from "./core.js?v=290d52406f";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 let target = null;
@@ -1530,13 +1530,11 @@ function sourceIdentifierFacts(source) {
     .join("");
 }
 
-// Every online source records the day it was consulted. Three hundred and
-// twenty-nine citations state it in the citation itself, as they should; on the
-// remaining four hundred and twenty-nine the date was held and never shown. The
-// row appears only where the citation is silent, so the card never states the
-// same thing twice.
+// Access dates are structured apparatus. Citations identify the source and its
+// access route without repeating the date, so every available accessDate is
+// presented consistently in the facts list.
 function sourceAccessFact(source) {
-  if (!source.accessDate || /accessed/i.test(source.fullCitation || "")) return "";
+  if (!source.accessDate) return "";
   return fact("Accessed", formatDate(source.accessDate));
 }
 

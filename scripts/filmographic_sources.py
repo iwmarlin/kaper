@@ -7,11 +7,7 @@ import re
 from typing import Any
 from urllib.parse import urlparse
 
-
-TRAILING_ACCESSED_PATTERN = re.compile(
-    r"\s+Accessed\s+\d{1,2}\s+[A-Za-z]+\s+\d{4}\.?(?=\s*$)",
-    flags=re.IGNORECASE,
-)
+from source_access_dates import normalize_access_citation
 
 CANONICAL_REPOSITORY_BY_HOST = {
     "catalog.afi.com": "AFI Catalog of Feature Films",
@@ -76,11 +72,7 @@ def source_hostname(source: dict[str, Any]) -> str:
 
 def strip_redundant_access_statement(value: Any) -> str:
     """Remove a prose access statement when the date lives in ``accessDate``."""
-    text = str(value or "").strip()
-    text = TRAILING_ACCESSED_PATTERN.sub("", text).rstrip()
-    if text and not re.search(r"[.?!][”’\"']?$", text):
-        text += "."
-    return text
+    return normalize_access_citation(value)
 
 
 def citation_title(source: dict[str, Any]) -> str:

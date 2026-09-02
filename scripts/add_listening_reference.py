@@ -306,7 +306,6 @@ def apply_disc(media: dict, source: dict, *, disc: dict, work_title: str, host: 
         f"{physical}, {dated}.",
         (f"Digital transfer published on {host} by {disc.get('channel')}."
          if disc.get("channel") else f"Digital transfer published on {host}."),
-        f"Accessed {human_date(source['accessDate'])}.",
     ]
     research_notes = []
     if disc.get("uploader_note"):
@@ -423,7 +422,6 @@ def build_records(
     period = work.get("period") or "european"
     periods = work.get("periods") or ([period] if period else [])
     today = date.today()
-    accessed = human_date(today.isoformat())
 
     youtube = "youtube.com" in url or "youtu.be" in url
     host = "YouTube" if youtube else urllib.parse.urlparse(url).netloc
@@ -478,9 +476,9 @@ def build_records(
     medium_kind = "audio reference" if media_type == "audio" else "video"
     medium = f"YouTube {medium_kind}" if youtube else f"Online {medium_kind}, {host}"
     citation_tail = (
-        f"{medium}, uploaded {human_date(upload)}. Accessed {accessed}."
+        f"{medium}, uploaded {human_date(upload)}."
         if upload
-        else f"{medium}. Accessed {accessed}."
+        else f"{medium}."
     )
     source = {
         "id": source_id,
