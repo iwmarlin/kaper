@@ -126,16 +126,21 @@ class SourceCreditLedgerTests(unittest.TestCase):
               id: "STEST", title: "Test source", shortCitation: "Test source",
               fullCitation: "Test source, 1930.", sourceType: "press_item",
               reliability: "medium", sourceStatus: "verified",
-              personIds: ["PDIRECT"], contributionIds: ["CTEST", "CORG"]
+              personIds: ["PDIRECT"], contributionIds: ["CCONF", "CTEST", "CORG"]
             }}],
             media: [],
-            works: [{{ id: "WTEST", title: "Test Work", year: 1930, workType: "song" }}],
+            works: [
+              {{ id: "WCONF", title: "Confirmed Work", year: 1929, workType: "song" }},
+              {{ id: "WPROB", title: "Probable Work", year: 1930, workType: "song" }}
+            ],
             films: [], songs: [], otherWorks: [], titleVariants: [], workRelations: [],
             timelineEvents: [], places: [], personNameVariants: [],
             contributions: [
-              {{ id: "CTEST", role: "lyricist", workIds: ["WTEST"], personIds: ["PCREDIT"],
+              {{ id: "CCONF", role: "lyricist", workIds: ["WCONF"], personIds: ["PCREDIT"],
+                 sourceIds: ["STEST"], certainty: "confirmed" }},
+              {{ id: "CTEST", role: "lyricist", workIds: ["WPROB"], personIds: ["PCREDIT"],
                  sourceIds: ["STEST"], certainty: "probable" }},
-              {{ id: "CORG", role: "publisher", workIds: ["WTEST"], personIds: [],
+              {{ id: "CORG", role: "publisher", workIds: ["WCONF"], personIds: [],
                  sourceIds: ["STEST"], certainty: "confirmed" }}
             ]
           }};
@@ -154,7 +159,12 @@ class SourceCreditLedgerTests(unittest.TestCase):
         # The person the source credits is named, once, with the credit beneath.
         self.assertEqual(markup.count('href="records/person/PCREDIT/"'), 1)
         self.assertIn("Lyricist", markup)
-        self.assertIn("badge--certainty", markup)
+        subject_start = markup.index('href="records/person/PCREDIT/"')
+        probable_work_start = markup.index('href="records/work/WPROB/"', subject_start)
+        self.assertNotIn("badge--probable", markup[subject_start:probable_work_start])
+        probable_work_end = markup.index("</li>", probable_work_start)
+        self.assertIn("badge--probable", markup[probable_work_start:probable_work_end])
+        self.assertIn("Lyricist", markup[probable_work_start:probable_work_end])
         # A person merely linked to the source keeps their own role.
         self.assertEqual(markup.count('href="records/person/PDIRECT/"'), 1)
         self.assertIn("Publisher", markup)
@@ -187,6 +197,64 @@ class SourceCreditLedgerTests(unittest.TestCase):
                     )
             checked += 1
         self.assertGreater(checked, 100, "the fixture must exercise many sources")
+
+    def test_mixed_certainty_is_attached_to_the_specific_credit(self):
+        contributions = {
+            item["id"]: item for item in read_records("contributions.json")
+        }
+        mixed_groups = 0
+        for source in read_records("sources.json"):
+            by_person = {}
+            for contribution_id in source.get("contributionIds") or []:
+                contribution = contributions.get(contribution_id)
+                if not contribution:
+                    continue
+                for person_id in contribution.get("personIds") or []:
+                    by_person.setdefault(person_id, []).append(contribution)
+            for person_id, credits in by_person.items():
+                certainties = {
+                    credit.get("certainty") or "confirmed" for credit in credits
+                }
+                if "confirmed" not in certainties or certainties == {"confirmed"}:
+                    continue
+                mixed_groups += 1
+                page = RECORDS / source["id"] / "index.html"
+                text = page.read_text(encoding="utf-8")
+                person_link = f'href="records/person/{person_id}/"'
+                person_position = text.index(person_link)
+                subject_start = text.rfind(
+                    '<div class="credit-evidence__subject">', 0, person_position
+                )
+                subject_end = text.index("</div>", person_position)
+                self.assertNotIn(
+                    "badge--certainty",
+                    text[subject_start:subject_end],
+                    f"{source['id']} applies credit certainty to all of {person_id}",
+                )
+                works_start = text.index(
+                    '<ul class="credit-evidence__works"', subject_end
+                )
+                works_end = text.index("</ul>", works_start)
+                works_markup = text[works_start:works_end]
+                for credit in credits:
+                    certainty = credit.get("certainty") or "confirmed"
+                    if certainty == "confirmed":
+                        continue
+                    for work_id in credit.get("workIds") or []:
+                        work_link = f'href="records/work/{work_id}/"'
+                        work_position = works_markup.index(work_link)
+                        work_end = works_markup.index("</li>", work_position)
+                        work_markup = works_markup[work_position:work_end]
+                        self.assertIn(
+                            f"badge--{certainty.replace(' ', '_')}",
+                            work_markup,
+                            f"{source['id']} omits {certainty} on {work_id}",
+                        )
+                        role = str(credit.get("role") or "credit").replace(
+                            "_", " "
+                        ).title()
+                        self.assertIn(role, work_markup)
+        self.assertGreater(mixed_groups, 0, "the fixture must exercise mixed certainty")
 
 
 if __name__ == "__main__":

@@ -1,4 +1,4 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=290d52406f";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=6fb1c54011";
 import {
   authorityLinkList,
   certaintyBadge,
@@ -29,7 +29,7 @@ import {
   sourceStatusLabel,
   typeBadge,
   updateMeta,
-} from "./core.js?v=290d52406f";
+} from "./core.js?v=6fb1c54011";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 let target = null;
@@ -1589,7 +1589,7 @@ function sourceCreditLedger(source, indexes) {
   const entries = new Map();
   const entryFor = (person) => {
     if (!entries.has(person.id)) {
-      entries.set(person.id, { person, roles: new Set(), certainties: new Set(), works: new Map() });
+      entries.set(person.id, { person, roles: new Set(), works: new Map() });
     }
     return entries.get(person.id);
   };
@@ -1598,17 +1598,27 @@ function sourceCreditLedger(source, indexes) {
     for (const person of related(contribution.personIds, indexes.people)) {
       const entry = entryFor(person);
       if (contribution.role) entry.roles.add(contribution.role);
-      if (contribution.certainty && contribution.certainty !== "confirmed") {
-        entry.certainties.add(contribution.certainty);
+      for (const work of related(contribution.workIds, indexes.works)) {
+        if (!entry.works.has(work.id)) {
+          entry.works.set(work.id, { work, qualifications: new Map() });
+        }
+        if (contribution.certainty && contribution.certainty !== "confirmed") {
+          const role = contribution.role || person.primaryRole || "credit";
+          const key = `${role}:${contribution.certainty}`;
+          entry.works.get(work.id).qualifications.set(key, {
+            role,
+            certainty: contribution.certainty,
+          });
+        }
       }
-      for (const work of related(contribution.workIds, indexes.works)) entry.works.set(work.id, work);
     }
   }
   const items = [...entries.values()]
     .map((entry) => ({
       ...entry,
       works: [...entry.works.values()].sort((a, b) => (
-        Number(a.year || 9999) - Number(b.year || 9999) || String(a.title).localeCompare(String(b.title))
+        Number(a.work.year || 9999) - Number(b.work.year || 9999)
+        || String(a.work.title).localeCompare(String(b.work.title))
       )),
     }))
     .sort((a, b) => String(a.person.displayName).localeCompare(String(b.person.displayName)));
@@ -1625,10 +1635,9 @@ function sourceCreditLedger(source, indexes) {
       return `<li class="credit-evidence">
       <div class="credit-evidence__subject">
         <span><a href="${recordUrl("person", item.person.id)}">${escapeHtml(item.person.displayName)}</a>${roles ? `<small>${escapeHtml(roles)}</small>` : ""}</span>
-        <span class="credit-evidence__badges">${[...item.certainties].map(certaintyBadge).join("")}</span>
       </div>
       ${item.works.length ? `<ul class="credit-evidence__works" aria-label="Credits this source documents">
-        ${item.works.map((work) => `<li><a href="${recordUrl("work", work.id)}">${escapeHtml(work.title)}</a>${work.year ? `<span class="credit-evidence__work-year">${escapeHtml(String(work.year))}</span>` : ""}</li>`).join("")}
+        ${item.works.map(({ work, qualifications }) => `<li><span><a href="${recordUrl("work", work.id)}">${escapeHtml(work.title)}</a>${[...qualifications.values()].map((qualification) => `<small class="credit-evidence__qualification"><span>${escapeHtml(humanize(qualification.role))}</span>${certaintyBadge(qualification.certainty)}</small>`).join("")}</span>${work.year ? `<span class="credit-evidence__work-year">${escapeHtml(String(work.year))}</span>` : ""}</li>`).join("")}
       </ul>` : ""}
     </li>`;
     },
@@ -1636,7 +1645,14 @@ function sourceCreditLedger(source, indexes) {
       item.person.displayName,
       item.person.primaryRole,
       ...item.roles,
-      ...item.works.map((work) => `${work.title} ${work.year || ""}`),
+      ...item.works.map(({ work, qualifications }) => [
+        work.title,
+        work.year || "",
+        ...[...qualifications.values()].flatMap((qualification) => [
+          qualification.role,
+          qualification.certainty,
+        ]),
+      ].join(" ")),
     ].filter(Boolean).join(" "),
     showTotal: true,
   });
