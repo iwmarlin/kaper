@@ -759,6 +759,27 @@ class ExportValidator:
                     f"with {expected_suffix}"
                 )
 
+        # Citation typography is part of the citation. A straight quotation mark
+        # or a hyphen standing in for an en dash is not a smaller mistake than a
+        # wrong page number — it is the same record written two ways, and 64 of
+        # them had drifted before this rule existed. Titles are exempt: one of
+        # them is a Wikimedia file name, where the straight mark is the
+        # identifier and changing it breaks the reference.
+        for record in self.payloads.get("Sources", {}).get("records", []):
+            record_id = record.get("id", "unknown")
+            for field_name in ("fullCitation", "shortCitation"):
+                value = record.get(field_name)
+                if not isinstance(value, str):
+                    continue
+                if '"' in value:
+                    self.errors.append(
+                        f"Sources {record_id}: {field_name} uses a straight quotation mark"
+                    )
+                if re.search(r"\(\d{4}-\d{4}\)", value):
+                    self.errors.append(
+                        f"Sources {record_id}: {field_name} uses a hyphen where a date range needs an en dash"
+                    )
+
         for table_name, fields in PUBLIC_NARRATIVE_FIELDS.items():
             for record in self.payloads.get(table_name, {}).get("records", []):
                 record_id = record.get("id", "unknown")
