@@ -6,7 +6,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 PUBLIC = ROOT / "data/public/v1"
-CITATION_FIELDS = ("fullCitation", "shortCitation")
+CITATION_FIELDS = ("fullCitation", "shortCitation", "title")
 LIFE_DATES = re.compile(r"\(\d{4}-\d{4}\)")
 
 
@@ -56,15 +56,17 @@ class CitationTypographyTests(unittest.TestCase):
         ]
         self.assertEqual(offenders, [], "a nested quotation repeats the outer mark")
 
-    def test_the_identifiers_that_are_literal_strings_are_left_alone(self):
-        # One title is a Wikimedia file name, where a straight mark is part of
-        # the identifier. Titles are outside the rule for that reason, and this
-        # test records why rather than leaving it to be rediscovered.
-        titles = [record.get("title") or "" for record in sources()]
-        self.assertTrue(
-            any("File:" in title and '"' in title for title in titles),
-            "the exemption exists for a file name that no longer occurs; the rule may now cover titles",
-        )
+    def test_titles_are_held_to_the_same_rule(self):
+        # Titles were exempt while one of them was a Wikimedia file name, where
+        # the straight mark was part of an identifier. That title is gone — the
+        # record is now called by the volume's own name — so the exemption went
+        # with it, and the five titles that quoted something were converted.
+        offenders = [
+            f"{record['id']}.title"
+            for record in sources()
+            if '"' in (record.get("title") or "")
+        ]
+        self.assertEqual(offenders, [], "a title uses a straight quotation mark")
 
 
 class TitleAndCitationTests(unittest.TestCase):

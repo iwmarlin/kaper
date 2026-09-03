@@ -759,6 +759,18 @@ class ExportValidator:
                     f"with {expected_suffix}"
                 )
 
+        # A file name is not a title. Twenty-nine portrait sources were called
+        # things like "File:Smzeisle.jpg", which tells a reader nothing about who
+        # is in the picture, while the file name itself was already in the URL or
+        # the citation. The title names the thing; the identifier lives where
+        # identifiers live.
+        for record in self.payloads.get("Sources", {}).get("records", []):
+            title = record.get("title")
+            if isinstance(title, str) and title.startswith(("File:", "File :", "Datei:")):
+                self.errors.append(
+                    f"Sources {record.get('id', 'unknown')}: title is a file name, not a title"
+                )
+
         # Citation typography is part of the citation. A straight quotation mark
         # or a hyphen standing in for an en dash is not a smaller mistake than a
         # wrong page number — it is the same record written two ways, and 64 of
@@ -767,7 +779,10 @@ class ExportValidator:
         # identifier and changing it breaks the reference.
         for record in self.payloads.get("Sources", {}).get("records", []):
             record_id = record.get("id", "unknown")
-            for field_name in ("fullCitation", "shortCitation"):
+            # Titles joined the rule once the last file-named title was gone:
+            # the one string that needed a straight mark was a Wikimedia file
+            # name, and it is no longer a title.
+            for field_name in ("fullCitation", "shortCitation", "title"):
                 value = record.get(field_name)
                 if not isinstance(value, str):
                     continue
