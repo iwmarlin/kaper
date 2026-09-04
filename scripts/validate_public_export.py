@@ -76,6 +76,9 @@ MACHINE_ENDPOINT = re.compile(
     re.IGNORECASE,
 )
 
+# A value that is only an identifier: "D 4431", "E.G. 2392", "17919".
+BARE_IDENTIFIER = re.compile(r"^(?:[A-Z]{1,3}\.?[\-\s]?){0,3}\d[\d.\-\s]*[a-z]?$")
+
 # An Internet Archive *node* host. The node is assigned per request and is not a
 # durable address, so a link built on one rots; the item page is the stable form
 # and 85 records already used it while 33 pointed at a node.
@@ -805,6 +808,19 @@ class ExportValidator:
             if isinstance(title, str) and title.startswith(("File:", "File :", "Datei:")):
                 self.errors.append(
                     f"Sources {record.get('id', 'unknown')}: title is a file name, not a title"
+                )
+
+        # A publication is named, not numbered. SRC0785 carried "D 4431" here —
+        # a disc's catalogue number sitting where its label's name belongs, on a
+        # pressing whose label is not named by any source on the record. Five
+        # other sources carry no publication at all, which is the honest state
+        # when nobody knows it; a number is not an improvement on that.
+        for record in self.payloads.get("Sources", {}).get("records", []):
+            value = record.get("publication")
+            if isinstance(value, str) and BARE_IDENTIFIER.match(value.strip()):
+                self.errors.append(
+                    f"Sources {record.get('id', 'unknown')}: publication is a "
+                    f"catalogue number, not the name of a publication"
                 )
 
         # The link behind "Open source" is the one promise a source record makes
