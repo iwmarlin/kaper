@@ -68,10 +68,29 @@ def is_empty(value: Any) -> bool:
 
 
 # A URL that serves data to a program rather than a page to a person: a IIIF
-# manifest, an API path, a format=json switch, a bare .json or .xml.
+# manifest, an API path, a format=json switch, a bare .json or .xml, or the raw
+# OCR text of a scan.
 MACHINE_ENDPOINT = re.compile(
-    r"manifest\.json|/api/|/iiif/|[?&]format=json|\.json(?:$|[?#])|\.xml(?:$|[?#])",
+    r"manifest\.json|/api/|/iiif/|[?&]format=json|\.json(?:$|[?#])|\.xml(?:$|[?#])"
+    r"|_djvu\.txt|\.txt(?:$|[?#])",
     re.IGNORECASE,
+)
+
+# An Internet Archive *node* host. The node is assigned per request and is not a
+# durable address, so a link built on one rots; the item page is the stable form
+# and 85 records already used it while 33 pointed at a node.
+UNSTABLE_HOST = re.compile(r"^https?://ia\d+\.us\.archive\.org/", re.IGNORECASE)
+
+# The archive's own copy of a file, standing where the external origin belongs.
+SELF_REFERENCE = re.compile(
+    r"^https?://(?:github\.com/iwmarlin/kaper|iwmarlin\.github\.io/kaper)", re.IGNORECASE
+)
+
+# Every field whose value is put in front of a reader as a link to follow.
+READER_FACING_LINKS = (
+    ("Sources", "primaryUrl"),
+    ("Sources", "accessUrl"),
+    ("Media", "externalUrl"),
 )
 
 
@@ -790,16 +809,34 @@ class ExportValidator:
 
         # The link behind "Open source" is the one promise a source record makes
         # to a reader: click it and see the document. SRC0477 pointed at a IIIF
-        # manifest, so it delivered a wall of JSON instead — while every other
-        # Polona record in the archive used the item-view page that a person can
-        # actually read.
-        for record in self.payloads.get("Sources", {}).get("records", []):
-            url = record.get("primaryUrl")
-            if isinstance(url, str) and MACHINE_ENDPOINT.search(url):
-                self.errors.append(
-                    f"Sources {record.get('id', 'unknown')}: primaryUrl points at a "
-                    f"machine endpoint, not a page a reader can open"
-                )
+        # manifest and delivered a wall of JSON; M241 pointed at the raw OCR text
+        # of a scan. Both while the archive's other records for the same
+        # repositories used the readable item page.
+        #
+        # Checked on Media as well as Sources, because that is where two of the
+        # four bad links were, and one rule that walks every reader-facing field
+        # is the only kind that will not miss the next one.
+        for table, field in READER_FACING_LINKS:
+            for record in self.payloads.get(table, {}).get("records", []):
+                url = record.get(field)
+                if not isinstance(url, str):
+                    continue
+                rid = record.get("id", "unknown")
+                if MACHINE_ENDPOINT.search(url):
+                    self.errors.append(
+                        f"{table} {rid}: {field} points at a machine endpoint, "
+                        f"not a page a reader can open"
+                    )
+                if UNSTABLE_HOST.search(url):
+                    self.errors.append(
+                        f"{table} {rid}: {field} uses an Internet Archive node host, "
+                        f"which is not a durable address"
+                    )
+                if SELF_REFERENCE.search(url):
+                    self.errors.append(
+                        f"{table} {rid}: {field} points at this archive's own copy "
+                        f"instead of the external source"
+                    )
 
         # Two sources that cannot be told apart by their titles are, for anyone
         # reading a list of them, the same record twice. Thirty-seven were, in
