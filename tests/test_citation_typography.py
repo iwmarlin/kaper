@@ -73,6 +73,26 @@ class CitationTypographyTests(unittest.TestCase):
         self.assertEqual(offenders, [], "a title uses a straight quotation mark")
 
 
+    def test_the_copyright_catalogue_is_quoted_in_english_marks(self):
+        # The Catalog of Copyright Entries is an American publication, and the
+        # archive quotes it in English marks on 72 records — including around
+        # German work titles, as at SRC0464. Five had drifted onto „…“, which is
+        # what let them past the German exemption above.
+        #
+        # This is scoped to the copyright catalogue, and has to be. „…” and „…“
+        # are correct wherever the archive quotes Polish or German material —
+        # teatru „Perskie Oko”, Wikipedia (DE) „Kind, ich freu’ mich auf Dein
+        # Kommen“ — and those records are none of this rule's business.
+        offenders = [
+            f"{record['id']}.{field}"
+            for record in sources()
+            if record.get("sourceType") == "copyright_catalogue"
+            for field in CITATION_FIELDS
+            if "„" in (record.get(field) or "")
+        ]
+        self.assertEqual(offenders, [], "a copyright-catalogue citation uses German quotation marks")
+
+
 class TitleAndCitationTests(unittest.TestCase):
     """Where a source's title is its short citation, the title field carries
     citation apparatus rather than the name of the thing. Seven records do, and
