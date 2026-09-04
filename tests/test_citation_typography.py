@@ -7,7 +7,11 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 PUBLIC = ROOT / "data/public/v1"
 CITATION_FIELDS = ("fullCitation", "shortCitation", "title")
-LIFE_DATES = re.compile(r"\(\d{4}-\d{4}\)")
+# The first version of this pattern was \(\d{4}-\d{4}\), which is why it walked
+# past (18..-1961) at SRC0632 while the same record's full citation already had
+# the en dash. A register writes an unknown century as "18.." and an open end as
+# "...." or "?"; those ranges are ranges too.
+LIFE_DATES = re.compile(r"\((?:\d{4}|\d{2}\.\.)\s*-\s*(?:\d{4}|\d{2}\.\.|\.\.\.\.|\?)\)")
 
 
 def sources():

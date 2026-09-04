@@ -66,6 +66,14 @@ def is_empty(value: Any) -> bool:
     return value is None or value == "" or value == [] or value == {}
 
 
+# A year range inside parentheses, written with a hyphen. A register states an
+# unknown century as "18.." and an open end as "...." or "?", so a range can be
+# (1908-2011), (18..-1961) or (1908-....) and all three take an en dash.
+YEAR_RANGE_WITH_HYPHEN = re.compile(
+    r"\((?:\d{4}|\d{2}\.\.)\s*-\s*(?:\d{4}|\d{2}\.\.|\.\.\.\.|\?)\)"
+)
+
+
 PUBLIC_NARRATIVE_FIELDS = {
     "People": ("publicNote", "biography"),
     "Organizations": ("publicNote", "description"),
@@ -790,7 +798,12 @@ class ExportValidator:
                     self.errors.append(
                         f"Sources {record_id}: {field_name} uses a straight quotation mark"
                     )
-                if re.search(r"\(\d{4}-\d{4}\)", value):
+                # The first version of this rule only knew about (1908-2011) and
+                # so walked straight past (18..-1961) at SRC0632, where the same
+                # record's own full citation already had the en dash. A register
+                # writes an unknown century as 18.. and an open end as .... or ?,
+                # and those ranges take the same dash as any other.
+                if re.search(YEAR_RANGE_WITH_HYPHEN, value):
                     self.errors.append(
                         f"Sources {record_id}: {field_name} uses a hyphen where a date range needs an en dash"
                     )
