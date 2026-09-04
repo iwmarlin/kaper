@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 156,
+  "count": 157,
   "records": [
     {
       "id": "ORG001",
@@ -2504,7 +2504,6 @@
         "SRC0337",
         "SRC0363",
         "SRC0435",
-        "SRC0438",
         "SRC0453",
         "SRC0458",
         "SRC0459",
@@ -4994,6 +4993,25 @@
       "publicNote": "Research library and archive at Lincoln Center. Its Billy Rose Theatre Division holds the Alfred Grunwald Papers (*T-Mss 1998-030), including a piano-vocal copy of 1000 Takte-Tanz, Band 2 in series IV, box 17, folder 1.",
       "sourceIds": [
         "SRC0203"
+      ]
+    },
+    {
+      "id": "ORG165",
+      "displayName": "Archiwum Państwowe w Lublinie",
+      "authorizedName": "Archiwum Państwowe w Lublinie",
+      "authorizedNameSource": "LCNAF",
+      "types": [
+        "archive"
+      ],
+      "city": [
+        "Lublin"
+      ],
+      "country": "Poland",
+      "slug": "archiwum-panstwowe-w-lublinie",
+      "nameVariants": "Lublin (Poland). Archiwum Państwowe",
+      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n98101261\nGND: https://d-nb.info/gnd/1239029-X\nVIAF: https://viaf.org/viaf/246001873\nISNI: https://isni.org/isni/0000000115454978",
+      "sourceIds": [
+        "SRC0438"
       ]
     }
   ]
