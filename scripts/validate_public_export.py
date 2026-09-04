@@ -67,6 +67,14 @@ def is_empty(value: Any) -> bool:
     return value is None or value == "" or value == [] or value == {}
 
 
+# A URL that serves data to a program rather than a page to a person: a IIIF
+# manifest, an API path, a format=json switch, a bare .json or .xml.
+MACHINE_ENDPOINT = re.compile(
+    r"manifest\.json|/api/|/iiif/|[?&]format=json|\.json(?:$|[?#])|\.xml(?:$|[?#])",
+    re.IGNORECASE,
+)
+
+
 # A year range inside parentheses, written with a hyphen. A register states an
 # unknown century as "18.." and an open end as "...." or "?", so a range can be
 # (1908-2011), (18..-1961) or (1908-....) and all three take an en dash.
@@ -778,6 +786,19 @@ class ExportValidator:
             if isinstance(title, str) and title.startswith(("File:", "File :", "Datei:")):
                 self.errors.append(
                     f"Sources {record.get('id', 'unknown')}: title is a file name, not a title"
+                )
+
+        # The link behind "Open source" is the one promise a source record makes
+        # to a reader: click it and see the document. SRC0477 pointed at a IIIF
+        # manifest, so it delivered a wall of JSON instead — while every other
+        # Polona record in the archive used the item-view page that a person can
+        # actually read.
+        for record in self.payloads.get("Sources", {}).get("records", []):
+            url = record.get("primaryUrl")
+            if isinstance(url, str) and MACHINE_ENDPOINT.search(url):
+                self.errors.append(
+                    f"Sources {record.get('id', 'unknown')}: primaryUrl points at a "
+                    f"machine endpoint, not a page a reader can open"
                 )
 
         # Two sources that cannot be told apart by their titles are, for anyone
