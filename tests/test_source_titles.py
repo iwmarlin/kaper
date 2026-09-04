@@ -59,15 +59,16 @@ class SourceTitleTests(unittest.TestCase):
         # not a preference — it is derivable, because the same record's short
         # citation already states the work in the same words and the same marks.
         #
-        # Two records stay out and are named here rather than left to drift.
-        # SRC0212 is filed as sheet music, not as a catalogue entry; SRC0689 is
-        # cited by entry number instead of by title, so there is no quoted work
-        # to lift. Both would have to be retitled by hand, from the volume.
-        exempt = {"SRC0212", "SRC0689"}
+        # Two records were exempted here at first, on the grounds that there was
+        # no quoted work to lift from their short citations, which cite by page
+        # (SRC0212) and by entry number (SRC0689). That confused "the script
+        # cannot derive it" with "the record does not say it". Both name the work
+        # in their own full citations and in the works they link, so both were
+        # retitled and the exemption is gone. SRC0212 needed more than a title:
+        # it had been filed as sheet music while every field on it — creator,
+        # publication, URL, registration number — belongs to the catalogue.
         wrong = []
         for record in read("sources.json"):
-            if record["id"] in exempt:
-                continue
             short = record.get("shortCitation") or ""
             if not re.match(r"CCE \d{4}, ", short):
                 continue
