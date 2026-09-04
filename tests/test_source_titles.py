@@ -1,5 +1,6 @@
 import json
 import re
+import unicodedata
 import unittest
 from pathlib import Path
 
@@ -7,6 +8,13 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 PUBLIC = ROOT / "data/public/v1"
 FILE_NAME_PREFIXES = ("File:", "File :", "Datei:", "Fichier:", "Archivo:")
+
+
+def fold(value):
+    """Strip a title down to what distinguishes it for a reader: case, accents,
+    apostrophes, brackets and hyphens all go, because none of them is how anyone
+    tells two records apart."""
+    return re.sub(r"[^a-z0-9]+", "", unicodedata.normalize("NFKD", value.lower()))
 
 
 def read(name):
@@ -51,6 +59,28 @@ class SourceTitleTests(unittest.TestCase):
             if title.endswith("— portrait") and not title.startswith(people[linked[0]]):
                 wrong.append(f"{record['id']}: {title!r} does not open with {people[linked[0]]!r}")
         self.assertEqual(wrong, [], "a portrait title names someone other than the sitter")
+
+    def test_no_two_sources_share_a_title(self):
+        # Thirty-seven records were sharing eighteen titles, every one of them a
+        # genuinely different source: three reviews of the same recital in three
+        # papers, a film entry and the sheet music for songs from that film, a
+        # record and the sheet music of the same song. The distinguishing fact
+        # was already on each record, in its short citation, its publication or
+        # the works it links.
+        #
+        # Folded rather than compared literally, because two of the eighteen
+        # were invisible to a literal comparison and to the audit that used one:
+        # "[Mélodie d'amour]" against "Mélodie d'amour", and one label spelled
+        # "Syrena-Grand-Record" against "Syrena Grand Record". A reader does not
+        # tell two records apart by a bracket or a hyphen.
+        seen = {}
+        clashes = []
+        for record in read("sources.json"):
+            key = fold(record.get("title") or "")
+            if key in seen:
+                clashes.append(f"{seen[key]} and {record['id']}: {record['title']!r}")
+            seen[key] = record["id"]
+        self.assertEqual(clashes, [], "two sources cannot be told apart by their titles")
 
     def test_the_copyright_catalogue_is_titled_one_way(self):
         # The Catalog of Copyright Entries was titled three ways: the house form

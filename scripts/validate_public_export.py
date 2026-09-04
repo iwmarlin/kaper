@@ -7,6 +7,7 @@ import argparse
 import hashlib
 import json
 import re
+import unicodedata
 import sys
 from collections import Counter, defaultdict
 from pathlib import Path
@@ -778,6 +779,28 @@ class ExportValidator:
                 self.errors.append(
                     f"Sources {record.get('id', 'unknown')}: title is a file name, not a title"
                 )
+
+        # Two sources that cannot be told apart by their titles are, for anyone
+        # reading a list of them, the same record twice. Thirty-seven were, in
+        # eighteen groups, and every one of them was a genuinely different
+        # source — three papers reviewing one recital, a film entry beside the
+        # sheet music for songs from that film. Folded rather than compared
+        # literally: two of the eighteen differed only by a bracket or by how a
+        # label's name was hyphenated, and a literal comparison walked past both.
+        seen_titles: dict[str, str] = {}
+        for record in self.payloads.get("Sources", {}).get("records", []):
+            title = record.get("title")
+            if not isinstance(title, str) or not title.strip():
+                continue
+            key = re.sub(
+                r"[^a-z0-9]+", "", unicodedata.normalize("NFKD", title.lower())
+            )
+            if key in seen_titles:
+                self.errors.append(
+                    f"Sources {record.get('id', 'unknown')}: title cannot be told "
+                    f"apart from {seen_titles[key]}"
+                )
+            seen_titles[key] = record.get("id", "unknown")
 
         # Citation typography is part of the citation. A straight quotation mark
         # or a hyphen standing in for an en dash is not a smaller mistake than a
