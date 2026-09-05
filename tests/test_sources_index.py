@@ -33,6 +33,11 @@ class SourcesIndexContractTests(unittest.TestCase):
             with self.subTest(element_id=element_id):
                 self.assertIn(f'id="{element_id}"', self.page)
 
+    def test_mobile_intro_keeps_the_scope_note_in_a_compact_disclosure(self) -> None:
+        self.assertIn('class="sources-page"', self.page)
+        self.assertIn('class="source-index-scope source-index-scope--compact"', self.page)
+        self.assertIn("<summary>About this index</summary>", self.page)
+
     def test_page_is_not_yet_linked_from_primary_or_home_navigation(self) -> None:
         self.assertNotIn('"sources.html"', self.core)
         self.assertNotIn('href="sources.html"', self.home)

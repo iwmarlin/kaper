@@ -1,4 +1,4 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=12d5b0fc4c";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=3dda364a80";
 import {
   authorityLinkList,
   certaintyBadge,
@@ -29,7 +29,7 @@ import {
   sourceStatusLabel,
   typeBadge,
   updateMeta,
-} from "./core.js?v=12d5b0fc4c";
+} from "./core.js?v=3dda364a80";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 let target = null;
@@ -1669,9 +1669,16 @@ function renderSource(source, data, indexes) {
     title: source.title || source.shortCitation,
     label: "Source",
     badges: `${typeBadge(source.sourceType)}${sourceReliabilityBadge(source.reliability)}`,
+    heroClass: "record-hero--source",
+    factsClass: "record-facts--source",
+    compactFactsLabel: "Source details",
+    heroSupplement: `<div class="source-hero__citation">
+      <h2>Citation</h2>
+      <p>${escapeHtml(source.fullCitation || source.shortCitation)}</p>
+      ${sourceActions(source)}
+    </div>`,
     facts: `${fact("Creator", source.creator)}${fact("Date", sourceDateDisplay(source))}${fact("Date represents", sourceDateRoleLabel(source.dateRole))}${fact("Publication", source.publication)}${fact("Repository", source.repository)}${sourceIdentifierFacts(source)}${sourceAccessFact(source)}${fact("Reliability", sourceReliabilityLabel(source.reliability))}${fact("Verification", sourceStatusLabel(source.sourceStatus))}`,
     main: [
-      section("Citation", `<p class="lead">${escapeHtml(source.fullCitation || source.shortCitation)}</p>${sourceActions(source)}`),
       sourceResearchNote(source),
       section("Supported works", entityList(works, "work", (item) => [item.year, item.workType].filter(Boolean).join(" · ")), "", works.length),
       section("Media", entityList(media, "media", (item) => humanize(item.mediaType)), "", media.length),
@@ -1719,15 +1726,26 @@ export function renderRecordView(requestedType, requestedId, data) {
 export function renderRecordMarkup(view, requestedId) {
   const titleLength = Array.from(view.title || "").length;
   const titleClass = titleLength > 72 ? " record-hero--extra-long-title" : titleLength > 46 ? " record-hero--long-title" : "";
+  const heroClass = view.heroClass ? ` ${view.heroClass}` : "";
+  const factsClass = view.factsClass ? ` ${view.factsClass}` : "";
+  const desktopFacts = `<dl class="record-facts${factsClass}${view.compactFactsLabel ? " record-facts--wide" : ""}">${view.facts}</dl>`;
+  const compactFacts = view.compactFactsLabel
+    ? `<details class="record-facts-disclosure">
+        <summary>${escapeHtml(view.compactFactsLabel)}</summary>
+        <dl class="record-facts${factsClass}">${view.facts}</dl>
+      </details>`
+    : "";
   return `
-    <section class="record-hero${titleClass}">
+    <section class="record-hero${titleClass}${heroClass}">
       <div class="shell record-hero__grid">
         <div>
           <p class="eyebrow">${escapeHtml(view.label)} · <span class="record-id">${escapeHtml(requestedId)}</span></p>
           <h1>${escapeHtml(view.title)}</h1>
           <div class="meta-row">${view.badges}</div>
+          ${view.heroSupplement || ""}
+          ${compactFacts}
         </div>
-        <dl class="record-facts">${view.facts}</dl>
+        ${desktopFacts}
       </div>
     </section>
     <section class="section">

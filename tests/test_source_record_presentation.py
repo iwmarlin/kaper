@@ -103,6 +103,17 @@ class SourceApparatusTests(unittest.TestCase):
         self.assertEqual(checked, registered, "every registered identifier must be on its card")
         self.assertGreater(registered, 50, "the fixture must exercise identifiers")
 
+    def test_source_header_leads_with_the_citation_and_collapses_metadata(self):
+        pages = sorted(RECORDS.glob("*/index.html"))
+        self.assertTrue(pages, "the fixture must contain static source pages")
+        text = pages[0].read_text(encoding="utf-8")
+        self.assertIn('class="record-hero', text)
+        self.assertIn("record-hero--source", text)
+        self.assertIn('class="source-hero__citation"', text)
+        self.assertIn('class="record-facts-disclosure"', text)
+        self.assertEqual(text.count("<h2>Citation</h2>"), 1)
+        self.assertLess(text.index('class="source-hero__citation"'), text.index('class="record-facts-disclosure"'))
+
 
 class SourceCreditLedgerTests(unittest.TestCase):
     """A source card used to name only the people linked to the source itself.

@@ -17,7 +17,7 @@
    the swashed display forms can never appear by accident. */
 @font-face {
   font-family: "Fraunces";
-  src: url("../fonts/kaper-serif.woff2?v=12d5b0fc4c") format("woff2");
+  src: url("../fonts/kaper-serif.woff2?v=3dda364a80") format("woff2");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
@@ -25,7 +25,7 @@
 
 @font-face {
   font-family: "Fraunces";
-  src: url("../fonts/kaper-serif-italic.woff2?v=12d5b0fc4c") format("woff2");
+  src: url("../fonts/kaper-serif-italic.woff2?v=3dda364a80") format("woff2");
   font-weight: 100 900;
   font-style: italic;
   font-display: swap;
@@ -33,7 +33,7 @@
 
 @font-face {
   font-family: "Archivo";
-  src: url("../fonts/kaper-sans.woff2?v=12d5b0fc4c") format("woff2");
+  src: url("../fonts/kaper-sans.woff2?v=3dda364a80") format("woff2");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
@@ -41,7 +41,7 @@
 
 @font-face {
   font-family: "Archivo";
-  src: url("../fonts/kaper-sans-italic.woff2?v=12d5b0fc4c") format("woff2");
+  src: url("../fonts/kaper-sans-italic.woff2?v=3dda364a80") format("woff2");
   font-weight: 100 900;
   font-style: italic;
   font-display: swap;
@@ -957,6 +957,10 @@ main {
   padding: 0.75rem 0.85rem;
   font-size: var(--fs-5);
   line-height: 1.5;
+}
+
+.source-index-scope--compact {
+  display: none;
 }
 
 .scope-note {
@@ -2872,6 +2876,60 @@ main {
   gap: 0.35rem;
 }
 
+/* A source is useful first as a citation, then as an object with apparatus.
+   Its header therefore keeps the citation beside the title on wide screens;
+   other record types retain the established title-and-facts composition. */
+.record-hero--source {
+  padding-top: clamp(1.35rem, 2.5vw, 2rem);
+}
+
+.record-hero--source .record-hero__grid {
+  grid-template-columns: minmax(0, 1.25fr) minmax(20rem, 0.75fr);
+  align-items: start;
+}
+
+.source-hero__citation {
+  max-width: 46rem;
+  margin-top: 1rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid var(--line);
+}
+
+.source-hero__citation h2 {
+  margin-bottom: 0.3rem;
+  color: var(--ink-soft);
+  font-family: var(--sans);
+  font-size: var(--fs-2);
+  font-weight: 740;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.source-hero__citation p {
+  max-width: 72ch;
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: var(--fs-7);
+  line-height: 1.58;
+}
+
+.source-hero__citation .source-actions {
+  margin-top: 0.7rem;
+}
+
+.record-hero--source .record-facts {
+  padding: 0.45rem 0.7rem;
+}
+
+.record-hero--source .record-facts div {
+  grid-template-columns: minmax(6.25rem, 0.62fr) minmax(0, 1.38fr);
+  padding: 0.28rem 0;
+}
+
+.record-facts-disclosure {
+  display: none;
+}
+
 .record-id {
   color: var(--ink-soft);
   font-size: var(--fs-2);
@@ -3752,6 +3810,79 @@ html:not(.js) .source-group__head {
     gap: 1rem;
   }
 
+  .sources-page .page-hero--compact .page-hero__grid {
+    gap: 0.7rem;
+  }
+
+  .source-index-scope--wide {
+    display: none;
+  }
+
+  .source-index-scope--compact {
+    display: block;
+    border-left: 3px solid var(--gold);
+    background: rgba(255, 253, 248, 0.62);
+  }
+
+  .source-index-scope--compact summary {
+    padding: 0.58rem 0.75rem;
+    color: var(--ink-soft);
+    font-size: var(--fs-4);
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  .source-index-scope--compact summary::marker {
+    color: var(--accent);
+  }
+
+  .source-index-scope--compact p {
+    margin: 0;
+    padding: 0.65rem 0.75rem 0.75rem;
+    border-top: 1px solid var(--line);
+    color: var(--ink-soft);
+    font-size: var(--fs-5);
+    line-height: 1.5;
+  }
+
+  .record-hero--source .record-hero__grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+
+  .record-hero--source .record-facts--wide {
+    display: none;
+  }
+
+  .record-hero--source .record-facts-disclosure {
+    display: block;
+    margin-top: 0.85rem;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-sm);
+    background: rgba(255, 253, 248, 0.72);
+  }
+
+  .record-facts-disclosure summary {
+    padding: 0.6rem 0.75rem;
+    color: var(--ink);
+    font-size: var(--fs-4);
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  .record-facts-disclosure summary::marker {
+    color: var(--accent);
+  }
+
+  .record-facts-disclosure .record-facts {
+    margin: 0;
+    padding: 0.35rem 0.75rem 0.55rem;
+    border: 0;
+    border-top: 1px solid var(--line);
+    border-radius: 0;
+    background: transparent;
+  }
+
   .hero__portrait {
     width: min(72vw, 20.5rem);
     margin: 0;
@@ -3895,6 +4026,31 @@ html:not(.js) .source-group__head {
 
   .filters__advanced {
     grid-template-columns: 1fr;
+  }
+
+  .sources-page .page-hero--compact {
+    padding: 0.95rem 0 0.8rem;
+  }
+
+  .sources-page .page-hero--compact .eyebrow {
+    margin-bottom: 0.3rem;
+  }
+
+  .sources-page .page-hero--compact h1 {
+    margin-bottom: 0.35rem;
+    font-size: clamp(1.9rem, 9vw, 2.25rem);
+  }
+
+  .sources-page .page-hero--compact .lead {
+    font-size: var(--fs-7);
+    line-height: 1.42;
+  }
+
+  .sources-page .page-hero--compact .lead--meta {
+    margin-top: 0.35rem;
+    font-family: var(--sans);
+    font-size: var(--fs-5);
+    font-weight: 650;
   }
 
   .source-index-row {
@@ -4258,6 +4414,31 @@ html:not(.js) .source-group__head {
   .record-hero--extra-long-title h1 {
     font-size: clamp(1.78rem, 7.5vw, 2.08rem);
     line-height: 1.04;
+  }
+
+  .record-hero--source {
+    padding: 1.05rem 0 0.95rem;
+  }
+
+  .record-hero--source h1,
+  .record-hero--source.record-hero--long-title h1,
+  .record-hero--source.record-hero--extra-long-title h1 {
+    font-size: clamp(1.55rem, 7.2vw, 1.95rem);
+    line-height: 1.08;
+  }
+
+  .record-hero--source .meta-row {
+    margin-top: 0.5rem;
+  }
+
+  .source-hero__citation {
+    margin-top: 0.75rem;
+    padding-top: 0.65rem;
+  }
+
+  .source-hero__citation p {
+    font-size: var(--fs-6);
+    line-height: 1.52;
   }
 
   .gallery-grid {
