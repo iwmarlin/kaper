@@ -107,6 +107,18 @@ YEAR_RANGE_WITH_HYPHEN = re.compile(
     r"\((?:\d{4}|\d{2}\.\.)\s*-\s*(?:\d{4}|\d{2}\.\.|\.\.\.\.|\?)\)"
 )
 
+# Hofmeister's register prints personal names in catalogue order (surname,
+# forename).  That transcription belongs in the citation; ``creator`` is a
+# reader-facing display and search field and follows the archive's natural-name
+# convention.  Scope the rule to this one source family so that commas used for
+# roles, institutional subdivisions or ensemble credits are not misread as
+# inverted personal names.
+HOFMEISTER_INVERTED_CREATOR_PATTERN = re.compile(
+    r"(?:^|;\s*)[^,;]+,\s*(?:[A-ZÀ-ÖØ-Þ]\.?|[A-ZÀ-ÖØ-Þ][a-zà-öø-ÿ])"
+    r"[^,;]*(?=;|$)"
+)
+HOFMEISTER_REPOSITORY = "Österreichische Nationalbibliothek / ANNO"
+
 
 PUBLIC_NARRATIVE_FIELDS = {
     "People": ("publicNote", "biography"),
@@ -955,6 +967,16 @@ class ExportValidator:
             source_id = source["id"]
             for error in source_date_errors(source):
                 self.errors.append(f"Source {source_id}: {error}")
+            if (
+                source.get("sourceType") == "sheet_music"
+                and source.get("repository") == HOFMEISTER_REPOSITORY
+                and HOFMEISTER_INVERTED_CREATOR_PATTERN.search(
+                    str(source.get("creator", ""))
+                )
+            ):
+                self.errors.append(
+                    f"Source {source_id}: creator uses inverted catalogue-name order"
+                )
             for organization_id in expected_repository_organization_ids(source):
                 if organization_id not in (source.get("organizationIds") or []):
                     self.errors.append(
