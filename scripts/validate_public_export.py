@@ -36,6 +36,7 @@ from visual_sources import (
     VISUAL_RIGHTS_NARRATIVE_PATTERN,
     WIKIMEDIA_ORGANIZATION_ID,
     is_normalized_visual_source,
+    is_wikimedia_commons_file_page,
     is_wikimedia_source,
 )
 
@@ -1085,6 +1086,24 @@ class ExportValidator:
                         f"Source {source_id}: missing Wikimedia repository organization "
                         f"{WIKIMEDIA_ORGANIZATION_ID}"
                     )
+            is_commons_file_page = is_wikimedia_commons_file_page(source)
+            if (
+                source.get("sourceType") == "wikimedia_commons_file"
+                and not is_commons_file_page
+            ):
+                self.errors.append(
+                    f"Source {source_id}: wikimedia_commons_file must use an "
+                    "item-level Wikimedia Commons File page"
+                )
+            if (
+                is_commons_file_page
+                and source.get("repository") == "Wikimedia Commons"
+                and source.get("sourceType") != "wikimedia_commons_file"
+            ):
+                self.errors.append(
+                    f"Source {source_id}: a Commons-held File record must use "
+                    "sourceType 'wikimedia_commons_file'"
+                )
             hostname = source_hostname(source)
             expected_repository = CANONICAL_REPOSITORY_BY_HOST.get(hostname)
             if (

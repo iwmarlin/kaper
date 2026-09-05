@@ -21992,11 +21992,11 @@
     },
     {
       "accessDate": "2026-08-08",
-      "creator": "Official Disney publicity photograph",
+      "creator": "Photographer unidentified; official Disney publicity photograph",
       "date": "1930",
       "dateRole": "creation",
       "dateQualifier": "confirmed",
-      "fullCitation": "Official Disney publicity photograph. Ub Iwerks drawing Mickey Mouse, 1930. Wikimedia Commons, File:Ub Iwerks.jpg.",
+      "fullCitation": "“Ub Iwerks drawing Mickey Mouse.” Official Disney publicity photograph, 1930; photographer unidentified. Wikimedia Commons, File:Ub Iwerks.jpg.",
       "id": "SRC0656",
       "mediaIds": [
         "M304"
@@ -22011,7 +22011,7 @@
       "shortCitation": "Official Disney publicity photograph of Ub Iwerks, 1930; Wikimedia Commons",
       "slug": "src0656-ub-iwerks-publicity-portrait-1930",
       "sourceStatus": "verified",
-      "sourceType": "image_or_photograph",
+      "sourceType": "wikimedia_commons_file",
       "title": "Ub Iwerks drawing Mickey Mouse — publicity photograph, 1930",
       "organizationIds": [
         "ORG090"
@@ -22234,7 +22234,7 @@
       "id": "SRC0664",
       "shortCitation": "Berliner Leben, no. 9 (1908) — portrait of Carl Meinhard",
       "fullCitation": "Carl Meinhard. Portrait photograph by an unidentified photographer, published in Berliner Leben, no. 9 (1908). Wikimedia Commons, File:Carl Meinhard (BerlLeben 1908-09).jpg.",
-      "sourceType": "image_or_photograph",
+      "sourceType": "wikimedia_commons_file",
       "title": "Carl Meinhard — portrait in Berliner Leben, 1908",
       "creator": "Photographer unidentified",
       "repository": "Wikimedia Commons",
@@ -22351,7 +22351,7 @@
       "id": "SRC0668",
       "shortCitation": "Wikimedia Commons, File:Lucien Boyer 1.jpg — full-length portrait of Lucien Boyer, c. 1900",
       "fullCitation": "“Lucien Boyer 1.jpg.” Full-length portrait of the chansonnier Lucien Boyer. Anonymous photograph, c. 1900; original publication unidentified and described on the file page as an old book. Wikimedia Commons.",
-      "sourceType": "image_or_photograph",
+      "sourceType": "wikimedia_commons_file",
       "title": "Lucien Boyer — full-length portrait, c. 1900",
       "creator": "Anonymous photographer",
       "repository": "Wikimedia Commons",
@@ -22721,7 +22721,7 @@
       "id": "SRC0680",
       "shortCitation": "Wikimedia Commons, Joe Pasternak (1957) — MGM publicity still",
       "fullCitation": "“Joe Pasternak (1957).” MGM publicity still of film producer Joe Pasternak, 1957. Photographer unidentified. Wikimedia Commons, File:Joe_Pasternak_(1957).jpg.",
-      "sourceType": "image_or_photograph",
+      "sourceType": "wikimedia_commons_file",
       "title": "Joe Pasternak (1957) — MGM publicity still",
       "creator": "MGM publicity photograph; photographer unidentified",
       "repository": "Wikimedia Commons",
@@ -24206,18 +24206,18 @@
     },
     {
       "id": "SRC0721",
-      "shortCitation": "Studio Harcourt, portrait of Joséphine Baker, 1940",
-      "fullCitation": "Studio Harcourt, photographer. Portrait of Joséphine Baker, 1940. Source given as RMN; republished on Wikimedia Commons as File:Baker Harcourt 1940 2.jpg, original 540 × 756 px, with permission documentation archived in the Wikimedia VRTS system under ticket 2020112910005534.",
-      "sourceType": "image_or_photograph",
-      "title": "Joséphine Baker — Studio Harcourt, 1940",
+      "shortCitation": "Studio Harcourt, portrait of Joséphine Baker, 1940 — MPP, negative U500008NC",
+      "fullCitation": "Studio Harcourt. Joséphine Baker, 1940. Black-and-white flexible-film negative, 18 × 24 cm. Médiathèque du patrimoine et de la photographie, negative U500008NC (former number HRC500008NNR0C; accession M/1989/19). Digital image distributed by GrandPalaisRmn Photo and made available via Wikimedia Commons.",
+      "sourceType": "archival_photograph",
+      "title": "Joséphine Baker — Studio Harcourt negative, 1940",
       "creator": "Studio Harcourt",
-      "repository": "Wikimedia Commons",
-      "publication": "RMN / Wikimedia Commons",
+      "repository": "Médiathèque du patrimoine et de la photographie",
+      "publication": "Photographies (Mémoire) / POP",
       "date": "1940",
       "dateRole": "creation",
       "dateQualifier": "confirmed",
       "accessDate": "2026-08-20",
-      "reliability": "medium",
+      "reliability": "high",
       "sourceStatus": "verified",
       "slug": "src0721-josephine-baker-portrait",
       "personIds": [
@@ -24226,7 +24226,14 @@
       "mediaIds": [
         "M359"
       ],
-      "primaryUrl": "https://commons.wikimedia.org/wiki/File:Baker_Harcourt_1940_2.jpg",
+      "primaryUrl": "https://pop.culture.gouv.fr/notice/memoire/APU500008NC",
+      "additionalLinks": [
+        {
+          "label": "Digital image and file history on Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Baker_Harcourt_1940_2.jpg",
+          "role": "source_image"
+        }
+      ],
       "organizationIds": [
         "ORG090"
       ]

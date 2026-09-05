@@ -10,7 +10,7 @@ from __future__ import annotations
 
 import re
 from typing import Any
-from urllib.parse import urlparse
+from urllib.parse import unquote, urlparse
 
 from filmographic_sources import strip_redundant_access_statement
 
@@ -114,6 +114,23 @@ def visual_hostname(source: dict[str, Any]) -> str:
 def is_wikimedia_source(source: dict[str, Any]) -> bool:
     host = visual_hostname(source)
     return host == "commons.wikimedia.org" or host.endswith(".wikipedia.org")
+
+
+def is_wikimedia_commons_file_page(source: dict[str, Any]) -> bool:
+    """Return whether the primary record is an item-level Commons file page.
+
+    A Commons URL does not by itself make Commons the archival repository: an
+    institutional photograph may merely use Commons as its delivery surface.
+    This helper identifies the access page only; callers must still inspect the
+    structured ``repository`` field before deciding the source type.
+    """
+
+    url = str(source.get("primaryUrl") or source.get("url") or "").strip()
+    parsed = urlparse(url)
+    return (
+        parsed.netloc.casefold() == "commons.wikimedia.org"
+        and unquote(parsed.path).startswith("/wiki/File:")
+    )
 
 
 def is_normalized_visual_source(source: dict[str, Any]) -> bool:
