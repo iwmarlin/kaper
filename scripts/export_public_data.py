@@ -26,6 +26,7 @@ from source_dates import (
     source_date_errors,
     usco_identifiers,
 )
+from source_slugs import canonical_source_slug
 from visual_sources import normalize_visual_source
 
 
@@ -1377,6 +1378,7 @@ class PublicExporter:
     def _normalize_source_public_text(self) -> None:
         """Keep source citations bibliographic rather than graph- or workflow-oriented."""
         for source in self.output_records["Sources"]:
+            source["slug"] = canonical_source_slug(source)
             normalize_visual_source(source)
             if source.get("sourceType") == "authority_record":
                 normalize_authority_source(source)

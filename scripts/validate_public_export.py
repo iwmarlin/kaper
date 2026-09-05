@@ -32,6 +32,7 @@ from recording_sources import (
 from repository_organizations import expected_repository_organization_ids
 from source_dates import SOURCE_IDENTIFIER_SCHEMES, source_date_errors
 from source_access_dates import has_redundant_access_date
+from source_slugs import canonical_source_slug
 from visual_sources import (
     VISUAL_RIGHTS_NARRATIVE_PATTERN,
     WIKIMEDIA_ORGANIZATION_ID,
@@ -503,6 +504,14 @@ class ExportValidator:
 
             for record in records:
                 record_id = record.get("id", "<missing-id>")
+                if (
+                    table_name == "Sources"
+                    and record.get("slug") != canonical_source_slug(record)
+                ):
+                    self.errors.append(
+                        f"Sources {record_id}: slug must begin with the lowercase "
+                        "Source ID and use the canonical 80-character form"
+                    )
                 unexpected = set(record) - allowed
                 if unexpected:
                     self.errors.append(
