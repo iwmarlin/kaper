@@ -76,6 +76,9 @@ MACHINE_ENDPOINT = re.compile(
     re.IGNORECASE,
 )
 
+# This archive's own record numbers, in text a reader sees.
+INTERNAL_ID = re.compile(r"\b(?:S0?\d{2,4}|W-S\d+|W-F\d+|SRC\d+|M\d{3}|ORG\d{3}|P\d{3}|TE\d{4})\b")
+
 # A value that is only an identifier: "D 4431", "E.G. 2392", "17919".
 BARE_IDENTIFIER = re.compile(r"^(?:[A-Z]{1,3}\.?[\-\s]?){0,3}\d[\d.\-\s]*[a-z]?$")
 
@@ -809,6 +812,20 @@ class ExportValidator:
                 self.errors.append(
                     f"Sources {record.get('id', 'unknown')}: title is a file name, not a title"
                 )
+
+        # This archive's own record numbers are for joining records, not for
+        # reading. Three GEMA entries were titled "GEMA work entry for S026" and
+        # one citation said "work entry for S0100" — a number that is not even a
+        # GEMA identifier, and in the citation not even the right one, since the
+        # record is S100. A reader cannot follow any of them anywhere.
+        for record in self.payloads.get("Sources", {}).get("records", []):
+            for field_name in ("title", "shortCitation", "fullCitation"):
+                value = record.get(field_name)
+                if isinstance(value, str) and INTERNAL_ID.search(value):
+                    self.errors.append(
+                        f"Sources {record.get('id', 'unknown')}: {field_name} shows "
+                        f"an internal record number, which means nothing outside this archive"
+                    )
 
         # A publication is named, not numbered. SRC0785 carried "D 4431" here —
         # a disc's catalogue number sitting where its label's name belongs, on a
