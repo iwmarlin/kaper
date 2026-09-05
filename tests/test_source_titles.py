@@ -107,6 +107,23 @@ class SourceTitleTests(unittest.TestCase):
                 wrong.append(f"{record['id']}: {title!r}")
         self.assertEqual(wrong, [], "a copyright-catalogue entry is titled off the house form")
 
+    def test_the_sheet_music_register_is_titled_one_way(self):
+        # The same rule as the copyright catalogue, and for the same reason:
+        # where the register is what the record is, the title names the register
+        # and the work it lists. Hofmeisters Musikalisch-literarischer
+        # Monatsbericht had six entries titled with the bare work and one titled
+        # with the register and its page number, which is the exact state the
+        # catalogue had been in.
+        wrong = [
+            f"{record['id']}: {record['title']!r}"
+            for record in read("sources.json")
+            if re.match(r"Hofmeister", record.get("shortCitation") or "")
+            and not (record.get("title") or "").startswith(
+                "Hofmeisters Musikalisch-literarischer Monatsbericht: "
+            )
+        ]
+        self.assertEqual(wrong, [], "a Hofmeister entry is titled off the house form")
+
     def test_a_descriptor_is_not_left_in_another_language(self):
         # Source titles describe in English; the thing being described keeps its
         # own language. Four records had the descriptor itself in German or

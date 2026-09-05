@@ -905,6 +905,18 @@ class ExportValidator:
                         f"Sources {record_id}: {field_name} uses a hyphen where a date range needs an en dash"
                     )
 
+        # The rule stopped at Sources, and a work's own name is quoted as often
+        # as a citation is: W-S018 and S018 were both called Sagen kleine Mädels
+        # "nein" with straight marks, which is the same drift one table over.
+        for table_name in ("Works", "Songs", "Films", "Other Works", "Title Variants"):
+            for record in self.payloads.get(table_name, {}).get("records", []):
+                title = record.get("title")
+                if isinstance(title, str) and '"' in title:
+                    self.errors.append(
+                        f"{table_name} {record.get('id', 'unknown')}: "
+                        f"title uses a straight quotation mark"
+                    )
+
         for table_name, fields in PUBLIC_NARRATIVE_FIELDS.items():
             for record in self.payloads.get(table_name, {}).get("records", []):
                 record_id = record.get("id", "unknown")
