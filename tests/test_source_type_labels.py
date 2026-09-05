@@ -2,6 +2,7 @@ import json
 import re
 import unittest
 from pathlib import Path
+from urllib.parse import unquote, urlparse
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -46,6 +47,28 @@ class SourceTypeLabelTests(unittest.TestCase):
                 label, seen, f"{key} and {seen.get(label)} would appear under the same heading"
             )
             seen[label] = key
+
+    def test_commons_held_file_records_use_the_dedicated_kind(self):
+        offenders = []
+        for source in json.loads(
+            (ROOT / "data/public/v1/sources.json").read_text(encoding="utf-8")
+        )["records"]:
+            parsed = urlparse(source.get("primaryUrl") or "")
+            is_commons_file = (
+                parsed.netloc.casefold() == "commons.wikimedia.org"
+                and unquote(parsed.path).startswith("/wiki/File:")
+            )
+            if (
+                is_commons_file
+                and source.get("repository") == "Wikimedia Commons"
+                and source.get("sourceType") != "wikimedia_commons_file"
+            ):
+                offenders.append(source["id"])
+        self.assertEqual(
+            offenders,
+            [],
+            "Commons is the stated repository, but the records are typed as generic images",
+        )
 
 
 if __name__ == "__main__":

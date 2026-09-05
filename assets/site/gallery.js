@@ -1,4 +1,4 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=6ea9ae4d34";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=f2725d37db";
 import {
   debounce,
   escapeHtml,
@@ -24,7 +24,7 @@ import {
   resolveIds,
   safeExternalUrl,
   typeBadge,
-} from "./core.js?v=6ea9ae4d34";
+} from "./core.js?v=f2725d37db";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 mountSiteChrome("media");
