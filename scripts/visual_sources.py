@@ -8,7 +8,11 @@ on the linked Media record, where they are presented once beside the image.
 
 from __future__ import annotations
 
+import argparse
+import json
 import re
+import tempfile
+from pathlib import Path
 from typing import Any
 from urllib.parse import unquote, urlparse
 
@@ -23,6 +27,20 @@ VISUAL_SOURCE_TYPES = {
 }
 
 WIKIMEDIA_ORGANIZATION_ID = "ORG090"
+NAC_ORGANIZATION_ID = "ORG070"
+NAC_REPOSITORY = "Narodowe Archiwum Cyfrowe"
+
+NAC_TITLE_SUFFIX = re.compile(
+    r"\s+—\s+(?:Narodowe Archiwum Cyfrowe|Szukaj w Archiwach)\s*$",
+    flags=re.IGNORECASE,
+)
+
+NAC_CANONICAL_TITLES = {
+    "SRC0435": (
+        "Uniwersytet Warszawski — Pałac Kazimierzowski przy Krakowskim "
+        "Przedmieściu"
+    ),
+}
 
 VISUAL_RIGHTS_NARRATIVE_PATTERN = re.compile(
     r"(?:"
@@ -116,6 +134,30 @@ def is_wikimedia_source(source: dict[str, Any]) -> bool:
     return host == "commons.wikimedia.org" or host.endswith(".wikipedia.org")
 
 
+def is_direct_nac_photograph(source: dict[str, Any]) -> bool:
+    """Return whether a source describes a photograph accessed from NAC/SzWA.
+
+    The repository, access platform and source type describe different layers.
+    A Szukaj w Archiwach catalogue page remains the access route; when the
+    represented object is a linked photograph, its source kind is an archival
+    photograph rather than a generic digital record.
+    """
+
+    return (
+        source.get("repository") == NAC_REPOSITORY
+        and NAC_ORGANIZATION_ID in (source.get("organizationIds") or [])
+        and visual_hostname(source) == "www.szukajwarchiwach.gov.pl"
+        and bool(source.get("mediaIds"))
+        and source.get("sourceType")
+        in {
+            "archival_digital_record",
+            "archival_photograph",
+            "image_or_photograph",
+            "visual_document",
+        }
+    )
+
+
 def is_wikimedia_commons_file_page(source: dict[str, Any]) -> bool:
     """Return whether the primary record is an item-level Commons file page.
 
@@ -143,8 +185,16 @@ def is_normalized_visual_source(source: dict[str, Any]) -> bool:
 
 def normalize_visual_source(source: dict[str, Any]) -> None:
     """Normalize one visual source without changing the linked Media rights."""
-    if not is_normalized_visual_source(source):
+    direct_nac_photograph = is_direct_nac_photograph(source)
+    if not direct_nac_photograph and not is_normalized_visual_source(source):
         return
+
+    if direct_nac_photograph:
+        source["sourceType"] = "archival_photograph"
+        title = NAC_CANONICAL_TITLES.get(str(source.get("id", ""))) or str(
+            source.get("title", "")
+        )
+        source["title"] = NAC_TITLE_SUFFIX.sub("", title).strip()
 
     if source.get("accessDate"):
         source["fullCitation"] = strip_redundant_access_statement(
@@ -165,3 +215,43 @@ def normalize_visual_source(source: dict[str, Any]) -> None:
         source["organizationIds"] = sorted(
             set(source.get("organizationIds", [])) | {WIKIMEDIA_ORGANIZATION_ID}
         )
+
+
+def normalize_file(path: Path) -> int:
+    """Normalize canonical visual Sources atomically."""
+
+    payload = json.loads(path.read_text(encoding="utf-8"))
+    changed = 0
+    for source in payload.get("records", []):
+        before = dict(source)
+        normalize_visual_source(source)
+        if source != before:
+            changed += 1
+
+    if changed:
+        rendered = json.dumps(payload, ensure_ascii=False, indent=2) + "\n"
+        with tempfile.NamedTemporaryFile(
+            "w",
+            encoding="utf-8",
+            dir=path.parent,
+            prefix=f".{path.name}.",
+            suffix=".tmp",
+            delete=False,
+        ) as handle:
+            handle.write(rendered)
+            temporary = Path(handle.name)
+        temporary.replace(path)
+    return changed
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("path", type=Path, help="Path to canonical sources.json")
+    args = parser.parse_args()
+    changed = normalize_file(args.path)
+    print(f"normalized visual sources: {changed}")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

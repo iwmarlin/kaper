@@ -41,9 +41,11 @@ from source_slugs import canonical_source_slug
 from visual_sources import (
     VISUAL_RIGHTS_NARRATIVE_PATTERN,
     WIKIMEDIA_ORGANIZATION_ID,
+    is_direct_nac_photograph,
     is_normalized_visual_source,
     is_wikimedia_commons_file_page,
     is_wikimedia_source,
+    normalize_visual_source,
 )
 
 
@@ -1105,6 +1107,16 @@ class ExportValidator:
                         f"Source {source_id}: missing recording repository organization "
                         f"{recording_organization}"
                     )
+            if is_direct_nac_photograph(source):
+                expected_visual = dict(source)
+                normalize_visual_source(expected_visual)
+                for field_name in ("sourceType", "title"):
+                    if source.get(field_name) != expected_visual.get(field_name):
+                        self.errors.append(
+                            f"Source {source_id}: direct NAC photograph must use "
+                            f"{field_name}={expected_visual.get(field_name)!r}, not "
+                            f"{source.get(field_name)!r}"
+                        )
             if is_normalized_visual_source(source):
                 if source.get("primaryUrl") and not source.get("accessDate"):
                     self.errors.append(

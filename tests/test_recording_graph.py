@@ -513,7 +513,15 @@ class RecordingGraphTests(unittest.TestCase):
             ]
             self.assertEqual(len(carrying), 1)
             source = carrying[0]
-            self.assertEqual(source["sourceType"], "sheet_music")
+            if source["id"] == "SRC0775":
+                # No. 6 is represented by the actual score preserved in the
+                # Bronislaw Kaper Papers.
+                self.assertEqual(source["sourceType"], "sheet_music")
+                self.assertIn("American Heritage Center", source["repository"])
+            else:
+                # The other linked records prove publication through
+                # Hofmeister's register; they do not represent examined scores.
+                self.assertEqual(source["sourceType"], "sheet_music_catalogue")
             self.assertIn(work_id, source["workIds"])
             self.assertIn(f"Jazz Drops, no. {number}", source["fullCitation"])
 

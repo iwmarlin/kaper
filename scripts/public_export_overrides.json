@@ -2370,10 +2370,11 @@
         }
       },
       "SRC0435": {
-        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "reason": "Identify the represented NAC object as an archival photograph rather than its Szukaj w Archiwach access record, and retain the original Polish archival title.",
         "fields": {
           "date": "n.d.",
-          "sourceType": "archival_digital_record"
+          "sourceType": "archival_photograph",
+          "title": "Uniwersytet Warszawski — Pałac Kazimierzowski przy Krakowskim Przedmieściu"
         }
       },
       "SRC0436": {
