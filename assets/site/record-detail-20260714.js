@@ -1,4 +1,4 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=994fb6376c";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=12d5b0fc4c";
 import {
   authorityLinkList,
   certaintyBadge,
@@ -29,7 +29,7 @@ import {
   sourceStatusLabel,
   typeBadge,
   updateMeta,
-} from "./core.js?v=994fb6376c";
+} from "./core.js?v=12d5b0fc4c";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 let target = null;
@@ -236,7 +236,6 @@ const SOURCE_TYPE_LABELS = {
   periodical_article: "Periodical articles",
   archival_digital_record: "Archival digital records",
   archival_manuscript_holding: "Archival manuscript holdings",
-  web_article: "Web articles",
   other: "Other sources",
 };
 

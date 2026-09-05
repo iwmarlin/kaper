@@ -48,6 +48,10 @@ class SourceTypeLabelTests(unittest.TestCase):
             )
             seen[label] = key
 
+    def test_web_article_is_not_a_singleton_category(self):
+        self.assertNotIn("web_article", source_types())
+        self.assertNotIn("web_article", curated_labels())
+
     def test_commons_held_file_records_use_the_dedicated_kind(self):
         offenders = []
         for source in json.loads(

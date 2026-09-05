@@ -1045,6 +1045,11 @@ class ExportValidator:
                     f"Source {source_id}: legacy sourceType 'discography' must be "
                     "normalized to recording_discographic_source"
                 )
+            if source.get("sourceType") == "web_article":
+                self.errors.append(
+                    f"Source {source_id}: sourceType 'web_article' duplicates the "
+                    "broader web_page category and must be normalized to web_page"
+                )
             research_note = str(source.get("researchNote", "")).strip()
             research_note_type = str(source.get("researchNoteType", "")).strip()
             if bool(research_note) != bool(research_note_type):

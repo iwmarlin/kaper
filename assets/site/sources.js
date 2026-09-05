@@ -12,7 +12,7 @@ import {
   renderError,
   renderLoading,
   safeExternalUrl,
-} from "./core.js?v=994fb6376c";
+} from "./core.js?v=12d5b0fc4c";
 
 // This page is intentionally not part of NAV_ITEMS yet. It can be reviewed as
 // a direct route without changing the site's established primary pathways.
@@ -41,7 +41,6 @@ const SOURCE_TYPE_LABELS = Object.freeze({
   sound_recording_catalogue: "Sound-recording catalogue",
   soundtrack_database: "Soundtrack database",
   visual_document: "Visual document",
-  web_article: "Web article",
   web_page: "Web page",
   wikimedia_article_page: "Wikipedia article",
   wikimedia_commons_file: "Wikimedia Commons file",

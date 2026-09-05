@@ -84,7 +84,6 @@ PUBLICATION_SOURCE_TYPES = {
     "periodical_article",
     "press_item",
     "secondary_literature",
-    "web_article",
     "web_page",
     "wikimedia_article_page",
 }
