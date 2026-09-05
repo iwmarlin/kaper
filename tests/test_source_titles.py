@@ -124,6 +124,64 @@ class SourceTitleTests(unittest.TestCase):
         ]
         self.assertEqual(wrong, [], "a Hofmeister entry is titled off the house form")
 
+    def test_hofmeister_catalogue_entries_use_issue_level_metadata(self):
+        records = [
+            record
+            for record in read("sources.json")
+            if record.get("sourceType") == "sheet_music_catalogue"
+            and "Hofmeister" in (record.get("title") or "")
+        ]
+        self.assertGreater(len(records), 0, "the Hofmeister catalogue family is empty")
+
+        wrong = []
+        for record in records:
+            if not (record.get("shortCitation") or "").startswith("Hofmeister, "):
+                wrong.append(
+                    f"{record['id']}: shortCitation={record.get('shortCitation')!r}"
+                )
+            issue = re.search(
+                r"\((January|February|March|April|May|June|July|August|"
+                r"September|October|November|December) (\d{4})\)",
+                record.get("fullCitation") or "",
+            )
+            if issue and not re.fullmatch(r"\d{4}-\d{2}", record.get("date") or ""):
+                wrong.append(f"{record['id']}: date={record.get('date')!r}")
+            if record.get("publication") == "Hofmeisters Musikalisch-literarischer Monatsbericht":
+                wrong.append(
+                    f"{record['id']}: the register was stored as the music publication"
+                )
+
+        self.assertEqual(
+            wrong,
+            [],
+            "a Hofmeister catalogue entry does not follow the family's field semantics",
+        )
+
+    def test_a_hofmeister_scan_is_not_presented_as_examined_sheet_music(self):
+        scan_repositories = {
+            "Internet Archive",
+            "Internet Archive / Friedrich Hofmeister",
+            "Österreichische Nationalbibliothek / ANNO",
+        }
+        wrong = [
+            f"{record['id']}: {record.get('sourceType')!r}"
+            for record in read("sources.json")
+            if any(
+                marker in (record.get("fullCitation") or "")
+                for marker in (
+                    "Hofmeisters Musikalisch-literarischer Monatsbericht",
+                    "Friedrich Hofmeister, Musikalisch-literarischer Monatsbericht",
+                )
+            )
+            and record.get("repository") in scan_repositories
+            and record.get("sourceType") != "sheet_music_catalogue"
+        ]
+        self.assertEqual(
+            wrong,
+            [],
+            "a catalogue notice is being represented as a consulted score",
+        )
+
     def test_a_descriptor_is_not_left_in_another_language(self):
         # Source titles describe in English; the thing being described keeps its
         # own language. Four records had the descriptor itself in German or

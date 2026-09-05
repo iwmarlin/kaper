@@ -30,6 +30,11 @@ from recording_sources import (
     recording_hostname,
 )
 from repository_organizations import expected_repository_organization_ids
+from hofmeister_sources import is_hofmeister_catalogue_source, normalize_hofmeister_source
+from sheet_music_sources import (
+    is_catalogue_landing_page_for_sheet_music,
+    normalize_sheet_music_source,
+)
 from source_dates import SOURCE_IDENTIFIER_SCHEMES, source_date_errors
 from source_access_dates import has_redundant_access_date
 from source_slugs import canonical_source_slug
@@ -977,6 +982,30 @@ class ExportValidator:
             source_id = source["id"]
             for error in source_date_errors(source):
                 self.errors.append(f"Source {source_id}: {error}")
+            if is_hofmeister_catalogue_source(source):
+                expected = dict(source)
+                normalize_hofmeister_source(expected)
+                for field_name in (
+                    "sourceType",
+                    "title",
+                    "shortCitation",
+                    "date",
+                    "dateRole",
+                ):
+                    if source.get(field_name) != expected.get(field_name):
+                        self.errors.append(
+                            f"Source {source_id}: Hofmeister register scan must use "
+                            f"{field_name}={expected.get(field_name)!r}, not "
+                            f"{source.get(field_name)!r}"
+                        )
+            if is_catalogue_landing_page_for_sheet_music(source):
+                expected = dict(source)
+                normalize_sheet_music_source(expected)
+                if source.get("sourceType") != expected.get("sourceType"):
+                    self.errors.append(
+                        f"Source {source_id}: a library catalogue landing page must "
+                        "use sourceType='sheet_music_catalogue', not 'sheet_music'"
+                    )
             if (
                 source.get("sourceType") == "sheet_music"
                 and source.get("repository") == HOFMEISTER_REPOSITORY

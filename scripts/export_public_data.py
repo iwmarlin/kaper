@@ -17,6 +17,7 @@ from urllib.parse import parse_qsl, urlencode, urlparse, urlunparse
 
 from authority_sources import normalize_authority_source
 from filmographic_sources import normalize_filmographic_source
+from hofmeister_sources import normalize_hofmeister_source
 from recording_sources import normalize_recording_source
 from repository_organizations import expected_repository_organization_ids
 from source_access_dates import normalize_access_citation
@@ -27,6 +28,7 @@ from source_dates import (
     usco_identifiers,
 )
 from source_slugs import canonical_source_slug
+from sheet_music_sources import normalize_sheet_music_source
 from visual_sources import normalize_visual_source
 
 
@@ -1380,6 +1382,8 @@ class PublicExporter:
         for source in self.output_records["Sources"]:
             source["slug"] = canonical_source_slug(source)
             normalize_visual_source(source)
+            normalize_hofmeister_source(source)
+            normalize_sheet_music_source(source)
             if source.get("sourceType") == "authority_record":
                 normalize_authority_source(source)
             if source.get("sourceType") == "recording_discographic_source":
