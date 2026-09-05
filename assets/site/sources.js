@@ -12,7 +12,7 @@ import {
   renderError,
   renderLoading,
   safeExternalUrl,
-} from "./core.js?v=f2725d37db";
+} from "./core.js?v=994fb6376c";
 
 // This page is intentionally not part of NAV_ITEMS yet. It can be reviewed as
 // a direct route without changing the site's established primary pathways.

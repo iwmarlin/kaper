@@ -28,7 +28,10 @@ let manifestPromise;
 export function loadManifest() {
   if (!manifestPromise) {
     const url = new URL(`${DATA_ROOT}manifest.json`, document.baseURI);
-    manifestPromise = fetch(url).then(async (response) => {
+    // The manifest is the small, mutable pointer to the current public data
+    // release. Revalidate it on every page load; individual tables can then be
+    // cached safely under a content-derived URL.
+    manifestPromise = fetch(url, { cache: "no-cache" }).then(async (response) => {
       if (!response.ok) throw new Error(`Could not load public manifest (${response.status})`);
       return response.json();
     });
@@ -36,19 +39,28 @@ export function loadManifest() {
   return manifestPromise;
 }
 
+function tableVersion(manifest, filename) {
+  const file = manifest?.files?.find((item) => item.file === filename);
+  return typeof file?.sha256 === "string" ? file.sha256.slice(0, 12) : "";
+}
+
 export async function loadTable(name) {
   if (!TABLE_FILES[name]) throw new Error(`Unknown public table: ${name}`);
   if (!tableCache.has(name)) {
-    const url = new URL(`${DATA_ROOT}${TABLE_FILES[name]}`, document.baseURI);
+    const filename = TABLE_FILES[name];
     tableCache.set(
       name,
-      fetch(url).then(async (response) => {
+      loadManifest().then(async (manifest) => {
+        const url = new URL(`${DATA_ROOT}${filename}`, document.baseURI);
+        const version = tableVersion(manifest, filename);
+        if (version) url.searchParams.set("v", version);
+        const response = await fetch(url);
         if (!response.ok) {
-          throw new Error(`Could not load ${TABLE_FILES[name]} (${response.status})`);
+          throw new Error(`Could not load ${filename} (${response.status})`);
         }
         const payload = await response.json();
         if (!Array.isArray(payload.records)) {
-          throw new Error(`${TABLE_FILES[name]} has an invalid public payload`);
+          throw new Error(`${filename} has an invalid public payload`);
         }
         return payload.records;
       }),
