@@ -94,28 +94,15 @@ class CitationTypographyTests(unittest.TestCase):
 
 
 class TitleAndCitationTests(unittest.TestCase):
-    """Where a source's title is its short citation, the title field carries
-    citation apparatus rather than the name of the thing. Seven records do, and
-    what their titles should be is an editorial question, not a mechanical one."""
+    """A source title names the object; citation apparatus belongs elsewhere."""
 
-    KNOWN = {
-        "SRC0023", "SRC0110", "SRC0333", "SRC0337", "SRC0407", "SRC0409", "SRC0424",
-    }
-
-    def test_no_new_source_repeats_its_citation_as_its_title(self):
-        offenders = {
+    def test_no_source_repeats_its_citation_as_its_title(self):
+        offenders = [
             record["id"]
             for record in sources()
             if (record.get("title") or "").strip() == (record.get("shortCitation") or "").strip()
-        }
-        self.assertEqual(
-            sorted(offenders - self.KNOWN), [],
-            "a new source repeats its short citation as its title",
-        )
-        self.assertTrue(
-            offenders <= self.KNOWN,
-            "the known list must not grow",
-        )
+        ]
+        self.assertEqual(offenders, [], "a source repeats its short citation as its title")
 
 
 if __name__ == "__main__":

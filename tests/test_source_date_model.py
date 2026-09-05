@@ -67,6 +67,23 @@ class SourceDateModelTests(unittest.TestCase):
         }
         self.assertEqual(errors, {})
 
+    def test_unidentified_digital_reissues_are_not_discographic_sources(self) -> None:
+        records = json.loads(
+            (PUBLIC / "sources.json").read_text(encoding="utf-8")
+        )["records"]
+        offenders = [
+            source["id"]
+            for source in records
+            if source.get("sourceType") == "recording_discographic_source"
+            and "does not identify the label, catalogue number or matrix of the original disc"
+            in (source.get("researchNote") or "").casefold()
+        ]
+        self.assertEqual(
+            offenders,
+            [],
+            "a digital reissue without an identified original disc is classified as discographic",
+        )
+
     def test_source_card_explains_both_date_and_its_role(self) -> None:
         node = shutil.which("node")
         if not node:
