@@ -24,10 +24,19 @@ class SecondarySourceTypeTests(unittest.TestCase):
                 source_id,
             )
 
-    def test_forthcoming_studies_are_not_presented_as_books(self) -> None:
+    def test_forthcoming_publications_use_their_document_form(self) -> None:
         records = sources_by_id()
-        self.assertEqual(records["SRC0490"]["sourceType"], "secondary_literature")
-        self.assertEqual(records["SRC0491"]["sourceType"], "periodical_article")
+        for source_id in ("SRC0490", "SRC0491"):
+            self.assertEqual(
+                records[source_id]["sourceType"],
+                "periodical_article",
+                source_id,
+            )
+
+        self.assertEqual(
+            records["SRC0490"].get("publication"),
+            "Roczniki Humanistyczne, fascicle 12",
+        )
 
     def test_genuine_books_remain_books(self) -> None:
         records = sources_by_id()
