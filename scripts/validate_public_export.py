@@ -32,6 +32,7 @@ from recording_sources import (
 from repository_organizations import expected_repository_organization_ids
 from hofmeister_sources import is_hofmeister_catalogue_source, normalize_hofmeister_source
 from sheet_music_sources import (
+    AUDITED_SOURCE_TYPE_OVERRIDES,
     is_catalogue_landing_page_for_sheet_music,
     normalize_sheet_music_source,
 )
@@ -1008,6 +1009,21 @@ class ExportValidator:
                         f"Source {source_id}: a library catalogue landing page must "
                         "use sourceType='sheet_music_catalogue', not 'sheet_music'"
                     )
+            audited_source_type = AUDITED_SOURCE_TYPE_OVERRIDES.get(source_id)
+            if audited_source_type and source.get("sourceType") != audited_source_type:
+                self.errors.append(
+                    f"Source {source_id}: audited object semantics require "
+                    f"sourceType={audited_source_type!r}, not "
+                    f"{source.get('sourceType')!r}"
+                )
+            if (
+                "doctoral dissertation" in str(source.get("fullCitation", "")).casefold()
+                and source.get("sourceType") != "secondary_literature"
+            ):
+                self.errors.append(
+                    f"Source {source_id}: a doctoral dissertation must use "
+                    "sourceType='secondary_literature'"
+                )
             if (
                 source.get("sourceType") == "sheet_music"
                 and source.get("repository") == HOFMEISTER_REPOSITORY

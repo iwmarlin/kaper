@@ -576,12 +576,25 @@
     },
     "Sources": {
       "SRC0854": {
-        "reason": "Identify the publisher of the Sirius-Mappen from the historical imprint form catalogued by the Austrian National Library and remove the superseded claim that the publishing house was unresolved.",
+        "reason": "Describe the present evidence at the level actually consulted: the Internet Archive item contains digitized issues, but the work links in this aggregate record derive from its indexed contents rather than examined notation.",
         "fields": {
-          "fullCitation": "Sirius-Verlag Franz Sobotka. Sirius-Mappen (36 Hefte). Wien–Berlin, 1927–January 1933. Six annual series. Digitised set with an indexed list of 278 titles, Internet Archive. Accessed 27 August 2026.",
+          "title": "Sirius-Mappen (36 Hefte) — indexed contents",
+          "shortCitation": "Sirius-Mappen (36 Hefte), 1927–1933 — indexed contents",
+          "fullCitation": "Sirius-Verlag Franz Sobotka. Sirius-Mappen (36 Hefte). Wien–Berlin, 1927–January 1933. Six annual series, digitized by the Internet Archive; aggregate record based on the indexed contents of 278 titles.",
+          "sourceType": "sheet_music_catalogue",
+          "dateRole": "catalogue_volume",
           "creator": "Sirius-Verlag Franz Sobotka",
           "publication": "Sirius-Verlag Franz Sobotka, Wien–Berlin",
-          "researchNote": "The indexed contents name eight Kaper titles, each with its series and issue number: “Auf Wiederseh’n, Herr Doktor! Auf Wiederseh’n, Frau Doktor!” (4-05), “Sagen kleine Mädels ‘nein’” (5-07), “Mondnacht in Sanssouci” (6-02), “Heut’ bin ich gut aufgelegt!”, “Ich weiß ein kleines Café” and “Es wird schon wieder besser” (all 6-09), “Wer weint heut’ aus Liebe Tränen” (6-10) and “Tränen in der Geige” (7-01). All eight use lyrics by Fritz Rotter. The number 7-01 falls outside the six annual Sirius-Mappen series and requires separate interpretation. Contemporary Sirius imprints are catalogued by the Austrian National Library under Sirius Verlag Franz Sobotka."
+          "researchNote": "The indexed contents name eight Kaper titles, each with its series and issue number: “Auf Wiederseh’n, Herr Doktor! Auf Wiederseh’n, Frau Doktor!” (4-05), “Sagen kleine Mädels ‘nein’” (5-07), “Mondnacht in Sanssouci” (6-02), “Heut’ bin ich gut aufgelegt!”, “Ich weiß ein kleines Café” and “Es wird schon wieder besser” (all 6-09), “Wer weint heut’ aus Liebe Tränen” (6-10) and “Tränen in der Geige” (7-01). The work-level links in this record document those index entries, not consultation of the individual scores. All eight entries name Fritz Rotter as lyricist. The number 7-01 falls outside the six annual Sirius-Mappen series and requires separate interpretation. Contemporary Sirius imprints are catalogued by the Austrian National Library under Sirius Verlag Franz Sobotka."
+        }
+      },
+      "SRC0855": {
+        "reason": "Classify the aggregate Tonfilm Theater Tanz record by the indexed contents actually used for its work links; retain SRC0296 separately as the examined item-level score.",
+        "fields": {
+          "sourceType": "sheet_music_catalogue",
+          "dateRole": "catalogue_volume",
+          "researchNote": "The index names four Kaper numbers with their year and issue: “Wenn ich ’mal eine Dummheit mach’” (33-04), “Immer, wenn ich glücklich bin, muß ich schrecklich weinen” (33-10), “In 24 Stunden kann soviel gescheh’n” (33-11) and “Heut’ ist Karneval” (35-08), the last documented separately from the issue’s notated page. The index gives the composers of “Immer, wenn ich glücklich bin” and “In 24 Stunden kann soviel gescheh’n” as Jurmann and Kaper. Hofmeister registers the same two, in April 1933, under the composer name Ernst Martin. The aggregate record documents the index, not the credit lines printed in the three unexamined 1933 issues.",
+          "researchNoteType": "identity_assessment"
         }
       },
       "SRC0002": {
@@ -1710,24 +1723,29 @@
         }
       },
       "SRC0203": {
-        "reason": "Anchor the physical score citation in a verified institutional holding and distinguish it from the separate Deutsches Lied catalogue record SRC0787.",
+        "reason": "Limit the record to what the linked NYPL finding aid establishes: a physical piano-vocal holding of the anthology, not examination of the score or its page-level song credits.",
         "fields": {
-          "shortCitation": "1000 Takte-Tanz, Band 2 (Alrobi, 1929), p. 12 — NYPL, Alfred Grunwald Papers",
-          "fullCitation": "1000 Takte-Tanz, Band 2: 22 der populärsten Tanz- und Gesangs-Schlager. Berlin: Alrobi-Musikverlag, 1929. Piano-vocal score; “Wenn wir nicht beide in Gesellschaft wären, würde ich dir Liebe schwören (Vergißmeinnicht),” music by Bronisław Kaper and words by Fritz Rotter, appears on p. 12. Alfred Grunwald Papers, *T-Mss 1998-030, series IV, box 17, folder 1, Billy Rose Theatre Division, The New York Public Library for the Performing Arts.",
-          "title": "1000 Takte-Tanz, Band 2",
-          "creator": "Bronisław Kaper (music); Fritz Rotter (words)",
+          "shortCitation": "NYPL, Alfred Grunwald Papers, box 17, folder 1 — 1000 Takte Tanz, Band 2",
+          "fullCitation": "The New York Public Library. Guide to the Alfred Grunwald Papers, 1907–2004, undated, *T-Mss 1998-030. Series IV: Scores, box 17, folder 1: “1000 Takte Tanz, Band 2, undated (Piano and vocal score. Sheet music.).” Billy Rose Theatre Division, The New York Public Library for the Performing Arts.",
+          "sourceType": "archival_manuscript_holding",
+          "title": "Alfred Grunwald Papers — holding record for 1000 Takte Tanz, Band 2",
+          "creator": "The New York Public Library",
           "repository": "Billy Rose Theatre Division, The New York Public Library for the Performing Arts",
-          "publication": "Alrobi-Musikverlag, Berlin",
+          "publication": "The New York Public Library, 2007",
+          "date": "n.d.",
+          "dateRole": "described_item",
           "accessDate": "2026-08-30",
           "primaryUrl": "https://nyplorg-data-archives.s3.amazonaws.com/uploads/collection/pdf_finding_aid/thegrunw.pdf",
           "organizationIds": [
-            "ORG033",
-            "ORG049",
             "ORG164"
           ],
-          "researchNote": "The volume was previously dated here to about 1939. Contemporary trade evidence places Band 2 in 1929. The NYPL finding aid documents a physical piano-vocal copy in box 17, folder 1; SRC0787 remains the separate Deutsches Lied index record for the song and its page-level metadata.",
-          "researchNoteType": "date_assessment"
-        }
+          "researchNote": "The finding aid documents only the anthology’s physical holding and describes it as undated. A separate Deutsches Lied database record supplies the song title, attribution, 1929 date and page 12; those details do not come from the finding aid.",
+          "researchNoteType": "evidence_note"
+        },
+        "removeFields": [
+          "contributionIds",
+          "titleVariantIds"
+        ]
       },
       "SRC0204": {
         "reason": "Replace an uncited description of an assumed sheet-music copy with the exact Hofmeister catalogue entry and institutional access record.",
@@ -1937,8 +1955,30 @@
           "accessDate": "2026-07-24"
         }
       },
+      "SRC0286": {
+        "reason": "Classify the linked Sirius-Mappe page by the evidence it contains: a publisher's contents list for 1000 Takte Tanz, Band 7, not the anthology's notation.",
+        "fields": {
+          "title": "Sirius-Mappe 6-04 — contents list for 1000 Takte Tanz, Band 7",
+          "shortCitation": "Sirius-Mappe 6-04 — 1000 Takte Tanz, Band 7, item 18",
+          "fullCitation": "Sirius-Mappe 6-04. Publisher’s contents list for 1000 Takte Tanz, Band 7: 22 der populärsten Tanz- und Gesangs-Schlager (Berlin: Alrobi-Musikverlag, 1930), item 18: “Spiel’ mir auf der Balalaika einen russischen Tango. Tangolied.” Digitized in the Sirius-Mappen set, Internet Archive.",
+          "sourceType": "sheet_music_catalogue",
+          "creator": "Sirius-Verlag Franz Sobotka",
+          "repository": "Internet Archive",
+          "publication": "Sirius-Mappe 6-04",
+          "dateRole": "described_item",
+          "organizationIds": [
+            "ORG052",
+            "ORG067"
+          ],
+          "researchNote": "The linked page is a contents list: it documents the title’s inclusion as item 18 in Band 7 but does not reproduce the sheet music or its credit line. The composer, lyricist and publisher credits are supported by separate item-level and catalogue sources.",
+          "researchNoteType": "evidence_note"
+        },
+        "removeFields": [
+          "contributionIds"
+        ]
+      },
       "SRC0288": {
-        "reason": "Correct the dissertation author's first name, date and document classification; the title page and University of Vienna dissertation list identify Wolfgang Stanicek as the author in 2010.",
+        "reason": "Correct the dissertation author's first name and date and classify the dissertation as secondary literature rather than a book or a discographic database.",
         "fields": {
           "fullCitation": "Wolfgang Stanicek, Austin Egen: Schlager-Komponist, Sänger und Musikverleger (doctoral dissertation, University of Vienna, 2010), discographic entry for “Wer weiß, ob du mich auch liebst”: Orchester Bernard Etté / Heinz Egon, 1931; W 202; music credited to Bronisław Kaper and Hermann Scheibenhofer; text by Fritz Rotter; publisher Edition Karl Brüll.",
           "creator": "Wolfgang Stanicek",
@@ -1946,11 +1986,11 @@
           "publication": "Doctoral dissertation, University of Vienna",
           "date": "2010",
           "url": "https://musikwissenschaft.univie.ac.at/forschung/dissertationen/",
-          "sourceType": "book"
+          "sourceType": "secondary_literature"
         }
       },
       "SRC0289": {
-        "reason": "Identify the record correctly as an entry in Wolfgang Stanicek's 2010 University of Vienna doctoral dissertation, matching SRC0288, rather than as an online database or a user-supplied research file.",
+        "reason": "Identify the record correctly as an entry in Wolfgang Stanicek's 2010 University of Vienna doctoral dissertation and classify that dissertation as secondary literature.",
         "fields": {
           "fullCitation": "Wolfgang Stanicek, Austin Egen: Schlager-Komponist, Sänger und Musikverleger (doctoral dissertation, University of Vienna, 2010), work-catalog entry for “Ich weiß ein kleines Café”: tango; music by Austin Egen and Bronisław Kaper; text by Fritz Rotter; Drei Masken, Berlin, later Universal Music Publishing, Berlin; Roehr release E 12, 14 November 1930, under contract of 8 April 1930; AKM registrations 30 January 1930 and 20 February 1931; GEMA work no. 1689504-001; ISWC T-800.619.517-2; sheet music for voice and piano, Drei Masken, © 1931, D-B 217.735.",
           "creator": "Wolfgang Stanicek",
@@ -1958,11 +1998,11 @@
           "publication": "Doctoral dissertation, University of Vienna",
           "date": "2010",
           "url": "https://musikwissenschaft.univie.ac.at/forschung/dissertationen/",
-          "sourceType": "book"
+          "sourceType": "secondary_literature"
         }
       },
       "SRC0290": {
-        "reason": "Identify the record correctly as an entry in Wolfgang Stanicek's 2010 University of Vienna doctoral dissertation, matching SRC0288, rather than as an online database or a user-supplied research file.",
+        "reason": "Identify the record correctly as an entry in Wolfgang Stanicek's 2010 University of Vienna doctoral dissertation and classify that dissertation as secondary literature.",
         "fields": {
           "fullCitation": "Wolfgang Stanicek, Austin Egen: Schlager-Komponist, Sänger und Musikverleger (doctoral dissertation, University of Vienna, 2010), work-catalog entry for “Diese Melodie sing ich nur für Sie”: tango; music by Austin Egen and Bronisław Kaper; text by Fritz Rotter; manuscript source; AKM registration 20 February 1931; no GEMA work number.",
           "creator": "Wolfgang Stanicek",
@@ -1970,7 +2010,19 @@
           "publication": "Doctoral dissertation, University of Vienna",
           "date": "2010",
           "url": "https://musikwissenschaft.univie.ac.at/forschung/dissertationen/",
-          "sourceType": "book"
+          "sourceType": "secondary_literature"
+        }
+      },
+      "SRC0490": {
+        "reason": "Classify the forthcoming scholarly study by its function as secondary literature, not as a book.",
+        "fields": {
+          "sourceType": "secondary_literature"
+        }
+      },
+      "SRC0491": {
+        "reason": "Classify the forthcoming contribution to Polski Rocznik Muzykologiczny by its document form as a periodical article, not as a book.",
+        "fields": {
+          "sourceType": "periodical_article"
         }
       },
       "SRC0287": {
@@ -10121,12 +10173,12 @@
         "fields": {"id": "SRC0773", "shortCitation": "National Museum, Prague, discography entry for “Fiesta (Bianca)”", "fullCitation": "National Museum, Prague, discographic database. “Fiesta (Bianca),” matrix 18145; music by W. G. Samuels and L. Whitcup; recording conducted by Efim Schachmeister.", "sourceType": "recording_discographic_source", "title": "Fiesta (Bianca)", "creator": "W. G. Samuels and L. Whitcup", "repository": "National Museum, Prague", "date": "1931", "accessDate": "2026-08-23", "reliability": "high", "sourceStatus": "verified", "slug": "src0773-national-museum-fiesta-bianca-samuels-whitcup", "primaryUrl": "https://diskografie.nm.cz/osoby/l-whitcup/", "workIds": ["W-O012"], "otherWorkIds": ["O012"], "contributionIds": ["CON-O012-C-P177", "CON-O012-C-P178"]}
       },
       "SRC0774": {
-        "reason": "Add the item-level sheet-music record that distinguishes Ray Henderson's music credit for Sonny Boy.",
-        "fields": {"id": "SRC0774", "shortCitation": "University of Maine, sheet-music record for “Sonny Boy” (1928)", "fullCitation": "University of Maine, Vocal Popular Sheet Music Collection. “Sonny Boy,” theme song from The Singing Fool. Music by Ray Henderson; associated songwriting credits to B. G. De Sylva, Lew Brown and Al Jolson. New York: De Sylva, Brown and Henderson, 1928. Score VP_005091.", "sourceType": "sheet_music", "title": "Sonny Boy", "creator": "Ray Henderson; B. G. De Sylva; Lew Brown; Al Jolson", "repository": "University of Maine, Vocal Popular Sheet Music Collection", "publication": "De Sylva, Brown and Henderson, New York", "date": "1928", "accessDate": "2026-08-23", "reliability": "high", "sourceStatus": "verified", "slug": "src0774-university-of-maine-sonny-boy-ray-henderson", "primaryUrl": "https://digitalcommons.library.umaine.edu/mmb-vp/6492/", "workIds": ["W-O017"], "otherWorkIds": ["O017"], "contributionIds": ["CON-O017-C-P182"]}
+        "reason": "Describe the University of Maine item as the downloadable digitized score it provides, not merely as a catalogue record.",
+        "fields": {"id": "SRC0774", "shortCitation": "“Sonny Boy,” digitized vocal score (De Sylva, Brown and Henderson, 1928) — University of Maine", "fullCitation": "“Sonny Boy,” theme song from The Singing Fool. Music by Ray Henderson; associated songwriting credits to B. G. De Sylva, Lew Brown and Al Jolson. New York: De Sylva, Brown and Henderson, 1928. Vocal score, 5 pp., VP_005091. Digitized by the University of Maine, Vocal Popular Sheet Music Collection.", "sourceType": "sheet_music", "title": "Sonny Boy — digitized vocal score", "creator": "Ray Henderson; B. G. De Sylva; Lew Brown; Al Jolson", "repository": "University of Maine, Vocal Popular Sheet Music Collection", "publication": "De Sylva, Brown and Henderson, New York", "date": "1928", "accessDate": "2026-08-23", "reliability": "high", "sourceStatus": "verified", "slug": "src0774-university-of-maine-sonny-boy-ray-henderson", "primaryUrl": "https://digitalcommons.library.umaine.edu/mmb-vp/6492/", "workIds": ["W-O017"], "otherWorkIds": ["O017"], "contributionIds": ["CON-O017-C-P182"]}
       },
       "SRC0775": {
-        "reason": "Add the surviving archival score as item-level evidence for Jazz Drops no. 6 and as evidence that the series cover lists nos. 1–8.",
-        "fields": {"id": "SRC0775", "shortCitation": "Wendling, “Swinging in a Hammock,” Jazz Drops no. 6 (Alberti, 1931; transcription by Dr. B. Kaper)", "fullCitation": "Pete Wendling, “Swinging in a Hammock.” Music by Pete Wendling; concert transcription by Dr. B. Kaper. Jazz Drops, no. 6. Berlin: Alberti, 1931. Plate M.V.A. 5824. Bronislaw Kaper Papers, Collection 03193, box 1. American Heritage Center, University of Wyoming, Laramie.", "sourceType": "sheet_music", "title": "Swinging in a Hammock — Jazz Drops no. 6", "creator": "Pete Wendling (original composition); Dr. B. Kaper (piano transcription)", "repository": "American Heritage Center, University of Wyoming", "publication": "Alberti, Berlin", "date": "1931", "accessDate": "2026-08-23", "reliability": "high", "sourceStatus": "verified", "slug": "src0775-ahc-jazz-drops-no-6-swinging-in-a-hammock", "primaryUrl": "https://www.uwyo.edu/ahc/_files/pdffa/03193.pdf", "organizationIds": ["ORG054", "ORG056"], "workIds": ["W-O008", "W-O028"], "otherWorkIds": ["O008", "O028"], "workRelationIds": ["REL0208"], "contributionIds": ["CON-O028-A-P009", "CON-O028-C-P194", "CON-O028-PUB-ORG054"], "nameVariantIds": ["PNV0019"]}
+        "reason": "Retain the source as item-level sheet music because the five-page archival reproduction was examined, while stating clearly that the public URL opens only the collection guide.",
+        "fields": {"id": "SRC0775", "shortCitation": "Wendling, “Swinging in a Hammock,” Jazz Drops no. 6 (Alberti, 1931; transcription by Dr. B. Kaper)", "fullCitation": "Pete Wendling, “Swinging in a Hammock.” Music by Pete Wendling; concert transcription by Dr. B. Kaper. Jazz Drops, no. 6. Berlin: Alberti, 1931. Plate M.V.A. 5824. Bronislaw Kaper Papers, Collection 03193, box 1. American Heritage Center, University of Wyoming, Laramie.", "sourceType": "sheet_music", "title": "Swinging in a Hammock — Jazz Drops no. 6", "creator": "Pete Wendling (original composition); Dr. B. Kaper (piano transcription)", "repository": "American Heritage Center, University of Wyoming", "publication": "Alberti, Berlin", "date": "1931", "accessDate": "2026-08-23", "reliability": "high", "sourceStatus": "verified", "slug": "src0775-ahc-jazz-drops-no-6-swinging-in-a-hammock", "primaryUrl": "https://www.uwyo.edu/ahc/_files/pdffa/03193.pdf", "organizationIds": ["ORG054", "ORG056"], "workIds": ["W-O008", "W-O028"], "otherWorkIds": ["O008", "O028"], "workRelationIds": ["REL0208"], "contributionIds": ["CON-O028-A-P009", "CON-O028-C-P194", "CON-O028-PUB-ORG054"], "nameVariantIds": ["PNV0019"], "researchNote": "The five-page score was examined in a research reproduction supplied by the American Heritage Center. The public link leads to the collection guide, which identifies “Jazz Drops: Swinging in a Hammock” under Music Scores; it does not provide the score images.", "researchNoteType": "object_context"}
       },
       "SRC0776": {
         "reason": "Add item-level Hofmeister evidence for Jazz Drops no. 7 without creating an unsupported item record for no. 8.",
@@ -10153,7 +10205,7 @@
         "fields": {"id": "SRC0781", "shortCitation": "Los Angeles Times, Johnny Green at the piano, 31 July 1970; UCLA Library", "fullCitation": "Los Angeles Times. Johnny Green seated at a piano examining sheet music, 31 July 1970. Los Angeles Times Photographic Collection, UCLA Library, ark:/21198/zz0002w3q4.", "sourceType": "wikimedia_commons_file", "title": "Johnny Green at the piano — Los Angeles Times photograph", "creator": "Los Angeles Times", "repository": "UCLA Library / Wikimedia Commons", "publication": "Los Angeles Times Photographic Collection", "date": "1970-07-31", "accessDate": "2026-08-23", "reliability": "high", "sourceStatus": "verified", "slug": "src0781-commons-johnny-green-portrait-1970", "primaryUrl": "https://commons.wikimedia.org/wiki/File:Johnny_Green,_composer.jpg", "personIds": ["P195"], "organizationIds": ["ORG090"], "mediaIds": ["M405"]}
       },
       "SRC0789": {
-        "reason": "Document the surviving Cocktails cover and the later Fiesta score used to distinguish the original ten-title, two-booklet contents from the 1932 associated issue.",
+        "reason": "Document the surviving Cocktails cover and Fiesta score from the examined 25-page archival reproduction, distinguishing this object-level source from the public collection guide.",
         "fields": {
           "id": "SRC0789",
           "shortCitation": "Kaper, “Cocktails” cover and “Fiesta” score (Alberti, 1929–1932); Bronislaw Kaper Papers, box 1",
@@ -10171,7 +10223,9 @@
           "organizationIds": ["ORG054", "ORG056"],
           "workIds": ["W-O007", "W-O012"],
           "otherWorkIds": ["O007", "O012"],
-          "workRelationIds": ["REL0178"]
+          "workRelationIds": ["REL0178"],
+          "researchNote": "This record is based on an examined 25-page research reproduction from the American Heritage Center. It contains the Cocktails cover and notated score pages, including “Fiesta”; it is not derived solely from the collection finding aid.",
+          "researchNoteType": "object_context"
         }
       }
     },
@@ -12428,6 +12482,7 @@
         "reason": "Link Wiener Boheme Verlag to the completed Hofmeister sources and to the separately modelled Dutch-language edition it published.",
         "fields": {
           "sourceIds": [
+            "SRC0101",
             "SRC0157",
             "SRC0190",
             "SRC0209",
@@ -12440,6 +12495,14 @@
           ],
           "contributionIds": [
             "CON-S217-PUB-ORG029"
+          ]
+        }
+      },
+      "ORG052": {
+        "reason": "Link Sirius-Verlag Franz Sobotka to the Sirius-Mappe contents source after identifying the page's publication context.",
+        "fields": {
+          "sourceIds": [
+            "SRC0286"
           ]
         }
       },
@@ -12847,6 +12910,30 @@
         "fields": {
           "sourceIds": [
             "SRC0681"
+          ]
+        }
+      },
+      "CON-S045-C-P009": {
+        "reason": "Use the explicit Hofmeister registration, rather than the Sirius-Mappe contents list, as catalogue evidence for Kaper's composer credit.",
+        "fields": {
+          "sourceIds": [
+            "SRC0101"
+          ]
+        }
+      },
+      "CON-S045-L-P020": {
+        "reason": "Use the explicit Hofmeister registration, rather than the Sirius-Mappe contents list, as catalogue evidence for Rotter's lyricist credit.",
+        "fields": {
+          "sourceIds": [
+            "SRC0101"
+          ]
+        }
+      },
+      "CON-S045-PUB-ORG029": {
+        "reason": "Use the explicit Hofmeister registration, rather than the Sirius-Mappe contents list, as evidence for Wiener Boheme Verlag's publisher credit.",
+        "fields": {
+          "sourceIds": [
+            "SRC0101"
           ]
         }
       }
@@ -14961,6 +15048,19 @@
       }
     },
     "Sources": {
+      "SRC0101": {
+        "reason": "Synchronize the Hofmeister registration with the three credits explicitly printed in its catalogue entry.",
+        "fields": {
+          "organizationIds": [
+            "ORG029"
+          ],
+          "contributionIds": [
+            "CON-S045-C-P009",
+            "CON-S045-L-P020",
+            "CON-S045-PUB-ORG029"
+          ]
+        }
+      },
       "SRC0026": {
         "reason": "Link the verified premiere advertisement to the film record and its public Work counterpart.",
         "fields": {
@@ -16865,6 +16965,34 @@
       }
     },
     "Sources": {
+      "SRC0203": {
+        "reason": "The NYPL finding aid documents the anthology holding, not the song's page-level credits or title variant; retain those links only on the Deutsches Lied item record.",
+        "fields": {
+          "organizationIds": [
+            "ORG033",
+            "ORG049"
+          ],
+          "contributionIds": [
+            "CON-S013-C-P009",
+            "CON-S013-L-P020",
+            "CON-S013-PUB-ORG033",
+            "CON-S013-PUB-ORG049"
+          ],
+          "titleVariantIds": [
+            "TV0311"
+          ]
+        }
+      },
+      "SRC0286": {
+        "reason": "The Sirius-Mappe contents list establishes inclusion in the anthology but does not print the composer, lyricist or publisher credit line.",
+        "fields": {
+          "contributionIds": [
+            "CON-S045-C-P009",
+            "CON-S045-L-P020",
+            "CON-S045-PUB-ORG029"
+          ]
+        }
+      },
       "SRC0095": {
         "reason": "Remove the Sirius organization and contribution from the Alrobi Hofmeister registration after separating the two publication contexts.",
         "fields": {
@@ -17676,10 +17804,19 @@
         }
       },
       "ORG033": {
-        "reason": "Remove SRC0184 because the verified Ehe m. b. H. registration is published by Edition Brüll, not Alrobi.",
+        "reason": "Remove the misassigned Ehe m. b. H. source and the NYPL finding aid, which identifies a holding but does not establish Alrobi's imprint.",
         "fields": {
           "sourceIds": [
-            "SRC0184"
+            "SRC0184",
+            "SRC0203"
+          ]
+        }
+      },
+      "ORG049": {
+        "reason": "Remove the NYPL finding aid from Chappell; the finding aid identifies the anthology holding but does not establish this publisher relation.",
+        "fields": {
+          "sourceIds": [
+            "SRC0203"
           ]
         }
       },
@@ -17774,7 +17911,73 @@
         }
       }
     },
+    "Title Variants": {
+      "TV0311": {
+        "reason": "Keep the title variant linked to the Deutsches Lied item record; the NYPL finding aid names only the anthology volume.",
+        "fields": {
+          "sourceIds": [
+            "SRC0203"
+          ]
+        }
+      }
+    },
     "Contributions": {
+      "CON-S013-C-P009": {
+        "reason": "Retain the Deutsches Lied item record as evidence for Kaper's credit; the NYPL finding aid identifies only the anthology holding.",
+        "fields": {
+          "sourceIds": [
+            "SRC0203"
+          ]
+        }
+      },
+      "CON-S013-L-P020": {
+        "reason": "Retain the Deutsches Lied item record as evidence for Rotter's credit; the NYPL finding aid identifies only the anthology holding.",
+        "fields": {
+          "sourceIds": [
+            "SRC0203"
+          ]
+        }
+      },
+      "CON-S013-PUB-ORG033": {
+        "reason": "Retain the Deutsches Lied item record as evidence for Alrobi's publisher credit; the NYPL finding aid identifies only the anthology holding.",
+        "fields": {
+          "sourceIds": [
+            "SRC0203"
+          ]
+        }
+      },
+      "CON-S013-PUB-ORG049": {
+        "reason": "Retain the Deutsches Lied item record as evidence for Chappell's publisher relation; the NYPL finding aid identifies only the anthology holding.",
+        "fields": {
+          "sourceIds": [
+            "SRC0203"
+          ]
+        }
+      },
+      "CON-S045-C-P009": {
+        "reason": "Replace the contents-list evidence with the explicit Hofmeister registration for Kaper's composer credit.",
+        "fields": {
+          "sourceIds": [
+            "SRC0286"
+          ]
+        }
+      },
+      "CON-S045-L-P020": {
+        "reason": "Replace the contents-list evidence with the explicit Hofmeister registration for Rotter's lyricist credit.",
+        "fields": {
+          "sourceIds": [
+            "SRC0286"
+          ]
+        }
+      },
+      "CON-S045-PUB-ORG029": {
+        "reason": "Replace the contents-list evidence with the explicit Hofmeister registration for Wiener Boheme Verlag's publisher credit.",
+        "fields": {
+          "sourceIds": [
+            "SRC0286"
+          ]
+        }
+      },
       "CON-S200-PUB-ORG035": {
         "reason": "Limit the Robbins publisher contribution to the aggregate catalogue that actually documents it; the item-level cover is represented by a separate France-Mélodie contribution.",
         "fields": {

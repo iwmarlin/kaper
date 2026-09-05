@@ -23,6 +23,24 @@ SHEET_MUSIC_CATALOGUE_HOSTS = {
 }
 
 
+# Audited exceptions whose URLs do not by themselves reveal what was consulted.
+# Keep this list deliberately small: these records were checked against the
+# linked object or finding aid, rather than inferred from a host name.
+AUDITED_SOURCE_TYPE_OVERRIDES = {
+    # The linked NYPL PDF is a finding aid that identifies a physical holding;
+    # it does not reproduce the score or its item-level credit line.
+    "SRC0203": "archival_manuscript_holding",
+    # The linked Sirius-Mappe page is a publisher's contents list for the
+    # anthology, not the anthology's notation.
+    "SRC0286": "sheet_music_catalogue",
+    # These collection-level records currently rely on uploader-supplied
+    # indexed contents. Individual issue scans may become sheet_music sources
+    # only after the relevant notation has been examined.
+    "SRC0854": "sheet_music_catalogue",
+    "SRC0855": "sheet_music_catalogue",
+}
+
+
 def source_hostname(source: dict[str, Any]) -> str:
     url = str(source.get("primaryUrl") or source.get("url") or "").strip()
     return urlparse(url).netloc.casefold()
@@ -38,9 +56,10 @@ def is_catalogue_landing_page_for_sheet_music(source: dict[str, Any]) -> bool:
 def normalize_sheet_music_source(source: dict[str, Any]) -> None:
     """Normalize a catalogue-only score description without rewriting its data."""
 
-    if source.get("sourceType") != "sheet_music":
-        return
-    if is_catalogue_landing_page_for_sheet_music(source):
+    audited_type = AUDITED_SOURCE_TYPE_OVERRIDES.get(str(source.get("id") or ""))
+    if audited_type:
+        source["sourceType"] = audited_type
+    elif source.get("sourceType") == "sheet_music" and is_catalogue_landing_page_for_sheet_music(source):
         source["sourceType"] = "sheet_music_catalogue"
 
 
