@@ -22,6 +22,7 @@ from authority_sources import (
 from filmographic_sources import (
     CANONICAL_REPOSITORY_BY_HOST,
     REPOSITORY_ORGANIZATION_BY_HOST,
+    expected_imdb_source_type,
     source_hostname,
 )
 from recording_organizations import expected_audio_organization_ids
@@ -1176,6 +1177,30 @@ class ExportValidator:
                     "sourceType 'wikimedia_commons_file'"
                 )
             hostname = source_hostname(source)
+            imdb_source_type = expected_imdb_source_type(source)
+            if imdb_source_type:
+                if source.get("sourceType") != imdb_source_type:
+                    self.errors.append(
+                        f"Source {source_id}: IMDb page kind requires "
+                        f"sourceType {imdb_source_type!r}, not "
+                        f"{source.get('sourceType')!r}"
+                    )
+                if source.get("repository") != "IMDb":
+                    self.errors.append(
+                        f"Source {source_id}: IMDb page must use repository 'IMDb'"
+                    )
+                if "ORG092" not in source.get("organizationIds", []):
+                    self.errors.append(
+                        f"Source {source_id}: IMDb page is missing organization ORG092"
+                    )
+                if not source.get("accessDate"):
+                    self.errors.append(
+                        f"Source {source_id}: IMDb source lacks accessDate"
+                    )
+            elif "ORG092" in source.get("organizationIds", []):
+                self.errors.append(
+                    f"Source {source_id}: organization ORG092 requires an IMDb primary URL"
+                )
             expected_repository = CANONICAL_REPOSITORY_BY_HOST.get(hostname)
             if (
                 source.get("sourceType") == "filmographic_database"

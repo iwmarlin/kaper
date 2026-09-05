@@ -16,7 +16,11 @@ from typing import Any
 from urllib.parse import parse_qsl, urlencode, urlparse, urlunparse
 
 from authority_sources import normalize_authority_source
-from filmographic_sources import normalize_filmographic_source
+from filmographic_sources import (
+    IMDB_HOSTS,
+    normalize_filmographic_source,
+    source_hostname,
+)
 from hofmeister_sources import normalize_hofmeister_source
 from recording_sources import normalize_recording_source
 from repository_organizations import expected_repository_organization_ids
@@ -1388,9 +1392,11 @@ class PublicExporter:
                 normalize_authority_source(source)
             if source.get("sourceType") == "recording_discographic_source":
                 normalize_recording_source(source)
-            if source.get("sourceType") == "filmographic_database" or source.get(
-                "id"
-            ) in {"SRC0174", "SRC0602"}:
+            if (
+                source.get("sourceType") == "filmographic_database"
+                or source_hostname(source) in IMDB_HOSTS
+                or source.get("id") in {"SRC0174", "SRC0602"}
+            ):
                 normalize_filmographic_source(source)
             if source.get("accessDate"):
                 source["fullCitation"] = normalize_access_citation(

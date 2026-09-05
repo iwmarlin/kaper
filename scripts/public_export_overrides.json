@@ -1330,9 +1330,10 @@
         }
       },
       "SRC0173": {
-        "reason": "Normalize the access date to the ISO format used throughout the public export.",
+        "reason": "Classify the IMDb soundtrack page by the evidence it contains and normalize its access date.",
         "fields": {
-          "accessDate": "2026-06-11"
+          "accessDate": "2026-06-11",
+          "sourceType": "soundtrack_database"
         }
       },
       "SRC0228": {
@@ -2158,33 +2159,9 @@
         }
       },
       "SRC0338": {
-        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "reason": "Classify the item-level IMDb media-viewer record as image evidence rather than a generic online database record.",
         "fields": {
-          "sourceType": "online_database"
-        }
-      },
-      "SRC0339": {
-        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
-        "fields": {
-          "sourceType": "online_database"
-        }
-      },
-      "SRC0340": {
-        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
-        "fields": {
-          "sourceType": "online_database"
-        }
-      },
-      "SRC0342": {
-        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
-        "fields": {
-          "sourceType": "online_database"
-        }
-      },
-      "SRC0343": {
-        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
-        "fields": {
-          "sourceType": "online_database"
+          "sourceType": "image_or_photograph"
         }
       },
       "SRC0351": {
@@ -2343,6 +2320,77 @@
           "sourceType": "wikimedia_commons_file"
         }
       },
+      "SRC0403": {
+        "reason": "Treat the English Wikipedia file page as the item-level image source; remove the former composite Wikipedia/IMDb description and repository attribution.",
+        "fields": {
+          "shortCitation": "English Wikipedia, Abenteuer am Lido — Illustrierter Film-Kurier no. 677",
+          "fullCitation": "English Wikipedia. “File:Adventures on the Lido.jpeg.” Digital reproduction of the Illustrierter Film-Kurier programme cover for Abenteuer am Lido, no. 677 (1933).",
+          "sourceType": "wikimedia_article_page",
+          "title": "Abenteuer am Lido — Illustrierter Film-Kurier no. 677",
+          "creator": "Wikipedia contributors",
+          "repository": "English Wikipedia",
+          "publication": "English Wikipedia",
+          "slug": "src0403-english-wikipedia-abenteuer-am-lido-ifk-cover",
+          "organizationIds": [
+            "ORG090"
+          ],
+          "primaryUrl": "https://en.wikipedia.org/wiki/File:Adventures_on_the_Lido.jpeg"
+        }
+      },
+      "SRC0412": {
+        "reason": "Treat the English Wikipedia file page as the item-level image source; remove the former composite Wikipedia/IMDb description and repository attribution.",
+        "fields": {
+          "shortCitation": "English Wikipedia, Die große Attraktion — Illustrierter Film-Kurier no. 214",
+          "fullCitation": "English Wikipedia. “File:The Big Attraction.jpg.” Digital reproduction of the Illustrierter Film-Kurier programme cover for Die große Attraktion, no. 214 (1931).",
+          "sourceType": "wikimedia_article_page",
+          "title": "Die große Attraktion — Illustrierter Film-Kurier no. 214",
+          "creator": "Wikipedia contributors",
+          "repository": "English Wikipedia",
+          "publication": "English Wikipedia",
+          "slug": "src0412-english-wikipedia-die-grosse-attraktion-ifk-cover",
+          "organizationIds": [
+            "ORG090"
+          ],
+          "primaryUrl": "https://en.wikipedia.org/wiki/File:The_Big_Attraction.jpg"
+        }
+      },
+      "SRC0413": {
+        "reason": "Treat the English Wikipedia file page as the item-level image source and restrict the relation to the film-programme cover M149, not the separately sourced sheet-music cover M221.",
+        "fields": {
+          "shortCitation": "English Wikipedia, Heut’ kommt’s drauf an — Illustrierter Film-Kurier no. 1946",
+          "fullCitation": "English Wikipedia. “File:Today Is the Day (film).jpg.” Digital reproduction of the Illustrierter Film-Kurier programme cover for Heut’ kommt’s drauf an, no. 1946 (1933).",
+          "sourceType": "wikimedia_article_page",
+          "title": "Heut’ kommt’s drauf an — Illustrierter Film-Kurier no. 1946",
+          "creator": "Wikipedia contributors",
+          "repository": "English Wikipedia",
+          "publication": "English Wikipedia",
+          "slug": "src0413-english-wikipedia-heut-kommts-drauf-an-ifk-cover",
+          "organizationIds": [
+            "ORG090"
+          ],
+          "mediaIds": [
+            "M149"
+          ],
+          "primaryUrl": "https://en.wikipedia.org/wiki/File:Today_Is_the_Day_(film).jpg"
+        }
+      },
+      "SRC0414": {
+        "reason": "Treat the English Wikipedia file page as the item-level image source; remove the former composite Wikipedia/IMDb description and repository attribution.",
+        "fields": {
+          "shortCitation": "English Wikipedia, Hochzeitsreise zu Dritt — Illustrierter Film-Kurier no. 524",
+          "fullCitation": "English Wikipedia. “File:Three on a Honeymoon.jpg.” Digital reproduction of the Illustrierter Film-Kurier programme cover for Hochzeitsreise zu Dritt, no. 524 (1932).",
+          "sourceType": "wikimedia_article_page",
+          "title": "Hochzeitsreise zu Dritt — Illustrierter Film-Kurier no. 524",
+          "creator": "Wikipedia contributors",
+          "repository": "English Wikipedia",
+          "publication": "English Wikipedia",
+          "slug": "src0414-english-wikipedia-hochzeitsreise-zu-dritt-ifk-cover",
+          "organizationIds": [
+            "ORG090"
+          ],
+          "primaryUrl": "https://en.wikipedia.org/wiki/File:Three_on_a_Honeymoon.jpg"
+        }
+      },
       "SRC0417": {
         "reason": "Normalize the source type and keep Filmportal's copyright-status statement exclusively with the linked medium.",
         "fields": {
@@ -2351,28 +2399,28 @@
         }
       },
       "SRC0421": {
-        "reason": "Correct the film year in the citation from 1933 to 1932, matching the record's date field and the linked film record.",
+        "reason": "Correct the film year and classify the item-level IMDb media-viewer record as image evidence.",
         "fields": {
           "fullCitation": "L'Homme qui ne sait pas dire non (1932) — film poster image/reproduction. IMDb title tt0297172, media viewer image rm3112523008.",
-          "sourceType": "online_database"
+          "sourceType": "image_or_photograph"
         }
       },
       "SRC0422": {
-        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "reason": "Classify the item-level IMDb media-viewer record as image evidence rather than a generic online database record.",
         "fields": {
-          "sourceType": "online_database"
+          "sourceType": "image_or_photograph"
         }
       },
       "SRC0425": {
-        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "reason": "Classify the item-level IMDb media-viewer record as image evidence rather than a generic online database record.",
         "fields": {
-          "sourceType": "online_database"
+          "sourceType": "image_or_photograph"
         }
       },
       "SRC0426": {
-        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "reason": "Classify the item-level IMDb media-viewer record as image evidence rather than a generic online database record.",
         "fields": {
-          "sourceType": "online_database"
+          "sourceType": "image_or_photograph"
         }
       },
       "SRC0428": {
@@ -2482,15 +2530,15 @@
         }
       },
       "SRC0446": {
-        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "reason": "Classify the item-level IMDb media-viewer record as image evidence rather than a generic online database record.",
         "fields": {
-          "sourceType": "online_database"
+          "sourceType": "image_or_photograph"
         }
       },
       "SRC0447": {
-        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "reason": "Classify the item-level IMDb media-viewer record as image evidence rather than a generic online database record.",
         "fields": {
-          "sourceType": "online_database"
+          "sourceType": "image_or_photograph"
         }
       },
       "SRC0448": {
@@ -2500,9 +2548,9 @@
         }
       },
       "SRC0450": {
-        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "reason": "Classify the item-level IMDb media-viewer record as image evidence rather than a generic online database record.",
         "fields": {
-          "sourceType": "online_database"
+          "sourceType": "image_or_photograph"
         }
       },
       "SRC0456": {
@@ -2572,11 +2620,22 @@
           "sourceType": "web_page"
         }
       },
+      "SRC0516": {
+        "reason": "Keep the IMDb full-credits record as filmographic evidence only; the UCLA page SRC0166 is the source for the linked programme-cover medium.",
+        "fields": {},
+        "removeFields": [
+          "mediaIds"
+        ]
+      },
       "SRC0520": {
-        "reason": "Replace submission-workflow wording and the duplicated inline URL with a concise bibliographic citation while preserving the attested credit form; also normalize the sourceType controlled vocabulary.",
+        "reason": "Classify the IMDb full-credits page as filmographic evidence and preserve the attested source form in a concise citation.",
         "fields": {
-          "fullCitation": "IMDb. “Ihre Majestät die Liebe” (tt0020994), full cast and crew. Bronislaw Kaper is credited under the source form “Benjamin Kapper” (accessed 9 July 2026).",
-          "sourceType": "online_database"
+          "shortCitation": "IMDb, “Ihre Majestät die Liebe” — Full cast and crew, title tt0020994; Bronislaw Kaper credited as “Benjamin Kapper”",
+          "fullCitation": "IMDb. “Ihre Majestät die Liebe.” Full cast and crew, title tt0020994; Bronislaw Kaper is credited under the source form “Benjamin Kapper”.",
+          "sourceType": "filmographic_database",
+          "title": "Ihre Majestät die Liebe — IMDb full cast and crew",
+          "repository": "IMDb",
+          "publication": "IMDb"
         }
       },
       "SRC0523": {
@@ -4374,6 +4433,16 @@
           "rightsNote": "English Wikipedia reproduces this 1936 Universal lobby card without supplying a transferable free licence; the original United States publication and renewal history have not been verified. The copyright status is therefore undetermined and the local copy is confined to the film record."
         }
       },
+      "M077": {
+        "reason": "Correct the false free-use claim after checking the English Wikipedia file page, which labels this image as copyrighted non-free content used under a page-specific fair-use rationale.",
+        "fields": {
+          "externalUrl": "https://en.wikipedia.org/wiki/File:Three_on_a_Honeymoon.jpg",
+          "rightsStatus": "restricted",
+          "galleryStatus": "detail_only",
+          "rightsNote": "English Wikipedia labels this file as copyrighted, non-free content used there under a page-specific fair-use rationale. That rationale does not authorize republication elsewhere; the local reproduction is classified as restricted and confined to the film record.",
+          "publicCreditLine": "Illustrierter Film-Kurier, no. 524; reproduction via English Wikipedia (non-free file)."
+        }
+      },
       "M086": {
         "reason": "Replace the legacy blanket rights flag with the explicit restricted classification established by the record’s item-level rights assessment; keep the local reproduction on detail pages only.",
         "fields": {
@@ -4414,12 +4483,43 @@
           "rightsNote": "The English Wikipedia local file does not provide a transferable free licence for this 1933 poster. Its availability on that project is not independent rights clearance, so the local reproduction is classified as restricted."
         }
       },
+      "M149": {
+        "reason": "Correct the false free-use claim after checking the English Wikipedia file page, which labels this image as copyrighted non-free content used under a page-specific fair-use rationale.",
+        "fields": {
+          "externalUrl": "https://en.wikipedia.org/wiki/File:Today_Is_the_Day_(film).jpg",
+          "rightsStatus": "restricted",
+          "galleryStatus": "detail_only",
+          "rightsNote": "English Wikipedia labels this file as copyrighted, non-free content used there under a page-specific fair-use rationale. That rationale does not authorize republication elsewhere; the local reproduction is classified as restricted and confined to the film record.",
+          "publicCreditLine": "Illustrierter Film-Kurier, no. 1946; reproduction via English Wikipedia (non-free file)."
+        }
+      },
       "M150": {
         "reason": "Replace the legacy blanket rights flag with the explicit restricted classification established by the record’s item-level rights assessment; keep the local reproduction on detail pages only.",
         "fields": {
           "rightsStatus": "restricted",
           "galleryStatus": "detail_only",
           "rightsNote": "IMDb supplies only a viewing route and no reuse licence for this French poster published in 1933. A French anonymous graphic work of that date remained protected on 1 January 1996, causing United States restoration under the URAA for up to ninety-five years from publication; an identified artist could produce a longer source-country term. The image is classified as restricted."
+        }
+      },
+      "M164": {
+        "reason": "Correct the false free-use claim after checking the English Wikipedia file page, which labels this image as copyrighted non-free content used under a page-specific fair-use rationale.",
+        "fields": {
+          "externalUrl": "https://en.wikipedia.org/wiki/File:Adventures_on_the_Lido.jpeg",
+          "rightsStatus": "restricted",
+          "galleryStatus": "detail_only",
+          "rightsNote": "English Wikipedia labels this file as copyrighted, non-free content used there under a page-specific fair-use rationale. That rationale does not authorize republication elsewhere; the local reproduction is classified as restricted and confined to the film record.",
+          "publicCaption": "Illustrierter Film-Kurier programme cover for Abenteuer am Lido (1933), issue no. 677. This is distinct from the separate Mein Film advertisement for the same film.",
+          "publicCreditLine": "Illustrierter Film-Kurier, no. 677; reproduction via English Wikipedia (non-free file)."
+        }
+      },
+      "M167": {
+        "reason": "Correct the false free-use claim after checking the English Wikipedia file page, which labels this image as copyrighted non-free content used under a page-specific fair-use rationale.",
+        "fields": {
+          "externalUrl": "https://en.wikipedia.org/wiki/File:The_Big_Attraction.jpg",
+          "rightsStatus": "restricted",
+          "galleryStatus": "detail_only",
+          "rightsNote": "English Wikipedia labels this file as copyrighted, non-free content used there under a page-specific fair-use rationale. That rationale does not authorize republication elsewhere; the local reproduction is classified as restricted and confined to the film record.",
+          "publicCreditLine": "Illustrierter Film-Kurier, no. 214; reproduction via English Wikipedia (non-free file)."
         }
       },
       "M157": {
@@ -5705,6 +5805,18 @@
       },
       "SRC0346": {
         "reason": "Remove the obsolete IMDb media-viewer record because it documents no retained Media, Work or other subject entity in the public graph; item-level evidence for Escapade remains represented by sources linked directly to the film and its materials."
+      },
+      "SRC0339": {
+        "reason": "Remove the obsolete IMDb media-viewer duplicate for Kind Lady; the retained item-level image source SRC0393 points to the English Wikipedia file page actually used by M145."
+      },
+      "SRC0340": {
+        "reason": "Remove the obsolete IMDb media-viewer duplicate for Trouble for Two; the retained item-level image source SRC0387 points to the Wikimedia Commons file actually used by M156."
+      },
+      "SRC0342": {
+        "reason": "Remove the obsolete IMDb media-viewer duplicate for Man of the People; the retained item-level image source SRC0397 points to the English Wikipedia file page actually used by M187."
+      },
+      "SRC0343": {
+        "reason": "Remove the obsolete IMDb media-viewer duplicate for We Went to College; the retained item-level image source SRC0386 points to the public-domain poster record actually used by M170."
       }
     },
     "Contributions": {
@@ -13974,6 +14086,14 @@
       }
     },
     "Media": {
+      "M151": {
+        "reason": "Link the programme-cover medium to the UCLA Weimar Talkies page that actually reproduces and describes it.",
+        "fields": {
+          "sourceIds": [
+            "SRC0166"
+          ]
+        }
+      },
       "M002": {
         "reason": "Preserve only the verified work and subtype links for Miss Annabelle Lee after removing the stale Jazz Drops association.",
         "fields": {
@@ -15053,6 +15173,14 @@
       }
     },
     "Sources": {
+      "SRC0166": {
+        "reason": "Link the UCLA Weimar Talkies record to the programme-cover medium it reproduces.",
+        "fields": {
+          "mediaIds": [
+            "M151"
+          ]
+        }
+      },
       "SRC0101": {
         "reason": "Synchronize the Hofmeister registration with the three credits explicitly printed in its catalogue entry.",
         "fields": {
@@ -16887,6 +17015,54 @@
   },
   "linkRemovals": {
     "Media": {
+      "M145": {
+        "reason": "Remove the excluded duplicate IMDb media-viewer source; SRC0393 remains as the item-level source for this local poster.",
+        "fields": {
+          "sourceIds": [
+            "SRC0339"
+          ]
+        }
+      },
+      "M151": {
+        "reason": "Remove the IMDb full-credits source from the programme-cover medium; the UCLA page SRC0166 is its direct image source.",
+        "fields": {
+          "sourceIds": [
+            "SRC0516"
+          ]
+        }
+      },
+      "M156": {
+        "reason": "Remove the excluded duplicate IMDb media-viewer source; SRC0387 remains as the item-level Commons source for this local poster.",
+        "fields": {
+          "sourceIds": [
+            "SRC0340"
+          ]
+        }
+      },
+      "M170": {
+        "reason": "Remove the excluded duplicate IMDb media-viewer source; SRC0386 remains as the item-level source for this public-domain poster.",
+        "fields": {
+          "sourceIds": [
+            "SRC0343"
+          ]
+        }
+      },
+      "M187": {
+        "reason": "Remove the excluded duplicate IMDb media-viewer source; SRC0397 remains as the item-level source for this local poster.",
+        "fields": {
+          "sourceIds": [
+            "SRC0342"
+          ]
+        }
+      },
+      "M221": {
+        "reason": "Remove the film-programme source SRC0413 from the separate promotional sheet-music cover, which retains three direct bibliographic and gallery sources.",
+        "fields": {
+          "sourceIds": [
+            "SRC0413"
+          ]
+        }
+      },
       "M209": {
         "reason": "Remove the misidentified Last of the Pagans and Tahiti links; the clipping is the separate Love Song of Tahiti advertisement associated with Mutiny on the Bounty.",
         "fields": {
@@ -16970,6 +17146,22 @@
       }
     },
     "Sources": {
+      "SRC0413": {
+        "reason": "Restrict the English Wikipedia file-page source to the Illustrierter Film-Kurier cover M149; it does not document the separate sheet-music cover M221.",
+        "fields": {
+          "mediaIds": [
+            "M221"
+          ]
+        }
+      },
+      "SRC0516": {
+        "reason": "Remove the programme-cover medium from the IMDb full-credits source; SRC0166 provides the direct UCLA image evidence.",
+        "fields": {
+          "mediaIds": [
+            "M151"
+          ]
+        }
+      },
       "SRC0203": {
         "reason": "The NYPL finding aid documents the anthology holding, not the song's page-level credits or title variant; retain those links only on the Deutsches Lied item record.",
         "fields": {
@@ -17742,10 +17934,18 @@
     },
     "Organizations": {
       "ORG092": {
-        "reason": "Remove the inverse IMDb link to excluded source SRC0346; the organization remains linked to its retained title, company-credit and name records.",
+        "reason": "Remove excluded duplicate image sources and Wikipedia-file records that were formerly misattributed to IMDb; retain only sources whose primary record is actually on IMDb.",
         "fields": {
           "sourceIds": [
-            "SRC0346"
+            "SRC0339",
+            "SRC0340",
+            "SRC0342",
+            "SRC0343",
+            "SRC0346",
+            "SRC0403",
+            "SRC0412",
+            "SRC0413",
+            "SRC0414"
           ]
         }
       },

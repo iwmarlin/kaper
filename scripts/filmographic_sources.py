@@ -56,6 +56,10 @@ IMDB_CITATIONS = {
         "Schuß im Morgengrauen / A Shot at Dawn",
         "Full cast and crew, title tt0023435",
     ),
+    "SRC0520": (
+        "Ihre Majestät die Liebe",
+        "Full cast and crew, title tt0020994; Bronislaw Kaper credited as “Benjamin Kapper”",
+    ),
     "SRC0528": (
         "Schuß im Morgengrauen / A Shot at Dawn",
         "Company credits, title tt0023435",
@@ -63,11 +67,33 @@ IMDB_CITATIONS = {
     "SRC0601": ("René Nazelles", "Name entry nm0623410"),
 }
 
+IMDB_HOSTS = {"imdb.com", "www.imdb.com"}
+
 
 def source_hostname(source: dict[str, Any]) -> str:
     """Return the lowercase hostname of the source's primary public URL."""
     url = str(source.get("primaryUrl") or source.get("url") or "").strip()
     return urlparse(url).netloc.casefold()
+
+
+def expected_imdb_source_type(source: dict[str, Any]) -> str | None:
+    """Classify an IMDb record by the page that supplies its evidence.
+
+    IMDb's title pages, soundtrack lists and media-viewer objects are not the
+    same kind of source.  Keeping this distinction URL-driven prevents a poster
+    reproduction from being grouped with film credits merely because both are
+    delivered by IMDb.
+    """
+    url = str(source.get("primaryUrl") or source.get("url") or "").strip()
+    parsed = urlparse(url)
+    if parsed.netloc.casefold() not in IMDB_HOSTS:
+        return None
+    path = parsed.path.casefold().rstrip("/")
+    if "/mediaviewer/" in f"{path}/":
+        return "image_or_photograph"
+    if path.endswith("/soundtrack"):
+        return "soundtrack_database"
+    return "filmographic_database"
 
 
 def strip_redundant_access_statement(value: Any) -> str:
@@ -133,7 +159,19 @@ def normalize_filmographic_source(source: dict[str, Any]) -> None:
         )
         return
 
-    if host in {"imdb.com", "www.imdb.com"}:
+    if host in IMDB_HOSTS:
+        source_type = expected_imdb_source_type(source)
+        if source_type:
+            source["sourceType"] = source_type
+        source.update(
+            {
+                "repository": CANONICAL_REPOSITORY_BY_HOST[host],
+                "publication": "IMDb",
+            }
+        )
+        if source_type == "image_or_photograph":
+            source["creator"] = "IMDb contributors"
+            return
         title, page_description = IMDB_CITATIONS.get(
             source_id,
             (citation_title(source), "Title entry"),
@@ -143,8 +181,6 @@ def normalize_filmographic_source(source: dict[str, Any]) -> None:
                 "shortCitation": f"IMDb, “{title}” — {page_description}",
                 "fullCitation": f"IMDb. “{title}.” {page_description}.",
                 "creator": "IMDb",
-                "repository": CANONICAL_REPOSITORY_BY_HOST[host],
-                "publication": "IMDb",
             }
         )
         return

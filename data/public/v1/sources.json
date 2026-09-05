@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 771,
+  "count": 767,
   "records": [
     {
       "id": "SRC0001",
@@ -5724,6 +5724,9 @@
       "contributionIds": [
         "CON-F015-D-P002"
       ],
+      "mediaIds": [
+        "M151"
+      ],
       "primaryUrl": "https://weimar.humspace.ucla.edu/1932-premieres/a-shot-at-dawn"
     },
     {
@@ -5918,7 +5921,7 @@
       "id": "SRC0173",
       "shortCitation": "IMDb, “Wings of the Morning” — Soundtracks, title tt0029785",
       "fullCitation": "IMDb. “Wings of the Morning.” Soundtracks, title tt0029785.",
-      "sourceType": "filmographic_database",
+      "sourceType": "soundtrack_database",
       "title": "Wings of the Morning — IMDb, soundtracks",
       "creator": "IMDb",
       "repository": "IMDb",
@@ -12478,7 +12481,7 @@
       "id": "SRC0338",
       "shortCitation": "IMDb, Es wird schon wieder besser (1932), media viewer image rm810367488",
       "fullCitation": "IMDb. “Es wird schon wieder besser” (1932), title tt0022860, media viewer image rm810367488. IMDb.",
-      "sourceType": "online_database",
+      "sourceType": "image_or_photograph",
       "title": "Es wird schon wieder besser (1932) — IMDb media viewer image",
       "creator": "IMDb contributors",
       "repository": "IMDb",
@@ -12497,102 +12500,6 @@
         "M086"
       ],
       "primaryUrl": "https://www.imdb.com/title/tt0022860/mediaviewer/rm810367488/?ref_=tt_ov_i"
-    },
-    {
-      "id": "SRC0339",
-      "shortCitation": "IMDb, Kind Lady (1935), media viewer image rm695734272",
-      "fullCitation": "IMDb. “Kind Lady” (1935), title tt0027845, media viewer image rm695734272. IMDb.",
-      "sourceType": "online_database",
-      "title": "Kind Lady (1935) — IMDb media viewer image",
-      "creator": "IMDb contributors",
-      "repository": "IMDb",
-      "publication": "IMDb",
-      "date": "1935",
-      "dateRole": "described_item",
-      "dateQualifier": "confirmed",
-      "accessDate": "2026-07-13",
-      "reliability": "high",
-      "sourceStatus": "verified_with_attribution_note",
-      "slug": "src0339-kind-lady-imdb-image-1935",
-      "organizationIds": [
-        "ORG092"
-      ],
-      "mediaIds": [
-        "M145"
-      ],
-      "primaryUrl": "https://www.imdb.com/title/tt0027845/mediaviewer/rm695734272/?ref_=tt_ph_1_2"
-    },
-    {
-      "id": "SRC0340",
-      "shortCitation": "IMDb, Trouble for Two (1936), media viewer image rm2795966720",
-      "fullCitation": "IMDb. “Trouble for Two” (1936), title tt0028416, media viewer image rm2795966720. IMDb.",
-      "sourceType": "online_database",
-      "title": "Trouble for Two (1936) — IMDb media viewer image",
-      "creator": "IMDb contributors",
-      "repository": "IMDb",
-      "publication": "IMDb",
-      "date": "1936",
-      "dateRole": "described_item",
-      "dateQualifier": "confirmed",
-      "accessDate": "2026-07-13",
-      "reliability": "high",
-      "sourceStatus": "verified_with_attribution_note",
-      "slug": "src0340-trouble-for-two-imdb-image-1936",
-      "organizationIds": [
-        "ORG092"
-      ],
-      "mediaIds": [
-        "M156"
-      ],
-      "primaryUrl": "https://www.imdb.com/title/tt0028416/mediaviewer/rm2795966720/?ref_=tt_ov_i"
-    },
-    {
-      "id": "SRC0342",
-      "shortCitation": "IMDb, Man of the People (1937), media viewer image rm1067598592",
-      "fullCitation": "IMDb. “Man of the People” (1937), title tt0029206, media viewer image rm1067598592. IMDb.",
-      "sourceType": "online_database",
-      "title": "Man of the People (1937) — IMDb media viewer image",
-      "creator": "IMDb contributors",
-      "repository": "IMDb",
-      "publication": "IMDb",
-      "date": "1937",
-      "dateRole": "described_item",
-      "dateQualifier": "confirmed",
-      "accessDate": "2026-07-13",
-      "reliability": "high",
-      "sourceStatus": "verified_with_attribution_note",
-      "slug": "src0342-man-of-the-people-imdb-image-1937",
-      "organizationIds": [
-        "ORG092"
-      ],
-      "mediaIds": [
-        "M187"
-      ],
-      "primaryUrl": "https://www.imdb.com/title/tt0029206/mediaviewer/rm1067598592/?ref_=tt_ov_i"
-    },
-    {
-      "id": "SRC0343",
-      "shortCitation": "IMDb, We Went to College (1936), media viewer image rm3274875137",
-      "fullCitation": "IMDb. “We Went to College” (1936), title tt0028483, media viewer image rm3274875137. IMDb.",
-      "sourceType": "online_database",
-      "title": "We Went to College (1936) — IMDb media viewer image",
-      "creator": "IMDb contributors",
-      "repository": "IMDb",
-      "publication": "IMDb",
-      "date": "1936",
-      "dateRole": "described_item",
-      "dateQualifier": "confirmed",
-      "accessDate": "2026-07-13",
-      "reliability": "high",
-      "sourceStatus": "verified_with_attribution_note",
-      "slug": "src0343-we-went-to-college-imdb-image-1936",
-      "organizationIds": [
-        "ORG092"
-      ],
-      "mediaIds": [
-        "M170"
-      ],
-      "primaryUrl": "https://www.imdb.com/title/tt0028483/mediaviewer/rm3274875137/?ref_=tt_ov_i"
     },
     {
       "id": "SRC0350",
@@ -14423,23 +14330,22 @@
     },
     {
       "id": "SRC0403",
-      "shortCitation": "Wikipedia / IMDb, Abenteuer am Lido IFK cover identification",
-      "fullCitation": "Wikipedia. “Adventures on the Lido.” Film page displaying the Illustrierter Film-Kurier cover for Abenteuer am Lido and linking to IMDb title tt0023734.",
-      "sourceType": "visual_document",
-      "title": "Abenteuer am Lido — Illustrierter Film-Kurier cover / IMDb filmographic link",
+      "shortCitation": "English Wikipedia, Abenteuer am Lido — Illustrierter Film-Kurier no. 677",
+      "fullCitation": "English Wikipedia. “File:Adventures on the Lido.jpeg.” Digital reproduction of the Illustrierter Film-Kurier programme cover for Abenteuer am Lido, no. 677 (1933).",
+      "sourceType": "wikimedia_article_page",
+      "title": "Abenteuer am Lido — Illustrierter Film-Kurier no. 677",
       "creator": "Wikipedia contributors",
-      "repository": "Wikipedia / IMDb",
-      "publication": "Wikipedia / IMDb",
+      "repository": "English Wikipedia",
+      "publication": "English Wikipedia",
       "date": "1933",
       "dateRole": "creation",
       "dateQualifier": "confirmed",
       "accessDate": "2026-06-23",
       "reliability": "medium",
       "sourceStatus": "verified_with_attribution_note",
-      "slug": "src0403-wikipedia-imdb-abenteuer-am-lido-ifk-cover-identification",
+      "slug": "src0403-english-wikipedia-abenteuer-am-lido-ifk-cover",
       "organizationIds": [
-        "ORG090",
-        "ORG092"
+        "ORG090"
       ],
       "workIds": [
         "W-F026"
@@ -14447,7 +14353,7 @@
       "mediaIds": [
         "M164"
       ],
-      "primaryUrl": "https://en.wikipedia.org/wiki/Adventures_on_the_Lido"
+      "primaryUrl": "https://en.wikipedia.org/wiki/File:Adventures_on_the_Lido.jpeg"
     },
     {
       "id": "SRC0404",
@@ -14719,23 +14625,22 @@
     },
     {
       "id": "SRC0412",
-      "shortCitation": "Wikipedia / IMDb, Die große Attraktion IFK cover identification",
-      "fullCitation": "Wikipedia. “The Big Attraction.” Film page displaying the Illustrierter Film-Kurier cover for Die große Attraktion and linking to IMDb title tt0020940.",
-      "sourceType": "visual_document",
-      "title": "Die große Attraktion — Illustrierter Film-Kurier cover / IMDb filmographic link",
+      "shortCitation": "English Wikipedia, Die große Attraktion — Illustrierter Film-Kurier no. 214",
+      "fullCitation": "English Wikipedia. “File:The Big Attraction.jpg.” Digital reproduction of the Illustrierter Film-Kurier programme cover for Die große Attraktion, no. 214 (1931).",
+      "sourceType": "wikimedia_article_page",
+      "title": "Die große Attraktion — Illustrierter Film-Kurier no. 214",
       "creator": "Wikipedia contributors",
-      "repository": "Wikipedia / IMDb",
-      "publication": "Wikipedia / IMDb",
+      "repository": "English Wikipedia",
+      "publication": "English Wikipedia",
       "date": "1931",
       "dateRole": "creation",
       "dateQualifier": "confirmed",
       "accessDate": "2026-06-23",
       "reliability": "medium",
       "sourceStatus": "verified_with_attribution_note",
-      "slug": "src0412-wikipedia-imdb-die-grosse-attraktion-ifk-cover-identification",
+      "slug": "src0412-english-wikipedia-die-grosse-attraktion-ifk-cover",
       "organizationIds": [
-        "ORG090",
-        "ORG092"
+        "ORG090"
       ],
       "workIds": [
         "W-F007"
@@ -14743,56 +14648,53 @@
       "mediaIds": [
         "M167"
       ],
-      "primaryUrl": "https://en.wikipedia.org/wiki/The_Big_Attraction"
+      "primaryUrl": "https://en.wikipedia.org/wiki/File:The_Big_Attraction.jpg"
     },
     {
       "id": "SRC0413",
-      "shortCitation": "Wikipedia / IMDb, Heut’ kommt’s drauf an IFK cover identification",
-      "fullCitation": "Wikipedia. “Today Is the Day (film).” Film page displaying the Illustrierter Film-Kurier cover for Heut’ kommt’s drauf an and linking to IMDb title tt0024117.",
-      "sourceType": "visual_document",
-      "title": "Heut’ kommt’s drauf an — Illustrierter Film-Kurier cover / IMDb filmographic link",
+      "shortCitation": "English Wikipedia, Heut’ kommt’s drauf an — Illustrierter Film-Kurier no. 1946",
+      "fullCitation": "English Wikipedia. “File:Today Is the Day (film).jpg.” Digital reproduction of the Illustrierter Film-Kurier programme cover for Heut’ kommt’s drauf an, no. 1946 (1933).",
+      "sourceType": "wikimedia_article_page",
+      "title": "Heut’ kommt’s drauf an — Illustrierter Film-Kurier no. 1946",
       "creator": "Wikipedia contributors",
-      "repository": "Wikipedia / IMDb",
-      "publication": "Wikipedia / IMDb",
+      "repository": "English Wikipedia",
+      "publication": "English Wikipedia",
       "date": "1933",
       "dateRole": "creation",
       "dateQualifier": "confirmed",
       "accessDate": "2026-06-23",
       "reliability": "medium",
       "sourceStatus": "verified_with_attribution_note",
-      "slug": "src0413-wikipedia-imdb-heut-kommts-drauf-an-ifk-cover-identification",
+      "slug": "src0413-english-wikipedia-heut-kommts-drauf-an-ifk-cover",
       "organizationIds": [
-        "ORG090",
-        "ORG092"
+        "ORG090"
       ],
       "workIds": [
         "W-F021"
       ],
       "mediaIds": [
-        "M149",
-        "M221"
+        "M149"
       ],
-      "primaryUrl": "https://en.wikipedia.org/wiki/Today_Is_the_Day_(film)"
+      "primaryUrl": "https://en.wikipedia.org/wiki/File:Today_Is_the_Day_(film).jpg"
     },
     {
       "id": "SRC0414",
-      "shortCitation": "Wikipedia / IMDb, Hochzeitsreise zu Dritt IFK cover identification",
-      "fullCitation": "Wikipedia. “Three on a Honeymoon (1932 film).” Film page displaying the Illustrierter Film-Kurier cover for Hochzeitsreise zu Dritt and linking to IMDb title tt0023012.",
-      "sourceType": "visual_document",
-      "title": "Hochzeitsreise zu Dritt — Illustrierter Film-Kurier cover / IMDb filmographic link",
+      "shortCitation": "English Wikipedia, Hochzeitsreise zu Dritt — Illustrierter Film-Kurier no. 524",
+      "fullCitation": "English Wikipedia. “File:Three on a Honeymoon.jpg.” Digital reproduction of the Illustrierter Film-Kurier programme cover for Hochzeitsreise zu Dritt, no. 524 (1932).",
+      "sourceType": "wikimedia_article_page",
+      "title": "Hochzeitsreise zu Dritt — Illustrierter Film-Kurier no. 524",
       "creator": "Wikipedia contributors",
-      "repository": "Wikipedia / IMDb",
-      "publication": "Wikipedia / IMDb",
+      "repository": "English Wikipedia",
+      "publication": "English Wikipedia",
       "date": "1932",
       "dateRole": "creation",
       "dateQualifier": "confirmed",
       "accessDate": "2026-06-23",
       "reliability": "medium",
       "sourceStatus": "verified_with_attribution_note",
-      "slug": "src0414-wikipedia-imdb-hochzeitsreise-zu-dritt-ifk-cover-identification",
+      "slug": "src0414-english-wikipedia-hochzeitsreise-zu-dritt-ifk-cover",
       "organizationIds": [
-        "ORG090",
-        "ORG092"
+        "ORG090"
       ],
       "workIds": [
         "W-F014"
@@ -14800,7 +14702,7 @@
       "mediaIds": [
         "M077"
       ],
-      "primaryUrl": "https://en.wikipedia.org/wiki/Three_on_a_Honeymoon_(1932_film)"
+      "primaryUrl": "https://en.wikipedia.org/wiki/File:Three_on_a_Honeymoon.jpg"
     },
     {
       "id": "SRC0415",
@@ -14884,7 +14786,7 @@
       "id": "SRC0421",
       "shortCitation": "IMDb media viewer, L’Homme qui ne sait pas dire non poster",
       "fullCitation": "L’Homme qui ne sait pas dire non (1932) — film poster image/reproduction. IMDb title tt0297172, media viewer image rm3112523008.",
-      "sourceType": "online_database",
+      "sourceType": "image_or_photograph",
       "title": "L’Homme qui ne sait pas dire non poster image",
       "creator": "IMDb contributors",
       "repository": "IMDb",
@@ -14911,7 +14813,7 @@
       "id": "SRC0422",
       "shortCitation": "IMDb media viewer, Son Altesse l’amour poster",
       "fullCitation": "Son Altesse l’amour (1931) — film poster image/reproduction. IMDb title tt0191479, media viewer image rm1868645632.",
-      "sourceType": "online_database",
+      "sourceType": "image_or_photograph",
       "title": "Son Altesse l’amour poster image",
       "creator": "IMDb contributors",
       "repository": "IMDb",
@@ -15006,7 +14908,7 @@
       "id": "SRC0425",
       "shortCitation": "IMDb media viewer, Ihre Majestät die Liebe poster",
       "fullCitation": "IMDb media viewer. Poster image for Ihre Majestät die Liebe, image rm122684672.",
-      "sourceType": "online_database",
+      "sourceType": "image_or_photograph",
       "title": "Ihre Majestät die Liebe — poster image, IMDb media viewer",
       "creator": "IMDb contributors",
       "repository": "IMDb",
@@ -15030,7 +14932,7 @@
       "id": "SRC0426",
       "shortCitation": "IMDb media viewer, Seitensprünge poster",
       "fullCitation": "IMDb media viewer. Poster image for Seitensprünge, image rm2527670016.",
-      "sourceType": "online_database",
+      "sourceType": "image_or_photograph",
       "title": "Seitensprünge — poster image, IMDb media viewer",
       "creator": "IMDb contributors",
       "repository": "IMDb",
@@ -15414,7 +15316,7 @@
       "id": "SRC0446",
       "shortCitation": "IMDb media viewer, 1933 French poster",
       "fullCitation": "1933 French film poster image/reproduction. IMDb title tt0177913, media viewer image rm1241277440.",
-      "sourceType": "online_database",
+      "sourceType": "image_or_photograph",
       "title": "1933 French film poster",
       "creator": "IMDb contributors",
       "repository": "IMDb",
@@ -15438,7 +15340,7 @@
       "id": "SRC0447",
       "shortCitation": "IMDb media viewer, Es wird schon wieder besser image",
       "fullCitation": "Es wird schon wieder besser (1932) — image/reproduction. IMDb title tt0022860, media viewer image rm4053610240.",
-      "sourceType": "online_database",
+      "sourceType": "image_or_photograph",
       "title": "Es wird schon wieder besser image",
       "creator": "IMDb contributors",
       "repository": "IMDb",
@@ -15524,7 +15426,7 @@
       "id": "SRC0450",
       "shortCitation": "IMDb media viewer, Les Nuits moscovites image",
       "fullCitation": "Les Nuits moscovites (1934) — image/reproduction. IMDb title tt0025581, media viewer image rm2997819648.",
-      "sourceType": "online_database",
+      "sourceType": "image_or_photograph",
       "title": "Les Nuits moscovites image",
       "creator": "IMDb contributors",
       "repository": "IMDb",
@@ -18098,9 +18000,6 @@
       "workIds": [
         "W-F015"
       ],
-      "mediaIds": [
-        "M151"
-      ],
       "filmIds": [
         "F015"
       ],
@@ -18113,13 +18012,13 @@
     },
     {
       "id": "SRC0520",
-      "shortCitation": "IMDb full credits, “Ihre Majestät die Liebe” — Benjamin Kapper",
-      "fullCitation": "IMDb. “Ihre Majestät die Liebe” (tt0020994), full cast and crew. Bronislaw Kaper is credited under the source form “Benjamin Kapper”.",
-      "sourceType": "online_database",
-      "title": "Ihre Majestät die Liebe — IMDb full cast & crew credit for Benjamin Kapper",
+      "shortCitation": "IMDb, “Ihre Majestät die Liebe” — Full cast and crew, title tt0020994; Bronislaw Kaper credited as “Benjamin Kapper”",
+      "fullCitation": "IMDb. “Ihre Majestät die Liebe.” Full cast and crew, title tt0020994; Bronislaw Kaper is credited under the source form “Benjamin Kapper”.",
+      "sourceType": "filmographic_database",
+      "title": "Ihre Majestät die Liebe — IMDb full cast and crew",
       "creator": "IMDb",
       "repository": "IMDb",
-      "publication": "IMDb.de / IMDb",
+      "publication": "IMDb",
       "date": "1931",
       "dateRole": "described_item",
       "dateQualifier": "confirmed",
