@@ -454,6 +454,54 @@ MEDIA_SCHEMA_TYPE = {
 
 NEUTRAL_OG_IMAGE_PATH = "apple-touch-icon.png"
 IMAGE_ASSET_SUFFIXES = {".jpg", ".jpeg", ".png", ".webp", ".gif"}
+IMAGE_DERIVATIVES_PATTERN = re.compile(r"Object\.freeze\((\{.*\})\);\s*$", re.DOTALL)
+SOCIAL_IMAGE_WIDTH = 960
+SOCIAL_PORTRAIT_WIDTH = 640
+SOCIAL_IMAGE_MAX_BYTES = 600_000
+
+
+def responsive_image_mapping(root: Path) -> dict:
+    """Read the generated screen-derivative map used by the browser.
+
+    Static pages are built after build_site_assets.py, so social cards can use
+    the same metadata-free derivatives rather than exposing archival originals.
+    """
+    path = root / "assets/site/image-derivatives.js"
+    if not path.is_file():
+        raise RuntimeError("Responsive-image mapping is missing")
+    match = IMAGE_DERIVATIVES_PATTERN.search(path.read_text(encoding="utf-8"))
+    if not match:
+        raise RuntimeError("Responsive-image mapping is invalid")
+    return json.loads(match.group(1))
+
+
+def social_image_variant(asset_path: str, mapping: dict, *, portrait: bool) -> dict | None:
+    profile = mapping.get(asset_path)
+    variants = profile.get("variants", []) if isinstance(profile, dict) else []
+    if not variants:
+        return None
+    target_width = SOCIAL_PORTRAIT_WIDTH if portrait else SOCIAL_IMAGE_WIDTH
+    candidates = sorted(
+        (item for item in variants if isinstance(item.get("width"), int)),
+        key=lambda item: item["width"],
+    )
+    preferred = next(
+        (item for item in candidates if item["width"] >= target_width),
+        candidates[-1],
+    )
+    if int(preferred.get("bytes") or 0) <= SOCIAL_IMAGE_MAX_BYTES:
+        return preferred
+
+    # A very tall scan can cross the byte budget even at 960px wide. Keep the
+    # validation strict and step down to the largest existing derivative that
+    # stays within the budget rather than weakening the budget or exposing the
+    # archival original.
+    within_budget = [
+        item
+        for item in candidates
+        if int(item.get("bytes") or 0) <= SOCIAL_IMAGE_MAX_BYTES
+    ]
+    return within_budget[-1] if within_budget else candidates[0]
 
 
 def image_asset_path(media: dict) -> str:
@@ -517,7 +565,7 @@ def media_structured_data(record: dict, data: dict) -> None:
         data["creditText"] = record["publicCreditLine"]
 
 
-def og_image_for(record_type: str, record: dict, tables: dict) -> dict:
+def og_image_for(record_type: str, record: dict, tables: dict, image_mapping: dict) -> dict:
     """Choose a record-specific social image without borrowing another identity.
 
     Person payloads contain only portraits already verified as belonging to that
@@ -548,18 +596,36 @@ def og_image_for(record_type: str, record: dict, tables: dict) -> dict:
 
     for media in candidates:
         path = image_asset_path(media)
-        if path:
+        if not path:
+            continue
+        portrait = media.get("category") == "portrait"
+        derivative = social_image_variant(path, image_mapping, portrait=portrait)
+        if derivative:
+            social_path = derivative["path"]
             return {
-                "url": f"{ORIGIN}{quote(path, safe='/')}",
+                "url": f"{ORIGIN}{quote(social_path, safe='/')}",
                 "alt": media.get("altText") or media.get("title") or title_for(record_type, record),
                 "neutral": False,
-                "portrait": media.get("category") == "portrait",
+                "portrait": portrait,
+                "width": derivative.get("width"),
+                "height": derivative.get("height"),
+                "bytes": derivative.get("bytes"),
+                "mime": "image/webp",
             }
+        return {
+            "url": f"{ORIGIN}{quote(path, safe='/')}",
+            "alt": media.get("altText") or media.get("title") or title_for(record_type, record),
+            "neutral": False,
+            "portrait": portrait,
+        }
     return {
         "url": f"{ORIGIN}{NEUTRAL_OG_IMAGE_PATH}",
         "alt": "Bronisław Kaper research archive",
         "neutral": True,
         "portrait": False,
+        "width": 180,
+        "height": 180,
+        "mime": "image/png",
     }
 
 
@@ -709,6 +775,7 @@ def static_page(
     tables: dict,
     source_description_counts: dict[str, int],
     body_markup: str,
+    image_mapping: dict,
 ) -> str:
     title = title_for(record_type, record)
     summary = summary_for(record_type, record, tables, source_description_counts)
@@ -729,16 +796,19 @@ def static_page(
         page_title = f"{title} ({label.lower()})"
     browser_title = f"{page_title} | {PAGE_TITLE_SUFFIX}"
     record_id = record["id"]
-    style_version = "c77ada42a0"
-    record_script_version = "c77ada42a0"
+    style_version = "b21d4bade7"
+    record_script_version = "b21d4bade7"
     route = f"records/{record_type}/{quote(record_id, safe='')}/"
     canonical = f"{ORIGIN}{route}"
-    og_image = og_image_for(record_type, record, tables)
-    og_image_size = (
-        '\n  <meta property="og:image:width" content="180">'
-        '\n  <meta property="og:image:height" content="180">'
-        if og_image["neutral"] else ""
-    )
+    og_image = og_image_for(record_type, record, tables, image_mapping)
+    og_image_meta = ""
+    if og_image.get("mime"):
+        og_image_meta += f'\n  <meta property="og:image:type" content="{esc(og_image["mime"])}">'
+    if og_image.get("width") and og_image.get("height"):
+        og_image_meta += (
+            f'\n  <meta property="og:image:width" content="{int(og_image["width"])}">'
+            f'\n  <meta property="og:image:height" content="{int(og_image["height"])}">'
+        )
     twitter_card = "summary" if og_image["neutral"] or og_image["portrait"] else "summary_large_image"
     ld_json = structured_data(record_type, record, canonical, title, meta_summary, tables)
     return f"""<!doctype html>
@@ -757,7 +827,7 @@ def static_page(
   <meta property="og:type" content="article">
   <meta property="og:url" content="{esc(canonical)}">
   <meta property="og:image" content="{esc(og_image['url'])}">
-  <meta property="og:image:alt" content="{esc(og_image['alt'])}">{og_image_size}
+  <meta property="og:image:alt" content="{esc(og_image['alt'])}">{og_image_meta}
   <meta name="twitter:card" content="{twitter_card}">
   <meta name="twitter:image" content="{esc(og_image['url'])}">
   <meta name="twitter:image:alt" content="{esc(og_image['alt'])}">
@@ -765,8 +835,8 @@ def static_page(
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <link rel="preload" href="assets/fonts/kaper-sans.woff2?v=c77ada42a0" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="assets/fonts/kaper-serif.woff2?v=c77ada42a0" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/kaper-sans.woff2?v=b21d4bade7" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/kaper-serif.woff2?v=b21d4bade7" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/site/styles.css?v={style_version}">
   <title>{esc(browser_title)}</title>
   {ld_json}
@@ -803,6 +873,7 @@ def expected_outputs(
         if item.get("fullCitation")
     )
     rendered_bodies = render_static_record_bodies(root)
+    image_mapping = responsive_image_mapping(root)
     outputs: dict[Path, str] = {}
     routes = []
     counts = {}
@@ -825,6 +896,7 @@ def expected_outputs(
                 tables,
                 source_description_counts,
                 rendered_bodies[body_key],
+                image_mapping,
             )
             outputs[output] = document
             if record_type == "work":

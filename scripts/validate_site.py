@@ -29,6 +29,9 @@ PUBLIC_PAGES = [
 # Pages that must appear in sitemap.xml (record.html and 404.html are shells, not routes).
 SITEMAP_PAGES = PUBLIC_PAGES[:6]
 
+SITE_ORIGIN = "https://iwmarlin.github.io/kaper/"
+SOCIAL_IMAGE_MAX_BYTES = 600_000
+
 PRERENDERED_RELATION_SECTIONS = {
     "work": {
         "contributionIds": ("Contributors and credits", "Music and arrangement"),
@@ -477,6 +480,38 @@ def validate(root: Path) -> dict:
             page_parser = ReferenceParser()
             text = page.read_text(encoding="utf-8")
             page_parser.feed(text)
+
+            og_image_match = re.search(
+                r'<meta property="og:image" content="([^"]+)">',
+                text,
+            )
+            if not og_image_match:
+                errors.append(f"{relative}: Open Graph image is missing")
+            else:
+                og_image_url = og_image_match.group(1)
+                if not og_image_url.startswith(SITE_ORIGIN):
+                    errors.append(f"{relative}: Open Graph image is not local to the archive")
+                else:
+                    og_relative = unquote(og_image_url.removeprefix(SITE_ORIGIN))
+                    og_path = root / og_relative
+                    if not og_path.is_file():
+                        errors.append(f"{relative}: Open Graph image file is missing")
+                    elif og_relative != "apple-touch-icon.png":
+                        if not og_relative.startswith("assets/generated/responsive/"):
+                            errors.append(
+                                f"{relative}: Open Graph image bypasses responsive derivatives"
+                            )
+                        if og_path.stat().st_size > SOCIAL_IMAGE_MAX_BYTES:
+                            errors.append(
+                                f"{relative}: Open Graph image exceeds "
+                                f"{SOCIAL_IMAGE_MAX_BYTES // 1000} KB"
+                            )
+                    if 'property="og:image:width"' not in text:
+                        errors.append(f"{relative}: Open Graph image width is missing")
+                    if 'property="og:image:height"' not in text:
+                        errors.append(f"{relative}: Open Graph image height is missing")
+                    if 'property="og:image:type"' not in text:
+                        errors.append(f"{relative}: Open Graph image MIME type is missing")
             if page_parser.skip_links != 1:
                 errors.append(
                     f"{relative}: expected exactly one skip link, "

@@ -90,6 +90,16 @@ class RecordPayloadBuilder:
             if record is not None:
                 bundle[table][record_id] = record
                 records.append(record)
+                # Source citations may contain title strings whose language is
+                # explicitly recorded on titleVariants. Carry that evidence
+                # with every Source wherever it appears, rather than guessing a
+                # language from spelling in the renderer.
+                if table == "sources":
+                    self.add(
+                        bundle,
+                        "titleVariants",
+                        record_ids(record, "titleVariantIds"),
+                    )
         return records
 
     def add_media_with_sources(self, bundle: dict, media_ids: list[str]) -> list[dict]:

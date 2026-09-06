@@ -10,8 +10,8 @@ import {
   periodValues,
   recordUrl,
   renderError,
-} from "./core.js?v=c77ada42a0";
-import { createQueryState } from "./catalogue-filters.js?v=c77ada42a0";
+} from "./core.js?v=b21d4bade7";
+import { createQueryState } from "./catalogue-filters.js?v=b21d4bade7";
 
 mountSiteChrome("map");
 

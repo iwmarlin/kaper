@@ -17,7 +17,7 @@
    the swashed display forms can never appear by accident. */
 @font-face {
   font-family: "Fraunces";
-  src: url("../fonts/kaper-serif.woff2?v=c77ada42a0") format("woff2");
+  src: url("../fonts/kaper-serif.woff2?v=b21d4bade7") format("woff2");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
@@ -25,7 +25,7 @@
 
 @font-face {
   font-family: "Fraunces";
-  src: url("../fonts/kaper-serif-italic.woff2?v=c77ada42a0") format("woff2");
+  src: url("../fonts/kaper-serif-italic.woff2?v=b21d4bade7") format("woff2");
   font-weight: 100 900;
   font-style: italic;
   font-display: swap;
@@ -33,7 +33,7 @@
 
 @font-face {
   font-family: "Archivo";
-  src: url("../fonts/kaper-sans.woff2?v=c77ada42a0") format("woff2");
+  src: url("../fonts/kaper-sans.woff2?v=b21d4bade7") format("woff2");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
@@ -41,7 +41,7 @@
 
 @font-face {
   font-family: "Archivo";
-  src: url("../fonts/kaper-sans-italic.woff2?v=c77ada42a0") format("woff2");
+  src: url("../fonts/kaper-sans-italic.woff2?v=b21d4bade7") format("woff2");
   font-weight: 100 900;
   font-style: italic;
   font-display: swap;
@@ -5178,3 +5178,199 @@ html:not(.js) .source-group__head {
   background: rgba(72, 96, 103, 0.05);
   color: var(--ink-soft);
 }
+
+/* Scholarly record print view.
+   The browser layout uses progressive disclosure; print must instead preserve
+   the complete scholarly record, especially citations, while removing
+   navigation and interactive controls that have no meaning on paper. */
+@media print {
+  @page {
+    margin: 14mm 13mm 16mm;
+  }
+
+  html,
+  body {
+    background: #fff !important;
+    color: #000 !important;
+  }
+
+  body {
+    font-size: var(--fs-6);
+    line-height: 1.42;
+  }
+
+  .site-header,
+  .site-footer,
+  .skip-link,
+  .record-context,
+  .record-contents,
+  .progressive-list__controls,
+  .progressive-list__search,
+  .source-ledger__bar,
+  .source-ledger__empty,
+  .record-facts-disclosure,
+  .source-row__chevron,
+  .source-group__chevron {
+    display: none !important;
+  }
+
+  #main-content,
+  #record-root,
+  #record-root .shell {
+    width: auto !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .record-hero {
+    padding: 0 0 9pt !important;
+    border: 0 !important;
+    border-bottom: 1pt solid #777 !important;
+    background: none !important;
+  }
+
+  .record-hero__grid,
+  .record-layout,
+  .record-layout--single {
+    display: block !important;
+  }
+
+  .record-hero h1 {
+    max-width: none !important;
+    margin: 0 0 5pt !important;
+    color: #000 !important;
+    font-size: var(--fs-14) !important;
+    line-height: 1.08 !important;
+  }
+
+  .record-facts {
+    margin-top: 7pt;
+    border: 0.6pt solid #999;
+    background: none !important;
+    break-inside: avoid-page;
+  }
+
+  .record-section {
+    padding: 9pt 0;
+    border-color: #aaa;
+  }
+
+  .record-section h2,
+  .source-group__head,
+  h1,
+  h2,
+  h3 {
+    color: #000 !important;
+    break-after: avoid-page;
+  }
+
+  p,
+  li,
+  dd {
+    orphans: 3;
+    widows: 3;
+  }
+
+  a {
+    color: #000 !important;
+    text-decoration: underline;
+  }
+
+  .badge {
+    border-color: #777 !important;
+    background: none !important;
+    color: #000 !important;
+  }
+
+  .progressive-list__panel,
+  .progressive-list__panel[hidden],
+  [data-group-body],
+  [data-group-body][hidden],
+  [data-row-detail],
+  [data-row-detail][hidden] {
+    display: block !important;
+  }
+
+  .source-group {
+    break-inside: auto;
+  }
+
+  .source-group__head {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 8pt;
+    width: 100%;
+    padding: 8pt 0 4pt;
+    border: 0;
+    border-bottom: 0.6pt solid #999;
+    background: none !important;
+    font: inherit;
+    text-align: left;
+    pointer-events: none;
+  }
+
+  .source-row__summary {
+    display: grid !important;
+    grid-template-columns: 5.3rem minmax(0, 1fr);
+    gap: 7pt;
+    width: 100%;
+    padding: 6pt 0 1pt;
+    border: 0;
+    background: none !important;
+    color: #000 !important;
+    font: inherit;
+    text-align: left;
+    pointer-events: none;
+  }
+
+  .source-row__title {
+    display: none !important;
+  }
+
+  .source-row__detail,
+  .source-row__detail[hidden] {
+    display: block !important;
+    padding: 0 0 6pt 5.3rem;
+    border-bottom: 0.6pt solid #bbb;
+  }
+
+  .source-row__detail p,
+  .source-row__citation {
+    font-size: var(--fs-5);
+    line-height: 1.42;
+  }
+
+  .source-row__links a[target="_blank"]::after,
+  .source-actions a[target="_blank"]::after {
+    content: " <" attr(href) ">";
+    font-size: var(--fs-2);
+    font-weight: 400;
+    overflow-wrap: anywhere;
+  }
+
+  .citation,
+  .source-row--open,
+  .record-media,
+  .credit-evidence__item {
+    break-inside: avoid-page;
+    box-shadow: none !important;
+    background: none !important;
+  }
+
+  .citation {
+    border-color: #aaa;
+  }
+
+  .record-media img {
+    max-height: 90mm;
+    object-fit: contain;
+  }
+
+  audio,
+  video {
+    display: none !important;
+  }
+}
+

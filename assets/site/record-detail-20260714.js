@@ -1,4 +1,4 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=c77ada42a0";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=b21d4bade7";
 import {
   authorityLinkList,
   certaintyBadge,
@@ -29,8 +29,8 @@ import {
   sourceStatusLabel,
   typeBadge,
   updateMeta,
-} from "./core.js?v=c77ada42a0";
-import { RECORD_INDEXES, recordIndexReturn } from "./catalogue-filters.js?v=c77ada42a0";
+} from "./core.js?v=b21d4bade7";
+import { RECORD_INDEXES, recordIndexReturn } from "./catalogue-filters.js?v=b21d4bade7";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 let target = null;
@@ -325,15 +325,85 @@ function sourceSearchText(source) {
   ].filter(Boolean).join(" ");
 }
 
+function validLanguageCode(value) {
+  const code = String(value || "").trim().toLowerCase();
+  return /^[a-z]{2,3}(?:-[a-z0-9]{2,8})*$/i.test(code) ? code : "";
+}
+
+function languageMarkup(value, language) {
+  const text = String(value || "");
+  const code = validLanguageCode(language);
+  if (!text || !code || code === "en") return escapeHtml(text);
+  return `<span lang="${escapeHtml(code)}">${escapeHtml(text)}</span>`;
+}
+
+// Citations are editorial prose in English, so assigning one language to the
+// whole citation would be wrong. Instead, only title strings whose language is
+// explicitly recorded in titleVariants are marked. This avoids guessing while
+// still giving screen readers the information the data model actually knows.
+function sourceCitationMarkup(source, value, indexes) {
+  const text = String(value || "");
+  if (!text) return "";
+  const variants = getIds(source, "titleVariantIds")
+    .map((id) => indexes?.titleVariants?.get(id))
+    .filter(Boolean);
+
+  const candidates = [];
+  const seen = new Set();
+  for (const variant of variants) {
+    const language = validLanguageCode(variant.language);
+    if (!language || language === "en") continue;
+    for (const title of [variant.variantTitle, variant.titleAsSource]) {
+      const candidate = String(title || "").trim();
+      if (!candidate) continue;
+      const key = `${language}\u0000${candidate.toLocaleLowerCase()}`;
+      if (seen.has(key)) continue;
+      seen.add(key);
+      candidates.push({ text: candidate, language });
+    }
+  }
+  if (!candidates.length) return escapeHtml(text);
+
+  candidates.sort((left, right) => right.text.length - left.text.length);
+  const folded = text.toLocaleLowerCase();
+  let offset = 0;
+  let markup = "";
+  while (offset < text.length) {
+    let match = null;
+    for (const candidate of candidates) {
+      const index = folded.indexOf(candidate.text.toLocaleLowerCase(), offset);
+      if (index < 0) continue;
+      if (
+        !match
+        || index < match.index
+        || (index === match.index && candidate.text.length > match.candidate.text.length)
+      ) {
+        match = { index, candidate };
+      }
+    }
+    if (!match) {
+      markup += escapeHtml(text.slice(offset));
+      break;
+    }
+    markup += escapeHtml(text.slice(offset, match.index));
+    const end = match.index + match.candidate.text.length;
+    markup += `<span lang="${escapeHtml(match.candidate.language)}">${escapeHtml(text.slice(match.index, end))}</span>`;
+    offset = end;
+  }
+  return markup;
+}
+
 // One row grammar for every source list: monospaced identifier at the left,
 // citation in the middle, year at the right. Short lists print the full
 // citation outright — there is nothing to scroll past, so hiding the only
 // source a record has behind a disclosure would cost more than it saves.
 // Long lists print the short citation and open the full one on request.
-function sourceRow(source, index, { expanded = false } = {}) {
+function sourceRow(source, index, { expanded = false, indexes = null } = {}) {
   const external = safeExternalUrl(source.primaryUrl) || safeExternalUrl(source.accessUrl);
   const summary = source.shortCitation || source.title || source.fullCitation || source.id;
   const full = source.fullCitation || source.shortCitation || source.title || "";
+  const summaryMarkup = sourceCitationMarkup(source, summary, indexes);
+  const fullMarkup = sourceCitationMarkup(source, full, indexes);
   const yearLabel = sourceDateDisplay(source, { compact: true });
   const links = `<p class="source-row__links">
     <a href="${recordUrl("source", source.id)}">Source record</a>
@@ -348,7 +418,7 @@ function sourceRow(source, index, { expanded = false } = {}) {
         ${reliabilityFlag}
       </span>
       <div class="source-row__body">
-        <p class="source-row__citation">${escapeHtml(full)}</p>
+        <p class="source-row__citation">${fullMarkup}</p>
         ${external ? `<p class="source-row__links"><a href="${escapeHtml(external)}" target="_blank" rel="noreferrer">Open source <span aria-hidden="true">\u2197</span></a></p>` : ""}
       </div>
     </li>`;
@@ -361,11 +431,11 @@ function sourceRow(source, index, { expanded = false } = {}) {
         <span class="source-row__year">${escapeHtml(yearLabel)}</span>
         ${reliabilityFlag}
       </span>
-      <span class="source-row__title">${escapeHtml(summary)}</span>
+      <span class="source-row__title">${summaryMarkup}</span>
       ${chevron("source-row__chevron")}
     </button>
     <div class="source-row__detail" id="${detailId}" data-row-detail>
-      <p>${escapeHtml(full)}</p>
+      <p>${fullMarkup}</p>
       ${links}
     </div>
   </li>`;
@@ -376,7 +446,7 @@ function sourceRow(source, index, { expanded = false } = {}) {
 // boxes in no particular order. The ledger keeps every record on one page for
 // Ctrl+F and for print, but gives it a spine: grouped by kind, chronological
 // within each group, full citation on request.
-function sourceLedger(records) {
+function sourceLedger(records, indexes = null) {
   const sorted = sortSourcesChronologically(records);
   const groups = new Map();
   for (const source of sorted) {
@@ -391,7 +461,7 @@ function sourceLedger(records) {
   const groupsMarkup = ordered.map(([key, items], groupIndex) => {
     const bodyId = `${ledgerId}-group-${groupIndex}`;
     const expanded = true;
-    const rows = items.map((item) => sourceRow(item, counter += 1)).join("");
+    const rows = items.map((item) => sourceRow(item, counter += 1, { indexes })).join("");
     return `<section class="source-group" data-ledger-group>
       <button class="source-group__head" type="button" data-group-toggle aria-expanded="${expanded}" aria-controls="${bodyId}" aria-disabled="true" tabindex="-1">
         ${chevron("source-group__chevron")}
@@ -415,15 +485,15 @@ function sourceLedger(records) {
   </div>`;
 }
 
-function sourceList(records, { progressive = true } = {}) {
+function sourceList(records, { progressive = true, indexes = null } = {}) {
   if (!records.length) return "";
   if (!progressive || records.length <= LIST_PREVIEW_LIMIT) {
     const rows = sortSourcesChronologically(records)
-      .map((source, index) => sourceRow(source, index, { expanded: true }))
+      .map((source, index) => sourceRow(source, index, { expanded: true, indexes }))
       .join("");
     return `<ol class="source-rows source-rows--plain">${rows}</ol>`;
   }
-  return sourceLedger(records);
+  return sourceLedger(records, indexes);
 }
 
 function related(ids, index) {
@@ -738,7 +808,6 @@ function relationList(items, work, indexes, variantsByTitle = new Map()) {
     label: "related works",
     renderItem: (item) => {
       const { targetWork, title } = relationMeta(item);
-      const titleHtml = targetWork ? `<a href="${recordUrl("work", targetWork.id)}">${escapeHtml(title)}</a>` : escapeHtml(title);
       const relationType = getIds(item, "sourceWorkIds").includes(work.id)
         ? item.relationType
         : item.relationType === "language_version_of"
@@ -757,14 +826,23 @@ function relationList(items, work, indexes, variantsByTitle = new Map()) {
       // a song's Polish title on the row of the film.
       const sameWorkUnderAnotherTitle = MERGEABLE_RELATION_TYPES.has(item.relationType);
       const variant = sameWorkUnderAnotherTitle ? variantsByTitle.get(normalizeSearch(title)) : undefined;
+      const titleContent = variant?.language
+        ? languageMarkup(title, variant.language)
+        : escapeHtml(title);
+      const titleHtml = targetWork
+        ? `<a href="${recordUrl("work", targetWork.id)}">${titleContent}</a>`
+        : titleContent;
       const sourceForm = variant
         && variant.titleAsSource
         && normalizeSearch(variant.titleAsSource) !== normalizeSearch(variant.variantTitle)
         && normalizeSearch(variant.titleAsSource) !== normalizeSearch(title)
-        ? `Source form: ${variant.titleAsSource}`
+        ? `Source form: ${languageMarkup(variant.titleAsSource, variant.language)}`
         : "";
-      const detail = [sourceForm, note].filter(Boolean).join(" \u00b7 ");
-      return `<li><span>${typeBadge(relationType)} ${titleHtml}${variant && variant.language ? ` ${languageBadge(variant.language)}` : ""}${detail ? `<br><small>${escapeHtml(detail)}</small>` : ""}</span>${certaintyBadge(item.certainty)}</li>`;
+      const detail = [
+        sourceForm,
+        note ? escapeHtml(note) : "",
+      ].filter(Boolean).join(" \u00b7 ");
+      return `<li><span>${typeBadge(relationType)} ${titleHtml}${variant && variant.language ? ` ${languageBadge(variant.language)}` : ""}${detail ? `<br><small>${detail}</small>` : ""}</span>${certaintyBadge(item.certainty)}</li>`;
     },
     searchText: (item) => {
       const { title } = relationMeta(item);
@@ -776,7 +854,7 @@ function relationList(items, work, indexes, variantsByTitle = new Map()) {
 function variantList(items) {
   return progressiveList(items, {
     label: "title variants",
-    renderItem: (item) => `<li><span><strong>${escapeHtml(item.variantTitle)}</strong>${item.titleAsSource && item.titleAsSource !== item.variantTitle ? `<br><small>Source form: ${escapeHtml(item.titleAsSource)}</small>` : ""}</span><span>${typeBadge(item.variantType)} ${item.language ? languageBadge(item.language) : ""} ${certaintyBadge(item.certainty)}</span></li>`,
+    renderItem: (item) => `<li><span><strong>${languageMarkup(item.variantTitle, item.language)}</strong>${item.titleAsSource && item.titleAsSource !== item.variantTitle ? `<br><small>Source form: ${languageMarkup(item.titleAsSource, item.language)}</small>` : ""}</span><span>${typeBadge(item.variantType)} ${item.language ? languageBadge(item.language) : ""} ${certaintyBadge(item.certainty)}</span></li>`,
     searchText: (item) => [item.variantTitle, item.titleAsSource, item.variantType, item.language].filter(Boolean).join(" "),
   });
 }
@@ -896,7 +974,7 @@ function renderWork(work, data, indexes) {
     section("Title variants", variantList(variants), "", variants.length),
     section("Related works and versions", relationList(relations, work, indexes, variantsByRelatedTitle), "", relations.length),
     section("Timeline", entityList(events, "event", (item) => item.displayDate || item.dateStart), "", events.length),
-    section("Sources", sourceList(sources), "", sources.length),
+    section("Sources", sourceList(sources, { indexes }), "", sources.length),
   ].join("");
   const aside = `${mediaFigures(media, indexes.sources)}${contentsRail([
     { title: "About this work", count: overview.trim() ? 1 : 0 },
@@ -937,7 +1015,7 @@ function renderEvent(event, data, indexes) {
       section("Works", entityList(works, "work", (item) => [item.year, item.workType].filter(Boolean).join(" · ")), "", works.length),
       section("Organizations", entityList(organizations, "organization", (item) => (item.types || []).map(humanize).join(", ")), "", organizations.length),
       section("Places", entityList(places, "place", (item) => [item.city, item.country].filter(Boolean).join(", ")), "", places.length),
-      section("Sources", sourceList(sources), "", sources.length),
+      section("Sources", sourceList(sources, { indexes }), "", sources.length),
     ].join(""),
     aside: `${mediaFigures(media, indexes.sources)}${contentsRail([
       { title: "People", count: people.length },
@@ -963,7 +1041,7 @@ function renderPlace(place, data, indexes) {
       section("About this place", publicText(place.publicNote)),
       section("Documented events", entityList(events, "event", (item) => item.displayDate || item.dateStart), "", events.length),
       section("People", entityList(people, "person", (item) => humanize(item.primaryRole)), "", people.length),
-      section("Sources", sourceList(sources), "", sources.length),
+      section("Sources", sourceList(sources, { indexes }), "", sources.length),
     ].join(""),
     aside: `${mediaFigures(media, indexes.sources)}${contentsRail([
       { title: "Documented events", count: events.length },
@@ -1050,7 +1128,7 @@ function renderMedia(media, data, indexes) {
         section("Timeline", entityList(events, "event", (item) => item.displayDate || item.dateStart), "", events.length),
         section("Places", entityList(places, "place", (item) => [item.city, item.country].filter(Boolean).join(", ")), "", places.length),
         section("Organizations", entityList(organizations, "organization", (item) => (item.types || []).map(humanize).join(", ")), "", organizations.length),
-        section("Sources", sourceList(sources), "", sources.length),
+        section("Sources", sourceList(sources, { indexes }), "", sources.length),
       ].join(""),
       aside: contentsRail([
         { title: "Related works", count: works.length },
@@ -1079,7 +1157,7 @@ function renderMedia(media, data, indexes) {
         includeRightsBadge: false,
         includeTitle: false,
         includeSource: false,
-      })}${sourceList(sources, { progressive: false })}`),
+      })}${sourceList(sources, { progressive: false, indexes })}`),
       section("Related works", entityList(works, "work", (item) => [item.year, item.workType].filter(Boolean).join(" · ")), "", works.length),
       section("Timeline", entityList(events, "event", (item) => item.displayDate || item.dateStart), "", events.length),
       section("People", entityList(people, "person", (item) => humanize(item.primaryRole)), "", people.length),
@@ -1166,7 +1244,7 @@ function renderPerson(person, data, indexes) {
         searchText: (item) => [item.title, item.displayDate, item.placeDisplay].filter(Boolean).join(" "),
         showTotal: false,
       }), "", events.length) : "",
-      section("Sources linked directly to this person", sourceList(sources), "", sources.length),
+      section("Sources linked directly to this person", sourceList(sources, { indexes }), "", sources.length),
     ].join(""),
     // The portrait and its credit stay in the aside: 74 of the 137 people carry
     // no portrait at all, and an identity block built around an image leaves a
@@ -1480,7 +1558,7 @@ function renderOrganization(organization, data, indexes) {
       section("Imprints", entityList(imprints, "organization", (item) => (item.types || []).map(humanize).join(", ")), "", imprints.length),
       section("Works", credits.list, "", credits.items.length),
       section("Timeline", entityList(events, "event", (item) => item.displayDate || item.dateStart), "", events.length),
-      section("Sources linked directly to this organization", sourceList(sources), "", sources.length),
+      section("Sources linked directly to this organization", sourceList(sources, { indexes }), "", sources.length),
     ].join(""),
     aside: `<div class="scope-note">${organizationScopeNote(organization)}</div>${contentsRail([
       { title: "Imprints", count: imprints.length },
@@ -1673,9 +1751,10 @@ function renderSource(source, data, indexes) {
     heroClass: "record-hero--source",
     factsClass: "record-facts--source",
     compactFactsLabel: "Source details",
+    titleMarkup: sourceCitationMarkup(source, source.title || source.shortCitation, indexes),
     heroSupplement: `<div class="source-hero__citation">
       <h2>Citation</h2>
-      <p>${escapeHtml(source.fullCitation || source.shortCitation)}</p>
+      <p>${sourceCitationMarkup(source, source.fullCitation || source.shortCitation, indexes)}</p>
       ${sourceActions(source)}
     </div>`,
     facts: `${fact("Creator", source.creator)}${fact("Date", sourceDateDisplay(source))}${fact("Date represents", sourceDateRoleLabel(source.dateRole))}${fact("Publication", source.publication)}${fact("Repository", source.repository)}${sourceIdentifierFacts(source)}${sourceAccessFact(source)}${fact("Reliability", sourceReliabilityLabel(source.reliability))}${fact("Verification", sourceStatusLabel(source.sourceStatus))}`,
@@ -1775,7 +1854,7 @@ export function renderRecordMarkup(view, requestedId, requestedType) {
       <div class="shell record-hero__grid">
         <div>
           <p class="eyebrow">${escapeHtml(view.label)} · <span class="record-id">${escapeHtml(requestedId)}</span></p>
-          <h1>${escapeHtml(view.title)}</h1>
+          <h1>${view.titleMarkup || escapeHtml(view.title)}</h1>
           <div class="meta-row">${view.badges}</div>
           ${view.heroSupplement || ""}
           ${compactFacts}
