@@ -217,7 +217,12 @@ def sources_index(data_root: Path, schema_version: str) -> dict:
             "dateRole": source.get("dateRole"),
             "repository": source.get("repository"),
             "externalUrl": source.get("primaryUrl") or source.get("accessUrl"),
+            # shortCitation is deliberately retained as search-only material.
+            # It often contains the form a researcher actually types (archive
+            # acronyms, catalogue abbreviations, shelfmarks) even when the
+            # longer display citation expands or omits that wording.
             "searchSupplement": joined([
+                source.get("shortCitation"),
                 source.get("creator"),
                 source.get("publication"),
                 *[value for identifier in source.get("identifiers") or [] for value in (identifier.get("scheme"), identifier.get("value"))],

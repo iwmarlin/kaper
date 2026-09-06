@@ -71,11 +71,24 @@ class CompactCatalogueIndexTests(unittest.TestCase):
             with self.subTest(index=name):
                 self.assertLess(compact_size, previous_size * 0.7)
 
-    def test_people_and_works_keep_search_material_out_of_relational_payloads(self) -> None:
+    def test_compact_indexes_keep_search_material_needed_for_browse_queries(self) -> None:
         works = {item["id"]: item for item in read(INDEXES / "works.json")["records"]}
         people = {item["id"]: item for item in read(INDEXES / "people.json")["records"]}
+        sources = {item["id"]: item for item in read(INDEXES / "sources.json")["records"]}
+        canonical_sources = {item["id"]: item for item in read(PUBLIC / "sources.json")["records"]}
+
         self.assertIn("Richard Tauber", works["W-S059"]["searchSupplement"])
         self.assertIn("Chwast", people["P009"]["searchSupplement"])
+
+        # A source's short citation is not merely a display abbreviation: it
+        # carries common research queries such as archive acronyms, catalogue
+        # shorthands and shelfmarks. Every one must remain searchable after
+        # replacing the full relational Sources payload with the compact index.
+        for source_id, source in canonical_sources.items():
+            short_citation = source.get("shortCitation")
+            if short_citation:
+                with self.subTest(source=source_id):
+                    self.assertIn(short_citation, sources[source_id]["searchSupplement"])
 
 
 if __name__ == "__main__":
