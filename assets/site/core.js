@@ -1,4 +1,5 @@
 const DATA_ROOT = "data/public/v1/";
+const SITE_INDEX_ROOT = "data/site/indexes/";
 let imageDerivatives = Object.freeze({});
 
 export function registerImageDerivatives(mapping) {
@@ -23,7 +24,15 @@ export const TABLE_FILES = Object.freeze({
 });
 
 const tableCache = new Map();
+const siteIndexCache = new Map();
 let manifestPromise;
+
+const SITE_INDEX_FILES = Object.freeze({
+  works: "works.json",
+  people: "people.json",
+  media: "media.json",
+  sources: "sources.json",
+});
 
 export function loadManifest() {
   if (!manifestPromise) {
@@ -74,6 +83,24 @@ export async function loadTables(names) {
     names.map(async (name) => [name, await loadTable(name)]),
   );
   return Object.fromEntries(entries);
+}
+
+/** Load the small, presentation-oriented payload for one browse page. */
+export async function loadSiteIndex(name) {
+  const filename = SITE_INDEX_FILES[name];
+  if (!filename) throw new Error(`Unknown site index: ${name}`);
+  if (!siteIndexCache.has(name)) {
+    const url = new URL(`${SITE_INDEX_ROOT}${filename}`, document.baseURI);
+    siteIndexCache.set(name, fetch(url, { cache: "no-cache" }).then(async (response) => {
+      if (!response.ok) throw new Error(`Could not load catalogue index ${filename} (${response.status})`);
+      const payload = await response.json();
+      if (!Array.isArray(payload.records) || payload.count !== payload.records.length) {
+        throw new Error(`${filename} has an invalid catalogue-index payload`);
+      }
+      return payload;
+    }));
+  }
+  return siteIndexCache.get(name);
 }
 
 export function indexById(records) {

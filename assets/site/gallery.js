@@ -1,33 +1,25 @@
 import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=c77ada42a0";
 import {
   debounce,
-  escapeHtml,
-  externalMediaActionLabel,
   humanize,
-  indexById,
-  loadTables,
-  mediaIsFairUse,
-  mediaPreview,
-  mediaRightsBadge,
+  loadSiteIndex,
   matchesPeriod,
   mountSiteChrome,
   normalizeSearch,
   PERIOD_ORDER,
-  periodBadge,
   periodLabel,
   periodValues,
-  recordUrl,
-  registerImageDerivatives,
-  renderMediaDisclosure,
   renderError,
-  renderLoading,
-  resolveIds,
-  safeExternalUrl,
-  typeBadge,
 } from "./core.js?v=c77ada42a0";
 import { createCatalogueFilters } from "./catalogue-filters.js?v=c77ada42a0";
+import {
+  curatedMediaOrder,
+  registerCatalogueImageDerivatives,
+  renderMediaIndexCard,
+  sortMediaIndex,
+} from "./catalogue-results.js?v=c77ada42a0";
 
-registerImageDerivatives(IMAGE_DERIVATIVES);
+registerCatalogueImageDerivatives(IMAGE_DERIVATIVES);
 mountSiteChrome("media");
 
 const controls = {
@@ -81,7 +73,7 @@ const PAGE_SIZE = 30;
 let visible = PAGE_SIZE;
 let showingAll = false;
 let current = [];
-renderLoading(target, "Loading curated media…");
+const hasPrerenderedResults = target?.dataset.prerendered === "true";
 
 
 function addOptions(select, values, labeler = humanize, preserveOrder = false) {
@@ -94,30 +86,8 @@ function addOptions(select, values, labeler = humanize, preserveOrder = false) {
   }
 }
 
-function compareMedia(a, b) {
-  return Number(a.sortOrder || 99999) - Number(b.sortOrder || 99999)
-    || String(a.title).localeCompare(String(b.title));
-}
-
-function curatedOrder(items) {
-  const collections = items.filter((item) => item.mediaType === "document_gallery").sort(compareMedia);
-  const images = items.filter((item) => item.mediaType === "image").sort(compareMedia);
-  const references = items.filter((item) => ["video", "audio", "sheet music"].includes(item.mediaType)).sort(compareMedia);
-  const other = items.filter((item) => !["document_gallery", "image", "video", "audio", "sheet music"].includes(item.mediaType)).sort(compareMedia);
-  const result = [...collections];
-  let imageIndex = 0;
-  let referenceIndex = 0;
-  while (imageIndex < images.length || referenceIndex < references.length) {
-    result.push(...images.slice(imageIndex, imageIndex + 2));
-    imageIndex += 2;
-    if (referenceIndex < references.length) result.push(references[referenceIndex++]);
-  }
-  return [...result, ...other];
-}
-
 try {
-  const { media, sources } = await loadTables(["media", "sources"]);
-  const sourcesById = indexById(sources);
+  const { records: media } = await loadSiteIndex("media");
   const categoryCounts = new Map();
   for (const item of media) {
     if (item.category) categoryCounts.set(item.category, (categoryCounts.get(item.category) || 0) + 1);
@@ -151,7 +121,7 @@ try {
       && !controls.category.value
       && !controls.period.value
       && !controls.rights.value;
-    current = isDefaultCuratedView ? curatedOrder(current) : current.sort(compareMedia);
+    current = isDefaultCuratedView ? curatedMediaOrder(current) : sortMediaIndex(current);
     const shown = current.slice(0, showingAll ? current.length : visible);
     countTarget.innerHTML = `<strong>Showing ${shown.length}</strong> of ${current.length} ${current.length === 1 ? "item" : "items"}`;
     const remaining = current.length - shown.length;
@@ -169,43 +139,8 @@ try {
       filterController.write();
       return;
     }
-    target.innerHTML = shown.map((item) => {
-      const external = safeExternalUrl(item.externalUrl);
-      const isGallery = item.mediaType === "document_gallery" && Array.isArray(item.assetPaths) && item.assetPaths.length > 1;
-      const isLocalVisual = Boolean(item.assetPath && item.storageType !== "external" && item.mediaType !== "audio");
-      const isFairUse = mediaIsFairUse(item);
-      const itemSources = resolveIds(item, "sourceIds", sourcesById);
-      const preview = mediaPreview(item, {
-        sizes: "(max-width: 680px) calc(100vw - 2rem), (max-width: 1100px) 46vw, 27rem",
-      });
-      const previewMarkup = isGallery
-        ? `<a class="media-card__image-link" href="${recordUrl("media", item.id)}">${preview}<span>Open gallery · ${item.assetPaths.length} images</span></a>`
-        : (isLocalVisual
-          ? `<a class="media-card__preview-link" href="${recordUrl("media", item.id)}" aria-label="View media record: ${escapeHtml(item.title)}">${preview}</a>`
-          : preview);
-      return `
-        <article class="media-card" data-media-id="${escapeHtml(item.id)}">
-          <figure>${previewMarkup}</figure>
-          <div class="media-card__body">
-            <div class="meta-row">${typeBadge(item.mediaType)}${periodBadge(item.periods || item.period)}${mediaRightsBadge(item)}</div>
-            <h2><a href="${recordUrl("media", item.id)}">${escapeHtml(item.title)}</a></h2>
-            <p>${escapeHtml(item.publicCaption || item.description || "")}</p>
-            ${isFairUse ? renderMediaDisclosure(item, itemSources, {
-              compact: true,
-              fairUseResolutionLabel: "Low-resolution copy",
-              includeTitle: false,
-              includeCaption: false,
-              includeRightsBadge: false,
-              includeFullRightsNote: false,
-            }) : ""}
-            <div class="card__footer"><span>${escapeHtml(humanize(item.category || item.mediaType))}</span><span>${escapeHtml(item.id)}</span></div>
-            <div class="media-card__actions">
-              <a href="${recordUrl("media", item.id)}">${isGallery ? `Open gallery (${item.assetPaths.length})` : "View record"} <span aria-hidden="true">→</span></a>
-              ${external ? `<a href="${escapeHtml(external)}" target="_blank" rel="noreferrer">${escapeHtml(externalMediaActionLabel(item))} <span aria-hidden="true">↗</span></a>` : ""}
-            </div>
-          </div>
-        </article>`;
-    }).join("");
+    target.innerHTML = shown.map(renderMediaIndexCard).join("");
+    target.dataset.prerendered = "false";
     filterController.write();
   }
 
@@ -272,6 +207,8 @@ try {
   });
   render();
 } catch (error) {
-  countTarget.textContent = "Media unavailable";
-  renderError(target, error);
+  if (!hasPrerenderedResults) {
+    countTarget.textContent = "Media unavailable";
+    renderError(target, error);
+  }
 }

@@ -1,65 +1,25 @@
 import {
   compareText,
   debounce,
-  escapeHtml,
-  formatDate,
-  humanize,
   indexText,
-  loadTables,
+  loadSiteIndex,
   mountSiteChrome,
   normalizeSearch,
-  recordUrl,
   renderError,
-  renderLoading,
   safeExternalUrl,
 } from "./core.js?v=c77ada42a0";
 import { createCatalogueFilters } from "./catalogue-filters.js?v=c77ada42a0";
+import {
+  dateRoleLabel,
+  renderSourceIndexRow,
+  sourceTitle,
+  sourceTypeLabel,
+  sourceYear,
+} from "./catalogue-results.js?v=c77ada42a0";
 
 // This page is intentionally not part of NAV_ITEMS yet. It can be reviewed as
 // a direct route without changing the site's established primary pathways.
 mountSiteChrome("sources");
-
-const SOURCE_TYPE_LABELS = Object.freeze({
-  archival_digital_record: "Archival digital record",
-  archival_document: "Archival document",
-  archival_manuscript_holding: "Archival manuscript holding",
-  archival_photograph: "Archival photograph",
-  authority_record: "Authority record",
-  book: "Book",
-  copyright_catalogue: "Copyright catalogue",
-  digital_collection_item: "Digital collection item",
-  filmographic_database: "Filmographic database",
-  image_or_photograph: "Image or photograph",
-  online_audio_source: "Online audio",
-  online_database: "Online database",
-  online_video_source: "Online video",
-  periodical_article: "Periodical article",
-  press_item: "Press item",
-  recording_discographic_source: "Recording or discographic source",
-  secondary_literature: "Secondary literature",
-  sheet_music: "Sheet music",
-  sheet_music_catalogue: "Sheet-music catalogue",
-  sound_recording_catalogue: "Sound-recording catalogue",
-  soundtrack_database: "Soundtrack database",
-  visual_document: "Visual document",
-  web_page: "Web page",
-  wikimedia_article_page: "Wikipedia article",
-  wikimedia_commons_file: "Wikimedia Commons file",
-});
-
-const DATE_ROLE_LABELS = Object.freeze({
-  catalogue_volume: "Catalogue volume",
-  creation: "Creation of the object",
-  data_currency: "Currency of the data",
-  described_item: "Described item",
-  digital_publication: "Digital publication",
-  digitization: "Digitization",
-  issue: "Issue or edition",
-  publication: "Publication",
-  record_creation: "Catalogue-record creation",
-  record_update: "Catalogue-record update",
-  recording: "Recording",
-});
 
 const controls = {
   search: document.querySelector("#source-search"),
@@ -89,45 +49,7 @@ let visibleCount = PAGE_SIZE;
 let showingAll = false;
 let filtered = [];
 
-renderLoading(target, "Loading source records…");
-
-function sourceTypeLabel(value) {
-  return SOURCE_TYPE_LABELS[value] || humanize(value || "Other source");
-}
-
-function dateRoleLabel(value) {
-  return DATE_ROLE_LABELS[value] || humanize(value || "Unknown date role");
-}
-
-function sourceDateDisplay(source) {
-  if (source.dateDisplay) return source.dateDisplay;
-  const qualifier = source.dateQualifier || "confirmed";
-  if (qualifier === "unknown") return "n.d.";
-  if (qualifier === "forthcoming" && !source.date) return "forthcoming";
-  if (!source.date) return "n.d.";
-  const start = formatDate(source.date);
-  const end = source.dateEnd ? formatDate(source.dateEnd) : "";
-  const range = end && end !== start ? `${start}–${end}` : start;
-  const prefix = {
-    after: "after ",
-    approximate: "c. ",
-    before: "before ",
-    not_before: "not before ",
-  }[qualifier] || "";
-  if (qualifier === "forthcoming") return `${range} (forthcoming)`;
-  if (qualifier === "reported") return `${range} (reported)`;
-  if (qualifier === "uncertain") return `${range}?`;
-  return `${prefix}${range}`;
-}
-
-function sourceYear(source) {
-  const match = String(source.date || "").match(/^(\d{4})(?:-|$)/);
-  return match ? Number(match[1]) : null;
-}
-
-function sourceTitle(source) {
-  return source.title || source.shortCitation || source.fullCitation || source.id;
-}
+const hasPrerenderedResults = target?.dataset.prerendered === "true";
 
 function addCountedOptions(select, values, labeler) {
   const counts = new Map();
@@ -141,17 +63,12 @@ function addCountedOptions(select, values, labeler) {
   }
 }
 
-function typeMark(source) {
-  return `<span class="badge badge--type">${escapeHtml(sourceTypeLabel(source.sourceType))}</span>`;
-}
-
 try {
-  const { sources } = await loadTables(["sources"]);
+  const { records: sources } = await loadSiteIndex("sources");
   addCountedOptions(controls.type, sources.map((source) => source.sourceType), sourceTypeLabel);
   addCountedOptions(controls.dateRole, sources.map((source) => source.dateRole), dateRoleLabel);
   const indexed = sources.map((source) => {
-    const external = safeExternalUrl(source.primaryUrl) || safeExternalUrl(source.accessUrl);
-    const identifiers = (source.identifiers || []).flatMap((identifier) => [identifier.scheme, identifier.value]);
+    const external = safeExternalUrl(source.externalUrl);
     return {
       ...source,
       _external: external,
@@ -159,17 +76,14 @@ try {
       _search: indexText([
         source.id,
         source.title,
-        source.shortCitation,
         source.fullCitation,
-        source.creator,
-        source.publication,
         source.repository,
         source.sourceType,
         sourceTypeLabel(source.sourceType),
         source.date,
         source.dateDisplay,
         dateRoleLabel(source.dateRole),
-        ...identifiers,
+        source.searchSupplement,
       ].filter(Boolean).join(" ")),
     };
   });
@@ -225,22 +139,8 @@ try {
       return;
     }
 
-    target.innerHTML = shown.map((source) => `
-      <article class="source-index-row">
-        <div class="source-index-row__rail">
-          <span class="source-index-row__id">${escapeHtml(source.id)}</span>
-          <span class="source-index-row__date">${escapeHtml(sourceDateDisplay(source))}</span>
-        </div>
-        <div class="source-index-row__identity">
-          <h2><a href="${recordUrl("source", source.id)}">${escapeHtml(sourceTitle(source))}</a></h2>
-          <p class="source-index-row__citation">${escapeHtml(source.fullCitation || source.shortCitation || "")}</p>
-        </div>
-        <div class="source-index-row__context">
-          ${typeMark(source)}
-          ${source.repository ? `<span class="source-index-row__repository">${escapeHtml(source.repository)}</span>` : ""}
-          ${source._external ? `<a href="${escapeHtml(source._external)}" target="_blank" rel="noreferrer">Open source <span aria-hidden="true">↗</span></a>` : ""}
-        </div>
-      </article>`).join("");
+    target.innerHTML = shown.map(renderSourceIndexRow).join("");
+    target.dataset.prerendered = "false";
     filterController.write();
   }
 
@@ -301,7 +201,9 @@ try {
 
   render();
 } catch (error) {
-  countTarget.textContent = "Source index unavailable";
-  totalLabelTarget.textContent = "Source data unavailable";
-  renderError(target, error);
+  if (!hasPrerenderedResults) {
+    countTarget.textContent = "Source index unavailable";
+    totalLabelTarget.textContent = "Source data unavailable";
+    renderError(target, error);
+  }
 }

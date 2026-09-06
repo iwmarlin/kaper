@@ -2,31 +2,25 @@ import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=c77ada42a0";
 import {
   compareText,
   debounce,
-  escapeHtml,
   functionLabel,
   humanize,
-  indexById,
   indexText,
-  loadTables,
+  loadSiteIndex,
   mountSiteChrome,
   nameKey,
   normalizeSearch,
-  periodBadge,
   periodLabel,
-  periodValues,
   PERIOD_ORDER,
-  personFunctions,
   PERSON_FUNCTION_ORDER,
-  recordUrl,
-  registerImageDerivatives,
   renderError,
-  renderLoading,
-  responsiveImage,
-  typeBadge,
 } from "./core.js?v=c77ada42a0";
 import { createCatalogueFilters } from "./catalogue-filters.js?v=c77ada42a0";
+import {
+  registerCatalogueImageDerivatives,
+  renderPersonIndexRow,
+} from "./catalogue-results.js?v=c77ada42a0";
 
-registerImageDerivatives(IMAGE_DERIVATIVES);
+registerCatalogueImageDerivatives(IMAGE_DERIVATIVES);
 mountSiteChrome("people");
 
 const controls = {
@@ -55,7 +49,7 @@ let visibleCount = PAGE_SIZE;
 let showingAll = false;
 let filtered = [];
 
-renderLoading(target, "Loading documented people…");
+const hasPrerenderedResults = target?.dataset.prerendered === "true";
 
 function addOptions(select, values, labeler = humanize, preserveOrder = false) {
   const uniqueValues = [...new Set(values.filter(Boolean))];
@@ -67,131 +61,35 @@ function addOptions(select, values, labeler = humanize, preserveOrder = false) {
   }
 }
 
-function initials(name = "") {
-  const parts = String(name).trim().split(/\s+/).filter(Boolean);
-  if (!parts.length) return "?";
-  const first = [...parts[0]][0] || "";
-  const last = parts.length > 1 ? [...parts[parts.length - 1]][0] || "" : "";
-  return (first + last).toUpperCase();
-}
-
 try {
-  const { people, works, media, sources, timelineEvents, contributions, personNameVariants } = await loadTables([
-    "people",
-    "works",
-    "media",
-    "sources",
-    "timelineEvents",
-    "contributions",
-    "personNameVariants",
-  ]);
-  const worksById = indexById(works);
-  const contributionsById = indexById(contributions);
-  const nameVariantsByPersonId = new Map();
-  for (const variant of personNameVariants) {
-    for (const personId of variant.personIds || []) {
-      const existing = nameVariantsByPersonId.get(personId) || [];
-      existing.push(variant.variantName, variant.attestedWording);
-      nameVariantsByPersonId.set(personId, existing);
-    }
-  }
-  const mediaById = indexById(media);
-  const sourcesById = indexById(sources);
-  const eventsById = indexById(timelineEvents);
-
-  // A person reaches a portrait indirectly, through the sources attached to
-  // them, and a source can document several people at once: the photograph of
-  // the Kiepura reception in Paris carries Kaper, his wife, Kiepura and Halicz.
-  // Taking the first portrait found in any of a person's sources put one
-  // sitter's face on three other people. A portrait is claimed only when its
-  // slug is the person's own — the convention these records follow — or when
-  // the source it comes from names this person and no one else.
-  function portraitFor(person) {
-    const reachable = [];
-    for (const sourceId of person.sourceIds || []) {
-      const source = sourcesById.get(sourceId);
-      for (const mediaId of source?.mediaIds || []) {
-        const item = mediaById.get(mediaId);
-        if (item?.category === "portrait" && item.assetPath && IMAGE_DERIVATIVES[item.assetPath]) {
-          reachable.push({ item, source });
-        }
-      }
-    }
-    const own = reachable.find(({ item }) => String(item.slug || "").startsWith(`${person.slug}-`));
-    if (own) return own.item;
-    const sole = reachable.find(({ source }) => (source?.personIds || []).length === 1
-      && source.personIds[0] === person.id);
-    return sole ? sole.item : null;
-  }
-
-  const indexed = people.map((person) => {
-    const personWorks = (person.workIds || []).map((id) => worksById.get(id)).filter(Boolean);
-    // Periods were read from linked works alone, so anyone documented only
-    // through a dated event — a teacher, a family member, a producer Kaper
-    // worked under rather than with — carried no badge at all. Linked timeline
-    // events are dated and periodised on the same evidence, so they count too.
-    const personEvents = (person.timelineEventIds || []).map((id) => eventsById.get(id)).filter(Boolean);
-    const periodSet = new Set([
-      ...personWorks.flatMap((work) => periodValues(work)),
-      ...personEvents.flatMap((event) => periodValues(event)),
-    ]);
-    const periods = PERIOD_ORDER.filter((period) => periodSet.has(period));
-    const roles = person.roles?.length ? person.roles : [person.primaryRole].filter(Boolean);
-    const functions = personFunctions(person, contributionsById);
-    // The names a person worked under are part of finding them: the archive
-    // documents Kaper as Chwast, Jurmann as Bob Henders, Bernauer as Fred
-    // Lustig, and a reader who knows only the pseudonym must arrive somewhere.
-    const usedNames = (nameVariantsByPersonId.get(person.id) || []).filter(Boolean);
-    return {
-      ...person,
-      _works: personWorks.length,
-      _periods: periods,
-      _roles: roles,
-      _functions: functions,
-      _portrait: portraitFor(person),
-      _search: indexText([
-        person.displayName,
-        person.sortName,
-        person.authorizedName,
-        ...usedNames,
-        ...roles,
-        ...functions.map(functionLabel),
-      ].filter(Boolean).join(" ")),
-    };
-  });
+  const { records: people } = await loadSiteIndex("people");
+  const indexed = people.map((person) => ({
+    ...person,
+    _search: indexText([person.displayName, person.searchSupplement].filter(Boolean).join(" ")),
+  }));
 
   if (totalLabelTarget) {
     totalLabelTarget.textContent = `${people.length} documented ${people.length === 1 ? "person" : "people"}`;
   }
 
-  const availableFunctions = new Set(indexed.flatMap((person) => person._functions));
+  const availableFunctions = new Set(indexed.flatMap((person) => person.functions));
   addOptions(
     controls.role,
     PERSON_FUNCTION_ORDER.filter((value) => availableFunctions.has(value)),
     functionLabel,
     true,
   );
-  const availablePeriods = new Set(indexed.flatMap((person) => person._periods));
+  const availablePeriods = new Set(indexed.flatMap((person) => person.periods));
   addOptions(controls.period, PERIOD_ORDER.filter((value) => availablePeriods.has(value)), periodLabel, true);
   let filterController;
-
-  function avatar(person) {
-    if (person._portrait) {
-      return responsiveImage(person._portrait.assetPath, person._portrait.altText || person.displayName, {
-        className: "person-row__portrait",
-        sizes: "4rem",
-      });
-    }
-    return `<span class="person-row__monogram" aria-hidden="true">${escapeHtml(initials(person.displayName))}</span>`;
-  }
 
   function render() {
     filterController.update();
     const query = normalizeSearch(controls.search.value.trim());
     filtered = indexed.filter((person) => (
       (!query || person._search.includes(query))
-      && (!controls.role.value || person._functions.includes(controls.role.value))
-      && (!controls.period.value || person._periods.includes(controls.period.value))
+      && (!controls.role.value || person.functions.includes(controls.role.value))
+      && (!controls.period.value || person.periods.includes(controls.period.value))
     ));
 
     filtered.sort((a, b) => {
@@ -199,9 +97,9 @@ try {
       // The counted quantity is the number of works a person is linked to,
       // which is what the option now says; sources, media and dated events are
       // not weighed, so the index files by name unless asked otherwise.
-      if (controls.sort.value === "works-desc") return b._works - a._works || byName;
+      if (controls.sort.value === "works-desc") return b.workCount - a.workCount || byName;
       if (controls.sort.value === "role") {
-        const rank = (person) => PERSON_FUNCTION_ORDER.indexOf(person._functions[0] || "documented");
+        const rank = (person) => PERSON_FUNCTION_ORDER.indexOf(person.functions[0] || "documented");
         return rank(a) - rank(b) || byName;
       }
       return byName;
@@ -225,19 +123,8 @@ try {
       return;
     }
 
-    target.innerHTML = shown.map((person) => {
-      return `
-        <article class="person-row">
-          <div class="person-row__avatar">${avatar(person)}</div>
-          <div class="person-row__identity">
-            <h2><a href="${recordUrl("person", person.id)}">${escapeHtml(person.displayName)}</a></h2>
-            <div class="meta-row" aria-label="Documented roles">${person._roles.map(typeBadge).join("")}</div>
-          </div>
-          ${person._periods.length
-            ? `<div class="person-row__period" aria-label="Documented periods">${periodBadge(person._periods)}</div>`
-            : ""}
-        </article>`;
-    }).join("");
+    target.innerHTML = shown.map(renderPersonIndexRow).join("");
+    target.dataset.prerendered = "false";
     filterController.write();
   }
 
@@ -295,6 +182,8 @@ try {
   });
   render();
 } catch (error) {
-  countTarget.textContent = "Index unavailable";
-  renderError(target, error);
+  if (!hasPrerenderedResults) {
+    countTarget.textContent = "Index unavailable";
+    renderError(target, error);
+  }
 }

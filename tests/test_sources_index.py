@@ -17,8 +17,8 @@ class SourcesIndexContractTests(unittest.TestCase):
 
     def test_page_loads_the_source_index_module(self) -> None:
         self.assertIn('src="assets/site/sources.js?', self.page)
-        self.assertIn('await loadTables(["sources"])', self.script)
-        self.assertIn('recordUrl("source", source.id)', self.script)
+        self.assertIn('await loadSiteIndex("sources")', self.script)
+        self.assertIn("renderSourceIndexRow", self.script)
 
     def test_page_offers_search_facets_and_progressive_loading(self) -> None:
         for element_id in (

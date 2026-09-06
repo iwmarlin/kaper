@@ -1,27 +1,20 @@
 import {
-  certaintyBadge,
   compareText,
   debounce,
-  escapeHtml,
   humanize,
-  indexById,
-  loadTables,
+  indexText,
+  loadSiteIndex,
   matchesPeriod,
   mountSiteChrome,
   normalizeSearch,
   PERIOD_ORDER,
-  periodBadge,
   periodLabel,
   periodValues,
-  recordUrl,
   renderError,
-  renderLoading,
-  scopeBadge,
   sortKey,
-  typeBadge,
-  workSearchText,
 } from "./core.js?v=c77ada42a0";
 import { createCatalogueFilters } from "./catalogue-filters.js?v=c77ada42a0";
+import { renderWorkIndexRow } from "./catalogue-results.js?v=c77ada42a0";
 
 mountSiteChrome("works");
 
@@ -52,7 +45,7 @@ let visibleCount = PAGE_SIZE;
 let showingAll = false;
 let filtered = [];
 
-renderLoading(target, "Loading the catalogue…");
+const hasPrerenderedResults = target?.dataset.prerendered === "true";
 
 function addOptions(select, values, labeler = humanize, preserveOrder = false) {
   const uniqueValues = [...new Set(values.filter(Boolean))];
@@ -65,30 +58,24 @@ function addOptions(select, values, labeler = humanize, preserveOrder = false) {
 }
 
 try {
-  const { works, people, films, songs, otherWorks, contributions, titleVariants } = await loadTables([
-    "works",
-    "people",
-    "films",
-    "songs",
-    "otherWorks",
-    "contributions",
-    "titleVariants",
-  ]);
-  const peopleById = indexById(people);
-  const contributionsById = indexById(contributions);
-  const titleVariantsById = indexById(titleVariants);
-  const subtypeByWorkId = new Map();
-  for (const subtype of [...films, ...songs, ...otherWorks]) {
-    for (const workId of subtype.workIds || []) subtypeByWorkId.set(workId, subtype);
-  }
+  const { records: works } = await loadSiteIndex("works");
 
   addOptions(controls.type, works.map((work) => work.workType));
   const availablePeriods = new Set(works.flatMap(periodValues));
   addOptions(controls.period, PERIOD_ORDER.filter((value) => availablePeriods.has(value)), periodLabel, true);
   addOptions(controls.certainty, works.map((work) => work.certainty));
-  const searchLookup = { peopleById, subtypeByWorkId, contributionsById, titleVariantsById };
-
-  const indexedWorks = works.map((work) => ({ ...work, _search: workSearchText(work, searchLookup) }));
+  const indexedWorks = works.map((work) => ({
+    ...work,
+    _search: indexText([
+      work.title,
+      work.sortTitle,
+      work.searchVariants,
+      work.year,
+      work.workType,
+      ...periodValues(work),
+      work.searchSupplement,
+    ].filter(Boolean).join(" ")),
+  }));
 
   let filterController;
 
@@ -127,21 +114,8 @@ try {
       return;
     }
 
-    target.innerHTML = shown.map((work) => {
-      const qualificationBadges = [
-        work.publicScope === "context_only" ? scopeBadge(work.publicScope) : "",
-        work.certainty && work.certainty !== "confirmed" ? certaintyBadge(work.certainty) : "",
-      ].join("");
-      return `
-        <article class="work-row">
-          <div class="work-row__year">${escapeHtml(work.year || "—")}</div>
-          <div class="work-row__identity">
-            <h2><a href="${recordUrl("work", work.id)}">${escapeHtml(work.title)}</a></h2>
-            <div class="meta-row" aria-label="Work classification">${typeBadge(work.workType)}${qualificationBadges}</div>
-          </div>
-          <div class="work-row__period">${periodBadge(work.periods || work.period)}</div>
-        </article>`;
-    }).join("");
+    target.innerHTML = shown.map(renderWorkIndexRow).join("");
+    target.dataset.prerendered = "false";
     filterController.write();
   }
 
@@ -200,6 +174,8 @@ try {
   });
   render();
 } catch (error) {
-  countTarget.textContent = "Catalogue unavailable";
-  renderError(target, error);
+  if (!hasPrerenderedResults) {
+    countTarget.textContent = "Catalogue unavailable";
+    renderError(target, error);
+  }
 }

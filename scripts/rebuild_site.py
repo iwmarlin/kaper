@@ -78,6 +78,10 @@ def main() -> int:
         ),
         Step("Build responsive images and home payload", tuple(image_command)),
         Step(
+            "Build compact catalogue indexes and prerender first results",
+            (python, str(scripts / "build_catalogue_indexes.py"), "--root", str(root)),
+        ),
+        Step(
             "Build per-record payloads",
             (python, str(scripts / "build_record_payloads.py"), "--root", str(root)),
         ),
@@ -96,6 +100,16 @@ def main() -> int:
         Step(
             "Check responsive assets and home payload",
             (python, str(scripts / "build_site_assets.py"), "--root", str(root), "--check"),
+        ),
+        Step(
+            "Check compact catalogue indexes and prerendered results",
+            (
+                python,
+                str(scripts / "build_catalogue_indexes.py"),
+                "--root",
+                str(root),
+                "--check",
+            ),
         ),
         Step(
             "Check per-record payloads",
