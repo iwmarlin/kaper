@@ -1,4 +1,4 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=3dda364a80";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=5b3a2d520f";
 import {
   compareText,
   debounce,
@@ -23,7 +23,8 @@ import {
   renderLoading,
   responsiveImage,
   typeBadge,
-} from "./core.js?v=3dda364a80";
+} from "./core.js?v=5b3a2d520f";
+import { createCatalogueFilters } from "./catalogue-filters.js?v=5b3a2d520f";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 mountSiteChrome("people");
@@ -64,47 +65,6 @@ function addOptions(select, values, labeler = humanize, preserveOrder = false) {
     option.textContent = labeler(value);
     select.append(option);
   }
-}
-
-function syncQuery() {
-  const params = new URLSearchParams();
-  for (const [key, control] of Object.entries(controls)) {
-    const defaultValue = key === "sort" ? "name" : "";
-    if (control.value && control.value !== defaultValue) params.set(key, control.value);
-  }
-  history.replaceState(null, "", params.toString() ? `?${params}` : location.pathname);
-}
-
-function loadQuery() {
-  const params = new URLSearchParams(location.search);
-  for (const [key, control] of Object.entries(controls)) {
-    if (params.has(key)) control.value = params.get(key);
-  }
-}
-
-function selectedOptionLabel(control) {
-  return control.options[control.selectedIndex]?.textContent?.trim() || control.value;
-}
-
-function renderFilterChrome() {
-  const selected = filterOptions.filter(({ key, defaultValue }) => controls[key].value !== defaultValue);
-  const hasSearch = Boolean(controls.search.value.trim());
-
-  filterCount.textContent = String(selected.length);
-  filterCount.hidden = selected.length === 0;
-  filterToggle.setAttribute(
-    "aria-label",
-    selected.length ? `Filters and sort, ${selected.length} active` : "Filters and sort",
-  );
-  resetButton.hidden = !hasSearch && selected.length === 0;
-
-  activeFilters.hidden = selected.length === 0;
-  activeFilters.innerHTML = selected.map(({ key, label }) => `
-    <button class="active-filter" type="button" data-filter-key="${escapeHtml(key)}"
-      aria-label="Remove ${escapeHtml(label)} filter: ${escapeHtml(selectedOptionLabel(controls[key]))}">
-      <span>${escapeHtml(label)}: ${escapeHtml(selectedOptionLabel(controls[key]))}</span>
-      <span class="active-filter__remove" aria-hidden="true">×</span>
-    </button>`).join("");
 }
 
 function initials(name = "") {
@@ -213,7 +173,7 @@ try {
   );
   const availablePeriods = new Set(indexed.flatMap((person) => person._periods));
   addOptions(controls.period, PERIOD_ORDER.filter((value) => availablePeriods.has(value)), periodLabel, true);
-  loadQuery();
+  let filterController;
 
   function avatar(person) {
     if (person._portrait) {
@@ -226,7 +186,7 @@ try {
   }
 
   function render() {
-    renderFilterChrome();
+    filterController.update();
     const query = normalizeSearch(controls.search.value.trim());
     filtered = indexed.filter((person) => (
       (!query || person._search.includes(query))
@@ -261,7 +221,7 @@ try {
     }
     if (!shown.length) {
       target.innerHTML = `<div class="empty-state"><h2>No matching people</h2><p>Try removing a filter or using a broader search term.</p></div>`;
-      syncQuery();
+      filterController.write();
       return;
     }
 
@@ -278,36 +238,29 @@ try {
             : ""}
         </article>`;
     }).join("");
-    syncQuery();
+    filterController.write();
   }
 
-  const resetAndRender = () => {
+  function resetAndRender() {
     visibleCount = PAGE_SIZE;
     showingAll = false;
     render();
-  };
+  }
+  filterController = createCatalogueFilters({
+    controls,
+    options: filterOptions,
+    toggle: filterToggle,
+    panel: advancedFilters,
+    activeFilters,
+    count: filterCount,
+    resetButton,
+    onChange: resetAndRender,
+  });
+  filterController.read();
   controls.search.addEventListener("input", debounce(resetAndRender));
   for (const control of [controls.role, controls.period, controls.sort]) {
     control.addEventListener("change", resetAndRender);
   }
-  filterToggle.addEventListener("click", () => {
-    const open = !advancedFilters.classList.contains("filters__advanced--open");
-    advancedFilters.classList.toggle("filters__advanced--open", open);
-    filterToggle.setAttribute("aria-expanded", String(open));
-  });
-  activeFilters.addEventListener("click", (event) => {
-    const chip = event.target.closest("[data-filter-key]");
-    if (!chip || !activeFilters.contains(chip)) return;
-    const option = filterOptions.find(({ key }) => key === chip.dataset.filterKey);
-    if (!option) return;
-    controls[option.key].value = option.defaultValue;
-    resetAndRender();
-    // The chip has just been removed from the document, so focus would fall to
-    // the body. Return it to the control the reader was working with: the
-    // toggle when the panel is collapsed, otherwise the select itself.
-    const fallback = filterToggle.offsetParent ? filterToggle : controls[option.key];
-    fallback.focus({ preventScroll: true });
-  });
   function revealFrom(firstNewIndex) {
     const firstNewRecord = target.children[firstNewIndex];
     if (firstNewRecord) {
@@ -336,8 +289,7 @@ try {
     controls.role.value = "";
     controls.period.value = "";
     controls.sort.value = "name";
-    advancedFilters.classList.remove("filters__advanced--open");
-    filterToggle.setAttribute("aria-expanded", "false");
+    filterController.close();
     resetAndRender();
   });
   render();

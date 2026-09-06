@@ -1,4 +1,4 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=3dda364a80";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=5b3a2d520f";
 import {
   debounce,
   escapeHtml,
@@ -24,7 +24,8 @@ import {
   resolveIds,
   safeExternalUrl,
   typeBadge,
-} from "./core.js?v=3dda364a80";
+} from "./core.js?v=5b3a2d520f";
+import { createCatalogueFilters } from "./catalogue-filters.js?v=5b3a2d520f";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 mountSiteChrome("media");
@@ -83,31 +84,6 @@ let current = [];
 renderLoading(target, "Loading curated media…");
 
 
-function selectedOptionLabel(control) {
-  return control.options[control.selectedIndex]?.textContent?.trim() || control.value;
-}
-
-function renderFilterChrome() {
-  const selected = filterOptions.filter(({ key, defaultValue }) => controls[key].value !== defaultValue);
-  const hasSearch = Boolean(controls.search.value.trim());
-
-  filterCount.textContent = String(selected.length);
-  filterCount.hidden = selected.length === 0;
-  filterToggle.setAttribute(
-    "aria-label",
-    selected.length ? `Filters, ${selected.length} active` : "Filters",
-  );
-  resetButton.hidden = !hasSearch && selected.length === 0;
-
-  activeFilters.hidden = selected.length === 0;
-  activeFilters.innerHTML = selected.map(({ key, label }) => `
-    <button class="active-filter" type="button" data-filter-key="${escapeHtml(key)}"
-      aria-label="Remove ${escapeHtml(label)} filter: ${escapeHtml(selectedOptionLabel(controls[key]))}">
-      <span>${escapeHtml(label)}: ${escapeHtml(selectedOptionLabel(controls[key]))}</span>
-      <span class="active-filter__remove" aria-hidden="true">×</span>
-    </button>`).join("");
-}
-
 function addOptions(select, values, labeler = humanize, preserveOrder = false) {
   const uniqueValues = [...new Set(values.filter(Boolean))];
   for (const value of preserveOrder ? uniqueValues : uniqueValues.sort()) {
@@ -157,9 +133,10 @@ try {
     ...item,
     _search: normalizeSearch([item.title, item.category, item.publicCaption, item.description, item.publicCreditLine, ...periodValues(item), item.category].filter(Boolean).join(" ")),
   }));
+  let filterController;
 
   function render() {
-    renderFilterChrome();
+    filterController.update();
     const query = normalizeSearch(controls.search.value.trim());
     current = indexed
       .filter((item) => (
@@ -189,6 +166,7 @@ try {
     }
     if (!shown.length) {
       target.innerHTML = `<div class="empty-state"><h2>No matching media</h2><p>Try a broader search, another kind, or show all public media.</p></div>`;
+      filterController.write();
       return;
     }
     target.innerHTML = shown.map((item) => {
@@ -228,9 +206,14 @@ try {
           </div>
         </article>`;
     }).join("");
+    filterController.write();
   }
 
-  const resetAndRender = () => { visible = PAGE_SIZE; showingAll = false; render(); };
+  function resetAndRender() {
+    visible = PAGE_SIZE;
+    showingAll = false;
+    render();
+  }
   const startDiscovery = () => {
     // The curated selection is the landing view, not a hidden limit on a
     // reader's query. Once a reader searches or chooses a facet, search the
@@ -239,32 +222,28 @@ try {
     if (controls.scope.value === "selected") controls.scope.value = "all";
     resetAndRender();
   };
+  filterController = createCatalogueFilters({
+    controls,
+    options: filterOptions,
+    toggle: filterToggle,
+    panel: advancedFilters,
+    activeFilters,
+    count: filterCount,
+    resetButton,
+    onChange: resetAndRender,
+    toggleLabel: "Filters",
+  });
+  filterController.read();
   controls.search.addEventListener("input", debounce(startDiscovery));
   for (const control of [controls.category, controls.period, controls.rights]) control.addEventListener("change", startDiscovery);
   controls.scope.addEventListener("change", resetAndRender);
-  filterToggle.addEventListener("click", () => {
-    const open = !advancedFilters.classList.contains("filters__advanced--open");
-    advancedFilters.classList.toggle("filters__advanced--open", open);
-    filterToggle.setAttribute("aria-expanded", String(open));
-  });
-  activeFilters.addEventListener("click", (event) => {
-    const chip = event.target.closest("[data-filter-key]");
-    if (!chip || !activeFilters.contains(chip)) return;
-    const option = filterOptions.find(({ key }) => key === chip.dataset.filterKey);
-    if (!option) return;
-    controls[option.key].value = option.defaultValue;
-    resetAndRender();
-    const fallback = filterToggle.offsetParent ? filterToggle : controls[option.key];
-    fallback.focus({ preventScroll: true });
-  });
   resetButton.addEventListener("click", () => {
     controls.search.value = "";
     controls.category.value = "";
     controls.period.value = "";
     controls.rights.value = "";
     controls.scope.value = "selected";
-    advancedFilters.classList.remove("filters__advanced--open");
-    filterToggle.setAttribute("aria-expanded", "false");
+    filterController.close();
     resetAndRender();
   });
   function revealFrom(firstNewIndex) {

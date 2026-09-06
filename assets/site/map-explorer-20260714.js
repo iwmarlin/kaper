@@ -10,7 +10,8 @@ import {
   periodValues,
   recordUrl,
   renderError,
-} from "./core.js?v=3dda364a80";
+} from "./core.js?v=5b3a2d520f";
+import { createQueryState } from "./catalogue-filters.js?v=5b3a2d520f";
 
 mountSiteChrome("map");
 
@@ -40,6 +41,7 @@ let historicalBasemap;
 let referenceBasemap;
 let historicalBasemapAvailable = true;
 let selectedId = null;
+let mapQueryState;
 const markerById = new Map();
 const compactMapLayout = window.matchMedia?.("(max-width: 760px)") || null;
 const COLLAPSED_PLACE_LIMIT = 8;
@@ -155,7 +157,7 @@ function markerIcon(place, selected = false) {
   });
 }
 
-function resetSelection() {
+function resetSelection({ syncUrl = true } = {}) {
   if (selectedId) {
     const previous = markerById.get(selectedId);
     const previousPlace = previous?.options?.placeRecord;
@@ -179,6 +181,7 @@ function resetSelection() {
   }
   selectionLink.hidden = true;
   if (selectionClose) selectionClose.hidden = true;
+  if (syncUrl) mapQueryState?.write();
 }
 
 function keepMarkerAboveSelection(marker) {
@@ -194,7 +197,7 @@ function keepMarkerAboveSelection(marker) {
   });
 }
 
-function selectPlace(place, { moveMap = true } = {}) {
+function selectPlace(place, { moveMap = true, syncUrl = true } = {}) {
   if (selectedId && selectedId !== place.id) {
     const previous = markerById.get(selectedId);
     const previousPlace = previous?.options?.placeRecord;
@@ -262,6 +265,7 @@ function selectPlace(place, { moveMap = true } = {}) {
       keepMarkerAboveSelection(marker);
     }
   }
+  if (syncUrl) mapQueryState?.write();
 }
 
 try {
@@ -409,10 +413,35 @@ try {
     if (stagesPanel) stagesPanel.hidden = false;
   }
 
+  mapQueryState = createQueryState({
+    search,
+    place: {
+      getValue: () => selectedId || "",
+      setValue: (value) => {
+        selectedId = publicPlaces.some((place) => place.id === value) ? value : null;
+      },
+    },
+    route: {
+      getValue: () => routeVisible ? "shown" : "hidden",
+      setValue: (value) => { routeVisible = value !== "hidden"; },
+    },
+  }, {
+    defaults: { search: "", place: "", route: "shown" },
+    onRestore: () => {
+      applyRoute();
+      render();
+      const selectedPlace = publicPlaces.find((place) => place.id === selectedId);
+      if (selectedPlace) selectPlace(selectedPlace, { moveMap: false, syncUrl: false });
+      else resetSelection({ syncUrl: false });
+    },
+  });
+  mapQueryState.read();
+
   if (toggleJourney) {
     toggleJourney.addEventListener("click", () => {
       routeVisible = !routeVisible;
       applyRoute();
+      mapQueryState.write();
     });
   }
   applyRoute();
@@ -568,7 +597,15 @@ try {
     // query is being typed and moves only when the result is specific enough
     // to be worth flying to, or when the field is cleared.
     if (map && bounds.length) {
-      if (firstView && !query && journeyPoints.length > 1) {
+      const selectedPlace = filtered.find((place) => place.id === selectedId);
+      if (selectedPlace && Number.isFinite(selectedPlace.latitude) && Number.isFinite(selectedPlace.longitude)) {
+        const zoom = selectedPlace.placeType === "city" ? 8 : selectedPlace.placeType === "district" ? 11 : 13;
+        // A selected place restored from the URL must be positioned before the
+        // cluster plugin is asked to expose its marker. Calling
+        // zoomToShowLayer during Leaflet's first layout can otherwise run
+        // before the cluster tree has a map and abort the rest of the render.
+        map.setView([selectedPlace.latitude, selectedPlace.longitude], zoom, { animate: false });
+      } else if (firstView && !query && journeyPoints.length > 1) {
         map.fitBounds(journeyPoints, { padding: [48, 48], maxZoom: HISTORICAL_FULL_ZOOM });
       } else if (!query) {
         map.fitBounds(bounds, { padding: [42, 42], maxZoom: filtered.length > 8 ? 5 : 10 });
@@ -589,9 +626,15 @@ try {
     });
   }
 
-  search.addEventListener("input", debounce(render));
+  search.addEventListener("input", debounce(() => {
+    render();
+    mapQueryState.write();
+  }));
   bindResponsivePlacement();
   render();
+  const initialPlace = publicPlaces.find((place) => place.id === selectedId);
+  if (initialPlace) selectPlace(initialPlace, { moveMap: false, syncUrl: false });
+  mapQueryState.write();
 } catch (error) {
   countTarget.textContent = "—";
   renderError(listTarget, error);

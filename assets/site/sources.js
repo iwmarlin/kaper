@@ -12,7 +12,8 @@ import {
   renderError,
   renderLoading,
   safeExternalUrl,
-} from "./core.js?v=3dda364a80";
+} from "./core.js?v=5b3a2d520f";
+import { createCatalogueFilters } from "./catalogue-filters.js?v=5b3a2d520f";
 
 // This page is intentionally not part of NAV_ITEMS yet. It can be reviewed as
 // a direct route without changing the site's established primary pathways.
@@ -128,10 +129,6 @@ function sourceTitle(source) {
   return source.title || source.shortCitation || source.fullCitation || source.id;
 }
 
-function selectedOptionLabel(control) {
-  return control.options[control.selectedIndex]?.textContent?.trim() || control.value;
-}
-
 function addCountedOptions(select, values, labeler) {
   const counts = new Map();
   for (const value of values.filter(Boolean)) counts.set(value, (counts.get(value) || 0) + 1);
@@ -144,43 +141,6 @@ function addCountedOptions(select, values, labeler) {
   }
 }
 
-function syncQuery() {
-  const params = new URLSearchParams();
-  for (const [key, control] of Object.entries(controls)) {
-    const defaultValue = key === "sort" ? "date-asc" : "";
-    if (control.value && control.value !== defaultValue) params.set(key, control.value);
-  }
-  history.replaceState(null, "", params.toString() ? `?${params}` : location.pathname);
-}
-
-function loadQuery() {
-  const params = new URLSearchParams(location.search);
-  for (const [key, control] of Object.entries(controls)) {
-    if (params.has(key)) control.value = params.get(key);
-  }
-}
-
-function renderFilterChrome() {
-  const selected = filterOptions.filter(({ key, defaultValue }) => controls[key].value !== defaultValue);
-  const hasSearch = Boolean(controls.search.value.trim());
-
-  filterCount.textContent = String(selected.length);
-  filterCount.hidden = selected.length === 0;
-  filterToggle.setAttribute(
-    "aria-label",
-    selected.length ? `Filters and sort, ${selected.length} active` : "Filters and sort",
-  );
-  resetButton.hidden = !hasSearch && selected.length === 0;
-
-  activeFilters.hidden = selected.length === 0;
-  activeFilters.innerHTML = selected.map(({ key, label }) => `
-    <button class="active-filter" type="button" data-filter-key="${escapeHtml(key)}"
-      aria-label="Remove ${escapeHtml(label)} filter: ${escapeHtml(selectedOptionLabel(controls[key]))}">
-      <span>${escapeHtml(label)}: ${escapeHtml(selectedOptionLabel(controls[key]))}</span>
-      <span class="active-filter__remove" aria-hidden="true">×</span>
-    </button>`).join("");
-}
-
 function typeMark(source) {
   return `<span class="badge badge--type">${escapeHtml(sourceTypeLabel(source.sourceType))}</span>`;
 }
@@ -189,8 +149,6 @@ try {
   const { sources } = await loadTables(["sources"]);
   addCountedOptions(controls.type, sources.map((source) => source.sourceType), sourceTypeLabel);
   addCountedOptions(controls.dateRole, sources.map((source) => source.dateRole), dateRoleLabel);
-  loadQuery();
-
   const indexed = sources.map((source) => {
     const external = safeExternalUrl(source.primaryUrl) || safeExternalUrl(source.accessUrl);
     const identifiers = (source.identifiers || []).flatMap((identifier) => [identifier.scheme, identifier.value]);
@@ -217,9 +175,10 @@ try {
   });
 
   totalLabelTarget.textContent = `${sources.length} documented ${sources.length === 1 ? "source" : "sources"}`;
+  let filterController;
 
   function render() {
-    renderFilterChrome();
+    filterController.update();
     const query = normalizeSearch(controls.search.value.trim());
     filtered = indexed.filter((source) => (
       (!query || source._search.includes(query))
@@ -262,7 +221,7 @@ try {
 
     if (!shown.length) {
       target.innerHTML = `<div class="empty-state"><h2>No matching sources</h2><p>Try removing a filter or using a broader search term.</p></div>`;
-      syncQuery();
+      filterController.write();
       return;
     }
 
@@ -282,41 +241,30 @@ try {
           ${source._external ? `<a href="${escapeHtml(source._external)}" target="_blank" rel="noreferrer">Open source <span aria-hidden="true">↗</span></a>` : ""}
         </div>
       </article>`).join("");
-    syncQuery();
+    filterController.write();
   }
 
-  const resetAndRender = () => {
+  function resetAndRender() {
     visibleCount = PAGE_SIZE;
     showingAll = false;
     render();
-  };
+  }
 
+  filterController = createCatalogueFilters({
+    controls,
+    options: filterOptions,
+    toggle: filterToggle,
+    panel: advancedFilters,
+    activeFilters,
+    count: filterCount,
+    resetButton,
+    onChange: resetAndRender,
+  });
+  filterController.read();
   controls.search.addEventListener("input", debounce(resetAndRender));
   for (const control of [controls.type, controls.dateRole, controls.access, controls.sort]) {
     control.addEventListener("change", resetAndRender);
   }
-  filterToggle.addEventListener("click", () => {
-    const open = !advancedFilters.classList.contains("filters__advanced--open");
-    advancedFilters.classList.toggle("filters__advanced--open", open);
-    filterToggle.setAttribute("aria-expanded", String(open));
-  });
-  document.addEventListener("keydown", (event) => {
-    if (event.key !== "Escape" || filterToggle.getAttribute("aria-expanded") !== "true") return;
-    advancedFilters.classList.remove("filters__advanced--open");
-    filterToggle.setAttribute("aria-expanded", "false");
-    filterToggle.focus();
-  });
-  activeFilters.addEventListener("click", (event) => {
-    const chip = event.target.closest("[data-filter-key]");
-    if (!chip || !activeFilters.contains(chip)) return;
-    const option = filterOptions.find(({ key }) => key === chip.dataset.filterKey);
-    if (!option) return;
-    controls[option.key].value = option.defaultValue;
-    resetAndRender();
-    const fallback = filterToggle.offsetParent ? filterToggle : controls[option.key];
-    fallback.focus({ preventScroll: true });
-  });
-
   function revealFrom(firstNewIndex) {
     const firstNewRecord = target.children[firstNewIndex];
     if (!firstNewRecord) return;
@@ -346,8 +294,7 @@ try {
     controls.dateRole.value = "";
     controls.access.value = "";
     controls.sort.value = "date-asc";
-    advancedFilters.classList.remove("filters__advanced--open");
-    filterToggle.setAttribute("aria-expanded", "false");
+    filterController.close();
     resetAndRender();
   });
 

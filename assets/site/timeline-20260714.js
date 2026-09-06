@@ -1,4 +1,4 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=3dda364a80";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=5b3a2d520f";
 import {
   debounce,
   escapeHtml,
@@ -15,7 +15,8 @@ import {
   renderLoading,
   resolveIds,
   responsiveImage,
-} from "./core.js?v=3dda364a80";
+} from "./core.js?v=5b3a2d520f";
+import { createQueryState } from "./catalogue-filters.js?v=5b3a2d520f";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 mountSiteChrome("timeline");
@@ -245,6 +246,7 @@ try {
   }));
 
   let activeView = "highlights";
+  let timelineQueryState;
 
   function setView(view, { renderNow = true } = {}) {
     activeView = view === "all" ? "all" : "highlights";
@@ -276,6 +278,7 @@ try {
       target.innerHTML = activeView === "highlights" && matching.length
         ? `<div class="empty-state"><h2>No highlighted events match</h2><p>Switch to the full chronology to see all ${matching.length} matching ${matching.length === 1 ? "event" : "events"}.</p></div>`
         : `<div class="empty-state"><h2>No matching events</h2><p>Try a broader search or remove a filter.</p></div>`;
+      timelineQueryState?.write();
       return;
     }
     const chaptersPresent = CHAPTER_ORDER.filter((key) => filtered.some((event) => chapterForEvent(event) === key));
@@ -320,7 +323,24 @@ try {
     }
     target.innerHTML = timelineMarkup.join("");
     updateActiveChapter();
+    timelineQueryState?.write();
   }
+
+  timelineQueryState = createQueryState({
+    ...controls,
+    view: {
+      getValue: () => activeView,
+      setValue: (value) => { activeView = value === "all" ? "all" : "highlights"; },
+    },
+  }, {
+    defaults: { search: "", category: "", view: "highlights" },
+    onRestore: () => {
+      setView(activeView, { renderNow: false });
+      render();
+    },
+  });
+  timelineQueryState.read();
+  setView(activeView, { renderNow: false });
 
   let scrollScheduled = false;
   function onScroll() {
@@ -349,7 +369,7 @@ try {
     setView("highlights", { renderNow: false });
     render();
   });
-  setView("highlights");
+  render();
 } catch (error) {
   countTarget.textContent = "Timeline unavailable";
   renderError(target, error);
