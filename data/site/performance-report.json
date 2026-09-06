@@ -1,0 +1,47 @@
+{
+  "sourceImages": 290,
+  "derivativeFiles": 783,
+  "sourceBytes": 113781389,
+  "derivativeBytes": 54032744,
+  "largestDerivative": {
+    "path": "assets/generated/responsive/harmonia-kw-27031929-228d273f069a/1176.webp",
+    "bytes": 805840
+  },
+  "incremental": {
+    "encoded": 0,
+    "reused": 290,
+    "removedStaleDirectories": 0
+  },
+  "homePayloadBytes": 7712,
+  "homePortrait": {
+    "width": 2499,
+    "height": 2421,
+    "default": "assets/generated/responsive/kaper-young0-dbd47a48955c/960.webp",
+    "variants": [
+      {
+        "path": "assets/generated/responsive/kaper-young0-dbd47a48955c/320.webp",
+        "width": 320,
+        "height": 310,
+        "bytes": 7660
+      },
+      {
+        "path": "assets/generated/responsive/kaper-young0-dbd47a48955c/640.webp",
+        "width": 640,
+        "height": 620,
+        "bytes": 23828
+      },
+      {
+        "path": "assets/generated/responsive/kaper-young0-dbd47a48955c/960.webp",
+        "width": 960,
+        "height": 930,
+        "bytes": 40272
+      },
+      {
+        "path": "assets/generated/responsive/kaper-young0-dbd47a48955c/1440.webp",
+        "width": 1440,
+        "height": 1395,
+        "bytes": 66660
+      }
+    ]
+  }
+}

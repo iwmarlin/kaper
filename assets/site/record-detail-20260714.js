@@ -1,0 +1,1841 @@
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=c77ada42a0";
+import {
+  authorityLinkList,
+  certaintyBadge,
+  escapeHtml,
+  formatDate,
+  getIds,
+  humanize,
+  languageBadge,
+  indexById,
+  mediaIsFairUse,
+  mediaRightsBadge,
+  mediaPreview,
+  mountSiteChrome,
+  normalizeSearch,
+  periodBadge,
+  periodLabel,
+  periodValues,
+  recordUrl,
+  registerImageDerivatives,
+  renderError,
+  renderMediaDisclosure,
+  responsiveImage,
+  safeExternalUrl,
+  setCanonicalRecordUrl,
+  scopeBadge,
+  sourceReliabilityBadge,
+  sourceReliabilityLabel,
+  sourceStatusLabel,
+  typeBadge,
+  updateMeta,
+} from "./core.js?v=c77ada42a0";
+import { RECORD_INDEXES, recordIndexReturn } from "./catalogue-filters.js?v=c77ada42a0";
+
+registerImageDerivatives(IMAGE_DERIVATIVES);
+let target = null;
+const TYPE_CONFIG = {
+  work: { table: "works", label: "Work", title: (item) => item.title },
+  event: { table: "timelineEvents", label: "Timeline event", title: (item) => item.title },
+  place: { table: "places", label: "Place", title: (item) => item.displayName },
+  media: { table: "media", label: "Media", title: (item) => item.title },
+  person: { table: "people", label: "Person", title: (item) => item.displayName },
+  organization: { table: "organizations", label: "Organization", title: (item) => item.displayName },
+  source: { table: "sources", label: "Source", title: (item) => item.title || item.shortCitation },
+};
+const RECORD_TABLES = [
+  "people", "organizations", "sources", "media", "works", "films", "songs", "otherWorks",
+  "titleVariants", "workRelations", "timelineEvents", "places", "contributions", "personNameVariants",
+];
+const RECORD_DATA_VERSION = "20260811-1";
+const LIST_PREVIEW_LIMIT = 6;
+const LIST_SEARCH_THRESHOLD = 20;
+let progressiveListSequence = 0;
+const ENTITY_LIST_LABELS = {
+  work: "works",
+  event: "events",
+  place: "places",
+  media: "media",
+  person: "people",
+  organization: "organizations",
+};
+const MAP_PRECISION_LABELS = Object.freeze({
+  address_level: "Address-level coordinates",
+  venue_level: "Venue-level coordinates",
+  site_approximate: "Approximate historical site",
+  district_level: "District-level reference point",
+  city_level: "City-level reference point",
+});
+
+function mapPrecisionLabel(value) {
+  return MAP_PRECISION_LABELS[value] || humanize(value);
+}
+
+function genreLabel(value) {
+  const label = String(value || "").replaceAll("_", " ").trim();
+  return label.replace(/^./, (letter) => letter.toLocaleUpperCase("en"));
+}
+
+async function loadRecordPayload(type, id) {
+  const url = new URL(
+    `data/site/records/${encodeURIComponent(type)}/${encodeURIComponent(id)}.json?v=${RECORD_DATA_VERSION}`,
+    document.baseURI,
+  );
+  const response = await fetch(url);
+  if (!response.ok) throw new Error(`Record data could not be loaded (${response.status}).`);
+  const payload = await response.json();
+  if (payload.type !== type || payload.id !== id || !payload.tables) {
+    throw new Error("The record data does not match this page.");
+  }
+  for (const table of RECORD_TABLES) {
+    if (!Array.isArray(payload.tables[table])) {
+      throw new Error(`The record data is incomplete (${table}).`);
+    }
+  }
+  return payload.tables;
+}
+
+function fact(label, value) {
+  if (value === undefined || value === null || value === "" || (Array.isArray(value) && !value.length)) return "";
+  const display = Array.isArray(value) ? value.map(humanize).join(", ") : value;
+  return `<div><dt>${escapeHtml(label)}</dt><dd>${escapeHtml(display)}</dd></div>`;
+}
+
+function factHtml(label, value) {
+  if (!value) return "";
+  return `<div><dt>${escapeHtml(label)}</dt><dd>${value}</dd></div>`;
+}
+
+function sectionId(title) {
+  return `section-${String(title).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "")}`;
+}
+
+// Sections announce their size. Only the source ledger used to, so a reader met
+// a heading with three links and a heading with 275 rows set identically, and
+// could not tell before scrolling which was which.
+function section(title, content, className = "", count = 0) {
+  if (!content) return "";
+  const countLabel = count
+    ? `<span class="record-section__count" aria-label="${count} records">${count}</span>`
+    : "";
+  const id = sectionId(title);
+  return `<section class="record-section ${className}" id="${id}"><h2>${escapeHtml(title)}${countLabel}</h2>${content}</section>`;
+}
+
+// A contents rail for records that run long. Kaper's page carries 275 works, 54
+// events and 132 sources over nearly five thousand pixels; without an index the
+// only way to learn what is on it is to scroll it.
+// Whether a record needs an index is a question about its length, and length
+// is not knowable from the number of sections: the median record lists three
+// items in three sections and fits on a screen, while a handful run to
+// hundreds. The rail is therefore written for every record that has more than
+// one section and revealed by the page itself, once it knows it will scroll.
+function contentsRail(entries, currentRecordUrl) {
+  const items = entries.filter((entry) => entry && entry.count);
+  if (items.length < 2) return "";
+  return `<nav class="record-contents" data-contents-rail hidden aria-label="On this record">
+    <p class="record-contents__title">On this record</p>
+    <ul>${items.map((entry) => `<li><a href="${escapeHtml(currentRecordUrl)}#${sectionId(entry.title)}">${escapeHtml(entry.title)}<span>${entry.count}</span></a></li>`).join("")}</ul>
+  </nav>`;
+}
+
+function progressiveList(records, {
+  tag = "ul",
+  className = "entity-list",
+  label = "records",
+  renderItem,
+  searchText = () => "",
+  showTotal = true,
+} = {}) {
+  if (!records.length) return "";
+  const isProgressive = records.length > LIST_PREVIEW_LIMIT;
+  const items = records.map((item) => {
+    const searchValue = normalizeSearch(searchText(item));
+    const attributes = isProgressive
+      ? ` data-progressive-item data-search="${escapeHtml(searchValue)}"`
+      : "";
+    return renderItem(item).replace("<li", `<li${attributes}`);
+  });
+  if (!isProgressive) return `<${tag} class="${className}">${items.join("")}</${tag}>`;
+  const searchable = records.length > LIST_SEARCH_THRESHOLD;
+  progressiveListSequence += 1;
+  const panelId = `progressive-list-${progressiveListSequence}`;
+  const initialToggleLabel = showTotal
+    ? `Show all ${records.length} ${escapeHtml(label)}`
+    : `Show more ${escapeHtml(label)}`;
+  const previewItems = items.slice(0, LIST_PREVIEW_LIMIT);
+  const remainingItems = items.slice(LIST_PREVIEW_LIMIT);
+  return `<div class="progressive-list" data-progressive-list data-label="${escapeHtml(label)}" data-total="${records.length}" data-show-total="${showTotal}">
+    <${tag} class="${className} progressive-list__preview">${previewItems.join("")}</${tag}>
+    <div class="progressive-list__controls">
+      <button class="button button--ghost button--small" type="button" data-progressive-toggle aria-expanded="false" aria-controls="${panelId}">
+        ${initialToggleLabel}
+      </button>
+    </div>
+    <div class="progressive-list__panel" id="${panelId}" data-progressive-panel>
+      ${searchable ? `<label class="progressive-list__search">
+      <span>Search ${escapeHtml(label)}</span>
+      <input type="search" data-progressive-search autocomplete="off">
+      </label>` : ""}
+      <${tag} class="${className} progressive-list__remainder"${tag === "ol" ? ` start="${LIST_PREVIEW_LIMIT + 1}"` : ""}>${remainingItems.join("")}</${tag}>
+      <p class="progressive-list__empty" data-progressive-empty hidden>No matching records.</p>
+    </div>
+    <p class="sr-only" data-progressive-status aria-live="polite"></p>
+  </div>`;
+}
+
+function entityList(records, type, meta = () => "", label = ENTITY_LIST_LABELS[type] || "records") {
+  return progressiveList(records, {
+    label,
+    renderItem: (item) => `
+    <li>
+      <a href="${recordUrl(type, item.id)}">${escapeHtml(item.title || item.displayName || item.shortCitation || item.id)}</a>
+      <small>${escapeHtml(meta(item))}</small>
+    </li>`,
+    searchText: (item) => [
+      item.id,
+      item.title,
+      item.displayName,
+      item.shortCitation,
+      meta(item),
+    ].filter(Boolean).join(" "),
+  });
+}
+
+const SOURCE_TYPE_LABELS = {
+  sheet_music: "Sheet music",
+  filmographic_database: "Filmographic databases",
+  press_item: "Press items",
+  copyright_catalogue: "Copyright catalogues",
+  online_database: "Online databases",
+  wikimedia_commons_file: "Wikimedia Commons files",
+  wikimedia_article_page: "Wikipedia articles",
+  image_or_photograph: "Images and photographs",
+  // "archival_photo" and "archival_photograph" were two spellings of one kind,
+  // reconciled here rather than in the data until now. The thirteen records are
+  // on the longer form and the shorter one is gone.
+  archival_photograph: "Archival photographs",
+  archival_document: "Archival documents",
+  digital_collection_item: "Digital collection items",
+  recording_discographic_source: "Recordings",
+  online_video_source: "Online video",
+  authority_record: "Authority records",
+  web_page: "Web pages",
+  book: "Books",
+  // Eleven types had no entry here, so their headings were made from the
+  // technical name: "Online Audio Source", in title case and the singular,
+  // standing beside "Recordings" and "Online video". The grouping is a real
+  // distinction — a catalogued disc heard on an upload is not the same kind of
+  // source as an upload with no disc behind it — and the mismatched headings
+  // made it look arbitrary.
+  online_audio_source: "Online audio",
+  visual_document: "Visual documents",
+  sound_recording_catalogue: "Sound recording catalogues",
+  sheet_music_catalogue: "Sheet music catalogues",
+  soundtrack_database: "Soundtrack databases",
+  secondary_literature: "Secondary literature",
+  periodical_article: "Periodical articles",
+  archival_digital_record: "Archival digital records",
+  archival_manuscript_holding: "Archival manuscript holdings",
+  other: "Other sources",
+};
+
+const SOURCE_DATE_ROLE_LABELS = Object.freeze({
+  catalogue_volume: "Catalogue volume",
+  creation: "Creation of the object",
+  data_currency: "Currency of the described data",
+  described_item: "Described item",
+  digital_publication: "Digital publication",
+  digitization: "Digitization",
+  issue: "Issue or edition",
+  publication: "Publication",
+  record_creation: "Creation of the catalogue record",
+  record_update: "Update of the catalogue record",
+  recording: "Recording",
+});
+
+function sourceDateRoleLabel(value) {
+  return SOURCE_DATE_ROLE_LABELS[value] || humanize(value || "");
+}
+
+function sourceDateDisplay(source, { compact = false } = {}) {
+  if (!compact && source.dateDisplay) return source.dateDisplay;
+  const qualifier = source.dateQualifier || "confirmed";
+  if (qualifier === "unknown") return "n.d.";
+  if (qualifier === "forthcoming" && !source.date) return "forthcoming";
+  if (!source.date) return "n.d.";
+
+  const start = compact ? String(source.date).slice(0, 4) : formatDate(source.date);
+  const end = source.dateEnd
+    ? (compact ? String(source.dateEnd).slice(0, 4) : formatDate(source.dateEnd))
+    : "";
+  const range = end && end !== start ? `${start}\u2013${end}` : start;
+  const prefix = {
+    after: "after ",
+    approximate: "c. ",
+    before: "before ",
+    not_before: "not before ",
+  }[qualifier] || "";
+  if (qualifier === "forthcoming") return `${range} (forthcoming)`;
+  if (qualifier === "reported") return `${range} (reported)`;
+  if (qualifier === "uncertain") return `${range}?`;
+  return `${prefix}${range}`;
+}
+
+// One disclosure mark for both levels, drawn rather than typed. The glyphs
+// used before — a plus on rows, a solid triangle on group headings — were two
+// metaphors for one action, and the triangle's weight and baseline shift with
+// whatever font happens to render it. A stroked chevron keeps its hairline at
+// any size and rotates to carry the state.
+function chevron(className) {
+  return `<svg class="${className}" viewBox="0 0 12 12" width="12" height="12" aria-hidden="true" focusable="false"><path d="M4.5 2 L8.5 6 L4.5 10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+}
+
+function sourceYear(source) {
+  const match = String(source.date || "").match(/^(\d{4})(?:-|$)/);
+  return match ? Number(match[1]) : null;
+}
+
+function sortSourcesChronologically(records) {
+  return [...records].sort((a, b) => {
+    const yearA = sourceYear(a);
+    const yearB = sourceYear(b);
+    if (yearA === null && yearB === null) return a.id.localeCompare(b.id);
+    if (yearA === null) return 1;
+    if (yearB === null) return -1;
+    return yearA - yearB || a.id.localeCompare(b.id);
+  });
+}
+
+function sourceSearchText(source) {
+  return [
+    source.id,
+    source.title,
+    source.shortCitation,
+    source.fullCitation,
+    source.creator,
+    source.publication,
+    source.repository,
+    source.date,
+    source.dateEnd,
+    source.dateDisplay,
+    sourceDateRoleLabel(source.dateRole),
+    source.dateQualifier,
+    SOURCE_TYPE_LABELS[source.sourceType] || humanize(source.sourceType || ""),
+  ].filter(Boolean).join(" ");
+}
+
+// One row grammar for every source list: monospaced identifier at the left,
+// citation in the middle, year at the right. Short lists print the full
+// citation outright — there is nothing to scroll past, so hiding the only
+// source a record has behind a disclosure would cost more than it saves.
+// Long lists print the short citation and open the full one on request.
+function sourceRow(source, index, { expanded = false } = {}) {
+  const external = safeExternalUrl(source.primaryUrl) || safeExternalUrl(source.accessUrl);
+  const summary = source.shortCitation || source.title || source.fullCitation || source.id;
+  const full = source.fullCitation || source.shortCitation || source.title || "";
+  const yearLabel = sourceDateDisplay(source, { compact: true });
+  const links = `<p class="source-row__links">
+    <a href="${recordUrl("source", source.id)}">Source record</a>
+    ${external ? `<a href="${escapeHtml(external)}" target="_blank" rel="noreferrer">Open source <span aria-hidden="true">\u2197</span></a>` : ""}
+  </p>`;
+  const reliabilityFlag = sourceReliabilityBadge(source.reliability);
+  if (expanded) {
+    return `<li class="source-row source-row--open" id="source-${escapeHtml(source.id)}">
+      <span class="source-row__meta">
+        <a class="source-row__id" href="${recordUrl("source", source.id)}" aria-label="Open source record ${escapeHtml(source.id)}">${escapeHtml(source.id)}</a>
+        <span class="source-row__year">${escapeHtml(yearLabel)}</span>
+        ${reliabilityFlag}
+      </span>
+      <div class="source-row__body">
+        <p class="source-row__citation">${escapeHtml(full)}</p>
+        ${external ? `<p class="source-row__links"><a href="${escapeHtml(external)}" target="_blank" rel="noreferrer">Open source <span aria-hidden="true">\u2197</span></a></p>` : ""}
+      </div>
+    </li>`;
+  }
+  const detailId = `source-detail-${escapeHtml(source.id)}-${index}`;
+  return `<li class="source-row" id="source-${escapeHtml(source.id)}" data-ledger-item data-search="${escapeHtml(normalizeSearch(sourceSearchText(source)))}">
+    <button class="source-row__summary" type="button" data-row-toggle aria-expanded="false" aria-controls="${detailId}">
+      <span class="source-row__meta">
+        <span class="source-row__id">${escapeHtml(source.id)}</span>
+        <span class="source-row__year">${escapeHtml(yearLabel)}</span>
+        ${reliabilityFlag}
+      </span>
+      <span class="source-row__title">${escapeHtml(summary)}</span>
+      ${chevron("source-row__chevron")}
+    </button>
+    <div class="source-row__detail" id="${detailId}" data-row-detail>
+      <p>${escapeHtml(full)}</p>
+      ${links}
+    </div>
+  </li>`;
+}
+
+// Long source lists were previously rendered as one bordered card per citation,
+// each carrying its full text. On the Kaper record that produced 16 000 px of
+// boxes in no particular order. The ledger keeps every record on one page for
+// Ctrl+F and for print, but gives it a spine: grouped by kind, chronological
+// within each group, full citation on request.
+function sourceLedger(records) {
+  const sorted = sortSourcesChronologically(records);
+  const groups = new Map();
+  for (const source of sorted) {
+    const key = source.sourceType || "other";
+    if (!groups.has(key)) groups.set(key, []);
+    groups.get(key).push(source);
+  }
+  const ordered = [...groups.entries()].sort((a, b) => b[1].length - a[1].length);
+  progressiveListSequence += 1;
+  const ledgerId = `source-ledger-${progressiveListSequence}`;
+  let counter = 0;
+  const groupsMarkup = ordered.map(([key, items], groupIndex) => {
+    const bodyId = `${ledgerId}-group-${groupIndex}`;
+    const expanded = true;
+    const rows = items.map((item) => sourceRow(item, counter += 1)).join("");
+    return `<section class="source-group" data-ledger-group>
+      <button class="source-group__head" type="button" data-group-toggle aria-expanded="${expanded}" aria-controls="${bodyId}" aria-disabled="true" tabindex="-1">
+        ${chevron("source-group__chevron")}
+        <span class="source-group__name">${escapeHtml(SOURCE_TYPE_LABELS[key] || humanize(key))}</span>
+        <span class="source-group__count">${items.length}</span>
+      </button>
+      <ol class="source-rows" id="${bodyId}" data-group-body>${rows}</ol>
+    </section>`;
+  }).join("");
+  return `<div class="source-ledger" data-source-ledger data-total="${sorted.length}" id="${ledgerId}">
+    <div class="source-ledger__bar">
+      <label class="source-ledger__search">
+        <span class="sr-only">Search sources</span>
+        <input type="search" data-ledger-search autocomplete="off" placeholder="Search ${sorted.length} sources by title, publisher or year">
+      </label>
+      <button class="button button--ghost button--small" type="button" data-ledger-expand>Expand all</button>
+    </div>
+    <div class="source-ledger__groups">${groupsMarkup}</div>
+    <p class="source-ledger__empty" data-ledger-empty hidden>No matching sources.</p>
+    <p class="sr-only" data-ledger-status aria-live="polite"></p>
+  </div>`;
+}
+
+function sourceList(records, { progressive = true } = {}) {
+  if (!records.length) return "";
+  if (!progressive || records.length <= LIST_PREVIEW_LIMIT) {
+    const rows = sortSourcesChronologically(records)
+      .map((source, index) => sourceRow(source, index, { expanded: true }))
+      .join("");
+    return `<ol class="source-rows source-rows--plain">${rows}</ol>`;
+  }
+  return sourceLedger(records);
+}
+
+function related(ids, index) {
+  return [...new Set(ids || [])].map((id) => index.get(id)).filter(Boolean);
+}
+
+function mediaFigures(items, sourceIndex) {
+  if (!items.length) return "";
+  return `<div>${items.map((item) => `
+    <figure class="record-media">
+      ${mediaPreview(item)}
+      <figcaption>${renderMediaDisclosure(item, related(item.sourceIds, sourceIndex), { compact: true })}</figcaption>
+    </figure>`).join("")}</div>`;
+}
+
+function contributionList(items, indexes, {
+  conciseCredits = false,
+  redundantNotes = [],
+  creditLabel = "printed as",
+  suppressCatalogueNames = false,
+  suppressConfirmedCreatorNotes = false,
+} = {}) {
+  if (!items.length) return "";
+  const redundantNoteSet = new Set(redundantNotes.filter(Boolean));
+  return `<ul class="entity-list">${items
+    .sort((a, b) => Number(a.sortOrder || 999) - Number(b.sortOrder || 999))
+    .map((item) => {
+      const people = related(item.personIds, indexes.people);
+      const organizations = related(item.organizationIds, indexes.organizations);
+      const names = [
+        ...people.map((person) => `<a href="${recordUrl("person", person.id)}">${escapeHtml(person.displayName)}</a>`),
+        ...organizations.map((organization) => `<a href="${recordUrl("organization", organization.id)}">${escapeHtml(organization.displayName)}</a>`),
+      ];
+      const catalogueName = suppressCatalogueNames && (
+        /\b\d{4}\s*[-–]\s*\d{4}\b/.test(item.nameAsPrinted || "")
+        || /^(?:AU|A2|RIS)\b/i.test(item.creditAsPrinted || "")
+      );
+      const printed = item.nameAsPrinted && !catalogueName && !names.some((name) => name.includes(escapeHtml(item.nameAsPrinted)))
+        ? ` · ${escapeHtml(creditLabel)} “${escapeHtml(item.nameAsPrinted)}”`
+        : "";
+      const publicNote = item.publicNote && !redundantNoteSet.has(item.publicNote) ? item.publicNote : "";
+      let note = conciseCredits
+        ? publicNote || item.scopeNote || ""
+        : item.scopeNote || publicNote || item.evidenceContext || "";
+      if (
+        suppressConfirmedCreatorNotes
+        && ["composer", "arranger"].includes(item.role)
+        && String(item.certainty || "").toLowerCase() === "confirmed"
+      ) note = "";
+      const certainty = conciseCredits && String(item.certainty || "").toLowerCase() === "confirmed"
+        ? ""
+        : certaintyBadge(item.certainty);
+      return `<li data-contribution-role="${escapeHtml(item.role || "unresolved")}"><span><strong>${names.join(" · ") || escapeHtml(item.nameAsPrinted || "Unresolved contributor")}</strong>${printed}${note ? `<br><small>${escapeHtml(note)}</small>` : ""}</span><span>${typeBadge(item.role)} ${certainty}</span></li>`;
+    }).join("")}</ul>`;
+}
+
+function contributionEntityLinks(items, indexes) {
+  const seen = new Set();
+  const links = [];
+  for (const item of items) {
+    for (const person of related(item.personIds, indexes.people)) {
+      const key = `person:${person.id}`;
+      if (seen.has(key)) continue;
+      seen.add(key);
+      links.push(`<a href="${recordUrl("person", person.id)}">${escapeHtml(person.displayName)}</a>`);
+    }
+    for (const organization of related(item.organizationIds, indexes.organizations)) {
+      const key = `organization:${organization.id}`;
+      if (seen.has(key)) continue;
+      seen.add(key);
+      links.push(`<a href="${recordUrl("organization", organization.id)}">${escapeHtml(organization.displayName)}</a>`);
+    }
+  }
+  return links.join(" · ");
+}
+
+// A Work describes authorship and production of the work itself. Performers,
+// conductors and record labels describe a particular recording and therefore
+// belong with its Media/Source evidence, not in the Work's creator credits.
+const WORK_RECORDING_CONTRIBUTION_ROLES = new Set([
+  "performer",
+  "conductor",
+  "record_label",
+]);
+
+function workLevelContributions(items) {
+  return items.filter((item) => !WORK_RECORDING_CONTRIBUTION_ROLES.has(item.role));
+}
+
+// Person-level sources and credit-level sources answer different questions.
+// The former document the person directly; the latter document a role in a
+// particular work.  Keep contribution evidence grouped by work instead of
+// copying its source IDs onto the person record, which would erase that
+// distinction and make every source look biographical.
+function personCreditEvidence(person, indexes) {
+  const contributions = related(person.contributionIds, indexes.contributions)
+    .filter((item) => (item.sourceIds || []).length && (item.workIds || []).length);
+  const groups = new Map();
+  for (const contribution of contributions) {
+    for (const work of related(contribution.workIds, indexes.works)) {
+      if (!groups.has(work.id)) {
+        groups.set(work.id, {
+          work,
+          roles: new Set(),
+          certainties: new Set(),
+          sourceIds: new Set(),
+        });
+      }
+      const group = groups.get(work.id);
+      if (contribution.role) group.roles.add(contribution.role);
+      if (contribution.certainty && contribution.certainty !== "confirmed") {
+        group.certainties.add(contribution.certainty);
+      }
+      for (const sourceId of contribution.sourceIds || []) group.sourceIds.add(sourceId);
+    }
+  }
+  const items = [...groups.values()]
+    .map((group) => ({
+      ...group,
+      sources: sortSourcesChronologically(related([...group.sourceIds], indexes.sources)),
+    }))
+    .filter((group) => group.sources.length)
+    .sort((a, b) => Number(a.work.year || 9999) - Number(b.work.year || 9999)
+      || String(a.work.title).localeCompare(String(b.work.title)));
+  return items;
+}
+
+// One list where there were two. The card used to print the works, and then
+// print them again under the credits with their citations: on 161 of the 163
+// people who carry both, the two lists named exactly the same works in the
+// same order. The work is stated once and its evidence sits beneath it; the
+// role is set as text, so the badge on the right keeps one meaning, the kind
+// of work.
+function personWorkLedger(person, indexes) {
+  const evidence = personCreditEvidence(person, indexes);
+  const byWorkId = new Map(evidence.map((item) => [item.work.id, item]));
+  for (const work of related(person.workIds, indexes.works)) {
+    if (!byWorkId.has(work.id)) {
+      byWorkId.set(work.id, { work, roles: new Set(), certainties: new Set(), sources: [] });
+    }
+  }
+  const items = [...byWorkId.values()].sort((a, b) => (
+    Number(a.work.year || 9999) - Number(b.work.year || 9999)
+      || String(a.work.title).localeCompare(String(b.work.title))
+  ));
+  const list = progressiveList(items, {
+    className: "credit-evidence-list",
+    label: "works",
+    renderItem: (item) => {
+      const roles = [...item.roles].map(humanize).join(", ");
+      const meta = [item.work.year ? String(item.work.year) : "", roles].filter(Boolean).join(" \u00b7 ");
+      return `<li class="credit-evidence">
+      <div class="credit-evidence__work">
+        <span><a href="${recordUrl("work", item.work.id)}">${escapeHtml(item.work.title)}</a>${meta ? `<small>${escapeHtml(meta)}</small>` : ""}</span>
+        <span class="credit-evidence__badges">${typeBadge(item.work.workType)}${[...item.certainties].map(certaintyBadge).join("")}</span>
+      </div>
+      ${item.sources.length ? `<ul class="credit-evidence__sources" aria-label="Sources supporting this credit">
+        ${item.sources.map((source) => `<li><span class="credit-evidence__source-id">${escapeHtml(source.id)}</span><span><a href="${recordUrl("source", source.id)}">${escapeHtml(source.shortCitation || source.title || source.fullCitation || source.id)}</a>${sourceReliabilityBadge(source.reliability)}</span></li>`).join("")}
+      </ul>` : ""}
+    </li>`;
+    },
+    searchText: (item) => [
+      item.work.title,
+      item.work.year,
+      item.work.workType,
+      ...item.roles,
+      ...item.sources.map(sourceSearchText),
+    ].filter(Boolean).join(" "),
+    showTotal: true,
+  });
+  return { items, list };
+}
+
+function publicationPlace(statement) {
+  if (!statement) return "";
+  const colonPlace = statement.match(/^([^:;,]+):/);
+  if (colonPlace) return colonPlace[1].trim();
+  const trailingPlace = statement.match(/,\s*([^,;]+)$/);
+  return trailingPlace ? trailingPlace[1].trim().replace(/\.$/, "") : "";
+}
+
+function catalogueReference(statement) {
+  if (!statement) return "";
+  const match = statement.match(/(?:StabiKat record no\.\s*\d+|Bibliothèque nationale de France, notice\s+[A-Z0-9]+)/i);
+  return match ? match[0] : "";
+}
+
+function otherWorkMaterialSection(subtype, institutionalContributions, indexes) {
+  if (!subtype) return "";
+  const status = subtype.materialStatus;
+  const isManuscript = status === "manuscript";
+  const isPublished = status === "published_print";
+  const institutions = contributionEntityLinks(institutionalContributions, indexes);
+  const materialLabel = isManuscript
+    ? "Manuscript"
+    : isPublished
+      ? "Published score"
+      : status === "press_documented"
+        ? "Documented in contemporary press"
+        : humanize(status);
+  const details = `
+    ${fact("Instrumentation", subtype.instrumentation)}
+    ${fact("Material", materialLabel)}
+    ${isManuscript ? factHtml("Holding institution", institutions) : ""}
+    ${isManuscript ? fact("Collection and shelfmark", subtype.shelfmark) : ""}
+    ${isPublished ? factHtml("Publisher", institutions) : ""}
+    ${isPublished ? fact("Publication place", publicationPlace(subtype.publisherOrHoldingAsPrinted)) : ""}
+    ${isPublished ? fact("Catalogue reference", catalogueReference(subtype.publisherOrHoldingAsPrinted)) : ""}`;
+  const title = isManuscript ? "Material and holding" : isPublished ? "Edition details" : "Material and documentation";
+  return section(title, `<dl class="record-facts">${details}</dl>`);
+}
+
+function seriesContentsSection(subtype, relations, work, indexes) {
+  const seriesRelations = relations.filter((item) => item.relationType === "part_of_series");
+  if (!subtype?.contents || !seriesRelations.length) return "";
+
+  const entries = String(subtype.contents)
+    .split(/\s*;\s*/)
+    .map((entry) => {
+      const match = entry.trim().match(/^\s*\d+\.\s*(.+)$/);
+      if (!match) return null;
+      const text = match[1].trim();
+      const creditMatch = text.match(/^(.*?)\s+\((comp\..+)\)$/i);
+      return {
+        title: creditMatch ? creditMatch[1].trim() : text,
+        credit: creditMatch ? creditMatch[2].replace(/^comp\.\s*/i, "Music by ").trim() : "",
+      };
+    })
+    .filter(Boolean);
+  if (!entries.length) return "";
+
+  const relationTargets = seriesRelations
+    .map((relation) => {
+      const candidateIds = [...getIds(relation, "targetWorkIds"), ...getIds(relation, "sourceWorkIds")]
+        .filter((id) => id !== work.id);
+      const targetWork = candidateIds.map((id) => indexes.works.get(id)).find(Boolean);
+      const numberMatch = String(relation.publicNote || "").match(/\bis no\.\s*(\d+)\b/i);
+      return { relation, targetWork, number: numberMatch ? Number(numberMatch[1]) : null };
+    })
+    .filter((item) => item.targetWork);
+  const usedTargetIds = new Set();
+  const comparableTitle = (value) => normalizeSearch(value)
+    .replace(/\bcoctail\b/g, "cocktail")
+    .replace(/[^a-z0-9]+/g, " ")
+    .trim();
+
+  const items = entries.map((entry, index) => {
+    const itemNumber = index + 1;
+    const entryTitle = comparableTitle(entry.title);
+    let target = relationTargets.find((item) => item.number === itemNumber && !usedTargetIds.has(item.targetWork.id));
+    if (!target) {
+      target = relationTargets.find((item) => {
+        if (usedTargetIds.has(item.targetWork.id)) return false;
+        const targetTitle = comparableTitle(item.targetWork.title);
+        return targetTitle.includes(entryTitle) || entryTitle.includes(targetTitle);
+      });
+    }
+    if (target) usedTargetIds.add(target.targetWork.id);
+    const titleHtml = target
+      ? `<a href="${recordUrl("work", target.targetWork.id)}">${escapeHtml(entry.title)}</a>`
+      : `<span>${escapeHtml(entry.title)}</span>`;
+    const creditHtml = entry.credit ? `<small>${escapeHtml(entry.credit)}</small>` : "";
+    const statusHtml = target
+      ? ""
+      : `<small class="series-contents__status">Listed in the documented series contents; no separately issued copy has been located.</small>`;
+    return `<li><span class="series-contents__entry">${titleHtml}${creditHtml}${statusHtml}</span></li>`;
+  }).join("");
+
+  const heading = work.id === "W-O007"
+    ? "Contents of the original two-booklet edition"
+    : "Series contents";
+  return section(heading, `<ol class="series-contents">${items}</ol>`);
+}
+
+// A relation note earns its place by adding something the badge and the two
+// titles do not already say. Forty of them read "X is documented as a language
+// version of Y" under a badge that says Language Version, beside a link that
+// says Y. Only that exact template is dropped: a note that names the language,
+// the country or the evidence is kept.
+function relationNoteRestatesTheLabel(note, relationTypes) {
+  const text = String(note || "").trim();
+  if (!text) return true;
+  return relationTypes.filter(Boolean).some((relationType) => {
+    const label = String(relationType).replace(/_of$/, "").replace(/_/g, " ").trim();
+    if (!label) return false;
+    const escaped = label.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    // The titles themselves may carry quotation marks — Sagen kleine Mädels
+    // "nein" — so the template is matched on its structure, and only within a
+    // single clause, which keeps a note that adds a sentence of its own.
+    // A title may itself hold a full stop — "En premières, en secondes, en
+    // troisièmes..." — so the clause runs up to a sentence break, a stop
+    // followed by a space, rather than to any stop at all.
+    const clause = "(?:(?!\\.\\s)[^;])+?";
+    const pattern = new RegExp(
+      `^${clause}\\s+is\\s+(?:documented\\s+as\\s+)?(?:a|the)\\s+${escaped}\\s+(?:of|for)\\s+${clause}\\.?$`,
+      "i",
+    );
+    return pattern.test(text);
+  });
+}
+
+const MERGEABLE_RELATION_TYPES = new Set(["language_version_of", "remake_of"]);
+
+function relationList(items, work, indexes, variantsByTitle = new Map()) {
+  const relationMeta = (item) => {
+    const candidateIds = [...getIds(item, "targetWorkIds"), ...getIds(item, "sourceWorkIds")].filter((id) => id !== work.id);
+    const targetWork = candidateIds.map((id) => indexes.works.get(id)).find(Boolean);
+    const title = targetWork?.title || item.targetWorkTitle || item.targetTitleAsSource || "Related work";
+    return { targetWork, title };
+  };
+  return progressiveList(items, {
+    label: "related works",
+    renderItem: (item) => {
+      const { targetWork, title } = relationMeta(item);
+      const titleHtml = targetWork ? `<a href="${recordUrl("work", targetWork.id)}">${escapeHtml(title)}</a>` : escapeHtml(title);
+      const relationType = getIds(item, "sourceWorkIds").includes(work.id)
+        ? item.relationType
+        : item.relationType === "language_version_of"
+          ? "language_version"
+          : item.relationType;
+      const note = relationNoteRestatesTheLabel(item.publicNote, [item.relationType, relationType])
+        ? ""
+        : item.publicNote;
+      // Where a title variant carries the same title, its language and its
+      // printed form are shown here rather than a second time in a list of
+      // names. Only where the related work really is this work under another
+      // title, though: on a language version or a remake the variant and the
+      // related record describe one thing, but a song and the film it belongs
+      // to are two, and matching their titles put the film's alternative
+      // German release title on the row of a song of nearly the same name, and
+      // a song's Polish title on the row of the film.
+      const sameWorkUnderAnotherTitle = MERGEABLE_RELATION_TYPES.has(item.relationType);
+      const variant = sameWorkUnderAnotherTitle ? variantsByTitle.get(normalizeSearch(title)) : undefined;
+      const sourceForm = variant
+        && variant.titleAsSource
+        && normalizeSearch(variant.titleAsSource) !== normalizeSearch(variant.variantTitle)
+        && normalizeSearch(variant.titleAsSource) !== normalizeSearch(title)
+        ? `Source form: ${variant.titleAsSource}`
+        : "";
+      const detail = [sourceForm, note].filter(Boolean).join(" \u00b7 ");
+      return `<li><span>${typeBadge(relationType)} ${titleHtml}${variant && variant.language ? ` ${languageBadge(variant.language)}` : ""}${detail ? `<br><small>${escapeHtml(detail)}</small>` : ""}</span>${certaintyBadge(item.certainty)}</li>`;
+    },
+    searchText: (item) => {
+      const { title } = relationMeta(item);
+      return [item.id, title, item.relationType, item.publicNote].filter(Boolean).join(" ");
+    },
+  });
+}
+
+function variantList(items) {
+  return progressiveList(items, {
+    label: "title variants",
+    renderItem: (item) => `<li><span><strong>${escapeHtml(item.variantTitle)}</strong>${item.titleAsSource && item.titleAsSource !== item.variantTitle ? `<br><small>Source form: ${escapeHtml(item.titleAsSource)}</small>` : ""}</span><span>${typeBadge(item.variantType)} ${item.language ? languageBadge(item.language) : ""} ${certaintyBadge(item.certainty)}</span></li>`,
+    searchText: (item) => [item.variantTitle, item.titleAsSource, item.variantType, item.language].filter(Boolean).join(" "),
+  });
+}
+
+function publicText(...values) {
+  const value = values.find((item) => typeof item === "string" && item.trim());
+  return value ? `<p class="lead">${escapeHtml(value)}</p>` : "";
+}
+
+const MEDIA_CONTEXT_INTERNAL_PATTERN = /\b(?:source metadata|source route|local asset|archival (?:reference|signature)|rights (?:note|marked|status|expired|remain)|publication status|asset paths?|recorded in SRC\d+|linked through SRC\d+|source\s*:?\s*SRC\d+|linked works?\s*:|related works?\s*:|via IMDb|NB\s*:|verify|verification remains open|needs? (?:review|verification))\b/i;
+
+function mediaContext(media) {
+  const sentences = String(media.description || "")
+    .match(/[^.!?]+[.!?]+|[^.!?]+$/g)
+    ?.map((sentence) => sentence
+      .replace(/\s+(?:current\s+)?source(?:\s+route|\s+PDF)?\s*:.*$/i, "")
+      .replace(/\s+source\s+SRC\d+.*$/i, "")
+      .replace(/\s+(?:linked|related)\s+works?\s*:.*$/i, "")
+      .trim())
+    .filter((sentence) => sentence && !MEDIA_CONTEXT_INTERNAL_PATTERN.test(sentence)) || [];
+  const description = sentences.join(" ");
+  if (!description) return "";
+  const comparableTokens = (value) => normalizeSearch(value)
+    .replace(/[^a-z0-9]+/g, " ")
+    .trim()
+    .split(/\s+/)
+    .filter((token) => token.length >= 4);
+  const referenceTokens = new Set(
+    comparableTokens(`${media.title || ""} ${media.publicCaption || ""}`),
+  );
+  const additionalTokens = new Set(
+    comparableTokens(description).filter((token) => !referenceTokens.has(token)),
+  );
+  const hasExplicitContext = /\b(?:not|rather than|reused|used as|context|evidence|documents?|shows?|depicts?|identifies?|attribution|timeline|illustration|distinguish|correction|version|variant)\b/i.test(description);
+  return additionalTokens.size >= 5 || hasExplicitContext ? description : "";
+}
+
+function renderWork(work, data, indexes) {
+  const isContextOnly = work.publicScope === "context_only";
+  const isSong = work.workType === "Song";
+  const isFilm = work.workType === "Film";
+  const isOther = work.workType === "Other";
+  const hasConciseCredits = isSong || isFilm || isOther;
+  const subtype = [
+    ...related(work.filmIds, indexes.films),
+    ...related(work.songIds, indexes.songs),
+    ...related(work.otherWorkIds, indexes.otherWorks),
+  ][0];
+  const contributions = workLevelContributions(
+    related(work.contributionIds, indexes.contributions),
+  );
+  const institutionalContributions = isOther
+    ? contributions.filter((item) => ["publisher", "holding_institution"].includes(item.role))
+    : [];
+  const hasOriginalCompositionCredits = isOther
+    && contributions.some((item) => item.evidenceContext === "original_composition");
+  const musicAndArrangementContributions = hasOriginalCompositionCredits
+    ? contributions.filter((item) => ["composer", "arranger"].includes(item.role))
+    : [];
+  const displayedContributions = isOther
+    ? contributions.filter((item) => !["publisher", "holding_institution"].includes(item.role)
+      && !musicAndArrangementContributions.includes(item))
+    : contributions;
+  const relations = related(work.relationIds, indexes.workRelations);
+  // Title variants are the names of this record; relations are other records.
+  // A variant that carries the title of a related work was being printed
+  // twice, once as a name and once as a link, on 36 works.
+  //
+  // Only the relations that carry the variant may take it out of the list.
+  // When the merge was narrowed to versions and remakes, this filter was left
+  // matching every relation, and the alternative German release title of Der
+  // Korvettenkapitaen fell out of both places at once: suppressed here because
+  // a song of nearly the same name is related, and no longer shown on that
+  // song's row because a song is not a version of a film.
+  const relatedTitles = new Set(relations
+    .filter((relation) => MERGEABLE_RELATION_TYPES.has(relation.relationType))
+    .flatMap((relation) => [
+      ...getIds(relation, "targetWorkIds"),
+      ...getIds(relation, "sourceWorkIds"),
+    ]).filter((id) => id !== work.id)
+    .map((id) => indexes.works.get(id))
+    .filter(Boolean)
+    .map((item) => normalizeSearch(item.title)));
+  const allVariants = related(work.titleVariantIds, indexes.titleVariants);
+  const variants = allVariants.filter((item) => !relatedTitles.has(normalizeSearch(item.variantTitle)));
+  const variantsByRelatedTitle = new Map(allVariants
+    .filter((item) => relatedTitles.has(normalizeSearch(item.variantTitle)))
+    .map((item) => [normalizeSearch(item.variantTitle), item]));
+  const sources = related(work.sourceIds, indexes.sources);
+  const media = related(work.mediaIds, indexes.media);
+  const events = related(work.timelineEventIds, indexes.timelineEvents);
+  const subtypeFacts = subtype ? (hasConciseCredits ? `
+    ${fact("Instrumentation", subtype.instrumentation)}${fact("Material status", subtype.materialStatus)}${fact("Shelfmark", subtype.shelfmark)}` : `
+    ${fact("Genre", genreLabel(subtype.genre))}${isContextOnly ? "" : fact("Credit", subtype.creditType)}${fact("Composer status", subtype.composerStatus)}
+    ${fact("Lyricist as printed", subtype.lyricistAsPrinted)}${fact("Lyricist status", subtype.lyricistStatus)}
+    ${fact("Publisher as printed", subtype.publisherAsPrinted || subtype.publisherOrHoldingAsPrinted)}
+    ${fact("Instrumentation", subtype.instrumentation)}${fact("Material status", subtype.materialStatus)}${fact("Shelfmark", subtype.shelfmark)}`) : "";
+  const overview = publicText(subtype?.publicNote, work.publicNote)
+    + (!isOther && subtypeFacts.trim() ? `<dl class="record-facts">${subtypeFacts}</dl>` : "");
+  const main = [
+    section("About this work", overview),
+    isOther ? otherWorkMaterialSection(subtype, institutionalContributions, indexes) : "",
+    isOther ? seriesContentsSection(subtype, relations, work, indexes) : "",
+    section("Music and arrangement", contributionList(musicAndArrangementContributions, indexes, {
+      conciseCredits: true,
+      creditLabel: "credited as",
+      suppressCatalogueNames: true,
+      suppressConfirmedCreatorNotes: true,
+    })),
+    section("Contributors and credits", contributionList(displayedContributions, indexes, {
+      conciseCredits: hasConciseCredits || isOther,
+      redundantNotes: [work.publicNote, subtype?.publicNote],
+      creditLabel: isOther ? "credited as" : "printed as",
+      suppressCatalogueNames: isOther,
+      suppressConfirmedCreatorNotes: isOther,
+    })),
+    section("Title variants", variantList(variants), "", variants.length),
+    section("Related works and versions", relationList(relations, work, indexes, variantsByRelatedTitle), "", relations.length),
+    section("Timeline", entityList(events, "event", (item) => item.displayDate || item.dateStart), "", events.length),
+    section("Sources", sourceList(sources), "", sources.length),
+  ].join("");
+  const aside = `${mediaFigures(media, indexes.sources)}${contentsRail([
+    { title: "About this work", count: overview.trim() ? 1 : 0 },
+    { title: "Contributors and credits", count: displayedContributions.length },
+    { title: "Title variants", count: variants.length },
+    { title: "Related works and versions", count: relations.length },
+    { title: "Timeline", count: events.length },
+    { title: "Sources", count: sources.length },
+  ], recordUrl("work", work.id))}`;
+  return {
+    title: work.title,
+    label: work.workType || "Work",
+    // The kicker above the title already names the type and the fact box gives
+    // the period with its range, so the badge row is left to what qualifies the
+    // record rather than what classifies it.
+    badges: `${isContextOnly ? scopeBadge(work.publicScope) : (hasConciseCredits && work.certainty === "confirmed" ? "" : certaintyBadge(work.certainty))}`,
+    facts: `${fact("Year", work.year)}${hasConciseCredits ? fact("Genre", genreLabel(subtype?.genre)) : ""}${fact("Period", periodValues(work).map(periodLabel).join(", "))}${isContextOnly ? fact("Kaper attribution", "Not confirmed") : ""}`,
+    main,
+    aside,
+  };
+}
+
+function renderEvent(event, data, indexes) {
+  const people = related(event.personIds, indexes.people);
+  const works = related(event.workIds, indexes.works);
+  const places = related(event.placeIds, indexes.places);
+  const organizations = related(event.organizationIds, indexes.organizations);
+  const media = related(event.mediaIds, indexes.media);
+  const sources = related(event.sourceIds, indexes.sources);
+  return {
+    title: event.title,
+    label: "Timeline event",
+    badges: `${typeBadge(event.category || event.eventType)}${periodBadge(event.periods || event.period)}`,
+    facts: `${fact("Date", event.displayDate || event.dateStart)}${fact("Period", periodValues(event).map(periodLabel).join(", "))}${fact("Precision", humanize(event.datePrecision))}${fact("Place", event.placeDisplay)}${fact("Category", humanize(event.category))}`,
+    main: [
+      section("Event", publicText(event.longDescription, event.shortDescription)),
+      section("People", entityList(people, "person", (item) => humanize(item.primaryRole)), "", people.length),
+      section("Works", entityList(works, "work", (item) => [item.year, item.workType].filter(Boolean).join(" · ")), "", works.length),
+      section("Organizations", entityList(organizations, "organization", (item) => (item.types || []).map(humanize).join(", ")), "", organizations.length),
+      section("Places", entityList(places, "place", (item) => [item.city, item.country].filter(Boolean).join(", ")), "", places.length),
+      section("Sources", sourceList(sources), "", sources.length),
+    ].join(""),
+    aside: `${mediaFigures(media, indexes.sources)}${contentsRail([
+      { title: "People", count: people.length },
+      { title: "Works", count: works.length },
+      { title: "Organizations", count: organizations.length },
+      { title: "Places", count: places.length },
+      { title: "Sources", count: sources.length },
+    ], recordUrl("event", event.id))}`,
+  };
+}
+
+function renderPlace(place, data, indexes) {
+  const events = related(place.timelineEventIds, indexes.timelineEvents);
+  const people = related(place.personIds, indexes.people);
+  const media = related(place.mediaIds, indexes.media);
+  const sources = related(place.sourceIds, indexes.sources);
+  return {
+    title: place.displayName,
+    label: "Place",
+    badges: typeBadge(place.placeType),
+    facts: `${fact("City", place.city)}${fact("Region", place.region)}${fact("Country", place.country)}${fact("Place type", humanize(place.placeType))}${fact("Coordinate precision", mapPrecisionLabel(place.mapPrecision))}${fact("Reference coordinates", Number.isFinite(place.latitude) && Number.isFinite(place.longitude) ? `${place.latitude}, ${place.longitude}` : "")}${fact("Linked-event periods", periodValues(place).map(periodLabel).join(", "))}`,
+    main: [
+      section("About this place", publicText(place.publicNote)),
+      section("Documented events", entityList(events, "event", (item) => item.displayDate || item.dateStart), "", events.length),
+      section("People", entityList(people, "person", (item) => humanize(item.primaryRole)), "", people.length),
+      section("Sources", sourceList(sources), "", sources.length),
+    ].join(""),
+    aside: `${mediaFigures(media, indexes.sources)}${contentsRail([
+      { title: "Documented events", count: events.length },
+      { title: "People", count: people.length },
+      { title: "Sources", count: sources.length },
+    ], recordUrl("place", place.id))}`,
+  };
+}
+
+function mediaRelatedWorks(media, indexes) {
+  const direct = related(media.workIds, indexes.works);
+  const subtypeWorks = [
+    ...related(media.songIds, indexes.songs),
+    ...related(media.otherWorkIds, indexes.otherWorks),
+  ].flatMap((item) => related(item.workIds, indexes.works));
+  return [...new Map([...direct, ...subtypeWorks].map((item) => [item.id, item])).values()];
+}
+
+function documentGallery(media, allMedia, sourceIndex) {
+  const paths = [...new Set(media.assetPaths || [])].filter(Boolean);
+  if (media.mediaType !== "document_gallery" || paths.length < 2) return "";
+  const explicitMembers = (media.galleryMemberIds || [])
+    .map((id) => allMedia.find((item) => item.id === id))
+    .filter(Boolean);
+  const pathMatches = (item, path, fileName) => (
+    item.assetPath === path
+    || (item.assetPaths || []).includes(path)
+    || [item.assetPath, ...(item.assetPaths || [])]
+      .filter(Boolean)
+      .some((candidate) => String(candidate).split("/").pop() === fileName)
+  );
+  const items = paths.map((path, index) => {
+    const fileName = String(path).split("/").pop();
+    const member = explicitMembers.find((item) => pathMatches(item, path, fileName))
+      || allMedia.find((item) => (
+        item.id !== media.id
+        && item.mediaType !== "document_gallery"
+        && pathMatches(item, path, fileName)
+      ));
+    const title = member?.title || `Gallery image ${index + 1}`;
+    const caption = member?.publicCaption || member?.description || `Image ${index + 1} of ${paths.length} in this documentary gallery.`;
+    const disclosure = member
+      ? renderMediaDisclosure(member, related(member.sourceIds, sourceIndex), {
+        compact: true,
+        fairUseResolutionLabel: "Low-resolution copy",
+        includeFullRightsNote: false,
+      })
+      : `<strong>${escapeHtml(title)}</strong><p>${escapeHtml(caption)}</p>`;
+    return `
+      <figure class="record-gallery__item">
+        <a class="record-gallery__image" href="${escapeHtml(path)}" target="_blank" rel="noreferrer" aria-label="Open full image: ${escapeHtml(title)}">
+          ${responsiveImage(path, member?.altText || title, {
+            sizes: "(max-width: 680px) calc(100vw - 4rem), (max-width: 900px) 80vw, 34rem",
+          })}
+          <span>Open full image <span aria-hidden="true">↗</span></span>
+        </a>
+        <figcaption>${disclosure}</figcaption>
+      </figure>`;
+  }).join("");
+  return `<div class="record-gallery" aria-label="${escapeHtml(media.title)}">${items}</div>`;
+}
+
+function renderMedia(media, data, indexes) {
+  const works = mediaRelatedWorks(media, indexes);
+  const events = related(media.timelineEventIds, indexes.timelineEvents);
+  const places = related(media.placeIds, indexes.places);
+  const organizations = related(media.organizationIds, indexes.organizations);
+  const sources = related(media.sourceIds, indexes.sources);
+  const people = related([...new Set(sources.flatMap((item) => item.personIds || []))], indexes.people);
+  const gallery = documentGallery(media, data.media, indexes.sources);
+  const isGalleryContainer = media.mediaType === "document_gallery" && Boolean(gallery);
+  const galleryCount = [...new Set(media.assetPaths || [])].filter(Boolean).length;
+  if (isGalleryContainer) {
+    return {
+      title: media.title,
+      label: "Media gallery",
+      badges: `${typeBadge(media.mediaType)}${periodBadge(media.periods || media.period)}`,
+      facts: `${fact("Images", galleryCount)}${fact("Period", periodValues(media).map(periodLabel).join(", "))}`,
+      main: [
+        section("About this gallery", publicText(media.publicCaption, media.description)),
+        section(`Gallery · ${galleryCount} images`, gallery, "record-section--gallery"),
+        section("Rights and attribution", '<div class="scope-note">Credit, source and rights information are provided with each individual image.</div>'),
+        section("Related works", entityList(works, "work", (item) => [item.year, item.workType].filter(Boolean).join(" · ")), "", works.length),
+        section("Timeline", entityList(events, "event", (item) => item.displayDate || item.dateStart), "", events.length),
+        section("Places", entityList(places, "place", (item) => [item.city, item.country].filter(Boolean).join(", ")), "", places.length),
+        section("Organizations", entityList(organizations, "organization", (item) => (item.types || []).map(humanize).join(", ")), "", organizations.length),
+        section("Sources", sourceList(sources), "", sources.length),
+      ].join(""),
+      aside: contentsRail([
+        { title: "Related works", count: works.length },
+        { title: "Timeline", count: events.length },
+        { title: "Places", count: places.length },
+        { title: "Organizations", count: organizations.length },
+        { title: "Sources", count: sources.length },
+      ], recordUrl("media", media.id)),
+      fullWidth: true,
+    };
+  }
+  const context = mediaContext(media);
+  return {
+    title: media.title,
+    label: "Media record",
+    badges: `${typeBadge(media.mediaType)}${periodBadge(media.periods || media.period)}${mediaRightsBadge(media)}`,
+    facts: `${fact("Category", humanize(media.category))}${fact("Period", periodValues(media).map(periodLabel).join(", "))}${fact("Items", gallery ? media.assetPaths.length : "")}`,
+    main: [
+      section("About this item", publicText(context)),
+      gallery ? section(`Gallery · ${media.assetPaths.length} images`, gallery, "record-section--gallery") : "",
+      section("Rights and provenance", `${renderMediaDisclosure(media, sources, {
+        compact: mediaIsFairUse(media),
+        includeCaption: false,
+        includeFullRightsNote: false,
+        includeResolutionLabel: false,
+        includeRightsBadge: false,
+        includeTitle: false,
+        includeSource: false,
+      })}${sourceList(sources, { progressive: false })}`),
+      section("Related works", entityList(works, "work", (item) => [item.year, item.workType].filter(Boolean).join(" · ")), "", works.length),
+      section("Timeline", entityList(events, "event", (item) => item.displayDate || item.dateStart), "", events.length),
+      section("People", entityList(people, "person", (item) => humanize(item.primaryRole)), "", people.length),
+      section("Places", entityList(places, "place", (item) => [item.city, item.country].filter(Boolean).join(", ")), "", places.length),
+      section("Organizations", entityList(organizations, "organization", (item) => (item.types || []).map(humanize).join(", ")), "", organizations.length),
+    ].join(""),
+    aside: `<figure class="record-media">${mediaPreview(media, {
+      eager: true,
+      sizes: "(max-width: 900px) calc(100vw - 2rem), 20rem",
+    })}<figcaption>${escapeHtml(media.publicCaption || media.title)}</figcaption></figure>${contentsRail([
+      { title: "Related works", count: works.length },
+      { title: "Timeline", count: events.length },
+      { title: "People", count: people.length },
+      { title: "Places", count: places.length },
+      { title: "Organizations", count: organizations.length },
+    ], recordUrl("media", media.id))}`,
+  };
+}
+
+// Life dates used to live inside authorizedName, in whichever convention the
+// record happened to be typed in — "Kaper (1902–1983)" beside "Włast, Andrzej,
+// 1895–1943" — so they could never display consistently. They are their own
+// fields now and the display string is generated here, which makes the format
+// a property of the code rather than of whoever entered the record. An open
+// end is written as an en dash with nothing after it; a missing birth year as
+// nothing before it.
+function lifeDates(person) {
+  const { birthYear, deathYear } = person;
+  if (!birthYear && !deathYear) return "";
+  const span = escapeHtml(`${birthYear || ""}\u2013${deathYear || ""}`);
+  if (person.lifeDatesCertainty && person.lifeDatesCertainty !== "confirmed") {
+    return `${span} ${certaintyBadge(person.lifeDatesCertainty)}`;
+  }
+  return span;
+}
+
+function renderPerson(person, data, indexes) {
+  const works = related(person.workIds, indexes.works)
+    .sort((a, b) => Number(a.year || 9999) - Number(b.year || 9999) || String(a.title).localeCompare(String(b.title)));
+  const events = related(person.timelineEventIds, indexes.timelineEvents)
+    .sort((a, b) => String(a.dateStart || "9999").localeCompare(String(b.dateStart || "9999")) || String(a.title).localeCompare(String(b.title)));
+  const ledger = personWorkLedger(person, indexes);
+  const creditEvidenceSourceIds = new Set(
+    ledger.items.flatMap((item) => item.sources.map((source) => source.id)),
+  );
+  const sources = related(person.sourceIds, indexes.sources)
+    .filter((source) => !creditEvidenceSourceIds.has(source.id))
+    .sort((a, b) => String(a.date || "9999").localeCompare(String(b.date || "9999")) || String(a.shortCitation || a.title).localeCompare(String(b.shortCitation || b.title)));
+  const portrait = data.media.find((item) => item.assetPath && item.category === "portrait");
+  const portraitSources = portrait ? related(portrait.sourceIds, indexes.sources) : [];
+  const identities = related(person.nameVariantIds, indexes.personNameVariants)
+    .filter((item) => ["pseudonym", "joint_pseudonym", "registration_identity"].includes(item.variantType));
+  const displayedRoles = [person.primaryRole, ...(person.roles || [])].filter((role, index, roles) => (
+    role && roles.findIndex((candidate) => String(candidate).toLowerCase() === String(role).toLowerCase()) === index
+  ));
+  return {
+    title: person.displayName,
+    label: "Person",
+    badges: displayedRoles.map(typeBadge).join(""),
+    facts: `${factHtml("Life dates", lifeDates(person))}${fact("Roles", displayedRoles.map(humanize))}${authorityFacts(person)}`,
+    // The portrait belongs to the identity of the record, not to a stack of
+    // boxes below it: it used to sit third in the aside, under a navigation
+    // panel, while the authority links took a section heading of their own for
+    // three links.
+    main: [
+      section("Pseudonyms and documented identities", progressiveList(identities, {
+        className: "entity-list identity-list",
+        label: "documented identities",
+        renderItem: (item) => `<li><span><strong>${escapeHtml(item.variantName)}</strong>${item.publicNote ? `<br><small>${escapeHtml(item.publicNote)}</small>` : ""}</span>${typeBadge(item.variantType)}</li>`,
+        searchText: (item) => [item.variantName, item.variantType, item.publicNote].filter(Boolean).join(" "),
+        showTotal: false,
+      }), "", identities.length),
+      ledger.items.length
+        ? section(
+          "Documented works and their evidence",
+          `<p class="record-section__intro">Each work is followed by the citations that support this person\u2019s credit for it; they are not presented as biographical sources.</p>${ledger.list}`,
+          "record-section--credit-evidence",
+          ledger.items.length,
+        )
+        : "",
+      events.length ? section("Documented chronology", progressiveList(events, {
+        label: "timeline events",
+        renderItem: (item) => `<li><span><a href="${recordUrl("event", item.id)}">${escapeHtml(item.title)}</a>${item.displayDate || item.dateStart ? `<br><small>${escapeHtml(item.displayDate || item.dateStart)}</small>` : ""}</span>${periodBadge(item.periods || item.period)}</li>`,
+        searchText: (item) => [item.title, item.displayDate, item.placeDisplay].filter(Boolean).join(" "),
+        showTotal: false,
+      }), "", events.length) : "",
+      section("Sources linked directly to this person", sourceList(sources), "", sources.length),
+    ].join(""),
+    // The portrait and its credit stay in the aside: 74 of the 137 people carry
+    // no portrait at all, and an identity block built around an image leaves a
+    // hole on every record that has none.
+    aside: `${portrait ? `<figure class="record-media">${mediaPreview(portrait, {
+      eager: true,
+      sizes: "(max-width: 900px) calc(100vw - 2rem), 20rem",
+    })}</figure>${renderMediaDisclosure(portrait, portraitSources, {
+      compact: true,
+      includeFullRightsNote: false,
+      includeResolutionLabel: true,
+    })}` : ""}${contentsRail([
+      { title: "Pseudonyms and documented identities", count: identities.length },
+      { title: "Documented works and their evidence", count: ledger.items.length },
+      { title: "Documented chronology", count: events.length },
+      { title: "Sources linked directly to this person", count: sources.length },
+    ], recordUrl("person", person.id))}`,
+  };
+}
+
+function initializeSourceLedgers() {
+  target.querySelectorAll("[data-source-ledger]").forEach((ledger) => {
+    const rows = [...ledger.querySelectorAll("[data-ledger-item]")];
+    const groups = [...ledger.querySelectorAll("[data-ledger-group]")];
+    const search = ledger.querySelector("[data-ledger-search]");
+    const expandAll = ledger.querySelector("[data-ledger-expand]");
+    const empty = ledger.querySelector("[data-ledger-empty]");
+    const status = ledger.querySelector("[data-ledger-status]");
+    const total = Number(ledger.dataset.total || rows.length);
+
+    const setGroup = (group, open) => {
+      const toggle = group.querySelector("[data-group-toggle]");
+      const body = group.querySelector("[data-group-body]");
+      toggle.setAttribute("aria-expanded", String(open));
+      body.hidden = !open;
+    };
+    const allOpen = () => groups.every((group) => group.querySelector("[data-group-toggle]").getAttribute("aria-expanded") === "true");
+    const syncExpandLabel = () => {
+      if (expandAll) expandAll.textContent = allOpen() ? "Collapse all" : "Expand all";
+    };
+
+    groups.forEach((group) => {
+      const toggle = group.querySelector("[data-group-toggle]");
+      toggle.removeAttribute("aria-disabled");
+      toggle.removeAttribute("tabindex");
+      setGroup(group, groups.length === 1);
+    });
+
+    groups.forEach((group) => {
+      group.querySelector("[data-group-toggle]").addEventListener("click", () => {
+        const open = group.querySelector("[data-group-toggle]").getAttribute("aria-expanded") === "true";
+        setGroup(group, !open);
+        syncExpandLabel();
+      });
+    });
+
+    rows.forEach((row) => {
+      const toggle = row.querySelector("[data-row-toggle]");
+      const detail = row.querySelector("[data-row-detail]");
+      toggle.setAttribute("aria-expanded", "false");
+      detail.hidden = true;
+      toggle.addEventListener("click", () => {
+        const open = toggle.getAttribute("aria-expanded") === "true";
+        toggle.setAttribute("aria-expanded", String(!open));
+        detail.hidden = open;
+      });
+    });
+
+    expandAll?.addEventListener("click", () => {
+      const open = !allOpen();
+      groups.forEach((group) => setGroup(group, open));
+      syncExpandLabel();
+    });
+
+    // Searching reaches every group, including collapsed ones. A group that
+    // ends up with no match is hidden outright rather than left as an empty
+    // heading the reader has to open to discover is empty.
+    search?.addEventListener("input", () => {
+      const query = normalizeSearch(search.value.trim());
+      let visible = 0;
+      rows.forEach((row) => {
+        const match = !query || row.dataset.search.includes(query);
+        row.hidden = !match;
+        if (match) visible += 1;
+      });
+      groups.forEach((group) => {
+        const groupRows = [...group.querySelectorAll("[data-ledger-item]")];
+        const hits = groupRows.filter((row) => !row.hidden).length;
+        group.hidden = query ? hits === 0 : false;
+        if (query && hits > 0) setGroup(group, true);
+        if (!query) setGroup(group, groups.length === 1);
+      });
+      if (empty) empty.hidden = visible > 0;
+      if (status) {
+        status.textContent = query
+          ? `${visible} of ${total} sources match the search.`
+          : `All ${total} sources are shown, grouped by kind.`;
+      }
+      syncExpandLabel();
+    });
+
+    syncExpandLabel();
+  });
+}
+
+function initializeContentsRail() {
+  const rail = target.querySelector("[data-contents-rail]");
+  if (!rail) return;
+  const links = [...rail.querySelectorAll("a")];
+  const sections = links
+    .map((link) => ({ link, section: document.getElementById(link.hash.slice(1)) }))
+    .filter((entry) => entry.section);
+  if (!sections.length) return;
+
+  // A rail earns its place when the reader cannot see the whole record at
+  // once. Two screenfuls is the point at which the first section has left the
+  // viewport by the time the last one arrives.
+  const decide = () => {
+    const longEnough = document.documentElement.scrollHeight > window.innerHeight * 2;
+    const wideEnough = window.matchMedia("(min-width: 901px)").matches;
+    rail.hidden = !(longEnough && wideEnough);
+  };
+  decide();
+  window.addEventListener("resize", decide, { passive: true });
+
+  if (!("IntersectionObserver" in window)) return;
+  const observer = new IntersectionObserver((entries) => {
+    for (const entry of entries) {
+      if (!entry.isIntersecting) continue;
+      const match = sections.find((item) => item.section === entry.target);
+      if (!match) continue;
+      for (const { link } of sections) link.removeAttribute("aria-current");
+      match.link.setAttribute("aria-current", "true");
+    }
+  }, { rootMargin: "-88px 0px -70% 0px" });
+  for (const { section } of sections) observer.observe(section);
+}
+
+function initializeProgressiveLists() {
+  target.querySelectorAll("[data-progressive-list]").forEach((collection) => {
+    const items = [...collection.querySelectorAll("[data-progressive-item]")];
+    const toggle = collection.querySelector("[data-progressive-toggle]");
+    const panel = collection.querySelector("[data-progressive-panel]");
+    const search = collection.querySelector("[data-progressive-search]");
+    const empty = collection.querySelector("[data-progressive-empty]");
+    const status = collection.querySelector("[data-progressive-status]");
+    const label = collection.dataset.label || "records";
+    const total = Number(collection.dataset.total || items.length);
+    const showTotal = collection.dataset.showTotal !== "false";
+    const collapsedLabel = showTotal ? `Show all ${total} ${label}` : `Show more ${label}`;
+
+    const setStatus = (message) => {
+      if (status) status.textContent = message;
+    };
+    const applySearch = () => {
+      const query = normalizeSearch(search?.value.trim() || "");
+      let visibleCount = 0;
+      items.forEach((item) => {
+        const visible = !query || item.dataset.search.includes(query);
+        item.hidden = !visible;
+        if (visible) visibleCount += 1;
+      });
+      if (empty) empty.hidden = visibleCount > 0;
+      setStatus(query
+        ? `${visibleCount} of ${total} ${label} match the search.`
+        : `All ${total} ${label} are shown.`);
+    };
+    const expand = () => {
+      if (panel) panel.hidden = false;
+      if (empty) empty.hidden = true;
+      toggle.setAttribute("aria-expanded", "true");
+      toggle.textContent = `Show fewer ${label}`;
+      setStatus(`All ${total} ${label} are shown.`);
+    };
+    const collapse = () => {
+      if (search) search.value = "";
+      if (panel) panel.hidden = true;
+      if (empty) empty.hidden = true;
+      items.forEach((item) => { item.hidden = false; });
+      toggle.setAttribute("aria-expanded", "false");
+      toggle.textContent = collapsedLabel;
+      setStatus(`Showing the first ${LIST_PREVIEW_LIMIT} of ${total} ${label}.`);
+    };
+
+    toggle?.addEventListener("click", () => {
+      if (toggle.getAttribute("aria-expanded") === "true") collapse();
+      else expand();
+    });
+    search?.addEventListener("input", applySearch);
+    collapse();
+  });
+}
+
+// The works section named the films and songs an organization stands behind
+// and stopped there, while the evidence for each of those links sat on the
+// contribution: Aafa-Film AG showed two films and one source, when the
+// production credit for Der Korvettenkapitaen alone rests on two more. The
+// work is stated once, its role beneath it, and the citations that document
+// the organization's part in it below that — the same shape the person card
+// and the source card use.
+function organizationWorkLedger(organization, indexes) {
+  const entries = new Map();
+  const entryFor = (work) => {
+    if (!entries.has(work.id)) {
+      entries.set(work.id, { work, roles: new Set(), certainties: new Set(), sourceIds: new Set() });
+    }
+    return entries.get(work.id);
+  };
+  for (const work of related(organization.workIds, indexes.works)) entryFor(work);
+  for (const contribution of related(organization.contributionIds, indexes.contributions)) {
+    for (const work of related(contribution.workIds, indexes.works)) {
+      const entry = entryFor(work);
+      if (contribution.role) entry.roles.add(contribution.role);
+      if (contribution.certainty && contribution.certainty !== "confirmed") {
+        entry.certainties.add(contribution.certainty);
+      }
+      for (const sourceId of contribution.sourceIds || []) entry.sourceIds.add(sourceId);
+    }
+  }
+  const items = [...entries.values()]
+    .map((entry) => ({
+      ...entry,
+      sources: sortSourcesChronologically(related([...entry.sourceIds], indexes.sources)),
+    }))
+    .sort((a, b) => Number(a.work.year || 9999) - Number(b.work.year || 9999)
+      || String(a.work.title).localeCompare(String(b.work.title)));
+  const list = progressiveList(items, {
+    className: "credit-evidence-list",
+    label: "works",
+    renderItem: (item) => {
+      const roles = [...item.roles].map(humanize).join(", ");
+      const meta = [item.work.year ? String(item.work.year) : "", roles].filter(Boolean).join(" \u00b7 ");
+      return `<li class="credit-evidence">
+      <div class="credit-evidence__work">
+        <span><a href="${recordUrl("work", item.work.id)}">${escapeHtml(item.work.title)}</a>${meta ? `<small>${escapeHtml(meta)}</small>` : ""}</span>
+        <span class="credit-evidence__badges">${typeBadge(item.work.workType)}${[...item.certainties].map(certaintyBadge).join("")}</span>
+      </div>
+      ${item.sources.length ? `<ul class="credit-evidence__sources" aria-label="Sources documenting this credit">
+        ${item.sources.map((source) => `<li><span class="credit-evidence__source-id">${escapeHtml(source.id)}</span><span><a href="${recordUrl("source", source.id)}">${escapeHtml(source.shortCitation || source.title || source.fullCitation || source.id)}</a>${sourceReliabilityBadge(source.reliability)}</span></li>`).join("")}
+      </ul>` : ""}
+    </li>`;
+    },
+    searchText: (item) => [
+      item.work.title,
+      item.work.year,
+      item.work.workType,
+      ...item.roles,
+      ...item.sources.map(sourceSearchText),
+    ].filter(Boolean).join(" "),
+    showTotal: true,
+  });
+  return { items, list };
+}
+
+// Two kinds of body share this table and the cards did not distinguish them.
+// Ninety organizations are subjects of the research - the studios, publishers,
+// labels and orchestras Kaper worked with. Fifty-five are the repositories and
+// databases the research was done in, and their cards carry no works and no
+// chronology because there are none to carry: a library holds sources, it does
+// not compose. Read as a subject record, such a card looks empty; read for what
+// it is, it is complete. The distinction is taken from the archive's own type
+// vocabulary rather than guessed from the absence of links, because an archive
+// that holds Kaper's manuscripts does acquire work links through its custody
+// of them.
+const REPOSITORY_TYPES = Object.freeze(["archive", "database", "library", "digital_library", "museum"]);
+
+function organizationIsRepository(organization) {
+  return (organization.types || []).some((type) => REPOSITORY_TYPES.includes(type));
+}
+
+function organizationScopeNote(organization) {
+  return organizationIsRepository(organization)
+    ? "A repository consulted by the archive. This record identifies the body that holds or serves the sources listed below; it is not a subject of the research, and carries no works or chronology of its own."
+    : "Organization links are induced from approved public records and their documented contributions.";
+}
+
+// A record label and the company that manufactured for it are two records
+// here, deliberately: Odeon is kept apart from the Greek company of the same
+// name, Grammophon and Polydor are imprints of one Berlin firm, Victor was
+// pressed by RCA. Every one of those relations was written into a note and
+// none of them was in the graph, so the companies held no links at all and
+// read as records nobody had finished. The relation is now stated on both
+// ends and can be followed in either direction.
+function renderOrganization(organization, data, indexes) {
+  const works = related(organization.workIds, indexes.works);
+  const events = related(organization.timelineEventIds, indexes.timelineEvents);
+  const credits = organizationWorkLedger(organization, indexes);
+  // A source already shown as the evidence for a credit is not repeated in a
+  // list headed "Sources": Aafa-Film AG carried one direct source, the same
+  // Filmportal page that documents its production credit, and the card printed
+  // it twice while announcing "1" beside a section whose neighbour showed
+  // three. The heading also says which sources these are, as the person card
+  // does, so a count of nothing is never read as a count of everything.
+  const creditEvidenceSourceIds = new Set(
+    credits.items.flatMap((item) => item.sources.map((source) => source.id)),
+  );
+  const sources = related(organization.sourceIds, indexes.sources)
+    .filter((source) => !creditEvidenceSourceIds.has(source.id));
+  const parents = related(organization.parentOrganizationIds, indexes.organizations);
+  const imprints = related(organization.imprintIds, indexes.organizations)
+    .sort((a, b) => String(a.displayName).localeCompare(String(b.displayName)));
+  return {
+    title: organization.displayName,
+    label: "Organization",
+    badges: (organization.types || []).map(typeBadge).join(""),
+    // The type was set twice, as a badge and again as a fact. The badge keeps
+    // it; the row that repeated it is gone, as it went from the work card.
+    facts: `${authorityFacts(organization)}${factHtml("Imprint of", parents.map((item) => `<a href="${recordUrl("organization", item.id)}">${escapeHtml(item.displayName)}</a>`).join(", "))}${fact("City", organization.city)}${fact("Country", organization.country)}${fact("Name variants", organization.nameVariants)}`,
+    main: [
+      section("Note", organization.publicNote ? `<p class="lead">${escapeHtml(organization.publicNote)}</p>` : ""),
+      section("Imprints", entityList(imprints, "organization", (item) => (item.types || []).map(humanize).join(", ")), "", imprints.length),
+      section("Works", credits.list, "", credits.items.length),
+      section("Timeline", entityList(events, "event", (item) => item.displayDate || item.dateStart), "", events.length),
+      section("Sources linked directly to this organization", sourceList(sources), "", sources.length),
+    ].join(""),
+    aside: `<div class="scope-note">${organizationScopeNote(organization)}</div>${contentsRail([
+      { title: "Imprints", count: imprints.length },
+      { title: "Works", count: credits.items.length },
+      { title: "Timeline", count: events.length },
+      { title: "Sources linked directly to this organization", count: sources.length },
+    ], recordUrl("organization", organization.id))}`,
+  };
+}
+
+// The three facts that establish a heading are orthogonal and each is shown
+// only where it says something: the controlled form when it differs from the
+// name the card is titled with, the register the form was taken from, and the
+// authority records themselves. A heading with no stated source is not called
+// an authorized name, because it is not one: for the 113 organizations that
+// carry no register, the name is a working label the archive assigned.
+function authorityFacts(record) {
+  const displayName = String(record.displayName || "").trim();
+  const authorizedName = String(record.authorizedName || "").trim();
+  const links = authorityLinkList(record.authorityUrl);
+  return `${authorizedName && authorizedName !== displayName ? fact("Authorized name", authorizedName) : ""}
+    ${fact("Heading source", record.authorizedNameSource)}
+    ${links.length ? `<div><dt>Authorities</dt><dd class="record-facts__authorities">${links.map((item) => `<a href="${escapeHtml(item.url)}" target="_blank" rel="noreferrer">${escapeHtml(item.label)} <span aria-hidden="true">↗</span></a>`).join("")}</dd></div>` : ""}`;
+}
+
+const SOURCE_IDENTIFIER_LABELS = Object.freeze({
+  ark: "ARK",
+  doi: "DOI",
+  naid: "NAID",
+  usco_registration: "U.S. copyright registration",
+  usco_renewal: "U.S. copyright renewal",
+});
+
+// The archive holds a persistent identifier for sixty of its sources, and on
+// fifty-eight of them that identifier is already inside the source's own URL —
+// where it is neither visible nor selectable, because the link is a button
+// reading "Open source". The identifier is therefore printed as text, so it can
+// be read and copied into a citation, and deliberately not linked: the page it
+// resolves to is the page the button already opens.
+function sourceIdentifierFacts(source) {
+  return (source.identifiers || [])
+    .filter((item) => item && item.value)
+    .map((item) => fact(
+      SOURCE_IDENTIFIER_LABELS[item.scheme] || humanize(item.scheme) || "Identifier",
+      item.value,
+    ))
+    .join("");
+}
+
+// Access dates are structured apparatus. Citations identify the source and its
+// access route without repeating the date, so every available accessDate is
+// presented consistently in the facts list.
+function sourceAccessFact(source) {
+  if (!source.accessDate) return "";
+  return fact("Accessed", formatDate(source.accessDate));
+}
+
+function sourceActions(source) {
+  const links = [];
+  const seen = new Set();
+  const add = (url, label) => {
+    const safe = safeExternalUrl(url);
+    if (!safe || seen.has(safe)) return;
+    seen.add(safe);
+    links.push({ url: safe, label });
+  };
+  add(source.primaryUrl, "Open source");
+  add(source.accessUrl, "Open direct view");
+  for (const link of source.additionalLinks || []) {
+    add(link?.url, link?.label || "Open additional source");
+  }
+  if (!links.length) return "";
+  return `<div class="source-actions">${links.map((link, index) => `
+    <a class="button ${index ? "button--ghost" : ""} button--small" href="${escapeHtml(link.url)}" target="_blank" rel="noreferrer">
+      ${escapeHtml(link.label)} <span aria-hidden="true">↗</span>
+    </a>`).join("")}</div>`;
+}
+
+const SOURCE_RESEARCH_NOTE_LABELS = {
+  authority_note: "Authority note",
+  date_assessment: "Date assessment",
+  discographic_note: "Discographic note",
+  evidence_note: "Evidence recorded in this source",
+  identity_assessment: "Identity assessment",
+  object_context: "Object context",
+  verification_note: "Verification note",
+};
+
+function sourceResearchNote(source) {
+  if (!source.researchNote) return "";
+  const label = SOURCE_RESEARCH_NOTE_LABELS[source.researchNoteType] || "Research note";
+  return `<details class="source-research-note">
+    <summary>${escapeHtml(label)}</summary>
+    <div class="source-research-note__body"><p>${escapeHtml(source.researchNote)}</p></div>
+  </details>`;
+}
+
+// A source card used to answer "who is this source about?" with the person
+// links held on the source itself, and stopped there. The credit statements the
+// source actually underwrites live on the contributions, and on 264 of the 772
+// sources those name people the card never mentioned — 678 attributions that
+// the archive had documented and the reader could not see. People and credits
+// are therefore one list, on the same principle as the person card: the person
+// is named once, and the credits this source supports sit beneath the name.
+function sourceCreditLedger(source, indexes) {
+  const entries = new Map();
+  const entryFor = (person) => {
+    if (!entries.has(person.id)) {
+      entries.set(person.id, { person, roles: new Set(), works: new Map() });
+    }
+    return entries.get(person.id);
+  };
+  for (const person of related(source.personIds, indexes.people)) entryFor(person);
+  for (const contribution of related(source.contributionIds, indexes.contributions)) {
+    for (const person of related(contribution.personIds, indexes.people)) {
+      const entry = entryFor(person);
+      if (contribution.role) entry.roles.add(contribution.role);
+      for (const work of related(contribution.workIds, indexes.works)) {
+        if (!entry.works.has(work.id)) {
+          entry.works.set(work.id, { work, qualifications: new Map() });
+        }
+        if (contribution.certainty && contribution.certainty !== "confirmed") {
+          const role = contribution.role || person.primaryRole || "credit";
+          const key = `${role}:${contribution.certainty}`;
+          entry.works.get(work.id).qualifications.set(key, {
+            role,
+            certainty: contribution.certainty,
+          });
+        }
+      }
+    }
+  }
+  const items = [...entries.values()]
+    .map((entry) => ({
+      ...entry,
+      works: [...entry.works.values()].sort((a, b) => (
+        Number(a.work.year || 9999) - Number(b.work.year || 9999)
+        || String(a.work.title).localeCompare(String(b.work.title))
+      )),
+    }))
+    .sort((a, b) => String(a.person.displayName).localeCompare(String(b.person.displayName)));
+  const list = progressiveList(items, {
+    className: "credit-evidence-list",
+    label: "people",
+    renderItem: (item) => {
+      // Where the source documents a credit, the role comes from that credit.
+      // Where it only mentions the person, the person's own primary role is
+      // shown instead, so the two kinds of link stay distinguishable.
+      const roles = item.roles.size
+        ? [...item.roles].map(humanize).join(", ")
+        : humanize(item.person.primaryRole || "");
+      return `<li class="credit-evidence">
+      <div class="credit-evidence__subject">
+        <span><a href="${recordUrl("person", item.person.id)}">${escapeHtml(item.person.displayName)}</a>${roles ? `<small>${escapeHtml(roles)}</small>` : ""}</span>
+      </div>
+      ${item.works.length ? `<ul class="credit-evidence__works" aria-label="Credits this source documents">
+        ${item.works.map(({ work, qualifications }) => `<li><span><a href="${recordUrl("work", work.id)}">${escapeHtml(work.title)}</a>${[...qualifications.values()].map((qualification) => `<small class="credit-evidence__qualification"><span>${escapeHtml(humanize(qualification.role))}</span>${certaintyBadge(qualification.certainty)}</small>`).join("")}</span>${work.year ? `<span class="credit-evidence__work-year">${escapeHtml(String(work.year))}</span>` : ""}</li>`).join("")}
+      </ul>` : ""}
+    </li>`;
+    },
+    searchText: (item) => [
+      item.person.displayName,
+      item.person.primaryRole,
+      ...item.roles,
+      ...item.works.map(({ work, qualifications }) => [
+        work.title,
+        work.year || "",
+        ...[...qualifications.values()].flatMap((qualification) => [
+          qualification.role,
+          qualification.certainty,
+        ]),
+      ].join(" ")),
+    ].filter(Boolean).join(" "),
+    showTotal: true,
+  });
+  return { items, list };
+}
+
+function renderSource(source, data, indexes) {
+  const works = related(source.workIds, indexes.works);
+  const media = related(source.mediaIds, indexes.media);
+  const events = related(source.timelineEventIds, indexes.timelineEvents);
+  const places = related(source.placeIds, indexes.places);
+  const organizations = related(source.organizationIds, indexes.organizations);
+  const credits = sourceCreditLedger(source, indexes);
+  return {
+    title: source.title || source.shortCitation,
+    label: "Source",
+    badges: `${typeBadge(source.sourceType)}${sourceReliabilityBadge(source.reliability)}`,
+    heroClass: "record-hero--source",
+    factsClass: "record-facts--source",
+    compactFactsLabel: "Source details",
+    heroSupplement: `<div class="source-hero__citation">
+      <h2>Citation</h2>
+      <p>${escapeHtml(source.fullCitation || source.shortCitation)}</p>
+      ${sourceActions(source)}
+    </div>`,
+    facts: `${fact("Creator", source.creator)}${fact("Date", sourceDateDisplay(source))}${fact("Date represents", sourceDateRoleLabel(source.dateRole))}${fact("Publication", source.publication)}${fact("Repository", source.repository)}${sourceIdentifierFacts(source)}${sourceAccessFact(source)}${fact("Reliability", sourceReliabilityLabel(source.reliability))}${fact("Verification", sourceStatusLabel(source.sourceStatus))}`,
+    main: [
+      sourceResearchNote(source),
+      section("Supported works", entityList(works, "work", (item) => [item.year, item.workType].filter(Boolean).join(" · ")), "", works.length),
+      section("Media", entityList(media, "media", (item) => humanize(item.mediaType)), "", media.length),
+      section("Timeline", entityList(events, "event", (item) => item.displayDate || item.dateStart), "", events.length),
+      section("Places", entityList(places, "place", (item) => [item.city, item.country].filter(Boolean).join(", ")), "", places.length),
+      section("People and credits", credits.list, "", credits.items.length),
+      section("Organizations", entityList(organizations, "organization", (item) => (item.types || []).map(humanize).join(", ")), "", organizations.length),
+    ].join(""),
+    aside: contentsRail([
+      { title: "Supported works", count: works.length },
+      { title: "Media", count: media.length },
+      { title: "Timeline", count: events.length },
+      { title: "Places", count: places.length },
+      { title: "People and credits", count: credits.items.length },
+      { title: "Organizations", count: organizations.length },
+    ], recordUrl("source", source.id)),
+  };
+}
+
+const renderers = {
+  work: renderWork,
+  event: renderEvent,
+  place: renderPlace,
+  media: renderMedia,
+  person: renderPerson,
+  organization: renderOrganization,
+  source: renderSource,
+};
+
+export function renderRecordView(requestedType, requestedId, data) {
+  if (!TYPE_CONFIG[requestedType] || !requestedId) {
+    throw new Error("The record URL is incomplete or uses an unsupported record type.");
+  }
+  progressiveListSequence = 0;
+  const indexes = Object.fromEntries(RECORD_TABLES.map((name) => [name, indexById(data[name])]));
+  const config = TYPE_CONFIG[requestedType];
+  const record = indexes[config.table].get(requestedId);
+  if (!record) throw new Error(`No public ${config.label.toLowerCase()} record was found for ${requestedId}.`);
+  return {
+    config,
+    view: renderers[requestedType](record, data, indexes),
+  };
+}
+
+function recordContextMarkup(view, requestedId, requestedType) {
+  const index = RECORD_INDEXES[requestedType];
+  const sectionLabel = index?.label || TYPE_CONFIG[requestedType]?.label || "Record";
+  const sectionCrumb = index
+    ? `<a href="${escapeHtml(index.file)}" data-record-index-link>${escapeHtml(sectionLabel)}</a>`
+    : `<span>${escapeHtml(sectionLabel)}</span>`;
+  const backLink = index
+    ? `<a class="record-back-link" href="${escapeHtml(index.file)}" data-record-back-link>
+        <span aria-hidden="true">←</span> <span data-record-back-label>${escapeHtml(index.backLabel)}</span>
+      </a>`
+    : "";
+  return `<div class="shell record-context">
+    <nav class="record-breadcrumbs" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="index.html">Home</a></li>
+        <li>${sectionCrumb}</li>
+        <li><span aria-current="page">${escapeHtml(view.title || requestedId)}</span></li>
+      </ol>
+    </nav>
+    ${backLink}
+  </div>`;
+}
+
+function initializeRecordNavigation(recordType) {
+  const destination = recordIndexReturn(recordType);
+  if (!destination || !target) return;
+  for (const link of target.querySelectorAll("[data-record-index-link], [data-record-back-link]")) {
+    link.setAttribute("href", destination.href);
+  }
+  const label = target.querySelector("[data-record-back-label]");
+  if (label) label.textContent = destination.resolvedBackLabel;
+}
+
+export function renderRecordMarkup(view, requestedId, requestedType) {
+  const titleLength = Array.from(view.title || "").length;
+  const titleClass = titleLength > 72 ? " record-hero--extra-long-title" : titleLength > 46 ? " record-hero--long-title" : "";
+  const heroClass = view.heroClass ? ` ${view.heroClass}` : "";
+  const factsClass = view.factsClass ? ` ${view.factsClass}` : "";
+  const desktopFacts = `<dl class="record-facts${factsClass}${view.compactFactsLabel ? " record-facts--wide" : ""}">${view.facts}</dl>`;
+  const compactFacts = view.compactFactsLabel
+    ? `<details class="record-facts-disclosure">
+        <summary>${escapeHtml(view.compactFactsLabel)}</summary>
+        <dl class="record-facts${factsClass}">${view.facts}</dl>
+      </details>`
+    : "";
+  return `
+    <section class="record-hero${titleClass}${heroClass}">
+      ${recordContextMarkup(view, requestedId, requestedType)}
+      <div class="shell record-hero__grid">
+        <div>
+          <p class="eyebrow">${escapeHtml(view.label)} · <span class="record-id">${escapeHtml(requestedId)}</span></p>
+          <h1>${escapeHtml(view.title)}</h1>
+          <div class="meta-row">${view.badges}</div>
+          ${view.heroSupplement || ""}
+          ${compactFacts}
+        </div>
+        ${desktopFacts}
+      </div>
+    </section>
+    <section class="section">
+      <div class="shell record-layout${view.fullWidth ? " record-layout--single" : ""}">
+        <div>${view.main || `<div class="empty-state"><p>No additional public detail is available.</p></div>`}</div>
+        <aside>${view.aside || ""}</aside>
+      </div>
+    </section>`.replace(/[ \t]+$/gm, "");
+}
+
+async function bootstrapRecordPage() {
+  mountSiteChrome("");
+  target = document.querySelector("#record-root");
+  if (target?.dataset.prerendered === "true") {
+    // Canonical record routes already contain the complete scholarly record.
+    // JavaScript only enhances their existing controls; a failed data request
+    // must never replace or hide content that is already present in the HTML.
+    initializeRecordNavigation(target.dataset.recordType);
+    initializeProgressiveLists();
+    initializeSourceLedgers();
+    initializeContentsRail();
+    return;
+  }
+  const params = new URLSearchParams(location.search);
+  const requestedType = target?.dataset.recordType || params.get("type");
+  const requestedId = target?.dataset.recordId || params.get("id");
+  try {
+    if (!target) throw new Error("The record page is missing its content container.");
+    if (!TYPE_CONFIG[requestedType] || !requestedId) {
+      throw new Error("The record URL is incomplete or uses an unsupported record type.");
+    }
+    const data = await loadRecordPayload(requestedType, requestedId);
+    const { config, view } = renderRecordView(requestedType, requestedId, data);
+    updateMeta({
+      title: view.title,
+      description: `${config.label} ${requestedId} in the source-based Bronisław Kaper archive, documented through 1939.`,
+    });
+    setCanonicalRecordUrl(requestedType, requestedId);
+    target.className = "";
+    if (target.dataset.prerendered !== "true") {
+      target.innerHTML = renderRecordMarkup(view, requestedId, requestedType);
+    }
+    initializeRecordNavigation(requestedType);
+    initializeProgressiveLists();
+    initializeSourceLedgers();
+    initializeContentsRail();
+  } catch (error) {
+    if (target) {
+      target.className = "shell";
+      renderError(target, error);
+    }
+  }
+}
+
+if (typeof document !== "undefined") {
+  document.documentElement.classList.add("js");
+  bootstrapRecordPage();
+}

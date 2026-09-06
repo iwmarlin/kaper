@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://*.tile.openstreetmap.org; media-src 'self'; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Search Bronisław Kaper's films, songs and other documented works through 1939.">
+  <meta name="theme-color" content="#152c33">
+  <meta property="og:title" content="Works — Bronisław Kaper, 1902–1939">
+  <meta property="og:description" content="A source-based catalogue of films, songs and other works documented through 1939.">
+  <link rel="canonical" href="https://iwmarlin.github.io/kaper/works.html">
+  <link rel="preload" href="assets/fonts/kaper-sans.woff2?v=c77ada42a0" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/kaper-serif.woff2?v=c77ada42a0" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/site/styles.css?v=c77ada42a0">
+  <title>Works — Bronisław Kaper, 1902–1939</title>
+  <meta property="og:image" content="https://iwmarlin.github.io/kaper/assets/images/portraits/kaper-mature.jpg">
+  <meta property="og:image:alt" content="Bronisław Kaper">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="site-header" data-site-header></header>
+  <main id="main-content">
+    <section class="page-hero page-hero--compact">
+      <div class="shell page-hero__grid">
+        <div>
+          <p class="eyebrow">Relational catalogue</p>
+          <h1>Works, films and songs</h1>
+          <p class="lead">Search the public catalogue, inspect attribution certainty and follow links between titles, contributors, sources and media.</p>
+        </div>
+        <div class="scope-note">The catalogue reflects documented evidence through 1939. A work may be included as contextual evidence even when Kaper’s exact contribution remains qualified.</div>
+      </div>
+    </section>
+
+    <section class="filters filters--catalogue" aria-label="Catalogue filters">
+      <div class="shell filters__shell filters__shell--works">
+        <div class="field filters__search">
+          <label for="work-search">Search title or contributor</label>
+          <input id="work-search" type="search" placeholder="Try Alraune, Roubier, tango…" autocomplete="off">
+        </div>
+        <button class="filters__toggle" id="work-filter-toggle" type="button" aria-expanded="false" aria-controls="work-filter-options">
+          <span>Filters</span>
+          <span class="filters__toggle-count" id="work-filter-count" hidden>0</span>
+        </button>
+        <div class="filters__advanced filters__advanced--works" id="work-filter-options">
+          <div class="field">
+            <label for="work-type">Work type</label>
+            <select id="work-type"><option value="">All types</option></select>
+          </div>
+          <div class="field">
+            <label for="work-period">Period</label>
+            <select id="work-period"><option value="">All periods</option></select>
+          </div>
+          <div class="field">
+            <label for="work-certainty">Certainty</label>
+            <select id="work-certainty"><option value="">All levels</option></select>
+          </div>
+          <div class="field">
+            <label for="work-sort">Sort</label>
+            <select id="work-sort">
+              <option value="year-asc">Year, earliest first</option>
+              <option value="year-desc">Year, latest first</option>
+              <option value="title">Title</option>
+            </select>
+          </div>
+        </div>
+        <div class="active-filters" id="work-active-filters" aria-label="Active catalogue options" hidden></div>
+      </div>
+    </section>
+
+    <section class="section section--listing">
+      <div class="shell">
+        <div class="results-bar">
+          <p id="work-results-count" aria-live="polite">Showing 36 of 287 records</p>
+          <button class="button button--ghost button--small" id="reset-filters" type="button" hidden>Reset filters</button>
+        </div>
+        <div id="work-results" class="work-list" data-prerendered="true">
+          <!-- catalogue-prerender:start -->
+<article class="work-row">
+    <div class="work-row__year">1923</div>
+    <div class="work-row__identity">
+      <h2><a href="records/work/W-O002/">Koszutski Girls</a></h2>
+      <div class="meta-row" aria-label="Work classification"><span class="badge badge--type">Other</span></div>
+    </div>
+    <div class="work-row__period"><span class="badge badge--period" title="Warsaw · 1902–1926" aria-label="Warsaw · 1902–1926">Warsaw</span></div>
+  </article>
+<article class="work-row">
+    <div class="work-row__year">1923</div>
+    <div class="work-row__identity">
+      <h2><a href="records/work/W-O001/">Rozmowa</a></h2>
+      <div class="meta-row" aria-label="Work classification"><span class="badge badge--type">Other</span></div>
+    </div>
+    <div class="work-row__period"><span class="badge badge--period" title="Warsaw · 1902–1926" aria-label="Warsaw · 1902–1926">Warsaw</span></div>
+  </article>
+<article class="work-row">
+    <div class="work-row__year">1925</div>
+    <div class="work-row__identity">
+      <h2><a href="records/work/W-O003/">Etude for Piano</a></h2>
+      <div class="meta-row" aria-label="Work classification"><span class="badge badge--type">Other</span></div>
+    </div>
+    <div class="work-row__period"><span class="badge badge--period" title="Warsaw · 1902–1926" aria-label="Warsaw · 1902–1926">Warsaw</span></div>
+  </article>
+<article class="work-row">
+    <div class="work-row__year">1926</div>
+    <div class="work-row__identity">
+      <h2><a href="records/work/W-S004/">Hätt’ ich einen Kammerdiener?</a></h2>
+      <div class="meta-row" aria-label="Work classification"><span class="badge badge--type">Song</span></div>
+    </div>
+    <div class="work-row__period"><span class="badge badge--period" title="European · 1926–1934" aria-label="European · 1926–1934">European</span></div>
+  </article>
+<article class="work-row">
+    <div class="work-row__year">1926</div>
+    <div class="work-row__identity">
+      <h2><a href="records/work/W-S002/">Jak się da, to się zrobi</a></h2>
+      <div class="meta-row" aria-label="Work classification"><span class="badge badge--type">Song</span></div>
+    </div>
+    <div class="work-row__period"><span class="badge badge--period" title="Warsaw · 1902–1926" aria-label="Warsaw · 1902–1926">Warsaw</span></div>
+  </article>
+<article class="work-row">
+    <div class="work-row__year">1926</div>
+    <div class="work-row__identity">
+      <h2><a href="records/work/W-O004/">Piece for Orchestra</a></h2>
+      <div class="meta-row" aria-label="Work classification"><span class="badge badge--type">Other</span></div>
+    </div>
+    <div class="work-row__period"><span class="badge badge--period" title="Warsaw · 1902–1926" aria-label="Warsaw · 1902–1926">Warsaw</span></div>
+  </article>
+<article class="work-row">
+    <div class="work-row__year">1926</div>
+    <div class="work-row__identity">
+      <h2><a href="records/work/W-S003/">Zgaś lampę</a></h2>
+      <div class="meta-row" aria-label="Work classification"><span class="badge badge--type">Song</span></div>
+    </div>
+    <div class="work-row__period"><span class="badge badge--period" title="Warsaw · 1902–1926" aria-label="Warsaw · 1902–1926">Warsaw</span></div>
+  </article>
+<article class="work-row">
+    <div class="work-row__year">1926</div>
+    <div class="work-row__identity">
+      <h2><a href="records/work/W-S001/">A zresztą niech pan do mnie zadzwoni</a></h2>
+      <div class="meta-row" aria-label="Work classification"><span class="badge badge--type">Song</span></div>
+    </div>
+    <div class="work-row__period"><span class="badge badge--period" title="Warsaw · 1902–1926" aria-label="Warsaw · 1902–1926">Warsaw</span></div>
+  </article>
+<article class="work-row">
+    <div class="work-row__year">1927</div>
+    <div class="work-row__identity">
+      <h2><a href="records/work/W-S006/">Ja nie mam głosu</a></h2>
+      <div class="meta-row" aria-label="Work classification"><span class="badge badge--type">Song</span></div>
+    </div>
+    <div class="work-row__period"><span class="badge badge--period" title="European · 1926–1934" aria-label="European · 1926–1934">European</span></div>
+  </article>
+<article class="work-row">
+    <div class="work-row__year">1927</div>
+    <div class="work-row__identity">
+      <h2><a href="records/work/W-O005/">Sonatina for Piano</a></h2>
+      <div class="meta-row" aria-label="Work classification"><span class="badge badge--type">Other</span></div>
+    </div>
+    <div class="work-row__period"><span class="badge badge--period" title="European · 1926–1934" aria-label="European · 1926–1934">European</span></div>
+  </article>
+<article class="work-row">
+    <div class="work-row__year">1927</div>
+    <div class="work-row__identity">
+      <h2><a href="records/work/W-S005/">To muszą śpiewać wszyscy</a></h2>
+      <div class="meta-row" aria-label="Work classification"><span class="badge badge--type">Song</span></div>
+    </div>
+    <div class="work-row__period"><span class="badge badge--period" title="European · 1926–1934" aria-label="European · 1926–1934">European</span></div>
+  </article>
+<article class="work-row">
+    <div class="work-row__year">1929</div>
+    <div class="work-row__identity">
+      <h2><a href="records/work/W-S010/">Auf wiederseh’n, Herr Doktor, auf wiederseh’n, Frau Doktor</a></h2>
+      <div class="meta-row" aria-label="Work classification"><span class="badge badge--type">Song</span></div>
+    </div>
+    <div class="work-row__period"><span class="badge badge--period" title="European · 1926–1934" aria-label="European · 1926–1934">European</span></div>
+  </article>
+<article class="work-row">
+    <div class="work-row__year">1929</div>
+    <div class="work-row__identity">
+      <h2><a href="records/work/W-O007/">Cocktails</a></h2>
+      <div class="meta-row" aria-label="Work classification"><span class="badge badge--type">Other</span></div>
+    </div>
+    <div class="work-row__period"><span class="badge badge--period" title="European · 1926–1934" aria-label="European · 1926–1934">European</span></div>
+  </article>
+<article class="work-row">
+    <div class="work-row__year">1929</div>
+    <div class="work-row__identity">
+      <h2><a href="records/work/W-S012/">Denkst du noch an jeden Tag</a></h2>
+      <div class="meta-row" aria-label="Work classification"><span class="badge badge--type">Song</span></div>
+    </div>
+    <div class="work-row__period"><span class="badge badge--period" title="European · 1926–1934" aria-label="European · 1926–1934">European</span></div>
+  </article>
+<article class="work-row">
+    <div class="work-row__year">1929</div>
+    <div class="work-row__identity">
+      <h2><a href="records/work/W-O022/">Get Out and Get Under the Moon</a></h2>
+      <div class="meta-row" aria-label="Work classification"><span class="badge badge--type">Other</span></div>
+    </div>
+    <div class="work-row__period"><span class="badge badge--period" title="European · 1926–1934" aria-label="European · 1926–1934">European</span></div>
+  </article>
+<article class="work-row">
+    <div class="work-row__year">1929</div>
+    <div class="work-row__identity">
+      <h2><a href="records/work/W-S008/">Gib nur acht, über Nacht kommt die Liebe</a></h2>
+      <div class="meta-row" aria-label="Work classification"><span class="badge badge--type">Song</span></div>
+    </div>
+    <div class="work-row__period"><span class="badge badge--period" title="European · 1926–1934" aria-label="European · 1926–1934">European</span></div>
+  </article>
+<article class="work-row">
+    <div class="work-row__year">1929</div>
+    <div class="work-row__identity">
+      <h2><a href="records/work/W-O019/">Miss Annabelle Lee</a></h2>
+      <div class="meta-row" aria-label="Work classification"><span class="badge badge--type">Other</span></div>
+    </div>
+    <div class="work-row__period"><span class="badge badge--period" title="European · 1926–1934" aria-label="European · 1926–1934">European</span></div>
+  </article>
+<article class="work-row">
+    <div class="work-row__year">1929</div>
+    <div class="work-row__identity">
+      <h2><a href="records/work/W-S007/">Nimm diesen Strauß Vergißmeinnicht</a></h2>
+      <div class="meta-row" aria-label="Work classification"><span class="badge badge--type">Song</span></div>
+    </div>
+    <div class="work-row__period"><span class="badge badge--period" title="European · 1926–1934" aria-label="European · 1926–1934">European</span></div>
+  </article>
+<article class="work-row">
+    <div class="work-row__year">1929</div>
+    <div class="work-row__identity">
+      <h2><a href="records/work/W-O020/">One Step to Heaven</a></h2>
+      <div class="meta-row" aria-label="Work classification"><span class="badge badge--type">Other</span></div>
+    </div>
+    <div class="work-row__period"><span class="badge badge--period" title="European · 1926–1934" aria-label="European · 1926–1934">European</span></div>
+  </article>
+<article class="work-row">
+    <div class="work-row__year">1929</div>
+    <div class="work-row__identity">
+      <h2><a href="records/work/W-O006/">Piece for 8 Violins and Piano</a></h2>
+      <div class="meta-row" aria-label="Work classification"><span class="badge badge--type">Other</span></div>
+    </div>
+    <div class="work-row__period"><span class="badge badge--period" title="European · 1926–1934" aria-label="European · 1926–1934">European</span></div>
+  </article>
+<article class="work-row">
+    <div class="work-row__year">1929</div>
+    <div class="work-row__identity">
+      <h2><a href="records/work/W-O021/">Raquel</a></h2>
+      <div class="meta-row" aria-label="Work classification"><span class="badge badge--type">Other</span></div>
+    </div>
+    <div class="work-row__period"><span class="badge badge--period" title="European · 1926–1934" aria-label="European · 1926–1934">European</span></div>
+  </article>
+<article class="work-row">
+    <div class="work-row__year">1929</div>
+    <div class="work-row__identity">
+      <h2><a href="records/work/W-O017/">Sonny Boy</a></h2>
+      <div class="meta-row" aria-label="Work classification"><span class="badge badge--type">Other</span></div>
+    </div>
+    <div class="work-row__period"><span class="badge badge--period" title="European · 1926–1934" aria-label="European · 1926–1934">European</span></div>
+  </article>
+<article class="work-row">
+    <div class="work-row__year">1929</div>
+    <div class="work-row__identity">
+      <h2><a href="records/work/W-O018/">Sunshine</a></h2>
+      <div class="meta-row" aria-label="Work classification"><span class="badge badge--type">Other</span></div>
+    </div>
+    <div class="work-row__period"><span class="badge badge--period" title="European · 1926–1934" aria-label="European · 1926–1934">European</span></div>
+  </article>
+<article class="work-row">
+    <div class="work-row__year">1929</div>
+    <div class="work-row__identity">
+      <h2><a href="records/work/W-S011/">Süße Mamsell, denkst du noch an das kleine Hotel</a></h2>
+      <div class="meta-row" aria-label="Work classification"><span class="badge badge--type">Song</span></div>
+    </div>
+    <div class="work-row__period"><span class="badge badge--period" title="European · 1926–1934" aria-label="European · 1926–1934">European</span></div>
+  </article>
+<article class="work-row">
+    <div class="work-row__year">1929</div>
+    <div class="work-row__identity">
+      <h2><a href="records/work/W-S217/">Tot Weerziens, Mijnheer Jansen</a></h2>
+      <div class="meta-row" aria-label="Work classification"><span class="badge badge--type">Song</span></div>
+    </div>
+    <div class="work-row__period"><span class="badge badge--period" title="European · 1926–1934" aria-label="European · 1926–1934">European</span></div>
+  </article>
+<article class="work-row">
+    <div class="work-row__year">1929</div>
+    <div class="work-row__identity">
+      <h2><a href="records/work/W-S009/">Tränen weint jede Frau so gern</a></h2>
+      <div class="meta-row" aria-label="Work classification"><span class="badge badge--type">Song</span></div>
+    </div>
+    <div class="work-row__period"><span class="badge badge--period" title="European · 1926–1934" aria-label="European · 1926–1934">European</span></div>
+  </article>
+<article class="work-row">
+    <div class="work-row__year">1929</div>
+    <div class="work-row__identity">
+      <h2><a href="records/work/W-O011/">Vierflügeltango (Tango for Four Grand Pianos)</a></h2>
+      <div class="meta-row" aria-label="Work classification"><span class="badge badge--type">Other</span></div>
+    </div>
+    <div class="work-row__period"><span class="badge badge--period" title="European · 1926–1934" aria-label="European · 1926–1934">European</span></div>
+  </article>
+<article class="work-row">
+    <div class="work-row__year">1929</div>
+    <div class="work-row__identity">
+      <h2><a href="records/work/W-S013/">Wenn wir nicht beide in Gesellschaft wären, würde ich dir Liebe schwören</a></h2>
+      <div class="meta-row" aria-label="Work classification"><span class="badge badge--type">Song</span></div>
+    </div>
+    <div class="work-row__period"><span class="badge badge--period" title="European · 1926–1934" aria-label="European · 1926–1934">European</span></div>
+  </article>
+<article class="work-row">
+    <div class="work-row__year">1930</div>
+    <div class="work-row__identity">
+      <h2><a href="records/work/W-S023/">Ach, Otto, Otto...!</a></h2>
+      <div class="meta-row" aria-label="Work classification"><span class="badge badge--type">Song</span></div>
+    </div>
+    <div class="work-row__period"><span class="badge badge--period" title="European · 1926–1934" aria-label="European · 1926–1934">European</span></div>
+  </article>
+<article class="work-row">
+    <div class="work-row__year">1930</div>
+    <div class="work-row__identity">
+      <h2><a href="records/work/W-F002/">Alraune</a></h2>
+      <div class="meta-row" aria-label="Work classification"><span class="badge badge--type">Film</span></div>
+    </div>
+    <div class="work-row__period"><span class="badge badge--period" title="European · 1926–1934" aria-label="European · 1926–1934">European</span></div>
+  </article>
+<article class="work-row">
+    <div class="work-row__year">1930</div>
+    <div class="work-row__identity">
+      <h2><a href="records/work/W-O015/">Austrian Cocktail</a></h2>
+      <div class="meta-row" aria-label="Work classification"><span class="badge badge--type">Other</span></div>
+    </div>
+    <div class="work-row__period"><span class="badge badge--period" title="European · 1926–1934" aria-label="European · 1926–1934">European</span></div>
+  </article>
+<article class="work-row">
+    <div class="work-row__year">1930</div>
+    <div class="work-row__identity">
+      <h2><a href="records/work/W-S017/">Blaue Jung’s von der Marine</a></h2>
+      <div class="meta-row" aria-label="Work classification"><span class="badge badge--type">Song</span></div>
+    </div>
+    <div class="work-row__period"><span class="badge badge--period" title="European · 1926–1934" aria-label="European · 1926–1934">European</span></div>
+  </article>
+<article class="work-row">
+    <div class="work-row__year">1930</div>
+    <div class="work-row__identity">
+      <h2><a href="records/work/W-S209/">Chanson d’amour de Juanita</a></h2>
+      <div class="meta-row" aria-label="Work classification"><span class="badge badge--type">Song</span></div>
+    </div>
+    <div class="work-row__period"><span class="badge badge--period" title="European · 1926–1934" aria-label="European · 1926–1934">European</span></div>
+  </article>
+<article class="work-row">
+    <div class="work-row__year">1930</div>
+    <div class="work-row__identity">
+      <h2><a href="records/work/W-S208/">Chanson de Nelly</a></h2>
+      <div class="meta-row" aria-label="Work classification"><span class="badge badge--type">Song</span></div>
+    </div>
+    <div class="work-row__period"><span class="badge badge--period" title="European · 1926–1934" aria-label="European · 1926–1934">European</span></div>
+  </article>
+<article class="work-row">
+    <div class="work-row__year">1930</div>
+    <div class="work-row__identity">
+      <h2><a href="records/work/W-S178/">Les cols bleus de la marine</a></h2>
+      <div class="meta-row" aria-label="Work classification"><span class="badge badge--type">Song</span></div>
+    </div>
+    <div class="work-row__period"><span class="badge badge--period" title="European · 1926–1934" aria-label="European · 1926–1934">European</span></div>
+  </article>
+<article class="work-row">
+    <div class="work-row__year">1930</div>
+    <div class="work-row__identity">
+      <h2><a href="records/work/W-O025/">Drei Musketiere</a></h2>
+      <div class="meta-row" aria-label="Work classification"><span class="badge badge--type">Other</span></div>
+    </div>
+    <div class="work-row__period"><span class="badge badge--period" title="European · 1926–1934" aria-label="European · 1926–1934">European</span></div>
+  </article>
+<!-- catalogue-prerender:end -->
+        </div>
+        <div class="load-more"><button class="button button--ghost" id="load-more" type="button" hidden>Load more</button><button class="button button--ghost button--small" id="show-all" type="button" hidden>Show all</button></div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer" data-site-footer></footer>
+  <script type="module" src="assets/site/works.js?v=c77ada42a0"></script>
+</body>
+</html>

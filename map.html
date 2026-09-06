@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://*.tile.openstreetmap.org; media-src 'self'; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explore places connected with Bronisław Kaper's life and work through 1939.">
+  <meta name="theme-color" content="#152c33">
+  <meta property="og:title" content="Map — Bronisław Kaper, 1902–1939">
+  <meta property="og:description" content="A source-linked map of cities, venues, addresses and studios in Kaper's documented early career.">
+  <link rel="canonical" href="https://iwmarlin.github.io/kaper/map.html">
+  <link rel="preload" href="assets/fonts/kaper-sans.woff2?v=c77ada42a0" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/kaper-serif.woff2?v=c77ada42a0" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/site/styles.css?v=c77ada42a0">
+  <link rel="stylesheet" href="assets/vendor/leaflet-1.9.4.css">
+  <link rel="stylesheet" href="assets/vendor/markercluster-1.5.3.css">
+  <title>Map — Bronisław Kaper, 1902–1939</title>
+  <meta property="og:image" content="https://iwmarlin.github.io/kaper/assets/images/portraits/kaper-mature.jpg">
+  <meta property="og:image:alt" content="Bronisław Kaper">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="site-header" data-site-header></header>
+  <main id="main-content">
+    <section class="page-hero map-hero">
+      <div class="shell map-hero__grid">
+        <div>
+          <p class="eyebrow">Research geography</p>
+          <h1>Places and routes</h1>
+          <p class="lead">Explore the cities, addresses, venues and studios that shaped Kaper’s documented career through 1939.</p>
+        </div>
+        <div class="map-hero__summary">
+          <strong id="map-total">44</strong>
+          <span>documented places across Europe and North America</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section map-section">
+      <div class="shell">
+        <div class="map-toolbar">
+          <div>
+            <p class="eyebrow">From Warsaw to Hollywood</p>
+            <h2>Interactive map</h2>
+          </div>
+          <div class="map-toolbar__controls">
+            <div class="field">
+              <label for="place-search">Search places</label>
+              <input id="place-search" type="search" placeholder="City, venue or address…" autocomplete="off">
+            </div>
+            <div class="field field--toggle">
+              <label for="toggle-journey">Migration stages</label>
+              <button id="toggle-journey" type="button" class="map-route-toggle" aria-pressed="true">Hide route</button>
+            </div>
+          </div>
+        </div>
+        <div class="map-explorer">
+          <div class="map-canvas">
+            <div id="research-map" role="region" aria-label="Interactive map of documented places"></div>
+            <div class="map-layer-status" id="map-layer-status" data-mode="historical" role="status" aria-live="polite">
+              <strong id="map-layer-status-label">Historical map · 1926</strong>
+              <span id="map-layer-status-detail">Edward Stanford Ltd.</span>
+            </div>
+            <details class="map-legend" id="map-legend" aria-label="Map marker legend" open>
+              <summary class="map-legend__summary">Legend</summary>
+              <div class="map-legend__body">
+                <div class="map-legend__group">
+                  <strong class="map-legend__title">Linked-event periods</strong>
+                  <span class="map-legend__key"><i class="map-legend__swatch map-legend__swatch--warsaw"></i>Warsaw · 1902–1926</span>
+                  <span class="map-legend__key"><i class="map-legend__swatch map-legend__swatch--european"></i>European · 1926–1934</span>
+                  <span class="map-legend__key"><i class="map-legend__swatch map-legend__swatch--hollywood"></i>Hollywood · 1935–1939</span>
+                  <span class="map-legend__key"><i class="map-legend__swatch map-legend__swatch--multiple"></i>Multiple</span>
+                </div>
+                <div class="map-legend__group map-legend__group--precision">
+                  <strong class="map-legend__title">Coordinate precision</strong>
+                  <span class="map-legend__key"><i class="map-precision-symbol map-precision-symbol--point"></i>Address / venue</span>
+                  <span class="map-legend__key"><i class="map-precision-symbol map-precision-symbol--approximate"></i>Approximate site</span>
+                  <span class="map-legend__key"><i class="map-precision-symbol map-precision-symbol--area"></i>City / district</span>
+                </div>
+                <small class="map-legend__hint">Colours indicate the periods of events linked to a place; they do not by themselves establish Kaper’s physical presence there. A numbered circle counts the places gathered at that zoom and carries no period of its own.</small>
+              </div>
+            </details>
+          </div>
+          <aside class="map-panel" aria-label="Documented places">
+            <div class="map-selection" id="place-selection" data-state="empty" aria-live="polite">
+              <button class="map-selection__close" id="place-selection-close" type="button" aria-label="Close place details" hidden>×</button>
+              <p class="eyebrow" id="place-selection-kicker">Explore the map</p>
+              <h3 id="place-selection-title">Select a place</h3>
+              <p id="place-selection-meta">Choose a marker or a place from the list to see its role in the archive.</p>
+              <dl class="map-selection__facts" id="place-selection-facts" hidden>
+                <div>
+                  <dt>Coordinate precision</dt>
+                  <dd id="place-selection-precision"></dd>
+                </div>
+                <div>
+                  <dt>Linked-event periods</dt>
+                  <dd id="place-selection-periods"></dd>
+                </div>
+              </dl>
+              <p id="place-selection-note" class="map-selection__note" hidden></p>
+              <a class="button button--small" id="place-selection-link" href="map.html" hidden>View place record</a>
+            </div>
+            <div class="map-results-heading">
+              <span>Documented places</span>
+              <span class="map-results-heading__actions">
+                <strong id="place-count" aria-live="polite">44</strong>
+                <button class="map-list-toggle" id="place-list-toggle" type="button" aria-controls="place-list" aria-expanded="false" hidden>Show all places</button>
+              </span>
+            </div>
+            <ul class="place-list" id="place-list"></ul>
+          </aside>
+        </div>
+        <section class="route-stages" id="route-stages-panel" aria-labelledby="route-stages-title">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Documented movement</p>
+              <h2 id="route-stages-title">Stages of the migration</h2>
+              <p>Each stage below is a dated event with its own sources, and the map draws them as separate segments rather than one line. The archive documents the moves, not the space between them: Kaper reached Los Angeles in October 1934 and re-entered the United States at Calexico thirteen months later, and no source records how he travelled in between.</p>
+            </div>
+          </div>
+          <ol class="route-stage-list" id="route-stages"></ol>
+        </section>
+        <p class="map-method-note">The overview uses Edward Stanford Ltd.'s 1926 world map. At closer zoom levels it fades into a present-day geographic reference so that addresses remain legible; this reference does not reconstruct the historical street network. Marker shapes disclose coordinate precision, from address or venue level to approximate historical sites and city or district reference points. Colours represent the dated periods of linked events—not independent evidence that Kaper was physically present in every period shown. Nearby places are grouped until the map is enlarged, and larger markers carry more linked events. The historical layer is visually aligned to the modern coordinate frame and is not georeferenced to survey accuracy: the 1926 sheet is stretched to a single bounding rectangle rather than warped to control points, so positions on it are indicative and markers are placed from modern coordinates, not read off the old map.</p>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer" data-site-footer></footer>
+  <script src="assets/vendor/leaflet-1.9.4.js"></script>
+  <script src="assets/vendor/markercluster-1.5.3.js"></script>
+  <script type="module" src="assets/site/map-explorer-20260714.js?v=c77ada42a0"></script>
+</body>
+</html>

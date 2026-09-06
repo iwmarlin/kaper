@@ -1,0 +1,1621 @@
+{
+  "schemaVersion": "1.0.0",
+  "scope": {
+    "startYear": 1902,
+    "endYear": 1939,
+    "label": "Bronisław Kaper early career, documented through 1939"
+  },
+  "count": 66,
+  "records": [
+    {
+      "id": "PNV0001",
+      "variantName": "Bruno Asper",
+      "variantType": "pseudonym",
+      "identityScope": "single_person",
+      "evidenceContext": "sheet_music_or_printed_credit",
+      "attestedWording": "Bruno Asper / Br. Asper",
+      "certainty": "confirmed",
+      "publicNote": "Printed composer pseudonym used for Bronisław Kaper in early Warsaw songs.",
+      "personIds": [
+        "P009"
+      ],
+      "workIds": [
+        "W-S001",
+        "W-S002",
+        "W-S003",
+        "W-S005",
+        "W-S006"
+      ],
+      "sourceIds": [
+        "SRC0053",
+        "SRC0054",
+        "SRC0055",
+        "SRC0066",
+        "SRC0067",
+        "SRC0477",
+        "SRC0490",
+        "SRC0736"
+      ]
+    },
+    {
+      "id": "PNV0002",
+      "variantName": "Willy",
+      "variantType": "pseudonym",
+      "identityScope": "single_person",
+      "evidenceContext": "sheet_music_or_printed_credit",
+      "attestedWording": "Willy",
+      "certainty": "confirmed",
+      "publicNote": "Printed lyricist pseudonym resolved to Andrzej Włast.",
+      "personIds": [
+        "P003"
+      ],
+      "workIds": [
+        "W-S001",
+        "W-S002",
+        "W-S003"
+      ],
+      "sourceIds": [
+        "SRC0054",
+        "SRC0066",
+        "SRC0067",
+        "SRC0477",
+        "SRC0623"
+      ]
+    },
+    {
+      "id": "PNV0003",
+      "variantName": "Fritz German",
+      "variantType": "pseudonym",
+      "identityScope": "single_person",
+      "evidenceContext": "sheet_music_or_printed_credit",
+      "attestedWording": "Fritz German",
+      "certainty": "confirmed",
+      "publicNote": "Printed composer pseudonym resolved to Hermann Scheibenhofer.",
+      "personIds": [
+        "P105"
+      ],
+      "workIds": [
+        "W-S038",
+        "W-S044",
+        "W-S182",
+        "W-S207"
+      ],
+      "sourceIds": [
+        "SRC0093",
+        "SRC0099",
+        "SRC0287",
+        "SRC0288",
+        "SRC0496"
+      ]
+    },
+    {
+      "id": "PNV0004",
+      "variantName": "Harry Morell",
+      "variantType": "pseudonym",
+      "identityScope": "single_person",
+      "evidenceContext": "sheet_music_or_printed_credit",
+      "attestedWording": "Harry Morell",
+      "certainty": "confirmed",
+      "publicNote": "The printed composer name “Harry Morell” is identified as Bronisław Kaper on “Wer weiß, ob du mich auch liebst”.",
+      "personIds": [
+        "P009"
+      ],
+      "workIds": [
+        "W-S182"
+      ],
+      "sourceIds": [
+        "SRC0287",
+        "SRC0288"
+      ]
+    },
+    {
+      "id": "PNV0005",
+      "variantName": "Bob Henders",
+      "variantType": "joint_pseudonym",
+      "identityScope": "joint_identity",
+      "evidenceContext": "sheet_music_or_printed_credit",
+      "attestedWording": "Bob Henders / Bob Handers",
+      "certainty": "confirmed",
+      "publicNote": "Joint printed composer identity resolved to Bronisław Kaper and Walter Jurmann. The two prints of 1932 spell it differently: “Bob Henders” on Du liebst mich nicht mehr, “Bob Handers” on Eine Sommernacht am Meer.",
+      "personIds": [
+        "P009",
+        "P077"
+      ],
+      "workIds": [
+        "W-S071",
+        "W-S072"
+      ],
+      "sourceIds": [
+        "SRC0209",
+        "SRC0210",
+        "SRC0790"
+      ]
+    },
+    {
+      "id": "PNV0007",
+      "variantName": "Ernst Martin",
+      "variantType": "joint_pseudonym",
+      "identityScope": "joint_identity",
+      "evidenceContext": "sheet_music_or_printed_credit",
+      "attestedWording": "Ernst Martin",
+      "certainty": "confirmed",
+      "publicNote": "Hofmeister registers “Immer, wenn ich glücklich bin, muß ich schrecklich weinen” and “In 24 Stunden kann soviel gescheh’n” under the composer name “Ernst Martin.” The Buxbaum/Sieghardt catalogue attributes both songs to Walter Jurmann and Bronisław Kaper, identifying “Ernst Martin” as their joint printed identity in this context.",
+      "personIds": [
+        "P009",
+        "P077"
+      ],
+      "workIds": [
+        "W-S081",
+        "W-S082"
+      ],
+      "sourceIds": [
+        "SRC0217",
+        "SRC0218",
+        "SRC0373"
+      ]
+    },
+    {
+      "id": "PNV0008",
+      "variantName": "P. Kuckuck",
+      "variantType": "initials",
+      "identityScope": "single_person",
+      "evidenceContext": "sheet_music_or_printed_credit",
+      "attestedWording": "P. Kuckuck",
+      "certainty": "confirmed",
+      "publicNote": "Printed lyricist credit “P. Kuckuck,” identified as Peter Kuckuck, a pseudonym used by Fritz Rotter.",
+      "personIds": [
+        "P020"
+      ],
+      "workIds": [
+        "W-S080"
+      ],
+      "sourceIds": [
+        "SRC0189"
+      ]
+    },
+    {
+      "id": "PNV0009",
+      "variantName": "Pierre Candel",
+      "variantType": "pseudonym",
+      "identityScope": "single_person",
+      "evidenceContext": "sheet_music_or_printed_credit",
+      "attestedWording": "Pierre Candel",
+      "certainty": "confirmed",
+      "publicNote": "Printed music credit on the four songs of Le chant du destin (1933) and on Le greluchon délicat (1934), where the name stands for Walter Jurmann alone. On Le bistrot du port and Rêves d’amour it stands for Kaper and Jurmann together.",
+      "personIds": [
+        "P077"
+      ],
+      "workIds": [
+        "W-F030",
+        "W-S088",
+        "W-S089",
+        "W-S090",
+        "W-S091"
+      ],
+      "sourceIds": [
+        "SRC0163",
+        "SRC0219",
+        "SRC0284",
+        "SRC0373",
+        "SRC0411"
+      ]
+    },
+    {
+      "id": "PNV0010",
+      "variantName": "Pierre Candel",
+      "variantType": "joint_pseudonym",
+      "identityScope": "joint_identity",
+      "evidenceContext": "sheet_music_or_printed_credit",
+      "attestedWording": "Pierre Candel",
+      "certainty": "confirmed",
+      "publicNote": "Printed music credit on Le bistrot du port (1933) and Rêves d’amour (1934), where the name stands for Kaper and Jurmann together; the SACEM repertoire records both behind it. On the four songs of Le chant du destin and on Le greluchon délicat the same name stands for Jurmann alone.",
+      "personIds": [
+        "P009",
+        "P077"
+      ],
+      "workIds": [
+        "W-S098",
+        "W-S117"
+      ],
+      "sourceIds": [
+        "SRC0283",
+        "SRC0285",
+        "SRC0373",
+        "SRC0475",
+        "SRC0476"
+      ]
+    },
+    {
+      "id": "PNV0011",
+      "variantName": "Henryk Chwast",
+      "variantType": "pseudonym",
+      "identityScope": "single_person",
+      "evidenceContext": "copyright_or_registration",
+      "attestedWording": "Henryk Chwast",
+      "certainty": "confirmed",
+      "publicNote": "A further name under which Bronisław Kaper appears in Warsaw: it stands in the ZAiKS membership list and is the form the publisher of the Syrena transfers gives for the composer of the songs printed as Bruno Asper.",
+      "personIds": [
+        "P009"
+      ],
+      "workIds": [
+        "W-S001",
+        "W-S002",
+        "W-S003",
+        "W-S005",
+        "W-S006"
+      ],
+      "sourceIds": [
+        "SRC0053",
+        "SRC0054",
+        "SRC0055",
+        "SRC0066",
+        "SRC0067",
+        "SRC0477",
+        "SRC0490",
+        "SRC0736",
+        "SRC0737",
+        "SRC0738"
+      ]
+    },
+    {
+      "id": "PNV0013",
+      "variantName": "B. Asper",
+      "variantType": "initials",
+      "identityScope": "single_person",
+      "evidenceContext": "archival_document",
+      "attestedWording": "Mus. B. Asper",
+      "certainty": "confirmed",
+      "publicNote": "Signature form used by Bronisław Kaper in the Koszutski Girls manuscript.",
+      "personIds": [
+        "P009"
+      ],
+      "workIds": [
+        "W-O002"
+      ],
+      "sourceIds": [
+        "SRC0009",
+        "SRC0490"
+      ]
+    },
+    {
+      "id": "PNV0015",
+      "variantName": "Jean Cis",
+      "variantType": "pseudonym",
+      "identityScope": "single_person",
+      "evidenceContext": "authority_record",
+      "attestedWording": "Jean Cis",
+      "certainty": "confirmed",
+      "publicNote": "Jean Cis is a pseudonym of Francis Salabert. The Paris print of “Ça va déjà bien mieux !” carries Jean Cis as the printed credit for the words, and the Bibliothèque nationale de France enters that print under Salabert as author of the words.",
+      "personIds": [
+        "P040"
+      ],
+      "workIds": [
+        "W-S055"
+      ],
+      "sourceIds": [
+        "SRC0373",
+        "SRC0786"
+      ]
+    },
+    {
+      "id": "PNV0016",
+      "variantName": "Julian Pomeranc",
+      "variantType": "credit_name",
+      "identityScope": "single_person",
+      "evidenceContext": "secondary_literature",
+      "attestedWording": "Julian Pomeranc",
+      "certainty": "confirmed",
+      "publicNote": "Berlin-period name form of Giuliano Pomeranz; used in Klindworth-Scharwenka Conservatory documentation and in the ERKLA / First Piano Quartet context.",
+      "personIds": [
+        "P090"
+      ],
+      "workIds": [
+        "W-O011"
+      ],
+      "sourceIds": [
+        "SRC0521",
+        "SRC0546"
+      ]
+    },
+    {
+      "id": "PNV0019",
+      "variantName": "B. Kaper",
+      "variantType": "initials",
+      "identityScope": "single_person",
+      "evidenceContext": "sheet_music_or_printed_credit",
+      "attestedWording": "B. Kaper",
+      "certainty": "confirmed",
+      "publicNote": "Initialed printed credit form of Bronisław Kaper.",
+      "personIds": [
+        "P009"
+      ],
+      "workIds": [
+        "W-O008",
+        "W-O009",
+        "W-S007",
+        "W-S008",
+        "W-S009",
+        "W-S010",
+        "W-S011",
+        "W-S014",
+        "W-S015",
+        "W-S016",
+        "W-S017",
+        "W-S018",
+        "W-S019",
+        "W-S020",
+        "W-S021",
+        "W-S023",
+        "W-S024",
+        "W-S025",
+        "W-S026",
+        "W-S027",
+        "W-S031",
+        "W-S033",
+        "W-S034",
+        "W-S038",
+        "W-S039",
+        "W-S040",
+        "W-S042",
+        "W-S043",
+        "W-S044",
+        "W-S045",
+        "W-S046",
+        "W-S047",
+        "W-S048",
+        "W-S049",
+        "W-S050",
+        "W-S052",
+        "W-S053",
+        "W-S054",
+        "W-S055",
+        "W-S056",
+        "W-S058",
+        "W-S059",
+        "W-S064",
+        "W-S066",
+        "W-S067",
+        "W-S070",
+        "W-S076",
+        "W-S080",
+        "W-S084",
+        "W-S085",
+        "W-S086",
+        "W-S092",
+        "W-S094",
+        "W-S096",
+        "W-S099",
+        "W-S104",
+        "W-S105",
+        "W-S106",
+        "W-S107",
+        "W-S178",
+        "W-S185",
+        "W-S193",
+        "W-S194",
+        "W-S205",
+        "W-S206",
+        "W-S211",
+        "W-S212",
+        "W-S213",
+        "W-S217",
+        "W-O023",
+        "W-O024",
+        "W-O025",
+        "W-O026",
+        "W-O027",
+        "W-O028",
+        "W-O029"
+      ],
+      "sourceIds": [
+        "SRC0003",
+        "SRC0004",
+        "SRC0005",
+        "SRC0070",
+        "SRC0074",
+        "SRC0075",
+        "SRC0077",
+        "SRC0078",
+        "SRC0093",
+        "SRC0094",
+        "SRC0095",
+        "SRC0096",
+        "SRC0097",
+        "SRC0098",
+        "SRC0099",
+        "SRC0100",
+        "SRC0102",
+        "SRC0103",
+        "SRC0104",
+        "SRC0105",
+        "SRC0106",
+        "SRC0107",
+        "SRC0108",
+        "SRC0154",
+        "SRC0155",
+        "SRC0177",
+        "SRC0178",
+        "SRC0179",
+        "SRC0180",
+        "SRC0181",
+        "SRC0182",
+        "SRC0183",
+        "SRC0184",
+        "SRC0185",
+        "SRC0186",
+        "SRC0187",
+        "SRC0188",
+        "SRC0189",
+        "SRC0190",
+        "SRC0191",
+        "SRC0195",
+        "SRC0196",
+        "SRC0197",
+        "SRC0198",
+        "SRC0199",
+        "SRC0201",
+        "SRC0204",
+        "SRC0205",
+        "SRC0206",
+        "SRC0223",
+        "SRC0226",
+        "SRC0266",
+        "SRC0267",
+        "SRC0286",
+        "SRC0289",
+        "SRC0292",
+        "SRC0300",
+        "SRC0308",
+        "SRC0309",
+        "SRC0310",
+        "SRC0357",
+        "SRC0358",
+        "SRC0359",
+        "SRC0360",
+        "SRC0373",
+        "SRC0462",
+        "SRC0463",
+        "SRC0464",
+        "SRC0465",
+        "SRC0466",
+        "SRC0467",
+        "SRC0468",
+        "SRC0469",
+        "SRC0470",
+        "SRC0471",
+        "SRC0472",
+        "SRC0473",
+        "SRC0474",
+        "SRC0493",
+        "SRC0495",
+        "SRC0500",
+        "SRC0504",
+        "SRC0525",
+        "SRC0526",
+        "SRC0768",
+        "SRC0769",
+        "SRC0770",
+        "SRC0771",
+        "SRC0772",
+        "SRC0775",
+        "SRC0776"
+      ]
+    },
+    {
+      "id": "PNV0020",
+      "variantName": "Bronislaw Kaper",
+      "variantType": "transliteration",
+      "identityScope": "single_person",
+      "evidenceContext": "sheet_music_or_printed_credit",
+      "attestedWording": "Bronislaw Kaper",
+      "certainty": "confirmed",
+      "publicNote": "Diacritic-free printed and catalogue form of Bronisław Kaper.",
+      "personIds": [
+        "P009"
+      ],
+      "workIds": [
+        "W-O006",
+        "W-S069",
+        "W-S078",
+        "W-S087",
+        "W-S100",
+        "W-S101",
+        "W-S103",
+        "W-S116",
+        "W-S118",
+        "W-S119",
+        "W-S120",
+        "W-S121",
+        "W-S122",
+        "W-S123",
+        "W-S124",
+        "W-S125",
+        "W-S127",
+        "W-S128",
+        "W-S129",
+        "W-S130",
+        "W-S132",
+        "W-S133",
+        "W-S135",
+        "W-S136",
+        "W-S137",
+        "W-S138",
+        "W-S139",
+        "W-S140",
+        "W-S141",
+        "W-S142",
+        "W-S143",
+        "W-S144",
+        "W-S145",
+        "W-S146",
+        "W-S147",
+        "W-S148",
+        "W-S149",
+        "W-S150",
+        "W-S151",
+        "W-S152",
+        "W-S153",
+        "W-S154",
+        "W-S155",
+        "W-S156",
+        "W-S157",
+        "W-S158",
+        "W-S159",
+        "W-S161",
+        "W-S162",
+        "W-S163",
+        "W-S164",
+        "W-S165",
+        "W-S166",
+        "W-S167",
+        "W-S168",
+        "W-S169",
+        "W-S170",
+        "W-S171",
+        "W-S172",
+        "W-S173",
+        "W-S174",
+        "W-S175",
+        "W-S176",
+        "W-S184",
+        "W-S186",
+        "W-S192",
+        "W-S200"
+      ],
+      "sourceIds": [
+        "SRC0006",
+        "SRC0007",
+        "SRC0008",
+        "SRC0009",
+        "SRC0089",
+        "SRC0115",
+        "SRC0149",
+        "SRC0150",
+        "SRC0228",
+        "SRC0229",
+        "SRC0230",
+        "SRC0231",
+        "SRC0232",
+        "SRC0233",
+        "SRC0234",
+        "SRC0236",
+        "SRC0237",
+        "SRC0238",
+        "SRC0239",
+        "SRC0240",
+        "SRC0241",
+        "SRC0242",
+        "SRC0243",
+        "SRC0244",
+        "SRC0245",
+        "SRC0246",
+        "SRC0247",
+        "SRC0248",
+        "SRC0249",
+        "SRC0250",
+        "SRC0251",
+        "SRC0252",
+        "SRC0253",
+        "SRC0254",
+        "SRC0255",
+        "SRC0256",
+        "SRC0257",
+        "SRC0258",
+        "SRC0259",
+        "SRC0260",
+        "SRC0261",
+        "SRC0262",
+        "SRC0263",
+        "SRC0264",
+        "SRC0265",
+        "SRC0268",
+        "SRC0269",
+        "SRC0270",
+        "SRC0271",
+        "SRC0272",
+        "SRC0273",
+        "SRC0274",
+        "SRC0275",
+        "SRC0276",
+        "SRC0277",
+        "SRC0279",
+        "SRC0280",
+        "SRC0281",
+        "SRC0282",
+        "SRC0293",
+        "SRC0294",
+        "SRC0295",
+        "SRC0297",
+        "SRC0299",
+        "SRC0302",
+        "SRC0303",
+        "SRC0304",
+        "SRC0306",
+        "SRC0307",
+        "SRC0311",
+        "SRC0373",
+        "SRC0376",
+        "SRC0377",
+        "SRC0378",
+        "SRC0407",
+        "SRC0486",
+        "SRC0487",
+        "SRC0489"
+      ]
+    },
+    {
+      "id": "PNV0021",
+      "variantName": "Dr. B. Kaper",
+      "variantType": "initials",
+      "identityScope": "single_person",
+      "evidenceContext": "sheet_music_or_printed_credit",
+      "attestedWording": "Dr. B. Kaper",
+      "certainty": "confirmed",
+      "publicNote": "Initialed printed credit form of Bronisław Kaper, including the professional title “Dr.”.",
+      "personIds": [
+        "P009"
+      ],
+      "workIds": [
+        "W-O007",
+        "W-O013",
+        "W-O014",
+        "W-O017",
+        "W-O018",
+        "W-O019",
+        "W-O020",
+        "W-O021",
+        "W-O022"
+      ],
+      "sourceIds": [
+        "SRC0227",
+        "SRC0506",
+        "SRC0507",
+        "SRC0510",
+        "SRC0511",
+        "SRC0512",
+        "SRC0513",
+        "SRC0514",
+        "SRC0515"
+      ]
+    },
+    {
+      "id": "PNV0022",
+      "variantName": "W. Jurmann",
+      "variantType": "initials",
+      "identityScope": "single_person",
+      "evidenceContext": "sheet_music_or_printed_credit",
+      "attestedWording": "W. Jurmann",
+      "certainty": "confirmed",
+      "publicNote": "Initialed printed credit form of Walter Jurmann.",
+      "personIds": [
+        "P077"
+      ],
+      "workIds": [
+        "W-S104",
+        "W-S105",
+        "W-S106",
+        "W-S107"
+      ],
+      "sourceIds": [
+        "SRC0074",
+        "SRC0075",
+        "SRC0077",
+        "SRC0078",
+        "SRC0525",
+        "SRC0526"
+      ]
+    },
+    {
+      "id": "PNV0023",
+      "variantName": "Kaper, Bronislaw 1902-1983",
+      "variantType": "credit_name",
+      "identityScope": "single_person",
+      "evidenceContext": "authority_record",
+      "attestedWording": "Kaper, Bronislaw 1902-1983",
+      "certainty": "confirmed",
+      "publicNote": "Catalogue heading for Bronisław Kaper used in library metadata.",
+      "personIds": [
+        "P009"
+      ],
+      "workIds": [
+        "W-O012",
+        "W-O015",
+        "W-O016"
+      ],
+      "sourceIds": [
+        "SRC0505",
+        "SRC0508",
+        "SRC0509"
+      ]
+    },
+    {
+      "id": "PNV0024",
+      "variantName": "Bronislau Kaper",
+      "variantType": "spelling_variant",
+      "identityScope": "single_person",
+      "evidenceContext": "other",
+      "attestedWording": "Bronislau Kaper",
+      "certainty": "confirmed",
+      "publicNote": "Attested spelling variant of Bronisław Kaper.",
+      "personIds": [
+        "P009"
+      ],
+      "workIds": [
+        "W-F024",
+        "W-S131",
+        "W-S160"
+      ],
+      "sourceIds": [
+        "SRC0134",
+        "SRC0305",
+        "SRC0373",
+        "SRC0488",
+        "SRC0533"
+      ]
+    },
+    {
+      "id": "PNV0025",
+      "variantName": "Kaper, Dr. Bronoslaw",
+      "variantType": "spelling_variant",
+      "identityScope": "single_person",
+      "evidenceContext": "secondary_literature",
+      "attestedWording": "Kaper, Dr. Bronoslaw",
+      "certainty": "confirmed",
+      "publicNote": "Spelling variant used for Bronisław Kaper in the cited scholarly source. Spacing has been normalized for legibility.",
+      "personIds": [
+        "P009"
+      ],
+      "workIds": [
+        "W-S191"
+      ],
+      "sourceIds": [
+        "SRC0375"
+      ]
+    },
+    {
+      "id": "PNV0026",
+      "variantName": "Kaper",
+      "variantType": "credit_name",
+      "identityScope": "single_person",
+      "evidenceContext": "other",
+      "attestedWording": "Kaper",
+      "certainty": "confirmed",
+      "publicNote": "Surname-only printed credit resolved to Bronisław Kaper.",
+      "personIds": [
+        "P009"
+      ],
+      "workIds": [
+        "W-S097",
+        "W-S187"
+      ],
+      "sourceIds": [
+        "SRC0300",
+        "SRC0312"
+      ]
+    },
+    {
+      "id": "PNV0027",
+      "variantName": "K. M. May",
+      "variantType": "initials",
+      "identityScope": "single_person",
+      "evidenceContext": "sheet_music_or_printed_credit",
+      "attestedWording": "K. M. May",
+      "certainty": "confirmed",
+      "publicNote": "Initialed printed credit form of Karl Michael May.",
+      "personIds": [
+        "P113"
+      ],
+      "workIds": [
+        "W-S039",
+        "W-S211"
+      ],
+      "sourceIds": [
+        "SRC0094",
+        "SRC0493",
+        "SRC0500"
+      ]
+    },
+    {
+      "id": "PNV0028",
+      "variantName": "Rotter,Fritz",
+      "variantType": "credit_name",
+      "identityScope": "single_person",
+      "evidenceContext": "secondary_literature",
+      "attestedWording": "Rotter,Fritz",
+      "certainty": "confirmed",
+      "publicNote": "Inverted printed credit form of Fritz Rotter, with source punctuation retained.",
+      "personIds": [
+        "P020"
+      ],
+      "workIds": [
+        "W-S191"
+      ],
+      "sourceIds": [
+        "SRC0375"
+      ]
+    },
+    {
+      "id": "PNV0029",
+      "variantName": "Didier Bloch",
+      "variantType": "credit_name",
+      "identityScope": "single_person",
+      "evidenceContext": "secondary_literature",
+      "attestedWording": "Didier Bloch",
+      "certainty": "confirmed",
+      "publicNote": "BnF identifies Didier Mauprey as a pseudonym of Didier Bloch. “Sous le ciel de Venice” carries Didier Bloch as the printed lyricist credit.",
+      "personIds": [
+        "P108"
+      ],
+      "workIds": [
+        "W-S198"
+      ],
+      "sourceIds": [
+        "SRC0373",
+        "SRC0549"
+      ]
+    },
+    {
+      "id": "PNV0030",
+      "variantName": "Dr B. Kaper",
+      "variantType": "initials",
+      "identityScope": "single_person",
+      "evidenceContext": "archival_document",
+      "attestedWording": "Dr B. Kaper",
+      "certainty": "confirmed",
+      "publicNote": "Initialed credit form of Bronisław Kaper, including the professional title “Dr” without a full stop.",
+      "personIds": [
+        "P009"
+      ],
+      "workIds": [
+        "W-S004"
+      ],
+      "sourceIds": [
+        "SRC0009"
+      ]
+    },
+    {
+      "id": "PNV0031",
+      "variantName": "Ferry",
+      "variantType": "credit_name",
+      "identityScope": "single_person",
+      "evidenceContext": "sheet_music_or_printed_credit",
+      "attestedWording": "Ferry",
+      "certainty": "confirmed",
+      "publicNote": "Single-name printed credit resolved to Ferry van Delden.",
+      "personIds": [
+        "P096"
+      ],
+      "workIds": [
+        "W-S217"
+      ],
+      "sourceIds": [
+        "SRC0358"
+      ]
+    },
+    {
+      "id": "PNV0032",
+      "variantName": "Bronislav Kaper",
+      "variantType": "spelling_variant",
+      "identityScope": "single_person",
+      "evidenceContext": "sheet_music_or_printed_credit",
+      "attestedWording": "Bronislav Kaper",
+      "certainty": "confirmed",
+      "publicNote": "Attested spelling variant of Bronisław Kaper.",
+      "personIds": [
+        "P009"
+      ],
+      "workIds": [
+        "W-S181"
+      ],
+      "sourceIds": [
+        "SRC0278"
+      ]
+    },
+    {
+      "id": "PNV0033",
+      "variantName": "Karl Meinhardt",
+      "variantType": "spelling_variant",
+      "identityScope": "single_person",
+      "evidenceContext": "other",
+      "attestedWording": "Karl Meinhardt",
+      "certainty": "confirmed",
+      "publicNote": "The printed credit on “Hochzeitsreise zu Dritt”, together with the VIAF cluster and GND record, gives Carl Meinhard. “Karl Meinhardt” is a Germanised variant.",
+      "personIds": [
+        "P047"
+      ],
+      "workIds": [
+        "W-F014"
+      ],
+      "sourceIds": [
+        "SRC0109",
+        "SRC0126",
+        "SRC0373"
+      ]
+    },
+    {
+      "id": "PNV0034",
+      "variantName": "Marischka Ernst",
+      "variantType": "credit_name",
+      "identityScope": "single_person",
+      "evidenceContext": "sheet_music_or_printed_credit",
+      "attestedWording": "Marischka Ernst",
+      "certainty": "confirmed",
+      "publicNote": "Inverted printed credit form of Ernst Marischka.",
+      "personIds": [
+        "P017"
+      ],
+      "workIds": [
+        "W-S057"
+      ],
+      "sourceIds": [
+        "SRC0208"
+      ]
+    },
+    {
+      "id": "PNV0035",
+      "variantName": "Bronisława Kapera",
+      "variantType": "other",
+      "identityScope": "single_person",
+      "evidenceContext": "newspaper_or_periodical",
+      "attestedWording": "Bronisława Kapera",
+      "certainty": "confirmed",
+      "publicNote": "Polish inflected form of Bronisław Kaper’s name retained from the source wording.",
+      "personIds": [
+        "P009"
+      ],
+      "workIds": [
+        "W-S022"
+      ],
+      "sourceIds": [
+        "SRC0379"
+      ]
+    },
+    {
+      "id": "PNV0036",
+      "variantName": "Armin Robinson",
+      "variantType": "credit_name",
+      "identityScope": "single_person",
+      "evidenceContext": "sheet_music_or_printed_credit",
+      "attestedWording": "Armin Robinson",
+      "certainty": "confirmed",
+      "publicNote": "Shortened printed credit form of Armin Lackenbach Robinson.",
+      "personIds": [
+        "P083"
+      ],
+      "workIds": [
+        "W-S030"
+      ],
+      "sourceIds": [
+        "SRC0207",
+        "SRC0461"
+      ]
+    },
+    {
+      "id": "PNV0037",
+      "variantName": "Didier Alcan Bloch",
+      "variantType": "credit_name",
+      "identityScope": "single_person",
+      "evidenceContext": "secondary_literature",
+      "attestedWording": "Didier Alcan Bloch",
+      "certainty": "probable",
+      "publicNote": "Catalogue form used by Buxbaum/Sieghardt for the lyricist of the French version. The 1936 sheet-music cover itself credits Didier Mauprey.",
+      "personIds": [
+        "P108"
+      ],
+      "workIds": [
+        "W-S200"
+      ],
+      "sourceIds": [
+        "SRC0373"
+      ]
+    },
+    {
+      "id": "PNV0038",
+      "variantName": "Benjamin Kapper",
+      "variantType": "spelling_variant",
+      "identityScope": "single_person",
+      "evidenceContext": "other",
+      "attestedWording": "Benjamin Kapper",
+      "certainty": "confirmed",
+      "publicNote": "IMDb lists Bronisław Kaper under the source form “Benjamin Kapper” for “Ihre Majestät die Liebe”. The spelling is attested there; his exact musical function remains unresolved.",
+      "personIds": [
+        "P009"
+      ],
+      "workIds": [
+        "W-F004"
+      ],
+      "sourceIds": [
+        "SRC0520"
+      ]
+    },
+    {
+      "id": "PNV0039",
+      "variantName": "Ben Berlin",
+      "variantType": "pseudonym",
+      "identityScope": "single_person",
+      "evidenceContext": "secondary_literature",
+      "attestedWording": "Ben Berlin",
+      "certainty": "confirmed",
+      "publicNote": "Professional pseudonym of the pianist, composer and bandleader Hermann Biek.",
+      "personIds": [
+        "P130"
+      ],
+      "sourceIds": [
+        "SRC0365"
+      ]
+    },
+    {
+      "id": "PNV0040",
+      "variantName": "Hermann Bick",
+      "variantType": "credit_name",
+      "identityScope": "single_person",
+      "evidenceContext": "other",
+      "attestedWording": "Hermann Bick",
+      "certainty": "confirmed",
+      "publicNote": "Historical recording and broadcast credit form for Hermann Biek in the Bick–Kaper piano duo.",
+      "personIds": [
+        "P130"
+      ],
+      "sourceIds": [
+        "SRC0002",
+        "SRC0021",
+        "SRC0028",
+        "SRC0365",
+        "SRC0553"
+      ]
+    },
+    {
+      "id": "PNV0041",
+      "variantName": "Henry Garat",
+      "variantType": "credit_name",
+      "identityScope": "single_person",
+      "evidenceContext": "other",
+      "attestedWording": "Henry Garat",
+      "certainty": "confirmed",
+      "publicNote": "Professional and source form used in the Paramount portrait and several contemporary or discographic references.",
+      "personIds": [
+        "P132"
+      ],
+      "sourceIds": [
+        "SRC0115",
+        "SRC0501",
+        "SRC0582",
+        "SRC0540"
+      ],
+      "workIds": [
+        "W-S116",
+        "W-S110",
+        "W-S111"
+      ]
+    },
+    {
+      "id": "PNV0042",
+      "variantName": "Marcel Cabridens",
+      "variantType": "credit_name",
+      "identityScope": "single_person",
+      "evidenceContext": "authority_record",
+      "attestedWording": "Marcel Cabridens",
+      "certainty": "confirmed",
+      "publicNote": "Birth name. The authority heading is established under the pseudonym Marc-Cab, but BnF catalogue notices credit the lyrics of La belle de Cadix and La belle Arabelle to “Marcel Cabridens”. Kaper’s songs print the pseudonym.",
+      "personIds": [
+        "P052"
+      ],
+      "sourceIds": [
+        "SRC0588"
+      ]
+    },
+    {
+      "id": "PNV0043",
+      "variantName": "Jean Charles André Giot de Badet",
+      "variantType": "other",
+      "identityScope": "single_person",
+      "evidenceContext": "secondary_literature",
+      "attestedWording": "Jean Charles André Giot de Badet",
+      "certainty": "confirmed",
+      "publicNote": "Civil-status name. The authority heading is established under the nom de plume André de Badet; the linked song credits use André de Badet.",
+      "personIds": [
+        "P006"
+      ],
+      "sourceIds": [
+        "SRC0591",
+        "SRC0615"
+      ]
+    },
+    {
+      "id": "PNV0044",
+      "variantName": "Henri Eugène Vantard",
+      "variantType": "other",
+      "identityScope": "single_person",
+      "evidenceContext": "secondary_literature",
+      "attestedWording": "Henri Eugène Vantard",
+      "certainty": "confirmed",
+      "publicNote": "Civil-status name. The authority heading is established under the stage name Henri Varna; the linked song credits use Henri Varna.",
+      "personIds": [
+        "P031"
+      ],
+      "sourceIds": [
+        "SRC0592"
+      ]
+    },
+    {
+      "id": "PNV0045",
+      "variantName": "René Cailleteau",
+      "variantType": "other",
+      "identityScope": "single_person",
+      "evidenceContext": "secondary_literature",
+      "attestedWording": "René Cailleteau",
+      "certainty": "confirmed",
+      "publicNote": "Civil-status name. Encyclopédisque records it directly; Éliane Daphy’s identification work gives “René Cailleteau dit René Nazelles”. The linked song credits use the pseudonym René Nazelles.",
+      "personIds": [
+        "P093"
+      ],
+      "sourceIds": [
+        "SRC0602"
+      ]
+    },
+    {
+      "id": "PNV0046",
+      "variantName": "Edna May Durbin",
+      "variantType": "other",
+      "identityScope": "single_person",
+      "evidenceContext": "authority_record",
+      "attestedWording": "Edna May Durbin",
+      "certainty": "confirmed",
+      "publicNote": "Birth name. The authority heading is established under the professional name Deanna Durbin; the linked press notices use Deanna Durbin.",
+      "personIds": [
+        "P137"
+      ],
+      "sourceIds": [
+        "SRC0380"
+      ]
+    },
+    {
+      "id": "PNV0047",
+      "variantName": "Frances Ethel Gumm",
+      "variantType": "other",
+      "identityScope": "single_person",
+      "evidenceContext": "authority_record",
+      "attestedWording": "Frances Ethel Gumm",
+      "certainty": "confirmed",
+      "publicNote": "Birth name. The authority heading is established under the stage name Judy Garland, adopted in 1934 and used in the film credits recorded here.",
+      "personIds": [
+        "P138"
+      ],
+      "sourceIds": [
+        "SRC0147"
+      ]
+    },
+    {
+      "id": "PNV0048",
+      "variantName": "Mark Lavry",
+      "variantType": "spelling_variant",
+      "identityScope": "single_person",
+      "evidenceContext": "secondary_literature",
+      "attestedWording": "Mark Lavry",
+      "certainty": "confirmed",
+      "publicNote": "Spelling used by filmportal.de for the music director of Seitensprünge (1931). The composer wrote his name Marc; he was born Marcus Levin in Riga and adopted Lavry to avoid confusion with an older conductor.",
+      "personIds": [
+        "P147"
+      ],
+      "sourceIds": [
+        "SRC0120",
+        "SRC0610"
+      ]
+    },
+    {
+      "id": "PNV0049",
+      "variantName": "Amédée Ferdinand Pujol",
+      "variantType": "other",
+      "identityScope": "single_person",
+      "evidenceContext": "secondary_literature",
+      "attestedWording": "Amédée Ferdinand Pujol",
+      "certainty": "confirmed",
+      "publicNote": "Civil-status name. The authority heading and linked printed credits use the working name René Pujol.",
+      "personIds": [
+        "P065"
+      ],
+      "sourceIds": [
+        "SRC0613"
+      ]
+    },
+    {
+      "id": "PNV0050",
+      "variantName": "André Jacques Bloch",
+      "variantType": "other",
+      "identityScope": "single_person",
+      "evidenceContext": "secondary_literature",
+      "attestedWording": "André Jacques Bloch",
+      "certainty": "confirmed",
+      "publicNote": "Civil-status name. The Encyclopédie de la comédie musicale gives a birth year of 1891, while the Bibliothèque nationale de France gives 1881. The preferred year is 1881; the discrepancy remains unresolved.",
+      "personIds": [
+        "P005"
+      ],
+      "sourceIds": [
+        "SRC0616"
+      ]
+    },
+    {
+      "id": "PNV0051",
+      "variantName": "Gustaw Baumritter",
+      "variantType": "other",
+      "identityScope": "single_person",
+      "evidenceContext": "authority_file",
+      "attestedWording": "Baumritter, Gustaw",
+      "certainty": "confirmed",
+      "publicNote": "Birth name. ISNI lists Gustaw Baumritter as another identity of the same person, and VIAF includes it among the alternate forms for Włast, Andrzej. Andrzej Włast remains the preferred name because it is the established authority heading and the form used in the linked credits.",
+      "personIds": [
+        "P003"
+      ],
+      "sourceIds": [
+        "SRC0623"
+      ]
+    },
+    {
+      "id": "PNV0052",
+      "variantName": "Tihoti-Ré",
+      "variantType": "pseudonym",
+      "identityScope": "single_person",
+      "evidenceContext": "authority_file",
+      "attestedWording": "Tihoti-Ré",
+      "certainty": "confirmed",
+      "publicNote": "Tahitian pseudonym, given in the BnF person authority record as Tihoti-Ré or Tihoti-Re, with a see-also reference under that form. Tihoti is the Tahitian rendering of Georges. The Pathé disc credits the performing group as Tihoti-ré et son ensemble tahitien and names Tihoti in the vocal duo, so the composer credited as G. Rey and the singer credited as Tihoti are the same man.",
+      "personIds": [
+        "P155"
+      ],
+      "sourceIds": [
+        "SRC0626",
+        "SRC0625"
+      ]
+    },
+    {
+      "id": "PNV0053",
+      "variantName": "Paul Wechselmann",
+      "variantType": "other",
+      "identityScope": "single_person",
+      "evidenceContext": "authority_file",
+      "attestedWording": "Wechselmann, Paul",
+      "certainty": "confirmed",
+      "publicNote": "Birth name, recorded as a variant in GND. The same record lists four further working names — Mawersky, Paul Stephan; Bachinger, Alois; Marois, Jean; and Walden, Peter — but none of the linked sources associates those forms with a specific work.",
+      "personIds": [
+        "P151"
+      ],
+      "sourceIds": [
+        "SRC0627"
+      ]
+    },
+    {
+      "id": "PNV0054",
+      "variantName": "Robert Pégy",
+      "variantType": "spelling_variant",
+      "identityScope": "single_person",
+      "evidenceContext": "filmographic_database",
+      "attestedWording": "Robert Pégy",
+      "certainty": "confirmed",
+      "publicNote": "Spelling used by filmportal.de in the credits for “Son altesse l’amour”. No authority file records it. The GND entry for Péguy links to filmportal’s record for the same director, indicating that the missing u is a transcription in one credit record rather than a working name.",
+      "personIds": [
+        "P068"
+      ],
+      "sourceIds": [
+        "SRC0628",
+        "SRC0151"
+      ]
+    },
+    {
+      "id": "PNV0055",
+      "variantName": "Charles Secchia",
+      "variantType": "other",
+      "identityScope": "single_person",
+      "evidenceContext": "authority_record",
+      "attestedWording": "Charles Secchia",
+      "certainty": "confirmed",
+      "publicNote": "Real name of the songwriter represented in authority records under the professional name Charlie Davson.",
+      "personIds": [
+        "P106"
+      ],
+      "sourceIds": [
+        "SRC0629"
+      ]
+    },
+    {
+      "id": "PNV0056",
+      "variantName": "Ninon Steinhoff",
+      "variantType": "spelling_variant",
+      "identityScope": "single_person",
+      "evidenceContext": "authority_file",
+      "attestedWording": "Ninon Steinhoff",
+      "certainty": "confirmed",
+      "publicNote": "Form printed on the 1934 sheet of “Adieu”. The Bibliothèque nationale de France establishes the heading as Steinhof with one f and expressly records Steinhoff as a rejected form.",
+      "personIds": [
+        "P060"
+      ],
+      "sourceIds": [
+        "SRC0631",
+        "SRC0284"
+      ]
+    },
+    {
+      "id": "PNV0057",
+      "variantName": "Marcelina Halicz",
+      "variantType": "other",
+      "identityScope": "single_person",
+      "evidenceContext": "authority_file",
+      "attestedWording": "Halicz, Marcelina",
+      "certainty": "confirmed",
+      "publicNote": "Variant form recorded in the Biblioteka Narodowa descriptor alongside Halicz, Marcela and Halicz, M. Wikidata carries it as an alias of the same identity.",
+      "personIds": [
+        "P156"
+      ],
+      "sourceIds": [
+        "SRC0634"
+      ]
+    },
+    {
+      "id": "PNV0058",
+      "variantName": "M. Halicz",
+      "variantType": "initials",
+      "identityScope": "single_person",
+      "evidenceContext": "recording_label",
+      "attestedWording": "M. Halicz",
+      "certainty": "confirmed",
+      "publicNote": "Form printed on the Odeon disc of “Ninon, ach uśmiechnij się!” and “Signorina, signorina”, where the credit reads B. Kaper, W. Jurmann ; M. Halicz. Also recorded as a variant in the Biblioteka Narodowa descriptor.",
+      "personIds": [
+        "P156"
+      ],
+      "sourceIds": [
+        "SRC0633",
+        "SRC0634"
+      ]
+    },
+    {
+      "id": "PNV0059",
+      "variantName": "Eliza Rosenblum",
+      "variantType": "spelling_variant",
+      "identityScope": "single_person",
+      "evidenceContext": "other",
+      "attestedWording": "Eliza Rosenblum",
+      "certainty": "probable",
+      "publicNote": "Alternative surname spelling. The contemporary Polish press sources cited for this record use the form Rozenblum.",
+      "personIds": [
+        "P160"
+      ],
+      "sourceIds": [
+        "SRC0674",
+        "SRC0675"
+      ]
+    },
+    {
+      "id": "PNV0060",
+      "variantName": "Guy Marylis",
+      "variantType": "pseudonym",
+      "identityScope": "single_person",
+      "evidenceContext": "sheet_music_or_printed_credit",
+      "attestedWording": "Marylis",
+      "certainty": "confirmed",
+      "publicNote": "Pseudonym of Joseph-Ermend Bonnal, printed as Marylis on the French lyric recorded here. The Library of Congress holds a separate authority record for the pseudonymous identity, Marylis, Guy, 1880-1944, and the VIAF cluster that carries it also carries the Bibliothèque nationale heading Bonnal, Ermend, 1880-1944, compositeur, with a cross-reference between them.",
+      "personIds": [
+        "P111"
+      ],
+      "workIds": [
+        "W-S202"
+      ],
+      "sourceIds": [
+        "SRC0686"
+      ]
+    },
+    {
+      "id": "PNV0061",
+      "variantName": "Yudel Pomeranc",
+      "variantType": "transliteration",
+      "identityScope": "single_person",
+      "evidenceContext": "secondary_literature",
+      "attestedWording": "Yudel Pomeranc",
+      "certainty": "confirmed",
+      "publicNote": "Name form in the records of the Vilnius Jewish Rabbinate, given in Russian. Rupeikaitė lists it as the earliest of four institutional forms of the same name, alongside Yehuda Pomeranc in Berlin, Julian Pomeranc at the Klindworth-Scharwenka Conservatory and Giuliano Pomeranz in the Arolsen Archives.",
+      "personIds": [
+        "P090"
+      ],
+      "sourceIds": [
+        "SRC0546"
+      ]
+    },
+    {
+      "id": "PNV0062",
+      "variantName": "Yehuda Pomeranc",
+      "variantType": "registration_identity",
+      "identityScope": "single_person",
+      "evidenceContext": "secondary_literature",
+      "attestedWording": "Yehuda Pomeranc",
+      "certainty": "confirmed",
+      "publicNote": "Name form under which he was registered at the State Academic University of Music in Berlin. He changed it to Julian while living in Berlin, and to the Italian Giuliano after settling in Italy in 1936. The life dates recorded here follow Rupeikaitė, who gives 1900–1996; the Arolsen Archives file states 21 March 1901 in Wilno as the date of birth, and the two are left in disagreement rather than reconciled.",
+      "personIds": [
+        "P090"
+      ],
+      "sourceIds": [
+        "SRC0546",
+        "SRC0545"
+      ]
+    },
+    {
+      "id": "PNV0063",
+      "variantName": "Leo Moll",
+      "variantType": "pseudonym",
+      "identityScope": "single_person",
+      "evidenceContext": "recording_label",
+      "attestedWording": "Refrain: Leo Moll",
+      "certainty": "confirmed",
+      "publicNote": "Recording pseudonym of the singer Leo Monosson, printed on Electrola labels.",
+      "personIds": [
+        "P166"
+      ],
+      "workIds": [
+        "W-S045",
+        "W-S049"
+      ],
+      "sourceIds": [
+        "SRC0005",
+        "SRC0710",
+        "SRC0741"
+      ]
+    },
+    {
+      "id": "PNV0064",
+      "variantName": "Dobbri",
+      "variantType": "pseudonym",
+      "identityScope": "single_person",
+      "evidenceContext": "recording_label",
+      "attestedWording": "Saxophon Orchester Dobbri",
+      "certainty": "confirmed",
+      "publicNote": "Recording name under which Otto Dobrindt issued productions for Carl Lindström AG from 1925.",
+      "personIds": [
+        "P167"
+      ],
+      "workIds": [
+        "W-S024"
+      ],
+      "sourceIds": [
+        "SRC0716",
+        "SRC0720"
+      ]
+    },
+    {
+      "id": "PNV0065",
+      "variantName": "Eddie Saxon",
+      "variantType": "pseudonym",
+      "identityScope": "single_person",
+      "evidenceContext": "secondary_literature",
+      "attestedWording": "Eddie Saxon",
+      "certainty": "confirmed",
+      "publicNote": "One of the recording names Otto Dobrindt used for his own productions.",
+      "personIds": [
+        "P167"
+      ],
+      "sourceIds": [
+        "SRC0720"
+      ]
+    },
+    {
+      "id": "PNV0066",
+      "variantName": "Siegfried Arno",
+      "variantType": "credit_name",
+      "identityScope": "single_person",
+      "evidenceContext": "recording_label",
+      "attestedWording": "Arno, Siegfried",
+      "certainty": "confirmed",
+      "publicNote": "The Berlin form of the actor’s name, under which he sang on German records before his emigration; the Library of Congress heading gives the later American form Sig Arno.",
+      "personIds": [
+        "P170"
+      ],
+      "workIds": [
+        "W-S023"
+      ],
+      "sourceIds": [
+        "SRC0743"
+      ]
+    },
+    {
+      "id": "PNV0067",
+      "variantName": "Fred Lustig",
+      "variantType": "pseudonym",
+      "identityScope": "single_person",
+      "evidenceContext": "recording_label",
+      "attestedWording": "Gesang: Fred Lustig",
+      "certainty": "confirmed",
+      "publicNote": "Recording name under which Luigi Bernauer sang on Odeon labels; the transfer of the Odeon disc names him behind it.",
+      "personIds": [
+        "P174"
+      ],
+      "workIds": [
+        "W-S057"
+      ],
+      "sourceIds": [
+        "SRC0754",
+        "SRC0849"
+      ]
+    },
+    {
+      "id": "PNV0068",
+      "variantName": "Léo Lelièvre fils",
+      "variantType": "credit_name",
+      "identityScope": "single_person",
+      "evidenceContext": "authority_record",
+      "attestedWording": "Léo Lelièvre fils",
+      "certainty": "confirmed",
+      "publicNote": "Distinguishing form printed on Casino de Paris covers to separate him from his father, the chansonnier Léo Lelièvre (1872-1956).",
+      "personIds": [
+        "P051"
+      ],
+      "sourceIds": [
+        "SRC0817"
+      ]
+    },
+    {
+      "id": "PNV0069",
+      "variantName": "Jacques Jacob Monteux",
+      "variantType": "registration_identity",
+      "identityScope": "single_person",
+      "evidenceContext": "archival_document",
+      "attestedWording": "Monteux Jacques Jacob",
+      "certainty": "confirmed",
+      "publicNote": "Given names written across his SACEM membership photograph, omitted by the authority headings.",
+      "personIds": [
+        "P038"
+      ],
+      "sourceIds": [
+        "SRC0821"
+      ]
+    },
+    {
+      "id": "PNV0070",
+      "variantName": "Helmuth Wolfes",
+      "variantType": "spelling_variant",
+      "identityScope": "single_person",
+      "evidenceContext": "authority_file",
+      "attestedWording": "Helmuth Wolfes",
+      "certainty": "confirmed",
+      "publicNote": "Form used in the United States and adopted as the heading by the Library of Congress, beside the German spelling under which he worked before the emigration.",
+      "personIds": [
+        "P148"
+      ],
+      "sourceIds": [
+        "SRC0847",
+        "SRC0848"
+      ]
+    },
+    {
+      "id": "PNV0071",
+      "variantName": "Ludwig Bernhuber",
+      "variantType": "pseudonym",
+      "identityScope": "single_person",
+      "evidenceContext": "secondary_literature",
+      "attestedWording": "Ludwig Bernhuber",
+      "certainty": "confirmed",
+      "publicNote": "Second recording pseudonym of Luigi Bernauer, recorded in the literature beside Fred Lustig.",
+      "personIds": [
+        "P174"
+      ],
+      "sourceIds": [
+        "SRC0849"
+      ]
+    }
+  ]
+}

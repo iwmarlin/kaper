@@ -1,2285 +1,532 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Media gallery for Bronisław Kaper — audio samples, video sources, documents, and credits.">
-    <title>Bronisław Kaper - Media Gallery</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #f8f7f4 0%, #e8e6e1 100%);
-            color: #2c2520;
-            overflow-x: hidden;
-            min-height: 100vh;
-            position: relative;
-        }
-        
-        /* Subtle background pattern */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="20" cy="20" r="0.5" fill="rgba(0,0,0,0.03)"/><circle cx="80" cy="80" r="0.3" fill="rgba(0,0,0,0.02)"/><circle cx="40" cy="70" r="0.4" fill="rgba(0,0,0,0.025)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
-            opacity: 0.5;
-            pointer-events: none;
-            z-index: 0;
-        }
-        
-        .container {
-            width: 100vw;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .header {
-            text-align: center;
-            padding: 4rem 2rem;
-            background: linear-gradient(135deg, #1a1714 0%, #2c2520 50%, #1a1714 100%);
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="20" cy="20" r="0.5" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="80" r="0.3" fill="rgba(255,255,255,0.05)"/><circle cx="40" cy="70" r="0.4" fill="rgba(255,255,255,0.08)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
-            opacity: 0.6;
-            pointer-events: none;
-        }
-        
-        .header > * {
-            position: relative;
-            z-index: 1;
-        }
-        
-        .header-content {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 3rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            animation: fadeInUp 1s ease-out;
-        }
-        
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .header-portrait {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid rgba(196, 181, 160, 0.4);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-        }
-        
-        .header-text {
-            flex: 1;
-        }
-        
-        .title {
-            font-family: 'Playfair Display', Georgia, serif;
-            font-size: 4rem;
-            font-weight: 200;
-            margin-bottom: 1rem;
-            letter-spacing: -0.025em;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        
-        .period {
-            font-size: 1.125rem;
-            color: #c4b5a0;
-            font-weight: 300;
-            letter-spacing: 0.05em;
-        }
-        
-        .navigation {
-            display: flex;
-            justify-content: center;
-            padding: 2rem;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            gap: 2rem;
-            border-bottom: 1px solid rgba(229, 231, 235, 0.6);
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-            flex-wrap: wrap;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        
-
-        .nav-site {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.75rem;
-            padding: 0.6rem 2rem;
-            background: linear-gradient(135deg, #1a1714 0%, #2c2520 100%);
-        }
-        .nav-site-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
-            color: #c4b5a0;
-            text-decoration: none;
-            font-size: 0.72rem;
-            text-transform: uppercase;
-            letter-spacing: 0.12em;
-            font-weight: 500;
-            padding: 0.35rem 0.85rem;
-            border-radius: 9999px;
-            border: 1px solid rgba(196, 181, 160, 0.2);
-            transition: all 0.3s ease;
-        }
-        .nav-site-link:hover {
-            color: #f5f0e8;
-            border-color: rgba(196, 181, 160, 0.45);
-            background: rgba(255, 255, 255, 0.06);
-        }
-        .nav-site-link.current {
-            color: #f5f0e8;
-            background: rgba(255, 255, 255, 0.1);
-            border-color: rgba(196, 181, 160, 0.4);
-        }
-        .nav-site-sep {
-            width: 1px;
-            height: 16px;
-            background: rgba(196, 181, 160, 0.25);
-        }
-
-        .nav-btn {
-            background: none;
-            border: none;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 0.13em;
-            font-weight: 500;
-            padding: 0.85rem 1rem;
-            position: relative;
-            white-space: nowrap;
-            cursor: pointer;
-            transition: all 0.25s ease;
-            color: #a09890;
-        }
-        
-        .nav-btn.active {
-            color: #1a1714;
-        }
-
-        .nav-btn.active::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 1rem;
-            right: 1rem;
-            height: 2px;
-            background: #8b7355;
-            border-radius: 1px;
-        }
-        
-        .nav-btn:hover {
-            color: #4a4035;
-        }
-        /* removed - replaced above */
-        
-        .content {
-            flex: 1;
-            padding: 3rem 4rem;
-            background: rgba(255, 253, 250, 0.8);
-            backdrop-filter: blur(10px);
-            margin: 2rem;
-            border-radius: 1.5rem;
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            border: 1px solid rgba(255, 253, 250, 0.85);
-            position: relative;
-        }
-        
-        .view {
-            display: none;
-            animation: fadeIn 0.6s ease-out;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .view.active {
-            display: block;
-        }
-        
-        .warning-banner {
-            margin-bottom: 3rem;
-            padding: 1.5rem;
-            background: linear-gradient(135deg, rgba(251, 191, 36, 0.1) 0%, rgba(245, 158, 11, 0.05) 100%);
-            border-radius: 1rem;
-            border: 1px solid rgba(251, 191, 36, 0.3);
-            text-align: center;
-        }
-        
-        .warning-text {
-            color: #92400e;
-            font-size: 0.875rem;
-            font-weight: 500;
-        }
-        
-        .section {
-            margin-bottom: 4rem;
-        }
-        
-        .section-title {
-            font-family: 'Playfair Display', Georgia, serif;
-            font-size: 2rem;
-            font-weight: 300;
-            text-align: center;
-            margin-bottom: 3rem;
-            color: #2c2520;
-            letter-spacing: -0.01em;
-        }
-        
-        .media-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 2rem;
-        }
-        
-        .media-card {
-            background: linear-gradient(135deg, rgba(249, 250, 251, 0.95) 0%, rgba(255, 255, 255, 0.95) 100%);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(229, 231, 235, 0.6);
-            border-radius: 1.25rem;
-            padding: 2.5rem;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.06);
-        }
-        
-        .media-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(17, 24, 39, 0.02) 0%, rgba(55, 65, 81, 0.02) 100%);
-            opacity: 0;
-            transition: opacity 0.4s ease;
-        }
-        
-        .media-card:hover::before {
-            opacity: 1;
-        }
-        
-        .media-card:hover {
-            border-color: rgba(156, 163, 175, 0.4);
-            box-shadow: 0 12px 28px -4px rgba(0, 0, 0, 0.12), 0 4px 12px -2px rgba(0, 0, 0, 0.07);
-            transform: translateY(-4px);
-        }
-        
-        .media-card > * {
-            position: relative;
-            z-index: 1;
-        }
-        
-        .media-title {
-            font-size: 1.25rem;
-            font-weight: 500;
-            margin-bottom: 0.75rem;
-            color: #2c2520;
-        }
-        
-        .media-info {
-            font-size: 0.875rem;
-            color: #6b7280;
-            margin-bottom: 1.5rem;
-            font-style: italic;
-        }
-        
-        .media-player {
-            width: 100%;
-            margin-bottom: 1.5rem;
-            border-radius: 8px;
-        }
-        
-        .media-description {
-            font-size: 0.875rem;
-            line-height: 1.6;
-            color: #374151;
-        }
-        
-        .period-badge {
-            display: inline-block;
-            padding: 0.25rem 0.75rem;
-            border-radius: 9999px;
-            font-size: 0.75rem;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-bottom: 1rem;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-        }
-        
-        .period-audio {
-            background: linear-gradient(135deg, #5c4a32 0%, #7a6245 100%);
-            color: white;
-        }
-        
-        .period-video {
-            background: linear-gradient(135deg, #7a6245 0%, #a855f7 100%);
-            color: white;
-        }
-        
-        .period-historical {
-            background: linear-gradient(135deg, #6b7280 0%, #9ca3af 100%);
-            color: white;
-        }
-        
-        .period-early {
-            background: linear-gradient(135deg, #059669 0%, #10b981 100%);
-            color: white;
-        }
-        
-        .period-document {
-            background: linear-gradient(135deg, #d97706 0%, #f59e0b 100%);
-            color: white;
-        }
-        
-        .credits-section {
-            margin-top: 4rem;
-            padding: 2.5rem;
-            background: linear-gradient(135deg, rgba(249, 250, 251, 0.9) 0%, rgba(243, 244, 246, 0.9) 100%);
-            backdrop-filter: blur(10px);
-            border-radius: 1.25rem;
-            border: 1px solid rgba(229, 231, 235, 0.6);
-            box-shadow: 0 8px 20px -4px rgba(0, 0, 0, 0.08);
-        }
-        
-        .credits-title {
-            font-size: 1.5rem;
-            font-weight: 300;
-            text-align: center;
-            margin-bottom: 2rem;
-            color: #2c2520;
-        }
-        
-        .credits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        
-        .credit-category {
-            background: rgba(255, 253, 250, 0.85);
-            backdrop-filter: blur(5px);
-            border-radius: 1rem;
-            padding: 1.5rem;
-            border: 1px solid rgba(209, 213, 219, 0.4);
-            transition: all 0.3s ease;
-        }
-        
-        .credit-category:hover {
-            border-color: rgba(107, 114, 128, 0.3);
-            box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.08);
-        }
-        
-        .credit-category h4 {
-            font-size: 1.125rem;
-            font-weight: 500;
-            margin-bottom: 1rem;
-            color: #2c2520;
-        }
-        
-        .credit-list {
-            list-style: none;
-            line-height: 1.6;
-        }
-        
-        .credit-list li {
-            color: #374151;
-            font-size: 0.875rem;
-            margin-bottom: 0.5rem;
-            padding-left: 1rem;
-            position: relative;
-        }
-        
-        .credit-list li::before {
-            content: '→';
-            position: absolute;
-            left: 0;
-            color: #5c4a32;
-        }
-        
-        .filters {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-bottom: 3rem;
-            flex-wrap: wrap;
-        }
-        
-        .filter-btn {
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(209, 213, 219, 0.6);
-            padding: 0.75rem 1.5rem;
-            border-radius: 9999px;
-            font-size: 0.875rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            cursor: pointer;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            color: #6b7280;
-            box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-        }
-        
-        .filter-btn.active {
-            background: linear-gradient(135deg, #111827 0%, #374151 100%);
-            color: white;
-            border-color: #2c2520;
-            box-shadow: 0 4px 8px -2px rgba(17, 24, 39, 0.4);
-            transform: translateY(-1px);
-        }
-        
-        .filter-btn:hover:not(.active) {
-            color: #374151;
-            border-color: #9ca3af;
-            background: rgba(255, 255, 255, 0.95);
-            transform: translateY(-1px);
-            box-shadow: 0 4px 8px -2px rgba(0, 0, 0, 0.1);
-        }
-        
-        .media-card a[href*="filmportal"] div:hover,
-        .media-card a[href*="youtube"] div:hover,
-        .media-card a[href*="youtu.be"] div:hover,
-        .media-card a[href*="vkvideo"] div:hover,
-        .media-card a[href*="pbs.org"] div:hover {
-            background: linear-gradient(135deg, #2d3748 0%, #4a5568 60%, #5a6577 100%) !important;
-        }
-        
-        .media-card a[href*="filmportal"]:hover div > div,
-        .media-card a[href*="youtube"]:hover div > div,
-        .media-card a[href*="youtu.be"]:hover div > div,
-        .media-card a[href*="vkvideo"]:hover div > div,
-        .media-card a[href*="pbs.org"]:hover div > div {
-            background: rgba(255,255,255,0.25) !important;
-            transform: scale(1.1);
-        }
-
-        /* Loading animation for media */
-        .media-card.loading .media-player {
-            position: relative;
-            background: linear-gradient(90deg, #f3f4f6 25%, #e5e7eb 50%, #f3f4f6 75%);
-            background-size: 200% 100%;
-            animation: shimmer 2s infinite;
-        }
-        
-        @keyframes shimmer {
-            0% { background-position: -200% 0; }
-            100% { background-position: 200% 0; }
-        }
-        
-        /* Document gallery styles */
-        .document-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .document-item {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-        
-        .document-item .document-image {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            border-radius: 12px;
-            background: #f3f4f6;
-            border: 1px solid rgba(229, 231, 235, 0.6);
-            cursor: pointer;
-            transition: all 0.3s ease;
-            margin-bottom: 0;
-        }
-        
-        .document-item .document-image:hover {
-            transform: scale(1.05);
-            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
-        }
-        
-        .document-caption {
-            font-size: 0.75rem;
-            color: #6b7280;
-            text-align: center;
-            font-style: italic;
-            line-height: 1.4;
-        }
-        
-        /* Single document image */
-        .document-image:not(.document-item .document-image) {
-            width: 100%;
-            height: auto;
-            max-height: 500px;
-            object-fit: contain;
-            border-radius: 12px;
-            background: #f9fafb;
-            border: 1px solid rgba(229, 231, 235, 0.6);
-            cursor: pointer;
-            transition: transform 0.3s ease;
-            margin-bottom: 1.5rem;
-        }
-        
-        .document-image:not(.document-item .document-image):hover {
-            transform: scale(1.02);
-        }
-
-        /* Karty Documents na całą szerokość */
-        #documents .media-grid {
-            grid-template-columns: 1fr;
-        }
-
-        /* Modal Gallery Styles */
-        .image-modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.95);
-            z-index: 10000;
-            overflow: hidden;
-        }
-
-        .modal-image-container {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            overflow-y: auto;
-            overflow-x: hidden;
-            -webkit-overflow-scrolling: touch;
-        }
-
-        .modal-image-wrapper {
-            min-height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 5rem 4rem 6rem;
-        }
-
-        .modal-image-container::-webkit-scrollbar {
-            width: 6px;
-        }
-        .modal-image-container::-webkit-scrollbar-track {
-            background: transparent;
-        }
-        .modal-image-container::-webkit-scrollbar-thumb {
-            background: rgba(255, 255, 255, 0.3);
-            border-radius: 3px;
-        }
-
-        .modal-image {
-            display: block;
-            max-width: min(90%, 1200px);
-            width: auto;
-            height: auto;
-            object-fit: contain;
-            border-radius: 4px;
-            transition: opacity 0.15s ease;
-        }
-
-        .modal-close-btn {
-            position: absolute;
-            top: 2rem;
-            right: 2rem;
-            background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
-            color: white;
-            border: none;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            font-size: 2rem;
-            cursor: pointer;
-            z-index: 10001;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4);
-        }
-
-        .modal-close-btn:hover {
-            transform: scale(1.1) rotate(90deg);
-            box-shadow: 0 6px 20px rgba(239, 68, 68, 0.6);
-        }
-
-        .modal-nav-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(17, 24, 39, 0.7);
-            color: white;
-            border: none;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            font-size: 2rem;
-            cursor: pointer;
-            z-index: 10001;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-        }
-
-        .modal-nav-btn:hover {
-            background: rgba(17, 24, 39, 0.9);
-            transform: translateY(-50%) scale(1.1);
-        }
-
-        .modal-caption {
-            position: absolute;
-            bottom: 2rem;
-            left: 50%;
-            transform: translateX(-50%);
-            background: rgba(17, 24, 39, 0.85);
-            backdrop-filter: blur(20px);
-            padding: 1rem 2rem;
-            border-radius: 12px;
-            color: #f8fafc;
-            text-align: center;
-            max-width: 80%;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .modal-counter {
-            position: absolute;
-            top: 2rem;
-            left: 50%;
-            transform: translateX(-50%);
-            background: rgba(17, 24, 39, 0.85);
-            backdrop-filter: blur(20px);
-            padding: 0.5rem 1.5rem;
-            border-radius: 9999px;
-            color: #f8fafc;
-            font-size: 0.875rem;
-        }
-        
-        /* Responsive design */
-        @media (max-width: 768px) {
-            .nav-site { gap: 0.5rem; padding: 0.5rem 1rem; flex-wrap: wrap; }
-            .nav-site-sep { display: none; }
-            .nav-site-link { font-size: 0.65rem; padding: 0.3rem 0.6rem; }
-            .title { font-size: 2.5rem; }
-            .header-content { flex-direction: column; gap: 1.5rem; }
-            .header-portrait { width: 80px; height: 80px; }
-            .content { padding: 2rem; margin: 1rem; }
-            .navigation { gap: 1rem; flex-direction: column; align-items: center; }
-            .media-grid { grid-template-columns: 1fr; }
-            .section-title { font-size: 2rem; }
-            .credits-grid { grid-template-columns: 1fr; }
-            .filters { flex-direction: column; align-items: center; }
-            .document-gallery { grid-template-columns: 1fr; }
-            .modal-nav-btn { width: 50px; height: 50px; font-size: 1.5rem; }
-            .modal-prev { left: 1rem; }
-            .modal-next { right: 1rem; }
-            .modal-close-btn { width: 40px; height: 40px; font-size: 1.5rem; top: 1rem; right: 1rem; }
-            .modal-image-wrapper { padding: 4rem 2rem 5rem; }
-        }
-        
-        /* Scrollbar styling */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: rgba(229, 231, 235, 0.3); border-radius: 10px; }
-        ::-webkit-scrollbar-thumb { background: rgba(107, 114, 128, 0.5); border-radius: 10px; }
-        ::-webkit-scrollbar-thumb:hover { background: rgba(107, 114, 128, 0.7); }
-    
-        @media (prefers-reduced-motion: reduce) {
-            * {
-                animation-duration: 0.001ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.001ms !important;
-                scroll-behavior: auto !important;
-            }
-            body::before { animation: none !important; }
-        }
-
-    </style>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://*.tile.openstreetmap.org; media-src 'self'; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Curated media documenting Bronisław Kaper's life and works through 1939, with provenance and rights information.">
+  <meta name="theme-color" content="#152c33">
+  <meta property="og:title" content="Media — Bronisław Kaper, 1902–1939">
+  <meta property="og:description" content="Images, documents, audio and external reference media with source and rights information.">
+  <link rel="canonical" href="https://iwmarlin.github.io/kaper/media.html">
+  <link rel="preload" href="assets/fonts/kaper-sans.woff2?v=c77ada42a0" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/kaper-serif.woff2?v=c77ada42a0" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/site/styles.css?v=c77ada42a0">
+  <title>Media — Bronisław Kaper, 1902–1939</title>
+  <meta property="og:image" content="https://iwmarlin.github.io/kaper/assets/images/portraits/kaper-mature.jpg">
+  <meta property="og:image:alt" content="Bronisław Kaper">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <div class="header-content">
-                <img src="assets/images/portraits/kaper-young.jpg" alt="Bronisław Kaper" class="header-portrait" onerror="this.style.display='none'">
-                <div class="header-text">
-                    <h1 class="title">Bronisław Kaper: Media Gallery</h1>
-                    <p class="period">Songs &amp; Films 1926–1939</p>
-                </div>
-            </div>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="site-header" data-site-header></header>
+  <main id="main-content">
+    <section class="page-hero page-hero--compact">
+      <div class="shell page-hero__grid">
+        <div>
+          <p class="eyebrow">Curated evidence</p>
+          <h1>Media and documents</h1>
+          <p class="lead">Selected images, archival documents, sheet music, audio renderings and links to institutional media.</p>
         </div>
+        <div class="scope-note">External video and audio are never automatically embedded. Fair-use materials retain their caption, source, credit line, rights status and limited-resolution rationale.</div>
+      </div>
+    </section>
+
+    <section class="filters filters--catalogue" aria-label="Media filters">
+      <div class="shell filters__shell filters__shell--media">
+        <div class="field filters__search">
+          <label for="media-search">Search media</label>
+          <input id="media-search" type="search" placeholder="Title, category, caption…" autocomplete="off">
+        </div>
+        <button class="filters__toggle" id="media-filter-toggle" type="button" aria-expanded="false" aria-controls="media-filter-options">
+          <span>Filters</span>
+          <span class="filters__toggle-count" id="media-filter-count" hidden>0</span>
+        </button>
+        <div class="filters__advanced filters__advanced--media" id="media-filter-options">
+        <div class="field">
+          <label for="media-category">Kind</label>
+          <select id="media-category"><option value="">All kinds</option></select>
+        </div>
+        <div class="field">
+          <label for="media-period">Period</label>
+          <select id="media-period"><option value="">All periods</option></select>
+        </div>
+        <div class="field">
+          <label for="media-rights">Rights</label>
+          <select id="media-rights">
+            <option value="">Any rights status</option>
+            <option value="ok">Freely usable</option>
+            <option value="external_content_not_rehosted">External content · not hosted</option>
+            <option value="permission_needed_or_fair_use_claimed">Rights not cleared</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="media-scope">Show</label>
+          <select id="media-scope">
+            <option value="selected">Curated selection</option>
+            <option value="all">All public media</option>
+            <option value="external_link_only">External references only</option>
+          </select>
+        </div>
+        </div>
+        <div class="active-filters" id="media-active-filters" aria-label="Active media options" hidden></div>
+      </div>
+    </section>
+
+    <section class="section section--listing">
+      <div class="shell">
+        <div class="results-bar">
+          <p id="media-count" aria-live="polite">Showing 30 of 89 items</p>
+          <button class="button button--ghost button--small" id="media-reset" type="button" hidden>Reset filters</button>
+        </div>
+        <div class="gallery-grid" id="media-results" data-prerendered="true">
+          <!-- catalogue-prerender:start -->
+<article class="media-card" data-media-id="M030">
+    <figure><a class="media-card__image-link" href="records/media/M030/"><img src="assets/generated/responsive/metryka-kapera-150-u-920-3164aa120884/857.webp" srcset="assets/generated/responsive/metryka-kapera-150-u-920-3164aa120884/320.webp 320w, assets/generated/responsive/metryka-kapera-150-u-920-3164aa120884/640.webp 640w, assets/generated/responsive/metryka-kapera-150-u-920-3164aa120884/857.webp 857w" sizes="(max-width: 680px) calc(100vw - 2rem), (max-width: 1100px) 46vw, 27rem" width="857" height="785" alt="Gallery card for Bronisław Kaper’s Warsaw years, combining documents, press items and contextual images." loading="lazy" decoding="async"><span>Open gallery · 10 images</span></a></figure>
+    <div class="media-card__body">
+      <div class="meta-row"><span class="badge badge--type">Document Gallery</span><span class="badge badge--period" title="Warsaw · 1902–1926" aria-label="Warsaw · 1902–1926">Warsaw</span><span class="badge badge--period" title="European · 1926–1934" aria-label="European · 1926–1934">European</span><span class="badge badge--rights badge--ok">Public domain</span></div>
+      <h2><a href="records/media/M030/">Warsaw — documents and contexts</a></h2>
+      <p>Documents and contextual images connected with Kaper’s Warsaw formation, early work, and later Warsaw reception.</p>
+      
+      <div class="card__footer"><span>Document Gallery</span><span>M030</span></div>
+      <div class="media-card__actions">
+        <a href="records/media/M030/">Open gallery (10) <span aria-hidden="true">→</span></a>
         
-        <div class="nav-site">
-            <a href="index.html" class="nav-site-link"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg> Works &amp; Films</a>
-            <div class="nav-site-sep"></div>
-            <a href="life.html" class="nav-site-link"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Life &amp; Timeline</a>
-            <div class="nav-site-sep"></div>
-            <a href="media.html" class="nav-site-link current"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg> Media Gallery</a>
-        </div>
-
-        <div class="navigation">
-            <button class="nav-btn active" data-view="audio" id="nav-audio">Audio</button>
-            <button class="nav-btn" data-view="video" id="nav-video">Video</button>
-            <button class="nav-btn" data-view="documents" id="nav-documents">Documents</button>
-            <button class="nav-btn" data-view="credits" id="nav-credits">Credits</button>
-        </div>
-        
-        <div class="content">
-            <div class="warning-banner">
-                <p class="warning-text">
-                    ⚖️ All media content is used for educational purposes under Fair Use provisions. 
-                    Original copyrights belong to their respective owners.
-                </p>
-            </div>
-            
-            <div id="audio" class="view active">
-                <h2 class="section-title">Song Samples & Early Works</h2>
-                
-                <div class="filters">
-                    <button class="filter-btn active" data-filter="all" id="filter-all">All Periods</button>
-                    <button class="filter-btn" data-filter="european" id="filter-european">European Period</button>
-                    <button class="filter-btn" data-filter="hollywood" id="filter-hollywood">Hollywood Period</button>
-                    <button class="filter-btn" data-filter="early" id="filter-early">Early Works</button>
-                </div>
-                
-                <div class="media-grid">
-
-                    <div class="media-card" data-period="european">
-                        <div class="period-badge period-audio">European Period</div>
-                        <h3 class="media-title">Jak się da, to się zrobi</h3>
-                        <p class="media-info">From "Perskie Oko" cabaret repertoire (1926) • Lyrics: Andrzej Włast • as Bruno Asper</p>
-                        <p class="media-description">
-                            One of Kaper's earliest commercial songs, published under his stage name during his Warsaw period.
-                            <br><span style="font-size:0.8em; color:#6b7280;">Source: Syrena-Grand-Record: № 17919 mx: 17919, 1926; Performers: Perskie Oko Theatre Orchestra conducted by Zygmunt Wiehler.</span>
-                        </p>
-                    </div>
-                    <div class="media-card" data-period="european">
-                        <div class="period-badge period-audio">European Period</div>
-                        <h3 class="media-title">Miss Anabelle Lee</h3>
-                        <p class="media-info">Piano duo arrangement</p>
-                        <p class="media-description">
-                            This is a popular American song from 1927, written by Sidney Clare, Lew Pollack, and Harry Richman. The piece is an example of 'Tin Pan Alley,' representing the popular music of the Roaring Twenties.
-                            <br><span style="font-size:0.8em; color:#6b7280;">Source: Polydor 21768, 1928; Performers: Hermann Bick and Dr. Kaper.</span>
-                        </p>
-                    </div>
-                    <div class="media-card" data-period="european">
-                        <div class="period-badge period-audio">European Period</div>
-                        <h3 class="media-title">Süße Mamsell, denkst du noch an das kleine Hotel</h3>
-                        <p class="media-info">Tango (1929) • Lyrics: Fritz Rotter • With Fritz Rotter</p>
-                        <p class="media-description">
-                            Early collaboration with Fritz Rotter, showcasing Kaper's European tango style before his film career.
-                            <br><span style="font-size:0.8em; color:#6b7280;">Source: Grammophon. Eine Schellackplatte aus dem Schallarchiv des Radiomuseum Hardthausen; Performers: Ilja Livschakoff Tanz-Orchester.</span>
-                        </p>
-                    </div>
-                    <div class="media-card" data-period="european">
-                        <div class="period-badge period-audio">European Period</div>
-                        <h3 class="media-title">Blaue Jungs von der Marine</h3>
-                        <p class="media-info">From "Der Korvettenkapitän" (1930) • Lyrics: Fritz Rotter</p>
-                        <p class="media-description">
-                            One of Kaper's first compositions for German cinema, marking his transition from independent songwriter to film composer.
-                            <br><span style="font-size:0.8em; color:#6b7280;">Source: Kristall 78N. 1930; Performers: Kurt Mühlhardt &amp; Bernard Etté und sein Orchester.</span>
-                        </p>
-                    </div>
-                    <div class="media-card" data-period="european">
-                        <div class="period-badge period-audio">European Period</div>
-                        <h3 class="media-title">Spiel' mir auf der Balalaika einen Russischen Tango</h3>
-                        <p class="media-info">Tango (1931) • Lyrics: Fritz Rotter • With Fritz Rotter</p>
-                        <p class="media-description">
-                            Popular tango demonstrating Kaper's ability to blend Eastern European musical elements with contemporary dance styles.
-                            <br><span style="font-size:0.8em; color:#6b7280;">Source: Electrola E.G.2392, 1931; Performers: Marek Weber und sein Orchester.</span>
-                        </p>
-                    </div>
-                    <div class="media-card" data-period="hollywood">
-                        <div class="period-badge period-audio">Hollywood Period</div>
-                        <h3 class="media-title">You’re All I Need</h3>
-                        <p class="media-info">From "Escapade" (1935) • Lyrics: Gus Kahn • With Walter Jurmann</p>
-                        <p class="media-description">
-                            Kaper-Jurmann's first American song, written for William Powell's Viennese comedy at MGM. Ranked No. 14 on the ASCAP list of most-played songs of 1935–36, with over 21,000 radio broadcasts on NBC and CBS — placing the newcomers alongside Irving Berlin and Jerome Kern.
-                            <br><span style="font-size:0.8em; color:#6b7280;">Source: Victor 25029. Performers: Eddy Duchin &amp; his Orchestra, vocal by Lew Sherwood.</span>
-                        </p>
-                    </div>
-                    <div class="media-card" data-period="hollywood">
-                        <div class="period-badge period-audio">Hollywood Period</div>
-                        <h3 class="media-title">Someone to Care for Me</h3>
-                        <p class="media-info">From "Three Smart Girls" (1936) • Lyrics: Gus Kahn • With Walter Jurmann</p>
-                        <p class="media-description">
-                            Song from Deanna Durbin's film debut at Universal Pictures. Demonstrates Kaper-Jurmann's work outside of MGM, showing their adaptability to different studios and performers during their Hollywood period.
-                            <br><span style="font-size:0.8em; color:#6b7280;">Source: Parlophone (A6766); Performers: Victor Silvester and His Ballroom Orchestra.</span>
-                        </p>
-                    </div>
-                    <div class="media-card" data-period="hollywood">
-                        <div class="period-badge period-audio">Hollywood Period</div>
-                        <h3 class="media-title">All God's Chillun Got Rhythm</h3>
-                        <p class="media-info">From "A Day at the Races" (1937) • Lyrics: Gus Kahn • With Walter Jurmann</p>
-                        <p class="media-description">
-                            Composed for the Marx Brothers film, this song transcended its original context to become a jazz standard. It demonstrates Kaper's remarkable success in creating music that merged European sophistication with American swing, becoming part of the broader jazz repertoire.
-                            <br><span style="font-size:0.8em; color:#6b7280;">Source: Master (MA 137); Performers: Duke Ellington and His Orchestra.</span>
-                        </p>
-                    </div>
-
-
-                    
-
-                    
-
-                    
-                    <div class="media-card" data-period="hollywood">
-                        <div class="period-badge period-audio">Hollywood Period</div>
-                        <h3 class="media-title">The Duchess Has a Twinkle in Her Eye</h3>
-                        <p class="media-info">From "Kind Lady" (1935) &bull; Lyrics: Ned Washington &bull; With Walter Jurmann</p>
-                        <a href="https://www.youtube.com/watch?v=gePgVM7uIIQ" target="_blank" rel="noopener noreferrer" style="display:block; position:relative; margin-bottom:1.5rem; border-radius:8px; overflow:hidden; text-decoration:none;">
-                            <div style="
-                                width:100%;
-                                aspect-ratio:16/9;
-                                background: linear-gradient(135deg, #1f2937 0%, #374151 60%, #4b5563 100%);
-                                display:flex;
-                                flex-direction:column;
-                                align-items:center;
-                                justify-content:center;
-                                gap:0.75rem;
-                                transition: all 0.3s ease;
-                                position:relative;
-                            ">
-                                <div style="
-                                    width:64px; height:64px;
-                                    border-radius:50%;
-                                    background: rgba(255,255,255,0.15);
-                                    backdrop-filter: blur(4px);
-                                    display:flex; align-items:center; justify-content:center;
-                                    border: 2px solid rgba(255,255,255,0.3);
-                                    transition: all 0.3s ease;
-                                ">
-                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="white" style="margin-left:3px;">
-                                        <polygon points="5,3 19,12 5,21"/>
-                                    </svg>
-                                </div>
-                                <span style="color:rgba(255,255,255,0.9); font-size:0.85rem; font-weight:500; letter-spacing:0.03em;">
-                                    ▶ Watch on YouTube
-                                </span>
-                            </div>
-                        </a>
-                        <p class="media-description">
-                            One of Kaper &amp; Jurmann's earliest Hollywood songs, written for the MGM drama 'Kind Lady' (1935).
-                        </p>
-                    </div>
-
-                    <div class="media-card" data-period="early">
-                        <div class="period-badge period-early">Early Works</div>
-                        <h3 class="media-title">Rozmowa (Conversation)</h3>
-                        <p class="media-info">A Concert Song for voice and piano (1923) • Lyrics: unknown</p>
-                        <audio controls preload="none" class="media-player">
-                            <source src="assets/audio/samples/rozmowa.mp3" type="audio/mpeg">
-                            Your browser does not support the audio element.
-                        </audio>
-                        <p class="media-description">
-                            Kaper's earliest extant composition was written in Warsaw and survives in manuscript – insight into Kaper's early compositional style before his commercial career began.
-                            Score-to-MIDI rendering
-                        </p>
-                    </div>
-                    
-                    <div class="media-card" data-period="early">
-                        <div class="period-badge period-early">Early Works</div>
-                        <h3 class="media-title">Etiuda for piano</h3>
-                        <p class="media-info">Composition dated 1925</p>
-                        <audio controls preload="none" class="media-player">
-                            <source src="assets/audio/samples/etiuda.mp3" type="audio/mpeg">
-                            Your browser does not support the audio element.
-                        </audio>
-                        <p class="media-description">
-                            This composition by Kaper was written in Warsaw and is preserved in manuscript form.
-                            Score-to-MIDI rendering
-                        </p>
-                    </div>
-
-                    <div class="media-card" data-period="early">
-                        <div class="period-badge period-early">Early Works</div>
-                        <h3 class="media-title">Sonatina for piano</h3>
-                        <p class="media-info">First movement of a composition dated 1927</p>
-                        <audio controls preload="none" class="media-player">
-                            <source src="assets/audio/samples/sonatina_1.mp3" type="audio/mpeg">
-                            Your browser does not support the audio element.
-                        </audio>
-                        <p class="media-description">
-                            This composition by Kaper was written in Warsaw and is preserved in manuscript form.
-                            Score-to-MIDI rendering
-                        </p>
-                    </div>
-
-                    <div class="media-card" data-period="early">
-                        <div class="period-badge period-early">Early Works</div>
-                        <h3 class="media-title">Sonatina for piano</h3>
-                        <p class="media-info">Second movement of a composition dated 1927</p>
-                        <audio controls preload="none" class="media-player">
-                            <source src="assets/audio/samples/sonatina_2.mp3" type="audio/mpeg">
-                            Your browser does not support the audio element.
-                        </audio>
-                        <p class="media-description">
-                            This composition by Kaper was written in Warsaw and is preserved in manuscript form.
-                            Score-to-MIDI rendering
-                        </p>
-                    </div>
-
-                    <div class="media-card" data-period="early">
-                        <div class="period-badge period-early">Early Works</div>
-                        <h3 class="media-title">Sonatina for piano</h3>
-                        <p class="media-info">Third movement of a composition dated 1927</p>
-                        <audio controls preload="none" class="media-player">
-                            <source src="assets/audio/samples/sonatina_3.mp3" type="audio/mpeg">
-                            Your browser does not support the audio element.
-                        </audio>
-                        <p class="media-description">
-                            This composition by Kaper was written in Warsaw and is preserved in manuscript form.
-                            Score-to-MIDI rendering
-                        </p>
-                    </div>
-                </div>
-            </div>
-            
-            <div id="video" class="view">
-                <h2 class="section-title">Film samples & Context</h2>
-
-                <div class="filters">
-                    <button class="filter-btn active" data-filter-video="all" id="vfilter-all">All Periods</button>
-                    <button class="filter-btn" data-filter-video="european" id="vfilter-european">European Period</button>
-                    <button class="filter-btn" data-filter-video="hollywood" id="vfilter-hollywood">Hollywood Period</button>
-                    <button class="filter-btn" data-filter-video="historical" id="vfilter-historical">Historical Context</button>
-                </div>
-                
-                <div class="media-grid" id="videoGrid">
-                    <div class="media-card" data-vperiod="european">
-                        <div class="period-badge period-video">Film sample (European)</div>
-                        <h3 class="media-title">Wenn mich die Männer betrügen</h3>
-                        <p class="media-info">From "Alraune" (1930) • Performer: Brigitte Helm — Educational Use</p>
-                        <a href="https://www.youtube.com/watch?v=2OP5AikZuxs" target="_blank" rel="noopener noreferrer" style="display:block; position:relative; margin-bottom:1.5rem; border-radius:8px; overflow:hidden; text-decoration:none;">
-                            <div style="
-                                width:100%;
-                                aspect-ratio:16/9;
-                                background: linear-gradient(135deg, #1f2937 0%, #374151 60%, #4b5563 100%);
-                                display:flex;
-                                flex-direction:column;
-                                align-items:center;
-                                justify-content:center;
-                                gap:0.75rem;
-                                transition: all 0.3s ease;
-                                position:relative;
-                            ">
-                                <div style="
-                                    width:64px; height:64px;
-                                    border-radius:50%;
-                                    background: rgba(255,255,255,0.15);
-                                    backdrop-filter: blur(4px);
-                                    display:flex; align-items:center; justify-content:center;
-                                    border: 2px solid rgba(255,255,255,0.3);
-                                    transition: all 0.3s ease;
-                                ">
-                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="white" style="margin-left:3px;">
-                                        <polygon points="5,3 19,12 5,21"/>
-                                    </svg>
-                                </div>
-                                <span style="color:rgba(255,255,255,0.9); font-size:0.85rem; font-weight:500; letter-spacing:0.03em;">
-                                    ▶ Watch on YouTube
-                                </span>
-                            </div>
-                        </a>
-                        <p class="media-description">
-                            The song — a tango from the feature film 'Alraune'.
-                        </p>
-                    </div>
-
-                    <div class="media-card" data-vperiod="european">
-                        <div class="period-badge period-video">Film sample (European)</div>
-                        <h3 class="media-title">Alraune</h3>
-                        <p class="media-info">Feature Film (1929/1930) • Dir: Richard Oswald • Richard Oswald-Produktion GmbH — Filmanfang via filmportal.de</p>
-                        <a href="https://www.filmportal.de/video/alraune-19291930" target="_blank" rel="noopener noreferrer" style="display:block; position:relative; margin-bottom:1.5rem; border-radius:8px; overflow:hidden; text-decoration:none;">
-                            <div style="
-                                width:100%;
-                                aspect-ratio:16/9;
-                                background: linear-gradient(135deg, #1f2937 0%, #374151 60%, #4b5563 100%);
-                                display:flex;
-                                flex-direction:column;
-                                align-items:center;
-                                justify-content:center;
-                                gap:0.75rem;
-                                transition: all 0.3s ease;
-                                position:relative;
-                            ">
-                                <div style="
-                                    width:64px; height:64px;
-                                    border-radius:50%;
-                                    background: rgba(255,255,255,0.15);
-                                    backdrop-filter: blur(4px);
-                                    display:flex; align-items:center; justify-content:center;
-                                    border: 2px solid rgba(255,255,255,0.3);
-                                    transition: all 0.3s ease;
-                                ">
-                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="white" style="margin-left:3px;">
-                                        <polygon points="5,3 19,12 5,21"/>
-                                    </svg>
-                                </div>
-                                <span style="color:rgba(255,255,255,0.9); font-size:0.85rem; font-weight:500; letter-spacing:0.03em;">
-                                    ▶ Watch on filmportal.de
-                                </span>
-                                <span style="color:rgba(255,255,255,0.5); font-size:0.7rem; letter-spacing:0.05em; text-transform:uppercase;">
-                                    Filmanfang • 06:58 min • © DFF – Deutsches Filminstitut &amp; Filmmuseum
-                                </span>
-                            </div>
-                        </a>
-                        <p class="media-description">
-                            Early sound film directed by Richard Oswald, featuring music by Bronisław Kaper, including the tango 
-                            "Wenn mich die Männer betrügen" performed by Brigitte Helm. The film's opening (first 5 minutes) 
-                            is available on filmportal.de, digitized in 2021 as part of the Förderprogramm Filmerbe (FFE). 
-                            Click above to watch on the original source.
-                        </p>
-                    </div>
-                    
-                    <div class="media-card" data-vperiod="european">
-                        <div class="period-badge period-video">Film sample (European)</div>
-                        <h3 class="media-title">Heut' bin ich gut aufgelegt</h3>
-                        <p class="media-info">From "Ein toller Einfall" (1932) • Performer: Willy Fritsch & Rosy Barsony — Educational Use</p>
-                        <a href="https://www.youtube.com/watch?v=zLnPzr3MoAY" target="_blank" rel="noopener noreferrer" style="display:block; position:relative; margin-bottom:1.5rem; border-radius:8px; overflow:hidden; text-decoration:none;">
-                            <div style="
-                                width:100%;
-                                aspect-ratio:16/9;
-                                background: linear-gradient(135deg, #1f2937 0%, #374151 60%, #4b5563 100%);
-                                display:flex;
-                                flex-direction:column;
-                                align-items:center;
-                                justify-content:center;
-                                gap:0.75rem;
-                                transition: all 0.3s ease;
-                                position:relative;
-                            ">
-                                <div style="
-                                    width:64px; height:64px;
-                                    border-radius:50%;
-                                    background: rgba(255,255,255,0.15);
-                                    backdrop-filter: blur(4px);
-                                    display:flex; align-items:center; justify-content:center;
-                                    border: 2px solid rgba(255,255,255,0.3);
-                                    transition: all 0.3s ease;
-                                ">
-                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="white" style="margin-left:3px;">
-                                        <polygon points="5,3 19,12 5,21"/>
-                                    </svg>
-                                </div>
-                                <span style="color:rgba(255,255,255,0.9); font-size:0.85rem; font-weight:500; letter-spacing:0.03em;">
-                                    ▶ Watch on YouTube
-                                </span>
-                            </div>
-                        </a>
-                        <p class="media-description">
-                            The song — a foxtrot from the feature film 'Ein toller Einfall'. This song became one of the popular 
-                            entertainment pieces of the pre-war era, with its light melody and cheerful mood reflecting the lively spirit of the Roaring Twenties.
-                        </p>
-                    </div>
-
-                    <div class="media-card" data-vperiod="european">
-                        <div class="period-badge period-video">Film sample (European)</div>
-                        <h3 class="media-title">Ein toller Einfall</h3>
-                        <p class="media-info">Feature Film (1932) • Dir: Kurt Gerron • Music: Bronisław Kaper &amp; Walter Jurmann • UFA Production — Filmanfang via filmportal.de</p>
-                        <a href="https://www.filmportal.de/video/ein-toller-einfall-1932" target="_blank" rel="noopener noreferrer" style="display:block; position:relative; margin-bottom:1.5rem; border-radius:8px; overflow:hidden; text-decoration:none;">
-                            <div style="
-                                width:100%;
-                                aspect-ratio:16/9;
-                                background: linear-gradient(135deg, #1f2937 0%, #374151 60%, #4b5563 100%);
-                                display:flex;
-                                flex-direction:column;
-                                align-items:center;
-                                justify-content:center;
-                                gap:0.75rem;
-                                transition: all 0.3s ease;
-                                position:relative;
-                            ">
-                                <div style="
-                                    width:64px; height:64px;
-                                    border-radius:50%;
-                                    background: rgba(255,255,255,0.15);
-                                    backdrop-filter: blur(4px);
-                                    display:flex; align-items:center; justify-content:center;
-                                    border: 2px solid rgba(255,255,255,0.3);
-                                    transition: all 0.3s ease;
-                                ">
-                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="white" style="margin-left:3px;">
-                                        <polygon points="5,3 19,12 5,21"/>
-                                    </svg>
-                                </div>
-                                <span style="color:rgba(255,255,255,0.9); font-size:0.85rem; font-weight:500; letter-spacing:0.03em;">
-                                    ▶ Watch on filmportal.de
-                                </span>
-                                <span style="color:rgba(255,255,255,0.5); font-size:0.7rem; letter-spacing:0.05em; text-transform:uppercase;">
-                                    Filmanfang • 08:49 min • © Friedrich-Wilhelm-Murnau-Stiftung
-                                </span>
-                            </div>
-                        </a>
-                        <p class="media-description">
-                            UFA musical comedy directed by Kurt Gerron, featuring songs by Bronisław Kaper and Walter Jurmann, 
-                            including "Heut' bin ich gut aufgelegt". The film's opening (first 5 minutes) is available on 
-                            filmportal.de, digitized in 2023 as part of the Förderprogramm Filmerbe (FFE). Click above to watch on the original source.
-                        </p>
-                    </div>
-
-                    <div class="media-card" data-vperiod="european">
-                        <div class="period-badge period-video">Film sample (European)</div>
-                        <h3 class="media-title">Melodie der Liebe</h3>
-                        <p class="media-info">Feature Film (1932) • Dir: Georg Jacoby • Reichsliga-Film GmbH — Filmanfang via filmportal.de</p>
-                        <a href="https://www.filmportal.de/video/melodie-der-liebe-1932" target="_blank" rel="noopener noreferrer" style="display:block; position:relative; margin-bottom:1.5rem; border-radius:8px; overflow:hidden; text-decoration:none;">
-                            <div style="
-                                width:100%;
-                                aspect-ratio:16/9;
-                                background: linear-gradient(135deg, #1f2937 0%, #374151 60%, #4b5563 100%);
-                                display:flex;
-                                flex-direction:column;
-                                align-items:center;
-                                justify-content:center;
-                                gap:0.75rem;
-                                transition: all 0.3s ease;
-                                position:relative;
-                            ">
-                                <div style="
-                                    width:64px; height:64px;
-                                    border-radius:50%;
-                                    background: rgba(255,255,255,0.15);
-                                    backdrop-filter: blur(4px);
-                                    display:flex; align-items:center; justify-content:center;
-                                    border: 2px solid rgba(255,255,255,0.3);
-                                    transition: all 0.3s ease;
-                                ">
-                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="white" style="margin-left:3px;">
-                                        <polygon points="5,3 19,12 5,21"/>
-                                    </svg>
-                                </div>
-                                <span style="color:rgba(255,255,255,0.9); font-size:0.85rem; font-weight:500; letter-spacing:0.03em;">
-                                    ▶ Watch on filmportal.de
-                                </span>
-                                <span style="color:rgba(255,255,255,0.5); font-size:0.7rem; letter-spacing:0.05em; text-transform:uppercase;">
-                                    Filmanfang • 12:59 min • © DFF – Deutsches Filminstitut &amp; Filmmuseum
-                                </span>
-                            </div>
-                        </a>
-                        <p class="media-description">
-                            Musical comedy directed by Georg Jacoby featuring songs by Bronisław Kaper and Walter Jurmann. 
-                            The film's opening (first 5 minutes) is available on filmportal.de, digitized in 2024 as part of the 
-                            Förderprogramm Filmerbe (FFE). Click above to watch on the original source.
-                        </p>
-                    </div>
-
-                    
-                    <div class="media-card" data-vperiod="european">
-                        <div class="period-badge period-video">Film sample (European)</div>
-                        <h3 class="media-title">Kind, ich freu' mich auf Dein Kommen</h3>
-                        <p class="media-info">Feature Film (1933) • Dir: Kurt Gerron, Erich von Neusser • UFA Production — Filmanfang via filmportal.de</p>
-                        <a href="https://www.filmportal.de/node/1999/video/2114716" target="_blank" rel="noopener noreferrer" style="display:block; position:relative; margin-bottom:1.5rem; border-radius:8px; overflow:hidden; text-decoration:none;">
-                            <div style="
-                                width:100%;
-                                aspect-ratio:16/9;
-                                background: linear-gradient(135deg, #1f2937 0%, #374151 60%, #4b5563 100%);
-                                display:flex;
-                                flex-direction:column;
-                                align-items:center;
-                                justify-content:center;
-                                gap:0.75rem;
-                                transition: all 0.3s ease;
-                                position:relative;
-                            ">
-                                <div style="
-                                    width:64px; height:64px;
-                                    border-radius:50%;
-                                    background: rgba(255,255,255,0.15);
-                                    backdrop-filter: blur(4px);
-                                    display:flex; align-items:center; justify-content:center;
-                                    border: 2px solid rgba(255,255,255,0.3);
-                                    transition: all 0.3s ease;
-                                ">
-                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="white" style="margin-left:3px;">
-                                        <polygon points="5,3 19,12 5,21"/>
-                                    </svg>
-                                </div>
-                                <span style="color:rgba(255,255,255,0.9); font-size:0.85rem; font-weight:500; letter-spacing:0.03em;">
-                                    ▶ Watch on filmportal.de
-                                </span>
-                                <span style="color:rgba(255,255,255,0.5); font-size:0.7rem; letter-spacing:0.05em; text-transform:uppercase;">
-                                    Filmanfang • 07:02 min • © Friedrich-Wilhelm-Murnau-Stiftung
-                                </span>
-                            </div>
-                        </a>
-                        <p class="media-description">
-                            UFA comedy featuring music by Bronisław Kaper (credited as Bronislau Kaper). The film's opening 
-                            (first 5 minutes) is available on filmportal.de, digitized in 2022 as part of the Förderprogramm 
-                            Filmerbe (FFE). Click above to watch on the original source.
-                        </p>
-                    </div>
-
-                    <div class="media-card" data-vperiod="european">
-                        <div class="period-badge period-video">Film sample (European)</div>
-                        <h3 class="media-title">Funiculì funiculà</h3>
-                        <p class="media-info">From "Abenteuer am Lido" (1933) • Performer: Alfred Piccaver — Educational Use</p>
-                        <a href="https://vkvideo.ru/video-80199384_456239028" target="_blank" rel="noopener noreferrer" style="display:block; position:relative; margin-bottom:1.5rem; border-radius:8px; overflow:hidden; text-decoration:none;">
-                            <div style="
-                                width:100%;
-                                aspect-ratio:16/9;
-                                background: linear-gradient(135deg, #1f2937 0%, #374151 60%, #4b5563 100%);
-                                display:flex;
-                                flex-direction:column;
-                                align-items:center;
-                                justify-content:center;
-                                gap:0.75rem;
-                                transition: all 0.3s ease;
-                                position:relative;
-                            ">
-                                <div style="
-                                    width:64px; height:64px;
-                                    border-radius:50%;
-                                    background: rgba(255,255,255,0.15);
-                                    backdrop-filter: blur(4px);
-                                    display:flex; align-items:center; justify-content:center;
-                                    border: 2px solid rgba(255,255,255,0.3);
-                                    transition: all 0.3s ease;
-                                ">
-                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="white" style="margin-left:3px;">
-                                        <polygon points="5,3 19,12 5,21"/>
-                                    </svg>
-                                </div>
-                                <span style="color:rgba(255,255,255,0.9); font-size:0.85rem; font-weight:500; letter-spacing:0.03em;">
-                                    ▶ Watch on VK Video
-                                </span>
-                            </div>
-                        </a>
-                        <p class="media-description">
-                            Neapolitan song by Luigi Denza. Model for the song 'Così, Cosa'
-                        </p>
-                    </div>
-
-                    <div class="media-card" data-vperiod="european">
-                        <div class="period-badge period-video">Film sample (European)</div>
-                        <h3 class="media-title">Natacha</h3>
-                        <p class="media-info">From "Les nuits moscovites" (1934) • Lyrics: André de Badet • With Walter Jurmann — Educational Use</p>
-                        <a href="https://www.youtube.com/watch?v=fBixjVOoN3I" target="_blank" rel="noopener noreferrer" style="display:block; position:relative; margin-bottom:1.5rem; border-radius:8px; overflow:hidden; text-decoration:none;">
-                            <div style="
-                                width:100%;
-                                aspect-ratio:16/9;
-                                background: linear-gradient(135deg, #1f2937 0%, #374151 60%, #4b5563 100%);
-                                display:flex;
-                                flex-direction:column;
-                                align-items:center;
-                                justify-content:center;
-                                gap:0.75rem;
-                                transition: all 0.3s ease;
-                                position:relative;
-                            ">
-                                <div style="
-                                    width:64px; height:64px;
-                                    border-radius:50%;
-                                    background: rgba(255,255,255,0.15);
-                                    backdrop-filter: blur(4px);
-                                    display:flex; align-items:center; justify-content:center;
-                                    border: 2px solid rgba(255,255,255,0.3);
-                                    transition: all 0.3s ease;
-                                ">
-                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="white" style="margin-left:3px;">
-                                        <polygon points="5,3 19,12 5,21"/>
-                                    </svg>
-                                </div>
-                                <span style="color:rgba(255,255,255,0.9); font-size:0.85rem; font-weight:500; letter-spacing:0.03em;">
-                                    ▶ Watch on YouTube
-                                </span>
-                            </div>
-                        </a>
-                        <p class="media-description">
-                            Foxtrot russe song from Kaper's European period, composed for French cinema during his final years before emigration to Hollywood.
-                        </p>
-                    </div>
-
-                    <div class="media-card" data-vperiod="historical">
-                        <div class="period-badge period-historical">Historical Context</div>
-                        <h3 class="media-title">UFA Studios Fires Jewish Employees</h3>
-                        <p class="media-info">Historical Footage • Cinema's Exiles www.pbs.org — Educational Use</p>
-                        <a href="https://www.pbs.org/wnet/cinemasexiles/video/video-exclusive-ufa-studios-fires-jewish-employees/64/" target="_blank" rel="noopener noreferrer" style="display:block; position:relative; margin-bottom:1.5rem; border-radius:8px; overflow:hidden; text-decoration:none;">
-                            <div style="
-                                width:100%;
-                                aspect-ratio:16/9;
-                                background: linear-gradient(135deg, #1f2937 0%, #374151 60%, #4b5563 100%);
-                                display:flex;
-                                flex-direction:column;
-                                align-items:center;
-                                justify-content:center;
-                                gap:0.75rem;
-                                transition: all 0.3s ease;
-                                position:relative;
-                            ">
-                                <div style="
-                                    width:64px; height:64px;
-                                    border-radius:50%;
-                                    background: rgba(255,255,255,0.15);
-                                    backdrop-filter: blur(4px);
-                                    display:flex; align-items:center; justify-content:center;
-                                    border: 2px solid rgba(255,255,255,0.3);
-                                    transition: all 0.3s ease;
-                                ">
-                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="white" style="margin-left:3px;">
-                                        <polygon points="5,3 19,12 5,21"/>
-                                    </svg>
-                                </div>
-                                <span style="color:rgba(255,255,255,0.9); font-size:0.85rem; font-weight:500; letter-spacing:0.03em;">
-                                    ▶ Watch on PBS
-                                </span>
-                            </div>
-                        </a>
-                        <p class="media-description">
-                            UFA studios, a giant of Berlin's cinema before World War II, starts firing Jewish employees under pressure from the Nazi party.
-                        </p>
-                    </div>
-                    
-                    <div class="media-card" data-vperiod="historical">
-                        <div class="period-badge period-historical">Historical Context</div>
-                        <h3 class="media-title">MGM Studios in the 1930s</h3>
-                        <p class="media-info">Historical Footage • Public Domain • Circa 1935-1939 — Educational Use</p>
-                        <a href="https://www.youtube.com/watch?v=vnFUeKkApyE" target="_blank" rel="noopener noreferrer" style="display:block; position:relative; margin-bottom:1.5rem; border-radius:8px; overflow:hidden; text-decoration:none;">
-                            <div style="
-                                width:100%;
-                                aspect-ratio:16/9;
-                                background: linear-gradient(135deg, #1f2937 0%, #374151 60%, #4b5563 100%);
-                                display:flex;
-                                flex-direction:column;
-                                align-items:center;
-                                justify-content:center;
-                                gap:0.75rem;
-                                transition: all 0.3s ease;
-                                position:relative;
-                            ">
-                                <div style="
-                                    width:64px; height:64px;
-                                    border-radius:50%;
-                                    background: rgba(255,255,255,0.15);
-                                    backdrop-filter: blur(4px);
-                                    display:flex; align-items:center; justify-content:center;
-                                    border: 2px solid rgba(255,255,255,0.3);
-                                    transition: all 0.3s ease;
-                                ">
-                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="white" style="margin-left:3px;">
-                                        <polygon points="5,3 19,12 5,21"/>
-                                    </svg>
-                                </div>
-                                <span style="color:rgba(255,255,255,0.9); font-size:0.85rem; font-weight:500; letter-spacing:0.03em;">
-                                    ▶ Watch on YouTube
-                                </span>
-                            </div>
-                        </a>
-                        <p class="media-description">
-                            Rare footage showing the MGM lot where Kaper worked during his most productive 
-                            Hollywood years.
-                        </p>
-                    </div>
-                    
-                    <div class="media-card" data-vperiod="hollywood">
-                        <div class="period-badge period-video">Film sample (Hollywood)</div>
-                        <h3 class="media-title">Così, Cosa</h3>
-                        <p class="media-info">From "A Night at the Opera" (1935) • With Walter Jurmann • Lyrics: Ned Washington — Educational Use</p>
-                        <a href="https://www.youtube.com/watch?v=GilH6c5TFEA" target="_blank" rel="noopener noreferrer" style="display:block; position:relative; margin-bottom:1.5rem; border-radius:8px; overflow:hidden; text-decoration:none;">
-                            <div style="
-                                width:100%;
-                                aspect-ratio:16/9;
-                                background: linear-gradient(135deg, #1f2937 0%, #374151 60%, #4b5563 100%);
-                                display:flex;
-                                flex-direction:column;
-                                align-items:center;
-                                justify-content:center;
-                                gap:0.75rem;
-                                transition: all 0.3s ease;
-                                position:relative;
-                            ">
-                                <div style="
-                                    width:64px; height:64px;
-                                    border-radius:50%;
-                                    background: rgba(255,255,255,0.15);
-                                    backdrop-filter: blur(4px);
-                                    display:flex; align-items:center; justify-content:center;
-                                    border: 2px solid rgba(255,255,255,0.3);
-                                    transition: all 0.3s ease;
-                                ">
-                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="white" style="margin-left:3px;">
-                                        <polygon points="5,3 19,12 5,21"/>
-                                    </svg>
-                                </div>
-                                <span style="color:rgba(255,255,255,0.9); font-size:0.85rem; font-weight:500; letter-spacing:0.03em;">
-                                    ▶ Watch on YouTube
-                                </span>
-                            </div>
-                        </a>
-                        <p class="media-description">
-                            One of Kaper and Jurmann's most memorable compositions for the Marx Brothers film. 
-                            This excerpt showcases their distinctive melodic style that bridged European 
-                            sophistication with American entertainment sensibilities.
-                        </p>
-                    </div>
-
-                    <div class="media-card" data-vperiod="hollywood">
-                        <div class="period-badge period-video">Film sample (Hollywood)</div>
-                        <h3 class="media-title">Someone to care for me</h3>
-                        <p class="media-info">From "Three Smart Girls" (1936) • With Walter Jurmann • Lyrics: Gus Kahn — Educational Use</p>
-                        <a href="https://vkvideo.ru/video-68583631_456242062" target="_blank" rel="noopener noreferrer" style="display:block; position:relative; margin-bottom:1.5rem; border-radius:8px; overflow:hidden; text-decoration:none;">
-                            <div style="
-                                width:100%;
-                                aspect-ratio:16/9;
-                                background: linear-gradient(135deg, #1f2937 0%, #374151 60%, #4b5563 100%);
-                                display:flex;
-                                flex-direction:column;
-                                align-items:center;
-                                justify-content:center;
-                                gap:0.75rem;
-                                transition: all 0.3s ease;
-                                position:relative;
-                            ">
-                                <div style="
-                                    width:64px; height:64px;
-                                    border-radius:50%;
-                                    background: rgba(255,255,255,0.15);
-                                    backdrop-filter: blur(4px);
-                                    display:flex; align-items:center; justify-content:center;
-                                    border: 2px solid rgba(255,255,255,0.3);
-                                    transition: all 0.3s ease;
-                                ">
-                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="white" style="margin-left:3px;">
-                                        <polygon points="5,3 19,12 5,21"/>
-                                    </svg>
-                                </div>
-                                <span style="color:rgba(255,255,255,0.9); font-size:0.85rem; font-weight:500; letter-spacing:0.03em;">
-                                    ▶ Watch on VK Video
-                                </span>
-                            </div>
-                        </a>
-                        <p class="media-description">
-                            One of Kaper and Jurmann's songs for American musical comedy film directed by Henry Koster, featuring Deana Durbin.
-                        </p>
-                    </div>
-                    
-                    <div class="media-card" data-vperiod="hollywood">
-                        <div class="period-badge period-video">Film sample (Hollywood)</div>
-                        <h3 class="media-title">San Francisco</h3>
-                        <p class="media-info">From "San Francisco" (1936) • With Walter Jurmann • Lyrics: Gus Kahn • MGM Production — Educational Use</p>
-                        <a href="https://www.youtube.com/watch?v=dv6mHsXKI2c" target="_blank" rel="noopener noreferrer" style="display:block; position:relative; margin-bottom:1.5rem; border-radius:8px; overflow:hidden; text-decoration:none;">
-                            <div style="
-                                width:100%;
-                                aspect-ratio:16/9;
-                                background: linear-gradient(135deg, #1f2937 0%, #374151 60%, #4b5563 100%);
-                                display:flex;
-                                flex-direction:column;
-                                align-items:center;
-                                justify-content:center;
-                                gap:0.75rem;
-                                transition: all 0.3s ease;
-                                position:relative;
-                            ">
-                                <div style="
-                                    width:64px; height:64px;
-                                    border-radius:50%;
-                                    background: rgba(255,255,255,0.15);
-                                    backdrop-filter: blur(4px);
-                                    display:flex; align-items:center; justify-content:center;
-                                    border: 2px solid rgba(255,255,255,0.3);
-                                    transition: all 0.3s ease;
-                                ">
-                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="white" style="margin-left:3px;">
-                                        <polygon points="5,3 19,12 5,21"/>
-                                    </svg>
-                                </div>
-                                <span style="color:rgba(255,255,255,0.9); font-size:0.85rem; font-weight:500; letter-spacing:0.03em;">
-                                    ▶ Watch on YouTube
-                                </span>
-                            </div>
-                        </a>
-                        <p class="media-description">
-                            The title song that became synonymous with the city itself. Written during Kaper's 
-                            most productive Hollywood period, it exemplifies his successful adaptation to American 
-                            musical sensibilities while maintaining his European compositional sophistication.
-                        </p>
-                    </div>
-
-                    <div class="media-card" data-vperiod="hollywood">
-                        <div class="period-badge period-video">Film sample (Hollywood)</div>
-                        <h3 class="media-title">All God's Chillun Got Rhythm</h3>
-                        <p class="media-info">From "A Day at the Races" (1937) • Lyrics: Gus Kahn • With Walter Jurmann — Educational Use</p>
-                        <a href="https://www.youtube.com/watch?v=h5rZs84VhWo" target="_blank" rel="noopener noreferrer" style="display:block; position:relative; margin-bottom:1.5rem; border-radius:8px; overflow:hidden; text-decoration:none;">
-                            <div style="
-                                width:100%;
-                                aspect-ratio:16/9;
-                                background: linear-gradient(135deg, #1f2937 0%, #374151 60%, #4b5563 100%);
-                                display:flex;
-                                flex-direction:column;
-                                align-items:center;
-                                justify-content:center;
-                                gap:0.75rem;
-                                transition: all 0.3s ease;
-                                position:relative;
-                            ">
-                                <div style="
-                                    width:64px; height:64px;
-                                    border-radius:50%;
-                                    background: rgba(255,255,255,0.15);
-                                    backdrop-filter: blur(4px);
-                                    display:flex; align-items:center; justify-content:center;
-                                    border: 2px solid rgba(255,255,255,0.3);
-                                    transition: all 0.3s ease;
-                                ">
-                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="white" style="margin-left:3px;">
-                                        <polygon points="5,3 19,12 5,21"/>
-                                    </svg>
-                                </div>
-                                <span style="color:rgba(255,255,255,0.9); font-size:0.85rem; font-weight:500; letter-spacing:0.03em;">
-                                    ▶ Watch on YouTube
-                                </span>
-                            </div>
-                        </a>
-                        <p class="media-description">
-                            A swing-influenced number that demonstrates Kaper's versatility and adaptation 
-                            to contemporary American musical trends of the late 1930s.
-                        </p>
-                    </div>
-
-                    <div class="media-card" data-vperiod="hollywood">
-                        <div class="period-badge period-video">Film sample (Hollywood)</div>
-                        <h3 class="media-title">Swing Mr. Mendelssohn</h3>
-                        <p class="media-info">From "Everybody Sing" (1938) • Lyrics: Gus Kahn • With Walter Jurmann — Educational Use</p>
-                        <a href="https://www.youtube.com/watch?v=EVwN1M2jZqw" target="_blank" rel="noopener noreferrer" style="display:block; position:relative; margin-bottom:1.5rem; border-radius:8px; overflow:hidden; text-decoration:none;">
-                            <div style="
-                                width:100%;
-                                aspect-ratio:16/9;
-                                background: linear-gradient(135deg, #1f2937 0%, #374151 60%, #4b5563 100%);
-                                display:flex;
-                                flex-direction:column;
-                                align-items:center;
-                                justify-content:center;
-                                gap:0.75rem;
-                                transition: all 0.3s ease;
-                                position:relative;
-                            ">
-                                <div style="
-                                    width:64px; height:64px;
-                                    border-radius:50%;
-                                    background: rgba(255,255,255,0.15);
-                                    backdrop-filter: blur(4px);
-                                    display:flex; align-items:center; justify-content:center;
-                                    border: 2px solid rgba(255,255,255,0.3);
-                                    transition: all 0.3s ease;
-                                ">
-                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="white" style="margin-left:3px;">
-                                        <polygon points="5,3 19,12 5,21"/>
-                                    </svg>
-                                </div>
-                                <span style="color:rgba(255,255,255,0.9); font-size:0.85rem; font-weight:500; letter-spacing:0.03em;">
-                                    ▶ Watch on YouTube
-                                </span>
-                            </div>
-                        </a>
-                        <p class="media-description">
-                            A swing arrangement of Mendelssohn's Spring Song demonstrating Kaper's versatility and adaptation to contemporary 
-                            American musical trends of the late 1930s.
-                        </p>
-                    </div>
-
-                </div>
-            </div>
-            
-            <div id="documents" class="view">
-                <h2 class="section-title">Press Clippings, Photos & Documents</h2>
-
-                <div class="filters">
-                    <button class="filter-btn active" data-filter-doc="all" id="dfilter-all">All Periods</button>
-                    <button class="filter-btn" data-filter-doc="warsaw" id="dfilter-warsaw">Warsaw Period</button>
-                    <button class="filter-btn" data-filter-doc="berlin" id="dfilter-berlin">Berlin Period</button>
-                    <button class="filter-btn" data-filter-doc="paris" id="dfilter-paris">Paris Period</button>
-                    <button class="filter-btn" data-filter-doc="immigration" id="dfilter-immigration">Immigration to USA</button>
-                    <button class="filter-btn" data-filter-doc="hollywood" id="dfilter-hollywood">Hollywood Period</button>
-                    <button class="filter-btn" data-filter-doc="sheetmusic" id="dfilter-sheetmusic">Sheet Music</button>
-                </div>
-                
-                <div class="media-grid" id="documentsGrid">
-                    <div class="media-card" data-dperiod="warsaw">
-                        <div class="period-badge period-historical">Warsaw Period</div>
-                        <h3 class="media-title">Warsaw Years</h3>
-                        
-                        <div class="document-gallery">
-                            <div class="document-item">
-                                <img src="assets/images/timeline/metryka kapera_150 U_920.png" alt="baptism" class="document-image" onerror="this.style.display='none'" loading="lazy">
-                                <p class="document-caption">Baptism entry in the parish register</p>
-                            </div>
-                            <div class="document-item">
-                                <img src="assets/images/timeline/biblioteka-UW-1925.jpg" alt="University" class="document-image" onerror="this.style.display='none'" loading="lazy">
-                                <p class="document-caption">University of Warsaw Library</p>
-                            </div>
-
-                            <div class="document-item">
-                                <img src="assets/images/historical-context/filharmonia.jpg" alt="philharmonic" class="document-image" onerror="this.style.display='none'" loading="lazy">
-                                <p class="document-caption">Warsaw Philharmonic Hall</p>
-                            </div>
-
-                            <div class="document-item">
-                                <img src="assets/images/timeline/uw-1928.jpg" alt="University" class="document-image" onerror="this.style.display='none'" loading="lazy">
-                                <p class="document-caption">University of Warsaw Gate</p>
-                            </div>
-                            
-                            <div class="document-item">
-                                <img src="assets/images/timeline/rozenblum.jpg" alt="Warsaw press" class="document-image" onerror="this.style.display='none'" loading="lazy">
-                                <p class="document-caption">Early press coverage from Warsaw, Kurier Warszawski, 1928</p>
-                            </div>
-                            
-                            <div class="document-item">
-                                <img src="assets/images/historical-context/rozenblum1_KW_18011928.jpg" alt="Warsaw press" class="document-image" onerror="this.style.display='none'" loading="lazy">
-                                <p class="document-caption">Early press coverage from Warsaw, Kurier Warszawski, 18.01.1928</p>
-                            </div>
-
-                            <div class="document-item">
-                                <img src="assets/images/historical-context/ti_1.02.1930.jpg" alt="Warsaw press" class="document-image" onerror="this.style.display='none'" loading="lazy">
-                                <p class="document-caption">Press advertissement from Warsaw, Tygodnik Ilustrowany, 1.02.1930</p>
-                            </div>
-                        </div>
-                        
-                        <p class="media-description">
-                            Documents from Kaper's years in Warsaw.
-                        </p>
-                    </div>
-                    
-                    <div class="media-card" data-dperiod="berlin">
-                        <div class="period-badge period-historical">Berlin Period</div>
-                        <h3 class="media-title">Berlin Years</h3>
-                        
-                        <div class="document-gallery">
-                            <div class="document-item">
-                                <img src="assets/images/historical-context/ehe_mfi_19321314.jpg" alt="press" class="document-image" onerror="this.style.display='none'" loading="lazy">
-                                <p class="document-caption">Film announcement, Mein Film, 1932</p>
-                            </div>
-                            
-                            <div class="document-item">
-                                <img src="assets/images/historical-context/Harmonia_KW_27031929.jpg" alt="press" class="document-image" onerror="this.style.display='none'" loading="lazy">
-                                <p class="document-caption">Review in Kurier Warszawski, 27.03.1929</p>
-                            </div>
-
-                            <div class="document-item">
-                                <img src="assets/images/historical-context/Radjo-24-11-1929.jpg" alt="press" class="document-image" onerror="this.style.display='none'" loading="lazy">
-                                <p class="document-caption">Broadcast schedule featuring Kaper-Bick, Radjo, 24.11.1929</p>
-                            </div>
-                            
-                            <div class="document-item">
-                                <img src="assets/images/historical-context/babelsberg.png" alt="image" class="document-image" onerror="this.style.display='none'" loading="lazy">
-                                <p class="document-caption">UFA studios, Babelsberg. Drawing by Helmut Skarbina showing the Tonkreuz in the foreground</p>
-                            </div>
-
-                            <div class="document-item">
-                                <img src="assets/images/historical-context/Kaper_Berlin_1932_646.jpg" alt="telephone" class="document-image" onerror="this.style.display='none'" loading="lazy">
-                                <p class="document-caption">Berlin telephone book entry for Kaper, 1932.</p>
-                            </div>
-
-                            <div class="document-item">
-                                <img src="assets/images/historical-context/Kaper_coctail_Kiepura.jpg" alt="Kiepura" class="document-image" onerror="this.style.display='none'" loading="lazy">
-                                <p class="document-caption">Kaper with his wife Eleonora and Jan Kiepura in Paris</p>
-                            </div>
-
-                            <div class="document-item">
-                                <img src="assets/images/historical-context/Niederrheinisches Tageblatt_6.10.1930.jpg" alt="advertisement" class="document-image" onerror="this.style.display='none'" loading="lazy">
-                                <p class="document-caption">Press coverage, Niederrheinisches Tageblatt, 6.10.1930</p>
-                            </div>
-
-                            <div class="document-item">
-                                <img src="assets/images/historical-context/es-schon-kinematograph-1932-02.jpg" alt="advertisement" class="document-image" onerror="this.style.display='none'" loading="lazy">
-                                <p class="document-caption">Premiere advertisement for Es wird schon wieder besser... (dir. Kurt Gerron) at the UFA Gloria-Palast, Berlin, Kinematograph, 2/1932</p>
-                            </div>
-
-                            <div class="document-item">
-                                <img src="assets/images/historical-context/Rhein- und Ruhrzeitung_10.12.1929.jpeg" alt="ERKLA" class="document-image" onerror="this.style.display='none'" loading="lazy">
-                                <p class="document-caption">Press review, Rhein- und Ruhrzeitung, 10.12.1929</p>
-                            </div>
-
-                            <div class="document-item">
-                                <img src="assets/images/historical-context/Rhein- und Ruhrzeitung_14.02.1929.jpeg" alt="ERKLA" class="document-image" onerror="this.style.display='none'" loading="lazy">
-                                <p class="document-caption">Press coverage, Rhein- und Ruhrzeitung, 14.02.1929</p>
-                            </div>
-
-                            <div class="document-item">
-                                <img src="assets/images/historical-context/Tauber_das kino-journal_19301220.jpg" alt="displacement" class="document-image" onerror="this.style.display='none'" loading="lazy">
-                                <p class="document-caption">Press coverage, Das Kino-Journal 20.12.1930.</p>
-                            </div>
-                            <div class="document-item">
-                                <img src="assets/images/historical-context/NS-Kurier_25071933.jpg" alt="displacement" class="document-image" onerror="this.style.display='none'" loading="lazy">
-                                <p class="document-caption">Advertisement for Kind, ich freu' mich auf dein Kommen in NS-Kurier [Stuttgart], 25 July 1933. The composers' names have been omitted.</p>
-                            </div>
-                        </div>
-                        
-                        <p class="media-description">
-                            Documents from Kaper's years in Berlin.
-                        </p>
-                    </div>
-
-                    <div class="media-card" data-dperiod="paris">
-                        <div class="period-badge period-audio">Paris Period</div>
-                        <h3 class="media-title">Paris Years</h3>
-
-                    <div class="document-gallery">
-                            <div class="document-item">
-                                <img src="assets/images/historical-context/Abenteuer_mfi_19331409.jpg" alt="abenteuer" class="document-image" onerror="this.style.display='none'" loading="lazy">
-                                <p class="document-caption">Press poster of Abenteuer am Lido, Mein Film 14.09.1933</p>
-                            </div>
-                        
-                            <div class="document-item">
-                                <img src="assets/images/historical-context/f_paris_casino.jpg" alt="casino" class="document-image" onerror="this.style.display='none'" loading="lazy">
-                                <p class="document-caption">Paris, Casino de Paris</p>
-                            </div>
-                            
-                            <div class="document-item">
-                                <img src="assets/images/historical-context/Kaper_L'Informateur_de_Seine-1934-03-30.jpg" alt="advertisement" class="document-image" onerror="this.style.display='none'" loading="lazy">
-                                <p class="document-caption">Press coverage, L'Informateur de Seine, 30.03.1934</p>
-                            </div>
-
-                            <div class="document-item">
-                                <img src="assets/images/historical-context/La_Critique_cinematographique_1933-07-08.jpg" alt="advertisement" class="document-image" onerror="this.style.display='none'" loading="lazy">
-                                <p class="document-caption">Production announcement for Une Femme au volant (dir. Kurt Gerron), crediting music by Jurmann and Kaper, La Critique cinématographique, 8.07.1933</p>
-                            </div>
-
-                            <div class="document-item">
-                                <img src="assets/images/historical-context/Kaper_Le Matin_14-12-1934, p. 4:8.png" alt="advertisement" class="document-image" onerror="this.style.display='none'" loading="lazy">
-                                <p class="document-caption">Review of Les nuits moscovites. Le Matin, 14.12.1934</p>
-                            </div>
-                        </div>
-                        
-                        <p class="media-description">
-                            Documents from Kaper's years in Paris. Coming soon.
-                        </p>
-                    </div>
-                                        
-                    <div class="media-card" data-dperiod="immigration">
-                        <div class="period-badge period-document">Immigration to USA</div>
-                        <h3 class="media-title">Journey to America</h3>
-                            
-                        <div class="document-gallery">
-
-                            <div class="document-item">
-                                <img src="assets/images/historical-context/Jeunesse_magazine__champlain.jpeg" alt="Border crossing" class="document-image" onerror="this.style.display='none'" loading="lazy">
-                                <p class="document-caption">The upper deck of the S.S. Champlain</p>
-                            </div>
-                            <div class="document-item">
-                                <img src="assets/images/historical-context/certificate-of-arrival.tif" alt="arrival" class="document-image" onerror="this.style.display='none'" loading="lazy">
-                                <p class="document-caption">Nov 1, 1935; Certificate of Arrival No. 23-46078, U.S. Department of Labor, INS</p>
-                            </div>
-                            
-                            <div class="document-item">
-                                <img src="assets/images/historical-context/declaration-of-intention.tif" alt="declaration" class="document-image" onerror="this.style.display='none'" loading="lazy">
-                                <p class="document-caption">Feb 4, 1936; Declaration of Intention No. 74221, U.S. District Court, Los Angeles</p>
-                            </div>
-                            
-                            <div class="document-item">
-                                <img src="assets/images/historical-context/manifest.jpg" alt="Border crossing" class="document-image" onerror="this.style.display='none'" loading="lazy">
-                                <p class="document-caption">Calexico border crossing manifest, Nov 1, 1935</p>
-                            </div>
-
-                            <div class="document-item">
-                                <img src="assets/images/historical-context/mexicali-calexico.jpeg" alt="Border crossing" class="document-image" onerror="this.style.display='none'" loading="lazy">
-                                <p class="document-caption">Mexicali-Calexico border, 1936, <br><span style="font-size:0.8em; color:#6b7280;">Source: <a href="https://calisphere.org/item/ark:/13030/kt1489p9q0/" target="_blank" rel="noopener noreferrer" style="color:#5c4a32; text-decoration:none;">Calisphere ↗</a></span>
-                            </div>
-                        </div>
-                        
-                        <p class="media-description">
-                            Official U.S. immigration documents showing Kaper's entry through Calexico, California and his path to American citizenship.
-                        </p>
-                    </div>
-                    
-                    <div class="media-card" data-dperiod="hollywood">
-                        <div class="period-badge period-video">Hollywood Period</div>
-                        <h3 class="media-title">MGM Years</h3>
-
-                        <div class="document-gallery">
-                            <div class="document-item">
-                                <img src="assets/images/historical-context/nasz-przeglad-1934-43.jpg" alt="nasz" class="document-image" onerror="this.style.display='none'" loading="lazy">
-                                <p class="document-caption">Polish press coverage, Nasz Przegląd, 1934</p>
-                            </div>
-
-                            <div class="document-item">
-                                <img src="assets/images/historical-context/greetings-califonia.jpg" alt="postcard" class="document-image" onerror="this.style.display='none'" loading="lazy">
-                                <p class="document-caption">Historical postcard from California</p>
-                            </div>
-
-                            <div class="document-item">
-                                <img src="assets/images/historical-context/Escapade_Times_Union_1935_07_09_7.jpg" alt="escapade" class="document-image" onerror="this.style.display='none'" loading="lazy">
-                                <p class="document-caption">Press coverage, Times Union, 1935</p>
-                            </div>
-
-                            <div class="document-item">
-                                <img src="assets/images/historical-context/Escapade_Brooklyn_Eagle_1935_07_22_6.jpg" alt="escapade" class="document-image" onerror="this.style.display='none'" loading="lazy">
-                                <p class="document-caption">Press coverage, Brooklyn Eagle, 1935</p>
-                            </div>
-
-                            <div class="document-item">
-                                <img src="assets/images/historical-context/Pagans_variety_1935-11-27.jpg" alt="pagans" class="document-image" onerror="this.style.display='none'" loading="lazy">
-                                <p class="document-caption">Press coverage, Variety, 1935</p>
-                            </div>
-
-                            <div class="document-item">
-                                <img src="assets/images/historical-context/Tahiti_variety_1935-11-27.jpg" alt="tahiti" class="document-image" onerror="this.style.display='none'" loading="lazy">
-                                <p class="document-caption">Press coverage, Variety, 1935</p>
-                            </div>
-
-                            <div class="document-item">
-                                <img src="assets/images/historical-context/Continuation_Times_Union_1936_10_10_15.jpg" alt="continuation" class="document-image" onerror="this.style.display='none'" loading="lazy">
-                                <p class="document-caption">Press coverage, Times Union, 1936</p>
-                            </div>
-
-                            <div class="document-item">
-                                <img src="assets/images/historical-context/Races_The_Brooklyn_Citizen_1937_06_18_14.jpg" alt="races" class="document-image" onerror="this.style.display='none'" loading="lazy">
-                                <p class="document-caption">Press coverage, Brooklyn Eagle, 1937</p>
-                            </div>
-
-                            <div class="document-item">
-                                <img src="assets/images/historical-context/everybody-the Washington daily news, July 13, 1937.jpg" alt="races" class="document-image" onerror="this.style.display='none'" loading="lazy">
-                                <p class="document-caption">Press coverage, The Washington Daily News, 1937</p>
-                            </div>
-
-                            <div class="document-item">
-                                <img src="assets/images/historical-context/everybody_evening star (Washington, D.C.), July 4, 1937.jpg" alt="races" class="document-image" onerror="this.style.display='none'" loading="lazy">
-                                <p class="document-caption">Press coverage, Evening Star, 1937</p>
-                            </div>
-
-                            <div class="document-item">
-                                <img src="assets/images/historical-context/Everybody_Brooklyn_Eagle_1938_03_17_8.jpg" alt="everybody" class="document-image" onerror="this.style.display='none'" loading="lazy">
-                                <p class="document-caption">Press coverage, Brooklyn Eagle, 1938</p>
-                            </div>
-
-                            <div class="document-item">
-                                <img src="assets/images/historical-context/anecdote-the Washington times, October 31, 1938.jpg" alt="races" class="document-image" onerror="this.style.display='none'" loading="lazy">
-                                <p class="document-caption">Press coverage, The Washington Times, 1938</p>
-                            </div>
-                        </div>
-
-                        <p class="media-description">
-                            Press coverage, photographs, and publicity materials from Kaper's work at MGM studios during 1935-1939.
-                        </p>
-                    </div>
-                    
-                    <div class="media-card" data-dperiod="sheetmusic">
-                        <div class="period-badge period-document">Sheet Music & Publications</div>
-                        <h3 class="media-title">Works</h3>
-                        
-                        <div class="document-gallery">
-                            <div class="document-item">
-                                <img src="assets/images/historical-context/to musza.jpg" alt="To musza" class="document-image" onerror="this.style.display='none'" loading="lazy">
-                                <p class="document-caption">"To muszą śpiewać wszyscy" sheet music</p>
-                            </div>
-                            
-                            <div class="document-item">
-                                <img src="assets/images/historical-context/jak-sie-da.jpg" alt="Jak sie da" class="document-image" onerror="this.style.display='none'" loading="lazy">
-                                <p class="document-caption">"Jak się da, to się zrobi" sheet music</p>
-                            </div>
-
-                            <div class="document-item">
-                                <img src="assets/images/sheet-music/ja nie mam.jpg" alt="Ja nie mam" class="document-image" onerror="this.style.display='none'" loading="lazy">
-                                <p class="document-caption">"Ja nie mam głosu" sheet music</p>
-                            </div>
-                        </div>
-                        
-                        <p class="media-description">
-                            Collection of printed sheet music samples from various periods of Kaper's career.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            
-            <div id="credits" class="view">
-                <div class="credits-section">
-                    <h3 class="credits-title">Media Credits & Sources</h3>
-                    <div class="credits-grid">
-                        <div class="credit-category">
-                            <h4>🎵 🎬 Audio & Video Sources</h4>
-                            <ul class="credit-list">
-                                <li>Internet Archive - Public Domain recordings</li>
-                                <li>Educational excerpts under Fair Use provisions</li>
-                                <li>National Archives - Public Domain pictures</li>
-                                <li>Historical footage under Fair Use</li>
-                            </ul>
-                        </div>
-                                                
-                        <div class="credit-category">
-                            <h4>📸 Additional Resources</h4>
-                            <ul class="credit-list">
-                                <li>Historical documents and photographs</li>
-                                <li>Manuscript reproductions</li>
-                                <li>Studio photographs</li>
-                                <li>Press clippings archives</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="credit-category">
-                            <h4>⚖️ Legal Notice</h4>
-                            <ul class="credit-list">
-                                <li>All content used for educational purposes</li>
-                                <li>Limited excerpts for scholarly analysis</li>
-                                <li>No commercial use intended</li>
-                                <li>Original rights remain with copyright holders</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+      </div>
     </div>
-
-    <!-- Modal Gallery -->
-    <div id="imageModal" class="image-modal" role="dialog" aria-modal="true" aria-label="Image viewer" aria-hidden="true">
-        <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close image viewer">×</button>
+  </article>
+<article class="media-card" data-media-id="M031">
+    <figure><a class="media-card__image-link" href="records/media/M031/"><img src="assets/generated/responsive/ehe-mfi-19321314-ab4eff333bd1/960.webp" srcset="assets/generated/responsive/ehe-mfi-19321314-ab4eff333bd1/320.webp 320w, assets/generated/responsive/ehe-mfi-19321314-ab4eff333bd1/640.webp 640w, assets/generated/responsive/ehe-mfi-19321314-ab4eff333bd1/960.webp 960w, assets/generated/responsive/ehe-mfi-19321314-ab4eff333bd1/1440.webp 1440w" sizes="(max-width: 680px) calc(100vw - 2rem), (max-width: 1100px) 46vw, 27rem" width="2290" height="1409" alt="Gallery card for Bronisław Kaper’s Berlin years, combining documents, press items and film-periodical sources." loading="lazy" decoding="async"><span>Open gallery · 12 images</span></a></figure>
+    <div class="media-card__body">
+      <div class="meta-row"><span class="badge badge--type">Document Gallery</span><span class="badge badge--period" title="European · 1926–1934" aria-label="European · 1926–1934">European</span><span class="badge badge--rights badge--mixed_rights">Mixed rights</span></div>
+      <h2><a href="records/media/M031/">Berlin Years — document gallery</a></h2>
+      <p>Gallery of documents, press items and contextual sources relating to Bronisław Kaper’s Berlin years, including directory evidence and German film-periodical materials.</p>
+      
+      <div class="card__footer"><span>Document Gallery</span><span>M031</span></div>
+      <div class="media-card__actions">
+        <a href="records/media/M031/">Open gallery (12) <span aria-hidden="true">→</span></a>
         
-        <button class="modal-nav-btn modal-prev" id="modalPrevBtn" aria-label="Previous image">‹</button>
-        
-        <button class="modal-nav-btn modal-next" id="modalNextBtn" aria-label="Next image">›</button>
-        
-        <div class="modal-image-container">
-            <div class="modal-image-wrapper">
-                <img id="modalImage" src="" alt="" class="modal-image">
-            </div>
-        </div>
-        
-        <div id="modalCaption" class="modal-caption"></div>
-        
-        <div class="modal-counter">
-            <span id="imageCounter"></span>
-        </div>
+      </div>
     </div>
-    
-    <script>
-        let currentView = 'audio';
-        let currentFilter = 'all';
-        let currentImageIndex = 0;
-        let currentGalleryImages = [];
-        let lastFocusedElement = null;
-        function getFocusableElements(container){
-            return Array.from(container.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'))
-                .filter(el => !el.hasAttribute('disabled') && el.offsetParent !== null);
-        }
-
-        function filterDocuments(period) {
-            document.querySelectorAll('#documents .filters [data-filter-doc]').forEach(btn => {
-                btn.classList.toggle('active', btn.dataset.filterDoc === period);
-            });
-            document.querySelectorAll('#documentsGrid .media-card').forEach(card => {
-                card.style.display = (period === 'all' || card.dataset.dperiod === period) ? '' : 'none';
-            });
-        }
-
-        function filterVideo(period) {
-            document.querySelectorAll('#video .filters [data-filter-video]').forEach(btn => {
-                btn.classList.toggle('active', btn.dataset.filterVideo === period);
-            });
-            document.querySelectorAll('#videoGrid .media-card').forEach(card => {
-                card.style.display = (period === 'all' || card.dataset.vperiod === period) ? '' : 'none';
-            });
-        }
-
-        function showView(viewName) {
-            document.querySelectorAll('.view').forEach(view => {
-                view.classList.remove('active');
-            });
-            
-            const targetView = document.getElementById(viewName);
-            if (targetView) {
-                targetView.classList.add('active');
-            }
-            
-            document.querySelectorAll('.nav-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            
-            const activeNavBtn = document.getElementById('nav-' + viewName);
-            if (activeNavBtn) {
-                activeNavBtn.classList.add('active');
-            }
-            
-            currentView = viewName;
-            
-            if (viewName === 'audio') {
-                filterMedia(currentFilter);
-            }
-        }
-
-        function filterMedia(period) {
-            currentFilter = period;
-            
-            document.querySelectorAll('#audio .filters .filter-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            
-            const activeBtn = document.getElementById('filter-' + period);
-            if (activeBtn) {
-                activeBtn.classList.add('active');
-            }
-            
-            const cards = document.querySelectorAll('#audio .media-card');
-            cards.forEach(card => {
-                const cardPeriod = card.dataset.period;
-                if (period === 'all' || cardPeriod === period) {
-                    card.style.display = '';
-                    card.style.animation = 'fadeIn 0.6s ease-out';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        }
-
-        // Gallery functions
-        function openImageModal(img, galleryImages) {
-            lastFocusedElement = document.activeElement;
-            currentGalleryImages = galleryImages;
-            currentImageIndex = galleryImages.findIndex(item => item.src === img.src);
-            
-            const modal = document.getElementById('imageModal');
-            const modalImg = document.getElementById('modalImage');
-            const modalCaption = document.getElementById('modalCaption');
-            const imageCounter = document.getElementById('imageCounter');
-            
-            modal.style.display = 'block';
-            modal.setAttribute('aria-hidden','false');
-            modalImg.src = img.src;
-            modalImg.alt = img.alt;
-            modalCaption.textContent = img.nextElementSibling ? img.nextElementSibling.textContent : img.alt;
-            imageCounter.textContent = `${currentImageIndex + 1} / ${currentGalleryImages.length}`;
-            
-            document.body.style.overflow = 'hidden';
-            adjustModalScroll();
-            const closeBtn = document.getElementById('modalCloseBtn');
-            if (closeBtn) closeBtn.focus();
-        }
-
-        function closeImageModal() {
-            const modal = document.getElementById('imageModal');
-            modal.style.display = 'none';
-            modal.setAttribute('aria-hidden','true');
-            document.body.style.overflow = '';
-            if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') {
-                lastFocusedElement.focus();
-            }
-        }
-
-        function nextImage() {
-            currentImageIndex = (currentImageIndex + 1) % currentGalleryImages.length;
-            updateModalImage();
-        }
-
-        function previousImage() {
-            currentImageIndex = (currentImageIndex - 1 + currentGalleryImages.length) % currentGalleryImages.length;
-            updateModalImage();
-        }
-
-        function updateModalImage() {
-            const modalImg = document.getElementById('modalImage');
-            const modalCaption = document.getElementById('modalCaption');
-            const imageCounter = document.getElementById('imageCounter');
-            const currentImage = currentGalleryImages[currentImageIndex];
-            
-            modalImg.style.opacity = '0';
-            setTimeout(() => {
-                modalImg.src = currentImage.src;
-                modalImg.alt = currentImage.alt;
-                modalCaption.textContent = currentImage.caption;
-                imageCounter.textContent = `${currentImageIndex + 1} / ${currentGalleryImages.length}`;
-                modalImg.style.opacity = '1';
-                adjustModalScroll();
-            }, 150);
-        }
-
-        function adjustModalScroll() {
-            const container = document.querySelector('.modal-image-container');
-            if (container) container.scrollTop = 0;
-        }
-
-        document.addEventListener('DOMContentLoaded', function() {
-            const imageModalEl = document.getElementById('imageModal');
-            if (imageModalEl) imageModalEl.setAttribute('aria-hidden','true');
-            showView('audio');
-            
-            // Bind document filters
-            document.querySelectorAll('[data-filter-doc]').forEach(btn => {
-                btn.addEventListener('click', () => filterDocuments(btn.dataset.filterDoc));
-            });
-
-            // Bind video filters
-            document.querySelectorAll('[data-filter-video]').forEach(btn => {
-                btn.addEventListener('click', () => filterVideo(btn.dataset.filterVideo));
-            });
-
-            // Bind view navigation (no inline onclick)
-            document.querySelectorAll('.nav-btn[data-view]').forEach(btn => {
-                btn.addEventListener('click', (e) => {
-                    // Prevent navigation if it's a link
-                    if (btn.tagName.toLowerCase() === 'a') e.preventDefault();
-                    showView(btn.dataset.view);
-                });
-            });
-
-            // Bind filters (no inline onclick)
-            document.querySelectorAll('.filter-btn[data-filter]').forEach(btn => {
-                btn.addEventListener('click', () => filterMedia(btn.dataset.filter));
-            });
-
-            // Modal button bindings
-            const closeBtn = document.getElementById('modalCloseBtn');
-            const prevBtn = document.getElementById('modalPrevBtn');
-            const nextBtn = document.getElementById('modalNextBtn');
-            if (closeBtn) closeBtn.addEventListener('click', closeImageModal);
-            if (prevBtn) prevBtn.addEventListener('click', previousImage);
-            if (nextBtn) nextBtn.addEventListener('click', nextImage);
-
-            // Close modal on backdrop click
-            const modalEl = imageModalEl || document.getElementById('imageModal');
-            if (modalEl) {
-                modalEl.addEventListener('click', (e) => {
-                    if (e.target === modalEl) closeImageModal();
-                });
-            }
-
-            
-            const mediaPlayers = document.querySelectorAll('.media-player');
-            mediaPlayers.forEach(player => {
-                player.addEventListener('loadstart', function() {
-                    this.closest('.media-card').classList.add('loading');
-                });
-                
-                player.addEventListener('canplay', function() {
-                    this.closest('.media-card').classList.remove('loading');
-                });
-                
-                player.addEventListener('mouseenter', function() {
-                    this.style.transform = 'scale(1.02)';
-                    this.style.transition = 'transform 0.2s ease';
-                });
-                
-                player.addEventListener('mouseleave', function() {
-                    this.style.transform = 'scale(1)';
-                });
-            });
-            
-            document.querySelectorAll('.nav-btn').forEach(btn => {
-                btn.addEventListener('click', function() {
-                    const content = document.querySelector('.content');
-                    content.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                });
-            });
-            
-            // Keyboard navigation
-            document.addEventListener('keydown', function(e) {
-                const modal = document.getElementById('imageModal');
-                
-                if (modal.style.display === 'block') {
-                    // Focus trap
-                    if (e.key === 'Tab') {
-                        const focusables = getFocusableElements(modal);
-                        if (focusables.length) {
-                            const first = focusables[0];
-                            const last = focusables[focusables.length - 1];
-                            if (e.shiftKey && document.activeElement === first) {
-                                e.preventDefault();
-                                last.focus();
-                                return;
-                            }
-                            if (!e.shiftKey && document.activeElement === last) {
-                                e.preventDefault();
-                                first.focus();
-                                return;
-                            }
-                        }
-                    }
-                    // Gallery navigation
-                    if (e.key === 'ArrowLeft') {
-                        previousImage();
-                    } else if (e.key === 'ArrowRight') {
-                        nextImage();
-                    } else if (e.key === 'Escape') {
-                        closeImageModal();
-                    }
-                } else {
-                    // View navigation
-                    if (e.key === 'ArrowLeft') {
-                        const views = ['audio', 'video', 'documents', 'credits'];
-                        const currentIndex = views.indexOf(currentView);
-                        const prevIndex = currentIndex > 0 ? currentIndex - 1 : views.length - 1;
-                        showView(views[prevIndex]);
-                    } else if (e.key === 'ArrowRight') {
-                        const views = ['audio', 'video', 'documents', 'credits'];
-                        const currentIndex = views.indexOf(currentView);
-                        const nextIndex = currentIndex < views.length - 1 ? currentIndex + 1 : 0;
-                        showView(views[nextIndex]);
-                    }
-                }
-            });
-            
-            // Setup image galleries
-            document.querySelectorAll('.media-card').forEach(card => {
-                const gallery = card.querySelector('.document-gallery');
-                if (gallery) {
-                    const images = Array.from(gallery.querySelectorAll('.document-image'));
-                    const galleryData = images.map(img => ({
-                        src: img.src,
-                        alt: img.alt,
-                        caption: img.nextElementSibling ? img.nextElementSibling.textContent : img.alt
-                    }));
-                    
-                    images.forEach(img => {
-                        img.addEventListener('click', function() {
-                            openImageModal(this, galleryData);
-                        });
-                    });
-                }
-            });
-            
-            // Single images (not in gallery)
-            document.querySelectorAll('.document-image:not(.document-item .document-image)').forEach(img => {
-                img.addEventListener('click', function() {
-                    openImageModal(this, [{
-                        src: this.src,
-                        alt: this.alt,
-                        caption: this.alt
-                    }]);
-                });
-            });
-        });
-    </script>
-
-    <footer style="text-align:center; padding:2rem; color:#a09890; font-size:0.8rem; letter-spacing:0.08em;">
-        <div style="width:60px; height:1px; background:linear-gradient(90deg,transparent,#c4b5a0,transparent); margin:0 auto 1rem;"></div>
-        Bronisław Kaper — Composer · 1902–1983
-    </footer>
+  </article>
+<article class="media-card" data-media-id="M032">
+    <figure><a class="media-card__image-link" href="records/media/M032/"><img src="assets/generated/responsive/abenteuer-mfi-19331409-0486d9c7be8d/960.webp" srcset="assets/generated/responsive/abenteuer-mfi-19331409-0486d9c7be8d/320.webp 320w, assets/generated/responsive/abenteuer-mfi-19331409-0486d9c7be8d/640.webp 640w, assets/generated/responsive/abenteuer-mfi-19331409-0486d9c7be8d/960.webp 960w, assets/generated/responsive/abenteuer-mfi-19331409-0486d9c7be8d/1440.webp 1440w" sizes="(max-width: 680px) calc(100vw - 2rem), (max-width: 1100px) 46vw, 27rem" width="1859" height="2560" alt="Gallery card for Bronisław Kaper’s Paris years, combining press items, posters and contextual materials." loading="lazy" decoding="async"><span>Open gallery · 6 images</span></a></figure>
+    <div class="media-card__body">
+      <div class="meta-row"><span class="badge badge--type">Document Gallery</span><span class="badge badge--period" title="European · 1926–1934" aria-label="European · 1926–1934">European</span><span class="badge badge--rights badge--ok">Public domain</span></div>
+      <h2><a href="records/media/M032/">Paris Years — document gallery</a></h2>
+      <p>Gallery of press items, posters and contextual materials relating to Bronisław Kaper’s Paris years and his work in French cinema and theatrical culture, 1933–1934.</p>
+      
+      <div class="card__footer"><span>Document Gallery</span><span>M032</span></div>
+      <div class="media-card__actions">
+        <a href="records/media/M032/">Open gallery (6) <span aria-hidden="true">→</span></a>
+        
+      </div>
+    </div>
+  </article>
+<article class="media-card" data-media-id="M033">
+    <figure><a class="media-card__image-link" href="records/media/M033/"><img src="assets/generated/responsive/jeunesse-magazine-champlain-90ea9a7a1e8e/960.webp" srcset="assets/generated/responsive/jeunesse-magazine-champlain-90ea9a7a1e8e/320.webp 320w, assets/generated/responsive/jeunesse-magazine-champlain-90ea9a7a1e8e/640.webp 640w, assets/generated/responsive/jeunesse-magazine-champlain-90ea9a7a1e8e/960.webp 960w, assets/generated/responsive/jeunesse-magazine-champlain-90ea9a7a1e8e/1132.webp 1132w" sizes="(max-width: 680px) calc(100vw - 2rem), (max-width: 1100px) 46vw, 27rem" width="1132" height="1179" alt="Gallery card for Bronisław Kaper’s journey to America, combining immigration and travel documents." loading="lazy" decoding="async"><span>Open gallery · 6 images</span></a></figure>
+    <div class="media-card__body">
+      <div class="meta-row"><span class="badge badge--type">Document Gallery</span><span class="badge badge--period" title="European · 1926–1934" aria-label="European · 1926–1934">European</span><span class="badge badge--period" title="Hollywood · 1935–1939" aria-label="Hollywood · 1935–1939">Hollywood</span><span class="badge badge--rights badge--mixed_rights">Mixed rights</span></div>
+      <h2><a href="records/media/M033/">Journey to America — document gallery</a></h2>
+      <p>Gallery of immigration and travel documents relating to Bronisław Kaper’s journey to America, including arrival, declaration of intention and border-crossing records.</p>
+      
+      <div class="card__footer"><span>Document Gallery</span><span>M033</span></div>
+      <div class="media-card__actions">
+        <a href="records/media/M033/">Open gallery (6) <span aria-hidden="true">→</span></a>
+        
+      </div>
+    </div>
+  </article>
+<article class="media-card" data-media-id="M034">
+    <figure><a class="media-card__image-link" href="records/media/M034/"><img src="assets/generated/responsive/nasz-przeglad-1934-43-4a923c22f5dc/540.webp" srcset="assets/generated/responsive/nasz-przeglad-1934-43-4a923c22f5dc/320.webp 320w, assets/generated/responsive/nasz-przeglad-1934-43-4a923c22f5dc/540.webp 540w" sizes="(max-width: 680px) calc(100vw - 2rem), (max-width: 1100px) 46vw, 27rem" width="540" height="1000" alt="Gallery card for Bronisław Kaper’s MGM years, combining documents, press items and contextual images." loading="lazy" decoding="async"><span>Open gallery · 11 images</span></a></figure>
+    <div class="media-card__body">
+      <div class="meta-row"><span class="badge badge--type">Document Gallery</span><span class="badge badge--period" title="European · 1926–1934" aria-label="European · 1926–1934">European</span><span class="badge badge--period" title="Hollywood · 1935–1939" aria-label="Hollywood · 1935–1939">Hollywood</span><span class="badge badge--rights badge--ok">Public domain</span></div>
+      <h2><a href="records/media/M034/">MGM Years — document gallery</a></h2>
+      <p>Gallery of documents, press items and contextual images relating to Bronisław Kaper’s early MGM years and Hollywood career in the mid-1930s.</p>
+      
+      <div class="card__footer"><span>Document Gallery</span><span>M034</span></div>
+      <div class="media-card__actions">
+        <a href="records/media/M034/">Open gallery (11) <span aria-hidden="true">→</span></a>
+        
+      </div>
+    </div>
+  </article>
+<article class="media-card" data-media-id="M035">
+    <figure><a class="media-card__image-link" href="records/media/M035/"><img src="assets/generated/responsive/to-musza-bed36ecc1f2a/958.webp" srcset="assets/generated/responsive/to-musza-bed36ecc1f2a/320.webp 320w, assets/generated/responsive/to-musza-bed36ecc1f2a/640.webp 640w, assets/generated/responsive/to-musza-bed36ecc1f2a/958.webp 958w" sizes="(max-width: 680px) calc(100vw - 2rem), (max-width: 1100px) 46vw, 27rem" width="958" height="1258" alt="Composite/document-gallery image using selected pages from early Polish sheet-music editions connected with Kaper’s Bruno Asper publications." loading="lazy" decoding="async"><span>Open gallery · 3 images</span></a></figure>
+    <div class="media-card__body">
+      <div class="meta-row"><span class="badge badge--type">Document Gallery</span><span class="badge badge--period" title="Warsaw · 1902–1926" aria-label="Warsaw · 1902–1926">Warsaw</span><span class="badge badge--period" title="European · 1926–1934" aria-label="European · 1926–1934">European</span><span class="badge badge--rights badge--ok">Public domain</span></div>
+      <h2><a href="records/media/M035/">Early Polish sheet music — document gallery, Polona sources</a></h2>
+      <p>Selected pages from early Polish sheet-music editions of Kaper’s songs published under the Bruno/Br. Asper pseudonym, including “To muszą śpiewać wszyscy,” “Jak się da, to się zrobi!” and “Ja nie mam głosu!”.</p>
+      
+      <div class="card__footer"><span>Document Gallery</span><span>M035</span></div>
+      <div class="media-card__actions">
+        <a href="records/media/M035/">Open gallery (3) <span aria-hidden="true">→</span></a>
+        
+      </div>
+    </div>
+  </article>
+<article class="media-card" data-media-id="M037">
+    <figure><a class="media-card__preview-link" href="records/media/M037/" aria-label="View media record: Der Korvettenkapitän (1930) — Der Kinematograph trade advertisement"><img src="assets/generated/responsive/korvettenkapitan-68c8c948850e/960.webp" srcset="assets/generated/responsive/korvettenkapitan-68c8c948850e/320.webp 320w, assets/generated/responsive/korvettenkapitan-68c8c948850e/640.webp 640w, assets/generated/responsive/korvettenkapitan-68c8c948850e/960.webp 960w, assets/generated/responsive/korvettenkapitan-68c8c948850e/1440.webp 1440w" sizes="(max-width: 680px) calc(100vw - 2rem), (max-width: 1100px) 46vw, 27rem" width="2317" height="3106" alt="German trade-press advertisement for the film Der Korvettenkapitän." loading="lazy" decoding="async"></a></figure>
+    <div class="media-card__body">
+      <div class="meta-row"><span class="badge badge--type">Image</span><span class="badge badge--period" title="European · 1926–1934" aria-label="European · 1926–1934">European</span><span class="badge badge--rights badge--ok">Public domain</span></div>
+      <h2><a href="records/media/M037/">Der Korvettenkapitän (1930) — Der Kinematograph trade advertisement</a></h2>
+      <p>Trade-press advertisement for Der Korvettenkapitän, published in Der Kinematograph in 1930.</p>
+      
+      <div class="card__footer"><span>Trade Advertisement</span><span>M037</span></div>
+      <div class="media-card__actions">
+        <a href="records/media/M037/">View record <span aria-hidden="true">→</span></a>
+        
+      </div>
+    </div>
+  </article>
+<article class="media-card" data-media-id="M043">
+    <figure><a class="media-card__preview-link" href="records/media/M043/" aria-label="View media record: Fritz Rotter — portrait"><img src="assets/generated/responsive/fritz-rotter-09425451a02a/581.webp" srcset="assets/generated/responsive/fritz-rotter-09425451a02a/320.webp 320w, assets/generated/responsive/fritz-rotter-09425451a02a/581.webp 581w" sizes="(max-width: 680px) calc(100vw - 2rem), (max-width: 1100px) 46vw, 27rem" width="581" height="791" alt="Portrait of the lyricist Fritz Rotter." loading="lazy" decoding="async"></a></figure>
+    <div class="media-card__body">
+      <div class="meta-row"><span class="badge badge--type">Image</span><span class="badge badge--period" title="European · 1926–1934" aria-label="European · 1926–1934">European</span><span class="badge badge--rights badge--ok">Public domain</span></div>
+      <h2><a href="records/media/M043/">Fritz Rotter — portrait</a></h2>
+      <p>Portrait of Fritz Rotter, the lyricist associated with Kaper’s early German film songs.</p>
+      
+      <div class="card__footer"><span>Portrait</span><span>M043</span></div>
+      <div class="media-card__actions">
+        <a href="records/media/M043/">View record <span aria-hidden="true">→</span></a>
+        
+      </div>
+    </div>
+  </article>
+<article class="media-card" data-media-id="M010">
+    <figure><div class="media-preview media-preview--audio">
+        <div class="media-preview__audio-mark"><span aria-hidden="true">♪</span><strong>Audio sample</strong></div>
+        <audio controls preload="metadata" src="assets/audio/samples/rozmowa.mp3" aria-label="Play Audio rendering by Iwona Lindstedt of “Rozmowa” / “Conversation”.">Your browser does not support audio.</audio>
+      </div></figure>
+    <div class="media-card__body">
+      <div class="meta-row"><span class="badge badge--type">Audio</span><span class="badge badge--period" title="Warsaw · 1902–1926" aria-label="Warsaw · 1902–1926">Warsaw</span><span class="badge badge--rights badge--ok">Rights documented</span></div>
+      <h2><a href="records/media/M010/">Rozmowa / Conversation — audio reference</a></h2>
+      <p>Audio rendering created by Iwona Lindstedt from her own notated transcription/edition of Bronisław Kaper’s early composition “Rozmowa” / “Conversation,” preserved in the Bronislaw Kaper Papers.</p>
+      
+      <div class="card__footer"><span>Audio/Video Reference</span><span>M010</span></div>
+      <div class="media-card__actions">
+        <a href="records/media/M010/">View record <span aria-hidden="true">→</span></a>
+        
+      </div>
+    </div>
+  </article>
+<article class="media-card" data-media-id="M048">
+    <figure><a class="media-card__preview-link" href="records/media/M048/" aria-label="View media record: Bronisław Kaper — portrait as a young man"><img src="assets/generated/responsive/kaper-young0-dbd47a48955c/960.webp" srcset="assets/generated/responsive/kaper-young0-dbd47a48955c/320.webp 320w, assets/generated/responsive/kaper-young0-dbd47a48955c/640.webp 640w, assets/generated/responsive/kaper-young0-dbd47a48955c/960.webp 960w, assets/generated/responsive/kaper-young0-dbd47a48955c/1440.webp 1440w" sizes="(max-width: 680px) calc(100vw - 2rem), (max-width: 1100px) 46vw, 27rem" width="2499" height="2421" alt="Portrait of Bronisław Kaper as a young man." loading="lazy" decoding="async"></a></figure>
+    <div class="media-card__body">
+      <div class="meta-row"><span class="badge badge--type">Image</span><span class="badge badge--period" title="Warsaw · 1902–1926" aria-label="Warsaw · 1902–1926">Warsaw</span><span class="badge badge--rights badge--ok">Permission granted</span></div>
+      <h2><a href="records/media/M048/">Bronisław Kaper — portrait as a young man</a></h2>
+      <p>Portrait of Bronisław Kaper as a young man, from his University of Warsaw student-file materials.</p>
+      
+      <div class="card__footer"><span>Portrait</span><span>M048</span></div>
+      <div class="media-card__actions">
+        <a href="records/media/M048/">View record <span aria-hidden="true">→</span></a>
+        
+      </div>
+    </div>
+  </article>
+<article class="media-card" data-media-id="M051">
+    <figure><a class="media-card__preview-link" href="records/media/M051/" aria-label="View media record: Louis B. Mayer — portrait"><img src="assets/generated/responsive/louis-mayer-85a7814f4f95/960.webp" srcset="assets/generated/responsive/louis-mayer-85a7814f4f95/320.webp 320w, assets/generated/responsive/louis-mayer-85a7814f4f95/640.webp 640w, assets/generated/responsive/louis-mayer-85a7814f4f95/960.webp 960w, assets/generated/responsive/louis-mayer-85a7814f4f95/1024.webp 1024w" sizes="(max-width: 680px) calc(100vw - 2rem), (max-width: 1100px) 46vw, 27rem" width="1024" height="1388" alt="Portrait of MGM studio head Louis B. Mayer." loading="lazy" decoding="async"></a></figure>
+    <div class="media-card__body">
+      <div class="meta-row"><span class="badge badge--type">Image</span><span class="badge badge--period" title="European · 1926–1934" aria-label="European · 1926–1934">European</span><span class="badge badge--rights badge--ok">Public domain</span></div>
+      <h2><a href="records/media/M051/">Louis B. Mayer — portrait</a></h2>
+      <p>Publicity portrait of Louis B. Mayer, MGM studio head, photographed in 1934.</p>
+      
+      <div class="card__footer"><span>Portrait</span><span>M051</span></div>
+      <div class="media-card__actions">
+        <a href="records/media/M051/">View record <span aria-hidden="true">→</span></a>
+        
+      </div>
+    </div>
+  </article>
+<article class="media-card" data-media-id="M011">
+    <figure><div class="media-preview media-preview--audio">
+        <div class="media-preview__audio-mark"><span aria-hidden="true">♪</span><strong>Audio sample</strong></div>
+        <audio controls preload="metadata" src="assets/audio/samples/etiuda.mp3" aria-label="Play Audio rendering by Iwona Lindstedt of Kaper’s Etude for piano.">Your browser does not support audio.</audio>
+      </div></figure>
+    <div class="media-card__body">
+      <div class="meta-row"><span class="badge badge--type">Audio</span><span class="badge badge--period" title="Warsaw · 1902–1926" aria-label="Warsaw · 1902–1926">Warsaw</span><span class="badge badge--rights badge--ok">Rights documented</span></div>
+      <h2><a href="records/media/M011/">Etude for piano — audio reference</a></h2>
+      <p>Audio rendering created by Iwona Lindstedt from her own notated transcription/edition of Bronisław Kaper’s early Etude for piano, preserved in the Bronislaw Kaper Papers.</p>
+      
+      <div class="card__footer"><span>Audio/Video Reference</span><span>M011</span></div>
+      <div class="media-card__actions">
+        <a href="records/media/M011/">View record <span aria-hidden="true">→</span></a>
+        
+      </div>
+    </div>
+  </article>
+<article class="media-card" data-media-id="M056">
+    <figure><a class="media-card__preview-link" href="records/media/M056/" aria-label="View media record: Kurier Warszawski, 27 March 1929 — Kolonja polska w Berlinie clipping"><img src="assets/generated/responsive/1929-harmonia-e576d93d5cbb/960.webp" srcset="assets/generated/responsive/1929-harmonia-e576d93d5cbb/320.webp 320w, assets/generated/responsive/1929-harmonia-e576d93d5cbb/640.webp 640w, assets/generated/responsive/1929-harmonia-e576d93d5cbb/960.webp 960w, assets/generated/responsive/1929-harmonia-e576d93d5cbb/1044.webp 1044w" sizes="(max-width: 680px) calc(100vw - 2rem), (max-width: 1100px) 46vw, 27rem" width="1044" height="235" alt="Polish newspaper clipping from Kurier Warszawski, 27 March 1929." loading="lazy" decoding="async"></a></figure>
+    <div class="media-card__body">
+      <div class="meta-row"><span class="badge badge--type">Image</span><span class="badge badge--period" title="European · 1926–1934" aria-label="European · 1926–1934">European</span><span class="badge badge--rights badge--ok">Public domain</span></div>
+      <h2><a href="records/media/M056/">Kurier Warszawski, 27 March 1929 — Kolonja polska w Berlinie clipping</a></h2>
+      <p>Press clipping from “Kolonja polska w Berlinie,” published in Kurier Warszawski on 27 March 1929, documenting Polish cultural activity in Berlin and Kaper’s milieu.</p>
+      
+      <div class="card__footer"><span>Press Clipping</span><span>M056</span></div>
+      <div class="media-card__actions">
+        <a href="records/media/M056/">View record <span aria-hidden="true">→</span></a>
+        
+      </div>
+    </div>
+  </article>
+<article class="media-card" data-media-id="M060">
+    <figure><a class="media-card__preview-link" href="records/media/M060/" aria-label="View media record: Marriage register, Standesamt I in Berlin — archival document, Kaper entry, 1927"><img src="assets/generated/responsive/p-rep-800-0284-kaper-e6df3e107039/960.webp" srcset="assets/generated/responsive/p-rep-800-0284-kaper-e6df3e107039/320.webp 320w, assets/generated/responsive/p-rep-800-0284-kaper-e6df3e107039/640.webp 640w, assets/generated/responsive/p-rep-800-0284-kaper-e6df3e107039/960.webp 960w, assets/generated/responsive/p-rep-800-0284-kaper-e6df3e107039/1152.webp 1152w" sizes="(max-width: 680px) calc(100vw - 2rem), (max-width: 1100px) 46vw, 27rem" width="1152" height="111" alt="Cropped row from a Standesamt I register naming Bronisław Kaper." loading="lazy" decoding="async"></a></figure>
+    <div class="media-card__body">
+      <div class="meta-row"><span class="badge badge--type">Image</span><span class="badge badge--period" title="European · 1926–1934" aria-label="European · 1926–1934">European</span><span class="badge badge--rights badge--ok">Public domain</span></div>
+      <h2><a href="records/media/M060/">Marriage register, Standesamt I in Berlin — archival document, Kaper entry, 1927</a></h2>
+      <p>Standesamt I in Berlin register entry naming Bronisław Kaper, 1927.</p>
+      
+      <div class="card__footer"><span>Archival Document</span><span>M060</span></div>
+      <div class="media-card__actions">
+        <a href="records/media/M060/">View record <span aria-hidden="true">→</span></a>
+        
+      </div>
+    </div>
+  </article>
+<article class="media-card" data-media-id="M012">
+    <figure><div class="media-preview media-preview--audio">
+        <div class="media-preview__audio-mark"><span aria-hidden="true">♪</span><strong>Audio sample</strong></div>
+        <audio controls preload="metadata" src="assets/audio/samples/sonatina-1.mp3" aria-label="Play Audio rendering by Iwona Lindstedt of the first movement of Kaper’s Sonatina for piano.">Your browser does not support audio.</audio>
+      </div></figure>
+    <div class="media-card__body">
+      <div class="meta-row"><span class="badge badge--type">Audio</span><span class="badge badge--period" title="European · 1926–1934" aria-label="European · 1926–1934">European</span><span class="badge badge--rights badge--ok">Rights documented</span></div>
+      <h2><a href="records/media/M012/">Sonatina for piano, I — audio reference</a></h2>
+      <p>Audio rendering created by Iwona Lindstedt from her own notated transcription/edition of the first movement of Bronisław Kaper’s Sonatina for piano, preserved in the Bronislaw Kaper Papers.</p>
+      
+      <div class="card__footer"><span>Audio/Video Reference</span><span>M012</span></div>
+      <div class="media-card__actions">
+        <a href="records/media/M012/">View record <span aria-hidden="true">→</span></a>
+        
+      </div>
+    </div>
+  </article>
+<article class="media-card" data-media-id="M061">
+    <figure><a class="media-card__preview-link" href="records/media/M061/" aria-label="View media record: Marriage register, Standesamt I in Berlin — archival document, Sirot entry, 1927"><img src="assets/generated/responsive/p-rep-800-0284-sirot-6e4a2ee4b79a/960.webp" srcset="assets/generated/responsive/p-rep-800-0284-sirot-6e4a2ee4b79a/320.webp 320w, assets/generated/responsive/p-rep-800-0284-sirot-6e4a2ee4b79a/640.webp 640w, assets/generated/responsive/p-rep-800-0284-sirot-6e4a2ee4b79a/960.webp 960w, assets/generated/responsive/p-rep-800-0284-sirot-6e4a2ee4b79a/1169.webp 1169w" sizes="(max-width: 680px) calc(100vw - 2rem), (max-width: 1100px) 46vw, 27rem" width="1169" height="122" alt="Cropped row from a Standesamt I register for Sirot." loading="lazy" decoding="async"></a></figure>
+    <div class="media-card__body">
+      <div class="meta-row"><span class="badge badge--type">Image</span><span class="badge badge--period" title="European · 1926–1934" aria-label="European · 1926–1934">European</span><span class="badge badge--rights badge--ok">Public domain</span></div>
+      <h2><a href="records/media/M061/">Marriage register, Standesamt I in Berlin — archival document, Sirot entry, 1927</a></h2>
+      <p>Standesamt I in Berlin register entry for Sirot, corresponding to the 1927 Kaper register record.</p>
+      
+      <div class="card__footer"><span>Archival Document</span><span>M061</span></div>
+      <div class="media-card__actions">
+        <a href="records/media/M061/">View record <span aria-hidden="true">→</span></a>
+        
+      </div>
+    </div>
+  </article>
+<article class="media-card" data-media-id="M062">
+    <figure><a class="media-card__preview-link" href="records/media/M062/" aria-label="View media record: Rhein- und Ruhrzeitung, 14 February 1929 — Bick &amp; Kaper premiere notice"><img src="assets/generated/responsive/rhein-und-ruhrzeitung-1929-02-14-87dd8c8e3c94/960.webp" srcset="assets/generated/responsive/rhein-und-ruhrzeitung-1929-02-14-87dd8c8e3c94/320.webp 320w, assets/generated/responsive/rhein-und-ruhrzeitung-1929-02-14-87dd8c8e3c94/640.webp 640w, assets/generated/responsive/rhein-und-ruhrzeitung-1929-02-14-87dd8c8e3c94/960.webp 960w, assets/generated/responsive/rhein-und-ruhrzeitung-1929-02-14-87dd8c8e3c94/1110.webp 1110w" sizes="(max-width: 680px) calc(100vw - 2rem), (max-width: 1100px) 46vw, 27rem" width="1110" height="586" alt="German newspaper clipping from Rhein- und Ruhrzeitung, 14 February 1929." loading="lazy" decoding="async"></a></figure>
+    <div class="media-card__body">
+      <div class="meta-row"><span class="badge badge--type">Image</span><span class="badge badge--period" title="European · 1926–1934" aria-label="European · 1926–1934">European</span><span class="badge badge--rights badge--ok">Public domain</span></div>
+      <h2><a href="records/media/M062/">Rhein- und Ruhrzeitung, 14 February 1929 — Bick &amp; Kaper premiere notice</a></h2>
+      <p>Press notice connected with the Berlin premiere appearance of the Bick–Kaper piano duo, published in Rhein- und Ruhrzeitung on 14 February 1929.</p>
+      
+      <div class="card__footer"><span>Press Clipping</span><span>M062</span></div>
+      <div class="media-card__actions">
+        <a href="records/media/M062/">View record <span aria-hidden="true">→</span></a>
+        
+      </div>
+    </div>
+  </article>
+<article class="media-card" data-media-id="M013">
+    <figure><div class="media-preview media-preview--audio">
+        <div class="media-preview__audio-mark"><span aria-hidden="true">♪</span><strong>Audio sample</strong></div>
+        <audio controls preload="metadata" src="assets/audio/samples/sonatina-2.mp3" aria-label="Play Audio rendering by Iwona Lindstedt of the second movement of Kaper’s Sonatina for piano.">Your browser does not support audio.</audio>
+      </div></figure>
+    <div class="media-card__body">
+      <div class="meta-row"><span class="badge badge--type">Audio</span><span class="badge badge--period" title="European · 1926–1934" aria-label="European · 1926–1934">European</span><span class="badge badge--rights badge--ok">Rights documented</span></div>
+      <h2><a href="records/media/M013/">Sonatina for piano, II — audio reference</a></h2>
+      <p>Audio rendering created by Iwona Lindstedt from her own notated transcription/edition of the second movement of Bronisław Kaper’s Sonatina for piano, preserved in the Bronislaw Kaper Papers.</p>
+      
+      <div class="card__footer"><span>Audio/Video Reference</span><span>M013</span></div>
+      <div class="media-card__actions">
+        <a href="records/media/M013/">View record <span aria-hidden="true">→</span></a>
+        
+      </div>
+    </div>
+  </article>
+<article class="media-card" data-media-id="M068">
+    <figure><a class="media-card__preview-link" href="records/media/M068/" aria-label="View media record: Berlin, Potsdamer Platz with Columbushaus — context photograph, 1933"><img src="assets/generated/responsive/berlin-a338bf418c49/960.webp" srcset="assets/generated/responsive/berlin-a338bf418c49/320.webp 320w, assets/generated/responsive/berlin-a338bf418c49/640.webp 640w, assets/generated/responsive/berlin-a338bf418c49/960.webp 960w, assets/generated/responsive/berlin-a338bf418c49/1024.webp 1024w" sizes="(max-width: 680px) calc(100vw - 2rem), (max-width: 1100px) 46vw, 27rem" width="1024" height="691" alt="Black-and-white street view of Berlin’s Potsdamer Platz with the Columbushaus building." loading="lazy" decoding="async"></a></figure>
+    <div class="media-card__body">
+      <div class="meta-row"><span class="badge badge--type">Image</span><span class="badge badge--period" title="European · 1926–1934" aria-label="European · 1926–1934">European</span><span class="badge badge--rights badge--ok">Public domain</span></div>
+      <h2><a href="records/media/M068/">Berlin, Potsdamer Platz with Columbushaus — context photograph, 1933</a></h2>
+      <p>Photograph of Potsdamer Platz with the Columbushaus in Berlin, taken by Waldemar Titzenthaler in 1933. Used as context for Kaper’s Berlin years.</p>
+      
+      <div class="card__footer"><span>Place / Context Image</span><span>M068</span></div>
+      <div class="media-card__actions">
+        <a href="records/media/M068/">View record <span aria-hidden="true">→</span></a>
+        
+      </div>
+    </div>
+  </article>
+<article class="media-card" data-media-id="M070">
+    <figure><a class="media-card__preview-link" href="records/media/M070/" aria-label="View media record: Bolszewik — Polish anti-Bolshevik propaganda poster"><img src="assets/generated/responsive/bolszewik-db19ce29f5e1/571.webp" srcset="assets/generated/responsive/bolszewik-db19ce29f5e1/320.webp 320w, assets/generated/responsive/bolszewik-db19ce29f5e1/571.webp 571w" sizes="(max-width: 680px) calc(100vw - 2rem), (max-width: 1100px) 46vw, 27rem" width="571" height="876" alt="Polish anti-Bolshevik propaganda poster titled “Bolszewik”." loading="lazy" decoding="async"></a></figure>
+    <div class="media-card__body">
+      <div class="meta-row"><span class="badge badge--type">Image</span><span class="badge badge--period" title="Warsaw · 1902–1926" aria-label="Warsaw · 1902–1926">Warsaw</span><span class="badge badge--rights badge--ok">Public domain</span></div>
+      <h2><a href="records/media/M070/">Bolszewik — Polish anti-Bolshevik propaganda poster</a></h2>
+      <p>Polish anti-Bolshevik propaganda poster “Bolszewik,” used as historical and military-service context for Kaper’s Warsaw years and the Polish–Soviet War period.</p>
+      
+      <div class="card__footer"><span>Place / Context Image</span><span>M070</span></div>
+      <div class="media-card__actions">
+        <a href="records/media/M070/">View record <span aria-hidden="true">→</span></a>
+        <a href="https://polona.pl/item-view/088000ec-c4ce-496d-bba7-e44af30be3c6?page=0" target="_blank" rel="noreferrer">Open external media <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+  </article>
+<article class="media-card" data-media-id="M014">
+    <figure><div class="media-preview media-preview--audio">
+        <div class="media-preview__audio-mark"><span aria-hidden="true">♪</span><strong>Audio sample</strong></div>
+        <audio controls preload="metadata" src="assets/audio/samples/sonatina-3.mp3" aria-label="Play Audio rendering by Iwona Lindstedt of the third movement of Kaper’s Sonatina for piano.">Your browser does not support audio.</audio>
+      </div></figure>
+    <div class="media-card__body">
+      <div class="meta-row"><span class="badge badge--type">Audio</span><span class="badge badge--period" title="European · 1926–1934" aria-label="European · 1926–1934">European</span><span class="badge badge--rights badge--ok">Rights documented</span></div>
+      <h2><a href="records/media/M014/">Sonatina for piano, III — audio reference</a></h2>
+      <p>Audio rendering created by Iwona Lindstedt from her own notated transcription/edition of the third movement of Bronisław Kaper’s Sonatina for piano, preserved in the Bronislaw Kaper Papers.</p>
+      
+      <div class="card__footer"><span>Audio/Video Reference</span><span>M014</span></div>
+      <div class="media-card__actions">
+        <a href="records/media/M014/">View record <span aria-hidden="true">→</span></a>
+        
+      </div>
+    </div>
+  </article>
+<article class="media-card" data-media-id="M075">
+    <figure><a class="media-card__preview-link" href="records/media/M075/" aria-label="View media record: Warsaw Philharmonic at Jasna and Sienkiewicza streets — published 1933"><img src="assets/generated/responsive/sienkiewicza-jasna-cfa792d3cf76/960.webp" srcset="assets/generated/responsive/sienkiewicza-jasna-cfa792d3cf76/320.webp 320w, assets/generated/responsive/sienkiewicza-jasna-cfa792d3cf76/640.webp 640w, assets/generated/responsive/sienkiewicza-jasna-cfa792d3cf76/960.webp 960w, assets/generated/responsive/sienkiewicza-jasna-cfa792d3cf76/1048.webp 1048w" sizes="(max-width: 680px) calc(100vw - 2rem), (max-width: 1100px) 46vw, 27rem" width="1048" height="728" alt="Sepia street view of the Warsaw Philharmonic building at the corner of Jasna and Henryka Sienkiewicza streets, with pedestrians in the foreground." loading="lazy" decoding="async"></a></figure>
+    <div class="media-card__body">
+      <div class="meta-row"><span class="badge badge--type">Image</span><span class="badge badge--period" title="Warsaw · 1902–1926" aria-label="Warsaw · 1902–1926">Warsaw</span><span class="badge badge--rights badge--ok">Public domain</span></div>
+      <h2><a href="records/media/M075/">Warsaw Philharmonic at Jasna and Sienkiewicza streets — published 1933</a></h2>
+      <p>The Warsaw Philharmonic building at the corner of Jasna and Henryka Sienkiewicza streets, published in a 1933 company publication.</p>
+      
+      <div class="card__footer"><span>Place / Context Image</span><span>M075</span></div>
+      <div class="media-card__actions">
+        <a href="records/media/M075/">View record <span aria-hidden="true">→</span></a>
+        <a href="https://polona.pl/item-view/63ce2fca-a0f7-45ad-be04-da61906f501c?page=4" target="_blank" rel="noreferrer">Open external media <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+  </article>
+<article class="media-card" data-media-id="M079">
+    <figure><a class="media-card__preview-link" href="records/media/M079/" aria-label="View media record: Moriz Mayer-Mahr — portrait"><img src="assets/generated/responsive/mayer-mahr-080e656aea27/600.webp" srcset="assets/generated/responsive/mayer-mahr-080e656aea27/320.webp 320w, assets/generated/responsive/mayer-mahr-080e656aea27/600.webp 600w" sizes="(max-width: 680px) calc(100vw - 2rem), (max-width: 1100px) 46vw, 27rem" width="600" height="930" alt="Portrait of Moriz Mayer-Mahr." loading="lazy" decoding="async"></a></figure>
+    <div class="media-card__body">
+      <div class="meta-row"><span class="badge badge--type">Image</span><span class="badge badge--period" title="European · 1926–1934" aria-label="European · 1926–1934">European</span><span class="badge badge--rights badge--ok">Public domain</span></div>
+      <h2><a href="records/media/M079/">Moriz Mayer-Mahr — portrait</a></h2>
+      <p>Portrait of Moriz Mayer-Mahr, the Berlin pianist and teacher with whom Kaper studied.</p>
+      
+      <div class="card__footer"><span>Portrait</span><span>M079</span></div>
+      <div class="media-card__actions">
+        <a href="records/media/M079/">View record <span aria-hidden="true">→</span></a>
+        <a href="https://commons.wikimedia.org/wiki/File:Mayer-Mahr.jpg" target="_blank" rel="noreferrer">Open external media <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+  </article>
+<article class="media-card" data-media-id="M016">
+    <figure><a class="media-preview media-preview--external" href="https://www.filmportal.de/video/alraune-19291930" target="_blank" rel="noreferrer" aria-label="Watch video: Opening excerpt from Alraune (1929/1930) on Filmportal.de."><span aria-hidden="true">↗</span><span>Watch video</span></a></figure>
+    <div class="media-card__body">
+      <div class="meta-row"><span class="badge badge--type">Video</span><span class="badge badge--period" title="European · 1926–1934" aria-label="European · 1926–1934">European</span><span class="badge badge--rights badge--external_content_not_rehosted">External content · not hosted</span></div>
+      <h2><a href="records/media/M016/">Alraune — video reference</a></h2>
+      <p>Official Filmportal.de / DFF opening excerpt from Alraune (1929/1930), a first sound-film version of Hanns Heinz Ewers’s novel with music by Bronisław Kaper.</p>
+      
+      <div class="card__footer"><span>Audio/Video Reference</span><span>M016</span></div>
+      <div class="media-card__actions">
+        <a href="records/media/M016/">View record <span aria-hidden="true">→</span></a>
+        <a href="https://www.filmportal.de/video/alraune-19291930" target="_blank" rel="noreferrer">Watch video <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+  </article>
+<article class="media-card" data-media-id="M081">
+    <figure><a class="media-card__preview-link" href="records/media/M081/" aria-label="View media record: A Night at the Opera (1935) — window poster"><img src="assets/generated/responsive/opera-293e46a07c30/960.webp" srcset="assets/generated/responsive/opera-293e46a07c30/320.webp 320w, assets/generated/responsive/opera-293e46a07c30/640.webp 640w, assets/generated/responsive/opera-293e46a07c30/960.webp 960w, assets/generated/responsive/opera-293e46a07c30/1292.webp 1292w" sizes="(max-width: 680px) calc(100vw - 2rem), (max-width: 1100px) 46vw, 27rem" width="1292" height="1583" alt="Al Hirschfeld’s illustrated window poster for the MGM film A Night at the Opera (1935), featuring the Marx Brothers and supporting cast." loading="lazy" decoding="async"></a></figure>
+    <div class="media-card__body">
+      <div class="meta-row"><span class="badge badge--type">Image</span><span class="badge badge--period" title="Hollywood · 1935–1939" aria-label="Hollywood · 1935–1939">Hollywood</span><span class="badge badge--rights badge--ok">Public domain</span></div>
+      <h2><a href="records/media/M081/">A Night at the Opera (1935) — window poster</a></h2>
+      <p>Al Hirschfeld’s window poster for A Night at the Opera (Metro-Goldwyn-Mayer, 1935).</p>
+      
+      <div class="card__footer"><span>Film Poster</span><span>M081</span></div>
+      <div class="media-card__actions">
+        <a href="records/media/M081/">View record <span aria-hidden="true">→</span></a>
+        <a href="https://commons.wikimedia.org/wiki/File:A_Night_at_the_Opera_film_poster.jpg" target="_blank" rel="noreferrer">Open external media <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+  </article>
+<article class="media-card" data-media-id="M083">
+    <figure><a class="media-card__preview-link" href="records/media/M083/" aria-label="View media record: Nasz Przegląd, 1925 — Chopin Music School recital notice"><img src="assets/generated/responsive/popis-nasz-przeglad-91e43d7121aa/960.webp" srcset="assets/generated/responsive/popis-nasz-przeglad-91e43d7121aa/320.webp 320w, assets/generated/responsive/popis-nasz-przeglad-91e43d7121aa/640.webp 640w, assets/generated/responsive/popis-nasz-przeglad-91e43d7121aa/960.webp 960w, assets/generated/responsive/popis-nasz-przeglad-91e43d7121aa/1440.webp 1440w" sizes="(max-width: 680px) calc(100vw - 2rem), (max-width: 1100px) 46vw, 27rem" width="2560" height="964" alt="Polish newspaper clipping from Nasz Przegląd, 1925." loading="lazy" decoding="async"></a></figure>
+    <div class="media-card__body">
+      <div class="meta-row"><span class="badge badge--type">Image</span><span class="badge badge--period" title="Warsaw · 1902–1926" aria-label="Warsaw · 1902–1926">Warsaw</span><span class="badge badge--rights badge--ok">Public domain</span></div>
+      <h2><a href="records/media/M083/">Nasz Przegląd, 1925 — Chopin Music School recital notice</a></h2>
+      <p>Press notice for a student recital at the Chopin Music School, published in Nasz Przegląd in 1925.</p>
+      
+      <div class="card__footer"><span>Press Clipping</span><span>M083</span></div>
+      <div class="media-card__actions">
+        <a href="records/media/M083/">View record <span aria-hidden="true">→</span></a>
+        
+      </div>
+    </div>
+  </article>
+<article class="media-card" data-media-id="M018">
+    <figure><a class="media-preview media-preview--external" href="https://www.filmportal.de/video/ein-toller-einfall-1932" target="_blank" rel="noreferrer" aria-label="Watch video: Opening excerpt from Ein toller Einfall (1932) on Filmportal.de."><span aria-hidden="true">↗</span><span>Watch video</span></a></figure>
+    <div class="media-card__body">
+      <div class="meta-row"><span class="badge badge--type">Video</span><span class="badge badge--period" title="European · 1926–1934" aria-label="European · 1926–1934">European</span><span class="badge badge--rights badge--external_content_not_rehosted">External content · not hosted</span></div>
+      <h2><a href="records/media/M018/">Ein toller Einfall — video reference</a></h2>
+      <p>Official Filmportal.de / DFF opening excerpt from Ein toller Einfall (1932), the UFA musical comedy with songs by Bronisław Kaper and Walter Jurmann.</p>
+      
+      <div class="card__footer"><span>Audio/Video Reference</span><span>M018</span></div>
+      <div class="media-card__actions">
+        <a href="records/media/M018/">View record <span aria-hidden="true">→</span></a>
+        <a href="https://www.filmportal.de/video/ein-toller-einfall-1932" target="_blank" rel="noreferrer">Watch video <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+  </article>
+<article class="media-card" data-media-id="M084">
+    <figure><a class="media-card__preview-link" href="records/media/M084/" aria-label="View media record: A. M. Skrynnikowa’s school — examination notice, 1914"><img src="assets/generated/responsive/realna-5568bb6811bc/497.webp" srcset="assets/generated/responsive/realna-5568bb6811bc/320.webp 320w, assets/generated/responsive/realna-5568bb6811bc/497.webp 497w" sizes="(max-width: 680px) calc(100vw - 2rem), (max-width: 1100px) 46vw, 27rem" width="497" height="228" alt="Clipping from a 1914 Warsaw newspaper announcing entrance and resit examinations at A. M. Skrynnikowa’s seven-grade boys’ gymnasium at Żórawia 49." loading="lazy" decoding="async"></a></figure>
+    <div class="media-card__body">
+      <div class="meta-row"><span class="badge badge--type">Image</span><span class="badge badge--period" title="Warsaw · 1902–1926" aria-label="Warsaw · 1902–1926">Warsaw</span><span class="badge badge--rights badge--ok">Public domain</span></div>
+      <h2><a href="records/media/M084/">A. M. Skrynnikowa’s school — examination notice, 1914</a></h2>
+      <p>Examination notice for A. M. Skrynnikowa’s seven-grade boys’ gymnasium at Żórawia 49, Warsaw, published in 1914 during Kaper’s period at the school.</p>
+      
+      <div class="card__footer"><span>Press Clipping</span><span>M084</span></div>
+      <div class="media-card__actions">
+        <a href="records/media/M084/">View record <span aria-hidden="true">→</span></a>
+        <a href="https://crispa.uw.edu.pl/object/files/235954/display/PDF?pageNumber=1" target="_blank" rel="noreferrer">Open external media <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+  </article>
+<article class="media-card" data-media-id="M085">
+    <figure><a class="media-card__preview-link" href="records/media/M085/" aria-label="View media record: Kurier Warszawski, 18 January 1928 — review of Kaper’s piano pieces"><img src="assets/generated/responsive/rozenblum1-kw-18011928-68aed00099bd/960.webp" srcset="assets/generated/responsive/rozenblum1-kw-18011928-68aed00099bd/320.webp 320w, assets/generated/responsive/rozenblum1-kw-18011928-68aed00099bd/640.webp 640w, assets/generated/responsive/rozenblum1-kw-18011928-68aed00099bd/960.webp 960w, assets/generated/responsive/rozenblum1-kw-18011928-68aed00099bd/1440.webp 1440w" sizes="(max-width: 680px) calc(100vw - 2rem), (max-width: 1100px) 46vw, 27rem" width="2560" height="2193" alt="Polish newspaper clipping from Kurier Warszawski, 18 January 1928." loading="lazy" decoding="async"></a></figure>
+    <div class="media-card__body">
+      <div class="meta-row"><span class="badge badge--type">Image</span><span class="badge badge--period" title="European · 1926–1934" aria-label="European · 1926–1934">European</span><span class="badge badge--rights badge--ok">Public domain</span></div>
+      <h2><a href="records/media/M085/">Kurier Warszawski, 18 January 1928 — review of Kaper’s piano pieces</a></h2>
+      <p>Press clipping from Kurier Warszawski, 18 January 1928, reviewing Eliza Rozenblum’s recital and mentioning piano pieces by B. Kaper.</p>
+      
+      <div class="card__footer"><span>Press Clipping</span><span>M085</span></div>
+      <div class="media-card__actions">
+        <a href="records/media/M085/">View record <span aria-hidden="true">→</span></a>
+        
+      </div>
+    </div>
+  </article>
+<article class="media-card" data-media-id="M019">
+    <figure><a class="media-preview media-preview--external" href="https://www.filmportal.de/video/melodie-der-liebe-1932" target="_blank" rel="noreferrer" aria-label="Watch video: Opening excerpt from Melodie der Liebe (1932) on Filmportal.de."><span aria-hidden="true">↗</span><span>Watch video</span></a></figure>
+    <div class="media-card__body">
+      <div class="meta-row"><span class="badge badge--type">Video</span><span class="badge badge--period" title="European · 1926–1934" aria-label="European · 1926–1934">European</span><span class="badge badge--rights badge--external_content_not_rehosted">External content · not hosted</span></div>
+      <h2><a href="records/media/M019/">Melodie der Liebe — video reference</a></h2>
+      <p>Official Filmportal.de / DFF opening excerpt from Melodie der Liebe (1932), a musical comedy with songs by Bronisław Kaper and Walter Jurmann.</p>
+      
+      <div class="card__footer"><span>Audio/Video Reference</span><span>M019</span></div>
+      <div class="media-card__actions">
+        <a href="records/media/M019/">View record <span aria-hidden="true">→</span></a>
+        <a href="https://www.filmportal.de/video/melodie-der-liebe-1932" target="_blank" rel="noreferrer">Watch video <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+  </article>
+<!-- catalogue-prerender:end -->
+        </div>
+        <div class="load-more"><button class="button button--ghost" id="media-more" type="button" hidden>Load more</button><button class="button button--ghost button--small" id="media-show-all" type="button" hidden>Show all</button></div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer" data-site-footer></footer>
+  <script type="module" src="assets/site/gallery.js?v=c77ada42a0"></script>
 </body>
 </html>

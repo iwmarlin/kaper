@@ -1,0 +1,277 @@
+{
+  "schemaVersion": "1.0.0",
+  "pathways": [
+    {
+      "label": "Works",
+      "description": "Films, songs and other works",
+      "href": "works.html",
+      "count": 287
+    },
+    {
+      "label": "People",
+      "description": "Collaborators and contemporaries",
+      "href": "people.html",
+      "count": 172
+    },
+    {
+      "label": "Timeline",
+      "description": "A documented chronology",
+      "href": "life.html",
+      "count": 52
+    },
+    {
+      "label": "Places",
+      "description": "Cities, venues and routes",
+      "href": "map.html",
+      "count": 44
+    },
+    {
+      "label": "Media",
+      "description": "Images, documents and sound",
+      "href": "media.html",
+      "count": 398
+    }
+  ],
+  "portrait": {
+    "id": "M048",
+    "title": "Bronisław Kaper — portrait as a young man",
+    "mediaType": "image",
+    "storageType": "local",
+    "period": "warsaw",
+    "description": "Early portrait photograph of Bronisław Kaper from the University of Warsaw Archives, used as a visual context image for the 1919 secondary-school graduation event.",
+    "assetPath": "assets/images/portraits/kaper-young0.jpg",
+    "assetPaths": [
+      "assets/images/portraits/kaper-young0.jpg"
+    ],
+    "assetCount": 1,
+    "altText": "Portrait of Bronisław Kaper as a young man.",
+    "rightsStatus": "ok",
+    "rightsNote": "Reproduced by permission of the University of Warsaw Archives.",
+    "sortOrder": 48,
+    "slug": "timeline-high-school-graduation-kaper-young0",
+    "publicCaption": "Portrait of Bronisław Kaper as a young man, from his University of Warsaw student-file materials.",
+    "publicCreditLine": "Archiwum Uniwersytetu Warszawskiego, Bronisław Kaper student file, RP 6854; reproduced by permission.",
+    "category": "portrait",
+    "galleryStatus": "selected",
+    "sourceIds": [
+      "SRC0110"
+    ],
+    "timelineEventIds": [
+      "TE0003"
+    ],
+    "heroTimelineEventIds": [
+      "TE0003"
+    ],
+    "organizationIds": [
+      "ORG057"
+    ],
+    "periods": [
+      "warsaw"
+    ]
+  },
+  "events": [
+    {
+      "id": "TE0014",
+      "slug": "1926-earliest-published-cabaret-songs",
+      "title": "Earliest published cabaret songs",
+      "label": "1926 · Earliest published cabaret songs",
+      "displayDate": "1926",
+      "dateStart": "1926-01-01",
+      "datePrecision": "year",
+      "sortDate": "1926-07-01",
+      "sortOrder": 14,
+      "displayMode": "point",
+      "eventType": "career",
+      "period": "warsaw",
+      "periodKey": "warsaw",
+      "category": "warsaw_music",
+      "filterTags": [
+        "career",
+        "warsaw"
+      ],
+      "placeDisplay": "Warsaw",
+      "cityKey": "warsaw",
+      "shortDescription": "Kaper’s Warsaw cabaret songs appear in print under the pseudonym Bruno Asper, which the manuscripts show him already using in 1923.",
+      "longDescription": "Songs for Warsaw cabarets published under the pseudonym Bruno Asper, to words by Andrzej Włast. The printed editions of 1926 are the earliest published songs documented here; the signature itself is older, appearing on the 1923 manuscript of Koszutski Girls.",
+      "featured": true,
+      "roles": [
+        "publication_event",
+        "career_milestone"
+      ],
+      "personIds": [
+        "P003",
+        "P009"
+      ],
+      "sourceIds": [
+        "SRC0053",
+        "SRC0054",
+        "SRC0055",
+        "SRC0066",
+        "SRC0067"
+      ],
+      "workIds": [
+        "W-S001",
+        "W-S002",
+        "W-S003",
+        "W-S005",
+        "W-S006"
+      ],
+      "mediaIds": [
+        "M030",
+        "M080",
+        "M233"
+      ],
+      "heroMediaIds": [
+        "M080"
+      ],
+      "placeIds": [
+        "PL001",
+        "PL018"
+      ],
+      "periods": [
+        "warsaw"
+      ],
+      "image": {
+        "id": "M080",
+        "assetPath": "assets/images/timeline/morskie-oko.jpg",
+        "altText": "Historical image of the Teatr Morskie Oko building in Warsaw."
+      }
+    },
+    {
+      "id": "TE0026",
+      "slug": "1931-meeting-walter-jurmann",
+      "title": "Meeting Walter Jurmann",
+      "label": "1931 · Meeting Walter Jurmann",
+      "displayDate": "1931",
+      "dateStart": "1931-01-01",
+      "datePrecision": "year",
+      "sortDate": "1931-07-01",
+      "sortOrder": 26,
+      "displayMode": "point",
+      "eventType": "career",
+      "period": "european",
+      "periodKey": "european",
+      "category": "collaboration",
+      "filterTags": [
+        "career",
+        "europe"
+      ],
+      "placeDisplay": "Berlin",
+      "cityKey": "europe",
+      "shortDescription": "Kaper meets Walter Jurmann, launching the songwriting partnership that defines his European film career.",
+      "longDescription": "Introduced by Fritz Rotter, marking the start of the Jurmann–Kaper duo. The earliest joint project documented here is “Die große Attraktion,” directed by Max Reichmann. Kaper composes the hit slow fox “Du warst mir ein Roman” for Richard Tauber.",
+      "featured": true,
+      "roles": [
+        "professional_network",
+        "career_milestone"
+      ],
+      "personIds": [
+        "P009",
+        "P020",
+        "P057",
+        "P077",
+        "P118"
+      ],
+      "sourceIds": [
+        "SRC0490"
+      ],
+      "workIds": [
+        "W-F007",
+        "W-S039"
+      ],
+      "mediaIds": [
+        "M031",
+        "M046"
+      ],
+      "heroMediaIds": [
+        "M046"
+      ],
+      "placeIds": [
+        "PL002"
+      ],
+      "periods": [
+        "european"
+      ],
+      "image": {
+        "id": "M046",
+        "assetPath": "assets/images/portraits/kaper-with-jurmann.jpg",
+        "altText": "Photograph of Bronisław Kaper with Walter Jurmann."
+      }
+    },
+    {
+      "id": "TE0037",
+      "slug": "1935-hollywood-debut",
+      "title": "Hollywood debut",
+      "label": "1935 · Hollywood debut",
+      "displayDate": "1935",
+      "dateStart": "1935-01-01",
+      "datePrecision": "year",
+      "sortDate": "1935-07-01",
+      "sortOrder": 37,
+      "displayMode": "point",
+      "eventType": "career",
+      "period": "hollywood",
+      "periodKey": "hollywood",
+      "category": "hollywood",
+      "filterTags": [
+        "career",
+        "hollywood"
+      ],
+      "placeDisplay": "Hollywood/Los Angeles",
+      "cityKey": "hollywood",
+      "shortDescription": "Kaper makes his Hollywood debut at MGM, contributing to Escapade and other major studio projects.",
+      "longDescription": "The first American score documented here is \"Escapade\" (dir. Robert Z. Leonard) with William Powell and Luise Rainer. Press hails \"Two New Composers\" of Kiepura’s European hits. Songs also for Marx Brothers’ \"A Night at the Opera\" (with Ned Washington) and \"Mutiny on the Bounty\".",
+      "roles": [
+        "career_milestone",
+        "work_milestone"
+      ],
+      "personIds": [
+        "P009",
+        "P058",
+        "P070"
+      ],
+      "sourceIds": [
+        "SRC0090",
+        "SRC0527"
+      ],
+      "workIds": [
+        "W-F033",
+        "W-F034",
+        "W-F036"
+      ],
+      "mediaIds": [
+        "M034",
+        "M074"
+      ],
+      "heroMediaIds": [
+        "M074"
+      ],
+      "placeIds": [
+        "PL004",
+        "PL005",
+        "PL006",
+        "PL012"
+      ],
+      "periods": [
+        "hollywood"
+      ],
+      "image": {
+        "id": "M074",
+        "assetPath": "assets/images/sheet-music/you-are-all.jpg",
+        "altText": "Sheet-music cover for “You’re All I Need” from the MGM film Escapade (1935)."
+      }
+    }
+  ],
+  "glance": {
+    "span": {
+      "start": 1923,
+      "end": 1939
+    },
+    "certainty": {
+      "confirmed": 283,
+      "probable": 4,
+      "uncertain": 0
+    },
+    "sources": 767
+  }
+}

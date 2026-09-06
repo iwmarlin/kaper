@@ -1,0 +1,141 @@
+{
+  "schemaVersion": "1.0.0",
+  "scope": {
+    "startYear": 1902,
+    "endYear": 1939,
+    "label": "Bronisław Kaper early career, documented through 1939"
+  },
+  "publicDataUpdatedAt": "2026-08-11",
+  "generator": {
+    "file": "export_public_data.py",
+    "sha256": "91edd059f5aa3bca5587c7d8ddc2313ced408f9122bee931a3360900a9565c10"
+  },
+  "publicInputs": {
+    "allowlist": {
+      "file": "public_export_config.json",
+      "sha256": "ae6c5f19ebf2e805abdcb393b54bb0a78c299fc2ba88de48e695e50e32193fd6"
+    },
+    "overrides": {
+      "file": "public_export_overrides.json",
+      "sha256": "73391dccbba8383901e0ff4230b3fd20db86aa88e99fbf92cd705766322fc06f",
+      "appliedCount": 757,
+      "additionCount": 328,
+      "linkAdditionCount": 503,
+      "linkRemovalCount": 164,
+      "exclusionCount": 20
+    }
+  },
+  "exportPolicy": {
+    "editorialStatus": "approved",
+    "workScopes": [
+      "standalone_page",
+      "context_only"
+    ],
+    "placeScopes": [
+      "map_and_detail",
+      "context_only"
+    ],
+    "galleryStatuses": [
+      "selected",
+      "eligible",
+      "detail_only",
+      "external_link_only"
+    ],
+    "sources": "approved and reachable from the public graph",
+    "authorities": "approved and reachable from the public graph",
+    "legacyAndInternalFields": "excluded by explicit allowlist"
+  },
+  "counts": {
+    "People": 172,
+    "Organizations": 157,
+    "Sources": 767,
+    "Media": 398,
+    "Works": 287,
+    "Films": 55,
+    "Songs": 203,
+    "Other Works": 29,
+    "Title Variants": 63,
+    "Work Relations": 200,
+    "Timeline Events": 52,
+    "Places": 44,
+    "Contributions": 1271,
+    "Person Name Variants": 66
+  },
+  "files": [
+    {
+      "file": "build-report.json",
+      "bytes": 114686,
+      "sha256": "6304f4cca4f0248a602501e3c241b5cb4d8103735300bb279c520886d0cba4e7"
+    },
+    {
+      "file": "contributions.json",
+      "bytes": 490732,
+      "sha256": "2db38eeb6e80b5c11f9e31373a7f00c1825e9334c76846e2a7d626519bf5022a"
+    },
+    {
+      "file": "films.json",
+      "bytes": 36919,
+      "sha256": "87fe1f3696d58c40d54e7322f8043e4549a4f2993b5744a15cdf723241b34998"
+    },
+    {
+      "file": "media.json",
+      "bytes": 642362,
+      "sha256": "aa4dad9dfdd58f87c5fad2b8892b64d929fa32c2e61d1039bb91e7afe3d745f4"
+    },
+    {
+      "file": "organizations.json",
+      "bytes": 129878,
+      "sha256": "8661dda2ba359dde5103512bf66cfbaca973ff0e939ed1faaf7e6d8b4e69fc48"
+    },
+    {
+      "file": "other-works.json",
+      "bytes": 19758,
+      "sha256": "7d8263eca11a25149a5808a890f526192f0868f640574f2ef5ca8003f4044d17"
+    },
+    {
+      "file": "people.json",
+      "bytes": 166343,
+      "sha256": "fc1f24d8df44c244cdeb4ca6f1207690abbc6782c9ba356a1b3c05e0604a448b"
+    },
+    {
+      "file": "person-name-variants.json",
+      "bytes": 45558,
+      "sha256": "9ab0b2e785d8729d28ae4b38a6d6d7f124d950851fbc686bc94bfa8f63e50120"
+    },
+    {
+      "file": "places.json",
+      "bytes": 43516,
+      "sha256": "a3601f8bea28211c4c3a54639a896c715ac8610c85e0ee8de52f402dc1e03e5f"
+    },
+    {
+      "file": "songs.json",
+      "bytes": 136611,
+      "sha256": "2350e3acfd2f9d40264090de840461e0819f40660cfc7d9030c49933df1df58c"
+    },
+    {
+      "file": "sources.json",
+      "bytes": 1112002,
+      "sha256": "1bfd45d04635e630775fc264d6ddefd31d411c78eae0a768873bfd01be52cd05"
+    },
+    {
+      "file": "timeline-events.json",
+      "bytes": 82655,
+      "sha256": "a1e704183e1cde28ad60ae626aca2cca6fd2ad4831b901258f24241f08710341"
+    },
+    {
+      "file": "title-variants.json",
+      "bytes": 32424,
+      "sha256": "352be219669927444cc106418f3640d50147f7f20cc9db0413859d0b1a7fc2e8"
+    },
+    {
+      "file": "work-relations.json",
+      "bytes": 94794,
+      "sha256": "4f6a03020249eec79bdd0b9432a7f2ac9f1a1dc9918a16914e30112d36f449b2"
+    },
+    {
+      "file": "works.json",
+      "bytes": 271587,
+      "sha256": "bf462876121294203c621e0666736c2018de68759e6f5615d0071814771fcf62"
+    }
+  ]
+}
