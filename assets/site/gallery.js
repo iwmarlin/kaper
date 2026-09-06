@@ -1,4 +1,4 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=5b3a2d520f";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=c77ada42a0";
 import {
   debounce,
   escapeHtml,
@@ -24,8 +24,8 @@ import {
   resolveIds,
   safeExternalUrl,
   typeBadge,
-} from "./core.js?v=5b3a2d520f";
-import { createCatalogueFilters } from "./catalogue-filters.js?v=5b3a2d520f";
+} from "./core.js?v=c77ada42a0";
+import { createCatalogueFilters } from "./catalogue-filters.js?v=c77ada42a0";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 mountSiteChrome("media");
@@ -232,6 +232,7 @@ try {
     resetButton,
     onChange: resetAndRender,
     toggleLabel: "Filters",
+    indexType: "media",
   });
   filterController.read();
   controls.search.addEventListener("input", debounce(startDiscovery));

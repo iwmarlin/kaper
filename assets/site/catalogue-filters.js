@@ -1,4 +1,111 @@
-import { escapeHtml } from "./core.js?v=5b3a2d520f";
+import { escapeHtml } from "./core.js?v=c77ada42a0";
+
+const INDEX_RETURN_PREFIX = "kaper:index-return:";
+
+/* Record URLs stay canonical and shareable; the reader's catalogue context is
+   kept separately for the lifetime of the browser tab.  Only known local
+   index files can be written or restored, so storage can never turn a record
+   breadcrumb into an open redirect. */
+export const RECORD_INDEXES = Object.freeze({
+  work: {
+    file: "works.html",
+    label: "Works",
+    filterKeys: ["search", "type", "period", "certainty"],
+    backLabel: "Back to Works",
+    filteredBackLabel: "Back to filtered Works",
+  },
+  person: {
+    file: "people.html",
+    label: "People",
+    filterKeys: ["search", "role", "period"],
+    backLabel: "Back to People",
+    filteredBackLabel: "Back to filtered People",
+  },
+  media: {
+    file: "media.html",
+    label: "Media",
+    filterKeys: ["search", "category", "period", "rights", "scope"],
+    backLabel: "Back to Media",
+    filteredBackLabel: "Back to filtered Media",
+  },
+  source: {
+    file: "sources.html",
+    label: "Sources",
+    filterKeys: ["search", "type", "dateRole", "access"],
+    backLabel: "Back to Sources",
+    filteredBackLabel: "Back to filtered Sources",
+  },
+  event: {
+    file: "life.html",
+    label: "Timeline",
+    filterKeys: ["search", "category"],
+    backLabel: "Back to Timeline",
+    filteredBackLabel: "Back to filtered Timeline",
+  },
+  place: {
+    file: "map.html",
+    label: "Map",
+    filterKeys: ["search", "place"],
+    backLabel: "Back to Map",
+    filteredBackLabel: "Back to saved Map view",
+  },
+});
+
+function matchingIndexUrl(recordType, value = null) {
+  const config = RECORD_INDEXES[recordType];
+  if (!config || typeof window === "undefined" || typeof document === "undefined") return null;
+  try {
+    const expected = new URL(config.file, document.baseURI);
+    const candidate = value === null
+      ? new URL(window.location.href)
+      : new URL(String(value), document.baseURI);
+    if (candidate.origin !== expected.origin || candidate.pathname !== expected.pathname) return null;
+    return candidate;
+  } catch {
+    return null;
+  }
+}
+
+export function rememberIndexLocation(recordType) {
+  const config = RECORD_INDEXES[recordType];
+  const current = matchingIndexUrl(recordType);
+  if (!config || !current) return;
+  try {
+    window.sessionStorage.setItem(
+      `${INDEX_RETURN_PREFIX}${recordType}`,
+      `${config.file}${current.search}${current.hash}`,
+    );
+  } catch {
+    // Private browsing and local-file policies may disable storage. The
+    // canonical index link remains fully functional in that case.
+  }
+}
+
+export function recordIndexReturn(recordType) {
+  const config = RECORD_INDEXES[recordType];
+  if (!config) return null;
+  let candidate = null;
+  try {
+    candidate = matchingIndexUrl(
+      recordType,
+      window.sessionStorage.getItem(`${INDEX_RETURN_PREFIX}${recordType}`),
+    );
+  } catch {
+    candidate = null;
+  }
+  if (!candidate) candidate = matchingIndexUrl(recordType, config.file);
+  const href = candidate
+    ? `${config.file}${candidate.search}${candidate.hash}`
+    : config.file;
+  const params = candidate?.searchParams || new URLSearchParams();
+  const isFiltered = config.filterKeys.some((key) => params.has(key) && params.get(key) !== "");
+  return {
+    ...config,
+    href,
+    isFiltered,
+    resolvedBackLabel: isFiltered ? config.filteredBackLabel : config.backLabel,
+  };
+}
 
 function fieldValue(field) {
   if (typeof field?.getValue === "function") return String(field.getValue() ?? "");
@@ -18,6 +125,7 @@ function setFieldValue(field, value) {
 export function createQueryState(fields, {
   defaults = {},
   onRestore = null,
+  indexType = null,
 } = {}) {
   const entries = Object.entries(fields).filter(([, field]) => field);
 
@@ -46,6 +154,7 @@ export function createQueryState(fields, {
     const next = `${url.pathname}${url.search}${url.hash}`;
     const current = `${window.location.pathname}${window.location.search}${window.location.hash}`;
     if (next !== current) window.history.replaceState(window.history.state, "", next);
+    if (indexType) rememberIndexLocation(indexType);
   }
 
   const restore = () => {
@@ -83,10 +192,11 @@ export function createCatalogueFilters({
   onRestore = onChange,
   toggleLabel = "Filters and sort",
   compactMediaQuery = "(max-width: 900px)",
+  indexType = null,
 }) {
   const defaults = Object.fromEntries(Object.keys(controls).map((key) => [key, ""]));
   for (const option of options) defaults[option.key] = option.defaultValue;
-  const queryState = createQueryState(controls, { defaults, onRestore });
+  const queryState = createQueryState(controls, { defaults, onRestore, indexType });
   const compact = window.matchMedia?.(compactMediaQuery);
 
   const isOpen = () => toggle?.getAttribute("aria-expanded") === "true";

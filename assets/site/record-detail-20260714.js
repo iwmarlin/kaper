@@ -1,4 +1,4 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=5b3a2d520f";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=c77ada42a0";
 import {
   authorityLinkList,
   certaintyBadge,
@@ -29,7 +29,8 @@ import {
   sourceStatusLabel,
   typeBadge,
   updateMeta,
-} from "./core.js?v=5b3a2d520f";
+} from "./core.js?v=c77ada42a0";
+import { RECORD_INDEXES, recordIndexReturn } from "./catalogue-filters.js?v=c77ada42a0";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 let target = null;
@@ -1723,7 +1724,40 @@ export function renderRecordView(requestedType, requestedId, data) {
   };
 }
 
-export function renderRecordMarkup(view, requestedId) {
+function recordContextMarkup(view, requestedId, requestedType) {
+  const index = RECORD_INDEXES[requestedType];
+  const sectionLabel = index?.label || TYPE_CONFIG[requestedType]?.label || "Record";
+  const sectionCrumb = index
+    ? `<a href="${escapeHtml(index.file)}" data-record-index-link>${escapeHtml(sectionLabel)}</a>`
+    : `<span>${escapeHtml(sectionLabel)}</span>`;
+  const backLink = index
+    ? `<a class="record-back-link" href="${escapeHtml(index.file)}" data-record-back-link>
+        <span aria-hidden="true">←</span> <span data-record-back-label>${escapeHtml(index.backLabel)}</span>
+      </a>`
+    : "";
+  return `<div class="shell record-context">
+    <nav class="record-breadcrumbs" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="index.html">Home</a></li>
+        <li>${sectionCrumb}</li>
+        <li><span aria-current="page">${escapeHtml(view.title || requestedId)}</span></li>
+      </ol>
+    </nav>
+    ${backLink}
+  </div>`;
+}
+
+function initializeRecordNavigation(recordType) {
+  const destination = recordIndexReturn(recordType);
+  if (!destination || !target) return;
+  for (const link of target.querySelectorAll("[data-record-index-link], [data-record-back-link]")) {
+    link.setAttribute("href", destination.href);
+  }
+  const label = target.querySelector("[data-record-back-label]");
+  if (label) label.textContent = destination.resolvedBackLabel;
+}
+
+export function renderRecordMarkup(view, requestedId, requestedType) {
   const titleLength = Array.from(view.title || "").length;
   const titleClass = titleLength > 72 ? " record-hero--extra-long-title" : titleLength > 46 ? " record-hero--long-title" : "";
   const heroClass = view.heroClass ? ` ${view.heroClass}` : "";
@@ -1737,6 +1771,7 @@ export function renderRecordMarkup(view, requestedId) {
     : "";
   return `
     <section class="record-hero${titleClass}${heroClass}">
+      ${recordContextMarkup(view, requestedId, requestedType)}
       <div class="shell record-hero__grid">
         <div>
           <p class="eyebrow">${escapeHtml(view.label)} · <span class="record-id">${escapeHtml(requestedId)}</span></p>
@@ -1763,6 +1798,7 @@ async function bootstrapRecordPage() {
     // Canonical record routes already contain the complete scholarly record.
     // JavaScript only enhances their existing controls; a failed data request
     // must never replace or hide content that is already present in the HTML.
+    initializeRecordNavigation(target.dataset.recordType);
     initializeProgressiveLists();
     initializeSourceLedgers();
     initializeContentsRail();
@@ -1785,8 +1821,9 @@ async function bootstrapRecordPage() {
     setCanonicalRecordUrl(requestedType, requestedId);
     target.className = "";
     if (target.dataset.prerendered !== "true") {
-      target.innerHTML = renderRecordMarkup(view, requestedId);
+      target.innerHTML = renderRecordMarkup(view, requestedId, requestedType);
     }
+    initializeRecordNavigation(requestedType);
     initializeProgressiveLists();
     initializeSourceLedgers();
     initializeContentsRail();

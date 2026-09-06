@@ -1,4 +1,4 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=5b3a2d520f";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=c77ada42a0";
 import {
   debounce,
   escapeHtml,
@@ -15,8 +15,8 @@ import {
   renderLoading,
   resolveIds,
   responsiveImage,
-} from "./core.js?v=5b3a2d520f";
-import { createQueryState } from "./catalogue-filters.js?v=5b3a2d520f";
+} from "./core.js?v=c77ada42a0";
+import { createQueryState } from "./catalogue-filters.js?v=c77ada42a0";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 mountSiteChrome("timeline");
@@ -334,6 +334,7 @@ try {
     },
   }, {
     defaults: { search: "", category: "", view: "highlights" },
+    indexType: "event",
     onRestore: () => {
       setView(activeView, { renderNow: false });
       render();

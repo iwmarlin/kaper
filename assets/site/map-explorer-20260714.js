@@ -10,8 +10,8 @@ import {
   periodValues,
   recordUrl,
   renderError,
-} from "./core.js?v=5b3a2d520f";
-import { createQueryState } from "./catalogue-filters.js?v=5b3a2d520f";
+} from "./core.js?v=c77ada42a0";
+import { createQueryState } from "./catalogue-filters.js?v=c77ada42a0";
 
 mountSiteChrome("map");
 
@@ -427,6 +427,7 @@ try {
     },
   }, {
     defaults: { search: "", place: "", route: "shown" },
+    indexType: "place",
     onRestore: () => {
       applyRoute();
       render();

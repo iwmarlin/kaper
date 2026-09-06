@@ -27,7 +27,7 @@ for (const recordType of recordTypes) {
       throw new Error(`Invalid record payload: ${recordType}/${filename}`);
     }
     const { view } = renderRecordView(recordType, payload.id, payload.tables);
-    rendered[`${recordType}/${payload.id}`] = renderRecordMarkup(view, payload.id);
+    rendered[`${recordType}/${payload.id}`] = renderRecordMarkup(view, payload.id, recordType);
   }
 }
 

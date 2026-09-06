@@ -20,8 +20,8 @@ import {
   sortKey,
   typeBadge,
   workSearchText,
-} from "./core.js?v=5b3a2d520f";
-import { createCatalogueFilters } from "./catalogue-filters.js?v=5b3a2d520f";
+} from "./core.js?v=c77ada42a0";
+import { createCatalogueFilters } from "./catalogue-filters.js?v=c77ada42a0";
 
 mountSiteChrome("works");
 
@@ -159,6 +159,7 @@ try {
     count: filterCount,
     resetButton,
     onChange: resetAndRender,
+    indexType: "work",
   });
   filterController.read();
   controls.search.addEventListener("input", debounce(resetAndRender));

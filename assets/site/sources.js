@@ -12,8 +12,8 @@ import {
   renderError,
   renderLoading,
   safeExternalUrl,
-} from "./core.js?v=5b3a2d520f";
-import { createCatalogueFilters } from "./catalogue-filters.js?v=5b3a2d520f";
+} from "./core.js?v=c77ada42a0";
+import { createCatalogueFilters } from "./catalogue-filters.js?v=c77ada42a0";
 
 // This page is intentionally not part of NAV_ITEMS yet. It can be reviewed as
 // a direct route without changing the site's established primary pathways.
@@ -259,6 +259,7 @@ try {
     count: filterCount,
     resetButton,
     onChange: resetAndRender,
+    indexType: "source",
   });
   filterController.read();
   controls.search.addEventListener("input", debounce(resetAndRender));

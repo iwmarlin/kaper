@@ -17,7 +17,7 @@
    the swashed display forms can never appear by accident. */
 @font-face {
   font-family: "Fraunces";
-  src: url("../fonts/kaper-serif.woff2?v=5b3a2d520f") format("woff2");
+  src: url("../fonts/kaper-serif.woff2?v=c77ada42a0") format("woff2");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
@@ -25,7 +25,7 @@
 
 @font-face {
   font-family: "Fraunces";
-  src: url("../fonts/kaper-serif-italic.woff2?v=5b3a2d520f") format("woff2");
+  src: url("../fonts/kaper-serif-italic.woff2?v=c77ada42a0") format("woff2");
   font-weight: 100 900;
   font-style: italic;
   font-display: swap;
@@ -33,7 +33,7 @@
 
 @font-face {
   font-family: "Archivo";
-  src: url("../fonts/kaper-sans.woff2?v=5b3a2d520f") format("woff2");
+  src: url("../fonts/kaper-sans.woff2?v=c77ada42a0") format("woff2");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
@@ -41,7 +41,7 @@
 
 @font-face {
   font-family: "Archivo";
-  src: url("../fonts/kaper-sans-italic.woff2?v=5b3a2d520f") format("woff2");
+  src: url("../fonts/kaper-sans-italic.woff2?v=c77ada42a0") format("woff2");
   font-weight: 100 900;
   font-style: italic;
   font-display: swap;
@@ -2843,6 +2843,62 @@ main {
   border-bottom: 1px solid var(--line);
 }
 
+.record-context {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: clamp(1.15rem, 2.2vw, 1.65rem);
+}
+
+.record-breadcrumbs {
+  min-width: 0;
+  color: var(--ink-soft);
+  font-size: var(--fs-4);
+}
+
+.record-breadcrumbs ol {
+  display: flex;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.record-breadcrumbs li {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+}
+
+.record-breadcrumbs li + li::before {
+  flex: none;
+  margin: 0 0.5rem;
+  color: var(--ink-soft);
+  content: "/";
+}
+
+.record-breadcrumbs a,
+.record-back-link {
+  color: var(--accent-dark);
+  font-weight: 680;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+
+.record-breadcrumbs [aria-current="page"] {
+  display: block;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.record-back-link {
+  flex: none;
+  font-size: var(--fs-4);
+}
+
 .record-hero__grid {
   display: grid;
   grid-template-columns: minmax(0, 1.45fr) minmax(14rem, 0.55fr);
@@ -4022,6 +4078,21 @@ html:not(.js) .source-group__head {
 @media (max-width: 680px) {
   :root {
     --shell: min(100% - 1.25rem, 1120px);
+  }
+
+  .record-context {
+    display: grid;
+    justify-items: start;
+    gap: 0.55rem;
+    margin-bottom: 1rem;
+  }
+
+  .record-breadcrumbs {
+    width: 100%;
+  }
+
+  .record-back-link {
+    font-size: var(--fs-5);
   }
 
   .filters__advanced {
