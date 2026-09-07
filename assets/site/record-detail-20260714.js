@@ -1,4 +1,4 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=b21d4bade7";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=0923301273";
 import {
   authorityLinkList,
   certaintyBadge,
@@ -29,8 +29,8 @@ import {
   sourceStatusLabel,
   typeBadge,
   updateMeta,
-} from "./core.js?v=b21d4bade7";
-import { RECORD_INDEXES, recordIndexReturn } from "./catalogue-filters.js?v=b21d4bade7";
+} from "./core.js?v=0923301273";
+import { RECORD_INDEXES, recordIndexReturn } from "./catalogue-filters.js?v=0923301273";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 let target = null;
@@ -144,16 +144,12 @@ function progressiveList(records, {
   className = "entity-list",
   label = "records",
   renderItem,
-  searchText = () => "",
   showTotal = true,
 } = {}) {
   if (!records.length) return "";
   const isProgressive = records.length > LIST_PREVIEW_LIMIT;
   const items = records.map((item) => {
-    const searchValue = normalizeSearch(searchText(item));
-    const attributes = isProgressive
-      ? ` data-progressive-item data-search="${escapeHtml(searchValue)}"`
-      : "";
+    const attributes = isProgressive ? " data-progressive-item" : "";
     return renderItem(item).replace("<li", `<li${attributes}`);
   });
   if (!isProgressive) return `<${tag} class="${className}">${items.join("")}</${tag}>`;
@@ -192,13 +188,6 @@ function entityList(records, type, meta = () => "", label = ENTITY_LIST_LABELS[t
       <a href="${recordUrl(type, item.id)}">${escapeHtml(item.title || item.displayName || item.shortCitation || item.id)}</a>
       <small>${escapeHtml(meta(item))}</small>
     </li>`,
-    searchText: (item) => [
-      item.id,
-      item.title,
-      item.displayName,
-      item.shortCitation,
-      meta(item),
-    ].filter(Boolean).join(" "),
   });
 }
 
@@ -307,24 +296,6 @@ function sortSourcesChronologically(records) {
   });
 }
 
-function sourceSearchText(source) {
-  return [
-    source.id,
-    source.title,
-    source.shortCitation,
-    source.fullCitation,
-    source.creator,
-    source.publication,
-    source.repository,
-    source.date,
-    source.dateEnd,
-    source.dateDisplay,
-    sourceDateRoleLabel(source.dateRole),
-    source.dateQualifier,
-    SOURCE_TYPE_LABELS[source.sourceType] || humanize(source.sourceType || ""),
-  ].filter(Boolean).join(" ");
-}
-
 function validLanguageCode(value) {
   const code = String(value || "").trim().toLowerCase();
   return /^[a-z]{2,3}(?:-[a-z0-9]{2,8})*$/i.test(code) ? code : "";
@@ -424,7 +395,7 @@ function sourceRow(source, index, { expanded = false, indexes = null } = {}) {
     </li>`;
   }
   const detailId = `source-detail-${escapeHtml(source.id)}-${index}`;
-  return `<li class="source-row" id="source-${escapeHtml(source.id)}" data-ledger-item data-search="${escapeHtml(normalizeSearch(sourceSearchText(source)))}">
+  return `<li class="source-row" id="source-${escapeHtml(source.id)}" data-ledger-item>
     <button class="source-row__summary" type="button" data-row-toggle aria-expanded="false" aria-controls="${detailId}">
       <span class="source-row__meta">
         <span class="source-row__id">${escapeHtml(source.id)}</span>
@@ -655,13 +626,6 @@ function personWorkLedger(person, indexes) {
       </ul>` : ""}
     </li>`;
     },
-    searchText: (item) => [
-      item.work.title,
-      item.work.year,
-      item.work.workType,
-      ...item.roles,
-      ...item.sources.map(sourceSearchText),
-    ].filter(Boolean).join(" "),
     showTotal: true,
   });
   return { items, list };
@@ -844,10 +808,6 @@ function relationList(items, work, indexes, variantsByTitle = new Map()) {
       ].filter(Boolean).join(" \u00b7 ");
       return `<li><span>${typeBadge(relationType)} ${titleHtml}${variant && variant.language ? ` ${languageBadge(variant.language)}` : ""}${detail ? `<br><small>${detail}</small>` : ""}</span>${certaintyBadge(item.certainty)}</li>`;
     },
-    searchText: (item) => {
-      const { title } = relationMeta(item);
-      return [item.id, title, item.relationType, item.publicNote].filter(Boolean).join(" ");
-    },
   });
 }
 
@@ -855,7 +815,6 @@ function variantList(items) {
   return progressiveList(items, {
     label: "title variants",
     renderItem: (item) => `<li><span><strong>${languageMarkup(item.variantTitle, item.language)}</strong>${item.titleAsSource && item.titleAsSource !== item.variantTitle ? `<br><small>Source form: ${languageMarkup(item.titleAsSource, item.language)}</small>` : ""}</span><span>${typeBadge(item.variantType)} ${item.language ? languageBadge(item.language) : ""} ${certaintyBadge(item.certainty)}</span></li>`,
-    searchText: (item) => [item.variantTitle, item.titleAsSource, item.variantType, item.language].filter(Boolean).join(" "),
   });
 }
 
@@ -1227,7 +1186,6 @@ function renderPerson(person, data, indexes) {
         className: "entity-list identity-list",
         label: "documented identities",
         renderItem: (item) => `<li><span><strong>${escapeHtml(item.variantName)}</strong>${item.publicNote ? `<br><small>${escapeHtml(item.publicNote)}</small>` : ""}</span>${typeBadge(item.variantType)}</li>`,
-        searchText: (item) => [item.variantName, item.variantType, item.publicNote].filter(Boolean).join(" "),
         showTotal: false,
       }), "", identities.length),
       ledger.items.length
@@ -1241,7 +1199,6 @@ function renderPerson(person, data, indexes) {
       events.length ? section("Documented chronology", progressiveList(events, {
         label: "timeline events",
         renderItem: (item) => `<li><span><a href="${recordUrl("event", item.id)}">${escapeHtml(item.title)}</a>${item.displayDate || item.dateStart ? `<br><small>${escapeHtml(item.displayDate || item.dateStart)}</small>` : ""}</span>${periodBadge(item.periods || item.period)}</li>`,
-        searchText: (item) => [item.title, item.displayDate, item.placeDisplay].filter(Boolean).join(" "),
         showTotal: false,
       }), "", events.length) : "",
       section("Sources linked directly to this person", sourceList(sources, { indexes }), "", sources.length),
@@ -1268,6 +1225,12 @@ function renderPerson(person, data, indexes) {
 function initializeSourceLedgers() {
   target.querySelectorAll("[data-source-ledger]").forEach((ledger) => {
     const rows = [...ledger.querySelectorAll("[data-ledger-item]")];
+    // Search the actual rendered record rather than serialising the same
+    // citation a second time into a data attribute. On the two largest person
+    // pages those duplicate attributes accounted for roughly half of the raw
+    // HTML. textContent includes both the concise row and its full disclosure,
+    // so source-ledger search keeps the same useful vocabulary.
+    const searchIndex = new Map(rows.map((row) => [row, normalizeSearch(row.textContent)]));
     const groups = [...ledger.querySelectorAll("[data-ledger-group]")];
     const search = ledger.querySelector("[data-ledger-search]");
     const expandAll = ledger.querySelector("[data-ledger-expand]");
@@ -1326,7 +1289,7 @@ function initializeSourceLedgers() {
       const query = normalizeSearch(search.value.trim());
       let visible = 0;
       rows.forEach((row) => {
-        const match = !query || row.dataset.search.includes(query);
+        const match = !query || searchIndex.get(row).includes(query);
         row.hidden = !match;
         if (match) visible += 1;
       });
@@ -1386,6 +1349,10 @@ function initializeContentsRail() {
 function initializeProgressiveLists() {
   target.querySelectorAll("[data-progressive-list]").forEach((collection) => {
     const items = [...collection.querySelectorAll("[data-progressive-item]")];
+    // The list item's visible text is the authoritative search surface. This
+    // avoids shipping a large, invisible copy of titles, dates and citations
+    // while preserving accent-insensitive client-side filtering.
+    const searchIndex = new Map(items.map((item) => [item, normalizeSearch(item.textContent)]));
     const toggle = collection.querySelector("[data-progressive-toggle]");
     const panel = collection.querySelector("[data-progressive-panel]");
     const search = collection.querySelector("[data-progressive-search]");
@@ -1403,7 +1370,7 @@ function initializeProgressiveLists() {
       const query = normalizeSearch(search?.value.trim() || "");
       let visibleCount = 0;
       items.forEach((item) => {
-        const visible = !query || item.dataset.search.includes(query);
+        const visible = !query || searchIndex.get(item).includes(query);
         item.hidden = !visible;
         if (visible) visibleCount += 1;
       });
@@ -1487,13 +1454,6 @@ function organizationWorkLedger(organization, indexes) {
       </ul>` : ""}
     </li>`;
     },
-    searchText: (item) => [
-      item.work.title,
-      item.work.year,
-      item.work.workType,
-      ...item.roles,
-      ...item.sources.map(sourceSearchText),
-    ].filter(Boolean).join(" "),
     showTotal: true,
   });
   return { items, list };
@@ -1719,19 +1679,6 @@ function sourceCreditLedger(source, indexes) {
       </ul>` : ""}
     </li>`;
     },
-    searchText: (item) => [
-      item.person.displayName,
-      item.person.primaryRole,
-      ...item.roles,
-      ...item.works.map(({ work, qualifications }) => [
-        work.title,
-        work.year || "",
-        ...[...qualifications.values()].flatMap((qualification) => [
-          qualification.role,
-          qualification.certainty,
-        ]),
-      ].join(" ")),
-    ].filter(Boolean).join(" "),
     showTotal: true,
   });
   return { items, list };

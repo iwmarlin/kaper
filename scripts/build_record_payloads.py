@@ -47,6 +47,11 @@ def record_ids(record: dict, key: str) -> list[str]:
     return value if isinstance(value, list) else []
 
 
+def selected_fields(record: dict, fields: tuple[str, ...]) -> dict:
+    """Return the presentation fields used by a compact related record."""
+    return {field: record[field] for field in fields if field in record}
+
+
 def portrait_belongs_to(media: dict, person: dict, source: dict) -> bool:
     """Whether a portrait reached through a source actually depicts this person.
 
@@ -146,6 +151,96 @@ class RecordPayloadBuilder:
             for member in members:
                 self.add(bundle, "sources", record_ids(member, "sourceIds"))
 
+    def compact_person_relations(self, bundle: dict, person: dict) -> None:
+        """Keep a Person payload complete for its renderer without whole records.
+
+        The central Kaper and Jurmann pages touch hundreds of Works, Sources and
+        Contributions.  Copying every field of every related public record made
+        those compatibility payloads nearly as large as the full tables, even
+        though the Person renderer uses only a handful of fields for its work
+        and evidence ledger.  Direct person Sources and portrait provenance stay
+        complete; credit-only Sources retain the concise citation used beside a
+        Work.  No canonical data is changed by this presentation projection.
+        """
+        contribution_fields = (
+            "id",
+            "role",
+            "certainty",
+            "workIds",
+            "sourceIds",
+        )
+        work_fields = ("id", "title", "year", "workType")
+        event_fields = (
+            "id",
+            "title",
+            "dateStart",
+            "displayDate",
+            "period",
+            "periods",
+        )
+        identity_fields = ("id", "variantName", "variantType", "publicNote")
+        evidence_source_fields = (
+            "id",
+            "date",
+            "shortCitation",
+            "title",
+            "reliability",
+        )
+
+        contributions = bundle["contributions"]
+        evidence_source_ids = {
+            source_id
+            for contribution in contributions.values()
+            if record_ids(contribution, "workIds")
+            for source_id in record_ids(contribution, "sourceIds")
+        }
+        direct_source_ids = set(record_ids(person, "sourceIds")) - evidence_source_ids
+        portrait_source_ids = {
+            source_id
+            for media in bundle["media"].values()
+            for source_id in record_ids(media, "sourceIds")
+        }
+        full_source_ids = direct_source_ids | portrait_source_ids
+
+        bundle["works"] = {
+            record_id: selected_fields(record, work_fields)
+            for record_id, record in bundle["works"].items()
+        }
+        bundle["timelineEvents"] = {
+            record_id: selected_fields(record, event_fields)
+            for record_id, record in bundle["timelineEvents"].items()
+        }
+        bundle["contributions"] = {
+            record_id: selected_fields(record, contribution_fields)
+            for record_id, record in contributions.items()
+        }
+        bundle["personNameVariants"] = {
+            record_id: selected_fields(record, identity_fields)
+            for record_id, record in bundle["personNameVariants"].items()
+        }
+
+        compact_sources: dict[str, dict] = {}
+        for record_id, source in bundle["sources"].items():
+            if record_id in full_source_ids:
+                compact_sources[record_id] = source
+                continue
+            compact = selected_fields(source, evidence_source_fields)
+            if not compact.get("shortCitation") and not compact.get("title"):
+                compact["fullCitation"] = source.get("fullCitation", "")
+            compact_sources[record_id] = compact
+        bundle["sources"] = compact_sources
+
+        required_title_variant_ids = {
+            variant_id
+            for source_id in full_source_ids
+            for variant_id in record_ids(bundle["sources"].get(source_id, {}), "titleVariantIds")
+        }
+        bundle["titleVariants"] = {
+            record_id: record
+            for record_id, record in bundle["titleVariants"].items()
+            if record_id in required_title_variant_ids
+        }
+
     def build(self, record_type: str, record_id: str) -> dict:
         table = RECORD_TYPES[record_type]
         root = self.indexes[table].get(record_id)
@@ -209,6 +304,7 @@ class RecordPayloadBuilder:
                 ]
                 self.add_media_with_sources(bundle, portrait_ids)
             self.add(bundle, "personNameVariants", record_ids(root, "nameVariantIds"))
+            self.compact_person_relations(bundle, root)
         elif record_type == "organization":
             self.add(bundle, "works", record_ids(root, "workIds"))
             self.add(bundle, "timelineEvents", record_ids(root, "timelineEventIds"))
