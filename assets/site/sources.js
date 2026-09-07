@@ -7,15 +7,15 @@ import {
   normalizeSearch,
   renderError,
   safeExternalUrl,
-} from "./core.js?v=0923301273";
-import { createCatalogueFilters } from "./catalogue-filters.js?v=0923301273";
+} from "./core.js?v=d61880f699";
+import { createCatalogueFilters } from "./catalogue-filters.js?v=d61880f699";
 import {
   dateRoleLabel,
   renderSourceIndexRow,
   sourceTitle,
   sourceTypeLabel,
   sourceYear,
-} from "./catalogue-results.js?v=0923301273";
+} from "./catalogue-results.js?v=d61880f699";
 
 // This page is intentionally not part of NAV_ITEMS yet. It can be reviewed as
 // a direct route without changing the site's established primary pathways.
@@ -30,7 +30,6 @@ const controls = {
 };
 const target = document.querySelector("#source-results");
 const countTarget = document.querySelector("#source-results-count");
-const totalLabelTarget = document.querySelector("#source-total-label");
 const loadMore = document.querySelector("#source-more");
 const showAll = document.querySelector("#source-show-all");
 const resetButton = document.querySelector("#source-reset");
@@ -88,7 +87,6 @@ try {
     };
   });
 
-  totalLabelTarget.textContent = `${sources.length} documented ${sources.length === 1 ? "source" : "sources"}`;
   let filterController;
 
   function render() {
@@ -203,7 +201,6 @@ try {
 } catch (error) {
   if (!hasPrerenderedResults) {
     countTarget.textContent = "Source index unavailable";
-    totalLabelTarget.textContent = "Source data unavailable";
     renderError(target, error);
   }
 }

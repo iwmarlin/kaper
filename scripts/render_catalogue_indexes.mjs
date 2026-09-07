@@ -43,7 +43,6 @@ const page = (items, limit, renderer, noun) => {
     markup: shown.map(renderer).join("\n"),
     countText: `Showing ${shown.length} of ${items.length} ${items.length === 1 ? noun[0] : noun[1]}`,
     shown: shown.length,
-    total: items.length,
   };
 };
 

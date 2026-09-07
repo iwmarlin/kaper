@@ -19,10 +19,10 @@ INDEX_FILES = {
     "sources": "sources.json",
 }
 PAGE_CONFIG = {
-    "works": ("works.html", "work-results", "work-results-count", None),
-    "people": ("people.html", "person-results", "person-results-count", "person-total-label"),
-    "media": ("media.html", "media-results", "media-count", None),
-    "sources": ("sources.html", "source-results", "source-results-count", "source-total-label"),
+    "works": ("works.html", "work-results", "work-results-count"),
+    "people": ("people.html", "person-results", "person-results-count"),
+    "media": ("media.html", "media-results", "media-count"),
+    "sources": ("sources.html", "source-results", "source-results-count"),
 }
 START_MARKER = "<!-- catalogue-prerender:start -->"
 END_MARKER = "<!-- catalogue-prerender:end -->"
@@ -50,6 +50,11 @@ MEDIA_FIELDS = (
     "galleryStatus", "sortOrder", "assetPath", "assetPaths", "storageType",
     "externalUrl", "altText",
 )
+WORK_CREDIT_ROLES = {
+    "Film": ("film_director", "composer"),
+    "Song": ("composer", "lyricist", "arranger"),
+    "Other": ("composer", "lyricist", "arranger"),
+}
 
 
 def read_json(path: Path) -> dict:
@@ -72,6 +77,44 @@ def periods(record: dict) -> list[str]:
 
 def joined(values: list[object]) -> str:
     return " ".join(str(value) for value in values if value)
+
+
+def principal_work_credits(
+    work: dict,
+    people: dict[str, dict],
+    contributions: dict[str, dict],
+) -> list[dict]:
+    """Return concise, role-qualified authorship for an index row.
+
+    Performers, publishers and record labels remain valid graph contributors,
+    but they are not presented as authors in the Works index. Role order follows
+    the kind of work and a qualified contribution keeps its certainty status.
+    """
+    allowed_roles = WORK_CREDIT_ROLES.get(work.get("workType"), WORK_CREDIT_ROLES["Other"])
+    by_role: dict[str, list[dict]] = {role: [] for role in allowed_roles}
+    seen: set[tuple[str, str]] = set()
+    for contribution_id in work.get("contributionIds") or []:
+        contribution = contributions.get(contribution_id, {})
+        role = contribution.get("role")
+        if role not in by_role:
+            continue
+        for person_id in contribution.get("personIds") or []:
+            person = people.get(person_id, {})
+            name = person.get("displayName")
+            key = (role, person_id)
+            if not name or key in seen:
+                continue
+            seen.add(key)
+            credit = {"name": name}
+            certainty = contribution.get("certainty")
+            if certainty and certainty != "confirmed":
+                credit["certainty"] = certainty
+            by_role[role].append(credit)
+    return [
+        {"role": role, "people": by_role[role]}
+        for role in allowed_roles
+        if by_role[role]
+    ]
 
 
 def works_index(data_root: Path, schema_version: str) -> dict:
@@ -113,6 +156,7 @@ def works_index(data_root: Path, schema_version: str) -> dict:
             "periods": periods(work),
             "searchVariants": joined(variant_parts),
             "searchSupplement": joined(search_parts),
+            "principalCredits": principal_work_credits(work, people, contributions),
         }
         for key in ("sortTitle", "certainty", "publicScope"):
             if work.get(key):
@@ -300,7 +344,6 @@ def inject_prerender(
     text: str,
     target_id: str,
     count_id: str,
-    total_id: str | None,
     rendered: dict,
 ) -> str:
     block = f"{START_MARKER}\n{rendered['markup']}\n{END_MARKER}"
@@ -309,14 +352,6 @@ def inject_prerender(
         raise ValueError(f"Missing prerender markers for #{target_id}")
     text = pattern.sub(lambda _: block, text, count=1)
     text = replace_element_text(text, count_id, rendered["countText"])
-    if total_id:
-        noun = ("person", "people") if total_id == "person-total-label" else ("source", "sources")
-        total = rendered["total"]
-        text = replace_element_text(
-            text,
-            total_id,
-            f"{total} documented {noun[0] if total == 1 else noun[1]}",
-        )
     return text
 
 
@@ -327,10 +362,10 @@ def expected_files(root: Path) -> tuple[dict[Path, bytes], dict[str, dict], dict
         root / "data/site/indexes" / INDEX_FILES[name]: compact_json(payload)
         for name, payload in payloads.items()
     }
-    for name, (filename, target_id, count_id, total_id) in PAGE_CONFIG.items():
+    for name, (filename, target_id, count_id) in PAGE_CONFIG.items():
         path = root / filename
         text = inject_prerender(
-            path.read_text(encoding="utf-8"), target_id, count_id, total_id, rendered[name]
+            path.read_text(encoding="utf-8"), target_id, count_id, rendered[name]
         )
         files[path] = text.encode("utf-8")
     return files, rendered, payloads

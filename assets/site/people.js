@@ -1,4 +1,4 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=0923301273";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=d61880f699";
 import {
   compareText,
   debounce,
@@ -13,12 +13,12 @@ import {
   PERIOD_ORDER,
   PERSON_FUNCTION_ORDER,
   renderError,
-} from "./core.js?v=0923301273";
-import { createCatalogueFilters } from "./catalogue-filters.js?v=0923301273";
+} from "./core.js?v=d61880f699";
+import { createCatalogueFilters } from "./catalogue-filters.js?v=d61880f699";
 import {
   registerCatalogueImageDerivatives,
   renderPersonIndexRow,
-} from "./catalogue-results.js?v=0923301273";
+} from "./catalogue-results.js?v=d61880f699";
 
 registerCatalogueImageDerivatives(IMAGE_DERIVATIVES);
 mountSiteChrome("people");
@@ -34,7 +34,6 @@ const countTarget = document.querySelector("#person-results-count");
 const loadMore = document.querySelector("#load-more");
 const showAll = document.querySelector("#show-all");
 const resetButton = document.querySelector("#reset-filters");
-const totalLabelTarget = document.querySelector("#person-total-label");
 const filterToggle = document.querySelector("#person-filter-toggle");
 const advancedFilters = document.querySelector("#person-filter-options");
 const activeFilters = document.querySelector("#person-active-filters");
@@ -67,10 +66,6 @@ try {
     ...person,
     _search: indexText([person.displayName, person.searchSupplement].filter(Boolean).join(" ")),
   }));
-
-  if (totalLabelTarget) {
-    totalLabelTarget.textContent = `${people.length} documented ${people.length === 1 ? "person" : "people"}`;
-  }
 
   const availableFunctions = new Set(indexed.flatMap((person) => person.functions));
   addOptions(

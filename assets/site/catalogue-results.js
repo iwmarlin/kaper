@@ -15,7 +15,7 @@ import {
   typeBadge,
   responsiveImage,
   registerImageDerivatives,
-} from "./core.js?v=0923301273";
+} from "./core.js?v=d61880f699";
 
 // Build-time prerendering and browser rendering must configure the exact same
 // core module instance. Query-stamped ES module URLs are distinct module keys
@@ -104,15 +104,34 @@ export function sourceTitle(source) {
   return source.title || source.shortCitation || source.fullCitation || source.id;
 }
 
+function principalCreditText(work) {
+  const labels = {
+    film_director: "Directed by",
+    composer: work.workType === "Film" ? "Music credits" : "Music",
+    lyricist: "Words",
+    arranger: "Arrangement",
+  };
+  return (work.principalCredits || []).map((group) => {
+    const people = (group.people || []).map((person) => (
+      `${person.name}${person.certainty ? ` (${humanize(person.certainty)})` : ""}`
+    )).join(", ");
+    if (!people) return "";
+    const label = labels[group.role] || humanize(group.role);
+    return group.role === "film_director" ? `${label} ${people}` : `${label}: ${people}`;
+  }).filter(Boolean).join(" \u00b7 ");
+}
+
 export function renderWorkIndexRow(work) {
   const qualificationBadges = [
     work.publicScope === "context_only" ? scopeBadge(work.publicScope) : "",
     work.certainty && work.certainty !== "confirmed" ? certaintyBadge(work.certainty) : "",
   ].join("");
+  const credits = principalCreditText(work);
   return `<article class="work-row">
     <div class="work-row__year">${escapeHtml(work.year || "—")}</div>
     <div class="work-row__identity">
       <h2><a href="${recordUrl("work", work.id)}">${escapeHtml(work.title)}</a></h2>
+      ${credits ? `<p class="work-row__credits" title="${escapeHtml(credits)}">${escapeHtml(credits)}</p>` : ""}
       <div class="meta-row" aria-label="Work classification">${typeBadge(work.workType)}${qualificationBadges}</div>
     </div>
     <div class="work-row__period">${periodBadge(work.periods || work.period)}</div>
@@ -134,15 +153,19 @@ export function renderPersonIndexRow(person) {
       sizes: "4rem",
     })
     : `<span class="person-row__monogram" aria-hidden="true">${escapeHtml(initials(person.displayName))}</span>`;
+  const workCount = Number(person.workCount || 0);
   return `<article class="person-row">
     <div class="person-row__avatar">${avatar}</div>
     <div class="person-row__identity">
       <h2><a href="${recordUrl("person", person.id)}">${escapeHtml(person.displayName)}</a></h2>
       <div class="meta-row" aria-label="Documented roles">${(person.roles || []).map(typeBadge).join("")}</div>
     </div>
-    ${(person.periods || []).length
-      ? `<div class="person-row__period" aria-label="Documented periods">${periodBadge(person.periods)}</div>`
-      : ""}
+    <div class="person-row__context">
+      <span class="person-row__work-count">${workCount} documented ${workCount === 1 ? "work" : "works"}</span>
+      ${(person.periods || []).length
+        ? `<div class="person-row__period" aria-label="Documented periods">${periodBadge(person.periods)}</div>`
+        : ""}
+    </div>
   </article>`;
 }
 
