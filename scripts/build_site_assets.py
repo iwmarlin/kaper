@@ -14,10 +14,14 @@ import json
 import re
 import shutil
 from pathlib import Path
+from typing import Optional
 
 
 IMAGE_EXTENSIONS = {".jpg", ".jpeg", ".png", ".tif", ".tiff", ".webp"}
 TARGET_WIDTHS = (320, 640, 960, 1440)
+DERIVATIVE_STATE_FILENAME = "_state.json"
+DERIVATIVE_STATE_SCHEMA = "1.0.0"
+DERIVATIVE_BUILD_SIGNATURE = "webp-quality80-method6-exact-v1"
 HOME_PATHWAYS = (
     ("Works", "Films, songs and other works", "works.html", "Works"),
     ("People", "Collaborators and contemporaries", "people.html", "People"),
@@ -103,14 +107,59 @@ def derivative_directory(output_root: Path, relative: str) -> Path:
     return output_root / f"{stem}-{digest}"
 
 
-def derivatives_are_current(source_path: Path, directory: Path, widths: list[int]) -> bool:
-    """True when every expected derivative exists and is newer than the source."""
+def file_digest(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as handle:
+        for chunk in iter(lambda: handle.read(1024 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
+
+
+def read_derivative_state(path: Path) -> dict:
+    if not path.is_file():
+        return {}
+    try:
+        state = read_json(path)
+    except (OSError, ValueError, json.JSONDecodeError):
+        return {}
+    if (
+        state.get("schemaVersion") != DERIVATIVE_STATE_SCHEMA
+        or state.get("buildSignature") != DERIVATIVE_BUILD_SIGNATURE
+        or not isinstance(state.get("sources"), dict)
+    ):
+        return {}
+    return state
+
+
+def derivatives_are_current(
+    source_path: Path,
+    directory: Path,
+    widths: list[int],
+    source_digest: str,
+    state_entry: Optional[dict],
+) -> bool:
+    """True when the generated set matches the exact source bytes and recipe."""
     if not directory.is_dir():
         return False
-    source_mtime = source_path.stat().st_mtime
+    if state_entry:
+        if state_entry.get("sha256") != source_digest:
+            return False
+        if state_entry.get("widths") != widths:
+            return False
+    else:
+        # One-time migration path for repositories built before the content-hash
+        # state file existed. A successful incremental run writes the state, so
+        # fresh checkouts never depend on Git's non-semantic file timestamps.
+        source_mtime = source_path.stat().st_mtime
+        if any(
+            not (directory / f"{width}.webp").is_file()
+            or (directory / f"{width}.webp").stat().st_mtime < source_mtime
+            for width in widths
+        ):
+            return False
     for width in widths:
         target = directory / f"{width}.webp"
-        if not target.is_file() or target.stat().st_mtime < source_mtime:
+        if not target.is_file():
             return False
     return True
 
@@ -121,8 +170,11 @@ def build_images(
     from PIL import Image
 
     # Derivative directories are keyed by the source path, so a full rebuild
-    # re-encodes every image even when one was added. --incremental keeps the
-    # derivatives that are still newer than their source and encodes the rest.
+    # re-encodes every image. Incremental builds use a tracked content-hash state
+    # instead of mtimes, which are rewritten by Git checkout and are not evidence
+    # that an image changed.
+    state_path = output_root / DERIVATIVE_STATE_FILENAME
+    previous_state = read_derivative_state(state_path) if incremental else {}
     if output_root.exists() and not incremental:
         shutil.rmtree(output_root)
     output_root.mkdir(parents=True, exist_ok=True)
@@ -132,6 +184,7 @@ def build_images(
     largest_derivative = {"path": "", "bytes": 0}
     encoded = 0
     reused = 0
+    source_state: dict[str, dict] = {}
 
     for relative in paths:
         source_path = root / relative
@@ -140,14 +193,22 @@ def build_images(
         with Image.open(source_path) as probe:
             source_width, source_height = probe.size
         widths = derivative_widths(source_width)
+        source_sha256 = file_digest(source_path)
         image = None
-        if incremental and derivatives_are_current(source_path, directory, widths):
+        if incremental and derivatives_are_current(
+            source_path,
+            directory,
+            widths,
+            source_sha256,
+            previous_state.get("sources", {}).get(relative),
+        ):
             reused += 1
         else:
             image = normalized_image(source_path)
             source_width, source_height = image.size
             widths = derivative_widths(source_width)
             encoded += 1
+        source_state[relative] = {"sha256": source_sha256, "widths": widths}
         directory.mkdir(parents=True, exist_ok=True)
         variants = []
         for width in widths:
@@ -181,6 +242,15 @@ def build_images(
             if child.is_dir() and child.name not in keep:
                 shutil.rmtree(child)
                 stale += 1
+
+    write_json(
+        state_path,
+        {
+            "schemaVersion": DERIVATIVE_STATE_SCHEMA,
+            "buildSignature": DERIVATIVE_BUILD_SIGNATURE,
+            "sources": source_state,
+        },
+    )
 
     report = {
         "sourceImages": len(paths),
@@ -413,7 +483,21 @@ def validate(root: Path, public_data_root: Path, site_data_root: Path, mapping_p
     mapping = json.loads(match.group(1))
     if set(mapping) != expected:
         errors.append("Responsive-image mapping does not match public local image paths")
+    state_path = root / "assets/generated/responsive" / DERIVATIVE_STATE_FILENAME
+    state = read_derivative_state(state_path)
+    if not state:
+        errors.append(f"Missing or invalid responsive-image state: {state_path}")
+    elif set(state["sources"]) != expected:
+        errors.append("Responsive-image state does not match public local image paths")
     for source, entry in mapping.items():
+        source_path = root / source
+        state_entry = state.get("sources", {}).get(source)
+        expected_widths = [variant["width"] for variant in entry.get("variants", [])]
+        if state_entry:
+            if state_entry.get("sha256") != file_digest(source_path):
+                errors.append(f"Responsive-image source digest is stale: {source}")
+            if state_entry.get("widths") != expected_widths:
+                errors.append(f"Responsive-image widths are stale: {source}")
         for variant in entry.get("variants", []):
             target = root / variant["path"]
             if not target.is_file():
@@ -433,9 +517,9 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--incremental",
         action="store_true",
-        help="Reuse derivatives that are still newer than their source image instead of "
-             "re-encoding everything. Use this after adding or replacing a few images; a "
-             "full rebuild takes minutes, this takes seconds.",
+        help="Reuse derivatives whose tracked source digest and encoding recipe are current "
+             "instead of re-encoding everything. Use this after adding or replacing a few "
+             "images; a full rebuild takes minutes, this takes seconds.",
     )
     return parser.parse_args()
 
