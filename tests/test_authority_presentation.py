@@ -1,4 +1,5 @@
 import json
+import re
 import unittest
 from pathlib import Path
 
@@ -41,6 +42,14 @@ class AuthorityHeadingTests(unittest.TestCase):
                 "<dt>Authorized name</dt>" in page.read_text(encoding="utf-8"),
                 differs,
                 f"{record['id']} states an authorized name that only repeats its own title",
+            )
+
+    def test_life_dates_are_not_embedded_in_authorized_person_names(self):
+        for record in read_records("people.json"):
+            heading = record.get("authorizedName") or ""
+            self.assertIsNone(
+                re.search(r"(?<!\d)(?:18|19|20)\d{2}(?!\d)", heading),
+                f"{record['id']} repeats structured life dates in its authorized name",
             )
 
     def test_the_type_is_set_once(self):

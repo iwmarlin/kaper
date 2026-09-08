@@ -4275,7 +4275,8 @@
       ],
       "workIds": [
         "W-S205"
-      ]
+      ],
+      "authorizedNameSource": "local heading"
     },
     {
       "id": "P116",
@@ -4657,7 +4658,8 @@
       ],
       "birthYear": 1901,
       "deathYear": 1967,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "authorizedNameSource": "local heading"
     },
     {
       "id": "P130",
@@ -5586,7 +5588,8 @@
       ],
       "timelineEventIds": [
         "TE0020"
-      ]
+      ],
+      "authorizedNameSource": "local heading"
     },
     {
       "id": "P161",
@@ -6028,19 +6031,24 @@
     {
       "id": "P177",
       "displayName": "Walter G. Samuels",
-      "authorizedName": "Samuels, Walter G.",
+      "authorizedName": "Samuels, Walter G. (Walter Gerald)",
+      "authorizedNameSource": "LCNAF",
       "sortName": "Samuels, Walter G.",
       "slug": "walter-g-samuels",
       "primaryRole": "composer",
       "roles": [
         "composer"
       ],
+      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no2007031331\nVIAF: https://viaf.org/viaf/14544113\nISNI: https://isni.org/isni/0000000079707965\nWikidata: https://www.wikidata.org/wiki/Q110177728",
       "workIds": [
         "W-O012"
       ],
       "contributionIds": [
         "CON-O012-C-P177"
-      ]
+      ],
+      "birthYear": 1903,
+      "deathYear": 1994,
+      "lifeDatesCertainty": "confirmed"
     },
     {
       "id": "P178",
