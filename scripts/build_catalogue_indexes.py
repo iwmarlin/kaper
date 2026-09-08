@@ -232,6 +232,11 @@ def people_index(root: Path, data_root: Path, schema_version: str) -> dict:
             "functions": functions,
             "periods": person_periods,
             "workCount": len([work_id for work_id in person.get("workIds") or [] if work_id in works]),
+            "timelineEventCount": len([
+                event_id
+                for event_id in person.get("timelineEventIds") or []
+                if event_id in events
+            ]),
             "searchSupplement": joined([
                 person.get("sortName"),
                 person.get("authorizedName"),

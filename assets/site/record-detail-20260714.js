@@ -1,4 +1,4 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=d61880f699";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=1387bbcf6f";
 import {
   authorityLinkList,
   certaintyBadge,
@@ -29,8 +29,8 @@ import {
   sourceStatusLabel,
   typeBadge,
   updateMeta,
-} from "./core.js?v=d61880f699";
-import { RECORD_INDEXES, recordIndexReturn } from "./catalogue-filters.js?v=d61880f699";
+} from "./core.js?v=1387bbcf6f";
+import { RECORD_INDEXES, recordIndexReturn } from "./catalogue-filters.js?v=1387bbcf6f";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 let target = null;

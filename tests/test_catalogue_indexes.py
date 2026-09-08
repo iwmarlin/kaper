@@ -154,18 +154,25 @@ class CompactCatalogueIndexTests(unittest.TestCase):
         )
         self.assertEqual(probable["certainty"], "probable")
 
-    def test_people_rows_carry_the_exact_documented_work_count(self) -> None:
+    def test_people_rows_carry_exact_documentation_counts(self) -> None:
         people = {item["id"]: item for item in read(INDEXES / "people.json")["records"]}
         canonical = {item["id"]: item for item in read(PUBLIC / "people.json")["records"]}
         work_ids = {item["id"] for item in read(PUBLIC / "works.json")["records"]}
+        event_ids = {item["id"] for item in read(PUBLIC / "timeline-events.json")["records"]}
         for person_id, person in canonical.items():
             with self.subTest(person=person_id):
-                expected = len([
+                expected_works = len([
                     work_id
                     for work_id in person.get("workIds") or []
                     if work_id in work_ids
                 ])
-                self.assertEqual(people[person_id]["workCount"], expected)
+                expected_events = len([
+                    event_id
+                    for event_id in person.get("timelineEventIds") or []
+                    if event_id in event_ids
+                ])
+                self.assertEqual(people[person_id]["workCount"], expected_works)
+                self.assertEqual(people[person_id]["timelineEventCount"], expected_events)
 
     def test_hero_does_not_duplicate_dynamic_result_totals(self) -> None:
         for page_name in ("works.html", "people.html", "media.html", "sources.html"):
@@ -181,8 +188,10 @@ class CompactCatalogueIndexTests(unittest.TestCase):
         people_page = (ROOT / "people.html").read_text(encoding="utf-8")
         self.assertIn('class="work-row__credits"', works_page)
         self.assertIn("Music: Bronisław Kaper", works_page)
-        self.assertIn('class="person-row__work-count"', people_page)
+        self.assertIn('class="person-row__documentation"', people_page)
         self.assertIn("2 documented works", people_page)
+        self.assertIn("Documented in the timeline", people_page)
+        self.assertNotIn("0 documented works", people_page)
 
 
 if __name__ == "__main__":

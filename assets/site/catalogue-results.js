@@ -15,7 +15,7 @@ import {
   typeBadge,
   responsiveImage,
   registerImageDerivatives,
-} from "./core.js?v=d61880f699";
+} from "./core.js?v=1387bbcf6f";
 
 // Build-time prerendering and browser rendering must configure the exact same
 // core module instance. Query-stamped ES module URLs are distinct module keys
@@ -154,6 +154,16 @@ export function renderPersonIndexRow(person) {
     })
     : `<span class="person-row__monogram" aria-hidden="true">${escapeHtml(initials(person.displayName))}</span>`;
   const workCount = Number(person.workCount || 0);
+  const timelineEventCount = Number(person.timelineEventCount || 0);
+  // Zero is accurate as a count but misleading as a description: teachers,
+  // relatives and institutional figures can be strongly documented without
+  // receiving an authorship or production credit for a Work. Name the route
+  // by which the record is documented instead of presenting it as empty.
+  const documentationLabel = workCount > 0
+    ? `${workCount} documented ${workCount === 1 ? "work" : "works"}`
+    : timelineEventCount > 0
+      ? "Documented in the timeline"
+      : "Contextual record";
   return `<article class="person-row">
     <div class="person-row__avatar">${avatar}</div>
     <div class="person-row__identity">
@@ -161,7 +171,7 @@ export function renderPersonIndexRow(person) {
       <div class="meta-row" aria-label="Documented roles">${(person.roles || []).map(typeBadge).join("")}</div>
     </div>
     <div class="person-row__context">
-      <span class="person-row__work-count">${workCount} documented ${workCount === 1 ? "work" : "works"}</span>
+      <span class="person-row__documentation">${documentationLabel}</span>
       ${(person.periods || []).length
         ? `<div class="person-row__period" aria-label="Documented periods">${periodBadge(person.periods)}</div>`
         : ""}
