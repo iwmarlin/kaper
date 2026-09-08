@@ -2030,9 +2030,18 @@
         }
       },
       "SRC0287": {
-        "reason": "Keep the source date distinct from the access date: no publication or update date is established, while the access date remains in accessDate.",
+        "reason": "Preserve the curator-supplied direct AKM work URL, distinguish the undated database record from its access date, and separate the concise catalogue citation from the identity assessment of the Morell credit.",
         "fields": {
-          "date": "n.d."
+          "shortCitation": "AKM/AUME, work no. 478724 — “Wer weiss, wer weiss ob du mich auch liebst”",
+          "fullCitation": "AKM / austro mechana, Werke suchen, work no. 478724, “Wer weiss, wer weiss ob du mich auch liebst,” Austrian version 1, ISWC T-305.551.953-0.",
+          "title": "Wer weiss, wer weiss ob du mich auch liebst — AKM/AUME work entry",
+          "date": "n.d.",
+          "accessDate": "2026-09-08",
+          "reliability": "high",
+          "sourceStatus": "verified_with_attribution_note",
+          "researchNote": "The work overview names MORELL (D) under composer/arranger and records the title variants “Dodo” and “Qui sait.” The Austrian-version table lists Fritz Rotter as lyricist, Hermann Scheibenhofer (protected shares) as composer, Edition Charles Brüll as original publisher, and Universal Music Publishing Austria GmbH as subpublisher. The AKM entry does not itself expand Morell to Bronisław Kaper; that identity is resolved through the same-work evidence represented by SRC0288.",
+          "researchNoteType": "identity_assessment",
+          "primaryUrl": "https://www.akm-aume.at/akm-webapp/#/werke-suchen/details?detailsKey=zOdagOFi3mdcxabRmE4anEBPWWgfh0OF%2F8ofqSNh67p9sg%3D%3D"
         }
       },
       "SRC0292": {
@@ -17146,6 +17155,14 @@
       }
     },
     "Sources": {
+      "SRC0287": {
+        "reason": "The current AKM work page attests the composer/arranger form MORELL (D), not the separate pseudonym Fritz German; retain only the Harry Morell name-variant relation.",
+        "fields": {
+          "nameVariantIds": [
+            "PNV0003"
+          ]
+        }
+      },
       "SRC0413": {
         "reason": "Restrict the English Wikipedia file-page source to the Illustrierter Film-Kurier cover M149; it does not document the separate sheet-music cover M221.",
         "fields": {
@@ -18103,6 +18120,14 @@
       }
     },
     "Person Name Variants": {
+      "PNV0003": {
+        "reason": "The current AKM record SRC0287 names MORELL (D) and Hermann Scheibenhofer, but does not use the pseudonym Fritz German; remove only that unsupported source relation.",
+        "fields": {
+          "sourceIds": [
+            "SRC0287"
+          ]
+        }
+      },
       "PNV0031": {
         "reason": "Keep the printed form “Ferry” with the Dutch item-level source and remove its obsolete German-original and German-source links.",
         "fields": {
