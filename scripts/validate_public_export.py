@@ -40,6 +40,7 @@ from sheet_music_sources import (
 from source_dates import SOURCE_IDENTIFIER_SCHEMES, source_date_errors
 from source_access_dates import has_redundant_access_date
 from source_slugs import canonical_source_slug
+from public_data_dates import validated_public_data_date
 from visual_sources import (
     VISUAL_RIGHTS_NARRATIVE_PATTERN,
     WIKIMEDIA_ORGANIZATION_ID,
@@ -429,6 +430,37 @@ class ExportValidator:
     def _validate_manifest(self) -> None:
         if self.manifest.get("schemaVersion") != self.config["schemaVersion"]:
             self.errors.append("Manifest schemaVersion does not match the allowlist")
+        manifest_date = None
+        try:
+            manifest_date = validated_public_data_date(
+                self.manifest.get("publicDataUpdatedAt")
+            )
+        except ValueError as error:
+            self.errors.append(f"Manifest publicDataUpdatedAt: {error}")
+
+        valid_access_dates = []
+        for source in self.payloads.get("Sources", {}).get("records", []):
+            access_date = source.get("accessDate")
+            if not access_date:
+                continue
+            try:
+                valid_access_dates.append(validated_public_data_date(access_date))
+            except ValueError:
+                self.errors.append(
+                    f"Source {source.get('id', 'unknown')}: accessDate must be a "
+                    "valid YYYY-MM-DD calendar date"
+                )
+        latest_access_date = max(valid_access_dates, default=None)
+        if (
+            manifest_date is not None
+            and latest_access_date is not None
+            and manifest_date < latest_access_date
+        ):
+            self.errors.append(
+                "Manifest publicDataUpdatedAt "
+                f"{manifest_date} predates the latest source accessDate "
+                f"{latest_access_date}"
+            )
         public_inputs = self.manifest.get("publicInputs", {})
         allowlist = public_inputs.get("allowlist", {})
         if allowlist.get("sha256") != sha256(self.config_path):

@@ -49,6 +49,13 @@ def parse_args() -> argparse.Namespace:
         "--publication-date",
         help="YYYY-MM-DD assigned to routes whose public HTML changed (default: today)",
     )
+    parser.add_argument(
+        "--public-data-date",
+        help=(
+            "explicit YYYY-MM-DD date for the canonical public dataset; normally "
+            "advanced automatically when a public table changes"
+        ),
+    )
     return parser.parse_args()
 
 
@@ -71,10 +78,19 @@ def main() -> int:
     if args.publication_date:
         static_command.extend(["--publication-date", args.publication_date])
 
+    reconcile_command = [
+        python,
+        str(scripts / "reconcile_manifest.py"),
+        "--root",
+        str(root),
+    ]
+    if args.public_data_date:
+        reconcile_command.extend(["--public-data-date", args.public_data_date])
+
     build_steps = (
         Step(
             "Reconcile public manifest and build report",
-            (python, str(scripts / "reconcile_manifest.py"), "--root", str(root)),
+            tuple(reconcile_command),
         ),
         Step("Build responsive images and home payload", tuple(image_command)),
         Step(

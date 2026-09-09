@@ -82,6 +82,10 @@ workflow wording.
 publication policy, generator checksum, allowlist checksum, override checksum and
 the SHA-256 checksum of every generated data file. `build-report.json` records
 the complete table counts, applied overrides, allowlist coverage and warnings.
+`publicDataUpdatedAt` is the date on which the canonical public tables were last
+prepared. It is independent of any legacy input-package timestamp. Reconciliation
+advances it only when one of those tables changes; use
+`--public-data-date YYYY-MM-DD` only to reproduce or explicitly date a release.
 
 PNG assets use `.png` filename extensions matching their actual content. The
 normalization changes names and public paths only; the image bytes remain intact.

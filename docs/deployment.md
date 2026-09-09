@@ -63,6 +63,11 @@ python3 scripts/build_static_records.py --check
 python3 scripts/validate_site.py --root .
 ```
 
+`publicDataUpdatedAt` is maintained from changes to the canonical public JSON
+tables, not from a source-package timestamp. `reconcile_manifest.py` advances it
+when those tables change. For a deliberately dated release, pass
+`--public-data-date YYYY-MM-DD` (or use the same option with `rebuild_site.py`).
+
 For local browsing:
 
 ```sh

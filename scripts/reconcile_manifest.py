@@ -7,6 +7,7 @@ export_public_data.py). It recomputes directly from the canonical public files:
 
   - per-table record counts (payload.count + manifest.counts + build-report.counts)
   - per-file byte sizes and sha256 checksums (manifest.files)
+  - the public-data date when a canonical table has changed
   - the overrides checksum and applied/addition/linkAddition counts
   - the generator checksum recorded in the manifest
 
@@ -15,6 +16,7 @@ Then run scripts/validate_public_export.py to confirm everything is consistent.
 Usage:
     python3 scripts/reconcile_manifest.py            # apply changes
     python3 scripts/reconcile_manifest.py --check     # report drift, change nothing
+    python3 scripts/reconcile_manifest.py --public-data-date YYYY-MM-DD
 """
 
 from __future__ import annotations
@@ -23,6 +25,8 @@ import argparse
 import hashlib
 import json
 from pathlib import Path
+
+from public_data_dates import resolve_public_data_updated_at
 
 
 def read_json(path: Path):
@@ -60,6 +64,13 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--root", type=Path, default=Path(__file__).resolve().parent.parent)
     parser.add_argument("--check", action="store_true", help="report drift without writing")
+    parser.add_argument(
+        "--public-data-date",
+        help=(
+            "explicit YYYY-MM-DD dataset date; otherwise advance it only when "
+            "a canonical public table changed"
+        ),
+    )
     args = parser.parse_args()
 
     root: Path = args.root
@@ -99,6 +110,10 @@ def main() -> int:
 
     # 2) file bytes + checksums
     new_files = []
+    canonical_table_files = {
+        table_cfg["file"] for table_cfg in config["tables"].values()
+    }
+    canonical_data_changed = False
     for entry in manifest.get("files", []):
         path = data_root / entry["file"]
         new_entry = dict(entry)
@@ -114,7 +129,22 @@ def main() -> int:
             new_entry["sha256"] = sha256(path)
         if new_entry != entry:
             changes.append(f"files:{entry['file']}")
+            if entry["file"] in canonical_table_files:
+                canonical_data_changed = True
         new_files.append(new_entry)
+
+    # The dataset date describes changes to the canonical public graph, not the
+    # age of an input backup and not rebuilds of reports, code, CSS or HTML.
+    try:
+        public_data_date = resolve_public_data_updated_at(
+            manifest.get("publicDataUpdatedAt"),
+            data_changed=canonical_data_changed,
+            requested_value=args.public_data_date,
+        )
+    except ValueError as error:
+        parser.error(str(error))
+    if public_data_date != manifest.get("publicDataUpdatedAt"):
+        changes.append("manifest.publicDataUpdatedAt")
 
     # 3) overrides checksum + counts
     overrides = read_json(overrides_path)
@@ -162,6 +192,7 @@ def main() -> int:
 
     manifest["counts"] = counts
     manifest["files"] = new_files
+    manifest["publicDataUpdatedAt"] = public_data_date
     manifest["publicInputs"]["overrides"] = ov_new
     manifest["publicInputs"]["allowlist"] = allow_new
     manifest["generator"] = generator_new

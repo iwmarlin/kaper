@@ -31,6 +31,10 @@ from source_dates import (
     source_date_errors,
     usco_identifiers,
 )
+from public_data_dates import (
+    resolve_public_data_updated_at,
+    validated_public_data_date,
+)
 from source_slugs import canonical_source_slug
 from sheet_music_sources import normalize_sheet_music_source
 from visual_sources import normalize_visual_source
@@ -536,12 +540,14 @@ class PublicExporter:
         overrides_path: Path | None,
         output_root: Path,
         assets_root: Path | None,
+        public_data_date: str,
     ) -> None:
         self.backup_root = backup_root.resolve()
         self.config_path = config_path.resolve()
         self.overrides_path = overrides_path.resolve() if overrides_path else None
         self.output_root = output_root.resolve()
         self.assets_root = assets_root.resolve() if assets_root else None
+        self.public_data_date = validated_public_data_date(public_data_date)
         self.config = read_json(self.config_path)
         self.overrides = (
             read_json(self.overrides_path)
@@ -2515,7 +2521,7 @@ class PublicExporter:
         manifest = {
             "schemaVersion": self.config["schemaVersion"],
             "scope": self.config["scope"],
-            "publicDataUpdatedAt": self.database_index["exportedAt"],
+            "publicDataUpdatedAt": self.public_data_date,
             "generator": {
                 "file": Path(__file__).name,
                 "sha256": sha256(Path(__file__).resolve()),
@@ -2630,17 +2636,34 @@ def parse_args() -> argparse.Namespace:
         default=Path(__file__).with_name("public_export_overrides.json"),
         help="Auditable corrections and additions for the public graph",
     )
+    parser.add_argument(
+        "--public-data-date",
+        help=(
+            "YYYY-MM-DD date on which this public dataset is prepared "
+            "(default: today; independent of the source-package export date)"
+        ),
+    )
     return parser.parse_args()
 
 
 def main() -> int:
     args = parse_args()
+    try:
+        public_data_date = resolve_public_data_updated_at(
+            None,
+            data_changed=True,
+            requested_value=args.public_data_date,
+        )
+    except ValueError as error:
+        print(f"Invalid --public-data-date: {error}", file=sys.stderr)
+        return 2
     exporter = PublicExporter(
         backup_root=args.backup,
         config_path=args.config,
         overrides_path=args.overrides,
         output_root=args.output,
         assets_root=args.assets_root,
+        public_data_date=public_data_date,
     )
     result = exporter.run()
     return 0 if result["ok"] else 1
