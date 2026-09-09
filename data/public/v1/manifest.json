@@ -8,19 +8,19 @@
   "publicDataUpdatedAt": "2026-09-09",
   "generator": {
     "file": "export_public_data.py",
-    "sha256": "0a073ca44af419be1e4ba9ba4dc7d4e5fb271e196646b93f186546b2bc551cc5"
+    "sha256": "b60f9440df6d983d6dfe43e93495acd37644a110514d49af815e1cc3f5b0f281"
   },
   "publicInputs": {
     "allowlist": {
       "file": "public_export_config.json",
-      "sha256": "ae6c5f19ebf2e805abdcb393b54bb0a78c299fc2ba88de48e695e50e32193fd6"
+      "sha256": "2171257ba45807c97ad1f43943cd523789d4218f7149f7697291f7296d80f356"
     },
     "overrides": {
       "file": "public_export_overrides.json",
-      "sha256": "9b339ef5b44f7fbdf1e7b3fb19f9e7430468ea1348c08da3f547f76e1aa61fb6",
-      "appliedCount": 756,
-      "additionCount": 326,
-      "linkAdditionCount": 503,
+      "sha256": "ad706086e5f88d4cff23c7234d6433d9c499fa9701cc21fbdaa3ef642237c985",
+      "appliedCount": 761,
+      "additionCount": 329,
+      "linkAdditionCount": 506,
       "linkRemovalCount": 168,
       "exclusionCount": 26
     }
@@ -48,7 +48,7 @@
   "counts": {
     "People": 171,
     "Organizations": 157,
-    "Sources": 765,
+    "Sources": 768,
     "Media": 396,
     "Works": 287,
     "Films": 55,
@@ -65,7 +65,7 @@
     {
       "file": "build-report.json",
       "bytes": 114686,
-      "sha256": "5d4ba63185b09b961563916e72047dda22f6685a93dbedde8430f5deb97df82e"
+      "sha256": "b58117f2551fdcc9f14cbd6ee1ea4aabc6d8e1c2b92b8a86e95713fcce0a24ee"
     },
     {
       "file": "contributions.json",
@@ -84,8 +84,8 @@
     },
     {
       "file": "organizations.json",
-      "bytes": 129859,
-      "sha256": "24448a07677819c449a12a7031afeaa157b749c1cbb58cf1e4956977b9221607"
+      "bytes": 129916,
+      "sha256": "1084352e8a4117408fc868b89d92d479089c8d19b4289b2d57618e656908ac7e"
     },
     {
       "file": "other-works.json",
@@ -94,8 +94,8 @@
     },
     {
       "file": "people.json",
-      "bytes": 166059,
-      "sha256": "a216c682908181dd05c2ae5387ce39444936eff299d7f6d05a14bdebd4a78512"
+      "bytes": 168028,
+      "sha256": "e83c4b17ccab77c0b438677abe09d6eef14a37bf3673754b640391288d7a9933"
     },
     {
       "file": "person-name-variants.json",
@@ -114,8 +114,8 @@
     },
     {
       "file": "sources.json",
-      "bytes": 1108708,
-      "sha256": "7b89da4888ede1875361ab9aea359763a855130d31453d9b2c9d8ad6b0f6a768"
+      "bytes": 1112552,
+      "sha256": "aaf486d3896c77cd60cade50c3d6ebb1b1b548beabc1111f78897c512f9bf430"
     },
     {
       "file": "timeline-events.json",

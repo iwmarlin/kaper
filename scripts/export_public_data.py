@@ -36,6 +36,7 @@ from public_data_dates import (
     validated_public_data_date,
 )
 from source_slugs import canonical_source_slug
+from person_life_dates import life_date_evidence_errors
 from sheet_music_sources import normalize_sheet_music_source
 from visual_sources import normalize_visual_source
 
@@ -58,7 +59,7 @@ TABLE_ORDER = [
 ]
 
 PUBLIC_NARRATIVE_FIELDS = {
-    "People": ("publicNote", "biography"),
+    "People": ("publicNote", "biography", "lifeDatesNote"),
     "Organizations": ("publicNote", "description"),
     "Sources": ("shortCitation", "fullCitation", "researchNote"),
     "Media": ("description", "publicCaption", "publicCreditLine", "rightsNote"),
@@ -1949,6 +1950,9 @@ class PublicExporter:
                 )
 
     def _validate_links(self) -> None:
+        for person in self.output_records["People"]:
+            for error in life_date_evidence_errors(person):
+                self.errors.append(f"People {person['id']}: {error}")
         ids_by_table = {
             table: {record["id"] for record in records}
             for table, records in self.output_records.items()

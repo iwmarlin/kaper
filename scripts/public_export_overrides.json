@@ -5561,6 +5561,54 @@
           "authorityUrl": "VIAF: https://viaf.org/viaf/204922750"
         }
       },
+      "P003": {
+        "reason": "Individual life-date review on 9 September 2026: expose the dated evidence and preserve unresolved authority conflicts.",
+        "fields": {
+          "lifeDatesNote": "ISNI gives 1895 as the birth year, whereas GND gives 17 March 1885. The displayed dates follow 1895–1943; the conflicting birth years remain unresolved.",
+          "lifeDatesSourceIds": [
+            "SRC0623"
+          ]
+        }
+      },
+      "P065": {
+        "reason": "Individual life-date review on 9 September 2026: expose the dated evidence and preserve unresolved authority conflicts.",
+        "fields": {
+          "lifeDatesNote": "The Encyclopédie multimédia de la comédie musicale théâtrale en France gives 15 May 1878 as the birth date, whereas GND gives 18 August 1888. Both give 21 January 1942 as the death date. The displayed dates follow 1878–1942; the birth-date discrepancy remains unresolved.",
+          "lifeDatesSourceIds": [
+            "SRC0613"
+          ]
+        }
+      },
+      "P090": {
+        "reason": "Individual life-date review on 9 September 2026: expose the dated evidence and preserve unresolved authority conflicts.",
+        "fields": {
+          "lifeDatesNote": "Kamilė Rupeikaitė gives 1900–1996 in her study of the Pomeranz family (2024, note 20, pp. 53–54). The Arolsen Archives personal-file listing instead gives 21 March 1901 as Giuliano Pomeranz’s birth date. The displayed dates follow Rupeikaitė; the birth-year discrepancy remains unresolved.",
+          "lifeDatesSourceIds": [
+            "SRC0546",
+            "SRC0545"
+          ]
+        }
+      },
+      "P110": {
+        "reason": "Individual life-date review on 9 September 2026: expose the dated evidence and preserve unresolved authority conflicts.",
+        "fields": {
+          "lifeDatesCertainty": "confirmed",
+          "lifeDatesNote": "The BnF authority record gives 21 April 1904 – 8 June 1981 and cites INSEE death-register data. These support the displayed life dates, 1904–1981.",
+          "lifeDatesSourceIds": [
+            "SRC0856"
+          ],
+          "authorityUrl": "VIAF: https://viaf.org/viaf/306296430\nBnF: https://catalogue.bnf.fr/ark:/12148/cb16440429b"
+        }
+      },
+      "P139": {
+        "reason": "Individual life-date review on 9 September 2026: expose the dated evidence and preserve unresolved authority conflicts.",
+        "fields": {
+          "lifeDatesNote": "BnF gives 18 June 1903 – 14 January 1965, marking the full dates with question marks. GND instead gives 18 June 1907 – 14 January 1965. The displayed years follow BnF, 1903–1965; the disputed status concerns the conflicting birth years.",
+          "lifeDatesSourceIds": [
+            "SRC0857"
+          ]
+        }
+      },
       "P013": {
         "reason": "The established 1899–1951 life dates for Edwin L. Marin agree with the linked authority records; remove the obsolete disputed flag.",
         "fields": {
@@ -6532,10 +6580,15 @@
           "sourceIds": [
             "SRC0492",
             "SRC0677",
-            "SRC0678"
+            "SRC0678",
+            "SRC0858"
           ],
           "timelineEventIds": [
             "TE0041"
+          ],
+          "lifeDatesNote": "GND gives 29 March 1902 as the birth date, whereas Filmportal gives 29 March 1903. Both give 16 March 1988 as the death date. The displayed years follow 1902–1988; the conflicting birth years remain unresolved.",
+          "lifeDatesSourceIds": [
+            "SRC0858"
           ]
         }
       },
@@ -8923,6 +8976,90 @@
           "repository": "Media History Digital Library / Lantern",
           "researchNote": "The advertisement announces Es wird schon wieder besser… at the UFA Gloria-Palast.",
           "researchNoteType": "evidence_note"
+        }
+      },
+      "SRC0856": {
+        "reason": "Add the directly consulted authority or filmographic source for the individual life-date review of 9 September 2026.",
+        "fields": {
+          "dateRole": "described_item",
+          "dateQualifier": "unknown",
+          "accessDate": "2026-09-09",
+          "reliability": "high",
+          "sourceStatus": "verified",
+          "id": "SRC0856",
+          "title": "Fernand Vimont — BnF authority record",
+          "shortCitation": "BnF, Fernand Vimont — authority record FRBNF16440429",
+          "fullCitation": "Bibliothèque nationale de France. “Vimont, Fernand (1904–1981).” Authority record FRBNF16440429.",
+          "sourceType": "authority_record",
+          "creator": "Bibliothèque nationale de France",
+          "repository": "Bibliothèque nationale de France (BnF)",
+          "publication": "BnF Catalogue général",
+          "primaryUrl": "https://catalogue.bnf.fr/ark:/12148/cb16440429b",
+          "slug": "src0856-bnf-fernand-vimont-authority-record",
+          "personIds": [
+            "P110"
+          ],
+          "organizationIds": [
+            "ORG062"
+          ],
+          "researchNote": "The record identifies a songwriter and gives 21 April 1904 as the birth date and 8 June 1981 as the death date. Its cited evidence includes INSEE death-register data accessed by BnF through Open Archives on 7 July 2025.",
+          "researchNoteType": "date_assessment"
+        }
+      },
+      "SRC0857": {
+        "reason": "Add the directly consulted authority or filmographic source for the individual life-date review of 9 September 2026.",
+        "fields": {
+          "dateRole": "described_item",
+          "dateQualifier": "unknown",
+          "accessDate": "2026-09-09",
+          "reliability": "high",
+          "sourceStatus": "verified",
+          "id": "SRC0857",
+          "title": "Jeanette MacDonald — BnF authority record",
+          "shortCitation": "BnF, Jeanette MacDonald — authority record FRBNF13757145",
+          "fullCitation": "Bibliothèque nationale de France. “MacDonald, Jeanette (1903–1965).” Authority record FRBNF13757145.",
+          "sourceType": "authority_record",
+          "creator": "Bibliothèque nationale de France",
+          "repository": "Bibliothèque nationale de France (BnF)",
+          "publication": "BnF Catalogue général",
+          "primaryUrl": "https://catalogue.bnf.fr/ark:/12148/cb13757145r",
+          "slug": "src0857-bnf-jeanette-macdonald-authority-record",
+          "personIds": [
+            "P139"
+          ],
+          "organizationIds": [
+            "ORG062"
+          ],
+          "researchNote": "BnF gives 1903-06-18? and 1965-01-14?, including its uncertainty marks. GND 119403277 instead gives 18 June 1907 and 14 January 1965. The two authority records therefore disagree on the birth year; 1903–1965 follows the BnF heading. GND data consulted through https://lobid.org/gnd/119403277.json on 9 September 2026.",
+          "researchNoteType": "date_assessment"
+        }
+      },
+      "SRC0858": {
+        "reason": "Add the directly consulted authority or filmographic source for the individual life-date review of 9 September 2026.",
+        "fields": {
+          "dateRole": "described_item",
+          "dateQualifier": "unknown",
+          "accessDate": "2026-09-09",
+          "reliability": "high",
+          "sourceStatus": "verified",
+          "id": "SRC0858",
+          "title": "Paul Kohner — Filmportal person entry",
+          "shortCitation": "Filmportal, Paul Kohner — person entry",
+          "fullCitation": "Deutsches Filminstitut & Filmmuseum. “Paul Kohner.” Filmportal.de, person entry.",
+          "sourceType": "filmographic_database",
+          "creator": "Deutsches Filminstitut & Filmmuseum",
+          "repository": "filmportal.de / DFF – Deutsches Filminstitut & Filmmuseum",
+          "publication": "Filmportal.de",
+          "primaryUrl": "https://www.filmportal.de/person/paul-kohner_30c888ac7f4b4b9ea7f2fb464dee7559",
+          "slug": "src0858-filmportal-paul-kohner-person-entry",
+          "personIds": [
+            "P162"
+          ],
+          "organizationIds": [
+            "ORG072"
+          ],
+          "researchNote": "Filmportal gives 29 March 1903 as the birth date and 16 March 1988 as the death date. GND 116308869 instead gives 29 March 1902 as the birth date, with the same death date. The displayed years 1902–1988 follow GND; the birth-year discrepancy remains unresolved. GND data consulted through https://lobid.org/gnd/116308869.json on 9 September 2026.",
+          "researchNoteType": "date_assessment"
         }
       },
       "SRC0045": {
@@ -12312,7 +12449,17 @@
             "SRC0830",
             "SRC0831",
             "SRC0832",
-            "SRC0833"
+            "SRC0833",
+            "SRC0856",
+            "SRC0857"
+          ]
+        }
+      },
+      "ORG072": {
+        "reason": "Link DFF to the Filmportal person record used in Paul Kohner's life-date assessment.",
+        "fields": {
+          "sourceIds": [
+            "SRC0858"
           ]
         }
       },
@@ -14569,6 +14716,22 @@
           ],
           "sourceIds": [
             "SRC0670"
+          ]
+        }
+      },
+      "P110": {
+        "reason": "Link the person to the directly consulted BnF authority record supporting the life-date assessment.",
+        "fields": {
+          "sourceIds": [
+            "SRC0856"
+          ]
+        }
+      },
+      "P139": {
+        "reason": "Link the person to the directly consulted BnF authority record supporting the life-date assessment.",
+        "fields": {
+          "sourceIds": [
+            "SRC0857"
           ]
         }
       },

@@ -104,7 +104,11 @@
       ],
       "birthYear": 1895,
       "deathYear": 1943,
-      "lifeDatesCertainty": "disputed"
+      "lifeDatesCertainty": "disputed",
+      "lifeDatesNote": "ISNI gives 1895 as the birth year, whereas GND gives 17 March 1885. The displayed dates follow 1895–1943; the conflicting birth years remain unresolved.",
+      "lifeDatesSourceIds": [
+        "SRC0623"
+      ]
     },
     {
       "id": "P004",
@@ -2796,7 +2800,11 @@
       ],
       "birthYear": 1878,
       "deathYear": 1942,
-      "lifeDatesCertainty": "disputed"
+      "lifeDatesCertainty": "disputed",
+      "lifeDatesNote": "The Encyclopédie multimédia de la comédie musicale théâtrale en France gives 15 May 1878 as the birth date, whereas GND gives 18 August 1888. Both give 21 January 1942 as the death date. The displayed dates follow 1878–1942; the birth-date discrepancy remains unresolved.",
+      "lifeDatesSourceIds": [
+        "SRC0613"
+      ]
     },
     {
       "id": "P066",
@@ -3863,7 +3871,12 @@
       "lifeDatesCertainty": "disputed",
       "authorizedName": "Pomeranz, Giuliano",
       "authorizedNameSource": "local heading",
-      "deathYear": 1996
+      "deathYear": 1996,
+      "lifeDatesNote": "Kamilė Rupeikaitė gives 1900–1996 in her study of the Pomeranz family (2024, note 20, pp. 53–54). The Arolsen Archives personal-file listing instead gives 21 March 1901 as Giuliano Pomeranz’s birth date. The displayed dates follow Rupeikaitė; the birth-year discrepancy remains unresolved.",
+      "lifeDatesSourceIds": [
+        "SRC0546",
+        "SRC0545"
+      ]
     },
     {
       "id": "P092",
@@ -4154,9 +4167,10 @@
       "roles": [
         "lyricist"
       ],
-      "authorityUrl": "VIAF: https://viaf.org/viaf/306296430",
+      "authorityUrl": "VIAF: https://viaf.org/viaf/306296430\nBnF: https://catalogue.bnf.fr/ark:/12148/cb16440429b",
       "sourceIds": [
-        "SRC0373"
+        "SRC0373",
+        "SRC0856"
       ],
       "contributionIds": [
         "CON-S201-L-P110"
@@ -4166,9 +4180,13 @@
       ],
       "birthYear": 1904,
       "deathYear": 1981,
-      "lifeDatesCertainty": "disputed",
+      "lifeDatesCertainty": "confirmed",
       "authorizedName": "Vimont, Fernand",
-      "authorizedNameSource": "BnF"
+      "authorizedNameSource": "BnF",
+      "lifeDatesNote": "The BnF authority record gives 21 April 1904 – 8 June 1981 and cites INSEE death-register data. These support the displayed life dates, 1904–1981.",
+      "lifeDatesSourceIds": [
+        "SRC0856"
+      ]
     },
     {
       "id": "P111",
@@ -4982,7 +5000,8 @@
       "sourceIds": [
         "SRC0144",
         "SRC0319",
-        "SRC0608"
+        "SRC0608",
+        "SRC0857"
       ],
       "contributionIds": [
         "CON-S130-P-P139"
@@ -4992,7 +5011,11 @@
       ],
       "birthYear": 1903,
       "deathYear": 1965,
-      "lifeDatesCertainty": "disputed"
+      "lifeDatesCertainty": "disputed",
+      "lifeDatesNote": "BnF gives 18 June 1903 – 14 January 1965, marking the full dates with question marks. GND instead gives 18 June 1907 – 14 January 1965. The displayed years follow BnF, 1903–1965; the disputed status concerns the conflicting birth years.",
+      "lifeDatesSourceIds": [
+        "SRC0857"
+      ]
     },
     {
       "id": "P140",
@@ -5628,14 +5651,19 @@
       "sourceIds": [
         "SRC0492",
         "SRC0677",
-        "SRC0678"
+        "SRC0678",
+        "SRC0858"
       ],
       "timelineEventIds": [
         "TE0041"
       ],
       "birthYear": 1902,
       "deathYear": 1988,
-      "lifeDatesCertainty": "disputed"
+      "lifeDatesCertainty": "disputed",
+      "lifeDatesNote": "GND gives 29 March 1902 as the birth date, whereas Filmportal gives 29 March 1903. Both give 16 March 1988 as the death date. The displayed years follow 1902–1988; the conflicting birth years remain unresolved.",
+      "lifeDatesSourceIds": [
+        "SRC0858"
+      ]
     },
     {
       "id": "P163",

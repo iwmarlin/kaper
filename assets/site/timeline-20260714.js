@@ -1,4 +1,4 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=fc8ffabcbc";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=ec5fa66efc";
 import {
   debounce,
   escapeHtml,
@@ -15,8 +15,8 @@ import {
   renderLoading,
   resolveIds,
   responsiveImage,
-} from "./core.js?v=fc8ffabcbc";
-import { createQueryState } from "./catalogue-filters.js?v=fc8ffabcbc";
+} from "./core.js?v=ec5fa66efc";
+import { createQueryState } from "./catalogue-filters.js?v=ec5fa66efc";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 mountSiteChrome("timeline");

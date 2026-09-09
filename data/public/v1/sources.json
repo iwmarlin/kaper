@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 765,
+  "count": 768,
   "records": [
     {
       "id": "SRC0001",
@@ -28436,6 +28436,81 @@
         "W-S082",
         "W-S083"
       ]
+    },
+    {
+      "dateRole": "described_item",
+      "dateQualifier": "unknown",
+      "accessDate": "2026-09-09",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "id": "SRC0856",
+      "title": "Fernand Vimont — BnF authority record",
+      "shortCitation": "BnF, Fernand Vimont — authority record FRBNF16440429",
+      "fullCitation": "Bibliothèque nationale de France. “Vimont, Fernand (1904–1981).” Authority record FRBNF16440429.",
+      "sourceType": "authority_record",
+      "creator": "Bibliothèque nationale de France",
+      "repository": "Bibliothèque nationale de France (BnF)",
+      "publication": "BnF Catalogue général",
+      "primaryUrl": "https://catalogue.bnf.fr/ark:/12148/cb16440429b",
+      "slug": "src0856-bnf-fernand-vimont-authority-record",
+      "personIds": [
+        "P110"
+      ],
+      "organizationIds": [
+        "ORG062"
+      ],
+      "researchNote": "The record identifies a songwriter and gives 21 April 1904 as the birth date and 8 June 1981 as the death date. Its cited evidence includes INSEE death-register data accessed by BnF through Open Archives on 7 July 2025.",
+      "researchNoteType": "date_assessment"
+    },
+    {
+      "dateRole": "described_item",
+      "dateQualifier": "unknown",
+      "accessDate": "2026-09-09",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "id": "SRC0857",
+      "title": "Jeanette MacDonald — BnF authority record",
+      "shortCitation": "BnF, Jeanette MacDonald — authority record FRBNF13757145",
+      "fullCitation": "Bibliothèque nationale de France. “MacDonald, Jeanette (1903–1965).” Authority record FRBNF13757145.",
+      "sourceType": "authority_record",
+      "creator": "Bibliothèque nationale de France",
+      "repository": "Bibliothèque nationale de France (BnF)",
+      "publication": "BnF Catalogue général",
+      "primaryUrl": "https://catalogue.bnf.fr/ark:/12148/cb13757145r",
+      "slug": "src0857-bnf-jeanette-macdonald-authority-record",
+      "personIds": [
+        "P139"
+      ],
+      "organizationIds": [
+        "ORG062"
+      ],
+      "researchNote": "BnF gives 1903-06-18? and 1965-01-14?, including its uncertainty marks. GND 119403277 instead gives 18 June 1907 and 14 January 1965. The two authority records therefore disagree on the birth year; 1903–1965 follows the BnF heading. GND data consulted through https://lobid.org/gnd/119403277.json on 9 September 2026.",
+      "researchNoteType": "date_assessment"
+    },
+    {
+      "dateRole": "described_item",
+      "dateQualifier": "unknown",
+      "accessDate": "2026-09-09",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "id": "SRC0858",
+      "title": "Paul Kohner — Filmportal person entry",
+      "shortCitation": "Filmportal, Paul Kohner — person entry",
+      "fullCitation": "Deutsches Filminstitut & Filmmuseum. “Paul Kohner.” Filmportal.de, person entry.",
+      "sourceType": "filmographic_database",
+      "creator": "Deutsches Filminstitut & Filmmuseum",
+      "repository": "filmportal.de / DFF – Deutsches Filminstitut & Filmmuseum",
+      "publication": "Filmportal.de",
+      "primaryUrl": "https://www.filmportal.de/person/paul-kohner_30c888ac7f4b4b9ea7f2fb464dee7559",
+      "slug": "src0858-filmportal-paul-kohner-person-entry",
+      "personIds": [
+        "P162"
+      ],
+      "organizationIds": [
+        "ORG072"
+      ],
+      "researchNote": "Filmportal gives 29 March 1903 as the birth date and 16 March 1988 as the death date. GND 116308869 instead gives 29 March 1902 as the birth date, with the same death date. The displayed years 1902–1988 follow GND; the birth-year discrepancy remains unresolved. GND data consulted through https://lobid.org/gnd/116308869.json on 9 September 2026.",
+      "researchNoteType": "date_assessment"
     }
   ],
   "recordCount": null

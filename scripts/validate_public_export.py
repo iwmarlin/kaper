@@ -40,6 +40,7 @@ from sheet_music_sources import (
 from source_dates import SOURCE_IDENTIFIER_SCHEMES, source_date_errors
 from source_access_dates import has_redundant_access_date
 from source_slugs import canonical_source_slug
+from person_life_dates import life_date_evidence_errors
 from public_data_dates import validated_public_data_date
 from visual_sources import (
     VISUAL_RIGHTS_NARRATIVE_PATTERN,
@@ -133,7 +134,7 @@ HOFMEISTER_REPOSITORY = "Österreichische Nationalbibliothek / ANNO"
 
 
 PUBLIC_NARRATIVE_FIELDS = {
-    "People": ("publicNote", "biography"),
+    "People": ("publicNote", "biography", "lifeDatesNote"),
     "Organizations": ("publicNote", "description"),
     "Sources": ("shortCitation", "fullCitation", "researchNote"),
     "Media": ("description", "publicCaption", "publicCreditLine", "rightsNote"),
@@ -830,6 +831,8 @@ class ExportValidator:
             walk(payload.get("records", []), table_name)
 
         for person in self.payloads.get("People", {}).get("records", []):
+            for error in life_date_evidence_errors(person):
+                self.errors.append(f"People {person.get('id', 'unknown')}: {error}")
             authorized_name = str(person.get("authorizedName", "")).strip()
             if (
                 person.get("birthYear") is not None

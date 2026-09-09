@@ -1,4 +1,4 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=fc8ffabcbc";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=ec5fa66efc";
 import {
   authorityLinkList,
   certaintyBadge,
@@ -29,8 +29,8 @@ import {
   sourceStatusLabel,
   typeBadge,
   updateMeta,
-} from "./core.js?v=fc8ffabcbc";
-import { RECORD_INDEXES, recordIndexReturn } from "./catalogue-filters.js?v=fc8ffabcbc";
+} from "./core.js?v=ec5fa66efc";
+import { RECORD_INDEXES, recordIndexReturn } from "./catalogue-filters.js?v=ec5fa66efc";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 let target = null;
@@ -1159,6 +1159,10 @@ function renderPerson(person, data, indexes) {
   const events = related(person.timelineEventIds, indexes.timelineEvents)
     .sort((a, b) => String(a.dateStart || "9999").localeCompare(String(b.dateStart || "9999")) || String(a.title).localeCompare(String(b.title)));
   const ledger = personWorkLedger(person, indexes);
+  const dateSources = related(person.lifeDatesSourceIds, indexes.sources);
+  const dateEvidence = person.lifeDatesNote
+    ? `<p>${escapeHtml(person.lifeDatesNote)}</p><p class="record-section__intro">Evidence: ${dateSources.map((source) => `<a href="${recordUrl("source", source.id)}">${escapeHtml(source.shortCitation || source.title || source.id)}</a>`).join("; ")}</p>`
+    : "";
   const creditEvidenceSourceIds = new Set(
     ledger.items.flatMap((item) => item.sources.map((source) => source.id)),
   );
@@ -1182,6 +1186,7 @@ function renderPerson(person, data, indexes) {
     // panel, while the authority links took a section heading of their own for
     // three links.
     main: [
+      section("Life dates and evidence", dateEvidence),
       section("Pseudonyms and documented identities", progressiveList(identities, {
         className: "entity-list identity-list",
         label: "documented identities",
@@ -1214,6 +1219,7 @@ function renderPerson(person, data, indexes) {
       includeFullRightsNote: false,
       includeResolutionLabel: true,
     })}` : ""}${contentsRail([
+      { title: "Life dates and evidence", count: dateEvidence ? dateSources.length : 0 },
       { title: "Pseudonyms and documented identities", count: identities.length },
       { title: "Documented works and their evidence", count: ledger.items.length },
       { title: "Documented chronology", count: events.length },
