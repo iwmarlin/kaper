@@ -37,6 +37,33 @@ TABLE_NAMES = (
 
 
 class RecordingGraphTests(unittest.TestCase):
+    def test_one_off_bernauer_credit_remains_at_recording_level(self) -> None:
+        def records(file_name: str) -> list[dict]:
+            return json.loads(
+                (ROOT / "data/public/v1" / file_name).read_text(encoding="utf-8")
+            )["records"]
+
+        self.assertNotIn("P174", {record["id"] for record in records("people.json")})
+        self.assertNotIn(
+            "CON-S057-P-P174",
+            {record["id"] for record in records("contributions.json")},
+        )
+        self.assertTrue(
+            {"PNV0067", "PNV0071"}.isdisjoint(
+                record["id"] for record in records("person-name-variants.json")
+            )
+        )
+
+        source = next(
+            record for record in records("sources.json") if record["id"] == "SRC0754"
+        )
+        medium = next(
+            record for record in records("media.json") if record["id"] == "M388"
+        )
+        for text in (source["fullCitation"], medium["description"]):
+            self.assertIn("Luigi Bernauer", text)
+            self.assertIn("Fred Lustig", text)
+
     def test_youtube_variants_have_one_canonical_url(self) -> None:
         expected = "https://www.youtube.com/watch?v=MylHacBQYXE"
         self.assertEqual(

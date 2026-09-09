@@ -161,7 +161,7 @@ class PersonFunctionFacetTests(unittest.TestCase):
 
     def test_a_person_is_findable_under_the_names_they_worked_with(self) -> None:
         self.assertIn("P009", self.payload["pseudonym"])
-        self.assertEqual(self.payload["printedName"], ["P174"])
+        self.assertEqual(self.payload["printedName"], [])
         self.assertEqual(self.payload["recordingName"], ["P166"])
 
 

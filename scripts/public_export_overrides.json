@@ -4870,15 +4870,7 @@
           "rightsStatus": "restricted",
           "galleryStatus": "detail_only"
         }
-      },
-      "M449": {
-        "reason": "Replace the legacy blanket rights flag with the explicit restricted classification established by the record’s item-level rights assessment; keep the local reproduction on detail pages only.",
-        "fields": {
-          "rightsStatus": "restricted",
-          "galleryStatus": "detail_only"
-        }
       }
-
     },
     "Organizations": {
       "ORG016": {
@@ -5800,6 +5792,9 @@
     "People": {
       "P091": {
         "reason": "Remove Harold S. Bucquet from the public graph because his sole relation to Little Boy Blue resulted from conflating two distinct 1936 shorts; Buxbaum/Sieghardt identifies Ub Iwerks, not Bucquet, as producer and director of the animated film associated with Kaper and Jurmann."
+      },
+      "P174": {
+        "reason": "Remove Luigi Bernauer as a standalone person record because his retained connection to the catalogue is a recording-level vocal credit. Preserve his name and the Fred Lustig label credit textually in SRC0754 and M388 rather than presenting him as a work-level contributor."
       }
     },
     "Sources": {
@@ -5826,6 +5821,14 @@
       },
       "SRC0343": {
         "reason": "Remove the obsolete IMDb media-viewer duplicate for We Went to College; the retained item-level image source SRC0386 points to the public-domain poster record actually used by M170."
+      },
+      "SRC0849": {
+        "reason": "Remove the biographical booklet source introduced solely to support the standalone Luigi Bernauer identity record and restricted portrait; the recording-level identification needed by the catalogue remains stated in SRC0754 and M388."
+      }
+    },
+    "Media": {
+      "M449": {
+        "reason": "Remove the restricted Luigi Bernauer portrait because the one-off recording performer no longer has a standalone People record and the image serves no other catalogue entity."
       }
     },
     "Contributions": {
@@ -5855,6 +5858,17 @@
       },
       "CON-S205-C-P020": {
         "reason": "Replace the collective composer interpretation of the BnF wording with a source-specific original-lyric credit for Rotter on the French version; the U.S. Copyright Office explicitly divides the German roles."
+      },
+      "CON-S057-P-P174": {
+        "reason": "Remove the work-level performer contribution for Luigi Bernauer/Fred Lustig. His participation belongs to the retained recording description in SRC0754 and M388, not to Contributors and credits for the musical work."
+      }
+    },
+    "Person Name Variants": {
+      "PNV0067": {
+        "reason": "Remove the Fred Lustig person-name record after retiring Luigi Bernauer's standalone People record; retain the label wording and identification directly in SRC0754 and M388."
+      },
+      "PNV0071": {
+        "reason": "Remove the unrelated secondary recording pseudonym Ludwig Bernhuber together with the retired Luigi Bernauer identity record and its solely biographical source."
       }
     },
     "Title Variants": {
@@ -17593,6 +17607,20 @@
             "P019"
           ]
         }
+      },
+      "SRC0754": {
+        "reason": "Keep Luigi Bernauer and the Fred Lustig label credit as bibliographic text on the recording source while removing graph links to the retired person, contribution and name-variant records.",
+        "fields": {
+          "personIds": [
+            "P174"
+          ],
+          "contributionIds": [
+            "CON-S057-P-P174"
+          ],
+          "nameVariantIds": [
+            "PNV0067"
+          ]
+        }
       }
     },
     "Works": {
@@ -17632,6 +17660,20 @@
           ],
           "mediaIds": [
             "M020"
+          ]
+        }
+      },
+      "W-S057": {
+        "reason": "Remove recording-level Luigi Bernauer/Fred Lustig relations from the musical work while retaining the recording itself as M388 and its discographic evidence as SRC0754.",
+        "fields": {
+          "personIds": [
+            "P174"
+          ],
+          "contributionIds": [
+            "CON-S057-P-P174"
+          ],
+          "nameVariantIds": [
+            "PNV0067"
           ]
         }
       },

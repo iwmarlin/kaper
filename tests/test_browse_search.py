@@ -88,8 +88,8 @@ class WorkSearchIndexTests(unittest.TestCase):
     def test_performing_credits_are_searchable(self) -> None:
         self.assertIn("W-S059", self.payload["performer"])
 
-    def test_a_credit_is_searchable_under_the_name_it_was_printed_with(self) -> None:
-        self.assertEqual(self.payload["printedPseudonym"], ["W-S057"])
+    def test_recording_only_name_is_not_indexed_as_a_work_credit(self) -> None:
+        self.assertEqual(self.payload["printedPseudonym"], [])
 
     def test_recorded_title_variants_are_searchable(self) -> None:
         self.assertEqual(self.payload["titleVariant"], ["W-S059"])
