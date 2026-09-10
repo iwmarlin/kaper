@@ -30,6 +30,25 @@ WIKIMEDIA_ORGANIZATION_ID = "ORG090"
 NAC_ORGANIZATION_ID = "ORG070"
 NAC_REPOSITORY = "Narodowe Archiwum Cyfrowe"
 
+WIKIPEDIA_FILE_NAMESPACES = {
+    "archivo",
+    "bestand",
+    "datei",
+    "ficheiro",
+    "fichier",
+    "file",
+    "plik",
+    "soubor",
+    "файл",
+}
+WIKIPEDIA_REPOSITORY_BY_HOST = {
+    "de.wikipedia.org": "German Wikipedia",
+    "en.wikipedia.org": "English Wikipedia",
+    "fr.wikipedia.org": "French Wikipedia",
+    "pl.wikipedia.org": "Polish Wikipedia",
+    "ru.wikipedia.org": "Russian Wikipedia",
+}
+
 NAC_TITLE_SUFFIX = re.compile(
     r"\s+—\s+(?:Narodowe Archiwum Cyfrowe|Szukaj w Archiwach)\s*$",
     flags=re.IGNORECASE,
@@ -175,6 +194,33 @@ def is_wikimedia_commons_file_page(source: dict[str, Any]) -> bool:
     )
 
 
+def is_wikipedia_file_page(source: dict[str, Any]) -> bool:
+    """Return whether the primary record is a file page on a Wikipedia edition."""
+
+    url = str(source.get("primaryUrl") or source.get("url") or "").strip()
+    parsed = urlparse(url)
+    host = parsed.netloc.casefold()
+    if not host.endswith(".wikipedia.org"):
+        return False
+    path = unquote(parsed.path)
+    if not path.startswith("/wiki/"):
+        return False
+    namespace, separator, _ = path.removeprefix("/wiki/").partition(":")
+    return bool(separator) and namespace.casefold() in WIKIPEDIA_FILE_NAMESPACES
+
+
+def wikipedia_file_repository(source: dict[str, Any]) -> str | None:
+    """Return the public platform name for an item-level Wikipedia file page."""
+
+    if not is_wikipedia_file_page(source):
+        return None
+    host = visual_hostname(source)
+    return WIKIPEDIA_REPOSITORY_BY_HOST.get(
+        host,
+        f"{host.split('.', 1)[0].upper()} Wikipedia",
+    )
+
+
 def is_normalized_visual_source(source: dict[str, Any]) -> bool:
     return (
         source.get("sourceType") in VISUAL_SOURCE_TYPES
@@ -195,6 +241,20 @@ def normalize_visual_source(source: dict[str, Any]) -> None:
             source.get("title", "")
         )
         source["title"] = NAC_TITLE_SUFFIX.sub("", title).strip()
+
+    wikipedia_repository = wikipedia_file_repository(source)
+    if wikipedia_repository:
+        # A file page supplies an image, not an encyclopaedia article.
+        # Wikipedia is the access platform, not the historical image creator.
+        source["sourceType"] = "image_or_photograph"
+        source["repository"] = wikipedia_repository
+        source["publication"] = wikipedia_repository
+        source["dateRole"] = "creation"
+        if str(source.get("creator") or "").casefold() in {
+            "wikipedia contributors",
+            "wikimedia contributors",
+        }:
+            source.pop("creator", None)
 
     if source.get("accessDate"):
         source["fullCitation"] = strip_redundant_access_statement(

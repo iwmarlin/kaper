@@ -1428,9 +1428,29 @@
         }
       },
       "SRC0110": {
-        "reason": "Remove the incorrect baptism-record claim and keep the permission statement exclusively with the linked media while retaining the archival consultation context.",
+        "reason": "Classify RP 6854 as the aggregate student file actually cited, rather than as one photograph within it; remove the incorrect baptism-record claim and keep permissions exclusively with linked media.",
         "fields": {
-          "fullCitation": "Archiwum Uniwersytetu Warszawskiego, Bronisław Kaper student file, RP 6854. Aggregate archival source for documents from Kaper's University of Warsaw student file, including the young portrait, University of Warsaw matriculation and study records, and the police certificate of 21 April 1920 recording his religion as Mosaic. Consulted in the archive; no public URL."
+          "fullCitation": "Archiwum Uniwersytetu Warszawskiego, Bronisław Kaper student file, RP 6854. Aggregate archival source for documents from Kaper's University of Warsaw student file, including the young portrait, University of Warsaw matriculation and study records, and the police certificate of 21 April 1920 recording his religion as Mosaic. Consulted in the archive; no public URL.",
+          "sourceType": "archival_document"
+        }
+      },
+      "SRC0168": {
+        "reason": "Classify Michael Toole's authored TCM article as a web page rather than a filmographic database record.",
+        "fields": {
+          "sourceType": "web_page"
+        }
+      },
+      "SRC0212": {
+        "reason": "Date the cited Catalog of Copyright Entries volume, while retaining the separate 2 September 1932 copyright date and registration number in the citation and identifier fields.",
+        "fields": {
+          "date": "1932",
+          "dateRole": "catalogue_volume"
+        }
+      },
+      "SRC0327": {
+        "reason": "Replace the obsolete VK platform label with the TCM access platform named by the structured URL and citation.",
+        "fields": {
+          "title": "Someone to Care for Me — Three Smart Girls, TCM clip"
         }
       },
       "SRC0093": {
@@ -2315,11 +2335,14 @@
         }
       },
       "SRC0397": {
-        "reason": "Normalize the source type and keep the poster citation bibliographic, with the non-free and fair-use assessment exclusively at the linked medium.",
+        "reason": "Classify the item-level English Wikipedia file page as image evidence, not an encyclopaedia article, and keep the rights assessment exclusively at the linked medium.",
         "fields": {
           "fullCitation": "Man of the People (1937). Theatrical-release poster reproduced on English Wikipedia, File: Man of the People poster.jpg.",
           "shortCitation": "English Wikipedia, Man of the People theatrical-release poster (1937)",
-          "sourceType": "wikimedia_article_page"
+          "sourceType": "image_or_photograph",
+          "repository": "English Wikipedia",
+          "publication": "English Wikipedia",
+          "dateRole": "creation"
         }
       },
       "SRC0400": {
@@ -2330,13 +2353,12 @@
         }
       },
       "SRC0403": {
-        "reason": "Treat the English Wikipedia file page as the item-level image source; remove the former composite Wikipedia/IMDb description and repository attribution.",
+        "reason": "Treat the English Wikipedia file page as item-level image evidence, not an encyclopaedia article; remove the former composite Wikipedia/IMDb attribution and do not name page editors as the image creator.",
         "fields": {
           "shortCitation": "English Wikipedia, Abenteuer am Lido — Illustrierter Film-Kurier no. 677",
           "fullCitation": "English Wikipedia. “File:Adventures on the Lido.jpeg.” Digital reproduction of the Illustrierter Film-Kurier programme cover for Abenteuer am Lido, no. 677 (1933).",
-          "sourceType": "wikimedia_article_page",
+          "sourceType": "image_or_photograph",
           "title": "Abenteuer am Lido — Illustrierter Film-Kurier no. 677",
-          "creator": "Wikipedia contributors",
           "repository": "English Wikipedia",
           "publication": "English Wikipedia",
           "slug": "src0403-english-wikipedia-abenteuer-am-lido-ifk-cover",
@@ -2344,16 +2366,18 @@
             "ORG090"
           ],
           "primaryUrl": "https://en.wikipedia.org/wiki/File:Adventures_on_the_Lido.jpeg"
-        }
+        },
+        "removeFields": [
+          "creator"
+        ]
       },
       "SRC0412": {
-        "reason": "Treat the English Wikipedia file page as the item-level image source; remove the former composite Wikipedia/IMDb description and repository attribution.",
+        "reason": "Treat the English Wikipedia file page as item-level image evidence, not an encyclopaedia article; remove the former composite Wikipedia/IMDb attribution and do not name page editors as the image creator.",
         "fields": {
           "shortCitation": "English Wikipedia, Die große Attraktion — Illustrierter Film-Kurier no. 214",
           "fullCitation": "English Wikipedia. “File:The Big Attraction.jpg.” Digital reproduction of the Illustrierter Film-Kurier programme cover for Die große Attraktion, no. 214 (1931).",
-          "sourceType": "wikimedia_article_page",
+          "sourceType": "image_or_photograph",
           "title": "Die große Attraktion — Illustrierter Film-Kurier no. 214",
-          "creator": "Wikipedia contributors",
           "repository": "English Wikipedia",
           "publication": "English Wikipedia",
           "slug": "src0412-english-wikipedia-die-grosse-attraktion-ifk-cover",
@@ -2361,16 +2385,18 @@
             "ORG090"
           ],
           "primaryUrl": "https://en.wikipedia.org/wiki/File:The_Big_Attraction.jpg"
-        }
+        },
+        "removeFields": [
+          "creator"
+        ]
       },
       "SRC0413": {
-        "reason": "Treat the English Wikipedia file page as the item-level image source and restrict the relation to the film-programme cover M149, not the separately sourced sheet-music cover M221.",
+        "reason": "Treat the English Wikipedia file page as item-level image evidence, not an encyclopaedia article; do not name page editors as the image creator, and restrict the relation to film-programme cover M149.",
         "fields": {
           "shortCitation": "English Wikipedia, Heut’ kommt’s drauf an — Illustrierter Film-Kurier no. 1946",
           "fullCitation": "English Wikipedia. “File:Today Is the Day (film).jpg.” Digital reproduction of the Illustrierter Film-Kurier programme cover for Heut’ kommt’s drauf an, no. 1946 (1933).",
-          "sourceType": "wikimedia_article_page",
+          "sourceType": "image_or_photograph",
           "title": "Heut’ kommt’s drauf an — Illustrierter Film-Kurier no. 1946",
-          "creator": "Wikipedia contributors",
           "repository": "English Wikipedia",
           "publication": "English Wikipedia",
           "slug": "src0413-english-wikipedia-heut-kommts-drauf-an-ifk-cover",
@@ -2381,16 +2407,18 @@
             "M149"
           ],
           "primaryUrl": "https://en.wikipedia.org/wiki/File:Today_Is_the_Day_(film).jpg"
-        }
+        },
+        "removeFields": [
+          "creator"
+        ]
       },
       "SRC0414": {
-        "reason": "Treat the English Wikipedia file page as the item-level image source; remove the former composite Wikipedia/IMDb description and repository attribution.",
+        "reason": "Treat the English Wikipedia file page as item-level image evidence, not an encyclopaedia article; remove the former composite Wikipedia/IMDb attribution and do not name page editors as the image creator.",
         "fields": {
           "shortCitation": "English Wikipedia, Hochzeitsreise zu Dritt — Illustrierter Film-Kurier no. 524",
           "fullCitation": "English Wikipedia. “File:Three on a Honeymoon.jpg.” Digital reproduction of the Illustrierter Film-Kurier programme cover for Hochzeitsreise zu Dritt, no. 524 (1932).",
-          "sourceType": "wikimedia_article_page",
+          "sourceType": "image_or_photograph",
           "title": "Hochzeitsreise zu Dritt — Illustrierter Film-Kurier no. 524",
-          "creator": "Wikipedia contributors",
           "repository": "English Wikipedia",
           "publication": "English Wikipedia",
           "slug": "src0414-english-wikipedia-hochzeitsreise-zu-dritt-ifk-cover",
@@ -2398,7 +2426,10 @@
             "ORG090"
           ],
           "primaryUrl": "https://en.wikipedia.org/wiki/File:Three_on_a_Honeymoon.jpg"
-        }
+        },
+        "removeFields": [
+          "creator"
+        ]
       },
       "SRC0417": {
         "reason": "Normalize the source type and keep Filmportal's copyright-status statement exclusively with the linked medium.",
@@ -2433,16 +2464,28 @@
         }
       },
       "SRC0428": {
-        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "reason": "Classify the item-level English Wikipedia file page as image evidence, not an encyclopaedia article, and do not name page editors as the image creator.",
         "fields": {
-          "sourceType": "wikimedia_article_page"
-        }
+          "sourceType": "image_or_photograph",
+          "repository": "English Wikipedia",
+          "publication": "English Wikipedia",
+          "dateRole": "creation"
+        },
+        "removeFields": [
+          "creator"
+        ]
       },
       "SRC0429": {
-        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "reason": "Classify the item-level English Wikipedia file page as image evidence, not an encyclopaedia article, and do not name page editors as the image creator.",
         "fields": {
-          "sourceType": "wikimedia_article_page"
-        }
+          "sourceType": "image_or_photograph",
+          "repository": "English Wikipedia",
+          "publication": "English Wikipedia",
+          "dateRole": "creation"
+        },
+        "removeFields": [
+          "creator"
+        ]
       },
       "SRC0430": {
         "reason": "Normalize the source type and keep the bibliographic citation separate from the rights analysis already published with the linked medium.",
@@ -2551,10 +2594,16 @@
         }
       },
       "SRC0448": {
-        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "reason": "Classify the item-level English Wikipedia file page as image evidence, not an encyclopaedia article; normalize the platform fields and do not name page editors as the image creator.",
         "fields": {
-          "sourceType": "wikimedia_article_page"
-        }
+          "sourceType": "image_or_photograph",
+          "repository": "English Wikipedia",
+          "publication": "English Wikipedia",
+          "dateRole": "creation"
+        },
+        "removeFields": [
+          "creator"
+        ]
       },
       "SRC0450": {
         "reason": "Classify the item-level IMDb media-viewer record as image evidence rather than a generic online database record.",

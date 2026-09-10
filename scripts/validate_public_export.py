@@ -23,6 +23,7 @@ from filmographic_sources import (
     CANONICAL_REPOSITORY_BY_HOST,
     REPOSITORY_ORGANIZATION_BY_HOST,
     expected_imdb_source_type,
+    expected_tcm_source_type,
     source_hostname,
 )
 from recording_organizations import expected_audio_organization_ids
@@ -47,9 +48,11 @@ from visual_sources import (
     WIKIMEDIA_ORGANIZATION_ID,
     is_direct_nac_photograph,
     is_normalized_visual_source,
+    is_wikipedia_file_page,
     is_wikimedia_commons_file_page,
     is_wikimedia_source,
     normalize_visual_source,
+    wikipedia_file_repository,
 )
 
 
@@ -1174,6 +1177,22 @@ class ExportValidator:
                             f"{field_name}={expected_visual.get(field_name)!r}, not "
                             f"{source.get(field_name)!r}"
                         )
+            if is_wikipedia_file_page(source):
+                expected_visual = dict(source)
+                normalize_visual_source(expected_visual)
+                for field_name in (
+                    "sourceType",
+                    "repository",
+                    "publication",
+                    "dateRole",
+                    "creator",
+                ):
+                    if source.get(field_name) != expected_visual.get(field_name):
+                        self.errors.append(
+                            f"Source {source_id}: item-level Wikipedia file page "
+                            f"must use {field_name}={expected_visual.get(field_name)!r}, "
+                            f"not {source.get(field_name)!r}"
+                        )
             if is_normalized_visual_source(source):
                 if source.get("primaryUrl") and not source.get("accessDate"):
                     self.errors.append(
@@ -1235,6 +1254,20 @@ class ExportValidator:
             elif "ORG092" in source.get("organizationIds", []):
                 self.errors.append(
                     f"Source {source_id}: organization ORG092 requires an IMDb primary URL"
+                )
+            tcm_source_type = expected_tcm_source_type(source)
+            if tcm_source_type and source.get("sourceType") != tcm_source_type:
+                self.errors.append(
+                    f"Source {source_id}: authored TCM article requires "
+                    f"sourceType {tcm_source_type!r}, not {source.get('sourceType')!r}"
+                )
+            if source_id == "SRC0327" and "VK" in str(source.get("title") or ""):
+                self.errors.append(
+                    "Source SRC0327: TCM source title still contains the obsolete VK label"
+                )
+            if source_id == "SRC0110" and source.get("sourceType") != "archival_document":
+                self.errors.append(
+                    "Source SRC0110: aggregate student file must be an archival_document"
                 )
             expected_repository = CANONICAL_REPOSITORY_BY_HOST.get(hostname)
             if (

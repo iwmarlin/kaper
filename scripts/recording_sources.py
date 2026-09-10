@@ -118,6 +118,26 @@ RECORDING_FIELDS: dict[str, dict[str, Any]] = {
         ),
         "researchNoteType": "verification_note",
     },
+    "SRC0785": {
+        "fullCitation": (
+            "Eric Harden’s danseorkester, refrain sung by Carljohann Volbach. "
+            "“Wie gern möcht’ ich dich verwöhnen.” From the sound film Melodie "
+            "der Liebe; catalogue number D 4431, matrix Bi 644, 1932. Digital "
+            "transfer published by the Internet Archive from the 78 rpm "
+            "collection of Leif Druedahl."
+        ),
+        "researchNote": (
+            "The Internet Archive metadata gives catalogue number D 4431 and "
+            "matrix Bi 644 but contains no label field. Because the item supplies "
+            "audio only, the physical disc label has not been examined. Matrix "
+            "data identifies the master with the Gloria issue G.O. 10303, "
+            "recorded in Berlin, studio 4, on 11 June 1932 and released in "
+            "November 1932 according to the title list at musiktiteldb.de; the "
+            "Danish wording of the performer credit belongs to the described "
+            "pressing, not to that recording session."
+        ),
+        "researchNoteType": "discographic_note",
+    },
     "SRC0807": {
         "fullCitation": (
             "Fred Marley und sein Tanz-Orchester, with Leo Monosson identified as "

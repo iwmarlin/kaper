@@ -119,6 +119,11 @@ REVIEWED_SOURCE_DATES: dict[str, dict[str, str]] = {
         "dateRole": "described_item",
         "dateQualifier": "confirmed",
     },
+    "SRC0212": {
+        "date": "1932",
+        "dateRole": "catalogue_volume",
+        "dateQualifier": "confirmed",
+    },
     "SRC0299": {
         "date": "1933",
         "dateRole": "described_item",
@@ -173,6 +178,11 @@ REVIEWED_SOURCE_DATES: dict[str, dict[str, str]] = {
     "SRC0448": {
         "date": "1933",
         "dateRole": "described_item",
+        "dateQualifier": "confirmed",
+    },
+    "SRC0467": {
+        "date": "1930",
+        "dateRole": "catalogue_volume",
         "dateQualifier": "confirmed",
     },
     "SRC0533": {
@@ -278,6 +288,29 @@ def source_date_errors(source: Mapping[str, Any]) -> list[str]:
         errors.append(f"dateQualifier {qualifier!r} requires date")
     if display is not None and (not isinstance(display, str) or not display.strip()):
         errors.append("dateDisplay must be a non-empty string when supplied")
+
+    title = str(source.get("title") or "")
+    if (
+        source.get("sourceType") == "copyright_catalogue"
+        and re.search(r"\bCatalogue? of Copyright Entries\b", title, re.IGNORECASE)
+    ):
+        if role != "catalogue_volume":
+            errors.append(
+                "Catalog of Copyright Entries records must date the catalogue volume"
+            )
+        if date not in (None, "") and len(str(date)) != 4:
+            errors.append(
+                "Catalog of Copyright Entries volume dates must be a year"
+            )
+        citation_year = re.search(
+            r"^CCE\s+(\d{4})\b",
+            str(source.get("shortCitation") or ""),
+            re.IGNORECASE,
+        )
+        if citation_year and str(date or "") != citation_year.group(1):
+            errors.append(
+                "Catalog of Copyright Entries date must match the cited volume year"
+            )
     return errors
 
 
@@ -389,16 +422,10 @@ def infer_date_role(source: Mapping[str, Any], normalized_date: str | None) -> s
         for key in ("fullCitation", "shortCitation", "repository", "publication")
     ).casefold()
 
-    if source_type == "copyright_catalogue" and any(
-        marker in citation
-        for marker in (
-            "sacem",
-            "gema",
-            "akm",
-            "austro mechana",
-            "filmtitelliste",
-            "remakerechte",
-        )
+    if source_type == "copyright_catalogue" and re.search(
+        r"\b(?:sacem|gema|akm)\b|\baustro mechana\b|"
+        r"\bfilmtitelliste\b|\bremakerechte\b",
+        citation,
     ):
         return "described_item"
     if source_type in CATALOGUE_SOURCE_TYPES:

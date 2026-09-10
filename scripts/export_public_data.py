@@ -18,6 +18,7 @@ from urllib.parse import parse_qsl, urlencode, urlparse, urlunparse
 from authority_sources import normalize_authority_source
 from filmographic_sources import (
     IMDB_HOSTS,
+    TCM_HOSTS,
     normalize_filmographic_source,
     source_hostname,
 )
@@ -1402,6 +1403,7 @@ class PublicExporter:
             if (
                 source.get("sourceType") == "filmographic_database"
                 or source_hostname(source) in IMDB_HOSTS
+                or source_hostname(source) in TCM_HOSTS
                 or source.get("id") in {"SRC0174", "SRC0602"}
             ):
                 normalize_filmographic_source(source)

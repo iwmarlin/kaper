@@ -68,6 +68,7 @@ IMDB_CITATIONS = {
 }
 
 IMDB_HOSTS = {"imdb.com", "www.imdb.com"}
+TCM_HOSTS = {"tcm.com", "www.tcm.com"}
 
 
 def source_hostname(source: dict[str, Any]) -> str:
@@ -96,6 +97,18 @@ def expected_imdb_source_type(source: dict[str, Any]) -> str | None:
     return "filmographic_database"
 
 
+def expected_tcm_source_type(source: dict[str, Any]) -> str | None:
+    """Classify authored TCM articles without conflating them with title records."""
+
+    url = str(source.get("primaryUrl") or source.get("url") or "").strip()
+    parsed = urlparse(url)
+    if parsed.netloc.casefold() not in TCM_HOSTS:
+        return None
+    if parsed.path.casefold().startswith("/articles/"):
+        return "web_page"
+    return None
+
+
 def strip_redundant_access_statement(value: Any) -> str:
     """Remove a prose access statement when the date lives in ``accessDate``."""
     return normalize_access_citation(value)
@@ -105,6 +118,12 @@ def citation_title(source: dict[str, Any]) -> str:
     """Return a clean work/person title suitable for a source citation."""
     title = str(source.get("title", "")).strip()
     title = re.sub(r"\s+—\s+(?:IMDb\s+)?(?:full|company).*$", "", title)
+    title = re.sub(
+        r"\s+—\s+(?:AFI Catalog|filmportal\.de|Unifrance|IMDb soundtrack entry)$",
+        "",
+        title,
+        flags=re.IGNORECASE,
+    )
     title = re.sub(r"\s+\((?:19|20)\d{2}\)$", "", title)
     return title
 
@@ -224,6 +243,7 @@ def normalize_filmographic_source(source: dict[str, Any]) -> None:
         if source_id == "SRC0168":
             source.update(
                 {
+                    "sourceType": "web_page",
                     "shortCitation": "TCM, “Mutiny on the Bounty” (1935)",
                     "fullCitation": (
                         "Toole, Michael. “Mutiny on the Bounty” (1935). "
@@ -231,6 +251,8 @@ def normalize_filmographic_source(source: dict[str, Any]) -> None:
                     ),
                 }
             )
+        elif source_id == "SRC0327":
+            source["title"] = "Someone to Care for Me — Three Smart Girls, TCM clip"
         elif source_id == "SRC0530":
             source.update(
                 {
