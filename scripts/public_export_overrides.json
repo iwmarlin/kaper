@@ -1504,9 +1504,10 @@
         }
       },
       "SRC0177": {
-        "reason": "Normalize this verified Hofmeister entry to the same issue-level date, short-citation form and underlying music-publisher semantics as the other sheet-music catalogue records.",
+        "reason": "Normalize this verified Hofmeister entry to the same issue-level date, short-citation form and underlying music-publisher semantics as the other sheet-music catalogue records; use the natural-order authorized name in the public creator field while preserving the catalogue form in the citation.",
         "fields": {
           "shortCitation": "Hofmeister, May 1929, p. 118 — “Nimm diesen Strauß Vergißmeinnicht”",
+          "creator": "Bronisław Kaper",
           "publication": "Roehr A.-G., Berlin",
           "date": "1929-05"
         }
@@ -2044,9 +2045,10 @@
         }
       },
       "SRC0491": {
-        "reason": "Classify the forthcoming contribution to Polski Rocznik Muzykologiczny by its document form as a periodical article, not as a book.",
+        "reason": "Classify the forthcoming contribution to Polski Rocznik Muzykologiczny by its document form as a periodical article, not as a book, and expose its journal and volume in the structured publication field.",
         "fields": {
-          "sourceType": "periodical_article"
+          "sourceType": "periodical_article",
+          "publication": "Polski Rocznik Muzykologiczny 19"
         }
       },
       "SRC0287": {
@@ -3125,17 +3127,17 @@
         }
       },
       "SRC0548": {
-        "reason": "Normalize the source type and retain the authority record's explicit modification date in ISO format.",
+        "reason": "Classify the GND person record as an authority record and retain its explicit modification date in ISO format.",
         "fields": {
           "date": "2026-04-14",
-          "sourceType": "online_database"
+          "sourceType": "authority_record"
         }
       },
       "SRC0549": {
-        "reason": "Normalize the source type and retain the authority record's explicit update date in ISO format.",
+        "reason": "Classify the BnF person notice as an authority record and retain its explicit update date in ISO format.",
         "fields": {
           "date": "2015-04-01",
-          "sourceType": "online_database",
+          "sourceType": "authority_record",
           "nameVariantIds": [
             "PNV0029"
           ]
@@ -9732,7 +9734,7 @@
           "id": "SRC0637",
           "shortCitation": "Ramírez Villalpando and Cebey Montes de Oca, “Arquitectura y turismo en Mexicali” (2024)",
           "fullCitation": "Rocío Ramírez Villalpando and Georgina Cebey Montes de Oca, “Arquitectura y turismo en Mexicali. El hotel como reflejo de su interacción,” Registros. Revista de Investigación Histórica 20, no. 2 (July–December 2024): 97–116, esp. 109–110, fig. 9.",
-          "sourceType": "secondary_literature",
+          "sourceType": "periodical_article",
           "title": "Arquitectura y turismo en Mexicali. El hotel como reflejo de su interacción",
           "creator": "Rocío Ramírez Villalpando; Georgina Cebey Montes de Oca",
           "repository": "Universidad Nacional de Mar del Plata",

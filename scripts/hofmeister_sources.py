@@ -70,6 +70,12 @@ TITLE_SUFFIX = re.compile(
     flags=re.IGNORECASE,
 )
 
+HOFMEISTER_CREATOR_OVERRIDES = {
+    # Preserve the catalogue form “Kaper, B.” in fullCitation, but expose the
+    # established natural-order name in the public creator/search field.
+    "SRC0177": "Bronisław Kaper",
+}
+
 
 def is_hofmeister_catalogue_source(source: Mapping[str, Any]) -> bool:
     """Return true only when the consulted object is a scan of the register."""
@@ -150,6 +156,10 @@ def normalize_hofmeister_source(source: dict[str, Any]) -> None:
         source["shortCitation"] = (
             f"Hofmeister, 1931, scan leaf n33 — “{entry_title}”"
         )
+
+    creator = HOFMEISTER_CREATOR_OVERRIDES.get(str(source.get("id", "")))
+    if creator:
+        source["creator"] = creator
 
 
 def normalize_file(path: Path) -> int:

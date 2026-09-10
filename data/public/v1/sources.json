@@ -6038,7 +6038,7 @@
       "fullCitation": "“Kaper, B. Nimm diesen Strauß Vergißmeinnicht. Slow Fox, f. Orch. m. Jazz-St. bearb. v. F. Ralph M 3. — f. Salonorch. m. Jazz-St. bearb. v. F. Ralph M 2. — f. Pfte, 2 V., Vcllo, Kbaß bearb. v. F. Ralph M 1. — f. Ges. m. Pfte M 1,80. Berlin, Roehr.” Hofmeisters Musikalisch-literarischer Monatsbericht, May 1929, p. 118; the classified index of the same issue lists the piano-quintet arrangement under salon quintet on p. 131. ANNO – Austrian Newspapers Online, Österreichische Nationalbibliothek.",
       "sourceType": "sheet_music_catalogue",
       "title": "Hofmeisters Musikalisch-literarischer Monatsbericht: “Nimm diesen Strauß Vergißmeinnicht”",
-      "creator": "Kaper, B.",
+      "creator": "Bronisław Kaper",
       "repository": "Österreichische Nationalbibliothek / ANNO",
       "publication": "Roehr A.-G., Berlin",
       "date": "1929-05",
@@ -16996,6 +16996,7 @@
       "sourceType": "periodical_article",
       "title": "Between Migration and Exile: Bronisław Kaper’s Path from Berlin to Hollywood (1933–1936)",
       "creator": "Iwona Lindstedt",
+      "publication": "Polski Rocznik Muzykologiczny 19",
       "date": "2026",
       "dateRole": "publication",
       "dateQualifier": "forthcoming",
@@ -18854,12 +18855,12 @@
     },
     {
       "id": "SRC0548",
-      "shortCitation": "GND, “Gilbert, Robert” (128793481)",
-      "fullCitation": "Deutsche Nationalbibliothek, Gemeinsame Normdatei (GND), authority record “Gilbert, Robert,” GND 128793481. Preferred name: Gilbert, Robert; born 29 September 1899; died 20 March 1978. Linked identifiers include VIAF 61733693, ISNI 0000 0001 0907 8267, and Library of Congress n83134785. Record modified 14 April 2026.",
-      "sourceType": "online_database",
+      "shortCitation": "GND, “Gilbert, Robert,” 128793481",
+      "fullCitation": "Deutsche Nationalbibliothek. “Gilbert, Robert.” Gemeinsame Normdatei, GND 128793481. Record modified 14 April 2026.",
+      "sourceType": "authority_record",
       "title": "GND authority record: Gilbert, Robert",
-      "creator": "Deutsche Nationalbibliothek / GND",
-      "repository": "Deutsche Nationalbibliothek",
+      "creator": "Deutsche Nationalbibliothek",
+      "repository": "Deutsche Nationalbibliothek (GND)",
       "publication": "Gemeinsame Normdatei (GND)",
       "dateRole": "record_update",
       "dateQualifier": "confirmed",
@@ -18874,17 +18875,19 @@
       "personIds": [
         "P126"
       ],
-      "primaryUrl": "https://d-nb.info/gnd/128793481"
+      "primaryUrl": "https://d-nb.info/gnd/128793481",
+      "researchNote": "The record gives the preferred name Robert Gilbert, birth on 29 September 1899 and death on 20 March 1978, and links VIAF 61733693, ISNI 0000 0001 0907 8267 and LCNAF n83134785.",
+      "researchNoteType": "authority_note"
     },
     {
       "id": "SRC0549",
-      "shortCitation": "BnF authority, “Mauprey, Didier (18..?-1944)” (cb165157811)",
-      "fullCitation": "Bibliothèque nationale de France, Catalogue général, authority record “Mauprey, Didier (18..?-1944),” pseudonym, FRBNF16515781, ark:/12148/cb165157811. The record identifies Didier Mauprey as an author-composer, a pseudonym of Didier Bloch; died 23 December 1944.",
-      "sourceType": "online_database",
+      "shortCitation": "BnF, authority record “Mauprey, Didier (18..?-1944),” FRBNF16515781",
+      "fullCitation": "Bibliothèque nationale de France. Notice de personne “Mauprey, Didier (18..?-1944)”, FRBNF16515781, ark:/12148/cb165157811.",
+      "sourceType": "authority_record",
       "title": "BnF authority record: Mauprey, Didier (18..?-1944)",
       "creator": "Bibliothèque nationale de France",
-      "repository": "Bibliothèque nationale de France",
-      "publication": "BnF Catalogue général",
+      "repository": "Bibliothèque nationale de France (BnF)",
+      "publication": "Catalogue général de la BnF",
       "dateRole": "record_creation",
       "dateQualifier": "confirmed",
       "date": "2015-04-01",
@@ -18907,7 +18910,9 @@
           "scheme": "ark",
           "value": "ark:/12148/cb165157811"
         }
-      ]
+      ],
+      "researchNote": "The notice identifies Didier Mauprey as an author-composer, records the name as a pseudonym of Didier Bloch, and gives his death date as 23 December 1944.",
+      "researchNoteType": "authority_note"
     },
     {
       "id": "SRC0550",
@@ -21392,7 +21397,7 @@
       "id": "SRC0637",
       "shortCitation": "Ramírez Villalpando and Cebey Montes de Oca, “Arquitectura y turismo en Mexicali” (2024)",
       "fullCitation": "Rocío Ramírez Villalpando and Georgina Cebey Montes de Oca, “Arquitectura y turismo en Mexicali. El hotel como reflejo de su interacción,” Registros. Revista de Investigación Histórica 20, no. 2 (July–December 2024): 97–116, esp. 109–110, fig. 9.",
-      "sourceType": "secondary_literature",
+      "sourceType": "periodical_article",
       "title": "Arquitectura y turismo en Mexicali. El hotel como reflejo de su interacción",
       "creator": "Rocío Ramírez Villalpando; Georgina Cebey Montes de Oca",
       "repository": "Universidad Nacional de Mar del Plata",

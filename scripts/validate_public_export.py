@@ -1109,6 +1109,20 @@ class ExportValidator:
                 or source_id in {"SRC0174", "SRC0602"}
             )
             full_citation = str(source.get("fullCitation", ""))
+            authority_label = " ".join(
+                (
+                    str(source.get("title", "")),
+                    full_citation,
+                )
+            ).casefold()
+            if (
+                "authority record" in authority_label
+                and source.get("sourceType") != "authority_record"
+            ):
+                self.errors.append(
+                    f"Source {source_id}: an explicitly labelled authority record "
+                    "must use sourceType 'authority_record'"
+                )
             if source.get("accessDate") and has_redundant_access_date(
                 full_citation
             ):

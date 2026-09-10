@@ -53,6 +53,36 @@ AUTHORITY_FIELDS: dict[str, dict[str, Any]] = {
         ),
         "researchNoteType": "evidence_note",
     },
+    "SRC0548": {
+        "shortCitation": "GND, “Gilbert, Robert,” 128793481",
+        "fullCitation": (
+            "Deutsche Nationalbibliothek. “Gilbert, Robert.” Gemeinsame "
+            "Normdatei, GND 128793481. Record modified 14 April 2026."
+        ),
+        "researchNote": (
+            "The record gives the preferred name Robert Gilbert, birth on 29 "
+            "September 1899 and death on 20 March 1978, and links VIAF "
+            "61733693, ISNI 0000 0001 0907 8267 and LCNAF n83134785."
+        ),
+        "researchNoteType": "authority_note",
+    },
+    "SRC0549": {
+        "shortCitation": (
+            "BnF, authority record “Mauprey, Didier (18..?-1944),” "
+            "FRBNF16515781"
+        ),
+        "fullCitation": (
+            "Bibliothèque nationale de France. Notice de personne “Mauprey, "
+            "Didier (18..?-1944)”, FRBNF16515781, "
+            "ark:/12148/cb165157811."
+        ),
+        "researchNote": (
+            "The notice identifies Didier Mauprey as an author-composer, "
+            "records the name as a pseudonym of Didier Bloch, and gives his "
+            "death date as 23 December 1944."
+        ),
+        "researchNoteType": "authority_note",
+    },
     "SRC0588": {
         "shortCitation": "BnF, authority record “Marc-Cab (1901–1978)”",
         "fullCitation": (

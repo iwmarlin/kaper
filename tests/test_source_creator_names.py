@@ -36,6 +36,12 @@ class SourceCreatorNameTests(unittest.TestCase):
             "a Hofmeister sheet-music creator uses catalogue order in a display field",
         )
 
+    def test_hofmeister_catalogue_creator_is_natural_but_citation_is_faithful(self):
+        records = {record["id"]: record for record in sources()}
+        source = records["SRC0177"]
+        self.assertEqual(source.get("creator"), "Bronisław Kaper")
+        self.assertTrue(source.get("fullCitation", "").startswith("“Kaper, B."))
+
 
 if __name__ == "__main__":
     unittest.main()

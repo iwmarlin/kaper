@@ -54,6 +54,23 @@ class SourceNormalizationTests(unittest.TestCase):
         self.assertEqual(changed_ids, [])
         self.assertEqual(normalized, self.payload)
 
+    def test_gnd_and_bnf_person_notices_use_authority_semantics(self) -> None:
+        expected = {
+            "SRC0548": ("Deutsche Nationalbibliothek (GND)", "VIAF 61733693"),
+            "SRC0549": (
+                "Bibliothèque nationale de France (BnF)",
+                "pseudonym of Didier Bloch",
+            ),
+        }
+        for source_id, (repository, evidence) in expected.items():
+            with self.subTest(source_id=source_id):
+                source = self.sources[source_id]
+                self.assertEqual(source["sourceType"], "authority_record")
+                self.assertEqual(source["repository"], repository)
+                self.assertEqual(source["researchNoteType"], "authority_note")
+                self.assertIn(evidence, source["researchNote"])
+                self.assertNotIn(evidence, source["fullCitation"])
+
     def test_wikipedia_file_and_article_pages_are_not_conflated(self) -> None:
         file_pages = [
             source for source in self.sources.values() if is_wikipedia_file_page(source)

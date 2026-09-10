@@ -37,6 +37,14 @@ class SecondarySourceTypeTests(unittest.TestCase):
             records["SRC0490"].get("publication"),
             "Roczniki Humanistyczne, fascicle 12",
         )
+        self.assertEqual(
+            records["SRC0491"].get("publication"),
+            "Polski Rocznik Muzykologiczny 19",
+        )
+
+    def test_scholarly_journal_article_uses_periodical_type(self) -> None:
+        records = sources_by_id()
+        self.assertEqual(records["SRC0637"]["sourceType"], "periodical_article")
 
     def test_genuine_books_remain_books(self) -> None:
         records = sources_by_id()
