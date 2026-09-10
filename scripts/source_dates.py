@@ -162,22 +162,22 @@ REVIEWED_SOURCE_DATES: dict[str, dict[str, str]] = {
     },
     "SRC0397": {
         "date": "1937",
-        "dateRole": "described_item",
+        "dateRole": "creation",
         "dateQualifier": "confirmed",
     },
     "SRC0428": {
         "date": "1933",
-        "dateRole": "described_item",
+        "dateRole": "creation",
         "dateQualifier": "confirmed",
     },
     "SRC0429": {
         "date": "1935",
-        "dateRole": "described_item",
+        "dateRole": "creation",
         "dateQualifier": "confirmed",
     },
     "SRC0448": {
         "date": "1933",
-        "dateRole": "described_item",
+        "dateRole": "creation",
         "dateQualifier": "confirmed",
     },
     "SRC0467": {
@@ -202,6 +202,11 @@ REVIEWED_SOURCE_DATES: dict[str, dict[str, str]] = {
     },
     "SRC0640": {
         "date": "2014-01-13",
+        "dateRole": "digital_publication",
+        "dateQualifier": "confirmed",
+    },
+    "SRC0714": {
+        "date": "2000",
         "dateRole": "digital_publication",
         "dateQualifier": "confirmed",
     },

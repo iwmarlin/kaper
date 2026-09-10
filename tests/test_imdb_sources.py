@@ -63,7 +63,7 @@ class ImdbSourceTests(unittest.TestCase):
         self.assertIn("M151", self.sources["SRC0166"].get("mediaIds") or [])
         self.assertNotIn("mediaIds", self.sources["SRC0516"])
 
-    def test_wikipedia_non_free_programme_covers_are_restricted(self) -> None:
+    def test_wikipedia_file_page_programme_covers_are_restricted(self) -> None:
         expected_sources = {
             "M077": "SRC0414",
             "M149": "SRC0413",
@@ -76,7 +76,7 @@ class ImdbSourceTests(unittest.TestCase):
             self.assertEqual("detail_only", medium.get("galleryStatus"), media_id)
             self.assertEqual([source_id], medium.get("sourceIds"), media_id)
             self.assertEqual(
-                "wikimedia_article_page",
+                "image_or_photograph",
                 self.sources[source_id].get("sourceType"),
                 source_id,
             )

@@ -39,7 +39,10 @@ from public_data_dates import (
 from source_slugs import canonical_source_slug
 from person_life_dates import life_date_evidence_errors
 from sheet_music_sources import normalize_sheet_music_source
-from visual_sources import normalize_visual_source
+from visual_sources import (
+    normalize_unidentified_photographer_wording,
+    normalize_visual_source,
+)
 
 
 TABLE_ORDER = [
@@ -1389,6 +1392,12 @@ class PublicExporter:
                 value = re.sub(r"\s{2,}", " ", value).strip()
                 media[key] = value
 
+            for key in ("description", "publicCaption", "rightsNote", "publicCreditLine"):
+                if media.get(key):
+                    media[key] = normalize_unidentified_photographer_wording(
+                        media[key]
+                    )
+
     def _normalize_source_public_text(self) -> None:
         """Keep source citations bibliographic rather than graph- or workflow-oriented."""
         for source in self.output_records["Sources"]:
@@ -1720,6 +1729,10 @@ class PublicExporter:
                 source["creator"] = creator
             else:
                 source.pop("creator", None)
+            # Some normalizers replace a generic title with an item-level one.
+            # Build the slug from the final public title, not the pre-normalized
+            # export value.
+            source["slug"] = canonical_source_slug(source)
 
     @staticmethod
     def _append(record: dict[str, Any], key: str, values: list[str]) -> None:

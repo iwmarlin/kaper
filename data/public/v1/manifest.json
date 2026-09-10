@@ -5,10 +5,10 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "publicDataUpdatedAt": "2026-09-09",
+  "publicDataUpdatedAt": "2026-09-10",
   "generator": {
     "file": "export_public_data.py",
-    "sha256": "b60f9440df6d983d6dfe43e93495acd37644a110514d49af815e1cc3f5b0f281"
+    "sha256": "7f839d383f7807e5f7863222032e7d368457b4b02adb41286a73e2c0b62fafdb"
   },
   "publicInputs": {
     "allowlist": {
@@ -17,8 +17,8 @@
     },
     "overrides": {
       "file": "public_export_overrides.json",
-      "sha256": "ad706086e5f88d4cff23c7234d6433d9c499fa9701cc21fbdaa3ef642237c985",
-      "appliedCount": 761,
+      "sha256": "c835948cbaa71f4eaa32154fa9d8634820af74714b2caf3cf23baf16919391f0",
+      "appliedCount": 774,
       "additionCount": 329,
       "linkAdditionCount": 506,
       "linkRemovalCount": 168,
@@ -79,8 +79,8 @@
     },
     {
       "file": "media.json",
-      "bytes": 639199,
-      "sha256": "f2a13ae8a567e65b9d9c150cb2230fab18c0ce0e1a0cc5dcd798bfbdf76e0ca1"
+      "bytes": 639587,
+      "sha256": "707d1fb175c9d793a3911e6cb221db7dea0c0a05049a6b8dcf84e086f1bc088d"
     },
     {
       "file": "organizations.json",
@@ -94,8 +94,8 @@
     },
     {
       "file": "people.json",
-      "bytes": 168028,
-      "sha256": "e83c4b17ccab77c0b438677abe09d6eef14a37bf3673754b640391288d7a9933"
+      "bytes": 168029,
+      "sha256": "6caeaefd5c1f84723517671d81b2ae4a96fb3e114ea99d0b077cbdb33fb5d7a6"
     },
     {
       "file": "person-name-variants.json",
@@ -114,13 +114,13 @@
     },
     {
       "file": "sources.json",
-      "bytes": 1112552,
-      "sha256": "aaf486d3896c77cd60cade50c3d6ebb1b1b548beabc1111f78897c512f9bf430"
+      "bytes": 1113294,
+      "sha256": "6df540179d11ebfc0139ff3a478ef7f4bf0955373b5e036d83bca9a54bf1642a"
     },
     {
       "file": "timeline-events.json",
-      "bytes": 82655,
-      "sha256": "a1e704183e1cde28ad60ae626aca2cca6fd2ad4831b901258f24241f08710341"
+      "bytes": 82657,
+      "sha256": "91fdb565f473eb6d6b6caa49ec2859f66ca500a59cf04e4f34e2de6fb22ab5a8"
     },
     {
       "file": "title-variants.json",

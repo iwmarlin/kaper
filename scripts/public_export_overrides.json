@@ -2161,10 +2161,20 @@
         }
       },
       "SRC0330": {
-        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "reason": "Correct the portrait record from its item-level Wikimedia Commons metadata: identify Becker & Maass / Marie Boehm as the credited creator, retain Universal Filmlexikon as the original publication, and remove the unrelated Wikidata identifier from the source title and slug.",
         "fields": {
-          "date": "n.d.",
-          "sourceType": "wikimedia_commons_file"
+          "title": "Fritz Rotter — portrait by Becker & Maass",
+          "shortCitation": "Becker & Maass / Marie Boehm, portrait of Fritz Rotter, 1920–1932",
+          "fullCitation": "Becker & Maass / Marie Boehm. Portrait of Fritz Rotter, between 1920 and 1932. Universal Filmlexikon (Berlin, 1932), p. 266; digital image via Wikimedia Commons, File:Fritz Rotter (composer) by Becker & Maass.png.",
+          "sourceType": "wikimedia_commons_file",
+          "creator": "Becker & Maass / Marie Boehm",
+          "repository": "Wikimedia Commons",
+          "publication": "Universal Filmlexikon (Berlin, 1932)",
+          "date": "1920",
+          "dateEnd": "1932",
+          "dateRole": "creation",
+          "dateQualifier": "confirmed",
+          "slug": "src0330-fritz-rotter-portrait-becker-maass"
         }
       },
       "SRC0332": {
@@ -2194,9 +2204,13 @@
         }
       },
       "SRC0351": {
-        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "reason": "Replace the Wikimedia filename, whose embedded year is obsolete, with an object-level title and citation that follow the file page's corrected 1933 creation date.",
         "fields": {
-          "sourceType": "wikimedia_commons_file"
+          "title": "Potsdamer Platz with Columbushaus — photograph, 1933",
+          "shortCitation": "Waldemar Titzenthaler, Potsdamer Platz with Columbushaus, 1933",
+          "fullCitation": "Waldemar Titzenthaler. Potsdamer Platz with Columbushaus, Berlin, 1933. Digital image via Wikimedia Commons, File:Potsdamer Platz mit Columbushaus, 1932.jpg; source identified on the file page as Nick Gay, Berlin Then & Now (San Diego, 2005), p. 88.",
+          "sourceType": "wikimedia_commons_file",
+          "slug": "src0351-potsdamer-platz-columbushaus-photograph-1933"
         }
       },
       "SRC0354": {
@@ -2250,9 +2264,17 @@
         }
       },
       "SRC0362": {
-        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "reason": "Correct a substantive mismatch: the linked file and medium show Louis Gaudin's 1931 Paris qui brille poster, not La Parade de France from 1934–35.",
         "fields": {
-          "sourceType": "wikimedia_commons_file"
+          "title": "Paris qui brille — Casino de Paris poster, 1931",
+          "shortCitation": "Louis Gaudin (Zig), Paris qui brille — Casino de Paris poster, 1931",
+          "fullCitation": "Louis Gaudin (Zig). Paris qui brille. Poster for the Casino de Paris, 1931; digital image via Wikimedia Commons, File:Louis Gaudin - Paris qui brille 1931.jpg.",
+          "sourceType": "wikimedia_commons_file",
+          "creator": "Louis Gaudin (Zig)",
+          "date": "1931",
+          "dateRole": "creation",
+          "dateQualifier": "confirmed",
+          "slug": "src0362-paris-qui-brille-casino-de-paris-poster-1931"
         }
       },
       "SRC0364": {
@@ -2262,10 +2284,19 @@
         }
       },
       "SRC0366": {
-        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "reason": "Replace the generic Commons credit with the item-level 1908 postcard metadata: unidentified photographer, Verlag Hans Dursthoff publication and the Manskopf portrait collection in Frankfurt.",
         "fields": {
-          "date": "n.d.",
-          "sourceType": "wikimedia_commons_file"
+          "title": "Moritz Mayer-Mahr — signed portrait postcard, 1908",
+          "shortCitation": "Moritz Mayer-Mahr — signed portrait postcard (Verlag Hans Dursthoff, 1908)",
+          "fullCitation": "Photographer unidentified. Signed portrait postcard of Moritz Mayer-Mahr, published by Verlag Hans Dursthoff, Berlin, 1908. Portrait Collection Friedrich Nicolas Manskopf, Goethe University Frankfurt; digital image via Wikimedia Commons, File:Mayer-Mahr.jpg.",
+          "sourceType": "wikimedia_commons_file",
+          "creator": "Photographer unidentified",
+          "repository": "Portrait Collection Friedrich Nicolas Manskopf, Goethe University Frankfurt; Wikimedia Commons",
+          "publication": "Verlag Hans Dursthoff, Berlin",
+          "date": "1908",
+          "dateRole": "creation",
+          "dateQualifier": "confirmed",
+          "slug": "src0366-moritz-mayer-mahr-signed-portrait-postcard-1908"
         }
       },
       "SRC0376": {
@@ -2605,6 +2636,13 @@
           "creator"
         ]
       },
+      "SRC0467": {
+        "reason": "Date the cited Catalog of Copyright Entries volume; the word 'Gemahlin' must not be misread as a reference to the GEMA repertoire database.",
+        "fields": {
+          "date": "1930",
+          "dateRole": "catalogue_volume"
+        }
+      },
       "SRC0450": {
         "reason": "Classify the item-level IMDb media-viewer record as image evidence rather than a generic online database record.",
         "fields": {
@@ -2697,11 +2735,19 @@
         }
       },
       "SRC0523": {
-        "reason": "Normalize the source type and retain the page's last-modified date in date while keeping the separate research access date in accessDate.",
+        "reason": "Correct the truncated primary URL, remove the duplicate access URL, and classify the cited page consistently as a Polish Wikipedia article while retaining its last-modified date separately from accessDate.",
         "fields": {
+          "shortCitation": "Polish Wikipedia, “Morskie Oko (teatr)”",
+          "fullCitation": "Wikipedia contributors. “Morskie Oko (teatr).” Polish Wikipedia. Last modified 20 June 2026.",
           "date": "2026-06-20",
-          "sourceType": "web_page"
-        }
+          "sourceType": "wikimedia_article_page",
+          "repository": "Polish Wikipedia",
+          "publication": "Polish Wikipedia",
+          "primaryUrl": "https://pl.wikipedia.org/wiki/Morskie_Oko_(teatr)"
+        },
+        "removeFields": [
+          "accessUrl"
+        ]
       },
       "SRC0524": {
         "reason": "Normalize the source type and retain the dataset currency date in date while keeping the separate research access date in accessDate.",
@@ -2768,9 +2814,18 @@
         }
       },
       "SRC0571": {
-        "reason": "Keep the historical photograph citation bibliographic and retain the public-domain assessment exclusively with the linked medium.",
+        "reason": "Complete the item-level provenance from the Wikimedia file page by recording the unidentified photographer and the cited Schweizer Familie reproduction; retain rights analysis exclusively with the linked medium.",
         "fields": {
-          "fullCitation": "Hôtel Ritz, Place Vendôme, Paris, 1900. Photographer unidentified. Wikimedia Commons, File:Hotel Ritz Paris 1900.jpg."
+          "shortCitation": "Photographer unidentified, Hôtel Ritz, Paris, 1900 — Wikimedia Commons",
+          "fullCitation": "Photographer unidentified. Hôtel Ritz, Place Vendôme, Paris, 1900. Reproduced in Schweizer Familie, no. 27 (2018), p. 37; digital image via Wikimedia Commons, File:Hotel Ritz Paris 1900.jpg.",
+          "creator": "Photographer unidentified",
+          "publication": "Schweizer Familie, no. 27 (2018)"
+        }
+      },
+      "SRC0572": {
+        "reason": "Use natural name order for the photographer in the public creator field while preserving the full Library of Congress authority form in the underlying catalogue record.",
+        "fields": {
+          "creator": "Samuel Herman Gottscho"
         }
       },
       "SRC0024": {
@@ -2898,10 +2953,13 @@
         }
       },
       "SRC0595": {
-        "reason": "Retain the uploader and object provenance in the citation while keeping the rights declaration exclusively with the linked medium.",
+        "reason": "Represent the Commons file page's authorship claim without presenting the uploader role as an established photographic credit; keep the unresolved original photographer and publisher in an explicit provenance note.",
         "fields": {
-          "fullCitation": "Autogrammkarte von Alfred Zeisler, 1932. Uploaded to Wikimedia Commons by the user Azeisler as own work. Accessed 31 July 2026.",
-          "shortCitation": "Wikimedia Commons, autograph card of Alfred Zeisler, 1932"
+          "fullCitation": "“Alfred Zeisler.” Autograph card, 1932. Wikimedia Commons, File:Smzeisle.jpg; the file page credits user Azeisler as author under an ‘own work’ claim.",
+          "shortCitation": "Wikimedia Commons, autograph card of Alfred Zeisler, 1932",
+          "creator": "Azeisler (file-page attribution)",
+          "researchNote": "The file page names uploader Azeisler as author and marks the upload as own work; it does not identify the photographer or the original publisher of the 1932 autograph card.",
+          "researchNoteType": "object_context"
         }
       },
       "SRC0596": {
@@ -2909,6 +2967,23 @@
         "fields": {
           "fullCitation": "Max Ophüls, photographed by Studio Harcourt, 1950s. Réunion des musées nationaux — Grand Palais, ark:/36255/08-538083. Wikimedia Commons. Accessed 31 July 2026.",
           "shortCitation": "Studio Harcourt, portrait of Max Ophüls, 1950s"
+        }
+      },
+      "SRC0597": {
+        "reason": "Classify the German Wikipedia Datei page as item-level image evidence rather than an encyclopaedia article, while preserving its qualified creator attribution.",
+        "fields": {
+          "sourceType": "image_or_photograph",
+          "repository": "German Wikipedia",
+          "publication": "German Wikipedia",
+          "dateRole": "creation"
+        }
+      },
+      "SRC0785": {
+        "reason": "Keep the bibliographic citation limited to the published transfer metadata and place the unverified label identification and matrix comparison in the discographic research note.",
+        "fields": {
+          "fullCitation": "Eric Harden’s danseorkester, refrain sung by Carljohann Volbach. “Wie gern möcht’ ich dich verwöhnen.” From the sound film Melodie der Liebe; catalogue number D 4431, matrix Bi 644, 1932. Digital transfer published by the Internet Archive from the 78 rpm collection of Leif Druedahl.",
+          "researchNote": "The Internet Archive metadata gives catalogue number D 4431 and matrix Bi 644 but contains no label field. Because the item supplies audio only, the physical disc label has not been examined. Matrix data identifies the master with the Gloria issue G.O. 10303, recorded in Berlin, studio 4, on 11 June 1932 and released in November 1932 according to the title list at musiktiteldb.de; the Danish wording of the performer credit belongs to the described pressing, not to that recording session.",
+          "researchNoteType": "discographic_note"
         }
       },
       "SRC0598": {
@@ -2933,10 +3008,13 @@
         }
       },
       "SRC0604": {
-        "reason": "Keep the periodical portrait citation bibliographic and retain the copyright-term analysis exclusively with the linked medium.",
+        "reason": "Normalize the unidentified photographer, periodical publication and the distinct Internet Archive and Wikimedia delivery layers; retain copyright-term analysis exclusively with the linked medium.",
         "fields": {
-          "fullCitation": "Portrait of Robert Z. Leonard, photographer unidentified. Published in The Motion Picture Director, July 1926; digitised by the Internet Archive. Accessed 1 August 2026.",
-          "shortCitation": "Wikimedia Commons, portrait of Robert Z. Leonard from The Motion Picture Director, July 1926"
+          "fullCitation": "Photographer unidentified. Portrait of Robert Z. Leonard. The Motion Picture Director, July 1926; digitised by the Internet Archive and supplied as a digital image via Wikimedia Commons.",
+          "shortCitation": "The Motion Picture Director, July 1926 — portrait of Robert Z. Leonard",
+          "creator": "Photographer unidentified",
+          "repository": "Internet Archive; Wikimedia Commons",
+          "publication": "The Motion Picture Director"
         }
       },
       "SRC0606": {
@@ -3668,7 +3746,36 @@
       "M043": {
         "reason": "Classify the Fritz Rotter portrait by its documented role in Kaper's Berlin collaboration beginning in 1926.",
         "fields": {
-          "period": "european"
+          "period": "european",
+          "publicCreditLine": "Becker & Maass / Marie Boehm; Wikimedia Commons, public domain."
+        }
+      },
+      "M079": {
+        "reason": "Use the authorized form Moritz Mayer-Mahr throughout the public portrait record and incorporate the verified postcard publication and holding provenance.",
+        "fields": {
+          "title": "Moritz Mayer-Mahr — portrait",
+          "description": "Portrait of the Berlin pianist and teacher Moritz Mayer-Mahr (1869–1947), published as a signed postcard by Verlag Hans Dursthoff in 1908.",
+          "altText": "Signed portrait postcard of the pianist Moritz Mayer-Mahr, 1908.",
+          "publicCaption": "Moritz Mayer-Mahr, the Berlin pianist and teacher with whom Kaper studied, on a signed portrait postcard published in 1908.",
+          "publicCreditLine": "Photographer unidentified; Verlag Hans Dursthoff, Berlin, 1908; Portrait Collection Friedrich Nicolas Manskopf, Goethe University Frankfurt / Wikimedia Commons, public domain."
+        }
+      },
+      "M111": {
+        "reason": "Remove the obsolete Parade wording from the slug after identifying the image as Louis Gaudin's 1931 Paris qui brille poster.",
+        "fields": {
+          "slug": "casino-de-paris-paris-qui-brille-poster-m111"
+        }
+      },
+      "M243": {
+        "reason": "Use the controlled unidentified-photographer wording in the public credit line.",
+        "fields": {
+          "publicCreditLine": "Photographer unidentified; Wikimedia Commons, File:Hotel Ritz Paris 1900.jpg."
+        }
+      },
+      "M255": {
+        "reason": "Identify the unresolved role as photographer rather than the broader and misleading label artist.",
+        "fields": {
+          "publicCreditLine": "Photographer unidentified; The Motion Picture Director, July 1926, via the Internet Archive and Wikimedia Commons."
         }
       },
       "M048": {
@@ -5514,6 +5621,13 @@
       }
     },
     "Timeline Events": {
+      "TE0016": {
+        "reason": "Use the LCNAF-authorized first name Moritz consistently in the Berlin study narrative.",
+        "fields": {
+          "shortDescription": "Kaper builds his Berlin career through private study with Moritz Mayer-Mahr and Walther Gmeindl, early publications, and collaboration with Fritz Rotter.",
+          "longDescription": "After moving to Berlin, Kaper developed his professional position through private study with pianist Moritz Mayer-Mahr and composer-conductor Walther Gmeindl, while also entering the German-language song market through Fritz Rotter and early publications under the title “Dr. Kaper.”"
+        }
+      },
       "TE0041": {
         "reason": "Describe the European Film Fund with its documented founders and replace the unsupported claim that Kaper was a founding organizer with the direct evidence of his participation in the surviving 1941–1942 donor list.",
         "fields": {
@@ -5604,6 +5718,12 @@
       }
     },
     "People": {
+      "P122": {
+        "reason": "Align the sort form with the LCNAF-authorized name Moritz Mayer-Mahr already used as the public display and authorized name.",
+        "fields": {
+          "sortName": "Mayer-Mahr, Moritz"
+        }
+      },
       "P004": {
         "reason": "Add André Saudemont's verified VIAF authority identifier.",
         "fields": {
@@ -8722,7 +8842,7 @@
         "fields": {
           "id": "SRC0556",
           "shortCitation": "Narodowe Archiwum Cyfrowe, Andrzej Włast portrait",
-          "fullCitation": "Narodowe Archiwum Cyfrowe (National Digital Archive) / Szukaj w Archiwach. Portrait photograph of Andrzej Włast, poet and lyricist. Photographer unknown. Unit 5929697, object 264116.",
+          "fullCitation": "Narodowe Archiwum Cyfrowe (National Digital Archive) / Szukaj w Archiwach. Portrait photograph of Andrzej Włast, poet and lyricist. Photographer unidentified. Unit 5929697, object 264116.",
           "sourceType": "image_or_photograph",
           "title": "Andrzej Włast portrait — Narodowe Archiwum Cyfrowe",
           "repository": "Narodowe Archiwum Cyfrowe",
@@ -9042,7 +9162,7 @@
           "sourceType": "authority_record",
           "creator": "Bibliothèque nationale de France",
           "repository": "Bibliothèque nationale de France (BnF)",
-          "publication": "BnF Catalogue général",
+          "publication": "Catalogue général de la BnF",
           "primaryUrl": "https://catalogue.bnf.fr/ark:/12148/cb16440429b",
           "slug": "src0856-bnf-fernand-vimont-authority-record",
           "personIds": [
@@ -9070,7 +9190,7 @@
           "sourceType": "authority_record",
           "creator": "Bibliothèque nationale de France",
           "repository": "Bibliothèque nationale de France (BnF)",
-          "publication": "BnF Catalogue général",
+          "publication": "Catalogue général de la BnF",
           "primaryUrl": "https://catalogue.bnf.fr/ark:/12148/cb13757145r",
           "slug": "src0857-bnf-jeanette-macdonald-authority-record",
           "personIds": [
@@ -9092,13 +9212,13 @@
           "reliability": "high",
           "sourceStatus": "verified",
           "id": "SRC0858",
-          "title": "Paul Kohner — Filmportal person entry",
-          "shortCitation": "Filmportal, Paul Kohner — person entry",
-          "fullCitation": "Deutsches Filminstitut & Filmmuseum. “Paul Kohner.” Filmportal.de, person entry.",
+          "title": "Paul Kohner",
+          "shortCitation": "filmportal.de, “Paul Kohner”",
+          "fullCitation": "filmportal.de. “Paul Kohner.” DFF – Deutsches Filminstitut & Filmmuseum.",
           "sourceType": "filmographic_database",
-          "creator": "Deutsches Filminstitut & Filmmuseum",
+          "creator": "DFF – Deutsches Filminstitut & Filmmuseum",
           "repository": "filmportal.de / DFF – Deutsches Filminstitut & Filmmuseum",
-          "publication": "Filmportal.de",
+          "publication": "filmportal.de",
           "primaryUrl": "https://www.filmportal.de/person/paul-kohner_30c888ac7f4b4b9ea7f2fb464dee7559",
           "slug": "src0858-filmportal-paul-kohner-person-entry",
           "personIds": [
@@ -9354,7 +9474,7 @@
           "fullCitation": "William P. Gottlieb, photographer. [Portrait of Duke Ellington, Washington, D.C., between 1938 and 1948]. [1938?]. William P. Gottlieb Collection, Music Division, Library of Congress, LCCN 2023867648.",
           "sourceType": "image_or_photograph",
           "title": "[Portrait of Duke Ellington, Washington, D.C., between 1938 and 1948]",
-          "creator": "Gottlieb, William P.",
+          "creator": "William P. Gottlieb",
           "date": "[1938?]; between 1938 and 1948",
           "repository": "Library of Congress, Music Division",
           "publication": "William P. Gottlieb Collection",
@@ -10273,7 +10393,7 @@
         "fields": {
           "id": "SRC0677",
           "shortCitation": "Wikimedia Commons, File:Fanck udet riefenstahl kohner.png — Paul Kohner portrait crop, 1932",
-          "fullCitation": "Unknown photographer. Arnold Fanck, Ernst Udet, Leni Riefenstahl and Paul Kohner, 1932. Private Archive of Matthias Fanck. Portrait crop of Paul Kohner from the right side of the group photograph. Wikimedia Commons.",
+          "fullCitation": "Photographer unidentified. Arnold Fanck, Ernst Udet, Leni Riefenstahl and Paul Kohner, 1932. Private Archive of Matthias Fanck. Portrait crop of Paul Kohner from the right side of the group photograph. Wikimedia Commons.",
           "sourceType": "wikimedia_commons_file",
           "title": "Paul Kohner with Arnold Fanck, Ernst Udet and Leni Riefenstahl — group photograph, 1932",
           "creator": "Photographer unidentified",
@@ -10506,11 +10626,11 @@
       },
       "SRC0777": {
         "reason": "Document the uploaded Ray Henderson portrait and connect it to his person record.",
-        "fields": {"id": "SRC0777", "shortCitation": "Unknown photographer, Ray Henderson portrait, Music Trade Indicator, 4 February 1928, p. 26", "fullCitation": "Unknown photographer. Portrait of Ray Henderson. Music Trade Indicator 50, no. 5 (4 February 1928): 26.", "sourceType": "wikimedia_commons_file", "title": "Ray Henderson — portrait in Music Trade Indicator", "creator": "Photographer unknown", "repository": "Wikimedia Commons", "publication": "Music Trade Indicator", "date": "1928-02-04", "accessDate": "2026-08-23", "reliability": "high", "sourceStatus": "verified", "slug": "src0777-commons-ray-henderson-portrait-1928", "primaryUrl": "https://commons.wikimedia.org/wiki/File:Ray_Henderson_(1896%E2%80%931970).png", "personIds": ["P182"], "organizationIds": ["ORG090"], "mediaIds": ["M401"]}
+        "fields": {"id": "SRC0777", "shortCitation": "Photographer unidentified, Ray Henderson portrait, Music Trade Indicator, 4 February 1928, p. 26", "fullCitation": "Photographer unidentified. Portrait of Ray Henderson. Music Trade Indicator 50, no. 5 (4 February 1928): 26.", "sourceType": "wikimedia_commons_file", "title": "Ray Henderson — portrait in Music Trade Indicator", "creator": "Photographer unidentified", "repository": "Wikimedia Commons", "publication": "Music Trade Indicator", "date": "1928-02-04", "accessDate": "2026-08-23", "reliability": "high", "sourceStatus": "verified", "slug": "src0777-commons-ray-henderson-portrait-1928", "primaryUrl": "https://commons.wikimedia.org/wiki/File:Ray_Henderson_(1896%E2%80%931970).png", "personIds": ["P182"], "organizationIds": ["ORG090"], "mediaIds": ["M401"]}
       },
       "SRC0778": {
         "reason": "Document the uploaded Hugo Riesenfeld portrait and connect it to his person record.",
-        "fields": {"id": "SRC0778", "shortCitation": "Unknown photographer, Hugo Riesenfeld, Exhibitors Herald, 1 May 1920, p. 85", "fullCitation": "Unknown photographer. “Hugo Riesenfeld.” Exhibitors Herald (1 May 1920): 85.", "sourceType": "wikimedia_commons_file", "title": "Hugo Riesenfeld — portrait in Exhibitors Herald", "creator": "Photographer unknown", "repository": "Wikimedia Commons", "publication": "Exhibitors Herald", "date": "1920-05-01", "accessDate": "2026-08-23", "reliability": "high", "sourceStatus": "verified", "slug": "src0778-commons-hugo-riesenfeld-portrait-1920", "primaryUrl": "https://commons.wikimedia.org/wiki/File:Hugo_Riesenfeld_-_May_1920_EH.jpg", "personIds": ["P191"], "organizationIds": ["ORG090"], "mediaIds": ["M402"]}
+        "fields": {"id": "SRC0778", "shortCitation": "Photographer unidentified, Hugo Riesenfeld, Exhibitors Herald, 1 May 1920, p. 85", "fullCitation": "Photographer unidentified. “Hugo Riesenfeld.” Exhibitors Herald (1 May 1920): 85.", "sourceType": "wikimedia_commons_file", "title": "Hugo Riesenfeld — portrait in Exhibitors Herald", "creator": "Photographer unidentified", "repository": "Wikimedia Commons", "publication": "Exhibitors Herald", "date": "1920-05-01", "accessDate": "2026-08-23", "reliability": "high", "sourceStatus": "verified", "slug": "src0778-commons-hugo-riesenfeld-portrait-1920", "primaryUrl": "https://commons.wikimedia.org/wiki/File:Hugo_Riesenfeld_-_May_1920_EH.jpg", "personIds": ["P191"], "organizationIds": ["ORG090"], "mediaIds": ["M402"]}
       },
       "SRC0779": {
         "reason": "Document the uploaded Fats Waller portrait and connect it to his person record.",
@@ -10518,7 +10638,7 @@
       },
       "SRC0780": {
         "reason": "Document the uploaded Ralph Benatzky portrait and connect it to his person record.",
-        "fields": {"id": "SRC0780", "shortCitation": "Unknown photographer, Ralph Benatzky portrait, before 1929; Wikimedia Commons", "fullCitation": "Unknown photographer. Portrait of Ralph Benatzky, before 1929. Wikimedia Commons, from Planet Vienna.", "sourceType": "wikimedia_commons_file", "title": "Ralph Benatzky — portrait photograph", "creator": "Photographer unknown", "repository": "Wikimedia Commons", "publication": "Planet Vienna", "date": "before 1929", "accessDate": "2026-08-23", "reliability": "high", "sourceStatus": "verified", "slug": "src0780-commons-ralph-benatzky-portrait-before-1929", "primaryUrl": "https://commons.wikimedia.org/wiki/File:Ralph_Benatzky_(1884-1957).jpg", "personIds": ["P192"], "organizationIds": ["ORG090"], "mediaIds": ["M404"]}
+        "fields": {"id": "SRC0780", "shortCitation": "Photographer unidentified, Ralph Benatzky portrait, before 1929; Wikimedia Commons", "fullCitation": "Photographer unidentified. Portrait of Ralph Benatzky, before 1929. Wikimedia Commons, from Planet Vienna.", "sourceType": "wikimedia_commons_file", "title": "Ralph Benatzky — portrait photograph", "creator": "Photographer unidentified", "repository": "Wikimedia Commons", "publication": "Planet Vienna", "date": "before 1929", "accessDate": "2026-08-23", "reliability": "high", "sourceStatus": "verified", "slug": "src0780-commons-ralph-benatzky-portrait-before-1929", "primaryUrl": "https://commons.wikimedia.org/wiki/File:Ralph_Benatzky_(1884-1957).jpg", "personIds": ["P192"], "organizationIds": ["ORG090"], "mediaIds": ["M404"]}
       },
       "SRC0781": {
         "reason": "Document the uploaded Johnny Green portrait and connect it to his person record.",
@@ -12096,7 +12216,7 @@
           "sortOrder": 323,
           "altText": "Black-and-white portrait detail of film producer and talent agent Paul Kohner seated at a table in 1932.",
           "publicCaption": "Paul Kohner in 1932, at right in a group photograph with Arnold Fanck, Ernst Udet and Leni Riefenstahl.",
-          "publicCreditLine": "Unknown photographer; Private Archive of Matthias Fanck, via Wikimedia Commons. Portrait crop from the 1932 group photograph.",
+          "publicCreditLine": "Photographer unidentified; Private Archive of Matthias Fanck, via Wikimedia Commons. Portrait crop from the 1932 group photograph.",
           "rightsStatus": "ok",
           "rightsNote": "Public domain according to the Wikimedia Commons file record (PD-anon-70-EU). The photographer is unidentified. This local image is an unretouched crop of the rightmost figure from the source photograph; the full composition remains available through the linked Commons record.",
           "sourceIds": [
@@ -12236,11 +12356,11 @@
       },
       "M401": {
         "reason": "Publish the uploaded Ray Henderson portrait with verified source and rights metadata.",
-        "fields": {"id": "M401", "title": "Ray Henderson — portrait in Music Trade Indicator, 1928", "mediaType": "image", "category": "portrait", "storageType": "local", "assetPath": "assets/images/portraits/ray-henderson.png", "assetPaths": ["assets/images/portraits/ray-henderson.png"], "assetCount": 1, "period": "european", "periods": ["european"], "galleryStatus": "eligible", "sortOrder": 401, "slug": "ray-henderson-portrait-1928-m401", "altText": "Black-and-white head-and-shoulders portrait of composer Ray Henderson.", "publicCaption": "Ray Henderson, composer of “Sonny Boy,” in a portrait published in Music Trade Indicator in 1928.", "publicCreditLine": "Photographer unknown; Music Trade Indicator, 4 February 1928, p. 26; via Wikimedia Commons.", "rightsStatus": "ok", "rightsNote": "Public domain. The photograph was published anonymously in the United States in 1928; its U.S. copyright term has expired, and the term for an anonymous work published more than seventy years ago has also expired in the European Union.", "externalUrl": "https://commons.wikimedia.org/wiki/File:Ray_Henderson_(1896%E2%80%931970).png", "sourceIds": ["SRC0777"]}
+        "fields": {"id": "M401", "title": "Ray Henderson — portrait in Music Trade Indicator, 1928", "mediaType": "image", "category": "portrait", "storageType": "local", "assetPath": "assets/images/portraits/ray-henderson.png", "assetPaths": ["assets/images/portraits/ray-henderson.png"], "assetCount": 1, "period": "european", "periods": ["european"], "galleryStatus": "eligible", "sortOrder": 401, "slug": "ray-henderson-portrait-1928-m401", "altText": "Black-and-white head-and-shoulders portrait of composer Ray Henderson.", "publicCaption": "Ray Henderson, composer of “Sonny Boy,” in a portrait published in Music Trade Indicator in 1928.", "publicCreditLine": "Photographer unidentified; Music Trade Indicator, 4 February 1928, p. 26; via Wikimedia Commons.", "rightsStatus": "ok", "rightsNote": "Public domain. The photograph was published anonymously in the United States in 1928; its U.S. copyright term has expired, and the term for an anonymous work published more than seventy years ago has also expired in the European Union.", "externalUrl": "https://commons.wikimedia.org/wiki/File:Ray_Henderson_(1896%E2%80%931970).png", "sourceIds": ["SRC0777"]}
       },
       "M402": {
         "reason": "Publish the uploaded Hugo Riesenfeld portrait with verified source and rights metadata.",
-        "fields": {"id": "M402", "title": "Hugo Riesenfeld — Exhibitors Herald portrait, 1920", "mediaType": "image", "category": "portrait", "storageType": "local", "assetPath": "assets/images/portraits/hugo-riesenfeld.jpg", "assetPaths": ["assets/images/portraits/hugo-riesenfeld.jpg"], "assetCount": 1, "period": "european", "periods": ["european"], "galleryStatus": "eligible", "sortOrder": 402, "slug": "hugo-riesenfeld-portrait-1920-m402", "altText": "Black-and-white portrait of composer and conductor Hugo Riesenfeld.", "publicCaption": "Hugo Riesenfeld, co-composer of “Drei Musketiere,” in a portrait published in Exhibitors Herald in 1920.", "publicCreditLine": "Photographer unknown; Exhibitors Herald, 1 May 1920, p. 85; via Wikimedia Commons.", "rightsStatus": "ok", "rightsNote": "Public domain. The photograph was published anonymously in the United States in 1920; its U.S. copyright term has expired, and the term for an anonymous work published more than seventy years ago has also expired in the European Union.", "externalUrl": "https://commons.wikimedia.org/wiki/File:Hugo_Riesenfeld_-_May_1920_EH.jpg", "sourceIds": ["SRC0778"]}
+        "fields": {"id": "M402", "title": "Hugo Riesenfeld — Exhibitors Herald portrait, 1920", "mediaType": "image", "category": "portrait", "storageType": "local", "assetPath": "assets/images/portraits/hugo-riesenfeld.jpg", "assetPaths": ["assets/images/portraits/hugo-riesenfeld.jpg"], "assetCount": 1, "period": "european", "periods": ["european"], "galleryStatus": "eligible", "sortOrder": 402, "slug": "hugo-riesenfeld-portrait-1920-m402", "altText": "Black-and-white portrait of composer and conductor Hugo Riesenfeld.", "publicCaption": "Hugo Riesenfeld, co-composer of “Drei Musketiere,” in a portrait published in Exhibitors Herald in 1920.", "publicCreditLine": "Photographer unidentified; Exhibitors Herald, 1 May 1920, p. 85; via Wikimedia Commons.", "rightsStatus": "ok", "rightsNote": "Public domain. The photograph was published anonymously in the United States in 1920; its U.S. copyright term has expired, and the term for an anonymous work published more than seventy years ago has also expired in the European Union.", "externalUrl": "https://commons.wikimedia.org/wiki/File:Hugo_Riesenfeld_-_May_1920_EH.jpg", "sourceIds": ["SRC0778"]}
       },
       "M403": {
         "reason": "Publish the uploaded Fats Waller portrait with verified source and rights metadata.",
@@ -12248,7 +12368,7 @@
       },
       "M404": {
         "reason": "Publish the uploaded Ralph Benatzky portrait with verified source and rights metadata.",
-        "fields": {"id": "M404", "title": "Ralph Benatzky — portrait, before 1929", "mediaType": "image", "category": "portrait", "storageType": "local", "assetPath": "assets/images/portraits/ralph-benatzky.jpg", "assetPaths": ["assets/images/portraits/ralph-benatzky.jpg"], "assetCount": 1, "period": "european", "periods": ["european"], "galleryStatus": "eligible", "sortOrder": 404, "slug": "ralph-benatzky-portrait-before-1929-m404", "altText": "Black-and-white head-and-shoulders portrait of composer Ralph Benatzky.", "publicCaption": "Ralph Benatzky, co-composer of “Drei Musketiere,” in a portrait made before 1929.", "publicCreditLine": "Photographer unknown; via Planet Vienna and Wikimedia Commons.", "rightsStatus": "ok", "rightsNote": "Public domain. The anonymous photograph was published before 1929; the applicable seventy-year term for an anonymous work has expired in the European Union, and its U.S. copyright term has also expired.", "externalUrl": "https://commons.wikimedia.org/wiki/File:Ralph_Benatzky_(1884-1957).jpg", "sourceIds": ["SRC0780"]}
+        "fields": {"id": "M404", "title": "Ralph Benatzky — portrait, before 1929", "mediaType": "image", "category": "portrait", "storageType": "local", "assetPath": "assets/images/portraits/ralph-benatzky.jpg", "assetPaths": ["assets/images/portraits/ralph-benatzky.jpg"], "assetCount": 1, "period": "european", "periods": ["european"], "galleryStatus": "eligible", "sortOrder": 404, "slug": "ralph-benatzky-portrait-before-1929-m404", "altText": "Black-and-white head-and-shoulders portrait of composer Ralph Benatzky.", "publicCaption": "Ralph Benatzky, co-composer of “Drei Musketiere,” in a portrait made before 1929.", "publicCreditLine": "Photographer unidentified; via Planet Vienna and Wikimedia Commons.", "rightsStatus": "ok", "rightsNote": "Public domain. The anonymous photograph was published before 1929; the applicable seventy-year term for an anonymous work has expired in the European Union, and its U.S. copyright term has also expired.", "externalUrl": "https://commons.wikimedia.org/wiki/File:Ralph_Benatzky_(1884-1957).jpg", "sourceIds": ["SRC0780"]}
       },
       "M405": {
         "reason": "Publish the uploaded Johnny Green portrait with verified source and rights metadata.",

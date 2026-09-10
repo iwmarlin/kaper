@@ -49,6 +49,196 @@ WIKIPEDIA_REPOSITORY_BY_HOST = {
     "ru.wikipedia.org": "Russian Wikipedia",
 }
 
+# Individually verified corrections for records whose former title, creator or
+# provenance contradicted the item-level page they cite.  These are deliberately
+# explicit: generic Wikimedia normalization must never infer an author or an
+# underlying holding institution from the delivery platform alone.
+VISUAL_SOURCE_FIELDS: dict[str, dict[str, Any]] = {
+    "SRC0110": {
+        # RP 6854 is the aggregate student file containing several documents
+        # and photographs, not an item-level portrait source.
+        "sourceType": "archival_document",
+    },
+    "SRC0330": {
+        "title": "Fritz Rotter — portrait by Becker & Maass",
+        "shortCitation": "Becker & Maass / Marie Boehm, portrait of Fritz Rotter, 1920–1932",
+        "fullCitation": (
+            "Becker & Maass / Marie Boehm. Portrait of Fritz Rotter, between "
+            "1920 and 1932. Universal Filmlexikon (Berlin, 1932), p. 266; "
+            "digital image via Wikimedia Commons, File:Fritz Rotter (composer) "
+            "by Becker & Maass.png."
+        ),
+        "creator": "Becker & Maass / Marie Boehm",
+        "repository": "Wikimedia Commons",
+        "publication": "Universal Filmlexikon (Berlin, 1932)",
+        "slug": "src0330-fritz-rotter-portrait-becker-maass",
+    },
+    "SRC0351": {
+        "title": "Potsdamer Platz with Columbushaus — photograph, 1933",
+        "shortCitation": (
+            "Waldemar Titzenthaler, Potsdamer Platz with Columbushaus, 1933"
+        ),
+        "fullCitation": (
+            "Waldemar Titzenthaler. Potsdamer Platz with Columbushaus, Berlin, "
+            "1933. Digital image via Wikimedia Commons, File:Potsdamer Platz mit "
+            "Columbushaus, 1932.jpg; source identified on the file page as Nick "
+            "Gay, Berlin Then & Now (San Diego, 2005), p. 88."
+        ),
+        "slug": "src0351-potsdamer-platz-columbushaus-photograph-1933",
+    },
+    "SRC0362": {
+        "title": "Paris qui brille — Casino de Paris poster, 1931",
+        "shortCitation": (
+            "Louis Gaudin (Zig), Paris qui brille — Casino de Paris poster, 1931"
+        ),
+        "fullCitation": (
+            "Louis Gaudin (Zig). Paris qui brille. Poster for the Casino de "
+            "Paris, 1931; digital image via Wikimedia Commons, File:Louis Gaudin "
+            "- Paris qui brille 1931.jpg."
+        ),
+        "creator": "Louis Gaudin (Zig)",
+        "date": "1931",
+        "dateRole": "creation",
+        "dateQualifier": "confirmed",
+        "slug": "src0362-paris-qui-brille-casino-de-paris-poster-1931",
+    },
+    "SRC0366": {
+        "title": "Moritz Mayer-Mahr — signed portrait postcard, 1908",
+        "shortCitation": (
+            "Moritz Mayer-Mahr — signed portrait postcard (Verlag Hans "
+            "Dursthoff, 1908)"
+        ),
+        "fullCitation": (
+            "Photographer unidentified. Signed portrait postcard of Moritz "
+            "Mayer-Mahr, published by Verlag Hans Dursthoff, Berlin, 1908. "
+            "Portrait Collection Friedrich Nicolas Manskopf, Goethe University "
+            "Frankfurt; digital image via Wikimedia Commons, File:Mayer-Mahr.jpg."
+        ),
+        "creator": "Photographer unidentified",
+        "repository": (
+            "Portrait Collection Friedrich Nicolas Manskopf, Goethe University "
+            "Frankfurt; Wikimedia Commons"
+        ),
+        "publication": "Verlag Hans Dursthoff, Berlin",
+        "date": "1908",
+        "dateRole": "creation",
+        "dateQualifier": "confirmed",
+        "slug": "src0366-moritz-mayer-mahr-signed-portrait-postcard-1908",
+    },
+    "SRC0405": {
+        "dateRole": "described_item",
+    },
+    "SRC0410": {
+        "dateRole": "described_item",
+    },
+    "SRC0411": {
+        "dateRole": "described_item",
+    },
+    "SRC0415": {
+        "dateRole": "described_item",
+    },
+    "SRC0523": {
+        "shortCitation": "Polish Wikipedia, “Morskie Oko (teatr)”",
+        "fullCitation": (
+            "Wikipedia contributors. “Morskie Oko (teatr).” Polish Wikipedia. "
+            "Last modified 20 June 2026."
+        ),
+        "primaryUrl": "https://pl.wikipedia.org/wiki/Morskie_Oko_(teatr)",
+    },
+    "SRC0571": {
+        "shortCitation": (
+            "Photographer unidentified, Hôtel Ritz, Paris, 1900 — Wikimedia "
+            "Commons"
+        ),
+        "fullCitation": (
+            "Photographer unidentified. Hôtel Ritz, Place Vendôme, Paris, "
+            "1900. Reproduced in Schweizer Familie, no. 27 (2018), p. 37; "
+            "digital image via Wikimedia Commons, File:Hotel Ritz Paris 1900.jpg."
+        ),
+        "creator": "Photographer unidentified",
+        "publication": "Schweizer Familie, no. 27 (2018)",
+    },
+    "SRC0572": {
+        "creator": "Samuel Herman Gottscho",
+    },
+    "SRC0595": {
+        "fullCitation": (
+            "“Alfred Zeisler.” Autograph card, 1932. Wikimedia Commons, "
+            "File:Smzeisle.jpg; the file page credits user Azeisler as author "
+            "under an ‘own work’ claim."
+        ),
+        "creator": "Azeisler (file-page attribution)",
+        "researchNote": (
+            "The file page names uploader Azeisler as author and marks the "
+            "upload as own work; it does not identify the photographer or the "
+            "original publisher of the 1932 autograph card."
+        ),
+        "researchNoteType": "object_context",
+    },
+    "SRC0604": {
+        "shortCitation": (
+            "The Motion Picture Director, July 1926 — portrait of Robert Z. "
+            "Leonard"
+        ),
+        "fullCitation": (
+            "Photographer unidentified. Portrait of Robert Z. Leonard. The "
+            "Motion Picture Director, July 1926; digitised by the Internet "
+            "Archive and supplied as a digital image via Wikimedia Commons."
+        ),
+        "creator": "Photographer unidentified",
+        "repository": "Internet Archive; Wikimedia Commons",
+        "publication": "The Motion Picture Director",
+    },
+}
+
+VISUAL_SOURCE_FIELD_REMOVALS = {
+    "SRC0523": ("accessUrl",),
+}
+
+# Public creator labels use natural name order and one controlled expression for
+# an unidentified photographer.  The mapping is intentionally record-specific:
+# ``Unknown author`` can be correct for posters, drawings and photochroms, so a
+# broad textual replacement would silently change the described role.
+VISUAL_CREATOR_FIELDS = {
+    "SRC0350": "Burton Frasher Sr.",
+    "SRC0363": "Photographer unidentified",
+    "SRC0537": "Photographer unidentified",
+    "SRC0554": "Photographer unidentified",
+    "SRC0556": "Photographer unidentified",
+    "SRC0562": "Jules Greenbaum",
+    "SRC0570": "William P. Gottlieb",
+    "SRC0573": "Photographer unidentified",
+    "SRC0586": "Photographer unidentified",
+    "SRC0598": "Photographer unidentified (Universal Pictures)",
+    "SRC0599": (
+        "Photographer unidentified (Famous Players-Lasky Corporation / "
+        "Paramount Pictures)"
+    ),
+    "SRC0603": "Photographer unidentified",
+    "SRC0608": "Photographer unidentified",
+    "SRC0609": (
+        "Photographer unidentified (Bundesarchiv Bild 102, Georg Pahl collection)"
+    ),
+    "SRC0612": "Photographer unidentified (Bain News Service, publisher)",
+    "SRC0642": "Photographer unidentified",
+    "SRC0644": "Photographer unidentified (Universal Pictures)",
+    "SRC0648": "Photographer unidentified",
+    "SRC0649": "Photographer unidentified",
+    "SRC0654": "Photographer unidentified",
+    "SRC0655": "Photographer unidentified",
+    "SRC0691": "Photographer unidentified",
+    "SRC0711": "Jacob Merkelbach",
+    "SRC0723": "Photographer unidentified",
+    "SRC0747": "Photographer unidentified",
+    "SRC0777": "Photographer unidentified",
+    "SRC0778": "Photographer unidentified",
+    "SRC0780": "Photographer unidentified",
+    "SRC0794": "Photographer unidentified",
+    "SRC0795": "Stanisław Brzozowski",
+    "SRC0812": "Photographer unidentified",
+    "SRC0814": "Photographer unidentified",
+}
+
 NAC_TITLE_SUFFIX = re.compile(
     r"\s+—\s+(?:Narodowe Archiwum Cyfrowe|Szukaj w Archiwach)\s*$",
     flags=re.IGNORECASE,
@@ -75,6 +265,37 @@ VISUAL_RIGHTS_NARRATIVE_PATTERN = re.compile(
 )
 
 
+def normalize_unidentified_photographer_wording(value: Any) -> str:
+    """Return public prose with the controlled photographer label.
+
+    This deliberately leaves ``Unknown author`` untouched because that phrase
+    may refer to a poster, drawing, photochrom or other non-photographic work.
+    """
+
+    normalized = str(value or "")
+    normalized = re.sub(
+        r"\bUnknown photographer\b",
+        "Photographer unidentified",
+        normalized,
+    )
+    normalized = re.sub(
+        r"\bunknown photographer\b",
+        "photographer unidentified",
+        normalized,
+    )
+    normalized = re.sub(
+        r"\bPhotographer (?:unknown|unnamed)\b",
+        "Photographer unidentified",
+        normalized,
+    )
+    normalized = re.sub(
+        r"\bphotographer (?:unknown|unnamed)\b",
+        "photographer unidentified",
+        normalized,
+    )
+    return normalized
+
+
 VISUAL_CITATION_FIELDS: dict[str, str] = {
     "SRC0593": (
         "Recueil. “Féerie de Paris” de Henri Varna. Press cuttings and programme "
@@ -91,7 +312,7 @@ VISUAL_CITATION_FIELDS: dict[str, str] = {
         "German-language Wikipedia, Datei:Austin Egen.png."
     ),
     "SRC0642": (
-        "Unknown photographer. Portrait of Edmund Goulding. Photoplay 22 "
+        "Photographer unidentified. Portrait of Edmund Goulding. Photoplay 22 "
         "(December 1922): 61. Digitised volume at the Internet Archive; digital "
         "image via Wikimedia Commons."
     ),
@@ -105,7 +326,7 @@ VISUAL_CITATION_FIELDS: dict[str, str] = {
         "South Wales, ON 558/Box 13/no. 90; digital image via Wikimedia Commons."
     ),
     "SRC0648": (
-        "Portrait of Joseph Santley, photographer unnamed. Celebrated Actor "
+        "Portrait of Joseph Santley, photographer unidentified. Celebrated Actor "
         "Folks’ Cookeries (New York: Mabel Rowland, Inc., 1916), 77. Digital image "
         "via Wikimedia Commons."
     ),
@@ -117,7 +338,7 @@ VISUAL_CITATION_FIELDS: dict[str, str] = {
     ),
     "SRC0691": (
         "Signed artist postcard of Willi Domgraf-Fassbaender as Figaro in "
-        "Rossini’s Der Barbier von Sevilla. Photographer unknown. Ross Verlag, "
+        "Rossini’s Der Barbier von Sevilla. Photographer unidentified. Ross Verlag, "
         "Berlin, c. 1928; private collection; digital image via Wikimedia Commons."
     ),
     "SRC0747": (
@@ -209,6 +430,18 @@ def is_wikipedia_file_page(source: dict[str, Any]) -> bool:
     return bool(separator) and namespace.casefold() in WIKIPEDIA_FILE_NAMESPACES
 
 
+def is_wikipedia_article_page(source: dict[str, Any]) -> bool:
+    """Return whether the primary URL is an encyclopaedia article page."""
+
+    url = str(source.get("primaryUrl") or source.get("url") or "").strip()
+    parsed = urlparse(url)
+    host = parsed.netloc.casefold()
+    if not host.endswith(".wikipedia.org"):
+        return False
+    path = unquote(parsed.path)
+    return path.startswith("/wiki/") and not is_wikipedia_file_page(source)
+
+
 def wikipedia_file_repository(source: dict[str, Any]) -> str | None:
     """Return the public platform name for an item-level Wikipedia file page."""
 
@@ -231,6 +464,16 @@ def is_normalized_visual_source(source: dict[str, Any]) -> bool:
 
 def normalize_visual_source(source: dict[str, Any]) -> None:
     """Normalize one visual source without changing the linked Media rights."""
+    source_id = str(source.get("id", ""))
+    fields = VISUAL_SOURCE_FIELDS.get(source_id)
+    if fields:
+        source.update(fields)
+    creator = VISUAL_CREATOR_FIELDS.get(source_id)
+    if creator:
+        source["creator"] = creator
+    for field_name in VISUAL_SOURCE_FIELD_REMOVALS.get(source_id, ()):
+        source.pop(field_name, None)
+
     direct_nac_photograph = is_direct_nac_photograph(source)
     if not direct_nac_photograph and not is_normalized_visual_source(source):
         return
@@ -255,6 +498,16 @@ def normalize_visual_source(source: dict[str, Any]) -> None:
             "wikimedia contributors",
         }:
             source.pop("creator", None)
+    elif is_wikipedia_article_page(source):
+        # An encyclopaedia article and an item-level File page supply different
+        # evidence, even when the article happens to display an image.
+        article_repository = WIKIPEDIA_REPOSITORY_BY_HOST.get(
+            visual_hostname(source),
+            f"{visual_hostname(source).split('.', 1)[0].upper()} Wikipedia",
+        )
+        source["sourceType"] = "wikimedia_article_page"
+        source["repository"] = article_repository
+        source["publication"] = article_repository
 
     if source.get("accessDate"):
         source["fullCitation"] = strip_redundant_access_statement(
@@ -270,6 +523,15 @@ def normalize_visual_source(source: dict[str, Any]) -> None:
     citation = VISUAL_CITATION_FIELDS.get(str(source.get("id", "")))
     if citation:
         source["fullCitation"] = citation
+
+    # These phrases express the same absence of an identified photographer.
+    # Apply this after item-specific citation overrides and do not touch
+    # ``Unknown author``, which may describe a poster, drawing or other object.
+    for field_name in ("shortCitation", "fullCitation"):
+        value = str(source.get(field_name) or "")
+        if not value:
+            continue
+        source[field_name] = normalize_unidentified_photographer_wording(value)
 
     if is_wikimedia_source(source):
         source["organizationIds"] = sorted(

@@ -48,6 +48,11 @@ UCLA_CITATIONS = {
 }
 
 IMDB_CITATIONS = {
+    "SRC0149": ("Hi-do-ho", "Soundtrack entry, title tt0230909"),
+    "SRC0150": (
+        "Love needs no inspiration",
+        "Soundtrack entry, title tt0230909",
+    ),
     "SRC0169": ("Two Hearts in Wax Time", "Title tt0230909"),
     "SRC0170": ("Trouble for Two", "Full cast and crew, title tt0028416"),
     "SRC0171": ("We Went to College", "Title tt0028483"),
@@ -58,7 +63,7 @@ IMDB_CITATIONS = {
     ),
     "SRC0520": (
         "Ihre Majestät die Liebe",
-        "Full cast and crew, title tt0020994; Bronislaw Kaper credited as “Benjamin Kapper”",
+        "Full cast and crew, title tt0020994; Bronislaw Kaper is credited under the source form “Benjamin Kapper”",
     ),
     "SRC0528": (
         "Schuß im Morgengrauen / A Shot at Dawn",
@@ -119,7 +124,8 @@ def citation_title(source: dict[str, Any]) -> str:
     title = str(source.get("title", "")).strip()
     title = re.sub(r"\s+—\s+(?:IMDb\s+)?(?:full|company).*$", "", title)
     title = re.sub(
-        r"\s+—\s+(?:AFI Catalog|filmportal\.de|Unifrance|IMDb soundtrack entry)$",
+        r"\s+—\s+(?:AFI Catalog|filmportal\.de|Filmportal person entry|"
+        r"Unifrance|IMDb soundtrack entry)$",
         "",
         title,
         flags=re.IGNORECASE,
@@ -148,6 +154,7 @@ def normalize_filmographic_source(source: dict[str, Any]) -> None:
         title = citation_title(source)
         source.update(
             {
+                "title": title,
                 "shortCitation": f"filmportal.de, “{title}”",
                 "fullCitation": (
                     f"filmportal.de. “{title}.” "

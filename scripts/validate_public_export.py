@@ -48,6 +48,7 @@ from visual_sources import (
     WIKIMEDIA_ORGANIZATION_ID,
     is_direct_nac_photograph,
     is_normalized_visual_source,
+    is_wikipedia_article_page,
     is_wikipedia_file_page,
     is_wikimedia_commons_file_page,
     is_wikimedia_source,
@@ -1192,6 +1193,16 @@ class ExportValidator:
                             f"Source {source_id}: item-level Wikipedia file page "
                             f"must use {field_name}={expected_visual.get(field_name)!r}, "
                             f"not {source.get(field_name)!r}"
+                        )
+            if is_wikipedia_article_page(source):
+                expected_visual = dict(source)
+                normalize_visual_source(expected_visual)
+                for field_name in ("sourceType", "repository", "publication"):
+                    if source.get(field_name) != expected_visual.get(field_name):
+                        self.errors.append(
+                            f"Source {source_id}: Wikipedia article page must use "
+                            f"{field_name}={expected_visual.get(field_name)!r}, not "
+                            f"{source.get(field_name)!r}"
                         )
             if is_normalized_visual_source(source):
                 if source.get("primaryUrl") and not source.get("accessDate"):

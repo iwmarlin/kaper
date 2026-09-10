@@ -8,6 +8,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 PUBLIC = ROOT / "data/public/v1"
 FILE_NAME_PREFIXES = ("File:", "File :", "Datei:", "Fichier:", "Archivo:")
+IMAGE_FILE_NAME_SUFFIX = re.compile(r"\.(?:gif|jpe?g|png|tiff?)$", re.IGNORECASE)
 
 
 def fold(value):
@@ -40,6 +41,7 @@ class SourceTitleTests(unittest.TestCase):
             f"{record['id']}: {record['title']}"
             for record in read("sources.json")
             if (record.get("title") or "").startswith(FILE_NAME_PREFIXES)
+            or IMAGE_FILE_NAME_SUFFIX.search(record.get("title") or "")
         ]
         self.assertEqual(offenders, [], "a source is titled with the name of a file")
 

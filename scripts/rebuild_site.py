@@ -110,6 +110,14 @@ def main() -> int:
 
     check_steps = (
         Step(
+            "Check canonical Source normalization",
+            (
+                python,
+                str(scripts / "normalize_sources.py"),
+                str(root / "data/public/v1/sources.json"),
+            ),
+        ),
+        Step(
             "Check manifest freshness",
             (python, str(scripts / "reconcile_manifest.py"), "--root", str(root), "--check"),
         ),
