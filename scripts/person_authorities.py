@@ -76,7 +76,7 @@ HEADING_SOURCE_OVERRIDES = {
     "P014": "local heading",
     "P021": "local heading",
     "P096": "Dutch National Thesaurus (NTA), via VIAF cluster",
-    "P139": "BnF",
+    "P139": "LCNAF",
 }
 
 # This Wikidata item merges Marcella Halicz with a German screen actress.  The

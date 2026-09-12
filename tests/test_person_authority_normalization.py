@@ -60,7 +60,7 @@ class PersonAuthorityNormalizationTests(unittest.TestCase):
         )
         macdonald = self.people_by_id["P139"]
         self.assertIn("https://catalogue.bnf.fr/ark:/12148/cb13757145r", macdonald["authorityUrl"])
-        self.assertEqual(macdonald.get("authorizedNameSource"), "BnF")
+        self.assertEqual(macdonald.get("authorizedNameSource"), "LCNAF")
         self.assertNotIn(
             self.sources_by_id["SRC0632"]["primaryUrl"],
             self.people_by_id["P079"].get("authorityUrl", ""),
