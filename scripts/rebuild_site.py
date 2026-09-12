@@ -110,6 +110,14 @@ def main() -> int:
 
     check_steps = (
         Step(
+            "Check canonical Person authority normalization",
+            (
+                python,
+                str(scripts / "normalize_person_authorities.py"),
+                str(root / "data/public/v1/people.json"),
+            ),
+        ),
+        Step(
             "Check canonical Source normalization",
             (
                 python,

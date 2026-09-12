@@ -38,6 +38,11 @@ from public_data_dates import (
 )
 from source_slugs import canonical_source_slug
 from person_life_dates import life_date_evidence_errors
+from person_authorities import (
+    authority_source_alignment_errors,
+    person_authority_errors,
+    synchronize_person_authority_sources,
+)
 from sheet_music_sources import normalize_sheet_music_source
 from visual_sources import (
     normalize_unidentified_photographer_wording,
@@ -1915,6 +1920,10 @@ class PublicExporter:
         self._apply_exclusions()
         self._apply_overrides()
         self._apply_additions()
+        synchronize_person_authority_sources(
+            self.output_records["People"],
+            self.output_records["Sources"],
+        )
         self._normalize_media_public_text()
         self._normalize_source_public_text()
         self._derive_graph_indexes()
@@ -1964,6 +1973,14 @@ class PublicExporter:
                 self.errors.append(
                     f"{table_name}: duplicate public slugs {sorted(duplicates)}"
                 )
+
+        for person in self.output_records["People"]:
+            for error in person_authority_errors(person):
+                self.errors.append(f"People {person.get('id')}: {error}")
+        for error in authority_source_alignment_errors(
+            self.output_records["People"], self.output_records["Sources"]
+        ):
+            self.errors.append(f"People authority graph: {error}")
 
     def _validate_links(self) -> None:
         for person in self.output_records["People"]:

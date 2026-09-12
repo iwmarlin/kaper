@@ -43,6 +43,10 @@ from source_dates import SOURCE_IDENTIFIER_SCHEMES, source_date_errors
 from source_access_dates import has_redundant_access_date
 from source_slugs import canonical_source_slug
 from person_life_dates import life_date_evidence_errors
+from person_authorities import (
+    authority_source_alignment_errors,
+    person_authority_errors,
+)
 from public_data_dates import validated_public_data_date
 from visual_sources import (
     VISUAL_RIGHTS_NARRATIVE_PATTERN,
