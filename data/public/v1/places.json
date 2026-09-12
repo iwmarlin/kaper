@@ -1,0 +1,1374 @@
+{
+  "schemaVersion": "1.0.0",
+  "scope": {
+    "startYear": 1902,
+    "endYear": 1939,
+    "label": "Bronisław Kaper early career, documented through 1939"
+  },
+  "count": 44,
+  "records": [
+    {
+      "id": "PL001",
+      "displayName": "Warsaw",
+      "authorizedName": "Warsaw / Warszawa",
+      "placeType": "city",
+      "city": "Warsaw",
+      "region": "Masovian Voivodeship",
+      "country": "Poland",
+      "latitude": 52.229676,
+      "longitude": 21.012229,
+      "period": "warsaw",
+      "slug": "warsaw",
+      "publicNote": "Kaper’s birthplace and the main city of his education and early musical activity before his move to Berlin.",
+      "mapPrecision": "city_level",
+      "publicScope": "map_and_detail",
+      "timelineEventIds": [
+        "TE0001",
+        "TE0002",
+        "TE0003",
+        "TE0004",
+        "TE0005",
+        "TE0006",
+        "TE0008",
+        "TE0009",
+        "TE0011",
+        "TE0012",
+        "TE0013",
+        "TE0014",
+        "TE0015",
+        "TE0020",
+        "TE0044",
+        "TE0045",
+        "TE0046",
+        "TE0047"
+      ],
+      "mediaIds": [
+        "M097"
+      ],
+      "sourceIds": [
+        "SRC0012",
+        "SRC0490"
+      ],
+      "periods": [
+        "warsaw",
+        "european"
+      ]
+    },
+    {
+      "id": "PL002",
+      "displayName": "Berlin",
+      "authorizedName": "Berlin",
+      "placeType": "city",
+      "city": "Berlin",
+      "region": "Berlin",
+      "country": "Germany",
+      "latitude": 52.52,
+      "longitude": 13.405,
+      "period": "european",
+      "slug": "berlin",
+      "publicNote": "Kaper’s principal German-period city, associated with his Berlin studies, cabaret and publishing networks, and early film work.",
+      "mapPrecision": "city_level",
+      "publicScope": "map_and_detail",
+      "timelineEventIds": [
+        "TE0015",
+        "TE0016",
+        "TE0017",
+        "TE0018",
+        "TE0019",
+        "TE0021",
+        "TE0022",
+        "TE0024",
+        "TE0025",
+        "TE0026",
+        "TE0027",
+        "TE0028",
+        "TE0031",
+        "TE0034",
+        "TE0048",
+        "TE0049",
+        "TE0050",
+        "TE0051"
+      ],
+      "sourceIds": [
+        "SRC0490",
+        "SRC0491"
+      ],
+      "periods": [
+        "european",
+        "hollywood"
+      ]
+    },
+    {
+      "id": "PL003",
+      "displayName": "Paris",
+      "authorizedName": "Paris",
+      "placeType": "city",
+      "city": "Paris",
+      "region": "Île-de-France",
+      "country": "France",
+      "latitude": 48.856613,
+      "longitude": 2.352222,
+      "period": "european",
+      "slug": "paris",
+      "publicNote": "Kaper’s main place of activity after leaving Germany in 1933 and before his move to the United States.",
+      "mapPrecision": "city_level",
+      "publicScope": "map_and_detail",
+      "timelineEventIds": [
+        "TE0028",
+        "TE0029",
+        "TE0030",
+        "TE0031",
+        "TE0032",
+        "TE0034",
+        "TE0050",
+        "TE0051",
+        "TE0052"
+      ],
+      "sourceIds": [
+        "SRC0490",
+        "SRC0491"
+      ],
+      "periods": [
+        "european",
+        "hollywood"
+      ]
+    },
+    {
+      "id": "PL004",
+      "displayName": "Los Angeles",
+      "authorizedName": "Los Angeles",
+      "placeType": "city",
+      "city": "Los Angeles",
+      "region": "California",
+      "country": "United States",
+      "latitude": 34.052235,
+      "longitude": -118.243683,
+      "period": "european",
+      "slug": "los-angeles",
+      "publicNote": "Kaper’s American/Hollywood-period metropolitan context after his MGM move.",
+      "mapPrecision": "city_level",
+      "publicScope": "map_and_detail",
+      "timelineEventIds": [
+        "TE0035",
+        "TE0036",
+        "TE0037",
+        "TE0038",
+        "TE0039",
+        "TE0041",
+        "TE0042",
+        "TE0043",
+        "TE0053"
+      ],
+      "sourceIds": [
+        "SRC0491"
+      ],
+      "periods": [
+        "european",
+        "hollywood"
+      ]
+    },
+    {
+      "id": "PL005",
+      "displayName": "Hollywood",
+      "authorizedName": "Hollywood, Los Angeles",
+      "placeType": "district",
+      "city": "Los Angeles",
+      "region": "California",
+      "country": "United States",
+      "latitude": 34.092809,
+      "longitude": -118.328661,
+      "period": "european",
+      "slug": "hollywood",
+      "publicNote": "Public shorthand for Kaper’s Hollywood film-career context.",
+      "mapPrecision": "district_level",
+      "publicScope": "map_and_detail",
+      "timelineEventIds": [
+        "TE0036",
+        "TE0037",
+        "TE0038",
+        "TE0039",
+        "TE0041",
+        "TE0042",
+        "TE0043",
+        "TE0053"
+      ],
+      "sourceIds": [
+        "SRC0039",
+        "SRC0491"
+      ],
+      "periods": [
+        "european",
+        "hollywood"
+      ]
+    },
+    {
+      "id": "PL006",
+      "displayName": "MGM Studios, Culver City",
+      "authorizedName": "Metro-Goldwyn-Mayer Studios, Culver City",
+      "placeType": "studio",
+      "city": "Culver City",
+      "region": "California",
+      "country": "United States",
+      "latitude": 34.0239,
+      "longitude": -118.3936,
+      "period": "european",
+      "slug": "mgm-studios-culver-city",
+      "publicNote": "Historic MGM studio complex in Culver City associated with Kaper’s MGM career and Hollywood film work. The marker represents the studio site as a whole; the surviving evidence does not identify a particular stage, office or entrance for the linked events.",
+      "mapPrecision": "site_approximate",
+      "publicScope": "map_and_detail",
+      "timelineEventIds": [
+        "TE0037",
+        "TE0040",
+        "TE0043",
+        "TE0053"
+      ],
+      "sourceIds": [
+        "SRC0491",
+        "SRC0641",
+        "SRC0688"
+      ],
+      "mediaIds": [
+        "M288",
+        "M330"
+      ],
+      "periods": [
+        "european",
+        "hollywood"
+      ]
+    },
+    {
+      "id": "PL007",
+      "displayName": "Wilcza 29, Warsaw",
+      "authorizedName": "Wilcza 29, Warsaw",
+      "placeType": "address",
+      "city": "Warsaw",
+      "region": "Masovian Voivodeship",
+      "country": "Poland",
+      "latitude": 52.2263,
+      "longitude": 21.0178,
+      "period": "warsaw",
+      "slug": "wilcza-29-warsaw",
+      "publicNote": "Warsaw address associated with Kaper in university and police documentation. The tenement, designed by Henryk Stifelman and Stanisław Weiss, was partly demolished and substantially rebuilt after 1945; its post-war condition is documented in the files of the Capital City Reconstruction Office (APW, file 5069).",
+      "mapPrecision": "address_level",
+      "publicScope": "map_and_detail",
+      "timelineEventIds": [
+        "TE0045"
+      ],
+      "sourceIds": [
+        "SRC0110",
+        "SRC0490",
+        "SRC0852"
+      ],
+      "periods": [
+        "warsaw"
+      ]
+    },
+    {
+      "id": "PL008",
+      "displayName": "University of Warsaw",
+      "authorizedName": "University of Warsaw / Uniwersytet Warszawski",
+      "placeType": "institution",
+      "city": "Warsaw",
+      "region": "Masovian Voivodeship",
+      "country": "Poland",
+      "latitude": 52.2394,
+      "longitude": 21.0184,
+      "period": "warsaw",
+      "slug": "university-of-warsaw",
+      "publicNote": "University of Warsaw campus associated with Kaper’s law studies. The marker identifies the historic central university site at campus level; it does not claim a particular Faculty of Law room or classroom.",
+      "mapPrecision": "site_approximate",
+      "publicScope": "map_and_detail",
+      "timelineEventIds": [
+        "TE0004",
+        "TE0011",
+        "TE0012",
+        "TE0044"
+      ],
+      "sourceIds": [
+        "SRC0110",
+        "SRC0490"
+      ],
+      "periods": [
+        "warsaw"
+      ],
+      "mediaIds": [
+        "M093",
+        "M094",
+        "M136"
+      ]
+    },
+    {
+      "id": "PL009",
+      "displayName": "Stanisław Staszic Gymnasium, Polna 60 / Noakowskiego 6, Warsaw",
+      "authorizedName": "Gimnazjum im. Stanisława Staszica w Warszawie, ul. Polna 60",
+      "placeType": "institution",
+      "city": "Warsaw",
+      "region": "Masovian Voivodeship",
+      "country": "Poland",
+      "latitude": 52.2189,
+      "longitude": 21.0175,
+      "period": "warsaw",
+      "slug": "stanislaw-staszic-gymnasium-polna-60-warsaw",
+      "publicNote": "School associated with Kaper’s secondary education and matura, identified as Gimnazjum im. Stanisława Staszica w Warszawie. The building carries two addresses for the same site: ul. Polna 60 in Kaper’s school years, and ul. Noakowskiego 6 after part of Polna Street was renamed for Stanisław Noakowski in 1938. Warszawa1939.pl documents it under the later address, and its bibliography pairs both forms. Built in 1914–16, burned after the Warsaw Uprising and rebuilt with an added storey, so the standing structure is not the pre-war fabric. The coordinates indicate the address area.",
+      "mapPrecision": "site_approximate",
+      "publicScope": "map_and_detail",
+      "timelineEventIds": [
+        "TE0003"
+      ],
+      "sourceIds": [
+        "SRC0434",
+        "SRC0490",
+        "SRC0524",
+        "SRC0577"
+      ],
+      "mediaIds": [
+        "M092",
+        "M280"
+      ],
+      "periods": [
+        "warsaw"
+      ]
+    },
+    {
+      "id": "PL010",
+      "displayName": "Chopin School of Music, Warsaw Philharmonic building, Jasna 5",
+      "authorizedName": "Wyższa Szkoła Muzyczna im. Fryderyka Chopina przy Warszawskim Towarzystwie Muzycznym, gmach Filharmonii Warszawskiej, ul. Jasna 5, Warsaw",
+      "placeType": "institution",
+      "city": "Warsaw",
+      "region": "Masovian Voivodeship",
+      "country": "Poland",
+      "latitude": 52.2359,
+      "longitude": 21.0107,
+      "period": "warsaw",
+      "slug": "chopin-school-of-music-warsaw",
+      "publicNote": "Fryderyk Chopin Higher School of Music at the Warsaw Music Society, associated with Kaper’s piano studies and housed in the Warsaw Philharmonic building at Jasna 5. The marker identifies the documented building site, not a specific classroom.",
+      "mapPrecision": "site_approximate",
+      "publicScope": "map_and_detail",
+      "timelineEventIds": [
+        "TE0008",
+        "TE0013"
+      ],
+      "sourceIds": [
+        "SRC0082",
+        "SRC0354",
+        "SRC0490"
+      ],
+      "periods": [
+        "warsaw"
+      ],
+      "mediaIds": [
+        "M075"
+      ]
+    },
+    {
+      "id": "PL011",
+      "displayName": "St. Alexander’s Church, Warsaw",
+      "authorizedName": "Kościół św. Aleksandra w Warszawie",
+      "placeType": "venue",
+      "city": "Warsaw",
+      "region": "Masovian Voivodeship",
+      "country": "Poland",
+      "latitude": 52.2273,
+      "longitude": 21.0227,
+      "period": "warsaw",
+      "slug": "st-alexanders-church-warsaw",
+      "publicNote": "Church connected with Kaper’s 1920 baptism record.",
+      "mapPrecision": "venue_level",
+      "publicScope": "map_and_detail",
+      "timelineEventIds": [
+        "TE0005"
+      ],
+      "sourceIds": [
+        "SRC0012",
+        "SRC0110"
+      ],
+      "periods": [
+        "warsaw"
+      ],
+      "mediaIds": [
+        "M065",
+        "M213"
+      ]
+    },
+    {
+      "id": "PL012",
+      "displayName": "Culver City",
+      "authorizedName": "Culver City, California",
+      "placeType": "city",
+      "city": "Culver City",
+      "region": "California",
+      "country": "United States",
+      "latitude": 34.021122,
+      "longitude": -118.396467,
+      "period": "european",
+      "slug": "culver-city",
+      "publicNote": "City context for MGM studio work during Kaper’s Hollywood career.",
+      "mapPrecision": "city_level",
+      "publicScope": "map_and_detail",
+      "timelineEventIds": [
+        "TE0037",
+        "TE0040",
+        "TE0043",
+        "TE0053"
+      ],
+      "sourceIds": [
+        "SRC0491"
+      ],
+      "periods": [
+        "european",
+        "hollywood"
+      ]
+    },
+    {
+      "id": "PL013",
+      "displayName": "Hamborn (Duisburg)",
+      "authorizedName": "Hamborn / Duisburg-Hamborn, North Rhine-Westphalia",
+      "placeType": "district",
+      "city": "Duisburg-Hamborn / Hamborn",
+      "region": "North Rhine-Westphalia",
+      "country": "Germany",
+      "latitude": 51.5,
+      "longitude": 6.77,
+      "period": "european",
+      "slug": "hamborn-duisburg",
+      "publicNote": "Ruhr-area place context for the December 1929 ERKLA concert review in which Kaper appears alongside Giuliano Pomeranz, then performing as Julian Pomeranc, Aleksander Zakin, and Leopold Mittmann.",
+      "mapPrecision": "district_level",
+      "publicScope": "map_and_detail",
+      "personIds": [
+        "P009",
+        "P088",
+        "P089",
+        "P090"
+      ],
+      "timelineEventIds": [
+        "TE0023"
+      ],
+      "mediaIds": [
+        "M138"
+      ],
+      "sourceIds": [
+        "SRC0490",
+        "SRC0521"
+      ],
+      "periods": [
+        "european"
+      ]
+    },
+    {
+      "id": "PL014",
+      "displayName": "Sienna 44, Warsaw",
+      "authorizedName": "Sienna 44, Warsaw / Warszawa, ul. Sienna 44",
+      "placeType": "address",
+      "city": "Warsaw",
+      "region": "Masovian Voivodeship",
+      "country": "Poland",
+      "latitude": 52.2322,
+      "longitude": 21.0021,
+      "period": "warsaw",
+      "slug": "sienna-44-warsaw",
+      "publicNote": "Warsaw birthplace context associated with Sienna 44. The coordinates indicate the address area; exact continuity between the 1902 property and the modern address point remains unverified.",
+      "mapPrecision": "address_level",
+      "publicScope": "map_and_detail",
+      "timelineEventIds": [
+        "TE0001"
+      ],
+      "mediaIds": [
+        "M087"
+      ],
+      "sourceIds": [
+        "SRC0012",
+        "SRC0110",
+        "SRC0353",
+        "SRC0490",
+        "SRC0524"
+      ],
+      "periods": [
+        "warsaw"
+      ]
+    },
+    {
+      "id": "PL015",
+      "displayName": "A. M. Skrynnikow Real School, Żórawia 49, Warsaw",
+      "authorizedName": "Szkoła realna A. M. Skrynnikowa w Warszawie, ul. Żórawia 49 / Żurawia 49",
+      "placeType": "institution",
+      "city": "Warsaw",
+      "region": "Masovian Voivodeship",
+      "country": "Poland",
+      "latitude": 52.229,
+      "longitude": 21.0077,
+      "period": "warsaw",
+      "slug": "skrynnikow-real-school-zorawia-49-warsaw",
+      "publicNote": "Warsaw school associated with Kaper’s early education before his Staszic Gymnasium period, at ul. Żórawia 49 (modern Żurawia 49). The coordinates indicate the address area without establishing survival of the historical school building.",
+      "mapPrecision": "address_level",
+      "publicScope": "map_and_detail",
+      "timelineEventIds": [
+        "TE0002"
+      ],
+      "mediaIds": [
+        "M084"
+      ],
+      "sourceIds": [
+        "SRC0433",
+        "SRC0490",
+        "SRC0524"
+      ],
+      "periods": [
+        "warsaw"
+      ]
+    },
+    {
+      "id": "PL016",
+      "displayName": "Warsaw Conservatory Concert Hall, Okólnik 1, Warsaw",
+      "authorizedName": "Sala koncertowa Konserwatorium Warszawskiego",
+      "placeType": "venue",
+      "city": "Warsaw",
+      "region": "Masovian Voivodeship",
+      "country": "Poland",
+      "latitude": 52.2356,
+      "longitude": 21.0225,
+      "period": "european",
+      "slug": "warsaw-conservatory-hall",
+      "publicNote": "Concert hall in the pre-war Warsaw Conservatory building at 1 Okólnik Street, associated with the 1928 press notices on Eliza Rozenblum’s performance of Kaper’s piano pieces. The coordinates indicate the conservatory site, not the exact hall point.",
+      "mapPrecision": "site_approximate",
+      "publicScope": "map_and_detail",
+      "timelineEventIds": [
+        "TE0020"
+      ],
+      "mediaIds": [
+        "M085",
+        "M100",
+        "M101",
+        "M237"
+      ],
+      "sourceIds": [
+        "SRC0016",
+        "SRC0068",
+        "SRC0069",
+        "SRC0559"
+      ],
+      "periods": [
+        "european"
+      ]
+    },
+    {
+      "id": "PL017",
+      "displayName": "Warsaw Philharmonic, Jasna 5",
+      "authorizedName": "Filharmonia Warszawska / Warsaw Philharmonic, ul. Jasna 5",
+      "placeType": "venue",
+      "city": "Warsaw",
+      "region": "Masovian Voivodeship",
+      "country": "Poland",
+      "latitude": 52.2359,
+      "longitude": 21.0107,
+      "period": "warsaw",
+      "slug": "warsaw-philharmonic-jasna-5",
+      "publicNote": "Warsaw concert venue connected with Kaper’s public performance at a Chopin Music School concert.",
+      "mapPrecision": "venue_level",
+      "publicScope": "map_and_detail",
+      "timelineEventIds": [
+        "TE0013"
+      ],
+      "mediaIds": [
+        "M075",
+        "M083",
+        "M109"
+      ],
+      "sourceIds": [
+        "SRC0082",
+        "SRC0354"
+      ],
+      "periods": [
+        "warsaw"
+      ]
+    },
+    {
+      "id": "PL018",
+      "displayName": "Teatr Morskie Oko, Jasna 3 / Sienkiewicza 7, Warsaw",
+      "authorizedName": "Morskie Oko, Jasna 3 / Sienkiewicza 7, Warsaw",
+      "placeType": "venue",
+      "city": "Warsaw",
+      "region": "Masovian Voivodeship",
+      "country": "Poland",
+      "latitude": 52.23406,
+      "longitude": 21.011841,
+      "period": "warsaw",
+      "slug": "teatr-morskie-oko-warsaw",
+      "publicNote": "Warsaw revue theatre associated with Kaper’s early popular-song environment. Morskie Oko occupied the corner of Jasna 3 and Sienkiewicza 7 from 1928 to 1933; that historical venue address is used for the map.",
+      "mapPrecision": "venue_level",
+      "publicScope": "map_and_detail",
+      "timelineEventIds": [
+        "TE0014"
+      ],
+      "mediaIds": [
+        "M080"
+      ],
+      "sourceIds": [
+        "SRC0336",
+        "SRC0490",
+        "SRC0523"
+      ],
+      "periods": [
+        "warsaw"
+      ]
+    },
+    {
+      "id": "PL020",
+      "displayName": "Ufa-Theater Universum, Kurfürstendamm 153, Berlin",
+      "authorizedName": "Ufa-Theater Universum, Kurfürstendamm 153, Berlin-Wilmersdorf",
+      "placeType": "venue",
+      "city": "Berlin",
+      "region": "Berlin",
+      "country": "Germany",
+      "latitude": 52.4991,
+      "longitude": 13.3026,
+      "period": "european",
+      "slug": "ufa-theater-universum-berlin",
+      "publicNote": "Historic cinema site at Kurfürstendamm 153, connected with the 1929 Bick & Kaper appearance at the premiere of Der Adjutant des Zaren. The marker identifies the documented venue site, not a position within the former auditorium.",
+      "mapPrecision": "site_approximate",
+      "publicScope": "map_and_detail",
+      "timelineEventIds": [
+        "TE0024"
+      ],
+      "mediaIds": [
+        "M062"
+      ],
+      "sourceIds": [
+        "SRC0028"
+      ],
+      "periods": [
+        "european"
+      ]
+    },
+    {
+      "id": "PL021",
+      "displayName": "Salabert studio, Montrouge",
+      "authorizedName": "Studio Salabert, Montrouge",
+      "placeType": "studio",
+      "city": "Montrouge",
+      "region": "Île-de-France",
+      "country": "France",
+      "latitude": 48.8172,
+      "longitude": 2.3219,
+      "period": "european",
+      "slug": "salabert-studio-montrouge",
+      "publicNote": "Paris-Soir reported Kaper and Jurmann at the Salabert recording studio in Montrouge on 23 December 1933. The studio’s exact street address has not been verified, so the map marker represents Montrouge at city level.",
+      "mapPrecision": "city_level",
+      "publicScope": "map_and_detail",
+      "timelineEventIds": [
+        "TE0030"
+      ],
+      "mediaIds": [
+        "M059"
+      ],
+      "sourceIds": [
+        "SRC0442"
+      ],
+      "periods": [
+        "european"
+      ]
+    },
+    {
+      "id": "PL022",
+      "displayName": "Hôtel George V, 31 avenue George V, Paris",
+      "authorizedName": "Hôtel George V / Four Seasons Hotel George V, 31 avenue George-V, Paris",
+      "placeType": "venue",
+      "city": "Paris",
+      "region": "Île-de-France",
+      "country": "France",
+      "latitude": 48.8686,
+      "longitude": 2.3003,
+      "period": "european",
+      "slug": "hotel-george-v-paris",
+      "publicNote": "Paris hotel venue connected with the reception/cocktail for Jan Kiepura attended by Kaper and Jurmann.",
+      "mapPrecision": "venue_level",
+      "publicScope": "map_and_detail",
+      "timelineEventIds": [
+        "TE0032"
+      ],
+      "mediaIds": [
+        "M073"
+      ],
+      "sourceIds": [
+        "SRC0024",
+        "SRC0370"
+      ],
+      "periods": [
+        "european"
+      ]
+    },
+    {
+      "id": "PL023",
+      "displayName": "Ritz Paris, 15 place Vendôme, Paris",
+      "authorizedName": "Ritz Paris, 15 place Vendôme, Paris",
+      "placeType": "venue",
+      "city": "Paris",
+      "region": "Île-de-France",
+      "country": "France",
+      "latitude": 48.868,
+      "longitude": 2.3289,
+      "period": "european",
+      "slug": "ritz-paris",
+      "publicNote": "Paris hotel venue for the reported Ritz meeting with Louis B. Mayer that opened the path to the MGM contract.",
+      "mapPrecision": "venue_level",
+      "publicScope": "map_and_detail",
+      "timelineEventIds": [
+        "TE0052"
+      ],
+      "sourceIds": [
+        "SRC0491",
+        "SRC0571"
+      ],
+      "periods": [
+        "european"
+      ],
+      "mediaIds": [
+        "M243"
+      ]
+    },
+    {
+      "id": "PL024",
+      "displayName": "New York",
+      "authorizedName": "New York City",
+      "placeType": "city",
+      "city": "New York",
+      "region": "New York",
+      "country": "United States",
+      "latitude": 40.7128,
+      "longitude": -74.006,
+      "period": "european",
+      "slug": "new-york",
+      "publicNote": "Arrival city for Kaper and Eleonora after the transatlantic crossing from Le Havre aboard the S.S. Champlain, before onward travel to Los Angeles.",
+      "mapPrecision": "city_level",
+      "publicScope": "map_and_detail",
+      "timelineEventIds": [
+        "TE0035",
+        "TE0054"
+      ],
+      "sourceIds": [
+        "SRC0491"
+      ],
+      "periods": [
+        "european",
+        "hollywood"
+      ]
+    },
+    {
+      "id": "PL025",
+      "displayName": "Pier 57 (French Line), New York",
+      "authorizedName": "French Line Pier 57, North River, foot of West 15th Street, Manhattan, New York",
+      "placeType": "port",
+      "city": "New York",
+      "region": "New York",
+      "country": "United States",
+      "latitude": 40.7442,
+      "longitude": -74.0095,
+      "period": "european",
+      "slug": "pier-57-french-line-new-york",
+      "publicNote": "Approximate arrival site for Kaper and Eleonora’s 1934 Atlantic crossing from Le Havre aboard the S.S. Champlain. In this period the French Line (Compagnie Générale Transatlantique) used Pier 57 on the North River, at the foot of West 15th Street; the pier is inferred from the line’s documented berth rather than named in the passenger manifest. The record establishes arrival at New York but not processing at Ellis Island.",
+      "mapPrecision": "site_approximate",
+      "publicScope": "map_and_detail",
+      "timelineEventIds": [
+        "TE0035"
+      ],
+      "sourceIds": [
+        "SRC0491",
+        "SRC0581"
+      ],
+      "mediaIds": [
+        "M283"
+      ],
+      "periods": [
+        "european"
+      ]
+    },
+    {
+      "id": "PL026",
+      "displayName": "Le Havre",
+      "authorizedName": "Le Havre, Normandy",
+      "placeType": "city",
+      "city": "Le Havre",
+      "region": "Normandy",
+      "country": "France",
+      "latitude": 49.4944,
+      "longitude": 0.1079,
+      "period": "european",
+      "slug": "le-havre",
+      "publicNote": "French port city context for Kaper’s 1934 Atlantic crossing from Le Havre to New York aboard the S.S. Champlain. The marker is placed at city level: in 1934 CGT liners still used the port’s earlier transatlantic quays, since the landmark Gare Maritime on the quai Johannès-Couvert opened only in May 1935 (with the Normandie) and was destroyed in the 1944 bombing of Le Havre.",
+      "mapPrecision": "city_level",
+      "publicScope": "map_and_detail",
+      "timelineEventIds": [
+        "TE0035"
+      ],
+      "mediaIds": [
+        "M121"
+      ],
+      "sourceIds": [
+        "SRC0371",
+        "SRC0491"
+      ],
+      "periods": [
+        "european"
+      ]
+    },
+    {
+      "id": "PL027",
+      "displayName": "Calexico, California",
+      "authorizedName": "Calexico, California",
+      "placeType": "city",
+      "city": "Calexico",
+      "region": "California",
+      "country": "United States",
+      "latitude": 32.6789,
+      "longitude": -115.4989,
+      "period": "hollywood",
+      "slug": "calexico-california",
+      "publicNote": "U.S. border city and port-of-entry context for Kaper’s 1935 permanent-residence entry record.",
+      "mapPrecision": "city_level",
+      "publicScope": "map_and_detail",
+      "timelineEventIds": [
+        "TE0036"
+      ],
+      "mediaIds": [
+        "M124"
+      ],
+      "sourceIds": [
+        "SRC0039"
+      ],
+      "periods": [
+        "hollywood"
+      ]
+    },
+    {
+      "id": "PL028",
+      "displayName": "Mexicali, Baja California",
+      "authorizedName": "Mexicali, Baja California, Mexico",
+      "placeType": "city",
+      "city": "Mexicali",
+      "region": "Baja California",
+      "country": "Mexico",
+      "latitude": 32.6633,
+      "longitude": -115.4678,
+      "period": "hollywood",
+      "slug": "mexicali-baja-california",
+      "publicNote": "Mexicali is the Baja California border city from which Kaper and Eleonora entered the United States at Calexico for permanent residence. The map marker uses official city-level coordinates and does not identify the location of the historical Commercial Hotel.",
+      "mapPrecision": "city_level",
+      "publicScope": "map_and_detail",
+      "timelineEventIds": [
+        "TE0036"
+      ],
+      "mediaIds": [
+        "M124"
+      ],
+      "sourceIds": [
+        "SRC0039",
+        "SRC0547"
+      ],
+      "periods": [
+        "hollywood"
+      ]
+    },
+    {
+      "id": "PL029",
+      "displayName": "Château des Fleurs, 6626 Franklin Ave., Hollywood",
+      "authorizedName": "Château des Fleurs, 6626 Franklin Avenue, Hollywood, Los Angeles",
+      "placeType": "address",
+      "city": "Hollywood / Los Angeles",
+      "region": "California",
+      "country": "United States",
+      "latitude": 34.105,
+      "longitude": -118.3343,
+      "period": "hollywood",
+      "slug": "chateau-des-fleurs-6626-franklin-ave-hollywood",
+      "publicNote": "French Norman Revival apartment building completed in 1927 and designated Los Angeles Historic-Cultural Monument no. 799. Kaper’s 1 November 1935 immigration manifest records 6626 Franklin Avenue as his U.S. destination, and his Declaration of Intention dated 4 February 1936 records the same address as his residence.",
+      "mapPrecision": "address_level",
+      "publicScope": "map_and_detail",
+      "timelineEventIds": [
+        "TE0036",
+        "TE0039"
+      ],
+      "mediaIds": [
+        "M286",
+        "M124",
+        "M115"
+      ],
+      "sourceIds": [
+        "SRC0039",
+        "SRC0038",
+        "SRC0566",
+        "SRC0636"
+      ],
+      "periods": [
+        "hollywood"
+      ]
+    },
+    {
+      "id": "PL030",
+      "displayName": "Vienna",
+      "authorizedName": "Vienna / Wien",
+      "placeType": "city",
+      "city": "Vienna",
+      "region": "Vienna",
+      "country": "Austria",
+      "latitude": 48.2082,
+      "longitude": 16.3738,
+      "period": "european",
+      "slug": "vienna",
+      "publicNote": "Vienna functions here as a European music-film and publicity context for the Berlin–Paris–Hollywood route and the star-singer circuit. MGM’s later “Viennese composers” label is not presented as Kaper’s biographical origin.",
+      "mapPrecision": "city_level",
+      "publicScope": "context_only",
+      "timelineEventIds": [
+        "TE0028",
+        "TE0050",
+        "TE0051",
+        "TE0053"
+      ],
+      "mediaIds": [
+        "M095"
+      ],
+      "sourceIds": [
+        "SRC0490",
+        "SRC0491",
+        "SRC0494"
+      ],
+      "periods": [
+        "european"
+      ]
+    },
+    {
+      "id": "PL031",
+      "displayName": "Babelsberg / Studio Babelsberg",
+      "authorizedName": "Studio Babelsberg, Potsdam-Babelsberg",
+      "placeType": "studio",
+      "city": "Potsdam-Babelsberg",
+      "region": "Brandenburg",
+      "country": "Germany",
+      "latitude": 52.387,
+      "longitude": 13.1195,
+      "period": "european",
+      "slug": "studio-babelsberg",
+      "publicNote": "Major German film-production centre associated with the multiple-language version system in early European sound cinema. The marker represents the broader historic Babelsberg studio complex; no individual stage or production building is asserted for the linked context.",
+      "mapPrecision": "site_approximate",
+      "publicScope": "context_only",
+      "timelineEventIds": [
+        "TE0051"
+      ],
+      "sourceIds": [
+        "SRC0490",
+        "SRC0491"
+      ],
+      "periods": [
+        "european"
+      ],
+      "mediaIds": [
+        "M108"
+      ]
+    },
+    {
+      "id": "PL032",
+      "displayName": "Joinville Studios / Joinville-le-Pont",
+      "authorizedName": "Joinville Studios, Joinville-le-Pont",
+      "placeType": "studio",
+      "city": "Joinville-le-Pont",
+      "region": "Île-de-France",
+      "country": "France",
+      "latitude": 48.821,
+      "longitude": 2.472,
+      "period": "european",
+      "slug": "joinville-studios",
+      "publicNote": "French studio/production-centre context for early sound-film multiple-language version production.",
+      "mapPrecision": "city_level",
+      "publicScope": "context_only",
+      "timelineEventIds": [
+        "TE0051"
+      ],
+      "sourceIds": [
+        "SRC0490",
+        "SRC0491",
+        "SRC0575"
+      ],
+      "mediaIds": [
+        "M278"
+      ],
+      "periods": [
+        "european"
+      ]
+    },
+    {
+      "id": "PL033",
+      "displayName": "Wilmersdorf, Berlin",
+      "authorizedName": "Berlin-Wilmersdorf",
+      "placeType": "district",
+      "city": "Berlin",
+      "region": "Berlin",
+      "country": "Germany",
+      "latitude": 52.487,
+      "longitude": 13.319,
+      "period": "european",
+      "slug": "wilmersdorf-berlin",
+      "publicNote": "West Berlin district context for Kaper’s settled Berlin position before the 1933 forced departure. His address is identified as Pommersche Straße in Wilmersdorf, an affluent western Berlin residential district.",
+      "mapPrecision": "district_level",
+      "publicScope": "map_and_detail",
+      "timelineEventIds": [
+        "TE0027",
+        "TE0028"
+      ],
+      "sourceIds": [
+        "SRC0491"
+      ],
+      "periods": [
+        "european"
+      ]
+    },
+    {
+      "id": "PL034",
+      "displayName": "Pommersche Straße 3, Berlin-Wilmersdorf",
+      "authorizedName": "Pommersche Straße 3, Berlin-Wilmersdorf",
+      "placeType": "address",
+      "city": "Berlin",
+      "region": "Berlin",
+      "country": "Germany",
+      "latitude": 52.49273,
+      "longitude": 13.31732,
+      "period": "european",
+      "slug": "pommersche-strasse-3-berlin-wilmersdorf",
+      "publicNote": "Documented Berlin residence: the Berliner Adreßbuch 1932 lists B. Kaper, composer, at Pommersche Straße 3 in Wilmersdorf. A later official planning record identifies the historical corner parcel as Sächsische Straße 48–49 / Pommersche Straße 3–4. Numbers 3–4 are absent from the present official address register, so the marker locates the historical corner parcel approximately rather than a surviving entrance.",
+      "mapPrecision": "site_approximate",
+      "publicScope": "map_and_detail",
+      "timelineEventIds": [
+        "TE0027",
+        "TE0028"
+      ],
+      "sourceIds": [
+        "SRC0023",
+        "SRC0491",
+        "SRC0579",
+        "SRC0580"
+      ],
+      "mediaIds": [
+        "M106",
+        "M282"
+      ],
+      "periods": [
+        "european"
+      ]
+    },
+    {
+      "id": "PL035",
+      "displayName": "Château Frontenac, 54 rue Pierre Charron, Paris",
+      "authorizedName": "Hôtel Château Frontenac, 54 rue Pierre-Charron, Paris",
+      "placeType": "venue",
+      "city": "Paris",
+      "region": "Île-de-France",
+      "country": "France",
+      "latitude": 48.8702,
+      "longitude": 2.3026,
+      "period": "european",
+      "slug": "chateau-frontenac-54-rue-pierre-charron-paris",
+      "publicNote": "Paris hotel/address context given by Kaper on the S.S. Champlain passenger manifest as his home address before arrival in New York; interpreted as a transit hotel address rather than a private residence.",
+      "mapPrecision": "address_level",
+      "publicScope": "map_and_detail",
+      "timelineEventIds": [
+        "TE0035"
+      ],
+      "sourceIds": [
+        "SRC0491"
+      ],
+      "periods": [
+        "european"
+      ],
+      "mediaIds": [
+        "M071"
+      ]
+    },
+    {
+      "id": "PL036",
+      "displayName": "Casino de Paris, 16 rue de Clichy, Paris",
+      "authorizedName": "Casino de Paris, 16 rue de Clichy, Paris",
+      "placeType": "venue",
+      "city": "Paris",
+      "region": "Île-de-France",
+      "country": "France",
+      "latitude": 48.878358,
+      "longitude": 2.330117,
+      "period": "european",
+      "slug": "casino-de-paris",
+      "publicNote": "Paris revue/music-hall context for the 1933/34 Paris career station of the Jurmann–Kaper duo, documented through Brzoska’s account of their revue activity.",
+      "mapPrecision": "venue_level",
+      "publicScope": "map_and_detail",
+      "timelineEventIds": [
+        "TE0029"
+      ],
+      "sourceIds": [
+        "SRC0491"
+      ],
+      "periods": [
+        "european"
+      ]
+    },
+    {
+      "id": "PL037",
+      "displayName": "Sievering Film Studio, Sieveringer Straße 135, Vienna",
+      "authorizedName": "Sieveringer Filmatelier / Sievering Studios, Sieveringer Straße 135, 1190 Vienna-Döbling",
+      "placeType": "studio",
+      "city": "Vienna",
+      "region": "Vienna",
+      "country": "Austria",
+      "latitude": 48.25222,
+      "longitude": 16.32083,
+      "period": "european",
+      "slug": "sievering-atelier-vienna",
+      "publicNote": "Historical film-studio site at Sieveringer Straße 135 in Vienna’s 19th district, Döbling. The studio complex operated at this address from the Sascha-Film era and no longer survives in its historical form.",
+      "mapPrecision": "address_level",
+      "publicScope": "context_only",
+      "timelineEventIds": [
+        "TE0051"
+      ],
+      "sourceIds": [
+        "SRC0491",
+        "SRC0578"
+      ],
+      "mediaIds": [
+        "M281"
+      ],
+      "periods": [
+        "european"
+      ]
+    },
+    {
+      "id": "PL038",
+      "displayName": "London",
+      "authorizedName": "London",
+      "placeType": "city",
+      "city": "London",
+      "region": "Greater London",
+      "country": "United Kingdom",
+      "latitude": 51.5074,
+      "longitude": -0.1278,
+      "period": "european",
+      "slug": "london",
+      "publicNote": "Brief London project context before the Mayer/MGM breakthrough: Kaper later recalled a short trip to London at Sam Spiegel’s invitation for a projected Anthony Asquith film that did not materialize.",
+      "mapPrecision": "city_level",
+      "publicScope": "map_and_detail",
+      "timelineEventIds": [
+        "TE0052"
+      ],
+      "sourceIds": [
+        "SRC0491",
+        "SRC0494"
+      ],
+      "periods": [
+        "european"
+      ]
+    },
+    {
+      "id": "PL039",
+      "displayName": "Commercial Hotel (formerly Hotel Aldrete), Madero at Azueta, Mexicali",
+      "authorizedName": "Hotel Comercial (formerly Hotel Aldrete), Avenida Francisco I. Madero at Calle José Azueta, Mexicali, Baja California",
+      "placeType": "venue",
+      "city": "Mexicali",
+      "region": "Baja California",
+      "country": "Mexico",
+      "period": "hollywood",
+      "slug": "commercial-hotel-mexicali",
+      "publicNote": "Kaper’s 1 November 1935 Calexico manifest records the Commercial Hotel in Mexicali as his last permanent residence abroad. Historical evidence identifies the Hotel Comercial as the renamed Hotel Aldrete on Avenida Francisco I. Madero, between Ayuntamiento and José Azueta, beside Parque Héroes de Chapultepec. The marker represents that documented site; 301 is the present-day parcel number, not a verified 1935 street number.",
+      "mapPrecision": "site_approximate",
+      "publicScope": "map_and_detail",
+      "timelineEventIds": [
+        "TE0036"
+      ],
+      "sourceIds": [
+        "SRC0039",
+        "SRC0637",
+        "SRC0638",
+        "SRC0639",
+        "SRC0640"
+      ],
+      "mediaIds": [
+        "M287",
+        "M124"
+      ],
+      "latitude": 32.66450519,
+      "longitude": -115.49328652,
+      "periods": [
+        "hollywood"
+      ]
+    },
+    {
+      "id": "PL040",
+      "displayName": "Consulate General of the Republic of Poland, 19 rue Alphonse-de-Neuville, Paris",
+      "authorizedName": "Consulate General of the Republic of Poland in Paris, 19 rue Alphonse-de-Neuville, Paris 17e",
+      "placeType": "institution",
+      "city": "Paris",
+      "region": "Île-de-France",
+      "country": "France",
+      "latitude": 48.88475,
+      "longitude": 2.30205,
+      "period": "european",
+      "slug": "polish-consulate-general-paris",
+      "publicNote": "Polish consular institution in Paris that issued Kaper’s Polish passport in August 1934, later noted in the Calexico border-crossing documentation. Historical address identified as 19 rue Alphonse-de-Neuville, Paris 17e.",
+      "mapPrecision": "address_level",
+      "publicScope": "map_and_detail",
+      "timelineEventIds": [
+        "TE0035",
+        "TE0036"
+      ],
+      "sourceIds": [
+        "SRC0039",
+        "SRC0491",
+        "SRC0574"
+      ],
+      "mediaIds": [
+        "M277"
+      ],
+      "periods": [
+        "european",
+        "hollywood"
+      ]
+    },
+    {
+      "id": "PL041",
+      "displayName": "Bach-Saal, Lützowstraße 76, Berlin",
+      "authorizedName": "Bach-Saal / former Blüthner-Saal, Lützowstraße 76 / Genthiner Straße 11 (today Genthiner Straße 26), Berlin-Tiergarten",
+      "placeType": "venue",
+      "city": "Berlin",
+      "region": "Berlin",
+      "country": "Germany",
+      "latitude": 52.5030556,
+      "longitude": 13.3588889,
+      "period": "european",
+      "slug": "bach-saal-berlin",
+      "publicNote": "Berlin concert venue where Róża Etkin gave a recital on 3 December 1927 that included the first performance of a work by B. Kaper. The venue is identifiable with the former Blüthner-Saal, renamed Bach-Saal after renovation in autumn 1927, in the Klindworth-Scharwenka / Schwalm hall complex at Lützowstraße 76 / Genthiner Straße. The marker represents the documented complex rather than a reconstructed footprint of the individual hall.",
+      "mapPrecision": "site_approximate",
+      "publicScope": "map_and_detail",
+      "timelineEventIds": [
+        "TE0018"
+      ],
+      "sourceIds": [
+        "SRC0490",
+        "SRC0573"
+      ],
+      "mediaIds": [
+        "M276"
+      ],
+      "periods": [
+        "european"
+      ]
+    },
+    {
+      "id": "PL042",
+      "displayName": "Kabarett der Komiker, Berlin",
+      "authorizedName": "Kabarett der Komiker / KadeKo, probable July 1928 venue: Haus Cumberland / Palmenhaus, Kurfürstendamm 193–194, Berlin-Charlottenburg",
+      "placeType": "venue",
+      "city": "Berlin",
+      "region": "Berlin",
+      "country": "Germany",
+      "latitude": 52.500833333333,
+      "longitude": 13.316944444444,
+      "period": "european",
+      "slug": "kabarett-der-komiker-berlin",
+      "publicNote": "Berlin cabaret venue connected with Kaper’s paid work as a pianist. A July 1928 programme lists Sula Lewitsch and Bronisław Kaper as “Jazz auf zwei Klavieren”; because the event predates the later WOGA venue, Haus Cumberland / Palmenhaus at Kurfürstendamm 193–194 is retained as the probable site.",
+      "mapPrecision": "site_approximate",
+      "publicScope": "map_and_detail",
+      "timelineEventIds": [
+        "TE0019"
+      ],
+      "sourceIds": [
+        "SRC0490",
+        "SRC0522",
+        "SRC0576"
+      ],
+      "mediaIds": [
+        "M279"
+      ],
+      "periods": [
+        "european"
+      ]
+    },
+    {
+      "id": "PL043",
+      "displayName": "Calexico–Mexicali Border Crossing",
+      "authorizedName": "Calexico–Mexicali Port of Entry (Calexico, California / Mexicali, Baja California)",
+      "placeType": "port",
+      "city": "Calexico / Mexicali",
+      "region": "California / Baja California",
+      "country": "United States",
+      "latitude": 32.6651,
+      "longitude": -115.4963,
+      "period": "hollywood",
+      "slug": "calexico-mexicali-border-crossing",
+      "publicNote": "Land border port of entry linking Calexico (California) and Mexicali (Baja California), documented as the point of Kaper and Eleonora’s 1935 permanent-residence entry into the United States. The coordinates mark the historic downtown crossing at the foot of Heffernan Avenue, where the 1933 inspection station stood in 1935; the vehicle crossing was moved two blocks west in 1974 and the present buildings are later.",
+      "mapPrecision": "address_level",
+      "publicScope": "map_and_detail",
+      "timelineEventIds": [
+        "TE0036"
+      ],
+      "mediaIds": [
+        "M124",
+        "M285",
+        "M113"
+      ],
+      "sourceIds": [
+        "SRC0039",
+        "SRC0635",
+        "SRC0350"
+      ],
+      "periods": [
+        "hollywood"
+      ]
+    },
+    {
+      "id": "PL044",
+      "displayName": "Montpellier",
+      "authorizedName": "Montpellier, Hérault, France",
+      "placeType": "city",
+      "city": "Montpellier",
+      "region": "Hérault",
+      "country": "France",
+      "latitude": 43.610769,
+      "longitude": 3.876716,
+      "period": "european",
+      "slug": "montpellier",
+      "publicNote": "Southern French city where a jazz orchestra performed the Jurmann–Kaper song “Ninon, quand tu me souris” (from Tout pour l’amour) on an open-air stage at a summer festival on 22 June 1934, documenting the song’s move into the French concert/festival repertoire beyond cinema.",
+      "mapPrecision": "city_level",
+      "publicScope": "map_and_detail",
+      "timelineEventIds": [
+        "TE0031"
+      ],
+      "sourceIds": [
+        "SRC0536"
+      ],
+      "periods": [
+        "european"
+      ]
+    },
+    {
+      "id": "PL045",
+      "displayName": "Hotel Edison, 228 West 47th Street, New York",
+      "authorizedName": "Hotel Edison, 228 West 47th Street, New York, NY",
+      "placeType": "venue",
+      "city": "New York",
+      "region": "New York",
+      "country": "United States",
+      "latitude": 40.7594,
+      "longitude": -73.9857,
+      "period": "european",
+      "slug": "hotel-edison-new-york",
+      "publicNote": "New York hotel where Kaper and his wife Eleonora stayed on arrival from Le Havre before travelling on to Los Angeles. In his 1975 AFI oral history Kaper recalled the Edison Hotel as the studio’s $300-a-week accommodation tier.",
+      "mapPrecision": "venue_level",
+      "publicScope": "map_and_detail",
+      "timelineEventIds": [
+        "TE0035"
+      ],
+      "mediaIds": [
+        "M275"
+      ],
+      "sourceIds": [
+        "SRC0494",
+        "SRC0572"
+      ],
+      "periods": [
+        "european"
+      ]
+    }
+  ]
+}
