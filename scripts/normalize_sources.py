@@ -41,8 +41,7 @@ def normalized_source(source: dict[str, Any]) -> dict[str, Any]:
     normalize_sheet_music_source(result)
     if result.get("sourceType") == "authority_record":
         normalize_authority_source(result)
-    if result.get("sourceType") == "recording_discographic_source":
-        normalize_recording_source(result)
+    normalize_recording_source(result)
     if (
         result.get("sourceType") == "filmographic_database"
         or source_hostname(result) in IMDB_HOSTS

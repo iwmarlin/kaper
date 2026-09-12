@@ -28,6 +28,7 @@ from filmographic_sources import (
 )
 from recording_organizations import expected_audio_organization_ids
 from recording_sources import (
+    AUDITED_DIGITAL_AUDIO_FIELDS,
     RECORDING_ORGANIZATION_BY_HOST,
     recording_hostname,
 )
@@ -1182,6 +1183,21 @@ class ExportValidator:
                         f"Source {source_id}: missing recording repository organization "
                         f"{recording_organization}"
                     )
+            audited_digital_audio = AUDITED_DIGITAL_AUDIO_FIELDS.get(source_id)
+            if audited_digital_audio:
+                for field_name in (
+                    "sourceType",
+                    "date",
+                    "dateRole",
+                    "dateQualifier",
+                ):
+                    expected_value = audited_digital_audio[field_name]
+                    if source.get(field_name) != expected_value:
+                        self.errors.append(
+                            f"Source {source_id}: audited digital-audio semantics "
+                            f"require {field_name}={expected_value!r}, not "
+                            f"{source.get(field_name)!r}"
+                        )
             if is_direct_nac_photograph(source):
                 expected_visual = dict(source)
                 normalize_visual_source(expected_visual)

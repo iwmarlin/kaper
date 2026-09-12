@@ -1407,8 +1407,7 @@ class PublicExporter:
             normalize_sheet_music_source(source)
             if source.get("sourceType") == "authority_record":
                 normalize_authority_source(source)
-            if source.get("sourceType") == "recording_discographic_source":
-                normalize_recording_source(source)
+            normalize_recording_source(source)
             if (
                 source.get("sourceType") == "filmographic_database"
                 or source_hostname(source) in IMDB_HOSTS

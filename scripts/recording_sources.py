@@ -4,7 +4,8 @@
 The citation identifies the recording, issue and access copy.  Interpretation
 of conflicting dates, identities, incomplete labels or later reissues belongs
 in a typed research note.  Access dates are structured fields and are not
-repeated in the citation.
+repeated in the citation.  A modern digital issue without an identified
+historical carrier is an ``online_audio_source``, not a discographic source.
 """
 
 from __future__ import annotations
@@ -22,6 +23,125 @@ RECORDING_ORGANIZATION_BY_HOST = {
     "www.discogs.com": "ORG094",
     "www.kppg.waw.pl": "ORG098",
     "www.youtube.com": "ORG093",
+}
+
+
+# Individually verified digital releases and remasters.  Their public Source
+# date describes the cited modern edition, never the year of the underlying
+# work or performance.  Keeping the mapping here makes the distinction survive
+# a fresh export instead of relying on a one-off edit to canonical JSON.
+AUDITED_DIGITAL_AUDIO_FIELDS: dict[str, dict[str, Any]] = {
+    "SRC0301": {
+        "sourceType": "online_audio_source",
+        "shortCitation": (
+            "Joséphine Baker, “J’ai un message pour toi” (Jube Pops digital "
+            "remaster, 2014)"
+        ),
+        "title": (
+            "J’ai un message pour toi — Joséphine Baker, Jube Pops digital "
+            "remaster"
+        ),
+        "date": "2014-11-04",
+        "dateRole": "digital_publication",
+        "dateQualifier": "confirmed",
+        "researchNote": (
+            "The date identifies the Jube Pops digital issue released on 4 "
+            "November 2014. The supplied metadata does not identify the "
+            "original recording session, label, catalogue number or matrix; "
+            "this source therefore documents the modern reissue and provides "
+            "a listening reference, not evidence for a historical carrier."
+        ),
+        "researchNoteType": "discographic_note",
+    },
+    "SRC0749": {
+        "sourceType": "online_audio_source",
+        "shortCitation": (
+            "Allan Jones, “A Message from the Man in the Moon” — MGM outtake, "
+            "2006 remaster"
+        ),
+        "title": (
+            "A Message from the Man in the Moon — Allan Jones, MGM outtake, "
+            "2006 remaster"
+        ),
+        "date": "2006",
+        "dateRole": "issue",
+        "dateQualifier": "confirmed",
+        "researchNote": (
+            "The date identifies the 2006 soundtrack-anthology remaster and "
+            "issue, not the underlying 1937 performance or the YouTube access "
+            "copy published in 2021. The number was recorded for A Day at the "
+            "Races but cut before the film’s release; the performance and "
+            "production credits are supplied by the rights holder to the "
+            "distributing channel."
+        ),
+        "researchNoteType": "discographic_note",
+    },
+    "SRC0751": {
+        "sourceType": "online_audio_source",
+        "shortCitation": (
+            "Allan Jones, “Tomorrow Is Another Day” (Blue Mood digital "
+            "reissue, 2016)"
+        ),
+        "title": (
+            "Tomorrow Is Another Day — Allan Jones, Blue Mood digital reissue"
+        ),
+        "date": "2016-07-12",
+        "dateRole": "digital_publication",
+        "dateQualifier": "confirmed",
+        "researchNote": (
+            "The date identifies the Blue Mood digital issue released on 12 "
+            "July 2016; 1937 is the year of the underlying performance for A "
+            "Day at the Races. The supplied release metadata identifies no "
+            "original label, catalogue number or matrix. Consulted discographic "
+            "literature instead lists contemporary versions by Ted Fio Rito "
+            "and Hal Kemp."
+        ),
+        "researchNoteType": "discographic_note",
+    },
+    "SRC0756": {
+        "sourceType": "online_audio_source",
+        "shortCitation": (
+            "Richard Tauber, “Schade, daß Liebe ein Märchen ist” (Membran "
+            "Music digital reissue, 2010)"
+        ),
+        "title": (
+            "Schade, daß Liebe ein Märchen ist — Richard Tauber, Membran "
+            "Music digital reissue"
+        ),
+        "date": "2010-04-15",
+        "dateRole": "digital_publication",
+        "dateQualifier": "confirmed",
+        "researchNote": (
+            "The date identifies the Membran Music digital issue released on "
+            "15 April 2010; 1932 is the year of the underlying performance. The "
+            "reissue identifies no original label, catalogue number or matrix. "
+            "A digitised Parlophone pressing of the same recording is linked "
+            "separately and remains the preferred listening reference."
+        ),
+        "researchNoteType": "discographic_note",
+    },
+    "SRC0815": {
+        "sourceType": "online_audio_source",
+        "shortCitation": (
+            "Allan Jones, “The Show Must Go On” (Bamboodi digital reissue, "
+            "2018)"
+        ),
+        "title": (
+            "The Show Must Go On — Allan Jones, Bamboodi digital reissue"
+        ),
+        "date": "2018-01-29",
+        "dateRole": "digital_publication",
+        "dateQualifier": "confirmed",
+        "researchNote": (
+            "The date identifies the Bamboodi digital issue released on 29 "
+            "January 2018; 1938 is the year of the underlying performance for "
+            "Everybody Sing. The release names no original session, label, "
+            "catalogue number or matrix. It replaces an Audiomack page that "
+            "carried the same performance without credits and refused playback "
+            "outside its licensed territories."
+        ),
+        "researchNoteType": "discographic_note",
+    },
 }
 
 
@@ -111,12 +231,6 @@ RECORDING_FIELDS: dict[str, dict[str, Any]] = {
             "Musicals. Phonogram right © 1937 Turner Entertainment Co.; digital "
             "distribution by WaterTower Music."
         ),
-        "researchNote": (
-            "The number was recorded for A Day at the Races but cut before the "
-            "film’s release. The performance and production credits are supplied "
-            "by the rights holder to the distributing channel."
-        ),
-        "researchNoteType": "verification_note",
     },
     "SRC0785": {
         "fullCitation": (
@@ -163,10 +277,14 @@ def recording_hostname(source: dict[str, Any]) -> str:
 
 def normalize_recording_source(source: dict[str, Any]) -> None:
     """Normalize one recording source in place."""
-    if source.get("sourceType") != "recording_discographic_source":
+    source_id = str(source.get("id", ""))
+    is_audited_digital_audio = source_id in AUDITED_DIGITAL_AUDIO_FIELDS
+    if (
+        source.get("sourceType") != "recording_discographic_source"
+        and not is_audited_digital_audio
+    ):
         return
 
-    source_id = str(source.get("id", ""))
     if source.get("accessDate"):
         source["fullCitation"] = strip_redundant_access_statement(
             source.get("fullCitation")
@@ -175,6 +293,10 @@ def normalize_recording_source(source: dict[str, Any]) -> None:
     fields = RECORDING_FIELDS.get(source_id)
     if fields:
         source.update(fields)
+
+    digital_fields = AUDITED_DIGITAL_AUDIO_FIELDS.get(source_id)
+    if digital_fields:
+        source.update(digital_fields)
 
     organization = RECORDING_ORGANIZATION_BY_HOST.get(recording_hostname(source))
     if organization:

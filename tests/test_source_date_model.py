@@ -17,6 +17,7 @@ from source_dates import (  # noqa: E402
     source_date_errors,
     usco_identifiers,
 )
+from recording_sources import AUDITED_DIGITAL_AUDIO_FIELDS  # noqa: E402
 
 
 class SourceDateModelTests(unittest.TestCase):
@@ -83,6 +84,28 @@ class SourceDateModelTests(unittest.TestCase):
             [],
             "a digital reissue without an identified original disc is classified as discographic",
         )
+
+    def test_audited_modern_audio_editions_date_the_cited_issue(self) -> None:
+        records = {
+            source["id"]: source
+            for source in json.loads(
+                (PUBLIC / "sources.json").read_text(encoding="utf-8")
+            )["records"]
+        }
+        for source_id, expected_fields in AUDITED_DIGITAL_AUDIO_FIELDS.items():
+            with self.subTest(source_id=source_id):
+                source = records[source_id]
+                for field_name in (
+                    "sourceType",
+                    "date",
+                    "dateRole",
+                    "dateQualifier",
+                ):
+                    self.assertEqual(
+                        source.get(field_name),
+                        expected_fields[field_name],
+                    )
+                self.assertEqual(source["sourceType"], "online_audio_source")
 
     def test_source_card_explains_both_date_and_its_role(self) -> None:
         node = shutil.which("node")

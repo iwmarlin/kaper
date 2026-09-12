@@ -3495,6 +3495,51 @@
           "repository": "Śląska Biblioteka Cyfrowa"
         }
       },
+      "SRC0301": {
+        "reason": "Classify the cited 2014 Jube Pops remaster as a modern online-audio edition rather than as evidence for an unidentified historical carrier; the Source date records the digital release.",
+        "fields": {
+          "sourceType": "online_audio_source",
+          "date": "2014-11-04",
+          "dateRole": "digital_publication",
+          "dateQualifier": "confirmed"
+        }
+      },
+      "SRC0749": {
+        "reason": "Classify the cited 2006 MGM soundtrack-anthology remaster as an online-audio edition; date the modern issue rather than the underlying 1937 outtake.",
+        "fields": {
+          "sourceType": "online_audio_source",
+          "date": "2006",
+          "dateRole": "issue",
+          "dateQualifier": "confirmed"
+        }
+      },
+      "SRC0751": {
+        "reason": "Classify the Blue Mood transfer as an online-audio source and date the digital release of 12 July 2016 rather than the underlying 1937 performance.",
+        "fields": {
+          "sourceType": "online_audio_source",
+          "date": "2016-07-12",
+          "dateRole": "digital_publication",
+          "dateQualifier": "confirmed"
+        }
+      },
+      "SRC0756": {
+        "reason": "Classify the Membran Music transfer as an online-audio source and date the digital release of 15 April 2010 rather than the underlying 1932 performance.",
+        "fields": {
+          "sourceType": "online_audio_source",
+          "date": "2010-04-15",
+          "dateRole": "digital_publication",
+          "dateQualifier": "confirmed"
+        }
+      },
+      "SRC0815": {
+        "reason": "Classify the Bamboodi transfer as an online-audio source and date the digital release of 29 January 2018 rather than the underlying 1938 performance.",
+        "fields": {
+          "sourceType": "online_audio_source",
+          "date": "2018-01-29",
+          "dateRole": "digital_publication",
+          "dateQualifier": "confirmed"
+        }
+      },
       "SRC0838": {
         "reason": "Replace the poorly provenanced non-free English Wikipedia file-page citation with the directly documented public-domain Photoplay image on Wikimedia Commons, retaining the stable source ID and graph links.",
         "fields": {
