@@ -546,6 +546,7 @@ class PublicExporter:
         output_root: Path,
         assets_root: Path | None,
         public_data_date: str,
+        keep_failed_output: bool = False,
     ) -> None:
         self.backup_root = backup_root.resolve()
         self.config_path = config_path.resolve()
@@ -553,6 +554,7 @@ class PublicExporter:
         self.output_root = output_root.resolve()
         self.assets_root = assets_root.resolve() if assets_root else None
         self.public_data_date = validated_public_data_date(public_data_date)
+        self.keep_failed_output = keep_failed_output
         self.config = read_json(self.config_path)
         self.overrides = (
             read_json(self.overrides_path)
@@ -2591,36 +2593,46 @@ class PublicExporter:
                 dir=str(self.output_root.parent),
             )
         )
-        self._write_export(temp_root)
-        if self.errors:
-            print(
-                json.dumps(
-                    {
-                        "ok": False,
-                        "errors": self.errors,
-                        "warnings": self.warnings,
-                        "temporaryOutput": str(temp_root),
-                    },
-                    ensure_ascii=False,
-                    indent=2,
+        try:
+            self._write_export(temp_root)
+            if self.errors:
+                temporary_output = (
+                    str(temp_root) if self.keep_failed_output else None
                 )
-            )
-            return {"ok": False, "temporaryOutput": str(temp_root)}
+                print(
+                    json.dumps(
+                        {
+                            "ok": False,
+                            "errors": self.errors,
+                            "warnings": self.warnings,
+                            "temporaryOutput": temporary_output,
+                        },
+                        ensure_ascii=False,
+                        indent=2,
+                    )
+                )
+                return {"ok": False, "temporaryOutput": temporary_output}
 
-        if self.output_root.exists():
-            shutil.rmtree(self.output_root)
-        temp_root.replace(self.output_root)
-        result = {
-            "ok": True,
-            "output": str(self.output_root),
-            "counts": {
-                table_name: len(records)
-                for table_name, records in self.output_records.items()
-            },
-            "warnings": self.warnings,
-        }
-        print(json.dumps(result, ensure_ascii=False, indent=2))
-        return result
+            if self.output_root.exists():
+                shutil.rmtree(self.output_root)
+            temp_root.replace(self.output_root)
+            result = {
+                "ok": True,
+                "output": str(self.output_root),
+                "counts": {
+                    table_name: len(records)
+                    for table_name, records in self.output_records.items()
+                },
+                "warnings": self.warnings,
+            }
+            print(json.dumps(result, ensure_ascii=False, indent=2))
+            return result
+        finally:
+            # Failed or interrupted exports must not accumulate hidden copies of
+            # the public dataset.  A developer can preserve one deliberately for
+            # diagnosis with --keep-failed-output.
+            if temp_root.exists() and not self.keep_failed_output:
+                shutil.rmtree(temp_root)
 
 
 def parse_args() -> argparse.Namespace:
@@ -2661,6 +2673,14 @@ def parse_args() -> argparse.Namespace:
             "(default: today; independent of the source-package export date)"
         ),
     )
+    parser.add_argument(
+        "--keep-failed-output",
+        action="store_true",
+        help=(
+            "Preserve the temporary export directory after a failed or "
+            "interrupted run for diagnostics (default: remove it)"
+        ),
+    )
     return parser.parse_args()
 
 
@@ -2682,6 +2702,7 @@ def main() -> int:
         output_root=args.output,
         assets_root=args.assets_root,
         public_data_date=public_data_date,
+        keep_failed_output=args.keep_failed_output,
     )
     result = exporter.run()
     return 0 if result["ok"] else 1
