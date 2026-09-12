@@ -64,7 +64,6 @@ PRERENDERED_RELATION_SECTIONS = {
         "workIds": "Documented works and their evidence",
         "timelineEventIds": "Documented chronology",
         "contributionIds": "Documented works and their evidence",
-        "sourceIds": "Sources linked directly to this person",
     },
     "organization": {
         # The company's side of the imprint relation is a section; the label's

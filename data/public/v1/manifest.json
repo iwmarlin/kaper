@@ -8,12 +8,12 @@
   "publicDataUpdatedAt": "2026-09-12",
   "generator": {
     "file": "export_public_data.py",
-    "sha256": "0a7c20d173474758197b3f71d078cf61f56540a1e6f8216c825899063b739609"
+    "sha256": "2b5cc45540091df3602e6f93bc531eb6e08ee444681b6cdd31864c41e75069c9"
   },
   "publicInputs": {
     "allowlist": {
       "file": "public_export_config.json",
-      "sha256": "2171257ba45807c97ad1f43943cd523789d4218f7149f7697291f7296d80f356"
+      "sha256": "b9d52e7f0e9c80e5ce3963cc6d3b3eb42944fea4bd6c6b55f726a0c1d9a93e32"
     },
     "overrides": {
       "file": "public_export_overrides.json",
@@ -94,8 +94,8 @@
     },
     {
       "file": "people.json",
-      "bytes": 168029,
-      "sha256": "6caeaefd5c1f84723517671d81b2ae4a96fb3e114ea99d0b077cbdb33fb5d7a6"
+      "bytes": 167359,
+      "sha256": "040567b482ab9c8d5196b46e2f2e9233c0528a439d9a5b090762f834bee64ff1"
     },
     {
       "file": "person-name-variants.json",
@@ -114,8 +114,8 @@
     },
     {
       "file": "sources.json",
-      "bytes": 1114289,
-      "sha256": "3579a6f6efe51ad8df76c280f10cb7a4d3e5746c62d8f7f94dda804b811a5895"
+      "bytes": 1115663,
+      "sha256": "7082ca5aa8f035f723819942280edb0898964497c6fd2783b7c36207261c9f44"
     },
     {
       "file": "timeline-events.json",

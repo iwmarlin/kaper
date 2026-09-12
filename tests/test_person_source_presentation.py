@@ -24,12 +24,21 @@ class PersonSourcePresentationTests(unittest.TestCase):
             people: [{{
               id: "PTEST", displayName: "Test Person", primaryRole: "composer",
               roles: ["composer"], workIds: ["WTEST"], contributionIds: ["CTEST"],
-              sourceIds: ["SEVIDENCE", "SDIRECT"]
+              sourceIds: ["SEVIDENCE", "SDIRECT", "SAUTH", "SDATE"],
+              lifeDatesSourceIds: ["SDATE"],
+              lifeDatesNote: "The two authority records disagree on the birth year.",
+              birthYear: 1900, deathYear: 1970, lifeDatesCertainty: "disputed"
             }}],
             organizations: [],
             sources: [
               {{ id: "SEVIDENCE", shortCitation: "Credit evidence", date: "1930" }},
-              {{ id: "SDIRECT", shortCitation: "Biographical source", date: "1950" }}
+              {{ id: "SDIRECT", shortCitation: "Biographical source", date: "1950" }},
+              {{
+                id: "SAUTH", shortCitation: "Authority evidence",
+                sourceType: "authority_record", authoritySubject: "person",
+                identityRelation: "candidate"
+              }},
+              {{ id: "SDATE", shortCitation: "Date evidence", sourceType: "authority_record" }}
             ],
             media: [],
             works: [{{ id: "WTEST", title: "Test Work", year: 1930, workType: "Song" }}],
@@ -62,6 +71,12 @@ class PersonSourcePresentationTests(unittest.TestCase):
         self.assertNotIn("Evidence for documented credits", result.stdout)
         self.assertIn("Sources linked directly to this person", result.stdout)
         self.assertIn("SDIRECT", result.stdout)
+        self.assertIn("Authority and identity evidence", result.stdout)
+        self.assertEqual(result.stdout.count('href="records/source/SAUTH/"'), 1)
+        self.assertEqual(result.stdout.count('href="records/source/SDATE/"'), 1)
+        direct_section = result.stdout.split("Sources linked directly to this person", 1)[1]
+        self.assertNotIn("SAUTH", direct_section)
+        self.assertNotIn("SDATE", direct_section)
 
 
 if __name__ == "__main__":

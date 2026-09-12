@@ -23,14 +23,19 @@ class AuthorityHeadingTests(unittest.TestCase):
                 if not page.is_file():
                     continue
                 text = page.read_text(encoding="utf-8")
-                for line in str(record.get("authorityUrl") or "").splitlines():
-                    _, _, url = line.strip().partition(": ")
-                    if url.startswith("http"):
-                        self.assertIn(
-                            f'href="{url}"',
-                            text,
-                            f"{record['id']} holds an authority record the card does not reach",
-                        )
+                for field in ("authorityUrl", "referenceUrl"):
+                    for line in str(record.get(field) or "").splitlines():
+                        _, _, url = line.strip().partition(": ")
+                        if url.startswith("http"):
+                            self.assertIn(
+                                f'href="{url}"',
+                                text,
+                                f"{record['id']} holds a {field} link the card does not reach",
+                            )
+                if record.get("authorityUrl"):
+                    self.assertIn("<dt>Authority identifiers</dt>", text)
+                if record.get("referenceUrl"):
+                    self.assertIn("<dt>Reference links</dt>", text)
 
     def test_a_name_is_called_authorized_only_where_it_differs_from_the_heading(self):
         for record in read_records("organizations.json"):
@@ -43,6 +48,44 @@ class AuthorityHeadingTests(unittest.TestCase):
                 differs,
                 f"{record['id']} states an authorized name that only repeats its own title",
             )
+
+    def test_person_authority_sources_are_linked_once_in_their_evidence_context(self):
+        people = {item["id"]: item for item in read_records("people.json")}
+        for source in read_records("sources.json"):
+            if (
+                source.get("sourceType") != "authority_record"
+                or source.get("authoritySubject") != "person"
+            ):
+                continue
+            for person_id in source.get("personIds") or []:
+                self.assertIn(person_id, people)
+                page = ROOT / "records/person" / person_id / "index.html"
+                text = page.read_text(encoding="utf-8")
+                self.assertEqual(
+                    text.count(f'href="records/source/{source["id"]}/"'),
+                    1,
+                    f"{source['id']} must be evidence on {person_id}, without repetition",
+                )
+
+    def test_contextual_references_are_not_schema_org_same_as_identifiers(self):
+        for person in read_records("people.json"):
+            if not person.get("referenceUrl"):
+                continue
+            page = ROOT / "records/person" / person["id"] / "index.html"
+            text = page.read_text(encoding="utf-8")
+            match = re.search(
+                r'<script type="application/ld\+json">(.*?)</script>',
+                text,
+                flags=re.DOTALL,
+            )
+            self.assertIsNotNone(match, person["id"])
+            structured = json.loads(match.group(1))
+            same_as = structured.get("sameAs") or []
+            if isinstance(same_as, str):
+                same_as = [same_as]
+            for line in person["referenceUrl"].splitlines():
+                _, _, url = line.partition(": ")
+                self.assertNotIn(url, same_as, person["id"])
 
     def test_life_dates_are_not_embedded_in_authorized_person_names(self):
         for record in read_records("people.json"):

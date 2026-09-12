@@ -356,9 +356,7 @@ export function renderMediaDisclosure(media, sources = [], {
   const sourceExternal = safeExternalUrl(media.externalUrl)
     || safeExternalUrl(source?.primaryUrl)
     || safeExternalUrl(source?.accessUrl);
-  const sourceHref = sourceExternal || (source?.id ? recordUrl("source", source.id) : "");
-  const sourceLabel = source?.id ? `Source ${source.id}` : "Original source";
-  const sourceAttributes = sourceExternal ? ' target="_blank" rel="noreferrer"' : "";
+  const sourceRecordHref = source?.id ? recordUrl("source", source.id) : "";
   const caption = media.publicCaption || media.description || "";
   const credit = media.publicCreditLine || "";
   const rationale = media.rightsNote || "";
@@ -369,7 +367,8 @@ export function renderMediaDisclosure(media, sources = [], {
   const metaContent = [
     includeRightsBadge ? mediaRightsBadge(media) : "",
     mediaIsFairUse(media) && includeResolutionLabel ? `<span class="media-disclosure__resolution">${escapeHtml(fairUseResolutionLabel)}</span>` : "",
-    includeSource && sourceHref ? `<a href="${escapeHtml(sourceHref)}"${sourceAttributes}>${escapeHtml(sourceLabel)}${sourceExternal ? ' <span aria-hidden="true">↗</span>' : ""}</a>` : "",
+    includeSource && sourceRecordHref ? `<a href="${escapeHtml(sourceRecordHref)}">Source ${escapeHtml(source.id)}</a>` : "",
+    includeSource && sourceExternal ? `<a href="${escapeHtml(sourceExternal)}" target="_blank" rel="noreferrer">${sourceRecordHref ? "Open source" : "Original source"} <span aria-hidden="true">↗</span></a>` : "",
   ].filter(Boolean).join("");
   return `<div class="media-disclosure${compact ? " media-disclosure--compact" : ""}">
     ${includeTitle ? `<a class="media-disclosure__title" href="${recordUrl("media", media.id)}">${escapeHtml(media.title || media.id)}</a>` : ""}

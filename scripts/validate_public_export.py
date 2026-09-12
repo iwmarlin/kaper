@@ -47,6 +47,7 @@ from person_authorities import (
     authority_source_alignment_errors,
     person_authority_errors,
 )
+from authority_sources import authority_source_semantic_errors
 from public_data_dates import validated_public_data_date
 from visual_sources import (
     VISUAL_RIGHTS_NARRATIVE_PATTERN,
@@ -643,6 +644,18 @@ class ExportValidator:
                             f"Works {work_id} and {table_name} {related_id}: "
                             "display titles do not match"
                         )
+
+    def _validate_person_authorities(self) -> None:
+        people = self.payloads.get("People", {}).get("records", [])
+        sources = self.payloads.get("Sources", {}).get("records", [])
+        for person in people:
+            for error in person_authority_errors(person):
+                self.errors.append(f"People {person.get('id')}: {error}")
+        for source in sources:
+            for error in authority_source_semantic_errors(source):
+                self.errors.append(f"Sources {source.get('id')}: {error}")
+        for error in authority_source_alignment_errors(people, sources):
+            self.errors.append(f"People authority graph: {error}")
 
     def _validate_symmetric_links(self) -> None:
         records_by_table = {
@@ -1923,6 +1936,7 @@ class ExportValidator:
         self._load_tables()
         self._validate_manifest()
         self._validate_schema_and_links()
+        self._validate_person_authorities()
         self._validate_work_titles()
         self._validate_symmetric_links()
         self._validate_media_source_work_support()

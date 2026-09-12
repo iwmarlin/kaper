@@ -38,6 +38,20 @@ AUTHORITY_EXTRA_ORGANIZATIONS = {
     "SRC0847": ("ORG074",),
 }
 
+# Authority records do not all make the same assertion.  Most describe the
+# accepted identity of a Person, but one describes a Work, one records only a
+# candidate identification and one controls a pseudonym separately.  Keeping
+# this distinction in the Source record lets the exporter, validator and UI
+# follow the evidence instead of relying on hidden ID exceptions.
+AUTHORITY_SOURCE_SEMANTICS = {
+    "SRC0532": ("work", None),
+    "SRC0632": ("person", "candidate"),
+    "SRC0686": ("person", "alternate"),
+}
+
+AUTHORITY_SUBJECTS = {"person", "work"}
+IDENTITY_RELATIONS = {"same", "alternate", "candidate"}
+
 AUTHORITY_FIELDS: dict[str, dict[str, Any]] = {
     "SRC0532": {
         "shortCitation": "BnF, “Coup de feu à l’aube (film),” FRBNF14664260",
@@ -279,6 +293,19 @@ def normalize_authority_source(source: dict[str, Any]) -> None:
     if fields:
         source.update(fields)
 
+    subject, relation = AUTHORITY_SOURCE_SEMANTICS.get(
+        source_id,
+        (
+            "work" if source.get("workIds") and not source.get("personIds") else "person",
+            "same" if source.get("personIds") else None,
+        ),
+    )
+    source["authoritySubject"] = subject
+    if relation:
+        source["identityRelation"] = relation
+    else:
+        source.pop("identityRelation", None)
+
     host = authority_hostname(source)
     repository = AUTHORITY_REPOSITORY_BY_HOST.get(host)
     if repository:
@@ -309,3 +336,25 @@ def normalize_authority_source(source: dict[str, Any]) -> None:
     elif host in {"isni.org", "www.isni.org"}:
         source["creator"] = "ISNI International Agency"
         source["publication"] = "ISNI registry"
+
+
+def authority_source_semantic_errors(source: dict[str, Any]) -> list[str]:
+    """Validate the assertion made by one authority-record Source."""
+
+    if source.get("sourceType") != "authority_record":
+        return []
+    errors: list[str] = []
+    subject = source.get("authoritySubject")
+    relation = source.get("identityRelation")
+    if subject not in AUTHORITY_SUBJECTS:
+        errors.append("authoritySubject must be 'person' or 'work'")
+    if relation is not None and relation not in IDENTITY_RELATIONS:
+        errors.append("identityRelation is not controlled")
+    if subject == "person":
+        if not source.get("personIds"):
+            errors.append("person authority has no personIds")
+        if relation not in IDENTITY_RELATIONS:
+            errors.append("person authority requires identityRelation")
+    elif relation is not None:
+        errors.append("non-person authority must not carry identityRelation")
+    return errors

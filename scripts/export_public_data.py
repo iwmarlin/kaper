@@ -15,7 +15,10 @@ from pathlib import Path
 from typing import Any
 from urllib.parse import parse_qsl, urlencode, urlparse, urlunparse
 
-from authority_sources import normalize_authority_source
+from authority_sources import (
+    authority_source_semantic_errors,
+    normalize_authority_source,
+)
 from filmographic_sources import (
     IMDB_HOSTS,
     TCM_HOSTS,
@@ -1981,6 +1984,9 @@ class PublicExporter:
             self.output_records["People"], self.output_records["Sources"]
         ):
             self.errors.append(f"People authority graph: {error}")
+        for source in self.output_records["Sources"]:
+            for error in authority_source_semantic_errors(source):
+                self.errors.append(f"Sources {source.get('id')}: {error}")
 
     def _validate_links(self) -> None:
         for person in self.output_records["People"]:

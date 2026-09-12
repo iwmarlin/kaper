@@ -1,4 +1,4 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=ec5fa66efc";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=15880cb7bc";
 import {
   authorityLinkList,
   certaintyBadge,
@@ -29,8 +29,8 @@ import {
   sourceStatusLabel,
   typeBadge,
   updateMeta,
-} from "./core.js?v=ec5fa66efc";
-import { RECORD_INDEXES, recordIndexReturn } from "./catalogue-filters.js?v=ec5fa66efc";
+} from "./core.js?v=15880cb7bc";
+import { RECORD_INDEXES, recordIndexReturn } from "./catalogue-filters.js?v=15880cb7bc";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 let target = null;
@@ -1166,11 +1166,28 @@ function renderPerson(person, data, indexes) {
   const creditEvidenceSourceIds = new Set(
     ledger.items.flatMap((item) => item.sources.map((source) => source.id)),
   );
-  const sources = related(person.sourceIds, indexes.sources)
-    .filter((source) => !creditEvidenceSourceIds.has(source.id))
-    .sort((a, b) => String(a.date || "9999").localeCompare(String(b.date || "9999")) || String(a.shortCitation || a.title).localeCompare(String(b.shortCitation || b.title)));
   const portrait = data.media.find((item) => item.assetPath && item.category === "portrait");
   const portraitSources = portrait ? related(portrait.sourceIds, indexes.sources) : [];
+  const dateSourceIds = new Set(dateSources.map((source) => source.id));
+  const portraitSourceIds = new Set(portraitSources.map((source) => source.id));
+  const directSources = related(person.sourceIds, indexes.sources);
+  const authoritySources = directSources
+    .filter((source) => (
+      source.sourceType === "authority_record"
+      && source.authoritySubject === "person"
+      && !dateSourceIds.has(source.id)
+      && !portraitSourceIds.has(source.id)
+    ))
+    .sort((a, b) => String(a.shortCitation || a.title).localeCompare(String(b.shortCitation || b.title)));
+  const authoritySourceIds = new Set(authoritySources.map((source) => source.id));
+  const sources = directSources
+    .filter((source) => (
+      !creditEvidenceSourceIds.has(source.id)
+      && !dateSourceIds.has(source.id)
+      && !portraitSourceIds.has(source.id)
+      && !authoritySourceIds.has(source.id)
+    ))
+    .sort((a, b) => String(a.date || "9999").localeCompare(String(b.date || "9999")) || String(a.shortCitation || a.title).localeCompare(String(b.shortCitation || b.title)));
   const identities = related(person.nameVariantIds, indexes.personNameVariants)
     .filter((item) => ["pseudonym", "joint_pseudonym", "registration_identity"].includes(item.variantType));
   const displayedRoles = [person.primaryRole, ...(person.roles || [])].filter((role, index, roles) => (
@@ -1187,6 +1204,14 @@ function renderPerson(person, data, indexes) {
     // three links.
     main: [
       section("Life dates and evidence", dateEvidence),
+      section(
+        "Authority and identity evidence",
+        authoritySources.length
+          ? `<p class="record-section__intro">Authority records are shown here as evidence. Candidate or alternate identities remain qualified and are not silently promoted to the main identity.</p>${sourceList(authoritySources, { indexes })}`
+          : "",
+        "",
+        authoritySources.length,
+      ),
       section("Pseudonyms and documented identities", progressiveList(identities, {
         className: "entity-list identity-list",
         label: "documented identities",
@@ -1220,6 +1245,7 @@ function renderPerson(person, data, indexes) {
       includeResolutionLabel: true,
     })}` : ""}${contentsRail([
       { title: "Life dates and evidence", count: dateEvidence ? dateSources.length : 0 },
+      { title: "Authority and identity evidence", count: authoritySources.length },
       { title: "Pseudonyms and documented identities", count: identities.length },
       { title: "Documented works and their evidence", count: ledger.items.length },
       { title: "Documented chronology", count: events.length },
@@ -1544,10 +1570,15 @@ function renderOrganization(organization, data, indexes) {
 function authorityFacts(record) {
   const displayName = String(record.displayName || "").trim();
   const authorizedName = String(record.authorizedName || "").trim();
-  const links = authorityLinkList(record.authorityUrl);
+  const authorityLinks = authorityLinkList(record.authorityUrl);
+  const referenceLinks = authorityLinkList(record.referenceUrl);
+  const linkFact = (label, links) => (links.length
+    ? `<div><dt>${label}</dt><dd class="record-facts__authorities">${links.map((item) => `<a href="${escapeHtml(item.url)}" target="_blank" rel="noreferrer">${escapeHtml(item.label)} <span aria-hidden="true">↗</span></a>`).join("")}</dd></div>`
+    : "");
   return `${authorizedName && authorizedName !== displayName ? fact("Authorized name", authorizedName) : ""}
     ${fact("Heading source", record.authorizedNameSource)}
-    ${links.length ? `<div><dt>Authorities</dt><dd class="record-facts__authorities">${links.map((item) => `<a href="${escapeHtml(item.url)}" target="_blank" rel="noreferrer">${escapeHtml(item.label)} <span aria-hidden="true">↗</span></a>`).join("")}</dd></div>` : ""}`;
+    ${linkFact("Authority identifiers", authorityLinks)}
+    ${linkFact("Reference links", referenceLinks)}`;
 }
 
 const SOURCE_IDENTIFIER_LABELS = Object.freeze({

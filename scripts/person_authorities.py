@@ -29,12 +29,16 @@ from urllib.parse import urlsplit, urlunsplit
 
 LINK_LINE = re.compile(r"^([^:]+):\s*(https?://\S+)$", flags=re.IGNORECASE)
 BNF_IDENTIFIER = re.compile(r"(?:ark:/12148/)?(cb[0-9a-z]+)", flags=re.IGNORECASE)
+BNF_DATA_IDENTIFIER = re.compile(
+    r"data\.bnf\.fr/(?:[a-z]{2}/)?([0-9]{8})(?:/|$)",
+    flags=re.IGNORECASE,
+)
 
 AUTHORITY_ORDER = {
-    "BN": 10,
-    "BnF": 20,
-    "GND": 30,
-    "LCNAF": 40,
+    "LCNAF": 10,
+    "GND": 20,
+    "BnF": 30,
+    "BN": 40,
     "NUKAT": 50,
     "VIAF": 60,
     "ISNI": 70,
@@ -62,15 +66,24 @@ REFERENCE_LABEL_ALIASES = {
     "wreed en plezant pseudonyms list": "Wreed en Plezant pseudonyms list",
 }
 
-HEADING_SOURCE_ALIASES = {
-    "viaf main heading": "VIAF",
+# VIAF aggregates headings supplied by other agencies; it is not itself the
+# register from which an authorized heading may be transcribed.  Three thinly
+# documented records have no identifiable contributing register and therefore
+# keep an explicitly local heading.  Ferry van Delden is the documented
+# exception: the Dutch NTA form is visible through the VIAF cluster.
+HEADING_SOURCE_OVERRIDES = {
+    "P004": "local heading",
+    "P014": "local heading",
+    "P021": "local heading",
+    "P096": "Dutch National Thesaurus (NTA), via VIAF cluster",
+    "P139": "BnF",
 }
 
-# These Sources are legitimately linked to a person but do not assert the
-# authority identity represented by that person's main record.
-AUTHORITY_SOURCE_PERSON_EXCEPTIONS = {
-    "SRC0632": "candidate identity explicitly left unresolved",
-    "SRC0686": "separate authority record for the pseudonym Guy Marylis",
+# This Wikidata item merges Marcella Halicz with a German screen actress.  The
+# linked BN evidence explicitly rejects that identification, so it must not be
+# exposed as an accepted identity identifier.
+REJECTED_AUTHORITY_URLS = {
+    "P156": {"https://www.wikidata.org/wiki/Q95678216"},
 }
 
 
@@ -145,7 +158,13 @@ def authority_identity_key(label: str, url: str) -> tuple[str, str]:
     if label == "BnF":
         match = BNF_IDENTIFIER.search(url)
         if match:
-            return (label, match.group(1).casefold())
+            identifier = match.group(1).casefold().removeprefix("cb")
+            # BnF ARKs append a check character to the eight-digit record
+            # number used in older data.bnf.fr routes.
+            return (label, identifier[:-1] if len(identifier) == 9 else identifier)
+        match = BNF_DATA_IDENTIFIER.search(url)
+        if match:
+            return (label, match.group(1))
     return (label, url.casefold())
 
 
@@ -186,6 +205,8 @@ def normalize_person_authority_fields(person: dict) -> None:
     authorities: dict[tuple[str, str], tuple[str, str]] = {}
     references: dict[str, tuple[str, str]] = {}
     for supplied_label, url in parsed:
+        if url in REJECTED_AUTHORITY_URLS.get(str(person.get("id") or ""), set()):
+            continue
         authority_label = authority_label_for_url(url)
         if authority_label:
             key = authority_identity_key(authority_label, url)
@@ -221,13 +242,22 @@ def normalize_person_authority_fields(person: dict) -> None:
     else:
         person.pop("referenceUrl", None)
 
-    heading_source = str(person.get("authorizedNameSource") or "").strip()
-    if heading_source.casefold() == "local heading":
+    heading_source = HEADING_SOURCE_OVERRIDES.get(
+        str(person.get("id") or ""),
+        str(person.get("authorizedNameSource") or "").strip(),
+    )
+    if heading_source:
+        person["authorizedNameSource"] = heading_source
+    else:
         person.pop("authorizedNameSource", None)
-    elif heading_source:
-        person["authorizedNameSource"] = HEADING_SOURCE_ALIASES.get(
-            heading_source.casefold(), heading_source
-        )
+
+
+def source_asserts_same_person(source: dict) -> bool:
+    return (
+        source.get("sourceType") == "authority_record"
+        and source.get("authoritySubject") == "person"
+        and source.get("identityRelation") == "same"
+    )
 
 
 def synchronize_person_authority_sources(
@@ -238,9 +268,7 @@ def synchronize_person_authority_sources(
 
     people_by_id = {person["id"]: person for person in people}
     for source in sources:
-        if source.get("sourceType") != "authority_record":
-            continue
-        if source.get("workIds") or source.get("id") in AUTHORITY_SOURCE_PERSON_EXCEPTIONS:
+        if not source_asserts_same_person(source):
             continue
         url = _clean_url(str(source.get("primaryUrl") or ""))
         label = authority_label_for_url(url or "")
@@ -256,6 +284,23 @@ def synchronize_person_authority_sources(
 
     for person in people:
         normalize_person_authority_fields(person)
+
+    sources_by_id = {source["id"]: source for source in sources}
+    for person in people:
+        direct_urls = {
+            _clean_url(str(source.get("primaryUrl") or ""))
+            for source_id in person.get("sourceIds") or []
+            if (source := sources_by_id.get(source_id))
+        }
+        references = [
+            (label, url)
+            for label, url in parse_link_stack(person.get("referenceUrl"))
+            if _clean_url(url) not in direct_urls
+        ]
+        if references:
+            person["referenceUrl"] = format_link_stack(references)
+        else:
+            person.pop("referenceUrl", None)
 
 
 def person_authority_errors(person: dict) -> list[str]:
@@ -276,6 +321,11 @@ def person_authority_errors(person: dict) -> list[str]:
     for _, url in parse_link_stack(person.get("referenceUrl")):
         if authority_label_for_url(url):
             errors.append(f"formal authority URL is stored as a reference: {url}")
+    if str(person.get("authorizedNameSource") or "").casefold() in {
+        "viaf",
+        "viaf main heading",
+    }:
+        errors.append("VIAF cannot be the source of an authorized heading")
     return errors
 
 
@@ -293,9 +343,7 @@ def authority_source_alignment_errors(
     errors: list[str] = []
     for source in sources:
         source_id = str(source.get("id") or "")
-        if source.get("sourceType") != "authority_record":
-            continue
-        if source.get("workIds") or source_id in AUTHORITY_SOURCE_PERSON_EXCEPTIONS:
+        if not source_asserts_same_person(source):
             continue
         source_url = str(source.get("primaryUrl") or "")
         if not authority_label_for_url(source_url):
@@ -310,5 +358,18 @@ def authority_source_alignment_errors(
             ):
                 errors.append(
                     f"{person_id} omits accepted authority identifier from {source_id}"
+                )
+
+    sources_by_id = {source["id"]: source for source in sources}
+    for person in people:
+        direct_urls = {
+            _clean_url(str(source.get("primaryUrl") or ""))
+            for source_id in person.get("sourceIds") or []
+            if (source := sources_by_id.get(source_id))
+        }
+        for _, reference_url in parse_link_stack(person.get("referenceUrl")):
+            if _clean_url(reference_url) in direct_urls:
+                errors.append(
+                    f"{person['id']} repeats a direct Source URL in referenceUrl"
                 )
     return errors
