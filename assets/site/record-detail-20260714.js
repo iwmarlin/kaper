@@ -1,4 +1,4 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=15880cb7bc";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=15ac074225";
 import {
   authorityLinkList,
   certaintyBadge,
@@ -24,13 +24,16 @@ import {
   safeExternalUrl,
   setCanonicalRecordUrl,
   scopeBadge,
+  sourceDateRoleLabel,
   sourceReliabilityBadge,
   sourceReliabilityLabel,
   sourceStatusLabel,
+  sourceTypeBadge,
+  sourceTypePluralLabel,
   typeBadge,
   updateMeta,
-} from "./core.js?v=15880cb7bc";
-import { RECORD_INDEXES, recordIndexReturn } from "./catalogue-filters.js?v=15880cb7bc";
+} from "./core.js?v=15ac074225";
+import { RECORD_INDEXES, recordIndexReturn } from "./catalogue-filters.js?v=15ac074225";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 let target = null;
@@ -191,61 +194,6 @@ function entityList(records, type, meta = () => "", label = ENTITY_LIST_LABELS[t
   });
 }
 
-const SOURCE_TYPE_LABELS = {
-  sheet_music: "Sheet music",
-  filmographic_database: "Filmographic databases",
-  press_item: "Press items",
-  copyright_catalogue: "Copyright catalogues",
-  online_database: "Online databases",
-  wikimedia_commons_file: "Wikimedia Commons files",
-  wikimedia_article_page: "Wikipedia articles",
-  image_or_photograph: "Images and photographs",
-  // "archival_photo" and "archival_photograph" were two spellings of one kind,
-  // reconciled here rather than in the data until now. The thirteen records are
-  // on the longer form and the shorter one is gone.
-  archival_photograph: "Archival photographs",
-  archival_document: "Archival documents",
-  digital_collection_item: "Digital collection items",
-  recording_discographic_source: "Recordings",
-  online_video_source: "Online video",
-  authority_record: "Authority records",
-  web_page: "Web pages",
-  book: "Books",
-  // Eleven types had no entry here, so their headings were made from the
-  // technical name: "Online Audio Source", in title case and the singular,
-  // standing beside "Recordings" and "Online video". The grouping is a real
-  // distinction — a catalogued disc heard on an upload is not the same kind of
-  // source as an upload with no disc behind it — and the mismatched headings
-  // made it look arbitrary.
-  online_audio_source: "Online audio",
-  visual_document: "Visual documents",
-  sound_recording_catalogue: "Sound recording catalogues",
-  sheet_music_catalogue: "Sheet music catalogues",
-  soundtrack_database: "Soundtrack databases",
-  secondary_literature: "Secondary literature",
-  periodical_article: "Periodical articles",
-  archival_digital_record: "Archival digital records",
-  archival_manuscript_holding: "Archival manuscript holdings",
-  other: "Other sources",
-};
-
-const SOURCE_DATE_ROLE_LABELS = Object.freeze({
-  catalogue_volume: "Catalogue volume",
-  creation: "Creation of the object",
-  data_currency: "Currency of the described data",
-  described_item: "Described item",
-  digital_publication: "Digital publication",
-  digitization: "Digitization",
-  issue: "Issue or edition",
-  publication: "Publication",
-  record_creation: "Creation of the catalogue record",
-  record_update: "Update of the catalogue record",
-  recording: "Recording",
-});
-
-function sourceDateRoleLabel(value) {
-  return SOURCE_DATE_ROLE_LABELS[value] || humanize(value || "");
-}
 
 function sourceDateDisplay(source, { compact = false } = {}) {
   if (!compact && source.dateDisplay) return source.dateDisplay;
@@ -436,7 +384,7 @@ function sourceLedger(records, indexes = null) {
     return `<section class="source-group" data-ledger-group>
       <button class="source-group__head" type="button" data-group-toggle aria-expanded="${expanded}" aria-controls="${bodyId}" aria-disabled="true" tabindex="-1">
         ${chevron("source-group__chevron")}
-        <span class="source-group__name">${escapeHtml(SOURCE_TYPE_LABELS[key] || humanize(key))}</span>
+        <span class="source-group__name">${escapeHtml(sourceTypePluralLabel(key))}</span>
         <span class="source-group__count">${items.length}</span>
       </button>
       <ol class="source-rows" id="${bodyId}" data-group-body>${rows}</ol>
@@ -1731,7 +1679,7 @@ function renderSource(source, data, indexes) {
   return {
     title: source.title || source.shortCitation,
     label: "Source",
-    badges: `${typeBadge(source.sourceType)}${sourceReliabilityBadge(source.reliability)}`,
+    badges: `${sourceTypeBadge(source.sourceType)}${sourceReliabilityBadge(source.reliability)}`,
     heroClass: "record-hero--source",
     factsClass: "record-facts--source",
     compactFactsLabel: "Source details",

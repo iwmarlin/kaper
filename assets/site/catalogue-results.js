@@ -12,10 +12,12 @@ import {
   renderMediaDisclosure,
   safeExternalUrl,
   scopeBadge,
+  sourceDateRoleLabel,
+  sourceTypeLabel,
   typeBadge,
   responsiveImage,
   registerImageDerivatives,
-} from "./core.js?v=15880cb7bc";
+} from "./core.js?v=15ac074225";
 
 // Build-time prerendering and browser rendering must configure the exact same
 // core module instance. Query-stamped ES module URLs are distinct module keys
@@ -24,55 +26,11 @@ export function registerCatalogueImageDerivatives(mapping) {
   registerImageDerivatives(mapping);
 }
 
-export const SOURCE_TYPE_LABELS = Object.freeze({
-  archival_digital_record: "Archival digital record",
-  archival_document: "Archival document",
-  archival_manuscript_holding: "Archival manuscript holding",
-  archival_photograph: "Archival photograph",
-  authority_record: "Authority record",
-  book: "Book",
-  copyright_catalogue: "Copyright catalogue",
-  digital_collection_item: "Digital collection item",
-  filmographic_database: "Filmographic database",
-  image_or_photograph: "Image or photograph",
-  online_audio_source: "Online audio",
-  online_database: "Online database",
-  online_video_source: "Online video",
-  periodical_article: "Periodical article",
-  press_item: "Press item",
-  recording_discographic_source: "Recording or discographic source",
-  secondary_literature: "Secondary literature",
-  sheet_music: "Sheet music",
-  sheet_music_catalogue: "Sheet-music catalogue",
-  sound_recording_catalogue: "Sound-recording catalogue",
-  soundtrack_database: "Soundtrack database",
-  visual_document: "Visual document",
-  web_page: "Web page",
-  wikimedia_article_page: "Wikipedia article",
-  wikimedia_commons_file: "Wikimedia Commons file",
-});
-
-export const DATE_ROLE_LABELS = Object.freeze({
-  catalogue_volume: "Catalogue volume",
-  creation: "Creation of the object",
-  data_currency: "Currency of the data",
-  described_item: "Described item",
-  digital_publication: "Digital publication",
-  digitization: "Digitization",
-  issue: "Issue or edition",
-  publication: "Publication",
-  record_creation: "Catalogue-record creation",
-  record_update: "Catalogue-record update",
-  recording: "Recording",
-});
-
-export function sourceTypeLabel(value) {
-  return SOURCE_TYPE_LABELS[value] || humanize(value || "Other source");
-}
-
-export function dateRoleLabel(value) {
-  return DATE_ROLE_LABELS[value] || humanize(value || "Unknown date role");
-}
+// The source type and date-role vocabularies live in the core module, so the
+// catalogue, the record card and the source ledger cannot name the same value
+// differently. Re-exported here because the catalogue pages import them by way
+// of this module.
+export { sourceTypeLabel, sourceDateRoleLabel as dateRoleLabel };
 
 export function sourceDateDisplay(source) {
   if (source.dateDisplay) return source.dateDisplay;

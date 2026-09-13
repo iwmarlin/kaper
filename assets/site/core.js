@@ -275,6 +275,82 @@ export function sourceReliabilityBadge(reliability) {
   return '<span class="badge badge--reliability badge--reliability-low" title="Cited for the record it documents; not treated as independent authority.">Low reliability</span>';
 }
 
+// One vocabulary for source types, carrying both grammatical numbers. The
+// singular names a single record — the badge on its card, the filter option and
+// the catalogue row; the plural heads a group of them in the source ledger. The
+// two lived in separate modules until now and had drifted apart in more than
+// number: one spelled "Sheet-music catalogue" and the other "Sheet music
+// catalogues". Four pairs are not mechanical, so both forms are written out
+// rather than derived, and no type can acquire one form without the other.
+export const SOURCE_TYPES = Object.freeze({
+  archival_digital_record: { one: "Archival digital record", many: "Archival digital records" },
+  archival_document: { one: "Archival document", many: "Archival documents" },
+  archival_manuscript_holding: { one: "Archival manuscript holding", many: "Archival manuscript holdings" },
+  archival_photograph: { one: "Archival photograph", many: "Archival photographs" },
+  authority_record: { one: "Authority record", many: "Authority records" },
+  book: { one: "Book", many: "Books" },
+  copyright_catalogue: { one: "Copyright catalogue", many: "Copyright catalogues" },
+  digital_collection_item: { one: "Digital collection item", many: "Digital collection items" },
+  filmographic_database: { one: "Filmographic database", many: "Filmographic databases" },
+  image_or_photograph: { one: "Image or photograph", many: "Images and photographs" },
+  online_audio_source: { one: "Online audio", many: "Online audio" },
+  online_database: { one: "Online database", many: "Online databases" },
+  online_video_source: { one: "Online video", many: "Online video" },
+  other: { one: "Other source", many: "Other sources" },
+  periodical_article: { one: "Periodical article", many: "Periodical articles" },
+  press_item: { one: "Press item", many: "Press items" },
+  // A catalogued disc heard on an upload is not the same kind of source as an
+  // upload with no disc behind it, so the group keeps the shorter heading.
+  recording_discographic_source: { one: "Recording or discographic source", many: "Recordings" },
+  secondary_literature: { one: "Secondary literature", many: "Secondary literature" },
+  sheet_music: { one: "Sheet music", many: "Sheet music" },
+  sheet_music_catalogue: { one: "Sheet-music catalogue", many: "Sheet-music catalogues" },
+  sound_recording_catalogue: { one: "Sound-recording catalogue", many: "Sound-recording catalogues" },
+  soundtrack_database: { one: "Soundtrack database", many: "Soundtrack databases" },
+  visual_document: { one: "Visual document", many: "Visual documents" },
+  web_page: { one: "Web page", many: "Web pages" },
+  wikimedia_article_page: { one: "Wikipedia article", many: "Wikipedia articles" },
+  wikimedia_commons_file: { one: "Wikimedia Commons file", many: "Wikimedia Commons files" },
+});
+
+export function sourceTypeLabel(value) {
+  return SOURCE_TYPES[value || "other"]?.one || humanize(value);
+}
+
+export function sourceTypePluralLabel(value) {
+  return SOURCE_TYPES[value || "other"]?.many || humanize(value);
+}
+
+// A source record used the generic type badge, which builds its text from the
+// technical name: "Image Or Photograph", "Recording Discographic Source". The
+// curated wording already existed for the same values in the catalogue and the
+// ledger, so the card disagreed with every other surface that named its type.
+export function sourceTypeBadge(value) {
+  if (!value) return "";
+  return `<span class="badge badge--type">${escapeHtml(sourceTypeLabel(value))}</span>`;
+}
+
+// What the recorded date represents. Held here for the same reason as the type
+// vocabulary: the catalogue and the record card each carried a copy, and three
+// of the eleven entries had already drifted.
+export const SOURCE_DATE_ROLE_LABELS = Object.freeze({
+  catalogue_volume: "Catalogue volume",
+  creation: "Creation of the object",
+  data_currency: "Currency of the described data",
+  described_item: "Described item",
+  digital_publication: "Digital publication",
+  digitization: "Digitization",
+  issue: "Issue or edition",
+  publication: "Publication",
+  record_creation: "Creation of the catalogue record",
+  record_update: "Update of the catalogue record",
+  recording: "Recording",
+});
+
+export function sourceDateRoleLabel(value) {
+  return SOURCE_DATE_ROLE_LABELS[value] || humanize(value || "");
+}
+
 const RIGHTS_LABELS = Object.freeze({
   ok: "Rights documented",
   public_domain: "Public domain",
