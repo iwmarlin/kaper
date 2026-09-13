@@ -1,7 +1,13 @@
 name: Quality gate
 
+# A branch with an open pull request used to run this gate twice per commit,
+# once for the push and once for the pull request. Both shared the concurrency
+# group below, so the second cancelled the first, and the cancelled run stayed
+# attached to the commit as a failed check. Working branches are checked through
+# their pull request; pushes are checked only on main, which deploys.
 on:
   push:
+    branches: [main]
   pull_request:
   workflow_dispatch:
 
