@@ -8,9 +8,13 @@ import { fileURLToPath, pathToFileURL } from "node:url";
 
 const scriptDir = path.dirname(fileURLToPath(import.meta.url));
 const projectRoot = path.resolve(process.argv[2] || path.join(scriptDir, ".."));
-const { renderRecordMarkup, renderRecordView } = await import(
+const { renderRecordMarkup, renderRecordView, registerRecordImageDerivatives } = await import(
   pathToFileURL(path.join(projectRoot, "assets/site/record-detail-20260714.js")).href
 );
+const { IMAGE_DERIVATIVES } = await import(
+  pathToFileURL(path.join(projectRoot, "assets/site/image-derivatives.js")).href
+);
+registerRecordImageDerivatives(IMAGE_DERIVATIVES);
 
 const recordsRoot = path.join(projectRoot, "data/site/records");
 const recordTypes = ["work", "event", "place", "media", "person", "organization", "source"];
