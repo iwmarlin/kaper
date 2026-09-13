@@ -10,8 +10,8 @@ import {
   periodValues,
   recordUrl,
   renderError,
-} from "./core.js?v=6fca9bc909";
-import { createQueryState } from "./catalogue-filters.js?v=6fca9bc909";
+} from "./core.js?v=c8acb7670c";
+import { createQueryState } from "./catalogue-filters.js?v=c8acb7670c";
 import {
   eventCount,
   normalizedPeriod,
@@ -19,7 +19,7 @@ import {
   placeListLabel,
   precisionMeta,
   sortPlaces,
-} from "./map-places.js?v=6fca9bc909";
+} from "./map-places.js?v=c8acb7670c";
 
 mountSiteChrome("map");
 
@@ -105,7 +105,7 @@ function updateBasemap(zoom = map?.getZoom()) {
   } else {
     layerStatus.dataset.mode = "reference";
     layerStatusLabel.textContent = "Present-day geographic reference";
-    layerStatusDetail.textContent = "Zoom out to return to the 1926 map";
+    layerStatusDetail.textContent = "Whole route returns to the 1926 map";
   }
 }
 
@@ -410,6 +410,36 @@ try {
     });
   }
   applyRoute();
+
+  // Choosing a cluster or a place brings the map closer than the zoom at which
+  // the 1926 plate runs out of pixels, so the historical map gives way to the
+  // present-day reference, and getting it back took several zoom-outs. The
+  // opening view of the whole route is where the plate is sharp again, and this
+  // control returns there in one step without clearing the selection.
+  function showWholeRoute() {
+    map.fitBounds(journeyPoints, {
+      padding: [48, 48],
+      maxZoom: HISTORICAL_FULL_ZOOM,
+      animate: !window.matchMedia?.("(prefers-reduced-motion: reduce)").matches,
+    });
+  }
+
+  if (map && window.L && journeyPoints.length > 1) {
+    const WholeRouteControl = window.L.Control.extend({
+      options: { position: "topleft" },
+      onAdd() {
+        const container = window.L.DomUtil.create("div", "leaflet-bar map-overview-control");
+        const button = window.L.DomUtil.create("button", "map-overview-control__button", container);
+        button.type = "button";
+        button.textContent = "Whole route";
+        button.setAttribute("aria-label", "Show the whole route on the 1926 map");
+        window.L.DomEvent.disableClickPropagation(container);
+        window.L.DomEvent.on(button, "click", showWholeRoute);
+        return container;
+      },
+    });
+    new WholeRouteControl().addTo(map);
+  }
 
   if (selectionClose) {
     selectionClose.addEventListener("click", () => {

@@ -17,7 +17,7 @@
    the swashed display forms can never appear by accident. */
 @font-face {
   font-family: "Fraunces";
-  src: url("../fonts/kaper-serif.woff2?v=6fca9bc909") format("woff2");
+  src: url("../fonts/kaper-serif.woff2?v=c8acb7670c") format("woff2");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
@@ -25,7 +25,7 @@
 
 @font-face {
   font-family: "Fraunces";
-  src: url("../fonts/kaper-serif-italic.woff2?v=6fca9bc909") format("woff2");
+  src: url("../fonts/kaper-serif-italic.woff2?v=c8acb7670c") format("woff2");
   font-weight: 100 900;
   font-style: italic;
   font-display: swap;
@@ -33,7 +33,7 @@
 
 @font-face {
   font-family: "Archivo";
-  src: url("../fonts/kaper-sans.woff2?v=6fca9bc909") format("woff2");
+  src: url("../fonts/kaper-sans.woff2?v=c8acb7670c") format("woff2");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
@@ -41,7 +41,7 @@
 
 @font-face {
   font-family: "Archivo";
-  src: url("../fonts/kaper-sans-italic.woff2?v=6fca9bc909") format("woff2");
+  src: url("../fonts/kaper-sans-italic.woff2?v=c8acb7670c") format("woff2");
   font-weight: 100 900;
   font-style: italic;
   font-display: swap;
@@ -2094,6 +2094,26 @@ main {
 .historical-basemap-pane .leaflet-image-layer,
 #research-map .leaflet-tile-pane > .leaflet-layer {
   transition: opacity 320ms ease;
+}
+
+/* Sits in Leaflet's control stack under the zoom buttons and returns the map to
+   the whole route, where the 1926 plate is shown at full sharpness. */
+.map-overview-control__button {
+  display: block;
+  min-height: 2.1rem;
+  padding: 0 0.7rem;
+  border: 0;
+  border-radius: inherit;
+  background: var(--surface);
+  color: var(--ink);
+  font: 700 var(--fs-2) / 1 var(--sans);
+  letter-spacing: 0.02em;
+  cursor: pointer;
+}
+
+.map-overview-control__button:hover {
+  background: var(--paper);
+  color: var(--accent-dark);
 }
 
 .map-layer-status {

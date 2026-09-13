@@ -34,6 +34,18 @@ class MapNavigationContractTests(unittest.TestCase):
         self.assertIn('" "', keydown.group(0))
         self.assertIn("selectPlace(place", keydown.group(0))
 
+    def test_one_control_returns_the_map_to_the_whole_route_on_the_1926_plate(self) -> None:
+        """Choosing a cluster or a place zooms past the point where the 1926 plate
+        runs out of pixels, and returning to it took several zoom-outs."""
+        action = re.search(r"function showWholeRoute\(\)\s*\{.*?\n  \}", self.source, re.S)
+        self.assertIsNotNone(action)
+        self.assertIn("fitBounds(journeyPoints", action.group(0))
+        self.assertIn("maxZoom: HISTORICAL_FULL_ZOOM", action.group(0))
+        self.assertIn("prefers-reduced-motion", action.group(0))
+        self.assertIn("L.Control.extend", self.source)
+        self.assertIn('"Whole route"', self.source)
+        self.assertIn("DomEvent.on(button, \"click\", showWholeRoute)", self.source)
+
     def test_escape_closes_a_selection_in_every_layout(self) -> None:
         escape = re.search(r'event\.key !== "Escape".*?\) return;', self.source, re.S)
         self.assertIsNotNone(escape)

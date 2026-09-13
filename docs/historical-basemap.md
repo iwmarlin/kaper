@@ -41,6 +41,17 @@ interior meridians and the public place markers aligned.
 - zoom 4: historical map and present-day reference cross-fade;
 - zoom 5 and above: present-day geographic reference only.
 
+These thresholds follow the display derivative rather than preference: at zoom 3
+the plate is shown at its native resolution, and each further level doubles the
+magnification of a scan that is stretched to a single bounding rectangle, not
+warped to control points. Holding it longer would show a blurred plate drifting
+away from the markers.
+
+Choosing a cluster or a place zooms past zoom 5 in one step, so the map carries
+a “Whole route” control under the zoom buttons. It returns to the opening view
+of the documented route, never closer than zoom 3, where the historical plate is
+sharp again, and it leaves any selected place selected.
+
 The close-range layer is explicitly labelled “Present-day geographic reference”.
 It is supplied for address legibility and must not be described as a
 reconstruction of the historical street network.
