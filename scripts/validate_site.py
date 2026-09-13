@@ -331,6 +331,7 @@ def validate(root: Path) -> dict:
         "data/site/indexes/people.json",
         "data/site/indexes/media.json",
         "data/site/indexes/sources.json",
+        "data/site/indexes/timeline.json",
         "data/site/performance-report.json",
         "data/site/record-report.json",
         "data/site/sitemap-state.json",

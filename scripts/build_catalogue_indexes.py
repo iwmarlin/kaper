@@ -23,6 +23,7 @@ INDEX_FILES = {
     "people": "people.json",
     "media": "media.json",
     "sources": "sources.json",
+    "timeline": "timeline.json",
 }
 PAGE_CONFIG = {
     "works": ("works.html", "work-results", "work-results-count"),
@@ -312,6 +313,51 @@ def media_index(data_root: Path, schema_version: str) -> dict:
     return {"schemaVersion": schema_version, "count": len(output), "records": output}
 
 
+TIMELINE_EVENT_FIELDS = (
+    "id", "title", "displayDate", "dateStart", "dateEnd", "sortDate", "sortOrder",
+    "placeDisplay", "shortDescription", "longDescription", "category", "eventType",
+    "periods", "period", "displayMode",
+)
+TIMELINE_HERO_FIELDS = ("id", "title", "assetPath", "altText", "externalUrl")
+
+
+def timeline_index(data_root: Path, schema_version: str) -> dict:
+    # The chronology used to load the complete event, media, people and source
+    # tables, about 314 KB compressed, to show 52 events. Each entry now carries
+    # only what the page displays and searches: the names of its people, and the
+    # image and source fields the media disclosure actually reads.
+    people = {item["id"]: item for item in records(data_root, "people.json")}
+    media = {item["id"]: item for item in records(data_root, "media.json")}
+    sources = {item["id"]: item for item in records(data_root, "sources.json")}
+    output = []
+    for event in records(data_root, "timeline-events.json"):
+        item = {key: event[key] for key in TIMELINE_EVENT_FIELDS if event.get(key) not in (None, "", [])}
+        names = joined([people.get(person_id, {}).get("displayName") for person_id in event.get("personIds") or []])
+        if names:
+            item["searchPeople"] = names
+        hero = next(
+            (
+                media[media_id]
+                for media_id in event.get("heroMediaIds") or []
+                if media_id in media
+                and media[media_id].get("assetPath")
+                and media[media_id].get("mediaType") != "audio"
+            ),
+            None,
+        )
+        if hero:
+            item["hero"] = {
+                key: value
+                for key, value in hero.items()
+                if key in TIMELINE_HERO_FIELDS or key.startswith("rights")
+            }
+            source = next((sources[source_id] for source_id in hero.get("sourceIds") or [] if source_id in sources), None)
+            if source:
+                item["heroSource"] = {key: source[key] for key in ("id", "primaryUrl", "accessUrl") if source.get(key)}
+        output.append(item)
+    return {"schemaVersion": schema_version, "count": len(output), "records": output}
+
+
 def build_payloads(root: Path) -> dict[str, dict]:
     data_root = root / "data/public/v1"
     schema_version = read_json(data_root / "manifest.json").get("schemaVersion") or "1.0.0"
@@ -320,6 +366,7 @@ def build_payloads(root: Path) -> dict[str, dict]:
         "people": people_index(root, data_root, schema_version),
         "media": media_index(data_root, schema_version),
         "sources": sources_index(data_root, schema_version),
+        "timeline": timeline_index(data_root, schema_version),
     }
 
 
@@ -437,6 +484,17 @@ def expected_files(root: Path) -> tuple[dict[Path, bytes], dict[str, dict], dict
                     f"<!-- home-prerender:{section}:end -->",
                     rendered["home"][section],
                 )
+        if path.name == "life.html":
+            timeline = rendered["timeline"]
+            text = replace_between(text, START_MARKER, END_MARKER, timeline["markup"])
+            text = replace_between(
+                text, "<!-- timeline-count:start -->", "<!-- timeline-count:end -->", timeline["countHtml"]
+            )
+            text = replace_element_text(text, "timeline-total-label", timeline["totalLabel"])
+        if path.name == "map.html":
+            text = replace_between(
+                text, "<!-- place-list:start -->", "<!-- place-list:end -->", rendered["places"]["markup"]
+            )
         text = replace_between(text, SOCIAL_START_MARKER, SOCIAL_END_MARKER, social)
         files[path] = text.encode("utf-8")
     return files, rendered, payloads

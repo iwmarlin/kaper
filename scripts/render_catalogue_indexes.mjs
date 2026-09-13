@@ -3,6 +3,7 @@
 
 import process from "node:process";
 import path from "node:path";
+import { readFile } from "node:fs/promises";
 import { fileURLToPath, pathToFileURL } from "node:url";
 
 const scriptDir = path.dirname(fileURLToPath(import.meta.url));
@@ -10,6 +11,9 @@ const projectRoot = path.resolve(process.argv[2] || path.join(scriptDir, ".."));
 const core = await import(pathToFileURL(path.join(projectRoot, "assets/site/core.js")).href);
 const views = await import(pathToFileURL(path.join(projectRoot, "assets/site/catalogue-results.js")).href);
 const derivatives = await import(pathToFileURL(path.join(projectRoot, "assets/site/image-derivatives.js")).href);
+const timeline = await import(pathToFileURL(path.join(projectRoot, "assets/site/timeline-view.js")).href);
+const mapPlaces = await import(pathToFileURL(path.join(projectRoot, "assets/site/map-places.js")).href);
+const placeRecords = JSON.parse(await readFile(path.join(projectRoot, "data/public/v1/places.json"), "utf8")).records;
 
 let input = "";
 // Decode the stream continuously: coercing individual Buffer chunks can split
@@ -121,11 +125,30 @@ function homeFigures(glance) {
   return parts.join(" · ");
 }
 
+// A reader without saved filters first sees the highlights over every event.
+const timelineEvents = timeline.sortEvents(indexes.timeline.records);
+const timelineView = timeline.renderTimeline(timelineEvents, "highlights");
+
+// Without JavaScript a place cannot be selected on the map, so the printed list
+// leads to each place's own record instead.
+const placeList = mapPlaces.sortPlaces(placeRecords).map((place) => `
+            <li>
+              <a href="${core.recordUrl("place", place.id)}" aria-label="${core.escapeHtml(mapPlaces.placeListLabel(place))}">${mapPlaces.placeListContent(place)}
+              </a>
+            </li>`).join("");
+
 process.stdout.write(JSON.stringify({
   works: page(works, 36, views.renderWorkIndexRow, ["record", "records"]),
   people: page(people, 48, views.renderPersonIndexRow, ["person", "people"]),
   media: page(media, 30, views.renderMediaIndexCard, ["item", "items"]),
   sources: page(sources, 40, views.renderSourceIndexRow, ["source", "sources"]),
+  timeline: {
+    markup: timelineView.markup,
+    countHtml: timelineView.countHtml,
+    shown: timelineView.shown,
+    totalLabel: `${timelineEvents.length} published ${timelineEvents.length === 1 ? "event" : "events"}`,
+  },
+  places: { markup: placeList, shown: placeRecords.length },
   home: {
     portrait: homePortrait(indexes.home.portrait),
     pathways: homePathways(indexes.home.pathways),

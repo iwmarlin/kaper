@@ -10,8 +10,16 @@ import {
   periodValues,
   recordUrl,
   renderError,
-} from "./core.js?v=1f7900a393";
-import { createQueryState } from "./catalogue-filters.js?v=1f7900a393";
+} from "./core.js?v=fdc072914a";
+import { createQueryState } from "./catalogue-filters.js?v=fdc072914a";
+import {
+  eventCount,
+  normalizedPeriod,
+  placeListContent,
+  placeListLabel,
+  precisionMeta,
+  sortPlaces,
+} from "./map-places.js?v=fdc072914a";
 
 mountSiteChrome("map");
 
@@ -52,42 +60,6 @@ const REFERENCE_FULL_ZOOM = 5;
 const HISTORICAL_ATTRIBUTION = '<a href="https://www.davidrumsey.com/luna/servlet/detail/RUMSEY~8~1~363901~90131510%3AThe-world-on-Mercator-s-projection-" target="_blank" rel="noopener">Edward Stanford Ltd., 1926</a> · David Rumsey Map Collection';
 const REFERENCE_ATTRIBUTION = '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors';
 const STANFORD_MAP_BOUNDS = [[-70.1, -195.5], [84.5, 183.2]];
-
-const PRECISION_META = Object.freeze({
-  address_level: {
-    label: "Address-level coordinates",
-    shortLabel: "Address level",
-    markerClass: "point",
-  },
-  venue_level: {
-    label: "Venue-level coordinates",
-    shortLabel: "Venue level",
-    markerClass: "point",
-  },
-  site_approximate: {
-    label: "Approximate historical site",
-    shortLabel: "Approximate site",
-    markerClass: "approximate",
-  },
-  district_level: {
-    label: "District-level reference point",
-    shortLabel: "District level",
-    markerClass: "area",
-  },
-  city_level: {
-    label: "City-level reference point",
-    shortLabel: "City level",
-    markerClass: "area",
-  },
-});
-
-function precisionMeta(place) {
-  return PRECISION_META[place.mapPrecision] || {
-    label: "Coordinate precision not specified",
-    shortLabel: "Precision not specified",
-    markerClass: "unspecified",
-  };
-}
 
 function linkedPeriodLabel(place) {
   return periodValues(place).map(periodLabel).join(" · ");
@@ -135,14 +107,6 @@ function updateBasemap(zoom = map?.getZoom()) {
     layerStatusLabel.textContent = "Present-day geographic reference";
     layerStatusDetail.textContent = "Zoom out to return to the 1926 map";
   }
-}
-
-function normalizedPeriod(place) {
-  return periodValues(place)[0] || "";
-}
-
-function eventCount(place) {
-  return (place.timelineEventIds || []).length;
 }
 
 function markerIcon(place, selected = false) {
@@ -528,41 +492,25 @@ try {
 
   function render() {
     const query = normalizeSearch(search.value.trim());
-    const filtered = publicPlaces
-      .filter((place) => (
-        !query || normalizeSearch([
-          place.displayName,
-          place.city,
-          place.region,
-          place.country,
-          place.placeType,
-        ].filter(Boolean).join(" ")).includes(query)
-      ))
-      .sort((a, b) => (
-        eventCount(b) - eventCount(a)
-        || PERIOD_ORDER.indexOf(normalizedPeriod(a)) - PERIOD_ORDER.indexOf(normalizedPeriod(b))
-        || String(a.displayName).localeCompare(String(b.displayName))
-      ));
+    const filtered = sortPlaces(publicPlaces.filter((place) => (
+      !query || normalizeSearch([
+        place.displayName,
+        place.city,
+        place.region,
+        place.country,
+        place.placeType,
+      ].filter(Boolean).join(" ")).includes(query)
+    )));
 
     countTarget.textContent = String(filtered.length);
     listTarget.innerHTML = filtered.length
-      ? filtered.map((place) => {
-          const linkedEvents = eventCount(place);
-          const precision = precisionMeta(place);
-          const location = [place.city, place.country].filter(Boolean).join(", ");
-          return `
+      ? filtered.map((place) => `
             <li>
-              <button type="button" data-id="${escapeHtml(place.id)}" aria-current="${String(place.id === selectedId)}" aria-label="${escapeHtml(`${place.displayName}; ${precision.label}; ${linkedEvents} linked ${linkedEvents === 1 ? "event" : "events"}`)}">
-                <span class="place-list__main">
-                  <strong>${escapeHtml(place.displayName)}</strong>
-                  <small>${escapeHtml([location, humanize(place.placeType)].filter(Boolean).join(" · "))}</small>
-                  <span class="place-list__precision">${escapeHtml(precision.shortLabel)}</span>
-                </span>
-                <span class="place-list__count" aria-label="${linkedEvents} linked ${linkedEvents === 1 ? "event" : "events"}">${linkedEvents}</span>
+              <button type="button" data-id="${escapeHtml(place.id)}" aria-current="${String(place.id === selectedId)}" aria-label="${escapeHtml(placeListLabel(place))}">${placeListContent(place)}
               </button>
-            </li>`;
-        }).join("")
+            </li>`).join("")
       : `<li class="place-list__empty">No places match your search.</li>`;
+    listTarget.dataset.prerendered = "false";
     updatePlaceListDisclosure();
 
     if (selectedId && !filtered.some((place) => place.id === selectedId)) resetSelection();
@@ -637,6 +585,10 @@ try {
   if (initialPlace) selectPlace(initialPlace, { moveMap: false, syncUrl: false });
   mapQueryState.write();
 } catch (error) {
-  countTarget.textContent = "—";
-  renderError(listTarget, error);
+  // The printed list is the fallback this section promises, so a failed data
+  // request must not replace it with an error.
+  if (listTarget?.dataset.prerendered !== "true") {
+    countTarget.textContent = "—";
+    renderError(listTarget, error);
+  }
 }

@@ -32,6 +32,7 @@ const SITE_INDEX_FILES = Object.freeze({
   people: "people.json",
   media: "media.json",
   sources: "sources.json",
+  timeline: "timeline.json",
 });
 
 export function loadManifest() {
