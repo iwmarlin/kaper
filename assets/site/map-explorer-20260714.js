@@ -10,8 +10,8 @@ import {
   periodValues,
   recordUrl,
   renderError,
-} from "./core.js?v=5edb880bcf";
-import { createQueryState } from "./catalogue-filters.js?v=5edb880bcf";
+} from "./core.js?v=6fca9bc909";
+import { createQueryState } from "./catalogue-filters.js?v=6fca9bc909";
 import {
   eventCount,
   normalizedPeriod,
@@ -19,7 +19,7 @@ import {
   placeListLabel,
   precisionMeta,
   sortPlaces,
-} from "./map-places.js?v=5edb880bcf";
+} from "./map-places.js?v=6fca9bc909";
 
 mountSiteChrome("map");
 
@@ -418,12 +418,11 @@ try {
     });
   }
 
+  // Escape closes a selection in every layout. It used to act only on compact
+  // screens, where the selection is a sheet over the map, and did nothing on a
+  // desktop panel that offers the same close button.
   document.addEventListener("keydown", (event) => {
-    if (
-      event.key !== "Escape"
-      || selectionPanel?.dataset.state !== "selected"
-      || !compactMapLayout?.matches
-    ) return;
+    if (event.key !== "Escape" || selectionPanel?.dataset.state !== "selected") return;
     const focusWasInSelection = selectionPanel.contains(document.activeElement);
     resetSelection();
     if (focusWasInSelection) map?.getContainer()?.focus({ preventScroll: true });
@@ -535,6 +534,15 @@ try {
         { direction: "top", offset: [0, -14], opacity: 0.96 },
       );
       marker.on("click", () => selectPlace(place, { moveMap: false }));
+      // Leaflet maps Enter on a focused marker only to a popup, and these markers
+      // carry tooltips, so a keyboard reader reached a labelled button that did
+      // nothing when pressed.
+      marker.on("keydown", (event) => {
+        const key = event.originalEvent?.key;
+        if (key !== "Enter" && key !== " ") return;
+        event.originalEvent.preventDefault();
+        selectPlace(place, { moveMap: false });
+      });
       marker.addTo(markerLayer);
       markerById.set(place.id, marker);
       bounds.push([place.latitude, place.longitude]);
@@ -570,8 +578,24 @@ try {
     listTarget.querySelectorAll("button").forEach((button) => {
       button.addEventListener("click", () => {
         const place = filtered.find((item) => item.id === button.dataset.id);
-        if (place) selectPlace(place);
+        if (!place) return;
+        selectPlace(place);
+        revealMap();
       });
+    });
+  }
+
+  // On a phone the place list sits below the map, so a place chosen from it was
+  // selected on a map several hundred pixels above the screen. The page now
+  // brings the map back into view, clear of the sticky site header.
+  function revealMap() {
+    const canvas = document.querySelector(".map-canvas");
+    if (!canvas || !compactMapLayout?.matches) return;
+    const header = document.querySelector("[data-site-header]");
+    const offset = header ? header.getBoundingClientRect().height : 0;
+    window.scrollTo({
+      top: canvas.getBoundingClientRect().top + window.scrollY - offset - 8,
+      behavior: window.matchMedia?.("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
     });
   }
 
