@@ -22,6 +22,10 @@ PUBLIC_PAGES = ["", "works.html", "people.html", "life.html", "map.html", "media
 SITEMAP_STATE_PATH = Path("data/site/sitemap-state.json")
 ISO_DATE_PATTERN = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 META_DESCRIPTION_LIMIT = 160
+# The longest work page title the archive generates is 89 characters before the
+# site suffix. A source qualifier that pushed past that would buy nothing: only
+# a title too short to identify its document needs one.
+SOURCE_PAGE_TITLE_BUDGET = 90
 OG_DESCRIPTION_LIMIT = 180
 PAGE_TITLE_SUFFIX = "Kaper Archive"
 RECORD_TABLES = {
@@ -273,6 +277,26 @@ def title_for(record_type: str, record: dict) -> str:
     if record_type == "source":
         return record.get("title") or record.get("shortCitation") or record["id"]
     return record.get("title") or record["id"]
+
+
+# A source title is the document's title proper, so on 188 of 768 sources it is
+# the bare name of the thing described — "Alraune" for a filmportal.de entry, a
+# song title for a Hofmeister notice. In the page that is unambiguous: the
+# eyebrow reads "Source", a badge names the source type and the full citation
+# sits directly beneath the heading. The browser title carries none of that
+# context, and 54 of those titles are identical to a work title, so the search
+# result, tab and bookmark for a source were indistinguishable from the work it
+# documents. The publication or repository is recorded on 99% of sources and
+# supplies exactly the missing context, on the same principle as the year/type
+# qualifier already used for works.
+def source_title_qualifier(record: dict) -> str:
+    qualifier = display_value(record.get("publication")) or display_value(record.get("repository"))
+    if not qualifier:
+        return ""
+    # Titles that already open with their publication — the Hofmeister and
+    # Copyright Entries notices — would otherwise stutter it twice.
+    title = display_value(record.get("title"))
+    return "" if qualifier.casefold() in title.casefold() else qualifier
 
 
 def _names(ids, index) -> list[str]:
@@ -792,6 +816,12 @@ def static_page(
         page_title = f"{title} — {qualifier}" if qualifier else title
     elif record_type in {"person", "place", "event"}:
         page_title = title
+    elif record_type == "source":
+        qualifier = source_title_qualifier(record)
+        stem = f"{title} — {qualifier}" if qualifier else title
+        page_title = f"{stem} ({label.lower()})"
+        if len(page_title) > SOURCE_PAGE_TITLE_BUDGET:
+            page_title = f"{title} ({label.lower()})"
     else:
         page_title = f"{title} ({label.lower()})"
     browser_title = f"{page_title} | {PAGE_TITLE_SUFFIX}"
@@ -879,6 +909,7 @@ def expected_outputs(
     counts = {}
     work_meta_descriptions: list[str] = []
     work_page_titles: list[str] = []
+    source_page_titles: list[str] = []
     for record_type, table in RECORD_TABLES.items():
         payload_paths = sorted((record_root / record_type).glob("*.json"))
         counts[record_type] = len(payload_paths)
@@ -908,6 +939,11 @@ def expected_outputs(
                     raise RuntimeError(f"Missing Work SEO metadata: {record['id']}")
                 work_meta_descriptions.append(html.unescape(description_match.group(1)))
                 work_page_titles.append(html.unescape(title_match.group(1)))
+            if record_type == "source":
+                title_match = re.search(r"<title>([^<]*)</title>", document)
+                if not title_match:
+                    raise RuntimeError(f"Missing Source page title: {record['id']}")
+                source_page_titles.append(html.unescape(title_match.group(1)))
             routes.append(f"records/{record_type}/{quote(payload['id'], safe='')}/")
     documents = sitemap_route_documents(root, outputs, routes)
     sitemap_state, stale_routes, updated_count = updated_sitemap_state(
@@ -942,6 +978,10 @@ def expected_outputs(
             "longestMetaDescription": max(map(len, work_meta_descriptions), default=0),
             "descriptions": duplicate_metrics(work_meta_descriptions),
             "pageTitles": duplicate_metrics(work_page_titles),
+        },
+        "sourceSeo": {
+            "recordCount": len(source_page_titles),
+            "pageTitles": duplicate_metrics(source_page_titles),
         },
     }
     state_payload = {
