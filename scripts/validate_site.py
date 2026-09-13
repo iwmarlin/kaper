@@ -245,6 +245,36 @@ def local_target(root: Path, page: Path, value: str) -> Path | None:
     return page.parent / path
 
 
+def open_graph_image_errors(root: Path, label: str, text: str) -> list[str]:
+    """A social image must be a small local derivative with declared dimensions and type."""
+    match = re.search(r'<meta property="og:image" content="([^"]+)">', text)
+    if not match:
+        return [f"{label}: Open Graph image is missing"]
+    url = match.group(1)
+    if not url.startswith(SITE_ORIGIN):
+        return [f"{label}: Open Graph image is not local to the archive"]
+    errors: list[str] = []
+    relative = unquote(url.removeprefix(SITE_ORIGIN))
+    path = root / relative
+    if not path.is_file():
+        errors.append(f"{label}: Open Graph image file is missing")
+    elif relative != "apple-touch-icon.png":
+        if not relative.startswith("assets/generated/responsive/"):
+            errors.append(f"{label}: Open Graph image bypasses responsive derivatives")
+        if path.stat().st_size > SOCIAL_IMAGE_MAX_BYTES:
+            errors.append(
+                f"{label}: Open Graph image exceeds {SOCIAL_IMAGE_MAX_BYTES // 1000} KB"
+            )
+    for property_name, description in (
+        ("og:image:width", "width"),
+        ("og:image:height", "height"),
+        ("og:image:type", "MIME type"),
+    ):
+        if f'property="{property_name}"' not in text:
+            errors.append(f"{label}: Open Graph image {description} is missing")
+    return errors
+
+
 def validate(root: Path) -> dict:
     errors: list[str] = []
     warnings: list[str] = []
@@ -277,6 +307,7 @@ def validate(root: Path) -> dict:
             errors.append(
                 f"{filename}: expected exactly one skip link, found {parser.skip_links}"
             )
+        errors.extend(open_graph_image_errors(root, filename, text))
         for attribute, value in parser.references:
             target = local_target(root, path, value)
             if target is not None and not target.exists():
@@ -311,15 +342,15 @@ def validate(root: Path) -> dict:
 
     # The compact phone portrait may visually hide its long caption, but it
     # must never hide the focusable record link with the entire figcaption.
-    home_js_path = root / "assets/site/home.js"
+    home_page_path = root / "index.html"
     home_css_path = root / "assets/site/home.css"
-    if home_js_path.is_file() and home_css_path.is_file():
-        home_js = home_js_path.read_text(encoding="utf-8")
+    if home_page_path.is_file() and home_css_path.is_file():
+        home_page = home_page_path.read_text(encoding="utf-8")
         home_css = home_css_path.read_text(encoding="utf-8")
         if not re.search(
             r'<span class="hero__portrait-caption">.*?</span>\s*'
             r'<a href=',
-            home_js,
+            home_page,
             flags=re.DOTALL,
         ):
             errors.append(
@@ -484,37 +515,7 @@ def validate(root: Path) -> dict:
             text = page.read_text(encoding="utf-8")
             page_parser.feed(text)
 
-            og_image_match = re.search(
-                r'<meta property="og:image" content="([^"]+)">',
-                text,
-            )
-            if not og_image_match:
-                errors.append(f"{relative}: Open Graph image is missing")
-            else:
-                og_image_url = og_image_match.group(1)
-                if not og_image_url.startswith(SITE_ORIGIN):
-                    errors.append(f"{relative}: Open Graph image is not local to the archive")
-                else:
-                    og_relative = unquote(og_image_url.removeprefix(SITE_ORIGIN))
-                    og_path = root / og_relative
-                    if not og_path.is_file():
-                        errors.append(f"{relative}: Open Graph image file is missing")
-                    elif og_relative != "apple-touch-icon.png":
-                        if not og_relative.startswith("assets/generated/responsive/"):
-                            errors.append(
-                                f"{relative}: Open Graph image bypasses responsive derivatives"
-                            )
-                        if og_path.stat().st_size > SOCIAL_IMAGE_MAX_BYTES:
-                            errors.append(
-                                f"{relative}: Open Graph image exceeds "
-                                f"{SOCIAL_IMAGE_MAX_BYTES // 1000} KB"
-                            )
-                    if 'property="og:image:width"' not in text:
-                        errors.append(f"{relative}: Open Graph image width is missing")
-                    if 'property="og:image:height"' not in text:
-                        errors.append(f"{relative}: Open Graph image height is missing")
-                    if 'property="og:image:type"' not in text:
-                        errors.append(f"{relative}: Open Graph image MIME type is missing")
+            errors.extend(open_graph_image_errors(root, relative, text))
             if page_parser.skip_links != 1:
                 errors.append(
                     f"{relative}: expected exactly one skip link, "

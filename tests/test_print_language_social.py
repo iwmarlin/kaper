@@ -95,6 +95,31 @@ class SocialImageTests(unittest.TestCase):
                     offenders.append(f"{page.relative_to(ROOT)}: missing {property_name}")
         self.assertEqual(offenders[:20], [], f"{len(offenders)} social-image problems")
 
+    def test_top_level_pages_use_a_small_generated_social_image(self) -> None:
+        """The pages shared most often sat outside the record rule and pointed at
+        the 2208 x 2441 archival original of the site portrait."""
+        pages = sorted(ROOT.glob("*.html"))
+        self.assertGreaterEqual(len(pages), 9)
+        offenders = []
+        for page in pages:
+            text = page.read_text(encoding="utf-8")
+            match = re.search(r'<meta property="og:image" content="([^"]+)">', text)
+            relative = unquote(html.unescape(match.group(1)).removeprefix(ORIGIN)) if match else ""
+            image = ROOT / relative
+            if not relative.startswith("assets/generated/responsive/") or not image.is_file():
+                offenders.append(f"{page.name}: {relative or 'missing og:image'}")
+            elif image.stat().st_size > MAX_SOCIAL_BYTES:
+                offenders.append(f"{page.name}: {image.stat().st_size} bytes")
+            width = re.search(r'property="og:image:width" content="(\d+)"', text)
+            height = re.search(r'property="og:image:height" content="(\d+)"', text)
+            if not width or not height or 'property="og:image:type"' not in text:
+                offenders.append(f"{page.name}: undeclared image dimensions or type")
+                continue
+            # A portrait-shaped image is shown whole rather than cropped into a wide card.
+            if int(height.group(1)) > int(width.group(1)) and 'name="twitter:card" content="summary"' not in text:
+                offenders.append(f"{page.name}: portrait image cropped to a large card")
+        self.assertEqual(offenders, [])
+
     def test_johnny_green_no_longer_exposes_the_15_mb_source_as_og_image(self) -> None:
         source = "assets/images/portraits/johnny-green.jpg"
         offenders = []

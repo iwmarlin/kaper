@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-"""Build compact browse payloads and prerender each index's first results."""
+"""Build compact browse payloads and print derived content into the top-level pages.
+
+Each catalogue page receives its first results, the home page every section it
+shows, and every top-level page the shared social image.
+"""
 
 from __future__ import annotations
 
@@ -10,6 +14,8 @@ import shutil
 import subprocess
 import sys
 from pathlib import Path
+
+from build_static_records import esc, og_image_for, responsive_image_mapping
 
 
 INDEX_FILES = {
@@ -328,9 +334,10 @@ def node_binary() -> str:
 
 
 def render_pages(root: Path, payloads: dict[str, dict]) -> dict:
+    home = read_json(root / "data/site/home.json")
     result = subprocess.run(
         [node_binary(), str(root / "scripts/render_catalogue_indexes.mjs"), str(root)],
-        input=json.dumps(payloads, ensure_ascii=False, separators=(",", ":")),
+        input=json.dumps({**payloads, "home": home}, ensure_ascii=False, separators=(",", ":")),
         text=True,
         capture_output=True,
         check=True,
@@ -360,18 +367,77 @@ def inject_prerender(
     return text
 
 
+def replace_between(text: str, start: str, end: str, content: str) -> str:
+    pattern = re.compile(rf"{re.escape(start)}.*?{re.escape(end)}", re.DOTALL)
+    if not pattern.search(text):
+        raise ValueError(f"Missing markers {start} … {end}")
+    return pattern.sub(lambda _: f"{start}\n{content}\n{end}", text, count=1)
+
+
+HOME_SECTIONS = ("portrait", "pathways", "events", "figures")
+SOCIAL_START_MARKER = "<!-- social-image:start -->"
+SOCIAL_END_MARKER = "<!-- social-image:end -->"
+# Every top-level page shares the site portrait. Its archival original is
+# 2208 x 2441 px, so these pages take the same metadata-free derivative a record
+# page would and fall under the same social-image contract.
+SITE_SOCIAL_IMAGE = "assets/images/portraits/kaper-mature.jpg"
+
+
+def social_image_meta(root: Path) -> str:
+    media = next(
+        (
+            item
+            for item in records(root / "data/public/v1", "media.json")
+            if item.get("assetPath") == SITE_SOCIAL_IMAGE
+        ),
+        None,
+    )
+    if media is None:
+        raise RuntimeError(f"No public media record holds the site social image {SITE_SOCIAL_IMAGE}")
+    image = og_image_for("media", media, {}, responsive_image_mapping(root))
+    # A portrait is shown whole in a summary card rather than cropped to a wide one.
+    card = "summary" if image["portrait"] else "summary_large_image"
+    return "\n".join(
+        f"  {line}"
+        for line in (
+            f'<meta property="og:image" content="{esc(image["url"])}">',
+            f'<meta property="og:image:alt" content="{esc(image["alt"])}">',
+            f'<meta property="og:image:type" content="{esc(image["mime"])}">',
+            f'<meta property="og:image:width" content="{int(image["width"])}">',
+            f'<meta property="og:image:height" content="{int(image["height"])}">',
+            f'<meta name="twitter:card" content="{card}">',
+            f'<meta name="twitter:image" content="{esc(image["url"])}">',
+            f'<meta name="twitter:image:alt" content="{esc(image["alt"])}">',
+        )
+    )
+
+
 def expected_files(root: Path) -> tuple[dict[Path, bytes], dict[str, dict], dict[str, dict]]:
     payloads = build_payloads(root)
     rendered = render_pages(root, payloads)
+    social = social_image_meta(root)
     files = {
         root / "data/site/indexes" / INDEX_FILES[name]: compact_json(payload)
         for name, payload in payloads.items()
     }
-    for name, (filename, target_id, count_id) in PAGE_CONFIG.items():
-        path = root / filename
-        text = inject_prerender(
-            path.read_text(encoding="utf-8"), target_id, count_id, rendered[name]
-        )
+    catalogue_pages = {
+        filename: (name, target_id, count_id)
+        for name, (filename, target_id, count_id) in PAGE_CONFIG.items()
+    }
+    for path in sorted(root.glob("*.html")):
+        text = path.read_text(encoding="utf-8")
+        if path.name in catalogue_pages:
+            name, target_id, count_id = catalogue_pages[path.name]
+            text = inject_prerender(text, target_id, count_id, rendered[name])
+        if path.name == "index.html":
+            for section in HOME_SECTIONS:
+                text = replace_between(
+                    text,
+                    f"<!-- home-prerender:{section}:start -->",
+                    f"<!-- home-prerender:{section}:end -->",
+                    rendered["home"][section],
+                )
+        text = replace_between(text, SOCIAL_START_MARKER, SOCIAL_END_MARKER, social)
         files[path] = text.encode("utf-8")
     return files, rendered, payloads
 

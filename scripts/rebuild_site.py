@@ -94,7 +94,7 @@ def main() -> int:
         ),
         Step("Build responsive images and home payload", tuple(image_command)),
         Step(
-            "Build compact catalogue indexes and prerender first results",
+            "Build catalogue indexes and print derived content into top-level pages",
             (python, str(scripts / "build_catalogue_indexes.py"), "--root", str(root)),
         ),
         Step(
@@ -134,7 +134,7 @@ def main() -> int:
             (python, str(scripts / "build_site_assets.py"), "--root", str(root), "--check"),
         ),
         Step(
-            "Check compact catalogue indexes and prerendered results",
+            "Check catalogue indexes and derived top-level page content",
             (
                 python,
                 str(scripts / "build_catalogue_indexes.py"),

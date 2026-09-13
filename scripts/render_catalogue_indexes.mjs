@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-/** Render the default first page of each compact catalogue index. */
+/** Render the first page of each catalogue index and every home-page section. */
 
 import process from "node:process";
 import path from "node:path";
@@ -46,9 +46,90 @@ const page = (items, limit, renderer, noun) => {
   };
 };
 
+// The home sections render through this script's own core instance. The
+// catalogue module imports core under its stamped URL, which Node keys as a
+// separate module, so the image derivatives are registered on both.
+core.registerImageDerivatives(derivatives.IMAGE_DERIVATIVES);
+const numberFormat = new Intl.NumberFormat("en-GB");
+
+// One gateway, one set of figures: each count says how much there is and leads
+// straight to it.
+function homePathways(pathways) {
+  return pathways.map((pathway) => `
+    <li>
+      <a class="pathway-row" href="${core.escapeHtml(pathway.href)}">
+        <span class="pathway-row__content">
+          <span class="pathway-row__title">${core.escapeHtml(pathway.label)}</span>
+          <span class="pathway-row__description">${core.escapeHtml(pathway.description)}</span>
+        </span>
+        <span class="pathway-row__count">${numberFormat.format(pathway.count)}</span>
+        <span class="pathway-row__arrow" aria-hidden="true">→</span>
+      </a>
+    </li>`).join("");
+}
+
+// In a source-based archive the one image on the front page carries its caption
+// and a link to its own record.
+function homePortrait(portrait) {
+  if (!portrait?.assetPath) return "";
+  return `
+    ${core.responsiveImage(portrait.assetPath, portrait.altText || portrait.title, {
+      eager: true,
+      sizes: "(max-width: 680px) 9rem, 20rem",
+    })}
+    <figcaption>
+      <span class="hero__portrait-caption">${core.escapeHtml(portrait.publicCaption || portrait.title || "")}</span>
+      <a href="${core.recordUrl("media", portrait.id)}">See the record</a>
+    </figcaption>`;
+}
+
+function homeEvents(events) {
+  return events.map((event) => `
+    <article class="home-event-card">
+      ${event.image ? `<figure class="home-event-card__figure">${core.responsiveImage(event.image.assetPath, event.image.altText || event.title, {
+        sizes: "(max-width: 680px) calc(100vw - 2.5rem), 22rem",
+      })}</figure>` : ""}
+      <div class="home-event-card__body">
+        <div class="home-event-card__topline">
+          <p class="home-event-card__date">${core.escapeHtml(event.displayDate || event.dateStart || "")}</p>
+          ${core.periodBadge(event.periods || event.period)}
+        </div>
+        <h3><a href="${core.recordUrl("event", event.id)}">${core.escapeHtml(event.title)}</a></h3>
+        <p class="card__description">${core.escapeHtml(event.shortDescription || event.longDescription || "")}</p>
+        <div class="home-event-card__footer"><span>${core.escapeHtml(event.placeDisplay || "")}</span><span aria-hidden="true">→</span></div>
+      </div>
+    </article>`).join("");
+}
+
+// The figures belong to the statement of method: they say how firm the record
+// is, not how large it is. They report qualified attributions rather than
+// confirmed ones and leave out empty categories, because "0 uncertain" would
+// read as a claim that nothing here is in doubt, in an archive whose doubts are
+// recorded on individual attributions, scopes and rights.
+function homeFigures(glance) {
+  const certainty = glance.certainty || {};
+  const total = Object.values(certainty).reduce((sum, value) => sum + (value || 0), 0);
+  const qualified = (certainty.probable || 0) + (certainty.uncertain || 0);
+  const parts = [];
+  if (total) {
+    parts.push(qualified
+      ? `<strong>${numberFormat.format(total)}</strong> works, of which <strong>${qualified}</strong> carry a qualified attribution`
+      : `<strong>${numberFormat.format(total)}</strong> works`);
+  }
+  if (glance.span) parts.push(`documented <strong>${glance.span.start}–${glance.span.end}</strong>`);
+  if (glance.sources) parts.push(`<strong>${numberFormat.format(glance.sources)}</strong> linked sources`);
+  return parts.join(" · ");
+}
+
 process.stdout.write(JSON.stringify({
   works: page(works, 36, views.renderWorkIndexRow, ["record", "records"]),
   people: page(people, 48, views.renderPersonIndexRow, ["person", "people"]),
   media: page(media, 30, views.renderMediaIndexCard, ["item", "items"]),
   sources: page(sources, 40, views.renderSourceIndexRow, ["source", "sources"]),
+  home: {
+    portrait: homePortrait(indexes.home.portrait),
+    pathways: homePathways(indexes.home.pathways),
+    events: homeEvents(indexes.home.events),
+    figures: homeFigures(indexes.home.glance),
+  },
 }));
