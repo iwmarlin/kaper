@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 1270,
+  "count": 1273,
   "records": [
     {
       "id": "CON-F001-C-P009",
@@ -21253,6 +21253,63 @@
         "SRC0759"
       ],
       "scopeNote": "Issued the Polish version in Warsaw."
+    },
+    {
+      "id": "CON-S219-C-P009",
+      "role": "composer",
+      "nameAsPrinted": "Bronislaw Kaper",
+      "displayCredit": "Music",
+      "evidenceContext": "newspaper_or_periodical",
+      "sortOrder": 10,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S219"
+      ],
+      "personIds": [
+        "P009"
+      ],
+      "sourceIds": [
+        "SRC0859"
+      ],
+      "nameVariantIds": [
+        "PNV0020"
+      ]
+    },
+    {
+      "id": "CON-S219-C-P077",
+      "role": "composer",
+      "nameAsPrinted": "Walter Jurmann",
+      "displayCredit": "Music",
+      "evidenceContext": "newspaper_or_periodical",
+      "sortOrder": 11,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S219"
+      ],
+      "personIds": [
+        "P077"
+      ],
+      "sourceIds": [
+        "SRC0859"
+      ]
+    },
+    {
+      "id": "CON-S219-L-P025",
+      "role": "lyricist",
+      "nameAsPrinted": "Gus Kahn",
+      "displayCredit": "Words",
+      "evidenceContext": "newspaper_or_periodical",
+      "sortOrder": 1,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S219"
+      ],
+      "personIds": [
+        "P025"
+      ],
+      "sourceIds": [
+        "SRC0859"
+      ]
     },
     {
       "id": "CON-S047-LAB-ORG138",

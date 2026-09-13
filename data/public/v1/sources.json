@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 768,
+  "count": 769,
   "records": [
     {
       "id": "SRC0001",
@@ -28554,6 +28554,53 @@
       ],
       "researchNote": "Filmportal gives 29 March 1903 as the birth date and 16 March 1988 as the death date. GND 116308869 instead gives 29 March 1902 as the birth date, with the same death date. The displayed years 1902–1988 follow GND; the birth-year discrepancy remains unresolved. GND data consulted through https://lobid.org/gnd/116308869.json on 9 September 2026.",
       "researchNoteType": "date_assessment"
+    },
+    {
+      "id": "SRC0859",
+      "title": "News item on Champagne Lady",
+      "shortCitation": "Daily News (Los Angeles), 8 December 1934 — “Champagne Lady”",
+      "fullCitation": "[News item on “Champagne Lady,” dedicated to Evelyn Laye]. Daily News (Los Angeles), 8 December 1934, p. 15. California Digital Newspaper Collection, Center for Bibliographical Studies and Research, University of California, Riverside.",
+      "sourceType": "press_item",
+      "repository": "California Digital Newspaper Collection",
+      "publication": "Daily News (Los Angeles)",
+      "date": "1934-12-08",
+      "dateRole": "publication",
+      "dateQualifier": "confirmed",
+      "accessDate": "2026-09-13",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "slug": "src0859-daily-news-los-angeles-1934-champagne-lady",
+      "personIds": [
+        "P009",
+        "P025",
+        "P077"
+      ],
+      "organizationIds": [
+        "ORG157"
+      ],
+      "workIds": [
+        "W-S219"
+      ],
+      "songIds": [
+        "S219"
+      ],
+      "timelineEventIds": [
+        "TE0053"
+      ],
+      "placeIds": [
+        "PL006"
+      ],
+      "contributionIds": [
+        "CON-S219-C-P009",
+        "CON-S219-C-P077",
+        "CON-S219-L-P025"
+      ],
+      "nameVariantIds": [
+        "PNV0020"
+      ],
+      "primaryUrl": "https://cdnc.ucr.edu/?a=d&d=DNLA19341208.1.15&srpos=1&e=------193-en--20--1--txt-txIN-%22Kaper%22----1934---",
+      "researchNote": "The contemporary item explicitly names Walter Jurmann and Bronisław Kaper as the composers and identifies Gus Kahn as the lyric writer with whom they collaborated. It presents the song as a tribute to Evelyn Laye and says that it was given to her shortly before her marriage to Frank Lawton. The reference to The Night Is Young describes Laye’s work at the time and does not establish that “Champagne Lady” was used in the film. No published score, copyright registration or recording of the song has yet been identified.",
+      "researchNoteType": "evidence_note"
     }
   ],
   "recordCount": null
