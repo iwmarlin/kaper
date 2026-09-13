@@ -17,7 +17,7 @@
    the swashed display forms can never appear by accident. */
 @font-face {
   font-family: "Fraunces";
-  src: url("../fonts/kaper-serif.woff2?v=4f74f0500e") format("woff2");
+  src: url("../fonts/kaper-serif.woff2?v=7476a61475") format("woff2");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
@@ -25,7 +25,7 @@
 
 @font-face {
   font-family: "Fraunces";
-  src: url("../fonts/kaper-serif-italic.woff2?v=4f74f0500e") format("woff2");
+  src: url("../fonts/kaper-serif-italic.woff2?v=7476a61475") format("woff2");
   font-weight: 100 900;
   font-style: italic;
   font-display: swap;
@@ -33,7 +33,7 @@
 
 @font-face {
   font-family: "Archivo";
-  src: url("../fonts/kaper-sans.woff2?v=4f74f0500e") format("woff2");
+  src: url("../fonts/kaper-sans.woff2?v=7476a61475") format("woff2");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
@@ -41,7 +41,7 @@
 
 @font-face {
   font-family: "Archivo";
-  src: url("../fonts/kaper-sans-italic.woff2?v=4f74f0500e") format("woff2");
+  src: url("../fonts/kaper-sans-italic.woff2?v=7476a61475") format("woff2");
   font-weight: 100 900;
   font-style: italic;
   font-display: swap;
@@ -167,8 +167,12 @@ a:hover {
   color: var(--accent);
 }
 
+/* The accent at 45% opacity washed out to rgb(209,162,145) against the page,
+   1.99:1 — under the 3:1 a focus indicator has to reach. The colour was already
+   right; only the transparency was wrong, and the component rules below have
+   always drawn this outline solid. */
 :focus-visible {
-  outline: 3px solid rgba(166, 66, 40, 0.45);
+  outline: 3px solid var(--accent);
   outline-offset: 3px;
 }
 
@@ -3752,6 +3756,13 @@ html:not(.js) .source-group__head {
 
 .site-footer a {
   color: #f2d5a2;
+}
+
+/* The accent outline is drawn for the paper ground and reaches only 2.38:1 on
+   the footer's ink, so the one dark region on the site takes the paper colour
+   instead and reads at about 13:1. */
+.site-footer :focus-visible {
+  outline-color: var(--paper);
 }
 
 .site-footer__grid {
