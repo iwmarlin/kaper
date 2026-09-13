@@ -12,10 +12,20 @@ unchanged on GitHub Pages at `/kaper/`, on Netlify, and from a local static serv
 | --- | --- | --- |
 | `index.html` | Editorial introduction, scope, highlights and collection statistics | Works, Timeline Events, Media, Places |
 | `works.html` | Searchable catalogue of films, songs and other works | Works and subtype tables |
+| `people.html` | Searchable index of documented collaborators and contemporaries | People and their authority records |
 | `life.html` | Source-based chronological timeline | Timeline Events |
 | `map.html` | Geographic exploration with an accessible place list | Places and Timeline Events |
 | `media.html` | Curated gallery, audio and external reference cards | Media |
+| `sources.html` | Searchable catalogue of the documents the archive cites | Sources |
 | `record.html` | Linked detail view for works, events, places, media, people and sources | Public graph |
+
+`sources.html` is deliberately absent from the primary navigation. That list
+answers what a first-time reader can look at, and the source catalogue answers
+a different question; sources are cited at record level, so a reader meets them
+on the record they support and reaches the catalogue from its breadcrumb or
+from the footer. It is a public route in every other respect: it carries a
+canonical URL, appears in `sitemap.xml` and is held to the same page contract
+as the others.
 
 The existing `life.html` and `media.html` paths are retained to avoid breaking old
 links. Every public detail record has a generated, crawlable path such as

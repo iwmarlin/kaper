@@ -34,7 +34,8 @@ cache rules. It does not redirect or change the existing production domain.
 
 1. Reconcile the canonical public dataset, rebuild the derived site payloads and
    run all validators.
-2. Start a local static server and test the six public routes.
+2. Start a local static server and test the seven public routes: the home page,
+   works, people, timeline, map, media and sources.
 3. Commit the complete feature branch without private research files.
 4. Push the feature branch and open a draft pull request to `main`.
 5. Review the Netlify Deploy Preview on desktop and mobile.
