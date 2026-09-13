@@ -603,6 +603,24 @@
           "primaryUrl": "https://www.youtube.com/watch?v=YAHw4_KS-3o"
         }
       },
+      "SRC0705": {
+        "reason": "Phonobase serves this record over HTTPS; the recorded link reached the same page over plain HTTP.",
+        "fields": {
+          "primaryUrl": "https://www.old.phonobase.org/15273.html"
+        }
+      },
+      "SRC0350": {
+        "reason": "The California Digital Library ARK resolver serves HTTPS; the recorded resolver link used plain HTTP for the same identifier.",
+        "fields": {
+          "additionalLinks": [
+            {
+              "label": "Open ARK resolver",
+              "url": "https://ark.cdlib.org/ark:/13030/kt1489p9q0",
+              "role": "persistent_identifier"
+            }
+          ]
+        }
+      },
       "SRC0146": {
         "reason": "Separate the AFI bibliographic citation from the evidence for the song's reuse and credits in Birthright.",
         "fields": {
