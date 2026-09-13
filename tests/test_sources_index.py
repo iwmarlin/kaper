@@ -38,9 +38,26 @@ class SourcesIndexContractTests(unittest.TestCase):
         self.assertIn('class="source-index-scope source-index-scope--compact"', self.page)
         self.assertIn("<summary>About this index</summary>", self.page)
 
-    def test_page_is_not_yet_linked_from_primary_or_home_navigation(self) -> None:
-        self.assertNotIn('"sources.html"', self.core)
+    def test_the_footer_leads_to_the_index_and_the_primary_navigation_does_not(self) -> None:
+        """Sources are cited at record level: a reader meets them on the record
+        they support and reaches the catalogue from there, from its breadcrumb,
+        or from the footer. Keeping it out of the header is the editorial
+        position, not an omission, so both lists are checked."""
+        self.assertIn('["sources", "sources.html", "Sources"]', self.core)
+        primary_navigation = self.core[
+            self.core.index("const NAV_ITEMS") : self.core.index("const FOOTER_EXPLORE_ITEMS")
+        ]
+        self.assertNotIn("sources.html", primary_navigation)
         self.assertNotIn('href="sources.html"', self.home)
+
+    def test_the_index_is_crawlable_without_the_scripted_chrome(self) -> None:
+        """The header and footer are built in the browser, so neither carries a
+        link a crawler can follow. The sitemap entry and the breadcrumb printed
+        into every source record are what make the index reachable."""
+        sitemap = (ROOT / "sitemap.xml").read_text(encoding="utf-8")
+        self.assertIn("https://iwmarlin.github.io/kaper/sources.html", sitemap)
+        record = (ROOT / "records/source/SRC0116/index.html").read_text(encoding="utf-8")
+        self.assertIn('href="sources.html"', record)
 
 
 if __name__ == "__main__":

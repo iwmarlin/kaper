@@ -22,12 +22,16 @@ PUBLIC_PAGES = [
     "life.html",
     "map.html",
     "media.html",
+    "sources.html",
     "record.html",
     "404.html",
 ]
 
-# Pages that must appear in sitemap.xml (record.html and 404.html are shells, not routes).
-SITEMAP_PAGES = PUBLIC_PAGES[:6]
+# Pages that must appear in sitemap.xml. record.html and 404.html are shells,
+# not routes; naming them is safer than slicing, which silently drops a page
+# from the sitemap check as soon as one is inserted above the cut.
+PAGE_SHELLS = {"record.html", "404.html"}
+SITEMAP_PAGES = [page for page in PUBLIC_PAGES if page not in PAGE_SHELLS]
 
 SITE_ORIGIN = "https://iwmarlin.github.io/kaper/"
 SOCIAL_IMAGE_MAX_BYTES = 600_000

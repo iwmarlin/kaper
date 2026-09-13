@@ -791,6 +791,16 @@ const NAV_ITEMS = [
   ["media", "media.html", "Media"],
 ];
 
+// The source catalogue is not a sixth way into the archive. As the footer says
+// in its own words, sources are cited at record level: a reader meets them on
+// the record they support, and reaches the catalogue from there. It stays out
+// of the header for that reason — but it is a browsable index like the others,
+// so it belongs in the footer list a reader scans for one.
+const FOOTER_EXPLORE_ITEMS = [
+  ...NAV_ITEMS.slice(1),
+  ["sources", "sources.html", "Sources"],
+];
+
 export function mountSiteChrome(activePage) {
   const header = document.querySelector("[data-site-header]");
   if (header) {
@@ -859,7 +869,7 @@ export function mountSiteChrome(activePage) {
         <div>
           <p class="site-footer__heading">Explore</p>
           <ul class="plain-list">
-            ${NAV_ITEMS.slice(1).map(([, href, label]) => `<li><a href="${href}">${label}</a></li>`).join("")}
+            ${FOOTER_EXPLORE_ITEMS.map(([, href, label]) => `<li><a href="${href}">${label}</a></li>`).join("")}
           </ul>
         </div>
         <div>
