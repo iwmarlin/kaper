@@ -3007,11 +3007,14 @@
         }
       },
       "SRC0598": {
-        "reason": "Keep the publicity-still citation bibliographic and retain the United States copyright analysis exclusively with the linked medium.",
+        "reason": "Keep the publicity-still citation bibliographic and retain the United States copyright analysis exclusively with the linked medium. Drop the access link as well: it repeated the Credit field of the Wikimedia Commons file rather than naming an institutional view of the still, and that site now refuses every request, its own root included. The provenance it recorded remains on the Commons file page, which is this source's primary URL, and the citation never referred to it.",
         "fields": {
           "fullCitation": "Director Richard Thorpe on the set of Cheating Cheaters (1934). Universal Pictures publicity still; photographer unidentified. Cropped on Wikimedia Commons from File:Cheating Cheaters (1934) set 1.jpg. Accessed 31 July 2026.",
           "shortCitation": "Wikimedia Commons, publicity still of Richard Thorpe on the set of Cheating Cheaters (1934)"
-        }
+        },
+        "removeFields": [
+          "accessUrl"
+        ]
       },
       "SRC0599": {
         "reason": "Keep the production-photograph citation bibliographic and retain the United States copyright analysis exclusively with the linked medium.",
