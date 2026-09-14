@@ -224,7 +224,7 @@ VISUAL_CREATOR_FIELDS = {
     "SRC0644": "Photographer unidentified (Universal Pictures)",
     "SRC0648": "Photographer unidentified",
     "SRC0649": "Photographer unidentified",
-    "SRC0654": "Photographer unidentified",
+    "SRC0654": "Studio Harcourt",
     "SRC0655": "Photographer unidentified",
     "SRC0691": "Photographer unidentified",
     "SRC0711": "Jacob Merkelbach",

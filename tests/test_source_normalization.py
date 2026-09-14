@@ -141,7 +141,7 @@ class SourceNormalizationTests(unittest.TestCase):
             "SRC0570": "William P. Gottlieb",
             "SRC0586": "Photographer unidentified",
             "SRC0649": "Photographer unidentified",
-            "SRC0654": "Photographer unidentified",
+            "SRC0654": "Studio Harcourt",
             "SRC0655": "Photographer unidentified",
             "SRC0711": "Jacob Merkelbach",
             "SRC0795": "Stanisław Brzozowski",
