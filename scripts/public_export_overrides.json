@@ -3829,9 +3829,14 @@
         }
       },
       "M111": {
-        "reason": "Remove the obsolete Parade wording from the slug after identifying the image as Louis Gaudin's 1931 Paris qui brille poster.",
+        "reason": "Remove the obsolete Parade wording after identifying the image as Louis Gaudin's 1931 Paris qui brille poster; refine its public description and record the rights statement given on the Wikimedia Commons file page.",
         "fields": {
-          "slug": "casino-de-paris-paris-qui-brille-poster-m111"
+          "slug": "casino-de-paris-paris-qui-brille-poster-m111",
+          "description": "Louis Gaudin (Zig)'s 1931 poster for Paris qui brille at the Casino de Paris, featuring Mistinguett; used as historical context for the venue connected with Kaper and Jurmann's Paris revue work.",
+          "altText": "Louis Gaudin's 1931 Casino de Paris poster for Paris qui brille, featuring Mistinguett.",
+          "rightsNote": "The 1931 poster by Louis Gaudin (Zig, died 1936) and its faithful two-dimensional reproduction are marked as public domain on the Wikimedia Commons file page.",
+          "publicCaption": "Louis Gaudin (Zig)'s poster for Paris qui brille at the Casino de Paris, featuring Mistinguett, 1931.",
+          "publicCreditLine": "Louis Gaudin (Zig), Paris qui brille, 1931; Wikimedia Commons, Public Domain Mark 1.0."
         }
       },
       "M243": {
@@ -9299,6 +9304,38 @@
           "researchNoteType": "date_assessment"
         }
       },
+      "SRC0860": {
+        "reason": "Add the item-level Wikimedia Commons record for the historical Casino de Paris postcard and preserve its stated publisher, approximate publication date and private-collection provenance.",
+        "fields": {
+          "id": "SRC0860",
+          "title": "Casino de Paris, rue de Clichy — postcard, c. 1910",
+          "shortCitation": "F. Fleury, Casino de Paris, rue de Clichy — postcard, c. 1910",
+          "fullCitation": "Photographer unidentified. Paris. Rue de Clichy. Casino de Paris. Colourised postcard published by F. Fleury, Paris, c. 1910. Digitised from the uploader’s private collection; Wikimedia Commons, File:Paris. Rue de Clichy. Casino de Paris.jpg.",
+          "sourceType": "wikimedia_commons_file",
+          "creator": "Photographer unidentified; F. Fleury, publisher",
+          "repository": "Wikimedia Commons",
+          "publication": "F. Fleury, Paris",
+          "date": "1910",
+          "dateRole": "publication",
+          "dateQualifier": "approximate",
+          "accessDate": "2026-09-13",
+          "reliability": "medium",
+          "sourceStatus": "verified_with_attribution_note",
+          "slug": "src0860-casino-de-paris-rue-de-clichy-postcard-c-1910",
+          "mediaIds": [
+            "M449"
+          ],
+          "placeIds": [
+            "PL036"
+          ],
+          "organizationIds": [
+            "ORG090"
+          ],
+          "primaryUrl": "https://commons.wikimedia.org/wiki/File:Paris._Rue_de_Clichy._Casino_de_Paris.jpg",
+          "researchNote": "The publisher and approximate date follow the item description supplied on Wikimedia Commons by the uploader, who identifies the source as a private collection. Commons cites no institutional catalogue record, and the postcard does not identify its photographer.",
+          "researchNoteType": "verification_note"
+        }
+      },
       "SRC0045": {
         "reason": "Separate the bibliographic citation from the verified item-level evidence on the Variety page.",
         "fields": {
@@ -12441,6 +12478,41 @@
       "M405": {
         "reason": "Publish the uploaded Johnny Green portrait with verified source and rights metadata.",
         "fields": {"id": "M405", "title": "Johnny Green at the piano, 1970", "mediaType": "image", "category": "portrait", "storageType": "local", "assetPath": "assets/images/portraits/johnny-green.jpg", "assetPaths": ["assets/images/portraits/johnny-green.jpg"], "assetCount": 1, "period": "european", "periods": ["european"], "galleryStatus": "eligible", "sortOrder": 405, "slug": "johnny-green-portrait-1970-m405", "altText": "Composer and conductor Johnny Green seated at a piano and examining sheet music.", "publicCaption": "Johnny Green at a piano in 1970. Green composed “I’m Yours,” transcribed by Kaper as Jazz Drops no. 7.", "publicCreditLine": "Los Angeles Times Photographic Collection, UCLA Library; CC BY 4.0; via Wikimedia Commons.", "rightsStatus": "ok", "rightsNote": "Licensed under Creative Commons Attribution 4.0. UCLA Library states that copyright in the Los Angeles Times Photographic Collection was deeded to UCLA and publishes this image under CC BY 4.0.", "externalUrl": "https://commons.wikimedia.org/wiki/File:Johnny_Green,_composer.jpg", "sourceIds": ["SRC0781"]}
+      },
+      "M449": {
+        "reason": "Add the exact historical Casino de Paris postcard supplied through Wikimedia Commons as the venue's primary contextual image, with item-level provenance and an explicit rights assessment.",
+        "fields": {
+          "id": "M449",
+          "title": "Casino de Paris, rue de Clichy — postcard, c. 1910",
+          "mediaType": "image",
+          "storageType": "local",
+          "period": "european",
+          "description": "Colourised postcard view of the Casino de Paris façade at 16 rue de Clichy, published in Paris by F. Fleury around 1910.",
+          "externalUrl": "https://commons.wikimedia.org/wiki/File:Paris._Rue_de_Clichy._Casino_de_Paris.jpg",
+          "assetPath": "assets/images/historical-context/casino-de-paris-rue-de-clichy-ca-1910.jpg",
+          "assetPaths": [
+            "assets/images/historical-context/casino-de-paris-rue-de-clichy-ca-1910.jpg"
+          ],
+          "assetCount": 1,
+          "altText": "Colourised postcard showing the historic façade and entrance of the Casino de Paris on rue de Clichy around 1910.",
+          "rightsStatus": "ok",
+          "rightsNote": "Public domain. Wikimedia Commons identifies the object as a postcard published around 1910 by F. Fleury and marks it as public domain in the United States. No photographer is identified; as an anonymous work published more than seventy years ago, its European Union copyright term has also expired.",
+          "sortOrder": 449,
+          "slug": "casino-de-paris-rue-de-clichy-postcard-c-1910-m449",
+          "publicCaption": "The historic façade of the Casino de Paris at 16 rue de Clichy, on a colourised postcard published around 1910.",
+          "publicCreditLine": "Photographer unidentified; F. Fleury, publisher, Paris, c. 1910; Wikimedia Commons.",
+          "category": "place / context image",
+          "galleryStatus": "selected",
+          "sourceIds": [
+            "SRC0860"
+          ],
+          "placeIds": [
+            "PL036"
+          ],
+          "periods": [
+            "european"
+          ]
+        }
       }
     },
     "Timeline Events": {
@@ -12798,7 +12870,8 @@
             "SRC0780",
             "SRC0781",
             "SRC0813",
-            "SRC0838"
+            "SRC0838",
+            "SRC0860"
           ]
         }
       },
@@ -14881,6 +14954,17 @@
       }
     },
     "Places": {
+      "PL036": {
+        "reason": "Expose the historical Wikimedia Commons postcard and its item-level source on the Casino de Paris place record.",
+        "fields": {
+          "mediaIds": [
+            "M449"
+          ],
+          "sourceIds": [
+            "SRC0860"
+          ]
+        }
+      },
       "PL010": {
         "reason": "Synchronize the music-school place record with the direct 1933 Polona publication that supplies its contextual image.",
         "fields": {
