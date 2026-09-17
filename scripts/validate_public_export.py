@@ -173,6 +173,23 @@ PUBLIC_EDITORIAL_NARRATOR_PATTERN = re.compile(
     flags=re.IGNORECASE,
 )
 
+# Each status names the basis on which a medium may be shown; the site derives
+# the public label from the status alone.
+CLEARED_RIGHTS_STATUSES = frozenset({
+    "public_domain",
+    "open_licence",
+    "provider_terms",
+    "permission_granted",
+    "own_work",
+})
+MEDIA_RIGHTS_STATUSES = CLEARED_RIGHTS_STATUSES | {
+    "copyright_undetermined",
+    "restricted",
+    "mixed_rights",
+    "permission_needed_or_fair_use_claimed",
+    "external_content_not_rehosted",
+}
+
 MEDIA_PUBLIC_WORKFLOW_PATTERN = re.compile(
     r"(?:"
     r"assets/|"
@@ -1673,20 +1690,24 @@ class ExportValidator:
                     self.errors.append(
                         f"Media {media_id}: public field {key} contains a technical record identifier"
                     )
-            if media.get("rightsStatus") == "ok":
+            if media.get("rightsStatus") not in MEDIA_RIGHTS_STATUSES:
+                self.errors.append(
+                    f"Media {media_id}: unknown rightsStatus {media.get('rightsStatus')!r}"
+                )
+            if media.get("rightsStatus") in CLEARED_RIGHTS_STATUSES:
                 rights_text = " ".join(
                     str(media.get(key, ""))
                     for key in ("rightsNote", "publicCreditLine")
                 )
                 if re.search(
                     r"not cleared|personal or research use only|"
-                    r"publication.*(?:permission|rights assessment)|"
+                    r"publication.*(?:(?<!requesting )permission|rights assessment)|"
                     r"remain under copyright|confirm before US-based reuse",
                     rights_text,
                     flags=re.IGNORECASE,
                 ):
                     self.errors.append(
-                        f"Media {media_id}: rightsStatus ok conflicts with restrictive public rights text"
+                        f"Media {media_id}: rightsStatus {media.get('rightsStatus')} conflicts with restrictive public rights text"
                     )
             external_url = media.get("externalUrl", "")
             if external_url and re.search(r"[\r\n]", external_url):

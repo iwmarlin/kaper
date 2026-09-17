@@ -17,7 +17,7 @@
    the swashed display forms can never appear by accident. */
 @font-face {
   font-family: "Fraunces";
-  src: url("../fonts/kaper-serif.woff2?v=5d091f5b18") format("woff2");
+  src: url("../fonts/kaper-serif.woff2?v=75d42ee629") format("woff2");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
@@ -25,7 +25,7 @@
 
 @font-face {
   font-family: "Fraunces";
-  src: url("../fonts/kaper-serif-italic.woff2?v=5d091f5b18") format("woff2");
+  src: url("../fonts/kaper-serif-italic.woff2?v=75d42ee629") format("woff2");
   font-weight: 100 900;
   font-style: italic;
   font-display: swap;
@@ -33,7 +33,7 @@
 
 @font-face {
   font-family: "Archivo";
-  src: url("../fonts/kaper-sans.woff2?v=5d091f5b18") format("woff2");
+  src: url("../fonts/kaper-sans.woff2?v=75d42ee629") format("woff2");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
@@ -41,7 +41,7 @@
 
 @font-face {
   font-family: "Archivo";
-  src: url("../fonts/kaper-sans-italic.woff2?v=5d091f5b18") format("woff2");
+  src: url("../fonts/kaper-sans-italic.woff2?v=75d42ee629") format("woff2");
   font-weight: 100 900;
   font-style: italic;
   font-display: swap;
@@ -895,9 +895,11 @@ main {
 }
 
 .badge--confirmed,
-.badge--ok,
 .badge--public_domain,
-.badge--permission_granted {
+.badge--open_licence,
+.badge--provider_terms,
+.badge--permission_granted,
+.badge--own_work {
   border-color: rgba(53, 102, 81, 0.38);
   background: rgba(53, 102, 81, 0.09);
   color: var(--green);

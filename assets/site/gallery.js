@@ -1,4 +1,4 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=5d091f5b18";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=75d42ee629";
 import {
   debounce,
   humanize,
@@ -10,14 +10,15 @@ import {
   periodLabel,
   periodValues,
   renderError,
-} from "./core.js?v=5d091f5b18";
-import { createCatalogueFilters } from "./catalogue-filters.js?v=5d091f5b18";
+  rightsLabel,
+} from "./core.js?v=75d42ee629";
+import { createCatalogueFilters } from "./catalogue-filters.js?v=75d42ee629";
 import {
   curatedMediaOrder,
   registerCatalogueImageDerivatives,
   renderMediaIndexCard,
   sortMediaIndex,
-} from "./catalogue-results.js?v=5d091f5b18";
+} from "./catalogue-results.js?v=75d42ee629";
 
 registerCatalogueImageDerivatives(IMAGE_DERIVATIVES);
 mountSiteChrome("media");
@@ -50,6 +51,20 @@ const CATEGORY_LABELS = {
   "lobby card / title card": "Lobby and title cards",
   "event photograph": "Event photographs",
 };
+// The rights filter lists every status the data uses, most reusable first,
+// so that each item is reachable by the label its own badge shows.
+const RIGHTS_ORDER = [
+  "public_domain",
+  "open_licence",
+  "provider_terms",
+  "permission_granted",
+  "own_work",
+  "copyright_undetermined",
+  "restricted",
+  "mixed_rights",
+  "permission_needed_or_fair_use_claimed",
+  "external_content_not_rehosted",
+];
 const filterToggle = document.querySelector("#media-filter-toggle");
 const advancedFilters = document.querySelector("#media-filter-options");
 const activeFilters = document.querySelector("#media-active-filters");
@@ -99,6 +114,19 @@ try {
   );
   const availablePeriods = new Set(media.flatMap(periodValues));
   addOptions(controls.period, PERIOD_ORDER.filter((value) => availablePeriods.has(value)), periodLabel, true);
+  const rightsCounts = new Map();
+  for (const item of media) {
+    if (item.rightsStatus) rightsCounts.set(item.rightsStatus, (rightsCounts.get(item.rightsStatus) || 0) + 1);
+  }
+  addOptions(
+    controls.rights,
+    [
+      ...RIGHTS_ORDER.filter((value) => rightsCounts.has(value)),
+      ...[...rightsCounts.keys()].filter((value) => !RIGHTS_ORDER.includes(value)).sort(),
+    ],
+    (value) => `${rightsLabel(value)} (${rightsCounts.get(value)})`,
+    true,
+  );
   const indexed = media.map((item) => ({
     ...item,
     _search: normalizeSearch([item.title, item.category, item.publicCaption, item.description, item.publicCreditLine, ...periodValues(item), item.category].filter(Boolean).join(" ")),

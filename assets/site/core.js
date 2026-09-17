@@ -353,9 +353,11 @@ export function sourceDateRoleLabel(value) {
 }
 
 const RIGHTS_LABELS = Object.freeze({
-  ok: "Rights documented",
   public_domain: "Public domain",
+  open_licence: "Open licence",
+  provider_terms: "Reuse under provider terms",
   permission_granted: "Permission granted",
+  own_work: "Own work",
   permission_needed_or_fair_use_claimed: "Rights not cleared",
   external_content_not_rehosted: "External content · not hosted",
   copyright_undetermined: "Copyright undetermined",
@@ -367,8 +369,6 @@ export function rightsLabel(status, note = "") {
   if (!status) return "Rights information";
   const key = String(status).toLowerCase().trim().replaceAll(" ", "_");
   const normalizedNote = String(note).toLowerCase();
-  if (key === "ok" && /public[ -]domain|rightsstatements\.org\/vocab\/noc/.test(normalizedNote)) return "Public domain";
-  if (key === "ok" && /reproduced by permission|permission (?:was )?granted|used with permission/.test(normalizedNote)) return "Permission granted";
   if (key === "permission_needed_or_fair_use_claimed" && /fair[ -]use/.test(normalizedNote)) return "Fair use";
   return RIGHTS_LABELS[key] || humanize(status);
 }
