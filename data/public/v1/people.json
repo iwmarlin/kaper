@@ -74,7 +74,6 @@
         "SRC0055",
         "SRC0066",
         "SRC0067",
-        "SRC0477",
         "SRC0556",
         "SRC0623"
       ],
@@ -5618,6 +5617,7 @@
       ],
       "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n50049756\nGND: https://d-nb.info/gnd/11880300X\nBnF: https://catalogue.bnf.fr/ark:/12148/cb12037457t\nBN: https://dbn.bn.org.pl/descriptor-details/9810671370505606\nVIAF: https://viaf.org/viaf/46777365\nISNI: https://isni.org/isni/0000000110260840\nWikidata: https://www.wikidata.org/wiki/Q376278",
       "sourceIds": [
+        "SRC0477",
         "SRC0658",
         "SRC0659"
       ],
@@ -5629,7 +5629,10 @@
       ],
       "birthYear": 1894,
       "deathYear": 1953,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "nameVariantIds": [
+        "PNV0072"
+      ]
     },
     {
       "id": "P160",
@@ -5964,6 +5967,7 @@
         "CON-S002-CON-P169"
       ],
       "sourceIds": [
+        "SRC0477",
         "SRC0795"
       ]
     },

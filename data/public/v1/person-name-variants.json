@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 64,
+  "count": 65,
   "records": [
     {
       "id": "PNV0001",
@@ -58,7 +58,6 @@
         "SRC0054",
         "SRC0066",
         "SRC0067",
-        "SRC0477",
         "SRC0623"
       ]
     },
@@ -1580,6 +1579,22 @@
       "sourceIds": [
         "SRC0847",
         "SRC0848"
+      ]
+    },
+    {
+      "id": "PNV0072",
+      "variantName": "J. Wim",
+      "variantType": "pseudonym",
+      "identityScope": "single_person",
+      "evidenceContext": "copyright_or_registration",
+      "attestedWording": "J. Wim",
+      "certainty": "confirmed",
+      "publicNote": "Pseudonym registered for Julian Tuwim in the ZAiKS membership list of 1 April 1927.",
+      "personIds": [
+        "P159"
+      ],
+      "sourceIds": [
+        "SRC0477"
       ]
     }
   ]
