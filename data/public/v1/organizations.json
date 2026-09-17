@@ -1827,7 +1827,7 @@
       ],
       "country": "United States",
       "slug": "american-heritage-center-university-of-wyoming",
-      "nameVariants": "manuscript (American Heritage Center, University of Wyoming)",
+      "nameVariants": "AHC; American Heritage Center",
       "sourceIds": [
         "SRC0009",
         "SRC0709",
@@ -1921,7 +1921,7 @@
       "city": [
         "London"
       ],
-      "country": "Great Britain",
+      "country": "United Kingdom",
       "slug": "dix-ltd",
       "nameVariants": "Dix",
       "contributionIds": [
@@ -3658,7 +3658,9 @@
       "types": [
         "record_company"
       ],
-      "city": "Warszawa",
+      "city": [
+        "Warsaw"
+      ],
       "country": "Poland",
       "publicNote": "The Biblioteka Narodowa catalogue identifies this Warsaw record company on Odeon issue O.236842. It is represented separately from the Odeon label and from the German company Carl Lindström AG.",
       "sourceIds": [
@@ -3675,7 +3677,7 @@
       "displayName": "Celebrity Productions, Inc.",
       "authorizedName": "Celebrity Productions, Inc.",
       "types": [
-        "film_production_company"
+        "film_studio"
       ],
       "city": [
         "Los Angeles"
