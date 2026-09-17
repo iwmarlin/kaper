@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 52,
+  "count": 54,
   "records": [
     {
       "id": "TE0001",
@@ -152,6 +152,56 @@
       ]
     },
     {
+      "id": "TE0044",
+      "slug": "university-admission-delayed-disciplinary-sanction",
+      "title": "University admission delayed by a disciplinary sanction",
+      "label": "Delayed UW matriculation",
+      "displayDate": "18 October 1919 / 6 February 1920",
+      "dateStart": "1919-10-18",
+      "dateEnd": "1920-02-06",
+      "datePrecision": "multi_date",
+      "sortDate": "1919-10-18",
+      "sortOrder": 4.5,
+      "displayMode": "point",
+      "eventType": "life",
+      "period": "warsaw",
+      "periodKey": "warsaw",
+      "category": "education",
+      "filterTags": [
+        "life",
+        "warsaw"
+      ],
+      "placeDisplay": "Warsaw",
+      "cityKey": "warsaw",
+      "shortDescription": "Kaper’s admission to the Faculty of Law at the University of Warsaw was delayed by a one-semester disciplinary sanction before his formal matriculation in February 1920.",
+      "longDescription": "University records show that Kaper applied to the Faculty of Law at the University of Warsaw in October 1919, but that the Matriculation Commission rejected his immediate admission after a disciplinary incident. The sanction was temporary: he later described it in his curriculum vitae as a one-semester relegation, and he was formally entered in the faculty album on 6 February 1920.",
+      "roles": [
+        "education_event",
+        "source_document"
+      ],
+      "personIds": [
+        "P009"
+      ],
+      "sourceIds": [
+        "SRC0110",
+        "SRC0490"
+      ],
+      "mediaIds": [
+        "M030",
+        "M094"
+      ],
+      "heroMediaIds": [
+        "M094"
+      ],
+      "placeIds": [
+        "PL001",
+        "PL008"
+      ],
+      "periods": [
+        "warsaw"
+      ]
+    },
+    {
       "id": "TE0004",
       "slug": "formal-matriculation-university-of-warsaw",
       "title": "Formal matriculation at the University of Warsaw",
@@ -196,6 +246,51 @@
       "placeIds": [
         "PL001",
         "PL008"
+      ],
+      "periods": [
+        "warsaw"
+      ]
+    },
+    {
+      "id": "TE0045",
+      "slug": "police-certificate-mosaic-religion",
+      "title": "Police certificate records Mosaic religion",
+      "label": "Mosaic religion recorded",
+      "displayDate": "21 April 1920",
+      "dateStart": "1920-04-21",
+      "datePrecision": "day",
+      "sortDate": "1920-04-21",
+      "sortOrder": 4.8,
+      "displayMode": "point",
+      "eventType": "life",
+      "period": "warsaw",
+      "periodKey": "warsaw",
+      "category": "religion_identity",
+      "filterTags": [
+        "life",
+        "warsaw"
+      ],
+      "placeDisplay": "Warsaw",
+      "cityKey": "warsaw",
+      "shortDescription": "A police certificate issued shortly before Kaper’s baptism recorded his religion as “Mosaic,” the official term then used for the Jewish faith.",
+      "longDescription": "The certificate of good conduct issued by the Warsaw State Police forms an important documentary link between Kaper’s university records and the later baptismal entry. It anchors the discussion of identity in administrative sources rather than retrospectively imposed narratives: Kaper appears in the record as a young Warsaw student from an assimilated Jewish family whose formal confessional status changed only a few months later.",
+      "roles": [
+        "identity_document",
+        "source_document"
+      ],
+      "personIds": [
+        "P009"
+      ],
+      "sourceIds": [
+        "SRC0110",
+        "SRC0490"
+      ],
+      "mediaIds": [
+        "M030"
+      ],
+      "placeIds": [
+        "PL001",
+        "PL007"
       ],
       "periods": [
         "warsaw"
@@ -393,6 +488,57 @@
       ]
     },
     {
+      "id": "TE0046",
+      "slug": "koszutski-girls-b-asper-pseudonym",
+      "title": "Koszutski Girls and the B. Asper pseudonym",
+      "label": "Koszutski Girls / B. Asper",
+      "displayDate": "1923",
+      "dateStart": "1923-07-01",
+      "datePrecision": "year",
+      "sortDate": "1923-07-01",
+      "sortOrder": 9.5,
+      "displayMode": "point",
+      "eventType": "career",
+      "period": "warsaw",
+      "periodKey": "warsaw",
+      "category": "warsaw_music",
+      "filterTags": [
+        "career",
+        "warsaw"
+      ],
+      "placeDisplay": "Warsaw",
+      "cityKey": "warsaw",
+      "shortDescription": "The manuscript Koszutski Girls shows Kaper already working with revue-dance conventions and using the B. Asper signature that would later appear in printed songs.",
+      "longDescription": "Koszutski Girls complicates a simple division between Kaper’s concert training and his later popular-song career. Although preserved as an autograph manuscript, the piece is tied to Warsaw revue culture and to the international fashion for “girls” troupes. Its practical performance marking and the signature “Mus. B. Asper” foreshadow the pseudonymous popular-song activity of 1926–1927, making it a useful early marker of Kaper’s movement between concert idiom, cabaret practice, and commercial entertainment.",
+      "featured": true,
+      "roles": [
+        "work_milestone",
+        "career_mechanism"
+      ],
+      "personIds": [
+        "P009"
+      ],
+      "sourceIds": [
+        "SRC0490",
+        "SRC0552"
+      ],
+      "workIds": [
+        "W-O002"
+      ],
+      "mediaIds": [
+        "M230"
+      ],
+      "heroMediaIds": [
+        "M230"
+      ],
+      "placeIds": [
+        "PL001"
+      ],
+      "periods": [
+        "warsaw"
+      ]
+    },
+    {
       "id": "TE0011",
       "slug": "1924-application-to-faculty-of-philosophy",
       "title": "Application to Faculty of Philosophy",
@@ -536,6 +682,70 @@
       ]
     },
     {
+      "id": "TE0047",
+      "slug": "entry-into-warsaw-popular-song-craig-wlast-altschuler",
+      "title": "Entry into Warsaw popular song: Craig, Włast, and Altschuler",
+      "label": "First Warsaw song network",
+      "displayDate": "c. 1925–1926",
+      "dateStart": "1925-12-01",
+      "dateEnd": "1926-12-31",
+      "datePrecision": "range_approx",
+      "sortDate": "1925-12-01",
+      "sortOrder": 13.6,
+      "displayMode": "cluster",
+      "eventType": "career",
+      "period": "warsaw",
+      "periodKey": "warsaw",
+      "category": "professional_network",
+      "filterTags": [
+        "career",
+        "warsaw"
+      ],
+      "placeDisplay": "Warsaw",
+      "cityKey": "warsaw",
+      "shortDescription": "Kaper later traced his entry into popular song to a Warsaw network linking “Henry Craig,” Andrzej Włast, cabaret performance, and Altschuler’s publishing house.",
+      "longDescription": "Kaper’s own account presents the move into songwriting as accidental: a friend whom he called “Henry Craig” introduced him to a leading Warsaw lyricist identifiable as Andrzej Włast, after which the song reached the cabaret stage and then print. Read together with the surviving printed songs, this episode explains how a composer trained in concert idioms entered the commercial structures of interwar Warsaw popular song: lyricist, cabaret performer, publisher, and sheet-music circulation.",
+      "featured": true,
+      "roles": [
+        "career_milestone",
+        "professional_network",
+        "publication_event",
+        "career_mechanism"
+      ],
+      "personIds": [
+        "P003",
+        "P009",
+        "P119"
+      ],
+      "sourceIds": [
+        "SRC0053",
+        "SRC0054",
+        "SRC0055",
+        "SRC0490"
+      ],
+      "workIds": [
+        "W-S002",
+        "W-S005",
+        "W-S006"
+      ],
+      "mediaIds": [
+        "M035",
+        "M067",
+        "M125",
+        "M126",
+        "M206"
+      ],
+      "heroMediaIds": [
+        "M067"
+      ],
+      "placeIds": [
+        "PL001"
+      ],
+      "periods": [
+        "warsaw"
+      ]
+    },
+    {
       "id": "TE0014",
       "slug": "1926-earliest-published-cabaret-songs",
       "title": "Earliest published cabaret songs",
@@ -649,6 +859,59 @@
       "routePlaceIds": [
         "PL001",
         "PL002"
+      ]
+    },
+    {
+      "id": "TE0048",
+      "slug": "earliest-documented-rotter-collaboration",
+      "title": "Earliest documented collaboration with Fritz Rotter",
+      "label": "First Rotter trace",
+      "displayDate": "1926",
+      "dateStart": "1926-07-01",
+      "datePrecision": "year",
+      "sortDate": "1926-07-01",
+      "sortOrder": 15.6,
+      "displayMode": "point",
+      "eventType": "career",
+      "period": "european",
+      "periodKey": "european",
+      "category": "professional_network",
+      "filterTags": [
+        "career",
+        "europe"
+      ],
+      "placeDisplay": "Berlin",
+      "cityKey": "berlin",
+      "shortDescription": "A 1926 manuscript of Hätt’ ich einen Kammerdiener documents an early collaboration between Kaper and Fritz Rotter, before sound film became his main professional platform.",
+      "longDescription": "The manuscript credit for Hätt’ ich einen Kammerdiener places Kaper beside Fritz Rotter at an early point in his Berlin years. It is an important transitional event: Rotter linked Kaper to the practical economy of the German hit song—publishers, performers, promotion, and sheet-music circulation—before those skills were absorbed into the machinery of early sound film. It also explains why Rotter later became the mediator who brought Kaper and Walter Jurmann together.",
+      "roles": [
+        "professional_network",
+        "career_mechanism",
+        "publication_event"
+      ],
+      "personIds": [
+        "P009",
+        "P020",
+        "P077"
+      ],
+      "sourceIds": [
+        "SRC0490"
+      ],
+      "workIds": [
+        "W-S004"
+      ],
+      "mediaIds": [
+        "M031",
+        "M043"
+      ],
+      "heroMediaIds": [
+        "M043"
+      ],
+      "placeIds": [
+        "PL002"
+      ],
+      "periods": [
+        "european"
       ]
     },
     {
@@ -1188,6 +1451,62 @@
       ]
     },
     {
+      "id": "TE0049",
+      "slug": "alraune-first-documented-sound-film-commission",
+      "title": "Alraune as Kaper’s first documented sound-film commission",
+      "label": "Alraune and sound film",
+      "displayDate": "1930",
+      "dateStart": "1930-07-01",
+      "datePrecision": "year",
+      "sortDate": "1930-07-01",
+      "sortOrder": 25.1,
+      "displayMode": "point",
+      "eventType": "career",
+      "period": "european",
+      "periodKey": "european",
+      "category": "film_career",
+      "filterTags": [
+        "career",
+        "europe"
+      ],
+      "placeDisplay": "Berlin",
+      "cityKey": "berlin",
+      "shortDescription": "Alraune marks Kaper’s first clearly documented entry into early sound film, through songs rather than background scoring in the later Hollywood sense.",
+      "longDescription": "Kaper’s first documented sound-film work belongs to the early phase of cinema in which the film composer’s task was still closely tied to song production. Alraune, Richard Oswald’s 1930 sound remake, did not yet require the later Hollywood model of continuous underscoring. Instead, Kaper contributed songs that could serve the film while also entering the wider economy of printed scores, records, performers, and radio.",
+      "featured": true,
+      "roles": [
+        "career_milestone",
+        "work_milestone",
+        "career_mechanism"
+      ],
+      "personIds": [
+        "P009",
+        "P066"
+      ],
+      "sourceIds": [
+        "SRC0322",
+        "SRC0404",
+        "SRC0490"
+      ],
+      "workIds": [
+        "W-F002"
+      ],
+      "mediaIds": [
+        "M016",
+        "M031",
+        "M036"
+      ],
+      "heroMediaIds": [
+        "M036"
+      ],
+      "placeIds": [
+        "PL002"
+      ],
+      "periods": [
+        "european"
+      ]
+    },
+    {
       "id": "TE0026",
       "slug": "1931-meeting-walter-jurmann",
       "title": "Meeting Walter Jurmann",
@@ -1247,6 +1566,138 @@
       ]
     },
     {
+      "id": "TE0050",
+      "slug": "sangerfilm-star-singer-circuit",
+      "title": "The Sängerfilm and the star-singer circuit",
+      "label": "Sängerfilm circuit",
+      "displayDate": "1931–1933",
+      "dateStart": "1931-07-01",
+      "dateEnd": "1933-12-31",
+      "datePrecision": "range",
+      "sortDate": "1931-07-01",
+      "sortOrder": 26.5,
+      "displayMode": "period band",
+      "eventType": "career",
+      "period": "european",
+      "periodKey": "european",
+      "category": "film_career",
+      "filterTags": [
+        "career",
+        "europe"
+      ],
+      "placeDisplay": "Berlin; Vienna; Paris",
+      "cityKey": "europe",
+      "shortDescription": "Kaper and Jurmann’s songs entered the Sängerfilm economy, where screen performance, star singers, sheet music, records, radio, and dance-band repertory reinforced one another.",
+      "longDescription": "The Kaper–Jurmann partnership developed inside the commercial ecology of early European musical film. Their songs for productions associated with singers such as Richard Tauber and Jan Kiepura were not simply film numbers: they were designed to travel beyond the screen as printed music, recordings, radio items, and repertory for performers. This star-singer circuit explains why the duo’s European experience later appeared useful to MGM, which read it through the promotional language of Viennese musical competence.",
+      "roles": [
+        "industry_context",
+        "career_mechanism",
+        "professional_network"
+      ],
+      "personIds": [
+        "P009",
+        "P077",
+        "P117",
+        "P118"
+      ],
+      "sourceIds": [
+        "SRC0490",
+        "SRC0491",
+        "SRC0551"
+      ],
+      "workIds": [
+        "W-F007",
+        "W-F011",
+        "W-F023",
+        "W-S076"
+      ],
+      "mediaIds": [
+        "M031",
+        "M155",
+        "M167",
+        "M192",
+        "M229"
+      ],
+      "heroMediaIds": [
+        "M229"
+      ],
+      "placeIds": [
+        "PL002",
+        "PL003",
+        "PL030"
+      ],
+      "periods": [
+        "european"
+      ]
+    },
+    {
+      "id": "TE0051",
+      "slug": "multiple-language-versions-transnational-production",
+      "title": "Multiple-language versions and transnational sound-film production",
+      "label": "Transnational sound film",
+      "displayDate": "1931–1933",
+      "dateStart": "1931-09-01",
+      "dateEnd": "1933-12-31",
+      "datePrecision": "range",
+      "sortDate": "1931-09-01",
+      "sortOrder": 26.6,
+      "displayMode": "period band",
+      "eventType": "career",
+      "period": "european",
+      "periodKey": "european",
+      "category": "film_career",
+      "filterTags": [
+        "career",
+        "europe"
+      ],
+      "placeDisplay": "Berlin; Paris; Vienna",
+      "cityKey": "europe",
+      "shortDescription": "Before 1933, Kaper and Jurmann were already working within the multiple-language version system that linked Babelsberg, Joinville, Vienna, and other European production centres.",
+      "longDescription": "The practice of producing parallel language versions was one of the key industrial conditions of early sound cinema. It allowed music to move more easily than dialogue across national markets, even when lyrics, singers, and performance contexts changed. Kaper and Jurmann’s work in this system gave their songs and professional skills a transnational character before their forced departure from Germany.",
+      "roles": [
+        "industry_context",
+        "career_mechanism",
+        "migration_event"
+      ],
+      "personIds": [
+        "P009",
+        "P077"
+      ],
+      "sourceIds": [
+        "SRC0490",
+        "SRC0491"
+      ],
+      "workIds": [
+        "W-F005",
+        "W-F016",
+        "W-F018",
+        "W-F019",
+        "W-F020"
+      ],
+      "mediaIds": [
+        "M031",
+        "M150",
+        "M157",
+        "M186",
+        "M189",
+        "M190"
+      ],
+      "heroMediaIds": [
+        "M189"
+      ],
+      "placeIds": [
+        "PL002",
+        "PL003",
+        "PL030",
+        "PL031",
+        "PL032",
+        "PL037"
+      ],
+      "periods": [
+        "european"
+      ]
+    },
+    {
       "id": "TE0027",
       "slug": "1932-flourishing-berlin-collaboration",
       "title": "Flourishing Berlin collaboration",
@@ -1298,6 +1749,84 @@
         "PL002",
         "PL033",
         "PL034"
+      ],
+      "periods": [
+        "european"
+      ]
+    },
+    {
+      "id": "TE0056",
+      "slug": "1933-ufa-resolves-to-terminate-the-contracts-of-its-jewish-staff",
+      "title": "Ufa resolves to terminate the contracts of its Jewish staff",
+      "label": "29 March 1933 · Ufa terminates Jewish contracts",
+      "displayDate": "29 March 1933",
+      "dateStart": "1933-03-29",
+      "datePrecision": "day",
+      "sortDate": "1933-03-29",
+      "sortOrder": 27.4,
+      "displayMode": "point",
+      "eventType": "career",
+      "period": "european",
+      "periodKey": "european",
+      "category": "film_career",
+      "filterTags": [
+        "career",
+        "europe"
+      ],
+      "shortDescription": "One day after Goebbels addressed the film industry at the Hotel Kaiserhof, the Ufa board resolved to end the contracts of its Jewish staff.",
+      "longDescription": "On 28 March 1933 Joseph Goebbels addressed representatives of the film industry at the Hotel Kaiserhof in Berlin. The next day the board of Universum-Film AG resolved in principle that contracts with its Jewish employees were to be terminated wherever possible, each board member deciding who in his department was to go at once and who was to be removed “im Wege eines langsamen Abbaues”, through a gradual reduction. The resolution was not limited to German citizens, so it reached Kaper and Jurmann as well, and its effect on their work was visible during the production of Kind, ich freu’ mich auf Dein Kommen.",
+      "featured": false,
+      "roles": [
+        "industry_context",
+        "career_mechanism"
+      ],
+      "personIds": [
+        "P009",
+        "P077"
+      ],
+      "sourceIds": [
+        "SRC0490",
+        "SRC0491"
+      ],
+      "organizationIds": [
+        "ORG011"
+      ],
+      "periods": [
+        "european"
+      ]
+    },
+    {
+      "id": "TE0057",
+      "slug": "1933-german-film-redefined-by-citizenship-and-origin",
+      "title": "“German film” redefined by citizenship and origin",
+      "label": "28 June 1933 · “German film” redefined",
+      "displayDate": "28 June 1933",
+      "dateStart": "1933-06-28",
+      "datePrecision": "day",
+      "sortDate": "1933-06-28",
+      "sortOrder": 27.6,
+      "displayMode": "point",
+      "eventType": "career",
+      "period": "european",
+      "periodKey": "european",
+      "category": "film_career",
+      "filterTags": [
+        "career",
+        "europe"
+      ],
+      "shortDescription": "An amendment tied the definition of a “German film” to the citizenship and origin of everyone working on it, closing the German market to Kaper and Jurmann.",
+      "longDescription": "Two measures turned exclusion into law. The implementing ordinance of 1 July 1932 required that 75 per cent of a film production’s personnel be German, which already told against foreign composers without naming Jews. Its amendment of 28 June 1933 went further and redefined a “German film” by the German citizenship and origin of all those involved in the production. As Jewish citizens of Poland and Austria, Kaper and Jurmann were caught by both conditions at once, and the German market was closed to them.",
+      "featured": false,
+      "roles": [
+        "industry_context",
+        "legal_status_event"
+      ],
+      "personIds": [
+        "P009",
+        "P077"
+      ],
+      "sourceIds": [
+        "SRC0491"
       ],
       "periods": [
         "european"
@@ -1590,59 +2119,64 @@
       ]
     },
     {
-      "id": "TE0034",
-      "slug": "19341936-european-afterlife",
-      "title": "European afterlife",
-      "label": "1934–1936 · European afterlife",
-      "displayDate": "1934–1936",
-      "dateStart": "1934-01-01",
-      "dateEnd": "1936-12-31",
-      "datePrecision": "range",
-      "sortDate": "1934-11-20",
-      "sortOrder": 35.6,
-      "displayMode": "period band",
+      "id": "TE0052",
+      "slug": "ninon-mayer-ritz-meeting-mgm-contract",
+      "title": "Ninon reaches Louis B. Mayer: the Ritz meeting and MGM contract",
+      "label": "Ninon opens the MGM path",
+      "displayDate": "August 1934",
+      "dateStart": "1934-08-07",
+      "datePrecision": "circa_year",
+      "sortDate": "1934-08-07",
+      "sortOrder": 33.5,
+      "displayMode": "point",
       "eventType": "career",
       "period": "european",
       "periodKey": "european",
-      "category": "reception",
+      "category": "migration",
       "filterTags": [
         "career",
         "europe"
       ],
-      "placeDisplay": "Berlin / Paris",
-      "cityKey": "europe",
-      "shortDescription": "Jurmann–Kaper films and songs continue circulating in Europe after the composers leave for America.",
-      "longDescription": "While the composers head to America, their European films and songs continue to circulate. In September 1934, “Madame wird kinderlieb” still plays in Stuttgart with Jurmann and Kaper credited — despite Nazi purges. In France, “Tout pour l’amour” with Kiepura screens as late as 1936; the Journal de Vichy calls their music “infiniment plaisante.” The inconsistency of the exclusion is visible earlier still: on 25 August 1933 the Westfälische Zeitung advertised Madame wird kinderlieb with the credit “Musik von Jurmann und Kaper” on the same page as an advertisement for a racist handbook of German ethnology.",
+      "placeDisplay": "Paris",
+      "cityKey": "paris",
+      "shortDescription": "The European success of Ninon reportedly brought Kaper and Jurmann to the attention of Louis B. Mayer, leading to a meeting at the Hôtel Ritz and an MGM contract.",
+      "longDescription": "Kaper later recalled that the success of Ninon—written for Tout pour l’amour, the French version of Ein Lied für Dich—was the turning point that opened the path to Hollywood. Louis B. Mayer reached Paris on 7 August 1934, on a European trip that combined business with the search for new talent, and reportedly asked to meet the song’s authors, heard them perform at the Hôtel Ritz, and offered a seven-year MGM contract.",
+      "featured": true,
       "roles": [
-        "reception_publicity",
-        "publication_event"
+        "career_milestone",
+        "migration_event",
+        "professional_network"
       ],
       "personIds": [
         "P009",
-        "P077"
+        "P077",
+        "P116",
+        "P117"
       ],
       "sourceIds": [
-        "SRC0083",
-        "SRC0084",
-        "SRC0491"
+        "SRC0491",
+        "SRC0494"
       ],
       "workIds": [
-        "W-F025"
+        "W-F023",
+        "W-F025",
+        "W-S076",
+        "W-S077"
       ],
       "mediaIds": [
-        "M031",
-        "M063"
+        "M034",
+        "M051"
       ],
       "heroMediaIds": [
-        "M063"
+        "M051"
       ],
       "placeIds": [
-        "PL002",
-        "PL003"
+        "PL003",
+        "PL023",
+        "PL038"
       ],
       "periods": [
-        "european",
-        "hollywood"
+        "european"
       ]
     },
     {
@@ -1704,6 +2238,125 @@
         "PL026",
         "PL025",
         "PL004"
+      ]
+    },
+    {
+      "id": "TE0053",
+      "slug": "mgm-markets-kaper-jurmann-viennese-composers",
+      "title": "MGM markets Kaper and Jurmann as “Viennese composers”",
+      "label": "MGM’s “Viennese” label",
+      "displayDate": "20 November–8 December 1934",
+      "dateStart": "1934-11-20",
+      "dateEnd": "1934-12-08",
+      "datePrecision": "range",
+      "sortDate": "1934-11-20",
+      "sortOrder": 35.5,
+      "displayMode": "point",
+      "eventType": "career",
+      "period": "european",
+      "periodKey": "european",
+      "category": "reception",
+      "filterTags": [
+        "career",
+        "hollywood"
+      ],
+      "placeDisplay": "Hollywood/Los Angeles",
+      "cityKey": "hollywood",
+      "shortDescription": "American studio publicity recast Kaper and Jurmann as a Viennese composing team, turning “Vienna” into a promotional brand rather than a biographical fact.",
+      "longDescription": "Soon after their arrival at MGM, the American press and studio publicity presented Kaper and Jurmann as “Viennese composers”. The label suited MGM’s first use of the duo in Escapade, a Hollywood remake of the Viennese film Maskerade, but it was biographically misleading for Kaper, whose career had developed in Warsaw and Berlin. The event marks the moment when Hollywood began to translate his European professional history into a marketable studio identity. The label outlasted their arrival: in December 1936 the Viennese paper Telegraf itself wrote of “die Wiener Komponisten Kaper und Jurmann”.",
+      "featured": true,
+      "roles": [
+        "reception_publicity",
+        "career_milestone"
+      ],
+      "personIds": [
+        "P009",
+        "P077",
+        "P116"
+      ],
+      "sourceIds": [
+        "SRC0491",
+        "SRC0494",
+        "SRC0550",
+        "SRC0859"
+      ],
+      "workIds": [
+        "W-F033",
+        "W-S219"
+      ],
+      "mediaIds": [
+        "M034",
+        "M051",
+        "M228"
+      ],
+      "heroMediaIds": [
+        "M228"
+      ],
+      "placeIds": [
+        "PL004",
+        "PL005",
+        "PL006",
+        "PL012",
+        "PL030"
+      ],
+      "periods": [
+        "european"
+      ]
+    },
+    {
+      "id": "TE0034",
+      "slug": "19341936-european-afterlife",
+      "title": "European afterlife",
+      "label": "1934–1936 · European afterlife",
+      "displayDate": "1934–1936",
+      "dateStart": "1934-01-01",
+      "dateEnd": "1936-12-31",
+      "datePrecision": "range",
+      "sortDate": "1934-11-20",
+      "sortOrder": 35.6,
+      "displayMode": "period band",
+      "eventType": "career",
+      "period": "european",
+      "periodKey": "european",
+      "category": "reception",
+      "filterTags": [
+        "career",
+        "europe"
+      ],
+      "placeDisplay": "Berlin / Paris",
+      "cityKey": "europe",
+      "shortDescription": "Jurmann–Kaper films and songs continue circulating in Europe after the composers leave for America.",
+      "longDescription": "While the composers head to America, their European films and songs continue to circulate. In September 1934, “Madame wird kinderlieb” still plays in Stuttgart with Jurmann and Kaper credited — despite Nazi purges. In France, “Tout pour l’amour” with Kiepura screens as late as 1936; the Journal de Vichy calls their music “infiniment plaisante.” The inconsistency of the exclusion is visible earlier still: on 25 August 1933 the Westfälische Zeitung advertised Madame wird kinderlieb with the credit “Musik von Jurmann und Kaper” on the same page as an advertisement for a racist handbook of German ethnology.",
+      "roles": [
+        "reception_publicity",
+        "publication_event"
+      ],
+      "personIds": [
+        "P009",
+        "P077"
+      ],
+      "sourceIds": [
+        "SRC0083",
+        "SRC0084",
+        "SRC0491"
+      ],
+      "workIds": [
+        "W-F025"
+      ],
+      "mediaIds": [
+        "M031",
+        "M063"
+      ],
+      "heroMediaIds": [
+        "M063"
+      ],
+      "placeIds": [
+        "PL002",
+        "PL003"
+      ],
+      "periods": [
+        "european",
+        "hollywood"
       ]
     },
     {
@@ -2149,581 +2802,6 @@
       ],
       "periods": [
         "hollywood"
-      ]
-    },
-    {
-      "id": "TE0044",
-      "slug": "university-admission-delayed-disciplinary-sanction",
-      "title": "University admission delayed by a disciplinary sanction",
-      "label": "Delayed UW matriculation",
-      "displayDate": "18 October 1919 / 6 February 1920",
-      "dateStart": "1919-10-18",
-      "dateEnd": "1920-02-06",
-      "datePrecision": "multi_date",
-      "sortDate": "1919-10-18",
-      "sortOrder": 4.5,
-      "displayMode": "point",
-      "eventType": "life",
-      "period": "warsaw",
-      "periodKey": "warsaw",
-      "category": "education",
-      "filterTags": [
-        "life",
-        "warsaw"
-      ],
-      "placeDisplay": "Warsaw",
-      "cityKey": "warsaw",
-      "shortDescription": "Kaper’s admission to the Faculty of Law at the University of Warsaw was delayed by a one-semester disciplinary sanction before his formal matriculation in February 1920.",
-      "longDescription": "University records show that Kaper applied to the Faculty of Law at the University of Warsaw in October 1919, but that the Matriculation Commission rejected his immediate admission after a disciplinary incident. The sanction was temporary: he later described it in his curriculum vitae as a one-semester relegation, and he was formally entered in the faculty album on 6 February 1920.",
-      "roles": [
-        "education_event",
-        "source_document"
-      ],
-      "personIds": [
-        "P009"
-      ],
-      "sourceIds": [
-        "SRC0110",
-        "SRC0490"
-      ],
-      "mediaIds": [
-        "M030",
-        "M094"
-      ],
-      "heroMediaIds": [
-        "M094"
-      ],
-      "placeIds": [
-        "PL001",
-        "PL008"
-      ],
-      "periods": [
-        "warsaw"
-      ]
-    },
-    {
-      "id": "TE0045",
-      "slug": "police-certificate-mosaic-religion",
-      "title": "Police certificate records Mosaic religion",
-      "label": "Mosaic religion recorded",
-      "displayDate": "21 April 1920",
-      "dateStart": "1920-04-21",
-      "datePrecision": "day",
-      "sortDate": "1920-04-21",
-      "sortOrder": 4.8,
-      "displayMode": "point",
-      "eventType": "life",
-      "period": "warsaw",
-      "periodKey": "warsaw",
-      "category": "religion_identity",
-      "filterTags": [
-        "life",
-        "warsaw"
-      ],
-      "placeDisplay": "Warsaw",
-      "cityKey": "warsaw",
-      "shortDescription": "A police certificate issued shortly before Kaper’s baptism recorded his religion as “Mosaic,” the official term then used for the Jewish faith.",
-      "longDescription": "The certificate of good conduct issued by the Warsaw State Police forms an important documentary link between Kaper’s university records and the later baptismal entry. It anchors the discussion of identity in administrative sources rather than retrospectively imposed narratives: Kaper appears in the record as a young Warsaw student from an assimilated Jewish family whose formal confessional status changed only a few months later.",
-      "roles": [
-        "identity_document",
-        "source_document"
-      ],
-      "personIds": [
-        "P009"
-      ],
-      "sourceIds": [
-        "SRC0110",
-        "SRC0490"
-      ],
-      "mediaIds": [
-        "M030"
-      ],
-      "placeIds": [
-        "PL001",
-        "PL007"
-      ],
-      "periods": [
-        "warsaw"
-      ]
-    },
-    {
-      "id": "TE0046",
-      "slug": "koszutski-girls-b-asper-pseudonym",
-      "title": "Koszutski Girls and the B. Asper pseudonym",
-      "label": "Koszutski Girls / B. Asper",
-      "displayDate": "1923",
-      "dateStart": "1923-07-01",
-      "datePrecision": "year",
-      "sortDate": "1923-07-01",
-      "sortOrder": 9.5,
-      "displayMode": "point",
-      "eventType": "career",
-      "period": "warsaw",
-      "periodKey": "warsaw",
-      "category": "warsaw_music",
-      "filterTags": [
-        "career",
-        "warsaw"
-      ],
-      "placeDisplay": "Warsaw",
-      "cityKey": "warsaw",
-      "shortDescription": "The manuscript Koszutski Girls shows Kaper already working with revue-dance conventions and using the B. Asper signature that would later appear in printed songs.",
-      "longDescription": "Koszutski Girls complicates a simple division between Kaper’s concert training and his later popular-song career. Although preserved as an autograph manuscript, the piece is tied to Warsaw revue culture and to the international fashion for “girls” troupes. Its practical performance marking and the signature “Mus. B. Asper” foreshadow the pseudonymous popular-song activity of 1926–1927, making it a useful early marker of Kaper’s movement between concert idiom, cabaret practice, and commercial entertainment.",
-      "featured": true,
-      "roles": [
-        "work_milestone",
-        "career_mechanism"
-      ],
-      "personIds": [
-        "P009"
-      ],
-      "sourceIds": [
-        "SRC0490",
-        "SRC0552"
-      ],
-      "workIds": [
-        "W-O002"
-      ],
-      "mediaIds": [
-        "M230"
-      ],
-      "heroMediaIds": [
-        "M230"
-      ],
-      "placeIds": [
-        "PL001"
-      ],
-      "periods": [
-        "warsaw"
-      ]
-    },
-    {
-      "id": "TE0047",
-      "slug": "entry-into-warsaw-popular-song-craig-wlast-altschuler",
-      "title": "Entry into Warsaw popular song: Craig, Włast, and Altschuler",
-      "label": "First Warsaw song network",
-      "displayDate": "c. 1925–1926",
-      "dateStart": "1925-12-01",
-      "dateEnd": "1926-12-31",
-      "datePrecision": "range_approx",
-      "sortDate": "1925-12-01",
-      "sortOrder": 13.6,
-      "displayMode": "cluster",
-      "eventType": "career",
-      "period": "warsaw",
-      "periodKey": "warsaw",
-      "category": "professional_network",
-      "filterTags": [
-        "career",
-        "warsaw"
-      ],
-      "placeDisplay": "Warsaw",
-      "cityKey": "warsaw",
-      "shortDescription": "Kaper later traced his entry into popular song to a Warsaw network linking “Henry Craig,” Andrzej Włast, cabaret performance, and Altschuler’s publishing house.",
-      "longDescription": "Kaper’s own account presents the move into songwriting as accidental: a friend whom he called “Henry Craig” introduced him to a leading Warsaw lyricist identifiable as Andrzej Włast, after which the song reached the cabaret stage and then print. Read together with the surviving printed songs, this episode explains how a composer trained in concert idioms entered the commercial structures of interwar Warsaw popular song: lyricist, cabaret performer, publisher, and sheet-music circulation.",
-      "featured": true,
-      "roles": [
-        "career_milestone",
-        "professional_network",
-        "publication_event",
-        "career_mechanism"
-      ],
-      "personIds": [
-        "P003",
-        "P009",
-        "P119"
-      ],
-      "sourceIds": [
-        "SRC0053",
-        "SRC0054",
-        "SRC0055",
-        "SRC0490"
-      ],
-      "workIds": [
-        "W-S002",
-        "W-S005",
-        "W-S006"
-      ],
-      "mediaIds": [
-        "M035",
-        "M067",
-        "M125",
-        "M126",
-        "M206"
-      ],
-      "heroMediaIds": [
-        "M067"
-      ],
-      "placeIds": [
-        "PL001"
-      ],
-      "periods": [
-        "warsaw"
-      ]
-    },
-    {
-      "id": "TE0048",
-      "slug": "earliest-documented-rotter-collaboration",
-      "title": "Earliest documented collaboration with Fritz Rotter",
-      "label": "First Rotter trace",
-      "displayDate": "1926",
-      "dateStart": "1926-07-01",
-      "datePrecision": "year",
-      "sortDate": "1926-07-01",
-      "sortOrder": 15.6,
-      "displayMode": "point",
-      "eventType": "career",
-      "period": "european",
-      "periodKey": "european",
-      "category": "professional_network",
-      "filterTags": [
-        "career",
-        "europe"
-      ],
-      "placeDisplay": "Berlin",
-      "cityKey": "berlin",
-      "shortDescription": "A 1926 manuscript of Hätt’ ich einen Kammerdiener documents an early collaboration between Kaper and Fritz Rotter, before sound film became his main professional platform.",
-      "longDescription": "The manuscript credit for Hätt’ ich einen Kammerdiener places Kaper beside Fritz Rotter at an early point in his Berlin years. It is an important transitional event: Rotter linked Kaper to the practical economy of the German hit song—publishers, performers, promotion, and sheet-music circulation—before those skills were absorbed into the machinery of early sound film. It also explains why Rotter later became the mediator who brought Kaper and Walter Jurmann together.",
-      "roles": [
-        "professional_network",
-        "career_mechanism",
-        "publication_event"
-      ],
-      "personIds": [
-        "P009",
-        "P020",
-        "P077"
-      ],
-      "sourceIds": [
-        "SRC0490"
-      ],
-      "workIds": [
-        "W-S004"
-      ],
-      "mediaIds": [
-        "M031",
-        "M043"
-      ],
-      "heroMediaIds": [
-        "M043"
-      ],
-      "placeIds": [
-        "PL002"
-      ],
-      "periods": [
-        "european"
-      ]
-    },
-    {
-      "id": "TE0049",
-      "slug": "alraune-first-documented-sound-film-commission",
-      "title": "Alraune as Kaper’s first documented sound-film commission",
-      "label": "Alraune and sound film",
-      "displayDate": "1930",
-      "dateStart": "1930-07-01",
-      "datePrecision": "year",
-      "sortDate": "1930-07-01",
-      "sortOrder": 25.1,
-      "displayMode": "point",
-      "eventType": "career",
-      "period": "european",
-      "periodKey": "european",
-      "category": "film_career",
-      "filterTags": [
-        "career",
-        "europe"
-      ],
-      "placeDisplay": "Berlin",
-      "cityKey": "berlin",
-      "shortDescription": "Alraune marks Kaper’s first clearly documented entry into early sound film, through songs rather than background scoring in the later Hollywood sense.",
-      "longDescription": "Kaper’s first documented sound-film work belongs to the early phase of cinema in which the film composer’s task was still closely tied to song production. Alraune, Richard Oswald’s 1930 sound remake, did not yet require the later Hollywood model of continuous underscoring. Instead, Kaper contributed songs that could serve the film while also entering the wider economy of printed scores, records, performers, and radio.",
-      "featured": true,
-      "roles": [
-        "career_milestone",
-        "work_milestone",
-        "career_mechanism"
-      ],
-      "personIds": [
-        "P009",
-        "P066"
-      ],
-      "sourceIds": [
-        "SRC0322",
-        "SRC0404",
-        "SRC0490"
-      ],
-      "workIds": [
-        "W-F002"
-      ],
-      "mediaIds": [
-        "M016",
-        "M031",
-        "M036"
-      ],
-      "heroMediaIds": [
-        "M036"
-      ],
-      "placeIds": [
-        "PL002"
-      ],
-      "periods": [
-        "european"
-      ]
-    },
-    {
-      "id": "TE0050",
-      "slug": "sangerfilm-star-singer-circuit",
-      "title": "The Sängerfilm and the star-singer circuit",
-      "label": "Sängerfilm circuit",
-      "displayDate": "1931–1933",
-      "dateStart": "1931-07-01",
-      "dateEnd": "1933-12-31",
-      "datePrecision": "range",
-      "sortDate": "1931-07-01",
-      "sortOrder": 26.5,
-      "displayMode": "period band",
-      "eventType": "career",
-      "period": "european",
-      "periodKey": "european",
-      "category": "film_career",
-      "filterTags": [
-        "career",
-        "europe"
-      ],
-      "placeDisplay": "Berlin; Vienna; Paris",
-      "cityKey": "europe",
-      "shortDescription": "Kaper and Jurmann’s songs entered the Sängerfilm economy, where screen performance, star singers, sheet music, records, radio, and dance-band repertory reinforced one another.",
-      "longDescription": "The Kaper–Jurmann partnership developed inside the commercial ecology of early European musical film. Their songs for productions associated with singers such as Richard Tauber and Jan Kiepura were not simply film numbers: they were designed to travel beyond the screen as printed music, recordings, radio items, and repertory for performers. This star-singer circuit explains why the duo’s European experience later appeared useful to MGM, which read it through the promotional language of Viennese musical competence.",
-      "roles": [
-        "industry_context",
-        "career_mechanism",
-        "professional_network"
-      ],
-      "personIds": [
-        "P009",
-        "P077",
-        "P117",
-        "P118"
-      ],
-      "sourceIds": [
-        "SRC0490",
-        "SRC0491",
-        "SRC0551"
-      ],
-      "workIds": [
-        "W-F007",
-        "W-F011",
-        "W-F023",
-        "W-S076"
-      ],
-      "mediaIds": [
-        "M031",
-        "M155",
-        "M167",
-        "M192",
-        "M229"
-      ],
-      "heroMediaIds": [
-        "M229"
-      ],
-      "placeIds": [
-        "PL002",
-        "PL003",
-        "PL030"
-      ],
-      "periods": [
-        "european"
-      ]
-    },
-    {
-      "id": "TE0051",
-      "slug": "multiple-language-versions-transnational-production",
-      "title": "Multiple-language versions and transnational sound-film production",
-      "label": "Transnational sound film",
-      "displayDate": "1931–1933",
-      "dateStart": "1931-09-01",
-      "dateEnd": "1933-12-31",
-      "datePrecision": "range",
-      "sortDate": "1931-09-01",
-      "sortOrder": 26.6,
-      "displayMode": "period band",
-      "eventType": "career",
-      "period": "european",
-      "periodKey": "european",
-      "category": "film_career",
-      "filterTags": [
-        "career",
-        "europe"
-      ],
-      "placeDisplay": "Berlin; Paris; Vienna",
-      "cityKey": "europe",
-      "shortDescription": "Before 1933, Kaper and Jurmann were already working within the multiple-language version system that linked Babelsberg, Joinville, Vienna, and other European production centres.",
-      "longDescription": "The practice of producing parallel language versions was one of the key industrial conditions of early sound cinema. It allowed music to move more easily than dialogue across national markets, even when lyrics, singers, and performance contexts changed. Kaper and Jurmann’s work in this system gave their songs and professional skills a transnational character before their forced departure from Germany.",
-      "roles": [
-        "industry_context",
-        "career_mechanism",
-        "migration_event"
-      ],
-      "personIds": [
-        "P009",
-        "P077"
-      ],
-      "sourceIds": [
-        "SRC0490",
-        "SRC0491"
-      ],
-      "workIds": [
-        "W-F005",
-        "W-F016",
-        "W-F018",
-        "W-F019",
-        "W-F020"
-      ],
-      "mediaIds": [
-        "M031",
-        "M150",
-        "M157",
-        "M186",
-        "M189",
-        "M190"
-      ],
-      "heroMediaIds": [
-        "M189"
-      ],
-      "placeIds": [
-        "PL002",
-        "PL003",
-        "PL030",
-        "PL031",
-        "PL032",
-        "PL037"
-      ],
-      "periods": [
-        "european"
-      ]
-    },
-    {
-      "id": "TE0052",
-      "slug": "ninon-mayer-ritz-meeting-mgm-contract",
-      "title": "Ninon reaches Louis B. Mayer: the Ritz meeting and MGM contract",
-      "label": "Ninon opens the MGM path",
-      "displayDate": "August 1934",
-      "dateStart": "1934-08-07",
-      "datePrecision": "circa_year",
-      "sortDate": "1934-08-07",
-      "sortOrder": 33.5,
-      "displayMode": "point",
-      "eventType": "career",
-      "period": "european",
-      "periodKey": "european",
-      "category": "migration",
-      "filterTags": [
-        "career",
-        "europe"
-      ],
-      "placeDisplay": "Paris",
-      "cityKey": "paris",
-      "shortDescription": "The European success of Ninon reportedly brought Kaper and Jurmann to the attention of Louis B. Mayer, leading to a meeting at the Hôtel Ritz and an MGM contract.",
-      "longDescription": "Kaper later recalled that the success of Ninon—written for Tout pour l’amour, the French version of Ein Lied für Dich—was the turning point that opened the path to Hollywood. Louis B. Mayer reached Paris on 7 August 1934, on a European trip that combined business with the search for new talent, and reportedly asked to meet the song’s authors, heard them perform at the Hôtel Ritz, and offered a seven-year MGM contract.",
-      "featured": true,
-      "roles": [
-        "career_milestone",
-        "migration_event",
-        "professional_network"
-      ],
-      "personIds": [
-        "P009",
-        "P077",
-        "P116",
-        "P117"
-      ],
-      "sourceIds": [
-        "SRC0491",
-        "SRC0494"
-      ],
-      "workIds": [
-        "W-F023",
-        "W-F025",
-        "W-S076",
-        "W-S077"
-      ],
-      "mediaIds": [
-        "M034",
-        "M051"
-      ],
-      "heroMediaIds": [
-        "M051"
-      ],
-      "placeIds": [
-        "PL003",
-        "PL023",
-        "PL038"
-      ],
-      "periods": [
-        "european"
-      ]
-    },
-    {
-      "id": "TE0053",
-      "slug": "mgm-markets-kaper-jurmann-viennese-composers",
-      "title": "MGM markets Kaper and Jurmann as “Viennese composers”",
-      "label": "MGM’s “Viennese” label",
-      "displayDate": "20 November–8 December 1934",
-      "dateStart": "1934-11-20",
-      "dateEnd": "1934-12-08",
-      "datePrecision": "range",
-      "sortDate": "1934-11-20",
-      "sortOrder": 35.5,
-      "displayMode": "point",
-      "eventType": "career",
-      "period": "european",
-      "periodKey": "european",
-      "category": "reception",
-      "filterTags": [
-        "career",
-        "hollywood"
-      ],
-      "placeDisplay": "Hollywood/Los Angeles",
-      "cityKey": "hollywood",
-      "shortDescription": "American studio publicity recast Kaper and Jurmann as a Viennese composing team, turning “Vienna” into a promotional brand rather than a biographical fact.",
-      "longDescription": "Soon after their arrival at MGM, the American press and studio publicity presented Kaper and Jurmann as “Viennese composers”. The label suited MGM’s first use of the duo in Escapade, a Hollywood remake of the Viennese film Maskerade, but it was biographically misleading for Kaper, whose career had developed in Warsaw and Berlin. The event marks the moment when Hollywood began to translate his European professional history into a marketable studio identity. The label outlasted their arrival: in December 1936 the Viennese paper Telegraf itself wrote of “die Wiener Komponisten Kaper und Jurmann”.",
-      "featured": true,
-      "roles": [
-        "reception_publicity",
-        "career_milestone"
-      ],
-      "personIds": [
-        "P009",
-        "P077",
-        "P116"
-      ],
-      "sourceIds": [
-        "SRC0491",
-        "SRC0494",
-        "SRC0550",
-        "SRC0859"
-      ],
-      "workIds": [
-        "W-F033",
-        "W-S219"
-      ],
-      "mediaIds": [
-        "M034",
-        "M051",
-        "M228"
-      ],
-      "heroMediaIds": [
-        "M228"
-      ],
-      "placeIds": [
-        "PL004",
-        "PL005",
-        "PL006",
-        "PL012",
-        "PL030"
-      ],
-      "periods": [
-        "european"
       ]
     },
     {
