@@ -12,6 +12,7 @@
       "displayName": "Alexis Granovsky",
       "sortName": "Granovsky, Alexis",
       "authorizedName": "Granowsky, Alexis",
+      "authorizedNameSource": "LCNAF",
       "slug": "alexis-granovsky",
       "primaryRole": "film director",
       "roles": [
@@ -185,6 +186,7 @@
       "displayName": "André de Badet",
       "sortName": "de Badet, André",
       "authorizedName": "Badet, André de",
+      "authorizedNameSource": "LCNAF",
       "slug": "andre-de-badet",
       "primaryRole": "lyricist",
       "roles": [
@@ -257,6 +259,7 @@
       "displayName": "Bronisław Kaper",
       "sortName": "Kaper, Bronisław",
       "authorizedName": "Kaper, Bronislaw",
+      "authorizedNameSource": "LCNAF",
       "slug": "bronislaw-kaper",
       "primaryRole": "composer",
       "roles": [
@@ -1083,6 +1086,7 @@
       "displayName": "Ch.-L. Pothier",
       "sortName": "Pothier, Ch.-L.",
       "authorizedName": "Pothier, Charles Louis",
+      "authorizedNameSource": "LCNAF",
       "slug": "ch-l-pothier",
       "primaryRole": "lyricist",
       "roles": [
@@ -1169,7 +1173,8 @@
       "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no94002454\nGND: https://d-nb.info/gnd/138651450\nVIAF: https://viaf.org/viaf/49430545",
       "sourceIds": [
         "SRC0147",
-        "SRC0644"
+        "SRC0644",
+        "SRC0861"
       ],
       "contributionIds": [
         "CON-F044-D-P013",
@@ -1181,7 +1186,11 @@
       ],
       "birthYear": 1899,
       "deathYear": 1951,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "disputed",
+      "lifeDatesNote": "GND gives 1899 as the birth year, whereas LCNAF gives 1901. The displayed dates follow GND; the conflicting birth years remain unresolved.",
+      "lifeDatesSourceIds": [
+        "SRC0861"
+      ]
     },
     {
       "id": "P014",
@@ -1919,6 +1928,7 @@
       "displayName": "Henri-André Legrand",
       "sortName": "Legrand, Henri-André",
       "authorizedName": "Legrand, H. André (Henri-André)",
+      "authorizedNameSource": "LCNAF",
       "slug": "henri-andre-legrand",
       "primaryRole": "lyricist",
       "roles": [
@@ -1950,6 +1960,7 @@
       "displayName": "Henri-Georges Clouzot",
       "sortName": "Clouzot, Henri-Georges",
       "authorizedName": "Clouzot, H.-G. (Henri-Georges)",
+      "authorizedNameSource": "LCNAF",
       "slug": "henri-georges-clouzot",
       "primaryRole": "film director",
       "roles": [
@@ -2000,6 +2011,7 @@
       "displayName": "István Székely",
       "sortName": "Székely, István",
       "authorizedName": "Sekely, Steve",
+      "authorizedNameSource": "LCNAF",
       "slug": "istvan-szekely",
       "primaryRole": "film director",
       "roles": [
@@ -2166,6 +2178,7 @@
       "displayName": "Jean de Limur",
       "sortName": "de Limur, Jean",
       "authorizedName": "Limur, Jean de",
+      "authorizedNameSource": "LCNAF",
       "slug": "jean-de-limur",
       "primaryRole": "film director",
       "roles": [
@@ -2397,6 +2410,7 @@
       "displayName": "Lucien Jean Boyer",
       "sortName": "Boyer, Lucien Jean",
       "authorizedName": "Boyer, Lucien",
+      "authorizedNameSource": "LCNAF",
       "slug": "lucien-jean-boyer",
       "primaryRole": "lyricist",
       "roles": [
@@ -2552,6 +2566,7 @@
       "displayName": "Max Ophüls",
       "sortName": "Ophüls, Max",
       "authorizedName": "Ophuls, Max",
+      "authorizedNameSource": "LCNAF",
       "slug": "max-ophuls",
       "primaryRole": "film director",
       "roles": [
@@ -2677,6 +2692,7 @@
         "W-S091"
       ],
       "authorizedName": "Steinhof, Ninon",
+      "authorizedNameSource": "BnF",
       "nameVariantIds": [
         "PNV0056"
       ]
@@ -3089,6 +3105,7 @@
       "displayName": "W.S. Van Dyke",
       "sortName": "Van Dyke, W.S.",
       "authorizedName": "Van Dyke, W. S.",
+      "authorizedNameSource": "LCNAF",
       "slug": "w-s-van-dyke",
       "primaryRole": "film director",
       "roles": [
@@ -4227,7 +4244,8 @@
       "nameVariantIds": [
         "PNV0060"
       ],
-      "authorizedNameSource": "LCNAF"
+      "authorizedNameSource": "LCNAF",
+      "lifeDatesCertainty": "confirmed"
     },
     {
       "id": "P113",
@@ -5051,7 +5069,8 @@
       "sourceIds": [
         "SRC0147",
         "SRC0148",
-        "SRC0662"
+        "SRC0662",
+        "SRC0862"
       ],
       "contributionIds": [
         "CON-F038-C-P140",
@@ -5063,7 +5082,11 @@
       ],
       "birthYear": 1888,
       "deathYear": 1959,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "disputed",
+      "lifeDatesNote": "GND gives 19 April 1888 as the birth date, whereas LCNAF gives 1882. The displayed dates follow GND; the conflicting birth years remain unresolved.",
+      "lifeDatesSourceIds": [
+        "SRC0862"
+      ]
     },
     {
       "id": "P141",
@@ -5387,6 +5410,7 @@
       "displayName": "Stefan Weiß",
       "sortName": "Weiß, Stefan",
       "authorizedName": "Weiss, Stephen",
+      "authorizedNameSource": "LCNAF",
       "slug": "stefan-weiss",
       "primaryRole": "composer",
       "roles": [
@@ -5690,6 +5714,7 @@
       "displayName": "Joe Pasternak",
       "sortName": "Pasternak, Joseph",
       "authorizedName": "Pasternak, Joe",
+      "authorizedNameSource": "LCNAF",
       "slug": "joseph-joe-pasternak",
       "primaryRole": "producer",
       "roles": [

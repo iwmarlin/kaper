@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 770,
+  "count": 772,
   "records": [
     {
       "id": "SRC0001",
@@ -28641,6 +28641,60 @@
       "primaryUrl": "https://commons.wikimedia.org/wiki/File:Paris._Rue_de_Clichy._Casino_de_Paris.jpg",
       "researchNote": "The publisher and approximate date follow the item description supplied on Wikimedia Commons by the uploader, who identifies the source as a private collection. Commons cites no institutional catalogue record, and the postcard does not identify its photographer.",
       "researchNoteType": "verification_note"
+    },
+    {
+      "id": "SRC0861",
+      "shortCitation": "GND, authority record “Marin, Edwin L.,” 138651450",
+      "fullCitation": "Deutsche Nationalbibliothek. “Marin, Edwin L..” Gemeinsame Normdatei, GND 138651450.",
+      "researchNote": "The GND gives 1899 as the year of birth and 1951 as the year of death, and records the professions of director and film producer. The Library of Congress heading reads “Marin, Edwin L., 1901-1951.” The archive follows the GND year; the conflicting birth years remain unresolved.",
+      "researchNoteType": "date_assessment",
+      "sourceType": "authority_record",
+      "title": "Marin, Edwin L. — GND authority record",
+      "creator": "Deutsche Nationalbibliothek",
+      "repository": "Deutsche Nationalbibliothek (GND)",
+      "publication": "Gemeinsame Normdatei (GND)",
+      "dateRole": "described_item",
+      "dateQualifier": "unknown",
+      "accessDate": "2026-09-17",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "slug": "src0861-gnd-edwin-l-marin",
+      "personIds": [
+        "P013"
+      ],
+      "primaryUrl": "https://d-nb.info/gnd/138651450",
+      "organizationIds": [
+        "ORG074"
+      ],
+      "authoritySubject": "person",
+      "identityRelation": "same"
+    },
+    {
+      "id": "SRC0862",
+      "shortCitation": "GND, authority record “Axt, William,” 173766072",
+      "fullCitation": "Deutsche Nationalbibliothek. “Axt, William.” Gemeinsame Normdatei, GND 173766072.",
+      "researchNote": "The GND gives 19 April 1888 as the date of birth and 13 February 1959 as the date of death, and records the professions of pianist and composer. The Library of Congress heading reads “Axt, William, 1882-1959.” The archive follows the GND date; the conflicting birth years remain unresolved.",
+      "researchNoteType": "date_assessment",
+      "sourceType": "authority_record",
+      "title": "Axt, William — GND authority record",
+      "creator": "Deutsche Nationalbibliothek",
+      "repository": "Deutsche Nationalbibliothek (GND)",
+      "publication": "Gemeinsame Normdatei (GND)",
+      "dateRole": "described_item",
+      "dateQualifier": "unknown",
+      "accessDate": "2026-09-17",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "slug": "src0862-gnd-william-axt",
+      "personIds": [
+        "P140"
+      ],
+      "primaryUrl": "https://d-nb.info/gnd/173766072",
+      "organizationIds": [
+        "ORG074"
+      ],
+      "authoritySubject": "person",
+      "identityRelation": "same"
     }
   ],
   "recordCount": null

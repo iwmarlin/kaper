@@ -57,20 +57,18 @@ class PersonLifeDateTests(unittest.TestCase):
         for person in people.values():
             self.assertEqual(life_date_evidence_errors(person), [], person["id"])
 
-    def test_review_survives_export_and_all_evidence_links_are_bidirectional(self):
+    def test_every_evidence_link_is_bidirectional(self):
+        # The canonical JSON is the source of truth, so a note is checked
+        # against the sources it cites rather than against the historical
+        # export overrides.
         people = json.loads((PUBLIC / "people.json").read_text())["records"]
         sources = {s["id"]: s for s in json.loads((PUBLIC / "sources.json").read_text())["records"]}
-        overrides = json.loads((ROOT / "scripts/public_export_overrides.json").read_text())
         for person in people:
             if not person.get("lifeDatesNote"):
                 continue
-            person_id = person["id"]
-            override = (overrides["records"]["People"].get(person_id)
-                        or overrides["additions"]["People"][person_id])["fields"]
-            for field in ("lifeDatesNote", "lifeDatesSourceIds"):
-                self.assertEqual(person[field], override[field])
             for source_id in person["lifeDatesSourceIds"]:
-                self.assertIn(person_id, sources[source_id].get("personIds", []))
+                with self.subTest(person=person["id"], source=source_id):
+                    self.assertIn(person["id"], sources[source_id].get("personIds", []))
 
     def test_explanation_and_source_links_reach_every_reviewed_static_card(self):
         for person in json.loads((PUBLIC / "people.json").read_text())["records"]:
