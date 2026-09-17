@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 773,
+  "count": 774,
   "records": [
     {
       "id": "SRC0001",
@@ -900,6 +900,9 @@
           "scheme": "naid",
           "value": "278166391"
         }
+      ],
+      "timelineEventIds": [
+        "TE0039"
       ]
     },
     {
@@ -16876,9 +16879,6 @@
       "workIds": [
         "W-S131"
       ],
-      "timelineEventIds": [
-        "TE0043"
-      ],
       "songIds": [
         "S131"
       ],
@@ -16960,9 +16960,13 @@
         "TE0012",
         "TE0015",
         "TE0016",
+        "TE0018",
         "TE0019",
+        "TE0020",
         "TE0021",
         "TE0023",
+        "TE0024",
+        "TE0025",
         "TE0026",
         "TE0027",
         "TE0044",
@@ -17023,8 +17027,15 @@
         "P129"
       ],
       "timelineEventIds": [
+        "TE0025",
         "TE0028",
+        "TE0029",
+        "TE0034",
         "TE0035",
+        "TE0036",
+        "TE0037",
+        "TE0038",
+        "TE0039",
         "TE0050",
         "TE0051",
         "TE0052",
@@ -28728,6 +28739,29 @@
         "PNV0073"
       ],
       "primaryUrl": "https://polona.pl/item-view/1b5e1669-09b9-4ef8-82e3-d65da1a37a4a?page=0"
+    },
+    {
+      "id": "SRC0864",
+      "shortCitation": "Krasnoborski, “An Interview with Bronislau Kaper,” Soundtrack Magazine (1975)",
+      "fullCitation": "William F. Krasnoborski. “An Interview with Bronislau Kaper.” Soundtrack Magazine, nos. 2–3 (1975); reproduced in Cinescores Center.",
+      "sourceType": "periodical_article",
+      "title": "An Interview with Bronislau Kaper",
+      "creator": "William F. Krasnoborski; Bronisław Kaper",
+      "publication": "Soundtrack Magazine",
+      "date": "1975",
+      "dateRole": "publication",
+      "dateQualifier": "confirmed",
+      "accessDate": "2026-09-17",
+      "reliability": "medium",
+      "sourceStatus": "verified",
+      "slug": "src0864-krasnoborski-interview-with-bronislau-kaper-1975",
+      "personIds": [
+        "P009"
+      ],
+      "timelineEventIds": [
+        "TE0043"
+      ],
+      "primaryUrl": "https://cinescores.dudaone.com/an-interview-with-bronislau-kaper"
     }
   ],
   "recordCount": null
