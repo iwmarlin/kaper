@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 171,
+  "count": 172,
   "records": [
     {
       "id": "P001",
@@ -6549,6 +6549,29 @@
         "SRC0806",
         "SRC0837"
       ]
+    },
+    {
+      "id": "P199",
+      "displayName": "Jerzy Fitelberg",
+      "sortName": "Fitelberg, Jerzy",
+      "slug": "jerzy-fitelberg",
+      "primaryRole": "composer",
+      "roles": [
+        "composer"
+      ],
+      "sourceIds": [
+        "SRC0453",
+        "SRC0494"
+      ],
+      "timelineEventIds": [
+        "TE0016"
+      ],
+      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n88144497",
+      "birthYear": 1903,
+      "deathYear": 1951,
+      "lifeDatesCertainty": "confirmed",
+      "authorizedName": "Fitelberg, Jerzy",
+      "authorizedNameSource": "LCNAF"
     }
   ],
   "recordCount": null
