@@ -381,6 +381,7 @@
         "W-O004",
         "W-O005",
         "W-O006",
+        "W-O030",
         "W-S004"
       ],
       "mediaIds": [
@@ -399,7 +400,8 @@
         "O003",
         "O004",
         "O005",
-        "O006"
+        "O006",
+        "O030"
       ],
       "songIds": [
         "S004"
@@ -417,6 +419,8 @@
         "CON-O005-HI-ORG056",
         "CON-O006-C-P009",
         "CON-O006-HI-ORG056",
+        "CON-O030-C-P009",
+        "CON-O030-HI-ORG056",
         "CON-S004-C-P009",
         "CON-S004-C-P020",
         "CON-S004-HI-ORG056",
@@ -17009,7 +17013,14 @@
         "PNV0013"
       ],
       "contributionIds": [
+        "CON-O030-C-P009",
         "CON-S001-C-P009"
+      ],
+      "workIds": [
+        "W-O030"
+      ],
+      "otherWorkIds": [
+        "O030"
       ]
     },
     {

@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 1274,
+  "count": 1276,
   "records": [
     {
       "id": "CON-F001-C-P009",
@@ -22685,6 +22685,39 @@
       ],
       "sourceIds": [
         "SRC0829"
+      ]
+    },
+    {
+      "id": "CON-O030-C-P009",
+      "role": "composer",
+      "nameAsPrinted": "Bronisław Kaper",
+      "sortOrder": 1,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-O030"
+      ],
+      "personIds": [
+        "P009"
+      ],
+      "sourceIds": [
+        "SRC0009",
+        "SRC0490"
+      ]
+    },
+    {
+      "id": "CON-O030-HI-ORG056",
+      "role": "holding_institution",
+      "nameAsPrinted": "Bronislaw Kaper Papers, Collection 03193, box 2, American Heritage Center, University of Wyoming, Laramie",
+      "evidenceContext": "archival_catalogue",
+      "certainty": "confirmed",
+      "workIds": [
+        "W-O030"
+      ],
+      "organizationIds": [
+        "ORG056"
+      ],
+      "sourceIds": [
+        "SRC0009"
       ]
     }
   ]
