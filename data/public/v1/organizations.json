@@ -978,7 +978,7 @@
         "SRC0526"
       ],
       "publicNote": "Paris music publisher documented on French sheet-music editions of 1934. It is not identified with the later Swiss company Edition Coda AG of Zürich, which is a separate same-name organization.",
-      "authorizedNameSource": "BnF bibliographic records"
+      "authorizedNameSource": "BnF"
     },
     {
       "id": "ORG031",
@@ -1025,7 +1025,7 @@
         "W-S211"
       ],
       "publicNote": "Berlin music publisher documented under the names Edition Karl Brüll and Berliner Bohème-Verlag. No matching formal GND or VIAF corporate authority has been identified.",
-      "authorizedNameSource": "contemporary imprints and historical business records"
+      "authorizedNameSource": "local heading"
     },
     {
       "id": "ORG032",
@@ -1049,7 +1049,7 @@
       "sourceIds": [
         "SRC0302"
       ],
-      "authorizedNameSource": "BnF bibliographic record"
+      "authorizedNameSource": "BnF"
     },
     {
       "id": "ORG033",
@@ -1784,7 +1784,7 @@
         "SRC0789",
         "SRC0853"
       ],
-      "authorizedNameSource": "contemporary imprints",
+      "authorizedNameSource": "local heading",
       "publicNote": "Berlin music dealership and publishing house of Viktor Alberti (1884–1942). Contemporary imprints identify it as Musikalienhandlung Alberti G.m.b.H.; the shorter form Alberti is used throughout the associated sheet music. The house also issued the jazz periodical Musik-Echo. No matching formal GND or VIAF corporate authority has been identified."
     },
     {
@@ -1895,6 +1895,7 @@
       "id": "ORG059",
       "displayName": "The Weimar Talkies Project (UCLA)",
       "authorizedName": "The Weimar Talkies Project",
+      "authorizedNameSource": "Official website",
       "types": [
         "database"
       ],
@@ -1934,7 +1935,7 @@
         "SRC0312"
       ],
       "publicNote": "London music publisher documented in contemporary sheet-music imprints and music-trade listings as Dix Ltd. No matching formal GND or VIAF corporate authority has been identified.",
-      "authorizedNameSource": "contemporary imprints and music-trade listings"
+      "authorizedNameSource": "local heading"
     },
     {
       "id": "ORG061",
@@ -1963,6 +1964,8 @@
       "id": "ORG062",
       "displayName": "Bibliothèque nationale de France (BnF)",
       "authorizedName": "Bibliothèque nationale de France",
+      "authorizedNameSource": "LCNAF",
+      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no95028191",
       "types": [
         "archive",
         "database"
@@ -2179,6 +2182,7 @@
       "id": "ORG065",
       "displayName": "Staatsbibliothek zu Berlin",
       "authorizedName": "Staatsbibliothek zu Berlin – Preußischer Kulturbesitz",
+      "authorizedNameSource": "Official website",
       "types": [
         "archive",
         "database"
@@ -2376,7 +2380,9 @@
     {
       "id": "ORG068",
       "displayName": "U.S. Copyright Office",
-      "authorizedName": "United States Copyright Office",
+      "authorizedName": "Library of Congress. Copyright Office",
+      "authorizedNameSource": "LCNAF",
+      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n79117971",
       "types": [
         "archive",
         "database"
@@ -2470,7 +2476,9 @@
     {
       "id": "ORG069",
       "displayName": "U.S. National Archives and Records Administration",
-      "authorizedName": "National Archives and Records Administration",
+      "authorizedName": "United States. National Archives and Records Administration",
+      "authorizedNameSource": "LCNAF",
+      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n84176101",
       "types": [
         "archive",
         "database"
@@ -2549,6 +2557,7 @@
       "id": "ORG072",
       "displayName": "Deutsches Filminstitut & Filmmuseum",
       "authorizedName": "DFF – Deutsches Filminstitut & Filmmuseum",
+      "authorizedNameSource": "Official website",
       "types": [
         "archive",
         "database"
@@ -2705,7 +2714,7 @@
       "country": "Poland",
       "slug": "slaska-biblioteka-cyfrowa",
       "nameVariants": "ŚBC; SBC; Silesian Digital Library",
-      "authorizedNameSource": "Official website and cooperation agreement",
+      "authorizedNameSource": "Official website",
       "authorityUrl": "Official website: https://sbc.org.pl/dlibra\nCooperation agreement: https://sbc.org.pl/doc/porozumienie-sbc-pl.pdf",
       "publicNote": "Regional digital library created and maintained by participating cultural and academic institutions to provide online access to digitized collections concerning Silesia and materials held in the region. The service uses dLibra software; dLibra is not part of the institution’s authorized name.",
       "sourceIds": [
@@ -2843,7 +2852,9 @@
     {
       "id": "ORG085",
       "displayName": "SACEM",
-      "authorizedName": "Société des auteurs, compositeurs et éditeurs de musique",
+      "authorizedName": "Société des auteurs, compositeurs et éditeurs de musique (France)",
+      "authorizedNameSource": "LCNAF",
+      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n82060400",
       "types": [
         "database"
       ],
@@ -2871,7 +2882,9 @@
     {
       "id": "ORG086",
       "displayName": "GEMA",
-      "authorizedName": "Gesellschaft für musikalische Aufführungs- und mechanische Vervielfältigungsrechte",
+      "authorizedName": "Gesellschaft für Musikalische Aufführungs- und Mechanische Vervielfältigungsrechte",
+      "authorizedNameSource": "LCNAF",
+      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n85366400",
       "types": [
         "database"
       ],
@@ -2893,6 +2906,7 @@
       "id": "ORG087",
       "displayName": "AKM / austro mechana",
       "authorizedName": "AKM Autoren, Komponisten und Musikverleger / austro mechana",
+      "authorizedNameSource": "Official website",
       "types": [
         "database"
       ],
@@ -2946,7 +2960,9 @@
     {
       "id": "ORG090",
       "displayName": "Wikimedia Foundation",
-      "authorizedName": "Wikimedia Foundation, Inc.",
+      "authorizedName": "Wikimedia Foundation",
+      "authorizedNameSource": "LCNAF",
+      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n2005070272\nGND: https://d-nb.info/gnd/10102830-1",
       "types": [
         "database"
       ],
@@ -3513,6 +3529,7 @@
       "id": "ORG108",
       "displayName": "Parafia św. Aleksandra w Warszawie",
       "authorizedName": "Parafia rzymskokatolicka św. Aleksandra w Warszawie",
+      "authorizedNameSource": "local heading",
       "types": [
         "archive"
       ],
@@ -3573,6 +3590,7 @@
       "id": "ORG111",
       "displayName": "Teatr “Perskie Oko”",
       "authorizedName": "Teatr “Perskie Oko” (Warsaw)",
+      "authorizedNameSource": "local heading",
       "types": [
         "theatre"
       ],
@@ -3591,6 +3609,7 @@
       "id": "ORG112",
       "displayName": "Great American Songbook Foundation",
       "authorizedName": "The Great American Songbook Foundation",
+      "authorizedNameSource": "Official website",
       "types": [
         "archive",
         "foundation"
@@ -3631,12 +3650,14 @@
         "CON-S075-PUB-ORG113"
       ],
       "publicNote": "Vienna music publisher founded in spring 1933 by Erwin Hein together with Universal Edition. It specialized in popular song, sound-film and operetta publishing and operated at Bösendorferstraße 12. No matching formal GND or VIAF corporate authority has been identified.",
-      "authorizedNameSource": "contemporary registrations and historical publishing research"
+      "authorizedNameSource": "local heading"
     },
     {
       "id": "ORG114",
       "displayName": "Jagiellonian Library",
-      "authorizedName": "Biblioteka Jagiellońska / Jagiellonian Library",
+      "authorizedName": "Biblioteka Jagiellońska",
+      "authorizedNameSource": "LCNAF",
+      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n82138171\nGND: https://d-nb.info/gnd/4073761-5",
       "types": [
         "library",
         "digital_library"
@@ -3701,6 +3722,8 @@
       "id": "ORG117",
       "displayName": "Stiftung Deutsche Kinemathek",
       "authorizedName": "Stiftung Deutsche Kinemathek – Museum für Film und Fernsehen",
+      "authorizedNameSource": "Official website",
+      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n00030828\nGND: https://d-nb.info/gnd/16037760-2",
       "types": [
         "archive",
         "museum"
@@ -3740,7 +3763,7 @@
         "W-S007"
       ],
       "publicNote": "Berlin music publisher documented as Roehr A.-G. and Verlag Roehr. It is distinct from the short-lived C. M. Roehr Musikverlag GmbH established separately by Curt Max Roehr in 1927. No matching formal GND or VIAF corporate authority has been identified.",
-      "authorizedNameSource": "contemporary imprints and trade records"
+      "authorizedNameSource": "local heading"
     },
     {
       "id": "ORG119",
@@ -4841,7 +4864,7 @@
       "country": "United States",
       "slug": "california-digital-newspaper-collection",
       "nameVariants": "CDNC",
-      "authorizedNameSource": "Official project page",
+      "authorizedNameSource": "Official website",
       "authorityUrl": "Official website: https://cbsrinfo.ucr.edu/CDNC",
       "publicNote": "Freely accessible repository of digitized California newspapers established by the Center for Bibliographical Studies and Research at the University of California, Riverside. The repository is represented separately from the newspaper titles and other institutions that supplied particular issues.",
       "sourceIds": [
@@ -4947,7 +4970,7 @@
       "country": "United Kingdom",
       "slug": "university-of-warwick-library",
       "nameVariants": "Warwick Library; The Library, University of Warwick",
-      "authorizedNameSource": "Official website and Internet Archive object metadata",
+      "authorizedNameSource": "Official website",
       "authorityUrl": "Official website: https://warwick.ac.uk/services/library/",
       "publicNote": "The library of the University of Warwick and the contributing institution identified in the Internet Archive metadata for these Illustrierter Film-Kurier copies. Internet Archive digitized and provides access to the digital objects.",
       "sourceIds": [
