@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 54,
+  "count": 55,
   "records": [
     {
       "id": "TE0001",
@@ -970,6 +970,56 @@
       ]
     },
     {
+      "id": "TE0018",
+      "slug": "1927-performance-of-piano-pieces",
+      "title": "Róża Etkin plays works by Kaper in Berlin",
+      "label": "Spring 1927 · Etkin plays Kaper in Berlin",
+      "displayDate": "Spring 1927",
+      "dateStart": "1927-02-01",
+      "datePrecision": "range_approx",
+      "sortDate": "1927-04-01",
+      "sortOrder": 16.8,
+      "displayMode": "point",
+      "eventType": "career",
+      "period": "european",
+      "periodKey": "european",
+      "category": "concert_life",
+      "filterTags": [
+        "career",
+        "europe"
+      ],
+      "placeDisplay": "Berlin",
+      "cityKey": "berlin",
+      "shortDescription": "In a Berlin recital reviewed in the spring of 1927, the Chopin prizewinner Róża Etkin played works by B. Kaper alongside Chopin and Szymanowski.",
+      "longDescription": "Signale für die musikalische Welt (no. 20, 1927) reported that Róża Etkin, a prizewinner at the first International Chopin Competition in Warsaw that January, gave a Berlin recital devoted partly to Chopin and partly to newer Polish composers, naming Szymanowski and B. Kaper. She played Chopin’s F minor Ballade, F-sharp minor Polonaise, four études, mazurkas and nocturnes; the notice does not name the works by Kaper.",
+      "roles": [
+        "career_milestone",
+        "work_milestone"
+      ],
+      "personIds": [
+        "P009",
+        "P121"
+      ],
+      "sourceIds": [
+        "SRC0367"
+      ],
+      "mediaIds": [
+        "M031",
+        "M088",
+        "M090"
+      ],
+      "heroMediaIds": [
+        "M088"
+      ],
+      "placeIds": [
+        "PL002"
+      ],
+      "periods": [
+        "european"
+      ],
+      "dateEnd": "1927-05-31"
+    },
+    {
       "id": "TE0017",
       "slug": "30-june-1927-marriage",
       "title": "Marriage",
@@ -1018,15 +1068,15 @@
       ]
     },
     {
-      "id": "TE0018",
-      "slug": "1927-performance-of-piano-pieces",
-      "title": "Róża Etkin performs Kaper’s Sonatina in Berlin",
-      "label": "1927 · Etkin performs Sonatina",
+      "id": "TE0058",
+      "slug": "1927-first-performance-of-a-work-by-kaper-at-the-bach-saal",
+      "title": "First performance of a work by Kaper at the Bach-Saal",
+      "label": "3 December 1927 · First performance at the Bach-Saal",
       "displayDate": "3 December 1927",
       "dateStart": "1927-12-03",
       "datePrecision": "day",
       "sortDate": "1927-12-03",
-      "sortOrder": 18,
+      "sortOrder": 18.5,
       "displayMode": "point",
       "eventType": "career",
       "period": "european",
@@ -1036,10 +1086,9 @@
         "career",
         "europe"
       ],
-      "placeDisplay": "Berlin",
-      "cityKey": "berlin",
-      "shortDescription": "Róża Etkin performs Kaper’s Sonatina in Berlin, a performance later confirmed by Kaper’s oral-history recollection.",
-      "longDescription": "On 3 December 1927 Róża Etkin gave a recital at the Bach-Saal in Berlin whose programme — four Chopin ballades and works by Karol Szymanowski, Maurice Ravel and Isaac Albéniz, with Liszt’s Sonata in B minor — included the first performance of a work by B. Kaper. The announcement does not name the work; Kaper later recalled writing a piano sonatina for Etkin, which she played in Berlin.",
+      "shortDescription": "Róża Etkin gives the first performance of a work by B. Kaper in her recital at the Bach-Saal in Berlin.",
+      "longDescription": "On 3 December 1927 Róża Etkin gave a recital at the Bach-Saal in Berlin whose programme — four Chopin ballades and works by Karol Szymanowski, Maurice Ravel and Isaac Albéniz, with Liszt’s Sonata in B minor — included the first performance of a work by B. Kaper. The announcement does not name the work. Kaper later recalled writing a piano sonatina for Etkin, which she played in Berlin; the Sonatina manuscript is dated 1927, but no source ties it to this recital rather than to her earlier one.",
+      "featured": false,
       "roles": [
         "career_milestone",
         "work_milestone"
@@ -1049,24 +1098,18 @@
         "P121"
       ],
       "sourceIds": [
-        "SRC0367",
         "SRC0490",
         "SRC0494"
       ],
-      "workIds": [
-        "W-O005"
-      ],
       "mediaIds": [
-        "M031",
-        "M088",
-        "M090"
-      ],
-      "heroMediaIds": [
-        "M088"
+        "M276"
       ],
       "placeIds": [
         "PL002",
         "PL041"
+      ],
+      "workIds": [
+        "W-O005"
       ],
       "periods": [
         "european"
