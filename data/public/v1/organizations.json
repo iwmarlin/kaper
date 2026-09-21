@@ -1818,7 +1818,7 @@
     {
       "id": "ORG056",
       "displayName": "American Heritage Center, University of Wyoming",
-      "authorizedName": "American Heritage Center, University of Wyoming",
+      "authorizedName": "University of Wyoming. American Heritage Center",
       "types": [
         "archive"
       ],
@@ -1853,12 +1853,14 @@
         "W-O006",
         "W-O030",
         "W-S004"
-      ]
+      ],
+      "authorizedNameSource": "LCNAF",
+      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n87896648"
     },
     {
       "id": "ORG057",
       "displayName": "University of Warsaw Archives",
-      "authorizedName": "University of Warsaw Archives",
+      "authorizedName": "Uniwersytet Warszawski. Archiwum",
       "types": [
         "archive"
       ],
@@ -1870,12 +1872,14 @@
       "nameVariants": "Archiwum Uniwersytetu Warszawskiego",
       "sourceIds": [
         "SRC0110"
-      ]
+      ],
+      "authorizedNameSource": "GND",
+      "authorityUrl": "GND: https://d-nb.info/gnd/3034423-2"
     },
     {
       "id": "ORG058",
       "displayName": "Unifrance",
-      "authorizedName": "Unifrance",
+      "authorizedName": "Unifrance (Organization)",
       "types": [
         "database"
       ],
@@ -1889,7 +1893,9 @@
         "SRC0162",
         "SRC0163",
         "SRC0452"
-      ]
+      ],
+      "authorizedNameSource": "LCNAF",
+      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no2018095099"
     },
     {
       "id": "ORG059",
@@ -2059,7 +2065,7 @@
     {
       "id": "ORG063",
       "displayName": "Biblioteka Narodowa",
-      "authorizedName": "Biblioteka Narodowa",
+      "authorizedName": "Biblioteka Narodowa (Poland)",
       "types": [
         "archive",
         "database"
@@ -2091,7 +2097,9 @@
         "SRC0674",
         "SRC0675",
         "SRC0863"
-      ]
+      ],
+      "authorizedNameSource": "LCNAF",
+      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n80014571"
     },
     {
       "id": "ORG064",
@@ -2176,7 +2184,9 @@
         "SRC0578",
         "SRC0835",
         "SRC0836"
-      ]
+      ],
+      "authorizedNameSource": "LCNAF",
+      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n79068404\nGND: https://d-nb.info/gnd/2020893-5"
     },
     {
       "id": "ORG065",
@@ -2238,12 +2248,14 @@
         "SRC0817",
         "SRC0845",
         "SRC0847"
-      ]
+      ],
+      "authorizedNameSource": "LCNAF",
+      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n78089035"
     },
     {
       "id": "ORG067",
       "displayName": "Internet Archive",
-      "authorizedName": "Internet Archive",
+      "authorizedName": "Internet Archive (Firm)",
       "types": [
         "archive",
         "database"
@@ -2375,7 +2387,9 @@
         "SRC0706",
         "SRC0854",
         "SRC0855"
-      ]
+      ],
+      "authorizedNameSource": "LCNAF",
+      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n2001062537"
     },
     {
       "id": "ORG068",
@@ -2527,7 +2541,9 @@
         "SRC0561",
         "SRC0659",
         "SRC0795"
-      ]
+      ],
+      "authorizedNameSource": "GND",
+      "authorityUrl": "GND: https://d-nb.info/gnd/1072170558"
     },
     {
       "id": "ORG071",
@@ -2551,7 +2567,9 @@
         "SRC0416",
         "SRC0521",
         "SRC0576"
-      ]
+      ],
+      "authorizedNameSource": "GND",
+      "authorityUrl": "GND: https://d-nb.info/gnd/1070828033"
     },
     {
       "id": "ORG072",
@@ -2636,7 +2654,9 @@
         "SRC0482",
         "SRC0494",
         "SRC0587"
-      ]
+      ],
+      "authorizedNameSource": "LCNAF",
+      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n79022845"
     },
     {
       "id": "ORG074",
@@ -2665,7 +2685,9 @@
         "SRC0847",
         "SRC0861",
         "SRC0862"
-      ]
+      ],
+      "authorizedNameSource": "LCNAF",
+      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no2006067330"
     },
     {
       "id": "ORG075",
@@ -2681,7 +2703,9 @@
       "slug": "landesarchiv-berlin",
       "sourceIds": [
         "SRC0313"
-      ]
+      ],
+      "authorizedNameSource": "LCNAF",
+      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n50054268"
     },
     {
       "id": "ORG076",
@@ -2699,7 +2723,9 @@
       "nameVariants": "NLA; National Library of Australia Catalogue",
       "sourceIds": [
         "SRC0486"
-      ]
+      ],
+      "authorizedNameSource": "LCNAF",
+      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n80077871"
     },
     {
       "id": "ORG077",
@@ -2738,12 +2764,14 @@
       "nameVariants": "ZLB; Digitale Landesbibliothek Berlin",
       "sourceIds": [
         "SRC0023"
-      ]
+      ],
+      "authorizedNameSource": "LCNAF",
+      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/nr2002005953"
     },
     {
       "id": "ORG079",
       "displayName": "University of California, Berkeley Library",
-      "authorizedName": "University of California, Berkeley Library",
+      "authorizedName": "University of California, Berkeley. Library",
       "types": [
         "archive",
         "database"
@@ -2756,12 +2784,14 @@
       "nameVariants": "UC Berkeley Library; Berkeley Library Digital Collections",
       "sourceIds": [
         "SRC0485"
-      ]
+      ],
+      "authorizedNameSource": "LCNAF",
+      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n83186537"
     },
     {
       "id": "ORG080",
       "displayName": "University of Southern California Libraries",
-      "authorizedName": "University of Southern California Libraries",
+      "authorizedName": "University of Southern California. Library",
       "types": [
         "archive",
         "database"
@@ -2776,12 +2806,14 @@
         "SRC0443",
         "SRC0535",
         "SRC0542"
-      ]
+      ],
+      "authorizedNameSource": "LCNAF",
+      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n50045481"
     },
     {
       "id": "ORG081",
       "displayName": "Margaret Herrick Library, Academy of Motion Picture Arts and Sciences",
-      "authorizedName": "Margaret Herrick Library, Academy of Motion Picture Arts and Sciences",
+      "authorizedName": "Margaret Herrick Library",
       "types": [
         "archive",
         "database"
@@ -2794,7 +2826,9 @@
       "nameVariants": "Margaret Herrick Library; Academy Collection; Academy of Motion Picture Arts and Sciences; AMPAS",
       "sourceIds": [
         "SRC0334"
-      ]
+      ],
+      "authorizedNameSource": "LCNAF",
+      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n91001831"
     },
     {
       "id": "ORG082",
@@ -2811,12 +2845,14 @@
       "nameVariants": "APW; State Archive in Warsaw",
       "sourceIds": [
         "SRC0353"
-      ]
+      ],
+      "authorizedNameSource": "LCNAF",
+      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no2019121395"
     },
     {
       "id": "ORG083",
       "displayName": "Biblioteka Uniwersytetu Łódzkiego",
-      "authorizedName": "Biblioteka Uniwersytetu Łódzkiego",
+      "authorizedName": "Biblioteka Uniwersytecka w Łodzi",
       "types": [
         "archive",
         "database"
@@ -2829,7 +2865,10 @@
       "nameVariants": "BUŁ; Biblioteka Cyfrowa Uniwersytetu Łódzkiego; BCUL",
       "sourceIds": [
         "SRC0018"
-      ]
+      ],
+      "authorizedNameSource": "LCNAF",
+      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n85291169",
+      "publicNote": "The Library of Congress heading keeps the library’s earlier name, Biblioteka Uniwersytecka w Łodzi."
     },
     {
       "id": "ORG084",
@@ -2847,7 +2886,9 @@
       "nameVariants": "Wien Museum Online Sammlung",
       "sourceIds": [
         "SRC0439"
-      ]
+      ],
+      "authorizedNameSource": "LCNAF",
+      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/nr2004011377"
     },
     {
       "id": "ORG085",
@@ -2937,7 +2978,9 @@
       "nameVariants": "NIFC; Fryderyk Chopin Institute; Chopin Information Centre",
       "sourceIds": [
         "SRC0503"
-      ]
+      ],
+      "authorizedNameSource": "LCNAF",
+      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no2003077766"
     },
     {
       "id": "ORG089",
@@ -2955,7 +2998,9 @@
       "nameVariants": "Pomona Public Library; Frasher Foto Postcard Collection; Calisphere",
       "sourceIds": [
         "SRC0350"
-      ]
+      ],
+      "authorizedNameSource": "Official website",
+      "authorityUrl": "Official website: https://www.pomonaca.gov/government/departments/library/about-us"
     },
     {
       "id": "ORG090",
@@ -3084,7 +3129,7 @@
     {
       "id": "ORG091",
       "displayName": "Media History Digital Library",
-      "authorizedName": "Media History Digital Library",
+      "authorizedName": "Media History Digital Library (Project)",
       "types": [
         "archive",
         "database"
@@ -3104,12 +3149,14 @@
         "SRC0569",
         "SRC0690",
         "SRC0703"
-      ]
+      ],
+      "authorizedNameSource": "LCNAF",
+      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no2011147658"
     },
     {
       "id": "ORG092",
       "displayName": "IMDb",
-      "authorizedName": "IMDb",
+      "authorizedName": "IMDb.com, Inc.",
       "types": [
         "database"
       ],
@@ -3138,12 +3185,14 @@
         "SRC0520",
         "SRC0528",
         "SRC0601"
-      ]
+      ],
+      "authorizedNameSource": "LCNAF",
+      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no2010169363"
     },
     {
       "id": "ORG093",
       "displayName": "YouTube",
-      "authorizedName": "YouTube",
+      "authorizedName": "YouTube (Firm)",
       "types": [
         "database"
       ],
@@ -3232,7 +3281,9 @@
         "SRC0811",
         "SRC0815",
         "SRC0555"
-      ]
+      ],
+      "authorizedNameSource": "LCNAF",
+      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n2007018166"
     },
     {
       "id": "ORG094",
@@ -3252,7 +3303,9 @@
         "SRC0331",
         "SRC0493",
         "SRC0700"
-      ]
+      ],
+      "authorizedNameSource": "Official website",
+      "authorityUrl": "Official website: https://www.discogs.com/about/about"
     },
     {
       "id": "ORG095",
@@ -3275,7 +3328,9 @@
         "SRC0114",
         "SRC0380",
         "SRC0527"
-      ]
+      ],
+      "authorizedNameSource": "Official website",
+      "authorityUrl": "Official website: https://www.newspapers.com/"
     },
     {
       "id": "ORG096",
@@ -3297,7 +3352,9 @@
         "SRC0358",
         "SRC0359",
         "SRC0360"
-      ]
+      ],
+      "authorizedNameSource": "Official website",
+      "authorityUrl": "Official website: https://www.imagesmusicales.be/"
     },
     {
       "id": "ORG097",
@@ -3314,7 +3371,9 @@
       "nameVariants": "DAHR; Discography of American Historical Recordings",
       "sourceIds": [
         "SRC0006"
-      ]
+      ],
+      "authorizedNameSource": "Official website",
+      "authorityUrl": "Official website: https://adp.library.ucsb.edu/"
     },
     {
       "id": "ORG098",
@@ -3331,28 +3390,32 @@
       "nameVariants": "KPPG; Katalog Polskich Płyt Gramofonowych; kppg.waw.pl",
       "sourceIds": [
         "SRC0001"
-      ]
+      ],
+      "authorizedNameSource": "Official website",
+      "authorityUrl": "Official website: http://www.kppg.waw.pl/"
     },
     {
       "id": "ORG099",
-      "displayName": "Walter Jurmann Estate",
-      "authorizedName": "Walter Jurmann Estate",
+      "displayName": "Verein der Freunde und Förderer des Werks von Walter Jurmann",
+      "authorizedName": "Verein der Freunde und Förderer des Werks von Walter Jurmann",
       "types": [
-        "archive",
         "database"
       ],
       "city": [
         "Berlin"
       ],
       "country": "Germany",
-      "slug": "walter-jurmann-estate",
-      "nameVariants": "Walter Jurmann official website; Walter-Jurmann.com; walter-jurmann.com",
+      "slug": "verein-freunde-foerderer-walter-jurmann",
+      "nameVariants": "Verein der Freunde und Förderer des Werks von Walter Jurmann e.V.; Walter Jurmann official website; walter-jurmann.com",
       "sourceIds": [
         "SRC0299",
         "SRC0302",
         "SRC0306",
         "SRC0307"
-      ]
+      ],
+      "authorizedNameSource": "GND",
+      "authorityUrl": "GND: https://d-nb.info/gnd/1144376599",
+      "publicNote": "Berlin association that publishes the official Walter Jurmann website, walter-jurmann.com, including its Songs works catalogue."
     },
     {
       "id": "ORG100",
@@ -3376,7 +3439,9 @@
         "SRC0114",
         "SRC0380",
         "SRC0527"
-      ]
+      ],
+      "authorizedNameSource": "LCNAF",
+      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n50066762"
     },
     {
       "id": "ORG101",
@@ -3395,7 +3460,9 @@
         "SRC0335",
         "SRC0386",
         "SRC0390"
-      ]
+      ],
+      "authorizedNameSource": "Official website",
+      "authorityUrl": "Official website: https://picryl.com/"
     },
     {
       "id": "ORG102",
@@ -3414,7 +3481,9 @@
       "sourceIds": [
         "SRC0353",
         "SRC0434"
-      ]
+      ],
+      "authorizedNameSource": "Official website",
+      "authorityUrl": "Official website: https://www.warszawa1939.pl/"
     },
     {
       "id": "ORG103",
@@ -3432,7 +3501,9 @@
       "nameVariants": "PTG; Genealodzy.pl; Metryki.Genealodzy.pl",
       "sourceIds": [
         "SRC0012"
-      ]
+      ],
+      "authorizedNameSource": "Official website",
+      "authorityUrl": "Official website: https://genealodzy.pl/"
     },
     {
       "id": "ORG104",
@@ -3460,7 +3531,9 @@
         "SRC0753",
         "SRC0754",
         "SRC0790"
-      ]
+      ],
+      "authorizedNameSource": "Official website",
+      "authorityUrl": "Official website: https://uwesteinle.com/"
     },
     {
       "id": "ORG105",
@@ -3478,7 +3551,9 @@
       "nameVariants": "Filmposter-Archiv; filmposter-archiv.de",
       "sourceIds": [
         "SRC0455"
-      ]
+      ],
+      "authorizedNameSource": "Official website",
+      "authorityUrl": "Official website: https://www.filmposter-archiv.de/"
     },
     {
       "id": "ORG106",
@@ -3584,7 +3659,9 @@
       ],
       "timelineEventIds": [
         "TE0041"
-      ]
+      ],
+      "authorizedNameSource": "LCNAF",
+      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no2011065920"
     },
     {
       "id": "ORG111",
@@ -3691,12 +3768,14 @@
         "W-S214",
         "W-S215"
       ],
-      "authorizedName": "Polskie Zakłady Fonograficzne „Odeon”"
+      "authorizedName": "Polskie Zakłady Fonograficzne „Odeon”",
+      "authorizedNameSource": "Biblioteka Narodowa",
+      "authorityUrl": "Biblioteka Narodowa: https://data.bn.org.pl/institutions/authorities/1941077"
     },
     {
       "id": "ORG116",
       "displayName": "Celebrity Productions, Inc.",
-      "authorizedName": "Celebrity Productions, Inc.",
+      "authorizedName": "Celebrity Productions",
       "types": [
         "film_studio"
       ],
@@ -3716,7 +3795,9 @@
       ],
       "workIds": [
         "W-F052"
-      ]
+      ],
+      "authorizedNameSource": "LCNAF",
+      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n92062261"
     },
     {
       "id": "ORG117",
