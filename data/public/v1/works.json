@@ -835,7 +835,9 @@
         "SRC0128",
         "SRC0373",
         "SRC0448",
-        "SRC0455"
+        "SRC0455",
+        "SRC0865",
+        "SRC0866"
       ],
       "mediaIds": [
         "M058",
@@ -872,6 +874,9 @@
       ],
       "periods": [
         "european"
+      ],
+      "timelineEventIds": [
+        "TE0059"
       ]
     },
     {
@@ -1160,7 +1165,8 @@
       ],
       "timelineEventIds": [
         "TE0050",
-        "TE0052"
+        "TE0052",
+        "TE0059"
       ],
       "titleVariantIds": [
         "TV0284",
@@ -1248,7 +1254,8 @@
         "REL0051"
       ],
       "timelineEventIds": [
-        "TE0028"
+        "TE0028",
+        "TE0059"
       ],
       "filmIds": [
         "F024"

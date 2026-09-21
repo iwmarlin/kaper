@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 774,
+  "count": 776,
   "records": [
     {
       "id": "SRC0001",
@@ -808,7 +808,10 @@
         "M105"
       ],
       "primaryUrl": "https://www.deutsche-digitale-bibliothek.de/newspaper/item/F67LYAULDWGDUOS6GTZDHZ7E6IFSZLZL?issuepage=8",
-      "accessUrl": "https://www.deutsche-digitale-bibliothek.de/newspaper/item/F67LYAULDWGDUOS6GTZDHZ7E6IFSZLZL?tx_dlf%5Bhighlight_word%5D=kind&issuepage=8"
+      "accessUrl": "https://www.deutsche-digitale-bibliothek.de/newspaper/item/F67LYAULDWGDUOS6GTZDHZ7E6IFSZLZL?tx_dlf%5Bhighlight_word%5D=kind&issuepage=8",
+      "timelineEventIds": [
+        "TE0059"
+      ]
     },
     {
       "id": "SRC0031",
@@ -2704,7 +2707,8 @@
         "M058"
       ],
       "timelineEventIds": [
-        "TE0034"
+        "TE0034",
+        "TE0059"
       ],
       "titleVariantIds": [
         "TV0022"
@@ -2770,6 +2774,9 @@
       "primaryUrl": "https://sbc.org.pl/dlibra/publication/305546/edition/288663/nowiny-codzienne-1933-r-23-nr-81",
       "personIds": [
         "P117"
+      ],
+      "timelineEventIds": [
+        "TE0059"
       ]
     },
     {
@@ -4549,7 +4556,10 @@
       "nameVariantIds": [
         "PNV0024"
       ],
-      "primaryUrl": "https://www.filmportal.de/film/kind-ich-freu-mich-auf-dein-kommen_9c44141db9f24ea2be73382a4fbb4d6f"
+      "primaryUrl": "https://www.filmportal.de/film/kind-ich-freu-mich-auf-dein-kommen_9c44141db9f24ea2be73382a4fbb4d6f",
+      "timelineEventIds": [
+        "TE0059"
+      ]
     },
     {
       "id": "SRC0135",
@@ -28815,6 +28825,70 @@
         "TE0043"
       ],
       "primaryUrl": "https://cinescores.dudaone.com/an-interview-with-bronislau-kaper"
+    },
+    {
+      "id": "SRC0865",
+      "shortCitation": "Film-Oberprüfstelle Berlin, decision no. 6195, 26 January 1933 — poster for Madame wünscht keine Kinder",
+      "fullCitation": "Film-Oberprüfstelle Berlin. Decision no. 6195, 26 January 1933, dismissing the appeal of Europa-Filmverleih A.G. against the ban imposed by the Filmprüfstelle Berlin on 16 January 1933 (no. 22147) on the poster design for Madame wünscht keine Kinder. Typescript, 2 pp. filmportal.de, DFF – Deutsches Filminstitut & Filmmuseum.",
+      "sourceType": "archival_document",
+      "title": "Film-Oberprüfstelle decision no. 6195 on the poster for Madame wünscht keine Kinder",
+      "creator": "Film-Oberprüfstelle Berlin",
+      "repository": "filmportal.de / DFF – Deutsches Filminstitut & Filmmuseum",
+      "publication": "filmportal.de",
+      "date": "1933-01-26",
+      "dateRole": "creation",
+      "dateQualifier": "confirmed",
+      "accessDate": "2026-09-21",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "organizationIds": [
+        "ORG072"
+      ],
+      "workIds": [
+        "W-F017"
+      ],
+      "filmIds": [
+        "F017"
+      ],
+      "timelineEventIds": [
+        "TE0059"
+      ],
+      "primaryUrl": "https://www.filmportal.de/node/7899/material/1237146",
+      "researchNote": "The decision concerns the advertising, not the film: the Filmprüfstelle had refused the poster design, which shows a young woman in a brief bathing suit pursued by two men, one pushing a pram, because together with the large main title “Madame wünscht keine Kinder” it seemed liable to act “phantasieüberreizend” on young viewers (Lichtspielgesetz of 12 May 1920). The Oberprüfstelle upheld the ban. Music is not mentioned.",
+      "researchNoteType": "evidence_note",
+      "slug": "src0865-film-oberprufstelle-decision-no-6195-on-the-poster-for-madame-wunscht-ke"
+    },
+    {
+      "id": "SRC0866",
+      "shortCitation": "Universum cinema advertisement for Madame wird kinderlieb — Westfälische Zeitung, 25 August 1933",
+      "fullCitation": "[Universum cinema advertisement for Madame wird kinderlieb]. Westfälische Zeitung: Bielefelder Tageblatt, no. 198, 25 August 1933, p. 4. Universitäts- und Landesbibliothek Münster, zeit.punktNRW; also Deutsches Zeitungsportal / Deutsche Digitale Bibliothek.",
+      "sourceType": "press_item",
+      "title": "Universum cinema advertisement for Madame wird kinderlieb",
+      "repository": "Universitäts- und Landesbibliothek Münster, zeit.punktNRW; Deutsche Digitale Bibliothek / Deutsches Zeitungsportal",
+      "publication": "Westfälische Zeitung: Bielefelder Tageblatt",
+      "date": "1933-08-25",
+      "dateRole": "publication",
+      "dateQualifier": "confirmed",
+      "accessDate": "2026-09-21",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "organizationIds": [
+        "ORG071"
+      ],
+      "workIds": [
+        "W-F017"
+      ],
+      "filmIds": [
+        "F017"
+      ],
+      "timelineEventIds": [
+        "TE0059"
+      ],
+      "primaryUrl": "https://zeitpunkt.nrw/ulbms/periodical/zoom/2336722",
+      "accessUrl": "https://www.deutsche-digitale-bibliothek.de/newspaper/item/7ZUTUEZPVI4LF6CBMTCAY7A4KTNEA2A6?issuepage=4",
+      "researchNote": "The Universum cinema advertises “Madame wird kinderlieb” with Liane Haid and Georg Alexander and the line “Musik von Jurmann und Kaper.” The same page carries an advertisement for Hans F. K. Günther’s Kleine Rassenkunde des deutschen Volkes.",
+      "researchNoteType": "evidence_note",
+      "slug": "src0866-universum-cinema-advertisement-for-madame-wird-kinderlieb"
     }
   ],
   "recordCount": null

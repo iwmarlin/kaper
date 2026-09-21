@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 54,
+  "count": 55,
   "records": [
     {
       "id": "TE0001",
@@ -2327,7 +2327,7 @@
       "placeDisplay": "Berlin / Paris",
       "cityKey": "europe",
       "shortDescription": "Jurmann–Kaper films and songs continue circulating in Europe after the composers leave for America.",
-      "longDescription": "While the composers head to America, their European films and songs continue to circulate. In September 1934, “Madame wird kinderlieb” still plays in Stuttgart with Jurmann and Kaper credited — despite Nazi purges. In France, “Tout pour l’amour” with Kiepura screens as late as 1936; the Journal de Vichy calls their music “infiniment plaisante.” The inconsistency of the exclusion is visible earlier still: on 25 August 1933 the Westfälische Zeitung advertised Madame wird kinderlieb with the credit “Musik von Jurmann und Kaper” on the same page as an advertisement for a racist handbook of German ethnology.",
+      "longDescription": "While the composers head to America, their European films and songs continue to circulate. In September 1934, “Madame wird kinderlieb” still plays in Stuttgart with Jurmann and Kaper credited — despite Nazi purges. In France, “Tout pour l’amour” with Kiepura screens as late as 1936; the Journal de Vichy calls their music “infiniment plaisante.”",
       "roles": [
         "reception_publicity",
         "publication_event"
@@ -2908,6 +2908,69 @@
       ],
       "heroMediaIds": [
         "M241"
+      ]
+    },
+    {
+      "id": "TE0059",
+      "slug": "1933-kapers-name-in-german-film-credits",
+      "title": "Kaper’s name in German film credits",
+      "label": "1933 · Kaper’s name in German film credits",
+      "displayDate": "1933",
+      "dateStart": "1933-01-01",
+      "datePrecision": "year",
+      "sortDate": "1933-04-21",
+      "sortOrder": 27.5,
+      "displayMode": "point",
+      "eventType": "career",
+      "period": "european",
+      "periodKey": "european",
+      "category": "film_career",
+      "filterTags": [
+        "career",
+        "europe"
+      ],
+      "placeDisplay": "Berlin",
+      "cityKey": "berlin",
+      "shortDescription": "In 1933 Kaper’s name was struck from some German film credits and kept in others.",
+      "longDescription": "In April 1933 the Polish daily Nowiny Codzienne reported from Berlin that German censorship had removed the name of “p. Bronisław Kaper,” a Pole from Warsaw, from the German version of Ein Lied für Dich, which had just had its premiere at the Gloria-Palast; no other source confirms this. When Ufa released Kind, ich freu’ mich auf Dein Kommen in June, neither Kaper nor Jurmann was named in the credits or the advertising, which gave the music to Hans O. Borgmann. The pattern was not uniform, however. In January 1933 the Berlin censors had banned the poster for Madame wünscht keine Kinder, judging it, together with the film’s title, liable to overexcite young viewers; the decision did not concern the music. Shown as Madame wird kinderlieb, the film was advertised in Bielefeld on 25 August 1933 with the credit “Musik von Jurmann und Kaper,” on the same page as an advertisement for Hans F. K. Günther’s Kleine Rassenkunde des deutschen Volkes, and a Stuttgart cinema notice of September 1934 still named Jurmann and Kaper as its composers.",
+      "featured": false,
+      "roles": [
+        "career_mechanism",
+        "reception_publicity"
+      ],
+      "personIds": [
+        "P009",
+        "P077"
+      ],
+      "sourceIds": [
+        "SRC0085",
+        "SRC0134",
+        "SRC0030",
+        "SRC0865",
+        "SRC0866",
+        "SRC0083"
+      ],
+      "workIds": [
+        "W-F023",
+        "W-F024",
+        "W-F017"
+      ],
+      "mediaIds": [
+        "M130",
+        "M105",
+        "M058"
+      ],
+      "heroMediaIds": [
+        "M130"
+      ],
+      "organizationIds": [
+        "ORG011"
+      ],
+      "placeIds": [
+        "PL002"
+      ],
+      "periods": [
+        "european"
       ]
     }
   ]

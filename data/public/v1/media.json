@@ -2253,6 +2253,9 @@
       ],
       "periods": [
         "european"
+      ],
+      "timelineEventIds": [
+        "TE0059"
       ]
     },
     {
@@ -3649,7 +3652,10 @@
       "periods": [
         "european"
       ],
-      "sortOrder": 105
+      "sortOrder": 105,
+      "timelineEventIds": [
+        "TE0059"
+      ]
     },
     {
       "id": "M106",
@@ -4331,6 +4337,12 @@
       "sortOrder": 130,
       "workIds": [
         "W-F023"
+      ],
+      "timelineEventIds": [
+        "TE0059"
+      ],
+      "heroTimelineEventIds": [
+        "TE0059"
       ]
     },
     {
