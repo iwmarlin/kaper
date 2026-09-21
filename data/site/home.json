@@ -23,7 +23,7 @@
       "label": "Places",
       "description": "Cities, venues and routes",
       "href": "map.html",
-      "count": 44
+      "count": 45
     },
     {
       "label": "Media",
@@ -118,23 +118,23 @@
       ],
       "mediaIds": [
         "M030",
-        "M080",
+        "M232",
         "M233"
       ],
       "heroMediaIds": [
-        "M080"
+        "M232"
       ],
       "placeIds": [
         "PL001",
-        "PL018"
+        "PL046"
       ],
       "periods": [
         "warsaw"
       ],
       "image": {
-        "id": "M080",
-        "assetPath": "assets/images/timeline/morskie-oko.jpg",
-        "altText": "Historical image of the Teatr Morskie Oko building in Warsaw."
+        "id": "M232",
+        "assetPath": "assets/images/historical-context/zula-pogorzelska-my-chcemy-krola-1926.jpg",
+        "altText": "Black-and-white stage photograph of Zula Pogorzelska posing with a folding fan in an ornate costume and large decorative hat."
       }
     },
     {
@@ -276,6 +276,6 @@
       "probable": 4,
       "uncertain": 0
     },
-    "sources": 776
+    "sources": 777
   }
 }

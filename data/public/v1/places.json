@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 44,
+  "count": 45,
   "records": [
     {
       "id": "PL001",
@@ -433,7 +433,7 @@
       "longitude": 6.77,
       "period": "european",
       "slug": "hamborn-duisburg",
-      "publicNote": "Ruhr-area place context for the December 1929 ERKLA concert review in which Kaper appears alongside Giuliano Pomeranz, then performing as Julian Pomeranc, Aleksander Zakin, and Leopold Mittmann.",
+      "publicNote": "Ruhr-area place context for the December 1929 ERKLA concert review in which Kaper appears alongside Giuliano Pomeranz, then performing as Julian Pomeranc, Alexander Zakin, and Leopold Mittmann.",
       "mapPrecision": "district_level",
       "publicScope": "map_and_detail",
       "personIds": [
@@ -595,12 +595,9 @@
       "longitude": 21.011841,
       "period": "warsaw",
       "slug": "teatr-morskie-oko-warsaw",
-      "publicNote": "Warsaw revue theatre associated with Kaper’s early popular-song environment. Morskie Oko occupied the corner of Jasna 3 and Sienkiewicza 7 from 1928 to 1933; that historical venue address is used for the map.",
+      "publicNote": "Warsaw revue theatre that opened in 1928 as a successor to Perskie Oko; Kaper’s “O tem wróble świergocą,” to words by Andrzej Włast, was sung in its revue Gwiazdy Warszawy. Morskie Oko occupied the corner of Jasna 3 and Sienkiewicza 7 from 1928 to 1933; that historical venue address is used for the map.",
       "mapPrecision": "venue_level",
       "publicScope": "map_and_detail",
-      "timelineEventIds": [
-        "TE0014"
-      ],
       "mediaIds": [
         "M080"
       ],
@@ -1375,6 +1372,34 @@
       ],
       "periods": [
         "european"
+      ]
+    },
+    {
+      "id": "PL046",
+      "displayName": "Teatr Perskie Oko, Nowy Świat 63, Warsaw",
+      "authorizedName": "Perskie Oko, Nowy Świat 63, Warsaw",
+      "placeType": "venue",
+      "city": "Warsaw",
+      "region": "Masovian Voivodeship",
+      "country": "Poland",
+      "latitude": 52.2367645,
+      "longitude": 21.0176203,
+      "period": "warsaw",
+      "slug": "teatr-perskie-oko-nowy-swiat-63-warsaw",
+      "publicNote": "Warsaw revue theatre founded by former members of Qui Pro Quo, where Zula Pogorzelska introduced Kaper’s first printed songs of 1926. Perskie Oko played at Nowy Świat 63 from 5 September 1925 to 11 September 1926, then at Marszałkowska 125 until August 1927. The coordinates give the modern address point of Nowy Świat 63; continuity with the pre-war building is not established.",
+      "mapPrecision": "venue_level",
+      "publicScope": "map_and_detail",
+      "timelineEventIds": [
+        "TE0014"
+      ],
+      "mediaIds": [
+        "M232"
+      ],
+      "sourceIds": [
+        "SRC0867"
+      ],
+      "periods": [
+        "warsaw"
       ]
     }
   ]
