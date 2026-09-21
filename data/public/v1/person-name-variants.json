@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 66,
+  "count": 67,
   "records": [
     {
       "id": "PNV0001",
@@ -1614,6 +1614,25 @@
       ],
       "sourceIds": [
         "SRC0863"
+      ]
+    },
+    {
+      "id": "PNV0074",
+      "variantName": "Tschaikowsky",
+      "variantType": "transliteration",
+      "identityScope": "single_person",
+      "evidenceContext": "sheet_music_or_printed_credit",
+      "attestedWording": "Tschaikowsky",
+      "certainty": "confirmed",
+      "publicNote": "German transliteration of Tchaikovsky’s name in the title of Kaper’s “Russian Cocktail” (Alrobi, Berlin, 1930), as recorded by the Staatsbibliothek zu Berlin.",
+      "personIds": [
+        "P181"
+      ],
+      "workIds": [
+        "W-O016"
+      ],
+      "sourceIds": [
+        "SRC0509"
       ]
     }
   ]
