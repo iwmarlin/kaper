@@ -80,7 +80,8 @@ class PersonAuthorityNormalizationTests(unittest.TestCase):
             )
         self.assertEqual(self.people_by_id["P004"]["authorizedNameSource"], "local heading")
         self.assertEqual(self.people_by_id["P014"]["authorizedNameSource"], "local heading")
-        self.assertEqual(self.people_by_id["P021"]["authorizedNameSource"], "local heading")
+        # Groener's heading now has a contributing register: the BnF notice.
+        self.assertEqual(self.people_by_id["P021"]["authorizedNameSource"], "BnF")
         self.assertIn("Dutch National Thesaurus", self.people_by_id["P096"]["authorizedNameSource"])
 
 

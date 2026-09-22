@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 794,
+  "count": 796,
   "records": [
     {
       "id": "SRC0001",
@@ -60,6 +60,7 @@
       "date": "1928",
       "dateRole": "issue",
       "dateQualifier": "approximate",
+      "dateDisplay": "[1928]",
       "accessDate": "2026-07-06",
       "reliability": "medium",
       "sourceStatus": "verified_with_attribution_note",
@@ -90,7 +91,6 @@
       "workIds": [
         "W-O019"
       ],
-      "dateDisplay": "[1928]",
       "researchNote": "The upload title’s “(1927)” is the year of the song, not of the recording. The Ben Berlin discography at grammophon-platten.de lists Polydor 21768 (“Miss Annabelle Lee” / “Ice-Cream”) without a date, directly beside Polydor 21769, dated July 1928, and the duo’s Polydor 21898 as September 1928; the issue is therefore dated [1928].",
       "researchNoteType": "evidence_note"
     },
@@ -29583,9 +29583,9 @@
       "creator": "LYSGAUTYVIDEO (YouTube channel)",
       "repository": "YouTube",
       "publication": "YouTube",
-      "date": "2011-08-15",
       "dateRole": "digital_publication",
       "dateQualifier": "confirmed",
+      "date": "2011-08-15",
       "accessDate": "2026-09-22",
       "reliability": "low",
       "sourceStatus": "verified",
@@ -29643,6 +29643,86 @@
         "CON-S098-LAB-ORG155"
       ],
       "slug": "src0884-lys-gauty-19321944-fremeaux-associes-fa-5033-discography"
+    },
+    {
+      "id": "SRC0885",
+      "shortCitation": "GEMA Repertoire, “Le bistro du port”, work no. 577359",
+      "fullCitation": "GEMA. Online-Repertoiresuche, work no. 577359, versions 001 (“LE BISTRO DU PORT”, ISWC T-800.666.821-0) and 002 (“BISTROT DU PORT”). Both name Walter Jurmann and Bronislaw Kaper as composers and André Auguste Saudemont as lyricist; the second lyricist is Stanislaus Goldhamer (IPI name no. 12168813) in version 001 and Gaston Groener (IPI name no. 12749693) in version 002.",
+      "sourceType": "copyright_catalogue",
+      "title": "LE BISTRO DU PORT — GEMA repertoire work detail",
+      "creator": "GEMA",
+      "repository": "GEMA Online-Repertoiresuche",
+      "publication": "GEMA",
+      "dateRole": "described_item",
+      "dateQualifier": "unknown",
+      "accessDate": "2026-09-22",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "primaryUrl": "https://portal.gema.de/app/repertoiresuche/werksuche",
+      "researchNote": "Read in the GEMA repertoire search by the project editor on 22 September 2026; the portal gives no stable link to individual entries.",
+      "organizationIds": [
+        "ORG086"
+      ],
+      "workIds": [
+        "W-S098"
+      ],
+      "songIds": [
+        "S098"
+      ],
+      "personIds": [
+        "P004",
+        "P009",
+        "P021",
+        "P077"
+      ],
+      "contributionIds": [
+        "CON-S098-C-P009",
+        "CON-S098-C-P077",
+        "CON-S098-L-P004",
+        "CON-S098-L-P021"
+      ],
+      "nameVariantIds": [
+        "PNV0075"
+      ],
+      "slug": "src0885-le-bistro-du-port-gema-repertoire-work-detail",
+      "researchNoteType": "verification_note"
+    },
+    {
+      "id": "SRC0886",
+      "shortCitation": "BnF, authority record “Groener, Gaston (18..?-1962),” FRBNF13797484",
+      "fullCitation": "Bibliothèque nationale de France. Notice de personne “Groener, Gaston (18..?-1962)”, FRBNF13797484, ark:/12148/cb137974849. Created 2 October 2001, updated 11 May 2005.",
+      "sourceType": "authority_record",
+      "title": "BnF authority record: Groener, Gaston (18..?-1962)",
+      "creator": "Bibliothèque nationale de France",
+      "repository": "Bibliothèque nationale de France (BnF)",
+      "publication": "Catalogue général de la BnF",
+      "dateRole": "record_creation",
+      "dateQualifier": "confirmed",
+      "date": "2001-10-02",
+      "accessDate": "2026-09-22",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "organizationIds": [
+        "ORG062"
+      ],
+      "personIds": [
+        "P021"
+      ],
+      "nameVariantIds": [
+        "PNV0076"
+      ],
+      "primaryUrl": "https://catalogue.bnf.fr/ark:/12148/cb137974849",
+      "identifiers": [
+        {
+          "scheme": "ark",
+          "value": "ark:/12148/cb137974849"
+        }
+      ],
+      "researchNote": "The notice identifies Gaston Groener as a lyricist (parolier), gives his death date as 14 September 1962, records “Gol-Gauty” as a pseudonym among the rejected forms, and cites Le bistrot du port (1935) as its source.",
+      "researchNoteType": "authority_note",
+      "authoritySubject": "person",
+      "identityRelation": "same",
+      "slug": "src0886-bnf-authority-record-groener-gaston-18-1962"
     }
   ],
   "recordCount": null

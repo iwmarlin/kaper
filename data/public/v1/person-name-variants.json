@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 67,
+  "count": 69,
   "records": [
     {
       "id": "PNV0001",
@@ -1659,6 +1659,41 @@
       ],
       "sourceIds": [
         "SRC0509"
+      ]
+    },
+    {
+      "id": "PNV0075",
+      "variantName": "Stanislaus Goldhamer",
+      "variantType": "other",
+      "identityScope": "single_person",
+      "evidenceContext": "copyright_or_registration",
+      "attestedWording": "GOLDHAMER, STANISLAUS",
+      "certainty": "probable",
+      "publicNote": "GEMA registers the lyrics of Le bistrot du port under Stanislaus Goldhamer in one version of work no. 577359 and under Gaston Groener in the other, with the same co-authors; the Walter Jurmann works catalogue gives “Gaston Groener (St. Goldhammer)”. The sources do not say which of the two is the civil name.",
+      "personIds": [
+        "P021"
+      ],
+      "workIds": [
+        "W-S098"
+      ],
+      "sourceIds": [
+        "SRC0885"
+      ]
+    },
+    {
+      "id": "PNV0076",
+      "variantName": "Gol-Gauty",
+      "variantType": "pseudonym",
+      "identityScope": "single_person",
+      "evidenceContext": "authority_record",
+      "attestedWording": "Gol-Gauty (18..?-1962)",
+      "certainty": "confirmed",
+      "publicNote": "Recorded by the Bibliothèque nationale de France as a pseudonym of Gaston Groener.",
+      "personIds": [
+        "P021"
+      ],
+      "sourceIds": [
+        "SRC0886"
       ]
     }
   ]

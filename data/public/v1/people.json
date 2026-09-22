@@ -124,7 +124,8 @@
       "sourceIds": [
         "SRC0285",
         "SRC0476",
-        "SRC0882"
+        "SRC0882",
+        "SRC0885"
       ],
       "contributionIds": [
         "CON-S098-L-P004"
@@ -426,7 +427,8 @@
         "SRC0816",
         "SRC0859",
         "SRC0863",
-        "SRC0864"
+        "SRC0864",
+        "SRC0885"
       ],
       "timelineEventIds": [
         "TE0001",
@@ -1634,11 +1636,13 @@
       "roles": [
         "lyricist"
       ],
-      "authorityUrl": "VIAF: https://viaf.org/viaf/170702482",
+      "authorityUrl": "BnF: https://catalogue.bnf.fr/ark:/12148/cb137974849\nVIAF: https://viaf.org/viaf/170702482",
       "sourceIds": [
         "SRC0285",
         "SRC0476",
-        "SRC0882"
+        "SRC0882",
+        "SRC0885",
+        "SRC0886"
       ],
       "contributionIds": [
         "CON-S098-L-P021"
@@ -1649,7 +1653,11 @@
       "deathYear": 1962,
       "lifeDatesCertainty": "confirmed",
       "authorizedName": "Groener, Gaston",
-      "authorizedNameSource": "local heading"
+      "authorizedNameSource": "BnF",
+      "nameVariantIds": [
+        "PNV0075",
+        "PNV0076"
+      ]
     },
     {
       "id": "P022",
@@ -3276,7 +3284,8 @@
         "SRC0753",
         "SRC0759",
         "SRC0786",
-        "SRC0859"
+        "SRC0859",
+        "SRC0885"
       ],
       "timelineEventIds": [
         "TE0026",
