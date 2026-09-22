@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 1317,
+  "count": 1318,
   "records": [
     {
       "id": "CON-F001-C-P009",
@@ -23445,7 +23445,7 @@
       "role": "performer",
       "nameAsPrinted": "Lys Gauty",
       "displayCredit": "Vocal performance",
-      "evidenceContext": "online_recording",
+      "evidenceContext": "discography",
       "sortOrder": 50,
       "certainty": "confirmed",
       "workIds": [
@@ -23455,9 +23455,29 @@
         "P203"
       ],
       "sourceIds": [
+        "SRC0884",
         "SRC0883"
       ],
-      "scopeNote": "Recorded the song; the upload dates the recording to 1934 but gives no label or catalogue number."
+      "scopeNote": "Recorded the song in Paris on 18 October 1934 with the orchestra of Wal Berg; Polydor 522987, matrix 1444 WPP."
+    },
+    {
+      "id": "CON-S098-LAB-ORG155",
+      "role": "record_label",
+      "nameAsPrinted": "Polydor",
+      "displayCredit": "Issuing label",
+      "evidenceContext": "discography",
+      "sortOrder": 60,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S098"
+      ],
+      "organizationIds": [
+        "ORG155"
+      ],
+      "sourceIds": [
+        "SRC0884"
+      ],
+      "scopeNote": "Issued Lys Gauty’s recording as Polydor 522987."
     }
   ]
 }
