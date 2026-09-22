@@ -196,3 +196,16 @@ class CompactCatalogueIndexTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class StaticPlaceCountTests(unittest.TestCase):
+    """The map explorer rewrites its two counts when it loads. If the page was
+    written with a stale number, the reader watches it change on arrival."""
+
+    def test_the_map_page_states_the_current_number_of_places(self):
+        places = read(ROOT / "data/public/v1/places.json")["records"]
+        text = (ROOT / "map.html").read_text(encoding="utf-8")
+        for element_id in ("map-total", "place-count"):
+            match = re.search(rf'id="{element_id}"[^>]*>([^<]*)<', text)
+            self.assertIsNotNone(match, element_id)
+            self.assertEqual(match.group(1), str(len(places)), element_id)

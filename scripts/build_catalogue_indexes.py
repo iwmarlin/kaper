@@ -495,6 +495,10 @@ def expected_files(root: Path) -> tuple[dict[Path, bytes], dict[str, dict], dict
             text = replace_between(
                 text, "<!-- place-list:start -->", "<!-- place-list:end -->", rendered["places"]["markup"]
             )
+            # The explorer rewrites both counts once it loads; written here as
+            # well, they are right before it does and never change on arrival.
+            for element_id in ("map-total", "place-count"):
+                text = replace_element_text(text, element_id, str(rendered["places"]["shown"]))
         text = replace_between(text, SOCIAL_START_MARKER, SOCIAL_END_MARKER, social)
         files[path] = text.encode("utf-8")
     return files, rendered, payloads
