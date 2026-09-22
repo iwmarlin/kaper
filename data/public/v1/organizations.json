@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 157,
+  "count": 158,
   "records": [
     {
       "id": "ORG001",
@@ -1040,13 +1040,16 @@
       "slug": "editions-musicales-universelles",
       "nameVariants": "Editions Musicales Universelles; Éditions musicales universelles",
       "contributionIds": [
-        "CON-S103-PUB-ORG032"
+        "CON-S103-PUB-ORG032",
+        "CON-S227-PUB-ORG032"
       ],
       "workIds": [
-        "W-S103"
+        "W-S103",
+        "W-S227"
       ],
       "sourceIds": [
-        "SRC0302"
+        "SRC0302",
+        "SRC0879"
       ],
       "authorizedNameSource": "BnF"
     },
@@ -1635,15 +1638,23 @@
       "nameVariants": "Chappell and Co.",
       "sourceIds": [
         "SRC0462",
-        "SRC0463"
+        "SRC0463",
+        "SRC0871",
+        "SRC0872",
+        "SRC0873",
+        "SRC0874"
       ],
       "contributionIds": [
         "CON-S040-PUB-ORG050",
-        "CON-S193-PUB-ORG050"
+        "CON-S193-PUB-ORG050",
+        "CON-S221-PUB-ORG050",
+        "CON-S222-PUB-ORG050"
       ],
       "workIds": [
         "W-S040",
-        "W-S193"
+        "W-S193",
+        "W-S221",
+        "W-S222"
       ],
       "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no2002052546\nGND: https://d-nb.info/gnd/16108657-3\nVIAF: https://viaf.org/viaf/127005193",
       "authorizedNameSource": "LCNAF"
@@ -1802,15 +1813,24 @@
       "nameVariants": "Campbell, Connelly and Co; Campbell & Connelly; Campbell Connelly & Co.; Campbell, Connelly & Co. Ltd.; Éditions Campbell-Connelly",
       "contributionIds": [
         "CON-S037-PUB-ORG055",
-        "CON-S205-PUB-ORG055"
+        "CON-S205-PUB-ORG055",
+        "CON-S223-PUB-ORG055",
+        "CON-S224-PUB-ORG055",
+        "CON-S225-PUB-ORG055"
       ],
       "workIds": [
         "W-S037",
-        "W-S205"
+        "W-S205",
+        "W-S223",
+        "W-S224",
+        "W-S225"
       ],
       "sourceIds": [
         "SRC0212",
-        "SRC0504"
+        "SRC0504",
+        "SRC0875",
+        "SRC0876",
+        "SRC0877"
       ],
       "authorityUrl": "BnF: https://catalogue.bnf.fr/ark:/12148/cb142776167",
       "authorizedNameSource": "BnF"
@@ -2059,7 +2079,8 @@
         "SRC0671",
         "SRC0786",
         "SRC0856",
-        "SRC0857"
+        "SRC0857",
+        "SRC0879"
       ]
     },
     {
@@ -2388,7 +2409,16 @@
         "SRC0854",
         "SRC0855",
         "SRC0868",
-        "SRC0869"
+        "SRC0869",
+        "SRC0870",
+        "SRC0871",
+        "SRC0872",
+        "SRC0873",
+        "SRC0874",
+        "SRC0875",
+        "SRC0876",
+        "SRC0877",
+        "SRC0878"
       ],
       "authorizedNameSource": "LCNAF",
       "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n2001062537"
@@ -2486,7 +2516,16 @@
         "SRC0471",
         "SRC0472",
         "SRC0473",
-        "SRC0474"
+        "SRC0474",
+        "SRC0870",
+        "SRC0871",
+        "SRC0872",
+        "SRC0873",
+        "SRC0874",
+        "SRC0875",
+        "SRC0876",
+        "SRC0877",
+        "SRC0878"
       ]
     },
     {
@@ -5124,6 +5163,35 @@
       "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n98101261\nGND: https://d-nb.info/gnd/1239029-X\nVIAF: https://viaf.org/viaf/246001873\nISNI: https://isni.org/isni/0000000115454978",
       "sourceIds": [
         "SRC0438"
+      ]
+    },
+    {
+      "id": "ORG166",
+      "displayName": "United Music Publishers",
+      "authorizedName": "United Music Publishers",
+      "authorizedNameSource": "LCNAF",
+      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no2024029927",
+      "types": [
+        "publisher"
+      ],
+      "city": [
+        "London"
+      ],
+      "country": "United Kingdom",
+      "slug": "united-music-publishers",
+      "nameVariants": "United Music Publishers, Ltd.; United Music Publishers Limited",
+      "publicNote": "London music publisher incorporated on 1 April 1932.",
+      "contributionIds": [
+        "CON-S220-PUB-ORG166",
+        "CON-S226-PUB-ORG166"
+      ],
+      "workIds": [
+        "W-S220",
+        "W-S226"
+      ],
+      "sourceIds": [
+        "SRC0870",
+        "SRC0878"
       ]
     }
   ]

@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 779,
+  "count": 789,
   "records": [
     {
       "id": "SRC0001",
@@ -11488,7 +11488,8 @@
         "W-S089",
         "W-S090",
         "W-S091",
-        "W-S175"
+        "W-S175",
+        "W-S223"
       ],
       "filmIds": [
         "F004",
@@ -11618,10 +11619,13 @@
         "CON-S091-C-P009",
         "CON-S097-C-P077",
         "CON-S116-C-P077",
-        "CON-S175-C-P077"
+        "CON-S175-C-P077",
+        "CON-S223-C-P077",
+        "CON-S223-C-P009"
       ],
       "nameVariantIds": [
-        "PNV0020"
+        "PNV0020",
+        "PNV0019"
       ],
       "primaryUrl": "https://walter-jurmann.com/songs/"
     },
@@ -28985,6 +28989,454 @@
       "researchNote": "The entry “Jurmann, Walter” lists, from the sound film Ihre Majestät — die Liebe!, a salon-orchestra arrangement of “Mensch, mach dir nichts draus!” and the film’s song folio with five songs, all under Jurmann’s name; Kaper is not named.",
       "researchNoteType": "evidence_note",
       "slug": "src0869-hofmeisters-musikalisch-literarischer-monatsbericht-ihre-majestat-die-li"
+    },
+    {
+      "id": "SRC0870",
+      "shortCitation": "CCE 1932, no. 23357, “Oh, Mister Leader, please play a tango for me”",
+      "fullCitation": "U.S. Copyright Office, Catalog of Copyright Entries, New Series. Part 3: Musical Compositions, 1932, vol. 27, nos. 1–12. Washington, DC: U.S. Government Printing Office, entry no. 23357: “Oh, Mister Leader, please play a tango for me”: tango, German words by Fritz Rotter, English words by Ralph Stanley, music by Kaper and German; with ukulele arrangement. © June 18, 1932; E for. 26518; United Music Publishers, Ltd. Digitized via Internet Archive.",
+      "sourceType": "copyright_catalogue",
+      "title": "Catalog of Copyright Entries: “Oh, Mister Leader, please play a tango for me”",
+      "creator": "U.S. Copyright Office",
+      "repository": "Internet Archive",
+      "publication": "Catalog of Copyright Entries / U.S. Government Printing Office",
+      "date": "1932",
+      "dateRole": "catalogue_volume",
+      "dateQualifier": "confirmed",
+      "accessDate": "2026-09-22",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "organizationIds": [
+        "ORG166",
+        "ORG067",
+        "ORG068"
+      ],
+      "primaryUrl": "https://archive.org/details/catalogofcopyrig273libr",
+      "identifiers": [
+        {
+          "scheme": "usco_registration",
+          "value": "E for. 26518"
+        }
+      ],
+      "workIds": [
+        "W-S220"
+      ],
+      "songIds": [
+        "S220"
+      ],
+      "contributionIds": [
+        "CON-S220-C-P009",
+        "CON-S220-C-P105",
+        "CON-S220-L-P020",
+        "CON-S220-L-P200",
+        "CON-S220-PUB-ORG166"
+      ],
+      "slug": "src0870-catalog-of-copyright-entries-oh-mister-leader-please-play-a-tango-for-me",
+      "nameVariantIds": [
+        "PNV0003"
+      ],
+      "personIds": [
+        "P200"
+      ],
+      "workRelationIds": [
+        "REL0211"
+      ]
+    },
+    {
+      "id": "SRC0871",
+      "shortCitation": "CCE 1932, no. 13149, “City rhythm”",
+      "fullCitation": "U.S. Copyright Office, Catalog of Copyright Entries, New Series. Part 3: Musical Compositions, 1932, vol. 27, nos. 1–12. Washington, DC: U.S. Government Printing Office, entry no. 13149: “City rhythm”: English words by Desmond Carter, music by Fritz Rotter and B. Kaper. © May 28, 1932; E for. 24542; Chappell & Co., Ltd. Digitized via Internet Archive.",
+      "sourceType": "copyright_catalogue",
+      "title": "Catalog of Copyright Entries: “City rhythm”",
+      "creator": "U.S. Copyright Office",
+      "repository": "Internet Archive",
+      "publication": "Catalog of Copyright Entries / U.S. Government Printing Office",
+      "date": "1932",
+      "dateRole": "catalogue_volume",
+      "dateQualifier": "confirmed",
+      "accessDate": "2026-09-22",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "organizationIds": [
+        "ORG050",
+        "ORG067",
+        "ORG068"
+      ],
+      "primaryUrl": "https://archive.org/details/catalogofcopyrig273libr",
+      "identifiers": [
+        {
+          "scheme": "usco_registration",
+          "value": "E for. 24542"
+        }
+      ],
+      "workIds": [
+        "W-S221"
+      ],
+      "songIds": [
+        "S221"
+      ],
+      "contributionIds": [
+        "CON-S221-C-P009",
+        "CON-S221-C-P020",
+        "CON-S221-L-P012",
+        "CON-S221-PUB-ORG050"
+      ],
+      "slug": "src0871-catalog-of-copyright-entries-city-rhythm",
+      "nameVariantIds": [
+        "PNV0019"
+      ]
+    },
+    {
+      "id": "SRC0872",
+      "shortCitation": "CCE 1932, no. 3724, “Just one of my dreams”",
+      "fullCitation": "U.S. Copyright Office, Catalog of Copyright Entries, New Series. Part 3: Musical Compositions, 1932, vol. 27, nos. 1–12. Washington, DC: U.S. Government Printing Office, entry no. 3724: “Just one of my dreams”: words by Fritz Rotter, English adaptation by Desmond Carter, of Great Britain, music by B. Kaper. © Jan. 18, 1932; Chappell & Co., Ltd., London. Digitized via Internet Archive.",
+      "sourceType": "copyright_catalogue",
+      "title": "Catalog of Copyright Entries: “Just one of my dreams”",
+      "creator": "U.S. Copyright Office",
+      "repository": "Internet Archive",
+      "publication": "Catalog of Copyright Entries / U.S. Government Printing Office",
+      "date": "1932",
+      "dateRole": "catalogue_volume",
+      "dateQualifier": "confirmed",
+      "accessDate": "2026-09-22",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "organizationIds": [
+        "ORG050",
+        "ORG067",
+        "ORG068"
+      ],
+      "primaryUrl": "https://archive.org/details/catalogofcopyrig273libr",
+      "workIds": [
+        "W-S222"
+      ],
+      "songIds": [
+        "S222"
+      ],
+      "contributionIds": [
+        "CON-S222-C-P009",
+        "CON-S222-L-P020",
+        "CON-S222-L-P012",
+        "CON-S222-PUB-ORG050"
+      ],
+      "slug": "src0872-catalog-of-copyright-entries-just-one-of-my-dreams",
+      "nameVariantIds": [
+        "PNV0019"
+      ]
+    },
+    {
+      "id": "SRC0873",
+      "shortCitation": "CCE 1932, no. 11522, “Just one of my dreams”",
+      "fullCitation": "U.S. Copyright Office, Catalog of Copyright Entries, New Series. Part 3: Musical Compositions, 1932, vol. 27, nos. 1–12. Washington, DC: U.S. Government Printing Office, entry no. 11522: “Just one of my dreams”: slow fox-trot, English words by Desmond Carter, music by B. Kaper, arranged by Al Frisk; orchestra parts. © Apr. 1, 1932; E for. 23975; Chappell & Co., Ltd. Digitized via Internet Archive.",
+      "sourceType": "copyright_catalogue",
+      "title": "Catalog of Copyright Entries: “Just one of my dreams” — orchestra parts",
+      "creator": "U.S. Copyright Office",
+      "repository": "Internet Archive",
+      "publication": "Catalog of Copyright Entries / U.S. Government Printing Office",
+      "date": "1932",
+      "dateRole": "catalogue_volume",
+      "dateQualifier": "confirmed",
+      "accessDate": "2026-09-22",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "organizationIds": [
+        "ORG050",
+        "ORG067",
+        "ORG068"
+      ],
+      "primaryUrl": "https://archive.org/details/catalogofcopyrig273libr",
+      "identifiers": [
+        {
+          "scheme": "usco_registration",
+          "value": "E for. 23975"
+        }
+      ],
+      "workIds": [
+        "W-S222"
+      ],
+      "songIds": [
+        "S222"
+      ],
+      "contributionIds": [
+        "CON-S222-C-P009",
+        "CON-S222-L-P020",
+        "CON-S222-L-P012",
+        "CON-S222-PUB-ORG050"
+      ],
+      "slug": "src0873-catalog-of-copyright-entries-just-one-of-my-dreams",
+      "nameVariantIds": [
+        "PNV0019"
+      ]
+    },
+    {
+      "id": "SRC0874",
+      "shortCitation": "CCE 1932, no. 20703, “Just one of my dreams”",
+      "fullCitation": "U.S. Copyright Office, Catalog of Copyright Entries, New Series. Part 3: Musical Compositions, 1932, vol. 27, nos. 1–12. Washington, DC: U.S. Government Printing Office, entry no. 20703: “Just one of my dreams”: fox-trot, words by Desmond Carter, music by B. Kaper, arranged by J. Ord Hume; band parts. © Aug. 18, 1932; E for. 25767; Chappell & Co., Ltd. Digitized via Internet Archive.",
+      "sourceType": "copyright_catalogue",
+      "title": "Catalog of Copyright Entries: “Just one of my dreams” — band parts",
+      "creator": "U.S. Copyright Office",
+      "repository": "Internet Archive",
+      "publication": "Catalog of Copyright Entries / U.S. Government Printing Office",
+      "date": "1932",
+      "dateRole": "catalogue_volume",
+      "dateQualifier": "confirmed",
+      "accessDate": "2026-09-22",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "organizationIds": [
+        "ORG050",
+        "ORG067",
+        "ORG068"
+      ],
+      "primaryUrl": "https://archive.org/details/catalogofcopyrig273libr",
+      "identifiers": [
+        {
+          "scheme": "usco_registration",
+          "value": "E for. 25767"
+        }
+      ],
+      "workIds": [
+        "W-S222"
+      ],
+      "songIds": [
+        "S222"
+      ],
+      "contributionIds": [
+        "CON-S222-C-P009",
+        "CON-S222-L-P020",
+        "CON-S222-L-P012",
+        "CON-S222-PUB-ORG050"
+      ],
+      "slug": "src0874-catalog-of-copyright-entries-just-one-of-my-dreams",
+      "nameVariantIds": [
+        "PNV0019"
+      ]
+    },
+    {
+      "id": "SRC0875",
+      "shortCitation": "CCE 1932, no. 16054, “Learn to smile”",
+      "fullCitation": "U.S. Copyright Office, Catalog of Copyright Entries, New Series. Part 3: Musical Compositions, 1932, vol. 27, nos. 1–12. Washington, DC: U.S. Government Printing Office, entry no. 16054: “Learn to smile”: words by Ralph Jack, music by Walter Jurmann and B. Kaper; with ukulele arrangement. © July 14, 1932; E for. 25115; Campbell, Connelly & Co., Ltd. Digitized via Internet Archive.",
+      "sourceType": "copyright_catalogue",
+      "title": "Catalog of Copyright Entries: “Learn to smile”",
+      "creator": "U.S. Copyright Office",
+      "repository": "Internet Archive",
+      "publication": "Catalog of Copyright Entries / U.S. Government Printing Office",
+      "date": "1932",
+      "dateRole": "catalogue_volume",
+      "dateQualifier": "confirmed",
+      "accessDate": "2026-09-22",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "organizationIds": [
+        "ORG055",
+        "ORG067",
+        "ORG068"
+      ],
+      "primaryUrl": "https://archive.org/details/catalogofcopyrig273libr",
+      "identifiers": [
+        {
+          "scheme": "usco_registration",
+          "value": "E for. 25115"
+        }
+      ],
+      "workIds": [
+        "W-S223"
+      ],
+      "songIds": [
+        "S223"
+      ],
+      "contributionIds": [
+        "CON-S223-C-P077",
+        "CON-S223-C-P009",
+        "CON-S223-L-P201",
+        "CON-S223-PUB-ORG055"
+      ],
+      "slug": "src0875-catalog-of-copyright-entries-learn-to-smile",
+      "nameVariantIds": [
+        "PNV0019"
+      ],
+      "personIds": [
+        "P201"
+      ]
+    },
+    {
+      "id": "SRC0876",
+      "shortCitation": "CCE 1932, no. 5108, “You could never be true”",
+      "fullCitation": "U.S. Copyright Office, Catalog of Copyright Entries, New Series. Part 3: Musical Compositions, 1932, vol. 27, nos. 1–12. Washington, DC: U.S. Government Printing Office, entry no. 5108: “You could never be true”: lyric by Reg Connelly, of Great Britain, music by B. Kaper; with ukulele arrangement [staff and tonic sol-fa notations]. © Feb. 19, 1932; 1 copy received Feb. 23; E for. 22710; Campbell, Connelly & Co., Ltd., London. Digitized via Internet Archive.",
+      "sourceType": "copyright_catalogue",
+      "title": "Catalog of Copyright Entries: “You could never be true”",
+      "creator": "U.S. Copyright Office",
+      "repository": "Internet Archive",
+      "publication": "Catalog of Copyright Entries / U.S. Government Printing Office",
+      "date": "1932",
+      "dateRole": "catalogue_volume",
+      "dateQualifier": "confirmed",
+      "accessDate": "2026-09-22",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "organizationIds": [
+        "ORG055",
+        "ORG067",
+        "ORG068"
+      ],
+      "primaryUrl": "https://archive.org/details/catalogofcopyrig273libr",
+      "identifiers": [
+        {
+          "scheme": "usco_registration",
+          "value": "E for. 22710"
+        }
+      ],
+      "workIds": [
+        "W-S224"
+      ],
+      "songIds": [
+        "S224"
+      ],
+      "contributionIds": [
+        "CON-S224-C-P009",
+        "CON-S224-L-P064",
+        "CON-S224-PUB-ORG055"
+      ],
+      "slug": "src0876-catalog-of-copyright-entries-you-could-never-be-true",
+      "nameVariantIds": [
+        "PNV0019"
+      ]
+    },
+    {
+      "id": "SRC0877",
+      "shortCitation": "CCE 1932, no. 4762, “Thrill (The) of the tango”",
+      "fullCitation": "U.S. Copyright Office, Catalog of Copyright Entries, New Series. Part 3: Musical Compositions, 1932, vol. 27, nos. 1–12. Washington, DC: U.S. Government Printing Office, entry no. 4762: “Thrill (The) of the tango”: lyric by Reg Connelly, of Great Britain, music by B. Kaper; with ukulele arrangement [staff and tonic sol-fa notations]. © Feb. 19, 1932; 1 copy received Feb. 23; E for. 22709; Campbell, Connelly & Co., Ltd., London. Digitized via Internet Archive.",
+      "sourceType": "copyright_catalogue",
+      "title": "Catalog of Copyright Entries: “Thrill (The) of the tango”",
+      "creator": "U.S. Copyright Office",
+      "repository": "Internet Archive",
+      "publication": "Catalog of Copyright Entries / U.S. Government Printing Office",
+      "date": "1932",
+      "dateRole": "catalogue_volume",
+      "dateQualifier": "confirmed",
+      "accessDate": "2026-09-22",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "organizationIds": [
+        "ORG055",
+        "ORG067",
+        "ORG068"
+      ],
+      "primaryUrl": "https://archive.org/details/catalogofcopyrig273libr",
+      "identifiers": [
+        {
+          "scheme": "usco_registration",
+          "value": "E for. 22709"
+        }
+      ],
+      "workIds": [
+        "W-S225"
+      ],
+      "songIds": [
+        "S225"
+      ],
+      "contributionIds": [
+        "CON-S225-C-P009",
+        "CON-S225-L-P064",
+        "CON-S225-PUB-ORG055"
+      ],
+      "slug": "src0877-catalog-of-copyright-entries-thrill-the-of-the-tango",
+      "nameVariantIds": [
+        "PNV0019"
+      ]
+    },
+    {
+      "id": "SRC0878",
+      "shortCitation": "CCE 1932, no. 24616, “Falling in love with you”",
+      "fullCitation": "U.S. Copyright Office, Catalog of Copyright Entries, New Series. Part 3: Musical Compositions, 1932, vol. 27, nos. 1–12. Washington, DC: U.S. Government Printing Office, entry no. 24616: “Falling in love with you”: waltz, words by Henrik N. Ege, original German words by Fritz Rotter, music by Bob Handers; with ukulele arrangement. © Sept. 3, 1932; E for. 26564; United Music Publishers, Ltd. Digitized via Internet Archive.",
+      "sourceType": "copyright_catalogue",
+      "title": "Catalog of Copyright Entries: “Falling in love with you”",
+      "creator": "U.S. Copyright Office",
+      "repository": "Internet Archive",
+      "publication": "Catalog of Copyright Entries / U.S. Government Printing Office",
+      "date": "1932",
+      "dateRole": "catalogue_volume",
+      "dateQualifier": "confirmed",
+      "accessDate": "2026-09-22",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "organizationIds": [
+        "ORG166",
+        "ORG067",
+        "ORG068"
+      ],
+      "primaryUrl": "https://archive.org/details/catalogofcopyrig273libr",
+      "identifiers": [
+        {
+          "scheme": "usco_registration",
+          "value": "E for. 26564"
+        }
+      ],
+      "workIds": [
+        "W-S226"
+      ],
+      "songIds": [
+        "S226"
+      ],
+      "contributionIds": [
+        "CON-S226-C-P009",
+        "CON-S226-C-P077",
+        "CON-S226-L-P202",
+        "CON-S226-L-P020",
+        "CON-S226-PUB-ORG166"
+      ],
+      "slug": "src0878-catalog-of-copyright-entries-falling-in-love-with-you",
+      "nameVariantIds": [
+        "PNV0005"
+      ],
+      "personIds": [
+        "P202"
+      ]
+    },
+    {
+      "id": "SRC0879",
+      "shortCitation": "BnF, Signorina (Signorina, ich lieb dich), tango from Voyage de noces, 1932",
+      "fullCitation": "Signorina: (Signorina, ich lieb dich) du film “Voyage de noce”: [tango]. Words by Lucien Boyer; music by W. Jurmann and B. Kaper. Paris: Éditions musicales universelles, 1932. [2] p., ill., 27 cm; plate E.M.U. 52 bis. Bibliothèque nationale de France, Catalogue général, ARK ark:/12148/cb48664853m.",
+      "sourceType": "sheet_music_catalogue",
+      "title": "Signorina, Voyage de noces",
+      "repository": "Bibliothèque nationale de France / Catalogue général",
+      "publication": "BnF Catalogue général",
+      "date": "1932",
+      "dateRole": "issue",
+      "dateQualifier": "confirmed",
+      "accessDate": "2026-09-22",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "organizationIds": [
+        "ORG032",
+        "ORG062"
+      ],
+      "primaryUrl": "https://catalogue.bnf.fr/ark:/12148/cb48664853m",
+      "identifiers": [
+        {
+          "scheme": "ark",
+          "value": "ark:/12148/cb48664853m"
+        }
+      ],
+      "workIds": [
+        "W-S227"
+      ],
+      "songIds": [
+        "S227"
+      ],
+      "contributionIds": [
+        "CON-S227-C-P077",
+        "CON-S227-C-P009",
+        "CON-S227-L-P050",
+        "CON-S227-PUB-ORG032"
+      ],
+      "slug": "src0879-signorina-voyage-de-noces",
+      "nameVariantIds": [
+        "PNV0022",
+        "PNV0019"
+      ],
+      "workRelationIds": [
+        "REL0212"
+      ]
     }
   ],
   "recordCount": null

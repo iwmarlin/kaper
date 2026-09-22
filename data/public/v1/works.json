@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 289,
+  "count": 297,
   "records": [
     {
       "id": "W-F001",
@@ -5152,7 +5152,8 @@
       ],
       "relationIds": [
         "REL0015",
-        "REL0173"
+        "REL0173",
+        "REL0211"
       ],
       "songIds": [
         "S038"
@@ -6005,7 +6006,8 @@
         "ORG150"
       ],
       "relationIds": [
-        "REL0025"
+        "REL0025",
+        "REL0212"
       ],
       "songIds": [
         "S057"
@@ -12691,6 +12693,320 @@
       ],
       "periods": [
         "european"
+      ]
+    },
+    {
+      "id": "W-S220",
+      "title": "Oh, Mister Leader, Please Play a Tango for Me",
+      "slug": "oh-mister-leader-please-play-a-tango-for-me",
+      "sortTitle": "Oh, Mister Leader, Please Play a Tango for Me",
+      "workType": "Song",
+      "year": 1932,
+      "period": "european",
+      "certainty": "confirmed",
+      "publicScope": "standalone_page",
+      "publicNote": "English-language version registered in London in 1932, with Fritz Rotter’s German words and music by Kaper and “German” (Fritz German, i.e. Hermann Scheibenhofer), the credits of “Du lieber Geiger, spiel einen Tango für mich”.",
+      "sourceIds": [
+        "SRC0870"
+      ],
+      "contributionIds": [
+        "CON-S220-C-P009",
+        "CON-S220-C-P105",
+        "CON-S220-L-P020",
+        "CON-S220-L-P200",
+        "CON-S220-PUB-ORG166"
+      ],
+      "personIds": [
+        "P009",
+        "P105",
+        "P020",
+        "P200"
+      ],
+      "organizationIds": [
+        "ORG166"
+      ],
+      "songIds": [
+        "S220"
+      ],
+      "periods": [
+        "european"
+      ],
+      "nameVariantIds": [
+        "PNV0003"
+      ],
+      "relationIds": [
+        "REL0211"
+      ]
+    },
+    {
+      "id": "W-S221",
+      "title": "City Rhythm",
+      "slug": "city-rhythm",
+      "sortTitle": "City Rhythm",
+      "workType": "Song",
+      "year": 1932,
+      "period": "european",
+      "certainty": "confirmed",
+      "publicScope": "standalone_page",
+      "publicNote": "English song registered in London in 1932. The registration credits the music to Fritz Rotter and B. Kaper; Rotter was otherwise Kaper’s lyricist.",
+      "sourceIds": [
+        "SRC0871"
+      ],
+      "contributionIds": [
+        "CON-S221-C-P009",
+        "CON-S221-C-P020",
+        "CON-S221-L-P012",
+        "CON-S221-PUB-ORG050"
+      ],
+      "personIds": [
+        "P009",
+        "P020",
+        "P012"
+      ],
+      "organizationIds": [
+        "ORG050"
+      ],
+      "songIds": [
+        "S221"
+      ],
+      "periods": [
+        "european"
+      ],
+      "nameVariantIds": [
+        "PNV0019"
+      ]
+    },
+    {
+      "id": "W-S222",
+      "title": "Just One of My Dreams",
+      "slug": "just-one-of-my-dreams",
+      "sortTitle": "Just One of My Dreams",
+      "workType": "Song",
+      "year": 1932,
+      "period": "european",
+      "certainty": "confirmed",
+      "publicScope": "standalone_page",
+      "publicNote": "English adaptation by Desmond Carter of a song with words by Fritz Rotter, registered in London in 1932 as a song and in arrangements for dance orchestra and for band.",
+      "sourceIds": [
+        "SRC0872",
+        "SRC0873",
+        "SRC0874"
+      ],
+      "contributionIds": [
+        "CON-S222-C-P009",
+        "CON-S222-L-P020",
+        "CON-S222-L-P012",
+        "CON-S222-PUB-ORG050"
+      ],
+      "personIds": [
+        "P009",
+        "P020",
+        "P012"
+      ],
+      "organizationIds": [
+        "ORG050"
+      ],
+      "songIds": [
+        "S222"
+      ],
+      "periods": [
+        "european"
+      ],
+      "nameVariantIds": [
+        "PNV0019"
+      ]
+    },
+    {
+      "id": "W-S223",
+      "title": "Learn to Smile",
+      "slug": "learn-to-smile",
+      "sortTitle": "Learn to Smile",
+      "workType": "Song",
+      "year": 1932,
+      "period": "european",
+      "certainty": "confirmed",
+      "publicScope": "standalone_page",
+      "publicNote": "English song registered in London in 1932 with music by Jurmann and Kaper; the official Walter Jurmann works catalogue also lists it as a collaboration with Kaper.",
+      "sourceIds": [
+        "SRC0875",
+        "SRC0306"
+      ],
+      "contributionIds": [
+        "CON-S223-C-P077",
+        "CON-S223-C-P009",
+        "CON-S223-L-P201",
+        "CON-S223-PUB-ORG055"
+      ],
+      "personIds": [
+        "P077",
+        "P009",
+        "P201"
+      ],
+      "organizationIds": [
+        "ORG055"
+      ],
+      "songIds": [
+        "S223"
+      ],
+      "periods": [
+        "european"
+      ],
+      "nameVariantIds": [
+        "PNV0019"
+      ]
+    },
+    {
+      "id": "W-S224",
+      "title": "You Could Never Be True",
+      "slug": "you-could-never-be-true",
+      "sortTitle": "You Could Never Be True",
+      "workType": "Song",
+      "year": 1932,
+      "period": "european",
+      "certainty": "confirmed",
+      "publicScope": "standalone_page",
+      "publicNote": "English song with words by Reg Connelly, registered in London on the same day in 1932 as “The Thrill of the Tango”.",
+      "sourceIds": [
+        "SRC0876"
+      ],
+      "contributionIds": [
+        "CON-S224-C-P009",
+        "CON-S224-L-P064",
+        "CON-S224-PUB-ORG055"
+      ],
+      "personIds": [
+        "P009",
+        "P064"
+      ],
+      "organizationIds": [
+        "ORG055"
+      ],
+      "songIds": [
+        "S224"
+      ],
+      "periods": [
+        "european"
+      ],
+      "nameVariantIds": [
+        "PNV0019"
+      ]
+    },
+    {
+      "id": "W-S225",
+      "title": "The Thrill of the Tango",
+      "slug": "the-thrill-of-the-tango",
+      "sortTitle": "Thrill of the Tango",
+      "workType": "Song",
+      "year": 1932,
+      "period": "european",
+      "certainty": "confirmed",
+      "publicScope": "standalone_page",
+      "publicNote": "English song with words by Reg Connelly, registered in London on the same day in 1932 as “You Could Never Be True”.",
+      "sourceIds": [
+        "SRC0877"
+      ],
+      "contributionIds": [
+        "CON-S225-C-P009",
+        "CON-S225-L-P064",
+        "CON-S225-PUB-ORG055"
+      ],
+      "personIds": [
+        "P009",
+        "P064"
+      ],
+      "organizationIds": [
+        "ORG055"
+      ],
+      "songIds": [
+        "S225"
+      ],
+      "periods": [
+        "european"
+      ],
+      "nameVariantIds": [
+        "PNV0019"
+      ]
+    },
+    {
+      "id": "W-S226",
+      "title": "Falling in Love with You",
+      "slug": "falling-in-love-with-you",
+      "sortTitle": "Falling in Love with You",
+      "workType": "Song",
+      "year": 1932,
+      "period": "european",
+      "certainty": "confirmed",
+      "publicScope": "standalone_page",
+      "publicNote": "English waltz registered in London in 1932 with music by “Bob Handers”, which the same volume’s index resolves as a joint pseudonym of Walter Jurmann and Bronisław Kaper; the original German words are by Fritz Rotter.",
+      "sourceIds": [
+        "SRC0878"
+      ],
+      "contributionIds": [
+        "CON-S226-C-P009",
+        "CON-S226-C-P077",
+        "CON-S226-L-P202",
+        "CON-S226-L-P020",
+        "CON-S226-PUB-ORG166"
+      ],
+      "personIds": [
+        "P009",
+        "P077",
+        "P202",
+        "P020"
+      ],
+      "organizationIds": [
+        "ORG166"
+      ],
+      "songIds": [
+        "S226"
+      ],
+      "periods": [
+        "european"
+      ],
+      "nameVariantIds": [
+        "PNV0005"
+      ]
+    },
+    {
+      "id": "W-S227",
+      "title": "Signorina",
+      "slug": "signorina",
+      "sortTitle": "Signorina",
+      "workType": "Song",
+      "year": 1932,
+      "period": "european",
+      "certainty": "confirmed",
+      "publicScope": "standalone_page",
+      "publicNote": "French-language version of “Signorina, ich liebe dich”, from the film Voyage de noces, with words by Lucien Boyer and music by W. Jurmann and B. Kaper. Paris: Éditions musicales universelles, 1932.",
+      "sourceIds": [
+        "SRC0879"
+      ],
+      "contributionIds": [
+        "CON-S227-C-P077",
+        "CON-S227-C-P009",
+        "CON-S227-L-P050",
+        "CON-S227-PUB-ORG032"
+      ],
+      "personIds": [
+        "P077",
+        "P009",
+        "P050"
+      ],
+      "organizationIds": [
+        "ORG032"
+      ],
+      "songIds": [
+        "S227"
+      ],
+      "periods": [
+        "european"
+      ],
+      "nameVariantIds": [
+        "PNV0022",
+        "PNV0019"
+      ],
+      "relationIds": [
+        "REL0212"
       ]
     }
   ],

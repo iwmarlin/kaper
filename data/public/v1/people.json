@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 172,
+  "count": 175,
   "records": [
     {
       "id": "P001",
@@ -782,7 +782,15 @@
         "CON-S088-C-P009",
         "CON-S089-C-P009",
         "CON-S090-C-P009",
-        "CON-S091-C-P009"
+        "CON-S091-C-P009",
+        "CON-S220-C-P009",
+        "CON-S221-C-P009",
+        "CON-S222-C-P009",
+        "CON-S223-C-P009",
+        "CON-S224-C-P009",
+        "CON-S225-C-P009",
+        "CON-S226-C-P009",
+        "CON-S227-C-P009"
       ],
       "nameVariantIds": [
         "PNV0001",
@@ -1091,7 +1099,15 @@
         "W-S088",
         "W-S089",
         "W-S090",
-        "W-S091"
+        "W-S091",
+        "W-S220",
+        "W-S221",
+        "W-S222",
+        "W-S223",
+        "W-S224",
+        "W-S225",
+        "W-S226",
+        "W-S227"
       ],
       "birthYear": 1902,
       "deathYear": 1983,
@@ -1161,11 +1177,15 @@
       "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n96028019\nGND: https://d-nb.info/gnd/1062459830\nVIAF: https://viaf.org/viaf/36177259\nISNI: https://isni.org/isni/0000000063881256",
       "contributionIds": [
         "CON-S040-L-P012",
-        "CON-S193-L-P012"
+        "CON-S193-L-P012",
+        "CON-S221-L-P012",
+        "CON-S222-L-P012"
       ],
       "workIds": [
         "W-S040",
-        "W-S193"
+        "W-S193",
+        "W-S221",
+        "W-S222"
       ],
       "birthYear": 1895,
       "deathYear": 1939,
@@ -1509,7 +1529,11 @@
         "CON-S191-L-P020",
         "CON-S193-C-P020",
         "CON-S205-L-P020",
-        "CON-S217-L-P020"
+        "CON-S217-L-P020",
+        "CON-S220-L-P020",
+        "CON-S221-C-P020",
+        "CON-S222-L-P020",
+        "CON-S226-L-P020"
       ],
       "nameVariantIds": [
         "PNV0008",
@@ -1588,7 +1612,11 @@
         "W-S191",
         "W-S193",
         "W-S205",
-        "W-S217"
+        "W-S217",
+        "W-S220",
+        "W-S221",
+        "W-S222",
+        "W-S226"
       ],
       "birthYear": 1900,
       "deathYear": 1984,
@@ -2440,13 +2468,15 @@
         "CON-S061-L-P050",
         "CON-S063-L-P050",
         "CON-S065-L-P050",
-        "CON-S073-L-P050"
+        "CON-S073-L-P050",
+        "CON-S227-L-P050"
       ],
       "workIds": [
         "W-S061",
         "W-S063",
         "W-S065",
-        "W-S073"
+        "W-S073",
+        "W-S227"
       ],
       "birthYear": 1876,
       "deathYear": 1942,
@@ -2795,10 +2825,14 @@
       ],
       "authorityUrl": "VIAF: https://viaf.org/viaf/86418275\nWikidata: https://www.wikidata.org/wiki/Q28835692",
       "contributionIds": [
-        "CON-S037-L-P064"
+        "CON-S037-L-P064",
+        "CON-S224-L-P064",
+        "CON-S225-L-P064"
       ],
       "workIds": [
-        "W-S037"
+        "W-S037",
+        "W-S224",
+        "W-S225"
       ],
       "birthYear": 1895,
       "deathYear": 1963,
@@ -3462,7 +3496,10 @@
         "CON-S219-C-P077",
         "CON-S097-C-P077",
         "CON-S116-C-P077",
-        "CON-S175-C-P077"
+        "CON-S175-C-P077",
+        "CON-S223-C-P077",
+        "CON-S226-C-P077",
+        "CON-S227-C-P077"
       ],
       "nameVariantIds": [
         "PNV0005",
@@ -3669,7 +3706,10 @@
         "W-S219",
         "W-S097",
         "W-S116",
-        "W-S175"
+        "W-S175",
+        "W-S223",
+        "W-S226",
+        "W-S227"
       ],
       "birthYear": 1903,
       "deathYear": 1971,
@@ -4114,7 +4154,8 @@
         "CON-S038-C-P105",
         "CON-S044-C-P105",
         "CON-S182-C-P105",
-        "CON-S207-C-P105"
+        "CON-S207-C-P105",
+        "CON-S220-C-P105"
       ],
       "nameVariantIds": [
         "PNV0003"
@@ -4124,7 +4165,8 @@
         "W-S038",
         "W-S044",
         "W-S182",
-        "W-S207"
+        "W-S207",
+        "W-S220"
       ],
       "birthYear": 1872,
       "lifeDatesCertainty": "confirmed"
@@ -6630,6 +6672,70 @@
       "lifeDatesCertainty": "confirmed",
       "authorizedName": "Fitelberg, Jerzy",
       "authorizedNameSource": "LCNAF"
+    },
+    {
+      "id": "P200",
+      "displayName": "Ralph Stanley",
+      "sortName": "Stanley, Ralph",
+      "authorizedName": "Stanley, Ralph",
+      "authorizedNameSource": "local heading",
+      "slug": "ralph-stanley",
+      "primaryRole": "lyricist",
+      "roles": [
+        "lyricist"
+      ],
+      "contributionIds": [
+        "CON-S220-L-P200"
+      ],
+      "workIds": [
+        "W-S220"
+      ],
+      "sourceIds": [
+        "SRC0870"
+      ]
+    },
+    {
+      "id": "P201",
+      "displayName": "Ralph Jack",
+      "sortName": "Jack, Ralph",
+      "authorizedName": "Jack, Ralph",
+      "authorizedNameSource": "local heading",
+      "slug": "ralph-jack",
+      "primaryRole": "lyricist",
+      "roles": [
+        "lyricist"
+      ],
+      "contributionIds": [
+        "CON-S223-L-P201"
+      ],
+      "workIds": [
+        "W-S223"
+      ],
+      "sourceIds": [
+        "SRC0875"
+      ]
+    },
+    {
+      "id": "P202",
+      "displayName": "Henrik N. Ege",
+      "sortName": "Ege, Henrik N.",
+      "authorizedName": "Ege, Henrik N.",
+      "authorizedNameSource": "LCNAF",
+      "slug": "henrik-n-ege",
+      "primaryRole": "lyricist",
+      "roles": [
+        "lyricist"
+      ],
+      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no98002159",
+      "contributionIds": [
+        "CON-S226-L-P202"
+      ],
+      "workIds": [
+        "W-S226"
+      ],
+      "sourceIds": [
+        "SRC0878"
+      ]
     }
   ],
   "recordCount": null

@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 200,
+  "count": 202,
   "records": [
     {
       "id": "REL0001",
@@ -3600,6 +3600,42 @@
       ],
       "sourceIds": [
         "SRC0296"
+      ]
+    },
+    {
+      "id": "REL0211",
+      "relationType": "language_version_of",
+      "targetWorkTitle": "Du lieber Geiger, spiel einen Tango für mich",
+      "targetTitleAsSource": "Du lieber Geiger, spiel einen Tango für mich",
+      "direction": "source_to_target",
+      "publicNote": "“Oh, Mister Leader, Please Play a Tango for Me” is probably the English version of “Du lieber Geiger, spiel einen Tango für mich”: the registration names a tango with Fritz Rotter’s German words and music by Kaper and “German”, the credits of the German song, but does not name the original.",
+      "certainty": "probable",
+      "sourceWorkIds": [
+        "W-S220"
+      ],
+      "targetWorkIds": [
+        "W-S038"
+      ],
+      "sourceIds": [
+        "SRC0870"
+      ]
+    },
+    {
+      "id": "REL0212",
+      "relationType": "language_version_of",
+      "targetWorkTitle": "Signorina, ich liebe dich",
+      "targetTitleAsSource": "Signorina, ich liebe dich",
+      "direction": "source_to_target",
+      "publicNote": "“Signorina” is documented as the French-language version of “Signorina, ich liebe dich”.",
+      "certainty": "confirmed",
+      "sourceWorkIds": [
+        "W-S227"
+      ],
+      "targetWorkIds": [
+        "W-S057"
+      ],
+      "sourceIds": [
+        "SRC0879"
       ]
     }
   ]
