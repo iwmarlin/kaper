@@ -133,13 +133,7 @@ def normalize_hofmeister_source(source: dict[str, Any]) -> None:
 
     source["sourceType"] = "sheet_music_catalogue"
     source["dateRole"] = "catalogue_volume"
-    title = f"{TITLE_PREFIX}“{entry_title}”"
-    if source.get("id") == "SRC0461":
-        # The same notice is represented by the canonical ANNO record SRC0207;
-        # this separate record documents its Internet Archive access copy.
-        title += " — Internet Archive scan"
-        source["publication"] = "Alrobi, Berlin"
-    source["title"] = title
+    source["title"] = f"{TITLE_PREFIX}“{entry_title}”"
 
     issue = _issue(str(source.get("fullCitation") or ""))
     if issue:
@@ -152,10 +146,6 @@ def normalize_hofmeister_source(source: dict[str, Any]) -> None:
             source["date"] = f"{year}-{MONTH_NUMBER[month]}"
         elif not source.get("date"):
             source["date"] = year
-    elif source.get("id") == "SRC0461":
-        source["shortCitation"] = (
-            f"Hofmeister, 1931, scan leaf n33 — “{entry_title}”"
-        )
 
     creator = HOFMEISTER_CREATOR_OVERRIDES.get(str(source.get("id", "")))
     if creator:

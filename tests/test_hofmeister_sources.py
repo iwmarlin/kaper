@@ -68,7 +68,7 @@ class HofmeisterSourceNormalizationTests(unittest.TestCase):
 
     def test_internet_archive_wording_is_recognized_without_claiming_a_score(self) -> None:
         source = {
-            "id": "SRC0461",
+            "id": "SRC9999",
             "sourceType": "sheet_music",
             "title": "Example song — Hofmeister / Internet Archive entry",
             "shortCitation": "Example song — Hofmeister / Internet Archive",
@@ -89,11 +89,9 @@ class HofmeisterSourceNormalizationTests(unittest.TestCase):
         normalize_hofmeister_source(source)
 
         self.assertEqual(source["sourceType"], "sheet_music_catalogue")
-        self.assertEqual(source["publication"], "Alrobi, Berlin")
         self.assertEqual(
             source["title"],
-            "Hofmeisters Musikalisch-literarischer Monatsbericht: “Example song” "
-            "— Internet Archive scan",
+            "Hofmeisters Musikalisch-literarischer Monatsbericht: “Example song”",
         )
         once = dict(source)
         normalize_hofmeister_source(source)
