@@ -290,7 +290,7 @@
     {
       "id": "ORG008",
       "displayName": "Vandor-Film",
-      "authorizedName": "Vandor-Film",
+      "authorizedName": "Vandor Film",
       "types": [
         "film_studio"
       ],
@@ -299,7 +299,7 @@
       ],
       "country": "France",
       "slug": "vandor-film",
-      "authorizedNameSource": "Filmportal.de",
+      "authorizedNameSource": "LCNAF",
       "sourceIds": [
         "SRC0129",
         "SRC0161"
@@ -311,7 +311,8 @@
       "workIds": [
         "W-F018",
         "W-F020"
-      ]
+      ],
+      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no2007137793"
     },
     {
       "id": "ORG009",
