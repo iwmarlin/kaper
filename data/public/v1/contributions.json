@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 1318,
+  "count": 1322,
   "records": [
     {
       "id": "CON-F001-C-P009",
@@ -23482,6 +23482,74 @@
         "SRC0884"
       ],
       "scopeNote": "Issued Lys Gauty’s recording as Polydor 522987."
+    },
+    {
+      "id": "CON-S228-C-P009",
+      "role": "composer",
+      "nameAsPrinted": "Bronislaw Kaper",
+      "sortOrder": 10,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S228"
+      ],
+      "personIds": [
+        "P009"
+      ],
+      "sourceIds": [
+        "SRC0887"
+      ],
+      "nameVariantIds": [
+        "PNV0020"
+      ]
+    },
+    {
+      "id": "CON-S228-C-P077",
+      "role": "composer",
+      "nameAsPrinted": "Walter Jurmann",
+      "sortOrder": 11,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S228"
+      ],
+      "personIds": [
+        "P077"
+      ],
+      "sourceIds": [
+        "SRC0887"
+      ]
+    },
+    {
+      "id": "CON-S228-L-P058",
+      "role": "lyricist",
+      "nameAsPrinted": "Ned Washington",
+      "sortOrder": 1,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S228"
+      ],
+      "personIds": [
+        "P058"
+      ],
+      "sourceIds": [
+        "SRC0887",
+        "SRC0306"
+      ]
+    },
+    {
+      "id": "CON-S228-CC-ORG001",
+      "role": "copyright_claimant",
+      "nameAsPrinted": "Metro-Goldwyn-Mayer corp., New York",
+      "evidenceContext": "copyright_catalogue",
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S228"
+      ],
+      "organizationIds": [
+        "ORG001"
+      ],
+      "sourceIds": [
+        "SRC0887"
+      ]
     }
   ]
 }

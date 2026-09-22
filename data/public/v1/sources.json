@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 796,
+  "count": 797,
   "records": [
     {
       "id": "SRC0001",
@@ -11492,7 +11492,8 @@
         "W-S091",
         "W-S175",
         "W-S223",
-        "W-S062"
+        "W-S062",
+        "W-S228"
       ],
       "filmIds": [
         "F004",
@@ -11527,7 +11528,8 @@
         "S165",
         "S166",
         "S167",
-        "S184"
+        "S184",
+        "S228"
       ],
       "workRelationIds": [
         "REL0094",
@@ -11626,7 +11628,8 @@
         "CON-S116-C-P077",
         "CON-S175-C-P077",
         "CON-S223-C-P077",
-        "CON-S223-C-P009"
+        "CON-S223-C-P009",
+        "CON-S228-L-P058"
       ],
       "nameVariantIds": [
         "PNV0020",
@@ -29723,6 +29726,55 @@
       "authoritySubject": "person",
       "identityRelation": "same",
       "slug": "src0886-bnf-authority-record-groener-gaston-18-1962"
+    },
+    {
+      "id": "SRC0887",
+      "shortCitation": "CCE 1936, no. 3671, “Dairy-maid song”",
+      "fullCitation": "U.S. Copyright Office, Catalog of Copyright Entries, New Series. Part 3: Musical Compositions, 1936, vol. 31, no. 2. Washington, DC: U.S. Government Printing Office, entry no. 3671: “Dairy-maid song”; w Ned Washington, m Bronislaw Kaper and Walter Jurmann. © 1 c. Feb. 17, 1936; E unp. 118364; Metro-Goldwyn-Mayer corp., New York. Digitized via Internet Archive.",
+      "sourceType": "copyright_catalogue",
+      "title": "Catalog of Copyright Entries: “Dairy-maid song”",
+      "creator": "U.S. Copyright Office",
+      "repository": "Internet Archive",
+      "publication": "Catalog of Copyright Entries / U.S. Government Printing Office",
+      "date": "1936",
+      "dateRole": "catalogue_volume",
+      "dateQualifier": "confirmed",
+      "accessDate": "2026-09-22",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "organizationIds": [
+        "ORG001",
+        "ORG067",
+        "ORG068"
+      ],
+      "primaryUrl": "https://archive.org/details/catalogofcopyrig313libr",
+      "identifiers": [
+        {
+          "scheme": "usco_registration",
+          "value": "E unp. 118364"
+        }
+      ],
+      "workIds": [
+        "W-S228"
+      ],
+      "songIds": [
+        "S228"
+      ],
+      "personIds": [
+        "P009",
+        "P058",
+        "P077"
+      ],
+      "contributionIds": [
+        "CON-S228-C-P009",
+        "CON-S228-C-P077",
+        "CON-S228-L-P058",
+        "CON-S228-CC-ORG001"
+      ],
+      "nameVariantIds": [
+        "PNV0020"
+      ],
+      "slug": "src0887-catalog-of-copyright-entries-dairy-maid-song"
     }
   ],
   "recordCount": null
