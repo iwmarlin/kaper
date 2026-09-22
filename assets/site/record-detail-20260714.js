@@ -31,8 +31,8 @@ import {
   sourceTypePluralLabel,
   typeBadge,
   updateMeta,
-} from "./core.js?v=aa2642b3e5";
-import { RECORD_INDEXES, recordIndexReturn } from "./catalogue-filters.js?v=aa2642b3e5";
+} from "./core.js?v=2d3a351eb5";
+import { RECORD_INDEXES, recordIndexReturn } from "./catalogue-filters.js?v=2d3a351eb5";
 
 // A canonical record route arrives prerendered and renders no image in the
 // browser, so the image map is loaded only where a record is actually rendered:
@@ -858,12 +858,12 @@ function renderWork(work, data, indexes) {
   const sources = related(work.sourceIds, indexes.sources);
   const media = related(work.mediaIds, indexes.media);
   const events = related(work.timelineEventIds, indexes.timelineEvents);
-  const subtypeFacts = subtype ? (hasConciseCredits ? `
-    ${fact("Instrumentation", subtype.instrumentation)}${fact("Material status", subtype.materialStatus)}${fact("Shelfmark", subtype.shelfmark)}` : `
-    ${fact("Genre", genreLabel(subtype.genre))}${isContextOnly ? "" : fact("Credit", subtype.creditType)}${fact("Composer status", subtype.composerStatus)}
-    ${fact("Lyricist as printed", subtype.lyricistAsPrinted)}${fact("Lyricist status", subtype.lyricistStatus)}
-    ${fact("Publisher as printed", subtype.publisherAsPrinted || subtype.publisherOrHoldingAsPrinted)}
-    ${fact("Instrumentation", subtype.instrumentation)}${fact("Material status", subtype.materialStatus)}${fact("Shelfmark", subtype.shelfmark)}`) : "";
+  // Every subtype is a song, a film or an other work, so the credits are
+  // always the concise ones: the printed lyricist, publisher and status fields
+  // belong to the record, not to the card, and the second branch this line
+  // once carried could never run.
+  const subtypeFacts = subtype ? `
+    ${fact("Instrumentation", subtype.instrumentation)}${fact("Material status", subtype.materialStatus)}${fact("Shelfmark", subtype.shelfmark)}` : "";
   const overview = publicText(subtype?.publicNote, work.publicNote)
     + (!isOther && subtypeFacts.trim() ? `<dl class="record-facts">${subtypeFacts}</dl>` : "");
   const main = [
@@ -1830,7 +1830,7 @@ async function bootstrapRecordPage() {
     }
     const [data, { IMAGE_DERIVATIVES }] = await Promise.all([
       loadRecordPayload(requestedType, requestedId),
-      import("./image-derivatives.js?v=aa2642b3e5"),
+      import("./image-derivatives.js?v=2d3a351eb5"),
     ]);
     registerImageDerivatives(IMAGE_DERIVATIVES);
     const { config, view } = renderRecordView(requestedType, requestedId, data);
