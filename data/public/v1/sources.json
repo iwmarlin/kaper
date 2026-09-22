@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 789,
+  "count": 790,
   "records": [
     {
       "id": "SRC0001",
@@ -1708,7 +1708,8 @@
       ],
       "titleVariantIds": [
         "TV0137",
-        "TV0285"
+        "TV0285",
+        "TV0313"
       ],
       "contributionIds": [
         "CON-S063-C-P009",
@@ -11489,7 +11490,8 @@
         "W-S090",
         "W-S091",
         "W-S175",
-        "W-S223"
+        "W-S223",
+        "W-S062"
       ],
       "filmIds": [
         "F004",
@@ -11627,7 +11629,10 @@
         "PNV0020",
         "PNV0019"
       ],
-      "primaryUrl": "https://walter-jurmann.com/songs/"
+      "primaryUrl": "https://walter-jurmann.com/songs/",
+      "titleVariantIds": [
+        "TV0313"
+      ]
     },
     {
       "id": "SRC0307",
@@ -29436,6 +29441,38 @@
       ],
       "workRelationIds": [
         "REL0212"
+      ]
+    },
+    {
+      "id": "SRC0880",
+      "shortCitation": "UCLA, Walter Jurmann Collection (APAM-1), Box 1, Folder 6 — Melodie der Liebe song folio",
+      "fullCitation": "Finding Aid for the Walter Jurmann Collection, 1910–1988, Collection APAM-1. UCLA Library, Performing Arts Special Collections, Los Angeles; processed by Juliane Brand, 1989. Box 1, Folder 6: Melodie der Liebe: ein Reichsliga-Film der Heros / Worte von Fritz Rotter; Musik von Dr. B. Kaper und Walter Jurmann. Berlin: Alrobi Musikverlag, [1932]; photocopy of cover only. Contents: Ein Lied aus meiner Heimat; Schade, daß Liebe ein Märchen ist!; Wie gern möcht’ ich Dich verwöhnen!; Kinderlied (Es war einmal ein Baby). Online Archive of California, ark:/13030/kt5779q3vh.",
+      "sourceType": "archival_manuscript_holding",
+      "title": "Walter Jurmann Collection — Melodie der Liebe song folio",
+      "repository": "UCLA Library, Performing Arts Special Collections / Online Archive of California",
+      "publication": "Online Archive of California",
+      "date": "1932",
+      "dateRole": "described_item",
+      "dateQualifier": "approximate",
+      "accessDate": "2026-09-22",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "primaryUrl": "https://oac.cdlib.org/findaid/ark:/13030/kt5779q3vh",
+      "researchNote": "The finding aid lists the four songs of the Melodie der Liebe folio and gives the fourth as “Kinderlied (Es war einmal ein Baby--)”; its title index cross-refers “Kinderlied (Es war einmal ein Baby--)” to Melodie der Liebe.",
+      "researchNoteType": "evidence_note",
+      "workIds": [
+        "W-S062",
+        "W-F011"
+      ],
+      "songIds": [
+        "S062"
+      ],
+      "titleVariantIds": [
+        "TV0313"
+      ],
+      "slug": "src0880-walter-jurmann-collection-melodie-der-liebe-song-folio",
+      "filmIds": [
+        "F011"
       ]
     }
   ],

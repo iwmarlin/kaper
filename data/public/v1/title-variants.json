@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 63,
+  "count": 64,
   "records": [
     {
       "id": "TV0002",
@@ -1064,6 +1064,25 @@
       "sourceIds": [
         "SRC0782"
       ]
+    },
+    {
+      "id": "TV0313",
+      "variantTitle": "Kinderlied",
+      "titleAsSource": "Kinderlied (Es war einmal ein Baby)",
+      "variantType": "alternate_title",
+      "variantTypeAsSource": "alternate title",
+      "language": "de",
+      "languageStatus": "source",
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S062"
+      ],
+      "sourceIds": [
+        "SRC0062",
+        "SRC0306",
+        "SRC0880"
+      ],
+      "note": "Generic title under which the song is listed in the Melodie der Liebe folio (UCLA finding aid), the BnF record of its French version and the Walter Jurmann works catalogue."
     }
   ]
 }
