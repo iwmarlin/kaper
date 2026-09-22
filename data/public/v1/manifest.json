@@ -48,7 +48,7 @@
   "counts": {
     "People": 172,
     "Organizations": 157,
-    "Sources": 778,
+    "Sources": 779,
     "Media": 396,
     "Works": 289,
     "Films": 55,
@@ -58,24 +58,24 @@
     "Work Relations": 200,
     "Timeline Events": 55,
     "Places": 45,
-    "Contributions": 1275,
+    "Contributions": 1274,
     "Person Name Variants": 67
   },
   "files": [
     {
       "file": "build-report.json",
       "bytes": 114686,
-      "sha256": "2d9119ba5a2b8f674991ab59554afc301b4af118742f3717e177a15aa67b5251"
+      "sha256": "a1c17b61e2f838d35fcac2d4e065514c5650f7cc7d95a9f0a5af60a3e71a3de9"
     },
     {
       "file": "contributions.json",
-      "bytes": 492347,
-      "sha256": "558186f18a78a25fb84cbce4a3db7185b30857254a2e4a8aebd98d8d871a20fe"
+      "bytes": 491998,
+      "sha256": "3d27d72ca9c6aaec80d92ef1defbc630cf03fec8d54f27013f319def290debfd"
     },
     {
       "file": "films.json",
-      "bytes": 38261,
-      "sha256": "990ec781f96d311e0c9b2038908205823081de9b1b5b299b1f09929d890f9af4"
+      "bytes": 38473,
+      "sha256": "fe71ad6520032275947f581ce56f9f5060396be216a7bc4317dee0487857b9b0"
     },
     {
       "file": "media.json",
@@ -84,8 +84,8 @@
     },
     {
       "file": "organizations.json",
-      "bytes": 136587,
-      "sha256": "915f7d49539139afb0242ec3aca875927a58a4e353f4300813109a64d8a91d4a"
+      "bytes": 136575,
+      "sha256": "26553933f96e69876637390234c5af731ec01f994f735d75315175c1e1433caa"
     },
     {
       "file": "other-works.json",
@@ -114,8 +114,8 @@
     },
     {
       "file": "sources.json",
-      "bytes": 1134396,
-      "sha256": "80c900f779f952c9b9bae358f433d7238abc5bc8454a827aeef36a7a7670fe45"
+      "bytes": 1136333,
+      "sha256": "ccf4fb66175497b6d3811e7937b911eb2266e63b3deb822b8ad037b983bc02ea"
     },
     {
       "file": "timeline-events.json",
@@ -134,8 +134,8 @@
     },
     {
       "file": "works.json",
-      "bytes": 267181,
-      "sha256": "bb40ea19fcbff7f55803a14c72892c6bd8ab25dfdd08bc2480e1a21409d103d9"
+      "bytes": 267299,
+      "sha256": "4cabe0ce4c199d7daa32e031db354b6c48649bfdb79bd308ce58b9c4c5eb4a4e"
     }
   ]
 }
