@@ -6567,9 +6567,6 @@
       "songIds": [
         "S070"
       ],
-      "workRelationIds": [
-        "REL0160"
-      ],
       "contributionIds": [
         "CON-S070-C-P009",
         "CON-S070-C-P077",
@@ -7155,7 +7152,8 @@
         "S019"
       ],
       "workRelationIds": [
-        "REL0005"
+        "REL0005",
+        "REL0003"
       ],
       "contributionIds": [
         "CON-S019-C-P009",
@@ -11540,7 +11538,9 @@
         "REL0119",
         "REL0120",
         "REL0121",
-        "REL0122"
+        "REL0122",
+        "REL0087",
+        "REL0088"
       ],
       "contributionIds": [
         "CON-F004-C-P077",
@@ -16311,6 +16311,9 @@
           "scheme": "usco_registration",
           "value": "E for. 14747"
         }
+      ],
+      "workRelationIds": [
+        "REL0003"
       ]
     },
     {
