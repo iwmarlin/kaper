@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "publicDataUpdatedAt": "2026-09-21",
+  "publicDataUpdatedAt": "2026-09-22",
   "generator": {
     "file": "export_public_data.py",
     "sha256": "2b5cc45540091df3602e6f93bc531eb6e08ee444681b6cdd31864c41e75069c9"
@@ -48,7 +48,7 @@
   "counts": {
     "People": 172,
     "Organizations": 157,
-    "Sources": 777,
+    "Sources": 778,
     "Media": 396,
     "Works": 289,
     "Films": 55,
@@ -58,24 +58,24 @@
     "Work Relations": 200,
     "Timeline Events": 55,
     "Places": 45,
-    "Contributions": 1276,
+    "Contributions": 1275,
     "Person Name Variants": 67
   },
   "files": [
     {
       "file": "build-report.json",
       "bytes": 114686,
-      "sha256": "da8a7d6122849515a76735f4ee8782a4071f7e0fb32de85f8b0ae30125e33a1d"
+      "sha256": "2d9119ba5a2b8f674991ab59554afc301b4af118742f3717e177a15aa67b5251"
     },
     {
       "file": "contributions.json",
-      "bytes": 492669,
-      "sha256": "655e6a5cf76df787de5f89ebe18ddb46e74e9925b219077f1c2ed66b2492a497"
+      "bytes": 492347,
+      "sha256": "558186f18a78a25fb84cbce4a3db7185b30857254a2e4a8aebd98d8d871a20fe"
     },
     {
       "file": "films.json",
-      "bytes": 37319,
-      "sha256": "66ff2e9aee46c1568681d8941c1b9d92670ef3ca2b0d8447532b7dc74d27dd5e"
+      "bytes": 38261,
+      "sha256": "990ec781f96d311e0c9b2038908205823081de9b1b5b299b1f09929d890f9af4"
     },
     {
       "file": "media.json",
@@ -84,8 +84,8 @@
     },
     {
       "file": "organizations.json",
-      "bytes": 136568,
-      "sha256": "bf4d0eb1630e12a1b5689184b21f3c73707a92df94d5f0f8eb55d8f0ac40df44"
+      "bytes": 136587,
+      "sha256": "915f7d49539139afb0242ec3aca875927a58a4e353f4300813109a64d8a91d4a"
     },
     {
       "file": "other-works.json",
@@ -94,8 +94,8 @@
     },
     {
       "file": "people.json",
-      "bytes": 169659,
-      "sha256": "36b1bae435f8b23431bd0d2830d583c5dbd635a9e1b17971afe3dbd0c585eb12"
+      "bytes": 169614,
+      "sha256": "7f3b3853a55887533500ecf68ef0cbb503c6356f87bd8f1f6bd1fad9f0a1cfde"
     },
     {
       "file": "person-name-variants.json",
@@ -109,18 +109,18 @@
     },
     {
       "file": "songs.json",
-      "bytes": 137108,
-      "sha256": "ddba879d37a11ddd5b4532da81bbd917c2a27ebcf36b083e0fb5f36e7968cecc"
+      "bytes": 137732,
+      "sha256": "264b4ef34df73bd4f62b5bb656f1bee3946aac9bd992c6ac6981089165fe0243"
     },
     {
       "file": "sources.json",
-      "bytes": 1132492,
-      "sha256": "80ec32ae31fb66cd8fdcd565d083f3aea0487f5341a9be2bf617e3bf65da5cf7"
+      "bytes": 1134383,
+      "sha256": "89cdf4b6d135198d9988df752baa836691a081997e97d1237abd690c6575e1e1"
     },
     {
       "file": "timeline-events.json",
-      "bytes": 95769,
-      "sha256": "13d8f58523affd71b8a643658865b1f959f50394879e427dedc7c890c20f38bc"
+      "bytes": 95716,
+      "sha256": "a502716ddf0c9b72cfe2bc397bb8b200344256f8a2ea02b33f2001de4090e656"
     },
     {
       "file": "title-variants.json",
@@ -134,8 +134,8 @@
     },
     {
       "file": "works.json",
-      "bytes": 266169,
-      "sha256": "74dd50b42c6e8645c4bc6aefc275672722e87891c792c13396b48c66c36aff1d"
+      "bytes": 267181,
+      "sha256": "bb40ea19fcbff7f55803a14c72892c6bd8ab25dfdd08bc2480e1a21409d103d9"
     }
   ]
 }

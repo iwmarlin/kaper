@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 777,
+  "count": 778,
   "records": [
     {
       "id": "SRC0001",
@@ -7235,7 +7235,6 @@
       ],
       "contributionIds": [
         "CON-S030-C-P009",
-        "CON-S030-C-P077",
         "CON-S030-L-P020",
         "CON-S030-L-P083",
         "CON-S030-PUB-ORG033"
@@ -11481,7 +11480,9 @@
         "W-S165",
         "W-S166",
         "W-S167",
-        "W-S184"
+        "W-S184",
+        "W-S124",
+        "W-S125"
       ],
       "filmIds": [
         "F004",
@@ -15770,14 +15771,14 @@
     },
     {
       "id": "SRC0461",
-      "shortCitation": "Hofmeister, 1931, scan leaf n33 — “Ich steh’ im Schnee und wart’ auf dich”",
-      "fullCitation": "Walter Jurmann and Bronisław Kaper (music); Fritz Rotter and Armin Robinson (words), “Ich steh’ im Schnee und wart’ auf dich” [from Die große Attraktion] (Berlin: Alrobi, 1931). Bibliographic notice in Friedrich Hofmeister, Musikalisch-literarischer Monatsbericht über neue Musikalien, musikalische Schriften und Abbildungen, 1931, Internet Archive scan, page/leaf n33.",
+      "shortCitation": "Hofmeister, February 1931, p. 35 — “Ich steh im Schnee und wart auf dich”",
+      "fullCitation": "B. Kaper, Die große Attraktion, Tonfilm: “Ich steh im Schnee und wart auf dich.” Foxtrot [words by Rotter and Robinson], for salon orchestra with jazz instruments arranged by N. Dostal, and for voice and piano. Berlin: Alrobi. Registered under “Kaper, B.” in Hofmeisters Musikalisch-literarischer Monatsbericht 103, no. 2 (February 1931): 35. Internet Archive scan, leaf n34.",
       "sourceType": "sheet_music_catalogue",
-      "title": "Hofmeisters Musikalisch-literarischer Monatsbericht: “Ich steh’ im Schnee und wart’ auf dich” — Internet Archive scan",
-      "creator": "Walter Jurmann and Bronisław Kaper; Fritz Rotter and Armin Robinson",
+      "title": "Hofmeisters Musikalisch-literarischer Monatsbericht: “Ich steh im Schnee und wart auf dich” — Internet Archive scan",
+      "creator": "B. Kaper (music); Fritz Rotter and Armin Robinson (words)",
       "repository": "Internet Archive",
       "publication": "Alrobi, Berlin",
-      "date": "1931",
+      "date": "1931-02",
       "dateRole": "catalogue_volume",
       "dateQualifier": "confirmed",
       "accessDate": "2026-07-07",
@@ -15795,7 +15796,6 @@
       ],
       "contributionIds": [
         "CON-S030-C-P009",
-        "CON-S030-C-P077",
         "CON-S030-L-P020",
         "CON-S030-L-P083",
         "CON-S030-PUB-ORG033"
@@ -15803,10 +15803,12 @@
       "nameVariantIds": [
         "PNV0036"
       ],
-      "primaryUrl": "https://archive.org/details/Musikalisch-literarischerMonatsbericht1931/page/n33/mode/2up",
+      "primaryUrl": "https://archive.org/details/Musikalisch-literarischerMonatsbericht1931/page/n34/mode/1up",
       "personIds": [
         "P083"
-      ]
+      ],
+      "researchNote": "The same entry as SRC0207, read in the Internet Archive copy: the song is listed under “Kaper, B.” alone. The citation previously recorded here named Walter Jurmann as co-composer and pointed to the preceding page (leaf n33); neither is borne out by the scan.",
+      "researchNoteType": "evidence_note"
     },
     {
       "id": "SRC0462",
@@ -24966,7 +24968,7 @@
       "contributionIds": [
         "CON-S030-LAB-ORG126"
       ],
-      "researchNote": "The discographic entry assigns both words and music to Bronisław Kaper. The published sheet music instead credits music to Kaper and Walter Jurmann and words to Fritz Rotter and Armin Robinson; the discographic entry is not used to replace those work-level credits.",
+      "researchNote": "The discographic entry assigns both words and music to Bronisław Kaper. Hofmeister (February 1931, p. 35) registers the song under Kaper with words by Fritz Rotter and Armin Robinson; the discographic lyric credit is not used to replace that.",
       "researchNoteType": "evidence_note",
       "identifiers": [
         {
@@ -28912,6 +28914,35 @@
       "researchNote": "The entry gives the theatre’s addresses: Nowy Świat 63 (5 September 1925 – 11 September 1926, hall of 1,000 seats), Marszałkowska 125 in the former Teatr Nowy (11 September 1926 – 28 August 1927) and Karowa 18 (30 August – 4 September 1927), and describes the dispute over the name that preceded the founding of Nowe Perskie Oko in November 1927 and of Morskie Oko.",
       "researchNoteType": "evidence_note",
       "slug": "src0867-perskie-oko-warszawa"
+    },
+    {
+      "id": "SRC0868",
+      "shortCitation": "Hofmeister, 1931, p. 152 — “Du bist nicht die Erste!”",
+      "fullCitation": "Walter Jurmann, Ihre Majestät die Liebe, Tonfilm: “Du bist nicht die Erste!” Tango, for brass band (see Trara XI). Registered in Hofmeisters Musikalisch-literarischer Monatsbericht (1931): 152. Internet Archive scan, leaf n151.",
+      "sourceType": "sheet_music_catalogue",
+      "title": "Hofmeisters Musikalisch-literarischer Monatsbericht: “Du bist nicht die Erste!”",
+      "creator": "Walter Jurmann",
+      "repository": "Internet Archive",
+      "publication": "Trara XI (brass-band collection, as cross-referenced in the entry)",
+      "date": "1931",
+      "dateRole": "catalogue_volume",
+      "dateQualifier": "confirmed",
+      "accessDate": "2026-09-22",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "organizationIds": [
+        "ORG067"
+      ],
+      "workIds": [
+        "W-F004"
+      ],
+      "filmIds": [
+        "F004"
+      ],
+      "primaryUrl": "https://archive.org/details/Musikalisch-literarischerMonatsbericht1931/page/n151/mode/1up",
+      "researchNote": "On p. 152 the entry “Jurmann, Walter” lists, from the sound film Ihre Majestät die Liebe, “Du bist nicht die Erste!” as a tango for brass band. The February issue (p. 35) lists the film’s Schlagerheft, including “Du bist nicht die erste”, under Jurmann as well. Kaper is named in neither entry.",
+      "researchNoteType": "evidence_note",
+      "slug": "src0868-hofmeisters-musikalisch-literarischer-monatsbericht-jurmann-du-bist-nich"
     }
   ],
   "recordCount": null
