@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 791,
+  "count": 793,
   "records": [
     {
       "id": "SRC0001",
@@ -29524,6 +29524,91 @@
         "CON-S009-LAB-ORG150"
       ],
       "slug": "src0881-richard-tauber-chronology-odeon-session-of-22-june-1929"
+    },
+    {
+      "id": "SRC0882",
+      "shortCitation": "CCE 1936, no. 3460, “Bistro (Le) du port”",
+      "fullCitation": "U.S. Copyright Office, Catalog of Copyright Entries, New Series. Part 3: Musical Compositions, 1936, vol. 31, no. 2. Washington, DC: U.S. Government Printing Office, entry no. 3460: “Bistro (Le) du port”: valse, paroles A. Saudemont et G. Groener, m Pierre Candel. © Aug. 1, 1935; E for. 42711; Editions Coda, s. a., Paris. Digitized via Internet Archive.",
+      "sourceType": "copyright_catalogue",
+      "title": "Catalog of Copyright Entries: “Bistro (Le) du port”",
+      "creator": "U.S. Copyright Office",
+      "repository": "Internet Archive",
+      "publication": "Catalog of Copyright Entries / U.S. Government Printing Office",
+      "date": "1936",
+      "dateRole": "catalogue_volume",
+      "dateQualifier": "confirmed",
+      "accessDate": "2026-09-22",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "organizationIds": [
+        "ORG030",
+        "ORG067",
+        "ORG068"
+      ],
+      "primaryUrl": "https://archive.org/details/catalogofcopyrig313libr",
+      "identifiers": [
+        {
+          "scheme": "usco_registration",
+          "value": "E for. 42711"
+        }
+      ],
+      "workIds": [
+        "W-S098"
+      ],
+      "songIds": [
+        "S098"
+      ],
+      "contributionIds": [
+        "CON-S098-C-P009",
+        "CON-S098-C-P077",
+        "CON-S098-L-P004",
+        "CON-S098-L-P021",
+        "CON-S098-PUB-ORG030"
+      ],
+      "nameVariantIds": [
+        "PNV0010"
+      ],
+      "personIds": [
+        "P004",
+        "P021"
+      ],
+      "slug": "src0882-catalog-of-copyright-entries-bistro-le-du-port"
+    },
+    {
+      "id": "SRC0883",
+      "shortCitation": "YouTube, “Lys Gauty ‘Le bistro du port’ 1934.”",
+      "fullCitation": "LYSGAUTYVIDEO (YouTube channel), uploader. “Lys Gauty ‘Le bistro du port’ 1934.” YouTube video, uploaded 15 August 2011. Description: “Lys Gauty (1900–1994) enregistrée en 1934.”",
+      "sourceType": "online_audio_source",
+      "title": "Lys Gauty, “Le bistro du port” — YouTube",
+      "creator": "LYSGAUTYVIDEO (YouTube channel)",
+      "repository": "YouTube",
+      "publication": "YouTube",
+      "date": "2011-08-15",
+      "dateRole": "digital_publication",
+      "dateQualifier": "confirmed",
+      "accessDate": "2026-09-22",
+      "reliability": "low",
+      "sourceStatus": "verified",
+      "primaryUrl": "https://www.youtube.com/watch?v=bRhvq-EsA4M",
+      "organizationIds": [
+        "ORG093"
+      ],
+      "personIds": [
+        "P203"
+      ],
+      "mediaIds": [
+        "M450"
+      ],
+      "workIds": [
+        "W-S098"
+      ],
+      "songIds": [
+        "S098"
+      ],
+      "contributionIds": [
+        "CON-S098-P-P203"
+      ],
+      "slug": "src0883-lys-gauty-le-bistro-du-port-youtube"
     }
   ],
   "recordCount": null

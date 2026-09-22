@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 1316,
+  "count": 1317,
   "records": [
     {
       "id": "CON-F001-C-P009",
@@ -11780,7 +11780,8 @@
       "sourceIds": [
         "SRC0285",
         "SRC0373",
-        "SRC0476"
+        "SRC0476",
+        "SRC0882"
       ],
       "nameVariantIds": [
         "PNV0010"
@@ -11801,7 +11802,8 @@
       "sourceIds": [
         "SRC0285",
         "SRC0373",
-        "SRC0476"
+        "SRC0476",
+        "SRC0882"
       ],
       "nameVariantIds": [
         "PNV0010"
@@ -11822,7 +11824,8 @@
       "sourceIds": [
         "SRC0285",
         "SRC0373",
-        "SRC0476"
+        "SRC0476",
+        "SRC0882"
       ]
     },
     {
@@ -11840,7 +11843,8 @@
       "sourceIds": [
         "SRC0285",
         "SRC0373",
-        "SRC0476"
+        "SRC0476",
+        "SRC0882"
       ]
     },
     {
@@ -11858,7 +11862,8 @@
       "sourceIds": [
         "SRC0285",
         "SRC0373",
-        "SRC0476"
+        "SRC0476",
+        "SRC0882"
       ]
     },
     {
@@ -23434,6 +23439,25 @@
         "SRC0693"
       ],
       "scopeNote": "Recorded the song; the recording, titled “Die grosse Attraktion: Du warst mir ein Roman”, survives through a later reissue that carries no disc data."
+    },
+    {
+      "id": "CON-S098-P-P203",
+      "role": "performer",
+      "nameAsPrinted": "Lys Gauty",
+      "displayCredit": "Vocal performance",
+      "evidenceContext": "online_recording",
+      "sortOrder": 50,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S098"
+      ],
+      "personIds": [
+        "P203"
+      ],
+      "sourceIds": [
+        "SRC0883"
+      ],
+      "scopeNote": "Recorded the song; the upload dates the recording to 1934 but gives no label or catalogue number."
     }
   ]
 }

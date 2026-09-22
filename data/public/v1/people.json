@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 175,
+  "count": 176,
   "records": [
     {
       "id": "P001",
@@ -123,7 +123,8 @@
       "authorityUrl": "VIAF: https://viaf.org/viaf/204922750",
       "sourceIds": [
         "SRC0285",
-        "SRC0476"
+        "SRC0476",
+        "SRC0882"
       ],
       "contributionIds": [
         "CON-S098-L-P004"
@@ -1636,7 +1637,8 @@
       "authorityUrl": "VIAF: https://viaf.org/viaf/170702482",
       "sourceIds": [
         "SRC0285",
-        "SRC0476"
+        "SRC0476",
+        "SRC0882"
       ],
       "contributionIds": [
         "CON-S098-L-P021"
@@ -6744,6 +6746,28 @@
       ],
       "sourceIds": [
         "SRC0878"
+      ]
+    },
+    {
+      "id": "P203",
+      "displayName": "Lys Gauty",
+      "sortName": "Gauty, Lys",
+      "authorizedName": "Gauty, Lys",
+      "authorizedNameSource": "LCNAF",
+      "slug": "lys-gauty",
+      "primaryRole": "singer",
+      "roles": [
+        "singer"
+      ],
+      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no2006124375",
+      "contributionIds": [
+        "CON-S098-P-P203"
+      ],
+      "workIds": [
+        "W-S098"
+      ],
+      "sourceIds": [
+        "SRC0883"
       ]
     }
   ],
