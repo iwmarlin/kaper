@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 1313,
+  "count": 1316,
   "records": [
     {
       "id": "CON-F001-C-P009",
@@ -23377,6 +23377,63 @@
       "sourceIds": [
         "SRC0879"
       ]
+    },
+    {
+      "id": "CON-S009-P-P118",
+      "role": "performer",
+      "nameAsPrinted": "Richard Tauber",
+      "displayCredit": "Vocal performance",
+      "evidenceContext": "discography",
+      "sortOrder": 50,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S009"
+      ],
+      "personIds": [
+        "P118"
+      ],
+      "sourceIds": [
+        "SRC0881"
+      ],
+      "scopeNote": "Recorded the song for Odeon in Berlin on 22 June 1929 with the Dajos Béla Künstler Orchester (matrix Be 8339). Kaper recalled in his 1975 AFI oral history that the song was recorded by Tauber."
+    },
+    {
+      "id": "CON-S009-LAB-ORG150",
+      "role": "record_label",
+      "nameAsPrinted": "Odeon",
+      "displayCredit": "Issuing label",
+      "evidenceContext": "discography",
+      "sortOrder": 60,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S009"
+      ],
+      "organizationIds": [
+        "ORG150"
+      ],
+      "sourceIds": [
+        "SRC0881"
+      ],
+      "scopeNote": "Tauber’s recording was made at an Odeon session; the discography gives the matrix number but no catalogue number."
+    },
+    {
+      "id": "CON-S031-P-P118",
+      "role": "performer",
+      "nameAsPrinted": "Richard Tauber",
+      "displayCredit": "Vocal performance",
+      "evidenceContext": "online_recording",
+      "sortOrder": 50,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S031"
+      ],
+      "personIds": [
+        "P118"
+      ],
+      "sourceIds": [
+        "SRC0693"
+      ],
+      "scopeNote": "Recorded the song; the recording, titled “Die grosse Attraktion: Du warst mir ein Roman”, survives through a later reissue that carries no disc data."
     }
   ]
 }

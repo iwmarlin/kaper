@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 790,
+  "count": 791,
   "records": [
     {
       "id": "SRC0001",
@@ -23168,7 +23168,10 @@
       ],
       "dateRole": "digital_publication",
       "dateQualifier": "confirmed",
-      "date": "2015-02-11"
+      "date": "2015-02-11",
+      "contributionIds": [
+        "CON-S031-P-P118"
+      ]
     },
     {
       "id": "SRC0694",
@@ -29484,6 +29487,40 @@
       "filmIds": [
         "F011"
       ]
+    },
+    {
+      "id": "SRC0881",
+      "shortCitation": "O’Hara, Richard Tauber Chronology (rev. 2019), appendix 5: Odeon Be 8339, 22 June 1929",
+      "fullCitation": "Daniel O’Hara, Richard Tauber Chronology, last revised September 2019, appendix five, “The June 1929 Berlin Recording Sessions”: 22 June 1929, with the Dajos Béla Künstler Orchester, matrix Be8339-1, 2 (take 2 a dubbing), “Tränen weint jeder Frau so gern” (Bronislaw Kaper/Fritz Rotter). Published by MusicWeb International.",
+      "sourceType": "recording_discographic_source",
+      "title": "Richard Tauber Chronology — Odeon session of 22 June 1929",
+      "creator": "Daniel O’Hara",
+      "repository": "MusicWeb International",
+      "publication": "MusicWeb International",
+      "date": "2019",
+      "dateRole": "publication",
+      "dateQualifier": "confirmed",
+      "accessDate": "2026-09-22",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "primaryUrl": "https://www.musicweb-international.com/classrev/2019/Sep/Tauber_chronology.pdf",
+      "workIds": [
+        "W-S009"
+      ],
+      "songIds": [
+        "S009"
+      ],
+      "personIds": [
+        "P118"
+      ],
+      "organizationIds": [
+        "ORG150"
+      ],
+      "contributionIds": [
+        "CON-S009-P-P118",
+        "CON-S009-LAB-ORG150"
+      ],
+      "slug": "src0881-richard-tauber-chronology-odeon-session-of-22-june-1929"
     }
   ],
   "recordCount": null
