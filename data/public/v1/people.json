@@ -6189,7 +6189,10 @@
       ],
       "birthYear": 1903,
       "deathYear": 1994,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "sourceIds": [
+        "SRC0773"
+      ]
     },
     {
       "id": "P178",
@@ -6208,6 +6211,7 @@
         "CON-O012-C-P178"
       ],
       "sourceIds": [
+        "SRC0773",
         "SRC0843",
         "SRC0845"
       ],
@@ -6490,6 +6494,7 @@
         "composer"
       ],
       "sourceIds": [
+        "SRC0769",
         "SRC0779"
       ],
       "workIds": [
@@ -6520,7 +6525,10 @@
       "contributionIds": [
         "CON-O024-C-P190"
       ],
-      "authorizedNameSource": "LCNAF"
+      "authorizedNameSource": "LCNAF",
+      "sourceIds": [
+        "SRC0769"
+      ]
     },
     {
       "id": "P191",
@@ -6592,7 +6600,10 @@
       "contributionIds": [
         "CON-O027-C-P193"
       ],
-      "authorizedNameSource": "LCNAF"
+      "authorizedNameSource": "LCNAF",
+      "sourceIds": [
+        "SRC0772"
+      ]
     },
     {
       "id": "P194",
