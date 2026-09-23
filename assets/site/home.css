@@ -59,7 +59,10 @@
   white-space: normal;
 }
 
-.home-page .hero-title__route em {
+/* The last stop is set apart from the three European ones by family and by
+   case, which is the whole of the gesture — the slope it also used to have
+   cost a 94KB italic face for two words, on every visit to the front page. */
+.home-page .hero-title__arrival {
   font-family: var(--serif);
   font-size: 1.08em;
   letter-spacing: 0;

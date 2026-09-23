@@ -42,6 +42,18 @@ class HomePagePrerenderTests(unittest.TestCase):
         self.assertIn('aria-hidden="true"', link.group(2))
         self.assertIn(f'<a href="{record}">See the record</a>', self.page)
 
+    def test_the_front_page_asks_for_no_italic_face(self) -> None:
+        """The route line set its last stop in italic, so the front page fetched
+        a 93KB italic serif to render two words. The stop is still set apart from
+        the three European ones, by family and by case, and nothing on the page
+        asks for a slope any more."""
+        self.assertNotIn("<em>", self.page)
+        self.assertNotIn("<i>", self.page)
+        self.assertIn('<span class="hero-title__arrival">early Hollywood</span>', self.page)
+        css = (ROOT / "assets/site/home.css").read_text(encoding="utf-8")
+        self.assertIn(".home-page .hero-title__arrival", css)
+        self.assertNotIn(".home-page .hero-title__route em", css)
+
     def test_the_figures_carry_the_current_source_count(self) -> None:
         figures = re.search(r'id="method-figures">(.*?)</span>', self.page, re.DOTALL)
         self.assertIsNotNone(figures)
