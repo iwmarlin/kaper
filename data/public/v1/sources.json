@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 797,
+  "count": 798,
   "records": [
     {
       "id": "SRC0001",
@@ -8443,7 +8443,8 @@
         "S168"
       ],
       "titleVariantIds": [
-        "TV0280"
+        "TV0280",
+        "TV0315"
       ],
       "contributionIds": [
         "CON-F047-C-P009",
@@ -11452,6 +11453,7 @@
         "W-S165",
         "W-S166",
         "W-S167",
+        "W-S168",
         "W-S175",
         "W-S184",
         "W-S223",
@@ -11491,6 +11493,7 @@
         "S165",
         "S166",
         "S167",
+        "S168",
         "S184",
         "S228"
       ],
@@ -29792,6 +29795,38 @@
       "workRelationIds": [
         "REL0214"
       ]
+    },
+    {
+      "id": "SRC0890",
+      "shortCitation": "Finding Aid, Walter Jurmann Collection — scope note on “The Magic of Springtime”",
+      "fullCitation": "Finding Aid for the Walter Jurmann Collection, 1910–1988, Collection APAM-1. UCLA Library, Performing Arts Special Collections, Los Angeles; processed by Juliane Brand, 1989. Scope and Content note: the Papers of Gus Kahn in the Archive of Popular American Music include “an ozalid copy of a presumably unpublished Jurmann/Kaper/Kahn song, “The Magic of Springtime”, originally written for but never used in the 1936 MGM film “Maytime””. Online Archive of California, ark:/13030/kt5779q3vh.",
+      "sourceType": "archival_manuscript_holding",
+      "title": "Walter Jurmann Collection finding aid — The Magic of Springtime in the Gus Kahn Papers",
+      "creator": "Juliane Brand",
+      "repository": "UCLA Library, Performing Arts Special Collections",
+      "publication": "Online Archive of California",
+      "date": "1989",
+      "dateRole": "creation",
+      "dateQualifier": "confirmed",
+      "accessDate": "2026-09-23",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "primaryUrl": "https://oac.cdlib.org/findaid/ark:/13030/kt5779q3vh",
+      "workIds": [
+        "W-S168"
+      ],
+      "songIds": [
+        "S168"
+      ],
+      "personIds": [
+        "P009",
+        "P077",
+        "P025"
+      ],
+      "organizationIds": [
+        "ORG079"
+      ],
+      "slug": "src0890-walter-jurmann-collection-finding-aid-the-magic-of-springtime-in-the-gus"
     }
   ],
   "recordCount": null
