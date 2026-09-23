@@ -17,7 +17,7 @@
    the swashed display forms can never appear by accident. */
 @font-face {
   font-family: "Fraunces";
-  src: url("../fonts/kaper-serif.woff2?v=14dc8664c4") format("woff2");
+  src: url("../fonts/kaper-serif.woff2?v=48d2928785") format("woff2");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
@@ -25,7 +25,7 @@
 
 @font-face {
   font-family: "Fraunces";
-  src: url("../fonts/kaper-serif-italic.woff2?v=14dc8664c4") format("woff2");
+  src: url("../fonts/kaper-serif-italic.woff2?v=48d2928785") format("woff2");
   font-weight: 100 900;
   font-style: italic;
   font-display: swap;
@@ -33,7 +33,7 @@
 
 @font-face {
   font-family: "Archivo";
-  src: url("../fonts/kaper-sans.woff2?v=14dc8664c4") format("woff2");
+  src: url("../fonts/kaper-sans.woff2?v=48d2928785") format("woff2");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
@@ -41,7 +41,7 @@
 
 @font-face {
   font-family: "Archivo";
-  src: url("../fonts/kaper-sans-italic.woff2?v=14dc8664c4") format("woff2");
+  src: url("../fonts/kaper-sans-italic.woff2?v=48d2928785") format("woff2");
   font-weight: 100 900;
   font-style: italic;
   font-display: swap;
@@ -1424,6 +1424,14 @@ main {
   gap: 0.65rem;
 }
 
+.source-icon-sprite {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
 .source-index-row {
   display: grid;
   grid-template-columns: 6.25rem minmax(0, 1fr) minmax(11rem, 14.5rem);
@@ -1443,8 +1451,23 @@ main {
 
 .source-index-row__rail {
   display: grid;
-  gap: 0.18rem;
+  grid-template-columns: 1rem minmax(0, 1fr);
+  gap: 0.18rem 0.48rem;
+  align-items: start;
   padding-top: 0.08rem;
+}
+
+.source-type-icon {
+  grid-row: 1 / span 2;
+  width: 1rem;
+  height: 1rem;
+  margin-top: 0.06rem;
+  color: var(--ink-soft);
+}
+
+.source-index-row__id,
+.source-index-row__date {
+  grid-column: 2;
 }
 
 .source-index-row__id {
@@ -4191,9 +4214,20 @@ html:not(.js) .source-group__head {
   }
 
   .source-index-row__rail {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1rem auto minmax(0, 1fr);
     align-items: baseline;
     gap: 0.65rem;
+  }
+
+  .source-type-icon {
+    grid-row: 1;
+    margin-top: 0;
+  }
+
+  .source-index-row__id,
+  .source-index-row__date {
+    grid-column: auto;
   }
 
   .source-index-row__context {
@@ -5248,6 +5282,10 @@ html:not(.js) .source-group__head {
 }
 
 @media print {
+  .source-type-icon {
+    color: #333 !important;
+  }
+
   @page {
     margin: 14mm 13mm 16mm;
   }

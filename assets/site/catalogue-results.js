@@ -13,11 +13,12 @@ import {
   safeExternalUrl,
   scopeBadge,
   sourceDateRoleLabel,
+  sourceTypeIconFamily,
   sourceTypeLabel,
   typeBadge,
   responsiveImage,
   registerImageDerivatives,
-} from "./core.js?v=14dc8664c4";
+} from "./core.js?v=48d2928785";
 
 // Build-time prerendering and browser rendering must configure the exact same
 // core module instance. Query-stamped ES module URLs are distinct module keys
@@ -139,8 +140,10 @@ export function renderPersonIndexRow(person) {
 
 export function renderSourceIndexRow(source) {
   const external = safeExternalUrl(source.externalUrl);
+  const iconFamily = sourceTypeIconFamily(source.sourceType);
   return `<article class="source-index-row">
     <div class="source-index-row__rail">
+      <svg class="source-type-icon" aria-hidden="true" focusable="false" width="16" height="16"><use href="#source-icon-${escapeHtml(iconFamily)}"></use></svg>
       <span class="source-index-row__id">${escapeHtml(source.id)}</span>
       <span class="source-index-row__date">${escapeHtml(sourceDateDisplay(source))}</span>
     </div>

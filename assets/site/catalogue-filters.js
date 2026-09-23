@@ -1,4 +1,4 @@
-import { escapeHtml } from "./core.js?v=14dc8664c4";
+import { escapeHtml } from "./core.js?v=48d2928785";
 
 const INDEX_RETURN_PREFIX = "kaper:index-return:";
 

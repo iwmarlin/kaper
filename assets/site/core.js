@@ -314,6 +314,45 @@ export const SOURCE_TYPES = Object.freeze({
   wikimedia_commons_file: { one: "Wikimedia Commons file", many: "Wikimedia Commons files" },
 });
 
+// The source index uses ten deliberately broad visual families, not one icon
+// per technical type. The written type remains visible, while the icon makes a
+// list of hundreds of records easier to scan. Keep the mapping beside the
+// source vocabulary so a type cannot acquire a public label without also
+// acquiring a visual family. "other" is retained as a defensive fallback; it
+// is not currently used by a published Source record.
+export const SOURCE_TYPE_ICON_FAMILIES = Object.freeze({
+  archival_digital_record: "archive",
+  archival_document: "archive",
+  archival_manuscript_holding: "archive",
+  archival_photograph: "visual",
+  authority_record: "authority",
+  book: "publication",
+  copyright_catalogue: "register",
+  digital_collection_item: "archive",
+  filmographic_database: "film",
+  image_or_photograph: "visual",
+  online_audio_source: "audio",
+  online_database: "web",
+  online_video_source: "film",
+  other: "register",
+  periodical_article: "publication",
+  press_item: "press",
+  recording_discographic_source: "audio",
+  secondary_literature: "publication",
+  sheet_music: "score",
+  sheet_music_catalogue: "register",
+  sound_recording_catalogue: "register",
+  soundtrack_database: "film",
+  visual_document: "visual",
+  web_page: "web",
+  wikimedia_article_page: "web",
+  wikimedia_commons_file: "visual",
+});
+
+export function sourceTypeIconFamily(value) {
+  return SOURCE_TYPE_ICON_FAMILIES[value || "other"] || SOURCE_TYPE_ICON_FAMILIES.other;
+}
+
 export function sourceTypeLabel(value) {
   return SOURCE_TYPES[value || "other"]?.one || humanize(value);
 }
