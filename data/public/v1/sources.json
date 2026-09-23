@@ -3777,13 +3777,13 @@
       ],
       "contributionIds": [
         "CON-S116-C-P009",
+        "CON-S116-C-P077",
         "CON-S116-C-P079",
         "CON-S116-CON-P009",
         "CON-S116-L-P049",
         "CON-S116-LAB-ORG039",
         "CON-S116-P-P132",
-        "CON-S116-PUB-ORG039",
-        "CON-S116-C-P077"
+        "CON-S116-PUB-ORG039"
       ],
       "nameVariantIds": [
         "PNV0020",
@@ -4686,11 +4686,11 @@
         "F029"
       ],
       "contributionIds": [
+        "CON-F029-A-P132",
         "CON-F029-C-P009",
         "CON-F029-C-P077",
         "CON-F029-D-P056",
-        "CON-F029-PC-ORG009",
-        "CON-F029-A-P132"
+        "CON-F029-PC-ORG009"
       ],
       "primaryUrl": "https://www.filmportal.de/film/on-a-vole-un-homme_eca2a4da7771450aab72955757436620"
     },
@@ -5586,12 +5586,12 @@
         "F028"
       ],
       "contributionIds": [
+        "CON-F028-A-P132",
         "CON-F028-C-P009",
         "CON-F028-C-P077",
         "CON-F028-D-P048",
         "CON-F028-D-P063",
-        "CON-F028-PC-ORG018",
-        "CON-F028-A-P132"
+        "CON-F028-PC-ORG018"
       ],
       "primaryUrl": "https://en.unifrance.org/movie/36155/a-woman-at-the-wheel"
     },
@@ -5796,9 +5796,9 @@
         "TV0053"
       ],
       "contributionIds": [
+        "CON-F032-C-P009",
         "CON-F032-D-P007",
-        "CON-F032-PC-ORG020",
-        "CON-F032-C-P009"
+        "CON-F032-PC-ORG020"
       ],
       "primaryUrl": "https://catalog.afi.com/Film/7399-ISTANDCONDEMNED"
     },
@@ -6678,8 +6678,7 @@
       "personIds": [
         "P009",
         "P020",
-        "P077",
-        "P205"
+        "P077"
       ],
       "organizationIds": [
         "ORG044",
@@ -6697,7 +6696,7 @@
       "contributionIds": [
         "CON-S080-C-P009",
         "CON-S080-C-P077",
-        "CON-S080-L-P205",
+        "CON-S080-L-P020",
         "CON-S080-PUB-ORG044"
       ],
       "nameVariantIds": [
@@ -10418,8 +10417,8 @@
         "CON-F055-D-P095",
         "CON-F055-PC-ORG001",
         "CON-S175-C-P009",
-        "CON-S175-L-P025",
-        "CON-S175-CC-ORG041"
+        "CON-S175-CC-ORG041",
+        "CON-S175-L-P025"
       ],
       "nameVariantIds": [
         "PNV0020"
@@ -11166,13 +11165,13 @@
       "contributionIds": [
         "CON-S096-C-P009",
         "CON-S096-C-P077",
-        "CON-S096-L-P049",
-        "CON-S097-CON-P009",
-        "CON-S096-P-P132",
-        "CON-S097-P-P132",
         "CON-S096-CON-P009",
+        "CON-S096-L-P049",
         "CON-S096-LAB-ORG039",
-        "CON-S097-LAB-ORG039"
+        "CON-S096-P-P132",
+        "CON-S097-CON-P009",
+        "CON-S097-LAB-ORG039",
+        "CON-S097-P-P132"
       ],
       "nameVariantIds": [
         "PNV0019",
@@ -11580,10 +11579,16 @@
         "CON-F045-BM-P077",
         "CON-F051-C-P077",
         "CON-F052-C-P077",
+        "CON-S088-C-P009",
+        "CON-S089-C-P009",
+        "CON-S090-C-P009",
+        "CON-S091-C-P009",
         "CON-S097-C-P009",
+        "CON-S097-C-P077",
         "CON-S097-C-P079",
         "CON-S097-L-P049",
         "CON-S116-C-P009",
+        "CON-S116-C-P077",
         "CON-S116-C-P079",
         "CON-S116-L-P049",
         "CON-S121-C-P009",
@@ -11607,19 +11612,13 @@
         "CON-S166-C-P077",
         "CON-S167-C-P009",
         "CON-S167-C-P077",
+        "CON-S175-C-P077",
         "CON-S184-C-P009",
         "CON-S184-C-P077",
         "CON-S184-L-P025",
         "CON-S184-PUB-ORG001",
-        "CON-S088-C-P009",
-        "CON-S089-C-P009",
-        "CON-S090-C-P009",
-        "CON-S091-C-P009",
-        "CON-S097-C-P077",
-        "CON-S116-C-P077",
-        "CON-S175-C-P077",
-        "CON-S223-C-P077",
         "CON-S223-C-P009",
+        "CON-S223-C-P077",
         "CON-S228-L-P058"
       ],
       "nameVariantIds": [
@@ -16877,9 +16876,9 @@
       ],
       "contributionIds": [
         "CON-F034-C-P009",
+        "CON-F034-C-P077",
         "CON-F034-D-P018",
         "CON-F034-PC-ORG001",
-        "CON-F034-C-P077",
         "CON-S123-C-P009",
         "CON-S123-C-P077",
         "CON-S123-L-P025",
@@ -17030,12 +17029,12 @@
       "sourceStatus": "verified",
       "slug": "src0490-beyond-the-prologue-kaper-warsaw-berlin-1902-1933",
       "personIds": [
+        "P020",
         "P118",
         "P119",
         "P121",
         "P122",
-        "P123",
-        "P205"
+        "P123"
       ],
       "timelineEventIds": [
         "TE0002",
@@ -17097,7 +17096,7 @@
         "CON-S004-C-P009",
         "CON-S004-C-P020",
         "CON-S004-L-P020",
-        "CON-S080-L-P205"
+        "CON-S080-L-P020"
       ],
       "workIds": [
         "W-O005",
@@ -17765,8 +17764,8 @@
       ],
       "contributionIds": [
         "CON-O013-A-P009",
-        "CON-O013-PUB-ORG054",
-        "CON-O013-C-P179"
+        "CON-O013-C-P179",
+        "CON-O013-PUB-ORG054"
       ],
       "nameVariantIds": [
         "PNV0021"
@@ -17804,8 +17803,8 @@
       ],
       "contributionIds": [
         "CON-O014-A-P009",
-        "CON-O014-PUB-ORG054",
-        "CON-O014-C-P179"
+        "CON-O014-C-P179",
+        "CON-O014-PUB-ORG054"
       ],
       "nameVariantIds": [
         "PNV0021"
@@ -17842,8 +17841,8 @@
       ],
       "contributionIds": [
         "CON-O015-A-P009",
-        "CON-O015-PUB-ORG033",
-        "CON-O015-C-P180"
+        "CON-O015-C-P180",
+        "CON-O015-PUB-ORG033"
       ],
       "nameVariantIds": [
         "PNV0023"
@@ -17880,8 +17879,8 @@
       ],
       "contributionIds": [
         "CON-O016-A-P009",
-        "CON-O016-PUB-ORG033",
-        "CON-O016-C-P181"
+        "CON-O016-C-P181",
+        "CON-O016-PUB-ORG033"
       ],
       "nameVariantIds": [
         "PNV0023",
@@ -17958,8 +17957,8 @@
       ],
       "contributionIds": [
         "CON-O018-A-P009",
-        "CON-O018-PUB-ORG054",
-        "CON-O018-C-P183"
+        "CON-O018-C-P183",
+        "CON-O018-PUB-ORG054"
       ],
       "nameVariantIds": [
         "PNV0021"
@@ -17997,10 +17996,10 @@
       ],
       "contributionIds": [
         "CON-O019-A-P009",
-        "CON-O019-PUB-ORG054",
         "CON-O019-C-P184",
         "CON-O019-C-P185",
-        "CON-O019-C-P186"
+        "CON-O019-C-P186",
+        "CON-O019-PUB-ORG054"
       ],
       "nameVariantIds": [
         "PNV0021"
@@ -18038,8 +18037,8 @@
       ],
       "contributionIds": [
         "CON-O020-A-P009",
-        "CON-O020-PUB-ORG054",
-        "CON-O020-C-P187"
+        "CON-O020-C-P187",
+        "CON-O020-PUB-ORG054"
       ],
       "nameVariantIds": [
         "PNV0021"
@@ -18077,8 +18076,8 @@
       ],
       "contributionIds": [
         "CON-O021-A-P009",
-        "CON-O021-PUB-ORG054",
-        "CON-O021-C-P187"
+        "CON-O021-C-P187",
+        "CON-O021-PUB-ORG054"
       ],
       "nameVariantIds": [
         "PNV0021"
@@ -18116,8 +18115,8 @@
       ],
       "contributionIds": [
         "CON-O022-A-P009",
-        "CON-O022-PUB-ORG054",
-        "CON-O022-C-P188"
+        "CON-O022-C-P188",
+        "CON-O022-PUB-ORG054"
       ],
       "nameVariantIds": [
         "PNV0021"
@@ -19663,8 +19662,8 @@
       ],
       "personIds": [
         "P009",
-        "P077",
-        "P025"
+        "P025",
+        "P077"
       ],
       "timelineEventIds": [
         "TE0055"
@@ -23568,9 +23567,9 @@
       "dateQualifier": "confirmed",
       "date": "2013-02-05",
       "contributionIds": [
+        "CON-S084-CON-P165",
         "CON-S084-P-ORG119",
-        "CON-S084-P-P164",
-        "CON-S084-CON-P165"
+        "CON-S084-P-P164"
       ],
       "workIds": [
         "W-S084"
@@ -23610,9 +23609,9 @@
       "dateQualifier": "confirmed",
       "date": "2013-02-05",
       "contributionIds": [
+        "CON-S058-CON-P165",
         "CON-S058-P-ORG119",
-        "CON-S058-P-P164",
-        "CON-S058-CON-P165"
+        "CON-S058-P-P164"
       ],
       "workIds": [
         "W-S058"
@@ -24481,9 +24480,9 @@
         "CON-S048-C-P009",
         "CON-S048-C-P086",
         "CON-S048-L-P020",
-        "CON-S048-P-P086",
+        "CON-S048-LAB-ORG128",
         "CON-S048-P-ORG137",
-        "CON-S048-LAB-ORG128"
+        "CON-S048-P-P086"
       ],
       "primaryUrl": "https://www.youtube.com/watch?v=A_isWCv3e2Q"
     },
@@ -24828,9 +24827,9 @@
         "M375"
       ],
       "contributionIds": [
-        "CON-S001-P-ORG123",
         "CON-S001-CON-P169",
-        "CON-S001-LAB-ORG132"
+        "CON-S001-LAB-ORG132",
+        "CON-S001-P-ORG123"
       ],
       "primaryUrl": "https://www.youtube.com/watch?v=g-DISloEAvU",
       "nameVariantIds": [
@@ -25070,9 +25069,9 @@
       ],
       "contributionIds": [
         "CON-S023-CON-P165",
+        "CON-S023-LAB-ORG126",
         "CON-S023-P-ORG119",
-        "CON-S023-P-P170",
-        "CON-S023-LAB-ORG126"
+        "CON-S023-P-P170"
       ],
       "mediaIds": [
         "M380"
@@ -25181,9 +25180,9 @@
         "CON-S033-C-P009",
         "CON-S033-C-P077",
         "CON-S033-L-P020",
-        "CON-S033-PUB-ORG031",
+        "CON-S033-LAB-ORG138",
         "CON-S033-P-ORG140",
-        "CON-S033-LAB-ORG138"
+        "CON-S033-PUB-ORG031"
       ],
       "workIds": [
         "W-S033"
@@ -25246,8 +25245,8 @@
         "CON-S118-C-P009",
         "CON-S118-C-P077",
         "CON-S118-L-P058",
-        "CON-S118-P-P173",
-        "CON-S118-LAB-ORG156"
+        "CON-S118-LAB-ORG156",
+        "CON-S118-P-P173"
       ],
       "personIds": [
         "P173"
@@ -25426,10 +25425,10 @@
         "CON-S034-C-P009",
         "CON-S034-C-P077",
         "CON-S034-L-P020",
-        "CON-S034-PUB-ORG031",
+        "CON-S034-LAB-ORG129",
         "CON-S034-P-ORG143",
         "CON-S034-P-P077",
-        "CON-S034-LAB-ORG129"
+        "CON-S034-PUB-ORG031"
       ],
       "personIds": [
         "P077"
@@ -25473,9 +25472,9 @@
         "CON-S057-C-P009",
         "CON-S057-C-P077",
         "CON-S057-L-P017",
-        "CON-S057-PUB-ORG038",
+        "CON-S057-LAB-ORG128",
         "CON-S057-P-ORG144",
-        "CON-S057-LAB-ORG128"
+        "CON-S057-PUB-ORG038"
       ],
       "workIds": [
         "W-S057"
@@ -25514,11 +25513,11 @@
       "contributionIds": [
         "CON-S067-C-P009",
         "CON-S067-C-P077",
-        "CON-S067-L-P020",
-        "CON-S067-PUB-ORG029",
-        "CON-S067-P-ORG119",
         "CON-S067-CON-P165",
-        "CON-S067-LAB-ORG126"
+        "CON-S067-L-P020",
+        "CON-S067-LAB-ORG126",
+        "CON-S067-P-ORG119",
+        "CON-S067-PUB-ORG029"
       ],
       "personIds": [
         "P165"
@@ -25563,8 +25562,8 @@
         "S059"
       ],
       "contributionIds": [
-        "CON-S059-P-P118",
-        "CON-S059-CON-P144"
+        "CON-S059-CON-P144",
+        "CON-S059-P-P118"
       ],
       "researchNote": "The date identifies the Membran Music digital issue released on 15 April 2010; 1932 is the year of the underlying performance. The reissue identifies no original label, catalogue number or matrix. A digitised Parlophone pressing of the same recording is linked separately and remains the preferred listening reference.",
       "researchNoteType": "discographic_note"
@@ -25598,9 +25597,9 @@
         "CON-S018-C-P009",
         "CON-S018-L-P020",
         "CON-S018-L-P083",
-        "CON-S018-PUB-ORG033",
+        "CON-S018-LAB-ORG129",
         "CON-S018-P-ORG121",
-        "CON-S018-LAB-ORG129"
+        "CON-S018-PUB-ORG033"
       ],
       "workIds": [
         "W-S018"
@@ -25953,8 +25952,8 @@
       ],
       "contributionIds": [
         "CON-O023-A-P009",
-        "CON-O023-PUB-ORG054",
-        "CON-O023-C-P179"
+        "CON-O023-C-P179",
+        "CON-O023-PUB-ORG054"
       ],
       "nameVariantIds": [
         "PNV0019"
@@ -25992,16 +25991,16 @@
       ],
       "contributionIds": [
         "CON-O024-A-P009",
-        "CON-O024-PUB-ORG054",
+        "CON-O024-C-P189",
         "CON-O024-C-P190",
-        "CON-O024-C-P189"
+        "CON-O024-PUB-ORG054"
       ],
       "nameVariantIds": [
         "PNV0019"
       ],
       "personIds": [
-        "P190",
-        "P189"
+        "P189",
+        "P190"
       ]
     },
     {
@@ -26036,9 +26035,9 @@
       ],
       "contributionIds": [
         "CON-O025-A-P009",
-        "CON-O025-PUB-ORG054",
         "CON-O025-C-P191",
-        "CON-O025-C-P192"
+        "CON-O025-C-P192",
+        "CON-O025-PUB-ORG054"
       ],
       "nameVariantIds": [
         "PNV0019"
@@ -26076,8 +26075,8 @@
       ],
       "contributionIds": [
         "CON-O026-A-P009",
-        "CON-O026-PUB-ORG054",
-        "CON-O026-C-P179"
+        "CON-O026-C-P179",
+        "CON-O026-PUB-ORG054"
       ],
       "nameVariantIds": [
         "PNV0019"
@@ -26115,8 +26114,8 @@
       ],
       "contributionIds": [
         "CON-O027-A-P009",
-        "CON-O027-PUB-ORG054",
-        "CON-O027-C-P193"
+        "CON-O027-C-P193",
+        "CON-O027-PUB-ORG054"
       ],
       "nameVariantIds": [
         "PNV0019"
@@ -27148,12 +27147,12 @@
       "contributionIds": [
         "CON-S105-C-P009",
         "CON-S105-C-P077",
-        "CON-S105-P-P198",
         "CON-S105-LAB-ORG151",
+        "CON-S105-P-P198",
         "CON-S106-C-P009",
         "CON-S106-C-P077",
-        "CON-S106-P-P198",
-        "CON-S106-LAB-ORG151"
+        "CON-S106-LAB-ORG151",
+        "CON-S106-P-P198"
       ],
       "researchNote": "The BnF catalogue dates the disc only as “19..”. The supplied date [1934] follows the film’s release year and is stated as supplied rather than transcribed. The catalogue lists matrices CL 5068 and CL 5093 but does not assign each matrix to a title in the displayed metadata, so no side-level matrix assignment is inferred here.",
       "researchNoteType": "discographic_note"
@@ -27187,8 +27186,8 @@
         "ORG151"
       ],
       "personIds": [
-        "P198",
-        "P051"
+        "P051",
+        "P198"
       ],
       "mediaIds": [
         "M345",
@@ -27205,13 +27204,13 @@
       "contributionIds": [
         "CON-S112-C-P009",
         "CON-S112-C-P077",
-        "CON-S112-P-P198",
+        "CON-S112-L-P051",
         "CON-S112-LAB-ORG151",
+        "CON-S112-P-P198",
         "CON-S115-C-P009",
         "CON-S115-C-P077",
-        "CON-S115-P-P198",
         "CON-S115-LAB-ORG151",
-        "CON-S112-L-P051"
+        "CON-S115-P-P198"
       ],
       "researchNote": "The BnF catalogue supplies only the decade as [193.]. The date [1934] follows the release chronology documented by the Internet Archive discography and is therefore supplied rather than transcribed. The catalogue lists matrices CL 5022 and CL 5038 without assigning them to individual titles in the displayed metadata.",
       "researchNoteType": "discographic_note"
@@ -27335,8 +27334,8 @@
       "contributionIds": [
         "CON-S114-C-P009",
         "CON-S114-C-P077",
-        "CON-S114-P-P198",
-        "CON-S114-LAB-ORG151"
+        "CON-S114-LAB-ORG151",
+        "CON-S114-P-P198"
       ]
     },
     {
@@ -29248,8 +29247,8 @@
       ],
       "contributionIds": [
         "CON-S222-C-P009",
-        "CON-S222-L-P020",
         "CON-S222-L-P012",
+        "CON-S222-L-P020",
         "CON-S222-PUB-ORG050"
       ],
       "slug": "src0872-catalog-of-copyright-entries-just-one-of-my-dreams",
@@ -29294,8 +29293,8 @@
       ],
       "contributionIds": [
         "CON-S222-C-P009",
-        "CON-S222-L-P020",
         "CON-S222-L-P012",
+        "CON-S222-L-P020",
         "CON-S222-PUB-ORG050"
       ],
       "slug": "src0873-catalog-of-copyright-entries-just-one-of-my-dreams",
@@ -29338,8 +29337,8 @@
       ],
       "contributionIds": [
         "CON-S222-C-P009",
-        "CON-S222-L-P020",
         "CON-S222-L-P012",
+        "CON-S222-L-P020",
         "CON-S222-PUB-ORG050"
       ],
       "slug": "src0874-catalog-of-copyright-entries-just-one-of-my-dreams",
@@ -29381,8 +29380,8 @@
         "S223"
       ],
       "contributionIds": [
-        "CON-S223-C-P077",
         "CON-S223-C-P009",
+        "CON-S223-C-P077",
         "CON-S223-L-P201",
         "CON-S223-PUB-ORG055"
       ],
@@ -29516,8 +29515,8 @@
       "contributionIds": [
         "CON-S226-C-P009",
         "CON-S226-C-P077",
-        "CON-S226-L-P202",
         "CON-S226-L-P020",
+        "CON-S226-L-P202",
         "CON-S226-PUB-ORG166"
       ],
       "slug": "src0878-catalog-of-copyright-entries-falling-in-love-with-you",
@@ -29562,8 +29561,8 @@
         "S227"
       ],
       "contributionIds": [
-        "CON-S227-C-P077",
         "CON-S227-C-P009",
+        "CON-S227-C-P077",
         "CON-S227-L-P050",
         "CON-S227-PUB-ORG032"
       ],
@@ -29638,8 +29637,8 @@
         "ORG150"
       ],
       "contributionIds": [
-        "CON-S009-P-P118",
-        "CON-S009-LAB-ORG150"
+        "CON-S009-LAB-ORG150",
+        "CON-S009-P-P118"
       ],
       "slug": "src0881-richard-tauber-chronology-odeon-session-of-22-june-1929"
     },
@@ -29757,8 +29756,8 @@
         "ORG155"
       ],
       "contributionIds": [
-        "CON-S098-P-P203",
-        "CON-S098-LAB-ORG155"
+        "CON-S098-LAB-ORG155",
+        "CON-S098-P-P203"
       ],
       "slug": "src0884-lys-gauty-19321944-fremeaux-associes-fa-5033-discography"
     },
@@ -29883,8 +29882,8 @@
       "contributionIds": [
         "CON-S228-C-P009",
         "CON-S228-C-P077",
-        "CON-S228-L-P058",
-        "CON-S228-CC-ORG001"
+        "CON-S228-CC-ORG001",
+        "CON-S228-L-P058"
       ],
       "nameVariantIds": [
         "PNV0020"
@@ -29986,8 +29985,8 @@
       ],
       "personIds": [
         "P009",
-        "P077",
-        "P025"
+        "P025",
+        "P077"
       ],
       "organizationIds": [
         "ORG079"
@@ -30023,13 +30022,13 @@
       ],
       "personIds": [
         "P009",
-        "P077",
-        "P205"
+        "P020",
+        "P077"
       ],
       "contributionIds": [
         "CON-S080-C-P009",
         "CON-S080-C-P077",
-        "CON-S080-L-P205",
+        "CON-S080-L-P020",
         "CON-S080-PUB-ORG044"
       ],
       "nameVariantIds": [
@@ -30050,19 +30049,19 @@
       "dateRole": "record_creation",
       "dateQualifier": "confirmed",
       "accessDate": "2026-09-23",
-      "reliability": "high",
+      "reliability": "medium",
       "sourceStatus": "verified",
       "primaryUrl": "https://id.loc.gov/authorities/names/n2014032135",
       "organizationIds": [
         "ORG066"
       ],
       "personIds": [
-        "P205"
+        "P020"
       ],
-      "researchNote": "The authority record identifies Peter Kuckuck as the lyricist and cites the film Heut kommt’s drauf an (1933), the film for which the song was written.",
-      "researchNoteType": "authority_note",
+      "researchNote": "The record establishes a heading for the printed name and cites the film the lyric was written for; it gives no dates, no variant forms and no identification of the author behind the name. It is linked here to Fritz Rotter because the archive reads the signature as his, which the authority file neither supports nor contradicts.",
+      "researchNoteType": "identity_assessment",
       "authoritySubject": "person",
-      "identityRelation": "same",
+      "identityRelation": "candidate",
       "slug": "src0892-lcnaf-authority-record-kuckuck-peter",
       "workIds": [
         "W-S080"
@@ -30071,7 +30070,7 @@
         "S080"
       ],
       "contributionIds": [
-        "CON-S080-L-P205"
+        "CON-S080-L-P020"
       ],
       "nameVariantIds": [
         "PNV0008"

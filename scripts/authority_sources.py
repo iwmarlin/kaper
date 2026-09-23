@@ -47,6 +47,9 @@ AUTHORITY_SOURCE_SEMANTICS = {
     "SRC0532": ("work", None),
     "SRC0632": ("person", "candidate"),
     "SRC0686": ("person", "alternate"),
+    # The heading is for the printed name, and the Library of Congress does not
+    # say who stands behind it; the identification with Rotter is the archive's.
+    "SRC0892": ("person", "candidate"),
 }
 
 AUTHORITY_SUBJECTS = {"person", "work"}

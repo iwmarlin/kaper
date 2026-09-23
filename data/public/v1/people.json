@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 178,
+  "count": 177,
   "records": [
     {
       "id": "P001",
@@ -1450,13 +1450,16 @@
         "SRC0373",
         "SRC0462",
         "SRC0463",
+        "SRC0490",
         "SRC0493",
         "SRC0500",
         "SRC0504",
         "SRC0658",
         "SRC0689",
         "SRC0787",
-        "SRC0888"
+        "SRC0888",
+        "SRC0891",
+        "SRC0892"
       ],
       "timelineEventIds": [
         "TE0016",
@@ -1523,6 +1526,7 @@
         "CON-S075-L-P020",
         "CON-S076-L-P020",
         "CON-S078-L-P020",
+        "CON-S080-L-P020",
         "CON-S081-L-P020",
         "CON-S082-L-P020",
         "CON-S084-L-P020",
@@ -1605,6 +1609,7 @@
         "W-S075",
         "W-S076",
         "W-S078",
+        "W-S080",
         "W-S081",
         "W-S082",
         "W-S084",
@@ -6833,34 +6838,6 @@
       ],
       "sourceIds": [
         "SRC0889"
-      ]
-    },
-    {
-      "id": "P205",
-      "displayName": "Peter Kuckuck",
-      "sortName": "Kuckuck, Peter",
-      "authorizedName": "Kuckuck, Peter",
-      "authorizedNameSource": "LCNAF",
-      "slug": "peter-kuckuck",
-      "primaryRole": "lyricist",
-      "roles": [
-        "lyricist"
-      ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n2014032135",
-      "contributionIds": [
-        "CON-S080-L-P205"
-      ],
-      "workIds": [
-        "W-S080"
-      ],
-      "sourceIds": [
-        "SRC0189",
-        "SRC0490",
-        "SRC0891",
-        "SRC0892"
-      ],
-      "nameVariantIds": [
-        "PNV0008"
       ]
     }
   ],
