@@ -85,6 +85,27 @@ class SourceTypeIconTests(unittest.TestCase):
         self.assertEqual(len(symbols), len(set(symbols)), "a source icon symbol is duplicated")
         self.assertEqual(set(symbols), set(icon_mapping().values()))
 
+    def test_formerly_colliding_families_do_not_share_a_box_frame(self) -> None:
+        text = SOURCES_PAGE.read_text(encoding="utf-8")
+        for family in ("press", "film", "web", "archive"):
+            block = re.search(
+                rf'<symbol id="source-icon-{family}".*?</symbol>',
+                text,
+                re.S,
+            )
+            self.assertIsNotNone(block)
+            self.assertNotIn(
+                "<rect",
+                block.group(0),
+                f"{family} has regained the shared rectangular silhouette",
+            )
+
+    def test_authority_icon_keeps_its_optical_weight(self) -> None:
+        text = SOURCES_PAGE.read_text(encoding="utf-8")
+        opening = re.search(r'<symbol id="source-icon-authority"[^>]+>', text)
+        self.assertIsNotNone(opening)
+        self.assertIn('stroke-width="2"', opening.group(0))
+
     def test_icons_are_decorative_and_the_written_type_remains(self) -> None:
         renderer = CATALOGUE_RESULTS.read_text(encoding="utf-8")
         self.assertIn('class="source-type-icon" aria-hidden="true" focusable="false"', renderer)
