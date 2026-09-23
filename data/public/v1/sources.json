@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 796,
+  "count": 797,
   "records": [
     {
       "id": "SRC0001",
@@ -10613,6 +10613,7 @@
       "date": "1931",
       "dateRole": "described_item",
       "dateQualifier": "approximate",
+      "dateDisplay": "[1931]",
       "accessDate": "2026-07-10",
       "reliability": "medium",
       "sourceStatus": "verified_with_attribution_note",
@@ -10632,8 +10633,7 @@
       ],
       "researchNote": "The linked page is a contents list: it documents the title’s inclusion as item 18 in Band 7 but does not reproduce the sheet music or its credit line. The composer, lyricist and publisher credits are supported by separate item-level and catalogue sources. The contents list carries no date; the volume collects songs of 1931 and is therefore dated [1931].",
       "researchNoteType": "evidence_note",
-      "primaryUrl": "https://archive.org/details/sirius-mappe-3-12/Sirius-Mappe%206-04/mode/2up?q=%22Spiel%27+mir+auf+der+Balalaika%22",
-      "dateDisplay": "[1931]"
+      "primaryUrl": "https://archive.org/details/sirius-mappe-3-12/Sirius-Mappe%206-04/mode/2up?q=%22Spiel%27+mir+auf+der+Balalaika%22"
     },
     {
       "id": "SRC0287",
@@ -11434,26 +11434,27 @@
         "W-F045",
         "W-F051",
         "W-F052",
+        "W-F057",
+        "W-S062",
+        "W-S088",
+        "W-S089",
+        "W-S090",
+        "W-S091",
         "W-S097",
         "W-S116",
         "W-S121",
         "W-S122",
         "W-S123",
+        "W-S124",
+        "W-S125",
         "W-S127",
         "W-S128",
         "W-S165",
         "W-S166",
         "W-S167",
-        "W-S184",
-        "W-S124",
-        "W-S125",
-        "W-S088",
-        "W-S089",
-        "W-S090",
-        "W-S091",
         "W-S175",
+        "W-S184",
         "W-S223",
-        "W-S062",
         "W-S228"
       ],
       "filmIds": [
@@ -11476,7 +11477,8 @@
         "F039",
         "F040",
         "F044",
-        "F052"
+        "F052",
+        "F057"
       ],
       "songIds": [
         "S097",
@@ -11493,6 +11495,8 @@
         "S228"
       ],
       "workRelationIds": [
+        "REL0087",
+        "REL0088",
         "REL0094",
         "REL0097",
         "REL0098",
@@ -11505,8 +11509,8 @@
         "REL0120",
         "REL0121",
         "REL0122",
-        "REL0087",
-        "REL0088"
+        "REL0214",
+        "REL0215"
       ],
       "contributionIds": [
         "CON-F004-C-P077",
@@ -13272,6 +13276,7 @@
         "W-F050",
         "W-F052",
         "W-F054",
+        "W-F057",
         "W-S032",
         "W-S036",
         "W-S037",
@@ -13353,7 +13358,8 @@
         "F049",
         "F050",
         "F052",
-        "F054"
+        "F054",
+        "F057"
       ],
       "songIds": [
         "S032",
@@ -29748,6 +29754,44 @@
         "ORG056"
       ],
       "slug": "src0888-was-macht-jede-nacht-manuscript-kaper-papers"
+    },
+    {
+      "id": "SRC0889",
+      "shortCitation": "Wikipedia, “My Song for You (film)”",
+      "fullCitation": "Wikipedia contributors. “My Song for You (film).” Wikipedia, The Free Encyclopedia. Gives a 1934 British musical film directed by Maurice Elvey for Gaumont British and Ciné-Alliance, produced by Michael Balcon and Arnold Pressburger, starring Jan Kiepura, Sonnie Hale and Emlyn Williams, adapted from Ernst Marischka and Irma von Cube’s Ein Lied für Dich, with a score by Mischa Spoliansky and the title song by Spoliansky and Frank Eyton.",
+      "sourceType": "wikimedia_article_page",
+      "title": "My Song for You (film)",
+      "creator": "Wikipedia contributors",
+      "repository": "English Wikipedia",
+      "publication": "English Wikipedia",
+      "date": "1934",
+      "dateRole": "described_item",
+      "dateQualifier": "confirmed",
+      "accessDate": "2026-09-23",
+      "reliability": "medium",
+      "sourceStatus": "verified_with_attribution_note",
+      "primaryUrl": "https://en.wikipedia.org/wiki/My_Song_for_You_(film)",
+      "workIds": [
+        "W-F057"
+      ],
+      "filmIds": [
+        "F057"
+      ],
+      "personIds": [
+        "P204"
+      ],
+      "organizationIds": [
+        "ORG090",
+        "ORG167"
+      ],
+      "contributionIds": [
+        "CON-F057-D-P204",
+        "CON-F057-PC-ORG167"
+      ],
+      "slug": "src0889-my-song-for-you-film",
+      "workRelationIds": [
+        "REL0214"
+      ]
     }
   ],
   "recordCount": null

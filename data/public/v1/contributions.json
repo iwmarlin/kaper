@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 1322,
+  "count": 1324,
   "records": [
     {
       "id": "CON-F001-C-P009",
@@ -23544,6 +23544,38 @@
       ],
       "sourceIds": [
         "SRC0887"
+      ]
+    },
+    {
+      "id": "CON-F057-D-P204",
+      "role": "film_director",
+      "nameAsPrinted": "Maurice Elvey",
+      "evidenceContext": "filmographic_database",
+      "certainty": "confirmed",
+      "workIds": [
+        "W-F057"
+      ],
+      "personIds": [
+        "P204"
+      ],
+      "sourceIds": [
+        "SRC0889"
+      ]
+    },
+    {
+      "id": "CON-F057-PC-ORG167",
+      "role": "production_company",
+      "nameAsPrinted": "Gaumont British",
+      "evidenceContext": "filmographic_database",
+      "certainty": "confirmed",
+      "workIds": [
+        "W-F057"
+      ],
+      "organizationIds": [
+        "ORG167"
+      ],
+      "sourceIds": [
+        "SRC0889"
       ]
     }
   ]

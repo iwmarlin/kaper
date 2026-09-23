@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 298,
+  "count": 299,
   "records": [
     {
       "id": "W-F001",
@@ -1197,7 +1197,8 @@
         "REL0036",
         "REL0041",
         "REL0043",
-        "REL0129"
+        "REL0129",
+        "REL0214"
       ],
       "filmIds": [
         "F023"
@@ -6891,7 +6892,8 @@
         "REL0041",
         "REL0145",
         "REL0155",
-        "REL0197"
+        "REL0197",
+        "REL0215"
       ],
       "songIds": [
         "S076"
@@ -13075,6 +13077,43 @@
         "hollywood"
       ],
       "publicNote": "Registered as an unpublished song by Metro-Goldwyn-Mayer on 17 February 1936, the same day as “Who Knows” (also to words by Ned Washington). The Walter Jurmann works catalogue lists it as “Dairymaid Song”, to words by Ned Washington, without a year or film. No film has been identified for the song."
+    },
+    {
+      "id": "W-F057",
+      "title": "My Song for You",
+      "slug": "my-song-for-you",
+      "sortTitle": "My Song for You",
+      "workType": "Film",
+      "year": 1934,
+      "period": "european",
+      "certainty": "probable",
+      "publicNote": "English-language version of Ein Lied für Dich, made in Britain by Gaumont British with Jan Kiepura in the leading role. Bronisław Kaper is not credited on the film; his documented connection is the reuse of “Ninon”, the song he wrote with Walter Jurmann for the German original.",
+      "publicScope": "standalone_page",
+      "sourceIds": [
+        "SRC0306",
+        "SRC0373",
+        "SRC0889"
+      ],
+      "contributionIds": [
+        "CON-F057-D-P204",
+        "CON-F057-PC-ORG167"
+      ],
+      "personIds": [
+        "P204"
+      ],
+      "organizationIds": [
+        "ORG167"
+      ],
+      "filmIds": [
+        "F057"
+      ],
+      "relationIds": [
+        "REL0214",
+        "REL0215"
+      ],
+      "periods": [
+        "european"
+      ]
     }
   ],
   "recordCount": null

@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 158,
+  "count": 159,
   "records": [
     {
       "id": "ORG001",
@@ -3176,7 +3176,8 @@
         "SRC0838",
         "SRC0839",
         "SRC0840",
-        "SRC0860"
+        "SRC0860",
+        "SRC0889"
       ]
     },
     {
@@ -5208,6 +5209,30 @@
       "sourceIds": [
         "SRC0870",
         "SRC0878"
+      ]
+    },
+    {
+      "id": "ORG167",
+      "displayName": "Gaumont British",
+      "authorizedName": "Gaumont-British Picture Corporation",
+      "authorizedNameSource": "LCNAF",
+      "types": [
+        "film_studio"
+      ],
+      "city": [
+        "London"
+      ],
+      "country": "United Kingdom",
+      "slug": "gaumont-british",
+      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no96007582",
+      "contributionIds": [
+        "CON-F057-PC-ORG167"
+      ],
+      "workIds": [
+        "W-F057"
+      ],
+      "sourceIds": [
+        "SRC0889"
       ]
     }
   ]
