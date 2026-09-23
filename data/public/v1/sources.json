@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 798,
+  "count": 800,
   "records": [
     {
       "id": "SRC0001",
@@ -6662,7 +6662,9 @@
       "personIds": [
         "P009",
         "P020",
-        "P077"
+        "P077",
+        "P205",
+        "P206"
       ],
       "organizationIds": [
         "ORG044",
@@ -6678,9 +6680,10 @@
         "REL0045"
       ],
       "contributionIds": [
+        "CON-S080-ARR-P206",
         "CON-S080-C-P009",
         "CON-S080-C-P077",
-        "CON-S080-L-P020",
+        "CON-S080-L-P205",
         "CON-S080-PUB-ORG044"
       ],
       "nameVariantIds": [
@@ -29827,6 +29830,91 @@
         "ORG079"
       ],
       "slug": "src0890-walter-jurmann-collection-finding-aid-the-magic-of-springtime-in-the-gus"
+    },
+    {
+      "id": "SRC0891",
+      "shortCitation": "GEMA Repertoire, “Mein Gorilla hat ’ne Villa im Zoo”, work no. 1870347-002",
+      "fullCitation": "GEMA. Online-Repertoiresuche, work no. 1870347-002, “MEIN GORILLA HAT ’NE VILLA IM ZOO”, ISWC T-801.419.585-9. Walter Jurmann and Bronislaw Kaper, composers; Peter Kuckuck (IPI name no. 16814789), lyricist; Sascha Chwat, arranger; Beboton Verlag GmbH, original publisher. Genre: pasodoble; duration 3:30; scoring: jazz orchestra.",
+      "sourceType": "copyright_catalogue",
+      "title": "MEIN GORILLA HAT ’NE VILLA IM ZOO — GEMA repertoire work detail",
+      "creator": "GEMA",
+      "repository": "GEMA Online-Repertoiresuche",
+      "publication": "GEMA",
+      "dateRole": "described_item",
+      "dateQualifier": "unknown",
+      "accessDate": "2026-09-23",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "primaryUrl": "https://portal.gema.de/app/repertoiresuche/werksuche",
+      "researchNote": "Read in the GEMA repertoire search by the project editor on 23 September 2026; the portal gives no stable link to individual entries.",
+      "researchNoteType": "verification_note",
+      "organizationIds": [
+        "ORG086",
+        "ORG044"
+      ],
+      "workIds": [
+        "W-S080"
+      ],
+      "songIds": [
+        "S080"
+      ],
+      "personIds": [
+        "P009",
+        "P077",
+        "P205",
+        "P206"
+      ],
+      "contributionIds": [
+        "CON-S080-C-P009",
+        "CON-S080-C-P077",
+        "CON-S080-L-P205",
+        "CON-S080-ARR-P206",
+        "CON-S080-PUB-ORG044"
+      ],
+      "nameVariantIds": [
+        "PNV0008"
+      ],
+      "slug": "src0891-mein-gorilla-hat-ne-villa-im-zoo-gema-repertoire-work-detail"
+    },
+    {
+      "id": "SRC0892",
+      "shortCitation": "LCNAF, “Kuckuck, Peter,” n2014032135",
+      "fullCitation": "Library of Congress. “Kuckuck, Peter.” Library of Congress Name Authority File, n2014032135. The record cites Heut kommt’s drauf an, 1933: “Peter Kuckuck; lyricist”.",
+      "sourceType": "authority_record",
+      "title": "LCNAF authority record: Kuckuck, Peter",
+      "creator": "Library of Congress",
+      "repository": "Library of Congress (LCNAF)",
+      "publication": "Library of Congress Name Authority File (LCNAF)",
+      "date": "2014",
+      "dateRole": "record_creation",
+      "dateQualifier": "confirmed",
+      "accessDate": "2026-09-23",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "primaryUrl": "https://id.loc.gov/authorities/names/n2014032135",
+      "organizationIds": [
+        "ORG066"
+      ],
+      "personIds": [
+        "P205"
+      ],
+      "researchNote": "The authority record identifies Peter Kuckuck as the lyricist and cites the film Heut kommt’s drauf an (1933), the film for which the song was written.",
+      "researchNoteType": "authority_note",
+      "authoritySubject": "person",
+      "identityRelation": "same",
+      "slug": "src0892-lcnaf-authority-record-kuckuck-peter",
+      "workIds": [
+        "W-S080"
+      ],
+      "songIds": [
+        "S080"
+      ],
+      "contributionIds": [
+        "CON-S080-L-P205"
+      ],
+      "nameVariantIds": [
+        "PNV0008"
+      ]
     }
   ],
   "recordCount": null

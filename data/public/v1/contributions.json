@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 1324,
+  "count": 1325,
   "records": [
     {
       "id": "CON-F001-C-P009",
@@ -10423,7 +10423,8 @@
         "P009"
       ],
       "sourceIds": [
-        "SRC0189"
+        "SRC0189",
+        "SRC0891"
       ],
       "nameVariantIds": [
         "PNV0019"
@@ -10442,28 +10443,9 @@
         "P077"
       ],
       "sourceIds": [
-        "SRC0189"
+        "SRC0189",
+        "SRC0891"
       ]
-    },
-    {
-      "id": "CON-S080-L-P020",
-      "role": "lyricist",
-      "nameAsPrinted": "P. Kuckuck",
-      "sortOrder": 1,
-      "certainty": "probable",
-      "workIds": [
-        "W-S080"
-      ],
-      "personIds": [
-        "P020"
-      ],
-      "sourceIds": [
-        "SRC0189"
-      ],
-      "nameVariantIds": [
-        "PNV0008"
-      ],
-      "scopeNote": "The Hofmeister entry prints the lyricist as “P. Kuckuck” and does not name Fritz Rotter; the identification rests on his authorship of the other songs of Heut’ kommt’s drauf an."
     },
     {
       "id": "CON-S080-PUB-ORG044",
@@ -10478,7 +10460,8 @@
         "ORG044"
       ],
       "sourceIds": [
-        "SRC0189"
+        "SRC0189",
+        "SRC0891"
       ]
     },
     {
@@ -23578,6 +23561,48 @@
       "sourceIds": [
         "SRC0889"
       ]
+    },
+    {
+      "id": "CON-S080-L-P205",
+      "role": "lyricist",
+      "nameAsPrinted": "P. Kuckuck",
+      "evidenceContext": "copyright_or_registration",
+      "sortOrder": 1,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S080"
+      ],
+      "personIds": [
+        "P205"
+      ],
+      "sourceIds": [
+        "SRC0189",
+        "SRC0891",
+        "SRC0892"
+      ],
+      "nameVariantIds": [
+        "PNV0008"
+      ],
+      "scopeNote": "Hofmeisters Monatsbericht prints the lyricist as “P. Kuckuck”; GEMA and the Library of Congress give the name in full as Peter Kuckuck."
+    },
+    {
+      "id": "CON-S080-ARR-P206",
+      "role": "arranger",
+      "nameAsPrinted": "S. Chwat",
+      "evidenceContext": "copyright_or_registration",
+      "sortOrder": 20,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S080"
+      ],
+      "personIds": [
+        "P206"
+      ],
+      "sourceIds": [
+        "SRC0189",
+        "SRC0891"
+      ],
+      "scopeNote": "Arranged the salon-orchestra edition with jazz parts, as the register entry and the GEMA record state."
     }
   ]
 }

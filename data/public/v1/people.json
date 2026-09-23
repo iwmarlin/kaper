@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 177,
+  "count": 179,
   "records": [
     {
       "id": "P001",
@@ -431,7 +431,8 @@
         "SRC0885",
         "SRC0887",
         "SRC0888",
-        "SRC0890"
+        "SRC0890",
+        "SRC0891"
       ],
       "timelineEventIds": [
         "TE0001",
@@ -1522,7 +1523,6 @@
         "CON-S075-L-P020",
         "CON-S076-L-P020",
         "CON-S078-L-P020",
-        "CON-S080-L-P020",
         "CON-S081-L-P020",
         "CON-S082-L-P020",
         "CON-S084-L-P020",
@@ -1605,7 +1605,6 @@
         "W-S075",
         "W-S076",
         "W-S078",
-        "W-S080",
         "W-S081",
         "W-S082",
         "W-S084",
@@ -3294,7 +3293,8 @@
         "SRC0859",
         "SRC0885",
         "SRC0887",
-        "SRC0890"
+        "SRC0890",
+        "SRC0891"
       ],
       "timelineEventIds": [
         "TE0026",
@@ -6832,6 +6832,55 @@
       ],
       "sourceIds": [
         "SRC0889"
+      ]
+    },
+    {
+      "id": "P205",
+      "displayName": "Peter Kuckuck",
+      "sortName": "Kuckuck, Peter",
+      "authorizedName": "Kuckuck, Peter",
+      "authorizedNameSource": "LCNAF",
+      "slug": "peter-kuckuck",
+      "primaryRole": "lyricist",
+      "roles": [
+        "lyricist"
+      ],
+      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n2014032135",
+      "contributionIds": [
+        "CON-S080-L-P205"
+      ],
+      "workIds": [
+        "W-S080"
+      ],
+      "sourceIds": [
+        "SRC0189",
+        "SRC0891",
+        "SRC0892"
+      ],
+      "nameVariantIds": [
+        "PNV0008"
+      ]
+    },
+    {
+      "id": "P206",
+      "displayName": "Sascha Chwat",
+      "sortName": "Chwat, Sascha",
+      "authorizedName": "Chwat, Sascha",
+      "authorizedNameSource": "local heading",
+      "slug": "sascha-chwat",
+      "primaryRole": "arranger",
+      "roles": [
+        "arranger"
+      ],
+      "contributionIds": [
+        "CON-S080-ARR-P206"
+      ],
+      "workIds": [
+        "W-S080"
+      ],
+      "sourceIds": [
+        "SRC0189",
+        "SRC0891"
       ]
     }
   ],
