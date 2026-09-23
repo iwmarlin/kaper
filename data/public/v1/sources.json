@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 802,
+  "count": 803,
   "records": [
     {
       "id": "SRC0001",
@@ -5346,9 +5346,15 @@
         "CON-F021-C-P152",
         "CON-F021-D-P048",
         "CON-F021-MD-P148",
-        "CON-F021-PC-ORG022"
+        "CON-F021-PC-ORG022",
+        "CON-S080-L-P020"
       ],
-      "primaryUrl": "https://www.filmportal.de/film/heut-kommts-drauf-an_bbf263c8dff247b4af100a0d36c6a9a5"
+      "primaryUrl": "https://www.filmportal.de/film/heut-kommts-drauf-an_bbf263c8dff247b4af100a0d36c6a9a5",
+      "researchNote": "The credits name Kurt Gerron as director, Paul Mann, Stefan Weiß, Bronislau Kaper and Walter Jurmann for the music and Fritz Rotter alone under “Liedtexte”, with the premiere at the Gloria-Palast, Berlin, on 17 March 1933. The lyricist credit is given for the film as a whole, not song by song.",
+      "researchNoteType": "evidence_note",
+      "nameVariantIds": [
+        "PNV0008"
+      ]
     },
     {
       "id": "SRC0154",
@@ -30058,7 +30064,7 @@
       "personIds": [
         "P020"
       ],
-      "researchNote": "The record establishes a heading for the printed name and cites the film the lyric was written for; it gives no dates, no variant forms and no identification of the author behind the name. It is linked here to Fritz Rotter because the archive reads the signature as his, which the authority file neither supports nor contradicts.",
+      "researchNote": "The record establishes a heading for the printed name and cites the film the lyric was written for; it gives no dates, no variant forms and no identification of the author behind the name, which the Library of Congress has not resolved to Fritz Rotter.",
       "researchNoteType": "identity_assessment",
       "authoritySubject": "person",
       "identityRelation": "candidate",
@@ -30139,6 +30145,40 @@
       ],
       "researchNote": "The authorship, date and source publication follow the Wikimedia Commons file page. The original volume has not been examined for a page number or original printed caption; neither is asserted here.",
       "researchNoteType": "verification_note"
+    },
+    {
+      "id": "SRC0895",
+      "shortCitation": "Völmecke, “Die große Zeit der Filmschlager,” Sikorski magazine 3/2005, 7",
+      "fullCitation": "Jens-Uwe Völmecke, “Die große Zeit der Filmschlager: Ein Streifzug durch die Geschichte des Verlages,” Sikorski magazine, no. 3 (2005): 7. Hamburg: Sikorski Musikverlage.",
+      "sourceType": "periodical_article",
+      "title": "Die große Zeit der Filmschlager: Ein Streifzug durch die Geschichte des Verlages",
+      "creator": "Jens-Uwe Völmecke",
+      "publication": "Sikorski magazine, no. 3 (2005)",
+      "dateRole": "publication",
+      "dateQualifier": "confirmed",
+      "date": "2005",
+      "primaryUrl": "https://www.boosey.com/downloads/sikorski_magazin_2005_03.pdf",
+      "accessDate": "2026-09-23",
+      "repository": "Sikorski Musikverlage",
+      "reliability": "medium",
+      "sourceStatus": "verified",
+      "researchNote": "The article names the pseudonym: Jurmann and Kaper had already had to leave Germany in 1933, “ebenso wie der Textdichter Fritz Rotter, der in diesem Fall ausnahmsweise einmal unter dem Pseudonym Peter Kuckuck firmierte” — as did the lyricist Fritz Rotter, who in this one case signed under the pseudonym Peter Kuckuck. It is a house history of the publisher that holds the surviving salon-orchestra edition of the song, photocopied in the late 1980s, and it names no document for the identification.",
+      "researchNoteType": "identity_assessment",
+      "workIds": [
+        "W-S080"
+      ],
+      "personIds": [
+        "P009",
+        "P020",
+        "P077"
+      ],
+      "slug": "src0895-sikorski-magazine-filmschlager-2005",
+      "contributionIds": [
+        "CON-S080-L-P020"
+      ],
+      "nameVariantIds": [
+        "PNV0008"
+      ]
     }
   ],
   "recordCount": null
