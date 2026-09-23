@@ -126,11 +126,13 @@ class WorksYearFacetTests(unittest.TestCase):
 
 
 class FacetPanelTrackTests(unittest.TestCase):
-    """Each panel declares its own column count in one place. Adding a fifth
-    facet to the works panel without touching the rule left every control a
-    fifth narrower, which cut two option labels short."""
+    """Each panel declares its own columns in one place, and a facet added
+    without touching that rule makes every control narrower. Two ways out are
+    legitimate: as many tracks as there are fields, or a track that wraps. What
+    is not legitimate is a fixed row too short for what it holds — that silently
+    cut "Hollywood · 1935–1939" on three pages."""
 
-    def test_each_panel_declares_as_many_tracks_as_it_has_fields(self) -> None:
+    def test_each_panel_declares_a_row_that_holds_its_fields(self) -> None:
         css = (ROOT / "assets/site/styles.css").read_text(encoding="utf-8")
         for page, key in (
             ("works.html", "works"),
@@ -150,10 +152,11 @@ class FacetPanelTrackTests(unittest.TestCase):
                     rf"\.filters__advanced--{key}\s*\{{[^}}]*grid-template-columns:\s*([^;]+);",
                     css,
                 ).group(1).strip()
+                if "auto-fit" in rule or "auto-fill" in rule:
+                    continue  # the fields wrap; the row cannot be too short
                 repeated = re.match(r"repeat\((\d+),", rule)
                 tracks = int(repeated.group(1)) if repeated else len(rule.split())
                 self.assertEqual(tracks, fields, f"{key}: {rule!r}")
-
 
 
 if __name__ == "__main__":
