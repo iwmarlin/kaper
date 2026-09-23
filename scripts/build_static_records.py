@@ -449,7 +449,13 @@ def summary_for(
         context = ", ".join(
             filter(None, [display_value(record.get("city")), display_value(record.get("country"))])
         )
-        types = display_value(record.get("types"))
+        # The card renders the controlled vocabulary through its own humanizer;
+        # a meta description that repeated the raw slug read "record_label".
+        types = ", ".join(
+            str(item).replace("_", " ")
+            for item in (record.get("types") or [])
+            if item not in (None, "")
+        )
         return compact_text(
             f"{record.get('displayName')}: {'; '.join(filter(None, [types, context]))}."
             if types or context
