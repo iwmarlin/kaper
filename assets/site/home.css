@@ -63,8 +63,10 @@
    case, which is the whole of the gesture — the slope it also used to have
    cost a 94KB italic face for two words, on every visit to the front page. */
 .home-page .hero-title__arrival {
+  color: var(--accent);
   font-family: var(--serif);
   font-size: 1.08em;
+  font-weight: 400;
   letter-spacing: 0;
   text-transform: none;
 }

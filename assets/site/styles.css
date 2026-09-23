@@ -17,7 +17,7 @@
    the swashed display forms can never appear by accident. */
 @font-face {
   font-family: "Fraunces";
-  src: url("../fonts/kaper-serif.woff2?v=de8c004cca") format("woff2");
+  src: url("../fonts/kaper-serif.woff2?v=faae2e4ce3") format("woff2");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
@@ -25,7 +25,7 @@
 
 @font-face {
   font-family: "Fraunces";
-  src: url("../fonts/kaper-serif-italic.woff2?v=de8c004cca") format("woff2");
+  src: url("../fonts/kaper-serif-italic.woff2?v=faae2e4ce3") format("woff2");
   font-weight: 100 900;
   font-style: italic;
   font-display: swap;
@@ -33,7 +33,7 @@
 
 @font-face {
   font-family: "Archivo";
-  src: url("../fonts/kaper-sans.woff2?v=de8c004cca") format("woff2");
+  src: url("../fonts/kaper-sans.woff2?v=faae2e4ce3") format("woff2");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
@@ -41,7 +41,7 @@
 
 @font-face {
   font-family: "Archivo";
-  src: url("../fonts/kaper-sans-italic.woff2?v=de8c004cca") format("woff2");
+  src: url("../fonts/kaper-sans-italic.woff2?v=faae2e4ce3") format("woff2");
   font-weight: 100 900;
   font-style: italic;
   font-display: swap;
@@ -3232,8 +3232,13 @@ main {
   font-size: var(--fs-6);
 }
 
+/* The editorial line among the printed ones. It was set in italic, which made
+   this one record fetch a 42KB italic face for a single sentence; it carries
+   the same gold rule the scope notes use, which says the same thing in the
+   archive's own vocabulary and costs nothing. */
 .series-contents__status {
-  font-style: italic;
+  padding-left: 0.5rem;
+  border-left: 2px solid var(--gold);
 }
 
 .record-section__intro {

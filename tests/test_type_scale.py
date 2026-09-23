@@ -61,5 +61,40 @@ class TypeScaleTests(unittest.TestCase):
             )
 
 
+class ItalicFaceCostTests(unittest.TestCase):
+    """The archive owns two italic faces of 93KB and 42KB. Nothing renders in
+    them for free: an italic word anywhere on a page fetches the whole face, as
+    the front page did for two words and one record did for one sentence.
+
+    This is a cost gate, not a ban. Italic remains available, and a page that
+    genuinely needs it — a scholarly convention for foreign titles, say — is a
+    decision worth making on purpose, by changing this test with it."""
+
+    PAGES = ("index.html", "works.html", "people.html", "life.html",
+             "sources.html", "media.html", "map.html", "record.html", "404.html")
+
+    def test_no_page_marks_text_italic(self):
+        for name in self.PAGES:
+            with self.subTest(page=name):
+                page = (ROOT / name).read_text(encoding="utf-8")
+                self.assertNotIn("<em>", page)
+                self.assertNotIn("<em ", page)
+                self.assertNotIn("<i>", page)
+
+    def test_no_rule_asks_for_an_italic_face(self):
+        for path in sorted((ROOT / "assets/site").glob("*.css")):
+            css = re.sub(r"@font-face\s*\{[^}]*\}", "", path.read_text(encoding="utf-8"))
+            with self.subTest(stylesheet=path.name):
+                self.assertNotIn("font-style: italic", css)
+
+    def test_the_faces_stay_declared_for_the_day_one_is_needed(self):
+        # Removing them would mean a browser synthesising a slope from the
+        # upright, which is worse than the file it saves.
+        css = stylesheet()
+        self.assertIn("kaper-serif-italic.woff2", css)
+        self.assertIn("kaper-sans-italic.woff2", css)
+
+
+
 if __name__ == "__main__":
     unittest.main()
