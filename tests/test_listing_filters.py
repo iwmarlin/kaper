@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 import re
 import unittest
 from pathlib import Path
@@ -80,6 +81,79 @@ class ListingFilterContractTests(unittest.TestCase):
             with self.subTest(script=script):
                 self.assertIn("createQueryState", source)
                 self.assertNotIn("new URLSearchParams", source)
+
+
+class WorksYearFacetTests(unittest.TestCase):
+    """A reader looking for 1933 had to type it into the search box, which also
+    matched the word elsewhere in a record. The catalogue now filters by the
+    year it already prints beside every row, and the choice survives in the URL,
+    so "works.html?year=1933" is an address a footnote can carry."""
+
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls.page = (ROOT / "works.html").read_text(encoding="utf-8")
+        cls.script = (ROOT / "assets/site/works.js").read_text(encoding="utf-8")
+
+    def test_the_control_sits_in_the_shared_facet_panel(self) -> None:
+        panel = re.search(
+            r'id="work-filter-options".*?</div>\s*<div class="active-filters"',
+            self.page,
+            re.S,
+        ).group(0)
+        self.assertIn('<label for="work-year">Year</label>', panel)
+        self.assertIn('<select id="work-year"><option value="">All years</option></select>', panel)
+
+    def test_the_facet_is_registered_like_every_other(self) -> None:
+        # Registration is what gives it a chip, the filter count, the reset
+        # button and its key in the query string; the shared controller does
+        # the rest.
+        self.assertIn('year: document.querySelector("#work-year")', self.script)
+        self.assertIn('{ key: "year", label: "Year", defaultValue: "" }', self.script)
+        self.assertIn("controls.year", self.script)
+        self.assertIn('controls.year.value = ""', self.script)
+
+    def test_the_years_offered_are_the_years_documented(self) -> None:
+        # The options are built from the records, so a year nothing was
+        # documented in cannot be offered: 1924 has no works and must not be a
+        # choice that returns an empty list.
+        works = json.loads(
+            (ROOT / "data/public/v1/works.json").read_text(encoding="utf-8")
+        )["records"]
+        years = {str(work["year"])[:4] for work in works if work.get("year")}
+        self.assertNotIn("1924", years)
+        self.assertIn("1933", years)
+        self.assertIn("addOptions(\n    controls.year,", self.script)
+
+
+class FacetPanelTrackTests(unittest.TestCase):
+    """Each panel declares its own column count in one place. Adding a fifth
+    facet to the works panel without touching the rule left every control a
+    fifth narrower, which cut two option labels short."""
+
+    def test_each_panel_declares_as_many_tracks_as_it_has_fields(self) -> None:
+        css = (ROOT / "assets/site/styles.css").read_text(encoding="utf-8")
+        for page, key in (
+            ("works.html", "works"),
+            ("people.html", "people"),
+            ("media.html", "media"),
+            ("sources.html", "sources"),
+        ):
+            with self.subTest(page=page):
+                text = (ROOT / page).read_text(encoding="utf-8")
+                panel = re.search(
+                    r'id="[a-z]+-filter-options".*?</div>\s*<div class="active-filters"',
+                    text,
+                    re.S,
+                ).group(0)
+                fields = len(re.findall(r'<div class="field">', panel))
+                rule = re.search(
+                    rf"\.filters__advanced--{key}\s*\{{[^}}]*grid-template-columns:\s*([^;]+);",
+                    css,
+                ).group(1).strip()
+                repeated = re.match(r"repeat\((\d+),", rule)
+                tracks = int(repeated.group(1)) if repeated else len(rule.split())
+                self.assertEqual(tracks, fields, f"{key}: {rule!r}")
+
 
 
 if __name__ == "__main__":

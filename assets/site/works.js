@@ -12,9 +12,9 @@ import {
   periodValues,
   renderError,
   sortKey,
-} from "./core.js?v=188acc9c7e";
-import { createCatalogueFilters } from "./catalogue-filters.js?v=188acc9c7e";
-import { renderWorkIndexRow } from "./catalogue-results.js?v=188acc9c7e";
+} from "./core.js?v=5e6b1ecc43";
+import { createCatalogueFilters } from "./catalogue-filters.js?v=5e6b1ecc43";
+import { renderWorkIndexRow } from "./catalogue-results.js?v=5e6b1ecc43";
 
 mountSiteChrome("works");
 
@@ -22,6 +22,7 @@ const controls = {
   search: document.querySelector("#work-search"),
   type: document.querySelector("#work-type"),
   period: document.querySelector("#work-period"),
+  year: document.querySelector("#work-year"),
   certainty: document.querySelector("#work-certainty"),
   sort: document.querySelector("#work-sort"),
 };
@@ -37,6 +38,7 @@ const filterCount = document.querySelector("#work-filter-count");
 const filterOptions = [
   { key: "type", label: "Type", defaultValue: "" },
   { key: "period", label: "Period", defaultValue: "" },
+  { key: "year", label: "Year", defaultValue: "" },
   { key: "certainty", label: "Certainty", defaultValue: "" },
   { key: "sort", label: "Sort", defaultValue: "year-asc" },
 ];
@@ -63,6 +65,14 @@ try {
   addOptions(controls.type, works.map((work) => work.workType));
   const availablePeriods = new Set(works.flatMap(periodValues));
   addOptions(controls.period, PERIOD_ORDER.filter((value) => availablePeriods.has(value)), periodLabel, true);
+  // Years come from the records themselves, in order, so a year nothing was
+  // documented in never appears as a choice that returns nothing.
+  addOptions(
+    controls.year,
+    works.map((work) => (work.year ? String(work.year) : "")).sort(),
+    (value) => value,
+    true,
+  );
   addOptions(controls.certainty, works.map((work) => work.certainty));
   const indexedWorks = works.map((work) => ({
     ...work,
@@ -86,6 +96,7 @@ try {
       (!query || work._search.includes(query))
       && (!controls.type.value || work.workType === controls.type.value)
       && matchesPeriod(work, controls.period.value)
+      && (!controls.year.value || String(work.year) === controls.year.value)
       && (!controls.certainty.value || work.certainty === controls.certainty.value)
     ));
 
@@ -137,7 +148,7 @@ try {
   });
   filterController.read();
   controls.search.addEventListener("input", debounce(resetAndRender));
-  for (const control of [controls.type, controls.period, controls.certainty, controls.sort]) {
+  for (const control of [controls.type, controls.period, controls.year, controls.certainty, controls.sort]) {
     control.addEventListener("change", resetAndRender);
   }
   function revealFrom(firstNewIndex) {
@@ -167,6 +178,7 @@ try {
     controls.search.value = "";
     controls.type.value = "";
     controls.period.value = "";
+    controls.year.value = "";
     controls.certainty.value = "";
     controls.sort.value = "year-asc";
     filterController.close();
