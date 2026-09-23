@@ -26,6 +26,22 @@ class HomePagePrerenderTests(unittest.TestCase):
         self.assertIn(">See the record</a>", self.page)
         self.assertNotIn("Loading", self.page)
 
+    def test_the_portrait_itself_leads_to_its_record(self) -> None:
+        """The caption carried the only link, so the one thing a reader clicks —
+        the picture — did nothing. It links to the same record, stays out of the
+        tab order and out of the accessibility tree, so the caption's link is
+        still announced once."""
+        record = f"records/media/{self.home['portrait']['id']}/"
+        link = re.search(
+            r'<a class="hero__portrait-link" href="([^"]+)"([^>]*)>\s*<img',
+            self.page,
+        )
+        self.assertIsNotNone(link, "the home portrait image is not a link")
+        self.assertEqual(link.group(1), record)
+        self.assertIn('tabindex="-1"', link.group(2))
+        self.assertIn('aria-hidden="true"', link.group(2))
+        self.assertIn(f'<a href="{record}">See the record</a>', self.page)
+
     def test_the_figures_carry_the_current_source_count(self) -> None:
         figures = re.search(r'id="method-figures">(.*?)</span>', self.page, re.DOTALL)
         self.assertIsNotNone(figures)

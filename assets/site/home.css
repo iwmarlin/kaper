@@ -97,6 +97,10 @@
   box-shadow: 0 20px 50px rgba(21, 44, 51, 0.11);
 }
 
+.home-page .hero__portrait-link {
+  display: block;
+}
+
 .home-page .hero__portrait img {
   border-radius: 0.16rem;
 }

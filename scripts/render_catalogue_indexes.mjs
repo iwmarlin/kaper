@@ -73,14 +73,16 @@ function homePathways(pathways) {
 }
 
 // In a source-based archive the one image on the front page carries its caption
-// and a link to its own record.
+// and a link to its own record. The picture leads there too, because that is
+// what a reader clicks; it stays out of the tab order and out of the
+// accessibility tree, so the caption's link is announced once, not twice.
 function homePortrait(portrait) {
   if (!portrait?.assetPath) return "";
   return `
-    ${core.responsiveImage(portrait.assetPath, portrait.altText || portrait.title, {
+    <a class="hero__portrait-link" href="${core.recordUrl("media", portrait.id)}" tabindex="-1" aria-hidden="true">${core.responsiveImage(portrait.assetPath, portrait.altText || portrait.title, {
       eager: true,
       sizes: "(max-width: 680px) 9rem, 20rem",
-    })}
+    })}</a>
     <figcaption>
       <span class="hero__portrait-caption">${core.escapeHtml(portrait.publicCaption || portrait.title || "")}</span>
       <a href="${core.recordUrl("media", portrait.id)}">See the record</a>
