@@ -840,8 +840,8 @@ def static_page(
         page_title = f"{title} ({label.lower()})"
     browser_title = f"{page_title} | {PAGE_TITLE_SUFFIX}"
     record_id = record["id"]
-    style_version = "dfdf89776b"
-    record_script_version = "dfdf89776b"
+    style_version = "7d260507c3"
+    record_script_version = "7d260507c3"
     route = f"records/{record_type}/{quote(record_id, safe='')}/"
     canonical = f"{ORIGIN}{route}"
     og_image = og_image_for(record_type, record, tables, image_mapping)
@@ -879,8 +879,8 @@ def static_page(
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <link rel="preload" href="assets/fonts/kaper-sans.woff2?v=dfdf89776b" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="assets/fonts/kaper-serif.woff2?v=dfdf89776b" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/kaper-sans.woff2?v=7d260507c3" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/kaper-serif.woff2?v=7d260507c3" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/site/styles.css?v={style_version}">
   <title>{esc(browser_title)}</title>
   {ld_json}
@@ -896,7 +896,7 @@ def static_page(
   <main id="main-content">
     <div id="record-root" data-record-type="{esc(record_type)}" data-record-id="{esc(record_id)}" data-prerendered="true">{body_markup}</div>
   </main>
-  <footer class="site-footer" data-site-footer><div class="shell"><p>Bronisław Kaper research archive · documented through 1939</p></div></footer>
+  <footer class="site-footer" data-site-footer><div class="shell"><p>Bronisław Kaper research archive · documented through 1939</p><p class="print-citation">Bronisław Kaper research archive · {canonical}</p></div></footer>
   <script type="module" src="assets/site/record-detail-20260714.js?v={record_script_version}"></script>
 </body>
 </html>

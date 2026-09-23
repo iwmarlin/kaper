@@ -882,7 +882,10 @@ export function mountSiteChrome(activePage) {
       <div class="shell site-footer__bottom">
         <span>© ${new Date().getFullYear()} Bronisław Kaper Research Archive</span>
         <span>Scholarly use · Sources cited at record level</span>
-      </div>`;
+      </div>
+      <p class="print-citation">Bronisław Kaper research archive · ${escapeHtml(
+        document.querySelector('link[rel="canonical"]')?.href || location.href,
+      )}</p>`;
   }
 }
 

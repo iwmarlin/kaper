@@ -17,7 +17,7 @@
    the swashed display forms can never appear by accident. */
 @font-face {
   font-family: "Fraunces";
-  src: url("../fonts/kaper-serif.woff2?v=dfdf89776b") format("woff2");
+  src: url("../fonts/kaper-serif.woff2?v=7d260507c3") format("woff2");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
@@ -25,7 +25,7 @@
 
 @font-face {
   font-family: "Fraunces";
-  src: url("../fonts/kaper-serif-italic.woff2?v=dfdf89776b") format("woff2");
+  src: url("../fonts/kaper-serif-italic.woff2?v=7d260507c3") format("woff2");
   font-weight: 100 900;
   font-style: italic;
   font-display: swap;
@@ -33,7 +33,7 @@
 
 @font-face {
   font-family: "Archivo";
-  src: url("../fonts/kaper-sans.woff2?v=dfdf89776b") format("woff2");
+  src: url("../fonts/kaper-sans.woff2?v=7d260507c3") format("woff2");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
@@ -41,7 +41,7 @@
 
 @font-face {
   font-family: "Archivo";
-  src: url("../fonts/kaper-sans-italic.woff2?v=dfdf89776b") format("woff2");
+  src: url("../fonts/kaper-sans-italic.woff2?v=7d260507c3") format("woff2");
   font-weight: 100 900;
   font-style: italic;
   font-display: swap;
@@ -5243,6 +5243,10 @@ html:not(.js) .source-group__head {
    The browser layout uses progressive disclosure; print must instead preserve
    the complete scholarly record, especially citations, while removing
    navigation and interactive controls that have no meaning on paper. */
+.print-citation {
+  display: none;
+}
+
 @media print {
   @page {
     margin: 14mm 13mm 16mm;
@@ -5430,6 +5434,51 @@ html:not(.js) .source-group__head {
 
   audio,
   video {
+    display: none !important;
+  }
+  /* A printed catalogue page keeps its results and loses its controls: the
+     search field, the filters and the interactive map are of no use on paper. */
+  .filters,
+  .search-field,
+  .active-filters,
+  .results-bar button,
+  .map-toolbar,
+  .map-toolbar__controls,
+  .map-route-toggle,
+  .timeline-nav,
+  .timeline-nav__tabs,
+  .place-list__toggle,
+  .map-canvas,
+  .map-layer-status,
+  #research-map,
+  .leaflet-container,
+  .map-legend,
+  .map-selection,
+  .timeline-view,
+  .hero__actions,
+  .section-heading .button {
+    display: none !important;
+  }
+
+  .print-citation {
+    display: block !important;
+    margin-top: 10pt;
+    padding-top: 5pt;
+    border-top: 0.6pt solid #999;
+    color: #000 !important;
+    font-size: var(--fs-3);
+    overflow-wrap: anywhere;
+  }
+
+  .site-footer:has(.print-citation) {
+    display: block !important;
+    padding: 0 !important;
+    background: none !important;
+    color: #000 !important;
+  }
+
+  .site-footer__grid,
+  .site-footer__bottom {
     display: none !important;
   }
 }
