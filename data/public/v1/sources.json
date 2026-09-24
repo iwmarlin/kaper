@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 803,
+  "count": 805,
   "records": [
     {
       "id": "SRC0001",
@@ -30154,9 +30154,9 @@
       "title": "Die große Zeit der Filmschlager: Ein Streifzug durch die Geschichte des Verlages",
       "creator": "Jens-Uwe Völmecke",
       "publication": "Sikorski magazine, no. 3 (2005)",
+      "date": "2005",
       "dateRole": "publication",
       "dateQualifier": "confirmed",
-      "date": "2005",
       "primaryUrl": "https://www.boosey.com/downloads/sikorski_magazin_2005_03.pdf",
       "accessDate": "2026-09-23",
       "repository": "Sikorski Musikverlage",
@@ -30179,6 +30179,65 @@
       "nameVariantIds": [
         "PNV0008"
       ]
+    },
+    {
+      "id": "SRC0896",
+      "shortCitation": "Agence de presse Meurisse, portrait of Lys Gauty, 1934",
+      "fullCitation": "Agence de presse Meurisse. Portrait of Lys Gauty, 1934. Bibliothèque nationale de France, ark:/12148/btv1b9027230v; digital image via Wikimedia Commons, File:Lys Gauty 1934.jpg.",
+      "sourceType": "wikimedia_commons_file",
+      "title": "Lys Gauty — portrait by the Agence de presse Meurisse",
+      "creator": "Agence de presse Meurisse",
+      "repository": "Wikimedia Commons",
+      "dateRole": "creation",
+      "dateQualifier": "confirmed",
+      "date": "1934",
+      "accessDate": "2026-09-24",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "researchNote": "The photograph belongs to the Meurisse press-agency collection held by the Bibliothèque nationale de France, which marks it public domain; the details recorded here follow that record and the Wikimedia Commons file page rather than an examination of the print.",
+      "researchNoteType": "object_context",
+      "slug": "src0896-lys-gauty-portrait-meurisse-1934",
+      "organizationIds": [
+        "ORG062",
+        "ORG090"
+      ],
+      "mediaIds": [
+        "M452"
+      ],
+      "personIds": [
+        "P203"
+      ],
+      "primaryUrl": "https://commons.wikimedia.org/wiki/File:Lys_Gauty_1934.jpg"
+    },
+    {
+      "id": "SRC0897",
+      "shortCitation": "Inscribed portrait of Maurice Elvey, published 1915",
+      "fullCitation": "Portrait of Maurice Elvey, inscribed “With my love”. Published in Pictures and the Picturegoer, 5 June 1915; digital image via Wikimedia Commons, File:MAURICE ELVEY.jpg.",
+      "sourceType": "wikimedia_commons_file",
+      "title": "Maurice Elvey — inscribed portrait published in 1915",
+      "creator": "Photographer unidentified",
+      "repository": "Wikimedia Commons",
+      "publication": "Pictures and the Picturegoer",
+      "dateRole": "creation",
+      "dateQualifier": "approximate",
+      "date": "1912",
+      "accessDate": "2026-09-24",
+      "reliability": "medium",
+      "sourceStatus": "verified_with_attribution_note",
+      "researchNote": "Wikimedia Commons gives the source as Pictures and the Picturegoer of 5 June 1915 and dates the photograph itself to 1912, and its public-domain claim rests on that publication. What the file shows is not a page of the magazine but a scan of a photographic print, creased and torn across the lower left and inscribed in ink; the file supplies no photographer, studio or holder for it. The identification of the sitter is the file page’s.",
+      "researchNoteType": "object_context",
+      "slug": "src0897-maurice-elvey-inscribed-portrait-1915",
+      "organizationIds": [
+        "ORG090"
+      ],
+      "mediaIds": [
+        "M453"
+      ],
+      "personIds": [
+        "P204"
+      ],
+      "primaryUrl": "https://commons.wikimedia.org/wiki/File:MAURICE_ELVEY.jpg",
+      "dateDisplay": "1912 (approximate)"
     }
   ],
   "recordCount": null

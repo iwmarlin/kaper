@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "publicDataUpdatedAt": "2026-09-23",
+  "publicDataUpdatedAt": "2026-09-24",
   "generator": {
     "file": "export_public_data.py",
     "sha256": "2b5cc45540091df3602e6f93bc531eb6e08ee444681b6cdd31864c41e75069c9"
@@ -48,8 +48,8 @@
   "counts": {
     "People": 177,
     "Organizations": 159,
-    "Sources": 803,
-    "Media": 398,
+    "Sources": 805,
+    "Media": 400,
     "Works": 299,
     "Films": 56,
     "Songs": 213,
@@ -65,7 +65,7 @@
     {
       "file": "build-report.json",
       "bytes": 114686,
-      "sha256": "6ed615cce47689666a32ea9d34ea11e686208517f44d5866e2e78eee280f271b"
+      "sha256": "6b9a8a3e2fd42793ef2796e27b03c09a1e9f686fe5fa9e30f88be0a0a12294d7"
     },
     {
       "file": "contributions.json",
@@ -79,13 +79,13 @@
     },
     {
       "file": "media.json",
-      "bytes": 663434,
-      "sha256": "bf95dd73996e0e98e1d6e1358fdee216999d9b14a08b3c55a857491e4231d061"
+      "bytes": 666615,
+      "sha256": "79c93b782dba09b2aff18599e745af525ebb18daf3d1a854e8603e1043984a83"
     },
     {
       "file": "organizations.json",
-      "bytes": 139090,
-      "sha256": "ac5f33c134473ee28aca7f25e8c06f014928bafaf7388059cdeba4d0e82ca02d"
+      "bytes": 139161,
+      "sha256": "a7105ef05fce70fd29cfeef06cd5de9de441700ec0c22ba56b67aaccc56b7c82"
     },
     {
       "file": "other-works.json",
@@ -94,8 +94,8 @@
     },
     {
       "file": "people.json",
-      "bytes": 176594,
-      "sha256": "67979a9821ef3997c5d930d2ca9135eeb5523f25072bd0b5f60e1c7405d5b3e1"
+      "bytes": 176632,
+      "sha256": "2d69a484ca9009252d64a24047328f79425332a24215e38ecd91f415114c7ce4"
     },
     {
       "file": "person-name-variants.json",
@@ -114,8 +114,8 @@
     },
     {
       "file": "sources.json",
-      "bytes": 1191381,
-      "sha256": "8f40d8298a63ce71d97c7b95e7a49e768bde3eb55eafc80aa2c65d2d5172cc56"
+      "bytes": 1194344,
+      "sha256": "1020f8cad958ffa15f9cb3f8317539b763a932965af9bca05f93aa0b340e42ab"
     },
     {
       "file": "timeline-events.json",
