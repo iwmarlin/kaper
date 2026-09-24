@@ -462,12 +462,14 @@ def summary_for(
             else f"{record.get('displayName')} in the Bronisław Kaper research archive."
         )
     # Never concatenate the short and full forms of the same citation. Prefer the
-    # fuller description when its search-result excerpt is unique; catalogue
-    # families whose full citations truncate identically use their concise,
-    # record-specific citation instead.
+    # fuller description when its *actual meta-description excerpt* is unique;
+    # catalogue families whose full citations truncate identically use their
+    # concise, record-specific citation instead.  This comparison must use the
+    # same limit as the emitted tag: checking a longer excerpt allowed two UCLA
+    # finding-aid citations to look unique here but collide after rendering.
     short = compact_text(record.get("shortCitation") or record.get("title"))
     full = compact_text(record.get("fullCitation"))
-    full_excerpt = compact_text(full, 180)
+    full_excerpt = compact_text(full, META_DESCRIPTION_LIMIT)
     if full and (source_description_counts or {}).get(full_excerpt, 1) == 1:
         return full
     return short or full
@@ -912,7 +914,7 @@ def expected_outputs(
     record_root = root / "data/site/records"
     public_sources = read_json(root / "data/public/v1/sources.json").get("records", [])
     source_description_counts = Counter(
-        compact_text(compact_text(item.get("fullCitation")), 180)
+        compact_text(compact_text(item.get("fullCitation")), META_DESCRIPTION_LIMIT)
         for item in public_sources
         if item.get("fullCitation")
     )
@@ -923,6 +925,7 @@ def expected_outputs(
     counts = {}
     work_meta_descriptions: list[str] = []
     work_page_titles: list[str] = []
+    source_meta_descriptions: list[str] = []
     source_page_titles: list[str] = []
     for record_type, table in RECORD_TABLES.items():
         payload_paths = sorted((record_root / record_type).glob("*.json"))
@@ -954,9 +957,13 @@ def expected_outputs(
                 work_meta_descriptions.append(html.unescape(description_match.group(1)))
                 work_page_titles.append(html.unescape(title_match.group(1)))
             if record_type == "source":
+                description_match = re.search(
+                    r'<meta name="description" content="([^"]*)">', document
+                )
                 title_match = re.search(r"<title>([^<]*)</title>", document)
-                if not title_match:
-                    raise RuntimeError(f"Missing Source page title: {record['id']}")
+                if not description_match or not title_match:
+                    raise RuntimeError(f"Missing Source SEO metadata: {record['id']}")
+                source_meta_descriptions.append(html.unescape(description_match.group(1)))
                 source_page_titles.append(html.unescape(title_match.group(1)))
             routes.append(f"records/{record_type}/{quote(payload['id'], safe='')}/")
     documents = sitemap_route_documents(root, outputs, routes)
@@ -995,6 +1002,9 @@ def expected_outputs(
         },
         "sourceSeo": {
             "recordCount": len(source_page_titles),
+            "metaDescriptionLimit": META_DESCRIPTION_LIMIT,
+            "longestMetaDescription": max(map(len, source_meta_descriptions), default=0),
+            "descriptions": duplicate_metrics(source_meta_descriptions),
             "pageTitles": duplicate_metrics(source_page_titles),
         },
     }

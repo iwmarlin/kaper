@@ -472,6 +472,17 @@ def validate(root: Path) -> dict:
             errors.append("Static Work pages contain duplicate meta descriptions")
         if work_seo.get("pageTitles", {}).get("duplicateGroupCount") != 0:
             errors.append("Static Work pages contain duplicate HTML titles")
+        source_seo = static_report.get("sourceSeo", {})
+        if source_seo.get("recordCount") != static_report.get("countsByType", {}).get("source"):
+            errors.append("Source SEO report does not cover every static Source page")
+        if source_seo.get("longestMetaDescription", 0) > source_seo.get(
+            "metaDescriptionLimit", 0
+        ):
+            errors.append("A Source meta description exceeds its declared length limit")
+        if source_seo.get("descriptions", {}).get("duplicateGroupCount") != 0:
+            errors.append("Static Source pages contain duplicate meta descriptions")
+        if source_seo.get("pageTitles", {}).get("duplicateGroupCount") != 0:
+            errors.append("Static Source pages contain duplicate HTML titles")
         static_pages = list((root / "records").glob("*/*/index.html"))
         if len(static_pages) != expected_records:
             errors.append("Static record page count does not match its report")

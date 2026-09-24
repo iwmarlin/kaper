@@ -12,6 +12,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 from build_static_records import (  # noqa: E402
+    META_DESCRIPTION_LIMIT,
     SOURCE_PAGE_TITLE_BUDGET,
     source_title_qualifier,
 )
@@ -101,6 +102,43 @@ class SourcePageTitleTests(unittest.TestCase):
                 f"{page_title(record)} | Kaper Archive",
                 msg=record["id"],
             )
+
+    def test_generated_source_descriptions_are_present_bounded_and_unique(self) -> None:
+        descriptions: dict[str, str] = {}
+        for record in self.sources:
+            document = ROOT / "records/source" / record["id"] / "index.html"
+            if not document.exists():
+                continue
+            match = re.search(
+                r'<meta name="description" content="([^"]*)">',
+                document.read_text("utf-8"),
+            )
+            self.assertIsNotNone(match, msg=record["id"])
+            description = html.unescape(match.group(1)).strip()
+            self.assertTrue(description, msg=record["id"])
+            self.assertLessEqual(len(description), META_DESCRIPTION_LIMIT, msg=record["id"])
+            descriptions[record["id"]] = description
+
+        duplicates: dict[str, list[str]] = {}
+        for record_id, description in descriptions.items():
+            duplicates.setdefault(description, []).append(record_id)
+        duplicates = {
+            description: record_ids
+            for description, record_ids in duplicates.items()
+            if len(record_ids) > 1
+        }
+        self.assertEqual(duplicates, {})
+
+    def test_ucla_finding_aid_descriptions_name_the_distinct_evidence(self) -> None:
+        expected = {
+            "SRC0880": "Melodie der Liebe",
+            "SRC0890": "The Magic of Springtime",
+        }
+        for record_id, evidence_title in expected.items():
+            document = (ROOT / "records/source" / record_id / "index.html").read_text("utf-8")
+            match = re.search(r'<meta name="description" content="([^"]*)">', document)
+            self.assertIsNotNone(match, msg=record_id)
+            self.assertIn(evidence_title, html.unescape(match.group(1)), msg=record_id)
 
 
 if __name__ == "__main__":
