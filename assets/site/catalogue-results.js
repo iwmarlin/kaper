@@ -18,7 +18,7 @@ import {
   typeBadge,
   responsiveImage,
   registerImageDerivatives,
-} from "./core.js?v=faae2e4ce3";
+} from "./core.js?v=293f2ac9b8";
 
 // Build-time prerendering and browser rendering must configure the exact same
 // core module instance. Query-stamped ES module URLs are distinct module keys

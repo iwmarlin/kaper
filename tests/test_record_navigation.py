@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import re
 import shutil
 import subprocess
 import unittest
@@ -62,6 +63,26 @@ class RecordNavigationMarkupTests(unittest.TestCase):
             text = (ROOT / path).read_text(encoding="utf-8")
             with self.subTest(path=path):
                 self.assertIn(f'indexType: "{record_type}"', text)
+
+    def test_narrow_record_headers_cannot_overflow_the_viewport(self) -> None:
+        styles = (ROOT / "assets/site/styles.css").read_text(encoding="utf-8")
+        self.assertRegex(
+            styles,
+            r"\.record-breadcrumbs li:not\(:last-child\)\s*\{[^}]*flex:\s*none;",
+            "earlier breadcrumb levels must retain their readable width",
+        )
+        self.assertRegex(
+            styles,
+            r"\.record-breadcrumbs li:last-child\s*\{[^}]*flex:\s*1 1 auto;[^}]*overflow:\s*hidden;",
+            "the current breadcrumb must absorb the remaining width and truncate",
+        )
+        hero_rule = re.search(r"\.record-hero h1\s*\{([^}]*)\}", styles)
+        self.assertIsNotNone(hero_rule, "record headings need a shared responsive rule")
+        self.assertIn(
+            "overflow-wrap: anywhere;",
+            hero_rule.group(1),
+            "an indivisible title must not widen a narrow record page",
+        )
 
 
 class RecordReturnStateTests(unittest.TestCase):

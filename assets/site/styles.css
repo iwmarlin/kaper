@@ -17,7 +17,7 @@
    the swashed display forms can never appear by accident. */
 @font-face {
   font-family: "Fraunces";
-  src: url("../fonts/kaper-serif.woff2?v=faae2e4ce3") format("woff2");
+  src: url("../fonts/kaper-serif.woff2?v=293f2ac9b8") format("woff2");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
@@ -25,7 +25,7 @@
 
 @font-face {
   font-family: "Fraunces";
-  src: url("../fonts/kaper-serif-italic.woff2?v=faae2e4ce3") format("woff2");
+  src: url("../fonts/kaper-serif-italic.woff2?v=293f2ac9b8") format("woff2");
   font-weight: 100 900;
   font-style: italic;
   font-display: swap;
@@ -33,7 +33,7 @@
 
 @font-face {
   font-family: "Archivo";
-  src: url("../fonts/kaper-sans.woff2?v=faae2e4ce3") format("woff2");
+  src: url("../fonts/kaper-sans.woff2?v=293f2ac9b8") format("woff2");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
@@ -41,7 +41,7 @@
 
 @font-face {
   font-family: "Archivo";
-  src: url("../fonts/kaper-sans-italic.woff2?v=faae2e4ce3") format("woff2");
+  src: url("../fonts/kaper-sans-italic.woff2?v=293f2ac9b8") format("woff2");
   font-weight: 100 900;
   font-style: italic;
   font-display: swap;
@@ -2945,6 +2945,7 @@ main {
 
 .record-breadcrumbs ol {
   display: flex;
+  max-width: 100%;
   min-width: 0;
   margin: 0;
   padding: 0;
@@ -2955,6 +2956,15 @@ main {
   display: flex;
   min-width: 0;
   align-items: center;
+}
+
+.record-breadcrumbs li:not(:last-child) {
+  flex: none;
+}
+
+.record-breadcrumbs li:last-child {
+  flex: 1 1 auto;
+  overflow: hidden;
 }
 
 .record-breadcrumbs li + li::before {
@@ -2997,6 +3007,7 @@ main {
   margin-bottom: 0.6rem;
   font-size: clamp(2.05rem, 3.7vw, 3rem);
   line-height: 1.07;
+  overflow-wrap: anywhere;
 }
 
 .record-hero--long-title h1 {
