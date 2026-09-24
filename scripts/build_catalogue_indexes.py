@@ -393,10 +393,22 @@ def render_pages(root: Path, payloads: dict[str, dict]) -> dict:
 
 
 def replace_element_text(text: str, element_id: str, value: str) -> str:
-    pattern = re.compile(rf'(<[^>]+id="{re.escape(element_id)}"[^>]*>).*?(</[^>]+>)', re.DOTALL)
+    # Match the closing tag that belongs to the element carrying this id. A
+    # generic ``</...>`` stopped at the first nested <strong> or <span>, so a
+    # second build appended the generated count to itself instead of replacing
+    # it. Named backreferences keep rich, accessible count markup idempotent.
+    pattern = re.compile(
+        rf'(<(?P<tag>[A-Za-z][A-Za-z0-9:-]*)\b[^>]*id="{re.escape(element_id)}"[^>]*>)'
+        rf'.*?(?P<closing></(?P=tag)>)',
+        re.DOTALL,
+    )
     if not pattern.search(text):
         raise ValueError(f"Missing text element #{element_id}")
-    return pattern.sub(lambda match: f"{match.group(1)}{value}{match.group(2)}", text, count=1)
+    return pattern.sub(
+        lambda match: f"{match.group(1)}{value}{match.group('closing')}",
+        text,
+        count=1,
+    )
 
 
 def inject_prerender(

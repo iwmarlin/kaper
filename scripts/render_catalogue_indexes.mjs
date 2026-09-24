@@ -50,6 +50,14 @@ const page = (items, limit, renderer, noun) => {
   };
 };
 
+const mediaPage = page(media, 30, views.renderMediaIndexCard, ["item", "items"]);
+mediaPage.countText = views.renderMediaResultsCount({
+  shown: mediaPage.shown,
+  matched: media.length,
+  scope: "selected",
+  publicTotal: indexes.media.records.length,
+});
+
 // The home sections render through this script's own core instance. The
 // catalogue module imports core under its stamped URL, which Node keys as a
 // separate module, so the image derivatives are registered on both.
@@ -142,7 +150,7 @@ const placeList = mapPlaces.sortPlaces(placeRecords).map((place) => `
 process.stdout.write(JSON.stringify({
   works: page(works, 36, views.renderWorkIndexRow, ["record", "records"]),
   people: page(people, 48, views.renderPersonIndexRow, ["person", "people"]),
-  media: page(media, 30, views.renderMediaIndexCard, ["item", "items"]),
+  media: mediaPage,
   sources: page(sources, 40, views.renderSourceIndexRow, ["source", "sources"]),
   timeline: {
     markup: timelineView.markup,

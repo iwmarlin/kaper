@@ -1,4 +1,4 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=293f2ac9b8";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=848e1350b6";
 import {
   debounce,
   humanize,
@@ -11,14 +11,15 @@ import {
   periodValues,
   renderError,
   rightsLabel,
-} from "./core.js?v=293f2ac9b8";
-import { createCatalogueFilters } from "./catalogue-filters.js?v=293f2ac9b8";
+} from "./core.js?v=848e1350b6";
+import { createCatalogueFilters } from "./catalogue-filters.js?v=848e1350b6";
 import {
   curatedMediaOrder,
   registerCatalogueImageDerivatives,
   renderMediaIndexCard,
+  renderMediaResultsCount,
   sortMediaIndex,
-} from "./catalogue-results.js?v=293f2ac9b8";
+} from "./catalogue-results.js?v=848e1350b6";
 
 registerCatalogueImageDerivatives(IMAGE_DERIVATIVES);
 mountSiteChrome("media");
@@ -131,11 +132,31 @@ try {
     ...item,
     _search: normalizeSearch([item.title, item.category, item.publicCaption, item.description, item.publicCreditLine, ...periodValues(item), item.category].filter(Boolean).join(" ")),
   }));
+  const scopeCounts = new Map([
+    ["selected", indexed.filter((item) => item.galleryStatus === "selected").length],
+    ["all", indexed.length],
+    ["external_link_only", indexed.filter((item) => item.galleryStatus === "external_link_only").length],
+  ]);
+  const scopeLabels = new Map([
+    ["selected", "Curated selection"],
+    ["all", "All public media"],
+    ["external_link_only", "External references only"],
+  ]);
+  for (const option of controls.scope.options) {
+    if (!scopeLabels.has(option.value)) continue;
+    option.textContent = `${scopeLabels.get(option.value)} (${scopeCounts.get(option.value) || 0})`;
+  }
   let filterController;
 
   function render() {
     filterController.update();
     const query = normalizeSearch(controls.search.value.trim());
+    const filtered = Boolean(
+      query
+      || controls.category.value
+      || controls.period.value
+      || controls.rights.value
+    );
     current = indexed
       .filter((item) => (
         (!query || item._search.includes(query))
@@ -151,7 +172,13 @@ try {
       && !controls.rights.value;
     current = isDefaultCuratedView ? curatedMediaOrder(current) : sortMediaIndex(current);
     const shown = current.slice(0, showingAll ? current.length : visible);
-    countTarget.innerHTML = `<strong>Showing ${shown.length}</strong> of ${current.length} ${current.length === 1 ? "item" : "items"}`;
+    countTarget.innerHTML = renderMediaResultsCount({
+      shown: shown.length,
+      matched: current.length,
+      scope: controls.scope.value,
+      publicTotal: indexed.length,
+      filtered,
+    });
     const remaining = current.length - shown.length;
     more.hidden = remaining <= 0;
     showAll.hidden = remaining <= 0;

@@ -2,6 +2,8 @@ from __future__ import annotations
 
 import json
 import re
+import shutil
+import subprocess
 import unittest
 from pathlib import Path
 
@@ -20,6 +22,14 @@ CONFIG = {
 
 def read(path: Path) -> dict:
     return json.loads(path.read_text(encoding="utf-8"))
+
+
+def node_binary() -> str | None:
+    node = shutil.which("node")
+    if node:
+        return node
+    bundled = Path.home() / ".cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node"
+    return str(bundled) if bundled.is_file() else None
 
 
 class CompactCatalogueIndexTests(unittest.TestCase):
@@ -57,6 +67,22 @@ class CompactCatalogueIndexTests(unittest.TestCase):
                 block = match.group(1)
                 self.assertEqual(block.count(f"<{element} "), limit)
                 self.assertNotIn('class="loading"', block)
+
+    def test_every_prerendered_count_keeps_its_own_closing_element(self) -> None:
+        count_ids = {
+            "works.html": "work-results-count",
+            "people.html": "person-results-count",
+            "media.html": "media-count",
+            "sources.html": "source-results-count",
+        }
+        for page_name, element_id in count_ids.items():
+            text = (ROOT / page_name).read_text(encoding="utf-8")
+            with self.subTest(page=page_name):
+                self.assertRegex(
+                    text,
+                    rf'<p[^>]+id="{element_id}"[^>]*>.*?</p>',
+                    "a generated count must replace its contents without consuming its closing tag",
+                )
 
     def test_compact_payloads_are_materially_smaller_than_previous_page_loads(self) -> None:
         old_loads = {
@@ -192,6 +218,52 @@ class CompactCatalogueIndexTests(unittest.TestCase):
         self.assertIn("2 documented works", people_page)
         self.assertIn("Documented in the timeline", people_page)
         self.assertNotIn("0 documented works", people_page)
+
+    def test_media_landing_count_names_the_curated_and_complete_scopes(self) -> None:
+        media = read(PUBLIC / "media.json")["records"]
+        curated = sum(item.get("galleryStatus") == "selected" for item in media)
+        shown = min(CONFIG["media"][3], curated)
+        page = (ROOT / "media.html").read_text(encoding="utf-8")
+        self.assertIn(
+            f"<strong>Showing {shown}</strong> of {curated} curated items",
+            page,
+        )
+        self.assertIn(f"· {len(media)} public media records in total", page)
+        self.assertEqual(
+            page.count("public media records in total"),
+            1,
+            "the generated count must remain idempotent when it contains nested markup",
+        )
+
+    def test_media_count_language_covers_every_scope_and_filtered_state(self) -> None:
+        node = node_binary()
+        if not node:
+            self.skipTest("Node.js is required to exercise the shared Media counter")
+        module_url = (ROOT / "assets/site/catalogue-results.js").as_uri()
+        script = f"""
+          const {{ renderMediaResultsCount }} = await import({json.dumps(module_url)});
+          const cases = [
+            {{ shown: 30, matched: 90, scope: "selected", publicTotal: 398 }},
+            {{ shown: 30, matched: 398, scope: "all", publicTotal: 398 }},
+            {{ shown: 12, matched: 12, scope: "all", publicTotal: 398, filtered: true }},
+            {{ shown: 30, matched: 93, scope: "external_link_only", publicTotal: 398 }},
+          ];
+          process.stdout.write(JSON.stringify(cases.map(renderMediaResultsCount)));
+        """
+        result = subprocess.run(
+            [node, "--input-type=module", "--eval", script],
+            cwd=ROOT,
+            check=True,
+            capture_output=True,
+            text=True,
+        )
+        curated, complete, filtered, external = json.loads(result.stdout)
+        self.assertIn("of 90 curated items", curated)
+        self.assertIn("398 public media records in total", curated)
+        self.assertEqual(complete, "<strong>Showing 30</strong> of 398 public media records")
+        self.assertIn("of 12 matching records", filtered)
+        self.assertIn("398 public media records in total", filtered)
+        self.assertIn("of 93 external references", external)
 
 
 if __name__ == "__main__":

@@ -18,7 +18,7 @@ import {
   typeBadge,
   responsiveImage,
   registerImageDerivatives,
-} from "./core.js?v=293f2ac9b8";
+} from "./core.js?v=848e1350b6";
 
 // Build-time prerendering and browser rendering must configure the exact same
 // core module instance. Query-stamped ES module URLs are distinct module keys
@@ -182,6 +182,23 @@ export function curatedMediaOrder(items) {
 
 export function sortMediaIndex(items) {
   return [...items].sort(compareMedia);
+}
+
+export function renderMediaResultsCount({ shown, matched, scope, publicTotal, filtered = false }) {
+  const noun = (() => {
+    if (scope === "selected") {
+      return `${filtered ? "matching " : ""}curated ${matched === 1 ? "item" : "items"}`;
+    }
+    if (scope === "external_link_only") {
+      return `${filtered ? "matching " : ""}external ${matched === 1 ? "reference" : "references"}`;
+    }
+    if (filtered) return `matching ${matched === 1 ? "record" : "records"}`;
+    return `public media ${matched === 1 ? "record" : "records"}`;
+  })();
+  const total = scope !== "all" || filtered
+    ? `<span class="results-bar__scope">· ${publicTotal} public media ${publicTotal === 1 ? "record" : "records"} in total</span>`
+    : "";
+  return `<strong>Showing ${shown}</strong> of ${matched} ${noun}${total ? ` ${total}` : ""}`;
 }
 
 export function renderMediaIndexCard(item) {
