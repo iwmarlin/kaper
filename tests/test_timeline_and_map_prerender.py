@@ -71,6 +71,24 @@ class TimelinePrerenderTests(unittest.TestCase):
         self.assertIn('.timeline-entry[data-chapter]', self.script)
         self.assertNotIn('querySelectorAll(".timeline-chapter")', self.script)
 
+    def test_one_structure_carries_every_event(self) -> None:
+        # The chronology had two shapes: a symmetric view in which milestones
+        # alternated left and right of the spine, their text alternately right-
+        # and left-aligned, and a single-column chronicle for everything else.
+        # A reader had no fixed left edge, and the two views of the same page
+        # looked like two designs. One structure carries both now, and a
+        # milestone differs in scale alone.
+        self.assertNotIn("timeline-entry--media-", self.page)
+        self.assertNotIn("timeline-entry--text-only", self.page)
+        view = (ROOT / "assets/site/timeline-view.js").read_text(encoding="utf-8")
+        self.assertNotIn("mediaSide", view)
+        self.assertNotIn("milestoneIndex", view)
+        styles = (ROOT / "assets/site/styles.css").read_text(encoding="utf-8")
+        self.assertNotIn("timeline-entry--media-left", styles)
+        entries = re.findall(r'<article class="timeline-entry[^"]*"', self.page)
+        rails = self.page.count('class="timeline-entry__rail-date"')
+        self.assertEqual(len(entries), rails)
+
     def test_a_link_to_one_event_opens_the_view_that_contains_it(self) -> None:
         # Forty of the fifty-five events are not milestones, so a bare
         # "#event-TE0003" names an entry the opening view does not draw. The

@@ -17,7 +17,7 @@
    the swashed display forms can never appear by accident. */
 @font-face {
   font-family: "Fraunces";
-  src: url("../fonts/kaper-serif.woff2?v=eac6d7ea60") format("woff2");
+  src: url("../fonts/kaper-serif.woff2?v=5148f7cc02") format("woff2");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
@@ -25,7 +25,7 @@
 
 @font-face {
   font-family: "Fraunces";
-  src: url("../fonts/kaper-serif-italic.woff2?v=eac6d7ea60") format("woff2");
+  src: url("../fonts/kaper-serif-italic.woff2?v=5148f7cc02") format("woff2");
   font-weight: 100 900;
   font-style: italic;
   font-display: swap;
@@ -33,7 +33,7 @@
 
 @font-face {
   font-family: "Archivo";
-  src: url("../fonts/kaper-sans.woff2?v=eac6d7ea60") format("woff2");
+  src: url("../fonts/kaper-sans.woff2?v=5148f7cc02") format("woff2");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
@@ -41,7 +41,7 @@
 
 @font-face {
   font-family: "Archivo";
-  src: url("../fonts/kaper-sans-italic.woff2?v=eac6d7ea60") format("woff2");
+  src: url("../fonts/kaper-sans-italic.woff2?v=5148f7cc02") format("woff2");
   font-weight: 100 900;
   font-style: italic;
   font-display: swap;
@@ -1611,6 +1611,10 @@ main {
 }
 
 .timeline {
+  /* One chronicle, one left edge: a date rail, the spine, then the content.
+     A milestone differs from a point in scale, never in shape. */
+  --timeline-rail: 9.5rem;
+  --timeline-spine: 3rem;
   position: relative;
   max-width: 70rem;
   margin-inline: auto;
@@ -1621,7 +1625,7 @@ main {
   position: absolute;
   top: 3.8rem;
   bottom: 0.75rem;
-  left: 50%;
+  left: calc(var(--timeline-rail) + var(--timeline-spine) / 2);
   width: 1px;
   background: linear-gradient(to bottom, transparent, var(--line-dark) 1.5rem, var(--line-dark) calc(100% - 1.5rem), transparent);
   content: "";
@@ -1684,9 +1688,8 @@ main {
 .timeline-chapter {
   position: relative;
   z-index: 4;
-  width: max-content;
-  max-width: calc(100% - 2rem);
-  margin: 1.8rem auto 2rem;
+  margin: clamp(2.2rem, 4vw, 3.4rem) 0 1.5rem;
+  padding-left: calc(var(--timeline-rail) + var(--timeline-spine));
   scroll-margin-top: 11rem;
 }
 
@@ -1695,19 +1698,16 @@ main {
 }
 
 .timeline-chapter__inner {
-  padding: 0.55rem 0.9rem 0.6rem;
-  border: 1px solid var(--line-dark);
-  border-radius: 999px;
-  background: var(--surface);
-  box-shadow: var(--shadow-sm);
-  text-align: center;
+  padding: 0.7rem 0 0;
+  border-top: 2px solid var(--line-dark);
+  text-align: left;
 }
 
 .timeline-chapter__eyebrow {
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 0.45rem;
   margin: 0;
 }
@@ -1731,9 +1731,9 @@ main {
 .timeline-chapter__eyebrow h2 {
   margin: 0;
   color: var(--ink);
-  font-family: var(--sans);
-  font-size: var(--fs-5);
-  font-weight: 680;
+  font-family: var(--serif);
+  font-size: var(--fs-9);
+  font-weight: 640;
 }
 
 .timeline-chapter__summary {
@@ -1747,7 +1747,7 @@ main {
   position: relative;
   z-index: 2;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 4.75rem minmax(0, 1fr);
+  grid-template-columns: var(--timeline-rail) var(--timeline-spine) minmax(0, 1fr);
   align-items: start;
   margin-bottom: 1.4rem;
   scroll-margin-top: 11rem;
@@ -1791,10 +1791,11 @@ main {
 }
 
 .timeline-entry--has-media .timeline-entry__body {
-  grid-template-columns: minmax(0, 1fr) 8.25rem;
+  grid-template-columns: minmax(0, 1fr) 10.5rem;
 }
 
 .timeline-entry__copy {
+  max-width: 46rem;
   min-width: 0;
 }
 
@@ -1845,6 +1846,10 @@ main {
 }
 
 .timeline-entry__summary {
+  /* Measured in characters, so both densities settle near the same line
+     length: a summary that ran the full content column reached a hundred and
+     fifteen of them. */
+  max-width: 60ch;
   margin: 0;
   color: #2c4148;
   font-family: var(--sans);
@@ -1933,41 +1938,40 @@ main {
 }
 
 .timeline-entry--milestone {
-  align-items: center;
-  margin: 0 0 clamp(2.5rem, 5vw, 4rem);
+  margin: 0 0 clamp(2.2rem, 4vw, 3.2rem);
 }
 
 .timeline-entry--milestone .timeline-entry__node {
   width: 1rem;
-  margin-top: 0;
+  margin-top: 0.3rem;
   background: var(--gold);
   box-shadow: 0 0 0 4px rgba(183, 139, 69, 0.2);
 }
 
-.timeline-entry--milestone .timeline-entry__copy {
-  grid-column: 1;
-  padding-right: clamp(0.9rem, 2vw, 1.5rem);
-  text-align: right;
-}
-
-.timeline-entry--milestone .timeline-entry__copy .meta-row {
-  justify-content: flex-end;
+.timeline-entry--milestone .timeline-entry__rail-date {
+  font-size: var(--fs-9);
 }
 
 .timeline-entry--milestone .timeline-entry__copy h3 {
   margin-top: 0.1rem;
-  font-size: clamp(1.42rem, 2.35vw, 1.95rem);
-  line-height: 1.08;
+  font-size: clamp(1.32rem, 2.05vw, 1.68rem);
+  line-height: 1.12;
 }
 
 .timeline-entry--milestone .timeline-entry__summary {
-  max-width: 31rem;
-  margin-left: auto;
   font-size: var(--fs-7);
 }
 
-.timeline-entry--milestone .timeline-entry__media--feature {
-  grid-column: 3;
+.timeline-entry--milestone .timeline-entry__body {
+  gap: clamp(1rem, 2vw, 1.6rem);
+  padding-bottom: clamp(1.1rem, 2vw, 1.5rem);
+}
+
+.timeline-entry--milestone.timeline-entry--has-media .timeline-entry__body {
+  grid-template-columns: minmax(0, 1fr) clamp(14rem, 26vw, 21rem);
+}
+
+.timeline-entry__media--feature {
   overflow: hidden;
   border: 1px solid var(--line);
   border-radius: var(--radius-md);
@@ -1977,7 +1981,7 @@ main {
 
 .timeline-entry__media--feature .timeline-entry__image {
   width: 100%;
-  max-height: 18rem;
+  max-height: 16rem;
   padding: 0.45rem;
   border: 0;
   border-bottom: 1px solid var(--line);
@@ -1989,43 +1993,19 @@ main {
   padding: 0.62rem 0.75rem 0.68rem;
 }
 
-.timeline-entry--media-left .timeline-entry__copy {
-  grid-column: 3;
-  padding-right: 0;
-  padding-left: clamp(0.9rem, 2vw, 1.5rem);
-  text-align: left;
-}
 
-.timeline-entry--media-left .timeline-entry__copy .meta-row {
-  justify-content: flex-start;
-}
 
-.timeline-entry--media-left .timeline-entry__summary {
-  margin-right: auto;
-  margin-left: 0;
-}
 
-.timeline-entry--media-left .timeline-entry__media--feature {
-  grid-column: 1;
-  grid-row: 1;
-}
 
-.timeline-entry--text-only .timeline-entry__copy,
-.timeline-entry--text-only.timeline-entry--media-left .timeline-entry__copy {
-  grid-column: 3;
-  padding-right: 0;
-  padding-left: clamp(0.9rem, 2vw, 1.5rem);
-  text-align: left;
-}
 
-.timeline-entry--text-only .timeline-entry__copy .meta-row {
-  justify-content: flex-start;
-}
 
-.timeline-entry--text-only .timeline-entry__summary {
-  margin-right: auto;
-  margin-left: 0;
-}
+
+
+
+
+
+
+
 
 .map-hero {
   padding: clamp(2rem, 3.6vw, 2.8rem) 0 clamp(1.6rem, 2.8vw, 2.1rem);
@@ -3927,8 +3907,29 @@ html:not(.js) .source-group__head {
   font-size: var(--fs-4);
 }
 
+/* A caption in a column narrower than a paragraph: set as a caption, with its
+   title, rights and source spaced so they never run into one another. */
+.timeline-entry__media .media-disclosure {
+  display: grid;
+  gap: 0.3rem;
+}
+
 .timeline-entry__media .media-disclosure__title {
-  font-size: var(--fs-7);
+  color: var(--ink);
+  font-size: var(--fs-4);
+  line-height: 1.3;
+  text-decoration-color: var(--gold);
+  text-underline-offset: 0.16em;
+}
+
+.timeline-entry__media .media-disclosure__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.28rem 0.5rem;
+  color: var(--ink-soft);
+  font-size: var(--fs-2);
+  line-height: 1.3;
 }
 
 .record-section--gallery {
@@ -4737,10 +4738,12 @@ html:not(.js) .source-group__head {
   }
 
   .timeline-chapter {
-    width: max-content;
     max-width: calc(100% - 1.85rem);
     margin-right: 0;
     margin-left: 1.85rem;
+    /* The rail is not a column on a phone, so the division starts where the
+       entries do rather than where the desktop rail ends. */
+    padding-left: 0;
     scroll-margin-top: 7.25rem;
   }
 
@@ -4778,7 +4781,8 @@ html:not(.js) .source-group__head {
   }
 
   .timeline-entry__body,
-  .timeline-entry--has-media .timeline-entry__body {
+  .timeline-entry--has-media .timeline-entry__body,
+  .timeline-entry--milestone.timeline-entry--has-media .timeline-entry__body {
     grid-column: 2;
     grid-row: 2;
     grid-template-columns: minmax(0, 1fr) 6.5rem;
@@ -4788,18 +4792,14 @@ html:not(.js) .source-group__head {
     grid-template-columns: minmax(0, 1fr);
   }
 
-  .timeline-entry--milestone .timeline-entry__copy,
-  .timeline-entry--media-left .timeline-entry__copy,
-  .timeline-entry--text-only .timeline-entry__copy,
-  .timeline-entry--text-only.timeline-entry--media-left .timeline-entry__copy {
+  .timeline-entry--milestone .timeline-entry__copy {
     grid-column: 2;
     grid-row: 1;
     padding: 0 0 0.8rem;
     text-align: left;
   }
 
-  .timeline-entry--milestone .timeline-entry__copy .meta-row,
-  .timeline-entry--media-left .timeline-entry__copy .meta-row {
+  .timeline-entry--milestone .timeline-entry__copy .meta-row {
     justify-content: flex-start;
   }
 
@@ -4808,8 +4808,7 @@ html:not(.js) .source-group__head {
     margin-left: 0;
   }
 
-  .timeline-entry--milestone .timeline-entry__media--feature,
-  .timeline-entry--media-left .timeline-entry__media--feature {
+  .timeline-entry--milestone .timeline-entry__media--feature {
     grid-column: 2;
     grid-row: 2;
   }
@@ -5157,7 +5156,8 @@ html:not(.js) .source-group__head {
 
 @media (max-width: 440px) {
   .timeline-entry__body,
-  .timeline-entry--has-media .timeline-entry__body {
+  .timeline-entry--has-media .timeline-entry__body,
+  .timeline-entry--milestone.timeline-entry--has-media .timeline-entry__body {
     grid-template-columns: minmax(0, 1fr);
   }
 
@@ -5776,5 +5776,22 @@ html:not(.js) .source-group__head {
   .site-footer__grid,
   .site-footer__bottom {
     display: none !important;
+  }
+}
+
+/* Three eras, each on two short lines, rather than a strip that has to be
+   swiped: the last of them was reaching past the edge of a phone screen with
+   nothing to show that it was there. */
+@media (max-width: 480px) {
+  .timeline-nav {
+    gap: 0.85rem;
+  }
+
+  .timeline-nav__tab {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    padding-bottom: 0.42rem;
+    line-height: 1.15;
   }
 }

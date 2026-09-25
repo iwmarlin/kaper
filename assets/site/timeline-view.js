@@ -1,11 +1,11 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=eac6d7ea60";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=5148f7cc02";
 import {
   escapeHtml,
   periodBadge,
   recordUrl,
   renderMediaDisclosure,
   responsiveImage,
-} from "./core.js?v=eac6d7ea60";
+} from "./core.js?v=5148f7cc02";
 
 // The timeline page and the build both render the chronology from this module,
 // so the printed first view and the interactive one cannot describe the same
@@ -184,7 +184,6 @@ export function renderTimeline(matching, view) {
   }
   const chaptersPresent = CHAPTER_ORDER.filter((key) => filtered.some((event) => chapterForEvent(event) === key));
   let currentChapter = "";
-  let milestoneIndex = 0;
   const timelineMarkup = [navMarkup(chaptersPresent)];
   for (const event of filtered) {
     const chapter = chapterForEvent(event);
@@ -199,28 +198,22 @@ export function renderTimeline(matching, view) {
     const description = event.shortDescription || event.longDescription || "";
     const presentation = presentationForEvent(event);
     const dates = eventDates(event);
-    const copy = eventCopyMarkup(event, presentation, dates, description, { includeDate: presentation === "milestone" });
-
-    if (presentation === "milestone") {
-      const mediaSide = milestoneIndex % 2 === 0 ? "right" : "left";
-      milestoneIndex += 1;
-      timelineMarkup.push(`
-          <article class="timeline-entry timeline-entry--milestone timeline-entry--media-${mediaSide}${heroPortrait ? " timeline-entry--portrait" : ""}${hero ? "" : " timeline-entry--text-only"}" id="event-${escapeHtml(event.id)}" data-event-id="${escapeHtml(event.id)}" data-chapter="${escapeHtml(chapter)}">
+    // One structure carries every event: the date on the rail, the node on the
+    // spine, then a single column of text with its image beside it. A
+    // milestone is the same entry with more room — a larger image, a larger
+    // title, more air around it — rather than a different shape. The reader
+    // keeps one left edge down the whole chronology, and the highlights view
+    // is the same chronicle with fewer rows.
+    const copy = eventCopyMarkup(event, presentation, dates, description, { includeDate: false });
+    timelineMarkup.push(`
+        <article class="timeline-entry timeline-entry--${presentation}${heroPortrait ? " timeline-entry--portrait" : ""}${hero ? " timeline-entry--has-media" : ""}" id="event-${escapeHtml(event.id)}" data-event-id="${escapeHtml(event.id)}" data-chapter="${escapeHtml(chapter)}">
+          <time class="timeline-entry__rail-date" datetime="${escapeHtml(event.dateStart || event.sortDate || "")}">${escapeHtml(dates.railDate)}</time>
+          <span class="timeline-entry__node" aria-hidden="true"></span>
+          <div class="timeline-entry__body">
             <div class="timeline-entry__copy">${copy}</div>
-            <span class="timeline-entry__node" aria-hidden="true"></span>
-            ${heroMarkup(hero, heroSources, "feature")}
-          </article>`);
-    } else {
-      timelineMarkup.push(`
-          <article class="timeline-entry timeline-entry--${presentation}${heroPortrait ? " timeline-entry--portrait" : ""}${hero ? " timeline-entry--has-media" : ""}" id="event-${escapeHtml(event.id)}" data-event-id="${escapeHtml(event.id)}" data-chapter="${escapeHtml(chapter)}">
-            <time class="timeline-entry__rail-date" datetime="${escapeHtml(event.dateStart || event.sortDate || "")}">${escapeHtml(dates.railDate)}</time>
-            <span class="timeline-entry__node" aria-hidden="true"></span>
-            <div class="timeline-entry__body">
-              <div class="timeline-entry__copy">${copy}</div>
-              ${heroMarkup(hero, heroSources, "compact")}
-            </div>
-          </article>`);
-    }
+            ${heroMarkup(hero, heroSources, presentation === "milestone" ? "feature" : "compact")}
+          </div>
+        </article>`);
   }
   return { countHtml, shown: filtered.length, markup: timelineMarkup.join("") };
 }
