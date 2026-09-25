@@ -240,3 +240,73 @@ question behind seven of them, the fifteen people whose register is not
 machine-readable here, and whether P096 Ferry van Delden and P114 Karl Brüll —
 whose headings come from the Dutch national thesaurus and from LexM — should
 carry identifiers for those registers, as the rule's last clause asks.
+
+## Second pass, 25 September 2026
+
+Three of the nine differences are now closed, each by the register itself.
+
+**P130 Hermann Biek → `Berlin, Ben`.** GND 1061731308 files him under the stage
+name, carries `Biek, Hermann` and `Bick, Hermann` as variants, and gives 23
+September 1897 – 10 August 1944, which is what the record holds. It is the only
+register linked, so the rule gives its heading. `displayName` stays Hermann Biek
+and `sortName` stays `Biek, Hermann`, as they do for István Székely against
+LCNAF's `Sekely, Steve`; the pseudonym is already documented as PNV0039 and the
+orchestra as ORG122.
+
+**P181 Pyotr Ilyich Tchaikovsky → `Tchaikovsky, Peter Ilich`.** No language-area
+register holds him — GND transliterates `Čajkovskij, Petr Il'ič`, BnF
+`Tchaïkovski` — so the general order applies and LCNAF, the register the record
+links, gives that form. The display name is unchanged.
+
+**P156 Marcella Halicz** is labelled BN. The BN authority `a0000002111045` gives
+`Halicz, Marcella` in 100$a, with Marcela, Marcelina and M. as variants, and
+names this record's own VIAF URI in 024$a. Read through `data.bn.org.pl`, since
+the descriptor page itself renders in the browser only.
+
+### Still open, and why
+
+**The seven language-area headings** wait on the amendment proposed below.
+
+**Six people and two organizations whose register is BnF** — P060, P069, P106,
+P108, P113, P155, ORG030, ORG032. Neither catalogue.bnf.fr nor data.bnf.fr
+answered at all during this session; the requests returned no status. Wikidata
+offers a BnF identifier for Robert Wohlmuth, `17166302h`, which should be
+confirmed against the register before it is recorded.
+
+**P096 Ferry van Delden** — the heading comes from the Dutch national thesaurus
+through the VIAF cluster. Wikidata Q2600682 carries no NTA identifier, VIAF
+itself is behind a bot check that this review did not attempt to pass, and a
+guessed thesaurus URI returned nothing. The identifier has to come from the VIAF
+cluster page.
+
+**P114 Karl Brüll** — a search restricted to `lexm.uni-hamburg.de` found no
+person entry for him, so the LexM label may point at a mention inside another
+entry rather than at an entry of his own. Worth checking in LexM's own index
+before an identifier is recorded or the label is changed.
+
+**P004 André Auguste Saudemont and P014 Egon Schubert** need nothing: they link
+only VIAF, which is not a source of headings, and both are marked as local
+headings, which is what the rule asks for.
+
+## Proposed amendment to `docs/authority-headings.md`
+
+Seven of the nine differences are the same case, and the rule already reasons
+that way for one person. The section *Precedence when registers disagree* could
+say so generally. Proposed text, replacing the paragraph that begins “For a
+person of the Polish language area”:
+
+> **The register of the person's own language area comes first**: GND for the
+> German language area, BnF for the French, BN for the Polish, LCNAF for the
+> English. Where that register has no record for the person, the order above
+> applies from the top.
+>
+> The reason is the one that governs Róża Etkin, whom the general order would
+> have Germanised as `Etkin, Rosa`. It equally governs `Guenther, Felix` for
+> Felix Günther and `Brull, Karl` for Karl Brüll, `Nazelles, R.` where BnF
+> spells out René, and `Wiehlera, Zygmunta` — a Polish genitive that LCNAF read
+> off a title page — where GND and BN both give `Wiehler, Zygmunt`.
+
+Adopting it would leave all seven headings as they are and make the field's
+current practice checkable. Rejecting it would mean changing those seven
+headings to LCNAF's forms. This review recommends adopting it, and does not
+touch `docs/authority-headings.md` either way.
