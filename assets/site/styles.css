@@ -17,7 +17,7 @@
    the swashed display forms can never appear by accident. */
 @font-face {
   font-family: "Fraunces";
-  src: url("../fonts/kaper-serif.woff2?v=dce4a8eedf") format("woff2");
+  src: url("../fonts/kaper-serif.woff2?v=7d8813598b") format("woff2");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
@@ -25,7 +25,7 @@
 
 @font-face {
   font-family: "Fraunces";
-  src: url("../fonts/kaper-serif-italic.woff2?v=dce4a8eedf") format("woff2");
+  src: url("../fonts/kaper-serif-italic.woff2?v=7d8813598b") format("woff2");
   font-weight: 100 900;
   font-style: italic;
   font-display: swap;
@@ -33,7 +33,7 @@
 
 @font-face {
   font-family: "Archivo";
-  src: url("../fonts/kaper-sans.woff2?v=dce4a8eedf") format("woff2");
+  src: url("../fonts/kaper-sans.woff2?v=7d8813598b") format("woff2");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
@@ -41,7 +41,7 @@
 
 @font-face {
   font-family: "Archivo";
-  src: url("../fonts/kaper-sans-italic.woff2?v=dce4a8eedf") format("woff2");
+  src: url("../fonts/kaper-sans-italic.woff2?v=7d8813598b") format("woff2");
   font-weight: 100 900;
   font-style: italic;
   font-display: swap;
@@ -3651,7 +3651,7 @@ html:not(.js) .source-group__head {
 }
 
 .record-media__expand {
-  display: inline-flex;
+  display: none;
   flex: 0 0 auto;
   align-items: center;
   gap: 0.45rem;
@@ -3666,6 +3666,10 @@ html:not(.js) .source-group__head {
   font-size: var(--fs-4);
   font-weight: 720;
   line-height: 1;
+}
+
+.js .record-media__expand {
+  display: inline-flex;
 }
 
 .record-media__expand svg {
@@ -3704,7 +3708,40 @@ html:not(.js) .source-group__head {
 .media-lightbox__panel {
   display: grid;
   max-height: calc(100dvh - 2rem);
-  grid-template-rows: auto minmax(0, 1fr) auto;
+  grid-template-rows: auto auto minmax(0, 1fr) auto;
+}
+
+.media-lightbox__toolbar {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.48rem 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.045);
+}
+
+.media-lightbox__toolbar button {
+  min-height: 2rem;
+  padding: 0.32rem 0.62rem;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 999px;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font-size: var(--fs-3);
+  font-weight: 700;
+}
+
+.media-lightbox__toolbar button[aria-pressed="true"] {
+  border-color: #f2d5a2;
+  background: rgba(242, 213, 162, 0.14);
+  color: #f2d5a2;
+}
+
+.media-lightbox__toolbar [data-media-view-status] {
+  margin-left: 0.4rem;
+  color: #b9c5c4;
+  font-size: var(--fs-3);
 }
 
 .media-lightbox__header {
@@ -3758,6 +3795,15 @@ html:not(.js) .source-group__head {
   max-width: 100%;
   max-height: calc(100dvh - 11rem);
   object-fit: contain;
+}
+
+.media-lightbox[data-media-view="actual"] .media-lightbox__image {
+  place-items: start center;
+}
+
+.media-lightbox[data-media-view="actual"] .media-lightbox__image img {
+  max-width: none;
+  max-height: none;
 }
 
 .media-lightbox__caption {
@@ -4186,11 +4232,13 @@ html:not(.js) .source-group__head {
     gap: 0;
   }
 
-  .record-hero--source .record-facts--wide {
+  .record-hero--source .record-facts--wide,
+  .record-hero--media .record-facts--wide {
     display: none;
   }
 
-  .record-hero--source .record-facts-disclosure {
+  .record-hero--source .record-facts-disclosure,
+  .record-hero--media .record-facts-disclosure {
     display: block;
     margin-top: 0.85rem;
     border: 1px solid var(--line);

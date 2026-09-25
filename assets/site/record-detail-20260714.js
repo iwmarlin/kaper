@@ -32,8 +32,8 @@ import {
   sourceTypePluralLabel,
   typeBadge,
   updateMeta,
-} from "./core.js?v=dce4a8eedf";
-import { RECORD_INDEXES, recordIndexReturn } from "./catalogue-filters.js?v=dce4a8eedf";
+} from "./core.js?v=7d8813598b";
+import { RECORD_INDEXES, recordIndexReturn } from "./catalogue-filters.js?v=7d8813598b";
 
 // A canonical record route arrives prerendered and renders no image in the
 // browser, so the image map is loaded only where a record is actually rendered:
@@ -1031,6 +1031,8 @@ function renderMedia(media, data, indexes) {
     return {
       title: media.title,
       label: "Media gallery",
+      heroClass: "record-hero--media",
+      compactFactsLabel: "Media details",
       badges: `${typeBadge(media.mediaType)}${periodBadge(media.periods || media.period)}`,
       facts: `${fact("Images", galleryCount)}${fact("Period", periodValues(media).map(periodLabel).join(", "))}`,
       main: [
@@ -1070,7 +1072,7 @@ function renderMedia(media, data, indexes) {
       })}
     </div>
     <figcaption><span>${escapeHtml(media.publicCaption || media.title)}</span>${enlargementPath ? `<button class="record-media__expand" type="button" data-media-lightbox-open aria-haspopup="dialog" aria-controls="media-lightbox-${escapeHtml(media.id)}">
-      <svg aria-hidden="true" viewBox="0 0 20 20"><path d="M7 3H3v4M13 3h4v4M17 13v4h-4M7 17H3v-4"/></svg><span>View larger</span>
+      <svg aria-hidden="true" viewBox="0 0 20 20"><path d="M7 3H3v4M13 3h4v4M17 13v4h-4M7 17H3v-4"/></svg><span>Open viewer</span>
     </button>` : ""}</figcaption>
   </figure>`;
   const mediaLightbox = enlargementPath ? `<dialog class="media-lightbox" id="media-lightbox-${escapeHtml(media.id)}" data-media-lightbox aria-labelledby="media-lightbox-title-${escapeHtml(media.id)}">
@@ -1079,8 +1081,13 @@ function renderMedia(media, data, indexes) {
         <h2 id="media-lightbox-title-${escapeHtml(media.id)}">${escapeHtml(media.title)}</h2>
         <button class="media-lightbox__close" type="button" data-media-lightbox-close aria-label="Close enlarged image">×</button>
       </header>
+      <div class="media-lightbox__toolbar" role="group" aria-label="Image size">
+        <button type="button" data-media-view-fit aria-pressed="true">Fit</button>
+        <button type="button" data-media-view-actual aria-pressed="false">100%</button>
+        <span data-media-view-status aria-live="polite">Fit to window</span>
+      </div>
       <div class="media-lightbox__image">
-        <img src="${escapeHtml(enlargementPath)}" alt="${escapeHtml(media.altText || media.title)}" decoding="async">
+        <img src="${escapeHtml(enlargementPath)}" alt="${escapeHtml(media.altText || media.title)}" data-media-lightbox-image decoding="async">
       </div>
       <p class="media-lightbox__caption">${escapeHtml(media.publicCaption || media.title)}</p>
     </div>
@@ -1095,6 +1102,8 @@ function renderMedia(media, data, indexes) {
   return {
     title: media.title,
     label: "Media record",
+    heroClass: "record-hero--media",
+    compactFactsLabel: "Media details",
     badges: `${typeBadge(media.mediaType)}${periodBadge(media.periods || media.period)}${mediaRightsBadge(media)}`,
     facts: `${fact("Category", humanize(media.category))}${fact("Period", periodValues(media).map(periodLabel).join(", "))}${fact("Items", gallery ? media.assetPaths.length : "")}`,
     main: [
@@ -1845,6 +1854,10 @@ function initializeMediaLightboxes() {
     if (dialog.dataset.mediaLightboxReady === "true") continue;
     const trigger = target.querySelector(`[data-media-lightbox-open][aria-controls="${dialog.id}"]`);
     const closeButton = dialog.querySelector("[data-media-lightbox-close]");
+    const imageViewport = dialog.querySelector(".media-lightbox__image");
+    const fitButton = dialog.querySelector("[data-media-view-fit]");
+    const actualButton = dialog.querySelector("[data-media-view-actual]");
+    const status = dialog.querySelector("[data-media-view-status]");
     if (!trigger || !closeButton) continue;
     dialog.dataset.mediaLightboxReady = "true";
     let opener = null;
@@ -1852,13 +1865,28 @@ function initializeMediaLightboxes() {
       if (typeof dialog.close === "function") dialog.close();
       else dialog.removeAttribute("open");
     };
+    const setView = (view) => {
+      const actual = view === "actual";
+      dialog.dataset.mediaView = actual ? "actual" : "fit";
+      fitButton?.setAttribute("aria-pressed", String(!actual));
+      actualButton?.setAttribute("aria-pressed", String(actual));
+      if (status) status.textContent = actual ? "Actual image size" : "Fit to window";
+      if (!actual || !imageViewport) return;
+      window.requestAnimationFrame(() => {
+        imageViewport.scrollLeft = Math.max(0, (imageViewport.scrollWidth - imageViewport.clientWidth) / 2);
+        imageViewport.scrollTop = 0;
+      });
+    };
     trigger.addEventListener("click", () => {
       opener = trigger;
+      setView("fit");
       if (typeof dialog.showModal === "function") dialog.showModal();
       else dialog.setAttribute("open", "");
       closeButton.focus();
     });
     closeButton.addEventListener("click", close);
+    fitButton?.addEventListener("click", () => setView("fit"));
+    actualButton?.addEventListener("click", () => setView("actual"));
     dialog.addEventListener("click", (event) => {
       if (event.target === dialog) close();
     });
@@ -1893,7 +1921,7 @@ async function bootstrapRecordPage() {
     }
     const [data, { IMAGE_DERIVATIVES }] = await Promise.all([
       loadRecordPayload(requestedType, requestedId),
-      import("./image-derivatives.js?v=dce4a8eedf"),
+      import("./image-derivatives.js?v=7d8813598b"),
     ]);
     registerImageDerivatives(IMAGE_DERIVATIVES);
     const { config, view } = renderRecordView(requestedType, requestedId, data);

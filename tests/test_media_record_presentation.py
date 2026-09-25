@@ -121,6 +121,10 @@ class MediaRecordPresentationTests(unittest.TestCase):
         self.assertLess(markup.index("record-leading"), markup.index("record-layout"))
         self.assertIn("data-media-lightbox-open", markup)
         self.assertIn("data-media-lightbox-close", markup)
+        self.assertIn("data-media-view-fit", markup)
+        self.assertIn("data-media-view-actual", markup)
+        self.assertIn("Open viewer", markup)
+        self.assertEqual(view["compactFactsLabel"], "Media details")
 
     def test_sheet_music_uses_the_same_visual_hierarchy(self) -> None:
         media = {
@@ -175,6 +179,12 @@ class MediaRecordPresentationTests(unittest.TestCase):
         self.assertIn("function initializeMediaLightboxes()", renderer)
         self.assertIn('dialog.addEventListener("cancel"', renderer)
         self.assertIn("opener?.focus()", renderer)
+        self.assertIn('dialog.dataset.mediaView = actual ? "actual" : "fit"', renderer)
+        self.assertRegex(
+            styles,
+            r"\.record-media__expand\s*\{[^}]*display:\s*none;",
+        )
+        self.assertIn(".js .record-media__expand", styles)
         print_block = styles.split("@media print", 1)[1]
         self.assertIn(".record-media__expand", print_block)
         self.assertIn(".media-lightbox", print_block)
