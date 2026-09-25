@@ -17,7 +17,7 @@
    the swashed display forms can never appear by accident. */
 @font-face {
   font-family: "Fraunces";
-  src: url("../fonts/kaper-serif.woff2?v=a73582f447") format("woff2");
+  src: url("../fonts/kaper-serif.woff2?v=fbc590f8fb") format("woff2");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
@@ -25,7 +25,7 @@
 
 @font-face {
   font-family: "Fraunces";
-  src: url("../fonts/kaper-serif-italic.woff2?v=a73582f447") format("woff2");
+  src: url("../fonts/kaper-serif-italic.woff2?v=fbc590f8fb") format("woff2");
   font-weight: 100 900;
   font-style: italic;
   font-display: swap;
@@ -33,7 +33,7 @@
 
 @font-face {
   font-family: "Archivo";
-  src: url("../fonts/kaper-sans.woff2?v=a73582f447") format("woff2");
+  src: url("../fonts/kaper-sans.woff2?v=fbc590f8fb") format("woff2");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
@@ -41,7 +41,7 @@
 
 @font-face {
   font-family: "Archivo";
-  src: url("../fonts/kaper-sans-italic.woff2?v=a73582f447") format("woff2");
+  src: url("../fonts/kaper-sans-italic.woff2?v=fbc590f8fb") format("woff2");
   font-weight: 100 900;
   font-style: italic;
   font-display: swap;
@@ -961,7 +961,11 @@ main {
   line-height: 1.48;
 }
 
-.page-hero--compact .scope-note {
+/* A note in a page hero reads the same on every listing. The map's hero is
+   not the compact variant, so its note was rendering two steps of the scale
+   larger than the other six. */
+.page-hero--compact .scope-note,
+.map-hero .scope-note {
   padding: 0.75rem 0.85rem;
   font-size: var(--fs-5);
   line-height: 1.5;
