@@ -32,8 +32,8 @@ import {
   sourceTypePluralLabel,
   typeBadge,
   updateMeta,
-} from "./core.js?v=6175c9839f";
-import { RECORD_INDEXES, recordIndexReturn } from "./catalogue-filters.js?v=6175c9839f";
+} from "./core.js?v=bdeddea7d3";
+import { RECORD_INDEXES, recordIndexReturn } from "./catalogue-filters.js?v=bdeddea7d3";
 
 // A canonical record route arrives prerendered and renders no image in the
 // browser, so the image map is loaded only where a record is actually rendered:
@@ -1092,8 +1092,8 @@ function renderMedia(media, data, indexes) {
         <button type="button" data-media-view-actual aria-pressed="false">100%</button>
         <span data-media-view-status aria-live="polite">Fit to window</span>
       </div>
-      <div class="media-lightbox__image">
-        <img src="${escapeHtml(enlargementPath)}" alt="${escapeHtml(media.altText || media.title)}" data-media-lightbox-image decoding="async">
+      <div class="media-lightbox__image" tabindex="0" role="region" aria-label="Enlarged image, scrollable at actual size">
+        <img data-media-lightbox-src="${escapeHtml(enlargementPath)}" alt="${escapeHtml(media.altText || media.title)}" data-media-lightbox-image decoding="async">
       </div>
       <p class="media-lightbox__caption">${escapeHtml(media.publicCaption || media.title)}</p>
     </div>
@@ -1861,6 +1861,7 @@ function initializeMediaLightboxes() {
     const trigger = target.querySelector(`[data-media-lightbox-open][aria-controls="${dialog.id}"]`);
     const closeButton = dialog.querySelector("[data-media-lightbox-close]");
     const imageViewport = dialog.querySelector(".media-lightbox__image");
+    const image = dialog.querySelector("[data-media-lightbox-image]");
     const fitButton = dialog.querySelector("[data-media-view-fit]");
     const actualButton = dialog.querySelector("[data-media-view-actual]");
     const status = dialog.querySelector("[data-media-view-status]");
@@ -1883,12 +1884,46 @@ function initializeMediaLightboxes() {
         imageViewport.scrollTop = 0;
       });
     };
+    // The enlargement is the largest derivative there is, and on a phone it is
+    // a heavier file than the page itself needs.  A closed dialog has no layout
+    // box, so loading="lazy" does not defer it; the address is held until the
+    // reader reaches for the viewer.  Pointing at the control or tabbing to it
+    // starts the fetch, so the image is usually there by the time it opens.
+    const loadImage = () => {
+      if (image && !image.getAttribute("src")) image.src = image.dataset.mediaLightboxSrc;
+    };
+    trigger.addEventListener("pointerenter", loadImage);
+    trigger.addEventListener("focus", loadImage);
     trigger.addEventListener("click", () => {
+      loadImage();
       opener = trigger;
       setView("fit");
       if (typeof dialog.showModal === "function") dialog.showModal();
       else dialog.setAttribute("open", "");
       closeButton.focus();
+    });
+    // A focusable scroll box is not a scrollable one everywhere: Safari and
+    // Firefox do not move a focused container with the arrow keys, and Chrome
+    // only began to. At actual size the detail is the whole point of the view,
+    // so the keys are handled here rather than left to the engine.
+    imageViewport?.addEventListener("keydown", (event) => {
+      if (event.altKey || event.ctrlKey || event.metaKey) return;
+      const step = 80;
+      const page = Math.max(120, imageViewport.clientHeight * 0.9);
+      const moves = {
+        ArrowDown: [0, step],
+        ArrowUp: [0, -step],
+        ArrowRight: [step, 0],
+        ArrowLeft: [-step, 0],
+        PageDown: [0, page],
+        PageUp: [0, -page],
+        Home: [-imageViewport.scrollWidth, -imageViewport.scrollHeight],
+        End: [0, imageViewport.scrollHeight],
+      };
+      const move = moves[event.key];
+      if (!move) return;
+      event.preventDefault();
+      imageViewport.scrollBy({ left: move[0], top: move[1] });
     });
     closeButton.addEventListener("click", close);
     fitButton?.addEventListener("click", () => setView("fit"));
@@ -1927,7 +1962,7 @@ async function bootstrapRecordPage() {
     }
     const [data, { IMAGE_DERIVATIVES }] = await Promise.all([
       loadRecordPayload(requestedType, requestedId),
-      import("./image-derivatives.js?v=6175c9839f"),
+      import("./image-derivatives.js?v=bdeddea7d3"),
     ]);
     registerImageDerivatives(IMAGE_DERIVATIVES);
     const { config, view } = renderRecordView(requestedType, requestedId, data);

@@ -130,8 +130,14 @@ class MediaRecordPresentationTests(unittest.TestCase):
         view, markup = render_media(media, derivatives)
         self.assertIn("record-media--primary", view["leading"])
         self.assertNotIn("record-media--primary", view["aside"])
-        self.assertIn('src="assets/generated/960.webp"', view["leading"])
-        self.assertNotIn('src="assets/images/private-original.jpg"', view["leading"])
+        # The enlargement names the largest derivative and never the original,
+        # and holds it in a data attribute: a closed dialog has no layout box,
+        # so an eager src would download the heaviest file on every visit.
+        self.assertIn(
+            'data-media-lightbox-src="assets/generated/960.webp"', view["leading"]
+        )
+        self.assertNotIn('<img src=', view["leading"].split("<dialog", 1)[1])
+        self.assertNotIn("assets/images/private-original.jpg", view["leading"])
         self.assertLess(markup.index("record-leading"), markup.index("record-layout"))
         self.assertIn("data-media-lightbox-open", markup)
         self.assertIn("data-media-lightbox-close", markup)
@@ -194,6 +200,14 @@ class MediaRecordPresentationTests(unittest.TestCase):
         self.assertIn('dialog.addEventListener("cancel"', renderer)
         self.assertIn("opener?.focus()", renderer)
         self.assertIn('dialog.dataset.mediaView = actual ? "actual" : "fit"', renderer)
+        self.assertIn('trigger.addEventListener("pointerenter", loadImage)', renderer)
+        self.assertIn('image.src = image.dataset.mediaLightboxSrc', renderer)
+        # Safari and Firefox do not scroll a focused container with the arrow
+        # keys, and at actual size the detail is the point of the view.
+        self.assertIn('imageViewport?.addEventListener("keydown"', renderer)
+        for key in ("ArrowDown", "PageDown", "Home", "End"):
+            self.assertIn(f"{key}:", renderer)
+        self.assertIn('<div class="media-lightbox__image" tabindex="0" role="region"', renderer)
         self.assertRegex(
             styles,
             r"\.record-media__expand\s*\{[^}]*display:\s*none;",
