@@ -17,7 +17,7 @@
    the swashed display forms can never appear by accident. */
 @font-face {
   font-family: "Fraunces";
-  src: url("../fonts/kaper-serif.woff2?v=177a6e2a20") format("woff2");
+  src: url("../fonts/kaper-serif.woff2?v=3e02d74174") format("woff2");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
@@ -25,7 +25,7 @@
 
 @font-face {
   font-family: "Fraunces";
-  src: url("../fonts/kaper-serif-italic.woff2?v=177a6e2a20") format("woff2");
+  src: url("../fonts/kaper-serif-italic.woff2?v=3e02d74174") format("woff2");
   font-weight: 100 900;
   font-style: italic;
   font-display: swap;
@@ -33,7 +33,7 @@
 
 @font-face {
   font-family: "Archivo";
-  src: url("../fonts/kaper-sans.woff2?v=177a6e2a20") format("woff2");
+  src: url("../fonts/kaper-sans.woff2?v=3e02d74174") format("woff2");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
@@ -41,7 +41,7 @@
 
 @font-face {
   font-family: "Archivo";
-  src: url("../fonts/kaper-sans-italic.woff2?v=177a6e2a20") format("woff2");
+  src: url("../fonts/kaper-sans-italic.woff2?v=3e02d74174") format("woff2");
   font-weight: 100 900;
   font-style: italic;
   font-display: swap;
@@ -977,6 +977,13 @@ main {
   font-size: var(--fs-7);
 }
 
+/* A filter bar is a tool, not a frame. On a page twenty screens long it was
+   holding 83px of every one of them, so on the chronology it scrolls away and
+   the era being read takes that place instead. */
+.filters.filters--unpinned {
+  position: static;
+}
+
 .filters {
   position: sticky;
   top: 4.5rem;
@@ -1631,76 +1638,50 @@ main {
   content: "";
 }
 
-.timeline-nav {
-  position: sticky;
-  top: 7.9rem;
-  z-index: 8;
-  display: flex;
-  justify-content: center;
-  gap: clamp(0.75rem, 3vw, 2rem);
-  margin: 0 0 1.35rem;
-  padding: 0.2rem 0 0;
-  border-bottom: 1px solid var(--line);
-  background: rgba(244, 240, 231, 0.95);
-  backdrop-filter: blur(10px);
-}
 
-.timeline-nav__tab {
-  display: inline-flex;
-  align-items: baseline;
-  gap: 0.35rem;
-  padding: 0.48rem 0.15rem 0.55rem;
-  border-bottom: 2px solid transparent;
-  color: var(--ink-soft);
-  font-family: var(--sans);
-  font-size: var(--fs-5);
-  text-decoration: none;
-  transition: color 150ms ease, border-color 150ms ease;
-}
 
-.timeline-nav__tab:hover {
-  color: var(--ink);
-}
 
-.timeline-nav__tab.is-active {
-  border-bottom-color: var(--accent);
-  color: var(--accent);
-  font-weight: 650;
-}
 
-.timeline-nav__tab:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 2px;
-  border-radius: 2px;
-}
 
-.timeline-nav__years {
-  color: var(--ink-soft);
-  font-size: var(--fs-2);
-  font-variant-numeric: tabular-nums;
-}
 
-.timeline-nav__tab.is-active .timeline-nav__years {
-  color: var(--accent);
-  opacity: 0.78;
-}
+
+
+
+
+
+
+
 
 .timeline-chapter {
-  position: relative;
-  z-index: 4;
+  position: sticky;
+  top: 4.5rem;
+  z-index: 6;
   margin: clamp(2.2rem, 4vw, 3.4rem) 0 1.5rem;
   padding-left: calc(var(--timeline-rail) + var(--timeline-spine));
-  scroll-margin-top: 11rem;
+  scroll-margin-top: 9rem;
 }
 
-.timeline-nav + .timeline-chapter {
-  margin-top: 0.45rem;
-}
+
 
 .timeline-chapter__inner {
-  padding: 0.7rem 0 0;
+  /* Opaque while it is pinned: the entry it passes over must not read through
+     it. The fade is below the block, not inside it. */
+  position: relative;
+  padding: 0.62rem 0 0.55rem;
   border-top: 2px solid var(--line-dark);
+  background: var(--paper);
   text-align: left;
+}
+
+.timeline-chapter__inner::after {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: 0;
+  height: 1.1rem;
+  background: linear-gradient(to bottom, var(--paper), rgba(244, 240, 231, 0));
+  content: "";
+  pointer-events: none;
 }
 
 .timeline-chapter__eyebrow {
@@ -1750,7 +1731,7 @@ main {
   grid-template-columns: var(--timeline-rail) var(--timeline-spine) minmax(0, 1fr);
   align-items: start;
   margin-bottom: 1.4rem;
-  scroll-margin-top: 11rem;
+  scroll-margin-top: 9rem;
 }
 
 .timeline-entry__node {
@@ -4720,31 +4701,23 @@ html:not(.js) .source-group__head {
     left: 0.55rem;
   }
 
-  .timeline-nav {
-    top: 3.6rem;
-    justify-content: flex-start;
-    gap: 1.05rem;
-    overflow-x: auto;
-    scrollbar-width: none;
-  }
+  
 
-  .timeline-nav::-webkit-scrollbar {
-    display: none;
-  }
+  
 
-  .timeline-nav__tab {
-    flex: 0 0 auto;
-    white-space: nowrap;
-  }
+  
 
   .timeline-chapter {
+    /* The site header is shorter here, so the running head sits where it ends
+       rather than five pixels below it. */
+    top: 4.2rem;
     max-width: calc(100% - 1.85rem);
     margin-right: 0;
     margin-left: 1.85rem;
     /* The rail is not a column on a phone, so the division starts where the
        entries do rather than where the desktop rail ends. */
     padding-left: 0;
-    scroll-margin-top: 7.25rem;
+    scroll-margin-top: 6.5rem;
   }
 
   .timeline-chapter__inner {
@@ -4759,7 +4732,7 @@ html:not(.js) .source-group__head {
   .timeline-entry {
     grid-template-columns: 1.85rem minmax(0, 1fr);
     margin-bottom: 1.25rem;
-    scroll-margin-top: 7.25rem;
+    scroll-margin-top: 6.5rem;
   }
 
   .timeline-entry__node,
@@ -5733,25 +5706,41 @@ html:not(.js) .source-group__head {
     display: none !important;
   }
   /* A printed catalogue page keeps its results and loses its controls: the
-     search field, the filters and the interactive map are of no use on paper. */
+     search field,
+
+  the filters and the interactive map are of no use on paper. */
   .filters,
+
   .search-field,
+
   .active-filters,
+
   .results-bar button,
+
   .map-toolbar,
+
   .map-toolbar__controls,
+
   .map-route-toggle,
-  .timeline-nav,
-  .timeline-nav__tabs,
+
   .place-list__toggle,
+
   .map-canvas,
+
   .map-layer-status,
+
   #research-map,
+
   .leaflet-container,
+
   .map-legend,
+
   .map-selection,
+
   .timeline-view,
+
   .hero__actions,
+
   .section-heading .button {
     display: none !important;
   }
@@ -5776,22 +5765,5 @@ html:not(.js) .source-group__head {
   .site-footer__grid,
   .site-footer__bottom {
     display: none !important;
-  }
-}
-
-/* Three eras, each on two short lines, rather than a strip that has to be
-   swiped: the last of them was reaching past the edge of a phone screen with
-   nothing to show that it was there. */
-@media (max-width: 480px) {
-  .timeline-nav {
-    gap: 0.85rem;
-  }
-
-  .timeline-nav__tab {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0;
-    padding-bottom: 0.42rem;
-    line-height: 1.15;
   }
 }

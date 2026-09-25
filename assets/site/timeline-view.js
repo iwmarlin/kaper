@@ -1,11 +1,11 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=177a6e2a20";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=3e02d74174";
 import {
   escapeHtml,
   periodBadge,
   recordUrl,
   renderMediaDisclosure,
   responsiveImage,
-} from "./core.js?v=177a6e2a20";
+} from "./core.js?v=3e02d74174";
 
 // The timeline page and the build both render the chronology from this module,
 // so the printed first view and the interactive one cannot describe the same
@@ -61,22 +61,6 @@ function chapterForEvent(event) {
   if (periods.includes("hollywood") && year >= 1935) return "hollywood";
   if (periods.includes("european") || (year >= 1926 && year <= 1934)) return "european";
   return year >= 1935 ? "hollywood" : "warsaw";
-}
-
-const NAV_LABELS = { warsaw: "Warsaw", european: "European", hollywood: "Hollywood" };
-const CHAPTER_ORDER = ["warsaw", "european", "hollywood"];
-
-function shortRange(range) {
-  const match = String(range || "").match(/^(\d{4})\D+(\d{2})(\d{2})$/);
-  return match ? `${match[1]}–${match[3]}` : range;
-}
-
-function navMarkup(chaptersPresent) {
-  if (chaptersPresent.length < 2) return "";
-  const tabs = chaptersPresent
-    .map((key) => `<a class="timeline-nav__tab" href="#chapter-${key}" data-chapter="${key}"><span class="timeline-nav__era">${escapeHtml(NAV_LABELS[key])}</span><span class="timeline-nav__years">${escapeHtml(shortRange(TIMELINE_CHAPTERS[key].range))}</span></a>`)
-    .join("");
-  return `<nav class="timeline-nav" aria-label="Jump to era">${tabs}</nav>`;
 }
 
 function chapterMarkup(key) {
@@ -182,9 +166,8 @@ export function renderTimeline(matching, view) {
         : `<div class="empty-state"><h2>No matching events</h2><p>Try a broader search or remove a filter.</p></div>`,
     };
   }
-  const chaptersPresent = CHAPTER_ORDER.filter((key) => filtered.some((event) => chapterForEvent(event) === key));
   let currentChapter = "";
-  const timelineMarkup = [navMarkup(chaptersPresent)];
+  const timelineMarkup = [];
   for (const event of filtered) {
     const chapter = chapterForEvent(event);
     if (chapter !== currentChapter) {

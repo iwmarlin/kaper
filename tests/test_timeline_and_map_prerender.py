@@ -68,8 +68,11 @@ class TimelinePrerenderTests(unittest.TestCase):
         )
         self.assertTrue(entries)
         self.assertLessEqual(set(entries), {"warsaw", "european", "hollywood"})
-        self.assertIn('.timeline-entry[data-chapter]', self.script)
-        self.assertNotIn('querySelectorAll(".timeline-chapter")', self.script)
+        # The era each entry belongs to is still declared, because the chapter
+        # divisions are drawn from it; what is gone is the strip that repeated
+        # those divisions above the page.
+        self.assertNotIn("timeline-nav", self.page)
+        self.assertNotIn("timeline-nav", (ROOT / "assets/site/styles.css").read_text(encoding="utf-8"))
 
     def test_one_structure_carries_every_event(self) -> None:
         # The chronology had two shapes: a symmetric view in which milestones
@@ -88,6 +91,24 @@ class TimelinePrerenderTests(unittest.TestCase):
         entries = re.findall(r'<article class="timeline-entry[^"]*"', self.page)
         rails = self.page.count('class="timeline-entry__rail-date"')
         self.assertEqual(len(entries), rails)
+
+    def test_the_era_being_read_holds_the_pinned_space(self) -> None:
+        # The era strip was pinned under a filter bar taller than the gap left
+        # for it, so it was painted behind it: the switches worked and nothing
+        # appeared to happen. It is gone. The period facet narrows by era and
+        # the chapter division names it, and that division is what stays in
+        # view while its era is being read — one mechanism, not two.
+        styles = (ROOT / "assets/site/styles.css").read_text(encoding="utf-8")
+        chapter = styles.split(".timeline-chapter {", 1)[1].split("}", 1)[0]
+        self.assertIn("position: sticky;", chapter)
+        self.assertRegex(
+            styles, r"\.filters\.filters--unpinned\s*\{[^}]*position:\s*static;"
+        )
+        self.assertIn('class="filters filters--unpinned"', self.page)
+        # An opaque running head: the entry passing under it must not read
+        # through it.
+        inner = styles.split(".timeline-chapter__inner {", 1)[1].split("}", 1)[0]
+        self.assertIn("background: var(--paper);", inner)
 
     def test_a_link_to_one_event_opens_the_view_that_contains_it(self) -> None:
         # Forty of the fifty-five events are not milestones, so a bare
@@ -129,7 +150,7 @@ class TimelinePrerenderTests(unittest.TestCase):
         self.assertIn('activeView === "highlights"', self.script)
         for control in ("search", "category", "period"):
             self.assertIn(f"!controls.{control}.value", self.script)
-        self.assertIn("if (printedStateStands) {", self.script)
+        self.assertIn("if (!printedStateStands) render();", self.script)
         # Nothing is left polling for the right moment to scroll.
         self.assertNotIn("setTimeout(scrollToHashTarget", self.script)
         self.assertNotIn("landingWindowEndsAt", self.script)

@@ -1,4 +1,4 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=177a6e2a20";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=3e02d74174";
 import {
   debounce,
   humanize,
@@ -11,15 +11,15 @@ import {
   periodValues,
   registerImageDerivatives,
   renderError,
-} from "./core.js?v=177a6e2a20";
-import { createQueryState } from "./catalogue-filters.js?v=177a6e2a20";
+} from "./core.js?v=3e02d74174";
+import { createQueryState } from "./catalogue-filters.js?v=3e02d74174";
 import {
   GROUP_LABELS,
   GROUP_ORDER,
   eventGroup,
   renderTimeline,
   sortEvents,
-} from "./timeline-view.js?v=177a6e2a20";
+} from "./timeline-view.js?v=3e02d74174";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 mountSiteChrome("timeline");
@@ -37,26 +37,6 @@ const viewControls = {
   all: document.querySelector("#timeline-view-all"),
 };
 const hasPrerenderedResults = target?.dataset.prerendered === "true";
-
-function updateActiveChapter() {
-  const nav = document.querySelector(".timeline-nav");
-  if (!nav) return;
-  const entries = [...document.querySelectorAll(".timeline-entry[data-chapter]")];
-  if (!entries.length) return;
-  const marker = nav.getBoundingClientRect().bottom + 8;
-  // The era a reader is in is the era of the entry under the strip, not the
-  // last chapter heading to have passed it: a heading and its first events can
-  // fill the screen while the strip still lights the era before.
-  const current = entries.find((entry) => entry.getBoundingClientRect().bottom > marker)
-    || entries[entries.length - 1];
-  const activeKey = current.dataset.chapter;
-  for (const tab of nav.querySelectorAll(".timeline-nav__tab")) {
-    const isActive = tab.dataset.chapter === activeKey;
-    tab.classList.toggle("is-active", isActive);
-    if (isActive) tab.setAttribute("aria-current", "true");
-    else tab.removeAttribute("aria-current");
-  }
-}
 
 function addOptions(select, values, labeler = humanize, preserveOrder = false) {
   const uniqueValues = [...new Set(values.filter(Boolean))];
@@ -80,8 +60,9 @@ try {
     true,
   );
   // The chronology is read by era before it is read by anything else, and the
-  // era strip above it only jumps. The other indexes filter by period; this one
-  // now does too, so "the Paris years" is a question the page can answer.
+  // other indexes all filter by period; this one does too, so "the Paris
+  // years" is a question the page can answer rather than one a reader has to
+  // scroll for.
   const availablePeriods = new Set(timelineEvents.flatMap(periodValues));
   addOptions(
     controls.period,
@@ -129,7 +110,6 @@ try {
     countTarget.innerHTML = countHtml;
     target.innerHTML = markup;
     target.dataset.prerendered = "false";
-    updateActiveChapter();
     timelineQueryState?.write();
   }
 
@@ -149,18 +129,6 @@ try {
   });
   timelineQueryState.read();
   setView(activeView, { renderNow: false });
-
-  let scrollScheduled = false;
-  function onScroll() {
-    if (scrollScheduled) return;
-    scrollScheduled = true;
-    requestAnimationFrame(() => {
-      scrollScheduled = false;
-      updateActiveChapter();
-    });
-  }
-  window.addEventListener("scroll", onScroll, { passive: true });
-  window.addEventListener("resize", onScroll, { passive: true });
 
   controls.search?.addEventListener("input", debounce(() => {
     if (controls.search.value.trim() && activeView === "highlights") setView("all", { renderNow: false });
@@ -222,11 +190,7 @@ try {
     && !controls.search.value
     && !controls.category.value
     && !controls.period.value;
-  if (printedStateStands) {
-    updateActiveChapter();
-  } else {
-    render();
-  }
+  if (!printedStateStands) render();
   // The landing waits for the document to be complete. While the page is still
   // being parsed the browser is making its own attempts at the fragment, and
   // the last one wins — which, on a page whose entries arrive with the script,
