@@ -1,8 +1,9 @@
 # Authority-heading review — 25 September 2026
 
-No `authorizedName` was changed and no field was added. This is a worklist: it
-reports, for every person, what the register linked in `authorityUrl` actually
-states, and where the archive's heading departs from it.
+No `authorizedName` was changed. This review reports, for every person, what the
+register linked in `authorityUrl` actually states, and where the archive's
+heading departs from it. What was then acted on is recorded under *Applied*, at
+the end; the rest stands as a worklist.
 
 The starting point was an inconsistency in the data rather than in the rule.
 `docs/authority-headings.md` puts the provenance of a heading in `authorityUrl`,
@@ -195,3 +196,47 @@ Whether to fill the field at all is a separate question from this review: the
 rule puts provenance in `authorityUrl`, and `authorizedNameSource` duplicates it
 in a shorter form. It is filled for every organization, which is the argument
 for filling it for every person too.
+
+## Applied, 25 September 2026
+
+**Group A was labelled.** The 76 people whose heading the register states
+exactly now carry `authorizedNameSource`: LCNAF for 73, GND for 3, in each case
+the first register their own record links. The field is rendered on the person
+card as “Heading source”, so the cards no longer divide into those that say
+where a heading comes from and those that do not.
+
+**Eleven records named a register they did not link.** The card claimed a
+heading source a reader could not open. Eight were resolved by asking the
+register itself, and an identifier was added only where the register states the
+archive's heading and the same life dates, or names the record's own VIAF and
+LCNAF URIs as the same entity:
+
+| Person | Added | The register states |
+| --- | --- | --- |
+| P015 Erich Schmidt | GND 1274108136 | Schmidt, Erich; 13 August 1892 – 6 September 1971 |
+| P016 Erich von Neusser | GND 1062461193 | Neusser, Erich von; 23 October 1902 – 28 August 1957 |
+| P024 Germain Fried | LCNAF n2009070290 | Fried, Germain |
+| P043 Jean-René Legrand | LCNAF no2011174144 | Legrand, Jean-René |
+| P057 Max Reichmann | GND 116402733 | Reichmann, Max; 1884–1958 |
+| P087 Norman Hackforth | LCNAF n2008017509 | Hackforth, Norman P. |
+| P088 Leopold Mittmann | GND 134838068 | Mittman, Leopold; 16 September 1904 – June 1976, its sameAs naming this record's own LCNAF and VIAF URIs |
+| P109 Henri Lemarchand | GND 1258427923 | Lemarchand, **Henry**; 1911–1991, its sameAs naming this record's own LCNAF, VIAF and Wikidata URIs |
+
+P109 settles half of the question left open above. The heading's `Henry` is
+GND's form, and GND is where the record's life dates come from; only the
+identifier was missing. Whether a French lyricist should be filed under GND's
+`Henry` or LCNAF's `Henri` is still a decision, but it is now a decision between
+two registers rather than a suspected slip.
+
+Three remain open: **P069 Robert Wohlmuth**, whose record names BnF, and
+**ORG030 Éditions Coda** and **ORG032 Éditions musicales universelles**, which
+name BnF and link nothing at all. Wikidata gives a BnF identifier for Wohlmuth,
+`17166302h`, but catalogue.bnf.fr did not answer while this was written and an
+identifier the register has not confirmed was not added. `tests/test_authority_headings.py`
+holds the three as a named exception and fails on any new one.
+
+**Still open, and untouched**: the nine differing headings, the precedence
+question behind seven of them, the fifteen people whose register is not
+machine-readable here, and whether P096 Ferry van Delden and P114 Karl Brüll —
+whose headings come from the Dutch national thesaurus and from LexM — should
+carry identifiers for those registers, as the rule's last clause asks.
