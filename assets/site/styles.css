@@ -17,7 +17,7 @@
    the swashed display forms can never appear by accident. */
 @font-face {
   font-family: "Fraunces";
-  src: url("../fonts/kaper-serif.woff2?v=8048a71e5d") format("woff2");
+  src: url("../fonts/kaper-serif.woff2?v=4a21a1260e") format("woff2");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
@@ -25,7 +25,7 @@
 
 @font-face {
   font-family: "Fraunces";
-  src: url("../fonts/kaper-serif-italic.woff2?v=8048a71e5d") format("woff2");
+  src: url("../fonts/kaper-serif-italic.woff2?v=4a21a1260e") format("woff2");
   font-weight: 100 900;
   font-style: italic;
   font-display: swap;
@@ -33,7 +33,7 @@
 
 @font-face {
   font-family: "Archivo";
-  src: url("../fonts/kaper-sans.woff2?v=8048a71e5d") format("woff2");
+  src: url("../fonts/kaper-sans.woff2?v=4a21a1260e") format("woff2");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
@@ -41,7 +41,7 @@
 
 @font-face {
   font-family: "Archivo";
-  src: url("../fonts/kaper-sans-italic.woff2?v=8048a71e5d") format("woff2");
+  src: url("../fonts/kaper-sans-italic.woff2?v=4a21a1260e") format("woff2");
   font-weight: 100 900;
   font-style: italic;
   font-display: swap;
@@ -1001,10 +1001,10 @@ main {
 }
 
 .filters__grid--timeline {
-  grid-template-columns: minmax(15rem, 1.55fr) minmax(11rem, 1.4fr);
+  grid-template-columns: minmax(13rem, 1.5fr) minmax(9.5rem, 1.1fr) minmax(9.5rem, 1fr);
   gap: 0.65rem 0.75rem;
   align-items: end;
-  width: min(100%, 52rem);
+  width: min(100%, 58rem);
   margin-inline: auto;
 }
 

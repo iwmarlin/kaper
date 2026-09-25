@@ -125,6 +125,55 @@ class WorksYearFacetTests(unittest.TestCase):
         self.assertIn("addOptions(\n    controls.year,", self.script)
 
 
+class TimelinePeriodFacetTests(unittest.TestCase):
+    """The chronology is organised by era: it opens with an era strip, breaks
+    into three chapters and prints a period badge on every entry. Until now the
+    strip only jumped, and the page could not be narrowed to one era — the one
+    index on the site without the period facet that works, media and people all
+    have. "life.html?period=hollywood" is now an address a footnote can carry."""
+
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls.page = (ROOT / "life.html").read_text(encoding="utf-8")
+        cls.script = (ROOT / "assets/site/timeline-20260714.js").read_text(encoding="utf-8")
+        cls.shared = (ROOT / "assets/site/catalogue-filters.js").read_text(encoding="utf-8")
+
+    def test_the_control_sits_beside_the_other_two(self) -> None:
+        grid = re.search(
+            r'filters__grid--timeline.*?</section>', self.page, re.S
+        ).group(0)
+        self.assertIn('<label for="timeline-period">Period</label>', grid)
+        self.assertIn(
+            '<select id="timeline-period"><option value="">All periods</option></select>',
+            grid,
+        )
+
+    def test_the_facet_filters_and_survives_in_the_url(self) -> None:
+        self.assertIn('period: document.querySelector("#timeline-period")', self.script)
+        self.assertIn("matchesPeriod(event, controls.period.value)", self.script)
+        self.assertIn(
+            'defaults: { search: "", category: "", period: "", view: "highlights" }',
+            self.script,
+        )
+        # Without this the return link from an event record would call a
+        # period-filtered chronology unfiltered.
+        self.assertIn('filterKeys: ["search", "category", "period"]', self.shared)
+
+    def test_the_eras_offered_are_the_eras_documented(self) -> None:
+        events = json.loads(
+            (ROOT / "data/public/v1/timeline-events.json").read_text(encoding="utf-8")
+        )["records"]
+        documented = {period for event in events for period in event.get("periods", [])}
+        self.assertEqual(documented, {"warsaw", "european", "hollywood"})
+        self.assertIn("addOptions(\n    controls.period,", self.script)
+
+    def test_the_panel_declares_room_for_three_controls(self) -> None:
+        styles = (ROOT / "assets/site/styles.css").read_text(encoding="utf-8")
+        rule = styles.split(".filters__grid--timeline {", 1)[1].split("}", 1)[0]
+        columns = re.search(r"grid-template-columns:([^;]+);", rule).group(1)
+        self.assertEqual(columns.count("minmax("), 3)
+
+
 class FacetPanelTrackTests(unittest.TestCase):
     """Each panel declares its own columns in one place, and a facet added
     without touching that rule makes every control narrower. Two ways out are

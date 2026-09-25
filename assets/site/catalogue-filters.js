@@ -1,4 +1,4 @@
-import { escapeHtml } from "./core.js?v=8048a71e5d";
+import { escapeHtml } from "./core.js?v=4a21a1260e";
 
 const INDEX_RETURN_PREFIX = "kaper:index-return:";
 
@@ -38,7 +38,7 @@ export const RECORD_INDEXES = Object.freeze({
   event: {
     file: "life.html",
     label: "Timeline",
-    filterKeys: ["search", "category"],
+    filterKeys: ["search", "category", "period"],
     backLabel: "Back to Timeline",
     filteredBackLabel: "Back to filtered Timeline",
   },

@@ -1,21 +1,25 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=8048a71e5d";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=4a21a1260e";
 import {
   debounce,
   humanize,
   loadSiteIndex,
+  matchesPeriod,
   mountSiteChrome,
   normalizeSearch,
+  PERIOD_ORDER,
+  periodLabel,
+  periodValues,
   registerImageDerivatives,
   renderError,
-} from "./core.js?v=8048a71e5d";
-import { createQueryState } from "./catalogue-filters.js?v=8048a71e5d";
+} from "./core.js?v=4a21a1260e";
+import { createQueryState } from "./catalogue-filters.js?v=4a21a1260e";
 import {
   GROUP_LABELS,
   GROUP_ORDER,
   eventGroup,
   renderTimeline,
   sortEvents,
-} from "./timeline-view.js?v=8048a71e5d";
+} from "./timeline-view.js?v=4a21a1260e";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 mountSiteChrome("timeline");
@@ -26,6 +30,7 @@ const totalLabelTarget = document.querySelector("#timeline-total-label");
 const controls = {
   search: document.querySelector("#timeline-search"),
   category: document.querySelector("#timeline-category"),
+  period: document.querySelector("#timeline-period"),
 };
 const viewControls = {
   highlights: document.querySelector("#timeline-view-highlights"),
@@ -73,6 +78,16 @@ try {
     (key) => GROUP_LABELS[key],
     true,
   );
+  // The chronology is read by era before it is read by anything else, and the
+  // era strip above it only jumps. The other indexes filter by period; this one
+  // now does too, so "the Paris years" is a question the page can answer.
+  const availablePeriods = new Set(timelineEvents.flatMap(periodValues));
+  addOptions(
+    controls.period,
+    PERIOD_ORDER.filter((value) => availablePeriods.has(value)),
+    periodLabel,
+    true,
+  );
 
   const indexed = sortEvents(timelineEvents).map((event) => ({
     ...event,
@@ -105,6 +120,7 @@ try {
     const matching = indexed.filter((event) => (
       (!query || event._search.includes(query))
       && (!controls.category.value || eventGroup(event) === controls.category.value)
+      && matchesPeriod(event, controls.period.value)
     ));
     const { countHtml, markup } = renderTimeline(matching, activeView);
     countTarget.innerHTML = countHtml;
@@ -121,7 +137,7 @@ try {
       setValue: (value) => { activeView = value === "all" ? "all" : "highlights"; },
     },
   }, {
-    defaults: { search: "", category: "", view: "highlights" },
+    defaults: { search: "", category: "", period: "", view: "highlights" },
     indexType: "event",
     onRestore: () => {
       setView(activeView, { renderNow: false });
@@ -147,7 +163,7 @@ try {
     if (controls.search.value.trim() && activeView === "highlights") setView("all", { renderNow: false });
     render();
   }));
-  for (const control of [controls.category].filter(Boolean)) control.addEventListener("change", () => {
+  for (const control of [controls.category, controls.period].filter(Boolean)) control.addEventListener("change", () => {
     if (control.value && activeView === "highlights") setView("all", { renderNow: false });
     render();
   });
