@@ -10,8 +10,8 @@ import {
   periodValues,
   recordUrl,
   renderError,
-} from "./core.js?v=fbc590f8fb";
-import { createQueryState } from "./catalogue-filters.js?v=fbc590f8fb";
+} from "./core.js?v=1b2c59e830";
+import { createQueryState } from "./catalogue-filters.js?v=1b2c59e830";
 import {
   eventCount,
   normalizedPeriod,
@@ -19,7 +19,7 @@ import {
   placeListLabel,
   precisionMeta,
   sortPlaces,
-} from "./map-places.js?v=fbc590f8fb";
+} from "./map-places.js?v=1b2c59e830";
 
 mountSiteChrome("map");
 
@@ -371,7 +371,7 @@ try {
     }
     if (routeVisible) routeLayer.addTo(map);
     else map.removeLayer(routeLayer);
-    toggleJourney.setAttribute("aria-pressed", String(routeVisible));
+    toggleJourney.dataset.routeVisible = String(routeVisible);
     toggleJourney.textContent = routeVisible ? "Hide route" : "Show route";
     const stagesPanel = document.querySelector("#route-stages-panel");
     if (stagesPanel) stagesPanel.hidden = false;

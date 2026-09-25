@@ -17,7 +17,7 @@
    the swashed display forms can never appear by accident. */
 @font-face {
   font-family: "Fraunces";
-  src: url("../fonts/kaper-serif.woff2?v=fbc590f8fb") format("woff2");
+  src: url("../fonts/kaper-serif.woff2?v=1b2c59e830") format("woff2");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
@@ -25,7 +25,7 @@
 
 @font-face {
   font-family: "Fraunces";
-  src: url("../fonts/kaper-serif-italic.woff2?v=fbc590f8fb") format("woff2");
+  src: url("../fonts/kaper-serif-italic.woff2?v=1b2c59e830") format("woff2");
   font-weight: 100 900;
   font-style: italic;
   font-display: swap;
@@ -33,7 +33,7 @@
 
 @font-face {
   font-family: "Archivo";
-  src: url("../fonts/kaper-sans.woff2?v=fbc590f8fb") format("woff2");
+  src: url("../fonts/kaper-sans.woff2?v=1b2c59e830") format("woff2");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
@@ -41,7 +41,7 @@
 
 @font-face {
   font-family: "Archivo";
-  src: url("../fonts/kaper-sans-italic.woff2?v=fbc590f8fb") format("woff2");
+  src: url("../fonts/kaper-sans-italic.woff2?v=1b2c59e830") format("woff2");
   font-weight: 100 900;
   font-style: italic;
   font-display: swap;
@@ -2600,14 +2600,19 @@ main {
 }
 
 .map-route-toggle {
+  /* A toggle standing in a labelled field slot next to the search input: it
+     takes that field's height and type, not a button's. The action button
+     the site uses elsewhere — "Reset filters" — is a different thing: a pill
+     that performs an action rather than a control that holds a state. */
   width: 100%;
-  padding: 0.55rem 0.75rem;
+  min-height: 2.35rem;
+  padding: 0.48rem 0.68rem;
   border: 1px solid var(--line-dark);
   border-radius: var(--radius-sm);
   background: var(--surface);
   color: var(--ink);
   font: inherit;
-  font-size: var(--fs-5);
+  font-size: var(--fs-8);
   cursor: pointer;
   transition: background 150ms ease, border-color 150ms ease, box-shadow 150ms ease;
 }
@@ -2616,7 +2621,7 @@ main {
   border-color: var(--accent);
 }
 
-.map-route-toggle[aria-pressed="true"] {
+.map-route-toggle[data-route-visible="true"] {
   background: var(--paper);
   box-shadow: inset 0 0 0 1px var(--accent);
   border-color: var(--accent);
