@@ -140,6 +140,11 @@ HOFMEISTER_INVERTED_CREATOR_PATTERN = re.compile(
     r"(?:^|;\s*)[^,;]+,\s*(?:[A-ZÀ-ÖØ-Þ]\.?|[A-ZÀ-ÖØ-Þ][a-zà-öø-ÿ])"
     r"[^,;]*(?=;|$)"
 )
+# How a timeline event is presented.  The chronology reads this from the
+# record: "milestone" is the editorial selection the page opens on and shows
+# large, and the other three describe the shape of the event itself.
+TIMELINE_DISPLAY_MODES = frozenset({"milestone", "point", "period band", "cluster"})
+
 HOFMEISTER_REPOSITORY = "Österreichische Nationalbibliothek / ANNO"
 
 
@@ -1572,6 +1577,20 @@ class ExportValidator:
                 self.errors.append(
                     f"Timeline Events {event['id']}: expected chronological periods {expected}"
                 )
+            if event.get("displayMode") not in TIMELINE_DISPLAY_MODES:
+                self.errors.append(
+                    f"Timeline Events {event['id']}: unsupported displayMode "
+                    f"{event.get('displayMode')!r}"
+                )
+        # The chronology opens on its milestones, so an export that marks none
+        # would publish a timeline whose first view is empty.
+        if events and not any(
+            event.get("displayMode") == "milestone" for event in events.values()
+        ):
+            self.errors.append(
+                "Timeline Events: no event is marked as a milestone, so the "
+                "timeline would open on an empty highlights view"
+            )
 
         works = {
             record["id"]: record

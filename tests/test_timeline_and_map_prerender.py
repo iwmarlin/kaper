@@ -30,6 +30,33 @@ class TimelinePrerenderTests(unittest.TestCase):
         self.assertIn(f"{self.index['count']} published events", self.page)
         self.assertNotIn("Loading", self.page)
 
+    def test_the_milestone_selection_is_stated_by_the_records(self) -> None:
+        # Which events the chronology opens on is an editorial decision, so it
+        # belongs to the records and not to a list of identifiers in the module
+        # that draws them: the two cannot then disagree, and the selection is
+        # visible where the rest of the archive's decisions are.
+        events = json.loads(
+            (ROOT / "data/public/v1/timeline-events.json").read_text(encoding="utf-8")
+        )["records"]
+        milestones = [
+            event for event in events if event.get("displayMode") == "milestone"
+        ]
+        self.assertGreater(len(milestones), 0)
+        self.assertEqual(
+            self.page.count('class="timeline-entry timeline-entry--milestone'),
+            len(milestones),
+        )
+        self.assertEqual(
+            sum(
+                1
+                for event in self.index["records"]
+                if event.get("displayMode") == "milestone"
+            ),
+            len(milestones),
+        )
+        view = (ROOT / "assets/site/timeline-view.js").read_text(encoding="utf-8")
+        self.assertNotRegex(view, r"TE\d{4}")
+
     def test_the_page_reads_the_compact_index_rather_than_the_full_tables(self) -> None:
         self.assertIn('loadSiteIndex("timeline")', self.script)
         self.assertNotIn("loadTables", self.script)

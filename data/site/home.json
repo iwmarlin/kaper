@@ -147,7 +147,7 @@
       "datePrecision": "year",
       "sortDate": "1931-07-01",
       "sortOrder": 26,
-      "displayMode": "point",
+      "displayMode": "milestone",
       "eventType": "career",
       "period": "european",
       "periodKey": "european",
@@ -211,7 +211,7 @@
       "datePrecision": "year",
       "sortDate": "1935-07-01",
       "sortOrder": 37,
-      "displayMode": "point",
+      "displayMode": "milestone",
       "eventType": "career",
       "period": "hollywood",
       "periodKey": "hollywood",
@@ -259,6 +259,7 @@
       "periods": [
         "hollywood"
       ],
+      "featured": true,
       "image": {
         "id": "M074",
         "assetPath": "assets/images/sheet-music/you-are-all.jpg",

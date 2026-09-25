@@ -1,33 +1,15 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=bdeddea7d3";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=8048a71e5d";
 import {
   escapeHtml,
   periodBadge,
   recordUrl,
   renderMediaDisclosure,
   responsiveImage,
-} from "./core.js?v=bdeddea7d3";
+} from "./core.js?v=8048a71e5d";
 
 // The timeline page and the build both render the chronology from this module,
 // so the printed first view and the interactive one cannot describe the same
 // events differently.
-
-export const MILESTONE_EVENT_IDS = new Set([
-  "TE0001",
-  "TE0004",
-  "TE0013",
-  "TE0015",
-  "TE0019",
-  "TE0049",
-  "TE0026",
-  "TE0028",
-  "TE0052",
-  "TE0035",
-  "TE0053",
-  "TE0037",
-  "TE0038",
-  "TE0041",
-  "TE0043",
-]);
 
 const CATEGORY_GROUPS = {
   birth_family: "life", family: "life", religion_identity: "life", military: "life", citizenship: "life",
@@ -119,11 +101,20 @@ function eventDates(event) {
   };
 }
 
+// How an event is presented is an editorial decision about that event, so it
+// is read from the record rather than from a list of identifiers kept here:
+// the chronology the page draws and the one the data states cannot drift
+// apart, and a milestone can be added or withdrawn without touching the site.
 function presentationForEvent(event) {
-  if (MILESTONE_EVENT_IDS.has(event.id)) return "milestone";
+  if (event.displayMode === "milestone") return "milestone";
   if (event.displayMode === "period band") return "period";
   if (event.displayMode === "cluster") return "cluster";
   return "point";
+}
+
+/** The events the highlights view shows, and the ones it presents large. */
+export function isMilestone(event) {
+  return presentationForEvent(event) === "milestone";
 }
 
 function presentationLabel(presentation) {
@@ -177,7 +168,7 @@ export function sortEvents(events) {
 // chronological order, and returns the count sentence and the chronology.
 export function renderTimeline(matching, view) {
   const filtered = view === "highlights"
-    ? matching.filter((event) => MILESTONE_EVENT_IDS.has(event.id))
+    ? matching.filter(isMilestone)
     : matching;
   const countHtml = view === "highlights"
     ? `<strong>${filtered.length}</strong> ${filtered.length === 1 ? "highlight" : "highlights"} selected from ${matching.length} matching ${matching.length === 1 ? "event" : "events"}`

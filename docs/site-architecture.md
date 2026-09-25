@@ -73,6 +73,25 @@ as a noindex compatibility route and declares the static path as canonical.
   present-day geographic reference; neither layer silently changes the fixed
   project coordinates.
 
+## The chronology's two editorial selections
+
+Two fields on a Timeline Event carry an editorial judgement, and they answer
+different questions:
+
+- **`displayMode`** says how the chronology presents that event. `milestone` is
+  the selection `life.html` opens on — the highlights view — and the one it
+  draws large, with its image alternating across the rail; `period band`,
+  `cluster` and `point` describe the shape of the event itself. The page reads
+  this from the record, so the chronology it draws and the one the data states
+  cannot drift apart, and a milestone is added or withdrawn by editing the
+  event.
+- **`featured`** marks an event as a candidate for the home page's signature
+  moments. `scripts/build_site_assets.py` currently pins three of them by
+  identifier, one per era, so that the teaser spans Warsaw, Europe and
+  Hollywood; the flag is what the teaser falls back to if a pinned event is
+  withdrawn. A featured event is not therefore a milestone, and the two lists
+  are not expected to match.
+
 ## Editorial and rights rules
 
 - The visible scope is consistently labelled 1902–1939.
