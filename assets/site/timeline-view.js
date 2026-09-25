@@ -1,11 +1,11 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=4a21a1260e";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=eac6d7ea60";
 import {
   escapeHtml,
   periodBadge,
   recordUrl,
   renderMediaDisclosure,
   responsiveImage,
-} from "./core.js?v=4a21a1260e";
+} from "./core.js?v=eac6d7ea60";
 
 // The timeline page and the build both render the chronology from this module,
 // so the printed first view and the interactive one cannot describe the same
@@ -205,14 +205,14 @@ export function renderTimeline(matching, view) {
       const mediaSide = milestoneIndex % 2 === 0 ? "right" : "left";
       milestoneIndex += 1;
       timelineMarkup.push(`
-          <article class="timeline-entry timeline-entry--milestone timeline-entry--media-${mediaSide}${heroPortrait ? " timeline-entry--portrait" : ""}${hero ? "" : " timeline-entry--text-only"}" id="event-${escapeHtml(event.id)}" data-event-id="${escapeHtml(event.id)}">
+          <article class="timeline-entry timeline-entry--milestone timeline-entry--media-${mediaSide}${heroPortrait ? " timeline-entry--portrait" : ""}${hero ? "" : " timeline-entry--text-only"}" id="event-${escapeHtml(event.id)}" data-event-id="${escapeHtml(event.id)}" data-chapter="${escapeHtml(chapter)}">
             <div class="timeline-entry__copy">${copy}</div>
             <span class="timeline-entry__node" aria-hidden="true"></span>
             ${heroMarkup(hero, heroSources, "feature")}
           </article>`);
     } else {
       timelineMarkup.push(`
-          <article class="timeline-entry timeline-entry--${presentation}${heroPortrait ? " timeline-entry--portrait" : ""}${hero ? " timeline-entry--has-media" : ""}" id="event-${escapeHtml(event.id)}" data-event-id="${escapeHtml(event.id)}">
+          <article class="timeline-entry timeline-entry--${presentation}${heroPortrait ? " timeline-entry--portrait" : ""}${hero ? " timeline-entry--has-media" : ""}" id="event-${escapeHtml(event.id)}" data-event-id="${escapeHtml(event.id)}" data-chapter="${escapeHtml(chapter)}">
             <time class="timeline-entry__rail-date" datetime="${escapeHtml(event.dateStart || event.sortDate || "")}">${escapeHtml(dates.railDate)}</time>
             <span class="timeline-entry__node" aria-hidden="true"></span>
             <div class="timeline-entry__body">
