@@ -1,4 +1,4 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=5148f7cc02";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=177a6e2a20";
 import {
   debounce,
   humanize,
@@ -11,15 +11,15 @@ import {
   periodValues,
   registerImageDerivatives,
   renderError,
-} from "./core.js?v=5148f7cc02";
-import { createQueryState } from "./catalogue-filters.js?v=5148f7cc02";
+} from "./core.js?v=177a6e2a20";
+import { createQueryState } from "./catalogue-filters.js?v=177a6e2a20";
 import {
   GROUP_LABELS,
   GROUP_ORDER,
   eventGroup,
   renderTimeline,
   sortEvents,
-} from "./timeline-view.js?v=5148f7cc02";
+} from "./timeline-view.js?v=177a6e2a20";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 mountSiteChrome("timeline");
@@ -236,6 +236,22 @@ try {
   function openHashTarget() {
     if (hashNeedsFullView()) setView("all");
     landOnHashTarget();
+  }
+
+  // Until the printed chronology was left standing, every load replaced it and
+  // the page went back to the top by accident. Now that it stands, a reload
+  // keeps whatever position the browser remembers, which on a chronology this
+  // long is disorienting: the reader asked to see the page again, not to be
+  // returned to the middle of 1931. A reload starts at the top — unless the
+  // address names a place, which is a request to land there. Going back and
+  // forward still restores the position, because that is what those buttons
+  // are for.
+  const [navigation] = performance.getEntriesByType("navigation");
+  if (navigation?.type === "reload" && !location.hash) {
+    window.scrollTo({ top: 0, behavior: "instant" });
+    window.addEventListener("load", () => {
+      if (!location.hash) window.scrollTo({ top: 0, behavior: "instant" });
+    }, { once: true });
   }
 
   if (hashEventId()) {

@@ -110,6 +110,16 @@ class TimelinePrerenderTests(unittest.TestCase):
         self.assertIn('behavior: "instant"', self.script)
         self.assertIn('window.addEventListener("hashchange"', self.script)
 
+    def test_a_reload_returns_to_the_top_unless_the_address_names_a_place(self) -> None:
+        # Leaving the printed chronology standing had a side effect: the page
+        # no longer replaced its own contents on load, so a reload kept
+        # whatever position the browser remembered — the middle of 1931 for a
+        # reader who only wanted the page again. Going back and forward still
+        # restores the position, because that is what those buttons are for.
+        self.assertIn('performance.getEntriesByType("navigation")', self.script)
+        self.assertIn('navigation?.type === "reload" && !location.hash', self.script)
+        self.assertIn('window.scrollTo({ top: 0, behavior: "instant" })', self.script)
+
     def test_the_printed_chronology_is_left_standing_when_it_is_the_one_asked_for(self) -> None:
         # Redrawing identical markup over the printed page is what defeated the
         # browser's own handling of "#event-…", and the landing machinery that
