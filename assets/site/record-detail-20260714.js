@@ -5,6 +5,7 @@ import {
   formatDate,
   getIds,
   humanize,
+  imageEnlargementPath,
   languageBadge,
   indexById,
   mediaIsFairUse,
@@ -31,8 +32,8 @@ import {
   sourceTypePluralLabel,
   typeBadge,
   updateMeta,
-} from "./core.js?v=b12ccd837a";
-import { RECORD_INDEXES, recordIndexReturn } from "./catalogue-filters.js?v=b12ccd837a";
+} from "./core.js?v=dce4a8eedf";
+import { RECORD_INDEXES, recordIndexReturn } from "./catalogue-filters.js?v=dce4a8eedf";
 
 // A canonical record route arrives prerendered and renders no image in the
 // browser, so the image map is loaded only where a record is actually rendered:
@@ -1053,6 +1054,44 @@ function renderMedia(media, data, indexes) {
     };
   }
   const context = mediaContext(media);
+  const isLocalVisual = Boolean(
+    media.assetPath
+    && media.storageType !== "external"
+    && ["image", "sheet music"].includes(media.mediaType)
+  );
+  const enlargementPath = isLocalVisual ? imageEnlargementPath(media.assetPath) : "";
+  const mediaFigure = `<figure class="record-media${isLocalVisual ? " record-media--primary" : ""}">
+    <div class="record-media__visual">
+      ${mediaPreview(media, {
+        eager: true,
+        sizes: isLocalVisual
+          ? "(max-width: 1180px) calc(100vw - 2.5rem), 70rem"
+          : "(max-width: 900px) calc(100vw - 2rem), 20rem",
+      })}
+    </div>
+    <figcaption><span>${escapeHtml(media.publicCaption || media.title)}</span>${enlargementPath ? `<button class="record-media__expand" type="button" data-media-lightbox-open aria-haspopup="dialog" aria-controls="media-lightbox-${escapeHtml(media.id)}">
+      <svg aria-hidden="true" viewBox="0 0 20 20"><path d="M7 3H3v4M13 3h4v4M17 13v4h-4M7 17H3v-4"/></svg><span>View larger</span>
+    </button>` : ""}</figcaption>
+  </figure>`;
+  const mediaLightbox = enlargementPath ? `<dialog class="media-lightbox" id="media-lightbox-${escapeHtml(media.id)}" data-media-lightbox aria-labelledby="media-lightbox-title-${escapeHtml(media.id)}">
+    <div class="media-lightbox__panel">
+      <header class="media-lightbox__header">
+        <h2 id="media-lightbox-title-${escapeHtml(media.id)}">${escapeHtml(media.title)}</h2>
+        <button class="media-lightbox__close" type="button" data-media-lightbox-close aria-label="Close enlarged image">×</button>
+      </header>
+      <div class="media-lightbox__image">
+        <img src="${escapeHtml(enlargementPath)}" alt="${escapeHtml(media.altText || media.title)}" decoding="async">
+      </div>
+      <p class="media-lightbox__caption">${escapeHtml(media.publicCaption || media.title)}</p>
+    </div>
+  </dialog>` : "";
+  const rail = contentsRail([
+    { title: "Related works", count: works.length },
+    { title: "Timeline", count: events.length },
+    { title: "People", count: people.length },
+    { title: "Places", count: places.length },
+    { title: "Organizations", count: organizations.length },
+  ], recordUrl("media", media.id));
   return {
     title: media.title,
     label: "Media record",
@@ -1076,16 +1115,8 @@ function renderMedia(media, data, indexes) {
       section("Places", entityList(places, "place", (item) => [item.city, item.country].filter(Boolean).join(", ")), "", places.length),
       section("Organizations", entityList(organizations, "organization", (item) => (item.types || []).map(humanize).join(", ")), "", organizations.length),
     ].join(""),
-    aside: `<figure class="record-media">${mediaPreview(media, {
-      eager: true,
-      sizes: "(max-width: 900px) calc(100vw - 2rem), 20rem",
-    })}<figcaption>${escapeHtml(media.publicCaption || media.title)}</figcaption></figure>${contentsRail([
-      { title: "Related works", count: works.length },
-      { title: "Timeline", count: events.length },
-      { title: "People", count: people.length },
-      { title: "Places", count: places.length },
-      { title: "Organizations", count: organizations.length },
-    ], recordUrl("media", media.id))}`,
+    leading: isLocalVisual ? `${mediaFigure}${mediaLightbox}` : "",
+    aside: isLocalVisual ? rail : `${mediaFigure}${rail}`,
   };
 }
 
@@ -1800,11 +1831,42 @@ export function renderRecordMarkup(view, requestedId, requestedType) {
       </div>
     </section>
     <section class="section">
+      ${view.leading ? `<div class="shell record-leading">${view.leading}</div>` : ""}
       <div class="shell record-layout${view.fullWidth ? " record-layout--single" : ""}">
         <div>${view.main || `<div class="empty-state"><p>No additional public detail is available.</p></div>`}</div>
         <aside>${view.aside || ""}</aside>
       </div>
     </section>`.replace(/[ \t]+$/gm, "");
+}
+
+function initializeMediaLightboxes() {
+  if (!target) return;
+  for (const dialog of target.querySelectorAll("[data-media-lightbox]")) {
+    if (dialog.dataset.mediaLightboxReady === "true") continue;
+    const trigger = target.querySelector(`[data-media-lightbox-open][aria-controls="${dialog.id}"]`);
+    const closeButton = dialog.querySelector("[data-media-lightbox-close]");
+    if (!trigger || !closeButton) continue;
+    dialog.dataset.mediaLightboxReady = "true";
+    let opener = null;
+    const close = () => {
+      if (typeof dialog.close === "function") dialog.close();
+      else dialog.removeAttribute("open");
+    };
+    trigger.addEventListener("click", () => {
+      opener = trigger;
+      if (typeof dialog.showModal === "function") dialog.showModal();
+      else dialog.setAttribute("open", "");
+      closeButton.focus();
+    });
+    closeButton.addEventListener("click", close);
+    dialog.addEventListener("click", (event) => {
+      if (event.target === dialog) close();
+    });
+    dialog.addEventListener("close", () => opener?.focus());
+    dialog.addEventListener("cancel", () => {
+      window.setTimeout(() => opener?.focus(), 0);
+    });
+  }
 }
 
 async function bootstrapRecordPage() {
@@ -1818,6 +1880,7 @@ async function bootstrapRecordPage() {
     initializeProgressiveLists();
     initializeSourceLedgers();
     initializeContentsRail();
+    initializeMediaLightboxes();
     return;
   }
   const params = new URLSearchParams(location.search);
@@ -1830,7 +1893,7 @@ async function bootstrapRecordPage() {
     }
     const [data, { IMAGE_DERIVATIVES }] = await Promise.all([
       loadRecordPayload(requestedType, requestedId),
-      import("./image-derivatives.js?v=b12ccd837a"),
+      import("./image-derivatives.js?v=dce4a8eedf"),
     ]);
     registerImageDerivatives(IMAGE_DERIVATIVES);
     const { config, view } = renderRecordView(requestedType, requestedId, data);
@@ -1847,6 +1910,7 @@ async function bootstrapRecordPage() {
     initializeProgressiveLists();
     initializeSourceLedgers();
     initializeContentsRail();
+    initializeMediaLightboxes();
   } catch (error) {
     if (target) {
       target.className = "shell";

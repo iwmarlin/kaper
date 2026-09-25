@@ -955,6 +955,24 @@ export function responsiveImage(assetPath, alt, {
   return `<img${imageClass} src="${escapeHtml(profile.default)}" srcset="${srcset}" sizes="${escapeHtml(sizes)}" width="${profile.width}" height="${profile.height}" alt="${title}" ${eager ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async">`;
 }
 
+/**
+ * Return the largest generated derivative suitable for an in-page enlargement.
+ *
+ * The lightbox deliberately never links to the source asset.  Some catalogue
+ * records may display a local research copy under restricted or undetermined
+ * rights, and opening that original as a separate browser resource would make
+ * a larger file available than the record presentation requires.  Reusing the
+ * generated derivative keeps the enlargement useful while preserving the
+ * archive's existing rights boundary.  If no derivative exists, the caller
+ * must omit the enlargement control rather than fall back to the original.
+ */
+export function imageEnlargementPath(assetPath) {
+  const variants = imageDerivatives[assetPath]?.variants || [];
+  return variants.reduce((largest, item) => (
+    !largest || Number(item.width || 0) > Number(largest.width || 0) ? item : largest
+  ), null)?.path || "";
+}
+
 export function mediaPreview(media, { eager = false, sizes } = {}) {
   const title = escapeHtml(media.altText || media.title || "Media item");
   if (media.assetPath && media.storageType !== "external") {
