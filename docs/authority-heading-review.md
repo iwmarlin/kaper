@@ -288,7 +288,36 @@ before an identifier is recorded or the label is changed.
 only VIAF, which is not a source of headings, and both are marked as local
 headings, which is what the rule asks for.
 
-## Proposed amendment to `docs/authority-headings.md`
+## Amendment adopted, 25 September 2026
+
+`docs/authority-headings.md` now says that **the register of the person's own
+language area comes first** — GND for the German language area, BnF for the
+French, BN for the Polish, LCNAF for the English — and that the numbered order
+applies from the top where that register holds no record. The reasoning the rule
+already gave for Róża Etkin now stands for the rule as a whole.
+
+This review had said the amendment would leave all the language-area headings as
+they are. That was too broad, and the count is worth stating exactly. It settles
+four:
+
+| Person | Language area | Register it gives | Heading |
+| --- | --- | --- | --- |
+| P093 René Nazelles | French | BnF | Nazelles, René |
+| P121 Róża Etkin | Polish | BN | Etkin, Róża |
+| P146 Felix Günther | German | GND | Günther, Felix |
+| P169 Zygmunt Wiehler | Polish | BN | Wiehler, Zygmunt |
+
+Three headings are still deviations under the amended rule, and each turns on a
+register that is not linked or on a point of transcription rather than on
+precedence:
+
+| Person | Under the amended rule | Currently | What would settle it |
+| --- | --- | --- | --- |
+| P109 Henri Lemarchand | French, but no BnF record is linked, so LCNAF: `Lemarchand, Henri` | GND's `Lemarchand, Henry` | Whether BnF holds him. BnF did not answer this session. |
+| P114 Karl Brüll | German, but no GND record is linked, so LCNAF: `Brull, Karl` | LexM's `Brüll, Karl` | Whether GND holds him; failing that, whether a specialist register may stand in for the language-area one. |
+| P116 Louis B. Mayer | English, so LCNAF: `Mayer, Louis B. (Louis Burt)` | GND's `Mayer, Louis B.` | Whether a register's parenthetical expansion of a forename is dropped with the date qualifier, as the transcription rule drops the dates. One sentence in the rule would decide it. |
+
+## The amendment as it was proposed
 
 Seven of the nine differences are the same case, and the rule already reasons
 that way for one person. The section *Precedence when registers disagree* could
@@ -306,7 +335,5 @@ person of the Polish language area”:
 > spells out René, and `Wiehlera, Zygmunta` — a Polish genitive that LCNAF read
 > off a title page — where GND and BN both give `Wiehler, Zygmunt`.
 
-Adopting it would leave all seven headings as they are and make the field's
-current practice checkable. Rejecting it would mean changing those seven
-headings to LCNAF's forms. This review recommends adopting it, and does not
-touch `docs/authority-headings.md` either way.
+It was adopted on 25 September 2026, in the wording above; what it settled and
+what it left open is recorded in the preceding section.

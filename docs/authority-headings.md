@@ -17,7 +17,12 @@ the field holds.
 ## Precedence when registers disagree
 
 A VIAF cluster gathers the headings of every contributing library, and they do
-not always agree. Take the first register that has a record for the person:
+not always agree.
+
+**The register of the person's own language area comes first**: GND for the
+German language area, BnF for the French, BN for the Polish, LCNAF for the
+English. Where that register has no record for the person, take the first of
+these that does:
 
 1. **LCNAF** — `id.loc.gov/authorities/names/`
 2. **GND** — `d-nb.info/gnd/` (read the `preferredName` from `lobid.org/gnd/`)
@@ -29,11 +34,16 @@ not always agree. Take the first register that has a record for the person:
    whose heading `Delden, Ferry van` the cluster carries as its main one. Name
    the register in `authorityUrl` so that the heading's origin stays visible.
 
-For a person of the Polish language area, **BN comes before GND**. The general
-order would have given Róża Etkin the Germanised `Etkin, Rosa`, since the
-Library of Congress holds no record for her; the national library that
-catalogues her in her own language is the better authority for the form of her
-name.
+The library that catalogues a person in their own language is the better
+authority for the form of their name. The general order would have given Róża
+Etkin the Germanised `Etkin, Rosa`; it equally gives `Guenther, Felix` for Felix
+Günther, `Nazelles, R.` where BnF spells out René, and — for Zygmunt Wiehler —
+`Wiehlera, Zygmunta`, a Polish genitive that the Library of Congress read off a
+title page, where GND and BN both give `Wiehler, Zygmunt`.
+
+The rule is about the form of a name, not about who is the better cataloguer.
+Where the language-area register holds no record, the order above applies from
+the top, and a heading taken from it is transcribed as it stands.
 
 VIAF itself is never the source of a heading. It is a hub: use it, or Wikidata,
 to find which register records belong to the person, then read the heading from
