@@ -10,8 +10,8 @@ import {
   periodValues,
   recordUrl,
   renderError,
-} from "./core.js?v=7d8813598b";
-import { createQueryState } from "./catalogue-filters.js?v=7d8813598b";
+} from "./core.js?v=6175c9839f";
+import { createQueryState } from "./catalogue-filters.js?v=6175c9839f";
 import {
   eventCount,
   normalizedPeriod,
@@ -19,7 +19,7 @@ import {
   placeListLabel,
   precisionMeta,
   sortPlaces,
-} from "./map-places.js?v=7d8813598b";
+} from "./map-places.js?v=6175c9839f";
 
 mountSiteChrome("map");
 

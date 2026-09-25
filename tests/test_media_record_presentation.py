@@ -60,6 +60,20 @@ def render_media(media: dict, derivatives: dict | None = None) -> tuple[dict, st
     return payload["view"], payload["markup"]
 
 
+def is_local_visual(media: dict) -> bool:
+    return bool(
+        media.get("assetPath")
+        and media.get("storageType") != "external"
+        and media.get("mediaType") in {"image", "sheet music"}
+    )
+
+
+def read_image_derivatives() -> dict:
+    source = (ROOT / "assets/site/image-derivatives.js").read_text(encoding="utf-8")
+    start = source.index("Object.freeze(") + len("Object.freeze(")
+    return json.loads(source[start : source.rindex(")")])
+
+
 class MediaRecordPresentationTests(unittest.TestCase):
     def test_every_canonical_media_card_uses_the_model_for_its_kind(self) -> None:
         records = json.loads(
@@ -189,6 +203,53 @@ class MediaRecordPresentationTests(unittest.TestCase):
         self.assertIn(".record-media__expand", print_block)
         self.assertIn(".media-lightbox", print_block)
 
+
+    def test_the_lead_image_is_never_shown_wider_than_its_derivative(self) -> None:
+        # Two thirds of the archive's scans are smaller than the space this
+        # presentation offers, so the figure publishes the width of the largest
+        # derivative and the stylesheet stops there. Without it the lead image
+        # is enlarged into blur, and the viewer's 100% shows less than the page.
+        derivatives = read_image_derivatives()
+        records = json.loads(
+            (ROOT / "data/public/v1/media.json").read_text(encoding="utf-8")
+        )["records"]
+        checked = 0
+        for media in records:
+            if not is_local_visual(media):
+                continue
+            profile = derivatives.get(media["assetPath"])
+            if not profile or not profile.get("variants"):
+                continue
+            widest = max(int(item["width"]) for item in profile["variants"])
+            markup = (ROOT / "records/media" / media["id"] / "index.html").read_text(
+                encoding="utf-8"
+            )
+            with self.subTest(media_id=media["id"]):
+                self.assertIn(f"--media-natural-width: {widest}px", markup)
+                slot = f"{widest}px" if widest < 1120 else "70rem"
+                self.assertIn(
+                    f"sizes=\"(max-width: 1180px) calc(100vw - 2.5rem), {slot}\"",
+                    markup,
+                )
+            checked += 1
+        self.assertGreater(checked, 250)
+
+    def test_the_fitted_viewer_is_bounded_by_the_panel_row(self) -> None:
+        # A fixed allowance for the header, toolbar and caption leaves the
+        # fitted image overflowing once the caption wraps, so "Fit to window"
+        # scrolls. The row itself is the bound.
+        styles = (ROOT / "assets/site/styles.css").read_text(encoding="utf-8")
+        viewport = styles.split(".media-lightbox__image {", 1)[1].split("}", 1)[0]
+        self.assertIn("display: flex;", viewport)
+        image = styles.split(".media-lightbox__image img {", 1)[1].split("}", 1)[0]
+        self.assertIn("max-height: 100%;", image)
+        self.assertNotIn("100dvh", image)
+        actual = styles.split(
+            '.media-lightbox[data-media-view="actual"] .media-lightbox__image {', 1
+        )[1].split("}", 1)[0]
+        # Plain centring would put the left edge of an oversized image out of
+        # reach of the scroll origin.
+        self.assertIn("justify-content: safe center;", actual)
 
 if __name__ == "__main__":
     unittest.main()

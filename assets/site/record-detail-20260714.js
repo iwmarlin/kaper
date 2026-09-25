@@ -5,7 +5,7 @@ import {
   formatDate,
   getIds,
   humanize,
-  imageEnlargementPath,
+  imageEnlargement,
   languageBadge,
   indexById,
   mediaIsFairUse,
@@ -32,8 +32,8 @@ import {
   sourceTypePluralLabel,
   typeBadge,
   updateMeta,
-} from "./core.js?v=7d8813598b";
-import { RECORD_INDEXES, recordIndexReturn } from "./catalogue-filters.js?v=7d8813598b";
+} from "./core.js?v=6175c9839f";
+import { RECORD_INDEXES, recordIndexReturn } from "./catalogue-filters.js?v=6175c9839f";
 
 // A canonical record route arrives prerendered and renders no image in the
 // browser, so the image map is loaded only where a record is actually rendered:
@@ -1061,13 +1061,19 @@ function renderMedia(media, data, indexes) {
     && media.storageType !== "external"
     && ["image", "sheet music"].includes(media.mediaType)
   );
-  const enlargementPath = isLocalVisual ? imageEnlargementPath(media.assetPath) : "";
-  const mediaFigure = `<figure class="record-media${isLocalVisual ? " record-media--primary" : ""}">
+  const enlargement = isLocalVisual ? imageEnlargement(media.assetPath) : null;
+  const enlargementPath = enlargement?.path || "";
+  // The presentation offers more room than most of these scans have pixels.
+  // Publishing the width of the largest derivative lets the stylesheet stop
+  // the image there, and narrows the slot the browser picks a file for.
+  const naturalWidth = Number(enlargement?.width || 0);
+  const leadSlot = naturalWidth && naturalWidth < 1120 ? `${naturalWidth}px` : "70rem";
+  const mediaFigure = `<figure class="record-media${isLocalVisual ? " record-media--primary" : ""}"${naturalWidth ? ` style="--media-natural-width: ${naturalWidth}px"` : ""}>
     <div class="record-media__visual">
       ${mediaPreview(media, {
         eager: true,
         sizes: isLocalVisual
-          ? "(max-width: 1180px) calc(100vw - 2.5rem), 70rem"
+          ? `(max-width: 1180px) calc(100vw - 2.5rem), ${leadSlot}`
           : "(max-width: 900px) calc(100vw - 2rem), 20rem",
       })}
     </div>
@@ -1921,7 +1927,7 @@ async function bootstrapRecordPage() {
     }
     const [data, { IMAGE_DERIVATIVES }] = await Promise.all([
       loadRecordPayload(requestedType, requestedId),
-      import("./image-derivatives.js?v=7d8813598b"),
+      import("./image-derivatives.js?v=6175c9839f"),
     ]);
     registerImageDerivatives(IMAGE_DERIVATIVES);
     const { config, view } = renderRecordView(requestedType, requestedId, data);

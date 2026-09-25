@@ -966,12 +966,13 @@ export function responsiveImage(assetPath, alt, {
  * archive's existing rights boundary.  If no derivative exists, the caller
  * must omit the enlargement control rather than fall back to the original.
  */
-export function imageEnlargementPath(assetPath) {
+export function imageEnlargement(assetPath) {
   const variants = imageDerivatives[assetPath]?.variants || [];
   return variants.reduce((largest, item) => (
     !largest || Number(item.width || 0) > Number(largest.width || 0) ? item : largest
-  ), null)?.path || "";
+  ), null);
 }
+
 
 export function mediaPreview(media, { eager = false, sizes } = {}) {
   const title = escapeHtml(media.altText || media.title || "Media item");

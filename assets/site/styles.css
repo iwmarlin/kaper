@@ -17,7 +17,7 @@
    the swashed display forms can never appear by accident. */
 @font-face {
   font-family: "Fraunces";
-  src: url("../fonts/kaper-serif.woff2?v=7d8813598b") format("woff2");
+  src: url("../fonts/kaper-serif.woff2?v=6175c9839f") format("woff2");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
@@ -25,7 +25,7 @@
 
 @font-face {
   font-family: "Fraunces";
-  src: url("../fonts/kaper-serif-italic.woff2?v=7d8813598b") format("woff2");
+  src: url("../fonts/kaper-serif-italic.woff2?v=6175c9839f") format("woff2");
   font-weight: 100 900;
   font-style: italic;
   font-display: swap;
@@ -33,7 +33,7 @@
 
 @font-face {
   font-family: "Archivo";
-  src: url("../fonts/kaper-sans.woff2?v=7d8813598b") format("woff2");
+  src: url("../fonts/kaper-sans.woff2?v=6175c9839f") format("woff2");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
@@ -41,7 +41,7 @@
 
 @font-face {
   font-family: "Archivo";
-  src: url("../fonts/kaper-sans-italic.woff2?v=7d8813598b") format("woff2");
+  src: url("../fonts/kaper-sans-italic.woff2?v=6175c9839f") format("woff2");
   font-weight: 100 900;
   font-style: italic;
   font-display: swap;
@@ -3645,7 +3645,11 @@ html:not(.js) .source-group__head {
 
 .record-media.record-media--primary img {
   width: auto;
-  max-width: 100%;
+  /* Two thirds of the archive's scans are smaller than the space this
+     presentation offers them.  The renderer records the width of the largest
+     derivative, and the image stops there rather than being enlarged into
+     blur; the viewer's 100% is then never smaller than the page. */
+  max-width: min(100%, var(--media-natural-width, 100%));
   max-height: min(72vh, 54rem);
   object-fit: contain;
 }
@@ -3783,9 +3787,10 @@ html:not(.js) .source-group__head {
 }
 
 .media-lightbox__image {
-  display: grid;
+  display: flex;
   min-height: 0;
-  place-items: center;
+  align-items: center;
+  justify-content: center;
   padding: clamp(0.75rem, 2vw, 1.5rem);
   overflow: auto;
 }
@@ -3793,12 +3798,19 @@ html:not(.js) .source-group__head {
 .media-lightbox__image img {
   width: auto;
   max-width: 100%;
-  max-height: calc(100dvh - 11rem);
+  /* Bounded by the row the panel gives it, not by an allowance for the header,
+     the toolbar and the caption: a caption that wraps to a third line must not
+     push a fitted image under a scrollbar. */
+  max-height: 100%;
   object-fit: contain;
 }
 
 .media-lightbox[data-media-view="actual"] .media-lightbox__image {
-  place-items: start center;
+  align-items: flex-start;
+  /* Centred while the image fits, but never centred past the scroll origin:
+     safe alignment keeps the left edge of an oversized image reachable. */
+  justify-content: center;
+  justify-content: safe center;
 }
 
 .media-lightbox[data-media-view="actual"] .media-lightbox__image img {
