@@ -201,7 +201,7 @@ RECORDING_FIELDS: dict[str, dict[str, Any]] = {
             "cm, Pathé PA 1234, matrices CPT 3351 and CPT 3352. Bibliothèque "
             "nationale de France, catalogue record FRBNF37963787."
         ),
-        "repository": "Bibliothèque nationale de France (BnF)",
+        "repository": "Bibliothèque nationale de France / Catalogue général",
         "researchNote": (
             "The BnF catalogue describes the language of the recording as "
             "Tahitian."
