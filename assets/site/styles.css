@@ -17,7 +17,7 @@
    the swashed display forms can never appear by accident. */
 @font-face {
   font-family: "Fraunces";
-  src: url("../fonts/kaper-serif.woff2?v=3e02d74174") format("woff2");
+  src: url("../fonts/kaper-serif.woff2?v=a73582f447") format("woff2");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
@@ -25,7 +25,7 @@
 
 @font-face {
   font-family: "Fraunces";
-  src: url("../fonts/kaper-serif-italic.woff2?v=3e02d74174") format("woff2");
+  src: url("../fonts/kaper-serif-italic.woff2?v=a73582f447") format("woff2");
   font-weight: 100 900;
   font-style: italic;
   font-display: swap;
@@ -33,7 +33,7 @@
 
 @font-face {
   font-family: "Archivo";
-  src: url("../fonts/kaper-sans.woff2?v=3e02d74174") format("woff2");
+  src: url("../fonts/kaper-sans.woff2?v=a73582f447") format("woff2");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
@@ -41,7 +41,7 @@
 
 @font-face {
   font-family: "Archivo";
-  src: url("../fonts/kaper-sans-italic.woff2?v=3e02d74174") format("woff2");
+  src: url("../fonts/kaper-sans-italic.woff2?v=a73582f447") format("woff2");
   font-weight: 100 900;
   font-style: italic;
   font-display: swap;
@@ -269,7 +269,9 @@ h3 {
 
 .site-header__inner {
   display: flex;
-  min-height: 4.5rem;
+  /* The wordmark stands 39px and the navigation 37px: 72px of bar was mostly
+     air, on every page and at every scroll position. */
+  min-height: 3.5rem;
   align-items: center;
   justify-content: space-between;
   gap: 1.5rem;
@@ -933,7 +935,7 @@ main {
 }
 
 .page-hero--compact {
-  padding: clamp(1.5rem, 2.8vw, 2.15rem) 0 clamp(1.2rem, 2.2vw, 1.6rem);
+  padding: clamp(1.15rem, 2vw, 1.5rem) 0 clamp(0.95rem, 1.6vw, 1.2rem);
 }
 
 .page-hero--compact .page-hero__grid {
@@ -1654,7 +1656,7 @@ main {
 
 .timeline-chapter {
   position: sticky;
-  top: 4.5rem;
+  top: 3.5rem;
   z-index: 6;
   margin: clamp(2.2rem, 4vw, 3.4rem) 0 1.5rem;
   padding-left: calc(var(--timeline-rail) + var(--timeline-spine));
@@ -4477,7 +4479,7 @@ html:not(.js) .source-group__head {
   }
 
   .site-header__inner {
-    min-height: 4.15rem;
+    min-height: 3.35rem;
   }
 
   .brand__text small {
@@ -5766,4 +5768,10 @@ html:not(.js) .source-group__head {
   .site-footer__bottom {
     display: none !important;
   }
+}
+
+/* The first division opens the chronology rather than separating it from
+   something above, so it does not carry the gap the others need. */
+.timeline-chapter:first-child {
+  margin-top: 0;
 }
