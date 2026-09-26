@@ -17,7 +17,7 @@
    the swashed display forms can never appear by accident. */
 @font-face {
   font-family: "Fraunces";
-  src: url("../fonts/kaper-serif.woff2?v=5c233b4282") format("woff2");
+  src: url("../fonts/kaper-serif.woff2?v=db60fefb72") format("woff2");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
@@ -25,7 +25,7 @@
 
 @font-face {
   font-family: "Fraunces";
-  src: url("../fonts/kaper-serif-italic.woff2?v=5c233b4282") format("woff2");
+  src: url("../fonts/kaper-serif-italic.woff2?v=db60fefb72") format("woff2");
   font-weight: 100 900;
   font-style: italic;
   font-display: swap;
@@ -33,7 +33,7 @@
 
 @font-face {
   font-family: "Archivo";
-  src: url("../fonts/kaper-sans.woff2?v=5c233b4282") format("woff2");
+  src: url("../fonts/kaper-sans.woff2?v=db60fefb72") format("woff2");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
@@ -41,7 +41,7 @@
 
 @font-face {
   font-family: "Archivo";
-  src: url("../fonts/kaper-sans-italic.woff2?v=5c233b4282") format("woff2");
+  src: url("../fonts/kaper-sans-italic.woff2?v=db60fefb72") format("woff2");
   font-weight: 100 900;
   font-style: italic;
   font-display: swap;
@@ -390,16 +390,44 @@ main {
   padding: clamp(2.35rem, 4.4vw, 3.45rem) 0 clamp(2rem, 3.8vw, 3rem);
 }
 
-.hero::after {
+/* The home page's one ornament is generated from the chronology and printed
+   into the hero at build time; see the hero__span rules below. It replaced a
+   decorative circle whose radius was written here and overridden in home.css,
+   and which, on the only page that has a hero, ran through the portrait. */
+.hero__span {
   position: absolute;
-  top: 4rem;
-  right: max(-8rem, calc((100vw - 1180px) / 2 - 15rem));
-  width: min(46vw, 38rem);
-  aspect-ratio: 1;
-  border: 1px solid rgba(183, 139, 69, 0.35);
-  border-radius: 50%;
-  content: "";
+  right: 0;
+  bottom: 1.15rem;
+  left: 0;
   pointer-events: none;
+}
+
+/* The gold is a stroke here, never a text colour: on paper it reaches 2.4:1,
+   which is right for a hairline and wrong for type, and the palette guard in
+   the tests says so. */
+.hero__span-rule path {
+  stroke: var(--gold);
+}
+
+/* The mark needs the bottom of a two-column hero to stand in. Narrower than
+   this the copy runs the full width, the buttons drop into that band, and at
+   375px the rule was drawn across the second button at three pixels tall.
+   It is an ornament: where there is no room for it, there is none. */
+@media (max-width: 899px) {
+  .hero__span {
+    display: none;
+  }
+}
+
+/* The rule is a scale, so its length is free — and it has to be, because a
+   fixed one slid under the buttons as the column narrowed: 13px of clearance
+   at 700px against 287px at 1280. Tied to a share of the column instead, it
+   keeps to the space beside the copy at every width. */
+.hero__span-rule {
+  display: block;
+  width: min(28.75rem, 45%);
+  height: auto;
+  margin-left: auto;
 }
 
 .hero__grid {
@@ -4547,10 +4575,6 @@ html:not(.js) .source-group__head {
   .home-page .hero__portrait {
     width: min(70vw, 15rem);
     margin-inline: auto;
-  }
-
-  .hero::after {
-    display: none;
   }
 
   .stats,

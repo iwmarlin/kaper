@@ -14,13 +14,6 @@
     radial-gradient(circle at 82% 22%, rgba(183, 139, 69, 0.11), transparent 21rem);
 }
 
-.home-page .hero::after {
-  top: 3.25rem;
-  right: max(-10rem, calc((100vw - 1180px) / 2 - 17rem));
-  width: min(48vw, 40rem);
-  border-color: rgba(183, 139, 69, 0.28);
-}
-
 .home-page .hero__grid {
   grid-template-columns: minmax(0, 1.42fr) minmax(15.5rem, 0.58fr);
   align-items: center;
@@ -268,10 +261,6 @@
    */
   .home-page .hero {
     padding: 1.35rem 0 1.15rem;
-  }
-
-  .home-page .hero::after {
-    display: none;
   }
 
   .home-page .hero__grid {

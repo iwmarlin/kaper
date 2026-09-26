@@ -433,7 +433,7 @@ def replace_between(text: str, start: str, end: str, content: str) -> str:
     return pattern.sub(lambda _: f"{start}\n{content}\n{end}", text, count=1)
 
 
-HOME_SECTIONS = ("portrait", "pathways", "events", "figures")
+HOME_SECTIONS = ("portrait", "pathways", "events", "figures", "dates")
 SOCIAL_START_MARKER = "<!-- social-image:start -->"
 SOCIAL_END_MARKER = "<!-- social-image:end -->"
 # Every top-level page shares the site portrait. Its archival original is

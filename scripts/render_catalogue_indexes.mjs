@@ -139,6 +139,43 @@ function homeFigures(glance) {
 const timelineEvents = timeline.sortEvents(indexes.timeline.records);
 const timelineView = timeline.renderTimeline(timelineEvents, "highlights");
 
+// The one ornament on the home page is the chronology itself: the archive's
+// stated span, 1902 to 1939, ruled once, with a tick where each published
+// event falls. It is drawn from the same records the chronology draws, so it
+// cannot come to say something the archive does not. What it states is where
+// the evidence is, not how much of it there is — one event, one tick, no
+// heights to read as a quantity. The long emptiness after 1902 is the point:
+// the record begins at a birth certificate and then falls silent for thirteen
+// years, and the page says so before the reader has scrolled anywhere.
+const RULE_WIDTH = 460;
+const SPAN_START = Date.UTC(1902, 0, 1);
+const SPAN_END = Date.UTC(1940, 0, 1);
+
+function rulePosition(event) {
+  const raw = String(event.sortDate || event.dateStart || "").slice(0, 10);
+  const [year, month = "01", day = "01"] = raw.split("-");
+  const stamp = Date.UTC(Number(year), Number(month) - 1, Number(day));
+  if (!Number.isFinite(stamp)) return null;
+  const share = (stamp - SPAN_START) / (SPAN_END - SPAN_START);
+  return Math.round(Math.min(Math.max(share, 0), 1) * RULE_WIDTH * 10) / 10;
+}
+
+function ticks(events, top) {
+  const marks = events.map(rulePosition).filter((x) => x !== null);
+  return marks.map((x) => `M${x} ${top}V9.5`).join("");
+}
+
+function homeDateRule(events) {
+  const dated = events.filter((event) => rulePosition(event) !== null);
+  const milestones = dated.filter(timeline.isMilestone);
+  const rest = dated.filter((event) => !timeline.isMilestone(event));
+  return `<svg class="hero__span-rule" viewBox="0 0 ${RULE_WIDTH} 10" width="${RULE_WIDTH}" height="10" fill="none" shape-rendering="crispEdges" aria-hidden="true" focusable="false">`
+    + `<path d="M0 9.5H${RULE_WIDTH}" stroke-opacity="0.26"></path>`
+    + `<path d="${ticks(rest, 3.5)}" stroke-opacity="0.38"></path>`
+    + `<path d="${ticks(milestones, 0.5)}" stroke-opacity="0.52"></path>`
+    + `</svg>`;
+}
+
 // Without JavaScript a place cannot be selected on the map, so the printed list
 // leads to each place's own record instead.
 const placeList = mapPlaces.sortPlaces(placeRecords).map((place) => `
@@ -164,5 +201,6 @@ process.stdout.write(JSON.stringify({
     pathways: homePathways(indexes.home.pathways),
     events: homeEvents(indexes.home.events),
     figures: homeFigures(indexes.home.glance),
+    dates: homeDateRule(timelineEvents),
   },
 }));
