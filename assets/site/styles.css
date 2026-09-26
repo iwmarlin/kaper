@@ -17,7 +17,7 @@
    the swashed display forms can never appear by accident. */
 @font-face {
   font-family: "Fraunces";
-  src: url("../fonts/kaper-serif.woff2?v=db60fefb72") format("woff2");
+  src: url("../fonts/kaper-serif.woff2?v=70a516bf79") format("woff2");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
@@ -25,7 +25,7 @@
 
 @font-face {
   font-family: "Fraunces";
-  src: url("../fonts/kaper-serif-italic.woff2?v=db60fefb72") format("woff2");
+  src: url("../fonts/kaper-serif-italic.woff2?v=70a516bf79") format("woff2");
   font-weight: 100 900;
   font-style: italic;
   font-display: swap;
@@ -33,7 +33,7 @@
 
 @font-face {
   font-family: "Archivo";
-  src: url("../fonts/kaper-sans.woff2?v=db60fefb72") format("woff2");
+  src: url("../fonts/kaper-sans.woff2?v=70a516bf79") format("woff2");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
@@ -41,7 +41,7 @@
 
 @font-face {
   font-family: "Archivo";
-  src: url("../fonts/kaper-sans-italic.woff2?v=db60fefb72") format("woff2");
+  src: url("../fonts/kaper-sans-italic.woff2?v=70a516bf79") format("woff2");
   font-weight: 100 900;
   font-style: italic;
   font-display: swap;
@@ -390,44 +390,51 @@ main {
   padding: clamp(2.35rem, 4.4vw, 3.45rem) 0 clamp(2rem, 3.8vw, 3rem);
 }
 
-/* The home page's one ornament is generated from the chronology and printed
-   into the hero at build time; see the hero__span rules below. It replaced a
-   decorative circle whose radius was written here and overridden in home.css,
-   and which, on the only page that has a hero, ran through the portrait. */
-.hero__span {
+/* The hero's one ornament is an arc, as it always was — but drawn rather
+   than cut. The old one was a full circle that the section's own overflow
+   happened to slice, so the page decided where it ended: at 700px sixty-nine
+   per cent of what was drawn lay behind the portrait, and between a 1280px
+   window and a 1920px one the visible share grew from forty per cent of the
+   circle to sixty-three, because past 1404px its offset pulled it back
+   inside. This one is a path with two ends of its own, struck from the centre
+   of the photograph at a radius wider than the frame's half-diagonal, so it
+   cannot meet the picture at any width: the collision became the relation.
+   It is struck inside the frame and measured in the frame's own width — the
+   margins are percentages, which resolve against that width on both axes —
+   so it stays concentric while the column narrows. Fixed lengths did not:
+   below about 1150px the frame stops reaching 18.5rem, and a rem-sized arc
+   drifted off centre and crossed the lead at 1024. */
+.hero__arc {
   position: absolute;
-  right: 0;
-  bottom: 1.15rem;
-  left: 0;
+  top: 0;
+  left: 50%;
+  width: 180%;
+  /* The base rule caps every svg at the width of its container, which quietly
+     halved this one: 294px where 533 was asked for, and an arc 166px off the
+     centre it is struck from. */
+  max-width: none;
+  margin-top: -40%;
+  margin-left: -90%;
+  aspect-ratio: 1;
   pointer-events: none;
 }
 
-/* The gold is a stroke here, never a text colour: on paper it reaches 2.4:1,
+/* The gold is a stroke, never a text colour: on paper it reaches 2.4:1,
    which is right for a hairline and wrong for type, and the palette guard in
    the tests says so. */
-.hero__span-rule path {
+.hero__arc path {
   stroke: var(--gold);
 }
 
-/* The mark needs the bottom of a two-column hero to stand in. Narrower than
-   this the copy runs the full width, the buttons drop into that band, and at
-   375px the rule was drawn across the second button at three pixels tall.
-   It is an ornament: where there is no room for it, there is none. */
-@media (max-width: 899px) {
-  .hero__span {
+/* The gutter the arc stands in is what is left when the frame has reached its
+   full 18.5rem; below about 1150px the copy column goes on widening into it
+   and the stroke meets the lead — 54px of clearance at 1150, none at 1100.
+   Narrower still, the portrait is a thumbnail beside the title. An ornament
+   goes where there is room for it, or it does not go. */
+@media (max-width: 1149px) {
+  .hero__arc {
     display: none;
   }
-}
-
-/* The rule is a scale, so its length is free — and it has to be, because a
-   fixed one slid under the buttons as the column narrowed: 13px of clearance
-   at 700px against 287px at 1280. Tied to a share of the column instead, it
-   keeps to the space beside the copy at every width. */
-.hero__span-rule {
-  display: block;
-  width: min(28.75rem, 45%);
-  height: auto;
-  margin-left: auto;
 }
 
 .hero__grid {

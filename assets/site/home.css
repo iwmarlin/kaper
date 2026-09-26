@@ -86,9 +86,13 @@
   text-transform: uppercase;
 }
 
+/* The arc is struck inside this frame, so the frame cannot clip. Nothing
+   here needed clipping: the picture is inset by the frame's padding and
+   carries its own radius, which is what kept its corners. */
 .home-page .hero__portrait {
   width: min(100%, 18.5rem);
   padding: 0.42rem;
+  overflow: visible;
   border-color: rgba(169, 153, 132, 0.9);
   border-radius: var(--radius-sm);
   background: rgba(255, 253, 248, 0.76);

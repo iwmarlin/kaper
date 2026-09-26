@@ -1,11 +1,11 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=db60fefb72";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=70a516bf79";
 import {
   escapeHtml,
   periodBadge,
   recordUrl,
   renderMediaDisclosure,
   responsiveImage,
-} from "./core.js?v=db60fefb72";
+} from "./core.js?v=70a516bf79";
 
 // The timeline page and the build both render the chronology from this module,
 // so the printed first view and the interactive one cannot describe the same
