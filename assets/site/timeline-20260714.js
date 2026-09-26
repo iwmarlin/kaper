@@ -1,4 +1,4 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=2fb206d950";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=7925444a9b";
 import {
   debounce,
   humanize,
@@ -11,15 +11,15 @@ import {
   periodValues,
   registerImageDerivatives,
   renderError,
-} from "./core.js?v=2fb206d950";
-import { createQueryState } from "./catalogue-filters.js?v=2fb206d950";
+} from "./core.js?v=7925444a9b";
+import { createCatalogueFilters } from "./catalogue-filters.js?v=7925444a9b";
 import {
   GROUP_LABELS,
   GROUP_ORDER,
   eventGroup,
   renderTimeline,
   sortEvents,
-} from "./timeline-view.js?v=2fb206d950";
+} from "./timeline-view.js?v=7925444a9b";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 mountSiteChrome("timeline");
@@ -37,6 +37,14 @@ const viewControls = {
   all: document.querySelector("#timeline-view-all"),
 };
 const resetButton = document.querySelector("#timeline-reset");
+const filterToggle = document.querySelector("#timeline-filter-toggle");
+const advancedFilters = document.querySelector("#timeline-filter-options");
+const activeFilters = document.querySelector("#timeline-active-filters");
+const filterCount = document.querySelector("#timeline-filter-count");
+const filterOptions = [
+  { key: "category", label: "Category", defaultValue: "" },
+  { key: "period", label: "Period", defaultValue: "" },
+];
 const hasPrerenderedResults = target?.dataset.prerendered === "true";
 
 function addOptions(select, values, labeler = humanize, preserveOrder = false) {
@@ -85,7 +93,7 @@ try {
   }));
 
   let activeView = "highlights";
-  let timelineQueryState;
+  let filterController;
 
   function setView(view, { renderNow = true } = {}) {
     activeView = view === "all" ? "all" : "highlights";
@@ -111,31 +119,39 @@ try {
     countTarget.innerHTML = countHtml;
     target.innerHTML = markup;
     target.dataset.prerendered = "false";
-    // The other listings show their reset only once a filter is in force; this
-    // one offered to reset nothing at all, on every visit.
-    if (resetButton) {
-      resetButton.hidden = !controls.search.value.trim()
-        && !controls.category.value
-        && !controls.period.value;
-    }
-    timelineQueryState?.write();
+    filterController?.update();
+    filterController?.write();
   }
 
-  timelineQueryState = createQueryState({
-    ...controls,
-    view: {
-      getValue: () => activeView,
-      setValue: (value) => { activeView = value === "all" ? "all" : "highlights"; },
+  // The chronology joins the shell the other catalogues use: the search stays
+  // in reach, the facets fold behind a labelled toggle on a narrow screen, and
+  // the choices in force appear as chips that remove themselves. The view is
+  // registered as a field so it keeps its place in the address, but it is not
+  // a facet: choosing the full chronology is not a filter and earns no chip.
+  filterController = createCatalogueFilters({
+    controls: {
+      ...controls,
+      view: {
+        getValue: () => activeView,
+        setValue: (value) => { activeView = value === "all" ? "all" : "highlights"; },
+      },
     },
-  }, {
-    defaults: { search: "", category: "", period: "", view: "highlights" },
-    indexType: "event",
+    options: filterOptions,
+    toggle: filterToggle,
+    panel: advancedFilters,
+    activeFilters,
+    count: filterCount,
+    resetButton,
+    onChange: render,
     onRestore: () => {
       setView(activeView, { renderNow: false });
       render();
     },
+    fieldDefaults: { view: "highlights" },
+    toggleLabel: "Filters",
+    indexType: "event",
   });
-  timelineQueryState.read();
+  filterController.read();
   setView(activeView, { renderNow: false });
 
   controls.search?.addEventListener("input", debounce(() => {
@@ -185,6 +201,7 @@ try {
   viewControls.all?.addEventListener("click", () => setView("all"));
   resetButton?.addEventListener("click", () => {
     for (const control of Object.values(controls).filter(Boolean)) control.value = "";
+    filterController.close();
     setView("highlights", { renderNow: false });
     render();
   });

@@ -8,7 +8,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 
-# Works, People, Media and Sources each list a collection and each carries more controls
+# Works, People, Media, Sources and the Timeline each list a collection and each carries more controls
 # than fit a narrow screen. They share one pattern: the search field stays in
 # reach, the facets fold behind a labelled toggle, and the choices in force are
 # shown as chips that remove themselves.
@@ -17,6 +17,7 @@ LISTINGS = {
     "people.html": ("person", "assets/site/people.js"),
     "media.html": ("media", "assets/site/gallery.js"),
     "sources.html": ("source", "assets/site/sources.js"),
+    "life.html": ("timeline", "assets/site/timeline-20260714.js"),
 }
 
 
@@ -33,7 +34,11 @@ class ListingFilterContractTests(unittest.TestCase):
     def test_each_listing_uses_the_shared_filter_shell(self) -> None:
         for name, text in self.pages.items():
             with self.subTest(page=name):
-                self.assertIn('class="filters filters--catalogue"', text)
+                # A listing may add a modifier of its own — the chronology
+                # does not pin its bar — so the shell is checked by its
+                # classes, not by one spelling of the attribute.
+                shell = re.search(r'<section class="filters[^"]*"', text).group(0)
+                self.assertIn("filters--catalogue", shell)
                 self.assertIn("filters__shell", text)
                 self.assertIn("filters__search", text)
 
@@ -75,12 +80,13 @@ class ListingFilterContractTests(unittest.TestCase):
         self.assertIn("fieldValue(field) !== requestedValue", self.shared)
         self.assertIn('"(max-width: 900px)"', self.shared)
 
-    def test_timeline_and_map_share_the_same_query_state_layer(self) -> None:
-        for script in ("timeline-20260714.js", "map-explorer-20260714.js"):
-            source = (ROOT / "assets/site" / script).read_text(encoding="utf-8")
-            with self.subTest(script=script):
-                self.assertIn("createQueryState", source)
-                self.assertNotIn("new URLSearchParams", source)
+    def test_the_map_keeps_its_state_in_the_url_through_the_same_layer(self) -> None:
+        # The map is not a filtered listing — it has no facets to fold — but it
+        # holds a search and a chosen place, and those belong in the address
+        # through the same module rather than through a second implementation.
+        source = (ROOT / "assets/site/map-explorer-20260714.js").read_text(encoding="utf-8")
+        self.assertIn("createQueryState", source)
+        self.assertNotIn("new URLSearchParams", source)
 
 
 class WorksYearFacetTests(unittest.TestCase):
@@ -147,46 +153,44 @@ class ResetControlTests(unittest.TestCase):
                 self.assertIn("hidden", match.group(0))
 
     def test_the_timeline_and_the_map_reveal_it_the_same_way(self) -> None:
+        # The timeline now hands its reset to the shared controller, which
+        # reveals it exactly as it does on the four catalogues. The map is not
+        # a filtered listing and keeps the same rule of its own.
         timeline = (ROOT / "assets/site/timeline-20260714.js").read_text(encoding="utf-8")
-        self.assertIn("resetButton.hidden = !controls.search.value.trim()", timeline)
+        self.assertIn("createCatalogueFilters({", timeline)
+        self.assertIn("resetButton,", timeline)
         map_script = (ROOT / "assets/site/map-explorer-20260714.js").read_text(encoding="utf-8")
         self.assertIn("resetButton.hidden = !search.value.trim() && !selectedId", map_script)
         self.assertIn("resetSelection();", map_script)
 
 
 class TimelinePeriodFacetTests(unittest.TestCase):
-    """The chronology is organised by era: it opens with an era strip, breaks
-    into three chapters and prints a period badge on every entry. Until now the
-    strip only jumped, and the page could not be narrowed to one era — the one
-    index on the site without the period facet that works, media and people all
-    have. "life.html?period=hollywood" is now an address a footnote can carry."""
+    """The chronology is organised by era: it opens with a division per era and
+    prints a period badge on every entry, and it was the one index on the site
+    that could not be narrowed to one. "life.html?period=hollywood" is now an
+    address a footnote can carry."""
 
     @classmethod
     def setUpClass(cls) -> None:
         cls.page = (ROOT / "life.html").read_text(encoding="utf-8")
         cls.script = (ROOT / "assets/site/timeline-20260714.js").read_text(encoding="utf-8")
-        cls.shared = (ROOT / "assets/site/catalogue-filters.js").read_text(encoding="utf-8")
 
-    def test_the_control_sits_beside_the_other_two(self) -> None:
-        grid = re.search(
-            r'filters__grid--timeline.*?</section>', self.page, re.S
+    def test_the_control_sits_in_the_shared_facet_panel(self) -> None:
+        panel = re.search(
+            r'id="timeline-filter-options".*?</div>\s*<div class="active-filters"',
+            self.page,
+            re.S,
         ).group(0)
-        self.assertIn('<label for="timeline-period">Period</label>', grid)
+        self.assertIn('<label for="timeline-period">Period</label>', panel)
         self.assertIn(
             '<select id="timeline-period"><option value="">All periods</option></select>',
-            grid,
+            panel,
         )
 
-    def test_the_facet_filters_and_survives_in_the_url(self) -> None:
+    def test_the_facet_is_registered_like_every_other(self) -> None:
         self.assertIn('period: document.querySelector("#timeline-period")', self.script)
+        self.assertIn('{ key: "period", label: "Period", defaultValue: "" }', self.script)
         self.assertIn("matchesPeriod(event, controls.period.value)", self.script)
-        self.assertIn(
-            'defaults: { search: "", category: "", period: "", view: "highlights" }',
-            self.script,
-        )
-        # Without this the return link from an event record would call a
-        # period-filtered chronology unfiltered.
-        self.assertIn('filterKeys: ["search", "category", "period"]', self.shared)
 
     def test_the_eras_offered_are_the_eras_documented(self) -> None:
         events = json.loads(
@@ -196,11 +200,34 @@ class TimelinePeriodFacetTests(unittest.TestCase):
         self.assertEqual(documented, {"warsaw", "european", "hollywood"})
         self.assertIn("addOptions(\n    controls.period,", self.script)
 
-    def test_the_panel_declares_room_for_three_controls(self) -> None:
+    def test_the_panel_declares_room_for_its_two_facets(self) -> None:
         styles = (ROOT / "assets/site/styles.css").read_text(encoding="utf-8")
-        rule = styles.split(".filters__grid--timeline {", 1)[1].split("}", 1)[0]
-        columns = re.search(r"grid-template-columns:([^;]+);", rule).group(1)
-        self.assertEqual(columns.count("minmax("), 3)
+        rule = styles.split(".filters__advanced--timeline {", 1)[1].split("}", 1)[0]
+        self.assertEqual(rule.count("fr"), 2)
+
+
+class RestingViewTests(unittest.TestCase):
+    """The shared shell assumes a field is at rest when it is empty, which is
+    true of every facet and untrue of the chronology's view: "highlights" is
+    where the page starts. Without a stated default the shell wrote
+    "?view=highlights" into the address the first time anything redrew, so a
+    link copied from an untouched page carried a choice nobody made."""
+
+    def test_the_shell_lets_a_page_state_a_resting_value(self) -> None:
+        shell = (ROOT / "assets/site/catalogue-filters.js").read_text(encoding="utf-8")
+        self.assertIn("fieldDefaults = {},", shell)
+        body = shell.split("export function createCatalogueFilters({", 1)[1]
+        # A facet's own default must still win, so the overrides are applied
+        # before the options are read.
+        self.assertLess(
+            body.index("Object.assign(defaults, fieldDefaults);"),
+            body.index("for (const option of options) defaults[option.key]"),
+        )
+
+    def test_the_chronology_states_the_view_it_opens_in(self) -> None:
+        script = (ROOT / "assets/site/timeline-20260714.js").read_text(encoding="utf-8")
+        self.assertIn('fieldDefaults: { view: "highlights" },', script)
+        self.assertNotIn('{ key: "view"', script)
 
 
 class FacetPanelTrackTests(unittest.TestCase):

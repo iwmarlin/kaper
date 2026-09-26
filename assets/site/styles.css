@@ -17,7 +17,7 @@
    the swashed display forms can never appear by accident. */
 @font-face {
   font-family: "Fraunces";
-  src: url("../fonts/kaper-serif.woff2?v=2fb206d950") format("woff2");
+  src: url("../fonts/kaper-serif.woff2?v=7925444a9b") format("woff2");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
@@ -25,7 +25,7 @@
 
 @font-face {
   font-family: "Fraunces";
-  src: url("../fonts/kaper-serif-italic.woff2?v=2fb206d950") format("woff2");
+  src: url("../fonts/kaper-serif-italic.woff2?v=7925444a9b") format("woff2");
   font-weight: 100 900;
   font-style: italic;
   font-display: swap;
@@ -33,7 +33,7 @@
 
 @font-face {
   font-family: "Archivo";
-  src: url("../fonts/kaper-sans.woff2?v=2fb206d950") format("woff2");
+  src: url("../fonts/kaper-sans.woff2?v=7925444a9b") format("woff2");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
@@ -41,7 +41,7 @@
 
 @font-face {
   font-family: "Archivo";
-  src: url("../fonts/kaper-sans-italic.woff2?v=2fb206d950") format("woff2");
+  src: url("../fonts/kaper-sans-italic.woff2?v=7925444a9b") format("woff2");
   font-weight: 100 900;
   font-style: italic;
   font-display: swap;
@@ -1013,14 +1013,6 @@ main {
   grid-template-columns: minmax(12rem, 1.6fr) repeat(4, minmax(7.5rem, 1fr));
 }
 
-.filters__grid--timeline {
-  grid-template-columns: minmax(13rem, 1.5fr) minmax(9.5rem, 1.1fr) minmax(9.5rem, 1fr);
-  gap: 0.65rem 0.75rem;
-  align-items: end;
-  width: min(100%, 58rem);
-  margin-inline: auto;
-}
-
 @media (max-width: 900px) {
   .filters__grid--timeline {
     grid-template-columns: minmax(0, 1fr);
@@ -1053,6 +1045,12 @@ main {
    has to say. */
 .filters__advanced--works {
   grid-template-columns: 0.85fr 1.9fr 0.85fr 1fr 1.45fr;
+}
+
+/* Two facets, and the category names are the longer of the two: "Music &
+   performance" against "European · 1926–1934". */
+.filters__advanced--timeline {
+  grid-template-columns: 1.15fr 1fr;
 }
 
 .filters__advanced--people {
@@ -4325,10 +4323,6 @@ html:not(.js) .source-group__head {
 
   .filters__grid--works .field:last-child,
   .filters__grid--media .field:last-child {
-    grid-column: auto;
-  }
-
-  .filters__grid--timeline .field:last-child {
     grid-column: auto;
   }
 

@@ -104,7 +104,7 @@ class TimelinePrerenderTests(unittest.TestCase):
         self.assertRegex(
             styles, r"\.filters\.filters--unpinned\s*\{[^}]*position:\s*static;"
         )
-        self.assertIn('class="filters filters--unpinned"', self.page)
+        self.assertIn("filters--unpinned", self.page)
         # An opaque running head: the entry passing under it must not read
         # through it.
         inner = styles.split(".timeline-chapter__inner {", 1)[1].split("}", 1)[0]

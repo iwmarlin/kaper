@@ -10,9 +10,9 @@
   <meta property="og:title" content="Timeline — Bronisław Kaper, 1902–1939">
   <meta property="og:description" content="A documented chronology tracing Kaper's route from Warsaw to Hollywood through 1939.">
   <link rel="canonical" href="https://iwmarlin.github.io/kaper/life.html">
-  <link rel="preload" href="assets/fonts/kaper-sans.woff2?v=2fb206d950" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="assets/fonts/kaper-serif.woff2?v=2fb206d950" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/site/styles.css?v=2fb206d950">
+  <link rel="preload" href="assets/fonts/kaper-sans.woff2?v=7925444a9b" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/kaper-serif.woff2?v=7925444a9b" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/site/styles.css?v=7925444a9b">
   <title>Timeline — Bronisław Kaper, 1902–1939</title>
   <!-- social-image:start -->
   <meta property="og:image" content="https://iwmarlin.github.io/kaper/assets/generated/responsive/kaper-mature-f345031f5ef7/640.webp">
@@ -49,20 +49,27 @@
       </div>
     </section>
 
-    <section class="filters filters--unpinned" aria-label="Timeline filters">
-      <div class="shell filters__grid filters__grid--timeline">
-        <div class="field">
+    <section class="filters filters--catalogue filters--unpinned" aria-label="Timeline filters">
+      <div class="shell filters__shell filters__shell--timeline">
+        <div class="field filters__search">
           <label for="timeline-search">Search events</label>
           <input id="timeline-search" type="search" placeholder="Try Berlin, concert, MGM…" autocomplete="off">
         </div>
-        <div class="field">
-          <label for="timeline-category">Category</label>
-          <select id="timeline-category"><option value="">All categories</option></select>
+        <button class="filters__toggle" id="timeline-filter-toggle" type="button" aria-expanded="false" aria-controls="timeline-filter-options">
+          <span>Filters</span>
+          <span class="filters__toggle-count" id="timeline-filter-count" hidden>0</span>
+        </button>
+        <div class="filters__advanced filters__advanced--timeline" id="timeline-filter-options">
+          <div class="field">
+            <label for="timeline-category">Category</label>
+            <select id="timeline-category"><option value="">All categories</option></select>
+          </div>
+          <div class="field">
+            <label for="timeline-period">Period</label>
+            <select id="timeline-period"><option value="">All periods</option></select>
+          </div>
         </div>
-        <div class="field">
-          <label for="timeline-period">Period</label>
-          <select id="timeline-period"><option value="">All periods</option></select>
-        </div>
+        <div class="active-filters" id="timeline-active-filters" aria-label="Active chronology options" hidden></div>
       </div>
     </section>
 
@@ -495,6 +502,6 @@
     </section>
   </main>
   <footer class="site-footer" data-site-footer></footer>
-  <script type="module" src="assets/site/timeline-20260714.js?v=2fb206d950"></script>
+  <script type="module" src="assets/site/timeline-20260714.js?v=7925444a9b"></script>
 </body>
 </html>

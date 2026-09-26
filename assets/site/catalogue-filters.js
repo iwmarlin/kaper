@@ -1,4 +1,4 @@
-import { escapeHtml } from "./core.js?v=2fb206d950";
+import { escapeHtml } from "./core.js?v=7925444a9b";
 
 const INDEX_RETURN_PREFIX = "kaper:index-return:";
 
@@ -190,11 +190,16 @@ export function createCatalogueFilters({
   resetButton,
   onChange,
   onRestore = onChange,
+  fieldDefaults = {},
   toggleLabel = "Filters and sort",
   compactMediaQuery = "(max-width: 900px)",
   indexType = null,
 }) {
+  // A facet states its own default; fieldDefaults is for the fields that are
+  // not facets, so a page whose view or mode has a resting value can say so
+  // and keep that value out of the address.
   const defaults = Object.fromEntries(Object.keys(controls).map((key) => [key, ""]));
+  Object.assign(defaults, fieldDefaults);
   for (const option of options) defaults[option.key] = option.defaultValue;
   const queryState = createQueryState(controls, { defaults, onRestore, indexType });
   const compact = window.matchMedia?.(compactMediaQuery);
