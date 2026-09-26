@@ -125,6 +125,35 @@ class WorksYearFacetTests(unittest.TestCase):
         self.assertIn("addOptions(\n    controls.year,", self.script)
 
 
+class ResetControlTests(unittest.TestCase):
+    """Four listings hide their reset until a filter is in force. The timeline
+    showed one on every visit with nothing to reset, and the map — which also
+    carries its search and its chosen place in the address — had none at all."""
+
+    def test_every_page_that_filters_offers_a_reset(self) -> None:
+        for name, control in (
+            ("works.html", "reset-filters"),
+            ("people.html", "reset-filters"),
+            ("media.html", "media-reset"),
+            ("sources.html", "source-reset"),
+            ("life.html", "timeline-reset"),
+            ("map.html", "map-reset"),
+        ):
+            page = (ROOT / name).read_text(encoding="utf-8")
+            with self.subTest(page=name):
+                match = re.search(rf'<button[^>]*id="{control}"[^>]*>', page)
+                self.assertIsNotNone(match, "the page has no reset control")
+                self.assertIn("button--ghost", match.group(0))
+                self.assertIn("hidden", match.group(0))
+
+    def test_the_timeline_and_the_map_reveal_it_the_same_way(self) -> None:
+        timeline = (ROOT / "assets/site/timeline-20260714.js").read_text(encoding="utf-8")
+        self.assertIn("resetButton.hidden = !controls.search.value.trim()", timeline)
+        map_script = (ROOT / "assets/site/map-explorer-20260714.js").read_text(encoding="utf-8")
+        self.assertIn("resetButton.hidden = !search.value.trim() && !selectedId", map_script)
+        self.assertIn("resetSelection();", map_script)
+
+
 class TimelinePeriodFacetTests(unittest.TestCase):
     """The chronology is organised by era: it opens with an era strip, breaks
     into three chapters and prints a period badge on every entry. Until now the

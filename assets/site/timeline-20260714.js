@@ -1,4 +1,4 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=1b2c59e830";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=2fb206d950";
 import {
   debounce,
   humanize,
@@ -11,15 +11,15 @@ import {
   periodValues,
   registerImageDerivatives,
   renderError,
-} from "./core.js?v=1b2c59e830";
-import { createQueryState } from "./catalogue-filters.js?v=1b2c59e830";
+} from "./core.js?v=2fb206d950";
+import { createQueryState } from "./catalogue-filters.js?v=2fb206d950";
 import {
   GROUP_LABELS,
   GROUP_ORDER,
   eventGroup,
   renderTimeline,
   sortEvents,
-} from "./timeline-view.js?v=1b2c59e830";
+} from "./timeline-view.js?v=2fb206d950";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 mountSiteChrome("timeline");
@@ -36,6 +36,7 @@ const viewControls = {
   highlights: document.querySelector("#timeline-view-highlights"),
   all: document.querySelector("#timeline-view-all"),
 };
+const resetButton = document.querySelector("#timeline-reset");
 const hasPrerenderedResults = target?.dataset.prerendered === "true";
 
 function addOptions(select, values, labeler = humanize, preserveOrder = false) {
@@ -110,6 +111,13 @@ try {
     countTarget.innerHTML = countHtml;
     target.innerHTML = markup;
     target.dataset.prerendered = "false";
+    // The other listings show their reset only once a filter is in force; this
+    // one offered to reset nothing at all, on every visit.
+    if (resetButton) {
+      resetButton.hidden = !controls.search.value.trim()
+        && !controls.category.value
+        && !controls.period.value;
+    }
     timelineQueryState?.write();
   }
 
@@ -175,7 +183,7 @@ try {
   });
   viewControls.highlights?.addEventListener("click", () => setView("highlights"));
   viewControls.all?.addEventListener("click", () => setView("all"));
-  document.querySelector("#timeline-reset")?.addEventListener("click", () => {
+  resetButton?.addEventListener("click", () => {
     for (const control of Object.values(controls).filter(Boolean)) control.value = "";
     setView("highlights", { renderNow: false });
     render();

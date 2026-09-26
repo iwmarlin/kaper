@@ -10,8 +10,8 @@ import {
   periodValues,
   recordUrl,
   renderError,
-} from "./core.js?v=1b2c59e830";
-import { createQueryState } from "./catalogue-filters.js?v=1b2c59e830";
+} from "./core.js?v=2fb206d950";
+import { createQueryState } from "./catalogue-filters.js?v=2fb206d950";
 import {
   eventCount,
   normalizedPeriod,
@@ -19,12 +19,13 @@ import {
   placeListLabel,
   precisionMeta,
   sortPlaces,
-} from "./map-places.js?v=1b2c59e830";
+} from "./map-places.js?v=2fb206d950";
 
 mountSiteChrome("map");
 
 const listTarget = document.querySelector("#place-list");
 const countTarget = document.querySelector("#place-count");
+const resetButton = document.querySelector("#map-reset");
 const totalTarget = document.querySelector("#map-total");
 const search = document.querySelector("#place-search");
 const selectionPanel = document.querySelector("#place-selection");
@@ -532,6 +533,9 @@ try {
     )));
 
     countTarget.textContent = String(filtered.length);
+    // The map carries a search and a chosen place in its address like every
+    // other listing, and was the only one with no way to put them down.
+    if (resetButton) resetButton.hidden = !search.value.trim() && !selectedId;
     listTarget.innerHTML = filtered.length
       ? filtered.map((place) => `
             <li>
@@ -633,6 +637,13 @@ try {
     render();
     mapQueryState.write();
   }));
+  resetButton?.addEventListener("click", () => {
+    search.value = "";
+    resetSelection();
+    render();
+    mapQueryState.write();
+    search.focus({ preventScroll: true });
+  });
   bindResponsivePlacement();
   render();
   const initialPlace = publicPlaces.find((place) => place.id === selectedId);
