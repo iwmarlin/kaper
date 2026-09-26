@@ -163,6 +163,20 @@ class ResetControlTests(unittest.TestCase):
         self.assertIn("resetButton.hidden = !search.value.trim() && !selectedId", map_script)
         self.assertIn("resetSelection();", map_script)
 
+    def test_the_map_reset_follows_the_state_and_not_the_redraw(self) -> None:
+        """A place can be chosen from the map, from the list or by a shared
+        address, and none of those redraws the list. The rule therefore lives in
+        one function that every one of those paths calls, or the button stays
+        hidden while the address carries "?place=PL001"."""
+        script = (ROOT / "assets/site/map-explorer-20260714.js").read_text(encoding="utf-8")
+        self.assertEqual(script.count("function updateResetVisibility()"), 1)
+        self.assertEqual(
+            script.count("resetButton.hidden = !search.value.trim() && !selectedId"), 1
+        )
+        for owner in ("function selectPlace(", "function resetSelection(", "function render("):
+            body = script.split(owner, 1)[1].split("\nfunction ", 1)[0]
+            self.assertIn("updateResetVisibility();", body, owner)
+
 
 class TimelinePeriodFacetTests(unittest.TestCase):
     """The chronology is organised by era: it opens with a division per era and

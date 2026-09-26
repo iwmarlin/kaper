@@ -10,8 +10,8 @@ import {
   periodValues,
   recordUrl,
   renderError,
-} from "./core.js?v=7925444a9b";
-import { createQueryState } from "./catalogue-filters.js?v=7925444a9b";
+} from "./core.js?v=08da824fe4";
+import { createQueryState } from "./catalogue-filters.js?v=08da824fe4";
 import {
   eventCount,
   normalizedPeriod,
@@ -19,7 +19,7 @@ import {
   placeListLabel,
   precisionMeta,
   sortPlaces,
-} from "./map-places.js?v=7925444a9b";
+} from "./map-places.js?v=08da824fe4";
 
 mountSiteChrome("map");
 
@@ -122,6 +122,15 @@ function markerIcon(place, selected = false) {
   });
 }
 
+// The reset offers to put down whatever the address is carrying, so what it
+// watches is the state itself: a search, a chosen place, or both. Reading the
+// rule only while the list redrew left the button hidden for a place chosen
+// from the map, from the list, or by a shared "?place=…" address — three of
+// the four ways the map is ever in a state worth resetting.
+function updateResetVisibility() {
+  if (resetButton) resetButton.hidden = !search.value.trim() && !selectedId;
+}
+
 function resetSelection({ syncUrl = true } = {}) {
   if (selectedId) {
     const previous = markerById.get(selectedId);
@@ -146,6 +155,7 @@ function resetSelection({ syncUrl = true } = {}) {
   }
   selectionLink.hidden = true;
   if (selectionClose) selectionClose.hidden = true;
+  updateResetVisibility();
   if (syncUrl) mapQueryState?.write();
 }
 
@@ -230,6 +240,7 @@ function selectPlace(place, { moveMap = true, syncUrl = true } = {}) {
       keepMarkerAboveSelection(marker);
     }
   }
+  updateResetVisibility();
   if (syncUrl) mapQueryState?.write();
 }
 
@@ -535,7 +546,7 @@ try {
     countTarget.textContent = String(filtered.length);
     // The map carries a search and a chosen place in its address like every
     // other listing, and was the only one with no way to put them down.
-    if (resetButton) resetButton.hidden = !search.value.trim() && !selectedId;
+    updateResetVisibility();
     listTarget.innerHTML = filtered.length
       ? filtered.map((place) => `
             <li>
