@@ -17,7 +17,7 @@
    the swashed display forms can never appear by accident. */
 @font-face {
   font-family: "Fraunces";
-  src: url("../fonts/kaper-serif.woff2?v=70a516bf79") format("woff2");
+  src: url("../fonts/kaper-serif.woff2?v=788e2ff644") format("woff2");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
@@ -25,7 +25,7 @@
 
 @font-face {
   font-family: "Fraunces";
-  src: url("../fonts/kaper-serif-italic.woff2?v=70a516bf79") format("woff2");
+  src: url("../fonts/kaper-serif-italic.woff2?v=788e2ff644") format("woff2");
   font-weight: 100 900;
   font-style: italic;
   font-display: swap;
@@ -33,7 +33,7 @@
 
 @font-face {
   font-family: "Archivo";
-  src: url("../fonts/kaper-sans.woff2?v=70a516bf79") format("woff2");
+  src: url("../fonts/kaper-sans.woff2?v=788e2ff644") format("woff2");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
@@ -41,7 +41,7 @@
 
 @font-face {
   font-family: "Archivo";
-  src: url("../fonts/kaper-sans-italic.woff2?v=70a516bf79") format("woff2");
+  src: url("../fonts/kaper-sans-italic.woff2?v=788e2ff644") format("woff2");
   font-weight: 100 900;
   font-style: italic;
   font-display: swap;
@@ -399,6 +399,9 @@ main {
    inside. This one is a path with two ends of its own, struck from the centre
    of the photograph at a radius wider than the frame's half-diagonal, so it
    cannot meet the picture at any width: the collision became the relation.
+   Three of them, a hair over nine hundredths of the frame apart, because one
+   curve beside a photograph is a stray line and three are the grooves of a
+   shellac disc, with the picture sitting where the label goes.
    It is struck inside the frame and measured in the frame's own width — the
    margins are percentages, which resolve against that width on both axes —
    so it stays concentric while the column narrows. Fixed lengths did not:
@@ -408,13 +411,13 @@ main {
   position: absolute;
   top: 0;
   left: 50%;
-  width: 180%;
+  width: 196%;
   /* The base rule caps every svg at the width of its container, which quietly
      halved this one: 294px where 533 was asked for, and an arc 166px off the
      centre it is struck from. */
   max-width: none;
-  margin-top: -40%;
-  margin-left: -90%;
+  margin-top: -48%;
+  margin-left: -98%;
   aspect-ratio: 1;
   pointer-events: none;
 }

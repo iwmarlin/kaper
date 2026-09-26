@@ -40,6 +40,14 @@ class HeroArcTests(unittest.TestCase):
         cls.home = (ROOT / "assets/site/home.css").read_text(encoding="utf-8")
         cls.svg = re.search(r'<svg class="hero__arc".*?</svg>', cls.page, re.S).group(0)
         cls.box = rule_body(cls.css, ".hero__arc")
+        cls.paths = re.findall(r"<path [^>]*>", cls.svg)
+        # A radius in units of the frame's width: the box is a percentage of
+        # the frame and the viewBox is 200 units across it.
+        scale = percent(cls.box, "width") / 100 / 200
+        cls.radii = sorted(
+            round(float(match) * scale, 4)
+            for match in re.findall(r"A([\d.]+) [\d.]+ 0 0 1", cls.svg)
+        )
 
     def test_the_arc_is_drawn_and_not_a_clipped_circle(self) -> None:
         # A border-radius circle has no ends of its own, so the section's
@@ -47,7 +55,18 @@ class HeroArcTests(unittest.TestCase):
         self.assertIn("<path", self.svg)
         self.assertNotIn("border-radius", self.box)
         self.assertIn('vector-effect="non-scaling-stroke"', self.svg)
-        self.assertRegex(self.svg, r'd="M[\d.]+ [\d.]+A100 100 0 0 1 [\d.]+ [\d.]+"')
+        for path in self.paths:
+            self.assertRegex(path, r'd="M[\d.]+ [\d.]+A[\d.]+ [\d.]+ 0 0 1 [\d.]+ [\d.]+"')
+
+    def test_there_are_three_grooves_and_not_one_stray_curve(self) -> None:
+        # One curve beside a photograph is a line someone forgot to delete;
+        # three concentric ones are the grooves of a shellac disc, with the
+        # picture where the label goes.
+        self.assertEqual(len(self.paths), 3)
+        self.assertEqual(len(set(self.radii)), 3)
+        spacing = [round(b - a, 4) for a, b in zip(self.radii, self.radii[1:])]
+        # Evenly cut, or they read as an accident rather than a record.
+        self.assertLess(max(spacing) - min(spacing), 0.005)
 
     def test_the_arc_is_concentric_with_the_frame_at_any_width(self) -> None:
         """Margin percentages resolve against the containing block's width on
@@ -56,19 +75,20 @@ class HeroArcTests(unittest.TestCase):
         reaching 18.5rem, and the arc drifted off centre and crossed the lead
         at 1024px."""
         self.assertIn("position: absolute", self.box)
-        self.assertEqual(percent(self.box, "width"), 180)
+        box = percent(self.box, "width")
         self.assertEqual(percent(self.box, "left"), 50)
-        self.assertEqual(percent(self.box, "margin-left"), -90)
-        self.assertEqual(percent(self.box, "margin-top"), -40)
+        self.assertEqual(percent(self.box, "margin-left"), -box / 2)
+        self.assertEqual(percent(self.box, "margin-top"), 50 - box / 2)
         self.assertIn("aspect-ratio: 1", self.box)
 
-    def test_the_radius_beats_the_frame_so_they_never_meet(self) -> None:
-        # Radius is 0.9 of the frame's width. The frame measures 296 x 361 at
-        # its full size and stays about that proportion as it shrinks, so its
-        # half-diagonal in units of its own width is what the radius must beat.
-        radius = percent(self.box, "width") / 200
+    def test_every_groove_clears_the_frame_and_stays_in_its_viewport(self) -> None:
+        # The frame measures 296 x 361 where the arcs are drawn, so its
+        # half-diagonal in units of its own width is what the innermost radius
+        # must beat. The outermost has to stay inside the box it is drawn in,
+        # or a stroke on the boundary is painted at half its thickness.
         half_diagonal = math.hypot(0.5, (361 / 296) / 2)
-        self.assertGreater(radius, half_diagonal)
+        self.assertGreater(min(self.radii), half_diagonal)
+        self.assertLess(max(self.radii), percent(self.box, "width") / 200)
 
     def test_the_frame_no_longer_clips_what_is_struck_inside_it(self) -> None:
         # Safe because the picture is inset by the frame's padding and carries
