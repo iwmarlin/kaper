@@ -10,9 +10,9 @@ import {
   periodValues,
   recordUrl,
   renderError,
-} from "./core.js?v=6a30f9ae08";
-import { createQueryState } from "./catalogue-filters.js?v=6a30f9ae08";
-import { HISTORICAL_PLATE_VARIANTS } from "./map-plate.js?v=6a30f9ae08";
+} from "./core.js?v=ae0f2c454b";
+import { createQueryState } from "./catalogue-filters.js?v=ae0f2c454b";
+import { HISTORICAL_PLATE_VARIANTS } from "./map-plate.js?v=ae0f2c454b";
 import {
   eventCount,
   evidenceSummary,
@@ -21,7 +21,7 @@ import {
   placeListLabel,
   precisionMeta,
   sortPlaces,
-} from "./map-places.js?v=6a30f9ae08";
+} from "./map-places.js?v=ae0f2c454b";
 
 mountSiteChrome("map");
 
@@ -186,6 +186,21 @@ function resetSelection({ syncUrl = true } = {}) {
   if (syncUrl) mapQueryState?.write();
 }
 
+/* Where the cluster plugin reveals a marker is wherever the group happened to
+   open: a place chosen from the list landed 280px below the centre of the
+   canvas and 106px to the right of it, near the bottom edge. On a wide screen
+   the chosen place is simply centred. On a phone the details card covers the
+   lower part of the map, which is what keepMarkerAboveSelection is for. */
+function centreOnMarker(marker) {
+  if (!map || !marker || compactMapLayout?.matches) return;
+  window.requestAnimationFrame(() => {
+    if (compactMapLayout?.matches) return;
+    map.panTo(marker.getLatLng(), {
+      animate: !window.matchMedia?.("(prefers-reduced-motion: reduce)").matches,
+    });
+  });
+}
+
 function keepMarkerAboveSelection(marker) {
   if (!map || !marker || !selectionPanel || !compactMapLayout?.matches) return;
   window.requestAnimationFrame(() => {
@@ -249,6 +264,7 @@ function selectPlace(place, { moveMap = true, syncUrl = true } = {}) {
           marker.setIcon(markerIcon(place, true));
           marker.setZIndexOffset(1000);
           marker.openTooltip();
+          centreOnMarker(marker);
           keepMarkerAboveSelection(marker);
         });
       } else {
@@ -263,6 +279,7 @@ function selectPlace(place, { moveMap = true, syncUrl = true } = {}) {
         keepMarkerAboveSelection(marker);
       }
     } else {
+      centreOnMarker(marker);
       keepMarkerAboveSelection(marker);
     }
   }
@@ -667,12 +684,24 @@ try {
   // selected on a map several hundred pixels above the screen. The page now
   // brings the map back into view, clear of the sticky site header.
   function revealMap() {
-    const canvas = document.querySelector(".map-canvas");
-    if (!canvas || !compactMapLayout?.matches) return;
+    // On a phone the list sits below the map. On a wide screen it sits below
+    // the details panel, in the same column — so reaching any entry scrolls
+    // that panel off the top, and choosing a place then answered 193px above
+    // the window: the name, the precision, the periods, the note and the link
+    // to the record, all out of sight, on a map only two thirds in view. The
+    // whole explorer is brought back either way; there is nothing to choose
+    // from once it is on screen.
+    const target = compactMapLayout?.matches
+      ? document.querySelector(".map-canvas")
+      : document.querySelector(".map-explorer");
+    if (!target) return;
     const header = document.querySelector("[data-site-header]");
     const offset = header ? header.getBoundingClientRect().height : 0;
+    const box = target.getBoundingClientRect();
+    const alreadyInView = box.top >= offset && box.bottom <= window.innerHeight;
+    if (alreadyInView) return;
     window.scrollTo({
-      top: canvas.getBoundingClientRect().top + window.scrollY - offset - 8,
+      top: box.top + window.scrollY - offset - 8,
       behavior: window.matchMedia?.("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
     });
   }

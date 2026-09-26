@@ -62,6 +62,37 @@ class ExplorerFitsTheScreenTests(unittest.TestCase):
         self.assertFalse(any("grid-template-columns: 1fr;" in body for body in bodies), bodies)
 
 
+class ChoosingAPlaceIsAnsweredWhereTheReaderLooksTests(unittest.TestCase):
+    """On a wide screen the place list sits below the details panel in the same
+    column, so reaching any entry scrolls that panel off the top. Choosing a
+    place then answered 193px above the window — name, precision, periods, note
+    and the link to the record, all out of sight — on a map two thirds in view,
+    with the chosen place 280px below its centre. Clicking appeared to do
+    nothing."""
+
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls.script = EXPLORER.read_text(encoding="utf-8")
+        cls.reveal = cls.script.split("function revealMap()", 1)[1].split("\n  }", 1)[0]
+        cls.centre = cls.script.split("function centreOnMarker(marker)", 1)[1].split("\n}", 1)[0]
+
+    def test_the_whole_explorer_is_brought_back_on_a_wide_screen(self) -> None:
+        self.assertIn('document.querySelector(".map-explorer")', self.reveal)
+        # A phone keeps the canvas, which is what sits above its list.
+        self.assertIn('document.querySelector(".map-canvas")', self.reveal)
+        self.assertIn("compactMapLayout?.matches", self.reveal)
+
+    def test_a_view_that_is_already_whole_is_left_alone(self) -> None:
+        self.assertIn("alreadyInView", self.reveal)
+        self.assertIn("if (alreadyInView) return;", self.reveal)
+
+    def test_the_chosen_place_is_centred_where_the_card_does_not_cover_it(self) -> None:
+        self.assertIn("map.panTo(marker.getLatLng()", self.centre)
+        self.assertIn("compactMapLayout?.matches) return;", self.centre)
+        # Both ways of revealing a marker end in the same place.
+        self.assertEqual(self.script.count("centreOnMarker(marker);"), 2)
+
+
 class ClusterNameTests(unittest.TestCase):
     """Every place marker carries its own name. A cluster carried a numeral,
     and the plugin makes its shell role="button" and tabbable, so a screen
