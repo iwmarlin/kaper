@@ -1,4 +1,4 @@
-import { escapeHtml, humanize, PERIOD_ORDER, periodValues } from "./core.js?v=788e2ff644";
+import { escapeHtml, humanize, PERIOD_ORDER, periodValues } from "./core.js?v=6a30f9ae08";
 
 // The map page and the build both list the documented places from this module,
 // so the list printed for a reader without JavaScript matches the interactive one.
@@ -55,9 +55,21 @@ export function sortPlaces(places) {
   ));
 }
 
+/* Forty-four of the forty-five places carry dated events. The forty-fifth,
+   the Morskie Oko revue theatre, is on the map because a song of Kaper's was
+   sung there, which three sources attest and no timeline event records — so
+   saying "0 linked events" about it stated an absence instead of the evidence
+   there is. */
+export function evidenceSummary(place) {
+  const events = eventCount(place);
+  if (events) return `${events} linked ${events === 1 ? "event" : "events"}`;
+  const sources = (place.sourceIds || []).length;
+  if (sources) return `no dated event; ${sources} linked ${sources === 1 ? "source" : "sources"}`;
+  return "no linked records";
+}
+
 export function placeListLabel(place) {
-  const linkedEvents = eventCount(place);
-  return `${place.displayName}; ${precisionMeta(place).label}; ${linkedEvents} linked ${linkedEvents === 1 ? "event" : "events"}`;
+  return `${place.displayName}; ${precisionMeta(place).label}; ${evidenceSummary(place)}`;
 }
 
 export function placeListContent(place) {
@@ -69,5 +81,5 @@ export function placeListContent(place) {
                   <small>${escapeHtml([location, humanize(place.placeType)].filter(Boolean).join(" · "))}</small>
                   <span class="place-list__precision">${escapeHtml(precisionMeta(place).shortLabel)}</span>
                 </span>
-                <span class="place-list__count" aria-label="${linkedEvents} linked ${linkedEvents === 1 ? "event" : "events"}">${linkedEvents}</span>`;
+                <span class="place-list__count" aria-label="${escapeHtml(evidenceSummary(place))}">${linkedEvents || "·"}</span>`;
 }

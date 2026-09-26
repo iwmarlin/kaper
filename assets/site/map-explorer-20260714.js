@@ -10,16 +10,18 @@ import {
   periodValues,
   recordUrl,
   renderError,
-} from "./core.js?v=788e2ff644";
-import { createQueryState } from "./catalogue-filters.js?v=788e2ff644";
+} from "./core.js?v=6a30f9ae08";
+import { createQueryState } from "./catalogue-filters.js?v=6a30f9ae08";
+import { HISTORICAL_PLATE_VARIANTS } from "./map-plate.js?v=6a30f9ae08";
 import {
   eventCount,
+  evidenceSummary,
   normalizedPeriod,
   placeListContent,
   placeListLabel,
   precisionMeta,
   sortPlaces,
-} from "./map-places.js?v=788e2ff644";
+} from "./map-places.js?v=6a30f9ae08";
 
 mountSiteChrome("map");
 
@@ -61,6 +63,21 @@ const REFERENCE_FULL_ZOOM = 5;
 const HISTORICAL_ATTRIBUTION = '<a href="https://www.davidrumsey.com/luna/servlet/detail/RUMSEY~8~1~363901~90131510%3AThe-world-on-Mercator-s-projection-" target="_blank" rel="noopener">Edward Stanford Ltd., 1926</a> · David Rumsey Map Collection';
 const REFERENCE_ATTRIBUTION = '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors';
 const STANFORD_MAP_BOUNDS = [[-70.1, -195.5], [84.5, 183.2]];
+const HISTORICAL_PLATE = "assets/images/maps/world-1926-stanford-mercator.jpg";
+const HISTORICAL_PLATE_FULL = "assets/images/maps/world-1926-stanford-mercator.webp";
+
+/* The 1926 sheet is 2200px and was sent whole to every device, 633KB of it to
+   a 353px phone canvas. It now takes the same derivatives as every other image
+   in the archive, and the plate is chosen for the canvas it will be drawn on:
+   at the opening view Leaflet draws it about a third wider than the canvas,
+   and a screen asks for it again per device pixel. A desktop at 2x still gets
+   the full sheet, which is the right answer for that screen. */
+function historicalPlateUrl(container) {
+  const width = container?.clientWidth || 900;
+  const needed = width * 1.35 * Math.min(window.devicePixelRatio || 1, 2);
+  const variant = HISTORICAL_PLATE_VARIANTS.find((candidate) => candidate.width >= needed);
+  return variant ? variant.path : HISTORICAL_PLATE_FULL;
+}
 
 function linkedPeriodLabel(place) {
   return periodValues(place).map(periodLabel).join(" · ");
@@ -131,6 +148,16 @@ function updateResetVisibility() {
   if (resetButton) resetButton.hidden = !search.value.trim() && !selectedId;
 }
 
+function nameClusters() {
+  for (const shell of document.querySelectorAll(".map-cluster-shell")) {
+    const count = Number(shell.textContent.trim());
+    if (!Number.isFinite(count) || count < 1) continue;
+    const label = `${count} ${count === 1 ? "place" : "places"} grouped here; open to separate them`;
+    shell.setAttribute("aria-label", label);
+    shell.setAttribute("title", label);
+  }
+}
+
 function resetSelection({ syncUrl = true } = {}) {
   if (selectedId) {
     const previous = markerById.get(selectedId);
@@ -191,8 +218,7 @@ function selectPlace(place, { moveMap = true, syncUrl = true } = {}) {
   selectionKicker.textContent = humanize(place.placeType || "Documented place");
   selectionTitle.textContent = place.displayName;
   const location = [place.city, place.country].filter(Boolean).join(", ");
-  const linkedEvents = eventCount(place);
-  selectionMeta.textContent = [location, humanize(place.placeType), `${linkedEvents} linked ${linkedEvents === 1 ? "event" : "events"}`]
+  selectionMeta.textContent = [location, humanize(place.placeType), evidenceSummary(place)]
     .filter(Boolean)
     .join(" · ");
   if (selectionFacts && selectionPrecision && selectionPeriods) {
@@ -276,7 +302,7 @@ try {
     historicalPane.style.zIndex = "250";
     historicalPane.style.pointerEvents = "none";
     historicalBasemap = window.L.imageOverlay(
-      "assets/images/maps/world-1926-stanford-mercator.webp",
+      historicalPlateUrl(document.querySelector("#research-map")),
       STANFORD_MAP_BOUNDS,
       {
         pane: "historicalBasemap",
@@ -289,7 +315,7 @@ try {
       // A browser that cannot read WebP still gets the plate.
       if (!historicalFallbackTried) {
         historicalFallbackTried = true;
-        historicalBasemap.setUrl("assets/images/maps/world-1926-stanford-mercator.jpg");
+        historicalBasemap.setUrl(HISTORICAL_PLATE);
         return;
       }
       historicalBasemapAvailable = false;
@@ -297,7 +323,6 @@ try {
     });
     map.on("zoomanim", (event) => updateBasemap(event.zoom));
     map.on("zoomend", () => updateBasemap(map.getZoom()));
-
     markerLayer = window.L.markerClusterGroup
       ? window.L.markerClusterGroup({
           showCoverageOnHover: false,
@@ -307,13 +332,20 @@ try {
             const count = cluster.getChildCount();
             return window.L.divIcon({
               className: "map-cluster-shell",
-              html: `<span class="map-cluster" aria-label="${count} nearby places">${count}</span>`,
+              html: `<span class="map-cluster" aria-hidden="true">${count}</span>`,
               iconSize: [44, 44],
               iconAnchor: [22, 22],
             });
           },
         }).addTo(map)
       : window.L.layerGroup().addTo(map);
+    // Every place marker carries its own name, and a cluster carried a
+    // numeral: the plugin makes the shell role="button" and tabbable, so a
+    // screen reader announced "12, button". The label has to sit on that
+    // shell, not on the span inside it, and the shells are rebuilt whenever
+    // the map moves — so this runs after every move, and after every redraw.
+    for (const event of ["zoomend", "moveend"]) map.on(event, nameClusters);
+    markerLayer.on?.("animationend", nameClusters);
   } else {
     document.querySelector("#research-map").innerHTML = `<div class="map-fallback"><div><h2>Interactive map unavailable</h2><p>Use the complete searchable place list alongside the map.</p></div></div>`;
   }
@@ -592,6 +624,7 @@ try {
       markerById.set(place.id, marker);
       bounds.push([place.latitude, place.longitude]);
     }
+    requestAnimationFrame(nameClusters);
 
     // Typing used to refit the view on every keystroke, and because a zoom
     // change swaps the 1926 sheet for the modern reference layer, the basemap

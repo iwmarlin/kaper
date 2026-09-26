@@ -17,7 +17,7 @@
    the swashed display forms can never appear by accident. */
 @font-face {
   font-family: "Fraunces";
-  src: url("../fonts/kaper-serif.woff2?v=788e2ff644") format("woff2");
+  src: url("../fonts/kaper-serif.woff2?v=6a30f9ae08") format("woff2");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
@@ -25,7 +25,7 @@
 
 @font-face {
   font-family: "Fraunces";
-  src: url("../fonts/kaper-serif-italic.woff2?v=788e2ff644") format("woff2");
+  src: url("../fonts/kaper-serif-italic.woff2?v=6a30f9ae08") format("woff2");
   font-weight: 100 900;
   font-style: italic;
   font-display: swap;
@@ -33,7 +33,7 @@
 
 @font-face {
   font-family: "Archivo";
-  src: url("../fonts/kaper-sans.woff2?v=788e2ff644") format("woff2");
+  src: url("../fonts/kaper-sans.woff2?v=6a30f9ae08") format("woff2");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
@@ -41,7 +41,7 @@
 
 @font-face {
   font-family: "Archivo";
-  src: url("../fonts/kaper-sans-italic.woff2?v=788e2ff644") format("woff2");
+  src: url("../fonts/kaper-sans-italic.woff2?v=6a30f9ae08") format("woff2");
   font-weight: 100 900;
   font-style: italic;
   font-display: swap;
@@ -2030,9 +2030,10 @@ main {
 
 
 
-.map-hero {
-  padding: clamp(2rem, 3.6vw, 2.8rem) 0 clamp(1.6rem, 2.8vw, 2.1rem);
-}
+/* Padding comes from .page-hero--compact, which this hero now carries: the
+   map is the page, and 337px of masthead above it was pushing the instrument
+   under the fold. */
+
 
 .map-hero__grid {
   display: grid;
@@ -2105,10 +2106,15 @@ main {
   gap: 0.75rem;
 }
 
+/* The explorer is the page's instrument, and a fixed 44rem left it cut by the
+   fold on the screens most people have: at 1366x768, 267 of its 704px were
+   visible on arrival and the rest took a 436px scroll — while scrolling the
+   page is also how one reaches the map to use it. Bounded by the window, it
+   always fits the screen once it is reached. */
 .map-explorer {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(19rem, 0.36fr);
-  height: 44rem;
+  height: min(44rem, calc(100svh - 6rem));
   border: 1px solid var(--line);
   border-radius: var(--radius-lg);
   background: var(--surface);
@@ -2205,7 +2211,7 @@ main {
 
 .map-selection {
   position: relative;
-  min-height: 10rem;
+  min-height: 0;
   padding: 1rem;
   border-bottom: 1px solid var(--line);
 }
@@ -2628,11 +2634,22 @@ main {
   text-align: center;
 }
 
+.map-method-note > p + p {
+  margin-top: 0.7rem;
+}
+
 .map-method-note {
   max-width: 58rem;
   margin: 0.9rem 0 0;
   color: var(--ink-soft);
   font-size: var(--fs-4);
+}
+
+@media (max-width: 680px) {
+  .map-route-toggle {
+    width: auto;
+    white-space: nowrap;
+  }
 }
 
 .map-route-toggle {
@@ -4681,8 +4698,12 @@ html:not(.js) .source-group__head {
     margin-top: 0;
   }
 
+  /* Two full-width fields stacked made a 218px toolbar between the heading
+     and the map, on a page where the map already began 732px down. They fit
+     one row: the button asks for about 7rem of the 22rem available. */
   .map-toolbar__controls {
-    grid-template-columns: 1fr;
+    align-items: end;
+    grid-template-columns: minmax(0, 1fr) auto;
   }
 
   .map-canvas {

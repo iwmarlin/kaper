@@ -10,9 +10,9 @@
   <meta property="og:title" content="Map — Bronisław Kaper, 1902–1939">
   <meta property="og:description" content="A source-linked map of cities, venues, addresses and studios in Kaper's documented early career.">
   <link rel="canonical" href="https://iwmarlin.github.io/kaper/map.html">
-  <link rel="preload" href="assets/fonts/kaper-sans.woff2?v=788e2ff644" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="assets/fonts/kaper-serif.woff2?v=788e2ff644" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/site/styles.css?v=788e2ff644">
+  <link rel="preload" href="assets/fonts/kaper-sans.woff2?v=6a30f9ae08" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/kaper-serif.woff2?v=6a30f9ae08" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/site/styles.css?v=6a30f9ae08">
   <link rel="stylesheet" href="assets/vendor/leaflet-1.9.4.css">
   <link rel="stylesheet" href="assets/vendor/markercluster-1.5.3.css">
   <title>Map — Bronisław Kaper, 1902–1939</title>
@@ -34,14 +34,14 @@
     <a class="skip-link" href="#main-content">Skip to main content</a>
   <header class="site-header" data-site-header></header>
   <main id="main-content">
-    <section class="page-hero map-hero">
+    <section class="page-hero page-hero--compact map-hero">
       <div class="shell map-hero__grid">
         <div>
           <p class="eyebrow">Research geography</p>
           <h1>Places and routes</h1>
           <p class="lead">Explore the cities, addresses, venues and studios that shaped Kaper’s documented career through 1939.</p>
         </div>
-          <div class="scope-note">A place is here because a documented event happened there. Where a coordinate is approximate, the record says so.</div>
+          <div class="scope-note">A place is here because the archive ties evidence to it — a dated event, or a work documented at that address. Where a coordinate is approximate, the record says so.</div>
         <div class="map-hero__summary">
           <strong id="map-total">45</strong>
           <span>documented places across Europe and North America</span>
@@ -565,13 +565,13 @@
               </a>
             </li>
             <li>
-              <a href="records/place/PL018/" aria-label="Teatr Morskie Oko, Jasna 3 / Sienkiewicza 7, Warsaw; Venue-level coordinates; 0 linked events">
+              <a href="records/place/PL018/" aria-label="Teatr Morskie Oko, Jasna 3 / Sienkiewicza 7, Warsaw; Venue-level coordinates; no dated event; 3 linked sources">
                 <span class="place-list__main">
                   <strong>Teatr Morskie Oko, Jasna 3 / Sienkiewicza 7, Warsaw</strong>
                   <small>Warsaw, Poland · Venue</small>
                   <span class="place-list__precision">Venue level</span>
                 </span>
-                <span class="place-list__count" aria-label="0 linked events">0</span>
+                <span class="place-list__count" aria-label="no dated event; 3 linked sources">·</span>
               </a>
             </li>
 <!-- place-list:end -->
@@ -588,13 +588,17 @@
           </div>
           <ol class="route-stage-list" id="route-stages"></ol>
         </section>
-        <p class="map-method-note">The overview uses Edward Stanford Ltd.'s 1926 world map. At closer zoom levels it fades into a present-day geographic reference so that addresses remain legible; this reference does not reconstruct the historical street network. Marker shapes disclose coordinate precision, from address or venue level to approximate historical sites and city or district reference points. Colours represent the dated periods of linked events—not independent evidence that Kaper was physically present in every period shown. Nearby places are grouped until the map is enlarged, and larger markers carry more linked events. The historical layer is visually aligned to the modern coordinate frame and is not georeferenced to survey accuracy: the 1926 sheet is stretched to a single bounding rectangle rather than warped to control points, so positions on it are indicative and markers are placed from modern coordinates, not read off the old map.</p>
+        <div class="map-method-note">
+          <p>The overview is Edward Stanford Ltd.'s 1926 world map. At closer zoom it fades into a present-day geographic reference so that addresses stay legible; that reference does not reconstruct the historical street network.</p>
+          <p>A marker's shape says how precisely the place is located — an address or venue, an approximate historical site, a city or district reference point — and its size follows the number of linked events. Colours are the periods of those events, not evidence that Kaper was present in every period shown. Nearby places stay grouped until the map is enlarged.</p>
+          <p>The 1926 sheet is stretched to a single bounding rectangle rather than warped to control points: it is aligned to the modern coordinate frame but not georeferenced to survey accuracy. Positions read off the old sheet are indicative, and every marker is placed from modern coordinates.</p>
+        </div>
       </div>
     </section>
   </main>
   <footer class="site-footer" data-site-footer></footer>
   <script src="assets/vendor/leaflet-1.9.4.js"></script>
   <script src="assets/vendor/markercluster-1.5.3.js"></script>
-  <script type="module" src="assets/site/map-explorer-20260714.js?v=788e2ff644"></script>
+  <script type="module" src="assets/site/map-explorer-20260714.js?v=6a30f9ae08"></script>
 </body>
 </html>
