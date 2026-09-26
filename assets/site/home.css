@@ -112,7 +112,7 @@
 
 .home-page .hero__portrait figcaption {
   padding: 0.7rem 0.35rem 0.25rem;
-  font-size: 0.7rem;
+  font-size: 0.72rem;
   line-height: 1.45;
 }
 
@@ -342,7 +342,7 @@
     clip: auto;
     white-space: normal;
     border: 0;
-    font-size: 0.6rem;
+    font-size: 0.72rem;
     line-height: 1.2;
     text-align: center;
   }
@@ -396,7 +396,7 @@
     width: 100%;
     min-height: 2.55rem;
     padding: 0.52rem 0.7rem;
-    font-size: 0.77rem;
+    font-size: 0.82rem;
   }
 
   .home-page .home-pathways {
@@ -420,7 +420,7 @@
 
   .home-page .pathways-intro > p:not(.eyebrow) {
     max-width: 31rem;
-    font-size: 0.73rem;
+    font-size: 0.82rem;
     line-height: 1.45;
   }
 
@@ -440,7 +440,7 @@
   }
 
   .home-page .pathway-row__description {
-    font-size: 0.7rem;
+    font-size: 0.78rem;
     line-height: 1.35;
   }
 
@@ -480,7 +480,7 @@
   }
 
   .home-page .hero__actions .button {
-    font-size: 0.73rem;
+    font-size: 0.8rem;
   }
 }
 
@@ -517,6 +517,6 @@
   }
 
   .home-page .pathway-row__description {
-    font-size: 0.76rem;
+    font-size: 0.8rem;
   }
 }
