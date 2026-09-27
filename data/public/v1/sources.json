@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 809,
+  "count": 810,
   "records": [
     {
       "id": "SRC0001",
@@ -591,7 +591,10 @@
         "CON-S022-PUB-ORG051"
       ],
       "primaryUrl": "https://bcul.lib.uni.lodz.pl/dlibra/publication/321/edition/187/content",
-      "accessUrl": "https://bcul.lib.uni.lodz.pl/dlibra/publication/321/edition/187/content?ref=struct"
+      "accessUrl": "https://bcul.lib.uni.lodz.pl/dlibra/publication/321/edition/187/content?ref=struct",
+      "timelineEventIds": [
+        "TE0060"
+      ]
     },
     {
       "id": "SRC0020",
@@ -14054,6 +14057,9 @@
           "url": "http://www.kppg.waw.pl/2022/record.php?plyta=38004",
           "role": "catalogue_entry"
         }
+      ],
+      "timelineEventIds": [
+        "TE0060"
       ]
     },
     {
@@ -30368,6 +30374,32 @@
         "P083"
       ],
       "primaryUrl": "https://anno.onb.ac.at/cgi-content/anno?aid=std&datum=19260701&seite=7"
+    },
+    {
+      "id": "SRC0902",
+      "shortCitation": "Gwiazdy Warszawy announcement — Kurjer Warszawski",
+      "fullCitation": "[Announcement of the revue Gwiazdy Warszawy at Morskie Oko]. Kurjer Warszawski (Warsaw), vol. 110, no. 25, 26 January 1930, p. 10. Biblioteka Narodowa / Polona.",
+      "sourceType": "press_item",
+      "title": "Gwiazdy Warszawy announcement — Kurjer Warszawski, 26 January 1930",
+      "repository": "Biblioteka Narodowa / Polona",
+      "publication": "Kurjer Warszawski",
+      "date": "1930-01-26",
+      "dateRole": "publication",
+      "dateQualifier": "confirmed",
+      "accessDate": "2026-09-27",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "slug": "src0902-kurier-warszawski-gwiazdy-warszawy-1930",
+      "primaryUrl": "https://polona.pl/item-view/6b121db5-8ba6-4046-b1fd-c5da6e3f2f94?page=9",
+      "accessUrl": "https://polona.pl/item-view/6b121db5-8ba6-4046-b1fd-c5da6e3f2f94?page=9&searchQuery=%22Gwiazdy%20warszawy%22",
+      "researchNote": "The issue of 26 January 1930 carries the Morskie Oko announcement for the revue Gwiazdy Warszawy, four days before the premiere. Polona's viewer numbers this leaf 10; it is the ninth scan of the issue.",
+      "researchNoteType": "evidence_note",
+      "timelineEventIds": [
+        "TE0060"
+      ],
+      "placeIds": [
+        "PL018"
+      ]
     }
   ],
   "recordCount": null

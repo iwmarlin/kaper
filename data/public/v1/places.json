@@ -593,7 +593,7 @@
       "country": "Poland",
       "latitude": 52.23406,
       "longitude": 21.011841,
-      "period": "warsaw",
+      "period": "european",
       "slug": "teatr-morskie-oko-warsaw",
       "publicNote": "Warsaw revue theatre that opened in 1928 as a successor to Perskie Oko; Kaper’s “O tem wróble świergocą,” to words by Andrzej Włast, was sung in its revue Gwiazdy Warszawy. Morskie Oko occupied the corner of Jasna 3 and Sienkiewicza 7 from 1928 to 1933; that historical venue address is used for the map.",
       "mapPrecision": "venue_level",
@@ -604,10 +604,14 @@
       "sourceIds": [
         "SRC0336",
         "SRC0490",
-        "SRC0523"
+        "SRC0523",
+        "SRC0902"
       ],
       "periods": [
-        "warsaw"
+        "european"
+      ],
+      "timelineEventIds": [
+        "TE0060"
       ]
     },
     {
