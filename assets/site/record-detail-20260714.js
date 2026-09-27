@@ -32,8 +32,8 @@ import {
   sourceTypePluralLabel,
   typeBadge,
   updateMeta,
-} from "./core.js?v=ae0f2c454b";
-import { RECORD_INDEXES, recordIndexReturn } from "./catalogue-filters.js?v=ae0f2c454b";
+} from "./core.js?v=4a211bd8d9";
+import { RECORD_INDEXES, recordIndexReturn } from "./catalogue-filters.js?v=4a211bd8d9";
 
 // A canonical record route arrives prerendered and renders no image in the
 // browser, so the image map is loaded only where a record is actually rendered:
@@ -1144,7 +1144,11 @@ function renderMedia(media, data, indexes) {
 // nothing before it.
 function lifeDates(person) {
   const { birthYear, deathYear } = person;
-  if (!birthYear && !deathYear) return "";
+  // Fifteen of the hundred and seventy-seven are named once on a sheet and
+  // nowhere else, and for them this row used to vanish — so a reader could not
+  // tell whether the dates had been looked for and not found, or never looked
+  // for. An archive that qualifies its attributions states the gap instead.
+  if (!birthYear && !deathYear) return '<span class="fact-absent">Not established</span>';
   const span = escapeHtml(`${birthYear || ""}\u2013${deathYear || ""}`);
   if (person.lifeDatesCertainty && person.lifeDatesCertainty !== "confirmed") {
     return `${span} ${certaintyBadge(person.lifeDatesCertainty)}`;
@@ -1962,7 +1966,7 @@ async function bootstrapRecordPage() {
     }
     const [data, { IMAGE_DERIVATIVES }] = await Promise.all([
       loadRecordPayload(requestedType, requestedId),
-      import("./image-derivatives.js?v=ae0f2c454b"),
+      import("./image-derivatives.js?v=4a211bd8d9"),
     ]);
     registerImageDerivatives(IMAGE_DERIVATIVES);
     const { config, view } = renderRecordView(requestedType, requestedId, data);

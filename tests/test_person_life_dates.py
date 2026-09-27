@@ -115,3 +115,29 @@ class PersonLifeDateTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class StatedGapTests(unittest.TestCase):
+    """Fifteen of the hundred and seventy-seven people are named once on a
+    sheet and nowhere else. Their life-dates row used to disappear, so a reader
+    could not tell whether the dates had been looked for and not found, or
+    never looked for — in an archive whose footer promises that uncertain
+    evidence is explicitly qualified."""
+
+    def test_a_person_without_dates_says_so(self) -> None:
+        script = (ROOT / "assets/site/record-detail-20260714.js").read_text(encoding="utf-8")
+        body = script.split("function lifeDates(person)", 1)[1].split("\n}", 1)[0]
+        self.assertIn("fact-absent", body)
+        self.assertIn("Not established", body)
+        self.assertNotIn('if (!birthYear && !deathYear) return "";', body)
+
+    def test_the_stated_gap_is_not_dressed_as_a_documented_one(self) -> None:
+        self.assertIn(".fact-absent {", (ROOT / "assets/site/styles.css").read_text(encoding="utf-8"))
+
+    def test_the_printed_pages_carry_it(self) -> None:
+        import json as _json
+        records = _json.loads((ROOT / "data/public/v1/people.json").read_text(encoding="utf-8"))["records"]
+        silent = [r for r in records if not r.get("birthYear") and not r.get("deathYear")]
+        self.assertTrue(silent)
+        page = (ROOT / f"records/person/{silent[0]['id']}/index.html").read_text(encoding="utf-8")
+        self.assertIn("Not established", page)
