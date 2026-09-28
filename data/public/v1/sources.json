@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 810,
+  "count": 812,
   "records": [
     {
       "id": "SRC0001",
@@ -30399,6 +30399,62 @@
       ],
       "placeIds": [
         "PL018"
+      ]
+    },
+    {
+      "id": "SRC0903",
+      "shortCitation": "Bach-Saal recital listing — Führer durch die Konzertsäle Berlins, 1927",
+      "fullCitation": "“Aus Künstlerkreisen” [concert listings]. Führer durch die Konzertsäle Berlins: der Berliner Kulturspiegel, 8. Jahrgang (1927/28), Heft 10, 21 November–4 December 1927, p. 81. Universität der Künste Berlin, Universitätsarchiv; digitised by the Staatliches Institut für Musikforschung, Preußischer Kulturbesitz, PPN 775084921-08.",
+      "sourceType": "press_item",
+      "title": "Bach-Saal recital listing, 3 December 1927 — Führer durch die Konzertsäle Berlins",
+      "repository": "Universität der Künste Berlin, Universitätsarchiv / SIM PK",
+      "publication": "Führer durch die Konzertsäle Berlins: der Berliner Kulturspiegel",
+      "date": "1927-11-21",
+      "dateEnd": "1927-12-04",
+      "dateRole": "publication",
+      "dateQualifier": "confirmed",
+      "accessDate": "2026-09-28",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "slug": "src0903-fuehrer-konzertsaele-berlins-bach-saal-1927",
+      "primaryUrl": "https://digital.sim.spk-berlin.de/viewer/image/775084921-08/81/",
+      "accessUrl": "https://digital.sim.spk-berlin.de/viewer/image/775084921-08/81/LOG_0050/",
+      "researchNote": "The listing reads: “Bach-Saal, Sonnab., 3. Dezember, abends 8 Uhr Klavier-Abend F. Chopin (4 Balladen), Szymanowski, B. Kaper, Ravel, Albeniz, Liszt (H-moll).” It fixes the hall, the date and the programme, and names Kaper among the composers without naming his work. It does not describe any item as a first performance: the words zum ersten Male and Uraufführung do not appear, although the guide uses Neuaufführungen elsewhere in the same issue.",
+      "researchNoteType": "evidence_note",
+      "timelineEventIds": [
+        "TE0058"
+      ],
+      "personIds": [
+        "P009",
+        "P121"
+      ]
+    },
+    {
+      "id": "SRC0904",
+      "shortCitation": "Kaper premiere entries — Führer durch die Konzertsäle Berlins, Heft 11 (1927)",
+      "fullCitation": "[Premiere index and Bach-Saal listing]. Führer durch die Konzertsäle Berlins: der Berliner Kulturspiegel, 8. Jahrgang (1927/28), Heft 11, 28 November–11 December 1927, pp. 92, 99. Universität der Künste Berlin, Universitätsarchiv; digitised by the Staatliches Institut für Musikforschung, Preußischer Kulturbesitz, PPN 775084921-08.",
+      "sourceType": "press_item",
+      "title": "Kaper premiere entries, 3 December 1927 — Führer durch die Konzertsäle Berlins, Heft 11",
+      "repository": "Universität der Künste Berlin, Universitätsarchiv / SIM PK",
+      "publication": "Führer durch die Konzertsäle Berlins: der Berliner Kulturspiegel",
+      "date": "1927-11-28",
+      "dateEnd": "1927-12-11",
+      "dateRole": "publication",
+      "dateQualifier": "confirmed",
+      "accessDate": "2026-09-28",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "slug": "src0904-fuehrer-konzertsaele-berlins-kaper-urauffuehrung-1927",
+      "primaryUrl": "https://digital.sim.spk-berlin.de/viewer/image/775084921-08/99/",
+      "accessUrl": "https://digital.sim.spk-berlin.de/viewer/image/775084921-08/99/LOG_0052/",
+      "researchNote": "Two entries in the same issue carry the claim the earlier one does not. The premiere index reads “3. Dezember Bachsaal B. Kaper: Klavierkonzert”, and the Bach-Saal listing for that evening marks the composer “B. Kaper (Uraufführung)”. The guide distinguishes its terms in the same columns, using Erstaufführung and Neuaufführung for other concerts, so Uraufführung is used here in its strict sense. The index names the work a Klavierkonzert; the evening itself is billed as a Klavier-Abend.",
+      "researchNoteType": "evidence_note",
+      "timelineEventIds": [
+        "TE0058"
+      ],
+      "personIds": [
+        "P009",
+        "P121"
       ]
     }
   ],
