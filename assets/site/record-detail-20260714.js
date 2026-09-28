@@ -32,8 +32,8 @@ import {
   sourceTypePluralLabel,
   typeBadge,
   updateMeta,
-} from "./core.js?v=4a211bd8d9";
-import { RECORD_INDEXES, recordIndexReturn } from "./catalogue-filters.js?v=4a211bd8d9";
+} from "./core.js?v=70cdafbafb";
+import { RECORD_INDEXES, recordIndexReturn } from "./catalogue-filters.js?v=70cdafbafb";
 
 // A canonical record route arrives prerendered and renders no image in the
 // browser, so the image map is loaded only where a record is actually rendered:
@@ -1966,7 +1966,7 @@ async function bootstrapRecordPage() {
     }
     const [data, { IMAGE_DERIVATIVES }] = await Promise.all([
       loadRecordPayload(requestedType, requestedId),
-      import("./image-derivatives.js?v=4a211bd8d9"),
+      import("./image-derivatives.js?v=70cdafbafb"),
     ]);
     registerImageDerivatives(IMAGE_DERIVATIVES);
     const { config, view } = renderRecordView(requestedType, requestedId, data);

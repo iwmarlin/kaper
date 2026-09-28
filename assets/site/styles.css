@@ -17,7 +17,7 @@
    the swashed display forms can never appear by accident. */
 @font-face {
   font-family: "Fraunces";
-  src: url("../fonts/kaper-serif.woff2?v=4a211bd8d9") format("woff2");
+  src: url("../fonts/kaper-serif.woff2?v=70cdafbafb") format("woff2");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
@@ -25,7 +25,7 @@
 
 @font-face {
   font-family: "Fraunces";
-  src: url("../fonts/kaper-serif-italic.woff2?v=4a211bd8d9") format("woff2");
+  src: url("../fonts/kaper-serif-italic.woff2?v=70cdafbafb") format("woff2");
   font-weight: 100 900;
   font-style: italic;
   font-display: swap;
@@ -33,7 +33,7 @@
 
 @font-face {
   font-family: "Archivo";
-  src: url("../fonts/kaper-sans.woff2?v=4a211bd8d9") format("woff2");
+  src: url("../fonts/kaper-sans.woff2?v=70cdafbafb") format("woff2");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
@@ -41,7 +41,7 @@
 
 @font-face {
   font-family: "Archivo";
-  src: url("../fonts/kaper-sans-italic.woff2?v=4a211bd8d9") format("woff2");
+  src: url("../fonts/kaper-sans-italic.woff2?v=70cdafbafb") format("woff2");
   font-weight: 100 900;
   font-style: italic;
   font-display: swap;
@@ -2037,9 +2037,18 @@ main {
 
 .map-hero__grid {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 18rem;
+  grid-template-columns: minmax(0, 1fr) 24rem;
   align-items: end;
   gap: 2.25rem;
+}
+
+/* The count and the scope note are both statements about what is on the map,
+   and as separate grid items the note took a row of its own under the title:
+   a whole line of masthead above an instrument that already starts low. They
+   share the second column instead, and the hero loses that row. */
+.map-hero__aside {
+  display: grid;
+  gap: 0.85rem;
 }
 
 .map-hero h1 {

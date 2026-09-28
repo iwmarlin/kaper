@@ -7,15 +7,15 @@ import {
   normalizeSearch,
   renderError,
   safeExternalUrl,
-} from "./core.js?v=4a211bd8d9";
-import { createCatalogueFilters } from "./catalogue-filters.js?v=4a211bd8d9";
+} from "./core.js?v=70cdafbafb";
+import { createCatalogueFilters } from "./catalogue-filters.js?v=70cdafbafb";
 import {
   dateRoleLabel,
   renderSourceIndexRow,
   sourceTitle,
   sourceTypeLabel,
   sourceYear,
-} from "./catalogue-results.js?v=4a211bd8d9";
+} from "./catalogue-results.js?v=70cdafbafb";
 
 // This page is intentionally not part of NAV_ITEMS yet. It can be reviewed as
 // a direct route without changing the site's established primary pathways.
