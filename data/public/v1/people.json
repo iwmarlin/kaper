@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 177,
+  "count": 178,
   "records": [
     {
       "id": "P001",
@@ -6951,6 +6951,41 @@
       "sourceIds": [
         "SRC0889",
         "SRC0897"
+      ]
+    },
+    {
+      "id": "P205",
+      "displayName": "Dajos Béla",
+      "sortName": "Dajos, Béla",
+      "authorizedName": "Dajos, Bela",
+      "authorizedNameSource": "BnF",
+      "slug": "dajos-bela",
+      "primaryRole": "bandleader",
+      "roles": [
+        "bandleader",
+        "violinist",
+        "conductor"
+      ],
+      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no96047599\nGND: https://d-nb.info/gnd/133697428\nBnF: https://catalogue.bnf.fr/ark:/12148/cb14002097d\nVIAF: https://viaf.org/viaf/54343333\nISNI: https://isni.org/isni/0000000059444627\nWikidata: https://www.wikidata.org/wiki/Q78124",
+      "birthYear": 1897,
+      "deathYear": 1978,
+      "lifeDatesCertainty": "confirmed",
+      "contributionIds": [
+        "CON-S009-CON-P205",
+        "CON-S057-CON-P205",
+        "CON-S071-CON-P205"
+      ],
+      "workIds": [
+        "W-S009",
+        "W-S057",
+        "W-S071"
+      ],
+      "sourceIds": [
+        "SRC0925",
+        "SRC0926"
+      ],
+      "nameVariantIds": [
+        "PNV0077"
       ]
     }
   ],

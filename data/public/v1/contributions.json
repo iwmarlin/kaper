@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 1324,
+  "count": 1327,
   "records": [
     {
       "id": "CON-F001-C-P009",
@@ -23587,6 +23587,63 @@
         "PNV0008"
       ],
       "scopeNote": "Credited as printed. The pseudonym is identified as Rotter’s in the house history of the firm that holds the song’s surviving salon-orchestra edition, and the film’s lyrics are credited to him; no contemporaneous document names both the pseudonym and the man."
+    },
+    {
+      "id": "CON-S009-CON-P205",
+      "role": "conductor",
+      "nameAsPrinted": "Dajos Béla Künstler Orchester",
+      "displayCredit": "Directed the orchestra",
+      "evidenceContext": "discography",
+      "sortOrder": 55,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S009"
+      ],
+      "personIds": [
+        "P205"
+      ],
+      "sourceIds": [
+        "SRC0881"
+      ],
+      "scopeNote": "The discographic chronology identifies the accompanying ensemble as the Dajos Béla Künstler Orchester. This documents Dajos Béla’s direction of the recording ensemble, not authorship of the song."
+    },
+    {
+      "id": "CON-S057-CON-P205",
+      "role": "conductor",
+      "nameAsPrinted": "Tanz-Orchester Dajos Béla",
+      "displayCredit": "Directed the orchestra",
+      "evidenceContext": "recording_label",
+      "sortOrder": 55,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S057"
+      ],
+      "personIds": [
+        "P205"
+      ],
+      "sourceIds": [
+        "SRC0754"
+      ],
+      "scopeNote": "The recording is billed to Tanz-Orchester Dajos Béla. This documents Dajos Béla’s direction of the recording ensemble, not authorship of the song."
+    },
+    {
+      "id": "CON-S071-CON-P205",
+      "role": "conductor",
+      "nameAsPrinted": "Tanz-Orchester Dajos Béla",
+      "displayCredit": "Directed the orchestra",
+      "evidenceContext": "discography",
+      "sortOrder": 55,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S071"
+      ],
+      "personIds": [
+        "P205"
+      ],
+      "sourceIds": [
+        "SRC0790"
+      ],
+      "scopeNote": "The documented Odeon recording is credited to Tanz-Orchester Dajos Béla. This records Dajos Béla’s direction of the ensemble, not authorship of the song."
     }
   ]
 }
