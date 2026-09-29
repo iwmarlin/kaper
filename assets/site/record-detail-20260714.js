@@ -32,8 +32,8 @@ import {
   sourceTypePluralLabel,
   typeBadge,
   updateMeta,
-} from "./core.js?v=baa44fb2ad";
-import { RECORD_INDEXES, recordIndexReturn } from "./catalogue-filters.js?v=baa44fb2ad";
+} from "./core.js?v=cfef2329e8";
+import { RECORD_INDEXES, recordIndexReturn } from "./catalogue-filters.js?v=cfef2329e8";
 
 // A canonical record route arrives prerendered and renders no image in the
 // browser, so the image map is loaded only where a record is actually rendered:
@@ -1210,7 +1210,7 @@ function renderPerson(person, data, indexes) {
       section(
         "Authority and identity evidence",
         authoritySources.length
-          ? `<p class="record-section__intro">Authority records are shown here as evidence. Candidate or alternate identities remain qualified and are not silently promoted to the main identity.</p>${sourceList(authoritySources, { indexes })}`
+          ? `<p class="record-section__intro">Authority records supporting this identification.</p>${sourceList(authoritySources, { indexes })}`
           : "",
         "",
         authoritySources.length,
@@ -1966,7 +1966,7 @@ async function bootstrapRecordPage() {
     }
     const [data, { IMAGE_DERIVATIVES }] = await Promise.all([
       loadRecordPayload(requestedType, requestedId),
-      import("./image-derivatives.js?v=baa44fb2ad"),
+      import("./image-derivatives.js?v=cfef2329e8"),
     ]);
     registerImageDerivatives(IMAGE_DERIVATIVES);
     const { config, view } = renderRecordView(requestedType, requestedId, data);
