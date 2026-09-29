@@ -32,8 +32,8 @@ import {
   sourceTypePluralLabel,
   typeBadge,
   updateMeta,
-} from "./core.js?v=33c5f3e3e4";
-import { RECORD_INDEXES, recordIndexReturn } from "./catalogue-filters.js?v=33c5f3e3e4";
+} from "./core.js?v=baa44fb2ad";
+import { RECORD_INDEXES, recordIndexReturn } from "./catalogue-filters.js?v=baa44fb2ad";
 
 // A canonical record route arrives prerendered and renders no image in the
 // browser, so the image map is loaded only where a record is actually rendered:
@@ -1224,7 +1224,7 @@ function renderPerson(person, data, indexes) {
       ledger.items.length
         ? section(
           "Documented works and their evidence",
-          `<p class="record-section__intro">Each work is followed by the citations that support this person\u2019s credit for it; they are not presented as biographical sources.</p>${ledger.list}`,
+          `<p class="record-section__intro">Each work is followed by the citations that support this person\u2019s credit.</p>${ledger.list}`,
           "record-section--credit-evidence",
           ledger.items.length,
         )
@@ -1966,7 +1966,7 @@ async function bootstrapRecordPage() {
     }
     const [data, { IMAGE_DERIVATIVES }] = await Promise.all([
       loadRecordPayload(requestedType, requestedId),
-      import("./image-derivatives.js?v=33c5f3e3e4"),
+      import("./image-derivatives.js?v=baa44fb2ad"),
     ]);
     registerImageDerivatives(IMAGE_DERIVATIVES);
     const { config, view } = renderRecordView(requestedType, requestedId, data);
