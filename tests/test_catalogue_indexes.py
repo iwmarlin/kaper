@@ -200,6 +200,31 @@ class CompactCatalogueIndexTests(unittest.TestCase):
                 self.assertEqual(people[person_id]["workCount"], expected_works)
                 self.assertEqual(people[person_id]["timelineEventCount"], expected_events)
 
+    def test_people_context_rail_contains_all_period_badges(self) -> None:
+        """The Kaper row is the only one spanning all three periods.
+
+        Its right-hand rail used to be narrower than its non-wrapping badges,
+        so HOLLYWOOD crossed the card border on desktop. Keep both parts of the
+        layout contract: enough room for the normal three-badge line and a
+        wrapping fallback for zoom, font substitution and future labels.
+        """
+        styles = (ROOT / "assets/site/styles.css").read_text(encoding="utf-8")
+        person_row = re.search(r"\.person-row \{(.*?)\n\}", styles, re.DOTALL)
+        context = re.search(r"\.person-row__context \{(.*?)\n\}", styles, re.DOTALL)
+        periods = re.search(r"\.person-row__period \{(.*?)\n\}", styles, re.DOTALL)
+
+        self.assertIsNotNone(person_row)
+        self.assertIsNotNone(context)
+        self.assertIsNotNone(periods)
+        self.assertIn(
+            "grid-template-columns: 3rem minmax(0, 1fr) 15rem",
+            person_row.group(1),
+        )
+        self.assertIn("width: 100%", context.group(1))
+        self.assertIn("width: 100%", periods.group(1))
+        self.assertIn("flex-wrap: wrap", periods.group(1))
+        self.assertNotIn("flex-wrap: nowrap", periods.group(1))
+
     def test_hero_does_not_duplicate_dynamic_result_totals(self) -> None:
         for page_name in ("works.html", "people.html", "media.html", "sources.html"):
             with self.subTest(page=page_name):
