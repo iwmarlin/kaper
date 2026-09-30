@@ -82,6 +82,18 @@ deliberately does not grade. There is no equivalent statement anywhere in
 the documentation at all. Either it is required and 644 records are behind, or
 it is optional and the reason should be written down.
 
+**Neither, as it turns out.** The two alternatives above were the wrong pair.
+Of the 683 values, 629 name the kind of document that attested a credit and 45
+name what the person contributed — `original_composition`, `film_song`,
+`background_music`, `stock_music`, `additional_music` — with 9 compounds
+joining two statements with `_and_`. One column answers two questions, so
+“required” has no definite meaning until they are separated, and filling 644
+records against an uncontrolled 26-value vocabulary would have entrenched the
+conflation. Two things were safe to settle now and are done: the dead branch
+that would have printed these internal tokens to readers is gone, and the one
+value carrying rendering logic is pinned by tests. The rest is an editorial
+decision, set out in `docs/contribution-evidence-context.md`.
+
 ### 3. Organization authority control lags person authority control
 
 People carry `authorityUrl` on 169 of 178 records (95%). Organizations carry it
@@ -144,6 +156,32 @@ not used is a scholarly statement, and the catalogue does not make it.
 This is not the `displayOnSite` case that was removed in c5a1f45. That flag was
 dead because it carried no information. These two carry information and are
 silently dropped, so the choice is to publish them or to drop them on purpose.
+
+### 6a. The film credit qualification is recorded three times and published none
+
+Found while working finding 2, and the largest reader-facing gap in the
+dataset. `films.creditType` says what kind of music credit a film carries —
+`composer` (26), `songwriter` (19), `music_direction` (3), `stock_music` (3),
+`background_music` (2), `music_score` (1), `uncertain` (1), on 55 of 56 films —
+and `films.attributionNote` gives it in prose on 31 of them. Neither is
+rendered. Neither is read by any code at all: the strings occur in
+`films.json`, they are carried into the record payload the browser downloads,
+and no template, renderer or script mentions them.
+
+The consequence is on the page. A reader opening *Mutiny on the Bounty* sees
+Kaper under a confirmed `composer` credit, with Year and Period beside it and
+nothing else. The archive's own data says `creditType: songwriter` and “Song
+‘Love Song of Tahiti’ (m. Kaper & Jurmann, lyric Gus Kahn) — uncredited on
+screen”. *A Night at the Opera* holds “score by Herbert Stothart; songs by
+Kaper”, which appears in no rendered page; the string exists in exactly two
+files, the canonical table and the generated payload. On the 19 songwriter
+films and the 3 stock-music ones, a reader cannot tell a song credit from a
+score credit.
+
+This is finding 6 again — substance exported and never shown — but at 55 and
+31 records rather than 34 and 6, and carrying a scholarly qualification rather
+than a locator. Displaying it needs an editorial decision about wording and
+about which values are worth stating, so it is not a mechanical fix.
 
 ### 7. Two songs titled `Adieu` need an editorial ruling
 
@@ -228,8 +266,11 @@ ground is not covered again.
    controlled vocabulary and a validator (finding 1).~~ Done — it changed the
    schema, so it landed before more identifiers could be added to the packed
    field. Everything below is data entry or an editorial decision.
-2. Write down the rule for `evidenceContext`, then close the 644 records or
-   record why they stay open (finding 2).
+2. Decide whether `evidenceContext` separates into an evidential field and a
+   field for the nature of the contribution (finding 2). The rule for when it
+   is required depends on that answer, so it comes first; what the field holds
+   today, and the two fixes that did not need the decision, are in
+   `docs/contribution-evidence-context.md`.
 3. Resolve `PL010`/`PL017` precision, the two `Adieu` works, and the ORG127 and
    ORG141 parent claims (findings 5, 7, 8) — small, each a single editorial
    decision.

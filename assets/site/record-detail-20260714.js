@@ -33,8 +33,8 @@ import {
   sourceTypePluralLabel,
   typeBadge,
   updateMeta,
-} from "./core.js?v=e413e81b98";
-import { RECORD_INDEXES, recordIndexReturn } from "./catalogue-filters.js?v=e413e81b98";
+} from "./core.js?v=64e864d31d";
+import { RECORD_INDEXES, recordIndexReturn } from "./catalogue-filters.js?v=64e864d31d";
 
 // A canonical record route arrives prerendered and renders no image in the
 // browser, so the image map is loaded only where a record is actually rendered:
@@ -461,9 +461,16 @@ function contributionList(items, indexes, {
         ? ` · ${escapeHtml(creditLabel)} “${escapeHtml(item.nameAsPrinted)}”`
         : "";
       const publicNote = item.publicNote && !redundantNoteSet.has(item.publicNote) ? item.publicNote : "";
+      // evidenceContext stood third in the second branch, and every work is a
+      // song, a film or an other work, so that branch never ran and no page
+      // ever showed it. It is internal metadata written as snake_case tokens —
+      // sheet_music, film_credits_and_song_catalogue — with no display
+      // vocabulary of the kind SOURCE_TYPES gives the fields readers do see.
+      // Had a fourth work type ever appeared, the branch would have started
+      // printing those tokens verbatim. A note is prose or it is nothing.
       let note = conciseCredits
         ? publicNote || item.scopeNote || ""
-        : item.scopeNote || publicNote || item.evidenceContext || "";
+        : item.scopeNote || publicNote || "";
       if (
         suppressConfirmedCreatorNotes
         && ["composer", "arranger"].includes(item.role)
@@ -1969,7 +1976,7 @@ async function bootstrapRecordPage() {
     }
     const [data, { IMAGE_DERIVATIVES }] = await Promise.all([
       loadRecordPayload(requestedType, requestedId),
-      import("./image-derivatives.js?v=e413e81b98"),
+      import("./image-derivatives.js?v=64e864d31d"),
     ]);
     registerImageDerivatives(IMAGE_DERIVATIVES);
     const { config, view } = renderRecordView(requestedType, requestedId, data);
