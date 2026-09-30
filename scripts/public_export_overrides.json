@@ -5120,10 +5120,16 @@
       }
     },
     "Organizations": {
+      "ORG002": {"reason": "Record the authority identifier this company carried none of. GND 10026963-1 gives Universal Pictures (Los Angeles, Calif.), founded 1912 by Carl Laemmle, with Universal Pictures Corporation and Universal Pictures Company among its variants. Verified 30 September 2026 through lobid.org, the machine-readable GND service docs/authority-heading-review.md already names, and id.loc.gov.", "fields": {"authorities": [{"scheme": "gnd", "url": "https://d-nb.info/gnd/10026963-1"}]}},
+      "ORG003": {"reason": "Record the authority identifier this company carried none of. LCNAF n2005034285 gives Cine-Allianz Tonfilm with the variants Cine-Allianz and Cine-Alliance; GND 4808284-3 gives Cine-Allianz Tonfilm Produktion at Berlin, 1932 to 1940. Verified 30 September 2026 through lobid.org, the machine-readable GND service docs/authority-heading-review.md already names, and id.loc.gov.", "fields": {"authorities": [{"scheme": "lcnaf", "url": "https://id.loc.gov/authorities/names/n2005034285"}, {"scheme": "gnd", "url": "https://d-nb.info/gnd/4808284-3"}]}},
+      "ORG010": {"reason": "Record the authority identifier this company carried none of. GND 3053169-X gives Muenchener Lichtspielkunst AG at Munich, 1919 to 20 September 1932, with studios at Geiselgasteig. Emelka renders the initials M-L-K, and the city and period match. Verified 30 September 2026 through lobid.org, the machine-readable GND service docs/authority-heading-review.md already names, and id.loc.gov.", "fields": {"authorities": [{"scheme": "gnd", "url": "https://d-nb.info/gnd/3053169-X"}]}},
+      "ORG014": {"reason": "Record the authority identifier this company carried none of. GND 16340721-6 gives Lothar Stark-Film (Berlin), 1915 to 1936, founded by Lothar Stark, and carries Lothar Stark-Film GmbH as a variant. Verified 30 September 2026 through lobid.org, the machine-readable GND service docs/authority-heading-review.md already names, and id.loc.gov.", "fields": {"authorities": [{"scheme": "gnd", "url": "https://d-nb.info/gnd/16340721-6"}]}},
+      "ORG015": {"reason": "Record the authority identifier this company carried none of. GND 16345971-X gives Pan-Film at Vienna, running 1921 to 1936, and states it is not identical with the Pan-Film founded at Hamburg in 1952 — the confusion this identifier rules out. Verified 30 September 2026 through lobid.org, the machine-readable GND service docs/authority-heading-review.md already names, and id.loc.gov.", "fields": {"authorities": [{"scheme": "gnd", "url": "https://d-nb.info/gnd/16345971-X"}]}},
       "ORG016": {
-        "reason": "Record the abbreviated Mondial-Film form printed in the 1932 Mein Film advertisement without changing the company's authorized name or treating the advertisement as a production credit.",
+        "reason": "Record the abbreviated Mondial-Film form printed in the 1932 Mein Film advertisement without changing the company's authorized name or treating the advertisement as a production credit. GND 16342427-5 gives Mondial-Film at Vienna, film production and distribution, with Mondial Internationale Filmindustrie-Aktiengesellschaft as a variant. Verified 30 September 2026 through lobid.org, the machine-readable GND service docs/authority-heading-review.md already names, and id.loc.gov.",
         "fields": {
-          "nameVariants": "Mondial Internationale Filmindustrie; Mondial-Film"
+          "nameVariants": "Mondial Internationale Filmindustrie; Mondial-Film",
+          "authorities": [{"scheme": "gnd", "url": "https://d-nb.info/gnd/16342427-5"}]
         }
       },
       "ORG030": {

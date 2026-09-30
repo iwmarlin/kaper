@@ -106,6 +106,25 @@ These are fillable. The Weimar production companies hold GND and filmportal.de
 records, and the archive already cites filmportal.de as the primary URL of 34
 Sources, so the registers are ones this project already works in.
 
+**Six filled, seventeen searched and not found.** Of the 23 film studios,
+`ORG002` Universal Pictures, `ORG003` Cine-Allianz Tonfilm, `ORG010`
+Emelka-Konzern, `ORG014` Lothar Stark-Film, `ORG015` Pan-Film and `ORG016`
+Mondial Internationale Filmindustrie now carry identifiers, seven in all,
+verified through lobid.org and id.loc.gov. Two were not obvious: Emelka is
+GND 3053169-X *Münchener Lichtspielkunst AG*, the initials M-L-K said aloud,
+which a search on the archive's own spelling does not reach; and GND
+16345971-X states that its Vienna Pan-Film is **not** the Hamburg company of
+1952, which is exactly the confusion an identifier is for.
+
+The other seventeen have no GND or LCNAF record that survives checking. Two
+near-misses are worth recording so they are not adopted later in error: GND
+16345590-9 *New World Pictures* is Roger Corman's company of 1970–1997, not
+`ORG026`, the British company of the 1930s; and the two Zürich *Emelka*
+records, GND 1128187396 and 1086490673, are Swiss and not the Munich concern.
+Small Weimar production companies are simply thinly covered by the national
+registers, which is a fact about the registers rather than a gap in this
+dataset.
+
 ### 4. 104 Sources name their repository only as free text
 
 834 Sources carry a `repository` string and 731 link an Organization record
