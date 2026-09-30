@@ -9,6 +9,7 @@ PUBLIC = ROOT / "data/public/v1"
 sys.path.insert(0, str(ROOT / "scripts"))
 
 from authority_sources import authority_source_semantic_errors  # noqa: E402
+from authority_identifiers import authority_urls  # noqa: E402
 from person_authorities import (  # noqa: E402
     authority_source_alignment_errors,
     person_authority_errors,
@@ -36,8 +37,9 @@ class PersonAuthorityNormalizationTests(unittest.TestCase):
         self.assertEqual(errors, [])
         for person in self.people:
             bnf_links = [
-                line for line in str(person.get("authorityUrl") or "").splitlines()
-                if line.startswith("BnF: ")
+                entry
+                for entry in person.get("authorities") or []
+                if entry.get("scheme") == "bnf"
             ]
             self.assertLessEqual(len(bnf_links), 1, person["id"])
 
@@ -59,19 +61,25 @@ class PersonAuthorityNormalizationTests(unittest.TestCase):
             [],
         )
         macdonald = self.people_by_id["P139"]
-        self.assertIn("https://catalogue.bnf.fr/ark:/12148/cb13757145r", macdonald["authorityUrl"])
+        self.assertIn(
+            "https://catalogue.bnf.fr/ark:/12148/cb13757145r",
+            authority_urls(macdonald),
+        )
         self.assertEqual(macdonald.get("authorizedNameSource"), "LCNAF")
         self.assertNotIn(
             self.sources_by_id["SRC0632"]["primaryUrl"],
-            self.people_by_id["P079"].get("authorityUrl", ""),
+            authority_urls(self.people_by_id["P079"]),
         )
         self.assertNotIn(
             self.sources_by_id["SRC0686"]["primaryUrl"],
-            self.people_by_id["P111"].get("authorityUrl", ""),
+            authority_urls(self.people_by_id["P111"]),
         )
 
     def test_rejected_identity_and_viaf_heading_claims_do_not_return(self):
-        self.assertNotIn("Q95678216", self.people_by_id["P156"].get("authorityUrl", ""))
+        self.assertNotIn(
+            "https://www.wikidata.org/wiki/Q95678216",
+            authority_urls(self.people_by_id["P156"]),
+        )
         for person in self.people:
             self.assertNotIn(
                 str(person.get("authorizedNameSource") or "").casefold(),

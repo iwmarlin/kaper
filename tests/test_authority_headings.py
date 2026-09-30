@@ -1,13 +1,16 @@
 from __future__ import annotations
 
 import json
-import re
+import sys
 import unittest
 from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
 PUBLIC = ROOT / "data/public/v1"
+sys.path.insert(0, str(ROOT / "scripts"))
+
+from authority_identifiers import scheme_label  # noqa: E402
 
 # The registers docs/authority-headings.md names in precedence order.  When a
 # heading is transcribed from one of them, the record has to link it, so that a
@@ -20,7 +23,6 @@ LINKED_REGISTERS = {"LCNAF", "GND", "BnF", "BN"}
 # left open deliberately and is listed in docs/authority-heading-review.md:
 # the BnF catalogue could not be read when the others were resolved.
 PROVENANCE_GAPS = {"P069", "ORG030", "ORG032"}
-LINK = re.compile(r"([A-Za-zÀ-ÿ][^:\n]*?):\s*(https?://\S+)")
 
 
 class AuthorityHeadingTests(unittest.TestCase):
@@ -34,7 +36,12 @@ class AuthorityHeadingTests(unittest.TestCase):
         )["records"]
 
     def registers(self, record: dict) -> list[str]:
-        return [label for label, _ in LINK.findall(str(record.get("authorityUrl") or ""))]
+        # The register is read back through the one vocabulary that names it,
+        # so a test cannot agree with a spelling the data invented.
+        return [
+            scheme_label(str(entry.get("scheme")))
+            for entry in record.get("authorities") or []
+        ]
 
     def test_a_named_register_is_a_linked_register(self) -> None:
         for record in (*self.people, *self.organizations):
@@ -49,7 +56,7 @@ class AuthorityHeadingTests(unittest.TestCase):
 
     def test_a_person_without_a_register_has_a_local_heading(self) -> None:
         for person in self.people:
-            if person.get("authorityUrl"):
+            if person.get("authorities"):
                 continue
             self.assertEqual(
                 person.get("authorizedNameSource"),

@@ -41,6 +41,10 @@ from public_data_dates import (
 )
 from source_slugs import canonical_source_slug
 from person_life_dates import life_date_evidence_errors
+from organization_authorities import (
+    normalize_organization_authorities,
+    organization_authority_errors,
+)
 from person_authorities import (
     authority_source_alignment_errors,
     person_authority_errors,
@@ -1927,6 +1931,7 @@ class PublicExporter:
             self.output_records["People"],
             self.output_records["Sources"],
         )
+        normalize_organization_authorities(self.output_records["Organizations"])
         self._normalize_media_public_text()
         self._normalize_source_public_text()
         self._derive_graph_indexes()
@@ -1984,6 +1989,9 @@ class PublicExporter:
             self.output_records["People"], self.output_records["Sources"]
         ):
             self.errors.append(f"People authority graph: {error}")
+        for organization in self.output_records["Organizations"]:
+            for error in organization_authority_errors(organization):
+                self.errors.append(f"Organizations {organization.get('id')}: {error}")
         for source in self.output_records["Sources"]:
             for error in authority_source_semantic_errors(source):
                 self.errors.append(f"Sources {source.get('id')}: {error}")

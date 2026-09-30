@@ -47,6 +47,14 @@ controlled scheme vocabulary, and a validator that rejects an unknown scheme and
 a malformed URI. `Official website` and `Finding aid` are not name authorities
 and belong in a separate field.
 
+**Resolved.** `authorities` and `references` are now structured lists with a
+closed register vocabulary, and the scheme is derived from the URL rather than
+transcribed, so neither drift can recur. The investigation also found that the
+uncontrolled labels were not all noise: `id.loc.gov/entities/providers` and the
+`data.bn.org.pl` route of the BN register are real registers the vocabulary was
+missing, and twenty organizations had appeared to carry authority control while
+holding only an institutional homepage. See `docs/authority-identifiers.md`.
+
 ### 2. `evidenceContext` is missing along role lines, and no rule states when it applies
 
 `evidenceContext` is filled on 683 of 1327 Contributions (51.5%), but the gap is
@@ -216,10 +224,10 @@ ground is not covered again.
 
 ## Suggested order of work
 
-1. Restructure `authorityUrl` into `authorities: [{scheme, uri}]` with a
-   controlled vocabulary and a validator (finding 1). Everything else is data
-   entry; this one changes the schema, so it should land before more
-   identifiers are added to the packed field.
+1. ~~Restructure `authorityUrl` into `authorities: [{scheme, uri}]` with a
+   controlled vocabulary and a validator (finding 1).~~ Done — it changed the
+   schema, so it landed before more identifiers could be added to the packed
+   field. Everything below is data entry or an editorial decision.
 2. Write down the rule for `evidenceContext`, then close the 644 records or
    record why they stay open (finding 2).
 3. Resolve `PL010`/`PL017` precision, the two `Adieu` works, and the ORG127 and

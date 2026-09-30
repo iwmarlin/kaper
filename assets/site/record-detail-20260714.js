@@ -1,5 +1,6 @@
 import {
   authorityLinkList,
+  referenceLinkList,
   certaintyBadge,
   escapeHtml,
   formatDate,
@@ -32,8 +33,8 @@ import {
   sourceTypePluralLabel,
   typeBadge,
   updateMeta,
-} from "./core.js?v=0c29ff1abd";
-import { RECORD_INDEXES, recordIndexReturn } from "./catalogue-filters.js?v=0c29ff1abd";
+} from "./core.js?v=e413e81b98";
+import { RECORD_INDEXES, recordIndexReturn } from "./catalogue-filters.js?v=e413e81b98";
 
 // A canonical record route arrives prerendered and renders no image in the
 // browser, so the image map is loaded only where a record is actually rendered:
@@ -1568,13 +1569,15 @@ function renderOrganization(organization, data, indexes) {
 // only where it says something: the controlled form when it differs from the
 // name the card is titled with, the register the form was taken from, and the
 // authority records themselves. A heading with no stated source is not called
-// an authorized name, because it is not one: for the 113 organizations that
-// carry no register, the name is a working label the archive assigned.
+// an authorized name, because it is not one: for the seventy-three
+// organizations that carry no register, the name is a working label the archive
+// assigned. Twenty of them used to read as though they carried one, because an
+// official website or a finding aid sat in the field reserved for registers.
 function authorityFacts(record) {
   const displayName = String(record.displayName || "").trim();
   const authorizedName = String(record.authorizedName || "").trim();
-  const authorityLinks = authorityLinkList(record.authorityUrl);
-  const referenceLinks = authorityLinkList(record.referenceUrl);
+  const authorityLinks = authorityLinkList(record.authorities);
+  const referenceLinks = referenceLinkList(record.references);
   const linkFact = (label, links) => (links.length
     ? `<div><dt>${label}</dt><dd class="record-facts__authorities">${links.map((item) => `<a href="${escapeHtml(item.url)}" target="_blank" rel="noreferrer">${escapeHtml(item.label)} <span aria-hidden="true">↗</span></a>`).join("")}</dd></div>`
     : "");
@@ -1966,7 +1969,7 @@ async function bootstrapRecordPage() {
     }
     const [data, { IMAGE_DERIVATIVES }] = await Promise.all([
       loadRecordPayload(requestedType, requestedId),
-      import("./image-derivatives.js?v=0c29ff1abd"),
+      import("./image-derivatives.js?v=e413e81b98"),
     ]);
     registerImageDerivatives(IMAGE_DERIVATIVES);
     const { config, view } = renderRecordView(requestedType, requestedId, data);

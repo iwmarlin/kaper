@@ -118,6 +118,14 @@ def main() -> int:
             ),
         ),
         Step(
+            "Check canonical Organization authority normalization",
+            (
+                python,
+                str(scripts / "normalize_organization_authorities.py"),
+                str(root / "data/public/v1/organizations.json"),
+            ),
+        ),
+        Step(
             "Check canonical Source normalization",
             (
                 python,

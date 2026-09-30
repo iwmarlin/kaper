@@ -255,20 +255,46 @@ export function sourceStatusLabel(status) {
   return SOURCE_STATUS_LABELS[key] || humanize(status);
 }
 
-// Authority control is recorded as a stack of "SCHEME: url" lines. The person
-// card has parsed it since it was written; the organization card never did, so
-// twenty-one organizations carried complete LCNAF, GND, VIAF, ISNI and BnF
-// records that no reader could reach. One parser now serves both.
-export function authorityLinkList(value) {
-  return String(value || "")
-    .split(/\r?\n/)
+// Authority control was recorded as a stack of "SCHEME: url" lines, one string
+// per record, and every reader of it had to parse that string. It is now a list
+// of {scheme, url}, so the label a reader sees is held in one place instead of
+// being retyped into the data — which is how the same Library of Congress
+// provider register came to sit in the field under two different names.
+export const AUTHORITY_SCHEME_LABELS = Object.freeze({
+  lcnaf: "LCNAF",
+  gnd: "GND",
+  bnf: "BnF",
+  bn: "BN",
+  nukat: "NUKAT",
+  lc_providers: "LC Providers",
+  viaf: "VIAF",
+  isni: "ISNI",
+  wikidata: "Wikidata",
+  musicbrainz: "MusicBrainz",
+});
+
+function linkList(value, labelFor) {
+  return (Array.isArray(value) ? value : [])
     .map((entry) => {
-      const match = entry.trim().match(/^([^:]+):\s*(https?:\/\/\S+)$/);
-      if (!match) return null;
-      const url = safeExternalUrl(match[2]);
-      return url ? { label: match[1], url } : null;
+      if (!entry) return null;
+      const url = safeExternalUrl(entry.url);
+      const label = labelFor(entry);
+      return url && label ? { label, url } : null;
     })
     .filter(Boolean);
+}
+
+export function authorityLinkList(value) {
+  return linkList(
+    value,
+    (entry) => AUTHORITY_SCHEME_LABELS[entry.scheme] || humanize(entry.scheme),
+  );
+}
+
+// A contextual link carries its own label, because what the page is — an
+// official website, a finding aid — does not follow from its host.
+export function referenceLinkList(value) {
+  return linkList(value, (entry) => String(entry.label || "").trim());
 }
 
 export function sourceReliabilityBadge(reliability) {

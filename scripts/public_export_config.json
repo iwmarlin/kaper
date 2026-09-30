@@ -152,7 +152,8 @@
         "workIds",
         "lifeDatesNote",
         "lifeDatesSourceIds",
-        "referenceUrl"
+        "authorities",
+        "references"
       ],
       "fields": {
         "id": "Person ID",
@@ -200,7 +201,9 @@
         "slug"
       ],
       "derivedFields": [
-        "workIds"
+        "workIds",
+        "authorities",
+        "references"
       ],
       "fields": {
         "id": "Organization ID",

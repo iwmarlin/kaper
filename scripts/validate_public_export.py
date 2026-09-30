@@ -43,6 +43,7 @@ from source_dates import SOURCE_IDENTIFIER_SCHEMES, source_date_errors
 from source_access_dates import has_redundant_access_date
 from source_slugs import canonical_source_slug
 from person_life_dates import life_date_evidence_errors
+from organization_authorities import organization_authority_errors
 from person_authorities import (
     authority_source_alignment_errors,
     person_authority_errors,
@@ -678,6 +679,9 @@ class ExportValidator:
                 self.errors.append(f"Sources {source.get('id')}: {error}")
         for error in authority_source_alignment_errors(people, sources):
             self.errors.append(f"People authority graph: {error}")
+        for organization in self.payloads.get("Organizations", {}).get("records", []):
+            for error in organization_authority_errors(organization):
+                self.errors.append(f"Organizations {organization.get('id')}: {error}")
 
     def _validate_symmetric_links(self) -> None:
         records_by_table = {

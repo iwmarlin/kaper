@@ -18,7 +18,6 @@
       "roles": [
         "film director"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no90018167\nGND: https://d-nb.info/gnd/136833128\nVIAF: https://viaf.org/viaf/54409257",
       "sourceIds": [
         "SRC0138",
         "SRC0565"
@@ -31,7 +30,21 @@
       ],
       "birthYear": 1890,
       "deathYear": 1937,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/no90018167"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/136833128"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/54409257"
+        }
+      ]
     },
     {
       "id": "P002",
@@ -44,7 +57,6 @@
       "roles": [
         "film director"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no96067588\nGND: https://d-nb.info/gnd/13115298X\nVIAF: https://viaf.org/viaf/52812638",
       "contributionIds": [
         "CON-F015-D-P002"
       ],
@@ -56,7 +68,21 @@
       ],
       "birthYear": 1892,
       "deathYear": 1985,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/no96067588"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/13115298X"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/52812638"
+        }
+      ]
     },
     {
       "id": "P003",
@@ -69,7 +95,6 @@
       "roles": [
         "lyricist"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n2010026906\nGND: https://d-nb.info/gnd/1203212704\nVIAF: https://viaf.org/viaf/120468150\nISNI: https://isni.org/isni/000000007143777X",
       "sourceIds": [
         "SRC0053",
         "SRC0054",
@@ -112,6 +137,24 @@
       "lifeDatesNote": "ISNI gives 1895 as the birth year, whereas GND gives 17 March 1885. The displayed dates follow 1895–1943; the conflicting birth years remain unresolved.",
       "lifeDatesSourceIds": [
         "SRC0623"
+      ],
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n2010026906"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/1203212704"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/120468150"
+        },
+        {
+          "scheme": "isni",
+          "url": "https://isni.org/isni/000000007143777X"
+        }
       ]
     },
     {
@@ -123,7 +166,6 @@
       "roles": [
         "lyricist"
       ],
-      "authorityUrl": "VIAF: https://viaf.org/viaf/204922750",
       "sourceIds": [
         "SRC0285",
         "SRC0476",
@@ -140,7 +182,13 @@
       "deathYear": 1970,
       "lifeDatesCertainty": "confirmed",
       "authorizedName": "Saudemont, André",
-      "authorizedNameSource": "local heading"
+      "authorizedNameSource": "local heading",
+      "authorities": [
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/204922750"
+        }
+      ]
     },
     {
       "id": "P005",
@@ -152,7 +200,6 @@
       "roles": [
         "lyricist"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no93026354\nBnF: https://catalogue.bnf.fr/ark:/12148/cb14120019q\nVIAF: https://viaf.org/viaf/10056274\nISNI: https://isni.org/isni/0000000071010995\nWikidata: https://www.wikidata.org/wiki/Q4759995",
       "sourceIds": [
         "SRC0161",
         "SRC0373",
@@ -185,7 +232,29 @@
       "birthYear": 1881,
       "deathYear": 1939,
       "lifeDatesCertainty": "confirmed",
-      "authorizedNameSource": "LCNAF"
+      "authorizedNameSource": "LCNAF",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/no93026354"
+        },
+        {
+          "scheme": "bnf",
+          "url": "https://catalogue.bnf.fr/ark:/12148/cb14120019q"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/10056274"
+        },
+        {
+          "scheme": "isni",
+          "url": "https://isni.org/isni/0000000071010995"
+        },
+        {
+          "scheme": "wikidata",
+          "url": "https://www.wikidata.org/wiki/Q4759995"
+        }
+      ]
     },
     {
       "id": "P006",
@@ -199,7 +268,6 @@
         "lyricist",
         "writer"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n2008000993\nBnF: https://data.bnf.fr/fr/ark:/12148/cb148356206\nVIAF: https://viaf.org/viaf/34722575",
       "sourceIds": [
         "SRC0283",
         "SRC0475",
@@ -234,7 +302,21 @@
       ],
       "birthYear": 1891,
       "deathYear": 1977,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n2008000993"
+        },
+        {
+          "scheme": "bnf",
+          "url": "https://data.bnf.fr/fr/ark:/12148/cb148356206"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/34722575"
+        }
+      ]
     },
     {
       "id": "P007",
@@ -247,7 +329,6 @@
       "roles": [
         "film director"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no90007916\nVIAF: https://viaf.org/viaf/71576982\nISNI: https://isni.org/isni/0000000083930238",
       "contributionIds": [
         "CON-F032-D-P007"
       ],
@@ -259,7 +340,21 @@
       ],
       "birthYear": 1902,
       "deathYear": 1968,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/no90007916"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/71576982"
+        },
+        {
+          "scheme": "isni",
+          "url": "https://isni.org/isni/0000000083930238"
+        }
+      ]
     },
     {
       "id": "P009",
@@ -275,7 +370,6 @@
         "arranger",
         "conductor"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n79075647\nBnF: https://data.bnf.fr/fr/ark:/12148/cb139401963\nVIAF: https://viaf.org/viaf/59273738",
       "sourceIds": [
         "SRC0002",
         "SRC0024",
@@ -1131,7 +1225,21 @@
       ],
       "birthYear": 1902,
       "deathYear": 1983,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n79075647"
+        },
+        {
+          "scheme": "bnf",
+          "url": "https://data.bnf.fr/fr/ark:/12148/cb139401963"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/59273738"
+        }
+      ]
     },
     {
       "id": "P010",
@@ -1157,10 +1265,19 @@
         "SRC0622",
         "SRC0828"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n00114873\nVIAF: https://viaf.org/viaf/67703660",
       "birthYear": 1881,
       "deathYear": 1962,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n00114873"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/67703660"
+        }
+      ]
     },
     {
       "id": "P011",
@@ -1171,7 +1288,6 @@
       "roles": [
         "film director"
       ],
-      "authorityUrl": "GND: https://d-nb.info/gnd/1061443892\nVIAF: https://viaf.org/viaf/311622970",
       "sourceIds": [
         "SRC0129"
       ],
@@ -1182,7 +1298,17 @@
         "W-F020"
       ],
       "authorizedName": "Landau, Constantin",
-      "authorizedNameSource": "GND"
+      "authorizedNameSource": "GND",
+      "authorities": [
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/1061443892"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/311622970"
+        }
+      ]
     },
     {
       "id": "P012",
@@ -1195,7 +1321,6 @@
       "roles": [
         "lyricist"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n96028019\nGND: https://d-nb.info/gnd/1062459830\nVIAF: https://viaf.org/viaf/36177259\nISNI: https://isni.org/isni/0000000063881256",
       "contributionIds": [
         "CON-S040-L-P012",
         "CON-S193-L-P012",
@@ -1215,6 +1340,24 @@
         "SRC0308",
         "SRC0462",
         "SRC0468"
+      ],
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n96028019"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/1062459830"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/36177259"
+        },
+        {
+          "scheme": "isni",
+          "url": "https://isni.org/isni/0000000063881256"
+        }
       ]
     },
     {
@@ -1228,7 +1371,6 @@
       "roles": [
         "film director"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no94002454\nGND: https://d-nb.info/gnd/138651450\nVIAF: https://viaf.org/viaf/49430545",
       "sourceIds": [
         "SRC0147",
         "SRC0644",
@@ -1248,6 +1390,20 @@
       "lifeDatesNote": "GND gives 1899 as the birth year, whereas LCNAF gives 1901. The displayed dates follow GND; the conflicting birth years remain unresolved.",
       "lifeDatesSourceIds": [
         "SRC0861"
+      ],
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/no94002454"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/138651450"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/49430545"
+        }
       ]
     },
     {
@@ -1259,7 +1415,6 @@
       "roles": [
         "lyricist"
       ],
-      "authorityUrl": "VIAF: https://viaf.org/viaf/317160982",
       "contributionIds": [
         "CON-S012-L-P014"
       ],
@@ -1271,6 +1426,12 @@
       "sourceIds": [
         "SRC0373",
         "SRC0709"
+      ],
+      "authorities": [
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/317160982"
+        }
       ]
     },
     {
@@ -1282,7 +1443,6 @@
       "roles": [
         "film director"
       ],
-      "authorityUrl": "GND: https://d-nb.info/gnd/1274108136\nVIAF: https://viaf.org/viaf/47024991\nWikidata: https://www.wikidata.org/wiki/Q110136563",
       "sourceIds": [
         "SRC0127",
         "SRC0151"
@@ -1301,7 +1461,21 @@
       "deathYear": 1971,
       "lifeDatesCertainty": "confirmed",
       "authorizedName": "Schmidt, Erich",
-      "authorizedNameSource": "GND"
+      "authorizedNameSource": "GND",
+      "authorities": [
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/1274108136"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/47024991"
+        },
+        {
+          "scheme": "wikidata",
+          "url": "https://www.wikidata.org/wiki/Q110136563"
+        }
+      ]
     },
     {
       "id": "P016",
@@ -1312,7 +1486,6 @@
       "roles": [
         "film director"
       ],
-      "authorityUrl": "GND: https://d-nb.info/gnd/1062461193\nVIAF: https://viaf.org/viaf/311722343\nWikidata: https://www.wikidata.org/wiki/Q1353606",
       "sourceIds": [
         "SRC0134",
         "SRC0835"
@@ -1327,7 +1500,21 @@
       "deathYear": 1957,
       "lifeDatesCertainty": "confirmed",
       "authorizedName": "Neusser, Erich von",
-      "authorizedNameSource": "GND"
+      "authorizedNameSource": "GND",
+      "authorities": [
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/1062461193"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/311722343"
+        },
+        {
+          "scheme": "wikidata",
+          "url": "https://www.wikidata.org/wiki/Q1353606"
+        }
+      ]
     },
     {
       "id": "P017",
@@ -1340,7 +1527,6 @@
       "roles": [
         "lyricist"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n82246137\nVIAF: https://viaf.org/viaf/2672148\nWikidata: https://www.wikidata.org/wiki/Q112121",
       "contributionIds": [
         "CON-S057-L-P017",
         "CON-S068-L-P017",
@@ -1364,7 +1550,21 @@
       ],
       "birthYear": 1893,
       "deathYear": 1963,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n82246137"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/2672148"
+        },
+        {
+          "scheme": "wikidata",
+          "url": "https://www.wikidata.org/wiki/Q112121"
+        }
+      ]
     },
     {
       "id": "P018",
@@ -1377,7 +1577,6 @@
       "roles": [
         "film director"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n85151571\nVIAF: https://viaf.org/viaf/14975229",
       "contributionIds": [
         "CON-F034-D-P018"
       ],
@@ -1389,7 +1588,17 @@
       ],
       "birthYear": 1887,
       "deathYear": 1960,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n85151571"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/14975229"
+        }
+      ]
     },
     {
       "id": "P019",
@@ -1402,7 +1611,6 @@
       "roles": [
         "film director"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n88244633\nGND: https://d-nb.info/gnd/118993941\nISNI: https://isni.org/isni/0000000027714290",
       "sourceIds": [
         "SRC0119",
         "SRC0478",
@@ -1418,7 +1626,21 @@
       ],
       "birthYear": 1893,
       "deathYear": 1942,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n88244633"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/118993941"
+        },
+        {
+          "scheme": "isni",
+          "url": "https://isni.org/isni/0000000027714290"
+        }
+      ]
     },
     {
       "id": "P020",
@@ -1431,7 +1653,6 @@
       "roles": [
         "lyricist"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n88076507\nVIAF: https://viaf.org/viaf/10944445\nWikidata: https://www.wikidata.org/wiki/Q94068",
       "sourceIds": [
         "SRC0093",
         "SRC0099",
@@ -1650,7 +1871,21 @@
       ],
       "birthYear": 1900,
       "deathYear": 1984,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n88076507"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/10944445"
+        },
+        {
+          "scheme": "wikidata",
+          "url": "https://www.wikidata.org/wiki/Q94068"
+        }
+      ]
     },
     {
       "id": "P021",
@@ -1661,7 +1896,6 @@
       "roles": [
         "lyricist"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n2013010707\nBnF: https://catalogue.bnf.fr/ark:/12148/cb137974849\nVIAF: https://viaf.org/viaf/170702482",
       "sourceIds": [
         "SRC0285",
         "SRC0476",
@@ -1682,6 +1916,20 @@
       "nameVariantIds": [
         "PNV0075",
         "PNV0076"
+      ],
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n2013010707"
+        },
+        {
+          "scheme": "bnf",
+          "url": "https://catalogue.bnf.fr/ark:/12148/cb137974849"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/170702482"
+        }
       ]
     },
     {
@@ -1695,7 +1943,6 @@
       "roles": [
         "film director"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no94031326\nGND: https://d-nb.info/gnd/119410974\nVIAF: https://viaf.org/viaf/22403499\nWikidata: https://www.wikidata.org/wiki/Q71273",
       "sourceIds": [
         "SRC0152",
         "SRC0600"
@@ -1708,7 +1955,25 @@
       ],
       "birthYear": 1882,
       "deathYear": 1964,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/no94031326"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/119410974"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/22403499"
+        },
+        {
+          "scheme": "wikidata",
+          "url": "https://www.wikidata.org/wiki/Q71273"
+        }
+      ]
     },
     {
       "id": "P023",
@@ -1721,7 +1986,6 @@
       "roles": [
         "film director"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n85199136\nVIAF: https://viaf.org/viaf/33438858",
       "sourceIds": [
         "SRC0142",
         "SRC0652"
@@ -1734,7 +1998,17 @@
       ],
       "birthYear": 1888,
       "deathYear": 1944,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n85199136"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/33438858"
+        }
+      ]
     },
     {
       "id": "P024",
@@ -1745,7 +2019,6 @@
       "roles": [
         "film director"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n2009070290\nVIAF: https://viaf.org/viaf/311589708\nWikidata: https://www.wikidata.org/wiki/Q3104109",
       "sourceIds": [
         "SRC0127"
       ],
@@ -1759,7 +2032,21 @@
       "deathYear": 1963,
       "lifeDatesCertainty": "confirmed",
       "authorizedName": "Fried, Germain",
-      "authorizedNameSource": "LCNAF"
+      "authorizedNameSource": "LCNAF",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n2009070290"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/311589708"
+        },
+        {
+          "scheme": "wikidata",
+          "url": "https://www.wikidata.org/wiki/Q3104109"
+        }
+      ]
     },
     {
       "id": "P025",
@@ -1771,7 +2058,6 @@
       "roles": [
         "lyricist"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no89002698\nVIAF: https://viaf.org/viaf/44483378",
       "sourceIds": [
         "SRC0114",
         "SRC0140",
@@ -1857,7 +2143,17 @@
       "birthYear": 1886,
       "deathYear": 1941,
       "lifeDatesCertainty": "confirmed",
-      "authorizedNameSource": "LCNAF"
+      "authorizedNameSource": "LCNAF",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/no89002698"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/44483378"
+        }
+      ]
     },
     {
       "id": "P027",
@@ -1870,7 +2166,6 @@
       "roles": [
         "film director"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no94030798\nGND: https://d-nb.info/gnd/118993933\nVIAF: https://viaf.org/viaf/67266077\nISNI: https://isni.org/isni/0000000044661557",
       "sourceIds": [
         "SRC0128",
         "SRC0129",
@@ -1886,7 +2181,25 @@
       ],
       "birthYear": 1882,
       "deathYear": 1945,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/no94030798"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/118993933"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/67266077"
+        },
+        {
+          "scheme": "isni",
+          "url": "https://isni.org/isni/0000000044661557"
+        }
+      ]
     },
     {
       "id": "P028",
@@ -1899,7 +2212,6 @@
       "roles": [
         "lyricist"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n81023047\nGND: https://d-nb.info/gnd/13006646X\nVIAF: https://viaf.org/viaf/69197606",
       "contributionIds": [
         "CON-S119-L-P028",
         "CON-S185-L-P028"
@@ -1914,7 +2226,21 @@
       ],
       "birthYear": 1906,
       "deathYear": 1980,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n81023047"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/13006646X"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/69197606"
+        }
+      ]
     },
     {
       "id": "P029",
@@ -1927,7 +2253,6 @@
       "roles": [
         "film director"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no94044048\nVIAF: https://viaf.org/viaf/19888961",
       "contributionIds": [
         "CON-F045-D-P029"
       ],
@@ -1941,6 +2266,16 @@
         "SRC0173",
         "SRC0373",
         "SRC0481"
+      ],
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/no94044048"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/19888961"
+        }
       ]
     },
     {
@@ -1954,7 +2289,6 @@
       "roles": [
         "film director"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n90657187\nGND: https://d-nb.info/gnd/118704990\nVIAF: https://viaf.org/viaf/2733324",
       "sourceIds": [
         "SRC0130",
         "SRC0131",
@@ -1970,7 +2304,21 @@
       ],
       "birthYear": 1890,
       "deathYear": 1967,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n90657187"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/118704990"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/2733324"
+        }
+      ]
     },
     {
       "id": "P031",
@@ -1985,7 +2333,6 @@
         "actor",
         "producer"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n97864082\nBnF: https://data.bnf.fr/fr/ark:/12148/cb14785637s\nVIAF: https://viaf.org/viaf/27329711",
       "contributionIds": [
         "CON-S112-L-P031",
         "CON-S113-L-P031",
@@ -2011,7 +2358,21 @@
       ],
       "birthYear": 1887,
       "deathYear": 1969,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n97864082"
+        },
+        {
+          "scheme": "bnf",
+          "url": "https://data.bnf.fr/fr/ark:/12148/cb14785637s"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/27329711"
+        }
+      ]
     },
     {
       "id": "P032",
@@ -2024,7 +2385,6 @@
       "roles": [
         "lyricist"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n2007044635\nGND: https://d-nb.info/gnd/1105687570\nVIAF: https://viaf.org/viaf/171061796",
       "sourceIds": [
         "SRC0219",
         "SRC0284",
@@ -2044,7 +2404,21 @@
       ],
       "birthYear": 1896,
       "deathYear": 1986,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n2007044635"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/1105687570"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/171061796"
+        }
+      ]
     },
     {
       "id": "P033",
@@ -2067,10 +2441,23 @@
       "workIds": [
         "W-F025"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n87147701\nGND: https://d-nb.info/gnd/124434525\nVIAF: https://viaf.org/viaf/100304643",
       "birthYear": 1907,
       "deathYear": 1977,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n87147701"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/124434525"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/100304643"
+        }
+      ]
     },
     {
       "id": "P034",
@@ -2083,7 +2470,6 @@
       "roles": [
         "film director"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n85281415\nGND: https://d-nb.info/gnd/118987674\nVIAF: https://viaf.org/viaf/46950751",
       "sourceIds": [
         "SRC0145",
         "SRC0620"
@@ -2096,7 +2482,21 @@
       ],
       "birthYear": 1905,
       "deathYear": 1988,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n85281415"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/118987674"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/46950751"
+        }
+      ]
     },
     {
       "id": "P036",
@@ -2109,7 +2509,6 @@
       "roles": [
         "film director"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n79023660\nGND: https://d-nb.info/gnd/172737915\nVIAF: https://viaf.org/viaf/74115538",
       "sourceIds": [
         "SRC0120",
         "SRC0673"
@@ -2122,7 +2521,21 @@
       ],
       "birthYear": 1899,
       "deathYear": 1979,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n79023660"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/172737915"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/74115538"
+        }
+      ]
     },
     {
       "id": "P037",
@@ -2135,7 +2548,6 @@
       "roles": [
         "film director"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no2002071774\nWikidata: https://www.wikidata.org/wiki/Q3156835",
       "contributionIds": [
         "CON-F040-D-P037"
       ],
@@ -2148,6 +2560,16 @@
       "sourceIds": [
         "SRC0651",
         "SRC0587"
+      ],
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/no2002071774"
+        },
+        {
+          "scheme": "wikidata",
+          "url": "https://www.wikidata.org/wiki/Q3156835"
+        }
       ]
     },
     {
@@ -2159,7 +2581,6 @@
       "roles": [
         "lyricist"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no2019012492\nGND: https://d-nb.info/gnd/1062114469\nBnF: https://data.bnf.fr/fr/ark:/12148/cb16515107z\nVIAF: https://viaf.org/viaf/171703667\nISNI: https://isni.org/isni/000000012068775X\nWikidata: https://www.wikidata.org/wiki/Q95772902",
       "contributionIds": [
         "CON-S093-L-P038",
         "CON-S095-L-P038"
@@ -2182,6 +2603,32 @@
       ],
       "nameVariantIds": [
         "PNV0069"
+      ],
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/no2019012492"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/1062114469"
+        },
+        {
+          "scheme": "bnf",
+          "url": "https://data.bnf.fr/fr/ark:/12148/cb16515107z"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/171703667"
+        },
+        {
+          "scheme": "isni",
+          "url": "https://isni.org/isni/000000012068775X"
+        },
+        {
+          "scheme": "wikidata",
+          "url": "https://www.wikidata.org/wiki/Q95772902"
+        }
       ]
     },
     {
@@ -2195,7 +2642,6 @@
       "roles": [
         "film director"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n2009014785\nVIAF: https://viaf.org/viaf/226412918\nWikidata: https://www.wikidata.org/wiki/Q2087649",
       "sourceIds": [
         "SRC0163",
         "SRC0830"
@@ -2208,7 +2654,21 @@
       ],
       "birthYear": 1887,
       "deathYear": 1946,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n2009014785"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/226412918"
+        },
+        {
+          "scheme": "wikidata",
+          "url": "https://www.wikidata.org/wiki/Q2087649"
+        }
+      ]
     },
     {
       "id": "P040",
@@ -2220,7 +2680,6 @@
         "publisher",
         "lyricist"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/nb2002009467\nBnF: https://catalogue.bnf.fr/ark:/12148/cb147973427\nVIAF: https://viaf.org/viaf/71658265",
       "sourceIds": [
         "SRC0373",
         "SRC0670",
@@ -2239,7 +2698,21 @@
       "deathYear": 1946,
       "lifeDatesCertainty": "confirmed",
       "authorizedName": "Salabert, Francis",
-      "authorizedNameSource": "LCNAF"
+      "authorizedNameSource": "LCNAF",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/nb2002009467"
+        },
+        {
+          "scheme": "bnf",
+          "url": "https://catalogue.bnf.fr/ark:/12148/cb147973427"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/71658265"
+        }
+      ]
     },
     {
       "id": "P041",
@@ -2257,7 +2730,6 @@
       "workIds": [
         "W-S177"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n2008000412\nVIAF: https://viaf.org/viaf/42107405\nISNI: https://isni.org/isni/0000000373276166\nWikidata: https://www.wikidata.org/wiki/Q3172161",
       "birthYear": 1908,
       "deathYear": 1945,
       "lifeDatesCertainty": "confirmed",
@@ -2265,7 +2737,25 @@
         "SRC0373",
         "SRC0819"
       ],
-      "authorizedNameSource": "LCNAF"
+      "authorizedNameSource": "LCNAF",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n2008000412"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/42107405"
+        },
+        {
+          "scheme": "isni",
+          "url": "https://isni.org/isni/0000000373276166"
+        },
+        {
+          "scheme": "wikidata",
+          "url": "https://www.wikidata.org/wiki/Q3172161"
+        }
+      ]
     },
     {
       "id": "P042",
@@ -2278,7 +2768,6 @@
       "roles": [
         "film director"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n2007025641\nVIAF: https://viaf.org/viaf/44563039",
       "sourceIds": [
         "SRC0161",
         "SRC0831"
@@ -2291,7 +2780,17 @@
       ],
       "birthYear": 1887,
       "deathYear": 1976,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n2007025641"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/44563039"
+        }
+      ]
     },
     {
       "id": "P043",
@@ -2302,7 +2801,6 @@
       "roles": [
         "film director"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no2011174144\nVIAF: https://viaf.org/viaf/122085181\nWikidata: https://www.wikidata.org/wiki/Q16028635",
       "sourceIds": [
         "SRC0136",
         "SRC0928"
@@ -2317,7 +2815,21 @@
       "deathYear": 1959,
       "lifeDatesCertainty": "confirmed",
       "authorizedName": "Legrand, Jean-René",
-      "authorizedNameSource": "LCNAF"
+      "authorizedNameSource": "LCNAF",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/no2011174144"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/122085181"
+        },
+        {
+          "scheme": "wikidata",
+          "url": "https://www.wikidata.org/wiki/Q16028635"
+        }
+      ]
     },
     {
       "id": "P044",
@@ -2330,7 +2842,6 @@
       "roles": [
         "film director"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no89017533\nVIAF: https://viaf.org/viaf/7570798",
       "sourceIds": [
         "SRC0117",
         "SRC0132",
@@ -2349,7 +2860,17 @@
       ],
       "birthYear": 1880,
       "deathYear": 1954,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/no89017533"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/7570798"
+        }
+      ]
     },
     {
       "id": "P045",
@@ -2362,7 +2883,6 @@
       "roles": [
         "film director"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no90023938\nVIAF: https://viaf.org/viaf/51966992",
       "contributionIds": [
         "CON-F049-D-P045"
       ],
@@ -2374,6 +2894,16 @@
       "lifeDatesCertainty": "confirmed",
       "sourceIds": [
         "SRC0646"
+      ],
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/no90023938"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/51966992"
+        }
       ]
     },
     {
@@ -2387,7 +2917,6 @@
       "roles": [
         "film director"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n86105752\nGND: https://d-nb.info/gnd/1089375980\nVIAF: https://viaf.org/viaf/169149196560174792659",
       "contributionIds": [
         "CON-F041-D-P046"
       ],
@@ -2399,6 +2928,20 @@
       "lifeDatesCertainty": "confirmed",
       "sourceIds": [
         "SRC0648"
+      ],
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n86105752"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/1089375980"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/169149196560174792659"
+        }
       ]
     },
     {
@@ -2413,7 +2956,6 @@
         "writer",
         "actor"
       ],
-      "authorityUrl": "GND: https://d-nb.info/gnd/116863641\nVIAF: https://viaf.org/viaf/13069716\nISNI: https://isni.org/isni/0000000013337703",
       "sourceIds": [
         "SRC0126",
         "SRC0664"
@@ -2429,7 +2971,21 @@
       ],
       "birthYear": 1875,
       "deathYear": 1949,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "authorities": [
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/116863641"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/13069716"
+        },
+        {
+          "scheme": "isni",
+          "url": "https://isni.org/isni/0000000013337703"
+        }
+      ]
     },
     {
       "id": "P048",
@@ -2442,7 +2998,6 @@
       "roles": [
         "film director"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n87896204\nVIAF: https://viaf.org/viaf/17411432",
       "sourceIds": [
         "SRC0118",
         "SRC0124",
@@ -2467,7 +3022,17 @@
       ],
       "birthYear": 1897,
       "deathYear": 1944,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n87896204"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/17411432"
+        }
+      ]
     },
     {
       "id": "P049",
@@ -2480,7 +3045,6 @@
       "roles": [
         "lyricist"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n2010056218\nGND: https://d-nb.info/gnd/1066900876\nVIAF: https://viaf.org/viaf/2676030",
       "sourceIds": [
         "SRC0163",
         "SRC0654",
@@ -2504,7 +3068,21 @@
       ],
       "birthYear": 1901,
       "deathYear": 1982,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n2010056218"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/1066900876"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/2676030"
+        }
+      ]
     },
     {
       "id": "P050",
@@ -2517,7 +3095,6 @@
       "roles": [
         "lyricist"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no2003039612\nVIAF: https://viaf.org/viaf/100912527",
       "sourceIds": [
         "SRC0668"
       ],
@@ -2537,7 +3114,17 @@
       ],
       "birthYear": 1876,
       "deathYear": 1942,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/no2003039612"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/100912527"
+        }
+      ]
     },
     {
       "id": "P051",
@@ -2548,7 +3135,6 @@
       "roles": [
         "lyricist"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n2010078826\nGND: https://d-nb.info/gnd/140364778X\nBnF: https://data.bnf.fr/fr/ark:/12148/cb147911725\nVIAF: https://viaf.org/viaf/275360\nWikidata: https://www.wikidata.org/wiki/Q110225870",
       "contributionIds": [
         "CON-S113-L-P051",
         "CON-S115-L-P051",
@@ -2575,6 +3161,28 @@
       ],
       "nameVariantIds": [
         "PNV0068"
+      ],
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n2010078826"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/140364778X"
+        },
+        {
+          "scheme": "bnf",
+          "url": "https://data.bnf.fr/fr/ark:/12148/cb147911725"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/275360"
+        },
+        {
+          "scheme": "wikidata",
+          "url": "https://www.wikidata.org/wiki/Q110225870"
+        }
       ]
     },
     {
@@ -2589,7 +3197,6 @@
         "lyricist",
         "writer"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n93028108\nBnF: https://data.bnf.fr/fr/ark:/12148/cb11914372q\nVIAF: https://viaf.org/viaf/54151083",
       "contributionIds": [
         "CON-S112-L-P052",
         "CON-S113-L-P052",
@@ -2612,7 +3219,21 @@
       ],
       "birthYear": 1901,
       "deathYear": 1978,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n93028108"
+        },
+        {
+          "scheme": "bnf",
+          "url": "https://data.bnf.fr/fr/ark:/12148/cb11914372q"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/54151083"
+        }
+      ]
     },
     {
       "id": "P054",
@@ -2625,7 +3246,6 @@
       "roles": [
         "lyricist"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no91017492\nGND: https://d-nb.info/gnd/118521632\nVIAF: https://viaf.org/viaf/262906971",
       "contributionIds": [
         "CON-S092-L-P054",
         "CON-S094-L-P054"
@@ -2641,7 +3261,21 @@
       ],
       "birthYear": 1905,
       "deathYear": 1998,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/no91017492"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/118521632"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/262906971"
+        }
+      ]
     },
     {
       "id": "P055",
@@ -2654,7 +3288,6 @@
       "roles": [
         "film director"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/nr2005021525\nVIAF: https://viaf.org/viaf/309804753",
       "sourceIds": [
         "SRC0122"
       ],
@@ -2666,7 +3299,17 @@
       ],
       "birthYear": 1881,
       "deathYear": 1949,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/nr2005021525"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/309804753"
+        }
+      ]
     },
     {
       "id": "P056",
@@ -2679,7 +3322,6 @@
       "roles": [
         "film director"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n79083590\nVIAF: https://viaf.org/viaf/39542983",
       "sourceIds": [
         "SRC0137",
         "SRC0596"
@@ -2692,7 +3334,17 @@
       ],
       "birthYear": 1902,
       "deathYear": 1957,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n79083590"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/39542983"
+        }
+      ]
     },
     {
       "id": "P057",
@@ -2703,7 +3355,6 @@
       "roles": [
         "film director"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no2024106023\nGND: https://d-nb.info/gnd/116402733\nVIAF: https://viaf.org/viaf/64757159\nWikidata: https://www.wikidata.org/wiki/Q1796019",
       "sourceIds": [
         "SRC0123",
         "SRC0834"
@@ -2721,7 +3372,25 @@
       "deathYear": 1958,
       "lifeDatesCertainty": "confirmed",
       "authorizedName": "Reichmann, Max",
-      "authorizedNameSource": "GND"
+      "authorizedNameSource": "GND",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/no2024106023"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/116402733"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/64757159"
+        },
+        {
+          "scheme": "wikidata",
+          "url": "https://www.wikidata.org/wiki/Q1796019"
+        }
+      ]
     },
     {
       "id": "P058",
@@ -2734,7 +3403,6 @@
       "roles": [
         "lyricist"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no89006651\nVIAF: https://viaf.org/viaf/69121638",
       "contributionIds": [
         "CON-S118-L-P058",
         "CON-S120-L-P058",
@@ -2771,7 +3439,17 @@
       ],
       "birthYear": 1901,
       "deathYear": 1976,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/no89006651"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/69121638"
+        }
+      ]
     },
     {
       "id": "P060",
@@ -2782,7 +3460,6 @@
       "roles": [
         "lyricist"
       ],
-      "authorityUrl": "BnF: https://catalogue.bnf.fr/ark:/12148/cb14700943p\nVIAF: https://viaf.org/viaf/170815181\nISNI: https://isni.org/isni/0000000119826820",
       "sourceIds": [
         "SRC0219",
         "SRC0284",
@@ -2805,6 +3482,20 @@
       "authorizedNameSource": "BnF",
       "nameVariantIds": [
         "PNV0056"
+      ],
+      "authorities": [
+        {
+          "scheme": "bnf",
+          "url": "https://catalogue.bnf.fr/ark:/12148/cb14700943p"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/170815181"
+        },
+        {
+          "scheme": "isni",
+          "url": "https://isni.org/isni/0000000119826820"
+        }
       ]
     },
     {
@@ -2839,7 +3530,6 @@
       "roles": [
         "film director"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n50036634\nVIAF: https://viaf.org/viaf/113894534",
       "sourceIds": [
         "SRC0146",
         "SRC0669"
@@ -2852,7 +3542,17 @@
       ],
       "birthYear": 1884,
       "deathYear": 1951,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n50036634"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/113894534"
+        }
+      ]
     },
     {
       "id": "P063",
@@ -2865,7 +3565,6 @@
       "roles": [
         "film director"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no2009018834\nVIAF: https://viaf.org/viaf/66654463",
       "sourceIds": [
         "SRC0162",
         "SRC0671"
@@ -2878,7 +3577,17 @@
       ],
       "birthYear": 1901,
       "deathYear": 1981,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/no2009018834"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/66654463"
+        }
+      ]
     },
     {
       "id": "P064",
@@ -2889,7 +3598,6 @@
       "roles": [
         "lyricist"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no2005102335\nVIAF: https://viaf.org/viaf/86418275\nWikidata: https://www.wikidata.org/wiki/Q28835692",
       "contributionIds": [
         "CON-S037-L-P064",
         "CON-S224-L-P064",
@@ -2907,6 +3615,20 @@
       "authorizedNameSource": "LCNAF",
       "sourceIds": [
         "SRC0212"
+      ],
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/no2005102335"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/86418275"
+        },
+        {
+          "scheme": "wikidata",
+          "url": "https://www.wikidata.org/wiki/Q28835692"
+        }
       ]
     },
     {
@@ -2920,7 +3642,6 @@
       "roles": [
         "lyricist"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no2009029783\nGND: https://d-nb.info/gnd/1062158474\nVIAF: https://viaf.org/viaf/44567556",
       "contributionIds": [
         "CON-S110-L-P065",
         "CON-S111-L-P065"
@@ -2943,6 +3664,20 @@
       "lifeDatesNote": "The Encyclopédie multimédia de la comédie musicale théâtrale en France gives 15 May 1878 as the birth date, whereas GND gives 18 August 1888. Both give 21 January 1942 as the death date. The displayed dates follow 1878–1942; the birth-date discrepancy remains unresolved.",
       "lifeDatesSourceIds": [
         "SRC0613"
+      ],
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/no2009029783"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/1062158474"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/44567556"
+        }
       ]
     },
     {
@@ -2956,7 +3691,6 @@
       "roles": [
         "film director"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n91069150\nGND: https://d-nb.info/gnd/118787322\nVIAF: https://viaf.org/viaf/12461935",
       "sourceIds": [
         "SRC0116",
         "SRC0135",
@@ -2976,7 +3710,21 @@
       ],
       "birthYear": 1880,
       "deathYear": 1963,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n91069150"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/118787322"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/12461935"
+        }
+      ]
     },
     {
       "id": "P067",
@@ -2989,7 +3737,6 @@
       "roles": [
         "film director"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n86138344\nGND: https://d-nb.info/gnd/140126961\nVIAF: https://viaf.org/viaf/116614489",
       "contributionIds": [
         "CON-F035-D-P067",
         "CON-F050-D-P067"
@@ -3003,7 +3750,21 @@
       ],
       "birthYear": 1896,
       "deathYear": 1991,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n86138344"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/140126961"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/116614489"
+        }
+      ]
     },
     {
       "id": "P068",
@@ -3030,9 +3791,34 @@
       "birthYear": 1883,
       "deathYear": 1968,
       "lifeDatesCertainty": "confirmed",
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no2009019373\nGND: https://d-nb.info/gnd/1061685829\nBnF: https://catalogue.bnf.fr/ark:/12148/cb14694617z\nVIAF: https://viaf.org/viaf/78937672\nISNI: https://isni.org/isni/0000000055077516\nWikidata: https://www.wikidata.org/wiki/Q3436128",
       "nameVariantIds": [
         "PNV0054"
+      ],
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/no2009019373"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/1061685829"
+        },
+        {
+          "scheme": "bnf",
+          "url": "https://catalogue.bnf.fr/ark:/12148/cb14694617z"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/78937672"
+        },
+        {
+          "scheme": "isni",
+          "url": "https://isni.org/isni/0000000055077516"
+        },
+        {
+          "scheme": "wikidata",
+          "url": "https://www.wikidata.org/wiki/Q3436128"
+        }
       ]
     },
     {
@@ -3044,7 +3830,6 @@
       "roles": [
         "film director"
       ],
-      "authorityUrl": "VIAF: https://viaf.org/viaf/1187151304644449460008\nWikidata: https://www.wikidata.org/wiki/Q2159226",
       "sourceIds": [
         "SRC0125",
         "SRC0900"
@@ -3059,7 +3844,17 @@
       "deathYear": 1987,
       "lifeDatesCertainty": "confirmed",
       "authorizedName": "Wohlmuth, Robert",
-      "authorizedNameSource": "BnF"
+      "authorizedNameSource": "BnF",
+      "authorities": [
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/1187151304644449460008"
+        },
+        {
+          "scheme": "wikidata",
+          "url": "https://www.wikidata.org/wiki/Q2159226"
+        }
+      ]
     },
     {
       "id": "P070",
@@ -3072,7 +3867,6 @@
       "roles": [
         "film director"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n85151610\nVIAF: https://viaf.org/viaf/42029827",
       "sourceIds": [
         "SRC0140",
         "SRC0604"
@@ -3090,7 +3884,17 @@
       ],
       "birthYear": 1889,
       "deathYear": 1968,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n85151610"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/42029827"
+        }
+      ]
     },
     {
       "id": "P071",
@@ -3103,7 +3907,6 @@
       "roles": [
         "lyricist"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n88094647\nGND: https://d-nb.info/gnd/173996922\nVIAF: https://viaf.org/viaf/22338827",
       "contributionIds": [
         "CON-S162-L-P071"
       ],
@@ -3115,6 +3918,20 @@
       "lifeDatesCertainty": "confirmed",
       "sourceIds": [
         "SRC0275"
+      ],
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n88094647"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/173996922"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/22338827"
+        }
       ]
     },
     {
@@ -3128,7 +3945,6 @@
       "roles": [
         "lyricist"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n86829858\nGND: https://d-nb.info/gnd/1061587908\nVIAF: https://viaf.org/viaf/54353544\nWikidata: https://www.wikidata.org/wiki/Q3438991",
       "contributionIds": [
         "CON-S093-L-P072",
         "CON-S095-L-P072"
@@ -3142,7 +3958,25 @@
       ],
       "birthYear": 1904,
       "deathYear": 1964,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n86829858"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/1061587908"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/54353544"
+        },
+        {
+          "scheme": "wikidata",
+          "url": "https://www.wikidata.org/wiki/Q3438991"
+        }
+      ]
     },
     {
       "id": "P073",
@@ -3153,7 +3987,6 @@
       "roles": [
         "film director"
       ],
-      "authorityUrl": "GND: https://d-nb.info/gnd/1089417594\nVIAF: https://viaf.org/viaf/506145857913623021191",
       "contributionIds": [
         "CON-F003-D-P073"
       ],
@@ -3170,7 +4003,17 @@
       "deathYear": 1933,
       "lifeDatesCertainty": "confirmed",
       "authorizedName": "Walther-Fein, Rudolf",
-      "authorizedNameSource": "GND"
+      "authorizedNameSource": "GND",
+      "authorities": [
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/1089417594"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/506145857913623021191"
+        }
+      ]
     },
     {
       "id": "P074",
@@ -3183,7 +4026,6 @@
       "roles": [
         "film director"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n85151535\nGND: https://d-nb.info/gnd/130010367\nVIAF: https://viaf.org/viaf/54362395",
       "sourceIds": [
         "SRC0141",
         "SRC0143",
@@ -3199,7 +4041,21 @@
       ],
       "birthYear": 1883,
       "deathYear": 1949,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n85151535"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/130010367"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/54362395"
+        }
+      ]
     },
     {
       "id": "P075",
@@ -3212,7 +4068,6 @@
       "roles": [
         "film director"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n85376724\nGND: https://d-nb.info/gnd/1061872165\nVIAF: https://viaf.org/viaf/19889313",
       "sourceIds": [
         "SRC0148"
       ],
@@ -3224,7 +4079,21 @@
       ],
       "birthYear": 1893,
       "deathYear": 1957,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n85376724"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/1061872165"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/19889313"
+        }
+      ]
     },
     {
       "id": "P076",
@@ -3237,7 +4106,6 @@
       "roles": [
         "film director"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n85151735\nGND: https://d-nb.info/gnd/119505495\nVIAF: https://viaf.org/viaf/74067440",
       "sourceIds": [
         "SRC0144",
         "SRC0594"
@@ -3250,7 +4118,21 @@
       ],
       "birthYear": 1889,
       "deathYear": 1943,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n85151735"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/119505495"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/74067440"
+        }
+      ]
     },
     {
       "id": "P077",
@@ -3263,7 +4145,6 @@
       "roles": [
         "composer"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no96036961\nGND: https://d-nb.info/gnd/130205370\nVIAF: https://viaf.org/viaf/61742755\nISNI: https://isni.org/isni/0000000081412816",
       "sourceIds": [
         "SRC0114",
         "SRC0117",
@@ -3795,7 +4676,25 @@
       ],
       "birthYear": 1903,
       "deathYear": 1971,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/no96036961"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/130205370"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/61742755"
+        },
+        {
+          "scheme": "isni",
+          "url": "https://isni.org/isni/0000000081412816"
+        }
+      ]
     },
     {
       "id": "P079",
@@ -3831,7 +4730,6 @@
       "roles": [
         "film director"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n85185281\nGND: https://d-nb.info/gnd/129013846",
       "contributionIds": [
         "CON-F047-D-P082"
       ],
@@ -3846,7 +4744,22 @@
       ],
       "authorizedName": "Goulding, Edmund",
       "authorizedNameSource": "GND",
-      "referenceUrl": "Wikipedia: https://en.wikipedia.org/wiki/Edmund_Goulding"
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n85185281"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/129013846"
+        }
+      ],
+      "references": [
+        {
+          "label": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Edmund_Goulding"
+        }
+      ]
     },
     {
       "id": "P083",
@@ -3857,7 +4770,6 @@
       "roles": [
         "lyricist"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no95052738\nVIAF: https://viaf.org/viaf/5913380\nWikidata: https://www.wikidata.org/wiki/Q55999018",
       "contributionIds": [
         "CON-S017-L-P083",
         "CON-S018-L-P083",
@@ -3884,6 +4796,20 @@
         "SRC0899",
         "SRC0901",
         "SRC0905"
+      ],
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/no95052738"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/5913380"
+        },
+        {
+          "scheme": "wikidata",
+          "url": "https://www.wikidata.org/wiki/Q55999018"
+        }
       ]
     },
     {
@@ -3899,7 +4825,6 @@
         "singer",
         "publisher"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no2002051601\nGND: https://d-nb.info/gnd/135447798\nVIAF: https://viaf.org/viaf/62764535",
       "sourceIds": [
         "SRC0289",
         "SRC0290",
@@ -3920,7 +4845,21 @@
       ],
       "birthYear": 1897,
       "deathYear": 1941,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/no2002051601"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/135447798"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/62764535"
+        }
+      ]
     },
     {
       "id": "P087",
@@ -3931,7 +4870,6 @@
       "roles": [
         "lyricist"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n2008017509\nVIAF: https://viaf.org/viaf/46229981\nWikidata: https://www.wikidata.org/wiki/Q7052313",
       "sourceIds": [
         "SRC0312",
         "SRC0643"
@@ -3946,7 +4884,21 @@
       "deathYear": 1996,
       "lifeDatesCertainty": "confirmed",
       "authorizedName": "Hackforth, Norman P.",
-      "authorizedNameSource": "LCNAF"
+      "authorizedNameSource": "LCNAF",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n2008017509"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/46229981"
+        },
+        {
+          "scheme": "wikidata",
+          "url": "https://www.wikidata.org/wiki/Q7052313"
+        }
+      ]
     },
     {
       "id": "P088",
@@ -3957,7 +4909,6 @@
       "roles": [
         "pianist"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no93001418\nGND: https://d-nb.info/gnd/134838068\nVIAF: https://viaf.org/viaf/49423851",
       "sourceIds": [
         "SRC0521",
         "SRC0812"
@@ -3978,7 +4929,21 @@
       "deathYear": 1976,
       "lifeDatesCertainty": "confirmed",
       "authorizedName": "Mittman, Leopold",
-      "authorizedNameSource": "GND"
+      "authorizedNameSource": "GND",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/no93001418"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/134838068"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/49423851"
+        }
+      ]
     },
     {
       "id": "P089",
@@ -3989,7 +4954,6 @@
       "roles": [
         "pianist"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no91026337\nVIAF: https://viaf.org/viaf/100315219\nWikidata: https://www.wikidata.org/wiki/Q4720448",
       "sourceIds": [
         "SRC0521",
         "SRC0647",
@@ -4011,7 +4975,21 @@
       "deathYear": 1990,
       "lifeDatesCertainty": "confirmed",
       "authorizedName": "Zakin, Alexander",
-      "authorizedNameSource": "LCNAF"
+      "authorizedNameSource": "LCNAF",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/no91026337"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/100315219"
+        },
+        {
+          "scheme": "wikidata",
+          "url": "https://www.wikidata.org/wiki/Q4720448"
+        }
+      ]
     },
     {
       "id": "P090",
@@ -4067,7 +5045,6 @@
       "roles": [
         "film director"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no2009054055\nVIAF: https://viaf.org/viaf/86341357",
       "sourceIds": [
         "SRC0373",
         "SRC0667"
@@ -4080,7 +5057,17 @@
       ],
       "birthYear": 1878,
       "deathYear": 1958,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/no2009054055"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/86341357"
+        }
+      ]
     },
     {
       "id": "P093",
@@ -4091,7 +5078,6 @@
       "roles": [
         "lyricist"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no2005118139\nBnF: https://data.bnf.fr/fr/14825833/rene_nazelles",
       "sourceIds": [
         "SRC0497",
         "SRC0498",
@@ -4120,7 +5106,17 @@
       "deathYear": 1975,
       "lifeDatesCertainty": "confirmed",
       "authorizedName": "Nazelles, René",
-      "authorizedNameSource": "BnF"
+      "authorizedNameSource": "BnF",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/no2005118139"
+        },
+        {
+          "scheme": "bnf",
+          "url": "https://data.bnf.fr/fr/14825833/rene_nazelles"
+        }
+      ]
     },
     {
       "id": "P095",
@@ -4133,7 +5129,6 @@
       "roles": [
         "film director"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n90669371\nVIAF: https://viaf.org/viaf/69127222",
       "contributionIds": [
         "CON-F055-D-P095"
       ],
@@ -4145,6 +5140,16 @@
       "lifeDatesCertainty": "confirmed",
       "sourceIds": [
         "SRC0653"
+      ],
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n90669371"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/69127222"
+        }
       ]
     },
     {
@@ -4156,7 +5161,6 @@
       "roles": [
         "lyricist"
       ],
-      "authorityUrl": "VIAF: https://viaf.org/viaf/287771697\nISNI: https://isni.org/isni/0000000393504437\nWikidata: https://www.wikidata.org/entity/Q2600682",
       "sourceIds": [
         "SRC0358",
         "SRC0930"
@@ -4175,7 +5179,26 @@
       "lifeDatesCertainty": "confirmed",
       "authorizedName": "Delden, Ferry van",
       "authorizedNameSource": "Dutch National Thesaurus (NTA), via VIAF cluster",
-      "referenceUrl": "Wreed en Plezant pseudonyms list: https://wreed-en-plezant.leefdaal.be/bronnen/pseudoniemen"
+      "authorities": [
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/287771697"
+        },
+        {
+          "scheme": "isni",
+          "url": "https://isni.org/isni/0000000393504437"
+        },
+        {
+          "scheme": "wikidata",
+          "url": "https://www.wikidata.org/entity/Q2600682"
+        }
+      ],
+      "references": [
+        {
+          "label": "Wreed en Plezant pseudonyms list",
+          "url": "https://wreed-en-plezant.leefdaal.be/bronnen/pseudoniemen"
+        }
+      ]
     },
     {
       "id": "P097",
@@ -4188,7 +5211,6 @@
       "roles": [
         "lyricist"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n2008014737\nVIAF: https://viaf.org/viaf/6860143\nISNI: https://isni.org/isni/0000000120203225\nWikidata: https://www.wikidata.org/wiki/Q5486519\nMusicBrainz: https://musicbrainz.org/artist/2d4bc2de-8c9b-4006-945b-4508a4b0db32",
       "sourceIds": [
         "SRC0462"
       ],
@@ -4200,7 +5222,29 @@
       ],
       "birthYear": 1894,
       "deathYear": 1962,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n2008014737"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/6860143"
+        },
+        {
+          "scheme": "isni",
+          "url": "https://isni.org/isni/0000000120203225"
+        },
+        {
+          "scheme": "wikidata",
+          "url": "https://www.wikidata.org/wiki/Q5486519"
+        },
+        {
+          "scheme": "musicbrainz",
+          "url": "https://musicbrainz.org/artist/2d4bc2de-8c9b-4006-945b-4508a4b0db32"
+        }
+      ]
     },
     {
       "id": "P098",
@@ -4253,7 +5297,6 @@
       "nameVariantIds": [
         "PNV0003"
       ],
-      "authorityUrl": "GND: https://d-nb.info/gnd/1146071264\nVIAF: https://viaf.org/viaf/134151246519744131371",
       "workIds": [
         "W-S038",
         "W-S044",
@@ -4262,7 +5305,17 @@
         "W-S220"
       ],
       "birthYear": 1872,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "authorities": [
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/1146071264"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/134151246519744131371"
+        }
+      ]
     },
     {
       "id": "P106",
@@ -4274,7 +5327,6 @@
       "roles": [
         "lyricist"
       ],
-      "authorityUrl": "BnF: https://catalogue.bnf.fr/ark:/12148/cb137928110\nISNI: https://isni.org/isni/0000000358309767",
       "sourceIds": [
         "SRC0373",
         "SRC0629",
@@ -4288,6 +5340,16 @@
       ],
       "workIds": [
         "W-S196"
+      ],
+      "authorities": [
+        {
+          "scheme": "bnf",
+          "url": "https://catalogue.bnf.fr/ark:/12148/cb137928110"
+        },
+        {
+          "scheme": "isni",
+          "url": "https://isni.org/isni/0000000358309767"
+        }
       ]
     },
     {
@@ -4300,7 +5362,6 @@
       "roles": [
         "lyricist"
       ],
-      "authorityUrl": "BnF: https://catalogue.bnf.fr/ark:/12148/cb165157811",
       "sourceIds": [
         "SRC0373",
         "SRC0549"
@@ -4318,7 +5379,13 @@
         "W-S200"
       ],
       "deathYear": 1944,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "authorities": [
+        {
+          "scheme": "bnf",
+          "url": "https://catalogue.bnf.fr/ark:/12148/cb165157811"
+        }
+      ]
     },
     {
       "id": "P109",
@@ -4329,7 +5396,6 @@
       "roles": [
         "lyricist"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no2007096320\nGND: https://d-nb.info/gnd/1258427923\nVIAF: https://viaf.org/viaf/64272092\nWikidata: https://www.wikidata.org/wiki/Q59531795",
       "sourceIds": [
         "SRC0373"
       ],
@@ -4343,7 +5409,25 @@
       "deathYear": 1991,
       "lifeDatesCertainty": "confirmed",
       "authorizedName": "Lemarchand, Henry",
-      "authorizedNameSource": "GND"
+      "authorizedNameSource": "GND",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/no2007096320"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/1258427923"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/64272092"
+        },
+        {
+          "scheme": "wikidata",
+          "url": "https://www.wikidata.org/wiki/Q59531795"
+        }
+      ]
     },
     {
       "id": "P110",
@@ -4354,7 +5438,6 @@
       "roles": [
         "lyricist"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n2013065151\nBnF: https://catalogue.bnf.fr/ark:/12148/cb16440429b\nVIAF: https://viaf.org/viaf/306296430",
       "sourceIds": [
         "SRC0373",
         "SRC0856"
@@ -4373,6 +5456,20 @@
       "lifeDatesNote": "The BnF authority record gives 21 April 1904 – 8 June 1981 and cites INSEE death-register data. These support the displayed life dates, 1904–1981.",
       "lifeDatesSourceIds": [
         "SRC0856"
+      ],
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n2013065151"
+        },
+        {
+          "scheme": "bnf",
+          "url": "https://catalogue.bnf.fr/ark:/12148/cb16440429b"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/306296430"
+        }
       ]
     },
     {
@@ -4398,12 +5495,21 @@
       "authorizedName": "Bonnal, Ermend",
       "birthYear": 1880,
       "deathYear": 1944,
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n95108582\nBnF: https://catalogue.bnf.fr/ark:/12148/cb16557102j",
       "nameVariantIds": [
         "PNV0060"
       ],
       "authorizedNameSource": "LCNAF",
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n95108582"
+        },
+        {
+          "scheme": "bnf",
+          "url": "https://catalogue.bnf.fr/ark:/12148/cb16557102j"
+        }
+      ]
     },
     {
       "id": "P113",
@@ -4414,7 +5520,6 @@
       "roles": [
         "composer"
       ],
-      "authorityUrl": "BnF: https://data.bnf.fr/14033662/karl_michael_may\nVIAF: https://viaf.org/viaf/102501279",
       "sourceIds": [
         "SRC0493",
         "SRC0500",
@@ -4436,7 +5541,17 @@
       "deathYear": 1943,
       "lifeDatesCertainty": "confirmed",
       "authorizedName": "May, Karl Michael",
-      "authorizedNameSource": "BnF"
+      "authorizedNameSource": "BnF",
+      "authorities": [
+        {
+          "scheme": "bnf",
+          "url": "https://data.bnf.fr/14033662/karl_michael_may"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/102501279"
+        }
+      ]
     },
     {
       "id": "P114",
@@ -4447,7 +5562,6 @@
       "roles": [
         "lyricist"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n2009007137\nVIAF: https://viaf.org/viaf/315708663",
       "sourceIds": [
         "SRC0493",
         "SRC0500",
@@ -4463,7 +5577,17 @@
       "deathYear": 1953,
       "lifeDatesCertainty": "confirmed",
       "authorizedName": "Brüll, Karl",
-      "authorizedNameSource": "LexM"
+      "authorizedNameSource": "LexM",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n2009007137"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/315708663"
+        }
+      ]
     },
     {
       "id": "P115",
@@ -4496,7 +5620,6 @@
         "studio executive",
         "producer"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n81018659\nGND: https://d-nb.info/gnd/119113236",
       "sourceIds": [
         "SRC0364",
         "SRC0491"
@@ -4510,7 +5633,22 @@
       "lifeDatesCertainty": "confirmed",
       "authorizedName": "Mayer, Louis B.",
       "authorizedNameSource": "GND",
-      "referenceUrl": "Wikipedia: https://en.wikipedia.org/wiki/Louis_B._Mayer"
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n81018659"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/119113236"
+        }
+      ],
+      "references": [
+        {
+          "label": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Louis_B._Mayer"
+        }
+      ]
     },
     {
       "id": "P117",
@@ -4521,7 +5659,6 @@
       "roles": [
         "singer"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n84098366\nVIAF: https://viaf.org/viaf/17407853\nWikidata: https://www.wikidata.org/wiki/Q713265",
       "sourceIds": [
         "SRC0024",
         "SRC0085",
@@ -4558,7 +5695,21 @@
       "deathYear": 1966,
       "lifeDatesCertainty": "confirmed",
       "authorizedName": "Kiepura, Jan",
-      "authorizedNameSource": "LCNAF"
+      "authorizedNameSource": "LCNAF",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n84098366"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/17407853"
+        },
+        {
+          "scheme": "wikidata",
+          "url": "https://www.wikidata.org/wiki/Q713265"
+        }
+      ]
     },
     {
       "id": "P118",
@@ -4570,7 +5721,6 @@
         "singer",
         "actor"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n82077859\nVIAF: https://viaf.org/viaf/51876682\nWikidata: https://www.wikidata.org/wiki/Q78632",
       "sourceIds": [
         "SRC0490",
         "SRC0491",
@@ -4598,6 +5748,20 @@
         "CON-S009-P-P118",
         "CON-S031-P-P118",
         "CON-S059-P-P118"
+      ],
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n82077859"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/51876682"
+        },
+        {
+          "scheme": "wikidata",
+          "url": "https://www.wikidata.org/wiki/Q78632"
+        }
       ]
     },
     {
@@ -4611,7 +5775,6 @@
         "arranger",
         "conductor"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n2014038235\nGND: https://d-nb.info/gnd/1078704368\nBnF: https://catalogue.bnf.fr/ark:/12148/cb13796928z\nVIAF: https://viaf.org/viaf/166883945",
       "sourceIds": [
         "SRC0490",
         "SRC0563",
@@ -4631,7 +5794,30 @@
       "workIds": [
         "W-S003"
       ],
-      "referenceUrl": "Wikipedia: https://en.wikipedia.org/wiki/Henryk_Gold"
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n2014038235"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/1078704368"
+        },
+        {
+          "scheme": "bnf",
+          "url": "https://catalogue.bnf.fr/ark:/12148/cb13796928z"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/166883945"
+        }
+      ],
+      "references": [
+        {
+          "label": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Henryk_Gold"
+        }
+      ]
     },
     {
       "id": "P121",
@@ -4660,12 +5846,25 @@
       "workIds": [
         "W-O005"
       ],
-      "authorityUrl": "GND: https://d-nb.info/gnd/1156571219\nBN: https://dbn.bn.org.pl/descriptor-details/a0000001973447\nVIAF: https://viaf.org/viaf/300510330",
       "birthYear": 1908,
       "deathYear": 1945,
       "lifeDatesCertainty": "confirmed",
       "authorizedName": "Etkin, Róża",
-      "authorizedNameSource": "BN"
+      "authorizedNameSource": "BN",
+      "authorities": [
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/1156571219"
+        },
+        {
+          "scheme": "bn",
+          "url": "https://dbn.bn.org.pl/descriptor-details/a0000001973447"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/300510330"
+        }
+      ]
     },
     {
       "id": "P122",
@@ -4677,7 +5876,6 @@
         "pianist",
         "teacher"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no93020803\nGND: https://d-nb.info/gnd/116963670\nBnF: https://catalogue.bnf.fr/ark:/12148/cb14769221v\nVIAF: https://viaf.org/viaf/71657465",
       "sourceIds": [
         "SRC0366",
         "SRC0490",
@@ -4690,7 +5888,25 @@
       "deathYear": 1947,
       "lifeDatesCertainty": "confirmed",
       "authorizedName": "Mayer-Mahr, Moritz",
-      "authorizedNameSource": "LCNAF"
+      "authorizedNameSource": "LCNAF",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/no93020803"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/116963670"
+        },
+        {
+          "scheme": "bnf",
+          "url": "https://catalogue.bnf.fr/ark:/12148/cb14769221v"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/71657465"
+        }
+      ]
     },
     {
       "id": "P123",
@@ -4703,7 +5919,6 @@
         "conductor",
         "teacher"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no93010467\nGND: https://d-nb.info/gnd/103895116",
       "sourceIds": [
         "SRC0331",
         "SRC0490",
@@ -4717,7 +5932,22 @@
       "lifeDatesCertainty": "confirmed",
       "authorizedName": "Gmeindl, Walther",
       "authorizedNameSource": "GND",
-      "referenceUrl": "Discogs: https://www.discogs.com/artist/6548258"
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/no93010467"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/103895116"
+        }
+      ],
+      "references": [
+        {
+          "label": "Discogs",
+          "url": "https://www.discogs.com/artist/6548258"
+        }
+      ]
     },
     {
       "id": "P124",
@@ -4729,7 +5959,6 @@
         "film director",
         "writer"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no2018031836\nBnF: https://data.bnf.fr/fr/14129111/serge_de_poligny",
       "sourceIds": [
         "SRC0532",
         "SRC0833"
@@ -4744,7 +5973,17 @@
       "deathYear": 1983,
       "lifeDatesCertainty": "confirmed",
       "authorizedName": "Poligny, Serge de",
-      "authorizedNameSource": "BnF"
+      "authorizedNameSource": "BnF",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/no2018031836"
+        },
+        {
+          "scheme": "bnf",
+          "url": "https://data.bnf.fr/fr/14129111/serge_de_poligny"
+        }
+      ]
     },
     {
       "id": "P125",
@@ -4760,7 +5999,6 @@
         "writer",
         "actor"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n50043553\nGND: https://d-nb.info/gnd/118729306\nVIAF: https://viaf.org/viaf/56627503",
       "sourceIds": [
         "SRC0492",
         "SRC0537"
@@ -4770,7 +6008,21 @@
       ],
       "birthYear": 1892,
       "deathYear": 1947,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n50043553"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/118729306"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/56627503"
+        }
+      ]
     },
     {
       "id": "P126",
@@ -4785,7 +6037,6 @@
         "composer",
         "writer"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n83134785\nGND: https://d-nb.info/gnd/128793481\nVIAF: https://viaf.org/viaf/61733693\nISNI: https://isni.org/isni/0000000109078267",
       "sourceIds": [
         "SRC0474",
         "SRC0548",
@@ -4799,7 +6050,25 @@
       ],
       "birthYear": 1899,
       "deathYear": 1978,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n83134785"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/128793481"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/61733693"
+        },
+        {
+          "scheme": "isni",
+          "url": "https://isni.org/isni/0000000109078267"
+        }
+      ]
     },
     {
       "id": "P127",
@@ -4813,7 +6082,6 @@
         "composer",
         "conductor"
       ],
-      "authorityUrl": "GND: https://d-nb.info/gnd/142499021\nBnF: https://data.bnf.fr/ark:/12148/cb17801932v\nVIAF: https://viaf.org/viaf/126272745",
       "sourceIds": [
         "SRC0125"
       ],
@@ -4826,7 +6094,26 @@
       "birthYear": 1897,
       "deathYear": 1975,
       "lifeDatesCertainty": "confirmed",
-      "referenceUrl": "Filmportal: https://www.filmportal.de/person/friedrich-jung_6a89189d67fe4c81acc6eb546769559d"
+      "authorities": [
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/142499021"
+        },
+        {
+          "scheme": "bnf",
+          "url": "https://data.bnf.fr/ark:/12148/cb17801932v"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/126272745"
+        }
+      ],
+      "references": [
+        {
+          "label": "Filmportal",
+          "url": "https://www.filmportal.de/person/friedrich-jung_6a89189d67fe4c81acc6eb546769559d"
+        }
+      ]
     },
     {
       "id": "P128",
@@ -4851,11 +6138,20 @@
       "workIds": [
         "W-S152"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n50080187\nVIAF: https://viaf.org/viaf/66651610",
       "birthYear": 1899,
       "deathYear": 1974,
       "lifeDatesCertainty": "confirmed",
-      "authorizedNameSource": "LCNAF"
+      "authorizedNameSource": "LCNAF",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n50080187"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/66651610"
+        }
+      ]
     },
     {
       "id": "P129",
@@ -4898,7 +6194,6 @@
         "composer",
         "bandleader"
       ],
-      "authorityUrl": "GND: https://d-nb.info/gnd/1061731308\nVIAF: https://viaf.org/viaf/311651052\nWikidata: https://www.wikidata.org/wiki/Q18589112",
       "sourceIds": [
         "SRC0002",
         "SRC0021",
@@ -4929,7 +6224,26 @@
         "W-S007",
         "W-S010"
       ],
-      "referenceUrl": "Deutsche Digitale Bibliothek: https://www.deutsche-digitale-bibliothek.de/person/gnd/1061731308"
+      "authorities": [
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/1061731308"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/311651052"
+        },
+        {
+          "scheme": "wikidata",
+          "url": "https://www.wikidata.org/wiki/Q18589112"
+        }
+      ],
+      "references": [
+        {
+          "label": "Deutsche Digitale Bibliothek",
+          "url": "https://www.deutsche-digitale-bibliothek.de/person/gnd/1061731308"
+        }
+      ]
     },
     {
       "id": "P131",
@@ -4943,7 +6257,6 @@
         "pianist",
         "teacher"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n2006017851\nVIAF: https://viaf.org/viaf/65892974\nISNI: https://isni.org/isni/0000000109816346\nWikidata: https://www.wikidata.org/wiki/Q40331145",
       "sourceIds": [
         "SRC0082",
         "SRC0460",
@@ -4954,7 +6267,25 @@
       ],
       "birthYear": 1888,
       "deathYear": 1962,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n2006017851"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/65892974"
+        },
+        {
+          "scheme": "isni",
+          "url": "https://isni.org/isni/0000000109816346"
+        },
+        {
+          "scheme": "wikidata",
+          "url": "https://www.wikidata.org/wiki/Q40331145"
+        }
+      ]
     },
     {
       "id": "P132",
@@ -4968,7 +6299,6 @@
         "actor",
         "singer"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n97123801\nGND: https://d-nb.info/gnd/1062023889\nBnF: https://data.bnf.fr/ark:/12148/cb138942846\nVIAF: https://viaf.org/viaf/32183198\nISNI: https://isni.org/isni/0000000035489214\nWikidata: https://www.wikidata.org/wiki/Q3132795",
       "sourceIds": [
         "SRC0115",
         "SRC0137",
@@ -5006,7 +6336,33 @@
       ],
       "birthYear": 1902,
       "deathYear": 1959,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n97123801"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/1062023889"
+        },
+        {
+          "scheme": "bnf",
+          "url": "https://data.bnf.fr/ark:/12148/cb138942846"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/32183198"
+        },
+        {
+          "scheme": "isni",
+          "url": "https://isni.org/isni/0000000035489214"
+        },
+        {
+          "scheme": "wikidata",
+          "url": "https://www.wikidata.org/wiki/Q3132795"
+        }
+      ]
     },
     {
       "id": "P133",
@@ -5019,7 +6375,6 @@
       "roles": [
         "pianist"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n85072685\nGND: https://d-nb.info/gnd/135949033\nVIAF: https://viaf.org/viaf/34643027",
       "sourceIds": [
         "SRC0585"
       ],
@@ -5031,7 +6386,21 @@
       ],
       "birthYear": 1909,
       "deathYear": 1951,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n85072685"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/135949033"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/34643027"
+        }
+      ]
     },
     {
       "id": "P134",
@@ -5044,7 +6413,6 @@
       "roles": [
         "singer"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n94068176\nGND: https://d-nb.info/gnd/134314662\nVIAF: https://viaf.org/viaf/54331573",
       "sourceIds": [
         "SRC0586"
       ],
@@ -5056,7 +6424,21 @@
       ],
       "birthYear": 1905,
       "deathYear": 1949,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n94068176"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/134314662"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/54331573"
+        }
+      ]
     },
     {
       "id": "P135",
@@ -5070,7 +6452,6 @@
         "composer",
         "conductor"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n83065680\nGND: https://d-nb.info/gnd/117156094\nVIAF: https://viaf.org/viaf/17409280\nISNI: https://isni.org/isni/0000000108754147",
       "sourceIds": [
         "SRC0141",
         "SRC0176",
@@ -5094,7 +6475,25 @@
       ],
       "birthYear": 1906,
       "deathYear": 1967,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n83065680"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/117156094"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/17409280"
+        },
+        {
+          "scheme": "isni",
+          "url": "https://isni.org/isni/0000000108754147"
+        }
+      ]
     },
     {
       "id": "P136",
@@ -5125,10 +6524,27 @@
         "W-F036",
         "W-F043"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n85151854\nGND: https://d-nb.info/gnd/134532325\nVIAF: https://viaf.org/viaf/100912799\nISNI: https://isni.org/isni/0000000115034359",
       "birthYear": 1885,
       "deathYear": 1949,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n85151854"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/134532325"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/100912799"
+        },
+        {
+          "scheme": "isni",
+          "url": "https://isni.org/isni/0000000115034359"
+        }
+      ]
     },
     {
       "id": "P137",
@@ -5142,7 +6558,6 @@
         "singer",
         "actor"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no90008351\nGND: https://d-nb.info/gnd/1032101164\nVIAF: https://viaf.org/viaf/162638542\nISNI: https://isni.org/isni/0000000114945206",
       "sourceIds": [
         "SRC0145",
         "SRC0380",
@@ -5166,7 +6581,25 @@
       ],
       "birthYear": 1921,
       "lifeDatesCertainty": "confirmed",
-      "deathYear": 2013
+      "deathYear": 2013,
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/no90008351"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/1032101164"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/162638542"
+        },
+        {
+          "scheme": "isni",
+          "url": "https://isni.org/isni/0000000114945206"
+        }
+      ]
     },
     {
       "id": "P138",
@@ -5180,7 +6613,6 @@
         "singer",
         "actor"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n50015080\nGND: https://d-nb.info/gnd/11853761X\nVIAF: https://viaf.org/viaf/49233610\nISNI: https://isni.org/isni/000000036851668X",
       "sourceIds": [
         "SRC0147",
         "SRC0321",
@@ -5200,7 +6632,25 @@
       ],
       "birthYear": 1922,
       "deathYear": 1969,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n50015080"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/11853761X"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/49233610"
+        },
+        {
+          "scheme": "isni",
+          "url": "https://isni.org/isni/000000036851668X"
+        }
+      ]
     },
     {
       "id": "P139",
@@ -5213,7 +6663,6 @@
         "singer",
         "actor"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n50041961\nGND: https://d-nb.info/gnd/119403277\nBnF: https://catalogue.bnf.fr/ark:/12148/cb13757145r\nVIAF: https://viaf.org/viaf/69111652\nISNI: https://isni.org/isni/0000000115570637",
       "sourceIds": [
         "SRC0144",
         "SRC0319",
@@ -5233,7 +6682,29 @@
       "lifeDatesSourceIds": [
         "SRC0857"
       ],
-      "authorizedNameSource": "LCNAF"
+      "authorizedNameSource": "LCNAF",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n50041961"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/119403277"
+        },
+        {
+          "scheme": "bnf",
+          "url": "https://catalogue.bnf.fr/ark:/12148/cb13757145r"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/69111652"
+        },
+        {
+          "scheme": "isni",
+          "url": "https://isni.org/isni/0000000115570637"
+        }
+      ]
     },
     {
       "id": "P140",
@@ -5247,7 +6718,6 @@
         "composer",
         "conductor"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n98041902\nGND: https://d-nb.info/gnd/173766072\nVIAF: https://viaf.org/viaf/246752503\nISNI: https://isni.org/isni/0000000059420238",
       "sourceIds": [
         "SRC0147",
         "SRC0148",
@@ -5268,6 +6738,24 @@
       "lifeDatesNote": "GND gives 19 April 1888 as the birth date, whereas LCNAF gives 1882. The displayed dates follow GND; the conflicting birth years remain unresolved.",
       "lifeDatesSourceIds": [
         "SRC0862"
+      ],
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n98041902"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/173766072"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/246752503"
+        },
+        {
+          "scheme": "isni",
+          "url": "https://isni.org/isni/0000000059420238"
+        }
       ]
     },
     {
@@ -5282,7 +6770,6 @@
         "composer",
         "conductor"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no90009999",
       "sourceIds": [
         "SRC0142",
         "SRC0480"
@@ -5297,7 +6784,13 @@
       ],
       "birthYear": 1896,
       "deathYear": 1971,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/no90009999"
+        }
+      ]
     },
     {
       "id": "P142",
@@ -5311,7 +6804,6 @@
         "composer",
         "conductor"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/nb99134195\nGND: https://d-nb.info/gnd/119258080\nVIAF: https://viaf.org/viaf/22408295\nISNI: https://isni.org/isni/0000000081016469",
       "sourceIds": [
         "SRC0117",
         "SRC0132",
@@ -5330,7 +6822,25 @@
       ],
       "birthYear": 1894,
       "deathYear": 1964,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/nb99134195"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/119258080"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/22408295"
+        },
+        {
+          "scheme": "isni",
+          "url": "https://isni.org/isni/0000000081016469"
+        }
+      ]
     },
     {
       "id": "P143",
@@ -5344,7 +6854,6 @@
         "composer",
         "conductor"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no90020684\nGND: https://d-nb.info/gnd/13508086X\nVIAF: https://viaf.org/viaf/32196991\nISNI: https://isni.org/isni/0000000059361338",
       "sourceIds": [
         "SRC0128",
         "SRC0129",
@@ -5364,7 +6873,25 @@
       ],
       "birthYear": 1896,
       "deathYear": 1994,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/no90020684"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/13508086X"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/32196991"
+        },
+        {
+          "scheme": "isni",
+          "url": "https://isni.org/isni/0000000059361338"
+        }
+      ]
     },
     {
       "id": "P144",
@@ -5378,7 +6905,6 @@
         "composer",
         "conductor"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n80015505\nGND: https://d-nb.info/gnd/118524917\nVIAF: https://viaf.org/viaf/22327022\nISNI: https://isni.org/isni/000000010878563X",
       "sourceIds": [
         "SRC0123",
         "SRC0152",
@@ -5398,7 +6924,25 @@
       ],
       "birthYear": 1894,
       "deathYear": 1979,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n80015505"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/118524917"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/22327022"
+        },
+        {
+          "scheme": "isni",
+          "url": "https://isni.org/isni/000000010878563X"
+        }
+      ]
     },
     {
       "id": "P145",
@@ -5413,7 +6957,6 @@
         "conductor",
         "arranger"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n2008013326\nGND: https://d-nb.info/gnd/1011430215\nVIAF: https://viaf.org/viaf/19944306\nISNI: https://isni.org/isni/0000000120173230",
       "sourceIds": [
         "SRC0118",
         "SRC0134"
@@ -5428,7 +6971,25 @@
       ],
       "birthYear": 1901,
       "deathYear": 1977,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n2008013326"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/1011430215"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/19944306"
+        },
+        {
+          "scheme": "isni",
+          "url": "https://isni.org/isni/0000000120173230"
+        }
+      ]
     },
     {
       "id": "P146",
@@ -5439,7 +7000,6 @@
       "roles": [
         "conductor"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no88003542\nGND: https://d-nb.info/gnd/124394515\nVIAF: https://viaf.org/viaf/15742834\nWikidata: https://www.wikidata.org/wiki/Q22681971",
       "sourceIds": [
         "SRC0116",
         "SRC0916"
@@ -5454,7 +7014,25 @@
       "deathYear": 1951,
       "lifeDatesCertainty": "confirmed",
       "authorizedName": "Günther, Felix",
-      "authorizedNameSource": "GND"
+      "authorizedNameSource": "GND",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/no88003542"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/124394515"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/15742834"
+        },
+        {
+          "scheme": "wikidata",
+          "url": "https://www.wikidata.org/wiki/Q22681971"
+        }
+      ]
     },
     {
       "id": "P147",
@@ -5480,13 +7058,30 @@
       "workIds": [
         "W-F006"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no90014252\nGND: https://d-nb.info/gnd/128702915\nVIAF: https://viaf.org/viaf/27255691\nISNI: https://isni.org/isni/0000000081063011",
       "nameVariantIds": [
         "PNV0048"
       ],
       "birthYear": 1903,
       "deathYear": 1967,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/no90014252"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/128702915"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/27255691"
+        },
+        {
+          "scheme": "isni",
+          "url": "https://isni.org/isni/0000000081063011"
+        }
+      ]
     },
     {
       "id": "P148",
@@ -5499,7 +7094,6 @@
         "composer",
         "conductor"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n2009033210\nGND: https://d-nb.info/gnd/117446882\nVIAF: https://viaf.org/viaf/20457838",
       "sourceIds": [
         "SRC0153",
         "SRC0847",
@@ -5517,6 +7111,20 @@
       "authorizedNameSource": "LCNAF",
       "nameVariantIds": [
         "PNV0070"
+      ],
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n2009033210"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/117446882"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/20457838"
+        }
       ]
     },
     {
@@ -5532,7 +7140,6 @@
         "conductor",
         "arranger"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/nr92000430\nGND: https://d-nb.info/gnd/118698257\nVIAF: https://viaf.org/viaf/5123678\nISNI: https://isni.org/isni/000000008084721X",
       "sourceIds": [
         "SRC0123",
         "SRC0704"
@@ -5545,7 +7152,25 @@
       ],
       "birthYear": 1908,
       "deathYear": 1982,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/nr92000430"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/118698257"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/5123678"
+        },
+        {
+          "scheme": "isni",
+          "url": "https://isni.org/isni/000000008084721X"
+        }
+      ]
     },
     {
       "id": "P150",
@@ -5558,7 +7183,6 @@
       "roles": [
         "composer"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n82153092\nGND: https://d-nb.info/gnd/134686039\nVIAF: https://viaf.org/viaf/12496228\nISNI: https://isni.org/isni/000000008092027X",
       "sourceIds": [
         "SRC0123",
         "SRC0660",
@@ -5572,7 +7196,25 @@
       ],
       "birthYear": 1905,
       "deathYear": 1958,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n82153092"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/134686039"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/12496228"
+        },
+        {
+          "scheme": "isni",
+          "url": "https://isni.org/isni/000000008092027X"
+        }
+      ]
     },
     {
       "id": "P151",
@@ -5599,9 +7241,30 @@
       "birthYear": 1910,
       "deathYear": 1983,
       "lifeDatesCertainty": "confirmed",
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/nb2003055670\nGND: https://d-nb.info/gnd/133442284\nBnF: https://catalogue.bnf.fr/ark:/12148/cb14768347k\nVIAF: https://viaf.org/viaf/3662538\nWikidata: https://www.wikidata.org/wiki/Q31202678",
       "nameVariantIds": [
         "PNV0053"
+      ],
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/nb2003055670"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/133442284"
+        },
+        {
+          "scheme": "bnf",
+          "url": "https://catalogue.bnf.fr/ark:/12148/cb14768347k"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/3662538"
+        },
+        {
+          "scheme": "wikidata",
+          "url": "https://www.wikidata.org/wiki/Q31202678"
+        }
       ]
     },
     {
@@ -5615,7 +7278,6 @@
       "roles": [
         "composer"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n92002003\nGND: https://d-nb.info/gnd/135157870\nVIAF: https://viaf.org/viaf/87423013\nISNI: https://isni.org/isni/0000000120300930",
       "sourceIds": [
         "SRC0153",
         "SRC0920"
@@ -5628,7 +7290,25 @@
       ],
       "birthYear": 1899,
       "deathYear": 1984,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n92002003"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/135157870"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/87423013"
+        },
+        {
+          "scheme": "isni",
+          "url": "https://isni.org/isni/0000000120300930"
+        }
+      ]
     },
     {
       "id": "P153",
@@ -5642,7 +7322,6 @@
         "actor",
         "singer"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n81026775\nGND: https://d-nb.info/gnd/118501402\nVIAF: https://viaf.org/viaf/66671093\nISNI: https://isni.org/isni/0000000109111071",
       "sourceIds": [
         "SRC0153",
         "SRC0609",
@@ -5666,7 +7345,25 @@
       ],
       "birthYear": 1891,
       "deathYear": 1960,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n81026775"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/118501402"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/66671093"
+        },
+        {
+          "scheme": "isni",
+          "url": "https://isni.org/isni/0000000109111071"
+        }
+      ]
     },
     {
       "id": "P154",
@@ -5680,7 +7377,6 @@
         "singer",
         "actor"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n82040704\nGND: https://d-nb.info/gnd/116177330\nVIAF: https://viaf.org/viaf/66652710\nISNI: https://isni.org/isni/0000000116623673",
       "sourceIds": [
         "SRC0135",
         "SRC0612"
@@ -5693,7 +7389,25 @@
       ],
       "birthYear": 1884,
       "deathYear": 1958,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n82040704"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/116177330"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/66652710"
+        },
+        {
+          "scheme": "isni",
+          "url": "https://isni.org/isni/0000000116623673"
+        }
+      ]
     },
     {
       "id": "P155",
@@ -5709,7 +7423,6 @@
       "birthYear": 1908,
       "deathYear": 2011,
       "lifeDatesCertainty": "confirmed",
-      "authorityUrl": "BnF: https://catalogue.bnf.fr/ark:/12148/cb16974300s",
       "sourceIds": [
         "SRC0625",
         "SRC0626"
@@ -5722,6 +7435,12 @@
       ],
       "workIds": [
         "W-S123"
+      ],
+      "authorities": [
+        {
+          "scheme": "bnf",
+          "url": "https://catalogue.bnf.fr/ark:/12148/cb16974300s"
+        }
       ]
     },
     {
@@ -5735,7 +7454,6 @@
       "roles": [
         "lyricist"
       ],
-      "authorityUrl": "BN: https://dbn.bn.org.pl/descriptor-details/9810691594205606\nNUKAT: http://nukat.edu.pl/aut/n2014185547\nVIAF: https://viaf.org/viaf/302995408\nISNI: https://isni.org/isni/0000000409396902",
       "sourceIds": [
         "SRC0024",
         "SRC0633",
@@ -5752,6 +7470,24 @@
       "workIds": [
         "W-S214",
         "W-S215"
+      ],
+      "authorities": [
+        {
+          "scheme": "bn",
+          "url": "https://dbn.bn.org.pl/descriptor-details/9810691594205606"
+        },
+        {
+          "scheme": "nukat",
+          "url": "http://nukat.edu.pl/aut/n2014185547"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/302995408"
+        },
+        {
+          "scheme": "isni",
+          "url": "https://isni.org/isni/0000000409396902"
+        }
       ]
     },
     {
@@ -5767,7 +7503,6 @@
         "producer",
         "animator"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n92036102\nGND: https://d-nb.info/gnd/124417280\nVIAF: https://viaf.org/viaf/66672524\nWikidata: https://www.wikidata.org/wiki/Q336424",
       "sourceIds": [
         "SRC0373",
         "SRC0384",
@@ -5781,7 +7516,25 @@
       ],
       "birthYear": 1901,
       "deathYear": 1971,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n92036102"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/124417280"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/66672524"
+        },
+        {
+          "scheme": "wikidata",
+          "url": "https://www.wikidata.org/wiki/Q336424"
+        }
+      ]
     },
     {
       "id": "P158",
@@ -5794,7 +7547,6 @@
       "roles": [
         "composer"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n85378906\nGND: https://d-nb.info/gnd/140706925\nVIAF: https://viaf.org/viaf/107705214\nWikidata: https://www.wikidata.org/wiki/Q598185",
       "sourceIds": [
         "SRC0373"
       ],
@@ -5806,7 +7558,25 @@
       ],
       "birthYear": 1891,
       "deathYear": 1972,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n85378906"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/140706925"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/107705214"
+        },
+        {
+          "scheme": "wikidata",
+          "url": "https://www.wikidata.org/wiki/Q598185"
+        }
+      ]
     },
     {
       "id": "P159",
@@ -5821,7 +7591,6 @@
         "poet",
         "writer"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n50049756\nGND: https://d-nb.info/gnd/11880300X\nBnF: https://catalogue.bnf.fr/ark:/12148/cb12037457t\nBN: https://dbn.bn.org.pl/descriptor-details/9810671370505606\nVIAF: https://viaf.org/viaf/46777365\nISNI: https://isni.org/isni/0000000110260840\nWikidata: https://www.wikidata.org/wiki/Q376278",
       "sourceIds": [
         "SRC0477",
         "SRC0658",
@@ -5840,6 +7609,36 @@
       "nameVariantIds": [
         "PNV0072",
         "PNV0073"
+      ],
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n50049756"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/11880300X"
+        },
+        {
+          "scheme": "bnf",
+          "url": "https://catalogue.bnf.fr/ark:/12148/cb12037457t"
+        },
+        {
+          "scheme": "bn",
+          "url": "https://dbn.bn.org.pl/descriptor-details/9810671370505606"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/46777365"
+        },
+        {
+          "scheme": "isni",
+          "url": "https://isni.org/isni/0000000110260840"
+        },
+        {
+          "scheme": "wikidata",
+          "url": "https://www.wikidata.org/wiki/Q376278"
+        }
       ]
     },
     {
@@ -5879,7 +7678,6 @@
         "producer",
         "studio founder"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n86075524\nGND: https://d-nb.info/gnd/119306336\nBnF: https://catalogue.bnf.fr/ark:/12148/cb14647302s\nVIAF: https://viaf.org/viaf/62355509\nISNI: https://isni.org/isni/0000000123208849\nWikidata: https://www.wikidata.org/wiki/Q61074",
       "sourceIds": [
         "SRC0492",
         "SRC0676"
@@ -5890,7 +7688,38 @@
       "birthYear": 1867,
       "deathYear": 1939,
       "lifeDatesCertainty": "confirmed",
-      "referenceUrl": "Filmportal: https://www.filmportal.de/person/carl-laemmle_5223deebdd1f4a8a96ef02994d621b41"
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n86075524"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/119306336"
+        },
+        {
+          "scheme": "bnf",
+          "url": "https://catalogue.bnf.fr/ark:/12148/cb14647302s"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/62355509"
+        },
+        {
+          "scheme": "isni",
+          "url": "https://isni.org/isni/0000000123208849"
+        },
+        {
+          "scheme": "wikidata",
+          "url": "https://www.wikidata.org/wiki/Q61074"
+        }
+      ],
+      "references": [
+        {
+          "label": "Filmportal",
+          "url": "https://www.filmportal.de/person/carl-laemmle_5223deebdd1f4a8a96ef02994d621b41"
+        }
+      ]
     },
     {
       "id": "P162",
@@ -5904,7 +7733,6 @@
         "producer",
         "talent agent"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no2007147390\nGND: https://d-nb.info/gnd/116308869\nVIAF: https://viaf.org/viaf/67213739\nISNI: https://isni.org/isni/0000000010488266\nWikidata: https://www.wikidata.org/wiki/Q86560",
       "sourceIds": [
         "SRC0492",
         "SRC0677",
@@ -5920,6 +7748,28 @@
       "lifeDatesNote": "GND gives 29 March 1902 as the birth date, whereas Filmportal gives 29 March 1903. Both give 16 March 1988 as the death date. The displayed years follow 1902–1988; the conflicting birth years remain unresolved.",
       "lifeDatesSourceIds": [
         "SRC0858"
+      ],
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/no2007147390"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/116308869"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/67213739"
+        },
+        {
+          "scheme": "isni",
+          "url": "https://isni.org/isni/0000000010488266"
+        },
+        {
+          "scheme": "wikidata",
+          "url": "https://www.wikidata.org/wiki/Q86560"
+        }
       ]
     },
     {
@@ -5933,7 +7783,6 @@
       "roles": [
         "producer"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n85376897\nGND: https://d-nb.info/gnd/1062193342\nVIAF: https://viaf.org/viaf/100242410\nWikidata: https://www.wikidata.org/wiki/Q1691552",
       "sourceIds": [
         "SRC0145",
         "SRC0680"
@@ -5950,7 +7799,34 @@
       "birthYear": 1901,
       "deathYear": 1991,
       "lifeDatesCertainty": "confirmed",
-      "referenceUrl": "AFI Catalog: https://catalog.afi.com/Person/84557-Joe-Pasternak\nFilmportal: https://www.filmportal.de/person/joe-pasternak_c33d9384f95d4ea08cbf6f9a10faa83b"
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n85376897"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/1062193342"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/100242410"
+        },
+        {
+          "scheme": "wikidata",
+          "url": "https://www.wikidata.org/wiki/Q1691552"
+        }
+      ],
+      "references": [
+        {
+          "label": "AFI Catalog",
+          "url": "https://catalog.afi.com/Person/84557-Joe-Pasternak"
+        },
+        {
+          "label": "Filmportal",
+          "url": "https://www.filmportal.de/person/joe-pasternak_c33d9384f95d4ea08cbf6f9a10faa83b"
+        }
+      ]
     },
     {
       "id": "P164",
@@ -5967,7 +7843,6 @@
       "birthYear": 1897,
       "deathYear": 1978,
       "lifeDatesCertainty": "confirmed",
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n82162725\nGND: https://d-nb.info/gnd/116176156\nVIAF: https://viaf.org/viaf/29717722\nISNI: https://isni.org/isni/0000000073649506\nWikidata: https://www.wikidata.org/entity/Q84510",
       "sourceIds": [
         "SRC0131",
         "SRC0186",
@@ -5985,6 +7860,28 @@
         "W-F022",
         "W-S058",
         "W-S084"
+      ],
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n82162725"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/116176156"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/29717722"
+        },
+        {
+          "scheme": "isni",
+          "url": "https://isni.org/isni/0000000073649506"
+        },
+        {
+          "scheme": "wikidata",
+          "url": "https://www.wikidata.org/entity/Q84510"
+        }
       ]
     },
     {
@@ -5992,7 +7889,6 @@
       "displayName": "Marek Weber",
       "authorizedName": "Weber, Marek",
       "authorizedNameSource": "LCNAF",
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n80163850\nGND: https://d-nb.info/gnd/1052923755\nVIAF: https://viaf.org/viaf/40686005\nISNI: https://isni.org/isni/0000000059542630",
       "sortName": "Weber, Marek",
       "slug": "marek-weber",
       "birthYear": 1888,
@@ -6042,6 +7938,24 @@
         "SRC0743",
         "SRC0755",
         "SRC0921"
+      ],
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n80163850"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/1052923755"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/40686005"
+        },
+        {
+          "scheme": "isni",
+          "url": "https://isni.org/isni/0000000059542630"
+        }
       ]
     },
     {
@@ -6049,7 +7963,6 @@
       "displayName": "Leo Monosson",
       "authorizedName": "Monosson, Leo",
       "authorizedNameSource": "LCNAF",
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no2012128023\nGND: https://d-nb.info/gnd/134465385\nBnF: https://catalogue.bnf.fr/ark:/12148/cb14208026p\nVIAF: https://viaf.org/viaf/79633937\nISNI: https://isni.org/isni/0000000058167947",
       "sortName": "Monosson, Leo",
       "slug": "leo-monosson",
       "birthYear": 1897,
@@ -6080,6 +7993,28 @@
       ],
       "nameVariantIds": [
         "PNV0063"
+      ],
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/no2012128023"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/134465385"
+        },
+        {
+          "scheme": "bnf",
+          "url": "https://catalogue.bnf.fr/ark:/12148/cb14208026p"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/79633937"
+        },
+        {
+          "scheme": "isni",
+          "url": "https://isni.org/isni/0000000058167947"
+        }
       ]
     },
     {
@@ -6087,7 +8022,6 @@
       "displayName": "Otto Dobrindt",
       "authorizedName": "Dobrindt, Otto",
       "authorizedNameSource": "LCNAF",
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no93003006\nGND: https://d-nb.info/gnd/134360052\nBnF: https://catalogue.bnf.fr/ark:/12148/cb140036212\nVIAF: https://viaf.org/viaf/24798475\nISNI: https://isni.org/isni/0000000059200323",
       "sortName": "Dobrindt, Otto",
       "slug": "otto-dobrindt",
       "birthYear": 1886,
@@ -6125,6 +8059,28 @@
       "nameVariantIds": [
         "PNV0064",
         "PNV0065"
+      ],
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/no93003006"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/134360052"
+        },
+        {
+          "scheme": "bnf",
+          "url": "https://catalogue.bnf.fr/ark:/12148/cb140036212"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/24798475"
+        },
+        {
+          "scheme": "isni",
+          "url": "https://isni.org/isni/0000000059200323"
+        }
       ]
     },
     {
@@ -6132,7 +8088,6 @@
       "displayName": "Josephine Baker",
       "authorizedName": "Baker, Josephine",
       "authorizedNameSource": "LCNAF",
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n50020892\nGND: https://d-nb.info/gnd/118506099\nVIAF: https://viaf.org/viaf/41836198\nISNI: https://isni.org/isni/0000000116279884",
       "sortName": "Baker, Josephine",
       "slug": "josephine-baker",
       "birthYear": 1906,
@@ -6152,6 +8107,24 @@
       "sourceIds": [
         "SRC0301",
         "SRC0721"
+      ],
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n50020892"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/118506099"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/41836198"
+        },
+        {
+          "scheme": "isni",
+          "url": "https://isni.org/isni/0000000116279884"
+        }
       ]
     },
     {
@@ -6159,7 +8132,6 @@
       "displayName": "Zygmunt Wiehler",
       "authorizedName": "Wiehler, Zygmunt",
       "authorizedNameSource": "BN",
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n2013008376\nGND: https://d-nb.info/gnd/1136994033\nBnF: https://catalogue.bnf.fr/ark:/12148/cb138154385\nBN: https://dbn.bn.org.pl/descriptor-details/a0000002314253\nVIAF: https://viaf.org/viaf/166390710\nISNI: https://isni.org/isni/0000000113821260",
       "sortName": "Wiehler, Zygmunt",
       "slug": "zygmunt-wiehler",
       "birthYear": 1890,
@@ -6182,6 +8154,32 @@
         "SRC0477",
         "SRC0795",
         "SRC0863"
+      ],
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n2013008376"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/1136994033"
+        },
+        {
+          "scheme": "bnf",
+          "url": "https://catalogue.bnf.fr/ark:/12148/cb138154385"
+        },
+        {
+          "scheme": "bn",
+          "url": "https://dbn.bn.org.pl/descriptor-details/a0000002314253"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/166390710"
+        },
+        {
+          "scheme": "isni",
+          "url": "https://isni.org/isni/0000000113821260"
+        }
       ]
     },
     {
@@ -6189,7 +8187,6 @@
       "displayName": "Sig Arno",
       "authorizedName": "Arno, Sig",
       "authorizedNameSource": "LCNAF",
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n88100641",
       "sortName": "Arno, Sig",
       "slug": "sig-arno",
       "birthYear": 1895,
@@ -6215,6 +8212,12 @@
       ],
       "nameVariantIds": [
         "PNV0066"
+      ],
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n88100641"
+        }
       ]
     },
     {
@@ -6222,7 +8225,6 @@
       "displayName": "Allan Jones",
       "authorizedName": "Jones, Allan",
       "authorizedNameSource": "LCNAF",
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n85151534",
       "sortName": "Jones, Allan",
       "slug": "allan-jones",
       "birthYear": 1907,
@@ -6258,6 +8260,12 @@
         "SRC0784",
         "SRC0811",
         "SRC0815"
+      ],
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n85151534"
+        }
       ]
     },
     {
@@ -6265,7 +8273,6 @@
       "displayName": "Emanuel Schlechter",
       "authorizedName": "Schlechter, Emanuel",
       "authorizedNameSource": "BN",
-      "authorityUrl": "GND: https://d-nb.info/gnd/111679516\nBN: https://dbn.bn.org.pl/descriptor-details/a0000002795762\nVIAF: https://viaf.org/viaf/88381066",
       "sortName": "Schlechter, Emanuel",
       "slug": "emanuel-schlechter",
       "birthYear": 1904,
@@ -6286,6 +8293,20 @@
       "sourceIds": [
         "SRC0759",
         "SRC0839"
+      ],
+      "authorities": [
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/111679516"
+        },
+        {
+          "scheme": "bn",
+          "url": "https://dbn.bn.org.pl/descriptor-details/a0000002795762"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/88381066"
+        }
       ]
     },
     {
@@ -6299,7 +8320,6 @@
       "roles": [
         "composer"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no2007031331\nVIAF: https://viaf.org/viaf/14544113\nISNI: https://isni.org/isni/0000000079707965\nWikidata: https://www.wikidata.org/wiki/Q110177728",
       "workIds": [
         "W-O012"
       ],
@@ -6311,6 +8331,24 @@
       "lifeDatesCertainty": "confirmed",
       "sourceIds": [
         "SRC0773"
+      ],
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/no2007031331"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/14544113"
+        },
+        {
+          "scheme": "isni",
+          "url": "https://isni.org/isni/0000000079707965"
+        },
+        {
+          "scheme": "wikidata",
+          "url": "https://www.wikidata.org/wiki/Q110177728"
+        }
       ]
     },
     {
@@ -6334,11 +8372,16 @@
         "SRC0843",
         "SRC0845"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n88172772",
       "authorizedNameSource": "LCNAF",
       "birthYear": 1903,
       "deathYear": 1979,
-      "lifeDatesCertainty": "confirmed"
+      "lifeDatesCertainty": "confirmed",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n88172772"
+        }
+      ]
     },
     {
       "id": "P179",
@@ -6349,7 +8392,6 @@
       "birthYear": 1896,
       "deathYear": 1964,
       "lifeDatesCertainty": "confirmed",
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n80131750\nVIAF: https://viaf.org/viaf/71577259\nWikidata: https://www.wikidata.org/wiki/Q1282487",
       "primaryRole": "composer",
       "roles": [
         "composer"
@@ -6369,7 +8411,21 @@
       "sourceIds": [
         "SRC0838"
       ],
-      "authorizedNameSource": "LCNAF"
+      "authorizedNameSource": "LCNAF",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n80131750"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/71577259"
+        },
+        {
+          "scheme": "wikidata",
+          "url": "https://www.wikidata.org/wiki/Q1282487"
+        }
+      ]
     },
     {
       "id": "P180",
@@ -6380,7 +8436,6 @@
       "birthYear": 1825,
       "deathYear": 1899,
       "lifeDatesCertainty": "confirmed",
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n79106447\nWikidata: https://www.wikidata.org/wiki/Q83309",
       "primaryRole": "composer",
       "roles": [
         "composer"
@@ -6394,7 +8449,17 @@
       "sourceIds": [
         "SRC0794"
       ],
-      "authorizedNameSource": "LCNAF"
+      "authorizedNameSource": "LCNAF",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n79106447"
+        },
+        {
+          "scheme": "wikidata",
+          "url": "https://www.wikidata.org/wiki/Q83309"
+        }
+      ]
     },
     {
       "id": "P181",
@@ -6406,7 +8471,6 @@
       "birthYear": 1840,
       "deathYear": 1893,
       "lifeDatesCertainty": "confirmed",
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n79072979\nWikidata: https://www.wikidata.org/wiki/Q7315",
       "primaryRole": "composer",
       "roles": [
         "composer"
@@ -6422,6 +8486,16 @@
       ],
       "nameVariantIds": [
         "PNV0074"
+      ],
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n79072979"
+        },
+        {
+          "scheme": "wikidata",
+          "url": "https://www.wikidata.org/wiki/Q7315"
+        }
       ]
     },
     {
@@ -6434,7 +8508,6 @@
       "birthYear": 1896,
       "deathYear": 1970,
       "lifeDatesCertainty": "confirmed",
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n80063358\nVIAF: https://viaf.org/viaf/37106197\nWikidata: https://www.wikidata.org/wiki/Q1980821",
       "primaryRole": "composer",
       "roles": [
         "composer"
@@ -6447,6 +8520,20 @@
       ],
       "contributionIds": [
         "CON-O017-C-P182"
+      ],
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n80063358"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/37106197"
+        },
+        {
+          "scheme": "wikidata",
+          "url": "https://www.wikidata.org/wiki/Q1980821"
+        }
       ]
     },
     {
@@ -6458,7 +8545,6 @@
       "birthYear": 1888,
       "deathYear": 1989,
       "lifeDatesCertainty": "confirmed",
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n50026116\nWikidata: https://www.wikidata.org/wiki/Q128746",
       "primaryRole": "composer",
       "roles": [
         "composer"
@@ -6472,7 +8558,17 @@
       "sourceIds": [
         "SRC0798"
       ],
-      "authorizedNameSource": "LCNAF"
+      "authorizedNameSource": "LCNAF",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n50026116"
+        },
+        {
+          "scheme": "wikidata",
+          "url": "https://www.wikidata.org/wiki/Q128746"
+        }
+      ]
     },
     {
       "id": "P184",
@@ -6483,7 +8579,6 @@
       "birthYear": 1892,
       "deathYear": 1972,
       "lifeDatesCertainty": "confirmed",
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n85378896\nVIAF: https://viaf.org/viaf/63011172\nWikidata: https://www.wikidata.org/wiki/Q7508990",
       "primaryRole": "composer",
       "roles": [
         "composer"
@@ -6497,7 +8592,21 @@
       "sourceIds": [
         "SRC0841"
       ],
-      "authorizedNameSource": "LCNAF"
+      "authorizedNameSource": "LCNAF",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n85378896"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/63011172"
+        },
+        {
+          "scheme": "wikidata",
+          "url": "https://www.wikidata.org/wiki/Q7508990"
+        }
+      ]
     },
     {
       "id": "P185",
@@ -6508,7 +8617,6 @@
       "birthYear": 1895,
       "deathYear": 1946,
       "lifeDatesCertainty": "confirmed",
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n87847043\nVIAF: https://viaf.org/viaf/29716551\nWikidata: https://www.wikidata.org/wiki/Q1568143",
       "primaryRole": "composer",
       "roles": [
         "composer"
@@ -6522,7 +8630,21 @@
       "sourceIds": [
         "SRC0842"
       ],
-      "authorizedNameSource": "LCNAF"
+      "authorizedNameSource": "LCNAF",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n87847043"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/29716551"
+        },
+        {
+          "scheme": "wikidata",
+          "url": "https://www.wikidata.org/wiki/Q1568143"
+        }
+      ]
     },
     {
       "id": "P186",
@@ -6533,7 +8655,6 @@
       "birthYear": 1895,
       "deathYear": 1972,
       "lifeDatesCertainty": "confirmed",
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n92081775\nVIAF: https://viaf.org/viaf/61975239\nWikidata: https://www.wikidata.org/wiki/Q5671934",
       "primaryRole": "singer",
       "roles": [
         "singer",
@@ -6549,6 +8670,20 @@
       "authorizedNameSource": "LCNAF",
       "sourceIds": [
         "SRC0846"
+      ],
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n92081775"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/61975239"
+        },
+        {
+          "scheme": "wikidata",
+          "url": "https://www.wikidata.org/wiki/Q5671934"
+        }
       ]
     },
     {
@@ -6557,7 +8692,6 @@
       "authorizedName": "Greer, Jesse",
       "sortName": "Greer, Jesse",
       "slug": "jesse-greer",
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no96063299\nWikidata: https://www.wikidata.org/wiki/Q16006764",
       "primaryRole": "composer",
       "roles": [
         "composer"
@@ -6573,7 +8707,17 @@
       "sourceIds": [
         "SRC0813"
       ],
-      "authorizedNameSource": "LCNAF"
+      "authorizedNameSource": "LCNAF",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/no96063299"
+        },
+        {
+          "scheme": "wikidata",
+          "url": "https://www.wikidata.org/wiki/Q16006764"
+        }
+      ]
     },
     {
       "id": "P188",
@@ -6584,7 +8728,6 @@
       "birthYear": 1897,
       "deathYear": 1988,
       "lifeDatesCertainty": "confirmed",
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no2001085191\nWikidata: https://www.wikidata.org/wiki/Q6491101",
       "primaryRole": "composer",
       "roles": [
         "composer"
@@ -6598,6 +8741,16 @@
       "authorizedNameSource": "LCNAF",
       "sourceIds": [
         "SRC0850"
+      ],
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/no2001085191"
+        },
+        {
+          "scheme": "wikidata",
+          "url": "https://www.wikidata.org/wiki/Q6491101"
+        }
       ]
     },
     {
@@ -6609,7 +8762,6 @@
       "birthYear": 1904,
       "deathYear": 1943,
       "lifeDatesCertainty": "confirmed",
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n50024199\nVIAF: https://viaf.org/viaf/54334148\nWikidata: https://www.wikidata.org/wiki/Q310476",
       "primaryRole": "composer",
       "roles": [
         "composer"
@@ -6624,7 +8776,21 @@
       "contributionIds": [
         "CON-O024-C-P189"
       ],
-      "authorizedNameSource": "LCNAF"
+      "authorizedNameSource": "LCNAF",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n50024199"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/54334148"
+        },
+        {
+          "scheme": "wikidata",
+          "url": "https://www.wikidata.org/wiki/Q310476"
+        }
+      ]
     },
     {
       "id": "P190",
@@ -6635,7 +8801,6 @@
       "birthYear": 1895,
       "deathYear": 1970,
       "lifeDatesCertainty": "confirmed",
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n87121594\nWikidata: https://www.wikidata.org/wiki/Q5667534",
       "primaryRole": "composer",
       "roles": [
         "composer"
@@ -6649,6 +8814,16 @@
       "authorizedNameSource": "LCNAF",
       "sourceIds": [
         "SRC0769"
+      ],
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n87121594"
+        },
+        {
+          "scheme": "wikidata",
+          "url": "https://www.wikidata.org/wiki/Q5667534"
+        }
       ]
     },
     {
@@ -6660,7 +8835,6 @@
       "birthYear": 1879,
       "deathYear": 1939,
       "lifeDatesCertainty": "confirmed",
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n87847049\nWikidata: https://www.wikidata.org/wiki/Q79043",
       "primaryRole": "composer",
       "roles": [
         "composer"
@@ -6674,7 +8848,17 @@
       "contributionIds": [
         "CON-O025-C-P191"
       ],
-      "authorizedNameSource": "LCNAF"
+      "authorizedNameSource": "LCNAF",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n87847049"
+        },
+        {
+          "scheme": "wikidata",
+          "url": "https://www.wikidata.org/wiki/Q79043"
+        }
+      ]
     },
     {
       "id": "P192",
@@ -6685,7 +8869,6 @@
       "birthYear": 1884,
       "deathYear": 1957,
       "lifeDatesCertainty": "confirmed",
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n83134784\nWikidata: https://www.wikidata.org/wiki/Q213592",
       "primaryRole": "composer",
       "roles": [
         "composer"
@@ -6700,7 +8883,17 @@
       "contributionIds": [
         "CON-O025-C-P192"
       ],
-      "authorizedNameSource": "LCNAF"
+      "authorizedNameSource": "LCNAF",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n83134784"
+        },
+        {
+          "scheme": "wikidata",
+          "url": "https://www.wikidata.org/wiki/Q213592"
+        }
+      ]
     },
     {
       "id": "P193",
@@ -6715,7 +8908,6 @@
       "roles": [
         "composer"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no2008018753\nVIAF: https://viaf.org/viaf/161706156",
       "workIds": [
         "W-O027"
       ],
@@ -6725,6 +8917,16 @@
       "authorizedNameSource": "LCNAF",
       "sourceIds": [
         "SRC0772"
+      ],
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/no2008018753"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/161706156"
+        }
       ]
     },
     {
@@ -6736,7 +8938,6 @@
       "birthYear": 1888,
       "deathYear": 1974,
       "lifeDatesCertainty": "confirmed",
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n93012042\nGND: https://d-nb.info/gnd/1161770364\nVIAF: https://viaf.org/viaf/36121606\nISNI: https://isni.org/isni/0000000073594859\nWikidata: https://www.wikidata.org/wiki/Q7172330",
       "primaryRole": "composer",
       "roles": [
         "composer"
@@ -6750,7 +8951,29 @@
       "sourceIds": [
         "SRC0844"
       ],
-      "authorizedNameSource": "LCNAF"
+      "authorizedNameSource": "LCNAF",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n93012042"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/1161770364"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/36121606"
+        },
+        {
+          "scheme": "isni",
+          "url": "https://isni.org/isni/0000000073594859"
+        },
+        {
+          "scheme": "wikidata",
+          "url": "https://www.wikidata.org/wiki/Q7172330"
+        }
+      ]
     },
     {
       "id": "P195",
@@ -6762,7 +8985,6 @@
       "birthYear": 1908,
       "deathYear": 1989,
       "lifeDatesCertainty": "confirmed",
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n81072979\nGND: https://d-nb.info/gnd/134265823\nVIAF: https://viaf.org/viaf/76502811\nISNI: https://isni.org/isni/0000000116755641\nWikidata: https://www.wikidata.org/wiki/Q664592",
       "primaryRole": "composer",
       "roles": [
         "composer"
@@ -6775,6 +8997,28 @@
       ],
       "contributionIds": [
         "CON-O029-C-P195"
+      ],
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n81072979"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/134265823"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/76502811"
+        },
+        {
+          "scheme": "isni",
+          "url": "https://isni.org/isni/0000000116755641"
+        },
+        {
+          "scheme": "wikidata",
+          "url": "https://www.wikidata.org/wiki/Q664592"
+        }
       ]
     },
     {
@@ -6792,7 +9036,6 @@
         "singer",
         "actor"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n84076760\nGND: https://d-nb.info/gnd/119213575\nBnF: https://catalogue.bnf.fr/ark:/12148/cb13899206m\nVIAF: https://viaf.org/viaf/7575151\nISNI: https://isni.org/isni/0000000083544476\nWikidata: https://www.wikidata.org/wiki/Q359026",
       "workIds": [
         "W-S105",
         "W-S106",
@@ -6817,6 +9060,32 @@
         "SRC0805",
         "SRC0806",
         "SRC0837"
+      ],
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n84076760"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/119213575"
+        },
+        {
+          "scheme": "bnf",
+          "url": "https://catalogue.bnf.fr/ark:/12148/cb13899206m"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/7575151"
+        },
+        {
+          "scheme": "isni",
+          "url": "https://isni.org/isni/0000000083544476"
+        },
+        {
+          "scheme": "wikidata",
+          "url": "https://www.wikidata.org/wiki/Q359026"
+        }
       ]
     },
     {
@@ -6836,12 +9105,17 @@
       "timelineEventIds": [
         "TE0016"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n88144497",
       "birthYear": 1903,
       "deathYear": 1951,
       "lifeDatesCertainty": "confirmed",
       "authorizedName": "Fitelberg, Jerzy",
-      "authorizedNameSource": "LCNAF"
+      "authorizedNameSource": "LCNAF",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n88144497"
+        }
+      ]
     },
     {
       "id": "P200",
@@ -6896,7 +9170,6 @@
       "roles": [
         "lyricist"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no98002159",
       "contributionIds": [
         "CON-S226-L-P202"
       ],
@@ -6905,6 +9178,12 @@
       ],
       "sourceIds": [
         "SRC0878"
+      ],
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/no98002159"
+        }
       ]
     },
     {
@@ -6918,7 +9197,6 @@
       "roles": [
         "singer"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no2006124375",
       "contributionIds": [
         "CON-S098-P-P203"
       ],
@@ -6929,6 +9207,12 @@
         "SRC0883",
         "SRC0884",
         "SRC0896"
+      ],
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/no2006124375"
+        }
       ]
     },
     {
@@ -6942,7 +9226,6 @@
       "roles": [
         "film director"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no90021292",
       "birthYear": 1887,
       "deathYear": 1967,
       "lifeDatesCertainty": "confirmed",
@@ -6955,6 +9238,12 @@
       "sourceIds": [
         "SRC0889",
         "SRC0897"
+      ],
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/no90021292"
+        }
       ]
     },
     {
@@ -6970,7 +9259,6 @@
         "violinist",
         "conductor"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no96047599\nGND: https://d-nb.info/gnd/133697428\nBnF: https://catalogue.bnf.fr/ark:/12148/cb14002097d\nVIAF: https://viaf.org/viaf/54343333\nISNI: https://isni.org/isni/0000000059444627\nWikidata: https://www.wikidata.org/wiki/Q78124",
       "birthYear": 1897,
       "deathYear": 1978,
       "lifeDatesCertainty": "confirmed",
@@ -6991,6 +9279,32 @@
       ],
       "nameVariantIds": [
         "PNV0077"
+      ],
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/no96047599"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/133697428"
+        },
+        {
+          "scheme": "bnf",
+          "url": "https://catalogue.bnf.fr/ark:/12148/cb14002097d"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/54343333"
+        },
+        {
+          "scheme": "isni",
+          "url": "https://isni.org/isni/0000000059444627"
+        },
+        {
+          "scheme": "wikidata",
+          "url": "https://www.wikidata.org/wiki/Q78124"
+        }
       ]
     }
   ],

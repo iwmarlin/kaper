@@ -21,7 +21,6 @@
       "slug": "metro-goldwyn-mayer-mgm",
       "nameVariants": "MGM; Metro-Goldwyn-Mayer Studios",
       "authorizedNameSource": "LCNAF",
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n80015727\nGND: https://d-nb.info/gnd/10290848-5\nISNI: https://isni.org/isni/0000000405252995",
       "sourceIds": [
         "SRC0114",
         "SRC0140",
@@ -129,6 +128,20 @@
         "W-S174",
         "W-S184",
         "W-S202"
+      ],
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n80015727"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/10290848-5"
+        },
+        {
+          "scheme": "isni",
+          "url": "https://isni.org/isni/0000000405252995"
+        }
       ]
     },
     {
@@ -203,7 +216,6 @@
       "slug": "micheaux-pictures",
       "nameVariants": "Micheaux Pictures Corp.; Micheaux Film Corp.; Micheaux Film Company",
       "authorizedNameSource": "LCNAF",
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n85138402",
       "sourceIds": [
         "SRC0146"
       ],
@@ -212,6 +224,12 @@
       ],
       "workIds": [
         "W-F051"
+      ],
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n85138402"
+        }
       ]
     },
     {
@@ -312,7 +330,12 @@
         "W-F018",
         "W-F020"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no2007137793"
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/no2007137793"
+        }
+      ]
     },
     {
       "id": "ORG009",
@@ -377,7 +400,6 @@
       "slug": "universum-film-ag-ufa",
       "nameVariants": "Ufa; Universum Film; Universum-Film Aktiengesellschaft zu Berlin",
       "authorizedNameSource": "GND",
-      "authorityUrl": "GND: https://d-nb.info/gnd/19944-8",
       "sourceIds": [
         "SRC0010",
         "SRC0118",
@@ -408,6 +430,12 @@
         "W-F023",
         "W-F024",
         "W-F056"
+      ],
+      "authorities": [
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/19944-8"
+        }
       ]
     },
     {
@@ -629,7 +657,6 @@
       "slug": "london-film-productions",
       "nameVariants": "London Film Productions, Ltd.; London Films",
       "authorizedNameSource": "LCNAF",
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no96052797\nGND: https://d-nb.info/gnd/10358740-8\nISNI: https://isni.org/isni/0000000105110135",
       "contributionIds": [
         "CON-F032-PC-ORG020"
       ],
@@ -639,6 +666,20 @@
       "sourceIds": [
         "SRC0167",
         "SRC0373"
+      ],
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/no96052797"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/10358740-8"
+        },
+        {
+          "scheme": "isni",
+          "url": "https://isni.org/isni/0000000105110135"
+        }
       ]
     },
     {
@@ -665,8 +706,17 @@
         "W-F001",
         "W-F003"
       ],
-      "authorityUrl": "GND: https://d-nb.info/gnd/6039961-2\nVIAF: https://viaf.org/viaf/138192832",
-      "nameVariants": "AAFA"
+      "nameVariants": "AAFA",
+      "authorities": [
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/6039961-2"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/138192832"
+        }
+      ]
     },
     {
       "id": "ORG022",
@@ -904,8 +954,17 @@
         "W-S185",
         "W-S217"
       ],
-      "authorityUrl": "GND: https://d-nb.info/gnd/1064328784\nVIAF: https://viaf.org/viaf/305221456",
-      "authorizedNameSource": "GND"
+      "authorizedNameSource": "GND",
+      "authorities": [
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/1064328784"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/305221456"
+        }
+      ]
     },
     {
       "id": "ORG030",
@@ -1140,8 +1199,17 @@
         "W-S099",
         "W-S101"
       ],
-      "authorityUrl": "GND: https://d-nb.info/gnd/1314189921\nVIAF: https://viaf.org/viaf/311491280",
-      "authorizedNameSource": "GND"
+      "authorizedNameSource": "GND",
+      "authorities": [
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/1314189921"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/311491280"
+        }
+      ]
     },
     {
       "id": "ORG034",
@@ -1171,8 +1239,13 @@
         "W-S002",
         "W-S003"
       ],
-      "authorityUrl": "VIAF: https://viaf.org/viaf/311373916",
-      "authorizedNameSource": "VIAF"
+      "authorizedNameSource": "VIAF",
+      "authorities": [
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/311373916"
+        }
+      ]
     },
     {
       "id": "ORG035",
@@ -1249,8 +1322,13 @@
         "SRC0377",
         "SRC0378"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no2013107113",
-      "authorizedNameSource": "LCNAF"
+      "authorizedNameSource": "LCNAF",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/no2013107113"
+        }
+      ]
     },
     {
       "id": "ORG036",
@@ -1290,7 +1368,20 @@
         "W-S086"
       ],
       "authorizedNameSource": "GND",
-      "authorityUrl": "GND: https://d-nb.info/gnd/1064298664\nVIAF: https://viaf.org/viaf/313264119\nLC Providers: https://id.loc.gov/entities/providers/798d67233b6773327cfb16c2b1c602bd"
+      "authorities": [
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/1064298664"
+        },
+        {
+          "scheme": "lc_providers",
+          "url": "https://id.loc.gov/entities/providers/798d67233b6773327cfb16c2b1c602bd"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/313264119"
+        }
+      ]
     },
     {
       "id": "ORG037",
@@ -1320,8 +1411,17 @@
         "W-S048",
         "W-S051"
       ],
-      "authorityUrl": "GND: https://d-nb.info/gnd/508928-1\nVIAF: https://viaf.org/viaf/128492642",
-      "authorizedNameSource": "GND"
+      "authorizedNameSource": "GND",
+      "authorities": [
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/508928-1"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/128492642"
+        }
+      ]
     },
     {
       "id": "ORG038",
@@ -1353,8 +1453,13 @@
         "W-S092",
         "W-S094"
       ],
-      "authorizedNameSource": "Library of Congress Providers",
-      "authorityUrl": "Library of Congress Providers: https://id.loc.gov/entities/providers/c18e9cf1f250a4afe675fe2fec015bc8"
+      "authorizedNameSource": "LC Providers",
+      "authorities": [
+        {
+          "scheme": "lc_providers",
+          "url": "https://id.loc.gov/entities/providers/c18e9cf1f250a4afe675fe2fec015bc8"
+        }
+      ]
     },
     {
       "id": "ORG039",
@@ -1425,8 +1530,21 @@
         "W-S209",
         "W-S210"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no2013013523\nGND: https://d-nb.info/gnd/5270812-3\nVIAF: https://viaf.org/viaf/133781096",
-      "authorizedNameSource": "LCNAF"
+      "authorizedNameSource": "LCNAF",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/no2013013523"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/5270812-3"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/133781096"
+        }
+      ]
     },
     {
       "id": "ORG040",
@@ -1466,8 +1584,13 @@
         "SRC0277",
         "SRC0279"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no2003014224",
-      "authorizedNameSource": "LCNAF"
+      "authorizedNameSource": "LCNAF",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/no2003014224"
+        }
+      ]
     },
     {
       "id": "ORG041",
@@ -1483,7 +1606,6 @@
       "slug": "loews-incorporated",
       "nameVariants": "Loew’s, Inc.; Loew’s Inc.; Loew’s",
       "authorizedNameSource": "LCNAF",
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n85376712\nGND: https://d-nb.info/gnd/1214666965\nISNI: https://isni.org/isni/0000000106665300",
       "publicNote": "The 1939 copyright entries name Loew’s, Inc. as copyright proprietor of the songs. This record is kept distinct from Metro-Goldwyn-Mayer, although the companies were corporately related.",
       "contributionIds": [
         "CON-S175-CC-ORG041",
@@ -1496,6 +1618,20 @@
       "sourceIds": [
         "SRC0280",
         "SRC0281"
+      ],
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n85376712"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/1214666965"
+        },
+        {
+          "scheme": "isni",
+          "url": "https://isni.org/isni/0000000106665300"
+        }
       ]
     },
     {
@@ -1523,8 +1659,17 @@
         "W-S072",
         "W-S080"
       ],
-      "authorityUrl": "GND: https://d-nb.info/gnd/1073076032\nVIAF: https://viaf.org/viaf/311348957",
-      "authorizedNameSource": "GND"
+      "authorizedNameSource": "GND",
+      "authorities": [
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/1073076032"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/311348957"
+        }
+      ]
     },
     {
       "id": "ORG047",
@@ -1561,8 +1706,17 @@
         "SRC0496",
         "SRC0500"
       ],
-      "authorityUrl": "GND: https://d-nb.info/gnd/1086785908\nVIAF: https://viaf.org/viaf/141278079",
-      "authorizedNameSource": "GND"
+      "authorizedNameSource": "GND",
+      "authorities": [
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/1086785908"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/141278079"
+        }
+      ]
     },
     {
       "id": "ORG048",
@@ -1593,8 +1747,13 @@
         "W-S196",
         "W-S200"
       ],
-      "authorityUrl": "BnF: https://catalogue.bnf.fr/ark:/12148/cb14605880n",
-      "authorizedNameSource": "BnF"
+      "authorizedNameSource": "BnF",
+      "authorities": [
+        {
+          "scheme": "bnf",
+          "url": "https://catalogue.bnf.fr/ark:/12148/cb14605880n"
+        }
+      ]
     },
     {
       "id": "ORG049",
@@ -1626,8 +1785,17 @@
         "SRC0469",
         "SRC0787"
       ],
-      "authorityUrl": "GND: https://d-nb.info/gnd/1065096380\nVIAF: https://viaf.org/viaf/313423303",
-      "authorizedNameSource": "GND"
+      "authorizedNameSource": "GND",
+      "authorities": [
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/1065096380"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/313423303"
+        }
+      ]
     },
     {
       "id": "ORG050",
@@ -1662,8 +1830,21 @@
         "W-S221",
         "W-S222"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no2002052546\nGND: https://d-nb.info/gnd/16108657-3\nVIAF: https://viaf.org/viaf/127005193",
-      "authorizedNameSource": "LCNAF"
+      "authorizedNameSource": "LCNAF",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/no2002052546"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/16108657-3"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/127005193"
+        }
+      ]
     },
     {
       "id": "ORG051",
@@ -1693,8 +1874,25 @@
         "W-S006",
         "W-S022"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no2021087205\nGND: https://d-nb.info/gnd/3023140-1\nVIAF: https://viaf.org/viaf/146887606\nISNI: https://isni.org/isni/0000000099015907",
-      "authorizedNameSource": "LCNAF"
+      "authorizedNameSource": "LCNAF",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/no2021087205"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/3023140-1"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/146887606"
+        },
+        {
+          "scheme": "isni",
+          "url": "https://isni.org/isni/0000000099015907"
+        }
+      ]
     },
     {
       "id": "ORG052",
@@ -1838,8 +2036,13 @@
         "SRC0876",
         "SRC0877"
       ],
-      "authorityUrl": "BnF: https://catalogue.bnf.fr/ark:/12148/cb142776167",
-      "authorizedNameSource": "BnF"
+      "authorizedNameSource": "BnF",
+      "authorities": [
+        {
+          "scheme": "bnf",
+          "url": "https://catalogue.bnf.fr/ark:/12148/cb142776167"
+        }
+      ]
     },
     {
       "id": "ORG056",
@@ -1882,7 +2085,12 @@
         "W-S004"
       ],
       "authorizedNameSource": "LCNAF",
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n87896648"
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n87896648"
+        }
+      ]
     },
     {
       "id": "ORG057",
@@ -1901,7 +2109,12 @@
         "SRC0110"
       ],
       "authorizedNameSource": "GND",
-      "authorityUrl": "GND: https://d-nb.info/gnd/3034423-2"
+      "authorities": [
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/3034423-2"
+        }
+      ]
     },
     {
       "id": "ORG058",
@@ -1922,7 +2135,12 @@
         "SRC0452"
       ],
       "authorizedNameSource": "LCNAF",
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no2018095099"
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/no2018095099"
+        }
+      ]
     },
     {
       "id": "ORG059",
@@ -1998,7 +2216,6 @@
       "displayName": "Bibliothèque nationale de France (BnF)",
       "authorizedName": "Bibliothèque nationale de France",
       "authorizedNameSource": "LCNAF",
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no95028191",
       "types": [
         "archive",
         "database"
@@ -2091,6 +2308,12 @@
         "SRC0886",
         "SRC0896",
         "SRC0928"
+      ],
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/no95028191"
+        }
       ]
     },
     {
@@ -2130,7 +2353,12 @@
         "SRC0863"
       ],
       "authorizedNameSource": "LCNAF",
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n80014571"
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n80014571"
+        }
+      ]
     },
     {
       "id": "ORG064",
@@ -2219,7 +2447,16 @@
         "SRC0901"
       ],
       "authorizedNameSource": "LCNAF",
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n79068404\nGND: https://d-nb.info/gnd/2020893-5"
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n79068404"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/2020893-5"
+        }
+      ]
     },
     {
       "id": "ORG065",
@@ -2284,7 +2521,12 @@
         "SRC0892"
       ],
       "authorizedNameSource": "LCNAF",
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n78089035"
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n78089035"
+        }
+      ]
     },
     {
       "id": "ORG067",
@@ -2439,14 +2681,18 @@
         "SRC0929"
       ],
       "authorizedNameSource": "LCNAF",
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n2001062537"
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n2001062537"
+        }
+      ]
     },
     {
       "id": "ORG068",
       "displayName": "U.S. Copyright Office",
       "authorizedName": "Library of Congress. Copyright Office",
       "authorizedNameSource": "LCNAF",
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n79117971",
       "types": [
         "archive",
         "database"
@@ -2547,6 +2793,12 @@
         "SRC0882",
         "SRC0887",
         "SRC0893"
+      ],
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n79117971"
+        }
       ]
     },
     {
@@ -2554,7 +2806,6 @@
       "displayName": "U.S. National Archives and Records Administration",
       "authorizedName": "United States. National Archives and Records Administration",
       "authorizedNameSource": "LCNAF",
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n84176101",
       "types": [
         "archive",
         "database"
@@ -2570,6 +2821,12 @@
         "SRC0038",
         "SRC0039",
         "SRC0566"
+      ],
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n84176101"
+        }
       ]
     },
     {
@@ -2605,7 +2862,12 @@
         "SRC0795"
       ],
       "authorizedNameSource": "GND",
-      "authorityUrl": "GND: https://d-nb.info/gnd/1072170558"
+      "authorities": [
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/1072170558"
+        }
+      ]
     },
     {
       "id": "ORG071",
@@ -2632,7 +2894,12 @@
         "SRC0866"
       ],
       "authorizedNameSource": "GND",
-      "authorityUrl": "GND: https://d-nb.info/gnd/1070828033"
+      "authorities": [
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/1070828033"
+        }
+      ]
     },
     {
       "id": "ORG072",
@@ -2720,7 +2987,12 @@
         "SRC0587"
       ],
       "authorizedNameSource": "LCNAF",
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n79022845"
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n79022845"
+        }
+      ]
     },
     {
       "id": "ORG074",
@@ -2751,7 +3023,12 @@
         "SRC0862"
       ],
       "authorizedNameSource": "LCNAF",
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no2006067330"
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/no2006067330"
+        }
+      ]
     },
     {
       "id": "ORG075",
@@ -2769,7 +3046,12 @@
         "SRC0313"
       ],
       "authorizedNameSource": "LCNAF",
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n50054268"
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n50054268"
+        }
+      ]
     },
     {
       "id": "ORG076",
@@ -2789,7 +3071,12 @@
         "SRC0486"
       ],
       "authorizedNameSource": "LCNAF",
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n80077871"
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n80077871"
+        }
+      ]
     },
     {
       "id": "ORG077",
@@ -2805,11 +3092,20 @@
       "slug": "slaska-biblioteka-cyfrowa",
       "nameVariants": "ŚBC; SBC; Silesian Digital Library",
       "authorizedNameSource": "Official website",
-      "authorityUrl": "Official website: https://sbc.org.pl/dlibra\nCooperation agreement: https://sbc.org.pl/doc/porozumienie-sbc-pl.pdf",
       "publicNote": "Regional digital library created and maintained by participating cultural and academic institutions to provide online access to digitized collections concerning Silesia and materials held in the region. The service uses dLibra software; dLibra is not part of the institution’s authorized name.",
       "sourceIds": [
         "SRC0085",
         "SRC0522"
+      ],
+      "references": [
+        {
+          "label": "Cooperation agreement",
+          "url": "https://sbc.org.pl/doc/porozumienie-sbc-pl.pdf"
+        },
+        {
+          "label": "Official website",
+          "url": "https://sbc.org.pl/dlibra"
+        }
       ]
     },
     {
@@ -2830,7 +3126,12 @@
         "SRC0023"
       ],
       "authorizedNameSource": "LCNAF",
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/nr2002005953"
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/nr2002005953"
+        }
+      ]
     },
     {
       "id": "ORG079",
@@ -2851,7 +3152,12 @@
         "SRC0890"
       ],
       "authorizedNameSource": "LCNAF",
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n83186537"
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n83186537"
+        }
+      ]
     },
     {
       "id": "ORG080",
@@ -2873,7 +3179,12 @@
         "SRC0542"
       ],
       "authorizedNameSource": "LCNAF",
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n50045481"
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n50045481"
+        }
+      ]
     },
     {
       "id": "ORG081",
@@ -2893,7 +3204,12 @@
         "SRC0334"
       ],
       "authorizedNameSource": "LCNAF",
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n91001831"
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n91001831"
+        }
+      ]
     },
     {
       "id": "ORG082",
@@ -2912,7 +3228,12 @@
         "SRC0353"
       ],
       "authorizedNameSource": "LCNAF",
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no2019121395"
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/no2019121395"
+        }
+      ]
     },
     {
       "id": "ORG083",
@@ -2932,8 +3253,13 @@
         "SRC0018"
       ],
       "authorizedNameSource": "LCNAF",
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n85291169",
-      "publicNote": "The Library of Congress heading keeps the library’s earlier name, Biblioteka Uniwersytecka w Łodzi."
+      "publicNote": "The Library of Congress heading keeps the library’s earlier name, Biblioteka Uniwersytecka w Łodzi.",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n85291169"
+        }
+      ]
     },
     {
       "id": "ORG084",
@@ -2953,14 +3279,18 @@
         "SRC0439"
       ],
       "authorizedNameSource": "LCNAF",
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/nr2004011377"
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/nr2004011377"
+        }
+      ]
     },
     {
       "id": "ORG085",
       "displayName": "SACEM",
       "authorizedName": "Société des auteurs, compositeurs et éditeurs de musique (France)",
       "authorizedNameSource": "LCNAF",
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n82060400",
       "types": [
         "database"
       ],
@@ -2983,6 +3313,12 @@
         "SRC0826",
         "SRC0827",
         "SRC0828"
+      ],
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n82060400"
+        }
       ]
     },
     {
@@ -2990,7 +3326,6 @@
       "displayName": "GEMA",
       "authorizedName": "Gesellschaft für Musikalische Aufführungs- und Mechanische Vervielfältigungsrechte",
       "authorizedNameSource": "LCNAF",
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n85366400",
       "types": [
         "database"
       ],
@@ -3008,6 +3343,12 @@
         "SRC0295",
         "SRC0885",
         "SRC0891"
+      ],
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n85366400"
+        }
       ]
     },
     {
@@ -3047,7 +3388,12 @@
         "SRC0503"
       ],
       "authorizedNameSource": "LCNAF",
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no2003077766"
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/no2003077766"
+        }
+      ]
     },
     {
       "id": "ORG089",
@@ -3067,14 +3413,18 @@
         "SRC0350"
       ],
       "authorizedNameSource": "Official website",
-      "authorityUrl": "Official website: https://www.pomonaca.gov/government/departments/library/about-us"
+      "references": [
+        {
+          "label": "Official website",
+          "url": "https://www.pomonaca.gov/government/departments/library/about-us"
+        }
+      ]
     },
     {
       "id": "ORG090",
       "displayName": "Wikimedia Foundation",
       "authorizedName": "Wikimedia Foundation",
       "authorizedNameSource": "LCNAF",
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n2005070272\nGND: https://d-nb.info/gnd/10102830-1",
       "types": [
         "database"
       ],
@@ -3196,6 +3546,16 @@
         "SRC0896",
         "SRC0897",
         "SRC0926"
+      ],
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n2005070272"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/10102830-1"
+        }
       ]
     },
     {
@@ -3224,7 +3584,12 @@
         "SRC0929"
       ],
       "authorizedNameSource": "LCNAF",
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no2011147658"
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/no2011147658"
+        }
+      ]
     },
     {
       "id": "ORG092",
@@ -3260,7 +3625,12 @@
         "SRC0601"
       ],
       "authorizedNameSource": "LCNAF",
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no2010169363"
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/no2010169363"
+        }
+      ]
     },
     {
       "id": "ORG093",
@@ -3357,7 +3727,12 @@
         "SRC0883"
       ],
       "authorizedNameSource": "LCNAF",
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n2007018166"
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n2007018166"
+        }
+      ]
     },
     {
       "id": "ORG094",
@@ -3379,7 +3754,12 @@
         "SRC0700"
       ],
       "authorizedNameSource": "Official website",
-      "authorityUrl": "Official website: https://www.discogs.com/about/about"
+      "references": [
+        {
+          "label": "Official website",
+          "url": "https://www.discogs.com/about/about"
+        }
+      ]
     },
     {
       "id": "ORG095",
@@ -3404,7 +3784,12 @@
         "SRC0527"
       ],
       "authorizedNameSource": "Official website",
-      "authorityUrl": "Official website: https://www.newspapers.com/"
+      "references": [
+        {
+          "label": "Official website",
+          "url": "https://www.newspapers.com/"
+        }
+      ]
     },
     {
       "id": "ORG096",
@@ -3428,7 +3813,12 @@
         "SRC0360"
       ],
       "authorizedNameSource": "Official website",
-      "authorityUrl": "Official website: https://www.imagesmusicales.be/"
+      "references": [
+        {
+          "label": "Official website",
+          "url": "https://www.imagesmusicales.be/"
+        }
+      ]
     },
     {
       "id": "ORG097",
@@ -3447,7 +3837,12 @@
         "SRC0006"
       ],
       "authorizedNameSource": "Official website",
-      "authorityUrl": "Official website: https://adp.library.ucsb.edu/"
+      "references": [
+        {
+          "label": "Official website",
+          "url": "https://adp.library.ucsb.edu/"
+        }
+      ]
     },
     {
       "id": "ORG098",
@@ -3466,7 +3861,12 @@
         "SRC0001"
       ],
       "authorizedNameSource": "Official website",
-      "authorityUrl": "Official website: http://www.kppg.waw.pl/"
+      "references": [
+        {
+          "label": "Official website",
+          "url": "http://www.kppg.waw.pl/"
+        }
+      ]
     },
     {
       "id": "ORG099",
@@ -3488,8 +3888,13 @@
         "SRC0307"
       ],
       "authorizedNameSource": "GND",
-      "authorityUrl": "GND: https://d-nb.info/gnd/1144376599",
-      "publicNote": "Berlin association that publishes the official Walter Jurmann website, walter-jurmann.com, including its Songs works catalogue."
+      "publicNote": "Berlin association that publishes the official Walter Jurmann website, walter-jurmann.com, including its Songs works catalogue.",
+      "authorities": [
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/1144376599"
+        }
+      ]
     },
     {
       "id": "ORG100",
@@ -3515,7 +3920,12 @@
         "SRC0527"
       ],
       "authorizedNameSource": "LCNAF",
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n50066762"
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n50066762"
+        }
+      ]
     },
     {
       "id": "ORG101",
@@ -3536,7 +3946,12 @@
         "SRC0390"
       ],
       "authorizedNameSource": "Official website",
-      "authorityUrl": "Official website: https://picryl.com/"
+      "references": [
+        {
+          "label": "Official website",
+          "url": "https://picryl.com/"
+        }
+      ]
     },
     {
       "id": "ORG102",
@@ -3557,7 +3972,12 @@
         "SRC0434"
       ],
       "authorizedNameSource": "Official website",
-      "authorityUrl": "Official website: https://www.warszawa1939.pl/"
+      "references": [
+        {
+          "label": "Official website",
+          "url": "https://www.warszawa1939.pl/"
+        }
+      ]
     },
     {
       "id": "ORG103",
@@ -3577,7 +3997,12 @@
         "SRC0012"
       ],
       "authorizedNameSource": "Official website",
-      "authorityUrl": "Official website: https://genealodzy.pl/"
+      "references": [
+        {
+          "label": "Official website",
+          "url": "https://genealodzy.pl/"
+        }
+      ]
     },
     {
       "id": "ORG104",
@@ -3607,7 +4032,12 @@
         "SRC0790"
       ],
       "authorizedNameSource": "Official website",
-      "authorityUrl": "Official website: https://uwesteinle.com/"
+      "references": [
+        {
+          "label": "Official website",
+          "url": "https://uwesteinle.com/"
+        }
+      ]
     },
     {
       "id": "ORG105",
@@ -3627,7 +4057,12 @@
         "SRC0455"
       ],
       "authorizedNameSource": "Official website",
-      "authorityUrl": "Official website: https://www.filmposter-archiv.de/"
+      "references": [
+        {
+          "label": "Official website",
+          "url": "https://www.filmposter-archiv.de/"
+        }
+      ]
     },
     {
       "id": "ORG106",
@@ -3651,8 +4086,13 @@
       "workIds": [
         "W-S096"
       ],
-      "authorityUrl": "GND: https://d-nb.info/gnd/108619831X",
-      "authorizedNameSource": "GND"
+      "authorizedNameSource": "GND",
+      "authorities": [
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/108619831X"
+        }
+      ]
     },
     {
       "id": "ORG107",
@@ -3668,10 +4108,15 @@
       "slug": "european-architectural-history-network",
       "nameVariants": "EAHN",
       "publicNote": "Architectural Histories is the journal of the European Architectural History Network; the journal title is not an alternative name of the organization.",
-      "authorityUrl": "Official website: https://eahn.org/about/",
       "authorizedNameSource": "EAHN",
       "sourceIds": [
         "SRC0352"
+      ],
+      "references": [
+        {
+          "label": "Official website",
+          "url": "https://eahn.org/about"
+        }
       ]
     },
     {
@@ -3703,7 +4148,6 @@
       "slug": "alliance-cinematographique-europeenne-ace",
       "nameVariants": "A.C.E.; ACE; L’Alliance Cinématographique Européenne",
       "authorizedNameSource": "LCNAF",
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no2013104836",
       "sourceIds": [
         "SRC0532"
       ],
@@ -3712,6 +4156,12 @@
       ],
       "workIds": [
         "W-F056"
+      ],
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/no2013104836"
+        }
       ]
     },
     {
@@ -3735,7 +4185,12 @@
         "TE0041"
       ],
       "authorizedNameSource": "LCNAF",
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no2011065920"
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/no2011065920"
+        }
+      ]
     },
     {
       "id": "ORG111",
@@ -3807,7 +4262,6 @@
       "displayName": "Jagiellonian Library",
       "authorizedName": "Biblioteka Jagiellońska",
       "authorizedNameSource": "LCNAF",
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n82138171\nGND: https://d-nb.info/gnd/4073761-5",
       "types": [
         "library",
         "digital_library"
@@ -3820,6 +4274,16 @@
       "nameVariants": "Biblioteka Jagiellońska; Jagiellonian Library; Jagiellońska Biblioteka Cyfrowa; Jagiellonian Digital Library; JBC",
       "sourceIds": [
         "SRC0577"
+      ],
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n82138171"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/4073761-5"
+        }
       ]
     },
     {
@@ -3842,8 +4306,13 @@
         "W-S215"
       ],
       "authorizedName": "Polskie Zakłady Fonograficzne „Odeon”",
-      "authorizedNameSource": "Biblioteka Narodowa",
-      "authorityUrl": "Biblioteka Narodowa: https://data.bn.org.pl/institutions/authorities/1941077"
+      "authorizedNameSource": "BN",
+      "authorities": [
+        {
+          "scheme": "bn",
+          "url": "https://data.bn.org.pl/institutions/authorities/1941077"
+        }
+      ]
     },
     {
       "id": "ORG116",
@@ -3870,14 +4339,18 @@
         "W-F052"
       ],
       "authorizedNameSource": "LCNAF",
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n92062261"
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n92062261"
+        }
+      ]
     },
     {
       "id": "ORG117",
       "displayName": "Stiftung Deutsche Kinemathek",
       "authorizedName": "Stiftung Deutsche Kinemathek – Museum für Film und Fernsehen",
       "authorizedNameSource": "Official website",
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n00030828\nGND: https://d-nb.info/gnd/16037760-2",
       "types": [
         "archive",
         "museum"
@@ -3890,6 +4363,16 @@
       "nameVariants": "Deutsche Kinemathek; Museum für Film und Fernsehen; Sammlung Paul Kohner Agency",
       "sourceIds": [
         "SRC0678"
+      ],
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n00030828"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/16037760-2"
+        }
       ]
     },
     {
@@ -3934,7 +4417,6 @@
       "slug": "marek-weber-und-sein-orchester",
       "nameVariants": "Marek Weber & sein Orchester; Orchester Marek Weber; Marek Weber Orchestra; Tanzorchester Marek Weber; Marek Weber mit Seiner Künstlerkapelle vom Esplanade",
       "authorizedNameSource": "GND",
-      "authorityUrl": "GND: https://d-nb.info/gnd/5283847-X\nVIAF: https://viaf.org/viaf/263589821\nISNI: https://isni.org/isni/0000000105437701",
       "sourceIds": [
         "SRC0005",
         "SRC0701",
@@ -3972,6 +4454,20 @@
         "CON-S070-P-ORG119",
         "CON-S084-P-ORG119",
         "CON-S067-P-ORG119"
+      ],
+      "authorities": [
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/5283847-X"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/263589821"
+        },
+        {
+          "scheme": "isni",
+          "url": "https://isni.org/isni/0000000105437701"
+        }
       ]
     },
     {
@@ -3989,7 +4485,6 @@
       "slug": "odeon-kunstler-orchester",
       "nameVariants": "Odeon Künstler-Orchester; Odeon-Künstlerorchester",
       "authorizedNameSource": "LCNAF",
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no2013029878\nGND: https://d-nb.info/gnd/10280831-4\nVIAF: https://viaf.org/viaf/312726209\nISNI: https://isni.org/isni/0000000088101535\nBnF: https://catalogue.bnf.fr/ark:/12148/cb140071747",
       "publicNote": "House orchestra named on Odeon record labels and established as a musical corporate body in GND and LCNAF. The linked recordings credit different conductors; no fixed personnel are inferred from the ensemble name.",
       "sourceIds": [
         "SRC0487",
@@ -4013,6 +4508,28 @@
         "CON-S080-P-ORG120",
         "CON-S081-P-ORG120",
         "CON-S082-P-ORG120"
+      ],
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/no2013029878"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/10280831-4"
+        },
+        {
+          "scheme": "bnf",
+          "url": "https://catalogue.bnf.fr/ark:/12148/cb140071747"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/312726209"
+        },
+        {
+          "scheme": "isni",
+          "url": "https://isni.org/isni/0000000088101535"
+        }
       ]
     },
     {
@@ -4030,7 +4547,6 @@
       "slug": "tanzorchester-bernard-ette",
       "nameVariants": "Bernhard Etté mit Seinem Tanzorchester; Bernard Etté mit Seinem Tanzorchester; Bernhard Etté & sein Tanzorchester; Etté mit Seinem großen Schauorchester",
       "authorizedNameSource": "LCNAF",
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no2011165075\nGND: https://d-nb.info/gnd/6125978-0\nVIAF: https://viaf.org/viaf/122769964\nISNI: https://isni.org/isni/0000000106797952",
       "sourceIds": [
         "SRC0004",
         "SRC0288",
@@ -4048,6 +4564,24 @@
         "CON-S074-P-ORG121",
         "CON-S182-P-ORG121",
         "CON-S018-P-ORG121"
+      ],
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/no2011165075"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/6125978-0"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/122769964"
+        },
+        {
+          "scheme": "isni",
+          "url": "https://isni.org/isni/0000000106797952"
+        }
       ]
     },
     {
@@ -4065,7 +4599,6 @@
       "slug": "ben-berlin-und-sein-orchester",
       "nameVariants": "Ben Berlin Tanzorchester; Orchester Ben Berlin",
       "authorizedNameSource": "GND",
-      "authorityUrl": "GND: https://d-nb.info/gnd/10346956-4\nVIAF: https://viaf.org/viaf/139420324",
       "sourceIds": [
         "SRC0694",
         "SRC0695"
@@ -4077,6 +4610,16 @@
       "contributionIds": [
         "CON-S007-P-ORG122",
         "CON-S010-P-ORG122"
+      ],
+      "authorities": [
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/10346956-4"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/139420324"
+        }
       ]
     },
     {
@@ -4124,7 +4667,6 @@
       "slug": "ilja-livschakoff-tanz-orchester",
       "nameVariants": "Tanzorchester Ilja Livschakoff; Ilja Livschakoff und Sein Tanzorchester; Ilja Livschakoff Künstler-Orchester; Livschakoff-Tanz-Orchester",
       "authorizedNameSource": "LCNAF",
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no2008155927\nGND: https://d-nb.info/gnd/10024110-4\nVIAF: https://viaf.org/viaf/121171439\nISNI: https://isni.org/isni/0000000107380980",
       "sourceIds": [
         "SRC0003",
         "SRC0719"
@@ -4136,6 +4678,24 @@
       "contributionIds": [
         "CON-S011-P-ORG124",
         "CON-S064-P-ORG124"
+      ],
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/no2008155927"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/10024110-4"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/121171439"
+        },
+        {
+          "scheme": "isni",
+          "url": "https://isni.org/isni/0000000107380980"
+        }
       ]
     },
     {
@@ -4153,7 +4713,6 @@
       "slug": "jack-hylton-and-his-orchestra",
       "nameVariants": "The Jack Hylton Orchestra; Jack Hylton und Sein Orchester; Orchester Jack Hylton; Hylton and His Orchestra",
       "authorizedNameSource": "LCNAF",
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no2009093927\nGND: https://d-nb.info/gnd/10283785-5\nVIAF: https://viaf.org/viaf/157308545\nISNI: https://isni.org/isni/0000000105039121\nBnF: https://catalogue.bnf.fr/ark:/12148/cb140058124",
       "sourceIds": [
         "SRC0714",
         "SRC0718"
@@ -4165,6 +4724,28 @@
       "contributionIds": [
         "CON-S025-P-ORG125",
         "CON-S046-P-ORG125"
+      ],
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/no2009093927"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/10283785-5"
+        },
+        {
+          "scheme": "bnf",
+          "url": "https://catalogue.bnf.fr/ark:/12148/cb140058124"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/157308545"
+        },
+        {
+          "scheme": "isni",
+          "url": "https://isni.org/isni/0000000105039121"
+        }
       ]
     },
     {
@@ -4210,7 +4791,6 @@
         "W-S070",
         "W-S067"
       ],
-      "authorityUrl": "GND: https://d-nb.info/gnd/7784531-6\nVIAF: https://viaf.org/viaf/215919516",
       "contributionIds": [
         "CON-S009-LAB-ORG126",
         "CON-S023-LAB-ORG126",
@@ -4223,6 +4803,16 @@
         "CON-S054-LAB-ORG126",
         "CON-S070-LAB-ORG126",
         "CON-S067-LAB-ORG126"
+      ],
+      "authorities": [
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/7784531-6"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/215919516"
+        }
       ]
     },
     {
@@ -4239,11 +4829,20 @@
       "slug": "deutsche-grammophon-aktiengesellschaft",
       "nameVariants": "Deutsche Grammophon AG; Grammophon-Aktiengesellschaft",
       "authorizedNameSource": "GND",
-      "authorityUrl": "GND: https://d-nb.info/gnd/1094330-4\nVIAF: https://viaf.org/viaf/134331272",
       "publicNote": "German record company established in Berlin in 1900. Grammophon and Polydor were record-label imprints and are represented separately from the corporate body.",
       "imprintIds": [
         "ORG154",
         "ORG155"
+      ],
+      "authorities": [
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/1094330-4"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/134331272"
+        }
       ]
     },
     {
@@ -4263,11 +4862,28 @@
       "sourceIds": [
         "SRC0720"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no00081029\nGND: https://d-nb.info/gnd/7670622-9\nVIAF: https://viaf.org/viaf/129647371\nISNI: https://isni.org/isni/0000000121561999",
       "publicNote": "German record-manufacturing company. Odeon and Parlophon/Parlophone are represented separately as recording labels rather than as variant corporate names.",
       "imprintIds": [
         "ORG146",
         "ORG150"
+      ],
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/no00081029"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/7670622-9"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/129647371"
+        },
+        {
+          "scheme": "isni",
+          "url": "https://isni.org/isni/0000000121561999"
+        }
       ]
     },
     {
@@ -4357,13 +4973,30 @@
         "W-S022",
         "W-S218"
       ],
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/nr2004032675\nGND: https://d-nb.info/gnd/16129557-5\nBN: https://dbn.bn.org.pl/descriptor-details/a0000001996595\nVIAF: https://viaf.org/viaf/241007973",
       "contributionIds": [
         "CON-S001-LAB-ORG132",
         "CON-S002-LAB-ORG132",
         "CON-S003-LAB-ORG132",
         "CON-S022-LAB-ORG132",
         "CON-S218-LAB-ORG132"
+      ],
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/nr2004032675"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/16129557-5"
+        },
+        {
+          "scheme": "bn",
+          "url": "https://dbn.bn.org.pl/descriptor-details/a0000001996595"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/241007973"
+        }
       ]
     },
     {
@@ -4406,7 +5039,6 @@
       "slug": "saxophonorchester-dobbri",
       "nameVariants": "Saxophon-Orchester Dobbri; Tanz-Orchester Dobbri; Dobbri",
       "authorizedNameSource": "GND",
-      "authorityUrl": "GND: https://d-nb.info/gnd/10025557-7",
       "sourceIds": [
         "SRC0716",
         "SRC0720",
@@ -4419,6 +5051,12 @@
       "contributionIds": [
         "CON-S008-P-ORG134",
         "CON-S024-P-ORG134"
+      ],
+      "authorities": [
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/10025557-7"
+        }
       ]
     },
     {
@@ -4435,7 +5073,6 @@
       "country": "Germany",
       "slug": "karkoff-orchester",
       "authorizedNameSource": "GND",
-      "authorityUrl": "GND: https://d-nb.info/gnd/10334704-5\nVIAF: https://viaf.org/viaf/125119852",
       "sourceIds": [
         "SRC0724"
       ],
@@ -4444,6 +5081,16 @@
       ],
       "contributionIds": [
         "CON-S021-P-ORG135"
+      ],
+      "authorities": [
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/10334704-5"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/125119852"
+        }
       ]
     },
     {
@@ -4548,7 +5195,6 @@
       "slug": "melody-gents",
       "nameVariants": "Melody Gents, modernes Schlager-Quartett",
       "authorizedNameSource": "LCNAF",
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n2025013741\nGND: https://d-nb.info/gnd/5535969-3",
       "sourceIds": [
         "SRC0746"
       ],
@@ -4557,6 +5203,16 @@
       ],
       "contributionIds": [
         "CON-S033-P-ORG140"
+      ],
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n2025013741"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/5535969-3"
+        }
       ]
     },
     {
@@ -4573,10 +5229,15 @@
       "slug": "rca-manufacturing-company",
       "nameVariants": "RCA Manufacturing Co., Inc.",
       "authorizedNameSource": "LCNAF",
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n81120295",
       "publicNote": "American manufacturing company formed in 1934 from RCA Victor Company and RCA Radiotron Company. It manufactured Victor records but was a corporate body rather than the name of the Victor record-label imprint.",
       "imprintIds": [
         "ORG156"
+      ],
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n81120295"
+        }
       ]
     },
     {
@@ -4594,7 +5255,6 @@
       "slug": "decca-records",
       "nameVariants": "Decca Records, Inc.; Decca",
       "authorizedNameSource": "LCNAF",
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n89641558",
       "publicNote": "The Library of Congress heading identifies the United States firm founded in 1934. Its name also appears as the label imprint on Decca 466. The American firm was separate from the British Decca company.",
       "sourceIds": [
         "SRC0750"
@@ -4604,6 +5264,12 @@
       ],
       "contributionIds": [
         "CON-S185-LAB-ORG142"
+      ],
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n89641558"
+        }
       ]
     },
     {
@@ -4621,7 +5287,6 @@
       "slug": "george-nettelmann-und-sein-orchester",
       "nameVariants": "George Nettelmann und sein Orchester; Nettelmann und Sein Orchester; George Nettelmann u. S. Orchester; Nettelmann u. S. Orchester",
       "authorizedNameSource": "GND",
-      "authorityUrl": "GND: https://d-nb.info/gnd/10327748-1",
       "sourceIds": [
         "SRC0753"
       ],
@@ -4630,6 +5295,12 @@
       ],
       "contributionIds": [
         "CON-S034-P-ORG143"
+      ],
+      "authorities": [
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/10327748-1"
+        }
       ]
     },
     {
@@ -4647,7 +5318,6 @@
       "slug": "dajos-bela-tanzorchester",
       "nameVariants": "Tanz-Orchester Dajos Béla; Béla, Dajos & sein Tanz-Orchester; Orchester Dajos Béla",
       "authorizedNameSource": "GND",
-      "authorityUrl": "GND: https://d-nb.info/gnd/10147469-6",
       "sourceIds": [
         "SRC0754",
         "SRC0790"
@@ -4659,6 +5329,12 @@
       "contributionIds": [
         "CON-S057-P-ORG144",
         "CON-S071-P-ORG144"
+      ],
+      "authorities": [
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/10147469-6"
+        }
       ]
     },
     {
@@ -4712,7 +5388,6 @@
       "slug": "his-masters-voice",
       "nameVariants": "HMV; The Gramophone Company",
       "authorizedNameSource": "LCNAF",
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n93052539",
       "publicNote": "Label of the Gramophone Company, on which the British issues of American Victor recordings appeared.",
       "sourceIds": [
         "SRC0783",
@@ -4725,6 +5400,12 @@
       "contributionIds": [
         "CON-S118-LAB-ORG147",
         "CON-S158-LAB-ORG147"
+      ],
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n93052539"
+        }
       ]
     },
     {
@@ -4742,7 +5423,6 @@
       "slug": "eric-harden-und-sein-orchester",
       "nameVariants": "Eric Harden mit seinem Tanz-Orchester; Eric Harden’s danseorkester",
       "authorizedNameSource": "GND",
-      "authorityUrl": "GND: https://d-nb.info/gnd/16075028-3",
       "sourceIds": [
         "SRC0760",
         "SRC0785"
@@ -4754,6 +5434,12 @@
       "contributionIds": [
         "CON-S047-P-ORG148",
         "CON-S060-P-ORG148"
+      ],
+      "authorities": [
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/16075028-3"
+        }
       ]
     },
     {
@@ -4768,7 +5454,6 @@
       "slug": "orchestra-mascotte",
       "nameVariants": "Mascotte Orchestra",
       "authorizedNameSource": "LCNAF",
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n2015020541",
       "publicNote": "House name used on Parlophone issues, which does not identify the players.",
       "sourceIds": [
         "SRC0782"
@@ -4778,6 +5463,12 @@
       ],
       "contributionIds": [
         "CON-S047-P-ORG149"
+      ],
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n2015020541"
+        }
       ]
     },
     {
@@ -5025,7 +5716,6 @@
       "slug": "california-digital-newspaper-collection",
       "nameVariants": "CDNC",
       "authorizedNameSource": "Official website",
-      "authorityUrl": "Official website: https://cbsrinfo.ucr.edu/CDNC",
       "publicNote": "Freely accessible repository of digitized California newspapers established by the Center for Bibliographical Studies and Research at the University of California, Riverside. The repository is represented separately from the newspaper titles and other institutions that supplied particular issues.",
       "sourceIds": [
         "SRC0841",
@@ -5033,6 +5723,12 @@
         "SRC0846",
         "SRC0850",
         "SRC0859"
+      ],
+      "references": [
+        {
+          "label": "Official website",
+          "url": "https://cbsrinfo.ucr.edu/CDNC"
+        }
       ]
     },
     {
@@ -5047,12 +5743,17 @@
       "slug": "world-radio-history",
       "nameVariants": "WorldRadioHistory; WorldRadioHistory.com",
       "authorizedNameSource": "Official website",
-      "authorityUrl": "Official website: https://www.worldradiohistory.com/",
       "publicNote": "Non-profit online library of digitized publications concerning radio, broadcasting, recorded music and related technologies, created and published by David E. F. Gleason.",
       "sourceIds": [
         "SRC0843",
         "SRC0844",
         "SRC0654"
+      ],
+      "references": [
+        {
+          "label": "Official website",
+          "url": "https://www.worldradiohistory.com/"
+        }
       ]
     },
     {
@@ -5070,10 +5771,15 @@
       "slug": "deutsches-literaturarchiv-marbach",
       "nameVariants": "DLA; DLA Marbach; German Literature Archive Marbach",
       "authorizedNameSource": "Official website",
-      "authorityUrl": "Official website: https://www.dla-marbach.de/",
       "publicNote": "Literary archive, research library and museum in Marbach am Neckar. The arthistoricum metadata identifies its copy of Das Leben as the source copy (‘Vorlage’) used for the digitization of the September 1928 issue cited here.",
       "sourceIds": [
         "SRC0834"
+      ],
+      "references": [
+        {
+          "label": "Official website",
+          "url": "https://www.dla-marbach.de/"
+        }
       ]
     },
     {
@@ -5091,10 +5797,15 @@
       "slug": "slub-dresden",
       "nameVariants": "SLUB; SLUB Dresden; Saxon State and University Library Dresden",
       "authorizedNameSource": "Official website",
-      "authorityUrl": "Official website: https://www.slub-dresden.de/",
       "publicNote": "State and university library responsible for the digitization and digital presentation of Illustrierte Magazine der Klassischen Moderne. The physical source copy of the September 1928 issue of Das Leben is held by Deutsches Literaturarchiv Marbach; access is provided through arthistoricum.net.",
       "sourceIds": [
         "SRC0834"
+      ],
+      "references": [
+        {
+          "label": "Official website",
+          "url": "https://www.slub-dresden.de/"
+        }
       ]
     },
     {
@@ -5111,10 +5822,19 @@
       "slug": "biblioteka-uniwersytecka-w-warszawie",
       "nameVariants": "BUW; University of Warsaw Library",
       "authorizedNameSource": "Official website",
-      "authorityUrl": "Official website: https://www.buw.uw.edu.pl/\nCRISPA: https://crispa.uw.edu.pl/",
       "publicNote": "The University of Warsaw Library operates CRISPA, the University of Warsaw digital library. The institution is represented separately from the CRISPA access platform named in individual digital-object citations.",
       "sourceIds": [
         "SRC0433"
+      ],
+      "references": [
+        {
+          "label": "CRISPA",
+          "url": "https://crispa.uw.edu.pl/"
+        },
+        {
+          "label": "Official website",
+          "url": "https://www.buw.uw.edu.pl/"
+        }
       ]
     },
     {
@@ -5131,13 +5851,18 @@
       "slug": "university-of-warwick-library",
       "nameVariants": "Warwick Library; The Library, University of Warwick",
       "authorizedNameSource": "Official website",
-      "authorityUrl": "Official website: https://warwick.ac.uk/services/library/",
       "publicNote": "The library of the University of Warwick and the contributing institution identified in the Internet Archive metadata for these Illustrierter Film-Kurier copies. Internet Archive digitized and provides access to the digital objects.",
       "sourceIds": [
         "SRC0333",
         "SRC0407",
         "SRC0409",
         "SRC0424"
+      ],
+      "references": [
+        {
+          "label": "Official website",
+          "url": "https://warwick.ac.uk/services/library"
+        }
       ]
     },
     {
@@ -5155,10 +5880,19 @@
       "slug": "cinematheque-de-toulouse",
       "nameVariants": "Cinémathèque de Toulouse; Bibliothèque de la Cinémathèque de Toulouse; Bibliothèque numérique de la Cinémathèque de Toulouse",
       "authorizedNameSource": "Official website",
-      "authorityUrl": "Official website: https://www.lacinemathequedetoulouse.com/\nDigital library: https://bib-num.cinemathequetoulouse.fr/",
       "publicNote": "Film archive and research library in Toulouse. Its digital library provides access to digitized books and periodicals, including the Pour Vous run containing issue N0009 of 17 January 1929.",
       "sourceIds": [
         "SRC0575"
+      ],
+      "references": [
+        {
+          "label": "Digital library",
+          "url": "https://bib-num.cinemathequetoulouse.fr/"
+        },
+        {
+          "label": "Official website",
+          "url": "https://www.lacinemathequedetoulouse.com/"
+        }
       ]
     },
     {
@@ -5176,10 +5910,25 @@
       "slug": "new-york-public-library-for-the-performing-arts",
       "nameVariants": "NYPL for the Performing Arts; Billy Rose Theatre Division",
       "authorizedNameSource": "LCNAF",
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n92011756\nOfficial website: https://www.nypl.org/locations/lpa\nFinding aid: https://nyplorg-data-archives.s3.amazonaws.com/uploads/collection/pdf_finding_aid/thegrunw.pdf",
       "publicNote": "Research library and archive at Lincoln Center. Its Billy Rose Theatre Division holds the Alfred Grunwald Papers (*T-Mss 1998-030), including a piano-vocal copy of 1000 Takte-Tanz, Band 2 in series IV, box 17, folder 1.",
       "sourceIds": [
         "SRC0203"
+      ],
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n92011756"
+        }
+      ],
+      "references": [
+        {
+          "label": "Finding aid",
+          "url": "https://nyplorg-data-archives.s3.amazonaws.com/uploads/collection/pdf_finding_aid/thegrunw.pdf"
+        },
+        {
+          "label": "Official website",
+          "url": "https://www.nypl.org/locations/lpa"
+        }
       ]
     },
     {
@@ -5196,9 +5945,26 @@
       "country": "Poland",
       "slug": "archiwum-panstwowe-w-lublinie",
       "nameVariants": "Lublin (Poland). Archiwum Państwowe",
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n98101261\nGND: https://d-nb.info/gnd/1239029-X\nVIAF: https://viaf.org/viaf/246001873\nISNI: https://isni.org/isni/0000000115454978",
       "sourceIds": [
         "SRC0438"
+      ],
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n98101261"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/1239029-X"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/246001873"
+        },
+        {
+          "scheme": "isni",
+          "url": "https://isni.org/isni/0000000115454978"
+        }
       ]
     },
     {
@@ -5206,7 +5972,6 @@
       "displayName": "United Music Publishers",
       "authorizedName": "United Music Publishers",
       "authorizedNameSource": "LCNAF",
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no2024029927",
       "types": [
         "publisher"
       ],
@@ -5228,6 +5993,12 @@
       "sourceIds": [
         "SRC0870",
         "SRC0878"
+      ],
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/no2024029927"
+        }
       ]
     },
     {
@@ -5243,7 +6014,6 @@
       ],
       "country": "United Kingdom",
       "slug": "gaumont-british",
-      "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no96007582",
       "contributionIds": [
         "CON-F057-PC-ORG167"
       ],
@@ -5252,6 +6022,12 @@
       ],
       "sourceIds": [
         "SRC0889"
+      ],
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/no96007582"
+        }
       ]
     }
   ]

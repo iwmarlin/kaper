@@ -8,12 +8,12 @@
   "publicDataUpdatedAt": "2026-09-30",
   "generator": {
     "file": "export_public_data.py",
-    "sha256": "2b5cc45540091df3602e6f93bc531eb6e08ee444681b6cdd31864c41e75069c9"
+    "sha256": "bd1252b45e8444a589a7718b2bc1633706462ea9d7e0499da124b5c278f0cb8d"
   },
   "publicInputs": {
     "allowlist": {
       "file": "public_export_config.json",
-      "sha256": "b9d52e7f0e9c80e5ce3963cc6d3b3eb42944fea4bd6c6b55f726a0c1d9a93e32"
+      "sha256": "45749f19268cc2b9738c48f1f10190b3e9990a6582162c37776337c00f125746"
     },
     "overrides": {
       "file": "public_export_overrides.json",
@@ -84,8 +84,8 @@
     },
     {
       "file": "organizations.json",
-      "bytes": 139336,
-      "sha256": "afc76c00d976d8e72d1528b0f46808eaac776b918390cef2235e313edb3c5fa1"
+      "bytes": 150180,
+      "sha256": "9261e1f2c478cc0e315936d7a1dd0902f1f13d70f3ea47fc273bfd8e3f613bc0"
     },
     {
       "file": "other-works.json",
@@ -94,8 +94,8 @@
     },
     {
       "file": "people.json",
-      "bytes": 181680,
-      "sha256": "dc830b6b0fe08e23d3e9e84274ad33c58b0a24eaf739f10ab27d9ca0cb26b1c0"
+      "bytes": 215481,
+      "sha256": "7129990e8798cadf50d8bdedcd2eb77833dcdd24a5054d4ad098b43d946ee265"
     },
     {
       "file": "person-name-variants.json",

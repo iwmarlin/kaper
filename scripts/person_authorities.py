@@ -1,50 +1,40 @@
 #!/usr/bin/env python3
 """Normalize authority control and contextual identity links for People.
 
-The source package historically stores every person-related URL in one
-newline-delimited ``authorityUrl`` field.  That field contains both formal
-authority identifiers (VIAF, LCNAF, GND, BnF, etc.) and contextual pages such
-as Wikipedia, Filmportal or an archival collection.  Public data keeps the
-legacy line-stack representation for compatibility, but separates the two
-semantics:
+The source package stores every person-related URL in one newline-delimited
+``authorityUrl`` field.  That field contains both formal authority identifiers
+(VIAF, LCNAF, GND, BnF, etc.) and contextual pages such as Wikipedia,
+Filmportal or an archival collection.  Public data separates the two
+semantics, and holds each as a structured list rather than a packed string:
 
-``authorityUrl``
-    Formal authority and identity identifiers only.
+``authorities``
+    ``[{"scheme": …, "url": …}]`` — formal authority and identity registers
+    only, in the precedence order of :mod:`authority_identifiers`.
 
-``referenceUrl``
-    Biographical, archival and filmographic reference pages.
+``references``
+    ``[{"label": …, "url": …}]`` — biographical, archival and filmographic
+    reference pages.
 
 A person-specific authority Source may also supply a formal identifier.  Such
-an identifier is copied to the person's authority stack only when the Source
+an identifier is copied to the person's authority list only when the Source
 asserts the accepted identity.  Candidate identities and separately
 controlled pseudonyms remain citations, not assertions about the main person.
 """
 
 from __future__ import annotations
 
-import re
-from collections.abc import Iterable
-from urllib.parse import urlsplit, urlunsplit
+from urllib.parse import urlsplit
 
-
-LINK_LINE = re.compile(r"^([^:]+):\s*(https?://\S+)$", flags=re.IGNORECASE)
-BNF_IDENTIFIER = re.compile(r"(?:ark:/12148/)?(cb[0-9a-z]+)", flags=re.IGNORECASE)
-BNF_DATA_IDENTIFIER = re.compile(
-    r"data\.bnf\.fr/(?:[a-z]{2}/)?([0-9]{8})(?:/|$)",
-    flags=re.IGNORECASE,
+from authority_identifiers import (
+    authority_scheme_for_url,
+    authority_urls,
+    clean_url,
+    equivalent_authority_url,
+    parse_link_stack,
+    split_authority_links,
+    structured_link_errors,
 )
 
-AUTHORITY_ORDER = {
-    "LCNAF": 10,
-    "GND": 20,
-    "BnF": 30,
-    "BN": 40,
-    "NUKAT": 50,
-    "VIAF": 60,
-    "ISNI": 70,
-    "Wikidata": 80,
-    "MusicBrainz": 90,
-}
 
 REFERENCE_LABEL_BY_HOST = {
     "catalog.afi.com": "AFI Catalog",
@@ -86,64 +76,6 @@ REJECTED_AUTHORITY_URLS = {
 }
 
 
-def _clean_url(value: str) -> str | None:
-    url = value.strip().rstrip(".,;)")
-    parsed = urlsplit(url)
-    if parsed.scheme not in {"http", "https"} or not parsed.netloc:
-        return None
-    path = parsed.path if parsed.path == "/" else parsed.path.rstrip("/")
-    return urlunsplit((parsed.scheme, parsed.netloc, path, parsed.query, ""))
-
-
-def parse_link_stack(value: object) -> list[tuple[str, str]]:
-    """Parse a legacy ``Label: URL`` stack without accepting loose text."""
-
-    if not value:
-        return []
-    lines = value if isinstance(value, list) else str(value).splitlines()
-    result: list[tuple[str, str]] = []
-    for raw in lines:
-        if isinstance(raw, dict):
-            label = str(raw.get("label") or raw.get("scheme") or "").strip()
-            url = _clean_url(str(raw.get("url") or ""))
-        else:
-            match = LINK_LINE.match(str(raw).strip())
-            if not match:
-                continue
-            label = match.group(1).strip()
-            url = _clean_url(match.group(2))
-        if label and url:
-            result.append((label, url))
-    return result
-
-
-def authority_label_for_url(url: str) -> str | None:
-    """Return the controlled authority scheme identified by a URL."""
-
-    parsed = urlsplit(url)
-    host = (parsed.hostname or "").casefold()
-    path = parsed.path.casefold()
-    if host == "viaf.org" or host.endswith(".viaf.org"):
-        return "VIAF"
-    if host == "id.loc.gov" and "/authorities/names/" in path:
-        return "LCNAF"
-    if host == "d-nb.info" and path.startswith("/gnd/"):
-        return "GND"
-    if host == "isni.org" and path.startswith("/isni/"):
-        return "ISNI"
-    if host in {"catalogue.bnf.fr", "data.bnf.fr"}:
-        return "BnF"
-    if host == "dbn.bn.org.pl" and "/descriptor-details/" in path:
-        return "BN"
-    if host == "nukat.edu.pl":
-        return "NUKAT"
-    if host.endswith("wikidata.org"):
-        return "Wikidata"
-    if host == "musicbrainz.org" and path.startswith("/artist/"):
-        return "MusicBrainz"
-    return None
-
-
 def reference_label(label: str, url: str) -> str:
     host = (urlsplit(url).hostname or "").casefold()
     if host in REFERENCE_LABEL_BY_HOST:
@@ -151,95 +83,35 @@ def reference_label(label: str, url: str) -> str:
     return REFERENCE_LABEL_ALIASES.get(label.casefold(), label.strip())
 
 
-def authority_identity_key(label: str, url: str) -> tuple[str, str]:
-    """Key equivalent BnF catalogue/data routes as one authority identity."""
+def _parsed_person_links(person: dict) -> list[tuple[str, str]]:
+    """Read both structured lists and the legacy stacks they replaced."""
 
-    if label == "BnF":
-        match = BNF_IDENTIFIER.search(url)
-        if match:
-            identifier = match.group(1).casefold().removeprefix("cb")
-            # BnF ARKs append a check character to the eight-digit record
-            # number used in older data.bnf.fr routes.
-            return (label, identifier[:-1] if len(identifier) == 9 else identifier)
-        match = BNF_DATA_IDENTIFIER.search(url)
-        if match:
-            return (label, match.group(1))
-    return (label, url.casefold())
-
-
-def equivalent_authority_url(left: str, right: str) -> bool:
-    left_clean = _clean_url(left)
-    right_clean = _clean_url(right)
-    if not left_clean or not right_clean:
-        return False
-    left_label = authority_label_for_url(left_clean)
-    right_label = authority_label_for_url(right_clean)
-    if not left_label or left_label != right_label:
-        return False
-    return authority_identity_key(left_label, left_clean) == authority_identity_key(
-        right_label, right_clean
-    )
-
-
-def _prefer_authority_url(existing: str, candidate: str) -> str:
-    """Prefer the catalogue route when BnF exposes the same ARK twice."""
-
-    existing_host = (urlsplit(existing).hostname or "").casefold()
-    candidate_host = (urlsplit(candidate).hostname or "").casefold()
-    if existing_host == "data.bnf.fr" and candidate_host == "catalogue.bnf.fr":
-        return candidate
-    return existing
-
-
-def format_link_stack(entries: Iterable[tuple[str, str]]) -> str:
-    return "\n".join(f"{label}: {url}" for label, url in entries)
+    parsed = parse_link_stack(person.get("authorities"))
+    parsed.extend(parse_link_stack(person.get("references")))
+    parsed.extend(parse_link_stack(person.get("authorityUrl")))
+    parsed.extend(parse_link_stack(person.get("referenceUrl")))
+    return parsed
 
 
 def normalize_person_authority_fields(person: dict) -> None:
     """Normalize and separate one public Person record in place."""
 
-    parsed = parse_link_stack(person.get("authorityUrl"))
-    parsed.extend(parse_link_stack(person.get("referenceUrl")))
-
-    authorities: dict[tuple[str, str], tuple[str, str]] = {}
-    references: dict[str, tuple[str, str]] = {}
-    for supplied_label, url in parsed:
-        if url in REJECTED_AUTHORITY_URLS.get(str(person.get("id") or ""), set()):
-            continue
-        authority_label = authority_label_for_url(url)
-        if authority_label:
-            key = authority_identity_key(authority_label, url)
-            if key in authorities:
-                old_label, old_url = authorities[key]
-                authorities[key] = (
-                    old_label,
-                    _prefer_authority_url(old_url, url),
-                )
-            else:
-                authorities[key] = (authority_label, url)
-        else:
-            references.setdefault(
-                url.casefold(),
-                (reference_label(supplied_label, url), url),
-            )
-
-    authority_entries = sorted(
-        authorities.values(),
-        key=lambda item: (AUTHORITY_ORDER[item[0]], item[1].casefold()),
-    )
-    reference_entries = sorted(
-        references.values(),
-        key=lambda item: (item[0].casefold(), item[1].casefold()),
+    authorities, references = split_authority_links(
+        _parsed_person_links(person),
+        reference_label=reference_label,
+        rejected_urls=REJECTED_AUTHORITY_URLS.get(str(person.get("id") or ""), set()),
     )
 
-    if authority_entries:
-        person["authorityUrl"] = format_link_stack(authority_entries)
+    person.pop("authorityUrl", None)
+    person.pop("referenceUrl", None)
+    if authorities:
+        person["authorities"] = authorities
     else:
-        person.pop("authorityUrl", None)
-    if reference_entries:
-        person["referenceUrl"] = format_link_stack(reference_entries)
+        person.pop("authorities", None)
+    if references:
+        person["references"] = references
     else:
-        person.pop("referenceUrl", None)
+        person.pop("references", None)
 
     heading_source = HEADING_SOURCE_OVERRIDES.get(
         str(person.get("id") or ""),
@@ -259,6 +131,14 @@ def source_asserts_same_person(source: dict) -> bool:
     )
 
 
+def person_reference_urls(person: dict) -> list[str]:
+    return [
+        str(entry.get("url"))
+        for entry in person.get("references") or []
+        if entry.get("url")
+    ]
+
+
 def synchronize_person_authority_sources(
     people: list[dict],
     sources: list[dict],
@@ -269,17 +149,17 @@ def synchronize_person_authority_sources(
     for source in sources:
         if not source_asserts_same_person(source):
             continue
-        url = _clean_url(str(source.get("primaryUrl") or ""))
-        label = authority_label_for_url(url or "")
-        if not url or not label:
+        url = clean_url(str(source.get("primaryUrl") or ""))
+        scheme = authority_scheme_for_url(url or "")
+        if not url or not scheme:
             continue
         for person_id in source.get("personIds") or []:
             person = people_by_id.get(person_id)
             if not person:
                 continue
-            existing = parse_link_stack(person.get("authorityUrl"))
-            existing.append((label, url))
-            person["authorityUrl"] = format_link_stack(existing)
+            held = list(person.get("authorities") or [])
+            held.append({"scheme": scheme, "url": url})
+            person["authorities"] = held
 
     for person in people:
         normalize_person_authority_fields(person)
@@ -287,39 +167,39 @@ def synchronize_person_authority_sources(
     sources_by_id = {source["id"]: source for source in sources}
     for person in people:
         direct_urls = {
-            _clean_url(str(source.get("primaryUrl") or ""))
+            clean_url(str(source.get("primaryUrl") or ""))
             for source_id in person.get("sourceIds") or []
             if (source := sources_by_id.get(source_id))
         }
         references = [
-            (label, url)
-            for label, url in parse_link_stack(person.get("referenceUrl"))
-            if _clean_url(url) not in direct_urls
+            entry
+            for entry in person.get("references") or []
+            if clean_url(str(entry.get("url") or "")) not in direct_urls
         ]
         if references:
-            person["referenceUrl"] = format_link_stack(references)
+            person["references"] = references
         else:
-            person.pop("referenceUrl", None)
+            person.pop("references", None)
 
 
 def person_authority_errors(person: dict) -> list[str]:
-    """Return normalization/schema errors for a public Person authority stack."""
+    """Return normalization/schema errors for a public Person authority list."""
 
     expected = dict(person)
     normalize_person_authority_fields(expected)
     errors: list[str] = []
-    for field in ("authorityUrl", "referenceUrl", "authorizedNameSource"):
+    for field in ("authorities", "references", "authorizedNameSource"):
         if person.get(field) != expected.get(field):
             errors.append(f"{field} is not normalized")
-    for label, url in parse_link_stack(person.get("authorityUrl")):
-        detected = authority_label_for_url(url)
-        if detected != label:
-            errors.append(
-                f"authorityUrl label {label!r} does not match controlled scheme {detected!r}"
-            )
-    for _, url in parse_link_stack(person.get("referenceUrl")):
-        if authority_label_for_url(url):
-            errors.append(f"formal authority URL is stored as a reference: {url}")
+    for legacy in ("authorityUrl", "referenceUrl"):
+        if person.get(legacy) is not None:
+            errors.append(f"{legacy} is the legacy packed form and must not be exported")
+    errors.extend(
+        structured_link_errors(person, "authorities", key="scheme", controlled=True)
+    )
+    errors.extend(
+        structured_link_errors(person, "references", key="label", controlled=False)
+    )
     if str(person.get("authorizedNameSource") or "").casefold() in {
         "viaf",
         "viaf main heading",
@@ -329,7 +209,7 @@ def person_authority_errors(person: dict) -> list[str]:
 
 
 def person_authority_urls(person: dict) -> list[str]:
-    return [url for _, url in parse_link_stack(person.get("authorityUrl"))]
+    return authority_urls(person)
 
 
 def authority_source_alignment_errors(
@@ -345,7 +225,7 @@ def authority_source_alignment_errors(
         if not source_asserts_same_person(source):
             continue
         source_url = str(source.get("primaryUrl") or "")
-        if not authority_label_for_url(source_url):
+        if not authority_scheme_for_url(source_url):
             continue
         for person_id in source.get("personIds") or []:
             person = people_by_id.get(person_id)
@@ -362,13 +242,13 @@ def authority_source_alignment_errors(
     sources_by_id = {source["id"]: source for source in sources}
     for person in people:
         direct_urls = {
-            _clean_url(str(source.get("primaryUrl") or ""))
+            clean_url(str(source.get("primaryUrl") or ""))
             for source_id in person.get("sourceIds") or []
             if (source := sources_by_id.get(source_id))
         }
-        for _, reference_url in parse_link_stack(person.get("referenceUrl")):
-            if _clean_url(reference_url) in direct_urls:
+        for reference_url in person_reference_urls(person):
+            if clean_url(reference_url) in direct_urls:
                 errors.append(
-                    f"{person['id']} repeats a direct Source URL in referenceUrl"
+                    f"{person['id']} repeats a direct Source URL in references"
                 )
     return errors

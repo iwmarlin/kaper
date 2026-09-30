@@ -32,7 +32,8 @@ these that does:
 5. **Any other register the VIAF cluster gathers**, when none of the four holds
    the person. Ferry van Delden is known only to the Dutch national thesaurus,
    whose heading `Delden, Ferry van` the cluster carries as its main one. Name
-   the register in `authorityUrl` so that the heading's origin stays visible.
+   the register in `authorizedNameSource` so that the heading's origin stays
+   visible.
 
 The library that catalogues a person in their own language is the better
 authority for the form of their name. The general order would have given Róża
@@ -60,5 +61,8 @@ record at all.
 
 ## Provenance
 
-Record which register a heading came from in the person's `authorityUrl`, which
-is where the identifier for that register is already kept.
+Name the register a heading came from in `authorizedNameSource`, and keep that
+register's identifier in `authorities`, where a reader can open it. The two
+belong together: a heading that names a register the record does not link is a
+claim nobody can check. `docs/authority-identifiers.md` holds the identifier
+model and the register vocabulary.

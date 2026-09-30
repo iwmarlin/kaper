@@ -16,6 +16,8 @@ from pathlib import Path
 from typing import Optional
 from urllib.parse import quote, urlsplit
 
+from authority_identifiers import authority_urls
+
 
 ORIGIN = "https://iwmarlin.github.io/kaper/"
 PUBLIC_PAGES = [
@@ -251,30 +253,6 @@ def duplicate_metrics(values: list[str]) -> dict[str, int]:
         "duplicateRecordCount": sum(duplicates),
         "largestDuplicateGroup": max(duplicates, default=0),
     }
-
-
-AUTHORITY_URL_PATTERN = re.compile(r"https?://[^\s<>\"']+")
-AUTHORITY_URL_TRAILING_PUNCTUATION = ".,;:!?"
-
-
-def authority_urls(value) -> list[str]:
-    """Extract stable HTTP(S) identity links from a labelled authority field."""
-    if isinstance(value, list):
-        candidates = value
-    else:
-        candidates = [value]
-    urls: list[str] = []
-    seen: set[str] = set()
-    for candidate in candidates:
-        for match in AUTHORITY_URL_PATTERN.findall(str(candidate or "")):
-            url = match.rstrip(AUTHORITY_URL_TRAILING_PUNCTUATION)
-            parsed = urlsplit(url)
-            if parsed.scheme not in {"http", "https"} or not parsed.netloc:
-                continue
-            if url not in seen:
-                seen.add(url)
-                urls.append(url)
-    return urls
 
 
 def title_for(record_type: str, record: dict) -> str:
@@ -690,7 +668,7 @@ def agent_entities(tables: dict, work_id: str, role: str) -> list[dict]:
                 "name": person.get("displayName"),
                 "@id": f"{ORIGIN}records/person/{quote(pid, safe='')}/",
             }
-            authorities = authority_urls(person.get("authorityUrl"))
+            authorities = authority_urls(person)
             if authorities:
                 entity["sameAs"] = authorities[0] if len(authorities) == 1 else authorities
             out.append(entity)
@@ -793,7 +771,7 @@ def structured_data(
         if record.get("repository"):
             data["holdingArchive"] = {"@type": "Organization", "name": record["repository"]}
     if record_type == "person":
-        same_as = authority_urls(record.get("authorityUrl"))
+        same_as = authority_urls(record)
         if same_as:
             data["sameAs"] = same_as[0] if len(same_as) == 1 else same_as
     if record_type == "place":
@@ -842,8 +820,8 @@ def static_page(
         page_title = f"{title} ({label.lower()})"
     browser_title = f"{page_title} | {PAGE_TITLE_SUFFIX}"
     record_id = record["id"]
-    style_version = "0c29ff1abd"
-    record_script_version = "0c29ff1abd"
+    style_version = "e413e81b98"
+    record_script_version = "e413e81b98"
     route = f"records/{record_type}/{quote(record_id, safe='')}/"
     canonical = f"{ORIGIN}{route}"
     og_image = og_image_for(record_type, record, tables, image_mapping)
@@ -881,8 +859,8 @@ def static_page(
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <link rel="preload" href="assets/fonts/kaper-sans.woff2?v=0c29ff1abd" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="assets/fonts/kaper-serif.woff2?v=0c29ff1abd" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/kaper-sans.woff2?v=e413e81b98" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/kaper-serif.woff2?v=e413e81b98" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/site/styles.css?v={style_version}">
   <title>{esc(browser_title)}</title>
   {ld_json}
