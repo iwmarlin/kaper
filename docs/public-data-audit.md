@@ -180,8 +180,14 @@ score credit.
 
 This is finding 6 again — substance exported and never shown — but at 55 and
 31 records rather than 34 and 6, and carrying a scholarly qualification rather
-than a locator. Displaying it needs an editorial decision about wording and
-about which values are worth stating, so it is not a mechanical fix.
+than a locator.
+
+**Resolved.** The card now states the credit where it is not the plain one, in
+the “Kaper attribution” row the context-only works already used: Songwriter on
+19 films, Music direction and Stock music on 3 each, Background music on 2,
+Music score and Unresolved on 1 each. A plain `composer` credit stays silent,
+as an authorized name does where it matches the title. All 31 attribution notes
+are shown as editorial context beside the description.
 
 ### 7. Two songs titled `Adieu` need an editorial ruling
 

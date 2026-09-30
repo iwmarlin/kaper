@@ -33,8 +33,8 @@ import {
   sourceTypePluralLabel,
   typeBadge,
   updateMeta,
-} from "./core.js?v=64e864d31d";
-import { RECORD_INDEXES, recordIndexReturn } from "./catalogue-filters.js?v=64e864d31d";
+} from "./core.js?v=2c4a55a900";
+import { RECORD_INDEXES, recordIndexReturn } from "./catalogue-filters.js?v=2c4a55a900";
 
 // A canonical record route arrives prerendered and renders no image in the
 // browser, so the image map is loaded only where a record is actually rendered:
@@ -813,6 +813,29 @@ function mediaContext(media) {
   return additionalTokens.size >= 5 || hasExplicitContext ? description : "";
 }
 
+// films.creditType says what kind of music credit a film carries, and
+// films.attributionNote says it in prose. Neither was read by any code, so a
+// reader opening Mutiny on the Bounty saw a confirmed composer credit, a year
+// and a period, while the data said songwriter and named the one song — with
+// Herbert Stothart, on A Night at the Opera, as the film's actual composer.
+// docs/site-architecture.md requires that attribution qualifications be
+// displayed rather than hidden, so this was the rule going unkept.
+//
+// `composer` is the plain reading of a music credit on a film and stays
+// silent, as an authorized name does where it matches the title and a
+// certainty does where it is confirmed. Every other value narrows that reading
+// and is therefore stated. `uncertain` reads as unresolved because the
+// certainty vocabulary already owns "uncertain" for a different question: that
+// value says the kind of credit is undetermined, not that the credit is doubted.
+const FILM_CREDIT_LABELS = Object.freeze({
+  songwriter: "Songwriter",
+  music_direction: "Music direction",
+  music_score: "Music score",
+  background_music: "Background music",
+  stock_music: "Stock music",
+  uncertain: "Unresolved",
+});
+
 function renderWork(work, data, indexes) {
   const isContextOnly = work.publicScope === "context_only";
   const isSong = work.workType === "Song";
@@ -873,7 +896,15 @@ function renderWork(work, data, indexes) {
   // once carried could never run.
   const subtypeFacts = subtype ? `
     ${fact("Instrumentation", subtype.instrumentation)}${fact("Material status", subtype.materialStatus)}${fact("Shelfmark", subtype.shelfmark)}` : "";
+  // publicText takes the first note it is given, so the attribution note is
+  // added beside it rather than through it: on every film that carries a
+  // public note it carries an attribution note too, and the two say different
+  // things. It is framed as editorial context, which is what it is.
+  const attributionNote = isFilm && subtype?.attributionNote
+    ? `<div class="scope-note">${escapeHtml(subtype.attributionNote)}</div>`
+    : "";
   const overview = publicText(subtype?.publicNote, work.publicNote)
+    + attributionNote
     + (!isOther && subtypeFacts.trim() ? `<dl class="record-facts">${subtypeFacts}</dl>` : "");
   const main = [
     section("About this work", overview),
@@ -912,7 +943,10 @@ function renderWork(work, data, indexes) {
     // the period with its range, so the badge row is left to what qualifies the
     // record rather than what classifies it.
     badges: `${isContextOnly ? scopeBadge(work.publicScope) : (hasConciseCredits && work.certainty === "confirmed" ? "" : certaintyBadge(work.certainty))}`,
-    facts: `${fact("Year", work.year)}${hasConciseCredits ? fact("Genre", genreLabel(subtype?.genre)) : ""}${fact("Period", periodValues(work).map(periodLabel).join(", "))}${isContextOnly ? fact("Kaper attribution", "Not confirmed") : ""}`,
+    // One row answers what is attributed to Kaper here. A work outside the
+    // attributed scope says so first, because that is the stronger statement;
+    // otherwise a film states the kind of credit where it is not the plain one.
+    facts: `${fact("Year", work.year)}${hasConciseCredits ? fact("Genre", genreLabel(subtype?.genre)) : ""}${fact("Period", periodValues(work).map(periodLabel).join(", "))}${fact("Kaper attribution", isContextOnly ? "Not confirmed" : (isFilm && FILM_CREDIT_LABELS[subtype?.creditType]) || "")}`,
     main,
     aside,
   };
@@ -1976,7 +2010,7 @@ async function bootstrapRecordPage() {
     }
     const [data, { IMAGE_DERIVATIVES }] = await Promise.all([
       loadRecordPayload(requestedType, requestedId),
-      import("./image-derivatives.js?v=64e864d31d"),
+      import("./image-derivatives.js?v=2c4a55a900"),
     ]);
     registerImageDerivatives(IMAGE_DERIVATIVES);
     const { config, view } = renderRecordView(requestedType, requestedId, data);
