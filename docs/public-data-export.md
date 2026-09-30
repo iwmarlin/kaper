@@ -5,6 +5,29 @@ the website. They form a self-contained scholarly graph covering the documented
 period from 1902 through 1939. Generated page payloads and HTML records are
 derived from these files and are never the source of truth.
 
+## The export path is historical
+
+`export_public_data.py` regenerates these files from a compatible private
+source package, and `public_export_overrides.json` is its curation input. It
+has not been re-run for some time, and the canonical files have been edited
+forward since. Compared field by field, 1819 override values still match the
+data, 34 differ only in typography and 277 differ substantively — 15 of those
+by design, because `authorityUrl` is the intake name that the authority
+normalizer consumes and the output holds `authorities`. The remaining 262 are
+curation the file no longer carries. Eleven `removeFields` name a field the
+record still has, and eight overrides name records that no longer exist:
+REL0170, W-S204, S204, SRC0192, CON-F032-SM-P009, CON-S190-C-P009, PNV0014,
+TV0296.
+
+So the exporter must not be re-run against the current data before those
+overrides are reconciled: it would silently revert 262 curated fields and fail
+on the eight missing records. Correct the canonical files directly, as
+`reconcile_manifest.py` and the two normalizers are built for, and record the
+reason in the overrides file, which remains the audit log of why a value is
+what it is. The module also supplies the normalization and validation helpers
+that `validate_public_export.py` and `reconcile_manifest.py` import, so it
+stays in the tree; it is only its entrypoint that is out of use.
+
 ## Export policy
 
 - `scripts/public_export_config.json` is the explicit field allowlist. A field

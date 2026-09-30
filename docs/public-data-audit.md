@@ -139,6 +139,16 @@ states that precision is an evidential category about how exactly the
 coordinates identify a location. The same point cannot be both approximate and
 venue-level.
 
+**Resolved.** PL010 now reads `venue_level`, matching PL017. Its own note says
+the marker identifies “the documented building site”, so the building is
+identified; that the classroom within it is not is a limit on what happened
+where, not on how exactly the coordinates locate the place, which is what
+`mapPrecision` states. The note keeps that sentence, and the two records stay
+separate: a school and a concert hall that shared a building are two bodies.
+One thing is left as it is — the public-performance event is linked to both
+places, so it carries two markers. That reads correctly, because the
+performance was a school concert held in the hall.
+
 ### 6. Two fields carry evidence that the site never shows
 
 Neither of these is read by the renderer, the build, or any validator. Each
@@ -275,7 +285,16 @@ only a list of names to look up.
   Both exist solely as corporate parents, reached through
   `parentOrganizationIds` from Grammophon, Polydor and Victor. That parent
   relation is a historical claim and it is the one assertion in the dataset
-  with no source behind it.
+  with no source behind it. **Partly resolved:** the unsourced company history
+  is gone from both notes — a founding year for the one, a 1934 merger for the
+  other — leaving the statement about how this archive represents the imprints,
+  which is not a claim about the past. The records are still unsourced, and no
+  source in the archive can fix that: none of the 838 mentions either company.
+  The archive does document a corporate body from a disc label elsewhere —
+  SRC0725 records “Carl Lindström A.-G.” printed along the foot of an Odeon
+  label — so a Grammophon or Victor label already cited here may carry its
+  parent in the same way, which would settle both records without a new
+  source.
 - 3 Sources have neither `primaryUrl` nor `repository`, so a reader cannot
   reach them: `SRC0373` (Buxbaum, Wien 2006), `SRC0490` and `SRC0491`
   (Lindstedt). `SRC0491` is marked forthcoming for 2026 and will need revisiting.
@@ -339,10 +358,9 @@ ground is not covered again.
    is required depends on that answer, so it comes first; what the field holds
    today, and the two fixes that did not need the decision, are in
    `docs/contribution-evidence-context.md`.
-3. Resolve `PL010`/`PL017` precision and the ORG127 and ORG141 parent claims
-   (findings 5 and 8) — small, each a single editorial decision. Finding 7,
-   the repeated titles, is withdrawn: the relations already explained every
-   one of them.
+3. ~~Resolve `PL010`/`PL017` precision and the ORG127 and ORG141 parent
+   claims (findings 5 and 8).~~ Done, and finding 7 is withdrawn: the
+   relations already explained every repeated title.
 4. Decide whether `evidenceLocator` and `useStatus` are published or dropped
    (finding 6).
 5. Create Organization records for Universität Hamburg and the Bundesarchiv and

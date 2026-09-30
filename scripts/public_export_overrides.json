@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "description": "Auditable corrections for the canonical public graph. Existing records may receive scalar corrections or field removals; documented public records and explicit links may be added through the additions sections.",
+  "description": "Audit log of corrections to the canonical public graph, and the curation input of an export that is no longer re-run: 262 of its field values are now behind data/public/v1, so replaying it would revert them — see docs/public-data-export.md. Existing records may receive scalar corrections or field removals; documented public records and explicit links may be added through the additions sections.",
   "records": {
     "Films": {
       "F051": {

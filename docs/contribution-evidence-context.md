@@ -109,7 +109,7 @@ section from eighteen pages. `tests/test_evidence_context.py` pins the value,
 checks that it appears only on other works, where the renderer reads it, and
 checks that every flagged work still shows the section.
 
-## The contribution half is already held elsewhere, and better
+## The film record states it too, at its own level
 
 `films.creditType` states the same distinction at the level that owns it — the
 film's credit rather than one contribution — with a coherent vocabulary:
@@ -119,8 +119,8 @@ film's credit rather than one contribution — with a coherent vocabulary:
 Bounty* reads “Song ‘Love Song of Tahiti’ … uncredited on screen”, and *A Night
 at the Opera* “score by Herbert Stothart; songs by Kaper”.
 
-So the contribution half of `evidenceContext` is a second copy of a statement
-the film record already makes, and copies drift. On four films the two say
+So for a film, `evidenceContext` and `films.creditType` can state the same
+thing at two levels, and where they do, copies drift. On four films the two say
 different things — but not for the same reason, and only one is likely to be an
 error:
 
@@ -162,11 +162,28 @@ Neither field is validated, so nothing caught any of this. Note also that
 separate finding recorded in `docs/public-data-audit.md`; the card now states
 them.
 
-## Open decision
+## Decision: the credit-level value stands
 
-Whether the field is required cannot be settled while it means two things. The
-question to answer first is whether to separate them, and for films the
-separation is really a deletion: `films.creditType` already holds the
+The contribution values stay where they are. `films.creditType` states the
+same thing for many of these films, but it is **one value per film**, and a
+contribution is per person: on *Little Boy Blue* Kaper and Jurmann wrote the
+background cues while Carl W. Stalling wrote additional music, and the
+film-level field cannot say that. Retiring the credit-level value would remove
+a distinction the schema has nowhere else to put. The four overrides that set
+it deliberately — “songwriter for ‘Love Song of Tahiti,’ not composer of the
+complete film score” and its three siblings — were right about the level.
+
+What remains open is narrower and is hygiene rather than modelling: the four
+`_and_` spellings should become a list, and whether `film_song` against
+`film_songs` carries a real distinction in number is still unanswered. Neither
+blocks anything.
+
+The analysis that led here is kept below, because it is the reason the answer
+is not the obvious one.
+
+## The case that was considered and rejected
+
+For films the separation looked like a deletion: `films.creditType` already holds the
 contribution with a vocabulary, at the right level, for 55 of 56 films.
 
 The 46 contribution values do not all have that home, and the difference
