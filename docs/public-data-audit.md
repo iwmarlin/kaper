@@ -189,6 +189,41 @@ Music score and Unresolved on 1 each. A plain `composer` credit stays silent,
 as an authorized name does where it matches the title. All 31 attribution notes
 are shown as editorial context beside the description.
 
+### 6b. The export overrides have fallen 262 fields behind the canonical data
+
+Found while working finding 2. `scripts/public_export_overrides.json` holds 780
+auditable corrections, each with a written reason, and the manifest records its
+checksum and counts as a public input. Compared field by field against
+`data/public/v1/`, 1819 of its values match the data, 34 differ only in
+typography, and **277 differ substantively**. Fifteen of those 277 are the
+`authorityUrl` entries, which now differ by design: the field is the intake
+name that the authority normalizer consumes, so the override supplies the
+legacy packed form and the output holds `authorities`. That leaves 262
+substantive divergences that predate this branch, 202 of them in Sources —
+`fullCitation` 87, `date` 41, `url` 38, `researchNote` 8, `title` 8, `creator`
+6, `repository` 5. Eleven `removeFields` name a field the record still carries,
+and eight overrides name a record that no longer exists at all: REL0170,
+W-S204, S204, SRC0192, CON-F032-SM-P009, CON-S190-C-P009, PNV0014, TV0296.
+
+The direction of the drift is consistent: the canonical data has been edited
+forward and the override file kept the earlier text. `W-S097.sortTitle` is
+`À Paris tiguidiguidi` in the data and `Paris tiguidiguidi` in the override,
+from before the filing-title rule; `O012.sourceIds` has gained `SRC0789`;
+`F052.attributionNote` is a fuller text in the data than the override carries.
+
+This is not a contradiction of the documented model — `data/public/v1/` is the
+source of truth, and `reconcile_manifest.py` exists precisely for the case
+where the full export was not re-run. It is a loaded gun rather than a present
+error: running `export_public_data.py` against the private source package today
+would silently revert 262 curated fields and fail on eight missing records. The
+one thing keeping that harmless is that its entrypoint is unused, which
+finding 1's investigation had already established.
+
+Either the overrides are reconciled to the data, or the export path is marked
+as historical and the file with it. Leaving both in place, with the manifest
+presenting the overrides as a live public input, is the state that invites the
+accident.
+
 ### 7. Two songs titled `Adieu` need an editorial ruling
 
 `W-S091` (1933, four Sources) and `W-S186` (1935, one Source) share the title

@@ -184,3 +184,32 @@ opposite case: if anything they should be promoted to a controlled field of
 their own, parallel to `films.creditType`, rather than dropped. Only once the
 field means one thing does “required for this role” have a definite meaning,
 and only then can it be controlled or published.
+
+### Why the retirement was not carried out
+
+Of the 27 film credits holding a value on the contribution axis, 13 are cases
+where `films.creditType` already states the same thing, so the value looked
+safe to drop: W-F032 and W-F049 (`stock_music`), W-F034, W-F035, W-F036 and
+W-F037 (`film_song`, `film_songs`, against `songwriter`), and W-F052
+(`background_music`). Ten of those 13 carry no `scopeNote`, so the field is the
+only per-credit record of the contribution.
+
+Four of them then turned out to carry an override whose written reason is
+exactly that intent: “Model Kaper's Mutiny on the Bounty contribution at its
+documented scope: songwriter for ‘Love Song of Tahiti,’ not composer of the
+complete film score,” and the same for *Last of the Pagans*, *A Night at the
+Opera* and *Kind Lady*. Each of those four also removes the `scopeNote`
+deliberately, so the structured fields were meant to carry the statement in its
+place. That is not import residue, and dropping the value would undo a reasoned
+editorial decision.
+
+Those same four overrides also set `role` to `songwriter`, which the data does
+not have and which is not in the role vocabulary at all — so they come from a
+model that was afterwards partly abandoned, and they cannot simply be read as
+current intent either. The question that has to be answered first is therefore
+narrow and concrete: was the credit-level modelling superseded when
+`films.creditType` came to state the same thing, or is it meant to stand beside
+it? The remaining 14 of the 27 need no such ruling and are described above —
+six are two documents packed into one string, two mix an axis each, one is
+Stalling's `additional_music`, which is per person where `creditType` is per
+film, and five are W-F010, W-F013 and W-F027.
