@@ -229,9 +229,36 @@ accident.
 `W-S091` (1933, four Sources) and `W-S186` (1935, one Source) share the title
 exactly, and neither carries `lyricistAsPrinted`, `publisherAsPrinted` or
 `genre`. They are either two works or one work catalogued twice from two
-different sources. The other repeated titles are sound: `San Francisco`
-(`W-F043` film 1936, `W-S130` song 1936, `W-S218` song 1937) and the other
-film/song pairs are a film and its title song.
+different sources.
+
+**Withdrawn. This finding was wrong in both its premise and its conclusion.**
+Both records do carry a lyricist, a publisher and a genre — the query behind
+the finding read the parent Works rather than the Songs subtype, where those
+fields live. And the archive had already answered the question, in
+`work-relations.json`, which the title comparison never consulted:
+
+| Relation | Says |
+| --- | --- |
+| REL0147 | `W-S091` is a `language_version_of` `W-S074`, “Adieu, es ist zu schön, um wahr zu sein” |
+| REL0158 | `W-S186` is a `language_version_of` the same `W-S074` |
+
+Both are `certainty: confirmed` and separately sourced. `W-S091` is the French
+version — Ninon Steinhoff and Henri-André Legrand, Edition Coda, from *Le chant
+du destin*, printed as Pierre Candel. `W-S186` is the English one — Ned
+Washington, Robbins Music Corporation, New York, registered in the 1935
+Catalog of Copyright Entries as no. 27346. Two language versions of one German
+original, each correctly linked to it.
+
+Every other repeated title is explained the same way, and all of them were
+already related: `Es wird schon wieder besser` and `Kind, ich freu' mich auf
+Dein Kommen` each pair a film with its song, and `San Francisco` is a film
+(`W-F043`), its Gus Kahn song (`W-S130`, `associated_with_film`) and Emanuel
+Schlechter's 1937 version of that song (`W-S218`, `language_version_of`).
+
+There is no duplicate-title problem in the dataset. A title comparison that
+ignores `work-relations.json` and `title-variants.json` — the two tables whose
+purpose is to explain why two records share a name — cannot produce a finding,
+only a list of names to look up.
 
 ### 8. Smaller items
 
@@ -312,9 +339,10 @@ ground is not covered again.
    is required depends on that answer, so it comes first; what the field holds
    today, and the two fixes that did not need the decision, are in
    `docs/contribution-evidence-context.md`.
-3. Resolve `PL010`/`PL017` precision, the two `Adieu` works, and the ORG127 and
-   ORG141 parent claims (findings 5, 7, 8) — small, each a single editorial
-   decision.
+3. Resolve `PL010`/`PL017` precision and the ORG127 and ORG141 parent claims
+   (findings 5 and 8) — small, each a single editorial decision. Finding 7,
+   the repeated titles, is withdrawn: the relations already explained every
+   one of them.
 4. Decide whether `evidenceLocator` and `useStatus` are published or dropped
    (finding 6).
 5. Create Organization records for Universität Hamburg and the Bundesarchiv and
@@ -322,3 +350,10 @@ ground is not covered again.
 6. Fill organization authority identifiers, starting with the Weimar studios
    (finding 3).
 7. Sweep the smaller items (finding 8).
+
+Steps 5 and 6, and the `http://` sweep in step 7, cannot be done from the data
+alone: each needs the register or the document itself to be read — GND, LCNAF
+and filmportal.de for the studios, and the site behind each `http://` citation
+to confirm that `https://` serves the same document on the same access date.
+They are mechanical only in the sense that they involve no editorial judgement
+once the source is in front of you.
