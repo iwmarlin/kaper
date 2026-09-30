@@ -186,6 +186,22 @@ This is not the `displayOnSite` case that was removed in c5a1f45. That flag was
 dead because it carried no information. These two carry information and are
 silently dropped, so the choice is to publish them or to drop them on purpose.
 
+**Resolved: both are published.** A credit now prints its locator beneath its
+note, as “Attested at Hofmeister 1930, pp. 219 and 226”, and a song written for
+a film and left out of it states “Film use — Not used in the film”. Two
+locators had to be rewritten first: `CON-F024-C-P009` and `CON-F024-C-P077`
+read “de.wikipedia (SRC0533); filmportal.de (SRC0134)”, and a record id means
+nothing to a reader, so they now name the two documents in words; both sources
+were already linked from the credit.
+
+Four of the 34 locators are still published nowhere, and deliberately so: they
+sit on the performer credits of `W-O011`, and the work card shows authorship
+credits rather than recording ones — `workLevelContributions` drops
+`performer`, `conductor` and `record_label`. The whole credit is withheld
+there, not just its locator, which is a separate decision from this one.
+`tests/test_published_evidence_detail.py` pins that set of four, so a locator
+added to one of those roles cannot go unnoticed.
+
 ### 6a. The film credit qualification is recorded three times and published none
 
 Found while working finding 2, and the largest reader-facing gap in the

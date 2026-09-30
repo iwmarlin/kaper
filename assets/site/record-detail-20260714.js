@@ -33,8 +33,8 @@ import {
   sourceTypePluralLabel,
   typeBadge,
   updateMeta,
-} from "./core.js?v=2c4a55a900";
-import { RECORD_INDEXES, recordIndexReturn } from "./catalogue-filters.js?v=2c4a55a900";
+} from "./core.js?v=dc6afdbd23";
+import { RECORD_INDEXES, recordIndexReturn } from "./catalogue-filters.js?v=dc6afdbd23";
 
 // A canonical record route arrives prerendered and renders no image in the
 // browser, so the image map is loaded only where a record is actually rendered:
@@ -479,7 +479,14 @@ function contributionList(items, indexes, {
       const certainty = conciseCredits && String(item.certainty || "").toLowerCase() === "confirmed"
         ? ""
         : certaintyBadge(item.certainty);
-      return `<li data-contribution-role="${escapeHtml(item.role || "unresolved")}"><span><strong>${names.join(" · ") || escapeHtml(item.nameAsPrinted || "Unresolved contributor")}</strong>${printed}${note ? `<br><small>${escapeHtml(note)}</small>` : ""}</span><span>${typeBadge(item.role)} ${certainty}</span></li>`;
+      // Where in the source the credit is attested — "Hofmeister 1930, pp. 219
+      // and 226", "Fiche technique". Thirty-four credits carry it and no page
+      // has ever shown it, which is the most precise citation data the archive
+      // holds going unpublished. It is prose, unlike evidenceContext, so it is
+      // printed as written; the two values that named their sources by record
+      // id rather than by name were rewritten before this line was added.
+      const locator = String(item.evidenceLocator || "").trim();
+      return `<li data-contribution-role="${escapeHtml(item.role || "unresolved")}"><span><strong>${names.join(" · ") || escapeHtml(item.nameAsPrinted || "Unresolved contributor")}</strong>${printed}${note ? `<br><small>${escapeHtml(note)}</small>` : ""}${locator ? `<br><small class="credit-locator">Attested at ${escapeHtml(locator)}</small>` : ""}</span><span>${typeBadge(item.role)} ${certainty}</span></li>`;
     }).join("")}</ul>`;
 }
 
@@ -827,6 +834,13 @@ function mediaContext(media) {
 // and is therefore stated. `uncertain` reads as unresolved because the
 // certainty vocabulary already owns "uncertain" for a different question: that
 // value says the kind of credit is undetermined, not that the credit is doubted.
+// A song written for a film and left out of it is a fact about the work, and
+// six songs record it. The vocabulary holds one value today; an unknown one
+// prints nothing rather than a raw token.
+const SONG_USE_LABELS = Object.freeze({
+  unused: "Not used in the film",
+});
+
 const FILM_CREDIT_LABELS = Object.freeze({
   songwriter: "Songwriter",
   music_direction: "Music direction",
@@ -946,7 +960,7 @@ function renderWork(work, data, indexes) {
     // One row answers what is attributed to Kaper here. A work outside the
     // attributed scope says so first, because that is the stronger statement;
     // otherwise a film states the kind of credit where it is not the plain one.
-    facts: `${fact("Year", work.year)}${hasConciseCredits ? fact("Genre", genreLabel(subtype?.genre)) : ""}${fact("Period", periodValues(work).map(periodLabel).join(", "))}${fact("Kaper attribution", isContextOnly ? "Not confirmed" : (isFilm && FILM_CREDIT_LABELS[subtype?.creditType]) || "")}`,
+    facts: `${fact("Year", work.year)}${hasConciseCredits ? fact("Genre", genreLabel(subtype?.genre)) : ""}${fact("Period", periodValues(work).map(periodLabel).join(", "))}${isSong ? fact("Film use", SONG_USE_LABELS[subtype?.useStatus] || "") : ""}${fact("Kaper attribution", isContextOnly ? "Not confirmed" : (isFilm && FILM_CREDIT_LABELS[subtype?.creditType]) || "")}`,
     main,
     aside,
   };
@@ -2010,7 +2024,7 @@ async function bootstrapRecordPage() {
     }
     const [data, { IMAGE_DERIVATIVES }] = await Promise.all([
       loadRecordPayload(requestedType, requestedId),
-      import("./image-derivatives.js?v=2c4a55a900"),
+      import("./image-derivatives.js?v=dc6afdbd23"),
     ]);
     registerImageDerivatives(IMAGE_DERIVATIVES);
     const { config, view } = renderRecordView(requestedType, requestedId, data);
