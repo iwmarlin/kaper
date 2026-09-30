@@ -23,7 +23,7 @@ Of the 683 values, 629 name **the kind of document that attested the credit**:
 | `copyright_catalogue` | 5 | copyright_claimant, composer, lyricist |
 | eight further document values | 12 | various |
 
-Another 45 name **what the person contributed**, which is not evidence at all:
+Another 46 name **what the person contributed**, which is not evidence at all:
 
 | Value | n | Roles |
 | --- | --- | --- |
@@ -32,13 +32,25 @@ Another 45 name **what the person contributed**, which is not evidence at all:
 | `film_songs` | 4 | composer |
 | `stock_music` | 3 | composer |
 | `background_music` | 2 | composer |
+| `background_music_and_song` | 1 | composer |
 | `additional_music` | 1 | composer |
 
-The remaining 9 are compounds that join two statements with `_and_`, in four
-spellings: `film_credits_and_song_catalogue` (6),
-`film_song_and_song_catalogue`, `film_credits_and_background_music` and
-`background_music_and_song`. Some join two documents, others two kinds of
-contribution.
+Nine values are compounds joining two statements with `_and_`, in four
+spellings, and they do not all join the same kind of thing. Counting them as
+one group hides that:
+
+| Compound | n | What it joins |
+| --- | --- | --- |
+| `film_credits_and_song_catalogue` | 6 | two documents — film credits and a song catalogue |
+| `background_music_and_song` | 1 | two contributions — a score and a song |
+| `film_song_and_song_catalogue` | 1 | one of each |
+| `film_credits_and_background_music` | 1 | one of each |
+
+So the 683 values divide as 635 about documents (629 simple and 6 compound),
+46 about the contribution (including `background_music_and_song`), and 2 that
+state one of each at once. The six document compounds are not misplaced, only
+packed: they belong on the evidential side and need splitting into a list, not
+moving.
 
 The distinction is visible in the records themselves. A document value spreads
 across roles — `film_credits` appears on twelve of them — because any credit
@@ -108,31 +120,67 @@ Bounty* reads “Song ‘Love Song of Tahiti’ … uncredited on screen”, and
 at the Opera* “score by Herbert Stothart; songs by Kaper”.
 
 So the contribution half of `evidenceContext` is a second copy of a statement
-the film record already makes. Copies drift, and these have: on four films the
-two disagree, the film saying `composer` while the credit says the contribution
-was songs or background cues only.
+the film record already makes, and copies drift. On four films the two say
+different things — but not for the same reason, and only one is likely to be an
+error:
 
-| Film | `films.creditType` | `evidenceContext` |
-| --- | --- | --- |
-| W-F010 Skandal in der Parkstraße | `composer` | `film_songs` |
-| W-F013 Die Zwei vom Südexpreß | `composer` | `background_music_and_song` |
-| W-F027 Le chant du destin | `composer` | `film_songs` |
-| W-F052 Little Boy Blue | `composer` | `background_music` (two credits) |
+**W-F052 Little Boy Blue.** Corrected. Both credits read `background_music`,
+both `scopeNote`s read “Background cues for the animated short,” and the
+`attributionNote` quotes the Jurmann catalogue's “Hintergrundmusik für Little
+Boy Blue”, while `creditType` alone said `composer`. It now reads
+`background_music`, a value the field already carries on two other films.
 
-Neither field is validated, so nothing catches the disagreement. Note also
-that `creditType` and `attributionNote` do not reach a reader either: both are
-carried into the record payload and never rendered, so the qualification that
-separates a song credit from a score credit is recorded three times over and
-published none of them. That is a separate finding, in
-`docs/public-data-audit.md`.
+**W-F013 Die Zwei vom Südexpreß.** Not a drift. Its `attributionNote` says so
+in as many words — “Both attributions are retained as source-specific” —
+because Filmportal credits Kaper and Friedrich Jung under *Musik* while the
+Jurmann catalogue gives the background music and one song to Kaper and Jurmann.
+`creditType` follows the first source and the credit follows the second, on
+purpose.
+
+**W-F010 Skandal in der Parkstraße and W-F027 Le chant du destin.** Corrected.
+The disagreement here was inside the film rather than between the levels:
+Kaper's credit read `film_credits`, naming the document, and Jurmann's
+`film_songs`, naming the contribution, for one joint credit. On W-F010 both
+`scopeNote`s state the identical fact and name the same two songs, and S066 and
+S067 each carry Kaper and Jurmann as composers. On W-F027 the film's four
+songs, W-S088 to W-S091, do the same: the printed edition credits Pierre
+Candel, the pseudonym standing for Jurmann alone, and the official Jurmann
+works catalogue records the songs as written in collaboration with Kaper. Both
+credits now read `film_songs`, which is how the archive states two
+song-writers elsewhere — on *Mutiny on the Bounty* and *A Night at the Opera*
+both read `film_song` and the separately credited score composer, Herbert
+Stothart, is the one reading `film_credits`.
+
+`creditType` was left at `composer` on both. Nothing in either film's sources
+names a different score composer, as *Mutiny on the Bounty* names Stothart, so
+the narrower `songwriter` would assert more than the evidence carries; and
+W-F027 is the French-language version of W-F026, which would then have to move
+with it.
+
+Neither field is validated, so nothing caught any of this. Note also that
+`creditType` and `attributionNote` did not reach a reader either, which is a
+separate finding recorded in `docs/public-data-audit.md`; the card now states
+them.
 
 ## Open decision
 
 Whether the field is required cannot be settled while it means two things. The
-question to answer first is whether to separate them, and the evidence above
-suggests the separation is really a deletion: the evidential half stays in
-`evidenceContext`, and the contribution half belongs to `films.creditType`,
-which already holds it with a vocabulary, at the right level, for every film.
-Retiring those 54 values would mean reconciling the four disagreements first,
-one editorial decision each. Only then does “required for this role” have a
-definite meaning, and only then can the field be controlled or published.
+question to answer first is whether to separate them, and for films the
+separation is really a deletion: `films.creditType` already holds the
+contribution with a vocabulary, at the right level, for 55 of 56 films.
+
+The 46 contribution values do not all have that home, and the difference
+matters, because `creditType` is a field of `films` alone:
+
+| Where the value sits | n | What can absorb it |
+| --- | --- | --- |
+| On a film | 17 | `films.creditType` — these can be retired |
+| On an other work (all `original_composition`) | 23 | nothing: other works have no `creditType`, and the renderer reads this value to split “Music and arrangement” |
+| On a song (all `film_song`) | 6 | nothing, but these are performer and conductor credits whose `scopeNote` already says it in prose |
+
+So retirement covers 17 values, not 46, and it needs the disagreements below
+reconciled first, one editorial decision each. The 23 on other works are the
+opposite case: if anything they should be promoted to a controlled field of
+their own, parallel to `films.creditType`, rather than dropped. Only once the
+field means one thing does “required for this role” have a definite meaning,
+and only then can it be controlled or published.

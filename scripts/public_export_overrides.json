@@ -10,9 +10,10 @@
         ]
       },
       "F052": {
-        "reason": "Correct a conflation of two distinct 1936 shorts titled Little Boy Blue. Buxbaum/Sieghardt documents the animated film produced and directed by Ub Iwerks, with Jurmann background cues, additional music by Carl W. Stalling, and a companion catalogue statement associating the cues with Kaper and Jurmann; it does not name Harold S. Bucquet.",
+        "reason": "Correct a conflation of two distinct 1936 shorts titled Little Boy Blue. Buxbaum/Sieghardt documents the animated film produced and directed by Ub Iwerks, with Jurmann background cues, additional music by Carl W. Stalling, and a companion catalogue statement associating the cues with Kaper and Jurmann; it does not name Harold S. Bucquet. The credit type still read composer while both contributions, both scope notes and the attribution note all describe background cues, so it is recorded as background_music, the value the field already carries on two other films.",
         "fields": {
           "attributionNote": "Buxbaum/Sieghardt identifies Little Boy Blue (also circulated as The Big Bad Wolf) as a 1936 animated short produced and directed by Ub Iwerks. The filmography associates Walter Jurmann with background cues and lists Carl W. Stalling as an additional music contributor; the companion works catalogue identifies the background cues as a Kaper–Jurmann collaboration.",
+          "creditType": "background_music",
           "publicNote": "Animated short, also circulated as The Big Bad Wolf (1936), with background cues associated with Bronisław Kaper and Walter Jurmann; produced by Celebrity Productions–P. A. Powers and distributed by MGM."
         }
       },
@@ -5282,6 +5283,8 @@
       }
     },
     "Contributions": {
+      "CON-F010-C-P009": {"reason": "State Kaper's contribution to Skandal in der Parkstraße on the same axis as Jurmann's. Kaper's credit named the document, film_credits, while Jurmann's named the contribution, film_songs, for one joint credit: both scope notes state the same fact and name the same two songs, and S066 and S067 each carry Kaper and Jurmann as composers. The archive states both song-writers alike elsewhere, as on Mutiny on the Bounty and A Night at the Opera, where the separately credited score composer is the one reading film_credits.", "fields": {"evidenceContext": "film_songs"}},
+      "CON-F027-C-P009": {"reason": "State Kaper's contribution to Le chant du destin on the same axis as Jurmann's, as on Skandal in der Parkstraße. The film's four songs, W-S088 to W-S091, each carry Kaper and Jurmann as composers: the printed edition credits Pierre Candel, the pseudonym standing for Jurmann alone, and the official Jurmann works catalogue records the songs as written in collaboration with Kaper.", "fields": {"evidenceContext": "film_songs"}},
       "CON-S047-PUB-ORG052": {
         "reason": "Move the Sirius publisher evidence from the Alrobi Hofmeister registration to the Sirius-Mappen source that actually documents this publication context.",
         "fields": {
