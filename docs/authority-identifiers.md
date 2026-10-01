@@ -93,6 +93,36 @@ The field now holds registers for 86 of 159 organizations, and 21 carry
 contextual references. People hold registers on 169 of 178 records, between one
 and seven each, and 9 carry references.
 
+## An identifier is not a citation
+
+`authorities` links the register record; it does not cite it. Citing it means a
+Source of `sourceType: authority_record`, which carries the register's own
+dates and can be named on the record it documents — the identifier says where
+to look, the Source says the register was consulted and when.
+
+`authoritySubject` says what such a Source documents, and holds `person`,
+`work` or `organization`:
+
+| Subject | Needs | `identityRelation` |
+| --- | --- | --- |
+| `person` | `personIds` | required — a register record either is the same person or is not |
+| `work` | `workIds` | must be absent |
+| `organization` | `organizationIds` | must be absent |
+
+The third was added when `ORG127` and `ORG141` turned out to be the only two
+Organizations citing no source at all while both carried a register
+identifier: the document that would have settled them could not be filed.
+`SRC0931` cites the GND record for Deutsche Grammophon-AG and `SRC0932` the
+LCNAF record for RCA Manufacturing, and every Organization now carries a
+source. The other 84 Organizations with register identifiers cite other
+documents and were never unsourced, so the same Source is available to them
+but not owed.
+
+`identityRelation` is a judgement about whether two descriptions are one
+person, which a corporate body does not need and `person_authorities.py` reads
+only for people. The validator rejects it on a non-person subject rather than
+leaving it to be ignored.
+
 ## Where this is enforced
 
 `scripts/authority_identifiers.py` holds the vocabulary, the URL-to-scheme

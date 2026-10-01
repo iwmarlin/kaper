@@ -316,20 +316,24 @@ only a list of names to look up.
   (6), `kppg.waw.pl`. Not a delivery risk on a static site under the
   `netlify.toml` policy, but out of step with the other 823.
 - `ORG127` (Deutsche Grammophon-Aktiengesellschaft) and `ORG141` (RCA
-  Manufacturing Company) are the only two Organizations with no `sourceIds`.
+  Manufacturing Company) were the only two Organizations with no `sourceIds`.
   Both exist solely as corporate parents, reached through
   `parentOrganizationIds` from Grammophon, Polydor and Victor. That parent
-  relation is a historical claim and it is the one assertion in the dataset
-  with no source behind it. **Partly resolved:** the unsourced company history
-  is gone from both notes — a founding year for the one, a 1934 merger for the
-  other — leaving the statement about how this archive represents the imprints,
-  which is not a claim about the past. The records are still unsourced, and no
-  source in the archive can fix that: none of the 838 mentions either company.
-  The archive does document a corporate body from a disc label elsewhere —
-  SRC0725 records “Carl Lindström A.-G.” printed along the foot of an Odeon
-  label — so a Grammophon or Victor label already cited here may carry its
-  parent in the same way, which would settle both records without a new
-  source.
+  relation is a historical claim, and it was the one assertion in the dataset
+  with no source behind it. **Resolved.** Two steps were needed, in this order.
+  First the unsourced company history came out of both notes — a founding year
+  for the one, a 1934 merger for the other — leaving the statement about how
+  the imprints are represented here, which is not a claim about the past. Then
+  the records got the citation the rest of the dataset has: both already
+  carried national-register identifiers, GND `1094330-4` and LCNAF
+  `n81120295`, and the register record behind an identifier is a document like
+  any other. It could not be cited, because `authoritySubject` admitted only
+  `person` and `work`, so an authority record about a corporate body had
+  nothing to point at. The vocabulary now holds `organization`, and SRC0931
+  (GND) and SRC0932 (LCNAF) cite the two registers. Every Organization now
+  carries at least one source, and `tests/test_organization_authority_sources.py`
+  holds that. The same door is open to the other 84 Organizations with register
+  identifiers, which cite other documents and are not unsourced.
 - 3 Sources have neither `primaryUrl` nor `repository`, so a reader cannot
   reach them: `SRC0373` (Buxbaum, Wien 2006), `SRC0490` and `SRC0491`
   (Lindstedt). `SRC0491` is marked forthcoming for 2026 and will need revisiting.
@@ -388,21 +392,26 @@ ground is not covered again.
    controlled vocabulary and a validator (finding 1).~~ Done — it changed the
    schema, so it landed before more identifiers could be added to the packed
    field. Everything below is data entry or an editorial decision.
-2. Decide whether `evidenceContext` separates into an evidential field and a
-   field for the nature of the contribution (finding 2). The rule for when it
-   is required depends on that answer, so it comes first; what the field holds
-   today, and the two fixes that did not need the decision, are in
+2. ~~Decide whether `evidenceContext` separates into an evidential field and a
+   field for the nature of the contribution (finding 2).~~ Decided: the
+   credit-level value stands, because a contribution is per person and
+   `films.creditType` is one value per film. The reasoning, the rejected case
+   and the two spellings still open are in
    `docs/contribution-evidence-context.md`.
 3. ~~Resolve `PL010`/`PL017` precision and the ORG127 and ORG141 parent
    claims (findings 5 and 8).~~ Done, and finding 7 is withdrawn: the
    relations already explained every repeated title.
-4. Decide whether `evidenceLocator` and `useStatus` are published or dropped
-   (finding 6).
+4. ~~Decide whether `evidenceLocator` and `useStatus` are published or dropped
+   (finding 6).~~ Published: the card now names where a credit is attested and
+   says when a cue was written for a film and left out of it.
 5. Create Organization records for Universität Hamburg and the Bundesarchiv and
    link the repeat-cited repositories (finding 4).
 6. Fill organization authority identifiers, starting with the Weimar studios
-   (finding 3).
-7. Sweep the smaller items (finding 8).
+   (finding 3). Six are done; `ORG026` is still open, because the one GND
+   record that matches its name is a different company.
+7. Sweep the smaller items (finding 8). The two unsourced Organizations are
+   done; the 21 selected Media without a `description`, the nine `http://`
+   citations and the rest are not.
 
 Steps 5 and 6, and the `http://` sweep in step 7, cannot be done from the data
 alone: each needs the register or the document itself to be read — GND, LCNAF

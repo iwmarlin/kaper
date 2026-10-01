@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 838,
+  "count": 840,
   "records": [
     {
       "id": "SRC0001",
@@ -31040,6 +31040,56 @@
       ],
       "primaryUrl": "https://resolver.kb.nl/resolve?urn=MMKB19:002041003:mpeg21:p00017",
       "accessUrl": "https://www.delpher.nl/nl/kranten/view?query=%22Ferry+v.+Delden%22&coll=ddd&identifier=MMKB19:002041003:mpeg21:a00144&resultsidentifier=MMKB19:002041003:mpeg21:a00144&rowid=7"
+    },
+    {
+      "id": "SRC0931",
+      "shortCitation": "GND, “Deutsche Grammophon-Aktiengesellschaft (Berlin),” 1094330-4",
+      "fullCitation": "Deutsche Nationalbibliothek. “Deutsche Grammophon-Aktiengesellschaft (Berlin).” Gemeinsame Normdatei, GND 1094330-4. Record modified 4 September 2024.",
+      "sourceType": "authority_record",
+      "title": "GND authority record: Deutsche Grammophon-Aktiengesellschaft (Berlin)",
+      "dateRole": "record_update",
+      "dateQualifier": "confirmed",
+      "date": "2024-09-04",
+      "accessDate": "2026-09-30",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "slug": "src0931-gnd-deutsche-grammophon-aktiengesellschaft",
+      "organizationIds": [
+        "ORG074",
+        "ORG127"
+      ],
+      "primaryUrl": "https://d-nb.info/gnd/1094330-4",
+      "researchNote": "The record gives the corporate body at Berlin, established 1900 and terminated 1940, with the variants Deutsche Grammophon AG (Berlin) and Grammophon-Aktiengesellschaft (Berlin). It states that a second Deutsche Grammophon-AG existed at Wahren near Leipzig in the 1930s, and names Grundstücksgesellschaft Markgrafenstraße Aktiengesellschaft in Liquidation as the succeeding body. Consulted through the machine-readable GND service at lobid.org.",
+      "researchNoteType": "authority_note",
+      "authoritySubject": "organization",
+      "repository": "Deutsche Nationalbibliothek (GND)",
+      "creator": "Deutsche Nationalbibliothek",
+      "publication": "Gemeinsame Normdatei (GND)"
+    },
+    {
+      "id": "SRC0932",
+      "shortCitation": "LCNAF, “RCA Manufacturing Company,” n81120295",
+      "fullCitation": "Library of Congress. “RCA Manufacturing Company.” Library of Congress Name Authority File, n81120295. Record created 10 December 1981.",
+      "sourceType": "authority_record",
+      "title": "LCNAF authority record: RCA Manufacturing Company",
+      "dateRole": "record_creation",
+      "dateQualifier": "confirmed",
+      "date": "1981-12-10",
+      "accessDate": "2026-09-30",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "slug": "src0932-lcnaf-rca-manufacturing-company",
+      "organizationIds": [
+        "ORG066",
+        "ORG141"
+      ],
+      "primaryUrl": "https://id.loc.gov/authorities/names/n81120295",
+      "researchNote": "The record gives the heading RCA Manufacturing Company with the variants R.C.A. Manufacturing Company and Radio Corporation of America. RCA Manufacturing Company. It notes that on 31 December 1942 the company became the RCA Victor Division of its parent, Radio Corporation of America. Consulted as the register's JSON representation.",
+      "researchNoteType": "authority_note",
+      "authoritySubject": "organization",
+      "repository": "Library of Congress (LCNAF)",
+      "creator": "Library of Congress",
+      "publication": "Library of Congress Name Authority File (LCNAF)"
     }
   ],
   "recordCount": null

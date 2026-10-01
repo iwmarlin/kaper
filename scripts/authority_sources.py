@@ -52,7 +52,18 @@ AUTHORITY_SOURCE_SEMANTICS = {
     "SRC0892": ("person", "candidate"),
 }
 
-AUTHORITY_SUBJECTS = {"person", "work"}
+# An authority record can document a person, a work or a corporate body. The
+# third was missing while 86 Organizations carried register identifiers and
+# none could cite the register that documents them.
+# What an authority record documents, and the link field that names it. An
+# authority source always carries the register's own organization, added by
+# host below, so the subject is what the record is *about*, not what it links.
+AUTHORITY_SUBJECT_LINK_FIELDS = {
+    "person": "personIds",
+    "work": "workIds",
+    "organization": "organizationIds",
+}
+AUTHORITY_SUBJECTS = set(AUTHORITY_SUBJECT_LINK_FIELDS)
 IDENTITY_RELATIONS = {"same", "alternate", "candidate"}
 
 AUTHORITY_FIELDS: dict[str, dict[str, Any]] = {
@@ -299,7 +310,13 @@ def normalize_authority_source(source: dict[str, Any]) -> None:
     subject, relation = AUTHORITY_SOURCE_SEMANTICS.get(
         source_id,
         (
-            "work" if source.get("workIds") and not source.get("personIds") else "person",
+            "person"
+            if source.get("personIds")
+            else "work"
+            if source.get("workIds")
+            else "organization"
+            if source.get("organizationIds")
+            else "person",
             "same" if source.get("personIds") else None,
         ),
     )
@@ -350,7 +367,7 @@ def authority_source_semantic_errors(source: dict[str, Any]) -> list[str]:
     subject = source.get("authoritySubject")
     relation = source.get("identityRelation")
     if subject not in AUTHORITY_SUBJECTS:
-        errors.append("authoritySubject must be 'person' or 'work'")
+        errors.append("authoritySubject must be 'person', 'work' or 'organization'")
     if relation is not None and relation not in IDENTITY_RELATIONS:
         errors.append("identityRelation is not controlled")
     if subject == "person":
@@ -358,6 +375,10 @@ def authority_source_semantic_errors(source: dict[str, Any]) -> list[str]:
             errors.append("person authority has no personIds")
         if relation not in IDENTITY_RELATIONS:
             errors.append("person authority requires identityRelation")
-    elif relation is not None:
-        errors.append("non-person authority must not carry identityRelation")
+    else:
+        if relation is not None:
+            errors.append("non-person authority must not carry identityRelation")
+        field = AUTHORITY_SUBJECT_LINK_FIELDS.get(subject)
+        if field and not source.get(field):
+            errors.append(f"{subject} authority has no {field}")
     return errors
