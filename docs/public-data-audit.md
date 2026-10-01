@@ -311,7 +311,31 @@ only a list of names to look up.
   mostly director and performer portraits (M242 Duke Ellington, M247 W. S. Van
   Dyke, M249 Max Ophüls among them). These are the ones the gallery puts
   forward. `altText`, `publicCaption`, `publicCreditLine` and `rightsNote` are
-  complete on all 407 records, so this is the only gap in media metadata.
+  complete on all 407 records. **Closed, not filled:** `description` is a
+  conditional field here, not a required one, and the count is not a gap in
+  what a reader sees. Every place the site prints prose about a media item
+  takes `publicCaption` first and falls back to `description` — the index card,
+  the gallery member caption, the figure caption, the lightbox and the rights
+  disclosure all read `publicCaption || description`. The one reader of
+  `description` on its own is `mediaContext()` in
+  `assets/site/record-detail-20260714.js`, which strips working sentences
+  (source routes, rights notes, "verify", "NB:") and then prints what is left
+  only if it adds at least five substantive words beyond the title and caption,
+  or carries an explicit context word. Measured against the built pages: of the
+  70 selected Media that do carry a `description`, 35 have it printed and 35 do
+  not, because they restate the caption — M043 (Fritz Rotter) holds a
+  `description` identical to its `publicCaption` character for character. So 56
+  of the 91 selected Media show the caption alone, and the 21 are not
+  distinguishable from the other 35 on the page. Their captions already carry
+  the Kaper connection and the provenance: M244 names the orchestra that made
+  the first American recording of a Kaper song, M247 names the film Van Dyke
+  directed, M242 gives the photographer, the holding institution and the
+  Library of Congress's bracketed dating. A `description` written to fill the
+  field would restate them and the renderer would suppress it. The field earns
+  a value only where there is something further to say — the provenance of a
+  particular print, the reason that portrait was chosen, a dating that the
+  caption cannot carry — and that is editorial work on 21 records, not a
+  metadata sweep.
 - 9 Sources still use `http://`: `landesarchiv-berlin.de`, `musiktiteldb.de`
   (6), `kppg.waw.pl`. Not a delivery risk on a static site under the
   `netlify.toml` policy, but out of step with the other 823.
@@ -410,8 +434,9 @@ ground is not covered again.
    (finding 3). Six are done; `ORG026` is still open, because the one GND
    record that matches its name is a different company.
 7. Sweep the smaller items (finding 8). The two unsourced Organizations are
-   done; the 21 selected Media without a `description`, the nine `http://`
-   citations and the rest are not.
+   done, and the 21 selected Media without a `description` are closed on the
+   measurement above rather than filled. The nine `http://` citations and the
+   rest are not done.
 
 Steps 5 and 6, and the `http://` sweep in step 7, cannot be done from the data
 alone: each needs the register or the document itself to be read — GND, LCNAF
