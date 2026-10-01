@@ -55,6 +55,33 @@ class PersonAuthorityNormalizationTests(unittest.TestCase):
         self.assertEqual(self.sources_by_id["SRC0632"]["identityRelation"], "candidate")
         self.assertEqual(self.sources_by_id["SRC0686"]["identityRelation"], "alternate")
 
+    def test_redundant_authority_sources_do_not_duplicate_person_badges(self):
+        self.assertNotIn("SRC0589", self.sources_by_id)
+        self.assertNotIn("SRC0590", self.sources_by_id)
+        self.assertNotIn("SRC0589", self.people_by_id["P006"].get("sourceIds", []))
+        self.assertNotIn("SRC0590", self.people_by_id["P031"].get("sourceIds", []))
+        self.assertIn(
+            "https://data.bnf.fr/fr/ark:/12148/cb148356206",
+            authority_urls(self.people_by_id["P006"]),
+        )
+        self.assertIn(
+            "https://data.bnf.fr/fr/ark:/12148/cb14785637s",
+            authority_urls(self.people_by_id["P031"]),
+        )
+
+    def test_work_authority_is_not_presented_as_person_identity_evidence(self):
+        source = self.sources_by_id["SRC0532"]
+        self.assertEqual(source["authoritySubject"], "work")
+        self.assertNotIn("P124", source.get("personIds", []))
+        self.assertNotIn("SRC0532", self.people_by_id["P124"].get("sourceIds", []))
+        self.assertIn("CON-F056-D-P124", source.get("contributionIds", []))
+
+    def test_paul_mann_date_note_compares_the_two_documented_authorities(self):
+        note = self.sources_by_id["SRC0627"]["researchNote"]
+        self.assertIn("LexM gives 3 September 1910", note)
+        self.assertIn("GND gives 3 October 1910", note)
+        self.assertNotIn("Wikipedia", note)
+
     def test_only_accepted_person_authorities_reach_the_fact_block(self):
         self.assertEqual(
             authority_source_alignment_errors(self.people, self.sources),

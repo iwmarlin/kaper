@@ -124,20 +124,6 @@ AUTHORITY_FIELDS: dict[str, dict[str, Any]] = {
         ),
         "researchNoteType": "authority_note",
     },
-    "SRC0589": {
-        "shortCitation": "BnF, authority record “André de Badet (1891–1977)”",
-        "fullCitation": (
-            "Bibliothèque nationale de France. “André de Badet (1891–1977).” "
-            "data.bnf.fr, ark:/12148/cb148356206."
-        ),
-    },
-    "SRC0590": {
-        "shortCitation": "BnF, authority record “Henri Varna (1887–1969)”",
-        "fullCitation": (
-            "Bibliothèque nationale de France. “Henri Varna (1887–1969).” "
-            "data.bnf.fr, ark:/12148/cb14785637s."
-        ),
-    },
     "SRC0623": {
         "shortCitation": "ISNI, Andrzej Włast, 0000 0000 7143 777X",
         "fullCitation": (
@@ -183,9 +169,9 @@ AUTHORITY_FIELDS: dict[str, dict[str, Any]] = {
             "Peter, and links BnF ark:/12148/cb14768347k, LCNAF nb2003055670, VIAF "
             "3662538 and Wikidata Q31202678. The Library of Congress heading reads "
             "“Mann, Paul, 1910–1983” and cites the 1944 sheet “Tell me I’m the only "
-            "one you care for”. The day and month of birth are contested: German "
-            "Wikipedia gives 3 September 1910 while the GND gives 3 October 1910; "
-            "both agree on the year and on the death date."
+            "one you care for”. The day and month of birth are contested: LexM "
+            "gives 3 September 1910, while the GND gives 3 October 1910; both "
+            "agree on Vienna, the birth year 1910 and the death date 27 May 1983."
         ),
         "researchNoteType": "date_assessment",
     },
