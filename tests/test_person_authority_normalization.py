@@ -98,6 +98,16 @@ class PersonAuthorityNormalizationTests(unittest.TestCase):
         self.assertIn("GND gives 3 October 1910", note)
         self.assertNotIn("Wikipedia", note)
 
+    def test_confirmed_life_date_sources_use_the_life_date_section(self):
+        for person_id, source_id in (("P126", "SRC0548"), ("P178", "SRC0845")):
+            person = self.people_by_id[person_id]
+            self.assertIn(source_id, person.get("lifeDatesSourceIds", []))
+            self.assertTrue(person.get("lifeDatesNote"))
+        self.assertEqual(
+            self.sources_by_id["SRC0856"]["researchNoteType"],
+            "authority_note",
+        )
+
     def test_only_accepted_person_authorities_reach_the_fact_block(self):
         self.assertEqual(
             authority_source_alignment_errors(self.people, self.sources),

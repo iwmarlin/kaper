@@ -5837,7 +5837,7 @@
         }
       },
       "P110": {
-        "reason": "Individual life-date review on 9 September 2026: expose the dated evidence and preserve unresolved authority conflicts.",
+        "reason": "Individual life-date review on 9 September 2026: expose the authority evidence supporting the confirmed dates.",
         "fields": {
           "lifeDatesCertainty": "confirmed",
           "lifeDatesNote": "The BnF authority record gives 21 April 1904 – 8 June 1981 and cites INSEE death-register data. These support the displayed life dates, 1904–1981.",
@@ -5845,6 +5845,15 @@
             "SRC0856"
           ],
           "authorityUrl": "VIAF: https://viaf.org/viaf/306296430\nBnF: https://catalogue.bnf.fr/ark:/12148/cb16440429b"
+        }
+      },
+      "P126": {
+        "reason": "Present the GND authority record as evidence for Robert Gilbert's confirmed life dates rather than as a separate identity section.",
+        "fields": {
+          "lifeDatesNote": "The GND authority record gives 29 September 1899 – 20 March 1978. These support the displayed life dates, 1899–1978.",
+          "lifeDatesSourceIds": [
+            "SRC0548"
+          ]
         }
       },
       "P139": {
@@ -6877,7 +6886,7 @@
         }
       },
       "P177": {"reason": "Add the co-composer of Fiesta (Bianca) documented by the National Museum discography.", "fields": {"id": "P177", "displayName": "Walter G. Samuels", "authorizedName": "Samuels, Walter G.", "sortName": "Samuels, Walter G.", "slug": "walter-g-samuels", "primaryRole": "composer", "roles": ["composer"], "workIds": ["W-O012"], "contributionIds": ["CON-O012-C-P177"]}},
-      "P178": {"reason": "Add the co-composer of Fiesta (Bianca) documented by the National Museum discography.", "fields": {"id": "P178", "displayName": "Leonard Whitcup", "authorizedName": "Whitcup, Leonard", "sortName": "Whitcup, Leonard", "slug": "leonard-whitcup", "primaryRole": "composer", "roles": ["composer"], "workIds": ["W-O012"], "contributionIds": ["CON-O012-C-P178"]}},
+      "P178": {"reason": "Add the co-composer of Fiesta (Bianca) documented by the National Museum discography, with LCNAF evidence for his confirmed life dates.", "fields": {"id": "P178", "displayName": "Leonard Whitcup", "authorizedName": "Whitcup, Leonard", "sortName": "Whitcup, Leonard", "slug": "leonard-whitcup", "primaryRole": "composer", "roles": ["composer"], "workIds": ["W-O012"], "contributionIds": ["CON-O012-C-P178"], "lifeDatesNote": "The LCNAF heading gives the life dates 1903–1979; these support the displayed span.", "lifeDatesSourceIds": ["SRC0845"]}},
       "P179": {"reason": "Add Nacio Herb Brown for the original music credits documented by the Cocktails and Jazz Drops sources.", "fields": {"id": "P179", "displayName": "Nacio Herb Brown", "authorizedName": "Brown, Nacio Herb", "sortName": "Brown, Nacio Herb", "slug": "nacio-herb-brown", "birthYear": 1896, "deathYear": 1964, "lifeDatesCertainty": "confirmed", "primaryRole": "composer", "roles": ["composer"], "authorityUrl": "Wikidata: https://www.wikidata.org/wiki/Q1282487\nVIAF: https://viaf.org/viaf/71577259", "workIds": ["W-O013", "W-O014", "W-O023", "W-O026"], "contributionIds": ["CON-O013-C-P179", "CON-O014-C-P179", "CON-O023-C-P179", "CON-O026-C-P179"]}},
       "P180": {"reason": "Add Johann Strauss II as the composer identified by the curator for the Strauss melodies transcribed in Austrian Cocktail.", "fields": {"id": "P180", "displayName": "Johann Strauss II", "authorizedName": "Strauss, Johann", "sortName": "Strauss, Johann", "slug": "johann-strauss-ii", "birthYear": 1825, "deathYear": 1899, "lifeDatesCertainty": "confirmed", "primaryRole": "composer", "roles": ["composer"], "authorityUrl": "Wikidata: https://www.wikidata.org/wiki/Q83309", "workIds": ["W-O015"], "contributionIds": ["CON-O015-C-P180"]}},
       "P181": {"reason": "Add Tchaikovsky for the melodies transcribed in Russian Cocktail.", "fields": {"id": "P181", "displayName": "Pyotr Ilyich Tchaikovsky", "authorizedName": "Tchaikovsky, Pyotr Ilyich", "sortName": "Tchaikovsky, Pyotr Ilyich", "slug": "pyotr-ilyich-tchaikovsky", "birthYear": 1840, "deathYear": 1893, "lifeDatesCertainty": "confirmed", "primaryRole": "composer", "roles": ["composer"], "authorityUrl": "Wikidata: https://www.wikidata.org/wiki/Q7315", "workIds": ["W-O016"], "contributionIds": ["CON-O016-C-P181"]}},
@@ -9232,7 +9241,7 @@
         }
       },
       "SRC0856": {
-        "reason": "Add the directly consulted authority or filmographic source for the individual life-date review of 9 September 2026.",
+        "reason": "Add the directly consulted BnF authority source supporting Fernand Vimont's confirmed life dates.",
         "fields": {
           "dateRole": "described_item",
           "dateQualifier": "unknown",
@@ -9256,7 +9265,7 @@
             "ORG062"
           ],
           "researchNote": "The record identifies a songwriter and gives 21 April 1904 as the birth date and 8 June 1981 as the death date. Its cited evidence includes INSEE death-register data accessed by BnF through Open Archives on 7 July 2025.",
-          "researchNoteType": "date_assessment"
+          "researchNoteType": "authority_note"
         }
       },
       "SRC0857": {
