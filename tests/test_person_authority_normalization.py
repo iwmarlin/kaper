@@ -76,6 +76,22 @@ class PersonAuthorityNormalizationTests(unittest.TestCase):
         self.assertNotIn("SRC0532", self.people_by_id["P124"].get("sourceIds", []))
         self.assertIn("CON-F056-D-P124", source.get("contributionIds", []))
 
+    def test_work_authority_rejects_a_direct_person_link(self):
+        errors = authority_source_semantic_errors(
+            {
+                "sourceType": "authority_record",
+                "authoritySubject": "work",
+                "workIds": ["W-TEST"],
+                "personIds": ["P-TEST"],
+                "contributionIds": ["CON-TEST"],
+            }
+        )
+        self.assertIn(
+            "work authority must not carry direct personIds; "
+            "link person credits through contributionIds",
+            errors,
+        )
+
     def test_paul_mann_date_note_compares_the_two_documented_authorities(self):
         note = self.sources_by_id["SRC0627"]["researchNote"]
         self.assertIn("LexM gives 3 September 1910", note)

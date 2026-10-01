@@ -367,4 +367,9 @@ def authority_source_semantic_errors(source: dict[str, Any]) -> list[str]:
         field = AUTHORITY_SUBJECT_LINK_FIELDS.get(subject)
         if field and not source.get(field):
             errors.append(f"{subject} authority has no {field}")
+        if subject == "work" and source.get("personIds"):
+            errors.append(
+                "work authority must not carry direct personIds; "
+                "link person credits through contributionIds"
+            )
     return errors
