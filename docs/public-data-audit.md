@@ -121,6 +121,20 @@ near-misses are worth recording so they are not adopted later in error: GND
 16345590-9 *New World Pictures* is Roger Corman's company of 1970–1997, not
 `ORG026`, the British company of the 1930s; and the two Zürich *Emelka*
 records, GND 1128187396 and 1086490673, are Swiss and not the Munich concern.
+
+`ORG026` was searched again, in LCNAF and VIAF as well as GND, and the picture
+is not that one register holds one wrong record. GND holds only Corman's
+company. LCNAF holds **three** of the name — `no95021964` *New World Pictures
+(Firm)*, `no2003068128` *New World Pictures Limited* and `no95021966`, which
+VIAF clusters with ISNI 0000000103076850 against *Miss Mary* (1987) and a
+*Vintage collection*, so that one is modern. `no2003068128` is the candidate,
+because *Limited* is the form the AFI Catalog gives for the 1937 company. It
+cannot be adopted: the record carries an authoritative label and nothing else —
+no dates, no place of business, no 670 citation in the published data — so
+there is no evidence in it that this is the company that made *Wings of the
+Morning*. A heading that matches a name is not an identification, and adopting
+it would assert one. Left unassigned, with the candidate named here so the
+search is not repeated from the beginning.
 Small Weimar production companies are simply thinly covered by the national
 registers, which is a fact about the registers rather than a gap in this
 dataset.
@@ -442,11 +456,17 @@ ground is not covered again.
 4. ~~Decide whether `evidenceLocator` and `useStatus` are published or dropped
    (finding 6).~~ Published: the card now names where a credit is attested and
    says when a cue was written for a film and left out of it.
-5. Create Organization records for Universität Hamburg and the Bundesarchiv and
-   link the repeat-cited repositories (finding 4).
+5. ~~Create Organization records for Universität Hamburg and the Bundesarchiv
+   and link the repeat-cited repositories (finding 4).~~ Done: `ORG168` and
+   `ORG169`, with identifiers from GND, LCNAF and VIAF, linked from the 23 LexM
+   Sources and the 5 Bundesarchiv Sources. The repository strings that are not
+   institution names are untouched and remain an open question.
 6. Fill organization authority identifiers, starting with the Weimar studios
-   (finding 3). Six are done; `ORG026` is still open, because the one GND
-   record that matches its name is a different company.
+   (finding 3). Six are done. `ORG026` is closed unresolved: GND, LCNAF and
+   VIAF were all searched, and the one LCNAF record whose form matches —
+   `no2003068128` *New World Pictures Limited* — carries no date, place or
+   citation that would tie it to the 1937 British company, so it stays
+   unassigned rather than guessed.
 7. Sweep the smaller items (finding 8). The two unsourced Organizations are
    done; the 21 selected Media without a `description` are closed on the
    measurement above rather than filled; and the `http://` citations are
