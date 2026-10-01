@@ -12364,6 +12364,7 @@
         "P009"
       ],
       "sourceIds": [
+        "SRC0373",
         "SRC0306"
       ],
       "nameVariantIds": [
@@ -12383,8 +12384,11 @@
         "P079"
       ],
       "sourceIds": [
+        "SRC0373",
         "SRC0306"
-      ]
+      ],
+      "scopeNote": "Alexander Sieghardt's published work catalogue credits Walter Jurmann, Bronisław Kaper and André Roubier with the music; the official Walter Jurmann Songs page repeats the attribution.",
+      "evidenceLocator": "Sieghardt work catalogue, p. 196, entry 099"
     },
     {
       "id": "CON-S097-CON-P009",
@@ -12422,6 +12426,7 @@
         "P049"
       ],
       "sourceIds": [
+        "SRC0373",
         "SRC0306"
       ]
     },
@@ -13910,6 +13915,7 @@
       ],
       "sourceIds": [
         "SRC0115",
+        "SRC0373",
         "SRC0306"
       ],
       "nameVariantIds": [
@@ -13929,9 +13935,11 @@
         "P079"
       ],
       "sourceIds": [
-        "SRC0115",
+        "SRC0373",
         "SRC0306"
-      ]
+      ],
+      "scopeNote": "Alexander Sieghardt's published work catalogue names André Roubier alongside Walter Jurmann and Bronisław Kaper; the official Walter Jurmann Songs page repeats the attribution. The Salabert recording source does not name Roubier.",
+      "evidenceLocator": "Sieghardt work catalogue, entry “Pourvu qu’on ait vingt ans”"
     },
     {
       "id": "CON-S116-L-P049",
@@ -13947,6 +13955,7 @@
       ],
       "sourceIds": [
         "SRC0115",
+        "SRC0373",
         "SRC0306"
       ]
     },
@@ -20909,7 +20918,8 @@
       "nameAsPrinted": "Joséphine Baker",
       "displayCredit": "Vocal performance",
       "evidenceContext": [
-        "online_catalogue"
+        "online_catalogue",
+        "newspaper_or_periodical"
       ],
       "sortOrder": 55,
       "certainty": "confirmed",
@@ -20917,9 +20927,10 @@
         "W-S177"
       ],
       "sourceIds": [
-        "SRC0301"
+        "SRC0301",
+        "SRC0934"
       ],
-      "scopeNote": "Sang the song; the recording is published on the Jube Pops compilation Musical Moments to Remember: Joséphine Baker, which does not identify the original disc.",
+      "scopeNote": "Sang and recorded the song. A contemporary review identifies her performance on Columbia D.F. 2275; the linked Jube Pops digital reissue does not identify its historical carrier.",
       "personIds": [
         "P168"
       ]
@@ -24118,9 +24129,11 @@
         "P077"
       ],
       "sourceIds": [
+        "SRC0373",
         "SRC0306"
       ],
-      "scopeNote": "The Walter Jurmann works catalogue lists the song as Jurmann’s, written in collaboration with Bronisław Kaper and André Roubier."
+      "scopeNote": "Alexander Sieghardt's published work catalogue credits Walter Jurmann, Bronisław Kaper and André Roubier with the music; the official Walter Jurmann Songs page repeats the attribution.",
+      "evidenceLocator": "Sieghardt work catalogue, p. 196, entry 099"
     },
     {
       "id": "CON-S116-C-P077",
@@ -24136,9 +24149,11 @@
       ],
       "sourceIds": [
         "SRC0115",
+        "SRC0373",
         "SRC0306"
       ],
-      "scopeNote": "The Salabert disc credits the music to Kaper and Jurmann; the Walter Jurmann works catalogue lists it as Jurmann’s, written in collaboration with Kaper and André Roubier."
+      "scopeNote": "The Salabert recording source credits the music to Kaper and Jurmann. Alexander Sieghardt's published work catalogue additionally names André Roubier as co-composer; the official Walter Jurmann Songs page repeats that fuller attribution.",
+      "evidenceLocator": "Sieghardt work catalogue, entry “Pourvu qu’on ait vingt ans”"
     },
     {
       "id": "CON-S175-C-P077",

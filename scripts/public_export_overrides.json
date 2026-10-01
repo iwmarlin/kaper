@@ -1343,9 +1343,9 @@
         }
       },
       "SRC0115": {
-        "reason": "Remove the duplicate terminal full stop after the quoted coupled-side title while preserving the discographic evidence.",
+        "reason": "Remove the duplicate terminal full stop after the quoted coupled-side title while preserving the discographic evidence; keep this item-level recording source distinct from the Buxbaum/Sieghardt work-catalogue evidence for André Roubier.",
         "fields": {
-          "fullCitation": "Henry Garat, vocal; orchestra conducted by Bronisław Kaper. “Pourvu qu’on ait vingt ans,” from Une femme au volant. Music by Bronisław Kaper and Walter Jurmann; words by Louis Poterat. Salabert 3384, 78 rpm disc, 7 November 1933. YouTube transfer from the private 78 rpm collection of David Silvestre, channel lysgauty1, video JA57rCoKoyI. Discographic context checked against Gérard Roig, “Discographie d’Henry Garat,” Phonoscopies no. 5 (January 1994): 11, which lists Salabert 3384 for the coupled side “Ninon, quand tu me souris.”"
+          "fullCitation": "Henry Garat, vocal; orchestra conducted by Bronisław Kaper. “Pourvu qu’on ait vingt ans,” from Une femme au volant. Music by Bronisław Kaper and Walter Jurmann; words by Louis Poterat. Salabert 3384, 78 rpm disc, 7 November 1933. Digital transfer from David Silvestre’s private collection, published by lysgauty1 on YouTube, video JA57rCoKoyI. Gérard Roig, “Discographie d’Henry Garat,” Phonoscopies 5 (January 1994): 11, lists Salabert 3384 for the coupled side “Ninon, quand tu me souris.”"
         }
       },
       "SRC0173": {
@@ -2157,16 +2157,25 @@
         }
       },
       "SRC0306": {
-        "reason": "Define SRC0306 consistently as the catalogue-level citation for the complete Walter Jurmann Songs page rather than a misleading 1937 Man of the People entry.",
+        "reason": "Define SRC0306 consistently as the catalogue-level citation for the complete Walter Jurmann Songs page, while distinguishing its auxiliary online role from Alexander Sieghardt's published work catalogue in Buxbaum (SRC0373).",
         "fields": {
           "shortCitation": "Verein der Freunde und Förderer des Werks von Walter Jurmann, “Songs”",
-          "fullCitation": "Verein der Freunde und Förderer des Werks von Walter Jurmann. “Songs.” Official Walter Jurmann works catalogue. Individual entries provide titles, dates, collaborators, lyricists, intended film use, non-use and later reuse. Accessed 13 July 2026.",
+          "fullCitation": "Verein der Freunde und Förderer des Werks von Walter Jurmann. “Songs.” Official Walter Jurmann works catalogue. Individual entries provide titles, dates, collaborators, lyricists, intended film use, non-use and later reuse.",
           "creator": "Verein der Freunde und Förderer des Werks von Walter Jurmann",
           "repository": "Verein der Freunde und Förderer des Werks von Walter Jurmann",
           "publication": "Walter Jurmann official website",
           "date": "n.d.",
           "slug": "src0306-walter-jurmann-official-songs-catalogue",
-          "sourceType": "web_page"
+          "sourceType": "web_page",
+          "researchNote": "For “À Paris tiguidiguidi” and “Pourvu qu’on ait vingt ans,” the online entries reproduce the attributions found in Alexander Sieghardt's published work catalogue in Buxbaum (2006). SRC0373 is therefore treated as the primary bibliographic evidence for the credits; this page is retained as accessible online corroboration.",
+          "researchNoteType": "verification_note"
+        }
+      },
+      "SRC0373": {
+        "reason": "Describe Alexander Sieghardt's contribution accurately as both the published work catalogue used for the song credits and the filmography, rather than labelling the aggregate source as filmography alone.",
+        "fields": {
+          "shortCitation": "Buxbaum, Walter Jurmann (Wien 2006), Werkverzeichnis und Filmografie von Alexander Sieghardt",
+          "creator": "Elisabeth Buxbaum (Hg. Armin Berg Gesellschaft); Werkverzeichnis/Filmografie: Alexander Sieghardt"
         }
       },
       "SRC0307": {
@@ -5289,6 +5298,34 @@
       }
     },
     "Contributions": {
+      "CON-S097-C-P077": {
+        "reason": "Identify the published Buxbaum/Sieghardt work catalogue as the primary evidence for the three-composer attribution, with the official Jurmann Songs page retained as online corroboration.",
+        "fields": {
+          "scopeNote": "Alexander Sieghardt's published work catalogue credits Walter Jurmann, Bronisław Kaper and André Roubier with the music; the official Walter Jurmann Songs page repeats the attribution.",
+          "evidenceLocator": "Sieghardt work catalogue, p. 196, entry 099"
+        }
+      },
+      "CON-S097-C-P079": {
+        "reason": "Replace reliance on the derivative website alone with the published Buxbaum/Sieghardt catalogue entry that explicitly names André Roubier as a co-composer.",
+        "fields": {
+          "scopeNote": "Alexander Sieghardt's published work catalogue credits Walter Jurmann, Bronisław Kaper and André Roubier with the music; the official Walter Jurmann Songs page repeats the attribution.",
+          "evidenceLocator": "Sieghardt work catalogue, p. 196, entry 099"
+        }
+      },
+      "CON-S116-C-P077": {
+        "reason": "Separate the item-level Salabert disc credit from the fuller authorship statement in the published Buxbaum/Sieghardt work catalogue.",
+        "fields": {
+          "scopeNote": "The Salabert recording source credits the music to Kaper and Jurmann. Alexander Sieghardt's published work catalogue additionally names André Roubier as co-composer; the official Walter Jurmann Songs page repeats that fuller attribution.",
+          "evidenceLocator": "Sieghardt work catalogue, entry “Pourvu qu’on ait vingt ans”"
+        }
+      },
+      "CON-S116-C-P079": {
+        "reason": "Base André Roubier's co-composer credit on the published Buxbaum/Sieghardt work catalogue rather than on a recording source whose citation does not name him.",
+        "fields": {
+          "scopeNote": "Alexander Sieghardt's published work catalogue names André Roubier alongside Walter Jurmann and Bronisław Kaper; the official Walter Jurmann Songs page repeats the attribution. The Salabert recording source does not name Roubier.",
+          "evidenceLocator": "Sieghardt work catalogue, entry “Pourvu qu’on ait vingt ans”"
+        }
+      },
       "CON-F024-C-P009": {"reason": "Name the two documents in words rather than by record identifier. The locator read \"de.wikipedia (SRC0533); filmportal.de (SRC0134)\", and the field is now printed on the card, where a source id means nothing to a reader; both sources are already linked from the credit.", "fields": {"evidenceLocator": "German Wikipedia; filmportal.de"}},
       "CON-F024-C-P077": {"reason": "Name the two documents in words rather than by record identifier. The locator read \"de.wikipedia (SRC0533); filmportal.de (SRC0134)\", and the field is now printed on the card, where a source id means nothing to a reader; both sources are already linked from the credit.", "fields": {"evidenceLocator": "German Wikipedia; filmportal.de"}},
       "CON-F010-C-P009": {"reason": "State Kaper's contribution to Skandal in der Parkstraße on the same axis as Jurmann's. Kaper's credit named the document, film_credits, while Jurmann's named the contribution, film_songs, for one joint credit: both scope notes state the same fact and name the same two songs, and S066 and S067 each carry Kaper and Jurmann as composers. The archive states both song-writers alike elsewhere, as on Mutiny on the Bounty and A Night at the Opera, where the separately credited score composer is the one reading film_credits.", "fields": {"evidenceContext": "film_songs"}},
@@ -13201,6 +13238,70 @@
       }
     },
     "Contributions": {
+      "CON-S097-C-P009": {
+        "reason": "Add the published Buxbaum/Sieghardt work catalogue as the primary bibliographic evidence for the music credit.",
+        "fields": {
+          "sourceIds": [
+            "SRC0373"
+          ]
+        }
+      },
+      "CON-S097-C-P077": {
+        "reason": "Add the published Buxbaum/Sieghardt work catalogue as the primary bibliographic evidence for the music credit.",
+        "fields": {
+          "sourceIds": [
+            "SRC0373"
+          ]
+        }
+      },
+      "CON-S097-C-P079": {
+        "reason": "Add the published Buxbaum/Sieghardt entry that explicitly names André Roubier as co-composer.",
+        "fields": {
+          "sourceIds": [
+            "SRC0373"
+          ]
+        }
+      },
+      "CON-S097-L-P049": {
+        "reason": "Add the published Buxbaum/Sieghardt work catalogue as the primary bibliographic evidence for the lyric credit.",
+        "fields": {
+          "sourceIds": [
+            "SRC0373"
+          ]
+        }
+      },
+      "CON-S116-C-P009": {
+        "reason": "Add the published Buxbaum/Sieghardt work catalogue alongside the item-level Salabert recording evidence.",
+        "fields": {
+          "sourceIds": [
+            "SRC0373"
+          ]
+        }
+      },
+      "CON-S116-C-P077": {
+        "reason": "Add the published Buxbaum/Sieghardt work catalogue alongside the item-level Salabert recording evidence.",
+        "fields": {
+          "sourceIds": [
+            "SRC0373"
+          ]
+        }
+      },
+      "CON-S116-C-P079": {
+        "reason": "Use the published Buxbaum/Sieghardt catalogue, rather than the Salabert recording citation, as the primary evidence for André Roubier's co-composer credit.",
+        "fields": {
+          "sourceIds": [
+            "SRC0373"
+          ]
+        }
+      },
+      "CON-S116-L-P049": {
+        "reason": "Add the published Buxbaum/Sieghardt work catalogue alongside the item-level Salabert recording evidence.",
+        "fields": {
+          "sourceIds": [
+            "SRC0373"
+          ]
+        }
+      },
       "CON-S022-C-P009": {
         "reason": "Add the contemporary publisher advertisement as direct evidence for Kaper's printed music credit on “O tem wróble świergocą”.",
         "fields": {
@@ -15596,6 +15697,14 @@
           ]
         }
       },
+      "P079": {
+        "reason": "Connect André Roubier to the published Buxbaum/Sieghardt work catalogue that documents both of his Kaper–Jurmann co-composer credits.",
+        "fields": {
+          "sourceIds": [
+            "SRC0373"
+          ]
+        }
+      },
       "P106": {
         "reason": "Connect Charlie Davson to the authority evidence, the item-level French score catalogue and his documented real-name variant.",
         "fields": {
@@ -17050,10 +17159,12 @@
         }
       },
       "SRC0373": {
-        "reason": "Reuse the existing Buxbaum/Sieghardt catalogue both for the Ernst Martin title-form resolution and for the corrected Little Boy Blue animated-film credits; do not create duplicate catalogue sources.",
+        "reason": "Reuse the existing Buxbaum/Sieghardt catalogue for the Ernst Martin resolution, the corrected Little Boy Blue credits and the two published André Roubier co-composer attributions; do not create duplicate catalogue sources.",
         "fields": {
           "personIds": [
             "P020",
+            "P049",
+            "P079",
             "P157",
             "P158"
           ],
@@ -17063,11 +17174,15 @@
           ],
           "workIds": [
             "W-S081",
-            "W-S082"
+            "W-S082",
+            "W-S097",
+            "W-S116"
           ],
           "songIds": [
             "S081",
-            "S082"
+            "S082",
+            "S097",
+            "S116"
           ],
           "contributionIds": [
             "CON-S081-C-P009",
@@ -17076,6 +17191,14 @@
             "CON-S082-C-P009",
             "CON-S082-C-P077",
             "CON-S082-L-P020",
+            "CON-S097-C-P009",
+            "CON-S097-C-P077",
+            "CON-S097-C-P079",
+            "CON-S097-L-P049",
+            "CON-S116-C-P009",
+            "CON-S116-C-P077",
+            "CON-S116-C-P079",
+            "CON-S116-L-P049",
             "CON-F005-C-P077",
             "CON-F007-C-P077",
             "CON-F008-C-P077",
@@ -17771,10 +17894,14 @@
         }
       },
       "SRC0115": {
-        "reason": "Remove the excluded legacy W-S116 publisher contribution after replacing it with the corrected stable identifier.",
+        "reason": "Remove the excluded legacy publisher contribution and the unsupported André Roubier links. The Salabert recording citation names Kaper and Jurmann, not Roubier; his credit is documented by SRC0373 and corroborated by SRC0306.",
         "fields": {
+          "personIds": [
+            "P079"
+          ],
           "contributionIds": [
-            "CON-S116-RL-ORG039"
+            "CON-S116-RL-ORG039",
+            "CON-S116-C-P079"
           ]
         }
       },
@@ -18675,6 +18802,14 @@
           ]
         }
       },
+      "P079": {
+        "reason": "Remove the Salabert recording source from André Roubier's direct source links because its citation does not name him; retain SRC0373 as primary evidence and SRC0306 as online corroboration.",
+        "fields": {
+          "sourceIds": [
+            "SRC0115"
+          ]
+        }
+      },
       "P020": {
         "reason": "Remove the unsupported W-S083 lyric credit and the two superseded composer interpretations replaced by source-specific lyric credits.",
         "fields": {
@@ -18759,6 +18894,14 @@
       }
     },
     "Contributions": {
+      "CON-S116-C-P079": {
+        "reason": "Remove the Salabert recording citation from André Roubier's credit because that source names only Kaper and Jurmann as composers; the Roubier attribution remains supported by SRC0373 and SRC0306.",
+        "fields": {
+          "sourceIds": [
+            "SRC0115"
+          ]
+        }
+      },
       "CON-S013-C-P009": {
         "reason": "Retain the Deutsches Lied item record as evidence for Kaper's credit; the NYPL finding aid identifies only the anthology holding.",
         "fields": {

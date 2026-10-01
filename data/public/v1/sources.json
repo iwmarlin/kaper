@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 839,
+  "count": 840,
   "records": [
     {
       "id": "SRC0001",
@@ -3759,7 +3759,6 @@
       "sourceStatus": "verified_with_attribution_note",
       "slug": "src0115-salabert-3384-pourvu-quon-ait-vingt-ans-1933",
       "personIds": [
-        "P079",
         "P132"
       ],
       "organizationIds": [
@@ -3781,7 +3780,6 @@
       "contributionIds": [
         "CON-S116-C-P009",
         "CON-S116-C-P077",
-        "CON-S116-C-P079",
         "CON-S116-CON-P009",
         "CON-S116-L-P049",
         "CON-S116-LAB-ORG039",
@@ -11663,7 +11661,9 @@
       "titleVariantIds": [
         "TV0313",
         "TV0314"
-      ]
+      ],
+      "researchNote": "For “À Paris tiguidiguidi” and “Pourvu qu’on ait vingt ans,” the online entries reproduce the attributions found in Alexander Sieghardt's published work catalogue in Buxbaum (2006). SRC0373 is therefore treated as the primary bibliographic evidence for the credits; this page is retained as accessible online corroboration.",
+      "researchNoteType": "verification_note"
     },
     {
       "id": "SRC0307",
@@ -13255,11 +13255,11 @@
     },
     {
       "id": "SRC0373",
-      "shortCitation": "Buxbaum, Walter Jurmann (Wien 2006), Filmografie von Alexander Sieghardt",
+      "shortCitation": "Buxbaum, Walter Jurmann (Wien 2006), Werkverzeichnis und Filmografie von Alexander Sieghardt",
       "fullCitation": "Elisabeth Buxbaum, „Veronika, der Lenz ist da“ — Walter Jurmann. Ein Musiker zwischen den Welten und Zeiten. Hg. Armin Berg Gesellschaft. Edition Steinbauer, Wien 2006. Werkverzeichnis / Filmografie von Alexander Sieghardt (S. 178, 212–231).",
       "sourceType": "book",
       "title": "Buxbaum, Walter Jurmann — Filmografie/Werkverzeichnis (Alexander Sieghardt)",
-      "creator": "Elisabeth Buxbaum (Hg. Armin Berg Gesellschaft); Filmografie: Alexander Sieghardt",
+      "creator": "Elisabeth Buxbaum (Hg. Armin Berg Gesellschaft); Werkverzeichnis/Filmografie: Alexander Sieghardt",
       "publication": "Edition Steinbauer, Wien",
       "date": "2006",
       "dateRole": "publication",
@@ -13276,7 +13276,9 @@
         "P038",
         "P040",
         "P041",
+        "P049",
         "P077",
+        "P079",
         "P092",
         "P106",
         "P108",
@@ -13360,10 +13362,12 @@
         "W-S091",
         "W-S093",
         "W-S095",
+        "W-S097",
         "W-S098",
         "W-S108",
         "W-S110",
         "W-S111",
+        "W-S116",
         "W-S117",
         "W-S121",
         "W-S131",
@@ -13443,10 +13447,12 @@
         "S090",
         "S093",
         "S095",
+        "S097",
         "S098",
         "S108",
         "S110",
         "S111",
+        "S116",
         "S117",
         "S121",
         "S131",
@@ -13756,6 +13762,10 @@
         "CON-S095-L-P038",
         "CON-S095-L-P072",
         "CON-S095-PUB-ORG039",
+        "CON-S097-C-P009",
+        "CON-S097-C-P077",
+        "CON-S097-C-P079",
+        "CON-S097-L-P049",
         "CON-S098-C-P009",
         "CON-S098-C-P077",
         "CON-S098-L-P004",
@@ -13772,6 +13782,10 @@
         "CON-S111-C-P077",
         "CON-S111-L-P065",
         "CON-S111-PUB-ORG039",
+        "CON-S116-C-P009",
+        "CON-S116-C-P077",
+        "CON-S116-C-P079",
+        "CON-S116-L-P049",
         "CON-S117-C-P009",
         "CON-S117-C-P077",
         "CON-S117-L-P006",
@@ -31140,6 +31154,41 @@
         "ORG072"
       ],
       "primaryUrl": "https://www.filmportal.de/person/max-obal_ca2e774f7eac453eac688ebd48309af5"
+    },
+    {
+      "id": "SRC0934",
+      "shortCitation": "Pierre Domène, ‘Chansons en série,’ La Dépêche, 6 April 1938, p. 5",
+      "fullCitation": "Pierre Domène. ‘Chansons en série.’ L’actualité phonographique. La Dépêche: journal de la démocratie, 6 April 1938, p. 5. Bibliothèque nationale de France / Gallica.",
+      "sourceType": "press_item",
+      "title": "Joséphine Baker and ‘J’ai un message pour toi’ — La Dépêche, 1938",
+      "creator": "Pierre Domène",
+      "repository": "Bibliothèque nationale de France / Gallica",
+      "publication": "La Dépêche: journal de la démocratie",
+      "date": "1938-04-06",
+      "dateRole": "publication",
+      "dateQualifier": "confirmed",
+      "accessDate": "2026-10-01",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "researchNote": "This contemporary record review identifies Joséphine Baker as the performer of ‘J’ai un message pour toi’ on Columbia D.F. 2275 and praises her interpretation. It documents the historical performance and carrier, but does not name the songwriters and is not used to identify the carrier underlying the later digital listening reference.",
+      "researchNoteType": "discographic_note",
+      "slug": "src0934-la-depeche-josephine-baker-message-1938",
+      "personIds": [
+        "P168"
+      ],
+      "organizationIds": [
+        "ORG062"
+      ],
+      "workIds": [
+        "W-S177"
+      ],
+      "songIds": [
+        "S177"
+      ],
+      "contributionIds": [
+        "CON-S177-P-P168"
+      ],
+      "primaryUrl": "https://gallica.bnf.fr/ark:/12148/bpt6k41393295/f5.image.r=%22J'ai%20un%20message%20pour%20toi%22"
     }
   ],
   "recordCount": null
