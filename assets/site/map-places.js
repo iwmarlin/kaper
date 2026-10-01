@@ -1,4 +1,4 @@
-import { escapeHtml, humanize, PERIOD_ORDER, periodValues } from "./core.js?v=3fc01d8797";
+import { escapeHtml, humanize, PERIOD_ORDER, periodValues } from "./core.js?v=294d1851f8";
 
 // The map page and the build both list the documented places from this module,
 // so the list printed for a reader without JavaScript matches the interactive one.
