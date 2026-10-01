@@ -336,9 +336,23 @@ only a list of names to look up.
   particular print, the reason that portrait was chosen, a dating that the
   caption cannot carry — and that is editorial work on 21 records, not a
   metadata sweep.
-- 9 Sources still use `http://`: `landesarchiv-berlin.de`, `musiktiteldb.de`
-  (6), `kppg.waw.pl`. Not a delivery risk on a static site under the
-  `netlify.toml` policy, but out of step with the other 823.
+- 10 fields on 10 Sources use `http://`, not 9, and across four hosts rather
+  than three: `musiktiteldb.de` (7 records, not 6), `landesarchiv-berlin.de`,
+  `kppg.waw.pl` and `discography.phonomuseum.at`, which the first count missed.
+  Not a delivery risk on a static site under the `netlify.toml` policy, but out
+  of step with the other 823. **Checked against the hosts themselves, and the
+  premise was wrong for nine of the ten:** `https://` does not serve these
+  documents. `musiktiteldb.de` (with or without `www.`), `kppg.waw.pl` and
+  `discography.phonomuseum.at` all answer `SSL: no alternative certificate
+  subject name matches target host name`; `phonomuseum.at` redirects to
+  `www.phonomuseum.at`, which returns 404 for that path, so the discography PDF
+  exists only on the uncertificated subdomain. The nine stay as they are, and
+  this is a property of the hosts, not a gap in the data. The tenth is
+  **resolved**: `www.content.landesarchiv-berlin.de` has no certificate, but
+  the same path without the `www.` does — `https://content.landesarchiv-berlin.de/labsa/pdf/P_Rep_800_0284.pdf`
+  returns the identical file, 21,141,092 bytes, sha256 `f8412cb83ed1…` against
+  the same digest over `http://`. SRC0313 now cites it. The `accessDate` is
+  unchanged because the document is the same one.
 - `ORG127` (Deutsche Grammophon-Aktiengesellschaft) and `ORG141` (RCA
   Manufacturing Company) were the only two Organizations with no `sourceIds`.
   Both exist solely as corporate parents, reached through
@@ -434,13 +448,15 @@ ground is not covered again.
    (finding 3). Six are done; `ORG026` is still open, because the one GND
    record that matches its name is a different company.
 7. Sweep the smaller items (finding 8). The two unsourced Organizations are
-   done, and the 21 selected Media without a `description` are closed on the
-   measurement above rather than filled. The nine `http://` citations and the
-   rest are not done.
+   done; the 21 selected Media without a `description` are closed on the
+   measurement above rather than filled; and the `http://` citations are
+   settled — one switched to `https://` after checking it serves the identical
+   file, nine left because their hosts do not serve `https://` at all. The rest
+   is not done.
 
-Steps 5 and 6, and the `http://` sweep in step 7, cannot be done from the data
-alone: each needs the register or the document itself to be read — GND, LCNAF
-and filmportal.de for the studios, and the site behind each `http://` citation
-to confirm that `https://` serves the same document on the same access date.
+Steps 5 and 6 cannot be done from the data alone: each needs the register
+itself to be read — GND, LCNAF and filmportal.de for the studios. The `http://`
+sweep in step 7 needed the same and has had it: every host was asked, and the
+answer was recorded above.
 They are mechanical only in the sense that they involve no editorial judgement
 once the source is in front of you.
