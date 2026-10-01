@@ -1,4 +1,4 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=dc6afdbd23";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=3fc01d8797";
 import {
   debounce,
   humanize,
@@ -11,15 +11,15 @@ import {
   periodValues,
   registerImageDerivatives,
   renderError,
-} from "./core.js?v=dc6afdbd23";
-import { createCatalogueFilters } from "./catalogue-filters.js?v=dc6afdbd23";
+} from "./core.js?v=3fc01d8797";
+import { createCatalogueFilters } from "./catalogue-filters.js?v=3fc01d8797";
 import {
   GROUP_LABELS,
   GROUP_ORDER,
   eventGroup,
   renderTimeline,
   sortEvents,
-} from "./timeline-view.js?v=dc6afdbd23";
+} from "./timeline-view.js?v=3fc01d8797";
 
 registerImageDerivatives(IMAGE_DERIVATIVES);
 mountSiteChrome("timeline");

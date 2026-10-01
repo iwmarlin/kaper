@@ -33,8 +33,8 @@ import {
   sourceTypePluralLabel,
   typeBadge,
   updateMeta,
-} from "./core.js?v=dc6afdbd23";
-import { RECORD_INDEXES, recordIndexReturn } from "./catalogue-filters.js?v=dc6afdbd23";
+} from "./core.js?v=3fc01d8797";
+import { RECORD_INDEXES, recordIndexReturn } from "./catalogue-filters.js?v=3fc01d8797";
 
 // A canonical record route arrives prerendered and renders no image in the
 // browser, so the image map is loaded only where a record is actually rendered:
@@ -867,8 +867,11 @@ function renderWork(work, data, indexes) {
   const institutionalContributions = isOther
     ? contributions.filter((item) => ["publisher", "holding_institution"].includes(item.role))
     : [];
+  // evidenceContext became a list when the nine compound tokens were split:
+  // a credit can be attested by two kinds of document, and joining them with
+  // _and_ made four spellings of one idea.
   const hasOriginalCompositionCredits = isOther
-    && contributions.some((item) => item.evidenceContext === "original_composition");
+    && contributions.some((item) => (item.evidenceContext || []).includes("original_composition"));
   const musicAndArrangementContributions = hasOriginalCompositionCredits
     ? contributions.filter((item) => ["composer", "arranger"].includes(item.role))
     : [];
@@ -2024,7 +2027,7 @@ async function bootstrapRecordPage() {
     }
     const [data, { IMAGE_DERIVATIVES }] = await Promise.all([
       loadRecordPayload(requestedType, requestedId),
-      import("./image-derivatives.js?v=dc6afdbd23"),
+      import("./image-derivatives.js?v=3fc01d8797"),
     ]);
     registerImageDerivatives(IMAGE_DERIVATIVES);
     const { config, view } = renderRecordView(requestedType, requestedId, data);

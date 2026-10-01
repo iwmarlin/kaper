@@ -30,7 +30,8 @@ class EvidenceContextIsInternalTests(unittest.TestCase):
         tokens = {
             value
             for item in self.contributions
-            if (value := item.get("evidenceContext")) and "_" in value
+            for value in item.get("evidenceContext") or []
+            if "_" in value
         }
         self.assertGreater(len(tokens), 10, "the vocabulary should be sampled")
         for token in sorted(tokens):
@@ -56,7 +57,7 @@ class OriginalCompositionCouplingTests(unittest.TestCase):
         return {
             work_id
             for item in self.contributions
-            if item.get("evidenceContext") == self.VALUE
+            if self.VALUE in (item.get("evidenceContext") or [])
             for work_id in item.get("workIds") or []
         }
 
