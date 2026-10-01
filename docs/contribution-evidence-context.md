@@ -62,10 +62,38 @@ principal film-score credit,” and `background_music` on *Little Boy Blue* read
 
 ## What is not drift
 
-`film_song` and `film_songs` look like a singular slipped against a plural, and
-may not be: Kaper wrote one song for *Mutiny on the Bounty* and more than one
-for *Last of the Pagans*. Whether the number is meaningful is an editorial
-question, and the two spellings must not be merged before it is answered.
+`film_song` and `film_songs` look like a singular slipped against a plural.
+They are not, and the data settles it without an editorial ruling: **the number
+says how many songs the credit covers, and it is right on all eighteen
+records.**
+
+Twelve of the eighteen sit on a film, as composer credits shared by Kaper and
+Jurmann, and the number matches the songs the archive holds for that film every
+time:
+
+| Film | value | songs |
+| --- | --- | --- |
+| *Mutiny on the Bounty* | `film_song` | 1 |
+| *A Night at the Opera* | `film_song` | 1 |
+| *Kind Lady* | `film_song` | 1 |
+| *Skandal in der Parkstraße* | `film_songs` | 2 |
+| *Last of the Pagans* | `film_songs` | 2 |
+| *Le chant du destin* | `film_songs` | 4 |
+
+The remaining six carry `film_song` on a song rather than a film — Allan Jones
+and Richard Tauber as performers, Paul Dessau conducting — where the singular
+is right by definition, because the credit is for the one song the record is.
+
+*Mutiny on the Bounty* is the case worth keeping, because it looks like a
+counter-example and is not. Two songs name that film as their source, “Love
+Song of Tahiti” and “Chanson d’amour de Tahiti”, but the second is tied to the
+first by `language_version_of` while only the first is `associated_with_film`.
+The singular counts the work, not its language versions, which is the
+distinction the relations already draw.
+
+So the two spellings carry a fact and must not be merged. What they do not
+carry is a controlled form: a credit covering three songs would have nowhere to
+say so, and the count lives in a suffix rather than in a field.
 
 ## The uneven coverage
 
