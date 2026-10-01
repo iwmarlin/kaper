@@ -1,0 +1,282 @@
+from __future__ import annotations
+
+import json
+import re
+import unittest
+from pathlib import Path
+
+
+ROOT = Path(__file__).resolve().parents[1]
+
+# Works, People, Media, Sources and the Timeline each list a collection and each carries more controls
+# than fit a narrow screen. They share one pattern: the search field stays in
+# reach, the facets fold behind a labelled toggle, and the choices in force are
+# shown as chips that remove themselves.
+LISTINGS = {
+    "works.html": ("work", "assets/site/works.js"),
+    "people.html": ("person", "assets/site/people.js"),
+    "media.html": ("media", "assets/site/gallery.js"),
+    "sources.html": ("source", "assets/site/sources.js"),
+    "life.html": ("timeline", "assets/site/timeline-20260714.js"),
+}
+
+
+class ListingFilterContractTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls.pages = {name: (ROOT / name).read_text(encoding="utf-8") for name in LISTINGS}
+        cls.scripts = {
+            name: (ROOT / script).read_text(encoding="utf-8")
+            for name, (_, script) in LISTINGS.items()
+        }
+        cls.shared = (ROOT / "assets/site/catalogue-filters.js").read_text(encoding="utf-8")
+
+    def test_each_listing_uses_the_shared_filter_shell(self) -> None:
+        for name, text in self.pages.items():
+            with self.subTest(page=name):
+                # A listing may add a modifier of its own — the chronology
+                # does not pin its bar — so the shell is checked by its
+                # classes, not by one spelling of the attribute.
+                shell = re.search(r'<section class="filters[^"]*"', text).group(0)
+                self.assertIn("filters--catalogue", shell)
+                self.assertIn("filters__shell", text)
+                self.assertIn("filters__search", text)
+
+    def test_each_listing_can_fold_its_facets(self) -> None:
+        for name, (prefix, _) in LISTINGS.items():
+            text = self.pages[name]
+            with self.subTest(page=name):
+                self.assertIn(f'id="{prefix}-filter-toggle"', text)
+                self.assertIn(f'id="{prefix}-filter-options"', text)
+                self.assertIn(f'aria-controls="{prefix}-filter-options"', text)
+                self.assertIn(f'id="{prefix}-active-filters"', text)
+
+    def test_the_reset_button_starts_hidden(self) -> None:
+        for name, text in self.pages.items():
+            with self.subTest(page=name):
+                match = re.search(r'<button[^>]*id="[a-z-]*reset[a-z-]*"[^>]*>', text)
+                self.assertIsNotNone(match, "the listing has no reset control")
+                self.assertIn("hidden", match.group(0))
+
+    def test_the_search_field_is_the_first_control(self) -> None:
+        for name, text in self.pages.items():
+            with self.subTest(page=name):
+                shell = re.search(r'filters__shell.*?</section>', text, re.S).group(0)
+                self.assertLess(shell.index("filters__search"), shell.index("filters__toggle"))
+
+    def test_listing_behaviour_is_owned_by_one_shared_component(self) -> None:
+        for name, source in self.scripts.items():
+            with self.subTest(page=name):
+                self.assertIn("createCatalogueFilters", source)
+                self.assertNotIn("function syncQuery", source)
+                self.assertNotIn('filterToggle.addEventListener("click"', source)
+
+    def test_shared_component_has_the_accessibility_and_url_contract(self) -> None:
+        self.assertIn('event.key !== "Escape"', self.shared)
+        self.assertIn('close({ returnFocus: true })', self.shared)
+        self.assertIn('window.addEventListener("popstate"', self.shared)
+        self.assertIn("window.history.replaceState", self.shared)
+        self.assertIn("url.searchParams.delete", self.shared)
+        self.assertIn("fieldValue(field) !== requestedValue", self.shared)
+        self.assertIn('"(max-width: 900px)"', self.shared)
+
+    def test_the_map_keeps_its_state_in_the_url_through_the_same_layer(self) -> None:
+        # The map is not a filtered listing — it has no facets to fold — but it
+        # holds a search and a chosen place, and those belong in the address
+        # through the same module rather than through a second implementation.
+        source = (ROOT / "assets/site/map-explorer-20260714.js").read_text(encoding="utf-8")
+        self.assertIn("createQueryState", source)
+        self.assertNotIn("new URLSearchParams", source)
+
+
+class WorksYearFacetTests(unittest.TestCase):
+    """A reader looking for 1933 had to type it into the search box, which also
+    matched the word elsewhere in a record. The catalogue now filters by the
+    year it already prints beside every row, and the choice survives in the URL,
+    so "works.html?year=1933" is an address a footnote can carry."""
+
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls.page = (ROOT / "works.html").read_text(encoding="utf-8")
+        cls.script = (ROOT / "assets/site/works.js").read_text(encoding="utf-8")
+
+    def test_the_control_sits_in_the_shared_facet_panel(self) -> None:
+        panel = re.search(
+            r'id="work-filter-options".*?</div>\s*<div class="active-filters"',
+            self.page,
+            re.S,
+        ).group(0)
+        self.assertIn('<label for="work-year">Year</label>', panel)
+        self.assertIn('<select id="work-year"><option value="">All years</option></select>', panel)
+
+    def test_the_facet_is_registered_like_every_other(self) -> None:
+        # Registration is what gives it a chip, the filter count, the reset
+        # button and its key in the query string; the shared controller does
+        # the rest.
+        self.assertIn('year: document.querySelector("#work-year")', self.script)
+        self.assertIn('{ key: "year", label: "Year", defaultValue: "" }', self.script)
+        self.assertIn("controls.year", self.script)
+        self.assertIn('controls.year.value = ""', self.script)
+
+    def test_the_years_offered_are_the_years_documented(self) -> None:
+        # The options are built from the records, so a year nothing was
+        # documented in cannot be offered: 1924 has no works and must not be a
+        # choice that returns an empty list.
+        works = json.loads(
+            (ROOT / "data/public/v1/works.json").read_text(encoding="utf-8")
+        )["records"]
+        years = {str(work["year"])[:4] for work in works if work.get("year")}
+        self.assertNotIn("1924", years)
+        self.assertIn("1933", years)
+        self.assertIn("addOptions(\n    controls.year,", self.script)
+
+
+class ResetControlTests(unittest.TestCase):
+    """Four listings hide their reset until a filter is in force. The timeline
+    showed one on every visit with nothing to reset, and the map — which also
+    carries its search and its chosen place in the address — had none at all."""
+
+    def test_every_page_that_filters_offers_a_reset(self) -> None:
+        for name, control in (
+            ("works.html", "reset-filters"),
+            ("people.html", "reset-filters"),
+            ("media.html", "media-reset"),
+            ("sources.html", "source-reset"),
+            ("life.html", "timeline-reset"),
+            ("map.html", "map-reset"),
+        ):
+            page = (ROOT / name).read_text(encoding="utf-8")
+            with self.subTest(page=name):
+                match = re.search(rf'<button[^>]*id="{control}"[^>]*>', page)
+                self.assertIsNotNone(match, "the page has no reset control")
+                self.assertIn("button--ghost", match.group(0))
+                self.assertIn("hidden", match.group(0))
+
+    def test_the_timeline_and_the_map_reveal_it_the_same_way(self) -> None:
+        # The timeline now hands its reset to the shared controller, which
+        # reveals it exactly as it does on the four catalogues. The map is not
+        # a filtered listing and keeps the same rule of its own.
+        timeline = (ROOT / "assets/site/timeline-20260714.js").read_text(encoding="utf-8")
+        self.assertIn("createCatalogueFilters({", timeline)
+        self.assertIn("resetButton,", timeline)
+        map_script = (ROOT / "assets/site/map-explorer-20260714.js").read_text(encoding="utf-8")
+        self.assertIn("resetButton.hidden = !search.value.trim() && !selectedId", map_script)
+        self.assertIn("resetSelection();", map_script)
+
+    def test_the_map_reset_follows_the_state_and_not_the_redraw(self) -> None:
+        """A place can be chosen from the map, from the list or by a shared
+        address, and none of those redraws the list. The rule therefore lives in
+        one function that every one of those paths calls, or the button stays
+        hidden while the address carries "?place=PL001"."""
+        script = (ROOT / "assets/site/map-explorer-20260714.js").read_text(encoding="utf-8")
+        self.assertEqual(script.count("function updateResetVisibility()"), 1)
+        self.assertEqual(
+            script.count("resetButton.hidden = !search.value.trim() && !selectedId"), 1
+        )
+        for owner in ("function selectPlace(", "function resetSelection(", "function render("):
+            body = script.split(owner, 1)[1].split("\nfunction ", 1)[0]
+            self.assertIn("updateResetVisibility();", body, owner)
+
+
+class TimelinePeriodFacetTests(unittest.TestCase):
+    """The chronology is organised by era: it opens with a division per era and
+    prints a period badge on every entry, and it was the one index on the site
+    that could not be narrowed to one. "life.html?period=hollywood" is now an
+    address a footnote can carry."""
+
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls.page = (ROOT / "life.html").read_text(encoding="utf-8")
+        cls.script = (ROOT / "assets/site/timeline-20260714.js").read_text(encoding="utf-8")
+
+    def test_the_control_sits_in_the_shared_facet_panel(self) -> None:
+        panel = re.search(
+            r'id="timeline-filter-options".*?</div>\s*<div class="active-filters"',
+            self.page,
+            re.S,
+        ).group(0)
+        self.assertIn('<label for="timeline-period">Period</label>', panel)
+        self.assertIn(
+            '<select id="timeline-period"><option value="">All periods</option></select>',
+            panel,
+        )
+
+    def test_the_facet_is_registered_like_every_other(self) -> None:
+        self.assertIn('period: document.querySelector("#timeline-period")', self.script)
+        self.assertIn('{ key: "period", label: "Period", defaultValue: "" }', self.script)
+        self.assertIn("matchesPeriod(event, controls.period.value)", self.script)
+
+    def test_the_eras_offered_are_the_eras_documented(self) -> None:
+        events = json.loads(
+            (ROOT / "data/public/v1/timeline-events.json").read_text(encoding="utf-8")
+        )["records"]
+        documented = {period for event in events for period in event.get("periods", [])}
+        self.assertEqual(documented, {"warsaw", "european", "hollywood"})
+        self.assertIn("addOptions(\n    controls.period,", self.script)
+
+    def test_the_panel_declares_room_for_its_two_facets(self) -> None:
+        styles = (ROOT / "assets/site/styles.css").read_text(encoding="utf-8")
+        rule = styles.split(".filters__advanced--timeline {", 1)[1].split("}", 1)[0]
+        self.assertEqual(rule.count("fr"), 2)
+
+
+class RestingViewTests(unittest.TestCase):
+    """The shared shell assumes a field is at rest when it is empty, which is
+    true of every facet and untrue of the chronology's view: "highlights" is
+    where the page starts. Without a stated default the shell wrote
+    "?view=highlights" into the address the first time anything redrew, so a
+    link copied from an untouched page carried a choice nobody made."""
+
+    def test_the_shell_lets_a_page_state_a_resting_value(self) -> None:
+        shell = (ROOT / "assets/site/catalogue-filters.js").read_text(encoding="utf-8")
+        self.assertIn("fieldDefaults = {},", shell)
+        body = shell.split("export function createCatalogueFilters({", 1)[1]
+        # A facet's own default must still win, so the overrides are applied
+        # before the options are read.
+        self.assertLess(
+            body.index("Object.assign(defaults, fieldDefaults);"),
+            body.index("for (const option of options) defaults[option.key]"),
+        )
+
+    def test_the_chronology_states_the_view_it_opens_in(self) -> None:
+        script = (ROOT / "assets/site/timeline-20260714.js").read_text(encoding="utf-8")
+        self.assertIn('fieldDefaults: { view: "highlights" },', script)
+        self.assertNotIn('{ key: "view"', script)
+
+
+class FacetPanelTrackTests(unittest.TestCase):
+    """Each panel declares its own columns in one place, and a facet added
+    without touching that rule makes every control narrower. Two ways out are
+    legitimate: as many tracks as there are fields, or a track that wraps. What
+    is not legitimate is a fixed row too short for what it holds — that silently
+    cut "Hollywood · 1935–1939" on three pages."""
+
+    def test_each_panel_declares_a_row_that_holds_its_fields(self) -> None:
+        css = (ROOT / "assets/site/styles.css").read_text(encoding="utf-8")
+        for page, key in (
+            ("works.html", "works"),
+            ("people.html", "people"),
+            ("media.html", "media"),
+            ("sources.html", "sources"),
+        ):
+            with self.subTest(page=page):
+                text = (ROOT / page).read_text(encoding="utf-8")
+                panel = re.search(
+                    r'id="[a-z]+-filter-options".*?</div>\s*<div class="active-filters"',
+                    text,
+                    re.S,
+                ).group(0)
+                fields = len(re.findall(r'<div class="field">', panel))
+                rule = re.search(
+                    rf"\.filters__advanced--{key}\s*\{{[^}}]*grid-template-columns:\s*([^;]+);",
+                    css,
+                ).group(1).strip()
+                if "auto-fit" in rule or "auto-fill" in rule:
+                    continue  # the fields wrap; the row cannot be too short
+                repeated = re.match(r"repeat\((\d+),", rule)
+                tracks = int(repeated.group(1)) if repeated else len(rule.split())
+                self.assertEqual(tracks, fields, f"{key}: {rule!r}")
+
+
+if __name__ == "__main__":
+    unittest.main()
