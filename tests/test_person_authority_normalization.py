@@ -64,6 +64,17 @@ class PersonAuthorityNormalizationTests(unittest.TestCase):
         self.assertIn("26 August 1896", source.get("researchNote", ""))
         self.assertIn("4 October 1970", source.get("researchNote", ""))
 
+    def test_lys_gauty_keeps_the_conflicting_authority_dates_visible(self):
+        gauty = self.people_by_id["P203"]
+        self.assertEqual(gauty.get("lifeDatesCertainty"), "disputed")
+        self.assertEqual(gauty.get("lifeDatesSourceIds"), ["SRC0937"])
+        note = gauty.get("lifeDatesNote", "")
+        for year in ("1908", "1910", "1900"):
+            self.assertIn(year, note)
+        source = self.sources_by_id["SRC0937"]
+        self.assertEqual(source.get("researchNoteType"), "date_assessment")
+        self.assertEqual(source.get("organizationIds"), ["ORG062", "ORG066"])
+
     def test_authority_source_semantics_are_explicit(self):
         errors = [
             f"{source['id']}: {error}"

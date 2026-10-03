@@ -9225,6 +9225,13 @@
       "roles": [
         "singer"
       ],
+      "birthYear": 1908,
+      "deathYear": 1994,
+      "lifeDatesCertainty": "disputed",
+      "lifeDatesNote": "LCNAF gives 14 February 1908 – 2 January 1994. BnF instead gives 14 February 1910 – 2 January 1994, while its own source note also records publications reporting 1908 and 1900. The displayed years follow LCNAF, 1908–1994; the birth year remains unresolved.",
+      "lifeDatesSourceIds": [
+        "SRC0937"
+      ],
       "contributionIds": [
         "CON-S098-P-P203"
       ],
@@ -9234,12 +9241,25 @@
       "sourceIds": [
         "SRC0883",
         "SRC0884",
-        "SRC0896"
+        "SRC0896",
+        "SRC0937"
       ],
       "authorities": [
         {
           "scheme": "lcnaf",
           "url": "https://id.loc.gov/authorities/names/no2006124375"
+        },
+        {
+          "scheme": "bnf",
+          "url": "https://catalogue.bnf.fr/ark:/12148/cb138943478"
+        },
+        {
+          "scheme": "isni",
+          "url": "https://isni.org/isni/0000000081465387"
+        },
+        {
+          "scheme": "wikidata",
+          "url": "https://www.wikidata.org/wiki/Q3269732"
         }
       ]
     },

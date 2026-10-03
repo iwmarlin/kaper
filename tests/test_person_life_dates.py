@@ -49,6 +49,7 @@ class PersonLifeDateTests(unittest.TestCase):
             "P139": (1903, 1965, "disputed"),
             "P162": (1902, 1988, "disputed"),
             "P178": (1903, 1979, "confirmed"),
+            "P203": (1908, 1994, "disputed"),
         }
         for person_id, dates in expected.items():
             person = people[person_id]

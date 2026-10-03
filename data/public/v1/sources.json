@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 842,
+  "count": 843,
   "records": [
     {
       "id": "SRC0001",
@@ -31243,6 +31243,35 @@
         "ORG066"
       ],
       "primaryUrl": "https://id.loc.gov/authorities/names/no96063299",
+      "authoritySubject": "person",
+      "identityRelation": "same"
+    },
+    {
+      "id": "SRC0937",
+      "shortCitation": "LCNAF and BnF authority records for Lys Gauty",
+      "fullCitation": "Library of Congress. ‘Gauty, Lys.’ Library of Congress Name Authority File, LCCN no2006124375. Bibliothèque nationale de France. ‘Gauty, Lys (1910–1994).’ Authority record FRBNF13894347.",
+      "sourceType": "authority_record",
+      "title": "Lys Gauty — LCNAF and BnF authority records",
+      "creator": "Library of Congress",
+      "repository": "Library of Congress (LCNAF)",
+      "publication": "Library of Congress Name Authority File (LCNAF)",
+      "dateRole": "described_item",
+      "dateQualifier": "unknown",
+      "accessDate": "2026-10-03",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "researchNote": "LCNAF gives 14 February 1908 as Gauty’s date of birth and 2 January 1994 as her date of death. BnF instead gives 14 February 1910 and the same death date; the BnF record’s own source note additionally cites one publication reporting 1908 and Le Monde reporting 1900. The displayed years 1908–1994 follow LCNAF, but the birth year remains unresolved.",
+      "researchNoteType": "date_assessment",
+      "slug": "src0937-authority-records-lys-gauty-life-dates",
+      "personIds": [
+        "P203"
+      ],
+      "organizationIds": [
+        "ORG062",
+        "ORG066"
+      ],
+      "primaryUrl": "https://id.loc.gov/authorities/names/no2006124375",
+      "accessUrl": "https://catalogue.bnf.fr/ark:/12148/cb138943478",
       "authoritySubject": "person",
       "identityRelation": "same"
     }

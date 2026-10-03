@@ -5976,6 +5976,19 @@
         "fields": {
           "authorizedNameSource": "BnF"
         }
+      },
+      "P203": {
+        "reason": "Apply the established disputed-life-date model to Lys Gauty: display the LCNAF span while exposing the conflicting BnF heading and the additional dates cited by BnF.",
+        "fields": {
+          "birthYear": 1908,
+          "deathYear": 1994,
+          "lifeDatesCertainty": "disputed",
+          "lifeDatesNote": "LCNAF gives 14 February 1908 – 2 January 1994. BnF instead gives 14 February 1910 – 2 January 1994, while its own source note also records publications reporting 1908 and 1900. The displayed years follow LCNAF, 1908–1994; the birth year remains unresolved.",
+          "lifeDatesSourceIds": [
+            "SRC0937"
+          ],
+          "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no2006124375\nBnF: https://catalogue.bnf.fr/ark:/12148/cb138943478\nISNI: https://isni.org/isni/0000000081465387\nWikidata: https://www.wikidata.org/wiki/Q3269732"
+        }
       }
     },
     "Title Variants": {
@@ -10933,6 +10946,38 @@
           "authoritySubject": "person",
           "identityRelation": "same"
         }
+      },
+      "SRC0937": {
+        "reason": "Document the unresolved conflict among the LCNAF and BnF birth dates for Lys Gauty and provide the evidence record used by her disputed life-date note.",
+        "fields": {
+          "id": "SRC0937",
+          "shortCitation": "LCNAF and BnF authority records for Lys Gauty",
+          "fullCitation": "Library of Congress. ‘Gauty, Lys.’ Library of Congress Name Authority File, LCCN no2006124375. Bibliothèque nationale de France. ‘Gauty, Lys (1910–1994).’ Authority record FRBNF13894347.",
+          "sourceType": "authority_record",
+          "title": "Lys Gauty — LCNAF and BnF authority records",
+          "creator": "Library of Congress",
+          "repository": "Library of Congress (LCNAF)",
+          "publication": "Library of Congress Name Authority File (LCNAF)",
+          "dateRole": "described_item",
+          "dateQualifier": "unknown",
+          "accessDate": "2026-10-03",
+          "reliability": "high",
+          "sourceStatus": "verified",
+          "researchNote": "LCNAF gives 14 February 1908 as Gauty’s date of birth and 2 January 1994 as her date of death. BnF instead gives 14 February 1910 and the same death date; the BnF record’s own source note additionally cites one publication reporting 1908 and Le Monde reporting 1900. The displayed years 1908–1994 follow LCNAF, but the birth year remains unresolved.",
+          "researchNoteType": "date_assessment",
+          "slug": "src0937-authority-records-lys-gauty-life-dates",
+          "personIds": [
+            "P203"
+          ],
+          "organizationIds": [
+            "ORG062",
+            "ORG066"
+          ],
+          "primaryUrl": "https://id.loc.gov/authorities/names/no2006124375",
+          "accessUrl": "https://catalogue.bnf.fr/ark:/12148/cb138943478",
+          "authoritySubject": "person",
+          "identityRelation": "same"
+        }
       }
     },
     "Songs": {
@@ -12737,7 +12782,8 @@
           "category": "portrait",
           "galleryStatus": "eligible",
           "sourceIds": [
-            "SRC0935"
+            "SRC0935",
+            "SRC0937"
           ]
         }
       }
@@ -12889,7 +12935,7 @@
       "ORG066": {
         "reason": "Link the Library of Congress to the Motion Picture Herald scan it contributed through MBRS and to authority records published through LCNAF.",
         "fields": {
-          "sourceIds": ["SRC0569", "SRC0628", "SRC0686", "SRC0817", "SRC0845", "SRC0847", "SRC0936"]
+          "sourceIds": ["SRC0569", "SRC0628", "SRC0686", "SRC0817", "SRC0845", "SRC0847", "SRC0936", "SRC0937"]
         }
       },
       "ORG035": {
