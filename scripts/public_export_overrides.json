@@ -6582,11 +6582,10 @@
           "sortName": "Ellington, Duke",
           "authorizedName": "Ellington, Duke, 1899–1974",
           "slug": "duke-ellington",
-          "primaryRole": "performer",
+          "primaryRole": "pianist",
           "roles": [
-            "performer",
-            "composer",
-            "pianist"
+            "pianist",
+            "composer"
           ],
           "sourceIds": [
             "SRC0570"
@@ -6635,9 +6634,8 @@
           "sortName": "Biek, Hermann",
           "authorizedName": "Biek, Hermann (1897–1944)",
           "slug": "hermann-biek",
-          "primaryRole": "performer",
+          "primaryRole": "pianist",
           "roles": [
-            "performer",
             "pianist",
             "composer",
             "bandleader"
@@ -6668,9 +6666,8 @@
           "sortName": "Śmidowicz, Józef",
           "authorizedName": "Śmidowicz, Józef, 1888–1962",
           "slug": "jozef-smidowicz",
-          "primaryRole": "performer",
+          "primaryRole": "pianist",
           "roles": [
-            "performer",
             "pianist",
             "teacher"
           ],
@@ -6695,8 +6692,7 @@
           "primaryRole": "actor",
           "roles": [
             "actor",
-            "singer",
-            "performer"
+            "singer"
           ],
           "authorityUrl": "BnF: https://data.bnf.fr/ark:/12148/cb138942846\nVIAF: https://viaf.org/viaf/32183198\nGND: https://d-nb.info/gnd/1062023889\nLCCN: https://id.loc.gov/authorities/names/n97123801\nISNI: https://isni.org/isni/0000000035489214\nWikidata: https://www.wikidata.org/wiki/Q3132795",
           "sourceIds": [
@@ -6823,8 +6819,7 @@
           "slug": "eliza-rozenblum",
           "primaryRole": "pianist",
           "roles": [
-            "pianist",
-            "performer"
+            "pianist"
           ],
           "sourceIds": [
             "SRC0016",
@@ -6849,9 +6844,9 @@
           "sortName": "Laemmle, Carl",
           "authorizedName": "Laemmle, Carl",
           "slug": "carl-laemmle",
-          "primaryRole": "film producer",
+          "primaryRole": "producer",
           "roles": [
-            "film producer",
+            "producer",
             "studio founder"
           ],
           "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n86075524\nVIAF: https://viaf.org/viaf/62355509\nGND: https://d-nb.info/gnd/119306336\nBnF: https://catalogue.bnf.fr/ark:/12148/cb14647302s\nISNI: https://isni.org/isni/0000000123208849\nWikidata: https://www.wikidata.org/wiki/Q61074\nFilmportal: https://www.filmportal.de/person/carl-laemmle_5223deebdd1f4a8a96ef02994d621b41",
@@ -6875,9 +6870,9 @@
           "sortName": "Kohner, Paul",
           "authorizedName": "Kohner, Paul",
           "slug": "paul-kohner",
-          "primaryRole": "film producer",
+          "primaryRole": "producer",
           "roles": [
-            "film producer",
+            "producer",
             "talent agent"
           ],
           "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no2007147390\nVIAF: https://viaf.org/viaf/67213739\nGND: https://d-nb.info/gnd/116308869\nISNI: https://isni.org/isni/0000000010488266\nWikidata: https://www.wikidata.org/wiki/Q86560\nFilmportal: https://www.filmportal.de/person/paul-kohner_30c888ac7f4b4b9ea7f2fb464dee7559",
@@ -6907,9 +6902,9 @@
           "sortName": "Pasternak, Joseph",
           "authorizedName": "Pasternak, Joe",
           "slug": "joseph-joe-pasternak",
-          "primaryRole": "film producer",
+          "primaryRole": "producer",
           "roles": [
-            "film producer"
+            "producer"
           ],
           "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/n85376897\nVIAF: https://viaf.org/viaf/100242410\nGND: https://d-nb.info/gnd/1062193342\nWikidata: https://www.wikidata.org/wiki/Q1691552\nFilmportal: https://www.filmportal.de/person/joe-pasternak_c33d9384f95d4ea08cbf6f9a10faa83b\nAFI: https://catalog.afi.com/Person/84557-Joe-Pasternak",
           "birthYear": 1901,
@@ -6939,7 +6934,7 @@
       "P183": {"reason": "Add Irving Berlin for the original music credit documented by the Cocktails catalogue record.", "fields": {"id": "P183", "displayName": "Irving Berlin", "authorizedName": "Berlin, Irving", "sortName": "Berlin, Irving", "slug": "irving-berlin", "birthYear": 1888, "deathYear": 1989, "lifeDatesCertainty": "confirmed", "primaryRole": "composer", "roles": ["composer"], "authorityUrl": "Wikidata: https://www.wikidata.org/wiki/Q128746", "workIds": ["W-O018"], "contributionIds": ["CON-O018-C-P183"]}},
       "P184": {"reason": "Add Sidney Clare for the music credit printed in the Cocktails score.", "fields": {"id": "P184", "displayName": "Sidney Clare", "authorizedName": "Clare, Sidney", "sortName": "Clare, Sidney", "slug": "sidney-clare", "birthYear": 1892, "deathYear": 1972, "lifeDatesCertainty": "confirmed", "primaryRole": "composer", "roles": ["composer"], "authorityUrl": "Wikidata: https://www.wikidata.org/wiki/Q7508990\nVIAF: https://viaf.org/viaf/63011172", "workIds": ["W-O019"], "contributionIds": ["CON-O019-C-P184"]}},
       "P185": {"reason": "Add Lew Pollack for the music credit printed in the Cocktails score.", "fields": {"id": "P185", "displayName": "Lew Pollack", "authorizedName": "Pollack, Lew", "sortName": "Pollack, Lew", "slug": "lew-pollack", "birthYear": 1895, "deathYear": 1946, "lifeDatesCertainty": "confirmed", "primaryRole": "composer", "roles": ["composer"], "authorityUrl": "Wikidata: https://www.wikidata.org/wiki/Q1568143\nVIAF: https://viaf.org/viaf/29716551", "workIds": ["W-O019"], "contributionIds": ["CON-O019-C-P185"]}},
-      "P186": {"reason": "Add Harry Richman for the music credit printed in the Cocktails score.", "fields": {"id": "P186", "displayName": "Harry Richman", "authorizedName": "Richman, Harry", "sortName": "Richman, Harry", "slug": "harry-richman", "birthYear": 1895, "deathYear": 1972, "lifeDatesCertainty": "confirmed", "primaryRole": "composer", "roles": ["composer"], "authorityUrl": "Wikidata: https://www.wikidata.org/wiki/Q5671934\nVIAF: https://viaf.org/viaf/61975239", "workIds": ["W-O019"], "contributionIds": ["CON-O019-C-P186"]}},
+      "P186": {"reason": "Add Harry Richman for the music credit printed in the Cocktails score while preserving his principal documented occupation as a singer and actor.", "fields": {"id": "P186", "displayName": "Harry Richman", "authorizedName": "Richman, Harry", "sortName": "Richman, Harry", "slug": "harry-richman", "birthYear": 1895, "deathYear": 1972, "lifeDatesCertainty": "confirmed", "primaryRole": "singer", "roles": ["singer", "actor", "composer"], "authorityUrl": "Wikidata: https://www.wikidata.org/wiki/Q5671934\nVIAF: https://viaf.org/viaf/61975239", "workIds": ["W-O019"], "contributionIds": ["CON-O019-C-P186"]}},
       "P187": {"reason": "Add Jesse Greer for the original music credits documented by the Cocktails catalogue records and complete his identity with the LCNAF heading and authority-supported life dates.", "fields": {"id": "P187", "displayName": "Jesse Greer", "authorizedName": "Greer, Jesse", "authorizedNameSource": "LCNAF", "sortName": "Greer, Jesse", "slug": "jesse-greer", "birthYear": 1896, "deathYear": 1970, "lifeDatesCertainty": "confirmed", "primaryRole": "composer", "roles": ["composer"], "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no96063299\nGND: https://d-nb.info/gnd/1067978658\nISNI: https://isni.org/isni/0000000078233358\nWikidata: https://www.wikidata.org/wiki/Q16006764", "sourceIds": ["SRC0813", "SRC0936"], "workIds": ["W-O020", "W-O021"], "contributionIds": ["CON-O020-C-P187", "CON-O021-C-P187"]}},
       "P188": {"reason": "Add Larry Shay for the original music credit documented by the Cocktails catalogue record.", "fields": {"id": "P188", "displayName": "Larry Shay", "authorizedName": "Shay, Larry", "sortName": "Shay, Larry", "slug": "larry-shay", "birthYear": 1897, "deathYear": 1988, "lifeDatesCertainty": "confirmed", "primaryRole": "composer", "roles": ["composer"], "authorityUrl": "Wikidata: https://www.wikidata.org/wiki/Q6491101", "workIds": ["W-O022"], "contributionIds": ["CON-O022-C-P188"]}},
       "P189": {"reason": "Add Fats Waller for the original music credit documented by the Jazz Drops source.", "fields": {"id": "P189", "displayName": "Fats Waller", "authorizedName": "Waller, Fats", "sortName": "Waller, Fats", "slug": "fats-waller", "birthYear": 1904, "deathYear": 1943, "lifeDatesCertainty": "confirmed", "primaryRole": "composer", "roles": ["composer"], "authorityUrl": "Wikidata: https://www.wikidata.org/wiki/Q310476\nVIAF: https://viaf.org/viaf/54334148", "sourceIds": ["SRC0779"], "workIds": ["W-O024"], "contributionIds": ["CON-O024-C-P189"]}},

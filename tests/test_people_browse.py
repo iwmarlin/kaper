@@ -10,6 +10,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data/public/v1"
 CORE = (ROOT / "assets/site/core.js").as_uri()
+OVERRIDES = ROOT / "scripts/public_export_overrides.json"
 
 # The descriptive vocabulary a person record may use. It is deliberately a
 # closed list: adding a role should be a decision, not a slip of the keyboard,
@@ -66,6 +67,13 @@ class PersonRoleVocabularyTests(unittest.TestCase):
         used = {role for person in records("people.json") for role in person.get("roles", [])}
         self.assertEqual(sorted(used - APPROVED_ROLES), [])
 
+        primary_roles = {
+            person["primaryRole"]
+            for person in records("people.json")
+            if person.get("primaryRole")
+        }
+        self.assertEqual(sorted(primary_roles - APPROVED_ROLES), [])
+
     def test_the_primary_role_is_one_of_the_recorded_roles(self) -> None:
         offenders = [
             person["id"]
@@ -75,6 +83,31 @@ class PersonRoleVocabularyTests(unittest.TestCase):
             and person["primaryRole"] not in person["roles"]
         ]
         self.assertEqual(offenders, [])
+
+    def test_primary_role_is_the_first_role_and_roles_are_unique(self) -> None:
+        offenders = []
+        for person in records("people.json"):
+            roles = person.get("roles") or []
+            if not roles:
+                continue
+            if roles[0] != person.get("primaryRole") or len(roles) != len(set(roles)):
+                offenders.append(person["id"])
+        self.assertEqual(offenders, [])
+
+    def test_added_people_do_not_reintroduce_stale_role_definitions(self) -> None:
+        people_by_id = {person["id"]: person for person in records("people.json")}
+        additions = json.loads(OVERRIDES.read_text(encoding="utf-8"))["additions"]["People"]
+        mismatches = []
+        for person_id, addition in additions.items():
+            if person_id not in people_by_id:
+                continue
+            fields = addition.get("fields") or {}
+            public = people_by_id[person_id]
+            if fields.get("primaryRole") != public.get("primaryRole"):
+                mismatches.append(f"{person_id}: primaryRole")
+            if fields.get("roles") != public.get("roles"):
+                mismatches.append(f"{person_id}: roles")
+        self.assertEqual(mismatches, [])
 
 
 class PersonFunctionFacetTests(unittest.TestCase):
