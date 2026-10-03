@@ -5949,6 +5949,7 @@
       "P108": {
         "reason": "Normalize Didier Mauprey's BnF authority links to the canonical catalogue and data.bnf.fr ARK URLs.",
         "fields": {
+          "authorizedNameSource": "BnF",
           "authorityUrl": "BnF Catalogue: https://catalogue.bnf.fr/ark:/12148/cb165157811\nBnF data: https://data.bnf.fr/fr/ark:/12148/cb165157811"
         }
       },
@@ -5965,8 +5966,15 @@
           "displayName": "Charlie Davson",
           "sortName": "Davson, Charlie",
           "authorizedName": "Davson, Charlie",
+          "authorizedNameSource": "BnF",
           "slug": "charlie-davson",
           "authorityUrl": "BnF: https://data.bnf.fr/fr/13792811/charlie_davson/"
+        }
+      },
+      "P155": {
+        "reason": "Identify the source of Georges Rey's authorized heading as the linked BnF authority record.",
+        "fields": {
+          "authorizedNameSource": "BnF"
         }
       }
     },
@@ -6932,7 +6940,7 @@
       "P184": {"reason": "Add Sidney Clare for the music credit printed in the Cocktails score.", "fields": {"id": "P184", "displayName": "Sidney Clare", "authorizedName": "Clare, Sidney", "sortName": "Clare, Sidney", "slug": "sidney-clare", "birthYear": 1892, "deathYear": 1972, "lifeDatesCertainty": "confirmed", "primaryRole": "composer", "roles": ["composer"], "authorityUrl": "Wikidata: https://www.wikidata.org/wiki/Q7508990\nVIAF: https://viaf.org/viaf/63011172", "workIds": ["W-O019"], "contributionIds": ["CON-O019-C-P184"]}},
       "P185": {"reason": "Add Lew Pollack for the music credit printed in the Cocktails score.", "fields": {"id": "P185", "displayName": "Lew Pollack", "authorizedName": "Pollack, Lew", "sortName": "Pollack, Lew", "slug": "lew-pollack", "birthYear": 1895, "deathYear": 1946, "lifeDatesCertainty": "confirmed", "primaryRole": "composer", "roles": ["composer"], "authorityUrl": "Wikidata: https://www.wikidata.org/wiki/Q1568143\nVIAF: https://viaf.org/viaf/29716551", "workIds": ["W-O019"], "contributionIds": ["CON-O019-C-P185"]}},
       "P186": {"reason": "Add Harry Richman for the music credit printed in the Cocktails score.", "fields": {"id": "P186", "displayName": "Harry Richman", "authorizedName": "Richman, Harry", "sortName": "Richman, Harry", "slug": "harry-richman", "birthYear": 1895, "deathYear": 1972, "lifeDatesCertainty": "confirmed", "primaryRole": "composer", "roles": ["composer"], "authorityUrl": "Wikidata: https://www.wikidata.org/wiki/Q5671934\nVIAF: https://viaf.org/viaf/61975239", "workIds": ["W-O019"], "contributionIds": ["CON-O019-C-P186"]}},
-      "P187": {"reason": "Add Jesse Greer for the original music credits documented by the Cocktails catalogue records.", "fields": {"id": "P187", "displayName": "Jesse Greer", "authorizedName": "Greer, Jesse", "sortName": "Greer, Jesse", "slug": "jesse-greer", "primaryRole": "composer", "roles": ["composer"], "authorityUrl": "Wikidata: https://www.wikidata.org/wiki/Q16006764", "workIds": ["W-O020", "W-O021"], "contributionIds": ["CON-O020-C-P187", "CON-O021-C-P187"]}},
+      "P187": {"reason": "Add Jesse Greer for the original music credits documented by the Cocktails catalogue records and complete his identity with the LCNAF heading and authority-supported life dates.", "fields": {"id": "P187", "displayName": "Jesse Greer", "authorizedName": "Greer, Jesse", "authorizedNameSource": "LCNAF", "sortName": "Greer, Jesse", "slug": "jesse-greer", "birthYear": 1896, "deathYear": 1970, "lifeDatesCertainty": "confirmed", "primaryRole": "composer", "roles": ["composer"], "authorityUrl": "LCNAF: https://id.loc.gov/authorities/names/no96063299\nGND: https://d-nb.info/gnd/1067978658\nISNI: https://isni.org/isni/0000000078233358\nWikidata: https://www.wikidata.org/wiki/Q16006764", "sourceIds": ["SRC0813", "SRC0936"], "workIds": ["W-O020", "W-O021"], "contributionIds": ["CON-O020-C-P187", "CON-O021-C-P187"]}},
       "P188": {"reason": "Add Larry Shay for the original music credit documented by the Cocktails catalogue record.", "fields": {"id": "P188", "displayName": "Larry Shay", "authorizedName": "Shay, Larry", "sortName": "Shay, Larry", "slug": "larry-shay", "birthYear": 1897, "deathYear": 1988, "lifeDatesCertainty": "confirmed", "primaryRole": "composer", "roles": ["composer"], "authorityUrl": "Wikidata: https://www.wikidata.org/wiki/Q6491101", "workIds": ["W-O022"], "contributionIds": ["CON-O022-C-P188"]}},
       "P189": {"reason": "Add Fats Waller for the original music credit documented by the Jazz Drops source.", "fields": {"id": "P189", "displayName": "Fats Waller", "authorizedName": "Waller, Fats", "sortName": "Waller, Fats", "slug": "fats-waller", "birthYear": 1904, "deathYear": 1943, "lifeDatesCertainty": "confirmed", "primaryRole": "composer", "roles": ["composer"], "authorityUrl": "Wikidata: https://www.wikidata.org/wiki/Q310476\nVIAF: https://viaf.org/viaf/54334148", "sourceIds": ["SRC0779"], "workIds": ["W-O024"], "contributionIds": ["CON-O024-C-P189"]}},
       "P190": {"reason": "Add Harry Brooks for the original music credit documented by the Jazz Drops source.", "fields": {"id": "P190", "displayName": "Harry Brooks", "authorizedName": "Brooks, Harry", "sortName": "Brooks, Harry", "slug": "harry-brooks", "birthYear": 1895, "deathYear": 1970, "lifeDatesCertainty": "confirmed", "primaryRole": "composer", "roles": ["composer"], "authorityUrl": "Wikidata: https://www.wikidata.org/wiki/Q5667534", "workIds": ["W-O024"], "contributionIds": ["CON-O024-C-P190"]}},
@@ -10900,6 +10908,36 @@
           ],
           "primaryUrl": "https://www.retronews.fr/journal/excelsior/25-juin-1932/2/8d67e82f-5bed-47e1-b767-66ff26abba38?search_text=%22jean+feline%22"
         }
+      },
+      "SRC0936": {
+        "reason": "Add the Library of Congress authority record that establishes Jesse Greer's authorized heading and full life dates, and exposes its linked GND, ISNI and Wikidata identities.",
+        "fields": {
+          "id": "SRC0936",
+          "shortCitation": "LCNAF, ‘Greer, Jesse, 1896–1970,’ no96063299",
+          "fullCitation": "Library of Congress. ‘Greer, Jesse, 1896–1970.’ Library of Congress Name Authority File, LCCN no96063299.",
+          "sourceType": "authority_record",
+          "title": "LCNAF authority record: Greer, Jesse, 1896–1970",
+          "creator": "Library of Congress",
+          "repository": "Library of Congress (LCNAF)",
+          "publication": "Library of Congress Name Authority File (LCNAF)",
+          "dateRole": "described_item",
+          "dateQualifier": "unknown",
+          "accessDate": "2026-10-03",
+          "reliability": "high",
+          "sourceStatus": "verified",
+          "researchNote": "The authority record gives 26 August 1896 as Greer’s date of birth and 4 October 1970 as his date of death. It also links the identities GND 1067978658, ISNI 0000 0000 7823 3358 and Wikidata Q16006764.",
+          "researchNoteType": "authority_note",
+          "slug": "src0936-lcnaf-jesse-greer-1896-1970",
+          "personIds": [
+            "P187"
+          ],
+          "organizationIds": [
+            "ORG066"
+          ],
+          "primaryUrl": "https://id.loc.gov/authorities/names/no96063299",
+          "authoritySubject": "person",
+          "identityRelation": "same"
+        }
       }
     },
     "Songs": {
@@ -12856,7 +12894,7 @@
       "ORG066": {
         "reason": "Link the Library of Congress to the Motion Picture Herald scan it contributed through MBRS and to authority records published through LCNAF.",
         "fields": {
-          "sourceIds": ["SRC0569", "SRC0628", "SRC0686", "SRC0817", "SRC0845", "SRC0847"]
+          "sourceIds": ["SRC0569", "SRC0628", "SRC0686", "SRC0817", "SRC0845", "SRC0847", "SRC0936"]
         }
       },
       "ORG035": {

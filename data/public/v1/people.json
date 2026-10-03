@@ -5327,6 +5327,7 @@
       "displayName": "Charlie Davson",
       "sortName": "Davson, Charlie",
       "authorizedName": "Davson, Charlie",
+      "authorizedNameSource": "BnF",
       "slug": "charlie-davson",
       "primaryRole": "lyricist",
       "roles": [
@@ -5362,6 +5363,7 @@
       "displayName": "Didier Mauprey",
       "sortName": "Mauprey, Didier",
       "authorizedName": "Mauprey, Didier",
+      "authorizedNameSource": "BnF",
       "slug": "didier-mauprey",
       "primaryRole": "lyricist",
       "roles": [
@@ -7422,6 +7424,7 @@
       "displayName": "Georges Rey",
       "sortName": "Rey, Georges",
       "authorizedName": "Rey, Georges",
+      "authorizedNameSource": "BnF",
       "slug": "georges-rey",
       "primaryRole": "composer",
       "roles": [
@@ -8705,6 +8708,9 @@
       "authorizedName": "Greer, Jesse",
       "sortName": "Greer, Jesse",
       "slug": "jesse-greer",
+      "birthYear": 1896,
+      "deathYear": 1970,
+      "lifeDatesCertainty": "confirmed",
       "primaryRole": "composer",
       "roles": [
         "composer"
@@ -8718,13 +8724,22 @@
         "CON-O021-C-P187"
       ],
       "sourceIds": [
-        "SRC0813"
+        "SRC0813",
+        "SRC0936"
       ],
       "authorizedNameSource": "LCNAF",
       "authorities": [
         {
           "scheme": "lcnaf",
           "url": "https://id.loc.gov/authorities/names/no96063299"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/1067978658"
+        },
+        {
+          "scheme": "isni",
+          "url": "https://isni.org/isni/0000000078233358"
         },
         {
           "scheme": "wikidata",

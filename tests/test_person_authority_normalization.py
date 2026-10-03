@@ -43,6 +43,27 @@ class PersonAuthorityNormalizationTests(unittest.TestCase):
             ]
             self.assertLessEqual(len(bnf_links), 1, person["id"])
 
+    def test_every_authorized_person_heading_identifies_its_source(self):
+        missing = [
+            person["id"]
+            for person in self.people
+            if person.get("authorizedName") and not person.get("authorizedNameSource")
+        ]
+        self.assertEqual(missing, [])
+
+    def test_jesse_greer_has_lcnaf_supported_life_dates(self):
+        greer = self.people_by_id["P187"]
+        self.assertEqual(greer.get("birthYear"), 1896)
+        self.assertEqual(greer.get("deathYear"), 1970)
+        self.assertEqual(greer.get("lifeDatesCertainty"), "confirmed")
+        self.assertIn("SRC0936", greer.get("sourceIds", []))
+        source = self.sources_by_id["SRC0936"]
+        self.assertEqual(source.get("authoritySubject"), "person")
+        self.assertEqual(source.get("identityRelation"), "same")
+        self.assertEqual(source.get("personIds"), ["P187"])
+        self.assertIn("26 August 1896", source.get("researchNote", ""))
+        self.assertIn("4 October 1970", source.get("researchNote", ""))
+
     def test_authority_source_semantics_are_explicit(self):
         errors = [
             f"{source['id']}: {error}"
