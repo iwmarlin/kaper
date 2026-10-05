@@ -2693,10 +2693,12 @@
         }
       },
       "SRC0456": {
-        "reason": "Normalize the source type and keep the Library of Congress rights statement exclusively with the linked medium.",
+        "reason": "Cite the Library of Congress item with its Commons identification route and separate the institutional rights statement from the bibliographic citation.",
         "fields": {
-          "fullCitation": "Wikimedia Commons, File:St Alexander's Church2.jpg. Historical photochrom of St. Alexander's Church, Warsaw, dated between 1890 and 1905. Library of Congress Prints and Photographs Division, Photochrom Prints Collection, reproduction no. LC-DIG-ppmsc-03918.",
-          "sourceType": "wikimedia_commons_file"
+          "fullCitation": "St. Alexander’s Church, Warsaw. Photochrom, between 1890 and 1905. Library of Congress Prints and Photographs Division, Photochrom Prints Collection, reproduction no. LC-DIG-ppmsc-03918. Identified through Wikimedia Commons, File:St Alexander’s Church2.jpg.",
+          "researchNote": "The Library of Congress records “no known restrictions on publication” for this item.",
+          "researchNoteType": "verification_note",
+          "sourceType": "image_or_photograph"
         }
       },
       "SRC0475": {
@@ -9025,7 +9027,9 @@
         "fields": {
           "id": "SRC0555",
           "shortCitation": "My Footage, “1930s Metro-Goldwyn-Mayer Studios,” YouTube, 3 June 2010",
-          "fullCitation": "My Footage. “1930s Metro-Goldwyn-Mayer Studios.” YouTube video, published 3 June 2010. Reel 7072, TC 07:28:38–07:28:59. Montage of MGM studio back-lot footage; the uploader identifies the clip as available for licensing.",
+          "fullCitation": "My Footage. “1930s Metro-Goldwyn-Mayer Studios.” YouTube video, published 3 June 2010. Reel 7072, TC 07:28:38–07:28:59.",
+          "researchNote": "Montage of MGM studio back-lot footage; the uploader identifies the clip as available for licensing.\n\nRecorded as YouTube presents it: the details given here follow that page rather than an examination of the object itself.",
+          "researchNoteType": "verification_note",
           "sourceType": "online_video_source",
           "title": "1930s Metro-Goldwyn-Mayer Studios",
           "creator": "My Footage",
@@ -9863,7 +9867,9 @@
         "fields": {
           "id": "SRC0624",
           "shortCitation": "Thomas Sessler Verlag, remake-rights title list: Schuß im Morgengrauen = Coup de feu à l’aube",
-          "fullCitation": "Thomas Sessler Verlag. “Filmtitelliste Remakerechte.” The alphabetical rights catalogue identifies “Schuß im Morgengrauen” and “Coup de feu à l’aube” as corresponding titles. Accessed 1 August 2026.",
+          "fullCitation": "Thomas Sessler Verlag. “Filmtitelliste Remakerechte.” Remake-rights film-title catalogue.",
+          "researchNote": "The alphabetical rights catalogue identifies “Schuß im Morgengrauen” and “Coup de feu à l’aube” as corresponding titles.",
+          "researchNoteType": "evidence_note",
           "sourceType": "copyright_catalogue",
           "title": "Filmtitelliste Remakerechte",
           "creator": "Thomas Sessler Verlag",
