@@ -418,6 +418,73 @@ class RecordingGraphTests(unittest.TestCase):
         self.assertEqual(len(validator.errors), 1)
         self.assertIn("Sources SRCTEST.personIds omits PTEST", validator.errors[0])
 
+    def test_validator_checks_contribution_derived_work_links_semantically(self) -> None:
+        validator = object.__new__(ExportValidator)
+        validator.errors = []
+        validator.payloads = {
+            name: {"records": []}
+            for name in TABLE_NAMES
+        }
+        validator.payloads["People"]["records"] = [
+            {
+                "id": "P-CREATOR",
+                "contributionIds": ["CON-CREATOR"],
+                "workIds": [],
+            },
+            {
+                "id": "P-STALE",
+                "contributionIds": [],
+                "workIds": ["W-TEST"],
+            },
+        ]
+        validator.payloads["Organizations"]["records"] = [
+            {
+                "id": "ORG-LABEL",
+                "contributionIds": ["CON-LABEL"],
+                "workIds": [],
+            }
+        ]
+        validator.payloads["Works"]["records"] = [
+            {"id": "W-TEST", "personIds": ["P-STALE"]}
+        ]
+        validator.payloads["Contributions"]["records"] = [
+            {
+                "id": "CON-CREATOR",
+                "role": "lyricist",
+                "personIds": ["P-CREATOR"],
+                "workIds": ["W-TEST"],
+            },
+            {
+                "id": "CON-LABEL",
+                "role": "record_label",
+                "organizationIds": ["ORG-LABEL"],
+                "workIds": ["W-TEST"],
+            },
+        ]
+
+        validator._validate_contribution_derived_work_links()
+
+        self.assertTrue(any(
+            "People P-CREATOR.workIds omits W-TEST" in error
+            for error in validator.errors
+        ))
+        self.assertTrue(any(
+            "People P-STALE.workIds contains W-TEST" in error
+            for error in validator.errors
+        ))
+        self.assertTrue(any(
+            "Works W-TEST.personIds contains P-STALE" in error
+            for error in validator.errors
+        ))
+        self.assertTrue(any(
+            "Works W-TEST.personIds omits P-CREATOR" in error
+            for error in validator.errors
+        ))
+        self.assertTrue(any(
+            "Organizations ORG-LABEL.workIds omits W-TEST" in error
+            for error in validator.errors
+        ))
+
     def test_validator_rejects_one_sided_media_song_links(self) -> None:
         validator = object.__new__(ExportValidator)
         validator.errors = []

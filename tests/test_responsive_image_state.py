@@ -66,6 +66,23 @@ class ResponsiveImageStateTests(unittest.TestCase):
             )
             self.assertEqual(MODULE.read_derivative_state(state_path), {})
 
+    def test_canonical_report_excludes_transient_incremental_counters(self) -> None:
+        report = {
+            "sourceImages": 300,
+            "derivativeFiles": 900,
+            "incremental": {
+                "encoded": 1,
+                "reused": 299,
+                "removedStaleDirectories": 0,
+            },
+        }
+
+        self.assertEqual(
+            MODULE.canonical_performance_report(report),
+            {"sourceImages": 300, "derivativeFiles": 900},
+        )
+        self.assertIn("incremental", report)
+
 
 if __name__ == "__main__":
     unittest.main()

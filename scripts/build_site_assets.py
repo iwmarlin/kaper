@@ -269,6 +269,16 @@ def build_images(
     return mapping, report
 
 
+def canonical_performance_report(report: dict) -> dict:
+    """Return the reproducible subset written to the tracked report.
+
+    Incremental counters describe how a particular local build happened. They
+    depend on the state of the derivative cache and therefore must not become
+    part of the canonical, version-controlled performance report.
+    """
+    return {key: value for key, value in report.items() if key != "incremental"}
+
+
 def write_javascript_mapping(path: Path, mapping: dict) -> None:
     payload = json.dumps(mapping, ensure_ascii=False, separators=(",", ":"))
     path.write_text(
@@ -568,7 +578,7 @@ def main() -> int:
     portrait_path = home.get("portrait", {}).get("assetPath") if home.get("portrait") else None
     if portrait_path in mapping:
         report["homePortrait"] = mapping[portrait_path]
-    write_json(report_path, report)
+    write_json(report_path, canonical_performance_report(report))
     print(json.dumps({"ok": True, **report}, ensure_ascii=False, indent=2))
     return 0
 

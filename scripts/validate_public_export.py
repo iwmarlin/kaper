@@ -753,6 +753,86 @@ class ExportValidator:
                         f"for {work_id}"
                     )
 
+    def _validate_contribution_derived_work_links(self) -> None:
+        """Validate denormalized work links without exposing recording-only credits.
+
+        Person and organization cards use ``workIds`` derived from their
+        contributions. Work cards are intentionally narrower: recording-only
+        performers and conductors stay on Media/Source evidence rather than in
+        the work-level contributor list. Consequently these rules cannot be a
+        blanket People.workIds ↔ Works.personIds symmetry check.
+        """
+        records_by_table = {
+            table_name: {
+                record["id"]: record
+                for record in payload.get("records", [])
+                if record.get("id")
+            }
+            for table_name, payload in self.payloads.items()
+        }
+        people = records_by_table.get("People", {})
+        organizations = records_by_table.get("Organizations", {})
+        works = records_by_table.get("Works", {})
+        contributions = records_by_table.get("Contributions", {})
+
+        for person_id, person in people.items():
+            derived_work_ids = {
+                work_id
+                for contribution_id in person.get("contributionIds", []) or []
+                for work_id in contributions.get(contribution_id, {}).get("workIds", []) or []
+            }
+            declared_work_ids = set(person.get("workIds", []) or [])
+            for work_id in sorted(derived_work_ids - declared_work_ids):
+                self.errors.append(
+                    f"Contribution-derived relation: People {person_id}.workIds "
+                    f"omits {work_id}"
+                )
+            for work_id in sorted(declared_work_ids - derived_work_ids):
+                self.errors.append(
+                    f"Unsupported relation: People {person_id}.workIds contains "
+                    f"{work_id}, but no linked contribution supports it"
+                )
+
+        contribution_people_by_work: dict[str, set[str]] = defaultdict(set)
+        creator_people_by_work: dict[str, set[str]] = defaultdict(set)
+        creator_roles = {"composer", "lyricist", "arranger"}
+        for contribution in contributions.values():
+            work_ids = contribution.get("workIds", []) or []
+            person_ids = contribution.get("personIds", []) or []
+            for work_id in work_ids:
+                contribution_people_by_work[work_id].update(person_ids)
+                if contribution.get("role") in creator_roles:
+                    creator_people_by_work[work_id].update(person_ids)
+
+        for work_id, work in works.items():
+            declared_person_ids = set(work.get("personIds", []) or [])
+            for person_id in sorted(
+                declared_person_ids - contribution_people_by_work.get(work_id, set())
+            ):
+                self.errors.append(
+                    f"Unsupported relation: Works {work_id}.personIds contains "
+                    f"{person_id}, but no contribution on the work supports it"
+                )
+            for person_id in sorted(
+                creator_people_by_work.get(work_id, set()) - declared_person_ids
+            ):
+                self.errors.append(
+                    f"Creator relation: Works {work_id}.personIds omits {person_id}"
+                )
+
+        for organization_id, organization in organizations.items():
+            derived_work_ids = {
+                work_id
+                for contribution_id in organization.get("contributionIds", []) or []
+                for work_id in contributions.get(contribution_id, {}).get("workIds", []) or []
+            }
+            declared_work_ids = set(organization.get("workIds", []) or [])
+            for work_id in sorted(derived_work_ids - declared_work_ids):
+                self.errors.append(
+                    f"Contribution-derived relation: Organizations "
+                    f"{organization_id}.workIds omits {work_id}"
+                )
+
     def _validate_media_source_work_support(self) -> None:
         """Reject media-to-work links contradicted by item-level source links.
 
@@ -1983,6 +2063,7 @@ class ExportValidator:
         self._validate_person_authorities()
         self._validate_work_titles()
         self._validate_symmetric_links()
+        self._validate_contribution_derived_work_links()
         self._validate_media_source_work_support()
         self._validate_audio_organization_support()
         self._validate_content()

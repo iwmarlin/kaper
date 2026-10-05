@@ -5952,10 +5952,23 @@
         }
       },
       "P005": {
-        "reason": "Normalize André Mauprey's authority links so the public person record exposes the verified BnF, VIAF, Wikidata and ISNI identities with readable labels.",
+        "reason": "Normalize André Mauprey's authority links and include the composer role documented by his confirmed film contribution.",
         "fields": {
           "authorizedName": "Mauprey, André (1881–1939)",
-          "authorityUrl": "BnF Catalogue: https://catalogue.bnf.fr/ark:/12148/cb14120019q\nBnF data: https://data.bnf.fr/fr/ark:/12148/cb14120019q\nVIAF: https://viaf.org/viaf/10056274\nWikidata: https://www.wikidata.org/wiki/Q4759995\nISNI: https://isni.org/isni/0000000071010995"
+          "authorityUrl": "BnF Catalogue: https://catalogue.bnf.fr/ark:/12148/cb14120019q\nBnF data: https://data.bnf.fr/fr/ark:/12148/cb14120019q\nVIAF: https://viaf.org/viaf/10056274\nWikidata: https://www.wikidata.org/wiki/Q4759995\nISNI: https://isni.org/isni/0000000071010995",
+          "roles": [
+            "lyricist",
+            "composer"
+          ]
+        }
+      },
+      "P020": {
+        "reason": "Include Fritz Rotter's composer role, documented by four confirmed composer contributions, while retaining lyricist as his primary role.",
+        "fields": {
+          "roles": [
+            "lyricist",
+            "composer"
+          ]
         }
       },
       "P108": {
@@ -5984,9 +5997,13 @@
         }
       },
       "P155": {
-        "reason": "Identify the source of Georges Rey's authorized heading as the linked BnF authority record.",
+        "reason": "Identify the source of Georges Rey's authorized heading and use the specific singer role documented by the linked recording source.",
         "fields": {
-          "authorizedNameSource": "BnF"
+          "authorizedNameSource": "BnF",
+          "roles": [
+            "composer",
+            "singer"
+          ]
         }
       },
       "P203": {
@@ -13051,7 +13068,7 @@
         }
       },
       "ORG001": {
-        "reason": "Preserve MGM as the documented distributor of the animated Little Boy Blue, keep production with Celebrity Productions–P.A. Powers, and synchronize MGM's inverse links to the AFI Trouble for Two record and the TCM Balalaika record.",
+        "reason": "Preserve MGM as the documented distributor of the animated Little Boy Blue, keep production with Celebrity Productions–P.A. Powers, and synchronize its inverse links, including the copyright claim on Dairy-maid Song.",
         "fields": {
           "sourceIds": [
             "SRC0373",
@@ -13060,6 +13077,17 @@
           ],
           "contributionIds": [
             "CON-F052-DIST-ORG001"
+          ],
+          "workIds": [
+            "W-S228"
+          ]
+        }
+      },
+      "ORG138": {
+        "reason": "Synchronize Gloria's inverse work link with its confirmed issuing-label contribution for Ich geh’ nie von Dir fort, denn ich lieb’ Dich!",
+        "fields": {
+          "workIds": [
+            "W-S092"
           ]
         }
       },
@@ -14662,6 +14690,22 @@
             "CON-S111-P-P132"
           ]
         }
+      },
+      "W-S092": {
+        "reason": "Expose Gloria at work level because the linked contribution identifies it as the issuing label of the documented recording.",
+        "fields": {
+          "organizationIds": [
+            "ORG138"
+          ]
+        }
+      },
+      "W-S112": {
+        "reason": "Synchronize the work-level people list with Léo Lelièvre's probable lyricist contribution documented by the recording source.",
+        "fields": {
+          "personIds": [
+            "P051"
+          ]
+        }
       }
     },
     "Films": {
@@ -15539,13 +15583,16 @@
         }
       },
       "P058": {
-        "reason": "Connect Ned Washington to the documented portrait source and synchronize his inverse link to the Hollywood-debut event that explicitly names him.",
+        "reason": "Connect Ned Washington to the documented portrait source, the Hollywood-debut event and his lyric credit for Dairy-maid Song.",
         "fields": {
           "sourceIds": [
             "SRC0567"
           ],
           "timelineEventIds": [
             "TE0037"
+          ],
+          "workIds": [
+            "W-S228"
           ]
         }
       },
@@ -15628,7 +15675,8 @@
             "W-O026",
             "W-O027",
             "W-O028",
-            "W-O029"
+            "W-O029",
+            "W-S228"
           ]
         }
       },
@@ -15928,6 +15976,9 @@
           "timelineEventIds": [
             "TE0040",
             "TE0048"
+          ],
+          "workIds": [
+            "W-S228"
           ]
         }
       },
@@ -18530,6 +18581,14 @@
         "reason": "Remove the Love Song of Tahiti advertisement image from Last of the Pagans; that film retains the separate Music on the Starlit Water clipping.",
         "fields": {
           "mediaIds": ["M209"]
+        }
+      },
+      "W-S012": {
+        "reason": "Remove Walter Jurmann from the work-level people list because no contribution or cited source credits him on Denkst du noch an jeden Tag.",
+        "fields": {
+          "personIds": [
+            "P077"
+          ]
         }
       },
       "W-S167": {
