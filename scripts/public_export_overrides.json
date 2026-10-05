@@ -2079,7 +2079,8 @@
         "reason": "Classify the forthcoming contribution to Polski Rocznik Muzykologiczny by its document form as a periodical article, not as a book, and expose its journal and volume in the structured publication field.",
         "fields": {
           "sourceType": "periodical_article",
-          "publication": "Polski Rocznik Muzykologiczny 19"
+          "publication": "Polski Rocznik Muzykologiczny 19",
+          "workIds": ["W-F024"]
         }
       },
       "SRC0287": {
@@ -2902,6 +2903,8 @@
       "SRC0586": {
         "reason": "Retain the unidentified photographer and complete UCLA/California Revealed object metadata while keeping the institution's unknown-copyright statement exclusively with the linked medium.",
         "fields": {
+          "researchNote": "The institutional description accompanying the photograph, preserved in the Internet Archive metadata for calauem_006181, also documents Anderson's performance of All God’s Children Got Rhythm in A Day at the Races (MGM, 1937), describing it as a rare performance independently of the Duke Ellington orchestra. This contextual description, rather than the photograph itself, supports the linked performance credit.",
+          "researchNoteType": "discographic_note",
           "fullCitation": "Photograph of Ivie Anderson. Photographer unidentified; undated. Slide (photograph), 2 × 2 in. Bette Cox Collection, University of California, Los Angeles, Ethnomusicology Archive, call number calauem_200901_ams0000060. Digitised by California Revealed; copy in the Internet Archive, identifier calauem_006181."
         }
       },
@@ -2909,6 +2912,14 @@
         "reason": "Keep the periodical portrait citation bibliographic and retain the public-domain assessment exclusively with the linked medium.",
         "fields": {
           "shortCitation": "Wikimedia Commons / BnF, portrait of Henri Varna in “Féerie de Paris” (1937)"
+        }
+      },
+      "SRC0720": {
+        "reason": "Separate the bibliographic citation from the secondary article's description of Dobrindt's recording identities.",
+        "fields": {
+          "fullCitation": "Wikipedia contributors. “Otto Dobrindt.” Wikipedia (German).",
+          "researchNote": "Records that he joined Carl Lindström AG in 1924 as a recording manager and became its chief recording manager, and that from 1925 he issued his own productions under pseudonyms including Saxophon-Orchester Dobbri, Odeon Tanz-Orchester, Wiener Bohème-Orchester, Dobbri, Robert Renard, Eddie Saxon, Frank Sandlers, Eric Harden and Götz Höhne; his orchestra accompanied Ufa stars on record, among them Hans Albers. These statements follow the secondary Wikipedia article rather than an examination of the original recordings.",
+          "researchNoteType": "verification_note"
         }
       },
       "SRC0594": {
@@ -14019,7 +14030,8 @@
         "reason": "Attach the Filmportal/DFF opening excerpt source to the film it documents; the separately catalogued song retains its own bibliographic sources.",
         "fields": {
           "sourceIds": [
-            "SRC0325"
+            "SRC0325",
+            "SRC0491"
           ]
         }
       },
