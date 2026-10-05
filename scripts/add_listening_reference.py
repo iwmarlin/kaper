@@ -141,6 +141,21 @@ def next_id(table: dict, prefix: str, width: int) -> str:
     return f"{prefix}{max(numbers) + 1:0{width}d}"
 
 
+def recording_person_mismatch(contribution: dict, person_id: str | None) -> bool:
+    """Only person-bound recording credits must match the named performer.
+
+    Composer and lyricist evidence may correctly identify other people.
+    Organization-only recording credits do not identify an individual.
+    """
+    credited_people = contribution.get("personIds") or []
+    return bool(
+        person_id
+        and contribution.get("role") in {"performer", "conductor"}
+        and credited_people
+        and person_id not in credited_people
+    )
+
+
 def add_link(record: dict, key: str, value: str) -> None:
     record[key] = sorted(set((record.get(key) or []) + [value]))
 
@@ -570,6 +585,13 @@ def register(
         if work_id not in (contribution.get("workIds") or []):
             print(
                 f"  ! contribution {contribution_id} is not linked to {work_id}",
+                file=sys.stderr,
+            )
+            return "error"
+        if recording_person_mismatch(contribution, person_id):
+            print(
+                f"  ! recording contribution {contribution_id} does not credit "
+                f"the selected person {person_id}",
                 file=sys.stderr,
             )
             return "error"

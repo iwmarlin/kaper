@@ -13,6 +13,7 @@ from add_listening_reference import (  # noqa: E402
     build_records,
     canonical_external_url,
     external_audio_media_for_work,
+    recording_person_mismatch,
 )
 from validate_public_export import ExportValidator  # noqa: E402
 from recording_organizations import expected_audio_organization_ids  # noqa: E402
@@ -37,6 +38,20 @@ TABLE_NAMES = (
 
 
 class RecordingGraphTests(unittest.TestCase):
+    def test_recording_person_check_preserves_other_creator_evidence(self) -> None:
+        for role in ("performer", "conductor"):
+            contribution = {"role": role, "personIds": ["P-SINGER"]}
+            self.assertTrue(recording_person_mismatch(contribution, "P-OTHER"))
+            self.assertFalse(recording_person_mismatch(contribution, "P-SINGER"))
+            self.assertFalse(recording_person_mismatch(contribution, None))
+        for role in ("composer", "lyricist", "record_label"):
+            self.assertFalse(recording_person_mismatch(
+                {"role": role, "personIds": ["P-CREATOR"]}, "P-SINGER"
+            ))
+        self.assertFalse(recording_person_mismatch(
+            {"role": "performer", "organizationIds": ["ORG-BAND"]}, "P-SINGER"
+        ))
+
     def test_one_off_bernauer_credit_remains_at_recording_level(self) -> None:
         def records(file_name: str) -> list[dict]:
             return json.loads(
@@ -482,6 +497,10 @@ class RecordingGraphTests(unittest.TestCase):
         ))
         self.assertTrue(any(
             "Organizations ORG-LABEL.workIds omits W-TEST" in error
+            for error in validator.errors
+        ))
+        self.assertTrue(any(
+            "Works W-TEST.organizationIds omits ORG-LABEL" in error
             for error in validator.errors
         ))
 

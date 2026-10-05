@@ -800,6 +800,14 @@ class ExportValidator:
             work_ids = contribution.get("workIds", []) or []
             person_ids = contribution.get("personIds", []) or []
             for work_id in work_ids:
+                work = works.get(work_id)
+                if work is not None:
+                    for organization_id in contribution.get("organizationIds", []) or []:
+                        if organization_id not in (work.get("organizationIds", []) or []):
+                            self.errors.append(
+                                f"Contribution-derived relation: Works {work_id}.organizationIds "
+                                f"omits {organization_id} from {contribution['id']}"
+                            )
                 contribution_people_by_work[work_id].update(person_ids)
                 if contribution.get("role") in creator_roles:
                     creator_people_by_work[work_id].update(person_ids)
