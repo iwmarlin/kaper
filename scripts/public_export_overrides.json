@@ -2796,7 +2796,26 @@
         "reason": "Normalize the source type and retain the dataset currency date in date while keeping the separate research access date in accessDate.",
         "fields": {
           "date": "2026-06-21",
-          "sourceType": "web_page"
+          "sourceType": "web_page",
+          "fullCitation": "Urząd m.st. Warszawy, Biuro Geodezji i Katastru. “Nazewnictwo, punkty adresowe.” Serwis adresowy m.st. Warszawy.",
+          "researchNote": "The service states that the map is for reference only and that address/name data were current as of 21 June 2026.",
+          "researchNoteType": "evidence_note"
+        }
+      },
+      "SRC0610": {
+        "reason": "Separate bibliographic citation from content and access assessment without discarding evidence.",
+        "fields": {
+          "fullCitation": "The Marc Lavry Heritage Society. “Biography: European Period — Germany.” marclavry.org. Internet Archive Wayback Machine snapshot, 13 April 2026.",
+          "researchNote": "Records that Lavry moved to Berlin in 1927, was music director and conductor for Rudolf von Laban’s dance theatre, wrote music for Max Reinhardt’s productions and for films, conducted the Berliner Sinfonie Orchester from 1928 until the orchestra was dismantled under the National Socialist regime, and left for Riga in 1933. The site no longer serves the page; cited from the Internet Archive Wayback Machine snapshot of 13 April 2026.",
+          "researchNoteType": "evidence_note"
+        }
+      },
+      "SRC0848": {
+        "reason": "Separate bibliographic citation from content and access assessment without discarding evidence.",
+        "fields": {
+          "fullCitation": "Karamu Performing Arts Theatre, Cleveland. “History: Musicals and Operas.” Google Arts and Culture.",
+          "researchNote": "Records that Benno Frank served as director of musical productions from 1948 to 1967 and Helmuth Wolfes as musical director from 1954 to 1967, the two collaborating on more than thirty-five productions, and that in 1963 the theatre’s opera company was the first group outside New York invited to the New York Summer Festival in Central Park.\n\nThe page documents the American half of his working life: thirteen seasons as musical director of the Cleveland theatre founded for interracial performance, in partnership with another émigré from Germany. The accompanying image is titled only “History: Musicals and Operas”, its maker is given as unknown, and it is not stated to portray him, so it is not taken as a likeness.",
+          "researchNoteType": "evidence_note"
         }
       },
       "SRC0530": {
