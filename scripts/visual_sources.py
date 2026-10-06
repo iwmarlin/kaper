@@ -27,6 +27,13 @@ VISUAL_SOURCE_TYPES = {
 }
 
 WIKIMEDIA_ORGANIZATION_ID = "ORG090"
+# These citations establish the printed publication date, not the date when
+# the photograph was taken. Keep this list explicit: other visual records do
+# have independently documented creation dates, even when reproduced in print.
+VISUAL_PUBLICATION_DATE_IDS = {
+    "SRC0642", "SRC0649", "SRC0650", "SRC0651", "SRC0652",
+    "SRC0653", "SRC0654", "SRC0661", "SRC0778", "SRC0813",
+}
 NAC_ORGANIZATION_ID = "ORG070"
 NAC_REPOSITORY = "Narodowe Archiwum Cyfrowe"
 
@@ -519,6 +526,9 @@ def normalize_visual_source(source: dict[str, Any]) -> None:
             str(source.get("fullCitation", "")),
             flags=re.IGNORECASE,
         ).rstrip()
+
+    if source_id in VISUAL_PUBLICATION_DATE_IDS:
+        source["dateRole"] = "publication"
 
     citation = VISUAL_CITATION_FIELDS.get(str(source.get("id", "")))
     if citation:
