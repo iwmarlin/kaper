@@ -2658,7 +2658,14 @@
       "SRC0446": {
         "reason": "Classify the item-level IMDb media-viewer record as image evidence rather than a generic online database record.",
         "fields": {
+          "title": "Madame ne veut pas d’enfants — French film poster, 1933",
           "sourceType": "image_or_photograph"
+        }
+      },
+      "SRC0368": {
+        "reason": "Identify the photographed place in the source title; retain the host volume and page in the full citation and distinguish publication year from image creation.",
+        "fields": {
+          "title": "Plac Teatralny, Warsaw — photograph published in 1928"
         }
       },
       "SRC0447": {
@@ -9299,7 +9306,7 @@
           "shortCitation": "Russian Wikipedia, „Алексей Грановский” — portrait",
           "fullCitation": "“Файл:Алексей Грановский.jpg.” Russian Wikipedia. Portrait of Alexis Granovsky (1890–1937), created before 1938; photographer unidentified. Upstream source: kino-teatr.ru.",
           "sourceType": "image_or_photograph",
-          "title": "Alexis Granovsky — portrait (Russian Wikipedia, fair use)",
+          "title": "Alexis Granovsky — portrait photograph",
           "creator": "Photographer unidentified",
           "repository": "Russian Wikipedia",
           "publication": "Russian Wikipedia",
