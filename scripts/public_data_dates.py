@@ -6,6 +6,8 @@ from __future__ import annotations
 import re
 from datetime import date
 
+from site_calendar import publication_today
+
 
 ISO_DATE_PATTERN = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 
@@ -31,13 +33,13 @@ def resolve_public_data_updated_at(
     """Resolve the manifest date without coupling it to a source-package date.
 
     An explicit date always wins. Otherwise a change to a canonical public
-    table advances the value to the local build date, while code-only and
+    table advances the value to the Warsaw publication date, while code-only and
     derived-file rebuilds preserve the existing dataset date.
     """
     if requested_value is not None:
         return validated_public_data_date(requested_value)
     if data_changed:
-        return (today or date.today()).isoformat()
+        return (today or publication_today()).isoformat()
     if current_value is None:
         raise ValueError("public data date is missing")
     return validated_public_data_date(current_value)

@@ -14,6 +14,8 @@ from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import unquote, urlsplit
 
+from site_calendar import publication_today
+
 
 PUBLIC_PAGES = [
     "index.html",
@@ -275,6 +277,11 @@ def open_graph_image_errors(root: Path, label: str, text: str) -> list[str]:
     return errors
 
 
+def sitemap_date_is_future(value: date) -> bool:
+    """Compare lastmod against the archive's calendar, not the runner's date."""
+    return value > publication_today()
+
+
 def validate(root: Path) -> dict:
     errors: list[str] = []
     warnings: list[str] = []
@@ -512,7 +519,7 @@ def validate(root: Path) -> dict:
                 except (TypeError, ValueError):
                     errors.append(f"Sitemap state has an invalid lastmod date for {url}")
                 else:
-                    if parsed_date > date.today():
+                    if sitemap_date_is_future(parsed_date):
                         errors.append(f"Sitemap state has a future lastmod date for {url}")
                 if not re.fullmatch(r"[0-9a-f]{64}", digest or ""):
                     errors.append(f"Sitemap state has an invalid content hash for {url}")

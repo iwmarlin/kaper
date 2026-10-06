@@ -69,6 +69,7 @@ import unicodedata
 import urllib.parse
 import urllib.request
 from datetime import date
+from site_calendar import publication_today
 from pathlib import Path
 
 from recording_organizations import (
@@ -436,7 +437,7 @@ def build_records(
     work_title = work["title"]
     period = work.get("period") or "european"
     periods = work.get("periods") or ([period] if period else [])
-    today = date.today()
+    today = publication_today()
 
     youtube = "youtube.com" in url or "youtu.be" in url
     host = "YouTube" if youtube else urllib.parse.urlparse(url).netloc

@@ -17,6 +17,7 @@ from typing import Optional
 from urllib.parse import quote, urlsplit
 
 from authority_identifiers import authority_urls
+from site_calendar import publication_today
 
 
 ORIGIN = "https://iwmarlin.github.io/kaper/"
@@ -1070,7 +1071,7 @@ def main() -> int:
     parser.add_argument("--check", action="store_true")
     parser.add_argument(
         "--publication-date",
-        help="ISO date assigned only to routes whose public HTML changed (default: today)",
+        help="ISO date assigned only to routes whose public HTML changed (default: today in Europe/Warsaw)",
     )
     args = parser.parse_args()
     root = args.root.resolve()
@@ -1080,7 +1081,7 @@ def main() -> int:
         errors = check(root)
         print(json.dumps({"ok": not errors, "errors": errors}, ensure_ascii=False, indent=2))
         return 0 if not errors else 1
-    publication_date = args.publication_date or date.today().isoformat()
+    publication_date = args.publication_date or publication_today().isoformat()
     if not ISO_DATE_PATTERN.fullmatch(publication_date):
         parser.error("--publication-date must use YYYY-MM-DD")
     try:
