@@ -31,6 +31,7 @@ WIKIMEDIA_ORGANIZATION_ID = "ORG090"
 # the photograph was taken. Keep this list explicit: other visual records do
 # have independently documented creation dates, even when reproduced in print.
 VISUAL_PUBLICATION_DATE_IDS = {
+    "SRC0352", "SRC0368", "SRC0812",
     "SRC0642", "SRC0649", "SRC0650", "SRC0651", "SRC0652",
     "SRC0653", "SRC0654", "SRC0661", "SRC0778", "SRC0813",
 }

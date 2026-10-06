@@ -2665,7 +2665,21 @@
       "SRC0368": {
         "reason": "Identify the photographed place in the source title; retain the host volume and page in the full citation and distinguish publication year from image creation.",
         "fields": {
-          "title": "Plac Teatralny, Warsaw — photograph published in 1928"
+          "title": "Plac Teatralny, Warsaw — photograph published in 1928",
+          "dateRole": "publication"
+        }
+      },
+      "SRC0352": {
+        "reason": "The date belongs to the 2024 article reproducing the drawing, not to Skarbina's original drawing; name the journal rather than its publishing platform.",
+        "fields": {
+          "dateRole": "publication",
+          "publication": "Architectural Histories"
+        }
+      },
+      "SRC0812": {
+        "reason": "7 December 1912 is the date of the cited issue of Świat, not an independently established photography date.",
+        "fields": {
+          "dateRole": "publication"
         }
       },
       "SRC0447": {

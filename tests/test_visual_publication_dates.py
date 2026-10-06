@@ -13,6 +13,9 @@ from visual_sources import normalize_visual_source
 
 
 EXPECTED_DATES = {
+    "SRC0352": "2024",
+    "SRC0368": "1928",
+    "SRC0812": "1912-12-07",
     "SRC0642": "1922-12",
     "SRC0649": "1930",
     "SRC0650": "1955-07",
