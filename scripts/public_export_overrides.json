@@ -2999,12 +2999,15 @@
       "SRC0649": {
         "reason": "Keep the periodical caption and repository provenance bibliographic and retain the United States copyright-term analysis exclusively with the linked medium.",
         "fields": {
+          "title": "Herbert Stothart and Ramon Novarro — photograph in Picture Play, 1930",
+          "organizationIds": ["ORG067", "ORG091"],
           "fullCitation": "\"This New Age.\" Picture Play Magazine, vol. 31–32 (January–June 1930), p. 97. Photograph captioned \"Herbert Stothart, right, goes over a new song with Ramon Novarro, who sings several numbers in 'Devil May Care.'\" Digitised by the Media History Digital Library from the copy held by the Museum of Modern Art Library, New York. Accessed 6 August 2026."
         }
       },
       "SRC0654": {
         "reason": "Preserve the periodical caption, date, historical context and unidentified photographer in the citation while keeping the rights and fair-use assessment exclusively with the linked medium.",
         "fields": {
+          "title": "Louis Poterat — portrait in Les Ondes, 20 July 1941",
           "fullCitation": "Portrait of Louis Poterat announcing a broadcast, captioned “Louis POTERAT / que vous entendrez aujourd'hui à 14 h.” Les Ondes (Paris), 20 July 1941. The issue appeared in Paris under German occupation. Digitised scan at World Radio History; photographer unidentified. Accessed 6 August 2026."
         }
       },
@@ -3144,6 +3147,7 @@
       "SRC0650": {
         "reason": "Keep the photographer, periodical and digitisation details in the citation while retaining the renewal analysis exclusively with the linked medium.",
         "fields": {
+          "title": "Franz Waxman and Les Brown — photograph in Musical Courier, July 1955",
           "fullCitation": "Dave Pell. Photograph of Franz Waxman rehearsing with Les Brown for the 1955 Los Angeles Music Festival. Musical Courier, vol. 152, no. 1 (July 1955), p. 27. Summy-Birchard Publishing Company; scanned copy at the Internet Archive. Accessed 6 August 2026."
         }
       },
@@ -13058,13 +13062,13 @@
       "ORG067": {
         "reason": "Synchronize Internet Archive with every source whose structured repository field identifies Internet Archive, including digitized catalogues, film-trade publications, recorded-sound items and authority material.",
         "fields": {
-          "sourceIds": ["SRC0569", "SRC0604", "SRC0606", "SRC0650", "SRC0651", "SRC0652", "SRC0653", "SRC0689", "SRC0690", "SRC0692", "SRC0703", "SRC0706", "SRC0768", "SRC0769", "SRC0770", "SRC0771", "SRC0772", "SRC0776", "SRC0782", "SRC0783", "SRC0784", "SRC0785", "SRC0788", "SRC0854", "SRC0855"]
+          "sourceIds": ["SRC0569", "SRC0604", "SRC0606", "SRC0649", "SRC0650", "SRC0651", "SRC0652", "SRC0653", "SRC0689", "SRC0690", "SRC0692", "SRC0703", "SRC0706", "SRC0768", "SRC0769", "SRC0770", "SRC0771", "SRC0772", "SRC0776", "SRC0782", "SRC0783", "SRC0784", "SRC0785", "SRC0788", "SRC0854", "SRC0855"]
         }
       },
       "ORG091": {
         "reason": "Synchronize Media History Digital Library with the verified trade-press records drawn from its digitized collections and Lantern index.",
         "fields": {
-          "sourceIds": ["SRC0423", "SRC0449", "SRC0569", "SRC0690", "SRC0703"]
+          "sourceIds": ["SRC0423", "SRC0449", "SRC0569", "SRC0649", "SRC0690", "SRC0703"]
         }
       },
       "ORG066": {
