@@ -2669,6 +2669,22 @@
           "dateRole": "publication"
         }
       },
+      "SRC0014": {
+        "reason": "Separate the catalogue's access and rights metadata from the bibliographic citation without applying it to the entire linked gallery.",
+        "fields": {
+          "fullCitation": "Narodowe Archiwum Cyfrowe, dokumentacja fotograficzna, sygn. 3/1/0/11/7050, dawna sygn. 1-K-7050: Warsaw Philharmonic Hall, exterior view. Date range: 1910–1939. Description: “Widok zewnętrzny.” Unit page in Szukaj w Archiwach.",
+          "researchNote": "The catalogue metadata consulted states: no digital copies; archive’s economic rights to the work: public domain.",
+          "researchNoteType": "evidence_note"
+        }
+      },
+      "SRC0561": {
+        "reason": "Keep the archive's precise rights statement as evidence outside the bibliographic citation; the linked portrait already carries a rights note.",
+        "fields": {
+          "fullCitation": "Narodowe Archiwum Cyfrowe, dokumentacja fotograficzna, sygn. 3/2/0/-/14347 (dawna sygn. 2-14347): „Reżyser Hans Steinhoff z książką”, 1939–1945. Jednostka w Szukaj w Archiwach.",
+          "researchNote": "The archive’s rights statement reads: “Autorskie prawa majątkowe archiwum do utworu: domena publiczna.”",
+          "researchNoteType": "evidence_note"
+        }
+      },
       "SRC0352": {
         "reason": "The date belongs to the 2024 article reproducing the drawing, not to Skarbina's original drawing; name the journal rather than its publishing platform.",
         "fields": {
@@ -3019,10 +3035,12 @@
         }
       },
       "SRC0654": {
-        "reason": "Preserve the periodical caption, date, historical context and unidentified photographer in the citation while keeping the rights and fair-use assessment exclusively with the linked medium.",
+        "reason": "Keep the printed caption, Harcourt credit, issue date and page in the citation; place historical context in the research note and retain rights assessment on the linked medium.",
         "fields": {
           "title": "Louis Poterat — portrait in Les Ondes, 20 July 1941",
-          "fullCitation": "Portrait of Louis Poterat announcing a broadcast, captioned “Louis POTERAT / que vous entendrez aujourd'hui à 14 h.” Les Ondes (Paris), 20 July 1941. The issue appeared in Paris under German occupation. Digitised scan at World Radio History; photographer unidentified. Accessed 6 August 2026."
+          "fullCitation": "Portrait of Louis Poterat announcing a broadcast, captioned “Louis POTERAT / que vous entendrez aujourd’hui à 14 h.” and credited “Photo Harcourt.” Les Ondes (Paris), 20 July 1941, p. 26. Digitised scan at World Radio History.",
+          "researchNote": "The issue appeared in Paris under German occupation.",
+          "researchNoteType": "object_context"
         }
       },
       "SRC0655": {
@@ -3262,9 +3280,11 @@
         }
       },
       "SRC0460": {
-        "reason": "Normalize the established year and month to ISO 8601 precision.",
+        "reason": "Normalize the established date and cite the original archival photograph; the linked Media already documents the portrait crop.",
         "fields": {
-          "date": "1939-06"
+          "date": "1939-06",
+          "title": "Dni Krakowa — photograph, June 1939",
+          "fullCitation": "Narodowe Archiwum Cyfrowe, Koncern Ilustrowany Kurier Codzienny — Archiwum Ilustracji, sygn. 3/1/0/6/3688, object 3/1/0/6/3688/5: „Dni Krakowa”, photograph of June 1939 described as fragments of the celebrations. Digitised in Szukaj w Archiwach, unit 5909846."
         }
       },
       "SRC0546": {
