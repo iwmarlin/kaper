@@ -21,6 +21,22 @@ def sources() -> list[dict]:
 
 
 class SheetMusicSourceSemanticsTests(unittest.TestCase):
+    def test_french_san_francisco_uses_ucla_finding_aid_not_dealer_listing(self) -> None:
+        source = next(record for record in sources() if record["id"] == "SRC0489")
+        self.assertEqual(source["sourceType"], "archival_manuscript_holding")
+        self.assertEqual(source["dateRole"], "described_item")
+        self.assertEqual(source["date"], "1936")
+        self.assertEqual(source["repository"], "UCLA Library, Performing Arts Special Collections")
+        self.assertTrue(source["primaryUrl"].endswith("kt5779q3vh.pdf#page=17"))
+        self.assertIn("Box 1, Folder 9", source["fullCitation"])
+        self.assertIn("E.F.M. 423", source["fullCitation"])
+        self.assertIn("not a direct examination", source["researchNote"])
+        self.assertNotIn("AbeBooks", json.dumps(source))
+        self.assertEqual(source["workIds"], ["W-S200"])
+        self.assertEqual(source["songIds"], ["S200"])
+        self.assertEqual(source["organizationIds"], ["ORG048"])
+        self.assertEqual(len(source["contributionIds"]), 5)
+
     def test_catalogue_landing_pages_are_not_presented_as_examined_scores(self) -> None:
         wrong = [
             f"{source['id']}: {source.get('primaryUrl')}"
@@ -60,6 +76,7 @@ class SheetMusicSourceSemanticsTests(unittest.TestCase):
     def test_audited_non_score_records_keep_their_specific_source_types(self) -> None:
         expected = {
             "SRC0203": "archival_manuscript_holding",
+            "SRC0489": "archival_manuscript_holding",
             "SRC0286": "sheet_music_catalogue",
             "SRC0854": "sheet_music_catalogue",
             "SRC0855": "sheet_music_catalogue",

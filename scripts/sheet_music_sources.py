@@ -30,6 +30,9 @@ AUDITED_SOURCE_TYPE_OVERRIDES = {
     # The linked NYPL PDF is a finding aid that identifies a physical holding;
     # it does not reproduce the score or its item-level credit line.
     "SRC0203": "archival_manuscript_holding",
+    # The earlier UCLA APAM-1 finding aid describes the French printed score;
+    # it is neither a photograph source nor a digitised score.
+    "SRC0489": "archival_manuscript_holding",
     # The linked Sirius-Mappe page is a publisher's contents list for the
     # anthology, not the anthology's notation.
     "SRC0286": "sheet_music_catalogue",
