@@ -1,0 +1,141 @@
+{
+  "schemaVersion": "1.0.0",
+  "scope": {
+    "startYear": 1902,
+    "endYear": 1939,
+    "label": "Bronisław Kaper early career, documented through 1939"
+  },
+  "publicDataUpdatedAt": "2026-10-07",
+  "generator": {
+    "file": "export_public_data.py",
+    "sha256": "bd1252b45e8444a589a7718b2bc1633706462ea9d7e0499da124b5c278f0cb8d"
+  },
+  "publicInputs": {
+    "allowlist": {
+      "file": "public_export_config.json",
+      "sha256": "45749f19268cc2b9738c48f1f10190b3e9990a6582162c37776337c00f125746"
+    },
+    "overrides": {
+      "file": "public_export_overrides.json",
+      "sha256": "6dd0419092eac9e129369a47157f62ce2b113833d074e766815dca19bf4a7e1a",
+      "appliedCount": 809,
+      "additionCount": 339,
+      "linkAdditionCount": 521,
+      "linkRemovalCount": 174,
+      "exclusionCount": 28
+    }
+  },
+  "exportPolicy": {
+    "editorialStatus": "approved",
+    "workScopes": [
+      "standalone_page",
+      "context_only"
+    ],
+    "placeScopes": [
+      "map_and_detail",
+      "context_only"
+    ],
+    "galleryStatuses": [
+      "selected",
+      "eligible",
+      "detail_only",
+      "external_link_only"
+    ],
+    "sources": "approved and reachable from the public graph",
+    "authorities": "approved and reachable from the public graph",
+    "legacyAndInternalFields": "excluded by explicit allowlist"
+  },
+  "counts": {
+    "People": 178,
+    "Organizations": 161,
+    "Sources": 844,
+    "Media": 409,
+    "Works": 299,
+    "Films": 56,
+    "Songs": 213,
+    "Other Works": 30,
+    "Title Variants": 67,
+    "Work Relations": 204,
+    "Timeline Events": 56,
+    "Places": 45,
+    "Contributions": 1327,
+    "Person Name Variants": 70
+  },
+  "files": [
+    {
+      "file": "build-report.json",
+      "bytes": 114686,
+      "sha256": "5dfdda51e8485c00ba9a44f50d984d2746bf127948bb94e033b7db8a12544be8"
+    },
+    {
+      "file": "contributions.json",
+      "bytes": 528197,
+      "sha256": "32c0d962786641d363b65435ff2092e1ee365d9554cb164d00009db1fd455a86"
+    },
+    {
+      "file": "films.json",
+      "bytes": 39617,
+      "sha256": "391b7c4fb798f06fb7a8769d61c1ce27da692ca552c8f779065e6c6184bb2d7e"
+    },
+    {
+      "file": "media.json",
+      "bytes": 684211,
+      "sha256": "6c61ab2e4741951fe0e2648e07490a32e361417d70204cd2be4f64a16e17264c"
+    },
+    {
+      "file": "organizations.json",
+      "bytes": 153856,
+      "sha256": "0205f1b4d536287ae6c1deafa2813a3d4d1593e5bdfc85278fadc6e4685af9d2"
+    },
+    {
+      "file": "other-works.json",
+      "bytes": 21506,
+      "sha256": "ca6f19f80eb81c60121b7907ccfb9a42d88f0c85c4c4598123dc9143ac825753"
+    },
+    {
+      "file": "people.json",
+      "bytes": 217299,
+      "sha256": "43b5958cd05c0a32e0bd666c3693a79829e1dc6c53c6b37f51be6d9648cddbb0"
+    },
+    {
+      "file": "person-name-variants.json",
+      "bytes": 49097,
+      "sha256": "60bf669a0a7136778dd1fdb89559fb063cd35e57aa208e2cbb11b105da64f097"
+    },
+    {
+      "file": "places.json",
+      "bytes": 44826,
+      "sha256": "a005e719d8406532d9f7780aabb597cdb72a537c2d5d7800f6e9a1725fa3c9f8"
+    },
+    {
+      "file": "songs.json",
+      "bytes": 142535,
+      "sha256": "c7ed243db4c43e768f1d1c92d3a3935d5bec57c2b1d9b4eda7c0e2354769fdd9"
+    },
+    {
+      "file": "sources.json",
+      "bytes": 1251324,
+      "sha256": "5115f3ec2ff8deb9e9822d686082ef4b1c854ed5ed90df5a66511bba461c2157"
+    },
+    {
+      "file": "timeline-events.json",
+      "bytes": 98768,
+      "sha256": "f038b61999d2f778d0f8575b337cf2590b48e963db9d0c9e5031375201e20f9a"
+    },
+    {
+      "file": "title-variants.json",
+      "bytes": 34827,
+      "sha256": "366070940786475c127c31e5766116963a16b831004bf5420583a94249149a8c"
+    },
+    {
+      "file": "work-relations.json",
+      "bytes": 97122,
+      "sha256": "20f441ecdf3c9e68723165ebc5734c45630d3ac39fae024d96c98bb6c665020a"
+    },
+    {
+      "file": "works.json",
+      "bytes": 281745,
+      "sha256": "e7d17c4b5fe28e2b2edb788c91140a68079c6ad403c1cb6117d6f7bff98d2d06"
+    }
+  ]
+}
