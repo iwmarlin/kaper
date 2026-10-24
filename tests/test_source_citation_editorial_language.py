@@ -14,6 +14,24 @@ from validate_public_export import SOURCE_PUBLIC_WORKFLOW_PATTERN  # noqa: E402
 
 
 class SourceCitationEditorialLanguageTests(unittest.TestCase):
+    def test_long_press_transcriptions_are_preserved_in_notes(self) -> None:
+        sources = {record["id"]: record for record in json.loads((PUBLIC / "sources.json").read_text())["records"]}
+        markers = {
+            "SRC0841": ("Hoagy Carmichael, center", "Sidney Clare, left", "Fleishman Distilleries"),
+            "SRC0842": ("opens at 8:45 tonight", "Valencia Ball Room", "does not distinguish which man is which"),
+            "SRC0843": ("S/Sgt. Barry Sadler’s songs", "developing new talent and writers", "American Guild of Authors & Composers", "thirty-four years"),
+            "SRC0850": ("Terry Shand, left", "Larry Shay, center", "Jimmie Eaton, right", "three or four thousand dollars", "sixty to two hundred and fifty dollars"),
+        }
+        for source_id, phrases in markers.items():
+            with self.subTest(source=source_id):
+                source = sources[source_id]
+                self.assertEqual(source["sourceType"], "press_item")
+                self.assertEqual(source["dateRole"], "publication")
+                for phrase in phrases:
+                    self.assertIn(phrase, source["researchNote"])
+                    self.assertNotIn(phrase, source["fullCitation"])
+                self.assertIn(source["publication"], source["fullCitation"])
+
     def test_stanicek_entries_keep_details_in_notes_not_citations(self) -> None:
         sources = {record["id"]: record for record in json.loads((PUBLIC / "sources.json").read_text())["records"]}
         details = {

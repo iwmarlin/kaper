@@ -64,6 +64,11 @@ WIKIPEDIA_REPOSITORY_BY_HOST = {
 # explicit: generic Wikimedia normalization must never infer an author or an
 # underlying holding institution from the delivery platform alone.
 VISUAL_SOURCE_FIELDS: dict[str, dict[str, Any]] = {
+    "SRC0439": {
+        # Wien Museum's date is explicitly qualified as Gebrauch (use).
+        "dateRole": "described_item",
+        "dateDisplay": "1922 (use)",
+    },
     "SRC0618": {
         # BnF dates the associated performance, not the photograph or printing.
         "dateRole": "described_item",

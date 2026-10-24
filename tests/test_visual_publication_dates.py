@@ -34,6 +34,19 @@ EXPECTED_DATES = {
 
 
 class VisualPublicationDatesTests(unittest.TestCase):
+    def test_graben_postcard_date_represents_use_not_creation(self):
+        records = json.loads((ROOT / "data/public/v1/sources.json").read_text())["records"]
+        source = next(record for record in records if record["id"] == "SRC0439")
+        self.assertEqual(source["date"], "1922")
+        self.assertEqual(source["dateRole"], "described_item")
+        self.assertEqual(source["dateDisplay"], "1922 (use)")
+        self.assertIn("1922 (Gebrauch)", source["researchNote"])
+        self.assertEqual(normalized_source(dict(source, dateRole="creation")), source)
+        media = json.loads((ROOT / "data/public/v1/media.json").read_text())["records"]
+        postcard = next(record for record in media if record["id"] == "M095")
+        self.assertIn("used in 1922", postcard["title"])
+        self.assertIn("used in 1922", postcard["publicCaption"])
+
     def test_badet_programme_retains_performance_date_without_redating_portrait(self):
         records = json.loads((ROOT / "data/public/v1/sources.json").read_text())["records"]
         source = next(record for record in records if record["id"] == "SRC0618")
