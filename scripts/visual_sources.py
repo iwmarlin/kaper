@@ -31,6 +31,7 @@ WIKIMEDIA_ORGANIZATION_ID = "ORG090"
 # the photograph was taken. Keep this list explicit: other visual records do
 # have independently documented creation dates, even when reproduced in print.
 VISUAL_PUBLICATION_DATE_IDS = {
+    "SRC0704",
     "SRC0577", "SRC0619", "SRC0622",
     "SRC0352", "SRC0368", "SRC0812",
     "SRC0642", "SRC0649", "SRC0650", "SRC0651", "SRC0652",
@@ -63,6 +64,11 @@ WIKIPEDIA_REPOSITORY_BY_HOST = {
 # explicit: generic Wikimedia normalization must never infer an author or an
 # underlying holding institution from the delivery platform alone.
 VISUAL_SOURCE_FIELDS: dict[str, dict[str, Any]] = {
+    "SRC0618": {
+        # BnF dates the associated performance, not the photograph or printing.
+        "dateRole": "described_item",
+        "dateDisplay": "4 October 1941 (performance)",
+    },
     "SRC0110": {
         # RP 6854 is the aggregate student file containing several documents
         # and photographs, not an item-level portrait source.

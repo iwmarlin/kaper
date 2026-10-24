@@ -21039,7 +21039,7 @@
       "repository": "Bibliothèque nationale de France / Gallica",
       "publication": "Gallica",
       "date": "1941-10-04",
-      "dateRole": "creation",
+      "dateRole": "described_item",
       "dateQualifier": "confirmed",
       "accessDate": "2026-08-01",
       "reliability": "high",
@@ -21054,7 +21054,10 @@
       "mediaIds": [
         "M264"
       ],
-      "primaryUrl": "https://gallica.bnf.fr/ark:/12148/btv1b10509544g/f8.item"
+      "primaryUrl": "https://gallica.bnf.fr/ark:/12148/btv1b10509544g/f8.item",
+      "dateDisplay": "4 October 1941 (performance)",
+      "researchNote": "The date 4 October 1941 identifies the performance at the Gaîté-Lyrique to which the programme relates. It is not an established creation date for the portrait or an independently established publication date for the programme.",
+      "researchNoteType": "date_assessment"
     },
     {
       "id": "SRC0619",
@@ -23720,10 +23723,10 @@
       "publication": "Hänsom Filmbilder",
       "date": "1930",
       "dateEnd": "1939",
-      "dateRole": "creation",
+      "dateRole": "publication",
       "dateQualifier": "approximate",
       "dateDisplay": "1930s",
-      "accessDate": "2026-08-16",
+      "accessDate": "2026-10-24",
       "reliability": "medium",
       "sourceStatus": "verified_with_attribution_note",
       "slug": "src0704-haensom-filmbilder-serie-6-franz-grothe",
@@ -23734,8 +23737,15 @@
         "M344"
       ],
       "primaryUrl": "https://www.virtual-history.com/movie/person/12783/franz-grothe",
-      "researchNote": "Recorded as Virtual History presents it: the details given here follow that page rather than an examination of the object itself.",
-      "researchNoteType": "verification_note"
+      "researchNote": "The source is a digital reproduction of Hänsom Filmbilder, series 6, card 215. Virtual History lists Franz Grothe, Olly Gebauer and Liane Haid for this card. The approximate dating to the 1930s refers to the printed card, not to the underlying photograph; neither an exact issue year nor a photography date has been established. The physical card has not been examined.",
+      "researchNoteType": "verification_note",
+      "additionalLinks": [
+        {
+          "label": "Hänsom Filmbilder series 6 — card 215",
+          "url": "https://www.virtual-history.com/movie/moviecard/54/haensom-filmbilder-serie-6",
+          "role": "source_record"
+        }
+      ]
     },
     {
       "id": "SRC0705",

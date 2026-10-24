@@ -13,6 +13,7 @@ from visual_sources import normalize_visual_source
 
 
 EXPECTED_DATES = {
+    "SRC0704": "1930",
     "SRC0577": "1916-04-30",
     "SRC0619": "1932",
     "SRC0622": "1929",
@@ -33,6 +34,27 @@ EXPECTED_DATES = {
 
 
 class VisualPublicationDatesTests(unittest.TestCase):
+    def test_badet_programme_retains_performance_date_without_redating_portrait(self):
+        records = json.loads((ROOT / "data/public/v1/sources.json").read_text())["records"]
+        source = next(record for record in records if record["id"] == "SRC0618")
+        self.assertEqual(source["date"], "1941-10-04")
+        self.assertEqual(source["dateRole"], "described_item")
+        self.assertEqual(source["dateDisplay"], "4 October 1941 (performance)")
+        self.assertIn("not an established creation date", source["researchNote"])
+        changed = dict(source, dateRole="creation")
+        self.assertEqual(normalized_source(changed), source)
+
+    def test_grothe_card_keeps_approximate_decade_and_qualified_note(self):
+        records = json.loads((ROOT / "data/public/v1/sources.json").read_text())["records"]
+        source = next(record for record in records if record["id"] == "SRC0704")
+        self.assertEqual(source["dateRole"], "publication")
+        self.assertEqual(source["date"], "1930")
+        self.assertEqual(source["dateEnd"], "1939")
+        self.assertEqual(source["dateQualifier"], "approximate")
+        self.assertEqual(source["dateDisplay"], "1930s")
+        self.assertIn("not to the underlying photograph", source["researchNote"])
+        self.assertIn("card 215", source["additionalLinks"][0]["label"])
+
     def test_export_corrects_roles_without_changing_dates(self):
         records = json.loads((ROOT / "data/public/v1/sources.json").read_text())["records"]
         by_id = {record["id"]: record for record in records}
