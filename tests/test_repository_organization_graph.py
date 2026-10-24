@@ -20,6 +20,25 @@ def read_records(filename: str) -> list[dict]:
 
 
 class RepositoryOrganizationGraphTests(unittest.TestCase):
+    def test_newly_audited_repository_markers_are_recognized(self) -> None:
+        for repository, expected in (
+            ("Biblioteka Narodowa / Polona", ("ORG063",)),
+            ("Library of Congress, Music Division", ("ORG066",)),
+            ("Wikimedia Commons / Library of Congress", ("ORG066",)),
+            ("Billy Rose Theatre Division, The New York Public Library for the Performing Arts", ("ORG164",)),
+        ):
+            with self.subTest(repository=repository):
+                self.assertEqual(expected_repository_organization_ids({"repository": repository}), expected)
+
+    def test_copyright_catalogue_creator_is_distinct_from_access_repository(self) -> None:
+        source = next(record for record in read_records("sources.json") if record["id"] == "SRC0689")
+        self.assertEqual(source["repository"], "Internet Archive")
+        self.assertEqual(source["creator"], "United States Copyright Office")
+        self.assertIn("ORG067", source["organizationIds"])
+        self.assertIn("ORG068", source["organizationIds"])
+        self.assertIn("ORG118", source["organizationIds"])
+        self.assertEqual(expected_repository_organization_ids(source), ("ORG067", "ORG068"))
+
     def test_jurmann_finding_aid_is_not_assigned_to_berkeley(self) -> None:
         sources = {record["id"]: record for record in read_records("sources.json")}
         organizations = {record["id"]: record for record in read_records("organizations.json")}

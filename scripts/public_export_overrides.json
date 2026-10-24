@@ -576,6 +576,12 @@
       }
     },
     "Sources": {
+      "SRC0689": {
+        "reason": "Internet Archive is the consulted digital repository; United States Copyright Office remains the catalogue creator and is linked separately.",
+        "fields": {
+          "repository": "Internet Archive"
+        }
+      },
       "SRC0854": {
         "reason": "Describe the present evidence at the level actually consulted: the Internet Archive item contains digitized issues, but the work links in this aggregate record derive from its indexed contents rather than examined notation.",
         "fields": {
@@ -3607,7 +3613,7 @@
           "shortCitation": "NYPL, aerial view of MGM Studios, Culver City (1930–1960)",
           "fullCitation": "Billy Rose Theatre Division, The New York Public Library. “Aerial view of MGM studios in Culver City, CA.” Photograph, 1930–1960. Billy Rose Theatre Division photograph file, subcollection Cinema: Studios: U.S.: Metro-Goldwyn-Mayer, shelf locator *T PHO B, image ID ps_the_2774. New York Public Library Digital Collections.",
           "creator": "Photographer unidentified",
-          "repository": "Billy Rose Theatre Division, The New York Public Library",
+          "repository": "Billy Rose Theatre Division, The New York Public Library for the Performing Arts",
           "publication": "New York Public Library Digital Collections",
           "date": "1930–1960",
           "accessDate": "2026-08-30",
@@ -3615,10 +3621,7 @@
           "reliability": "high",
           "sourceStatus": "verified",
           "title": "Aerial view of MGM studios in Culver City, CA."
-        },
-        "removeFields": [
-          "organizationIds"
-        ]
+        }
       },
       "SRC0522": {
         "reason": "Normalize the repository to the official Śląska Biblioteka Cyfrowa name and keep the periodical citation independent of the dLibra software used by the service.",
@@ -13101,6 +13104,22 @@
   },
   "linkAdditions": {
     "Organizations": {
+      "ORG068": {
+        "reason": "Synchronize explicit institutional repository or catalogue-creator relations and preserve other documented links.",
+        "fields": {
+          "sourceIds": [
+            "SRC0689"
+          ]
+        }
+      },
+      "ORG164": {
+        "reason": "Synchronize explicit institutional repository or catalogue-creator relations and preserve other documented links.",
+        "fields": {
+          "sourceIds": [
+            "SRC0688"
+          ]
+        }
+      },
       "ORG016": {
         "reason": "Link Mondial Internationale Filmindustrie AG to the Mein Film advertisement that names Mondial-Film as the Austrian presenting or distributing company.",
         "fields": {
@@ -13130,9 +13149,22 @@
         }
       },
       "ORG066": {
-        "reason": "Link the Library of Congress to the Motion Picture Herald scan it contributed through MBRS, authority records published through LCNAF and the Roger Edens newspaper portrait preserved in Chronicling America.",
+        "reason": "Synchronize explicit institutional repository or catalogue-creator relations and preserve other documented links.",
         "fields": {
-          "sourceIds": ["SRC0569", "SRC0628", "SRC0686", "SRC0817", "SRC0845", "SRC0847", "SRC0936", "SRC0937", "SRC0938"]
+          "sourceIds": [
+            "SRC0569",
+            "SRC0628",
+            "SRC0686",
+            "SRC0817",
+            "SRC0845",
+            "SRC0847",
+            "SRC0936",
+            "SRC0937",
+            "SRC0938",
+            "SRC0570",
+            "SRC0612",
+            "SRC0779"
+          ]
         }
       },
       "ORG035": {
@@ -13154,13 +13186,14 @@
         }
       },
       "ORG063": {
-        "reason": "Synchronize the National Library of Poland / Polona with the contemporary press records for Eliza Rozenblum and with the Deskryptory BN authority record.",
+        "reason": "Synchronize explicit institutional repository or catalogue-creator relations and preserve other documented links.",
         "fields": {
           "sourceIds": [
             "SRC0634",
             "SRC0633",
             "SRC0674",
-            "SRC0675"
+            "SRC0675",
+            "SRC0902"
           ]
         }
       },
@@ -16252,6 +16285,46 @@
       }
     },
     "Sources": {
+      "SRC0902": {
+        "reason": "Synchronize explicit institutional repository or catalogue-creator relations and preserve other documented links.",
+        "fields": {
+          "organizationIds": [
+            "ORG063"
+          ]
+        }
+      },
+      "SRC0688": {
+        "reason": "Synchronize explicit institutional repository or catalogue-creator relations and preserve other documented links.",
+        "fields": {
+          "organizationIds": [
+            "ORG164"
+          ]
+        }
+      },
+      "SRC0779": {
+        "reason": "Synchronize explicit institutional repository or catalogue-creator relations and preserve other documented links.",
+        "fields": {
+          "organizationIds": [
+            "ORG066"
+          ]
+        }
+      },
+      "SRC0612": {
+        "reason": "Synchronize explicit institutional repository or catalogue-creator relations and preserve other documented links.",
+        "fields": {
+          "organizationIds": [
+            "ORG066"
+          ]
+        }
+      },
+      "SRC0570": {
+        "reason": "Synchronize explicit institutional repository or catalogue-creator relations and preserve other documented links.",
+        "fields": {
+          "organizationIds": [
+            "ORG066"
+          ]
+        }
+      },
       "SRC0166": {
         "reason": "Link the UCLA Weimar Talkies record to the programme-cover medium it reproduces.",
         "fields": {
@@ -16466,7 +16539,15 @@
       "SRC0653": {"reason": "Link the source to Internet Archive, identified in its structured repository field.", "fields": {"organizationIds": ["ORG067"]}},
       "SRC0654": {"reason": "Link the source to World Radio History, identified in its structured repository field.", "fields": {"organizationIds": ["ORG158"]}},
       "SRC0671": {"reason": "Link the source to the Bibliothèque nationale de France, identified in its structured repository field.", "fields": {"organizationIds": ["ORG062"]}},
-      "SRC0689": {"reason": "Link the source to Internet Archive, identified in its structured repository field.", "fields": {"organizationIds": ["ORG067"]}},
+      "SRC0689": {
+        "reason": "Synchronize explicit institutional repository or catalogue-creator relations and preserve other documented links.",
+        "fields": {
+          "organizationIds": [
+            "ORG067",
+            "ORG068"
+          ]
+        }
+      },
       "SRC0692": {"reason": "Link the source to Internet Archive, identified in its structured repository field.", "fields": {"organizationIds": ["ORG067"]}},
       "SRC0706": {"reason": "Link the source to Internet Archive, identified in its structured repository field.", "fields": {"organizationIds": ["ORG067"]}},
       "SRC0786": {"reason": "Link the source to the Bibliothèque nationale de France, identified in its structured repository field.", "fields": {"organizationIds": ["ORG062"]}},
