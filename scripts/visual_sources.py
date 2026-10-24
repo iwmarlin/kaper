@@ -31,6 +31,7 @@ WIKIMEDIA_ORGANIZATION_ID = "ORG090"
 # the photograph was taken. Keep this list explicit: other visual records do
 # have independently documented creation dates, even when reproduced in print.
 VISUAL_PUBLICATION_DATE_IDS = {
+    "SRC0777",
     "SRC0704",
     "SRC0577", "SRC0619", "SRC0622",
     "SRC0352", "SRC0368", "SRC0812",
@@ -64,6 +65,11 @@ WIKIPEDIA_REPOSITORY_BY_HOST = {
 # explicit: generic Wikimedia normalization must never infer an author or an
 # underlying holding institution from the delivery platform alone.
 VISUAL_SOURCE_FIELDS: dict[str, dict[str, Any]] = {
+    "SRC0840": {"creator": "Attributed to Émile Reutlinger"},
+    "SRC0537": {
+        "dateRole": "creation",
+        "dateQualifier": "unknown",
+    },
     "SRC0439": {
         # Wien Museum's date is explicitly qualified as Gebrauch (use).
         "dateRole": "described_item",
@@ -212,6 +218,7 @@ VISUAL_SOURCE_FIELDS: dict[str, dict[str, Any]] = {
 }
 
 VISUAL_SOURCE_FIELD_REMOVALS = {
+    "SRC0537": ("date", "dateEnd", "dateDisplay"),
     "SRC0523": ("accessUrl",),
 }
 

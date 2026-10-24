@@ -196,7 +196,13 @@ def normalize_filmographic_source(source: dict[str, Any]) -> None:
             }
         )
         if source_type == "image_or_photograph":
-            source["creator"] = "IMDb contributors"
+            # The database hosts the reproduction; its contributors are not
+            # thereby the creators of the historical poster or photograph.
+            # Preserve an independently documented artist/photographer credit.
+            if str(source.get("creator") or "").strip().casefold() in {
+                "imdb contributors", "imdb", "imdb.com"
+            }:
+                source.pop("creator", None)
             return
         title, page_description = IMDB_CITATIONS.get(
             source_id,

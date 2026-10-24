@@ -11,7 +11,7 @@ PUBLIC = ROOT / "data/public/v1"
 if str(ROOT / "scripts") not in sys.path:
     sys.path.insert(0, str(ROOT / "scripts"))
 
-from filmographic_sources import expected_imdb_source_type, source_hostname  # noqa: E402
+from filmographic_sources import expected_imdb_source_type, source_hostname, normalize_filmographic_source  # noqa: E402
 
 
 def records(filename: str) -> list[dict]:
@@ -19,6 +19,22 @@ def records(filename: str) -> list[dict]:
 
 
 class ImdbSourceTests(unittest.TestCase):
+    def test_imdb_images_do_not_credit_database_contributors_as_artists(self) -> None:
+        ids = ("SRC0338", "SRC0421", "SRC0422", "SRC0425", "SRC0426", "SRC0446", "SRC0447", "SRC0450")
+        for source_id in ids:
+            with self.subTest(source=source_id):
+                source = self.sources[source_id]
+                self.assertNotIn("creator", source)
+                legacy = dict(source, creator="IMDb contributors")
+                normalize_filmographic_source(legacy)
+                self.assertNotIn("creator", legacy)
+                self.assertEqual(legacy["repository"], "IMDb")
+
+    def test_imdb_normalizer_preserves_independently_documented_image_creator(self) -> None:
+        source = dict(self.sources["SRC0421"], creator="Documented poster artist")
+        normalize_filmographic_source(source)
+        self.assertEqual(source["creator"], "Documented poster artist")
+
     @classmethod
     def setUpClass(cls) -> None:
         cls.sources = {record["id"]: record for record in records("sources.json")}

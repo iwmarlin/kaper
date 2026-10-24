@@ -13,6 +13,7 @@ from visual_sources import normalize_visual_source
 
 
 EXPECTED_DATES = {
+    "SRC0777": "1928-02-04",
     "SRC0704": "1930",
     "SRC0577": "1916-04-30",
     "SRC0619": "1932",
@@ -34,6 +35,23 @@ EXPECTED_DATES = {
 
 
 class VisualPublicationDatesTests(unittest.TestCase):
+    def test_lubitsch_metadata_year_is_not_an_established_photography_date(self):
+        records = json.loads((ROOT / "data/public/v1/sources.json").read_text())["records"]
+        source = next(record for record in records if record["id"] == "SRC0537")
+        self.assertNotIn("date", source)
+        self.assertEqual(source["dateQualifier"], "unknown")
+        self.assertIn("1949", source["researchNote"])
+        self.assertIn("1947", source["researchNote"])
+        self.assertIn("27 September 2018", source["researchNote"])
+        self.assertNotIn("1949", source["fullCitation"])
+        self.assertEqual(normalized_source(dict(source, date="1949", dateQualifier="confirmed")), source)
+
+    def test_tchaikovsky_attribution_remains_qualified_in_creator_field(self):
+        records = json.loads((ROOT / "data/public/v1/sources.json").read_text())["records"]
+        source = next(record for record in records if record["id"] == "SRC0840")
+        self.assertEqual(source["creator"], "Attributed to Émile Reutlinger")
+        self.assertEqual(normalized_source(dict(source, creator="Émile Reutlinger")), source)
+
     def test_graben_postcard_date_represents_use_not_creation(self):
         records = json.loads((ROOT / "data/public/v1/sources.json").read_text())["records"]
         source = next(record for record in records if record["id"] == "SRC0439")

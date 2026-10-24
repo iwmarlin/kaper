@@ -1268,6 +1268,14 @@ class ExportValidator:
                 self.errors.append(
                     f"Source {source_id}: filmographic database source lacks accessDate"
                 )
+            if (
+                expected_imdb_source_type(source) == "image_or_photograph"
+                and str(source.get("creator") or "").strip().casefold()
+                in {"imdb contributors", "imdb", "imdb.com"}
+            ):
+                self.errors.append(
+                    f"Source {source_id}: IMDb hosting does not establish image authorship"
+                )
             if source.get("sourceType") == "authority_record":
                 if not source.get("accessDate"):
                     self.errors.append(
