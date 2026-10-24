@@ -576,6 +576,19 @@
       }
     },
     "Sources": {
+      "SRC0752": {
+        "reason": "Distinguish the documented portrait publication date from an unestablished photography date; retain the issuing agency as publisher, not photographer.",
+        "fields": {
+          "dateRole": "publication",
+          "creator": "Photographer unidentified"
+        }
+      },
+      "SRC0648": {
+        "reason": "Distinguish the documented portrait publication date from an unestablished photography date; retain the issuing agency as publisher, not photographer.",
+        "fields": {
+          "dateRole": "publication"
+        }
+      },
       "SRC0840": {
         "reason": "Preserve source-specific qualification: platform contributors are not image creators; distinguish unresolved metadata dates, publication dates and attributed authorship.",
         "fields": {
@@ -2425,7 +2438,7 @@
           "repository": "Portrait Collection Friedrich Nicolas Manskopf, Goethe University Frankfurt; Wikimedia Commons",
           "publication": "Verlag Hans Dursthoff, Berlin",
           "date": "1908",
-          "dateRole": "creation",
+          "dateRole": "publication",
           "dateQualifier": "confirmed",
           "slug": "src0366-moritz-mayer-mahr-signed-portrait-postcard-1908"
         }
@@ -10564,7 +10577,8 @@
           "personIds": [
             "P047"
           ],
-          "primaryUrl": "https://commons.wikimedia.org/wiki/File:Carl_Meinhard_(BerlLeben_1908-09).jpg"
+          "primaryUrl": "https://commons.wikimedia.org/wiki/File:Carl_Meinhard_(BerlLeben_1908-09).jpg",
+          "dateRole": "publication"
         }
       },
       "SRC0665": {

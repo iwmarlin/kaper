@@ -13,6 +13,10 @@ from visual_sources import normalize_visual_source
 
 
 EXPECTED_DATES = {
+    "SRC0366": "1908",
+    "SRC0648": "1916",
+    "SRC0664": "1908",
+    "SRC0752": "1945",
     "SRC0777": "1928-02-04",
     "SRC0704": "1930",
     "SRC0577": "1916-04-30",
@@ -35,6 +39,15 @@ EXPECTED_DATES = {
 
 
 class VisualPublicationDatesTests(unittest.TestCase):
+    def test_jones_issuing_agency_is_not_the_photographer(self):
+        records = json.loads((ROOT / "data/public/v1/sources.json").read_text())["records"]
+        source = next(record for record in records if record["id"] == "SRC0752")
+        self.assertEqual(source["creator"], "Photographer unidentified")
+        self.assertEqual(source["publication"], "Frederick Brothers Agency")
+        self.assertIn("23 April 1945", source["fullCitation"])
+        self.assertIn("Photographer not credited", source["fullCitation"])
+        self.assertEqual(normalized_source(dict(source, creator="Frederick Brothers Agency", dateRole="creation")), source)
+
     def test_lubitsch_metadata_year_is_not_an_established_photography_date(self):
         records = json.loads((ROOT / "data/public/v1/sources.json").read_text())["records"]
         source = next(record for record in records if record["id"] == "SRC0537")

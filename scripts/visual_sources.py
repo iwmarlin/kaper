@@ -31,6 +31,7 @@ WIKIMEDIA_ORGANIZATION_ID = "ORG090"
 # the photograph was taken. Keep this list explicit: other visual records do
 # have independently documented creation dates, even when reproduced in print.
 VISUAL_PUBLICATION_DATE_IDS = {
+    "SRC0366", "SRC0648", "SRC0664", "SRC0752",
     "SRC0777",
     "SRC0704",
     "SRC0577", "SRC0619", "SRC0622",
@@ -65,6 +66,7 @@ WIKIPEDIA_REPOSITORY_BY_HOST = {
 # explicit: generic Wikimedia normalization must never infer an author or an
 # underlying holding institution from the delivery platform alone.
 VISUAL_SOURCE_FIELDS: dict[str, dict[str, Any]] = {
+    "SRC0752": {"creator": "Photographer unidentified"},
     "SRC0840": {"creator": "Attributed to Émile Reutlinger"},
     "SRC0537": {
         "dateRole": "creation",
@@ -147,7 +149,7 @@ VISUAL_SOURCE_FIELDS: dict[str, dict[str, Any]] = {
         ),
         "publication": "Verlag Hans Dursthoff, Berlin",
         "date": "1908",
-        "dateRole": "creation",
+        "dateRole": "publication",
         "dateQualifier": "confirmed",
         "slug": "src0366-moritz-mayer-mahr-signed-portrait-postcard-1908",
     },
