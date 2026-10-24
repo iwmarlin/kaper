@@ -14,6 +14,48 @@ from validate_public_export import SOURCE_PUBLIC_WORKFLOW_PATTERN  # noqa: E402
 
 
 class SourceCitationEditorialLanguageTests(unittest.TestCase):
+    def test_stanicek_entries_keep_details_in_notes_not_citations(self) -> None:
+        sources = {record["id"]: record for record in json.loads((PUBLIC / "sources.json").read_text())["records"]}
+        details = {
+            "SRC0288": ("Orchester Bernard Etté / Heinz Egon", "W 202", "Hermann Scheibenhofer", "Edition Karl Brüll"),
+            "SRC0289": ("Roehr release E 12", "14 November 1930", "8 April 1930", "30 January 1930", "20 February 1931", "1689504-001", "T-800.619.517-2", "D-B 217.735"),
+            "SRC0290": ("manuscript source", "20 February 1931", "no GEMA work number"),
+        }
+        for source_id, markers in details.items():
+            with self.subTest(source=source_id):
+                source = sources[source_id]
+                self.assertEqual(source["sourceType"], "secondary_literature")
+                self.assertEqual(source["date"], "2010")
+                self.assertIn("doctoral dissertation, University of Vienna, 2010", source["fullCitation"])
+                self.assertIn("Digital copy: grammophon-platten.de", source["fullCitation"])
+                self.assertNotIn("author’s permission", source["fullCitation"])
+                self.assertIn("author’s permission", source["researchNote"])
+                self.assertIn("rights remain with the author", source["researchNote"])
+                for marker in markers:
+                    self.assertIn(marker, source["researchNote"])
+                    self.assertNotIn(marker, source["fullCitation"])
+                self.assertEqual(source["additionalLinks"][0]["role"], "source_record")
+
+    def test_gmeindl_biographical_evidence_is_preserved_without_duplicate_dates(self) -> None:
+        source = next(record for record in json.loads((PUBLIC / "sources.json").read_text())["records"] if record["id"] == "SRC0684")
+        for marker in ("31 December 1890", "1 September 1958", "Munich Hofoper from 1915", "Dozent in 1922", "professor of composition", "Sergiu Celibidache", "Ernst Pepping", "without the h"):
+            self.assertIn(marker, source["researchNote"])
+            self.assertNotIn(marker, source["fullCitation"])
+        self.assertEqual(source["researchNote"].count("31 December 1890"), 1)
+        self.assertEqual(source["researchNote"].count("1929"), 1)
+        self.assertIn("doi:10.1553/0x0001cf41", source["fullCitation"])
+
+    def test_attributed_rights_statements_are_outside_archival_citations(self) -> None:
+        sources = {record["id"]: record for record in json.loads((PUBLIC / "sources.json").read_text())["records"]}
+        for source_id in ("SRC0477", "SRC0863"):
+            self.assertNotIn("marked public domain", sources[source_id]["fullCitation"])
+            self.assertIn("Polona marks the digitised item as public domain.", sources[source_id]["researchNote"])
+            self.assertIn("pseudonym", sources[source_id]["researchNote"])
+        statement = "Copies carry the Center’s notice that the material may be restricted by United States copyright law."
+        self.assertNotIn(statement, sources["SRC0709"]["fullCitation"])
+        self.assertEqual(statement, sources["SRC0709"]["researchNote"])
+        self.assertIn("Text: Egon Schubert / Mus. B. Kaper", sources["SRC0709"]["fullCitation"])
+
     def test_visual_context_and_rights_are_preserved_outside_citations(self) -> None:
         sources = {
             record["id"]: record

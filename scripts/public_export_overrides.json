@@ -576,6 +576,30 @@
       }
     },
     "Sources": {
+      "SRC0684": {
+        "reason": "Separate the bibliographic citation from source-derived evidence and attributed rights statements without changing dates, source types or relationships.",
+        "fields": {
+          "fullCitation": "Uwe Harten. “Gmeindl, Walter.” Oesterreichisches Musiklexikon online. Vienna: Verlag der Österreichischen Akademie der Wissenschaften. doi:10.1553/0x0001cf41.",
+          "researchNote": "The article presents Gmeindl primarily as a pedagogue. It gives 31 December 1890 at Hainburg an der Donau as his date of birth and 1 September 1958 at Hainburg as his date of death, and traces his appointments at the Munich Hofoper from 1915. Schreker engaged him in Berlin as a Dozent in 1922 and, in 1929, as professor of composition and head of the orchestra school of the Musikhochschule, where he later took the conducting class as well; Sergiu Celibidache and Ernst Pepping were among his pupils. It is the teaching post held during Kaper’s Berlin years, which the archive documents in the event of private study, 1926–1930. The lexicon spells the forename Walter, without the h in the archive’s person record.",
+          "researchNoteType": "evidence_note"
+        }
+      },
+      "SRC0709": {
+        "reason": "Separate the bibliographic citation from source-derived evidence and attributed rights statements without changing dates, source types or relationships.",
+        "fields": {
+          "fullCitation": "“Denkst Du noch an jeden Tag.” Fox-trott. Manuscript in Bronisław Kaper’s hand, headed “Text: Egon Schubert / Mus. B. Kaper” and dated “Berlin 1929”; piano and voice. Bronislaw Kaper Papers, Collection 03193, box 1. American Heritage Center, University of Wyoming, Laramie.",
+          "researchNote": "Copies carry the Center’s notice that the material may be restricted by United States copyright law.",
+          "researchNoteType": "evidence_note"
+        }
+      },
+      "SRC0863": {
+        "reason": "Separate the bibliographic citation from source-derived evidence and attributed rights statements without changing dates, source types or relationships.",
+        "fields": {
+          "fullCitation": "Związek Autorów i Kompozytorów Scenicznych. Lista członków Związku Autorów i Kompozytorów Scenicznych „Zaiks” na dzień 1 Listopada 1931 r. = Liste des Membres de la Société des Auteurs et Compositeurs Sceniques „Zaiks” au 1 Octobre 1931. Warszawa: [wydawca nieznany], 1931 (Warszawa: Druk. R. Kucharski). 12 pp.; digitised in Polona, item 1b5e1669-09b9-4ef8-82e3-d65da1a37a4a.",
+          "researchNote": "The list resolves pseudonyms against names and marks authors “a.” and composers “k.”. Four entries concern people documented here: “Asper Bruno (n. Chwast Henryk) k. c.”, “Baumritter Gustaw (psd. Włast Andrzej) a. a.”, “Oldlen (n. Tuwim Juljan) a. a.” and “Wiehler Zygmunt”. Polona marks the digitised item as public domain.",
+          "researchNoteType": "evidence_note"
+        }
+      },
       "SRC0689": {
         "reason": "Internet Archive is the consulted digital repository; United States Copyright Office remains the catalogue creator and is linked separately.",
         "fields": {
@@ -2037,39 +2061,45 @@
         ]
       },
       "SRC0288": {
-        "reason": "Correct the dissertation author's first name and date and classify the dissertation as secondary literature rather than a book or a discographic database.",
+        "reason": "Separate the bibliographic citation from source-derived evidence and attributed rights statements; preserve substantive details, existing relationships and access metadata.",
         "fields": {
-          "fullCitation": "Wolfgang Stanicek, Austin Egen: Schlager-Komponist, Sänger und Musikverleger (doctoral dissertation, University of Vienna, 2010), discographic entry for “Wer weiß, ob du mich auch liebst”: Orchester Bernard Etté / Heinz Egon, 1931; W 202; music credited to Bronisław Kaper and Hermann Scheibenhofer; text by Fritz Rotter; publisher Edition Karl Brüll.",
+          "fullCitation": "Wolfgang Stanicek, Austin Egen: Schlager-Komponist, Sänger und Musikverleger (doctoral dissertation, University of Vienna, 2010), discographic entry for “Wer weiß, ob du mich auch liebst”. Digital copy: grammophon-platten.de.",
           "creator": "Wolfgang Stanicek",
           "repository": "University of Vienna",
           "publication": "Doctoral dissertation, University of Vienna",
           "date": "2010",
           "url": "https://musikwissenschaft.univie.ac.at/forschung/dissertationen/",
-          "sourceType": "secondary_literature"
+          "sourceType": "secondary_literature",
+          "researchNote": "The discographic entry records: Orchester Bernard Etté / Heinz Egon, 1931; W 202; music credited to Bronisław Kaper and Hermann Scheibenhofer; text by Fritz Rotter; publisher Edition Karl Brüll. The dissertation is published in full on grammophon-platten.de with the author’s permission; the rights remain with the author.",
+          "researchNoteType": "evidence_note"
         }
       },
       "SRC0289": {
-        "reason": "Identify the record correctly as an entry in Wolfgang Stanicek's 2010 University of Vienna doctoral dissertation and classify that dissertation as secondary literature.",
+        "reason": "Separate the bibliographic citation from source-derived evidence and attributed rights statements; preserve substantive details, existing relationships and access metadata.",
         "fields": {
-          "fullCitation": "Wolfgang Stanicek, Austin Egen: Schlager-Komponist, Sänger und Musikverleger (doctoral dissertation, University of Vienna, 2010), work-catalog entry for “Ich weiß ein kleines Café”: tango; music by Austin Egen and Bronisław Kaper; text by Fritz Rotter; Drei Masken, Berlin, later Universal Music Publishing, Berlin; Roehr release E 12, 14 November 1930, under contract of 8 April 1930; AKM registrations 30 January 1930 and 20 February 1931; GEMA work no. 1689504-001; ISWC T-800.619.517-2; sheet music for voice and piano, Drei Masken, © 1931, D-B 217.735.",
+          "fullCitation": "Wolfgang Stanicek, Austin Egen: Schlager-Komponist, Sänger und Musikverleger (doctoral dissertation, University of Vienna, 2010), work-catalog entry for “Ich weiß ein kleines Café”. Digital copy: grammophon-platten.de.",
           "creator": "Wolfgang Stanicek",
           "repository": "University of Vienna",
           "publication": "Doctoral dissertation, University of Vienna",
           "date": "2010",
           "url": "https://musikwissenschaft.univie.ac.at/forschung/dissertationen/",
-          "sourceType": "secondary_literature"
+          "sourceType": "secondary_literature",
+          "researchNote": "The work-catalog entry records: tango; music by Austin Egen and Bronisław Kaper; text by Fritz Rotter; Drei Masken, Berlin, later Universal Music Publishing, Berlin; Roehr release E 12, 14 November 1930, under contract of 8 April 1930; AKM registrations 30 January 1930 and 20 February 1931; GEMA work no. 1689504-001; ISWC T-800.619.517-2; sheet music for voice and piano, Drei Masken, © 1931, D-B 217.735. The dissertation is published in full on grammophon-platten.de with the author’s permission; the rights remain with the author.",
+          "researchNoteType": "evidence_note"
         }
       },
       "SRC0290": {
-        "reason": "Identify the record correctly as an entry in Wolfgang Stanicek's 2010 University of Vienna doctoral dissertation and classify that dissertation as secondary literature.",
+        "reason": "Separate the bibliographic citation from source-derived evidence and attributed rights statements; preserve substantive details, existing relationships and access metadata.",
         "fields": {
-          "fullCitation": "Wolfgang Stanicek, Austin Egen: Schlager-Komponist, Sänger und Musikverleger (doctoral dissertation, University of Vienna, 2010), work-catalog entry for “Diese Melodie sing ich nur für Sie”: tango; music by Austin Egen and Bronisław Kaper; text by Fritz Rotter; manuscript source; AKM registration 20 February 1931; no GEMA work number.",
+          "fullCitation": "Wolfgang Stanicek, Austin Egen: Schlager-Komponist, Sänger und Musikverleger (doctoral dissertation, University of Vienna, 2010), work-catalog entry for “Diese Melodie sing ich nur für Sie”. Digital copy: grammophon-platten.de.",
           "creator": "Wolfgang Stanicek",
           "repository": "University of Vienna",
           "publication": "Doctoral dissertation, University of Vienna",
           "date": "2010",
           "url": "https://musikwissenschaft.univie.ac.at/forschung/dissertationen/",
-          "sourceType": "secondary_literature"
+          "sourceType": "secondary_literature",
+          "researchNote": "The work-catalog entry records: tango; music by Austin Egen and Bronisław Kaper; text by Fritz Rotter; manuscript source; AKM registration 20 February 1931; no GEMA work number. The dissertation is published in full on grammophon-platten.de with the author’s permission; the rights remain with the author.",
+          "researchNoteType": "evidence_note"
         }
       },
       "SRC0490": {
@@ -2759,10 +2789,13 @@
         }
       },
       "SRC0477": {
-        "reason": "Normalize the source type and replace the prose date value undated with the catalogue's standard n.d.",
+        "reason": "Separate the bibliographic citation from source-derived evidence and attributed rights statements; preserve substantive details, existing relationships and access metadata.",
         "fields": {
           "date": "n.d.",
-          "sourceType": "digital_collection_item"
+          "sourceType": "digital_collection_item",
+          "fullCitation": "Związek Autorów i Kompozytorów Scenicznych. Liste des sociétaires et des candidats de la Société des Auteurs et Compositeurs Sceniques au 1 Avril 1927. [Warszawa: s.n., 1927] ([Warszawa]: J. Burian). 4 pp., 23 cm, in French. Biblioteka Narodowa, Druki ulotne, shelfmark DŻS XIXA 1a; digitised in Polona, item 3f1b7810-1bdf-4e8b-a8b2-7766ea5236a7.",
+          "researchNote": "The list gives each member’s name, pseudonym and qualification, “A.” for author and “C.” for composer. The first page reads “Chwast Henryk «Asper» C.”; page 3 reads “Tuwim Juljan «J. Wim» A.” and “Wiehler Zygmunt C.”. Polona marks the digitised item as public domain.",
+          "researchNoteType": "evidence_note"
         }
       },
       "SRC0488": {
