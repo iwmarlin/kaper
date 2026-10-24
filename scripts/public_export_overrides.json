@@ -576,6 +576,15 @@
       }
     },
     "Sources": {
+      "SRC0573": {
+        "reason": "Separate historical publication, access platform and qualified image dating.",
+        "fields": {
+          "dateRole": "publication",
+          "dateDisplay": "1912 (reported)",
+          "researchNote": "The forum dates the reproduced printed notice to 1912. This reported date concerns the notice, not an independently established date of the underlying photograph. The original publication and photographer remain unidentified; the historical object has not been examined directly.",
+          "researchNoteType": "date_assessment"
+        }
+      },
       "SRC0752": {
         "reason": "Distinguish the documented portrait publication date from an unestablished photography date; retain the issuing agency as publisher, not photographer.",
         "fields": {
@@ -2535,12 +2544,13 @@
           "sourceType": "image_or_photograph",
           "title": "Abenteuer am Lido — Illustrierter Film-Kurier no. 677",
           "repository": "English Wikipedia",
-          "publication": "English Wikipedia",
+          "publication": "Illustrierter Film-Kurier, no. 677",
           "slug": "src0403-english-wikipedia-abenteuer-am-lido-ifk-cover",
           "organizationIds": [
             "ORG090"
           ],
-          "primaryUrl": "https://en.wikipedia.org/wiki/File:Adventures_on_the_Lido.jpeg"
+          "primaryUrl": "https://en.wikipedia.org/wiki/File:Adventures_on_the_Lido.jpeg",
+          "dateRole": "publication"
         },
         "removeFields": [
           "creator"
@@ -2554,12 +2564,13 @@
           "sourceType": "image_or_photograph",
           "title": "Die große Attraktion — Illustrierter Film-Kurier no. 214",
           "repository": "English Wikipedia",
-          "publication": "English Wikipedia",
+          "publication": "Illustrierter Film-Kurier, no. 214",
           "slug": "src0412-english-wikipedia-die-grosse-attraktion-ifk-cover",
           "organizationIds": [
             "ORG090"
           ],
-          "primaryUrl": "https://en.wikipedia.org/wiki/File:The_Big_Attraction.jpg"
+          "primaryUrl": "https://en.wikipedia.org/wiki/File:The_Big_Attraction.jpg",
+          "dateRole": "publication"
         },
         "removeFields": [
           "creator"
@@ -2573,7 +2584,7 @@
           "sourceType": "image_or_photograph",
           "title": "Heut’ kommt’s drauf an — Illustrierter Film-Kurier no. 1946",
           "repository": "English Wikipedia",
-          "publication": "English Wikipedia",
+          "publication": "Illustrierter Film-Kurier, no. 1946",
           "slug": "src0413-english-wikipedia-heut-kommts-drauf-an-ifk-cover",
           "organizationIds": [
             "ORG090"
@@ -2581,7 +2592,8 @@
           "mediaIds": [
             "M149"
           ],
-          "primaryUrl": "https://en.wikipedia.org/wiki/File:Today_Is_the_Day_(film).jpg"
+          "primaryUrl": "https://en.wikipedia.org/wiki/File:Today_Is_the_Day_(film).jpg",
+          "dateRole": "publication"
         },
         "removeFields": [
           "creator"
@@ -2595,12 +2607,13 @@
           "sourceType": "image_or_photograph",
           "title": "Hochzeitsreise zu Dritt — Illustrierter Film-Kurier no. 524",
           "repository": "English Wikipedia",
-          "publication": "English Wikipedia",
+          "publication": "Illustrierter Film-Kurier, no. 524",
           "slug": "src0414-english-wikipedia-hochzeitsreise-zu-dritt-ifk-cover",
           "organizationIds": [
             "ORG090"
           ],
-          "primaryUrl": "https://en.wikipedia.org/wiki/File:Three_on_a_Honeymoon.jpg"
+          "primaryUrl": "https://en.wikipedia.org/wiki/File:Three_on_a_Honeymoon.jpg",
+          "dateRole": "publication"
         },
         "removeFields": [
           "creator"
@@ -3118,7 +3131,12 @@
       "SRC0593": {
         "reason": "Keep the periodical portrait citation bibliographic and retain the public-domain assessment exclusively with the linked medium.",
         "fields": {
-          "shortCitation": "Wikimedia Commons / BnF, portrait of Henri Varna in “Féerie de Paris” (1937)"
+          "shortCitation": "Wikimedia Commons / BnF, portrait of Henri Varna in “Féerie de Paris” (1937)",
+          "publication": "Recueil. “Féerie de Paris” de Henri Varna",
+          "dateRole": "described_item",
+          "dateDisplay": "1937 (revue documentation)",
+          "researchNote": "The year 1937 refers to the collection of press cuttings and programmes concerning the performance of 20 December 1937. It is not an independently established date of the portrait photograph. The plate credits the photographer as “Ph. R. Sobol”.",
+          "researchNoteType": "date_assessment"
         }
       },
       "SRC0720": {
@@ -3833,6 +3851,14 @@
       }
     },
     "Media": {
+      "M276": {
+        "reason": "Separate historical publication, access platform and qualified image dating.",
+        "fields": {
+          "title": "Blüthner-Saal entrance, Lützowstraße 76, Berlin — notice dated 1912 (reported)",
+          "publicCaption": "Entrance to the Blüthner-Saal at Lützowstraße 76, Berlin, reproduced in a printed notice dated to 1912 by grammophon-platten.de. The date of the underlying photograph is not independently established. The venue was renamed Bach-Saal in 1927.",
+          "rightsNote": "Existing public-domain classification concerns a historical printed image reported by grammophon-platten.de as dating to 1912; no photographer is identified. The reported date is not independently verified, and the forum reproduction does not itself supply a reuse licence. The local file is a faithful, reduced-size reproduction used to document the venue."
+        }
+      },
       "M297": {
         "reason": "Replace the uncertain single-sitter crop with the complete original printed page and caption, remove unsupported positional identification, and prevent this contextual image from serving as a personal portrait.",
         "fields": {

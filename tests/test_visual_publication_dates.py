@@ -13,6 +13,11 @@ from visual_sources import normalize_visual_source
 
 
 EXPECTED_DATES = {
+    "SRC0403": "1933",
+    "SRC0412": "1931",
+    "SRC0413": "1933",
+    "SRC0414": "1932",
+    "SRC0573": "1912",
     "SRC0366": "1908",
     "SRC0648": "1916",
     "SRC0664": "1908",
@@ -39,6 +44,49 @@ EXPECTED_DATES = {
 
 
 class VisualPublicationDatesTests(unittest.TestCase):
+    def test_wikipedia_file_host_preserves_original_publication_and_date_role(self):
+        source = {"id": "TEST", "primaryUrl": "https://en.wikipedia.org/wiki/File:Example.jpg",
+                  "sourceType": "image_or_photograph", "publication": "Original programme",
+                  "dateRole": "publication"}
+        normalize_visual_source(source)
+        self.assertEqual(source["repository"], "English Wikipedia")
+        self.assertEqual(source["publication"], "Original programme")
+        self.assertEqual(source["dateRole"], "publication")
+        unknown = {"id": "TEST", "primaryUrl": source["primaryUrl"]}
+        normalize_visual_source(unknown)
+        self.assertNotIn("publication", unknown)
+        self.assertNotIn("dateRole", unknown)
+
+    def test_programme_covers_separate_publication_from_access_platform(self):
+        records = json.loads((ROOT / "data/public/v1/sources.json").read_text())["records"]
+        by_id = {record["id"]: record for record in records}
+        for source_id, number in [("SRC0403", "677"), ("SRC0412", "214"),
+                                  ("SRC0413", "1946"), ("SRC0414", "524")]:
+            with self.subTest(source=source_id):
+                source = by_id[source_id]
+                self.assertEqual(source["publication"], "Illustrierter Film-Kurier, no. " + number)
+                self.assertEqual(source["repository"], "English Wikipedia")
+                self.assertEqual(normalized_source(dict(source, publication="English Wikipedia", dateRole="creation")), source)
+
+    def test_varna_collection_year_is_not_a_portrait_creation_date(self):
+        records = json.loads((ROOT / "data/public/v1/sources.json").read_text())["records"]
+        source = next(record for record in records if record["id"] == "SRC0593")
+        self.assertEqual(source["dateRole"], "described_item")
+        self.assertEqual(source["dateDisplay"], "1937 (revue documentation)")
+        self.assertIn("not an independently established date", source["researchNote"])
+        self.assertEqual(normalized_source(dict(source, dateRole="creation")), source)
+
+    def test_bluethner_notice_reported_date_stays_qualified(self):
+        records = json.loads((ROOT / "data/public/v1/sources.json").read_text())["records"]
+        source = next(record for record in records if record["id"] == "SRC0573")
+        self.assertEqual(source["dateQualifier"], "reported")
+        self.assertEqual(source["dateDisplay"], "1912 (reported)")
+        media = json.loads((ROOT / "data/public/v1/media.json").read_text())["records"]
+        image = next(record for record in media if record["id"] == "M276")
+        self.assertIn("(reported)", image["title"])
+        self.assertIn("not independently established", image["publicCaption"])
+        self.assertIn("grammophon-platten.de", image["publicCaption"])
+
     def test_jones_issuing_agency_is_not_the_photographer(self):
         records = json.loads((ROOT / "data/public/v1/sources.json").read_text())["records"]
         source = next(record for record in records if record["id"] == "SRC0752")

@@ -14483,9 +14483,9 @@
       "sourceType": "image_or_photograph",
       "title": "Abenteuer am Lido — Illustrierter Film-Kurier no. 677",
       "repository": "English Wikipedia",
-      "publication": "English Wikipedia",
+      "publication": "Illustrierter Film-Kurier, no. 677",
       "date": "1933",
-      "dateRole": "creation",
+      "dateRole": "publication",
       "dateQualifier": "confirmed",
       "accessDate": "2026-06-23",
       "reliability": "medium",
@@ -14781,9 +14781,9 @@
       "sourceType": "image_or_photograph",
       "title": "Die große Attraktion — Illustrierter Film-Kurier no. 214",
       "repository": "English Wikipedia",
-      "publication": "English Wikipedia",
+      "publication": "Illustrierter Film-Kurier, no. 214",
       "date": "1931",
-      "dateRole": "creation",
+      "dateRole": "publication",
       "dateQualifier": "confirmed",
       "accessDate": "2026-06-23",
       "reliability": "medium",
@@ -14809,9 +14809,9 @@
       "sourceType": "image_or_photograph",
       "title": "Heut’ kommt’s drauf an — Illustrierter Film-Kurier no. 1946",
       "repository": "English Wikipedia",
-      "publication": "English Wikipedia",
+      "publication": "Illustrierter Film-Kurier, no. 1946",
       "date": "1933",
-      "dateRole": "creation",
+      "dateRole": "publication",
       "dateQualifier": "confirmed",
       "accessDate": "2026-06-23",
       "reliability": "medium",
@@ -14837,9 +14837,9 @@
       "sourceType": "image_or_photograph",
       "title": "Hochzeitsreise zu Dritt — Illustrierter Film-Kurier no. 524",
       "repository": "English Wikipedia",
-      "publication": "English Wikipedia",
+      "publication": "Illustrierter Film-Kurier, no. 524",
       "date": "1932",
-      "dateRole": "creation",
+      "dateRole": "publication",
       "dateQualifier": "confirmed",
       "accessDate": "2026-06-23",
       "reliability": "medium",
@@ -19827,7 +19827,7 @@
       "title": "Lützowstraße 76, Berlin, with the Blüthner-Saal entrance — printed notice, 1912",
       "creator": "Photographer unidentified",
       "date": "1912",
-      "dateRole": "creation",
+      "dateRole": "publication",
       "dateQualifier": "reported",
       "repository": "grammophon-platten.de",
       "publication": "grammophon-platten.de",
@@ -19842,8 +19842,9 @@
       "mediaIds": [
         "M276"
       ],
-      "researchNote": "Recorded as grammophon-platten.de presents it: the details given here follow that page rather than an examination of the object itself.",
-      "researchNoteType": "verification_note"
+      "researchNote": "The forum dates the reproduced printed notice to 1912. This reported date concerns the notice, not an independently established date of the underlying photograph. The original publication and photographer remain unidentified; the historical object has not been examined directly.",
+      "researchNoteType": "date_assessment",
+      "dateDisplay": "1912 (reported)"
     },
     {
       "id": "SRC0574",
@@ -20335,9 +20336,9 @@
       "title": "Recueil. “Féerie de Paris” de Henri Varna",
       "creator": "R. Sobol (photographer, as credited on the print)",
       "repository": "Bibliothèque nationale de France / Wikimedia Commons",
-      "publication": "Wikimedia Commons",
+      "publication": "Recueil. “Féerie de Paris” de Henri Varna",
       "date": "1937",
-      "dateRole": "creation",
+      "dateRole": "described_item",
       "dateQualifier": "confirmed",
       "accessDate": "2026-07-31",
       "reliability": "high",
@@ -20354,7 +20355,10 @@
       "organizationIds": [
         "ORG062",
         "ORG090"
-      ]
+      ],
+      "dateDisplay": "1937 (revue documentation)",
+      "researchNote": "The year 1937 refers to the collection of press cuttings and programmes concerning the performance of 20 December 1937. It is not an independently established date of the portrait photograph. The plate credits the photographer as “Ph. R. Sobol”.",
+      "researchNoteType": "date_assessment"
     },
     {
       "id": "SRC0594",

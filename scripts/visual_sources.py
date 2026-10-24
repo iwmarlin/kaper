@@ -31,6 +31,7 @@ WIKIMEDIA_ORGANIZATION_ID = "ORG090"
 # the photograph was taken. Keep this list explicit: other visual records do
 # have independently documented creation dates, even when reproduced in print.
 VISUAL_PUBLICATION_DATE_IDS = {
+    "SRC0403", "SRC0412", "SRC0413", "SRC0414", "SRC0573",
     "SRC0366", "SRC0648", "SRC0664", "SRC0752",
     "SRC0777",
     "SRC0704",
@@ -66,6 +67,35 @@ WIKIPEDIA_REPOSITORY_BY_HOST = {
 # explicit: generic Wikimedia normalization must never infer an author or an
 # underlying holding institution from the delivery platform alone.
 VISUAL_SOURCE_FIELDS: dict[str, dict[str, Any]] = {
+    "SRC0403": {
+        "publication": "Illustrierter Film-Kurier, no. 677",
+        "dateRole": "publication"
+    },
+    "SRC0412": {
+        "publication": "Illustrierter Film-Kurier, no. 214",
+        "dateRole": "publication"
+    },
+    "SRC0413": {
+        "publication": "Illustrierter Film-Kurier, no. 1946",
+        "dateRole": "publication"
+    },
+    "SRC0414": {
+        "publication": "Illustrierter Film-Kurier, no. 524",
+        "dateRole": "publication"
+    },
+    "SRC0593": {
+        "publication": "Recueil. “Féerie de Paris” de Henri Varna",
+        "dateRole": "described_item",
+        "dateDisplay": "1937 (revue documentation)",
+        "researchNote": "The year 1937 refers to the collection of press cuttings and programmes concerning the performance of 20 December 1937. It is not an independently established date of the portrait photograph. The plate credits the photographer as “Ph. R. Sobol”.",
+        "researchNoteType": "date_assessment"
+    },
+    "SRC0573": {
+        "dateRole": "publication",
+        "dateDisplay": "1912 (reported)",
+        "researchNote": "The forum dates the reproduced printed notice to 1912. This reported date concerns the notice, not an independently established date of the underlying photograph. The original publication and photographer remain unidentified; the historical object has not been examined directly.",
+        "researchNoteType": "date_assessment"
+    },
     "SRC0752": {"creator": "Photographer unidentified"},
     "SRC0840": {"creator": "Attributed to Émile Reutlinger"},
     "SRC0537": {
@@ -521,8 +551,8 @@ def normalize_visual_source(source: dict[str, Any]) -> None:
         # Wikipedia is the access platform, not the historical image creator.
         source["sourceType"] = "image_or_photograph"
         source["repository"] = wikipedia_repository
-        source["publication"] = wikipedia_repository
-        source["dateRole"] = "creation"
+        # File hosting does not establish the original publication or date role.
+        # Preserve independently documented object-level metadata.
         if str(source.get("creator") or "").casefold() in {
             "wikipedia contributors",
             "wikimedia contributors",
