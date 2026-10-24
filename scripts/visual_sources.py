@@ -31,6 +31,7 @@ WIKIMEDIA_ORGANIZATION_ID = "ORG090"
 # the photograph was taken. Keep this list explicit: other visual records do
 # have independently documented creation dates, even when reproduced in print.
 VISUAL_PUBLICATION_DATE_IDS = {
+    "SRC0577", "SRC0619", "SRC0622",
     "SRC0352", "SRC0368", "SRC0812",
     "SRC0642", "SRC0649", "SRC0650", "SRC0651", "SRC0652",
     "SRC0653", "SRC0654", "SRC0661", "SRC0778", "SRC0813",
@@ -467,6 +468,7 @@ def is_normalized_visual_source(source: dict[str, Any]) -> bool:
         source.get("sourceType") in VISUAL_SOURCE_TYPES
         or is_wikimedia_source(source)
         or source.get("id") in VISUAL_CITATION_FIELDS
+        or source.get("id") in VISUAL_PUBLICATION_DATE_IDS
     )
 
 

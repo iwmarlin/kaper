@@ -576,6 +576,12 @@
       }
     },
     "Sources": {
+      "SRC0577": {
+        "reason": "The date identifies the printed publication, not an independently documented creation date of the reproduced image.",
+        "fields": {
+          "dateRole": "publication"
+        }
+      },
       "SRC0684": {
         "reason": "Separate the bibliographic citation from source-derived evidence and attributed rights statements without changing dates, source types or relationships.",
         "fields": {
@@ -3061,7 +3067,8 @@
       "SRC0619": {
         "reason": "Preserve the identified photographer, programme, date and collection in the citation while keeping the site's rights statement exclusively with the linked medium.",
         "fields": {
-          "fullCitation": "Henri Manuel (1874–1947). Portrait of René Pujol in the programme of La Pouponnière, Bouffes-Parisiens, 1932. Collection Jacques Gana; reproduced in the Encyclopédie multimédia de la comédie musicale théâtrale en France. Accessed 1 August 2026."
+          "fullCitation": "Henri Manuel (1874–1947). Portrait of René Pujol in the programme of La Pouponnière, Bouffes-Parisiens, 1932. Collection Jacques Gana; reproduced in the Encyclopédie multimédia de la comédie musicale théâtrale en France. Accessed 1 August 2026.",
+          "dateRole": "publication"
         }
       },
       "SRC0621": {
@@ -3541,7 +3548,8 @@
         "fields": {
           "fullCitation": "Portrait of Charles-Louis Pothier, photograph credited to Pierre Carles, in the programme of Flossie, Bouffes-Parisiens, Paris, 1929; collection Jacques Gana, reproduced in the Encyclopédie multimédia de la comédie musicale théâtrale en France. Accessed 1 August 2026.",
           "researchNote": "The photographer could not be traced: no authority record, Wikidata item or Wikimedia Commons attribution for a Paris theatre photographer of this name was found, and he appears as a creator nowhere in the digitised holdings of the Bibliothèque nationale de France.",
-          "researchNoteType": "identity_assessment"
+          "researchNoteType": "identity_assessment",
+          "dateRole": "publication"
         }
       },
       "SRC0627": {
