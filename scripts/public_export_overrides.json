@@ -18235,6 +18235,12 @@
           ]
         }
       },
+      "SRC0890": {
+        "reason": "Remove the incorrect Berkeley Library relation: the cited finding aid belongs to UCLA Library, Performing Arts Special Collections, a different institution.",
+        "fields": {
+          "organizationIds": ["ORG079"]
+        }
+      },
       "SRC0413": {
         "reason": "Restrict the English Wikipedia file-page source to the Illustrierter Film-Kurier cover M149; it does not document the separate sheet-music cover M221.",
         "fields": {
@@ -19065,6 +19071,12 @@
       }
     },
     "Organizations": {
+      "ORG079": {
+        "reason": "Remove the inverse of the incorrect SRC0890 link; University of California, Berkeley Library is not UCLA Library.",
+        "fields": {
+          "sourceIds": ["SRC0890"]
+        }
+      },
       "ORG092": {
         "reason": "Remove excluded duplicate image sources and Wikipedia-file records that were formerly misattributed to IMDb; retain only sources whose primary record is actually on IMDb.",
         "fields": {

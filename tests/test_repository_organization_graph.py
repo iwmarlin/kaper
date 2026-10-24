@@ -20,6 +20,19 @@ def read_records(filename: str) -> list[dict]:
 
 
 class RepositoryOrganizationGraphTests(unittest.TestCase):
+    def test_jurmann_finding_aid_is_not_assigned_to_berkeley(self) -> None:
+        sources = {record["id"]: record for record in read_records("sources.json")}
+        organizations = {record["id"]: record for record in read_records("organizations.json")}
+        source = sources["SRC0890"]
+        self.assertEqual(source["repository"], "UCLA Library, Performing Arts Special Collections")
+        self.assertNotIn("ORG079", source.get("organizationIds", []))
+        self.assertNotIn("SRC0890", organizations["ORG079"]["sourceIds"])
+        self.assertIn("SRC0485", organizations["ORG079"]["sourceIds"])
+        self.assertEqual(source["workIds"], ["W-S168"])
+        overrides = json.loads((ROOT / "scripts/public_export_overrides.json").read_text())
+        self.assertIn("ORG079", overrides["linkRemovals"]["Sources"]["SRC0890"]["fields"]["organizationIds"])
+        self.assertIn("SRC0890", overrides["linkRemovals"]["Organizations"]["ORG079"]["fields"]["sourceIds"])
+
     def test_controlled_repository_markers_are_recognized(self) -> None:
         self.assertEqual(
             expected_repository_organization_ids(
