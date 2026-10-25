@@ -1423,6 +1423,7 @@ class PublicExporter:
             if source.get("sourceType") == "authority_record":
                 normalize_authority_source(source)
             normalize_recording_source(source)
+            normalize_database_source(source)
             if (
                 source.get("sourceType") == "filmographic_database"
                 or source_hostname(source) in IMDB_HOSTS
@@ -1430,7 +1431,6 @@ class PublicExporter:
                 or source.get("id") in {"SRC0174", "SRC0602"}
             ):
                 normalize_filmographic_source(source)
-            normalize_database_source(source)
             if source.get("accessDate"):
                 source["fullCitation"] = normalize_access_citation(
                     source.get("fullCitation")

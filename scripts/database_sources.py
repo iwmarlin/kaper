@@ -62,9 +62,93 @@ REVIEWED_DATABASE_FIELDS: dict[str, dict[str, Any]] = {
 }
 
 
+REVIEWED_DATABASE_ACCESS_FIELDS: dict[str, dict[str, Any]] = {
+    "SRC0141": {
+        "title": "A Day at the Races"
+    },
+    "SRC0147": {
+        "title": "Everybody Sing"
+    },
+    "SRC0587": {
+        "title": "Trouble for Two"
+    },
+    "SRC0452": {
+        "title": "Voyage de noces — Unifrance",
+        "date": "1932",
+        "dateRole": "described_item",
+        "dateQualifier": "confirmed",
+        "dateDisplay": "1932 (production)",
+        "researchNote": "Unifrance identifies 1932 as the production year and 6 January 1933 as the French release date. The structured date follows the production year stated by this source; it does not date publication of the database entry. The archive’s Work year of 1933 refers to the film’s release.",
+        "researchNoteType": "date_assessment",
+        "accessDate": "2026-10-25"
+    },
+    "SRC0478": {
+        "date": "1931",
+        "dateEnd": "1932",
+        "dateRole": "described_item",
+        "dateQualifier": "confirmed",
+        "dateDisplay": "1931/1932 (film)",
+        "researchNote": "Filmportal dates the film “Deutschland 1931/1932” and separately lists the German premiere as 31 December 1931. Its censorship records include decisions of 11 and 30 December 1931 and 15 January 1932. The structured range preserves the catalogue’s film dating; it is not the publication date of the database entry.",
+        "researchNoteType": "date_assessment",
+        "accessDate": "2026-10-25"
+    },
+    "SRC0479": {
+        "date": "1930",
+        "dateRole": "described_item",
+        "dateQualifier": "confirmed",
+        "researchNote": "Filmportal identifies the film as a German feature of 1930. The structured year dates the film described by the entry, not publication or consultation of the database record.",
+        "researchNoteType": "date_assessment",
+        "accessDate": "2026-10-25"
+    },
+    "SRC0480": {
+        "date": "1937",
+        "dateRole": "described_item",
+        "dateQualifier": "confirmed",
+        "researchNote": "The AFI Catalog identifies the film as a 1937 release and gives 29 January 1937 as its release date. The structured year dates the film, not publication of the catalogue entry.",
+        "researchNoteType": "date_assessment",
+        "accessDate": "2026-10-25"
+    },
+    "SRC0481": {
+        "title": "Wings of the Morning",
+        "date": "1937",
+        "dateRole": "described_item",
+        "dateQualifier": "confirmed",
+        "researchNote": "The AFI Catalog identifies the film as a 1937 release and gives 19 February 1937 as its release date. It separately dates production to mid-June–mid-August 1936. The structured year follows the film’s release, not its production period or publication of the catalogue entry.",
+        "researchNoteType": "date_assessment",
+        "accessDate": "2026-10-25"
+    },
+    "SRC0482": {
+        "date": "1938",
+        "dateRole": "described_item",
+        "dateQualifier": "confirmed",
+        "researchNote": "The AFI Catalog identifies the film as a 1938 release and gives 9 January 1938 as its release date. The structured year dates the film, not publication of the catalogue entry.",
+        "researchNoteType": "date_assessment",
+        "accessDate": "2026-10-25"
+    },
+    "SRC0357": {
+        "primaryUrl": "https://www.imagesmusicales.be/browse/item/18420/150/",
+        "accessDate": "2026-10-25"
+    },
+    "SRC0358": {
+        "primaryUrl": "https://www.imagesmusicales.be/browse/item/14336/150/",
+        "accessDate": "2026-10-25"
+    },
+    "SRC0359": {
+        "primaryUrl": "https://www.imagesmusicales.be/browse/item/4742/150/",
+        "accessDate": "2026-10-25"
+    },
+    "SRC0360": {
+        "primaryUrl": "https://www.imagesmusicales.be/browse/item/19315/150/",
+        "accessDate": "2026-10-25"
+    }
+}
+
+
 def normalize_database_source(source: dict[str, Any]) -> None:
     """Restore item-specific, reviewed fields without inferring new evidence."""
-    fields = REVIEWED_DATABASE_FIELDS.get(str(source.get("id", "")))
-    if fields:
-        source.update(fields)
+    source_id = str(source.get("id", ""))
+    for reviewed in (REVIEWED_DATABASE_FIELDS, REVIEWED_DATABASE_ACCESS_FIELDS):
+        fields = reviewed.get(source_id)
+        if fields:
+            source.update(fields)
 

@@ -576,6 +576,24 @@
       }
     },
     "Sources": {
+      "SRC0587": {
+        "reason": "Individually verified film chronology and Images Musicales item URLs; remove redundant platform suffixes while preserving source-specific production, release and catalogue-year distinctions.",
+        "fields": {
+          "title": "Trouble for Two"
+        }
+      },
+      "SRC0147": {
+        "reason": "Individually verified film chronology and Images Musicales item URLs; remove redundant platform suffixes while preserving source-specific production, release and catalogue-year distinctions.",
+        "fields": {
+          "title": "Everybody Sing"
+        }
+      },
+      "SRC0141": {
+        "reason": "Individually verified film chronology and Images Musicales item URLs; remove redundant platform suffixes while preserving source-specific production, release and catalogue-year distinctions.",
+        "fields": {
+          "title": "A Day at the Races"
+        }
+      },
       "SRC0828": {
         "reason": "Database-entry editorial audit: keep citations bibliographic, preserve biographical evidence in researchNote, distinguish society membership from career chronology, and record the explicitly labelled ÖML content-update date.",
         "fields": {
@@ -1764,11 +1782,13 @@
         }
       },
       "SRC0358": {
-        "reason": "Keep the citation bibliographic and move database relationships to the canonical relation fields rendered separately on the public Source page.",
+        "reason": "Individually verified film chronology and Images Musicales item URLs; remove redundant platform suffixes while preserving source-specific production, release and catalogue-year distinctions.",
         "fields": {
           "fullCitation": "Images Musicales. “Tot Weerziens, Mijnheer Jansen (Auf Wiederseh'n Herr Doktor!).” Dutch-language sheet music. Music by Fritz Rotter and B. Kaper; Dutch text by Ferry; cover by Hassel. Vienna: Wiener Boheme Verlag, 1929, W.B.V. 1328, 4 pp.",
           "sourceType": "online_database",
-          "publication": "Wiener Boheme Verlag, Vienna"
+          "publication": "Wiener Boheme Verlag, Vienna",
+          "primaryUrl": "https://www.imagesmusicales.be/browse/item/14336/150/",
+          "accessDate": "2026-10-25"
         }
       },
       "SRC0365": {
@@ -2653,25 +2673,31 @@
         }
       },
       "SRC0357": {
-        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "reason": "Individually verified film chronology and Images Musicales item URLs; remove redundant platform suffixes while preserving source-specific production, release and catalogue-year distinctions.",
         "fields": {
           "sourceType": "online_database",
-          "publication": "Editions Francis Salabert, Paris"
+          "publication": "Editions Francis Salabert, Paris",
+          "primaryUrl": "https://www.imagesmusicales.be/browse/item/18420/150/",
+          "accessDate": "2026-10-25"
         }
       },
       "SRC0359": {
-        "reason": "Normalize the source type and use the catalogue's standard undated value rather than the language-specific abbreviation s.d.",
+        "reason": "Individually verified film chronology and Images Musicales item URLs; remove redundant platform suffixes while preserving source-specific production, release and catalogue-year distinctions.",
         "fields": {
           "date": "n.d.",
           "sourceType": "online_database",
-          "publication": "Choudens, Editeur, Paris"
+          "publication": "Choudens, Editeur, Paris",
+          "primaryUrl": "https://www.imagesmusicales.be/browse/item/4742/150/",
+          "accessDate": "2026-10-25"
         }
       },
       "SRC0360": {
-        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "reason": "Individually verified film chronology and Images Musicales item URLs; remove redundant platform suffixes while preserving source-specific production, release and catalogue-year distinctions.",
         "fields": {
           "sourceType": "online_database",
-          "publication": "Ufaton Verlag, Berlin"
+          "publication": "Ufaton Verlag, Berlin",
+          "primaryUrl": "https://www.imagesmusicales.be/browse/item/19315/150/",
+          "accessDate": "2026-10-25"
         }
       },
       "SRC0362": {
@@ -3871,39 +3897,74 @@
         }
       },
       "SRC0452": {
-        "reason": "Normalize the explanatory unknown-date phrase to the catalogue's standard n.d.",
+        "reason": "Individually verified film chronology and Images Musicales item URLs; remove redundant platform suffixes while preserving source-specific production, release and catalogue-year distinctions.",
         "fields": {
-          "date": "n.d."
+          "date": "1932",
+          "title": "Voyage de noces — Unifrance",
+          "dateRole": "described_item",
+          "dateQualifier": "confirmed",
+          "dateDisplay": "1932 (production)",
+          "researchNote": "Unifrance identifies 1932 as the production year and 6 January 1933 as the French release date. The structured date follows the production year stated by this source; it does not date publication of the database entry. The archive’s Work year of 1933 refers to the film’s release.",
+          "researchNoteType": "date_assessment",
+          "accessDate": "2026-10-25"
         }
       },
       "SRC0478": {
-        "reason": "Normalize the explanatory unknown-date phrase to the catalogue's standard n.d.",
+        "reason": "Individually verified film chronology and Images Musicales item URLs; remove redundant platform suffixes while preserving source-specific production, release and catalogue-year distinctions.",
         "fields": {
-          "date": "n.d."
+          "date": "1931",
+          "dateEnd": "1932",
+          "dateRole": "described_item",
+          "dateQualifier": "confirmed",
+          "dateDisplay": "1931/1932 (film)",
+          "researchNote": "Filmportal dates the film “Deutschland 1931/1932” and separately lists the German premiere as 31 December 1931. Its censorship records include decisions of 11 and 30 December 1931 and 15 January 1932. The structured range preserves the catalogue’s film dating; it is not the publication date of the database entry.",
+          "researchNoteType": "date_assessment",
+          "accessDate": "2026-10-25"
         }
       },
       "SRC0479": {
-        "reason": "Normalize the explanatory unknown-date phrase to the catalogue's standard n.d.",
+        "reason": "Individually verified film chronology and Images Musicales item URLs; remove redundant platform suffixes while preserving source-specific production, release and catalogue-year distinctions.",
         "fields": {
-          "date": "n.d."
+          "date": "1930",
+          "dateRole": "described_item",
+          "dateQualifier": "confirmed",
+          "researchNote": "Filmportal identifies the film as a German feature of 1930. The structured year dates the film described by the entry, not publication or consultation of the database record.",
+          "researchNoteType": "date_assessment",
+          "accessDate": "2026-10-25"
         }
       },
       "SRC0480": {
-        "reason": "Normalize the explanatory unknown-date phrase to the catalogue's standard n.d.",
+        "reason": "Individually verified film chronology and Images Musicales item URLs; remove redundant platform suffixes while preserving source-specific production, release and catalogue-year distinctions.",
         "fields": {
-          "date": "n.d."
+          "date": "1937",
+          "dateRole": "described_item",
+          "dateQualifier": "confirmed",
+          "researchNote": "The AFI Catalog identifies the film as a 1937 release and gives 29 January 1937 as its release date. The structured year dates the film, not publication of the catalogue entry.",
+          "researchNoteType": "date_assessment",
+          "accessDate": "2026-10-25"
         }
       },
       "SRC0481": {
-        "reason": "Normalize the explanatory unknown-date phrase to the catalogue's standard n.d.",
+        "reason": "Individually verified film chronology and Images Musicales item URLs; remove redundant platform suffixes while preserving source-specific production, release and catalogue-year distinctions.",
         "fields": {
-          "date": "n.d."
+          "date": "1937",
+          "title": "Wings of the Morning",
+          "dateRole": "described_item",
+          "dateQualifier": "confirmed",
+          "researchNote": "The AFI Catalog identifies the film as a 1937 release and gives 19 February 1937 as its release date. It separately dates production to mid-June–mid-August 1936. The structured year follows the film’s release, not its production period or publication of the catalogue entry.",
+          "researchNoteType": "date_assessment",
+          "accessDate": "2026-10-25"
         }
       },
       "SRC0482": {
-        "reason": "Normalize the explanatory unknown-date phrase to the catalogue's standard n.d.",
+        "reason": "Individually verified film chronology and Images Musicales item URLs; remove redundant platform suffixes while preserving source-specific production, release and catalogue-year distinctions.",
         "fields": {
-          "date": "n.d."
+          "date": "1938",
+          "dateRole": "described_item",
+          "dateQualifier": "confirmed",
+          "researchNote": "The AFI Catalog identifies the film as a 1938 release and gives 9 January 1938 as its release date. The structured year dates the film, not publication of the catalogue entry.",
+          "researchNoteType": "date_assessment",
+          "accessDate": "2026-10-25"
         }
       },
       "SRC0039": {
@@ -4886,7 +4947,7 @@
         }
       },
       "M053": {
-        "reason": "Identify the displayed object by its actual Dutch edition title and retain the conservative rights assessment for the signed cover artwork.",
+        "reason": "Individually verified film chronology and Images Musicales item URLs; remove redundant platform suffixes while preserving source-specific production, release and catalogue-year distinctions.",
         "fields": {
           "title": "Tot Weerziens, Mijnheer Jansen — sheet-music cover",
           "description": "Sheet-music cover for “Tot Weerziens, Mijnheer Jansen” (“Auf Wiederseh’n, Herr Doktor!”), Wiener Boheme Verlag, W.B.V. 1328, 1929.",
@@ -4895,7 +4956,8 @@
           "publicCreditLine": "Images Musicales; Wiener Boheme Verlag, W.B.V. 1328 (1929); cover artwork signed Hassel.",
           "rightsStatus": "copyright_undetermined",
           "rightsNote": "The cover artwork is signed Hassel, but the illustrator’s identity and rights history have not been established. A reduced-resolution image is used for scholarly identification and commentary; rights in the underlying music and lyrics are separate.",
-          "galleryStatus": "detail_only"
+          "galleryStatus": "detail_only",
+          "externalUrl": "https://www.imagesmusicales.be/browse/item/14336/150/"
         }
       },
       "M058": {

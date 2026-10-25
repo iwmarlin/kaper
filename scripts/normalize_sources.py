@@ -44,6 +44,7 @@ def normalized_source(source: dict[str, Any]) -> dict[str, Any]:
     if result.get("sourceType") == "authority_record":
         normalize_authority_source(result)
     normalize_recording_source(result)
+    normalize_database_source(result)
     if (
         result.get("sourceType") == "filmographic_database"
         or source_hostname(result) in IMDB_HOSTS
@@ -51,7 +52,6 @@ def normalized_source(source: dict[str, Any]) -> dict[str, Any]:
         or result.get("id") in {"SRC0174", "SRC0602"}
     ):
         normalize_filmographic_source(result)
-    normalize_database_source(result)
     normalize_repository_name(result)
     if result.get("accessDate"):
         result["fullCitation"] = normalize_access_citation(
