@@ -18751,15 +18751,15 @@
     {
       "id": "SRC0535",
       "shortCitation": "USC Digital Library, “Così, Cosa” sheet-music cover",
-      "fullCitation": "University of Southern California Digital Library. “Così, Cosa.” Sheet-music cover associated with the MGM film A Night at the Opera (1935). USC Digital Library, DamView record, DocRID 2A3BF1X8Z8LXZ.",
+      "fullCitation": "Bronisław Kaper and Walter Jurmann, music; Ned Washington, lyrics. “Cosi Cosa.” New York: Robbins Music Corporation (Robbins Popular Standard Series), 1935. Partial sheet music, pp. 1 and 6 only. USC Polish Music Center, Bronisław Kaper Collection, PMC 5/13; USC Digital Library, UC17191660, legacy identifier kaper-sheet-513-partial, publisher number SH 1364-4. Digital publisher: University of Southern California Libraries. DOI 10.25549/pmc_09-03-2026_11-05-25_PM-oUC17191660.",
       "sourceType": "digital_collection_item",
-      "title": "Così, Cosa — sheet-music cover, USC Digital Library",
+      "title": "Così, Cosa, 1935 [sheet music, pp. 1 & 6 only]",
       "repository": "University of Southern California Digital Library",
-      "publication": "USC Digital Library",
+      "publication": "Robbins Music Corporation, New York",
       "date": "1935",
-      "dateRole": "creation",
+      "dateRole": "issue",
       "dateQualifier": "confirmed",
-      "accessDate": "2026-07-12",
+      "accessDate": "2026-10-25",
       "reliability": "high",
       "sourceStatus": "verified",
       "slug": "src0535-usc-cosi-cosa-sheet-music-cover-1935",
@@ -18776,7 +18776,17 @@
       "songIds": [
         "S118"
       ],
-      "primaryUrl": "https://digitallibrary.usc.edu/CS.aspx?VP3=DamView&VBID=2A3BXZ61XQEGP&PN=1&DocRID=2A3BF1X8Z8LXZ"
+      "primaryUrl": "https://doi.org/10.25549/pmc_09-03-2026_11-05-25_PM-oUC17191660",
+      "creator": "Bronisław Kaper (composer); Walter Jurmann (composer); Ned Washington (lyricist)",
+      "accessUrl": "https://digitallibrary.usc.edu/CS.aspx?VP3=DamView&DocRID=2A3BF1X8Z8LXZ",
+      "identifiers": [
+        {
+          "scheme": "doi",
+          "value": "10.25549/pmc_09-03-2026_11-05-25_PM-oUC17191660"
+        }
+      ],
+      "researchNote": "USC identifies Robbins Music Corporation as the original publisher, USC Libraries as the digital publisher, and 1935 as both creation and issue year. The structured date records the issue year. The available PDF contains only pages 1 and 6; the linked local image reproduces the cover. The composer and lyricist credits follow the item metadata, not an attribution to the digital repository.",
+      "researchNoteType": "verification_note"
     },
     {
       "id": "SRC0536",
@@ -19020,9 +19030,9 @@
       "repository": "University of Southern California Digital Library",
       "publication": "Robbins Music Corporation",
       "date": "1937",
-      "dateRole": "creation",
+      "dateRole": "issue",
       "dateQualifier": "confirmed",
-      "accessDate": "2026-07-13",
+      "accessDate": "2026-10-25",
       "reliability": "high",
       "sourceStatus": "verified",
       "slug": "src0542-usc-blue-venetian-waters-1937",
@@ -19039,7 +19049,9 @@
           "scheme": "doi",
           "value": "10.25549/pmc_09-03-2026_11-05-25_PM-oUC17189702"
         }
-      ]
+      ],
+      "researchNote": "USC gives 1937 as both creation and issue year; the structured date records the issue year. The asset’s Description field incorrectly names “All God's Ciillun Got Rhythm”, whereas its Core Title, inherited title, call number PMC 5/10 and publisher number SH 1572-4 identify “Blue Venetian Waters”. The preserved cover itself reads “Blue Venetian Waters” and credits Gus Kahn, Bronisław Kaper and Walter Jurmann. The citation follows the item identifiers and cover, not the mismatched Description field. Only pages 1 and 6 are available online.",
+      "researchNoteType": "verification_note"
     },
     {
       "id": "SRC0545",
@@ -19892,19 +19904,17 @@
     {
       "id": "SRC0574",
       "shortCitation": "Neurdein Frères, “565 Paris. – La Rue Alphonse-de-Neuville (Plaine Monceau),” Musée Carnavalet / Paris Musées.",
-      "fullCitation": "Neurdein Frères. “565 Paris. – La Rue Alphonse-de-Neuville (Plaine Monceau).” Illustrated postcard, phototype on card, early twentieth century. Musée Carnavalet – Histoire de Paris, Paris Musées, inventory no. 2021.0.335.",
+      "fullCitation": "Photographer unidentified. “565 Paris. – La Rue Alphonse-de-Neuville (Plaine Monceau).” Illustrated postcard, phototype and letterpress on card, 9 × 14 cm, recto marked “ND Phot”. Neurdein Frères, publisher; dated only to the twentieth century by the museum. Musée Carnavalet – Histoire de Paris, Paris Musées, inventory no. 2021.0.335.",
       "sourceType": "digital_collection_item",
       "title": "565 Paris. – La Rue Alphonse-de-Neuville (Plaine Monceau)",
-      "creator": "Neurdein Frères",
-      "date": "1900",
-      "dateEnd": "1933",
+      "creator": "Photographer unidentified",
       "dateRole": "creation",
-      "dateQualifier": "approximate",
-      "dateDisplay": "early 20th century",
+      "dateQualifier": "unknown",
+      "dateDisplay": "20th century (museum dating)",
       "repository": "Musée Carnavalet – Histoire de Paris",
-      "publication": "Paris Musées Collections",
+      "publication": "Neurdein Frères",
       "primaryUrl": "https://www.parismuseescollections.paris.fr/fr/musee-carnavalet/oeuvres/565-paris-la-rue-alphonse-de-neuville-plaine-monceau",
-      "accessDate": "2026-07-29",
+      "accessDate": "2026-10-25",
       "reliability": "high",
       "sourceStatus": "verified",
       "slug": "src0574-neurdein-rue-alphonse-de-neuville-paris",
@@ -19913,7 +19923,9 @@
       ],
       "mediaIds": [
         "M277"
-      ]
+      ],
+      "researchNote": "Paris Musées explicitly credits Neurdein Frères as “éditeur” and dates the object only to the twentieth century. It does not identify an individual photographer or establish the former 1900–1933 range. No exact creation or printing year is adopted here. Paris Musées Collections is the access platform, not the original publisher; the inventory’s acquisition date of 20 December 2021 does not date the postcard.",
+      "researchNoteType": "date_assessment"
     },
     {
       "id": "SRC0575",
@@ -19956,9 +19968,8 @@
       "dateRole": "creation",
       "dateQualifier": "confirmed",
       "repository": "Landesarchiv Baden-Württemberg, Staatsarchiv Freiburg",
-      "publication": "Deutsche Digitale Bibliothek",
       "primaryUrl": "https://www.deutsche-digitale-bibliothek.de/item/RLJMYBWL2NGY7GYZHJEMYFUGCYVBHM6X",
-      "accessDate": "2026-07-29",
+      "accessDate": "2026-10-25",
       "reliability": "high",
       "sourceStatus": "verified",
       "slug": "src0576-pragher-kabarett-der-komiker-advertising-1935",
@@ -19970,6 +19981,15 @@
       ],
       "mediaIds": [
         "M279"
+      ],
+      "researchNote": "The DDB record identifies the object as one photograph, dated December 1935, with archival reference Staatsarchiv Freiburg, W 134 Nr. 009917, and names Landesarchiv Baden-Württemberg as its data provider. DDB is the aggregating access service, not an established original publisher of the photograph; the holding institution remains Staatsarchiv Freiburg. The source is retained as a digital collection record, without creating a second record for the same archival object.",
+      "researchNoteType": "verification_note",
+      "additionalLinks": [
+        {
+          "label": "Holding archive record",
+          "url": "https://www.landesarchiv-bw.de/plink/?f=5-91724",
+          "role": "repository_record"
+        }
       ]
     },
     {
@@ -19978,14 +19998,14 @@
       "fullCitation": "“Szkoła im. Staszica, p-g planu arch. M. Kontkiewicza i S. Zaleskiego.” Ilustracya Polska “Wieś i Dwór” 5, nos. 4–5 (30 April 1916). Warsaw: Antoni Hurkiewicz. Biblioteka Jagiellońska, shelfmark 101009 III; digital copy NDIGCZAS082393, Jagiellonian Digital Library.",
       "sourceType": "digital_collection_item",
       "title": "Szkoła im. Staszica",
-      "creator": "Ilustracya Polska “Wieś i Dwór”; Antoni Hurkiewicz (editor)",
+      "creator": "Creator unidentified",
       "date": "1916-04-30",
       "dateRole": "publication",
       "dateQualifier": "confirmed",
       "repository": "Biblioteka Jagiellońska / Jagiellonian Library",
       "publication": "Ilustracya Polska “Wieś i Dwór”, R. 5, nos. 4–5",
       "primaryUrl": "https://jbc.bj.uj.edu.pl/en/dlibra/publication/899158/edition/863138/ilustracya-polska-wies-i-dwor-r-5-1916-zeszyt-4-5",
-      "accessDate": "2026-07-29",
+      "accessDate": "2026-10-25",
       "reliability": "high",
       "sourceStatus": "verified",
       "slug": "src0577-ilustracya-polska-staszic-school-1916",
@@ -19997,7 +20017,9 @@
       ],
       "mediaIds": [
         "M280"
-      ]
+      ],
+      "researchNote": "JBC catalogues Antoni Hurkiewicz as editor and publisher of the periodical, not as creator of this illustration. The printed caption credits M. Kontkiewicz and S. Zaleski for the architectural plan; that does not identify the maker of the reproduced image. The image creator remains unidentified. The date 30 April 1916 is the issue’s publication date, not an independently established date of photography or drawing.",
+      "researchNoteType": "verification_note"
     },
     {
       "id": "SRC0578",
@@ -21096,11 +21118,10 @@
       "title": "Recueil. « L’auberge qui chante » de G. Hirsch et André de Badet, view 8",
       "creator": "Photographer unidentified",
       "repository": "Bibliothèque nationale de France / Gallica",
-      "publication": "Gallica",
       "date": "1941-10-04",
       "dateRole": "described_item",
       "dateQualifier": "confirmed",
-      "accessDate": "2026-08-01",
+      "accessDate": "2026-10-25",
       "reliability": "high",
       "sourceStatus": "verified",
       "slug": "src0618-bnf-auberge-qui-chante-1941-andre-de-badet-portrait",
@@ -21115,8 +21136,15 @@
       ],
       "primaryUrl": "https://gallica.bnf.fr/ark:/12148/btv1b10509544g/f8.item",
       "dateDisplay": "4 October 1941 (performance)",
-      "researchNote": "The date 4 October 1941 identifies the performance at the Gaîté-Lyrique to which the programme relates. It is not an established creation date for the portrait or an independently established publication date for the programme.",
-      "researchNoteType": "date_assessment"
+      "researchNote": "The date 4 October 1941 identifies the performance at the Gaîté-Lyrique to which the programme relates. It is not an established creation date for the portrait or an independently established publication date for the programme. BnF catalogue record FRBNF42642204 describes an assembled archival collection of press cuttings and a programme, dated 1941, held under 8-RSUPP-879. Gallica supplies digital access and records online publication on 29 September 2014; neither date identifies the original portrait photographer or programme publisher.",
+      "researchNoteType": "date_assessment",
+      "additionalLinks": [
+        {
+          "label": "BnF collection catalogue record",
+          "url": "https://catalogue.bnf.fr/ark:/12148/cb426422041",
+          "role": "catalogue_entry"
+        }
+      ]
     },
     {
       "id": "SRC0619",

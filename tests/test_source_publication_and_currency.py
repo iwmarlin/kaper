@@ -18,10 +18,11 @@ class SourcePublicationAndCurrencyTests(unittest.TestCase):
 
     def test_usc_is_not_assigned_as_creator_of_historical_cover(self):
         source = self.sources["SRC0535"]
-        self.assertNotIn("creator", source)
+        self.assertNotIn("University of Southern California", source["creator"])
+        self.assertIn("Ned Washington (lyricist)", source["creator"])
         self.assertEqual(source["repository"], "University of Southern California Digital Library")
         self.assertEqual(normalized_source(dict(source, creator="University of Southern California Digital Library")), source)
-        self.assertIn("creator", self.overrides["records"]["Sources"]["SRC0535"]["removeFields"])
+        self.assertEqual(self.overrides["records"]["Sources"]["SRC0535"]["fields"]["creator"], source["creator"])
 
     def test_blue_venetian_waters_preserves_original_and_digital_publishers(self):
         source = self.sources["SRC0542"]

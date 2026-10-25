@@ -69,6 +69,53 @@ WIKIPEDIA_REPOSITORY_BY_HOST = {
 # explicit: generic Wikimedia normalization must never infer an author or an
 # underlying holding institution from the delivery platform alone.
 VISUAL_SOURCE_FIELDS: dict[str, dict[str, Any]] = {
+    "SRC0535": {
+        "title": "Così, Cosa, 1935 [sheet music, pp. 1 & 6 only]",
+        "creator": "Bronisław Kaper (composer); Walter Jurmann (composer); Ned Washington (lyricist)",
+        "publication": "Robbins Music Corporation, New York",
+        "fullCitation": "Bronisław Kaper and Walter Jurmann, music; Ned Washington, lyrics. “Cosi Cosa.” New York: Robbins Music Corporation (Robbins Popular Standard Series), 1935. Partial sheet music, pp. 1 and 6 only. USC Polish Music Center, Bronisław Kaper Collection, PMC 5/13; USC Digital Library, UC17191660, legacy identifier kaper-sheet-513-partial, publisher number SH 1364-4. Digital publisher: University of Southern California Libraries. DOI 10.25549/pmc_09-03-2026_11-05-25_PM-oUC17191660.",
+        "dateRole": "issue",
+        "primaryUrl": "https://doi.org/10.25549/pmc_09-03-2026_11-05-25_PM-oUC17191660",
+        "accessUrl": "https://digitallibrary.usc.edu/CS.aspx?VP3=DamView&DocRID=2A3BF1X8Z8LXZ",
+        "identifiers": [
+            {
+                "scheme": "doi",
+                "value": "10.25549/pmc_09-03-2026_11-05-25_PM-oUC17191660"
+            }
+        ],
+        "accessDate": "2026-10-25",
+        "researchNote": "USC identifies Robbins Music Corporation as the original publisher, USC Libraries as the digital publisher, and 1935 as both creation and issue year. The structured date records the issue year. The available PDF contains only pages 1 and 6; the linked local image reproduces the cover. The composer and lyricist credits follow the item metadata, not an attribution to the digital repository.",
+        "researchNoteType": "verification_note"
+    },
+    "SRC0574": {
+        "creator": "Photographer unidentified",
+        "publication": "Neurdein Frères",
+        "dateRole": "creation",
+        "dateQualifier": "unknown",
+        "dateDisplay": "20th century (museum dating)",
+        "fullCitation": "Photographer unidentified. “565 Paris. – La Rue Alphonse-de-Neuville (Plaine Monceau).” Illustrated postcard, phototype and letterpress on card, 9 × 14 cm, recto marked “ND Phot”. Neurdein Frères, publisher; dated only to the twentieth century by the museum. Musée Carnavalet – Histoire de Paris, Paris Musées, inventory no. 2021.0.335.",
+        "accessDate": "2026-10-25",
+        "researchNote": "Paris Musées explicitly credits Neurdein Frères as “éditeur” and dates the object only to the twentieth century. It does not identify an individual photographer or establish the former 1900–1933 range. No exact creation or printing year is adopted here. Paris Musées Collections is the access platform, not the original publisher; the inventory’s acquisition date of 20 December 2021 does not date the postcard.",
+        "researchNoteType": "date_assessment"
+    },
+    "SRC0576": {
+        "accessDate": "2026-10-25",
+        "researchNote": "The DDB record identifies the object as one photograph, dated December 1935, with archival reference Staatsarchiv Freiburg, W 134 Nr. 009917, and names Landesarchiv Baden-Württemberg as its data provider. DDB is the aggregating access service, not an established original publisher of the photograph; the holding institution remains Staatsarchiv Freiburg. The source is retained as a digital collection record, without creating a second record for the same archival object.",
+        "researchNoteType": "verification_note",
+        "additionalLinks": [
+            {
+                "label": "Holding archive record",
+                "url": "https://www.landesarchiv-bw.de/plink/?f=5-91724",
+                "role": "repository_record"
+            }
+        ]
+    },
+    "SRC0577": {
+        "creator": "Creator unidentified",
+        "accessDate": "2026-10-25",
+        "researchNote": "JBC catalogues Antoni Hurkiewicz as editor and publisher of the periodical, not as creator of this illustration. The printed caption credits M. Kontkiewicz and S. Zaleski for the architectural plan; that does not identify the maker of the reproduced image. The image creator remains unidentified. The date 30 April 1916 is the issue’s publication date, not an independently established date of photography or drawing.",
+        "researchNoteType": "verification_note"
+    },
     "SRC0417": {
         "fullCitation": "“Kind, ich freu’ mich auf Dein Kommen.” Film poster for the German film released in 1933. Filmportal.de, material record 746992, source credited as “DIF”.",
         "dateRole": "described_item",
@@ -163,7 +210,11 @@ VISUAL_SOURCE_FIELDS: dict[str, dict[str, Any]] = {
         "accessDate": "2026-10-25"
     },
     "SRC0542": {
-        "publication": "Robbins Music Corporation"
+        "publication": "Robbins Music Corporation",
+        "dateRole": "issue",
+        "accessDate": "2026-10-25",
+        "researchNote": "USC gives 1937 as both creation and issue year; the structured date records the issue year. The asset’s Description field incorrectly names “All God's Ciillun Got Rhythm”, whereas its Core Title, inherited title, call number PMC 5/10 and publisher number SH 1572-4 identify “Blue Venetian Waters”. The preserved cover itself reads “Blue Venetian Waters” and credits Gus Kahn, Bronisław Kaper and Walter Jurmann. The citation follows the item identifiers and cover, not the mismatched Description field. Only pages 1 and 6 are available online.",
+        "researchNoteType": "verification_note"
     },
     "SRC0023": {"publication": "Berliner Adreßbuch 1932"},
     "SRC0551": {
@@ -262,9 +313,18 @@ VISUAL_SOURCE_FIELDS: dict[str, dict[str, Any]] = {
         "dateDisplay": "1922 (use)",
     },
     "SRC0618": {
-        # BnF dates the associated performance, not the photograph or printing.
         "dateRole": "described_item",
         "dateDisplay": "4 October 1941 (performance)",
+        "accessDate": "2026-10-25",
+        "researchNote": "The date 4 October 1941 identifies the performance at the Gaîté-Lyrique to which the programme relates. It is not an established creation date for the portrait or an independently established publication date for the programme. BnF catalogue record FRBNF42642204 describes an assembled archival collection of press cuttings and a programme, dated 1941, held under 8-RSUPP-879. Gallica supplies digital access and records online publication on 29 September 2014; neither date identifies the original portrait photographer or programme publisher.",
+        "researchNoteType": "date_assessment",
+        "additionalLinks": [
+            {
+                "label": "BnF collection catalogue record",
+                "url": "https://catalogue.bnf.fr/ark:/12148/cb426422041",
+                "role": "catalogue_entry"
+            }
+        ]
     },
     "SRC0110": {
         # RP 6854 is the aggregate student file containing several documents
@@ -405,10 +465,12 @@ VISUAL_SOURCE_FIELDS: dict[str, dict[str, Any]] = {
 }
 
 VISUAL_SOURCE_FIELD_REMOVALS = {
+    "SRC0574": ('date', 'dateEnd'),
+    "SRC0576": ('publication',),
+    "SRC0618": ('publication',),
     "SRC0417": ('publication',),
     "SRC0439": ('publication',),
     "SRC0579": ('creator',),
-    "SRC0535": ("creator",),
     "SRC0537": ("date", "dateEnd", "dateDisplay"),
     "SRC0523": ("accessUrl",),
 }

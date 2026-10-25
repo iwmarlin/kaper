@@ -576,6 +576,24 @@
       }
     },
     "Sources": {
+      "SRC0576": {
+        "reason": "Final item-level digital collection review: distinguish documented score issues, photographic authorship, historical publishers and digital access; retain unresolved dates without invented precision.",
+        "fields": {
+          "accessDate": "2026-10-25",
+          "researchNote": "The DDB record identifies the object as one photograph, dated December 1935, with archival reference Staatsarchiv Freiburg, W 134 Nr. 009917, and names Landesarchiv Baden-Württemberg as its data provider. DDB is the aggregating access service, not an established original publisher of the photograph; the holding institution remains Staatsarchiv Freiburg. The source is retained as a digital collection record, without creating a second record for the same archival object.",
+          "researchNoteType": "verification_note",
+          "additionalLinks": [
+            {
+              "label": "Holding archive record",
+              "url": "https://www.landesarchiv-bw.de/plink/?f=5-91724",
+              "role": "repository_record"
+            }
+          ]
+        },
+        "removeFields": [
+          "publication"
+        ]
+      },
       "SRC0587": {
         "reason": "Individually verified film chronology and Images Musicales item URLs; remove redundant platform suffixes while preserving source-specific production, release and catalogue-year distinctions.",
         "fields": {
@@ -886,18 +904,33 @@
         }
       },
       "SRC0618": {
-        "reason": "Distinguish the documented performance or printed-card date from the unestablished photography date; retain existing objects, rights and relationships.",
+        "reason": "Final item-level digital collection review: distinguish documented score issues, photographic authorship, historical publishers and digital access; retain unresolved dates without invented precision.",
         "fields": {
           "dateRole": "described_item",
           "dateDisplay": "4 October 1941 (performance)",
-          "researchNote": "The date 4 October 1941 identifies the performance at the Gaîté-Lyrique to which the programme relates. It is not an established creation date for the portrait or an independently established publication date for the programme.",
-          "researchNoteType": "date_assessment"
-        }
+          "researchNote": "The date 4 October 1941 identifies the performance at the Gaîté-Lyrique to which the programme relates. It is not an established creation date for the portrait or an independently established publication date for the programme. BnF catalogue record FRBNF42642204 describes an assembled archival collection of press cuttings and a programme, dated 1941, held under 8-RSUPP-879. Gallica supplies digital access and records online publication on 29 September 2014; neither date identifies the original portrait photographer or programme publisher.",
+          "researchNoteType": "date_assessment",
+          "accessDate": "2026-10-25",
+          "additionalLinks": [
+            {
+              "label": "BnF collection catalogue record",
+              "url": "https://catalogue.bnf.fr/ark:/12148/cb426422041",
+              "role": "catalogue_entry"
+            }
+          ]
+        },
+        "removeFields": [
+          "publication"
+        ]
       },
       "SRC0577": {
-        "reason": "The date identifies the printed publication, not an independently documented creation date of the reproduced image.",
+        "reason": "Final item-level digital collection review: distinguish documented score issues, photographic authorship, historical publishers and digital access; retain unresolved dates without invented precision.",
         "fields": {
-          "dateRole": "publication"
+          "dateRole": "publication",
+          "creator": "Creator unidentified",
+          "accessDate": "2026-10-25",
+          "researchNote": "JBC catalogues Antoni Hurkiewicz as editor and publisher of the periodical, not as creator of this illustration. The printed caption credits M. Kontkiewicz and S. Zaleski for the architectural plan; that does not identify the maker of the reproduced image. The image creator remains unidentified. The date 30 April 1916 is the issue’s publication date, not an independently established date of photography or drawing.",
+          "researchNoteType": "verification_note"
         }
       },
       "SRC0684": {
@@ -3377,14 +3410,28 @@
         }
       },
       "SRC0535": {
-        "reason": "Normalize the source type and use the historical sheet-music object's publication year as date; the undated status of the later digital record remains implicit in its citation.",
+        "reason": "Final item-level digital collection review: distinguish documented score issues, photographic authorship, historical publishers and digital access; retain unresolved dates without invented precision.",
         "fields": {
           "date": "1935",
-          "sourceType": "digital_collection_item"
+          "sourceType": "digital_collection_item",
+          "title": "Così, Cosa, 1935 [sheet music, pp. 1 & 6 only]",
+          "creator": "Bronisław Kaper (composer); Walter Jurmann (composer); Ned Washington (lyricist)",
+          "publication": "Robbins Music Corporation, New York",
+          "fullCitation": "Bronisław Kaper and Walter Jurmann, music; Ned Washington, lyrics. “Cosi Cosa.” New York: Robbins Music Corporation (Robbins Popular Standard Series), 1935. Partial sheet music, pp. 1 and 6 only. USC Polish Music Center, Bronisław Kaper Collection, PMC 5/13; USC Digital Library, UC17191660, legacy identifier kaper-sheet-513-partial, publisher number SH 1364-4. Digital publisher: University of Southern California Libraries. DOI 10.25549/pmc_09-03-2026_11-05-25_PM-oUC17191660.",
+          "dateRole": "issue",
+          "primaryUrl": "https://doi.org/10.25549/pmc_09-03-2026_11-05-25_PM-oUC17191660",
+          "accessUrl": "https://digitallibrary.usc.edu/CS.aspx?VP3=DamView&DocRID=2A3BF1X8Z8LXZ",
+          "identifiers": [
+            {
+              "scheme": "doi",
+              "value": "10.25549/pmc_09-03-2026_11-05-25_PM-oUC17191660"
+            }
+          ],
+          "accessDate": "2026-10-25",
+          "researchNote": "USC identifies Robbins Music Corporation as the original publisher, USC Libraries as the digital publisher, and 1935 as both creation and issue year. The structured date records the issue year. The available PDF contains only pages 1 and 6; the linked local image reproduces the cover. The composer and lyricist credits follow the item metadata, not an attribution to the digital repository.",
+          "researchNoteType": "verification_note"
         },
-        "removeFields": [
-          "creator"
-        ]
+        "removeFields": []
       },
       "SRC0537": {
         "reason": "Preserve source-specific qualification: platform contributors are not image creators; distinguish unresolved metadata dates, publication dates and attributed authorship.",
@@ -3424,10 +3471,22 @@
         }
       },
       "SRC0574": {
-        "reason": "Keep the Paris Musées object citation bibliographic and retain the CC0 declaration exclusively with the linked medium.",
+        "reason": "Final item-level digital collection review: distinguish documented score issues, photographic authorship, historical publishers and digital access; retain unresolved dates without invented precision.",
         "fields": {
-          "fullCitation": "Neurdein Frères. “565 Paris. – La Rue Alphonse-de-Neuville (Plaine Monceau).” Illustrated postcard, phototype on card, early twentieth century. Musée Carnavalet – Histoire de Paris, Paris Musées, inventory no. 2021.0.335."
-        }
+          "fullCitation": "Photographer unidentified. “565 Paris. – La Rue Alphonse-de-Neuville (Plaine Monceau).” Illustrated postcard, phototype and letterpress on card, 9 × 14 cm, recto marked “ND Phot”. Neurdein Frères, publisher; dated only to the twentieth century by the museum. Musée Carnavalet – Histoire de Paris, Paris Musées, inventory no. 2021.0.335.",
+          "creator": "Photographer unidentified",
+          "publication": "Neurdein Frères",
+          "dateRole": "creation",
+          "dateQualifier": "unknown",
+          "dateDisplay": "20th century (museum dating)",
+          "accessDate": "2026-10-25",
+          "researchNote": "Paris Musées explicitly credits Neurdein Frères as “éditeur” and dates the object only to the twentieth century. It does not identify an individual photographer or establish the former 1900–1933 range. No exact creation or printing year is adopted here. Paris Musées Collections is the access platform, not the original publisher; the inventory’s acquisition date of 20 December 2021 does not date the postcard.",
+          "researchNoteType": "date_assessment"
+        },
+        "removeFields": [
+          "date",
+          "dateEnd"
+        ]
       },
       "SRC0575": {
         "reason": "Use the independently verified Cinémathèque de Toulouse digital-periodical record as the institutional source and retain La Belle Équipe as a convenient page-level reproduction and transcription.",
@@ -3778,10 +3837,14 @@
         }
       },
       "SRC0542": {
-        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "reason": "Final item-level digital collection review: distinguish documented score issues, photographic authorship, historical publishers and digital access; retain unresolved dates without invented precision.",
         "fields": {
           "sourceType": "digital_collection_item",
-          "publication": "Robbins Music Corporation"
+          "publication": "Robbins Music Corporation",
+          "dateRole": "issue",
+          "accessDate": "2026-10-25",
+          "researchNote": "USC gives 1937 as both creation and issue year; the structured date records the issue year. The asset’s Description field incorrectly names “All God's Ciillun Got Rhythm”, whereas its Core Title, inherited title, call number PMC 5/10 and publisher number SH 1572-4 identify “Blue Venetian Waters”. The preserved cover itself reads “Blue Venetian Waters” and credits Gus Kahn, Bronisław Kaper and Walter Jurmann. The citation follows the item identifiers and cover, not the mismatched Description field. Only pages 1 and 6 are available online.",
+          "researchNoteType": "verification_note"
         }
       },
       "SRC0545": {
@@ -4268,6 +4331,15 @@
       }
     },
     "Media": {
+      "M277": {
+        "reason": "Final item-level digital collection review: distinguish documented score issues, photographic authorship, historical publishers and digital access; retain unresolved dates without invented precision.",
+        "fields": {
+          "description": "Undated postcard view of rue Alphonse-de-Neuville in the Plaine Monceau quarter of Paris, catalogued by Musée Carnavalet as twentieth century. It provides street context for the Polish Consulate General, located at number 19 in the late 1920s and 1930s; the postcard does not establish that the consulate building itself is visible.",
+          "publicCaption": "Rue Alphonse-de-Neuville, Plaine Monceau, Paris. Undated postcard; museum dating: twentieth century. The Polish Consulate General was located at number 19 in the late 1920s and 1930s.",
+          "altText": "Postcard showing rue Alphonse-de-Neuville in Paris, lined with town houses, with horse-drawn carriages and pedestrians.",
+          "publicCreditLine": "Neurdein Frères (publisher) / Musée Carnavalet – Histoire de Paris, Paris Musées, CC0."
+        }
+      },
       "M377": {
         "reason": "Qualify uploader-only performance and label claims while preserving independently corroborated catalogue and discographic evidence.",
         "fields": {
@@ -5030,12 +5102,13 @@
         }
       },
       "M218": {
-        "reason": "Follow the USC Digital Library item-level RightsStatements.org status and educational-use condition, and remove the unsupported public fair-use claim.",
+        "reason": "Final item-level digital collection review: distinguish documented score issues, photographic authorship, historical publishers and digital access; retain unresolved dates without invented precision.",
         "fields": {
           "rightsStatus": "copyright_undetermined",
           "rightsNote": "The USC Digital Library assigns RightsStatements.org Copyright Undetermined (UND 1.0) and limits the partial score to educational use; no broader reuse licence is supplied.",
-          "publicCreditLine": "University of Southern California Digital Library, DamView record DocRID 2A3BF1X8Z8LXZ; Copyright Undetermined (UND 1.0), educational use only. Bibliographic identification verified against the U.S. Copyright Office Catalog of Copyright Entries (1935).",
-          "galleryStatus": "detail_only"
+          "publicCreditLine": "USC Polish Music Center, Bronisław Kaper Collection, PMC 5/13; digital reproduction: USC Digital Library, UC17191660. Copyright Undetermined (UND 1.0), educational use only. Bibliographic identification also supported by the U.S. Copyright Office catalogue.",
+          "galleryStatus": "detail_only",
+          "externalUrl": "https://doi.org/10.25549/pmc_09-03-2026_11-05-25_PM-oUC17191660"
         }
       },
       "M241": {
