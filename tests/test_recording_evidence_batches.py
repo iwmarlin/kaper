@@ -14,6 +14,13 @@ REPORTED = {
     "SRC0730": "1933", "SRC0735": "1933", "SRC0746": "1932",
     "SRC0755": "1932", "SRC0758": "1930",
 }
+# The original upload batch remains the scope for its credit-edge checks.
+# Later individual verification can refine dates without confirming those edges.
+REVIEWED_DATES = {
+    "SRC0719": ("1932-05", "reported"),
+    "SRC0729": ("1935-05-06", "confirmed"),
+    "SRC0755": ("1932-03", "reported"),
+}
 REISSUE_CREDITS = [
     "CON-S084-P-P164", "CON-S084-CON-P165", "CON-S084-P-ORG119",
     "CON-S058-P-P164", "CON-S058-CON-P165", "CON-S058-P-ORG119",
@@ -39,13 +46,14 @@ class RecordingEvidenceBatchTests(unittest.TestCase):
     def load(table):
         return {r["id"]: r for r in json.loads((ROOT / f"data/public/v1/{table}.json").read_text())["records"]}
 
-    def test_eight_upload_dates_are_reported_without_changing_the_year(self):
+    def test_upload_dates_preserve_qualifications_or_individual_verification(self):
         for source_id, year in REPORTED.items():
             with self.subTest(source=source_id):
                 source = self.sources[source_id]
-                self.assertEqual(source["date"], year)
-                self.assertEqual(source["dateQualifier"], "reported")
-                self.assertIn("upload", source["fullCitation"].lower())
+                date, qualifier = REVIEWED_DATES.get(source_id, (year, "reported"))
+                self.assertEqual(source["date"], date)
+                self.assertEqual(source["dateQualifier"], qualifier)
+                self.assertIn("YouTube", source["fullCitation"])
                 self.assertNotIn("label credits", source["fullCitation"])
                 self.assertEqual(normalized_source(dict(source, dateQualifier="confirmed", fullCitation="Old citation")), source)
 

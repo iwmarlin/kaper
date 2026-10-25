@@ -148,6 +148,65 @@ AUDITED_DIGITAL_AUDIO_FIELDS: dict[str, dict[str, Any]] = {
 
 
 RECORDING_FIELDS: dict[str, dict[str, Any]] = {
+    "SRC0719": {
+        "date": "1932-05",
+        "dateRole": "recording",
+        "dateQualifier": "reported",
+        "dateDisplay": "c. May 1932",
+        "accessDate": "2026-10-25",
+        "fullCitation": "Ilja Livschakoff Tanzorchester. “Ein Lied aus meiner Heimat.” Slowfox from Melodie der Liebe. YouTube transfer; the uploader identifies Polydor 24604, matrix 4735 BD VII, and reports a Berlin recording session around May 1932.",
+        "researchNote": "The catalogue number, matrix, performer and film identification are supplied by the uploader; they have not been independently corroborated for this transfer. The description explicitly says “Aufnahme: Berlin, ca. Mai 1932”, so the source date describes an approximate reported recording session, not an issue date. Other recordings of the song, including the Rosvaenge/Livschakoff master 4733 ½ BD, are not evidence for matrix 4735 BD VII.",
+        "researchNoteType": "discographic_note"
+    },
+    "SRC0729": {
+        "date": "1935-05-06",
+        "dateRole": "recording",
+        "dateQualifier": "confirmed",
+        "accessDate": "2026-10-25",
+        "fullCitation": "Ted Fio Rito and his orchestra. “Love Song of Tahiti.” Brunswick 7446, matrix C971; recorded 6 May 1935. YouTube transfer published by Croonr1, who identifies the vocals as Muzzy Marcellino with The Debutantes and credits music to Bronislaw Kaper and Walter Jurmann and words to Gus Kahn.",
+        "researchNote": "The independent Brunswick 7300 Series Numerical Listing identifies “Love Song of Tahiti” by Ted Fio Rito on Brunswick 7446, matrix C971, dated 6 May 1935; the coupled side is “You’re All I Need”, matrix C972, from the same session. The source date describes that recording session, not the commercial issue date. The upload identifies the transfer as Brunswick 7446, but does not show the label; the particular transferred copy and take remain unverified. The vocal identification and authorship statement are supplied by the uploader, not by that numerical listing.",
+        "researchNoteType": "discographic_note",
+        "additionalLinks": [
+            {
+                "label": "Brunswick 7300 Series Numerical Listing — 7446, matrix C971",
+                "url": "https://www.78discography.com/BRN7300.htm",
+                "role": "additional_evidence"
+            }
+        ]
+    },
+    "SRC0746": {
+        "dateRole": "described_item",
+        "dateQualifier": "reported",
+        "accessDate": "2026-10-25",
+        "fullCitation": "Melody Gents with orchestra. “Wer weint heut’ aus Liebe Tränen?” Slowfox from Ehe mit beschränkter Haftung. YouTube transfer; the uploader identifies Gloria G.O. 10197 b, matrix Bi 412, and gives 1932 in the video title.",
+        "researchNote": "The label, matrix, performer and authorship details are supplied by the uploader; they have not been independently corroborated for this transfer. The description credits music to Dr. Bronislaw Kaper and Walter Jurmann and words to Fritz Rotter. The year 1932 appears in the video title without specifying a recording or issue date, so it is retained only as a reported date of the described item. Entries for other performers and matrices of this song are not used to date or identify this transfer.",
+        "researchNoteType": "discographic_note"
+    },
+    "SRC0755": {
+        "date": "1932-03",
+        "dateRole": "recording",
+        "dateQualifier": "reported",
+        "dateDisplay": "c. March 1932",
+        "accessDate": "2026-10-25",
+        "fullCitation": "Marek Weber und sein Orchester. “Ganz ohne Liebe wär’ das Leben so bescheiden.” Fox-trot with refrain vocal; music by Walter Jurmann and Bronislaw Kaper, words by Fritz Rotter. Electrola E.G. 2532. YouTube transfer by Underlabelcrack; the uploader reports matrix OD 879-2 and a Berlin recording session around March 1932.",
+        "researchNote": "R. Pfau’s Lexikon der deutschen Tanzmusik, part 3, printed p. 321, independently lists this title, its Kaper–Jurmann/Rotter credit, the film Skandal in der Parkstraße and “EG 2532 Marek Weber”. Its general year 1932 is not a separately documented issue or session date. The approximate March 1932 Berlin session and matrix OD 879-2 remain uploader-supplied. The uploader tentatively names the refrain singer as “John Hendrick”; this is not treated as a confirmed singer identification. The particular transferred pressing and take remain unverified.",
+        "researchNoteType": "discographic_note",
+        "additionalLinks": [
+            {
+                "label": "R. Pfau, Lexikon der deutschen Tanzmusik, part 3, p. 321",
+                "url": "https://www.db-thueringen.de/servlets/MCRFileNodeServlet/dbt_derivate_00060559/Pfau_Lexikon_deutschen_Tanzmusik_003.pdf#page=54",
+                "role": "additional_evidence"
+            }
+        ]
+    },
+    "SRC0758": {
+        "dateRole": "recording",
+        "dateQualifier": "reported",
+        "accessDate": "2026-10-25",
+        "fullCitation": "Kurt Mühlhardt with Bernard Etté und sein Orchester, as identified by the uploader. “Sagen kleine Mädels ‘nein’.” Waltz from Der Korvettenkapitän. YouTube transfer by Wunschkonzert; the description gives “Kristall 78N”, reports “Aufnahme 1930” and credits music to Bronislaw Kaper and words to Fritz Rotter and Armin Lackenbach Robinson.",
+        "researchNote": "The performer identification, Kristall attribution and year come from the upload description and have not been independently corroborated for this transfer. “Aufnahme 1930” describes a reported recording year, not a separately established issue date. The designation “Kristall 78N” is preserved as supplied; it has not been independently established as a catalogue number. The description also identifies Kurt Mühlhardt with the recording name Kurt Hardt. Other recordings of the song are not used to identify this transfer.",
+        "researchNoteType": "discographic_note"
+    },
     "SRC0633": {
         "date": "1930",
         "dateRole": "issue",
@@ -385,13 +444,13 @@ AUDITED_RECORDING_CITATIONS = {
     "SRC0738": "“Zgaś lampę!” Shimmy. YouTube audio reference published by jurek46pink; the upload identifies Henryk Gold and his ensemble.",
     "SRC0790": "“Du liebst mich nicht mehr.” Slow-Fox. Digital transfer published on YouTube by Radiomuseum Hardthausen; the upload identifies Tanz-Orchester Dajos Béla, Odeon O-11667 (1932), and a music credit to “Bob Henders”.",
     "SRC0713": "Marek Weber und sein Orchester, vocal by John Hendrik. “Du bist in meinem Leben die erste Sensation.” Tango. Digital transfer on YouTube; the uploader identifies Electrola E.G. 2508 and gives the year as 1932.",
-    "SRC0719": "Ilja Livschakoff Tanzorchester. “Ein Lied aus meiner Heimat.” Slowfox. Digital transfer on YouTube; the uploader identifies Polydor 24604 and gives the year as 1932.",
-    "SRC0729": "Ted Fio Rito and his orchestra, vocal by Muzzy Marcellino and The Debutantes. “Love Song of Tahiti.” Music by Bronislaw Kaper and Walter Jurmann; words by Gus Kahn. YouTube transfer published by Croonr1; the upload identifies Brunswick 7446, 78 rpm, and gives the year as 1935.",
+    "SRC0719": "Ilja Livschakoff Tanzorchester. “Ein Lied aus meiner Heimat.” Slowfox from Melodie der Liebe. YouTube transfer; the uploader identifies Polydor 24604, matrix 4735 BD VII, and reports a Berlin recording session around May 1932.",
+    "SRC0729": "Ted Fio Rito and his orchestra. “Love Song of Tahiti.” Brunswick 7446, matrix C971; recorded 6 May 1935. YouTube transfer published by Croonr1, who identifies the vocals as Muzzy Marcellino with The Debutantes and credits music to Bronislaw Kaper and Walter Jurmann and words to Gus Kahn.",
     "SRC0730": "Jan Kiepura with the Odeon-Künstler-Orchester under Dr. Weissmann. “Ninon”, from Ein Lied für dich; music by Walter Jurmann and Dr. Bronislaw Kaper, words by Fritz Rotter and Ernst Marischka. YouTube transfer published by 78Upm; the upload describes an Odeon red-label issue and gives the year as 1933.",
     "SRC0735": "Bernhard Etté mit seinem Tanz-Orchester, vocal by Wolfgang Schmidt. “Adieu es ist zu schön um wahr zu sein.” Tango by Walter Jurmann, Bronislaw Kaper and Fritz Rotter from Abenteuer am Lido. YouTube transfer published by Radiomuseum Hardthausen; the upload dates the recording to 1933.",
-    "SRC0746": "Melody Gents with orchestra. “Wer weint heut’ aus Liebe Tränen?” Slowfox from Ehe mit beschränkter Haftung. YouTube transfer uploaded 19 June 2014; the upload identifies Gloria G.O. 10197, side b, matrix Bi 412, and gives the year as 1932.",
-    "SRC0755": "Marek Weber und sein Orchester. “Ganz ohne Liebe wär’ das Leben so bescheiden.” Fox-trot with refrain vocal. Digital transfer on YouTube; the upload identifies Electrola E.G. 2532, gives the year as 1932 and credits Jurmann and Kaper with music and Fritz Rotter with words.",
-    "SRC0758": "Kurt Mühlhardt with Bernard Etté und sein Orchester. “Sagen kleine Mädels ‘nein’.” Waltz from Der Korvettenkapitän. Digital transfer on YouTube; the upload identifies Kristall 78N, gives the year as 1930 and credits Bronislaw Kaper, Fritz Rotter and Armin Lackenbach Robinson.",
+    "SRC0746": "Melody Gents with orchestra. “Wer weint heut’ aus Liebe Tränen?” Slowfox from Ehe mit beschränkter Haftung. YouTube transfer; the uploader identifies Gloria G.O. 10197 b, matrix Bi 412, and gives 1932 in the video title.",
+    "SRC0755": "Marek Weber und sein Orchester. “Ganz ohne Liebe wär’ das Leben so bescheiden.” Fox-trot with refrain vocal; music by Walter Jurmann and Bronislaw Kaper, words by Fritz Rotter. Electrola E.G. 2532. YouTube transfer by Underlabelcrack; the uploader reports matrix OD 879-2 and a Berlin recording session around March 1932.",
+    "SRC0758": "Kurt Mühlhardt with Bernard Etté und sein Orchester, as identified by the uploader. “Sagen kleine Mädels ‘nein’.” Waltz from Der Korvettenkapitän. YouTube transfer by Wunschkonzert; the description gives “Kristall 78N”, reports “Aufnahme 1930” and credits music to Bronislaw Kaper and words to Fritz Rotter and Armin Lackenbach Robinson.",
     "SRC0707": "Marek Weber und sein Orchester, refrain sung by Austin Egen. “Tränen weint jede Frau so gern.” Tango. Digital transfer on YouTube; the upload identifies His Master’s Voice / Electrola and gives the year as 1929.",
     "SRC0759": "Orkiestra taneczna. “San Francisco.” Foxtrot. Digital transfer on YouTube; the upload identifies Syrena Record, gives the year as 1937 and credits Bronisław Kaper and Walter Jurmann with music and Emanuel Schlechter with Polish words.",
     "SRC0740": (
