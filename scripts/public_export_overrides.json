@@ -576,6 +576,42 @@
       }
     },
     "Sources": {
+      "SRC0710": {
+        "reason": "Correct the date role to issue as explicitly described in the existing citation or research note; preserve the date, qualifier, citation and graph relationships.",
+        "fields": {
+          "dateRole": "issue"
+        }
+      },
+      "SRC0712": {
+        "reason": "Correct the date role to issue as explicitly described in the existing citation or research note; preserve the date, qualifier, citation and graph relationships.",
+        "fields": {
+          "dateRole": "issue"
+        }
+      },
+      "SRC0718": {
+        "reason": "Correct the date role to issue as explicitly described in the existing citation or research note; preserve the date, qualifier, citation and graph relationships.",
+        "fields": {
+          "dateRole": "issue"
+        }
+      },
+      "SRC0724": {
+        "reason": "Correct the date role to issue as explicitly described in the existing citation or research note; preserve the date, qualifier, citation and graph relationships.",
+        "fields": {
+          "dateRole": "issue"
+        }
+      },
+      "SRC0792": {
+        "reason": "Correct the date role to publication as explicitly described in the existing citation or research note; preserve the date, qualifier, citation and graph relationships.",
+        "fields": {
+          "dateRole": "publication"
+        }
+      },
+      "SRC0807": {
+        "reason": "Correct the date role to recording as explicitly described in the existing citation or research note; preserve the date, qualifier, citation and graph relationships.",
+        "fields": {
+          "dateRole": "recording"
+        }
+      },
       "SRC0576": {
         "reason": "Final item-level digital collection review: distinguish documented score issues, photographic authorship, historical publishers and digital access; retain unresolved dates without invented precision.",
         "fields": {
