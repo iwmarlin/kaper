@@ -48,6 +48,35 @@ class PortraitProvenanceConsistencyTests(unittest.TestCase):
         self.assertIn("In 1938", caption)
         self.assertNotIn("following year", caption)
 
+    def test_tauber_publisher_is_not_assigned_as_photographer(self):
+        source = self.sources["SRC0551"]
+        self.assertEqual(source["creator"], "Photographer unidentified")
+        self.assertEqual(source["publication"], "Bain News Service")
+        self.assertIn("George Grantham Bain Collection", source["repository"])
+        self.assertNotIn("photographed by the Bain", self.media["M229"]["publicCaption"])
+        self.assertIn("Bain News Service, publisher", self.media["M229"]["publicCreditLine"])
+        self.assertEqual(normalized_source(dict(source, creator="Bain News Service (publisher)")), source)
+
+    def test_lloyd_institutional_attribution_is_retained_and_qualified(self):
+        source = self.sources["SRC0621"]
+        self.assertEqual(source["creator"], "Academy of Motion Picture Arts and Sciences")
+        self.assertIn("no individual photographer", source["researchNote"])
+        self.assertIn("attribution is retained", source["researchNote"])
+
+    def test_salter_title_keeps_the_approximation(self):
+        self.assertIn("c. 1940s", self.media["M346"]["title"])
+
+    def test_film_still_and_publicity_card_share_one_family(self):
+        self.assertEqual(self.media["M214"]["category"], "film still / publicity card")
+        self.assertEqual(self.media["M076"]["category"], self.media["M214"]["category"])
+        source = self.sources["SRC0400"]
+        self.assertEqual(source["creator"], "Metro-Goldwyn-Mayer")
+        self.assertEqual(normalized_source(dict(source, creator="Trailer frame, Metro-Goldwyn-Mayer")), source)
+        gallery = (ROOT / "assets/site/gallery.js").read_text()
+        self.assertIn('"film still / publicity card": "Film stills and cards"', gallery)
+        self.assertIn('initialUrl.searchParams.get("category") === "lobby card / title card"', gallery)
+        self.assertIn('initialUrl.searchParams.set("category", "film still / publicity card")', gallery)
+
 
 if __name__ == "__main__":
     unittest.main()

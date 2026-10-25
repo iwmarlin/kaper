@@ -68,6 +68,20 @@ WIKIPEDIA_REPOSITORY_BY_HOST = {
 # explicit: generic Wikimedia normalization must never infer an author or an
 # underlying holding institution from the delivery platform alone.
 VISUAL_SOURCE_FIELDS: dict[str, dict[str, Any]] = {
+    "SRC0551": {
+        "creator": "Photographer unidentified",
+        "publication": "Bain News Service",
+        "repository": "Library of Congress, Prints and Photographs Division, George Grantham Bain Collection"
+    },
+    "SRC0400": {
+        "creator": "Metro-Goldwyn-Mayer",
+        "publication": "Metro-Goldwyn-Mayer"
+    },
+    "SRC0621": {
+        "researchNote": "The Commons file page attributes the photograph to the Academy of Motion Picture Arts and Sciences and cites the Academy’s 1930 ceremony page as its source. This institutional attribution is retained as stated by the file page; no individual photographer is identified there.",
+        "researchNoteType": "verification_note",
+        "accessDate": "2026-10-25"
+    },
     "SRC0612": {
         "creator": "Photographer unidentified",
         "publication": "Bain News Service",

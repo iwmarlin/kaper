@@ -2540,7 +2540,9 @@
         "reason": "Normalize the sourceType controlled vocabulary and the access date format.",
         "fields": {
           "accessDate": "2026-07-08",
-          "sourceType": "wikimedia_commons_file"
+          "sourceType": "wikimedia_commons_file",
+          "creator": "Metro-Goldwyn-Mayer",
+          "publication": "Metro-Goldwyn-Mayer"
         }
       },
       "SRC0403": {
@@ -3193,7 +3195,10 @@
       "SRC0621": {
         "reason": "Keep the Academy photograph citation bibliographic and retain the public-domain tag and term analysis exclusively with the linked medium.",
         "fields": {
-          "fullCitation": "Academy of Motion Picture Arts and Sciences. Photograph of Frank Lloyd holding the Best Director award for The Divine Lady, second Academy Awards ceremony, 3 April 1930. Published by the Academy at oscars.org and republished on Wikimedia Commons. Accessed 1 August 2026."
+          "fullCitation": "Academy of Motion Picture Arts and Sciences. Photograph of Frank Lloyd holding the Best Director award for The Divine Lady, second Academy Awards ceremony, 3 April 1930. Published by the Academy at oscars.org and republished on Wikimedia Commons. Accessed 1 August 2026.",
+          "researchNote": "The Commons file page attributes the photograph to the Academy of Motion Picture Arts and Sciences and cites the Academy’s 1930 ceremony page as its source. This institutional attribution is retained as stated by the file page; no individual photographer is identified there.",
+          "researchNoteType": "verification_note",
+          "accessDate": "2026-10-25"
         }
       },
       "SRC0646": {
@@ -3503,7 +3508,10 @@
       "SRC0551": {
         "reason": "Normalize the Library of Congress approximate date range while preserving its uncertainty and range.",
         "fields": {
-          "date": "ca. 1920–1925"
+          "date": "ca. 1920–1925",
+          "creator": "Photographer unidentified",
+          "publication": "Bain News Service",
+          "repository": "Library of Congress, Prints and Photographs Division, George Grantham Bain Collection"
         }
       },
       "SRC0553": {
@@ -3880,6 +3888,12 @@
       }
     },
     "Media": {
+      "M214": {
+        "reason": "Separate publisher and photographer, retain qualified institutional attribution and align still/card classification and approximate dating.",
+        "fields": {
+          "category": "film still / publicity card"
+        }
+      },
       "M262": {
         "reason": "Reconcile image provenance and date evidence; separate uploader and photographer and correct the Garland chronology.",
         "fields": {
@@ -4055,7 +4069,8 @@
           "rightsStatus": "restricted",
           "rightsNote": "Cinefantastique, vol. 7, no. 2 (1978), remains in copyright and the portrait carries no photographer credit or separate licence. Reuse requires permission or another applicable legal basis.",
           "publicCreditLine": "Photographer unidentified; Cinefantastique 7, no. 2 (Summer 1978), p. 10; digitized copy at Internet Archive.",
-          "galleryStatus": "detail_only"
+          "galleryStatus": "detail_only",
+          "title": "Hans J. Salter, c. 1940s — Cinefantastique, 1978"
         }
       },
       "M264": {
@@ -4794,7 +4809,9 @@
         "reason": "Assign a public editorial category so the media card footer shows a category rather than a gallery status.",
         "fields": {
           "category": "portrait",
-          "rightsNote": "Public domain: the Library of Congress reports no known restrictions on publication. Credit Bain News Service / Library of Congress Prints and Photographs Division (George Grantham Bain Collection), ggbain.34209."
+          "rightsNote": "Public domain: the Library of Congress reports no known restrictions on publication. Credit Bain News Service / Library of Congress Prints and Photographs Division (George Grantham Bain Collection), ggbain.34209.",
+          "publicCaption": "Richard Tauber, who recorded “Schade, daß Liebe ein Märchen ist” by Kaper and Jurmann in 1932. Portrait dated c. 1920–1925; Bain News Service is identified as publisher, not as the photographer.",
+          "publicCreditLine": "Photographer unidentified; Bain News Service, publisher; Library of Congress, Prints and Photographs Division, George Grantham Bain Collection, ggbain.34209."
         }
       },
       "M227": {
@@ -5027,7 +5044,8 @@
         "fields": {
           "rightsStatus": "copyright_undetermined",
           "galleryStatus": "detail_only",
-          "rightsNote": "English Wikipedia reproduces this 1936 Universal lobby card without supplying a transferable free licence; the original United States publication and renewal history have not been verified. The copyright status is therefore undetermined and the local copy is confined to the film record."
+          "rightsNote": "English Wikipedia reproduces this 1936 Universal lobby card without supplying a transferable free licence; the original United States publication and renewal history have not been verified. The copyright status is therefore undetermined and the local copy is confined to the film record.",
+          "category": "film still / publicity card"
         }
       },
       "M077": {

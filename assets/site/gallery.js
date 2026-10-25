@@ -1,4 +1,4 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=d68e4edec8";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=a024e87146";
 import {
   debounce,
   humanize,
@@ -11,15 +11,15 @@ import {
   periodValues,
   renderError,
   rightsLabel,
-} from "./core.js?v=d68e4edec8";
-import { createCatalogueFilters } from "./catalogue-filters.js?v=d68e4edec8";
+} from "./core.js?v=a024e87146";
+import { createCatalogueFilters } from "./catalogue-filters.js?v=a024e87146";
 import {
   curatedMediaOrder,
   registerCatalogueImageDerivatives,
   renderMediaIndexCard,
   renderMediaResultsCount,
   sortMediaIndex,
-} from "./catalogue-results.js?v=d68e4edec8";
+} from "./catalogue-results.js?v=a024e87146";
 
 registerCatalogueImageDerivatives(IMAGE_DERIVATIVES);
 mountSiteChrome("media");
@@ -49,7 +49,7 @@ const CATEGORY_LABELS = {
   "archival document": "Archival documents",
   "trade advertisement": "Trade advertisements",
   "document gallery": "Document galleries",
-  "lobby card / title card": "Lobby and title cards",
+  "film still / publicity card": "Film stills and cards",
   "event photograph": "Event photographs",
 };
 // The rights filter lists every status the data uses, most reusable first,
@@ -224,6 +224,12 @@ try {
     toggleLabel: "Filters",
     indexType: "media",
   });
+  // Preserve bookmarks made before this family also included trailer frames.
+  const initialUrl = new URL(window.location.href);
+  if (initialUrl.searchParams.get("category") === "lobby card / title card") {
+    initialUrl.searchParams.set("category", "film still / publicity card");
+    window.history.replaceState(window.history.state, "", initialUrl);
+  }
   filterController.read();
   controls.search.addEventListener("input", debounce(startDiscovery));
   for (const control of [controls.category, controls.period, controls.rights]) control.addEventListener("change", startDiscovery);
