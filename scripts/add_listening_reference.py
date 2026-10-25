@@ -283,10 +283,9 @@ def apply_disc(media: dict, source: dict, *, disc: dict, work_title: str, host: 
     order = disc.get("order_number") or ""
     performer = disc.get("performer_credit") or ""
     from_description = bool(disc.get("from_description"))
-    # A digitising library that catalogues the disc it transfers — the Great 78
-    # Project and its like — reads the label for us. The evidence is still the
-    # disc, but the recording shows nothing, so the records must not claim a
-    # label in view.
+    # Metadata provenance is not a visual inspection. A digitising library may
+    # supply audio together with label photographs, so catalogued_by must not
+    # imply either the presence or absence of an image.
     catalogued_by = (disc.get("catalogued_by") or "").strip()
     repository = disc.get("repository") or (
         "" if (from_description or catalogued_by) else RADIOMUSEUM_REPOSITORY
@@ -337,8 +336,7 @@ def apply_disc(media: dict, source: dict, *, disc: dict, work_title: str, host: 
         )
     elif catalogued_by:
         research_notes.append(
-            f"The discographic details were catalogued from the disc by {catalogued_by}; "
-            "the transfer carries sound alone, so the label is not shown in the external recording."
+            f"The discographic metadata are supplied by {catalogued_by}."
         )
     catalogued = f"{label} {catalogue}".strip()
     separator = " / " if catalogue else ", "
@@ -392,9 +390,9 @@ def apply_disc(media: dict, source: dict, *, disc: dict, work_title: str, host: 
         media["publicCaption"] = (
             f"Listening reference for “{work_title}”"
             + (f" in the recording by {performer}" if performer else "")
-            + f". {catalogued_by} transferred the disc and catalogued it from the label as {reference}"
-            + (f", which prints the credit{'s' if ' and ' in printed else ''} {printed}" if printed else "")
-            + "; the transfer carries sound alone."
+            + f". {catalogued_by} provides the transfer, catalogued as {reference}"
+            + (f", with the catalogued credit{'s' if ' and ' in printed else ''} {printed}" if printed else "")
+            + "."
         )
     else:
         media["description"] = (
@@ -847,9 +845,8 @@ def main() -> int:
                       help="the label is not shown in the upload and the numbers come from its "
                            "description: reliability drops to medium and the record says so")
     disc.add_argument("--catalogued-by",
-                      help="digitising library that transferred the disc and catalogued it from the "
-                           "label, e.g. “the Great 78 Project”: the evidence stays the disc, but the "
-                           "records say that the transfer carries sound alone")
+                      help="source of the discographic metadata, e.g. “the Great 78 Project”; "
+                           "does not assert whether label photographs accompany the transfer")
     disc.add_argument(
         "--link-contributions",
         action="store_true",

@@ -148,6 +148,63 @@ AUDITED_DIGITAL_AUDIO_FIELDS: dict[str, dict[str, Any]] = {
 
 
 RECORDING_FIELDS: dict[str, dict[str, Any]] = {
+    "SRC0783": {
+        "fullCitation": "Allan Jones, tenor, with orchestra conducted by Nathaniel Shilkret. “The One I Love”, from Everybody Sing; label credit “Kaper, Jurmann & Kahn”. His Master’s Voice B.8724, matrix OA.09934, 1938. Manufactured in England by The Gramophone Co. Ltd. Disc label photograph and audio transfer published by the Great 78 Project, Internet Archive.",
+        "accessDate": "2026-10-26",
+        "date": "1938",
+        "dateRole": "issue",
+        "dateQualifier": "confirmed",
+        "researchNote": "The Internet Archive item includes a readable photograph of the English-manufactured HMV B.8724 label. It identifies Allan Jones, Nathaniel Shilkret, matrix OA.09934 and the film Everybody Sing. SRC0784 documents the coupled side, “Cosi Cosa”, matrix OA.09937. A contemporary notice in Practical and Amateur Wireless, 7 May 1938, lists both titles on HMV B 8724; its indexed text was consulted, while the complete PDF could not be retrieved during this review. This supports the 1938 issue year, not an exact recording-session date. The earlier precise January-session claim is not asserted on the basis of this label or the Internet Archive metadata. The issue year does not date the manufacture of the particular copy photographed.",
+        "researchNoteType": "discographic_note",
+        "additionalLinks": [
+            {
+                "label": "Great 78 Project — photograph of the disc label",
+                "url": "https://archive.org/download/78_the-one-i-love_allan-jones-kaper-jurmann-kahn-nathaniel-shilkret_gbia7024889a/78_the-one-i-love_allan-jones-kaper-jurmann-kahn-nathaniel-shilkret_gbia7024889a_itemimage.jpg",
+                "role": "additional_evidence"
+            },
+            {
+                "label": "Practical and Amateur Wireless, 7 May 1938 — contemporary notice of HMV B.8724 (indexed text)",
+                "url": "https://www.worldradiohistory.com/UK/Practical-Wireless/30s/Practical-Wireless-1938-05-S-OCR.pdf",
+                "role": "additional_evidence"
+            }
+        ]
+    },
+    "SRC0784": {
+        "fullCitation": "Allan Jones, tenor, with orchestra conducted by Nathaniel Shilkret. “Cosi Cosa”, from Everybody Sing; label credit “Washington, Kaper & Jurmann”. His Master’s Voice B.8724, matrix OA.09937, 1938. Manufactured in England by The Gramophone Co. Ltd. Disc label photograph and audio transfer published by the Great 78 Project, Internet Archive.",
+        "accessDate": "2026-10-26",
+        "date": "1938",
+        "dateRole": "issue",
+        "dateQualifier": "confirmed",
+        "researchNote": "The Internet Archive item includes a readable photograph of the English-manufactured HMV B.8724 label. It identifies Allan Jones, Nathaniel Shilkret, matrix OA.09937 and the film Everybody Sing. SRC0783 documents the coupled side, “The One I Love”, matrix OA.09934. The film association is printed on the label and refers to this later use of the song; it does not replace the work’s earlier association with A Night at the Opera. A contemporary notice in Practical and Amateur Wireless, 7 May 1938, lists both titles on HMV B 8724; its indexed text was consulted, while the complete PDF could not be retrieved during this review. This supports the 1938 issue year, not the previously asserted session date of 13 January 1938. The issue year does not date the manufacture of the particular copy photographed.",
+        "researchNoteType": "discographic_note",
+        "additionalLinks": [
+            {
+                "label": "Great 78 Project — photograph of the disc label",
+                "url": "https://archive.org/download/78_cosi-cosa_allan-jones-washington-kaper-jurmann-nathaniel-shilkret_gbia7024889b/78_cosi-cosa_allan-jones-washington-kaper-jurmann-nathaniel-shilkret_gbia7024889b_itemimage.jpg",
+                "role": "additional_evidence"
+            },
+            {
+                "label": "Practical and Amateur Wireless, 7 May 1938 — contemporary notice of HMV B.8724 (indexed text)",
+                "url": "https://www.worldradiohistory.com/UK/Practical-Wireless/30s/Practical-Wireless-1938-05-S-OCR.pdf",
+                "role": "additional_evidence"
+            }
+        ]
+    },
+    "SRC0788": {
+        "fullCitation": "Richard Tauber, tenor, with orchestra conducted by Paul Dessau. “Love Is a Fairy Tale”, from The Right to Happiness; label credit “Kaper–Jurmann–Rotter”. Sung in German. Parlophone AR 206, matrix Be 9887, n.d. Australian pressing, labelled “Made in Australia for Parlophone Co. Ltd.” Disc label photograph and audio transfer published by the Great 78 Project, Internet Archive.",
+        "accessDate": "2026-10-26",
+        "dateRole": "issue",
+        "dateQualifier": "unknown",
+        "researchNote": "The Internet Archive item includes a photograph of the Australian Parlophone AR 206 label. It names Richard Tauber and conductor Paul Dessau, prints matrix Be 9887 and explicitly states “Sung in German”, despite the English song and film titles. The runout identifies take 2. The item links the reverse side as “Once There Was a Baby”. No issue date is printed or supplied in the item metadata. The earlier year 1932 and the date of the German recording session do not establish when this Australian pressing was issued; its issue date remains unknown. Patent dates around the rim are not issue dates.",
+        "researchNoteType": "discographic_note",
+        "additionalLinks": [
+            {
+                "label": "Great 78 Project — photograph of the disc label",
+                "url": "https://archive.org/download/78_love-is-a-fairy-tale_richard-tauber-kaper-jurmann-rotter-paul-dessau_gbia3031401a/78_love-is-a-fairy-tale_richard-tauber-kaper-jurmann-rotter-paul-dessau_gbia3031401a_itemimage.jpg",
+                "role": "additional_evidence"
+            }
+        ]
+    },
     "SRC0694": {
         "researchNote": "The filmed label identifies Ben Berlin und sein Orchester, Grammophon B 51823, order no. 23042, and the Rotter–Kaper credit. The uploader names Alexander Fleßburg as the refrain singer and gives 1930 as the recording year; neither statement is printed on the label. No independently documented session or issue date has been established for this transfer. Dates of other recordings of the song are not used to date this disc.",
         "fullCitation": "Ben Berlin und sein Orchester, with German refrain vocal. “Auf Wiederseh’n, Herr Doktor!” Fox-trot; label credit “(Rotter-Kaper)”. Grammophon, electrical recording, catalogue B 51823, order no. 23042, side 2, n.d. Shellac disc, Radiomuseum Hardthausen / Schallarchiv; filmed-label transfer on YouTube."
@@ -613,6 +670,9 @@ RECORDING_FIELDS: dict[str, dict[str, Any]] = {
 # These corrections concern citation syntax, not the date of a modern issue.
 # Keep uploader-reported recording dates distinct from upload dates.
 AUDITED_RECORDING_CITATIONS = {
+    "SRC0783": "Allan Jones, tenor, with orchestra conducted by Nathaniel Shilkret. “The One I Love”, from Everybody Sing; label credit “Kaper, Jurmann & Kahn”. His Master’s Voice B.8724, matrix OA.09934, 1938. Manufactured in England by The Gramophone Co. Ltd. Disc label photograph and audio transfer published by the Great 78 Project, Internet Archive.",
+    "SRC0784": "Allan Jones, tenor, with orchestra conducted by Nathaniel Shilkret. “Cosi Cosa”, from Everybody Sing; label credit “Washington, Kaper & Jurmann”. His Master’s Voice B.8724, matrix OA.09937, 1938. Manufactured in England by The Gramophone Co. Ltd. Disc label photograph and audio transfer published by the Great 78 Project, Internet Archive.",
+    "SRC0788": "Richard Tauber, tenor, with orchestra conducted by Paul Dessau. “Love Is a Fairy Tale”, from The Right to Happiness; label credit “Kaper–Jurmann–Rotter”. Sung in German. Parlophone AR 206, matrix Be 9887, n.d. Australian pressing, labelled “Made in Australia for Parlophone Co. Ltd.” Disc label photograph and audio transfer published by the Great 78 Project, Internet Archive.",
     "SRC0694": "Ben Berlin und sein Orchester, with German refrain vocal. “Auf Wiederseh’n, Herr Doktor!” Fox-trot; label credit “(Rotter-Kaper)”. Grammophon, electrical recording, catalogue B 51823, order no. 23042, side 2, n.d. Shellac disc, Radiomuseum Hardthausen / Schallarchiv; filmed-label transfer on YouTube.",
     "SRC0695": "Ben Berlin und sein Orchester. “Nimm diesen Strauß Vergißmeinnicht.” Fox-trot; label credits “(Kaper – Rotter)” and “(Verlag: Roehr A.-G., Berlin)”. Grammophon, electrical recording, Polyfar “R” Orchester series, catalogue B 50959, order no. 22222, side 2, n.d. Shellac disc, Radiomuseum Hardthausen / Schallarchiv; filmed-label transfer on YouTube.",
     "SRC0716": "Saxophon Orchester Dobbri, vocal by Max Mensing. “Was macht jede Nacht so ein kleines Baby in der Bar.” Slow fox; label credit “Fritz Rotter & Dr. B. Kaper”. Parlophone 80.235, matrix B 38451, n.d. Shellac disc, Radiomuseum Hardthausen / Schallarchiv; filmed-label transfer on YouTube.",
