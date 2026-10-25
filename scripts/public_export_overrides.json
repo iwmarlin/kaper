@@ -3234,8 +3234,18 @@
       "SRC0612": {
         "reason": "Keep the Library of Congress object citation bibliographic and retain the public-domain tag and legal assessment exclusively with the linked medium.",
         "fields": {
-          "fullCitation": "Portrait of Alfred Piccaver, photographer unidentified, published by the Bain News Service. Library of Congress, George Grantham Bain Collection, image ggbain.34250; republished on Wikimedia Commons. Accessed 1 August 2026.",
-          "shortCitation": "Bain News Service, portrait of Alfred Piccaver, Library of Congress"
+          "fullCitation": "Photographer unidentified. “Alfred Piccaver.” Bain News Service, publisher, between approximately 1920 and 1925. Glass negative, 5 × 7 in. or smaller. Library of Congress, George Grantham Bain Collection, LC-B2-5730-5, digital ID ggbain.34250. Digital reproduction via Wikimedia Commons, File:Alfred Piccaver 02.jpg.",
+          "shortCitation": "Bain News Service, portrait of Alfred Piccaver, Library of Congress",
+          "creator": "Photographer unidentified",
+          "publication": "Bain News Service",
+          "date": "1920",
+          "dateEnd": "1925",
+          "dateQualifier": "approximate",
+          "dateDisplay": "c. 1920–c. 1925",
+          "accessDate": "2026-10-25",
+          "accessUrl": "https://www.flickr.com/photos/library_of_congress/49654681548/",
+          "researchNote": "The Commons reproduction explicitly identifies its source as Library of Congress digital ID ggbain.34250 but leaves the date unknown. The Library’s own Flickr record for the same identifier dates the negative “[between ca. 1920 and ca. 1925]”. That approximate range is used here; it is not a confirmed date of 1920. The publisher is Bain News Service; the photographer remains unidentified.",
+          "researchNoteType": "date_assessment"
         }
       },
       "SRC0585": {
@@ -3247,10 +3257,10 @@
       "SRC0595": {
         "reason": "Represent the Commons file page's authorship claim without presenting the uploader role as an established photographic credit; keep the unresolved original photographer and publisher in an explicit provenance note.",
         "fields": {
-          "fullCitation": "“Alfred Zeisler.” Autograph card, 1932. Wikimedia Commons, File:Smzeisle.jpg; the file page credits user Azeisler as author under an ‘own work’ claim.",
+          "fullCitation": "Photographer unidentified. “Alfred Zeisler.” Autograph card, 1932. Digital image via Wikimedia Commons, File:Smzeisle.jpg.",
           "shortCitation": "Wikimedia Commons, autograph card of Alfred Zeisler, 1932",
-          "creator": "Azeisler (file-page attribution)",
-          "researchNote": "The file page names uploader Azeisler as author and marks the upload as own work; it does not identify the photographer or the original publisher of the 1932 autograph card.",
+          "creator": "Photographer unidentified",
+          "researchNote": "The file page names uploader Azeisler as author and marks the upload as own work; it does not identify the photographer or the original publisher of the 1932 autograph card. The upload claim is retained as provenance information, not as an established photographer credit.",
           "researchNoteType": "object_context"
         }
       },
@@ -3870,6 +3880,24 @@
       }
     },
     "Media": {
+      "M262": {
+        "reason": "Reconcile image provenance and date evidence; separate uploader and photographer and correct the Garland chronology.",
+        "fields": {
+          "rightsNote": "Public domain in the United States under the PD-US tag on the Wikimedia Commons file. The photograph comes from the Library of Congress George Grantham Bain Collection, for which the Library records no known restrictions on publication. The photographer and exact photography date are unidentified. Commons leaves the date unknown, while the Library’s own record for ggbain.34250 gives an approximate range between 1920 and 1925."
+        }
+      },
+      "M248": {
+        "reason": "Reconcile image provenance and date evidence; separate uploader and photographer and correct the Garland chronology.",
+        "fields": {
+          "publicCreditLine": "Photographer unidentified; digital reproduction supplied by Commons user Azeisler, whose file-page public-domain declaration is recorded in the rights note."
+        }
+      },
+      "M258": {
+        "reason": "Reconcile image provenance and date evidence; separate uploader and photographer and correct the Garland chronology.",
+        "fields": {
+          "publicCaption": "Judy Garland in a studio publicity photograph issued for Pigskin Parade (1936), her feature debut. In 1938 she sang “Swing, Mister Mendelssohn”, by Kaper and Jurmann, in Everybody Sing (MGM)."
+        }
+      },
       "M266": {
         "reason": "Preserve documented date precision and distinguish image publication from photography; avoid unsupported portrait dating.",
         "fields": {

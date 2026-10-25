@@ -131,8 +131,9 @@ class SourceNormalizationTests(unittest.TestCase):
 
     def test_uploader_claim_is_not_presented_as_established_photographer(self) -> None:
         source = self.sources["SRC0595"]
-        self.assertEqual("Azeisler (file-page attribution)", source["creator"])
+        self.assertEqual("Photographer unidentified", source["creator"])
         self.assertEqual("object_context", source["researchNoteType"])
+        self.assertIn("uploader Azeisler", source["researchNote"])
         self.assertIn("does not identify the photographer", source["researchNote"])
 
     def test_visual_creator_labels_use_public_house_style(self) -> None:

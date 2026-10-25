@@ -68,6 +68,19 @@ WIKIPEDIA_REPOSITORY_BY_HOST = {
 # explicit: generic Wikimedia normalization must never infer an author or an
 # underlying holding institution from the delivery platform alone.
 VISUAL_SOURCE_FIELDS: dict[str, dict[str, Any]] = {
+    "SRC0612": {
+        "creator": "Photographer unidentified",
+        "publication": "Bain News Service",
+        "date": "1920",
+        "dateEnd": "1925",
+        "dateQualifier": "approximate",
+        "dateDisplay": "c. 1920–c. 1925",
+        "accessDate": "2026-10-25",
+        "accessUrl": "https://www.flickr.com/photos/library_of_congress/49654681548/",
+        "fullCitation": "Photographer unidentified. “Alfred Piccaver.” Bain News Service, publisher, between approximately 1920 and 1925. Glass negative, 5 × 7 in. or smaller. Library of Congress, George Grantham Bain Collection, LC-B2-5730-5, digital ID ggbain.34250. Digital reproduction via Wikimedia Commons, File:Alfred Piccaver 02.jpg.",
+        "researchNote": "The Commons reproduction explicitly identifies its source as Library of Congress digital ID ggbain.34250 but leaves the date unknown. The Library’s own Flickr record for the same identifier dates the negative “[between ca. 1920 and ca. 1925]”. That approximate range is used here; it is not a confirmed date of 1920. The publisher is Bain News Service; the photographer remains unidentified.",
+        "researchNoteType": "date_assessment"
+    },
     "SRC0596": {
         "date": "1950",
         "dateEnd": "1959",
@@ -249,15 +262,16 @@ VISUAL_SOURCE_FIELDS: dict[str, dict[str, Any]] = {
     },
     "SRC0595": {
         "fullCitation": (
-            "“Alfred Zeisler.” Autograph card, 1932. Wikimedia Commons, "
-            "File:Smzeisle.jpg; the file page credits user Azeisler as author "
-            "under an ‘own work’ claim."
+            "Photographer unidentified. “Alfred Zeisler.” Autograph card, "
+            "1932. Digital image via Wikimedia Commons, File:Smzeisle.jpg."
         ),
-        "creator": "Azeisler (file-page attribution)",
+        "creator": "Photographer unidentified",
         "researchNote": (
             "The file page names uploader Azeisler as author and marks the "
             "upload as own work; it does not identify the photographer or the "
-            "original publisher of the 1932 autograph card."
+            "original publisher of the 1932 autograph card. The upload claim "
+            "is retained as provenance information, not as an established "
+            "photographer credit."
         ),
         "researchNoteType": "object_context",
     },
@@ -306,7 +320,7 @@ VISUAL_CREATOR_FIELDS = {
     "SRC0609": (
         "Photographer unidentified (Bundesarchiv Bild 102, Georg Pahl collection)"
     ),
-    "SRC0612": "Photographer unidentified (Bain News Service, publisher)",
+    "SRC0612": "Photographer unidentified",
     "SRC0642": "Photographer unidentified",
     "SRC0644": "Photographer unidentified (Universal Pictures)",
     "SRC0648": "Photographer unidentified",
