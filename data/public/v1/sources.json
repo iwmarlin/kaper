@@ -23903,8 +23903,7 @@
         "CON-S038-CON-P165",
         "CON-S038-L-P020",
         "CON-S038-LAB-ORG126",
-        "CON-S038-P-ORG119",
-        "CON-S038-PUB-ORG031"
+        "CON-S038-P-ORG119"
       ],
       "primaryUrl": "https://www.youtube.com/watch?v=WuLkSvYs1qA",
       "personIds": [
@@ -24075,15 +24074,15 @@
     },
     {
       "id": "SRC0713",
-      "shortCitation": "Electrola EG 2508, “Du bist in meinem Leben die erste Sensation”",
-      "fullCitation": "Marek Weber und sein Orchester, vocal by John Hendrik. “Du bist in meinem Leben die erste Sensation.” Tango. Electrola E.G. 2508, 1932. Digital transfer on YouTube.",
-      "sourceType": "recording_discographic_source",
-      "title": "Du bist in meinem Leben die erste Sensation — Electrola EG 2508",
+      "shortCitation": "YouTube, “Du bist in meinem Leben die erste Sensation” — uploader-identified recording",
+      "fullCitation": "Marek Weber und sein Orchester, vocal by John Hendrik. “Du bist in meinem Leben die erste Sensation.” Tango. Digital transfer on YouTube; the uploader identifies Electrola E.G. 2508 and gives the year as 1932.",
+      "sourceType": "online_audio_source",
+      "title": "Du bist in meinem Leben die erste Sensation — external listening reference",
       "creator": "Marek Weber und sein Orchester, Gesang: John Hendrik",
       "repository": "YouTube",
       "publication": "Electrola",
       "accessDate": "2026-08-20",
-      "reliability": "medium",
+      "reliability": "low",
       "sourceStatus": "verified_with_attribution_note",
       "slug": "src0713-electrola-eg-2508-du-bist-in-meinem-leben-die-erste-sensat",
       "organizationIds": [
@@ -24096,8 +24095,8 @@
       ],
       "primaryUrl": "https://www.youtube.com/watch?v=ItpAmGJeNmw",
       "date": "1932",
-      "dateRole": "issue",
-      "dateQualifier": "confirmed",
+      "dateRole": "recording",
+      "dateQualifier": "reported",
       "contributionIds": [
         "CON-S070-CON-P165",
         "CON-S070-LAB-ORG126",
@@ -24112,8 +24111,15 @@
       "songIds": [
         "S070"
       ],
-      "researchNote": "An uploader-created opening card gives matrix E-OD 795 / I and a recording date of 17 February 1932. The disc label is not shown and the card contains no authorship credits; the matrix and date are therefore description-level evidence, not a label transcription.",
-      "researchNoteType": "discographic_note"
+      "researchNote": "An uploader-created opening card gives Electrola E.G. 2508, matrix E-OD 795 / I and a recording date of 17 February 1932. The disc label is not shown and the card contains no authorship credits. The Electrola label list at musiktiteldb.de instead lists E.G. 2508 against “Spanischer Zigeunertanz” (OD 773-1) and “Die alte Spieluhr” (OD770-1), not this title. These descriptions conflict; the upload has not been identified with a verified historical pressing. Its year and performer details remain uploader-supplied, and it is retained as a listening reference rather than a verified description of E.G. 2508.",
+      "researchNoteType": "identity_assessment",
+      "additionalLinks": [
+        {
+          "label": "Electrola label list — conflicting catalogue-number evidence",
+          "url": "http://musiktiteldb.de/Label/EMI_EG02.html",
+          "role": "catalogue_entry"
+        }
+      ]
     },
     {
       "id": "SRC0714",
@@ -24331,7 +24337,7 @@
     {
       "id": "SRC0719",
       "shortCitation": "Polydor 24604, “Ein Lied aus meiner Heimat”",
-      "fullCitation": "Ilja Livschakoff Tanzorchester. “Ein Lied aus meiner Heimat.” Slowfox. Polydor 24604, 1932. Digital transfer on YouTube.",
+      "fullCitation": "Ilja Livschakoff Tanzorchester. “Ein Lied aus meiner Heimat.” Slowfox. Digital transfer on YouTube; the uploader identifies Polydor 24604 and gives the year as 1932.",
       "sourceType": "recording_discographic_source",
       "title": "Ein Lied aus meiner Heimat — Polydor 24604",
       "creator": "Ilja Livschakoff Tanzorchester",
@@ -24352,7 +24358,7 @@
       "primaryUrl": "https://www.youtube.com/watch?v=KckaOPiOt7Q",
       "date": "1932",
       "dateRole": "issue",
-      "dateQualifier": "confirmed",
+      "dateQualifier": "reported",
       "contributionIds": [
         "CON-S064-LAB-ORG155",
         "CON-S064-P-ORG124"
@@ -24666,7 +24672,7 @@
     {
       "id": "SRC0729",
       "shortCitation": "Brunswick 7446, “Love Song of Tahiti” (Ted Fio Rito, 1935)",
-      "fullCitation": "Ted Fio Rito and his orchestra, vocal by Muzzy Marcellino and The Debutantes. “Love Song of Tahiti.” Music by Bronislaw Kaper and Walter Jurmann; words by Gus Kahn. Brunswick 7446, 78 rpm, 1935. YouTube transfer published by Croonr1.",
+      "fullCitation": "Ted Fio Rito and his orchestra, vocal by Muzzy Marcellino and The Debutantes. “Love Song of Tahiti.” Music by Bronislaw Kaper and Walter Jurmann; words by Gus Kahn. YouTube transfer published by Croonr1; the upload identifies Brunswick 7446, 78 rpm, and gives the year as 1935.",
       "sourceType": "recording_discographic_source",
       "title": "Love Song of Tahiti — Brunswick 7446",
       "creator": "Ted Fio Rito and his orchestra; Muzzy Marcellino, vocal",
@@ -24674,7 +24680,7 @@
       "publication": "Brunswick",
       "date": "1935",
       "dateRole": "issue",
-      "dateQualifier": "confirmed",
+      "dateQualifier": "reported",
       "accessDate": "2026-08-20",
       "reliability": "medium",
       "sourceStatus": "verified_with_attribution_note",
@@ -24698,7 +24704,7 @@
     {
       "id": "SRC0730",
       "shortCitation": "Odeon red label, “Ninon” (Jan Kiepura, 1933)",
-      "fullCitation": "Jan Kiepura with the Odeon-Künstler-Orchester under Dr. Weissmann. “Ninon”, from the sound film Ein Lied für dich; music by Walter Jurmann and Dr. Bronislaw Kaper, words by Fritz Rotter and Ernst Marischka. Odeon red-label issue, 1933. YouTube transfer published by 78Upm.",
+      "fullCitation": "Jan Kiepura with the Odeon-Künstler-Orchester under Dr. Weissmann. “Ninon”, from Ein Lied für dich; music by Walter Jurmann and Dr. Bronislaw Kaper, words by Fritz Rotter and Ernst Marischka. YouTube transfer published by 78Upm; the upload describes an Odeon red-label issue and gives the year as 1933.",
       "sourceType": "recording_discographic_source",
       "title": "Ninon — Odeon",
       "creator": "Jan Kiepura; Odeon-Künstler-Orchester, Dr. Weissmann, conductor",
@@ -24706,7 +24712,7 @@
       "publication": "Odeon",
       "date": "1933",
       "dateRole": "issue",
-      "dateQualifier": "confirmed",
+      "dateQualifier": "reported",
       "accessDate": "2026-08-20",
       "reliability": "medium",
       "sourceStatus": "verified_with_attribution_note",
@@ -24835,7 +24841,7 @@
     {
       "id": "SRC0735",
       "shortCitation": "Gloria, “Adieu es ist zu schön um wahr zu sein” (Bernhard Etté, 1933)",
-      "fullCitation": "Bernhard Etté mit seinem Tanz-Orchester, vocal by Wolfgang Schmidt. “Adieu es ist zu schön um wahr zu sein.” Tango by Walter Jurmann, Bronislaw Kaper and Fritz Rotter from Abenteuer am Lido. YouTube transfer published by Radiomuseum Hardthausen, 1933.",
+      "fullCitation": "Bernhard Etté mit seinem Tanz-Orchester, vocal by Wolfgang Schmidt. “Adieu es ist zu schön um wahr zu sein.” Tango by Walter Jurmann, Bronislaw Kaper and Fritz Rotter from Abenteuer am Lido. YouTube transfer published by Radiomuseum Hardthausen; the upload dates the recording to 1933.",
       "sourceType": "recording_discographic_source",
       "title": "Adieu, es ist zu schön, um wahr zu sein — Gloria",
       "creator": "Bernhard Etté mit seinem Tanz-Orchester; Wolfgang Schmidt, vocal",
@@ -24843,7 +24849,7 @@
       "publication": "Gloria",
       "date": "1933",
       "dateRole": "issue",
-      "dateQualifier": "confirmed",
+      "dateQualifier": "reported",
       "accessDate": "2026-08-20",
       "reliability": "medium",
       "sourceStatus": "verified_with_attribution_note",
@@ -25231,7 +25237,7 @@
     {
       "id": "SRC0746",
       "shortCitation": "Gloria G.O. 10197, “Wer weint heut’ aus Liebe Tränen?”",
-      "fullCitation": "Melody Gents with orchestra. “Wer weint heut’ aus Liebe Tränen?” Slowfox from Ehe mit beschränkter Haftung. Gloria G.O. 10197, side b, matrix Bi 412, 1932. YouTube transfer uploaded 19 June 2014.",
+      "fullCitation": "Melody Gents with orchestra. “Wer weint heut’ aus Liebe Tränen?” Slowfox from Ehe mit beschränkter Haftung. YouTube transfer uploaded 19 June 2014; the upload identifies Gloria G.O. 10197, side b, matrix Bi 412, and gives the year as 1932.",
       "sourceType": "recording_discographic_source",
       "title": "Wer weint heut’ aus Liebe Tränen? — Gloria G.O. 10197",
       "creator": "Melody Gents, modernes Schlager-Quartett mit Orchester",
@@ -25252,14 +25258,13 @@
       "primaryUrl": "https://www.youtube.com/watch?v=1Eqw8lxhahU",
       "date": "1932",
       "dateRole": "issue",
-      "dateQualifier": "confirmed",
+      "dateQualifier": "reported",
       "contributionIds": [
         "CON-S033-C-P009",
         "CON-S033-C-P077",
         "CON-S033-L-P020",
         "CON-S033-LAB-ORG138",
-        "CON-S033-P-ORG140",
-        "CON-S033-PUB-ORG031"
+        "CON-S033-P-ORG140"
       ],
       "workIds": [
         "W-S033"
@@ -25566,7 +25571,7 @@
     {
       "id": "SRC0755",
       "shortCitation": "Electrola E.G. 2532, “Ganz ohne Liebe wär’ das Leben so bescheiden”",
-      "fullCitation": "Marek Weber und sein Orchester. “Ganz ohne Liebe wär’ das Leben so bescheiden.” Fox-trot with refrain vocal; label credits music to Jurmann and Kaper and words to Fritz Rotter. Electrola E.G. 2532, 1932. Digital transfer on YouTube.",
+      "fullCitation": "Marek Weber und sein Orchester. “Ganz ohne Liebe wär’ das Leben so bescheiden.” Fox-trot with refrain vocal. Digital transfer on YouTube; the upload identifies Electrola E.G. 2532, gives the year as 1932 and credits Jurmann and Kaper with music and Fritz Rotter with words.",
       "sourceType": "recording_discographic_source",
       "title": "Ganz ohne Liebe wär’ das Leben so bescheiden — Electrola E.G. 2532",
       "creator": "Marek Weber und sein Orchester",
@@ -25587,15 +25592,14 @@
       "primaryUrl": "https://www.youtube.com/watch?v=CqjHIlqRtn8",
       "date": "1932",
       "dateRole": "issue",
-      "dateQualifier": "confirmed",
+      "dateQualifier": "reported",
       "contributionIds": [
         "CON-S067-C-P009",
         "CON-S067-C-P077",
         "CON-S067-CON-P165",
         "CON-S067-L-P020",
         "CON-S067-LAB-ORG126",
-        "CON-S067-P-ORG119",
-        "CON-S067-PUB-ORG029"
+        "CON-S067-P-ORG119"
       ],
       "personIds": [
         "P165"
@@ -25649,7 +25653,7 @@
     {
       "id": "SRC0758",
       "shortCitation": "Kristall 78N, “Sagen kleine Mädels ‘nein’”",
-      "fullCitation": "Kurt Mühlhardt with Bernard Etté und sein Orchester. “Sagen kleine Mädels ‘nein’.” Waltz from Der Korvettenkapitän; label credits Bronislaw Kaper, Fritz Rotter and Armin Lackenbach Robinson. Kristall 78N, 1930. Digital transfer on YouTube.",
+      "fullCitation": "Kurt Mühlhardt with Bernard Etté und sein Orchester. “Sagen kleine Mädels ‘nein’.” Waltz from Der Korvettenkapitän. Digital transfer on YouTube; the upload identifies Kristall 78N, gives the year as 1930 and credits Bronislaw Kaper, Fritz Rotter and Armin Lackenbach Robinson.",
       "sourceType": "recording_discographic_source",
       "title": "Sagen kleine Mädels “nein” — Kristall 78N",
       "creator": "Kurt Mühlhardt mit Bernard Etté und sein Orchester",
@@ -25670,14 +25674,13 @@
       "primaryUrl": "https://www.youtube.com/watch?v=9r6w-mcm2Rk",
       "date": "1930",
       "dateRole": "issue",
-      "dateQualifier": "confirmed",
+      "dateQualifier": "reported",
       "contributionIds": [
         "CON-S018-C-P009",
         "CON-S018-L-P020",
         "CON-S018-L-P083",
         "CON-S018-LAB-ORG129",
-        "CON-S018-P-ORG121",
-        "CON-S018-PUB-ORG033"
+        "CON-S018-P-ORG121"
       ],
       "workIds": [
         "W-S018"

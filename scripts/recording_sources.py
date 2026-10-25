@@ -273,6 +273,14 @@ RECORDING_FIELDS: dict[str, dict[str, Any]] = {
 # These corrections concern citation syntax, not the date of a modern issue.
 # Keep uploader-reported recording dates distinct from upload dates.
 AUDITED_RECORDING_CITATIONS = {
+    "SRC0713": "Marek Weber und sein Orchester, vocal by John Hendrik. “Du bist in meinem Leben die erste Sensation.” Tango. Digital transfer on YouTube; the uploader identifies Electrola E.G. 2508 and gives the year as 1932.",
+    "SRC0719": "Ilja Livschakoff Tanzorchester. “Ein Lied aus meiner Heimat.” Slowfox. Digital transfer on YouTube; the uploader identifies Polydor 24604 and gives the year as 1932.",
+    "SRC0729": "Ted Fio Rito and his orchestra, vocal by Muzzy Marcellino and The Debutantes. “Love Song of Tahiti.” Music by Bronislaw Kaper and Walter Jurmann; words by Gus Kahn. YouTube transfer published by Croonr1; the upload identifies Brunswick 7446, 78 rpm, and gives the year as 1935.",
+    "SRC0730": "Jan Kiepura with the Odeon-Künstler-Orchester under Dr. Weissmann. “Ninon”, from Ein Lied für dich; music by Walter Jurmann and Dr. Bronislaw Kaper, words by Fritz Rotter and Ernst Marischka. YouTube transfer published by 78Upm; the upload describes an Odeon red-label issue and gives the year as 1933.",
+    "SRC0735": "Bernhard Etté mit seinem Tanz-Orchester, vocal by Wolfgang Schmidt. “Adieu es ist zu schön um wahr zu sein.” Tango by Walter Jurmann, Bronislaw Kaper and Fritz Rotter from Abenteuer am Lido. YouTube transfer published by Radiomuseum Hardthausen; the upload dates the recording to 1933.",
+    "SRC0746": "Melody Gents with orchestra. “Wer weint heut’ aus Liebe Tränen?” Slowfox from Ehe mit beschränkter Haftung. YouTube transfer uploaded 19 June 2014; the upload identifies Gloria G.O. 10197, side b, matrix Bi 412, and gives the year as 1932.",
+    "SRC0755": "Marek Weber und sein Orchester. “Ganz ohne Liebe wär’ das Leben so bescheiden.” Fox-trot with refrain vocal. Digital transfer on YouTube; the upload identifies Electrola E.G. 2532, gives the year as 1932 and credits Jurmann and Kaper with music and Fritz Rotter with words.",
+    "SRC0758": "Kurt Mühlhardt with Bernard Etté und sein Orchester. “Sagen kleine Mädels ‘nein’.” Waltz from Der Korvettenkapitän. Digital transfer on YouTube; the upload identifies Kristall 78N, gives the year as 1930 and credits Bronislaw Kaper, Fritz Rotter and Armin Lackenbach Robinson.",
     "SRC0707": "Marek Weber und sein Orchester, refrain sung by Austin Egen. “Tränen weint jede Frau so gern.” Tango. Digital transfer on YouTube; the upload identifies His Master’s Voice / Electrola and gives the year as 1929.",
     "SRC0759": "Orkiestra taneczna. “San Francisco.” Foxtrot. Digital transfer on YouTube; the upload identifies Syrena Record, gives the year as 1937 and credits Bronisław Kaper and Walter Jurmann with music and Emanuel Schlechter with Polish words.",
     "SRC0740": (
@@ -285,6 +293,27 @@ AUDITED_RECORDING_CITATIONS = {
 }
 
 
+# A conflicting catalogue number must not become a verified disc description.
+AUDITED_PRIVATE_UPLOAD_FIELDS = {
+    "SRC0713": {
+        "sourceType": "online_audio_source",
+        "title": "Du bist in meinem Leben die erste Sensation — external listening reference",
+        "shortCitation": "YouTube, “Du bist in meinem Leben die erste Sensation” — uploader-identified recording",
+        "dateRole": "recording",
+        "reliability": "low",
+        "researchNote": "An uploader-created opening card gives Electrola E.G. 2508, matrix E-OD 795 / I and a recording date of 17 February 1932. The disc label is not shown and the card contains no authorship credits. The Electrola label list at musiktiteldb.de instead lists E.G. 2508 against “Spanischer Zigeunertanz” (OD 773-1) and “Die alte Spieluhr” (OD770-1), not this title. These descriptions conflict; the upload has not been identified with a verified historical pressing. Its year and performer details remain uploader-supplied, and it is retained as a listening reference rather than a verified description of E.G. 2508.",
+        "researchNoteType": "identity_assessment",
+        "additionalLinks": [
+            {
+                "label": "Electrola label list — conflicting catalogue-number evidence",
+                "url": "http://musiktiteldb.de/Label/EMI_EG02.html",
+                "role": "catalogue_entry"
+            }
+        ]
+    },
+}
+
+
 def recording_hostname(source: dict[str, Any]) -> str:
     url = str(source.get("primaryUrl") or source.get("url") or "").strip()
     return urlparse(url).netloc.casefold()
@@ -293,8 +322,9 @@ def recording_hostname(source: dict[str, Any]) -> str:
 def normalize_recording_source(source: dict[str, Any]) -> None:
     """Normalize one recording source in place."""
     source_id = str(source.get("id", ""))
-    if source_id in {"SRC0707", "SRC0759"}:
+    if source_id in {"SRC0707", "SRC0759", "SRC0713", "SRC0719", "SRC0729", "SRC0730", "SRC0735", "SRC0746", "SRC0755", "SRC0758"}:
         source["dateQualifier"] = "reported"
+    source.update(AUDITED_PRIVATE_UPLOAD_FIELDS.get(source_id, {}))
     citation = AUDITED_RECORDING_CITATIONS.get(source_id)
     if citation:
         source["fullCitation"] = citation
