@@ -31,6 +31,7 @@ WIKIMEDIA_ORGANIZATION_ID = "ORG090"
 # the photograph was taken. Keep this list explicit: other visual records do
 # have independently documented creation dates, even when reproduced in print.
 VISUAL_PUBLICATION_DATE_IDS = {
+    "SRC0448", "SRC0620",
     "SRC0403", "SRC0412", "SRC0413", "SRC0414", "SRC0573",
     "SRC0366", "SRC0648", "SRC0664", "SRC0752",
     "SRC0777",
@@ -67,6 +68,33 @@ WIKIPEDIA_REPOSITORY_BY_HOST = {
 # explicit: generic Wikimedia normalization must never infer an author or an
 # underlying holding institution from the delivery platform alone.
 VISUAL_SOURCE_FIELDS: dict[str, dict[str, Any]] = {
+    "SRC0596": {
+        "date": "1950",
+        "dateEnd": "1959",
+        "dateDisplay": "1950s",
+        "dateQualifier": "approximate"
+    },
+    "SRC0608": {
+        "date": "1930",
+        "dateEnd": "1939",
+        "dateDisplay": "1930s",
+        "dateQualifier": "approximate"
+    },
+    "SRC0448": {
+        "title": "Madame wünscht keine Kinder — Illustrierter Film-Kurier cover",
+        "publication": "Illustrierter Film-Kurier",
+        "dateRole": "publication"
+    },
+    "SRC0620": {
+        "creator": "Photographer unidentified",
+        "publication": "Universal-International",
+        "dateRole": "publication",
+        "fullCitation": "Photographer unidentified. Press photograph of director Henry Koster for Flower Drum Song, published by Universal-International in 1961. Cropped detail via Wikimedia Commons."
+    },
+    "SRC0839": {
+        "researchNote": "The file page gives the date as “early 1900s”, but no independently documented photography date or original publication has been established. That file-page dating is not adopted here. The date remains unknown; no replacement decade is inferred from the sitter’s appearance.",
+        "dateQualifier": "unknown"
+    },
     "SRC0403": {
         "publication": "Illustrierter Film-Kurier, no. 677",
         "dateRole": "publication"

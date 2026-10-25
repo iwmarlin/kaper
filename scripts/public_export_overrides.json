@@ -576,6 +576,13 @@
       }
     },
     "Sources": {
+      "SRC0839": {
+        "reason": "Preserve documented date precision and distinguish image publication from photography; avoid unsupported portrait dating.",
+        "fields": {
+          "researchNote": "The file page gives the date as “early 1900s”, but no independently documented photography date or original publication has been established. That file-page dating is not adopted here. The date remains unknown; no replacement decade is inferred from the sitter’s appearance.",
+          "dateQualifier": "unknown"
+        }
+      },
       "SRC0573": {
         "reason": "Separate historical publication, access platform and qualified image dating.",
         "fields": {
@@ -2668,8 +2675,9 @@
         "fields": {
           "sourceType": "image_or_photograph",
           "repository": "English Wikipedia",
-          "publication": "English Wikipedia",
-          "dateRole": "creation"
+          "publication": "Illustrierter Film-Kurier",
+          "dateRole": "publication",
+          "title": "Madame wünscht keine Kinder — Illustrierter Film-Kurier cover"
         },
         "removeFields": [
           "creator"
@@ -3250,7 +3258,11 @@
         "reason": "Retain the photographer, institutional identifier and repository in the citation while keeping the VRT-backed rights assessment exclusively with the linked medium.",
         "fields": {
           "fullCitation": "Max Ophüls, photographed by Studio Harcourt, 1950s. Réunion des musées nationaux — Grand Palais, ark:/36255/08-538083. Wikimedia Commons. Accessed 31 July 2026.",
-          "shortCitation": "Studio Harcourt, portrait of Max Ophüls, 1950s"
+          "shortCitation": "Studio Harcourt, portrait of Max Ophüls, 1950s",
+          "date": "1950",
+          "dateEnd": "1959",
+          "dateDisplay": "1950s",
+          "dateQualifier": "approximate"
         }
       },
       "SRC0597": {
@@ -3322,7 +3334,11 @@
         "reason": "Retain the unidentified photographer and approximate date as provenance while keeping the jurisdictional rights analysis exclusively with the linked medium.",
         "fields": {
           "fullCitation": "Studio portrait of Jeanette MacDonald, photographer unidentified, dated on the Wikimedia Commons file to the 1930s. Accessed 1 August 2026.",
-          "shortCitation": "Wikimedia Commons, studio portrait of Jeanette MacDonald, 1930s"
+          "shortCitation": "Wikimedia Commons, studio portrait of Jeanette MacDonald, 1930s",
+          "date": "1930",
+          "dateEnd": "1939",
+          "dateDisplay": "1930s",
+          "dateQualifier": "approximate"
         }
       },
       "SRC0611": {
@@ -3335,7 +3351,10 @@
       "SRC0620": {
         "reason": "Keep the press-photograph citation bibliographic and retain the renewal analysis exclusively with the linked medium.",
         "fields": {
-          "fullCitation": "Universal-International. Press photograph of director Henry Koster for Flower Drum Song, published 1961. Cropped detail via Wikimedia Commons. Accessed 1 August 2026."
+          "fullCitation": "Photographer unidentified. Press photograph of director Henry Koster for Flower Drum Song, published by Universal-International in 1961. Cropped detail via Wikimedia Commons.",
+          "creator": "Photographer unidentified",
+          "publication": "Universal-International",
+          "dateRole": "publication"
         }
       },
       "SRC0643": {
@@ -3851,6 +3870,12 @@
       }
     },
     "Media": {
+      "M266": {
+        "reason": "Preserve documented date precision and distinguish image publication from photography; avoid unsupported portrait dating.",
+        "fields": {
+          "publicCaption": "Henry Koster, who directed Three Smart Girls in 1936, the Deanna Durbin debut that carried two songs by Kaper and Jurmann. The photograph is a later studio still for Flower Drum Song, published in 1961."
+        }
+      },
       "M276": {
         "reason": "Separate historical publication, access platform and qualified image dating.",
         "fields": {

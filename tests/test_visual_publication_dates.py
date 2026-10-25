@@ -13,6 +13,8 @@ from visual_sources import normalize_visual_source
 
 
 EXPECTED_DATES = {
+    "SRC0448": "1933",
+    "SRC0620": "1961",
     "SRC0403": "1933",
     "SRC0412": "1931",
     "SRC0413": "1933",
@@ -44,6 +46,43 @@ EXPECTED_DATES = {
 
 
 class VisualPublicationDatesTests(unittest.TestCase):
+    def test_portrait_decades_are_not_confirmed_single_years(self):
+        records = json.loads((ROOT / "data/public/v1/sources.json").read_text())["records"]
+        by_id = {record["id"]: record for record in records}
+        for source_id, start, end, display in [("SRC0596", "1950", "1959", "1950s"),
+                                               ("SRC0608", "1930", "1939", "1930s")]:
+            with self.subTest(source=source_id):
+                source = by_id[source_id]
+                self.assertEqual((source["date"], source["dateEnd"], source["dateDisplay"]), (start, end, display))
+                self.assertEqual(source["dateQualifier"], "approximate")
+                changed = dict(source, dateQualifier="confirmed")
+                changed.pop("dateEnd")
+                changed.pop("dateDisplay")
+                self.assertEqual(normalized_source(changed), source)
+
+    def test_koster_publisher_is_not_assigned_as_photographer(self):
+        records = json.loads((ROOT / "data/public/v1/sources.json").read_text())["records"]
+        source = next(record for record in records if record["id"] == "SRC0620")
+        self.assertEqual(source["creator"], "Photographer unidentified")
+        self.assertEqual(source["publication"], "Universal-International")
+        self.assertIn("published by Universal-International in 1961", source["fullCitation"])
+        self.assertEqual(normalized_source(dict(source, creator="Universal-International")), source)
+
+    def test_schlechter_note_does_not_claim_an_assigned_decade(self):
+        records = json.loads((ROOT / "data/public/v1/sources.json").read_text())["records"]
+        source = next(record for record in records if record["id"] == "SRC0839")
+        self.assertNotIn("date", source)
+        self.assertEqual(source["dateQualifier"], "unknown")
+        self.assertIn("The date remains unknown", source["researchNote"])
+        self.assertNotIn("dated here by decade", source["researchNote"])
+
+    def test_madame_programme_identifies_the_original_publication(self):
+        records = json.loads((ROOT / "data/public/v1/sources.json").read_text())["records"]
+        source = next(record for record in records if record["id"] == "SRC0448")
+        self.assertEqual(source["publication"], "Illustrierter Film-Kurier")
+        self.assertEqual(source["repository"], "English Wikipedia")
+        self.assertIn("Illustrierter Film-Kurier cover", source["title"])
+
     def test_wikipedia_file_host_preserves_original_publication_and_date_role(self):
         source = {"id": "TEST", "primaryUrl": "https://en.wikipedia.org/wiki/File:Example.jpg",
                   "sourceType": "image_or_photograph", "publication": "Original programme",

@@ -177,7 +177,7 @@ REVIEWED_SOURCE_DATES: dict[str, dict[str, str]] = {
     },
     "SRC0448": {
         "date": "1933",
-        "dateRole": "creation",
+        "dateRole": "publication",
         "dateQualifier": "confirmed",
     },
     "SRC0467": {
