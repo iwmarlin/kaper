@@ -273,6 +273,10 @@ RECORDING_FIELDS: dict[str, dict[str, Any]] = {
 # These corrections concern citation syntax, not the date of a modern issue.
 # Keep uploader-reported recording dates distinct from upload dates.
 AUDITED_RECORDING_CITATIONS = {
+    "SRC0715": "“Ich hab’ heut grad Geburtstag.” YouTube audio reference published by Jan van den Belt on 24 June 2011. The upload identifies Theo Mackeben mit seinem Jazz-Orchester and Walter Jurmann as refrain singer.",
+    "SRC0727": "“Ich steh im Schnee und wart auf dich.” YouTube audio reference published by Brillantspecial, presented by the uploader as Gloria-Tanz-Orchester mit Refraingesang.",
+    "SRC0738": "“Zgaś lampę!” Shimmy. YouTube audio reference published by jurek46pink; the upload identifies Henryk Gold and his ensemble.",
+    "SRC0790": "“Du liebst mich nicht mehr.” Slow-Fox. Digital transfer published on YouTube by Radiomuseum Hardthausen; the upload identifies Tanz-Orchester Dajos Béla, Odeon O-11667 (1932), and a music credit to “Bob Henders”.",
     "SRC0713": "Marek Weber und sein Orchester, vocal by John Hendrik. “Du bist in meinem Leben die erste Sensation.” Tango. Digital transfer on YouTube; the uploader identifies Electrola E.G. 2508 and gives the year as 1932.",
     "SRC0719": "Ilja Livschakoff Tanzorchester. “Ein Lied aus meiner Heimat.” Slowfox. Digital transfer on YouTube; the uploader identifies Polydor 24604 and gives the year as 1932.",
     "SRC0729": "Ted Fio Rito and his orchestra, vocal by Muzzy Marcellino and The Debutantes. “Love Song of Tahiti.” Music by Bronislaw Kaper and Walter Jurmann; words by Gus Kahn. YouTube transfer published by Croonr1; the upload identifies Brunswick 7446, 78 rpm, and gives the year as 1935.",
@@ -295,6 +299,7 @@ AUDITED_RECORDING_CITATIONS = {
 
 # A conflicting catalogue number must not become a verified disc description.
 AUDITED_PRIVATE_UPLOAD_FIELDS = {
+    "SRC0790": {"researchNote": "Uploader-supplied information, not transcribed from the disc label: The upload calls the Odeon issue the first release of the recording and shows a portrait of the bandleader from a Funk-Almanach rather than the disc. The discographic details are taken from the uploader’s description; the label is not shown in the external recording. The Odeon matrix book, indexed at musiktiteldb.de, places the recording in Berlin, Schlesische Straße 26, room 4, on 10 June 1932 under matrix Be 9946, coupled with “Heute Nacht oder nie!”. The upload reports a music credit to Bob Henders alone, the recording name under which Walter Jurmann worked with Kaper."},
     "SRC0713": {
         "sourceType": "online_audio_source",
         "title": "Du bist in meinem Leben die erste Sensation — external listening reference",

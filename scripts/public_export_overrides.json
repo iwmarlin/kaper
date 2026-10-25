@@ -576,6 +576,31 @@
       }
     },
     "Sources": {
+      "SRC0790": {
+        "reason": "Qualify uploader-only performance and label claims while preserving independently corroborated catalogue and discographic evidence.",
+        "fields": {
+          "fullCitation": "“Du liebst mich nicht mehr.” Slow-Fox. Digital transfer published on YouTube by Radiomuseum Hardthausen; the upload identifies Tanz-Orchester Dajos Béla, Odeon O-11667 (1932), and a music credit to “Bob Henders”.",
+          "researchNote": "Uploader-supplied information, not transcribed from the disc label: The upload calls the Odeon issue the first release of the recording and shows a portrait of the bandleader from a Funk-Almanach rather than the disc. The discographic details are taken from the uploader’s description; the label is not shown in the external recording. The Odeon matrix book, indexed at musiktiteldb.de, places the recording in Berlin, Schlesische Straße 26, room 4, on 10 June 1932 under matrix Be 9946, coupled with “Heute Nacht oder nie!”. The upload reports a music credit to Bob Henders alone, the recording name under which Walter Jurmann worked with Kaper."
+        }
+      },
+      "SRC0738": {
+        "reason": "Qualify uploader-only performance and label claims while preserving independently corroborated catalogue and discographic evidence.",
+        "fields": {
+          "fullCitation": "“Zgaś lampę!” Shimmy. YouTube audio reference published by jurek46pink; the upload identifies Henryk Gold and his ensemble."
+        }
+      },
+      "SRC0727": {
+        "reason": "Qualify uploader-only performance and label claims while preserving independently corroborated catalogue and discographic evidence.",
+        "fields": {
+          "fullCitation": "“Ich steh im Schnee und wart auf dich.” YouTube audio reference published by Brillantspecial, presented by the uploader as Gloria-Tanz-Orchester mit Refraingesang."
+        }
+      },
+      "SRC0715": {
+        "reason": "Qualify uploader-only performance and label claims while preserving independently corroborated catalogue and discographic evidence.",
+        "fields": {
+          "fullCitation": "“Ich hab’ heut grad Geburtstag.” YouTube audio reference published by Jan van den Belt on 24 June 2011. The upload identifies Theo Mackeben mit seinem Jazz-Orchester and Walter Jurmann as refrain singer."
+        }
+      },
       "SRC0758": {
         "reason": "Qualify private uploader claims while preserving independently documented reissue and discographic evidence.",
         "fields": {
@@ -4006,6 +4031,24 @@
       }
     },
     "Media": {
+      "M377": {
+        "reason": "Qualify uploader-only performance and label claims while preserving independently corroborated catalogue and discographic evidence.",
+        "fields": {
+          "publicCreditLine": "Henryk Gold and his ensemble; Syrena Record, as identified in the upload description. YouTube upload by jurek46pink."
+        }
+      },
+      "M365": {
+        "reason": "Qualify uploader-only performance and label claims while preserving independently corroborated catalogue and discographic evidence.",
+        "fields": {
+          "publicCreditLine": "Gloria-Tanz-Orchester; John Hendrik, vocal, as identified in the upload description. YouTube upload by Brillantspecial."
+        }
+      },
+      "M354": {
+        "reason": "Qualify uploader-only performance and label claims while preserving independently corroborated catalogue and discographic evidence.",
+        "fields": {
+          "publicCreditLine": "Theo Mackeben mit seinem Jazz-Orchester; Walter Jurmann, vocal refrain, as identified in the upload description. YouTube upload by Jan van den Belt."
+        }
+      },
       "M392": {
         "reason": "Qualify private uploader claims while preserving independently documented reissue and discographic evidence.",
         "fields": {
@@ -5831,6 +5874,79 @@
       }
     },
     "Contributions": {
+      "CON-S118-P-P173": {
+        "reason": "Qualify uploader-only performance and label claims while preserving independently corroborated catalogue and discographic evidence.",
+        "fields": {
+          "evidenceContext": [
+            "discography"
+          ],
+          "scopeNote": "The Great 78 Project catalogue credits Allan Jones on His Master’s Voice B.8724, matrix OA09937. The earlier YouTube description refers to the American Victor 4381 issue of the same session. This credit follows the combined discographic documentation, not a new visual transcription of either disc label."
+        }
+      },
+      "CON-S071-LAB-ORG128": {
+        "reason": "Qualify uploader-only performance and label claims while preserving independently corroborated catalogue and discographic evidence.",
+        "fields": {
+          "evidenceContext": [
+            "discography"
+          ],
+          "scopeNote": "The cited recording and Odeon matrix-discography documentation identify the issue as Odeon O-11667, matrix Be 9946. This is discographic evidence for the issuing label; the upload does not show the physical label."
+        }
+      },
+      "CON-S071-P-ORG144": {
+        "reason": "Qualify uploader-only performance and label claims while preserving independently corroborated catalogue and discographic evidence.",
+        "fields": {
+          "evidenceContext": [
+            "discography"
+          ],
+          "scopeNote": "The cited transfer and matrix-discography documentation identify Tanz-Orchester Dajos Béla with Odeon O-11667, matrix Be 9946, recorded in Berlin on 10 June 1932. This credit follows discographic documentation, not a visual transcription of the label in the upload."
+        }
+      },
+      "CON-S060-P-ORG148": {
+        "reason": "Qualify uploader-only performance and label claims while preserving independently corroborated catalogue and discographic evidence.",
+        "fields": {
+          "evidenceContext": [
+            "online_catalogue"
+          ],
+          "scopeNote": "The Internet Archive catalogue identifies the transferred pressing as Eric Harden’s danseorkester, catalogue number D 4431, matrix Bi 644. The master is independently documented in the Gloria discography, but this Danish performer wording follows the transferred pressing’s catalogue metadata; the physical label has not been examined."
+        }
+      },
+      "CON-S082-P-ORG120": {
+        "reason": "Qualify uploader-only performance and label claims while preserving independently corroborated catalogue and discographic evidence.",
+        "fields": {
+          "evidenceContext": [
+            "discography"
+          ],
+          "scopeNote": "The Discogs entry for Odeon O-11810 credits the Odeon-Künstler-Orchester under O. Dobrindt with Hans Albers. The related session details are corroborated by the Odeon label list; this credit follows catalogue and discographic documentation, not a new visual transcription of the disc label."
+        }
+      },
+      "CON-S003-LAB-ORG132": {
+        "reason": "Qualify uploader-only performance and label claims while preserving independently corroborated catalogue and discographic evidence.",
+        "fields": {
+          "certainty": "probable",
+          "scopeNote": "The upload describes the recording as a Syrena issue from 1926. No disc label, catalogue number or matrix number is supplied, so this remains an uploader-level issuing-label attribution."
+        }
+      },
+      "CON-S003-CON-P119": {
+        "reason": "Qualify uploader-only performance and label claims while preserving independently corroborated catalogue and discographic evidence.",
+        "fields": {
+          "certainty": "probable",
+          "scopeNote": "The upload identifies Henryk Gold as leader of the ensemble in an instrumental Syrena recording dated there to 1926. No disc label, catalogue number or matrix number is supplied; this remains an uploader-level attribution."
+        }
+      },
+      "CON-S030-CON-P167": {
+        "reason": "Qualify uploader-only performance and label claims while preserving independently corroborated catalogue and discographic evidence.",
+        "fields": {
+          "certainty": "probable",
+          "scopeNote": "The upload identifies Otto Dobrindt as the leader of the ensemble presented as Gloria-Tanz-Orchester, with John Hendrik singing. The disc label is not shown and no catalogue or matrix number is supplied; this remains an uploader-level attribution."
+        }
+      },
+      "CON-S026-P-P077": {
+        "reason": "Qualify uploader-only performance and label claims while preserving independently corroborated catalogue and discographic evidence.",
+        "fields": {
+          "certainty": "probable",
+          "scopeNote": "The upload identifies Walter Jurmann as the refrain singer with Theo Mackeben und sein Jazz-Orchester. No disc label, catalogue number or matrix number is supplied; this remains an uploader-level performance attribution."
+        }
+      },
       "CON-S038-P-ORG119": {
         "reason": "Qualify private uploader claims while preserving independently documented reissue and discographic evidence.",
         "fields": {
