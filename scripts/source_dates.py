@@ -114,6 +114,53 @@ USCO_RENEWAL_PATTERN = re.compile(r"\bR\s*\d+\b", flags=re.IGNORECASE)
 # these explicit avoids accidentally treating life dates, collection spans or
 # years embedded in catalogue identifiers as Source dates.
 REVIEWED_SOURCE_DATES: dict[str, dict[str, str]] = {
+    "SRC0417": {
+        "date": "1933",
+        "dateRole": "described_item",
+        "dateQualifier": "confirmed",
+        "dateDisplay": "1933 (film)"
+    },
+    "SRC0432": {
+        "date": "1920",
+        "dateRole": "publication",
+        "dateQualifier": "confirmed",
+        "dateDisplay": "[1920]"
+    },
+    "SRC0443": {
+        "date": "1935",
+        "dateRole": "issue",
+        "dateQualifier": "confirmed"
+    },
+    "SRC0538": {
+        "date": "1933",
+        "dateRole": "described_item",
+        "dateQualifier": "confirmed",
+        "dateDisplay": "1933 (film)"
+    },
+    "SRC0539": {
+        "date": "1933",
+        "dateRole": "described_item",
+        "dateQualifier": "confirmed",
+        "dateDisplay": "1933 (film)"
+    },
+    "SRC0540": {
+        "date": "1934",
+        "dateRole": "described_item",
+        "dateQualifier": "confirmed",
+        "dateDisplay": "1934 (film)"
+    },
+    "SRC0541": {
+        "date": "1933",
+        "dateRole": "described_item",
+        "dateQualifier": "confirmed",
+        "dateDisplay": "1933 (film)"
+    },
+    "SRC0579": {
+        "date": "1928",
+        "dateRole": "described_item",
+        "dateQualifier": "confirmed",
+        "dateDisplay": "1928 (aerial imagery)"
+    },
     "SRC0477": {
         "date": "1927-04-01",
         "dateRole": "data_currency",

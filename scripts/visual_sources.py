@@ -69,6 +69,89 @@ WIKIPEDIA_REPOSITORY_BY_HOST = {
 # explicit: generic Wikimedia normalization must never infer an author or an
 # underlying holding institution from the delivery platform alone.
 VISUAL_SOURCE_FIELDS: dict[str, dict[str, Any]] = {
+    "SRC0417": {
+        "fullCitation": "“Kind, ich freu’ mich auf Dein Kommen.” Film poster for the German film released in 1933. Filmportal.de, material record 746992, source credited as “DIF”.",
+        "dateRole": "described_item",
+        "dateDisplay": "1933 (film)",
+        "accessDate": "2026-10-25",
+        "researchNote": "Filmportal dates the film to 1933 and identifies the material as a film poster with source credit “DIF”. The record does not separately establish the poster’s designer, original publisher or printing date. The structured year refers to the film, not an independently verified date of the poster.",
+        "researchNoteType": "date_assessment"
+    },
+    "SRC0432": {
+        "title": "Jeśli chcesz by bolszewik nie bezcześcił ci kościołów i nie mordował kapłanów idź do wojska jako ochotnik",
+        "shortCitation": "Biblioteka Narodowa / Polona, military recruiting poster, [1920]",
+        "fullCitation": "Jeśli chcesz by bolszewik nie bezcześcił ci kościołów i nie mordował kapłanów idź do wojska jako ochotnik. [Place unidentified]: [publisher unidentified], [1920] (Łódź: Kotkowski i Frejlich Zakłady Graficzne). Military recruiting poster, 1 sheet, 100 × 65 cm. Biblioteka Narodowa, shelfmark DŻS IA 6a6, bibliographic record b1000000657375; digitised in Polona, item 088000ec-c4ce-496d-bba7-e44af30be3c6.",
+        "publication": "[Place unidentified]: [publisher unidentified], [1920] (Łódź: Kotkowski i Frejlich Zakłady Graficzne)",
+        "dateRole": "publication",
+        "dateDisplay": "[1920]",
+        "accessDate": "2026-10-25",
+        "researchNote": "The full title, physical description, printer and shelfmark follow the Polona catalogue. The publication year is supplied there in square brackets as [1920]; no exact publication day or separate design date is established. “Bolszewik” is the archive’s shortened descriptive label, not the full catalogued title. The printer is not treated as an identified publisher or designer.",
+        "researchNoteType": "verification_note"
+    },
+    "SRC0443": {
+        "title": "You’re All I Need, 1935 [sheet music, pp. 1–2 & 6 only]",
+        "creator": "Bronisław Kaper (composer); Walter Jurmann (composer); Gus Kahn (lyricist)",
+        "publication": "Robbins Music Corporation, New York",
+        "fullCitation": "Bronisław Kaper and Walter Jurmann, music; Gus Kahn, lyrics. “You’re All I Need,” from Escapade (Metro-Goldwyn-Mayer). New York: Robbins Music Corporation, 1935. Partial sheet music, pp. 1–2 and 6 only. USC Polish Music Center, Bronisław Kaper Collection, call number PMC 5/36; USC Digital Library, unique identifier UC17193693, legacy identifier kaper-sheet-536-partial, publisher number SH 1304-3. Digital publisher: University of Southern California Libraries. DOI 10.25549/pmc_09-03-2026_11-05-25_PM-oUC17193693.",
+        "dateRole": "issue",
+        "accessDate": "2026-10-25",
+        "primaryUrl": "https://doi.org/10.25549/pmc_09-03-2026_11-05-25_PM-oUC17193693",
+        "accessUrl": "https://digitallibrary.usc.edu/CS.aspx?VP3=DamView&DocRID=2A3BF1X8GAHTY",
+        "researchNote": "USC identifies both the creation and issue year as 1935 and distinguishes Robbins Music Corporation as the original publisher from USC Libraries as the digital publisher. The online document contains only pages 1–2 and 6; the linked local medium reproduces the cover, not the complete score.",
+        "researchNoteType": "verification_note"
+    },
+    "SRC0538": {
+        "creator": "Walter Jurmann and Bronisław Kaper (music); Ernst Marischka and Fritz Rotter (lyrics); Herzig (cover design)",
+        "publication": "Wiener Bohème Verlag, Berlin–Vienna",
+        "fullCitation": "“Ein Lied für Dich.” Sheet-music cover for the 1933 film, with Jan Kiepura; texts by Ernst Marischka and Fritz Rotter, music by Walter Jurmann and B. Kaper. Wiener Bohème Verlag, Berlin–Vienna; cover design signed “Herzig”. Digital reproduction: Verein der Freunde und Förderer des Werks von Walter Jurmann, official cover gallery.",
+        "dateRole": "described_item",
+        "dateDisplay": "1933 (film)",
+        "researchNote": "Credits and publisher imprints were checked against the locally preserved cover reproduction. The year refers to the associated film, not an independently established printing date. The Walter Jurmann society supplies the access reproduction; it is not the historical creator or publisher.",
+        "researchNoteType": "verification_note"
+    },
+    "SRC0539": {
+        "creator": "Herzig (cover design)",
+        "publication": "Wiener Bohème Verlag, Berlin–Vienna",
+        "fullCitation": "“Heut kommt’s drauf an!” Sheet-music cover for the 1933 film starring Hans Albers, described on the cover as “Ein Boston-Film im Verleih der Siegel-Monopol-Film / Vertrieb Cinema”. Wiener Bohème Verlag, Berlin–Vienna; cover design signed “Herzig”. Digital reproduction: Verein der Freunde und Förderer des Werks von Walter Jurmann, official cover gallery.",
+        "dateRole": "described_item",
+        "dateDisplay": "1933 (film)",
+        "researchNote": "Credits and publisher imprints were checked against the locally preserved cover reproduction. The year refers to the associated film, not an independently established printing date. The Walter Jurmann society supplies the access reproduction; it is not the historical creator or publisher.",
+        "researchNoteType": "verification_note"
+    },
+    "SRC0540": {
+        "creator": "Walter Jurmann and Bronisław Kaper (music); René Pujol (lyrics)",
+        "publication": "Éditions Salabert, Paris",
+        "fullCitation": "“On a volé un homme.” Sheet-music collection cover for the 1934 film, advertising “Ni mal, ni bien” (java) and “Un regard de femme” (slow-fox), sung by Henry Garat; words by René Pujol, music by W. Jurmann and B. Kaper. Paris: Éditions Salabert. Digital reproduction: Verein der Freunde und Förderer des Werks von Walter Jurmann, official cover gallery.",
+        "dateRole": "described_item",
+        "dateDisplay": "1934 (film)",
+        "researchNote": "Credits and publisher imprints were checked against the locally preserved cover reproduction. The year refers to the associated film, not an independently established printing date. The Walter Jurmann society supplies the access reproduction; it is not the historical creator or publisher.",
+        "researchNoteType": "verification_note"
+    },
+    "SRC0541": {
+        "creator": "Walter Jurmann and Bronisław Kaper (music); Fritz Rotter (lyrics); Herzig (cover design)",
+        "publication": "Ufaton-Verlag, Berlin",
+        "fullCitation": "“Kind, ich freu’ mich auf Dein Kommen.” Sheet-music cover for the 1933 film, described as “ein Ufaton-Film, Herstellung: Günther Stapenhorst”; texts by Fritz Rotter, music by Walter Jurmann and B. Kaper. Berlin: Ufaton-Verlag; drawing signed “Herzig”. Digital reproduction: Verein der Freunde und Förderer des Werks von Walter Jurmann, official cover gallery.",
+        "dateRole": "described_item",
+        "dateDisplay": "1933 (film)",
+        "researchNote": "Credits and publisher imprints were checked against the locally preserved cover reproduction. The year refers to the associated film, not an independently established printing date. The Walter Jurmann society supplies the access reproduction; it is not the historical creator or publisher.",
+        "researchNoteType": "verification_note"
+    },
+    "SRC0579": {
+        "publication": "Senatsverwaltung für Stadtentwicklung, Bauen und Wohnen Berlin (digital dataset provider)",
+        "fullCitation": "Luftbilder 1928, Maßstab 1:4 000. Historical vertical aerial imagery of Berlin, digitally provided as a WMS aerial mosaic by the Senatsverwaltung für Stadtentwicklung, Bauen und Wohnen Berlin. Detail covering Pommersche Straße at Sächsische Straße, Berlin-Wilmersdorf. Geoportal Berlin / Berlin Open Data, WMS service luftbild_1928_04. Datenlizenz Deutschland – Zero – Version 2.0.",
+        "dateRole": "described_item",
+        "dateDisplay": "1928 (aerial imagery)",
+        "accessDate": "2026-10-25",
+        "researchNote": "The year 1928 dates the historical aerial imagery, not the creation or publication of the modern digital dataset. Berlin Open Data identifies the Senatsverwaltung für Stadtentwicklung, Bauen und Wohnen Berlin as the publishing body; this is a digital-provider credit, not an identification of the original aerial photographer. The earlier citation recorded layer c_luftbilder_1928_04_raster; the current dataset page links to WMS service luftbild_1928_04.",
+        "researchNoteType": "verification_note",
+        "additionalLinks": [
+            {
+                "label": "View aerial imagery in Geoportal Berlin",
+                "url": "https://gdi.berlin.de/view/luftbild_1928_04",
+                "role": "alternate_access"
+            }
+        ]
+    },
     "SRC0477": {
         "publication": "Warszawa: publisher unidentified, [1927] (J. Burian, printer)",
         "researchNote": "The list gives each member’s name, pseudonym and qualification, “A.” for author and “C.” for composer. The first page reads “Chwast Henryk «Asper» C.”; page 3 reads “Tuwim Juljan «J. Wim» A.” and “Wiehler Zygmunt C.”. Polona marks the digitised item as public domain. The printed heading gives the membership list as current on 1 April 1927; the structured date records that stated currency date, not the day of printing or publication. Polona supplies the publication year in square brackets as [1927].",
@@ -173,6 +256,7 @@ VISUAL_SOURCE_FIELDS: dict[str, dict[str, Any]] = {
         "dateQualifier": "unknown",
     },
     "SRC0439": {
+        "creator": "Creator unidentified",
         # Wien Museum's date is explicitly qualified as Gebrauch (use).
         "dateRole": "described_item",
         "dateDisplay": "1922 (use)",
@@ -321,6 +405,9 @@ VISUAL_SOURCE_FIELDS: dict[str, dict[str, Any]] = {
 }
 
 VISUAL_SOURCE_FIELD_REMOVALS = {
+    "SRC0417": ('publication',),
+    "SRC0439": ('publication',),
+    "SRC0579": ('creator',),
     "SRC0535": ("creator",),
     "SRC0537": ("date", "dateEnd", "dateDisplay"),
     "SRC0523": ("accessUrl",),

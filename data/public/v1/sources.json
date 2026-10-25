@@ -14914,15 +14914,14 @@
     {
       "id": "SRC0417",
       "shortCitation": "Filmportal.de, Kind, ich freu’ mich auf Dein Kommen poster",
-      "fullCitation": "Kind, ich freu’ mich auf Dein Kommen (Germany, 1933) — Filmplakat material page. Filmportal.de, material node 746992; source shown as DIF.",
+      "fullCitation": "“Kind, ich freu’ mich auf Dein Kommen.” Film poster for the German film released in 1933. Filmportal.de, material record 746992, source credited as “DIF”.",
       "sourceType": "digital_collection_item",
       "title": "Kind, ich freu’ mich auf Dein Kommen — poster",
       "repository": "filmportal.de / DFF – Deutsches Filminstitut & Filmmuseum",
-      "publication": "Filmportal.de",
       "date": "1933",
-      "dateRole": "creation",
+      "dateRole": "described_item",
       "dateQualifier": "confirmed",
-      "accessDate": "2026-06-25",
+      "accessDate": "2026-10-25",
       "reliability": "medium",
       "sourceStatus": "verified",
       "slug": "src0417-wikipedia-kind-ich-freu-mich-auf-dein-kommen-poster-film-data",
@@ -14935,7 +14934,10 @@
       "mediaIds": [
         "M183"
       ],
-      "primaryUrl": "https://www.filmportal.de/node/1999/material/746992"
+      "primaryUrl": "https://www.filmportal.de/node/1999/material/746992",
+      "dateDisplay": "1933 (film)",
+      "researchNote": "Filmportal dates the film to 1933 and identifies the material as a film poster with source credit “DIF”. The record does not separately establish the poster’s designer, original publisher or printing date. The structured year refers to the film, not an independently verified date of the poster.",
+      "researchNoteType": "date_assessment"
     },
     {
       "id": "SRC0421",
@@ -15187,16 +15189,16 @@
     },
     {
       "id": "SRC0432",
-      "shortCitation": "Polona, “Bolszewik” image/item",
-      "fullCitation": "“Bolszewik.” Biblioteka Narodowa / Polona, item-view 088000ec-c4ce-496d-bba7-e44af30be3c6, viewer page 0.",
+      "shortCitation": "Biblioteka Narodowa / Polona, military recruiting poster, [1920]",
+      "fullCitation": "Jeśli chcesz by bolszewik nie bezcześcił ci kościołów i nie mordował kapłanów idź do wojska jako ochotnik. [Place unidentified]: [publisher unidentified], [1920] (Łódź: Kotkowski i Frejlich Zakłady Graficzne). Military recruiting poster, 1 sheet, 100 × 65 cm. Biblioteka Narodowa, shelfmark DŻS IA 6a6, bibliographic record b1000000657375; digitised in Polona, item 088000ec-c4ce-496d-bba7-e44af30be3c6.",
       "sourceType": "digital_collection_item",
-      "title": "Bolszewik",
+      "title": "Jeśli chcesz by bolszewik nie bezcześcił ci kościołów i nie mordował kapłanów idź do wojska jako ochotnik",
       "repository": "Biblioteka Narodowa / Polona",
-      "publication": "Polona",
+      "publication": "[Place unidentified]: [publisher unidentified], [1920] (Łódź: Kotkowski i Frejlich Zakłady Graficzne)",
       "date": "1920",
-      "dateRole": "creation",
+      "dateRole": "publication",
       "dateQualifier": "confirmed",
-      "accessDate": "2026-06-24",
+      "accessDate": "2026-10-25",
       "reliability": "high",
       "sourceStatus": "verified",
       "slug": "src0432-bolszewik",
@@ -15206,7 +15208,10 @@
       "mediaIds": [
         "M070"
       ],
-      "primaryUrl": "https://polona.pl/item-view/088000ec-c4ce-496d-bba7-e44af30be3c6?page=0"
+      "primaryUrl": "https://polona.pl/item-view/088000ec-c4ce-496d-bba7-e44af30be3c6?page=0",
+      "dateDisplay": "[1920]",
+      "researchNote": "The full title, physical description, printer and shelfmark follow the Polona catalogue. The publication year is supplied there in square brackets as [1920]; no exact publication day or separate design date is established. “Bolszewik” is the archive’s shortened descriptive label, not the full catalogued title. The printer is not treated as an identified publisher or designer.",
+      "researchNoteType": "verification_note"
     },
     {
       "id": "SRC0433",
@@ -15367,9 +15372,8 @@
       "fullCitation": "“Wien I. - Graben.” Descriptive title: “1., Graben - Blick vom Stock-im-Eisen-Platz, Ansichtskarte.” Wien Museum Online Sammlung, inv. no. 203214. Postcard used in 1922; maker unidentified.",
       "sourceType": "digital_collection_item",
       "title": "Wien I. - Graben",
-      "creator": "Unbekannt",
+      "creator": "Creator unidentified",
       "repository": "Wien Museum Online Sammlung",
-      "publication": "Wien Museum",
       "date": "1922",
       "dateRole": "described_item",
       "dateQualifier": "confirmed",
@@ -15452,15 +15456,15 @@
     {
       "id": "SRC0443",
       "shortCitation": "USC Digital Library, “You’re All I Need” sheet music",
-      "fullCitation": "“You’re All I Need” — sheet-music image/reproduction, from Escapade (1935). University of Southern California Digital Library / USC Digital Library, DamView record DocRID 2A3BF1X8GAHTY, PN=14.",
+      "fullCitation": "Bronisław Kaper and Walter Jurmann, music; Gus Kahn, lyrics. “You’re All I Need,” from Escapade (Metro-Goldwyn-Mayer). New York: Robbins Music Corporation, 1935. Partial sheet music, pp. 1–2 and 6 only. USC Polish Music Center, Bronisław Kaper Collection, call number PMC 5/36; USC Digital Library, unique identifier UC17193693, legacy identifier kaper-sheet-536-partial, publisher number SH 1304-3. Digital publisher: University of Southern California Libraries. DOI 10.25549/pmc_09-03-2026_11-05-25_PM-oUC17193693.",
       "sourceType": "digital_collection_item",
-      "title": "You’re All I Need",
+      "title": "You’re All I Need, 1935 [sheet music, pp. 1–2 & 6 only]",
       "repository": "University of Southern California Digital Library",
-      "publication": "USC Digital Library",
+      "publication": "Robbins Music Corporation, New York",
       "date": "1935",
-      "dateRole": "creation",
+      "dateRole": "issue",
       "dateQualifier": "confirmed",
-      "accessDate": "2026-07-12",
+      "accessDate": "2026-10-25",
       "reliability": "high",
       "sourceStatus": "verified",
       "slug": "src0443-youre-all-i-need-1935",
@@ -15480,7 +15484,11 @@
       "workRelationIds": [
         "REL0079"
       ],
-      "primaryUrl": "https://digitallibrary.usc.edu/CS.aspx?VP3=DamView&VBID=2A3BXZ61XIDKI&PN=14&DocRID=2A3BF1X8GAHTY"
+      "primaryUrl": "https://doi.org/10.25549/pmc_09-03-2026_11-05-25_PM-oUC17193693",
+      "creator": "Bronisław Kaper (composer); Walter Jurmann (composer); Gus Kahn (lyricist)",
+      "accessUrl": "https://digitallibrary.usc.edu/CS.aspx?VP3=DamView&DocRID=2A3BF1X8GAHTY",
+      "researchNote": "USC identifies both the creation and issue year as 1935 and distinguishes Robbins Music Corporation as the original publisher from USC Libraries as the digital publisher. The online document contains only pages 1–2 and 6; the linked local medium reproduces the cover, not the complete score.",
+      "researchNoteType": "verification_note"
     },
     {
       "id": "SRC0446",
@@ -18824,14 +18832,14 @@
     {
       "id": "SRC0538",
       "shortCitation": "Walter Jurmann official cover gallery — Ein Lied für Dich (1933)",
-      "fullCitation": "Verein der Freunde und Förderer des Werks von Walter Jurmann. “Ein Lied für Dich” cover, 1933. Walter Jurmann official cover gallery.",
+      "fullCitation": "“Ein Lied für Dich.” Sheet-music cover for the 1933 film, with Jan Kiepura; texts by Ernst Marischka and Fritz Rotter, music by Walter Jurmann and B. Kaper. Wiener Bohème Verlag, Berlin–Vienna; cover design signed “Herzig”. Digital reproduction: Verein der Freunde und Förderer des Werks von Walter Jurmann, official cover gallery.",
       "sourceType": "digital_collection_item",
       "title": "Ein Lied für Dich (1933) — promotional sheet-music cover",
-      "creator": "Verein der Freunde und Förderer des Werks von Walter Jurmann",
+      "creator": "Walter Jurmann and Bronisław Kaper (music); Ernst Marischka and Fritz Rotter (lyrics); Herzig (cover design)",
       "repository": "Verein der Freunde und Förderer des Werks von Walter Jurmann",
-      "publication": "Walter Jurmann official website",
+      "publication": "Wiener Bohème Verlag, Berlin–Vienna",
       "date": "1933",
-      "dateRole": "creation",
+      "dateRole": "described_item",
       "dateQualifier": "confirmed",
       "accessDate": "2026-07-13",
       "reliability": "high",
@@ -18847,19 +18855,22 @@
           "url": "https://walter-jurmann.com/wp-content/uploads/cover/21wj-cover-Ein_lied_fuer_dich1933.jpg",
           "role": "source_image"
         }
-      ]
+      ],
+      "dateDisplay": "1933 (film)",
+      "researchNote": "Credits and publisher imprints were checked against the locally preserved cover reproduction. The year refers to the associated film, not an independently established printing date. The Walter Jurmann society supplies the access reproduction; it is not the historical creator or publisher.",
+      "researchNoteType": "verification_note"
     },
     {
       "id": "SRC0539",
       "shortCitation": "Walter Jurmann official cover gallery — Heut’ kommt’s drauf an (1933)",
-      "fullCitation": "Verein der Freunde und Förderer des Werks von Walter Jurmann. “Heut’ kommt’s drauf an” cover, 1933. Walter Jurmann official cover gallery.",
+      "fullCitation": "“Heut kommt’s drauf an!” Sheet-music cover for the 1933 film starring Hans Albers, described on the cover as “Ein Boston-Film im Verleih der Siegel-Monopol-Film / Vertrieb Cinema”. Wiener Bohème Verlag, Berlin–Vienna; cover design signed “Herzig”. Digital reproduction: Verein der Freunde und Förderer des Werks von Walter Jurmann, official cover gallery.",
       "sourceType": "digital_collection_item",
       "title": "Heut’ kommt’s drauf an (1933) — promotional sheet-music cover",
-      "creator": "Verein der Freunde und Förderer des Werks von Walter Jurmann",
+      "creator": "Herzig (cover design)",
       "repository": "Verein der Freunde und Förderer des Werks von Walter Jurmann",
-      "publication": "Walter Jurmann official website",
+      "publication": "Wiener Bohème Verlag, Berlin–Vienna",
       "date": "1933",
-      "dateRole": "creation",
+      "dateRole": "described_item",
       "dateQualifier": "confirmed",
       "accessDate": "2026-07-13",
       "reliability": "high",
@@ -18875,19 +18886,22 @@
           "url": "https://walter-jurmann.com/wp-content/uploads/cover/20wj-cover-Heut_kommts_drauf_an1933.jpg",
           "role": "source_image"
         }
-      ]
+      ],
+      "dateDisplay": "1933 (film)",
+      "researchNote": "Credits and publisher imprints were checked against the locally preserved cover reproduction. The year refers to the associated film, not an independently established printing date. The Walter Jurmann society supplies the access reproduction; it is not the historical creator or publisher.",
+      "researchNoteType": "verification_note"
     },
     {
       "id": "SRC0540",
       "shortCitation": "Walter Jurmann official cover gallery — On a volé un homme (1934)",
-      "fullCitation": "Verein der Freunde und Förderer des Werks von Walter Jurmann. “On a volé un homme” cover, 1934. Walter Jurmann official cover gallery.",
+      "fullCitation": "“On a volé un homme.” Sheet-music collection cover for the 1934 film, advertising “Ni mal, ni bien” (java) and “Un regard de femme” (slow-fox), sung by Henry Garat; words by René Pujol, music by W. Jurmann and B. Kaper. Paris: Éditions Salabert. Digital reproduction: Verein der Freunde und Förderer des Werks von Walter Jurmann, official cover gallery.",
       "sourceType": "digital_collection_item",
       "title": "On a volé un homme (1934) — sheet-music collection cover",
-      "creator": "Verein der Freunde und Förderer des Werks von Walter Jurmann",
+      "creator": "Walter Jurmann and Bronisław Kaper (music); René Pujol (lyrics)",
       "repository": "Verein der Freunde und Förderer des Werks von Walter Jurmann",
-      "publication": "Walter Jurmann official website",
+      "publication": "Éditions Salabert, Paris",
       "date": "1934",
-      "dateRole": "creation",
+      "dateRole": "described_item",
       "dateQualifier": "confirmed",
       "accessDate": "2026-07-13",
       "reliability": "high",
@@ -18939,19 +18953,22 @@
       ],
       "nameVariantIds": [
         "PNV0041"
-      ]
+      ],
+      "dateDisplay": "1934 (film)",
+      "researchNote": "Credits and publisher imprints were checked against the locally preserved cover reproduction. The year refers to the associated film, not an independently established printing date. The Walter Jurmann society supplies the access reproduction; it is not the historical creator or publisher.",
+      "researchNoteType": "verification_note"
     },
     {
       "id": "SRC0541",
       "shortCitation": "Walter Jurmann official cover gallery — Kind, ich freu’ mich auf Dein Kommen (1933)",
-      "fullCitation": "Verein der Freunde und Förderer des Werks von Walter Jurmann. “Kind, ich freu’ mich auf Dein Kommen” cover, 1933. Walter Jurmann official cover gallery.",
+      "fullCitation": "“Kind, ich freu’ mich auf Dein Kommen.” Sheet-music cover for the 1933 film, described as “ein Ufaton-Film, Herstellung: Günther Stapenhorst”; texts by Fritz Rotter, music by Walter Jurmann and B. Kaper. Berlin: Ufaton-Verlag; drawing signed “Herzig”. Digital reproduction: Verein der Freunde und Förderer des Werks von Walter Jurmann, official cover gallery.",
       "sourceType": "digital_collection_item",
       "title": "Kind, ich freu’ mich auf Dein Kommen (1933) — promotional sheet-music cover",
-      "creator": "Verein der Freunde und Förderer des Werks von Walter Jurmann",
+      "creator": "Walter Jurmann and Bronisław Kaper (music); Fritz Rotter (lyrics); Herzig (cover design)",
       "repository": "Verein der Freunde und Förderer des Werks von Walter Jurmann",
-      "publication": "Walter Jurmann official website",
+      "publication": "Ufaton-Verlag, Berlin",
       "date": "1933",
-      "dateRole": "creation",
+      "dateRole": "described_item",
       "dateQualifier": "confirmed",
       "accessDate": "2026-07-13",
       "reliability": "high",
@@ -18967,7 +18984,10 @@
           "url": "https://walter-jurmann.com/wp-content/uploads/cover/22wj-cover-Kind_ich_freu_mich_auf_dein_Kommen1933.jpg",
           "role": "source_image"
         }
-      ]
+      ],
+      "dateDisplay": "1933 (film)",
+      "researchNote": "Credits and publisher imprints were checked against the locally preserved cover reproduction. The year refers to the associated film, not an independently established printing date. The Walter Jurmann society supplies the access reproduction; it is not the historical creator or publisher.",
+      "researchNoteType": "verification_note"
     },
     {
       "id": "SRC0542",
@@ -19988,17 +20008,16 @@
     {
       "id": "SRC0579",
       "shortCitation": "Geoportal Berlin, Luftbilder 1928, Pommersche Straße at Sächsische Straße.",
-      "fullCitation": "Senatsverwaltung für Stadtentwicklung, Bauen und Wohnen Berlin. Luftbilder 1928, Maßstab 1:4 000: aerial mosaic covering Pommersche Straße at Sächsische Straße, Berlin-Wilmersdorf. Geoportal Berlin WMS, layer c_luftbilder_1928_04_raster. Datenlizenz Deutschland – Zero – Version 2.0.",
+      "fullCitation": "Luftbilder 1928, Maßstab 1:4 000. Historical vertical aerial imagery of Berlin, digitally provided as a WMS aerial mosaic by the Senatsverwaltung für Stadtentwicklung, Bauen und Wohnen Berlin. Detail covering Pommersche Straße at Sächsische Straße, Berlin-Wilmersdorf. Geoportal Berlin / Berlin Open Data, WMS service luftbild_1928_04. Datenlizenz Deutschland – Zero – Version 2.0.",
       "sourceType": "digital_collection_item",
       "title": "Luftbilder 1928 — Pommersche Straße at Sächsische Straße",
-      "creator": "Senatsverwaltung für Stadtentwicklung, Bauen und Wohnen Berlin",
       "date": "1928",
-      "dateRole": "creation",
+      "dateRole": "described_item",
       "dateQualifier": "confirmed",
       "repository": "Geoportal Berlin",
-      "publication": "Berlin Open Data",
+      "publication": "Senatsverwaltung für Stadtentwicklung, Bauen und Wohnen Berlin (digital dataset provider)",
       "primaryUrl": "https://daten.berlin.de/datensaetze/luftbilder-1928-massstab-1-4-000-wms-bed1a566",
-      "accessDate": "2026-07-29",
+      "accessDate": "2026-10-25",
       "reliability": "high",
       "sourceStatus": "verified",
       "slug": "src0579-geoportal-berlin-aerial-pommersche-strasse-1928",
@@ -20007,6 +20026,16 @@
       ],
       "mediaIds": [
         "M282"
+      ],
+      "dateDisplay": "1928 (aerial imagery)",
+      "researchNote": "The year 1928 dates the historical aerial imagery, not the creation or publication of the modern digital dataset. Berlin Open Data identifies the Senatsverwaltung für Stadtentwicklung, Bauen und Wohnen Berlin as the publishing body; this is a digital-provider credit, not an identification of the original aerial photographer. The earlier citation recorded layer c_luftbilder_1928_04_raster; the current dataset page links to WMS service luftbild_1928_04.",
+      "researchNoteType": "verification_note",
+      "additionalLinks": [
+        {
+          "label": "View aerial imagery in Geoportal Berlin",
+          "url": "https://gdi.berlin.de/view/luftbild_1928_04",
+          "role": "alternate_access"
+        }
       ]
     },
     {

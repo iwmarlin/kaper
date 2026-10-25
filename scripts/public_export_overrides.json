@@ -576,6 +576,28 @@
       }
     },
     "Sources": {
+      "SRC0579": {
+        "reason": "Item-level digital-collection audit: distinguish historical creators, imprints and object chronology from modern reproduction providers; retain qualified dates and verified catalogue identifiers.",
+        "fields": {
+          "publication": "Senatsverwaltung für Stadtentwicklung, Bauen und Wohnen Berlin (digital dataset provider)",
+          "fullCitation": "Luftbilder 1928, Maßstab 1:4 000. Historical vertical aerial imagery of Berlin, digitally provided as a WMS aerial mosaic by the Senatsverwaltung für Stadtentwicklung, Bauen und Wohnen Berlin. Detail covering Pommersche Straße at Sächsische Straße, Berlin-Wilmersdorf. Geoportal Berlin / Berlin Open Data, WMS service luftbild_1928_04. Datenlizenz Deutschland – Zero – Version 2.0.",
+          "dateRole": "described_item",
+          "dateDisplay": "1928 (aerial imagery)",
+          "accessDate": "2026-10-25",
+          "researchNote": "The year 1928 dates the historical aerial imagery, not the creation or publication of the modern digital dataset. Berlin Open Data identifies the Senatsverwaltung für Stadtentwicklung, Bauen und Wohnen Berlin as the publishing body; this is a digital-provider credit, not an identification of the original aerial photographer. The earlier citation recorded layer c_luftbilder_1928_04_raster; the current dataset page links to WMS service luftbild_1928_04.",
+          "researchNoteType": "verification_note",
+          "additionalLinks": [
+            {
+              "label": "View aerial imagery in Geoportal Berlin",
+              "url": "https://gdi.berlin.de/view/luftbild_1928_04",
+              "role": "alternate_access"
+            }
+          ]
+        },
+        "removeFields": [
+          "creator"
+        ]
+      },
       "SRC0790": {
         "reason": "Qualify uploader-only performance and label claims while preserving independently corroborated catalogue and discographic evidence.",
         "fields": {
@@ -2782,11 +2804,19 @@
         ]
       },
       "SRC0417": {
-        "reason": "Normalize the source type and keep Filmportal's copyright-status statement exclusively with the linked medium.",
+        "reason": "Item-level digital-collection audit: distinguish historical creators, imprints and object chronology from modern reproduction providers; retain qualified dates and verified catalogue identifiers.",
         "fields": {
-          "fullCitation": "Kind, ich freu’ mich auf Dein Kommen (Germany, 1933) — Filmplakat material page. Filmportal.de, material node 746992; source shown as DIF.",
-          "sourceType": "digital_collection_item"
-        }
+          "fullCitation": "“Kind, ich freu’ mich auf Dein Kommen.” Film poster for the German film released in 1933. Filmportal.de, material record 746992, source credited as “DIF”.",
+          "sourceType": "digital_collection_item",
+          "dateRole": "described_item",
+          "dateDisplay": "1933 (film)",
+          "accessDate": "2026-10-25",
+          "researchNote": "Filmportal dates the film to 1933 and identifies the material as a film poster with source credit “DIF”. The record does not separately establish the poster’s designer, original publisher or printing date. The structured year refers to the film, not an independently verified date of the poster.",
+          "researchNoteType": "date_assessment"
+        },
+        "removeFields": [
+          "publication"
+        ]
       },
       "SRC0421": {
         "reason": "Preserve source-specific qualification: platform contributors are not image creators; distinguish unresolved metadata dates, publication dates and attributed authorship.",
@@ -2859,10 +2889,19 @@
         }
       },
       "SRC0432": {
-        "reason": "Normalize the source type and record the 1920 date of the public-domain Polish anti-Bolshevik recruitment poster.",
+        "reason": "Item-level digital-collection audit: distinguish historical creators, imprints and object chronology from modern reproduction providers; retain qualified dates and verified catalogue identifiers.",
         "fields": {
           "date": "1920",
-          "sourceType": "digital_collection_item"
+          "sourceType": "digital_collection_item",
+          "title": "Jeśli chcesz by bolszewik nie bezcześcił ci kościołów i nie mordował kapłanów idź do wojska jako ochotnik",
+          "shortCitation": "Biblioteka Narodowa / Polona, military recruiting poster, [1920]",
+          "fullCitation": "Jeśli chcesz by bolszewik nie bezcześcił ci kościołów i nie mordował kapłanów idź do wojska jako ochotnik. [Place unidentified]: [publisher unidentified], [1920] (Łódź: Kotkowski i Frejlich Zakłady Graficzne). Military recruiting poster, 1 sheet, 100 × 65 cm. Biblioteka Narodowa, shelfmark DŻS IA 6a6, bibliographic record b1000000657375; digitised in Polona, item 088000ec-c4ce-496d-bba7-e44af30be3c6.",
+          "publication": "[Place unidentified]: [publisher unidentified], [1920] (Łódź: Kotkowski i Frejlich Zakłady Graficzne)",
+          "dateRole": "publication",
+          "dateDisplay": "[1920]",
+          "accessDate": "2026-10-25",
+          "researchNote": "The full title, physical description, printer and shelfmark follow the Polona catalogue. The publication year is supplied there in square brackets as [1920]; no exact publication day or separate design date is established. “Bolszewik” is the archive’s shortened descriptive label, not the full catalogued title. The printer is not treated as an identified publisher or designer.",
+          "researchNoteType": "verification_note"
         }
       },
       "SRC0433": {
@@ -2925,7 +2964,7 @@
         }
       },
       "SRC0439": {
-        "reason": "Distinguish bibliographic description from quoted source text and interpretation; identify the postcard date as use rather than creation, where applicable.",
+        "reason": "Item-level digital-collection audit: distinguish historical creators, imprints and object chronology from modern reproduction providers; retain qualified dates and verified catalogue identifiers.",
         "fields": {
           "fullCitation": "“Wien I. - Graben.” Descriptive title: “1., Graben - Blick vom Stock-im-Eisen-Platz, Ansichtskarte.” Wien Museum Online Sammlung, inv. no. 203214. Postcard used in 1922; maker unidentified.",
           "sourceType": "digital_collection_item",
@@ -2933,8 +2972,12 @@
           "dateRole": "described_item",
           "dateDisplay": "1922 (use)",
           "researchNote": "Wien Museum dates the postcard “1922 (Gebrauch)”, meaning its use in 1922. This is not an established date of photography or printing.",
-          "researchNoteType": "date_assessment"
-        }
+          "researchNoteType": "date_assessment",
+          "creator": "Creator unidentified"
+        },
+        "removeFields": [
+          "publication"
+        ]
       },
       "SRC0441": {
         "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
@@ -2944,9 +2987,19 @@
         }
       },
       "SRC0443": {
-        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "reason": "Item-level digital-collection audit: distinguish historical creators, imprints and object chronology from modern reproduction providers; retain qualified dates and verified catalogue identifiers.",
         "fields": {
-          "sourceType": "digital_collection_item"
+          "sourceType": "digital_collection_item",
+          "title": "You’re All I Need, 1935 [sheet music, pp. 1–2 & 6 only]",
+          "creator": "Bronisław Kaper (composer); Walter Jurmann (composer); Gus Kahn (lyricist)",
+          "publication": "Robbins Music Corporation, New York",
+          "fullCitation": "Bronisław Kaper and Walter Jurmann, music; Gus Kahn, lyrics. “You’re All I Need,” from Escapade (Metro-Goldwyn-Mayer). New York: Robbins Music Corporation, 1935. Partial sheet music, pp. 1–2 and 6 only. USC Polish Music Center, Bronisław Kaper Collection, call number PMC 5/36; USC Digital Library, unique identifier UC17193693, legacy identifier kaper-sheet-536-partial, publisher number SH 1304-3. Digital publisher: University of Southern California Libraries. DOI 10.25549/pmc_09-03-2026_11-05-25_PM-oUC17193693.",
+          "dateRole": "issue",
+          "accessDate": "2026-10-25",
+          "primaryUrl": "https://doi.org/10.25549/pmc_09-03-2026_11-05-25_PM-oUC17193693",
+          "accessUrl": "https://digitallibrary.usc.edu/CS.aspx?VP3=DamView&DocRID=2A3BF1X8GAHTY",
+          "researchNote": "USC identifies both the creation and issue year as 1935 and distinguishes Robbins Music Corporation as the original publisher from USC Libraries as the digital publisher. The online document contains only pages 1–2 and 6; the linked local medium reproduces the cover, not the complete score.",
+          "researchNoteType": "verification_note"
         }
       },
       "SRC0446": {
@@ -3571,27 +3624,55 @@
         }
       },
       "SRC0538": {
-        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "reason": "Item-level digital-collection audit: distinguish historical creators, imprints and object chronology from modern reproduction providers; retain qualified dates and verified catalogue identifiers.",
         "fields": {
-          "sourceType": "digital_collection_item"
+          "sourceType": "digital_collection_item",
+          "creator": "Walter Jurmann and Bronisław Kaper (music); Ernst Marischka and Fritz Rotter (lyrics); Herzig (cover design)",
+          "publication": "Wiener Bohème Verlag, Berlin–Vienna",
+          "fullCitation": "“Ein Lied für Dich.” Sheet-music cover for the 1933 film, with Jan Kiepura; texts by Ernst Marischka and Fritz Rotter, music by Walter Jurmann and B. Kaper. Wiener Bohème Verlag, Berlin–Vienna; cover design signed “Herzig”. Digital reproduction: Verein der Freunde und Förderer des Werks von Walter Jurmann, official cover gallery.",
+          "dateRole": "described_item",
+          "dateDisplay": "1933 (film)",
+          "researchNote": "Credits and publisher imprints were checked against the locally preserved cover reproduction. The year refers to the associated film, not an independently established printing date. The Walter Jurmann society supplies the access reproduction; it is not the historical creator or publisher.",
+          "researchNoteType": "verification_note"
         }
       },
       "SRC0539": {
-        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "reason": "Item-level digital-collection audit: distinguish historical creators, imprints and object chronology from modern reproduction providers; retain qualified dates and verified catalogue identifiers.",
         "fields": {
-          "sourceType": "digital_collection_item"
+          "sourceType": "digital_collection_item",
+          "creator": "Herzig (cover design)",
+          "publication": "Wiener Bohème Verlag, Berlin–Vienna",
+          "fullCitation": "“Heut kommt’s drauf an!” Sheet-music cover for the 1933 film starring Hans Albers, described on the cover as “Ein Boston-Film im Verleih der Siegel-Monopol-Film / Vertrieb Cinema”. Wiener Bohème Verlag, Berlin–Vienna; cover design signed “Herzig”. Digital reproduction: Verein der Freunde und Förderer des Werks von Walter Jurmann, official cover gallery.",
+          "dateRole": "described_item",
+          "dateDisplay": "1933 (film)",
+          "researchNote": "Credits and publisher imprints were checked against the locally preserved cover reproduction. The year refers to the associated film, not an independently established printing date. The Walter Jurmann society supplies the access reproduction; it is not the historical creator or publisher.",
+          "researchNoteType": "verification_note"
         }
       },
       "SRC0540": {
-        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "reason": "Item-level digital-collection audit: distinguish historical creators, imprints and object chronology from modern reproduction providers; retain qualified dates and verified catalogue identifiers.",
         "fields": {
-          "sourceType": "digital_collection_item"
+          "sourceType": "digital_collection_item",
+          "creator": "Walter Jurmann and Bronisław Kaper (music); René Pujol (lyrics)",
+          "publication": "Éditions Salabert, Paris",
+          "fullCitation": "“On a volé un homme.” Sheet-music collection cover for the 1934 film, advertising “Ni mal, ni bien” (java) and “Un regard de femme” (slow-fox), sung by Henry Garat; words by René Pujol, music by W. Jurmann and B. Kaper. Paris: Éditions Salabert. Digital reproduction: Verein der Freunde und Förderer des Werks von Walter Jurmann, official cover gallery.",
+          "dateRole": "described_item",
+          "dateDisplay": "1934 (film)",
+          "researchNote": "Credits and publisher imprints were checked against the locally preserved cover reproduction. The year refers to the associated film, not an independently established printing date. The Walter Jurmann society supplies the access reproduction; it is not the historical creator or publisher.",
+          "researchNoteType": "verification_note"
         }
       },
       "SRC0541": {
-        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "reason": "Item-level digital-collection audit: distinguish historical creators, imprints and object chronology from modern reproduction providers; retain qualified dates and verified catalogue identifiers.",
         "fields": {
-          "sourceType": "digital_collection_item"
+          "sourceType": "digital_collection_item",
+          "creator": "Walter Jurmann and Bronisław Kaper (music); Fritz Rotter (lyrics); Herzig (cover design)",
+          "publication": "Ufaton-Verlag, Berlin",
+          "fullCitation": "“Kind, ich freu’ mich auf Dein Kommen.” Sheet-music cover for the 1933 film, described as “ein Ufaton-Film, Herstellung: Günther Stapenhorst”; texts by Fritz Rotter, music by Walter Jurmann and B. Kaper. Berlin: Ufaton-Verlag; drawing signed “Herzig”. Digital reproduction: Verein der Freunde und Förderer des Werks von Walter Jurmann, official cover gallery.",
+          "dateRole": "described_item",
+          "dateDisplay": "1933 (film)",
+          "researchNote": "Credits and publisher imprints were checked against the locally preserved cover reproduction. The year refers to the associated film, not an independently established printing date. The Walter Jurmann society supplies the access reproduction; it is not the historical creator or publisher.",
+          "researchNoteType": "verification_note"
         }
       },
       "SRC0542": {
@@ -4800,12 +4881,14 @@
         }
       },
       "M074": {
-        "reason": "Follow the USC Digital Library item-level RightsStatements.org status and educational-use condition instead of describing the image generically as fair use.",
+        "reason": "Item-level digital-collection audit: distinguish historical creators, imprints and object chronology from modern reproduction providers; retain qualified dates and verified catalogue identifiers.",
         "fields": {
           "rightsStatus": "copyright_undetermined",
           "rightsNote": "The USC Digital Library assigns RightsStatements.org Copyright Undetermined (UND 1.0) and limits the partial score to educational use; no broader reuse licence is supplied.",
-          "publicCreditLine": "University of Southern California Digital Library, DamView record DocRID 2A3BF1X8GAHTY; Copyright Undetermined (UND 1.0), educational use only.",
-          "galleryStatus": "detail_only"
+          "publicCreditLine": "USC Polish Music Center, Bronisław Kaper Collection, PMC 5/36; digital reproduction: USC Digital Library, UC17193693. Copyright Undetermined (UND 1.0), educational use only.",
+          "galleryStatus": "detail_only",
+          "description": "Cover of “You’re All I Need,” from Escapade (MGM, 1935), with melody by Bronisław Kaper and Walter Jurmann and lyric by Gus Kahn. The cover credits Lorraine Bridges as the singer. New York: Robbins Music Corporation, 1935. USC makes only pages 1–2 and 6 of this score available online; the local image reproduces the cover.",
+          "externalUrl": "https://doi.org/10.25549/pmc_09-03-2026_11-05-25_PM-oUC17193693"
         }
       },
       "M218": {
@@ -5072,9 +5155,10 @@
         }
       },
       "M070": {
-        "reason": "State the documented public-domain status and retain the 1920 recruitment poster as supplementary historical context for the Polish–Soviet War service event.",
+        "reason": "Item-level digital-collection audit: distinguish historical creators, imprints and object chronology from modern reproduction providers; retain qualified dates and verified catalogue identifiers.",
         "fields": {
-          "rightsNote": "Public domain: Biblioteka Narodowa / Polona classify this 1920 poster as Domena Publiczna (public domain). Reproduced as a historical context image with attribution to Biblioteka Narodowa / Polona."
+          "rightsNote": "Public domain: Biblioteka Narodowa / Polona classify this 1920 poster as Domena Publiczna (public domain). Reproduced as a historical context image with attribution to Biblioteka Narodowa / Polona.",
+          "publicCreditLine": "Biblioteka Narodowa / Polona, military recruiting poster, [1920], shelfmark DŻS IA 6a6."
         }
       },
       "M094": {
@@ -5431,11 +5515,12 @@
         }
       },
       "M183": {
-        "reason": "Replace the legacy blanket rights flag with the explicit restricted classification established by the record’s item-level rights assessment; keep the local reproduction on detail pages only.",
+        "reason": "Item-level digital-collection audit: distinguish historical creators, imprints and object chronology from modern reproduction providers; retain qualified dates and verified catalogue identifiers.",
         "fields": {
           "rightsStatus": "restricted",
           "galleryStatus": "detail_only",
-          "rightsNote": "Filmportal.de identifies this German poster but supplies no open reuse licence. A German graphic work published in 1933 remained protected on 1 January 1996, so United States copyright was restored under the URAA for up to ninety-five years from publication. The local image is classified as restricted."
+          "rightsNote": "Filmportal.de marks this poster “Urheberrechtsschutz” (In Copyright) and supplies no open reuse licence. The local image remains restricted; an independent original publication date for the poster has not been established.",
+          "description": "German theatrical poster for Kind, ich freu’ mich auf Dein Kommen (1933), directed by Kurt Gerron and Erich von Neusser, with music by Walter Jurmann and Bronisław Kaper. Filmportal.de catalogues the poster with source credit “DIF”."
         }
       },
       "M186": {
