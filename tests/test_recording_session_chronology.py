@@ -57,7 +57,7 @@ class RecordingSessionChronologyTests(unittest.TestCase):
         source = self.sources["SRC0767"]
         self.assertEqual(source["date"], "1930-03")
         self.assertIn("1929", source["researchNote"])
-        self.assertIn("site's editor", source["researchNote"])
+        self.assertIn("site’s editor", source["researchNote"])
         self.assertIn("not a separately established issue date", source["researchNote"])
 
     def test_hmv_r_series_is_not_a_copyright_renewal(self):

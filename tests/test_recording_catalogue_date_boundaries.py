@@ -57,7 +57,7 @@ class RecordingCatalogueDateBoundaryTests(unittest.TestCase):
         self.assertIn("matrix Bi 644, n.d.", source["fullCitation"])
         self.assertIn("November 1932 as the German issue date", source["researchNote"])
         self.assertIn("Neither November 1932 nor the year of the film is assigned as the issue date of D 4431", source["researchNote"])
-        self.assertIn("pressing's label and issue date remain unestablished", source["researchNote"])
+        self.assertIn("pressing’s label and issue date remain unestablished", source["researchNote"])
         self.assertTrue(source["additionalLinks"][0]["url"].endswith("titel_wi-wirf.html"))
         self.assertEqual(self.media["M409"]["sourceIds"], ["SRC0785"])
         self.assertEqual(self.media["M409"]["externalUrl"], source["primaryUrl"])

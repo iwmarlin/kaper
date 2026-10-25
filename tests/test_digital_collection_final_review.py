@@ -29,8 +29,8 @@ class DigitalCollectionFinalReviewTests(unittest.TestCase):
         self.assertEqual(s["dateRole"], "issue")
         self.assertEqual(s["date"], "1937")
         self.assertIn("incorrectly names", s["researchNote"])
-        self.assertIn("All God's Ciillun Got Rhythm", s["researchNote"])
-        self.assertNotIn("All God's Ciillun Got Rhythm", s["fullCitation"])
+        self.assertIn("All God’s Chillun Got Rhythm", s["researchNote"])
+        self.assertNotIn("All God’s Chillun Got Rhythm", s["fullCitation"])
 
     def test_paris_publisher_and_broad_museum_dating(self):
         s = self.sources["SRC0574"]

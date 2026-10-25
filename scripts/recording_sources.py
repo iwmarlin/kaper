@@ -201,7 +201,7 @@ RECORDING_FIELDS: dict[str, dict[str, Any]] = {
         "date": "1934-10",
         "dateRole": "recording",
         "dateQualifier": "confirmed",
-        "researchNote": "Phonobase explicitly gives the recording date as 1934-10-xx; the structured date therefore retains month precision and does not identify the disc's commercial issue date. The transfer date is separately given as 4 February 2023. The record additionally states that Tino Rossi created the song in 1934, that Mireille, Guy Berry and Priolet also performed it, and that Coda / Heugel published it in Paris in 1934.",
+        "researchNote": "Phonobase explicitly gives the recording date as 1934-10-xx; the structured date therefore retains month precision and does not identify the disc’s commercial issue date. The transfer date is separately given as 4 February 2023. The record additionally states that Tino Rossi created the song in 1934, that Mireille, Guy Berry and Priolet also performed it, and that Coda / Heugel published it in Paris in 1934.",
         "researchNoteType": "discographic_note",
         "accessDate": "2026-10-25"
     },
@@ -249,7 +249,7 @@ RECORDING_FIELDS: dict[str, dict[str, Any]] = {
         "dateRole": "recording",
         "dateQualifier": "confirmed",
         "fullCitation": "Stare Melodie. “O tym już wróble świergocą na dachu.” Tadeusz Faliszewski with the orchestra of Towarzystwo Syrena Record; recording dated March 1930 in the listening-entry metadata. Syrena-Electro 3461, matrix 20876.",
-        "researchNote": "The Stare Melodie listening entry dates the recording to March 1930. An embedded YouTube title instead gives 1929; the site's editor explicitly corrects that year to March 1930 in the comments. The structured date follows the site's catalogue entry and identifies the recording, not a separately established issue date.",
+        "researchNote": "The Stare Melodie listening entry dates the recording to March 1930. An embedded YouTube title instead gives 1929; the site’s editor explicitly corrects that year to March 1930 in the comments. The structured date follows the site’s catalogue entry and identifies the recording, not a separately established issue date.",
         "researchNoteType": "date_assessment",
         "accessDate": "2026-10-25"
     },
@@ -290,7 +290,7 @@ RECORDING_FIELDS: dict[str, dict[str, Any]] = {
         "date": "1933-11-07",
         "dateRole": "recording",
         "dateQualifier": "confirmed",
-        "researchNote": "Roig's discography places SS 1729 under the Paris session heading of 7 November 1933, continuing onto the next printed page with the coupled side SS 1730. It also mentions a dated test pressing of SS 1729B. The date therefore describes a recording session, not the commercial release of Salabert 3384; no particular take is assigned to the YouTube transfer from that note alone.",
+        "researchNote": "Roig’s discography places SS 1729 under the Paris session heading of 7 November 1933, continuing onto the next printed page with the coupled side SS 1730. It also mentions a dated test pressing of SS 1729B. The date therefore describes a recording session, not the commercial release of Salabert 3384; no particular take is assigned to the YouTube transfer from that note alone.",
         "researchNoteType": "discographic_note",
         "additionalLinks": [
             {
@@ -344,7 +344,7 @@ RECORDING_FIELDS: dict[str, dict[str, Any]] = {
     },
     "SRC0785": {
         "fullCitation": "Eric Harden’s danseorkester, refrain sung by Carljohann Volbach. “Wie gern möcht’ ich dich verwöhnen.” From the sound film Melodie der Liebe; catalogue number D 4431, matrix Bi 644, n.d. Digital transfer published by the Internet Archive from the 78 rpm collection of Leif Druedahl.",
-        "researchNote": "The Internet Archive metadata supplies catalogue number D 4431 and matrix Bi 644 but no label or date; only an audio transfer is supplied, not a photograph of the physical label. The title-list entry for Gloria G.O. 10303 identifies the same title, performers and matrix, dates the master to Berlin, studio 4, on 11 June 1932 and gives November 1932 as the German issue date. The structured date identifies the shared recording session. Neither November 1932 nor the year of the film is assigned as the issue date of D 4431; that pressing's label and issue date remain unestablished. The Danish performer wording is transcribed from the Internet Archive metadata.",
+        "researchNote": "The Internet Archive metadata supplies catalogue number D 4431 and matrix Bi 644 but no label or date; only an audio transfer is supplied, not a photograph of the physical label. The title-list entry for Gloria G.O. 10303 identifies the same title, performers and matrix, dates the master to Berlin, studio 4, on 11 June 1932 and gives November 1932 as the German issue date. The structured date identifies the shared recording session. Neither November 1932 nor the year of the film is assigned as the issue date of D 4431; that pressing’s label and issue date remain unestablished. The Danish performer wording is transcribed from the Internet Archive metadata.",
         "researchNoteType": "discographic_note",
         "shortCitation": "D 4431, “Wie gern möcht’ ich dich verwöhnen” (master recorded 1932)",
         "date": "1932-06-11",
@@ -490,7 +490,7 @@ AUDITED_PRIVATE_UPLOAD_FIELDS = {
 # from a film year, a file name or the first release of a later compilation.
 VERIFIED_RECORDING_CHRONOLOGY: dict[str, dict[str, Any]] = {
     "SRC0300": {
-        "researchNote": "The BnF catalogue supplies [1934] as the issue date, reconstructed from Répertoire phonographique, 3e supplément annuel 1934. The brackets indicate a catalogue-supplied date, not a date transcribed from the disc. This bibliographic dating is independent of the film's release chronology.",
+        "researchNote": "The BnF catalogue supplies [1934] as the issue date, reconstructed from Répertoire phonographique, 3e supplément annuel 1934. The brackets indicate a catalogue-supplied date, not a date transcribed from the disc. This bibliographic dating is independent of the film’s release chronology.",
         "researchNoteType": "discographic_note",
         "accessDate": "2026-10-25"
     },
@@ -499,7 +499,7 @@ VERIFIED_RECORDING_CHRONOLOGY: dict[str, dict[str, Any]] = {
         "dateRole": "issue",
         "dateQualifier": "confirmed",
         "fullCitation": "The Jack Hylton Orchestra, directed by Jack Hylton, with Jack Jackson, Philippe Brun and Leo Vauchant. “Herr Lehmann, Herr Lehmann, Was Macht Die Frau Gemahlin In Marienbad?” On Hot Hylton 1926–1930. Retrieval RTR 79024, CD compilation, first issued 2000; distributed by Challenge Records International. YouTube art track supplied by The Orchard Enterprises and published 10 February 2015.",
-        "researchNote": "The date identifies the compilation's first issue in 2000, not its digital publication or a historical recording session. Challenge Records identifies the format as CD, states “First release in 2000” and separately lists 21 November 2005 as the release date of its catalogue product. The YouTube access copy was published on 10 February 2015. The reissue metadata cited here does not identify the label, catalogue number or matrix of the original disc.",
+        "researchNote": "The date identifies the compilation’s first issue in 2000, not its digital publication or a historical recording session. Challenge Records identifies the format as CD, states “First release in 2000” and separately lists 21 November 2005 as the release date of its catalogue product. The YouTube access copy was published on 10 February 2015. The reissue metadata cited here does not identify the label, catalogue number or matrix of the original disc.",
         "researchNoteType": "discographic_note",
         "additionalLinks": [
             {
@@ -513,7 +513,7 @@ VERIFIED_RECORDING_CHRONOLOGY: dict[str, dict[str, Any]] = {
         "date": "1932",
         "dateRole": "issue",
         "dateQualifier": "uncertain",
-        "researchNote": "The uploader dates the issue to 1932 and associates the side with Hochzeitsreise zu dritt. The Odeon label list identifies the matching title and performers as O-11768, side B, matrix Be 10147, with 1933 in its general year column; its separate release-date column is empty. The filmed label carries no year. The structured date retains the uploader's 1932 as disputed, not confirmed: the catalogue's 1933 does not by itself establish a precise issue or session date.",
+        "researchNote": "The uploader dates the issue to 1932 and associates the side with Hochzeitsreise zu dritt. The Odeon label list identifies the matching title and performers as O-11768, side B, matrix Be 10147, with 1933 in its general year column; its separate release-date column is empty. The filmed label carries no year. The structured date retains the uploader’s 1932 as disputed, not confirmed: the catalogue’s 1933 does not by itself establish a precise issue or session date.",
         "researchNoteType": "date_assessment",
         "additionalLinks": [
             {
@@ -526,7 +526,7 @@ VERIFIED_RECORDING_CHRONOLOGY: dict[str, dict[str, Any]] = {
     "SRC0801": {
         "dateRole": "issue",
         "dateQualifier": "unknown",
-        "researchNote": "The BnF publication statement is “S.l. : s.n., s.d.” and supplies no issue year. The film's 1934 release does not establish the disc's release date. The Internet Archive collection associates DF 1622 with 1934 without distinguishing recording from issue; the specialist discography Tino Rossi – Le Site instead places the issue in January 1935. No year is entered as a confirmed or inferred BnF issue date. The catalogue lists matrices CL 5068 and CL 5093 but does not assign each matrix to a title in the displayed metadata, so no side-level matrix assignment is inferred here.",
+        "researchNote": "The BnF publication statement is “S.l. : s.n., s.d.” and supplies no issue year. The film’s 1934 release does not establish the disc’s release date. The Internet Archive collection associates DF 1622 with 1934 without distinguishing recording from issue; the specialist discography Tino Rossi – Le Site instead places the issue in January 1935. No year is entered as a confirmed or inferred BnF issue date. The catalogue lists matrices CL 5068 and CL 5093 but does not assign each matrix to a title in the displayed metadata, so no side-level matrix assignment is inferred here.",
         "researchNoteType": "date_assessment",
         "accessDate": "2026-10-25",
         "additionalLinks": [

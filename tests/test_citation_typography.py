@@ -105,5 +105,59 @@ class TitleAndCitationTests(unittest.TestCase):
         self.assertEqual(offenders, [], "a source repeats its short citation as its title")
 
 
+
+class ApostropheTests(unittest.TestCase):
+    """The rule above was written for quotation marks and never mentioned the
+    apostrophe, so the apostrophe drifted: fifteen possessives in research
+    notes, scope notes, a caption and a timeline description went onto the
+    straight mark while 773 others used the typographic one. It is the same
+    fault the quotation rule was written for — one archive writing a word two
+    ways — and it was invisible because nothing looked."""
+
+    #: Strings where the straight mark is the object itself and not the
+    #: archive's prose. A URL carries it inside a percent-encoded query; a
+    #: credit line names a YouTube channel that is called what it is called.
+    VERBATIM = {("media", "M416", "publicCreditLine")}
+
+    @staticmethod
+    def tables():
+        for path in sorted(PUBLIC.glob("*.json")):
+            payload = json.loads(path.read_text(encoding="utf-8"))
+            if isinstance(payload, dict) and "records" in payload:
+                yield path.stem, payload["records"]
+
+    def test_prose_uses_the_typographic_apostrophe(self):
+        offenders = []
+        for table, records in self.tables():
+            for record in records:
+                for field, value in record.items():
+                    if not isinstance(value, str) or "'" not in value:
+                        continue
+                    if "url" in field.lower() or value.startswith("http"):
+                        continue
+                    # An authorized heading is the authority's string, tested
+                    # on its own below.
+                    if field == "authorizedName":
+                        continue
+                    if (table, record.get("id"), field) in self.VERBATIM:
+                        continue
+                    offenders.append(f"{table}.{record.get('id')}.{field}")
+        self.assertEqual(offenders, [], "prose uses a straight apostrophe")
+
+    def test_an_authorized_heading_keeps_the_authority_s_own_mark(self):
+        """LCNAF emits the straight apostrophe, and an authorized name is
+        quoted from it rather than set by this archive. ORG147 had been
+        prettified to His Master’s Voice while citing n93052539, which reads
+        His Master's Voice (Sound recording label); ORG041 cites n85376712 and
+        had kept Loew's Incorporated correctly. Normalising the prose is what
+        put the two within one sweep of each other."""
+        offenders = []
+        for table, records in self.tables():
+            for record in records:
+                name = record.get("authorizedName")
+                if isinstance(name, str) and "’" in name:
+                    offenders.append(f"{table}.{record.get('id')}.authorizedName")
+        self.assertEqual(offenders, [], "an authorized heading uses a typographic apostrophe")
+
 if __name__ == "__main__":
     unittest.main()
