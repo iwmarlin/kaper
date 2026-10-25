@@ -120,6 +120,25 @@ HMV_R_SERIES_PATTERN = re.compile(
 # these explicit avoids accidentally treating life dates, collection spans or
 # years embedded in catalogue identifiers as Source dates.
 REVIEWED_SOURCE_DATES: dict[str, dict[str, str]] = {
+    "SRC0633": {
+        "date": "1930",
+        "dateRole": "issue",
+        "dateQualifier": "after",
+        "dateDisplay": "[post 1930]"
+    },
+    "SRC0773": {
+        "dateRole": "issue",
+        "dateQualifier": "unknown"
+    },
+    "SRC0785": {
+        "date": "1932-06-11",
+        "dateRole": "recording",
+        "dateQualifier": "confirmed"
+    },
+    "SRC0829": {
+        "dateRole": "issue",
+        "dateQualifier": "unknown"
+    },
     "SRC0008": {
         "date": "1937-06-08",
         "dateRole": "recording",

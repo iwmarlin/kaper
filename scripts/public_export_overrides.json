@@ -576,6 +576,57 @@
       }
     },
     "Sources": {
+      "SRC0829": {
+        "reason": "Individually verify catalogue dating: retain the stated lower bound, leave undated issues unknown, and distinguish a shared master session from the issue date of a different pressing.",
+        "fields": {
+          "dateRole": "issue",
+          "dateQualifier": "unknown",
+          "researchNote": "The DNB catalogue supplies no recording or issue date. Its MARC record has no publication-date subfield in field 264 and no historical year in field 008; the film association does not establish a date for this pressing. The label credit is given by the catalogue as “Alfred Beres mit Orchester, Refraingesang: Eric Helgar”, with the generic description “Tanzorchester mit Refraingesang”. The same library holds a second issue of the song, Decca F 40007, matrix FGB 2355, played by The Rhythm Maniacs with a German refrain sung by Leo Mond and coupled with “In meinem Herzen ist nur Platz für eine”.",
+          "researchNoteType": "discographic_note",
+          "accessDate": "2026-10-25"
+        },
+        "removeFields": [
+          "date",
+          "dateDisplay"
+        ]
+      },
+      "SRC0773": {
+        "reason": "Individually verify catalogue dating: retain the stated lower bound, leave undated issues unknown, and distinguish a shared master session from the issue date of a different pressing.",
+        "fields": {
+          "title": "Fiesta (Bianca) — Ultraphon 20040 A",
+          "fullCitation": "National Museum, Prague, Discographic Database. “Fiesta (Bianca),” rumba. Efim Schachmeister, conductor, with jazz orchestra; music by W. G. Samuels and L. Whitcup. Ultraphon 20040 A, matrix 18145. One 25 cm standard gramophone disc. Individual recording entry.",
+          "publication": "Ultraphon",
+          "dateRole": "issue",
+          "dateQualifier": "unknown",
+          "primaryUrl": "https://diskografie.nm.cz/nahravky/fiesta-bianca/",
+          "researchNote": "The individual recording entry identifies Ultraphon 20040 A, matrix 18145, but supplies no recording or issue date. Its note places the orchestral recording in Ultraphon catalogues of 1932–1933; those years describe catalogue appearance, not a dated session or an established first issue. No year is inferred from that note.",
+          "researchNoteType": "discographic_note",
+          "accessDate": "2026-10-25",
+          "additionalLinks": [
+            {
+              "label": "National Museum — L. Whitcup index",
+              "url": "https://diskografie.nm.cz/osoby/l-whitcup/",
+              "role": "alternate_access"
+            }
+          ]
+        },
+        "removeFields": [
+          "date",
+          "dateDisplay"
+        ]
+      },
+      "SRC0633": {
+        "reason": "Individually verify catalogue dating: retain the stated lower bound, leave undated issues unknown, and distinguish a shared master session from the issue date of a different pressing.",
+        "fields": {
+          "date": "1930",
+          "dateRole": "issue",
+          "dateQualifier": "after",
+          "dateDisplay": "[post 1930]",
+          "researchNote": "The Biblioteka Narodowa publication statement supplies only [post 1930], meaning after 1930, and gives no exact issue or recording date. The structured date preserves that catalogue boundary; it does not assert an issue in 1933. Dates assigned to the film, a recording session or a different pressing are not substituted for the dating of Odeon O. 236842.",
+          "researchNoteType": "date_assessment",
+          "accessDate": "2026-10-25"
+        }
+      },
       "SRC0767": {
         "reason": "Verify the stated session chronology against the cited catalogue or discography; distinguish recording from commercial issue dates and preserve the documented precision.",
         "fields": {
@@ -4003,11 +4054,23 @@
         }
       },
       "SRC0785": {
-        "reason": "Keep the bibliographic citation limited to the published transfer metadata and place the unverified label identification and matrix comparison in the discographic research note.",
+        "reason": "Individually verify catalogue dating: retain the stated lower bound, leave undated issues unknown, and distinguish a shared master session from the issue date of a different pressing.",
         "fields": {
-          "fullCitation": "Eric Harden’s danseorkester, refrain sung by Carljohann Volbach. “Wie gern möcht’ ich dich verwöhnen.” From the sound film Melodie der Liebe; catalogue number D 4431, matrix Bi 644, 1932. Digital transfer published by the Internet Archive from the 78 rpm collection of Leif Druedahl.",
-          "researchNote": "The Internet Archive metadata gives catalogue number D 4431 and matrix Bi 644 but contains no label field. Because the item supplies audio only, the physical disc label has not been examined. Matrix data identifies the master with the Gloria issue G.O. 10303, recorded in Berlin, studio 4, on 11 June 1932 and released in November 1932 according to the title list at musiktiteldb.de; the Danish wording of the performer credit belongs to the described pressing, not to that recording session.",
-          "researchNoteType": "discographic_note"
+          "fullCitation": "Eric Harden’s danseorkester, refrain sung by Carljohann Volbach. “Wie gern möcht’ ich dich verwöhnen.” From the sound film Melodie der Liebe; catalogue number D 4431, matrix Bi 644, n.d. Digital transfer published by the Internet Archive from the 78 rpm collection of Leif Druedahl.",
+          "researchNote": "The Internet Archive metadata supplies catalogue number D 4431 and matrix Bi 644 but no label or date; only an audio transfer is supplied, not a photograph of the physical label. The title-list entry for Gloria G.O. 10303 identifies the same title, performers and matrix, dates the master to Berlin, studio 4, on 11 June 1932 and gives November 1932 as the German issue date. The structured date identifies the shared recording session. Neither November 1932 nor the year of the film is assigned as the issue date of D 4431; that pressing's label and issue date remain unestablished. The Danish performer wording is transcribed from the Internet Archive metadata.",
+          "researchNoteType": "discographic_note",
+          "shortCitation": "D 4431, “Wie gern möcht’ ich dich verwöhnen” (master recorded 1932)",
+          "date": "1932-06-11",
+          "dateRole": "recording",
+          "dateQualifier": "confirmed",
+          "accessDate": "2026-10-25",
+          "additionalLinks": [
+            {
+              "label": "musiktiteldb.de — Bi 644 session and Gloria G.O. 10303 issue",
+              "url": "http://musiktiteldb.de/musiktitel/titel_wi-wirf.html",
+              "role": "catalogue_entry"
+            }
+          ]
         }
       },
       "SRC0598": {
