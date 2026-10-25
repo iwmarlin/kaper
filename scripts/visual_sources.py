@@ -31,6 +31,7 @@ WIKIMEDIA_ORGANIZATION_ID = "ORG090"
 # the photograph was taken. Keep this list explicit: other visual records do
 # have independently documented creation dates, even when reproduced in print.
 VISUAL_PUBLICATION_DATE_IDS = {
+    "SRC0023", "SRC0404", "SRC0552", "SRC0687",
     "SRC0448", "SRC0620",
     "SRC0403", "SRC0412", "SRC0413", "SRC0414", "SRC0573",
     "SRC0366", "SRC0648", "SRC0664", "SRC0752",
@@ -68,6 +69,7 @@ WIKIPEDIA_REPOSITORY_BY_HOST = {
 # explicit: generic Wikimedia normalization must never infer an author or an
 # underlying holding institution from the delivery platform alone.
 VISUAL_SOURCE_FIELDS: dict[str, dict[str, Any]] = {
+    "SRC0023": {"publication": "Berliner Adreßbuch 1932"},
     "SRC0551": {
         "creator": "Photographer unidentified",
         "publication": "Bain News Service",

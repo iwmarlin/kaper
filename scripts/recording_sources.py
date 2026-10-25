@@ -270,6 +270,19 @@ RECORDING_FIELDS: dict[str, dict[str, Any]] = {
 }
 
 
+# These corrections concern citation syntax, not the date of a modern issue.
+# Keep uploader-reported recording dates distinct from upload dates.
+AUDITED_RECORDING_CITATIONS = {
+    "SRC0740": (
+        "Ted Fio Rito and his orchestra, vocal chorus by Stanley Hickman. "
+        "“Blue Venetian Waters”, from A Day at the Races; words and music by "
+        "Gus Kahn, Bronislaw Kaper and Walter Jurmann. YouTube audio reference "
+        "uploaded by RobinsRareRecordings; recording dated 1937 in the upload "
+        "description."
+    ),
+}
+
+
 def recording_hostname(source: dict[str, Any]) -> str:
     url = str(source.get("primaryUrl") or source.get("url") or "").strip()
     return urlparse(url).netloc.casefold()
@@ -278,6 +291,9 @@ def recording_hostname(source: dict[str, Any]) -> str:
 def normalize_recording_source(source: dict[str, Any]) -> None:
     """Normalize one recording source in place."""
     source_id = str(source.get("id", ""))
+    citation = AUDITED_RECORDING_CITATIONS.get(source_id)
+    if citation:
+        source["fullCitation"] = citation
     is_audited_digital_audio = source_id in AUDITED_DIGITAL_AUDIO_FIELDS
     if (
         source.get("sourceType") != "recording_discographic_source"

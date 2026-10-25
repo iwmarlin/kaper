@@ -576,6 +576,30 @@
       }
     },
     "Sources": {
+      "SRC0740": {
+        "reason": "Distinguish printed publication dates from creation dates and the reported recording year from a YouTube upload date.",
+        "fields": {
+          "fullCitation": "Ted Fio Rito and his orchestra, vocal chorus by Stanley Hickman. “Blue Venetian Waters”, from A Day at the Races; words and music by Gus Kahn, Bronislaw Kaper and Walter Jurmann. YouTube audio reference uploaded by RobinsRareRecordings; recording dated 1937 in the upload description."
+        }
+      },
+      "SRC0687": {
+        "reason": "Distinguish printed publication dates from creation dates and the reported recording year from a YouTube upload date.",
+        "fields": {
+          "dateRole": "publication"
+        }
+      },
+      "SRC0552": {
+        "reason": "Distinguish printed publication dates from creation dates and the reported recording year from a YouTube upload date.",
+        "fields": {
+          "dateRole": "publication"
+        }
+      },
+      "SRC0404": {
+        "reason": "Distinguish printed publication dates from creation dates and the reported recording year from a YouTube upload date.",
+        "fields": {
+          "dateRole": "publication"
+        }
+      },
       "SRC0839": {
         "reason": "Preserve documented date precision and distinguish image publication from photography; avoid unsupported portrait dating.",
         "fields": {
@@ -1301,7 +1325,9 @@
         "fields": {
           "primaryUrl": "https://digital.zlb.de/viewer/image/34115495_1932/646/",
           "repository": "Zentral- und Landesbibliothek Berlin / Digitale Landesbibliothek Berlin",
-          "fullCitation": "Berliner Adreßbuch 1932, p. 646. Entry for B. Kaper, Komponist, Wilmersdorf, Pommersche Str. 3. Zentral- und Landesbibliothek Berlin / Digitale Landesbibliothek Berlin."
+          "fullCitation": "Berliner Adreßbuch 1932, p. 646. Entry for B. Kaper, Komponist, Wilmersdorf, Pommersche Str. 3. Zentral- und Landesbibliothek Berlin / Digitale Landesbibliothek Berlin.",
+          "dateRole": "publication",
+          "publication": "Berliner Adreßbuch 1932"
         }
       },
       "SRC0028": {
