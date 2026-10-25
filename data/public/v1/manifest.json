@@ -8,7 +8,7 @@
   "publicDataUpdatedAt": "2026-10-25",
   "generator": {
     "file": "export_public_data.py",
-    "sha256": "bd1252b45e8444a589a7718b2bc1633706462ea9d7e0499da124b5c278f0cb8d"
+    "sha256": "f40348e00ec21ba91abc507a1d02edd11fb28b079612058d81236c542961aee3"
   },
   "publicInputs": {
     "allowlist": {
@@ -17,8 +17,8 @@
     },
     "overrides": {
       "file": "public_export_overrides.json",
-      "sha256": "f0245ae7e1df0b3f35d7e2893f8eb90751af640dee5e6e9db37ba3cc5a4f616b",
-      "appliedCount": 903,
+      "sha256": "771147ad98682f0c0093ab88d13b61b871194bf85c044100918a7650d8e83c69",
+      "appliedCount": 913,
       "additionCount": 339,
       "linkAdditionCount": 528,
       "linkRemovalCount": 186,
@@ -114,8 +114,8 @@
     },
     {
       "file": "sources.json",
-      "bytes": 1261982,
-      "sha256": "bd44509afb5634f818906431ff584767c519e1b3c3e708b721d83515091794c2"
+      "bytes": 1262459,
+      "sha256": "780adc4c0046bb97a7d882bd14c273134f5bfb621b1d8c2de1b8a69855cb2fee"
     },
     {
       "file": "timeline-events.json",

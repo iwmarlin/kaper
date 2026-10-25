@@ -25,6 +25,7 @@ from filmographic_sources import (
     normalize_filmographic_source,
     source_hostname,
 )
+from database_sources import normalize_database_source
 from hofmeister_sources import normalize_hofmeister_source
 from recording_sources import normalize_recording_source
 from repository_organizations import expected_repository_organization_ids
@@ -1429,6 +1430,7 @@ class PublicExporter:
                 or source.get("id") in {"SRC0174", "SRC0602"}
             ):
                 normalize_filmographic_source(source)
+            normalize_database_source(source)
             if source.get("accessDate"):
                 source["fullCitation"] = normalize_access_citation(
                     source.get("fullCitation")

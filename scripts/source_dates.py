@@ -114,6 +114,12 @@ USCO_RENEWAL_PATTERN = re.compile(r"\bR\s*\d+\b", flags=re.IGNORECASE)
 # these explicit avoids accidentally treating life dates, collection spans or
 # years embedded in catalogue identifiers as Source dates.
 REVIEWED_SOURCE_DATES: dict[str, dict[str, str]] = {
+    "SRC0684": {
+        "date": "2003-04-25",
+        "dateRole": "record_update",
+        "dateQualifier": "confirmed",
+        "dateDisplay": "25 April 2003 (content update)",
+    },
     "SRC0417": {
         "date": "1933",
         "dateRole": "described_item",

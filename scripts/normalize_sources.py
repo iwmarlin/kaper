@@ -23,6 +23,7 @@ from filmographic_sources import (
     normalize_filmographic_source,
     source_hostname,
 )
+from database_sources import normalize_database_source
 from hofmeister_sources import normalize_hofmeister_source
 from normalize_source_dates import migrated_source
 from recording_sources import normalize_recording_source
@@ -50,6 +51,7 @@ def normalized_source(source: dict[str, Any]) -> dict[str, Any]:
         or result.get("id") in {"SRC0174", "SRC0602"}
     ):
         normalize_filmographic_source(result)
+    normalize_database_source(result)
     normalize_repository_name(result)
     if result.get("accessDate"):
         result["fullCitation"] = normalize_access_citation(
