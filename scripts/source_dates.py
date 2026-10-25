@@ -275,22 +275,22 @@ REVIEWED_SOURCE_DATES: dict[str, dict[str, str]] = {
     "SRC0710": {
         "date": "1931",
         "dateRole": "issue",
-        "dateQualifier": "reported",
+        "dateQualifier": "reported"
     },
     "SRC0712": {
-        "date": "1931",
-        "dateRole": "issue",
-        "dateQualifier": "reported",
+        "date": "1932",
+        "dateRole": "recording",
+        "dateQualifier": "confirmed"
     },
     "SRC0718": {
-        "date": "1931",
-        "dateRole": "issue",
-        "dateQualifier": "reported",
+        "date": "1931-03-11",
+        "dateRole": "recording",
+        "dateQualifier": "confirmed"
     },
     "SRC0724": {
-        "date": "1930",
-        "dateRole": "issue",
-        "dateQualifier": "reported",
+        "date": "1930-10",
+        "dateRole": "described_item",
+        "dateQualifier": "uncertain"
     },
     "SRC0792": {
         "date": "1998",

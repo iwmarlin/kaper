@@ -12,9 +12,9 @@ from source_dates import normalized_source_date_fields
 
 CASES = {
     "SRC0710": ("1931", "issue", "reported", "recording"),
-    "SRC0712": ("1931", "issue", "reported", "recording"),
-    "SRC0718": ("1931", "issue", "reported", "recording"),
-    "SRC0724": ("1930", "issue", "reported", "recording"),
+    "SRC0712": ("1932", "recording", "confirmed", "issue"),
+    "SRC0718": ("1931-03-11", "recording", "confirmed", "issue"),
+    "SRC0724": ("1930-10", "described_item", "uncertain", "issue"),
     "SRC0792": ("1998", "publication", "confirmed", "issue"),
     "SRC0807": ("1932-08-15", "recording", "confirmed", "issue"),
 }
@@ -54,7 +54,7 @@ class RecordingDateRoleTests(unittest.TestCase):
         overrides = json.loads((ROOT / "scripts/public_export_overrides.json").read_text())
         for sid, (_, role, _, _) in CASES.items():
             with self.subTest(source=sid):
-                self.assertEqual(overrides["records"]["Sources"][sid]["fields"], {"dateRole": role})
+                self.assertEqual(overrides["records"]["Sources"][sid]["fields"]["dateRole"], role)
 
 
 if __name__ == "__main__":

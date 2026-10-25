@@ -861,27 +861,70 @@
         }
       },
       "SRC0710": {
-        "reason": "Correct the date role to issue as explicitly described in the existing citation or research note; preserve the date, qualifier, citation and graph relationships.",
+        "reason": "Individually reviewed transfer identification and recording-versus-issue chronology, 25 October 2026; preserve uploader-only qualifications.",
         "fields": {
-          "dateRole": "issue"
+          "dateRole": "issue",
+          "accessDate": "2026-10-25",
+          "researchNote": "The uploader identifies the singer credited as Leo Moll as Leo Monosson and reports 1931 as the Electrola issue year. Neither that identification nor the issue year is printed on the filmed label; the year remains reported, without a newly established session date. The accompanying 1930 photograph depicts Brioni and does not date the disc. Discographic entries for other performers’ recordings of this song are not used to date Electrola E.G. 2400.",
+          "researchNoteType": "discographic_note",
+          "fullCitation": "Marek Weber und sein Orchester, refrain credited as Leo Moll. “Signorina aus Brioni.” Tango; label credits Fritz Rotter and Dr. Kaper for music and text. Electrola E.G. 2400, n.d. Shellac disc, Radiomuseum Hardthausen / Schallarchiv; filmed-label transfer on YouTube."
         }
       },
       "SRC0712": {
-        "reason": "Correct the date role to issue as explicitly described in the existing citation or research note; preserve the date, qualifier, citation and graph relationships.",
+        "reason": "Individually reviewed transfer identification and recording-versus-issue chronology, 25 October 2026; preserve uploader-only qualifications.",
         "fields": {
-          "dateRole": "issue"
+          "dateRole": "recording",
+          "date": "1932",
+          "dateQualifier": "confirmed",
+          "accessDate": "2026-10-25",
+          "fullCitation": "Tanzorchester J. Geiger, refrain sung by Hans Rotter. “Du bist verrückt, mein Schatz, du denkst an Liebe.” Lied und foxtrot; label credits music and text to Fritz Rotter and Dr. B. Kaper. Novaphon Electro Record B 4051, made in Austria, n.d.; matrix 2647 identified in Discographie der österreichischen Populärmusik. Flexible disc, Radiomuseum Hardthausen / Schallarchiv; filmed-label transfer on YouTube.",
+          "researchNote": "Discographie der österreichischen Populärmusik, pp. 53–54, lists “Du bist verückt mein Schatz, denn du denkst ...”, matrix 2647, on Novaphon 4051 under “Tanzorchester J. Geiger” and the recording-group heading “Wien, 1932”. The structured date follows that year-level recording chronology, not a separately documented issue date. It supersedes the uploader’s approximate 1931 issue dating; no month or day is inferred. The matrix is only partly legible in the filmed label, so 2647 is identified from the discography rather than presented as a complete label reading. The uploader’s expansion of J. Geiger to Isy Geiger is not silently substituted for the label wording.",
+          "researchNoteType": "discographic_note",
+          "additionalLinks": [
+            {
+              "label": "Discographie der österreichischen Populärmusik, pp. 53–54 — J. Geiger, matrix 2647",
+              "url": "https://www.phonomuseum.at/includes/content/disko/discographie_oesterreich.pdf#page=53",
+              "role": "catalogue_entry"
+            }
+          ]
         }
       },
       "SRC0718": {
-        "reason": "Correct the date role to issue as explicitly described in the existing citation or research note; preserve the date, qualifier, citation and graph relationships.",
+        "reason": "Individually reviewed transfer identification and recording-versus-issue chronology, 25 October 2026; preserve uploader-only qualifications.",
         "fields": {
-          "dateRole": "issue"
+          "dateRole": "recording",
+          "date": "1931-03-11",
+          "dateQualifier": "confirmed",
+          "accessDate": "2026-10-25",
+          "fullCitation": "Jack Hylton und sein Orchester, refrain sung by Siegfried Arno. “Das verliebte Orchester.” Fox-trot; label credits text and music to Fritz Rotter and Dr. B. Kaper. Electrola E.G. 2259, matrix 60-1496; recorded 11 March 1931, issue date not established. Shellac disc, Radiomuseum Hardthausen / Schallarchiv; filmed-label transfer on YouTube.",
+          "researchNote": "The Jack Hylton website’s MP3 Downloads discography lists this title, Electrola EG-2259 and Siegfried Arno, with 11/03/31 in the “Recording Date” column. The structured date therefore identifies the session on 11 March 1931, not the commercial issue date. The label supplies the matrix and printed credits; the independent listing does not specify a take. The uploader’s general statement that Electrola issued the disc in 1931 remains distinct from this session evidence.",
+          "researchNoteType": "discographic_note",
+          "additionalLinks": [
+            {
+              "label": "Jack Hylton — MP3 Downloads discography, “Das Verliebte Orchester”",
+              "url": "https://www.jackhylton.com/mp3-downloads",
+              "role": "catalogue_entry"
+            }
+          ]
         }
       },
       "SRC0724": {
-        "reason": "Correct the date role to issue as explicitly described in the existing citation or research note; preserve the date, qualifier, citation and graph relationships.",
+        "reason": "Individually reviewed transfer identification and recording-versus-issue chronology, 25 October 2026; preserve uploader-only qualifications.",
         "fields": {
-          "dateRole": "issue"
+          "dateRole": "described_item",
+          "date": "1930-10",
+          "dateQualifier": "uncertain",
+          "accessDate": "2026-10-25",
+          "researchNote": "The Derby 20 cm discography at Lotz-Verlag independently lists Karkoff-Orchester mit Refraingesang, “In der Laubenkolonie”, Derby 5710-A, with the incomplete matrix designation “..6 RB2” and “1930-10-?” in its “Datum” column. The structured date preserves this month-level discographic dating without inventing a day or treating the column as a separately established commercial issue date. The table does not label this row’s date as mechanical copyright; that wording appears on neighbouring rows and is not carried over. Its incomplete matrix designation is not expanded. The uploader’s 1930 issue dating remains an upload statement, not independent proof of first publication.",
+          "researchNoteType": "discographic_note",
+          "additionalLinks": [
+            {
+              "label": "Lotz-Verlag — Derby 20 cm discography, 5710-A",
+              "url": "https://www.lotz-verlag.de/Derby-20.htm",
+              "role": "catalogue_entry"
+            }
+          ],
+          "fullCitation": "Karkoff-Orchester mit Refraingesang. “In der Laubenkolonie.” Foxtrot from the sound film In der Laubenkolonie; label credit “(Kaper)”. Derby D.O. 5710 a, marked “Nur für Deutschland”, n.d. Shellac disc, Radiomuseum Hardthausen / Schallarchiv; filmed-label transfer on YouTube."
         }
       },
       "SRC0792": {
@@ -4782,6 +4825,24 @@
       }
     },
     "Media": {
+      "M362": {
+        "fields": {
+          "publicCaption": "Listening reference for “In der Laubenkolonie” by Karkoff-Orchester with refrain vocal. The video shows Derby D.O. 5710 a, identifies the song as a foxtrot from the sound film In der Laubenkolonie and credits “(Kaper)”. The Derby discography dates the item to October 1930 without a known day or a separately established issue date."
+        },
+        "reason": "Individually reviewed transfer metadata and independent discographic corroboration, 25 October 2026."
+      },
+      "M357": {
+        "fields": {
+          "publicCaption": "Listening reference for “Das verliebte Orchester” by Jack Hylton und sein Orchester, with Siegfried Arno singing the refrain. The video shows Electrola E.G. 2259 and the credit “Text und Musik von Fritz Rotter und Dr. B. Kaper”. The independently documented recording date is 11 March 1931, not an established issue date."
+        },
+        "reason": "Individually reviewed transfer metadata and independent discographic corroboration, 25 October 2026."
+      },
+      "M351": {
+        "fields": {
+          "publicCaption": "Listening reference for “Du bist verrückt, mein Schatz, du denkst an Liebe” by Tanzorchester J. Geiger, with Hans Rotter singing the refrain. The video shows Novaphon Electro Record B Nr. 4051 and the credit “Musik und Text von Fritz Rotter und Dr. B. Kaper”. The Austrian discography dates the recording to Vienna, 1932; the issue date is not separately established."
+        },
+        "reason": "Individually reviewed transfer metadata and independent discographic corroboration, 25 October 2026."
+      },
       "M409": {
         "reason": "Separate the documented German Gloria G.O. 10303 issue from the D 4431 transfer; shared matrix Bi 644 does not establish the latter’s issuing label.",
         "fields": {
