@@ -4,8 +4,10 @@
 The citation identifies the recording, issue and access copy.  Interpretation
 of conflicting dates, identities, incomplete labels or later reissues belongs
 in a typed research note.  Access dates are structured fields and are not
-repeated in the citation.  A modern digital issue without an identified
-historical carrier is an ``online_audio_source``, not a discographic source.
+repeated in the citation.  An online transfer without an identified historical
+carrier is an ``online_audio_source``, not a discographic source.  A specific
+disc identification reported by an uploader may be retained, but must not
+silently acquire a confirmed date or label attribution.
 """
 
 from __future__ import annotations
@@ -299,7 +301,9 @@ AUDITED_RECORDING_CITATIONS = {
 
 # A conflicting catalogue number must not become a verified disc description.
 AUDITED_PRIVATE_UPLOAD_FIELDS = {
-    "SRC0790": {"researchNote": "Uploader-supplied information, not transcribed from the disc label: The upload calls the Odeon issue the first release of the recording and shows a portrait of the bandleader from a Funk-Almanach rather than the disc. The discographic details are taken from the uploader’s description; the label is not shown in the external recording. The Odeon matrix book, indexed at musiktiteldb.de, places the recording in Berlin, Schlesische Straße 26, room 4, on 10 June 1932 under matrix Be 9946, coupled with “Heute Nacht oder nie!”. The upload reports a music credit to Bob Henders alone, the recording name under which Walter Jurmann worked with Kaper."},
+    "SRC0790": {
+        "researchNote": "Uploader-supplied information, not transcribed from the disc label: The upload calls the Odeon issue the first release of the recording and shows a portrait of the bandleader from a Funk-Almanach rather than the disc. The discographic details are taken from the uploader’s description; the label is not shown in the external recording. The Odeon matrix book, indexed at musiktiteldb.de, places the recording in Berlin, Schlesische Straße 26, room 4, on 10 June 1932 under matrix Be 9946, coupled with “Heute Nacht oder nie!”. The upload reports a music credit to Bob Henders alone, the recording name under which Walter Jurmann worked with Kaper."
+    },
     "SRC0713": {
         "sourceType": "online_audio_source",
         "title": "Du bist in meinem Leben die erste Sensation — external listening reference",
@@ -316,6 +320,64 @@ AUDITED_PRIVATE_UPLOAD_FIELDS = {
             }
         ]
     },
+    "SRC0707": {
+        "title": "Tränen weint jede Frau so gern — Marek Weber, YouTube",
+        "shortCitation": "YouTube, Marek Weber and Austin Egen, “Tränen weint jede Frau so gern”",
+        "date": "1929",
+        "dateRole": "described_item",
+        "dateQualifier": "reported",
+        "researchNote": "The upload identifies Marek Weber und sein Orchester with Austin Egen, a His Master’s Voice / Electrola issue and the year 1929, but supplies no catalogue or matrix number and does not show the disc label. It does not distinguish recording from issue year. Nico Dostal’s arrangement credit, Kaper’s music credit and Fritz Rotter’s words credit are uploader-supplied, not label transcriptions. The separate Tauber session documented for the same song does not identify this Weber transfer.",
+        "sourceType": "online_audio_source",
+        "researchNoteType": "discographic_note"
+    },
+    "SRC0730": {
+        "title": "Ninon — Jan Kiepura, YouTube",
+        "shortCitation": "YouTube, Jan Kiepura, “Ninon”",
+        "date": "1933",
+        "dateRole": "issue",
+        "dateQualifier": "reported",
+        "researchNote": "The upload describes a red-label Odeon issue of 1933 with Jan Kiepura and the Odeon-Künstler-Orchester under Dr. Weissmann, but gives no catalogue or matrix number and does not show the disc label. These remain uploader-supplied issue and credit details. A separate catalogue source documents Kiepura’s Odeon O-4661, matrix Be 10221; without matching label or matrix evidence, that pressing is not assigned to this transfer.",
+        "sourceType": "online_audio_source",
+        "researchNoteType": "discographic_note"
+    },
+    "SRC0735": {
+        "title": "Adieu, es ist zu schön, um wahr zu sein — Bernhard Etté, YouTube",
+        "shortCitation": "YouTube, Bernhard Etté and Wolfgang Schmidt, “Adieu, es ist zu schön, um wahr zu sein”",
+        "date": "1933",
+        "dateRole": "recording",
+        "dateQualifier": "reported",
+        "researchNote": "The upload description identifies a 1933 recording by Bernhard Etté mit seinem Tanz-Orchester with Wolfgang Schmidt, issued by Lindström on Gloria in Germany and Odeon elsewhere, but gives no catalogue or matrix number and does not show the disc label. The structured year refers to the uploader-reported recording, not an independently established release date. The separate Alfred Piccaver film performance does not identify this transfer or its carrier.",
+        "sourceType": "online_audio_source",
+        "researchNoteType": "discographic_note"
+    },
+    "SRC0738": {
+        "title": "Zgaś lampę! — Henryk Gold ensemble, YouTube",
+        "shortCitation": "YouTube, Henryk Gold ensemble, “Zgaś lampę!”",
+        "date": "1926",
+        "dateRole": "recording",
+        "dateQualifier": "reported",
+        "researchNote": "The upload description dates the recording to 1926, identifies Henryk Gold and his ensemble in an acoustically recorded instrumental Syrena version and associates the composition with the name Bruno Asper. No label, catalogue or matrix number is supplied and the disc is not shown. The year and recording details remain uploader-supplied; the printed sheet music documents the composition, not this recording or its carrier.",
+        "sourceType": "online_audio_source",
+        "researchNoteType": "discographic_note"
+    },
+    "SRC0759": {
+        "title": "San Francisco — Polish-language recording, YouTube",
+        "shortCitation": "YouTube, “San Francisco” — Polish-language recording",
+        "date": "1937",
+        "dateRole": "described_item",
+        "dateQualifier": "reported",
+        "researchNote": "The upload identifies an unnamed dance orchestra and a Syrena Record issue, gives the year as 1937 and attributes the Polish words to Emanuel Schlechter. It supplies no catalogue or matrix number, does not show the disc label and does not distinguish recording from issue year. These details remain uploader-supplied, not a verified description of a historical pressing.",
+        "sourceType": "online_audio_source",
+        "researchNoteType": "discographic_note"
+    },
+    "SRC0731": {
+        "date": "1932",
+        "dateRole": "recording",
+        "dateQualifier": "reported",
+        "fullCitation": "Dolly Haas with a chamber orchestra directed by Hans Sommer. “’S wird schon wieder besser.” YouTube transfer published by Marconiphone; the upload identifies His Master’s Voice E.G. 2481, matrix 60-1853, credits the music to Jurmann and Kaper, associates the song with Liebe mit Bewährungsfrist and dates the recording to Berlin, 1932.",
+        "researchNote": "The catalogue and matrix numbers, performers, film association, music credits and recording year are supplied by the upload description; the disc label is not shown. No independent label or session record has been matched to this transfer. The source retains the uploader’s specific disc identification as reported, not verified, and 1932 is not treated as an established issue date.",
+        "researchNoteType": "discographic_note"
+    }
 }
 
 
@@ -444,6 +506,50 @@ VERIFIED_RECORDING_FIELD_REMOVALS: dict[str, list[str]] = {
 }
 
 
+PRIVATE_UPLOAD_FIELD_REMOVALS: dict[str, list[str]] = {
+    "SRC0707": [
+        "publication"
+    ],
+    "SRC0730": [
+        "publication"
+    ],
+    "SRC0735": [
+        "publication"
+    ],
+    "SRC0738": [
+        "publication"
+    ],
+    "SRC0759": [
+        "publication"
+    ]
+}
+
+
+def private_upload_semantic_errors(source: dict[str, Any]) -> list[str]:
+    """Validate reviewed access/issue distinctions, not guessed text patterns.
+
+    A catalogue number alone is not proof of identification, and a printed
+    discography need not have one in its short citation.  Only individually
+    reviewed records are constrained here; new cases require evidence review.
+    """
+    source_id = str(source.get("id", ""))
+    expected = AUDITED_PRIVATE_UPLOAD_FIELDS.get(source_id, {})
+    errors = []
+    for field in ("sourceType", "date", "dateRole", "dateQualifier"):
+        if field in expected and source.get(field) != expected[field]:
+            errors.append(
+                f"reviewed upload evidence requires {field}={expected[field]!r}, "
+                f"not {source.get(field)!r}"
+            )
+    for field in PRIVATE_UPLOAD_FIELD_REMOVALS.get(source_id, []):
+        if field in source:
+            errors.append(
+                f"unverified historical {field} belongs in the upload note, "
+                "not in the access source's publication metadata"
+            )
+    return errors
+
+
 def recording_hostname(source: dict[str, Any]) -> str:
     url = str(source.get("primaryUrl") or source.get("url") or "").strip()
     return urlparse(url).netloc.casefold()
@@ -458,6 +564,8 @@ def normalize_recording_source(source: dict[str, Any]) -> None:
     if source_id in {"SRC0707", "SRC0759", "SRC0713", "SRC0719", "SRC0729", "SRC0730", "SRC0735", "SRC0746", "SRC0755", "SRC0758"}:
         source["dateQualifier"] = "reported"
     source.update(AUDITED_PRIVATE_UPLOAD_FIELDS.get(source_id, {}))
+    for field in PRIVATE_UPLOAD_FIELD_REMOVALS.get(source_id, []):
+        source.pop(field, None)
     citation = AUDITED_RECORDING_CITATIONS.get(source_id)
     if citation:
         source["fullCitation"] = citation

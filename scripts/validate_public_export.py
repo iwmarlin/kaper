@@ -30,6 +30,7 @@ from recording_organizations import expected_audio_organization_ids
 from recording_sources import (
     AUDITED_DIGITAL_AUDIO_FIELDS,
     RECORDING_ORGANIZATION_BY_HOST,
+    private_upload_semantic_errors,
     recording_hostname,
 )
 from repository_organizations import expected_repository_organization_ids
@@ -1322,6 +1323,8 @@ class ExportValidator:
                         f"Source {source_id}: missing recording repository organization "
                         f"{recording_organization}"
                     )
+            for error in private_upload_semantic_errors(source):
+                self.errors.append(f"Source {source_id}: {error}")
             audited_digital_audio = AUDITED_DIGITAL_AUDIO_FIELDS.get(source_id)
             if audited_digital_audio:
                 for field_name in (

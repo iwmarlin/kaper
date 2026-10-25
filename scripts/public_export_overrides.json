@@ -576,6 +576,17 @@
       }
     },
     "Sources": {
+      "SRC0731": {
+        "reason": "Distinguish an external listening reference from an identified historical carrier, and qualify uploader-only chronology and label claims without removing access or graph relationships.",
+        "fields": {
+          "date": "1932",
+          "dateRole": "recording",
+          "dateQualifier": "reported",
+          "fullCitation": "Dolly Haas with a chamber orchestra directed by Hans Sommer. “’S wird schon wieder besser.” YouTube transfer published by Marconiphone; the upload identifies His Master’s Voice E.G. 2481, matrix 60-1853, credits the music to Jurmann and Kaper, associates the song with Liebe mit Bewährungsfrist and dates the recording to Berlin, 1932.",
+          "researchNote": "The catalogue and matrix numbers, performers, film association, music credits and recording year are supplied by the upload description; the disc label is not shown. No independent label or session record has been matched to this transfer. The source retains the uploader’s specific disc identification as reported, not verified, and 1932 is not treated as an established issue date.",
+          "researchNoteType": "discographic_note"
+        }
+      },
       "SRC0806": {
         "reason": "Individually verify recording chronology against BnF, the issuing label and collection metadata; distinguish catalogued issue dates, uploader-reported years and undated catalogue records without inferring session dates.",
         "fields": {
@@ -887,10 +898,21 @@
         }
       },
       "SRC0738": {
-        "reason": "Qualify uploader-only performance and label claims while preserving independently corroborated catalogue and discographic evidence.",
+        "reason": "Distinguish an external listening reference from an identified historical carrier, and qualify uploader-only chronology and label claims without removing access or graph relationships.",
         "fields": {
-          "fullCitation": "“Zgaś lampę!” Shimmy. YouTube audio reference published by jurek46pink; the upload identifies Henryk Gold and his ensemble."
-        }
+          "fullCitation": "“Zgaś lampę!” Shimmy. YouTube audio reference published by jurek46pink; the upload identifies Henryk Gold and his ensemble.",
+          "title": "Zgaś lampę! — Henryk Gold ensemble, YouTube",
+          "shortCitation": "YouTube, Henryk Gold ensemble, “Zgaś lampę!”",
+          "date": "1926",
+          "dateRole": "recording",
+          "dateQualifier": "reported",
+          "researchNote": "The upload description dates the recording to 1926, identifies Henryk Gold and his ensemble in an acoustically recorded instrumental Syrena version and associates the composition with the name Bruno Asper. No label, catalogue or matrix number is supplied and the disc is not shown. The year and recording details remain uploader-supplied; the printed sheet music documents the composition, not this recording or its carrier.",
+          "sourceType": "online_audio_source",
+          "researchNoteType": "discographic_note"
+        },
+        "removeFields": [
+          "publication"
+        ]
       },
       "SRC0727": {
         "reason": "Qualify uploader-only performance and label claims while preserving independently corroborated catalogue and discographic evidence.",
@@ -926,18 +948,38 @@
         }
       },
       "SRC0735": {
-        "reason": "Qualify private uploader claims while preserving independently documented reissue and discographic evidence.",
+        "reason": "Distinguish an external listening reference from an identified historical carrier, and qualify uploader-only chronology and label claims without removing access or graph relationships.",
         "fields": {
           "dateQualifier": "reported",
-          "fullCitation": "Bernhard Etté mit seinem Tanz-Orchester, vocal by Wolfgang Schmidt. “Adieu es ist zu schön um wahr zu sein.” Tango by Walter Jurmann, Bronislaw Kaper and Fritz Rotter from Abenteuer am Lido. YouTube transfer published by Radiomuseum Hardthausen; the upload dates the recording to 1933."
-        }
+          "fullCitation": "Bernhard Etté mit seinem Tanz-Orchester, vocal by Wolfgang Schmidt. “Adieu es ist zu schön um wahr zu sein.” Tango by Walter Jurmann, Bronislaw Kaper and Fritz Rotter from Abenteuer am Lido. YouTube transfer published by Radiomuseum Hardthausen; the upload dates the recording to 1933.",
+          "title": "Adieu, es ist zu schön, um wahr zu sein — Bernhard Etté, YouTube",
+          "shortCitation": "YouTube, Bernhard Etté and Wolfgang Schmidt, “Adieu, es ist zu schön, um wahr zu sein”",
+          "date": "1933",
+          "dateRole": "recording",
+          "researchNote": "The upload description identifies a 1933 recording by Bernhard Etté mit seinem Tanz-Orchester with Wolfgang Schmidt, issued by Lindström on Gloria in Germany and Odeon elsewhere, but gives no catalogue or matrix number and does not show the disc label. The structured year refers to the uploader-reported recording, not an independently established release date. The separate Alfred Piccaver film performance does not identify this transfer or its carrier.",
+          "sourceType": "online_audio_source",
+          "researchNoteType": "discographic_note"
+        },
+        "removeFields": [
+          "publication"
+        ]
       },
       "SRC0730": {
-        "reason": "Qualify private uploader claims while preserving independently documented reissue and discographic evidence.",
+        "reason": "Distinguish an external listening reference from an identified historical carrier, and qualify uploader-only chronology and label claims without removing access or graph relationships.",
         "fields": {
           "dateQualifier": "reported",
-          "fullCitation": "Jan Kiepura with the Odeon-Künstler-Orchester under Dr. Weissmann. “Ninon”, from Ein Lied für dich; music by Walter Jurmann and Dr. Bronislaw Kaper, words by Fritz Rotter and Ernst Marischka. YouTube transfer published by 78Upm; the upload describes an Odeon red-label issue and gives the year as 1933."
-        }
+          "fullCitation": "Jan Kiepura with the Odeon-Künstler-Orchester under Dr. Weissmann. “Ninon”, from Ein Lied für dich; music by Walter Jurmann and Dr. Bronislaw Kaper, words by Fritz Rotter and Ernst Marischka. YouTube transfer published by 78Upm; the upload describes an Odeon red-label issue and gives the year as 1933.",
+          "title": "Ninon — Jan Kiepura, YouTube",
+          "shortCitation": "YouTube, Jan Kiepura, “Ninon”",
+          "date": "1933",
+          "dateRole": "issue",
+          "researchNote": "The upload describes a red-label Odeon issue of 1933 with Jan Kiepura and the Odeon-Künstler-Orchester under Dr. Weissmann, but gives no catalogue or matrix number and does not show the disc label. These remain uploader-supplied issue and credit details. A separate catalogue source documents Kiepura’s Odeon O-4661, matrix Be 10221; without matching label or matrix evidence, that pressing is not assigned to this transfer.",
+          "sourceType": "online_audio_source",
+          "researchNoteType": "discographic_note"
+        },
+        "removeFields": [
+          "publication"
+        ]
       },
       "SRC0729": {
         "reason": "Qualify private uploader claims while preserving independently documented reissue and discographic evidence.",
@@ -975,18 +1017,38 @@
         }
       },
       "SRC0759": {
-        "reason": "Separate consulted score imprints and uploader-supplied recording claims from verified label evidence.",
+        "reason": "Distinguish an external listening reference from an identified historical carrier, and qualify uploader-only chronology and label claims without removing access or graph relationships.",
         "fields": {
           "dateQualifier": "reported",
-          "fullCitation": "Orkiestra taneczna. “San Francisco.” Foxtrot. Digital transfer on YouTube; the upload identifies Syrena Record, gives the year as 1937 and credits Bronisław Kaper and Walter Jurmann with music and Emanuel Schlechter with Polish words."
-        }
+          "fullCitation": "Orkiestra taneczna. “San Francisco.” Foxtrot. Digital transfer on YouTube; the upload identifies Syrena Record, gives the year as 1937 and credits Bronisław Kaper and Walter Jurmann with music and Emanuel Schlechter with Polish words.",
+          "title": "San Francisco — Polish-language recording, YouTube",
+          "shortCitation": "YouTube, “San Francisco” — Polish-language recording",
+          "date": "1937",
+          "dateRole": "described_item",
+          "researchNote": "The upload identifies an unnamed dance orchestra and a Syrena Record issue, gives the year as 1937 and attributes the Polish words to Emanuel Schlechter. It supplies no catalogue or matrix number, does not show the disc label and does not distinguish recording from issue year. These details remain uploader-supplied, not a verified description of a historical pressing.",
+          "sourceType": "online_audio_source",
+          "researchNoteType": "discographic_note"
+        },
+        "removeFields": [
+          "publication"
+        ]
       },
       "SRC0707": {
-        "reason": "Separate consulted score imprints and uploader-supplied recording claims from verified label evidence.",
+        "reason": "Distinguish an external listening reference from an identified historical carrier, and qualify uploader-only chronology and label claims without removing access or graph relationships.",
         "fields": {
           "dateQualifier": "reported",
-          "fullCitation": "Marek Weber und sein Orchester, refrain sung by Austin Egen. “Tränen weint jede Frau so gern.” Tango. Digital transfer on YouTube; the upload identifies His Master’s Voice / Electrola and gives the year as 1929."
-        }
+          "fullCitation": "Marek Weber und sein Orchester, refrain sung by Austin Egen. “Tränen weint jede Frau so gern.” Tango. Digital transfer on YouTube; the upload identifies His Master’s Voice / Electrola and gives the year as 1929.",
+          "title": "Tränen weint jede Frau so gern — Marek Weber, YouTube",
+          "shortCitation": "YouTube, Marek Weber and Austin Egen, “Tränen weint jede Frau so gern”",
+          "date": "1929",
+          "dateRole": "described_item",
+          "researchNote": "The upload identifies Marek Weber und sein Orchester with Austin Egen, a His Master’s Voice / Electrola issue and the year 1929, but supplies no catalogue or matrix number and does not show the disc label. It does not distinguish recording from issue year. Nico Dostal’s arrangement credit, Kaper’s music credit and Fritz Rotter’s words credit are uploader-supplied, not label transcriptions. The separate Tauber session documented for the same song does not identify this Weber transfer.",
+          "sourceType": "online_audio_source",
+          "researchNoteType": "discographic_note"
+        },
+        "removeFields": [
+          "publication"
+        ]
       },
       "SRC0379": {
         "reason": "Separate consulted score imprints and uploader-supplied recording claims from verified label evidence.",
@@ -4506,6 +4568,12 @@
       }
     },
     "Media": {
+      "M369": {
+        "reason": "Distinguish an external listening reference from an identified historical carrier, and qualify uploader-only chronology and label claims without removing access or graph relationships.",
+        "fields": {
+          "publicCreditLine": "Dolly Haas; chamber orchestra directed by Hans Sommer; His Master’s Voice E.G. 2481, as identified in the upload description. YouTube upload by Marconiphone."
+        }
+      },
       "M420": {
         "reason": "Remove the unsupported 1934 issue date after checking the undated BnF DF 1622 record; preserve the listening copy and graph links.",
         "fields": {
@@ -6371,6 +6439,13 @@
       }
     },
     "Contributions": {
+      "CON-S054-LAB-ORG126": {
+        "reason": "Distinguish an external listening reference from an identified historical carrier, and qualify uploader-only chronology and label claims without removing access or graph relationships.",
+        "fields": {
+          "certainty": "probable",
+          "scopeNote": "The uploader identifies the recording as His Master’s Voice E.G. 2481, in the Electrola series. The disc label is not shown and no independent label or session record has been matched to this transfer; the issuing-label credit remains an uploader-level attribution."
+        }
+      },
       "CON-S118-P-P173": {
         "reason": "Qualify uploader-only performance and label claims while preserving independently corroborated catalogue and discographic evidence.",
         "fields": {
