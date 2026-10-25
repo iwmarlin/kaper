@@ -38,7 +38,17 @@ REPOSITORY_ALIASES: dict[str, str] = {
         "California Digital Newspaper Collection, Center for Bibliographical "
         "Studies and Research, University of California, Riverside"
     ),
+    # The record cites a BnF catalogue notice; what else was consulted is
+    # already named in its publication field, and is not a repository.
+    "BNF song notices / secondary public references": f"{BNF} / Catalogue général",
+    # A site whose own name is its domain is still entered as a name, as IMDb,
+    # Culture.pl and Kino-Teatr.Ru are. These four read as a hostname beside
+    # them, which is the one form the field never otherwise takes.
+    "deutscheslied.com": "Deutsches Lied",
     "Discogs (discogs.com)": "Discogs",
+    "grammophon-platten.de": "Grammophon-Platten.de",
+    "karinkiradi.at": "Karins Blog über den Zentralfriedhof und seine Toten",
+    "musiktiteldb.de": "Musiktiteldb.de",
     # DIF is the former name of the DFF.
     "Filmportal.de / Deutsches Filminstitut & Filmmuseum (DIF)": (
         CANONICAL_REPOSITORY_BY_HOST["www.filmportal.de"]
@@ -57,6 +67,19 @@ REPOSITORY_ALIASES: dict[str, str] = {
         "Internet Archive / Media History Digital Library"
     ),
     "Polona / Biblioteka Narodowa": "Biblioteka Narodowa / Polona",
+    # Same rule, applied to the Commons files that had it backwards. Seventeen
+    # records already name the holder first and five did not, four of them
+    # separating the pair with a semicolon that nothing in either name needs.
+    "Wikimedia Commons / Library of Congress": (
+        "Library of Congress / Wikimedia Commons"
+    ),
+    "Wikimedia Commons; Heritage Auctions": "Heritage Auctions / Wikimedia Commons",
+    "Wikimedia Commons; Narodowe Archiwum Cyfrowe": (
+        "Narodowe Archiwum Cyfrowe / Wikimedia Commons"
+    ),
+    "Wikimedia Commons; The Marc Lavry Heritage Society": (
+        "The Marc Lavry Heritage Society / Wikimedia Commons"
+    ),
     # Two SACEM databases, kept apart: the museum's catalogue of creators and
     # the society's repertoire search.
     "SACEM Repertoire": f"{SACEM} / Répertoire",
@@ -66,11 +89,18 @@ REPOSITORY_ALIASES: dict[str, str] = {
 }
 
 REPOSITORY_ALIASES_BY_HOST: dict[tuple[str, str], str] = {
+    # Both hold far more than the one file cited here, so the bare name stays
+    # right everywhere else; on Commons it leaves out the body that serves it,
+    # which every other Commons record names.
+    ("Bundesarchiv", "commons.wikimedia.org"): "Bundesarchiv / Wikimedia Commons",
     ("Deutsche Nationalbibliothek", "kuenste-im-exil.de"): (
         "Deutsche Nationalbibliothek / Künste im Exil"
     ),
     ("Deutsches Filminstitut & Filmmuseum (DFF)", "www.filmportal.de"): (
         CANONICAL_REPOSITORY_BY_HOST["www.filmportal.de"]
+    ),
+    ("Imperial War Museums", "commons.wikimedia.org"): (
+        "Imperial War Museums / Wikimedia Commons"
     ),
     (SACEM, "musee.sacem.fr"): f"{SACEM} / Musée SACEM",
 }

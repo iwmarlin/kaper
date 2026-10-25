@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import re
 import sys
 import unittest
 from pathlib import Path
@@ -58,6 +59,27 @@ class RepositoryNameTests(unittest.TestCase):
                 repository,
                 msg=f"{source['id']} repository is not canonical",
             )
+
+    def test_no_repository_is_written_as_a_bare_hostname(self) -> None:
+        """The field is printed on every row of the Sources index and labelled
+        Repository on the card, where the archive's own definition calls it the
+        body that holds or serves the source. A website qualifies — IMDb,
+        Discogs, Culture.pl and Kino-Teatr.Ru are all entered here — but it is
+        entered under its name. Fifteen records instead carried a lowercase
+        hostname, which restates the address printed directly beneath it."""
+        offenders = []
+        for source in self.sources:
+            repository = str(source.get("repository") or "")
+            if not repository:
+                continue
+            # A name may legitimately end in a domain label, as Culture.pl and
+            # Kino-Teatr.Ru do; what gives the hostname away is the lowercase
+            # opening, since every name in the field is capitalised.
+            if repository[0].islower() and re.fullmatch(
+                r"[a-z0-9-]+(?:\.[a-z0-9-]+)+", repository
+            ):
+                offenders.append(f"{source['id']}: {repository}")
+        self.assertEqual(offenders, [], "a repository is named by its hostname")
 
     def test_bnf_records_name_the_resource_they_cite(self) -> None:
         seen = set()
