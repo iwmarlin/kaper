@@ -33,8 +33,8 @@ import {
   sourceTypePluralLabel,
   typeBadge,
   updateMeta,
-} from "./core.js?v=a024e87146";
-import { RECORD_INDEXES, recordIndexReturn } from "./catalogue-filters.js?v=a024e87146";
+} from "./core.js?v=d797d980b4";
+import { RECORD_INDEXES, recordIndexReturn } from "./catalogue-filters.js?v=d797d980b4";
 
 // A canonical record route arrives prerendered and renders no image in the
 // browser, so the image map is loaded only where a record is actually rendered:
@@ -1677,6 +1677,19 @@ function sourceAccessFact(source) {
   return fact("Accessed", formatDate(source.accessDate));
 }
 
+// A source that was born on the site that serves it is published and held by
+// the same body, and 137 records give the two fields the same string: the card
+// printed IMDb under Publication and IMDb again under Repository, one line
+// apart. Both statements are true, so neither field is wrong and the data is
+// left alone; what the reader does not need is to be told twice. Publication
+// is the senior bibliographic element and the one the card prints first, so
+// the repeat is what goes.
+function sourceRepositoryFact(source) {
+  const repository = String(source.repository || "").trim();
+  if (!repository || repository === String(source.publication || "").trim()) return "";
+  return fact("Repository", repository);
+}
+
 function sourceActions(source) {
   const links = [];
   const seen = new Set();
@@ -1805,7 +1818,7 @@ function renderSource(source, data, indexes) {
       <p>${sourceCitationMarkup(source, source.fullCitation || source.shortCitation, indexes)}</p>
       ${sourceActions(source)}
     </div>`,
-    facts: `${fact("Creator", source.creator)}${fact("Date", sourceDateDisplay(source))}${fact("Date represents", sourceDateRoleLabel(source.dateRole))}${fact("Publication", source.publication)}${fact("Repository", source.repository)}${sourceIdentifierFacts(source)}${sourceAccessFact(source)}${fact("Reliability", sourceReliabilityLabel(source.reliability))}${fact("Verification", sourceStatusLabel(source.sourceStatus))}`,
+    facts: `${fact("Creator", source.creator)}${fact("Date", sourceDateDisplay(source))}${fact("Date represents", sourceDateRoleLabel(source.dateRole))}${fact("Publication", source.publication)}${sourceRepositoryFact(source)}${sourceIdentifierFacts(source)}${sourceAccessFact(source)}${fact("Reliability", sourceReliabilityLabel(source.reliability))}${fact("Verification", sourceStatusLabel(source.sourceStatus))}`,
     main: [
       sourceResearchNote(source),
       section("Supported works", entityList(works, "work", (item) => [item.year, item.workType].filter(Boolean).join(" · ")), "", works.length),
@@ -2027,7 +2040,7 @@ async function bootstrapRecordPage() {
     }
     const [data, { IMAGE_DERIVATIVES }] = await Promise.all([
       loadRecordPayload(requestedType, requestedId),
-      import("./image-derivatives.js?v=a024e87146"),
+      import("./image-derivatives.js?v=d797d980b4"),
     ]);
     registerImageDerivatives(IMAGE_DERIVATIVES);
     const { config, view } = renderRecordView(requestedType, requestedId, data);

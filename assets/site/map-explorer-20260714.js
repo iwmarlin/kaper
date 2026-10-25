@@ -10,9 +10,9 @@ import {
   periodValues,
   recordUrl,
   renderError,
-} from "./core.js?v=a024e87146";
-import { createQueryState } from "./catalogue-filters.js?v=a024e87146";
-import { HISTORICAL_PLATE_VARIANTS } from "./map-plate.js?v=a024e87146";
+} from "./core.js?v=d797d980b4";
+import { createQueryState } from "./catalogue-filters.js?v=d797d980b4";
+import { HISTORICAL_PLATE_VARIANTS } from "./map-plate.js?v=d797d980b4";
 import {
   eventCount,
   evidenceSummary,
@@ -21,7 +21,7 @@ import {
   placeListLabel,
   precisionMeta,
   sortPlaces,
-} from "./map-places.js?v=a024e87146";
+} from "./map-places.js?v=d797d980b4";
 
 mountSiteChrome("map");
 

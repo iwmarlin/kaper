@@ -1,4 +1,6 @@
+import html
 import json
+import re
 import shutil
 import subprocess
 import unittest
@@ -267,6 +269,76 @@ class SourceCreditLedgerTests(unittest.TestCase):
                         self.assertIn(role, work_markup)
         self.assertGreater(mixed_groups, 0, "the fixture must exercise mixed certainty")
 
+
+
+class RepeatedFactTests(unittest.TestCase):
+    """A source born on the site that serves it is published and held by the
+    same body, so 137 records give Publication and Repository the same string
+    and the card printed IMDb twice, one line apart. Both statements are true,
+    so the data keeps both fields; the card stops repeating itself."""
+
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls.sources = read_records("sources.json")
+
+    @staticmethod
+    def facts(source_id):
+        page = RECORDS / source_id / "index.html"
+        if not page.exists():
+            return None
+        markup = page.read_text(encoding="utf-8")
+        return {
+            label: [
+                html.unescape(value)
+                for value in re.findall(
+                    r"<dt>" + label + r"</dt><dd>([^<]*)</dd>", markup
+                )
+            ]
+            for label in ("Publication", "Repository")
+        }
+
+    def test_a_card_never_prints_the_same_body_twice(self) -> None:
+        repeated = [
+            source["id"]
+            for source in self.sources
+            if (source.get("repository") or "").strip()
+            and (source.get("repository") or "").strip()
+            == (source.get("publication") or "").strip()
+        ]
+        self.assertGreater(len(repeated), 100, "the fixture must exercise the repeat")
+        offenders = []
+        for source_id in repeated:
+            facts = self.facts(source_id)
+            if facts is None:
+                continue
+            if facts["Repository"]:
+                offenders.append(source_id)
+        self.assertEqual(offenders, [], "a card repeats the publication as the repository")
+
+    def test_a_repository_that_says_something_else_is_still_printed(self) -> None:
+        # Suppressing the repeat must not suppress the field: these are the
+        # records where the two name different bodies, which is most of them.
+        distinct = [
+            source
+            for source in self.sources
+            if (source.get("repository") or "").strip()
+            and (source.get("publication") or "").strip()
+            and (source.get("repository") or "").strip()
+            != (source.get("publication") or "").strip()
+        ]
+        self.assertGreater(len(distinct), 100)
+        checked = 0
+        for source in distinct:
+            facts = self.facts(source["id"])
+            if facts is None:
+                continue
+            checked += 1
+            self.assertEqual(
+                facts["Repository"][:1],
+                [source["repository"]],
+                f"{source['id']} lost its repository",
+            )
+        self.assertGreater(checked, 100, "no pages were checked")
 
 if __name__ == "__main__":
     unittest.main()
