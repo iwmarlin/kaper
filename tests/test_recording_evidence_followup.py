@@ -41,7 +41,8 @@ class RecordingEvidenceFollowupTests(unittest.TestCase):
             "CON-S060-P-ORG148": "online_catalogue",
             "CON-S071-P-ORG144": "discography",
             "CON-S071-LAB-ORG128": "discography",
-            "CON-S118-P-P173": "discography",
+            # Both separate labels have now been inspected directly.
+            "CON-S118-P-P173": "recording_label",
         }
         for credit_id, context in expected.items():
             with self.subTest(credit=credit_id):

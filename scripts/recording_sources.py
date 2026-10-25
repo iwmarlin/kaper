@@ -148,6 +148,58 @@ AUDITED_DIGITAL_AUDIO_FIELDS: dict[str, dict[str, Any]] = {
 
 
 RECORDING_FIELDS: dict[str, dict[str, Any]] = {
+    "SRC0708": {
+        "shortCitation": "Electrola E.G. 2271, “Du lieber Geiger, spiel’ einen Tango für mich”",
+        "fullCitation": "Marek Weber und sein Orchester. “Du lieber Geiger, spiel’ einen Tango für mich.” Tango; label credits Dr. Kaper and German, with words by Fritz Rotter. Electrola E.G. 2271, label number 60-1520; issued June 1931. Disc label shown in the YouTube transfer published by 78rpm Musik.",
+        "date": "1931-06",
+        "dateRole": "issue",
+        "dateQualifier": "confirmed",
+        "accessDate": "2026-10-26",
+        "researchNote": "The displayed label reads “Tanz-Orchester mit Refraingesang”, identifies Marek Weber und sein Orchester and gives E.G. 2271 and 60-1520. The earlier statement that no label was shown was incorrect. Henry König’s Electrola label list supplies matrix OD267-1, a session at the Berlin Electrola studio on 24 March 1931 and release in June 1931, citing Discographie der deutschen Tanzmusik, p. 2526. The list describes the side as “Instr.”, in conflict with the wording on the label itself, not merely with the uploader’s description. The discrepancy remains unresolved; no refrain singer is identified here. The structured date describes the catalogue issue, not a session or the manufacture of the photographed copy; the catalogued take is not confirmed from the visible runout.",
+        "researchNoteType": "discographic_note",
+        "additionalLinks": [
+            {
+                "label": "Henry König, Electrola label list — catalogue, session and issue data",
+                "url": "http://musiktiteldb.de/Label/EMI_EG02.html",
+                "role": "catalogue_entry"
+            },
+            {
+                "label": "YouTube transfer — E.G. 2271 label and its refrain-vocal wording",
+                "url": "https://i.ytimg.com/vi/WuLkSvYs1qA/maxresdefault.jpg",
+                "role": "additional_evidence"
+            }
+        ]
+    },
+    "SRC0743": {
+        "shortCitation": "Electrola EG 2135, “Ach, Otto, Otto…!”",
+        "fullCitation": "Marek Weber und sein Orchester, refrain by Siegfried Arno. “Ach, Otto, Otto…!” Foxtrot. Electrola EG 2135 A, matrix BD 9264-2; issued January 1931. Discographic entry in Henry König’s Electrola label list, citing Discographie der deutschen Kleinkunst, vol. 1, p. 27.",
+        "date": "1931-01",
+        "dateRole": "issue",
+        "dateQualifier": "confirmed",
+        "accessDate": "2026-10-26",
+        "researchNote": "The primary link leads directly to Henry König’s Electrola label list. Its EG 2135 A entry names Marek Weber and Siegfried Arno, matrix BD 9264-2, duration 3:12, the Beethoven-Saal in Berlin, release in January 1931 and the alternative issue HMV AM 3450. It cites Discographie der deutschen Kleinkunst, vol. 1, p. 27. The session field supplies a venue but no recording date; January 1931 is therefore an issue month, not a session date. The corresponding listening reference does not independently establish the pressing or take reproduced.",
+        "researchNoteType": "discographic_note"
+    },
+    "SRC0748": {
+        "title": "Cosi Cosa — RCA Victor 4381-B",
+        "shortCitation": "RCA Victor 4381-B, “Cosi Cosa”",
+        "publication": "RCA Victor",
+        "fullCitation": "Allan Jones, tenor, with orchestra conducted by Nathaniel Shilkret. “Cosi Cosa”, from Everybody Sing; label credit “Washington–Kaper–Jurmann”. RCA Victor Red Seal 4381-B, made in U.S.A., n.d. Disc label shown in the YouTube transfer.",
+        "dateRole": "issue",
+        "dateQualifier": "unknown",
+        "accessDate": "2026-10-26",
+        "reliability": "high",
+        "sourceStatus": "verified",
+        "researchNote": "The transfer shows a readable red RCA Victor label, numbered 4381-B, naming Allan Jones and Nathaniel Shilkret, the film Everybody Sing and the Washington–Kaper–Jurmann credit. The earlier statement that no label was shown was incorrect. The uploader gives 13 January 1938 as the recording date, but that claim does not establish the issue or manufacture date of this pressing; no date is printed on the label, so the structured issue date remains unknown. SRC0784 documents a different physical issue, British HMV B.8724; neither the same master nor a particular take is inferred solely from these labels. This source is retained as evidence for the American RCA Victor issue, without restoring a second listening Media.",
+        "researchNoteType": "discographic_note",
+        "additionalLinks": [
+            {
+                "label": "YouTube transfer — displayed U.S. RCA Victor Red Seal 4381-B label",
+                "url": "https://i.ytimg.com/vi/tfZbfbB192E/maxresdefault.jpg",
+                "role": "additional_evidence"
+            }
+        ]
+    },
     "SRC0487": {
         "title": "Oh Madonna! — Odeon O-4707 a",
         "shortCitation": "Odeon O-4707 a, “Oh Madonna!”",
@@ -629,35 +681,59 @@ RECORDING_FIELDS: dict[str, dict[str, Any]] = {
         "accessDate": "2026-10-25"
     },
     "SRC0005": {
-        "fullCitation": (
-            "Marek Weber und sein Orchester, refrain sung by Leo Moll. “Spiel’ "
-            "mir auf der Balalaika einen russischen Tango.” Electrola E.G. 2392, "
-            "matrix 00499-1; recorded in Berlin, 18 August 1931, released October "
-            "1931; also issued as His Master’s Voice AM 3741. Session and issue "
-            "data from the Electrola label list at musiktiteldb.de, based on the "
-            "Discographie der deutschen Tanzmusik. Digital transfer on YouTube, "
-            "video Oq4sWv9khw4."
-        ),
+        "fullCitation": "Marek Weber und sein Orchester, refrain by Leo Moll. “Spiel’ mir auf der Balalaika einen russischen Tango.” Tango; label credits Dr. B. Kaper and Fritz Rotter. Electrola E.G. 2392, label number 60-1717; issued October 1931. Disc label shown in the YouTube transfer published by Grammophonics – 78Upm.",
         "repository": "YouTube / musiktiteldb.de",
-        "researchNote": (
-            "The transfer description dates the recording to 1932, whereas the "
-            "Electrola label list gives a Berlin session on 18 August 1931 and an "
-            "October 1931 release. The session-based chronology is preferred."
-        ),
-        "researchNoteType": "date_assessment",
+        "researchNote": "The displayed label identifies Marek Weber und sein Orchester, refrain singer Leo Moll, Electrola E.G. 2392 and number 60-1717. Henry König’s Electrola label list supplies matrix “00499-1”, a Berlin session on 18 August 1931 and release in October 1931, citing Discographie der deutschen Tanzmusik, vol. 2; it also lists HMV AM 3741. The structured date describes the catalogue issue, not the session or manufacture of this copy. The earlier archive caption’s 1932 was incorrect. No Wiener Boheme-Verlag publisher credit appears on the displayed label.",
+        "researchNoteType": "discographic_note",
+        "shortCitation": "Electrola E.G. 2392, “Spiel’ mir auf der Balalaika einen russischen Tango”",
+        "date": "1931-10",
+        "dateRole": "issue",
+        "dateQualifier": "confirmed",
+        "accessDate": "2026-10-26",
+        "additionalLinks": [
+            {
+                "label": "Henry König, Electrola label list — catalogue, session and issue data",
+                "url": "http://musiktiteldb.de/Label/EMI_EG02.html",
+                "role": "catalogue_entry"
+            },
+            {
+                "label": "YouTube transfer — displayed Electrola E.G. 2392 label",
+                "url": "https://i.ytimg.com/vi/Oq4sWv9khw4/maxresdefault.jpg",
+                "role": "additional_evidence"
+            }
+        ],
+        "contributionIds": [
+            "CON-S045-C-P009",
+            "CON-S045-CON-P165",
+            "CON-S045-L-P020",
+            "CON-S045-LAB-ORG126",
+            "CON-S045-P-ORG119",
+            "CON-S045-P-P166"
+        ]
     },
     "SRC0006": {
-        "fullCitation": (
-            "Eddy Duchin and His Orchestra, vocal by Lew Sherwood. “You’re All I "
-            "Need.” Words by Gus Kahn; music by Bronisław Kaper and Walter "
-            "Jurmann. Victor 25029, matrix BS-89700-1; recorded in New York, 29 "
-            "April 1935; issued 8 May 1935. Session and issue data from the "
-            "Discography of American Historical Recordings; digital transfer on "
-            "YouTube, video xibMGdnilK0."
-        ),
-        "repository": (
-            "Discography of American Historical Recordings / YouTube"
-        ),
+        "fullCitation": "Eddy Duchin and His Orchestra, vocal by Lew Sherwood. “You’re All I Need.” Words by Gus Kahn; music by Bronisław Kaper and Walter Jurmann. Victor 25029, catalogued matrix BS-89700-1; recorded in New York, 29 April 1935; issued 8 May 1935. Digital transfer published by The78Prof on YouTube.",
+        "repository": "Discography of American Historical Recordings / YouTube",
+        "shortCitation": "Victor 25029, “You’re All I Need”",
+        "date": "1935-05-08",
+        "dateRole": "issue",
+        "dateQualifier": "confirmed",
+        "accessDate": "2026-10-26",
+        "researchNote": "John R. Bolig, The Victor Black Label Discography: Victor 25000, 26000, 27000 Series (2017), printed p. 5 (PDF p. 20), lists Victor 25029, BS-89700-1, Eddy Duchin and Lew Sherwood, the session on 29 April 1935 at New York studio 2, and release on 8 May 1935. The complete PDF supplied by the American Discography Project, UCSB Library, was checked; the DAHR website itself was unavailable during this review. The upload independently names Victor 25029 and the session date but displays a stylized title card, not an inspectable runout. The catalogued master and issue chronology are documented; the particular transferred copy and take are not independently established. This record does not document the publisher of the printed sheet music.",
+        "researchNoteType": "discographic_note",
+        "additionalLinks": [
+            {
+                "label": "John R. Bolig, The Victor Black Label Discography (2017), p. 5 — Victor 25029",
+                "url": "https://adp-assets.library.ucsb.edu/VictorBlackLabelDiscography_v5.pdf#page=20",
+                "role": "additional_evidence"
+            }
+        ],
+        "contributionIds": [
+            "CON-S119-C-P009",
+            "CON-S119-C-P077",
+            "CON-S119-L-P025",
+            "CON-S119-P-P133"
+        ]
     },
     "SRC0115": {
         "fullCitation": "Henry Garat, vocal; orchestra conducted by Bronisław Kaper. “Pourvu qu’on ait vingt ans,” from Une femme au volant. Music by Bronisław Kaper and Walter Jurmann; words by Louis Poterat. Salabert 3384, 78 rpm disc; recorded Paris, 7 November 1933. Digital transfer from David Silvestre’s private collection, published by lysgauty1 on YouTube, video JA57rCoKoyI. Gérard Roig, “Discographie d’Henry Garat,” Phonoscopies 5 (January 1994): 10–11, lists matrix SS 1729 and the coupled side “Ninon, quand tu me souris,” matrix SS 1730, as Salabert 3384.",
@@ -765,6 +841,11 @@ RECORDING_FIELDS: dict[str, dict[str, Any]] = {
 # These corrections concern citation syntax, not the date of a modern issue.
 # Keep uploader-reported recording dates distinct from upload dates.
 AUDITED_RECORDING_CITATIONS = {
+    "SRC0005": "Marek Weber und sein Orchester, refrain by Leo Moll. “Spiel’ mir auf der Balalaika einen russischen Tango.” Tango; label credits Dr. B. Kaper and Fritz Rotter. Electrola E.G. 2392, label number 60-1717; issued October 1931. Disc label shown in the YouTube transfer published by Grammophonics – 78Upm.",
+    "SRC0006": "Eddy Duchin and His Orchestra, vocal by Lew Sherwood. “You’re All I Need.” Words by Gus Kahn; music by Bronisław Kaper and Walter Jurmann. Victor 25029, catalogued matrix BS-89700-1; recorded in New York, 29 April 1935; issued 8 May 1935. Digital transfer published by The78Prof on YouTube.",
+    "SRC0708": "Marek Weber und sein Orchester. “Du lieber Geiger, spiel’ einen Tango für mich.” Tango; label credits Dr. Kaper and German, with words by Fritz Rotter. Electrola E.G. 2271, label number 60-1520; issued June 1931. Disc label shown in the YouTube transfer published by 78rpm Musik.",
+    "SRC0743": "Marek Weber und sein Orchester, refrain by Siegfried Arno. “Ach, Otto, Otto…!” Foxtrot. Electrola EG 2135 A, matrix BD 9264-2; issued January 1931. Discographic entry in Henry König’s Electrola label list, citing Discographie der deutschen Kleinkunst, vol. 1, p. 27.",
+    "SRC0748": "Allan Jones, tenor, with orchestra conducted by Nathaniel Shilkret. “Cosi Cosa”, from Everybody Sing; label credit “Washington–Kaper–Jurmann”. RCA Victor Red Seal 4381-B, made in U.S.A., n.d. Disc label shown in the YouTube transfer.",
     "SRC0487": "Jan Kiepura with the Odeon-Künstler-Orchester conducted by Dr. Weissmann. “Oh Madonna!”, from Ein Lied für dich; label credits music to B. Kaper and Walter Jurmann and words to Fritz Rotter and Ernst Marischka. Odeon O-4707 a, matrix Be 10220, take 2; recorded 11 February 1933. Disc label photograph and audio transfer published by the Great 78 Project, Internet Archive.",
     "SRC0697": "Hans Albers. “Mein Gorilla hat ’ne Villa im Zoo.” Paso doble. YouTube transfer published by jonjamg; the description identifies Odeon O-11811, matrix Be 10227, and accompaniment by the Odeon-Künstler-Orchester under Otto Dobrindt. The catalogue issue is dated April 1933 in Henry König’s Odeon label list.",
     "SRC0699": "Hans Albers with the Odeon-Künstler-Orchester under Otto Dobrindt. “Immer wenn ich glücklich bin.” Foxtrot from Heut’ kommt’s drauf an; label credits music to Walter Jurmann and B. Kaper and words to Fritz Rotter. Odeon O-11811 a, matrix Be 10226; issued April 1933. Filmed-label transfer published by Schellackplatte on YouTube.",
@@ -907,6 +988,111 @@ AUDITED_PRIVATE_UPLOAD_FIELDS = {
 # Individually checked catalogue and reissue chronology; no session date is inferred
 # from a film year, a file name or the first release of a later compilation.
 VERIFIED_RECORDING_CHRONOLOGY: dict[str, dict[str, Any]] = {
+    "SRC0005": {
+        "shortCitation": "Electrola E.G. 2392, “Spiel’ mir auf der Balalaika einen russischen Tango”",
+        "fullCitation": "Marek Weber und sein Orchester, refrain by Leo Moll. “Spiel’ mir auf der Balalaika einen russischen Tango.” Tango; label credits Dr. B. Kaper and Fritz Rotter. Electrola E.G. 2392, label number 60-1717; issued October 1931. Disc label shown in the YouTube transfer published by Grammophonics – 78Upm.",
+        "date": "1931-10",
+        "dateRole": "issue",
+        "dateQualifier": "confirmed",
+        "accessDate": "2026-10-26",
+        "researchNote": "The displayed label identifies Marek Weber und sein Orchester, refrain singer Leo Moll, Electrola E.G. 2392 and number 60-1717. Henry König’s Electrola label list supplies matrix “00499-1”, a Berlin session on 18 August 1931 and release in October 1931, citing Discographie der deutschen Tanzmusik, vol. 2; it also lists HMV AM 3741. The structured date describes the catalogue issue, not the session or manufacture of this copy. The earlier archive caption’s 1932 was incorrect. No Wiener Boheme-Verlag publisher credit appears on the displayed label.",
+        "researchNoteType": "discographic_note",
+        "additionalLinks": [
+            {
+                "label": "Henry König, Electrola label list — catalogue, session and issue data",
+                "url": "http://musiktiteldb.de/Label/EMI_EG02.html",
+                "role": "catalogue_entry"
+            },
+            {
+                "label": "YouTube transfer — displayed Electrola E.G. 2392 label",
+                "url": "https://i.ytimg.com/vi/Oq4sWv9khw4/maxresdefault.jpg",
+                "role": "additional_evidence"
+            }
+        ],
+        "contributionIds": [
+            "CON-S045-C-P009",
+            "CON-S045-CON-P165",
+            "CON-S045-L-P020",
+            "CON-S045-LAB-ORG126",
+            "CON-S045-P-ORG119",
+            "CON-S045-P-P166"
+        ]
+    },
+    "SRC0006": {
+        "shortCitation": "Victor 25029, “You’re All I Need”",
+        "fullCitation": "Eddy Duchin and His Orchestra, vocal by Lew Sherwood. “You’re All I Need.” Words by Gus Kahn; music by Bronisław Kaper and Walter Jurmann. Victor 25029, catalogued matrix BS-89700-1; recorded in New York, 29 April 1935; issued 8 May 1935. Digital transfer published by The78Prof on YouTube.",
+        "date": "1935-05-08",
+        "dateRole": "issue",
+        "dateQualifier": "confirmed",
+        "accessDate": "2026-10-26",
+        "researchNote": "John R. Bolig, The Victor Black Label Discography: Victor 25000, 26000, 27000 Series (2017), printed p. 5 (PDF p. 20), lists Victor 25029, BS-89700-1, Eddy Duchin and Lew Sherwood, the session on 29 April 1935 at New York studio 2, and release on 8 May 1935. The complete PDF supplied by the American Discography Project, UCSB Library, was checked; the DAHR website itself was unavailable during this review. The upload independently names Victor 25029 and the session date but displays a stylized title card, not an inspectable runout. The catalogued master and issue chronology are documented; the particular transferred copy and take are not independently established. This record does not document the publisher of the printed sheet music.",
+        "researchNoteType": "discographic_note",
+        "additionalLinks": [
+            {
+                "label": "John R. Bolig, The Victor Black Label Discography (2017), p. 5 — Victor 25029",
+                "url": "https://adp-assets.library.ucsb.edu/VictorBlackLabelDiscography_v5.pdf#page=20",
+                "role": "additional_evidence"
+            }
+        ],
+        "contributionIds": [
+            "CON-S119-C-P009",
+            "CON-S119-C-P077",
+            "CON-S119-L-P025",
+            "CON-S119-P-P133"
+        ]
+    },
+    "SRC0708": {
+        "shortCitation": "Electrola E.G. 2271, “Du lieber Geiger, spiel’ einen Tango für mich”",
+        "fullCitation": "Marek Weber und sein Orchester. “Du lieber Geiger, spiel’ einen Tango für mich.” Tango; label credits Dr. Kaper and German, with words by Fritz Rotter. Electrola E.G. 2271, label number 60-1520; issued June 1931. Disc label shown in the YouTube transfer published by 78rpm Musik.",
+        "date": "1931-06",
+        "dateRole": "issue",
+        "dateQualifier": "confirmed",
+        "accessDate": "2026-10-26",
+        "researchNote": "The displayed label reads “Tanz-Orchester mit Refraingesang”, identifies Marek Weber und sein Orchester and gives E.G. 2271 and 60-1520. The earlier statement that no label was shown was incorrect. Henry König’s Electrola label list supplies matrix OD267-1, a session at the Berlin Electrola studio on 24 March 1931 and release in June 1931, citing Discographie der deutschen Tanzmusik, p. 2526. The list describes the side as “Instr.”, in conflict with the wording on the label itself, not merely with the uploader’s description. The discrepancy remains unresolved; no refrain singer is identified here. The structured date describes the catalogue issue, not a session or the manufacture of the photographed copy; the catalogued take is not confirmed from the visible runout.",
+        "researchNoteType": "discographic_note",
+        "additionalLinks": [
+            {
+                "label": "Henry König, Electrola label list — catalogue, session and issue data",
+                "url": "http://musiktiteldb.de/Label/EMI_EG02.html",
+                "role": "catalogue_entry"
+            },
+            {
+                "label": "YouTube transfer — E.G. 2271 label and its refrain-vocal wording",
+                "url": "https://i.ytimg.com/vi/WuLkSvYs1qA/maxresdefault.jpg",
+                "role": "additional_evidence"
+            }
+        ]
+    },
+    "SRC0743": {
+        "shortCitation": "Electrola EG 2135, “Ach, Otto, Otto…!”",
+        "fullCitation": "Marek Weber und sein Orchester, refrain by Siegfried Arno. “Ach, Otto, Otto…!” Foxtrot. Electrola EG 2135 A, matrix BD 9264-2; issued January 1931. Discographic entry in Henry König’s Electrola label list, citing Discographie der deutschen Kleinkunst, vol. 1, p. 27.",
+        "date": "1931-01",
+        "dateRole": "issue",
+        "dateQualifier": "confirmed",
+        "accessDate": "2026-10-26",
+        "researchNote": "The primary link leads directly to Henry König’s Electrola label list. Its EG 2135 A entry names Marek Weber and Siegfried Arno, matrix BD 9264-2, duration 3:12, the Beethoven-Saal in Berlin, release in January 1931 and the alternative issue HMV AM 3450. It cites Discographie der deutschen Kleinkunst, vol. 1, p. 27. The session field supplies a venue but no recording date; January 1931 is therefore an issue month, not a session date. The corresponding listening reference does not independently establish the pressing or take reproduced.",
+        "researchNoteType": "discographic_note"
+    },
+    "SRC0748": {
+        "title": "Cosi Cosa — RCA Victor 4381-B",
+        "shortCitation": "RCA Victor 4381-B, “Cosi Cosa”",
+        "publication": "RCA Victor",
+        "fullCitation": "Allan Jones, tenor, with orchestra conducted by Nathaniel Shilkret. “Cosi Cosa”, from Everybody Sing; label credit “Washington–Kaper–Jurmann”. RCA Victor Red Seal 4381-B, made in U.S.A., n.d. Disc label shown in the YouTube transfer.",
+        "dateRole": "issue",
+        "dateQualifier": "unknown",
+        "accessDate": "2026-10-26",
+        "reliability": "high",
+        "sourceStatus": "verified",
+        "researchNote": "The transfer shows a readable red RCA Victor label, numbered 4381-B, naming Allan Jones and Nathaniel Shilkret, the film Everybody Sing and the Washington–Kaper–Jurmann credit. The earlier statement that no label was shown was incorrect. The uploader gives 13 January 1938 as the recording date, but that claim does not establish the issue or manufacture date of this pressing; no date is printed on the label, so the structured issue date remains unknown. SRC0784 documents a different physical issue, British HMV B.8724; neither the same master nor a particular take is inferred solely from these labels. This source is retained as evidence for the American RCA Victor issue, without restoring a second listening Media.",
+        "researchNoteType": "discographic_note",
+        "additionalLinks": [
+            {
+                "label": "YouTube transfer — displayed U.S. RCA Victor Red Seal 4381-B label",
+                "url": "https://i.ytimg.com/vi/tfZbfbB192E/maxresdefault.jpg",
+                "role": "additional_evidence"
+            }
+        ]
+    },
     "SRC0300": {
         "researchNote": "The BnF catalogue supplies [1934] as the issue date, reconstructed from Répertoire phonographique, 3e supplément annuel 1934. The brackets indicate a catalogue-supplied date, not a date transcribed from the disc. This bibliographic dating is independent of the film’s release chronology.",
         "researchNoteType": "discographic_note",
@@ -1022,6 +1208,10 @@ VERIFIED_RECORDING_CHRONOLOGY: dict[str, dict[str, Any]] = {
 }
 
 VERIFIED_RECORDING_FIELD_REMOVALS: dict[str, list[str]] = {
+    "SRC0748": [
+        "date",
+        "dateDisplay"
+    ],
     "SRC0801": [
         "date",
         "dateDisplay"

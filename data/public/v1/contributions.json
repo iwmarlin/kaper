@@ -8617,7 +8617,6 @@
         "ORG029"
       ],
       "sourceIds": [
-        "SRC0005",
         "SRC0101"
       ]
     },
@@ -14262,7 +14261,6 @@
         "ORG001"
       ],
       "sourceIds": [
-        "SRC0006",
         "SRC0228"
       ]
     },
@@ -21990,7 +21988,7 @@
       "nameAsPrinted": "Allan Jones",
       "displayCredit": "Vocal performance",
       "evidenceContext": [
-        "discography"
+        "recording_label"
       ],
       "sortOrder": 50,
       "certainty": "confirmed",
@@ -22004,12 +22002,12 @@
         "SRC0748",
         "SRC0784"
       ],
-      "scopeNote": "The Great 78 Project catalogue credits Allan Jones on His Master’s Voice B.8724, matrix OA09937. The earlier YouTube description refers to the American Victor 4381 issue of the same session. This credit follows the combined discographic documentation, not a new visual transcription of either disc label."
+      "scopeNote": "The Great 78 Project photograph shows Allan Jones on British His Master’s Voice B.8724, matrix OA09937 (SRC0784). The YouTube transfer in SRC0748 visibly shows him on U.S. RCA Victor 4381-B. These are separate physical issues; the labels establish the performer but do not by themselves prove the same master or take."
     },
     {
       "id": "CON-S118-LAB-ORG156",
       "role": "record_label",
-      "nameAsPrinted": "Victor",
+      "nameAsPrinted": "RCA Victor",
       "displayCredit": "Issuing label",
       "evidenceContext": [
         "recording_label"
@@ -22025,7 +22023,7 @@
       "sourceIds": [
         "SRC0748"
       ],
-      "scopeNote": "Issued the disc as Victor 4381; by 1938 the Victor label was manufactured by RCA."
+      "scopeNote": "The label visible in SRC0748 reads RCA Victor Red Seal, 4381-B, made in U.S.A. It establishes the issuing imprint and catalogue number, not the manufacture or issue date of this pressing."
     },
     {
       "id": "CON-S153-P-P173",
