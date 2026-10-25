@@ -72,16 +72,24 @@ class RecordingEvidenceBatchTests(unittest.TestCase):
         self.assertEqual(self.sources["SRC0714"]["dateQualifier"], "confirmed")
         self.assertEqual(self.sources["SRC0714"]["dateRole"], "issue")
 
-    def test_sixteen_sole_upload_credits_are_qualified(self):
+    def test_sole_upload_credits_are_qualified_unless_label_now_verified(self):
         credits = [r for r in self.credits.values()
                    if len(r.get("sourceIds", [])) == 1 and r["sourceIds"][0] in REPORTED]
         self.assertEqual(len(credits), 16)
         for credit in credits:
             with self.subTest(credit=credit["id"]):
+                fields = self.overrides["records"]["Contributions"][credit["id"]]["fields"]
+                # Subsequent inspection found a readable Kristall 3098 label.
+                # Only these two credits gained primary label evidence.
+                if credit["id"] in {"CON-S018-P-ORG121", "CON-S018-LAB-ORG129"}:
+                    self.assertEqual(credit["certainty"], "confirmed")
+                    self.assertEqual(credit["evidenceContext"], ["recording_label"])
+                    self.assertIn("3098", credit["scopeNote"])
+                    self.assertEqual(fields["certainty"], "confirmed")
+                    continue
                 self.assertEqual(credit["certainty"], "probable")
                 self.assertEqual(credit["evidenceContext"], ["online_catalogue"])
                 self.assertIn("uploader-level", credit["scopeNote"])
-                fields = self.overrides["records"]["Contributions"][credit["id"]]["fields"]
                 self.assertEqual(fields["certainty"], "probable")
 
     def test_four_publisher_edges_are_removed_in_both_directions(self):
@@ -119,6 +127,10 @@ class RecordingEvidenceBatchTests(unittest.TestCase):
         media = [r for r in self.media.values() if set(r.get("sourceIds", [])) & set(REPORTED)]
         self.assertEqual(len(media), 8)
         for item in media:
+            if item["id"] == "M392":
+                self.assertIn("Kristall 3098", item["publicCreditLine"])
+                self.assertNotIn("as identified in the upload description", item["publicCreditLine"])
+                continue
             self.assertIn("as identified in the upload description", item["publicCreditLine"])
 
     def test_neighbouring_credits_are_not_modified_by_similar_field_layouts(self):

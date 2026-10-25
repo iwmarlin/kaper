@@ -148,6 +148,112 @@ AUDITED_DIGITAL_AUDIO_FIELDS: dict[str, dict[str, Any]] = {
 
 
 RECORDING_FIELDS: dict[str, dict[str, Any]] = {
+    "SRC0694": {
+        "researchNote": "The filmed label identifies Ben Berlin und sein Orchester, Grammophon B 51823, order no. 23042, and the Rotter–Kaper credit. The uploader names Alexander Fleßburg as the refrain singer and gives 1930 as the recording year; neither statement is printed on the label. No independently documented session or issue date has been established for this transfer. Dates of other recordings of the song are not used to date this disc.",
+        "fullCitation": "Ben Berlin und sein Orchester, with German refrain vocal. “Auf Wiederseh’n, Herr Doktor!” Fox-trot; label credit “(Rotter-Kaper)”. Grammophon, electrical recording, catalogue B 51823, order no. 23042, side 2, n.d. Shellac disc, Radiomuseum Hardthausen / Schallarchiv; filmed-label transfer on YouTube."
+    },
+    "SRC0695": {
+        "researchNote": "The filmed label identifies Ben Berlin und sein Orchester, Grammophon B 50959, order no. 22222, and the Kaper–Rotter and Roehr credits. The uploader places the recording and first release in Berlin in 1929; the year is not printed on the label. The structured date retains that reported recording year, not a separately verified issue date. The composition’s publication chronology does not establish the session or release date of this disc.",
+        "fullCitation": "Ben Berlin und sein Orchester. “Nimm diesen Strauß Vergißmeinnicht.” Fox-trot; label credits “(Kaper – Rotter)” and “(Verlag: Roehr A.-G., Berlin)”. Grammophon, electrical recording, Polyfar “R” Orchester series, catalogue B 50959, order no. 22222, side 2, n.d. Shellac disc, Radiomuseum Hardthausen / Schallarchiv; filmed-label transfer on YouTube."
+    },
+    "SRC0716": {
+        "researchNote": "The filmed label identifies Parlophone 80.235, matrix B 38451, Saxophon Orchester Dobbri and Max Mensing. R. Pfau’s Lexikon der deutschen Tanzmusik, part 8, printed p. 926, independently lists this song with “B 38451 Dobbri Saxophon Orch.” Its general year 1930 does not specify a session or issue date. The Berlin session in 1930 and the description of the copy as a French issue remain uploader-supplied; neither is printed on the label.",
+        "additionalLinks": [
+            {
+                "label": "R. Pfau, Lexikon der deutschen Tanzmusik, part 8, p. 926",
+                "url": "https://www.db-thueringen.de/servlets/MCRFileNodeServlet/dbt_derivate_00060580/Pfau_Lexikon_deutschen_Tanzmusik_008.pdf#page=68",
+                "role": "additional_evidence"
+            }
+        ],
+        "fullCitation": "Saxophon Orchester Dobbri, vocal by Max Mensing. “Was macht jede Nacht so ein kleines Baby in der Bar.” Slow fox; label credit “Fritz Rotter & Dr. B. Kaper”. Parlophone 80.235, matrix B 38451, n.d. Shellac disc, Radiomuseum Hardthausen / Schallarchiv; filmed-label transfer on YouTube."
+    },
+    "SRC0717": {
+        "researchNote": "The filmed label identifies Marek Weber und sein Orchester, Electrola E.G. 2406 and matrix 60-1740. R. Pfau’s Lexikon der deutschen Tanzmusik, part 6, printed p. 736, independently lists “EG 2406 Marek Weber” under “Margarethe wander mit mir”. Its general year 1931 is not a separately documented session or issue date. The source retains 1931 as the uploader-reported recording year. The uploader’s link to an Italian version does not identify or date this pressing.",
+        "additionalLinks": [
+            {
+                "label": "R. Pfau, Lexikon der deutschen Tanzmusik, part 6, p. 736",
+                "url": "https://www.db-thueringen.de/servlets/MCRFileNodeServlet/dbt_derivate_00060562/Pfau_Lexikon_deutschen_Tanzmusik_006.pdf#page=82",
+                "role": "additional_evidence"
+            }
+        ],
+        "fullCitation": "Marek Weber und sein Orchester, dance orchestra with refrain vocal. “Margarete, wander mit mir ….” Fox-trot; label credits music and text to Fritz Rotter and Dr. B. Kaper. Electrola E.G. 2406, matrix 60-1740, n.d. Shellac disc, Radiomuseum Hardthausen / Schallarchiv; filmed-label transfer on YouTube."
+    },
+    "SRC0004": {
+        "title": "Blaue Jungs von der Marine — Kristall 3098",
+        "shortCitation": "Kristall 3098, “Blaue Jungs von der Marine”",
+        "slug": "src0004-kristall-3098-blaue-jungs-von-der-marine",
+        "fullCitation": "Bernard Etté und sein Orchester, refrain by Kurt Mühlhardt. “Blaue Jungs von der Marine.” Marschlied from Korvettenkapitän; label credit “Dr. Kaper / Rotter / Robinson”. Kristall, order no. 3098, n.d. YouTube transfer by Wunschkonzert.",
+        "date": "1930",
+        "dateRole": "recording",
+        "dateQualifier": "reported",
+        "accessDate": "2026-10-25",
+        "researchNote": "The label image accompanying the upload reads “Best.-Nr. 3098”, not “78 N”, and names Bernard Etté und sein Orchester and refrain singer Kurt Mühlhardt. SRC0758 shows the other title on the same catalogue issue, also numbered 3098; this does not establish that the transfers came from the same physical copy. “Aufnahme 1930” is the uploader’s recording-year statement, not an independently established issue date. SRC0471 documents the composition’s copyright registration, not the disc or its publisher; the record label does not name Alrobi.",
+        "researchNoteType": "discographic_note",
+        "contributionIds": [
+            "CON-S017-C-P009",
+            "CON-S017-L-P020",
+            "CON-S017-L-P083",
+            "CON-S017-LAB-ORG129",
+            "CON-S017-P-ORG121"
+        ]
+    },
+    "SRC0725": {
+        "date": "1931-05",
+        "dateRole": "issue",
+        "dateQualifier": "confirmed",
+        "accessDate": "2026-10-25",
+        "fullCitation": "Austin Egen, accompanied by the Odeon-Tango-Orchester. “Ich weiß ein kleines Café.” Tango; label credits Dr. B. Kaper and Austin Egen, with words by Fritz Rotter. Odeon O-11439 a, matrix Be 9409; issued May 1931. Label filmed in the YouTube upload by Ilja Livschakoff.",
+        "researchNote": "Wolfgang Stanicek’s dissertation Austin Egen (2010), p. 156, lists Odeon O-11439a, matrix Be 9409, with Austin Egen and the Odeon-Tango-Orchester: “NE 05/1931” and a Berlin session on 12 March 1931, citing Weihermüller’s Egen discography, p. 380. The structured date describes the May 1931 issue, not the March session. The label in the transfer independently matches the catalogue number, matrix and performers; it also prints “Auch als Tanzplatte geeignet”, B.I.E.M. and Carl Lindström A.-G.",
+        "researchNoteType": "discographic_note",
+        "additionalLinks": [
+            {
+                "label": "Wolfgang Stanicek, Austin Egen (2010), p. 156 — session and issue chronology",
+                "url": "https://grammophon-platten.de/e107_files/public/1353002785_232_FT5904_austin_egen_dr_stanicek.pdf#page=156",
+                "role": "additional_evidence"
+            }
+        ]
+    },
+    "SRC0782": {
+        "fullCitation": "Orchestra Mascotte. “Moonlight at Sanssouci.” Waltz; label credit “Rotter–Kaper”. Parlophone A3436, matrix Be 9615, n.d. Australian pressing, labelled “Made in Australia for Parlophone Co. Ltd.” Disc label photograph and digital transfer published by the Great 78 Project, Internet Archive.",
+        "accessDate": "2026-10-25",
+        "researchNote": "The Internet Archive item includes a photograph of the disc, not audio alone. The label identifies Orchestra Mascotte, Parlophone A3436 and Australia; the runout shows Be 9615, also transcribed in the item metadata. The patent dates printed around the label rim are not recording or issue dates. No independently documented issue date has been established for this Australian pressing; dates assigned to other Parlophone issues are not transferred to A3436. Orchestra Mascotte is a house name and does not identify the individual players.",
+        "researchNoteType": "discographic_note",
+        "additionalLinks": [
+            {
+                "label": "Great 78 Project — photograph of the Australian Parlophone A3436 label",
+                "url": "https://archive.org/download/78_moonlight-at-sanssouci_orchestra-mascotte-rotter-kaper_gbia3007402a/78_moonlight-at-sanssouci_orchestra-mascotte-rotter-kaper_gbia3007402a_itemimage.jpg",
+                "role": "additional_evidence"
+            }
+        ]
+    },
+    "SRC0740": {
+        "accessDate": "2026-10-25",
+        "researchNote": "The upload gives no label, catalogue or matrix number and does not show the disc; the performer, credit and year details are uploader-supplied metadata. The independent Decca 1000 Series Numerical Listing documents Ted Fio Rito’s “Blue Venetian Waters” on Decca 1257, matrix DLA705, recorded 19 February 1937. That entry establishes the existence of a Fio Rito recording, but does not by itself identify this upload with that master or pressing; the listed session date and catalogue number are not assigned to the transfer.",
+        "additionalLinks": [
+            {
+                "label": "Decca 1000 Series Numerical Listing — 1257, matrix DLA705 (comparison, not transfer identification)",
+                "url": "https://www.78discography.com/Dec1000.htm",
+                "role": "additional_evidence"
+            }
+        ],
+        "fullCitation": "Ted Fio Rito and his orchestra, vocal chorus by Stanley Hickman. “Blue Venetian Waters”, from A Day at the Races; words and music by Gus Kahn, Bronislaw Kaper and Walter Jurmann. YouTube audio reference uploaded by RobinsRareRecordings; recording dated 1937 in the upload description."
+    },
+    "SRC0811": {
+        "date": "1937",
+        "dateRole": "described_item",
+        "dateQualifier": "uncertain",
+        "accessDate": "2026-10-25",
+        "fullCitation": "“Blue Venetian Waters”, attributed to Allan Jones. Audio transfer uploaded by Archiveradio1930 to YouTube; the title describes it as a 1937 broadcast.",
+        "researchNote": "The upload title calls this a 1937 broadcast, but its description ends with “ALLAN JONES SINGS MY HEAVEN ON EARTH 1939 RADIO SHOW”, naming a different song and year. No programme documentation, exact broadcast date, label or matrix resolves this inconsistency; 1937 is retained only as an uncertain date of the described item. Jasmine Records’ official listing for Allan Jones: There’s a Song in the Air (JASCD110, released 10 January 1998) includes “Blue Venetian Waters” as track 8, independently documenting a Jones performance, but does not establish that this upload reproduces the same performance. The singer attribution for this particular transfer remains qualified.",
+        "researchNoteType": "discographic_note",
+        "additionalLinks": [
+            {
+                "label": "Jasmine Records, Allan Jones: There’s a Song in the Air — JASCD110, track 8",
+                "url": "https://jasmine-records.co.uk/shop/jones-allan/allan-jones-theres-a-song-in-the-air/",
+                "role": "additional_evidence"
+            }
+        ]
+    },
     "SRC0710": {
         "accessDate": "2026-10-25",
         "researchNote": "The uploader identifies the singer credited as Leo Moll as Leo Monosson and reports 1931 as the Electrola issue year. Neither that identification nor the issue year is printed on the filmed label; the year remains reported, without a newly established session date. The accompanying 1930 photograph depicts Brioni and does not date the disc. Discographic entries for other performers’ recordings of this song are not used to date Electrola E.G. 2400.",
@@ -257,9 +363,13 @@ RECORDING_FIELDS: dict[str, dict[str, Any]] = {
         "dateRole": "recording",
         "dateQualifier": "reported",
         "accessDate": "2026-10-25",
-        "fullCitation": "Kurt Mühlhardt with Bernard Etté und sein Orchester, as identified by the uploader. “Sagen kleine Mädels ‘nein’.” Waltz from Der Korvettenkapitän. YouTube transfer by Wunschkonzert; the description gives “Kristall 78N”, reports “Aufnahme 1930” and credits music to Bronislaw Kaper and words to Fritz Rotter and Armin Lackenbach Robinson.",
-        "researchNote": "The performer identification, Kristall attribution and year come from the upload description and have not been independently corroborated for this transfer. “Aufnahme 1930” describes a reported recording year, not a separately established issue date. The designation “Kristall 78N” is preserved as supplied; it has not been independently established as a catalogue number. The description also identifies Kurt Mühlhardt with the recording name Kurt Hardt. Other recordings of the song are not used to identify this transfer.",
-        "researchNoteType": "discographic_note"
+        "fullCitation": "Bernard Etté und sein Orchester, refrain by Kurt Mühlhardt. “Sagen kleine Mädels ‘nein’.” Waltz from Korvettenkapitän; label credit “Dr. Kaper / Rotter / Robinson”. Kristall, order no. 3098, n.d. YouTube transfer by Wunschkonzert.",
+        "researchNote": "The label image accompanying the upload reads “Best.-Nr. 3098” and names Bernard Etté und sein Orchester and refrain singer Kurt Mühlhardt. It corrects the upload description’s “Kristall 78N”; the earlier claim that no label was shown was incorrect. SRC0004 shows the other title on the same catalogue issue, also numbered 3098; this does not establish that the transfers came from the same physical copy. The description’s “Aufnahme 1930” remains a reported recording year, not a separately established issue date.",
+        "researchNoteType": "discographic_note",
+        "title": "Sagen kleine Mädels “nein” — Kristall 3098",
+        "shortCitation": "Kristall 3098, “Sagen kleine Mädels ‘nein’”",
+        "slug": "src0758-kristall-3098-sagen-kleine-madels-nein",
+        "date": "1930"
     },
     "SRC0633": {
         "date": "1930",
@@ -503,6 +613,14 @@ RECORDING_FIELDS: dict[str, dict[str, Any]] = {
 # These corrections concern citation syntax, not the date of a modern issue.
 # Keep uploader-reported recording dates distinct from upload dates.
 AUDITED_RECORDING_CITATIONS = {
+    "SRC0694": "Ben Berlin und sein Orchester, with German refrain vocal. “Auf Wiederseh’n, Herr Doktor!” Fox-trot; label credit “(Rotter-Kaper)”. Grammophon, electrical recording, catalogue B 51823, order no. 23042, side 2, n.d. Shellac disc, Radiomuseum Hardthausen / Schallarchiv; filmed-label transfer on YouTube.",
+    "SRC0695": "Ben Berlin und sein Orchester. “Nimm diesen Strauß Vergißmeinnicht.” Fox-trot; label credits “(Kaper – Rotter)” and “(Verlag: Roehr A.-G., Berlin)”. Grammophon, electrical recording, Polyfar “R” Orchester series, catalogue B 50959, order no. 22222, side 2, n.d. Shellac disc, Radiomuseum Hardthausen / Schallarchiv; filmed-label transfer on YouTube.",
+    "SRC0716": "Saxophon Orchester Dobbri, vocal by Max Mensing. “Was macht jede Nacht so ein kleines Baby in der Bar.” Slow fox; label credit “Fritz Rotter & Dr. B. Kaper”. Parlophone 80.235, matrix B 38451, n.d. Shellac disc, Radiomuseum Hardthausen / Schallarchiv; filmed-label transfer on YouTube.",
+    "SRC0717": "Marek Weber und sein Orchester, dance orchestra with refrain vocal. “Margarete, wander mit mir ….” Fox-trot; label credits music and text to Fritz Rotter and Dr. B. Kaper. Electrola E.G. 2406, matrix 60-1740, n.d. Shellac disc, Radiomuseum Hardthausen / Schallarchiv; filmed-label transfer on YouTube.",
+    "SRC0004": "Bernard Etté und sein Orchester, refrain by Kurt Mühlhardt. “Blaue Jungs von der Marine.” Marschlied from Korvettenkapitän; label credit “Dr. Kaper / Rotter / Robinson”. Kristall, order no. 3098, n.d. YouTube transfer by Wunschkonzert.",
+    "SRC0725": "Austin Egen, accompanied by the Odeon-Tango-Orchester. “Ich weiß ein kleines Café.” Tango; label credits Dr. B. Kaper and Austin Egen, with words by Fritz Rotter. Odeon O-11439 a, matrix Be 9409; issued May 1931. Label filmed in the YouTube upload by Ilja Livschakoff.",
+    "SRC0782": "Orchestra Mascotte. “Moonlight at Sanssouci.” Waltz; label credit “Rotter–Kaper”. Parlophone A3436, matrix Be 9615, n.d. Australian pressing, labelled “Made in Australia for Parlophone Co. Ltd.” Disc label photograph and digital transfer published by the Great 78 Project, Internet Archive.",
+    "SRC0811": "“Blue Venetian Waters”, attributed to Allan Jones. Audio transfer uploaded by Archiveradio1930 to YouTube; the title describes it as a 1937 broadcast.",
     "SRC0710": "Marek Weber und sein Orchester, refrain credited as Leo Moll. “Signorina aus Brioni.” Tango; label credits Fritz Rotter and Dr. Kaper for music and text. Electrola E.G. 2400, n.d. Shellac disc, Radiomuseum Hardthausen / Schallarchiv; filmed-label transfer on YouTube.",
     "SRC0712": "Tanzorchester J. Geiger, refrain sung by Hans Rotter. “Du bist verrückt, mein Schatz, du denkst an Liebe.” Lied und foxtrot; label credits music and text to Fritz Rotter and Dr. B. Kaper. Novaphon Electro Record B 4051, made in Austria, n.d.; matrix 2647 identified in Discographie der österreichischen Populärmusik. Flexible disc, Radiomuseum Hardthausen / Schallarchiv; filmed-label transfer on YouTube.",
     "SRC0718": "Jack Hylton und sein Orchester, refrain sung by Siegfried Arno. “Das verliebte Orchester.” Fox-trot; label credits text and music to Fritz Rotter and Dr. B. Kaper. Electrola E.G. 2259, matrix 60-1496; recorded 11 March 1931, issue date not established. Shellac disc, Radiomuseum Hardthausen / Schallarchiv; filmed-label transfer on YouTube.",
@@ -518,15 +636,11 @@ AUDITED_RECORDING_CITATIONS = {
     "SRC0735": "Bernhard Etté mit seinem Tanz-Orchester, vocal by Wolfgang Schmidt. “Adieu es ist zu schön um wahr zu sein.” Tango by Walter Jurmann, Bronislaw Kaper and Fritz Rotter from Abenteuer am Lido. YouTube transfer published by Radiomuseum Hardthausen; the upload dates the recording to 1933.",
     "SRC0746": "Melody Gents with orchestra. “Wer weint heut’ aus Liebe Tränen?” Slowfox from Ehe mit beschränkter Haftung. YouTube transfer; the uploader identifies Gloria G.O. 10197 b, matrix Bi 412, and gives 1932 in the video title.",
     "SRC0755": "Marek Weber und sein Orchester. “Ganz ohne Liebe wär’ das Leben so bescheiden.” Fox-trot with refrain vocal; music by Walter Jurmann and Bronislaw Kaper, words by Fritz Rotter. Electrola E.G. 2532. YouTube transfer by Underlabelcrack; the uploader reports matrix OD 879-2 and a Berlin recording session around March 1932.",
-    "SRC0758": "Kurt Mühlhardt with Bernard Etté und sein Orchester, as identified by the uploader. “Sagen kleine Mädels ‘nein’.” Waltz from Der Korvettenkapitän. YouTube transfer by Wunschkonzert; the description gives “Kristall 78N”, reports “Aufnahme 1930” and credits music to Bronislaw Kaper and words to Fritz Rotter and Armin Lackenbach Robinson.",
+    "SRC0758": "Bernard Etté und sein Orchester, refrain by Kurt Mühlhardt. “Sagen kleine Mädels ‘nein’.” Waltz from Korvettenkapitän; label credit “Dr. Kaper / Rotter / Robinson”. Kristall, order no. 3098, n.d. YouTube transfer by Wunschkonzert.",
     "SRC0707": "Marek Weber und sein Orchester, refrain sung by Austin Egen. “Tränen weint jede Frau so gern.” Tango. Digital transfer on YouTube; the upload identifies His Master’s Voice / Electrola and gives the year as 1929.",
     "SRC0759": "Orkiestra taneczna. “San Francisco.” Foxtrot. Digital transfer on YouTube; the upload identifies Syrena Record, gives the year as 1937 and credits Bronisław Kaper and Walter Jurmann with music and Emanuel Schlechter with Polish words.",
     "SRC0740": (
-        "Ted Fio Rito and his orchestra, vocal chorus by Stanley Hickman. "
-        "“Blue Venetian Waters”, from A Day at the Races; words and music by "
-        "Gus Kahn, Bronislaw Kaper and Walter Jurmann. YouTube audio reference "
-        "uploaded by RobinsRareRecordings; recording dated 1937 in the upload "
-        "description."
+        "Ted Fio Rito and his orchestra, vocal chorus by Stanley Hickman. “Blue Venetian Waters”, from A Day at the Races; words and music by Gus Kahn, Bronislaw Kaper and Walter Jurmann. YouTube audio reference uploaded by RobinsRareRecordings; recording dated 1937 in the upload description."
     ),
 }
 

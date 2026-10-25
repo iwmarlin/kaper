@@ -55,10 +55,12 @@ class RecordingTransferReviewTests(unittest.TestCase):
         self.assertIn("not treated as a confirmed singer identification", source["researchNote"])
         self.assertTrue(source["additionalLinks"][0]["url"].endswith("003.pdf#page=54"))
 
-    def test_kristall_designation_is_not_promoted_to_a_verified_number(self):
+    def test_kristall_number_is_corrected_from_the_label_not_upload_metadata(self):
         source = self.sources["SRC0758"]
-        self.assertIn("not been independently established as a catalogue number", source["researchNote"])
-        self.assertIn("unverified designation", self.media["M392"]["publicCaption"])
+        self.assertIn("Best.-Nr. 3098", source["researchNote"])
+        self.assertIn("Kristall 3098", self.media["M392"]["publicCaption"])
+        self.assertNotIn("78N", source["title"])
+        self.assertIn("reported recording year", source["researchNote"])
         self.assertIn("4733", self.sources["SRC0719"]["researchNote"])
 
     def test_normalization_restores_reviewed_dates_and_is_idempotent(self):

@@ -7000,7 +7000,6 @@
         "ORG033"
       ],
       "sourceIds": [
-        "SRC0004",
         "SRC0471"
       ]
     },
@@ -22310,10 +22309,10 @@
       "nameAsPrinted": "Bernard Etté und sein Orchester",
       "displayCredit": "Orchestra",
       "evidenceContext": [
-        "online_catalogue"
+        "recording_label"
       ],
       "sortOrder": 56,
-      "certainty": "probable",
+      "certainty": "confirmed",
       "workIds": [
         "W-S018"
       ],
@@ -22323,7 +22322,7 @@
       "sourceIds": [
         "SRC0758"
       ],
-      "scopeNote": "The uploader identifies Bernard Etté und sein Orchester as the performing ensemble. The physical disc label is not shown, so this remains an uploader-level attribution."
+      "scopeNote": "The label image accompanying SRC0758 names Bernard Etté und sein Orchester on Kristall 3098. This documents the performing ensemble, not authorship of the work."
     },
     {
       "id": "CON-S018-LAB-ORG129",
@@ -22331,10 +22330,10 @@
       "nameAsPrinted": "Kristall",
       "displayCredit": "Issuing label",
       "evidenceContext": [
-        "online_catalogue"
+        "recording_label"
       ],
       "sortOrder": 60,
-      "certainty": "probable",
+      "certainty": "confirmed",
       "workIds": [
         "W-S018"
       ],
@@ -22344,7 +22343,7 @@
       "sourceIds": [
         "SRC0758"
       ],
-      "scopeNote": "The uploader identifies Kristall as the issuing label. The physical disc label is not shown, so this remains an uploader-level attribution."
+      "scopeNote": "The label image accompanying SRC0758 identifies Kristall, order no. 3098. The upload description’s designation 78N is not used as the catalogue number."
     },
     {
       "id": "CON-S218-C-P009",
@@ -23926,7 +23925,7 @@
       "nameAsPrinted": "Allan Jones",
       "displayCredit": "Vocal performance",
       "evidenceContext": [
-        "film_song"
+        "online_recording"
       ],
       "sortOrder": 50,
       "certainty": "probable",
@@ -23939,7 +23938,7 @@
       "sourceIds": [
         "SRC0811"
       ],
-      "scopeNote": "Named as the performer on a later audio transfer of the song from A Day at the Races; the AFI Catalog entry for the film credits no performer for it, and no contemporary documentation naming the singer has been found. This documents performance, not authorship of the work."
+      "scopeNote": "The uploader attributes this transfer to Allan Jones, but its conflicting song and broadcast-year descriptions do not establish the specific performance or date. The separate Jasmine JASCD110 listing documents a Jones performance of the song, not necessarily this transfer. This is a qualified performance attribution, not authorship or a verified film-performance credit."
     },
     {
       "id": "CON-S112-L-P051",
