@@ -319,6 +319,131 @@ AUDITED_PRIVATE_UPLOAD_FIELDS = {
 }
 
 
+# Individually checked catalogue and reissue chronology; no session date is inferred
+# from a film year, a file name or the first release of a later compilation.
+VERIFIED_RECORDING_CHRONOLOGY: dict[str, dict[str, Any]] = {
+    "SRC0300": {
+        "researchNote": "The BnF catalogue supplies [1934] as the issue date, reconstructed from Répertoire phonographique, 3e supplément annuel 1934. The brackets indicate a catalogue-supplied date, not a date transcribed from the disc. This bibliographic dating is independent of the film's release chronology.",
+        "researchNoteType": "discographic_note",
+        "accessDate": "2026-10-25"
+    },
+    "SRC0714": {
+        "date": "2000",
+        "dateRole": "issue",
+        "dateQualifier": "confirmed",
+        "fullCitation": "The Jack Hylton Orchestra, directed by Jack Hylton, with Jack Jackson, Philippe Brun and Leo Vauchant. “Herr Lehmann, Herr Lehmann, Was Macht Die Frau Gemahlin In Marienbad?” On Hot Hylton 1926–1930. Retrieval RTR 79024, CD compilation, first issued 2000; distributed by Challenge Records International. YouTube art track supplied by The Orchard Enterprises and published 10 February 2015.",
+        "researchNote": "The date identifies the compilation's first issue in 2000, not its digital publication or a historical recording session. Challenge Records identifies the format as CD, states “First release in 2000” and separately lists 21 November 2005 as the release date of its catalogue product. The YouTube access copy was published on 10 February 2015. The reissue metadata cited here does not identify the label, catalogue number or matrix of the original disc.",
+        "researchNoteType": "discographic_note",
+        "additionalLinks": [
+            {
+                "label": "Challenge Records — Hot Hylton, Retrieval RTR 79024",
+                "url": "https://www.challengerecords.com/products/1182852218",
+                "role": "catalogue_entry"
+            }
+        ]
+    },
+    "SRC0754": {
+        "date": "1932",
+        "dateRole": "issue",
+        "dateQualifier": "uncertain",
+        "researchNote": "The uploader dates the issue to 1932 and associates the side with Hochzeitsreise zu dritt. The Odeon label list identifies the matching title and performers as O-11768, side B, matrix Be 10147, with 1933 in its general year column; its separate release-date column is empty. The filmed label carries no year. The structured date retains the uploader's 1932 as disputed, not confirmed: the catalogue's 1933 does not by itself establish a precise issue or session date.",
+        "researchNoteType": "date_assessment",
+        "additionalLinks": [
+            {
+                "label": "Odeon label list — O-11768 B, matrix Be 10147",
+                "url": "http://musiktiteldb.de/Label/Ode_11.html",
+                "role": "catalogue_entry"
+            }
+        ]
+    },
+    "SRC0801": {
+        "dateRole": "issue",
+        "dateQualifier": "unknown",
+        "researchNote": "The BnF publication statement is “S.l. : s.n., s.d.” and supplies no issue year. The film's 1934 release does not establish the disc's release date. The Internet Archive collection associates DF 1622 with 1934 without distinguishing recording from issue; the specialist discography Tino Rossi – Le Site instead places the issue in January 1935. No year is entered as a confirmed or inferred BnF issue date. The catalogue lists matrices CL 5068 and CL 5093 but does not assign each matrix to a title in the displayed metadata, so no side-level matrix assignment is inferred here.",
+        "researchNoteType": "date_assessment",
+        "accessDate": "2026-10-25",
+        "additionalLinks": [
+            {
+                "label": "Tino Rossi – Le Site — DF 1622 issue chronology",
+                "url": "https://www.tinorossi.fr/discographie-78t-partie-1/",
+                "role": "catalogue_entry"
+            }
+        ]
+    },
+    "SRC0802": {
+        "researchNote": "The BnF catalogue supplies only the decade as [193.]. The structured year 1934 remains supplied and uncertain, not transcribed from the catalogue. The Internet Archive collection lists DF 1606 under 1934 without distinguishing recording from issue; the specialist discography Tino Rossi – Le Site places the issue in November 1934. The BnF catalogue lists matrices CL 5022 and CL 5038 without assigning them to individual titles in the displayed metadata.",
+        "researchNoteType": "date_assessment",
+        "accessDate": "2026-10-25",
+        "additionalLinks": [
+            {
+                "label": "Tino Rossi – Le Site — DF 1606 issue chronology",
+                "url": "https://www.tinorossi.fr/discographie-78t-partie-1/",
+                "role": "catalogue_entry"
+            }
+        ]
+    },
+    "SRC0805": {
+        "date": "1934",
+        "dateRole": "issue",
+        "dateQualifier": "confirmed",
+        "researchNote": "The BnF catalogue supplies [1934] as the issue date, reconstructed from Répertoire phonographique, 3e supplément, 1934. This is a catalogue-supported issue year, not a recording-session date or a date transcribed from the label. The record therefore retains the bracketed display while distinguishing the basis of the dating.",
+        "researchNoteType": "discographic_note",
+        "accessDate": "2026-10-25"
+    },
+    "SRC0800": {
+        "title": "Tino Rossi — Nuits moscovites — Internet Archive",
+        "shortCitation": "Internet Archive, Tino Rossi, “Nuits moscovites”",
+        "fullCitation": "Tino Rossi. “Nuits moscovites.” Audio transfer in Tino Rossi Collection 1933–1939. The Popular Jazz Archive, Internet Archive.",
+        "date": "1934",
+        "dateRole": "described_item",
+        "dateQualifier": "reported",
+        "researchNote": "The collection description associates this file with Columbia DF 1622; 1934 appears in the file name and collection disc list. The uploader does not distinguish the recording year from the issue year or supply a recording-session date, so 1934 is retained as a reported year for the described recording, not a confirmed session date. BnF independently catalogues the same title, singer and disc with Orchestre de Tango Rafaelo. BnF supplies no issue year; the specialist discography Tino Rossi – Le Site places DF 1622 in January 1935, which must not be confused with a recording year. The Internet Archive file is used as the external access copy.",
+        "researchNoteType": "discographic_note",
+        "accessDate": "2026-10-25"
+    },
+    "SRC0803": {
+        "title": "Tino Rossi — Vivons l’amour, vivons la vie — Internet Archive",
+        "shortCitation": "Internet Archive, Tino Rossi, “Vivons l’amour, vivons la vie”",
+        "fullCitation": "Tino Rossi. “Vivons l’amour, vivons la vie.” Audio transfer in Tino Rossi Collection 1933–1939. The Popular Jazz Archive, Internet Archive.",
+        "date": "1934",
+        "dateRole": "described_item",
+        "dateQualifier": "reported",
+        "researchNote": "The collection description associates this file with Columbia DF 1606; 1934 appears in the file name and collection disc list. The uploader does not distinguish the recording year from the issue year or supply a recording-session date, so 1934 is retained as a reported year for the described recording, not a confirmed session date. BnF independently catalogues the disc but dates it only to the 1930s. The Internet Archive file is used as the external access copy.",
+        "researchNoteType": "discographic_note",
+        "accessDate": "2026-10-25"
+    },
+    "SRC0804": {
+        "title": "Tino Rossi — Un baiser de femme sous un ciel de feu — Internet Archive",
+        "shortCitation": "Internet Archive, Tino Rossi, “Un baiser de femme sous un ciel de feu”",
+        "fullCitation": "Tino Rossi. “Un baiser de femme sous un ciel de feu.” Audio transfer in Tino Rossi Collection 1933–1939. The Popular Jazz Archive, Internet Archive.",
+        "date": "1934",
+        "dateRole": "described_item",
+        "dateQualifier": "reported",
+        "researchNote": "The collection description associates this file with Columbia DF 1606; 1934 appears in the file name and collection disc list. The uploader does not distinguish the recording year from the issue year or supply a recording-session date, so 1934 is retained as a reported year for the described recording, not a confirmed session date. BnF independently catalogues the disc but dates it only to the 1930s. The Internet Archive file is used as the external access copy.",
+        "researchNoteType": "discographic_note",
+        "accessDate": "2026-10-25"
+    },
+    "SRC0806": {
+        "title": "Tino Rossi — C’est ton amour — Internet Archive",
+        "shortCitation": "Internet Archive, Tino Rossi, “C’est ton amour”",
+        "fullCitation": "Tino Rossi. “C’est ton amour.” Audio transfer in Tino Rossi Collection 1933–1939. The Popular Jazz Archive, Internet Archive.",
+        "date": "1934",
+        "dateRole": "described_item",
+        "dateQualifier": "reported",
+        "researchNote": "The collection description associates this file with Columbia DF 1610; 1934 appears in the file name and collection disc list. The uploader does not distinguish the recording year from the issue year or supply a recording-session date, so 1934 is retained as a reported year for the described recording, not a confirmed session date. BnF independently catalogues the disc and supplies [1934] as its issue year, not its recording-session date. The Internet Archive file is used as the external access copy.",
+        "researchNoteType": "discographic_note",
+        "accessDate": "2026-10-25"
+    }
+}
+
+VERIFIED_RECORDING_FIELD_REMOVALS: dict[str, list[str]] = {
+    "SRC0801": [
+        "date",
+        "dateDisplay"
+    ]
+}
+
+
 def recording_hostname(source: dict[str, Any]) -> str:
     url = str(source.get("primaryUrl") or source.get("url") or "").strip()
     return urlparse(url).netloc.casefold()
@@ -327,6 +452,9 @@ def recording_hostname(source: dict[str, Any]) -> str:
 def normalize_recording_source(source: dict[str, Any]) -> None:
     """Normalize one recording source in place."""
     source_id = str(source.get("id", ""))
+    source.update(VERIFIED_RECORDING_CHRONOLOGY.get(source_id, {}))
+    for field in VERIFIED_RECORDING_FIELD_REMOVALS.get(source_id, []):
+        source.pop(field, None)
     if source_id in {"SRC0707", "SRC0759", "SRC0713", "SRC0719", "SRC0729", "SRC0730", "SRC0735", "SRC0746", "SRC0755", "SRC0758"}:
         source["dateQualifier"] = "reported"
     source.update(AUDITED_PRIVATE_UPLOAD_FIELDS.get(source_id, {}))

@@ -114,6 +114,41 @@ USCO_RENEWAL_PATTERN = re.compile(r"\bR\s*\d+\b", flags=re.IGNORECASE)
 # these explicit avoids accidentally treating life dates, collection spans or
 # years embedded in catalogue identifiers as Source dates.
 REVIEWED_SOURCE_DATES: dict[str, dict[str, str]] = {
+    "SRC0754": {
+        "date": "1932",
+        "dateRole": "issue",
+        "dateQualifier": "uncertain",
+    },
+    "SRC0800": {
+        "date": "1934",
+        "dateRole": "described_item",
+        "dateQualifier": "reported",
+    },
+    "SRC0801": {
+        "dateRole": "issue",
+        "dateQualifier": "unknown",
+    },
+    "SRC0803": {
+        "date": "1934",
+        "dateRole": "described_item",
+        "dateQualifier": "reported",
+    },
+    "SRC0804": {
+        "date": "1934",
+        "dateRole": "described_item",
+        "dateQualifier": "reported",
+    },
+    "SRC0805": {
+        "date": "1934",
+        "dateRole": "issue",
+        "dateQualifier": "confirmed",
+        "dateDisplay": "[1934]",
+    },
+    "SRC0806": {
+        "date": "1934",
+        "dateRole": "described_item",
+        "dateQualifier": "reported",
+    },
     # Reviewed issue, session and reference-publication dates.
     "SRC0710": {
         "date": "1931",
@@ -350,7 +385,7 @@ REVIEWED_SOURCE_DATES: dict[str, dict[str, str]] = {
     },
     "SRC0714": {
         "date": "2000",
-        "dateRole": "digital_publication",
+        "dateRole": "issue",
         "dateQualifier": "confirmed",
     },
     "SRC0808": {

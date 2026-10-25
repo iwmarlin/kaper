@@ -56,9 +56,13 @@ class RecordingEvidenceBatchTests(unittest.TestCase):
                 self.assertEqual(credit["certainty"], "confirmed")
                 self.assertEqual(credit["evidenceContext"], ["online_recording"])
                 self.assertIn("reissue", credit["scopeNote"])
-        for source_id in ["SRC0701", "SRC0702", "SRC0714"]:
+        for source_id in ["SRC0701", "SRC0702"]:
             self.assertEqual(self.sources[source_id]["dateQualifier"], "confirmed")
             self.assertEqual(self.sources[source_id]["dateRole"], "digital_publication")
+        # Retrieval's 2000 date is the compilation's first issue on CD,
+        # not the date of the later YouTube art track.
+        self.assertEqual(self.sources["SRC0714"]["dateQualifier"], "confirmed")
+        self.assertEqual(self.sources["SRC0714"]["dateRole"], "issue")
 
     def test_sixteen_sole_upload_credits_are_qualified(self):
         credits = [r for r in self.credits.values()
