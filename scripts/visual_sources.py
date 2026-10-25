@@ -69,6 +69,19 @@ WIKIPEDIA_REPOSITORY_BY_HOST = {
 # explicit: generic Wikimedia normalization must never infer an author or an
 # underlying holding institution from the delivery platform alone.
 VISUAL_SOURCE_FIELDS: dict[str, dict[str, Any]] = {
+    "SRC0477": {
+        "publication": "Warszawa: publisher unidentified, [1927] (J. Burian, printer)",
+        "researchNote": "The list gives each member’s name, pseudonym and qualification, “A.” for author and “C.” for composer. The first page reads “Chwast Henryk «Asper» C.”; page 3 reads “Tuwim Juljan «J. Wim» A.” and “Wiehler Zygmunt C.”. Polona marks the digitised item as public domain. The printed heading gives the membership list as current on 1 April 1927; the structured date records that stated currency date, not the day of printing or publication. Polona supplies the publication year in square brackets as [1927].",
+        "accessDate": "2026-10-25"
+    },
+    "SRC0863": {
+        "publication": "Warszawa: publisher unidentified, 1931 (Druk. R. Kucharski)",
+        "researchNote": "The list resolves pseudonyms against names and marks authors “a.” and composers “k.”. Four entries concern people documented here: “Asper Bruno (n. Chwast Henryk) k. c.”, “Baumritter Gustaw (psd. Włast Andrzej) a. a.”, “Oldlen (n. Tuwim Juljan) a. a.” and “Wiehler Zygmunt”. Polona marks the digitised item as public domain. The same title page prints “na dzień 1 Listopada 1931 r.” in Polish and “au 1 Octobre 1931” in French. Both statements are retained as printed; the discrepancy is not a catalogue transcription error and is not resolved here. These are stated membership-list currency dates, not established publication days. The structured publication date therefore records only 1931, the year catalogued by Polona.",
+        "accessDate": "2026-10-25"
+    },
+    "SRC0542": {
+        "publication": "Robbins Music Corporation"
+    },
     "SRC0023": {"publication": "Berliner Adreßbuch 1932"},
     "SRC0551": {
         "creator": "Photographer unidentified",
@@ -308,6 +321,7 @@ VISUAL_SOURCE_FIELDS: dict[str, dict[str, Any]] = {
 }
 
 VISUAL_SOURCE_FIELD_REMOVALS = {
+    "SRC0535": ("creator",),
     "SRC0537": ("date", "dateEnd", "dateDisplay"),
     "SRC0523": ("accessUrl",),
 }
