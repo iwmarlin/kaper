@@ -148,6 +148,77 @@ AUDITED_DIGITAL_AUDIO_FIELDS: dict[str, dict[str, Any]] = {
 
 
 RECORDING_FIELDS: dict[str, dict[str, Any]] = {
+    "SRC0008": {
+        "date": "1937-06-08",
+        "dateRole": "recording",
+        "dateQualifier": "confirmed",
+        "researchNote": "The Internet Archive item metadata gives 1937-06-08. The Dooji Collection discography independently identifies Master MA 137, matrix M519-1, with the New York session of 8 June 1937. The structured date describes that recording session, not an independently established commercial release date.",
+        "researchNoteType": "discographic_note",
+        "accessDate": "2026-10-25",
+        "additionalLinks": [
+            {
+                "label": "Dooji Collection — Master MA 137, matrix M519-1",
+                "url": "https://ellingtonweb.ca/Hostedpages/DoojiCollection/DoojiCollection-1937-38.html",
+                "role": "catalogue_entry"
+            }
+        ]
+    },
+    "SRC0705": {
+        "date": "1934-10",
+        "dateRole": "recording",
+        "dateQualifier": "confirmed",
+        "researchNote": "Phonobase explicitly gives the recording date as 1934-10-xx; the structured date therefore retains month precision and does not identify the disc's commercial issue date. The transfer date is separately given as 4 February 2023. The record additionally states that Tino Rossi created the song in 1934, that Mireille, Guy Berry and Priolet also performed it, and that Coda / Heugel published it in Paris in 1934.",
+        "researchNoteType": "discographic_note",
+        "accessDate": "2026-10-25"
+    },
+    "SRC0744": {
+        "date": "1931-03-15",
+        "dateRole": "recording",
+        "dateQualifier": "confirmed",
+        "fullCitation": "Mitja Nikisch und sein Orchester, refrain sung by Paul Dorn. “Ich steh’ im Schnee und wart’ auf Dich.” Foxtrot from Die grosse Attraktion. Electrola E.G. 2228, matrix OD106-2, recorded Berlin, 15 March 1931; also issued as His Master’s Voice AM 3411 and HMV R 14602. Electrola label and title lists at musiktiteldb.de, following the Discographie der deutschen Tanzmusik, vol. 4.",
+        "researchNote": "The discographic entry assigns both words and music to Bronisław Kaper. Hofmeister (February 1931, p. 35) registers the song under Kaper with words by Fritz Rotter and Armin Robinson; the discographic lyric credit is not used to replace that. The Electrola label list gives 15 March 1931 in its recording-date column and leaves the release-date column empty. HMV R 14602 is a parallel record issue, not a U.S. copyright renewal identifier.",
+        "researchNoteType": "evidence_note",
+        "accessDate": "2026-10-25"
+    },
+    "SRC0750": {
+        "date": "1935-03-23",
+        "dateRole": "recording",
+        "dateQualifier": "confirmed",
+        "researchNote": "The title-list entry gives Los Angeles, 23 March 1935, as the recording place and date and leaves the release-date column empty; the structured date therefore describes the session, not the issue of Decca 466. The entry credits Kaper and Jurmann for the music and Harold Adamson for the words. That combination supports identifying this record as the English-language version of the song written for Ein Lied für dich.",
+        "researchNoteType": "evidence_note",
+        "accessDate": "2026-10-25"
+    },
+    "SRC0753": {
+        "date": "1931-09-15",
+        "dateRole": "recording",
+        "dateQualifier": "confirmed",
+        "researchNote": "The filmed label confirms the title and authorship credit. The uploader supplies the Berlin and film context; the catalogue number and session date are independently supplied by musiktiteldb.de. Its title-list entry dates the Berlin recording to 15 September 1931 and leaves the release-date column empty. The structured date identifies that session, not the commercial issue of Kristall 3229.",
+        "researchNoteType": "discographic_note",
+        "additionalLinks": [
+            {
+                "label": "musiktiteldb.de — Kristall 3229 session entry",
+                "url": "http://musiktiteldb.de/musiktitel/titel_I_Want_To-Ich_trink.html",
+                "role": "catalogue_entry"
+            }
+        ]
+    },
+    "SRC0760": {
+        "date": "1931-04-29",
+        "dateRole": "recording",
+        "dateQualifier": "confirmed",
+        "researchNote": "The title-list entry gives 29 April 1931 as the recording date and leaves the release-date column empty. The structured date therefore identifies the session, not the commercial issue of Gloria G.O. 10155. No publicly accessible transfer of this disc was located during the recording-link audit.",
+        "researchNoteType": "discographic_note",
+        "accessDate": "2026-10-25"
+    },
+    "SRC0767": {
+        "date": "1930-03",
+        "dateRole": "recording",
+        "dateQualifier": "confirmed",
+        "fullCitation": "Stare Melodie. “O tym już wróble świergocą na dachu.” Tadeusz Faliszewski with the orchestra of Towarzystwo Syrena Record; recording dated March 1930 in the listening-entry metadata. Syrena-Electro 3461, matrix 20876.",
+        "researchNote": "The Stare Melodie listening entry dates the recording to March 1930. An embedded YouTube title instead gives 1929; the site's editor explicitly corrects that year to March 1930 in the comments. The structured date follows the site's catalogue entry and identifies the recording, not a separately established issue date.",
+        "researchNoteType": "date_assessment",
+        "accessDate": "2026-10-25"
+    },
     "SRC0005": {
         "fullCitation": (
             "Marek Weber und sein Orchester, refrain sung by Leo Moll. “Spiel’ "
@@ -180,17 +251,20 @@ RECORDING_FIELDS: dict[str, dict[str, Any]] = {
         ),
     },
     "SRC0115": {
-        "fullCitation": (
-            "Henry Garat, vocal; orchestra conducted by Bronisław Kaper. “Pourvu "
-            "qu’on ait vingt ans,” from Une femme au volant. Music by Bronisław "
-            "Kaper and Walter Jurmann; words by Louis Poterat. Salabert 3384, 78 "
-            "rpm disc, 7 November 1933. Digital transfer from David Silvestre’s "
-            "private collection, published by lysgauty1 on YouTube, video "
-            "JA57rCoKoyI. Gérard Roig, “Discographie d’Henry Garat,” Phonoscopies "
-            "5 (January 1994): 11, lists Salabert 3384 for the coupled side “Ninon, "
-            "quand tu me souris.”"
-        ),
+        "fullCitation": "Henry Garat, vocal; orchestra conducted by Bronisław Kaper. “Pourvu qu’on ait vingt ans,” from Une femme au volant. Music by Bronisław Kaper and Walter Jurmann; words by Louis Poterat. Salabert 3384, 78 rpm disc; recorded Paris, 7 November 1933. Digital transfer from David Silvestre’s private collection, published by lysgauty1 on YouTube, video JA57rCoKoyI. Gérard Roig, “Discographie d’Henry Garat,” Phonoscopies 5 (January 1994): 10–11, lists matrix SS 1729 and the coupled side “Ninon, quand tu me souris,” matrix SS 1730, as Salabert 3384.",
         "repository": "YouTube / private collection of David Silvestre",
+        "date": "1933-11-07",
+        "dateRole": "recording",
+        "dateQualifier": "confirmed",
+        "researchNote": "Roig's discography places SS 1729 under the Paris session heading of 7 November 1933, continuing onto the next printed page with the coupled side SS 1730. It also mentions a dated test pressing of SS 1729B. The date therefore describes a recording session, not the commercial release of Salabert 3384; no particular take is assigned to the YouTube transfer from that note alone.",
+        "researchNoteType": "discographic_note",
+        "additionalLinks": [
+            {
+                "label": "Phonoscopies 5 — Garat discography, printed pp. 10–11",
+                "url": "https://www.old.archeophone.org/Phonoscopies/Phonoscopies-005.pdf#page=6",
+                "role": "catalogue_entry"
+            }
+        ]
     },
     "SRC0625": {
         "fullCitation": (

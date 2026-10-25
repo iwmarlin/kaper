@@ -108,12 +108,58 @@ USCO_REGISTRATION_PATTERN = re.compile(
     flags=re.IGNORECASE,
 )
 USCO_RENEWAL_PATTERN = re.compile(r"\bR\s*\d+\b", flags=re.IGNORECASE)
+HMV_R_SERIES_PATTERN = re.compile(
+    r"\b(?:HMV|His Master[’']s Voice)\s+"
+    r"(?:[A-Z.]+\s*\d+\s*(?:and|/|,)\s*)*"
+    r"(?P<number>R\s*\.?\s*\d+)\b",
+    flags=re.IGNORECASE,
+)
 
 # Individually reviewed cases where the legacy date was empty although the
 # citation itself identifies a different, well-defined chronology.  Keeping
 # these explicit avoids accidentally treating life dates, collection spans or
 # years embedded in catalogue identifiers as Source dates.
 REVIEWED_SOURCE_DATES: dict[str, dict[str, str]] = {
+    "SRC0008": {
+        "date": "1937-06-08",
+        "dateRole": "recording",
+        "dateQualifier": "confirmed"
+    },
+    "SRC0705": {
+        "date": "1934-10",
+        "dateRole": "recording",
+        "dateQualifier": "confirmed"
+    },
+    "SRC0744": {
+        "date": "1931-03-15",
+        "dateRole": "recording",
+        "dateQualifier": "confirmed"
+    },
+    "SRC0750": {
+        "date": "1935-03-23",
+        "dateRole": "recording",
+        "dateQualifier": "confirmed"
+    },
+    "SRC0753": {
+        "date": "1931-09-15",
+        "dateRole": "recording",
+        "dateQualifier": "confirmed"
+    },
+    "SRC0760": {
+        "date": "1931-04-29",
+        "dateRole": "recording",
+        "dateQualifier": "confirmed"
+    },
+    "SRC0767": {
+        "date": "1930-03",
+        "dateRole": "recording",
+        "dateQualifier": "confirmed"
+    },
+    "SRC0115": {
+        "date": "1933-11-07",
+        "dateRole": "recording",
+        "dateQualifier": "confirmed"
+    },
     "SRC0707": {
         "date": "1929",
         "dateRole": "described_item",
@@ -989,6 +1035,15 @@ def normalized_source_date_fields(source: Mapping[str, Any]) -> dict[str, str]:
     raise ValueError(f"{source.get('id', 'unknown')}: unsupported Source date {raw!r}")
 
 
+def record_label_series_numbers(source: Mapping[str, Any]) -> set[str]:
+    """Recognize explicit HMV R-series references, not copyright renewals."""
+    text = str(source.get("fullCitation") or "")
+    return {
+        re.sub(r"[\s.]", "", match.group("number")).casefold()
+        for match in HMV_R_SERIES_PATTERN.finditer(text)
+    }
+
+
 def usco_identifiers(source: Mapping[str, Any]) -> list[dict[str, str]]:
     """Extract U.S. copyright registration and renewal identifiers."""
 
@@ -997,12 +1052,18 @@ def usco_identifiers(source: Mapping[str, Any]) -> list[dict[str, str]]:
     )
     result: list[dict[str, str]] = []
     seen: set[tuple[str, str]] = set()
+    label_numbers = record_label_series_numbers(source)
     for scheme, pattern in (
         ("usco_registration", USCO_REGISTRATION_PATTERN),
         ("usco_renewal", USCO_RENEWAL_PATTERN),
     ):
         for match in pattern.finditer(text):
             value = " ".join(match.group(0).split())
+            if (
+                scheme == "usco_renewal"
+                and re.sub(r"[\s.]", "", value).casefold() in label_numbers
+            ):
+                continue
             key = (scheme, value.casefold())
             if key not in seen:
                 seen.add(key)

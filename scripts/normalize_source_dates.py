@@ -15,7 +15,11 @@ from collections import Counter
 from pathlib import Path
 from typing import Any
 
-from source_dates import normalized_source_date_fields, usco_identifiers
+from source_dates import (
+    normalized_source_date_fields,
+    record_label_series_numbers,
+    usco_identifiers,
+)
 
 
 DATE_FIELDS = {"date", "dateEnd", "dateRole", "dateQualifier", "dateDisplay"}
@@ -28,11 +32,14 @@ def read_json(path: Path) -> dict[str, Any]:
 def merged_identifiers(source: dict[str, Any]) -> list[dict[str, str]]:
     result: list[dict[str, str]] = []
     seen: set[tuple[str, str]] = set()
+    label_numbers = record_label_series_numbers(source)
     for identifier in (*(source.get("identifiers") or []), *usco_identifiers(source)):
         if not isinstance(identifier, dict):
             continue
         scheme = str(identifier.get("scheme", "")).strip().casefold()
         value = str(identifier.get("value", "")).strip()
+        if scheme == "usco_renewal" and "".join(value.split()).replace(".", "").casefold() in label_numbers:
+            continue
         key = (scheme, value.casefold())
         if scheme and value and key not in seen:
             seen.add(key)

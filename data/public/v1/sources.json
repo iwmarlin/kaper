@@ -327,10 +327,10 @@
       "creator": "Duke Ellington and His Famous Orchestra",
       "repository": "Internet Archive / George Blood Collection",
       "publication": "Master",
-      "date": "1937",
-      "dateRole": "issue",
+      "date": "1937-06-08",
+      "dateRole": "recording",
       "dateQualifier": "confirmed",
-      "accessDate": "2026-06-26",
+      "accessDate": "2026-10-25",
       "reliability": "high",
       "sourceStatus": "verified",
       "slug": "src0008-master-ma137-all-gods-chillun-got-rhythm-1937",
@@ -360,7 +360,16 @@
       "nameVariantIds": [
         "PNV0020"
       ],
-      "primaryUrl": "https://archive.org/details/78_all-gods-chillun-got-rhythm_duke-ellington-and-his-famous-orchestra-kahn-kaper-jur_gbia0425173a"
+      "primaryUrl": "https://archive.org/details/78_all-gods-chillun-got-rhythm_duke-ellington-and-his-famous-orchestra-kahn-kaper-jur_gbia0425173a",
+      "researchNote": "The Internet Archive item metadata gives 1937-06-08. The Dooji Collection discography independently identifies Master MA 137, matrix M519-1, with the New York session of 8 June 1937. The structured date describes that recording session, not an independently established commercial release date.",
+      "researchNoteType": "discographic_note",
+      "additionalLinks": [
+        {
+          "label": "Dooji Collection — Master MA 137, matrix M519-1",
+          "url": "https://ellingtonweb.ca/Hostedpages/DoojiCollection/DoojiCollection-1937-38.html",
+          "role": "catalogue_entry"
+        }
+      ]
     },
     {
       "id": "SRC0009",
@@ -3747,14 +3756,14 @@
     {
       "id": "SRC0115",
       "shortCitation": "Salabert 3384, Henry Garat, “Pourvu qu’on ait vingt ans” (1933)",
-      "fullCitation": "Henry Garat, vocal; orchestra conducted by Bronisław Kaper. “Pourvu qu’on ait vingt ans,” from Une femme au volant. Music by Bronisław Kaper and Walter Jurmann; words by Louis Poterat. Salabert 3384, 78 rpm disc, 7 November 1933. Digital transfer from David Silvestre’s private collection, published by lysgauty1 on YouTube, video JA57rCoKoyI. Gérard Roig, “Discographie d’Henry Garat,” Phonoscopies 5 (January 1994): 11, lists Salabert 3384 for the coupled side “Ninon, quand tu me souris.”",
+      "fullCitation": "Henry Garat, vocal; orchestra conducted by Bronisław Kaper. “Pourvu qu’on ait vingt ans,” from Une femme au volant. Music by Bronisław Kaper and Walter Jurmann; words by Louis Poterat. Salabert 3384, 78 rpm disc; recorded Paris, 7 November 1933. Digital transfer from David Silvestre’s private collection, published by lysgauty1 on YouTube, video JA57rCoKoyI. Gérard Roig, “Discographie d’Henry Garat,” Phonoscopies 5 (January 1994): 10–11, lists matrix SS 1729 and the coupled side “Ninon, quand tu me souris,” matrix SS 1730, as Salabert 3384.",
       "sourceType": "recording_discographic_source",
       "title": "Pourvu qu’on ait vingt ans — Salabert 3384",
       "creator": "Henry Garat, vocal; orchestra conducted by Bronisław Kaper",
       "repository": "YouTube / private collection of David Silvestre",
       "publication": "Salabert 3384; YouTube transfer",
       "date": "1933-11-07",
-      "dateRole": "issue",
+      "dateRole": "recording",
       "dateQualifier": "confirmed",
       "accessDate": "2026-06-10",
       "reliability": "medium",
@@ -3793,8 +3802,15 @@
         "PNV0041"
       ],
       "primaryUrl": "https://www.youtube.com/watch?v=JA57rCoKoyI",
-      "researchNote": "Recorded as YouTube presents it: the details given here follow that page rather than an examination of the object itself.",
-      "researchNoteType": "verification_note"
+      "researchNote": "Roig's discography places SS 1729 under the Paris session heading of 7 November 1933, continuing onto the next printed page with the coupled side SS 1730. It also mentions a dated test pressing of SS 1729B. The date therefore describes a recording session, not the commercial release of Salabert 3384; no particular take is assigned to the YouTube transfer from that note alone.",
+      "researchNoteType": "discographic_note",
+      "additionalLinks": [
+        {
+          "label": "Phonoscopies 5 — Garat discography, printed pp. 10–11",
+          "url": "https://www.old.archeophone.org/Phonoscopies/Phonoscopies-005.pdf#page=6",
+          "role": "catalogue_entry"
+        }
+      ]
     },
     {
       "id": "SRC0116",
@@ -23847,10 +23863,10 @@
       "creator": "Guy Berry",
       "repository": "Phonobase",
       "publication": "Pathé",
-      "date": "1934",
-      "dateRole": "issue",
+      "date": "1934-10",
+      "dateRole": "recording",
       "dateQualifier": "confirmed",
-      "accessDate": "2026-08-16",
+      "accessDate": "2026-10-25",
       "reliability": "high",
       "sourceStatus": "verified",
       "slug": "src0705-pathe-pa362-vivons-lamour-vivons-la-vie",
@@ -23872,8 +23888,8 @@
       "organizationIds": [
         "ORG133"
       ],
-      "researchNote": "The Phonobase record additionally states that Tino Rossi created the song in 1934, that Mireille, Guy Berry and Priolet also performed it, and that Coda / Heugel published it in Paris in 1934.",
-      "researchNoteType": "evidence_note"
+      "researchNote": "Phonobase explicitly gives the recording date as 1934-10-xx; the structured date therefore retains month precision and does not identify the disc's commercial issue date. The transfer date is separately given as 4 February 2023. The record additionally states that Tino Rossi created the song in 1934, that Mireille, Guy Berry and Priolet also performed it, and that Coda / Heugel published it in Paris in 1934.",
+      "researchNoteType": "discographic_note"
     },
     {
       "id": "SRC0706",
@@ -25247,16 +25263,16 @@
     {
       "id": "SRC0744",
       "shortCitation": "Electrola EG 2228, “Ich steh’ im Schnee und wart’ auf Dich” (Mitja Nikisch with Paul Dorn, 1931)",
-      "fullCitation": "Mitja Nikisch und sein Orchester, refrain sung by Paul Dorn. “Ich steh’ im Schnee und wart’ auf Dich.” Foxtrot from Die grosse Attraktion. Electrola E.G. 2228, matrix OD106-2, recorded Berlin, 15 March 1931; also issued as His Master’s Voice AM 3411 and R 14602. Electrola label and title lists at musiktiteldb.de, following the Discographie der deutschen Tanzmusik, vol. 4.",
+      "fullCitation": "Mitja Nikisch und sein Orchester, refrain sung by Paul Dorn. “Ich steh’ im Schnee und wart’ auf Dich.” Foxtrot from Die grosse Attraktion. Electrola E.G. 2228, matrix OD106-2, recorded Berlin, 15 March 1931; also issued as His Master’s Voice AM 3411 and HMV R 14602. Electrola label and title lists at musiktiteldb.de, following the Discographie der deutschen Tanzmusik, vol. 4.",
       "sourceType": "recording_discographic_source",
       "title": "Ich steh’ im Schnee und wart’ auf Dich — Electrola EG 2228",
       "creator": "Mitja Nikisch und sein Orchester; Paul Dorn, refrain vocal",
       "repository": "musiktiteldb.de",
       "publication": "Electrola",
-      "date": "1931",
-      "dateRole": "issue",
+      "date": "1931-03-15",
+      "dateRole": "recording",
       "dateQualifier": "confirmed",
-      "accessDate": "2026-08-21",
+      "accessDate": "2026-10-25",
       "reliability": "high",
       "sourceStatus": "verified",
       "slug": "src0744-electrola-eg-2228-ich-steh-im-schnee",
@@ -25273,14 +25289,8 @@
       "contributionIds": [
         "CON-S030-LAB-ORG126"
       ],
-      "researchNote": "The discographic entry assigns both words and music to Bronisław Kaper. Hofmeister (February 1931, p. 35) registers the song under Kaper with words by Fritz Rotter and Armin Robinson; the discographic lyric credit is not used to replace that.",
-      "researchNoteType": "evidence_note",
-      "identifiers": [
-        {
-          "scheme": "usco_renewal",
-          "value": "R 14602"
-        }
-      ]
+      "researchNote": "The discographic entry assigns both words and music to Bronisław Kaper. Hofmeister (February 1931, p. 35) registers the song under Kaper with words by Fritz Rotter and Armin Robinson; the discographic lyric credit is not used to replace that. The Electrola label list gives 15 March 1931 in its recording-date column and leaves the release-date column empty. HMV R 14602 is a parallel record issue, not a U.S. copyright renewal identifier.",
+      "researchNoteType": "evidence_note"
     },
     {
       "id": "SRC0745",
@@ -25473,10 +25483,10 @@
       "creator": "Guy Lombardo",
       "repository": "musiktiteldb.de",
       "publication": "Decca",
-      "date": "1935",
-      "dateRole": "issue",
+      "date": "1935-03-23",
+      "dateRole": "recording",
       "dateQualifier": "confirmed",
-      "accessDate": "2026-08-21",
+      "accessDate": "2026-10-25",
       "reliability": "high",
       "sourceStatus": "verified",
       "slug": "src0750-decca-466-ninon-guy-lombardo",
@@ -25493,7 +25503,7 @@
       "contributionIds": [
         "CON-S185-LAB-ORG142"
       ],
-      "researchNote": "The entry credits Kaper and Jurmann for the music and Harold Adamson for the words. That combination supports identifying this record as the English-language version of the song written for Ein Lied für dich.",
+      "researchNote": "The title-list entry gives Los Angeles, 23 March 1935, as the recording place and date and leaves the release-date column empty; the structured date therefore describes the session, not the issue of Decca 466. The entry credits Kaper and Jurmann for the music and Harold Adamson for the words. That combination supports identifying this record as the English-language version of the song written for Ein Lied für dich.",
       "researchNoteType": "evidence_note"
     },
     {
@@ -25584,8 +25594,8 @@
         "M387"
       ],
       "primaryUrl": "https://www.youtube.com/watch?v=vttvdwybOtY",
-      "date": "1931",
-      "dateRole": "issue",
+      "date": "1931-09-15",
+      "dateRole": "recording",
       "dateQualifier": "confirmed",
       "contributionIds": [
         "CON-S034-C-P009",
@@ -25605,8 +25615,15 @@
       "songIds": [
         "S034"
       ],
-      "researchNote": "The filmed label confirms the title and authorship credit. The uploader supplies the Berlin and film context; the catalogue number and session date are independently supplied by musiktiteldb.de.",
-      "researchNoteType": "discographic_note"
+      "researchNote": "The filmed label confirms the title and authorship credit. The uploader supplies the Berlin and film context; the catalogue number and session date are independently supplied by musiktiteldb.de. Its title-list entry dates the Berlin recording to 15 September 1931 and leaves the release-date column empty. The structured date identifies that session, not the commercial issue of Kristall 3229.",
+      "researchNoteType": "discographic_note",
+      "additionalLinks": [
+        {
+          "label": "musiktiteldb.de — Kristall 3229 session entry",
+          "url": "http://musiktiteldb.de/musiktitel/titel_I_Want_To-Ich_trink.html",
+          "role": "catalogue_entry"
+        }
+      ]
     },
     {
       "id": "SRC0754",
@@ -25840,10 +25857,10 @@
       "creator": "Eric Harden und sein Tanz-Orchester; John Hendrik, refrain vocal",
       "repository": "musiktiteldb.de",
       "publication": "Gloria",
-      "date": "1931",
-      "dateRole": "issue",
+      "date": "1931-04-29",
+      "dateRole": "recording",
       "dateQualifier": "confirmed",
-      "accessDate": "2026-08-21",
+      "accessDate": "2026-10-25",
       "reliability": "high",
       "sourceStatus": "verified",
       "slug": "src0760-gloria-go-10155-mondnacht-in-sanssouci",
@@ -25862,8 +25879,8 @@
         "CON-S047-LAB-ORG138",
         "CON-S047-P-ORG148"
       ],
-      "researchNote": "No publicly accessible transfer of this disc was located during the recording-link audit.",
-      "researchNoteType": "verification_note"
+      "researchNote": "The title-list entry gives 29 April 1931 as the recording date and leaves the release-date column empty. The structured date therefore identifies the session, not the commercial issue of Gloria G.O. 10155. No publicly accessible transfer of this disc was located during the recording-link audit.",
+      "researchNoteType": "discographic_note"
     },
     {
       "id": "SRC0761",
@@ -26061,16 +26078,16 @@
     {
       "id": "SRC0767",
       "shortCitation": "Stare Melodie, “O tym już wróble świergocą na dachu” — Syrena-Electro 3461 (1930)",
-      "fullCitation": "Stare Melodie. “O tym już wróble świergocą na dachu.” Recording by Tadeusz Faliszewski with the orchestra of Towarzystwo Syrena Record, March 1930. Syrena-Electro 3461, matrix 20876.",
+      "fullCitation": "Stare Melodie. “O tym już wróble świergocą na dachu.” Tadeusz Faliszewski with the orchestra of Towarzystwo Syrena Record; recording dated March 1930 in the listening-entry metadata. Syrena-Electro 3461, matrix 20876.",
       "sourceType": "recording_discographic_source",
       "title": "O tym już wróble świergocą na dachu — Syrena-Electro 3461",
       "creator": "Stare Melodie",
       "repository": "Stare Melodie",
       "publication": "Stare Melodie",
-      "date": "1930",
-      "dateRole": "issue",
+      "date": "1930-03",
+      "dateRole": "recording",
       "dateQualifier": "confirmed",
-      "accessDate": "2026-08-22",
+      "accessDate": "2026-10-25",
       "reliability": "medium",
       "sourceStatus": "verified",
       "slug": "src0767-stare-melodie-o-tym-juz-wroble-swiergoca-na-dachu",
@@ -26089,7 +26106,9 @@
       ],
       "contributionIds": [
         "CON-S022-LAB-ORG132"
-      ]
+      ],
+      "researchNote": "The Stare Melodie listening entry dates the recording to March 1930. An embedded YouTube title instead gives 1929; the site's editor explicitly corrects that year to March 1930 in the comments. The structured date follows the site's catalogue entry and identifies the recording, not a separately established issue date.",
+      "researchNoteType": "date_assessment"
     },
     {
       "id": "SRC0768",
