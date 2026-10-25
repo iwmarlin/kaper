@@ -134,7 +134,9 @@ class RecordingEvidenceBatchTests(unittest.TestCase):
             self.assertIn("as identified in the upload description", item["publicCreditLine"])
 
     def test_neighbouring_credits_are_not_modified_by_similar_field_layouts(self):
-        for credit_id in ["CON-S080-CON-P167", "CON-S042-P-ORG119"]:
+        # S080 was subsequently reviewed individually: its conductor is named
+        # by the uploader, not on a consulted label of this performance.
+        for credit_id in ["CON-S042-P-ORG119"]:
             credit = self.credits[credit_id]
             self.assertEqual(credit["evidenceContext"], ["recording_label"])
             self.assertEqual(credit["certainty"], "confirmed")

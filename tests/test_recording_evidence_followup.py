@@ -71,7 +71,9 @@ class RecordingEvidenceFollowupTests(unittest.TestCase):
         self.assertEqual(self.sources["SRC0715"]["dateQualifier"], "confirmed")
         self.assertEqual(self.sources["SRC0727"]["dateQualifier"], "reported")
         self.assertEqual(self.sources["SRC0738"]["dateQualifier"], "reported")
-        self.assertEqual(self.sources["SRC0790"]["dateQualifier"], "confirmed")
+        self.assertEqual(self.sources["SRC0790"]["dateQualifier"], "reported")
+        self.assertEqual(self.sources["SRC0790"]["dateRole"], "recording")
+        self.assertIn("unresolved matrix inconsistency", self.sources["SRC0790"]["researchNote"])
 
 
 if __name__ == "__main__":

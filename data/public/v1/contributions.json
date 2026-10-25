@@ -10996,8 +10996,7 @@
         "ORG029"
       ],
       "sourceIds": [
-        "SRC0297",
-        "SRC0487"
+        "SRC0297"
       ]
     },
     {
@@ -19945,7 +19944,7 @@
       "nameAsPrinted": "Hans Albers",
       "displayCredit": "Vocal performance",
       "evidenceContext": [
-        "online_catalogue"
+        "discography"
       ],
       "sortOrder": 50,
       "certainty": "confirmed",
@@ -19958,7 +19957,7 @@
       "sourceIds": [
         "SRC0697"
       ],
-      "scopeNote": "Recorded the song for Odeon with the Odeon-Künstler-Orchester under Otto Dobrindt; he also played the lead in Heut’ kommt’s drauf an, the film the song comes from."
+      "scopeNote": "Henry König’s Odeon label list independently identifies Hans Albers for this title on Odeon O-11811. The uploader also names him; the exact take reproduced in the transfer remains unverified."
     },
     {
       "id": "CON-S082-P-P153",
@@ -20513,10 +20512,10 @@
       "nameAsPrinted": "Odeon-Künstler-Orchester",
       "displayCredit": "Orchestra",
       "evidenceContext": [
-        "recording_label"
+        "online_catalogue"
       ],
       "sortOrder": 56,
-      "certainty": "confirmed",
+      "certainty": "probable",
       "workIds": [
         "W-S080"
       ],
@@ -20526,7 +20525,7 @@
       "sourceIds": [
         "SRC0697"
       ],
-      "scopeNote": "Recorded the song; the ensemble is named on the disc as “Odeon-Künstler-Orchester”."
+      "scopeNote": "The uploader identifies the Odeon-Künstler-Orchester for this transfer. The consulted label list does not name the orchestra; the visible label of the coupled title documents that other performance, not this one."
     },
     {
       "id": "CON-S081-P-ORG120",
@@ -20830,17 +20829,17 @@
       "nameAsPrinted": "Otto Dobrindt",
       "displayCredit": "Directed the orchestra",
       "evidenceContext": [
-        "recording_label"
+        "online_catalogue"
       ],
       "sortOrder": 55,
-      "certainty": "confirmed",
+      "certainty": "probable",
       "workIds": [
         "W-S080"
       ],
       "sourceIds": [
         "SRC0697"
       ],
-      "scopeNote": "Directed the Odeon-Künstler-Orchester on Odeon O-11811, the reverse of the disc whose label names him as Kapellmeister.",
+      "scopeNote": "The uploader identifies Otto Dobrindt as conductor of this performance. The consulted label list documents the title, singer, matrix and issue chronology but does not name the conductor. His credit on the coupled side is not direct evidence for this performance.",
       "personIds": [
         "P167"
       ]
@@ -21296,7 +21295,7 @@
       "nameAsPrinted": "Odeon",
       "displayCredit": "Issuing label",
       "evidenceContext": [
-        "online_catalogue"
+        "discography"
       ],
       "sortOrder": 60,
       "certainty": "confirmed",
@@ -21309,7 +21308,7 @@
       "sourceIds": [
         "SRC0697"
       ],
-      "scopeNote": "Issued the recording; the disc carries the imprint “Odeon”."
+      "scopeNote": "Henry König’s Odeon label list documents the title on Odeon O-11811, issued in April 1933. The uploader names the same catalogue issue; this is discographic evidence, not a visual label transcription from the transfer."
     },
     {
       "id": "CON-S081-LAB-ORG128",
@@ -23515,7 +23514,7 @@
       "sourceIds": [
         "SRC0790"
       ],
-      "scopeNote": "The cited transfer and matrix-discography documentation identify Tanz-Orchester Dajos Béla with Odeon O-11667, matrix Be 9946, recorded in Berlin on 10 June 1932. This credit follows discographic documentation, not a visual transcription of the label in the upload."
+      "scopeNote": "Henry König’s Odeon label list documents this title under Dajos Béla and his orchestra. It provides independent evidence of the ensemble’s recording, but the list’s conflicting Be 9946 assignments do not establish the exact master or identify the uploaded transfer."
     },
     {
       "id": "CON-S071-LAB-ORG128",
@@ -23536,7 +23535,7 @@
       "sourceIds": [
         "SRC0790"
       ],
-      "scopeNote": "The cited recording and Odeon matrix-discography documentation identify the issue as Odeon O-11667, matrix Be 9946. This is discographic evidence for the issuing label; the upload does not show the physical label."
+      "scopeNote": "Henry König’s Odeon label list documents an Odeon O-11667 issue of this title. Its release-date column is empty and its Be 9946 assignments conflict. This credit documents the catalogued issuing label, not a verified identification of the uploaded copy."
     },
     {
       "id": "CON-S118-LAB-ORG147",
@@ -25029,7 +25028,7 @@
       "sourceIds": [
         "SRC0790"
       ],
-      "scopeNote": "The documented Odeon recording is credited to Tanz-Orchester Dajos Béla. This records Dajos Béla’s direction of the ensemble, not authorship of the song."
+      "scopeNote": "The recording is catalogued under Dajos Béla and his orchestra. This records his association as the ensemble’s named leader, not a separately verified conductor identification for the uploaded performance or an authorship credit."
     }
   ]
 }

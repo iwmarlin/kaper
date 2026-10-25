@@ -148,6 +148,101 @@ AUDITED_DIGITAL_AUDIO_FIELDS: dict[str, dict[str, Any]] = {
 
 
 RECORDING_FIELDS: dict[str, dict[str, Any]] = {
+    "SRC0487": {
+        "title": "Oh Madonna! — Odeon O-4707 a",
+        "shortCitation": "Odeon O-4707 a, “Oh Madonna!”",
+        "slug": "src0487-odeon-o-4707a-oh-madonna",
+        "fullCitation": "Jan Kiepura with the Odeon-Künstler-Orchester conducted by Dr. Weissmann. “Oh Madonna!”, from Ein Lied für dich; label credits music to B. Kaper and Walter Jurmann and words to Fritz Rotter and Ernst Marischka. Odeon O-4707 a, matrix Be 10220, take 2; recorded 11 February 1933. Disc label photograph and audio transfer published by the Great 78 Project, Internet Archive.",
+        "date": "1933-02-11",
+        "dateRole": "recording",
+        "dateQualifier": "confirmed",
+        "accessDate": "2026-10-26",
+        "repository": "Internet Archive, Great 78 Project",
+        "researchNote": "The photograph identifies Odeon O-4707 a, matrix Be 10220, and the runout shows take 2. Christian Zwarg’s Odeon matrix discography lists Be 10220-2 under 11 February 1933, Berlin, Schlesische Straße 26, room 2, with Jan Kiepura and Frieder Weissmann. The indexed PDF text was consulted; the complete file could not be retrieved during this review. Internet Archive instead supplies 1932 without a stated basis; that year conflicts with the matrix chronology and is not adopted. The structured date describes the recording session, not the issue or manufacture of this copy. Henry König’s Odeon label list separately lists O-4707 under 1933 but leaves the release-date column empty. The label does not identify Wiener Boheme-Verlag as the sheet-music publisher.",
+        "researchNoteType": "discographic_note",
+        "additionalLinks": [
+            {
+                "label": "Great 78 Project — photograph of Odeon O-4707 a",
+                "url": "https://archive.org/download/78_oh-madonna_jan-kiepura-odeon-knstler-orchester-b-kaper-und-walter-jurmann-fritz_gbia7014687a/78_oh-madonna_jan-kiepura-odeon-knstler-orchester-b-kaper-und-walter-jurmann-fritz_gbia7014687a_itemimage.jpg",
+                "role": "additional_evidence"
+            },
+            {
+                "label": "Christian Zwarg, Odeon matrix discography — Be 10220-2 (indexed text)",
+                "url": "https://discography.phonomuseum.at/odeon/odmxBe10000.pdf",
+                "role": "additional_evidence"
+            },
+            {
+                "label": "Henry König, Odeon label list — O-4707 A",
+                "url": "http://musiktiteldb.de/Label/Ode_04.html",
+                "role": "catalogue_entry"
+            }
+        ],
+        "contributionIds": [
+            "CON-S078-C-P009",
+            "CON-S078-C-P077",
+            "CON-S078-L-P017",
+            "CON-S078-L-P020",
+            "CON-S078-LAB-ORG128",
+            "CON-S078-P-ORG120",
+            "CON-S078-P-P117"
+        ]
+    },
+    "SRC0697": {
+        "shortCitation": "Odeon O-11811, “Mein Gorilla hat ’ne Villa im Zoo”",
+        "fullCitation": "Hans Albers. “Mein Gorilla hat ’ne Villa im Zoo.” Paso doble. YouTube transfer published by jonjamg; the description identifies Odeon O-11811, matrix Be 10227, and accompaniment by the Odeon-Künstler-Orchester under Otto Dobrindt. The catalogue issue is dated April 1933 in Henry König’s Odeon label list.",
+        "date": "1933-04",
+        "dateRole": "issue",
+        "dateQualifier": "confirmed",
+        "accessDate": "2026-10-26",
+        "researchNote": "Henry König’s Odeon label list identifies Hans Albers, Odeon O-11811, matrix Be 10227-2, a session in Berlin, room 2, on 13 February 1933, and release in April 1933. The upload description gives Be 10227 without a take suffix; its matrix number must not be silently expanded to take 2. The label is not shown in the consulted upload material, and its identification of the orchestra and Otto Dobrindt remains uploader-supplied. The filmed label of the coupled title in SRC0699 identifies the orchestra and conductor for that side; it is not direct label evidence for this performance. The structured date describes the catalogue issue, not the recording session or manufacture of the transferred copy.",
+        "researchNoteType": "discographic_note",
+        "additionalLinks": [
+            {
+                "label": "Henry König, Odeon label list — O-11811, Be 10227-2",
+                "url": "http://musiktiteldb.de/Label/Ode_11.html",
+                "role": "catalogue_entry"
+            }
+        ]
+    },
+    "SRC0699": {
+        "shortCitation": "Odeon O-11811 a, “Immer wenn ich glücklich bin”",
+        "fullCitation": "Hans Albers with the Odeon-Künstler-Orchester under Otto Dobrindt. “Immer wenn ich glücklich bin.” Foxtrot from Heut’ kommt’s drauf an; label credits music to Walter Jurmann and B. Kaper and words to Fritz Rotter. Odeon O-11811 a, matrix Be 10226; issued April 1933. Filmed-label transfer published by Schellackplatte on YouTube.",
+        "date": "1933-04",
+        "dateRole": "issue",
+        "dateQualifier": "confirmed",
+        "accessDate": "2026-10-26",
+        "researchNote": "The video’s label identifies Hans Albers, the Odeon-Künstler-Orchester under Otto Dobrindt, O-11811 a and Be 10226. Henry König’s Odeon label list independently documents the session in Berlin, room 2, on 13 February 1933 and the issue in April 1933, citing Discographie der deutschen Kleinkunst, vol. 1. The structured date describes that issue, not the February session. The companion title, “Mein Gorilla hat ’ne Villa im Zoo”, is catalogued as Be 10227-2 and documented at SRC0697. The filmed copy carries a C. A. Klemm dealer sticker and a notice prohibiting radio transmission without permission.",
+        "researchNoteType": "discographic_note",
+        "additionalLinks": [
+            {
+                "label": "Henry König, Odeon label list — O-11811, Be 10226",
+                "url": "http://musiktiteldb.de/Label/Ode_11.html",
+                "role": "catalogue_entry"
+            }
+        ]
+    },
+    "SRC0790": {
+        "title": "Du liebst mich nicht mehr — Dajos Béla, YouTube",
+        "shortCitation": "YouTube, Dajos Béla, “Du liebst mich nicht mehr”",
+        "slug": "src0790-youtube-dajos-bela-du-liebst-mich-nicht-mehr",
+        "sourceType": "online_audio_source",
+        "publication": "YouTube",
+        "reliability": "low",
+        "fullCitation": "“Du liebst mich nicht mehr.” Slow-fox. YouTube transfer published by Radiomuseum Hardthausen; the uploader identifies Tanz-Orchester Dajos Béla, reports a Berlin recording in 1932 and gives the music credit “Bob Henders”.",
+        "date": "1932",
+        "dateRole": "recording",
+        "dateQualifier": "reported",
+        "accessDate": "2026-10-26",
+        "researchNote": "The upload reports a music credit to Bob Henders, a Berlin recording in 1932 and an Odeon first issue, but supplies no catalogue or matrix number. It shows a portrait from a Funk-Almanach rather than the label. Henry König’s Odeon label list separately documents this title with Dajos Béla as O-11667, Be 9946, recorded on 10 June 1932 in Berlin, Schlesische Straße 26, room 4; the release-date column is empty. The same list also assigns Be 9946 to the different title “Heute Nacht oder nie!”, an unresolved matrix inconsistency. The upload has not been matched to a verified pressing or take; neither O-11667 nor the exact session date is assigned to it. The structured year remains the uploader-reported recording year, not a confirmed issue date. The name Bob Henders in these recording descriptions does not by itself resolve the work’s authorship.",
+        "researchNoteType": "discographic_note",
+        "additionalLinks": [
+            {
+                "label": "Henry König, Odeon label list — O-11667 and conflicting Be 9946 entries",
+                "url": "http://musiktiteldb.de/Label/Ode_11.html",
+                "role": "catalogue_entry"
+            }
+        ]
+    },
     "SRC0783": {
         "fullCitation": "Allan Jones, tenor, with orchestra conducted by Nathaniel Shilkret. “The One I Love”, from Everybody Sing; label credit “Kaper, Jurmann & Kahn”. His Master’s Voice B.8724, matrix OA.09934, 1938. Manufactured in England by The Gramophone Co. Ltd. Disc label photograph and audio transfer published by the Great 78 Project, Internet Archive.",
         "accessDate": "2026-10-26",
@@ -670,6 +765,9 @@ RECORDING_FIELDS: dict[str, dict[str, Any]] = {
 # These corrections concern citation syntax, not the date of a modern issue.
 # Keep uploader-reported recording dates distinct from upload dates.
 AUDITED_RECORDING_CITATIONS = {
+    "SRC0487": "Jan Kiepura with the Odeon-Künstler-Orchester conducted by Dr. Weissmann. “Oh Madonna!”, from Ein Lied für dich; label credits music to B. Kaper and Walter Jurmann and words to Fritz Rotter and Ernst Marischka. Odeon O-4707 a, matrix Be 10220, take 2; recorded 11 February 1933. Disc label photograph and audio transfer published by the Great 78 Project, Internet Archive.",
+    "SRC0697": "Hans Albers. “Mein Gorilla hat ’ne Villa im Zoo.” Paso doble. YouTube transfer published by jonjamg; the description identifies Odeon O-11811, matrix Be 10227, and accompaniment by the Odeon-Künstler-Orchester under Otto Dobrindt. The catalogue issue is dated April 1933 in Henry König’s Odeon label list.",
+    "SRC0699": "Hans Albers with the Odeon-Künstler-Orchester under Otto Dobrindt. “Immer wenn ich glücklich bin.” Foxtrot from Heut’ kommt’s drauf an; label credits music to Walter Jurmann and B. Kaper and words to Fritz Rotter. Odeon O-11811 a, matrix Be 10226; issued April 1933. Filmed-label transfer published by Schellackplatte on YouTube.",
     "SRC0783": "Allan Jones, tenor, with orchestra conducted by Nathaniel Shilkret. “The One I Love”, from Everybody Sing; label credit “Kaper, Jurmann & Kahn”. His Master’s Voice B.8724, matrix OA.09934, 1938. Manufactured in England by The Gramophone Co. Ltd. Disc label photograph and audio transfer published by the Great 78 Project, Internet Archive.",
     "SRC0784": "Allan Jones, tenor, with orchestra conducted by Nathaniel Shilkret. “Cosi Cosa”, from Everybody Sing; label credit “Washington, Kaper & Jurmann”. His Master’s Voice B.8724, matrix OA.09937, 1938. Manufactured in England by The Gramophone Co. Ltd. Disc label photograph and audio transfer published by the Great 78 Project, Internet Archive.",
     "SRC0788": "Richard Tauber, tenor, with orchestra conducted by Paul Dessau. “Love Is a Fairy Tale”, from The Right to Happiness; label credit “Kaper–Jurmann–Rotter”. Sung in German. Parlophone AR 206, matrix Be 9887, n.d. Australian pressing, labelled “Made in Australia for Parlophone Co. Ltd.” Disc label photograph and audio transfer published by the Great 78 Project, Internet Archive.",
@@ -688,7 +786,7 @@ AUDITED_RECORDING_CITATIONS = {
     "SRC0715": "“Ich hab’ heut grad Geburtstag.” YouTube audio reference published by Jan van den Belt on 24 June 2011. The upload identifies Theo Mackeben mit seinem Jazz-Orchester and Walter Jurmann as refrain singer.",
     "SRC0727": "“Ich steh im Schnee und wart auf dich.” YouTube audio reference published by Brillantspecial, presented by the uploader as Gloria-Tanz-Orchester mit Refraingesang.",
     "SRC0738": "“Zgaś lampę!” Shimmy. YouTube audio reference published by jurek46pink; the upload identifies Henryk Gold and his ensemble.",
-    "SRC0790": "“Du liebst mich nicht mehr.” Slow-Fox. Digital transfer published on YouTube by Radiomuseum Hardthausen; the upload identifies Tanz-Orchester Dajos Béla, Odeon O-11667 (1932), and a music credit to “Bob Henders”.",
+    "SRC0790": "“Du liebst mich nicht mehr.” Slow-fox. YouTube transfer published by Radiomuseum Hardthausen; the uploader identifies Tanz-Orchester Dajos Béla, reports a Berlin recording in 1932 and gives the music credit “Bob Henders”.",
     "SRC0713": "Marek Weber und sein Orchester, vocal by John Hendrik. “Du bist in meinem Leben die erste Sensation.” Tango. Digital transfer on YouTube; the uploader identifies Electrola E.G. 2508 and gives the year as 1932.",
     "SRC0719": "Ilja Livschakoff Tanzorchester. “Ein Lied aus meiner Heimat.” Slowfox from Melodie der Liebe. YouTube transfer; the uploader identifies Polydor 24604, matrix 4735 BD VII, and reports a Berlin recording session around May 1932.",
     "SRC0729": "Ted Fio Rito and his orchestra. “Love Song of Tahiti.” Brunswick 7446, matrix C971; recorded 6 May 1935. YouTube transfer published by Croonr1, who identifies the vocals as Muzzy Marcellino with The Debutantes and credits music to Bronislaw Kaper and Walter Jurmann and words to Gus Kahn.",
@@ -708,7 +806,26 @@ AUDITED_RECORDING_CITATIONS = {
 # A conflicting catalogue number must not become a verified disc description.
 AUDITED_PRIVATE_UPLOAD_FIELDS = {
     "SRC0790": {
-        "researchNote": "Uploader-supplied information, not transcribed from the disc label: The upload calls the Odeon issue the first release of the recording and shows a portrait of the bandleader from a Funk-Almanach rather than the disc. The discographic details are taken from the uploader’s description; the label is not shown in the external recording. The Odeon matrix book, indexed at musiktiteldb.de, places the recording in Berlin, Schlesische Straße 26, room 4, on 10 June 1932 under matrix Be 9946, coupled with “Heute Nacht oder nie!”. The upload reports a music credit to Bob Henders alone, the recording name under which Walter Jurmann worked with Kaper."
+        "researchNote": "The upload reports a music credit to Bob Henders, a Berlin recording in 1932 and an Odeon first issue, but supplies no catalogue or matrix number. It shows a portrait from a Funk-Almanach rather than the label. Henry König’s Odeon label list separately documents this title with Dajos Béla as O-11667, Be 9946, recorded on 10 June 1932 in Berlin, Schlesische Straße 26, room 4; the release-date column is empty. The same list also assigns Be 9946 to the different title “Heute Nacht oder nie!”, an unresolved matrix inconsistency. The upload has not been matched to a verified pressing or take; neither O-11667 nor the exact session date is assigned to it. The structured year remains the uploader-reported recording year, not a confirmed issue date. The name Bob Henders in these recording descriptions does not by itself resolve the work’s authorship.",
+        "title": "Du liebst mich nicht mehr — Dajos Béla, YouTube",
+        "shortCitation": "YouTube, Dajos Béla, “Du liebst mich nicht mehr”",
+        "slug": "src0790-youtube-dajos-bela-du-liebst-mich-nicht-mehr",
+        "sourceType": "online_audio_source",
+        "publication": "YouTube",
+        "reliability": "low",
+        "fullCitation": "“Du liebst mich nicht mehr.” Slow-fox. YouTube transfer published by Radiomuseum Hardthausen; the uploader identifies Tanz-Orchester Dajos Béla, reports a Berlin recording in 1932 and gives the music credit “Bob Henders”.",
+        "date": "1932",
+        "dateRole": "recording",
+        "dateQualifier": "reported",
+        "accessDate": "2026-10-26",
+        "researchNoteType": "discographic_note",
+        "additionalLinks": [
+            {
+                "label": "Henry König, Odeon label list — O-11667 and conflicting Be 9946 entries",
+                "url": "http://musiktiteldb.de/Label/Ode_11.html",
+                "role": "catalogue_entry"
+            }
+        ]
     },
     "SRC0713": {
         "sourceType": "online_audio_source",
