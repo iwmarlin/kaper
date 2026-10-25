@@ -58,6 +58,11 @@ REPOSITORY_ALIASES: dict[str, str] = {
     # The photograph's reference number belongs to the citation, not the
     # repository name.
     "Imperial War Museums, A 25390": "Imperial War Museums",
+    # Two platforms and no institution, so "holder first" does not decide it;
+    # the records' own citations do. Both say the periodical was digitised by
+    # the Internet Archive and the image supplied through Commons, which is the
+    # same scanner-then-distributor order the rule states for an institution.
+    "Internet Archive; Wikimedia Commons": "Internet Archive / Wikimedia Commons",
     f"{BNF}, département des Arts du spectacle, 8-RSUPP-879": f"{BNF} / Gallica",
     "Library of Congress Prints and Photographs Division": (
         "Library of Congress, Prints and Photographs Division"
@@ -67,6 +72,14 @@ REPOSITORY_ALIASES: dict[str, str] = {
         "Internet Archive / Media History Digital Library"
     ),
     "Polona / Biblioteka Narodowa": "Biblioteka Narodowa / Polona",
+    # Every other private collection in the archive is named — Jacques Gana,
+    # Richard Kraft, Matthias Fanck, David Silvestre. This one names none,
+    # because none is known: what the record has is a sale listing, and the
+    # field said "collection" where it could only mean "someone was selling
+    # one". eBay serves the page the record gives; that the listing documents
+    # a physical copy, and does not establish the local scan's provenance, is
+    # already stated in the citation and the research note.
+    "Private collection (commercial listing via eBay)": "eBay",
     # Same rule, applied to the Commons files that had it backwards. Seventeen
     # records already name the holder first and five did not, four of them
     # separating the pair with a semicolon that nothing in either name needs.
@@ -74,6 +87,7 @@ REPOSITORY_ALIASES: dict[str, str] = {
         "Library of Congress / Wikimedia Commons"
     ),
     "Wikimedia Commons; Heritage Auctions": "Heritage Auctions / Wikimedia Commons",
+    "Wikimedia Commons; Internet Archive": "Internet Archive / Wikimedia Commons",
     "Wikimedia Commons; Narodowe Archiwum Cyfrowe": (
         "Narodowe Archiwum Cyfrowe / Wikimedia Commons"
     ),
