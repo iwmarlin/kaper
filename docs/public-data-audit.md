@@ -158,6 +158,22 @@ repository of 5 Sources — a hostname where every Organization record carries a
 Some of these may correctly have no institutional record, in which case the
 field is being used for two different things and could say so.
 
+The count above measures the wrong thing, and the figure it gives is wrong in
+both directions. A Source can link an Organization and still leave its
+repository unreachable — SRC0743 names Musiktiteldb.de and links the orchestra
+and the label — while a Source that links nothing may name a body the graph
+already holds. What matters is whether any Organization record bears a name the
+repository string contains. Measured that way, 734 of 840 Sources reached their
+repository, 98 named a body with no record at all, and 8 named one that exists
+and did not link it. Two of those 8 were real (`ORG099` at SRC0540, `ORG081` at
+SRC0621) and six were an artefact of matching a short name: the record label
+`Grammophon` sits inside `Grammophon-Platten.de`, a collectors' portal that has
+nothing to do with it.
+
+There is no frequency threshold to find here. Single-citation repositories are
+given Organization records as a matter of course, so the remainder is a
+backlog rather than a policy.
+
 ### 5. One address, two Places, two precision categories
 
 `PL010` (Chopin School of Music, Warsaw Philharmonic building, Jasna 5) and
@@ -459,8 +475,22 @@ ground is not covered again.
 5. ~~Create Organization records for Universität Hamburg and the Bundesarchiv
    and link the repeat-cited repositories (finding 4).~~ Done: `ORG168` and
    `ORG169`, with identifiers from GND, LCNAF and VIAF, linked from the 23 LexM
-   Sources and the 5 Bundesarchiv Sources. The repository strings that are not
-   institution names are untouched and remain an open question.
+   Sources and the 5 Bundesarchiv Sources. The strings that are not institution
+   names are settled: a website that serves a source is a repository here, as
+   the card's own definition and the `imdb.com` host map already said, and it
+   is entered under its name rather than its hostname.
+
+   The backlog itself is now 76 Sources under 72 names, from 106 under 80, and
+   no Source any longer names a body whose record exists without linking it.
+   `ORG170` to `ORG176` cover the repeat-cited repositories: the Universitäts-
+   archiv of the UdK Berlin and the Staatliches Institut für Musikforschung,
+   both verified at id.loc.gov as corporate-name authorities, and Turner
+   Classic Movies, Musiktiteldb.de, Grammophon-Platten.de, Stare Melodie and
+   the ECMF, which carry no authority identifier. TCM is closed unresolved in
+   the sense ORG026 is: LCNAF `no97039973` matches by label but is a
+   `mads:Title` for the programme, not a corporate body, and GND and VIAF were
+   unreachable when this was written, so nothing was assigned rather than
+   guessed. What remains is 70 names cited once each.
 6. Fill organization authority identifiers, starting with the Weimar studios
    (finding 3). Six are done. `ORG026` is closed unresolved: GND, LCNAF and
    VIAF were all searched, and the one LCNAF record whose form matches —

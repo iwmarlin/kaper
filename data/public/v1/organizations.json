@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 161,
+  "count": 168,
   "records": [
     {
       "id": "ORG001",
@@ -3254,7 +3254,8 @@
       "slug": "margaret-herrick-library",
       "nameVariants": "Margaret Herrick Library; Academy Collection; Academy of Motion Picture Arts and Sciences; AMPAS",
       "sourceIds": [
-        "SRC0334"
+        "SRC0334",
+        "SRC0621"
       ],
       "authorizedNameSource": "LCNAF",
       "authorities": [
@@ -3939,7 +3940,11 @@
         "SRC0299",
         "SRC0302",
         "SRC0306",
-        "SRC0307"
+        "SRC0307",
+        "SRC0538",
+        "SRC0539",
+        "SRC0540",
+        "SRC0541"
       ],
       "authorizedNameSource": "GND",
       "publicNote": "Berlin association that publishes the official Walter Jurmann website, walter-jurmann.com, including its Songs works catalogue.",
@@ -6183,6 +6188,158 @@
         "SRC0681",
         "SRC0682",
         "SRC0683"
+      ]
+    },
+    {
+      "id": "ORG170",
+      "displayName": "Universität der Künste Berlin, Universitätsarchiv",
+      "authorizedName": "Universität der Künste Berlin. Archiv",
+      "types": [
+        "archive"
+      ],
+      "city": [
+        "Berlin"
+      ],
+      "country": "Germany",
+      "slug": "universitaet-der-kuenste-berlin-universitaetsarchiv",
+      "nameVariants": "UdK Berlin, Universitätsarchiv; Archiv der Universität der Künste Berlin",
+      "authorizedNameSource": "LCNAF",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/no2004098211"
+        }
+      ],
+      "publicNote": "University archive of the Universität der Künste Berlin.",
+      "sourceIds": [
+        "SRC0903",
+        "SRC0904"
+      ]
+    },
+    {
+      "id": "ORG171",
+      "displayName": "Staatliches Institut für Musikforschung Preußischer Kulturbesitz",
+      "authorizedName": "Staatliches Institut für Musikforschung Preussischer Kulturbesitz",
+      "types": [
+        "archive",
+        "database"
+      ],
+      "city": [
+        "Berlin"
+      ],
+      "country": "Germany",
+      "slug": "staatliches-institut-fuer-musikforschung",
+      "nameVariants": "SIM PK; SIM; Staatliches Institut für Musikforschung",
+      "authorizedNameSource": "LCNAF",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n84157524"
+        }
+      ],
+      "publicNote": "Berlin research institute of the Stiftung Preußischer Kulturbesitz. Its digital library serves the digitised Führer durch die Konzertsäle Berlins.",
+      "sourceIds": [
+        "SRC0903",
+        "SRC0904"
+      ]
+    },
+    {
+      "id": "ORG172",
+      "displayName": "Turner Classic Movies",
+      "authorizedName": "Turner Classic Movies",
+      "types": [
+        "database"
+      ],
+      "country": "United States",
+      "slug": "turner-classic-movies",
+      "nameVariants": "TCM",
+      "publicNote": "American classic-film television channel whose website publishes title pages and signed articles on individual films.",
+      "sourceIds": [
+        "SRC0168",
+        "SRC0327",
+        "SRC0530"
+      ]
+    },
+    {
+      "id": "ORG173",
+      "displayName": "Musiktiteldb.de",
+      "authorizedName": "Musiktiteldb.de",
+      "types": [
+        "database"
+      ],
+      "country": "Germany",
+      "slug": "musiktiteldb-de",
+      "nameVariants": "musiktiteldb.de; Die ultimative Musikdatenbank",
+      "publicNote": "German discographic database compiled by Henry König from label lists and recording ledgers, covering United States, British and German label series of about 1900 to 1950.",
+      "sourceIds": [
+        "SRC0741",
+        "SRC0742",
+        "SRC0743",
+        "SRC0744",
+        "SRC0750",
+        "SRC0760",
+        "SRC0807"
+      ]
+    },
+    {
+      "id": "ORG174",
+      "displayName": "Grammophon-Platten.de",
+      "authorizedName": "Grammophon-Platten.de",
+      "types": [
+        "database"
+      ],
+      "country": "Germany",
+      "slug": "grammophon-platten-de",
+      "nameVariants": "grammophon-platten.de; Grammophon und Schellackplatten Portal 78rpm",
+      "publicNote": "German collectors’ portal on the gramophone, the phonograph and shellac records, publishing technical, historical and discographic material on recordings made up to about 1950. Unrelated to the Grammophon record label.",
+      "sourceIds": [
+        "SRC0288",
+        "SRC0289",
+        "SRC0290",
+        "SRC0365",
+        "SRC0573",
+        "SRC0723"
+      ]
+    },
+    {
+      "id": "ORG175",
+      "displayName": "Stare Melodie",
+      "authorizedName": "Stare Melodie",
+      "types": [
+        "database"
+      ],
+      "country": "Poland",
+      "slug": "stare-melodie",
+      "nameVariants": "staremelodie.pl",
+      "publicNote": "Polish database of pre-war Polish recordings, giving transcribed lyrics, performers and credits, searchable by title, performer, composer and lyricist.",
+      "sourceIds": [
+        "SRC0379",
+        "SRC0658",
+        "SRC0736",
+        "SRC0737",
+        "SRC0767"
+      ]
+    },
+    {
+      "id": "ORG176",
+      "displayName": "Encyclopédie multimédia de la comédie musicale théâtrale en France",
+      "authorizedName": "Encyclopédie multimédia de la comédie musicale théâtrale en France",
+      "types": [
+        "database"
+      ],
+      "country": "France",
+      "slug": "ecmf-encyclopedie-comedie-musicale",
+      "nameVariants": "ECMF; ecmf.fr",
+      "publicNote": "Encyclopedia of the musical comedies staged in Parisian theatres between 1918 and 1944, with pages for works, authors, composers, performers, publishers and theatres.",
+      "sourceIds": [
+        "SRC0613",
+        "SRC0614",
+        "SRC0615",
+        "SRC0616",
+        "SRC0619",
+        "SRC0622",
+        "SRC0655",
+        "SRC0670"
       ]
     }
   ]
