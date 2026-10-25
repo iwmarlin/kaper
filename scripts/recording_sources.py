@@ -273,6 +273,8 @@ RECORDING_FIELDS: dict[str, dict[str, Any]] = {
 # These corrections concern citation syntax, not the date of a modern issue.
 # Keep uploader-reported recording dates distinct from upload dates.
 AUDITED_RECORDING_CITATIONS = {
+    "SRC0707": "Marek Weber und sein Orchester, refrain sung by Austin Egen. “Tränen weint jede Frau so gern.” Tango. Digital transfer on YouTube; the upload identifies His Master’s Voice / Electrola and gives the year as 1929.",
+    "SRC0759": "Orkiestra taneczna. “San Francisco.” Foxtrot. Digital transfer on YouTube; the upload identifies Syrena Record, gives the year as 1937 and credits Bronisław Kaper and Walter Jurmann with music and Emanuel Schlechter with Polish words.",
     "SRC0740": (
         "Ted Fio Rito and his orchestra, vocal chorus by Stanley Hickman. "
         "“Blue Venetian Waters”, from A Day at the Races; words and music by "
@@ -291,6 +293,8 @@ def recording_hostname(source: dict[str, Any]) -> str:
 def normalize_recording_source(source: dict[str, Any]) -> None:
     """Normalize one recording source in place."""
     source_id = str(source.get("id", ""))
+    if source_id in {"SRC0707", "SRC0759"}:
+        source["dateQualifier"] = "reported"
     citation = AUDITED_RECORDING_CITATIONS.get(source_id)
     if citation:
         source["fullCitation"] = citation

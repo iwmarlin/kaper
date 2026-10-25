@@ -59,6 +59,13 @@ def is_catalogue_landing_page_for_sheet_music(source: dict[str, Any]) -> bool:
 def normalize_sheet_music_source(source: dict[str, Any]) -> None:
     """Normalize a catalogue-only score description without rewriting its data."""
 
+    if source.get("id") == "SRC0379":
+        source.update({
+            "publication": "Gebethner i Wolff, Warszawa",
+            "creator": "Bronisław Kaper (music); Andrzej Włast (words)",
+            "fullCitation": "O tem wróble świergocą... Popularny refren z „Morskiego Oka” w rewji „Gwiazdy Warszawy”. Słowa Andrzeja Własta; muzyka Bronisława Kapera. Warszawa: Gebethner i Wolff, 1930. Copyright 1930 by Gebethner and Wolff, Warszawa. Plate no. G 6875 W. Lit. J. Konarzewski w Warszawie. Sheet-music PDF hosted by Stare Melodie."
+        })
+
     audited_type = AUDITED_SOURCE_TYPE_OVERRIDES.get(str(source.get("id") or ""))
     if audited_type:
         source["sourceType"] = audited_type
