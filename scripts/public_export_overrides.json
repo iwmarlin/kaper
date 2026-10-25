@@ -4093,7 +4093,7 @@
         }
       },
       "SRC0785": {
-        "reason": "Individually verify catalogue dating: retain the stated lower bound, leave undated issues unknown, and distinguish a shared master session from the issue date of a different pressing.",
+        "reason": "Separate the documented German Gloria G.O. 10303 issue from the D 4431 transfer; shared matrix Bi 644 does not establish the latter’s issuing label.",
         "fields": {
           "fullCitation": "Eric Harden’s danseorkester, refrain sung by Carljohann Volbach. “Wie gern möcht’ ich dich verwöhnen.” From the sound film Melodie der Liebe; catalogue number D 4431, matrix Bi 644, n.d. Digital transfer published by the Internet Archive from the 78 rpm collection of Leif Druedahl.",
           "researchNote": "The Internet Archive metadata supplies catalogue number D 4431 and matrix Bi 644 but no label or date; only an audio transfer is supplied, not a photograph of the physical label. The title-list entry for Gloria G.O. 10303 identifies the same title, performers and matrix, dates the master to Berlin, studio 4, on 11 June 1932 and gives November 1932 as the German issue date. The structured date identifies the shared recording session. Neither November 1932 nor the year of the film is assigned as the issue date of D 4431; that pressing’s label and issue date remain unestablished. The Danish performer wording is transcribed from the Internet Archive metadata.",
@@ -4109,6 +4109,16 @@
               "url": "http://musiktiteldb.de/musiktitel/titel_wi-wirf.html",
               "role": "catalogue_entry"
             }
+          ],
+          "organizationIds": [
+            "ORG067",
+            "ORG148"
+          ],
+          "contributionIds": [
+            "CON-S060-C-P009",
+            "CON-S060-C-P077",
+            "CON-S060-L-P020",
+            "CON-S060-P-ORG148"
           ]
         }
       },
@@ -4772,6 +4782,15 @@
       }
     },
     "Media": {
+      "M409": {
+        "reason": "Separate the documented German Gloria G.O. 10303 issue from the D 4431 transfer; shared matrix Bi 644 does not establish the latter’s issuing label.",
+        "fields": {
+          "organizationIds": [
+            "ORG148"
+          ],
+          "publicCaption": "Listening reference for “Wie gern’ möcht’ ich dich verwöhnen” by Eric Harden’s danseorkester with Carljohann Volbach. Internet Archive identifies D 4431 and matrix Bi 644 but not the issuing label or issue date. The same master was issued separately as Gloria G.O. 10303; that German imprint is not assigned to D 4431."
+        }
+      },
       "M369": {
         "reason": "Distinguish an external listening reference from an identified historical carrier, and qualify uploader-only chronology and label claims without removing access or graph relationships.",
         "fields": {
@@ -6651,6 +6670,15 @@
       }
     },
     "Contributions": {
+      "CON-S060-LAB-ORG138": {
+        "reason": "Separate the documented German Gloria G.O. 10303 issue from the D 4431 transfer; shared matrix Bi 644 does not establish the latter’s issuing label.",
+        "fields": {
+          "sourceIds": [
+            "SRC0939"
+          ],
+          "scopeNote": "Gloria issued the recording as G.O. 10303 in November 1932, matrix Bi 644, recorded in Berlin on 11 June 1932. This credit concerns that German issue, not the separately transferred pressing D 4431, whose issuing label and date remain unidentified."
+        }
+      },
       "CON-S054-LAB-ORG126": {
         "reason": "Distinguish an external listening reference from an identified historical carrier, and qualify uploader-only chronology and label claims without removing access or graph relationships.",
         "fields": {
@@ -6686,12 +6714,16 @@
         }
       },
       "CON-S060-P-ORG148": {
-        "reason": "Qualify uploader-only performance and label claims while preserving independently corroborated catalogue and discographic evidence.",
+        "reason": "Separate the documented German Gloria G.O. 10303 issue from the D 4431 transfer; shared matrix Bi 644 does not establish the latter’s issuing label.",
         "fields": {
           "evidenceContext": [
             "online_catalogue"
           ],
-          "scopeNote": "The Internet Archive catalogue identifies the transferred pressing as Eric Harden’s danseorkester, catalogue number D 4431, matrix Bi 644. The master is independently documented in the Gloria discography, but this Danish performer wording follows the transferred pressing’s catalogue metadata; the physical label has not been examined."
+          "scopeNote": "The Internet Archive identifies Eric Harden’s danseorkester on transfer D 4431, matrix Bi 644. Independently, the Musiktiteldb.de entry documents Eric Harden und sein Tanz-Orchester with Carljohann Volbach on Gloria G.O. 10303, the same matrix, recorded in Berlin on 11 June 1932. The Danish wording follows the transfer metadata; the label of D 4431 has not been examined.",
+          "sourceIds": [
+            "SRC0785",
+            "SRC0939"
+          ]
         }
       },
       "CON-S082-P-ORG120": {
@@ -10721,6 +10753,47 @@
       }
     },
     "Sources": {
+      "SRC0939": {
+        "reason": "Separate the documented German Gloria G.O. 10303 issue from the D 4431 transfer; shared matrix Bi 644 does not establish the latter’s issuing label.",
+        "fields": {
+          "id": "SRC0939",
+          "shortCitation": "Gloria G.O. 10303, “Wie gern möcht’ ich dich verwöhnen” (1932)",
+          "fullCitation": "Eric Harden und sein Tanz-Orchester, refrain sung by Carljohann Volbach. “Wie gern möcht’ ich dich verwöhnen!” From Melodie der Liebe; music by Walter Jurmann and Bronislaw Kaper, words by Fritz Rotter. Gloria G.O. 10303, matrix Bi 644. Recorded in Berlin, studio 4, 11 June 1932; issued November 1932. Title-list entry at Musiktiteldb.de, citing Discographie der deutschen Tanzmusik, vol. 8.",
+          "sourceType": "recording_discographic_source",
+          "title": "Wie gern möcht’ ich dich verwöhnen — Gloria G.O. 10303",
+          "creator": "Eric Harden und sein Tanz-Orchester; Carljohann Volbach, refrain vocal",
+          "repository": "Musiktiteldb.de",
+          "publication": "Gloria",
+          "date": "1932-11",
+          "dateRole": "issue",
+          "dateQualifier": "confirmed",
+          "accessDate": "2026-10-25",
+          "reliability": "high",
+          "sourceStatus": "verified",
+          "slug": "src0939-gloria-go-10303-wie-gern-moecht-ich-dich-verwoehnen",
+          "primaryUrl": "http://musiktiteldb.de/musiktitel/titel_wi-wirf.html",
+          "researchNote": "The title-list entry distinguishes the recording session (Berlin, studio 4, 11 June 1932) from the Gloria issue (November 1932). This source documents Gloria G.O. 10303 specifically. The Internet Archive transfer numbered D 4431 reports the same matrix, Bi 644, but does not identify its issuing label or date; the Gloria imprint and November issue date are not assigned to that pressing. No second listening reference is created.",
+          "researchNoteType": "discographic_note",
+          "organizationIds": [
+            "ORG138",
+            "ORG148",
+            "ORG173"
+          ],
+          "workIds": [
+            "W-S060"
+          ],
+          "songIds": [
+            "S060"
+          ],
+          "contributionIds": [
+            "CON-S060-C-P009",
+            "CON-S060-C-P077",
+            "CON-S060-L-P020",
+            "CON-S060-LAB-ORG138",
+            "CON-S060-P-ORG148"
+          ]
+        }
+      },
       "SRC0555": {
         "reason": "Document the provenance of the external MGM context video M024 after the uploader, title, publication date and reel information were supplied and verified editorially.",
         "fields": {
@@ -14732,6 +14805,22 @@
   },
   "linkAdditions": {
     "Organizations": {
+      "ORG173": {
+        "reason": "Separate the documented German Gloria G.O. 10303 issue from the D 4431 transfer; shared matrix Bi 644 does not establish the latter’s issuing label.",
+        "fields": {
+          "sourceIds": [
+            "SRC0939"
+          ]
+        }
+      },
+      "ORG148": {
+        "reason": "Separate the documented German Gloria G.O. 10303 issue from the D 4431 transfer; shared matrix Bi 644 does not establish the latter’s issuing label.",
+        "fields": {
+          "sourceIds": [
+            "SRC0939"
+          ]
+        }
+      },
       "ORG068": {
         "reason": "Synchronize explicit institutional repository or catalogue-creator relations and preserve other documented links.",
         "fields": {
@@ -14850,10 +14939,13 @@
         }
       },
       "ORG138": {
-        "reason": "Synchronize Gloria's inverse work link with its confirmed issuing-label contribution for Ich geh’ nie von Dir fort, denn ich lieb’ Dich!",
+        "reason": "Separate the documented German Gloria G.O. 10303 issue from the D 4431 transfer; shared matrix Bi 644 does not establish the latter’s issuing label.",
         "fields": {
           "workIds": [
             "W-S092"
+          ],
+          "sourceIds": [
+            "SRC0939"
           ]
         }
       },
@@ -15250,6 +15342,46 @@
       }
     },
     "Contributions": {
+      "CON-S060-P-ORG148": {
+        "reason": "Separate the documented German Gloria G.O. 10303 issue from the D 4431 transfer; shared matrix Bi 644 does not establish the latter’s issuing label.",
+        "fields": {
+          "sourceIds": [
+            "SRC0939"
+          ]
+        }
+      },
+      "CON-S060-LAB-ORG138": {
+        "reason": "Separate the documented German Gloria G.O. 10303 issue from the D 4431 transfer; shared matrix Bi 644 does not establish the latter’s issuing label.",
+        "fields": {
+          "sourceIds": [
+            "SRC0939"
+          ]
+        }
+      },
+      "CON-S060-L-P020": {
+        "reason": "Separate the documented German Gloria G.O. 10303 issue from the D 4431 transfer; shared matrix Bi 644 does not establish the latter’s issuing label.",
+        "fields": {
+          "sourceIds": [
+            "SRC0939"
+          ]
+        }
+      },
+      "CON-S060-C-P077": {
+        "reason": "Separate the documented German Gloria G.O. 10303 issue from the D 4431 transfer; shared matrix Bi 644 does not establish the latter’s issuing label.",
+        "fields": {
+          "sourceIds": [
+            "SRC0939"
+          ]
+        }
+      },
+      "CON-S060-C-P009": {
+        "reason": "Separate the documented German Gloria G.O. 10303 issue from the D 4431 transfer; shared matrix Bi 644 does not establish the latter’s issuing label.",
+        "fields": {
+          "sourceIds": [
+            "SRC0939"
+          ]
+        }
+      },
       "CON-S097-C-P009": {
         "reason": "Add the published Buxbaum/Sieghardt work catalogue as the primary bibliographic evidence for the music credit.",
         "fields": {
@@ -15708,6 +15840,14 @@
       "O012": {"reason": "Attach the surviving Fiesta score headed Ein neuer Cocktail.", "fields": {"sourceIds": ["SRC0789"]}}
     },
     "Works": {
+      "W-S060": {
+        "reason": "Separate the documented German Gloria G.O. 10303 issue from the D 4431 transfer; shared matrix Bi 644 does not establish the latter’s issuing label.",
+        "fields": {
+          "sourceIds": [
+            "SRC0939"
+          ]
+        }
+      },
       "W-F003": {
         "reason": "Attach the verified Der Kinematograph advertisement to Der Korvettenkapitän.",
         "fields": {
@@ -16586,6 +16726,14 @@
       }
     },
     "Songs": {
+      "S060": {
+        "reason": "Separate the documented German Gloria G.O. 10303 issue from the D 4431 transfer; shared matrix Bi 644 does not establish the latter’s issuing label.",
+        "fields": {
+          "sourceIds": [
+            "SRC0939"
+          ]
+        }
+      },
       "S123": {
         "reason": "Synchronize Love Song of Tahiti with the verified Variety advertisement and its image.",
         "fields": {
@@ -19805,6 +19953,14 @@
   },
   "linkRemovals": {
     "Media": {
+      "M409": {
+        "reason": "Separate the documented German Gloria G.O. 10303 issue from the D 4431 transfer; shared matrix Bi 644 does not establish the latter’s issuing label.",
+        "fields": {
+          "organizationIds": [
+            "ORG138"
+          ]
+        }
+      },
       "M145": {
         "reason": "Remove the excluded duplicate IMDb media-viewer source; SRC0393 remains as the item-level source for this local poster.",
         "fields": {
@@ -19936,6 +20092,17 @@
       }
     },
     "Sources": {
+      "SRC0785": {
+        "reason": "Separate the documented German Gloria G.O. 10303 issue from the D 4431 transfer; shared matrix Bi 644 does not establish the latter’s issuing label.",
+        "fields": {
+          "organizationIds": [
+            "ORG138"
+          ],
+          "contributionIds": [
+            "CON-S060-LAB-ORG138"
+          ]
+        }
+      },
       "SRC0758": {
         "reason": "The recording source does not document the sheet-music publisher; retain the independent score or catalogue evidence.",
         "fields": {
@@ -20820,6 +20987,14 @@
       }
     },
     "Organizations": {
+      "ORG138": {
+        "reason": "Separate the documented German Gloria G.O. 10303 issue from the D 4431 transfer; shared matrix Bi 644 does not establish the latter’s issuing label.",
+        "fields": {
+          "sourceIds": [
+            "SRC0785"
+          ]
+        }
+      },
       "ORG079": {
         "reason": "Remove the inverse of the incorrect SRC0890 link; University of California, Berkeley Library is not UCLA Library.",
         "fields": {
@@ -21060,6 +21235,14 @@
       }
     },
     "Contributions": {
+      "CON-S060-LAB-ORG138": {
+        "reason": "Separate the documented German Gloria G.O. 10303 issue from the D 4431 transfer; shared matrix Bi 644 does not establish the latter’s issuing label.",
+        "fields": {
+          "sourceIds": [
+            "SRC0785"
+          ]
+        }
+      },
       "CON-S018-PUB-ORG033": {
         "reason": "Remove the unsupported recording-to-sheet-music-publisher evidence edge in both directions.",
         "fields": {

@@ -416,6 +416,16 @@ RECORDING_FIELDS: dict[str, dict[str, Any]] = {
                 "url": "http://musiktiteldb.de/musiktitel/titel_wi-wirf.html",
                 "role": "catalogue_entry"
             }
+        ],
+        "organizationIds": [
+            "ORG067",
+            "ORG148"
+        ],
+        "contributionIds": [
+            "CON-S060-C-P009",
+            "CON-S060-C-P077",
+            "CON-S060-L-P020",
+            "CON-S060-P-ORG148"
         ]
     },
     "SRC0807": {
