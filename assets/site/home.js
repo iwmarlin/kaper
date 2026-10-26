@@ -1,4 +1,4 @@
-import { mountSiteChrome } from "./core.js?v=7b45d3f24d";
+import { mountSiteChrome } from "./core.js?v=ac1a11e7ae";
 
 // Every home-page section is printed into the document at build time, so this
 // page makes no data request and reads the same with or without JavaScript.
