@@ -291,6 +291,20 @@ class MediaProseRepetitionTests(unittest.TestCase):
         ]
         self.assertEqual(offenders, [], "a description exposes an asset path")
 
+    def test_no_rights_note_abbreviates_public_domain(self) -> None:
+        """A rights note is read by whoever is deciding whether they may reuse
+        an image, and twelve told them that "Anonymous works are PD 70 years
+        after publication". The Commons tag names — PD-US, PD-anon-expired,
+        PD-Poland — are the names of those tags and stay as they are, so this
+        looks only for PD used as a predicate, which is the archive writing
+        shorthand in its own sentence."""
+        offenders = [
+            record["id"]
+            for record in self.media
+            if re.search(r"\b(?:are|is|was|were|also)\s+PD\b", str(record.get("rightsNote") or ""))
+        ]
+        self.assertEqual(offenders, [], "a rights note abbreviates public domain")
+
     def test_no_rights_note_restates_the_credit_line(self) -> None:
         # Only the import's own shape is forbidden: a sentence that opens
         # "Credit <the credit line>", which the card has already printed under
