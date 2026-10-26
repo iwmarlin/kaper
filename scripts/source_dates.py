@@ -120,6 +120,101 @@ HMV_R_SERIES_PATTERN = re.compile(
 # these explicit avoids accidentally treating life dates, collection spans or
 # years embedded in catalogue identifiers as Source dates.
 REVIEWED_SOURCE_DATES: dict[str, dict[str, str]] = {
+    "SRC0315": {
+        "date": "2025-01-23",
+        "dateRole": "digital_publication",
+        "dateQualifier": "confirmed"
+    },
+    "SRC0316": {
+        "date": "2013-08-23",
+        "dateRole": "digital_publication",
+        "dateQualifier": "confirmed"
+    },
+    "SRC0317": {
+        "dateRole": "digital_publication",
+        "dateQualifier": "confirmed",
+        "date": "2021-11-21"
+    },
+    "SRC0318": {
+        "dateRole": "digital_publication",
+        "dateQualifier": "confirmed",
+        "date": "2013-07-27"
+    },
+    "SRC0319": {
+        "date": "2014-05-31",
+        "dateRole": "digital_publication",
+        "dateQualifier": "confirmed"
+    },
+    "SRC0320": {
+        "date": "2024-12-29",
+        "dateRole": "digital_publication",
+        "dateQualifier": "confirmed"
+    },
+    "SRC0321": {
+        "dateRole": "digital_publication",
+        "dateQualifier": "confirmed",
+        "date": "2013-04-14"
+    },
+    "SRC0555": {
+        "dateRole": "digital_publication",
+        "dateQualifier": "confirmed",
+        "date": "2010-06-03"
+    },
+    "SRC0733": {
+        "date": "2017-10-29",
+        "dateRole": "digital_publication",
+        "dateQualifier": "confirmed"
+    },
+    "SRC0791": {
+        "dateRole": "digital_publication",
+        "dateQualifier": "confirmed",
+        "date": "2015-03-20"
+    },
+    "SRC0010": {
+        "dateRole": "digital_publication",
+        "dateQualifier": "confirmed",
+        "date": "2008-12-01"
+    },
+    "SRC0322": {
+        "dateRole": "digitization",
+        "dateQualifier": "confirmed",
+        "date": "2021"
+    },
+    "SRC0323": {
+        "dateRole": "digitization",
+        "dateQualifier": "confirmed",
+        "date": "2023"
+    },
+    "SRC0324": {
+        "dateRole": "digitization",
+        "dateQualifier": "confirmed",
+        "date": "2024"
+    },
+    "SRC0325": {
+        "dateRole": "digitization",
+        "dateQualifier": "confirmed",
+        "date": "2022"
+    },
+    "SRC0327": {
+        "date": "1936",
+        "dateRole": "described_item",
+        "dateQualifier": "confirmed"
+    },
+    "SRC0681": {
+        "date": "1932",
+        "dateRole": "described_item",
+        "dateQualifier": "confirmed"
+    },
+    "SRC0682": {
+        "date": "1932",
+        "dateRole": "described_item",
+        "dateQualifier": "confirmed"
+    },
+    "SRC0683": {
+        "date": "1931",
+        "dateRole": "described_item",
+        "dateQualifier": "confirmed"
+    },
     "SRC0001": {
         "date": "1926",
         "dateRole": "issue",
@@ -709,9 +804,9 @@ REVIEWED_SOURCE_DATES: dict[str, dict[str, str]] = {
         "dateQualifier": "confirmed"
     },
     "SRC0809": {
-        "date": "1938",
-        "dateRole": "described_item",
-        "dateQualifier": "confirmed",
+        "date": "2022-02-13",
+        "dateRole": "digital_publication",
+        "dateQualifier": "confirmed"
     },
     "SRC0811": {
         "date": "1937",

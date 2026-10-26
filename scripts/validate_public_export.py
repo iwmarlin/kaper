@@ -847,10 +847,11 @@ class ExportValidator:
     def _validate_media_source_work_support(self) -> None:
         """Reject media-to-work links contradicted by item-level source links.
 
-        The rule is deliberately limited to externally linked audio recordings:
-        composite visual media may legitimately combine film- and song-level
-        context.  Some recording sources do not identify a work at all, so an
-        empty source-side work set is not an error.  Once at least one linked
+        The rule covers externally linked audio and video references, not
+        composite images or document galleries. Film clips may legitimately
+        link both a film and its song, but both need source-level support.
+        Some audio sources do not identify a work at all, so an empty audio
+        source-side work set is not an error. Once at least one linked
         source does identify works, however, every work assigned to the recording
         must occur in that combined source evidence.  This catches stale but
         technically symmetric links such as attaching a recording to the wrong
@@ -868,7 +869,7 @@ class ExportValidator:
         }
         for media_id, item in media.items():
             if not (
-                item.get("mediaType") == "audio"
+                item.get("mediaType") in {"audio", "video"}
                 and item.get("storageType") == "external"
             ):
                 continue
@@ -877,7 +878,7 @@ class ExportValidator:
                 source = sources.get(source_id)
                 if source is not None:
                     supported_work_ids.update(source.get("workIds", []) or [])
-            if not supported_work_ids:
+            if not supported_work_ids and item.get("mediaType") == "audio":
                 continue
             unsupported = sorted(
                 set(item.get("workIds", []) or []) - supported_work_ids
@@ -908,6 +909,22 @@ class ExportValidator:
             self.errors.extend(reviewed_printed_number_errors(source))
         for media in self.payloads.get("Media", {}).get("records", []):
             self.errors.extend(reviewed_printed_number_errors(media))
+            if media.get("mediaType") == "video" and media.get("storageType") == "external":
+                linked_sources = set(media.get("sourceIds") or [])
+                production_organizations = {
+                    oid
+                    for credit in contributions
+                    if linked_sources.intersection(credit.get("sourceIds") or [])
+                    and credit.get("role") in {"production_company", "distributor"}
+                    for oid in (credit.get("organizationIds") or [])
+                }
+                for oid in media.get("organizationIds") or []:
+                    types = set(organizations_by_id.get(oid, {}).get("types") or [])
+                    if types == {"publisher"} and oid not in production_organizations:
+                        self.errors.append(
+                            f"Media {media['id']}: sheet-music publisher {oid} does not "
+                            "identify a source-supported video production or distribution role"
+                        )
             if not (
                 media.get("mediaType") == "audio"
                 and media.get("storageType") == "external"

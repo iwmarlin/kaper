@@ -32,6 +32,7 @@ from sheet_music_sources import normalize_sheet_music_source
 from source_access_dates import normalize_access_citation
 from source_slugs import canonical_source_slug
 from visual_sources import normalize_visual_source
+from video_sources import normalize_video_source
 
 
 def normalized_source(source: dict[str, Any]) -> dict[str, Any]:
@@ -52,6 +53,7 @@ def normalized_source(source: dict[str, Any]) -> dict[str, Any]:
         or result.get("id") in {"SRC0174", "SRC0602"}
     ):
         normalize_filmographic_source(result)
+    normalize_video_source(result)
     normalize_repository_name(result)
     if result.get("accessDate"):
         result["fullCitation"] = normalize_access_citation(

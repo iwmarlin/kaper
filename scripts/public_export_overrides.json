@@ -587,6 +587,236 @@
       }
     },
     "Sources": {
+      "SRC0683": {
+        "fields": {
+          "date": "1931",
+          "dateRole": "described_item",
+          "dateQualifier": "confirmed",
+          "sourceType": "online_video_source"
+        },
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips."
+      },
+      "SRC0682": {
+        "fields": {
+          "accessDate": "2026-10-26",
+          "researchNote": "The structured date follows Bundesarchiv’s Produktionsjahr, 1932, not an unspecified digitization or online-publication date. The technical record identifies an Ansichtsdatei, signature 60809, with German-language metadata and runtime 01:15:51. Its filmographic section names Jurmann, Kaper and Jung for music. The record documents this institutional access copy, not an independently certified uncut edition.",
+          "researchNoteType": "object_context",
+          "sourceType": "online_video_source"
+        },
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips."
+      },
+      "SRC0681": {
+        "fields": {
+          "accessDate": "2026-10-26",
+          "researchNote": "Bundesarchiv gives 1932 as Produktionsjahr and separately records censorship on 9 January 1933. The structured date follows the catalogue’s production year, not the later release context or an unspecified digitization/publication date. The technical record identifies an Ansichtsdatei, signature 26405, with runtime 01:16:00; this describes the institutional access copy, not an independently certified uncut edition.",
+          "researchNoteType": "object_context",
+          "sourceType": "online_video_source"
+        },
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips."
+      },
+      "SRC0325": {
+        "fields": {
+          "fullCitation": "filmportal.de / DFF. Kind, ich freu’ mich auf Dein Kommen (1933), opening excerpt, listed runtime 07:02. Digitized by Friedrich-Wilhelm-Murnau-Stiftung in 2022 under the Förderprogramm Filmerbe (FFE); posted 2024-05-10.",
+          "creator": "Friedrich-Wilhelm-Murnau-Stiftung; filmportal.de / DFF (access platform)",
+          "date": "2022",
+          "dateRole": "digitization",
+          "dateQualifier": "confirmed",
+          "accessDate": "2026-10-26",
+          "researchNote": "The structured date follows the explicitly stated digitization year 2022, not the historical film date or the separate website posting date 2024-05-10. Filmportal lists a runtime of 07:02; its generic description refers to the first five minutes of the film. This record identifies an opening excerpt, not the complete film or a separately verified performance of a particular song.",
+          "researchNoteType": "object_context",
+          "sourceType": "online_video_source"
+        },
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips."
+      },
+      "SRC0324": {
+        "fields": {
+          "fullCitation": "filmportal.de / DFF. Melodie der Liebe (1932), opening excerpt, listed runtime 08:31. Digitized by DFF – Deutsches Filminstitut & Filmmuseum in 2024 under the Förderprogramm Filmerbe (FFE); posted 2025-12-12.",
+          "creator": "DFF – Deutsches Filminstitut & Filmmuseum; filmportal.de / DFF (access platform)",
+          "date": "2024",
+          "dateRole": "digitization",
+          "dateQualifier": "confirmed",
+          "accessDate": "2026-10-26",
+          "researchNote": "The structured date follows the explicitly stated digitization year 2024, not the historical film date or the separate website posting date 2025-12-12. Filmportal lists a runtime of 08:31; its generic description refers to the first five minutes of the film. This record identifies an opening excerpt, not the complete film or a separately verified performance of a particular song.",
+          "researchNoteType": "object_context",
+          "sourceType": "online_video_source"
+        },
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips."
+      },
+      "SRC0323": {
+        "fields": {
+          "fullCitation": "filmportal.de / DFF. Ein toller Einfall (1932), opening excerpt, listed runtime 08:49. Digitized by Friedrich-Wilhelm-Murnau-Stiftung in 2023 under the Förderprogramm Filmerbe (FFE); posted 2025-10-16.",
+          "creator": "Friedrich-Wilhelm-Murnau-Stiftung; filmportal.de / DFF (access platform)",
+          "date": "2023",
+          "dateRole": "digitization",
+          "dateQualifier": "confirmed",
+          "accessDate": "2026-10-26",
+          "researchNote": "The structured date follows the explicitly stated digitization year 2023, not the historical film date or the separate website posting date 2025-10-16. Filmportal lists a runtime of 08:49; its generic description refers to the first five minutes of the film. This record identifies an opening excerpt, not the complete film or a separately verified performance of a particular song.",
+          "researchNoteType": "object_context",
+          "sourceType": "online_video_source"
+        },
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips."
+      },
+      "SRC0322": {
+        "fields": {
+          "fullCitation": "filmportal.de / DFF. Alraune (1929/1930), opening excerpt, listed runtime 06:58. Digitized by DFF – Deutsches Filminstitut & Filmmuseum in 2021 under the Förderprogramm Filmerbe (FFE); posted 2023-02-17.",
+          "creator": "DFF – Deutsches Filminstitut & Filmmuseum; filmportal.de / DFF (access platform)",
+          "date": "2021",
+          "dateRole": "digitization",
+          "dateQualifier": "confirmed",
+          "accessDate": "2026-10-26",
+          "researchNote": "The structured date follows the explicitly stated digitization year 2021, not the historical film date or the separate website posting date 2023-02-17. Filmportal lists a runtime of 06:58; its generic description refers to the first five minutes of the film. This record identifies an opening excerpt, not the complete film or a separately verified performance of a particular song.",
+          "researchNoteType": "object_context",
+          "sourceType": "online_video_source"
+        },
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips."
+      },
+      "SRC0809": {
+        "fields": {
+          "fullCitation": "“Down on Melody Farm.” Film excerpt attributed to Judy Garland in Everybody Sing (MGM, 1938). YouTube video, 3:41, published by TheJudyRoomVideos, 2022-02-13.",
+          "creator": "TheJudyRoomVideos (YouTube channel)",
+          "repository": "YouTube",
+          "publication": "YouTube",
+          "date": "2022-02-13",
+          "dateRole": "digital_publication",
+          "dateQualifier": "confirmed",
+          "accessDate": "2026-10-26",
+          "researchNote": "The video contains moving footage of Judy Garland’s number in Everybody Sing (1938). The uploader reports prerecording on 4 October 1937 and a premiere on 24 January 1938; those details are not substituted for the publication date of this digital copy. The structured date is YouTube publication.",
+          "researchNoteType": "evidence_note",
+          "sourceType": "online_video_source"
+        },
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips."
+      },
+      "SRC0791": {
+        "fields": {
+          "fullCitation": "“Du bist der Mann, der den Frauen gefällt” / “Ich suche einen, der mir allein gehört.” Excerpt from Ein toller Einfall (1932), attributed by the uploader to Willy Fritsch, Ellen Schwanneke and Rosy Barsony; music credited to Walter Jurmann and Bronislaw Kaper. YouTube video, 3:04, published by Alparfan, 2015-03-20.",
+          "creator": "Alparfan (YouTube channel)",
+          "repository": "YouTube",
+          "publication": "YouTube",
+          "date": "2015-03-20",
+          "dateRole": "digital_publication",
+          "dateQualifier": "confirmed",
+          "accessDate": "2026-10-26",
+          "researchNote": "The upload identifies Ein toller Einfall (1932) and names the passages “Du bist der Mann, der den Frauen gefällt” and “Ich suche einen, der mir allein gehört”, together with Willy Fritsch, Ellen Schwanneke and Rosy Barsony. The excerpt documents the answering title form retained for the existing song record; the uploader’s two passage titles do not by themselves establish two separate compositions. No individual vocal credit is inferred from the cast list or appearance alone. The structured date describes YouTube publication, not the film’s release.",
+          "researchNoteType": "evidence_note",
+          "sourceType": "online_video_source"
+        },
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips."
+      },
+      "SRC0733": {
+        "fields": {
+          "fullCitation": "“Adieu, es ist zu schön, um wahr zu sein.” Edited presentation of Alfred Piccaver and scenes attributed to Abenteuer am Lido (1933), compiled by Rádio Educativa Mensagem. YouTube video, 3:43, published by RADIOSANTOS (REM), 2017-10-29.",
+          "creator": "RADIOSANTOS (REM) (YouTube channel)",
+          "repository": "YouTube",
+          "publication": "YouTube",
+          "date": "2017-10-29",
+          "dateRole": "digital_publication",
+          "dateQualifier": "confirmed",
+          "accessDate": "2026-10-26",
+          "researchNote": "The upload combines moving film scenes, introductory graphics and a presentation attributed by Rádio Educativa Mensagem to Alfred Piccaver in Abenteuer am Lido (1933). It is an edited viewing reference, not a separately identified disc transfer or an unedited archival film copy. The structured date describes YouTube publication; 1933 dates the film context supplied by the uploader.",
+          "researchNoteType": "evidence_note",
+          "title": "Adieu, es ist zu schön, um wahr zu sein — Alfred Piccaver, edited video",
+          "sourceType": "online_video_source"
+        },
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips."
+      },
+      "SRC0555": {
+        "fields": {
+          "fullCitation": "“1930s Metro-Goldwyn-Mayer Studios.” Contextual montage; reel 7072, TC 07:28:38–07:28:59. YouTube video, 0:22, published by My Footage, 2010-06-03.",
+          "creator": "My Footage (YouTube channel)",
+          "repository": "YouTube",
+          "publication": "YouTube",
+          "date": "2010-06-03",
+          "dateRole": "digital_publication",
+          "dateQualifier": "confirmed",
+          "accessDate": "2026-10-26",
+          "researchNote": "The 22-second montage shows MGM studio footage and carries the supplier’s timecode and branding. My Footage identifies reel 7072, TC 07:28:38–07:28:59, and offers licensing; the licensing offer does not itself grant reuse permission. The footage is contextual material, not evidence for Kaper’s participation in a particular production. The structured date describes YouTube publication, not the date of each historical shot.",
+          "researchNoteType": "object_context",
+          "sourceType": "online_video_source"
+        },
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips."
+      },
+      "SRC0320": {
+        "fields": {
+          "fullCitation": "“All God’s Chillun Got Rhythm.” Musical-number excerpt from A Day at the Races (MGM, 1937). YouTube video, 3:28, published by Sunday Hop, 2024-12-29.",
+          "creator": "Sunday Hop (YouTube channel)",
+          "repository": "YouTube",
+          "publication": "YouTube",
+          "date": "2024-12-29",
+          "dateRole": "digital_publication",
+          "dateQualifier": "confirmed",
+          "accessDate": "2026-10-26",
+          "researchNote": "The upload contains moving footage of the musical number from A Day at the Races (1937). It is a film excerpt, not the Duke Ellington commercial recording documented separately in the archive. The structured date is the YouTube publication date; the historical film year remains part of the citation.",
+          "researchNoteType": "evidence_note",
+          "sourceType": "online_video_source"
+        },
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips."
+      },
+      "SRC0319": {
+        "fields": {
+          "fullCitation": "“San Francisco.” Edited film-excerpt presentation attributed to Jeanette MacDonald in San Francisco (MGM, 1936), with a soundtrack described by the uploader as restored and sweetened. YouTube video, 3:39, published by Allan Fisch, 2014-05-31.",
+          "creator": "Allan Fisch (YouTube channel)",
+          "repository": "YouTube",
+          "publication": "YouTube",
+          "date": "2014-05-31",
+          "dateRole": "digital_publication",
+          "dateQualifier": "confirmed",
+          "accessDate": "2026-10-26",
+          "researchNote": "The upload contains edited film footage with introductory credit text. The description explicitly says “Restored and sweetened soundtrack”; it is therefore not presented as an untouched copy of the original film soundtrack or a separately identified commercial recording. The title and description identify Jeanette MacDonald and San Francisco (1936). The structured date is YouTube publication.",
+          "researchNoteType": "evidence_note",
+          "sourceType": "online_video_source"
+        },
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips."
+      },
+      "SRC0317": {
+        "fields": {
+          "fullCitation": "Les nuits moscovites (1934), directed by Alexis Granowsky. Feature-length French film access copy with English subtitles. YouTube video, 93:39, published by Einstein-Stefan Encounters | Time Hopping Travel, 2021-11-21.",
+          "creator": "Einstein-Stefan Encounters | Time Hopping Travel (YouTube channel)",
+          "repository": "YouTube",
+          "publication": "YouTube",
+          "date": "2021-11-21",
+          "dateRole": "digital_publication",
+          "dateQualifier": "confirmed",
+          "accessDate": "2026-10-26",
+          "researchNote": "The opening titles and closing FIN frame identify a feature-length copy of the French Les nuits moscovites (1934), with English subtitles; the upload runs 1:33:39. The English upload title does not identify the separate English-language film Moscow Nights (1935). The presence of opening and closing titles does not establish that the access copy is uncut or complete against an archival reference print. The structured date describes YouTube publication.",
+          "researchNoteType": "evidence_note",
+          "title": "Les nuits moscovites (1934) — feature-length access copy, YouTube",
+          "shortCitation": "YouTube, Les nuits moscovites (1934), French film access copy",
+          "sourceType": "online_video_source"
+        },
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips."
+      },
+      "SRC0316": {
+        "fields": {
+          "fullCitation": "“Heut’ bin ich gut aufgelegt.” Film excerpt attributed to Willy Fritsch and Rosy Barsony in Ein toller Einfall (1932). YouTube video, 1:25, published by Alparfan, 2013-08-23.",
+          "creator": "Alparfan (YouTube channel)",
+          "repository": "YouTube",
+          "publication": "YouTube",
+          "date": "2013-08-23",
+          "dateRole": "digital_publication",
+          "dateQualifier": "confirmed",
+          "accessDate": "2026-10-26",
+          "researchNote": "The uploader identifies Ein toller Einfall (1932), Willy Fritsch and Rosy Barsony, and credits music to Kaper and Jurmann. Moving film footage is present. The structured date describes YouTube publication, not film production, a recording session or the original release.",
+          "researchNoteType": "evidence_note",
+          "sourceType": "online_video_source"
+        },
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips."
+      },
+      "SRC0315": {
+        "fields": {
+          "fullCitation": "“Wenn mich Männer betrügen.” Film excerpt attributed to Brigitte Helm in Alraune (1930). YouTube video, 2:28, published by D. Musikkoffer, 2025-01-23.",
+          "creator": "D. Musikkoffer (YouTube channel)",
+          "repository": "YouTube",
+          "publication": "YouTube",
+          "date": "2025-01-23",
+          "dateRole": "digital_publication",
+          "dateQualifier": "confirmed",
+          "accessDate": "2026-10-26",
+          "researchNote": "The upload shows moving film footage attributed to Alraune (1930), with Brigitte Helm identified in the title and description. The structured date is YouTube publication; 1930 identifies the film, not an independently dated recording session or this digital copy.",
+          "researchNoteType": "evidence_note",
+          "sourceType": "online_video_source"
+        },
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips."
+      },
       "SRC0745": {
         "fields": {
           "researchNote": "The description identifies Marek Weber mit seinem Tanz-Orchester, Siegfried Arno and Electrola, and gives 1930 without specifying recording or issue. It supplies no catalogue or matrix number. The separate discographic source SRC0743 documents Electrola EG 2135 A, matrix BD 9264-2, issued in January 1931; that entry does not identify the pressing or take reproduced in this upload. No claim that Arno made only one performance of the song is established here.",
@@ -2304,10 +2534,14 @@
         }
       },
       "SRC0010": {
-        "reason": "Keep the source citation bibliographic, record the PBS publication date rather than the 1933 subject date, and leave the video as general UFA context rather than evidence about Kaper personally.",
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips.",
         "fields": {
           "fullCitation": "PBS / WNET. “UFA Studios Fires Jewish Employees.” Cinema’s Exiles: From Hitler to Hollywood, online video, published 1 December 2008.",
-          "date": "2008-12-01"
+          "date": "2008-12-01",
+          "accessDate": "2026-10-26",
+          "researchNote": "The PBS/WNET page dates this contextual video to 1 December 2008. It concerns UFA’s dismissal of Jewish employees under Nazi pressure; the page does not identify Kaper as a depicted person or establish a specific employment or music credit for him.",
+          "researchNoteType": "object_context",
+          "sourceType": "online_video_source"
         }
       },
       "SRC0018": {
@@ -3098,9 +3332,14 @@
         }
       },
       "SRC0327": {
-        "reason": "Replace the obsolete VK platform label with the TCM access platform named by the structured URL and citation.",
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips.",
         "fields": {
-          "title": "Someone to Care for Me — Three Smart Girls, TCM clip"
+          "title": "Someone to Care for Me — Three Smart Girls, TCM clip",
+          "fullCitation": "Turner Classic Movies. Three Smart Girls (1936), film page with the four-minute movie clip “Someone To Care For Me”. The clip description names Deanna Durbin and credits Bronislau Kaper, Walter Jurmann and Gus Kahn.",
+          "accessDate": "2026-10-26",
+          "researchNote": "The linked TCM page contains a film record and several related clips, including “Someone To Care For Me” (4:00); it is not a direct link to a standalone audio recording. The structured year 1936 describes the film. The page can redirect to a regional-availability notice, so playback availability is not asserted here. No second Media listening reference is created from this page.",
+          "researchNoteType": "object_context",
+          "sourceType": "online_video_source"
         }
       },
       "SRC0093": {
@@ -5181,31 +5420,54 @@
         }
       },
       "SRC0314": {
-        "reason": "Twelve-source listening-reference review: primary metadata, visible labels and date semantics, 26 October 2026; preserve the stated evidence boundaries.",
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips.",
         "fields": {
           "date": "2019-03-29",
           "sourceType": "online_video_source",
           "title": "The Duchess Has a Twinkle in Her Eye — modern stage performance, YouTube",
           "shortCitation": "YouTube, “The Duchess Has a Twinkle in Her Eye” — stage performance",
-          "fullCitation": "“The Duchess Has a Twinkle in Her Eye.” Stage performance attributed to Christoph Wagner-Trenkwitz with Ensemble Albero Verde, in Die letzte Nacht at Theater und Kabarett “Die Hölle”, Theater an der Wien, 2014. Video published by jerzabinka on YouTube, 29 March 2019.",
+          "fullCitation": "“The Duchess Has a Twinkle in Her Eye.” Modern stage performance attributed to Christoph Wagner-Trenkwitz with Ensemble Albero Verde in Die letzte Nacht, Theater und Kabarett “Die Hölle”, Theater an der Wien, 2014. YouTube video, 1:51, published by jerzabinka, 2019-03-29.",
           "dateRole": "digital_publication",
           "dateQualifier": "confirmed",
           "accessDate": "2026-10-26",
           "sourceStatus": "verified_with_attribution_note",
-          "researchNote": "The video shows a staged live performance, not a historical film excerpt or an audio-only upload. Its description names Christoph Wagner-Trenkwitz and Ensemble Albero Verde and dates the production to 2014; those performance details are uploader-supplied. The structured date is the YouTube publication date, not the performance year or the 1935 date of the song’s film context, Kind Lady. The earlier claim that the upload did not identify the performers was incorrect. No new People records are created for this one-off modern performance.",
-          "researchNoteType": "object_context"
+          "researchNote": "The images show a modern staged performance, not a historical film excerpt from Kind Lady (1935). The uploader identifies Christoph Wagner-Trenkwitz and Ensemble Albero Verde and dates the production to 2014. The structured date identifies YouTube publication, not the performance or the song’s historical film context.",
+          "researchNoteType": "object_context",
+          "creator": "jerzabinka (YouTube channel)",
+          "repository": "YouTube",
+          "publication": "YouTube"
         }
       },
       "SRC0318": {
-        "reason": "Normalize the explanatory unknown-date phrase to the catalogue's standard n.d.",
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips.",
         "fields": {
-          "date": "n.d."
+          "date": "2013-07-27",
+          "fullCitation": "“Così, cosa.” Musical-number excerpt from A Night at the Opera (MGM, 1935); the upload title names Allan Jones, Chico Marx and Harpo Marx. YouTube video, 3:24, published by Asier Varela, 2013-07-27.",
+          "creator": "Asier Varela (YouTube channel)",
+          "repository": "YouTube",
+          "publication": "YouTube",
+          "dateRole": "digital_publication",
+          "dateQualifier": "confirmed",
+          "accessDate": "2026-10-26",
+          "researchNote": "The upload contains moving footage of the musical number from A Night at the Opera (1935); the uploader’s title identifies Allan Jones, Chico Marx and Harpo Marx. It is a film excerpt, not a separately identified commercial disc transfer. The structured date describes publication of this YouTube copy.",
+          "researchNoteType": "evidence_note",
+          "sourceType": "online_video_source"
         }
       },
       "SRC0321": {
-        "reason": "Normalize the explanatory unknown-date phrase to the catalogue's standard n.d.",
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips.",
         "fields": {
-          "date": "n.d."
+          "date": "2013-04-14",
+          "fullCitation": "“Swing, Mister Mendelssohn.” Film excerpt attributed to Judy Garland in Everybody Sing (MGM, 1938). YouTube video, 2:58, published by Ohujapaksu, 2013-04-14.",
+          "creator": "Ohujapaksu (YouTube channel)",
+          "repository": "YouTube",
+          "publication": "YouTube",
+          "dateRole": "digital_publication",
+          "dateQualifier": "confirmed",
+          "accessDate": "2026-10-26",
+          "researchNote": "The upload contains moving film footage and identifies Judy Garland and Everybody Sing (1938). The description’s additional choir attribution has not been independently verified here and is not used to create personnel credits. The structured date describes publication of this YouTube copy, not the film or its music sessions.",
+          "researchNoteType": "evidence_note",
+          "sourceType": "online_video_source"
         }
       },
       "SRC0331": {
@@ -5587,6 +5849,62 @@
       }
     },
     "Media": {
+      "M412": {
+        "fields": {
+          "description": "Viewing reference from Ein toller Einfall (1932), with the passages titled by the uploader “Du bist der Mann, der den Frauen gefällt” and “Ich suche einen, der mir allein gehört”. The uploader names Willy Fritsch, Ellen Schwanneke and Rosy Barsony; no line-by-line vocal assignment is asserted.",
+          "publicCaption": "Excerpt from Ein toller Einfall (1932) containing the answering form “Ich suche einen, der mir allein gehört”. The uploader also names “Du bist der Mann, der den Frauen gefällt” and identifies Willy Fritsch, Ellen Schwanneke and Rosy Barsony; these titles are not treated as independent proof of two separate compositions."
+        },
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips."
+      },
+      "M371": {
+        "fields": {
+          "description": "Edited viewing reference for “Adieu, es ist zu schön, um wahr zu sein”, attributed by Rádio Educativa Mensagem to Alfred Piccaver in Abenteuer am Lido (1933). The upload contains moving film scenes and introductory graphics, not a separately identified commercial disc transfer.",
+          "publicCaption": "Edited presentation of “Adieu, es ist zu schön, um wahr zu sein”, attributed to Alfred Piccaver in Abenteuer am Lido (1933). Published by RADIOSANTOS (REM) in 2017; it is not an unedited archival access copy.",
+          "altText": "Edited viewing reference for “Adieu, es ist zu schön, um wahr zu sein”."
+        },
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips."
+      },
+      "M027": {
+        "fields": {
+          "description": "Edited viewing reference for “San Francisco”, attributed by the uploader to Jeanette MacDonald in the MGM film San Francisco (1936). The upload contains film footage and describes its soundtrack as restored and sweetened.",
+          "publicCaption": "Edited film-excerpt presentation of “San Francisco” from San Francisco (MGM, 1936). The uploader identifies Jeanette MacDonald and describes a restored and sweetened soundtrack; this is not an untouched archival soundtrack copy."
+        },
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips."
+      },
+      "M022": {
+        "fields": {
+          "title": "Les nuits moscovites (1934) — feature-length access copy",
+          "description": "Feature-length French-language access copy of Les nuits moscovites (1934), with English subtitles, published on YouTube. Opening and closing titles are present; completeness against an archival reference print has not been established.",
+          "altText": "Feature-length access copy of the French film Les nuits moscovites (1934), with English subtitles.",
+          "publicCaption": "Feature-length access copy of Les nuits moscovites (1934), with English subtitles; upload runtime 1:33:39. It is not the separate English-language film Moscow Nights (1935), and is not presented as a certified uncut edition.",
+          "publicCreditLine": "Les nuits moscovites (1934), French film with English subtitles. YouTube upload by Einstein-Stefan Encounters | Time Hopping Travel."
+        },
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips."
+      },
+      "M020": {
+        "fields": {
+          "description": "Official opening excerpt from Kind, ich freu’ mich auf Dein Kommen (1933), hosted by filmportal.de / DFF. The page lists a runtime of 07:02 and credits digitization in 2022 to Friedrich-Wilhelm-Murnau-Stiftung.",
+          "publicCaption": "Opening excerpt from Kind, ich freu’ mich auf Dein Kommen (1933); listed runtime 07:02. Digitized in 2022 by Friedrich-Wilhelm-Murnau-Stiftung and posted by filmportal.de on 10 May 2024.",
+          "publicCreditLine": "filmportal.de / DFF, access platform; Friedrich-Wilhelm-Murnau-Stiftung, digitization source."
+        },
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips."
+      },
+      "M019": {
+        "fields": {
+          "description": "Official opening excerpt from Melodie der Liebe (1932), hosted by filmportal.de / DFF. The page lists a runtime of 08:31 and credits digitization in 2024 to DFF – Deutsches Filminstitut & Filmmuseum.",
+          "publicCaption": "Opening excerpt from Melodie der Liebe (1932); listed runtime 08:31. Digitized in 2024 by DFF – Deutsches Filminstitut & Filmmuseum and posted by filmportal.de on 12 December 2025.",
+          "publicCreditLine": "filmportal.de / DFF, access platform; DFF – Deutsches Filminstitut & Filmmuseum, digitization source."
+        },
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips."
+      },
+      "M018": {
+        "fields": {
+          "description": "Official opening excerpt from Ein toller Einfall (1932), hosted by filmportal.de / DFF. The page lists a runtime of 08:49 and credits digitization in 2023 to Friedrich-Wilhelm-Murnau-Stiftung.",
+          "publicCaption": "Opening excerpt from Ein toller Einfall (1932); listed runtime 08:49. Digitized in 2023 by Friedrich-Wilhelm-Murnau-Stiftung and posted by filmportal.de on 16 October 2025.",
+          "publicCreditLine": "filmportal.de / DFF, access platform; Friedrich-Wilhelm-Murnau-Stiftung, digitization source."
+        },
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips."
+      },
       "M388": {
         "fields": {
           "publicCaption": "Listening reference for “Signorina, ich liebe dich” by Tanz-Orchester Dajos Béla, with Luigi Bernauer, credited on the label as Fred Lustig. The filmed label identifies Odeon O-11768 b, matrix Be 10147, and names Walter Jurmann and B. Kaper for music and Ernst Marischka for words. The issue year remains disputed."
@@ -6189,9 +6507,11 @@
         }
       },
       "M016": {
-        "reason": "Synchronize the contextual Alraune description with the corrected canonical song title.",
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips.",
         "fields": {
-          "description": "Early sound film directed by Richard Oswald, featuring music by Bronisław Kaper, including the tango “Wenn mich Männer betrügen” performed by Brigitte Helm. Filmportal.de provides the opening five-minute excerpt, digitized in 2021 as part of the Förderprogramm Filmerbe (FFE)."
+          "description": "Official opening excerpt from Alraune (1929/1930), hosted by filmportal.de / DFF. The page lists a runtime of 06:58 and credits digitization in 2021 to DFF – Deutsches Filminstitut & Filmmuseum.",
+          "publicCaption": "Opening excerpt from Alraune (1929/1930); listed runtime 06:58. Digitized in 2021 by DFF – Deutsches Filminstitut & Filmmuseum and posted by filmportal.de on 17 February 2023.",
+          "publicCreditLine": "filmportal.de / DFF, access platform; DFF – Deutsches Filminstitut & Filmmuseum, digitization source."
         }
       },
       "M001": {
@@ -16241,12 +16561,13 @@
         }
       },
       "ORG001": {
-        "reason": "Preserve MGM as the documented distributor of the animated Little Boy Blue, keep production with Celebrity Productions–P.A. Powers, and synchronize its inverse links, including the copyright claim on Dairy-maid Song.",
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips.",
         "fields": {
           "sourceIds": [
             "SRC0373",
             "SRC0530",
-            "SRC0587"
+            "SRC0587",
+            "SRC0555"
           ],
           "contributionIds": [
             "CON-F052-DIST-ORG001"
@@ -17279,6 +17600,115 @@
       "O012": {"reason": "Attach the surviving Fiesta score headed Ein neuer Cocktail.", "fields": {"sourceIds": ["SRC0789"]}}
     },
     "Works": {
+      "W-S161": {
+        "fields": {
+          "sourceIds": [
+            "SRC0809"
+          ],
+          "mediaIds": [
+            "M424"
+          ]
+        },
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips."
+      },
+      "W-S052": {
+        "fields": {
+          "sourceIds": [
+            "SRC0791"
+          ],
+          "mediaIds": [
+            "M412"
+          ]
+        },
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips."
+      },
+      "W-S133": {
+        "fields": {
+          "sourceIds": [
+            "SRC0327"
+          ]
+        },
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips."
+      },
+      "W-S157": {
+        "fields": {
+          "sourceIds": [
+            "SRC0321"
+          ],
+          "mediaIds": [
+            "M029"
+          ]
+        },
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips."
+      },
+      "W-S130": {
+        "fields": {
+          "sourceIds": [
+            "SRC0319"
+          ],
+          "mediaIds": [
+            "M027"
+          ]
+        },
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips."
+      },
+      "W-S118": {
+        "fields": {
+          "sourceIds": [
+            "SRC0318"
+          ],
+          "mediaIds": [
+            "M025"
+          ]
+        },
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips."
+      },
+      "W-S104": {
+        "fields": {
+          "sourceIds": [
+            "SRC0317"
+          ],
+          "mediaIds": [
+            "M022"
+          ]
+        },
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips."
+      },
+      "W-S053": {
+        "fields": {
+          "sourceIds": [
+            "SRC0316"
+          ],
+          "mediaIds": [
+            "M017"
+          ]
+        },
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips."
+      },
+      "W-S015": {
+        "fields": {
+          "sourceIds": [
+            "SRC0315"
+          ],
+          "mediaIds": [
+            "M015"
+          ]
+        },
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips."
+      },
+      "W-F002": {
+        "fields": {
+          "sourceIds": [
+            "SRC0315",
+            "SRC0322"
+          ],
+          "mediaIds": [
+            "M015",
+            "M016"
+          ]
+        },
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips."
+      },
       "W-S001": {
         "fields": {
           "sourceIds": [
@@ -17299,9 +17729,12 @@
         "fields": {
           "sourceIds": [
             "SRC0314"
+          ],
+          "mediaIds": [
+            "M009"
           ]
         },
-        "reason": "Twelve-source listening-reference review, 26 October 2026; add only relationships directly supported by the inspected source."
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips."
       },
       "W-S060": {
         "reason": "Separate the documented German Gloria G.O. 10303 issue from the D 4431 transfer; shared matrix Bi 644 does not establish the latter’s issuing label.",
@@ -17342,10 +17775,16 @@
         }
       },
       "W-S074": {
-        "reason": "Replace the excluded legacy Dacapo publisher contribution with its corrected stable identifier.",
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips.",
         "fields": {
           "contributionIds": [
             "CON-S074-PUB-ORG113"
+          ],
+          "sourceIds": [
+            "SRC0733"
+          ],
+          "mediaIds": [
+            "M371"
           ]
         }
       },
@@ -17385,11 +17824,14 @@
         }
       },
       "W-F024": {
-        "reason": "Attach the Filmportal/DFF opening excerpt source to the film it documents; the separately catalogued song retains its own bibliographic sources.",
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips.",
         "fields": {
           "sourceIds": [
             "SRC0325",
             "SRC0491"
+          ],
+          "mediaIds": [
+            "M020"
           ]
         }
       },
@@ -17477,18 +17919,22 @@
         }
       },
       "W-F011": {
-        "reason": "Attach the corrected film programme and Walter Jurmann's source-specific composer contribution while preserving the distinction between Filmportal's individual film credits and the catalogue's jointly composed songs.",
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips.",
         "fields": {
           "sourceIds": [
-            "SRC0424"
+            "SRC0424",
+            "SRC0324"
           ],
           "contributionIds": [
             "CON-F011-C-P077"
+          ],
+          "mediaIds": [
+            "M019"
           ]
         }
       },
       "W-F013": {
-        "reason": "Attach the verified Friedrich Jung and Walter Jurmann music contributions, the official Jurmann catalogue, and the Bundesarchiv full-film source and external access medium to Die Zwei vom Südexpreß.",
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips.",
         "fields": {
           "sourceIds": [
             "SRC0306",
@@ -17547,7 +17993,7 @@
         }
       },
       "W-F007": {
-        "reason": "Attach Walter Jurmann's confirmed music contribution, the Bundesarchiv full-film source and the contemporary production notice to Die große Attraktion.",
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips.",
         "fields": {
           "sourceIds": [
             "SRC0683",
@@ -17573,10 +18019,20 @@
         }
       },
       "W-F012": {
-        "reason": "Attach Walter Jurmann's confirmed co-composer contribution to Ein toller Einfall.",
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips.",
         "fields": {
           "contributionIds": [
             "CON-F012-C-P077"
+          ],
+          "sourceIds": [
+            "SRC0316",
+            "SRC0323",
+            "SRC0791"
+          ],
+          "mediaIds": [
+            "M017",
+            "M018",
+            "M412"
           ]
         }
       },
@@ -17605,7 +18061,7 @@
         }
       },
       "W-F020": {
-        "reason": "Connect Madame ne veut pas d'enfants to the Bundesarchiv full-film source and its external institutional access medium.",
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips.",
         "fields": {
           "sourceIds": [
             "SRC0681"
@@ -17649,14 +18105,18 @@
         }
       },
       "W-F026": {
-        "reason": "Attach Walter Jurmann's confirmed co-composer contribution, the official Jurmann catalogue and the canonical Mein Film advertisement to Abenteuer am Lido.",
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips.",
         "fields": {
           "sourceIds": [
             "SRC0306",
-            "SRC0031"
+            "SRC0031",
+            "SRC0733"
           ],
           "contributionIds": [
             "CON-F026-C-P077"
+          ],
+          "mediaIds": [
+            "M371"
           ]
         }
       },
@@ -17758,13 +18218,17 @@
         }
       },
       "W-F031": {
-        "reason": "Attach Walter Jurmann's confirmed co-composer contribution and the official Jurmann catalogue to Les nuits moscovites.",
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips.",
         "fields": {
           "sourceIds": [
-            "SRC0306"
+            "SRC0306",
+            "SRC0317"
           ],
           "contributionIds": [
             "CON-F031-C-P077"
+          ],
+          "mediaIds": [
+            "M022"
           ]
         }
       },
@@ -17836,13 +18300,17 @@
         }
       },
       "W-F036": {
-        "reason": "Attach Walter Jurmann's documented songwriting contribution for A Night at the Opera without presenting him as composer of the complete film score.",
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips.",
         "fields": {
           "sourceIds": [
-            "SRC0230"
+            "SRC0230",
+            "SRC0318"
           ],
           "contributionIds": [
             "CON-F036-SW-P077"
+          ],
+          "mediaIds": [
+            "M025"
           ]
         }
       },
@@ -17898,7 +18366,7 @@
         }
       },
       "W-F042": {
-        "reason": "Attach Walter Jurmann's documented music contribution and Joseph Pasternak's AFI-documented associate-producer credit to the work record.",
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips.",
         "fields": {
           "contributionIds": [
             "CON-F042-C-P077",
@@ -17906,14 +18374,23 @@
           ],
           "personIds": [
             "P163"
+          ],
+          "sourceIds": [
+            "SRC0327"
           ]
         }
       },
       "W-F043": {
-        "reason": "Attach Walter Jurmann's existing documented contribution to the work record.",
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips.",
         "fields": {
           "contributionIds": [
             "CON-F043-C-P077"
+          ],
+          "sourceIds": [
+            "SRC0319"
+          ],
+          "mediaIds": [
+            "M027"
           ]
         }
       },
@@ -17934,13 +18411,19 @@
         }
       },
       "W-F046": {
-        "reason": "Attach Walter Jurmann's existing documented contribution and synchronize the inverse work-to-event link already documented by TE0054.",
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips.",
         "fields": {
           "contributionIds": [
             "CON-F046-C-P077"
           ],
           "timelineEventIds": [
             "TE0054"
+          ],
+          "sourceIds": [
+            "SRC0320"
+          ],
+          "mediaIds": [
+            "M028"
           ]
         }
       },
@@ -17953,13 +18436,21 @@
         }
       },
       "W-F048": {
-        "reason": "Attach Walter Jurmann's existing documented contribution and synchronize Everybody Sing with the source-defined 1937–1938 timeline event.",
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips.",
         "fields": {
           "contributionIds": [
             "CON-F048-C-P077"
           ],
           "timelineEventIds": [
             "TE0040"
+          ],
+          "sourceIds": [
+            "SRC0321",
+            "SRC0809"
+          ],
+          "mediaIds": [
+            "M029",
+            "M424"
           ]
         }
       },
@@ -17999,16 +18490,20 @@
         }
       },
       "W-S152": {
-        "reason": "Synchronize the event link and the AFI-supported reuse of the song in Birthright.",
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips.",
         "fields": {
           "timelineEventIds": [
             "TE0054"
           ],
           "sourceIds": [
-            "SRC0146"
+            "SRC0146",
+            "SRC0320"
           ],
           "relationIds": [
             "REL0201"
+          ],
+          "mediaIds": [
+            "M028"
           ]
         }
       },
@@ -18085,6 +18580,74 @@
       }
     },
     "Films": {
+      "F042": {
+        "fields": {
+          "sourceIds": [
+            "SRC0327"
+          ]
+        },
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips."
+      },
+      "F048": {
+        "fields": {
+          "sourceIds": [
+            "SRC0321",
+            "SRC0809"
+          ]
+        },
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips."
+      },
+      "F046": {
+        "fields": {
+          "sourceIds": [
+            "SRC0320"
+          ]
+        },
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips."
+      },
+      "F043": {
+        "fields": {
+          "sourceIds": [
+            "SRC0319"
+          ]
+        },
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips."
+      },
+      "F036": {
+        "fields": {
+          "sourceIds": [
+            "SRC0318"
+          ]
+        },
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips."
+      },
+      "F031": {
+        "fields": {
+          "sourceIds": [
+            "SRC0317"
+          ]
+        },
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips."
+      },
+      "F012": {
+        "fields": {
+          "sourceIds": [
+            "SRC0316",
+            "SRC0323",
+            "SRC0791"
+          ]
+        },
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips."
+      },
+      "F002": {
+        "fields": {
+          "sourceIds": [
+            "SRC0315",
+            "SRC0322"
+          ]
+        },
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips."
+      },
       "F001": {
         "reason": "Synchronize the film-level record with the verified Laubenkolonie premiere advertisement.",
         "fields": {"sourceIds": ["SRC0449"]}
@@ -18102,8 +18665,13 @@
         "fields": {"sourceIds": ["SRC0333"]}
       },
       "F011": {
-        "reason": "Synchronize the film-level record with the corrected Illustrierter Film-Kurier programme for Melodie der Liebe.",
-        "fields": {"sourceIds": ["SRC0424"]}
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips.",
+        "fields": {
+          "sourceIds": [
+            "SRC0424",
+            "SRC0324"
+          ]
+        }
       },
       "F034": {
         "reason": "Synchronize Mutiny on the Bounty with the verified Love Song of Tahiti advertisement.",
@@ -18114,15 +18682,16 @@
         "fields": {"sourceIds": ["SRC0045"]}
       },
       "F026": {
-        "reason": "Attach the exactly dated canonical Mein Film advertisement source to the corresponding Film record.",
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips.",
         "fields": {
           "sourceIds": [
-            "SRC0031"
+            "SRC0031",
+            "SRC0733"
           ]
         }
       },
       "F024": {
-        "reason": "Attach the Filmportal/DFF opening excerpt source to the corresponding Film record.",
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips.",
         "fields": {
           "sourceIds": [
             "SRC0325"
@@ -18130,7 +18699,7 @@
         }
       },
       "F007": {
-        "reason": "Connect the Film record to the Bundesarchiv full-film source and contemporary production notice for Die große Attraktion.",
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips.",
         "fields": {
           "sourceIds": [
             "SRC0683",
@@ -18147,7 +18716,7 @@
         }
       },
       "F013": {
-        "reason": "Add the official Walter Jurmann catalogue and the Bundesarchiv full-film record as sources documenting the music credits for Die Zwei vom Südexpreß.",
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips.",
         "fields": {
           "sourceIds": [
             "SRC0306",
@@ -18180,7 +18749,7 @@
         }
       },
       "F020": {
-        "reason": "Connect the Film record to the Bundesarchiv full-film source while retaining the catalogue's 1933 release-year convention and the archive's 1932 production year in the source citation.",
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips.",
         "fields": {
           "sourceIds": [
             "SRC0681"
@@ -18189,6 +18758,86 @@
       }
     },
     "Songs": {
+      "S161": {
+        "fields": {
+          "sourceIds": [
+            "SRC0809"
+          ]
+        },
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips."
+      },
+      "S052": {
+        "fields": {
+          "sourceIds": [
+            "SRC0791"
+          ]
+        },
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips."
+      },
+      "S074": {
+        "fields": {
+          "sourceIds": [
+            "SRC0733"
+          ]
+        },
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips."
+      },
+      "S133": {
+        "fields": {
+          "sourceIds": [
+            "SRC0327"
+          ]
+        },
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips."
+      },
+      "S157": {
+        "fields": {
+          "sourceIds": [
+            "SRC0321"
+          ]
+        },
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips."
+      },
+      "S152": {
+        "fields": {
+          "sourceIds": [
+            "SRC0320"
+          ]
+        },
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips."
+      },
+      "S118": {
+        "fields": {
+          "sourceIds": [
+            "SRC0318"
+          ]
+        },
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips."
+      },
+      "S104": {
+        "fields": {
+          "sourceIds": [
+            "SRC0317"
+          ]
+        },
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips."
+      },
+      "S053": {
+        "fields": {
+          "sourceIds": [
+            "SRC0316"
+          ]
+        },
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips."
+      },
+      "S015": {
+        "fields": {
+          "sourceIds": [
+            "SRC0315"
+          ]
+        },
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips."
+      },
       "S001": {
         "fields": {
           "sourceIds": [
@@ -18211,7 +18860,7 @@
             "SRC0314"
           ]
         },
-        "reason": "Twelve-source listening-reference review, 26 October 2026; add only relationships directly supported by the inspected source."
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips."
       },
       "S060": {
         "reason": "Separate the documented German Gloria G.O. 10303 issue from the D 4431 transfer; shared matrix Bi 644 does not establish the latter’s issuing label.",
@@ -18261,10 +18910,11 @@
         }
       },
       "S130": {
-        "reason": "Link San Francisco to the AFI film record, which explicitly names the title song, its writers and Jeanette MacDonald's performance.",
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips.",
         "fields": {
           "sourceIds": [
-            "SRC0144"
+            "SRC0144",
+            "SRC0319"
           ]
         }
       },
@@ -18400,6 +19050,142 @@
       }
     },
     "Media": {
+      "M424": {
+        "fields": {
+          "workIds": [
+            "W-F048",
+            "W-S161"
+          ]
+        },
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips."
+      },
+      "M412": {
+        "fields": {
+          "workIds": [
+            "W-F012",
+            "W-S052"
+          ]
+        },
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips."
+      },
+      "M371": {
+        "fields": {
+          "workIds": [
+            "W-F026",
+            "W-S074"
+          ]
+        },
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips."
+      },
+      "M328": {
+        "fields": {
+          "workIds": [
+            "W-F007"
+          ]
+        },
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips."
+      },
+      "M327": {
+        "fields": {
+          "workIds": [
+            "W-F013"
+          ]
+        },
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips."
+      },
+      "M326": {
+        "fields": {
+          "workIds": [
+            "W-F020"
+          ]
+        },
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips."
+      },
+      "M020": {
+        "fields": {
+          "workIds": [
+            "W-F024"
+          ]
+        },
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips."
+      },
+      "M019": {
+        "fields": {
+          "workIds": [
+            "W-F011"
+          ]
+        },
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips."
+      },
+      "M018": {
+        "fields": {
+          "workIds": [
+            "W-F012"
+          ]
+        },
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips."
+      },
+      "M016": {
+        "fields": {
+          "workIds": [
+            "W-F002"
+          ]
+        },
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips."
+      },
+      "M028": {
+        "fields": {
+          "workIds": [
+            "W-F046",
+            "W-S152"
+          ]
+        },
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips."
+      },
+      "M025": {
+        "fields": {
+          "workIds": [
+            "W-F036",
+            "W-S118"
+          ]
+        },
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips."
+      },
+      "M022": {
+        "fields": {
+          "workIds": [
+            "W-F031",
+            "W-S104"
+          ]
+        },
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips."
+      },
+      "M017": {
+        "fields": {
+          "workIds": [
+            "W-F012",
+            "W-S053"
+          ]
+        },
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips."
+      },
+      "M015": {
+        "fields": {
+          "workIds": [
+            "W-F002",
+            "W-S015"
+          ]
+        },
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips."
+      },
+      "M009": {
+        "fields": {
+          "workIds": [
+            "W-S120"
+          ]
+        },
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips."
+      },
       "M374": {
         "fields": {
           "organizationIds": [
@@ -18546,10 +19332,11 @@
         }
       },
       "M027": {
-        "reason": "Link the San Francisco film-excerpt and listening reference symmetrically to the title song it documents, in addition to the film.",
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips.",
         "fields": {
           "workIds": [
-            "W-S130"
+            "W-S130",
+            "W-F043"
           ],
           "songIds": [
             "S130"
@@ -18557,10 +19344,11 @@
         }
       },
       "M029": {
-        "reason": "Link the Swing Mister Mendelssohn listening reference symmetrically to the song it documents.",
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips.",
         "fields": {
           "workIds": [
-            "W-S157"
+            "W-S157",
+            "W-F048"
           ],
           "songIds": [
             "S157"
@@ -19580,6 +20368,207 @@
       }
     },
     "Sources": {
+      "SRC0809": {
+        "fields": {
+          "workIds": [
+            "W-F048",
+            "W-S161"
+          ],
+          "filmIds": [
+            "F048"
+          ],
+          "songIds": [
+            "S161"
+          ]
+        },
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips."
+      },
+      "SRC0791": {
+        "fields": {
+          "workIds": [
+            "W-F012",
+            "W-S052"
+          ],
+          "filmIds": [
+            "F012"
+          ],
+          "songIds": [
+            "S052"
+          ]
+        },
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips."
+      },
+      "SRC0733": {
+        "fields": {
+          "workIds": [
+            "W-F026",
+            "W-S074"
+          ],
+          "filmIds": [
+            "F026"
+          ],
+          "songIds": [
+            "S074"
+          ]
+        },
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips."
+      },
+      "SRC0683": {
+        "fields": {
+          "workIds": [
+            "W-F007"
+          ],
+          "filmIds": [
+            "F007"
+          ]
+        },
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips."
+      },
+      "SRC0682": {
+        "fields": {
+          "workIds": [
+            "W-F013"
+          ],
+          "filmIds": [
+            "F013"
+          ]
+        },
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips."
+      },
+      "SRC0681": {
+        "fields": {
+          "workIds": [
+            "W-F020"
+          ],
+          "filmIds": [
+            "F020"
+          ]
+        },
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips."
+      },
+      "SRC0327": {
+        "fields": {
+          "workIds": [
+            "W-F042",
+            "W-S133"
+          ],
+          "filmIds": [
+            "F042"
+          ],
+          "songIds": [
+            "S133"
+          ]
+        },
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips."
+      },
+      "SRC0324": {
+        "fields": {
+          "workIds": [
+            "W-F011"
+          ],
+          "filmIds": [
+            "F011"
+          ]
+        },
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips."
+      },
+      "SRC0323": {
+        "fields": {
+          "workIds": [
+            "W-F012"
+          ],
+          "filmIds": [
+            "F012"
+          ]
+        },
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips."
+      },
+      "SRC0322": {
+        "fields": {
+          "workIds": [
+            "W-F002"
+          ],
+          "filmIds": [
+            "F002"
+          ]
+        },
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips."
+      },
+      "SRC0320": {
+        "fields": {
+          "workIds": [
+            "W-F046",
+            "W-S152"
+          ],
+          "filmIds": [
+            "F046"
+          ],
+          "songIds": [
+            "S152"
+          ]
+        },
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips."
+      },
+      "SRC0318": {
+        "fields": {
+          "workIds": [
+            "W-F036",
+            "W-S118"
+          ],
+          "filmIds": [
+            "F036"
+          ],
+          "songIds": [
+            "S118"
+          ]
+        },
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips."
+      },
+      "SRC0317": {
+        "fields": {
+          "workIds": [
+            "W-F031",
+            "W-S104"
+          ],
+          "filmIds": [
+            "F031"
+          ],
+          "songIds": [
+            "S104"
+          ]
+        },
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips."
+      },
+      "SRC0316": {
+        "fields": {
+          "workIds": [
+            "W-F012",
+            "W-S053"
+          ],
+          "filmIds": [
+            "F012"
+          ],
+          "songIds": [
+            "S053"
+          ]
+        },
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips."
+      },
+      "SRC0315": {
+        "fields": {
+          "workIds": [
+            "W-F002",
+            "W-S015"
+          ],
+          "filmIds": [
+            "F002"
+          ],
+          "songIds": [
+            "S015"
+          ]
+        },
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips."
+      },
       "SRC0705": {
         "fields": {
           "organizationIds": [
@@ -19638,7 +20627,7 @@
             "S120"
           ]
         },
-        "reason": "Twelve-source listening-reference review, 26 October 2026; add only relationships directly supported by the inspected source."
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips."
       },
       "SRC0761": {
         "fields": {
@@ -19913,7 +20902,15 @@
       "SRC0542": {"reason": "Link the source to USC Libraries, identified in its structured repository field.", "fields": {"organizationIds": ["ORG080"]}},
       "SRC0548": {"reason": "Link the authority source to Deutsche Nationalbibliothek, identified in its structured repository field.", "fields": {"organizationIds": ["ORG074"]}},
       "SRC0549": {"reason": "Link the source to the Bibliothèque nationale de France, identified in its structured repository field.", "fields": {"organizationIds": ["ORG062"]}},
-      "SRC0555": {"reason": "Link the source to YouTube, explicitly identified in its structured repository field.", "fields": {"organizationIds": ["ORG093"]}},
+      "SRC0555": {
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips.",
+        "fields": {
+          "organizationIds": [
+            "ORG093",
+            "ORG001"
+          ]
+        }
+      },
       "SRC0583": {"reason": "Link the authority source to Deutsche Nationalbibliothek, identified in its structured repository field.", "fields": {"organizationIds": ["ORG074"]}},
       "SRC0593": {"reason": "Link the source to the Bibliothèque nationale de France, identified in its structured repository field.", "fields": {"organizationIds": ["ORG062"]}},
       "SRC0604": {"reason": "Link the source to Internet Archive, identified in its structured repository field.", "fields": {"organizationIds": ["ORG067"]}},
@@ -19988,7 +20985,7 @@
         }
       },
       "SRC0325": {
-        "reason": "Model the Filmportal/DFF opening excerpt as documentation of the film W-F024 / F024, not of the separately catalogued song W-S086.",
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips.",
         "fields": {
           "workIds": [
             "W-F024"
@@ -21466,18 +22463,38 @@
         }
       },
       "SRC0321": {
-        "reason": "Synchronize Judy Garland's inverse link to the documented Swing Mister Mendelssohn performance source already exposed on her person record.",
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips.",
         "fields": {
           "personIds": [
             "P138"
+          ],
+          "workIds": [
+            "W-F048",
+            "W-S157"
+          ],
+          "filmIds": [
+            "F048"
+          ],
+          "songIds": [
+            "S157"
           ]
         }
       },
       "SRC0319": {
-        "reason": "Synchronize Jeanette MacDonald's inverse link to the documented San Francisco performance source already exposed on her person record.",
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips.",
         "fields": {
           "personIds": [
             "P139"
+          ],
+          "workIds": [
+            "W-F043",
+            "W-S130"
+          ],
+          "filmIds": [
+            "F043"
+          ],
+          "songIds": [
+            "S130"
           ]
         }
       },
@@ -21563,6 +22580,54 @@
   },
   "linkRemovals": {
     "Media": {
+      "M412": {
+        "fields": {
+          "organizationIds": [
+            "ORG036"
+          ]
+        },
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips."
+      },
+      "M028": {
+        "fields": {
+          "organizationIds": [
+            "ORG035"
+          ]
+        },
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips."
+      },
+      "M025": {
+        "fields": {
+          "organizationIds": [
+            "ORG035"
+          ]
+        },
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips."
+      },
+      "M022": {
+        "fields": {
+          "organizationIds": [
+            "ORG030"
+          ]
+        },
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips."
+      },
+      "M017": {
+        "fields": {
+          "organizationIds": [
+            "ORG036"
+          ]
+        },
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips."
+      },
+      "M015": {
+        "fields": {
+          "organizationIds": [
+            "ORG033"
+          ]
+        },
+        "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips."
+      },
       "M409": {
         "reason": "Separate the documented German Gloria G.O. 10303 issue from the D 4431 transfer; shared matrix Bi 644 does not establish the latter’s issuing label.",
         "fields": {

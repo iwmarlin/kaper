@@ -476,7 +476,7 @@
       "dateRole": "digital_publication",
       "dateQualifier": "confirmed",
       "date": "2008-12-01",
-      "accessDate": "2026-07-13",
+      "accessDate": "2026-10-26",
       "reliability": "high",
       "sourceStatus": "verified",
       "slug": "src0010-pbs-ufa-studios-fires-jewish-employees",
@@ -486,7 +486,9 @@
       "mediaIds": [
         "M023"
       ],
-      "primaryUrl": "https://www.pbs.org/wnet/cinemasexiles/video/video-exclusive-ufa-studios-fires-jewish-employees/64/"
+      "primaryUrl": "https://www.pbs.org/wnet/cinemasexiles/video/video-exclusive-ufa-studios-fires-jewish-employees/64/",
+      "researchNote": "The PBS/WNET page dates this contextual video to 1 December 2008. It concerns UFA’s dismissal of Jewish employees under Nazi pressure; the page does not identify Kaper as a depicted person or establish a specific employment or music credit for him.",
+      "researchNoteType": "object_context"
     },
     {
       "id": "SRC0012",
@@ -12075,7 +12077,7 @@
     {
       "id": "SRC0314",
       "shortCitation": "YouTube, “The Duchess Has a Twinkle in Her Eye” — stage performance",
-      "fullCitation": "“The Duchess Has a Twinkle in Her Eye.” Stage performance attributed to Christoph Wagner-Trenkwitz with Ensemble Albero Verde, in Die letzte Nacht at Theater und Kabarett “Die Hölle”, Theater an der Wien, 2014. Video published by jerzabinka on YouTube, 29 March 2019.",
+      "fullCitation": "“The Duchess Has a Twinkle in Her Eye.” Modern stage performance attributed to Christoph Wagner-Trenkwitz with Ensemble Albero Verde in Die letzte Nacht, Theater und Kabarett “Die Hölle”, Theater an der Wien, 2014. YouTube video, 1:51, published by jerzabinka, 2019-03-29.",
       "sourceType": "online_video_source",
       "title": "The Duchess Has a Twinkle in Her Eye — modern stage performance, YouTube",
       "creator": "jerzabinka (YouTube channel)",
@@ -12095,7 +12097,7 @@
       ],
       "primaryUrl": "https://www.youtube.com/watch?v=gePgVM7uIIQ",
       "date": "2019-03-29",
-      "researchNote": "The video shows a staged live performance, not a historical film excerpt or an audio-only upload. Its description names Christoph Wagner-Trenkwitz and Ensemble Albero Verde and dates the production to 2014; those performance details are uploader-supplied. The structured date is the YouTube publication date, not the performance year or the 1935 date of the song’s film context, Kind Lady. The earlier claim that the upload did not identify the performers was incorrect. No new People records are created for this one-off modern performance.",
+      "researchNote": "The images show a modern staged performance, not a historical film excerpt from Kind Lady (1935). The uploader identifies Christoph Wagner-Trenkwitz and Ensemble Albero Verde and dates the production to 2014. The structured date identifies YouTube publication, not the performance or the song’s historical film context.",
       "researchNoteType": "object_context",
       "workIds": [
         "W-S120"
@@ -12107,16 +12109,16 @@
     {
       "id": "SRC0315",
       "shortCitation": "YouTube, “WENN MICH MÄNNER BETRÜGEN - BRIGITTE HELM IN ‘ALRAUNE’ (1930)”",
-      "fullCitation": "D. Musikkoffer, uploader. “WENN MICH MÄNNER BETRÜGEN - BRIGITTE HELM IN ‘ALRAUNE’ (1930).” YouTube video.",
+      "fullCitation": "“Wenn mich Männer betrügen.” Film excerpt attributed to Brigitte Helm in Alraune (1930). YouTube video, 2:28, published by D. Musikkoffer, 2025-01-23.",
       "sourceType": "online_video_source",
       "title": "Wenn mich Männer betrügen — Brigitte Helm in Alraune, YouTube",
       "creator": "D. Musikkoffer (YouTube channel)",
       "repository": "YouTube",
       "publication": "YouTube",
-      "date": "1930",
-      "dateRole": "described_item",
+      "date": "2025-01-23",
+      "dateRole": "digital_publication",
       "dateQualifier": "confirmed",
-      "accessDate": "2026-06-15",
+      "accessDate": "2026-10-26",
       "reliability": "low",
       "sourceStatus": "verified",
       "slug": "src0315-youtube-wenn-mich-maenner-betruegen-alraune-1930",
@@ -12126,21 +12128,33 @@
       "mediaIds": [
         "M015"
       ],
-      "primaryUrl": "https://www.youtube.com/watch?v=2OP5AikZuxs"
+      "primaryUrl": "https://www.youtube.com/watch?v=2OP5AikZuxs",
+      "researchNote": "The upload shows moving film footage attributed to Alraune (1930), with Brigitte Helm identified in the title and description. The structured date is YouTube publication; 1930 identifies the film, not an independently dated recording session or this digital copy.",
+      "researchNoteType": "evidence_note",
+      "workIds": [
+        "W-F002",
+        "W-S015"
+      ],
+      "filmIds": [
+        "F002"
+      ],
+      "songIds": [
+        "S015"
+      ]
     },
     {
       "id": "SRC0316",
       "shortCitation": "YouTube, “Willy Fritsch & Rosy Barsony - ‘Heut bin ich gut aufgelegt’ (Filmausschnitt 1932)”",
-      "fullCitation": "Alparfan, uploader. “Willy Fritsch & Rosy Barsony - ‘Heut bin ich gut aufgelegt’ (Filmausschnitt 1932).” YouTube video.",
+      "fullCitation": "“Heut’ bin ich gut aufgelegt.” Film excerpt attributed to Willy Fritsch and Rosy Barsony in Ein toller Einfall (1932). YouTube video, 1:25, published by Alparfan, 2013-08-23.",
       "sourceType": "online_video_source",
       "title": "Heut bin ich gut aufgelegt — YouTube film excerpt",
       "creator": "Alparfan (YouTube channel)",
       "repository": "YouTube",
       "publication": "YouTube",
-      "date": "1932",
-      "dateRole": "described_item",
+      "date": "2013-08-23",
+      "dateRole": "digital_publication",
       "dateQualifier": "confirmed",
-      "accessDate": "2026-06-15",
+      "accessDate": "2026-10-26",
       "reliability": "low",
       "sourceStatus": "verified",
       "slug": "src0316-youtube-heut-bin-ich-gut-aufgelegt-1932",
@@ -12150,21 +12164,33 @@
       "mediaIds": [
         "M017"
       ],
-      "primaryUrl": "https://www.youtube.com/watch?v=zLnPzr3MoAY"
+      "primaryUrl": "https://www.youtube.com/watch?v=zLnPzr3MoAY",
+      "researchNote": "The uploader identifies Ein toller Einfall (1932), Willy Fritsch and Rosy Barsony, and credits music to Kaper and Jurmann. Moving film footage is present. The structured date describes YouTube publication, not film production, a recording session or the original release.",
+      "researchNoteType": "evidence_note",
+      "workIds": [
+        "W-F012",
+        "W-S053"
+      ],
+      "filmIds": [
+        "F012"
+      ],
+      "songIds": [
+        "S053"
+      ]
     },
     {
       "id": "SRC0317",
-      "shortCitation": "YouTube, “Moscow nights | Les nuits moscovites |, 1934 | STEFAN CLASSIC FILMS™”",
-      "fullCitation": "Einstein-Stefan Encounters | Time Hopping Travel (@StefanClassicFilms), uploader. “Moscow nights | Les nuits moscovites |, 1934 | STEFAN CLASSIC FILMS™.” YouTube video, uploaded 21 November 2021.",
+      "shortCitation": "YouTube, Les nuits moscovites (1934), French film access copy",
+      "fullCitation": "Les nuits moscovites (1934), directed by Alexis Granowsky. Feature-length French film access copy with English subtitles. YouTube video, 93:39, published by Einstein-Stefan Encounters | Time Hopping Travel, 2021-11-21.",
       "sourceType": "online_video_source",
-      "title": "Moscow Nights / Les nuits moscovites (1934) — Stefan Classic Films, YouTube",
-      "creator": "Einstein-Stefan Encounters | Time Hopping Travel (@StefanClassicFilms)",
+      "title": "Les nuits moscovites (1934) — feature-length access copy, YouTube",
+      "creator": "Einstein-Stefan Encounters | Time Hopping Travel (YouTube channel)",
       "repository": "YouTube",
       "publication": "YouTube",
       "dateRole": "digital_publication",
       "dateQualifier": "confirmed",
       "date": "2021-11-21",
-      "accessDate": "2026-06-15",
+      "accessDate": "2026-10-26",
       "reliability": "low",
       "sourceStatus": "verified",
       "slug": "src0317-youtube-moscow-nights-les-nuits-moscovites-1934",
@@ -12174,20 +12200,32 @@
       "mediaIds": [
         "M022"
       ],
-      "primaryUrl": "https://www.youtube.com/watch?v=fBixjVOoN3I"
+      "primaryUrl": "https://www.youtube.com/watch?v=fBixjVOoN3I",
+      "researchNote": "The opening titles and closing FIN frame identify a feature-length copy of the French Les nuits moscovites (1934), with English subtitles; the upload runs 1:33:39. The English upload title does not identify the separate English-language film Moscow Nights (1935). The presence of opening and closing titles does not establish that the access copy is uncut or complete against an archival reference print. The structured date describes YouTube publication.",
+      "researchNoteType": "evidence_note",
+      "workIds": [
+        "W-F031",
+        "W-S104"
+      ],
+      "filmIds": [
+        "F031"
+      ],
+      "songIds": [
+        "S104"
+      ]
     },
     {
       "id": "SRC0318",
       "shortCitation": "YouTube, “Marx Brothers Musical | A Night at the Opera | 2. Cosi Cosa - Allan Jones, Chico Marx & Harpo Marx”",
-      "fullCitation": "Asier Varela, uploader. “Marx Brothers Musical | A Night at the Opera | 2. Cosi Cosa - Allan Jones, Chico Marx & Harpo Marx.” YouTube video.",
+      "fullCitation": "“Così, cosa.” Musical-number excerpt from A Night at the Opera (MGM, 1935); the upload title names Allan Jones, Chico Marx and Harpo Marx. YouTube video, 3:24, published by Asier Varela, 2013-07-27.",
       "sourceType": "online_video_source",
       "title": "Così Cosa — A Night at the Opera, YouTube",
       "creator": "Asier Varela (YouTube channel)",
       "repository": "YouTube",
       "publication": "YouTube",
       "dateRole": "digital_publication",
-      "dateQualifier": "unknown",
-      "accessDate": "2026-06-15",
+      "dateQualifier": "confirmed",
+      "accessDate": "2026-10-26",
       "reliability": "low",
       "sourceStatus": "verified",
       "slug": "src0318-youtube-cosi-cosa-a-night-at-the-opera-1935",
@@ -12197,21 +12235,34 @@
       "mediaIds": [
         "M025"
       ],
-      "primaryUrl": "https://www.youtube.com/watch?v=GilH6c5TFEA"
+      "primaryUrl": "https://www.youtube.com/watch?v=GilH6c5TFEA",
+      "date": "2013-07-27",
+      "researchNote": "The upload contains moving footage of the musical number from A Night at the Opera (1935); the uploader’s title identifies Allan Jones, Chico Marx and Harpo Marx. It is a film excerpt, not a separately identified commercial disc transfer. The structured date describes publication of this YouTube copy.",
+      "researchNoteType": "evidence_note",
+      "workIds": [
+        "W-F036",
+        "W-S118"
+      ],
+      "filmIds": [
+        "F036"
+      ],
+      "songIds": [
+        "S118"
+      ]
     },
     {
       "id": "SRC0319",
       "shortCitation": "YouTube, “Jeanette Mac Donald sings the title tune from MGM’s San Francisco (1936)”",
-      "fullCitation": "Allan Fisch, uploader. “Jeanette Mac Donald sings the title tune from MGM’s San Francisco (1936).” YouTube video.",
+      "fullCitation": "“San Francisco.” Edited film-excerpt presentation attributed to Jeanette MacDonald in San Francisco (MGM, 1936), with a soundtrack described by the uploader as restored and sweetened. YouTube video, 3:39, published by Allan Fisch, 2014-05-31.",
       "sourceType": "online_video_source",
       "title": "San Francisco — Jeanette MacDonald, YouTube film excerpt",
       "creator": "Allan Fisch (YouTube channel)",
       "repository": "YouTube",
       "publication": "YouTube",
-      "date": "1936",
-      "dateRole": "described_item",
+      "date": "2014-05-31",
+      "dateRole": "digital_publication",
       "dateQualifier": "confirmed",
-      "accessDate": "2026-06-15",
+      "accessDate": "2026-10-26",
       "reliability": "low",
       "sourceStatus": "verified",
       "slug": "src0319-youtube-san-francisco-1936",
@@ -12223,28 +12274,37 @@
       ],
       "primaryUrl": "https://www.youtube.com/watch?v=dv6mHsXKI2c",
       "workIds": [
-        "W-S130"
+        "W-S130",
+        "W-F043"
       ],
       "personIds": [
         "P139"
       ],
       "contributionIds": [
         "CON-S130-P-P139"
+      ],
+      "researchNote": "The upload contains edited film footage with introductory credit text. The description explicitly says “Restored and sweetened soundtrack”; it is therefore not presented as an untouched copy of the original film soundtrack or a separately identified commercial recording. The title and description identify Jeanette MacDonald and San Francisco (1936). The structured date is YouTube publication.",
+      "researchNoteType": "evidence_note",
+      "filmIds": [
+        "F043"
+      ],
+      "songIds": [
+        "S130"
       ]
     },
     {
       "id": "SRC0320",
       "shortCitation": "YouTube, “A Day at the Races - All God’s Chillun Got Rhythm (1937)”",
-      "fullCitation": "Sunday Hop, uploader. “A Day at the Races - All God’s Chillun Got Rhythm (1937).” YouTube video.",
+      "fullCitation": "“All God’s Chillun Got Rhythm.” Musical-number excerpt from A Day at the Races (MGM, 1937). YouTube video, 3:28, published by Sunday Hop, 2024-12-29.",
       "sourceType": "online_video_source",
       "title": "All God’s Chillun Got Rhythm — A Day at the Races, YouTube",
       "creator": "Sunday Hop (YouTube channel)",
       "repository": "YouTube",
       "publication": "YouTube",
-      "date": "1937",
-      "dateRole": "described_item",
+      "date": "2024-12-29",
+      "dateRole": "digital_publication",
       "dateQualifier": "confirmed",
-      "accessDate": "2026-06-15",
+      "accessDate": "2026-10-26",
       "reliability": "low",
       "sourceStatus": "verified",
       "slug": "src0320-youtube-all-gods-chillun-got-rhythm-1937",
@@ -12254,20 +12314,32 @@
       "mediaIds": [
         "M028"
       ],
-      "primaryUrl": "https://www.youtube.com/watch?v=h5rZs84VhWo"
+      "primaryUrl": "https://www.youtube.com/watch?v=h5rZs84VhWo",
+      "researchNote": "The upload contains moving footage of the musical number from A Day at the Races (1937). It is a film excerpt, not the Duke Ellington commercial recording documented separately in the archive. The structured date is the YouTube publication date; the historical film year remains part of the citation.",
+      "researchNoteType": "evidence_note",
+      "workIds": [
+        "W-F046",
+        "W-S152"
+      ],
+      "filmIds": [
+        "F046"
+      ],
+      "songIds": [
+        "S152"
+      ]
     },
     {
       "id": "SRC0321",
       "shortCitation": "YouTube, “Judy Garland - Swing Mr. Mendelssohn”",
-      "fullCitation": "Ohujapaksu, uploader. “Judy Garland - Swing Mr. Mendelssohn.” YouTube video.",
+      "fullCitation": "“Swing, Mister Mendelssohn.” Film excerpt attributed to Judy Garland in Everybody Sing (MGM, 1938). YouTube video, 2:58, published by Ohujapaksu, 2013-04-14.",
       "sourceType": "online_video_source",
       "title": "Swing Mr. Mendelssohn — Judy Garland, YouTube",
       "creator": "Ohujapaksu (YouTube channel)",
       "repository": "YouTube",
       "publication": "YouTube",
       "dateRole": "digital_publication",
-      "dateQualifier": "unknown",
-      "accessDate": "2026-06-15",
+      "dateQualifier": "confirmed",
+      "accessDate": "2026-10-26",
       "reliability": "low",
       "sourceStatus": "verified",
       "slug": "src0321-youtube-swing-mr-mendelssohn",
@@ -12279,28 +12351,38 @@
       ],
       "primaryUrl": "https://www.youtube.com/watch?v=EVwN1M2jZqw",
       "workIds": [
-        "W-S157"
+        "W-S157",
+        "W-F048"
       ],
       "personIds": [
         "P138"
       ],
       "contributionIds": [
         "CON-S157-P-P138"
+      ],
+      "date": "2013-04-14",
+      "researchNote": "The upload contains moving film footage and identifies Judy Garland and Everybody Sing (1938). The description’s additional choir attribution has not been independently verified here and is not used to create personnel credits. The structured date describes publication of this YouTube copy, not the film or its music sessions.",
+      "researchNoteType": "evidence_note",
+      "filmIds": [
+        "F048"
+      ],
+      "songIds": [
+        "S157"
       ]
     },
     {
       "id": "SRC0322",
       "shortCitation": "Filmportal.de / DFF, Alraune (1929/1930) opening excerpt",
-      "fullCitation": "Filmportal.de / Deutsches Filminstitut & Filmmuseum (DFF). Alraune (1929/1930), directed by Richard Oswald, opening excerpt, digitized in 2021 under the Förderprogramm Filmerbe (FFE).",
+      "fullCitation": "filmportal.de / DFF. Alraune (1929/1930), opening excerpt, listed runtime 06:58. Digitized by DFF – Deutsches Filminstitut & Filmmuseum in 2021 under the Förderprogramm Filmerbe (FFE); posted 2023-02-17.",
       "sourceType": "online_video_source",
       "title": "Alraune (1929/1930) — Filmportal.de opening excerpt",
-      "creator": "Filmportal.de / Deutsches Filminstitut & Filmmuseum (DFF)",
+      "creator": "DFF – Deutsches Filminstitut & Filmmuseum; filmportal.de / DFF (access platform)",
       "repository": "filmportal.de / DFF – Deutsches Filminstitut & Filmmuseum",
       "publication": "Filmportal.de",
       "dateRole": "digitization",
       "dateQualifier": "confirmed",
       "date": "2021",
-      "accessDate": "2026-06-15",
+      "accessDate": "2026-10-26",
       "reliability": "high",
       "sourceStatus": "verified",
       "slug": "src0322-filmportal-alraune-1929-1930-excerpt",
@@ -12313,21 +12395,29 @@
       "timelineEventIds": [
         "TE0049"
       ],
-      "primaryUrl": "https://www.filmportal.de/video/alraune-19291930"
+      "primaryUrl": "https://www.filmportal.de/video/alraune-19291930",
+      "researchNote": "The structured date follows the explicitly stated digitization year 2021, not the historical film date or the separate website posting date 2023-02-17. Filmportal lists a runtime of 06:58; its generic description refers to the first five minutes of the film. This record identifies an opening excerpt, not the complete film or a separately verified performance of a particular song.",
+      "researchNoteType": "object_context",
+      "workIds": [
+        "W-F002"
+      ],
+      "filmIds": [
+        "F002"
+      ]
     },
     {
       "id": "SRC0323",
       "shortCitation": "Filmportal.de / DFF, Ein toller Einfall (1932) opening excerpt",
-      "fullCitation": "Filmportal.de / Deutsches Filminstitut & Filmmuseum (DFF). Ein toller Einfall (1932), directed by Kurt Gerron, opening excerpt, digitized in 2023 under the Förderprogramm Filmerbe (FFE).",
+      "fullCitation": "filmportal.de / DFF. Ein toller Einfall (1932), opening excerpt, listed runtime 08:49. Digitized by Friedrich-Wilhelm-Murnau-Stiftung in 2023 under the Förderprogramm Filmerbe (FFE); posted 2025-10-16.",
       "sourceType": "online_video_source",
       "title": "Ein toller Einfall (1932) — Filmportal.de opening excerpt",
-      "creator": "Filmportal.de / Deutsches Filminstitut & Filmmuseum (DFF)",
+      "creator": "Friedrich-Wilhelm-Murnau-Stiftung; filmportal.de / DFF (access platform)",
       "repository": "filmportal.de / DFF – Deutsches Filminstitut & Filmmuseum",
       "publication": "Filmportal.de",
       "dateRole": "digitization",
       "dateQualifier": "confirmed",
       "date": "2023",
-      "accessDate": "2026-06-15",
+      "accessDate": "2026-10-26",
       "reliability": "high",
       "sourceStatus": "verified",
       "slug": "src0323-filmportal-ein-toller-einfall-1932-excerpt",
@@ -12337,21 +12427,29 @@
       "mediaIds": [
         "M018"
       ],
-      "primaryUrl": "https://www.filmportal.de/video/ein-toller-einfall-1932"
+      "primaryUrl": "https://www.filmportal.de/video/ein-toller-einfall-1932",
+      "researchNote": "The structured date follows the explicitly stated digitization year 2023, not the historical film date or the separate website posting date 2025-10-16. Filmportal lists a runtime of 08:49; its generic description refers to the first five minutes of the film. This record identifies an opening excerpt, not the complete film or a separately verified performance of a particular song.",
+      "researchNoteType": "object_context",
+      "workIds": [
+        "W-F012"
+      ],
+      "filmIds": [
+        "F012"
+      ]
     },
     {
       "id": "SRC0324",
       "shortCitation": "Filmportal.de / DFF, Melodie der Liebe (1932) opening excerpt",
-      "fullCitation": "Filmportal.de / Deutsches Filminstitut & Filmmuseum (DFF). Melodie der Liebe (1932), directed by Georg Jacoby, opening excerpt, digitized in 2024 under the Förderprogramm Filmerbe (FFE).",
+      "fullCitation": "filmportal.de / DFF. Melodie der Liebe (1932), opening excerpt, listed runtime 08:31. Digitized by DFF – Deutsches Filminstitut & Filmmuseum in 2024 under the Förderprogramm Filmerbe (FFE); posted 2025-12-12.",
       "sourceType": "online_video_source",
       "title": "Melodie der Liebe (1932) — Filmportal.de opening excerpt",
-      "creator": "Filmportal.de / Deutsches Filminstitut & Filmmuseum (DFF)",
+      "creator": "DFF – Deutsches Filminstitut & Filmmuseum; filmportal.de / DFF (access platform)",
       "repository": "filmportal.de / DFF – Deutsches Filminstitut & Filmmuseum",
       "publication": "Filmportal.de",
       "dateRole": "digitization",
       "dateQualifier": "confirmed",
       "date": "2024",
-      "accessDate": "2026-06-15",
+      "accessDate": "2026-10-26",
       "reliability": "high",
       "sourceStatus": "verified",
       "slug": "src0324-filmportal-melodie-der-liebe-1932-excerpt",
@@ -12361,21 +12459,29 @@
       "mediaIds": [
         "M019"
       ],
-      "primaryUrl": "https://www.filmportal.de/video/melodie-der-liebe-1932"
+      "primaryUrl": "https://www.filmportal.de/video/melodie-der-liebe-1932",
+      "researchNote": "The structured date follows the explicitly stated digitization year 2024, not the historical film date or the separate website posting date 2025-12-12. Filmportal lists a runtime of 08:31; its generic description refers to the first five minutes of the film. This record identifies an opening excerpt, not the complete film or a separately verified performance of a particular song.",
+      "researchNoteType": "object_context",
+      "workIds": [
+        "W-F011"
+      ],
+      "filmIds": [
+        "F011"
+      ]
     },
     {
       "id": "SRC0325",
       "shortCitation": "Filmportal.de / DFF, Kind, ich freu’ mich auf Dein Kommen (1933) opening excerpt",
-      "fullCitation": "Filmportal.de / Deutsches Filminstitut & Filmmuseum (DFF). Kind, ich freu’ mich auf Dein Kommen (1933), opening excerpt, digitized in 2022 under the Förderprogramm Filmerbe (FFE).",
+      "fullCitation": "filmportal.de / DFF. Kind, ich freu’ mich auf Dein Kommen (1933), opening excerpt, listed runtime 07:02. Digitized by Friedrich-Wilhelm-Murnau-Stiftung in 2022 under the Förderprogramm Filmerbe (FFE); posted 2024-05-10.",
       "sourceType": "online_video_source",
       "title": "Kind, ich freu’ mich auf Dein Kommen (1933) — Filmportal.de opening excerpt",
-      "creator": "Filmportal.de / Deutsches Filminstitut & Filmmuseum (DFF)",
+      "creator": "Friedrich-Wilhelm-Murnau-Stiftung; filmportal.de / DFF (access platform)",
       "repository": "filmportal.de / DFF – Deutsches Filminstitut & Filmmuseum",
       "publication": "Filmportal.de",
       "dateRole": "digitization",
       "dateQualifier": "confirmed",
       "date": "2022",
-      "accessDate": "2026-06-15",
+      "accessDate": "2026-10-26",
       "reliability": "high",
       "sourceStatus": "verified",
       "slug": "src0325-filmportal-kind-ich-freu-mich-1933-excerpt",
@@ -12391,12 +12497,14 @@
       ],
       "filmIds": [
         "F024"
-      ]
+      ],
+      "researchNote": "The structured date follows the explicitly stated digitization year 2022, not the historical film date or the separate website posting date 2024-05-10. Filmportal lists a runtime of 07:02; its generic description refers to the first five minutes of the film. This record identifies an opening excerpt, not the complete film or a separately verified performance of a particular song.",
+      "researchNoteType": "object_context"
     },
     {
       "id": "SRC0327",
       "shortCitation": "TCM, Three Smart Girls (1936) — “Someone to Care for Me” clip",
-      "fullCitation": "Turner Classic Movies. “Three Smart Girls” (1936), title page including the “Someone to Care for Me” movie clip. TCM.",
+      "fullCitation": "Turner Classic Movies. Three Smart Girls (1936), film page with the four-minute movie clip “Someone To Care For Me”. The clip description names Deanna Durbin and credits Bronislau Kaper, Walter Jurmann and Gus Kahn.",
       "sourceType": "online_video_source",
       "title": "Someone to Care for Me — Three Smart Girls, TCM clip",
       "creator": "Turner Classic Movies",
@@ -12405,16 +12513,25 @@
       "date": "1936",
       "dateRole": "described_item",
       "dateQualifier": "confirmed",
-      "accessDate": "2026-07-13",
+      "accessDate": "2026-10-26",
       "reliability": "high",
       "sourceStatus": "verified",
       "slug": "src0327-tcm-someone-to-care-for-me-1936",
       "workIds": [
-        "W-S133"
+        "W-S133",
+        "W-F042"
       ],
       "primaryUrl": "https://www.tcm.com/watchtcm/titles/93159",
       "organizationIds": [
         "ORG172"
+      ],
+      "researchNote": "The linked TCM page contains a film record and several related clips, including “Someone To Care For Me” (4:00); it is not a direct link to a standalone audio recording. The structured year 1936 describes the film. The page can redirect to a regional-availability notice, so playback availability is not asserted here. No second Media listening reference is created from this page.",
+      "researchNoteType": "object_context",
+      "filmIds": [
+        "F042"
+      ],
+      "songIds": [
+        "S133"
       ]
     },
     {
@@ -19440,28 +19557,29 @@
     {
       "id": "SRC0555",
       "shortCitation": "My Footage, “1930s Metro-Goldwyn-Mayer Studios,” YouTube, 3 June 2010",
-      "fullCitation": "My Footage. “1930s Metro-Goldwyn-Mayer Studios.” YouTube video, published 3 June 2010. Reel 7072, TC 07:28:38–07:28:59.",
+      "fullCitation": "“1930s Metro-Goldwyn-Mayer Studios.” Contextual montage; reel 7072, TC 07:28:38–07:28:59. YouTube video, 0:22, published by My Footage, 2010-06-03.",
       "sourceType": "online_video_source",
       "title": "1930s Metro-Goldwyn-Mayer Studios",
-      "creator": "My Footage",
+      "creator": "My Footage (YouTube channel)",
       "repository": "YouTube",
-      "publication": "My Footage",
+      "publication": "YouTube",
       "dateRole": "digital_publication",
       "dateQualifier": "confirmed",
       "date": "2010-06-03",
-      "accessDate": "2026-07-15",
+      "accessDate": "2026-10-26",
       "reliability": "medium",
       "sourceStatus": "verified_with_attribution_note",
       "slug": "src0555-my-footage-1930s-mgm-studios",
       "organizationIds": [
-        "ORG093"
+        "ORG093",
+        "ORG001"
       ],
       "mediaIds": [
         "M024"
       ],
       "primaryUrl": "https://www.youtube.com/watch?v=vnFUeKkApyE",
-      "researchNote": "Montage of MGM studio back-lot footage; the uploader identifies the clip as available for licensing.\n\nRecorded as YouTube presents it: the details given here follow that page rather than an examination of the object itself.",
-      "researchNoteType": "verification_note"
+      "researchNote": "The 22-second montage shows MGM studio footage and carries the supplier’s timecode and branding. My Footage identifies reel 7072, TC 07:28:38–07:28:59, and offers licensing; the licensing offer does not itself grant reuse permission. The footage is contextual material, not evidence for Kaper’s participation in a particular production. The structured date describes YouTube publication, not the date of each historical shot.",
+      "researchNoteType": "object_context"
     },
     {
       "id": "SRC0556",
@@ -23116,7 +23234,7 @@
       "date": "1932",
       "dateRole": "described_item",
       "dateQualifier": "confirmed",
-      "accessDate": "2026-08-13",
+      "accessDate": "2026-10-26",
       "reliability": "high",
       "sourceStatus": "verified",
       "slug": "src0681-bundesarchiv-madame-ne-veut-pas-denfants-complete-film",
@@ -23139,7 +23257,9 @@
       "primaryUrl": "https://digitaler-lesesaal.bundesarchiv.de/video/38122/665451",
       "organizationIds": [
         "ORG169"
-      ]
+      ],
+      "researchNote": "Bundesarchiv gives 1932 as Produktionsjahr and separately records censorship on 9 January 1933. The structured date follows the catalogue’s production year, not the later release context or an unspecified digitization/publication date. The technical record identifies an Ansichtsdatei, signature 26405, with runtime 01:16:00; this describes the institutional access copy, not an independently certified uncut edition.",
+      "researchNoteType": "object_context"
     },
     {
       "id": "SRC0682",
@@ -23153,7 +23273,7 @@
       "date": "1932",
       "dateRole": "described_item",
       "dateQualifier": "confirmed",
-      "accessDate": "2026-08-13",
+      "accessDate": "2026-10-26",
       "reliability": "high",
       "sourceStatus": "verified",
       "slug": "src0682-bundesarchiv-die-zwei-vom-suedexpress-complete-film",
@@ -23176,7 +23296,9 @@
       "primaryUrl": "https://digitaler-lesesaal.bundesarchiv.de/video/2999/700262",
       "organizationIds": [
         "ORG169"
-      ]
+      ],
+      "researchNote": "The structured date follows Bundesarchiv’s Produktionsjahr, 1932, not an unspecified digitization or online-publication date. The technical record identifies an Ansichtsdatei, signature 60809, with German-language metadata and runtime 01:15:51. Its filmographic section names Jurmann, Kaper and Jung for music. The record documents this institutional access copy, not an independently certified uncut edition.",
+      "researchNoteType": "object_context"
     },
     {
       "id": "SRC0683",
@@ -25097,16 +25219,16 @@
     {
       "id": "SRC0733",
       "shortCitation": "Film excerpt, Alfred Piccaver singing “Adieu, es ist zu schön, um wahr zu sein” (1933)",
-      "fullCitation": "Alfred Piccaver singing “Adieu, es ist zu schön, um wahr zu sein” in scenes from the Austrian film Abenteuer am Lido (1933), directed by Richard Oswald. Compiled with stills of Piccaver, Szöke Szakáll and others by Rádio Educativa Mensagem and published on YouTube by RADIOSANTOS (REM).",
+      "fullCitation": "“Adieu, es ist zu schön, um wahr zu sein.” Edited presentation of Alfred Piccaver and scenes attributed to Abenteuer am Lido (1933), compiled by Rádio Educativa Mensagem. YouTube video, 3:43, published by RADIOSANTOS (REM), 2017-10-29.",
       "sourceType": "online_video_source",
-      "title": "Adieu, es ist zu schön, um wahr zu sein — Alfred Piccaver",
-      "creator": "Alfred Piccaver",
+      "title": "Adieu, es ist zu schön, um wahr zu sein — Alfred Piccaver, edited video",
+      "creator": "RADIOSANTOS (REM) (YouTube channel)",
       "repository": "YouTube",
       "publication": "YouTube",
-      "date": "1933",
-      "dateRole": "described_item",
+      "date": "2017-10-29",
+      "dateRole": "digital_publication",
       "dateQualifier": "confirmed",
-      "accessDate": "2026-08-20",
+      "accessDate": "2026-10-26",
       "reliability": "low",
       "sourceStatus": "verified_with_attribution_note",
       "slug": "src0733-s074-listening-reference",
@@ -25114,7 +25236,8 @@
         "ORG093"
       ],
       "workIds": [
-        "W-S074"
+        "W-S074",
+        "W-F026"
       ],
       "mediaIds": [
         "M371"
@@ -25123,8 +25246,11 @@
       "songIds": [
         "S074"
       ],
-      "researchNote": "Recorded as YouTube presents it: the details given here follow that page rather than an examination of the object itself.",
-      "researchNoteType": "verification_note"
+      "researchNote": "The upload combines moving film scenes, introductory graphics and a presentation attributed by Rádio Educativa Mensagem to Alfred Piccaver in Abenteuer am Lido (1933). It is an edited viewing reference, not a separately identified disc transfer or an unedited archival film copy. The structured date describes YouTube publication; 1933 dates the film context supplied by the uploader.",
+      "researchNoteType": "evidence_note",
+      "filmIds": [
+        "F026"
+      ]
     },
     {
       "id": "SRC0735",
@@ -27320,13 +27446,13 @@
     {
       "id": "SRC0791",
       "shortCitation": "Film excerpt, Ein toller Einfall (1932): two songs by Jurmann and Kaper",
-      "fullCitation": "Willy Fritsch, Ellen Schwanneke and Rosy Barsony singing “Du bist der Mann, der den Frauen gefällt” and “Ich suche einen, der mir allein gehört” in the film Ein toller Einfall, directed by Kurt Gerron, 1932; music by Walter Jurmann and Bronislaw Kaper. Excerpt published on YouTube by Alparfan, uploaded 20 March 2015.",
+      "fullCitation": "“Du bist der Mann, der den Frauen gefällt” / “Ich suche einen, der mir allein gehört.” Excerpt from Ein toller Einfall (1932), attributed by the uploader to Willy Fritsch, Ellen Schwanneke and Rosy Barsony; music credited to Walter Jurmann and Bronislaw Kaper. YouTube video, 3:04, published by Alparfan, 2015-03-20.",
       "sourceType": "online_video_source",
       "title": "Ein toller Einfall (1932), film excerpt with two songs",
-      "creator": "Willy Fritsch; Ellen Schwanneke; Rosy Barsony",
+      "creator": "Alparfan (YouTube channel)",
       "repository": "YouTube",
       "publication": "YouTube",
-      "accessDate": "2026-08-24",
+      "accessDate": "2026-10-26",
       "reliability": "medium",
       "sourceStatus": "verified",
       "slug": "src0791-ein-toller-einfall-film-excerpt",
@@ -27337,7 +27463,8 @@
         "M412"
       ],
       "workIds": [
-        "W-S052"
+        "W-S052",
+        "W-F012"
       ],
       "primaryUrl": "https://www.youtube.com/watch?v=4HIG4W7dlgk",
       "songIds": [
@@ -27350,8 +27477,11 @@
       "dateRole": "digital_publication",
       "dateQualifier": "confirmed",
       "date": "2015-03-20",
-      "researchNote": "The excerpt is the only witness traced for this song: no commercial disc of it is recorded in the discographic title lists, which carry only the counterpart sung by Willy Fritsch, “Ich suche eine, die mir allein gehört”. The upload does not say which of the two actresses sings which line, so no performing credit is entered.",
-      "researchNoteType": "evidence_note"
+      "researchNote": "The upload identifies Ein toller Einfall (1932) and names the passages “Du bist der Mann, der den Frauen gefällt” and “Ich suche einen, der mir allein gehört”, together with Willy Fritsch, Ellen Schwanneke and Rosy Barsony. The excerpt documents the answering title form retained for the existing song record; the uploader’s two passage titles do not by themselves establish two separate compositions. No individual vocal credit is inferred from the cast list or appearance alone. The structured date describes YouTube publication, not the film’s release.",
+      "researchNoteType": "evidence_note",
+      "filmIds": [
+        "F012"
+      ]
     },
     {
       "id": "SRC0792",
@@ -27995,16 +28125,16 @@
     {
       "id": "SRC0809",
       "shortCitation": "YouTube, Judy Garland, “Down on Melody Farm” from Everybody Sing",
-      "fullCitation": "Judy Garland. “Down on Melody Farm.” Film excerpt from Everybody Sing (MGM, 1938), uploaded by The Judy Room Videos to YouTube.",
+      "fullCitation": "“Down on Melody Farm.” Film excerpt attributed to Judy Garland in Everybody Sing (MGM, 1938). YouTube video, 3:41, published by TheJudyRoomVideos, 2022-02-13.",
       "sourceType": "online_video_source",
       "title": "Down on Melody Farm — Judy Garland, YouTube",
-      "creator": "The Judy Room Videos (YouTube channel)",
+      "creator": "TheJudyRoomVideos (YouTube channel)",
       "repository": "YouTube",
       "publication": "YouTube",
-      "date": "1938",
-      "dateRole": "described_item",
+      "date": "2022-02-13",
+      "dateRole": "digital_publication",
       "dateQualifier": "confirmed",
-      "accessDate": "2026-08-24",
+      "accessDate": "2026-10-26",
       "reliability": "low",
       "sourceStatus": "verified",
       "slug": "src0809-youtube-judy-garland-down-on-melody-farm",
@@ -28019,13 +28149,19 @@
         "M424"
       ],
       "workIds": [
-        "W-S161"
+        "W-S161",
+        "W-F048"
       ],
       "songIds": [
         "S161"
       ],
       "contributionIds": [
         "CON-S161-P-P138"
+      ],
+      "researchNote": "The video contains moving footage of Judy Garland’s number in Everybody Sing (1938). The uploader reports prerecording on 4 October 1937 and a premiere on 24 January 1938; those details are not substituted for the publication date of this digital copy. The structured date is YouTube publication.",
+      "researchNoteType": "evidence_note",
+      "filmIds": [
+        "F048"
       ]
     },
     {
