@@ -33,8 +33,8 @@ import {
   sourceTypePluralLabel,
   typeBadge,
   updateMeta,
-} from "./core.js?v=d797d980b4";
-import { RECORD_INDEXES, recordIndexReturn } from "./catalogue-filters.js?v=d797d980b4";
+} from "./core.js?v=7b45d3f24d";
+import { RECORD_INDEXES, recordIndexReturn } from "./catalogue-filters.js?v=7b45d3f24d";
 
 // A canonical record route arrives prerendered and renders no image in the
 // browser, so the image map is loaded only where a record is actually rendered:
@@ -1045,6 +1045,7 @@ function documentGallery(media, allMedia, sourceIndex) {
       .filter(Boolean)
       .some((candidate) => String(candidate).split("/").pop() === fileName)
   );
+  const dialogs = [];
   const items = paths.map((path, index) => {
     const fileName = String(path).split("/").pop();
     const member = explicitMembers.find((item) => pathMatches(item, path, fileName))
@@ -1062,18 +1063,49 @@ function documentGallery(media, allMedia, sourceIndex) {
         includeFullRightsNote: false,
       })
       : `<strong>${escapeHtml(title)}</strong><p>${escapeHtml(caption)}</p>`;
+    const picture = responsiveImage(path, member?.altText || title, {
+      sizes: "(max-width: 680px) calc(100vw - 4rem), (max-width: 900px) 80vw, 34rem",
+    });
+    // These tiles used to link the source asset itself, which is the one thing
+    // imageEnlargement exists to avoid: nine of the fifty files in these
+    // galleries are held under provider terms and two are restricted, and the
+    // lead image of a single record has never been allowed to hand over the
+    // original. The rule there applies here unchanged — the largest derivative
+    // or no control at all.
+    const enlargement = imageEnlargement(path);
+    const dialogId = `media-lightbox-${media.id}-${index + 1}`;
+    if (enlargement) {
+      dialogs.push(`<dialog class="media-lightbox" id="${dialogId}" data-media-lightbox aria-labelledby="${dialogId}-title">
+        <div class="media-lightbox__panel">
+          <header class="media-lightbox__header">
+            <h2 id="${dialogId}-title">${escapeHtml(title)}</h2>
+            <button class="media-lightbox__close" type="button" data-media-lightbox-close aria-label="Close enlarged image">×</button>
+          </header>
+          <div class="media-lightbox__toolbar" role="group" aria-label="Image size">
+            <button type="button" data-media-view-fit aria-pressed="true">Fit</button>
+            <button type="button" data-media-view-actual aria-pressed="false">100%</button>
+            <span data-media-view-status aria-live="polite">Fit to window</span>
+          </div>
+          <div class="media-lightbox__image" tabindex="0" role="region" aria-label="Enlarged image, scrollable at actual size">
+            <img data-media-lightbox-src="${escapeHtml(enlargement.path)}" alt="${escapeHtml(member?.altText || title)}" data-media-lightbox-image decoding="async">
+          </div>
+          <p class="media-lightbox__caption">${escapeHtml(caption)}</p>
+        </div>
+      </dialog>`);
+    }
+    const visual = enlargement
+      ? `<button class="record-gallery__image" type="button" data-media-lightbox-open aria-haspopup="dialog" aria-controls="${dialogId}">
+          ${picture}
+          <span>Open viewer</span>
+        </button>`
+      : `<div class="record-gallery__image">${picture}</div>`;
     return `
       <figure class="record-gallery__item">
-        <a class="record-gallery__image" href="${escapeHtml(path)}" target="_blank" rel="noreferrer" aria-label="Open full image: ${escapeHtml(title)}">
-          ${responsiveImage(path, member?.altText || title, {
-            sizes: "(max-width: 680px) calc(100vw - 4rem), (max-width: 900px) 80vw, 34rem",
-          })}
-          <span>Open full image <span aria-hidden="true">↗</span></span>
-        </a>
+        ${visual}
         <figcaption>${disclosure}</figcaption>
       </figure>`;
   }).join("");
-  return `<div class="record-gallery" aria-label="${escapeHtml(media.title)}">${items}</div>`;
+  return `<div class="record-gallery" aria-label="${escapeHtml(media.title)}">${items}</div>${dialogs.join("")}`;
 }
 
 function renderMedia(media, data, indexes) {
@@ -2040,7 +2072,7 @@ async function bootstrapRecordPage() {
     }
     const [data, { IMAGE_DERIVATIVES }] = await Promise.all([
       loadRecordPayload(requestedType, requestedId),
-      import("./image-derivatives.js?v=d797d980b4"),
+      import("./image-derivatives.js?v=7b45d3f24d"),
     ]);
     registerImageDerivatives(IMAGE_DERIVATIVES);
     const { config, view } = renderRecordView(requestedType, requestedId, data);

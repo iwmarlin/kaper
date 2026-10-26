@@ -17,7 +17,7 @@
    the swashed display forms can never appear by accident. */
 @font-face {
   font-family: "Fraunces";
-  src: url("../fonts/kaper-serif.woff2?v=d797d980b4") format("woff2");
+  src: url("../fonts/kaper-serif.woff2?v=7b45d3f24d") format("woff2");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
@@ -25,7 +25,7 @@
 
 @font-face {
   font-family: "Fraunces";
-  src: url("../fonts/kaper-serif-italic.woff2?v=d797d980b4") format("woff2");
+  src: url("../fonts/kaper-serif-italic.woff2?v=7b45d3f24d") format("woff2");
   font-weight: 100 900;
   font-style: italic;
   font-display: swap;
@@ -33,7 +33,7 @@
 
 @font-face {
   font-family: "Archivo";
-  src: url("../fonts/kaper-sans.woff2?v=d797d980b4") format("woff2");
+  src: url("../fonts/kaper-sans.woff2?v=7b45d3f24d") format("woff2");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
@@ -41,7 +41,7 @@
 
 @font-face {
   font-family: "Archivo";
-  src: url("../fonts/kaper-sans-italic.woff2?v=d797d980b4") format("woff2");
+  src: url("../fonts/kaper-sans-italic.woff2?v=7b45d3f24d") format("woff2");
   font-weight: 100 900;
   font-style: italic;
   font-display: swap;
@@ -4026,14 +4026,27 @@ html:not(.js) .source-group__head {
   overflow: hidden;
 }
 
+/* A tile is a button now, not a link to the file: the same reset keeps the
+   two indistinguishable from the one a reader already knows. */
 .record-gallery__image {
   position: relative;
   display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
   aspect-ratio: 4 / 3;
+  border: 0;
   border-bottom: 1px solid var(--line);
+  border-radius: 0;
   background: var(--paper-deep);
   color: white;
+  font: inherit;
+  text-align: inherit;
   text-decoration: none;
+}
+
+button.record-gallery__image {
+  cursor: pointer;
 }
 
 .record-gallery__image img {

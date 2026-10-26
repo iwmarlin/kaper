@@ -291,6 +291,42 @@ class MediaProseRepetitionTests(unittest.TestCase):
         ]
         self.assertEqual(offenders, [], "a description exposes an asset path")
 
+    def test_a_pledged_web_resolution_is_kept_by_the_build(self) -> None:
+        """Twenty-six records tell the reader the item is reused in the
+        accessible web resolution, or in a reduced one. For twenty-four the
+        source is already under the ladder's ceiling and the sentence costs
+        nothing. For M116 and M133 it does not: their scans are 1859px and
+        2290px, so raising the ceiling to 2048 would have published more than
+        the note says is published."""
+        ladder = (ROOT / "scripts/build_site_assets.py").read_text(encoding="utf-8")
+        pledged = re.search(
+            r"PLEDGED_RESOLUTION_CEILINGS = \{(.*?)\}", ladder, re.S
+        )
+        self.assertIsNotNone(pledged, "the build has no pledged ceilings")
+        derivatives = ROOT / "assets/generated/responsive"
+        promise = re.compile(
+            r"accessible web resolution|reduced-resolution|low-resolution"
+            r"|modest source resolution",
+            re.I,
+        )
+        offenders = []
+        for record in self.media:
+            if not promise.search(str(record.get("rightsNote") or "")):
+                continue
+            for path in dict.fromkeys(
+                [record.get("assetPath"), *(record.get("assetPaths") or [])]
+            ):
+                if not path:
+                    continue
+                stem = re.sub(r"[^a-z0-9]+", "-", Path(path).stem.lower()).strip("-")[:44]
+                for folder in derivatives.glob(f"{stem}-*"):
+                    for variant in folder.glob("*.webp"):
+                        if variant.stem.isdigit() and int(variant.stem) > 1440:
+                            offenders.append(f"{record['id']}: {variant.name}")
+        self.assertEqual(
+            offenders, [], "a record published more than its rights note promises"
+        )
+
     def test_no_rights_note_abbreviates_public_domain(self) -> None:
         """A rights note is read by whoever is deciding whether they may reuse
         an image, and twelve told them that "Anonymous works are PD 70 years

@@ -18,7 +18,31 @@ from typing import Optional
 
 
 IMAGE_EXTENSIONS = {".jpg", ".jpeg", ".png", ".tif", ".tiff", ".webp"}
-TARGET_WIDTHS = (320, 640, 960, 1440)
+TARGET_WIDTHS = (320, 640, 960, 1440, 2048)
+
+#: Fifty-six sources are wider than 1440px and the ladder used to stop there,
+#: so the viewer showed a 2290px newspaper page at 1440 and a reader who wanted
+#: to read it had nowhere to go but the source file. The ceiling is a reading
+#: size, not a rights boundary — the boundary is that the source asset is never
+#: linked, which is what the galleries now honour too.
+#:
+#: The step is 2048 rather than the 2560 these scans would allow, because
+#: validate_site holds a derivative to 1.2 MB and a 2560px photograph does not
+#: fit: the widest of them encodes to 1.73 MB here and still to 1.41 MB at
+#: quality 64, so compression alone will not do it. At 2048 that file is
+#: 1.10 MB, and a page of newsprint gains 42 per cent in each direction.
+#:
+#: Two records are exempt, and they exempt themselves: M116 and M133 tell the
+#: reader in their own rights note that the item is reused "in the accessible
+#: web resolution" under the terms of ANNO / Österreichische Nationalbibliothek.
+#: Publishing a larger derivative would make the archive say one thing and
+#: serve another, so the pledge is kept in the build that would otherwise break
+#: it. Twenty-four other records word the same pledge and need no entry here:
+#: their sources are already narrower than the ceiling.
+PLEDGED_RESOLUTION_CEILINGS = {
+    "assets/images/historical-context/abenteuer-mfi-19331409.jpg": 1440,
+    "assets/images/historical-context/ehe-mfi-19321314.jpg": 1440,
+}
 # The map's 1926 plate reaches this pipeline like any other image, through the
 # media record that holds it. What it lacked was a way for the map to ask for
 # a size: the explorer named the full sheet, so every device was served 633KB
@@ -101,8 +125,9 @@ def normalized_image(path: Path):
         return image.convert("RGB")
 
 
-def derivative_widths(source_width: int) -> list[int]:
-    maximum = min(source_width, TARGET_WIDTHS[-1])
+def derivative_widths(source_width: int, relative: str = "") -> list[int]:
+    ceiling = PLEDGED_RESOLUTION_CEILINGS.get(relative, TARGET_WIDTHS[-1])
+    maximum = min(source_width, ceiling)
     return sorted({width for width in TARGET_WIDTHS if width < maximum} | {maximum})
 
 
@@ -197,7 +222,7 @@ def build_images(
         directory = derivative_directory(output_root, relative)
         with Image.open(source_path) as probe:
             source_width, source_height = probe.size
-        widths = derivative_widths(source_width)
+        widths = derivative_widths(source_width, relative)
         source_sha256 = file_digest(source_path)
         image = None
         if incremental and derivatives_are_current(
@@ -211,10 +236,17 @@ def build_images(
         else:
             image = normalized_image(source_path)
             source_width, source_height = image.size
-            widths = derivative_widths(source_width)
+            widths = derivative_widths(source_width, relative)
             encoded += 1
         source_state[relative] = {"sha256": source_sha256, "widths": widths}
         directory.mkdir(parents=True, exist_ok=True)
+        # Pruning ran per directory and never per width, so a width that left
+        # the ladder stayed on disk and kept being served. That is tolerable
+        # while the ceiling only rises; it is not tolerable for a pledged
+        # ceiling, where the promise is that the larger file does not exist.
+        for existing in directory.glob("*.webp"):
+            if existing.stem.isdigit() and int(existing.stem) not in widths:
+                existing.unlink()
         variants = []
         for width in widths:
             height = max(1, round(source_height * width / source_width))
