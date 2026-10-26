@@ -2524,8 +2524,15 @@
         "reason": "Separate the bibliographic citation from source-derived evidence and attributed rights statements without changing dates, source types or relationships.",
         "fields": {
           "fullCitation": "“Denkst Du noch an jeden Tag.” Fox-trott. Manuscript in Bronisław Kaper’s hand, headed “Text: Egon Szubert / Mus. B. Kaper” and dated “Berlin 1929”; piano and voice. Bronislaw Kaper Papers, Collection 03193, box 1. American Heritage Center, University of Wyoming, Laramie.",
-          "researchNote": "The manuscript gives the lyricist’s surname as Szubert; the person record uses Schubert. Copies carry the Center’s notice that the material may be restricted by United States copyright law.",
+          "researchNote": "A research reproduction supplied by the American Heritage Center was examined. The public link leads to the collection’s 1970 accession list, which describes the manuscript but does not provide images of it. The manuscript gives the lyricist’s surname as Szubert; the person record uses Schubert. Copies carry the Center’s notice that the material may be restricted by United States copyright law.",
           "researchNoteType": "evidence_note"
+        }
+      },
+      "SRC0888": {
+        "reason": "Distinguish the examined research reproduction from the publicly linked collection accession list.",
+        "fields": {
+          "researchNote": "A research reproduction supplied by the American Heritage Center was examined. The public link leads to the collection’s 1970 accession list, which describes the manuscript but does not provide images of it.",
+          "researchNoteType": "object_context"
         }
       },
       "SRC0863": {
@@ -2695,6 +2702,8 @@
         "reason": "Keep the archival citation and collection scope while removing private workflow provenance about who supplied the scans.",
         "fields": {
           "fullCitation": "Bronislaw Kaper Papers, Collection 03193. American Heritage Center, University of Wyoming, Laramie. Manuscript holdings for Bronisław Kaper’s early compositions, including item-level material from boxes 1–2.",
+          "researchNote": "Research reproductions supplied by the American Heritage Center were examined for the linked early compositions. The public Archives West link describes the collection generally; it does not provide images of the manuscripts. The Center’s 1970 accession list provides item descriptions for several of the works.",
+          "researchNoteType": "object_context",
           "date": "n.d."
         }
       },

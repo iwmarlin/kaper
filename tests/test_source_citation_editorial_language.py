@@ -74,6 +74,12 @@ class SourceCitationEditorialLanguageTests(unittest.TestCase):
         self.assertIn(statement, sources["SRC0709"]["researchNote"])
         self.assertIn("surname as Szubert", sources["SRC0709"]["researchNote"])
         self.assertIn("Text: Egon Szubert / Mus. B. Kaper", sources["SRC0709"]["fullCitation"])
+        for source_id in ("SRC0709", "SRC0888"):
+            with self.subTest(source=source_id):
+                self.assertIn("research reproduction", sources[source_id]["researchNote"])
+                self.assertIn("accession list", sources[source_id]["researchNote"])
+                self.assertIn("does not provide images", sources[source_id]["researchNote"])
+        self.assertIn("describes the collection generally", sources["SRC0009"]["researchNote"])
 
     def test_visual_context_and_rights_are_preserved_outside_citations(self) -> None:
         sources = {
