@@ -6137,7 +6137,6 @@
         "P003"
       ],
       "sourceIds": [
-        "SRC0001",
         "SRC0054"
       ],
       "nameVariantIds": [
@@ -6159,7 +6158,6 @@
         "ORG034"
       ],
       "sourceIds": [
-        "SRC0001",
         "SRC0054"
       ]
     },
@@ -6653,7 +6651,6 @@
         "ORG029"
       ],
       "sourceIds": [
-        "SRC0003",
         "SRC0097"
       ]
     },
@@ -8108,7 +8105,8 @@
       ],
       "sourceIds": [
         "SRC0093",
-        "SRC0708"
+        "SRC0708",
+        "SRC0493"
       ],
       "nameVariantIds": [
         "PNV0019"
@@ -8128,7 +8126,8 @@
       ],
       "sourceIds": [
         "SRC0093",
-        "SRC0708"
+        "SRC0708",
+        "SRC0493"
       ],
       "nameVariantIds": [
         "PNV0003"
@@ -8148,7 +8147,8 @@
       ],
       "sourceIds": [
         "SRC0093",
-        "SRC0708"
+        "SRC0708",
+        "SRC0493"
       ]
     },
     {
@@ -8258,8 +8258,7 @@
         "ORG031"
       ],
       "sourceIds": [
-        "SRC0094",
-        "SRC0493"
+        "SRC0094"
       ]
     },
     {
@@ -15144,7 +15143,6 @@
         "P025"
       ],
       "sourceIds": [
-        "SRC0007",
         "SRC0254"
       ]
     },
@@ -15183,7 +15181,6 @@
         "ORG040"
       ],
       "sourceIds": [
-        "SRC0007",
         "SRC0254"
       ]
     },
@@ -20961,7 +20958,8 @@
         "W-S002"
       ],
       "sourceIds": [
-        "SRC0001"
+        "SRC0001",
+        "SRC0737"
       ],
       "scopeNote": "Conducted the Perskie Oko theatre orchestra on Syrena-Grand-Record 17919, the earliest recording of a Kaper song in the archive.",
       "personIds": [
@@ -21733,7 +21731,7 @@
       "nameAsPrinted": "Orkiestra teatru „Perskie Oko”",
       "displayCredit": "Orchestra",
       "evidenceContext": [
-        "online_catalogue"
+        "recording_label"
       ],
       "sortOrder": 56,
       "certainty": "confirmed",
@@ -21746,7 +21744,7 @@
       "sourceIds": [
         "SRC0736"
       ],
-      "scopeNote": "Recorded the shimmy for Syrena in 1926; the transfer’s publisher names the theatre orchestra and its conductor."
+      "scopeNote": "The displayed Syrena Grand Record no. 17921 label names Orkiestra teatru „Perskie Oko”."
     },
     {
       "id": "CON-S001-CON-P169",
@@ -21754,7 +21752,7 @@
       "nameAsPrinted": "Zygmunt Wiehler",
       "displayCredit": "Directed the orchestra",
       "evidenceContext": [
-        "online_catalogue"
+        "recording_label"
       ],
       "sortOrder": 55,
       "certainty": "confirmed",
@@ -21767,7 +21765,7 @@
       "sourceIds": [
         "SRC0736"
       ],
-      "scopeNote": "Conducted the Perskie Oko theatre orchestra on Syrena Grand Record 17921, as on 17919 recorded in the same year."
+      "scopeNote": "The displayed Syrena Grand Record no. 17921 label credits “dyr. Z. Wiehler”."
     },
     {
       "id": "CON-S001-LAB-ORG132",
@@ -21775,7 +21773,7 @@
       "nameAsPrinted": "Syrena Grand Record",
       "displayCredit": "Issuing label",
       "evidenceContext": [
-        "online_catalogue"
+        "recording_label"
       ],
       "sortOrder": 60,
       "certainty": "confirmed",
@@ -21788,7 +21786,7 @@
       "sourceIds": [
         "SRC0736"
       ],
-      "scopeNote": "Issued the recording as no. 17921 with matrix 17921 in 1926."
+      "scopeNote": "The displayed label identifies Syrena Grand Record and no. 17921; its image does not establish a separate matrix number."
     },
     {
       "id": "CON-S003-CON-P119",

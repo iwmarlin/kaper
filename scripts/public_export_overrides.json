@@ -576,6 +576,100 @@
       }
     },
     "Sources": {
+      "SRC0745": {
+        "fields": {
+          "researchNote": "The description identifies Marek Weber mit seinem Tanz-Orchester, Siegfried Arno and Electrola, and gives 1930 without specifying recording or issue. It supplies no catalogue or matrix number. The separate discographic source SRC0743 documents Electrola EG 2135 A, matrix BD 9264-2, issued in January 1931; that entry does not identify the pressing or take reproduced in this upload. No claim that Arno made only one performance of the song is established here.",
+          "researchNoteType": "discographic_note",
+          "accessDate": "2026-10-26"
+        },
+        "reason": "Individually reviewed catalogue and readable disc-label evidence, 26 October 2026; distinguish issue, reported session and digital access copy, and remove unsupported publisher evidence."
+      },
+      "SRC0737": {
+        "fields": {
+          "fullCitation": "Orkiestra teatru „Perskie Oko”, conducted by Z. Wiehler. “Jak się da, to się zrobi!” Shimmy. Syrena Grand Record, no. 17919. Transfer from a privately held disc published by Stare Melodie on YouTube, 9 April 2025.",
+          "dateQualifier": "reported",
+          "researchNote": "The displayed label confirms the title, orchestra, conductor Z. Wiehler and number 17919. The uploader reports 1926 and calls 17919 the matrix as well as the disc number; the label image alone does not establish a separate matrix number. KPPG record 38213 independently dates the coupled 17919/17921 disc to 1926. The upload description credits Henryk Chwast under the pseudonym Bruno Asper; both forms are independently documented as Kaper’s pseudonyms. This transfer shares M001 with the separate catalogue source SRC0001; no second Media record is needed.",
+          "researchNoteType": "discographic_note",
+          "additionalLinks": [
+            {
+              "label": "KPPG record 38213 — coupled Syrena sides 17919 and 17921",
+              "url": "http://www.kppg.waw.pl/2022/record.php?plyta=38213",
+              "role": "catalogue_entry"
+            }
+          ],
+          "accessDate": "2026-10-26"
+        },
+        "reason": "Individually reviewed catalogue and readable disc-label evidence, 26 October 2026; distinguish issue, reported session and digital access copy, and remove unsupported publisher evidence."
+      },
+      "SRC0736": {
+        "fields": {
+          "fullCitation": "Orkiestra teatru „Perskie Oko”, conducted by Z. Wiehler. “A zresztą… niech pan zadzwoni.” Shimmy. Syrena Grand Record, no. 17921. Transfer from a privately held disc published by Stare Melodie on YouTube, 10 April 2025.",
+          "dateQualifier": "reported",
+          "researchNote": "The displayed label confirms the title, orchestra, conductor Z. Wiehler and number 17921. The uploader reports 1926 and calls 17921 the matrix as well as the disc number; the label image alone does not establish a separate matrix number. KPPG record 38213 independently dates the coupled 17919/17921 disc to 1926. The upload description credits Henryk Chwast under the pseudonym Bruno Asper; both forms are independently documented as Kaper’s pseudonyms.",
+          "researchNoteType": "discographic_note",
+          "additionalLinks": [
+            {
+              "label": "KPPG record 38213 — coupled Syrena sides 17919 and 17921",
+              "url": "http://www.kppg.waw.pl/2022/record.php?plyta=38213",
+              "role": "catalogue_entry"
+            }
+          ],
+          "accessDate": "2026-10-26"
+        },
+        "reason": "Individually reviewed catalogue and readable disc-label evidence, 26 October 2026; distinguish issue, reported session and digital access copy, and remove unsupported publisher evidence."
+      },
+      "SRC0493": {
+        "fields": {
+          "shortCitation": "Adler Electro 5713, “Ich weiß, daß du einst meinen Mund vergißt” / “Du lieber Geiger, spiel einen Tango für mich”",
+          "fullCitation": "Jazzorchester John Morris, with vocal refrain by Erik Garell. “Ich weiß, daß du einst meinen Mund vergißt” (2216), music by K. M. May and Dr. B. Kaper, words by Fr. Rotter and K. Brüll / “Du lieber Geiger, spiel einen Tango für mich” (2222), music by Dr. B. Kaper and German, words by Fritz Rotter. Both from Seitensprünge. Adler Electro, Bestell-Nr. 5713, 10-inch 78 rpm shellac disc, Germany, n.d. Discogs release 2950735; photographs of both labels.",
+          "creator": "Jazzorchester John Morris; Erik Garell, vocal refrain",
+          "repository": "Discogs",
+          "publication": "Adler Electro",
+          "dateRole": "issue",
+          "dateQualifier": "unknown",
+          "slug": "src0493-adler-electro-5713-seitenspruenge",
+          "researchNote": "Both photographed labels identify the performers and authors, Bestell-Nr. 5713 and the additional side numbers 2216 and 2222. The Discogs record supplies no issue date; the film’s 1931 date does not establish when this disc was released. The labels do not identify Edition Karl Brüll as publisher. References to Gloria and an unrelated YouTube transfer have been removed: this source documents the photographed Adler Electro issue.",
+          "researchNoteType": "discographic_note",
+          "accessDate": "2026-10-26"
+        },
+        "reason": "Individually reviewed catalogue and readable disc-label evidence, 26 October 2026; distinguish issue, reported session and digital access copy, and remove unsupported publisher evidence.",
+        "removeFields": [
+          "date",
+          "dateDisplay"
+        ]
+      },
+      "SRC0007": {
+        "fields": {
+          "fullCitation": "Victor Silvester and His Ballroom Orchestra. “Someone to Care for Me” / “My Day Begins and Ends with You.” Parlophone A6766, Australian pressing, 10-inch 78 rpm shellac disc. Discogs release 28032108, dated 1937 in the catalogue.",
+          "dateQualifier": "reported",
+          "researchNote": "The photographed label confirms Parlophone A6766, manufacture in Australia, the orchestra and the “Someone to Care for Me” side’s Kaper–Jurmann credit. The year 1937 is supplied by Discogs, not printed on that label; it is treated as a reported issue date, not a recording-session date. Neither Gus Kahn’s lyricist credit nor Leo Feist’s sheet-music-publisher credit is established by this label. This is a separate orchestral recording, not Deanna Durbin’s film performance.",
+          "researchNoteType": "discographic_note",
+          "accessDate": "2026-10-26"
+        },
+        "reason": "Individually reviewed catalogue and readable disc-label evidence, 26 October 2026; distinguish issue, reported session and digital access copy, and remove unsupported publisher evidence."
+      },
+      "SRC0003": {
+        "fields": {
+          "fullCitation": "Ilja Livschakoff Tanz-Orchester, with German refrain vocal by L. Monosson. “Süße Mamsell, denkst du noch an das kleine Hotel.” Tango by Fritz Rotter and Dr. Bronislaw Kaper. Grammophon B 51043, Bestell-Nr. 23179, side 2. YouTube transfer published by Radiomuseum Hardthausen, 30 September 2019.",
+          "date": "1930",
+          "dateRole": "recording",
+          "dateQualifier": "reported",
+          "researchNote": "The uploader explicitly reports a Berlin recording in 1930; the structured date describes that reported session year, not an independently established issue date. The displayed label identifies the orchestra, vocal refrain, title and authors. It does not support a sheet-music-publisher credit.",
+          "researchNoteType": "discographic_note",
+          "accessDate": "2026-10-26"
+        },
+        "reason": "Individually reviewed catalogue and readable disc-label evidence, 26 October 2026; distinguish issue, reported session and digital access copy, and remove unsupported publisher evidence."
+      },
+      "SRC0001": {
+        "fields": {
+          "fullCitation": "Katalog Polskich Płyt Gramofonowych, record no. 38213. Syrena Record, 1926: “Jak się da, to się zrobi!” (side number 17919), coupled with “A zresztą, niech pan zadzwoni!” (side number 17921); both credited to Bruno Asper. Conductor: Zygmunt Wiehler.",
+          "researchNote": "The catalogue dates the disc to 1926 and lists 17919 and 17921 as its two side numbers; it does not separately identify them as matrix numbers. The displayed label in the Stare Melodie transfer independently names the Perskie Oko theatre orchestra and conductor Z. Wiehler. The KPPG entry does not identify a lyricist or sheet-music publisher; those credits are supported by separate printed sources.",
+          "researchNoteType": "discographic_note",
+          "dateQualifier": "reported",
+          "accessDate": "2026-10-26"
+        },
+        "reason": "Individually reviewed catalogue and readable disc-label evidence, 26 October 2026; distinguish issue, reported session and digital access copy, and remove unsupported publisher evidence."
+      },
       "SRC0883": {
         "fields": {
           "shortCitation": "YouTube, Lys Gauty, “Le bistro du port”",
@@ -2061,10 +2155,22 @@
         }
       },
       "SRC0002": {
-        "reason": "Use the canonical YouTube URL for the Polydor 21768 listening source without an auto-generated playlist context.",
+        "reason": "Individually reviewed catalogue and readable disc-label evidence, 26 October 2026; distinguish issue, reported session and digital access copy, and remove unsupported publisher evidence.",
         "fields": {
-          "primaryUrl": "https://www.youtube.com/watch?v=YAHw4_KS-3o"
-        }
+          "primaryUrl": "https://www.youtube.com/watch?v=YAHw4_KS-3o",
+          "shortCitation": "Polydor 21768, “Miss Annabelle Lee”",
+          "fullCitation": "Hermann Bick and Dr. Kaper. “Miss Annabelle Lee.” Novelty piano duet. Polydor 21768, Germany, n.d. YouTube transfer published by Tim Gracyk, 22 April 2021; the description credits the sound file to Rainer E. Lotz.",
+          "dateRole": "issue",
+          "dateQualifier": "unknown",
+          "slug": "src0002-polydor-21768-miss-annabelle-lee",
+          "researchNote": "The upload title gives 1927 without distinguishing the composition, recording or issue. The earlier editorial date [1928] was inferred from nearby catalogue numbers, not from a dated entry for Polydor 21768 itself; it is not retained as an established issue date. The label and transfer identify the two-piano partnership, but an exact session or issue date remains unverified.",
+          "researchNoteType": "discographic_note",
+          "accessDate": "2026-10-26"
+        },
+        "removeFields": [
+          "date",
+          "dateDisplay"
+        ]
       },
       "SRC0875": {
         "reason": "Link the copyright-catalogue source directly to the page containing the cited entry for ‘Learn to smile’, rather than to the volume landing page.",
@@ -5028,10 +5134,23 @@
         }
       },
       "SRC0553": {
-        "reason": "Normalize the YouTube publication date to ISO 8601; the publication context remains in the citation.",
+        "reason": "Individually reviewed catalogue and readable disc-label evidence, 26 October 2026; distinguish issue, reported session and digital access copy, and remove unsupported publisher evidence.",
         "fields": {
-          "date": "2026-06-25"
-        }
+          "sourceType": "recording_discographic_source",
+          "shortCitation": "Polydor 10237-B, “Song is ended” — Hermann Bick and Dr. Kaper",
+          "fullCitation": "Hermann Bick and Dr. Kaper (two pianos). “Song is ended” / “唄ひ終わりて.” Boston; music credited to Berlin. Polydor 10237-B, label matrix 1774 BK, manufactured in Japan by Nippon Polydor Chikuonki Co., Ltd., Tokio, n.d. Label reproduced in the YouTube transfer published by 梅園 真澄, 25 June 2026.",
+          "creator": "Hermann Bick and Dr. Kaper",
+          "publication": "Polydor",
+          "dateRole": "issue",
+          "dateQualifier": "unknown",
+          "researchNote": "The readable label directly identifies the two pianists, title, Berlin credit, catalogue number 10237-B, matrix 1774 BK and Japanese manufacturer. It does not supply a session or issue date. 25 June 2026 dates the YouTube access copy, not the historical disc. M231 remains a documentary still of the label, not an audio asset.",
+          "researchNoteType": "discographic_note",
+          "accessDate": "2026-10-26"
+        },
+        "removeFields": [
+          "date",
+          "dateDisplay"
+        ]
       },
       "SRC0056": {
         "reason": "Normalize the explanatory unknown-date phrase to the catalogue's standard n.d.",
@@ -5446,6 +5565,12 @@
       }
     },
     "Media": {
+      "M375": {
+        "fields": {
+          "publicCaption": "Listening reference for “A zresztą… niech pan zadzwoni”, played by the Perskie Oko theatre orchestra under Zygmunt Wiehler, Syrena Grand Record no. 17921. KPPG dates the coupled disc to 1926. Stare Melodie supplies the transfer from a privately held copy; its description credits Henryk Chwast under the pseudonym Bruno Asper."
+        },
+        "reason": "Individually reviewed catalogue and readable disc-label evidence, 26 October 2026; distinguish issue, reported session and digital access copy, and remove unsupported publisher evidence."
+      },
       "M450": {
         "fields": {
           "publicCaption": "“Le bistrot du port”, attributed to Lys Gauty. The uploader reports 1934; a separate Frémeaux discography documents her session of 18 October 1934. The slideshow includes a Polydor label photo, but the pressing and take reproduced have not been independently identified."
@@ -5536,9 +5661,11 @@
       },
       "M380": {
         "fields": {
-          "publicCaption": "Listening reference for “Ach, Otto, Otto…!”, attributed to Siegfried Arno with Marek Weber und sein Orchester. The discography documents Electrola EG 2135 A, BD 9264-2, issued in January 1931, but supplies no exact session date and does not independently identify the pressing or take reproduced in this upload."
+          "publicCaption": "Listening reference for “Ach, Otto, Otto…!”, attributed to Siegfried Arno with Marek Weber und sein Orchester. The discography documents Electrola EG 2135 A, BD 9264-2, issued in January 1931, but supplies no exact session date and does not independently identify the pressing or take reproduced in this upload.",
+          "description": "External listening reference for “Ach, Otto, Otto…!”, attributed by the uploader to Siegfried Arno with Marek Weber und sein Orchester on Electrola. The description gives 1930 but no catalogue or matrix number; it does not establish the particular pressing or take.",
+          "publicCreditLine": "Siegfried Arno with Marek Weber und sein Orchester, as identified by the uploader. Electrola EG 2135 is separately documented in the discography; the transferred copy is unverified. YouTube upload by HeadHunter131."
         },
-        "reason": "Individually reviewed transfer metadata and independent discographic corroboration, 26 October 2026."
+        "reason": "Individually reviewed catalogue and readable disc-label evidence, 26 October 2026; distinguish issue, reported session and digital access copy, and remove unsupported publisher evidence."
       },
       "M348": {
         "fields": {
@@ -6008,11 +6135,12 @@
         }
       },
       "M002": {
-        "reason": "Correct the Miss Annabelle Lee listening reference against the Staatsbibliothek zu Berlin catalogue: the recording belongs with the dedicated work, whose 1929 two-piano transcription is no. 1 of Cocktails, not with the separate Jazz Drops series.",
+        "reason": "Individually reviewed catalogue and readable disc-label evidence, 26 October 2026; distinguish issue, reported session and digital access copy, and remove unsupported publisher evidence.",
         "fields": {
           "externalUrl": "https://www.youtube.com/watch?v=YAHw4_KS-3o",
           "slug": "miss-annabelle-lee-m002",
-          "publicCaption": "Listening reference for “Miss Annabelle Lee” (Polydor 21768, 1927), performed by Hermann Bick and Dr. Kaper on two pianos. Kaper’s printed two-piano transcription was subsequently issued by Alberti in 1929 as no. 1 of the Cocktails series."
+          "publicCaption": "Listening reference for “Miss Annabelle Lee”, performed by Hermann Bick and Dr. Kaper on two pianos, Polydor 21768. The disc’s issue date remains unverified. Kaper’s printed two-piano transcription was issued by Alberti in 1929 as no. 1 of the Cocktails series.",
+          "description": "Hermann Bick and Dr. Kaper play “Miss Annabelle Lee” as a two-piano novelty on Polydor 21768. The disc’s exact recording and issue dates remain unverified."
         }
       },
       "M015": {
@@ -6031,9 +6159,11 @@
         }
       },
       "M001": {
-        "reason": "Classify the listening reference with the documented 1926 Warsaw song rather than with the later European recording and circulation context.",
+        "reason": "Individually reviewed catalogue and readable disc-label evidence, 26 October 2026; distinguish issue, reported session and digital access copy, and remove unsupported publisher evidence.",
         "fields": {
-          "period": "warsaw"
+          "period": "warsaw",
+          "description": "External listening reference for “Jak się da, to się zrobi!”, performed by the Perskie Oko theatre orchestra under Zygmunt Wiehler, Syrena Grand Record no. 17919. The coupled disc is dated 1926 by KPPG.",
+          "publicCaption": "Listening reference for “Jak się da, to się zrobi!”, performed by the Perskie Oko theatre orchestra under Zygmunt Wiehler. Syrena Grand Record no. 17919; KPPG dates the coupled disc to 1926."
         }
       },
       "M012": {
@@ -7550,6 +7680,33 @@
       }
     },
     "Contributions": {
+      "CON-S001-LAB-ORG132": {
+        "fields": {
+          "evidenceContext": [
+            "recording_label"
+          ],
+          "scopeNote": "The displayed label identifies Syrena Grand Record and no. 17921; its image does not establish a separate matrix number."
+        },
+        "reason": "Individually reviewed catalogue and readable disc-label evidence, 26 October 2026; distinguish issue, reported session and digital access copy, and remove unsupported publisher evidence."
+      },
+      "CON-S001-CON-P169": {
+        "fields": {
+          "evidenceContext": [
+            "recording_label"
+          ],
+          "scopeNote": "The displayed Syrena Grand Record no. 17921 label credits “dyr. Z. Wiehler”."
+        },
+        "reason": "Individually reviewed catalogue and readable disc-label evidence, 26 October 2026; distinguish issue, reported session and digital access copy, and remove unsupported publisher evidence."
+      },
+      "CON-S001-P-ORG123": {
+        "fields": {
+          "evidenceContext": [
+            "recording_label"
+          ],
+          "scopeNote": "The displayed Syrena Grand Record no. 17921 label names Orkiestra teatru „Perskie Oko”."
+        },
+        "reason": "Individually reviewed catalogue and readable disc-label evidence, 26 October 2026; distinguish issue, reported session and digital access copy, and remove unsupported publisher evidence."
+      },
       "CON-S031-P-P118": {
         "fields": {
           "scopeNote": "The distributor-supplied Jube Classic reissue metadata names Richard Tauber with the Odeon Künstlerorchester and Frieder Weissmann. It documents the reissued performance but identifies no original disc, matrix or session; the digital issue date is 2 July 2013 and the YouTube copy was published in 2015."
@@ -16431,6 +16588,38 @@
       }
     },
     "Contributions": {
+      "CON-S002-CON-P169": {
+        "fields": {
+          "sourceIds": [
+            "SRC0737"
+          ]
+        },
+        "reason": "Individually reviewed catalogue and readable disc-label evidence, 26 October 2026; distinguish issue, reported session and digital access copy, and remove unsupported publisher evidence."
+      },
+      "CON-S038-L-P020": {
+        "fields": {
+          "sourceIds": [
+            "SRC0493"
+          ]
+        },
+        "reason": "Individually reviewed catalogue and readable disc-label evidence, 26 October 2026; distinguish issue, reported session and digital access copy, and remove unsupported publisher evidence."
+      },
+      "CON-S038-C-P105": {
+        "fields": {
+          "sourceIds": [
+            "SRC0493"
+          ]
+        },
+        "reason": "Individually reviewed catalogue and readable disc-label evidence, 26 October 2026; distinguish issue, reported session and digital access copy, and remove unsupported publisher evidence."
+      },
+      "CON-S038-C-P009": {
+        "fields": {
+          "sourceIds": [
+            "SRC0493"
+          ]
+        },
+        "reason": "Individually reviewed catalogue and readable disc-label evidence, 26 October 2026; distinguish issue, reported session and digital access copy, and remove unsupported publisher evidence."
+      },
       "CON-S096-LAB-ORG039": {
         "fields": {
           "sourceIds": [
@@ -17017,6 +17206,22 @@
       "O012": {"reason": "Attach the surviving Fiesta score headed Ein neuer Cocktail.", "fields": {"sourceIds": ["SRC0789"]}}
     },
     "Works": {
+      "W-S001": {
+        "fields": {
+          "sourceIds": [
+            "SRC0001"
+          ]
+        },
+        "reason": "Individually reviewed catalogue and readable disc-label evidence, 26 October 2026; distinguish issue, reported session and digital access copy, and remove unsupported publisher evidence."
+      },
+      "W-S038": {
+        "fields": {
+          "sourceIds": [
+            "SRC0493"
+          ]
+        },
+        "reason": "Individually reviewed catalogue and readable disc-label evidence, 26 October 2026; distinguish issue, reported session and digital access copy, and remove unsupported publisher evidence."
+      },
       "W-S120": {
         "fields": {
           "sourceIds": [
@@ -17911,6 +18116,22 @@
       }
     },
     "Songs": {
+      "S001": {
+        "fields": {
+          "sourceIds": [
+            "SRC0001"
+          ]
+        },
+        "reason": "Individually reviewed catalogue and readable disc-label evidence, 26 October 2026; distinguish issue, reported session and digital access copy, and remove unsupported publisher evidence."
+      },
+      "S038": {
+        "fields": {
+          "sourceIds": [
+            "SRC0493"
+          ]
+        },
+        "reason": "Individually reviewed catalogue and readable disc-label evidence, 26 October 2026; distinguish issue, reported session and digital access copy, and remove unsupported publisher evidence."
+      },
       "S120": {
         "fields": {
           "sourceIds": [
@@ -18040,6 +18261,14 @@
       }
     },
     "Person Name Variants": {
+      "PNV0003": {
+        "fields": {
+          "sourceIds": [
+            "SRC0493"
+          ]
+        },
+        "reason": "Reciprocal link for the German composer credit printed on the Adler Electro 5713 label, reviewed 26 October 2026."
+      },
       "PNV0019": {
         "reason": "Attest the printed form “B. Kaper” through the exact item-level sources, including the Dutch edition and Jazz Drops nos. 1–7.",
         "fields": {
@@ -18624,6 +18853,14 @@
       }
     },
     "People": {
+      "P105": {
+        "fields": {
+          "sourceIds": [
+            "SRC0493"
+          ]
+        },
+        "reason": "Reciprocal link for the German composer credit printed on the Adler Electro 5713 label, reviewed 26 October 2026."
+      },
       "P040": {
         "reason": "Present Francis Salabert primarily as a music publisher while retaining his documented lyricist role under the related name Jean Cis, and expose the ECMF portrait through its dedicated source.",
         "fields": {
@@ -19270,6 +19507,47 @@
       }
     },
     "Sources": {
+      "SRC0737": {
+        "fields": {
+          "contributionIds": [
+            "CON-S002-CON-P169"
+          ]
+        },
+        "reason": "Individually reviewed catalogue and readable disc-label evidence, 26 October 2026; distinguish issue, reported session and digital access copy, and remove unsupported publisher evidence."
+      },
+      "SRC0001": {
+        "fields": {
+          "workIds": [
+            "W-S001"
+          ],
+          "songIds": [
+            "S001"
+          ]
+        },
+        "reason": "Individually reviewed catalogue and readable disc-label evidence, 26 October 2026; distinguish issue, reported session and digital access copy, and remove unsupported publisher evidence."
+      },
+      "SRC0493": {
+        "fields": {
+          "workIds": [
+            "W-S038"
+          ],
+          "songIds": [
+            "S038"
+          ],
+          "contributionIds": [
+            "CON-S038-C-P009",
+            "CON-S038-C-P105",
+            "CON-S038-L-P020"
+          ],
+          "personIds": [
+            "P105"
+          ],
+          "nameVariantIds": [
+            "PNV0003"
+          ]
+        },
+        "reason": "Individually reviewed catalogue and readable disc-label evidence, 26 October 2026; distinguish issue, reported session and digital access copy, and remove unsupported publisher evidence."
+      },
       "SRC0314": {
         "fields": {
           "workIds": [
@@ -21343,6 +21621,43 @@
       }
     },
     "Sources": {
+      "SRC0493": {
+        "fields": {
+          "contributionIds": [
+            "CON-S039-PUB-ORG031"
+          ],
+          "organizationIds": [
+            "ORG093"
+          ]
+        },
+        "reason": "Individually reviewed catalogue and readable disc-label evidence, 26 October 2026; distinguish issue, reported session and digital access copy, and remove unsupported publisher evidence."
+      },
+      "SRC0007": {
+        "fields": {
+          "contributionIds": [
+            "CON-S133-L-P025",
+            "CON-S133-PUB-ORG040"
+          ]
+        },
+        "reason": "Individually reviewed catalogue and readable disc-label evidence, 26 October 2026; distinguish issue, reported session and digital access copy, and remove unsupported publisher evidence."
+      },
+      "SRC0003": {
+        "fields": {
+          "contributionIds": [
+            "CON-S011-PUB-ORG029"
+          ]
+        },
+        "reason": "Individually reviewed catalogue and readable disc-label evidence, 26 October 2026; distinguish issue, reported session and digital access copy, and remove unsupported publisher evidence."
+      },
+      "SRC0001": {
+        "fields": {
+          "contributionIds": [
+            "CON-S002-L-P003",
+            "CON-S002-PUB-ORG034"
+          ]
+        },
+        "reason": "Individually reviewed catalogue and readable disc-label evidence, 26 October 2026; distinguish issue, reported session and digital access copy, and remove unsupported publisher evidence."
+      },
       "SRC0006": {
         "fields": {
           "contributionIds": [
@@ -22270,6 +22585,14 @@
       }
     },
     "Organizations": {
+      "ORG093": {
+        "fields": {
+          "sourceIds": [
+            "SRC0493"
+          ]
+        },
+        "reason": "Individually reviewed catalogue and readable disc-label evidence, 26 October 2026; distinguish issue, reported session and digital access copy, and remove unsupported publisher evidence."
+      },
       "ORG138": {
         "reason": "Separate the documented German Gloria G.O. 10303 issue from the D 4431 transfer; shared matrix Bi 644 does not establish the latter’s issuing label.",
         "fields": {
@@ -22518,6 +22841,54 @@
       }
     },
     "Contributions": {
+      "CON-S039-PUB-ORG031": {
+        "fields": {
+          "sourceIds": [
+            "SRC0493"
+          ]
+        },
+        "reason": "Individually reviewed catalogue and readable disc-label evidence, 26 October 2026; distinguish issue, reported session and digital access copy, and remove unsupported publisher evidence."
+      },
+      "CON-S133-PUB-ORG040": {
+        "fields": {
+          "sourceIds": [
+            "SRC0007"
+          ]
+        },
+        "reason": "Individually reviewed catalogue and readable disc-label evidence, 26 October 2026; distinguish issue, reported session and digital access copy, and remove unsupported publisher evidence."
+      },
+      "CON-S133-L-P025": {
+        "fields": {
+          "sourceIds": [
+            "SRC0007"
+          ]
+        },
+        "reason": "Individually reviewed catalogue and readable disc-label evidence, 26 October 2026; distinguish issue, reported session and digital access copy, and remove unsupported publisher evidence."
+      },
+      "CON-S011-PUB-ORG029": {
+        "fields": {
+          "sourceIds": [
+            "SRC0003"
+          ]
+        },
+        "reason": "Individually reviewed catalogue and readable disc-label evidence, 26 October 2026; distinguish issue, reported session and digital access copy, and remove unsupported publisher evidence."
+      },
+      "CON-S002-PUB-ORG034": {
+        "fields": {
+          "sourceIds": [
+            "SRC0001"
+          ]
+        },
+        "reason": "Individually reviewed catalogue and readable disc-label evidence, 26 October 2026; distinguish issue, reported session and digital access copy, and remove unsupported publisher evidence."
+      },
+      "CON-S002-L-P003": {
+        "fields": {
+          "sourceIds": [
+            "SRC0001"
+          ]
+        },
+        "reason": "Individually reviewed catalogue and readable disc-label evidence, 26 October 2026; distinguish issue, reported session and digital access copy, and remove unsupported publisher evidence."
+      },
       "CON-S119-PUB-ORG001": {
         "fields": {
           "sourceIds": [

@@ -148,6 +148,98 @@ AUDITED_DIGITAL_AUDIO_FIELDS: dict[str, dict[str, Any]] = {
 
 
 RECORDING_FIELDS: dict[str, dict[str, Any]] = {
+    "SRC0001": {
+        "fullCitation": "Katalog Polskich Płyt Gramofonowych, record no. 38213. Syrena Record, 1926: “Jak się da, to się zrobi!” (side number 17919), coupled with “A zresztą, niech pan zadzwoni!” (side number 17921); both credited to Bruno Asper. Conductor: Zygmunt Wiehler.",
+        "researchNote": "The catalogue dates the disc to 1926 and lists 17919 and 17921 as its two side numbers; it does not separately identify them as matrix numbers. The displayed label in the Stare Melodie transfer independently names the Perskie Oko theatre orchestra and conductor Z. Wiehler. The KPPG entry does not identify a lyricist or sheet-music publisher; those credits are supported by separate printed sources.",
+        "researchNoteType": "discographic_note",
+        "dateQualifier": "reported",
+        "accessDate": "2026-10-26"
+    },
+    "SRC0002": {
+        "shortCitation": "Polydor 21768, “Miss Annabelle Lee”",
+        "fullCitation": "Hermann Bick and Dr. Kaper. “Miss Annabelle Lee.” Novelty piano duet. Polydor 21768, Germany, n.d. YouTube transfer published by Tim Gracyk, 22 April 2021; the description credits the sound file to Rainer E. Lotz.",
+        "dateRole": "issue",
+        "dateQualifier": "unknown",
+        "slug": "src0002-polydor-21768-miss-annabelle-lee",
+        "researchNote": "The upload title gives 1927 without distinguishing the composition, recording or issue. The earlier editorial date [1928] was inferred from nearby catalogue numbers, not from a dated entry for Polydor 21768 itself; it is not retained as an established issue date. The label and transfer identify the two-piano partnership, but an exact session or issue date remains unverified.",
+        "researchNoteType": "discographic_note",
+        "accessDate": "2026-10-26"
+    },
+    "SRC0003": {
+        "fullCitation": "Ilja Livschakoff Tanz-Orchester, with German refrain vocal by L. Monosson. “Süße Mamsell, denkst du noch an das kleine Hotel.” Tango by Fritz Rotter and Dr. Bronislaw Kaper. Grammophon B 51043, Bestell-Nr. 23179, side 2. YouTube transfer published by Radiomuseum Hardthausen, 30 September 2019.",
+        "date": "1930",
+        "dateRole": "recording",
+        "dateQualifier": "reported",
+        "researchNote": "The uploader explicitly reports a Berlin recording in 1930; the structured date describes that reported session year, not an independently established issue date. The displayed label identifies the orchestra, vocal refrain, title and authors. It does not support a sheet-music-publisher credit.",
+        "researchNoteType": "discographic_note",
+        "accessDate": "2026-10-26"
+    },
+    "SRC0007": {
+        "fullCitation": "Victor Silvester and His Ballroom Orchestra. “Someone to Care for Me” / “My Day Begins and Ends with You.” Parlophone A6766, Australian pressing, 10-inch 78 rpm shellac disc. Discogs release 28032108, dated 1937 in the catalogue.",
+        "dateQualifier": "reported",
+        "researchNote": "The photographed label confirms Parlophone A6766, manufacture in Australia, the orchestra and the “Someone to Care for Me” side’s Kaper–Jurmann credit. The year 1937 is supplied by Discogs, not printed on that label; it is treated as a reported issue date, not a recording-session date. Neither Gus Kahn’s lyricist credit nor Leo Feist’s sheet-music-publisher credit is established by this label. This is a separate orchestral recording, not Deanna Durbin’s film performance.",
+        "researchNoteType": "discographic_note",
+        "accessDate": "2026-10-26"
+    },
+    "SRC0493": {
+        "shortCitation": "Adler Electro 5713, “Ich weiß, daß du einst meinen Mund vergißt” / “Du lieber Geiger, spiel einen Tango für mich”",
+        "fullCitation": "Jazzorchester John Morris, with vocal refrain by Erik Garell. “Ich weiß, daß du einst meinen Mund vergißt” (2216), music by K. M. May and Dr. B. Kaper, words by Fr. Rotter and K. Brüll / “Du lieber Geiger, spiel einen Tango für mich” (2222), music by Dr. B. Kaper and German, words by Fritz Rotter. Both from Seitensprünge. Adler Electro, Bestell-Nr. 5713, 10-inch 78 rpm shellac disc, Germany, n.d. Discogs release 2950735; photographs of both labels.",
+        "creator": "Jazzorchester John Morris; Erik Garell, vocal refrain",
+        "repository": "Discogs",
+        "publication": "Adler Electro",
+        "dateRole": "issue",
+        "dateQualifier": "unknown",
+        "slug": "src0493-adler-electro-5713-seitenspruenge",
+        "researchNote": "Both photographed labels identify the performers and authors, Bestell-Nr. 5713 and the additional side numbers 2216 and 2222. The Discogs record supplies no issue date; the film’s 1931 date does not establish when this disc was released. The labels do not identify Edition Karl Brüll as publisher. References to Gloria and an unrelated YouTube transfer have been removed: this source documents the photographed Adler Electro issue.",
+        "researchNoteType": "discographic_note",
+        "accessDate": "2026-10-26"
+    },
+    "SRC0553": {
+        "sourceType": "recording_discographic_source",
+        "shortCitation": "Polydor 10237-B, “Song is ended” — Hermann Bick and Dr. Kaper",
+        "fullCitation": "Hermann Bick and Dr. Kaper (two pianos). “Song is ended” / “唄ひ終わりて.” Boston; music credited to Berlin. Polydor 10237-B, label matrix 1774 BK, manufactured in Japan by Nippon Polydor Chikuonki Co., Ltd., Tokio, n.d. Label reproduced in the YouTube transfer published by 梅園 真澄, 25 June 2026.",
+        "creator": "Hermann Bick and Dr. Kaper",
+        "publication": "Polydor",
+        "dateRole": "issue",
+        "dateQualifier": "unknown",
+        "researchNote": "The readable label directly identifies the two pianists, title, Berlin credit, catalogue number 10237-B, matrix 1774 BK and Japanese manufacturer. It does not supply a session or issue date. 25 June 2026 dates the YouTube access copy, not the historical disc. M231 remains a documentary still of the label, not an audio asset.",
+        "researchNoteType": "discographic_note",
+        "accessDate": "2026-10-26"
+    },
+    "SRC0736": {
+        "fullCitation": "Orkiestra teatru „Perskie Oko”, conducted by Z. Wiehler. “A zresztą… niech pan zadzwoni.” Shimmy. Syrena Grand Record, no. 17921. Transfer from a privately held disc published by Stare Melodie on YouTube, 10 April 2025.",
+        "dateQualifier": "reported",
+        "researchNote": "The displayed label confirms the title, orchestra, conductor Z. Wiehler and number 17921. The uploader reports 1926 and calls 17921 the matrix as well as the disc number; the label image alone does not establish a separate matrix number. KPPG record 38213 independently dates the coupled 17919/17921 disc to 1926. The upload description credits Henryk Chwast under the pseudonym Bruno Asper; both forms are independently documented as Kaper’s pseudonyms.",
+        "researchNoteType": "discographic_note",
+        "additionalLinks": [
+            {
+                "label": "KPPG record 38213 — coupled Syrena sides 17919 and 17921",
+                "url": "http://www.kppg.waw.pl/2022/record.php?plyta=38213",
+                "role": "catalogue_entry"
+            }
+        ],
+        "accessDate": "2026-10-26"
+    },
+    "SRC0737": {
+        "fullCitation": "Orkiestra teatru „Perskie Oko”, conducted by Z. Wiehler. “Jak się da, to się zrobi!” Shimmy. Syrena Grand Record, no. 17919. Transfer from a privately held disc published by Stare Melodie on YouTube, 9 April 2025.",
+        "dateQualifier": "reported",
+        "researchNote": "The displayed label confirms the title, orchestra, conductor Z. Wiehler and number 17919. The uploader reports 1926 and calls 17919 the matrix as well as the disc number; the label image alone does not establish a separate matrix number. KPPG record 38213 independently dates the coupled 17919/17921 disc to 1926. The upload description credits Henryk Chwast under the pseudonym Bruno Asper; both forms are independently documented as Kaper’s pseudonyms. This transfer shares M001 with the separate catalogue source SRC0001; no second Media record is needed.",
+        "researchNoteType": "discographic_note",
+        "additionalLinks": [
+            {
+                "label": "KPPG record 38213 — coupled Syrena sides 17919 and 17921",
+                "url": "http://www.kppg.waw.pl/2022/record.php?plyta=38213",
+                "role": "catalogue_entry"
+            }
+        ],
+        "accessDate": "2026-10-26"
+    },
+    "SRC0745": {
+        "researchNote": "The description identifies Marek Weber mit seinem Tanz-Orchester, Siegfried Arno and Electrola, and gives 1930 without specifying recording or issue. It supplies no catalogue or matrix number. The separate discographic source SRC0743 documents Electrola EG 2135 A, matrix BD 9264-2, issued in January 1931; that entry does not identify the pressing or take reproduced in this upload. No claim that Arno made only one performance of the song is established here.",
+        "researchNoteType": "discographic_note",
+        "accessDate": "2026-10-26",
+        "fullCitation": "HeadHunter131, uploader. “Siegfried Arno: Ach Otto Otto!” YouTube audio reference, uploaded 11 August 2008."
+    },
     "SRC0314": {
         "title": "The Duchess Has a Twinkle in Her Eye — modern stage performance, YouTube",
         "shortCitation": "YouTube, “The Duchess Has a Twinkle in Her Eye” — stage performance",
@@ -1004,6 +1096,15 @@ RECORDING_FIELDS: dict[str, dict[str, Any]] = {
 # These corrections concern citation syntax, not the date of a modern issue.
 # Keep uploader-reported recording dates distinct from upload dates.
 AUDITED_RECORDING_CITATIONS = {
+    "SRC0001": "Katalog Polskich Płyt Gramofonowych, record no. 38213. Syrena Record, 1926: “Jak się da, to się zrobi!” (side number 17919), coupled with “A zresztą, niech pan zadzwoni!” (side number 17921); both credited to Bruno Asper. Conductor: Zygmunt Wiehler.",
+    "SRC0002": "Hermann Bick and Dr. Kaper. “Miss Annabelle Lee.” Novelty piano duet. Polydor 21768, Germany, n.d. YouTube transfer published by Tim Gracyk, 22 April 2021; the description credits the sound file to Rainer E. Lotz.",
+    "SRC0003": "Ilja Livschakoff Tanz-Orchester, with German refrain vocal by L. Monosson. “Süße Mamsell, denkst du noch an das kleine Hotel.” Tango by Fritz Rotter and Dr. Bronislaw Kaper. Grammophon B 51043, Bestell-Nr. 23179, side 2. YouTube transfer published by Radiomuseum Hardthausen, 30 September 2019.",
+    "SRC0007": "Victor Silvester and His Ballroom Orchestra. “Someone to Care for Me” / “My Day Begins and Ends with You.” Parlophone A6766, Australian pressing, 10-inch 78 rpm shellac disc. Discogs release 28032108, dated 1937 in the catalogue.",
+    "SRC0493": "Jazzorchester John Morris, with vocal refrain by Erik Garell. “Ich weiß, daß du einst meinen Mund vergißt” (2216), music by K. M. May and Dr. B. Kaper, words by Fr. Rotter and K. Brüll / “Du lieber Geiger, spiel einen Tango für mich” (2222), music by Dr. B. Kaper and German, words by Fritz Rotter. Both from Seitensprünge. Adler Electro, Bestell-Nr. 5713, 10-inch 78 rpm shellac disc, Germany, n.d. Discogs release 2950735; photographs of both labels.",
+    "SRC0553": "Hermann Bick and Dr. Kaper (two pianos). “Song is ended” / “唄ひ終わりて.” Boston; music credited to Berlin. Polydor 10237-B, label matrix 1774 BK, manufactured in Japan by Nippon Polydor Chikuonki Co., Ltd., Tokio, n.d. Label reproduced in the YouTube transfer published by 梅園 真澄, 25 June 2026.",
+    "SRC0736": "Orkiestra teatru „Perskie Oko”, conducted by Z. Wiehler. “A zresztą… niech pan zadzwoni.” Shimmy. Syrena Grand Record, no. 17921. Transfer from a privately held disc published by Stare Melodie on YouTube, 10 April 2025.",
+    "SRC0737": "Orkiestra teatru „Perskie Oko”, conducted by Z. Wiehler. “Jak się da, to się zrobi!” Shimmy. Syrena Grand Record, no. 17919. Transfer from a privately held disc published by Stare Melodie on YouTube, 9 April 2025.",
+    "SRC0745": "HeadHunter131, uploader. “Siegfried Arno: Ach Otto Otto!” YouTube audio reference, uploaded 11 August 2008.",
     "SRC0314": "“The Duchess Has a Twinkle in Her Eye.” Stage performance attributed to Christoph Wagner-Trenkwitz with Ensemble Albero Verde, in Die letzte Nacht at Theater und Kabarett “Die Hölle”, Theater an der Wien, 2014. Video published by jerzabinka on YouTube, 29 March 2019.",
     "SRC0693": "Richard Tauber with the Odeon Künstlerorchester, conducted by Frieder Weissmann. “Die grosse Attraktion: Du warst mir ein Roman.” Track on The Richard Tauber Collection, vol. 12: Film Songs (Recordings 1928–1932). Jube Classic, digital release, 2 July 2013. Distributed to YouTube by Naxos Digital Services.",
     "SRC0761": "Jan Kiepura with the Odeon symphony orchestra. “Signorina, Signorina”, from Zdobyć cię muszę; label credit “B. Kaper, W. Jurmann, M. Halicz”. Sung in Polish. Odeon O.236842 b, printed number 137013, n.d. Disc label shown in the YouTube transfer published by andrzej2392.",
@@ -1383,6 +1484,18 @@ VERIFIED_RECORDING_CHRONOLOGY: dict[str, dict[str, Any]] = {
 }
 
 VERIFIED_RECORDING_FIELD_REMOVALS: dict[str, list[str]] = {
+    "SRC0002": [
+        "date",
+        "dateDisplay"
+    ],
+    "SRC0493": [
+        "date",
+        "dateDisplay"
+    ],
+    "SRC0553": [
+        "date",
+        "dateDisplay"
+    ],
     "SRC0748": [
         "date",
         "dateDisplay"
