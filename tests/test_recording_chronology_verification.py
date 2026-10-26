@@ -26,7 +26,10 @@ class RecordingChronologyVerificationTests(unittest.TestCase):
         self.assertEqual(source["dateRole"], "issue")
         self.assertEqual(source["dateQualifier"], "confirmed")
         self.assertIn("Répertoire phonographique", source["researchNote"])
-        self.assertNotIn("1932", source["researchNote"])
+        # The encoded UNIMARC year conflicts with the explicit publication
+        # statement; the note must disclose it, not infer a date from the film.
+        self.assertIn("field 100", source["researchNote"])
+        self.assertIn("1932", source["researchNote"])
         self.assertNotIn("cannot predate", source["researchNote"])
         self.assertEqual(source["researchNoteType"], "discographic_note")
 

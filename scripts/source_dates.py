@@ -120,6 +120,36 @@ HMV_R_SERIES_PATTERN = re.compile(
 # these explicit avoids accidentally treating life dates, collection spans or
 # years embedded in catalogue identifiers as Source dates.
 REVIEWED_SOURCE_DATES: dict[str, dict[str, str]] = {
+    "SRC0300": {
+        "date": "1934",
+        "dateRole": "issue",
+        "dateQualifier": "confirmed",
+        "dateDisplay": "[1934]"
+    },
+    "SRC0583": {
+        "dateRole": "recording",
+        "dateQualifier": "confirmed",
+        "date": "1933-02-07"
+    },
+    "SRC0625": {
+        "date": "1937-06-23",
+        "dateRole": "recording",
+        "dateQualifier": "confirmed"
+    },
+    "SRC0741": {
+        "dateRole": "publication",
+        "dateQualifier": "unknown"
+    },
+    "SRC0742": {
+        "dateRole": "publication",
+        "dateQualifier": "unknown"
+    },
+    "SRC0802": {
+        "date": "1934",
+        "dateRole": "issue",
+        "dateQualifier": "uncertain",
+        "dateDisplay": "[1934]"
+    },
     "SRC0315": {
         "date": "2025-01-23",
         "dateRole": "digital_publication",
@@ -536,7 +566,7 @@ REVIEWED_SOURCE_DATES: dict[str, dict[str, str]] = {
     },
     "SRC0801": {
         "dateRole": "issue",
-        "dateQualifier": "unknown",
+        "dateQualifier": "unknown"
     },
     "SRC0803": {
         "date": "1934",
@@ -552,7 +582,7 @@ REVIEWED_SOURCE_DATES: dict[str, dict[str, str]] = {
         "date": "1934",
         "dateRole": "issue",
         "dateQualifier": "confirmed",
-        "dateDisplay": "[1934]",
+        "dateDisplay": "[1934]"
     },
     "SRC0806": {
         "date": "1934",

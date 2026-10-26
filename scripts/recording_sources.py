@@ -79,6 +79,42 @@ def reviewed_printed_number_errors(record: dict[str, Any]) -> list[str]:
     ]
 
 
+REVIEWED_RECORDING_CATALOGUES = frozenset({
+    "SRC0300", "SRC0583", "SRC0625", "SRC0741", "SRC0742",
+    "SRC0801", "SRC0802", "SRC0805", "SRC0829",
+})
+
+# These library entries do not contain the work-level authorship statements
+# previously attributed to them. Other independent witnesses remain linked.
+CATALOGUE_UNSUPPORTED_AUTHORSHIP = {
+    "SRC0300": {"CON-S096-C-P009", "CON-S096-C-P077", "CON-S096-L-P049"},
+    "SRC0805": {"CON-S114-C-P009", "CON-S114-C-P077"},
+}
+
+
+def recording_catalogue_evidence_errors(
+    source: dict[str, Any], contributions_by_id: dict[str, dict[str, Any]]
+) -> list[str]:
+    """Preserve reviewed catalogue identity, dating and credit boundaries."""
+    sid = source.get("id")
+    if sid not in REVIEWED_RECORDING_CATALOGUES:
+        return []
+    errors = []
+    if source.get("sourceType") != "sound_recording_catalogue":
+        errors.append(f"{sid}: reviewed recording catalogue has an inconsistent sourceType")
+    for cid in CATALOGUE_UNSUPPORTED_AUTHORSHIP.get(sid, set()):
+        if (cid in (source.get("contributionIds") or [])
+                or sid in (contributions_by_id.get(cid, {}).get("sourceIds") or [])):
+            errors.append(f"{sid}: catalogue does not support authorship credit {cid}")
+    if sid == "SRC0583" and source.get("primaryUrl") != "https://d-nb.info/380669366":
+        errors.append("SRC0583: Ninon must use its linked DNB record, not the Oh Madonna side")
+    if sid == "SRC0625" and (source.get("date"), source.get("dateRole")) != (
+        "1937-06-23", "recording"
+    ):
+        errors.append("SRC0625: use the explicit recording date; DL 1940 is legal deposit, not issue")
+    return errors
+
+
 RECORDING_ORGANIZATION_BY_HOST = {
     "archive.org": "ORG067",
     "catalogue.bnf.fr": "ORG062",
@@ -209,6 +245,79 @@ AUDITED_DIGITAL_AUDIO_FIELDS: dict[str, dict[str, Any]] = {
 
 
 RECORDING_FIELDS: dict[str, dict[str, Any]] = {
+    "SRC0300": {
+        "sourceType": "sound_recording_catalogue",
+        "accessDate": "2026-10-26",
+        "dateDisplay": "[1934]",
+        "researchNote": "The BnF publication statement gives [1934], explicitly reconstructed from Répertoire phonographique, 3e supplément annuel 1934. This is a catalogue-supplied issue date, not a session date or a date transcribed from the photographed disc. The older encoded year 1932 remains in UNIMARC field 100; the explicit publication statement in field 210 and its supporting note in field 306 are followed here. The catalogue assigns Kaper the role Direction d’orchestre. The title calls him “compositeur”, but supplies no work-level Kaper–Jurmann composer statement or Poterat lyricist credit. Those authorship credits rest on separate sources. The two matrix numbers are listed together, without an explicit title-by-title assignment.",
+        "researchNoteType": "discographic_note",
+        "fullCitation": "Henri Garat, vocal; orchestra conducted by Bronisław Kaper. “À Paris, tiguidiguidi” / “Le plus petit baiser,” from the film Une femme au volant. [Paris]: [Nouveau Disque Salabert], [1934]. 1 disc: 78 rpm, 25 cm. Commercial reference Salabert 3382; matrices S.S. 1727 and S.S. 1728. Bibliothèque nationale de France, Catalogue général, notice no. FRBNF38020911, ARK ark:/12148/cb380209111."
+    },
+    "SRC0583": {
+        "sourceType": "sound_recording_catalogue",
+        "accessDate": "2026-10-26",
+        "title": "Ninon, lach mir einmal zu — Odeon O-4661, catalogue and matrix evidence",
+        "shortCitation": "DNB / GHT, Jan Kiepura, “Ninon”, Odeon O-4661",
+        "fullCitation": "Deutsche Nationalbibliothek. “Ninon.” Jan Kiepura, tenor, with orchestra. Odeon O-4661; coupled with “Oh Madonna!”. Linked catalogue record 380669366, identified by the coupling reference in record 380669358. Supplementary recording data: Gesellschaft für Historische Tonträger, Odeon matrix discography, Be 10000 series, entry Be 10221, Berlin, 7 February 1933; conductor Frieder Weissmann.",
+        "creator": "Jan Kiepura",
+        "repository": "Deutsche Nationalbibliothek / Deutsches Musikarchiv",
+        "publication": "Odeon",
+        "primaryUrl": "https://d-nb.info/380669366",
+        "researchNote": "DNB record 380669358 describes the coupled “Oh Madonna!” side, with Be.10220-2 and WBe.10220-2 as matrix forms; its field 777 explicitly links “Ninon” as record 380669366. The primary URL follows that link, not a guessed identifier. The separate GHT matrix discography identifies “Ninon” as Be 10221, recorded in Berlin on 7 February 1933 with Jan Kiepura and Frieder Weissmann. The structured date describes that session, not a DNB issue date. Neither the coupled side’s take suffix nor the matrix is transferred to “Ninon”. The corrected catalogue identifier is established by DNB’s coupling metadata; direct retrieval of the linked record was rate-limited during this review, and the full GHT PDF was unavailable for download.",
+        "researchNoteType": "discographic_note",
+        "sourceStatus": "verified_with_attribution_note",
+        "additionalLinks": [
+            {
+                "label": "DNB — coupled “Oh Madonna!” side, with explicit link to “Ninon”",
+                "url": "https://d-nb.info/380669358",
+                "role": "catalogue_entry"
+            },
+            {
+                "label": "GHT — Odeon matrix discography, Be 10000 series (historical reference)",
+                "url": "http://discography.phonomuseum.at/odeon/odmxBe10000.pdf",
+                "role": "additional_evidence"
+            }
+        ]
+    },
+    "SRC0741": {
+        "sourceType": "sound_recording_catalogue",
+        "accessDate": "2026-10-26",
+        "fullCitation": "Henry König, compiler. “Labelliste von ‘Electrola’ (1930–1934), Labelcode 00193: EG 2000–EG 2990.” musiktiteldb.de. Continuously revised discographic label list, n.d.",
+        "dateRole": "publication",
+        "dateQualifier": "unknown",
+        "researchNote": "The historical span 1930–1934 describes catalogue coverage, not the publication date of the webpage. The list separates general year, recording/session information, release date, matrix and parallel issues where documented, and cites evidence at row level. Those fields are not interchangeable, and an empty release-date cell is not proof of an issue year. A changing total of indexed titles is not included in the bibliographic citation. The heading’s copyright stamp is not treated as an independently verified publication or update date.",
+        "researchNoteType": "discographic_note"
+    },
+    "SRC0742": {
+        "sourceType": "sound_recording_catalogue",
+        "accessDate": "2026-10-26",
+        "fullCitation": "Henry König, compiler. “Labelliste von ‘Odeon’ (1928–1933), Labelcode 00287: O-11000–O-11999.” musiktiteldb.de. Continuously revised discographic label list, n.d.",
+        "dateRole": "publication",
+        "dateQualifier": "unknown",
+        "researchNote": "The historical span 1928–1933 describes catalogue coverage, not the publication date of the webpage. The list separates general year, recording/session information, release date, matrix and parallel issues where documented, and cites evidence at row level. Those fields are not interchangeable, and an empty release-date cell is not proof of an issue year. A changing total of indexed titles is not included in the bibliographic citation. The heading’s copyright stamp is not treated as an independently verified publication or update date.",
+        "researchNoteType": "discographic_note"
+    },
+    "SRC0801": {
+        "sourceType": "sound_recording_catalogue",
+        "accessDate": "2026-10-26",
+        "title": "Les nuits moscovites / On n’aime qu’une fois — Columbia DF 1622",
+        "fullCitation": "Tino Rossi, voice, with Orchestre de Tango Rafaelo. “Les nuits moscovites,” sung waltz, and “On n’aime qu’une fois,” sung tango, from Les nuits moscovites; music by Bronisław Kaper and Walter Jurmann. Columbia DF 1622, matrices CL 5068 and CL 5093. One 25 cm 78 rpm disc. Bibliothèque nationale de France, Catalogue général, notice FRBNF37826068, ARK ark:/12148/cb378260686."
+    },
+    "SRC0802": {
+        "sourceType": "sound_recording_catalogue",
+        "accessDate": "2026-10-26",
+        "title": "Vivons l’amour, vivons la vie / Un baiser de femme sous un ciel de feu — Columbia DF 1606",
+        "fullCitation": "Tino Rossi, voice. “Vivons l’amour, vivons la vie”, with orchestra conducted by Pierre Chagnon / “Un baiser de femme sous un ciel de feu”, with orchestra conducted by Marcel Cariven; both from Parade de France. The catalogue transcribes “Jurmann-Kaber, paroles de Varna, Lelievre & Marc-Cab”. [S.l.]: [s.n.], [193.]. Columbia DF 1606, matrices CL 5022 and CL 5038. One 25 cm 78 rpm disc. Bibliothèque nationale de France, Catalogue général, FRBNF37826058, ARK ark:/12148/cb37826058w.",
+        "researchNote": "The BnF catalogue supplies only the decade as [193.]. The structured year 1934 remains supplied and uncertain, not transcribed from the catalogue. The Internet Archive collection lists DF 1606 under 1934 without distinguishing recording from issue; the specialist discography Tino Rossi – Le Site places the issue in November 1934. The BnF catalogue lists matrices CL 5022 and CL 5038 without assigning them to individual titles in the displayed metadata. The spelling “Jurmann-Kaber” and the surname-only “Lelievre” are catalogue transcriptions, not newly examined label readings. The record supplies no forename for Lelievre and does not resolve the father–son identity question.",
+        "researchNoteType": "date_assessment"
+    },
+    "SRC0805": {
+        "sourceType": "sound_recording_catalogue",
+        "accessDate": "2026-10-26",
+        "title": "Si je n’écoutais que mon cœur / C’est ton amour — Columbia DF 1610",
+        "fullCitation": "Tino Rossi, voice. “Si je n’écoutais que mon cœur”, from Nous ne sommes plus des enfants, with orchestra conducted by Pierre Chagnon / “C’est ton amour”, from Parade de France, with orchestra conducted by Marcel Cariven. Columbia DF 1610, matrices CL 5023 and CL 5039. One 25 cm 78 rpm disc. France: Columbia Graphophone, [1934]. Bibliothèque nationale de France, Catalogue général, FRBNF37826061, ARK ark:/12148/cb37826061s.",
+        "researchNote": "The BnF catalogue supplies [1934] as the issue date, reconstructed from Répertoire phonographique, 3e supplément, 1934. This is a catalogue-supported issue year, not a recording-session date or a date transcribed from the label. The record therefore retains the bracketed display while distinguishing the basis of the dating. The catalogue lists matrices CL 5023 and CL 5039 together without an explicit title-by-title assignment. It names Rossi, Chagnon and Cariven but supplies no Kaper–Jurmann composer statement. The other title is retained in the bibliographic description; no additional Kaper work is inferred merely because it appears on the same disc."
+    },
     "SRC0754": {
         "researchNote": "The uploader dates the issue to 1932 and associates the side with Hochzeitsreise zu dritt. The filmed label directly confirms Odeon O-11768 b, matrix Be 10147, Dajos Béla, Fred Lustig and the Kaper–Jurmann–Marischka credits, but carries no year. The Odeon label list gives 1933 in its general year column and its separate release-date column is empty. The structured date retains the uploader’s 1932 as disputed, not confirmed: the catalogue’s 1933 does not by itself establish a precise issue or session date. The examined label does not name Monopol-Liederverlag; that publisher credit rests on a separate printed source.",
         "accessDate": "2026-10-26",
@@ -934,9 +1043,12 @@ RECORDING_FIELDS: dict[str, dict[str, Any]] = {
     "SRC0829": {
         "dateRole": "issue",
         "dateQualifier": "unknown",
-        "researchNote": "The DNB catalogue supplies no recording or issue date. Its MARC record has no publication-date subfield in field 264 and no historical year in field 008; the film association does not establish a date for this pressing. The label credit is given by the catalogue as “Alfred Beres mit Orchester, Refraingesang: Eric Helgar”, with the generic description “Tanzorchester mit Refraingesang”. The same library holds a second issue of the song, Decca F 40007, matrix FGB 2355, played by The Rhythm Maniacs with a German refrain sung by Leo Mond and coupled with “In meinem Herzen ist nur Platz für eine”.",
+        "researchNote": "The DNB MARC record supplies no historical recording or issue year: field 264 has no publication-date subfield, and field 008 leaves the historical year blank. The film association does not date this pressing. Field 028 identifies Ultraphon A 744 and repeats matrix 15875; repetition is not interpreted as a second matrix or assigned to the coupling. The personnel wording is “Alfred Beres mit Orchester, Refraingesang: Eric Helgar”. Field 777 links the coupling “Wenn du mal in Hawaii bist …” as record 381098273; that title does not by itself establish Kaper’s authorship of the other side. A Decca F 40007 / FGB 2355 reference concerns a different recording and is not used to identify or date the Ultraphon issue.",
         "researchNoteType": "discographic_note",
-        "accessDate": "2026-10-25"
+        "accessDate": "2026-10-26",
+        "sourceType": "sound_recording_catalogue",
+        "title": "Nur Tango, nur Tango — Ultraphon A 744",
+        "fullCitation": "Alfred Beres mit Orchester, with refrain sung by Eric Helgar. “Nur Tango, nur Tango,” tango from the sound film Alraune; music by Dr. B. Kaper, words by Fr. Rotter. Ultraphon A 744, matrix 15875, coupled with “Wenn du mal in Hawaii bist …”. One 25 cm shellac disc at 78 rpm, issued by N.V. Küchenmeister’s Internationale Ultraphoon Maatschappij, Amsterdam and Berlin. Deutsche Nationalbibliothek, Deutsches Musikarchiv, record 381098265."
     },
     "SRC0008": {
         "date": "1937-06-08",
@@ -1086,22 +1198,23 @@ RECORDING_FIELDS: dict[str, dict[str, Any]] = {
         "accessDate": "2026-10-26"
     },
     "SRC0625": {
-        "fullCitation": (
-            "“O chant d’amour de Tahiti ! : chanson tahitienne : du film ‘Les "
-            "révoltés du Bounty’ / B. Kaper, W. Jurmann, G. Rey, comp.” Coupled "
-            "with “Ho’i-maï : mélodie tahitienne / G. Rey, comp. et par.” "
-            "Performed by Tihoti-ré et son ensemble tahitien, vocal duo by Mlle "
-            "Maéva and Tihoti, presented by E. Ventrillon. Paris: Industries "
-            "Musicales et Electriques Pathé-Marconi, 1940. One 78 rpm disc, 25 "
-            "cm, Pathé PA 1234, matrices CPT 3351 and CPT 3352. Bibliothèque "
-            "nationale de France, catalogue record FRBNF37963787."
-        ),
+        "fullCitation": "Tihoti-re et son ensemble tahitien, with vocal duo by Mlle Maéva and Tihoti; presented by E. Ventrillon. “O chant d’amour de Tahiti !”, from Les révoltés du Bounty, credited to B. Kaper, W. Jurmann and G. Rey, composers / “Ho’i-maï”, credited to G. Rey, composer and lyricist. [Paris]: [Industries Musicales et Electriques Pathé-Marconi], [DL 1940]. One 25 cm 78 rpm disc, Pathé PA 1234, matrices CPT 3351 and CPT 3352. Recording date given as 23 June 1937. Bibliothèque nationale de France, Catalogue général, FRBNF37963787, ARK ark:/12148/cb37963787p.",
         "repository": "Bibliothèque nationale de France / Catalogue général",
-        "researchNote": (
-            "The BnF catalogue describes the language of the recording as "
-            "Tahitian."
-        ),
+        "researchNote": "The BnF publication statement is [DL 1940]: this denotes legal deposit, not an independently established commercial issue date. The catalogue separately states “Enregistrement : 19370623”; the structured date follows that recording date, 23 June 1937. UNIMARC field 101 gives language code tah, Tahitian. The French title is therefore not evidence that the sung text is French. The catalogue names Rey as co-composer of the Tahiti side, but credits him as composer and lyricist of the coupling “Ho’i-maï”; those roles are not merged. The two matrices are listed together without an explicit title-by-title assignment.",
         "researchNoteType": "discographic_note",
+        "sourceType": "sound_recording_catalogue",
+        "accessDate": "2026-10-26",
+        "title": "O chant d’amour de Tahiti ! / Ho’i-maï — Pathé PA 1234",
+        "shortCitation": "BnF, “O chant d’amour de Tahiti !” / “Ho’i-maï”, Pathé PA 1234",
+        "date": "1937-06-23",
+        "dateRole": "recording",
+        "dateQualifier": "confirmed",
+        "identifiers": [
+            {
+                "scheme": "ark",
+                "value": "ark:/12148/cb37963787p"
+            }
+        ]
     },
     "SRC0658": {
         "fullCitation": (
@@ -1175,6 +1288,15 @@ RECORDING_FIELDS: dict[str, dict[str, Any]] = {
 # These corrections concern citation syntax, not the date of a modern issue.
 # Keep uploader-reported recording dates distinct from upload dates.
 AUDITED_RECORDING_CITATIONS = {
+    "SRC0300": "Henri Garat, vocal; orchestra conducted by Bronisław Kaper. “À Paris, tiguidiguidi” / “Le plus petit baiser,” from the film Une femme au volant. [Paris]: [Nouveau Disque Salabert], [1934]. 1 disc: 78 rpm, 25 cm. Commercial reference Salabert 3382; matrices S.S. 1727 and S.S. 1728. Bibliothèque nationale de France, Catalogue général, notice no. FRBNF38020911, ARK ark:/12148/cb380209111.",
+    "SRC0583": "Deutsche Nationalbibliothek. “Ninon.” Jan Kiepura, tenor, with orchestra. Odeon O-4661; coupled with “Oh Madonna!”. Linked catalogue record 380669366, identified by the coupling reference in record 380669358. Supplementary recording data: Gesellschaft für Historische Tonträger, Odeon matrix discography, Be 10000 series, entry Be 10221, Berlin, 7 February 1933; conductor Frieder Weissmann.",
+    "SRC0625": "Tihoti-re et son ensemble tahitien, with vocal duo by Mlle Maéva and Tihoti; presented by E. Ventrillon. “O chant d’amour de Tahiti !”, from Les révoltés du Bounty, credited to B. Kaper, W. Jurmann and G. Rey, composers / “Ho’i-maï”, credited to G. Rey, composer and lyricist. [Paris]: [Industries Musicales et Electriques Pathé-Marconi], [DL 1940]. One 25 cm 78 rpm disc, Pathé PA 1234, matrices CPT 3351 and CPT 3352. Recording date given as 23 June 1937. Bibliothèque nationale de France, Catalogue général, FRBNF37963787, ARK ark:/12148/cb37963787p.",
+    "SRC0741": "Henry König, compiler. “Labelliste von ‘Electrola’ (1930–1934), Labelcode 00193: EG 2000–EG 2990.” musiktiteldb.de. Continuously revised discographic label list, n.d.",
+    "SRC0742": "Henry König, compiler. “Labelliste von ‘Odeon’ (1928–1933), Labelcode 00287: O-11000–O-11999.” musiktiteldb.de. Continuously revised discographic label list, n.d.",
+    "SRC0801": "Tino Rossi, voice, with Orchestre de Tango Rafaelo. “Les nuits moscovites,” sung waltz, and “On n’aime qu’une fois,” sung tango, from Les nuits moscovites; music by Bronisław Kaper and Walter Jurmann. Columbia DF 1622, matrices CL 5068 and CL 5093. One 25 cm 78 rpm disc. Bibliothèque nationale de France, Catalogue général, notice FRBNF37826068, ARK ark:/12148/cb378260686.",
+    "SRC0802": "Tino Rossi, voice. “Vivons l’amour, vivons la vie”, with orchestra conducted by Pierre Chagnon / “Un baiser de femme sous un ciel de feu”, with orchestra conducted by Marcel Cariven; both from Parade de France. The catalogue transcribes “Jurmann-Kaber, paroles de Varna, Lelievre & Marc-Cab”. [S.l.]: [s.n.], [193.]. Columbia DF 1606, matrices CL 5022 and CL 5038. One 25 cm 78 rpm disc. Bibliothèque nationale de France, Catalogue général, FRBNF37826058, ARK ark:/12148/cb37826058w.",
+    "SRC0805": "Tino Rossi, voice. “Si je n’écoutais que mon cœur”, from Nous ne sommes plus des enfants, with orchestra conducted by Pierre Chagnon / “C’est ton amour”, from Parade de France, with orchestra conducted by Marcel Cariven. Columbia DF 1610, matrices CL 5023 and CL 5039. One 25 cm 78 rpm disc. France: Columbia Graphophone, [1934]. Bibliothèque nationale de France, Catalogue général, FRBNF37826061, ARK ark:/12148/cb37826061s.",
+    "SRC0829": "Alfred Beres mit Orchester, with refrain sung by Eric Helgar. “Nur Tango, nur Tango,” tango from the sound film Alraune; music by Dr. B. Kaper, words by Fr. Rotter. Ultraphon A 744, matrix 15875, coupled with “Wenn du mal in Hawaii bist …”. One 25 cm shellac disc at 78 rpm, issued by N.V. Küchenmeister’s Internationale Ultraphoon Maatschappij, Amsterdam and Berlin. Deutsche Nationalbibliothek, Deutsches Musikarchiv, record 381098265.",
     "SRC0008": "Duke Ellington and His Famous Orchestra. “All God’s Chillun Got Rhythm.” Words by Gus Kahn; music by Bronisław Kaper and Walter Jurmann; from A Day at the Races. Master MA 137, matrix M 519-1. Recorded New York, 8 June 1937. Internet Archive, digitized 78 rpm recording.",
     "SRC0115": "Henry Garat, vocal; orchestra conducted by Bronisław Kaper. “Pourvu qu’on ait vingt ans,” from Une femme au volant. Music by Bronisław Kaper and Walter Jurmann; words by Louis Poterat. Salabert 3384, 78 rpm disc, with “Éditions Echo” printed as publisher; recorded Paris, 7 November 1933. Digital transfer from David Silvestre’s private collection, published by lysgauty1 on YouTube, video JA57rCoKoyI. Gérard Roig, “Discographie d’Henry Garat,” Phonoscopies 5 (January 1994): 10–11, lists matrix SS 1729 and the coupled side “Ninon, quand tu me souris,” matrix SS 1730, as Salabert 3384.",
     "SRC0705": "Guy Berry. “Vivons l’amour, vivons la vie”, from the Casino de Paris revue Parade de France. Music-hall song by Walter Jurmann, Bronisław Kaper, Henri Varna and Marc Cab. Pathé PA362, matrix cpt-1514-1, 25 cm needle-cut electrical disc, 78 rpm, recorded October 1934. Phonobase record 15273; transfer made 4 February 2023 from the Christian Declerck collection, Dunkirk.",
@@ -1455,9 +1577,12 @@ VERIFIED_RECORDING_CHRONOLOGY: dict[str, dict[str, Any]] = {
         ]
     },
     "SRC0300": {
-        "researchNote": "The BnF catalogue supplies [1934] as the issue date, reconstructed from Répertoire phonographique, 3e supplément annuel 1934. The brackets indicate a catalogue-supplied date, not a date transcribed from the disc. This bibliographic dating is independent of the film’s release chronology.",
+        "researchNote": "The BnF publication statement gives [1934], explicitly reconstructed from Répertoire phonographique, 3e supplément annuel 1934. This is a catalogue-supplied issue date, not a session date or a date transcribed from the photographed disc. The older encoded year 1932 remains in UNIMARC field 100; the explicit publication statement in field 210 and its supporting note in field 306 are followed here. The catalogue assigns Kaper the role Direction d’orchestre. The title calls him “compositeur”, but supplies no work-level Kaper–Jurmann composer statement or Poterat lyricist credit. Those authorship credits rest on separate sources. The two matrix numbers are listed together, without an explicit title-by-title assignment.",
         "researchNoteType": "discographic_note",
-        "accessDate": "2026-10-25"
+        "accessDate": "2026-10-26",
+        "sourceType": "sound_recording_catalogue",
+        "dateDisplay": "[1934]",
+        "fullCitation": "Henri Garat, vocal; orchestra conducted by Bronisław Kaper. “À Paris, tiguidiguidi” / “Le plus petit baiser,” from the film Une femme au volant. [Paris]: [Nouveau Disque Salabert], [1934]. 1 disc: 78 rpm, 25 cm. Commercial reference Salabert 3382; matrices S.S. 1727 and S.S. 1728. Bibliothèque nationale de France, Catalogue général, notice no. FRBNF38020911, ARK ark:/12148/cb380209111."
     },
     "SRC0714": {
         "date": "2000",
@@ -1493,34 +1618,43 @@ VERIFIED_RECORDING_CHRONOLOGY: dict[str, dict[str, Any]] = {
         "dateQualifier": "unknown",
         "researchNote": "The BnF publication statement is “S.l. : s.n., s.d.” and supplies no issue year. The film’s 1934 release does not establish the disc’s release date. The Internet Archive collection associates DF 1622 with 1934 without distinguishing recording from issue; the specialist discography Tino Rossi – Le Site instead places the issue in January 1935. No year is entered as a confirmed or inferred BnF issue date. The catalogue lists matrices CL 5068 and CL 5093 but does not assign each matrix to a title in the displayed metadata, so no side-level matrix assignment is inferred here.",
         "researchNoteType": "date_assessment",
-        "accessDate": "2026-10-25",
+        "accessDate": "2026-10-26",
         "additionalLinks": [
             {
                 "label": "Tino Rossi – Le Site — DF 1622 issue chronology",
                 "url": "https://www.tinorossi.fr/discographie-78t-partie-1/",
                 "role": "catalogue_entry"
             }
-        ]
+        ],
+        "sourceType": "sound_recording_catalogue",
+        "title": "Les nuits moscovites / On n’aime qu’une fois — Columbia DF 1622",
+        "fullCitation": "Tino Rossi, voice, with Orchestre de Tango Rafaelo. “Les nuits moscovites,” sung waltz, and “On n’aime qu’une fois,” sung tango, from Les nuits moscovites; music by Bronisław Kaper and Walter Jurmann. Columbia DF 1622, matrices CL 5068 and CL 5093. One 25 cm 78 rpm disc. Bibliothèque nationale de France, Catalogue général, notice FRBNF37826068, ARK ark:/12148/cb378260686."
     },
     "SRC0802": {
-        "researchNote": "The BnF catalogue supplies only the decade as [193.]. The structured year 1934 remains supplied and uncertain, not transcribed from the catalogue. The Internet Archive collection lists DF 1606 under 1934 without distinguishing recording from issue; the specialist discography Tino Rossi – Le Site places the issue in November 1934. The BnF catalogue lists matrices CL 5022 and CL 5038 without assigning them to individual titles in the displayed metadata.",
+        "researchNote": "The BnF catalogue supplies only the decade as [193.]. The structured year 1934 remains supplied and uncertain, not transcribed from the catalogue. The Internet Archive collection lists DF 1606 under 1934 without distinguishing recording from issue; the specialist discography Tino Rossi – Le Site places the issue in November 1934. The BnF catalogue lists matrices CL 5022 and CL 5038 without assigning them to individual titles in the displayed metadata. The spelling “Jurmann-Kaber” and the surname-only “Lelievre” are catalogue transcriptions, not newly examined label readings. The record supplies no forename for Lelievre and does not resolve the father–son identity question.",
         "researchNoteType": "date_assessment",
-        "accessDate": "2026-10-25",
+        "accessDate": "2026-10-26",
         "additionalLinks": [
             {
                 "label": "Tino Rossi – Le Site — DF 1606 issue chronology",
                 "url": "https://www.tinorossi.fr/discographie-78t-partie-1/",
                 "role": "catalogue_entry"
             }
-        ]
+        ],
+        "sourceType": "sound_recording_catalogue",
+        "title": "Vivons l’amour, vivons la vie / Un baiser de femme sous un ciel de feu — Columbia DF 1606",
+        "fullCitation": "Tino Rossi, voice. “Vivons l’amour, vivons la vie”, with orchestra conducted by Pierre Chagnon / “Un baiser de femme sous un ciel de feu”, with orchestra conducted by Marcel Cariven; both from Parade de France. The catalogue transcribes “Jurmann-Kaber, paroles de Varna, Lelievre & Marc-Cab”. [S.l.]: [s.n.], [193.]. Columbia DF 1606, matrices CL 5022 and CL 5038. One 25 cm 78 rpm disc. Bibliothèque nationale de France, Catalogue général, FRBNF37826058, ARK ark:/12148/cb37826058w."
     },
     "SRC0805": {
         "date": "1934",
         "dateRole": "issue",
         "dateQualifier": "confirmed",
-        "researchNote": "The BnF catalogue supplies [1934] as the issue date, reconstructed from Répertoire phonographique, 3e supplément, 1934. This is a catalogue-supported issue year, not a recording-session date or a date transcribed from the label. The record therefore retains the bracketed display while distinguishing the basis of the dating.",
+        "researchNote": "The BnF catalogue supplies [1934] as the issue date, reconstructed from Répertoire phonographique, 3e supplément, 1934. This is a catalogue-supported issue year, not a recording-session date or a date transcribed from the label. The record therefore retains the bracketed display while distinguishing the basis of the dating. The catalogue lists matrices CL 5023 and CL 5039 together without an explicit title-by-title assignment. It names Rossi, Chagnon and Cariven but supplies no Kaper–Jurmann composer statement. The other title is retained in the bibliographic description; no additional Kaper work is inferred merely because it appears on the same disc.",
         "researchNoteType": "discographic_note",
-        "accessDate": "2026-10-25"
+        "accessDate": "2026-10-26",
+        "sourceType": "sound_recording_catalogue",
+        "title": "Si je n’écoutais que mon cœur / C’est ton amour — Columbia DF 1610",
+        "fullCitation": "Tino Rossi, voice. “Si je n’écoutais que mon cœur”, from Nous ne sommes plus des enfants, with orchestra conducted by Pierre Chagnon / “C’est ton amour”, from Parade de France, with orchestra conducted by Marcel Cariven. Columbia DF 1610, matrices CL 5023 and CL 5039. One 25 cm 78 rpm disc. France: Columbia Graphophone, [1934]. Bibliothèque nationale de France, Catalogue général, FRBNF37826061, ARK ark:/12148/cb37826061s."
     },
     "SRC0800": {
         "title": "Tino Rossi — Nuits moscovites — Internet Archive",
@@ -1569,6 +1703,23 @@ VERIFIED_RECORDING_CHRONOLOGY: dict[str, dict[str, Any]] = {
 }
 
 VERIFIED_RECORDING_FIELD_REMOVALS: dict[str, list[str]] = {
+    "SRC0583": [
+        "accessUrl"
+    ],
+    "SRC0741": [
+        "date",
+        "dateEnd",
+        "dateDisplay"
+    ],
+    "SRC0742": [
+        "date",
+        "dateEnd",
+        "dateDisplay"
+    ],
+    "SRC0829": [
+        "date",
+        "dateDisplay"
+    ],
     "SRC0002": [
         "date",
         "dateDisplay"

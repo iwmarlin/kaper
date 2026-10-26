@@ -6886,7 +6886,8 @@
       ],
       "sourceIds": [
         "SRC0196",
-        "SRC0473"
+        "SRC0473",
+        "SRC0829"
       ],
       "nameVariantIds": [
         "PNV0019"
@@ -6906,7 +6907,8 @@
       ],
       "sourceIds": [
         "SRC0196",
-        "SRC0473"
+        "SRC0473",
+        "SRC0829"
       ]
     },
     {
@@ -10779,7 +10781,8 @@
       "nameAsPrinted": "Jan Kiepura",
       "displayCredit": "Vocal performance",
       "evidenceContext": [
-        "recording_label"
+        "online_catalogue",
+        "discography"
       ],
       "sortOrder": 50,
       "certainty": "confirmed",
@@ -10791,7 +10794,8 @@
       ],
       "sourceIds": [
         "SRC0583"
-      ]
+      ],
+      "scopeNote": "DNB’s coupled-side record explicitly links “Ninon” as record 380669366. The independent GHT matrix entry Be 10221 names Jan Kiepura, tenor, with orchestra directed by Frieder Weissmann. The coupled “Oh Madonna!” matrix Be.10220-2 is not evidence for a take of “Ninon”."
     },
     {
       "id": "CON-S076-PUB-ORG029",
@@ -12259,7 +12263,6 @@
         "P009"
       ],
       "sourceIds": [
-        "SRC0300",
         "SRC0359",
         "SRC0764"
       ],
@@ -12283,7 +12286,6 @@
         "P077"
       ],
       "sourceIds": [
-        "SRC0300",
         "SRC0359",
         "SRC0764"
       ],
@@ -12304,7 +12306,6 @@
         "P049"
       ],
       "sourceIds": [
-        "SRC0300",
         "SRC0359",
         "SRC0764"
       ],
@@ -12318,7 +12319,8 @@
       "nameAsPrinted": "Henri Garat",
       "displayCredit": "Vocal performance",
       "evidenceContext": [
-        "recording_label"
+        "recording_label",
+        "online_catalogue"
       ],
       "sortOrder": 50,
       "certainty": "confirmed",
@@ -12396,9 +12398,9 @@
       "nameAsPrinted": "Kaper",
       "creditAsPrinted": "orch sous la dir du compositeur Kaper",
       "evidenceContext": [
-        "recording_label"
+        "online_catalogue"
       ],
-      "scopeNote": "Orchestra conducted by Bronisław Kaper on the 1934 recording of “À Paris, tiguidiguidi” / “Le plus petit baiser.” This is not a composer credit for the song.",
+      "scopeNote": "The BnF catalogue credits orchestra direction to Kaper on the coupled Salabert 3382 issue. Its [1934] is a reconstructed issue year, not a recording-session date. This is a conducting credit, not a new authorship attribution.",
       "certainty": "confirmed",
       "workIds": [
         "W-S097"
@@ -12436,7 +12438,7 @@
       "nameAsPrinted": "Henri Garat",
       "displayCredit": "Vocal performance",
       "evidenceContext": [
-        "recording_label"
+        "online_catalogue"
       ],
       "sortOrder": 50,
       "certainty": "confirmed",
@@ -13722,8 +13724,7 @@
       ],
       "sourceIds": [
         "SRC0059",
-        "SRC0065",
-        "SRC0805"
+        "SRC0065"
       ]
     },
     {
@@ -13740,8 +13741,7 @@
       ],
       "sourceIds": [
         "SRC0059",
-        "SRC0065",
-        "SRC0805"
+        "SRC0065"
       ]
     },
     {
@@ -19487,7 +19487,7 @@
       "id": "CON-S123-C-P155",
       "role": "composer",
       "nameAsPrinted": "G. Rey",
-      "scopeNote": "Credited as composer alongside Kaper and Jurmann on the Tahitian-language version issued by Pathé-Marconi in 1940 as “O chant d’amour de Tahiti !” (Pathé PA 1234), not on the 1935 song. The Bibliothèque nationale de France distinguishes the roles deliberately on this disc: the coupling, “Ho’i-maï”, is credited to Rey as “comp. et par.”, while the Tahiti side gives all three men “comp.” and names no lyricist. Rey also performs on the record, leading Tihoti-ré et son ensemble tahitien and singing the vocal duo with Mlle Maéva under his Tahitian pseudonym Tihoti.",
+      "scopeNote": "BnF credits G. Rey as composer alongside Kaper and Jurmann on the Tahitian-language “O chant d’amour de Tahiti !”, Pathé PA 1234, not on the original 1935 song. The catalogue separately dates the recording to 23 June 1937 and the legal deposit to [DL 1940]; the latter is not a verified issue date. On the coupling “Ho’i-maï”, Rey is credited as composer and lyricist. He also performs under the name Tihoti in Tihoti-re et son ensemble tahitien.",
       "sortOrder": 30,
       "certainty": "confirmed",
       "workIds": [
@@ -19501,6 +19501,9 @@
       ],
       "nameVariantIds": [
         "PNV0052"
+      ],
+      "evidenceContext": [
+        "online_catalogue"
       ]
     },
     {
@@ -19509,7 +19512,8 @@
       "nameAsPrinted": "Kaper",
       "creditAsPrinted": "orch sous la dir du compositeur Kaper",
       "evidenceContext": [
-        "recording_label"
+        "recording_label",
+        "online_catalogue"
       ],
       "scopeNote": "The label photograph in SRC0764 directly prints orchestra direction by the composer Kaper for “Le plus petit baiser”, Salabert 3382, S.S.1728. SRC0300 separately catalogues the coupled issue. This documents the recording conductor, not a new authorship attribution.",
       "certainty": "confirmed",
@@ -23709,7 +23713,7 @@
       "nameAsPrinted": "Columbia",
       "displayCredit": "Issuing label",
       "evidenceContext": [
-        "discography"
+        "online_catalogue"
       ],
       "sortOrder": 60,
       "certainty": "confirmed",
@@ -23730,7 +23734,7 @@
       "nameAsPrinted": "Columbia",
       "displayCredit": "Issuing label",
       "evidenceContext": [
-        "discography"
+        "online_catalogue"
       ],
       "sortOrder": 60,
       "certainty": "confirmed",
@@ -23817,7 +23821,7 @@
       "nameAsPrinted": "Columbia",
       "displayCredit": "Issuing label",
       "evidenceContext": [
-        "discography"
+        "online_catalogue"
       ],
       "sortOrder": 60,
       "certainty": "confirmed",
@@ -23838,7 +23842,7 @@
       "nameAsPrinted": "Columbia",
       "displayCredit": "Issuing label",
       "evidenceContext": [
-        "discography"
+        "online_catalogue"
       ],
       "sortOrder": 60,
       "certainty": "confirmed",
@@ -23859,7 +23863,7 @@
       "nameAsPrinted": "Columbia",
       "displayCredit": "Issuing label",
       "evidenceContext": [
-        "discography"
+        "online_catalogue"
       ],
       "sortOrder": 60,
       "certainty": "confirmed",
@@ -23940,11 +23944,11 @@
       "role": "lyricist",
       "nameAsPrinted": "Léo Lelièvre",
       "evidenceContext": [
-        "recording_label"
+        "online_catalogue"
       ],
       "sortOrder": 3,
       "certainty": "probable",
-      "publicNote": "The Coda chant-et-piano print names only Henri Varna and Marc-Cab; the Columbia disc label and the illustrated Coda issue add Léo Lelièvre.",
+      "publicNote": "The Coda chant-et-piano print names Henri Varna and Marc-Cab; the BnF transcription of the Columbia disc additionally names “Lelievre”, without a forename. A newly examined label reading is not claimed here.",
       "workIds": [
         "W-S112"
       ],
@@ -23954,14 +23958,14 @@
       "sourceIds": [
         "SRC0802"
       ],
-      "scopeNote": "Named among the lyricists on the BnF catalogue record of Tino Rossi’s Columbia disc, which the printed sheet music does not credit; the name is given as “Léo Lelièvre”, without distinguishing him from his father, the chansonnier Léo Lelièvre (1872–1956)."
+      "scopeNote": "The BnF catalogue transcribes the lyricists as “Varna, Lelievre & Marc-Cab”. It gives no forename for Lelievre and does not resolve the identity between father and son. The proposed identification remains probable; the catalogue transcription alone does not confirm it."
     },
     {
       "id": "CON-S016-LAB-ORG152",
       "role": "record_label",
       "nameAsPrinted": "Ultraphon",
       "evidenceContext": [
-        "discography"
+        "online_catalogue"
       ],
       "sortOrder": 60,
       "certainty": "confirmed",
@@ -23980,7 +23984,7 @@
       "role": "performer",
       "nameAsPrinted": "Alfred Beres mit Orchester",
       "evidenceContext": [
-        "discography"
+        "online_catalogue"
       ],
       "sortOrder": 50,
       "certainty": "confirmed",
