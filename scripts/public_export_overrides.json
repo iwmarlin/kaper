@@ -8191,6 +8191,24 @@
       }
     },
     "Contributions": {
+      "CON-S057-P-ORG144": {
+        "reason": "Restrict the recording credit to its linked witness: do not infer piano-part allocation, add an unlinked oral-history claim or assert an undocumented session location.",
+        "fields": {
+          "scopeNote": "The filmed Odeon O-11768 b label in SRC0754 names Tanz-Orchester Dajos Béla. This documents the performing ensemble; the linked upload description does not establish the recording location."
+        }
+      },
+      "CON-S009-P-P118": {
+        "reason": "Restrict the recording credit to its linked witness: do not infer piano-part allocation, add an unlinked oral-history claim or assert an undocumented session location.",
+        "fields": {
+          "scopeNote": "The Richard Tauber Chronology in SRC0881 documents the Odeon session in Berlin on 22 June 1929 with the Dajos Béla Künstler Orchester, matrix Be 8339. This credit follows that discographic entry."
+        }
+      },
+      "CON-O019-P-P009": {
+        "reason": "Restrict the recording credit to its linked witness: do not infer piano-part allocation, add an unlinked oral-history claim or assert an undocumented session location.",
+        "fields": {
+          "scopeNote": "Performed the two-piano duet with Hermann Bick on Polydor 21768, credited as Dr. Kaper. SRC0002 identifies the partnership but does not specify which pianist played the first or second piano part."
+        }
+      },
       "CON-S082-P-P153": {
         "reason": "Individually scope recording evidence: uploader metadata is not a catalogue or label transcription; retain qualifications and distinguish HMV and Odeon issues.",
         "fields": {
