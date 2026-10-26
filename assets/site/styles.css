@@ -17,7 +17,7 @@
    the swashed display forms can never appear by accident. */
 @font-face {
   font-family: "Fraunces";
-  src: url("../fonts/kaper-serif.woff2?v=ac1a11e7ae") format("woff2");
+  src: url("../fonts/kaper-serif.woff2?v=4369311fbb") format("woff2");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
@@ -25,7 +25,7 @@
 
 @font-face {
   font-family: "Fraunces";
-  src: url("../fonts/kaper-serif-italic.woff2?v=ac1a11e7ae") format("woff2");
+  src: url("../fonts/kaper-serif-italic.woff2?v=4369311fbb") format("woff2");
   font-weight: 100 900;
   font-style: italic;
   font-display: swap;
@@ -33,7 +33,7 @@
 
 @font-face {
   font-family: "Archivo";
-  src: url("../fonts/kaper-sans.woff2?v=ac1a11e7ae") format("woff2");
+  src: url("../fonts/kaper-sans.woff2?v=4369311fbb") format("woff2");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
@@ -41,7 +41,7 @@
 
 @font-face {
   font-family: "Archivo";
-  src: url("../fonts/kaper-sans-italic.woff2?v=ac1a11e7ae") format("woff2");
+  src: url("../fonts/kaper-sans-italic.woff2?v=4369311fbb") format("woff2");
   font-weight: 100 900;
   font-style: italic;
   font-display: swap;
@@ -1239,6 +1239,61 @@ main {
   appearance: none;
   -webkit-appearance: none;
   padding-right: 2.15rem;
+}
+
+/* Same fault, same answer, in the search field: Chrome and Safari draw their
+   own clear control and Firefox draws none, so the reader's ability to empty
+   the field depended on the browser, and where it existed it was grey against
+   the border. The native one goes and the filter shell builds one that is
+   there in all three. */
+.field input[type="search"]::-webkit-search-cancel-button {
+  appearance: none;
+  -webkit-appearance: none;
+  display: none;
+}
+
+.field--clearable {
+  grid-template-rows: auto auto;
+}
+
+.field--clearable > label {
+  grid-area: 1 / 1;
+}
+
+.field--clearable > input {
+  grid-area: 2 / 1;
+  padding-right: 2.75rem;
+}
+
+.field__clear {
+  grid-area: 2 / 1;
+  align-self: center;
+  justify-self: end;
+  display: grid;
+  place-items: center;
+  /* A real control, not the decorative mark on a select: 28px square clears
+     the 24px minimum target with the glyph itself kept small. */
+  width: 1.75rem;
+  height: 1.75rem;
+  margin-right: 0.45rem;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--ink-soft);
+  font-size: var(--fs-10);
+  line-height: 1;
+  cursor: pointer;
+}
+
+.field__clear[hidden] {
+  display: none;
+}
+
+.field__clear:hover,
+.field__clear:focus-visible {
+  background: var(--paper-deep);
+  color: var(--ink);
 }
 
 /* Placed into the control's own grid cell rather than positioned against the

@@ -278,5 +278,50 @@ class FacetPanelTrackTests(unittest.TestCase):
                 self.assertEqual(tracks, fields, f"{key}: {rule!r}")
 
 
+
+class SearchClearControlTests(unittest.TestCase):
+    """A search field used to carry whatever clear control the browser felt
+    like drawing: a grey cross against the border in Chrome and Safari, none at
+    all in Firefox. Whether a reader could empty the field in one gesture
+    depended on which browser they opened the archive in."""
+
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls.shell = (ROOT / "assets/site/catalogue-filters.js").read_text(encoding="utf-8")
+        cls.css = (ROOT / "assets/site/styles.css").read_text(encoding="utf-8")
+
+    def test_the_browser_draws_no_clear_control_of_its_own(self) -> None:
+        rule = re.search(
+            r'\.field input\[type="search"\]::-webkit-search-cancel-button\s*\{([^}]*)\}',
+            self.css,
+        )
+        self.assertIsNotNone(rule, "the native clear control is still drawn")
+        self.assertIn("display: none", rule.group(1))
+
+    def test_the_shell_builds_one_that_every_browser_shows(self) -> None:
+        self.assertIn('clearSearch.className = "field__clear"', self.shell)
+        # A real button: reachable by Tab, worked by Enter, named for a reader
+        # who cannot see the mark on it.
+        self.assertIn('clearSearch.type = "button"', self.shell)
+        self.assertIn('clearSearch.setAttribute("aria-label", "Clear search")', self.shell)
+
+    def test_it_is_built_in_script_and_not_printed_into_the_page(self) -> None:
+        # Printed into the markup it would sit there inert for a reader without
+        # JavaScript, who has no way to clear the field by pressing anything.
+        self.assertIn("document.createElement(\"button\")", self.shell)
+        for page, _ in LISTINGS.items():
+            markup = (ROOT / page).read_text(encoding="utf-8")
+            self.assertNotIn("field__clear", markup, f"{page} prints a dead clear control")
+
+    def test_it_appears_only_when_there_is_something_to_clear(self) -> None:
+        self.assertIn("clearSearch.hidden = !hasSearch", self.shell)
+        self.assertRegex(self.css, r"\.field__clear\[hidden\]\s*\{\s*display: none;")
+
+    def test_clearing_empties_the_field_and_hands_focus_back(self) -> None:
+        clear = self.shell.split("const handleClearSearch = () => {", 1)[1].split("};", 1)[0]
+        self.assertIn('setFieldValue(controls.search, "")', clear)
+        self.assertIn("onChange?.()", clear)
+        self.assertIn("controls.search?.focus?.", clear)
+
 if __name__ == "__main__":
     unittest.main()

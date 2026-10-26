@@ -1,4 +1,4 @@
-import { escapeHtml } from "./core.js?v=ac1a11e7ae";
+import { escapeHtml } from "./core.js?v=4369311fbb";
 
 const INDEX_RETURN_PREFIX = "kaper:index-return:";
 
@@ -234,6 +234,32 @@ export function createCatalogueFilters({
     fallback?.focus?.({ preventScroll: true });
   };
 
+  /* The search field carried the browser's own clear control: a grey cross
+     against the border in Chrome and Safari and nothing at all in Firefox, so
+     the same field offered two readers in three a way to empty it, in the
+     browser's colour rather than the archive's. It is built here and not in
+     the markup because a control that cannot work without JavaScript has no
+     business being printed into a page that may be read without it. */
+  const searchField = controls.search?.closest?.(".field") || null;
+  const clearSearch = searchField ? document.createElement("button") : null;
+  const handleClearSearch = () => {
+    setFieldValue(controls.search, "");
+    onChange?.();
+    controls.search?.focus?.({ preventScroll: true });
+  };
+  if (clearSearch) {
+    clearSearch.type = "button";
+    clearSearch.className = "field__clear";
+    clearSearch.hidden = true;
+    clearSearch.setAttribute("aria-label", "Clear search");
+    // The chips above already say "remove" with this mark, and the label is
+    // what a screen reader reads, so the glyph itself stays out of the name.
+    clearSearch.innerHTML = '<span aria-hidden="true">\u00d7</span>';
+    clearSearch.addEventListener("click", handleClearSearch);
+    searchField.classList.add("field--clearable");
+    searchField.append(clearSearch);
+  }
+
   toggle?.addEventListener("click", handleToggle);
   activeFilters?.addEventListener("click", handleChip);
   document.addEventListener("keydown", handleEscape);
@@ -256,6 +282,7 @@ export function createCatalogueFilters({
         selected.length ? `${toggleLabel}, ${selected.length} active` : toggleLabel,
       );
     }
+    if (clearSearch) clearSearch.hidden = !hasSearch;
     if (resetButton) resetButton.hidden = !hasSearch && selected.length === 0;
     if (activeFilters) {
       activeFilters.hidden = selected.length === 0;
@@ -278,6 +305,9 @@ export function createCatalogueFilters({
       toggle?.removeEventListener("click", handleToggle);
       activeFilters?.removeEventListener("click", handleChip);
       document.removeEventListener("keydown", handleEscape);
+      clearSearch?.removeEventListener("click", handleClearSearch);
+      clearSearch?.remove();
+      searchField?.classList.remove("field--clearable");
       if (compact?.removeEventListener) compact.removeEventListener("change", handleBreakpoint);
       else compact?.removeListener?.(handleBreakpoint);
     },
