@@ -80,7 +80,7 @@ def reviewed_printed_number_errors(record: dict[str, Any]) -> list[str]:
 
 
 REVIEWED_RECORDING_CATALOGUES = frozenset({
-    "SRC0300", "SRC0583", "SRC0625", "SRC0741", "SRC0742",
+    "SRC0300", "SRC0583", "SRC0625", "SRC0633", "SRC0741", "SRC0742",
     "SRC0801", "SRC0802", "SRC0805", "SRC0829",
 })
 
@@ -458,7 +458,7 @@ RECORDING_FIELDS: dict[str, dict[str, Any]] = {
         "dateQualifier": "unknown",
         "accessDate": "2026-10-26",
         "reliability": "high",
-        "researchNote": "The label is clearly visible: O.236842 b, number 137013, Jan Kiepura, the Odeon symphony orchestra and “Śpiew polski”. It prints the three credited names and the Polish film title. The number 137013 is transcribed as printed, without assigning an unverified matrix prefix or take. SRC0633 independently catalogues the coupled disc O.236842 and supplies only [post 1930], not an exact session or issue date; the issue of the photographed copy remains undated here. The upload was published on 12 September 2023. The earlier caption’s claim that the recording could not be identified from discographic detail was incorrect. The label lists the three names without assigning their roles; the composer/lyricist allocation follows the BnF catalogue in SRC0633, not the order of names alone.",
+        "researchNote": "The label is clearly visible: O.236842 b, number 137013, Jan Kiepura, the Odeon symphony orchestra and “Śpiew polski”. It prints the three credited names and the Polish film title. The number 137013 is transcribed as printed, without assigning an unverified matrix prefix or take. SRC0633 independently catalogues the coupled disc O.236842 and supplies only [post 1930], not an exact session or issue date; the issue of the photographed copy remains undated here. The upload was published on 12 September 2023. The earlier caption’s claim that the recording could not be identified from discographic detail was incorrect. The label lists the three names without assigning their roles; the composer/lyricist allocation follows the Biblioteka Narodowa catalogue in SRC0633, not the order of names alone.",
         "researchNoteType": "discographic_note",
         "additionalLinks": [
             {
@@ -1014,6 +1014,7 @@ RECORDING_FIELDS: dict[str, dict[str, Any]] = {
         "date": "1930"
     },
     "SRC0633": {
+        "sourceType": "sound_recording_catalogue",
         "date": "1930",
         "dateRole": "issue",
         "dateQualifier": "after",

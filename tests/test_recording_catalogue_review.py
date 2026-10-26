@@ -23,8 +23,8 @@ class RecordingCatalogueReviewTests(unittest.TestCase):
             for t in ("sources", "contributions", "media", "organizations", "person-name-variants")
         }
 
-    def test_nine_catalogues_share_the_existing_source_type(self):
-        self.assertEqual(len(REVIEWED_RECORDING_CATALOGUES), 9)
+    def test_reviewed_catalogues_share_the_existing_source_type(self):
+        self.assertEqual(len(REVIEWED_RECORDING_CATALOGUES), 10)
         for sid in REVIEWED_RECORDING_CATALOGUES:
             source = self.tables["sources"][sid]
             self.assertEqual(source["sourceType"], "sound_recording_catalogue")

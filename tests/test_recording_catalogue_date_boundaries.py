@@ -8,6 +8,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 from normalize_sources import normalized_source
 from source_dates import normalized_source_date_fields, source_date_errors
+from recording_sources import recording_catalogue_evidence_errors
 
 REVIEWED = {"SRC0633", "SRC0773", "SRC0785", "SRC0829"}
 
@@ -29,6 +30,26 @@ class RecordingCatalogueDateBoundaryTests(unittest.TestCase):
         self.assertEqual(source["dateDisplay"], "[post 1930]")
         self.assertIn("[post 1930]", source["fullCitation"])
         self.assertIn("does not assert an issue in 1933", source["researchNote"])
+
+    def test_bn_catalogue_type_and_institution_remain_consistent(self):
+        source = self.sources["SRC0633"]
+        self.assertEqual(source["sourceType"], "sound_recording_catalogue")
+        self.assertEqual(source["repository"], "Biblioteka Narodowa")
+        self.assertIn("katalogi.bn.org.pl/", source["primaryUrl"])
+        self.assertIn("Biblioteka Narodowa catalogue in SRC0633",
+                      self.sources["SRC0761"]["researchNote"])
+        self.assertNotIn("BnF catalogue in SRC0633", self.sources["SRC0761"]["researchNote"])
+        stale = dict(source, sourceType="recording_discographic_source")
+        self.assertEqual(normalized_source(stale), source)
+        self.assertTrue(recording_catalogue_evidence_errors(stale, {}))
+        self.assertEqual(recording_catalogue_evidence_errors(source, {}), [])
+        stale_note = dict(self.sources["SRC0761"], researchNote="the BnF catalogue in SRC0633")
+        self.assertEqual(normalized_source(stale_note), self.sources["SRC0761"])
+        overrides = json.loads((ROOT / "scripts/public_export_overrides.json").read_text())
+        self.assertEqual(overrides["records"]["Sources"]["SRC0633"]["fields"]["sourceType"],
+                         "sound_recording_catalogue")
+        self.assertIn("Biblioteka Narodowa catalogue in SRC0633",
+                      overrides["records"]["Sources"]["SRC0761"]["fields"]["researchNote"])
 
     def test_fiesta_links_to_the_individual_record_not_only_the_composer(self):
         source = self.sources["SRC0773"]
