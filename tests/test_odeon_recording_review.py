@@ -55,7 +55,7 @@ class OdeonRecordingReviewTests(unittest.TestCase):
             with self.subTest(credit=cid):
                 credit = self.contributions[cid]
                 self.assertEqual(credit["certainty"], "probable")
-                self.assertEqual(credit["evidenceContext"], ["online_catalogue"])
+                self.assertEqual(credit["evidenceContext"], ["online_recording"])
                 self.assertIn("uploader", credit["scopeNote"])
         for cid in ("CON-S080-P-P153", "CON-S080-LAB-ORG128"):
             self.assertEqual(self.contributions[cid]["certainty"], "confirmed")

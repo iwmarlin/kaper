@@ -88,7 +88,7 @@ class RecordingEvidenceBatchTests(unittest.TestCase):
                     self.assertEqual(fields["certainty"], "confirmed")
                     continue
                 self.assertEqual(credit["certainty"], "probable")
-                self.assertEqual(credit["evidenceContext"], ["online_catalogue"])
+                self.assertEqual(credit["evidenceContext"], ["online_recording"])
                 self.assertIn("uploader-level", credit["scopeNote"])
                 self.assertEqual(fields["certainty"], "probable")
 

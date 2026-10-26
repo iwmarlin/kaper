@@ -31,7 +31,7 @@ class RecordingEvidenceFollowupTests(unittest.TestCase):
                 credit = self.credits[credit_id]
                 self.assertEqual(credit["certainty"], "probable")
                 self.assertEqual(credit["sourceIds"], [source_id])
-                self.assertEqual(credit["evidenceContext"], ["online_catalogue"])
+                self.assertEqual(credit["evidenceContext"], ["online_recording"])
                 self.assertIn("uploader-level", credit["scopeNote"])
                 self.assertEqual(self.overrides["records"]["Contributions"][credit_id]["fields"]["certainty"], "probable")
 

@@ -117,7 +117,7 @@ class ListeningSourceMetadataReviewTests(unittest.TestCase):
         self.assertNotIn("B 4502", source["fullCitation"])
         credit = self.contributions["CON-S008-P-ORG134"]
         self.assertEqual(credit["certainty"], "probable")
-        self.assertEqual(credit["evidenceContext"], ["online_catalogue"])
+        self.assertEqual(credit["evidenceContext"], ["online_recording"])
         self.assertIn("1444 WPP", self.sources["SRC0883"]["researchNote"])
         self.assertNotIn("522987", self.sources["SRC0883"]["fullCitation"])
 

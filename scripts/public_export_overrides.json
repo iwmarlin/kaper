@@ -8191,6 +8191,34 @@
       }
     },
     "Contributions": {
+      "CON-S082-P-P153": {
+        "reason": "Individually scope recording evidence: uploader metadata is not a catalogue or label transcription; retain qualifications and distinguish HMV and Odeon issues.",
+        "fields": {
+          "evidenceContext": [
+            "online_catalogue",
+            "online_recording"
+          ],
+          "scopeNote": "The Discogs entry in SRC0700 identifies Hans Albers on “In 24 Stunden”, Odeon O-11810; the upload description in SRC0698 also names him. The matrix and session details describe the catalogued recording, not an independently matched pressing or take in that upload. The label of the separate Odeon O-11811 issue is not direct evidence for this performance."
+        }
+      },
+      "CON-S082-LAB-ORG128": {
+        "reason": "Individually scope recording evidence: uploader metadata is not a catalogue or label transcription; retain qualifications and distinguish HMV and Odeon issues.",
+        "fields": {
+          "scopeNote": "The Discogs entry in SRC0700 catalogues the song on Odeon O-11810. This is catalogue evidence for the issuing imprint, not a fresh reading of the transfer’s disc label."
+        }
+      },
+      "CON-S158-P-P173": {
+        "reason": "Individually scope recording evidence: uploader metadata is not a catalogue or label transcription; retain qualifications and distinguish HMV and Odeon issues.",
+        "fields": {
+          "scopeNote": "The photographed HMV B.8724 label in SRC0783 names Allan Jones, with orchestra conducted by Nathaniel Shilkret, and prints matrix OA.09934. It establishes the performer on this HMV issue, not an independently verified Victor recording-session date."
+        }
+      },
+      "CON-S158-LAB-ORG147": {
+        "reason": "Individually scope recording evidence: uploader metadata is not a catalogue or label transcription; retain qualifications and distinguish HMV and Odeon issues.",
+        "fields": {
+          "scopeNote": "The photographed label in SRC0783 identifies the English-manufactured His Master’s Voice B.8724 issue, matrix OA.09934. It does not independently establish an earlier Victor issue or the identity of a Victor master."
+        }
+      },
       "CON-S071-C-P077": {
         "reason": "Review recording authorship evidence: distinguish role-specific copyright evidence, pseudonym attestation and qualified uploader metadata.",
         "fields": {
@@ -8426,7 +8454,7 @@
         "fields": {
           "certainty": "probable",
           "evidenceContext": [
-            "online_catalogue"
+            "online_recording"
           ],
           "scopeNote": "The uploader names Saxophon-Orchester Dobbri and reports a Parlophon B 4502 recording with Max Mensing. The consulted imagery did not independently establish the full catalogue and matrix details at readable resolution, so this remains a qualified attribution to the uploaded recording."
         },
@@ -8577,7 +8605,7 @@
         "fields": {
           "certainty": "probable",
           "evidenceContext": [
-            "online_catalogue"
+            "online_recording"
           ],
           "scopeNote": "The uploader identifies the Odeon-Künstler-Orchester for this transfer. The consulted label list does not name the orchestra; the visible label of the coupled title documents that other performance, not this one."
         },
@@ -8587,7 +8615,7 @@
         "fields": {
           "certainty": "probable",
           "evidenceContext": [
-            "online_catalogue"
+            "online_recording"
           ],
           "scopeNote": "The uploader identifies Otto Dobrindt as conductor of this performance. The consulted label list documents the title, singer, matrix and issue chronology but does not name the conductor. His credit on the coupled side is not direct evidence for this performance."
         },
@@ -8631,7 +8659,10 @@
         "reason": "Distinguish an external listening reference from an identified historical carrier, and qualify uploader-only chronology and label claims without removing access or graph relationships.",
         "fields": {
           "certainty": "probable",
-          "scopeNote": "The uploader identifies the recording as His Master’s Voice E.G. 2481, in the Electrola series. The disc label is not shown and no independent label or session record has been matched to this transfer; the issuing-label credit remains an uploader-level attribution."
+          "scopeNote": "The uploader identifies the recording as His Master’s Voice E.G. 2481, in the Electrola series. The disc label is not shown and no independent label or session record has been matched to this transfer; the issuing-label credit remains an uploader-level attribution.",
+          "evidenceContext": [
+            "online_recording"
+          ]
         }
       },
       "CON-S118-P-P173": {
@@ -8687,28 +8718,40 @@
         "reason": "Qualify uploader-only performance and label claims while preserving independently corroborated catalogue and discographic evidence.",
         "fields": {
           "certainty": "probable",
-          "scopeNote": "The upload describes the recording as a Syrena issue from 1926. No disc label, catalogue number or matrix number is supplied, so this remains an uploader-level issuing-label attribution."
+          "scopeNote": "The upload describes the recording as a Syrena issue from 1926. No disc label, catalogue number or matrix number is supplied, so this remains an uploader-level issuing-label attribution.",
+          "evidenceContext": [
+            "online_recording"
+          ]
         }
       },
       "CON-S003-CON-P119": {
         "reason": "Qualify uploader-only performance and label claims while preserving independently corroborated catalogue and discographic evidence.",
         "fields": {
           "certainty": "probable",
-          "scopeNote": "The upload identifies Henryk Gold as leader of the ensemble in an instrumental Syrena recording dated there to 1926. No disc label, catalogue number or matrix number is supplied; this remains an uploader-level attribution."
+          "scopeNote": "The upload identifies Henryk Gold as leader of the ensemble in an instrumental Syrena recording dated there to 1926. No disc label, catalogue number or matrix number is supplied; this remains an uploader-level attribution.",
+          "evidenceContext": [
+            "online_recording"
+          ]
         }
       },
       "CON-S030-CON-P167": {
         "reason": "Qualify uploader-only performance and label claims while preserving independently corroborated catalogue and discographic evidence.",
         "fields": {
           "certainty": "probable",
-          "scopeNote": "The upload identifies Otto Dobrindt as the leader of the ensemble presented as Gloria-Tanz-Orchester, with John Hendrik singing. The disc label is not shown and no catalogue or matrix number is supplied; this remains an uploader-level attribution."
+          "scopeNote": "The upload identifies Otto Dobrindt as the leader of the ensemble presented as Gloria-Tanz-Orchester, with John Hendrik singing. The disc label is not shown and no catalogue or matrix number is supplied; this remains an uploader-level attribution.",
+          "evidenceContext": [
+            "online_recording"
+          ]
         }
       },
       "CON-S026-P-P077": {
         "reason": "Qualify uploader-only performance and label claims while preserving independently corroborated catalogue and discographic evidence.",
         "fields": {
           "certainty": "probable",
-          "scopeNote": "The upload identifies Walter Jurmann as the refrain singer with Theo Mackeben und sein Jazz-Orchester. No disc label, catalogue number or matrix number is supplied; this remains an uploader-level performance attribution."
+          "scopeNote": "The upload identifies Walter Jurmann as the refrain singer with Theo Mackeben und sein Jazz-Orchester. No disc label, catalogue number or matrix number is supplied; this remains an uploader-level performance attribution.",
+          "evidenceContext": [
+            "online_recording"
+          ]
         }
       },
       "CON-S038-P-ORG119": {
@@ -8817,7 +8860,7 @@
         "fields": {
           "certainty": "probable",
           "evidenceContext": [
-            "online_catalogue"
+            "online_recording"
           ],
           "scopeNote": "The uploader identifies Electrola as the issuing label. The physical disc label is not shown, so this remains an uploader-level attribution."
         }
@@ -8827,7 +8870,7 @@
         "fields": {
           "certainty": "probable",
           "evidenceContext": [
-            "online_catalogue"
+            "online_recording"
           ],
           "scopeNote": "The uploader names Marek Weber as leader of the orchestra. The physical disc label is not shown, so this remains an uploader-level attribution."
         }
@@ -8837,7 +8880,7 @@
         "fields": {
           "certainty": "probable",
           "evidenceContext": [
-            "online_catalogue"
+            "online_recording"
           ],
           "scopeNote": "The uploader identifies Marek Weber und sein Orchester as the performing ensemble. The physical disc label is not shown, so this remains an uploader-level attribution."
         }
@@ -8847,7 +8890,7 @@
         "fields": {
           "certainty": "probable",
           "evidenceContext": [
-            "online_catalogue"
+            "online_recording"
           ],
           "scopeNote": "The uploader identifies Gloria as the issuing label. The physical disc label is not shown, so this remains an uploader-level attribution."
         }
@@ -8857,7 +8900,7 @@
         "fields": {
           "certainty": "probable",
           "evidenceContext": [
-            "online_catalogue"
+            "online_recording"
           ],
           "scopeNote": "The uploader identifies Melody Gents, modernes Schlager-Quartett mit Orchester as the performing ensemble. The physical disc label is not shown, so this remains an uploader-level attribution."
         }
@@ -8867,7 +8910,7 @@
         "fields": {
           "certainty": "probable",
           "evidenceContext": [
-            "online_catalogue"
+            "online_recording"
           ],
           "scopeNote": "The uploader identifies Gloria as the issuing label. The physical disc label is not shown, so this remains an uploader-level attribution."
         }
@@ -8877,7 +8920,7 @@
         "fields": {
           "certainty": "probable",
           "evidenceContext": [
-            "online_catalogue"
+            "online_recording"
           ],
           "scopeNote": "The uploader identifies Bernhard Etté mit seinem Tanz-Orchester as the performing ensemble. The physical disc label is not shown, so this remains an uploader-level attribution."
         }
@@ -8887,7 +8930,7 @@
         "fields": {
           "certainty": "probable",
           "evidenceContext": [
-            "online_catalogue"
+            "online_recording"
           ],
           "scopeNote": "The uploader identifies Odeon as the issuing label. The physical disc label is not shown, so this remains an uploader-level attribution."
         }
@@ -8897,7 +8940,7 @@
         "fields": {
           "certainty": "probable",
           "evidenceContext": [
-            "online_catalogue"
+            "online_recording"
           ],
           "scopeNote": "The uploader identifies Odeon-Künstler-Orchester as the performing ensemble. The physical disc label is not shown, so this remains an uploader-level attribution."
         }
@@ -8907,7 +8950,7 @@
         "fields": {
           "certainty": "probable",
           "evidenceContext": [
-            "online_catalogue"
+            "online_recording"
           ],
           "scopeNote": "The uploader identifies Polydor as the issuing label. The physical disc label is not shown, so this remains an uploader-level attribution."
         }
@@ -8917,7 +8960,7 @@
         "fields": {
           "certainty": "probable",
           "evidenceContext": [
-            "online_catalogue"
+            "online_recording"
           ],
           "scopeNote": "The uploader identifies Electrola as the issuing label. The physical disc label is not shown, so this remains an uploader-level attribution."
         }
@@ -8927,7 +8970,7 @@
         "fields": {
           "certainty": "probable",
           "evidenceContext": [
-            "online_catalogue"
+            "online_recording"
           ],
           "scopeNote": "The uploader identifies Ilja Livschakoff Tanzorchester as the performing ensemble. The physical disc label is not shown, so this remains an uploader-level attribution."
         }
@@ -8937,7 +8980,7 @@
         "fields": {
           "certainty": "probable",
           "evidenceContext": [
-            "online_catalogue"
+            "online_recording"
           ],
           "scopeNote": "The uploader identifies Marek Weber und sein Orchester as the performing ensemble. The physical disc label is not shown, so this remains an uploader-level attribution."
         }
@@ -8947,7 +8990,7 @@
         "fields": {
           "certainty": "probable",
           "evidenceContext": [
-            "online_catalogue"
+            "online_recording"
           ],
           "scopeNote": "The uploader names Marek Weber as leader of the orchestra. The physical disc label is not shown, so this remains an uploader-level attribution."
         }
@@ -8957,7 +9000,7 @@
         "fields": {
           "certainty": "probable",
           "evidenceContext": [
-            "online_catalogue"
+            "online_recording"
           ],
           "scopeNote": "The upload identifies the recording as a Syrena Record issue. The disc label is not shown, so the issuing-label attribution remains qualified."
         }
@@ -8996,7 +9039,10 @@
         "reason": "Separate consulted score imprints and uploader-supplied recording claims from verified label evidence.",
         "fields": {
           "certainty": "probable",
-          "scopeNote": "The upload identifies the recording as a His Master’s Voice (Electrola) issue. The disc label is not shown, so the issuing-label attribution remains qualified."
+          "scopeNote": "The upload identifies the recording as a His Master’s Voice (Electrola) issue. The disc label is not shown, so the issuing-label attribution remains qualified.",
+          "evidenceContext": [
+            "online_recording"
+          ]
         }
       },
       "CON-S009-P-ORG119": {
@@ -9004,7 +9050,7 @@
         "fields": {
           "certainty": "probable",
           "evidenceContext": [
-            "online_catalogue"
+            "online_recording"
           ],
           "scopeNote": "The upload identifies the performing ensemble as “Marek Weber und sein Orchester”. The disc label is not shown; this is an uploader-supplied identification, not a label transcription."
         }
@@ -9012,13 +9058,19 @@
       "CON-S009-CON-P165": {
         "reason": "Separate consulted score imprints and uploader-supplied recording claims from verified label evidence.",
         "fields": {
-          "certainty": "probable"
+          "certainty": "probable",
+          "evidenceContext": [
+            "online_recording"
+          ]
         }
       },
       "CON-S009-P-P086": {
         "reason": "Separate consulted score imprints and uploader-supplied recording claims from verified label evidence.",
         "fields": {
-          "certainty": "probable"
+          "certainty": "probable",
+          "evidenceContext": [
+            "online_recording"
+          ]
         }
       },
       "CON-S097-C-P077": {

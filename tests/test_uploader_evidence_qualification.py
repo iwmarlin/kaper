@@ -58,13 +58,7 @@ class UploaderEvidenceQualificationTests(unittest.TestCase):
             with self.subTest(credit=credit_id):
                 credit = self.contributions[credit_id]
                 self.assertEqual(credit["certainty"], "probable")
-                # The three authorship credits were subsequently reviewed as
-                # recording metadata, not catalogue entries. Other previously
-                # qualified credits retain their earlier context in this test.
-                expected_context = ("online_recording" if credit_id in {
-                    "CON-S218-C-P009", "CON-S218-C-P077", "CON-S218-L-P175"
-                } else "online_catalogue")
-                self.assertEqual(credit["evidenceContext"], [expected_context])
+                self.assertEqual(credit["evidenceContext"], ["online_recording"])
                 self.assertIn("upload", credit["scopeNote"].lower())
                 fields = self.overrides["records"]["Contributions"][credit_id]["fields"]
                 self.assertEqual(fields["certainty"], "probable")
