@@ -71,8 +71,9 @@ class SourceCitationEditorialLanguageTests(unittest.TestCase):
             self.assertIn("pseudonym", sources[source_id]["researchNote"])
         statement = "Copies carry the Center’s notice that the material may be restricted by United States copyright law."
         self.assertNotIn(statement, sources["SRC0709"]["fullCitation"])
-        self.assertEqual(statement, sources["SRC0709"]["researchNote"])
-        self.assertIn("Text: Egon Schubert / Mus. B. Kaper", sources["SRC0709"]["fullCitation"])
+        self.assertIn(statement, sources["SRC0709"]["researchNote"])
+        self.assertIn("surname as Szubert", sources["SRC0709"]["researchNote"])
+        self.assertIn("Text: Egon Szubert / Mus. B. Kaper", sources["SRC0709"]["fullCitation"])
 
     def test_visual_context_and_rights_are_preserved_outside_citations(self) -> None:
         sources = {
