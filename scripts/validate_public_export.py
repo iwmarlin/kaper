@@ -32,6 +32,8 @@ from recording_sources import (
     RECORDING_ORGANIZATION_BY_HOST,
     private_upload_semantic_errors,
     recording_hostname,
+    reviewed_publisher_evidence_errors,
+    reviewed_printed_number_errors,
 )
 from repository_organizations import expected_repository_organization_ids
 from hofmeister_sources import is_hofmeister_catalogue_source, normalize_hofmeister_source
@@ -899,7 +901,13 @@ class ExportValidator:
             for record in self.payloads.get("Organizations", {}).get("records", [])
         }
         contributions = self.payloads.get("Contributions", {}).get("records", [])
+        contributions_by_id = {record["id"]: record for record in contributions}
+        for source in sources_by_id.values():
+            self.errors.extend(reviewed_publisher_evidence_errors(
+                source, contributions_by_id))
+            self.errors.extend(reviewed_printed_number_errors(source))
         for media in self.payloads.get("Media", {}).get("records", []):
+            self.errors.extend(reviewed_printed_number_errors(media))
             if not (
                 media.get("mediaType") == "audio"
                 and media.get("storageType") == "external"

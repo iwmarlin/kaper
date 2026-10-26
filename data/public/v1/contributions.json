@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 1327,
+  "count": 1326,
   "records": [
     {
       "id": "CON-F001-C-P009",
@@ -7419,8 +7419,7 @@
       ],
       "sourceIds": [
         "SRC0098",
-        "SRC0466",
-        "SRC0716"
+        "SRC0466"
       ]
     },
     {
@@ -7935,8 +7934,7 @@
         "ORG031"
       ],
       "sourceIds": [
-        "SRC0184",
-        "SRC0753"
+        "SRC0184"
       ]
     },
     {
@@ -8432,8 +8430,7 @@
         "ORG031"
       ],
       "sourceIds": [
-        "SRC0181",
-        "SRC0717"
+        "SRC0181"
       ]
     },
     {
@@ -8488,8 +8485,7 @@
         "ORG029"
       ],
       "sourceIds": [
-        "SRC0182",
-        "SRC0712"
+        "SRC0182"
       ]
     },
     {
@@ -8671,8 +8667,7 @@
         "ORG033"
       ],
       "sourceIds": [
-        "SRC0178",
-        "SRC0718"
+        "SRC0178"
       ]
     },
     {
@@ -8908,8 +8903,7 @@
         "ORG031"
       ],
       "sourceIds": [
-        "SRC0100",
-        "SRC0710"
+        "SRC0100"
       ]
     },
     {
@@ -9454,8 +9448,7 @@
         "ORG038"
       ],
       "sourceIds": [
-        "SRC0208",
-        "SRC0754"
+        "SRC0208"
       ]
     },
     {
@@ -13594,7 +13587,8 @@
       "role": "publisher",
       "nameAsPrinted": "Edition Coda",
       "evidenceContext": [
-        "sheet_music"
+        "sheet_music",
+        "online_catalogue"
       ],
       "certainty": "confirmed",
       "workIds": [
@@ -13607,7 +13601,8 @@
         "SRC0057",
         "SRC0065",
         "SRC0705"
-      ]
+      ],
+      "scopeNote": "The BnF sheet-music catalogue entries identify Coda; Phonobase record 15273 separately states “Éditeur : Coda, Heugel, Paris (1934)”. This is a publishing credit, distinct from the Pathé record imprint."
     },
     {
       "id": "CON-S113-C-P009",
@@ -13987,24 +13982,6 @@
       ],
       "nameVariantIds": [
         "PNV0041"
-      ]
-    },
-    {
-      "id": "CON-S116-PUB-ORG039",
-      "role": "publisher",
-      "nameAsPrinted": "Éditions Salabert",
-      "evidenceContext": [
-        "sheet_music"
-      ],
-      "certainty": "confirmed",
-      "workIds": [
-        "W-S116"
-      ],
-      "organizationIds": [
-        "ORG039"
-      ],
-      "sourceIds": [
-        "SRC0115"
       ]
     },
     {
@@ -16207,7 +16184,6 @@
         "ORG035"
       ],
       "sourceIds": [
-        "SRC0008",
         "SRC0259",
         "SRC0261",
         "SRC0376"
@@ -19558,7 +19534,7 @@
       "evidenceContext": [
         "recording_label"
       ],
-      "scopeNote": "Orchestra conducted by Bronisław Kaper on Salabert 3384, the Henry Garat recording of “Pourvu qu’on ait vingt ans” from Une femme au volant, issued 7 November 1933. The conducting credit is stated in the source already cited for the song’s composer, lyricist and publisher, but had not been entered as a contribution. This is a performance credit and separate from his composer credit for the same song.",
+      "scopeNote": "The Salabert 3384 label credits “Orch. sous la dir. du compositeur Kaper”. Roig’s discography dates the recording session to 7 November 1933; that date is not an established commercial issue date.",
       "certainty": "confirmed",
       "workIds": [
         "W-S116"
@@ -19893,7 +19869,8 @@
       "sortOrder": 30,
       "certainty": "confirmed",
       "evidenceContext": [
-        "sheet_music"
+        "sheet_music",
+        "recording_label"
       ],
       "workIds": [
         "W-S007"
@@ -19905,7 +19882,8 @@
         "SRC0177",
         "SRC0689",
         "SRC0695"
-      ]
+      ],
+      "scopeNote": "The publishing credit is documented by the printed sources and independently by “Verlag: Roehr A.-G., Berlin” on the Grammophon B 50959 / Bestell-Nr. 22222 label."
     },
     {
       "id": "CON-S058-P-P164",

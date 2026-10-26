@@ -12,10 +12,71 @@ silently acquire a confirmed date or label attribution.
 
 from __future__ import annotations
 
+import re
 from typing import Any
 from urllib.parse import urlparse
 
 from filmographic_sources import strip_redundant_access_statement
+
+
+# Individually examined publisher evidence, not a general ban on using labels
+# to document publishing. Roehr is printed on its label; Coda is expressly
+# named by Phonobase. An empty tuple means that this source supports no
+# organization-linked publisher credit, not that the work has no publisher.
+REVIEWED_RECORDING_PUBLISHER_CREDITS = {
+    "SRC0008": (),
+    "SRC0115": (),  # Echo is preserved literally; Salabert is the record imprint.
+    "SRC0695": ("CON-S007-PUB-ORG118",),
+    "SRC0705": ("CON-S112-PUB-ORG030",),
+    "SRC0710": (),
+    "SRC0712": (),
+    "SRC0716": (),
+    "SRC0717": (),
+    "SRC0718": (),
+    "SRC0753": (),
+    "SRC0754": (),
+}
+
+REVIEWED_PRINTED_NUMBERS = {
+    "SRC0717": "60-1740", "M356": "60-1740",
+    "SRC0718": "60-1496", "M357": "60-1496",
+    "SRC0731": "60-1853", "M369": "60-1853",
+}
+
+
+def reviewed_publisher_evidence_errors(
+    source: dict[str, Any], contributions_by_id: dict[str, dict[str, Any]]
+) -> list[str]:
+    """Check both directions against the individually reviewed publisher scope."""
+    source_id = source.get("id")
+    if source_id not in REVIEWED_RECORDING_PUBLISHER_CREDITS:
+        return []
+    source_links = set(source.get("contributionIds") or [])
+    actual = {
+        cid for cid, credit in contributions_by_id.items()
+        if credit.get("role") == "publisher"
+        and (cid in source_links or source_id in (credit.get("sourceIds") or []))
+    }
+    expected = set(REVIEWED_RECORDING_PUBLISHER_CREDITS[source_id])
+    if actual == expected:
+        return []
+    return [
+        f"{source_id}: publisher evidence {sorted(actual)} differs from the "
+        f"individually reviewed label/catalogue evidence {sorted(expected)}"
+    ]
+
+
+def reviewed_printed_number_errors(record: dict[str, Any]) -> list[str]:
+    """Do not silently promote these printed/supplied numbers to matrices."""
+    number = REVIEWED_PRINTED_NUMBERS.get(record.get("id"))
+    if not number:
+        return []
+    pattern = re.compile(r"\bmatrix\s+" + re.escape(number) + r"\b", re.I)
+    return [
+        f"{record['id']}.{field}: {number} is not an independently verified matrix"
+        for field in ("fullCitation", "description", "publicCaption")
+        if pattern.search(str(record.get(field) or ""))
+    ]
 
 
 RECORDING_ORGANIZATION_BY_HOST = {
@@ -148,6 +209,16 @@ AUDITED_DIGITAL_AUDIO_FIELDS: dict[str, dict[str, Any]] = {
 
 
 RECORDING_FIELDS: dict[str, dict[str, Any]] = {
+    "SRC0754": {
+        "researchNote": "The uploader dates the issue to 1932 and associates the side with Hochzeitsreise zu dritt. The filmed label directly confirms Odeon O-11768 b, matrix Be 10147, Dajos Béla, Fred Lustig and the Kaper–Jurmann–Marischka credits, but carries no year. The Odeon label list gives 1933 in its general year column and its separate release-date column is empty. The structured date retains the uploader’s 1932 as disputed, not confirmed: the catalogue’s 1933 does not by itself establish a precise issue or session date. The examined label does not name Monopol-Liederverlag; that publisher credit rests on a separate printed source.",
+        "accessDate": "2026-10-26",
+        "fullCitation": "Tanz-Orchester Dajos Béla, vocal by Luigi Bernauer, credited on the label as Fred Lustig. “Signorina, ich liebe dich.” Tango; label credits Walter Jurmann, Bronislaw Kaper and Ernst Marischka. Odeon, n.d. Shellac disc, Radiomuseum Hardthausen / Schallarchiv; filmed-label transfer on YouTube."
+    },
+    "SRC0731": {
+        "fullCitation": "Dolly Haas with a chamber orchestra directed by Hans Sommer. “’S wird schon wieder besser.” YouTube transfer published by Marconiphone; the upload identifies His Master’s Voice E.G. 2481, gives the additional number 60-1853, credits the music to Jurmann and Kaper, associates the song with Liebe mit Bewährungsfrist and dates the recording to Berlin, 1932.",
+        "researchNote": "The disc identification, additional number 60-1853, performers, film association, music credits and recording year are supplied by the upload description; the disc label is not shown. The description lists 60-1853 without identifying its function. That number is retained without an independently established matrix or take identification. No independent label or session record has been matched to this transfer. The source retains the uploader’s specific disc identification as reported, not verified, and 1932 is not treated as an established issue date.",
+        "accessDate": "2026-10-26"
+    },
     "SRC0001": {
         "fullCitation": "Katalog Polskich Płyt Gramofonowych, record no. 38213. Syrena Record, 1926: “Jak się da, to się zrobi!” (side number 17919), coupled with “A zresztą, niech pan zadzwoni!” (side number 17921); both credited to Bruno Asper. Conductor: Zygmunt Wiehler.",
         "researchNote": "The catalogue dates the disc to 1926 and lists 17919 and 17921 as its two side numbers; it does not separately identify them as matrix numbers. The displayed label in the Stare Melodie transfer independently names the Perskie Oko theatre orchestra and conductor Z. Wiehler. The KPPG entry does not identify a lyricist or sheet-music publisher; those credits are supported by separate printed sources.",
@@ -612,11 +683,12 @@ RECORDING_FIELDS: dict[str, dict[str, Any]] = {
         "fullCitation": "Ben Berlin und sein Orchester, with German refrain vocal. “Auf Wiederseh’n, Herr Doktor!” Fox-trot; label credit “(Rotter-Kaper)”. Grammophon, electrical recording, catalogue B 51823, order no. 23042, side 2, n.d. Shellac disc, Radiomuseum Hardthausen / Schallarchiv; filmed-label transfer on YouTube."
     },
     "SRC0695": {
-        "researchNote": "The filmed label identifies Ben Berlin und sein Orchester, Grammophon B 50959, order no. 22222, and the Kaper–Rotter and Roehr credits. The uploader places the recording and first release in Berlin in 1929; the year is not printed on the label. The structured date retains that reported recording year, not a separately verified issue date. The composition’s publication chronology does not establish the session or release date of this disc.",
-        "fullCitation": "Ben Berlin und sein Orchester. “Nimm diesen Strauß Vergißmeinnicht.” Fox-trot; label credits “(Kaper – Rotter)” and “(Verlag: Roehr A.-G., Berlin)”. Grammophon, electrical recording, Polyfar “R” Orchester series, catalogue B 50959, order no. 22222, side 2, n.d. Shellac disc, Radiomuseum Hardthausen / Schallarchiv; filmed-label transfer on YouTube."
+        "researchNote": "The filmed label identifies Ben Berlin und sein Orchester, Grammophon B 50959, order no. 22222, and the Kaper–Rotter and Roehr credits. The uploader places the recording and first release in Berlin in 1929; the year is not printed on the label. The structured date retains that reported recording year, not a separately verified issue date. The composition’s publication chronology does not establish the session or release date of this disc. The explicit “Verlag: Roehr A.-G., Berlin” wording independently supports the Roehr publisher credit; it is distinct from the Grammophon record imprint.",
+        "fullCitation": "Ben Berlin und sein Orchester. “Nimm diesen Strauß Vergißmeinnicht.” Fox-trot; label credits “(Kaper – Rotter)” and “(Verlag: Roehr A.-G., Berlin)”. Grammophon, electrical recording, Polyfar “R” Orchester series, catalogue B 50959, order no. 22222, side 2, n.d. Shellac disc, Radiomuseum Hardthausen / Schallarchiv; filmed-label transfer on YouTube.",
+        "accessDate": "2026-10-26"
     },
     "SRC0716": {
-        "researchNote": "The filmed label identifies Parlophone 80.235, matrix B 38451, Saxophon Orchester Dobbri and Max Mensing. R. Pfau’s Lexikon der deutschen Tanzmusik, part 8, printed p. 926, independently lists this song with “B 38451 Dobbri Saxophon Orch.” Its general year 1930 does not specify a session or issue date. The Berlin session in 1930 and the description of the copy as a French issue remain uploader-supplied; neither is printed on the label.",
+        "researchNote": "The filmed label identifies Parlophone 80.235, matrix B 38451, Saxophon Orchester Dobbri and Max Mensing. R. Pfau’s Lexikon der deutschen Tanzmusik, part 8, printed p. 926, independently lists this song with “B 38451 Dobbri Saxophon Orch.” Its general year 1930 does not specify a session or issue date. The Berlin session in 1930 and the description of the copy as a French issue remain uploader-supplied; neither is printed on the label. The examined label does not name Wiener Boheme-Verlag; the publisher credit is supported by separate sources.",
         "additionalLinks": [
             {
                 "label": "R. Pfau, Lexikon der deutschen Tanzmusik, part 8, p. 926",
@@ -624,10 +696,11 @@ RECORDING_FIELDS: dict[str, dict[str, Any]] = {
                 "role": "additional_evidence"
             }
         ],
-        "fullCitation": "Saxophon Orchester Dobbri, vocal by Max Mensing. “Was macht jede Nacht so ein kleines Baby in der Bar.” Slow fox; label credit “Fritz Rotter & Dr. B. Kaper”. Parlophone 80.235, matrix B 38451, n.d. Shellac disc, Radiomuseum Hardthausen / Schallarchiv; filmed-label transfer on YouTube."
+        "fullCitation": "Saxophon Orchester Dobbri, vocal by Max Mensing. “Was macht jede Nacht so ein kleines Baby in der Bar.” Slow fox; label credit “Fritz Rotter & Dr. B. Kaper”. Parlophone 80.235, matrix B 38451, n.d. Shellac disc, Radiomuseum Hardthausen / Schallarchiv; filmed-label transfer on YouTube.",
+        "accessDate": "2026-10-26"
     },
     "SRC0717": {
-        "researchNote": "The filmed label identifies Marek Weber und sein Orchester, Electrola E.G. 2406 and matrix 60-1740. R. Pfau’s Lexikon der deutschen Tanzmusik, part 6, printed p. 736, independently lists “EG 2406 Marek Weber” under “Margarethe wander mit mir”. Its general year 1931 is not a separately documented session or issue date. The source retains 1931 as the uploader-reported recording year. The uploader’s link to an Italian version does not identify or date this pressing.",
+        "researchNote": "The filmed label identifies Marek Weber und sein Orchester, Electrola E.G. 2406 and the printed number 60-1740. That number is transcribed as a label number, not an independently verified matrix or take. R. Pfau’s Lexikon der deutschen Tanzmusik, part 6, printed p. 736, independently lists “EG 2406 Marek Weber” under “Margarethe wander mit mir”. Its general year 1931 is not a separately documented session or issue date. The source retains 1931 as the uploader-reported recording year. The uploader’s link to an Italian version does not identify or date this pressing. The examined label does not name Edition Karl Brüll; the publisher credit rests on a separate printed source.",
         "additionalLinks": [
             {
                 "label": "R. Pfau, Lexikon der deutschen Tanzmusik, part 6, p. 736",
@@ -635,7 +708,8 @@ RECORDING_FIELDS: dict[str, dict[str, Any]] = {
                 "role": "additional_evidence"
             }
         ],
-        "fullCitation": "Marek Weber und sein Orchester, dance orchestra with refrain vocal. “Margarete, wander mit mir ….” Fox-trot; label credits music and text to Fritz Rotter and Dr. B. Kaper. Electrola E.G. 2406, matrix 60-1740, n.d. Shellac disc, Radiomuseum Hardthausen / Schallarchiv; filmed-label transfer on YouTube."
+        "fullCitation": "Marek Weber und sein Orchester, dance orchestra with refrain vocal. “Margarete, wander mit mir ….” Fox-trot; label credits music and text to Fritz Rotter and Dr. B. Kaper. Electrola E.G. 2406, label number 60-1740, n.d. Shellac disc, Radiomuseum Hardthausen / Schallarchiv; filmed-label transfer on YouTube.",
+        "accessDate": "2026-10-26"
     },
     "SRC0004": {
         "title": "Blaue Jungs von der Marine — Kristall 3098",
@@ -714,8 +788,8 @@ RECORDING_FIELDS: dict[str, dict[str, Any]] = {
         ]
     },
     "SRC0710": {
-        "accessDate": "2026-10-25",
-        "researchNote": "The uploader identifies the singer credited as Leo Moll as Leo Monosson and reports 1931 as the Electrola issue year. Neither that identification nor the issue year is printed on the filmed label; the year remains reported, without a newly established session date. The accompanying 1930 photograph depicts Brioni and does not date the disc. Discographic entries for other performers’ recordings of this song are not used to date Electrola E.G. 2400.",
+        "accessDate": "2026-10-26",
+        "researchNote": "The uploader identifies the singer credited as Leo Moll as Leo Monosson and reports 1931 as the Electrola issue year. Neither that identification nor the issue year is printed on the filmed label; the year remains reported, without a newly established session date. The accompanying 1930 photograph depicts Brioni and does not date the disc. Discographic entries for other performers’ recordings of this song are not used to date Electrola E.G. 2400. The examined label names no sheet-music publisher; Edition Karl Brüll is documented by a separate printed source.",
         "researchNoteType": "discographic_note",
         "fullCitation": "Marek Weber und sein Orchester, refrain credited as Leo Moll. “Signorina aus Brioni.” Tango; label credits Fritz Rotter and Dr. Kaper for music and text. Electrola E.G. 2400, n.d. Shellac disc, Radiomuseum Hardthausen / Schallarchiv; filmed-label transfer on YouTube."
     },
@@ -723,9 +797,9 @@ RECORDING_FIELDS: dict[str, dict[str, Any]] = {
         "date": "1932",
         "dateRole": "recording",
         "dateQualifier": "confirmed",
-        "accessDate": "2026-10-25",
+        "accessDate": "2026-10-26",
         "fullCitation": "Tanzorchester J. Geiger, refrain sung by Hans Rotter. “Du bist verrückt, mein Schatz, du denkst an Liebe.” Lied und foxtrot; label credits music and text to Fritz Rotter and Dr. B. Kaper. Novaphon Electro Record B 4051, made in Austria, n.d.; matrix 2647 identified in Discographie der österreichischen Populärmusik. Flexible disc, Radiomuseum Hardthausen / Schallarchiv; filmed-label transfer on YouTube.",
-        "researchNote": "Discographie der österreichischen Populärmusik, pp. 53–54, lists “Du bist verückt mein Schatz, denn du denkst ...”, matrix 2647, on Novaphon 4051 under “Tanzorchester J. Geiger” and the recording-group heading “Wien, 1932”. The structured date follows that year-level recording chronology, not a separately documented issue date. It supersedes the uploader’s approximate 1931 issue dating; no month or day is inferred. The matrix is only partly legible in the filmed label, so 2647 is identified from the discography rather than presented as a complete label reading. The uploader’s expansion of J. Geiger to Isy Geiger is not silently substituted for the label wording.",
+        "researchNote": "Discographie der österreichischen Populärmusik, pp. 53–54, lists “Du bist verückt mein Schatz, denn du denkst ...”, matrix 2647, on Novaphon 4051 under “Tanzorchester J. Geiger” and the recording-group heading “Wien, 1932”. The structured date follows that year-level recording chronology, not a separately documented issue date. It supersedes the uploader’s approximate 1931 issue dating; no month or day is inferred. The matrix is only partly legible in the filmed label, so 2647 is identified from the discography rather than presented as a complete label reading. The uploader’s expansion of J. Geiger to Isy Geiger is not silently substituted for the label wording. The examined label does not name Wiener Boheme-Verlag; that publisher credit rests on a separate printed source.",
         "researchNoteType": "discographic_note",
         "additionalLinks": [
             {
@@ -739,9 +813,9 @@ RECORDING_FIELDS: dict[str, dict[str, Any]] = {
         "date": "1931-03-11",
         "dateRole": "recording",
         "dateQualifier": "confirmed",
-        "accessDate": "2026-10-25",
-        "fullCitation": "Jack Hylton und sein Orchester, refrain sung by Siegfried Arno. “Das verliebte Orchester.” Fox-trot; label credits text and music to Fritz Rotter and Dr. B. Kaper. Electrola E.G. 2259, matrix 60-1496; recorded 11 March 1931, issue date not established. Shellac disc, Radiomuseum Hardthausen / Schallarchiv; filmed-label transfer on YouTube.",
-        "researchNote": "The Jack Hylton website’s MP3 Downloads discography lists this title, Electrola EG-2259 and Siegfried Arno, with 11/03/31 in the “Recording Date” column. The structured date therefore identifies the session on 11 March 1931, not the commercial issue date. The label supplies the matrix and printed credits; the independent listing does not specify a take. The uploader’s general statement that Electrola issued the disc in 1931 remains distinct from this session evidence.",
+        "accessDate": "2026-10-26",
+        "fullCitation": "Jack Hylton und sein Orchester, refrain sung by Siegfried Arno. “Das verliebte Orchester.” Fox-trot; label credits text and music to Fritz Rotter and Dr. B. Kaper. Electrola E.G. 2259, label number 60-1496; recorded 11 March 1931, issue date not established. Shellac disc, Radiomuseum Hardthausen / Schallarchiv; filmed-label transfer on YouTube.",
+        "researchNote": "The Jack Hylton website’s MP3 Downloads discography lists this title, Electrola EG-2259 and Siegfried Arno, with 11/03/31 in the “Recording Date” column. The structured date therefore identifies the session on 11 March 1931, not the commercial issue date. The label prints 60-1496, retained here as a label number rather than an independently verified matrix or take; the Hylton listing does not specify a take. The uploader’s general statement that Electrola issued the disc in 1931 remains distinct from this session evidence. The examined label does not name Alrobi; the sheet-music-publisher credit rests on a separate printed source.",
         "researchNoteType": "discographic_note",
         "additionalLinks": [
             {
@@ -868,24 +942,26 @@ RECORDING_FIELDS: dict[str, dict[str, Any]] = {
         "date": "1937-06-08",
         "dateRole": "recording",
         "dateQualifier": "confirmed",
-        "researchNote": "The Internet Archive item metadata gives 1937-06-08. The Dooji Collection discography independently identifies Master MA 137, matrix M519-1, with the New York session of 8 June 1937. The structured date describes that recording session, not an independently established commercial release date.",
+        "researchNote": "The Internet Archive item metadata gives 1937-06-08. The Dooji Collection discography independently identifies Master MA 137, matrix M519-1, with the New York session of 8 June 1937. The structured date describes that recording session, not an independently established commercial release date. The photographed Master label names the writers but not Robbins Music Corporation; the Robbins publishing credit rests on separate printed sources.",
         "researchNoteType": "discographic_note",
-        "accessDate": "2026-10-25",
+        "accessDate": "2026-10-26",
         "additionalLinks": [
             {
                 "label": "Dooji Collection — Master MA 137, matrix M519-1",
                 "url": "https://ellingtonweb.ca/Hostedpages/DoojiCollection/DoojiCollection-1937-38.html",
                 "role": "catalogue_entry"
             }
-        ]
+        ],
+        "fullCitation": "Duke Ellington and His Famous Orchestra. “All God’s Chillun Got Rhythm.” Words by Gus Kahn; music by Bronisław Kaper and Walter Jurmann; from A Day at the Races. Master MA 137, matrix M 519-1. Recorded New York, 8 June 1937. Internet Archive, digitized 78 rpm recording."
     },
     "SRC0705": {
         "date": "1934-10",
         "dateRole": "recording",
         "dateQualifier": "confirmed",
-        "researchNote": "Phonobase explicitly gives the recording date as 1934-10-xx; the structured date therefore retains month precision and does not identify the disc’s commercial issue date. The transfer date is separately given as 4 February 2023. The record additionally states that Tino Rossi created the song in 1934, that Mireille, Guy Berry and Priolet also performed it, and that Coda / Heugel published it in Paris in 1934.",
+        "researchNote": "Phonobase explicitly gives the recording date as 1934-10-xx; the structured date therefore retains month precision and does not identify the disc’s commercial issue date. The transfer date is separately given as 4 February 2023. The record additionally states that Tino Rossi created the song in 1934, that Mireille, Guy Berry and Priolet also performed it, and that Coda / Heugel published it in Paris in 1934. The Coda publisher credit is supported by that explicit catalogue statement, independently of the Pathé record imprint.",
         "researchNoteType": "discographic_note",
-        "accessDate": "2026-10-25"
+        "accessDate": "2026-10-26",
+        "fullCitation": "Guy Berry. “Vivons l’amour, vivons la vie”, from the Casino de Paris revue Parade de France. Music-hall song by Walter Jurmann, Bronisław Kaper, Henri Varna and Marc Cab. Pathé PA362, matrix cpt-1514-1, 25 cm needle-cut electrical disc, 78 rpm, recorded October 1934. Phonobase record 15273; transfer made 4 February 2023 from the Christian Declerck collection, Dunkirk."
     },
     "SRC0744": {
         "date": "1931-03-15",
@@ -908,7 +984,7 @@ RECORDING_FIELDS: dict[str, dict[str, Any]] = {
         "date": "1931-09-15",
         "dateRole": "recording",
         "dateQualifier": "confirmed",
-        "researchNote": "The filmed label confirms the title and authorship credit. The uploader supplies the Berlin and film context; the catalogue number and session date are independently supplied by musiktiteldb.de. Its title-list entry dates the Berlin recording to 15 September 1931 and leaves the release-date column empty. The structured date identifies that session, not the commercial issue of Kristall 3229.",
+        "researchNote": "The filmed label confirms the title and authorship credit. The uploader supplies the Berlin and film context; the catalogue number and session date are independently supplied by musiktiteldb.de. Its title-list entry dates the Berlin recording to 15 September 1931 and leaves the release-date column empty. The structured date identifies that session, not the commercial issue of Kristall 3229. The examined label does not name Edition Karl Brüll; the publisher credit rests on a separate printed source.",
         "researchNoteType": "discographic_note",
         "additionalLinks": [
             {
@@ -916,7 +992,9 @@ RECORDING_FIELDS: dict[str, dict[str, Any]] = {
                 "url": "http://musiktiteldb.de/musiktitel/titel_I_Want_To-Ich_trink.html",
                 "role": "catalogue_entry"
             }
-        ]
+        ],
+        "accessDate": "2026-10-26",
+        "fullCitation": "George Nettelmann und sein Orchester, refrain sung by Walter Jurmann. “Ich frag’, Madame, wann kommen wir zusamm’?” Foxtrot; label credits Bronislaw Kaper, Walter Jurmann and Fritz Rotter. Kristall 3229, recorded Berlin, 15 September 1931. Shellac disc, Radiomuseum Hardthausen / Schallarchiv; filmed-label transfer on YouTube. Session data from the title list at musiktiteldb.de."
     },
     "SRC0760": {
         "date": "1931-04-29",
@@ -991,12 +1069,12 @@ RECORDING_FIELDS: dict[str, dict[str, Any]] = {
         ]
     },
     "SRC0115": {
-        "fullCitation": "Henry Garat, vocal; orchestra conducted by Bronisław Kaper. “Pourvu qu’on ait vingt ans,” from Une femme au volant. Music by Bronisław Kaper and Walter Jurmann; words by Louis Poterat. Salabert 3384, 78 rpm disc; recorded Paris, 7 November 1933. Digital transfer from David Silvestre’s private collection, published by lysgauty1 on YouTube, video JA57rCoKoyI. Gérard Roig, “Discographie d’Henry Garat,” Phonoscopies 5 (January 1994): 10–11, lists matrix SS 1729 and the coupled side “Ninon, quand tu me souris,” matrix SS 1730, as Salabert 3384.",
+        "fullCitation": "Henry Garat, vocal; orchestra conducted by Bronisław Kaper. “Pourvu qu’on ait vingt ans,” from Une femme au volant. Music by Bronisław Kaper and Walter Jurmann; words by Louis Poterat. Salabert 3384, 78 rpm disc, with “Éditions Echo” printed as publisher; recorded Paris, 7 November 1933. Digital transfer from David Silvestre’s private collection, published by lysgauty1 on YouTube, video JA57rCoKoyI. Gérard Roig, “Discographie d’Henry Garat,” Phonoscopies 5 (January 1994): 10–11, lists matrix SS 1729 and the coupled side “Ninon, quand tu me souris,” matrix SS 1730, as Salabert 3384.",
         "repository": "YouTube / private collection of David Silvestre",
         "date": "1933-11-07",
         "dateRole": "recording",
         "dateQualifier": "confirmed",
-        "researchNote": "Roig’s discography places SS 1729 under the Paris session heading of 7 November 1933, continuing onto the next printed page with the coupled side SS 1730. It also mentions a dated test pressing of SS 1729B. The date therefore describes a recording session, not the commercial release of Salabert 3384; no particular take is assigned to the YouTube transfer from that note alone.",
+        "researchNote": "Roig’s discography places SS 1729 under the Paris session heading of 7 November 1933, continuing onto the next printed page with the coupled side SS 1730. It also mentions a dated test pressing of SS 1729B. The date therefore describes a recording session, not the commercial release of Salabert 3384; no particular take is assigned to the YouTube transfer from that note alone. The readable label separately prints “Éditions Echo” and the Salabert record imprint. It supports Echo as the named publisher, not a Salabert sheet-music-publisher credit. No corporate identity or relationship between the two businesses is inferred from this disc.",
         "researchNoteType": "discographic_note",
         "additionalLinks": [
             {
@@ -1004,7 +1082,8 @@ RECORDING_FIELDS: dict[str, dict[str, Any]] = {
                 "url": "https://www.old.archeophone.org/Phonoscopies/Phonoscopies-005.pdf#page=6",
                 "role": "catalogue_entry"
             }
-        ]
+        ],
+        "accessDate": "2026-10-26"
     },
     "SRC0625": {
         "fullCitation": (
@@ -1096,6 +1175,12 @@ RECORDING_FIELDS: dict[str, dict[str, Any]] = {
 # These corrections concern citation syntax, not the date of a modern issue.
 # Keep uploader-reported recording dates distinct from upload dates.
 AUDITED_RECORDING_CITATIONS = {
+    "SRC0008": "Duke Ellington and His Famous Orchestra. “All God’s Chillun Got Rhythm.” Words by Gus Kahn; music by Bronisław Kaper and Walter Jurmann; from A Day at the Races. Master MA 137, matrix M 519-1. Recorded New York, 8 June 1937. Internet Archive, digitized 78 rpm recording.",
+    "SRC0115": "Henry Garat, vocal; orchestra conducted by Bronisław Kaper. “Pourvu qu’on ait vingt ans,” from Une femme au volant. Music by Bronisław Kaper and Walter Jurmann; words by Louis Poterat. Salabert 3384, 78 rpm disc, with “Éditions Echo” printed as publisher; recorded Paris, 7 November 1933. Digital transfer from David Silvestre’s private collection, published by lysgauty1 on YouTube, video JA57rCoKoyI. Gérard Roig, “Discographie d’Henry Garat,” Phonoscopies 5 (January 1994): 10–11, lists matrix SS 1729 and the coupled side “Ninon, quand tu me souris,” matrix SS 1730, as Salabert 3384.",
+    "SRC0705": "Guy Berry. “Vivons l’amour, vivons la vie”, from the Casino de Paris revue Parade de France. Music-hall song by Walter Jurmann, Bronisław Kaper, Henri Varna and Marc Cab. Pathé PA362, matrix cpt-1514-1, 25 cm needle-cut electrical disc, 78 rpm, recorded October 1934. Phonobase record 15273; transfer made 4 February 2023 from the Christian Declerck collection, Dunkirk.",
+    "SRC0753": "George Nettelmann und sein Orchester, refrain sung by Walter Jurmann. “Ich frag’, Madame, wann kommen wir zusamm’?” Foxtrot; label credits Bronislaw Kaper, Walter Jurmann and Fritz Rotter. Kristall 3229, recorded Berlin, 15 September 1931. Shellac disc, Radiomuseum Hardthausen / Schallarchiv; filmed-label transfer on YouTube. Session data from the title list at musiktiteldb.de.",
+    "SRC0754": "Tanz-Orchester Dajos Béla, vocal by Luigi Bernauer, credited on the label as Fred Lustig. “Signorina, ich liebe dich.” Tango; label credits Walter Jurmann, Bronislaw Kaper and Ernst Marischka. Odeon, n.d. Shellac disc, Radiomuseum Hardthausen / Schallarchiv; filmed-label transfer on YouTube.",
+    "SRC0731": "Dolly Haas with a chamber orchestra directed by Hans Sommer. “’S wird schon wieder besser.” YouTube transfer published by Marconiphone; the upload identifies His Master’s Voice E.G. 2481, gives the additional number 60-1853, credits the music to Jurmann and Kaper, associates the song with Liebe mit Bewährungsfrist and dates the recording to Berlin, 1932.",
     "SRC0001": "Katalog Polskich Płyt Gramofonowych, record no. 38213. Syrena Record, 1926: “Jak się da, to się zrobi!” (side number 17919), coupled with “A zresztą, niech pan zadzwoni!” (side number 17921); both credited to Bruno Asper. Conductor: Zygmunt Wiehler.",
     "SRC0002": "Hermann Bick and Dr. Kaper. “Miss Annabelle Lee.” Novelty piano duet. Polydor 21768, Germany, n.d. YouTube transfer published by Tim Gracyk, 22 April 2021; the description credits the sound file to Rainer E. Lotz.",
     "SRC0003": "Ilja Livschakoff Tanz-Orchester, with German refrain vocal by L. Monosson. “Süße Mamsell, denkst du noch an das kleine Hotel.” Tango by Fritz Rotter and Dr. Bronislaw Kaper. Grammophon B 51043, Bestell-Nr. 23179, side 2. YouTube transfer published by Radiomuseum Hardthausen, 30 September 2019.",
@@ -1131,14 +1216,14 @@ AUDITED_RECORDING_CITATIONS = {
     "SRC0694": "Ben Berlin und sein Orchester, with German refrain vocal. “Auf Wiederseh’n, Herr Doktor!” Fox-trot; label credit “(Rotter-Kaper)”. Grammophon, electrical recording, catalogue B 51823, order no. 23042, side 2, n.d. Shellac disc, Radiomuseum Hardthausen / Schallarchiv; filmed-label transfer on YouTube.",
     "SRC0695": "Ben Berlin und sein Orchester. “Nimm diesen Strauß Vergißmeinnicht.” Fox-trot; label credits “(Kaper – Rotter)” and “(Verlag: Roehr A.-G., Berlin)”. Grammophon, electrical recording, Polyfar “R” Orchester series, catalogue B 50959, order no. 22222, side 2, n.d. Shellac disc, Radiomuseum Hardthausen / Schallarchiv; filmed-label transfer on YouTube.",
     "SRC0716": "Saxophon Orchester Dobbri, vocal by Max Mensing. “Was macht jede Nacht so ein kleines Baby in der Bar.” Slow fox; label credit “Fritz Rotter & Dr. B. Kaper”. Parlophone 80.235, matrix B 38451, n.d. Shellac disc, Radiomuseum Hardthausen / Schallarchiv; filmed-label transfer on YouTube.",
-    "SRC0717": "Marek Weber und sein Orchester, dance orchestra with refrain vocal. “Margarete, wander mit mir ….” Fox-trot; label credits music and text to Fritz Rotter and Dr. B. Kaper. Electrola E.G. 2406, matrix 60-1740, n.d. Shellac disc, Radiomuseum Hardthausen / Schallarchiv; filmed-label transfer on YouTube.",
+    "SRC0717": "Marek Weber und sein Orchester, dance orchestra with refrain vocal. “Margarete, wander mit mir ….” Fox-trot; label credits music and text to Fritz Rotter and Dr. B. Kaper. Electrola E.G. 2406, label number 60-1740, n.d. Shellac disc, Radiomuseum Hardthausen / Schallarchiv; filmed-label transfer on YouTube.",
     "SRC0004": "Bernard Etté und sein Orchester, refrain by Kurt Mühlhardt. “Blaue Jungs von der Marine.” Marschlied from Korvettenkapitän; label credit “Dr. Kaper / Rotter / Robinson”. Kristall, order no. 3098, n.d. YouTube transfer by Wunschkonzert.",
     "SRC0725": "Austin Egen, accompanied by the Odeon-Tango-Orchester. “Ich weiß ein kleines Café.” Tango; label credits Dr. B. Kaper and Austin Egen, with words by Fritz Rotter. Odeon O-11439 a, matrix Be 9409; issued May 1931. Label filmed in the YouTube upload by Ilja Livschakoff.",
     "SRC0782": "Orchestra Mascotte. “Moonlight at Sanssouci.” Waltz; label credit “Rotter–Kaper”. Parlophone A3436, matrix Be 9615, n.d. Australian pressing, labelled “Made in Australia for Parlophone Co. Ltd.” Disc label photograph and digital transfer published by the Great 78 Project, Internet Archive.",
     "SRC0811": "“Blue Venetian Waters”, attributed to Allan Jones. Audio transfer uploaded by Archiveradio1930 to YouTube; the title describes it as a 1937 broadcast.",
     "SRC0710": "Marek Weber und sein Orchester, refrain credited as Leo Moll. “Signorina aus Brioni.” Tango; label credits Fritz Rotter and Dr. Kaper for music and text. Electrola E.G. 2400, n.d. Shellac disc, Radiomuseum Hardthausen / Schallarchiv; filmed-label transfer on YouTube.",
     "SRC0712": "Tanzorchester J. Geiger, refrain sung by Hans Rotter. “Du bist verrückt, mein Schatz, du denkst an Liebe.” Lied und foxtrot; label credits music and text to Fritz Rotter and Dr. B. Kaper. Novaphon Electro Record B 4051, made in Austria, n.d.; matrix 2647 identified in Discographie der österreichischen Populärmusik. Flexible disc, Radiomuseum Hardthausen / Schallarchiv; filmed-label transfer on YouTube.",
-    "SRC0718": "Jack Hylton und sein Orchester, refrain sung by Siegfried Arno. “Das verliebte Orchester.” Fox-trot; label credits text and music to Fritz Rotter and Dr. B. Kaper. Electrola E.G. 2259, matrix 60-1496; recorded 11 March 1931, issue date not established. Shellac disc, Radiomuseum Hardthausen / Schallarchiv; filmed-label transfer on YouTube.",
+    "SRC0718": "Jack Hylton und sein Orchester, refrain sung by Siegfried Arno. “Das verliebte Orchester.” Fox-trot; label credits text and music to Fritz Rotter and Dr. B. Kaper. Electrola E.G. 2259, label number 60-1496; recorded 11 March 1931, issue date not established. Shellac disc, Radiomuseum Hardthausen / Schallarchiv; filmed-label transfer on YouTube.",
     "SRC0724": "Karkoff-Orchester mit Refraingesang. “In der Laubenkolonie.” Foxtrot from the sound film In der Laubenkolonie; label credit “(Kaper)”. Derby D.O. 5710 a, marked “Nur für Deutschland”, n.d. Shellac disc, Radiomuseum Hardthausen / Schallarchiv; filmed-label transfer on YouTube.",
     "SRC0715": "“Ich hab’ heut grad Geburtstag.” YouTube audio reference published by Jan van den Belt on 24 June 2011. The upload identifies Theo Mackeben mit seinem Jazz-Orchester and Walter Jurmann as refrain singer.",
     "SRC0727": "“Ich steh im Schnee und wart auf dich.” YouTube audio reference published by Brillantspecial, presented by the uploader as Gloria-Tanz-Orchester mit Refraingesang.",
@@ -1393,7 +1478,7 @@ VERIFIED_RECORDING_CHRONOLOGY: dict[str, dict[str, Any]] = {
         "date": "1932",
         "dateRole": "issue",
         "dateQualifier": "uncertain",
-        "researchNote": "The uploader dates the issue to 1932 and associates the side with Hochzeitsreise zu dritt. The Odeon label list identifies the matching title and performers as O-11768, side B, matrix Be 10147, with 1933 in its general year column; its separate release-date column is empty. The filmed label carries no year. The structured date retains the uploader’s 1932 as disputed, not confirmed: the catalogue’s 1933 does not by itself establish a precise issue or session date.",
+        "researchNote": "The uploader dates the issue to 1932 and associates the side with Hochzeitsreise zu dritt. The filmed label directly confirms Odeon O-11768 b, matrix Be 10147, Dajos Béla, Fred Lustig and the Kaper–Jurmann–Marischka credits, but carries no year. The Odeon label list gives 1933 in its general year column and its separate release-date column is empty. The structured date retains the uploader’s 1932 as disputed, not confirmed: the catalogue’s 1933 does not by itself establish a precise issue or session date. The examined label does not name Monopol-Liederverlag; that publisher credit rests on a separate printed source.",
         "researchNoteType": "date_assessment",
         "additionalLinks": [
             {
