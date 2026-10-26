@@ -17,6 +17,7 @@ from pathlib import Path
 from typing import Any
 
 from authority_sources import normalize_authority_source
+from archival_sources import normalize_archival_source
 from filmographic_sources import (
     IMDB_HOSTS,
     TCM_HOSTS,
@@ -40,6 +41,7 @@ def normalized_source(source: dict[str, Any]) -> dict[str, Any]:
 
     result = deepcopy(source)
     normalize_visual_source(result)
+    normalize_archival_source(result)
     normalize_hofmeister_source(result)
     normalize_sheet_music_source(result)
     if result.get("sourceType") == "authority_record":
