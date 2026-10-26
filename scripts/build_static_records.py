@@ -821,8 +821,8 @@ def static_page(
         page_title = f"{title} ({label.lower()})"
     browser_title = f"{page_title} | {PAGE_TITLE_SUFFIX}"
     record_id = record["id"]
-    style_version = "98b3203372"
-    record_script_version = "98b3203372"
+    style_version = "7b45d3f24d"
+    record_script_version = "7b45d3f24d"
     route = f"records/{record_type}/{quote(record_id, safe='')}/"
     canonical = f"{ORIGIN}{route}"
     og_image = og_image_for(record_type, record, tables, image_mapping)
@@ -860,8 +860,8 @@ def static_page(
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <link rel="preload" href="assets/fonts/kaper-sans.woff2?v=98b3203372" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="assets/fonts/kaper-serif.woff2?v=98b3203372" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/kaper-sans.woff2?v=7b45d3f24d" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/kaper-serif.woff2?v=7b45d3f24d" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/site/styles.css?v={style_version}">
   <title>{esc(browser_title)}</title>
   {ld_json}

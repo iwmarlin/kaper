@@ -17,7 +17,7 @@
    the swashed display forms can never appear by accident. */
 @font-face {
   font-family: "Fraunces";
-  src: url("../fonts/kaper-serif.woff2?v=98b3203372") format("woff2");
+  src: url("../fonts/kaper-serif.woff2?v=7b45d3f24d") format("woff2");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
@@ -25,7 +25,7 @@
 
 @font-face {
   font-family: "Fraunces";
-  src: url("../fonts/kaper-serif-italic.woff2?v=98b3203372") format("woff2");
+  src: url("../fonts/kaper-serif-italic.woff2?v=7b45d3f24d") format("woff2");
   font-weight: 100 900;
   font-style: italic;
   font-display: swap;
@@ -33,7 +33,7 @@
 
 @font-face {
   font-family: "Archivo";
-  src: url("../fonts/kaper-sans.woff2?v=98b3203372") format("woff2");
+  src: url("../fonts/kaper-sans.woff2?v=7b45d3f24d") format("woff2");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
@@ -41,7 +41,7 @@
 
 @font-face {
   font-family: "Archivo";
-  src: url("../fonts/kaper-sans-italic.woff2?v=98b3203372") format("woff2");
+  src: url("../fonts/kaper-sans-italic.woff2?v=7b45d3f24d") format("woff2");
   font-weight: 100 900;
   font-style: italic;
   font-display: swap;
@@ -4014,9 +4014,6 @@ html:not(.js) .source-group__head {
 .record-gallery {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  /* Tiles differ in height now that each takes its document's shape, and a
-     stretched row would hand the saved space straight back. */
-  align-items: start;
   gap: 1rem;
 }
 
@@ -4037,6 +4034,7 @@ html:not(.js) .source-group__head {
   width: 100%;
   margin: 0;
   padding: 0;
+  aspect-ratio: 4 / 3;
   border: 0;
   border-bottom: 1px solid var(--line);
   border-radius: 0;
@@ -4051,17 +4049,9 @@ button.record-gallery__image {
   cursor: pointer;
 }
 
-/* The tile used to be a fixed 4:3 box whatever the document was, and these
-   documents are 0.46 to 5.91 wide: a newspaper strip painted 482x82 inside a
-   482x362 tile and left 280px of nothing under it, twice over in one gallery.
-   The tile now takes the document's own shape, capped so a tall column cannot
-   run away with the page. Nothing is hidden by this; only the empty part
-   goes. */
 .record-gallery__image img {
-  display: block;
   width: 100%;
-  height: auto;
-  max-height: 22rem;
+  height: 100%;
   padding: 0.4rem;
   object-fit: contain;
 }
