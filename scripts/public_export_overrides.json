@@ -5928,7 +5928,8 @@
           "date": "2018-01-29",
           "dateRole": "digital_publication",
           "dateQualifier": "confirmed",
-          "researchNote": "The date identifies the Bamboodi digital issue released on 29 January 2018. The release credits Allan Jones but identifies no original session, label, catalogue number or matrix. It does not independently establish that this access copy reproduces a performance recorded for, or heard in, Everybody Sing. It replaces the former Audiomack access link; that replacement does not establish the identity of the historical recording."
+          "researchNote": "The date identifies the Bamboodi digital issue released on 29 January 2018. The release credits Allan Jones but identifies no original session, label, catalogue number or matrix. It does not independently establish that this access copy reproduces a performance recorded for, or heard in, Everybody Sing. It replaces the former Audiomack access link; that replacement does not establish the identity of the historical recording. The automated credits assign both Author and Composer to each of Edens, Jurmann, Kahn and Kaper; they do not reliably distinguish music from words. The specific composer and lyricist roles follow the independent copyright entry in SRC0275, not these duplicated digital fields.",
+          "accessDate": "2026-10-26"
         }
       },
       "SRC0838": {
@@ -8190,6 +8191,18 @@
       }
     },
     "Contributions": {
+      "CON-S071-C-P077": {
+        "reason": "Review recording authorship evidence: distinguish role-specific copyright evidence, pseudonym attestation and qualified uploader metadata.",
+        "fields": {
+          "scopeNote": "The Hofmeister entry in SRC0209 and the uploader description in SRC0790 give the printed composer name Bob Henders. These witnesses attest the pseudonym, not an explicit personal-name credit to Jurmann. Its joint identification with Kaper and Jurmann is documented separately in the linked name-variant record PNV0005."
+        }
+      },
+      "CON-S071-C-P009": {
+        "reason": "Review recording authorship evidence: distinguish role-specific copyright evidence, pseudonym attestation and qualified uploader metadata.",
+        "fields": {
+          "scopeNote": "The Hofmeister entry in SRC0209 and the uploader description in SRC0790 give the printed composer name Bob Henders. These witnesses attest the pseudonym, not an explicit personal-name credit to Kaper. Its joint identification with Kaper and Jurmann is documented separately in the linked name-variant record PNV0005."
+        }
+      },
       "CON-S153-P-P173": {
         "reason": "Review WaterTower outtake metadata individually: distinguish film-production evidence, remaster designation and access-copy publication.",
         "fields": {
@@ -8954,7 +8967,7 @@
         "fields": {
           "certainty": "probable",
           "evidenceContext": [
-            "online_catalogue"
+            "online_recording"
           ],
           "scopeNote": "The upload attributes the Polish words to Emanuel Schlechter. The disc label is not shown; this attribution is not treated as a verified label transcription."
         }
@@ -8964,7 +8977,7 @@
         "fields": {
           "certainty": "probable",
           "evidenceContext": [
-            "online_catalogue"
+            "online_recording"
           ],
           "scopeNote": "The upload credits Walter Jurmann with the music of this Polish version. This credit documents the uploader’s attribution; the disc label is not shown."
         }
@@ -8974,7 +8987,7 @@
         "fields": {
           "certainty": "probable",
           "evidenceContext": [
-            "online_catalogue"
+            "online_recording"
           ],
           "scopeNote": "The upload credits Bronisław Kaper with the music of this Polish version. This credit documents the uploader’s attribution; the disc label is not shown."
         }
@@ -23126,6 +23139,17 @@
       }
     },
     "Sources": {
+      "SRC0815": {
+        "fields": {
+          "contributionIds": [
+            "CON-S162-C-P009",
+            "CON-S162-C-P077",
+            "CON-S162-L-P025",
+            "CON-S162-L-P071"
+          ]
+        },
+        "reason": "Digital metadata repeats Author and Composer for every writer; the precise role split rests on SRC0275."
+      },
       "SRC0805": {
         "fields": {
           "contributionIds": [
@@ -24440,6 +24464,38 @@
       }
     },
     "Contributions": {
+      "CON-S162-C-P009": {
+        "fields": {
+          "sourceIds": [
+            "SRC0815"
+          ]
+        },
+        "reason": "Retain the role-specific copyright evidence SRC0275, not the duplicated digital role fields."
+      },
+      "CON-S162-C-P077": {
+        "fields": {
+          "sourceIds": [
+            "SRC0815"
+          ]
+        },
+        "reason": "Retain the role-specific copyright evidence SRC0275, not the duplicated digital role fields."
+      },
+      "CON-S162-L-P025": {
+        "fields": {
+          "sourceIds": [
+            "SRC0815"
+          ]
+        },
+        "reason": "Retain the role-specific copyright evidence SRC0275, not the duplicated digital role fields."
+      },
+      "CON-S162-L-P071": {
+        "fields": {
+          "sourceIds": [
+            "SRC0815"
+          ]
+        },
+        "reason": "Retain the role-specific copyright evidence SRC0275, not the duplicated digital role fields."
+      },
       "CON-S114-C-P077": {
         "fields": {
           "sourceIds": [

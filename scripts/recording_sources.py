@@ -115,6 +115,21 @@ def recording_catalogue_evidence_errors(
     return errors
 
 
+def reviewed_digital_authorship_errors(
+    source: dict[str, Any], contributions_by_id: dict[str, dict[str, Any]]
+) -> list[str]:
+    """The Bamboodi fields repeat both roles, not a reliable music/words split."""
+    if source.get("id") != "SRC0815":
+        return []
+    links = set(source.get("contributionIds") or [])
+    return [
+        f"SRC0815: duplicated digital role fields do not establish {cid}; use SRC0275"
+        for cid, credit in contributions_by_id.items()
+        if credit.get("role") in {"composer", "lyricist"}
+        and (cid in links or "SRC0815" in (credit.get("sourceIds") or []))
+    ]
+
+
 RECORDING_ORGANIZATION_BY_HOST = {
     "archive.org": "ORG067",
     "catalogue.bnf.fr": "ORG062",
@@ -209,10 +224,11 @@ AUDITED_DIGITAL_AUDIO_FIELDS: dict[str, dict[str, Any]] = {
         "title": (
             "The Show Must Go On — Allan Jones, Bamboodi digital reissue"
         ),
+        "accessDate": "2026-10-26",
         "date": "2018-01-29",
         "dateRole": "digital_publication",
         "dateQualifier": "confirmed",
-        "researchNote": "The date identifies the Bamboodi digital issue released on 29 January 2018. The release credits Allan Jones but identifies no original session, label, catalogue number or matrix. It does not independently establish that this access copy reproduces a performance recorded for, or heard in, Everybody Sing. It replaces the former Audiomack access link; that replacement does not establish the identity of the historical recording.",
+        "researchNote": "The date identifies the Bamboodi digital issue released on 29 January 2018. The release credits Allan Jones but identifies no original session, label, catalogue number or matrix. It does not independently establish that this access copy reproduces a performance recorded for, or heard in, Everybody Sing. It replaces the former Audiomack access link; that replacement does not establish the identity of the historical recording. The automated credits assign both Author and Composer to each of Edens, Jurmann, Kahn and Kaper; they do not reliably distinguish music from words. The specific composer and lyricist roles follow the independent copyright entry in SRC0275, not these duplicated digital fields.",
         "researchNoteType": "discographic_note",
     },
 }
