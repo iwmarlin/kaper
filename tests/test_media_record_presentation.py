@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import re
 import shutil
 import subprocess
 import unittest
@@ -264,6 +265,46 @@ class MediaRecordPresentationTests(unittest.TestCase):
         # Plain centring would put the left edge of an oversized image out of
         # reach of the scroll origin.
         self.assertIn("justify-content: safe center;", actual)
+
+
+class MediaProseRepetitionTests(unittest.TestCase):
+    """The card prints About this item, then Credit, then the rights note, one
+    after another. M051 came out of an import as "{category} image ({asset
+    path}) {caption} {credit}", so a reader was shown the file on disk and then
+    the same credit line three times down the page."""
+
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls.media = json.loads(
+            (ROOT / "data/public/v1/media.json").read_text(encoding="utf-8")
+        )["records"]
+
+    def test_no_description_shows_the_file_on_disk(self) -> None:
+        offenders = [
+            record["id"]
+            for record in self.media
+            if re.search(
+                r"\([^)]*\.(?:jpg|jpeg|png|webp|gif|tiff?|pdf|mp3|wav|mp4)\)",
+                str(record.get("description") or ""),
+                re.I,
+            )
+        ]
+        self.assertEqual(offenders, [], "a description exposes an asset path")
+
+    def test_no_rights_note_restates_the_credit_line(self) -> None:
+        # Only the import's own shape is forbidden: a sentence that opens
+        # "Credit <the credit line>", which the card has already printed under
+        # Credit. A rights note may still name the body — M088 licenses the
+        # item "under the terms of ANNO / Österreichische Nationalbibliothek",
+        # and M187 says what English Wikipedia does and does not grant — and
+        # those sentences say something the credit line does not.
+        offenders = []
+        for record in self.media:
+            credit = str(record.get("publicCreditLine") or "").strip().rstrip(".")
+            note = str(record.get("rightsNote") or "")
+            if credit and f"Credit {credit}" in note:
+                offenders.append(record["id"])
+        self.assertEqual(offenders, [], "a rights note repeats the credit line")
 
 if __name__ == "__main__":
     unittest.main()
