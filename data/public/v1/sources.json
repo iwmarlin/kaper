@@ -12078,18 +12078,18 @@
     },
     {
       "id": "SRC0314",
-      "shortCitation": "YouTube, “The Duchess has a Twinkle in her eye”",
-      "fullCitation": "jerzabinka, uploader. “The Duchess has a Twinkle in her eye.” YouTube video.",
-      "sourceType": "online_audio_source",
-      "title": "The Duchess Has a Twinkle in Her Eye — YouTube",
+      "shortCitation": "YouTube, “The Duchess Has a Twinkle in Her Eye” — stage performance",
+      "fullCitation": "“The Duchess Has a Twinkle in Her Eye.” Stage performance attributed to Christoph Wagner-Trenkwitz with Ensemble Albero Verde, in Die letzte Nacht at Theater und Kabarett “Die Hölle”, Theater an der Wien, 2014. Video published by jerzabinka on YouTube, 29 March 2019.",
+      "sourceType": "online_video_source",
+      "title": "The Duchess Has a Twinkle in Her Eye — modern stage performance, YouTube",
       "creator": "jerzabinka (YouTube channel)",
       "repository": "YouTube",
       "publication": "YouTube",
       "dateRole": "digital_publication",
-      "dateQualifier": "unknown",
-      "accessDate": "2026-06-15",
+      "dateQualifier": "confirmed",
+      "accessDate": "2026-10-26",
       "reliability": "low",
-      "sourceStatus": "verified",
+      "sourceStatus": "verified_with_attribution_note",
       "slug": "src0314-youtube-the-duchess-has-a-twinkle-in-her-eye",
       "organizationIds": [
         "ORG093"
@@ -12097,7 +12097,16 @@
       "mediaIds": [
         "M009"
       ],
-      "primaryUrl": "https://www.youtube.com/watch?v=gePgVM7uIIQ"
+      "primaryUrl": "https://www.youtube.com/watch?v=gePgVM7uIIQ",
+      "date": "2019-03-29",
+      "researchNote": "The video shows a staged live performance, not a historical film excerpt or an audio-only upload. Its description names Christoph Wagner-Trenkwitz and Ensemble Albero Verde and dates the production to 2014; those performance details are uploader-supplied. The structured date is the YouTube publication date, not the performance year or the 1935 date of the song’s film context, Kind Lady. The earlier claim that the upload did not identify the performers was incorrect. No new People records are created for this one-off modern performance.",
+      "researchNoteType": "object_context",
+      "workIds": [
+        "W-S120"
+      ],
+      "songIds": [
+        "S120"
+      ]
     },
     {
       "id": "SRC0315",
@@ -23499,15 +23508,15 @@
     },
     {
       "id": "SRC0693",
-      "shortCitation": "YouTube, “Die grosse Attraktion: Du warst mir ein Roman”",
-      "fullCitation": "Richard Tauber – Topic (auto-generated YouTube channel), uploader. “Die grosse Attraktion: Du warst mir ein Roman.” YouTube video, uploaded 11 February 2015.",
+      "shortCitation": "Richard Tauber, “Du warst mir ein Roman” — Jube Classic digital reissue",
+      "fullCitation": "Richard Tauber with the Odeon Künstlerorchester, conducted by Frieder Weissmann. “Die grosse Attraktion: Du warst mir ein Roman.” Track on The Richard Tauber Collection, vol. 12: Film Songs (Recordings 1928–1932). Jube Classic, digital release, 2 July 2013. Distributed to YouTube by Naxos Digital Services.",
       "sourceType": "online_audio_source",
-      "title": "Die grosse Attraktion: Du warst mir ein Roman — Richard Tauber, YouTube",
-      "creator": "Richard Tauber – Topic (auto-generated YouTube channel)",
+      "title": "Du warst mir ein Roman — Richard Tauber, Jube Classic digital reissue",
+      "creator": "Richard Tauber; Odeon Künstlerorchester; Frieder Weissmann",
       "repository": "YouTube",
-      "publication": "YouTube",
-      "accessDate": "2026-08-15",
-      "reliability": "low",
+      "publication": "Jube Classic / YouTube",
+      "accessDate": "2026-10-26",
+      "reliability": "medium",
       "sourceStatus": "verified",
       "slug": "src0693-youtube-die-grosse-attraktion-du-warst-mir-ein-roman",
       "organizationIds": [
@@ -23528,10 +23537,12 @@
       ],
       "dateRole": "digital_publication",
       "dateQualifier": "confirmed",
-      "date": "2015-02-11",
+      "date": "2013-07-02",
       "contributionIds": [
         "CON-S031-P-P118"
-      ]
+      ],
+      "researchNote": "The distributor-supplied description gives “Released on: 2013-07-02”; YouTube separately gives publication on 11 February 2015. The structured date identifies the digital issue, not the later upload or an original recording session. The release metadata names Tauber, the orchestra and Weissmann but supplies no historical catalogue number or matrix; the album’s 1928–1932 span is not the date of this individual performance.",
+      "researchNoteType": "discographic_note"
     },
     {
       "id": "SRC0694",
@@ -26093,19 +26104,20 @@
     },
     {
       "id": "SRC0761",
-      "shortCitation": "YouTube, “Jan Kiepura - Signorina, Signorina”",
-      "fullCitation": "andrzej2392, uploader. “Jan Kiepura - Signorina, Signorina.” YouTube audio reference.",
-      "sourceType": "online_audio_source",
-      "title": "Jan Kiepura - Signorina, Signorina — Jan Kiepura, YouTube",
-      "creator": "andrzej2392",
+      "shortCitation": "Odeon O.236842 b, “Signorina, Signorina”",
+      "fullCitation": "Jan Kiepura with the Odeon symphony orchestra. “Signorina, Signorina”, from Zdobyć cię muszę; label credit “B. Kaper, W. Jurmann, M. Halicz”. Sung in Polish. Odeon O.236842 b, printed number 137013, n.d. Disc label shown in the YouTube transfer published by andrzej2392.",
+      "sourceType": "recording_discographic_source",
+      "title": "Signorina, signorina — Odeon O.236842 b",
+      "creator": "Jan Kiepura; Odeon symphony orchestra",
       "repository": "YouTube",
-      "publication": "YouTube",
-      "accessDate": "2026-08-21",
-      "reliability": "low",
+      "publication": "Odeon",
+      "accessDate": "2026-10-26",
+      "reliability": "high",
       "sourceStatus": "verified",
       "slug": "src0761-youtube-jan-kiepura-signorina-signorina",
       "organizationIds": [
-        "ORG093"
+        "ORG093",
+        "ORG150"
       ],
       "mediaIds": [
         "M394"
@@ -26120,21 +26132,37 @@
       "personIds": [
         "P117"
       ],
-      "dateRole": "digital_publication",
-      "dateQualifier": "unknown"
+      "dateRole": "issue",
+      "dateQualifier": "unknown",
+      "researchNote": "The label is clearly visible: O.236842 b, number 137013, Jan Kiepura, the Odeon symphony orchestra and “Śpiew polski”. It prints the three credited names and the Polish film title. The number 137013 is transcribed as printed, without assigning an unverified matrix prefix or take. SRC0633 independently catalogues the coupled disc O.236842 and supplies only [post 1930], not an exact session or issue date; the issue of the photographed copy remains undated here. The upload was published on 12 September 2023. The earlier caption’s claim that the recording could not be identified from discographic detail was incorrect. The label lists the three names without assigning their roles; the composer/lyricist allocation follows the BnF catalogue in SRC0633, not the order of names alone.",
+      "researchNoteType": "discographic_note",
+      "contributionIds": [
+        "CON-S215-C-P009",
+        "CON-S215-C-P077",
+        "CON-S215-L-P156",
+        "CON-S215-P-P117",
+        "CON-S215-LAB-ORG128"
+      ],
+      "additionalLinks": [
+        {
+          "label": "YouTube transfer — readable Polish Odeon O.236842 b label",
+          "url": "https://i.ytimg.com/vi/2hGtJsKdBQ4/maxresdefault.jpg",
+          "role": "additional_evidence"
+        }
+      ]
     },
     {
       "id": "SRC0762",
-      "shortCitation": "YouTube, “Someone to Care for Me” — Deanna Durbin",
-      "fullCitation": "Deanna Durbin. “Someone to Care for Me.” YouTube audio release supplied by Deanna Durbin – Topic.",
+      "shortCitation": "Deanna Durbin, “Someone to Care for Me” — Smith & Co digital reissue",
+      "fullCitation": "Deanna Durbin. “Someone to Care for Me.” Track on The Best of Deanna Durbin. Smith & Co, digital release, 13 June 2012. Distributed to YouTube by The Orchard Enterprises.",
       "sourceType": "online_audio_source",
-      "title": "Someone to Care for Me — Deanna Durbin, YouTube",
-      "creator": "Deanna Durbin – Topic",
+      "title": "Someone to Care for Me — Deanna Durbin, Smith & Co digital reissue",
+      "creator": "Deanna Durbin; The Orchard Enterprises (distributor)",
       "repository": "YouTube",
-      "publication": "YouTube",
+      "publication": "Smith & Co / YouTube",
       "dateRole": "digital_publication",
-      "dateQualifier": "unknown",
-      "accessDate": "2026-08-21",
+      "dateQualifier": "confirmed",
+      "accessDate": "2026-10-26",
       "reliability": "medium",
       "sourceStatus": "verified",
       "slug": "src0762-youtube-deanna-durbin-someone-to-care-for-me",
@@ -26153,22 +26181,25 @@
       ],
       "songIds": [
         "S133"
-      ]
+      ],
+      "date": "2012-06-13",
+      "researchNote": "The distributor-supplied description gives “Released on: 2012-06-13”; YouTube publication is separately dated 20 November 2014. The structured date is the digital issue date, not a historical recording or film-production date. The album artwork and release metadata name Durbin but identify no original label, catalogue number, matrix or session. The digital “Music Publisher” field is not used to establish the historical sheet-music publisher.",
+      "researchNoteType": "discographic_note"
     },
     {
       "id": "SRC0763",
-      "shortCitation": "YouTube, “Ninon, ach uśmiechnij się!” — Jan Kiepura",
-      "fullCitation": "jurek46pink, uploader. “Ninon, ach uśmiechnij się!” performed by Jan Kiepura. YouTube audio reference.",
+      "shortCitation": "YouTube, Jan Kiepura, “Ninon, ach uśmiechnij się!”",
+      "fullCitation": "“Ninon, ach uśmiechnij się!”, attributed to Jan Kiepura. Polish-language audio transfer published by jurek46pink on YouTube, 10 December 2007.",
       "sourceType": "online_audio_source",
       "title": "Ninon, ach uśmiechnij się! — Jan Kiepura, YouTube",
       "creator": "jurek46pink",
       "repository": "YouTube",
       "publication": "YouTube",
       "dateRole": "digital_publication",
-      "dateQualifier": "unknown",
-      "accessDate": "2026-08-21",
+      "dateQualifier": "confirmed",
+      "accessDate": "2026-10-26",
       "reliability": "low",
-      "sourceStatus": "verified",
+      "sourceStatus": "verified_with_attribution_note",
       "slug": "src0763-youtube-jan-kiepura-ninon-ach-usmiechnij-sie",
       "primaryUrl": "https://www.youtube.com/watch?v=lhYhERQquMU",
       "organizationIds": [
@@ -26185,25 +26216,29 @@
       ],
       "songIds": [
         "S214"
-      ]
+      ],
+      "date": "2007-12-10",
+      "researchNote": "The upload identifies Kiepura, Polish Odeon and a Berlin recording, but supplies no catalogue or matrix number. The consulted images are typed title cards, not a disc label. The structured date is YouTube publication; the description’s 1933 refers to the film context and does not independently date this transfer or its carrier. SRC0633 documents a Polish Odeon O.236842 issue, but that catalogue number and its coupling are not assigned to this upload without matching label or matrix evidence.",
+      "researchNoteType": "discographic_note"
     },
     {
       "id": "SRC0764",
-      "shortCitation": "YouTube, “Le plus petit baiser” — Henri Garat",
-      "fullCitation": "lysgauty1 collection disques David Silvestre, uploader. “Le plus petit baiser” performed by Henri Garat. YouTube audio reference.",
-      "sourceType": "online_audio_source",
-      "title": "Le plus petit baiser — Henri Garat, YouTube",
-      "creator": "lysgauty1 collection disques David Silvestre",
+      "shortCitation": "Salabert 3382, “Le plus petit baiser”",
+      "fullCitation": "Henri Garat, printed as “Henry Garat”, with orchestra conducted by Kaper. “Le plus petit baiser”, from Une femme au volant. Waltz; words by L. Poterat, music by Kaper and Jurmann. Salabert 3382, matrix S.S.1728, n.d. Disc label photograph and audio transfer published by lysgauty1 collection disques David Silvestre on YouTube.",
+      "sourceType": "recording_discographic_source",
+      "title": "Le plus petit baiser — Salabert 3382, label and transfer",
+      "creator": "Henri Garat; orchestra conducted by Kaper",
       "repository": "YouTube",
-      "publication": "YouTube",
-      "dateRole": "digital_publication",
-      "dateQualifier": "unknown",
-      "accessDate": "2026-08-21",
-      "reliability": "low",
-      "sourceStatus": "verified",
+      "publication": "Salabert",
+      "dateRole": "described_item",
+      "dateQualifier": "reported",
+      "accessDate": "2026-10-26",
+      "reliability": "high",
+      "sourceStatus": "verified_with_attribution_note",
       "slug": "src0764-youtube-henri-garat-le-plus-petit-baiser",
       "primaryUrl": "https://www.youtube.com/watch?v=ybyZ6qnw0gU",
       "organizationIds": [
+        "ORG039",
         "ORG093"
       ],
       "personIds": [
@@ -26217,20 +26252,43 @@
       ],
       "songIds": [
         "S096"
+      ],
+      "date": "1933-10-03",
+      "researchNote": "The readable label identifies Salabert 3382, S.S.1728, Henry Garat, the composers and lyricist, and “Orch. sous la dir. du compositeur Kaper”. It also prints Éditions Echo; that wording is not treated as a synonym of the Salabert record imprint. The uploader attaches 3 October 1933 to the disc without explicitly distinguishing a recording date from an issue date, so it is retained only as a reported date of the described item. SRC0300 records the BnF description of the coupled Salabert 3382 issue as [1934]; the exact photographed pressing is not dated from that entry. The upload was published on 18 October 2021. The earlier phrase identifying it as the same physical pressing held by BnF was not supported.",
+      "researchNoteType": "discographic_note",
+      "contributionIds": [
+        "CON-S096-C-P009",
+        "CON-S096-C-P077",
+        "CON-S096-L-P049",
+        "CON-S096-P-P132",
+        "CON-S096-CON-P009",
+        "CON-S096-LAB-ORG039"
+      ],
+      "additionalLinks": [
+        {
+          "label": "YouTube transfer — readable Salabert 3382, S.S.1728 label",
+          "url": "https://i.ytimg.com/vi/ybyZ6qnw0gU/maxresdefault.jpg",
+          "role": "additional_evidence"
+        },
+        {
+          "label": "BnF catalogue — the coupled Salabert 3382 issue (SRC0300)",
+          "url": "https://catalogue.bnf.fr/ark:/12148/cb380209111",
+          "role": "catalogue_entry"
+        }
       ]
     },
     {
       "id": "SRC0765",
-      "shortCitation": "YouTube, “Henri Garat - A Paris Tiguidiguidi”",
-      "fullCitation": "Chansons, Folklore et Variété, uploader. “Henri Garat - A Paris Tiguidiguidi.” YouTube audio reference.",
+      "shortCitation": "Henri Garat, “À Paris tiguidiguidi” — YouTube / DMI compilation",
+      "fullCitation": "Henri Garat. “À Paris tiguidiguidi.” Track from Deluxe: Chansons de Paris, vol. 2; production credited to DMI. Published by Chansons, Folklore et Variété on YouTube, 27 September 2018.",
       "sourceType": "online_audio_source",
       "title": "À Paris tiguidiguidi — Henri Garat, YouTube",
       "creator": "Chansons, Folklore et Variété",
       "repository": "YouTube",
       "publication": "YouTube",
       "dateRole": "digital_publication",
-      "dateQualifier": "unknown",
-      "accessDate": "2026-08-21",
+      "dateQualifier": "confirmed",
+      "accessDate": "2026-10-26",
       "reliability": "low",
       "sourceStatus": "verified",
       "slug": "src0765-youtube-henri-garat-a-paris-tiguidiguidi",
@@ -26249,22 +26307,25 @@
       ],
       "songIds": [
         "S097"
-      ]
+      ],
+      "date": "2018-09-27",
+      "researchNote": "The upload identifies a modern compilation and credits production to DMI. Its album artwork and description supply no original disc label, catalogue number, matrix or session. The structured date is publication of this YouTube copy, not an independently verified album-release date or historical session. SRC0300 independently documents Garat’s Salabert 3382, but the compilation track has not been matched to that particular issue by label or matrix evidence.",
+      "researchNoteType": "discographic_note"
     },
     {
       "id": "SRC0766",
-      "shortCitation": "YouTube, “Saxophon-Orchester Dobbri - Gib nur acht über Nacht kommt die Liebe”",
-      "fullCitation": "Musicaviennensis, uploader. “Saxophon-Orchester Dobbri - Gib nur acht über Nacht kommt die Liebe.” YouTube audio reference.",
+      "shortCitation": "YouTube, Saxophon-Orchester Dobbri, “Gib nur acht, über Nacht kommt die Liebe”",
+      "fullCitation": "“Gib nur acht, über Nacht kommt die Liebe.” Valse Boston. YouTube transfer published by Musicaviennensis, 1 May 2016; the description identifies Saxophon-Orchester Dobbri, with Max Mensing singing.",
       "sourceType": "online_audio_source",
       "title": "Gib nur acht, über Nacht kommt die Liebe — Saxophon-Orchester Dobbri, YouTube",
       "creator": "Musicaviennensis",
       "repository": "YouTube",
       "publication": "YouTube",
       "dateRole": "digital_publication",
-      "dateQualifier": "unknown",
-      "accessDate": "2026-08-22",
+      "dateQualifier": "confirmed",
+      "accessDate": "2026-10-26",
       "reliability": "low",
-      "sourceStatus": "verified",
+      "sourceStatus": "verified_with_attribution_note",
       "slug": "src0766-youtube-dobbri-gib-nur-acht-ueber-nacht-kommt-die-liebe",
       "primaryUrl": "https://www.youtube.com/watch?v=UYUU01yuj80",
       "organizationIds": [
@@ -26282,7 +26343,10 @@
       ],
       "contributionIds": [
         "CON-S008-P-ORG134"
-      ]
+      ],
+      "date": "2016-05-01",
+      "researchNote": "The uploader identifies Parlophon B 4502, matrix 38185, a Berlin recording in January 1930, Max Mensing and music by Dr. B. Kaper. A Parlophon label appears in the video, but its catalogue and matrix details were not independently transcribed at sufficient resolution during this review; they remain supplied by the description. The structured date is the YouTube publication date. The portrait used as the video thumbnail is not evidence identifying the recording personnel. This reference belongs to the German song W-S008, not the Polish-language version.",
+      "researchNoteType": "discographic_note"
     },
     {
       "id": "SRC0767",
@@ -27403,14 +27467,14 @@
       "shortCitation": "Paul O’Montis and the Paul Godwin Orchestra, “Wenn ich mal eine Dummheit mach’” — YouTube / Jube Pops",
       "fullCitation": "Paul O’Montis with the Paul Godwin Orchestra, conducted by Paul Godwin. “Hochzeitsreise zu dritt: Wenn ich mal eine Dummheit mach’.” Track on Schlager und Filmmelodien von Walter Jurmann, vol. 2 (Recordings 1929–1936). Jube Pops, digital release, 5 February 2013. Distributed to YouTube by Naxos Digital Services.",
       "sourceType": "online_audio_source",
-      "title": "Hochzeitsreise zu dritt: Wenn ich mal eine Dummheit mach’ — YouTube",
+      "title": "Wenn ich ’mal eine Dummheit mach’ — Paul O’Montis, Jube Pops digital reissue",
       "creator": "Paul O’Montis; Paul Godwin Orchestra; Paul Godwin",
       "repository": "YouTube",
       "publication": "Jube Pops / YouTube",
       "date": "2013-02-05",
       "dateRole": "digital_publication",
       "dateQualifier": "confirmed",
-      "accessDate": "2026-08-24",
+      "accessDate": "2026-10-26",
       "reliability": "medium",
       "sourceStatus": "verified",
       "slug": "src0796-youtube-hochzeitsreise-zu-dritt-wenn-ich-mal-eine-dummheit",
@@ -27426,21 +27490,23 @@
       "primaryUrl": "https://www.youtube.com/watch?v=jqWl44rt6M0",
       "songIds": [
         "S083"
-      ]
+      ],
+      "researchNote": "The distributor-supplied description gives the digital release date as 5 February 2013 and separately dates YouTube publication to 11 February 2015. It names Paul O’Montis, the Paul Godwin Orchestra and conductor Paul Godwin, but identifies no original disc label, catalogue number, matrix or exact session. The album’s 1929–1936 span is not the date of this individual recording. The structured date describes the digital issue only.",
+      "researchNoteType": "discographic_note"
     },
     {
       "id": "SRC0797",
       "shortCitation": "Wolfgang Schmidt and the Bernhard Etté Orchestra, “Wie schön ist diese Welt” — YouTube / Jube Pops",
       "fullCitation": "Wolfgang Schmidt with the Bernhard Etté Orchestra, conducted by Bernhard Etté. “Abenteuer am Lido: Wie schön ist diese Welt.” Track on Schlager und Filmmelodien von Walter Jurmann, vol. 1 (Recordings 1930–1938). Jube Pops, digital release, 5 February 2013. Distributed to YouTube by Naxos Digital Services.",
       "sourceType": "online_audio_source",
-      "title": "Abenteuer am Lido: Wie schön ist diese Welt — YouTube",
+      "title": "Wie schön ist diese Welt — Wolfgang Schmidt, Jube Pops digital reissue",
       "creator": "Wolfgang Schmidt; Bernhard Etté Orchestra; Bernhard Etté",
       "repository": "YouTube",
       "publication": "Jube Pops / YouTube",
       "date": "2013-02-05",
       "dateRole": "digital_publication",
       "dateQualifier": "confirmed",
-      "accessDate": "2026-08-24",
+      "accessDate": "2026-10-26",
       "reliability": "medium",
       "sourceStatus": "verified",
       "slug": "src0797-youtube-abenteuer-am-lido-wie-schon-ist-diese-welt",
@@ -27456,7 +27522,9 @@
       "primaryUrl": "https://www.youtube.com/watch?v=aa7VSFiDDcE",
       "songIds": [
         "S075"
-      ]
+      ],
+      "researchNote": "The distributor-supplied description gives the digital release date as 5 February 2013 and separately dates YouTube publication to 11 February 2015. It names Wolfgang Schmidt, the Bernhard Etté Orchestra and conductor Bernhard Etté, but identifies no original disc label, catalogue number, matrix or exact session. The album’s 1930–1938 span is not the date of this individual recording. The structured date describes the digital issue only.",
+      "researchNoteType": "discographic_note"
     },
     {
       "id": "SRC0798",
@@ -27881,17 +27949,17 @@
     },
     {
       "id": "SRC0808",
-      "shortCitation": "YouTube, “My Heart Is Singing” — Deanna Durbin",
-      "fullCitation": "Deanna Durbin. “My Heart Is Singing.” Performance from Three Smart Girls (Universal, 1936). YouTube audio release supplied by Deanna Durbin – Topic.",
+      "shortCitation": "Deanna Durbin, “My Heart Is Singing” — Fantastic Voyage digital reissue",
+      "fullCitation": "Deanna Durbin. “My Heart Is Singing.” Track on My Heart Is Singing. Fantastic Voyage, digital release, 10 July 2008. Distributed to YouTube by The Orchard Enterprises.",
       "sourceType": "online_audio_source",
-      "title": "My Heart Is Singing — Deanna Durbin, YouTube",
-      "creator": "Deanna Durbin – Topic",
+      "title": "My Heart Is Singing — Deanna Durbin, Fantastic Voyage digital reissue",
+      "creator": "Deanna Durbin; The Orchard Enterprises (distributor)",
       "repository": "YouTube",
-      "publication": "YouTube",
-      "date": "1936",
-      "dateRole": "described_item",
+      "publication": "Fantastic Voyage / YouTube",
+      "date": "2008-07-10",
+      "dateRole": "digital_publication",
       "dateQualifier": "confirmed",
-      "accessDate": "2026-08-24",
+      "accessDate": "2026-10-26",
       "reliability": "medium",
       "sourceStatus": "verified",
       "slug": "src0808-youtube-deanna-durbin-my-heart-is-singing",
@@ -27910,7 +27978,9 @@
       ],
       "songIds": [
         "S132"
-      ]
+      ],
+      "researchNote": "The distributor-supplied description gives “Released on: 2008-07-10”; YouTube publication is separately dated 19 January 2015. The earlier structured year 1936 described the song’s film context, Three Smart Girls, not this digital source. The release metadata does not identify an original disc, matrix, session or a specific soundtrack extraction. The digital “Music Publisher” field is not used as evidence for the historical sheet-music publisher.",
+      "researchNoteType": "discographic_note"
     },
     {
       "id": "SRC0809",
@@ -30178,8 +30248,8 @@
     },
     {
       "id": "SRC0883",
-      "shortCitation": "YouTube, “Lys Gauty ‘Le bistro du port’ 1934.”",
-      "fullCitation": "LYSGAUTYVIDEO (YouTube channel), uploader. “Lys Gauty ‘Le bistro du port’ 1934.” YouTube video, uploaded 15 August 2011. Description: “Lys Gauty (1900–1994) enregistrée en 1934.”",
+      "shortCitation": "YouTube, Lys Gauty, “Le bistro du port”",
+      "fullCitation": "“Le bistro du port”, attributed to Lys Gauty. Audio transfer published by LYSGAUTYVIDEO on YouTube, 15 August 2011.",
       "sourceType": "online_audio_source",
       "title": "Lys Gauty, “Le bistro du port” — YouTube",
       "creator": "LYSGAUTYVIDEO (YouTube channel)",
@@ -30188,9 +30258,9 @@
       "dateRole": "digital_publication",
       "dateQualifier": "confirmed",
       "date": "2011-08-15",
-      "accessDate": "2026-09-22",
+      "accessDate": "2026-10-26",
       "reliability": "low",
-      "sourceStatus": "verified",
+      "sourceStatus": "verified_with_attribution_note",
       "primaryUrl": "https://www.youtube.com/watch?v=bRhvq-EsA4M",
       "organizationIds": [
         "ORG093"
@@ -30210,7 +30280,16 @@
       "contributionIds": [
         "CON-S098-P-P203"
       ],
-      "slug": "src0883-lys-gauty-le-bistro-du-port-youtube"
+      "slug": "src0883-lys-gauty-le-bistro-du-port-youtube",
+      "researchNote": "The uploader dates Gauty’s recording to 1934. A Polydor label photograph appears in the slideshow, but the catalogue and matrix numbers were not independently read at sufficient resolution during this review. Frémeaux & Associés’ official FA 5033 discography, separately documented at SRC0884, identifies Gauty’s Paris session of 18 October 1934, Polydor 522987 and matrix 1444 WPP. That documents the historical recording, but does not by itself establish the pressing or take reproduced in this upload. The structured date remains YouTube publication on 15 August 2011.",
+      "researchNoteType": "discographic_note",
+      "additionalLinks": [
+        {
+          "label": "Frémeaux & Associés FA 5033 — historical Gauty discography (SRC0884)",
+          "url": "https://www.fremeaux.com/en/218-lys-gauty-3700368475249-fa5033.html",
+          "role": "additional_evidence"
+        }
+      ]
     },
     {
       "id": "SRC0884",

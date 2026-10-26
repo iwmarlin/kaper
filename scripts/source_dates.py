@@ -120,6 +120,60 @@ HMV_R_SERIES_PATTERN = re.compile(
 # these explicit avoids accidentally treating life dates, collection spans or
 # years embedded in catalogue identifiers as Source dates.
 REVIEWED_SOURCE_DATES: dict[str, dict[str, str]] = {
+    "SRC0314": {
+        "dateRole": "digital_publication",
+        "dateQualifier": "confirmed",
+        "date": "2019-03-29"
+    },
+    "SRC0693": {
+        "dateRole": "digital_publication",
+        "dateQualifier": "confirmed",
+        "date": "2013-07-02"
+    },
+    "SRC0761": {
+        "dateRole": "issue",
+        "dateQualifier": "unknown"
+    },
+    "SRC0762": {
+        "dateRole": "digital_publication",
+        "dateQualifier": "confirmed",
+        "date": "2012-06-13"
+    },
+    "SRC0763": {
+        "dateRole": "digital_publication",
+        "dateQualifier": "confirmed",
+        "date": "2007-12-10"
+    },
+    "SRC0764": {
+        "dateRole": "described_item",
+        "dateQualifier": "reported",
+        "date": "1933-10-03"
+    },
+    "SRC0765": {
+        "dateRole": "digital_publication",
+        "dateQualifier": "confirmed",
+        "date": "2018-09-27"
+    },
+    "SRC0766": {
+        "dateRole": "digital_publication",
+        "dateQualifier": "confirmed",
+        "date": "2016-05-01"
+    },
+    "SRC0796": {
+        "date": "2013-02-05",
+        "dateRole": "digital_publication",
+        "dateQualifier": "confirmed"
+    },
+    "SRC0797": {
+        "date": "2013-02-05",
+        "dateRole": "digital_publication",
+        "dateQualifier": "confirmed"
+    },
+    "SRC0883": {
+        "dateRole": "digital_publication",
+        "dateQualifier": "confirmed",
+        "date": "2011-08-15"
+    },
     "SRC0005": {
         "date": "1931-10",
         "dateRole": "issue",
@@ -608,9 +662,9 @@ REVIEWED_SOURCE_DATES: dict[str, dict[str, str]] = {
         "dateQualifier": "confirmed",
     },
     "SRC0808": {
-        "date": "1936",
-        "dateRole": "described_item",
-        "dateQualifier": "confirmed",
+        "date": "2008-07-10",
+        "dateRole": "digital_publication",
+        "dateQualifier": "confirmed"
     },
     "SRC0809": {
         "date": "1938",

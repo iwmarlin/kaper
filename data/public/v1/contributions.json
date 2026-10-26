@@ -12268,10 +12268,14 @@
       ],
       "sourceIds": [
         "SRC0300",
-        "SRC0359"
+        "SRC0359",
+        "SRC0764"
       ],
       "nameVariantIds": [
         "PNV0019"
+      ],
+      "evidenceContext": [
+        "recording_label"
       ]
     },
     {
@@ -12288,7 +12292,11 @@
       ],
       "sourceIds": [
         "SRC0300",
-        "SRC0359"
+        "SRC0359",
+        "SRC0764"
+      ],
+      "evidenceContext": [
+        "recording_label"
       ]
     },
     {
@@ -12305,7 +12313,11 @@
       ],
       "sourceIds": [
         "SRC0300",
-        "SRC0359"
+        "SRC0359",
+        "SRC0764"
+      ],
+      "evidenceContext": [
+        "recording_label"
       ]
     },
     {
@@ -12325,7 +12337,8 @@
         "P132"
       ],
       "sourceIds": [
-        "SRC0300"
+        "SRC0300",
+        "SRC0764"
       ]
     },
     {
@@ -19525,7 +19538,7 @@
       "evidenceContext": [
         "recording_label"
       ],
-      "scopeNote": "Orchestra conducted by Bronisław Kaper on Salabert 3382, which couples “À Paris, tiguidiguidi” with “Le plus petit baiser” from Une femme au volant. The credit is printed once for the whole disc and applies to both sides. This is not a composer credit for the song.",
+      "scopeNote": "The label photograph in SRC0764 directly prints orchestra direction by the composer Kaper for “Le plus petit baiser”, Salabert 3382, S.S.1728. SRC0300 separately catalogues the coupled issue. This documents the recording conductor, not a new authorship attribution.",
       "certainty": "confirmed",
       "workIds": [
         "W-S096"
@@ -19534,7 +19547,8 @@
         "P009"
       ],
       "sourceIds": [
-        "SRC0300"
+        "SRC0300",
+        "SRC0764"
       ],
       "nameVariantIds": [
         "PNV0026"
@@ -19646,7 +19660,8 @@
         "P009"
       ],
       "sourceIds": [
-        "SRC0633"
+        "SRC0633",
+        "SRC0761"
       ]
     },
     {
@@ -19664,7 +19679,8 @@
         "P077"
       ],
       "sourceIds": [
-        "SRC0633"
+        "SRC0633",
+        "SRC0761"
       ]
     },
     {
@@ -19682,7 +19698,8 @@
         "P156"
       ],
       "sourceIds": [
-        "SRC0633"
+        "SRC0633",
+        "SRC0761"
       ]
     },
     {
@@ -19700,7 +19717,8 @@
         "P117"
       ],
       "sourceIds": [
-        "SRC0633"
+        "SRC0633",
+        "SRC0761"
       ]
     },
     {
@@ -21283,7 +21301,8 @@
         "ORG150"
       ],
       "sourceIds": [
-        "SRC0633"
+        "SRC0633",
+        "SRC0761"
       ],
       "scopeNote": "Issued the recording; the disc carries the imprint “Odeon”."
     },
@@ -22533,10 +22552,11 @@
     {
       "id": "CON-S096-LAB-ORG039",
       "role": "record_label",
-      "nameAsPrinted": "Nouveau Disque Salabert",
+      "nameAsPrinted": "Salabert",
       "displayCredit": "Issuing label",
       "evidenceContext": [
-        "online_catalogue"
+        "online_catalogue",
+        "recording_label"
       ],
       "sortOrder": 60,
       "certainty": "confirmed",
@@ -22547,9 +22567,10 @@
         "ORG039"
       ],
       "sourceIds": [
-        "SRC0300"
+        "SRC0300",
+        "SRC0764"
       ],
-      "scopeNote": "Issued as one side of Salabert 3382."
+      "scopeNote": "The label photograph in SRC0764 reads Salabert 3382; SRC0300 independently catalogues the issue under Nouveau Disque Salabert. The imprint is distinct from the Éditions Echo wording also printed on the disc."
     },
     {
       "id": "CON-S097-LAB-ORG039",
@@ -22578,10 +22599,10 @@
       "nameAsPrinted": "Saxophon-Orchester Dobbri",
       "displayCredit": "Orchestral performance",
       "evidenceContext": [
-        "online_recording"
+        "online_catalogue"
       ],
       "sortOrder": 50,
-      "certainty": "confirmed",
+      "certainty": "probable",
       "workIds": [
         "W-S008"
       ],
@@ -22590,7 +22611,8 @@
       ],
       "sourceIds": [
         "SRC0766"
-      ]
+      ],
+      "scopeNote": "The uploader names Saxophon-Orchester Dobbri and reports a Parlophon B 4502 recording with Max Mensing. The consulted imagery did not independently establish the full catalogue and matrix details at readable resolution, so this remains a qualified attribution to the uploaded recording."
     },
     {
       "id": "CON-S022-LAB-ORG132",
@@ -24786,7 +24808,7 @@
       "sourceIds": [
         "SRC0693"
       ],
-      "scopeNote": "Recorded the song; the recording, titled “Die grosse Attraktion: Du warst mir ein Roman”, survives through a later reissue that carries no disc data."
+      "scopeNote": "The distributor-supplied Jube Classic reissue metadata names Richard Tauber with the Odeon Künstlerorchester and Frieder Weissmann. It documents the reissued performance but identifies no original disc, matrix or session; the digital issue date is 2 July 2013 and the YouTube copy was published in 2015."
     },
     {
       "id": "CON-S098-P-P203",
