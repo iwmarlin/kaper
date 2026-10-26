@@ -187,14 +187,7 @@ AUDITED_DIGITAL_AUDIO_FIELDS: dict[str, dict[str, Any]] = {
         "date": "2016-07-12",
         "dateRole": "digital_publication",
         "dateQualifier": "confirmed",
-        "researchNote": (
-            "The date identifies the Blue Mood digital issue released on 12 "
-            "July 2016; 1937 is the year of the underlying performance for A "
-            "Day at the Races. The supplied release metadata identifies no "
-            "original label, catalogue number or matrix. Consulted discographic "
-            "literature instead lists contemporary versions by Ted Fio Rito "
-            "and Hal Kemp."
-        ),
+        "researchNote": "The date identifies the Blue Mood digital issue released on 12 July 2016. The release credits Allan Jones with chorus but identifies no original session, label, catalogue number or matrix. It does not independently establish that this access copy reproduces a performance recorded for, or heard in, A Day at the Races. The song’s film association does not identify the provenance or date of this particular performance.",
         "researchNoteType": "discographic_note",
     },
     "SRC0756": {
@@ -231,14 +224,7 @@ AUDITED_DIGITAL_AUDIO_FIELDS: dict[str, dict[str, Any]] = {
         "date": "2018-01-29",
         "dateRole": "digital_publication",
         "dateQualifier": "confirmed",
-        "researchNote": (
-            "The date identifies the Bamboodi digital issue released on 29 "
-            "January 2018; 1938 is the year of the underlying performance for "
-            "Everybody Sing. The release names no original session, label, "
-            "catalogue number or matrix. It replaces an Audiomack page that "
-            "carried the same performance without credits and refused playback "
-            "outside its licensed territories."
-        ),
+        "researchNote": "The date identifies the Bamboodi digital issue released on 29 January 2018. The release credits Allan Jones but identifies no original session, label, catalogue number or matrix. It does not independently establish that this access copy reproduces a performance recorded for, or heard in, Everybody Sing. It replaces the former Audiomack access link; that replacement does not establish the identity of the historical recording.",
         "researchNoteType": "discographic_note",
     },
 }

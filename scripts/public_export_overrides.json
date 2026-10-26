@@ -5905,7 +5905,8 @@
           "sourceType": "online_audio_source",
           "date": "2016-07-12",
           "dateRole": "digital_publication",
-          "dateQualifier": "confirmed"
+          "dateQualifier": "confirmed",
+          "researchNote": "The date identifies the Blue Mood digital issue released on 12 July 2016. The release credits Allan Jones with chorus but identifies no original session, label, catalogue number or matrix. It does not independently establish that this access copy reproduces a performance recorded for, or heard in, A Day at the Races. The song’s film association does not identify the provenance or date of this particular performance."
         }
       },
       "SRC0756": {
@@ -5923,7 +5924,8 @@
           "sourceType": "online_audio_source",
           "date": "2018-01-29",
           "dateRole": "digital_publication",
-          "dateQualifier": "confirmed"
+          "dateQualifier": "confirmed",
+          "researchNote": "The date identifies the Bamboodi digital issue released on 29 January 2018. The release credits Allan Jones but identifies no original session, label, catalogue number or matrix. It does not independently establish that this access copy reproduces a performance recorded for, or heard in, Everybody Sing. It replaces the former Audiomack access link; that replacement does not establish the identity of the historical recording."
         }
       },
       "SRC0838": {
@@ -5951,6 +5953,18 @@
       }
     },
     "Media": {
+      "M430": {
+        "reason": "Scope Jones performance evidence to the named digital release; do not infer a historical carrier or film-performance identity.",
+        "fields": {
+          "publicCaption": "Listening reference for “The Show Must Go On”, sung by Allan Jones, on the Bamboodi digital release You are Love (2018). The release credits the song to Roger Edens, Walter Jurmann, Gus Kahn and Bronislaw Kaper."
+        }
+      },
+      "M385": {
+        "reason": "Scope Jones performance evidence to the named digital release; do not infer a historical carrier or film-performance identity.",
+        "fields": {
+          "publicCaption": "Listening reference for “Tomorrow is another day”, sung by Allan Jones with chorus, on the Blue Mood digital release Sympathy (2016). The reissue credits the music to Kaper and Jurmann and the words to Gus Kahn."
+        }
+      },
       "M422": {
         "fields": {
           "description": "Listening copy of “C’est ton amour”, attributed to Tino Rossi by the Internet Archive collection and associated there with Columbia DF 1610. BnF independently catalogues Rossi with Marcel Cariven’s orchestra on that disc, dated [1934], but the transferred copy and take remain unverified.",
@@ -8163,6 +8177,24 @@
       }
     },
     "Contributions": {
+      "CON-S162-P-P173": {
+        "reason": "Scope Jones performance evidence to the named digital release; do not infer a historical carrier or film-performance identity.",
+        "fields": {
+          "evidenceContext": [
+            "online_recording"
+          ],
+          "scopeNote": "The Bamboodi digital release You are Love (2018), documented in SRC0815, credits Allan Jones. This credit follows the digital release metadata; the original recording session, historical carrier and a specific film-performance identification remain unestablished by this source."
+        }
+      },
+      "CON-S155-P-P173": {
+        "reason": "Scope Jones performance evidence to the named digital release; do not infer a historical carrier or film-performance identity.",
+        "fields": {
+          "evidenceContext": [
+            "online_recording"
+          ],
+          "scopeNote": "The Blue Mood digital release Sympathy (2016), documented in SRC0751, credits Allan Jones with chorus. This credit follows the digital release metadata; the original recording session, historical carrier and a specific film-performance identification remain unestablished by this source."
+        }
+      },
       "CON-S119-P-P133": {
         "reason": "Individually reviewed recording evidence: distinguish the photographed Parlophone label, digital reissue metadata and Victor discography from film-performance claims.",
         "fields": {
