@@ -8191,6 +8191,14 @@
       }
     },
     "Contributions": {
+      "CON-S214-P-P117": {
+        "reason": "Distinguish the Biblioteka Narodowa catalogue SRC0633 from direct label evidence in SRC0761; preserve Kiepura performance identity and date bounds.",
+        "fields": {
+          "evidenceContext": [
+            "online_catalogue"
+          ]
+        }
+      },
       "CON-S057-P-ORG144": {
         "reason": "Restrict the recording credit to its linked witness: do not infer piano-part allocation, add an unlinked oral-history claim or assert an undocumented session location.",
         "fields": {
@@ -8500,6 +8508,7 @@
       "CON-S215-P-P117": {
         "fields": {
           "evidenceContext": [
+            "online_catalogue",
             "recording_label"
           ]
         },
