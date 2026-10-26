@@ -154,26 +154,14 @@ AUDITED_DIGITAL_AUDIO_FIELDS: dict[str, dict[str, Any]] = {
     },
     "SRC0749": {
         "sourceType": "online_audio_source",
-        "shortCitation": (
-            "Allan Jones, “A Message from the Man in the Moon” — MGM outtake, "
-            "2006 remaster"
-        ),
-        "title": (
-            "A Message from the Man in the Moon — Allan Jones, MGM outtake, "
-            "2006 remaster"
-        ),
-        "date": "2006",
-        "dateRole": "issue",
+        "shortCitation": "Allan Jones, “A Message from the Man in the Moon” — MGM outtake, 2006 remaster",
+        "title": "A Message from the Man in the Moon — Allan Jones, MGM outtake, 2006 remaster",
+        "date": "2021-05-06",
+        "dateRole": "digital_publication",
         "dateQualifier": "confirmed",
-        "researchNote": (
-            "The date identifies the 2006 soundtrack-anthology remaster and "
-            "issue, not the underlying 1937 performance or the YouTube access "
-            "copy published in 2021. The number was recorded for A Day at the "
-            "Races but cut before the film’s release; the performance and "
-            "production credits are supplied by the rights holder to the "
-            "distributing channel."
-        ),
+        "researchNote": "The WaterTower Music-supplied title explicitly identifies the track as an outtake from A Day at the Races and a “2006 Remaster”; the description names Allan Jones, Georgie Stoll and Maurice DePackh. This supports a recording made for the film but not an appearance of the number in the finished film. The structured date is publication of this YouTube access copy on 6 May 2021. The remaster designation does not by itself establish the anthology’s issue date, and the ℗ 1937 notice is not an exact session date. The automated composer fields repeat Kaper and Gus Kahn and do not distinguish music from lyrics; they are not used to revise the work’s authorship credits, which rest on separate sources.",
         "researchNoteType": "discographic_note",
+        "accessDate": "2026-10-26"
     },
     "SRC0751": {
         "sourceType": "online_audio_source",
@@ -1218,14 +1206,7 @@ RECORDING_FIELDS: dict[str, dict[str, Any]] = {
         "researchNoteType": "evidence_note",
     },
     "SRC0749": {
-        "fullCitation": (
-            "Allan Jones, vocal; orchestra conducted by Georgie Stoll; "
-            "orchestration by Maurice DePackh. “A Message from the Man in the "
-            "Moon (from A Day at the Races),” 1937 MGM outtake, 2006 remaster. "
-            "That’s Entertainment: The Ultimate Soundtrack Anthology of MGM "
-            "Musicals. Phonogram right © 1937 Turner Entertainment Co.; digital "
-            "distribution by WaterTower Music."
-        ),
+        "fullCitation": "Allan Jones, vocal; Georgie Stoll, conductor; Maurice DePackh, orchestration. “A Message from the Man in the Moon (from A Day at the Races) (Outtake) (2006 Remaster).” On That’s Entertainment (The Ultimate Soundtrack Anthology of MGM Musicals). Provided to YouTube by WaterTower Music, published 6 May 2021. Phonogram notice: ℗ 1937 Turner Entertainment Co."
     },
     "SRC0785": {
         "fullCitation": "Eric Harden’s danseorkester, refrain sung by Carljohann Volbach. “Wie gern möcht’ ich dich verwöhnen.” From the sound film Melodie der Liebe; catalogue number D 4431, matrix Bi 644, n.d. Digital transfer published by the Internet Archive from the 78 rpm collection of Leif Druedahl.",

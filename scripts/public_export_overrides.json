@@ -5894,9 +5894,12 @@
         "reason": "Classify the cited 2006 MGM soundtrack-anthology remaster as an online-audio edition; date the modern issue rather than the underlying 1937 outtake.",
         "fields": {
           "sourceType": "online_audio_source",
-          "date": "2006",
-          "dateRole": "issue",
-          "dateQualifier": "confirmed"
+          "date": "2021-05-06",
+          "dateRole": "digital_publication",
+          "dateQualifier": "confirmed",
+          "accessDate": "2026-10-26",
+          "fullCitation": "Allan Jones, vocal; Georgie Stoll, conductor; Maurice DePackh, orchestration. “A Message from the Man in the Moon (from A Day at the Races) (Outtake) (2006 Remaster).” On That’s Entertainment (The Ultimate Soundtrack Anthology of MGM Musicals). Provided to YouTube by WaterTower Music, published 6 May 2021. Phonogram notice: ℗ 1937 Turner Entertainment Co.",
+          "researchNote": "The WaterTower Music-supplied title explicitly identifies the track as an outtake from A Day at the Races and a “2006 Remaster”; the description names Allan Jones, Georgie Stoll and Maurice DePackh. This supports a recording made for the film but not an appearance of the number in the finished film. The structured date is publication of this YouTube access copy on 6 May 2021. The remaster designation does not by itself establish the anthology’s issue date, and the ℗ 1937 notice is not an exact session date. The automated composer fields repeat Kaper and Gus Kahn and do not distinguish music from lyrics; they are not used to revise the work’s authorship credits, which rest on separate sources."
         }
       },
       "SRC0751": {
@@ -5953,6 +5956,16 @@
       }
     },
     "Media": {
+      "M384": {
+        "reason": "Review WaterTower outtake metadata individually: distinguish film-production evidence, remaster designation and access-copy publication.",
+        "fields": {
+          "title": "A Message from the Man in the Moon — Allan Jones, MGM outtake, listening reference",
+          "altText": "Listening reference for “A Message from the Man in the Moon”, sung by Allan Jones.",
+          "description": "Audio recording identified by WaterTower Music as an outtake from A Day at the Races, sung by Allan Jones, with Georgie Stoll conducting and orchestration by Maurice DePackh. External listening reference to the 2006 remaster, published on YouTube in 2021.",
+          "publicCaption": "Allan Jones sings “A Message from the Man in the Moon”, identified in the WaterTower Music-supplied metadata as an outtake from A Day at the Races. 2006 remaster on That’s Entertainment (The Ultimate Soundtrack Anthology of MGM Musicals); YouTube access copy published 6 May 2021. Georgie Stoll, conductor; Maurice DePackh, orchestration.",
+          "publicCreditLine": "Allan Jones, vocal; Georgie Stoll, conductor; Maurice DePackh, orchestration. ℗ 1937 Turner Entertainment Co. Provided to YouTube by WaterTower Music (channel “Release - Topic”)."
+        }
+      },
       "M430": {
         "reason": "Scope Jones performance evidence to the named digital release; do not infer a historical carrier or film-performance identity.",
         "fields": {
@@ -8177,6 +8190,16 @@
       }
     },
     "Contributions": {
+      "CON-S153-P-P173": {
+        "reason": "Review WaterTower outtake metadata individually: distinguish film-production evidence, remaster designation and access-copy publication.",
+        "fields": {
+          "evidenceContext": [
+            "film_song",
+            "online_recording"
+          ],
+          "scopeNote": "The WaterTower Music-supplied title identifies Allan Jones’s recording as an outtake from A Day at the Races. This documents a vocal recording made for the film, not a performance heard in its finished version. The access copy is designated “2006 Remaster” and was published on YouTube in 2021."
+        }
+      },
       "CON-S162-P-P173": {
         "reason": "Scope Jones performance evidence to the named digital release; do not infer a historical carrier or film-performance identity.",
         "fields": {

@@ -45,7 +45,7 @@ class JonesDigitalPerformanceScopeTests(unittest.TestCase):
                         self.assertEqual(overrides["records"][table][rid]["fields"][field], rec[field])
         outtake = credits["CON-S153-P-P173"]
         self.assertEqual(outtake["sourceIds"], ["SRC0749"])
-        self.assertEqual(outtake["evidenceContext"], ["film_song"])
+        self.assertEqual(outtake["evidenceContext"], ["film_song", "online_recording"])
         self.assertIn("outtake", outtake["scopeNote"])
 
 
