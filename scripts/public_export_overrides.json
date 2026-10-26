@@ -2520,6 +2520,28 @@
           "accessDate": "2026-10-25"
         }
       },
+      "SRC0337": {
+        "reason": "Record the month supplied by the National Digital Archives for the photograph, without changing its archival relationships.",
+        "fields": {
+          "shortCitation": "Narodowe Archiwum Cyfrowe, „Uniwersytet Warszawski przy Krakowskim Przedmieściu 26/28” (February 1928), sygn. 3/1/0/10/3268",
+          "fullCitation": "Narodowe Archiwum Cyfrowe, Koncern Ilustrowany Kurier Codzienny — Archiwum Ilustracji, sygn. 3/1/0/10/3268: „Uniwersytet Warszawski przy Krakowskim Przedmieściu 26/28”, February 1928. Digitised in Szukaj w Archiwach, unit 5985906.",
+          "date": "1928-02"
+        }
+      },
+      "SRC0890": {
+        "reason": "Distinguish the year given in the quoted finding aid from Maytime’s AFI-documented release and production dates.",
+        "fields": {
+          "researchNote": "The finding aid describes Maytime as a 1936 film. The AFI Catalog dates its release to 26 March 1937 and records production in 1936–1937. The finding aid’s wording is retained in the citation; its reference to 1936 is not presented here as the release year.",
+          "researchNoteType": "date_assessment",
+          "additionalLinks": [
+            {
+              "label": "AFI Catalog — Maytime release and production dates",
+              "url": "https://catalog.afi.com/Film/6120-MAYTIME",
+              "role": "contextual_reference"
+            }
+          ]
+        }
+      },
       "SRC0709": {
         "reason": "Separate the bibliographic citation from source-derived evidence and attributed rights statements without changing dates, source types or relationships.",
         "fields": {

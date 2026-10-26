@@ -14,6 +14,17 @@ from validate_public_export import SOURCE_PUBLIC_WORKFLOW_PATTERN  # noqa: E402
 
 
 class SourceCitationEditorialLanguageTests(unittest.TestCase):
+    def test_archival_dates_preserve_evidence_and_distinguish_release(self) -> None:
+        sources = {record["id"]: record for record in json.loads((PUBLIC / "sources.json").read_text())["records"]}
+        photo = sources["SRC0337"]
+        self.assertEqual(photo["date"], "1928-02")
+        self.assertIn("February 1928", photo["fullCitation"])
+        finding_aid = sources["SRC0890"]
+        self.assertIn("1936 MGM film", finding_aid["fullCitation"])
+        self.assertIn("26 March 1937", finding_aid["researchNote"])
+        self.assertIn("production in 1936–1937", finding_aid["researchNote"])
+        self.assertIn("https://catalog.afi.com/Film/6120-MAYTIME", [link["url"] for link in finding_aid["additionalLinks"]])
+
     def test_long_press_transcriptions_are_preserved_in_notes(self) -> None:
         sources = {record["id"]: record for record in json.loads((PUBLIC / "sources.json").read_text())["records"]}
         markers = {
