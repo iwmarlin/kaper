@@ -14220,11 +14220,12 @@
       "id": "CON-S119-P-P133",
       "role": "performer",
       "evidenceContext": [
-        "recording_label"
+        "discography",
+        "online_recording"
       ],
       "sortOrder": 50,
       "certainty": "confirmed",
-      "scopeNote": "Recorded the song with his orchestra for Victor (25029) in 1935, vocal by Lew Sherwood; this documents performance, not authorship of the work.",
+      "scopeNote": "Bolig’s Victor discography lists Eddy Duchin and His Orchestra with Lew Sherwood on Victor 25029, matrix BS-89700-1, recorded on 29 April 1935 and issued on 8 May 1935. SRC0006 supplies that discographic evidence and a separately attributed YouTube listening copy; the particular transferred pressing and take are not independently established.",
       "workIds": [
         "W-S119"
       ],
@@ -22261,7 +22262,8 @@
       "nameAsPrinted": "Richard Tauber",
       "displayCredit": "Vocal performance",
       "evidenceContext": [
-        "film_song"
+        "recording_label",
+        "online_recording"
       ],
       "sortOrder": 50,
       "certainty": "confirmed",
@@ -22275,7 +22277,7 @@
         "SRC0756",
         "SRC0788"
       ],
-      "scopeNote": "Sang the song in Melodie der Liebe and recorded it; the recording survives through a later reissue that carries no disc data."
+      "scopeNote": "The Parlophone AR 206 label in SRC0788 names Richard Tauber, tenor, and explicitly states “Sung in German”. SRC0756 separately names him on the Membran digital reissue. These sources document a recorded vocal performance; they do not independently establish an on-screen performance in Melodie der Liebe."
     },
     {
       "id": "CON-S059-CON-P144",
@@ -22283,7 +22285,8 @@
       "nameAsPrinted": "Paul Dessau",
       "displayCredit": "Directed the accompaniment",
       "evidenceContext": [
-        "film_song"
+        "recording_label",
+        "online_recording"
       ],
       "sortOrder": 55,
       "certainty": "confirmed",
@@ -22297,7 +22300,7 @@
         "SRC0756",
         "SRC0788"
       ],
-      "scopeNote": "Named on the reissue as the artist accompanying Tauber; he was the film’s musical director."
+      "scopeNote": "The Parlophone AR 206 label in SRC0788 explicitly names “Conductor: Paul Dessau”. SRC0756 also names him on the Membran digital reissue. This credit documents direction of the recorded accompaniment, not a separately evidenced film-production role."
     },
     {
       "id": "CON-S018-P-ORG121",
