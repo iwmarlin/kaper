@@ -27,15 +27,27 @@ class SheetMusicSourceSemanticsTests(unittest.TestCase):
         self.assertEqual(source["dateRole"], "described_item")
         self.assertEqual(source["date"], "1936")
         self.assertEqual(source["repository"], "UCLA Library, Performing Arts Special Collections")
-        self.assertTrue(source["primaryUrl"].endswith("kt5779q3vh.pdf#page=17"))
+        self.assertIn("oac.cdlib.org/findaid/static/ark:/13030/kt5779q3vh", source["primaryUrl"])
+        self.assertIn("Paroles%20anglaises", source["primaryUrl"])
         self.assertIn("Box 1, Folder 9", source["fullCitation"])
         self.assertIn("E.F.M. 423", source["fullCitation"])
         self.assertIn("not a direct examination", source["researchNote"])
+        self.assertIn("shorter entry", source["researchNote"])
         self.assertNotIn("AbeBooks", json.dumps(source))
         self.assertEqual(source["workIds"], ["W-S200"])
         self.assertEqual(source["songIds"], ["S200"])
         self.assertEqual(source["organizationIds"], ["ORG048"])
         self.assertEqual(len(source["contributionIds"]), 5)
+
+    def test_revised_ucla_guides_do_not_misrepresent_older_entries(self) -> None:
+        records = {record["id"]: record for record in sources()}
+        folio = records["SRC0880"]
+        self.assertIn("Melodie%20der%20Liebe", folio["primaryUrl"])
+        self.assertIn("does not list the four song titles", folio["researchNote"])
+        springtime = records["SRC0890"]
+        self.assertFalse(springtime.get("primaryUrl"))
+        self.assertIn("not as the source of the quoted passage", springtime["researchNote"])
+        self.assertIn("c81n85mj", springtime["additionalLinks"][0]["url"])
 
     def test_catalogue_landing_pages_are_not_presented_as_examined_scores(self) -> None:
         wrong = [
