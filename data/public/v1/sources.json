@@ -21945,7 +21945,7 @@
       "id": "SRC0635",
       "shortCitation": "UCLA, “United States-Mexico border crossing, Calexico, [1927?]”",
       "fullCitation": "“United States-Mexico border crossing, Calexico, [1927?].” Los Angeles Times Photographic Collection, Library Special Collections, Charles E. Young Research Library, University of California, Los Angeles. Black-and-white nitrate negative, local identifier uclamss_1429_0385, ark:/21198/zz002d9ndg.",
-      "researchNote": "The bird’s-eye view shows two security booths, cars and pedestrians, an arcaded building on the Mexican side and a sign arching over the road reading “Mexico”, with further signs for Mexicali, Southern Club Cafe, Cafe Gabrinus and Climax Cafe. The negative sleeve is annotated “Mexican American Line, Calexico, Mexicali” and “California, Calexico-Mexicali”. UCLA suggests a possible connection to two Los Angeles Times reports from Calexico, “No Permit Needed at Mexican Border” of 6 July 1927 and “New Regulations in Force at Border” of 14 July 1927, but does not confirm publication.",
+      "researchNote": "Calisphere presents the date as “[1927?]” in metadata supplied by UCLA; the year is not confirmed. The bird’s-eye view shows two security booths, cars and pedestrians, an arcaded building on the Mexican side and a sign arching over the road reading “Mexico”, with further signs for Mexicali, Southern Club Cafe, Cafe Gabrinus and Climax Cafe. The negative sleeve is annotated “Mexican American Line, Calexico, Mexicali” and “California, Calexico-Mexicali”. The catalogue suggests a possible connection to two Los Angeles Times reports from Calexico, “No Permit Needed at Mexican Border” of 6 July 1927 and “New Regulations in Force at Border” of 14 July 1927, but does not confirm publication.",
       "researchNoteType": "object_context",
       "sourceType": "archival_photograph",
       "title": "United States-Mexico border crossing, Calexico, [1927?]",
@@ -21954,7 +21954,8 @@
       "publication": "UCLA Library Digital Collections",
       "date": "1927",
       "dateRole": "creation",
-      "dateQualifier": "confirmed",
+      "dateQualifier": "uncertain",
+      "dateDisplay": "[1927?]",
       "accessDate": "2026-08-03",
       "reliability": "high",
       "sourceStatus": "verified",
@@ -21967,6 +21968,13 @@
         "TE0036"
       ],
       "primaryUrl": "https://digital.library.ucla.edu/catalog/ark:/21198/zz002d9ndg",
+      "additionalLinks": [
+        {
+          "label": "Calisphere — UCLA catalogue metadata",
+          "url": "https://calisphere.org/item/ark:/21198/zz002d9ndg/",
+          "role": "catalogue_record"
+        }
+      ],
       "placeIds": [
         "PL043"
       ]
@@ -24816,7 +24824,7 @@
     {
       "id": "SRC0721",
       "shortCitation": "Studio Harcourt, portrait of Joséphine Baker, 1940 — MPP, negative U500008NC",
-      "fullCitation": "Studio Harcourt. Joséphine Baker, 1940. Black-and-white flexible-film negative, 18 × 24 cm. Médiathèque du patrimoine et de la photographie, negative U500008NC (former number HRC500008NNR0C; accession M/1989/19). Digital image distributed by GrandPalaisRmn Photo and made available via Wikimedia Commons.",
+      "fullCitation": "Studio Harcourt. Joséphine Baker. Black-and-white flexible-film negative, 18 × 24 cm. Médiathèque du patrimoine et de la photographie, negative U500008NC (former number HRC500008NNR0C; accession M/1989/19). Digital image distributed by GrandPalaisRmn Photo and made available via Wikimedia Commons, which dates the photograph to 1940.",
       "sourceType": "archival_photograph",
       "title": "Joséphine Baker — Studio Harcourt negative, 1940",
       "creator": "Studio Harcourt",
@@ -24824,7 +24832,7 @@
       "publication": "Photographies (Mémoire) / POP",
       "date": "1940",
       "dateRole": "creation",
-      "dateQualifier": "confirmed",
+      "dateQualifier": "reported",
       "accessDate": "2026-08-20",
       "reliability": "high",
       "sourceStatus": "verified",
@@ -24836,6 +24844,8 @@
         "M359"
       ],
       "primaryUrl": "https://pop.culture.gouv.fr/notice/memoire/APU500008NC",
+      "researchNote": "The POP record identifies Studio Harcourt and the negative but gives no date for the photograph. Wikimedia Commons dates its reproduction to 1940; that date is reported here on the basis of Commons rather than the POP record.",
+      "researchNoteType": "date_assessment",
       "additionalLinks": [
         {
           "label": "Digital image and file history on Wikimedia Commons",
