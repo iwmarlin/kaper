@@ -98,7 +98,7 @@ class SourceCitationEditorialLanguageTests(unittest.TestCase):
             for record in json.loads((PUBLIC / "sources.json").read_text())["records"]
         }
         expectations = {
-            "SRC0014": "archive’s economic rights to the work: public domain",
+            "SRC0014": "labels the archival item public domain",
             "SRC0561": "Autorskie prawa majątkowe archiwum do utworu: domena publiczna",
             "SRC0654": "The issue appeared in Paris under German occupation.",
         }

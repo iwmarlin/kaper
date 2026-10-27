@@ -68,6 +68,19 @@ class ArchivalSourceWitnessReviewTests(unittest.TestCase):
         self.assertIn("$120", s["researchNote"])
         self.assertIn("$213", s["researchNote"])
         self.assertIn("__blob=zoom", s["additionalLinks"][0]["url"])
+        self.assertEqual(s["additionalLinks"][1]["url"],
+                         "https://kuenste-im-exil.de/KIE/Content/DE/Themen/european-film-fund.html")
+
+    def test_repositories_are_distinct_from_access_platforms(self):
+        for sid in ("SRC0037", "SRC0038", "SRC0566"):
+            self.assertEqual(self.sources[sid]["repository"],
+                             "U.S. National Archives and Records Administration")
+            self.assertEqual(self.sources[sid]["publication"], "National Archives Catalog")
+        self.assertEqual(self.sources["SRC0009"]["repository"], "American Heritage Center, University of Wyoming")
+        self.assertEqual(self.sources["SRC0009"]["publication"], "Archives West")
+        self.assertEqual(self.sources["SRC0880"]["repository"], "UCLA Library, Performing Arts Special Collections")
+        self.assertEqual(self.sources["SRC0880"]["publication"], "Online Archive of California")
+        self.assertIn("displays one scan", self.sources["SRC0014"]["researchNote"])
 
     def test_normalization_and_export_preserve_all_reviewed_fields(self):
         for sid, fields in REVIEWED_ARCHIVAL_FIELDS.items():

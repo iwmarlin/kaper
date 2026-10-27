@@ -58,7 +58,7 @@ REVIEWED_ARCHIVAL_FIELDS = {
             },
             {
                 "label": "European Film Fund — exhibition context",
-                "url": "https://kuenste-im-exil.de/KIE/Content/DE/Themen/european-film-fund.html?catalog=1",
+                "url": "https://kuenste-im-exil.de/KIE/Content/DE/Themen/european-film-fund.html",
                 "role": "contextual_reference"
             }
         ],

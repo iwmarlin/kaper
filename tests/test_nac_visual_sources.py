@@ -30,6 +30,9 @@ class NacVisualSourceTests(unittest.TestCase):
         source = self.sources["SRC0435"]
         self.assertEqual(["M094"], source["mediaIds"])
         self.assertEqual("archival_photograph", source["sourceType"])
+        self.assertEqual(source["date"], "1925")
+        self.assertEqual(source["dateQualifier"], "confirmed")
+        self.assertIn("1925", source["fullCitation"])
         self.assertEqual(
             "Uniwersytet Warszawski — Pałac Kazimierzowski przy Krakowskim Przedmieściu",
             source["title"],

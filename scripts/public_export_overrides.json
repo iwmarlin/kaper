@@ -604,7 +604,7 @@
             },
             {
               "label": "European Film Fund — exhibition context",
-              "url": "https://kuenste-im-exil.de/KIE/Content/DE/Themen/european-film-fund.html?catalog=1",
+              "url": "https://kuenste-im-exil.de/KIE/Content/DE/Themen/european-film-fund.html",
               "role": "contextual_reference"
             }
           ],
@@ -2567,6 +2567,7 @@
       "SRC0880": {
         "reason": "Link to the current UCLA collection guide while distinguishing its shorter entry from the earlier finding aid's detailed contents list.",
         "fields": {
+          "repository": "UCLA Library, Performing Arts Special Collections",
           "primaryUrl": "https://oac.cdlib.org/findaid/static/ark:/13030/kt5779q3vh#:~:text=Melodie%20der%20Liebe%3B%20Worte%20von%20Fritz%20Rotter",
           "researchNote": "The earlier APAM-1 finding aid lists the four songs of the Melodie der Liebe folio and gives the fourth as “Kinderlied (Es war einmal ein Baby--)”; its title index cross-refers that title to Melodie der Liebe. The public link opens the current UCLA finding aid, Collection 2271, which lists the cover reproduction in Box 1, Folder 6 but does not list the four song titles in that entry. Neither finding aid reproduces the score.",
           "researchNoteType": "evidence_note"
@@ -2738,6 +2739,7 @@
       "SRC0009": {
         "reason": "Keep the archival citation and collection scope while removing private workflow provenance about who supplied the scans.",
         "fields": {
+          "repository": "American Heritage Center, University of Wyoming",
           "fullCitation": "Bronislaw Kaper Papers, Collection 03193. American Heritage Center, University of Wyoming, Laramie. Manuscript holdings for Bronisław Kaper’s early compositions, including item-level material from boxes 1–2.",
           "researchNote": "Research reproductions supplied by the American Heritage Center were examined for the linked early compositions. The public Archives West link describes the collection generally; it does not provide images of the manuscripts. The Center’s 1970 accession list provides item descriptions for several of the works.",
           "researchNoteType": "object_context",
@@ -3368,6 +3370,7 @@
       "SRC0038": {
         "reason": "Correct the declaration number and date, and link the declaration to the documented residence at Château des Fleurs, 6626 Franklin Avenue.",
         "fields": {
+          "repository": "U.S. National Archives and Records Administration",
           "slug": "declaration-of-intention-no-74224-u-s-district-court-los-angeles-src0038",
           "date": "1936-02-04",
           "placeIds": [
@@ -3378,6 +3381,7 @@
       "SRC0566": {
         "reason": "Link Eleonora Kaper's declaration to the same documented household address at Château des Fleurs, 6626 Franklin Avenue.",
         "fields": {
+          "repository": "U.S. National Archives and Records Administration",
           "placeIds": [
             "PL029"
           ]
@@ -4725,9 +4729,12 @@
         }
       },
       "SRC0435": {
-        "reason": "Identify the represented NAC object as an archival photograph rather than its Szukaj w Archiwach access record, and retain the original Polish archival title.",
+        "reason": "Identify the archival photographs and use the 1925 date stated by NAC for both objects in this unit.",
         "fields": {
-          "date": "n.d.",
+          "date": "1925",
+          "dateQualifier": "confirmed",
+          "accessDate": "2026-10-26",
+          "fullCitation": "Narodowe Archiwum Cyfrowe, Koncern Ilustrowany Kurier Codzienny — Archiwum Ilustracji, sygn. 3/1/0/10/3271: „Uniwersytet Warszawski — Pałac Kazimierzowski przy Krakowskim Przedmieściu”, 1925. Digitised in Szukaj w Archiwach, unit 5941500.",
           "sourceType": "archival_photograph",
           "title": "Uniwersytet Warszawski — Pałac Kazimierzowski przy Krakowskim Przedmieściu"
         }
@@ -4821,7 +4828,8 @@
         "reason": "Separate the catalogue's access and rights metadata from the bibliographic citation without applying it to the entire linked gallery.",
         "fields": {
           "fullCitation": "Narodowe Archiwum Cyfrowe, dokumentacja fotograficzna, sygn. 3/1/0/11/7050, dawna sygn. 1-K-7050: Warsaw Philharmonic Hall, exterior view. Date range: 1910–1939. Description: “Widok zewnętrzny.” Unit page in Szukaj w Archiwach.",
-          "researchNote": "The catalogue metadata consulted states: no digital copies; archive’s economic rights to the work: public domain.",
+          "accessDate": "2026-10-26",
+          "researchNote": "The Szukaj w Archiwach unit page displays one scan and labels the archival item public domain. The catalogue gives a date range of 1910–1939, not an exact year for the photograph.",
           "researchNoteType": "evidence_note"
         }
       },
@@ -5559,6 +5567,7 @@
       "SRC0037": {
         "reason": "Normalize the fully established document date to ISO 8601.",
         "fields": {
+          "repository": "U.S. National Archives and Records Administration",
           "date": "1936-02-04"
         }
       },
