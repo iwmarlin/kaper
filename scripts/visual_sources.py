@@ -232,7 +232,7 @@ VISUAL_SOURCE_FIELDS: dict[str, dict[str, Any]] = {
         "accessDate": "2026-10-25"
     },
     "SRC0612": {
-        "creator": "Photographer unidentified",
+        "creator": "L. Gutmann (studio mark); Bain News Service (publisher)",
         "publication": "Bain News Service",
         "date": "1920",
         "dateEnd": "1925",
@@ -240,8 +240,8 @@ VISUAL_SOURCE_FIELDS: dict[str, dict[str, Any]] = {
         "dateDisplay": "c. 1920–c. 1925",
         "accessDate": "2026-10-25",
         "accessUrl": "https://www.flickr.com/photos/library_of_congress/49654681548/",
-        "fullCitation": "Photographer unidentified. “Alfred Piccaver.” Bain News Service, publisher, between approximately 1920 and 1925. Glass negative, 5 × 7 in. or smaller. Library of Congress, George Grantham Bain Collection, LC-B2-5730-5, digital ID ggbain.34250. Digital reproduction via Wikimedia Commons, File:Alfred Piccaver 02.jpg.",
-        "researchNote": "The Commons reproduction explicitly identifies its source as Library of Congress digital ID ggbain.34250 but leaves the date unknown. The Library’s own Flickr record for the same identifier dates the negative “[between ca. 1920 and ca. 1925]”. That approximate range is used here; it is not a confirmed date of 1920. The publisher is Bain News Service; the photographer remains unidentified.",
+        "fullCitation": "“Alfred Piccaver.” Portrait bearing the mark of L. Gutmann, Vienna; Bain News Service, publisher of the negative, dated between approximately 1920 and 1925 by the Library of Congress. Glass negative, 5 × 7 in. or smaller. Library of Congress, George Grantham Bain Collection, LC-B2-5730-5, digital ID ggbain.34250. Digital reproduction via Wikimedia Commons, File:Alfred Piccaver 02.jpg.",
+        "researchNote": "The full Library of Congress reproduction, also available on Wikimedia Commons, shows the studio mark “L. Gutmann” and the year 1920 on the portrait; these are outside the crop used here. The Library’s Flickr record dates the negative “[between ca. 1920 and ca. 1925]” and identifies Bain News Service as publisher. The inscribed year is not treated as independently confirmed dating of the negative, and the studio mark is not assumed to identify the individual who operated the camera.",
         "researchNoteType": "date_assessment"
     },
     "SRC0596": {
@@ -499,7 +499,7 @@ VISUAL_CREATOR_FIELDS = {
     "SRC0609": (
         "Photographer unidentified (Bundesarchiv Bild 102, Georg Pahl collection)"
     ),
-    "SRC0612": "Photographer unidentified",
+    "SRC0612": "L. Gutmann (studio mark); Bain News Service (publisher)",
     "SRC0642": "Photographer unidentified",
     "SRC0644": "Photographer unidentified (Universal Pictures)",
     "SRC0648": "Photographer unidentified",
