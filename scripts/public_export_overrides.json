@@ -3309,18 +3309,16 @@
         }
       },
       "SRC0453": {
-        "reason": "Align the portrait source with the official Narodowe Archiwum Cyfrowe object metadata supplied by the archive, add the stable object URL, and remove the unverified photographer attribution.",
+        "reason": "Align the portrait source with the NAC object metadata, which identifies Antoni Sitkowski as photographer.",
         "fields": {
           "shortCitation": "Narodowe Archiwum Cyfrowe, Jerzy Fitelberg portrait (1937), sygn. 3/1/0/11/6506/1",
-          "fullCitation": "Narodowe Archiwum Cyfrowe / Szukaj w Archiwach. “Jerzy Fitelberg — kompozytor. Fotografia portretowa. Profil.” Photograph, 1937. Unit 3/1/0/11/6506; object 3/1/0/11/6506/1. Koncern Ilustrowany Kurier Codzienny — Archiwum Ilustracji.",
+          "fullCitation": "Antoni Sitkowski, photographer. “Jerzy Fitelberg — kompozytor. Fotografia portretowa. Profil.” Photograph, 1937. Narodowe Archiwum Cyfrowe, Koncern Ilustrowany Kurier Codzienny — Archiwum Ilustracji, unit 3/1/0/11/6506; object 3/1/0/11/6506/1. Szukaj w Archiwach.",
           "title": "Jerzy Fitelberg — portrait photograph, 1937",
+          "creator": "Antoni Sitkowski",
           "repository": "Narodowe Archiwum Cyfrowe",
           "publication": "Szukaj w Archiwach",
           "primaryUrl": "https://www.szukajwarchiwach.gov.pl/jednostka/-/jednostka/5909530/obiekty/374096"
-        },
-        "removeFields": [
-          "creator"
-        ]
+        }
       },
       "SRC0016": {
         "reason": "Normalize the press citation, retain the historical newspaper title, and move the evidentiary summary and quotation into a dedicated research note.",
@@ -7137,14 +7135,14 @@
         }
       },
       "M089": {
-        "reason": "Align the portrait with the official NAC object metadata and public-domain statement, remove an unverified photographer attribution, and keep the unrelated portrait outside the curated public selection.",
+        "reason": "Align the portrait with NAC object metadata identifying Antoni Sitkowski, retain the public-domain statement, and keep the portrait outside the curated public selection.",
         "fields": {
           "period": "hollywood",
           "description": "Portrait photograph in profile of the composer Jerzy Fitelberg, 1937.",
           "externalUrl": "https://www.szukajwarchiwach.gov.pl/jednostka/-/jednostka/5909530/obiekty/374096",
           "rightsNote": "Public domain. Narodowe Archiwum Cyfrowe / Szukaj w Archiwach states that the work may be reproduced, modified and distributed, including commercially, without permission.",
           "publicCaption": "Jerzy Fitelberg — portrait photograph in profile, 1937.",
-          "publicCreditLine": "Narodowe Archiwum Cyfrowe / Szukaj w Archiwach, sygn. 3/1/0/11/6506/1.",
+          "publicCreditLine": "Antoni Sitkowski / Narodowe Archiwum Cyfrowe, sygn. 3/1/0/11/6506/1.",
           "galleryStatus": "detail_only"
         }
       },

@@ -483,7 +483,7 @@ VISUAL_CREATOR_FIELDS = {
     "SRC0350": "Burton Frasher Sr.",
     "SRC0363": "Photographer unidentified",
     "SRC0537": "Photographer unidentified",
-    "SRC0554": "Photographer unidentified",
+    "SRC0554": "Stanisław Brzozowski",
     "SRC0556": "Photographer unidentified",
     "SRC0562": "Jules Greenbaum",
     "SRC0570": "William P. Gottlieb",
