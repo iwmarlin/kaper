@@ -7284,7 +7284,7 @@
         }
       },
       "M283": {
-        "reason": "The supplied Mapping NYC image URL does not expose the MCNY Collections Portal accession number or item-level rights record required by the museum's low-resolution reuse terms; keep the image on detail pages until those metadata are recovered.",
+        "reason": "The MCNY Collections Portal record and accession number have been identified; keep the image on detail pages because its copyright status and applicable reuse conditions remain unresolved.",
         "fields": {
           "rightsStatus": "copyright_undetermined",
           "galleryStatus": "detail_only"
