@@ -6985,6 +6985,7 @@
             "assets/images/timeline/metryka-kapera-150-u-920.png",
             "assets/images/timeline/biblioteka-UW-1925.jpg",
             "assets/images/timeline/sienkiewicza-jasna.png",
+            "assets/images/historical-context/warsaw-philharmonic-nac-7050.jpg",
             "assets/images/timeline/popis-nasz-przeglad.jpg",
             "assets/images/historical-context/warsaw-conservatory-okolnik-before-1939.jpg",
             "assets/images/historical-context/zula-pogorzelska-my-chcemy-krola-1926.jpg",
@@ -6993,7 +6994,7 @@
             "assets/images/historical-context/rozenblum1-kw-18011928.jpg",
             "assets/images/historical-context/ti-1-02-1930.jpg"
           ],
-          "assetCount": 10,
+          "assetCount": 11,
           "sourceIds": [
             "SRC0012",
             "SRC0014",
@@ -16844,6 +16845,25 @@
             "SRC0938"
           ]
         }
+      },
+      "M463": {
+        "reason": "Add the supplied NAC photograph of the Warsaw Philharmonic as a documented contextual gallery image.",
+        "fields": {
+          "id": "M463",
+          "title": "Warsaw Philharmonic — exterior with Ormonde shop",
+          "mediaType": "image", "storageType": "local", "period": "warsaw", "periods": ["warsaw"],
+          "description": "Exterior view of the Warsaw Philharmonic building, with Kazimierz Lipiński’s Ormonde bicycle shop at the corner. The photograph provides context for Kaper’s Warsaw musical education; no connection to his presence in the scene is asserted.",
+          "assetPath": "assets/images/historical-context/warsaw-philharmonic-nac-7050.jpg",
+          "assetPaths": ["assets/images/historical-context/warsaw-philharmonic-nac-7050.jpg"], "assetCount": 1,
+          "altText": "Black-and-white street view of the Warsaw Philharmonic building and the Ormonde bicycle shop on the corner.",
+          "rightsStatus": "public_domain", "rightsNote": "The National Digital Archives catalogue marks the archival item as public domain. Photographer unidentified; attribution to the archive is retained.",
+          "sortOrder": 463, "slug": "warsaw-philharmonic-ormonde-nac-m463",
+          "publicCaption": "The Warsaw Philharmonic building with the Ormonde bicycle shop on the corner; photograph dated 1910–1939 by the archive.",
+          "publicCreditLine": "Photographer unidentified; Narodowe Archiwum Cyfrowe, ref. 3/1/0/11/7050/1, scan 256547.",
+          "category": "place / context image", "galleryStatus": "selected",
+          "externalUrl": "https://www.szukajwarchiwach.gov.pl/jednostka/-/jednostka/5909690/obiekty/292223",
+          "sourceIds": ["SRC0014"], "placeIds": ["PL017"]
+        }
       }
     },
     "Timeline Events": {
@@ -19854,6 +19874,7 @@
         "reason": "Add the Andrzej Włast portrait and Warsaw Conservatory photograph, with their canonical sources, to the Warsaw documentary gallery.",
         "fields": {
           "galleryMemberIds": [
+            "M463",
             "M233",
             "M237"
           ],
@@ -20223,7 +20244,8 @@
         "reason": "Link the Warsaw Philharmonic venue to the direct 1933 Polona source and the image reproduced from that publication.",
         "fields": {
           "mediaIds": [
-            "M075"
+            "M075",
+            "M463"
           ],
           "sourceIds": [
             "SRC0354"
@@ -21800,6 +21822,10 @@
             "M241"
           ]
         }
+      },
+      "SRC0014": {
+        "reason": "Connect the NAC photograph source to its newly added media record.",
+        "fields": { "mediaIds": ["M463"] }
       },
       "SRC0012": {
         "reason": "Link the baptism register entry to its subject Bronisław Kaper.",
