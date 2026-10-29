@@ -18,7 +18,7 @@ import {
   typeBadge,
   responsiveImage,
   registerImageDerivatives,
-} from "./core.js?v=30eb7cc6b3";
+} from "./core.js?v=66e660b0ea";
 
 // Build-time prerendering and browser rendering must configure the exact same
 // core module instance. Query-stamped ES module URLs are distinct module keys
@@ -106,11 +106,20 @@ function initials(name = "") {
 }
 
 export function renderPersonIndexRow(person) {
-  const avatar = person.portrait
+  // A portrait here is somebody else's photograph, shown small and with no room
+  // for a credit line. Link it to its media record, which carries the
+  // photographer, the source and the licence, so the attribution is one step
+  // away rather than nowhere.
+  const portraitImage = person.portrait
     ? responsiveImage(person.portrait.assetPath, person.portrait.altText || person.displayName, {
       className: "person-row__portrait",
       sizes: "4rem",
     })
+    : "";
+  const avatar = person.portrait
+    ? (person.portrait.mediaId
+      ? `<a class="person-row__portrait-link" href="${recordUrl("media", person.portrait.mediaId)}" aria-label="Portrait source and rights: ${escapeHtml(person.displayName)}">${portraitImage}</a>`
+      : portraitImage)
     : `<span class="person-row__monogram" aria-hidden="true">${escapeHtml(initials(person.displayName))}</span>`;
   const workCount = Number(person.workCount || 0);
   const timelineEventCount = Number(person.timelineEventCount || 0);

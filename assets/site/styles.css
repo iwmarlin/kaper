@@ -17,7 +17,7 @@
    the swashed display forms can never appear by accident. */
 @font-face {
   font-family: "Fraunces";
-  src: url("../fonts/kaper-serif.woff2?v=30eb7cc6b3") format("woff2");
+  src: url("../fonts/kaper-serif.woff2?v=66e660b0ea") format("woff2");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
@@ -25,7 +25,7 @@
 
 @font-face {
   font-family: "Fraunces";
-  src: url("../fonts/kaper-serif-italic.woff2?v=30eb7cc6b3") format("woff2");
+  src: url("../fonts/kaper-serif-italic.woff2?v=66e660b0ea") format("woff2");
   font-weight: 100 900;
   font-style: italic;
   font-display: swap;
@@ -33,7 +33,7 @@
 
 @font-face {
   font-family: "Archivo";
-  src: url("../fonts/kaper-sans.woff2?v=30eb7cc6b3") format("woff2");
+  src: url("../fonts/kaper-sans.woff2?v=66e660b0ea") format("woff2");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
@@ -41,7 +41,7 @@
 
 @font-face {
   font-family: "Archivo";
-  src: url("../fonts/kaper-sans-italic.woff2?v=30eb7cc6b3") format("woff2");
+  src: url("../fonts/kaper-sans-italic.woff2?v=66e660b0ea") format("woff2");
   font-weight: 100 900;
   font-style: italic;
   font-display: swap;
@@ -1474,6 +1474,7 @@ main {
 .person-row__avatar {
   width: 3rem;
   height: 3.75rem;
+  position: relative;
   border-radius: 2px;
   overflow: hidden;
   display: grid;
@@ -1481,6 +1482,16 @@ main {
   border: 1px solid var(--line-dark);
   background: rgba(232, 224, 209, 0.55);
   box-shadow: 0 1px 2px rgba(21, 44, 51, 0.07);
+}
+
+/* A link wrapped round the portrait is a grid item, and a grid item sized by
+   its own content cannot be given a percentage height against it: the row
+   grows to the image and the image grows to the row. Taking the link out of
+   flow breaks the circle, and inset fills the cell whatever is inside it. */
+.person-row__portrait-link {
+  position: absolute;
+  inset: 0;
+  display: block;
 }
 
 .person-row__portrait {

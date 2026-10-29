@@ -205,7 +205,13 @@ def portrait_for(person: dict, sources: dict[str, dict], media: dict[str, dict],
     selected = own or next((item for item, source in reachable if source.get("personIds") == [person["id"]]), None)
     if not selected:
         return None
-    return {"assetPath": selected["assetPath"], "altText": selected.get("altText") or person.get("displayName")}
+    # The index shows the portrait small and unattributed; carrying the medium's
+    # id lets the row link to the record that holds its credit and licence.
+    return {
+        "mediaId": selected["id"],
+        "assetPath": selected["assetPath"],
+        "altText": selected.get("altText") or person.get("displayName"),
+    }
 
 
 def people_index(root: Path, data_root: Path, schema_version: str) -> dict:
