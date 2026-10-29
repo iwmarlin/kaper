@@ -1006,6 +1006,8 @@
       "id": "SRC0039",
       "shortCitation": "National Archives Catalog, Kaper immigration manifest, Calexico, 1 Nov 1935",
       "fullCitation": "Sworn Manifest (Form 548), Bronislaw Kaper, port of Calexico, California, 1 November 1935, serial no. 119. U.S. Department of Labor, Immigration and Naturalization Service, Records of the Immigration and Naturalization Service, RG 85, National Archives and Records Administration, NAID 25139819.",
+      "researchNote": "The National Archives catalogue heading reads “Kaper, Bronislaw - 11/1/1933”, whereas the date on the manifest appears to read 11/1/35. The certificate of arrival issued in 1936 independently records admission at Calexico on 1 November 1935. The 1935 date is retained; the difference in the catalogue heading is noted rather than silently corrected.",
+      "researchNoteType": "date_assessment",
       "sourceType": "archival_document",
       "title": "Border-crossing manifest, Calexico",
       "repository": "National Archives and Records Administration",
@@ -1040,6 +1042,13 @@
         "PL043"
       ],
       "primaryUrl": "https://catalog.archives.gov/id/25139819",
+      "additionalLinks": [
+        {
+          "label": "Certificate of arrival, 1936 — corroborating entry date",
+          "url": "https://catalog.archives.gov/id/278166391?objectPage=269#object-thumb--269",
+          "role": "contextual_reference"
+        }
+      ],
       "identifiers": [
         {
           "scheme": "naid",
@@ -20367,6 +20376,11 @@
         {
           "label": "Museum of the City of New York — rights and reproductions",
           "url": "https://www.mcny.org/licensing",
+          "role": "rights_statement"
+        },
+        {
+          "label": "Museum of the City of New York — reproduction FAQ",
+          "url": "https://blog.mcny.org/2017/05/02/frequently-asked-questions-for-rights-reproductions/",
           "role": "rights_statement"
         }
       ],
