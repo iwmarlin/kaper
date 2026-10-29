@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import datetime
 import json
 import re
 import unittest
@@ -62,6 +63,67 @@ class RestoredCopyrightTests(unittest.TestCase):
                 # curated gallery; the validator says so and this says why.
                 self.assertEqual(record["galleryStatus"], "detail_only")
 
+
+
+class StatedTermTests(unittest.TestCase):
+    """Once a note says which year a restored term ends, the claim has a date on
+    it and the calendar will overtake it. Fourteen Illustrierter Film-Kurier
+    covers were decided by the same German term and the same URAA restoration,
+    and the three published in 1931 come free at the start of 2027. These tests
+    fail on the day a stated term runs out, which is the notice that the status
+    has to be rewritten, not a fault in the data."""
+
+    #: "…to the end of 2027", "…ran out at the end of 2006".
+    TERM_END = re.compile(r"the end of (\d{4})")
+
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls.media = media_records()
+        cls.this_year = datetime.date.today().year
+
+    def united_states_years(self, note: str) -> list[int]:
+        """Years stated in the sentences that speak about United States law.
+
+        A note may compute several terms — M125 prints an edition free in the
+        United States since 2022 whose composition is protected in the European
+        Union until 2053 — so the sentence decides which year is operative.
+        """
+        years: list[int] = []
+        for sentence in re.split(r"(?<=[.])\s+", note):
+            if "United States" in sentence or "URAA" in sentence:
+                years += [int(year) for year in self.TERM_END.findall(sentence)]
+        return years
+
+    def test_a_stated_term_agrees_with_the_calendar(self) -> None:
+        offenders = []
+        checked = 0
+        for record in self.media:
+            status = record.get("rightsStatus")
+            if status not in {"public_domain", "restricted"}:
+                continue
+            years = self.united_states_years(record.get("rightsNote") or "")
+            if not years:
+                continue
+            checked += 1
+            ends = years[-1]
+            if status == "restricted" and ends < self.this_year:
+                offenders.append(f"{record['id']}: restricted, term ran out in {ends}")
+            if status == "public_domain" and ends >= self.this_year:
+                offenders.append(f"{record['id']}: public domain, term runs to {ends}")
+        self.assertGreater(checked, 25, "no stated terms were checked")
+        self.assertEqual(offenders, [], "a stated term no longer matches the status")
+
+    def test_a_computed_term_says_where_it_leaves_the_united_states(self) -> None:
+        offenders = []
+        for record in self.media:
+            if record.get("rightsStatus") not in {"public_domain", "restricted"}:
+                continue
+            note = record.get("rightsNote") or ""
+            if not self.TERM_END.search(note):
+                continue
+            if "United States" not in note and "URAA" not in note:
+                offenders.append(f"{record['id']}: a term is computed, none of it ours")
+        self.assertEqual(offenders, [], "a note computes a term and stops abroad")
 
 
 class GalleryRightsTests(unittest.TestCase):
