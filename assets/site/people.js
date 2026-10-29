@@ -1,4 +1,4 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=4369311fbb";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=1117ec397b";
 import {
   compareText,
   debounce,
@@ -13,12 +13,12 @@ import {
   PERIOD_ORDER,
   PERSON_FUNCTION_ORDER,
   renderError,
-} from "./core.js?v=4369311fbb";
-import { createCatalogueFilters } from "./catalogue-filters.js?v=4369311fbb";
+} from "./core.js?v=1117ec397b";
+import { createCatalogueFilters } from "./catalogue-filters.js?v=1117ec397b";
 import {
   registerCatalogueImageDerivatives,
   renderPersonIndexRow,
-} from "./catalogue-results.js?v=4369311fbb";
+} from "./catalogue-results.js?v=1117ec397b";
 
 registerCatalogueImageDerivatives(IMAGE_DERIVATIVES);
 mountSiteChrome("people");
