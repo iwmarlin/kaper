@@ -63,5 +63,49 @@ class RestoredCopyrightTests(unittest.TestCase):
                 self.assertEqual(record["galleryStatus"], "detail_only")
 
 
+
+class GalleryRightsTests(unittest.TestCase):
+    """A gallery container carries a rights status of its own, and two of them
+    said public domain over members that were not. M032 gathered five items
+    served under provider terms and one in the public domain; M030 gathered
+    nine and a tenth under provider terms. M031 and M033 had the same mixture
+    and said mixed_rights, which is the answer."""
+
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls.media = media_records()
+        cls.by_id = {record["id"]: record for record in cls.media}
+
+    def members(self, gallery: dict) -> list[dict]:
+        paths = {path for path in (gallery.get("assetPaths") or []) if path}
+        names = {path.split("/")[-1] for path in paths}
+        out = []
+        for record in self.media:
+            if record["id"] == gallery["id"] or record.get("mediaType") == "document_gallery":
+                continue
+            own = [record.get("assetPath"), *(record.get("assetPaths") or [])]
+            if any(p in paths or str(p).split("/")[-1] in names for p in own if p):
+                out.append(record)
+        return out
+
+    def test_a_gallery_does_not_claim_more_than_its_members(self) -> None:
+        offenders = []
+        checked = 0
+        for gallery in self.media:
+            if gallery.get("mediaType") != "document_gallery":
+                continue
+            statuses = {record.get("rightsStatus") for record in self.members(gallery)}
+            if not statuses:
+                continue
+            checked += 1
+            claimed = gallery.get("rightsStatus")
+            if len(statuses) > 1:
+                if claimed != "mixed_rights":
+                    offenders.append(f"{gallery['id']}: claims {claimed} over {sorted(statuses)}")
+            elif claimed != statuses.pop() and claimed != "mixed_rights":
+                offenders.append(f"{gallery['id']}: claims {claimed} over its members")
+        self.assertGreater(checked, 3, "no galleries were checked")
+        self.assertEqual(offenders, [], "a gallery claims rights its members do not have")
+
 if __name__ == "__main__":
     unittest.main()
