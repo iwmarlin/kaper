@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import re
 import sys
 import unittest
 from pathlib import Path
@@ -79,6 +80,57 @@ class RepositoryOrganizationGraphTests(unittest.TestCase):
             "primaryUrl": "https://archive.org/details/example",
         }
         self.assertEqual(expected_repository_organization_ids(source), ())
+
+    def test_an_organization_a_repository_names_is_linked_from_it(self) -> None:
+        """The curated marker list decides which repository strings *must*
+        produce a relation, and it is deliberately short. This checks the other
+        direction: where the field already spells out an institution the
+        archive holds a card for, the card has to be on the record. Three
+        entries from the 1937 MGM Who's Who credited the Media History Digital
+        Library in the field and linked only the Internet Archive, and SRC0005
+        leaned on Henry Konig's Electrola list at musiktiteldb.de without
+        naming it.
+
+        Matching is on word boundaries, so "Grammophon" does not read itself
+        into Grammophon-Platten.de, which is a different body.
+        """
+        edge = re.compile(r"[0-9A-Za-z\u00c0-\u024f.\-]")
+
+        def names(organization: dict) -> list[str]:
+            spellings = [organization.get("displayName"),
+                         organization.get("authorizedName")]
+            spellings += (organization.get("nameVariants") or "").split(";")
+            return [name.strip() for name in spellings
+                    if name and len(name.strip()) > 3]
+
+        def named_in(name: str, repository: str) -> bool:
+            for match in re.finditer(re.escape(name.casefold()), repository):
+                before = repository[match.start() - 1] if match.start() else " "
+                after = (repository[match.end()]
+                         if match.end() < len(repository) else " ")
+                if not edge.match(before) and not edge.match(after):
+                    return True
+            return False
+
+        organizations = {record["id"]: record
+                         for record in read_records("organizations.json")}
+        offenders = []
+        checked = 0
+        for source in read_records("sources.json"):
+            repository = " ".join(str(source.get("repository") or "").casefold().split())
+            if not repository:
+                continue
+            linked = set(source.get("organizationIds") or [])
+            for organization_id, organization in organizations.items():
+                if not any(named_in(name, repository) for name in names(organization)):
+                    continue
+                checked += 1
+                if organization_id not in linked:
+                    offenders.append(
+                        f"{source['id']} names {organization_id} "
+                        f"({organization.get('displayName')}) and does not link it")
+        self.assertGreater(checked, 500, "no repository names were matched")
+        self.assertEqual(offenders, [], "a repository names an institution it does not link")
 
     def test_every_controlled_repository_relation_is_bidirectional(self) -> None:
         sources = read_records("sources.json")

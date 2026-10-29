@@ -53,6 +53,13 @@ REPOSITORY_ALIASES: dict[str, str] = {
     "Filmportal.de / Deutsches Filminstitut & Filmmuseum (DIF)": (
         CANONICAL_REPOSITORY_BY_HOST["www.filmportal.de"]
     ),
+    # The same pair with the platform in front, which is the order this file
+    # rules against. The filmography normalizer rewrites the field by host, but
+    # six video, collection and archival records are outside it, so the old
+    # order is folded in here instead.
+    "filmportal.de / DFF – Deutsches Filminstitut & Filmmuseum": (
+        CANONICAL_REPOSITORY_BY_HOST["www.filmportal.de"]
+    ),
     # One portal, its German name.
     "GEMA Repertoire Search": "GEMA Online-Repertoiresuche",
     # The photograph's reference number belongs to the citation, not the

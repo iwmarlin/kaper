@@ -12,11 +12,11 @@ from source_access_dates import normalize_access_citation
 CANONICAL_REPOSITORY_BY_HOST = {
     "catalog.afi.com": "AFI Catalog of Feature Films",
     "en.unifrance.org": "Unifrance",
-    "filmportal.de": "filmportal.de / DFF – Deutsches Filminstitut & Filmmuseum",
+    "filmportal.de": "DFF – Deutsches Filminstitut & Filmmuseum / filmportal.de",
     "imdb.com": "IMDb",
     "unifrance.org": "Unifrance",
     "weimar.humspace.ucla.edu": "The Weimar Talkies Project (UCLA)",
-    "www.filmportal.de": "filmportal.de / DFF – Deutsches Filminstitut & Filmmuseum",
+    "www.filmportal.de": "DFF – Deutsches Filminstitut & Filmmuseum / filmportal.de",
     "www.imdb.com": "IMDb",
     "www.tcm.com": "Turner Classic Movies (TCM)",
     "www.unifrance.org": "Unifrance",
