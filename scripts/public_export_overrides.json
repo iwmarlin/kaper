@@ -20408,6 +20408,7 @@
             "SRC0038",
             "SRC0039",
             "SRC0313",
+            "SRC0789",
             "SRC0041",
             "SRC0110",
             "SRC0024",
@@ -21806,6 +21807,10 @@
       },
       "SRC0037": {
         "reason": "Link the certificate of arrival to its subject Bronisław Kaper.",
+        "fields": { "personIds": ["P009"] }
+      },
+      "SRC0789": {
+        "reason": "Link the Cocktails cover and Fiesta score source to their documented arranger Bronisław Kaper.",
         "fields": { "personIds": ["P009"] }
       },
       "SRC0039": {

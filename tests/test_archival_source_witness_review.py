@@ -69,6 +69,13 @@ class ArchivalSourceWitnessReviewTests(unittest.TestCase):
         for sid in ("SRC0039", "SRC0313"):
             self.assertIn("P129", self.sources[sid]["personIds"])
 
+    def test_cocktails_and_fiesta_source_is_linked_to_kaper(self):
+        source = self.sources["SRC0789"]
+        self.assertIn("P009", source.get("personIds", []))
+        self.assertIn("SRC0789", self.people["P009"].get("sourceIds", []))
+        self.assertIn("P009", self.overrides["linkAdditions"]["Sources"]["SRC0789"]["fields"]["personIds"])
+        self.assertNotIn("additionalLinks", source)
+
     def test_donor_dates_are_reporting_period_not_creation(self):
         s = self.sources["SRC0678"]
         self.assertEqual((s["date"], s["dateEnd"], s["dateRole"]),
