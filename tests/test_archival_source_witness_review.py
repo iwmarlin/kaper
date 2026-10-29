@@ -17,6 +17,7 @@ class ArchivalSourceWitnessReviewTests(unittest.TestCase):
             return {r["id"]: r for r in json.loads((ROOT / "data/public/v1" /
                     (name + ".json")).read_text())["records"]}
         cls.sources, cls.media = records("sources"), records("media")
+        cls.people = records("people")
         cls.events = records("timeline-events")
         cls.overrides = json.loads((ROOT / "scripts/public_export_overrides.json").read_text())
 
@@ -58,6 +59,15 @@ class ArchivalSourceWitnessReviewTests(unittest.TestCase):
         self.assertIn("Mosaic", s["researchNote"])
         self.assertIn("38–39", s["researchNote"])
         self.assertNotIn("accessDate", s)
+
+    def test_kaper_archival_documents_are_linked_to_their_subject(self):
+        for sid in ("SRC0012", "SRC0037", "SRC0039", "SRC0313"):
+            with self.subTest(source=sid):
+                self.assertIn("P009", self.sources[sid].get("personIds", []))
+                self.assertIn(sid, self.people["P009"].get("sourceIds", []))
+                self.assertIn("P009", self.overrides["linkAdditions"]["Sources"][sid]["fields"]["personIds"])
+        for sid in ("SRC0039", "SRC0313"):
+            self.assertIn("P129", self.sources[sid]["personIds"])
 
     def test_donor_dates_are_reporting_period_not_creation(self):
         s = self.sources["SRC0678"]

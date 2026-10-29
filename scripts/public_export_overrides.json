@@ -20403,7 +20403,11 @@
         "reason": "Link Bronisław Kaper to the completed sources and documented public additions, including his composer credit on the Dutch-language edition, the European Film Fund donor list and Jazz Drops nos. 6–7.",
         "fields": {
           "sourceIds": [
+            "SRC0012",
+            "SRC0037",
             "SRC0038",
+            "SRC0039",
+            "SRC0313",
             "SRC0041",
             "SRC0110",
             "SRC0024",
@@ -21796,10 +21800,19 @@
           ]
         }
       },
+      "SRC0012": {
+        "reason": "Link the baptism register entry to its subject Bronisław Kaper.",
+        "fields": { "personIds": ["P009"] }
+      },
+      "SRC0037": {
+        "reason": "Link the certificate of arrival to its subject Bronisław Kaper.",
+        "fields": { "personIds": ["P009"] }
+      },
       "SRC0039": {
-        "reason": "Synchronize the inverse place link already present from PL043 and connect Eleonora Kaper, who accompanied Kaper on foot at the documented permanent-entry crossing.",
+        "reason": "Connect the manifest's subject Bronisław Kaper and Eleonora Kaper, and synchronize the inverse place link already present from PL043.",
         "fields": {
           "personIds": [
+            "P009",
             "P129"
           ],
           "placeIds": [
@@ -22824,9 +22837,10 @@
         }
       },
       "SRC0313": {
-        "reason": "Connect the 1927 marriage register to Eleonora Kaper, identified in the record by her birth surname Sirot.",
+        "reason": "Connect both subjects of the 1927 marriage index, Bronisław Kaper and Eleonora Kaper, identified by her birth surname Sirot.",
         "fields": {
           "personIds": [
+            "P009",
             "P129"
           ]
         }
