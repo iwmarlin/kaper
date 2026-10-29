@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 848,
+  "count": 849,
   "records": [
     {
       "id": "SRC0001",
@@ -32276,6 +32276,35 @@
       ],
       "researchNote": "The catalogue entry notes “Copyright by the Keystone View Co., No. 3190; no copyright renewal” and gives the rights advisory “No known restrictions on publication”. It also states that the record contains unverified old data taken from the caption card, which is where the c1931 date and the copyright note come from.",
       "researchNoteType": "verification_note"
+    },
+    {
+      "id": "SRC0944",
+      "shortCitation": "S.S. Champlain passenger manifest, New York, 24 October 1934",
+      "fullCitation": "List or Manifest of Alien Passengers for the United States Immigration Officer at Port of Arrival (Form 500 A), S.S. Champlain, sailing from Le Havre 17 October 1934 and arriving at New York 24 October 1934, list 7, line 1, cols. 16–17. Records of the Immigration and Naturalization Service, RG 85, National Archives and Records Administration, Washington, DC. Statue of Liberty–Ellis Island Foundation, arrival id 24JH-LWP.",
+      "researchNote": "The manifest is the primary record behind the arrival: the non-immigrant visas issued in Paris on 15 October 1934 in one consecutive series with the Jurmanns’ (NI 1581–1584), Metro-Goldwyn-Mayer as payer of the passage, “musician” in the calling or occupation field, and Metro-Goldwyn-Mayer at Culver City as the party being joined. The citation, including list 7 and line 1, is transcribed from footnote 40 of the study that read the manifest. The arrival record resolves at the identifier given; the manifest image has not been examined here, so the list and line rest on that study rather than on a second reading.",
+      "researchNoteType": "verification_note",
+      "sourceType": "archival_document",
+      "title": "Passenger manifest, S.S. Champlain, New York",
+      "repository": "U.S. National Archives and Records Administration",
+      "publication": "Statue of Liberty–Ellis Island Foundation",
+      "date": "1934-10-24",
+      "dateRole": "creation",
+      "dateQualifier": "confirmed",
+      "accessDate": "2026-10-30",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "slug": "src0944-ss-champlain-passenger-manifest-new-york-1934",
+      "organizationIds": [
+        "ORG069"
+      ],
+      "personIds": [
+        "P009",
+        "P129"
+      ],
+      "timelineEventIds": [
+        "TE0035"
+      ],
+      "primaryUrl": "https://www.statueofliberty.org/arrival-details/?id=24JH-LWP"
     }
   ],
   "recordCount": null
