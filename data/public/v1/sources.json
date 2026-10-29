@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 844,
+  "count": 847,
   "records": [
     {
       "id": "SRC0001",
@@ -11249,6 +11249,7 @@
       "date": "1934",
       "dateRole": "issue",
       "dateQualifier": "confirmed",
+      "dateDisplay": "[1934]",
       "accessDate": "2026-10-26",
       "reliability": "high",
       "sourceStatus": "verified",
@@ -11289,8 +11290,7 @@
           "scheme": "ark",
           "value": "ark:/12148/cb380209111"
         }
-      ],
-      "dateDisplay": "[1934]"
+      ]
     },
     {
       "id": "SRC0301",
@@ -12081,6 +12081,7 @@
       "date": "1927-06-30",
       "dateRole": "described_item",
       "dateQualifier": "confirmed",
+      "dateDisplay": "30 June 1927 (marriage indexed)",
       "accessDate": "2026-10-26",
       "reliability": "high",
       "sourceStatus": "verified",
@@ -12100,7 +12101,6 @@
         "TE0017"
       ],
       "primaryUrl": "https://content.landesarchiv-berlin.de/labsa/pdf/P_Rep_800_0284.pdf#page=15",
-      "dateDisplay": "30 June 1927 (marriage indexed)",
       "researchNote": "The linked 37-page PDF is a marriage-register name index, not the full marriage act. Its cover identifies Standesamt Berlin I, P Rep. 800, Nr. 284, and 1927. The Kaper entry is on PDF p. 15 and the Sirot entry on p. 28; both show 30 June and register no. 273. The structured date describes the marriage indexed, not an independently dated compilation of the index. The archive’s official holdings list identifies P Rep. 800 as the former Berlin I district registry for Mitte. It must not be confused with the separate foreign-registry function of Standesamt I in Berlin. M060 and M061 reproduce cropped index entries, not extracts from the full marriage act.",
       "researchNoteType": "verification_note",
       "additionalLinks": [
@@ -12122,6 +12122,7 @@
       "publication": "YouTube",
       "dateRole": "digital_publication",
       "dateQualifier": "confirmed",
+      "date": "2019-03-29",
       "accessDate": "2026-10-26",
       "reliability": "low",
       "sourceStatus": "verified_with_attribution_note",
@@ -12133,7 +12134,6 @@
         "M009"
       ],
       "primaryUrl": "https://www.youtube.com/watch?v=gePgVM7uIIQ",
-      "date": "2019-03-29",
       "researchNote": "The images show a modern staged performance, not a historical film excerpt from Kind Lady (1935). The uploader identifies Christoph Wagner-Trenkwitz and Ensemble Albero Verde and dates the production to 2014. The structured date identifies YouTube publication, not the performance or the song’s historical film context.",
       "researchNoteType": "object_context",
       "workIds": [
@@ -12262,6 +12262,7 @@
       "publication": "YouTube",
       "dateRole": "digital_publication",
       "dateQualifier": "confirmed",
+      "date": "2013-07-27",
       "accessDate": "2026-10-26",
       "reliability": "low",
       "sourceStatus": "verified",
@@ -12273,7 +12274,6 @@
         "M025"
       ],
       "primaryUrl": "https://www.youtube.com/watch?v=GilH6c5TFEA",
-      "date": "2013-07-27",
       "researchNote": "The upload contains moving footage of the musical number from A Night at the Opera (1935); the uploader’s title identifies Allan Jones, Chico Marx and Harpo Marx. It is a film excerpt, not a separately identified commercial disc transfer. The structured date describes publication of this YouTube copy.",
       "researchNoteType": "evidence_note",
       "workIds": [
@@ -12376,6 +12376,7 @@
       "publication": "YouTube",
       "dateRole": "digital_publication",
       "dateQualifier": "confirmed",
+      "date": "2013-04-14",
       "accessDate": "2026-10-26",
       "reliability": "low",
       "sourceStatus": "verified",
@@ -12397,7 +12398,6 @@
       "contributionIds": [
         "CON-S157-P-P138"
       ],
-      "date": "2013-04-14",
       "researchNote": "The upload contains moving film footage and identifies Judy Garland and Everybody Sing (1938). The description’s additional choir attribution has not been independently verified here and is not used to create personnel credits. The structured date describes publication of this YouTube copy, not the film or its music sessions.",
       "researchNoteType": "evidence_note",
       "filmIds": [
@@ -23260,6 +23260,7 @@
       "dateEnd": "1942-04-30",
       "dateRole": "described_item",
       "dateQualifier": "confirmed",
+      "dateDisplay": "1 May 1941–30 April 1942 (donation period)",
       "accessDate": "2026-10-26",
       "reliability": "high",
       "sourceStatus": "verified",
@@ -23289,7 +23290,6 @@
           "role": "contextual_reference"
         }
       ],
-      "dateDisplay": "1 May 1941–30 April 1942 (donation period)",
       "researchNote": "The reproduced heading gives donations from members for 1 May 1941 to 30 April 1942. These are the dates covered by the list, not a separately established creation date. The visible first sheet includes Kaper at $120 and Kohner at $213 and ends with a carried-forward total; the institutional extended description identifies an alphabetical list of 69 people. No document-creation date is inferred from the reporting period.",
       "researchNoteType": "date_assessment"
     },
@@ -24840,6 +24840,7 @@
       "date": "1932-05",
       "dateRole": "recording",
       "dateQualifier": "reported",
+      "dateDisplay": "c. May 1932",
       "contributionIds": [
         "CON-S064-LAB-ORG155",
         "CON-S064-P-ORG124"
@@ -24851,8 +24852,7 @@
         "S064"
       ],
       "researchNote": "The catalogue number, matrix, performer and film identification are supplied by the uploader; they have not been independently corroborated for this transfer. The description explicitly says “Aufnahme: Berlin, ca. Mai 1932”, so the source date describes an approximate reported recording session, not an issue date. Other recordings of the song, including the Rosvaenge/Livschakoff master 4733 ½ BD, are not evidence for matrix 4735 BD VII.",
-      "researchNoteType": "discographic_note",
-      "dateDisplay": "c. May 1932"
+      "researchNoteType": "discographic_note"
     },
     {
       "id": "SRC0720",
@@ -25032,6 +25032,7 @@
       "publication": "Odeon",
       "dateRole": "issue",
       "dateQualifier": "confirmed",
+      "date": "1931-05",
       "accessDate": "2026-10-25",
       "reliability": "high",
       "sourceStatus": "verified",
@@ -25062,7 +25063,6 @@
         "CON-S048-P-P086"
       ],
       "primaryUrl": "https://www.youtube.com/watch?v=A_isWCv3e2Q",
-      "date": "1931-05",
       "researchNote": "Wolfgang Stanicek’s dissertation Austin Egen (2010), p. 156, lists Odeon O-11439a, matrix Be 9409, with Austin Egen and the Odeon-Tango-Orchester: “NE 05/1931” and a Berlin session on 12 March 1931, citing Weihermüller’s Egen discography, p. 380. The structured date describes the May 1931 issue, not the March session. The label in the transfer independently matches the catalogue number, matrix and performers; it also prints “Auch als Tanzplatte geeignet”, B.I.E.M. and Carl Lindström A.-G.",
       "researchNoteType": "discographic_note",
       "additionalLinks": [
@@ -25908,9 +25908,9 @@
         "M384"
       ],
       "primaryUrl": "https://www.youtube.com/watch?v=pBu_5-aoUIU",
-      "date": "2021-05-06",
       "dateRole": "digital_publication",
       "dateQualifier": "confirmed",
+      "date": "2021-05-06",
       "personIds": [
         "P173"
       ],
@@ -26152,6 +26152,7 @@
       "date": "1932-03",
       "dateRole": "recording",
       "dateQualifier": "reported",
+      "dateDisplay": "c. March 1932",
       "contributionIds": [
         "CON-S067-C-P009",
         "CON-S067-C-P077",
@@ -26171,7 +26172,6 @@
       ],
       "researchNote": "R. Pfau’s Lexikon der deutschen Tanzmusik, part 3, printed p. 321, independently lists this title, its Kaper–Jurmann/Rotter credit, the film Skandal in der Parkstraße and “EG 2532 Marek Weber”. Its general year 1932 is not a separately documented issue or session date. The approximate March 1932 Berlin session and matrix OD 879-2 remain uploader-supplied. The uploader tentatively names the refrain singer as “John Hendrick”; this is not treated as a confirmed singer identification. The particular transferred pressing and take remain unverified.",
       "researchNoteType": "discographic_note",
-      "dateDisplay": "c. March 1932",
       "additionalLinks": [
         {
           "label": "R. Pfau, Lexikon der deutschen Tanzmusik, part 3, p. 321",
@@ -26402,6 +26402,7 @@
       "publication": "Smith & Co / YouTube",
       "dateRole": "digital_publication",
       "dateQualifier": "confirmed",
+      "date": "2012-06-13",
       "accessDate": "2026-10-26",
       "reliability": "medium",
       "sourceStatus": "verified",
@@ -26422,7 +26423,6 @@
       "songIds": [
         "S133"
       ],
-      "date": "2012-06-13",
       "researchNote": "The distributor-supplied description gives “Released on: 2012-06-13”; YouTube publication is separately dated 20 November 2014. The structured date is the digital issue date, not a historical recording or film-production date. The album artwork and release metadata name Durbin but identify no original label, catalogue number, matrix or session. The digital “Music Publisher” field is not used to establish the historical sheet-music publisher.",
       "researchNoteType": "discographic_note"
     },
@@ -26437,6 +26437,7 @@
       "publication": "YouTube",
       "dateRole": "digital_publication",
       "dateQualifier": "confirmed",
+      "date": "2007-12-10",
       "accessDate": "2026-10-26",
       "reliability": "low",
       "sourceStatus": "verified_with_attribution_note",
@@ -26457,7 +26458,6 @@
       "songIds": [
         "S214"
       ],
-      "date": "2007-12-10",
       "researchNote": "The upload identifies Kiepura, Polish Odeon and a Berlin recording, but supplies no catalogue or matrix number. The consulted images are typed title cards, not a disc label. The structured date is YouTube publication; the description’s 1933 refers to the film context and does not independently date this transfer or its carrier. SRC0633 documents a Polish Odeon O.236842 issue, but that catalogue number and its coupling are not assigned to this upload without matching label or matrix evidence.",
       "researchNoteType": "discographic_note"
     },
@@ -26472,6 +26472,7 @@
       "publication": "Salabert",
       "dateRole": "described_item",
       "dateQualifier": "reported",
+      "date": "1933-10-03",
       "accessDate": "2026-10-26",
       "reliability": "high",
       "sourceStatus": "verified_with_attribution_note",
@@ -26493,7 +26494,6 @@
       "songIds": [
         "S096"
       ],
-      "date": "1933-10-03",
       "researchNote": "The readable label identifies Salabert 3382, S.S.1728, Henry Garat, the composers and lyricist, and “Orch. sous la dir. du compositeur Kaper”. It also prints Éditions Echo; that wording is not treated as a synonym of the Salabert record imprint. The uploader attaches 3 October 1933 to the disc without explicitly distinguishing a recording date from an issue date, so it is retained only as a reported date of the described item. SRC0300 records the BnF description of the coupled Salabert 3382 issue as [1934]; the exact photographed pressing is not dated from that entry. The upload was published on 18 October 2021. The earlier phrase identifying it as the same physical pressing held by BnF was not supported.",
       "researchNoteType": "discographic_note",
       "contributionIds": [
@@ -26528,6 +26528,7 @@
       "publication": "YouTube",
       "dateRole": "digital_publication",
       "dateQualifier": "confirmed",
+      "date": "2018-09-27",
       "accessDate": "2026-10-26",
       "reliability": "low",
       "sourceStatus": "verified",
@@ -26548,7 +26549,6 @@
       "songIds": [
         "S097"
       ],
-      "date": "2018-09-27",
       "researchNote": "The upload identifies a modern compilation and credits production to DMI. Its album artwork and description supply no original disc label, catalogue number, matrix or session. The structured date is publication of this YouTube copy, not an independently verified album-release date or historical session. SRC0300 independently documents Garat’s Salabert 3382, but the compilation track has not been matched to that particular issue by label or matrix evidence.",
       "researchNoteType": "discographic_note"
     },
@@ -26563,6 +26563,7 @@
       "publication": "YouTube",
       "dateRole": "digital_publication",
       "dateQualifier": "confirmed",
+      "date": "2016-05-01",
       "accessDate": "2026-10-26",
       "reliability": "low",
       "sourceStatus": "verified_with_attribution_note",
@@ -26584,7 +26585,6 @@
       "contributionIds": [
         "CON-S008-P-ORG134"
       ],
-      "date": "2016-05-01",
       "researchNote": "The uploader identifies Parlophon B 4502, matrix 38185, a Berlin recording in January 1930, Max Mensing and music by Dr. B. Kaper. A Parlophon label appears in the video, but its catalogue and matrix details were not independently transcribed at sufficient resolution during this review; they remain supplied by the description. The structured date is the YouTube publication date. The portrait used as the video thumbnail is not evidence identifying the recording personnel. This reference belongs to the German song W-S008, not the Polish-language version.",
       "researchNoteType": "discographic_note"
     },
@@ -32155,6 +32155,93 @@
         "CON-S060-LAB-ORG138",
         "CON-S060-P-ORG148"
       ]
+    },
+    {
+      "id": "SRC0940",
+      "sourceType": "authority_record",
+      "title": "LCNAF — Durbin, Deanna",
+      "shortCitation": "LCNAF, “Durbin, Deanna,” no90008351",
+      "fullCitation": "Library of Congress. “Durbin, Deanna.” Library of Congress Name Authority File, LCCN no90008351. The record carries the variant forms “Durbin, Edna Mae” and “Jackson, Edna Mae”.",
+      "creator": "Library of Congress",
+      "publication": "Library of Congress Name Authority File (LCNAF)",
+      "repository": "Library of Congress (LCNAF)",
+      "primaryUrl": "https://id.loc.gov/authorities/names/no90008351",
+      "accessDate": "2026-10-29",
+      "dateRole": "described_item",
+      "dateQualifier": "unknown",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "slug": "src0940-lcnaf-durbin-deanna-birth-name-edna-mae",
+      "authoritySubject": "person",
+      "identityRelation": "same",
+      "personIds": [
+        "P137"
+      ],
+      "organizationIds": [
+        "ORG066"
+      ],
+      "nameVariantIds": [
+        "PNV0046"
+      ],
+      "mediaIds": []
+    },
+    {
+      "id": "SRC0941",
+      "sourceType": "authority_record",
+      "title": "LCNAF — Garland, Judy",
+      "shortCitation": "LCNAF, “Garland, Judy,” n50015080",
+      "fullCitation": "Library of Congress. “Garland, Judy.” Library of Congress Name Authority File, LCCN n50015080. The record carries the variant form “Gumm, Frances Ethel”.",
+      "creator": "Library of Congress",
+      "publication": "Library of Congress Name Authority File (LCNAF)",
+      "repository": "Library of Congress (LCNAF)",
+      "primaryUrl": "https://id.loc.gov/authorities/names/n50015080",
+      "accessDate": "2026-10-29",
+      "dateRole": "described_item",
+      "dateQualifier": "unknown",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "slug": "src0941-lcnaf-garland-judy-birth-name-frances-ethel-gumm",
+      "authoritySubject": "person",
+      "identityRelation": "same",
+      "personIds": [
+        "P138"
+      ],
+      "organizationIds": [
+        "ORG066"
+      ],
+      "nameVariantIds": [
+        "PNV0047"
+      ],
+      "mediaIds": []
+    },
+    {
+      "id": "SRC0942",
+      "sourceType": "authority_record",
+      "title": "LCNAF — Kaper, Bronislaw, 1902-1983",
+      "shortCitation": "LCNAF, “Kaper, Bronislaw, 1902–1983,” n79075647",
+      "fullCitation": "Library of Congress. “Kaper, Bronislaw, 1902–1983.” Library of Congress Name Authority File, LCCN n79075647. The record carries the variant forms “Kaper, Bronislau, 1902–1983” and “Kaper, B. (Bronislaw), 1902–1983”.",
+      "creator": "Library of Congress",
+      "publication": "Library of Congress Name Authority File (LCNAF)",
+      "repository": "Library of Congress (LCNAF)",
+      "primaryUrl": "https://id.loc.gov/authorities/names/n79075647",
+      "accessDate": "2026-10-29",
+      "dateRole": "described_item",
+      "dateQualifier": "unknown",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "slug": "src0942-lcnaf-kaper-bronislaw-catalogue-heading",
+      "authoritySubject": "person",
+      "identityRelation": "same",
+      "personIds": [
+        "P009"
+      ],
+      "organizationIds": [
+        "ORG066"
+      ],
+      "nameVariantIds": [
+        "PNV0023"
+      ],
+      "mediaIds": []
     }
   ],
   "recordCount": null

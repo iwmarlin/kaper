@@ -296,7 +296,7 @@
       "variantName": "Jean Cis",
       "variantType": "pseudonym",
       "identityScope": "single_person",
-      "evidenceContext": "authority_record",
+      "evidenceContext": "sheet_music_or_printed_credit",
       "attestedWording": "Jean Cis",
       "certainty": "confirmed",
       "publicNote": "Jean Cis is a pseudonym of Francis Salabert. The Paris print of “Ça va déjà bien mieux !” carries Jean Cis as the printed credit for the words, and the Bibliothèque nationale de France enters that print under Salabert as author of the words.",
@@ -765,13 +765,13 @@
     },
     {
       "id": "PNV0023",
-      "variantName": "Kaper, Bronislaw 1902-1983",
+      "variantName": "Kaper, Bronislaw, 1902-1983",
       "variantType": "credit_name",
       "identityScope": "single_person",
       "evidenceContext": "authority_record",
-      "attestedWording": "Kaper, Bronislaw 1902-1983",
+      "attestedWording": "Kaper, Bronislaw, 1902-1983",
       "certainty": "confirmed",
-      "publicNote": "Catalogue heading for Bronisław Kaper used in library metadata.",
+      "publicNote": "Inverted catalogue heading with life dates, as the Staatsbibliothek zu Berlin prints it on the linked records and as the Library of Congress establishes it. The archive’s own authorized form omits the dates, as it does for every heading it takes from LCNAF.",
       "personIds": [
         "P009"
       ],
@@ -783,7 +783,8 @@
       "sourceIds": [
         "SRC0505",
         "SRC0508",
-        "SRC0509"
+        "SRC0509",
+        "SRC0942"
       ]
     },
     {
@@ -1212,18 +1213,19 @@
     },
     {
       "id": "PNV0046",
-      "variantName": "Edna May Durbin",
+      "variantName": "Edna Mae Durbin",
       "variantType": "other",
       "identityScope": "single_person",
       "evidenceContext": "authority_record",
-      "attestedWording": "Edna May Durbin",
+      "attestedWording": "Durbin, Edna Mae",
       "certainty": "confirmed",
-      "publicNote": "Birth name. The authority heading is established under the professional name Deanna Durbin; the linked press notices use Deanna Durbin.",
+      "publicNote": "Birth name, carried as a variant form by the Library of Congress Name Authority File, which establishes the heading under the professional name Deanna Durbin. The same record carries “Jackson, Edna Mae”. The linked press notice uses Deanna Durbin.",
       "personIds": [
         "P137"
       ],
       "sourceIds": [
-        "SRC0380"
+        "SRC0380",
+        "SRC0940"
       ]
     },
     {
@@ -1232,14 +1234,15 @@
       "variantType": "other",
       "identityScope": "single_person",
       "evidenceContext": "authority_record",
-      "attestedWording": "Frances Ethel Gumm",
+      "attestedWording": "Gumm, Frances Ethel",
       "certainty": "confirmed",
-      "publicNote": "Birth name. The authority heading is established under the stage name Judy Garland, which the film credits recorded here also use.",
+      "publicNote": "Birth name, carried as a variant form by the Library of Congress Name Authority File, which establishes the heading under the stage name Judy Garland. The film credits recorded here also use Judy Garland.",
       "personIds": [
         "P138"
       ],
       "sourceIds": [
-        "SRC0147"
+        "SRC0147",
+        "SRC0941"
       ]
     },
     {
@@ -1296,7 +1299,7 @@
       "variantName": "Gustaw Baumritter",
       "variantType": "other",
       "identityScope": "single_person",
-      "evidenceContext": "authority_file",
+      "evidenceContext": "authority_record",
       "attestedWording": "Baumritter, Gustaw",
       "certainty": "confirmed",
       "publicNote": "Birth name. ISNI lists Gustaw Baumritter as another identity of the same person, and VIAF includes it among the alternate forms for Włast, Andrzej. Andrzej Włast remains the preferred name because it is the established authority heading and the form used in the linked credits.",
@@ -1313,7 +1316,7 @@
       "variantName": "Tihoti-Ré",
       "variantType": "pseudonym",
       "identityScope": "single_person",
-      "evidenceContext": "authority_file",
+      "evidenceContext": "authority_record",
       "attestedWording": "Tihoti-Ré",
       "certainty": "confirmed",
       "publicNote": "Tahitian pseudonym, given in the BnF person authority record as Tihoti-Ré or Tihoti-Re, with a see-also reference under that form. Tihoti is the Tahitian rendering of Georges. The Pathé disc credits the performing group as Tihoti-ré et son ensemble tahitien and names Tihoti in the vocal duo, so the composer credited as G. Rey and the singer credited as Tihoti are the same man.",
@@ -1330,7 +1333,7 @@
       "variantName": "Paul Wechselmann",
       "variantType": "other",
       "identityScope": "single_person",
-      "evidenceContext": "authority_file",
+      "evidenceContext": "authority_record",
       "attestedWording": "Wechselmann, Paul",
       "certainty": "confirmed",
       "publicNote": "Birth name, recorded as a variant in GND. The same record lists four further working names — Mawersky, Paul Stephan; Bachinger, Alois; Marois, Jean; and Walden, Peter — but none of the linked sources associates those forms with a specific work.",
@@ -1379,7 +1382,7 @@
       "variantName": "Ninon Steinhoff",
       "variantType": "spelling_variant",
       "identityScope": "single_person",
-      "evidenceContext": "authority_file",
+      "evidenceContext": "authority_record",
       "attestedWording": "Ninon Steinhoff",
       "certainty": "confirmed",
       "publicNote": "Form printed on the 1934 sheet of “Adieu”. The Bibliothèque nationale de France establishes the heading as Steinhof with one f and expressly records Steinhoff as a rejected form.",
@@ -1396,7 +1399,7 @@
       "variantName": "Marcelina Halicz",
       "variantType": "other",
       "identityScope": "single_person",
-      "evidenceContext": "authority_file",
+      "evidenceContext": "authority_record",
       "attestedWording": "Halicz, Marcelina",
       "certainty": "confirmed",
       "publicNote": "Variant form recorded in the Biblioteka Narodowa descriptor alongside Halicz, Marcela and Halicz, M. Wikidata carries it as an alias of the same identity.",
@@ -1607,7 +1610,7 @@
       "variantName": "Helmuth Wolfes",
       "variantType": "spelling_variant",
       "identityScope": "single_person",
-      "evidenceContext": "authority_file",
+      "evidenceContext": "authority_record",
       "attestedWording": "Helmuth Wolfes",
       "certainty": "confirmed",
       "publicNote": "Form used in the United States and adopted as the heading by the Library of Congress, beside the German spelling under which he worked before the emigration.",
