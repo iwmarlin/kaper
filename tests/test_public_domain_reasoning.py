@@ -179,6 +179,29 @@ class GalleryRightsTests(unittest.TestCase):
                 out.append(record)
         return out
 
+    def test_a_gallery_cover_is_a_member_that_may_be_shown(self) -> None:
+        """The index prints one image per gallery card, taken from the gallery's
+        own assetPath. Three covers were members that had just been confined to
+        detail pages, so a restricted press advertisement became the public face
+        of the card that detail_only was meant to keep it off."""
+        offenders = []
+        checked = 0
+        for gallery in self.media:
+            if gallery.get("mediaType") != "document_gallery":
+                continue
+            cover = gallery.get("assetPath")
+            if not cover:
+                continue
+            owner = next((record for record in self.members(gallery)
+                          if record.get("assetPath") == cover), None)
+            checked += 1
+            if owner is None:
+                offenders.append(f"{gallery['id']}: cover belongs to no member")
+            elif owner.get("galleryStatus") == "detail_only":
+                offenders.append(f"{gallery['id']}: cover is {owner['id']}, detail only")
+        self.assertGreater(checked, 3, "no gallery covers were checked")
+        self.assertEqual(offenders, [], "a gallery card shows what detail_only withholds")
+
     def test_a_gallery_does_not_claim_more_than_its_members(self) -> None:
         offenders = []
         checked = 0
