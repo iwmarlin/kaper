@@ -193,6 +193,18 @@ def person_functions(person: dict, contributions: dict[str, dict]) -> list[str]:
 
 
 def portrait_for(person: dict, sources: dict[str, dict], media: dict[str, dict], root: Path) -> dict | None:
+    """Return the portrait the people index shows for one person.
+
+    ``galleryStatus`` is not consulted, and that is the editorial decision
+    rather than an oversight. Fifty-three of the 133 portraits belong to media
+    records marked ``detail_only``, none of those people has a second portrait
+    to use instead, and a four-rem avatar on the page that identifies the
+    sitter is the most reduced use the archive makes of any image. The row
+    links the portrait to its media record, so the credit, the licence and the
+    rights note are one step away; that, not withholding the face, is how this
+    surface answers for what it shows.
+    """
+
     reachable = []
     for source_id in person.get("sourceIds") or []:
         source = sources.get(source_id, {})
