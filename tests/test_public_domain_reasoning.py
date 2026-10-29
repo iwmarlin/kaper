@@ -116,7 +116,8 @@ class StatedTermTests(unittest.TestCase):
     def test_a_computed_term_says_where_it_leaves_the_united_states(self) -> None:
         offenders = []
         for record in self.media:
-            if record.get("rightsStatus") not in {"public_domain", "restricted"}:
+            if record.get("rightsStatus") not in {"public_domain", "restricted",
+                                                  "provider_terms"}:
                 continue
             note = record.get("rightsNote") or ""
             if not self.TERM_END.search(note):
@@ -124,6 +125,34 @@ class StatedTermTests(unittest.TestCase):
             if "United States" not in note and "URAA" not in note:
                 offenders.append(f"{record['id']}: a term is computed, none of it ours")
         self.assertEqual(offenders, [], "a note computes a term and stops abroad")
+
+
+class ProviderTermsTests(unittest.TestCase):
+    """A digitising library licenses its scan, not the work on the page. Gallica
+    grants free non-commercial reuse under conditions governed by French law,
+    which exclude documents protected by a third party and leave reuse abroad to
+    the user; ANNO says the Österreichische Nationalbibliothek asserts no
+    exploitation right of its own and that third-party rights must be cleared
+    individually. Nineteen records rested on those terms alone, and thirteen of
+    them carried a 1925-1952 press photograph, advertisement or article whose
+    restored United States term had not been looked at. A provider's permission
+    is an answer about the scan; the note has to answer about the work too."""
+
+    #: Either the note reaches United States law, or it says no work arises.
+    REACHES_THE_WORK = re.compile(r"United States|URAA|no protected work|rather than a work",
+                                  re.I)
+
+    def test_provider_terms_also_answer_for_the_underlying_work(self) -> None:
+        offenders = []
+        checked = 0
+        for record in media_records():
+            if record.get("rightsStatus") != "provider_terms":
+                continue
+            checked += 1
+            if not self.REACHES_THE_WORK.search(record.get("rightsNote") or ""):
+                offenders.append(f"{record['id']}: rests on the provider alone")
+        self.assertGreater(checked, 3, "no provider-terms records were checked")
+        self.assertEqual(offenders, [], "a provider's terms are offered as the whole answer")
 
 
 class GalleryRightsTests(unittest.TestCase):
