@@ -6082,6 +6082,12 @@
           "researchNote",
           "researchNoteType"
         ]
+      },
+      "SRC0057": {
+        "reason": "Correct the instrumentation and credits against the linked BnF catalogue record.",
+        "fields": {
+          "fullCitation": "Walter Jurmann and Bronisław Kaper, “Vivons l’amour, vivons la vie,” tango from the revue Parade de France; words by Henri Varna and Marc Cab. Voice and piano. Paris: Coda, 1934. Bibliothèque nationale de France, Catalogue général, FRBNF43070920, ark:/12148/cb43070920f."
+        }
       }
     },
     "Media": {
@@ -8544,10 +8550,10 @@
           "evidenceContext": [
             "online_catalogue"
           ],
-          "publicNote": "The Coda chant-et-piano print names Henri Varna and Marc-Cab; the BnF transcription of the Columbia disc additionally names “Lelievre”, without a forename. A newly examined label reading is not claimed here.",
-          "scopeNote": "The BnF catalogue transcribes the lyricists as “Varna, Lelievre & Marc-Cab”. It gives no forename for Lelievre and does not resolve the identity between father and son. The proposed identification remains probable; the catalogue transcription alone does not confirm it."
+          "publicNote": "The BnF catalogue of the voice-only edition names Léo Lelièvre (1899–1966) among the lyricists. Its separate voice-and-piano entry names Varna and Marc-Cab without Lelièvre; the copies have not been compared.",
+          "scopeNote": "The Columbia disc catalogue transcribes “Varna, Lelievre & Marc-Cab” without a forename. The BnF catalogue for the voice-only edition identifies Léo Lelièvre (1899–1966); the voice-and-piano entry does not list him. The attribution remains probable pending comparison of the printed sources."
         },
-        "reason": "Review of nine recording catalogues, 26 October 2026: distinguish library descriptions, independent matrix evidence, legal deposit and recording dates; retain qualified transfer identifications."
+        "reason": "Distinguish the BnF record's qualified identification of Léo Lelièvre from the catalogue entry that omits him and the disc catalogue's surname-only credit."
       },
       "CON-S123-C-P155": {
         "fields": {
@@ -15155,6 +15161,114 @@
           ],
           "primaryUrl": "https://catalog.afi.com/Film/6120-MAYTIME"
         }
+      },
+      "SRC0950": {
+        "reason": "Document the BnF catalogue of the 1932 vocal edition, which explicitly names André Mauprey as author of the French words.",
+        "fields": {
+          "id": "SRC0950",
+          "shortCitation": "“Dit’s moi, Madam!...”, French vocal edition (Eschig, 1932), BnF catalogue",
+          "fullCitation": "Walter Jurmann and Bronisław Kaper, “Dit’s moi, Madam!...” (Ich frag’ Madam’ wann kommen wir zusamm’?), fox-trot from E. M. B. H.; original words by Fritz Rotter, French words by André Mauprey. Voice and piano and voice alone. Paris: éditions Max Eschig, 1932. Bibliothèque nationale de France, Catalogue général, FRBNF43069600, ark:/12148/cb43069600z.",
+          "sourceType": "sheet_music_catalogue",
+          "title": "Dit’s moi, Madam!... — French vocal edition",
+          "creator": "Walter Jurmann and Bronisław Kaper (music); Fritz Rotter (original words); André Mauprey (French words)",
+          "repository": "Bibliothèque nationale de France / Catalogue général",
+          "publication": "éditions Max Eschig (Paris)",
+          "date": "1932",
+          "dateRole": "issue",
+          "dateQualifier": "confirmed",
+          "accessDate": "2026-10-30",
+          "reliability": "high",
+          "sourceStatus": "verified",
+          "slug": "src0950-dits-moi-madam-french-vocal-edition-bnf-1932",
+          "personIds": [
+            "P005",
+            "P009",
+            "P020",
+            "P077"
+          ],
+          "organizationIds": [
+            "ORG047",
+            "ORG062"
+          ],
+          "workIds": [
+            "W-S034",
+            "W-S050"
+          ],
+          "songIds": [
+            "S034",
+            "S050"
+          ],
+          "contributionIds": [
+            "CON-S050-C-P009",
+            "CON-S050-C-P077",
+            "CON-S050-L-P005",
+            "CON-S050-PUB-ORG047",
+            "CON-S034-L-P020"
+          ],
+          "primaryUrl": "https://catalogue.bnf.fr/ark:/12148/cb43069600z",
+          "researchNote": "The BnF catalogue explicitly distinguishes Rotter’s original words from Mauprey’s French words. This record describes the vocal edition; the 1934 orchestral arrangement is catalogued separately as SRC0070. The digitized copy is available on Gallica intra muros; the score itself was not examined.",
+          "researchNoteType": "evidence_note",
+          "identifiers": [
+            {
+              "scheme": "ark",
+              "value": "ark:/12148/cb43069600z"
+            }
+          ]
+        }
+      },
+      "SRC0951": {
+        "reason": "Add the distinct BnF catalogue of the vocal edition, including its named Léo Lelièvre authority link and copyright date.",
+        "fields": {
+          "id": "SRC0951",
+          "shortCitation": "“Vivons l’amour, vivons la vie”, vocal edition (Coda, © 1934), BnF catalogue",
+          "fullCitation": "Walter Jurmann and Bronisław Kaper, “Vivons l’amour, vivons la vie,” tango; words by Henri Varna, Léo Lelièvre and Marc Cab. Voice alone. Paris: Coda, Heugel and M. Senart, © 1934; plate E. C. P. 142. Bibliothèque nationale de France, Catalogue général, FRBNF42538172, ark:/12148/cb425381729.",
+          "sourceType": "sheet_music_catalogue",
+          "title": "Vivons l’amour, vivons la vie — vocal edition",
+          "creator": "Walter Jurmann and Bronisław Kaper (music); Henri Varna, Léo Lelièvre and Marc Cab (words)",
+          "repository": "Bibliothèque nationale de France / Catalogue général",
+          "publication": "Coda; Heugel; M. Senart (Paris)",
+          "date": "1934",
+          "dateRole": "described_item",
+          "dateQualifier": "confirmed",
+          "accessDate": "2026-10-30",
+          "reliability": "high",
+          "sourceStatus": "verified",
+          "slug": "src0951-vivons-lamour-vocal-edition-bnf-1934",
+          "personIds": [
+            "P009",
+            "P077",
+            "P031",
+            "P051",
+            "P052"
+          ],
+          "organizationIds": [
+            "ORG030",
+            "ORG062"
+          ],
+          "workIds": [
+            "W-S112"
+          ],
+          "songIds": [
+            "S112"
+          ],
+          "contributionIds": [
+            "CON-S112-C-P009",
+            "CON-S112-C-P077",
+            "CON-S112-L-P031",
+            "CON-S112-L-P051",
+            "CON-S112-L-P052",
+            "CON-S112-PUB-ORG030"
+          ],
+          "primaryUrl": "https://catalogue.bnf.fr/ark:/12148/cb425381729",
+          "researchNote": "BnF catalogues Léo Lelièvre as the 1899–1966 lyricist. A separate voice-and-piano catalogue entry, SRC0057, names Varna and Marc-Cab but not Lelièvre. The different catalogue attributions are retained; the printed copies have not been compared. The year is the copyright date stated in the catalogue, not an independently verified issue date.",
+          "researchNoteType": "evidence_note",
+          "identifiers": [
+            {
+              "scheme": "ark",
+              "value": "ark:/12148/cb425381729"
+            }
+          ]
+        }
       }
     },
     "Songs": {
@@ -17160,7 +17274,8 @@
       "ORG030": {
         "fields": {
           "sourceIds": [
-            "SRC0705"
+            "SRC0705",
+            "SRC0951"
           ]
         },
         "reason": "Individually reviewed publisher evidence and printed 60-series label numbers, 26 October 2026; do not equate record imprints with sheet-music publishers."
@@ -17362,7 +17477,9 @@
             "SRC0833",
             "SRC0856",
             "SRC0857",
-            "SRC0935"
+            "SRC0935",
+            "SRC0950",
+            "SRC0951"
           ]
         }
       },
@@ -17708,6 +17825,14 @@
           ],
           "contributionIds": [
             "CON-S116-PUB-ORG039"
+          ]
+        }
+      },
+      "ORG047": {
+        "reason": "Connect the BnF catalogue of the 1932 vocal edition to the entity it documents.",
+        "fields": {
+          "sourceIds": [
+            "SRC0950"
           ]
         }
       }
@@ -18414,6 +18539,94 @@
         "fields": {
           "sourceIds": [
             "SRC0373"
+          ]
+        }
+      },
+      "CON-S050-C-P009": {
+        "reason": "Connect the BnF catalogue of the 1932 vocal edition to the entity it documents.",
+        "fields": {
+          "sourceIds": [
+            "SRC0950"
+          ]
+        }
+      },
+      "CON-S050-C-P077": {
+        "reason": "Connect the BnF catalogue of the 1932 vocal edition to the entity it documents.",
+        "fields": {
+          "sourceIds": [
+            "SRC0950"
+          ]
+        }
+      },
+      "CON-S050-L-P005": {
+        "reason": "Connect the BnF catalogue of the 1932 vocal edition to the entity it documents.",
+        "fields": {
+          "sourceIds": [
+            "SRC0950"
+          ]
+        }
+      },
+      "CON-S050-PUB-ORG047": {
+        "reason": "Connect the BnF catalogue of the 1932 vocal edition to the entity it documents.",
+        "fields": {
+          "sourceIds": [
+            "SRC0950"
+          ]
+        }
+      },
+      "CON-S034-L-P020": {
+        "reason": "Connect the BnF catalogue of the 1932 vocal edition to the entity it documents.",
+        "fields": {
+          "sourceIds": [
+            "SRC0950"
+          ]
+        }
+      },
+      "CON-S112-C-P009": {
+        "reason": "Connect the BnF catalogue of the 1934 vocal edition to the entity it documents.",
+        "fields": {
+          "sourceIds": [
+            "SRC0951"
+          ]
+        }
+      },
+      "CON-S112-C-P077": {
+        "reason": "Connect the BnF catalogue of the 1934 vocal edition to the entity it documents.",
+        "fields": {
+          "sourceIds": [
+            "SRC0951"
+          ]
+        }
+      },
+      "CON-S112-L-P031": {
+        "reason": "Connect the BnF catalogue of the 1934 vocal edition to the entity it documents.",
+        "fields": {
+          "sourceIds": [
+            "SRC0951"
+          ]
+        }
+      },
+      "CON-S112-L-P051": {
+        "reason": "Connect the BnF catalogue of the 1934 vocal edition to the entity it documents.",
+        "fields": {
+          "sourceIds": [
+            "SRC0951"
+          ]
+        }
+      },
+      "CON-S112-L-P052": {
+        "reason": "Connect the BnF catalogue of the 1934 vocal edition to the entity it documents.",
+        "fields": {
+          "sourceIds": [
+            "SRC0951"
+          ]
+        }
+      },
+      "CON-S112-PUB-ORG030": {
+        "reason": "Connect the BnF catalogue of the 1934 vocal edition to the entity it documents.",
+        "fields": {
+          "sourceIds": [
+            "SRC0951"
           ]
         }
       }
@@ -19402,6 +19615,9 @@
         "fields": {
           "personIds": [
             "P051"
+          ],
+          "sourceIds": [
+            "SRC0951"
           ]
         }
       },
@@ -19426,6 +19642,30 @@
         "fields": {
           "sourceIds": [
             "SRC0373"
+          ]
+        }
+      },
+      "W-S034": {
+        "reason": "Connect the BnF catalogue of the 1932 vocal edition to the entity it documents.",
+        "fields": {
+          "sourceIds": [
+            "SRC0950"
+          ]
+        }
+      },
+      "W-S050": {
+        "reason": "Connect the BnF catalogue of the 1932 vocal edition to the entity it documents.",
+        "fields": {
+          "sourceIds": [
+            "SRC0950"
+          ]
+        }
+      },
+      "S112": {
+        "reason": "Connect the BnF catalogue of the 1934 vocal edition to the entity it documents.",
+        "fields": {
+          "sourceIds": [
+            "SRC0951"
           ]
         }
       }
@@ -19862,6 +20102,22 @@
         "fields": {
           "sourceIds": [
             "SRC0373"
+          ]
+        }
+      },
+      "S034": {
+        "reason": "Connect the BnF catalogue of the 1932 vocal edition to the entity it documents.",
+        "fields": {
+          "sourceIds": [
+            "SRC0950"
+          ]
+        }
+      },
+      "S050": {
+        "reason": "Connect the BnF catalogue of the 1932 vocal edition to the entity it documents.",
+        "fields": {
+          "sourceIds": [
+            "SRC0950"
           ]
         }
       }
@@ -20777,7 +21033,9 @@
             "SRC0625",
             "SRC0633",
             "SRC0658",
-            "SRC0678"
+            "SRC0678",
+            "SRC0950",
+            "SRC0951"
           ],
           "contributionIds": [
             "CON-F009-C-P009",
@@ -20857,7 +21115,8 @@
             "SRC0223",
             "SRC0226",
             "SRC0373",
-            "SRC0658"
+            "SRC0658",
+            "SRC0950"
           ],
           "contributionIds": [
             "CON-S205-L-P020",
@@ -21051,7 +21310,9 @@
             "SRC0630",
             "SRC0587",
             "SRC0625",
-            "SRC0633"
+            "SRC0633",
+            "SRC0950",
+            "SRC0951"
           ],
           "contributionIds": [
             "CON-F004-C-P077",
@@ -21260,6 +21521,38 @@
         "fields": {
           "sourceIds": [
             "SRC0373"
+          ]
+        }
+      },
+      "P005": {
+        "reason": "Connect the BnF catalogue of the 1932 vocal edition to the entity it documents.",
+        "fields": {
+          "sourceIds": [
+            "SRC0950"
+          ]
+        }
+      },
+      "P031": {
+        "reason": "Connect the BnF catalogue of the 1934 vocal edition to the entity it documents.",
+        "fields": {
+          "sourceIds": [
+            "SRC0951"
+          ]
+        }
+      },
+      "P051": {
+        "reason": "Connect the BnF catalogue of the 1934 vocal edition to the entity it documents.",
+        "fields": {
+          "sourceIds": [
+            "SRC0951"
+          ]
+        }
+      },
+      "P052": {
+        "reason": "Connect the BnF catalogue of the 1934 vocal edition to the entity it documents.",
+        "fields": {
+          "sourceIds": [
+            "SRC0951"
           ]
         }
       }
@@ -24545,6 +24838,14 @@
             "CON-F006-MD-P147"
           ]
         }
+      },
+      "SRC0070": {
+        "reason": "The 1934 orchestral catalogue does not identify the author of the French words.",
+        "fields": {
+          "contributionIds": [
+            "CON-S050-L-P005"
+          ]
+        }
       }
     },
     "Works": {
@@ -25935,6 +26236,14 @@
         "fields": {
           "sourceIds": [
             "SRC0610"
+          ]
+        }
+      },
+      "CON-S050-L-P005": {
+        "reason": "The 1934 orchestral catalogue does not identify the author of the French words.",
+        "fields": {
+          "sourceIds": [
+            "SRC0070"
           ]
         }
       }

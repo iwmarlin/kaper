@@ -7921,7 +7921,8 @@
       ],
       "sourceIds": [
         "SRC0184",
-        "SRC0753"
+        "SRC0753",
+        "SRC0950"
       ]
     },
     {
@@ -8924,7 +8925,8 @@
         "P009"
       ],
       "sourceIds": [
-        "SRC0070"
+        "SRC0070",
+        "SRC0950"
       ],
       "nameVariantIds": [
         "PNV0019"
@@ -8943,7 +8945,8 @@
         "P077"
       ],
       "sourceIds": [
-        "SRC0070"
+        "SRC0070",
+        "SRC0950"
       ]
     },
     {
@@ -8959,7 +8962,7 @@
         "P005"
       ],
       "sourceIds": [
-        "SRC0070"
+        "SRC0950"
       ]
     },
     {
@@ -8977,7 +8980,8 @@
         "ORG047"
       ],
       "sourceIds": [
-        "SRC0070"
+        "SRC0070",
+        "SRC0950"
       ]
     },
     {
@@ -13531,7 +13535,8 @@
         "SRC0057",
         "SRC0065",
         "SRC0705",
-        "SRC0802"
+        "SRC0802",
+        "SRC0951"
       ]
     },
     {
@@ -13550,7 +13555,8 @@
         "SRC0057",
         "SRC0065",
         "SRC0705",
-        "SRC0802"
+        "SRC0802",
+        "SRC0951"
       ]
     },
     {
@@ -13568,7 +13574,8 @@
       "sourceIds": [
         "SRC0057",
         "SRC0065",
-        "SRC0705"
+        "SRC0705",
+        "SRC0951"
       ]
     },
     {
@@ -13586,7 +13593,8 @@
       "sourceIds": [
         "SRC0057",
         "SRC0065",
-        "SRC0705"
+        "SRC0705",
+        "SRC0951"
       ]
     },
     {
@@ -13607,7 +13615,8 @@
       "sourceIds": [
         "SRC0057",
         "SRC0065",
-        "SRC0705"
+        "SRC0705",
+        "SRC0951"
       ],
       "scopeNote": "The BnF sheet-music catalogue entries identify Coda; Phonobase record 15273 separately states “Éditeur : Coda, Heugel, Paris (1934)”. This is a publishing credit, distinct from the Pathé record imprint."
     },
@@ -23956,7 +23965,7 @@
       ],
       "sortOrder": 3,
       "certainty": "probable",
-      "publicNote": "The Coda chant-et-piano print names Henri Varna and Marc-Cab; the BnF transcription of the Columbia disc additionally names “Lelievre”, without a forename. A newly examined label reading is not claimed here.",
+      "publicNote": "The BnF catalogue of the voice-only edition names Léo Lelièvre (1899–1966) among the lyricists. Its separate voice-and-piano entry names Varna and Marc-Cab without Lelièvre; the copies have not been compared.",
       "workIds": [
         "W-S112"
       ],
@@ -23964,9 +23973,10 @@
         "P051"
       ],
       "sourceIds": [
-        "SRC0802"
+        "SRC0802",
+        "SRC0951"
       ],
-      "scopeNote": "The BnF catalogue transcribes the lyricists as “Varna, Lelievre & Marc-Cab”. It gives no forename for Lelievre and does not resolve the identity between father and son. The proposed identification remains probable; the catalogue transcription alone does not confirm it."
+      "scopeNote": "The Columbia disc catalogue transcribes “Varna, Lelievre & Marc-Cab” without a forename. The BnF catalogue for the voice-only edition identifies Léo Lelièvre (1899–1966); the voice-and-piano entry does not list him. The attribution remains probable pending comparison of the printed sources."
     },
     {
       "id": "CON-S016-LAB-ORG152",

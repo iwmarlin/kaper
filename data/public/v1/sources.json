@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 854,
+  "count": 856,
   "records": [
     {
       "id": "SRC0001",
@@ -1517,7 +1517,7 @@
     {
       "id": "SRC0057",
       "shortCitation": "Jurmann–Kaper, “Vivons l’amour, vivons la vie” (Coda, 1934)",
-      "fullCitation": "Walter Jurmann and Bronisław Kaper, “Vivons l’amour, vivons la vie” (tango), from the revue Parade de France (Casino de Paris; words by Henri Varna and Marc-Cab); arr. Paul Saegel. Paris: Éditions Coda, 1934. Bibliothèque nationale de France, ARK ark:/12148/cb43070920f.",
+      "fullCitation": "Walter Jurmann and Bronisław Kaper, “Vivons l’amour, vivons la vie,” tango from the revue Parade de France; words by Henri Varna and Marc Cab. Voice and piano. Paris: Coda, 1934. Bibliothèque nationale de France, Catalogue général, FRBNF43070920, ark:/12148/cb43070920f.",
       "sourceType": "sheet_music_catalogue",
       "title": "Vivons l’amour! Vivons la vie",
       "creator": "Walter Jurmann and Bronisław Kaper (music); Henri Varna and Marc-Cab (words)",
@@ -2172,7 +2172,6 @@
       "contributionIds": [
         "CON-S050-C-P009",
         "CON-S050-C-P077",
-        "CON-S050-L-P005",
         "CON-S050-PUB-ORG047"
       ],
       "nameVariantIds": [
@@ -32442,6 +32441,108 @@
         "CON-F047-D-P082"
       ],
       "primaryUrl": "https://catalog.afi.com/Film/6120-MAYTIME"
+    },
+    {
+      "id": "SRC0950",
+      "shortCitation": "“Dit’s moi, Madam!...”, French vocal edition (Eschig, 1932), BnF catalogue",
+      "fullCitation": "Walter Jurmann and Bronisław Kaper, “Dit’s moi, Madam!...” (Ich frag’ Madam’ wann kommen wir zusamm’?), fox-trot from E. M. B. H.; original words by Fritz Rotter, French words by André Mauprey. Voice and piano and voice alone. Paris: éditions Max Eschig, 1932. Bibliothèque nationale de France, Catalogue général, FRBNF43069600, ark:/12148/cb43069600z.",
+      "sourceType": "sheet_music_catalogue",
+      "title": "Dit’s moi, Madam!... — French vocal edition",
+      "creator": "Walter Jurmann and Bronisław Kaper (music); Fritz Rotter (original words); André Mauprey (French words)",
+      "repository": "Bibliothèque nationale de France / Catalogue général",
+      "publication": "éditions Max Eschig (Paris)",
+      "date": "1932",
+      "dateRole": "issue",
+      "dateQualifier": "confirmed",
+      "accessDate": "2026-10-30",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "slug": "src0950-dits-moi-madam-french-vocal-edition-bnf-1932",
+      "personIds": [
+        "P005",
+        "P009",
+        "P020",
+        "P077"
+      ],
+      "organizationIds": [
+        "ORG047",
+        "ORG062"
+      ],
+      "workIds": [
+        "W-S034",
+        "W-S050"
+      ],
+      "songIds": [
+        "S034",
+        "S050"
+      ],
+      "contributionIds": [
+        "CON-S050-C-P009",
+        "CON-S050-C-P077",
+        "CON-S050-L-P005",
+        "CON-S050-PUB-ORG047",
+        "CON-S034-L-P020"
+      ],
+      "primaryUrl": "https://catalogue.bnf.fr/ark:/12148/cb43069600z",
+      "researchNote": "The BnF catalogue explicitly distinguishes Rotter’s original words from Mauprey’s French words. This record describes the vocal edition; the 1934 orchestral arrangement is catalogued separately as SRC0070. The digitized copy is available on Gallica intra muros; the score itself was not examined.",
+      "researchNoteType": "evidence_note",
+      "identifiers": [
+        {
+          "scheme": "ark",
+          "value": "ark:/12148/cb43069600z"
+        }
+      ]
+    },
+    {
+      "id": "SRC0951",
+      "shortCitation": "“Vivons l’amour, vivons la vie”, vocal edition (Coda, © 1934), BnF catalogue",
+      "fullCitation": "Walter Jurmann and Bronisław Kaper, “Vivons l’amour, vivons la vie,” tango; words by Henri Varna, Léo Lelièvre and Marc Cab. Voice alone. Paris: Coda, Heugel and M. Senart, © 1934; plate E. C. P. 142. Bibliothèque nationale de France, Catalogue général, FRBNF42538172, ark:/12148/cb425381729.",
+      "sourceType": "sheet_music_catalogue",
+      "title": "Vivons l’amour, vivons la vie — vocal edition",
+      "creator": "Walter Jurmann and Bronisław Kaper (music); Henri Varna, Léo Lelièvre and Marc Cab (words)",
+      "repository": "Bibliothèque nationale de France / Catalogue général",
+      "publication": "Coda; Heugel; M. Senart (Paris)",
+      "date": "1934",
+      "dateRole": "described_item",
+      "dateQualifier": "confirmed",
+      "accessDate": "2026-10-30",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "slug": "src0951-vivons-lamour-vocal-edition-bnf-1934",
+      "personIds": [
+        "P009",
+        "P077",
+        "P031",
+        "P051",
+        "P052"
+      ],
+      "organizationIds": [
+        "ORG030",
+        "ORG062"
+      ],
+      "workIds": [
+        "W-S112"
+      ],
+      "songIds": [
+        "S112"
+      ],
+      "contributionIds": [
+        "CON-S112-C-P009",
+        "CON-S112-C-P077",
+        "CON-S112-L-P031",
+        "CON-S112-L-P051",
+        "CON-S112-L-P052",
+        "CON-S112-PUB-ORG030"
+      ],
+      "primaryUrl": "https://catalogue.bnf.fr/ark:/12148/cb425381729",
+      "researchNote": "BnF catalogues Léo Lelièvre as the 1899–1966 lyricist. A separate voice-and-piano catalogue entry, SRC0057, names Varna and Marc-Cab but not Lelièvre. The different catalogue attributions are retained; the printed copies have not been compared. The year is the copyright date stated in the catalogue, not an independently verified issue date.",
+      "researchNoteType": "evidence_note",
+      "identifiers": [
+        {
+          "scheme": "ark",
+          "value": "ark:/12148/cb425381729"
+        }
+      ]
     }
   ],
   "recordCount": null

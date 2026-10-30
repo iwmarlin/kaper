@@ -93,7 +93,9 @@ class RecordingCatalogueReviewTests(unittest.TestCase):
     def test_catalogue_transcription_does_not_silently_resolve_lelievre_identity(self):
         credit = self.tables["contributions"]["CON-S112-L-P051"]
         self.assertEqual(credit["certainty"], "probable")
-        self.assertIn("no forename", credit["scopeNote"])
+        self.assertIn("without a forename", credit["scopeNote"])
+        self.assertIn("1899–1966", credit["scopeNote"])
+        self.assertIn("remains probable", credit["scopeNote"])
         self.assertIn("online_catalogue", credit["evidenceContext"])
         self.assertIn("Jurmann-Kaber", self.tables["sources"]["SRC0802"]["fullCitation"])
 
