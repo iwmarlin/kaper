@@ -491,7 +491,7 @@
       ],
       "sortOrder": 42,
       "certainty": "confirmed",
-      "scopeNote": "filmportal.de records this credit as “Arrangement”. It documents musical direction or arrangement on the film, not authorship of Kaper’s songs.",
+      "scopeNote": "filmportal.de credits Grothe for “Arrangement” on the film. It does not identify the individual pieces arranged or establish a musical-direction credit for him.",
       "workIds": [
         "W-F007"
       ],
@@ -2275,7 +2275,7 @@
       ],
       "sortOrder": 42,
       "certainty": "confirmed",
-      "scopeNote": "filmportal.de records this credit as “Musik-Bearbeitung”. It documents musical direction or arrangement on the film, not authorship of Kaper’s songs.",
+      "scopeNote": "filmportal.de lists Borgmann under “Musik-Bearbeitung” for the film, alongside Kaper and Jurmann. This film-level credit does not identify the individual pieces arranged or establish musical direction.",
       "workIds": [
         "W-F024"
       ],
@@ -5339,7 +5339,8 @@
         "P009"
       ],
       "sourceIds": [
-        "SRC0227"
+        "SRC0227",
+        "SRC0789"
       ],
       "nameVariantIds": [
         "PNV0021"
@@ -5596,8 +5597,12 @@
     {
       "id": "CON-O012-A-P009",
       "role": "arranger",
-      "nameAsPrinted": "Kaper, Bronislaw 1902-1983",
-      "creditAsPrinted": "AU Kaper, Bronislaw 1902-1983",
+      "nameAsPrinted": "Dr. B. Kaper",
+      "creditAsPrinted": "Transcription for 2 Pianos by Dr. B. Kaper",
+      "evidenceContext": [
+        "sheet_music"
+      ],
+      "evidenceLocator": "first page of the music sample",
       "scopeNote": "Rumba transcription for two pianos in the Cocktails series.",
       "sortOrder": 1,
       "certainty": "confirmed",
@@ -5608,10 +5613,11 @@
         "P009"
       ],
       "sourceIds": [
-        "SRC0505"
+        "SRC0505",
+        "SRC0789"
       ],
       "nameVariantIds": [
-        "PNV0023"
+        "PNV0021"
       ]
     },
     {

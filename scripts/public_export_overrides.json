@@ -8371,6 +8371,24 @@
       }
     },
     "Contributions": {
+      "CON-F007-A-P149": {
+        "fields": {"scopeNote": "filmportal.de credits Grothe for “Arrangement” on the film. It does not identify the individual pieces arranged or establish a musical-direction credit for him."},
+        "reason": "Keep the filmportal arrangement credit distinct from musical direction and from authorship of individual songs."
+      },
+      "CON-F024-A-P145": {
+        "fields": {"scopeNote": "filmportal.de lists Borgmann under “Musik-Bearbeitung” for the film, alongside Kaper and Jurmann. This film-level credit does not identify the individual pieces arranged or establish musical direction."},
+        "reason": "Transcribe the film-level arrangement credit without conflating it with musical direction."
+      },
+      "CON-O012-A-P009": {
+        "fields": {
+          "nameAsPrinted": "Dr. B. Kaper",
+          "creditAsPrinted": "Transcription for 2 Pianos by Dr. B. Kaper",
+          "evidenceContext": ["sheet_music"],
+          "evidenceLocator": "first page of the music sample",
+          "nameVariantIds": ["PNV0021"]
+        },
+        "reason": "Replace the library authority heading presented as printed credit with the credit visible on the examined Fiesta music sample."
+      },
       "CON-S214-P-P117": {
         "reason": "Distinguish the Biblioteka Narodowa catalogue SRC0633 from direct label evidence in SRC0761; preserve Kiepura performance identity and date bounds.",
         "fields": {
@@ -17838,6 +17856,14 @@
       }
     },
     "Contributions": {
+      "CON-O007-A-P009": {
+        "fields": {"sourceIds": ["SRC0789"]},
+        "reason": "The examined Cocktails cover directly prints Kaper's transcription credit."
+      },
+      "CON-O012-A-P009": {
+        "fields": {"sourceIds": ["SRC0789"]},
+        "reason": "The examined Fiesta music sample directly prints Kaper's transcription credit."
+      },
       "CON-S016-L-P020": {
         "fields": {
           "sourceIds": [
@@ -18841,7 +18867,7 @@
         }
       },
       "W-O007": {"reason": "Attach the archival source that distinguishes the ten-title original Cocktails edition from the later associated Fiesta issue.", "fields": {"sourceIds": ["SRC0789"]}},
-      "W-O012": {"reason": "Add the verified original composers of Fiesta (Bianca), separately from Kaper's transcription credit, and attach the surviving score headed Ein neuer Cocktail.", "fields": {"sourceIds": ["SRC0773", "SRC0789"], "contributionIds": ["CON-O012-C-P177", "CON-O012-C-P178"], "personIds": ["P177", "P178"]}},
+      "W-O012": {"reason": "Add the verified original composers of Fiesta (Bianca), separately from Kaper's transcription credit, and attach the surviving score headed Ein neuer Cocktail and its printed name form.", "fields": {"sourceIds": ["SRC0773", "SRC0789"], "contributionIds": ["CON-O012-C-P177", "CON-O012-C-P178"], "personIds": ["P177", "P178"], "nameVariantIds": ["PNV0021"]}},
       "W-O013": {"reason": "Add the original composer credit for the Cocktails transcription.", "fields": {"contributionIds": ["CON-O013-C-P179"], "personIds": ["P179"]}},
       "W-O014": {"reason": "Add the original composer credit for the Cocktails transcription.", "fields": {"contributionIds": ["CON-O014-C-P179"], "personIds": ["P179"]}},
       "W-O015": {"reason": "Identify Strauss as Johann Strauss II and link the original music credit.", "fields": {"contributionIds": ["CON-O015-C-P180"], "personIds": ["P180"]}},
@@ -20123,6 +20149,10 @@
       }
     },
     "Person Name Variants": {
+      "PNV0021": {
+        "fields": {"workIds": ["W-O012"], "sourceIds": ["SRC0789"]},
+        "reason": "The examined Fiesta music sample and Cocktails cover print the form Dr. B. Kaper."
+      },
       "PNV0003": {
         "fields": {
           "sourceIds": [
@@ -22484,8 +22514,8 @@
         "fields": { "personIds": ["P009"] }
       },
       "SRC0789": {
-        "reason": "Link the Cocktails cover and Fiesta score source to their documented arranger Bronisław Kaper.",
-        "fields": { "personIds": ["P009"] }
+        "reason": "Link the examined Cocktails cover and Fiesta music sample to their printed arranger credits and name form.",
+        "fields": {"personIds": ["P009"], "contributionIds": ["CON-O007-A-P009", "CON-O012-A-P009"], "nameVariantIds": ["PNV0021"]}
       },
       "SRC0039": {
         "reason": "Connect the manifest's subject Bronisław Kaper and Eleonora Kaper, and synchronize the inverse place link already present from PL043.",
