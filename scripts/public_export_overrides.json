@@ -9582,6 +9582,36 @@
         "fields": {
           "scopeNote": "The Odeon O-11811 a label credits Hans Albers with the Odeon-Künstler-Orchester under Otto Dobrindt and names Heut’ kommt’s drauf an. Sieghardt’s filmography (SRC0373, p. 229) separately attributes the song to Albers in that film."
         }
+      },
+      "CON-F006-MD-P147": {
+        "reason": "Keep the credit focused on evidence for this film.",
+        "fields": {
+          "scopeNote": "Filmportal credits Mark Lavry with “Musikalische Leitung” on the film. This documents music direction, not authorship of Kaper’s songs."
+        }
+      },
+      "CON-S105-P-P198": {
+        "reason": "Distinguish BnF’s disc catalogue from the Internet Archive listening reference.",
+        "fields": {
+          "scopeNote": "BnF catalogues Rossi with Orchestre de Tango Rafaelo on Columbia DF 1622. The Internet Archive collection lists the same disc and provides a listening reference; its exact source copy and take have not been independently established."
+        }
+      },
+      "CON-S112-P-P198": {
+        "reason": "Distinguish BnF’s disc catalogue from the Internet Archive listening reference.",
+        "fields": {
+          "scopeNote": "BnF catalogues Rossi on Columbia DF 1606. The Internet Archive collection lists the same disc and provides a listening reference; its exact source copy and take have not been independently established."
+        }
+      },
+      "CON-S114-P-P198": {
+        "reason": "Distinguish BnF’s disc catalogue from the Internet Archive listening reference.",
+        "fields": {
+          "scopeNote": "BnF catalogues Rossi with orchestra conducted by Marcel Cariven on Columbia DF 1610. The Internet Archive collection lists the same disc and provides a listening reference; its exact source copy and take have not been independently established."
+        }
+      },
+      "CON-S115-P-P198": {
+        "reason": "Distinguish BnF’s disc catalogue from the Internet Archive listening reference.",
+        "fields": {
+          "scopeNote": "BnF catalogues Rossi on Columbia DF 1606. The Internet Archive collection lists the same disc and provides a listening reference; its exact source copy and take have not been independently established."
+        }
       }
     },
     "Person Name Variants": {
@@ -11351,6 +11381,26 @@
           "sourceIds": [
             "SRC0131",
             "SRC0373"
+          ]
+        }
+      },
+      "CON-F019-MD-P077": {
+        "reason": "Filmportal separately names Walter Jurmann under Musikalische Leitung for the French-language film.",
+        "fields": {
+          "id": "CON-F019-MD-P077",
+          "role": "music_director",
+          "creditAsPrinted": "Musikalische Leitung",
+          "evidenceContext": "film_credits",
+          "sortOrder": 41,
+          "certainty": "confirmed",
+          "workIds": [
+            "W-F019"
+          ],
+          "personIds": [
+            "P077"
+          ],
+          "sourceIds": [
+            "SRC0130"
           ]
         }
       },
@@ -18829,7 +18879,8 @@
         "reason": "Attach Walter Jurmann's confirmed co-composer contribution to L'Homme qui ne sait pas dire non while retaining Kaper's separate music-direction role.",
         "fields": {
           "contributionIds": [
-            "CON-F019-C-P077"
+            "CON-F019-C-P077",
+            "CON-F019-MD-P077"
           ]
         }
       },
@@ -21050,7 +21101,8 @@
             "CON-F049-SM-P077",
             "CON-F050-C-P077",
             "CON-F051-C-P077",
-            "CON-F054-C-P077"
+            "CON-F054-C-P077",
+            "CON-F019-MD-P077"
           ],
           "timelineEventIds": [
             "TE0040",
@@ -22788,7 +22840,8 @@
         "reason": "Synchronize the Walter Jurmann music credit for L'Homme qui ne sait pas dire non with the new confirmed contribution.",
         "fields": {
           "contributionIds": [
-            "CON-F019-C-P077"
+            "CON-F019-C-P077",
+            "CON-F019-MD-P077"
           ]
         }
       },
@@ -24484,6 +24537,14 @@
             "CON-F052-D-P157"
           ]
         }
+      },
+      "SRC0610": {
+        "reason": "The general biography supports biographical context, not this specific film credit.",
+        "fields": {
+          "contributionIds": [
+            "CON-F006-MD-P147"
+          ]
+        }
       }
     },
     "Works": {
@@ -25866,6 +25927,14 @@
         "fields": {
           "sourceIds": [
             "SRC0373"
+          ]
+        }
+      },
+      "CON-F006-MD-P147": {
+        "reason": "The general biography supports biographical context, not this specific film credit.",
+        "fields": {
+          "sourceIds": [
+            "SRC0610"
           ]
         }
       }

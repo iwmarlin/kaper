@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 1326,
+  "count": 1327,
   "records": [
     {
       "id": "CON-F001-C-P009",
@@ -452,7 +452,7 @@
       ],
       "sortOrder": 42,
       "certainty": "confirmed",
-      "scopeNote": "filmportal.de records this credit as “Musikalische Leitung”, spelling the name Mark Lavry. The Marc Lavry Heritage Society places him in Berlin from 1927 to 1933, conducting the Berliner Sinfonie Orchester and writing film music, which fits this 1931 production. It documents musical direction, not authorship of Kaper’s songs.",
+      "scopeNote": "Filmportal credits Mark Lavry with “Musikalische Leitung” on the film. This documents music direction, not authorship of Kaper’s songs.",
       "workIds": [
         "W-F006"
       ],
@@ -460,8 +460,7 @@
         "P147"
       ],
       "sourceIds": [
-        "SRC0120",
-        "SRC0610"
+        "SRC0120"
       ],
       "nameAsPrinted": "Mark Lavry"
     },
@@ -1683,6 +1682,25 @@
       ],
       "personIds": [
         "P009"
+      ],
+      "sourceIds": [
+        "SRC0130"
+      ]
+    },
+    {
+      "id": "CON-F019-MD-P077",
+      "role": "music_director",
+      "creditAsPrinted": "Musikalische Leitung",
+      "evidenceContext": [
+        "film_credits"
+      ],
+      "sortOrder": 41,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-F019"
+      ],
+      "personIds": [
+        "P077"
       ],
       "sourceIds": [
         "SRC0130"
@@ -23673,7 +23691,7 @@
         "SRC0800",
         "SRC0801"
       ],
-      "scopeNote": "BnF catalogues Rossi’s recording with Orchestre de Tango Rafaelo on Columbia DF 1622; the linked Internet Archive file provides the listening copy."
+      "scopeNote": "BnF catalogues Rossi with Orchestre de Tango Rafaelo on Columbia DF 1622. The Internet Archive collection lists the same disc and provides a listening reference; its exact source copy and take have not been independently established."
     },
     {
       "id": "CON-S106-P-P198",
@@ -23759,7 +23777,7 @@
         "SRC0802",
         "SRC0803"
       ],
-      "scopeNote": "BnF catalogues Rossi’s recording on Columbia DF 1606; the linked Internet Archive file provides the listening copy."
+      "scopeNote": "BnF catalogues Rossi on Columbia DF 1606. The Internet Archive collection lists the same disc and provides a listening reference; its exact source copy and take have not been independently established."
     },
     {
       "id": "CON-S114-P-P198",
@@ -23781,7 +23799,7 @@
         "SRC0805",
         "SRC0806"
       ],
-      "scopeNote": "BnF catalogues Rossi’s recording with orchestra conducted by Marcel Cariven on Columbia DF 1610; the linked Internet Archive file provides the listening copy."
+      "scopeNote": "BnF catalogues Rossi with orchestra conducted by Marcel Cariven on Columbia DF 1610. The Internet Archive collection lists the same disc and provides a listening reference; its exact source copy and take have not been independently established."
     },
     {
       "id": "CON-S115-P-P198",
@@ -23803,7 +23821,7 @@
         "SRC0802",
         "SRC0804"
       ],
-      "scopeNote": "BnF catalogues Rossi’s recording on Columbia DF 1606; the linked Internet Archive file provides the listening copy."
+      "scopeNote": "BnF catalogues Rossi on Columbia DF 1606. The Internet Archive collection lists the same disc and provides a listening reference; its exact source copy and take have not been independently established."
     },
     {
       "id": "CON-S112-LAB-ORG151",
