@@ -6620,12 +6620,10 @@
         "CON-S058-C-P009",
         "CON-S058-C-P077",
         "CON-S058-L-P020",
-        "CON-S058-P-P164",
         "CON-S058-PUB-ORG031",
         "CON-S084-C-P009",
         "CON-S084-C-P077",
         "CON-S084-L-P020",
-        "CON-S084-P-P164",
         "CON-S084-PUB-ORG031"
       ],
       "nameVariantIds": [
@@ -13493,7 +13491,9 @@
         "P111",
         "P136",
         "P157",
-        "P158"
+        "P158",
+        "P153",
+        "P164"
       ],
       "organizationIds": [
         "ORG001",
@@ -13584,7 +13584,10 @@
         "W-S198",
         "W-S200",
         "W-S201",
-        "W-S202"
+        "W-S202",
+        "W-S058",
+        "W-S080",
+        "W-S084"
       ],
       "mediaIds": [
         "M221",
@@ -13669,7 +13672,10 @@
         "S198",
         "S200",
         "S201",
-        "S202"
+        "S202",
+        "S058",
+        "S080",
+        "S084"
       ],
       "workRelationIds": [
         "REL0010",
@@ -13750,7 +13756,6 @@
         "CON-F009-C-P009",
         "CON-F009-C-P077",
         "CON-F009-D-P048",
-        "CON-F009-MD-P009",
         "CON-F009-PC-ORG011",
         "CON-F010-C-P009",
         "CON-F010-C-P077",
@@ -13788,7 +13793,6 @@
         "CON-F018-PC-ORG008",
         "CON-F019-C-P077",
         "CON-F019-D-P030",
-        "CON-F019-MD-P009",
         "CON-F019-PC-ORG019",
         "CON-F019-PC-ORG025",
         "CON-F020-C-P009",
@@ -13804,8 +13808,6 @@
         "CON-F022-C-P009",
         "CON-F022-C-P077",
         "CON-F022-D-P030",
-        "CON-F022-MD-P009",
-        "CON-F022-MD-P077",
         "CON-F022-PC-ORG019",
         "CON-F023-C-P009",
         "CON-F023-C-P077",
@@ -14033,7 +14035,13 @@
         "CON-S202-C-P077",
         "CON-S202-L-P111",
         "CON-S202-PUB-ORG001",
-        "CON-S202-PUB-ORG035"
+        "CON-S202-PUB-ORG035",
+        "CON-S058-P-P164",
+        "CON-S084-P-P164",
+        "CON-S080-P-P153",
+        "CON-S081-P-P153",
+        "CON-S082-P-P153",
+        "CON-F021-A-P153"
       ],
       "nameVariantIds": [
         "PNV0007",
@@ -14363,7 +14371,6 @@
         "M197"
       ],
       "contributionIds": [
-        "CON-F052-D-P157",
         "CON-F052-PC-ORG116"
       ],
       "primaryUrl": "https://commons.wikimedia.org/wiki/File:Little_Boy_Blue_poster_1936.jpg"
@@ -23665,9 +23672,7 @@
         "TV0035"
       ],
       "contributionIds": [
-        "CON-F022-A-P164",
-        "CON-S058-P-P164",
-        "CON-S084-P-P164"
+        "CON-F022-A-P164"
       ],
       "filmIds": [
         "F022"

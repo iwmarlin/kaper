@@ -79,9 +79,10 @@ class RecordingEvidenceContextBatchTests(unittest.TestCase):
         self.assertEqual(label["evidenceContext"], ["online_catalogue"])
         self.assertIn("catalogue evidence", label["scopeNote"])
         self.assertIn("not a fresh reading", label["scopeNote"])
-        self.assertEqual(singer["sourceIds"], ["SRC0698", "SRC0700"])
+        self.assertEqual(singer["sourceIds"], ["SRC0698", "SRC0700", "SRC0373"])
         self.assertEqual(singer["evidenceContext"], ["online_catalogue", "online_recording"])
         self.assertIn("not direct evidence", singer["scopeNote"])
+        self.assertIn("separately attributes the song", singer["scopeNote"])
         for c in (label, singer):
             self.assertEqual(c["certainty"], "confirmed")
             fields = self.overrides["records"]["Contributions"][c["id"]]["fields"]

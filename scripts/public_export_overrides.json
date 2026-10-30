@@ -8392,7 +8392,7 @@
             "online_catalogue",
             "online_recording"
           ],
-          "scopeNote": "The Discogs entry in SRC0700 identifies Hans Albers on “In 24 Stunden”, Odeon O-11810; the upload description in SRC0698 also names him. The matrix and session details describe the catalogued recording, not an independently matched pressing or take in that upload. The label of the separate Odeon O-11811 issue is not direct evidence for this performance."
+          "scopeNote": "The Discogs entry in SRC0700 identifies Hans Albers on “In 24 Stunden”, Odeon O-11810; the upload description in SRC0698 also names him. The matrix and session details describe the catalogued recording, not an independently matched pressing or take in that upload. The label of the separate Odeon O-11811 issue is not direct evidence for this performance. Sieghardt’s filmography (SRC0373, p. 229) separately attributes the song to him in Heut’ kommt’s drauf an."
         }
       },
       "CON-S082-LAB-ORG128": {
@@ -8792,7 +8792,7 @@
           "evidenceContext": [
             "discography"
           ],
-          "scopeNote": "Henry König’s Odeon label list independently identifies Hans Albers for this title on Odeon O-11811. The uploader also names him; the exact take reproduced in the transfer remains unverified."
+          "scopeNote": "Henry König’s Odeon label list identifies Hans Albers for this title on Odeon O-11811. The uploader also names him; the exact take in the transfer remains unverified. Sieghardt’s filmography (SRC0373, p. 229) separately attributes the song to him in Heut’ kommt’s drauf an."
         },
         "reason": "Individual Odeon evidence review, 26 October 2026: distinguish label transcriptions, discographic evidence and uploader-supplied attributions."
       },
@@ -9000,7 +9000,7 @@
           "evidenceContext": [
             "online_recording"
           ],
-          "scopeNote": "The Jube Pops digital reissue credits Willi Domgraf-Fassbaender with the Marek Weber Orchestra. His film role is documented separately by the linked film and trade sources. This recording credit follows the reissue metadata, not an examined historical disc label."
+          "scopeNote": "The Jube Pops digital reissue credits Willi Domgraf-Fassbaender with the Marek Weber Orchestra. Sieghardt’s filmography (SRC0373, p. 229) separately attributes this song to him in Ich will dich Liebe lehren; it does not identify the reissued recording or an original disc."
         }
       },
       "CON-S084-P-ORG119": {
@@ -9027,7 +9027,7 @@
           "evidenceContext": [
             "online_recording"
           ],
-          "scopeNote": "The Jube Pops digital reissue credits Willi Domgraf-Fassbaender with the Marek Weber Orchestra. His film role is documented separately by the linked film and trade sources. This recording credit follows the reissue metadata, not an examined historical disc label."
+          "scopeNote": "The Jube Pops digital reissue credits Willi Domgraf-Fassbaender with the Marek Weber Orchestra. Sieghardt’s filmography (SRC0373, p. 229) separately attributes this song to him in Ich will dich Liebe lehren; it does not identify the reissued recording or an original disc."
         }
       },
       "CON-S018-LAB-ORG129": {
@@ -9527,7 +9527,7 @@
       "CON-F021-A-P153": {
         "reason": "State Albers's documented acting role and the limits of the available performance evidence without referring to internal archive holdings.",
         "fields": {
-          "scopeNote": "filmportal.de lists Hans Albers in the lead role of dance-band leader Hans Eckmann. No linked source attributes a specific song performance to him; this credit therefore records his acting role, not the performance of an individual number."
+          "scopeNote": "Filmportal lists Hans Albers in the lead role of dance-band leader Hans Eckmann. Sieghardt’s filmography (SRC0373, p. 229) separately attributes three songs in the film to him; their performances are documented on the individual song records."
         }
       },
       "CON-F021-C-P151": {
@@ -9575,6 +9575,12 @@
         "reason": "Clarify the source-supported production role.",
         "fields": {
           "scopeNote": "Directed the initial 1936 production before Robert Z. Leonard took over. AFI notes that some earlier footage may have been included in the released film."
+        }
+      },
+      "CON-S081-P-P153": {
+        "reason": "Distinguish filmography evidence from recording evidence.",
+        "fields": {
+          "scopeNote": "The Odeon O-11811 a label credits Hans Albers with the Odeon-Künstler-Orchester under Otto Dobrindt and names Heut’ kommt’s drauf an. Sieghardt’s filmography (SRC0373, p. 229) separately attributes the song to Albers in that film."
         }
       }
     },
@@ -18312,6 +18318,54 @@
             "SRC0530"
           ]
         }
+      },
+      "CON-S058-P-P164": {
+        "reason": "Connect the filmography to the separately documented credit.",
+        "fields": {
+          "sourceIds": [
+            "SRC0373"
+          ]
+        }
+      },
+      "CON-S084-P-P164": {
+        "reason": "Connect the filmography to the separately documented credit.",
+        "fields": {
+          "sourceIds": [
+            "SRC0373"
+          ]
+        }
+      },
+      "CON-S080-P-P153": {
+        "reason": "Connect the filmography to the separately documented credit.",
+        "fields": {
+          "sourceIds": [
+            "SRC0373"
+          ]
+        }
+      },
+      "CON-S081-P-P153": {
+        "reason": "Connect the filmography to the separately documented credit.",
+        "fields": {
+          "sourceIds": [
+            "SRC0373"
+          ]
+        }
+      },
+      "CON-S082-P-P153": {
+        "reason": "Connect the filmography to the separately documented credit.",
+        "fields": {
+          "sourceIds": [
+            "SRC0373"
+          ]
+        }
+      },
+      "CON-F021-A-P153": {
+        "reason": "Connect the filmography to the separately documented credit.",
+        "fields": {
+          "sourceIds": [
+            "SRC0373"
+          ]
+        }
       }
     },
     "Other Works": {
@@ -19299,6 +19353,30 @@
             "P051"
           ]
         }
+      },
+      "W-S058": {
+        "reason": "Connect the song to its filmography performance entry.",
+        "fields": {
+          "sourceIds": [
+            "SRC0373"
+          ]
+        }
+      },
+      "W-S080": {
+        "reason": "Connect the song to its filmography performance entry.",
+        "fields": {
+          "sourceIds": [
+            "SRC0373"
+          ]
+        }
+      },
+      "W-S084": {
+        "reason": "Connect the song to its filmography performance entry.",
+        "fields": {
+          "sourceIds": [
+            "SRC0373"
+          ]
+        }
       }
     },
     "Films": {
@@ -19709,6 +19787,30 @@
         "fields": {
           "sourceIds": [
             "SRC0540"
+          ]
+        }
+      },
+      "S058": {
+        "reason": "Connect the song to its filmography performance entry.",
+        "fields": {
+          "sourceIds": [
+            "SRC0373"
+          ]
+        }
+      },
+      "S080": {
+        "reason": "Connect the song to its filmography performance entry.",
+        "fields": {
+          "sourceIds": [
+            "SRC0373"
+          ]
+        }
+      },
+      "S084": {
+        "reason": "Connect the song to its filmography performance entry.",
+        "fields": {
+          "sourceIds": [
+            "SRC0373"
           ]
         }
       }
@@ -20766,7 +20868,8 @@
         "reason": "Connect Willi Domgraf-Fassbaender to his documented leading acting role in Ich will Dich Liebe lehren and to the Filmportal record that identifies his character.",
         "fields": {
           "sourceIds": [
-            "SRC0131"
+            "SRC0131",
+            "SRC0373"
           ],
           "contributionIds": [
             "CON-F022-A-P164"
@@ -21097,6 +21200,14 @@
         "fields": {
           "sourceIds": [
             "SRC0530"
+          ]
+        }
+      },
+      "P153": {
+        "reason": "Connect the person to Sieghardt’s filmography.",
+        "fields": {
+          "sourceIds": [
+            "SRC0373"
           ]
         }
       }
@@ -22828,14 +22939,16 @@
         }
       },
       "SRC0373": {
-        "reason": "Reuse the existing Buxbaum/Sieghardt catalogue for the Ernst Martin resolution, the corrected Little Boy Blue credits and the two published André Roubier co-composer attributions; do not create duplicate catalogue sources.",
+        "reason": "Reuse the existing Buxbaum/Sieghardt catalogue for verified identities, film credits, song authorship and the film performances on page 229; do not create duplicate catalogue sources.",
         "fields": {
           "personIds": [
             "P020",
             "P049",
             "P079",
             "P157",
-            "P158"
+            "P158",
+            "P153",
+            "P164"
           ],
           "organizationIds": [
             "ORG001",
@@ -22845,13 +22958,19 @@
             "W-S081",
             "W-S082",
             "W-S097",
-            "W-S116"
+            "W-S116",
+            "W-S058",
+            "W-S080",
+            "W-S084"
           ],
           "songIds": [
             "S081",
             "S082",
             "S097",
-            "S116"
+            "S116",
+            "S058",
+            "S080",
+            "S084"
           ],
           "contributionIds": [
             "CON-S081-C-P009",
@@ -22885,7 +23004,6 @@
             "CON-F021-C-P077",
             "CON-F022-C-P009",
             "CON-F022-C-P077",
-            "CON-F022-MD-P077",
             "CON-F023-C-P077",
             "CON-F025-C-P077",
             "CON-F026-C-P077",
@@ -22904,7 +23022,13 @@
             "CON-F035-SW-P077",
             "CON-F036-SW-P077",
             "CON-F037-SW-P077",
-            "CON-F049-SM-P077"
+            "CON-F049-SM-P077",
+            "CON-S058-P-P164",
+            "CON-S084-P-P164",
+            "CON-S080-P-P153",
+            "CON-S081-P-P153",
+            "CON-S082-P-P153",
+            "CON-F021-A-P153"
           ],
           "nameVariantIds": [
             "PNV0007"
@@ -24228,7 +24352,7 @@
         }
       },
       "SRC0373": {
-        "reason": "Remove both the inverse M223 gallery leak and the false Harold S. Bucquet/MGM contributions created by the Little Boy Blue same-title conflation.",
+        "reason": "Remove the M223 gallery leak, false Little Boy Blue contributions and music-direction credits not stated in the filmography.",
         "fields": {
           "mediaIds": [
             "M223"
@@ -24238,7 +24362,11 @@
           ],
           "contributionIds": [
             "CON-F052-D-P091",
-            "CON-F052-PC-ORG001"
+            "CON-F052-PC-ORG001",
+            "CON-F009-MD-P009",
+            "CON-F019-MD-P009",
+            "CON-F022-MD-P009",
+            "CON-F022-MD-P077"
           ]
         }
       },
@@ -24328,6 +24456,32 @@
         "fields": {
           "contributionIds": [
             "CON-F045-D-P029"
+          ]
+        }
+      },
+      "SRC0186": {
+        "reason": "Remove links to roles not directly documented by this source.",
+        "fields": {
+          "contributionIds": [
+            "CON-S058-P-P164",
+            "CON-S084-P-P164"
+          ]
+        }
+      },
+      "SRC0690": {
+        "reason": "Remove links to roles not directly documented by this source.",
+        "fields": {
+          "contributionIds": [
+            "CON-S058-P-P164",
+            "CON-S084-P-P164"
+          ]
+        }
+      },
+      "SRC0384": {
+        "reason": "Remove links to roles not directly documented by this source.",
+        "fields": {
+          "contributionIds": [
+            "CON-F052-D-P157"
           ]
         }
       }
@@ -25654,6 +25808,64 @@
         "fields": {
           "sourceIds": [
             "SRC0173"
+          ]
+        }
+      },
+      "CON-S058-P-P164": {
+        "reason": "Remove sources that do not directly establish this specific role.",
+        "fields": {
+          "sourceIds": [
+            "SRC0186",
+            "SRC0690"
+          ]
+        }
+      },
+      "CON-S084-P-P164": {
+        "reason": "Remove sources that do not directly establish this specific role.",
+        "fields": {
+          "sourceIds": [
+            "SRC0186",
+            "SRC0690"
+          ]
+        }
+      },
+      "CON-F052-D-P157": {
+        "reason": "Remove sources that do not directly establish this specific role.",
+        "fields": {
+          "sourceIds": [
+            "SRC0384"
+          ]
+        }
+      },
+      "CON-F009-MD-P009": {
+        "reason": "Remove sources that do not directly establish this specific role.",
+        "fields": {
+          "sourceIds": [
+            "SRC0373"
+          ]
+        }
+      },
+      "CON-F019-MD-P009": {
+        "reason": "Remove sources that do not directly establish this specific role.",
+        "fields": {
+          "sourceIds": [
+            "SRC0373"
+          ]
+        }
+      },
+      "CON-F022-MD-P009": {
+        "reason": "Remove sources that do not directly establish this specific role.",
+        "fields": {
+          "sourceIds": [
+            "SRC0373"
+          ]
+        }
+      },
+      "CON-F022-MD-P077": {
+        "reason": "Remove sources that do not directly establish this specific role.",
+        "fields": {
+          "sourceIds": [
+            "SRC0373"
           ]
         }
       }
