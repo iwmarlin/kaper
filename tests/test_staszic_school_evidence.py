@@ -24,3 +24,11 @@ class StaszicSchoolEvidenceTest(unittest.TestCase):
         self.assertEqual(media['sourceIds'], ['SRC0948'])
         self.assertIn('TE0002', media['timelineEventIds'])
         self.assertTrue((ROOT / media['assetPath']).is_file())
+
+    def test_later_school_site_is_linked_with_date_qualification(self):
+        event = records('timeline-events')['TE0002']
+        place = records('places')['PL009']
+        self.assertIn('PL009', event['placeIds'])
+        self.assertIn('TE0002', place['timelineEventIds'])
+        self.assertIn('later school site', event['longDescription'])
+        self.assertIn('not as a confirmed location of the transfer', place['publicNote'])
