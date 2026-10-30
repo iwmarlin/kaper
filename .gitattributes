@@ -1,0 +1,27 @@
+# The repository root is the publish directory, so everything the build derives
+# has to be committed alongside its sources. A single content-derived cache
+# version is stamped across every asset reference, which means one edit to a
+# stylesheet or a module rewrites the query string in all 1875 record pages as
+# well. That churn is the cost of a correct cache key on GitHub Pages, where no
+# HTTP header is available to do the same work — but it buries the handful of
+# authored edits a reviewer actually needs to read.
+#
+# Marking the derived files as generated collapses them by default in review and
+# leaves them out of the language statistics. It changes nothing about what Git
+# stores, what the build produces, or what CI verifies, and `git diff` still
+# shows their contents in full: the `-diff` attribute is deliberately not used
+# here, because hiding these locally would obstruct debugging.
+#
+# Regenerate all of them with: python3 scripts/rebuild_site.py --root .
+
+records/**                        linguist-generated=true
+data/site/**                      linguist-generated=true
+assets/generated/**               linguist-generated=true
+sitemap.xml                       linguist-generated=true
+assets/site/image-derivatives.js  linguist-generated=true
+
+# The canonical public tables in data/public/v1/ are the source of truth and are
+# never marked. manifest.json is generated but stays visible on purpose: its
+# record counts and publicDataUpdatedAt are exactly what a reviewer should see
+# at a glance. build-report.json is the long machine record behind it.
+data/public/v1/build-report.json  linguist-generated=true

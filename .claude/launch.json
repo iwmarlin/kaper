@@ -1,0 +1,14 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "kaper-static",
+      "runtimeExecutable": "sh",
+      "runtimeArgs": [
+        "-c",
+        "cd /private/tmp/claude-501/-Users-iwonalindstedt-Documents-GitHub-kaper/cf3f5ad4-9f39-48f0-b144-009bdb3258c6/scratchpad/site && exec python3 -m http.server 4173"
+      ],
+      "port": 4173
+    }
+  ]
+}
