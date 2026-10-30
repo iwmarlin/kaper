@@ -587,6 +587,12 @@
       }
     },
     "Sources": {
+      "SRC0948": {
+        "reason": "Distinguish the report’s account of new pupils from Kaper’s private school and avoid inferring his individual admission date.",
+        "fields": {
+          "researchNote": "The report states „Rok szkolny 1915/16 rozpoczęto 6 września” and records 128 new candidates across the school, twelve of them in the fifth class, which then held forty-five pupils out of 309 in all. It says that new candidates generally came mostly from Russian state schools and also from provincial schools; Skrynnikov’s school was private. The report does not name the twelve fifth-class entrants or establish Kaper’s individual date of admission or first attendance."
+        }
+      },
       "SRC0678": {
         "reason": "Verify archival witnesses individually: distinguish baptism entry 482, an aggregate student file, the Berlin I marriage name index and the European Film Fund donation period. Preserve subjects and graph links.",
         "fields": {
@@ -9692,6 +9698,15 @@
       }
     },
     "Timeline Events": {
+      "TE0002": {
+        "reason": "Date the school year rather than Kaper’s unrecorded admission, and distinguish the private Skrynnikov school from state schools.",
+        "fields": {
+          "label": "1915/16 · Transfer to the Staszic Real School",
+          "displayDate": "1915/16 school year",
+          "dateStart": "1915-01-01",
+          "longDescription": "Kaper attended the private school of Aleksander M. Skrynnikov at 49 Żurawia Street, whose curriculum favoured mathematics, the sciences and modern languages over the classical programme of Latin and Greek. Aged thirteen, he transferred to the fifth class of the Stanisław Staszic Real School, which became a state gymnasium in 1918 and where he completed his secondary education. The Staszic school’s report states that its 1915/16 school year began on 6 September 1915 and that twelve new candidates were admitted to the fifth class. It does not name them or establish when Kaper was admitted or first attended. The report says that the new candidates across the school came mostly from Russian state schools; Skrynnikov’s school was private, so this general statement cannot establish Kaper’s individual circumstances. The evacuation of Russian schools and the change of administration in 1915 provide the wider historical context."
+        }
+      },
       "TE0016": {
         "reason": "Use the LCNAF-authorized first name Moritz consistently in the Berlin study narrative.",
         "fields": {
@@ -16864,6 +16879,24 @@
           "externalUrl": "https://www.szukajwarchiwach.gov.pl/jednostka/-/jednostka/5909690/obiekty/292223",
           "sourceIds": ["SRC0014"], "placeIds": ["PL017"]
         }
+      },
+      "M464": {
+        "reason": "Publish the complete source page as a contextual image, distinguishing the school year from Kaper’s individual admission.",
+        "fields": {
+          "id": "M464", "title": "Staszic school report for 1915/16 — Przegląd Techniczny, 1917",
+          "mediaType": "image", "storageType": "local", "period": "warsaw", "periods": ["warsaw"],
+          "description": "Complete page 187 of the 1917 issue of Przegląd Techniczny containing the Staszic school’s report. It dates the start of the 1915/16 school year to 6 September and records the intake to each class; it does not name Kaper or establish his individual admission date.",
+          "assetPath": "assets/images/historical-context/staszic-report-przeglad-techniczny-1917-p187.png",
+          "assetPaths": ["assets/images/historical-context/staszic-report-przeglad-techniczny-1917-p187.png"], "assetCount": 1,
+          "altText": "Page 187 of Przegląd Techniczny, with the Staszic school report and a table of pupils by age and class.",
+          "rightsStatus": "public_domain", "rightsNote": "The Warsaw University of Technology Digital Library marks the 1917 volume as public domain. Faithful rendering of the complete digitized page.",
+          "sortOrder": 464, "slug": "staszic-school-report-1915-16-przeglad-techniczny-1917-m464",
+          "publicCaption": "The school report states that the 1915/16 year began on 6 September 1915. It does not name Kaper or date his admission.",
+          "publicCreditLine": "Przegląd Techniczny, vol. 55, nos. 23–24, 12 June 1917, p. 187; Biblioteka Cyfrowa Politechniki Warszawskiej.",
+          "category": "press clipping", "galleryStatus": "selected",
+          "externalUrl": "https://bcpw.bg.pw.edu.pl/Content/4317/12pt1917_nr_23_24.pdf#page=13",
+          "sourceIds": ["SRC0948"], "timelineEventIds": ["TE0002"]
+        }
       }
     },
     "Timeline Events": {
@@ -20011,6 +20044,10 @@
           ]
         }
       },
+      "TE0002": {
+        "reason": "Link the transfer event to the contextual reproduction of the school-year report.",
+        "fields": {"mediaIds": ["M464"]}
+      },
       "TE0006": {
         "reason": "Add the 1920 recruitment poster as supplementary historical context for Kaper's documented Polish–Soviet War service while retaining M096 as the hero medium.",
         "fields": {
@@ -20954,6 +20991,10 @@
       }
     },
     "Sources": {
+      "SRC0948": {
+        "reason": "Connect the school report to the faithful reproduction of its page 187.",
+        "fields": {"mediaIds": ["M464"]}
+      },
       "SRC0625": {
         "fields": {
           "organizationIds": [
