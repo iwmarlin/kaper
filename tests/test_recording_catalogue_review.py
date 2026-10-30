@@ -1,6 +1,7 @@
 """Library records, matrix lists and listening transfers have separate scopes."""
 import copy
 import json
+import re
 import sys
 import unittest
 from pathlib import Path
@@ -20,7 +21,7 @@ class RecordingCatalogueReviewTests(unittest.TestCase):
         cls.tables = {
             t: {r["id"]: r for r in json.loads(
                 (ROOT / f"data/public/v1/{t}.json").read_text())["records"]}
-            for t in ("sources", "contributions", "media", "organizations", "person-name-variants")
+            for t in ("sources", "contributions", "media", "organizations", "person-name-variants", "people", "works")
         }
 
     def test_reviewed_catalogues_share_the_existing_source_type(self):
@@ -39,8 +40,31 @@ class RecordingCatalogueReviewTests(unittest.TestCase):
         self.assertIn("language code tah", source["researchNote"])
         self.assertEqual(source["workIds"], ["W-S123"])
         self.assertNotIn("W-S196", source["workIds"])
-        self.assertIn("1937", self.tables["contributions"]["CON-S123-C-P155"]["scopeNote"])
-        self.assertNotIn("issued by Pathé-Marconi in 1940", self.tables["contributions"]["CON-S123-C-P155"]["scopeNote"])
+        self.assertNotIn("CON-S123-C-P155", self.tables["contributions"])
+        self.assertNotIn("CON-S123-C-P155", source.get("contributionIds", []))
+        self.assertNotIn("CON-S123-C-P155", self.tables["works"]["W-S123"]["contributionIds"])
+        self.assertNotIn("CON-S123-C-P155", self.tables["people"]["P155"].get("contributionIds", []))
+        self.assertIn("P155", source["personIds"])
+        self.assertIn("SRC0625", self.tables["people"]["P155"]["sourceIds"])
+        self.assertNotIn("W-S123", self.tables["people"]["P155"].get("workIds", []))
+        self.assertNotIn("P155", self.tables["works"]["W-S123"].get("personIds", []))
+        self.assertIn("SRC0625", self.tables["works"]["W-S123"]["sourceIds"])
+        self.assertIn("SRC0630", self.tables["works"]["W-S123"]["sourceIds"])
+        self.assertIn("W-S123", self.tables["sources"]["SRC0630"]["workIds"])
+        self.assertIn("discrepancy remain unresolved", source["researchNote"])
+        self.assertIn("discrepancy remain unresolved", self.tables["works"]["W-S123"]["publicNote"])
+        self.assertIn("G. Rey, composers", source["fullCitation"])
+
+    def test_tahiti_static_metadata_does_not_make_rey_an_original_composer(self):
+        html = (ROOT / "records/work/W-S123/index.html").read_text()
+        match = re.search(r'<script type="application/ld\+json">(.*?)</script>', html)
+        self.assertIsNotNone(match)
+        metadata = json.loads(match.group(1))
+        self.assertEqual({p["name"] for p in metadata["composer"]},
+                         {"Bronisław Kaper", "Walter Jurmann"})
+        description = re.search(r'<meta name="description" content="([^"]*)"', html)
+        self.assertIsNotNone(description)
+        self.assertNotIn("Georges Rey", description.group(1))
 
     def test_pathe_catalogue_brand_link_is_reciprocal(self):
         self.assertIn("ORG133", self.tables["sources"]["SRC0625"]["organizationIds"])

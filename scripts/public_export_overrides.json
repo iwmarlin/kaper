@@ -75,6 +75,12 @@
       }
     },
     "Works": {
+      "W-S123": {
+        "fields": {
+          "publicNote": "The 1935 copyright entry and the 1936 French sheet-music catalogue name Kaper and Jurmann as composers. A BnF catalogue of the Pathé recording “O chant d’amour de Tahiti !” also lists Georges Rey as a composer; his contribution and the reason for the discrepancy remain unresolved."
+        },
+        "reason": "Distinguish the source-specific recording catalogue attribution from the composer credits for the 1935 song without assuming the cause of the discrepancy."
+      },
       "W-S116": {
         "fields": {
           "publicNote": "The Salabert 3384 label names Éditions Echo as publisher. Salabert is the record imprint, not the publisher named on this label."
@@ -708,7 +714,7 @@
               "value": "ark:/12148/cb37963787p"
             }
           ],
-          "researchNote": "The BnF publication statement is [DL 1940]: this denotes legal deposit, not an independently established commercial issue date. The catalogue separately states “Enregistrement : 19370623”; the structured date follows that recording date, 23 June 1937. UNIMARC field 101 gives language code tah, Tahitian. The French title is therefore not evidence that the sung text is French. The catalogue names Rey as co-composer of the Tahiti side, but credits him as composer and lyricist of the coupling “Ho’i-maï”; those roles are not merged. The two matrices are listed together without an explicit title-by-title assignment.",
+          "researchNote": "The BnF publication statement is [DL 1940]: this denotes legal deposit, not an independently established commercial issue date. The catalogue separately states “Enregistrement : 19370623”; the structured date follows that recording date, 23 June 1937. UNIMARC field 101 gives language code tah, Tahitian, for the disc; the French title alone does not establish the language of the sung text. The catalogue lists Rey as a composer alongside Kaper and Jurmann for “O chant d’amour de Tahiti !”; the 1935 copyright entry and 1936 French sheet-music catalogue name Kaper and Jurmann as composers. Rey’s contribution and the reason for the discrepancy remain unresolved. BnF separately credits him as composer and lyricist of the coupling “Ho’i-maï”. The two matrices are listed together without an explicit title-by-title assignment.",
           "researchNoteType": "discographic_note"
         },
         "reason": "Review of nine recording catalogues, 26 October 2026: distinguish library descriptions, independent matrix evidence, legal deposit and recording dates; retain qualified transfer identifications."
@@ -8555,15 +8561,6 @@
         },
         "reason": "Distinguish the BnF record's qualified identification of Léo Lelièvre from the catalogue entry that omits him and the disc catalogue's surname-only credit."
       },
-      "CON-S123-C-P155": {
-        "fields": {
-          "evidenceContext": [
-            "online_catalogue"
-          ],
-          "scopeNote": "BnF credits G. Rey as composer alongside Kaper and Jurmann on the Tahitian-language “O chant d’amour de Tahiti !”, Pathé PA 1234, not on the original 1935 song. The catalogue separately dates the recording to 23 June 1937 and the legal deposit to [DL 1940]; the latter is not a verified issue date. On the coupling “Ho’i-maï”, Rey is credited as composer and lyricist. He also performs under the name Tihoti in Tihoti-re et son ensemble tahitien."
-        },
-        "reason": "Review of nine recording catalogues, 26 October 2026: distinguish library descriptions, independent matrix evidence, legal deposit and recording dates; retain qualified transfer identifications."
-      },
       "CON-S097-P-P132": {
         "fields": {
           "evidenceContext": [
@@ -10293,6 +10290,9 @@
       }
     },
     "Contributions": {
+      "CON-S123-C-P155": {
+        "reason": "Do not turn the BnF recording catalogue's unexplained composer attribution into a confirmed original-song credit; retain the person and recording source with the discrepancy described."
+      },
       "CON-S116-PUB-ORG039": {
         "reason": "The sole cited label, Salabert 3384 in SRC0115, names Éditions Echo, not Salabert, as publisher. Preserve the Salabert record-label credit and the literal Echo publisher wording on the song and work without creating an unsupported corporate identity."
       },
@@ -18787,9 +18787,9 @@
         }
       },
       "W-S123": {
-        "reason": "Attach the verified Variety advertisement and its image to Love Song of Tahiti.",
+        "reason": "Attach the verified Variety advertisement and its image, plus the French sheet-music catalogue that explicitly identifies the original title and composers.",
         "fields": {
-          "sourceIds": ["SRC0046"],
+          "sourceIds": ["SRC0046", "SRC0630"],
           "mediaIds": ["M209"]
         }
       },
@@ -21596,6 +21596,12 @@
         "reason": "Connect the school report to the faithful reproduction of its page 187.",
         "fields": {"mediaIds": ["M464"]}
       },
+      "SRC0630": {
+        "fields": {
+          "workIds": ["W-S123"]
+        },
+        "reason": "The catalogue of the 1936 French edition explicitly identifies the original title and its composers."
+      },
       "SRC0625": {
         "fields": {
           "organizationIds": [
@@ -24056,6 +24062,12 @@
       }
     },
     "Sources": {
+      "SRC0625": {
+        "fields": {
+          "contributionIds": ["CON-S123-C-P155"]
+        },
+        "reason": "Retain the BnF catalogue record as recording evidence, without making it support a confirmed original-song composer credit for Rey."
+      },
       "SRC0486": {
         "reason": "A catalogue entry for the song's sheet music is not evidence of the film director; retain the source for the song and its documented credits.",
         "fields": {
@@ -24849,6 +24861,13 @@
       }
     },
     "Works": {
+      "W-S123": {
+        "fields": {
+          "contributionIds": ["CON-S123-C-P155"],
+          "personIds": ["P155"]
+        },
+        "reason": "Remove Rey's unqualified composer credit and its direct person link; retain the contextual recording source and explicit discrepancy note."
+      },
       "W-F035": {
         "reason": "Remove the Love Song of Tahiti advertisement image from Last of the Pagans; that film retains the separate Music on the Starlit Water clipping.",
         "fields": {
@@ -25361,6 +25380,13 @@
       }
     },
     "People": {
+      "P155": {
+        "fields": {
+          "contributionIds": ["CON-S123-C-P155"],
+          "workIds": ["W-S123"]
+        },
+        "reason": "Retain Georges Rey's person record and sources without an unsupported confirmed composer contribution or direct work-credit link for the original song."
+      },
       "P009": {
         "reason": "Remove the probable German-original lyricist contribution inferred from undivided Dutch-edition metadata; Kaper remains the confirmed composer. Also remove TE0007 and TE0010 after those superseded timeline records were excluded from the public chronology.",
         "fields": {
