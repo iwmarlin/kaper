@@ -5209,8 +5209,9 @@
         }
       },
       "SRC0594": {
-        "reason": "Retain the UCLA collection and ARK in the citation while keeping the CC BY 4.0 declaration exclusively with the linked medium.",
+        "reason": "Retain the UCLA collection and ARK in the citation, keep rights information with the medium, and standardize spacing in the sitter's name.",
         "fields": {
+          "title": "W. S. Van Dyke — portrait",
           "fullCitation": "W. S. Van Dyke, 1933. Los Angeles Times Photographic Collection, UCLA Library Special Collections, ark:/21198/zz002cpv37. Republished on Wikimedia Commons. Accessed 31 July 2026.",
           "shortCitation": "Los Angeles Times Photographic Collection (UCLA Library), W. S. Van Dyke, 1933"
         }
@@ -9680,9 +9681,15 @@
         }
       },
       "PNV0050": {
-        "reason": "Express the conflicting birth years as an unresolved authority discrepancy rather than an internal catalogue choice.",
+        "reason": "Keep the civil-name note focused on identity; the conflicting birth years are explained in the person's life-date evidence.",
         "fields": {
-          "publicNote": "Civil-status name. The Encyclopédie de la comédie musicale gives a birth year of 1891, while the Bibliothèque nationale de France gives 1881. The preferred year is 1881; the discrepancy remains unresolved."
+          "publicNote": "Civil-status name; André Mauprey was his professional name."
+        }
+      },
+      "PNV0062": {
+        "reason": "Keep the name-variant note focused on the person's names; his conflicting dates are already documented in the life-date evidence.",
+        "fields": {
+          "publicNote": "Name form under which he was registered at the State Academic University of Music in Berlin. He changed it to Julian while living in Berlin, and to the Italian Giuliano after settling in Italy in 1936."
         }
       },
       "PNV0051": {
@@ -9924,14 +9931,26 @@
         }
       },
       "P005": {
-        "reason": "Normalize André Mauprey's authority links and include the composer role documented by his confirmed film contribution.",
+        "reason": "Normalize André Mauprey's authority links and composer role, and present the unresolved BnF/ECMF birth-year discrepancy as life-date evidence.",
         "fields": {
           "authorizedName": "Mauprey, André (1881–1939)",
           "authorityUrl": "BnF Catalogue: https://catalogue.bnf.fr/ark:/12148/cb14120019q\nBnF data: https://data.bnf.fr/fr/ark:/12148/cb14120019q\nVIAF: https://viaf.org/viaf/10056274\nWikidata: https://www.wikidata.org/wiki/Q4759995\nISNI: https://isni.org/isni/0000000071010995",
+          "lifeDatesCertainty": "disputed",
+          "lifeDatesNote": "The Bibliothèque nationale de France gives 19 August 1881 as André Mauprey’s birth date; the Encyclopédie de la comédie musicale gives 19 August 1891. Both give 3 February 1939 as his date of death. The displayed birth year follows the BnF authority record; the discrepancy remains unresolved.",
+          "lifeDatesSourceIds": [
+            "SRC0616"
+          ],
           "roles": [
             "lyricist",
             "composer"
           ]
+        }
+      },
+      "P076": {
+        "reason": "Use consistent spacing in the director's displayed and sorted names, matching the existing authority heading and portrait caption.",
+        "fields": {
+          "displayName": "W. S. Van Dyke",
+          "sortName": "Van Dyke, W. S."
         }
       },
       "P020": {

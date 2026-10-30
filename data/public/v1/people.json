@@ -232,7 +232,11 @@
       ],
       "birthYear": 1881,
       "deathYear": 1939,
-      "lifeDatesCertainty": "confirmed",
+      "lifeDatesCertainty": "disputed",
+      "lifeDatesNote": "The Bibliothèque nationale de France gives 19 August 1881 as André Mauprey’s birth date; the Encyclopédie de la comédie musicale gives 19 August 1891. Both give 3 February 1939 as his date of death. The displayed birth year follows the BnF authority record; the discrepancy remains unresolved.",
+      "lifeDatesSourceIds": [
+        "SRC0616"
+      ],
       "authorizedNameSource": "LCNAF",
       "authorities": [
         {
@@ -4116,8 +4120,8 @@
     },
     {
       "id": "P076",
-      "displayName": "W.S. Van Dyke",
-      "sortName": "Van Dyke, W.S.",
+      "displayName": "W. S. Van Dyke",
+      "sortName": "Van Dyke, W. S.",
       "authorizedName": "Van Dyke, W. S.",
       "authorizedNameSource": "LCNAF",
       "slug": "w-s-van-dyke",

@@ -42,6 +42,7 @@ class PersonLifeDateTests(unittest.TestCase):
         people = {p["id"]: p for p in json.loads((PUBLIC / "people.json").read_text())["records"]}
         expected = {
             "P003": (1895, 1943, "disputed"),
+            "P005": (1881, 1939, "disputed"),
             "P065": (1878, 1942, "disputed"),
             "P090": (1900, 1996, "disputed"),
             "P110": (1904, 1981, "confirmed"),
@@ -72,6 +73,19 @@ class PersonLifeDateTests(unittest.TestCase):
             for source_id in person["lifeDatesSourceIds"]:
                 with self.subTest(person=person["id"], source=source_id):
                     self.assertIn(person["id"], sources[source_id].get("personIds", []))
+
+    def test_reviewed_name_and_life_date_notes_are_separated(self):
+        people = {p["id"]: p for p in json.loads((PUBLIC / "people.json").read_text())["records"]}
+        variants = {v["id"]: v for v in json.loads((PUBLIC / "person-name-variants.json").read_text())["records"]}
+        self.assertEqual(people["P005"]["lifeDatesSourceIds"], ["SRC0616"])
+        for year in ("1881", "1891"):
+            self.assertIn(year, people["P005"]["lifeDatesNote"])
+            self.assertNotIn(year, variants["PNV0050"]["publicNote"])
+        for year in ("1900", "1901"):
+            self.assertIn(year, people["P090"]["lifeDatesNote"])
+            self.assertNotIn(year, variants["PNV0062"]["publicNote"])
+        self.assertEqual(people["P076"]["displayName"], "W. S. Van Dyke")
+        self.assertEqual(people["P076"]["sortName"], "Van Dyke, W. S.")
 
     def test_explanation_and_source_links_reach_every_reviewed_static_card(self):
         for person in json.loads((PUBLIC / "people.json").read_text())["records"]:
