@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 853,
+  "count": 854,
   "records": [
     {
       "id": "SRC0001",
@@ -3620,7 +3620,6 @@
       ],
       "contributionIds": [
         "CON-F012-C-P009",
-        "CON-F012-D-P048",
         "CON-F012-PC-ORG011"
       ],
       "nameVariantIds": [
@@ -6073,7 +6072,6 @@
       "contributionIds": [
         "CON-F045-BM-P009",
         "CON-F045-BM-P077",
-        "CON-F045-D-P029",
         "CON-F045-PC-ORG026"
       ],
       "primaryUrl": "https://www.imdb.com/title/tt0029785/soundtrack",
@@ -8550,8 +8548,6 @@
       "contributionIds": [
         "CON-F047-C-P009",
         "CON-F047-C-P077",
-        "CON-F047-D-P070",
-        "CON-F047-D-P082",
         "CON-F047-PC-ORG001",
         "CON-S168-C-P009",
         "CON-S168-C-P077",
@@ -8645,8 +8641,6 @@
       "contributionIds": [
         "CON-F047-C-P009",
         "CON-F047-C-P077",
-        "CON-F047-D-P070",
-        "CON-F047-D-P082",
         "CON-F047-PC-ORG001",
         "CON-S192-C-P009",
         "CON-S192-C-P077",
@@ -10435,7 +10429,6 @@
         "CON-F050-C-P009",
         "CON-F050-C-P077",
         "CON-F050-C-P135",
-        "CON-F050-D-P067",
         "CON-F050-PC-ORG001",
         "CON-S176-C-P009",
         "CON-S176-C-P077",
@@ -10495,7 +10488,6 @@
         "REL0153"
       ],
       "contributionIds": [
-        "CON-F055-D-P095",
         "CON-F055-PC-ORG001",
         "CON-S175-C-P009",
         "CON-S175-CC-ORG041",
@@ -11651,12 +11643,10 @@
       ],
       "contributionIds": [
         "CON-F004-C-P077",
-        "CON-F004-D-P044",
         "CON-F010-C-P009",
         "CON-F010-C-P077",
         "CON-F011-C-P009",
         "CON-F011-C-P077",
-        "CON-F011-D-P022",
         "CON-F011-PC-ORG028",
         "CON-F013-C-P009",
         "CON-F013-C-P077",
@@ -11672,21 +11662,17 @@
         "CON-F033-C-P077",
         "CON-F034-C-P009",
         "CON-F034-C-P077",
-        "CON-F034-D-P018",
         "CON-F034-PC-ORG001",
         "CON-F035-C-P009",
         "CON-F035-C-P077",
-        "CON-F035-D-P067",
         "CON-F039-C-P009",
         "CON-F039-C-P077",
         "CON-F039-PC-ORG001",
         "CON-F040-BM-P009",
         "CON-F040-BM-P077",
         "CON-F040-C-P135",
-        "CON-F040-D-P037",
         "CON-F044-C-P009",
         "CON-F044-C-P077",
-        "CON-F044-D-P013",
         "CON-F044-PC-ORG001",
         "CON-F045-BM-P077",
         "CON-F051-C-P077",
@@ -13009,7 +12995,6 @@
       ],
       "contributionIds": [
         "CON-F012-C-P009",
-        "CON-F012-D-P048",
         "CON-F012-PC-ORG011"
       ],
       "primaryUrl": "https://www.imagesmusicales.be/browse/item/18106/150/"
@@ -13477,7 +13462,7 @@
     {
       "id": "SRC0373",
       "shortCitation": "Buxbaum, Walter Jurmann (Wien 2006), Werkverzeichnis und Filmografie von Alexander Sieghardt",
-      "fullCitation": "Elisabeth Buxbaum, „Veronika, der Lenz ist da“ — Walter Jurmann. Ein Musiker zwischen den Welten und Zeiten. Hg. Armin Berg Gesellschaft. Edition Steinbauer, Wien 2006. Werkverzeichnis / Filmografie von Alexander Sieghardt (S. 178, 212–231).",
+      "fullCitation": "Elisabeth Buxbaum, „Veronika, der Lenz ist da“ — Walter Jurmann. Ein Musiker zwischen den Welten und Zeiten. Hg. Armin Berg Gesellschaft. Edition Steinbauer, Wien 2006. Werkverzeichnis / Filmografie von Alexander Sieghardt (u. a. S. 178, 212–231, 234).",
       "sourceType": "book",
       "title": "Buxbaum, Walter Jurmann — Filmografie/Werkverzeichnis (Alexander Sieghardt)",
       "creator": "Elisabeth Buxbaum (Hg. Armin Berg Gesellschaft); Werkverzeichnis/Filmografie: Alexander Sieghardt",
@@ -14667,7 +14652,7 @@
       "id": "SRC0402",
       "shortCitation": "AFI Catalog, “Last of the Pagans”",
       "fullCitation": "American Film Institute. “Last of the Pagans.” AFI Catalog of Feature Films, record 5934.",
-      "researchNote": "The record documents Metro-Goldwyn-Mayer as the film’s production company.",
+      "researchNote": "The record identifies Richard Thorpe as director and Metro-Goldwyn-Mayer as the film’s production company.",
       "researchNoteType": "evidence_note",
       "sourceType": "filmographic_database",
       "title": "Last of the Pagans (1935)",
@@ -14684,11 +14669,18 @@
       "organizationIds": [
         "ORG073"
       ],
+      "personIds": [
+        "P067"
+      ],
       "workIds": [
         "W-F035"
       ],
+      "filmIds": [
+        "F035"
+      ],
       "contributionIds": [
-        "CON-F035-PC-ORG001"
+        "CON-F035-PC-ORG001",
+        "CON-F035-D-P067"
       ],
       "primaryUrl": "https://catalog.afi.com/Catalog/moviedetails/5934"
     },
@@ -17184,7 +17176,6 @@
       "contributionIds": [
         "CON-F034-C-P009",
         "CON-F034-C-P077",
-        "CON-F034-D-P018",
         "CON-F034-PC-ORG001",
         "CON-S123-C-P009",
         "CON-S123-C-P077",
@@ -18861,10 +18852,11 @@
       "sourceStatus": "verified",
       "slug": "src0530-tcm-balalaika-1939",
       "contributionIds": [
-        "CON-F055-PC-ORG001"
+        "CON-F055-PC-ORG001",
+        "CON-F055-D-P095"
       ],
       "primaryUrl": "https://www.tcm.com/watchtcm/titles/3095",
-      "researchNote": "The title page identifies Metro-Goldwyn-Mayer as the production company.",
+      "researchNote": "The title page identifies Reinhold Schünzel as director and Metro-Goldwyn-Mayer as the production company.",
       "researchNoteType": "evidence_note",
       "organizationIds": [
         "ORG001",
@@ -18875,6 +18867,9 @@
       ],
       "filmIds": [
         "F055"
+      ],
+      "personIds": [
+        "P095"
       ]
     },
     {
@@ -32407,6 +32402,43 @@
         "TE0002"
       ],
       "primaryUrl": "https://bcpw.bg.pw.edu.pl/Content/4317/12pt1917_nr_23_24.pdf#page=13"
+    },
+    {
+      "id": "SRC0949",
+      "shortCitation": "AFI Catalog, “Maytime”",
+      "fullCitation": "American Film Institute. “Maytime.” AFI Catalog of Feature Films, record 6120.",
+      "researchNote": "The catalogue credits Robert Z. Leonard as director of the released film. Its production history states that Edmund Goulding directed the initial production in 1936, before Leonard took over; it notes that some earlier footage may have been included in the released film.",
+      "researchNoteType": "evidence_note",
+      "sourceType": "filmographic_database",
+      "title": "Maytime",
+      "creator": "American Film Institute",
+      "repository": "AFI Catalog of Feature Films",
+      "publication": "AFI Catalog of Feature Films",
+      "date": "1937",
+      "dateRole": "described_item",
+      "dateQualifier": "confirmed",
+      "accessDate": "2026-10-30",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "slug": "src0949-afi-maytime-1937",
+      "personIds": [
+        "P070",
+        "P082"
+      ],
+      "organizationIds": [
+        "ORG073"
+      ],
+      "workIds": [
+        "W-F047"
+      ],
+      "filmIds": [
+        "F047"
+      ],
+      "contributionIds": [
+        "CON-F047-D-P070",
+        "CON-F047-D-P082"
+      ],
+      "primaryUrl": "https://catalog.afi.com/Film/6120-MAYTIME"
     }
   ],
   "recordCount": null

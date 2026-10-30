@@ -2699,7 +2699,7 @@
       "SRC0402": {
         "reason": "Separate the AFI bibliographic citation from the production-company evidence recorded for Last of the Pagans.",
         "fields": {
-          "researchNote": "The record documents Metro-Goldwyn-Mayer as the film’s production company.",
+          "researchNote": "The record identifies Richard Thorpe as director and Metro-Goldwyn-Mayer as the film’s production company.",
           "researchNoteType": "evidence_note"
         }
       },
@@ -4270,9 +4270,10 @@
         }
       },
       "SRC0373": {
-        "reason": "Describe Alexander Sieghardt's contribution accurately as both the published work catalogue used for the song credits and the filmography, rather than labelling the aggregate source as filmography alone.",
+        "reason": "Describe Alexander Sieghardt's work catalogue and filmography; the consulted filmography includes page 234, so do not imply that the previously cited pages are an exhaustive range.",
         "fields": {
           "shortCitation": "Buxbaum, Walter Jurmann (Wien 2006), Werkverzeichnis und Filmografie von Alexander Sieghardt",
+          "fullCitation": "Elisabeth Buxbaum, „Veronika, der Lenz ist da“ — Walter Jurmann. Ein Musiker zwischen den Welten und Zeiten. Hg. Armin Berg Gesellschaft. Edition Steinbauer, Wien 2006. Werkverzeichnis / Filmografie von Alexander Sieghardt (u. a. S. 178, 212–231, 234).",
           "creator": "Elisabeth Buxbaum (Hg. Armin Berg Gesellschaft); Werkverzeichnis/Filmografie: Alexander Sieghardt"
         }
       },
@@ -5049,7 +5050,7 @@
           "fullCitation": "Turner Classic Movies (TCM). “Balalaika” (1939). Watch TCM title page.",
           "repository": "Turner Classic Movies (TCM)",
           "publication": "Turner Classic Movies (TCM)",
-          "researchNote": "The title page identifies Metro-Goldwyn-Mayer as the production company.",
+          "researchNote": "The title page identifies Reinhold Schünzel as director and Metro-Goldwyn-Mayer as the production company.",
           "researchNoteType": "evidence_note"
         }
       },
@@ -8179,6 +8180,12 @@
           "rightsStatus": "restricted",
           "galleryStatus": "detail_only"
         }
+      },
+      "M289": {
+        "reason": "Clarify the source-supported production role.",
+        "fields": {
+          "publicCaption": "Edmund Goulding directed the initial 1936 production of Maytime before Robert Z. Leonard took over. This portrait is earlier: it was printed in Photoplay in December 1922, when Goulding was working in Hollywood as a screenwriter."
+        }
       }
     },
     "Organizations": {
@@ -9562,6 +9569,12 @@
           "publicNote",
           "nameVariantIds"
         ]
+      },
+      "CON-F047-D-P082": {
+        "reason": "Clarify the source-supported production role.",
+        "fields": {
+          "scopeNote": "Directed the initial 1936 production before Robert Z. Leonard took over. AFI notes that some earlier footage may have been included in the released film."
+        }
       }
     },
     "Person Name Variants": {
@@ -15027,6 +15040,46 @@
           ],
           "primaryUrl": "https://www.loc.gov/search/?fa=segmentof:sn93062828/1945-03-03/ed-1/&q=%22roger+edens%22&st=gallery"
         }
+      },
+      "SRC0949": {
+        "reason": "Document both stages of the Maytime production using the AFI film record.",
+        "fields": {
+          "id": "SRC0949",
+          "shortCitation": "AFI Catalog, “Maytime”",
+          "fullCitation": "American Film Institute. “Maytime.” AFI Catalog of Feature Films, record 6120.",
+          "researchNote": "The catalogue credits Robert Z. Leonard as director of the released film. Its production history states that Edmund Goulding directed the initial production in 1936, before Leonard took over; it notes that some earlier footage may have been included in the released film.",
+          "researchNoteType": "evidence_note",
+          "sourceType": "filmographic_database",
+          "title": "Maytime",
+          "creator": "American Film Institute",
+          "repository": "AFI Catalog of Feature Films",
+          "publication": "AFI Catalog of Feature Films",
+          "date": "1937",
+          "dateRole": "described_item",
+          "dateQualifier": "confirmed",
+          "accessDate": "2026-10-30",
+          "reliability": "high",
+          "sourceStatus": "verified",
+          "slug": "src0949-afi-maytime-1937",
+          "personIds": [
+            "P070",
+            "P082"
+          ],
+          "organizationIds": [
+            "ORG073"
+          ],
+          "workIds": [
+            "W-F047"
+          ],
+          "filmIds": [
+            "F047"
+          ],
+          "contributionIds": [
+            "CON-F047-D-P070",
+            "CON-F047-D-P082"
+          ],
+          "primaryUrl": "https://catalog.afi.com/Film/6120-MAYTIME"
+        }
       }
     },
     "Songs": {
@@ -17250,7 +17303,8 @@
         "reason": "Synchronize the American Film Institute organization's inverse link to its AFI Catalog record for Trouble for Two.",
         "fields": {
           "sourceIds": [
-            "SRC0587"
+            "SRC0587",
+            "SRC0949"
           ]
         }
       },
@@ -18211,6 +18265,34 @@
             "SRC0101"
           ]
         }
+      },
+      "CON-F035-D-P067": {
+        "reason": "Use the existing AFI film record as directly verified evidence of Richard Thorpe's direction.",
+        "fields": {"sourceIds": ["SRC0402"]}
+      },
+      "CON-F047-D-P070": {
+        "reason": "Synchronize independently verified director evidence and its reciprocal links.",
+        "fields": {
+          "sourceIds": [
+            "SRC0949"
+          ]
+        }
+      },
+      "CON-F047-D-P082": {
+        "reason": "Synchronize independently verified director evidence and its reciprocal links.",
+        "fields": {
+          "sourceIds": [
+            "SRC0949"
+          ]
+        }
+      },
+      "CON-F055-D-P095": {
+        "reason": "Synchronize independently verified director evidence and its reciprocal links.",
+        "fields": {
+          "sourceIds": [
+            "SRC0530"
+          ]
+        }
       }
     },
     "Other Works": {
@@ -19050,6 +19132,9 @@
         "fields": {
           "contributionIds": [
             "CON-F047-C-P077"
+          ],
+          "sourceIds": [
+            "SRC0949"
           ]
         }
       },
@@ -19297,7 +19382,7 @@
       },
       "F035": {
         "reason": "Synchronize Last of the Pagans with the verified Music on the Starlit Water notice.",
-        "fields": {"sourceIds": ["SRC0045"]}
+        "fields": {"sourceIds": ["SRC0045", "SRC0402"]}
       },
       "F026": {
         "reason": "Individually reviewed video-reference metadata, date semantics and film/song relations, 26 October 2026. Preserve institutional digitization years separately from upload dates and do not inherit sheet-music publishers onto film clips.",
@@ -19371,6 +19456,14 @@
         "fields": {
           "sourceIds": [
             "SRC0681"
+          ]
+        }
+      },
+      "F047": {
+        "reason": "Synchronize independently verified director evidence and its reciprocal links.",
+        "fields": {
+          "sourceIds": [
+            "SRC0949"
           ]
         }
       }
@@ -20465,6 +20558,9 @@
         "fields": {
           "timelineEventIds": [
             "TE0037"
+          ],
+          "sourceIds": [
+            "SRC0949"
           ]
         }
       },
@@ -20962,6 +21058,26 @@
         "fields": {
           "sourceIds": [
             "SRC0587"
+          ]
+        }
+      },
+      "P067": {
+        "reason": "Reciprocate the existing AFI source documenting Thorpe's direction of Last of the Pagans.",
+        "fields": {"sourceIds": ["SRC0402"]}
+      },
+      "P082": {
+        "reason": "Synchronize independently verified director evidence and its reciprocal links.",
+        "fields": {
+          "sourceIds": [
+            "SRC0949"
+          ]
+        }
+      },
+      "P095": {
+        "reason": "Synchronize independently verified director evidence and its reciprocal links.",
+        "fields": {
+          "sourceIds": [
+            "SRC0530"
           ]
         }
       }
@@ -23212,6 +23328,10 @@
           ]
         }
       },
+      "SRC0402": {
+        "reason": "Synchronize the AFI record with Richard Thorpe's director credit and the film.",
+        "fields": {"personIds": ["P067"], "filmIds": ["F035"], "contributionIds": ["CON-F035-D-P067"]}
+      },
       "SRC0530": {
         "reason": "Synchronize the TCM Balalaika source with the film, its canonical work and the documented MGM production-company credit.",
         "fields": {
@@ -23223,6 +23343,12 @@
           ],
           "filmIds": [
             "F055"
+          ],
+          "personIds": [
+            "P095"
+          ],
+          "contributionIds": [
+            "CON-F055-D-P095"
           ]
         }
       },
@@ -23441,6 +23567,14 @@
       }
     },
     "Sources": {
+      "SRC0486": {
+        "reason": "A catalogue entry for the song's sheet music is not evidence of the film director; retain the source for the song and its documented credits.",
+        "fields": {
+          "contributionIds": [
+            "CON-F034-D-P018"
+          ]
+        }
+      },
       "SRC0815": {
         "fields": {
           "contributionIds": [
@@ -23932,7 +24066,8 @@
             "CON-S053-C-P009",
             "CON-S053-C-P077",
             "CON-S053-L-P020",
-            "CON-S053-PUB-ORG036"
+            "CON-S053-PUB-ORG036",
+            "CON-F012-D-P048"
           ]
         }
       },
@@ -24031,7 +24166,13 @@
             "CON-S142-C-P009",
             "CON-S142-C-P077",
             "CON-S169-C-P009",
-            "CON-S169-C-P077"
+            "CON-S169-C-P077",
+            "CON-F004-D-P044",
+            "CON-F011-D-P022",
+            "CON-F034-D-P018",
+            "CON-F035-D-P067",
+            "CON-F040-D-P037",
+            "CON-F044-D-P013"
           ]
         }
       },
@@ -24118,6 +24259,56 @@
           ],
           "nameVariantIds": [
             "PNV0067"
+          ]
+        }
+      },
+      "SRC0238": {
+        "reason": "Do not present a music source as evidence of a film director credit.",
+        "fields": {
+          "contributionIds": [
+            "CON-F047-D-P070",
+            "CON-F047-D-P082"
+          ]
+        }
+      },
+      "SRC0240": {
+        "reason": "Do not present a music source as evidence of a film director credit.",
+        "fields": {
+          "contributionIds": [
+            "CON-F047-D-P070",
+            "CON-F047-D-P082"
+          ]
+        }
+      },
+      "SRC0280": {
+        "reason": "Do not present a music source as evidence of a film director credit.",
+        "fields": {
+          "contributionIds": [
+            "CON-F050-D-P067"
+          ]
+        }
+      },
+      "SRC0281": {
+        "reason": "Do not present a music source as evidence of a film director credit.",
+        "fields": {
+          "contributionIds": [
+            "CON-F055-D-P095"
+          ]
+        }
+      },
+      "SRC0356": {
+        "reason": "Do not present a music source as evidence of a film director credit.",
+        "fields": {
+          "contributionIds": [
+            "CON-F012-D-P048"
+          ]
+        }
+      },
+      "SRC0173": {
+        "reason": "Do not present a music source as evidence of a film director credit.",
+        "fields": {
+          "contributionIds": [
+            "CON-F045-D-P029"
           ]
         }
       }
@@ -25105,11 +25296,13 @@
         }
       },
       "CON-F012-D-P048": {
-        "reason": "At film-credit level retain the aggregate SRC0108 and remove the two item-level song entries SRC0106 and SRC0107.",
+        "reason": "Keep the music catalogues at work level, not as evidence of Gerron's direction.",
         "fields": {
           "sourceIds": [
             "SRC0106",
-            "SRC0107"
+            "SRC0107",
+            "SRC0108",
+            "SRC0356"
           ]
         }
       },
@@ -25351,6 +25544,97 @@
         "fields": {
           "sourceIds": [
             "SRC0306"
+          ]
+        }
+      },
+      "CON-F004-D-P044": {
+        "reason": "Remove music-only sources that do not support this film-director credit.",
+        "fields": {
+          "sourceIds": [
+            "SRC0306"
+          ]
+        }
+      },
+      "CON-F011-D-P022": {
+        "reason": "Remove music-only sources that do not support this film-director credit.",
+        "fields": {
+          "sourceIds": [
+            "SRC0306"
+          ]
+        }
+      },
+      "CON-F034-D-P018": {
+        "reason": "Remove music-only sources that do not support this film-director credit.",
+        "fields": {
+          "sourceIds": [
+            "SRC0306",
+            "SRC0486"
+          ]
+        }
+      },
+      "CON-F035-D-P067": {
+        "reason": "Remove music-only sources that do not support this film-director credit.",
+        "fields": {
+          "sourceIds": [
+            "SRC0306"
+          ]
+        }
+      },
+      "CON-F040-D-P037": {
+        "reason": "Remove music-only sources that do not support this film-director credit.",
+        "fields": {
+          "sourceIds": [
+            "SRC0306"
+          ]
+        }
+      },
+      "CON-F044-D-P013": {
+        "reason": "Remove music-only sources that do not support this film-director credit.",
+        "fields": {
+          "sourceIds": [
+            "SRC0306"
+          ]
+        }
+      },
+      "CON-F047-D-P070": {
+        "reason": "Remove music-only sources that do not support this film-director credit.",
+        "fields": {
+          "sourceIds": [
+            "SRC0238",
+            "SRC0240"
+          ]
+        }
+      },
+      "CON-F047-D-P082": {
+        "reason": "Remove music-only sources that do not support this film-director credit.",
+        "fields": {
+          "sourceIds": [
+            "SRC0238",
+            "SRC0240"
+          ]
+        }
+      },
+      "CON-F050-D-P067": {
+        "reason": "Remove music-only sources that do not support this film-director credit.",
+        "fields": {
+          "sourceIds": [
+            "SRC0280"
+          ]
+        }
+      },
+      "CON-F055-D-P095": {
+        "reason": "Remove music-only sources that do not support this film-director credit.",
+        "fields": {
+          "sourceIds": [
+            "SRC0281"
+          ]
+        }
+      },
+      "CON-F045-D-P029": {
+        "reason": "Remove music-only sources that do not support this film-director credit.",
+        "fields": {
+          "sourceIds": [
+            "SRC0173"
           ]
         }
       }

@@ -33,8 +33,8 @@ import {
   sourceTypePluralLabel,
   typeBadge,
   updateMeta,
-} from "./core.js?v=8bd01cd790";
-import { RECORD_INDEXES, recordIndexReturn } from "./catalogue-filters.js?v=8bd01cd790";
+} from "./core.js?v=6477d55f29";
+import { RECORD_INDEXES, recordIndexReturn } from "./catalogue-filters.js?v=6477d55f29";
 
 // A canonical record route arrives prerendered and renders no image in the
 // browser, so the image map is loaded only where a record is actually rendered:
@@ -539,11 +539,17 @@ function personCreditEvidence(person, indexes) {
           work,
           roles: new Set(),
           certainties: new Set(),
+          directorScopeNotes: new Set(),
           sourceIds: new Set(),
         });
       }
       const group = groups.get(work.id);
       if (contribution.role) group.roles.add(contribution.role);
+      // Distinguish an initial production from the director of the released
+      // film when the credit explicitly records that historical limitation.
+      if (contribution.role === "film_director" && contribution.scopeNote) {
+        group.directorScopeNotes.add(contribution.scopeNote);
+      }
       if (contribution.certainty && contribution.certainty !== "confirmed") {
         group.certainties.add(contribution.certainty);
       }
@@ -587,7 +593,7 @@ function personWorkLedger(person, indexes) {
       const meta = [item.work.year ? String(item.work.year) : "", roles].filter(Boolean).join(" \u00b7 ");
       return `<li class="credit-evidence">
       <div class="credit-evidence__work">
-        <span><a href="${recordUrl("work", item.work.id)}">${escapeHtml(item.work.title)}</a>${meta ? `<small>${escapeHtml(meta)}</small>` : ""}</span>
+        <span><a href="${recordUrl("work", item.work.id)}">${escapeHtml(item.work.title)}</a>${meta ? `<small>${escapeHtml(meta)}</small>` : ""}${[...(item.directorScopeNotes || [])].map((note) => `<small>${escapeHtml(note)}</small>`).join("")}</span>
         <span class="credit-evidence__badges">${typeBadge(item.work.workType)}${[...item.certainties].map(certaintyBadge).join("")}</span>
       </div>
       ${item.sources.length ? `<ul class="credit-evidence__sources" aria-label="Sources supporting this credit">
@@ -2072,7 +2078,7 @@ async function bootstrapRecordPage() {
     }
     const [data, { IMAGE_DERIVATIVES }] = await Promise.all([
       loadRecordPayload(requestedType, requestedId),
-      import("./image-derivatives.js?v=8bd01cd790"),
+      import("./image-derivatives.js?v=6477d55f29"),
     ]);
     registerImageDerivatives(IMAGE_DERIVATIVES);
     const { config, view } = renderRecordView(requestedType, requestedId, data);

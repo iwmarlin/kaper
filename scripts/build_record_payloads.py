@@ -211,7 +211,11 @@ class RecordPayloadBuilder:
             for record_id, record in bundle["timelineEvents"].items()
         }
         bundle["contributions"] = {
-            record_id: selected_fields(record, contribution_fields)
+            record_id: selected_fields(
+                record,
+                contribution_fields
+                + (("scopeNote",) if record.get("role") == "film_director" else ()),
+            )
             for record_id, record in contributions.items()
         }
         bundle["personNameVariants"] = {
