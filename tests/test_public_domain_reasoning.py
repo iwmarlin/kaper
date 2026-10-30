@@ -73,8 +73,10 @@ class StatedTermTests(unittest.TestCase):
     fail on the day a stated term runs out, which is the notice that the status
     has to be rewritten, not a fault in the data."""
 
-    #: "…to the end of 2027", "…ran out at the end of 2006".
-    TERM_END = re.compile(r"the end of (\d{4})")
+    #: "…to the end of 2027", "…ran out at the end of 2006", and the forms that
+    #: say it without the phrase: "expired in 1976", "ran out in 1998".
+    TERM_END = re.compile(
+        r"the end of (\d{4})|(?:expired|ran out|lapsed)\s+(?:in|on)?\s*(\d{4})")
 
     @classmethod
     def setUpClass(cls) -> None:
@@ -91,7 +93,8 @@ class StatedTermTests(unittest.TestCase):
         years: list[int] = []
         for sentence in re.split(r"(?<=[.])\s+", note):
             if "United States" in sentence or "URAA" in sentence:
-                years += [int(year) for year in self.TERM_END.findall(sentence)]
+                years += [int(year) for match in self.TERM_END.findall(sentence)
+                          for year in match if year]
         return years
 
     def test_a_stated_term_agrees_with_the_calendar(self) -> None:
