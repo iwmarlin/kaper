@@ -108,8 +108,31 @@ class RecordingEvidenceBatchTests(unittest.TestCase):
         for credit_id in ["CON-S038-CON-P165", "CON-S038-P-ORG119"]:
             credit = self.credits[credit_id]
             self.assertEqual(credit["certainty"], "confirmed")
-            self.assertEqual(credit["evidenceContext"], ["discography"])
+            self.assertEqual(credit["evidenceContext"], ["recording_label", "discography"])
             self.assertNotIn("reads only Tanz-Orchester", credit["scopeNote"])
+
+    def test_performance_notes_distinguish_labels_discography_and_uploads(self):
+        orchestra = self.credits["CON-S038-P-ORG119"]
+        self.assertIn("mit Refraingesang", orchestra["scopeNote"])
+        self.assertIn("instrumental", orchestra["scopeNote"])
+        self.assertIn("unresolved", orchestra["scopeNote"])
+        conductor = self.credits["CON-S038-CON-P165"]
+        self.assertIn("not separately printed", conductor["scopeNote"])
+        weber = self.credits["CON-S009-CON-P165"]
+        self.assertIn("label is not shown", weber["scopeNote"])
+        self.assertIn("uploader-supplied", weber["scopeNote"])
+        ette = self.credits["CON-S182-P-ORG121"]
+        self.assertEqual(ette["nameAsPrinted"], "Orch. Bernard Etté")
+        self.assertEqual(ette["evidenceContext"], ["discography"])
+        self.assertIn("not an examined disc label", ette["scopeNote"])
+        moll = self.credits["CON-S049-P-P166"]
+        self.assertIn("uploader identifies", moll["scopeNote"])
+        gauty = self.credits["CON-S098-P-P203"]
+        self.assertIn("source disc and take have not been independently established", gauty["scopeNote"])
+        for credit in [orchestra, conductor, weber, ette, moll, gauty]:
+            fields = self.overrides["records"]["Contributions"][credit["id"]]["fields"]
+            for field, value in fields.items():
+                self.assertEqual(credit[field], value, (credit["id"], field))
 
     def test_conflicting_electrola_number_is_not_a_verified_disc_identity(self):
         source = self.sources["SRC0713"]
