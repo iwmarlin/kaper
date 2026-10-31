@@ -8371,6 +8371,50 @@
       }
     },
     "Contributions": {
+      "CON-F002-MD-P146": {
+        "fields": {"scopeNote": "filmportal.de lists this person under “Musikalische Leitung” for the film."},
+        "reason": "Preserve the source's music-direction credit without conflating it with arrangement."
+      },
+      "CON-F004-MD-P142": {
+        "fields": {"scopeNote": "filmportal.de lists this person under “Musikalische Leitung” for the film."},
+        "reason": "Preserve the source's music-direction credit without conflating it with arrangement."
+      },
+      "CON-F007-MD-P144": {
+        "fields": {"scopeNote": "filmportal.de lists this person under “Musikalische Leitung” for the film."},
+        "reason": "Preserve the source's music-direction credit without conflating it with arrangement."
+      },
+      "CON-F012-MD-P145": {
+        "fields": {"scopeNote": "filmportal.de lists this person under “Musikalische Leitung” for the film."},
+        "reason": "Preserve the source's music-direction credit without conflating it with arrangement."
+      },
+      "CON-F017-MD-P143": {
+        "fields": {"scopeNote": "filmportal.de lists this person under “Musikalische Leitung” for the film."},
+        "reason": "Preserve the source's music-direction credit without conflating it with arrangement."
+      },
+      "CON-F020-MD-P143": {
+        "fields": {"scopeNote": "filmportal.de lists this person under “Musikalische Leitung” for the film."},
+        "reason": "Preserve the source's music-direction credit without conflating it with arrangement."
+      },
+      "CON-F023-MD-P142": {
+        "fields": {"scopeNote": "filmportal.de lists this person under “Musikalische Leitung” for the film."},
+        "reason": "Preserve the source's music-direction credit without conflating it with arrangement."
+      },
+      "CON-F025-MD-P142": {
+        "fields": {"scopeNote": "filmportal.de lists this person under “Musikalische Leitung” for the film."},
+        "reason": "Preserve the source's music-direction credit without conflating it with arrangement."
+      },
+      "CON-F026-MD-P143": {
+        "fields": {"scopeNote": "filmportal.de lists this person under “Musikalische Leitung” for the film."},
+        "reason": "Preserve the source's music-direction credit without conflating it with arrangement."
+      },
+      "CON-F011-MD-P144": {
+        "fields": {"creditAsPrinted": "Musikalische Leitung", "scopeNote": "filmportal.de lists Paul Dessau under both “Musikalische Leitung” and “Musik-Bearbeitung” for the film."},
+        "reason": "Record the music-direction heading separately and acknowledge the independently listed arrangement role."
+      },
+      "CON-F021-MD-P148": {
+        "fields": {"creditAsPrinted": "Musikalische Leitung", "scopeNote": "filmportal.de lists Helmut Wolfes under both “Musikalische Leitung” and “Musik-Bearbeitung” for the film."},
+        "reason": "Record the music-direction heading separately and acknowledge the independently listed arrangement role."
+      },
       "CON-F007-A-P149": {
         "fields": {"scopeNote": "filmportal.de credits Grothe for “Arrangement” on the film. It does not identify the individual pieces arranged or establish a musical-direction credit for him."},
         "reason": "Keep the filmportal arrangement credit distinct from musical direction and from authorship of individual songs."
@@ -9403,7 +9447,8 @@
       "CON-F022-MD-P009": {
         "reason": "Remove the redundant legacy scope note and order Kaper's existing music-direction credit alongside the restored composer credits.",
         "fields": {
-          "sortOrder": 42
+          "sortOrder": 42,
+          "creditAsPrinted": "Musikalische Leitung"
         },
         "removeFields": [
           "scopeNote"
@@ -9433,12 +9478,13 @@
         "reason": "Clarify that Kaper's music-direction credit is a separate role alongside his restored composer credit.",
         "fields": {
           "scopeNote": "Music direction, separately documented alongside Kaper's composition credit.",
-          "sortOrder": 42
+          "sortOrder": 42,
+          "creditAsPrinted": "Musikalische Leitung"
         }
       },
       "CON-F019-MD-P009": {
         "reason": "Remove the defensive legacy scope note from the public credit; the MUSIC DIRECTOR role badge already distinguishes Kaper's documented function from Jurmann's composer credit.",
-        "fields": {},
+        "fields": {"creditAsPrinted": "Musikalische Leitung"},
         "removeFields": [
           "scopeNote"
         ]
@@ -11453,6 +11499,7 @@
         "fields": {
           "id": "CON-F022-MD-P077",
           "role": "music_director",
+          "creditAsPrinted": "Musikalische Leitung",
           "evidenceContext": "film_credits",
           "sortOrder": 43,
           "certainty": "confirmed",
