@@ -8687,6 +8687,7 @@
       },
       "CON-S001-CON-P169": {
         "fields": {
+          "nameAsPrinted": "Z. Wiehler",
           "evidenceContext": [
             "recording_label"
           ],
@@ -8783,6 +8784,8 @@
       },
       "CON-S096-P-P132": {
         "fields": {
+          "nameAsPrinted": "Henry Garat",
+          "scopeNote": "The Salabert 3382 label shown in SRC0764 credits the singer as “Henry Garat”; the BnF catalogue describes him as Henri Garat on the coupled issue.",
           "evidenceContext": [
             "recording_label",
             "online_catalogue"
@@ -9325,6 +9328,40 @@
             "online_recording"
           ],
           "scopeNote": "The upload names Marek Weber und sein Orchester with Austin Egen singing the refrain, identifies a His Master’s Voice / Electrola recording and gives 1929. The label is not shown; the performer attribution and year remain uploader-supplied."
+        }
+      },
+      "CON-S017-P-ORG121": {
+        "reason": "Transcribe the performing orchestra as printed on the examined Kristall 3098 label.",
+        "fields": {
+          "nameAsPrinted": "Bernard Etté und sein Orchester",
+          "scopeNote": "The Kristall 3098 label names the ensemble “Bernard Etté und sein Orchester”."
+        }
+      },
+      "CON-S157-P-P138": {
+        "reason": "Identify the film excerpt, rather than film credits alone, as evidence of Garland’s performance.",
+        "fields": {
+          "evidenceContext": ["film_song", "online_recording"],
+          "scopeNote": "The linked film excerpt shows Garland performing the number in Everybody Sing (MGM, 1938). AFI separately lists her in the cast and the song among the film’s music."
+        }
+      },
+      "CON-S130-P-P139": {
+        "reason": "Distinguish the AFI synopsis from the edited video and its restored soundtrack.",
+        "fields": {
+          "evidenceContext": ["filmographic_database", "online_recording"],
+          "scopeNote": "AFI’s synopsis describes MacDonald’s character Mary singing “San Francisco” at the Chickens Ball. The linked video presents edited film footage with a soundtrack described by its uploader as restored and sweetened."
+        }
+      },
+      "CON-S161-P-P138": {
+        "reason": "Identify the linked film excerpt as evidence of Garland’s performance.",
+        "fields": {
+          "evidenceContext": ["film_song", "online_recording"],
+          "scopeNote": "The linked film excerpt shows Garland performing the number in Everybody Sing (MGM, 1938)."
+        }
+      },
+      "CON-S002-CON-P169": {
+        "reason": "Transcribe the conductor’s name as printed on the examined Syrena Grand Record label.",
+        "fields": {
+          "nameAsPrinted": "Z. Wiehler"
         }
       },
       "CON-S182-P-ORG121": {

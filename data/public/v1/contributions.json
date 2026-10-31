@@ -12335,7 +12335,7 @@
     {
       "id": "CON-S096-P-P132",
       "role": "performer",
-      "nameAsPrinted": "Henri Garat",
+      "nameAsPrinted": "Henry Garat",
       "displayCredit": "Vocal performance",
       "evidenceContext": [
         "recording_label",
@@ -12352,7 +12352,8 @@
       "sourceIds": [
         "SRC0300",
         "SRC0764"
-      ]
+      ],
+      "scopeNote": "The Salabert 3382 label shown in SRC0764 credits the singer as “Henry Garat”; the BnF catalogue describes him as Henri Garat on the coupled issue."
     },
     {
       "id": "CON-S096-PUB-ORG106",
@@ -14913,11 +14914,12 @@
       "id": "CON-S130-P-P139",
       "role": "performer",
       "evidenceContext": [
-        "film_credits"
+        "filmographic_database",
+        "online_recording"
       ],
       "sortOrder": 50,
       "certainty": "confirmed",
-      "scopeNote": "Introduced the title song in San Francisco (MGM, 1936). AFI lists her second in the cast and its synopsis has her character sing “San Francisco” at the Chickens Ball, immediately before the earthquake sequence. This documents performance, not authorship of the work.",
+      "scopeNote": "AFI’s synopsis describes MacDonald’s character Mary singing “San Francisco” at the Chickens Ball. The linked video presents edited film footage with a soundtrack described by its uploader as restored and sweetened.",
       "workIds": [
         "W-S130"
       ],
@@ -16560,11 +16562,12 @@
       "id": "CON-S157-P-P138",
       "role": "performer",
       "evidenceContext": [
-        "film_credits"
+        "film_song",
+        "online_recording"
       ],
       "sortOrder": 50,
       "certainty": "confirmed",
-      "scopeNote": "Sang the song in Everybody Sing (MGM, 1938), in which AFI lists her among the leads. This documents performance, not authorship of the work.",
+      "scopeNote": "The linked film excerpt shows Garland performing the number in Everybody Sing (MGM, 1938). AFI separately lists her in the cast and the song among the film’s music.",
       "workIds": [
         "W-S157"
       ],
@@ -20571,7 +20574,7 @@
     {
       "id": "CON-S017-P-ORG121",
       "role": "performer",
-      "nameAsPrinted": "Tanzorchester Bernard Etté",
+      "nameAsPrinted": "Bernard Etté und sein Orchester",
       "displayCredit": "Orchestra",
       "evidenceContext": [
         "recording_label"
@@ -20587,7 +20590,7 @@
       "sourceIds": [
         "SRC0004"
       ],
-      "scopeNote": "Recorded the song; the ensemble is named on the disc as “Tanzorchester Bernard Etté”."
+      "scopeNote": "The Kristall 3098 label names the ensemble “Bernard Etté und sein Orchester”."
     },
     {
       "id": "CON-S182-P-ORG121",
@@ -20932,7 +20935,7 @@
     {
       "id": "CON-S002-CON-P169",
       "role": "conductor",
-      "nameAsPrinted": "Zygmunt Wiehler",
+      "nameAsPrinted": "Z. Wiehler",
       "displayCredit": "Directed the orchestra",
       "evidenceContext": [
         "recording_label"
@@ -21734,7 +21737,7 @@
     {
       "id": "CON-S001-CON-P169",
       "role": "conductor",
-      "nameAsPrinted": "Zygmunt Wiehler",
+      "nameAsPrinted": "Z. Wiehler",
       "displayCredit": "Directed the orchestra",
       "evidenceContext": [
         "recording_label"
@@ -23888,11 +23891,12 @@
       "id": "CON-S161-P-P138",
       "role": "performer",
       "evidenceContext": [
-        "film_credits"
+        "film_song",
+        "online_recording"
       ],
       "sortOrder": 50,
       "certainty": "confirmed",
-      "scopeNote": "Performs the song in Everybody Sing (MGM, 1938). This documents performance, not authorship of the work.",
+      "scopeNote": "The linked film excerpt shows Garland performing the number in Everybody Sing (MGM, 1938).",
       "workIds": [
         "W-S161"
       ],
