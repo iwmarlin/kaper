@@ -73,9 +73,9 @@ class RecordingCatalogueReviewTests(unittest.TestCase):
     def test_ninon_resolves_to_its_own_dnb_record_not_the_coupled_side(self):
         source = self.tables["sources"]["SRC0583"]
         self.assertEqual(source["primaryUrl"], "https://d-nb.info/380669366")
-        self.assertIn("field 777", source["researchNote"])
-        self.assertIn("380669358", source["researchNote"])
-        self.assertIn("rate-limited", source["researchNote"])
+        self.assertIn("directly consulted DNB record", source["researchNote"])
+        self.assertIn("Be.10221-4", source["researchNote"])
+        self.assertIn("full PDF could not be consulted", source["researchNote"])
         self.assertEqual(source["sourceStatus"], "verified_with_attribution_note")
         self.assertNotIn("accessUrl", source)
         self.assertTrue(any(link["url"] == "https://d-nb.info/380669358"
@@ -88,7 +88,8 @@ class RecordingCatalogueReviewTests(unittest.TestCase):
         self.assertEqual((source["date"], source["dateRole"]), ("1933-02-07", "recording"))
         self.assertIn("Be 10221", source["fullCitation"])
         self.assertNotIn("Be.10220-2", source["fullCitation"])
-        self.assertIn("coupled", source["researchNote"])
+        self.assertIn("separate entry with matrix Be.10220-2", source["researchNote"])
+        self.assertIn("not been independently matched to the -4 take", source["researchNote"])
 
     def test_library_entries_do_not_become_unprinted_composer_evidence(self):
         for sid, cids in CATALOGUE_UNSUPPORTED_AUTHORSHIP.items():

@@ -18529,7 +18529,7 @@
     {
       "id": "SRC0521",
       "shortCitation": "“Jazz auf vier Flügeln” — Rhein- und Ruhr-Zeitung",
-      "fullCitation": "Dr. Funk. “Jazz auf vier Flügeln.” Rhein- und Ruhr-Zeitung, 10 December 1929, p. 12. Deutsche Digitale Bibliothek / Deutsches Zeitungsportal.",
+      "fullCitation": "Dr. Funk. “Jazz auf vier Flügeln.” Rhein- und Ruhr-Zeitung, evening edition, 10 December 1929, p. 2. Deutsche Digitale Bibliothek / Deutsches Zeitungsportal, image 12.",
       "sourceType": "press_item",
       "title": "Jazz auf vier Flügeln — ERKLA concert review in Hamborn",
       "creator": "Dr. Funk",
@@ -20445,7 +20445,7 @@
     {
       "id": "SRC0583",
       "shortCitation": "DNB / GHT, Jan Kiepura, “Ninon”, Odeon O-4661",
-      "fullCitation": "Deutsche Nationalbibliothek. “Ninon.” Jan Kiepura, tenor, with orchestra. Odeon O-4661; coupled with “Oh Madonna!”. Linked catalogue record 380669366, identified by the coupling reference in record 380669358. Supplementary recording data: Gesellschaft für Historische Tonträger, Odeon matrix discography, Be 10000 series, entry Be 10221, Berlin, 7 February 1933; conductor Frieder Weissmann.",
+      "fullCitation": "Deutsche Nationalbibliothek. “Ninon.” Jan Kiepura, tenor, with orchestra directed by Dr. Weissmann. Odeon O-4661, matrix Be.10221-4; coupled with “Oh Madonna!”. Catalogue record 380669366. Supplementary recording data: Gesellschaft für Historische Tonträger, Odeon matrix discography, Be 10000 series, entry Be 10221, Berlin, 7 February 1933.",
       "sourceType": "sound_recording_catalogue",
       "title": "Ninon, lach mir einmal zu — Odeon O-4661, catalogue and matrix evidence",
       "creator": "Jan Kiepura",
@@ -20474,7 +20474,7 @@
       "contributionIds": [
         "CON-S076-P-P117"
       ],
-      "researchNote": "DNB record 380669358 describes the coupled “Oh Madonna!” side, with Be.10220-2 and WBe.10220-2 as matrix forms; its field 777 explicitly links “Ninon” as record 380669366. The primary URL follows that link, not a guessed identifier. The separate GHT matrix discography identifies “Ninon” as Be 10221, recorded in Berlin on 7 February 1933 with Jan Kiepura and Frieder Weissmann. The structured date describes that session, not a DNB issue date. Neither the coupled side’s take suffix nor the matrix is transferred to “Ninon”. The corrected catalogue identifier is established by DNB’s coupling metadata; direct retrieval of the linked record was rate-limited during this review, and the full GHT PDF was unavailable for download.",
+      "researchNote": "The directly consulted DNB record identifies Kiepura, orchestral direction by Dr. Weissmann, Odeon O-4661 and matrix Be.10221-4. Its linked “Oh Madonna!” side is a separate entry with matrix Be.10220-2. The previously cited GHT matrix discography supplies Be 10221 and the Berlin session date 7 February 1933; its full PDF could not be consulted during this review. The structured date describes that reported session, not a DNB issue date. The session has not been independently matched to the -4 take catalogued by DNB, or to the separate YouTube transfer.",
       "researchNoteType": "discographic_note",
       "additionalLinks": [
         {
@@ -20492,12 +20492,12 @@
     {
       "id": "SRC0584",
       "shortCitation": "Real Academia de Bellas Artes de San Fernando, “Ninon… quand tu me souris,” Salabert, 1933.",
-      "fullCitation": "“Ninon… quand tu me souris: slow-fox-trot chanté par Jan Kiepura dans le film Tout pour l’amour.” Music by Bronisław Kaper and Walter Jurmann; film-version words by Georges Clouzot and Serge Veber; concert-version words by Charles-Louis Pothier. Paris: Éditions Salabert, 1933, plate E.A.S. 8814 / 8814 bis. Catalogue of the Real Academia de Bellas Artes de San Fernando, shelfmark M-6824.",
+      "fullCitation": "“Ninon… quand tu me souris: slow-fox-trot chanté par Jan Kiepura dans le film Tout pour l’amour.” Music by Bronisław Kaper and Walter Jurmann; film-version words by Georges Clouzot and Serge Veber; concert-version words by Charles-Louis Pothier. Paris: Éditions Salabert, © 1933, plate E.A.S. 8814 / 8814 bis. Catalogue of the Real Academia de Bellas Artes de San Fernando, shelfmark M-6824.",
       "sourceType": "sheet_music_catalogue",
-      "title": "Ninon… quand tu me souris — score performed by Jan Kiepura in Tout pour l’amour",
+      "title": "Ninon… quand tu me souris — Salabert score catalogue, M-6824",
       "creator": "Real Academia de Bellas Artes de San Fernando",
       "date": "1933",
-      "dateRole": "catalogue_volume",
+      "dateRole": "described_item",
       "dateQualifier": "confirmed",
       "repository": "Real Academia de Bellas Artes de San Fernando",
       "publication": "Library and Archive catalogue",
@@ -20517,7 +20517,9 @@
       ],
       "contributionIds": [
         "CON-S077-P-P117"
-      ]
+      ],
+      "researchNote": "The academy’s catalogue transcribes the score title as crediting Jan Kiepura with singing the song in Tout pour l’amour. Its publication details give copyright 1933; this is the date of the described score, not the date of the online catalogue record or evidence for a particular sound recording.",
+      "researchNoteType": "evidence_note"
     },
     {
       "id": "SRC0585",

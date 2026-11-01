@@ -131,6 +131,11 @@ REVIEWED_SOURCE_DATES: dict[str, dict[str, str]] = {
         "dateQualifier": "confirmed",
         "date": "1933-02-07"
     },
+    "SRC0584": {
+        "date": "1933",
+        "dateRole": "described_item",
+        "dateQualifier": "confirmed",
+    },
     "SRC0625": {
         "date": "1937-06-23",
         "dateRole": "recording",

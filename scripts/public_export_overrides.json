@@ -725,12 +725,12 @@
           "accessDate": "2026-10-26",
           "title": "Ninon, lach mir einmal zu — Odeon O-4661, catalogue and matrix evidence",
           "shortCitation": "DNB / GHT, Jan Kiepura, “Ninon”, Odeon O-4661",
-          "fullCitation": "Deutsche Nationalbibliothek. “Ninon.” Jan Kiepura, tenor, with orchestra. Odeon O-4661; coupled with “Oh Madonna!”. Linked catalogue record 380669366, identified by the coupling reference in record 380669358. Supplementary recording data: Gesellschaft für Historische Tonträger, Odeon matrix discography, Be 10000 series, entry Be 10221, Berlin, 7 February 1933; conductor Frieder Weissmann.",
+          "fullCitation": "Deutsche Nationalbibliothek. “Ninon.” Jan Kiepura, tenor, with orchestra directed by Dr. Weissmann. Odeon O-4661, matrix Be.10221-4; coupled with “Oh Madonna!”. Catalogue record 380669366. Supplementary recording data: Gesellschaft für Historische Tonträger, Odeon matrix discography, Be 10000 series, entry Be 10221, Berlin, 7 February 1933.",
           "creator": "Jan Kiepura",
           "repository": "Deutsche Nationalbibliothek / Deutsches Musikarchiv",
           "publication": "Odeon",
           "primaryUrl": "https://d-nb.info/380669366",
-          "researchNote": "DNB record 380669358 describes the coupled “Oh Madonna!” side, with Be.10220-2 and WBe.10220-2 as matrix forms; its field 777 explicitly links “Ninon” as record 380669366. The primary URL follows that link, not a guessed identifier. The separate GHT matrix discography identifies “Ninon” as Be 10221, recorded in Berlin on 7 February 1933 with Jan Kiepura and Frieder Weissmann. The structured date describes that session, not a DNB issue date. Neither the coupled side’s take suffix nor the matrix is transferred to “Ninon”. The corrected catalogue identifier is established by DNB’s coupling metadata; direct retrieval of the linked record was rate-limited during this review, and the full GHT PDF was unavailable for download.",
+          "researchNote": "The directly consulted DNB record identifies Kiepura, orchestral direction by Dr. Weissmann, Odeon O-4661 and matrix Be.10221-4. Its linked “Oh Madonna!” side is a separate entry with matrix Be.10220-2. The previously cited GHT matrix discography supplies Be 10221 and the Berlin session date 7 February 1933; its full PDF could not be consulted during this review. The structured date describes that reported session, not a DNB issue date. The session has not been independently matched to the -4 take catalogued by DNB, or to the separate YouTube transfer.",
           "researchNoteType": "discographic_note",
           "sourceStatus": "verified_with_attribution_note",
           "additionalLinks": [
@@ -3315,9 +3315,19 @@
         "reason": "Normalize the titled concert-review citation and use one consistent publication and repository form.",
         "fields": {
           "shortCitation": "“Jazz auf vier Flügeln” — Rhein- und Ruhr-Zeitung",
-          "fullCitation": "Dr. Funk. “Jazz auf vier Flügeln.” Rhein- und Ruhr-Zeitung, 10 December 1929, p. 12. Deutsche Digitale Bibliothek / Deutsches Zeitungsportal.",
+          "fullCitation": "Dr. Funk. “Jazz auf vier Flügeln.” Rhein- und Ruhr-Zeitung, evening edition, 10 December 1929, p. 2. Deutsche Digitale Bibliothek / Deutsches Zeitungsportal, image 12.",
           "repository": "Deutsche Digitale Bibliothek / Deutsches Zeitungsportal",
           "publication": "Rhein- und Ruhr-Zeitung"
+        }
+      },
+      "SRC0584": {
+        "reason": "Distinguish the copyright date of the described score from the online catalogue and describe the Kiepura performance evidence accurately.",
+        "fields": {
+          "fullCitation": "“Ninon… quand tu me souris: slow-fox-trot chanté par Jan Kiepura dans le film Tout pour l’amour.” Music by Bronisław Kaper and Walter Jurmann; film-version words by Georges Clouzot and Serge Veber; concert-version words by Charles-Louis Pothier. Paris: Éditions Salabert, © 1933, plate E.A.S. 8814 / 8814 bis. Catalogue of the Real Academia de Bellas Artes de San Fernando, shelfmark M-6824.",
+          "title": "Ninon… quand tu me souris — Salabert score catalogue, M-6824",
+          "dateRole": "described_item",
+          "researchNote": "The academy’s catalogue transcribes the score title as crediting Jan Kiepura with singing the song in Tout pour l’amour. Its publication details give copyright 1933; this is the date of the described score, not the date of the online catalogue record or evidence for a particular sound recording.",
+          "researchNoteType": "evidence_note"
         }
       },
       "SRC0453": {
@@ -8371,6 +8381,29 @@
       }
     },
     "Contributions": {
+      "CON-S077-P-P117": {
+        "reason": "Use the score catalogue as evidence of a film performance without implying direct inspection of a score or a disc.",
+        "fields": {
+          "evidenceContext": ["online_catalogue"],
+          "scopeNote": "The academy’s score catalogue credits Jan Kiepura with singing the song in Tout pour l’amour; it does not identify a particular sound recording."
+        }
+      },
+      "CON-O011-P-P009": {
+        "reason": "Use the printed newspaper page, distinguishing it from the twelfth image in the viewer.",
+        "fields": {"evidenceLocator": "Dr. Funk, “Jazz auf vier Flügeln,” Rhein- und Ruhrzeitung, evening edition, 10 December 1929, p. 2 (image 12)."}
+      },
+      "CON-O011-P-P088": {
+        "reason": "Use the printed newspaper page, distinguishing it from the twelfth image in the viewer.",
+        "fields": {"evidenceLocator": "Dr. Funk, “Jazz auf vier Flügeln,” Rhein- und Ruhrzeitung, evening edition, 10 December 1929, p. 2 (image 12)."}
+      },
+      "CON-O011-P-P089": {
+        "reason": "Use the printed newspaper page, distinguishing it from the twelfth image in the viewer.",
+        "fields": {"evidenceLocator": "Dr. Funk, “Jazz auf vier Flügeln,” Rhein- und Ruhrzeitung, evening edition, 10 December 1929, p. 2 (image 12)."}
+      },
+      "CON-O011-P-P090": {
+        "reason": "Use the printed newspaper page, distinguishing it from the twelfth image in the viewer.",
+        "fields": {"evidenceLocator": "Dr. Funk, “Jazz auf vier Flügeln,” Rhein- und Ruhrzeitung, evening edition, 10 December 1929, p. 2 (image 12)."}
+      },
       "CON-F002-MD-P146": {
         "fields": {"scopeNote": "filmportal.de lists this person under “Musikalische Leitung” for the film."},
         "reason": "Preserve the source's music-direction credit without conflating it with arrangement."
@@ -8646,7 +8679,7 @@
             "online_catalogue",
             "discography"
           ],
-          "scopeNote": "DNB’s coupled-side record explicitly links “Ninon” as record 380669366. The independent GHT matrix entry Be 10221 names Jan Kiepura, tenor, with orchestra directed by Frieder Weissmann. The coupled “Oh Madonna!” matrix Be.10220-2 is not evidence for a take of “Ninon”."
+          "scopeNote": "DNB record 380669366 identifies Jan Kiepura with orchestra directed by Dr. Weissmann on Odeon O-4661, matrix Be.10221-4. The separately cited discography gives the base matrix and a 1933 session; the session has not been independently matched to this take."
         },
         "reason": "Review of nine recording catalogues, 26 October 2026: distinguish library descriptions, independent matrix evidence, legal deposit and recording dates; retain qualified transfer identifications."
       },
@@ -9881,6 +9914,12 @@
       }
     },
     "Timeline Events": {
+      "TE0023": {
+        "reason": "Correct the newspaper reference to the printed page of the evening edition, not the scan number.",
+        "fields": {
+          "longDescription": "Dr. Funk’s review “Jazz auf vier Flügeln” in the Rhein- und Ruhrzeitung, evening edition, 10 December 1929, p. 2, documents an ERKLA concert in Hamborn. It names Kaper alongside Giuliano Pomeranz, then performing as Julian Pomeranc, Alexander Zakin, and Leopold Mittmann. Kaper joined the ensemble after Adam Gelbtrunk’s departure, at Leopold Mittmann’s urging; the announcements of the late 1920s otherwise list the quartet without him, so the association cannot be counted as a regular one. Dr. Funk credited him with a “Vierflügeltango” of sonorous linear writing and Mittmann with a “Jazz-Prélude” and three “Jazz-Babies”."
+        }
+      },
       "TE0002": {
         "reason": "Date the school year rather than Kaper’s unrecorded admission, and distinguish the private Skrynnikov school from state schools.",
         "fields": {
