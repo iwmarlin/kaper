@@ -671,13 +671,18 @@ RECORDING_FIELDS: dict[str, dict[str, Any]] = {
         "dateRole": "issue",
         "dateQualifier": "confirmed",
         "accessDate": "2026-10-26",
-        "researchNote": "Henry König’s Odeon label list identifies Hans Albers, Odeon O-11811, matrix Be 10227-2, a session in Berlin, room 2, on 13 February 1933, and release in April 1933. The upload description gives Be 10227 without a take suffix; its matrix number must not be silently expanded to take 2. The label is not shown in the consulted upload material, and its identification of the orchestra and Otto Dobrindt remains uploader-supplied. The filmed label of the coupled title in SRC0699 identifies the orchestra and conductor for that side; it is not direct label evidence for this performance. The structured date describes the catalogue issue, not the recording session or manufacture of the transferred copy.",
+        "researchNote": "Henry König’s Odeon label list identifies Hans Albers, Odeon O-11811, matrix Be 10227-2, a session in Berlin, room 2, on 13 February 1933, and release in April 1933. Christian Zwarg’s Odeon matrix discography separately names Otto Dobrindt as musical director with orchestra and Hans Albers for Be 10227 and Be 10227-2; it does not name the orchestra. The upload description gives Be 10227 without a take suffix, identifies the Odeon-Künstler-Orchester and names Dobrindt. The label is not shown, so the transferred copy and take are not independently established. The filmed label of the coupled title in SRC0699 is evidence for that side, not this performance. The structured date describes the catalogue issue, not the recording session or manufacture of the transferred copy.",
         "researchNoteType": "discographic_note",
         "additionalLinks": [
             {
                 "label": "Henry König, Odeon label list — O-11811, Be 10227-2",
                 "url": "http://musiktiteldb.de/Label/Ode_11.html",
                 "role": "catalogue_entry"
+            },
+            {
+                "label": "Christian Zwarg, Odeon matrix discography — Be 10227",
+                "url": "https://discography.phonomuseum.at/odeon/odmxBe10000.pdf#page=51",
+                "role": "additional_evidence"
             }
         ]
     },
@@ -1397,7 +1402,7 @@ AUDITED_PRIVATE_UPLOAD_FIELDS = {
         "date": "1929",
         "dateRole": "described_item",
         "dateQualifier": "reported",
-        "researchNote": "The upload identifies Marek Weber und sein Orchester with Austin Egen, a His Master’s Voice / Electrola issue and the year 1929, but supplies no catalogue or matrix number and does not show the disc label. It does not distinguish recording from issue year. Nico Dostal’s arrangement credit, Kaper’s music credit and Fritz Rotter’s words credit are uploader-supplied, not label transcriptions. The separate Tauber session documented for the same song does not identify this Weber transfer.",
+        "researchNote": "The upload identifies Marek Weber und sein Orchester with Austin Egen, a His Master’s Voice / Electrola issue and the year 1929, but supplies no catalogue or matrix number and does not show the disc label. It does not distinguish recording from issue year. Wolfgang Stanicek’s Austin Egen discography separately lists the title with Weber’s orchestra and Egen singing, matrix BLR 5163-1, dated approximately April 1929; its two entries give different E.G. catalogue numbers, 1247 and 1257. Neither number is assigned to this transfer without further evidence. Nico Dostal’s arrangement credit, Kaper’s music credit and Fritz Rotter’s words credit in the upload are not label transcriptions. The separate Tauber session documented for the same song does not identify this Weber transfer.",
         "sourceType": "online_audio_source",
         "researchNoteType": "discographic_note"
     },

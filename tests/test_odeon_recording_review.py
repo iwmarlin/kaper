@@ -55,8 +55,12 @@ class OdeonRecordingReviewTests(unittest.TestCase):
             with self.subTest(credit=cid):
                 credit = self.contributions[cid]
                 self.assertEqual(credit["certainty"], "probable")
-                self.assertEqual(credit["evidenceContext"], ["online_recording"])
+                expected = (["discography", "online_recording"] if cid == "CON-S080-CON-P167"
+                            else ["online_recording"])
+                self.assertEqual(credit["evidenceContext"], expected)
                 self.assertIn("uploader", credit["scopeNote"])
+                if cid == "CON-S080-CON-P167":
+                    self.assertIn("particular transferred copy and take remain unverified", credit["scopeNote"])
         for cid in ("CON-S080-P-P153", "CON-S080-LAB-ORG128"):
             self.assertEqual(self.contributions[cid]["certainty"], "confirmed")
             self.assertEqual(self.contributions[cid]["evidenceContext"], ["discography"])

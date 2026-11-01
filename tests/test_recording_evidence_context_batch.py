@@ -46,17 +46,37 @@ class RecordingEvidenceContextBatchTests(unittest.TestCase):
 
     def test_27_uploader_credits_keep_qualified_identity_and_reciprocal_links(self):
         self.assertEqual(len(UPLOADER_CREDITS), 27)
+        supplemented = {
+            "CON-S026-P-P077": ["online_catalogue", "online_recording"],
+            "CON-S080-CON-P167": ["discography", "online_recording"],
+        }
         for cid in UPLOADER_CREDITS:
             with self.subTest(credit=cid):
                 credit = self.credits[cid]
                 self.assertEqual(credit["certainty"], "probable")
-                self.assertEqual(credit["evidenceContext"], ["online_recording"])
+                expected = supplemented.get(cid, ["online_recording"])
+                self.assertEqual(credit["evidenceContext"], expected)
                 self.assertIn("upload", credit["scopeNote"].lower())
                 self.assertEqual(len(credit["sourceIds"]), 1)
                 for sid in credit["sourceIds"]:
                     self.assertIn(cid, self.sources[sid]["contributionIds"])
                 fields = self.overrides["records"]["Contributions"][cid]["fields"]
-                self.assertEqual(fields["evidenceContext"], ["online_recording"])
+                self.assertEqual(fields["evidenceContext"], expected)
+
+    def test_supplementary_catalogues_do_not_identify_the_transferred_copies(self):
+        birthday = self.sources["SRC0715"]
+        gorilla = self.sources["SRC0697"]
+        self.assertIn("matrix 10431", birthday["researchNote"])
+        self.assertIn("no identifier", birthday["researchNote"])
+        self.assertTrue(any("110498E6" in link["url"] for link in birthday["additionalLinks"]))
+        self.assertIn("Be 10227-2", gorilla["researchNote"])
+        self.assertIn("does not name the orchestra", gorilla["researchNote"])
+        self.assertIn("take are not independently established", gorilla["researchNote"])
+        self.assertTrue(any("odmxBe10000.pdf#page=51" in link["url"] for link in gorilla["additionalLinks"]))
+        weber = self.sources["SRC0707"]
+        self.assertIn("1247 and 1257", weber["researchNote"])
+        self.assertIn("Neither number is assigned", weber["researchNote"])
+        self.assertTrue(any("austin_egen_dr_stanicek.pdf" in link["url"] for link in weber["additionalLinks"]))
 
     def test_hmv_label_does_not_certify_a_victor_session(self):
         label = self.credits["CON-S158-LAB-ORG147"]

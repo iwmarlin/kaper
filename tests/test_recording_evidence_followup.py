@@ -21,7 +21,7 @@ class RecordingEvidenceFollowupTests(unittest.TestCase):
     def load(table):
         return {r["id"]: r for r in json.loads((ROOT / f"data/public/v1/{table}.json").read_text())["records"]}
 
-    def test_four_uploader_only_credits_remain_qualified(self):
+    def test_four_transfer_attributions_remain_qualified(self):
         expected = {
             "CON-S026-P-P077": "SRC0715", "CON-S030-CON-P167": "SRC0727",
             "CON-S003-CON-P119": "SRC0738", "CON-S003-LAB-ORG132": "SRC0738",
@@ -31,8 +31,12 @@ class RecordingEvidenceFollowupTests(unittest.TestCase):
                 credit = self.credits[credit_id]
                 self.assertEqual(credit["certainty"], "probable")
                 self.assertEqual(credit["sourceIds"], [source_id])
-                self.assertEqual(credit["evidenceContext"], ["online_recording"])
-                self.assertIn("uploader-level", credit["scopeNote"])
+                if credit_id == "CON-S026-P-P077":
+                    self.assertEqual(credit["evidenceContext"], ["online_catalogue", "online_recording"])
+                    self.assertIn("no identifier", credit["scopeNote"])
+                else:
+                    self.assertEqual(credit["evidenceContext"], ["online_recording"])
+                    self.assertIn("uploader-level", credit["scopeNote"])
                 self.assertEqual(self.overrides["records"]["Contributions"][credit_id]["fields"]["certainty"], "probable")
 
     def test_independent_catalogue_credits_keep_their_certainty(self):
