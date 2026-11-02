@@ -1092,7 +1092,7 @@
           "dateQualifier": "confirmed",
           "accessDate": "2026-11-02",
           "sourceStatus": "verified_with_attribution_note",
-          "researchNote": "The photographed label identifies Polydor 47019 B, Lys Gauty with orchestral accompaniment, and the credit Candel–Groener–Saudmont; it does not name the orchestra or conductor. The uploader associates the transfer with Polydor 47019 or 522987 and gives matrix 1444 1/2 WPP; that matrix is not independently transcribed from the photograph. The item gives 1933 and asks ‘Paris 1933?’; these do not establish the session or issue date. Frémeaux & Associés’ discography (SRC0884) identifies the Gauty recording as Polydor 522987, matrix 1444 WPP, recorded in Paris on 18 October 1934. The relation of the matrix notation and the exact take of this transfer remain unverified. The structured date is the Internet Archive upload date, not the date of the historical disc.",
+          "researchNote": "The photographed label identifies Polydor 47019 B, Lys Gauty with orchestral accompaniment, and the credit Candel–Groener–Saudmont; it does not name the orchestra or conductor. The uploader associates the transfer with Polydor 47019 or 522987 and gives matrix 1444 1/2 WPP; that matrix is not independently transcribed from the photograph. The item gives 1933 and asks ‘Paris 1933?’; these do not establish the session or issue date. Frémeaux & Associés’ discography (SRC0884) lists Polydor 522987, matrix 1444 WPP, with a Paris session on 18 October 1934. A BnF catalogue entry for a different reissue gives 28 September 1934 without a matrix number; see SRC0884. The relation between the reissued recordings, the matrix notation and the exact take of this transfer remains unverified. The structured date is the Internet Archive upload date, not the date of the historical disc.",
           "researchNoteType": "discographic_note",
           "additionalLinks": [
             {
@@ -1103,6 +1103,20 @@
           ]
         },
         "reason": "Replace the listening reference with the Internet Archive transfer and its readable label, distinguishing the uploaded date and reported matrix from the historical issue."
+      },
+      "SRC0884": {
+        "fields": {
+          "researchNote": "The FA 5033 discography dates the Polydor 522987 recording, matrix 1444 WPP, to 18 October 1934. The BnF catalogue dates a Lys Gauty performance with Wal Berg’s orchestra on the separate compilation Jean-Christophe Averty présente les Cinglés du Music-Hall: 1934 to 28 September 1934, but does not give a matrix number. The descriptions do not establish whether the two reissues use the same recording or take; the differing dates should not be treated as a resolved conflict.",
+          "researchNoteType": "discographic_note",
+          "additionalLinks": [
+            {
+              "label": "BnF catalogue — Les Cinglés du Music-Hall: 1934, track 18",
+              "url": "https://catalogue.bnf.fr/ark:/12148/cb38342163g",
+              "role": "additional_evidence"
+            }
+          ]
+        },
+        "reason": "Distinguish the documented FA 5033 matrix and date from a different BnF-catalogued compilation whose recording date differs and whose matrix is not specified."
       },
       "SRC0808": {
         "fields": {
@@ -9528,7 +9542,7 @@
       "CON-S098-P-P203": {
         "reason": "Distinguish the discographic listing from what the photographed Polydor label actually identifies.",
         "fields": {
-          "scopeNote": "Frémeaux & Associés’ discography lists Gauty with Wal Berg’s orchestra, recorded in Paris on 18 October 1934, Polydor 522987, matrix 1444 WPP. The Internet Archive item shows a Polydor 47019 B label naming Gauty with orchestra; it does not name the conductor, and the precise take remains unverified."
+          "scopeNote": "Frémeaux & Associés’ discography lists Gauty with Wal Berg’s orchestra and dates Polydor 522987, matrix 1444 WPP, to 18 October 1934. BnF gives 28 September 1934 for a separately catalogued reissue, without identifying its matrix; whether it is the same recording remains unverified. The Internet Archive item shows a Polydor 47019 B label naming Gauty with orchestra but not the conductor."
         }
       },
       "CON-S098-LAB-ORG155": {

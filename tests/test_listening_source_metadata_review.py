@@ -144,6 +144,19 @@ class ListeningSourceMetadataReviewTests(unittest.TestCase):
         self.assertIn("S098", source["songIds"])
         self.assertNotIn("YouTube", medium["publicCaption"])
 
+    def test_gauty_dates_are_attributed_to_distinct_reissues(self):
+        source = self.sources["SRC0884"]
+        note = source["researchNote"]
+        self.assertEqual((source["date"], source["dateRole"]), ("2002", "publication"))
+        for phrase in ("18 October 1934", "28 September 1934", "separate compilation",
+                       "does not give a matrix number", "same recording or take"):
+            self.assertIn(phrase, note)
+        self.assertEqual(source["additionalLinks"][0]["url"],
+                         "https://catalogue.bnf.fr/ark:/12148/cb38342163g")
+        self.assertIn("28 September 1934", self.sources["SRC0883"]["researchNote"])
+        self.assertEqual(normalized_source(source), source)
+        self.assertEqual(self.overrides["records"]["Sources"]["SRC0884"]["fields"]["researchNote"], note)
+
     def test_all_twelve_media_keep_external_rights_and_their_access_sources(self):
         for sid, mid in PAIRS.items():
             with self.subTest(source=sid):

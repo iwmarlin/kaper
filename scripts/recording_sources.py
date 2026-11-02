@@ -571,12 +571,23 @@ RECORDING_FIELDS: dict[str, dict[str, Any]] = {
         "reliability": "medium",
         "accessDate": "2026-11-02",
         "sourceStatus": "verified_with_attribution_note",
-        "researchNote": "The photographed label identifies Polydor 47019 B, Lys Gauty with orchestral accompaniment, and the credit Candel–Groener–Saudmont; it does not name the orchestra or conductor. The uploader associates the transfer with Polydor 47019 or 522987 and gives matrix 1444 1/2 WPP; that matrix is not independently transcribed from the photograph. The item gives 1933 and asks ‘Paris 1933?’; these do not establish the session or issue date. Frémeaux & Associés’ discography (SRC0884) identifies the Gauty recording as Polydor 522987, matrix 1444 WPP, recorded in Paris on 18 October 1934. The relation of the matrix notation and the exact take of this transfer remain unverified. The structured date is the Internet Archive upload date, not the date of the historical disc.",
+        "researchNote": "The photographed label identifies Polydor 47019 B, Lys Gauty with orchestral accompaniment, and the credit Candel–Groener–Saudmont; it does not name the orchestra or conductor. The uploader associates the transfer with Polydor 47019 or 522987 and gives matrix 1444 1/2 WPP; that matrix is not independently transcribed from the photograph. The item gives 1933 and asks ‘Paris 1933?’; these do not establish the session or issue date. Frémeaux & Associés’ discography (SRC0884) lists Polydor 522987, matrix 1444 WPP, with a Paris session on 18 October 1934. A BnF catalogue entry for a different reissue gives 28 September 1934 without a matrix number; see SRC0884. The relation between the reissued recordings, the matrix notation and the exact take of this transfer remains unverified. The structured date is the Internet Archive upload date, not the date of the historical disc.",
         "researchNoteType": "discographic_note",
         "additionalLinks": [
             {
                 "label": "Frémeaux & Associés FA 5033 — historical Gauty discography (SRC0884)",
                 "url": "https://www.fremeaux.com/en/218-lys-gauty-3700368475249-fa5033.html",
+                "role": "additional_evidence"
+            }
+        ]
+    },
+    "SRC0884": {
+        "researchNote": "The FA 5033 discography dates the Polydor 522987 recording, matrix 1444 WPP, to 18 October 1934. The BnF catalogue dates a Lys Gauty performance with Wal Berg’s orchestra on the separate compilation Jean-Christophe Averty présente les Cinglés du Music-Hall: 1934 to 28 September 1934, but does not give a matrix number. The descriptions do not establish whether the two reissues use the same recording or take; the differing dates should not be treated as a resolved conflict.",
+        "researchNoteType": "discographic_note",
+        "additionalLinks": [
+            {
+                "label": "BnF catalogue — Les Cinglés du Music-Hall: 1934, track 18",
+                "url": "https://catalogue.bnf.fr/ark:/12148/cb38342163g",
                 "role": "additional_evidence"
             }
         ]

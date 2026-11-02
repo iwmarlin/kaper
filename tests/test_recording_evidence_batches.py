@@ -141,7 +141,8 @@ class RecordingEvidenceBatchTests(unittest.TestCase):
         self.assertIn("uploader identifies", moll["scopeNote"])
         gauty = self.credits["CON-S098-P-P203"]
         self.assertIn("Polydor 47019 B", gauty["scopeNote"])
-        self.assertIn("precise take remains unverified", gauty["scopeNote"])
+        self.assertIn("28 September 1934", gauty["scopeNote"])
+        self.assertIn("whether it is the same recording remains unverified", gauty["scopeNote"])
         for credit in [orchestra, conductor, weber, ette, moll, gauty]:
             fields = self.overrides["records"]["Contributions"][credit["id"]]["fields"]
             for field, value in fields.items():
