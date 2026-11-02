@@ -39,6 +39,27 @@ class RecordingEvidenceFollowupTests(unittest.TestCase):
                     self.assertIn("uploader-level", credit["scopeNote"])
                 self.assertEqual(self.overrides["records"]["Contributions"][credit_id]["fields"]["certainty"], "probable")
 
+    def test_gold_catalogue_does_not_identify_the_unlabelled_upload(self):
+        source = self.sources["SRC0738"]
+        note = source["researchNote"]
+        self.assertIn("7061 r", note)
+        self.assertIn("relationship between the Actuelle and Syrena recordings has not been established", note)
+        self.assertIn("names neither conductor nor label", note)
+        self.assertIn("1908–1914", note)
+        self.assertIn("Syrena 17901", note)
+        self.assertIn("not given in the upload", note)
+        self.assertEqual(len(source["additionalLinks"]), 3)
+        fields = self.overrides["records"]["Sources"]["SRC0738"]["fields"]
+        self.assertEqual(fields["researchNote"], note)
+        self.assertEqual(fields["additionalLinks"], source["additionalLinks"])
+
+    def test_electrola_number_conflict_does_not_count_a_reused_upload_twice(self):
+        source = self.sources["SRC0713"]
+        self.assertIn("HMV E.G. 2498", source["researchNote"])
+        self.assertIn("same YouTube upload", source["researchNote"])
+        self.assertIn("not independent confirmation", source["researchNote"])
+        self.assertEqual(self.credits["CON-S070-CON-P165"]["certainty"], "probable")
+
     def test_independent_catalogue_credits_keep_their_certainty(self):
         expected = {
             "CON-S082-P-ORG120": "discography",

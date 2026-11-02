@@ -24588,13 +24588,18 @@
       "songIds": [
         "S070"
       ],
-      "researchNote": "An uploader-created opening card gives Electrola E.G. 2508, matrix E-OD 795 / I and a recording date of 17 February 1932. The disc label is not shown and the card contains no authorship credits. The Electrola label list at musiktiteldb.de instead lists E.G. 2508 against “Spanischer Zigeunertanz” (OD 773-1) and “Die alte Spieluhr” (OD770-1), not this title. These descriptions conflict; the upload has not been identified with a verified historical pressing. Its year and performer details remain uploader-supplied, and it is retained as a listening reference rather than a verified description of E.G. 2508.",
+      "researchNote": "An uploader-created opening card gives Electrola E.G. 2508, matrix E-OD 795 / I and a recording date of 17 February 1932. The disc label is not shown and the card contains no authorship credits. The Electrola label list at musiktiteldb.de instead lists E.G. 2508 against “Spanischer Zigeunertanz” (OD 773-1) and “Die alte Spieluhr” (OD770-1), not this title; its entry for the first side also cross-refers to HMV E.G. 2498. The conflict cannot be resolved from these descriptions alone. The Tangos78rpm entry also gives E.G. 2508 but links to this same YouTube upload, so it is not independent confirmation of the transfer. The upload remains a listening reference, not a verified identification of the pressing, matrix, year or performers.",
       "researchNoteType": "identity_assessment",
       "additionalLinks": [
         {
           "label": "Electrola label list — conflicting catalogue-number evidence",
           "url": "http://musiktiteldb.de/Label/EMI_EG02.html",
           "role": "catalogue_entry"
+        },
+        {
+          "label": "Tangos78rpm — entry using the same YouTube upload",
+          "url": "https://www.tangos78rpm.com/du-bist-in-meinem-leben-die-erste-sensation-electrola-no-e-g-2508/",
+          "role": "additional_evidence"
         }
       ]
     },
@@ -25563,8 +25568,25 @@
       "nameVariantIds": [
         "PNV0011"
       ],
-      "researchNote": "The upload description dates the recording to 1926, identifies Henryk Gold and his ensemble in an acoustically recorded instrumental Syrena version and associates the composition with the name Bruno Asper. No label, catalogue or matrix number is supplied and the disc is not shown. The year and recording details remain uploader-supplied; the printed sheet music documents the composition, not this recording or its carrier.",
-      "researchNoteType": "discographic_note"
+      "researchNote": "The upload description dates the recording to 1926, identifies Henryk Gold and his ensemble in an acoustically recorded instrumental Syrena version and associates the composition with the name Bruno Asper. The project researcher identifies the disc as Syrena 17901; this number is not given in the upload, and its label and matrix have not been independently checked. The 1927 Actuelle Record catalogue separately lists ‘Zgaś lampę’ by Br. Asper, with Gold’s orchestra and a vocal refrain, on Actuelle 7061 r; the Katalog Polskich Płyt Gramofonowych also lists this issue. A relationship between the Actuelle and Syrena recordings has not been established. Narodowe Archiwum Cyfrowe catalogues an orchestral recording under reference 3/33/0/1/4266 but names neither conductor nor label; its stated 1908–1914 date is inconsistent with the song’s chronology and is not adopted here. The upload’s recording date remains unverified.",
+      "researchNoteType": "discographic_note",
+      "additionalLinks": [
+        {
+          "label": "Actuelle Record catalogue, 1927 — 7061 r (searchable text)",
+          "url": "https://staremelodie.pl/katalogi/actuelle-record_1927.pdf",
+          "role": "additional_evidence"
+        },
+        {
+          "label": "Katalog Polskich Płyt Gramofonowych — Actuelle 7061",
+          "url": "http://www.kppg.waw.pl/2022/record.php?plyta=57456",
+          "role": "additional_evidence"
+        },
+        {
+          "label": "Narodowe Archiwum Cyfrowe — Zgaś lampę, 3/33/0/1/4266",
+          "url": "https://www.szukajwarchiwach.gov.pl/ru/web/guest/jednostka/-/jednostka/16593491?refererPlid=20136",
+          "role": "additional_evidence"
+        }
+      ]
     },
     {
       "id": "SRC0740",
