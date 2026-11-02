@@ -1067,8 +1067,8 @@
       },
       "SRC0001": {
         "fields": {
-          "fullCitation": "Katalog Polskich Płyt Gramofonowych, record no. 38213. Syrena Record, 1926: “Jak się da, to się zrobi!” (side number 17919), coupled with “A zresztą, niech pan zadzwoni!” (side number 17921); both credited to Bruno Asper. Conductor: Zygmunt Wiehler.",
-          "researchNote": "The catalogue dates the disc to 1926 and lists 17919 and 17921 as its two side numbers; it does not separately identify them as matrix numbers. The displayed label in the Stare Melodie transfer independently names the Perskie Oko theatre orchestra and conductor Z. Wiehler. The KPPG entry does not identify a lyricist or sheet-music publisher; those credits are supported by separate printed sources.",
+          "fullCitation": "Katalog Polskich Płyt Gramofonowych, record no. 38213. Syrena Record (a)532a, 1926: “Jak się da, to się zrobi!” (side number 17919), coupled with “A zresztą, niech pan zadzwoni!” (side number 17921); both credited to Bruno Asper. Conductor: Zygmunt Wiehler.",
+          "researchNote": "The catalogue displays (a)532a as the disc designation, dates the disc to 1926 and lists 17919 and 17921 as its two side numbers; it does not separately identify them as matrix numbers. The displayed label in the Stare Melodie transfer independently names the Perskie Oko theatre orchestra and conductor Z. Wiehler. The KPPG entry does not identify a lyricist or sheet-music publisher; those credits are supported by separate printed sources.",
           "researchNoteType": "discographic_note",
           "dateQualifier": "reported",
           "accessDate": "2026-10-26"
@@ -6153,12 +6153,15 @@
         }
       },
       "SRC0756": {
-        "reason": "Classify the Membran Music transfer as an online-audio source and date the digital release of 15 April 2010 rather than the underlying 1932 performance.",
+        "reason": "Distinguish digital-release metadata from the independently documented Parlophone label and its conductor credit.",
         "fields": {
           "sourceType": "online_audio_source",
           "date": "2010-04-15",
           "dateRole": "digital_publication",
-          "dateQualifier": "confirmed"
+          "dateQualifier": "confirmed",
+          "creator": "Richard Tauber; Paul Dessau (featured artist)",
+          "fullCitation": "Richard Tauber. “Schade, dass Liebe ein Märchen ist”, from Melodie der Liebe. On Richard Tauber, vol. 1. Membran Music Ltd., released 15 April 2010; distributed by Kontor New Media. The digital listing names Paul Dessau as featured artist. Digital audio reference.",
+          "researchNote": "The date identifies the Membran Music digital issue released on 15 April 2010. The listing names Paul Dessau as featured artist but does not specify his role, the historical recording date, original label, catalogue number or matrix. It does not establish whether the digital track reproduces the particular Parlophone recording documented separately in SRC0788."
         }
       },
       "SRC0815": {
@@ -8710,10 +8713,9 @@
         "reason": "Individually reviewed recording evidence: distinguish the photographed Parlophone label, digital reissue metadata and Victor discography from film-performance claims.",
         "fields": {
           "evidenceContext": [
-            "recording_label",
-            "online_recording"
+            "recording_label"
           ],
-          "scopeNote": "The Parlophone AR 206 label in SRC0788 explicitly names “Conductor: Paul Dessau”. SRC0756 also names him on the Membran digital reissue. This credit documents direction of the recorded accompaniment, not a separately evidenced film-production role."
+          "scopeNote": "The Parlophone AR 206 label in SRC0788 explicitly names “Conductor: Paul Dessau”. This credit documents direction of the recorded accompaniment, not a separately evidenced film-production role. SRC0756 names Dessau as a featured artist without specifying his role or establishing that it reproduces this particular recording."
         }
       },
       "CON-S115-LAB-ORG151": {
@@ -24416,6 +24418,10 @@
       }
     },
     "Sources": {
+      "SRC0756": {
+        "fields": {"contributionIds": ["CON-S059-CON-P144"]},
+        "reason": "The digital listing names Dessau as featured artist but does not establish his conductor role for this recording."
+      },
       "SRC0883": {
         "fields": {"organizationIds": ["ORG093"]},
         "reason": "The access source was replaced by the Internet Archive item."
@@ -25887,6 +25893,10 @@
       }
     },
     "Contributions": {
+      "CON-S059-CON-P144": {
+        "fields": {"sourceIds": ["SRC0756"]},
+        "reason": "Retain the conductor credit on the basis of the Parlophone label in SRC0788, not unspecified digital metadata."
+      },
       "CON-S162-C-P009": {
         "fields": {
           "sourceIds": [

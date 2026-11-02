@@ -206,12 +206,15 @@ AUDITED_DIGITAL_AUDIO_FIELDS: dict[str, dict[str, Any]] = {
         "date": "2010-04-15",
         "dateRole": "digital_publication",
         "dateQualifier": "confirmed",
+        "creator": "Richard Tauber; Paul Dessau (featured artist)",
+        "fullCitation": "Richard Tauber. “Schade, dass Liebe ein Märchen ist”, from Melodie der Liebe. On Richard Tauber, vol. 1. Membran Music Ltd., released 15 April 2010; distributed by Kontor New Media. The digital listing names Paul Dessau as featured artist. Digital audio reference.",
         "researchNote": (
             "The date identifies the Membran Music digital issue released on "
-            "15 April 2010; 1932 is the year of the underlying performance. The "
-            "reissue identifies no original label, catalogue number or matrix. "
-            "A digitised Parlophone pressing of the same recording is linked "
-            "separately and remains the preferred listening reference."
+            "15 April 2010. The listing names Paul Dessau as featured artist "
+            "but does not specify his role, the historical recording date, "
+            "original label, catalogue number or matrix. It does not establish "
+            "whether the digital track reproduces the particular Parlophone "
+            "recording documented separately in SRC0788."
         ),
         "researchNoteType": "discographic_note",
     },
@@ -319,8 +322,8 @@ RECORDING_FIELDS: dict[str, dict[str, Any]] = {
         "accessDate": "2026-10-26"
     },
     "SRC0001": {
-        "fullCitation": "Katalog Polskich Płyt Gramofonowych, record no. 38213. Syrena Record, 1926: “Jak się da, to się zrobi!” (side number 17919), coupled with “A zresztą, niech pan zadzwoni!” (side number 17921); both credited to Bruno Asper. Conductor: Zygmunt Wiehler.",
-        "researchNote": "The catalogue dates the disc to 1926 and lists 17919 and 17921 as its two side numbers; it does not separately identify them as matrix numbers. The displayed label in the Stare Melodie transfer independently names the Perskie Oko theatre orchestra and conductor Z. Wiehler. The KPPG entry does not identify a lyricist or sheet-music publisher; those credits are supported by separate printed sources.",
+        "fullCitation": "Katalog Polskich Płyt Gramofonowych, record no. 38213. Syrena Record (a)532a, 1926: “Jak się da, to się zrobi!” (side number 17919), coupled with “A zresztą, niech pan zadzwoni!” (side number 17921); both credited to Bruno Asper. Conductor: Zygmunt Wiehler.",
+        "researchNote": "The catalogue displays (a)532a as the disc designation, dates the disc to 1926 and lists 17919 and 17921 as its two side numbers; it does not separately identify them as matrix numbers. The displayed label in the Stare Melodie transfer independently names the Perskie Oko theatre orchestra and conductor Z. Wiehler. The KPPG entry does not identify a lyricist or sheet-music publisher; those credits are supported by separate printed sources.",
         "researchNoteType": "discographic_note",
         "dateQualifier": "reported",
         "accessDate": "2026-10-26"
@@ -1316,7 +1319,7 @@ AUDITED_RECORDING_CITATIONS = {
     "SRC0753": "George Nettelmann und sein Orchester, refrain sung by Walter Jurmann. “Ich frag’, Madame, wann kommen wir zusamm’?” Foxtrot; label credits Bronislaw Kaper, Walter Jurmann and Fritz Rotter. Kristall 3229, recorded Berlin, 15 September 1931. Shellac disc, Radiomuseum Hardthausen / Schallarchiv; filmed-label transfer on YouTube. Session data from the title list at musiktiteldb.de.",
     "SRC0754": "Tanz-Orchester Dajos Béla, vocal by Luigi Bernauer, credited on the label as Fred Lustig. “Signorina, ich liebe dich.” Tango; label credits Walter Jurmann, Bronislaw Kaper and Ernst Marischka. Odeon, n.d. Shellac disc, Radiomuseum Hardthausen / Schallarchiv; filmed-label transfer on YouTube.",
     "SRC0731": "Dolly Haas with a chamber orchestra directed by Hans Sommer. “’S wird schon wieder besser.” YouTube transfer published by Marconiphone; the upload identifies His Master’s Voice E.G. 2481, gives the additional number 60-1853, credits the music to Jurmann and Kaper, associates the song with Liebe mit Bewährungsfrist and dates the recording to Berlin, 1932.",
-    "SRC0001": "Katalog Polskich Płyt Gramofonowych, record no. 38213. Syrena Record, 1926: “Jak się da, to się zrobi!” (side number 17919), coupled with “A zresztą, niech pan zadzwoni!” (side number 17921); both credited to Bruno Asper. Conductor: Zygmunt Wiehler.",
+    "SRC0001": "Katalog Polskich Płyt Gramofonowych, record no. 38213. Syrena Record (a)532a, 1926: “Jak się da, to się zrobi!” (side number 17919), coupled with “A zresztą, niech pan zadzwoni!” (side number 17921); both credited to Bruno Asper. Conductor: Zygmunt Wiehler.",
     "SRC0002": "Hermann Bick and Dr. Kaper. “Miss Annabelle Lee.” Novelty piano duet. Polydor 21768, Germany, n.d. YouTube transfer published by Tim Gracyk, 22 April 2021; the description credits the sound file to Rainer E. Lotz.",
     "SRC0003": "Ilja Livschakoff Tanz-Orchester, with German refrain vocal by L. Monosson. “Süße Mamsell, denkst du noch an das kleine Hotel.” Tango by Fritz Rotter and Dr. Bronislaw Kaper. Grammophon B 51043, Bestell-Nr. 23179, side 2. YouTube transfer published by Radiomuseum Hardthausen, 30 September 2019.",
     "SRC0007": "Victor Silvester and His Ballroom Orchestra. “Someone to Care for Me” / “My Day Begins and Ends with You.” Parlophone A6766, Australian pressing, 10-inch 78 rpm shellac disc. Discogs release 28032108, dated 1937 in the catalogue.",

@@ -27,6 +27,10 @@ class PrimaryLabelReviewTests(unittest.TestCase):
 
     def test_coupled_catalogue_sides_have_reciprocal_song_links(self):
         source = self.tables["sources"]["SRC0001"]
+        self.assertIn("Syrena Record (a)532a", source["fullCitation"])
+        self.assertIn("38213", source["fullCitation"])
+        self.assertIn("17919", source["fullCitation"])
+        self.assertIn("17921", source["fullCitation"])
         for wid, sid in (("W-S001", "S001"), ("W-S002", "S002")):
             self.assertIn(wid, source["workIds"])
             self.assertIn(sid, source["songIds"])
