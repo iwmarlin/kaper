@@ -11,12 +11,11 @@ from recording_sources import private_upload_semantic_errors
 
 ACCESS = {
     "SRC0707": ("1929", "described_item"),
-    "SRC0730": ("1933", "issue"),
-    "SRC0735": ("1933", "recording"),
     "SRC0738": ("1926", "recording"),
     "SRC0759": ("1937", "described_item"),
 }
-REVIEWED = set(ACCESS) | {"SRC0731"}
+LABELLED = {"SRC0730", "SRC0735"}
+REVIEWED = set(ACCESS) | {"SRC0731"} | LABELLED
 
 
 class RecordingAccessSourceTests(unittest.TestCase):
@@ -30,7 +29,7 @@ class RecordingAccessSourceTests(unittest.TestCase):
     def load(name):
         return {r["id"]: r for r in json.loads((ROOT / f"data/public/v1/{name}.json").read_text())["records"]}
 
-    def test_five_unidentified_carriers_are_access_sources(self):
+    def test_unidentified_carriers_are_access_sources(self):
         for sid, (date, role) in ACCESS.items():
             with self.subTest(source=sid):
                 source = self.sources[sid]
@@ -57,7 +56,11 @@ class RecordingAccessSourceTests(unittest.TestCase):
             sources = set(credit.get("sourceIds", []))
             if sources and sources <= REVIEWED:
                 with self.subTest(credit=credit["id"]):
-                    self.assertEqual(credit["certainty"], "probable")
+                    if sources <= LABELLED:
+                        self.assertEqual(credit["certainty"], "confirmed")
+                        self.assertEqual(credit["evidenceContext"], ["recording_label"])
+                    else:
+                        self.assertEqual(credit["certainty"], "probable")
         for cid in ("CON-S009-C-P009", "CON-S009-L-P020"):
             self.assertEqual(self.credits[cid]["certainty"], "confirmed")
             self.assertIn("SRC0103", self.credits[cid]["sourceIds"])
@@ -66,7 +69,8 @@ class RecordingAccessSourceTests(unittest.TestCase):
         self.assertEqual(self.media["M368"]["sourceIds"], ["SRC0730"])
         self.assertEqual(self.sources["SRC0583"]["sourceType"], "sound_recording_catalogue")
         self.assertIn("Odeon O-4661", self.sources["SRC0730"]["researchNote"])
-        self.assertIn("not assigned to this transfer", self.sources["SRC0730"]["researchNote"])
+        self.assertIn("does not establish which take", self.sources["SRC0730"]["researchNote"])
+        self.assertIn("Odeon O-4707 b", self.sources["SRC0730"]["fullCitation"])
 
     def test_listening_copies_and_external_rights_are_preserved(self):
         expected = {"M347": "SRC0707", "M368": "SRC0730", "M369": "SRC0731",
@@ -87,6 +91,8 @@ class RecordingAccessSourceTests(unittest.TestCase):
                 stale = dict(source, dateRole="issue", dateQualifier="confirmed")
                 if sid in ACCESS:
                     stale.update(sourceType="recording_discographic_source", publication="Unverified label")
+                elif sid in LABELLED:
+                    stale.update(sourceType="online_audio_source", publication="Unverified label")
                 self.assertEqual(normalized_source(stale), source)
                 self.assertEqual(normalized_source(normalized_source(source)), source)
 
@@ -99,6 +105,8 @@ class RecordingAccessSourceTests(unittest.TestCase):
                 if sid in ACCESS:
                     self.assertTrue(private_upload_semantic_errors(dict(source, sourceType="recording_discographic_source")))
                     self.assertTrue(private_upload_semantic_errors(dict(source, publication="Unverified label")))
+                elif sid in LABELLED:
+                    self.assertTrue(private_upload_semantic_errors(dict(source, sourceType="online_audio_source")))
         # Do not classify unrelated sources using keyword or number heuristics.
         self.assertEqual(private_upload_semantic_errors({"id": "STEST", "sourceType": "recording_discographic_source"}), [])
 

@@ -34,6 +34,9 @@ class RecordingEvidenceFollowupTests(unittest.TestCase):
                 if credit_id == "CON-S026-P-P077":
                     self.assertEqual(credit["evidenceContext"], ["online_catalogue", "online_recording"])
                     self.assertIn("no identifier", credit["scopeNote"])
+                elif credit_id == "CON-S030-CON-P167":
+                    self.assertEqual(credit["evidenceContext"], ["online_recording", "recording_label"])
+                    self.assertIn("not its conductor or singer", credit["scopeNote"])
                 else:
                     self.assertEqual(credit["evidenceContext"], ["online_recording"])
                     self.assertIn("uploader-level", credit["scopeNote"])
@@ -86,7 +89,7 @@ class RecordingEvidenceFollowupTests(unittest.TestCase):
         for source_id in ["SRC0715", "SRC0727", "SRC0738", "SRC0790"]:
             with self.subTest(source=source_id):
                 source = self.sources[source_id]
-                self.assertIn("upload", source["fullCitation"].lower())
+                self.assertIn("youtube", source["fullCitation"].lower())
                 self.assertEqual(normalized_source(dict(source, fullCitation="Old citation")), source)
         source = self.sources["SRC0790"]
         self.assertIn("The upload reports a music credit", source["researchNote"])

@@ -55,7 +55,7 @@ class RecordingEvidenceBatchTests(unittest.TestCase):
                 self.assertEqual(source.get("date"), date)
                 self.assertEqual(source["dateQualifier"], qualifier)
                 self.assertIn("YouTube", source["fullCitation"])
-                if source_id != "SRC0713":
+                if source_id not in {"SRC0713", "SRC0730", "SRC0735", "SRC0746"}:
                     self.assertNotIn("label credits", source["fullCitation"])
                 self.assertEqual(normalized_source(dict(source, dateQualifier="confirmed", fullCitation="Old citation")), source)
 
@@ -81,6 +81,11 @@ class RecordingEvidenceBatchTests(unittest.TestCase):
         for credit in credits:
             with self.subTest(credit=credit["id"]):
                 fields = self.overrides["records"]["Contributions"][credit["id"]]["fields"]
+                if credit["id"] in {"CON-S064-P-ORG124", "CON-S064-LAB-ORG155", "CON-S076-P-ORG120", "CON-S076-LAB-ORG128", "CON-S074-P-ORG121", "CON-S074-LAB-ORG138", "CON-S033-P-ORG140", "CON-S033-LAB-ORG138"}:
+                    self.assertEqual(credit["certainty"], "confirmed")
+                    self.assertEqual(credit["evidenceContext"], ["recording_label"])
+                    self.assertEqual(fields["scopeNote"], credit["scopeNote"])
+                    continue
                 if credit["id"] in {"CON-S070-P-ORG119", "CON-S070-LAB-ORG126", "CON-S070-CON-P165"}:
                     self.assertEqual(credit["certainty"], "probable" if credit["role"] == "conductor" else "confirmed")
                     self.assertEqual(credit["evidenceContext"], ["recording_label"])
@@ -160,6 +165,9 @@ class RecordingEvidenceBatchTests(unittest.TestCase):
         media = [r for r in self.media.values() if set(r.get("sourceIds", [])) & set(REPORTED)]
         self.assertEqual(len(media), 8)
         for item in media:
+            if item["id"] in {"M358", "M368", "M372", "M381"}:
+                self.assertIn("YouTube upload", item["publicCreditLine"])
+                continue
             if item["id"] == "M352":
                 self.assertIn("as identified by the uploader", item["publicCreditLine"])
                 self.assertIn("60-1903", item["publicCreditLine"])

@@ -53,6 +53,16 @@ class RecordingEvidenceContextBatchTests(unittest.TestCase):
         for cid in UPLOADER_CREDITS:
             with self.subTest(credit=cid):
                 credit = self.credits[cid]
+                if cid in {"CON-S064-P-ORG124", "CON-S064-LAB-ORG155", "CON-S076-P-ORG120", "CON-S076-LAB-ORG128", "CON-S074-P-ORG121", "CON-S074-LAB-ORG138", "CON-S033-P-ORG140", "CON-S033-LAB-ORG138"}:
+                    self.assertEqual(credit["certainty"], "confirmed")
+                    self.assertEqual(credit["evidenceContext"], ["recording_label"])
+                    self.assertEqual(self.overrides["records"]["Contributions"][cid]["fields"]["scopeNote"], credit["scopeNote"])
+                    continue
+                if cid == "CON-S030-CON-P167":
+                    self.assertEqual(credit["certainty"], "probable")
+                    self.assertIn("not its conductor or singer", credit["scopeNote"])
+                    self.assertIn(cid, self.sources["SRC0727"]["contributionIds"])
+                    continue
                 if cid in {"CON-S070-CON-P165", "CON-S070-P-ORG119", "CON-S070-LAB-ORG126"}:
                     self.assertEqual(credit["certainty"], "probable" if credit["role"] == "conductor" else "confirmed")
                     self.assertEqual(credit["evidenceContext"], ["recording_label"])

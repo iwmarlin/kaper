@@ -315,7 +315,7 @@ RECORDING_FIELDS: dict[str, dict[str, Any]] = {
     },
     "SRC0731": {
         "fullCitation": "Dolly Haas with a chamber orchestra directed by Hans Sommer. “’S wird schon wieder besser.” YouTube transfer published by Marconiphone; the upload identifies His Master’s Voice E.G. 2481, gives the additional number 60-1853, credits the music to Jurmann and Kaper, associates the song with Liebe mit Bewährungsfrist and dates the recording to Berlin, 1932.",
-        "researchNote": "The disc identification, additional number 60-1853, performers, film association, music credits and recording year are supplied by the upload description; the disc label is not shown. The description lists 60-1853 without identifying its function. That number is retained without an independently established matrix or take identification. No independent label or session record has been matched to this transfer. The source retains the uploader’s specific disc identification as reported, not verified, and 1932 is not treated as an established issue date.",
+        "researchNote": "The disc identification, additional number 60-1853, performers, film association, music credits and recording year are supplied by the upload description; a record is visible on the gramophone, but its label could not be read in the examined frame. The description lists 60-1853 without identifying its function. That number is retained without an independently established matrix or take identification. No independent label or session record has been matched to this transfer. The source retains the uploader’s specific disc identification as reported, not verified, and 1932 is not treated as an established issue date.",
         "accessDate": "2026-10-26"
     },
     "SRC0001": {
@@ -1775,6 +1775,61 @@ PRIVATE_UPLOAD_FIELD_REMOVALS: dict[str, list[str]] = {
 }
 
 
+# Corrections grounded in labels visible in the linked transfers.
+REVIEWED_SHOWN_LABEL_FIELDS = {
+    "SRC0719": {
+        "shortCitation": "Polydor 24604, “Une chanson de mon pays”",
+        "title": "Une chanson de mon pays — Polydor 24604",
+        "fullCitation": "Ilja Livschakoff et son Orchestre. “Une chanson de mon pays.” Slowfox from Mélodie d’amour; label credit “Kaper–Jurmann–Rotter”. Polydor 24604, label number A 24604. Disc label shown in the YouTube transfer published by Ilja Livschakoff.",
+        "creator": "Ilja Livschakoff et son Orchestre",
+        "accessDate": "2026-11-02",
+        "reliability": "high",
+        "researchNote": "The label shown identifies the French title “Une chanson de mon pays”, the film Mélodie d’amour, Ilja Livschakoff et son Orchestre, Polydor 24604 and the printed number A 24604. The uploader gives the German title “Ein Lied aus meiner Heimat”, matrix 4735 BD VII and a Berlin session around May 1932. The matrix and approximate recording date are not visible on the label; the date is not an established issue date. The separate Rosvaenge/Livschakoff master 4733 ½ BD is not evidence for this transfer’s matrix."
+    },
+    "SRC0727": {
+        "shortCitation": "Gloria G-10027 a, “Ich steh im Schnee und wart auf dich”",
+        "title": "Ich steh im Schnee und wart auf dich — Gloria G-10027 a",
+        "fullCitation": "Gloria-Tanz-Orchester mit Refraingesang. “Ich steh im Schnee und wart auf dich.” Fox-trot; label credit “Kaper–Rotter–Robinson”. Gloria, Bestell-Nr. G-10027 a, marked “Nur für Deutschland”. Disc label shown in the YouTube transfer published by Brillantspecial.",
+        "sourceType": "recording_discographic_source",
+        "publication": "Gloria",
+        "accessDate": "2026-11-02",
+        "reliability": "high",
+        "researchNote": "The displayed label identifies Gloria G-10027 a, the Gloria-Tanz-Orchester with vocal refrain and the credit “Kaper–Rotter–Robinson”. It does not name the singer or conductor. The upload identifies John Hendrik and Otto Dobrindt and gives 30 January 1931 as the recording date; those details are not established by the label. No matrix number is legible on the displayed label."
+    },
+    "SRC0730": {
+        "shortCitation": "Odeon O-4707 b, Jan Kiepura, “Ninon”",
+        "title": "Ninon — Jan Kiepura, Odeon O-4707 b",
+        "fullCitation": "Jan Kiepura with the Odeon-Künstler-Orchester, directed by Dr. Weissmann. “Ninon”, from Ein Lied für dich; label credits music to B. Kaper and Walter Jurmann and words to Fritz Rotter and Ernst Marischka. Odeon O-4707 b, printed matrix Be 10221. Disc label shown in the YouTube transfer published by 78Upm.",
+        "sourceType": "recording_discographic_source",
+        "publication": "Odeon",
+        "accessDate": "2026-11-02",
+        "reliability": "high",
+        "researchNote": "The displayed label identifies Odeon O-4707 b, matrix Be 10221, Jan Kiepura and the Odeon-Künstler-Orchester under Dr. Weissmann. The label does not specify a take or an issue date. The year 1933 remains the uploader’s description. A separate DNB entry documents Odeon O-4661, matrix Be 10221-4; the common base matrix does not establish which take is heard in this transfer."
+    },
+    "SRC0735": {
+        "shortCitation": "Odeon A 169240 a, Bernhard Etté, “Adieu, es ist zu schön, um wahr zu sein”",
+        "title": "Adieu, es ist zu schön, um wahr zu sein — Odeon A 169240 a",
+        "fullCitation": "Bernhard Etté mit seinem Tanz-Orchester, vocal by Wolfgang Schmidt. “Adieu, es ist zu schön, um wahr zu sein.” Tango from Abenteuer am Lido; label credits music to Jurmann and Kaper and words to Fritz Rotter. Odeon A 169240 a, printed matrix Bi 1641. Disc label shown in the YouTube transfer published by Radiomuseum Hardthausen.",
+        "sourceType": "recording_discographic_source",
+        "publication": "Odeon",
+        "accessDate": "2026-11-02",
+        "reliability": "high",
+        "researchNote": "The displayed label is Odeon A 169240 a, with matrix Bi 1641, Bernhard Etté’s dance orchestra and Wolfgang Schmidt. The upload describes a 1933 Lindström recording issued on Gloria in Germany and Odeon abroad; the displayed copy itself bears an Odeon label. The year remains the uploader-reported recording year, not an independently established issue date. The label does not establish a take or the relationship between particular Gloria and Odeon pressings.",
+        "organizationIds": [
+            "ORG093",
+            "ORG121",
+            "ORG150"
+        ]
+    },
+    "SRC0746": {
+        "fullCitation": "Melody Gents, modernes Schlager-Quartett mit Orchester. “Wer weint heut’ aus Liebe Tränen?” Slowfox from Ehe mit beschränkter Haftung; label credits music to Dr. B. Kaper and W. Jurmann, arrangement to Rud. Goehr and words to Fritz Rotter. Gloria G.O. 10197 b, printed matrix Bi 412. Disc label shown in the YouTube transfer published by Ilja Livschakoff.",
+        "accessDate": "2026-11-02",
+        "reliability": "high",
+        "researchNote": "The displayed Gloria label identifies G.O. 10197 b, matrix Bi 412, the Melody Gents with orchestra, the composers, lyricist and arranger “Rud. Goehr”. The year 1932 appears in the video title without specifying a recording or issue date; it remains a reported date of the described item. The label does not identify a recording session or a take."
+    }
+}
+
+
 def private_upload_semantic_errors(source: dict[str, Any]) -> list[str]:
     """Validate reviewed access/issue distinctions, not guessed text patterns.
 
@@ -1783,7 +1838,7 @@ def private_upload_semantic_errors(source: dict[str, Any]) -> list[str]:
     reviewed records are constrained here; new cases require evidence review.
     """
     source_id = str(source.get("id", ""))
-    expected = AUDITED_PRIVATE_UPLOAD_FIELDS.get(source_id, {})
+    expected = {**AUDITED_PRIVATE_UPLOAD_FIELDS.get(source_id, {}), **REVIEWED_SHOWN_LABEL_FIELDS.get(source_id, {})}
     errors = []
     for field in ("sourceType", "date", "dateRole", "dateQualifier"):
         if field in expected and source.get(field) != expected[field]:
@@ -1792,7 +1847,7 @@ def private_upload_semantic_errors(source: dict[str, Any]) -> list[str]:
                 f"not {source.get(field)!r}"
             )
     for field in PRIVATE_UPLOAD_FIELD_REMOVALS.get(source_id, []):
-        if field in source:
+        if field in source and field not in REVIEWED_SHOWN_LABEL_FIELDS.get(source_id, {}):
             errors.append(
                 f"unverified historical {field} belongs in the upload note, "
                 "not in the access source's publication metadata"
@@ -1819,6 +1874,7 @@ def normalize_recording_source(source: dict[str, Any]) -> None:
     citation = AUDITED_RECORDING_CITATIONS.get(source_id)
     if citation:
         source["fullCitation"] = citation
+    source.update(REVIEWED_SHOWN_LABEL_FIELDS.get(source_id, {}))
     is_audited_digital_audio = source_id in AUDITED_DIGITAL_AUDIO_FIELDS
     if (
         source.get("sourceType") != "recording_discographic_source"
@@ -1839,6 +1895,8 @@ def normalize_recording_source(source: dict[str, Any]) -> None:
     digital_fields = AUDITED_DIGITAL_AUDIO_FIELDS.get(source_id)
     if digital_fields:
         source.update(digital_fields)
+
+    source.update(REVIEWED_SHOWN_LABEL_FIELDS.get(source_id, {}))
 
     organization = RECORDING_ORGANIZATION_BY_HOST.get(recording_hostname(source))
     if organization:

@@ -56,7 +56,7 @@ class ErklaReviewPageReferenceTest(unittest.TestCase):
         self.assertIn("full PDF could not be consulted", source["researchNote"])
         self.assertIn("not been independently matched", source["researchNote"])
         self.assertIn("not been independently matched", credit["scopeNote"])
-        self.assertIn("not assigned to this transfer", transfer["researchNote"])
+        self.assertIn("does not establish which take", transfer["researchNote"])
         self.assertEqual(overrides["Sources"]["SRC0583"]["fields"]["researchNote"], source["researchNote"])
         self.assertEqual(overrides["Contributions"][credit["id"]]["fields"]["scopeNote"], credit["scopeNote"])
 
