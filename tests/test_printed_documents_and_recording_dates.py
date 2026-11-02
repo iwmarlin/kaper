@@ -35,18 +35,6 @@ class PrintedDocumentsAndRecordingDatesTests(unittest.TestCase):
             source,
         )
 
-    def test_youtube_recording_year_is_not_an_upload_year(self):
-        source = self.sources["SRC0740"]
-        self.assertEqual(source["date"], "1937")
-        self.assertEqual(source["dateRole"], "recording")
-        self.assertEqual(source["dateQualifier"], "reported")
-        self.assertEqual(source["sourceType"], "online_audio_source")
-        self.assertIn("recording dated 1937 in the upload description", source["fullCitation"])
-        self.assertNotIn("published by RobinsRareRecordings, 1937", source["fullCitation"])
-        self.assertIn("uploader-supplied metadata", source["researchNote"])
-        changed = dict(source, fullCitation="YouTube audio reference published by RobinsRareRecordings, 1937.")
-        self.assertEqual(normalized_source(changed), source)
-
 
 if __name__ == "__main__":
     unittest.main()

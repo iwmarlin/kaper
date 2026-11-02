@@ -892,18 +892,6 @@ RECORDING_FIELDS: dict[str, dict[str, Any]] = {
             }
         ]
     },
-    "SRC0740": {
-        "accessDate": "2026-10-25",
-        "researchNote": "The upload gives no label, catalogue or matrix number and does not show the disc; the performer, credit and year details are uploader-supplied metadata. The independent Decca 1000 Series Numerical Listing documents Ted Fio Rito’s “Blue Venetian Waters” on Decca 1257, matrix DLA705, recorded 19 February 1937. That entry establishes the existence of a Fio Rito recording, but does not by itself identify this upload with that master or pressing; the listed session date and catalogue number are not assigned to the transfer.",
-        "additionalLinks": [
-            {
-                "label": "Decca 1000 Series Numerical Listing — 1257, matrix DLA705 (comparison, not transfer identification)",
-                "url": "https://www.78discography.com/Dec1000.htm",
-                "role": "additional_evidence"
-            }
-        ],
-        "fullCitation": "Ted Fio Rito and his orchestra, vocal chorus by Stanley Hickman. “Blue Venetian Waters”, from A Day at the Races; words and music by Gus Kahn, Bronislaw Kaper and Walter Jurmann. YouTube audio reference uploaded by RobinsRareRecordings; recording dated 1937 in the upload description."
-    },
     "SRC0811": {
         "date": "1937",
         "dateRole": "described_item",
@@ -1379,9 +1367,6 @@ AUDITED_RECORDING_CITATIONS = {
     "SRC0758": "Bernard Etté und sein Orchester, refrain by Kurt Mühlhardt. “Sagen kleine Mädels ‘nein’.” Waltz from Korvettenkapitän; label credit “Dr. Kaper / Rotter / Robinson”. Kristall, order no. 3098, n.d. YouTube transfer by Wunschkonzert.",
     "SRC0707": "Marek Weber und sein Orchester, refrain sung by Austin Egen. “Tränen weint jede Frau so gern.” Tango. Digital transfer on YouTube; the upload identifies His Master’s Voice / Electrola and gives the year as 1929.",
     "SRC0759": "Orkiestra taneczna. “San Francisco.” Foxtrot. Digital transfer on YouTube; the upload identifies Syrena Record, gives the year as 1937 and credits Bronisław Kaper and Walter Jurmann with music and Emanuel Schlechter with Polish words.",
-    "SRC0740": (
-        "Ted Fio Rito and his orchestra, vocal chorus by Stanley Hickman. “Blue Venetian Waters”, from A Day at the Races; words and music by Gus Kahn, Bronislaw Kaper and Walter Jurmann. YouTube audio reference uploaded by RobinsRareRecordings; recording dated 1937 in the upload description."
-    ),
 }
 
 

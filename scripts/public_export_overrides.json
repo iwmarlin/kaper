@@ -2502,21 +2502,6 @@
           "fullCitation": "O tem wróble świergocą... Popularny refren z „Morskiego Oka” w rewji „Gwiazdy Warszawy”. Słowa Andrzeja Własta; muzyka Bronisława Kapera. Warszawa: Gebethner i Wolff, 1930. Copyright 1930 by Gebethner and Wolff, Warszawa. Plate no. G 6875 W. Lit. J. Konarzewski w Warszawie. Sheet-music PDF hosted by Stare Melodie."
         }
       },
-      "SRC0740": {
-        "reason": "Individually reviewed transfer identification and recording-versus-issue chronology, 25 October 2026; preserve uploader-only qualifications.",
-        "fields": {
-          "fullCitation": "Ted Fio Rito and his orchestra, vocal chorus by Stanley Hickman. “Blue Venetian Waters”, from A Day at the Races; words and music by Gus Kahn, Bronislaw Kaper and Walter Jurmann. YouTube audio reference uploaded by RobinsRareRecordings; recording dated 1937 in the upload description.",
-          "accessDate": "2026-10-25",
-          "researchNote": "The upload gives no label, catalogue or matrix number and does not show the disc; the performer, credit and year details are uploader-supplied metadata. The independent Decca 1000 Series Numerical Listing documents Ted Fio Rito’s “Blue Venetian Waters” on Decca 1257, matrix DLA705, recorded 19 February 1937. That entry establishes the existence of a Fio Rito recording, but does not by itself identify this upload with that master or pressing; the listed session date and catalogue number are not assigned to the transfer.",
-          "additionalLinks": [
-            {
-              "label": "Decca 1000 Series Numerical Listing — 1257, matrix DLA705 (comparison, not transfer identification)",
-              "url": "https://www.78discography.com/Dec1000.htm",
-              "role": "additional_evidence"
-            }
-          ]
-        }
-      },
       "SRC0687": {
         "reason": "Distinguish printed publication dates from creation dates and the reported recording year from a YouTube upload date.",
         "fields": {
@@ -6542,12 +6527,6 @@
         },
         "reason": "Individually reviewed transfer metadata and independent discographic corroboration, 25 October 2026."
       },
-      "M379": {
-        "fields": {
-          "publicCreditLine": "Ted Fio Rito and his orchestra; Stanley Hickman, vocal chorus, as identified by the uploader. YouTube upload by RobinsRareRecordings."
-        },
-        "reason": "Individually reviewed transfer metadata and independent discographic corroboration, 25 October 2026."
-      },
       "M406": {
         "fields": {
           "publicCaption": "Listening reference for “Mondnacht in Sanssouci”, recorded as “Moonlight at Sanssouci” by Orchestra Mascotte. The Great 78 Project provides audio and a photograph of the Australian Parlophone A3436 disc, matrix Be 9615; the issue date remains unknown."
@@ -10558,6 +10537,9 @@
       }
     },
     "Sources": {
+      "SRC0740": {
+        "reason": "Remove the source documenting the withdrawn Ted Fio Rito listening reference at the editor's request."
+      },
       "SRC0638": {
         "reason": "Withdraw this supplementary local-history Source at the editor’s request after its public links became inaccessible; retain PL039, its Media and the other historical evidence. Remove the modern parcel-number claim previously supported only by its municipal-register link."
       },
@@ -10596,6 +10578,9 @@
       }
     },
     "Media": {
+      "M379": {
+        "reason": "Withdraw the Ted Fio Rito listening reference for Blue Venetian Waters at the editor's request; retain the Allan Jones radio reference."
+      },
       "M449": {
         "reason": "Remove the restricted Luigi Bernauer portrait because the one-off recording performer no longer has a standalone People record and the image serves no other catalogue entity."
       }
@@ -25232,6 +25217,10 @@
       }
     },
     "Works": {
+      "W-S129": {
+        "fields": {"sourceIds": ["SRC0740"], "mediaIds": ["M379"]},
+        "reason": "Remove links to the withdrawn Fio Rito reference while retaining the Allan Jones radio reference."
+      },
       "W-S123": {
         "fields": {
           "contributionIds": ["CON-S123-C-P155"],
@@ -25503,6 +25492,10 @@
       }
     },
     "Songs": {
+      "S129": {
+        "fields": {"sourceIds": ["SRC0740"], "mediaIds": ["M379"]},
+        "reason": "Remove links to the withdrawn Fio Rito reference while retaining the Allan Jones radio reference."
+      },
       "S167": {
         "reason": "Remove the unrelated 1935 Love Song of Tahiti advertisement from the distinct 1937 instrumental Tahiti.",
         "fields": {
@@ -25623,7 +25616,8 @@
         "fields": {
           "sourceIds": [
             "SRC0493",
-            "SRC0883"
+            "SRC0883",
+            "SRC0740"
           ]
         },
         "reason": "Individually reviewed catalogue and readable disc-label evidence, 26 October 2026; distinguish issue, reported session and digital access copy, and remove unsupported publisher evidence."

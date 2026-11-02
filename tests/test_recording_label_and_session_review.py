@@ -10,7 +10,7 @@ from normalize_sources import normalized_source
 
 REVIEWED = {
     "SRC0004", "SRC0694", "SRC0695", "SRC0716", "SRC0717",
-    "SRC0725", "SRC0740", "SRC0758", "SRC0782", "SRC0811",
+    "SRC0725", "SRC0758", "SRC0782", "SRC0811",
 }
 
 
@@ -71,13 +71,17 @@ class RecordingLabelAndSessionReviewTests(unittest.TestCase):
         self.assertTrue(source["additionalLinks"][0]["url"].endswith("_itemimage.jpg"))
         self.assertNotIn("sound alone", self.media["M406"]["publicCaption"])
 
-    def test_decca_comparison_does_not_identify_the_uploaded_carrier(self):
-        source = self.sources["SRC0740"]
-        self.assertEqual(source["sourceType"], "online_audio_source")
-        self.assertEqual((source["date"], source["dateQualifier"]), ("1937", "reported"))
-        self.assertIn("DLA705", source["researchNote"])
-        self.assertIn("not assigned to the transfer", source["researchNote"])
-        self.assertNotIn("1257", source["fullCitation"])
+    def test_withdrawn_fio_rito_reference_does_not_remove_jones(self):
+        self.assertNotIn("SRC0740", self.sources)
+        self.assertNotIn("M379", self.media)
+        self.assertEqual(self.media["M426"]["sourceIds"], ["SRC0811"])
+        self.assertEqual(self.media["M426"]["externalUrl"], "https://www.youtube.com/watch?v=5JJlr-DRFdw")
+        self.assertIn("SRC0740", self.overrides["exclusions"]["Sources"])
+        self.assertIn("M379", self.overrides["exclusions"]["Media"])
+        for table, rid in (("Works", "W-S129"), ("Songs", "S129")):
+            fields = self.overrides["linkRemovals"][table][rid]["fields"]
+            self.assertIn("SRC0740", fields["sourceIds"])
+            self.assertIn("M379", fields["mediaIds"])
 
     def test_jones_broadcast_conflict_is_not_a_verified_session(self):
         source = self.sources["SRC0811"]

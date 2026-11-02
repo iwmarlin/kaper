@@ -438,11 +438,6 @@ REVIEWED_SOURCE_DATES: dict[str, dict[str, str]] = {
         "dateRole": "issue",
         "dateQualifier": "unknown"
     },
-    "SRC0740": {
-        "date": "1937",
-        "dateRole": "recording",
-        "dateQualifier": "reported"
-    },
     "SRC0719": {
         "date": "1932-05",
         "dateRole": "recording",
