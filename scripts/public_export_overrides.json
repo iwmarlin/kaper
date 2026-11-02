@@ -2367,17 +2367,20 @@
         }
       },
       "SRC0713": {
-        "reason": "Qualify private uploader claims while preserving independently documented reissue and discographic evidence.",
+        "reason": "Correct the record after inspection of the Electrola label shown in the YouTube transfer.",
         "fields": {
-          "dateQualifier": "reported",
-          "fullCitation": "Marek Weber und sein Orchester, vocal by John Hendrik. “Du bist in meinem Leben die erste Sensation.” Tango. Digital transfer on YouTube; the uploader identifies Electrola E.G. 2508 and gives the year as 1932.",
-          "sourceType": "online_audio_source",
-          "title": "Du bist in meinem Leben die erste Sensation — external listening reference",
-          "shortCitation": "YouTube, “Du bist in meinem Leben die erste Sensation” — uploader-identified recording",
+          "dateQualifier": "unknown",
+          "date": null,
+          "fullCitation": "Marek Weber und sein Orchester, with vocal refrain. “Du bist in meinem Leben die erste Sensation.” Tango; label credits Jurmann and Kaper, with words by Fritz Rotter. Electrola E.G. 2508, label number 60-1903. Disc label shown in the YouTube transfer published by Brillantspecial; the uploader identifies the vocalist as John Hendrik.",
+          "sourceType": "recording_discographic_source",
+          "title": "Du bist in meinem Leben die erste Sensation — Electrola E.G. 2508",
+          "shortCitation": "Electrola E.G. 2508, “Du bist in meinem Leben die erste Sensation”",
+          "creator": "Marek Weber und sein Orchester; John Hendrik, vocal refrain (uploader attribution)",
+          "accessDate": "2026-11-02",
           "dateRole": "recording",
-          "reliability": "low",
-          "researchNote": "An uploader-created opening card gives Electrola E.G. 2508, matrix E-OD 795 / I and a recording date of 17 February 1932. The disc label is not shown and the card contains no authorship credits. The Electrola label list at musiktiteldb.de instead lists E.G. 2508 against “Spanischer Zigeunertanz” (OD 773-1) and “Die alte Spieluhr” (OD770-1), not this title; its entry for the first side also cross-refers to HMV E.G. 2498. The conflict cannot be resolved from these descriptions alone. The Tangos78rpm entry also gives E.G. 2508 but links to this same YouTube upload, so it is not independent confirmation of the transfer. The upload remains a listening reference, not a verified identification of the pressing, matrix, year or performers.",
-          "researchNoteType": "identity_assessment",
+          "reliability": "high",
+          "researchNote": "The label displayed in the video identifies the title, Jurmann and Kaper, lyricist Fritz Rotter, Marek Weber und sein Orchester, Electrola E.G. 2508 and the printed number 60-1903. It indicates a vocal refrain but does not name the singer. John Hendrik is named in the upload title, not on the label. An earlier archive note gave matrix E-OD 795 / I and the recording date 17 February 1932, but these details are not established by the displayed label and require independent verification. Henry König’s Electrola list associates E.G. 2508 with other titles; the displayed label is direct evidence for this side, but the discrepancy in the list has not been resolved. The Tangos78rpm entry links to this same upload and is not independent evidence for the transfer.",
+          "researchNoteType": "discographic_note",
           "additionalLinks": [
             {
               "label": "Electrola label list — conflicting catalogue-number evidence",
@@ -6625,12 +6628,12 @@
         }
       },
       "M352": {
-        "reason": "Qualify private uploader claims while preserving independently documented reissue and discographic evidence.",
+        "reason": "Correct the description after inspection of the Electrola label shown in the transfer.",
         "fields": {
-          "publicCreditLine": "Marek Weber und sein Orchester; John Hendrik, vocal; Electrola EG 2508, as identified in the upload description. YouTube upload by Brillantspecial.",
+          "publicCreditLine": "Marek Weber und sein Orchester; Electrola E.G. 2508, label number 60-1903. John Hendrik, vocal refrain, as identified by the uploader. YouTube upload by Brillantspecial.",
           "title": "Du bist in meinem Leben die erste Sensation — external listening reference",
-          "description": "External listening reference for “Du bist in meinem Leben die erste Sensation”, identified in the upload as Marek Weber und sein Orchester with John Hendrik. The historical pressing has not been established.",
-          "publicCaption": "Listening reference for “Du bist in meinem Leben die erste Sensation”, identified by the uploader as Marek Weber und sein Orchester with John Hendrik. The opening card’s Electrola E.G. 2508 identification conflicts with the cited label catalogue; the disc label is not shown."
+          "description": "External listening reference for “Du bist in meinem Leben die erste Sensation”. The displayed Electrola E.G. 2508 label names Marek Weber und sein Orchester; the uploader identifies the refrain singer as John Hendrik.",
+          "publicCaption": "Listening reference for “Du bist in meinem Leben die erste Sensation”. The video shows the Electrola E.G. 2508 label, crediting Marek Weber und sein Orchester with a vocal refrain; the uploader names John Hendrik as the singer."
         }
       },
       "M393": {
@@ -9309,13 +9312,13 @@
         }
       },
       "CON-S070-LAB-ORG126": {
-        "reason": "Qualify private uploader claims while preserving independently documented reissue and discographic evidence.",
+        "reason": "Credit supported by the Electrola disc label shown in the transfer.",
         "fields": {
-          "certainty": "probable",
+          "certainty": "confirmed",
           "evidenceContext": [
-            "online_recording"
+            "recording_label"
           ],
-          "scopeNote": "The uploader identifies Electrola as the issuing label. The physical disc label is not shown, so this remains an uploader-level attribution."
+          "scopeNote": "The displayed disc carries the Electrola label and catalogue number E.G. 2508."
         }
       },
       "CON-S064-P-ORG124": {
@@ -9329,23 +9332,23 @@
         }
       },
       "CON-S070-P-ORG119": {
-        "reason": "Qualify private uploader claims while preserving independently documented reissue and discographic evidence.",
+        "reason": "Performing orchestra is named on the Electrola label shown in the transfer.",
         "fields": {
-          "certainty": "probable",
+          "certainty": "confirmed",
           "evidenceContext": [
-            "online_recording"
+            "recording_label"
           ],
-          "scopeNote": "The uploader identifies Marek Weber und sein Orchester as the performing ensemble. The physical disc label is not shown, so this remains an uploader-level attribution."
+          "scopeNote": "The displayed Electrola label credits Marek Weber und sein Orchester."
         }
       },
       "CON-S070-CON-P165": {
-        "reason": "Qualify private uploader claims while preserving independently documented reissue and discographic evidence.",
+        "reason": "The label names Weber’s orchestra but does not separately identify the conductor.",
         "fields": {
           "certainty": "probable",
           "evidenceContext": [
-            "online_recording"
+            "recording_label"
           ],
-          "scopeNote": "The uploader names Marek Weber as leader of the orchestra. The physical disc label is not shown, so this remains an uploader-level attribution."
+          "scopeNote": "The displayed disc label names Marek Weber und sein Orchester but does not separately credit a conductor."
         }
       },
       "CON-S218-LAB-ORG132": {

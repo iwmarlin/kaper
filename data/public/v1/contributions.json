@@ -20240,7 +20240,7 @@
       "nameAsPrinted": "Marek Weber",
       "displayCredit": "Directed the orchestra",
       "evidenceContext": [
-        "online_recording"
+        "recording_label"
       ],
       "sortOrder": 55,
       "certainty": "probable",
@@ -20253,7 +20253,7 @@
       "sourceIds": [
         "SRC0713"
       ],
-      "scopeNote": "The uploader names Marek Weber as leader of the orchestra. The physical disc label is not shown, so this remains an uploader-level attribution."
+      "scopeNote": "The displayed disc label names Marek Weber und sein Orchester but does not separately credit a conductor."
     },
     {
       "id": "CON-S026-P-P077",
@@ -20452,10 +20452,10 @@
       "nameAsPrinted": "Marek Weber und sein Orchester",
       "displayCredit": "Orchestra",
       "evidenceContext": [
-        "online_recording"
+        "recording_label"
       ],
       "sortOrder": 56,
-      "certainty": "probable",
+      "certainty": "confirmed",
       "workIds": [
         "W-S070"
       ],
@@ -20465,7 +20465,7 @@
       "sourceIds": [
         "SRC0713"
       ],
-      "scopeNote": "The uploader identifies Marek Weber und sein Orchester as the performing ensemble. The physical disc label is not shown, so this remains an uploader-level attribution."
+      "scopeNote": "The displayed Electrola label credits Marek Weber und sein Orchester."
     },
     {
       "id": "CON-S084-P-ORG119",
@@ -21069,10 +21069,10 @@
       "nameAsPrinted": "Electrola",
       "displayCredit": "Issuing label",
       "evidenceContext": [
-        "online_recording"
+        "recording_label"
       ],
       "sortOrder": 60,
-      "certainty": "probable",
+      "certainty": "confirmed",
       "workIds": [
         "W-S070"
       ],
@@ -21082,7 +21082,7 @@
       "sourceIds": [
         "SRC0713"
       ],
-      "scopeNote": "The uploader identifies Electrola as the issuing label. The physical disc label is not shown, so this remains an uploader-level attribution."
+      "scopeNote": "The displayed disc carries the Electrola label and catalogue number E.G. 2508."
     },
     {
       "id": "CON-S042-LAB-ORG126",

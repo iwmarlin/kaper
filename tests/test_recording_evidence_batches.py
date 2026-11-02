@@ -17,6 +17,7 @@ REPORTED = {
 # The original upload batch remains the scope for its credit-edge checks.
 # Later individual verification can refine dates without confirming those edges.
 REVIEWED_DATES = {
+    "SRC0713": (None, "unknown"),
     "SRC0719": ("1932-05", "reported"),
     "SRC0729": ("1935-05-06", "confirmed"),
     "SRC0755": ("1932-03", "reported"),
@@ -51,10 +52,11 @@ class RecordingEvidenceBatchTests(unittest.TestCase):
             with self.subTest(source=source_id):
                 source = self.sources[source_id]
                 date, qualifier = REVIEWED_DATES.get(source_id, (year, "reported"))
-                self.assertEqual(source["date"], date)
+                self.assertEqual(source.get("date"), date)
                 self.assertEqual(source["dateQualifier"], qualifier)
                 self.assertIn("YouTube", source["fullCitation"])
-                self.assertNotIn("label credits", source["fullCitation"])
+                if source_id != "SRC0713":
+                    self.assertNotIn("label credits", source["fullCitation"])
                 self.assertEqual(normalized_source(dict(source, dateQualifier="confirmed", fullCitation="Old citation")), source)
 
     def test_seven_official_reissue_credits_remain_confirmed(self):
@@ -79,6 +81,11 @@ class RecordingEvidenceBatchTests(unittest.TestCase):
         for credit in credits:
             with self.subTest(credit=credit["id"]):
                 fields = self.overrides["records"]["Contributions"][credit["id"]]["fields"]
+                if credit["id"] in {"CON-S070-P-ORG119", "CON-S070-LAB-ORG126", "CON-S070-CON-P165"}:
+                    self.assertEqual(credit["certainty"], "probable" if credit["role"] == "conductor" else "confirmed")
+                    self.assertEqual(credit["evidenceContext"], ["recording_label"])
+                    self.assertEqual(fields["scopeNote"], credit["scopeNote"])
+                    continue
                 # Subsequent inspection found a readable Kristall 3098 label.
                 # Only these two credits gained primary label evidence.
                 if credit["id"] in {"CON-S018-P-ORG121", "CON-S018-LAB-ORG129"}:
@@ -134,22 +141,29 @@ class RecordingEvidenceBatchTests(unittest.TestCase):
             for field, value in fields.items():
                 self.assertEqual(credit[field], value, (credit["id"], field))
 
-    def test_conflicting_electrola_number_is_not_a_verified_disc_identity(self):
+    def test_electrola_label_is_distinguished_from_unverified_details(self):
         source = self.sources["SRC0713"]
-        self.assertEqual(source["sourceType"], "online_audio_source")
+        self.assertEqual(source["sourceType"], "recording_discographic_source")
         self.assertEqual(source["dateRole"], "recording")
-        self.assertEqual(source["researchNoteType"], "identity_assessment")
-        self.assertIn("Spanischer Zigeunertanz", source["researchNote"])
-        self.assertIn("Die alte Spieluhr", source["researchNote"])
-        self.assertNotIn("E.G. 2508", source["title"])
+        self.assertEqual(source["dateQualifier"], "unknown")
+        self.assertIsNone(source.get("date"))
+        self.assertEqual(source["researchNoteType"], "discographic_note")
+        self.assertIn("60-1903", source["researchNote"])
+        self.assertIn("does not name the singer", source["researchNote"])
+        self.assertIn("require independent verification", source["researchNote"])
+        self.assertIn("E.G. 2508", source["title"])
         self.assertIn("EMI_EG02.html", source["additionalLinks"][0]["url"])
-        self.assertIn("conflicts with", self.media["M352"]["publicCaption"])
-        self.assertEqual(normalized_source(dict(source, sourceType="recording_discographic_source", dateRole="issue")), source)
+        self.assertIn("shows the Electrola E.G. 2508 label", self.media["M352"]["publicCaption"])
+        self.assertEqual(normalized_source(dict(source, sourceType="online_audio_source", dateRole="issue")), source)
 
     def test_media_credit_lines_qualify_upload_identifications(self):
         media = [r for r in self.media.values() if set(r.get("sourceIds", [])) & set(REPORTED)]
         self.assertEqual(len(media), 8)
         for item in media:
+            if item["id"] == "M352":
+                self.assertIn("as identified by the uploader", item["publicCreditLine"])
+                self.assertIn("60-1903", item["publicCreditLine"])
+                continue
             if item["id"] == "M392":
                 self.assertIn("Kristall 3098", item["publicCreditLine"])
                 self.assertNotIn("as identified in the upload description", item["publicCreditLine"])

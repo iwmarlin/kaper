@@ -1340,7 +1340,7 @@ AUDITED_RECORDING_CITATIONS = {
     "SRC0727": "“Ich steh im Schnee und wart auf dich.” YouTube audio reference published by Brillantspecial, presented by the uploader as Gloria-Tanz-Orchester mit Refraingesang.",
     "SRC0738": "“Zgaś lampę!” Shimmy. YouTube audio reference published by jurek46pink; the upload identifies Henryk Gold and his ensemble.",
     "SRC0790": "“Du liebst mich nicht mehr.” Slow-fox. YouTube transfer published by Radiomuseum Hardthausen; the uploader identifies Tanz-Orchester Dajos Béla, reports a Berlin recording in 1932 and gives the music credit “Bob Henders”.",
-    "SRC0713": "Marek Weber und sein Orchester, vocal by John Hendrik. “Du bist in meinem Leben die erste Sensation.” Tango. Digital transfer on YouTube; the uploader identifies Electrola E.G. 2508 and gives the year as 1932.",
+    "SRC0713": "Marek Weber und sein Orchester, with vocal refrain. “Du bist in meinem Leben die erste Sensation.” Tango; label credits Jurmann and Kaper, with words by Fritz Rotter. Electrola E.G. 2508, label number 60-1903. Disc label shown in the YouTube transfer published by Brillantspecial; the uploader identifies the vocalist as John Hendrik.",
     "SRC0719": "Ilja Livschakoff Tanzorchester. “Ein Lied aus meiner Heimat.” Slowfox from Melodie der Liebe. YouTube transfer; the uploader identifies Polydor 24604, matrix 4735 BD VII, and reports a Berlin recording session around May 1932.",
     "SRC0729": "Ted Fio Rito and his orchestra. “Love Song of Tahiti.” Brunswick 7446, matrix C971; recorded 6 May 1935. YouTube transfer published by Croonr1, who identifies the vocals as Muzzy Marcellino with The Debutantes and credits music to Bronislaw Kaper and Walter Jurmann and words to Gus Kahn.",
     "SRC0730": "Jan Kiepura with the Odeon-Künstler-Orchester under Dr. Weissmann. “Ninon”, from Ein Lied für dich; music by Walter Jurmann and Dr. Bronislaw Kaper, words by Fritz Rotter and Ernst Marischka. YouTube transfer published by 78Upm; the upload describes an Odeon red-label issue and gives the year as 1933.",
@@ -1381,13 +1381,15 @@ AUDITED_PRIVATE_UPLOAD_FIELDS = {
         ]
     },
     "SRC0713": {
-        "sourceType": "online_audio_source",
-        "title": "Du bist in meinem Leben die erste Sensation — external listening reference",
-        "shortCitation": "YouTube, “Du bist in meinem Leben die erste Sensation” — uploader-identified recording",
+        "sourceType": "recording_discographic_source",
+        "title": "Du bist in meinem Leben die erste Sensation — Electrola E.G. 2508",
+        "shortCitation": "Electrola E.G. 2508, “Du bist in meinem Leben die erste Sensation”",
+        "date": None,
         "dateRole": "recording",
-        "reliability": "low",
-        "researchNote": "An uploader-created opening card gives Electrola E.G. 2508, matrix E-OD 795 / I and a recording date of 17 February 1932. The disc label is not shown and the card contains no authorship credits. The Electrola label list at musiktiteldb.de instead lists E.G. 2508 against “Spanischer Zigeunertanz” (OD 773-1) and “Die alte Spieluhr” (OD770-1), not this title; its entry for the first side also cross-refers to HMV E.G. 2498. The conflict cannot be resolved from these descriptions alone. The Tangos78rpm entry also gives E.G. 2508 but links to this same YouTube upload, so it is not independent confirmation of the transfer. The upload remains a listening reference, not a verified identification of the pressing, matrix, year or performers.",
-        "researchNoteType": "identity_assessment",
+        "dateQualifier": "unknown",
+        "reliability": "high",
+        "researchNote": "The label displayed in the video identifies the title, Jurmann and Kaper, lyricist Fritz Rotter, Marek Weber und sein Orchester, Electrola E.G. 2508 and the printed number 60-1903. It indicates a vocal refrain but does not name the singer. John Hendrik is named in the upload title, not on the label. An earlier archive note gave matrix E-OD 795 / I and the recording date 17 February 1932, but these details are not established by the displayed label and require independent verification. Henry König’s Electrola list associates E.G. 2508 with other titles; the displayed label is direct evidence for this side, but the discrepancy in the list has not been resolved. The Tangos78rpm entry links to this same upload and is not independent evidence for the transfer.",
+        "researchNoteType": "discographic_note",
         "additionalLinks": [
             {
                 "label": "Electrola label list — conflicting catalogue-number evidence",
@@ -1809,7 +1811,7 @@ def normalize_recording_source(source: dict[str, Any]) -> None:
     source.update(VERIFIED_RECORDING_CHRONOLOGY.get(source_id, {}))
     for field in VERIFIED_RECORDING_FIELD_REMOVALS.get(source_id, []):
         source.pop(field, None)
-    if source_id in {"SRC0707", "SRC0759", "SRC0713", "SRC0719", "SRC0729", "SRC0730", "SRC0735", "SRC0746", "SRC0755", "SRC0758"}:
+    if source_id in {"SRC0707", "SRC0759", "SRC0719", "SRC0729", "SRC0730", "SRC0735", "SRC0746", "SRC0755", "SRC0758"}:
         source["dateQualifier"] = "reported"
     source.update(AUDITED_PRIVATE_UPLOAD_FIELDS.get(source_id, {}))
     for field in PRIVATE_UPLOAD_FIELD_REMOVALS.get(source_id, []):

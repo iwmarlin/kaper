@@ -55,9 +55,9 @@ class RecordingEvidenceFollowupTests(unittest.TestCase):
 
     def test_electrola_number_conflict_does_not_count_a_reused_upload_twice(self):
         source = self.sources["SRC0713"]
-        self.assertIn("HMV E.G. 2498", source["researchNote"])
-        self.assertIn("same YouTube upload", source["researchNote"])
-        self.assertIn("not independent confirmation", source["researchNote"])
+        self.assertIn("displayed label is direct evidence", source["researchNote"])
+        self.assertIn("same upload", source["researchNote"])
+        self.assertIn("not independent evidence", source["researchNote"])
         self.assertEqual(self.credits["CON-S070-CON-P165"]["certainty"], "probable")
 
     def test_independent_catalogue_credits_keep_their_certainty(self):
