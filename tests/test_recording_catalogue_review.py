@@ -25,12 +25,24 @@ class RecordingCatalogueReviewTests(unittest.TestCase):
         }
 
     def test_reviewed_catalogues_share_the_existing_source_type(self):
-        self.assertEqual(len(REVIEWED_RECORDING_CATALOGUES), 10)
+        self.assertEqual(len(REVIEWED_RECORDING_CATALOGUES), 18)
         for sid in REVIEWED_RECORDING_CATALOGUES:
             source = self.tables["sources"][sid]
             self.assertEqual(source["sourceType"], "sound_recording_catalogue")
             self.assertEqual(recording_catalogue_evidence_errors(
                 source, self.tables["contributions"]), [], sid)
+
+    def test_entry_level_catalogues_and_media_are_distinguished(self):
+        catalogues = ("SRC0001", "SRC0743", "SRC0744", "SRC0750", "SRC0760",
+                      "SRC0773", "SRC0807", "SRC0939")
+        for sid in catalogues:
+            with self.subTest(source=sid):
+                source = self.tables["sources"][sid]
+                self.assertEqual(source["sourceType"], "sound_recording_catalogue")
+                self.assertEqual(normalized_source(source), source)
+                self.assertEqual(normalized_source(dict(source, sourceType="recording_discographic_source"))["sourceType"], "sound_recording_catalogue")
+        for sid in ("SRC0737", "SRC0788", "SRC0883"):
+            self.assertEqual(self.tables["sources"][sid]["sourceType"], "recording_discographic_source")
 
     def test_tahitian_recording_date_is_not_its_legal_deposit(self):
         source = self.tables["sources"]["SRC0625"]

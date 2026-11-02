@@ -80,6 +80,8 @@ def reviewed_printed_number_errors(record: dict[str, Any]) -> list[str]:
 
 
 REVIEWED_RECORDING_CATALOGUES = frozenset({
+    "SRC0001", "SRC0743", "SRC0744", "SRC0750", "SRC0760", "SRC0773",
+    "SRC0807", "SRC0939",
     "SRC0300", "SRC0583", "SRC0625", "SRC0633", "SRC0741", "SRC0742",
     "SRC0801", "SRC0802", "SRC0805", "SRC0829",
 })
@@ -1907,6 +1909,7 @@ def normalize_recording_source(source: dict[str, Any]) -> None:
         source.get("sourceType") != "recording_discographic_source"
         and not is_audited_digital_audio
         and source_id not in RECORDING_FIELDS
+        and source_id not in REVIEWED_RECORDING_CATALOGUES
     ):
         return
 
@@ -1930,3 +1933,5 @@ def normalize_recording_source(source: dict[str, Any]) -> None:
         source["organizationIds"] = sorted(
             set(source.get("organizationIds", [])) | {organization}
         )
+    if source_id in REVIEWED_RECORDING_CATALOGUES:
+        source["sourceType"] = "sound_recording_catalogue"

@@ -36,7 +36,10 @@ class RecordingSessionChronologyTests(unittest.TestCase):
                 self.assertEqual(source["date"], date)
                 self.assertEqual(source["dateRole"], "recording")
                 self.assertEqual(source["dateQualifier"], "confirmed")
-                self.assertEqual(source["sourceType"], "recording_discographic_source")
+                expected_type = ("sound_recording_catalogue"
+                                 if sid in {"SRC0744", "SRC0750", "SRC0760"}
+                                 else "recording_discographic_source")
+                self.assertEqual(source["sourceType"], expected_type)
 
     def test_phonobase_month_is_not_completed_with_an_invented_day(self):
         source = self.sources["SRC0705"]

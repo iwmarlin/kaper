@@ -1067,6 +1067,7 @@
       },
       "SRC0001": {
         "fields": {
+          "sourceType": "sound_recording_catalogue",
           "fullCitation": "Katalog Polskich Płyt Gramofonowych, record no. 38213. Syrena Record (a)532a, 1926: “Jak się da, to się zrobi!” (side number 17919), coupled with “A zresztą, niech pan zadzwoni!” (side number 17921); both credited to Bruno Asper. Conductor: Zygmunt Wiehler.",
           "researchNote": "The catalogue displays (a)532a as the disc designation, dates the disc to 1926 and lists 17919 and 17921 as its two side numbers; it does not separately identify them as matrix numbers. The displayed label in the Stare Melodie transfer independently names the Perskie Oko theatre orchestra and conductor Z. Wiehler. The KPPG entry does not identify a lyricist or sheet-music publisher; those credits are supported by separate printed sources.",
           "researchNoteType": "discographic_note",
@@ -1321,6 +1322,7 @@
       },
       "SRC0743": {
         "fields": {
+          "sourceType": "sound_recording_catalogue",
           "shortCitation": "Electrola EG 2135, “Ach, Otto, Otto…!”",
           "fullCitation": "Marek Weber und sein Orchester, refrain by Siegfried Arno. “Ach, Otto, Otto…!” Foxtrot. Electrola EG 2135 A, matrix BD 9264-2; issued January 1931. Discographic entry in Henry König’s Electrola label list, citing Discographie der deutschen Kleinkunst, vol. 1, p. 27.",
           "date": "1931-01",
@@ -1714,6 +1716,7 @@
       "SRC0773": {
         "reason": "Individually verify catalogue dating: retain the stated lower bound, leave undated issues unknown, and distinguish a shared master session from the issue date of a different pressing.",
         "fields": {
+          "sourceType": "sound_recording_catalogue",
           "title": "Fiesta (Bianca) — Ultraphon 20040 A",
           "fullCitation": "National Museum, Prague, Discographic Database. “Fiesta (Bianca),” rumba. Efim Schachmeister, conductor, with jazz orchestra; music by W. G. Samuels and L. Whitcup. Ultraphon 20040 A, matrix 18145. One 25 cm standard gramophone disc. Individual recording entry.",
           "publication": "Ultraphon",
@@ -1764,6 +1767,7 @@
       "SRC0760": {
         "reason": "Verify the stated session chronology against the cited catalogue or discography; distinguish recording from commercial issue dates and preserve the documented precision.",
         "fields": {
+          "sourceType": "sound_recording_catalogue",
           "date": "1931-04-29",
           "dateRole": "recording",
           "dateQualifier": "confirmed",
@@ -1794,6 +1798,7 @@
       "SRC0750": {
         "reason": "Verify the stated session chronology against the cited catalogue or discography; distinguish recording from commercial issue dates and preserve the documented precision.",
         "fields": {
+          "sourceType": "sound_recording_catalogue",
           "date": "1935-03-23",
           "dateRole": "recording",
           "dateQualifier": "confirmed",
@@ -1805,6 +1810,7 @@
       "SRC0744": {
         "reason": "Verify the stated session chronology against the cited catalogue or discography; distinguish recording from commercial issue dates and preserve the documented precision.",
         "fields": {
+          "sourceType": "sound_recording_catalogue",
           "date": "1931-03-15",
           "dateRole": "recording",
           "dateQualifier": "confirmed",
@@ -2073,6 +2079,7 @@
       "SRC0807": {
         "reason": "Correct the date role to recording as explicitly described in the existing citation or research note; preserve the date, qualifier, citation and graph relationships.",
         "fields": {
+          "sourceType": "sound_recording_catalogue",
           "dateRole": "recording"
         }
       },
@@ -13365,7 +13372,7 @@
           "id": "SRC0939",
           "shortCitation": "Gloria G.O. 10303, “Wie gern möcht’ ich dich verwöhnen” (1932)",
           "fullCitation": "Eric Harden und sein Tanz-Orchester, refrain sung by Carljohann Volbach. “Wie gern möcht’ ich dich verwöhnen!” From Melodie der Liebe; music by Walter Jurmann and Bronislaw Kaper, words by Fritz Rotter. Gloria G.O. 10303, matrix Bi 644. Recorded in Berlin, studio 4, 11 June 1932; issued November 1932. Title-list entry at Musiktiteldb.de, citing Discographie der deutschen Tanzmusik, vol. 8.",
-          "sourceType": "recording_discographic_source",
+          "sourceType": "sound_recording_catalogue",
           "title": "Wie gern möcht’ ich dich verwöhnen — Gloria G.O. 10303",
           "creator": "Eric Harden und sein Tanz-Orchester; Carljohann Volbach, refrain vocal",
           "repository": "Musiktiteldb.de",
