@@ -521,14 +521,19 @@ RECORDING_FIELDS: dict[str, dict[str, Any]] = {
         "researchNoteType": "discographic_note"
     },
     "SRC0766": {
-        "shortCitation": "YouTube, Saxophon-Orchester Dobbri, “Gib nur acht, über Nacht kommt die Liebe”",
-        "fullCitation": "“Gib nur acht, über Nacht kommt die Liebe.” Valse Boston. YouTube transfer published by Musicaviennensis, 1 May 2016; the description identifies Saxophon-Orchester Dobbri, with Max Mensing singing.",
+        "shortCitation": "Parlophon B 4502, “Gib nur acht, über Nacht kommt die Liebe”",
+        "fullCitation": "Saxophon-Orchester Dobbri, with Max Mensing singing. “Gib nur acht, über Nacht kommt die Liebe.” Valse Boston; label credits Dr. B. Kaper. Parlophon B 4502, printed number 38185, n.d. Label photograph and audio transfer published by Musicaviennensis on YouTube, 1 May 2016.",
+        "sourceType": "recording_discographic_source",
+        "title": "Gib nur acht, über Nacht kommt die Liebe — Parlophon B 4502",
+        "creator": "Saxophon-Orchester Dobbri; Max Mensing; Musicaviennensis (uploader)",
+        "publication": "Parlophon / YouTube",
+        "reliability": "medium",
         "date": "2016-05-01",
         "dateRole": "digital_publication",
         "dateQualifier": "confirmed",
-        "accessDate": "2026-10-26",
+        "accessDate": "2026-11-02",
         "sourceStatus": "verified_with_attribution_note",
-        "researchNote": "The uploader identifies Parlophon B 4502, matrix 38185, a Berlin recording in January 1930, Max Mensing and music by Dr. B. Kaper. A Parlophon label appears in the video, but its catalogue and matrix details were not independently transcribed at sufficient resolution during this review; they remain supplied by the description. The structured date is the YouTube publication date. The portrait used as the video thumbnail is not evidence identifying the recording personnel. This reference belongs to the German song W-S008, not the Polish-language version.",
+        "researchNote": "The label shown at the start of the video identifies Parlophon B 4502, prints the number 38185 and names Saxophon-Orchester Dobbri, singer Max Mensing and Dr. B. Kaper. The number 38185 is not treated here as an independently verified matrix or take. The uploader reports a Berlin recording in January 1930; the label does not establish its date or the manufacture date of the photographed copy. The structured date is the YouTube publication date. The label and upload describe the German song W-S008, not the Polish-language version.",
         "researchNoteType": "discographic_note"
     },
     "SRC0796": {
@@ -1327,7 +1332,7 @@ AUDITED_RECORDING_CITATIONS = {
     "SRC0763": "“Ninon, ach uśmiechnij się!”, attributed to Jan Kiepura. Polish-language audio transfer published by jurek46pink on YouTube, 10 December 2007.",
     "SRC0764": "Henri Garat, printed as “Henry Garat”, with orchestra conducted by Kaper. “Le plus petit baiser”, from Une femme au volant. Waltz; words by L. Poterat, music by Kaper and Jurmann. Salabert 3382, matrix S.S.1728, n.d. Disc label photograph and audio transfer published by lysgauty1 collection disques David Silvestre on YouTube.",
     "SRC0765": "Henri Garat. “À Paris tiguidiguidi.” Track from Deluxe: Chansons de Paris, vol. 2; production credited to DMI. Published by Chansons, Folklore et Variété on YouTube, 27 September 2018.",
-    "SRC0766": "“Gib nur acht, über Nacht kommt die Liebe.” Valse Boston. YouTube transfer published by Musicaviennensis, 1 May 2016; the description identifies Saxophon-Orchester Dobbri, with Max Mensing singing.",
+    "SRC0766": "Saxophon-Orchester Dobbri, with Max Mensing singing. “Gib nur acht, über Nacht kommt die Liebe.” Valse Boston; label credits Dr. B. Kaper. Parlophon B 4502, printed number 38185, n.d. Label photograph and audio transfer published by Musicaviennensis on YouTube, 1 May 2016.",
     "SRC0796": "Paul O’Montis with the Paul Godwin Orchestra, conducted by Paul Godwin. “Hochzeitsreise zu dritt: Wenn ich mal eine Dummheit mach’.” Track on Schlager und Filmmelodien von Walter Jurmann, vol. 2 (Recordings 1929–1936). Jube Pops, digital release, 5 February 2013. Distributed to YouTube by Naxos Digital Services.",
     "SRC0797": "Wolfgang Schmidt with the Bernhard Etté Orchestra, conducted by Bernhard Etté. “Abenteuer am Lido: Wie schön ist diese Welt.” Track on Schlager und Filmmelodien von Walter Jurmann, vol. 1 (Recordings 1930–1938). Jube Pops, digital release, 5 February 2013. Distributed to YouTube by Naxos Digital Services.",
     "SRC0808": "Deanna Durbin. “My Heart Is Singing.” Track on My Heart Is Singing. Fantastic Voyage, digital release, 10 July 2008. Distributed to YouTube by The Orchard Enterprises.",

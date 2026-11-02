@@ -1156,17 +1156,22 @@
       },
       "SRC0766": {
         "fields": {
-          "shortCitation": "YouTube, Saxophon-Orchester Dobbri, “Gib nur acht, über Nacht kommt die Liebe”",
-          "fullCitation": "“Gib nur acht, über Nacht kommt die Liebe.” Valse Boston. YouTube transfer published by Musicaviennensis, 1 May 2016; the description identifies Saxophon-Orchester Dobbri, with Max Mensing singing.",
+          "shortCitation": "Parlophon B 4502, “Gib nur acht, über Nacht kommt die Liebe”",
+          "fullCitation": "Saxophon-Orchester Dobbri, with Max Mensing singing. “Gib nur acht, über Nacht kommt die Liebe.” Valse Boston; label credits Dr. B. Kaper. Parlophon B 4502, printed number 38185, n.d. Label photograph and audio transfer published by Musicaviennensis on YouTube, 1 May 2016.",
+          "sourceType": "recording_discographic_source",
+          "title": "Gib nur acht, über Nacht kommt die Liebe — Parlophon B 4502",
+          "creator": "Saxophon-Orchester Dobbri; Max Mensing; Musicaviennensis (uploader)",
+          "publication": "Parlophon / YouTube",
+          "reliability": "medium",
           "date": "2016-05-01",
           "dateRole": "digital_publication",
           "dateQualifier": "confirmed",
-          "accessDate": "2026-10-26",
+          "accessDate": "2026-11-02",
           "sourceStatus": "verified_with_attribution_note",
-          "researchNote": "The uploader identifies Parlophon B 4502, matrix 38185, a Berlin recording in January 1930, Max Mensing and music by Dr. B. Kaper. A Parlophon label appears in the video, but its catalogue and matrix details were not independently transcribed at sufficient resolution during this review; they remain supplied by the description. The structured date is the YouTube publication date. The portrait used as the video thumbnail is not evidence identifying the recording personnel. This reference belongs to the German song W-S008, not the Polish-language version.",
+          "researchNote": "The label shown at the start of the video identifies Parlophon B 4502, prints the number 38185 and names Saxophon-Orchester Dobbri, singer Max Mensing and Dr. B. Kaper. The number 38185 is not treated here as an independently verified matrix or take. The uploader reports a Berlin recording in January 1930; the label does not establish its date or the manufacture date of the photographed copy. The structured date is the YouTube publication date. The label and upload describe the German song W-S008, not the Polish-language version.",
           "researchNoteType": "discographic_note"
         },
-        "reason": "Individually reviewed transfer metadata and independent discographic corroboration, 26 October 2026."
+        "reason": "Correct the label transcription after re-examining the opening image; keep the recording date and matrix function qualified."
       },
       "SRC0765": {
         "fields": {
@@ -6381,11 +6386,11 @@
       },
       "M398": {
         "fields": {
-          "description": "German-language “Gib nur acht, über Nacht kommt die Liebe”, attributed by the uploader to Saxophon-Orchester Dobbri, with Max Mensing singing. The reported Parlophon disc and January 1930 session have not been independently verified for the transferred copy.",
-          "publicCaption": "German-language listening reference, attributed to Saxophon-Orchester Dobbri with Max Mensing. The uploader reports Parlophon B 4502, matrix 38185, Berlin, January 1930. The YouTube publication date is 1 May 2016; the historical details remain qualified.",
-          "publicCreditLine": "Saxophon-Orchester Dobbri; Max Mensing, vocal, as identified by the uploader. YouTube upload by Musicaviennensis."
+          "description": "German-language “Gib nur acht, über Nacht kommt die Liebe”, with Saxophon-Orchester Dobbri and singer Max Mensing, as identified on the displayed Parlophon B 4502 label.",
+          "publicCaption": "German-language listening reference: the displayed label names Saxophon-Orchester Dobbri and singer Max Mensing, Parlophon B 4502, and prints the number 38185. The uploader reports a Berlin recording in January 1930; that date is not established by the label.",
+          "publicCreditLine": "Saxophon-Orchester Dobbri; Max Mensing, vocal; Parlophon B 4502, as printed on the displayed label. YouTube upload by Musicaviennensis."
         },
-        "reason": "Individually reviewed transfer metadata and independent discographic corroboration, 26 October 2026."
+        "reason": "Reflect the readable label without treating the uploader’s date or printed number as verified session or take data."
       },
       "M397": {
         "fields": {
@@ -8866,13 +8871,13 @@
       },
       "CON-S008-P-ORG134": {
         "fields": {
-          "certainty": "probable",
+          "certainty": "confirmed",
           "evidenceContext": [
-            "online_recording"
+            "recording_label"
           ],
-          "scopeNote": "The uploader names Saxophon-Orchester Dobbri and reports a Parlophon B 4502 recording with Max Mensing. The consulted imagery did not independently establish the full catalogue and matrix details at readable resolution, so this remains a qualified attribution to the uploaded recording."
+          "scopeNote": "The displayed Parlophon B 4502 label names Saxophon-Orchester Dobbri and Max Mensing. It prints 38185 but does not establish an exact recording date or take; the January 1930 date is supplied by the uploader."
         },
-        "reason": "Twelve-source listening-reference review, 26 October 2026; add only relationships directly supported by the inspected source."
+        "reason": "The displayed label directly identifies the orchestra and singer."
       },
       "CON-S096-LAB-ORG039": {
         "fields": {
@@ -17561,6 +17566,10 @@
   },
   "linkAdditions": {
     "Organizations": {
+      "ORG146": {
+        "fields": {"sourceIds": ["SRC0766"]},
+        "reason": "The displayed label identifies the Parlophon issue."
+      },
       "ORG133": {
         "fields": {
           "sourceIds": [
@@ -20518,6 +20527,10 @@
       }
     },
     "Media": {
+      "M398": {
+        "fields": {"organizationIds": ["ORG146"]},
+        "reason": "The displayed disc bears the Parlophon imprint."
+      },
       "M450": {
         "fields": {"organizationIds": ["ORG155"]},
         "reason": "The linked label photograph identifies the Polydor issue."
@@ -21925,6 +21938,10 @@
       }
     },
     "Sources": {
+      "SRC0766": {
+        "fields": {"organizationIds": ["ORG146"]},
+        "reason": "The opening label photograph identifies Parlophon B 4502."
+      },
       "SRC0883": {
         "fields": {"organizationIds": ["ORG067", "ORG155"], "contributionIds": ["CON-S098-LAB-ORG155"]},
         "reason": "Connect the reviewed label to Polydor and the Internet Archive repository."

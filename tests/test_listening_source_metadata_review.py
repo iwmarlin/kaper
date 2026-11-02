@@ -59,8 +59,7 @@ class ListeningSourceMetadataReviewTests(unittest.TestCase):
                 self.assertIn("matrix", source["researchNote"])
 
     def test_private_upload_dates_do_not_date_historical_sessions(self):
-        for sid, date in (("SRC0763", "2007-12-10"), ("SRC0765", "2018-09-27"),
-                          ("SRC0766", "2016-05-01")):
+        for sid, date in (("SRC0763", "2007-12-10"), ("SRC0765", "2018-09-27")):
             source = self.sources[sid]
             self.assertEqual((source["date"], source["dateRole"]), (date, "digital_publication"))
             self.assertEqual(source["sourceType"], "online_audio_source")
@@ -113,11 +112,21 @@ class ListeningSourceMetadataReviewTests(unittest.TestCase):
 
     def test_dobbri_and_gauty_uploads_do_not_gain_unverified_master_identifications(self):
         source = self.sources["SRC0766"]
-        self.assertIn("not independently transcribed", source["researchNote"])
-        self.assertNotIn("B 4502", source["fullCitation"])
+        self.assertEqual(source["sourceType"], "recording_discographic_source")
+        self.assertEqual((source["date"], source["dateRole"]), ("2016-05-01", "digital_publication"))
+        self.assertIn("Parlophon B 4502", source["fullCitation"])
+        self.assertIn("printed number 38185", source["fullCitation"])
+        self.assertIn("not treated here as an independently verified matrix or take", source["researchNote"])
+        self.assertIn("uploader reports a Berlin recording in January 1930", source["researchNote"])
+        self.assertIn("Max Mensing", source["fullCitation"])
         credit = self.contributions["CON-S008-P-ORG134"]
-        self.assertEqual(credit["certainty"], "probable")
-        self.assertEqual(credit["evidenceContext"], ["online_recording"])
+        self.assertEqual(credit["certainty"], "confirmed")
+        self.assertEqual(credit["evidenceContext"], ["recording_label"])
+        self.assertIn("ORG146", source["organizationIds"])
+        self.assertIn("SRC0766", self.organizations["ORG146"]["sourceIds"])
+        self.assertIn("ORG146", self.media["M398"]["organizationIds"])
+        self.assertEqual(source["workIds"], ["W-S008"])
+        self.assertEqual(source["songIds"], ["S008"])
         self.assertIn("1444 WPP", self.sources["SRC0883"]["researchNote"])
         self.assertNotIn("522987", self.sources["SRC0883"]["fullCitation"])
 
