@@ -60,7 +60,7 @@ class ListeningSourceMetadataReviewTests(unittest.TestCase):
 
     def test_private_upload_dates_do_not_date_historical_sessions(self):
         for sid, date in (("SRC0763", "2007-12-10"), ("SRC0765", "2018-09-27"),
-                          ("SRC0766", "2016-05-01"), ("SRC0883", "2011-08-15")):
+                          ("SRC0766", "2016-05-01")):
             source = self.sources[sid]
             self.assertEqual((source["date"], source["dateRole"]), (date, "digital_publication"))
             self.assertEqual(source["sourceType"], "online_audio_source")
@@ -120,6 +120,29 @@ class ListeningSourceMetadataReviewTests(unittest.TestCase):
         self.assertEqual(credit["evidenceContext"], ["online_recording"])
         self.assertIn("1444 WPP", self.sources["SRC0883"]["researchNote"])
         self.assertNotIn("522987", self.sources["SRC0883"]["fullCitation"])
+
+    def test_gauty_archive_label_source_and_reciprocal_links(self):
+        source, medium = self.sources["SRC0883"], self.media["M450"]
+        url = "https://archive.org/details/lys-gauty-le-bistro-du-port"
+        self.assertEqual(source["primaryUrl"], url)
+        self.assertEqual(medium["externalUrl"], url)
+        self.assertEqual(source["sourceType"], "recording_discographic_source")
+        self.assertEqual((source["date"], source["dateRole"]),
+                         ("2024-07-31", "digital_publication"))
+        for phrase in ("47019 B", "1444 1/2 WPP", "not independently transcribed",
+                       "1933", "18 October 1934", "exact take"):
+            self.assertIn(phrase, source["researchNote"])
+        self.assertIn("SRC0883", self.organizations["ORG067"]["sourceIds"])
+        self.assertIn("SRC0883", self.organizations["ORG155"]["sourceIds"])
+        self.assertNotIn("SRC0883", self.organizations["ORG093"]["sourceIds"])
+        self.assertEqual(set(source["organizationIds"]), {"ORG067", "ORG155"})
+        self.assertIn("ORG155", medium["organizationIds"])
+        credit = self.contributions["CON-S098-LAB-ORG155"]
+        self.assertIn("SRC0883", credit["sourceIds"])
+        self.assertIn(credit["id"], source["contributionIds"])
+        self.assertIn("W-S098", source["workIds"])
+        self.assertIn("S098", source["songIds"])
+        self.assertNotIn("YouTube", medium["publicCaption"])
 
     def test_all_twelve_media_keep_external_rights_and_their_access_sources(self):
         for sid, mid in PAIRS.items():

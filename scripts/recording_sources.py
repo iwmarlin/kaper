@@ -559,11 +559,19 @@ RECORDING_FIELDS: dict[str, dict[str, Any]] = {
         "researchNoteType": "discographic_note"
     },
     "SRC0883": {
-        "shortCitation": "YouTube, Lys Gauty, “Le bistro du port”",
-        "fullCitation": "“Le bistro du port”, attributed to Lys Gauty. Audio transfer published by LYSGAUTYVIDEO on YouTube, 15 August 2011.",
-        "accessDate": "2026-10-26",
+        "shortCitation": "Polydor 47019 B, Lys Gauty, “Le bistro du port”",
+        "fullCitation": "Lys Gauty, with orchestra. “Le bistro du port” (In der Hafenschänke). Polydor 47019 B, n.d. Disc-label photograph and audio transfer uploaded by Jan Bus114 to Internet Archive, 31 July 2024.",
+        "sourceType": "recording_discographic_source",
+        "title": "Le bistro du port — Lys Gauty, Polydor 47019 B",
+        "creator": "Lys Gauty; Jan Bus114 (uploader)",
+        "repository": "Internet Archive",
+        "publication": "Polydor / Internet Archive",
+        "primaryUrl": "https://archive.org/details/lys-gauty-le-bistro-du-port",
+        "slug": "src0883-lys-gauty-le-bistro-du-port-polydor-47019",
+        "reliability": "medium",
+        "accessDate": "2026-11-02",
         "sourceStatus": "verified_with_attribution_note",
-        "researchNote": "The uploader dates Gauty’s recording to 1934. A Polydor label photograph appears in the slideshow, but the catalogue and matrix numbers were not independently read at sufficient resolution during this review. Frémeaux & Associés’ official FA 5033 discography, separately documented at SRC0884, identifies Gauty’s Paris session of 18 October 1934, Polydor 522987 and matrix 1444 WPP. That documents the historical recording, but does not by itself establish the pressing or take reproduced in this upload. The structured date remains YouTube publication on 15 August 2011.",
+        "researchNote": "The photographed label identifies Polydor 47019 B, Lys Gauty with orchestral accompaniment, and the credit Candel–Groener–Saudmont; it does not name the orchestra or conductor. The uploader associates the transfer with Polydor 47019 or 522987 and gives matrix 1444 1/2 WPP; that matrix is not independently transcribed from the photograph. The item gives 1933 and asks ‘Paris 1933?’; these do not establish the session or issue date. Frémeaux & Associés’ discography (SRC0884) identifies the Gauty recording as Polydor 522987, matrix 1444 WPP, recorded in Paris on 18 October 1934. The relation of the matrix notation and the exact take of this transfer remain unverified. The structured date is the Internet Archive upload date, not the date of the historical disc.",
         "researchNoteType": "discographic_note",
         "additionalLinks": [
             {
@@ -1312,7 +1320,7 @@ AUDITED_RECORDING_CITATIONS = {
     "SRC0796": "Paul O’Montis with the Paul Godwin Orchestra, conducted by Paul Godwin. “Hochzeitsreise zu dritt: Wenn ich mal eine Dummheit mach’.” Track on Schlager und Filmmelodien von Walter Jurmann, vol. 2 (Recordings 1929–1936). Jube Pops, digital release, 5 February 2013. Distributed to YouTube by Naxos Digital Services.",
     "SRC0797": "Wolfgang Schmidt with the Bernhard Etté Orchestra, conducted by Bernhard Etté. “Abenteuer am Lido: Wie schön ist diese Welt.” Track on Schlager und Filmmelodien von Walter Jurmann, vol. 1 (Recordings 1930–1938). Jube Pops, digital release, 5 February 2013. Distributed to YouTube by Naxos Digital Services.",
     "SRC0808": "Deanna Durbin. “My Heart Is Singing.” Track on My Heart Is Singing. Fantastic Voyage, digital release, 10 July 2008. Distributed to YouTube by The Orchard Enterprises.",
-    "SRC0883": "“Le bistro du port”, attributed to Lys Gauty. Audio transfer published by LYSGAUTYVIDEO on YouTube, 15 August 2011.",
+    "SRC0883": "Lys Gauty, with orchestra. “Le bistro du port” (In der Hafenschänke). Polydor 47019 B, n.d. Disc-label photograph and audio transfer uploaded by Jan Bus114 to Internet Archive, 31 July 2024.",
     "SRC0005": "Marek Weber und sein Orchester, refrain by Leo Moll. “Spiel’ mir auf der Balalaika einen russischen Tango.” Tango; label credits Dr. B. Kaper and Fritz Rotter. Electrola E.G. 2392, label number 60-1717; issued October 1931. Disc label shown in the YouTube transfer published by Grammophonics – 78Upm.",
     "SRC0006": "Eddy Duchin and His Orchestra, vocal by Lew Sherwood. “You’re All I Need.” Words by Gus Kahn; music by Bronisław Kaper and Walter Jurmann. Victor 25029, catalogued matrix BS-89700-1; recorded in New York, 29 April 1935; issued 8 May 1935. Digital transfer published by The78Prof on YouTube.",
     "SRC0708": "Marek Weber und sein Orchester. “Du lieber Geiger, spiel’ einen Tango für mich.” Tango; label credits Dr. Kaper and German, with words by Fritz Rotter. Electrola E.G. 2271, label number 60-1520; issued June 1931. Disc label shown in the YouTube transfer published by 78rpm Musik.",

@@ -140,7 +140,8 @@ class RecordingEvidenceBatchTests(unittest.TestCase):
         moll = self.credits["CON-S049-P-P166"]
         self.assertIn("uploader identifies", moll["scopeNote"])
         gauty = self.credits["CON-S098-P-P203"]
-        self.assertIn("source disc and take have not been independently established", gauty["scopeNote"])
+        self.assertIn("Polydor 47019 B", gauty["scopeNote"])
+        self.assertIn("precise take remains unverified", gauty["scopeNote"])
         for credit in [orchestra, conductor, weber, ette, moll, gauty]:
             fields = self.overrides["records"]["Contributions"][credit["id"]]["fields"]
             for field, value in fields.items():

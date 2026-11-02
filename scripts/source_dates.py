@@ -344,7 +344,7 @@ REVIEWED_SOURCE_DATES: dict[str, dict[str, str]] = {
     "SRC0883": {
         "dateRole": "digital_publication",
         "dateQualifier": "confirmed",
-        "date": "2011-08-15"
+        "date": "2024-07-31"
     },
     "SRC0005": {
         "date": "1931-10",
