@@ -41,6 +41,17 @@ class RecordingChronologyVerificationTests(unittest.TestCase):
         self.assertIn("10 February 2015", source["researchNote"])
         self.assertEqual(source["additionalLinks"][0]["url"], "https://www.challengerecords.com/products/1182852218")
 
+    def test_retrieval_album_credits_do_not_assert_track_personnel(self):
+        source = self.sources["SRC0714"]
+        for name in ("Jack Jackson", "Philippe Brun", "Leo Vauchant"):
+            self.assertNotIn(name, source["fullCitation"])
+            self.assertIn(name, source["researchNote"])
+        self.assertIn("does not by itself establish each musician’s participation", source["researchNote"])
+        self.assertIn("prestomusic.com", source["additionalLinks"][1]["url"])
+        self.assertEqual(self.media["M353"]["sourceIds"], ["SRC0714"])
+        self.assertEqual(self.media["M353"]["externalUrl"], source["primaryUrl"])
+        self.assertEqual(normalized_source(source), source)
+
     def test_odeon_year_remains_explicitly_unresolved(self):
         source = self.sources["SRC0754"]
         self.assertEqual((source["date"], source["dateQualifier"]), ("1932", "uncertain"))

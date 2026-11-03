@@ -1649,14 +1649,19 @@ VERIFIED_RECORDING_CHRONOLOGY: dict[str, dict[str, Any]] = {
         "date": "2000",
         "dateRole": "issue",
         "dateQualifier": "confirmed",
-        "fullCitation": "The Jack Hylton Orchestra, directed by Jack Hylton, with Jack Jackson, Philippe Brun and Leo Vauchant. “Herr Lehmann, Herr Lehmann, Was Macht Die Frau Gemahlin In Marienbad?” On Hot Hylton 1926–1930. Retrieval RTR 79024, CD compilation, first issued 2000; distributed by Challenge Records International. YouTube art track supplied by The Orchard Enterprises and published 10 February 2015.",
-        "researchNote": "The date identifies the compilation’s first issue in 2000, not its digital publication or a historical recording session. Challenge Records identifies the format as CD, states “First release in 2000” and separately lists 21 November 2005 as the release date of its catalogue product. The YouTube access copy was published on 10 February 2015. The reissue metadata cited here does not identify the label, catalogue number or matrix of the original disc.",
+        "fullCitation": "The Jack Hylton Orchestra, directed by Jack Hylton. “Herr Lehmann, Herr Lehmann, Was Macht Die Frau Gemahlin In Marienbad?” On Hot Hylton 1926–1930. Retrieval RTR 79024, CD compilation, first issued 2000; distributed by Challenge Records International. YouTube art track supplied by The Orchard Enterprises and published 10 February 2015.",
+        "researchNote": "The date identifies the compilation’s first issue in 2000, not its digital publication or a historical recording session. Challenge Records identifies the format as CD, states “First release in 2000” and separately lists 21 November 2005 as the release date of its catalogue product. The YouTube access copy was published on 10 February 2015. Digital album metadata lists Jack Jackson, Philippe Brun and Leo Vauchant alongside Hylton and his orchestra across the track list; this does not by itself establish each musician’s participation in this particular recording. The reissue metadata cited here does not identify the label, catalogue number or matrix of the original disc.",
         "researchNoteType": "discographic_note",
         "additionalLinks": [
             {
                 "label": "Challenge Records — Hot Hylton, Retrieval RTR 79024",
                 "url": "https://www.challengerecords.com/products/1182852218",
                 "role": "catalogue_entry"
+            },
+            {
+                "label": "Presto Music — compilation track list and digital performer metadata",
+                "url": "https://www.prestomusic.com/jazz/products/8057966--hot-hylton-1926-1930",
+                "role": "additional_evidence"
             }
         ]
     },
