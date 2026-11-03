@@ -5922,9 +5922,12 @@
         }
       },
       "SRC0154": {
-        "reason": "Expand the abbreviated year range without changing its documented precision.",
+        "reason": "Use the directly verified StabiKat record for the 1–5 volume and its shelfmark, rather than the KVK wrapper for the parent series; preserve the issue date range.",
         "fields": {
-          "date": "1930–1931"
+          "date": "1930–1931",
+          "fullCitation": "Bronisław Kaper, Jazz Drops: Transcriptions for Piano, nos. 1–5. Berlin: Alberti, 1930–31. Staatsbibliothek zu Berlin, Musikabteilung, Unter den Linden, shelfmark DMS 266613; StabiKat record no. 1916426948.",
+          "repository": "Staatsbibliothek zu Berlin, Musikabteilung, Unter den Linden; StabiKat",
+          "primaryUrl": "https://stabikat.de/Record/1916426948"
         }
       },
       "SRC0227": {
@@ -24478,6 +24481,14 @@
       }
     },
     "Sources": {
+      "SRC0525": {
+        "fields": {"workIds": ["W-S105"], "songIds": ["S105"], "contributionIds": ["CON-S105-C-P009", "CON-S105-C-P077", "CON-S105-PUB-ORG030"]},
+        "reason": "The verified BnF notice lists Natacha and On n’aime qu’une fois; Les Nuits moscovites is the film title, not evidence for the song Nuits moscovites."
+      },
+      "SRC0117": {
+        "fields": {"personIds": ["P009"]},
+        "reason": "Filmportal's film entry does not name Bronisław Kaper; his separate IMDb-based contribution remains linked to its own source."
+      },
       "SRC0756": {
         "fields": {"contributionIds": ["CON-S059-CON-P144"]},
         "reason": "The digital listing names Dessau as featured artist but does not establish his conductor role for this recording."
@@ -25285,6 +25296,10 @@
       }
     },
     "Works": {
+      "W-S105": {
+        "fields": {"sourceIds": ["SRC0525"]},
+        "reason": "Remove the BnF catalogue entry for two other songs; SRC0526 records Nuits moscovites itself."
+      },
       "W-S129": {
         "fields": {"sourceIds": ["SRC0740"], "mediaIds": ["M379"]},
         "reason": "Remove links to the withdrawn Fio Rito reference while retaining the Allan Jones radio reference."
@@ -25560,6 +25575,10 @@
       }
     },
     "Songs": {
+      "S105": {
+        "fields": {"sourceIds": ["SRC0525"]},
+        "reason": "Remove the BnF catalogue entry for two other songs; SRC0526 records Nuits moscovites itself."
+      },
       "S129": {
         "fields": {"sourceIds": ["SRC0740"], "mediaIds": ["M379"]},
         "reason": "Remove links to the withdrawn Fio Rito reference while retaining the Allan Jones radio reference."
@@ -25832,8 +25851,9 @@
         "reason": "Retain Georges Rey's person record and sources without an unsupported confirmed composer contribution or direct work-credit link for the original song."
       },
       "P009": {
-        "reason": "Remove the probable German-original lyricist contribution inferred from undivided Dutch-edition metadata; Kaper remains the confirmed composer. Also remove TE0007 and TE0010 after those superseded timeline records were excluded from the public chronology.",
+        "reason": "Remove the inferred German-original lyricist contribution and superseded timeline records. Remove SRC0117 because its Filmportal entry does not name Kaper; the separate IMDb-based contribution retains its own evidence.",
         "fields": {
+          "sourceIds": ["SRC0117"],
           "contributionIds": [
             "CON-S010-L-P009"
           ],
@@ -25962,6 +25982,18 @@
       }
     },
     "Contributions": {
+      "CON-S105-C-P009": {
+        "fields": {"sourceIds": ["SRC0525"]},
+        "reason": "SRC0525 describes Natacha and On n’aime qu’une fois, not the song Nuits moscovites."
+      },
+      "CON-S105-C-P077": {
+        "fields": {"sourceIds": ["SRC0525"]},
+        "reason": "SRC0525 describes Natacha and On n’aime qu’une fois, not the song Nuits moscovites."
+      },
+      "CON-S105-PUB-ORG030": {
+        "fields": {"sourceIds": ["SRC0525"]},
+        "reason": "SRC0525 describes Natacha and On n’aime qu’une fois, not the song Nuits moscovites."
+      },
       "CON-S059-CON-P144": {
         "fields": {"sourceIds": ["SRC0756"]},
         "reason": "Retain the conductor credit on the basis of the Parlophone label in SRC0788, not unspecified digital metadata."

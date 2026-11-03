@@ -126,8 +126,9 @@ class RecordingEvidenceBatchTests(unittest.TestCase):
     def test_performance_notes_distinguish_labels_discography_and_uploads(self):
         orchestra = self.credits["CON-S038-P-ORG119"]
         self.assertIn("mit Refraingesang", orchestra["scopeNote"])
-        self.assertIn("instrumental", orchestra["scopeNote"])
-        self.assertIn("unresolved", orchestra["scopeNote"])
+        self.assertIn("Instr.", orchestra["scopeNote"])
+        self.assertIn("alongside an explicitly credited vocal refrain", orchestra["scopeNote"])
+        self.assertIn("No refrain singer is identified", orchestra["scopeNote"])
         conductor = self.credits["CON-S038-CON-P165"]
         self.assertIn("not separately printed", conductor["scopeNote"])
         weber = self.credits["CON-S009-CON-P165"]
