@@ -6658,7 +6658,29 @@
       "M354": {
         "reason": "Qualify uploader-only performance and label claims while preserving independently corroborated catalogue and discographic evidence.",
         "fields": {
+          "publicCaption": "Listening reference for “Ich hab’ heut’ grad’ Geburtstag” sung by Walter Jurmann with Theo Mackeben und sein Jazz-Orchester, as the upload states. The upload does not identify the source disc or matrix.",
           "publicCreditLine": "Theo Mackeben mit seinem Jazz-Orchester; Walter Jurmann, vocal refrain, as identified in the upload description. YouTube upload by Jan van den Belt."
+        }
+      },
+      "M364": {
+        "reason": "Distinguish the performance named by the uploader from the unidentified source disc.",
+        "fields": {
+          "publicCaption": "Listening reference for “Ich weiß, daß du einst meinen Mund vergißt” by the Gloria-Tanz-Orchester with Rolf Sandor singing the refrain, as identified in the upload description. The upload does not identify the source disc or matrix and notes that the disc is in poor condition.",
+          "publicCreditLine": "Gloria-Tanz-Orchester; Rolf Sandor, vocal, as identified in the upload description. YouTube upload by Brillantspecial."
+        }
+      },
+      "M413": {
+        "reason": "Keep the catalogued Gloria issue distinct from the Spotify release, whose source disc is not identified.",
+        "fields": {
+          "publicCaption": "Listening reference for “Ich geh’ nie von Dir fort, denn ich lieb’ Dich!” performed by Max Mensing with Fred Bird and his dance orchestra, from a 2013 digital release. Pfau lists a Fred Bird recording on Gloria G.O. 10725; the Spotify release does not identify its source disc.",
+          "publicCreditLine": "Max Mensing; Fred Bird and his dance orchestra. Spotify / 78 Revival digital release.",
+          "organizationIds": []
+        }
+      },
+      "M419": {
+        "reason": "Attribute the recording year and label to the uploader and distinguish the independently catalogued disc.",
+        "fields": {
+          "publicCaption": "Listening reference for “On n’aime qu’une fois” by Tino Rossi with Orchestre de Tango Rafaelo. The uploader identifies it as a Columbia recording from 1934. BnF independently catalogues the title by the same performers on Columbia DF 1622, but the upload does not show a label or catalogue number."
         }
       },
       "M392": {

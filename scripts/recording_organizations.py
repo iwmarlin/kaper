@@ -21,6 +21,11 @@ RECORDING_CONTRIBUTION_ROLES = {
     "record_label",
 }
 
+# These source/medium pairs provide a comparison, not evidence identifying the
+# particular disc transferred into the linked audio. Keep their work-level
+# credits and source links without assigning the label to the listening copy.
+COMPARISON_ONLY_SOURCE_LINKS = {("M413", "SRC0792")}
+
 
 def is_recording_label_or_ensemble(organization: Mapping[str, Any]) -> bool:
     types = set(organization.get("types") or [])
@@ -42,7 +47,11 @@ def expected_audio_organization_ids(
     from the abstract work.
     """
 
-    source_ids = set(media.get("sourceIds") or [])
+    source_ids = {
+        source_id
+        for source_id in (media.get("sourceIds") or [])
+        if (media.get("id"), source_id) not in COMPARISON_ONLY_SOURCE_LINKS
+    }
     source_organization_ids = {
         organization_id
         for source_id in source_ids
