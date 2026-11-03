@@ -47,12 +47,15 @@ class ElectrolaVictorReviewTests(unittest.TestCase):
         self.assertIn("DAHR website itself was unavailable", source["researchNote"])
         self.assertIn("copy and take are not independently established", source["researchNote"])
 
-    def test_refrain_conflict_is_between_label_and_catalogue(self):
+    def test_refrain_label_and_catalogue_classification_are_distinguished(self):
         source = self.sources["SRC0708"]
         self.assertIn("Tanz-Orchester mit Refraingesang", source["researchNote"])
-        self.assertIn("label itself", source["researchNote"])
         self.assertIn("Instr.", source["researchNote"])
-        self.assertIn("no refrain singer is identified", source["researchNote"])
+        self.assertIn("elsewhere alongside an explicitly credited vocal refrain", source["researchNote"])
+        self.assertIn("No refrain singer is identified", source["researchNote"])
+        scope = self.contributions["CON-S038-P-ORG119"]["scopeNote"]
+        self.assertIn("alongside an explicitly credited vocal refrain", scope)
+        self.assertNotIn("discrepancy remains unresolved", scope)
         self.assertIn("visible label", self.media["M348"]["publicCaption"])
         self.assertNotIn("with refrain vocal, linked", self.media["M348"]["description"])
 
