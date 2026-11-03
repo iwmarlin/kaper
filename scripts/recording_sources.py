@@ -744,13 +744,18 @@ RECORDING_FIELDS: dict[str, dict[str, Any]] = {
         "dateRole": "recording",
         "dateQualifier": "reported",
         "accessDate": "2026-10-26",
-        "researchNote": "The upload reports a music credit to Bob Henders, a Berlin recording in 1932 and an Odeon first issue, but supplies no catalogue or matrix number. It shows a portrait from a Funk-Almanach rather than the label. Henry König’s Odeon label list separately documents this title with Dajos Béla as O-11667, Be 9946, recorded on 10 June 1932 in Berlin, Schlesische Straße 26, room 4; the release-date column is empty. The same list also assigns Be 9946 to the different title “Heute Nacht oder nie!”, an unresolved matrix inconsistency. The upload has not been matched to a verified pressing or take; neither O-11667 nor the exact session date is assigned to it. The structured year remains the uploader-reported recording year, not a confirmed issue date. The name Bob Henders in these recording descriptions does not by itself resolve the work’s authorship.",
+        "researchNote": "The upload reports a music credit to Bob Henders, a Berlin recording in 1932 and an Odeon first issue, but supplies no catalogue or matrix number. It shows a portrait from a Funk-Almanach rather than the label. Henry König’s Odeon label list assigns Be 9946 to this title and also to the coupled “Heute Nacht oder nie!”. The indexed text of Christian Zwarg’s Odeon matrix discography instead lists Be 9946 for “Heute Nacht oder nie!” and Be 9947 for “Du liebst mich nicht mehr”, the latter on Odeon O-11667 b; it dates both sessions to 10 June 1932 in Berlin. The sources therefore differ on this title’s matrix number; the photographed runout or an independent primary witness has not been examined. Neither the disc number nor the exact session date is assigned to the upload without a verified match. The structured year remains the uploader-reported recording year, not a confirmed issue date. The name Bob Henders in these recording descriptions does not by itself resolve the work’s authorship.",
         "researchNoteType": "discographic_note",
         "additionalLinks": [
             {
                 "label": "Henry König, Odeon label list — O-11667 and conflicting Be 9946 entries",
                 "url": "http://musiktiteldb.de/Label/Ode_11.html",
                 "role": "catalogue_entry"
+            },
+            {
+                "label": "Christian Zwarg, Odeon matrix discography — Be 9946 and Be 9947 (comparison)",
+                "url": "https://discography.phonomuseum.at/odeon/odmxBe00250.pdf#page=994",
+                "role": "additional_evidence"
             }
         ]
     },
@@ -1372,8 +1377,28 @@ AUDITED_RECORDING_CITATIONS = {
 
 # A conflicting catalogue number must not become a verified disc description.
 AUDITED_PRIVATE_UPLOAD_FIELDS = {
+    "SRC0728": {
+        "researchNote": "The upload gives no label, catalogue or matrix number and does not show the disc. Its title differs slightly from the title used for the linked work. The indexed text of Christian Zwarg’s Parlophon matrix discography lists “I’m Sure, I’m Sure” / “Wer weiß, wer weiß, ob du mich auch liebst” with Barnabás von Géczy and Hans Emmé-Schuhardt, Parlophon B 12471-II, matrix 133049, recorded in Berlin on 18 March 1931. The matching title and performers do not establish the pressing or take used for this upload.",
+        "additionalLinks": [
+            {
+                "label": "Christian Zwarg, Parlophon matrix discography — 133049 (comparison)",
+                "url": "https://discography.phonomuseum.at/parlo/parlo133000.pdf#page=10",
+                "role": "additional_evidence"
+            }
+        ]
+    },
+    "SRC0732": {
+        "researchNote": "The upload identifies Ina Aristid as Irene Ambrus but gives no label, catalogue or matrix number and does not show the disc. The identity statement remains uploader-supplied metadata. The indexed text of Henner Pfau’s Lexikon der deutschen Tanzmusik lists a Fred Bird recording of the title as HO 4382 but does not name its singers in that entry. The listing does not establish that this is the recording or pressing reproduced in the upload.",
+        "additionalLinks": [
+            {
+                "label": "Henner Pfau, Lexikon der deutschen Tanzmusik, vol. 8 — Fred Bird, HO 4382 (comparison)",
+                "url": "https://www.db-thueringen.de/servlets/MCRFileNodeServlet/dbt_derivate_00060580/Pfau_Lexikon_deutschen_Tanzmusik_008.pdf",
+                "role": "additional_evidence"
+            }
+        ]
+    },
     "SRC0790": {
-        "researchNote": "The upload reports a music credit to Bob Henders, a Berlin recording in 1932 and an Odeon first issue, but supplies no catalogue or matrix number. It shows a portrait from a Funk-Almanach rather than the label. Henry König’s Odeon label list separately documents this title with Dajos Béla as O-11667, Be 9946, recorded on 10 June 1932 in Berlin, Schlesische Straße 26, room 4; the release-date column is empty. The same list also assigns Be 9946 to the different title “Heute Nacht oder nie!”, an unresolved matrix inconsistency. The upload has not been matched to a verified pressing or take; neither O-11667 nor the exact session date is assigned to it. The structured year remains the uploader-reported recording year, not a confirmed issue date. The name Bob Henders in these recording descriptions does not by itself resolve the work’s authorship.",
+        "researchNote": "The upload reports a music credit to Bob Henders, a Berlin recording in 1932 and an Odeon first issue, but supplies no catalogue or matrix number. It shows a portrait from a Funk-Almanach rather than the label. Henry König’s Odeon label list assigns Be 9946 to this title and also to the coupled “Heute Nacht oder nie!”. The indexed text of Christian Zwarg’s Odeon matrix discography instead lists Be 9946 for “Heute Nacht oder nie!” and Be 9947 for “Du liebst mich nicht mehr”, the latter on Odeon O-11667 b; it dates both sessions to 10 June 1932 in Berlin. The sources therefore differ on this title’s matrix number; the photographed runout or an independent primary witness has not been examined. Neither the disc number nor the exact session date is assigned to the upload without a verified match. The structured year remains the uploader-reported recording year, not a confirmed issue date. The name Bob Henders in these recording descriptions does not by itself resolve the work’s authorship.",
         "title": "Du liebst mich nicht mehr — Dajos Béla, YouTube",
         "shortCitation": "YouTube, Dajos Béla, “Du liebst mich nicht mehr”",
         "slug": "src0790-youtube-dajos-bela-du-liebst-mich-nicht-mehr",
@@ -1391,6 +1416,11 @@ AUDITED_PRIVATE_UPLOAD_FIELDS = {
                 "label": "Henry König, Odeon label list — O-11667 and conflicting Be 9946 entries",
                 "url": "http://musiktiteldb.de/Label/Ode_11.html",
                 "role": "catalogue_entry"
+            },
+            {
+                "label": "Christian Zwarg, Odeon matrix discography — Be 9946 and Be 9947 (comparison)",
+                "url": "https://discography.phonomuseum.at/odeon/odmxBe00250.pdf#page=994",
+                "role": "additional_evidence"
             }
         ]
     },
