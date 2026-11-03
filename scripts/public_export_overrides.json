@@ -593,6 +593,18 @@
       }
     },
     "Sources": {
+      "SRC0061": {
+        "reason": "Match the genre recorded by the linked BnF catalogue notice.",
+        "fields": {"fullCitation":"Walter Jurmann and Bronisław Kaper, “Laisse-moi te bercer” (Wie gern’ möcht’ ich dich verwöhnen), tango chanté, du film Mélodie d’amour, production Reichsliga-Film; words by Lucien Boyer. Voice and piano / voice only. Paris: éditions Salabert, 1932. Bibliothèque nationale de France, Catalogue général, ARK ark:/12148/cb43069608q; notice no. FRBNF43069608."}
+      },
+      "SRC0063": {
+        "reason": "Correct the crossed BnF record URL, ARK and notice number against the directly examined catalogue entry.",
+        "fields": {"fullCitation":"Bronisław Kaper and Walter Jurmann, “La Chanson du pays” (Ein Lied aus meiner Heimat...), slow-fox-trot chanté, du film Mélodie d’amour, production Reichsliga-Film; words by Lucien Boyer. Voice and piano / voice only. Paris: éditions Salabert, 1932. Bibliothèque nationale de France, Catalogue général, ARK ark:/12148/cb430708952; notice no. FRBNF43070895.","primaryUrl":"https://catalogue.bnf.fr/ark:/12148/cb430708952","identifiers":[{"scheme":"ark","value":"ark:/12148/cb430708952"}]}
+      },
+      "SRC0064": {
+        "reason": "Correct the crossed BnF record URL, ARK and notice number against the directly examined catalogue entry.",
+        "fields": {"fullCitation":"Walter Jurmann and Bronisław Kaper, “La Vie et l’Amour” (Schade, dass Liebe ein Märchen ist!), tango chanté, du film Mélodie d’amour, production Reichsliga-Film; words by Lucien Boyer. Voice and piano / voice only. Paris: éditions Salabert, 1932. Bibliothèque nationale de France, Catalogue général, ARK ark:/12148/cb430696092; notice no. FRBNF43069609.","primaryUrl":"https://catalogue.bnf.fr/ark:/12148/cb430696092","identifiers":[{"scheme":"ark","value":"ark:/12148/cb430696092"}]}
+      },
       "SRC0728": {
         "reason": "Document the separate Parlophon catalogue entry without assigning its disc or matrix to an unidentified upload.",
         "fields": {
@@ -24481,6 +24493,10 @@
       }
     },
     "Sources": {
+      "SRC0065": {
+        "fields": {"personIds": ["P051"], "contributionIds": ["CON-S112-L-P031","CON-S112-L-P052","CON-S113-L-P031","CON-S113-L-P051","CON-S113-L-P052","CON-S114-L-P031","CON-S114-L-P049","CON-S115-L-P031","CON-S115-L-P051","CON-S115-L-P052"]},
+        "reason": "The collective BnF notice lists the four works and composers, but does not identify the lyricists; individual notices provide that evidence."
+      },
       "SRC0525": {
         "fields": {"workIds": ["W-S105"], "songIds": ["S105"], "contributionIds": ["CON-S105-C-P009", "CON-S105-C-P077", "CON-S105-PUB-ORG030"]},
         "reason": "The verified BnF notice lists Natacha and On n’aime qu’une fois; Les Nuits moscovites is the film title, not evidence for the song Nuits moscovites."
@@ -25843,6 +25859,10 @@
       }
     },
     "People": {
+      "P051": {
+        "fields": {"sourceIds": ["SRC0065"]},
+        "reason": "The collective catalogue notice does not name Léo Lelièvre; his individually credited editions remain linked."
+      },
       "P155": {
         "fields": {
           "contributionIds": ["CON-S123-C-P155"],
@@ -25982,6 +26002,16 @@
       }
     },
     "Contributions": {
+      "CON-S112-L-P031": {"fields": {"sourceIds": ["SRC0065"]}, "reason": "The collective BnF entry does not name the lyricists; retain the separately documented individual-edition evidence."},
+      "CON-S112-L-P052": {"fields": {"sourceIds": ["SRC0065"]}, "reason": "The collective BnF entry does not name the lyricists; retain the separately documented individual-edition evidence."},
+      "CON-S113-L-P031": {"fields": {"sourceIds": ["SRC0065"]}, "reason": "The collective BnF entry does not name the lyricists; retain the separately documented individual-edition evidence."},
+      "CON-S113-L-P051": {"fields": {"sourceIds": ["SRC0065"]}, "reason": "The collective BnF entry does not name the lyricists; retain the separately documented individual-edition evidence."},
+      "CON-S113-L-P052": {"fields": {"sourceIds": ["SRC0065"]}, "reason": "The collective BnF entry does not name the lyricists; retain the separately documented individual-edition evidence."},
+      "CON-S114-L-P031": {"fields": {"sourceIds": ["SRC0065"]}, "reason": "The collective BnF entry does not name the lyricists; retain the separately documented individual-edition evidence."},
+      "CON-S114-L-P049": {"fields": {"sourceIds": ["SRC0065"]}, "reason": "The collective BnF entry does not name the lyricists; retain the separately documented individual-edition evidence."},
+      "CON-S115-L-P031": {"fields": {"sourceIds": ["SRC0065"]}, "reason": "The collective BnF entry does not name the lyricists; retain the separately documented individual-edition evidence."},
+      "CON-S115-L-P051": {"fields": {"sourceIds": ["SRC0065"]}, "reason": "The collective BnF entry does not name the lyricists; retain the separately documented individual-edition evidence."},
+      "CON-S115-L-P052": {"fields": {"sourceIds": ["SRC0065"]}, "reason": "The collective BnF entry does not name the lyricists; retain the separately documented individual-edition evidence."},
       "CON-S105-C-P009": {
         "fields": {"sourceIds": ["SRC0525"]},
         "reason": "SRC0525 describes Natacha and On n’aime qu’une fois, not the song Nuits moscovites."
