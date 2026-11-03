@@ -79,6 +79,12 @@ REPOSITORY_ALIASES: dict[str, str] = {
         "Internet Archive / Media History Digital Library"
     ),
     "Polona / Biblioteka Narodowa": "Biblioteka Narodowa / Polona",
+    # One record addressed the Staatsbibliothek copy through the KVK meta-search,
+    # whose links carry a session signature and stop resolving. The StabiKat
+    # record it wrapped is the one the other thirteen cite directly.
+    "Staatsbibliothek zu Berlin, Musikabteilung, Unter den Linden; StabiKat / KVK": (
+        "Staatsbibliothek zu Berlin, Musikabteilung, Unter den Linden; StabiKat"
+    ),
     # Every other private collection in the archive is named — Jacques Gana,
     # Richard Kraft, Matthias Fanck, David Silvestre. This one names none,
     # because none is known: what the record has is a sale listing, and the
