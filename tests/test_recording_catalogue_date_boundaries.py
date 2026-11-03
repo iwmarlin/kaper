@@ -31,6 +31,24 @@ class RecordingCatalogueDateBoundaryTests(unittest.TestCase):
         self.assertIn("[post 1930]", source["fullCitation"])
         self.assertIn("does not assert an issue in 1933", source["researchNote"])
 
+    def test_stare_melodie_year_is_not_assigned_to_an_issue_or_session(self):
+        source = self.sources["SRC0658"]
+        self.assertEqual((source["date"], source["dateRole"], source["dateQualifier"]),
+                         ("1932", "described_item", "reported"))
+        self.assertIn("does not specify whether the year dates the recording or the issue",
+                      source["researchNote"])
+        self.assertIn("DM 1624 a", source["fullCitation"])
+        self.assertIn("WJ 277", source["fullCitation"])
+        self.assertEqual(self.media["M399"]["externalUrl"], source["primaryUrl"])
+        self.assertEqual(normalized_source(source), source)
+        legacy = dict(source, dateRole="issue", dateQualifier="confirmed")
+        self.assertEqual(normalized_source_date_fields(legacy),
+                         {"date": "1932", "dateRole": "described_item", "dateQualifier": "reported"})
+        overrides = json.loads((ROOT / "scripts/public_export_overrides.json").read_text())
+        fields = overrides["additions"]["Sources"]["SRC0658"]["fields"]
+        for field in ("date", "dateRole", "dateQualifier", "researchNote"):
+            self.assertEqual(fields[field], source[field])
+
     def test_bn_catalogue_type_and_institution_remain_consistent(self):
         source = self.sources["SRC0633"]
         self.assertEqual(source["sourceType"], "sound_recording_catalogue")

@@ -1242,6 +1242,10 @@ RECORDING_FIELDS: dict[str, dict[str, Any]] = {
             "über Nacht kommt die Liebe.”"
         ),
         "researchNote": (
+            "Stare Melodie gives 1932 for this entry but does not specify whether "
+            "the year dates the recording or the issue. The structured date "
+            "therefore records the year reported for the disc without assigning "
+            "it to either event. "
             "The page groups Fritz Rotter and Bronisław Kaper under music. The "
             "work-level credits follow contemporary German registrations, which "
             "assign the music to Kaper and the German words to Rotter."
