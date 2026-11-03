@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 855,
+  "count": 854,
   "records": [
     {
       "id": "SRC0001",
@@ -2248,8 +2248,8 @@
       ],
       "contributionIds": [
         "CON-S111-C-P077",
-        "CON-S111-L-P065",
-        "CON-S111-PUB-ORG039"
+        "CON-S111-PUB-ORG039",
+        "CON-S111-C-P009"
       ],
       "primaryUrl": "https://catalogue.bnf.fr/ark:/12148/cb43069626n",
       "identifiers": [
@@ -2294,7 +2294,6 @@
       "contributionIds": [
         "CON-S036-C-P009",
         "CON-S036-C-P077",
-        "CON-S036-L-P005",
         "CON-S036-PUB-ORG047"
       ],
       "primaryUrl": "https://catalogue.bnf.fr/ark:/12148/cb43070887f",
@@ -2312,7 +2311,7 @@
       "sourceType": "sheet_music_catalogue",
       "title": "Nuits moscovites; En avant, Les Nuits moscovites",
       "repository": "Bibliothèque nationale de France / Catalogue général",
-      "publication": "BnF Catalogue général",
+      "publication": "Coda",
       "date": "1934",
       "dateRole": "issue",
       "dateQualifier": "confirmed",
@@ -2321,20 +2320,24 @@
       "sourceStatus": "verified",
       "slug": "src0074-nuits-moscovites-en-avant-1934",
       "personIds": [
-        "P009"
+        "P006",
+        "P009",
+        "P077"
       ],
       "organizationIds": [
         "ORG030",
         "ORG062"
       ],
       "workIds": [
-        "W-S105"
+        "W-S105",
+        "W-S107"
       ],
       "timelineEventIds": [
         "TE0029"
       ],
       "songIds": [
-        "S105"
+        "S105",
+        "S107"
       ],
       "workRelationIds": [
         "REL0066"
@@ -2343,7 +2346,11 @@
         "CON-S105-C-P009",
         "CON-S105-C-P077",
         "CON-S105-L-P006",
-        "CON-S105-PUB-ORG030"
+        "CON-S105-PUB-ORG030",
+        "CON-S107-C-P009",
+        "CON-S107-C-P077",
+        "CON-S107-PUB-ORG030",
+        "CON-S107-L-P006"
       ],
       "nameVariantIds": [
         "PNV0019",
@@ -2354,8 +2361,22 @@
         {
           "scheme": "ark",
           "value": "ark:/12148/cb43070896d"
+        },
+        {
+          "scheme": "ark",
+          "value": "ark:/12148/cb43069617p"
         }
-      ]
+      ],
+      "creator": "Bronisław Kaper and Walter Jurmann (music); André de Badet (words)",
+      "additionalLinks": [
+        {
+          "label": "BnF catalogue — alternative notice for the same score",
+          "url": "https://catalogue.bnf.fr/ark:/12148/cb43069617p",
+          "role": "catalogue_entry"
+        }
+      ],
+      "researchNote": "The BnF catalogue has two bibliographic notices for this score, under Kaper and Jurmann respectively. Both list the same works and the same holding, FOL-VM7-29245; they do not constitute two independent copies of the evidence.",
+      "researchNoteType": "evidence_note"
     },
     {
       "id": "SRC0075",
@@ -17631,10 +17652,10 @@
     {
       "id": "SRC0495",
       "shortCitation": "‘La Femme aime à verser des larmes’ (Tränen weint jede Frau so gern), chant et piano, 1930 (BnF)",
-      "fullCitation": "La Femme aime à verser des larmes. Tränen weint jede Frau so gern... Paroles originales de Fritz Rotter. Paroles françaises de André Mauprey. Chant et piano. 1930. BnF also records: La Femme aime à verser des larmes, tango de Fritz Rotter et Dr. B. Kaper, arrangement de Nico Dostal, pour orchestre avec piano conducteur, 1931.",
+      "fullCitation": "Bronisław Kaper, “La Femme aime à verser des larmes” (Tränen weint jede Frau so gern). Original words by Fritz Rotter; French words by André Mauprey. Voice and piano. Paris: éditions Max Eschig, 1930. Bibliothèque nationale de France, Catalogue général, ark:/12148/cb43070890b.",
       "sourceType": "sheet_music_catalogue",
       "title": "La Femme aime à verser des larmes — French sheet music (BnF)",
-      "creator": "Fritz Rotter; Bronisław Kaper (music); André Mauprey (French words)",
+      "creator": "Bronisław Kaper (music); Fritz Rotter (original words); André Mauprey (French words)",
       "repository": "Bibliothèque nationale de France / Catalogue général",
       "publication": "éditions Max Eschig (Paris)",
       "date": "1930",
@@ -17672,7 +17693,16 @@
       "nameVariantIds": [
         "PNV0019"
       ],
-      "primaryUrl": "https://catalogue.bnf.fr/ark:/12148/cb43070890b"
+      "primaryUrl": "https://catalogue.bnf.fr/ark:/12148/cb43070890b",
+      "researchNote": "A separate BnF notice describes a 1931 orchestral arrangement by Nico Dostal; that notice is not the 1930 voice-and-piano edition cited above.",
+      "researchNoteType": "object_context",
+      "additionalLinks": [
+        {
+          "label": "BnF catalogue — Nico Dostal’s orchestral arrangement (1931)",
+          "url": "https://catalogue.bnf.fr/ark:/12148/cb43244705p",
+          "role": "catalogue_entry"
+        }
+      ]
     },
     {
       "id": "SRC0496",
@@ -18692,59 +18722,6 @@
         {
           "scheme": "ark",
           "value": "ark:/12148/cb43069614n"
-        }
-      ]
-    },
-    {
-      "id": "SRC0526",
-      "shortCitation": "BnF, Les Nuits moscovites: Nuits moscovites / En avant (1934)",
-      "fullCitation": "Walter Jurmann and Bronisław Kaper, music; André de Badet, words. Film Les Nuits moscovites: “Nuits moscovites,” waltz; “En avant,” chanson tzigane. Voice and piano. Paris: Coda, 1934. Bibliothèque nationale de France, Catalogue général, notice FRBNF43069617, ARK ark:/12148/cb43069617p.",
-      "sourceType": "sheet_music_catalogue",
-      "title": "Film Les Nuits moscovites — Nuits moscovites; En avant",
-      "creator": "Walter Jurmann and Bronisław Kaper (music); André de Badet (words)",
-      "repository": "Bibliothèque nationale de France / Catalogue général",
-      "publication": "Coda",
-      "date": "1934",
-      "dateRole": "issue",
-      "dateQualifier": "confirmed",
-      "accessDate": "2026-07-10",
-      "reliability": "high",
-      "sourceStatus": "verified",
-      "slug": "src0526-bnf-nuits-moscovites-en-avant-1934",
-      "personIds": [
-        "P006",
-        "P009",
-        "P077"
-      ],
-      "organizationIds": [
-        "ORG030",
-        "ORG062"
-      ],
-      "workIds": [
-        "W-S105",
-        "W-S107"
-      ],
-      "songIds": [
-        "S105",
-        "S107"
-      ],
-      "contributionIds": [
-        "CON-S105-C-P009",
-        "CON-S105-C-P077",
-        "CON-S105-PUB-ORG030",
-        "CON-S107-C-P009",
-        "CON-S107-C-P077",
-        "CON-S107-PUB-ORG030"
-      ],
-      "nameVariantIds": [
-        "PNV0019",
-        "PNV0022"
-      ],
-      "primaryUrl": "https://catalogue.bnf.fr/ark:/12148/cb43069617p",
-      "identifiers": [
-        {
-          "scheme": "ark",
-          "value": "ark:/12148/cb43069617p"
         }
       ]
     },

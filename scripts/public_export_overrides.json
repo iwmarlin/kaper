@@ -593,6 +593,8 @@
       }
     },
     "Sources": {
+      "SRC0074": {"reason": "Distinguish two BnF notices for one holding and a separate orchestral edition.", "fields": {"creator":"Bronisław Kaper and Walter Jurmann (music); André de Badet (words)","publication":"Coda","researchNote":"The BnF catalogue has two bibliographic notices for this score, under Kaper and Jurmann respectively. Both list the same works and the same holding, FOL-VM7-29245; they do not constitute two independent copies of the evidence.","researchNoteType":"evidence_note","additionalLinks":[{"label":"BnF catalogue — alternative notice for the same score","url":"https://catalogue.bnf.fr/ark:/12148/cb43069617p","role":"catalogue_entry"}],"identifiers":[{"scheme":"ark","value":"ark:/12148/cb43070896d"},{"scheme":"ark","value":"ark:/12148/cb43069617p"}]}},
+      "SRC0495": {"reason": "Distinguish two BnF notices for one holding and a separate orchestral edition.", "fields": {"fullCitation":"Bronisław Kaper, “La Femme aime à verser des larmes” (Tränen weint jede Frau so gern). Original words by Fritz Rotter; French words by André Mauprey. Voice and piano. Paris: éditions Max Eschig, 1930. Bibliothèque nationale de France, Catalogue général, ark:/12148/cb43070890b.","creator":"Bronisław Kaper (music); Fritz Rotter (original words); André Mauprey (French words)","researchNote":"A separate BnF notice describes a 1931 orchestral arrangement by Nico Dostal; that notice is not the 1930 voice-and-piano edition cited above.","researchNoteType":"object_context","additionalLinks":[{"label":"BnF catalogue — Nico Dostal’s orchestral arrangement (1931)","url":"https://catalogue.bnf.fr/ark:/12148/cb43244705p","role":"catalogue_entry"}]}},
       "SRC0061": {
         "reason": "Match the genre recorded by the linked BnF catalogue notice.",
         "fields": {"fullCitation":"Walter Jurmann and Bronisław Kaper, “Laisse-moi te bercer” (Wie gern’ möcht’ ich dich verwöhnen), tango chanté, du film Mélodie d’amour, production Reichsliga-Film; words by Lucien Boyer. Voice and piano / voice only. Paris: éditions Salabert, 1932. Bibliothèque nationale de France, Catalogue général, ARK ark:/12148/cb43069608q; notice no. FRBNF43069608."}
@@ -18234,6 +18236,11 @@
       }
     },
     "Contributions": {
+      "CON-S107-C-P009": {"fields": {"sourceIds": ["SRC0074"]}, "reason": "Preserve shared score evidence after merging two BnF notices."},
+      "CON-S107-C-P077": {"fields": {"sourceIds": ["SRC0074"]}, "reason": "Preserve shared score evidence after merging two BnF notices."},
+      "CON-S107-L-P006": {"fields": {"sourceIds": ["SRC0074"]}, "reason": "Preserve shared score evidence after merging two BnF notices."},
+      "CON-S107-PUB-ORG030": {"fields": {"sourceIds": ["SRC0074"]}, "reason": "Preserve shared score evidence after merging two BnF notices."},
+      "CON-S111-C-P009": {"fields": {"sourceIds": ["SRC0072"]}, "reason": "BnF names Kaper as co-composer."},
       "CON-S098-LAB-ORG155": {
         "fields": {"sourceIds": ["SRC0883"]},
         "reason": "The photographed label directly identifies Polydor."
@@ -19044,6 +19051,7 @@
       "O012": {"reason": "Attach the surviving Fiesta score headed Ein neuer Cocktail.", "fields": {"sourceIds": ["SRC0789"]}}
     },
     "Works": {
+      "W-S107": {"fields": {"sourceIds": ["SRC0074"]}, "reason": "Preserve evidence for both songs after merging the BnF notices."},
       "W-S161": {
         "fields": {
           "sourceIds": [
@@ -20268,6 +20276,7 @@
       }
     },
     "Songs": {
+      "S107": {"fields": {"sourceIds": ["SRC0074"]}, "reason": "Preserve evidence for both songs after merging the BnF notices."},
       "S161": {
         "fields": {
           "sourceIds": [
@@ -21286,6 +21295,7 @@
       }
     },
     "People": {
+      "P006": {"fields": {"sourceIds": ["SRC0074"]}, "reason": "Keep the BnF lyricist evidence after merging the duplicate source."},
       "P105": {
         "fields": {
           "sourceIds": [
@@ -21703,6 +21713,7 @@
         "reason": "Connect Walter Jurmann to the completed sources and documented film contributions, and synchronize the inverse event links that explicitly identify his collaborations with Kaper.",
         "fields": {
           "sourceIds": [
+            "SRC0074",
             "SRC0306",
             "SRC0136",
             "SRC0137",
@@ -22015,6 +22026,8 @@
       }
     },
     "Sources": {
+      "SRC0072": {"fields": {"contributionIds": ["CON-S111-C-P009"]}, "reason": "The BnF notice names Kaper as co-composer."},
+      "SRC0074": {"fields": {"workIds": ["W-S107"], "songIds": ["S107"], "personIds": ["P006", "P077"], "contributionIds": ["CON-S107-C-P009", "CON-S107-C-P077", "CON-S107-L-P006", "CON-S107-PUB-ORG030"]}, "reason": "Preserve evidence for both works and their contributors after merging the BnF catalogue notices."},
       "SRC0766": {
         "fields": {"organizationIds": ["ORG146"]},
         "reason": "The opening label photograph identifies Parlophon B 4502."
@@ -24497,6 +24510,7 @@
         "fields": {"personIds": ["P051"], "contributionIds": ["CON-S112-L-P031","CON-S112-L-P052","CON-S113-L-P031","CON-S113-L-P051","CON-S113-L-P052","CON-S114-L-P031","CON-S114-L-P049","CON-S115-L-P031","CON-S115-L-P051","CON-S115-L-P052"]},
         "reason": "The collective BnF notice lists the four works and composers, but does not identify the lyricists; individual notices provide that evidence."
       },
+      "SRC0073": {"fields": {"contributionIds": ["CON-S036-L-P005"]}, "reason": "The orchestral BnF notice does not name the French lyricist."},
       "SRC0525": {
         "fields": {"workIds": ["W-S105"], "songIds": ["S105"], "contributionIds": ["CON-S105-C-P009", "CON-S105-C-P077", "CON-S105-PUB-ORG030"]},
         "reason": "The verified BnF notice lists Natacha and On n’aime qu’une fois; Les Nuits moscovites is the film title, not evidence for the song Nuits moscovites."
@@ -25145,8 +25159,9 @@
         }
       },
       "SRC0072": {
-        "reason": "Remove the inverse M223 link from this song-catalogue source; M223 has its own item-level cover provenance in SRC0540.",
+        "reason": "The orchestral BnF notice does not name the lyricist; M223 has separate image provenance in SRC0540.",
         "fields": {
+          "contributionIds": ["CON-S111-L-P065"],
           "mediaIds": [
             "M223"
           ]
@@ -25314,7 +25329,7 @@
     "Works": {
       "W-S105": {
         "fields": {"sourceIds": ["SRC0525"]},
-        "reason": "Remove the BnF catalogue entry for two other songs; SRC0526 records Nuits moscovites itself."
+        "reason": "Remove the BnF catalogue entry for two other songs; SRC0074 records Nuits moscovites itself."
       },
       "W-S129": {
         "fields": {"sourceIds": ["SRC0740"], "mediaIds": ["M379"]},
@@ -25593,7 +25608,7 @@
     "Songs": {
       "S105": {
         "fields": {"sourceIds": ["SRC0525"]},
-        "reason": "Remove the BnF catalogue entry for two other songs; SRC0526 records Nuits moscovites itself."
+        "reason": "Remove the BnF catalogue entry for two other songs; SRC0074 records Nuits moscovites itself."
       },
       "S129": {
         "fields": {"sourceIds": ["SRC0740"], "mediaIds": ["M379"]},
@@ -26002,6 +26017,8 @@
       }
     },
     "Contributions": {
+      "CON-S111-L-P065": {"fields": {"sourceIds": ["SRC0072"]}, "reason": "The orchestral BnF notice does not identify the lyricist."},
+      "CON-S036-L-P005": {"fields": {"sourceIds": ["SRC0073"]}, "reason": "The orchestral BnF notice does not identify the lyricist."},
       "CON-S112-L-P031": {"fields": {"sourceIds": ["SRC0065"]}, "reason": "The collective BnF entry does not name the lyricists; retain the separately documented individual-edition evidence."},
       "CON-S112-L-P052": {"fields": {"sourceIds": ["SRC0065"]}, "reason": "The collective BnF entry does not name the lyricists; retain the separately documented individual-edition evidence."},
       "CON-S113-L-P031": {"fields": {"sourceIds": ["SRC0065"]}, "reason": "The collective BnF entry does not name the lyricists; retain the separately documented individual-edition evidence."},

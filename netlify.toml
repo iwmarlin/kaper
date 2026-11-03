@@ -1,6 +1,18 @@
 [build]
   publish = "."
 
+[[redirects]]
+  from = "/records/source/SRC0526/"
+  to = "/records/source/SRC0074/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/records/source/SRC0526"
+  to = "/records/source/SRC0074/"
+  status = 301
+  force = true
+
 [[headers]]
   for = "/*"
   [headers.values]
