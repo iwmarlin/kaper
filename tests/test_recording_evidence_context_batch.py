@@ -42,6 +42,7 @@ class RecordingEvidenceContextBatchTests(unittest.TestCase):
                     (name + ".json")).read_text())["records"]}
         cls.credits = records("contributions")
         cls.sources = records("sources")
+        cls.media = records("media")
         cls.overrides = json.loads((ROOT / "scripts/public_export_overrides.json").read_text())
 
     def test_27_uploader_credits_keep_qualified_identity_and_reciprocal_links(self):
@@ -128,6 +129,14 @@ class RecordingEvidenceContextBatchTests(unittest.TestCase):
         for cid in ("CON-S158-LAB-ORG147", "CON-S158-P-P173"):
             self.assertEqual(self.overrides["records"]["Contributions"][cid]["fields"]["scopeNote"],
                              self.credits[cid]["scopeNote"])
+
+    def test_albers_caption_identifies_the_performance_but_not_the_carrier(self):
+        caption = self.media["M339"]["publicCaption"]
+        self.assertIn("Hans Albers", caption)
+        self.assertIn("Otto Dobrindt", caption)
+        self.assertIn("as the upload’s description states", caption)
+        self.assertIn("does not identify the source disc, matrix or take", caption)
+        self.assertEqual(self.overrides["records"]["Media"]["M339"]["fields"]["publicCaption"], caption)
 
 if __name__ == "__main__":
     unittest.main()
