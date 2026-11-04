@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 854,
+  "count": 855,
   "records": [
     {
       "id": "SRC0001",
@@ -18920,7 +18920,7 @@
         "CON-F055-D-P095"
       ],
       "primaryUrl": "https://www.tcm.com/watchtcm/titles/3095",
-      "researchNote": "The title page identifies Reinhold Schünzel as director and Metro-Goldwyn-Mayer as the production company.",
+      "researchNote": "The title page identifies Reinhold Schünzel as director and Metro-Goldwyn-Mayer as the production company. Checked again on 4 November 2026: the Watch TCM address answers but serves “TCM is only available to stream in certain locations”, so the page cannot be read from outside the United States. The same two credits are carried by the AFI Catalog entry, which is reachable and now cited alongside it.",
       "researchNoteType": "evidence_note",
       "organizationIds": [
         "ORG001",
@@ -32743,6 +32743,43 @@
           "value": "ark:/12148/cb425381729"
         }
       ]
+    },
+    {
+      "id": "SRC0952",
+      "shortCitation": "AFI Catalog, “Balalaika”",
+      "fullCitation": "American Film Institute. “Balalaika.” AFI Catalog of Feature Films, record 5119.",
+      "researchNote": "The entry gives Balalaika as a 102-minute film released on 29 December 1939, directs it to Reinhold Schunzel — spelled there without the umlaut — and names Metro-Goldwyn-Mayer Corp. (Loew’s, Inc.) as the production company, which are the two credits this record is cited for. Kaper is not named on the page; the music is documented separately in the copyright catalogue.",
+      "researchNoteType": "verification_note",
+      "sourceType": "filmographic_database",
+      "title": "Balalaika",
+      "creator": "American Film Institute",
+      "repository": "AFI Catalog of Feature Films",
+      "publication": "AFI Catalog of Feature Films",
+      "date": "1939",
+      "dateRole": "described_item",
+      "dateQualifier": "confirmed",
+      "accessDate": "2026-11-04",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "slug": "src0952-afi-balalaika-1939",
+      "personIds": [
+        "P095"
+      ],
+      "organizationIds": [
+        "ORG001",
+        "ORG073"
+      ],
+      "workIds": [
+        "W-F055"
+      ],
+      "filmIds": [
+        "F055"
+      ],
+      "contributionIds": [
+        "CON-F055-D-P095",
+        "CON-F055-PC-ORG001"
+      ],
+      "primaryUrl": "https://catalog.afi.com/Film/5119-BALALAIKA?cxt=filmography"
     }
   ],
   "recordCount": null

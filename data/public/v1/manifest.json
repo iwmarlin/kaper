@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "publicDataUpdatedAt": "2026-11-03",
+  "publicDataUpdatedAt": "2026-11-04",
   "generator": {
     "file": "export_public_data.py",
     "sha256": "bcf044cbcf0a0717bdf5a624552cdf9d77dfaa6820d3bf3553abe7737ed14a55"
@@ -17,7 +17,7 @@
     },
     "overrides": {
       "file": "public_export_overrides.json",
-      "sha256": "8e4b7d80355004ee5a1b0ad0c85b0e123e522b039e15189b26abd8968e22a262",
+      "sha256": "968a19fdb233ce80bf605f74a5e5212a11646183729349cf276476ac56dbb9a9",
       "appliedCount": 1176,
       "additionCount": 345,
       "linkAdditionCount": 705,
@@ -48,7 +48,7 @@
   "counts": {
     "People": 178,
     "Organizations": 168,
-    "Sources": 854,
+    "Sources": 855,
     "Media": 410,
     "Works": 299,
     "Films": 56,
@@ -65,17 +65,17 @@
     {
       "file": "build-report.json",
       "bytes": 114686,
-      "sha256": "eb2e2def1f5d8db7debd4831a4aa5608d86b4c79f9afbf2548d83ece472e89fc"
+      "sha256": "44982fac8599809b1d4a65bf151fc6f1e421352b148ea8a439a0075cae4411bb"
     },
     {
       "file": "contributions.json",
-      "bytes": 535535,
-      "sha256": "a1ef5749e595e4c389281813e3f2739d04afa94093d1d9e85673a609ffe87964"
+      "bytes": 535573,
+      "sha256": "f0aeeb757bc40356b8ac07171b79507d8e07a0f245e0e4d86ecd9fd0080965ea"
     },
     {
       "file": "films.json",
-      "bytes": 39921,
-      "sha256": "04b6dd56c8aec0137bdd01ca37f3b04b5a6698ab72e93bbb1e9f77e8555b5cd8"
+      "bytes": 39940,
+      "sha256": "c1a1cfb69239fb4ad4e4e66db198f5854faa7abade726af614a9d9a6666c4844"
     },
     {
       "file": "media.json",
@@ -84,8 +84,8 @@
     },
     {
       "file": "organizations.json",
-      "bytes": 159343,
-      "sha256": "f1dd220e20151187c557ab21025e99dbb2b52d7a1676a668ec92650c03a62c7b"
+      "bytes": 159381,
+      "sha256": "2bedfb0eb8f3e3bced082012b2fc324e77b922e26fea3cd1595db75ee1372893"
     },
     {
       "file": "other-works.json",
@@ -94,8 +94,8 @@
     },
     {
       "file": "people.json",
-      "bytes": 218041,
-      "sha256": "397ce4fc6229c19442972a550606f0fd60ed215bcf7d17be24c0e94e07d59f5d"
+      "bytes": 218060,
+      "sha256": "7a0de3048a22e35e324382187e310686b8a5137970ee79dd75889af7696a205d"
     },
     {
       "file": "person-name-variants.json",
@@ -114,8 +114,8 @@
     },
     {
       "file": "sources.json",
-      "bytes": 1366196,
-      "sha256": "3fe60162406441282a993310bee79d172bf291544c667bf8b21df60b33f8e45f"
+      "bytes": 1367981,
+      "sha256": "6a4c4103bc0c2418ec7ca58075d369e5aa529235cfe9a2cf5e713b61b98a2c20"
     },
     {
       "file": "timeline-events.json",
@@ -134,8 +134,8 @@
     },
     {
       "file": "works.json",
-      "bytes": 282795,
-      "sha256": "4a70accc09139ffe4dfedceb323fe22818ffc98a34ff528e492cb4813b7a64de"
+      "bytes": 282814,
+      "sha256": "a07290afa3e7ac5ad6f386e813bd8375067c92cb0a098f72426459c8a9f72165"
     }
   ]
 }
