@@ -596,6 +596,20 @@
     "Sources": {
       "SRC0074": {"reason": "Distinguish two BnF notices for one holding and a separate orchestral edition.", "fields": {"creator":"Bronisław Kaper and Walter Jurmann (music); André de Badet (words)","publication":"Coda","researchNote":"The BnF catalogue has two bibliographic notices for this score, under Kaper and Jurmann respectively. Both list the same works and the same holding, FOL-VM7-29245; they do not constitute two independent copies of the evidence.","researchNoteType":"evidence_note","additionalLinks":[{"label":"BnF catalogue — alternative notice for the same score","url":"https://catalogue.bnf.fr/ark:/12148/cb43069617p","role":"catalogue_entry"}],"identifiers":[{"scheme":"ark","value":"ark:/12148/cb43070896d"},{"scheme":"ark","value":"ark:/12148/cb43069617p"}]}},
       "SRC0495": {"reason": "Distinguish two BnF notices for one holding and a separate orchestral edition.", "fields": {"fullCitation":"Bronisław Kaper, “La Femme aime à verser des larmes” (Tränen weint jede Frau so gern). Original words by Fritz Rotter; French words by André Mauprey. Voice and piano. Paris: éditions Max Eschig, 1930. Bibliothèque nationale de France, Catalogue général, ark:/12148/cb43070890b.","creator":"Bronisław Kaper (music); Fritz Rotter (original words); André Mauprey (French words)","researchNote":"A separate BnF notice describes a 1931 orchestral arrangement by Nico Dostal; that notice is not the 1930 voice-and-piano edition cited above.","researchNoteType":"object_context","additionalLinks":[{"label":"BnF catalogue — Nico Dostal’s orchestral arrangement (1931)","url":"https://catalogue.bnf.fr/ark:/12148/cb43244705p","role":"catalogue_entry"}]}},
+      "SRC0706": {
+        "reason": "Keep the periodical citation bibliographic and preserve the portrait and illustration assessment in a research note.",
+        "fields": {
+          "fullCitation": "Preston Neal Jones. “The Ghost of Hans J. Salter: The man who brought harmony to the House of Frankenstein.” Interview. Cinefantastique 7, no. 2 (Summer 1978): 10 ff. Digitised copy at the Internet Archive.",
+          "researchNote": "The portrait printed on page 10 is captioned “Hans J. Salter circa 1940s” and credits no photographer; the article is illustrated with excerpts from Salter’s conductor’s scores for the Universal horror films.",
+          "researchNoteType": "verification_note"
+        }
+      },
+      "SRC0947": {
+        "reason": "Supply the article's complete page range, confirmed in the journal contents and the BazHum index.",
+        "fields": {
+          "fullCitation": "Stanisław Konarski, “Szkolnictwo elementarne i średnie w Warszawie w okresie pierwszej wojny światowej,” Kronika Warszawy 2008, no. 3 (138): 5–19. Archiwum Państwowe m.st. Warszawy and Stowarzyszenie Przyjaciół Archiwum Państwowego m.st. Warszawy. ISSN 0137-3099."
+        }
+      },
       "SRC0061": {
         "reason": "Match the genre recorded by the linked BnF catalogue notice.",
         "fields": {"fullCitation":"Walter Jurmann and Bronisław Kaper, “Laisse-moi te bercer” (Wie gern’ möcht’ ich dich verwöhnen), tango chanté, du film Mélodie d’amour, production Reichsliga-Film; words by Lucien Boyer. Voice and piano / voice only. Paris: éditions Salabert, 1932. Bibliothèque nationale de France, Catalogue général, ARK ark:/12148/cb43069608q; notice no. FRBNF43069608."}
@@ -1764,7 +1778,7 @@
           "dateRole": "issue",
           "dateQualifier": "unknown",
           "primaryUrl": "https://diskografie.nm.cz/nahravky/fiesta-bianca/",
-          "researchNote": "The individual recording entry identifies Ultraphon 20040 A, matrix 18145, but supplies no recording or issue date. Its note places the orchestral recording in Ultraphon catalogues of 1932–1933; those years describe catalogue appearance, not a dated session or an established first issue. No year is inferred from that note.",
+          "researchNote": "The individual recording entry identifies Ultraphon 20040 A, matrix 18145, but supplies no recording or issue date. Its note places the orchestral recording in Ultraphon catalogues of 1932–1933; those years describe catalogue appearance, not a dated session or an established first issue. No year is inferred from that note. The catalogue credits Samuels and Whitcup for the music but does not name Kaper or establish that this recording uses his transcription; it is evidence for the underlying composition and a historical recording, not for the transcription itself.",
           "researchNoteType": "discographic_note",
           "accessDate": "2026-10-25",
           "additionalLinks": [
@@ -5240,9 +5254,11 @@
         }
       },
       "SRC0533": {
-        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "reason": "Identify the Wikipedia article as film context for the cover, not as the source of the cover reproduction.",
         "fields": {
-          "sourceType": "wikimedia_article_page"
+          "sourceType": "wikimedia_article_page",
+          "researchNote": "The German Wikipedia article identifies the film, credits its music to Jurmann and Kaper, and discusses its songs. It provides film context for the sheet-music cover M225; it is not the source of that cover reproduction, which is documented separately by SRC0541.",
+          "researchNoteType": "object_context"
         }
       },
       "SRC0534": {

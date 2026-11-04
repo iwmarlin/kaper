@@ -1047,7 +1047,7 @@ RECORDING_FIELDS: dict[str, dict[str, Any]] = {
         "dateRole": "issue",
         "dateQualifier": "unknown",
         "primaryUrl": "https://diskografie.nm.cz/nahravky/fiesta-bianca/",
-        "researchNote": "The individual recording entry identifies Ultraphon 20040 A, matrix 18145, but supplies no recording or issue date. Its note places the orchestral recording in Ultraphon catalogues of 1932–1933; those years describe catalogue appearance, not a dated session or an established first issue. No year is inferred from that note.",
+        "researchNote": "The individual recording entry identifies Ultraphon 20040 A, matrix 18145, but supplies no recording or issue date. Its note places the orchestral recording in Ultraphon catalogues of 1932–1933; those years describe catalogue appearance, not a dated session or an established first issue. No year is inferred from that note. The catalogue credits Samuels and Whitcup for the music but does not name Kaper or establish that this recording uses his transcription; it is evidence for the underlying composition and a historical recording, not for the transcription itself.",
         "researchNoteType": "discographic_note",
         "accessDate": "2026-10-25",
         "additionalLinks": [
