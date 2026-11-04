@@ -297,7 +297,7 @@ VISUAL_SOURCE_FIELDS: dict[str, dict[str, Any]] = {
     "SRC0573": {
         "dateRole": "publication",
         "dateDisplay": "1912 (reported)",
-        "researchNote": "The forum dates the reproduced printed notice to 1912. This reported date concerns the notice, not an independently established date of the underlying photograph. The original publication and photographer remain unidentified; the historical object has not been examined directly.",
+        "researchNote": "The forum caption reads “Gebäude Lützowstraße 76 im Jahr 1912” and dates the building as photographed. No separate date is given for the trade notice printed with it. The year is reported by the forum and not independently established; the original publication and photographer remain unidentified, and the historical object has not been examined directly.",
         "researchNoteType": "date_assessment"
     },
     "SRC0752": {"creator": "Photographer unidentified"},
