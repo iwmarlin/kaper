@@ -417,6 +417,7 @@
       "S077": {
         "reason": "Correct the song year to the 1933 Salabert edition and keep Paris outside the publisher transcription.",
         "fields": {
+          "publicNote": "The Salabert score catalogues distinguish concert-version lyrics by Charles-Louis Pothier from film-version lyrics by Henri-Georges Clouzot and Serge Veber.",
           "year": 1933,
           "period": "european",
           "publisherAsPrinted": "Éditions Salabert"
@@ -8577,6 +8578,7 @@
       }
     },
     "Contributions": {
+      "CON-S077-L-P010": {"reason": "The Salabert catalogues identify Pothier's words specifically as the concert version.", "fields": {"scopeNote": "Lyrics for the concert version."}},
       "CON-S077-P-P117": {
         "reason": "Use the score catalogue as evidence of a film performance without implying direct inspection of a score or a disc.",
         "fields": {
@@ -10234,6 +10236,7 @@
       }
     },
     "People": {
+      "P033": {"reason": "BnF identifies Henri-Georges Clouzot as a lyricist of the film version of Ninon, quand tu me souris.", "fields": {"roles": ["film director", "lyricist"]}},
       "P122": {
         "reason": "Align the sort form with the LCNAF-authorized name Moritz Mayer-Mahr already used as the public display and authorized name.",
         "fields": {
@@ -11015,6 +11018,7 @@
       }
     },
     "People": {
+      "P206": {"reason": "The Salabert score catalogues credit Serge Veber for the film-version words; BnF identifies him and his life dates.", "fields": {"id": "P206", "displayName": "Serge Veber", "sortName": "Veber, Serge", "authorizedName": "Veber, Serge", "authorizedNameSource": "BnF", "slug": "serge-veber", "primaryRole": "lyricist", "roles": ["lyricist"], "birthYear": 1897, "deathYear": 1976, "lifeDatesCertainty": "confirmed", "authorityUrl": "BnF: https://catalogue.bnf.fr/ark:/12148/cb12735578s", "workIds": ["W-S077"], "contributionIds": ["CON-S077-L-P206"]}},
       "P127": {
         "reason": "Add the verified Austrian composer and conductor Friedrich Jung, whom Filmportal credits under “Musik” for Die Zwei vom Südexpreß. Authority identity is established by GND 142499021 and the corresponding VIAF and BnF records.",
         "fields": {
@@ -11516,6 +11520,8 @@
       }
     },
     "Contributions": {
+      "CON-S077-L-P033": {"reason": "Both score catalogues credit Georges Clouzot for the film-version words; BnF identifies him as Henri-Georges Clouzot.", "fields": {"id": "CON-S077-L-P033", "role": "lyricist", "nameAsPrinted": "Georges Clouzot", "scopeNote": "Lyrics for the film version, with Serge Veber.", "sortOrder": 2, "certainty": "confirmed", "workIds": ["W-S077"], "personIds": ["P033"], "sourceIds": ["SRC0298", "SRC0584"]}},
+      "CON-S077-L-P206": {"reason": "Both score catalogues credit Serge Veber for the film-version words.", "fields": {"id": "CON-S077-L-P206", "role": "lyricist", "nameAsPrinted": "Serge Veber", "scopeNote": "Lyrics for the film version, with Georges Clouzot.", "sortOrder": 3, "certainty": "confirmed", "workIds": ["W-S077"], "personIds": ["P206"], "sourceIds": ["SRC0298", "SRC0584"]}},
       "CON-S047-PUB-ORG033": {
         "reason": "Model the Alrobi publisher named in the 1931 Hofmeister registration separately from the later Sirius-Mappen publication.",
         "fields": {
@@ -18236,6 +18242,7 @@
       }
     },
     "Contributions": {
+      "CON-S077-L-P010": {"reason": "The academy catalogue also credits Pothier for the concert-version words.", "fields": {"sourceIds": ["SRC0584"]}},
       "CON-S107-C-P009": {"fields": {"sourceIds": ["SRC0074"]}, "reason": "Preserve shared score evidence after merging two BnF notices."},
       "CON-S107-C-P077": {"fields": {"sourceIds": ["SRC0074"]}, "reason": "Preserve shared score evidence after merging two BnF notices."},
       "CON-S107-L-P006": {"fields": {"sourceIds": ["SRC0074"]}, "reason": "Preserve shared score evidence after merging two BnF notices."},
@@ -19626,11 +19633,14 @@
       "W-S077": {
         "reason": "Connect Jan Kiepura's documented performance in Tout pour l'amour and its item-level score source to Ninon, quand tu me souris.",
         "fields": {
+          "personIds": ["P033", "P206"],
           "sourceIds": [
             "SRC0584"
           ],
           "contributionIds": [
-            "CON-S077-P-P117"
+            "CON-S077-P-P117",
+            "CON-S077-L-P033",
+            "CON-S077-L-P206"
           ]
         }
       },
@@ -21295,6 +21305,7 @@
       }
     },
     "People": {
+      "P033": {"reason": "Connect Clouzot's film-version lyric credit to his existing person record.", "fields": {"workIds": ["W-S077"], "contributionIds": ["CON-S077-L-P033"]}},
       "P006": {"fields": {"sourceIds": ["SRC0074"]}, "reason": "Keep the BnF lyricist evidence after merging the duplicate source."},
       "P105": {
         "fields": {
@@ -22026,6 +22037,8 @@
       }
     },
     "Sources": {
+      "SRC0298": {"reason": "The BnF catalogue identifies the film-version lyricists.", "fields": {"contributionIds": ["CON-S077-L-P033", "CON-S077-L-P206"]}},
+      "SRC0584": {"reason": "The academy catalogue distinguishes the film and concert lyricists.", "fields": {"contributionIds": ["CON-S077-L-P010", "CON-S077-L-P033", "CON-S077-L-P206"]}},
       "SRC0072": {"fields": {"contributionIds": ["CON-S111-C-P009"]}, "reason": "The BnF notice names Kaper as co-composer."},
       "SRC0074": {"fields": {"workIds": ["W-S107"], "songIds": ["S107"], "personIds": ["P006", "P077"], "contributionIds": ["CON-S107-C-P009", "CON-S107-C-P077", "CON-S107-L-P006", "CON-S107-PUB-ORG030"]}, "reason": "Preserve evidence for both works and their contributors after merging the BnF catalogue notices."},
       "SRC0766": {

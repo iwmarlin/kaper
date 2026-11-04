@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 1326,
+  "count": 1328,
   "records": [
     {
       "id": "CON-F001-C-P009",
@@ -10873,6 +10873,7 @@
       "id": "CON-S077-L-P010",
       "role": "lyricist",
       "nameAsPrinted": "Ch.-L. Pothier",
+      "scopeNote": "Lyrics for the concert version.",
       "sortOrder": 1,
       "certainty": "confirmed",
       "workIds": [
@@ -10883,7 +10884,44 @@
       ],
       "sourceIds": [
         "SRC0298",
-        "SRC0373"
+        "SRC0373",
+        "SRC0584"
+      ]
+    },
+    {
+      "id": "CON-S077-L-P033",
+      "role": "lyricist",
+      "nameAsPrinted": "Georges Clouzot",
+      "scopeNote": "Lyrics for the film version, with Serge Veber.",
+      "sortOrder": 2,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S077"
+      ],
+      "personIds": [
+        "P033"
+      ],
+      "sourceIds": [
+        "SRC0298",
+        "SRC0584"
+      ]
+    },
+    {
+      "id": "CON-S077-L-P206",
+      "role": "lyricist",
+      "nameAsPrinted": "Serge Veber",
+      "scopeNote": "Lyrics for the film version, with Georges Clouzot.",
+      "sortOrder": 3,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S077"
+      ],
+      "personIds": [
+        "P206"
+      ],
+      "sourceIds": [
+        "SRC0298",
+        "SRC0584"
       ]
     },
     {

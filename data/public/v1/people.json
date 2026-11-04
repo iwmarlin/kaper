@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 178,
+  "count": 179,
   "records": [
     {
       "id": "P001",
@@ -2444,17 +2444,20 @@
       "slug": "henri-georges-clouzot",
       "primaryRole": "film director",
       "roles": [
-        "film director"
+        "film director",
+        "lyricist"
       ],
       "sourceIds": [
         "SRC0133",
         "SRC0645"
       ],
       "contributionIds": [
-        "CON-F025-D-P033"
+        "CON-F025-D-P033",
+        "CON-S077-L-P033"
       ],
       "workIds": [
-        "W-F025"
+        "W-F025",
+        "W-S077"
       ],
       "birthYear": 1907,
       "deathYear": 1977,
@@ -9381,6 +9384,34 @@
         {
           "scheme": "wikidata",
           "url": "https://www.wikidata.org/wiki/Q78124"
+        }
+      ]
+    },
+    {
+      "id": "P206",
+      "displayName": "Serge Veber",
+      "sortName": "Veber, Serge",
+      "authorizedName": "Veber, Serge",
+      "authorizedNameSource": "BnF",
+      "slug": "serge-veber",
+      "primaryRole": "lyricist",
+      "roles": [
+        "lyricist"
+      ],
+      "birthYear": 1897,
+      "deathYear": 1976,
+      "lifeDatesCertainty": "confirmed",
+      "contributionIds": [
+        "CON-S077-L-P206"
+      ],
+      "workIds": [
+        "W-S077"
+      ],
+      "sourceIds": [],
+      "authorities": [
+        {
+          "scheme": "bnf",
+          "url": "https://catalogue.bnf.fr/ark:/12148/cb12735578s"
         }
       ]
     }
