@@ -71,8 +71,19 @@ class ImdbSourceTests(unittest.TestCase):
             )
 
     def test_obsolete_duplicate_image_sources_are_absent(self) -> None:
-        for source_id in ("SRC0339", "SRC0340", "SRC0342", "SRC0343"):
+        for source_id in ("SRC0340", "SRC0342", "SRC0343"):
             self.assertNotIn(source_id, self.sources)
+
+    def test_kind_lady_image_source_is_restored(self) -> None:
+        source = self.sources["SRC0339"]
+        medium = self.media["M145"]
+        url = "https://www.imdb.com/title/tt0027845/mediaviewer/rm695734272/"
+        self.assertEqual(url, source["primaryUrl"])
+        self.assertEqual(url, medium["externalUrl"])
+        self.assertIn("M145", source["mediaIds"])
+        self.assertIn("SRC0339", medium["sourceIds"])
+        self.assertIn("SRC0339", self.organizations["ORG092"]["sourceIds"])
+        self.assertEqual("restricted", medium["rightsStatus"])
 
     def test_shot_at_dawn_medium_uses_its_direct_ucla_source(self) -> None:
         self.assertEqual(["SRC0166"], self.media["M151"].get("sourceIds"))

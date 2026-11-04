@@ -594,6 +594,27 @@
       }
     },
     "Sources": {
+      "SRC0339": {
+        "reason": "Restore the IMDb image source previously removed as a supposed duplicate: the actual local image matches this IMDb item, not the different Wikipedia poster.",
+        "fields": {
+          "shortCitation": "IMDb, Kind Lady (1935), image rm695734272",
+          "fullCitation": "IMDb. “Kind Lady” (1935), title tt0027845, media viewer image rm695734272. Image of Basil Rathbone and Aline MacMahon.",
+          "sourceType": "image_or_photograph",
+          "title": "Kind Lady (1935) — IMDb media viewer image",
+          "repository": "IMDb",
+          "publication": "IMDb",
+          "date": "1935",
+          "dateRole": "described_item",
+          "dateQualifier": "confirmed",
+          "accessDate": "2026-11-04",
+          "reliability": "medium",
+          "sourceStatus": "verified_with_attribution_note",
+          "primaryUrl": "https://www.imdb.com/title/tt0027845/mediaviewer/rm695734272/",
+          "researchNote": "IMDb identifies the people and the film; it does not establish the image creator, publication date, or reuse rights. The year 1935 identifies the film, not an independently verified date of the image.",
+          "researchNoteType": "verification_note"
+        },
+        "removeFields": ["creator"]
+      },
       "SRC0074": {"reason": "Distinguish two BnF notices for one holding and a separate orchestral edition.", "fields": {"creator":"Bronisław Kaper and Walter Jurmann (music); André de Badet (words)","publication":"Coda","researchNote":"The BnF catalogue has two bibliographic notices for this score, under Kaper and Jurmann respectively. Both list the same works and the same holding, FOL-VM7-29245; they do not constitute two independent copies of the evidence.","researchNoteType":"evidence_note","additionalLinks":[{"label":"BnF catalogue — alternative notice for the same score","url":"https://catalogue.bnf.fr/ark:/12148/cb43069617p","role":"catalogue_entry"}],"identifiers":[{"scheme":"ark","value":"ark:/12148/cb43070896d"},{"scheme":"ark","value":"ark:/12148/cb43069617p"}]}},
       "SRC0495": {"reason": "Distinguish two BnF notices for one holding and a separate orchestral edition.", "fields": {"fullCitation":"Bronisław Kaper, “La Femme aime à verser des larmes” (Tränen weint jede Frau so gern). Original words by Fritz Rotter; French words by André Mauprey. Voice and piano. Paris: éditions Max Eschig, 1930. Bibliothèque nationale de France, Catalogue général, ark:/12148/cb43070890b.","creator":"Bronisław Kaper (music); Fritz Rotter (original words); André Mauprey (French words)","researchNote":"A separate BnF notice describes a 1931 orchestral arrangement by Nico Dostal; that notice is not the 1930 voice-and-piano edition cited above.","researchNoteType":"object_context","additionalLinks":[{"label":"BnF catalogue — Nico Dostal’s orchestral arrangement (1931)","url":"https://catalogue.bnf.fr/ark:/12148/cb43244705p","role":"catalogue_entry"}]}},
       "SRC0706": {
@@ -8038,13 +8059,17 @@
         }
       },
       "M145": {
-        "reason": "The current Wikipedia article shows a different poster. Keep the existing conservative restriction while acknowledging that this reproduction's provenance is unverified.",
+        "reason": "Restore the verified IMDb image source supplied by the editor. Retain the conservative restriction and distinguish the film date from an unverified image date.",
         "fields": {
-          "externalUrl": null,
-          "publicCreditLine": "Metro-Goldwyn-Mayer; source of this reproduction unverified; reuse rights not cleared.",
+          "title": "Kind Lady (1935) — promotional image",
+          "description": "Promotional image for Kind Lady (MGM, 1935), showing Aline MacMahon and Basil Rathbone.",
+          "externalUrl": "https://www.imdb.com/title/tt0027845/mediaviewer/rm695734272/",
+          "altText": "Promotional image for Kind Lady showing Aline MacMahon and Basil Rathbone.",
+          "publicCaption": "Aline MacMahon and Basil Rathbone in a promotional image for Kind Lady (1935).",
+          "publicCreditLine": "IMDb; creator unidentified; reuse rights not cleared.",
           "rightsStatus": "restricted",
           "galleryStatus": "detail_only",
-          "rightsNote": "The current English Wikipedia article displays a different theatrical poster; it does not establish the provenance or reuse rights of this local promotional image. Reuse rights remain uncleared and the image is classified as restricted and confined to the film record."
+          "rightsNote": "The local image was supplied from IMDb, which identifies the film and performers but does not establish a reuse licence or the creator and publication date of this promotional image. Reuse rights remain uncleared; the image is classified as restricted and confined to the film record."
         }
       },
       "M147": {
@@ -10672,9 +10697,6 @@
       },
       "SRC0346": {
         "reason": "Remove the obsolete IMDb media-viewer record because it documents no retained Media, Work or other subject entity in the public graph; item-level evidence for Escapade remains represented by sources linked directly to the film and its materials."
-      },
-      "SRC0339": {
-        "reason": "Remove the obsolete IMDb media-viewer duplicate for Kind Lady; the retained item-level image source SRC0393 points to the English Wikipedia file page actually used by M145."
       },
       "SRC0340": {
         "reason": "Remove the obsolete IMDb media-viewer duplicate for Trouble for Two; the retained item-level image source SRC0387 points to the Wikimedia Commons file actually used by M156."
@@ -17942,6 +17964,7 @@
         "reason": "Synchronize IMDb with the company-credits and name-entry sources that were missing the repository relation.",
         "fields": {
           "sourceIds": [
+            "SRC0339",
             "SRC0528",
             "SRC0601"
           ]
@@ -20667,6 +20690,10 @@
       }
     },
     "Media": {
+      "M145": {
+        "reason": "Restore the verified direct IMDb source of the local promotional image.",
+        "fields": {"sourceIds": ["SRC0339"]}
+      },
       "M398": {
         "fields": {"organizationIds": ["ORG146"]},
         "reason": "The displayed disc bears the Parlophon imprint."
@@ -24435,14 +24462,6 @@
           ]
         }
       },
-      "M145": {
-        "reason": "Remove the excluded duplicate IMDb media-viewer source; SRC0393 remains as the item-level source for this local poster.",
-        "fields": {
-          "sourceIds": [
-            "SRC0339"
-          ]
-        }
-      },
       "M151": {
         "reason": "Remove the IMDb full-credits source from the programme-cover medium; the UCLA page SRC0166 is its direct image source.",
         "fields": {
@@ -25825,7 +25844,6 @@
         "reason": "Remove excluded duplicate image sources and Wikipedia-file records that were formerly misattributed to IMDb; retain only sources whose primary record is actually on IMDb.",
         "fields": {
           "sourceIds": [
-            "SRC0339",
             "SRC0340",
             "SRC0342",
             "SRC0343",
