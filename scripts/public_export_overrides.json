@@ -4649,10 +4649,13 @@
         }
       },
       "SRC0393": {
-        "reason": "Normalize the source type and keep the poster citation bibliographic, with the non-free and fair-use assessment exclusively at the linked medium.",
+        "reason": "The current Wikipedia article displays a different poster; retain the article as film context, not as the provenance of M145.",
         "fields": {
-          "fullCitation": "Kind Lady (1935). Theatrical-release poster reproduced on the English Wikipedia article for the film.",
-          "shortCitation": "English Wikipedia, Kind Lady theatrical-release poster (1935)",
+          "fullCitation": "Wikipedia contributors. “Kind Lady (1935 film).” English Wikipedia.",
+          "shortCitation": "English Wikipedia, Kind Lady (1935 film)",
+          "title": "Kind Lady (1935 film) — English Wikipedia article",
+          "creator": "Wikipedia contributors",
+          "researchNote": "The article provides film context and displays a theatrical poster, but that poster is different from the promotional image reproduced as M145. The article does not establish the provenance or reuse rights of the local image.",
           "sourceType": "wikimedia_article_page"
         }
       },
@@ -8019,11 +8022,13 @@
         }
       },
       "M145": {
-        "reason": "Replace the legacy blanket rights flag with the explicit restricted classification established by the record’s item-level rights assessment; keep the local reproduction on detail pages only.",
+        "reason": "The current Wikipedia article shows a different poster. Keep the existing conservative restriction while acknowledging that this reproduction's provenance is unverified.",
         "fields": {
+          "externalUrl": null,
+          "publicCreditLine": "Metro-Goldwyn-Mayer; source of this reproduction unverified; reuse rights not cleared.",
           "rightsStatus": "restricted",
           "galleryStatus": "detail_only",
-          "rightsNote": "English Wikipedia holds this poster as non-free content. Its project-specific rationale does not license republication elsewhere, so the local image is classified as restricted and confined to the film record."
+          "rightsNote": "The current English Wikipedia article displays a different theatrical poster; it does not establish the provenance or reuse rights of this local promotional image. Reuse rights remain uncleared and the image is classified as restricted and confined to the film record."
         }
       },
       "M147": {
@@ -18256,6 +18261,10 @@
     },
     "Contributions": {
       "CON-S077-L-P010": {"reason": "The academy catalogue also credits Pothier for the concert-version words.", "fields": {"sourceIds": ["SRC0584"]}},
+      "CON-S129-C-P009": {"reason": "The USC score cover names Kaper as co-composer.", "fields": {"sourceIds": ["SRC0542"]}},
+      "CON-S129-C-P077": {"reason": "The USC score cover names Jurmann as co-composer.", "fields": {"sourceIds": ["SRC0542"]}},
+      "CON-S129-L-P025": {"reason": "The USC score cover names Kahn as lyricist.", "fields": {"sourceIds": ["SRC0542"]}},
+      "CON-S129-PUB-ORG035": {"reason": "The USC score cover names Robbins as publisher.", "fields": {"sourceIds": ["SRC0542"]}},
       "CON-S107-C-P009": {"fields": {"sourceIds": ["SRC0074"]}, "reason": "Preserve shared score evidence after merging two BnF notices."},
       "CON-S107-C-P077": {"fields": {"sourceIds": ["SRC0074"]}, "reason": "Preserve shared score evidence after merging two BnF notices."},
       "CON-S107-L-P006": {"fields": {"sourceIds": ["SRC0074"]}, "reason": "Preserve shared score evidence after merging two BnF notices."},
@@ -19072,6 +19081,7 @@
     },
     "Works": {
       "W-S107": {"fields": {"sourceIds": ["SRC0074"]}, "reason": "Preserve evidence for both songs after merging the BnF notices."},
+      "W-S129": {"fields": {"sourceIds": ["SRC0542"]}, "reason": "Link the USC digital score to the song named on its cover."},
       "W-S161": {
         "fields": {
           "sourceIds": [
@@ -19303,7 +19313,8 @@
         "fields": {
           "sourceIds": [
             "SRC0325",
-            "SRC0491"
+            "SRC0491",
+            "SRC0541"
           ],
           "mediaIds": [
             "M020"
@@ -19551,7 +19562,8 @@
         "reason": "Attach Walter Jurmann's confirmed music contribution and the official Jurmann catalogue to Heut' kommt's drauf an.",
         "fields": {
           "sourceIds": [
-            "SRC0306"
+            "SRC0306",
+            "SRC0539"
           ],
           "contributionIds": [
             "CON-F021-C-P077"
@@ -19562,7 +19574,8 @@
         "reason": "Attach Walter Jurmann's confirmed music contribution and the official Jurmann catalogue to Ein Lied für Dich.",
         "fields": {
           "sourceIds": [
-            "SRC0306"
+            "SRC0306",
+            "SRC0538"
           ],
           "contributionIds": [
             "CON-F023-C-P077"
@@ -19899,7 +19912,8 @@
             "TE0054"
           ],
           "sourceIds": [
-            "SRC0320"
+            "SRC0320",
+            "SRC0542"
           ],
           "mediaIds": [
             "M028"
@@ -20300,6 +20314,7 @@
     },
     "Songs": {
       "S107": {"fields": {"sourceIds": ["SRC0074"]}, "reason": "Preserve evidence for both songs after merging the BnF notices."},
+      "S129": {"fields": {"sourceIds": ["SRC0542"]}, "reason": "Link the USC digital score to the song it identifies."},
       "S161": {
         "fields": {
           "sourceIds": [
@@ -22051,6 +22066,9 @@
     },
     "Sources": {
       "SRC0298": {"reason": "The BnF catalogue identifies the film-version lyricists.", "fields": {"contributionIds": ["CON-S077-L-P033", "CON-S077-L-P206"]}},
+      "SRC0538": {"reason": "The inspected promotional cover explicitly names the film; link it without inferring individual song credits.", "fields": {"workIds": ["W-F023"]}},
+      "SRC0539": {"reason": "The inspected promotional cover explicitly names the film; link it without inferring music credits.", "fields": {"workIds": ["W-F021"]}},
+      "SRC0541": {"reason": "The inspected promotional cover explicitly names the film but no individual songs.", "fields": {"workIds": ["W-F024"]}},
       "SRC0584": {"reason": "The academy catalogue distinguishes the film and concert lyricists.", "fields": {"contributionIds": ["CON-S077-L-P010", "CON-S077-L-P033", "CON-S077-L-P206"]}},
       "SRC0072": {"fields": {"contributionIds": ["CON-S111-C-P009"]}, "reason": "The BnF notice names Kaper as co-composer."},
       "SRC0074": {"fields": {"workIds": ["W-S107"], "songIds": ["S107"], "personIds": ["P006", "P077"], "contributionIds": ["CON-S107-C-P009", "CON-S107-C-P077", "CON-S107-L-P006", "CON-S107-PUB-ORG030"]}, "reason": "Preserve evidence for both works and their contributors after merging the BnF catalogue notices."},
@@ -22611,7 +22629,7 @@
         }
       },
       "SRC0535": {"reason": "Link the source to USC Libraries, identified in its structured repository field.", "fields": {"organizationIds": ["ORG080"]}},
-      "SRC0542": {"reason": "Link the source to USC Libraries, identified in its structured repository field.", "fields": {"organizationIds": ["ORG080"]}},
+      "SRC0542": {"reason": "Link the USC score to its repository, the song and named credits, and the film named on its cover.", "fields": {"organizationIds": ["ORG080"], "workIds": ["W-F046", "W-S129"], "songIds": ["S129"], "contributionIds": ["CON-S129-C-P009", "CON-S129-C-P077", "CON-S129-L-P025", "CON-S129-PUB-ORG035"]}},
       "SRC0548": {"reason": "Link the authority source to Deutsche Nationalbibliothek, identified in its structured repository field.", "fields": {"organizationIds": ["ORG074"]}},
       "SRC0549": {"reason": "Link the source to the Bibliothèque nationale de France, identified in its structured repository field.", "fields": {"organizationIds": ["ORG062"]}},
       "SRC0555": {
