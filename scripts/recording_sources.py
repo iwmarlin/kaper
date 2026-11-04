@@ -1106,9 +1106,9 @@ RECORDING_FIELDS: dict[str, dict[str, Any]] = {
         "date": "1935-03-23",
         "dateRole": "recording",
         "dateQualifier": "confirmed",
-        "researchNote": "The title-list entry gives Los Angeles, 23 March 1935, as the recording place and date and leaves the release-date column empty; the structured date therefore describes the session, not the issue of Decca 466. The entry credits Kaper and Jurmann for the music and Harold Adamson for the words. That combination supports identifying this record as the English-language version of the song written for Ein Lied für dich.",
+        "researchNote": "The title-list entry gives Los Angeles, 23 March 1935, as the recording place and date and leaves the release-date column empty; the structured date therefore describes the session, not the issue of Decca 466. It lists “Adamson/Kaper/Jurmann” together in the composer field and leaves the lyricist field blank. The roles of Kaper and Jurmann as composers and Harold Adamson as lyricist are established by separate sources, not by a role-by-role distinction in this entry.",
         "researchNoteType": "evidence_note",
-        "accessDate": "2026-10-25"
+        "accessDate": "2026-11-05"
     },
     "SRC0753": {
         "date": "1931-09-15",
@@ -1283,15 +1283,23 @@ RECORDING_FIELDS: dict[str, dict[str, Any]] = {
         ]
     },
     "SRC0807": {
+        "shortCitation": "Grammophon 885, “Eine Sommernacht am Meer” (Fred Marley Orchestra, 1932)",
+        "title": "Eine Sommernacht am Meer — Grammophon 885",
+        "primaryUrl": "http://musiktiteldb.de/musiktitel/titel_Ein_Aben-Eko.html",
+        "accessDate": "2026-11-05",
         "fullCitation": (
             "Fred Marley und sein Tanz-Orchester, with Leo Monosson identified as "
-            "refrain vocalist. “Eine Sommernacht am Meer.” Grammophon 885 B, "
+            "refrain vocalist. “Eine Sommernacht am Meer.” Grammophon 885, "
             "matrix 1703 BN3; recorded at the Schumannsaal, Berlin, 15 August "
             "1932. Music credited to Bob Handers; words by Fritz Rotter. "
-            "Labelliste “Grammophon” (1931–1932), based on Discographie der "
-            "deutschen Tanzmusik, vol. 8, at musiktiteldb.de."
+            "Title list at musiktiteldb.de, citing Discographie der deutschen "
+            "Tanzmusik, vol. 8."
         ),
         "researchNote": (
+            "The title-list entry identifies Grammophon 885, matrix 1703 BN3, "
+            "and names Leo Monosson as refrain vocalist from a discography; it "
+            "does not specify a disc side or an issue date. A separate row lists "
+            "Polydor 24622 with matrix 1704 BN3 and does not name the vocalist. "
             "Bob Handers was the joint recording pseudonym used by Bronisław "
             "Kaper and Walter Jurmann."
         ),

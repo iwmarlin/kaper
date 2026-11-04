@@ -104,6 +104,31 @@ class RecordingCatalogueReviewTests(unittest.TestCase):
         self.assertIn("separate entry with matrix Be.10220-2", source["researchNote"])
         self.assertIn("not been independently matched to the -4 take", source["researchNote"])
 
+    def test_decca_ninon_catalogue_does_not_split_author_roles(self):
+        source = self.tables["sources"]["SRC0750"]
+        self.assertIn("“Adamson/Kaper/Jurmann” together in the composer field", source["researchNote"])
+        self.assertIn("leaves the lyricist field blank", source["researchNote"])
+        for cid in ("CON-S185-C-P009", "CON-S185-C-P077", "CON-S185-L-P028"):
+            self.assertNotIn("SRC0750", self.tables["contributions"][cid]["sourceIds"])
+            self.assertIn("SRC0310", self.tables["contributions"][cid]["sourceIds"])
+
+    def test_sommernacht_catalogue_targets_record_and_does_not_invent_side(self):
+        source = self.tables["sources"]["SRC0807"]
+        self.assertEqual(source["primaryUrl"], "http://musiktiteldb.de/musiktitel/titel_Ein_Aben-Eko.html")
+        self.assertIn("1703 BN3", source["fullCitation"])
+        self.assertIn("does not specify a disc side", source["researchNote"])
+        self.assertIn("Polydor 24622 with matrix 1704 BN3", source["researchNote"])
+        self.assertNotIn("885 B", source["title"])
+        self.assertIn("W-S072", source["workIds"])
+
+    def test_odeon_list_does_not_document_dobrindt_on_linked_songs(self):
+        self.assertNotIn("P167", self.tables["sources"]["SRC0742"].get("personIds", []))
+        self.assertNotIn("SRC0742", self.tables["people"]["P167"].get("sourceIds", []))
+        for cid in ("CON-S080-CON-P167", "CON-S081-CON-P167", "CON-S082-CON-P167"):
+            credit = self.tables["contributions"][cid]
+            self.assertIn("P167", credit["personIds"])
+            self.assertTrue(credit["sourceIds"])
+
     def test_library_entries_do_not_become_unprinted_composer_evidence(self):
         for sid, cids in CATALOGUE_UNSUPPORTED_AUTHORSHIP.items():
             for cid in cids:
