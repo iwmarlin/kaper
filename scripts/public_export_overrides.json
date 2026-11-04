@@ -18300,6 +18300,10 @@
     },
     "Contributions": {
       "CON-S077-L-P010": {"reason": "The academy catalogue also credits Pothier for the concert-version words.", "fields": {"sourceIds": ["SRC0584"]}},
+      "CON-S118-C-P009": {"reason": "The USC score cover and catalogue name Kaper as composer.", "fields": {"sourceIds": ["SRC0535"]}},
+      "CON-S118-C-P077": {"reason": "The USC score cover and catalogue name Jurmann as composer.", "fields": {"sourceIds": ["SRC0535"]}},
+      "CON-S118-L-P058": {"reason": "The USC score cover and catalogue name Washington as lyricist.", "fields": {"sourceIds": ["SRC0535"]}},
+      "CON-S118-PUB-ORG035": {"reason": "The USC score cover and catalogue name Robbins as publisher.", "fields": {"sourceIds": ["SRC0535"]}},
       "CON-S129-C-P009": {"reason": "The USC score cover names Kaper as co-composer.", "fields": {"sourceIds": ["SRC0542"]}},
       "CON-S129-C-P077": {"reason": "The USC score cover names Jurmann as co-composer.", "fields": {"sourceIds": ["SRC0542"]}},
       "CON-S129-L-P025": {"reason": "The USC score cover names Kahn as lyricist.", "fields": {"sourceIds": ["SRC0542"]}},
@@ -18838,26 +18842,29 @@
         }
       },
       "CON-S119-C-P009": {
-        "reason": "Add the AFI Escapade record as direct evidence for Kaper's music credit on You're All I Need.",
+        "reason": "The AFI film record and USC score cover identify Kaper's music credit on You're All I Need.",
         "fields": {
           "sourceIds": [
-            "SRC0140"
+            "SRC0140",
+            "SRC0443"
           ]
         }
       },
       "CON-S119-C-P077": {
-        "reason": "Add the AFI Escapade record as direct evidence for Jurmann's music credit on You're All I Need.",
+        "reason": "The AFI film record and USC score cover identify Jurmann's music credit on You're All I Need.",
         "fields": {
           "sourceIds": [
-            "SRC0140"
+            "SRC0140",
+            "SRC0443"
           ]
         }
       },
       "CON-S119-L-P025": {
-        "reason": "Add the AFI Escapade record as direct evidence for Gus Kahn's lyric credit on You're All I Need.",
+        "reason": "The AFI film record and USC score cover identify Gus Kahn's lyric credit on You're All I Need.",
         "fields": {
           "sourceIds": [
-            "SRC0140"
+            "SRC0140",
+            "SRC0443"
           ]
         }
       },
@@ -22671,7 +22678,8 @@
           ]
         }
       },
-      "SRC0535": {"reason": "Link the source to USC Libraries, identified in its structured repository field.", "fields": {"organizationIds": ["ORG080"]}},
+      "SRC0443": {"reason": "Link the USC score cover to the composer and lyricist credits it explicitly prints.", "fields": {"contributionIds": ["CON-S119-C-P009", "CON-S119-C-P077", "CON-S119-L-P025"]}},
+      "SRC0535": {"reason": "Link the source to USC Libraries and the authorship and publishing credits printed on its score cover.", "fields": {"organizationIds": ["ORG080"], "contributionIds": ["CON-S118-C-P009", "CON-S118-C-P077", "CON-S118-L-P058", "CON-S118-PUB-ORG035"]}},
       "SRC0542": {"reason": "Link the USC score to its repository, the song and named credits, and the film named on its cover.", "fields": {"organizationIds": ["ORG080"], "workIds": ["W-F046", "W-S129"], "songIds": ["S129"], "contributionIds": ["CON-S129-C-P009", "CON-S129-C-P077", "CON-S129-L-P025", "CON-S129-PUB-ORG035"]}},
       "SRC0548": {"reason": "Link the authority source to Deutsche Nationalbibliothek, identified in its structured repository field.", "fields": {"organizationIds": ["ORG074"]}},
       "SRC0549": {"reason": "Link the source to the Bibliothèque nationale de France, identified in its structured repository field.", "fields": {"organizationIds": ["ORG062"]}},

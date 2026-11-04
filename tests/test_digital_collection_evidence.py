@@ -13,6 +13,20 @@ def records(name):
 
 
 class DigitalCollectionEvidenceTests(unittest.TestCase):
+    def test_usc_covers_support_printed_credits_only(self):
+        sources, credits = records("sources"), records("contributions")
+        evidence = {
+            "SRC0443": ("CON-S119-C-P009", "CON-S119-C-P077", "CON-S119-L-P025"),
+            "SRC0535": ("CON-S118-C-P009", "CON-S118-C-P077", "CON-S118-L-P058", "CON-S118-PUB-ORG035"),
+        }
+        for source_id, credit_ids in evidence.items():
+            for credit_id in credit_ids:
+                with self.subTest(source=source_id, credit=credit_id):
+                    self.assertIn(credit_id, sources[source_id]["contributionIds"])
+                    self.assertIn(source_id, credits[credit_id]["sourceIds"])
+        self.assertNotIn("CON-S119-L-P028", sources["SRC0443"]["contributionIds"])
+        self.assertNotIn("CON-S118-P-P173", sources["SRC0535"]["contributionIds"])
+
     def test_film_cover_sources_are_linked_to_the_named_films(self):
         sources, works = records("sources"), records("works")
         for source_id, work_id in (("SRC0538", "W-F023"),
