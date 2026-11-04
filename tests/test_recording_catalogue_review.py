@@ -98,6 +98,7 @@ class RecordingCatalogueReviewTests(unittest.TestCase):
     def test_ninon_session_and_coupled_side_matrix_are_not_conflated(self):
         source = self.tables["sources"]["SRC0583"]
         self.assertEqual((source["date"], source["dateRole"]), ("1933-02-07", "recording"))
+        self.assertEqual(source["dateQualifier"], "reported")
         self.assertIn("Be 10221", source["fullCitation"])
         self.assertNotIn("Be.10220-2", source["fullCitation"])
         self.assertIn("separate entry with matrix Be.10220-2", source["researchNote"])
