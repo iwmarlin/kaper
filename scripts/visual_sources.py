@@ -73,7 +73,7 @@ VISUAL_SOURCE_FIELDS: dict[str, dict[str, Any]] = {
         "title": "Così, Cosa, 1935 [sheet music, pp. 1 & 6 only]",
         "creator": "Bronisław Kaper (composer); Walter Jurmann (composer); Ned Washington (lyricist)",
         "publication": "Robbins Music Corporation, New York",
-        "fullCitation": "Bronisław Kaper and Walter Jurmann, music; Ned Washington, lyrics. “Cosi Cosa.” New York: Robbins Music Corporation (Robbins Popular Standard Series), 1935. Partial sheet music, pp. 1 and 6 only. USC Polish Music Center, Bronisław Kaper Collection, PMC 5/13; USC Digital Library, UC17191660, legacy identifier kaper-sheet-513-partial, publisher number SH 1364-4. Digital publisher: University of Southern California Libraries. DOI 10.25549/pmc_09-03-2026_11-05-25_PM-oUC17191660.",
+        "fullCitation": "Bronisław Kaper and Walter Jurmann, music; Ned Washington, lyrics. “Cosi Cosa.” New York: Robbins Music Corporation (Robbins Popular Standard Series), 1935 according to USC; date of the digitised copy uncertain. Partial sheet music, pp. 1 and 6 only. USC Polish Music Center, Bronisław Kaper Collection, PMC 5/13; USC Digital Library, UC17191660, legacy identifier kaper-sheet-513-partial, publisher number SH 1364-4. Digital publisher: University of Southern California Libraries. DOI 10.25549/pmc_09-03-2026_11-05-25_PM-oUC17191660.",
         "dateRole": "issue",
         "primaryUrl": "https://doi.org/10.25549/pmc_09-03-2026_11-05-25_PM-oUC17191660",
         "accessUrl": "https://digitallibrary.usc.edu/CS.aspx?VP3=DamView&DocRID=2A3BF1X8Z8LXZ",
@@ -84,7 +84,7 @@ VISUAL_SOURCE_FIELDS: dict[str, dict[str, Any]] = {
             }
         ],
         "accessDate": "2026-10-25",
-        "researchNote": "USC identifies Robbins Music Corporation as the original publisher, USC Libraries as the digital publisher, and 1935 as both creation and issue year. The structured date records the issue year. The available PDF contains only pages 1 and 6; the linked local image reproduces the cover. The composer and lyricist credits follow the item metadata, not an attribution to the digital repository.",
+        "researchNote": "USC gives 1935 as both creation and issue year. The available PDF contains the front cover and a publisher’s advertisement, not the musical notation of ‘Cosi Cosa’. The advertisement lists ‘San Francisco’ by Kahn, Kaper and Jurmann, a song registered in 1936; this raises a question about the date of the digitised copy or the relationship of its pages. The 1935 date is therefore retained as USC’s dating but qualified as uncertain for this copy, without assigning a new printing year. Neither available page nor the USC description names the film; the film connection rests on separate sources.",
         "researchNoteType": "verification_note"
     },
     "SRC0574": {
@@ -144,7 +144,7 @@ VISUAL_SOURCE_FIELDS: dict[str, dict[str, Any]] = {
         "accessDate": "2026-10-25",
         "primaryUrl": "https://doi.org/10.25549/pmc_09-03-2026_11-05-25_PM-oUC17193693",
         "accessUrl": "https://digitallibrary.usc.edu/CS.aspx?VP3=DamView&DocRID=2A3BF1X8GAHTY",
-        "researchNote": "USC identifies both the creation and issue year as 1935 and distinguishes Robbins Music Corporation as the original publisher from USC Libraries as the digital publisher. The online document contains only pages 1–2 and 6; the linked local medium reproduces the cover, not the complete score.",
+        "researchNote": "USC identifies both the creation and issue year as 1935 and distinguishes Robbins Music Corporation as the original publisher from USC Libraries as the digital publisher. The online document contains only pages 1–2 and 6: the cover and two pages advertising other music. Page 2 includes an excerpt of ‘Ninon’ with English words by Harold Adamson and music by Kaper and Jurmann. None of the available pages contains the notation of ‘You’re All I Need’; the linked local medium reproduces its cover.",
         "researchNoteType": "verification_note"
     },
     "SRC0538": {
@@ -213,7 +213,7 @@ VISUAL_SOURCE_FIELDS: dict[str, dict[str, Any]] = {
         "publication": "Robbins Music Corporation",
         "dateRole": "issue",
         "accessDate": "2026-10-25",
-        "researchNote": "USC gives 1937 as both creation and issue year; the structured date records the issue year. The asset’s Description field incorrectly names “All God’s Chillun Got Rhythm”, whereas its Core Title, inherited title, call number PMC 5/10 and publisher number SH 1572-4 identify “Blue Venetian Waters”. The preserved cover itself reads “Blue Venetian Waters” and credits Gus Kahn, Bronisław Kaper and Walter Jurmann. The citation follows the item identifiers and cover, not the mismatched Description field. Only pages 1 and 6 are available online.",
+        "researchNote": "USC gives 1937 as both creation and issue year; the structured date records the issue year. The asset’s Description field incorrectly names “All God’s Chillun Got Rhythm”, whereas its Core Title, inherited title, call number PMC 5/10 and publisher number SH 1572-4 identify “Blue Venetian Waters”. The preserved cover itself reads “Blue Venetian Waters” and credits Gus Kahn, Bronisław Kaper and Walter Jurmann. The citation follows the item identifiers and cover, not the mismatched Description field. The available pages comprise the cover and an advertisement for other compositions; they do not provide the musical notation of ‘Blue Venetian Waters’.",
         "researchNoteType": "verification_note"
     },
     "SRC0023": {"publication": "Berliner Adreßbuch 1932"},

@@ -18,6 +18,9 @@ class DigitalCollectionFinalReviewTests(unittest.TestCase):
     def test_cosi_identifies_partial_score_and_actual_creators(self):
         s = self.sources["SRC0535"]
         self.assertEqual(s["dateRole"], "issue")
+        self.assertEqual(s["dateQualifier"], "uncertain")
+        self.assertIn("San Francisco", s["researchNote"])
+        self.assertIn("not the musical notation", s["researchNote"])
         self.assertEqual(s["publication"], "Robbins Music Corporation, New York")
         for text in ["Ned Washington", "PMC 5/13", "UC17191660", "SH 1364-4", "pp. 1 and 6 only"]:
             self.assertIn(text, s["fullCitation"])
@@ -31,6 +34,16 @@ class DigitalCollectionFinalReviewTests(unittest.TestCase):
         self.assertIn("incorrectly names", s["researchNote"])
         self.assertIn("All God’s Chillun Got Rhythm", s["researchNote"])
         self.assertNotIn("All God’s Chillun Got Rhythm", s["fullCitation"])
+        self.assertIn("do not provide the musical notation", s["researchNote"])
+
+    def test_youre_all_i_need_scan_identifies_ninon_excerpt(self):
+        s = self.sources["SRC0443"]
+        self.assertIn("None of the available pages contains the notation", s["researchNote"])
+        self.assertIn("W-S185", s["workIds"])
+        self.assertIn("S185", s["songIds"])
+        for credit in ("CON-S185-C-P009", "CON-S185-C-P077", "CON-S185-L-P028"):
+            self.assertIn(credit, s["contributionIds"])
+        self.assertNotIn("CON-S119-L-P028", s["contributionIds"])
 
     def test_paris_publisher_and_broad_museum_dating(self):
         s = self.sources["SRC0574"]

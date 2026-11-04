@@ -5010,7 +5010,7 @@
           "accessDate": "2026-10-25",
           "primaryUrl": "https://doi.org/10.25549/pmc_09-03-2026_11-05-25_PM-oUC17193693",
           "accessUrl": "https://digitallibrary.usc.edu/CS.aspx?VP3=DamView&DocRID=2A3BF1X8GAHTY",
-          "researchNote": "USC identifies both the creation and issue year as 1935 and distinguishes Robbins Music Corporation as the original publisher from USC Libraries as the digital publisher. The online document contains only pages 1–2 and 6; the linked local medium reproduces the cover, not the complete score.",
+          "researchNote": "USC identifies both the creation and issue year as 1935 and distinguishes Robbins Music Corporation as the original publisher from USC Libraries as the digital publisher. The online document contains only pages 1–2 and 6: the cover and two pages advertising other music. Page 2 includes an excerpt of ‘Ninon’ with English words by Harold Adamson and music by Kaper and Jurmann. None of the available pages contains the notation of ‘You’re All I Need’; the linked local medium reproduces its cover.",
           "researchNoteType": "verification_note"
         }
       },
@@ -5297,8 +5297,10 @@
           "title": "Così, Cosa, 1935 [sheet music, pp. 1 & 6 only]",
           "creator": "Bronisław Kaper (composer); Walter Jurmann (composer); Ned Washington (lyricist)",
           "publication": "Robbins Music Corporation, New York",
-          "fullCitation": "Bronisław Kaper and Walter Jurmann, music; Ned Washington, lyrics. “Cosi Cosa.” New York: Robbins Music Corporation (Robbins Popular Standard Series), 1935. Partial sheet music, pp. 1 and 6 only. USC Polish Music Center, Bronisław Kaper Collection, PMC 5/13; USC Digital Library, UC17191660, legacy identifier kaper-sheet-513-partial, publisher number SH 1364-4. Digital publisher: University of Southern California Libraries. DOI 10.25549/pmc_09-03-2026_11-05-25_PM-oUC17191660.",
+          "fullCitation": "Bronisław Kaper and Walter Jurmann, music; Ned Washington, lyrics. “Cosi Cosa.” New York: Robbins Music Corporation (Robbins Popular Standard Series), 1935 according to USC; date of the digitised copy uncertain. Partial sheet music, pp. 1 and 6 only. USC Polish Music Center, Bronisław Kaper Collection, PMC 5/13; USC Digital Library, UC17191660, legacy identifier kaper-sheet-513-partial, publisher number SH 1364-4. Digital publisher: University of Southern California Libraries. DOI 10.25549/pmc_09-03-2026_11-05-25_PM-oUC17191660.",
           "dateRole": "issue",
+          "dateQualifier": "uncertain",
+          "dateDisplay": "1935 (USC; copy date uncertain)",
           "primaryUrl": "https://doi.org/10.25549/pmc_09-03-2026_11-05-25_PM-oUC17191660",
           "accessUrl": "https://digitallibrary.usc.edu/CS.aspx?VP3=DamView&DocRID=2A3BF1X8Z8LXZ",
           "identifiers": [
@@ -5308,7 +5310,7 @@
             }
           ],
           "accessDate": "2026-10-25",
-          "researchNote": "USC identifies Robbins Music Corporation as the original publisher, USC Libraries as the digital publisher, and 1935 as both creation and issue year. The structured date records the issue year. The available PDF contains only pages 1 and 6; the linked local image reproduces the cover. The composer and lyricist credits follow the item metadata, not an attribution to the digital repository.",
+          "researchNote": "USC gives 1935 as both creation and issue year. The available PDF contains the front cover and a publisher’s advertisement, not the musical notation of ‘Cosi Cosa’. The advertisement lists ‘San Francisco’ by Kahn, Kaper and Jurmann, a song registered in 1936; this raises a question about the date of the digitised copy or the relationship of its pages. The 1935 date is therefore retained as USC’s dating but qualified as uncertain for this copy, without assigning a new printing year. Neither available page nor the USC description names the film; the film connection rests on separate sources.",
           "researchNoteType": "verification_note"
         },
         "removeFields": []
@@ -5746,7 +5748,7 @@
           "publication": "Robbins Music Corporation",
           "dateRole": "issue",
           "accessDate": "2026-10-25",
-          "researchNote": "USC gives 1937 as both creation and issue year; the structured date records the issue year. The asset’s Description field incorrectly names “All God’s Chillun Got Rhythm”, whereas its Core Title, inherited title, call number PMC 5/10 and publisher number SH 1572-4 identify “Blue Venetian Waters”. The preserved cover itself reads “Blue Venetian Waters” and credits Gus Kahn, Bronisław Kaper and Walter Jurmann. The citation follows the item identifiers and cover, not the mismatched Description field. Only pages 1 and 6 are available online.",
+          "researchNote": "USC gives 1937 as both creation and issue year; the structured date records the issue year. The asset’s Description field incorrectly names “All God’s Chillun Got Rhythm”, whereas its Core Title, inherited title, call number PMC 5/10 and publisher number SH 1572-4 identify “Blue Venetian Waters”. The preserved cover itself reads “Blue Venetian Waters” and credits Gus Kahn, Bronisław Kaper and Walter Jurmann. The citation follows the item identifiers and cover, not the mismatched Description field. The available pages comprise the cover and an advertisement for other compositions; they do not provide the musical notation of ‘Blue Venetian Waters’.",
           "researchNoteType": "verification_note"
         }
       },
@@ -18300,6 +18302,9 @@
     },
     "Contributions": {
       "CON-S077-L-P010": {"reason": "The academy catalogue also credits Pothier for the concert-version words.", "fields": {"sourceIds": ["SRC0584"]}},
+      "CON-S185-C-P009": {"reason": "The Ninon excerpt on the second scanned page credits Kaper's melody.", "fields": {"sourceIds": ["SRC0443"]}},
+      "CON-S185-C-P077": {"reason": "The Ninon excerpt on the second scanned page credits Jurmann's melody.", "fields": {"sourceIds": ["SRC0443"]}},
+      "CON-S185-L-P028": {"reason": "The Ninon excerpt on the second scanned page credits Adamson's English lyric.", "fields": {"sourceIds": ["SRC0443"]}},
       "CON-S118-C-P009": {"reason": "The USC score cover and catalogue name Kaper as composer.", "fields": {"sourceIds": ["SRC0535"]}},
       "CON-S118-C-P077": {"reason": "The USC score cover and catalogue name Jurmann as composer.", "fields": {"sourceIds": ["SRC0535"]}},
       "CON-S118-L-P058": {"reason": "The USC score cover and catalogue name Washington as lyricist.", "fields": {"sourceIds": ["SRC0535"]}},
@@ -19127,6 +19132,7 @@
     },
     "Works": {
       "W-S107": {"fields": {"sourceIds": ["SRC0074"]}, "reason": "Preserve evidence for both songs after merging the BnF notices."},
+      "W-S185": {"fields": {"sourceIds": ["SRC0443"]}, "reason": "The second scanned page contains an excerpt of the English version of Ninon."},
       "W-S129": {"fields": {"sourceIds": ["SRC0542"]}, "reason": "Link the USC digital score to the song named on its cover."},
       "W-S161": {
         "fields": {
@@ -20360,6 +20366,7 @@
     },
     "Songs": {
       "S107": {"fields": {"sourceIds": ["SRC0074"]}, "reason": "Preserve evidence for both songs after merging the BnF notices."},
+      "S185": {"fields": {"sourceIds": ["SRC0443"]}, "reason": "Link the inspected Ninon excerpt to its song record."},
       "S129": {"fields": {"sourceIds": ["SRC0542"]}, "reason": "Link the USC digital score to the song it identifies."},
       "S161": {
         "fields": {
@@ -22678,7 +22685,7 @@
           ]
         }
       },
-      "SRC0443": {"reason": "Link the USC score cover to the composer and lyricist credits it explicitly prints.", "fields": {"contributionIds": ["CON-S119-C-P009", "CON-S119-C-P077", "CON-S119-L-P025"]}},
+      "SRC0443": {"reason": "Link the cover credits and the separately printed Ninon excerpt to the works and authors they identify.", "fields": {"workIds": ["W-S185"], "songIds": ["S185"], "contributionIds": ["CON-S119-C-P009", "CON-S119-C-P077", "CON-S119-L-P025", "CON-S185-C-P009", "CON-S185-C-P077", "CON-S185-L-P028"]}},
       "SRC0535": {"reason": "Link the source to USC Libraries and the authorship and publishing credits printed on its score cover.", "fields": {"organizationIds": ["ORG080"], "contributionIds": ["CON-S118-C-P009", "CON-S118-C-P077", "CON-S118-L-P058", "CON-S118-PUB-ORG035"]}},
       "SRC0542": {"reason": "Link the USC score to its repository, the song and named credits, and the film named on its cover.", "fields": {"organizationIds": ["ORG080"], "workIds": ["W-F046", "W-S129"], "songIds": ["S129"], "contributionIds": ["CON-S129-C-P009", "CON-S129-C-P077", "CON-S129-L-P025", "CON-S129-PUB-ORG035"]}},
       "SRC0548": {"reason": "Link the authority source to Deutsche Nationalbibliothek, identified in its structured repository field.", "fields": {"organizationIds": ["ORG074"]}},

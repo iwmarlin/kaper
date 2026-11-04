@@ -628,7 +628,8 @@ REVIEWED_SOURCE_DATES: dict[str, dict[str, str]] = {
     "SRC0535": {
         "date": "1935",
         "dateRole": "issue",
-        "dateQualifier": "confirmed"
+        "dateQualifier": "uncertain",
+        "dateDisplay": "1935 (USC; copy date uncertain)"
     },
     "SRC0542": {
         "date": "1937",
