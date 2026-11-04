@@ -4657,8 +4657,13 @@
         }
       },
       "SRC0395": {
-        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "reason": "The current Wikipedia article illustrates the film with other items, not the title card M038; retain it only as contextual evidence.",
         "fields": {
+          "shortCitation": "English Wikipedia, San Francisco (1936 film)",
+          "fullCitation": "Wikipedia contributors. “San Francisco (1936 film).” English Wikipedia.",
+          "title": "San Francisco (1936 film) — English Wikipedia article",
+          "creator": "Wikipedia contributors",
+          "researchNote": "The article provides film context and displays promotional images, but the images currently shown differ from the title lobby card reproduced as M038. The article does not establish the provenance or reuse rights of that local image.",
           "sourceType": "wikimedia_article_page"
         }
       },
@@ -4900,9 +4905,13 @@
         }
       },
       "SRC0436": {
-        "reason": "Normalize the sourceType controlled vocabulary: convert free-text values to snake_case and merge singletons/synonyms (database→online_database, website→web_page, museum digital collection item→digital_collection_item, online auction/dealer image→image_or_photograph) so the user-visible source type badge is consistent.",
+        "reason": "The current Wikipedia article displays a different lobby card from M076; retain the article only as contextual evidence.",
         "fields": {
           "date": "n.d.",
+          "shortCitation": "English Wikipedia, Three Smart Girls (1936 film)",
+          "fullCitation": "Wikipedia contributors. “Three Smart Girls.” English Wikipedia.",
+          "title": "Three Smart Girls — English Wikipedia article",
+          "researchNote": "The article provides film context and displays a lobby card, but that card is not the one reproduced as M076. The article does not establish the provenance or reuse rights of the local image.",
           "sourceType": "wikimedia_article_page"
         }
       },
@@ -7947,11 +7956,13 @@
         }
       },
       "M038": {
-        "reason": "Replace the legacy blanket rights flag with an explicit undetermined-copyright classification after item-level provenance review; keep the local reproduction on detail pages only.",
+        "reason": "Keep the conservative rights status and acknowledge that the current Wikipedia article displays different images; the source of this reproduction is unverified.",
         "fields": {
+          "externalUrl": null,
+          "publicCreditLine": "Metro-Goldwyn-Mayer; source of this reproduction unverified; reuse rights not cleared.",
           "rightsStatus": "copyright_undetermined",
           "galleryStatus": "detail_only",
-          "rightsNote": "Reuse rights are not cleared. The item is a title lobby card rather than a poster: the landscape half-sheet format, with the credit block and the Metro-Goldwyn-Mayer trademark. A line of microtype runs along the bottom margin, where cards of this kind carry their copyright notice, but the supplied reproduction is 744 × 580 pixels and cannot resolve it. English Wikipedia displays the card without a transferable free licence. Whether it was published with notice, and whether any registration was renewed in its twenty-eighth year in 1963 or 1964, is therefore still open, and the local copy is confined to the film record."
+          "rightsNote": "Reuse rights are not cleared. The item is a title lobby card with a credit block and the Metro-Goldwyn-Mayer trademark. A line of microtype runs along the bottom margin, but the 744 × 580 pixel reproduction cannot resolve it. Whether the card was published with notice and whether any registration was renewed remains open. The current English Wikipedia article displays different promotional images, not this card; the provenance of this local reproduction is not established. It is confined to the film record."
         }
       },
       "M054": {
@@ -7963,11 +7974,13 @@
         }
       },
       "M076": {
-        "reason": "Replace the legacy blanket rights flag with an explicit undetermined-copyright classification after item-level provenance review; keep the local reproduction on detail pages only.",
+        "reason": "Keep the conservative rights status and acknowledge that the current Wikipedia article displays a different card; the source of this reproduction is unverified.",
         "fields": {
+          "externalUrl": null,
+          "publicCreditLine": "Universal Pictures; source of this reproduction unverified; reuse rights not cleared.",
           "rightsStatus": "copyright_undetermined",
           "galleryStatus": "detail_only",
-          "rightsNote": "Reuse rights are not cleared, but the card states its own position: the bottom margin reads “COUNTRY OF ORIGIN U.S.A. COPYRIGHTED 1936 BY UNIVERSAL PICTURES CORPORATION”. The 1936 publication was therefore made with notice in a named claimant’s name, and what remains open is only whether the registration was renewed in its twenty-eighth year, in 1963 or 1964; that has not been checked. English Wikipedia supplies no transferable free licence. The status stays undetermined and the local copy is confined to the film record.",
+          "rightsNote": "Reuse rights are not cleared. The bottom margin reads “COUNTRY OF ORIGIN U.S.A. COPYRIGHTED 1936 BY UNIVERSAL PICTURES CORPORATION”. Whether the registration was renewed has not been checked. The current English Wikipedia article displays a different lobby card; the provenance of this local reproduction is not established. The status remains undetermined and the local copy is confined to the film record.",
           "category": "film still / publicity card"
         }
       },
