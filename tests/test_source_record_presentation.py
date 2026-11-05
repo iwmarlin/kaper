@@ -80,6 +80,7 @@ class SourceApparatusTests(unittest.TestCase):
         labels = {
             "ark": "ARK",
             "doi": "DOI",
+            "isbn": "ISBN",
             "naid": "NAID",
             "usco_registration": "U.S. copyright registration",
             "usco_renewal": "U.S. copyright renewal",

@@ -45,6 +45,7 @@ DATE_QUALIFIERS = {
 SOURCE_IDENTIFIER_SCHEMES = {
     "ark",
     "doi",
+    "isbn",
     "naid",
     "usco_registration",
     "usco_renewal",
@@ -1412,6 +1413,20 @@ def record_label_series_numbers(source: Mapping[str, Any]) -> set[str]:
         re.sub(r"[\s.]", "", match.group("number")).casefold()
         for match in HMV_R_SERIES_PATTERN.finditer(text)
     }
+
+
+def valid_isbn(value: str) -> bool:
+    """Whether a hyphenated or bare ISBN-13 carries its own check digit.
+
+    The scheme vocabulary only says an identifier *is* an ISBN; a transposed
+    digit would still pass it, and an ISBN is what a reader takes to a library.
+    """
+
+    digits = value.replace("-", "").replace(" ", "")
+    if not re.fullmatch(r"97[89]\d{10}", digits):
+        return False
+    total = sum(int(d) * (1 if i % 2 == 0 else 3) for i, d in enumerate(digits[:12]))
+    return (10 - total % 10) % 10 == int(digits[12])
 
 
 def usco_identifiers(source: Mapping[str, Any]) -> list[dict[str, str]]:

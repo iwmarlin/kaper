@@ -33,8 +33,8 @@ import {
   sourceTypePluralLabel,
   typeBadge,
   updateMeta,
-} from "./core.js?v=6477d55f29";
-import { RECORD_INDEXES, recordIndexReturn } from "./catalogue-filters.js?v=6477d55f29";
+} from "./core.js?v=6658d19bfb";
+import { RECORD_INDEXES, recordIndexReturn } from "./catalogue-filters.js?v=6658d19bfb";
 
 // A canonical record route arrives prerendered and renders no image in the
 // browser, so the image map is loaded only where a record is actually rendered:
@@ -1686,6 +1686,7 @@ function authorityFacts(record) {
 const SOURCE_IDENTIFIER_LABELS = Object.freeze({
   ark: "ARK",
   doi: "DOI",
+  isbn: "ISBN",
   naid: "NAID",
   usco_registration: "U.S. copyright registration",
   usco_renewal: "U.S. copyright renewal",
@@ -2078,7 +2079,7 @@ async function bootstrapRecordPage() {
     }
     const [data, { IMAGE_DERIVATIVES }] = await Promise.all([
       loadRecordPayload(requestedType, requestedId),
-      import("./image-derivatives.js?v=6477d55f29"),
+      import("./image-derivatives.js?v=6658d19bfb"),
     ]);
     registerImageDerivatives(IMAGE_DERIVATIVES);
     const { config, view } = renderRecordView(requestedType, requestedId, data);

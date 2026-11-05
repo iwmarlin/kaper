@@ -44,7 +44,7 @@ from sheet_music_sources import (
     is_catalogue_landing_page_for_sheet_music,
     normalize_sheet_music_source,
 )
-from source_dates import SOURCE_IDENTIFIER_SCHEMES, source_date_errors
+from source_dates import SOURCE_IDENTIFIER_SCHEMES, source_date_errors, valid_isbn
 from source_access_dates import has_redundant_access_date
 from source_slugs import canonical_source_slug
 from person_life_dates import life_date_evidence_errors
@@ -1600,6 +1600,10 @@ class ExportValidator:
                     if scheme not in SOURCE_IDENTIFIER_SCHEMES or not value:
                         self.errors.append(
                             f"Source {source_id}: identifiers[{index}] has an unsupported scheme or empty value"
+                        )
+                    elif scheme == "isbn" and not valid_isbn(value):
+                        self.errors.append(
+                            f"Source {source_id}: identifiers[{index}] is not a valid ISBN-13"
                         )
                     key = (scheme, value.casefold())
                     if key in seen_identifiers:

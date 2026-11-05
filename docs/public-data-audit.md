@@ -407,6 +407,17 @@ only a list of names to look up.
 - 3 Sources have neither `primaryUrl` nor `repository`, so a reader cannot
   reach them: `SRC0373` (Buxbaum, Wien 2006), `SRC0490` and `SRC0491`
   (Lindstedt). `SRC0491` is marked forthcoming for 2026 and will need revisiting.
+  **`SRC0373` resolved:** a printed book of 2006 has no URL to give, and is
+  found in a library by its ISBN, which the record now carries —
+  978-3-902494-18-4, from the hbz union catalogue record
+  (`lobid.org/resources/990159494160206441`), whose title, subtitle, author,
+  publisher, place, year and 239 pages all agree with the citation. `isbn`
+  joined the source identifier vocabulary for it, and the validator checks the
+  ISBN-13 check digit, because the scheme alone would pass a transposed digit
+  and send a reader to a different book. The two Lindstedt articles are still
+  marked forthcoming: neither journal's site, Crossref nor a general search
+  could confirm publication from this environment, so their status was left
+  as it is rather than guessed.
 - 3 People had no `authorizedNameSource`: P106 Charlie Davson, P108 Didier
   Mauprey, P155 Georges Rey. **Resolved** in f9b4f4f: all three read `BnF`,
   and each links its BnF record in `authorities`, so the heading names the
