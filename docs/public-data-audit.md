@@ -568,7 +568,7 @@ ground is not covered again.
    form of its name the Sources use, so the forms were added and the test
    confirmed that every Source naming them already links them.
 
-   `ORG209` to `ORG241` took the rest, 34 Sources under 33 names: public
+   `ORG209` to `ORG241` took the rest, 33 Sources under 33 names: public
    offices, foundations, online reference works, retail and streaming
    platforms and blogs, entered under the name the Source gives, as the
    policy above says a serving website is. Register identifiers were added
