@@ -423,7 +423,33 @@ only a list of names to look up.
   and each links its BnF record in `authorities`, so the heading names the
   register the identifier already points at. No Person is left without one.
 - 23 of 30 Other Works have no `shelfmark`, and 32 of 56 Films no
-  `titleVariantIds`.
+  `titleVariantIds`. **Closed on measurement; neither count is a gap.**
+
+  A shelfmark says where a unique object is held. All seven manuscripts carry
+  one, their box in the Kaper Papers at the American Heritage Center. The 23
+  without are 22 printed editions and one work known only from the press, and
+  a printed edition exists in many copies: the shelfmark of one of them would
+  describe that library, not the work. `tests/test_other_work_shelfmark.py`
+  holds both halves — every manuscript has a shelfmark, and no printed
+  edition borrows a copy's.
+
+  The variant titles a reader sees on a film's card come from its Work, and
+  `Works.titleVariantIds` is a symmetric link the validator enforces against
+  `Title Variants.workIds`. No title variant points at any of the 32 films
+  without one: they were not released under another recorded title.
+  `Films.titleVariantIds` is a second list that feeds only the catalogue
+  search, where it is merged with the Work's. It is checked for dangling ids
+  — a planted `TV9999` was rejected — but not for symmetry, and on eleven
+  films it differs from the Work's list, in two deliberate ways rather than
+  by drift. A French-version or remake film lists the variant that is its own
+  title as recorded against the original: F005 *Son altesse l’amour* carries
+  TV0286, which belongs to W-F004 *Ihre Majestät die Liebe*, and F032 *Moscow
+  Nights* carries the remake title TV0050 of W-F031. F003 *Der
+  Korvettenkapitän* and F006 *Seitensprünge* list the French titles of their
+  songs, which belong to the songs' Works, so that a search for *Chanson de
+  Nelly* also finds the film it was sung in. Nothing a reader sees is wrong.
+  What the second list does not have is a stated rule for what belongs in it,
+  so it can be checked only for existence.
 
 ## Checked and found sound
 
@@ -517,8 +543,10 @@ ground is not covered again.
    selected Media without a `description`, 21 then and 20 now, are closed on
    the measurement above rather than filled; and the `http://` citations are
    settled — one switched to `https://` after checking it serves the identical
-   file, nine left because their hosts do not serve `https://` at all. The rest
-   is not done.
+   file, nine left because their hosts do not serve `https://` at all. The
+   Jurmann catalogue carries its ISBN, and the shelfmark and title-variant
+   counts are closed on measurement. What remains is the two Lindstedt
+   articles, still marked forthcoming.
 
 Steps 5 and 6 cannot be done from the data alone: each needs the register
 itself to be read — GND, LCNAF and filmportal.de for the studios. The `http://`
