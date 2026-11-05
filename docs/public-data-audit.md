@@ -337,7 +337,7 @@ only a list of names to look up.
 
 ### 8. Smaller items
 
-- 21 Media with `galleryStatus: selected` carry no `description`, all images,
+- 21 Media with `galleryStatus: selected` carried no `description`, all images,
   mostly director and performer portraits (M242 Duke Ellington, M247 W. S. Van
   Dyke, M249 Max Ophüls among them). These are the ones the gallery puts
   forward. `altText`, `publicCaption`, `publicCreditLine` and `rightsNote` are
@@ -365,7 +365,9 @@ only a list of names to look up.
   a value only where there is something further to say — the provenance of a
   particular print, the reason that portrait was chosen, a dating that the
   caption cannot carry — and that is editorial work on 21 records, not a
-  metadata sweep.
+  metadata sweep. The count is now 20: M246, the Henri Varna plate, moved
+  from `selected` to `detail_only` in 3e82923, which changed its gallery
+  status, not its `description`.
 - 10 fields on 10 Sources use `http://`, not 9, and across four hosts rather
   than three: `musiktiteldb.de` (7 records, not 6), `landesarchiv-berlin.de`,
   `kppg.waw.pl` and `discography.phonomuseum.at`, which the first count missed.
@@ -405,8 +407,10 @@ only a list of names to look up.
 - 3 Sources have neither `primaryUrl` nor `repository`, so a reader cannot
   reach them: `SRC0373` (Buxbaum, Wien 2006), `SRC0490` and `SRC0491`
   (Lindstedt). `SRC0491` is marked forthcoming for 2026 and will need revisiting.
-- 3 People have no `authorizedNameSource`: P106 Charlie Davson, P108 Didier
-  Mauprey, P155 Georges Rey.
+- 3 People had no `authorizedNameSource`: P106 Charlie Davson, P108 Didier
+  Mauprey, P155 Georges Rey. **Resolved** in f9b4f4f: all three read `BnF`,
+  and each links its BnF record in `authorities`, so the heading names the
+  register the identifier already points at. No Person is left without one.
 - 23 of 30 Other Works have no `shelfmark`, and 32 of 56 Films no
   `titleVariantIds`.
 
@@ -498,8 +502,9 @@ ground is not covered again.
    citation that would tie it to the 1937 British company, so it stays
    unassigned rather than guessed.
 7. Sweep the smaller items (finding 8). The two unsourced Organizations are
-   done; the 21 selected Media without a `description` are closed on the
-   measurement above rather than filled; and the `http://` citations are
+   done, as are the three People without an `authorizedNameSource`; the
+   selected Media without a `description`, 21 then and 20 now, are closed on
+   the measurement above rather than filled; and the `http://` citations are
    settled — one switched to `https://` after checking it serves the identical
    file, nine left because their hosts do not serve `https://` at all. The rest
    is not done.
