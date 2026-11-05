@@ -53,8 +53,24 @@ were read against the scan image before the rest were written, and one,
 `tests/test_copyright_catalogue_page_links.py` names the 22 entries still
 opening the volume, so the set can only shrink.
 
-The 57 Hofmeister entries are not done: ANNO resets every connection from
-this environment, slowed or not.
+**Hofmeister: all 57 moved to the Internet Archive and open on their
+page.** ANNO resets every connection from cloud hosts; the session's own
+proxy passed the connection, and the Austrian National Library closed it,
+so no network setting could help. The Internet Archive holds every yearly
+volume from 1929 to 1933, and the entries now cite it, after the pattern
+`SRC0869` already set: the scan as `primaryUrl`, *Internet Archive scan,
+leaf nNNN* closing the citation, the Internet Archive as repository, and the
+ANNO issue kept beside it as `alternate_access`, so the provenance is not
+lost. Each scan was found by the entry's title and accepted only on the scan
+the citation's own page number points to. For 1930–1933 that is the printed
+page less one, in 52 entries; the 1929 volume is missing scans, the offset
+growing from one in May to twenty-five by page 287, so its three entries
+were read on the scan image. Two more were read the same way, and two whose
+record title adds a word the register does not print. The four entries that
+cite a second monthly issue had that link moved too; one of them, *Ich weiß
+ein kleines Café* on page 106, the OCR reads as *Cafe* and the search misses,
+and the image confirms it. `tests/test_hofmeister_page_links.py` holds the
+move.
 
 ## 2. No link is dead; 131 could not be confirmed from here
 
@@ -187,7 +203,8 @@ The earlier count looked at `primaryUrl` and `accessUrl` only;
    finding 3.
 3. Deep links for the 57 Hofmeister and 85 copyright-catalogue entries
    (finding 1). ~~Copyright catalogue~~ done for 63, with 22 left that no
-   two signals agree on. Hofmeister waits for an environment ANNO answers.
+   two signals agree on. ~~Hofmeister~~ done: all 57 moved to the
+   Internet Archive scan, with ANNO kept as alternate access.
 4. Replace or reinforce the Wikipedia-only Sources for Gaumont British, its
    two F057 credits, the three Media and the two name variants (finding 3).
 5. Check the nine YouTube 401s in a browser (finding 2).
