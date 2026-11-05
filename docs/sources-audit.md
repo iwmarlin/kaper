@@ -35,6 +35,27 @@ full-text search. GEMA's portal has no permanent link to a work; the work
 number in the citation is already the most a reader can be given, and the
 record could say so.
 
+**Copyright catalogue: 67 of 89 now open on their page.** Each entry was
+found through the volume's full-text search and accepted only when two
+signals agreed on one scan: its registration number in its own series —
+*E for.* is not *E unp.*, and the first draft accepted both and matched
+*E for. 5136* to an unrelated *E unp. 5136* — and its title on the same or
+the next scan. Single-signal matches were read one by one; one of them,
+`SRC0263`, was a different song sharing the phrase *a message from*, and was
+rejected. Links use the scan index (`/page/nNNN`), taken per volume from the
+item's `scandata.xml`, not the printed page number. The printed labels
+Internet Archive derives in `page_numbers.json` are wrong in places — in
+volume 25 they run twelve pages off — and the first comparison, which
+trusted them, wrongly called the four existing page links misplaced. Read
+against the scans, all four are right, and they are unchanged. Six new links
+were read against the scan image before the rest were written, and one,
+`SRC0212`, lands on page 906, the page its own citation gives.
+`tests/test_copyright_catalogue_page_links.py` names the 22 entries still
+opening the volume, so the set can only shrink.
+
+The 57 Hofmeister entries are not done: ANNO resets every connection from
+this environment, slowed or not.
+
 ## 2. No link is dead; 131 could not be confirmed from here
 
 | Result | URLs |
@@ -165,9 +186,8 @@ The earlier count looked at `primaryUrl` and `accessUrl` only;
    Veber's Sources were left as they are, for the reason given under
    finding 3.
 3. Deep links for the 57 Hofmeister and 85 copyright-catalogue entries
-   (finding 1). The largest gain for a reader, and the most work: ANNO needs
-   a page offset per volume, the Internet Archive a full-text lookup per
-   entry.
+   (finding 1). ~~Copyright catalogue~~ done for 63, with 22 left that no
+   two signals agree on. Hofmeister waits for an environment ANNO answers.
 4. Replace or reinforce the Wikipedia-only Sources for Gaumont British, its
    two F057 credits, the three Media and the two name variants (finding 3).
 5. Check the nine YouTube 401s in a browser (finding 2).
