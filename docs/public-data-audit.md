@@ -566,10 +566,30 @@ ground is not covered again.
    *Réunion des musées nationaux — Grand Palais*. NARA and SACEM were the
    other artefact: both were linked all along, and neither record carried the
    form of its name the Sources use, so the forms were added and the test
-   confirmed that every Source naming them already links them. 37 Sources
-   remain: public offices, private collections, blogs, retail and streaming
-   pages, and online reference works whose operator has to be confirmed
-   before a record can say who runs them.
+   confirmed that every Source naming them already links them.
+
+   `ORG209` to `ORG241` took the rest, 34 Sources under 33 names: public
+   offices, foundations, online reference works, retail and streaming
+   platforms and blogs, entered under the name the Source gives, as the
+   policy above says a serving website is. Register identifiers were added
+   where a record exists — the Berlin district office, the Los Angeles
+   planning department, PBS and WNET, the St Petersburg Philharmonia, Spotify
+   and eBay — and an operator is named in a note only where the site itself
+   was read and states it: the Adam Mickiewicz Institute for Culture.pl,
+   Polskie Wydawnictwo Muzyczne for the Polska Biblioteka Muzyczna, the
+   Jāzeps Vītols Latvian Academy of Music for its journal. Encyklopedia
+   teatru polskiego, the Radom Digital Library and Geoportal Berlin carry no
+   operator, because none could be confirmed. Public offices take a new type,
+   `public_authority`, beside a repository type, since they are here for the
+   documents they serve. One more Source turned up under the Marc Lavry
+   Heritage Society, filed beside Wikimedia Commons.
+
+   Five Sources now name no Organization, and all five on purpose. Four name
+   a private collection — Jacques Gana's twice, ANAO's, Richard Kraft's —
+   and a private collection is not a body that can have a card. The fifth is
+   SRC0623, the ISNI record: `scripts/authority_sources.py` records the
+   decision that ISNI has no Organization card, because it is the only
+   ISNI-led Source and the registry is fully identified in its metadata.
 6. Fill organization authority identifiers, starting with the Weimar studios
    (finding 3). Six are done. `ORG026` is closed unresolved: GND, LCNAF and
    VIAF were all searched, and the one LCNAF record whose form matches —

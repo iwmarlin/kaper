@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 200,
+  "count": 233,
   "records": [
     {
       "id": "ORG001",
@@ -7187,6 +7187,528 @@
       ],
       "sourceIds": [
         "SRC0884"
+      ]
+    },
+    {
+      "id": "ORG209",
+      "displayName": "Culture.pl",
+      "authorizedName": "Culture.pl",
+      "types": [
+        "database"
+      ],
+      "country": "Poland",
+      "slug": "culture-pl",
+      "publicNote": "Portal of the Adam Mickiewicz Institute.",
+      "sourceIds": [
+        "SRC0563"
+      ]
+    },
+    {
+      "id": "ORG210",
+      "displayName": "Encyklopedia teatru polskiego",
+      "authorizedName": "Encyklopedia teatru polskiego",
+      "types": [
+        "database"
+      ],
+      "country": "Poland",
+      "slug": "encyklopedia-teatru-polskiego",
+      "sourceIds": [
+        "SRC0867"
+      ]
+    },
+    {
+      "id": "ORG211",
+      "displayName": "Polska Biblioteka Muzyczna",
+      "authorizedName": "Polska Biblioteka Muzyczna",
+      "types": [
+        "database"
+      ],
+      "country": "Poland",
+      "slug": "polska-biblioteka-muzyczna",
+      "publicNote": "Online library administered by Polskie Wydawnictwo Muzyczne.",
+      "sourceIds": [
+        "SRC0816"
+      ]
+    },
+    {
+      "id": "ORG212",
+      "displayName": "Mūzikas akadēmijas raksti",
+      "authorizedName": "Mūzikas akadēmijas raksti",
+      "types": [
+        "database"
+      ],
+      "country": "Latvia",
+      "slug": "muzikas-akademijas-raksti",
+      "nameVariants": "Scriptamusica.lv",
+      "publicNote": "Scholarly journal of the Jāzeps Vītols Latvian Academy of Music, published annually since 2004.",
+      "sourceIds": [
+        "SRC0546"
+      ]
+    },
+    {
+      "id": "ORG213",
+      "displayName": "Sousa Mendes Foundation",
+      "authorizedName": "Aristides de Sousa Mendes Foundation",
+      "types": [
+        "foundation",
+        "database"
+      ],
+      "country": "United States",
+      "slug": "sousa-mendes-foundation",
+      "sourceIds": [
+        "SRC0665"
+      ]
+    },
+    {
+      "id": "ORG214",
+      "displayName": "Amis et Passionnés du Père Lachaise",
+      "authorizedName": "Amis et Passionnés du Père Lachaise",
+      "types": [
+        "database"
+      ],
+      "country": "France",
+      "slug": "amis-et-passionnes-du-pere-lachaise",
+      "nameVariants": "APPL",
+      "sourceIds": [
+        "SRC0582"
+      ]
+    },
+    {
+      "id": "ORG215",
+      "displayName": "Radom Digital Library",
+      "authorizedName": "Radom Digital Library",
+      "types": [
+        "digital_library"
+      ],
+      "city": [
+        "Radom"
+      ],
+      "country": "Poland",
+      "slug": "radom-digital-library",
+      "sourceIds": [
+        "SRC0368"
+      ]
+    },
+    {
+      "id": "ORG216",
+      "displayName": "Geoportal Berlin",
+      "authorizedName": "Geoportal Berlin",
+      "types": [
+        "database"
+      ],
+      "city": [
+        "Berlin"
+      ],
+      "country": "Germany",
+      "slug": "geoportal-berlin",
+      "sourceIds": [
+        "SRC0579"
+      ]
+    },
+    {
+      "id": "ORG217",
+      "displayName": "Bezirksamt Charlottenburg-Wilmersdorf von Berlin",
+      "authorizedName": "Bezirksamt Charlottenburg-Wilmersdorf von Berlin",
+      "types": [
+        "public_authority",
+        "database"
+      ],
+      "city": [
+        "Berlin"
+      ],
+      "country": "Germany",
+      "slug": "bezirksamt-charlottenburg-wilmersdorf-von-berlin",
+      "authorizedNameSource": "LCNAF",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n2004039637"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/1198516224"
+        }
+      ],
+      "sourceIds": [
+        "SRC0580"
+      ]
+    },
+    {
+      "id": "ORG218",
+      "displayName": "City of Culver City",
+      "authorizedName": "City of Culver City",
+      "types": [
+        "public_authority",
+        "archive"
+      ],
+      "city": [
+        "Culver City"
+      ],
+      "country": "United States",
+      "slug": "city-of-culver-city",
+      "sourceIds": [
+        "SRC0641"
+      ]
+    },
+    {
+      "id": "ORG219",
+      "displayName": "City of Los Angeles Department of City Planning",
+      "authorizedName": "Los Angeles (Calif.). Department of City Planning",
+      "types": [
+        "public_authority",
+        "archive"
+      ],
+      "city": [
+        "Los Angeles"
+      ],
+      "country": "United States",
+      "slug": "city-of-los-angeles-department-of-city-planning",
+      "authorizedNameSource": "LCNAF",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n50045498"
+        }
+      ],
+      "sourceIds": [
+        "SRC0636"
+      ]
+    },
+    {
+      "id": "ORG220",
+      "displayName": "Urząd m.st. Warszawy, Biuro Geodezji i Katastru",
+      "authorizedName": "Urząd m.st. Warszawy, Biuro Geodezji i Katastru",
+      "types": [
+        "public_authority",
+        "database"
+      ],
+      "city": [
+        "Warsaw"
+      ],
+      "country": "Poland",
+      "slug": "urzad-m-st-warszawy-biuro-geodezji-i-katastru",
+      "sourceIds": [
+        "SRC0524"
+      ]
+    },
+    {
+      "id": "ORG221",
+      "displayName": "Public Broadcasting Service",
+      "authorizedName": "Public Broadcasting Service (U.S.)",
+      "types": [
+        "database"
+      ],
+      "country": "United States",
+      "slug": "public-broadcasting-service",
+      "nameVariants": "PBS",
+      "authorizedNameSource": "LCNAF",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n86134532"
+        }
+      ],
+      "sourceIds": [
+        "SRC0010"
+      ]
+    },
+    {
+      "id": "ORG222",
+      "displayName": "WNET",
+      "authorizedName": "WNET (Television station : New York, N.Y.)",
+      "types": [
+        "database"
+      ],
+      "city": [
+        "New York"
+      ],
+      "country": "United States",
+      "slug": "wnet",
+      "authorizedNameSource": "LCNAF",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n80014556"
+        }
+      ],
+      "sourceIds": [
+        "SRC0010"
+      ]
+    },
+    {
+      "id": "ORG223",
+      "displayName": "Saint Petersburg Academic Philharmonia",
+      "authorizedName": "Sankt-Peterburgskai︠a︡ akademicheskai︠a︡ filarmonii︠a︡ im. D.D. Shostakovicha",
+      "types": [
+        "database"
+      ],
+      "city": [
+        "Saint Petersburg"
+      ],
+      "country": "Russia",
+      "slug": "saint-petersburg-academic-philharmonia",
+      "authorizedNameSource": "LCNAF",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/no2025042427"
+        }
+      ],
+      "sourceIds": [
+        "SRC0814"
+      ]
+    },
+    {
+      "id": "ORG224",
+      "displayName": "Spotify",
+      "authorizedName": "Spotify (Firm)",
+      "types": [
+        "database"
+      ],
+      "city": [
+        "Stockholm"
+      ],
+      "country": "Sweden",
+      "slug": "spotify",
+      "nameVariants": "Spotify AB",
+      "authorizedNameSource": "LCNAF",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/no2025010181"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/1238097014"
+        }
+      ],
+      "sourceIds": [
+        "SRC0793"
+      ]
+    },
+    {
+      "id": "ORG225",
+      "displayName": "eBay",
+      "authorizedName": "eBay (Firm)",
+      "types": [
+        "database"
+      ],
+      "city": [
+        "San Jose"
+      ],
+      "country": "United States",
+      "slug": "ebay",
+      "nameVariants": "eBay Inc.",
+      "authorizedNameSource": "LCNAF",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/no00054109"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/10066658-9"
+        }
+      ],
+      "sourceIds": [
+        "SRC0406"
+      ]
+    },
+    {
+      "id": "ORG226",
+      "displayName": "Disney Wiki",
+      "authorizedName": "Disney Wiki",
+      "types": [
+        "database"
+      ],
+      "slug": "disney-wiki",
+      "nameVariants": "Disney Wiki / Fandom",
+      "sourceIds": [
+        "SRC0567"
+      ]
+    },
+    {
+      "id": "ORG227",
+      "displayName": "MusicWeb International",
+      "authorizedName": "MusicWeb International",
+      "types": [
+        "database"
+      ],
+      "slug": "musicweb-international",
+      "sourceIds": [
+        "SRC0881"
+      ]
+    },
+    {
+      "id": "ORG228",
+      "displayName": "Kino-Teatr.Ru",
+      "authorizedName": "Kino-Teatr.Ru",
+      "types": [
+        "database"
+      ],
+      "slug": "kino-teatr-ru",
+      "sourceIds": [
+        "SRC0672"
+      ]
+    },
+    {
+      "id": "ORG229",
+      "displayName": "Encyclopédisque",
+      "authorizedName": "Encyclopédisque",
+      "types": [
+        "database"
+      ],
+      "slug": "encyclopedisque",
+      "sourceIds": [
+        "SRC0602"
+      ]
+    },
+    {
+      "id": "ORG230",
+      "displayName": "Phonobase",
+      "authorizedName": "Phonobase",
+      "types": [
+        "database"
+      ],
+      "slug": "phonobase",
+      "sourceIds": [
+        "SRC0705"
+      ]
+    },
+    {
+      "id": "ORG231",
+      "displayName": "Cabaret Berlin",
+      "authorizedName": "Cabaret Berlin",
+      "types": [
+        "database"
+      ],
+      "slug": "cabaret-berlin",
+      "sourceIds": [
+        "SRC0722"
+      ]
+    },
+    {
+      "id": "ORG232",
+      "displayName": "Chansons-net",
+      "authorizedName": "Chansons-net",
+      "types": [
+        "database"
+      ],
+      "slug": "chansons-net",
+      "nameVariants": "Chansons retros",
+      "sourceIds": [
+        "SRC0441"
+      ]
+    },
+    {
+      "id": "ORG233",
+      "displayName": "Songtexte schreiben lernen",
+      "authorizedName": "Songtexte schreiben lernen",
+      "types": [
+        "database"
+      ],
+      "slug": "songtexte-schreiben-lernen",
+      "nameVariants": "Deutsche Songtexte",
+      "sourceIds": [
+        "SRC0663"
+      ]
+    },
+    {
+      "id": "ORG234",
+      "displayName": "Deutsches Lied",
+      "authorizedName": "Deutsches Lied",
+      "types": [
+        "database"
+      ],
+      "slug": "deutsches-lied",
+      "sourceIds": [
+        "SRC0787"
+      ]
+    },
+    {
+      "id": "ORG235",
+      "displayName": "Filmprogrammhefte-Index",
+      "authorizedName": "Filmprogrammhefte-Index",
+      "types": [
+        "database"
+      ],
+      "slug": "filmprogrammhefte-index",
+      "nameVariants": "filmprogramm.blogspot.com",
+      "sourceIds": [
+        "SRC0404"
+      ]
+    },
+    {
+      "id": "ORG236",
+      "displayName": "Karins Blog über den Zentralfriedhof und seine Toten",
+      "authorizedName": "Karins Blog über den Zentralfriedhof und seine Toten",
+      "types": [
+        "database"
+      ],
+      "slug": "karins-blog-uber-den-zentralfriedhof-und-seine-toten",
+      "sourceIds": [
+        "SRC0899"
+      ]
+    },
+    {
+      "id": "ORG237",
+      "displayName": "Movie Music UK",
+      "authorizedName": "Movie Music UK",
+      "types": [
+        "database"
+      ],
+      "slug": "movie-music-uk",
+      "sourceIds": [
+        "SRC0488"
+      ]
+    },
+    {
+      "id": "ORG238",
+      "displayName": "México en Fotos",
+      "authorizedName": "México en Fotos",
+      "types": [
+        "database"
+      ],
+      "slug": "mexico-en-fotos",
+      "sourceIds": [
+        "SRC0640"
+      ]
+    },
+    {
+      "id": "ORG239",
+      "displayName": "The Judy Room",
+      "authorizedName": "The Judy Room",
+      "types": [
+        "database"
+      ],
+      "slug": "the-judy-room",
+      "sourceIds": [
+        "SRC0332"
+      ]
+    },
+    {
+      "id": "ORG240",
+      "displayName": "Virtual History",
+      "authorizedName": "Virtual History",
+      "types": [
+        "database"
+      ],
+      "slug": "virtual-history",
+      "sourceIds": [
+        "SRC0704"
+      ]
+    },
+    {
+      "id": "ORG241",
+      "displayName": "The Marc Lavry Heritage Society",
+      "authorizedName": "The Marc Lavry Heritage Society",
+      "types": [
+        "database"
+      ],
+      "slug": "the-marc-lavry-heritage-society",
+      "sourceIds": [
+        "SRC0610",
+        "SRC0611"
       ]
     }
   ]
