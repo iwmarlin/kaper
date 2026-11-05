@@ -1,0 +1,163 @@
+# Sources audit, 5 November 2026
+
+An audit of the 863 Sources in `data/public/v1/sources.json`: what a reader
+can reach from each one, what each record rests on, and whether the public
+text is clean. Every link was requested, not inferred. Each finding below
+survived a check designed to disprove it; the leads that did not are listed
+at the end, so they are not chased again.
+
+Scope: all 863 records and all 844 distinct URLs they carry in `primaryUrl`,
+`accessUrl` and `additionalLinks`. The validators already enforce record
+shape, controlled vocabularies, symmetric links and slugs, and all pass; this
+audit looks at what they do not check.
+
+## 1. A catalogue citation often lands on the whole volume
+
+The largest reader-facing gap. A Source can name the exact page or entry and
+still link the volume's front door, so the reader has to search a
+several-hundred-page scan for it.
+
+| Catalogue | Sources | Locator in the citation | Link goes to the entry |
+| --- | --- | --- | --- |
+| Hofmeister, *Monatsbericht*, via ANNO | 69 | page, in 68 | 12 (`&seite=`) |
+| *Catalog of Copyright Entries*, via the Internet Archive | 89 | entry or registration number, in all 89 | 4 (`/page/`) |
+| GEMA repertoire search | 6 | work number, in all 6 | 0 |
+
+So 57 Hofmeister and 85 copyright-catalogue Sources link the issue or
+volume when the citation already says where the entry is, and the six GEMA
+Sources (`SRC0292`–`0295`, `SRC0885`, `SRC0891`) link an empty search form.
+
+The two catalogues can be fixed. ANNO addresses a scan page with `&seite=`,
+which is the scan index rather than the printed page, so each volume needs
+its own offset, read once from one known page. The Internet Archive addresses
+a scan page with `/page/nNNN`, and each entry can be found through the item's
+full-text search. GEMA's portal has no permanent link to a work; the work
+number in the citation is already the most a reader can be given, and the
+record could say so.
+
+## 2. No link is dead; 131 could not be confirmed from here
+
+| Result | URLs |
+| --- | --- |
+| Reachable | 646 |
+| YouTube, confirmed to exist through its oEmbed service | 67 |
+| YouTube, private or with embedding disabled (oEmbed 401) | 9 |
+| Refused to automated requests (403, 429) | 73 |
+| Connection reset at the TLS handshake | 44 |
+| Server certificate fails verification | 4 |
+| Server error (503) | 1 |
+| **Dead (404, 410)** | **0** |
+
+Of 844 URLs, 713 were confirmed working and none returned *not found*.
+
+The 131 unconfirmed are a limit of this environment, not of the links. The
+73 refusals are bot protection on Gallica (18), the Library of Congress (18),
+Newspapers.com (8), Discogs, the California Digital Newspaper Collection and
+others; they were not retried with a browser's identity, because that would
+be circumventing the protection. The 44 resets include 37 ANNO pages and two
+`web.archive.org` captures, and the Wayback Machine is certainly up, so a
+reset here says nothing about the page. The four certificate failures
+(`bcul.lib.uni.lodz.pl` twice, `mbc.cyfrowemazowsze.pl`,
+`www.mmmrecordings.com`) were not diagnosed further; a browser may well open
+them.
+
+The nine YouTube 401s are the one group worth a look by hand: oEmbed answers
+401 both for a private video and for one whose owner has disabled embedding,
+and only a browser tells the two apart.
+
+## 3. A few records rest on Wikipedia alone, and one has a better Source in hand
+
+No Work, Person, Place or timeline event rests on Wikipedia alone, and no
+Wikipedia article is rated `high`. Nine records do:
+
+- **`ORG128` Carl Lindström AG** cites only the German article on Otto
+  Dobrindt. `SRC0725`, rated `high`, describes an Odeon label that prints
+  “Carl Lindström A.-G.”, which is first-hand evidence for the Odeon–Lindström
+  relation `ORG128` exists to carry. It is already in the dataset and does not
+  link `ORG128`.
+- **`ORG167` Gaumont British** and its two credits on F057 *My Song for You*,
+  the director Maurice Elvey (`CON-F057-D-P204`) and the production company
+  (`CON-F057-PC-ORG167`), all rest on the English article on the film
+  (`SRC0889`). A filmographic database would do better.
+- **Three Media**: the lobby cards `M038` *San Francisco* and `M076` *Three
+  Smart Girls*, and the portrait `M254` Harold Adamson, the last on a source
+  rated `low`.
+- **Two name variants**: `PNV0044` Henri Eugène Vantard, the birth name of
+  Henri Varna, and `PNV0065` Eddie Saxon, a pseudonym of Otto Dobrindt.
+
+Nine Works rest only on sources rated `medium`. Five rest on the Walter
+Jurmann society's website, alone or with an IMDb soundtrack entry:
+W-S127 *Hi-do-ho*, W-S128 *Love Needs No Inspiration*, W-S165 *Magic*,
+W-S166 *Rhumba* and W-S167 *Tahiti*. The other four are W-O010 *Parade de
+France*, W-S183 *Diese Melodie sing ich nur für Sie*, W-S216 *Może tak, może
+nie* and W-S218 *San Francisco*, the last on a YouTube upload.
+
+One Person, `P206` Serge Veber, has no `sourceIds` of his own. His one
+credit is sourced, by `SRC0298` and `SRC0584`, but neither Source lists him.
+
+## 4. `http://` is on 25 Sources, not 9
+
+The earlier count looked at `primaryUrl` and `accessUrl` only;
+`additionalLinks` holds the rest.
+
+| Host | Fields | `https://` |
+| --- | --- | --- |
+| `musiktiteldb.de` | 8 primary, 10 additional | certificate invalid; keep `http://` |
+| `www.kppg.waw.pl` | 1 primary, 4 additional | certificate invalid; keep `http://` |
+| `discography.phonomuseum.at` | 1 additional (`SRC0583`) | serves the byte-identical PDF; switch |
+| `cinema.encyclopedie.personnalites.bifi.fr` | 1 additional (`SRC0667`) | not reachable from here either way |
+
+## 5. Smaller items
+
+- **Record identifiers in research notes.** 26 notes refer to 32 other
+  records by identifier, `SRC0758` or `M060`, as plain text. Source numbers
+  are printed on every card, so a reader can search for one, but cannot
+  click it. Linking them in the renderer, or naming the document in words as
+  `evidenceLocator` now does, would fix it.
+- **DOI not in `identifiers`.** `SRC0443`, `SRC0684` and `SRC0792` link
+  through `doi.org` and do not carry the DOI as an identifier, so it is not
+  printed on the card as every other DOI is.
+- **No repository.** `SRC0864`, Krasnoborski's 1975 interview reproduced on
+  the Cinescores Center site, names none. The other three Sources without one
+  are the Buxbaum book, which now carries its ISBN, and the two forthcoming
+  Lindstedt articles.
+- **An access date with nothing to access.** `SRC0789`, the *Cocktails* cover
+  examined in a research reproduction, has no link but an `accessDate`, which
+  the card prints as *Accessed*.
+
+## Checked and found sound
+
+- **No duplicates.** No two Sources share a full citation or a title. The 38
+  URLs shared by several Sources are catalogue volumes and issues holding
+  several entries. The two pairs that looked like one document twice are two:
+  `SRC0037` and `SRC0566` share a NARA file unit but are different pages and
+  different people, and `SRC0045` and `SRC0046` are a notice and an
+  advertisement on the same page of *Variety*.
+- **Dates.** None lies in the future, none follows its own access date, every
+  access date is well formed, and every linked Source has one.
+- **Public text.** No working notes, stray whitespace, URLs inside citations
+  or straight quotes in titles and citations.
+- **Reliability.** No Wikipedia article is rated `high`, and every Source
+  marked `verified_with_attribution_note` carries its note.
+- **ARK identifiers.** Every ARK in a URL is also recorded as an identifier.
+- **Orphans.** The three Sources that link no Work, Person or Media —
+  `SRC0853` on the Alberti firm and the two register records `SRC0931` and
+  `SRC0932` — document an Organization, which is what they are for.
+- **False leads.** 37 “double full stops” are the three-dot ellipses of
+  printed titles such as *Ninon... quand tu me souris*. “M519” in `SRC0008`
+  is a matrix number, M519-1, not a Media record.
+
+## Suggested order of work
+
+1. Link `ORG128` to `SRC0725` (finding 3). One link, first-hand evidence
+   already in the dataset.
+2. The three DOIs, the phonomuseum `https://` switch and Serge Veber's
+   Sources (findings 3–5). Mechanical and verified.
+3. Deep links for the 57 Hofmeister and 85 copyright-catalogue entries
+   (finding 1). The largest gain for a reader, and the most work: ANNO needs
+   a page offset per volume, the Internet Archive a full-text lookup per
+   entry.
+4. Replace or reinforce the Wikipedia-only Sources for Gaumont British, its
+   two F057 credits, the three Media and the two name variants (finding 3).
+5. Check the nine YouTube 401s in a browser (finding 2).
+6. Link or reword the record identifiers in research notes (finding 5).
