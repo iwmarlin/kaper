@@ -15777,7 +15777,13 @@
       "creator": "Bronisław Kaper (composer); Walter Jurmann (composer); Gus Kahn (lyricist)",
       "accessUrl": "https://digitallibrary.usc.edu/CS.aspx?VP3=DamView&DocRID=2A3BF1X8GAHTY",
       "researchNote": "USC identifies both the creation and issue year as 1935 and distinguishes Robbins Music Corporation as the original publisher from USC Libraries as the digital publisher. The online document contains only pages 1–2 and 6: the cover and two pages advertising other music. Page 2 includes an excerpt of ‘Ninon’ with English words by Harold Adamson and music by Kaper and Jurmann. None of the available pages contains the notation of ‘You’re All I Need’; the linked local medium reproduces its cover.",
-      "researchNoteType": "verification_note"
+      "researchNoteType": "verification_note",
+      "identifiers": [
+        {
+          "scheme": "doi",
+          "value": "10.25549/pmc_09-03-2026_11-05-25_PM-oUC17193693"
+        }
+      ]
     },
     {
       "id": "SRC0446",
@@ -20647,7 +20653,7 @@
         },
         {
           "label": "GHT — Odeon matrix discography, Be 10000 series (historical reference)",
-          "url": "http://discography.phonomuseum.at/odeon/odmxBe10000.pdf",
+          "url": "https://discography.phonomuseum.at/odeon/odmxBe10000.pdf",
           "role": "additional_evidence"
         }
       ]
@@ -23744,6 +23750,12 @@
       "researchNoteType": "evidence_note",
       "organizationIds": [
         "ORG204"
+      ],
+      "identifiers": [
+        {
+          "scheme": "doi",
+          "value": "10.1553/0x0001cf41"
+        }
       ]
     },
     {
@@ -25365,6 +25377,7 @@
       "slug": "src0725-odeon-o-11439a-ich-weiss-ein-kleines-cafe",
       "organizationIds": [
         "ORG093",
+        "ORG128",
         "ORG137",
         "ORG150"
       ],
@@ -27974,7 +27987,13 @@
         "CON-S092-LAB-ORG138"
       ],
       "researchNote": "The entry identifies the song as a 1933 Austrian foxtrot from the film released in Germany as “Madame wünscht keine Kinder”, credits the music to Walter Jurmann and Dr. B. Kaper and the words to Fritz Rotter and Max Kolpe, and lists two commercial issues: Artiphon 8489 by Eddy Walis and Gloria G.O. 10725 by Fred Bird.",
-      "researchNoteType": "discographic_note"
+      "researchNoteType": "discographic_note",
+      "identifiers": [
+        {
+          "scheme": "doi",
+          "value": "10.22032/dbt.57689"
+        }
+      ]
     },
     {
       "id": "SRC0793",

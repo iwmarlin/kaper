@@ -269,7 +269,7 @@ RECORDING_FIELDS: dict[str, dict[str, Any]] = {
             },
             {
                 "label": "GHT — Odeon matrix discography, Be 10000 series (historical reference)",
-                "url": "http://discography.phonomuseum.at/odeon/odmxBe10000.pdf",
+                "url": "https://discography.phonomuseum.at/odeon/odmxBe10000.pdf",
                 "role": "additional_evidence"
             }
         ]

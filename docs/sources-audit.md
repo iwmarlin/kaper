@@ -92,8 +92,14 @@ W-S166 *Rhumba* and W-S167 *Tahiti*. The other four are W-O010 *Parade de
 France*, W-S183 *Diese Melodie sing ich nur für Sie*, W-S216 *Może tak, może
 nie* and W-S218 *San Francisco*, the last on a YouTube upload.
 
-One Person, `P206` Serge Veber, has no `sourceIds` of his own. His one
-credit is sourced, by `SRC0298` and `SRC0584`, but neither Source lists him.
+`P206` Serge Veber has no `sourceIds` of his own, and that is consistent
+rather than missing. His one credit, the film lyrics of *Ninon*, rests on
+`SRC0298` and `SRC0584`, and so do the credits of his co-authors Henri-Georges
+Clouzot and Charles-Louis Pothier on the same song, neither of whom those
+Sources list either. A Person's `sourceIds` hold the Sources about the
+person, not those behind the person's credits, and none in the dataset is
+about Veber. Linking him alone would have broken the pattern for the other
+two.
 
 ## 4. `http://` is on 25 Sources, not 9
 
@@ -149,10 +155,15 @@ The earlier count looked at `primaryUrl` and `accessUrl` only;
 
 ## Suggested order of work
 
-1. Link `ORG128` to `SRC0725` (finding 3). One link, first-hand evidence
-   already in the dataset.
-2. The three DOIs, the phonomuseum `https://` switch and Serge Veber's
-   Sources (findings 3–5). Mechanical and verified.
+1. ~~Link `ORG128` to `SRC0725` (finding 3).~~ Done: Carl Lindström AG now
+   cites the Odeon label that prints its name, beside the Wikipedia article.
+2. ~~The three DOIs and the phonomuseum `https://` switch (findings 4–5).~~
+   Done. Each DOI was confirmed at `doi.org` to resolve to the record the
+   Source already describes, and is now printed on the card. The `https://`
+   link had to be changed in `scripts/recording_sources.py`, which pins that
+   Source's fields; the normalizer otherwise put `http://` back. Serge
+   Veber's Sources were left as they are, for the reason given under
+   finding 3.
 3. Deep links for the 57 Hofmeister and 85 copyright-catalogue entries
    (finding 1). The largest gain for a reader, and the most work: ANNO needs
    a page offset per volume, the Internet Archive a full-text lookup per
