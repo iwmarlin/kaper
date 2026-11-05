@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 168,
+  "count": 170,
   "records": [
     {
       "id": "ORG001",
@@ -6364,6 +6364,52 @@
         "SRC0622",
         "SRC0655",
         "SRC0670"
+      ]
+    },
+    {
+      "id": "ORG177",
+      "displayName": "UCLA Library",
+      "authorizedName": "University of California, Los Angeles. Library",
+      "types": [
+        "library",
+        "archive"
+      ],
+      "city": [
+        "Los Angeles"
+      ],
+      "country": "United States",
+      "slug": "ucla-library",
+      "nameVariants": "UCLA Library Special Collections; UCLA Library Digital Collections; UCLA Library, Performing Arts Special Collections",
+      "authorizedNameSource": "LCNAF",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n79055331"
+        }
+      ],
+      "sourceIds": [
+        "SRC0489",
+        "SRC0560",
+        "SRC0594",
+        "SRC0635",
+        "SRC0781",
+        "SRC0880",
+        "SRC0890"
+      ]
+    },
+    {
+      "id": "ORG178",
+      "displayName": "Digitale Bibliothek Thüringen",
+      "authorizedName": "Digitale Bibliothek Thüringen",
+      "types": [
+        "digital_library"
+      ],
+      "country": "Germany",
+      "slug": "digitale-bibliothek-thueringen",
+      "nameVariants": "db-thueringen.de",
+      "sourceIds": [
+        "SRC0375",
+        "SRC0792"
       ]
     }
   ]

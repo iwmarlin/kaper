@@ -531,7 +531,25 @@ ground is not covered again.
    the sense ORG026 is: LCNAF `no97039973` matches by label but is a
    `mads:Title` for the programme, not a corporate body, and GND and VIAF were
    unreachable when this was written, so nothing was assigned rather than
-   guessed. What remains is 70 names cited once each.
+   guessed. What remained was 70 names cited once each.
+
+   Two of those were not single after all, because one institution stood
+   under several spellings. `ORG177` UCLA Library (LCNAF `n79055331`, a
+   corporate name whose own variant is *UCLA Library*) now covers seven
+   Sources filed as *UCLA Library*, *UCLA Library Digital Collections*, *UCLA
+   Library Special Collections* and *UCLA Library, Performing Arts Special
+   Collections*; two of them, SRC0594 and SRC0781, named it beside Wikimedia
+   Commons and so looked reached while linking only the Commons. `ORG178`
+   Digitale Bibliothek Thüringen covers the two volumes of Pfau's *Lexikon der
+   deutschen Tanzmusik*; GND holds no record for the platform, and its
+   operator could not be confirmed from here, so the record asserts neither.
+   Measured with the word-boundary matching of
+   `tests/test_repository_organization_graph.py`, 70 Sources under 68 names
+   now name no Organization. Only two of those names recur, and neither is
+   unreachable: SACEM's repertoire links `ORG085`, whose name carries a
+   country qualifier the match does not see, and the Jacques Gana collection
+   is a private collection served through the ECMF, `ORG176`, which both
+   Sources link. The rest is one Organization record per Source.
 6. Fill organization authority identifiers, starting with the Weimar studios
    (finding 3). Six are done. `ORG026` is closed unresolved: GND, LCNAF and
    VIAF were all searched, and the one LCNAF record whose form matches —

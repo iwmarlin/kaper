@@ -14177,7 +14177,10 @@
       "primaryUrl": "https://doi.org/10.22032/dbt.57691",
       "accessDate": "2026-08-24",
       "researchNote": "The citation as first recorded named eight volumes dated 1987 and carried the DOI of vol. 1, which covers titles A–C; the set runs to ten volumes published between 1987 and 2018, and the entry stands in vol. 6 of 2003. The lexicon’s own guide explains its conventions: SF marks a slow fox, and a plus sign after an orchestra name means the side carries a vocal. Its label key covers only the principal labels and does not expand EDBEL, so the issuing label behind that abbreviation is not settled here. The title is absent from the German national bibliography, the discographic title lists and the indexes of printed song collections, and no transfer of the disc has been traced; a similar but distinct title, “Mit dir möcht’ ich geh’n bis an’s Ende der Welt”, was composed by J. Pfeil and recorded in 1938.",
-      "researchNoteType": "evidence_note"
+      "researchNoteType": "evidence_note",
+      "organizationIds": [
+        "ORG178"
+      ]
     },
     {
       "id": "SRC0376",
@@ -17439,7 +17442,8 @@
       ],
       "primaryUrl": "https://oac.cdlib.org/findaid/static/ark:/13030/kt5779q3vh#:~:text=San%20Francisco%2F%20San%20Francisco%3B%20Paroles%20anglaises%20de%20Gus%20Kahn",
       "organizationIds": [
-        "ORG048"
+        "ORG048",
+        "ORG177"
       ],
       "researchNote": "The detailed description follows the earlier APAM-1 finding aid, not a direct examination or digitised reproduction of the score. The public link opens the current UCLA finding aid, Collection 2271, which lists the French San Francisco edition in Box 1, Folder 9; its shorter entry does not give all the details retained here from APAM-1. The date 1936 is the copyright year of the described edition.",
       "researchNoteType": "verification_note",
@@ -19905,7 +19909,8 @@
         "P117"
       ],
       "organizationIds": [
-        "ORG090"
+        "ORG090",
+        "ORG177"
       ],
       "mediaIds": [
         "M238"
@@ -20914,7 +20919,8 @@
       "primaryUrl": "https://commons.wikimedia.org/wiki/File:W._S._Van_Dyke,_1933.jpg",
       "accessUrl": "https://digital.library.ucla.edu/catalog/ark:/21198/zz002cpv37",
       "organizationIds": [
-        "ORG090"
+        "ORG090",
+        "ORG177"
       ]
     },
     {
@@ -22250,6 +22256,9 @@
           "scheme": "ark",
           "value": "ark:/21198/zz002d9ndg"
         }
+      ],
+      "organizationIds": [
+        "ORG177"
       ]
     },
     {
@@ -27340,7 +27349,8 @@
         "P195"
       ],
       "organizationIds": [
-        "ORG090"
+        "ORG090",
+        "ORG177"
       ],
       "mediaIds": [
         "M405"
@@ -27866,7 +27876,8 @@
         "M413"
       ],
       "organizationIds": [
-        "ORG138"
+        "ORG138",
+        "ORG178"
       ],
       "contributionIds": [
         "CON-S092-C-P009",
@@ -30691,6 +30702,9 @@
           "scheme": "ark",
           "value": "ark:/13030/kt5779q3vh"
         }
+      ],
+      "organizationIds": [
+        "ORG177"
       ]
     },
     {
@@ -31095,7 +31109,9 @@
         "P025",
         "P077"
       ],
-      "organizationIds": [],
+      "organizationIds": [
+        "ORG177"
+      ],
       "slug": "src0890-walter-jurmann-collection-finding-aid-the-magic-of-springtime-in-the-gus",
       "researchNote": "The cited passage was checked in a copy of the earlier APAM-1 finding aid. The current online finding aid for the Gus Kahn Papers describes film music for Maytime but does not identify this song by title; it is linked as collection context, not as the source of the quoted passage. The earlier finding aid describes Maytime as a 1936 film. The AFI Catalog dates its release to 26 March 1937 and records production in 1936–1937; the earlier wording is retained in the citation.",
       "researchNoteType": "date_assessment",

@@ -36,7 +36,9 @@ class SheetMusicSourceSemanticsTests(unittest.TestCase):
         self.assertNotIn("AbeBooks", json.dumps(source))
         self.assertEqual(source["workIds"], ["W-S200"])
         self.assertEqual(source["songIds"], ["S200"])
-        self.assertEqual(source["organizationIds"], ["ORG048"])
+        # France-Mélodie published the edition; the UCLA Library holds the
+        # finding aid the entry is read from.
+        self.assertEqual(source["organizationIds"], ["ORG048", "ORG177"])
         self.assertEqual(len(source["contributionIds"]), 5)
 
     def test_revised_ucla_guides_do_not_misrepresent_older_entries(self) -> None:
