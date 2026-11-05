@@ -46,18 +46,24 @@ describe; it still links the Archives West guide. `SRC0888` gains its box, 2,
 from the same braces. `tests/test_kaper_papers_item_sources.py` holds the
 rule: one Source per manuscript, the box it cites matching the work's.
 
-## Left for an editorial decision
+## Decided, and still open
 
-- **O030 is dated 1928; the accession list says Berlin, 1926.** The work's
-  year stands. Its Source carries 1928 marked uncertain and quotes the list,
-  so the disagreement is visible rather than resolved.
-- **O004 is not in the accession list.** The list's *Piece for voice and
-  orchestra, Berlin, 1926* may describe the manuscript that holds both the
-  1926 orchestral piece and its Berlin recomposition, which would explain
-  both the missing entry and the 1926 date.
-- **S004 has no holding statement on its song record**, where the early works
-  each give box, place and date. The Source now does.
-- **The list also describes a *Polka*, holograph, signed, 5 leaves, undated**,
-  which has no record. Whether it falls before 1939 is unknown.
-- **O005's Other Work record cites `SRC0503`, its Work record does not.** It
-  is the only subtype in the dataset citing a Source its Work lacks.
+- **O030 is dated 1928; the accession list says Berlin, 1926.** Decided: the
+  work's year stands. Its Source carries 1928 marked uncertain and quotes the
+  list, so the disagreement is visible rather than resolved.
+- **The *Polka* the list describes** (holograph, signed, 5 leaves, undated)
+  is out of scope and gets no record.
+- **O005's Other Work record cites `SRC0503`, its Work record does not.**
+  Decided: left as it is.
+- **Holding credits.** The review first said *Hätt’ ich einen Kammerdiener?*
+  lacked a holding statement. It did not: songs have no holding fields, and
+  record where a manuscript is through a `holding_institution` credit, which
+  S004 has. The gap was the other way round. *Denkst Du noch an jeden Tag* and
+  *Was macht jede Nacht*, added later, had no such credit, so their cards did
+  not say where the manuscript is. `CON-S012-HI-ORG056` (box 1) and
+  `CON-S024-HI-ORG056` (box 2) now do, each resting on its manuscript Source.
+- **Still open: O004 is not in the accession list.** The list's single entry
+  *Piece for voice and orchestra, Berlin, 1926*, 8 leaves, may describe one
+  manuscript holding both the 1926 orchestral piece and its Berlin
+  recomposition for voice, which would explain both the missing entry and the
+  1926 date. Only the reproductions can say whether there are one or two.
