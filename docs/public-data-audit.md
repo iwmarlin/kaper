@@ -553,6 +553,23 @@ ground is not covered again.
    country qualifier the match does not see, and the Jacques Gana collection
    is a private collection served through the ECMF, `ORG176`, which both
    Sources link. The rest is one Organization record per Source.
+
+   With network access widened, thirty of them were done. `ORG179` to
+   `ORG208` are the institutions among the single-citation repositories,
+   each matched to its register record before it was written: LCNAF for 28,
+   with GND beside it for 17 of those, and GND alone for two. The Austrian
+   Academy's press has no LCNAF record; Thomas Sessler has one, but it gives
+   no place, and GND keeps the Vienna house and the Munich firm apart, so the
+   Vienna record the Source's own site belongs to was used. A name variant was kept only where the
+   register or the Source's own repository string supplies it. The
+   word-boundary test then found a further RMN portrait, SRC0596, filed under
+   *Réunion des musées nationaux — Grand Palais*. NARA and SACEM were the
+   other artefact: both were linked all along, and neither record carried the
+   form of its name the Sources use, so the forms were added and the test
+   confirmed that every Source naming them already links them. 37 Sources
+   remain: public offices, private collections, blogs, retail and streaming
+   pages, and online reference works whose operator has to be confirmed
+   before a record can say who runs them.
 6. Fill organization authority identifiers, starting with the Weimar studios
    (finding 3). Six are done. `ORG026` is closed unresolved: GND, LCNAF and
    VIAF were all searched, and the one LCNAF record whose form matches —

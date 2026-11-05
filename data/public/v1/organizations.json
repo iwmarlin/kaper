@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 170,
+  "count": 200,
   "records": [
     {
       "id": "ORG001",
@@ -2877,7 +2877,7 @@
       ],
       "country": "United States",
       "slug": "us-national-archives",
-      "nameVariants": "NARA; U.S. National Archives; National Archives Catalog",
+      "nameVariants": "NARA; U.S. National Archives; National Archives Catalog; National Archives and Records Administration",
       "sourceIds": [
         "SRC0037",
         "SRC0038",
@@ -3368,7 +3368,7 @@
       ],
       "country": "France",
       "slug": "sacem",
-      "nameVariants": "SACEM; SACEM Repertoire",
+      "nameVariants": "SACEM; SACEM Repertoire; Société des auteurs, compositeurs et éditeurs de musique",
       "sourceIds": [
         "SRC0475",
         "SRC0476",
@@ -6414,6 +6414,774 @@
       "sourceIds": [
         "SRC0375",
         "SRC0792"
+      ]
+    },
+    {
+      "id": "ORG179",
+      "displayName": "Arolsen Archives",
+      "authorizedName": "Arolsen Archives--International Center on Nazi Persecution",
+      "types": [
+        "archive"
+      ],
+      "city": [
+        "Bad Arolsen"
+      ],
+      "country": "Germany",
+      "slug": "arolsen-archives",
+      "nameVariants": "Arolsen Archives – International Center on Nazi Persecution; Arolsen Archives / ITS Digital Archive",
+      "authorizedNameSource": "LCNAF",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/no2019075661"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/1193760879"
+        }
+      ],
+      "sourceIds": [
+        "SRC0545"
+      ]
+    },
+    {
+      "id": "ORG180",
+      "displayName": "Bibliothèque municipale de Lyon",
+      "authorizedName": "Bibliothèque municipale de Lyon",
+      "types": [
+        "library"
+      ],
+      "city": [
+        "Lyon"
+      ],
+      "country": "France",
+      "slug": "bibliotheque-municipale-de-lyon",
+      "authorizedNameSource": "LCNAF",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n50046713"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/671818-8"
+        }
+      ],
+      "sourceIds": [
+        "SRC0630"
+      ]
+    },
+    {
+      "id": "ORG181",
+      "displayName": "Biblioteka Główna Politechniki Warszawskiej",
+      "authorizedName": "Politechnika Warszawska. Biblioteka Główna",
+      "types": [
+        "library",
+        "digital_library"
+      ],
+      "city": [
+        "Warsaw"
+      ],
+      "country": "Poland",
+      "slug": "biblioteka-glowna-politechniki-warszawskiej",
+      "nameVariants": "Biblioteka Cyfrowa Politechniki Warszawskiej",
+      "authorizedNameSource": "LCNAF",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n97016022"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/16455-0"
+        }
+      ],
+      "sourceIds": [
+        "SRC0948"
+      ]
+    },
+    {
+      "id": "ORG182",
+      "displayName": "David Rumsey Map Collection",
+      "authorizedName": "David Rumsey Collection",
+      "types": [
+        "digital_library"
+      ],
+      "country": "United States",
+      "slug": "david-rumsey-map-collection",
+      "nameVariants": "David Rumsey Map Collection, Stanford University Libraries",
+      "authorizedNameSource": "LCNAF",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/no2011110579"
+        }
+      ],
+      "sourceIds": [
+        "SRC0687"
+      ]
+    },
+    {
+      "id": "ORG183",
+      "displayName": "National Széchényi Library",
+      "authorizedName": "Országos Széchényi Könyvtár",
+      "types": [
+        "library",
+        "digital_library"
+      ],
+      "city": [
+        "Budapest"
+      ],
+      "country": "Hungary",
+      "slug": "national-szechenyi-library",
+      "nameVariants": "Országos Széchényi Könyvtár; Electronic Periodicals Archive and Database (EPA)",
+      "authorizedNameSource": "LCNAF",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n79076057"
+        }
+      ],
+      "sourceIds": [
+        "SRC0660"
+      ]
+    },
+    {
+      "id": "ORG184",
+      "displayName": "Fundação Biblioteca Nacional",
+      "authorizedName": "Biblioteca Nacional (Brazil)",
+      "types": [
+        "library",
+        "digital_library"
+      ],
+      "city": [
+        "Rio de Janeiro"
+      ],
+      "country": "Brazil",
+      "slug": "fundacao-biblioteca-nacional",
+      "nameVariants": "Hemeroteca Digital Brasileira",
+      "authorizedNameSource": "LCNAF",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n50052724"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/1003296-4"
+        }
+      ],
+      "sourceIds": [
+        "SRC0661"
+      ]
+    },
+    {
+      "id": "ORG185",
+      "displayName": "Instituto Nacional de Estadística y Geografía (INEGI)",
+      "authorizedName": "Instituto Nacional de Estadística y Geografía (Mexico)",
+      "types": [
+        "database"
+      ],
+      "country": "Mexico",
+      "slug": "instituto-nacional-de-estadistica-y-geografia-inegi",
+      "nameVariants": "Instituto Nacional de Estadística y Geografía; INEGI",
+      "authorizedNameSource": "LCNAF",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/no2009016851"
+        }
+      ],
+      "sourceIds": [
+        "SRC0547"
+      ]
+    },
+    {
+      "id": "ORG186",
+      "displayName": "Koninklijke Bibliotheek",
+      "authorizedName": "Koninklijke Bibliotheek (Netherlands)",
+      "types": [
+        "library",
+        "digital_library"
+      ],
+      "city": [
+        "The Hague"
+      ],
+      "country": "Netherlands",
+      "slug": "koninklijke-bibliotheek",
+      "nameVariants": "Delpher",
+      "authorizedNameSource": "LCNAF",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n79130800"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/2016385-X"
+        }
+      ],
+      "sourceIds": [
+        "SRC0930"
+      ]
+    },
+    {
+      "id": "ORG187",
+      "displayName": "Staatsarchiv Freiburg",
+      "authorizedName": "Staatsarchiv Freiburg",
+      "types": [
+        "archive"
+      ],
+      "city": [
+        "Freiburg im Breisgau"
+      ],
+      "country": "Germany",
+      "slug": "staatsarchiv-freiburg",
+      "nameVariants": "Landesarchiv Baden-Württemberg, Staatsarchiv Freiburg",
+      "authorizedNameSource": "LCNAF",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n93021450"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/808297-2"
+        }
+      ],
+      "sourceIds": [
+        "SRC0576"
+      ]
+    },
+    {
+      "id": "ORG188",
+      "displayName": "Biblioteka Publiczna m.st. Warszawy",
+      "authorizedName": "Biblioteka Publiczna m. st. Warszawy--Biblioteka Główna Województwa Mazowieckiego",
+      "types": [
+        "library"
+      ],
+      "city": [
+        "Warsaw"
+      ],
+      "country": "Poland",
+      "slug": "biblioteka-publiczna-m-st-warszawy",
+      "nameVariants": "Biblioteka Publiczna m.st. Warszawy — Biblioteka Główna Województwa Mazowieckiego; Biblioteka na Koszykowej",
+      "authorizedNameSource": "LCNAF",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/no2004025205"
+        }
+      ],
+      "sourceIds": [
+        "SRC0552"
+      ]
+    },
+    {
+      "id": "ORG189",
+      "displayName": "State Library of New South Wales",
+      "authorizedName": "State Library of New South Wales",
+      "types": [
+        "library"
+      ],
+      "city": [
+        "Sydney"
+      ],
+      "country": "Australia",
+      "slug": "state-library-of-new-south-wales",
+      "nameVariants": "Mitchell Library, State Library of New South Wales",
+      "authorizedNameSource": "LCNAF",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n80096569"
+        }
+      ],
+      "sourceIds": [
+        "SRC0647"
+      ]
+    },
+    {
+      "id": "ORG190",
+      "displayName": "Museum of the City of New York",
+      "authorizedName": "Museum of the City of New York",
+      "types": [
+        "museum"
+      ],
+      "city": [
+        "New York"
+      ],
+      "country": "United States",
+      "slug": "museum-of-the-city-of-new-york",
+      "authorizedNameSource": "LCNAF",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n81117329"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/1007916-6"
+        }
+      ],
+      "sourceIds": [
+        "SRC0581"
+      ]
+    },
+    {
+      "id": "ORG191",
+      "displayName": "Musée Carnavalet – Histoire de Paris",
+      "authorizedName": "Musée Carnavalet",
+      "types": [
+        "museum"
+      ],
+      "city": [
+        "Paris"
+      ],
+      "country": "France",
+      "slug": "musee-carnavalet-histoire-de-paris",
+      "nameVariants": "Musée Carnavalet",
+      "authorizedNameSource": "LCNAF",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n81112261"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/1030092-2"
+        }
+      ],
+      "sourceIds": [
+        "SRC0574"
+      ]
+    },
+    {
+      "id": "ORG192",
+      "displayName": "Médiathèque du patrimoine et de la photographie",
+      "authorizedName": "Médiathèque du patrimoine et de la photographie",
+      "types": [
+        "archive"
+      ],
+      "country": "France",
+      "slug": "mediatheque-du-patrimoine-et-de-la-photographie",
+      "nameVariants": "MPP",
+      "authorizedNameSource": "LCNAF",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n2023042736"
+        }
+      ],
+      "sourceIds": [
+        "SRC0721"
+      ]
+    },
+    {
+      "id": "ORG193",
+      "displayName": "Narodowy Instytut Dziedzictwa",
+      "authorizedName": "Narodowy Instytut Dziedzictwa",
+      "types": [
+        "publisher"
+      ],
+      "city": [
+        "Warsaw"
+      ],
+      "country": "Poland",
+      "slug": "narodowy-instytut-dziedzictwa",
+      "authorizedNameSource": "LCNAF",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n2014033081"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/1027426034"
+        }
+      ],
+      "sourceIds": [
+        "SRC0852"
+      ]
+    },
+    {
+      "id": "ORG194",
+      "displayName": "National Museum, Prague",
+      "authorizedName": "Národní muzeum v Praze",
+      "types": [
+        "museum",
+        "database"
+      ],
+      "city": [
+        "Prague"
+      ],
+      "country": "Czech Republic",
+      "slug": "national-museum-prague",
+      "nameVariants": "Národní muzeum",
+      "authorizedNameSource": "LCNAF",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n81006503"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/1010865-8"
+        }
+      ],
+      "sourceIds": [
+        "SRC0773"
+      ]
+    },
+    {
+      "id": "ORG195",
+      "displayName": "Real Academia de Bellas Artes de San Fernando",
+      "authorizedName": "Real Academia de Bellas Artes de San Fernando",
+      "types": [
+        "archive",
+        "library"
+      ],
+      "city": [
+        "Madrid"
+      ],
+      "country": "Spain",
+      "slug": "real-academia-de-bellas-artes-de-san-fernando",
+      "authorizedNameSource": "LCNAF",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n50065276"
+        }
+      ],
+      "sourceIds": [
+        "SRC0584"
+      ]
+    },
+    {
+      "id": "ORG196",
+      "displayName": "Universidad Autónoma de Baja California",
+      "authorizedName": "Universidad Autónoma de Baja California",
+      "types": [
+        "university"
+      ],
+      "city": [
+        "Mexicali"
+      ],
+      "country": "Mexico",
+      "slug": "universidad-autonoma-de-baja-california",
+      "nameVariants": "Repositorio Institucional de la Universidad Autónoma de Baja California; UABC",
+      "authorizedNameSource": "LCNAF",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n82115635"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/5177076-3"
+        }
+      ],
+      "sourceIds": [
+        "SRC0639"
+      ]
+    },
+    {
+      "id": "ORG197",
+      "displayName": "Réunion des musées nationaux",
+      "authorizedName": "Réunion des musées nationaux (France)",
+      "types": [
+        "archive"
+      ],
+      "country": "France",
+      "slug": "reunion-des-musees-nationaux",
+      "nameVariants": "Réunion des musées nationaux (photo.rmn.fr); Réunion des musées nationaux — Grand Palais",
+      "authorizedNameSource": "LCNAF",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n79058768"
+        }
+      ],
+      "sourceIds": [
+        "SRC0596",
+        "SRC0645"
+      ]
+    },
+    {
+      "id": "ORG198",
+      "displayName": "Musikverlag Hans Sikorski",
+      "authorizedName": "Musikverlag Hans Sikorski",
+      "types": [
+        "publisher"
+      ],
+      "city": [
+        "Hamburg"
+      ],
+      "country": "Germany",
+      "slug": "musikverlag-hans-sikorski",
+      "nameVariants": "Sikorski Musikverlage; Internationale Musikverlage Hans Sikorski",
+      "authorizedNameSource": "LCNAF",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n86005099"
+        }
+      ],
+      "sourceIds": [
+        "SRC0895"
+      ]
+    },
+    {
+      "id": "ORG199",
+      "displayName": "Thomas Sessler Verlag",
+      "authorizedName": "Thomas-Sessler-Verlag (Wien)",
+      "types": [
+        "publisher"
+      ],
+      "city": [
+        "Vienna"
+      ],
+      "country": "Austria",
+      "slug": "thomas-sessler-verlag",
+      "authorizedNameSource": "GND",
+      "authorities": [
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/16049876-4"
+        }
+      ],
+      "sourceIds": [
+        "SRC0624"
+      ]
+    },
+    {
+      "id": "ORG200",
+      "displayName": "Universidad Nacional de Mar del Plata",
+      "authorizedName": "Universidad Nacional de Mar del Plata",
+      "types": [
+        "university"
+      ],
+      "city": [
+        "Mar del Plata"
+      ],
+      "country": "Argentina",
+      "slug": "universidad-nacional-de-mar-del-plata",
+      "authorizedNameSource": "LCNAF",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n82206740"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/5165931-1"
+        }
+      ],
+      "sourceIds": [
+        "SRC0637"
+      ]
+    },
+    {
+      "id": "ORG201",
+      "displayName": "Biblioteka Uniwersytecka KUL",
+      "authorizedName": "Biblioteka Uniwersytecka KUL",
+      "types": [
+        "library",
+        "digital_library"
+      ],
+      "city": [
+        "Lublin"
+      ],
+      "country": "Poland",
+      "slug": "biblioteka-uniwersytecka-kul",
+      "nameVariants": "University Library of the John Paul II Catholic University of Lublin; Katolicki Uniwersytet Lubelski Jana Pawła II. Biblioteka Uniwersytecka",
+      "authorizedNameSource": "LCNAF",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n2012047384"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/1203413041"
+        }
+      ],
+      "sourceIds": [
+        "SRC0812"
+      ]
+    },
+    {
+      "id": "ORG202",
+      "displayName": "UCLA Ethnomusicology Archive",
+      "authorizedName": "University of California, Los Angeles. Ethnomusicology Archive",
+      "types": [
+        "archive"
+      ],
+      "city": [
+        "Los Angeles"
+      ],
+      "country": "United States",
+      "slug": "ucla-ethnomusicology-archive",
+      "nameVariants": "University of California, Los Angeles, Ethnomusicology Archive",
+      "authorizedNameSource": "LCNAF",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n80157266"
+        }
+      ],
+      "sourceIds": [
+        "SRC0586"
+      ]
+    },
+    {
+      "id": "ORG203",
+      "displayName": "University of Maine",
+      "authorizedName": "University of Maine",
+      "types": [
+        "university"
+      ],
+      "city": [
+        "Orono"
+      ],
+      "country": "United States",
+      "slug": "university-of-maine",
+      "authorizedNameSource": "LCNAF",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/no89008161"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/61290-X"
+        }
+      ],
+      "sourceIds": [
+        "SRC0774"
+      ]
+    },
+    {
+      "id": "ORG204",
+      "displayName": "Verlag der Österreichischen Akademie der Wissenschaften",
+      "authorizedName": "Österreichische Akademie der Wissenschaften. Verlag",
+      "types": [
+        "publisher"
+      ],
+      "city": [
+        "Vienna"
+      ],
+      "country": "Austria",
+      "slug": "verlag-der-osterreichischen-akademie-der-wissenschaften",
+      "authorizedNameSource": "GND",
+      "authorities": [
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/2068748-5"
+        }
+      ],
+      "sourceIds": [
+        "SRC0684"
+      ]
+    },
+    {
+      "id": "ORG205",
+      "displayName": "JSTOR",
+      "authorizedName": "JSTOR (Organization)",
+      "types": [
+        "database"
+      ],
+      "country": "United States",
+      "slug": "jstor",
+      "authorizedNameSource": "LCNAF",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/no97001983"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/1086659538"
+        }
+      ],
+      "sourceIds": [
+        "SRC0946"
+      ]
+    },
+    {
+      "id": "ORG206",
+      "displayName": "National Film Institute Hungary",
+      "authorizedName": "Nemzeti Filmintézet",
+      "types": [
+        "archive"
+      ],
+      "city": [
+        "Budapest"
+      ],
+      "country": "Hungary",
+      "slug": "national-film-institute-hungary",
+      "nameVariants": "Nemzeti Filmintézet Magyarország; MNF Fotótár",
+      "authorizedNameSource": "LCNAF",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/no2022111850"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/1214912737"
+        }
+      ],
+      "sourceIds": [
+        "SRC0673"
+      ]
+    },
+    {
+      "id": "ORG207",
+      "displayName": "Karamu House",
+      "authorizedName": "Karamu House",
+      "types": [
+        "theatre"
+      ],
+      "city": [
+        "Cleveland"
+      ],
+      "country": "United States",
+      "slug": "karamu-house",
+      "nameVariants": "Karamu Performing Arts Theatre",
+      "authorizedNameSource": "LCNAF",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/no96016411"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/1363897268"
+        }
+      ],
+      "sourceIds": [
+        "SRC0848"
+      ]
+    },
+    {
+      "id": "ORG208",
+      "displayName": "Frémeaux & Associés",
+      "authorizedName": "Frémeaux & associés",
+      "types": [
+        "record_label"
+      ],
+      "country": "France",
+      "slug": "fremeaux-associes",
+      "authorizedNameSource": "LCNAF",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/nr2001001050"
+        }
+      ],
+      "sourceIds": [
+        "SRC0884"
       ]
     }
   ]
