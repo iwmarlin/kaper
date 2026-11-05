@@ -47,7 +47,7 @@ item's `scandata.xml`, not the printed page number. The printed labels
 Internet Archive derives in `page_numbers.json` are wrong in places — in
 volume 25 they run twelve pages off — and the first comparison, which
 trusted them, wrongly called the four existing page links misplaced. Read
-against the scans, all four are right, and they are unchanged. Six new links
+against the scans, all four are right, and they are unchanged. Five new links
 were read against the scan image before the rest were written, and one,
 `SRC0212`, lands on page 906, the page its own citation gives.
 `tests/test_copyright_catalogue_page_links.py` names the 22 entries still
