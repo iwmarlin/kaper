@@ -541,8 +541,11 @@ ground is not covered again.
    Collections*; two of them, SRC0594 and SRC0781, named it beside Wikimedia
    Commons and so looked reached while linking only the Commons. `ORG178`
    Digitale Bibliothek Thüringen covers the two volumes of Pfau's *Lexikon der
-   deutschen Tanzmusik*; GND holds no record for the platform, and its
-   operator could not be confirmed from here, so the record asserts neither.
+   deutschen Tanzmusik*. GND holds no record for the platform, so it carries
+   no identifier. Its host is the Thüringer Universitäts- und Landesbibliothek
+   Jena, which the DataCite metadata of both volumes names as
+   `HostingInstitution`; the library's own GND record, `5053491-9`, is left
+   off, because it identifies the library and not the platform.
    Measured with the word-boundary matching of
    `tests/test_repository_organization_graph.py`, 70 Sources under 68 names
    now name no Organization. Only two of those names recur, and neither is
