@@ -11446,7 +11446,9 @@
       "nameVariantIds": [
         "PNV0019"
       ],
-      "primaryUrl": "https://portal.gema.de/app/repertoiresuche/werksuche"
+      "primaryUrl": "https://portal.gema.de/app/repertoiresuche/werksuche",
+      "researchNote": "Read in the GEMA repertoire search on 7 July 2026. The portal gives no stable link to an individual entry, so the link opens the search, where the work number in the citation finds it.",
+      "researchNoteType": "verification_note"
     },
     {
       "id": "SRC0293",
@@ -11484,7 +11486,9 @@
       "nameVariantIds": [
         "PNV0020"
       ],
-      "primaryUrl": "https://portal.gema.de/app/repertoiresuche/werksuche"
+      "primaryUrl": "https://portal.gema.de/app/repertoiresuche/werksuche",
+      "researchNote": "Read in the GEMA repertoire search on 7 July 2026. The portal gives no stable link to an individual entry, so the link opens the search, where the work number in the citation finds it.",
+      "researchNoteType": "verification_note"
     },
     {
       "id": "SRC0294",
@@ -11520,7 +11524,9 @@
       "nameVariantIds": [
         "PNV0020"
       ],
-      "primaryUrl": "https://portal.gema.de/app/repertoiresuche/werksuche"
+      "primaryUrl": "https://portal.gema.de/app/repertoiresuche/werksuche",
+      "researchNote": "Read in the GEMA repertoire search on 7 July 2026. The portal gives no stable link to an individual entry, so the link opens the search, where the work number in the citation finds it.",
+      "researchNoteType": "verification_note"
     },
     {
       "id": "SRC0295",
@@ -11555,7 +11561,9 @@
       "nameVariantIds": [
         "PNV0020"
       ],
-      "primaryUrl": "https://portal.gema.de/app/repertoiresuche/werksuche"
+      "primaryUrl": "https://portal.gema.de/app/repertoiresuche/werksuche",
+      "researchNote": "Read in the GEMA repertoire search on 7 July 2026. The portal gives no stable link to an individual entry, so the link opens the search, where the work number in the citation finds it.",
+      "researchNoteType": "verification_note"
     },
     {
       "id": "SRC0296",
@@ -30671,7 +30679,7 @@
     {
       "id": "SRC0864",
       "shortCitation": "Krasnoborski, “An Interview with Bronislau Kaper,” Soundtrack Magazine (1975)",
-      "fullCitation": "William F. Krasnoborski. “An Interview with Bronislau Kaper.” Soundtrack Magazine, nos. 2–3 (1975); reproduced in Cinescores Center.",
+      "fullCitation": "William F. Krasnoborski. “An Interview with Bronislau Kaper.” Soundtrack Magazine, nos. 2–3 (1975); reproduced in Cinescores Center by permission of the magazine’s editor, Luc Van de Ven.",
       "sourceType": "periodical_article",
       "title": "An Interview with Bronislau Kaper",
       "creator": "William F. Krasnoborski; Bronisław Kaper",
@@ -30689,7 +30697,11 @@
       "timelineEventIds": [
         "TE0043"
       ],
-      "primaryUrl": "https://cinescores.dudaone.com/an-interview-with-bronislau-kaper"
+      "primaryUrl": "https://cinescores.dudaone.com/an-interview-with-bronislau-kaper",
+      "repository": "Cinescores Center",
+      "organizationIds": [
+        "ORG243"
+      ]
     },
     {
       "id": "SRC0865",
