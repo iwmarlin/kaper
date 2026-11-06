@@ -18,7 +18,7 @@ import {
   typeBadge,
   responsiveImage,
   registerImageDerivatives,
-} from "./core.js?v=e501c4b5a5";
+} from "./core.js?v=8b35e017f3";
 
 // Build-time prerendering and browser rendering must configure the exact same
 // core module instance. Query-stamped ES module URLs are distinct module keys
@@ -205,7 +205,7 @@ export function renderMediaResultsCount({ shown, matched, scope, publicTotal, fi
     return `public media ${matched === 1 ? "record" : "records"}`;
   })();
   const total = scope !== "all" || filtered
-    ? `<span class="results-bar__scope">· ${publicTotal} public media ${publicTotal === 1 ? "record" : "records"} in total</span>`
+    ? `<span class="results-bar__scope">${publicTotal} public media ${publicTotal === 1 ? "record" : "records"} in total</span>`
     : "";
   return `<strong>Showing ${shown}</strong> of ${matched} ${noun}${total ? ` ${total}` : ""}`;
 }

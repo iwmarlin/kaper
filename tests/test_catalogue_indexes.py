@@ -253,7 +253,7 @@ class CompactCatalogueIndexTests(unittest.TestCase):
             f"<strong>Showing {shown}</strong> of {curated} curated items",
             page,
         )
-        self.assertIn(f"· {len(media)} public media records in total", page)
+        self.assertIn(f"{len(media)} public media records in total", page)
         self.assertEqual(
             page.count("public media records in total"),
             1,

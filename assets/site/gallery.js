@@ -1,4 +1,4 @@
-import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=e501c4b5a5";
+import { IMAGE_DERIVATIVES } from "./image-derivatives.js?v=8b35e017f3";
 import {
   debounce,
   humanize,
@@ -11,15 +11,15 @@ import {
   periodValues,
   renderError,
   rightsLabel,
-} from "./core.js?v=e501c4b5a5";
-import { createCatalogueFilters } from "./catalogue-filters.js?v=e501c4b5a5";
+} from "./core.js?v=8b35e017f3";
+import { createCatalogueFilters } from "./catalogue-filters.js?v=8b35e017f3";
 import {
   curatedMediaOrder,
   registerCatalogueImageDerivatives,
   renderMediaIndexCard,
   renderMediaResultsCount,
   sortMediaIndex,
-} from "./catalogue-results.js?v=e501c4b5a5";
+} from "./catalogue-results.js?v=8b35e017f3";
 
 registerCatalogueImageDerivatives(IMAGE_DERIVATIVES);
 mountSiteChrome("media");
