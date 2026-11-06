@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 299,
+  "count": 300,
   "records": [
     {
       "id": "W-F001",
@@ -9074,7 +9074,6 @@
         "SRC0229",
         "SRC0306",
         "SRC0486",
-        "SRC0625",
         "SRC0630",
         "SRC0729"
       ],
@@ -9100,7 +9099,8 @@
       ],
       "relationIds": [
         "REL0083",
-        "REL0162"
+        "REL0162",
+        "REL0216"
       ],
       "songIds": [
         "S123"
@@ -13200,6 +13200,44 @@
       ],
       "periods": [
         "european"
+      ]
+    },
+    {
+      "id": "W-S229",
+      "title": "O chant d’amour de Tahiti !",
+      "slug": "o-chant-damour-de-tahiti",
+      "sortTitle": "O chant d’amour de Tahiti !",
+      "workType": "Song",
+      "year": 1937,
+      "period": "hollywood",
+      "certainty": "confirmed",
+      "publicScope": "standalone_page",
+      "sourceIds": [
+        "SRC0625"
+      ],
+      "contributionIds": [
+        "CON-S229-C-P009",
+        "CON-S229-C-P077",
+        "CON-S229-C-P155",
+        "CON-S229-P-P155",
+        "CON-S229-LAB-ORG133"
+      ],
+      "personIds": [
+        "P009",
+        "P077",
+        "P155"
+      ],
+      "organizationIds": [
+        "ORG133"
+      ],
+      "relationIds": [
+        "REL0216"
+      ],
+      "songIds": [
+        "S229"
+      ],
+      "periods": [
+        "hollywood"
       ]
     }
   ],

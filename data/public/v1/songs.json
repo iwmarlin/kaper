@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 213,
+  "count": 214,
   "records": [
     {
       "id": "S001",
@@ -3341,7 +3341,6 @@
         "SRC0229",
         "SRC0306",
         "SRC0486",
-        "SRC0625",
         "SRC0630",
         "SRC0729"
       ],
@@ -5729,6 +5728,29 @@
       "periods": [
         "hollywood"
       ]
+    },
+    {
+      "id": "S229",
+      "title": "O chant d’amour de Tahiti !",
+      "slug": "o-chant-damour-de-tahiti",
+      "year": 1937,
+      "period": "hollywood",
+      "genre": "song",
+      "filmTitleAsSource": "Les révoltés du Bounty",
+      "jurmannCollaboration": true,
+      "certainty": "confirmed",
+      "lyricistStatus": "lyricist unknown / not supplied",
+      "composerStatus": "composer known",
+      "workIds": [
+        "W-S229"
+      ],
+      "sourceIds": [
+        "SRC0625"
+      ],
+      "periods": [
+        "hollywood"
+      ],
+      "publicNote": "A Tahitian-language version of “Love Song of Tahiti”, recorded in Paris on 23 June 1937 by Tihoti-re et son ensemble tahitien for Pathé."
     }
   ],
   "recordCount": null

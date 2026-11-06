@@ -180,8 +180,13 @@ relation, so it stays as it is unless a contemporary source says so.
 4. ~~Add *pianist* to Kaper's roles (finding 5).~~ Done.
 5. ~~Decide the year convention and look again at *The One I Love* (finding 4).~~
    Done: the rule, and the seventeen songs it moved, are in `docs/work-years.md`.
-6. Decide Georges Rey's credit and which Work Pathé PA 1234 carries
-   (finding 5).
+6. ~~Decide Georges Rey's credit and which Work Pathé PA 1234 carries
+   (finding 5).~~
+   Done: the disc now carries a new Work, the Tahitian version *O chant
+   d’amour de Tahiti !* (`W-S229`, 1937), a language version of *Love Song
+   of Tahiti*, crediting Kaper and Jurmann as composers and Rey twice — as
+   the composer the disc names and as Tihoti, the singer. The English song
+   no longer cites the disc, and Rey still has no credit on it.
 7. ~~Search registers for the nine people without one (finding 5).~~
    Searched in the Library of Congress, the GND and the BnF, under every
    form of each name the dataset holds; Wikidata refused requests from here.
