@@ -49,7 +49,8 @@ class DigitalAuthorshipRoleScopeTests(unittest.TestCase):
             self.assertEqual(c["nameAsPrinted"], "Bob Henders")
             self.assertEqual(c["sourceIds"], ["SRC0209", "SRC0790"])
             self.assertEqual(c["certainty"], "confirmed")
-            self.assertIn("PNV0005", c["scopeNote"])
+            # The pseudonym record has no page; the note names it in words.
+            self.assertIn("documented with the pseudonym itself", c["scopeNote"])
             self.assertIn("not an explicit personal-name credit", c["scopeNote"])
             self.assertIn("SRC0878", self.names["PNV0005"]["sourceIds"])
             self.assertEqual(self.overrides["records"]["Contributions"][cid]["fields"]["scopeNote"], c["scopeNote"])

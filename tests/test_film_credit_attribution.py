@@ -109,9 +109,11 @@ class FilmCreditAttributionTests(unittest.TestCase):
             note = film.get("attributionNote")
             if not note:
                 continue
+            # Record identifiers in the note are printed as links to them.
+            unlinked = re.sub(r'<a href="records/\w+/[\w-]+/">([\w-]+)</a>', r"\1", text)
             self.assertIn(
                 escape_html(note),
-                text,
+                unlinked,
                 f"{work_id} holds an attribution note the card does not show",
             )
             shown += 1

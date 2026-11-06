@@ -132,6 +132,23 @@ export function recordUrl(type, id) {
   return `records/${encodeURIComponent(type)}/${encodeURIComponent(id)}/`;
 }
 
+// Research and credit notes name other records by identifier — “SRC0758”,
+// “M060”. Each identifier of a type that has its own page becomes a link to
+// it. A matrix number such as M519-1 is not a Media record, so an identifier
+// joined to a hyphen or a further character is left as text;
+// tests/test_note_record_links.py checks that every one that is linked exists.
+const NOTE_RECORD_ID = /(?<![\w-])(SRC\d{4}|ORG\d{3}|W-[SFO]\d{3}|M\d{3}|P\d{3})(?![\w-])/g;
+const NOTE_RECORD_TYPES = [
+  ["SRC", "source"], ["ORG", "organization"], ["W-", "work"], ["M", "media"], ["P", "person"],
+];
+
+export function linkRecordIds(text = "") {
+  return escapeHtml(text).replace(NOTE_RECORD_ID, (id) => {
+    const type = NOTE_RECORD_TYPES.find(([prefix]) => id.startsWith(prefix))[1];
+    return `<a href="${recordUrl(type, id)}">${id}</a>`;
+  });
+}
+
 export function humanize(value = "") {
   return String(value)
     .replaceAll("_", " ")

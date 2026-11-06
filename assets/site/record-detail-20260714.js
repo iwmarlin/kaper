@@ -8,6 +8,7 @@ import {
   humanize,
   imageEnlargement,
   languageBadge,
+  linkRecordIds,
   indexById,
   mediaIsFairUse,
   mediaRightsBadge,
@@ -33,8 +34,8 @@ import {
   sourceTypePluralLabel,
   typeBadge,
   updateMeta,
-} from "./core.js?v=e121093b28";
-import { RECORD_INDEXES, recordIndexReturn } from "./catalogue-filters.js?v=e121093b28";
+} from "./core.js?v=c19384212e";
+import { RECORD_INDEXES, recordIndexReturn } from "./catalogue-filters.js?v=c19384212e";
 
 // A canonical record route arrives prerendered and renders no image in the
 // browser, so the image map is loaded only where a record is actually rendered:
@@ -486,7 +487,7 @@ function contributionList(items, indexes, {
       // printed as written; the two values that named their sources by record
       // id rather than by name were rewritten before this line was added.
       const locator = String(item.evidenceLocator || "").trim();
-      return `<li data-contribution-role="${escapeHtml(item.role || "unresolved")}"><span><strong>${names.join(" · ") || escapeHtml(item.nameAsPrinted || "Unresolved contributor")}</strong>${printed}${note ? `<br><small>${escapeHtml(note)}</small>` : ""}${locator ? `<br><small class="credit-locator">Attested at ${escapeHtml(locator)}</small>` : ""}</span><span>${typeBadge(item.role)} ${certainty}</span></li>`;
+      return `<li data-contribution-role="${escapeHtml(item.role || "unresolved")}"><span><strong>${names.join(" · ") || escapeHtml(item.nameAsPrinted || "Unresolved contributor")}</strong>${printed}${note ? `<br><small>${linkRecordIds(note)}</small>` : ""}${locator ? `<br><small class="credit-locator">Attested at ${escapeHtml(locator)}</small>` : ""}</span><span>${typeBadge(item.role)} ${certainty}</span></li>`;
     }).join("")}</ul>`;
 }
 
@@ -924,7 +925,7 @@ function renderWork(work, data, indexes) {
   // public note it carries an attribution note too, and the two say different
   // things. It is framed as editorial context, which is what it is.
   const attributionNote = isFilm && subtype?.attributionNote
-    ? `<div class="scope-note">${escapeHtml(subtype.attributionNote)}</div>`
+    ? `<div class="scope-note">${linkRecordIds(subtype.attributionNote)}</div>`
     : "";
   const overview = publicText(subtype?.publicNote, work.publicNote)
     + attributionNote
@@ -1767,7 +1768,7 @@ function sourceResearchNote(source) {
   const label = SOURCE_RESEARCH_NOTE_LABELS[source.researchNoteType] || "Research note";
   return `<details class="source-research-note">
     <summary>${escapeHtml(label)}</summary>
-    <div class="source-research-note__body"><p>${escapeHtml(source.researchNote)}</p></div>
+    <div class="source-research-note__body"><p>${linkRecordIds(source.researchNote)}</p></div>
   </details>`;
 }
 
@@ -2081,7 +2082,7 @@ async function bootstrapRecordPage() {
     }
     const [data, { IMAGE_DERIVATIVES }] = await Promise.all([
       loadRecordPayload(requestedType, requestedId),
-      import("./image-derivatives.js?v=e121093b28"),
+      import("./image-derivatives.js?v=c19384212e"),
     ]);
     registerImageDerivatives(IMAGE_DERIVATIVES);
     const { config, view } = renderRecordView(requestedType, requestedId, data);

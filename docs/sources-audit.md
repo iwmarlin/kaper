@@ -203,6 +203,22 @@ The earlier count looked at `primaryUrl` and `accessUrl` only;
   are printed on every card, so a reader can search for one, but cannot
   click it. Linking them in the renderer, or naming the document in words as
   `evidenceLocator` now does, would fix it.
+
+  **Done in the renderer.** Three note fields reach a page — a Source's
+  research note, a credit's note and a film's attribution note — and they
+  hold more identifiers than the 32 counted here: 66 notes in all. Each
+  identifier of a record with a page (Source, Media, Person, Organization,
+  Work) is now a link to it. An identifier joined to a hyphen is left alone,
+  so the matrix number *M519-1* stays text. The six song numbers in three film
+  notes (`S053` and the like) became their Work's identifier, and two credit
+  notes that named a name-variant record, which has no page, now say in words
+  where the pseudonym is documented. `tests/test_note_record_links.py` checks
+  that every linked identifier exists and that none without a page is left.
+  That check found one that did not exist: the note on *Two Hearts in Wax
+  Time* cited `SRC0401` for Edward Ward as a music-department credit, a
+  Source that was never in the public data. Nothing else in the dataset ties
+  Ward to the film, and IMDb's credits could not be read from here, so the
+  sentence was removed; it can return with a Source.
 - **DOI not in `identifiers`.** `SRC0443`, `SRC0684` and `SRC0792` link
   through `doi.org` and do not carry the DOI as an identifier, so it is not
   printed on the card as every other DOI is.
@@ -256,4 +272,5 @@ The earlier count looked at `primaryUrl` and `accessUrl` only;
    Done for all but the two lobby cards, whose provenance could not be
    reached from here.
 5. Check the nine YouTube 401s in a browser (finding 2).
-6. Link or reword the record identifiers in research notes (finding 5).
+6. ~~Link or reword the record identifiers in research notes (finding 5).~~
+   Done, in the renderer, for every note a page prints.
