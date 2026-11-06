@@ -17,7 +17,7 @@
    the swashed display forms can never appear by accident. */
 @font-face {
   font-family: "Fraunces";
-  src: url("../fonts/kaper-serif.woff2?v=e501c4b5a5") format("woff2");
+  src: url("../fonts/kaper-serif.woff2?v=8b35e017f3") format("woff2");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
@@ -25,7 +25,7 @@
 
 @font-face {
   font-family: "Fraunces";
-  src: url("../fonts/kaper-serif-italic.woff2?v=e501c4b5a5") format("woff2");
+  src: url("../fonts/kaper-serif-italic.woff2?v=8b35e017f3") format("woff2");
   font-weight: 100 900;
   font-style: italic;
   font-display: swap;
@@ -33,7 +33,7 @@
 
 @font-face {
   font-family: "Archivo";
-  src: url("../fonts/kaper-sans.woff2?v=e501c4b5a5") format("woff2");
+  src: url("../fonts/kaper-sans.woff2?v=8b35e017f3") format("woff2");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
@@ -41,7 +41,7 @@
 
 @font-face {
   font-family: "Archivo";
-  src: url("../fonts/kaper-sans-italic.woff2?v=e501c4b5a5") format("woff2");
+  src: url("../fonts/kaper-sans-italic.woff2?v=8b35e017f3") format("woff2");
   font-weight: 100 900;
   font-style: italic;
   font-display: swap;
@@ -1346,6 +1346,23 @@ main {
 .results-bar__scope {
   display: inline-block;
   white-space: nowrap;
+}
+
+/* The separator belongs to the end of the first line. When the total
+   drops to a line of its own on a narrow screen, it goes without one
+   rather than opening the line with a stray dot. */
+.results-bar__scope::before {
+  content: "· ";
+}
+
+@media (max-width: 680px) {
+  .results-bar__scope {
+    display: block;
+  }
+
+  .results-bar__scope::before {
+    content: none;
+  }
 }
 
 .section--listing {
@@ -3727,6 +3744,12 @@ html:not(.js) .source-group__head {
 
 .identity-list li {
   align-items: flex-start;
+}
+
+/* A long note beside it must not squeeze the label onto two lines. */
+.identity-list li > .badge {
+  flex-shrink: 0;
+  white-space: nowrap;
 }
 
 .relation-list a,
