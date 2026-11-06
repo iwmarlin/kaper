@@ -32,6 +32,7 @@ PUBLIC_PAGES = [
     "map.html",
     "media.html",
     "sources.html",
+    "cite.html",
 ]
 SITEMAP_STATE_PATH = Path("data/site/sitemap-state.json")
 ISO_DATE_PATTERN = re.compile(r"^\d{4}-\d{2}-\d{2}$")
@@ -824,8 +825,8 @@ def static_page(
         page_title = f"{title} ({label.lower()})"
     browser_title = f"{page_title} | {PAGE_TITLE_SUFFIX}"
     record_id = record["id"]
-    style_version = "8b35e017f3"
-    record_script_version = "8b35e017f3"
+    style_version = "f6c7ab33a7"
+    record_script_version = "f6c7ab33a7"
     route = f"records/{record_type}/{quote(record_id, safe='')}/"
     canonical = f"{ORIGIN}{route}"
     og_image = og_image_for(record_type, record, tables, image_mapping)
@@ -863,8 +864,8 @@ def static_page(
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <link rel="preload" href="assets/fonts/kaper-sans.woff2?v=8b35e017f3" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="assets/fonts/kaper-serif.woff2?v=8b35e017f3" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/kaper-sans.woff2?v=f6c7ab33a7" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/kaper-serif.woff2?v=f6c7ab33a7" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/site/styles.css?v={style_version}">
   <title>{esc(browser_title)}</title>
   {ld_json}

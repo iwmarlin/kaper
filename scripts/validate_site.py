@@ -26,6 +26,7 @@ PUBLIC_PAGES = [
     "map.html",
     "media.html",
     "sources.html",
+    "cite.html",
     "record.html",
     "404.html",
 ]
