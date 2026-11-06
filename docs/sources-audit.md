@@ -194,8 +194,9 @@ conflict.**
   The Biblioteka Narodowa knows two Odeon pressings of a Polish *San
   Francisco*, both with words by **Zenon Friedwald** and sung by Albert
   Harris, and no Syrena issue and no Schlechter text. The two may be
-  different texts; the upload cannot be listened to from here. Left as it
-  is, pending a decision.
+  different texts; the upload cannot be listened to from here. The version
+  relation, the last part still marked `confirmed`, is now `probable` like
+  the credits, and the Schlechter credit and the relation say why.
 - The other six found nothing better. *Hi-do-ho* and *Love Needs No
   Inspiration* are not in the copyright catalogues for 1935 or 1936, nor
   *Magic*, *Rhumba* and *Tahiti* in 1937, which fits the Jurmann
