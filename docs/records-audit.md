@@ -165,12 +165,15 @@ relation, so it stays as it is unless a contemporary source says so.
 
 ## Suggested order of work
 
-1. Cite König's lists on the six credits (finding 1).
-2. Raise the three register entries to `high`, unless a reason is found
-   (finding 2).
+1. ~~Cite König's lists on the six credits (finding 1).~~ Done, after
+   reading each disc in the lists: Odeon O-11667, O-11810 and O-11811 and
+   Electrola EG 2271 carry the performers the credits name. The conductor
+   credit beside the first went with them.
+2. ~~Raise the three register entries to `high`, unless a reason is found
+   (finding 2).~~ Done; none was found.
 3. Hold the six song-to-film relations that rest on the Jurmann catalogue
    alone as `probable` (finding 3).
-4. Add *pianist* to Kaper's roles (finding 5).
+4. ~~Add *pianist* to Kaper's roles (finding 5).~~ Done.
 5. Decide the year convention and look again at *The One I Love* (finding 4).
 6. Decide Georges Rey's credit and which Work Pathé PA 1234 carries
    (finding 5).

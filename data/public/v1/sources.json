@@ -7899,7 +7899,7 @@
       "dateRole": "catalogue_volume",
       "dateQualifier": "confirmed",
       "accessDate": "2026-07-13",
-      "reliability": "medium",
+      "reliability": "high",
       "sourceStatus": "verified",
       "slug": "src0212-stay-way-from-my-arms",
       "organizationIds": [
@@ -8101,7 +8101,7 @@
       "date": "1933-04",
       "dateRole": "catalogue_volume",
       "dateQualifier": "confirmed",
-      "reliability": "medium",
+      "reliability": "high",
       "sourceStatus": "verified",
       "slug": "src0217-immer-wenn-ich-gluecklich-bin-1933",
       "personIds": [
@@ -8164,7 +8164,7 @@
       "date": "1933-04",
       "dateRole": "catalogue_volume",
       "dateQualifier": "confirmed",
-      "reliability": "medium",
+      "reliability": "high",
       "sourceStatus": "verified",
       "slug": "src0218-in-24-stunden-kann-soviel-geschehn-1933",
       "personIds": [
@@ -26457,6 +26457,7 @@
       ],
       "contributionIds": [
         "CON-S038-LAB-ORG126",
+        "CON-S038-P-ORG119",
         "CON-S045-P-P166"
       ],
       "researchNote": "The historical span 1930–1934 describes catalogue coverage, not the publication date of the webpage. The list separates general year, recording/session information, release date, matrix and parallel issues where documented, and cites evidence at row level. Those fields are not interchangeable, and an empty release-date cell is not proof of an issue year. A changing total of indexed titles is not included in the bibliographic citation. The heading’s copyright stamp is not treated as an independently verified publication or update date.",
@@ -26479,25 +26480,38 @@
       "slug": "src0742-musiktiteldb-odeon-o-11000-11999",
       "primaryUrl": "http://musiktiteldb.de/Label/Ode_11.html",
       "workIds": [
+        "W-S071",
         "W-S080",
         "W-S081",
         "W-S082"
       ],
       "songIds": [
+        "S071",
         "S080",
         "S081",
         "S082"
       ],
       "organizationIds": [
         "ORG120",
+        "ORG128",
+        "ORG144",
         "ORG150",
         "ORG173"
       ],
       "personIds": [
-        "P153"
+        "P153",
+        "P205"
       ],
       "researchNote": "The historical span 1928–1933 describes catalogue coverage, not the publication date of the webpage. The list separates general year, recording/session information, release date, matrix and parallel issues where documented, and cites evidence at row level. Those fields are not interchangeable, and an empty release-date cell is not proof of an issue year. A changing total of indexed titles is not included in the bibliographic citation. The heading’s copyright stamp is not treated as an independently verified publication or update date.",
-      "researchNoteType": "discographic_note"
+      "researchNoteType": "discographic_note",
+      "contributionIds": [
+        "CON-S071-CON-P205",
+        "CON-S071-LAB-ORG128",
+        "CON-S071-P-ORG144",
+        "CON-S080-LAB-ORG128",
+        "CON-S080-P-P153",
+        "CON-S082-P-ORG120"
+      ]
     },
     {
       "id": "SRC0743",
