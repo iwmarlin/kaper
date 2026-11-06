@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 204,
+  "count": 205,
   "records": [
     {
       "id": "REL0001",
@@ -3681,6 +3681,23 @@
       ],
       "sourceIds": [
         "SRC0306"
+      ]
+    },
+    {
+      "id": "REL0216",
+      "relationType": "language_version_of",
+      "targetWorkTitle": "Love Song of Tahiti",
+      "direction": "source_to_target",
+      "publicNote": "“O chant d’amour de Tahiti !” is documented as a Tahitian-language version of “Love Song of Tahiti”.",
+      "certainty": "confirmed",
+      "sourceWorkIds": [
+        "W-S229"
+      ],
+      "targetWorkIds": [
+        "W-S123"
+      ],
+      "sourceIds": [
+        "SRC0625"
       ]
     }
   ]

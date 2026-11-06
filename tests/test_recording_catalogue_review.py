@@ -50,7 +50,9 @@ class RecordingCatalogueReviewTests(unittest.TestCase):
         self.assertIn("[DL 1940]", source["fullCitation"])
         self.assertIn("legal deposit", source["researchNote"])
         self.assertIn("language code tah", source["researchNote"])
-        self.assertEqual(source["workIds"], ["W-S123"])
+        # The disc is sung in Tahitian, so it carries the Tahitian version,
+        # W-S229, not the English song or the French version.
+        self.assertEqual(source["workIds"], ["W-S229"])
         self.assertNotIn("W-S196", source["workIds"])
         self.assertNotIn("CON-S123-C-P155", self.tables["contributions"])
         self.assertNotIn("CON-S123-C-P155", source.get("contributionIds", []))
@@ -60,7 +62,10 @@ class RecordingCatalogueReviewTests(unittest.TestCase):
         self.assertIn("SRC0625", self.tables["people"]["P155"]["sourceIds"])
         self.assertNotIn("W-S123", self.tables["people"]["P155"].get("workIds", []))
         self.assertNotIn("P155", self.tables["works"]["W-S123"].get("personIds", []))
-        self.assertIn("SRC0625", self.tables["works"]["W-S123"]["sourceIds"])
+        # Rey's credits are on the Tahitian version, where the disc names him.
+        self.assertIn("CON-S229-C-P155", self.tables["contributions"])
+        self.assertIn("CON-S229-P-P155", self.tables["contributions"])
+        self.assertIn("W-S229", self.tables["people"]["P155"]["workIds"])
         self.assertIn("SRC0630", self.tables["works"]["W-S123"]["sourceIds"])
         self.assertIn("W-S123", self.tables["sources"]["SRC0630"]["workIds"])
         self.assertIn("discrepancy remain unresolved", source["researchNote"])

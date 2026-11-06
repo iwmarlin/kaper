@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 1330,
+  "count": 1335,
   "records": [
     {
       "id": "CON-F001-C-P009",
@@ -25130,6 +25130,108 @@
         "SRC0742"
       ],
       "scopeNote": "The recording is catalogued under Dajos Béla and his orchestra. This records his association as the ensemble’s named leader, not a separately verified conductor identification for the uploaded performance or an authorship credit."
+    },
+    {
+      "id": "CON-S229-C-P009",
+      "role": "composer",
+      "nameAsPrinted": "B. Kaper",
+      "evidenceContext": [
+        "recording_label"
+      ],
+      "sortOrder": 10,
+      "personIds": [
+        "P009"
+      ],
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S229"
+      ],
+      "sourceIds": [
+        "SRC0625"
+      ]
+    },
+    {
+      "id": "CON-S229-C-P077",
+      "role": "composer",
+      "nameAsPrinted": "W. Jurmann",
+      "evidenceContext": [
+        "recording_label"
+      ],
+      "sortOrder": 11,
+      "personIds": [
+        "P077"
+      ],
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S229"
+      ],
+      "sourceIds": [
+        "SRC0625"
+      ]
+    },
+    {
+      "id": "CON-S229-C-P155",
+      "role": "composer",
+      "nameAsPrinted": "G. Rey",
+      "evidenceContext": [
+        "recording_label"
+      ],
+      "sortOrder": 12,
+      "personIds": [
+        "P155"
+      ],
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S229"
+      ],
+      "sourceIds": [
+        "SRC0625"
+      ],
+      "scopeNote": "The disc credits G. Rey as a composer beside Kaper and Jurmann. On a Tahitian version of their song the credit most likely stands for the Tahitian adaptation, which the catalogue does not specify."
+    },
+    {
+      "id": "CON-S229-P-P155",
+      "role": "performer",
+      "nameAsPrinted": "Tihoti",
+      "evidenceContext": [
+        "online_catalogue"
+      ],
+      "sortOrder": 30,
+      "personIds": [
+        "P155"
+      ],
+      "nameVariantIds": [
+        "PNV0052"
+      ],
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S229"
+      ],
+      "sourceIds": [
+        "SRC0625"
+      ],
+      "scopeNote": "Sings in the vocal duo with Mlle Maéva; the disc names the group Tihoti-re et son ensemble tahitien. The BnF record identifies Tihoti as Georges Rey."
+    },
+    {
+      "id": "CON-S229-LAB-ORG133",
+      "role": "record_label",
+      "nameAsPrinted": "Pathé",
+      "displayCredit": "Issuing label",
+      "evidenceContext": [
+        "recording_label"
+      ],
+      "sortOrder": 60,
+      "organizationIds": [
+        "ORG133"
+      ],
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S229"
+      ],
+      "sourceIds": [
+        "SRC0625"
+      ],
+      "scopeNote": "Issued the recording as Pathé PA 1234."
     }
   ]
 }
