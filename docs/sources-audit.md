@@ -35,7 +35,7 @@ full-text search. GEMA's portal has no permanent link to a work; the work
 number in the citation is already the most a reader can be given, and the
 record could say so.
 
-**Copyright catalogue: 67 of 89 now open on their page.** Each entry was
+**Copyright catalogue: all 89 now open on their page.** Each entry was
 found through the volume's full-text search and accepted only when two
 signals agreed on one scan: its registration number in its own series —
 *E for.* is not *E unp.*, and the first draft accepted both and matched
@@ -50,8 +50,26 @@ trusted them, wrongly called the four existing page links misplaced. Read
 against the scans, all four are right, and they are unchanged. Five new links
 were read against the scan image before the rest were written, and one,
 `SRC0212`, lands on page 906, the page its own citation gives.
-`tests/test_copyright_catalogue_page_links.py` names the 22 entries still
-opening the volume, so the set can only shrink.
+**The last 22 were placed by entry number.** Each volume numbers its entries
+in one run, and the number is printed after each entry, so an entry number
+in the citation is a third signal: an entry is accepted on the scan that
+carries its number together with the two numbers either side, and its title.
+Fifteen of the sixteen numbered entries met that test outright; the
+sixteenth, *To-morrow is another day*, has its own number misread as
+*(627*, and is fixed by its neighbours, its title and its registration. The
+six without a number were found by title in the catalogue's own inverted
+form — *Magic (The) of Maytime*, *Message (A) from the man in the moon* —
+with the date and the composers agreeing. Five of the weakest were read on
+the page image. `SRC0263`, rejected earlier on a title alone, is now placed
+by its number on the right song.
+
+Reading the scans corrected two citations. `SRC0257` gave the registration
+as *E unp. 138678*; the catalogue prints *136678*, between 136386 and 136737
+on the same page, and the citation and identifier now say so. `SRC0259` left
+the number blank, and its note called it illegible in the digitized volume;
+it is clear on the scan, *E unp. 137471*, and only the machine-read text
+garbles it. All 89 entries now open on their page, which
+`tests/test_copyright_catalogue_page_links.py` holds.
 
 **Hofmeister: all 57 moved to the Internet Archive and open on their
 page.** ANNO resets every connection from cloud hosts; the session's own
@@ -230,8 +248,8 @@ The earlier count looked at `primaryUrl` and `accessUrl` only;
    Veber's Sources were left as they are, for the reason given under
    finding 3.
 3. Deep links for the 57 Hofmeister and 85 copyright-catalogue entries
-   (finding 1). ~~Copyright catalogue~~ done for 63, with 22 left that no
-   two signals agree on. ~~Hofmeister~~ done: all 57 moved to the
+   (finding 1). ~~Copyright catalogue~~ done for all 89: 63 by
+   registration and title, the last 22 by entry number and title. ~~Hofmeister~~ done: all 57 moved to the
    Internet Archive scan, with ANNO kept as alternate access.
 4. ~~Replace or reinforce the Wikipedia-only Sources for Gaumont British, its
    two F057 credits, the three Media and the two name variants (finding 3).~~

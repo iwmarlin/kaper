@@ -6,16 +6,10 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 
-# Entries whose page could not be fixed with two agreeing signals — the
-# registration number in its own series, and the title on the same or the
-# next scan page — so they still open the volume. Shrink this set as entries
-# are resolved; never grow it to make the test pass.
-UNRESOLVED = {
-    "SRC0230", "SRC0240", "SRC0241", "SRC0245", "SRC0246", "SRC0254",
-    "SRC0257", "SRC0259", "SRC0260", "SRC0263", "SRC0264", "SRC0268",
-    "SRC0272", "SRC0274", "SRC0275", "SRC0276", "SRC0311", "SRC0378",
-    "SRC0469", "SRC0472", "SRC0473", "SRC0872",
-}
+# Every entry opens on its page. Each was placed on its scan by two signals
+# that agree — its title, and its registration number or its entry number
+# with the neighbouring entry numbers on the same scan — and the weaker
+# matches were read on the page image.
 
 
 class CopyrightCataloguePageLinkTests(unittest.TestCase):
@@ -33,18 +27,19 @@ class CopyrightCataloguePageLinkTests(unittest.TestCase):
             if "archive.org/details/catalogofcopyrig" in (s.get("primaryUrl") or "")
         ]
 
-    def test_every_resolved_entry_opens_on_its_page(self):
+    def test_every_entry_opens_on_its_page(self):
+        self.assertEqual(len(self.cce), 89)
         for source in self.cce:
-            if source["id"] in UNRESOLVED:
-                continue
             with self.subTest(source=source["id"]):
                 self.assertRegex(source["primaryUrl"], r"/page/n?\d+")
 
-    def test_the_unresolved_set_is_exactly_what_still_opens_the_volume(self):
-        still_volume = {
-            s["id"] for s in self.cce if "/page/" not in s["primaryUrl"]
-        }
-        self.assertEqual(still_volume, UNRESOLVED)
+    def test_the_registration_numbers_read_on_the_scans_are_recorded(self):
+        by_id = {s["id"]: s for s in self.cce}
+        for source_id, number in (("SRC0257", "E unp. 136678"), ("SRC0259", "E unp. 137471")):
+            with self.subTest(source=source_id):
+                source = by_id[source_id]
+                self.assertIn(number, source["fullCitation"])
+                self.assertIn(number, [i["value"] for i in source.get("identifiers") or []])
 
     def test_scan_index_links_name_the_volume_they_were_found_in(self):
         for source in self.cce:
