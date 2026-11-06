@@ -1,0 +1,143 @@
+"""Recording descriptions must not overstate uploader or issue evidence."""
+import json
+import unittest
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+UPLOADER_CREDITS = [
+    "CON-S009-P-P086",
+    "CON-S009-CON-P165",
+    "CON-S070-CON-P165",
+    "CON-S026-P-P077",
+    "CON-S009-P-ORG119",
+    "CON-S070-P-ORG119",
+    "CON-S080-P-ORG120",
+    "CON-S064-P-ORG124",
+    "CON-S080-CON-P167",
+    "CON-S009-LAB-ORG126",
+    "CON-S070-LAB-ORG126",
+    "CON-S064-LAB-ORG155",
+    "CON-S030-CON-P167",
+    "CON-S076-P-ORG120",
+    "CON-S076-LAB-ORG128",
+    "CON-S054-LAB-ORG126",
+    "CON-S074-P-ORG121",
+    "CON-S074-LAB-ORG138",
+    "CON-S003-CON-P119",
+    "CON-S003-LAB-ORG132",
+    "CON-S033-P-ORG140",
+    "CON-S033-LAB-ORG138",
+    "CON-S067-P-ORG119",
+    "CON-S067-CON-P165",
+    "CON-S067-LAB-ORG126",
+    "CON-S218-LAB-ORG132",
+    "CON-S008-P-ORG134"
+]
+
+class RecordingEvidenceContextBatchTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        def records(name):
+            return {r["id"]: r for r in json.loads((ROOT / "data/public/v1" /
+                    (name + ".json")).read_text())["records"]}
+        cls.credits = records("contributions")
+        cls.sources = records("sources")
+        cls.media = records("media")
+        cls.overrides = json.loads((ROOT / "scripts/public_export_overrides.json").read_text())
+
+    def test_27_uploader_credits_keep_qualified_identity_and_reciprocal_links(self):
+        self.assertEqual(len(UPLOADER_CREDITS), 27)
+        supplemented = {
+            "CON-S026-P-P077": ["online_catalogue", "online_recording"],
+            "CON-S080-CON-P167": ["discography", "online_recording"],
+        }
+        for cid in UPLOADER_CREDITS:
+            with self.subTest(credit=cid):
+                credit = self.credits[cid]
+                if cid in {"CON-S064-P-ORG124", "CON-S064-LAB-ORG155", "CON-S076-P-ORG120", "CON-S076-LAB-ORG128", "CON-S074-P-ORG121", "CON-S074-LAB-ORG138", "CON-S033-P-ORG140", "CON-S033-LAB-ORG138", "CON-S008-P-ORG134"}:
+                    self.assertEqual(credit["certainty"], "confirmed")
+                    self.assertEqual(credit["evidenceContext"], ["recording_label"])
+                    self.assertEqual(self.overrides["records"]["Contributions"][cid]["fields"]["scopeNote"], credit["scopeNote"])
+                    continue
+                if cid == "CON-S030-CON-P167":
+                    self.assertEqual(credit["certainty"], "probable")
+                    self.assertIn("not its conductor or singer", credit["scopeNote"])
+                    self.assertIn(cid, self.sources["SRC0727"]["contributionIds"])
+                    continue
+                if cid in {"CON-S070-CON-P165", "CON-S070-P-ORG119", "CON-S070-LAB-ORG126"}:
+                    self.assertEqual(credit["certainty"], "probable" if credit["role"] == "conductor" else "confirmed")
+                    self.assertEqual(credit["evidenceContext"], ["recording_label"])
+                    self.assertIn(cid, self.sources["SRC0713"]["contributionIds"])
+                    self.assertEqual(self.overrides["records"]["Contributions"][cid]["fields"]["scopeNote"], credit["scopeNote"])
+                    continue
+                self.assertEqual(credit["certainty"], "probable")
+                expected = supplemented.get(cid, ["online_recording"])
+                self.assertEqual(credit["evidenceContext"], expected)
+                self.assertIn("upload", credit["scopeNote"].lower())
+                self.assertEqual(len(credit["sourceIds"]), 1)
+                for sid in credit["sourceIds"]:
+                    self.assertIn(cid, self.sources[sid]["contributionIds"])
+                fields = self.overrides["records"]["Contributions"][cid]["fields"]
+                self.assertEqual(fields["evidenceContext"], expected)
+
+    def test_supplementary_catalogues_do_not_identify_the_transferred_copies(self):
+        birthday = self.sources["SRC0715"]
+        gorilla = self.sources["SRC0697"]
+        self.assertIn("matrix 10431", birthday["researchNote"])
+        self.assertIn("no identifier", birthday["researchNote"])
+        self.assertTrue(any("110498E6" in link["url"] for link in birthday["additionalLinks"]))
+        self.assertIn("Be 10227-2", gorilla["researchNote"])
+        self.assertIn("does not name the orchestra", gorilla["researchNote"])
+        self.assertIn("take are not independently established", gorilla["researchNote"])
+        self.assertTrue(any("odmxBe10000.pdf#page=51" in link["url"] for link in gorilla["additionalLinks"]))
+        weber = self.sources["SRC0707"]
+        self.assertIn("1247 and 1257", weber["researchNote"])
+        self.assertIn("Neither number is assigned", weber["researchNote"])
+        self.assertTrue(any("austin_egen_dr_stanicek.pdf" in link["url"] for link in weber["additionalLinks"]))
+
+    def test_hmv_label_does_not_certify_a_victor_session(self):
+        label = self.credits["CON-S158-LAB-ORG147"]
+        singer = self.credits["CON-S158-P-P173"]
+        self.assertEqual(label["organizationIds"], ["ORG147"])
+        self.assertEqual(singer["personIds"], ["P173"])
+        for c in (label, singer):
+            self.assertEqual(c["sourceIds"], ["SRC0783"])
+            self.assertEqual(c["certainty"], "confirmed")
+            self.assertEqual(c["evidenceContext"], ["recording_label"])
+            self.assertIn("OA.09934", c["scopeNote"])
+        self.assertIn("does not independently establish", label["scopeNote"])
+        self.assertIn("not an independently verified", singer["scopeNote"])
+
+    def test_odeon_credit_distinguishes_catalogue_and_companion_label(self):
+        label = self.credits["CON-S082-LAB-ORG128"]
+        singer = self.credits["CON-S082-P-P153"]
+        self.assertEqual(label["organizationIds"], ["ORG150"])
+        self.assertEqual(label["sourceIds"], ["SRC0700"])
+        self.assertEqual(label["evidenceContext"], ["online_catalogue"])
+        self.assertIn("catalogue evidence", label["scopeNote"])
+        self.assertIn("not a fresh reading", label["scopeNote"])
+        self.assertEqual(singer["sourceIds"], ["SRC0698", "SRC0700", "SRC0373"])
+        self.assertEqual(singer["evidenceContext"], ["online_catalogue", "online_recording"])
+        self.assertIn("not direct evidence", singer["scopeNote"])
+        self.assertIn("separately attributes the song", singer["scopeNote"])
+        for c in (label, singer):
+            self.assertEqual(c["certainty"], "confirmed")
+            fields = self.overrides["records"]["Contributions"][c["id"]]["fields"]
+            self.assertEqual(fields["scopeNote"], c["scopeNote"])
+            for sid in c["sourceIds"]:
+                self.assertIn(c["id"], self.sources[sid]["contributionIds"])
+        for cid in ("CON-S158-LAB-ORG147", "CON-S158-P-P173"):
+            self.assertEqual(self.overrides["records"]["Contributions"][cid]["fields"]["scopeNote"],
+                             self.credits[cid]["scopeNote"])
+
+    def test_albers_caption_identifies_the_performance_but_not_the_carrier(self):
+        caption = self.media["M339"]["publicCaption"]
+        self.assertIn("Hans Albers", caption)
+        self.assertIn("Otto Dobrindt", caption)
+        self.assertIn("as the upload’s description states", caption)
+        self.assertIn("does not identify the source disc, matrix or take", caption)
+        self.assertEqual(self.overrides["records"]["Media"]["M339"]["fields"]["publicCaption"], caption)
+
+if __name__ == "__main__":
+    unittest.main()
+
