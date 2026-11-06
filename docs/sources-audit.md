@@ -33,7 +33,7 @@ its own offset, read once from one known page. The Internet Archive addresses
 a scan page with `/page/nNNN`, and each entry can be found through the item's
 full-text search. GEMA's portal has no permanent link to a work; the work
 number in the citation is already the most a reader can be given, and the
-record could say so.
+record could say so. *Done:* all six now say so in their verification note.
 
 **Copyright catalogue: all 89 now open on their page.** Each entry was
 found through the volume's full-text search and accepted only when two
@@ -252,10 +252,15 @@ The earlier count looked at `primaryUrl` and `accessUrl` only;
 - **No repository.** `SRC0864`, Krasnoborski's 1975 interview reproduced on
   the Cinescores Center site, names none. The other three Sources without one
   are the Buxbaum book, which now carries its ISBN, and the two forthcoming
-  Lindstedt articles.
+  Lindstedt articles. *Done:* the site is now its repository, as a new
+  Organization record, and the citation adds what the page itself says,
+  that the text is reproduced by permission of the magazine's editor, Luc
+  Van de Ven.
 - **An access date with nothing to access.** `SRC0789`, the *Cocktails* cover
   examined in a research reproduction, has no link but an `accessDate`, which
-  the card prints as *Accessed*.
+  the card prints as *Accessed*. *Done:* the date is when the reproduction
+  was read, so it stays, and a Source with no link at all now prints it as
+  *Consulted*.
 
 ## Checked and found sound
 
