@@ -54,13 +54,14 @@ is how it surfaced.
 | Relation | Song or film | Linked to | Rests on |
 | --- | --- | --- | --- |
 | `REL0046`, `REL0047` | *Immer, wenn ich glücklich bin*; *In 24 Stunden* | film *Heut’ kommt’s drauf an* | Hofmeister (finding 2) |
-| `REL0077` | *Pourvu qu’on ait vingt ans* | film *Une femme au volant* | Salabert 3384 sheet music |
+| `REL0077` | *Pourvu qu’on ait vingt ans* | film *Une femme au volant* | Salabert 3384 disc, via a YouTube transfer and Roig’s discography |
 | `REL0087`, `REL0088` | *Hi-do-ho*; *Love Needs No Inspiration* | short *Two Hearts in Wax Time* | Jurmann catalogue, IMDb |
 | `REL0119`–`REL0121` | *Magic*, *Rhumba*, *Tahiti* | *Man of the People* | Jurmann catalogue |
 | `REL0214` | film *My Song for You* | as the English version of *Ein Lied für Dich* | Jurmann catalogue, Wikipedia |
 
-The first three are settled by finding 2 and by the printed sheet music,
-which names the film on its own cover. The six that rest on the Walter
+The first two are settled by finding 2. The third was first taken here for
+printed sheet music naming the film; it is a disc, and no Source rated
+`high` names the film for this song. The six that rest on the Walter
 Jurmann catalogue were searched for during the sources audit and nothing
 better was found; they could be held as `probable`, as the credits on the
 same evidence elsewhere are. `REL0214` could cite the *Kinematograph Year
@@ -119,7 +120,7 @@ relation, so it stays as it is unless a contemporary source says so.
   the Philharmonic building at Jasna 5, and `PL017`, the Warsaw Philharmonic
   at Jasna 5, share a map point, and `TE0013` links both. They name two
   institutions, which may be intended; if not, `PL017` could fold into
-  `PL010`.
+  `PL010`. *Decided:* they stay apart.
 - **`TE0043`**, Kaper's solo career at MGM from 1939, rests on one Source,
   the 1975 interview, rated `medium`. Every other event has a `high` Source.
 - **`M380`**, *Ach, Otto, Otto...!* sung by Sig Arno, is the one Media whose
@@ -171,8 +172,11 @@ relation, so it stays as it is unless a contemporary source says so.
    credit beside the first went with them.
 2. ~~Raise the three register entries to `high`, unless a reason is found
    (finding 2).~~ Done; none was found.
-3. Hold the six song-to-film relations that rest on the Jurmann catalogue
-   alone as `probable` (finding 3).
+3. ~~Hold the six relations that rest on the Jurmann catalogue alone as
+   `probable` (finding 3).~~ Done: the five song-to-film relations and
+   `REL0214`, and `REL0077` on the same reasoning. Every relation still
+   `confirmed` now rests on a Source rated `high`, which
+   `tests/test_records_audit_fixes.py` holds.
 4. ~~Add *pianist* to Kaper's roles (finding 5).~~ Done.
 5. Decide the year convention and look again at *The One I Love* (finding 4).
 6. Decide Georges Rey's credit and which Work Pathé PA 1234 carries

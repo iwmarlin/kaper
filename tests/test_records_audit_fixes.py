@@ -42,6 +42,19 @@ class RecordsAuditFixTests(unittest.TestCase):
             with self.subTest(source=source_id):
                 self.assertEqual(self.sources[source_id]["reliability"], "high")
 
+    def test_relations_on_the_jurmann_catalogue_alone_are_probable(self):
+        relations = table("work-relations")
+        for relation in ("REL0077", "REL0087", "REL0088", "REL0119", "REL0120", "REL0121", "REL0214"):
+            with self.subTest(relation=relation):
+                self.assertEqual(relations[relation]["certainty"], "probable")
+        for relation in relations.values():
+            if relation["certainty"] == "confirmed":
+                with self.subTest(relation=relation["id"]):
+                    self.assertIn(
+                        "high", [self.sources[s]["reliability"] for s in relation["sourceIds"]],
+                        "a confirmed relation rests on at least one Source rated high",
+                    )
+
     def test_kaper_is_listed_as_a_pianist(self):
         self.assertIn("pianist", self.people["P009"]["roles"])
         for credit in ("CON-O011-P-P009", "CON-O019-P-P009"):
