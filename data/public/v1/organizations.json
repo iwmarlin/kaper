@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 235,
+  "count": 237,
   "records": [
     {
       "id": "ORG001",
@@ -43,7 +43,8 @@
         "SRC0555",
         "SRC0587",
         "SRC0887",
-        "SRC0952"
+        "SRC0952",
+        "SRC0965"
       ],
       "timelineEventIds": [
         "TE0038",
@@ -165,7 +166,8 @@
       "sourceIds": [
         "SRC0145",
         "SRC0380",
-        "SRC0482"
+        "SRC0482",
+        "SRC0966"
       ],
       "timelineEventIds": [
         "TE0038"
@@ -3685,7 +3687,8 @@
         "SRC0894",
         "SRC0896",
         "SRC0897",
-        "SRC0926"
+        "SRC0926",
+        "SRC0965"
       ],
       "authorities": [
         {
@@ -7817,6 +7820,34 @@
       "publicNote": "Website on film composers and film music that reproduces articles and interviews from earlier periodicals with their editors’ permission.",
       "sourceIds": [
         "SRC0864"
+      ]
+    },
+    {
+      "id": "ORG244",
+      "displayName": "Everett Collection",
+      "authorizedName": "Everett Collection",
+      "types": [
+        "archive"
+      ],
+      "country": "United States",
+      "slug": "everett-collection",
+      "publicNote": "Picture archive of film stills, posters and lobby cards, which supplies its images through stock agencies.",
+      "sourceIds": [
+        "SRC0966"
+      ]
+    },
+    {
+      "id": "ORG245",
+      "displayName": "Alamy",
+      "authorizedName": "Alamy",
+      "types": [
+        "database"
+      ],
+      "country": "United Kingdom",
+      "slug": "alamy",
+      "publicNote": "Stock-image agency whose catalogue carries images supplied by archives and photographers, with their captions and credits.",
+      "sourceIds": [
+        "SRC0966"
       ]
     }
   ]

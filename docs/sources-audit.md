@@ -118,7 +118,8 @@ them.
 
 The nine YouTube 401s are the one group worth a look by hand: oEmbed answers
 401 both for a private video and for one whose owner has disabled embedding,
-and only a browser tells the two apart.
+and only a browser tells the two apart. *Checked:* all nine play in a
+browser, so their owners have only disabled embedding, and the links stand.
 
 ## 3. A few records rest on Wikipedia alone, and one has a better Source in hand
 
@@ -167,6 +168,17 @@ The lobby cards `M038` *San Francisco* and `M076` *Three Smart Girls* stay
 on Wikipedia. Where the reproductions came from is not recorded, and the
 Wikimedia file pages that would say were refused to this environment
 (HTTP 429). A reader with a browser can follow the article to the file page.
+
+*Since traced.* A reverse image search, run in a browser, found both. The
+*San Francisco* card is the Wikimedia Commons file *San Francisco lobby card
+4.jpg*, at the same 744 × 580 pixels as the local copy (`SRC0965`); Commons
+offers it as public domain for want of a notice, which the unread microtype
+on the card leaves unconfirmed. The *Three Smart Girls* card is the one Alamy
+offers from the Everett Collection (`SRC0966`, with new Organization records
+for both); the agency calls it a handout or public-domain image, but the card
+prints a 1936 copyright notice, so that is not adopted. Both cards now cite
+these first and name them in their credit lines; the articles stay as film
+context, and the rights status of both stays undetermined.
 
 Nine Works rest only on sources rated `medium`. Five rest on the Walter
 Jurmann society's website, alone or with an IMDb soundtrack entry:
@@ -304,6 +316,6 @@ The earlier count looked at `primaryUrl` and `accessUrl` only;
    two F057 credits, the three Media and the two name variants (finding 3).~~
    Done for all but the two lobby cards, whose provenance could not be
    reached from here.
-5. Check the nine YouTube 401s in a browser (finding 2).
+5. ~~Check the nine YouTube 401s in a browser (finding 2).~~ Done: all nine play.
 6. ~~Link or reword the record identifiers in research notes (finding 5).~~
    Done, in the renderer, for every note a page prints.
