@@ -182,4 +182,28 @@ relation, so it stays as it is unless a contemporary source says so.
    Done: the rule, and the seventeen songs it moved, are in `docs/work-years.md`.
 6. Decide Georges Rey's credit and which Work Pathé PA 1234 carries
    (finding 5).
-7. Search registers for the nine people without one (finding 5).
+7. ~~Search registers for the nine people without one (finding 5).~~
+   Searched in the Library of Congress, the GND and the BnF, under every
+   form of each name the dataset holds; Wikidata refused requests from here.
+   One lead: the London-born lyricist **Ralph Stanley (b. 1888)**,
+   LCNAF no2020010068, is the likely writer of the English words of *Oh,
+   Mister Leader*, published in London in 1932 — likely, not certain, since
+   the composer Raoul Kraushaar also used the name. *Oliver Perry* turns up
+   in the BnF as the English lyricist of two more Campbell, Connelly songs
+   of 1931–1932, and *A. Oliver* as their French lyricist from 1927, neither
+   with a heading or a full name; both look like names used inside that
+   firm. André Roubier already has his candidate BnF record (`SRC0632`).
+   Nothing was found for Giuliano Pomeranz, H. Hailey-Simpson, Eleonora
+   Kaper, Eliza Rozenblum or Ralph Jack.
+
+**Georges Rey, searched.** The BnF holds twenty records under his name: he
+was a collector of Tahitian music, recorded with the Tamarii Tahiti
+ensemble from 1936, and wrote and arranged the Tahitian songs of French
+films. The full record of Pathé PA 1234 (`SRC0625`) gives the recording's
+language as Tahitian and lists him three times — composer (relator 230),
+singer (520) and performer (590) — beside Kaper and Jurmann as composers of
+*O chant d’amour de Tahiti !*. The disc therefore carries a Tahitian version
+of *Love Song of Tahiti*, which the dataset has no record of: not the
+English song it is linked to, nor the French *Chanson d’amour de Tahiti*.
+Rey's “composer” credit, beside the song's two composers, is most likely
+for the Tahitian adaptation; the catalogue does not say.
