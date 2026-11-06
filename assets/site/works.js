@@ -12,9 +12,9 @@ import {
   periodValues,
   renderError,
   sortKey,
-} from "./core.js?v=8b35e017f3";
-import { createCatalogueFilters } from "./catalogue-filters.js?v=8b35e017f3";
-import { renderWorkIndexRow } from "./catalogue-results.js?v=8b35e017f3";
+} from "./core.js?v=f6c7ab33a7";
+import { createCatalogueFilters } from "./catalogue-filters.js?v=f6c7ab33a7";
+import { renderWorkIndexRow } from "./catalogue-results.js?v=f6c7ab33a7";
 
 mountSiteChrome("works");
 

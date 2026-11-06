@@ -958,7 +958,10 @@ export function mountSiteChrome(activePage) {
         <div>
           <p class="site-footer__heading">Editorial scope</p>
           <p>Attributions and uncertain evidence are explicitly qualified. Media rights statements appear with each published item.</p>
-          <a href="data/public/v1/manifest.json">Public data manifest</a>
+          <ul class="plain-list">
+            <li><a href="cite.html">Cite and reuse</a></li>
+            <li><a href="data/public/v1/manifest.json">Public data manifest</a></li>
+          </ul>
         </div>
       </div>
       <div class="shell site-footer__bottom">

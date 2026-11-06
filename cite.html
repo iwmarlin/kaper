@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://*.tile.openstreetmap.org; media-src 'self'; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="How to cite the Bronisław Kaper archive and its records, download its data, and read the rights and certainty marks on each record.">
+  <meta name="theme-color" content="#152c33">
+  <meta property="og:title" content="Cite and reuse — Bronisław Kaper, 1902–1939">
+  <meta property="og:description" content="How to cite the archive and its records, download the data, and read its rights and certainty marks.">
+  <link rel="canonical" href="https://iwmarlin.github.io/kaper/cite.html">
+  <link rel="preload" href="assets/fonts/kaper-sans.woff2?v=f6c7ab33a7" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/kaper-serif.woff2?v=f6c7ab33a7" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/site/styles.css?v=f6c7ab33a7">
+  <title>Cite and reuse — Bronisław Kaper, 1902–1939</title>
+  <!-- social-image:start -->
+  <meta property="og:image" content="https://iwmarlin.github.io/kaper/assets/generated/responsive/kaper-mature-f345031f5ef7/640.webp">
+  <meta property="og:image:alt" content="Portrait of Bronisław Kaper cropped from his 1936 Declaration of Intention.">
+  <meta property="og:image:type" content="image/webp">
+  <meta property="og:image:width" content="640">
+  <meta property="og:image:height" content="708">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:image" content="https://iwmarlin.github.io/kaper/assets/generated/responsive/kaper-mature-f345031f5ef7/640.webp">
+  <meta name="twitter:image:alt" content="Portrait of Bronisław Kaper cropped from his 1936 Declaration of Intention.">
+<!-- social-image:end -->
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+</head>
+<body class="guide-page">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="site-header" data-site-header></header>
+  <main id="main-content">
+    <section class="page-hero page-hero--compact">
+      <div class="shell page-hero__grid">
+        <div>
+          <p class="eyebrow">Using the archive</p>
+          <h1>Cite and reuse</h1>
+          <p class="lead">How to cite the archive and its records, how to download the data behind them, and what the rights and certainty marks on each record mean.</p>
+        </div>
+        <div class="scope-note">The archive is a guide to documents held elsewhere. Cite those documents for the facts, and the archive for what it adds to them.</div>
+      </div>
+    </section>
+
+    <section class="section guide">
+      <div class="shell guide__body">
+        <h2 id="cite-the-archive">Cite the archive</h2>
+        <p class="guide__citation">Bronisław Kaper: A Source-Based Archive, 1902–1939. Bronisław Kaper Research Archive. https://iwmarlin.github.io/kaper/. Accessed [date].</p>
+        <p>If you work from the data rather than the pages, add the data version: the date given as <code>publicDataUpdatedAt</code> in the <a href="data/public/v1/manifest.json">manifest</a>.</p>
+
+        <h2 id="cite-a-record">Cite a record</h2>
+        <p>Every record has a permanent identifier, shown above its title — <code>P009</code> for a person, <code>W-S229</code> for a work, <code>SRC0742</code> for a source — and a permanent address built from it.</p>
+        <p class="guide__citation">“O chant d’amour de Tahiti !” (W-S229). In Bronisław Kaper: A Source-Based Archive, 1902–1939. https://iwmarlin.github.io/kaper/records/work/W-S229/. Accessed [date].</p>
+        <p>Identifiers are never reused. When two records are merged, the retired address leads to the one that remains. A printed record page ends with its own address.</p>
+
+        <h2 id="cite-the-evidence">Cite the evidence, not only the archive</h2>
+        <p>For a fact — a date, a credit, a registration — cite the document that states it. Each source record gives a full citation and, where one exists, a link to the holding institution’s copy. Cite the archive for what it adds: an identification, a comparison of sources, a note that weighs them.</p>
+
+        <h2 id="download-the-data">Download the data</h2>
+        <p>Everything the pages show comes from fourteen JSON tables in <a href="data/public/v1/manifest.json"><code>data/public/v1/</code></a>. The manifest lists every file with its size and SHA-256 checksum, the date the data last changed, and the rules of the export.</p>
+        <dl class="guide__list">
+          <div><dt>Works</dt><dd><a href="data/public/v1/works.json">works.json</a>, with the details of each kind in <a href="data/public/v1/songs.json">songs.json</a>, <a href="data/public/v1/films.json">films.json</a> and <a href="data/public/v1/other-works.json">other-works.json</a>; relations between works, such as language versions and songs used in films, in <a href="data/public/v1/work-relations.json">work-relations.json</a>; alternative titles in <a href="data/public/v1/title-variants.json">title-variants.json</a></dd></div>
+          <div><dt>People and organizations</dt><dd><a href="data/public/v1/people.json">people.json</a>, <a href="data/public/v1/person-name-variants.json">person-name-variants.json</a>, <a href="data/public/v1/organizations.json">organizations.json</a></dd></div>
+          <div><dt>Credits</dt><dd><a href="data/public/v1/contributions.json">contributions.json</a> — each credit joins a work to a person or an organization, in a role, and names the sources behind it</dd></div>
+          <div><dt>Evidence</dt><dd><a href="data/public/v1/sources.json">sources.json</a> and <a href="data/public/v1/media.json">media.json</a></dd></div>
+          <div><dt>Time and place</dt><dd><a href="data/public/v1/timeline-events.json">timeline-events.json</a> and <a href="data/public/v1/places.json">places.json</a></dd></div>
+        </dl>
+        <p>Records refer to one another by identifier, and every link is kept in both directions.</p>
+        <p><strong>Licence.</strong> No licence for reusing the data or the editorial text has been published yet. Quotation with citation is welcome; for anything beyond that, please <a href="https://github.com/iwmarlin/kaper/issues">ask</a>.</p>
+
+        <h2 id="rights">Rights on images and sound</h2>
+        <p>Each media record states its rights, with a note on how they were assessed. The statement describes the archive’s own use of the item; it does not give you permission to reuse it. For that, ask the rights holder named in the credit.</p>
+        <dl class="guide__list">
+          <div><dt>Public domain</dt><dd>Out of copyright, as the rights note explains.</dd></div>
+          <div><dt>Open licence</dt><dd>Published under a licence that permits reuse, named in the credit.</dd></div>
+          <div><dt>Reuse under provider terms</dt><dd>The holding institution allows reuse on its own terms, linked from the record.</dd></div>
+          <div><dt>Permission granted</dt><dd>Reproduced here by permission of the rights holder; that permission does not extend to you.</dd></div>
+          <div><dt>Own work</dt><dd>Made for the archive.</dd></div>
+          <div><dt>Copyright undetermined</dt><dd>The status could not be established. A reduced copy is shown for identification only.</dd></div>
+          <div><dt>Restricted use</dt><dd>In copyright or not cleared. A reduced copy is shown for scholarly identification only.</dd></div>
+          <div><dt>External content · not hosted</dt><dd>The archive holds no copy and links to the item where it is published.</dd></div>
+          <div><dt>Mixed rights</dt><dd>The parts of a gallery differ, and each part says which applies.</dd></div>
+        </dl>
+
+        <h2 id="certainty">Certainty and reliability</h2>
+        <dl class="guide__list">
+          <div><dt>Confirmed</dt><dd>A source states the credit, date or relation.</dd></div>
+          <div><dt>Probable</dt><dd>The evidence points to it but does not settle it, and the note says why.</dd></div>
+          <div><dt>High, medium, low</dt><dd>The weight given to a source. High for documents of the time, official registers, national-library and archival catalogues and established reference databases; medium for later compilations, general reference works and copies whose description cannot be checked against the object; low where the details rest on an uploader’s word alone.</dd></div>
+        </dl>
+        <p>A work is dated by the earliest year it is documented: a dated manuscript, a copyright registration or register entry, a publication, a recording session, or the release of the film it was used in. A film is dated by its first release.</p>
+
+        <h2 id="corrections">Report a correction</h2>
+        <p>If you find an error, or know a source the archive has missed, please <a href="https://github.com/iwmarlin/kaper/issues">open an issue</a> in the archive’s repository. Name the record by its identifier and the source that shows the correction. A GitHub account is needed.</p>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer" data-site-footer></footer>
+  <script type="module" src="assets/site/static-page.js?v=f6c7ab33a7"></script>
+</body>
+</html>
