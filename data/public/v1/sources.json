@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 867,
+  "count": 868,
   "records": [
     {
       "id": "SRC0001",
@@ -1497,7 +1497,8 @@
         "ORG062"
       ],
       "workIds": [
-        "W-S112"
+        "W-S112",
+        "W-O010"
       ],
       "timelineEventIds": [
         "TE0029"
@@ -1518,6 +1519,12 @@
           "scheme": "ark",
           "value": "ark:/12148/cb43070920f"
         }
+      ],
+      "workRelationIds": [
+        "REL0073"
+      ],
+      "otherWorkIds": [
+        "O010"
       ]
     },
     {
@@ -1541,7 +1548,8 @@
         "ORG062"
       ],
       "workIds": [
-        "W-S113"
+        "W-S113",
+        "W-O010"
       ],
       "timelineEventIds": [
         "TE0029"
@@ -1566,6 +1574,12 @@
       ],
       "personIds": [
         "P051"
+      ],
+      "workRelationIds": [
+        "REL0074"
+      ],
+      "otherWorkIds": [
+        "O010"
       ]
     },
     {
@@ -1589,7 +1603,8 @@
         "ORG062"
       ],
       "workIds": [
-        "W-S114"
+        "W-S114",
+        "W-O010"
       ],
       "timelineEventIds": [
         "TE0029"
@@ -1610,6 +1625,12 @@
           "scheme": "ark",
           "value": "ark:/12148/cb43070911g"
         }
+      ],
+      "workRelationIds": [
+        "REL0075"
+      ],
+      "otherWorkIds": [
+        "O010"
       ]
     },
     {
@@ -1633,7 +1654,8 @@
         "ORG062"
       ],
       "workIds": [
-        "W-S115"
+        "W-S115",
+        "W-O010"
       ],
       "timelineEventIds": [
         "TE0029"
@@ -1658,6 +1680,12 @@
       ],
       "personIds": [
         "P051"
+      ],
+      "workRelationIds": [
+        "REL0076"
+      ],
+      "otherWorkIds": [
+        "O010"
       ]
     },
     {
@@ -11418,7 +11446,9 @@
       "nameVariantIds": [
         "PNV0019"
       ],
-      "primaryUrl": "https://portal.gema.de/app/repertoiresuche/werksuche"
+      "primaryUrl": "https://portal.gema.de/app/repertoiresuche/werksuche",
+      "researchNote": "Read in the GEMA repertoire search on 7 July 2026. The portal gives no stable link to an individual entry, so the link opens the search, where the work number in the citation finds it.",
+      "researchNoteType": "verification_note"
     },
     {
       "id": "SRC0293",
@@ -11456,7 +11486,9 @@
       "nameVariantIds": [
         "PNV0020"
       ],
-      "primaryUrl": "https://portal.gema.de/app/repertoiresuche/werksuche"
+      "primaryUrl": "https://portal.gema.de/app/repertoiresuche/werksuche",
+      "researchNote": "Read in the GEMA repertoire search on 7 July 2026. The portal gives no stable link to an individual entry, so the link opens the search, where the work number in the citation finds it.",
+      "researchNoteType": "verification_note"
     },
     {
       "id": "SRC0294",
@@ -11492,7 +11524,9 @@
       "nameVariantIds": [
         "PNV0020"
       ],
-      "primaryUrl": "https://portal.gema.de/app/repertoiresuche/werksuche"
+      "primaryUrl": "https://portal.gema.de/app/repertoiresuche/werksuche",
+      "researchNote": "Read in the GEMA repertoire search on 7 July 2026. The portal gives no stable link to an individual entry, so the link opens the search, where the work number in the citation finds it.",
+      "researchNoteType": "verification_note"
     },
     {
       "id": "SRC0295",
@@ -11527,7 +11561,9 @@
       "nameVariantIds": [
         "PNV0020"
       ],
-      "primaryUrl": "https://portal.gema.de/app/repertoiresuche/werksuche"
+      "primaryUrl": "https://portal.gema.de/app/repertoiresuche/werksuche",
+      "researchNote": "Read in the GEMA repertoire search on 7 July 2026. The portal gives no stable link to an individual entry, so the link opens the search, where the work number in the citation finds it.",
+      "researchNoteType": "verification_note"
     },
     {
       "id": "SRC0296",
@@ -30643,7 +30679,7 @@
     {
       "id": "SRC0864",
       "shortCitation": "Krasnoborski, “An Interview with Bronislau Kaper,” Soundtrack Magazine (1975)",
-      "fullCitation": "William F. Krasnoborski. “An Interview with Bronislau Kaper.” Soundtrack Magazine, nos. 2–3 (1975); reproduced in Cinescores Center.",
+      "fullCitation": "William F. Krasnoborski. “An Interview with Bronislau Kaper.” Soundtrack Magazine, nos. 2–3 (1975); reproduced in Cinescores Center by permission of the magazine’s editor, Luc Van de Ven.",
       "sourceType": "periodical_article",
       "title": "An Interview with Bronislau Kaper",
       "creator": "William F. Krasnoborski; Bronisław Kaper",
@@ -30661,7 +30697,11 @@
       "timelineEventIds": [
         "TE0043"
       ],
-      "primaryUrl": "https://cinescores.dudaone.com/an-interview-with-bronislau-kaper"
+      "primaryUrl": "https://cinescores.dudaone.com/an-interview-with-bronislau-kaper",
+      "repository": "Cinescores Center",
+      "organizationIds": [
+        "ORG243"
+      ]
     },
     {
       "id": "SRC0865",
@@ -33927,6 +33967,51 @@
       "primaryUrl": "https://www.songhall.org/profiles/harold-adamson",
       "researchNote": "The profile shows the same photograph of Adamson, seated at a desk with a pen in hand, with the background cut away. The reproduction used here keeps the original background, so it was not taken from this copy; the profile corroborates who the photograph shows, not where the reproduction came from.",
       "researchNoteType": "evidence_note"
+    },
+    {
+      "id": "SRC0964",
+      "shortCitation": "BN, Columbia DM 1624 — “Może tak, może nie” (Terné)",
+      "fullCitation": "“Może tak, może nie = Gib nur Acht, über Nacht kommt die Liebe : boston / F. Rotter, Kaper ; Oldlen. Pokoik na Hożej : piosenka / W. Dan ; Oldlen.” Zofia Terné, vocal, with the Columbia orchestra. [Warsaw]: Columbia, [ca 1935]. One 78 rpm disc, 25 cm, publisher’s number DM 1624. Biblioteka Narodowa, Magazyn Zbiorów Dźwiękowych i Audiowizualnych, shelfmarks Fon.K.290 and Fon.II.17.599 A; MMS ID 991043120839705066, OCLC 947182714. Language given as Polish. The catalogue enters Julian Tuwim as author of the words (“Sł.”), printed on the label as Oldlen, and Kaper and Rotter as composers of the song and of its German original.",
+      "sourceType": "sound_recording_catalogue",
+      "title": "Może tak, może nie / Pokoik na Hożej — Columbia DM 1624",
+      "creator": "Zofia Terné, vocal; Columbia orchestra",
+      "repository": "Biblioteka Narodowa",
+      "publication": "Columbia",
+      "date": "1935",
+      "dateRole": "issue",
+      "dateQualifier": "approximate",
+      "dateDisplay": "[ca 1935]",
+      "accessDate": "2026-11-06",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "slug": "src0964-bn-columbia-dm-1624-moze-tak-moze-nie-terne",
+      "personIds": [
+        "P009",
+        "P020",
+        "P159"
+      ],
+      "primaryUrl": "https://katalogi.bn.org.pl/discovery/fulldisplay?docid=alma991043120839705066&vid=48OMNIS_NLOP:48OMNIS_NLOP",
+      "workIds": [
+        "W-S216"
+      ],
+      "songIds": [
+        "S216"
+      ],
+      "contributionIds": [
+        "CON-S216-C-P009",
+        "CON-S216-L-P159"
+      ],
+      "workRelationIds": [
+        "REL0199"
+      ],
+      "organizationIds": [
+        "ORG063"
+      ],
+      "nameVariantIds": [
+        "PNV0073"
+      ],
+      "researchNote": "The Biblioteka Narodowa publication statement gives [ca 1935], where Stare Melodie gives 1932 for the same disc. Neither states whether its year dates the recording or the issue, so the two are kept apart and neither is substituted for the other.",
+      "researchNoteType": "date_assessment"
     }
   ],
   "recordCount": null

@@ -71,7 +71,9 @@ class SourceApparatusTests(unittest.TestCase):
                 continue
             if source.get("accessDate"):
                 expected.add(source["id"])
-            if "<dt>Accessed</dt>" in page.read_text(encoding="utf-8"):
+            linked = source.get("primaryUrl") or source.get("accessUrl") or source.get("additionalLinks")
+            label = "Accessed" if linked else "Consulted"
+            if f"<dt>{label}</dt>" in page.read_text(encoding="utf-8"):
                 shown.add(source["id"])
         self.assertTrue(expected, "the fixture must contain online sources")
         self.assertEqual(shown, expected)

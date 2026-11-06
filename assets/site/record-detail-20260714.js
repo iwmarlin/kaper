@@ -34,8 +34,8 @@ import {
   sourceTypePluralLabel,
   typeBadge,
   updateMeta,
-} from "./core.js?v=c19384212e";
-import { RECORD_INDEXES, recordIndexReturn } from "./catalogue-filters.js?v=c19384212e";
+} from "./core.js?v=e501c4b5a5";
+import { RECORD_INDEXES, recordIndexReturn } from "./catalogue-filters.js?v=e501c4b5a5";
 
 // A canonical record route arrives prerendered and renders no image in the
 // browser, so the image map is loaded only where a record is actually rendered:
@@ -1714,9 +1714,12 @@ function sourceIdentifierFacts(source) {
 // Access dates are structured apparatus. Citations identify the source and its
 // access route without repeating the date, so every available accessDate is
 // presented consistently in the facts list.
+// A Source with no link was read in a copy — a research reproduction, a
+// finding aid — on that date, and there is nothing online to have accessed.
 function sourceAccessFact(source) {
   if (!source.accessDate) return "";
-  return fact("Accessed", formatDate(source.accessDate));
+  const linked = source.primaryUrl || source.accessUrl || (source.additionalLinks || []).length;
+  return fact(linked ? "Accessed" : "Consulted", formatDate(source.accessDate));
 }
 
 // A source that was born on the site that serves it is published and held by
@@ -2082,7 +2085,7 @@ async function bootstrapRecordPage() {
     }
     const [data, { IMAGE_DERIVATIVES }] = await Promise.all([
       loadRecordPayload(requestedType, requestedId),
-      import("./image-derivatives.js?v=c19384212e"),
+      import("./image-derivatives.js?v=e501c4b5a5"),
     ]);
     registerImageDerivatives(IMAGE_DERIVATIVES);
     const { config, view } = renderRecordView(requestedType, requestedId, data);

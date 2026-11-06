@@ -33,7 +33,7 @@ its own offset, read once from one known page. The Internet Archive addresses
 a scan page with `/page/nNNN`, and each entry can be found through the item's
 full-text search. GEMA's portal has no permanent link to a work; the work
 number in the citation is already the most a reader can be given, and the
-record could say so.
+record could say so. *Done:* all six now say so in their verification note.
 
 **Copyright catalogue: all 89 now open on their page.** Each entry was
 found through the volume's full-text search and accepted only when two
@@ -175,6 +175,34 @@ W-S166 *Rhumba* and W-S167 *Tahiti*. The other four are W-O010 *Parade de
 France*, W-S183 *Diese Melodie sing ich nur für Sie*, W-S216 *Może tak, może
 nie* and W-S218 *San Francisco*, the last on a YouTube upload.
 
+**Of the nine, two now cite a national-library record, and one turned up a
+conflict.**
+
+- W-S216 *Może tak, może nie* cites the Biblioteka Narodowa record of the
+  same Columbia DM 1624 disc (`SRC0964`), which enters Tuwim for the words
+  — printed on the label as Oldlen — and Kaper for the music. It dates the
+  disc *[ca 1935]* where Stare Melodie gives 1932, and the note keeps the two
+  apart.
+- W-O010 *Parade de France* was never as thin as it looked. Each of its four
+  songs has its own BnF notice, rated `high`, that names the revue, but the
+  revue and the four song-to-revue relations cited only the collective
+  notice. They now cite the song notices too. The revue's own credits still
+  rest on the collective notice, since the song notices do not say who wrote
+  the revue's music as a whole.
+- W-S218, the Polish *San Francisco*, credits the words to Emanuel Schlechter
+  on a YouTube upload alone, and its version relation is marked `confirmed`.
+  The Biblioteka Narodowa knows two Odeon pressings of a Polish *San
+  Francisco*, both with words by **Zenon Friedwald** and sung by Albert
+  Harris, and no Syrena issue and no Schlechter text. The two may be
+  different texts; the upload cannot be listened to from here. The version
+  relation, the last part still marked `confirmed`, is now `probable` like
+  the credits, and the Schlechter credit and the relation say why.
+- The other six found nothing better. *Hi-do-ho* and *Love Needs No
+  Inspiration* are not in the copyright catalogues for 1935 or 1936, nor
+  *Magic*, *Rhumba* and *Tahiti* in 1937, which fits the Jurmann
+  catalogue's account of them as songs for films; *Diese Melodie sing ich
+  nur für Sie* is not in Hofmeister for 1931 or 1932.
+
 `P206` Serge Veber has no `sourceIds` of his own, and that is consistent
 rather than missing. His one credit, the film lyrics of *Ninon*, rests on
 `SRC0298` and `SRC0584`, and so do the credits of his co-authors Henri-Georges
@@ -225,10 +253,15 @@ The earlier count looked at `primaryUrl` and `accessUrl` only;
 - **No repository.** `SRC0864`, Krasnoborski's 1975 interview reproduced on
   the Cinescores Center site, names none. The other three Sources without one
   are the Buxbaum book, which now carries its ISBN, and the two forthcoming
-  Lindstedt articles.
+  Lindstedt articles. *Done:* the site is now its repository, as a new
+  Organization record, and the citation adds what the page itself says,
+  that the text is reproduced by permission of the magazine's editor, Luc
+  Van de Ven.
 - **An access date with nothing to access.** `SRC0789`, the *Cocktails* cover
   examined in a research reproduction, has no link but an `accessDate`, which
-  the card prints as *Accessed*.
+  the card prints as *Accessed*. *Done:* the date is when the reproduction
+  was read, so it stays, and a Source with no link at all now prints it as
+  *Consulted*.
 
 ## Checked and found sound
 
