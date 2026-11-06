@@ -33,8 +33,8 @@ import {
   sourceTypePluralLabel,
   typeBadge,
   updateMeta,
-} from "./core.js?v=6658d19bfb";
-import { RECORD_INDEXES, recordIndexReturn } from "./catalogue-filters.js?v=6658d19bfb";
+} from "./core.js?v=e121093b28";
+import { RECORD_INDEXES, recordIndexReturn } from "./catalogue-filters.js?v=e121093b28";
 
 // A canonical record route arrives prerendered and renders no image in the
 // browser, so the image map is loaded only where a record is actually rendered:
@@ -1269,7 +1269,9 @@ function renderPerson(person, data, indexes) {
   const portrait = data.media.find((item) => item.assetPath && item.category === "portrait");
   const portraitSources = portrait ? related(portrait.sourceIds, indexes.sources) : [];
   const dateSourceIds = new Set(dateSources.map((source) => source.id));
-  const portraitSourceIds = new Set(portraitSources.map((source) => source.id));
+  // The portrait's disclosure links only its first Source. Any further Source
+  // behind the portrait stays in the person's own list, or no link would reach it.
+  const portraitSourceIds = new Set(portraitSources.slice(0, 1).map((source) => source.id));
   const directSources = related(person.sourceIds, indexes.sources);
   const authoritySources = directSources
     .filter((source) => (
@@ -2079,7 +2081,7 @@ async function bootstrapRecordPage() {
     }
     const [data, { IMAGE_DERIVATIVES }] = await Promise.all([
       loadRecordPayload(requestedType, requestedId),
-      import("./image-derivatives.js?v=6658d19bfb"),
+      import("./image-derivatives.js?v=e121093b28"),
     ]);
     registerImageDerivatives(IMAGE_DERIVATIVES);
     const { config, view } = renderRecordView(requestedType, requestedId, data);

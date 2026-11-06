@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 233,
+  "count": 234,
   "records": [
     {
       "id": "ORG001",
@@ -2365,7 +2365,8 @@
         "SRC0935",
         "SRC0937",
         "SRC0950",
-        "SRC0951"
+        "SRC0951",
+        "SRC0960"
       ],
       "authorities": [
         {
@@ -2588,7 +2589,8 @@
         "SRC0940",
         "SRC0941",
         "SRC0942",
-        "SRC0943"
+        "SRC0943",
+        "SRC0961"
       ],
       "authorizedNameSource": "LCNAF",
       "authorities": [
@@ -2806,7 +2808,8 @@
         "SRC0887",
         "SRC0893",
         "SRC0927",
-        "SRC0929"
+        "SRC0929",
+        "SRC0962"
       ],
       "authorizedNameSource": "LCNAF",
       "authorities": [
@@ -3721,7 +3724,8 @@
         "SRC0653",
         "SRC0690",
         "SRC0703",
-        "SRC0929"
+        "SRC0929",
+        "SRC0962"
       ],
       "authorizedNameSource": "LCNAF",
       "authorities": [
@@ -6178,7 +6182,8 @@
         "W-F057"
       ],
       "sourceIds": [
-        "SRC0889"
+        "SRC0889",
+        "SRC0962"
       ],
       "authorities": [
         {
@@ -7777,6 +7782,27 @@
       "sourceIds": [
         "SRC0610",
         "SRC0611"
+      ]
+    },
+    {
+      "id": "ORG242",
+      "displayName": "Songwriters Hall of Fame",
+      "authorizedName": "Songwriters Hall of Fame",
+      "types": [
+        "database"
+      ],
+      "country": "United States",
+      "slug": "songwriters-hall-of-fame",
+      "nameVariants": "SHOF",
+      "authorizedNameSource": "LCNAF",
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/no2013065155"
+        }
+      ],
+      "sourceIds": [
+        "SRC0963"
       ]
     }
   ]

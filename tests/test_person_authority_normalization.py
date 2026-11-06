@@ -96,10 +96,14 @@ class PersonAuthorityNormalizationTests(unittest.TestCase):
             "https://data.bnf.fr/fr/ark:/12148/cb148356206",
             authority_urls(self.people_by_id["P006"]),
         )
-        self.assertIn(
-            "https://data.bnf.fr/fr/ark:/12148/cb14785637s",
-            authority_urls(self.people_by_id["P031"]),
-        )
+        # Henri Varna now cites the BnF catalogue record itself (SRC0960), the
+        # one Source for his birth name, so his badge links that record. What
+        # must hold is that the one ARK yields one BnF badge, not two.
+        varna_bnf = [
+            url for url in authority_urls(self.people_by_id["P031"])
+            if "bnf.fr" in url
+        ]
+        self.assertEqual(varna_bnf, ["https://catalogue.bnf.fr/ark:/12148/cb14785637s"])
 
     def test_work_authority_is_not_presented_as_person_identity_evidence(self):
         source = self.sources_by_id["SRC0532"]

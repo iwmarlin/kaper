@@ -122,6 +122,34 @@ Wikipedia article is rated `high`. Nine records do:
 - **Two name variants**: `PNV0044` Henri Eugène Vantard, the birth name of
   Henri Varna, and `PNV0065` Eddie Saxon, a pseudonym of Otto Dobrindt.
 
+**Six of the nine now have a better Source beside the article.**
+
+- `ORG167` Gaumont British and both F057 credits cite the *Kinematograph Year
+  Book 1935* (`SRC0962`), whose page 302 lists the studio's productions with
+  *My Song for You* and its director Maurice Elvey. The scan is linked at its
+  page on the Internet Archive.
+- `PNV0044` cites the BnF catalogue record of Henri Varna (`SRC0960`), which
+  gives the birth name Vantard. The record was removed once, as `SRC0590`,
+  because it only repeated the BnF badge; it now carries the name variant,
+  which the badge cannot, and the badge links the catalogue record it cites.
+- `PNV0064` and `PNV0065` cite the Library of Congress record of Otto
+  Dobrindt (`SRC0961`). It does not list *Eddie Saxon* among its own
+  references; it cites a 2008 BnF catalogue entry that gave the name as one,
+  and the current BnF record no longer does, so the research note says so
+  rather than claim more.
+- `M254` Harold Adamson cites his profile at the Songwriters Hall of Fame
+  (`SRC0963`, a new repository `ORG242`), which shows the same photograph. Its
+  copy has the background cut away and ours does not, so it is not where the
+  reproduction came from, and the note says that too. A portrait with two
+  Sources had hidden the second one: the disclosure under the picture links
+  only the first, and the person's own list left out every Source of the
+  portrait. The list now leaves out only the one the disclosure shows.
+
+The lobby cards `M038` *San Francisco* and `M076` *Three Smart Girls* stay
+on Wikipedia. Where the reproductions came from is not recorded, and the
+Wikimedia file pages that would say were refused to this environment
+(HTTP 429). A reader with a browser can follow the article to the file page.
+
 Nine Works rest only on sources rated `medium`. Five rest on the Walter
 Jurmann society's website, alone or with an IMDb soundtrack entry:
 W-S127 *Hi-do-ho*, W-S128 *Love Needs No Inspiration*, W-S165 *Magic*,
@@ -205,7 +233,9 @@ The earlier count looked at `primaryUrl` and `accessUrl` only;
    (finding 1). ~~Copyright catalogue~~ done for 63, with 22 left that no
    two signals agree on. ~~Hofmeister~~ done: all 57 moved to the
    Internet Archive scan, with ANNO kept as alternate access.
-4. Replace or reinforce the Wikipedia-only Sources for Gaumont British, its
-   two F057 credits, the three Media and the two name variants (finding 3).
+4. ~~Replace or reinforce the Wikipedia-only Sources for Gaumont British, its
+   two F057 credits, the three Media and the two name variants (finding 3).~~
+   Done for all but the two lobby cards, whose provenance could not be
+   reached from here.
 5. Check the nine YouTube 401s in a browser (finding 2).
 6. Link or reword the record identifiers in research notes (finding 5).
