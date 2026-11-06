@@ -1,0 +1,75 @@
+name: Deploy to GitHub Pages
+
+# GitHub Pages used to deploy straight from the main branch. That copies the
+# whole repository — tests, scripts and docs included — and gives up after ten
+# minutes, and with some 5,700 files a deployment began to time out on every
+# other merge. This workflow publishes only the site, gives the deployment
+# thirty minutes, and runs only after the quality gate has passed on the same
+# commit, so a red main is never published.
+#
+# It takes effect once Settings → Pages → Build and deployment → Source is set
+# to “GitHub Actions”.
+on:
+  workflow_run:
+    workflows: ["Quality gate"]
+    types: [completed]
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Stage the published site
+    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - name: Check out the validated commit
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          ref: ${{ github.event.workflow_run.head_sha || github.sha }}
+          persist-credentials: false
+
+      - name: Copy the site, without the build and research tooling
+        shell: bash
+        run: |
+          mkdir -p "$RUNNER_TEMP/site"
+          rsync -a \
+            --exclude '/.git/' --exclude '/.github/' --exclude '/.claude/' \
+            --exclude '/tests/' --exclude '/scripts/' --exclude '/docs/' \
+            --exclude '/README.md' --exclude '/requirements-site.txt' \
+            --exclude '/package.json' --exclude '/netlify.toml' \
+            --exclude '/.gitignore' --exclude '/.gitattributes' \
+            ./ "$RUNNER_TEMP/site/"
+          echo "Files published: $(find "$RUNNER_TEMP/site" -type f | wc -l)"
+          test -f "$RUNNER_TEMP/site/index.html"
+          test -f "$RUNNER_TEMP/site/404.html"
+
+      - name: Upload the site
+        uses: actions/upload-pages-artifact@7b1f4a764d45c48632c6b24a0339c27f5614fb0b # v4
+        with:
+          path: ${{ runner.temp }}/site
+
+  deploy:
+    name: Deploy
+    needs: build
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e # v4.0.5
+        with:
+          timeout: 1800000
