@@ -12,12 +12,17 @@ release. Netlify previews are used for editorial acceptance before merging.
 
 ### GitHub Pages
 
-- Source: deploy from a branch
-- Branch: `main`
-- Folder: `/ (root)`
+- Source: GitHub Actions
 
-No Actions workflow or build artifact is required. `.nojekyll` keeps publication
-independent of Jekyll processing.
+`.github/workflows/pages.yml` publishes the site after the quality gate has
+passed on `main`, from the same commit. It stages the site without `tests/`,
+`scripts/`, `docs/` and the repository's own tooling files, uploads it as a
+Pages artifact and gives the deployment thirty minutes. It can also be run by
+hand from the Actions tab (*Deploy to GitHub Pages*, *Run workflow*).
+
+Deploying straight from the branch was the earlier setting. It copied the
+whole repository and gave up after ten minutes, and with some 5,700 files it
+began to time out on every other merge in November 2026.
 
 ### Netlify
 
@@ -44,7 +49,8 @@ cache rules. It does not redirect or change the existing production domain.
 7. Mark the pull request ready only after editorial acceptance.
 8. Merge to `main` explicitly. Do not force-push and do not deploy by editing
    `main` locally.
-9. Verify GitHub Pages and Netlify production after their deployments complete.
+9. Verify GitHub Pages and Netlify production after their deployments complete;
+   the Pages deployment starts only once the quality gate on `main` is green.
 
 ## Pre-release commands
 
