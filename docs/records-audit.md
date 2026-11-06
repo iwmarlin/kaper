@@ -178,7 +178,8 @@ relation, so it stays as it is unless a contemporary source says so.
    `confirmed` now rests on a Source rated `high`, which
    `tests/test_records_audit_fixes.py` holds.
 4. ~~Add *pianist* to Kaper's roles (finding 5).~~ Done.
-5. Decide the year convention and look again at *The One I Love* (finding 4).
+5. ~~Decide the year convention and look again at *The One I Love* (finding 4).~~
+   Done: the rule, and the seventeen songs it moved, are in `docs/work-years.md`.
 6. Decide Georges Rey's credit and which Work Pathé PA 1234 carries
    (finding 5).
 7. Search registers for the nine people without one (finding 5).
