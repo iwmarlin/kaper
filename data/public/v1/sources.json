@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 873,
+  "count": 875,
   "records": [
     {
       "id": "SRC0001",
@@ -34240,6 +34240,67 @@
           "scheme": "ark",
           "value": "ark:/12148/cb147667534"
         }
+      ]
+    },
+    {
+      "id": "SRC0970",
+      "shortCitation": "BnF, Konstantin Landau — authority record FRBNF16287372",
+      "fullCitation": "Bibliothèque nationale de France. “Lândau, Konstantin Ûlianovič (1890–1969).” Authority record FRBNF16287372. Record modified 19 May 2013.",
+      "sourceType": "authority_record",
+      "title": "Konstantin Landau — BnF authority record",
+      "creator": "Bibliothèque nationale de France",
+      "repository": "Bibliothèque nationale de France (BnF)",
+      "publication": "Catalogue général de la BnF",
+      "dateRole": "record_update",
+      "dateQualifier": "confirmed",
+      "date": "2013-05-19",
+      "accessDate": "2026-11-07",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "slug": "src0970-bnf-konstantin-landau-authority-record",
+      "organizationIds": [
+        "ORG062"
+      ],
+      "personIds": [
+        "P011"
+      ],
+      "primaryUrl": "https://catalogue.bnf.fr/ark:/12148/cb16287372c",
+      "researchNote": "The record gives birth on 3 April 1890 in Saint Petersburg and death on 31 December 1969 at Hergenrath, Belgium, and describes him as a poet, stage and film director and collector of art and books, with Landau, Constantin as the French form of his name. It links him to the film Madame ne veut pas d’enfants, which identifies him as the director of that film. Consulted through the BnF SRU service and the catalogue page.",
+      "researchNoteType": "identity_assessment",
+      "authoritySubject": "person",
+      "identityRelation": "same",
+      "identifiers": [
+        {
+          "scheme": "ark",
+          "value": "ark:/12148/cb16287372c"
+        }
+      ]
+    },
+    {
+      "id": "SRC0971",
+      "shortCitation": "BN, “Gold, Henryk (1899–1977),” a0000001225672",
+      "fullCitation": "Biblioteka Narodowa. Deskryptory BN, personal descriptor “Gold, Henryk (1899–1977)”, identifier (PL)a0000001225672, control number p 2016297676.",
+      "sourceType": "authority_record",
+      "title": "BN authority record: Gold, Henryk",
+      "creator": "Biblioteka Narodowa",
+      "repository": "Biblioteka Narodowa (Deskryptory BN)",
+      "publication": "Deskryptory Biblioteki Narodowej",
+      "dateRole": "described_item",
+      "dateQualifier": "unknown",
+      "accessDate": "2026-11-07",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "slug": "src0971-bn-henryk-gold-authority-record",
+      "personIds": [
+        "P119"
+      ],
+      "primaryUrl": "https://dbn.bn.org.pl/descriptor-details/a0000001225672",
+      "researchNote": "The record gives 1899–1977 and describes him as a Polish violinist, conductor and composer of popular music, brother of Artur Gold, with Gold, H. and Gold, Henry as variants. The BnF record cb13796928z gives 1902 as the year of birth and 9 January 1977, with a question mark, as the date of death. Consulted through the BN data service at data.bn.org.pl.",
+      "researchNoteType": "date_assessment",
+      "authoritySubject": "person",
+      "identityRelation": "same",
+      "organizationIds": [
+        "ORG063"
       ]
     }
   ],

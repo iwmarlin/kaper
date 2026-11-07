@@ -14,6 +14,17 @@ Keep the inverted form, the punctuation and the diacritics of the register.
 Particles follow the register: BnF gives `Poligny, Serge de`, and that is what
 the field holds.
 
+Only the dates are stripped, because only the dates are held elsewhere. Every
+other qualifier the register adds is part of the heading and stays: a fuller
+form of the name, `Mayer, Louis B. (Louis Burt)`; a word that tells two people
+of the same name apart, `Gold, Henry (Composer)`; the `(Firm)` that LCNAF adds
+to a company. They are how the register distinguishes one name from another,
+and dropping them would turn a transcription into an editorial form.
+
+The same rules apply to organizations: the register of the body's own
+language area comes first, and its heading is transcribed as it stands, with
+its qualifiers.
+
 ## Precedence when registers disagree
 
 A VIAF cluster gathers the headings of every contributing library, and they do
