@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 67,
+  "count": 69,
   "records": [
     {
       "id": "TV0002",
@@ -94,22 +94,6 @@
       ]
     },
     {
-      "id": "TV0025",
-      "variantTitle": "Madame ne veut pas d’enfants",
-      "titleAsSource": "Madame ne veut pas d’enfants",
-      "variantType": "language_version",
-      "variantTypeAsSource": "language version",
-      "language": "fr",
-      "languageStatus": "inferred",
-      "certainty": "confirmed",
-      "workIds": [
-        "W-F017"
-      ],
-      "sourceIds": [
-        "SRC0373"
-      ]
-    },
-    {
       "id": "TV0032",
       "variantTitle": "Der Jazzbandit",
       "titleAsSource": "Der Jazzbandit",
@@ -161,22 +145,6 @@
       ]
     },
     {
-      "id": "TV0036",
-      "variantTitle": "L’homme qui ne sait pas dire non",
-      "titleAsSource": "L’homme qui ne sait pas dire non",
-      "variantType": "language_version",
-      "variantTypeAsSource": "language version",
-      "language": "fr",
-      "languageStatus": "inferred",
-      "certainty": "confirmed",
-      "workIds": [
-        "W-F022"
-      ],
-      "sourceIds": [
-        "SRC0373"
-      ]
-    },
-    {
       "id": "TV0039",
       "variantTitle": "Amor an der Leine",
       "titleAsSource": "Amor an der Leine",
@@ -191,22 +159,6 @@
       ],
       "sourceIds": [
         "SRC0134"
-      ]
-    },
-    {
-      "id": "TV0043",
-      "variantTitle": "Le chant du destin",
-      "titleAsSource": "Le chant du destin",
-      "variantType": "language_version",
-      "variantTypeAsSource": "language version",
-      "language": "fr",
-      "languageStatus": "inferred",
-      "certainty": "confirmed",
-      "workIds": [
-        "W-F026"
-      ],
-      "sourceIds": [
-        "SRC0373"
       ]
     },
     {
@@ -648,23 +600,6 @@
       ],
       "sourceIds": [
         "SRC0184"
-      ]
-    },
-    {
-      "id": "TV0284",
-      "variantTitle": "Tout pour l’amour",
-      "titleAsSource": "Tout pour l’amour",
-      "variantType": "language_version",
-      "variantTypeAsSource": "language version",
-      "language": "fr",
-      "languageStatus": "source",
-      "certainty": "confirmed",
-      "workIds": [
-        "W-F023"
-      ],
-      "sourceIds": [
-        "SRC0133",
-        "SRC0373"
       ]
     },
     {
@@ -1134,6 +1069,103 @@
       ],
       "sourceIds": [
         "SRC0141"
+      ]
+    },
+    {
+      "id": "TV0317",
+      "variantTitle": "O tym już wróble świergocą na dachu",
+      "titleAsSource": "O tym już wróble świergocą na dachu",
+      "variantType": "alternate_title",
+      "variantTypeAsSource": "title in a recording listing",
+      "language": "pl",
+      "languageStatus": "source",
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S022"
+      ],
+      "sourceIds": [
+        "SRC0767"
+      ]
+    },
+    {
+      "id": "TV0318",
+      "variantTitle": "O Madonna",
+      "titleAsSource": "O Madonna",
+      "variantType": "alternate_title",
+      "variantTypeAsSource": "registered work title",
+      "language": "de",
+      "languageStatus": "source",
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S078"
+      ],
+      "sourceIds": [
+        "SRC0297"
+      ]
+    },
+    {
+      "id": "TV0319",
+      "variantTitle": "Ich geh’ nie von dir fort",
+      "titleAsSource": "Ich geh’ nie von dir fort",
+      "variantType": "alternate_title",
+      "variantTypeAsSource": "title in a discography and a reissue",
+      "language": "de",
+      "languageStatus": "source",
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S092"
+      ],
+      "sourceIds": [
+        "SRC0792",
+        "SRC0793"
+      ]
+    },
+    {
+      "id": "TV0320",
+      "variantTitle": "Così, cosa",
+      "titleAsSource": "Così, cosa",
+      "variantType": "alternate_title",
+      "variantTypeAsSource": "title in an upload",
+      "language": "it",
+      "languageStatus": "source",
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S118"
+      ],
+      "sourceIds": [
+        "SRC0318"
+      ]
+    },
+    {
+      "id": "TV0321",
+      "variantTitle": "Swing, Mister Mendelssohn",
+      "titleAsSource": "Swing, Mister Mendelssohn",
+      "variantType": "alternate_title",
+      "variantTypeAsSource": "title in an upload",
+      "language": "en",
+      "languageStatus": "source",
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S157"
+      ],
+      "sourceIds": [
+        "SRC0321"
+      ]
+    },
+    {
+      "id": "TV0322",
+      "variantTitle": "Never Was There Such a Perfect Day",
+      "titleAsSource": "Never Was There Such a Perfect Day",
+      "variantType": "alternate_title",
+      "variantTypeAsSource": "title in the Walter Jurmann works catalogue",
+      "language": "en",
+      "languageStatus": "source",
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S156"
+      ],
+      "sourceIds": [
+        "SRC0306"
       ]
     }
   ]

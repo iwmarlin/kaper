@@ -6,6 +6,33 @@ documents print, is each work one work, are its versions, credits, film and
 dates consistent. Every candidate a script raised was read against its
 Sources before it was kept; those that did not survive are listed at the end.
 
+## Outcome
+
+Findings 1 to 4 were corrected on 7 November 2026, with
+`tests/test_works_audit_fixes.py` holding the corrections in place. Reading
+the Sources again for the fix overturned two of the findings below, and they
+were left as they were:
+
+- **`W-S001`** keeps *A zresztą niech pan do mnie zadzwoni*. The sheet
+  music itself (SRC0067) prints *do mnie*; the catalogue and the upload
+  shorten it.
+- **The two Polish versions** are correctly not linked to *Ein Lied für
+  Dich*. A version is linked to a film only when it was sung in it, and the
+  Polish words were not; they name the film's Polish release title only as
+  the source of the tune.
+
+One fix of finding 3 was also withdrawn: *Pourvu qu’on ait vingt ans* keeps
+Éditions Echo as printed with no publisher credit, following the earlier
+reviewed decision on recording-label publishers.
+
+Stronger evidence than the audit cited was found for two titles: the
+1930 sheet music (SRC0379) prints *O tem wróble świergocą...*, and the Robbins
+sheet music in the USC collection (SRC0535) prints *Cosi Cosa*. *Oh Madonna!* follows
+the 1933 Odeon label; the register's *O Madonna* is kept as a variant.
+
+Left open: *Sous le ciel de Venice* in Sieghardt, and the director of
+*Two Hearts in Wax Time*.
+
 ## 1. Eighteen titles are not the form any Source prints
 
 A Work's title should be the form its earliest primary Source prints, with
@@ -49,13 +76,13 @@ every other English title is in headline case — *Penny’s Return*,
 Sieghardt's work catalogue alone. *Venice* is the English name; a French
 title would read *Venise*. Worth checking in the book.
 
-The fix keeps each record's identifier and address; only the title, sort
-title and slug change. Where a Source does print the old form — the
+The fix keeps each record's identifier, address and slug; only the title
+and sort title change. Where a Source does print the old form — the
 upload's *Così, cosa* and *Swing, Mister Mendelssohn*, the discography's
 *Ich geh’ nie von dir fort* — it stays as a title variant, so a search for
-it still finds the work. The Walter Jurmann catalogue prints *Never Was There
-Such a Perfect Day*; it is not among that work's Sources, and could be added
-with the variant.
+it still finds the work. The Walter Jurmann catalogue, which prints *Never Was
+There Such a Perfect Day*, was added to that work's Sources with the
+variant.
 
 ## 2. Four French titles are both a variant of a German film and a film of their own
 
@@ -119,7 +146,7 @@ missing credits, and empties the field where it held something else.
 - **The two Polish versions are not linked to their film.** *Ninon, ach
   uśmiechnij się!* and *Signorina, signorina* name *Zdobyć cię muszę*, the
   Polish release title of *Ein Lied für Dich*, and are linked only to their
-  German originals.
+  German originals. *(Correct as it is: see Outcome.)*
 
 ## Checked and found sound
 
@@ -151,7 +178,9 @@ missing credits, and empties the field where it held something else.
   *Le chant du destin* is printed both ways, and the record takes the film
   database's form.
 
-## Suggested order of work
+## Order of work
+
+Items 1 to 4 are done; item 5 is open.
 
 1. Correct the eighteen titles and the two English cases, keeping the old
    forms as variants where a Source prints them (finding 1).
