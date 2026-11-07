@@ -30,10 +30,15 @@ Stronger evidence than the audit cited was found for two titles: the
 sheet music in the USC collection (SRC0535) prints *Cosi Cosa*. *Oh Madonna!* follows
 the 1933 Odeon label; the register's *O Madonna* is kept as a variant.
 
-*Two Hearts in Wax Time* has no director because none is recorded: the
-copyright entry (SRC0967, LP5806) lists no credits, and the trade papers of
-1935–1938 that list and review the short name none. The film now says so,
-and cites the entry. Left open: *Sous le ciel de Venice* in Sieghardt.
+*Two Hearts in Wax Time*: the copyright entry (SRC0967, LP5806) lists no
+credits, and the trade papers of 1935–1938 that list and review the short
+name no director. That was first recorded as “no Source names one”, which
+was wrong: Sieghardt's filmography of Walter Jurmann, already among the
+film's Sources, names Earl Haley and Maurice Kusell (p. 224, entry 40). They
+are now its directors, `probable` because that one secondary Source is all
+that names them, and the film's note says who gives what. Left open:
+*Sous le ciel de Venice* in Sieghardt, whose filmography (pp. 218–231) and
+year-by-year work list (pp. 200–217) do not include it.
 
 ## 1. Eighteen titles are not the form any Source prints
 
@@ -144,7 +149,7 @@ missing credits, and empties the field where it held something else.
 - **Instrumentation wording.** *Fiesta (Bianca)* is a transcription “for 2
   pianos”; the other Cocktails say “two pianos”.
 - **`W-F039` *Two Hearts in Wax Time* has no director.** IMDb, its Source,
-  could not be read from here. *(None is recorded anywhere: see Outcome.)*
+  could not be read from here. *(Sieghardt names two: see Outcome.)*
 - **The two Polish versions are not linked to their film.** *Ninon, ach
   uśmiechnij się!* and *Signorina, signorina* name *Zdobyć cię muszę*, the
   Polish release title of *Ein Lied für Dich*, and are linked only to their

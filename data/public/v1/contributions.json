@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 1343,
+  "count": 1344,
   "records": [
     {
       "id": "CON-F001-C-P009",
@@ -17319,24 +17319,6 @@
       ]
     },
     {
-      "id": "CON-S168-PUB-ORG035",
-      "role": "publisher",
-      "nameAsPrinted": "Robbins Music Corporation",
-      "evidenceContext": [
-        "sheet_music"
-      ],
-      "certainty": "confirmed",
-      "workIds": [
-        "W-S168"
-      ],
-      "organizationIds": [
-        "ORG035"
-      ],
-      "sourceIds": [
-        "SRC0373"
-      ]
-    },
-    {
       "id": "CON-S169-C-P009",
       "role": "composer",
       "nameAsPrinted": "Bronislaw Kaper",
@@ -25370,6 +25352,46 @@
       ],
       "sourceIds": [
         "SRC0238"
+      ]
+    },
+    {
+      "id": "CON-F039-D-P207",
+      "role": "film_director",
+      "nameAsPrinted": "Earl Haley",
+      "sortOrder": 1,
+      "evidenceContext": [
+        "secondary_literature"
+      ],
+      "evidenceLocator": "Sieghardt filmography, p. 224, entry 40",
+      "certainty": "probable",
+      "workIds": [
+        "W-F039"
+      ],
+      "personIds": [
+        "P207"
+      ],
+      "sourceIds": [
+        "SRC0373"
+      ]
+    },
+    {
+      "id": "CON-F039-D-P208",
+      "role": "film_director",
+      "nameAsPrinted": "Maurice Kusell",
+      "sortOrder": 2,
+      "evidenceContext": [
+        "secondary_literature"
+      ],
+      "evidenceLocator": "Sieghardt filmography, p. 224, entry 40",
+      "certainty": "probable",
+      "workIds": [
+        "W-F039"
+      ],
+      "personIds": [
+        "P208"
+      ],
+      "sourceIds": [
+        "SRC0373"
       ]
     }
   ]

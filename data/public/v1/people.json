@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 179,
+  "count": 181,
   "records": [
     {
       "id": "P001",
@@ -9527,6 +9527,57 @@
           "scheme": "bnf",
           "url": "https://catalogue.bnf.fr/ark:/12148/cb12735578s"
         }
+      ]
+    },
+    {
+      "id": "P207",
+      "displayName": "Earl Haley",
+      "sortName": "Haley, Earl",
+      "authorizedName": "Haley, Earl",
+      "authorizedNameSource": "LCNAF",
+      "slug": "earl-haley",
+      "primaryRole": "film director",
+      "roles": [
+        "film director"
+      ],
+      "birthYear": 1897,
+      "deathYear": 1987,
+      "lifeDatesCertainty": "confirmed",
+      "contributionIds": [
+        "CON-F039-D-P207"
+      ],
+      "workIds": [
+        "W-F039"
+      ],
+      "sourceIds": [
+        "SRC0373"
+      ],
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/no2004109239"
+        }
+      ]
+    },
+    {
+      "id": "P208",
+      "displayName": "Maurice Kusell",
+      "sortName": "Kusell, Maurice",
+      "authorizedName": "Kusell, Maurice",
+      "authorizedNameSource": "local heading",
+      "slug": "maurice-kusell",
+      "primaryRole": "film director",
+      "roles": [
+        "film director"
+      ],
+      "contributionIds": [
+        "CON-F039-D-P208"
+      ],
+      "workIds": [
+        "W-F039"
+      ],
+      "sourceIds": [
+        "SRC0373"
       ]
     }
   ],

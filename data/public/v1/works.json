@@ -1995,11 +1995,15 @@
         "CON-F039-C-P009",
         "CON-F039-C-P077",
         "CON-F039-PC-ORG001",
-        "CON-F039-CC-ORG001"
+        "CON-F039-CC-ORG001",
+        "CON-F039-D-P207",
+        "CON-F039-D-P208"
       ],
       "personIds": [
         "P009",
-        "P077"
+        "P077",
+        "P207",
+        "P208"
       ],
       "organizationIds": [
         "ORG001"
@@ -2014,7 +2018,7 @@
       "periods": [
         "hollywood"
       ],
-      "publicNote": "A two-reel colour short, registered for copyright by Metro-Goldwyn-Mayer on 5 September 1935 (LP5806). No director is recorded: the copyright entry lists no credits, and no Source names one."
+      "publicNote": "A two-reel colour short, registered for copyright by Metro-Goldwyn-Mayer on 5 September 1935 (LP5806). Sieghardt’s filmography of Walter Jurmann names Earl Haley and Maurice Kusell as its directors. No other Source names a director: the copyright entry lists no credits, and the trade papers of 1935–1938 that list and review the short name none."
     },
     {
       "id": "W-F040",
@@ -10882,7 +10886,6 @@
         "CON-S168-C-P009",
         "CON-S168-C-P077",
         "CON-S168-L-P025",
-        "CON-S168-PUB-ORG035",
         "CON-S168-CC-ORG001"
       ],
       "nameVariantIds": [
@@ -10894,8 +10897,7 @@
         "P077"
       ],
       "organizationIds": [
-        "ORG001",
-        "ORG035"
+        "ORG001"
       ],
       "relationIds": [
         "REL0122"

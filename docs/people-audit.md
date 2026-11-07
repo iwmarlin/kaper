@@ -26,9 +26,10 @@ Findings 1 to 5 were corrected on 7 November 2026, with
   entry names, with their identifiers changed to match (`CON-S122-CC-ORG001`
   and so on), and the songs no longer carry the claimant in their publisher
   field. Neither the Jurmann catalogue nor the Brooklyn notice names a
-  publisher, so they no longer support those credits. Robbins stays the
-  publisher of *Keep the Magic of Springtime* on Sieghardt's catalogue
-  alone.
+  publisher, so they no longer support those credits. Robbins was at first
+  kept as the publisher of *Keep the Magic of Springtime* on Sieghardt's
+  catalogue; read in the book, the entry (p. 214) says only “Nicht
+  verwendet” and names no publisher, so that credit was removed too.
 - The eleven headings follow the language-area register, and the BnF and
   GND records they come from are linked. Sig Arno's GND record is linked as
   well.
