@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 71,
+  "count": 72,
   "records": [
     {
       "id": "PNV0001",
@@ -1453,7 +1453,7 @@
       "evidenceContext": "sheet_music_or_printed_credit",
       "attestedWording": "Marylis",
       "certainty": "confirmed",
-      "publicNote": "Pseudonym of Joseph-Ermend Bonnal, printed as Marylis on the French lyric recorded here. The Library of Congress holds a separate authority record for the pseudonymous identity, Marylis, Guy, 1880-1944, and the VIAF cluster that carries it also carries the Bibliothèque nationale heading Bonnal, Ermend, 1880-1944, compositeur, with a cross-reference between them.",
+      "publicNote": "Pseudonym of Joseph-Ermend Bonnal, printed as Marylis on the French lyric recorded here. The Bibliothèque nationale de France holds an authority record for each identity, Ermend-Bonnal, 1880–1944, and Marylis, Guy, with a cross-reference between them; the Library of Congress holds a separate record for the pseudonymous identity, Marylis, Guy, 1880-1944.",
       "personIds": [
         "P111"
       ],
@@ -1746,6 +1746,23 @@
       ],
       "sourceIds": [
         "SRC0503"
+      ]
+    },
+    {
+      "id": "PNV0079",
+      "variantName": "Max Colpet",
+      "variantType": "other",
+      "identityScope": "single_person",
+      "evidenceContext": "biographical_database",
+      "attestedWording": "Max Colpet",
+      "certainty": "confirmed",
+      "publicNote": "The later form of his name, under which the GND and the Lexikon verfolgter Musiker und Musikerinnen der NS-Zeit file him and under which he signed his book …wenn man trotzdem lacht. His credits on the Kaper songs of 1933 print Max Kolpe.",
+      "personIds": [
+        "P054"
+      ],
+      "sourceIds": [
+        "SRC0912",
+        "SRC0663"
       ]
     }
   ]

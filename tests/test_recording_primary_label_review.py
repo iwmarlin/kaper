@@ -67,7 +67,7 @@ class PrimaryLabelReviewTests(unittest.TestCase):
     def test_silvester_label_does_not_support_feist_or_kahn(self):
         source = self.tables["sources"]["SRC0007"]
         self.assertEqual(source["dateQualifier"], "reported")
-        for cid in ("CON-S133-L-P025", "CON-S133-PUB-ORG040"):
+        for cid in ("CON-S133-L-P025", "CON-S133-CC-ORG040"):
             self.assertNotIn(cid, source["contributionIds"])
             self.assertNotIn("SRC0007", self.tables["contributions"][cid]["sourceIds"])
             self.assertIn("SRC0254", self.tables["contributions"][cid]["sourceIds"])

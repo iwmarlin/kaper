@@ -230,11 +230,12 @@ AUTHORITY_FIELDS: dict[str, dict[str, Any]] = {
             "Name Authority File, LCCN n2017060192."
         ),
         "researchNote": (
-            "The VIAF cluster 221170232 also carries the Bibliothèque nationale de "
-            "France heading “Bonnal, Ermend, 1880–1944, compositeur” "
-            "(ark:/12148/cb16557102j), with a see-also reference between the two "
-            "names. This supports identifying Guy Marylis as a name used by "
-            "Joseph-Ermend Bonnal."
+            "The Bibliothèque nationale de France holds a record for the "
+            "pseudonym, “Marylis, Guy (1880–1944)” (ark:/12148/cb16557102j), "
+            "which calls it a pseudonym of Joseph Bonnal, known as Ermend-Bonnal, "
+            "and refers to his own record, “Ermend-Bonnal (1880–1944)” "
+            "(ark:/12148/cb14793454j). This supports identifying Guy Marylis as a "
+            "name used by Joseph-Ermend Bonnal."
         ),
         "researchNoteType": "identity_assessment",
     },
@@ -264,9 +265,10 @@ AUTHORITY_FIELDS: dict[str, dict[str, Any]] = {
             "1901 in Hanover and deceased 4 September 1971 in Cleveland, Ohio; it "
             "records Germany and the United States and identifies the United States "
             "as his place of exile. Its variant forms are Wolfes, Helmut Ernst and "
-            "Wolfes, Helmuth. The heading is taken from the Library of Congress, "
-            "which spells the forename Helmuth; the German form Helmut, under which "
-            "he worked before emigration, remains the display name."
+            "Wolfes, Helmuth. The heading is taken from the GND, the register of "
+            "his language area, which gives the forename as Helmut, the form he "
+            "worked under before emigration; the Library of Congress spells it "
+            "Helmuth."
         ),
         "researchNoteType": "authority_note",
     },

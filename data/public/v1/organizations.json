@@ -36,7 +36,28 @@
         "SRC0171",
         "SRC0174",
         "SRC0176",
+        "SRC0233",
+        "SRC0234",
+        "SRC0236",
+        "SRC0237",
+        "SRC0238",
+        "SRC0239",
         "SRC0240",
+        "SRC0243",
+        "SRC0246",
+        "SRC0247",
+        "SRC0248",
+        "SRC0249",
+        "SRC0250",
+        "SRC0252",
+        "SRC0253",
+        "SRC0260",
+        "SRC0268",
+        "SRC0269",
+        "SRC0270",
+        "SRC0273",
+        "SRC0275",
+        "SRC0282",
         "SRC0373",
         "SRC0527",
         "SRC0530",
@@ -72,26 +93,28 @@
         "CON-F050-PC-ORG001",
         "CON-F055-PC-ORG001",
         "CON-S119-PUB-ORG001",
-        "CON-S120-PUB-ORG001",
-        "CON-S122-PUB-ORG001",
+        "CON-S120-CC-ORG001",
+        "CON-S122-CC-ORG001",
         "CON-S123-PUB-ORG001",
-        "CON-S143-PUB-ORG001",
-        "CON-S144-PUB-ORG001",
-        "CON-S145-PUB-ORG001",
-        "CON-S146-PUB-ORG001",
-        "CON-S147-PUB-ORG001",
-        "CON-S148-PUB-ORG001",
-        "CON-S149-PUB-ORG001",
-        "CON-S150-PUB-ORG001",
-        "CON-S151-PUB-ORG001",
-        "CON-S156-PUB-ORG001",
-        "CON-S159-PUB-ORG001",
-        "CON-S162-PUB-ORG001",
-        "CON-S170-PUB-ORG001",
-        "CON-S171-PUB-ORG001",
-        "CON-S173-PUB-ORG001",
-        "CON-S174-PUB-ORG001",
-        "CON-S184-PUB-ORG001",
+        "CON-S143-CC-ORG001",
+        "CON-S144-CC-ORG001",
+        "CON-S145-CC-ORG001",
+        "CON-S146-CC-ORG001",
+        "CON-S147-CC-ORG001",
+        "CON-S148-CC-ORG001",
+        "CON-S149-CC-ORG001",
+        "CON-S150-CC-ORG001",
+        "CON-S151-CC-ORG001",
+        "CON-S154-CC-ORG001",
+        "CON-S156-CC-ORG001",
+        "CON-S159-CC-ORG001",
+        "CON-S162-CC-ORG001",
+        "CON-S168-CC-ORG001",
+        "CON-S170-CC-ORG001",
+        "CON-S171-CC-ORG001",
+        "CON-S173-CC-ORG001",
+        "CON-S174-CC-ORG001",
+        "CON-S184-CC-ORG001",
         "CON-S192-CC-ORG001",
         "CON-S202-PUB-ORG001",
         "CON-S228-CC-ORG001"
@@ -126,17 +149,19 @@
         "W-S149",
         "W-S150",
         "W-S151",
+        "W-S154",
         "W-S156",
         "W-S159",
         "W-S162",
+        "W-S168",
         "W-S170",
         "W-S171",
         "W-S173",
         "W-S174",
         "W-S184",
+        "W-S192",
         "W-S202",
-        "W-S228",
-        "W-S192"
+        "W-S228"
       ],
       "authorities": [
         {
@@ -1020,7 +1045,7 @@
     {
       "id": "ORG030",
       "displayName": "Éditions Coda",
-      "authorizedName": "Éditions Coda",
+      "authorizedName": "Éditions Coda et Max",
       "types": [
         "publisher"
       ],
@@ -1093,7 +1118,13 @@
         "SRC0951"
       ],
       "publicNote": "Paris music publisher documented on French sheet-music editions of 1934. It is not identified with the later Swiss company Edition Coda AG of Zürich, which is a separate same-name organization.",
-      "authorizedNameSource": "BnF"
+      "authorizedNameSource": "BnF",
+      "authorities": [
+        {
+          "scheme": "bnf",
+          "url": "https://catalogue.bnf.fr/ark:/12148/cb171023269"
+        }
+      ]
     },
     {
       "id": "ORG031",
@@ -1167,7 +1198,7 @@
         "SRC0302",
         "SRC0879"
       ],
-      "authorizedNameSource": "BnF"
+      "authorizedNameSource": "local heading"
     },
     {
       "id": "ORG033",
@@ -1320,7 +1351,6 @@
         "CON-S130-PUB-ORG035",
         "CON-S152-PUB-ORG035",
         "CON-S153-PUB-ORG035",
-        "CON-S154-PUB-ORG035",
         "CON-S155-PUB-ORG035",
         "CON-S168-PUB-ORG035",
         "CON-S186-PUB-ORG035",
@@ -1338,7 +1368,6 @@
         "W-S130",
         "W-S152",
         "W-S153",
-        "W-S154",
         "W-S155",
         "W-S168",
         "W-S186",
@@ -1611,7 +1640,7 @@
       "slug": "leo-feist-inc",
       "contributionIds": [
         "CON-S132-PUB-ORG040",
-        "CON-S133-PUB-ORG040",
+        "CON-S133-CC-ORG040",
         "CON-S157-PUB-ORG040",
         "CON-S158-PUB-ORG040",
         "CON-S161-PUB-ORG040"
@@ -1799,13 +1828,7 @@
         "W-S196",
         "W-S200"
       ],
-      "authorizedNameSource": "BnF",
-      "authorities": [
-        {
-          "scheme": "bnf",
-          "url": "https://catalogue.bnf.fr/ark:/12148/cb14605880n"
-        }
-      ]
+      "authorizedNameSource": "local heading"
     },
     {
       "id": "ORG049",
@@ -2375,7 +2398,8 @@
         "SRC0937",
         "SRC0950",
         "SRC0951",
-        "SRC0960"
+        "SRC0960",
+        "SRC0969"
       ],
       "authorities": [
         {
@@ -3169,7 +3193,8 @@
         "SRC0847",
         "SRC0861",
         "SRC0862",
-        "SRC0931"
+        "SRC0931",
+        "SRC0968"
       ],
       "authorizedNameSource": "LCNAF",
       "authorities": [
@@ -7883,7 +7908,8 @@
       "workIds": [
         "W-S212",
         "W-S213"
-      ]
+      ],
+      "authorizedNameSource": "local heading"
     }
   ]
 }
