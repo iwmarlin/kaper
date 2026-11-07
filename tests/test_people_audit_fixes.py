@@ -37,8 +37,8 @@ class PeopleAuditFixTests(unittest.TestCase):
             self.assertEqual(claimant["role"], "copyright_claimant")
             self.assertIn("Metro-Goldwyn-Mayer", claimant["nameAsPrinted"])
         self.assertNotIn("CON-S154-PUB-ORG035", self.credits)
-        # Sieghardt's catalogue, not the registration, names Robbins.
-        self.assertEqual(self.credits["CON-S168-PUB-ORG035"]["sourceIds"], ["SRC0373"])
+        # Sieghardt (p. 214) names no publisher either: the song was not used.
+        self.assertNotIn("CON-S168-PUB-ORG035", self.credits)
 
     def test_the_language_area_register_supplies_the_heading(self):
         for person_id, heading, register in (

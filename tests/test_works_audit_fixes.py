@@ -100,7 +100,11 @@ class WorksAuditFixTests(unittest.TestCase):
         sources = table("sources")
         for record in (table("films")["F039"], self.works["W-F039"]):
             self.assertIn("SRC0967", record["sourceIds"])
-            self.assertIn("No director is recorded", record["publicNote"])
+            self.assertIn("names Earl Haley and Maurice Kusell", record["publicNote"])
+        for credit_id in ("CON-F039-D-P207", "CON-F039-D-P208"):
+            credit = self.credits[credit_id]
+            self.assertEqual((credit["role"], credit["certainty"], credit["sourceIds"]),
+                             ("film_director", "probable", ["SRC0373"]))
         self.assertEqual(sources["SRC0967"]["identifiers"], [{"scheme": "usco_registration", "value": "LP5806"}])
         self.assertEqual(self.credits["CON-F039-CC-ORG001"]["role"], "copyright_claimant")
 
