@@ -1,11 +1,17 @@
 name: Deploy to GitHub Pages
 
-# GitHub Pages used to deploy straight from the main branch. That copies the
-# whole repository — tests, scripts and docs included — and gives up after ten
-# minutes, and with some 5,700 files a deployment began to time out on every
-# other merge. This workflow publishes only the site, gives the deployment
-# thirty minutes, and runs only after the quality gate has passed on the same
-# commit, so a red main is never published.
+# GitHub Pages used to deploy straight from the main branch, copying the whole
+# repository, tests, scripts and docs included. This workflow publishes only
+# the site, and only after the quality gate has passed on the same commit, so
+# a red main is never published.
+#
+# GitHub's deploy action gives a deployment at most ten minutes; a longer
+# timeout is silently cut to that. When a change touches every page — a new
+# stylesheet or script version is written into all of them — GitHub can take
+# longer than that to take in the files. A second attempt then finishes in
+# seconds, because the files the first one sent are already there, so a
+# deployment that times out is tried again, twice at most, with the same
+# artifact.
 #
 # It takes effect once Settings → Pages → Build and deployment → Source is set
 # to “GitHub Actions”.
@@ -60,7 +66,7 @@ jobs:
     name: Deploy
     needs: build
     runs-on: ubuntu-24.04
-    timeout-minutes: 35
+    timeout-minutes: 15
     permissions:
       pages: write
       id-token: write
@@ -71,5 +77,37 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e # v4.0.5
-        with:
-          timeout: 1800000
+
+  retry:
+    name: Deploy again after a timeout
+    needs: [build, deploy]
+    if: always() && needs.build.result == 'success' && needs.deploy.result == 'failure'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e # v4.0.5
+
+  last-retry:
+    name: Deploy a third time after a second timeout
+    needs: [build, retry]
+    if: always() && needs.build.result == 'success' && needs.retry.result == 'failure'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e # v4.0.5

@@ -16,13 +16,21 @@ release. Netlify previews are used for editorial acceptance before merging.
 
 `.github/workflows/pages.yml` publishes the site after the quality gate has
 passed on `main`, from the same commit. It stages the site without `tests/`,
-`scripts/`, `docs/` and the repository's own tooling files, uploads it as a
-Pages artifact and gives the deployment thirty minutes. It can also be run by
-hand from the Actions tab (*Deploy to GitHub Pages*, *Run workflow*).
+`scripts/`, `docs/` and the repository's own tooling files, and uploads it as a
+Pages artifact. It can also be run by hand from the Actions tab (*Deploy to
+GitHub Pages*, *Run workflow*).
+
+GitHub's deploy action gives a deployment at most ten minutes, whatever
+timeout it is asked for. A change to the stylesheet or a site script writes a
+new version string into every page, some 2,500 files, and GitHub can take
+longer than that to take them in. A second attempt then finishes in seconds,
+because the files are already there, so the workflow tries a timed-out
+deployment twice more with the same artifact. If all three fail, re-run the
+workflow from the Actions tab.
 
 Deploying straight from the branch was the earlier setting. It copied the
-whole repository and gave up after ten minutes, and with some 5,700 files it
-began to time out on every other merge in November 2026.
+whole repository under the same ten-minute limit, and in November 2026 it
+began to time out on every other merge.
 
 ### Netlify
 
