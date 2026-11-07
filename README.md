@@ -106,6 +106,10 @@ open
   citations, records resting on Wikipedia alone.
 - [`records-audit.md`](docs/records-audit.md) — people, works, credits,
   relations, events, places and media.
+- [`works-audit.md`](docs/works-audit.md) — every Work's title, identity,
+  credits and dates.
+- [`people-audit.md`](docs/people-audit.md) — headings, register
+  identifiers and life dates of people and organizations.
 - [`public-data-audit.md`](docs/public-data-audit.md) — the dataset against
   its own checks.
 
