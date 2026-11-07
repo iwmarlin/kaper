@@ -85,6 +85,28 @@ class PeopleAuditFixTests(unittest.TestCase):
                 self.assertEqual(person["lifeDatesCertainty"], "disputed")
                 self.assertEqual(person["lifeDatesSourceIds"], [source_id])
 
+    def test_polish_headings_follow_bn(self):
+        for person_id, heading in (("P009", "Kaper, Bronisław"), ("P119", "Gold, Henryk"),
+                                   ("P003", "Włast, Andrzej"), ("P117", "Kiepura, Jan"),
+                                   ("P131", "Śmidowicz, Józef"), ("P159", "Tuwim, Julian"),
+                                   ("P199", "Fitelberg, Jerzy")):
+            person = self.people[person_id]
+            with self.subTest(person=person_id):
+                self.assertEqual((person["authorizedName"], person["authorizedNameSource"]), (heading, "BN"))
+                self.assertTrue(any(a["scheme"] == "bn" for a in person["authorities"]))
+        self.assertEqual(self.people["P119"]["lifeDatesCertainty"], "disputed")
+
+    def test_register_qualifiers_stay_in_the_heading(self):
+        self.assertEqual(self.people["P116"]["authorizedName"], "Mayer, Louis B. (Louis Burt)")
+        self.assertEqual(self.organizations["ORG167"]["authorizedName"], "Gaumont British Picture Corp.")
+        self.assertEqual(self.organizations["ORG132"]["authorizedNameSource"], "BN")
+
+    def test_landau_is_the_director_bnf_links_to_his_film(self):
+        person = self.people["P011"]
+        self.assertEqual((person["birthYear"], person["deathYear"]), (1890, 1969))
+        self.assertIn("SRC0970", person["sourceIds"])
+        self.assertIn("Madame ne veut pas d’enfants", self.sources["SRC0970"]["researchNote"])
+
 
 if __name__ == "__main__":
     unittest.main()

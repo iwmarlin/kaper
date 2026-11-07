@@ -89,7 +89,7 @@
       "displayName": "Andrzej Włast",
       "sortName": "Włast, Andrzej",
       "authorizedName": "Włast, Andrzej",
-      "authorizedNameSource": "LCNAF",
+      "authorizedNameSource": "BN",
       "slug": "andrzej-wlast",
       "primaryRole": "lyricist",
       "roles": [
@@ -146,6 +146,10 @@
         {
           "scheme": "gnd",
           "url": "https://d-nb.info/gnd/1203212704"
+        },
+        {
+          "scheme": "bn",
+          "url": "https://dbn.bn.org.pl/descriptor-details/a0000002970078"
         },
         {
           "scheme": "viaf",
@@ -365,8 +369,8 @@
       "id": "P009",
       "displayName": "Bronisław Kaper",
       "sortName": "Kaper, Bronisław",
-      "authorizedName": "Kaper, Bronislaw",
-      "authorizedNameSource": "LCNAF",
+      "authorizedName": "Kaper, Bronisław",
+      "authorizedNameSource": "BN",
       "slug": "bronislaw-kaper",
       "primaryRole": "composer",
       "roles": [
@@ -1264,6 +1268,10 @@
           "url": "https://data.bnf.fr/fr/ark:/12148/cb139401963"
         },
         {
+          "scheme": "bn",
+          "url": "https://dbn.bn.org.pl/descriptor-details/a0000002056582"
+        },
+        {
           "scheme": "viaf",
           "url": "https://viaf.org/viaf/59273738"
         }
@@ -1321,7 +1329,8 @@
         "film director"
       ],
       "sourceIds": [
-        "SRC0129"
+        "SRC0129",
+        "SRC0970"
       ],
       "contributionIds": [
         "CON-F020-D-P011"
@@ -1337,10 +1346,17 @@
           "url": "https://d-nb.info/gnd/1061443892"
         },
         {
+          "scheme": "bnf",
+          "url": "https://catalogue.bnf.fr/ark:/12148/cb16287372c"
+        },
+        {
           "scheme": "viaf",
           "url": "https://viaf.org/viaf/311622970"
         }
-      ]
+      ],
+      "birthYear": 1890,
+      "deathYear": 1969,
+      "lifeDatesCertainty": "confirmed"
     },
     {
       "id": "P012",
@@ -5729,8 +5745,8 @@
       "birthYear": 1885,
       "deathYear": 1957,
       "lifeDatesCertainty": "confirmed",
-      "authorizedName": "Mayer, Louis B.",
-      "authorizedNameSource": "GND",
+      "authorizedName": "Mayer, Louis B. (Louis Burt)",
+      "authorizedNameSource": "LCNAF",
       "authorities": [
         {
           "scheme": "lcnaf",
@@ -5793,11 +5809,15 @@
       "deathYear": 1966,
       "lifeDatesCertainty": "confirmed",
       "authorizedName": "Kiepura, Jan",
-      "authorizedNameSource": "LCNAF",
+      "authorizedNameSource": "BN",
       "authorities": [
         {
           "scheme": "lcnaf",
           "url": "https://id.loc.gov/authorities/names/n84098366"
+        },
+        {
+          "scheme": "bn",
+          "url": "https://dbn.bn.org.pl/descriptor-details/a0000001180853"
         },
         {
           "scheme": "viaf",
@@ -5876,16 +5896,17 @@
       "sourceIds": [
         "SRC0490",
         "SRC0563",
-        "SRC0738"
+        "SRC0738",
+        "SRC0971"
       ],
       "timelineEventIds": [
         "TE0047"
       ],
       "birthYear": 1902,
       "deathYear": 1977,
-      "lifeDatesCertainty": "confirmed",
-      "authorizedName": "Gold, Henry (Composer)",
-      "authorizedNameSource": "LCNAF",
+      "lifeDatesCertainty": "disputed",
+      "authorizedName": "Gold, Henryk",
+      "authorizedNameSource": "BN",
       "contributionIds": [
         "CON-S003-CON-P119"
       ],
@@ -5906,6 +5927,10 @@
           "url": "https://catalogue.bnf.fr/ark:/12148/cb13796928z"
         },
         {
+          "scheme": "bn",
+          "url": "https://dbn.bn.org.pl/descriptor-details/a0000001225672"
+        },
+        {
           "scheme": "viaf",
           "url": "https://viaf.org/viaf/166883945"
         }
@@ -5915,7 +5940,11 @@
           "label": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Henryk_Gold"
         }
-      ]
+      ],
+      "lifeDatesSourceIds": [
+        "SRC0971"
+      ],
+      "lifeDatesNote": "The Biblioteka Narodowa gives 1899 as the year of birth, whereas the BnF gives 1902. Both give 1977 as the year of death. The displayed years follow 1902–1977; the conflicting birth years remain unresolved."
     },
     {
       "id": "P121",
@@ -6352,7 +6381,7 @@
       "displayName": "Józef Śmidowicz",
       "sortName": "Śmidowicz, Józef",
       "authorizedName": "Śmidowicz, Józef",
-      "authorizedNameSource": "LCNAF",
+      "authorizedNameSource": "BN",
       "slug": "jozef-smidowicz",
       "primaryRole": "pianist",
       "roles": [
@@ -6374,6 +6403,10 @@
         {
           "scheme": "lcnaf",
           "url": "https://id.loc.gov/authorities/names/n2006017851"
+        },
+        {
+          "scheme": "bn",
+          "url": "https://dbn.bn.org.pl/descriptor-details/a0000002490980"
         },
         {
           "scheme": "viaf",
@@ -7695,7 +7728,7 @@
       "displayName": "Julian Tuwim",
       "sortName": "Tuwim, Julian",
       "authorizedName": "Tuwim, Julian",
-      "authorizedNameSource": "LCNAF",
+      "authorizedNameSource": "BN",
       "slug": "julian-tuwim",
       "primaryRole": "lyricist",
       "roles": [
@@ -9244,11 +9277,15 @@
       "deathYear": 1951,
       "lifeDatesCertainty": "confirmed",
       "authorizedName": "Fitelberg, Jerzy",
-      "authorizedNameSource": "LCNAF",
+      "authorizedNameSource": "BN",
       "authorities": [
         {
           "scheme": "lcnaf",
           "url": "https://id.loc.gov/authorities/names/n88144497"
+        },
+        {
+          "scheme": "bn",
+          "url": "https://dbn.bn.org.pl/descriptor-details/a0000002112866"
         }
       ]
     },

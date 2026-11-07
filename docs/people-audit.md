@@ -49,8 +49,35 @@ Findings 1 to 5 were corrected on 7 November 2026, with
   BnF's coded data for Legrand gives his death as 15 August 1885, before
   his birth, evidently a keying error for 1985.
 
-Left open: the qualifier question and the two Polish headings (item 5),
-and Constantin Landau's identity with the BnF record.
+### Second pass, the same day
+
+The three items left open were settled once BN answered again.
+
+- **Polish headings.** BN gives *Kaper, Bronisław (1902–1983)* and *Gold,
+  Henryk (1899–1977)*, which become the headings, with the BN records
+  linked. BN and BnF disagree on Gold's birth year, 1899 against 1902, so
+  his dates are `disputed`, with the BN record as `SRC0971`. Andrzej Włast,
+  Jan Kiepura, Józef Śmidowicz, Julian Tuwim and Jerzy Fitelberg have the
+  same heading in BN as in the archive. Their heading source is now BN, the
+  register of their language area, and the BN records are linked.
+- **Qualifiers.** The archive already kept a register's qualifiers wherever
+  it transcribed a heading: *Gold, Henry (Composer)*, *Connelly, Reg.
+  (Reginald)*, *Samuels, Walter G. (Walter Gerald)*. Louis B. Mayer was the
+  one exception. `docs/authority-headings.md` now says so: only dates are
+  stripped, and every other qualifier stays, for organizations as for people.
+  Mayer is headed *Mayer, Louis B. (Louis Burt)* from LCNAF, the register of
+  his language area, and Gaumont British *Gaumont British Picture Corp.*,
+  as LCNAF gives it. Syrena Record is in BN as *Syrena Record*, which is
+  the archive's heading, so no qualifier arises and its source is now BN.
+- **Constantin Landau.** The BnF record *Lândau, Konstantin Ûlianovič
+  (1890–1969)* names *Madame ne veut pas d’enfants* among its associated
+  forms, the film the archive credits him with directing, so the identity
+  rests on the register itself. The record is linked and cited
+  (`SRC0970`), and his life dates are 1890–1969. His heading stays the
+  GND's *Landau, Constantin*: the rule names no register for Russian, and
+  GND is the first in the general order that holds him.
+
+Nothing from this audit is left open.
 
 ## 1. Twenty-two publisher credits rest on unpublished registrations
 
@@ -217,7 +244,7 @@ archive's rules, and the registers agree with the record.
 
 ## Order of work
 
-Items 1 to 4 are done; item 5 is open.
+All five items are done.
 
 
 1. Turn the 22 credits on unpublished registrations into claimant credits,
