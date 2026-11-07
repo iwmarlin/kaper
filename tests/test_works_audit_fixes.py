@@ -96,6 +96,14 @@ class WorksAuditFixTests(unittest.TestCase):
             with self.subTest(song=song_id):
                 self.assertTrue(self.songs[song_id].get("jurmannCollaboration"))
 
+    def test_the_short_without_a_director_says_why(self):
+        sources = table("sources")
+        for record in (table("films")["F039"], self.works["W-F039"]):
+            self.assertIn("SRC0967", record["sourceIds"])
+            self.assertIn("No director is recorded", record["publicNote"])
+        self.assertEqual(sources["SRC0967"]["identifiers"], [{"scheme": "usco_registration", "value": "LP5806"}])
+        self.assertEqual(self.credits["CON-F039-CC-ORG001"]["role"], "copyright_claimant")
+
     def test_wording_is_uniform(self):
         self.assertEqual(self.songs["S222"]["genre"], "slow_fox")
         self.assertIn("two pianos", self.other_works["O012"]["instrumentation"])
