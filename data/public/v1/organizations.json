@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 237,
+  "count": 238,
   "records": [
     {
       "id": "ORG001",
@@ -36,6 +36,7 @@
         "SRC0171",
         "SRC0174",
         "SRC0176",
+        "SRC0240",
         "SRC0373",
         "SRC0527",
         "SRC0530",
@@ -90,7 +91,8 @@
         "CON-S174-PUB-ORG001",
         "CON-S184-PUB-ORG001",
         "CON-S202-PUB-ORG001",
-        "CON-S228-CC-ORG001"
+        "CON-S228-CC-ORG001",
+        "CON-S192-CC-ORG001"
       ],
       "workIds": [
         "W-F033",
@@ -131,7 +133,8 @@
         "W-S174",
         "W-S184",
         "W-S202",
-        "W-S228"
+        "W-S228",
+        "W-S192"
       ],
       "authorities": [
         {
@@ -1869,13 +1872,15 @@
         "CON-S040-PUB-ORG050",
         "CON-S193-PUB-ORG050",
         "CON-S221-PUB-ORG050",
-        "CON-S222-PUB-ORG050"
+        "CON-S222-PUB-ORG050",
+        "CON-S194-PUB-ORG050"
       ],
       "workIds": [
         "W-S040",
         "W-S193",
         "W-S221",
-        "W-S222"
+        "W-S222",
+        "W-S194"
       ],
       "authorizedNameSource": "LCNAF",
       "authorities": [
@@ -7852,6 +7857,29 @@
       "publicNote": "Stock-image agency whose catalogue carries images supplied by archives and photographers, with their captions and credits.",
       "sourceIds": [
         "SRC0966"
+      ]
+    },
+    {
+      "id": "ORG246",
+      "displayName": "Universal Music Corporation",
+      "authorizedName": "Universal Music Corporation",
+      "types": [
+        "publisher"
+      ],
+      "country": "United States",
+      "slug": "universal-music-corporation",
+      "publicNote": "Music-publishing company of Universal Pictures, named as copyright claimant of film music it registered unpublished.",
+      "sourceIds": [
+        "SRC0266",
+        "SRC0267"
+      ],
+      "contributionIds": [
+        "CON-S212-CC-ORG246",
+        "CON-S213-CC-ORG246"
+      ],
+      "workIds": [
+        "W-S212",
+        "W-S213"
       ]
     }
   ]

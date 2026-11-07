@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 1335,
+  "count": 1341,
   "records": [
     {
       "id": "CON-F001-C-P009",
@@ -18349,7 +18349,7 @@
       "evidenceContext": [
         "secondary_literature"
       ],
-      "evidenceLocator": "Entry for “Mit dir möchte ich zieh’n bis zum Ende der Welt”, Band 6",
+      "evidenceLocator": "Entry for “Mit dir möchte ich ziehn bis zum Ende der Welt”, Band 6",
       "sortOrder": 10,
       "certainty": "confirmed",
       "workIds": [
@@ -18374,7 +18374,7 @@
       "evidenceContext": [
         "secondary_literature"
       ],
-      "evidenceLocator": "Entry for “Mit dir möchte ich zieh’n bis zum Ende der Welt”, Band 6",
+      "evidenceLocator": "Entry for “Mit dir möchte ich ziehn bis zum Ende der Welt”, Band 6",
       "sortOrder": 1,
       "certainty": "confirmed",
       "workIds": [
@@ -25232,6 +25232,114 @@
         "SRC0625"
       ],
       "scopeNote": "Issued the recording as Pathé PA 1234."
+    },
+    {
+      "id": "CON-S192-CC-ORG001",
+      "role": "copyright_claimant",
+      "nameAsPrinted": "Metro-Goldwyn-Mayer Corp.",
+      "evidenceContext": [
+        "copyright_catalogue"
+      ],
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S192"
+      ],
+      "organizationIds": [
+        "ORG001"
+      ],
+      "sourceIds": [
+        "SRC0240"
+      ]
+    },
+    {
+      "id": "CON-S212-CC-ORG246",
+      "role": "copyright_claimant",
+      "nameAsPrinted": "Universal Music Corp.",
+      "evidenceContext": [
+        "copyright_catalogue"
+      ],
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S212"
+      ],
+      "organizationIds": [
+        "ORG246"
+      ],
+      "sourceIds": [
+        "SRC0267"
+      ]
+    },
+    {
+      "id": "CON-S213-CC-ORG246",
+      "role": "copyright_claimant",
+      "nameAsPrinted": "Universal Music Corp.",
+      "evidenceContext": [
+        "copyright_catalogue"
+      ],
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S213"
+      ],
+      "organizationIds": [
+        "ORG246"
+      ],
+      "sourceIds": [
+        "SRC0266"
+      ]
+    },
+    {
+      "id": "CON-S181-CC-P009",
+      "role": "copyright_claimant",
+      "nameAsPrinted": "Bronislav Kaper",
+      "evidenceContext": [
+        "copyright_catalogue"
+      ],
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S181"
+      ],
+      "personIds": [
+        "P009"
+      ],
+      "sourceIds": [
+        "SRC0278"
+      ]
+    },
+    {
+      "id": "CON-S181-CC-P077",
+      "role": "copyright_claimant",
+      "nameAsPrinted": "Walter Jurmann",
+      "evidenceContext": [
+        "copyright_catalogue"
+      ],
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S181"
+      ],
+      "personIds": [
+        "P077"
+      ],
+      "sourceIds": [
+        "SRC0278"
+      ]
+    },
+    {
+      "id": "CON-S194-PUB-ORG050",
+      "role": "publisher",
+      "nameAsPrinted": "Chappell & Co., Ltd., London",
+      "evidenceContext": [
+        "copyright_catalogue"
+      ],
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S194"
+      ],
+      "organizationIds": [
+        "ORG050"
+      ],
+      "sourceIds": [
+        "SRC0463"
+      ]
     }
   ]
 }
