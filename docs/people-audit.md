@@ -17,6 +17,41 @@ searched in BnF by name and life dates. The Polish national library (BN)
 could not be read: its certificate has expired, and the check was not
 bypassed.
 
+## Outcome
+
+Findings 1 to 5 were corrected on 7 November 2026, with
+`tests/test_people_audit_fixes.py` holding them in place.
+
+- The 22 credits are now `copyright_claimant` credits for the firm each
+  entry names, with their identifiers changed to match (`CON-S122-CC-ORG001`
+  and so on), and the songs no longer carry the claimant in their publisher
+  field. Neither the Jurmann catalogue nor the Brooklyn notice names a
+  publisher, so they no longer support those credits. Robbins stays the
+  publisher of *Keep the Magic of Springtime* on Sieghardt's catalogue
+  alone.
+- The eleven headings follow the language-area register, and the BnF and
+  GND records they come from are linked. Sig Arno's GND record is linked as
+  well.
+- **Max Kolpe** is headed *Colpet, Max*, as the GND gives it, and as the
+  archive already does for Ben Berlin. The page keeps *Max Kolpe*, the name
+  his credits print. A new name variant, *Max Colpet*, records the later
+  form with its evidence (the LexM entry and the portrait article), so
+  that the heading is not a puzzle to a reader.
+- Bonnal links his own BnF record. The Library of Congress source on his
+  pseudonym had said the BnF record it cites was Bonnal's; it was the
+  pseudonym's, and the note now says so. France-Mélodie lost its Dewey
+  link, and France-Mélodie, Éditions musicales universelles and Universal
+  Music Corporation are marked as local headings. Wohlmuth and Éditions Coda
+  link their BnF records, and Coda takes BnF's heading, *Éditions Coda et
+  Max*.
+- Eddy Duchin's and H. André Legrand's life dates are `disputed`, each with
+  a note and the register record that disagrees (`SRC0968`, `SRC0969`).
+  BnF's coded data for Legrand gives his death as 15 August 1885, before
+  his birth, evidently a keying error for 1985.
+
+Left open: the qualifier question and the two Polish headings (item 5),
+and Constantin Landau's identity with the BnF record.
+
 ## 1. Twenty-two publisher credits rest on unpublished registrations
 
 The Catalog of Copyright Entries names the **copyright claimant** after the
@@ -180,7 +215,10 @@ archive's rules, and the registers agree with the record.
   organization has a type that fits its credits. MGM's publisher credits
   are dealt with in finding 1.
 
-## Suggested order of work
+## Order of work
+
+Items 1 to 4 are done; item 5 is open.
+
 
 1. Turn the 22 credits on unpublished registrations into claimant credits,
    and correct the two that name Robbins (finding 1).

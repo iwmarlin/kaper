@@ -1273,8 +1273,8 @@
       "id": "P010",
       "displayName": "Ch.-L. Pothier",
       "sortName": "Pothier, Ch.-L.",
-      "authorizedName": "Pothier, Charles Louis",
-      "authorizedNameSource": "LCNAF",
+      "authorizedName": "Pothier, Charles-Louis",
+      "authorizedNameSource": "BnF",
       "slug": "ch-l-pothier",
       "primaryRole": "lyricist",
       "roles": [
@@ -1300,6 +1300,10 @@
         {
           "scheme": "lcnaf",
           "url": "https://id.loc.gov/authorities/names/n00114873"
+        },
+        {
+          "scheme": "bnf",
+          "url": "https://catalogue.bnf.fr/ark:/12148/cb148279836"
         },
         {
           "scheme": "viaf",
@@ -2412,8 +2416,8 @@
       "id": "P032",
       "displayName": "Henri-André Legrand",
       "sortName": "Legrand, Henri-André",
-      "authorizedName": "Legrand, H. André (Henri-André)",
-      "authorizedNameSource": "LCNAF",
+      "authorizedName": "Legrand, H. André",
+      "authorizedNameSource": "BnF",
       "slug": "henri-andre-legrand",
       "primaryRole": "lyricist",
       "roles": [
@@ -2422,7 +2426,8 @@
       "sourceIds": [
         "SRC0219",
         "SRC0284",
-        "SRC0929"
+        "SRC0929",
+        "SRC0969"
       ],
       "contributionIds": [
         "CON-S088-L-P032",
@@ -2438,7 +2443,7 @@
       ],
       "birthYear": 1896,
       "deathYear": 1986,
-      "lifeDatesCertainty": "confirmed",
+      "lifeDatesCertainty": "disputed",
       "authorities": [
         {
           "scheme": "lcnaf",
@@ -2449,17 +2454,25 @@
           "url": "https://d-nb.info/gnd/1105687570"
         },
         {
+          "scheme": "bnf",
+          "url": "https://catalogue.bnf.fr/ark:/12148/cb147667534"
+        },
+        {
           "scheme": "viaf",
           "url": "https://viaf.org/viaf/171061796"
         }
-      ]
+      ],
+      "lifeDatesSourceIds": [
+        "SRC0969"
+      ],
+      "lifeDatesNote": "The Library of Congress and the GND give 1986 as the year of death, whereas the BnF gives 1985. All three give 1896 as the year of birth. The displayed years follow 1896–1986; the conflicting death years remain unresolved."
     },
     {
       "id": "P033",
       "displayName": "Henri-Georges Clouzot",
       "sortName": "Clouzot, Henri-Georges",
-      "authorizedName": "Clouzot, H.-G. (Henri-Georges)",
-      "authorizedNameSource": "LCNAF",
+      "authorizedName": "Clouzot, Henri-Georges",
+      "authorizedNameSource": "BnF",
       "slug": "henri-georges-clouzot",
       "primaryRole": "film director",
       "roles": [
@@ -2489,6 +2502,10 @@
         {
           "scheme": "gnd",
           "url": "https://d-nb.info/gnd/124434525"
+        },
+        {
+          "scheme": "bnf",
+          "url": "https://catalogue.bnf.fr/ark:/12148/cb131750174"
         },
         {
           "scheme": "viaf",
@@ -3279,8 +3296,8 @@
       "id": "P054",
       "displayName": "Max Kolpe",
       "sortName": "Kolpe, Max",
-      "authorizedName": "Kolpe, Max",
-      "authorizedNameSource": "LCNAF",
+      "authorizedName": "Colpet, Max",
+      "authorizedNameSource": "GND",
       "slug": "max-kolpe",
       "primaryRole": "lyricist",
       "roles": [
@@ -3315,6 +3332,9 @@
           "scheme": "viaf",
           "url": "https://viaf.org/viaf/262906971"
         }
+      ],
+      "nameVariantIds": [
+        "PNV0079"
       ]
     },
     {
@@ -3360,8 +3380,8 @@
       "id": "P056",
       "displayName": "Max Ophüls",
       "sortName": "Ophüls, Max",
-      "authorizedName": "Ophuls, Max",
-      "authorizedNameSource": "LCNAF",
+      "authorizedName": "Ophüls, Max",
+      "authorizedNameSource": "GND",
       "slug": "max-ophuls",
       "primaryRole": "film director",
       "roles": [
@@ -3384,6 +3404,10 @@
         {
           "scheme": "lcnaf",
           "url": "https://id.loc.gov/authorities/names/n79083590"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/11859009X"
         },
         {
           "scheme": "viaf",
@@ -3894,6 +3918,10 @@
       "authorizedNameSource": "BnF",
       "authorities": [
         {
+          "scheme": "bnf",
+          "url": "https://catalogue.bnf.fr/ark:/12148/cb17166302h"
+        },
+        {
           "scheme": "viaf",
           "url": "https://viaf.org/viaf/1187151304644449460008"
         },
@@ -3987,8 +4015,8 @@
       "id": "P072",
       "displayName": "Roger Féral",
       "sortName": "Féral, Roger",
-      "authorizedName": "Féral, Roger",
-      "authorizedNameSource": "LCNAF",
+      "authorizedName": "Feral, Roger",
+      "authorizedNameSource": "BnF",
       "slug": "roger-feral",
       "primaryRole": "lyricist",
       "roles": [
@@ -4016,6 +4044,10 @@
         {
           "scheme": "gnd",
           "url": "https://d-nb.info/gnd/1061587908"
+        },
+        {
+          "scheme": "bnf",
+          "url": "https://catalogue.bnf.fr/ark:/12148/cb140972929"
         },
         {
           "scheme": "viaf",
@@ -5470,8 +5502,8 @@
       "birthYear": 1911,
       "deathYear": 1991,
       "lifeDatesCertainty": "confirmed",
-      "authorizedName": "Lemarchand, Henry",
-      "authorizedNameSource": "GND",
+      "authorizedName": "Lemarchand, Henri",
+      "authorizedNameSource": "BnF",
       "authorities": [
         {
           "scheme": "lcnaf",
@@ -5480,6 +5512,10 @@
         {
           "scheme": "gnd",
           "url": "https://d-nb.info/gnd/1258427923"
+        },
+        {
+          "scheme": "bnf",
+          "url": "https://catalogue.bnf.fr/ark:/12148/cb14812556s"
         },
         {
           "scheme": "viaf",
@@ -5554,13 +5590,13 @@
       "workIds": [
         "W-S202"
       ],
-      "authorizedName": "Bonnal, Ermend",
+      "authorizedName": "Ermend-Bonnal",
       "birthYear": 1880,
       "deathYear": 1944,
       "nameVariantIds": [
         "PNV0060"
       ],
-      "authorizedNameSource": "LCNAF",
+      "authorizedNameSource": "BnF",
       "lifeDatesCertainty": "confirmed",
       "authorities": [
         {
@@ -5569,7 +5605,7 @@
         },
         {
           "scheme": "bnf",
-          "url": "https://catalogue.bnf.fr/ark:/12148/cb16557102j"
+          "url": "https://catalogue.bnf.fr/ark:/12148/cb14793454j"
         }
       ]
     },
@@ -6442,7 +6478,8 @@
         "pianist"
       ],
       "sourceIds": [
-        "SRC0585"
+        "SRC0585",
+        "SRC0968"
       ],
       "contributionIds": [
         "CON-S119-P-P133"
@@ -6452,7 +6489,7 @@
       ],
       "birthYear": 1909,
       "deathYear": 1951,
-      "lifeDatesCertainty": "confirmed",
+      "lifeDatesCertainty": "disputed",
       "authorities": [
         {
           "scheme": "lcnaf",
@@ -6466,7 +6503,11 @@
           "scheme": "viaf",
           "url": "https://viaf.org/viaf/34643027"
         }
-      ]
+      ],
+      "lifeDatesSourceIds": [
+        "SRC0968"
+      ],
+      "lifeDatesNote": "The Library of Congress gives 1909 as the year of birth, whereas the GND gives 1910. Both give 1951 as the year of death. The displayed years follow 1909–1951; the conflicting birth years remain unresolved."
     },
     {
       "id": "P134",
@@ -7155,7 +7196,7 @@
       "id": "P148",
       "displayName": "Helmut Wolfes",
       "sortName": "Wolfes, Helmut",
-      "authorizedName": "Wolfes, Helmuth",
+      "authorizedName": "Wolfes, Helmut",
       "slug": "helmut-wolfes",
       "primaryRole": "composer",
       "roles": [
@@ -7176,7 +7217,7 @@
       "birthYear": 1901,
       "deathYear": 1971,
       "lifeDatesCertainty": "confirmed",
-      "authorizedNameSource": "LCNAF",
+      "authorizedNameSource": "GND",
       "nameVariantIds": [
         "PNV0070"
       ],
@@ -7339,8 +7380,8 @@
       "id": "P152",
       "displayName": "Stefan Weiß",
       "sortName": "Weiß, Stefan",
-      "authorizedName": "Weiss, Stephen",
-      "authorizedNameSource": "LCNAF",
+      "authorizedName": "Weiss, Stephan",
+      "authorizedNameSource": "GND",
       "slug": "stefan-weiss",
       "primaryRole": "composer",
       "roles": [
@@ -8291,6 +8332,10 @@
         {
           "scheme": "lcnaf",
           "url": "https://id.loc.gov/authorities/names/n88100641"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/116580410"
         }
       ]
     },
@@ -9361,8 +9406,8 @@
       "id": "P205",
       "displayName": "Dajos Béla",
       "sortName": "Dajos, Béla",
-      "authorizedName": "Dajos, Bela",
-      "authorizedNameSource": "BnF",
+      "authorizedName": "Dajos, Béla",
+      "authorizedNameSource": "GND",
       "slug": "dajos-bela",
       "primaryRole": "bandleader",
       "roles": [
