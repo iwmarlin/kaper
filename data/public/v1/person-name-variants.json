@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 74,
+  "count": 77,
   "records": [
     {
       "id": "PNV0001",
@@ -1810,6 +1810,54 @@
         "SRC0977",
         "SRC0294",
         "SRC0373"
+      ]
+    },
+    {
+      "id": "PNV0082",
+      "variantName": "Carl Brüll",
+      "variantType": "spelling_variant",
+      "attestedWording": "Brüll, Carl",
+      "publicNote": "Spelling LexM lists among his other names.",
+      "identityScope": "single_person",
+      "evidenceContext": "biographical_database",
+      "certainty": "confirmed",
+      "personIds": [
+        "P114"
+      ],
+      "sourceIds": [
+        "SRC0915"
+      ]
+    },
+    {
+      "id": "PNV0083",
+      "variantName": "Charles Bruell",
+      "variantType": "other",
+      "attestedWording": "Bruell, Charles",
+      "publicNote": "Form of his name LexM lists, the French forename with the transliterated surname.",
+      "identityScope": "single_person",
+      "evidenceContext": "biographical_database",
+      "certainty": "confirmed",
+      "personIds": [
+        "P114"
+      ],
+      "sourceIds": [
+        "SRC0915"
+      ]
+    },
+    {
+      "id": "PNV0084",
+      "variantName": "Charles Calson",
+      "variantType": "pseudonym",
+      "attestedWording": "Calson, Charles",
+      "publicNote": "Name LexM lists among his other names.",
+      "identityScope": "single_person",
+      "evidenceContext": "biographical_database",
+      "certainty": "confirmed",
+      "personIds": [
+        "P114"
+      ],
+      "sourceIds": [
+        "SRC0915"
       ]
     }
   ]
