@@ -12644,7 +12644,7 @@
     {
       "id": "CON-S100-C-P009",
       "role": "composer",
-      "nameAsPrinted": "Bronislaw Kaper",
+      "nameAsPrinted": "Erich Walter Schmidt",
       "sortOrder": 10,
       "certainty": "confirmed",
       "workIds": [
@@ -12654,16 +12654,19 @@
         "P009"
       ],
       "sourceIds": [
-        "SRC0294"
+        "SRC0976",
+        "SRC0977",
+        "SRC0294",
+        "SRC0373"
       ],
       "nameVariantIds": [
-        "PNV0020"
+        "PNV0080"
       ]
     },
     {
       "id": "CON-S100-C-P077",
       "role": "composer",
-      "nameAsPrinted": "Walter Jurmann",
+      "nameAsPrinted": "Erich Walter Schmidt",
       "sortOrder": 11,
       "certainty": "confirmed",
       "workIds": [
@@ -12673,13 +12676,19 @@
         "P077"
       ],
       "sourceIds": [
-        "SRC0294"
+        "SRC0976",
+        "SRC0977",
+        "SRC0294",
+        "SRC0373"
+      ],
+      "nameVariantIds": [
+        "PNV0080"
       ]
     },
     {
       "id": "CON-S100-L-P020",
       "role": "lyricist",
-      "nameAsPrinted": "Fritz Rotter",
+      "nameAsPrinted": "P. Schattner",
       "sortOrder": 1,
       "certainty": "confirmed",
       "workIds": [
@@ -12689,13 +12698,19 @@
         "P020"
       ],
       "sourceIds": [
-        "SRC0294"
+        "SRC0976",
+        "SRC0977",
+        "SRC0294",
+        "SRC0373"
+      ],
+      "nameVariantIds": [
+        "PNV0081"
       ]
     },
     {
       "id": "CON-S100-PUB-ORG049",
       "role": "publisher",
-      "nameAsPrinted": "Edition Meisel",
+      "nameAsPrinted": "Edit. Meisel & Co.",
       "evidenceContext": [
         "sheet_music"
       ],
@@ -12707,6 +12722,7 @@
         "ORG049"
       ],
       "sourceIds": [
+        "SRC0976",
         "SRC0294"
       ]
     },

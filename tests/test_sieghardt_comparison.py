@@ -96,6 +96,21 @@ class SieghardtComparisonTests(unittest.TestCase):
         self.assertEqual((relation["sourceWorkIds"], relation["targetWorkIds"]), (["W-S073"], ["W-S059"]))
         self.assertIn("SRC0975", self.songs["S073"]["sourceIds"])
 
+    def test_trink_dich_gesund_prints_pseudonyms(self):
+        variants = table("person-name-variants")
+        schmidt, schattner = variants["PNV0080"], variants["PNV0081"]
+        self.assertEqual((schmidt["variantName"], schmidt["variantType"], schmidt["personIds"]),
+                         ("Erich Walter Schmidt", "joint_pseudonym", ["P009", "P077"]))
+        self.assertEqual((schattner["variantName"], schattner["personIds"]), ("Peter Schattner", ["P020"]))
+        for credit_id, printed in (("CON-S100-C-P009", "Erich Walter Schmidt"),
+                                   ("CON-S100-C-P077", "Erich Walter Schmidt"),
+                                   ("CON-S100-L-P020", "P. Schattner")):
+            credit = self.credits[credit_id]
+            self.assertEqual(credit["nameAsPrinted"], printed)
+            self.assertEqual(credit["sourceIds"][:2], ["SRC0976", "SRC0977"])
+        self.assertEqual(self.songs["S100"]["genre"], "schunkelwalzer")
+        self.assertIn("Schmidt, Erich Walter", table("sources")["SRC0976"]["researchNote"])
+
 
 if __name__ == "__main__":
     unittest.main()

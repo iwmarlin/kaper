@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 72,
+  "count": 74,
   "records": [
     {
       "id": "PNV0001",
@@ -549,7 +549,6 @@
         "W-S089",
         "W-S090",
         "W-S091",
-        "W-S100",
         "W-S101",
         "W-S103",
         "W-S116",
@@ -1764,6 +1763,51 @@
         "SRC0373",
         "SRC0663",
         "SRC0912"
+      ]
+    },
+    {
+      "id": "PNV0080",
+      "variantName": "Erich Walter Schmidt",
+      "variantType": "joint_pseudonym",
+      "identityScope": "joint_identity",
+      "evidenceContext": "sheet_music_or_printed_credit",
+      "attestedWording": "Schmidt, Erich Walter / E. W. Schmidt / Erich Schmidt",
+      "certainty": "confirmed",
+      "publicNote": "Hofmeister registers “Trink dich gesund” in June 1933 under the composer name “Erich Walter Schmidt”, and Telefunken A 1450 credits the music to “Erich Schmidt”. GEMA registers the same song, with the same publisher, Edition Meisel, under Walter Jurmann and Bronisław Kaper, and the Buxbaum/Sieghardt catalogue gives it as Jurmann’s, as Erich Walter Schmidt, with Kaper.",
+      "personIds": [
+        "P009",
+        "P077"
+      ],
+      "workIds": [
+        "W-S100"
+      ],
+      "sourceIds": [
+        "SRC0976",
+        "SRC0977",
+        "SRC0294",
+        "SRC0373"
+      ]
+    },
+    {
+      "id": "PNV0081",
+      "variantName": "Peter Schattner",
+      "variantType": "pseudonym",
+      "identityScope": "single_person",
+      "evidenceContext": "sheet_music_or_printed_credit",
+      "attestedWording": "P. Schattner / Peter Schattner",
+      "certainty": "confirmed",
+      "publicNote": "The name printed for the words of “Trink dich gesund”: “P. Schattner” in Hofmeister, June 1933, and “Peter Schattner” on Telefunken A 1450. GEMA registers the song’s words under Fritz Rotter, and the Buxbaum/Sieghardt catalogue gives the pseudonym as his.",
+      "personIds": [
+        "P020"
+      ],
+      "workIds": [
+        "W-S100"
+      ],
+      "sourceIds": [
+        "SRC0976",
+        "SRC0977",
+        "SRC0294",
+        "SRC0373"
       ]
     }
   ]

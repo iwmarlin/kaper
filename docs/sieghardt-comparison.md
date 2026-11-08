@@ -63,6 +63,17 @@ document stands, and that is noted below.
   address of `W-S068` leads to `W-S078`. Sieghardt’s Max Kolpe as author of
   the words is his alone: the disc labels and Hofmeister name Marischka and
   Rotter.
+- **Pseudonyms.** Sieghardt gives *Trink dich gesund* as Jurmann’s,
+  with Kaper, under the name Erich Walter Schmidt, with words by Rotter as
+  Peter Schattner. The documents of 1933 print only those names: Hofmeister,
+  June 1933 (`SRC0976`), registers a Schunkelwalzer by “Schmidt, Erich
+  Walter” with words by “P. Schattner”, published by Edition Meisel, and
+  Telefunken A 1450 (`SRC0977`, Deutsche Nationalbibliothek) credits “Erich
+  Schmidt” and “Peter Schattner”. GEMA registers the same song, with the same
+  publisher, under Jurmann, Kaper and Rotter. The names are recorded as a
+  joint pseudonym of Kaper and Jurmann (`PNV0080`), as *Ernst Martin* is, and
+  as Rotter’s (`PNV0081`); the credits give the printed names, and the genre
+  is now the printed *Schunkelwalzer*.
 - **Ich suche einen / eine.** Sieghardt’s *Ich suche eine, die mir allein
   gehört* (op. 054) is the title of the Ufaton edition, as Hofmeister
   registered it in June 1932. The film’s programme, *Illustrierter
@@ -143,9 +154,6 @@ document stands, and that is noted below.
   chantent* (Salabert), and Robbins on *Blaue venezianische Wasser*, *Sous le
   ciel de Venise*, *Tous les noirs* and *Demain matin tout ira mieux*, with MGM
   on the last. Four of these versions have no Source but Sieghardt.
-- **Other credits.** *Trink dich gesund*:
-  Sieghardt gives the pseudonyms Erich Walter Schmidt (Jurmann) and Peter
-  Schattner (Rotter).
 - **Films.** *My Song for You* has no music credit in the archive, where
   Sieghardt names Spoliansky, Kaper and Jurmann; *Wings of the Morning*: his
   filmography has “Arthur Benjamin & Walter Jurmann?”, his year-by-year list
