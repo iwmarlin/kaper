@@ -45,6 +45,16 @@ document stands, and that is noted below.
 
 ## Where the archive's documents outweigh Sieghardt
 
+- *Ninon, ach uśmiechnij się!*: Sieghardt (op. 088/PL) lists a Polish
+  version, *Malenka Ninon [Ninon, ach uśmiechnij]*, with words by Jan
+  Wycislik. Jan Wyciślik is a present-day Katowice tenor who recorded *Ninon*
+  on an undated charity cassette (`SRC0972`); the Biblioteka Narodowa and
+  Discogs record him as its performer and name no author of the words, and no
+  other source knows a Polish text by him. The first line Sieghardt quotes is
+  that of Marcella Halicz's text of 1933, which Kiepura sang. The entry most
+  likely takes the performer of a late recording for the author of the
+  words. The song keeps Halicz, and its note says so.
+
 - *Un regard de femme* and *Dairy-Maid Song*: Sieghardt credits Jurmann
   alone; the BnF catalogue and the 1936 copyright registration credit Kaper
   and Jurmann.
@@ -75,8 +85,7 @@ document stands, and that is noted below.
   es ist zu schön, um wahr zu sein* and *Wie schön ist diese Welt*: Edition
   Coda in Sieghardt, Dacapo only in the archive; *Amanda*: “Editions Univers”;
   the French *San Francisco*: Francis Day, Paris.
-- **Other credits.** The Polish *Ninon*: Sieghardt has *Malenka Ninon* with
-  words by Jan Wycislik, the BN disc Marcella Halicz. *Trink dich gesund*:
+- **Other credits.** *Trink dich gesund*:
   Sieghardt gives the pseudonyms Erich Walter Schmidt (Jurmann) and Peter
   Schattner (Rotter).
 - **Films.** *My Song for You* has no music credit in the archive, where

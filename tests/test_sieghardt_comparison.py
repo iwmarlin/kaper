@@ -46,6 +46,13 @@ class SieghardtComparisonTests(unittest.TestCase):
         variant = self.variants["TV0324"]
         self.assertEqual((variant["variantTitle"], variant["workIds"]), ("Kinderlied", ["W-S062"]))
 
+    def test_the_polish_ninon_keeps_halicz(self):
+        song = self.songs["S214"]
+        self.assertIn("Wycislik", song["publicNote"])
+        self.assertIn("SRC0972", song["sourceIds"])
+        self.assertEqual(self.credits["CON-S214-L-P156"]["role"], "lyricist")
+        self.assertFalse(any("Wyci" in (c.get("nameAsPrinted") or "") for c in self.credits.values()))
+
 
 if __name__ == "__main__":
     unittest.main()
