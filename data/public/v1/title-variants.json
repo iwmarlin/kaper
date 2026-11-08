@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 70,
+  "count": 71,
   "records": [
     {
       "id": "TV0002",
@@ -1180,6 +1180,23 @@
       "certainty": "confirmed",
       "workIds": [
         "W-S198"
+      ],
+      "sourceIds": [
+        "SRC0373"
+      ]
+    },
+    {
+      "id": "TV0324",
+      "variantTitle": "Kinderlied",
+      "titleAsSource": "KINDERLIED",
+      "variantType": "alternate_title",
+      "variantTypeAsSource": "Buxbaum/Sieghardt entry op. 034",
+      "language": "de",
+      "languageStatus": "source",
+      "note": "Sieghardt’s title for the song (opus list, p. 185, and year-by-year list, 1931), with “Es war einmal ein Baby” as the first line of the refrain.",
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S062"
       ],
       "sourceIds": [
         "SRC0373"

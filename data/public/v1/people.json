@@ -1579,7 +1579,8 @@
         "CON-S057-L-P017",
         "CON-S068-L-P017",
         "CON-S078-L-P017",
-        "CON-S083-L-P017"
+        "CON-S083-L-P017",
+        "CON-S076-L-P017"
       ],
       "nameVariantIds": [
         "PNV0034"
@@ -1588,13 +1589,15 @@
         "SRC0208",
         "SRC0211",
         "SRC0216",
+        "SRC0373",
         "SRC0568"
       ],
       "workIds": [
         "W-S057",
         "W-S068",
         "W-S078",
-        "W-S083"
+        "W-S083",
+        "W-S076"
       ],
       "birthYear": 1893,
       "deathYear": 1963,
@@ -2497,15 +2500,18 @@
       ],
       "sourceIds": [
         "SRC0133",
+        "SRC0373",
         "SRC0645"
       ],
       "contributionIds": [
         "CON-F025-D-P033",
-        "CON-S077-L-P033"
+        "CON-S077-L-P033",
+        "CON-S079-L-P033"
       ],
       "workIds": [
         "W-F025",
-        "W-S077"
+        "W-S077",
+        "W-S079"
       ],
       "birthYear": 1907,
       "deathYear": 1977,
@@ -3128,7 +3134,9 @@
         "CON-S103-L-P049",
         "CON-S114-L-P049",
         "CON-S116-L-P049",
-        "CON-S164-L-P049"
+        "CON-S164-L-P049",
+        "CON-S113-L-P049",
+        "CON-S112-L-P049"
       ],
       "workIds": [
         "W-S096",
@@ -3136,7 +3144,9 @@
         "W-S103",
         "W-S114",
         "W-S116",
-        "W-S164"
+        "W-S164",
+        "W-S113",
+        "W-S112"
       ],
       "birthYear": 1901,
       "deathYear": 1982,
@@ -3273,18 +3283,21 @@
         "CON-S112-L-P052",
         "CON-S113-L-P052",
         "CON-S115-L-P052",
-        "CON-S163-L-P052"
+        "CON-S163-L-P052",
+        "CON-S114-L-P052"
       ],
       "workIds": [
         "W-S112",
         "W-S113",
         "W-S115",
-        "W-S163"
+        "W-S163",
+        "W-S114"
       ],
       "nameVariantIds": [
         "PNV0042"
       ],
       "sourceIds": [
+        "SRC0373",
         "SRC0588",
         "SRC0655",
         "SRC0826",
@@ -6597,6 +6610,7 @@
         "SRC0176",
         "SRC0280",
         "SRC0306",
+        "SRC0373",
         "SRC0587",
         "SRC0650",
         "SRC0907"
@@ -6605,13 +6619,25 @@
         "CON-F040-C-P135",
         "CON-F046-MD-P135",
         "CON-F050-C-P135",
-        "CON-S176-C-P135"
+        "CON-S176-C-P135",
+        "CON-S138-C-P135",
+        "CON-S140-C-P135",
+        "CON-S137-C-P135",
+        "CON-S141-C-P135",
+        "CON-S135-C-P135",
+        "CON-S139-C-P135"
       ],
       "workIds": [
         "W-F040",
         "W-F046",
         "W-F050",
-        "W-S176"
+        "W-S176",
+        "W-S138",
+        "W-S140",
+        "W-S137",
+        "W-S141",
+        "W-S135",
+        "W-S139"
       ],
       "birthYear": 1906,
       "deathYear": 1967,
@@ -9516,12 +9542,16 @@
       "deathYear": 1976,
       "lifeDatesCertainty": "confirmed",
       "contributionIds": [
-        "CON-S077-L-P206"
+        "CON-S077-L-P206",
+        "CON-S079-L-P206"
       ],
       "workIds": [
-        "W-S077"
+        "W-S077",
+        "W-S079"
       ],
-      "sourceIds": [],
+      "sourceIds": [
+        "SRC0373"
+      ],
       "authorities": [
         {
           "scheme": "bnf",
