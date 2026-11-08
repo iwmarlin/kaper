@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 205,
+  "count": 204,
   "records": [
     {
       "id": "REL0001",
@@ -367,7 +367,8 @@
         "W-F012"
       ],
       "sourceIds": [
-        "SRC0107"
+        "SRC0107",
+        "SRC0974"
       ]
     },
     {
@@ -630,23 +631,6 @@
       ]
     },
     {
-      "id": "REL0036",
-      "relationType": "associated_with_film",
-      "targetWorkTitle": "Ein Lied für Dich",
-      "targetTitleAsSource": "Ein Lied für dich",
-      "direction": "source_to_target",
-      "certainty": "confirmed",
-      "sourceWorkIds": [
-        "W-S068"
-      ],
-      "targetWorkIds": [
-        "W-F023"
-      ],
-      "sourceIds": [
-        "SRC0216"
-      ]
-    },
-    {
       "id": "REL0037",
       "relationType": "associated_with_film",
       "targetWorkTitle": "Die Zwei vom Südexpreß",
@@ -768,7 +752,8 @@
         "W-F023"
       ],
       "sourceIds": [
-        "SRC0297"
+        "SRC0297",
+        "SRC0216"
       ]
     },
     {
@@ -3349,15 +3334,15 @@
     {
       "id": "REL0198",
       "relationType": "language_version_of",
-      "targetWorkTitle": "Signorina! komm zu mir",
+      "targetWorkTitle": "Oh Madonna!",
       "direction": "source_to_target",
-      "publicNote": "“Signorina, signorina” is the Polish-language version of “Signorina! komm zu mir”, documented by the Odeon disc sung by Jan Kiepura.",
+      "publicNote": "“Signorina, signorina” is the Polish-language version of “Oh Madonna!”, after the title of its German edition, “Signorina! komm zu mir”; documented by the Odeon disc sung by Jan Kiepura.",
       "certainty": "confirmed",
       "sourceWorkIds": [
         "W-S215"
       ],
       "targetWorkIds": [
-        "W-S068"
+        "W-S078"
       ],
       "personIds": [
         "P156",
@@ -3365,7 +3350,8 @@
       ],
       "sourceIds": [
         "SRC0633"
-      ]
+      ],
+      "targetTitleAsSource": "Signorina! komm zu mir"
     },
     {
       "id": "REL0199",

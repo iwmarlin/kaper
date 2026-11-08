@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 1357,
+  "count": 1352,
   "records": [
     {
       "id": "CON-F001-C-P009",
@@ -9083,7 +9083,8 @@
       ],
       "sourceIds": [
         "SRC0107",
-        "SRC0791"
+        "SRC0791",
+        "SRC0974"
       ],
       "nameVariantIds": [
         "PNV0019"
@@ -9103,7 +9104,8 @@
       ],
       "sourceIds": [
         "SRC0107",
-        "SRC0791"
+        "SRC0791",
+        "SRC0974"
       ]
     },
     {
@@ -9119,7 +9121,8 @@
         "P020"
       ],
       "sourceIds": [
-        "SRC0107"
+        "SRC0107",
+        "SRC0974"
       ]
     },
     {
@@ -10195,88 +10198,6 @@
       ]
     },
     {
-      "id": "CON-S068-C-P009",
-      "role": "composer",
-      "nameAsPrinted": "Bronisław Kaper",
-      "sortOrder": 10,
-      "certainty": "confirmed",
-      "workIds": [
-        "W-S068"
-      ],
-      "personIds": [
-        "P009"
-      ],
-      "sourceIds": [
-        "SRC0216"
-      ]
-    },
-    {
-      "id": "CON-S068-C-P077",
-      "role": "composer",
-      "nameAsPrinted": "Walter Jurmann",
-      "sortOrder": 11,
-      "certainty": "confirmed",
-      "workIds": [
-        "W-S068"
-      ],
-      "personIds": [
-        "P077"
-      ],
-      "sourceIds": [
-        "SRC0216"
-      ]
-    },
-    {
-      "id": "CON-S068-L-P017",
-      "role": "lyricist",
-      "nameAsPrinted": "Ernst Marischka",
-      "sortOrder": 2,
-      "certainty": "confirmed",
-      "workIds": [
-        "W-S068"
-      ],
-      "personIds": [
-        "P017"
-      ],
-      "sourceIds": [
-        "SRC0216"
-      ]
-    },
-    {
-      "id": "CON-S068-L-P020",
-      "role": "lyricist",
-      "nameAsPrinted": "Fritz Rotter",
-      "sortOrder": 1,
-      "certainty": "confirmed",
-      "workIds": [
-        "W-S068"
-      ],
-      "personIds": [
-        "P020"
-      ],
-      "sourceIds": [
-        "SRC0216"
-      ]
-    },
-    {
-      "id": "CON-S068-PUB-ORG029",
-      "role": "publisher",
-      "nameAsPrinted": "Wiener Boheme Verlag",
-      "evidenceContext": [
-        "sheet_music"
-      ],
-      "certainty": "confirmed",
-      "workIds": [
-        "W-S068"
-      ],
-      "organizationIds": [
-        "ORG029"
-      ],
-      "sourceIds": [
-        "SRC0216"
-      ]
-    },
-    {
       "id": "CON-S069-C-P009",
       "role": "composer",
       "nameAsPrinted": "Bronislaw Kaper",
@@ -10580,7 +10501,8 @@
       ],
       "sourceIds": [
         "SRC0056",
-        "SRC0064"
+        "SRC0064",
+        "SRC0975"
       ]
     },
     {
@@ -10597,7 +10519,8 @@
       ],
       "sourceIds": [
         "SRC0056",
-        "SRC0064"
+        "SRC0064",
+        "SRC0975"
       ]
     },
     {
@@ -11002,7 +10925,8 @@
       ],
       "sourceIds": [
         "SRC0297",
-        "SRC0487"
+        "SRC0487",
+        "SRC0216"
       ],
       "nameVariantIds": [
         "PNV0020"
@@ -11022,7 +10946,8 @@
       ],
       "sourceIds": [
         "SRC0297",
-        "SRC0487"
+        "SRC0487",
+        "SRC0216"
       ]
     },
     {
@@ -11039,7 +10964,8 @@
       ],
       "sourceIds": [
         "SRC0297",
-        "SRC0487"
+        "SRC0487",
+        "SRC0216"
       ]
     },
     {
@@ -11056,7 +10982,8 @@
       ],
       "sourceIds": [
         "SRC0297",
-        "SRC0487"
+        "SRC0487",
+        "SRC0216"
       ]
     },
     {
@@ -11074,6 +11001,7 @@
         "ORG029"
       ],
       "sourceIds": [
+        "SRC0216",
         "SRC0297"
       ]
     },
@@ -12716,7 +12644,7 @@
     {
       "id": "CON-S100-C-P009",
       "role": "composer",
-      "nameAsPrinted": "Bronislaw Kaper",
+      "nameAsPrinted": "Erich Walter Schmidt",
       "sortOrder": 10,
       "certainty": "confirmed",
       "workIds": [
@@ -12726,16 +12654,19 @@
         "P009"
       ],
       "sourceIds": [
-        "SRC0294"
+        "SRC0976",
+        "SRC0977",
+        "SRC0294",
+        "SRC0373"
       ],
       "nameVariantIds": [
-        "PNV0020"
+        "PNV0080"
       ]
     },
     {
       "id": "CON-S100-C-P077",
       "role": "composer",
-      "nameAsPrinted": "Walter Jurmann",
+      "nameAsPrinted": "Erich Walter Schmidt",
       "sortOrder": 11,
       "certainty": "confirmed",
       "workIds": [
@@ -12745,13 +12676,19 @@
         "P077"
       ],
       "sourceIds": [
-        "SRC0294"
+        "SRC0976",
+        "SRC0977",
+        "SRC0294",
+        "SRC0373"
+      ],
+      "nameVariantIds": [
+        "PNV0080"
       ]
     },
     {
       "id": "CON-S100-L-P020",
       "role": "lyricist",
-      "nameAsPrinted": "Fritz Rotter",
+      "nameAsPrinted": "P. Schattner",
       "sortOrder": 1,
       "certainty": "confirmed",
       "workIds": [
@@ -12761,13 +12698,19 @@
         "P020"
       ],
       "sourceIds": [
-        "SRC0294"
+        "SRC0976",
+        "SRC0977",
+        "SRC0294",
+        "SRC0373"
+      ],
+      "nameVariantIds": [
+        "PNV0081"
       ]
     },
     {
       "id": "CON-S100-PUB-ORG049",
       "role": "publisher",
-      "nameAsPrinted": "Edition Meisel",
+      "nameAsPrinted": "Edit. Meisel & Co.",
       "evidenceContext": [
         "sheet_music"
       ],
@@ -12779,6 +12722,7 @@
         "ORG049"
       ],
       "sourceIds": [
+        "SRC0976",
         "SRC0294"
       ]
     },

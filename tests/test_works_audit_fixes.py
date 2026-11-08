@@ -15,7 +15,6 @@ PRINTED_TITLES = {
     "S002": "Jak się da, to się zrobi!",
     "S003": "Zgaś lampę!",
     "S022": "O tem wróble świergocą...",
-    "S068": "Signorina! komm zu mir",
     "S078": "Oh Madonna!",
     "S082": "In 24 Stunden kann soviel geschehn",
     "S086": "Kind, ich freu mich auf dein Kommen",
