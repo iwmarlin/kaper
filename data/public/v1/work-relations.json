@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 208,
+  "count": 214,
   "records": [
     {
       "id": "REL0001",
@@ -3753,6 +3753,109 @@
       ],
       "sourceIds": [
         "SRC0991"
+      ]
+    },
+    {
+      "id": "REL0221",
+      "relationType": "language_version_of",
+      "targetWorkTitle": "Ninon, lach mir einmal zu",
+      "direction": "source_to_target",
+      "publicNote": "“Ninon” by Michele Galdieri is the Italian-language version of “Ninon, lach mir einmal zu”.",
+      "certainty": "confirmed",
+      "sourceWorkIds": [
+        "W-S234"
+      ],
+      "targetWorkIds": [
+        "W-S076"
+      ],
+      "sourceIds": [
+        "SRC0993"
+      ]
+    },
+    {
+      "id": "REL0222",
+      "relationType": "language_version_of",
+      "targetWorkTitle": "You’re All I Need",
+      "direction": "source_to_target",
+      "publicNote": "“Tu sei l’amor” by Alfredo Bracchi is the Italian-language version of “You’re All I Need”.",
+      "certainty": "confirmed",
+      "sourceWorkIds": [
+        "W-S235"
+      ],
+      "targetWorkIds": [
+        "W-S119"
+      ],
+      "sourceIds": [
+        "SRC0995",
+        "SRC0994"
+      ]
+    },
+    {
+      "id": "REL0223",
+      "relationType": "language_version_of",
+      "targetWorkTitle": "San Francisco",
+      "direction": "source_to_target",
+      "publicNote": "“San Francisco” by Michele Galdieri is the Italian-language version of “San Francisco”.",
+      "certainty": "confirmed",
+      "sourceWorkIds": [
+        "W-S236"
+      ],
+      "targetWorkIds": [
+        "W-S130"
+      ],
+      "sourceIds": [
+        "SRC0996"
+      ]
+    },
+    {
+      "id": "REL0224",
+      "relationType": "language_version_of",
+      "targetWorkTitle": "Ninon, lach mir einmal zu",
+      "direction": "source_to_target",
+      "publicNote": "“Ninon, smil engang endnu” by Ahl-Nielsen is the Danish-language version of “Ninon, lach mir einmal zu”.",
+      "certainty": "confirmed",
+      "sourceWorkIds": [
+        "W-S237"
+      ],
+      "targetWorkIds": [
+        "W-S076"
+      ],
+      "sourceIds": [
+        "SRC0997"
+      ]
+    },
+    {
+      "id": "REL0225",
+      "relationType": "language_version_of",
+      "targetWorkTitle": "Oh Madonna!",
+      "direction": "source_to_target",
+      "publicNote": "“Oh Madonna” by Giovanni di Sorrento is the Danish-language version of “Oh Madonna!”.",
+      "certainty": "confirmed",
+      "sourceWorkIds": [
+        "W-S238"
+      ],
+      "targetWorkIds": [
+        "W-S078"
+      ],
+      "sourceIds": [
+        "SRC0999"
+      ]
+    },
+    {
+      "id": "REL0226",
+      "relationType": "language_version_of",
+      "targetWorkTitle": "Oh Madonna!",
+      "direction": "source_to_target",
+      "publicNote": "“Oh Madonna” by Per Silja is the Swedish-language version of “Oh Madonna!”.",
+      "certainty": "confirmed",
+      "sourceWorkIds": [
+        "W-S239"
+      ],
+      "targetWorkIds": [
+        "W-S078"
+      ],
+      "sourceIds": [
+        "SRC0999"
       ]
     }
   ]

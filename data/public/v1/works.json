@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 303,
+  "count": 309,
   "records": [
     {
       "id": "W-F001",
@@ -6933,7 +6933,9 @@
         "REL0197",
         "REL0215",
         "REL0218",
-        "REL0219"
+        "REL0219",
+        "REL0221",
+        "REL0224"
       ],
       "songIds": [
         "S076"
@@ -7049,7 +7051,9 @@
       "relationIds": [
         "REL0043",
         "REL0136",
-        "REL0198"
+        "REL0198",
+        "REL0225",
+        "REL0226"
       ],
       "songIds": [
         "S078"
@@ -8947,7 +8951,8 @@
         "ORG035"
       ],
       "relationIds": [
-        "REL0079"
+        "REL0079",
+        "REL0222"
       ],
       "songIds": [
         "S119"
@@ -9392,7 +9397,8 @@
       "relationIds": [
         "REL0090",
         "REL0166",
-        "REL0202"
+        "REL0202",
+        "REL0223"
       ],
       "songIds": [
         "S130"
@@ -13483,6 +13489,236 @@
       "nameVariantIds": [
         "PNV0003"
       ]
+    },
+    {
+      "id": "W-S234",
+      "title": "Ninon",
+      "slug": "ninon-galdieri",
+      "sortTitle": "Ninon",
+      "workType": "Song",
+      "year": 1933,
+      "period": "european",
+      "certainty": "confirmed",
+      "publicScope": "standalone_page",
+      "sourceIds": [
+        "SRC0993"
+      ],
+      "contributionIds": [
+        "CON-S234-C-P009",
+        "CON-S234-C-P077",
+        "CON-S234-L-P213",
+        "CON-S234-PUB-ORG249"
+      ],
+      "personIds": [
+        "P009",
+        "P077",
+        "P213"
+      ],
+      "organizationIds": [
+        "ORG249"
+      ],
+      "relationIds": [
+        "REL0221"
+      ],
+      "songIds": [
+        "S234"
+      ],
+      "periods": [
+        "european"
+      ],
+      "publicNote": "Italian version by Michele Galdieri, published in Milan by Curci in 1933 as from “Aspetto una signora”, the Italian release of Ein Lied für Dich, and recorded in Italy by Franco Lary, Crivel and others."
+    },
+    {
+      "id": "W-S235",
+      "title": "Tu sei l’amor",
+      "slug": "tu-sei-lamor",
+      "sortTitle": "Tu sei l’amor",
+      "workType": "Song",
+      "year": 1935,
+      "period": "hollywood",
+      "certainty": "confirmed",
+      "publicScope": "standalone_page",
+      "sourceIds": [
+        "SRC0994",
+        "SRC0995"
+      ],
+      "contributionIds": [
+        "CON-S235-C-P009",
+        "CON-S235-C-P077",
+        "CON-S235-L-P214",
+        "CON-S235-PUB-ORG249"
+      ],
+      "personIds": [
+        "P009",
+        "P077",
+        "P214"
+      ],
+      "organizationIds": [
+        "ORG249"
+      ],
+      "relationIds": [
+        "REL0222"
+      ],
+      "songIds": [
+        "S235"
+      ],
+      "periods": [
+        "hollywood"
+      ],
+      "publicNote": "Italian version by Alfredo Bracchi, published in Milan by Curci (©1935) as from the MGM film Escapade, with Gus Kahn’s original words acknowledged; an Italian Columbia disc gives it as “Tu sei l’amore = You’re all I need”."
+    },
+    {
+      "id": "W-S236",
+      "title": "San Francisco",
+      "slug": "san-francisco-galdieri",
+      "sortTitle": "San Francisco",
+      "workType": "Song",
+      "year": 1937,
+      "period": "hollywood",
+      "certainty": "confirmed",
+      "publicScope": "standalone_page",
+      "sourceIds": [
+        "SRC0996"
+      ],
+      "contributionIds": [
+        "CON-S236-C-P009",
+        "CON-S236-C-P077",
+        "CON-S236-L-P213",
+        "CON-S236-PUB-ORG249"
+      ],
+      "personIds": [
+        "P009",
+        "P077",
+        "P213"
+      ],
+      "organizationIds": [
+        "ORG249"
+      ],
+      "relationIds": [
+        "REL0223"
+      ],
+      "songIds": [
+        "S236"
+      ],
+      "periods": [
+        "hollywood"
+      ],
+      "publicNote": "Italian version by Michele Galdieri, published in Milan by Curci (©1937) with Gus Kahn’s American words acknowledged, as from the MGM film San Francisco."
+    },
+    {
+      "id": "W-S237",
+      "title": "Ninon, smil engang endnu",
+      "slug": "ninon-smil-engang-endnu",
+      "sortTitle": "Ninon, smil engang endnu",
+      "workType": "Song",
+      "year": 1933,
+      "period": "european",
+      "certainty": "confirmed",
+      "publicScope": "standalone_page",
+      "sourceIds": [
+        "SRC0997",
+        "SRC0998"
+      ],
+      "contributionIds": [
+        "CON-S237-C-P009",
+        "CON-S237-C-P077",
+        "CON-S237-L-P215",
+        "CON-S237-PUB-ORG250"
+      ],
+      "personIds": [
+        "P009",
+        "P077",
+        "P215"
+      ],
+      "organizationIds": [
+        "ORG250"
+      ],
+      "relationIds": [
+        "REL0224"
+      ],
+      "songIds": [
+        "S237"
+      ],
+      "periods": [
+        "european"
+      ],
+      "publicNote": "Danish version by Ahl-Nielsen, published in Copenhagen by Alfred Thorsing in 1933 as from “En Sang for Dig”, the Danish title of Ein Lied für Dich, with the German words by Marischka and Rotter, and recorded in Copenhagen in 1933."
+    },
+    {
+      "id": "W-S238",
+      "title": "Oh Madonna",
+      "slug": "oh-madonna-di-sorrento",
+      "sortTitle": "Oh Madonna",
+      "workType": "Song",
+      "year": 1933,
+      "period": "european",
+      "certainty": "confirmed",
+      "publicScope": "standalone_page",
+      "sourceIds": [
+        "SRC0999"
+      ],
+      "contributionIds": [
+        "CON-S238-C-P009",
+        "CON-S238-C-P077",
+        "CON-S238-L-P216",
+        "CON-S238-PUB-ORG250"
+      ],
+      "personIds": [
+        "P009",
+        "P077",
+        "P216"
+      ],
+      "organizationIds": [
+        "ORG250"
+      ],
+      "relationIds": [
+        "REL0225"
+      ],
+      "songIds": [
+        "S238"
+      ],
+      "periods": [
+        "european"
+      ],
+      "publicNote": "Danish version by Giovanni di Sorrento, published in Copenhagen by Alfred Thorsing in 1933 as from “En Sang for Dig”; the same print has Per Silja’s Swedish words and the German words of Marischka and Rotter."
+    },
+    {
+      "id": "W-S239",
+      "title": "Oh Madonna",
+      "slug": "oh-madonna-silja",
+      "sortTitle": "Oh Madonna",
+      "workType": "Song",
+      "year": 1933,
+      "period": "european",
+      "certainty": "confirmed",
+      "publicScope": "standalone_page",
+      "sourceIds": [
+        "SRC0999"
+      ],
+      "contributionIds": [
+        "CON-S239-C-P009",
+        "CON-S239-C-P077",
+        "CON-S239-L-P217",
+        "CON-S239-PUB-ORG250"
+      ],
+      "personIds": [
+        "P009",
+        "P077",
+        "P217"
+      ],
+      "organizationIds": [
+        "ORG250"
+      ],
+      "relationIds": [
+        "REL0226"
+      ],
+      "songIds": [
+        "S239"
+      ],
+      "periods": [
+        "european"
+      ],
+      "publicNote": "Swedish version by Per Silja, printed beside the Danish and German words in Alfred Thorsing’s Copenhagen edition of 1933; a second copy describes the song as from “En sång till dig”, the Swedish title of Ein Lied für Dich."
     }
   ],
   "recordCount": null
