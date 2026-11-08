@@ -1537,14 +1537,16 @@
       ]
     },
     {
-      "id": "CON-F018-C-P005",
-      "role": "composer",
+      "id": "CON-F018-L-P005",
+      "role": "lyricist",
       "nameAsPrinted": "André Mauprey",
       "evidenceContext": [
-        "film_credits"
+        "film_credits",
+        "sheet_music",
+        "secondary_literature"
       ],
-      "evidenceLocator": "Unifrance film record",
-      "scopeNote": "Film-music composition credit documented by Unifrance for Mariage à responsabilité limitée. Mauprey is named in the database record; he is not visible in the printed music credit on the local poster reproduction.",
+      "evidenceLocator": "Unifrance film record; Sieghardt filmography, p. 221, entry 30; Eschig editions of 1932 (BnF)",
+      "scopeNote": "Author of the French lyrics. Unifrance names him among the film’s music credits; Sieghardt’s filmography gives him the French film’s lyrics, and the Eschig editions of 1932 print his French words for the songs of the German original, E. M. B. H.",
       "sortOrder": 42,
       "certainty": "confirmed",
       "workIds": [
@@ -1554,7 +1556,10 @@
         "P005"
       ],
       "sourceIds": [
-        "SRC0161"
+        "SRC0161",
+        "SRC0373",
+        "SRC0981",
+        "SRC0950"
       ]
     },
     {
@@ -4209,9 +4214,9 @@
       "evidenceContext": [
         "film_credits"
       ],
-      "scopeNote": "Background, quoted or cue-level music; not a principal film-score credit.",
+      "scopeNote": "Background, quoted or cue-level music; not a principal film-score credit. It rests on IMDb alone, which lists the march from Les nuits moscovites as heard uncredited; the credits of the time name neither composer.",
       "sortOrder": 40,
-      "certainty": "confirmed",
+      "certainty": "probable",
       "publicNote": "Marche militaire from Les nuits moscovites",
       "workIds": [
         "W-F045"
@@ -4230,8 +4235,8 @@
         "film_credits"
       ],
       "sortOrder": 41,
-      "certainty": "confirmed",
-      "scopeNote": "Background, quoted or cue-level music; not a principal film-score credit.",
+      "certainty": "probable",
+      "scopeNote": "Background, quoted or cue-level music; not a principal film-score credit. It rests on IMDb alone, which lists the march from Les nuits moscovites as heard uncredited; the credits of the time name neither composer.",
       "workIds": [
         "W-F045"
       ],
@@ -4239,8 +4244,7 @@
         "P077"
       ],
       "sourceIds": [
-        "SRC0173",
-        "SRC0306"
+        "SRC0173"
       ]
     },
     {
@@ -8014,7 +8018,7 @@
       "role": "lyricist",
       "nameAsPrinted": "André Mauprey",
       "sortOrder": 20,
-      "certainty": "probable",
+      "certainty": "confirmed",
       "workIds": [
         "W-S036"
       ],
@@ -8022,12 +8026,14 @@
         "P005"
       ],
       "sourceIds": [
+        "SRC0981",
         "SRC0373"
       ],
       "evidenceContext": [
+        "sheet_music",
         "secondary_literature"
       ],
-      "evidenceLocator": "Sieghardt filmography, p. 221, entry 30: lyrics by André Mauprey, musical programme op. 030/F and op. 046/F; the opus list (p. 187, op. 046/F) gives the lyricist as unknown"
+      "evidenceLocator": "Eschig voice-and-piano edition, 1932 (BnF): “Paroles françaises de André Mauprey”; Sieghardt filmography, p. 221, entry 30"
     },
     {
       "id": "CON-S036-PUB-ORG047",
@@ -10926,7 +10932,8 @@
       "sourceIds": [
         "SRC0297",
         "SRC0487",
-        "SRC0216"
+        "SRC0216",
+        "SRC0409"
       ],
       "nameVariantIds": [
         "PNV0020"
@@ -10947,7 +10954,8 @@
       "sourceIds": [
         "SRC0297",
         "SRC0487",
-        "SRC0216"
+        "SRC0216",
+        "SRC0409"
       ]
     },
     {
@@ -10965,7 +10973,8 @@
       "sourceIds": [
         "SRC0297",
         "SRC0487",
-        "SRC0216"
+        "SRC0216",
+        "SRC0409"
       ]
     },
     {
@@ -10983,7 +10992,8 @@
       "sourceIds": [
         "SRC0297",
         "SRC0487",
-        "SRC0216"
+        "SRC0216",
+        "SRC0409"
       ]
     },
     {
@@ -11002,7 +11012,8 @@
       ],
       "sourceIds": [
         "SRC0216",
-        "SRC0297"
+        "SRC0297",
+        "SRC0409"
       ]
     },
     {

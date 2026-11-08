@@ -34,7 +34,7 @@ class OdeonRecordingReviewTests(unittest.TestCase):
         cid = "CON-S078-PUB-ORG029"
         # The Hofmeister registration of the printed edition, "Signorina! komm
         # zu mir", now supports it as well (docs/sieghardt-comparison.md).
-        self.assertEqual(self.contributions[cid]["sourceIds"], ["SRC0216", "SRC0297"])
+        self.assertEqual(self.contributions[cid]["sourceIds"], ["SRC0216", "SRC0297", "SRC0409"])
         self.assertNotIn(cid, self.sources["SRC0487"]["contributionIds"])
         removals = self.overrides["linkRemovals"]
         self.assertIn(cid, removals["Sources"]["SRC0487"]["fields"]["contributionIds"])
