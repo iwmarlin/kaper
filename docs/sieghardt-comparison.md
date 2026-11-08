@@ -65,7 +65,7 @@ document stands, and that is noted below.
   address of `W-S068` leads to `W-S078`. Sieghardt’s Max Kolpe as author of
   the words is his alone: the disc labels and Hofmeister name Marischka and
   Rotter.
-- **Pseudonyms.** Sieghardt gives *Trink dich gesund* as Jurmann’s,
+- **Pseudonyms.** Sieghardt gives *Trink dich gesund* (op. 093) as Jurmann’s,
   with Kaper, under the name Erich Walter Schmidt, with words by Rotter as
   Peter Schattner. The documents of 1933 print only those names: Hofmeister,
   June 1933 (`SRC0976`), registers a Schunkelwalzer by “Schmidt, Erich
@@ -128,6 +128,31 @@ document stands, and that is noted below.
   Op. 075 is *Schade* a second time; the archive keeps it as the French
   version. Réda Caire’s Pathé disc of 1933 (`SRC0975`) records it under the
   film’s French title.
+- **Publishers resting on Sieghardt alone**, checked against Hofmeister
+  (1931–1938), the United States copyright catalogues (1936–1937) and the
+  BnF. None is confirmed by a document of the time, and each is now
+  `probable`, with its place in Sieghardt named.
+  - *Les charmes chantent, mon violon soupire*: Sieghardt gives Edition Karl
+    Brüll and Éditions Salabert (op. 092/F, p. 194); the BnF, which holds
+    Salabert’s other Jurmann editions of 1931–1934, has none of it. The
+    credit had rested on the Jurmann catalogue, which names no publisher.
+  - *Blaue venezianische Wasser* and *Sous le ciel de Venise*: Sieghardt
+    gives Robbins Music Corporation (op. 128/A and 128/F, p. 198), the
+    publisher of the English original. The 1937 catalogue registers only
+    the English song with Robbins, and Hofmeister lists no work by Kaper or
+    Jurmann in 1936–1938.
+  - *Tous les noirs* and *Demain matin tout ira mieux*: Robbins as for the
+    English originals, which the 1937 catalogue registers with Robbins; no
+    edition of the French versions has been found. MGM, credited as a second
+    publisher of *Demain matin*, rested on nothing and is no longer credited.
+  - *Wir sind international*: no document of the time names the song at
+    all. Hofmeister’s registrations of 1931 list five songs from *Die große
+    Attraktion*, by Kaper, Brodszky and Lehár, and not this one, and
+    neither Sieghardt’s opus list nor his year-by-year list includes it;
+    from this film his opus list has only Jurmann’s *Parlez-vous français?*
+    (op. 041, Alrobi 1931). The song and its credits are now `probable`. The
+    first nineteen entries of his filmography, *Die große Attraktion* among
+    them, were not to hand and may be where the title comes from.
 - *On n'aime qu'une fois*: the United States copyright registration of 1935
   (`SRC0973`) names André de Badet alone as author of the words, where
   Sieghardt adds Paul Henri Bertrand. The song's note says so.
@@ -195,12 +220,6 @@ document stands, and that is noted below.
 
 ## Left for decision or further research
 
-- **Publisher credits resting on Sieghardt or the Jurmann catalogue alone**,
-  to be checked the same way: *Wir sind international* (Alrobi; Hofmeister
-  1931 has the film's other songs with Alrobi, not this one), *Les charmes
-  chantent* (Salabert), and Robbins on *Blaue venezianische Wasser*, *Sous le
-  ciel de Venise*, *Tous les noirs* and *Demain matin tout ira mieux*, with MGM
-  on the last. Four of these versions have no Source but Sieghardt.
 - **Not in the archive.** *And Still I Love You* (op. 016), *Am schönen
   Titicacasee* (op. 021) and the title song of *Melodie der Liebe* (op. 057);
   the Italian version of *Ein Lied für Dich*, *Aspetto una signorina*; and
