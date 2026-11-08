@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 886,
+  "count": 892,
   "records": [
     {
       "id": "SRC0001",
@@ -14198,7 +14198,10 @@
         "W-S200",
         "W-S201",
         "W-S202",
-        "W-S214"
+        "W-S214",
+        "W-S230",
+        "W-S231",
+        "W-S232"
       ],
       "mediaIds": [
         "M221",
@@ -14303,7 +14306,10 @@
         "S200",
         "S201",
         "S202",
-        "S214"
+        "S214",
+        "S230",
+        "S231",
+        "S232"
       ],
       "workRelationIds": [
         "REL0010",
@@ -14346,7 +14352,8 @@
         "REL0166",
         "REL0167",
         "REL0168",
-        "REL0195"
+        "REL0195",
+        "REL0217"
       ],
       "titleVariantIds": [
         "TV0012",
@@ -14685,7 +14692,15 @@
         "CON-S202-C-P009",
         "CON-S202-C-P077",
         "CON-S202-L-P111",
-        "CON-S202-PUB-ORG035"
+        "CON-S202-PUB-ORG035",
+        "CON-S230-C-P009",
+        "CON-S230-C-P077",
+        "CON-S230-L-P020",
+        "CON-S230-PUB-ORG033",
+        "CON-S231-L-P211",
+        "CON-S231-PUB-ORG060",
+        "CON-S232-L-P212",
+        "CON-S232-PUB-ORG247"
       ],
       "nameVariantIds": [
         "PNV0007",
@@ -34825,6 +34840,222 @@
       "primaryUrl": "https://archive.org/details/international193738quig/page/n925/mode/1up",
       "researchNote": "Documents the other Little Boy Blue of 1936: Ub Iwerks’s ComiColor cartoon, released by Celebrity Productions on 30 July 1936. It is cited to tell the two films apart, not as a source for this one.",
       "researchNoteType": "verification_note"
+    },
+    {
+      "id": "SRC0986",
+      "shortCitation": "CCE 1932, p. 536 — “Melodie der Liebe”",
+      "fullCitation": "U.S. Copyright Office, Catalog of Copyright Entries, New Series. Part 3: Musical Compositions, 1932, vol. 27, entry no. 11742: “Melodie der liebe; schlager, w Fritz Rotter, m B. Kaper u. Walter Jurmann. © Apr. 25, 1932; […] 24182; Alrobi musikverlag, G. m. b. H.” Internet Archive.",
+      "sourceType": "copyright_catalogue",
+      "title": "Catalog of Copyright Entries: “Melodie der Liebe”",
+      "creator": "U.S. Copyright Office",
+      "repository": "Internet Archive",
+      "publication": "Catalog of Copyright Entries / U.S. Government Printing Office",
+      "date": "1932",
+      "dateRole": "catalogue_volume",
+      "dateQualifier": "confirmed",
+      "accessDate": "2026-11-08",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "slug": "src0986-cce-1932-melodie-der-liebe",
+      "organizationIds": [
+        "ORG067",
+        "ORG068"
+      ],
+      "primaryUrl": "https://archive.org/details/catalogofcopyrig273libr/page/n571/mode/2up",
+      "researchNote": "The class letters before the registration number are illegible in the scan’s text layer. The entry calls the song a Schlager and names no film; Sieghardt’s opus list (op. 057) gives it as the song from the film Melodie der Liebe, published by Alrobi in 1932.",
+      "researchNoteType": "evidence_note",
+      "workIds": [
+        "W-S230"
+      ],
+      "songIds": [
+        "S230"
+      ],
+      "contributionIds": [
+        "CON-S230-C-P009",
+        "CON-S230-C-P077",
+        "CON-S230-L-P020",
+        "CON-S230-PUB-ORG033"
+      ]
+    },
+    {
+      "id": "SRC0987",
+      "shortCitation": "CCE 1933, p. 862 — “Ninon” (English, Harry S. Pepper)",
+      "fullCitation": "U.S. Copyright Office, Catalog of Copyright Entries, New Series. Part 3: Musical Compositions, 1933, vol. 28, entry no. 20938: “Ninon; from film A song for you, English, Harry S. Pepper, m B. Kaper and Walter Jurmann; with ukulele arr. © Aug. 22, 1933; […] Dix, ltd.” Internet Archive.",
+      "sourceType": "copyright_catalogue",
+      "title": "Catalog of Copyright Entries: “Ninon” [English version, Harry S. Pepper]",
+      "creator": "U.S. Copyright Office",
+      "repository": "Internet Archive",
+      "publication": "Catalog of Copyright Entries / U.S. Government Printing Office",
+      "date": "1933",
+      "dateRole": "catalogue_volume",
+      "dateQualifier": "confirmed",
+      "accessDate": "2026-11-08",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "slug": "src0987-cce-1933-ninon-pepper",
+      "organizationIds": [
+        "ORG060",
+        "ORG067",
+        "ORG068"
+      ],
+      "primaryUrl": "https://archive.org/details/catalogofcopyrig283libr/page/n929/mode/2up",
+      "researchNote": "A Song for You is the British title of Ein Lied für Dich. The registration number is illegible in the scan’s text layer.",
+      "researchNoteType": "evidence_note",
+      "workIds": [
+        "W-S231"
+      ],
+      "songIds": [
+        "S231"
+      ],
+      "workRelationIds": [
+        "REL0218"
+      ],
+      "contributionIds": [
+        "CON-S231-C-P009",
+        "CON-S231-C-P077",
+        "CON-S231-L-P211",
+        "CON-S231-PUB-ORG060"
+      ]
+    },
+    {
+      "id": "SRC0988",
+      "shortCitation": "LIBRIS, Gehrmans C. G. 2601 — “Ninon” (Swedish, Arne Olovson)",
+      "fullCitation": "B. Kaper and Walter Jurman. Ninon: slow-fox ur Kiepura-filmen “En sång till dig”. Swedish words by Arne Olovson, German words by Fritz Rotter. Stockholm: Carl Gehrmans musikförlag, [19--?]. Plate C. G. 2601. 3 pp., piano with words. Kungliga biblioteket, LIBRIS record 10736215.",
+      "sourceType": "sheet_music_catalogue",
+      "title": "Ninon — Carl Gehrmans musikförlag, C. G. 2601",
+      "creator": "Kungliga biblioteket",
+      "repository": "Kungliga biblioteket / LIBRIS",
+      "publication": "Carl Gehrmans musikförlag",
+      "dateRole": "described_item",
+      "dateQualifier": "unknown",
+      "accessDate": "2026-11-08",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "slug": "src0988-libris-gehrmans-ninon-olovson",
+      "organizationIds": [
+        "ORG247",
+        "ORG248"
+      ],
+      "primaryUrl": "https://libris.kb.se/bib/10736215",
+      "researchNote": "The catalogue gives the first line as “Att ett leende kan vara nog!” and the refrain as “Ninon, låt mig åter se dina ögon le”, with the German lines beside them. En sång till dig is the Swedish title of Ein Lied für Dich. The print is undated; the Swedish recordings of October 1933 date the version.",
+      "researchNoteType": "evidence_note",
+      "workIds": [
+        "W-S232"
+      ],
+      "songIds": [
+        "S232"
+      ],
+      "workRelationIds": [
+        "REL0219"
+      ],
+      "contributionIds": [
+        "CON-S232-C-P009",
+        "CON-S232-C-P077",
+        "CON-S232-L-P212",
+        "CON-S232-PUB-ORG247"
+      ]
+    },
+    {
+      "id": "SRC0989",
+      "shortCitation": "Cameo 302, “Ninon” [Georg Enders Orkester, Sten Aller] (1933)",
+      "fullCitation": "Georg Enders Orkester, refrain sung by Sten Aller. “Ninon” / “Fjärilsdans i sommarregn.” Cameo 302, Sweden, 10-inch 78 rpm shellac disc; side A credited to “Kaper, Jurman, Olovson”, slow-foxtrot from the film “En sång till dig”. Discogs release 12158729, dated 1933 in the catalogue.",
+      "sourceType": "recording_discographic_source",
+      "title": "Ninon — Cameo 302",
+      "creator": "Georg Enders Orkester; Sten Aller",
+      "repository": "Discogs",
+      "publication": "Cameo",
+      "date": "1933",
+      "dateRole": "issue",
+      "dateQualifier": "reported",
+      "accessDate": "2026-11-08",
+      "reliability": "medium",
+      "sourceStatus": "verified_with_attribution_note",
+      "slug": "src0989-cameo-302-ninon-sten-aller-1933",
+      "organizationIds": [
+        "ORG094"
+      ],
+      "primaryUrl": "https://www.discogs.com/release/12158729",
+      "researchNote": "The credit “Kaper, Jurman, Olovson” and the film are as Discogs transcribes the label; the year is the catalogue’s.",
+      "researchNoteType": "discographic_note",
+      "workIds": [
+        "W-S232"
+      ],
+      "songIds": [
+        "S232"
+      ],
+      "contributionIds": [
+        "CON-S232-C-P009",
+        "CON-S232-C-P077",
+        "CON-S232-L-P212"
+      ]
+    },
+    {
+      "id": "SRC0990",
+      "shortCitation": "Sonora 2032, “Ninon” [Vernons Dansorkester, Olle Björling] (1933)",
+      "fullCitation": "Vernons Dansorkester, refrain sung by Olle Björling. “Djurgårdsnätter” / “Ninon.” Sonora 2032, Sweden, 10-inch 78 rpm shellac disc; side B foxtrot from the film “En sång till dig”, recorded in Stockholm on 18 October 1933. Discogs release 14847034.",
+      "sourceType": "recording_discographic_source",
+      "title": "Ninon — Sonora 2032",
+      "creator": "Vernons Dansorkester; Olle Björling",
+      "repository": "Discogs",
+      "publication": "Sonora",
+      "date": "1933-10-18",
+      "dateRole": "recording",
+      "dateQualifier": "reported",
+      "accessDate": "2026-11-08",
+      "reliability": "medium",
+      "sourceStatus": "verified_with_attribution_note",
+      "slug": "src0990-sonora-2032-ninon-olle-bjorling-1933",
+      "organizationIds": [
+        "ORG094"
+      ],
+      "primaryUrl": "https://www.discogs.com/release/14847034",
+      "researchNote": "Discogs credits the Swedish words to Arne Olovson, uncredited on the label, and gives the session date.",
+      "researchNoteType": "discographic_note",
+      "workIds": [
+        "W-S232"
+      ],
+      "songIds": [
+        "S232"
+      ]
+    },
+    {
+      "id": "SRC0991",
+      "shortCitation": "LIBRIS, Gehrmans C. G. 2537 — “Å, denna tango” (Swedish, Arne Olovson)",
+      "fullCitation": "Dr. Kaper and [Fritz] German. Å, denna tango. Swedish words by Arne Olovson, German words by Fritz Rotter. Stockholm: Gehrmans Musikförlag, [1931]. Plate C.G. 2537. 3 pp., piano with words. Kungliga biblioteket, LIBRIS record 10287378.",
+      "sourceType": "sheet_music_catalogue",
+      "title": "Å, denna tango — Gehrmans Musikförlag, C.G. 2537",
+      "creator": "Kungliga biblioteket",
+      "repository": "Kungliga biblioteket / LIBRIS",
+      "publication": "Gehrmans Musikförlag",
+      "dateRole": "catalogue_volume",
+      "dateQualifier": "confirmed",
+      "date": "1931",
+      "accessDate": "2026-11-08",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "slug": "src0991-libris-gehrmans-a-denna-tango-1931",
+      "organizationIds": [
+        "ORG247",
+        "ORG248"
+      ],
+      "primaryUrl": "https://libris.kb.se/bib/10287378",
+      "researchNote": "The catalogue gives the German first line “Schwarze Frack, weiße Weste” and refrain “Du lieber Geiger, spiel’ einen Tango für mich” beside the Swedish “Ej i livlig fandango” and “Å denna tango, förtrollad är melodin”; the date [1931] is the catalogue’s.",
+      "researchNoteType": "evidence_note",
+      "workIds": [
+        "W-S233"
+      ],
+      "songIds": [
+        "S233"
+      ],
+      "workRelationIds": [
+        "REL0220"
+      ],
+      "contributionIds": [
+        "CON-S233-C-P009",
+        "CON-S233-C-P105",
+        "CON-S233-L-P212",
+        "CON-S233-PUB-ORG247"
+      ]
     }
   ],
   "recordCount": null

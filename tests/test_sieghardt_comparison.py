@@ -154,6 +154,21 @@ class SieghardtComparisonTests(unittest.TestCase):
         self.assertEqual(self.songs["S032"]["certainty"], "probable")
         self.assertIn("No document of the time names this song", self.songs["S032"]["publicNote"])
 
+    def test_documented_versions_are_added(self):
+        works, relations = table("works"), table("work-relations")
+        for work_id, lyricist, source_id in (("W-S231", "Harry S. Pepper", "SRC0987"),
+                                             ("W-S232", "Arne Olovson", "SRC0988"),
+                                             ("W-S233", "Arne Olovson", "SRC0991")):
+            song = self.songs[work_id[2:]]
+            self.assertEqual(song["lyricistAsPrinted"], lyricist)
+            self.assertEqual(works[work_id]["sourceIds"][0], source_id)
+        for relation_id, target in (("REL0218", "W-S076"), ("REL0219", "W-S076"), ("REL0220", "W-S038")):
+            self.assertEqual(relations[relation_id]["targetWorkIds"], [target])
+        self.assertEqual(self.songs["S230"]["title"], "Melodie der Liebe")
+        self.assertEqual(relations["REL0217"]["certainty"], "probable")
+        page = (DATA.parents[2] / "records/work/W-S232/index.html").read_text(encoding="utf-8")
+        self.assertIn("words by Arne Olovson", page)
+
 
 if __name__ == "__main__":
     unittest.main()

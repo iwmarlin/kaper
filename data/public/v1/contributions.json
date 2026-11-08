@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 1352,
+  "count": 1368,
   "records": [
     {
       "id": "CON-F001-C-P009",
@@ -25621,6 +25621,287 @@
       ],
       "sourceIds": [
         "SRC0983"
+      ]
+    },
+    {
+      "id": "CON-S230-C-P009",
+      "role": "composer",
+      "nameAsPrinted": "B. Kaper",
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S230"
+      ],
+      "sourceIds": [
+        "SRC0986",
+        "SRC0373"
+      ],
+      "personIds": [
+        "P009"
+      ],
+      "sortOrder": 10
+    },
+    {
+      "id": "CON-S230-C-P077",
+      "role": "composer",
+      "nameAsPrinted": "Walter Jurmann",
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S230"
+      ],
+      "sourceIds": [
+        "SRC0986",
+        "SRC0373"
+      ],
+      "personIds": [
+        "P077"
+      ],
+      "sortOrder": 11
+    },
+    {
+      "id": "CON-S230-L-P020",
+      "role": "lyricist",
+      "nameAsPrinted": "Fritz Rotter",
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S230"
+      ],
+      "sourceIds": [
+        "SRC0986",
+        "SRC0373"
+      ],
+      "personIds": [
+        "P020"
+      ],
+      "sortOrder": 1
+    },
+    {
+      "id": "CON-S230-PUB-ORG033",
+      "role": "publisher",
+      "nameAsPrinted": "Alrobi musikverlag",
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S230"
+      ],
+      "sourceIds": [
+        "SRC0986",
+        "SRC0373"
+      ],
+      "organizationIds": [
+        "ORG033"
+      ],
+      "evidenceContext": [
+        "copyright_or_registration"
+      ]
+    },
+    {
+      "id": "CON-S231-C-P009",
+      "role": "composer",
+      "nameAsPrinted": "B. Kaper",
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S231"
+      ],
+      "sourceIds": [
+        "SRC0987"
+      ],
+      "personIds": [
+        "P009"
+      ],
+      "sortOrder": 10,
+      "nameVariantIds": [
+        "PNV0019"
+      ]
+    },
+    {
+      "id": "CON-S231-C-P077",
+      "role": "composer",
+      "nameAsPrinted": "Walter Jurmann",
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S231"
+      ],
+      "sourceIds": [
+        "SRC0987"
+      ],
+      "personIds": [
+        "P077"
+      ],
+      "sortOrder": 11
+    },
+    {
+      "id": "CON-S231-L-P211",
+      "role": "lyricist",
+      "nameAsPrinted": "Harry S. Pepper",
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S231"
+      ],
+      "sourceIds": [
+        "SRC0987",
+        "SRC0373"
+      ],
+      "personIds": [
+        "P211"
+      ],
+      "sortOrder": 1
+    },
+    {
+      "id": "CON-S231-PUB-ORG060",
+      "role": "publisher",
+      "nameAsPrinted": "Dix, ltd.",
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S231"
+      ],
+      "sourceIds": [
+        "SRC0987",
+        "SRC0373"
+      ],
+      "organizationIds": [
+        "ORG060"
+      ],
+      "evidenceContext": [
+        "copyright_or_registration"
+      ]
+    },
+    {
+      "id": "CON-S232-C-P009",
+      "role": "composer",
+      "nameAsPrinted": "B. Kaper",
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S232"
+      ],
+      "sourceIds": [
+        "SRC0988",
+        "SRC0989"
+      ],
+      "personIds": [
+        "P009"
+      ],
+      "sortOrder": 10
+    },
+    {
+      "id": "CON-S232-C-P077",
+      "role": "composer",
+      "nameAsPrinted": "Walter Jurman",
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S232"
+      ],
+      "sourceIds": [
+        "SRC0988",
+        "SRC0989"
+      ],
+      "personIds": [
+        "P077"
+      ],
+      "sortOrder": 11
+    },
+    {
+      "id": "CON-S232-L-P212",
+      "role": "lyricist",
+      "nameAsPrinted": "Arne Olovson",
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S232"
+      ],
+      "sourceIds": [
+        "SRC0988",
+        "SRC0989",
+        "SRC0373"
+      ],
+      "personIds": [
+        "P212"
+      ],
+      "sortOrder": 1
+    },
+    {
+      "id": "CON-S232-PUB-ORG247",
+      "role": "publisher",
+      "nameAsPrinted": "Carl Gehrmans musikförlag",
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S232"
+      ],
+      "sourceIds": [
+        "SRC0988",
+        "SRC0373"
+      ],
+      "organizationIds": [
+        "ORG247"
+      ],
+      "evidenceContext": [
+        "sheet_music"
+      ]
+    },
+    {
+      "id": "CON-S233-C-P009",
+      "role": "composer",
+      "nameAsPrinted": "Dr. Kaper",
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S233"
+      ],
+      "sourceIds": [
+        "SRC0991"
+      ],
+      "personIds": [
+        "P009"
+      ],
+      "sortOrder": 10
+    },
+    {
+      "id": "CON-S233-C-P105",
+      "role": "composer",
+      "nameAsPrinted": "German",
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S233"
+      ],
+      "sourceIds": [
+        "SRC0991"
+      ],
+      "personIds": [
+        "P105"
+      ],
+      "sortOrder": 11,
+      "nameVariantIds": [
+        "PNV0003"
+      ]
+    },
+    {
+      "id": "CON-S233-L-P212",
+      "role": "lyricist",
+      "nameAsPrinted": "Arne Olovson",
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S233"
+      ],
+      "sourceIds": [
+        "SRC0991"
+      ],
+      "personIds": [
+        "P212"
+      ],
+      "sortOrder": 1
+    },
+    {
+      "id": "CON-S233-PUB-ORG247",
+      "role": "publisher",
+      "nameAsPrinted": "Gehrmans Musikförlag",
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S233"
+      ],
+      "sourceIds": [
+        "SRC0991"
+      ],
+      "organizationIds": [
+        "ORG247"
+      ],
+      "evidenceContext": [
+        "sheet_music"
       ]
     }
   ]

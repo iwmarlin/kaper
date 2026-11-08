@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 237,
+  "count": 239,
   "records": [
     {
       "id": "ORG001",
@@ -1232,7 +1232,6 @@
       "contributionIds": [
         "CON-O015-PUB-ORG033",
         "CON-O016-PUB-ORG033",
-        "CON-S047-PUB-ORG033",
         "CON-S009-PUB-ORG033",
         "CON-S013-PUB-ORG033",
         "CON-S015-PUB-ORG033",
@@ -1248,13 +1247,15 @@
         "CON-S031-PUB-ORG033",
         "CON-S032-PUB-ORG033",
         "CON-S046-PUB-ORG033",
+        "CON-S047-PUB-ORG033",
         "CON-S059-PUB-ORG033",
         "CON-S060-PUB-ORG033",
         "CON-S062-PUB-ORG033",
         "CON-S064-PUB-ORG033",
         "CON-S069-PUB-ORG033",
         "CON-S099-PUB-ORG033",
-        "CON-S101-PUB-ORG033"
+        "CON-S101-PUB-ORG033",
+        "CON-S230-PUB-ORG033"
       ],
       "workIds": [
         "W-O015",
@@ -1281,7 +1282,8 @@
         "W-S064",
         "W-S069",
         "W-S099",
-        "W-S101"
+        "W-S101",
+        "W-S230"
       ],
       "authorizedNameSource": "GND",
       "authorities": [
@@ -2269,13 +2271,16 @@
       "slug": "dix-ltd",
       "nameVariants": "Dix",
       "contributionIds": [
-        "CON-S187-PUB-ORG060"
+        "CON-S187-PUB-ORG060",
+        "CON-S231-PUB-ORG060"
       ],
       "workIds": [
-        "W-S187"
+        "W-S187",
+        "W-S231"
       ],
       "sourceIds": [
-        "SRC0312"
+        "SRC0312",
+        "SRC0987"
       ],
       "publicNote": "London music publisher named as copyright claimant in the 1934 registration of “The Sweetest Song in All the World”. No matching formal GND or VIAF corporate authority has been identified.",
       "authorizedNameSource": "local heading"
@@ -2863,7 +2868,9 @@
         "SRC0980",
         "SRC0983",
         "SRC0984",
-        "SRC0985"
+        "SRC0985",
+        "SRC0986",
+        "SRC0987"
       ],
       "authorizedNameSource": "LCNAF",
       "authorities": [
@@ -2979,7 +2986,9 @@
         "SRC0882",
         "SRC0887",
         "SRC0893",
-        "SRC0973"
+        "SRC0973",
+        "SRC0986",
+        "SRC0987"
       ],
       "authorities": [
         {
@@ -3953,7 +3962,9 @@
         "SRC0007",
         "SRC0331",
         "SRC0493",
-        "SRC0700"
+        "SRC0700",
+        "SRC0989",
+        "SRC0990"
       ],
       "authorizedNameSource": "Official website",
       "references": [
@@ -7902,6 +7913,53 @@
         "W-S213"
       ],
       "authorizedNameSource": "local heading"
+    },
+    {
+      "id": "ORG247",
+      "displayName": "Carl Gehrmans Musikförlag",
+      "authorizedName": "Carl Gehrmans Musikförlag",
+      "authorizedNameSource": "local heading",
+      "types": [
+        "publisher"
+      ],
+      "city": [
+        "Stockholm"
+      ],
+      "country": "Sweden",
+      "slug": "carl-gehrmans-musikforlag",
+      "nameVariants": "Gehrmans Musikförlag",
+      "publicNote": "Stockholm music publisher of the Swedish versions of “Ninon” and “Du lieber Geiger, spiel einen Tango für mich”, both with Swedish words by Arne Olovson.",
+      "sourceIds": [
+        "SRC0988",
+        "SRC0991"
+      ],
+      "contributionIds": [
+        "CON-S232-PUB-ORG247",
+        "CON-S233-PUB-ORG247"
+      ],
+      "workIds": [
+        "W-S232",
+        "W-S233"
+      ]
+    },
+    {
+      "id": "ORG248",
+      "displayName": "Kungliga biblioteket (National Library of Sweden)",
+      "authorizedName": "Kungliga biblioteket",
+      "authorizedNameSource": "local heading",
+      "types": [
+        "library"
+      ],
+      "city": [
+        "Stockholm"
+      ],
+      "country": "Sweden",
+      "slug": "kungliga-biblioteket",
+      "publicNote": "The National Library of Sweden, whose union catalogue LIBRIS records the Swedish prints.",
+      "sourceIds": [
+        "SRC0988",
+        "SRC0991"
+      ]
     }
   ]
 }

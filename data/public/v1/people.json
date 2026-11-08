@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 181,
+  "count": 183,
   "records": [
     {
       "id": "P001",
@@ -934,7 +934,11 @@
         "CON-S226-C-P009",
         "CON-S227-C-P009",
         "CON-S228-C-P009",
-        "CON-S229-C-P009"
+        "CON-S229-C-P009",
+        "CON-S230-C-P009",
+        "CON-S231-C-P009",
+        "CON-S232-C-P009",
+        "CON-S233-C-P009"
       ],
       "nameVariantIds": [
         "PNV0001",
@@ -1254,7 +1258,11 @@
         "W-S226",
         "W-S227",
         "W-S228",
-        "W-S229"
+        "W-S229",
+        "W-S230",
+        "W-S231",
+        "W-S232",
+        "W-S233"
       ],
       "birthYear": 1902,
       "deathYear": 1983,
@@ -1839,7 +1847,8 @@
         "CON-S220-L-P020",
         "CON-S221-C-P020",
         "CON-S222-L-P020",
-        "CON-S226-L-P020"
+        "CON-S226-L-P020",
+        "CON-S230-L-P020"
       ],
       "nameVariantIds": [
         "PNV0008",
@@ -1922,7 +1931,8 @@
         "W-S220",
         "W-S221",
         "W-S222",
-        "W-S226"
+        "W-S226",
+        "W-S230"
       ],
       "birthYear": 1900,
       "deathYear": 1984,
@@ -4578,7 +4588,10 @@
         "CON-S226-C-P077",
         "CON-S227-C-P077",
         "CON-S228-C-P077",
-        "CON-S229-C-P077"
+        "CON-S229-C-P077",
+        "CON-S230-C-P077",
+        "CON-S231-C-P077",
+        "CON-S232-C-P077"
       ],
       "nameVariantIds": [
         "PNV0005",
@@ -4790,7 +4803,10 @@
         "W-S226",
         "W-S227",
         "W-S228",
-        "W-S229"
+        "W-S229",
+        "W-S230",
+        "W-S231",
+        "W-S232"
       ],
       "birthYear": 1903,
       "deathYear": 1971,
@@ -5414,7 +5430,8 @@
         "CON-S044-C-P105",
         "CON-S182-C-P105",
         "CON-S207-C-P105",
-        "CON-S220-C-P105"
+        "CON-S220-C-P105",
+        "CON-S233-C-P105"
       ],
       "nameVariantIds": [
         "PNV0003"
@@ -5424,7 +5441,8 @@
         "W-S044",
         "W-S182",
         "W-S207",
-        "W-S220"
+        "W-S220",
+        "W-S233"
       ],
       "birthYear": 1872,
       "lifeDatesCertainty": "confirmed",
@@ -9586,6 +9604,54 @@
           "scheme": "lcnaf",
           "url": "https://id.loc.gov/authorities/names/nr94040454"
         }
+      ]
+    },
+    {
+      "id": "P211",
+      "displayName": "Harry S. Pepper",
+      "sortName": "Pepper, Harry S.",
+      "authorizedName": "Pepper, Harry S.",
+      "authorizedNameSource": "LCNAF",
+      "slug": "harry-s-pepper",
+      "primaryRole": "lyricist",
+      "roles": [
+        "lyricist"
+      ],
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/nr88011226"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/1061676145"
+        }
+      ],
+      "contributionIds": [
+        "CON-S231-L-P211"
+      ],
+      "workIds": [
+        "W-S231"
+      ]
+    },
+    {
+      "id": "P212",
+      "displayName": "Arne Olovson",
+      "sortName": "Olovson, Arne",
+      "authorizedName": "Olovson, Arne",
+      "authorizedNameSource": "local heading",
+      "slug": "arne-olovson",
+      "primaryRole": "lyricist",
+      "roles": [
+        "lyricist"
+      ],
+      "contributionIds": [
+        "CON-S232-L-P212",
+        "CON-S233-L-P212"
+      ],
+      "workIds": [
+        "W-S232",
+        "W-S233"
       ]
     }
   ],

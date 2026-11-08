@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 299,
+  "count": 303,
   "records": [
     {
       "id": "W-F001",
@@ -575,7 +575,8 @@
         "REL0031",
         "REL0032",
         "REL0033",
-        "REL0038"
+        "REL0038",
+        "REL0217"
       ],
       "filmIds": [
         "F011"
@@ -5226,7 +5227,8 @@
       "relationIds": [
         "REL0015",
         "REL0173",
-        "REL0211"
+        "REL0211",
+        "REL0220"
       ],
       "songIds": [
         "S038"
@@ -6925,7 +6927,9 @@
         "REL0145",
         "REL0155",
         "REL0197",
-        "REL0215"
+        "REL0215",
+        "REL0218",
+        "REL0219"
       ],
       "songIds": [
         "S076"
@@ -13303,6 +13307,169 @@
       ],
       "periods": [
         "hollywood"
+      ]
+    },
+    {
+      "id": "W-S230",
+      "title": "Melodie der Liebe",
+      "slug": "melodie-der-liebe-song",
+      "sortTitle": "Melodie der Liebe",
+      "workType": "Song",
+      "year": 1932,
+      "period": "european",
+      "certainty": "confirmed",
+      "publicScope": "standalone_page",
+      "sourceIds": [
+        "SRC0986",
+        "SRC0373"
+      ],
+      "contributionIds": [
+        "CON-S230-C-P009",
+        "CON-S230-C-P077",
+        "CON-S230-L-P020",
+        "CON-S230-PUB-ORG033"
+      ],
+      "personIds": [
+        "P009",
+        "P020",
+        "P077"
+      ],
+      "organizationIds": [
+        "ORG033"
+      ],
+      "relationIds": [
+        "REL0217"
+      ],
+      "songIds": [
+        "S230"
+      ],
+      "periods": [
+        "european"
+      ],
+      "publicNote": "The title song of the film. The United States registration of April 1932 gives it as a Schlager with words by Fritz Rotter and music by Kaper and Jurmann, published by Alrobi; it names no film, and the song is linked to the film on Sieghardt’s opus list (op. 057). Hofmeister’s entry for the film’s song book does not include it."
+    },
+    {
+      "id": "W-S231",
+      "title": "Ninon",
+      "slug": "ninon-pepper",
+      "sortTitle": "Ninon",
+      "workType": "Song",
+      "year": 1933,
+      "period": "european",
+      "certainty": "confirmed",
+      "publicScope": "standalone_page",
+      "sourceIds": [
+        "SRC0987",
+        "SRC0373"
+      ],
+      "contributionIds": [
+        "CON-S231-C-P009",
+        "CON-S231-C-P077",
+        "CON-S231-L-P211",
+        "CON-S231-PUB-ORG060"
+      ],
+      "personIds": [
+        "P009",
+        "P077",
+        "P211"
+      ],
+      "organizationIds": [
+        "ORG060"
+      ],
+      "relationIds": [
+        "REL0218"
+      ],
+      "songIds": [
+        "S231"
+      ],
+      "periods": [
+        "european"
+      ],
+      "publicNote": "English version by Harry S. Pepper, published in London by Dix, Ltd., and registered in the United States on 22 August 1933 as from A Song for You, the British title of Ein Lied für Dich. A second English version, by Harold Adamson, followed in 1935.",
+      "nameVariantIds": [
+        "PNV0019"
+      ]
+    },
+    {
+      "id": "W-S232",
+      "title": "Ninon",
+      "slug": "ninon-olovson",
+      "sortTitle": "Ninon",
+      "workType": "Song",
+      "year": 1933,
+      "period": "european",
+      "certainty": "confirmed",
+      "publicScope": "standalone_page",
+      "sourceIds": [
+        "SRC0988",
+        "SRC0989",
+        "SRC0990",
+        "SRC0373"
+      ],
+      "contributionIds": [
+        "CON-S232-C-P009",
+        "CON-S232-C-P077",
+        "CON-S232-L-P212",
+        "CON-S232-PUB-ORG247"
+      ],
+      "personIds": [
+        "P009",
+        "P077",
+        "P212"
+      ],
+      "organizationIds": [
+        "ORG247"
+      ],
+      "relationIds": [
+        "REL0219"
+      ],
+      "songIds": [
+        "S232"
+      ],
+      "periods": [
+        "european"
+      ],
+      "publicNote": "Swedish version by Arne Olovson, first line “Att ett leende kan vara nog”, published in Stockholm by Carl Gehrmans musikförlag as from “En sång till dig”, the Swedish title of Ein Lied für Dich, and recorded in Stockholm in 1933. The print is undated; the year follows the recordings."
+    },
+    {
+      "id": "W-S233",
+      "title": "Å, denna tango",
+      "slug": "a-denna-tango",
+      "sortTitle": "Å, denna tango",
+      "workType": "Song",
+      "year": 1931,
+      "period": "european",
+      "certainty": "confirmed",
+      "publicScope": "standalone_page",
+      "sourceIds": [
+        "SRC0991"
+      ],
+      "contributionIds": [
+        "CON-S233-C-P009",
+        "CON-S233-C-P105",
+        "CON-S233-L-P212",
+        "CON-S233-PUB-ORG247"
+      ],
+      "personIds": [
+        "P009",
+        "P105",
+        "P212"
+      ],
+      "organizationIds": [
+        "ORG247"
+      ],
+      "relationIds": [
+        "REL0220"
+      ],
+      "songIds": [
+        "S233"
+      ],
+      "periods": [
+        "european"
+      ],
+      "publicNote": "Swedish version of “Du lieber Geiger, spiel einen Tango für mich” by Arne Olovson, printed in Stockholm by Gehrmans with the German words beside the Swedish. Sieghardt does not list it, as Jurmann had no part in the song.",
+      "nameVariantIds": [
+        "PNV0003"
       ]
     }
   ],
