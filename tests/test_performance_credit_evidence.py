@@ -38,8 +38,10 @@ class PerformanceCreditEvidenceTests(unittest.TestCase):
             self.assertIn('SRC0373', credits[ident]['sourceIds'])
 
     def test_poster_is_not_a_director_credit(self):
-        self.assertNotIn('SRC0384', records('contributions')['CON-F052-D-P157']['sourceIds'])
-        self.assertNotIn('CON-F052-D-P157', records('sources')['SRC0384']['contributionIds'])
+        # The poster and the Iwerks credit it was kept apart from were withdrawn
+        # with the cartoon: Little Boy Blue is now MGM's Miniature.
+        self.assertNotIn('CON-F052-D-P157', records('contributions'))
+        self.assertNotIn('SRC0384', records('sources'))
 
 
 if __name__ == '__main__':

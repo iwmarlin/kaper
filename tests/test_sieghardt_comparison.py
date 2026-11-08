@@ -126,6 +126,24 @@ class SieghardtComparisonTests(unittest.TestCase):
         self.assertIn("Signorina! Serenade", table("sources")["SRC0409"]["researchNote"])
         self.assertIn("SRC0409", works["W-S078"]["sourceIds"])
 
+    def test_little_boy_blue_is_mgms_miniature(self):
+        works, people = table("works"), table("people")
+        film = works["W-F052"]
+        self.assertTrue({"SRC0983", "SRC0984"} <= set(film["sourceIds"]))
+        self.assertIn("MGM one-reel Miniature", film["publicNote"])
+        self.assertEqual(self.credits["CON-F052-D-P209"]["role"], "film_director")
+        self.assertEqual(people["P209"]["authorizedName"], "Bucquet, Harold S.")
+        for credit_id in ("CON-F052-C-P009", "CON-F052-C-P077", "CON-F052-PR-P210"):
+            self.assertEqual(self.credits[credit_id]["certainty"], "probable")
+        for gone in ("P157", "P158"):
+            self.assertNotIn(gone, people)
+        self.assertNotIn("ORG116", table("organizations"))
+        self.assertFalse({"M197", "M304"} & set(table("media")))
+        root = DATA.parents[2]
+        for kind, old in (("person", "P157"), ("organization", "ORG116"), ("media", "M197"), ("source", "SRC0384")):
+            page = (root / "records" / kind / old / "index.html").read_text(encoding="utf-8")
+            self.assertIn("url=../../work/W-F052/", page)
+
 
 if __name__ == "__main__":
     unittest.main()

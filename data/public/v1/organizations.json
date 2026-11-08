@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 238,
+  "count": 237,
   "records": [
     {
       "id": "ORG001",
@@ -67,7 +67,9 @@
         "SRC0887",
         "SRC0952",
         "SRC0965",
-        "SRC0967"
+        "SRC0967",
+        "SRC0983",
+        "SRC0984"
       ],
       "timelineEventIds": [
         "TE0038",
@@ -91,9 +93,13 @@
         "CON-F047-PC-ORG001",
         "CON-F048-PC-ORG001",
         "CON-F050-PC-ORG001",
+        "CON-F052-CC-ORG001",
+        "CON-F052-PC-ORG001",
         "CON-F055-PC-ORG001",
+        "CON-S119-CC-ORG001",
         "CON-S120-CC-ORG001",
         "CON-S122-CC-ORG001",
+        "CON-S123-CC-ORG001",
         "CON-S143-CC-ORG001",
         "CON-S144-CC-ORG001",
         "CON-S145-CC-ORG001",
@@ -115,9 +121,7 @@
         "CON-S184-CC-ORG001",
         "CON-S192-CC-ORG001",
         "CON-S202-PUB-ORG001",
-        "CON-S228-CC-ORG001",
-        "CON-S119-CC-ORG001",
-        "CON-S123-CC-ORG001"
+        "CON-S228-CC-ORG001"
       ],
       "workIds": [
         "W-F033",
@@ -161,7 +165,8 @@
         "W-S184",
         "W-S192",
         "W-S202",
-        "W-S228"
+        "W-S228",
+        "W-F052"
       ],
       "authorities": [
         {
@@ -2857,7 +2862,10 @@
         "SRC0976",
         "SRC0978",
         "SRC0979",
-        "SRC0980"
+        "SRC0980",
+        "SRC0983",
+        "SRC0984",
+        "SRC0985"
       ],
       "authorizedNameSource": "LCNAF",
       "authorities": [
@@ -3632,7 +3640,6 @@
         "SRC0362",
         "SRC0364",
         "SRC0366",
-        "SRC0384",
         "SRC0386",
         "SRC0387",
         "SRC0388",
@@ -3700,7 +3707,6 @@
         "SRC0646",
         "SRC0647",
         "SRC0648",
-        "SRC0656",
         "SRC0657",
         "SRC0662",
         "SRC0664",
@@ -3779,7 +3785,9 @@
         "SRC0929",
         "SRC0962",
         "SRC0978",
-        "SRC0980"
+        "SRC0980",
+        "SRC0984",
+        "SRC0985"
       ],
       "authorizedNameSource": "LCNAF",
       "authorities": [
@@ -4511,38 +4519,6 @@
         {
           "scheme": "bn",
           "url": "https://data.bn.org.pl/institutions/authorities/1941077"
-        }
-      ]
-    },
-    {
-      "id": "ORG116",
-      "displayName": "Celebrity Productions, Inc.",
-      "authorizedName": "Celebrity Productions",
-      "types": [
-        "film_studio"
-      ],
-      "city": [
-        "Los Angeles"
-      ],
-      "country": "United States",
-      "slug": "celebrity-productions-pa-powers",
-      "nameVariants": "Celebrity Productions",
-      "publicNote": "The Little Boy Blue poster credit associates Celebrity Productions with P. A. Powers. Powers is retained in the work-specific printed credit and is not treated as part of the corporate name.",
-      "sourceIds": [
-        "SRC0373",
-        "SRC0384"
-      ],
-      "contributionIds": [
-        "CON-F052-PC-ORG116"
-      ],
-      "workIds": [
-        "W-F052"
-      ],
-      "authorizedNameSource": "LCNAF",
-      "authorities": [
-        {
-          "scheme": "lcnaf",
-          "url": "https://id.loc.gov/authorities/names/n92062261"
         }
       ]
     },

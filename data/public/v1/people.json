@@ -7663,94 +7663,6 @@
       ]
     },
     {
-      "id": "P157",
-      "displayName": "Ub Iwerks",
-      "sortName": "Iwerks, Ub",
-      "authorizedName": "Iwerks, Ub",
-      "authorizedNameSource": "LCNAF",
-      "slug": "ub-iwerks",
-      "primaryRole": "film director",
-      "roles": [
-        "film director",
-        "producer",
-        "animator"
-      ],
-      "sourceIds": [
-        "SRC0373",
-        "SRC0384",
-        "SRC0656"
-      ],
-      "contributionIds": [
-        "CON-F052-D-P157"
-      ],
-      "workIds": [
-        "W-F052"
-      ],
-      "birthYear": 1901,
-      "deathYear": 1971,
-      "lifeDatesCertainty": "confirmed",
-      "authorities": [
-        {
-          "scheme": "lcnaf",
-          "url": "https://id.loc.gov/authorities/names/n92036102"
-        },
-        {
-          "scheme": "gnd",
-          "url": "https://d-nb.info/gnd/124417280"
-        },
-        {
-          "scheme": "viaf",
-          "url": "https://viaf.org/viaf/66672524"
-        },
-        {
-          "scheme": "wikidata",
-          "url": "https://www.wikidata.org/wiki/Q336424"
-        }
-      ]
-    },
-    {
-      "id": "P158",
-      "displayName": "Carl W. Stalling",
-      "sortName": "Stalling, Carl W.",
-      "authorizedName": "Stalling, Carl W.",
-      "authorizedNameSource": "LCNAF",
-      "slug": "carl-w-stalling",
-      "primaryRole": "composer",
-      "roles": [
-        "composer"
-      ],
-      "sourceIds": [
-        "SRC0373"
-      ],
-      "contributionIds": [
-        "CON-F052-C-P158"
-      ],
-      "workIds": [
-        "W-F052"
-      ],
-      "birthYear": 1891,
-      "deathYear": 1972,
-      "lifeDatesCertainty": "confirmed",
-      "authorities": [
-        {
-          "scheme": "lcnaf",
-          "url": "https://id.loc.gov/authorities/names/n85378906"
-        },
-        {
-          "scheme": "gnd",
-          "url": "https://d-nb.info/gnd/140706925"
-        },
-        {
-          "scheme": "viaf",
-          "url": "https://viaf.org/viaf/107705214"
-        },
-        {
-          "scheme": "wikidata",
-          "url": "https://www.wikidata.org/wiki/Q598185"
-        }
-      ]
-    },
-    {
       "id": "P159",
       "displayName": "Julian Tuwim",
       "sortName": "Tuwim, Julian",
@@ -9609,6 +9521,71 @@
       ],
       "sourceIds": [
         "SRC0373"
+      ]
+    },
+    {
+      "id": "P209",
+      "displayName": "Harold S. Bucquet",
+      "sortName": "Bucquet, Harold S.",
+      "authorizedName": "Bucquet, Harold S.",
+      "authorizedNameSource": "LCNAF",
+      "slug": "harold-s-bucquet",
+      "primaryRole": "film director",
+      "roles": [
+        "film director"
+      ],
+      "birthYear": 1891,
+      "deathYear": 1946,
+      "lifeDatesCertainty": "confirmed",
+      "contributionIds": [
+        "CON-F052-D-P209"
+      ],
+      "workIds": [
+        "W-F052"
+      ],
+      "sourceIds": [
+        "SRC0983",
+        "SRC0373"
+      ],
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/no97024510"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/139726500"
+        }
+      ]
+    },
+    {
+      "id": "P210",
+      "displayName": "Jack Chertok",
+      "sortName": "Chertok, Jack",
+      "authorizedName": "Chertok, Jack",
+      "authorizedNameSource": "LCNAF",
+      "slug": "jack-chertok",
+      "primaryRole": "producer",
+      "roles": [
+        "producer"
+      ],
+      "birthYear": 1906,
+      "deathYear": 1995,
+      "lifeDatesCertainty": "confirmed",
+      "contributionIds": [
+        "CON-F052-PR-P210"
+      ],
+      "workIds": [
+        "W-F052"
+      ],
+      "sourceIds": [
+        "SRC0373"
+      ],
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/nr94040454"
+        }
       ]
     }
   ],
