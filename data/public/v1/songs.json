@@ -807,8 +807,8 @@
       "publisherAsPrinted": "Alrobi Musikverlag",
       "lyricistAsPrinted": "Fritz Rotter",
       "filmTitleAsSource": "Die große Attraktion",
-      "publicNote": "The song itself is documented, but its association with Die große Attraktion remains probable rather than confirmed.",
-      "certainty": "confirmed",
+      "publicNote": "No document of the time names this song: Hofmeister’s registrations of 1931 list five songs from Die große Attraktion, by Kaper, Brodszky and Lehár, and not this one, and Sieghardt’s opus list and year-by-year list do not include it; from this film his opus list has only Jurmann’s “Parlez-vous français?” (op. 041, Alrobi 1931). The title and its credits are kept as probable.",
+      "certainty": "probable",
       "lyricistStatus": "lyricist known",
       "composerStatus": "composer known",
       "workIds": [
@@ -2356,14 +2356,16 @@
         "W-S087"
       ],
       "sourceIds": [
-        "SRC0299"
+        "SRC0299",
+        "SRC0373"
       ],
       "titleVariantIds": [
         "TV0162"
       ],
       "periods": [
         "european"
-      ]
+      ],
+      "publicNote": "Sieghardt gives the publishers as Edition Karl Brüll and Éditions Salabert; the BnF holds no edition of the song, and no document of the time confirms either."
     },
     {
       "id": "S088",
@@ -5036,7 +5038,8 @@
       ],
       "periods": [
         "hollywood"
-      ]
+      ],
+      "publicNote": "Robbins Music Corporation, the publisher of the English original, is credited on Sieghardt alone: the 1937 United States copyright catalogue registers only the English song with Robbins, and no edition of this version has been found."
     },
     {
       "id": "S198",
@@ -5049,7 +5052,7 @@
       "lyricistAsPrinted": "Didier Bloch",
       "filmTitleAsSource": "A day at the races",
       "jurmannCollaboration": true,
-      "publicNote": "French-language version of “Blue Venetian Waters.” Sieghardt’s work catalogue prints the title as “Sous le ciel de Venise” in the entry for op. 128 and as “Sous le ciel de Venice” in the entry for the French version, op. 128/F, with the lyric credit “Didier Bloch”; BnF identifies Didier Mauprey as a pseudonym of Didier Bloch.",
+      "publicNote": "French-language version of “Blue Venetian Waters.” Sieghardt’s work catalogue prints the title as “Sous le ciel de Venise” in the entry for op. 128 and as “Sous le ciel de Venice” in the entry for the French version, op. 128/F, with the lyric credit “Didier Bloch”; BnF identifies Didier Mauprey as a pseudonym of Didier Bloch. Robbins Music Corporation, the publisher of the English original, is credited on Sieghardt alone: the 1937 United States copyright catalogue registers only the English song with Robbins, and no edition of this version has been found.",
       "certainty": "confirmed",
       "lyricistStatus": "lyricist known",
       "composerStatus": "composer known",
@@ -5120,7 +5123,8 @@
       ],
       "periods": [
         "hollywood"
-      ]
+      ],
+      "publicNote": "Robbins Music Corporation, the publisher of the English original, is credited on Sieghardt alone: the 1937 United States copyright catalogue registers only the English song with Robbins, and no edition of this version has been found."
     },
     {
       "id": "S202",
@@ -5129,7 +5133,7 @@
       "year": 1937,
       "period": "hollywood",
       "genre": "ballad",
-      "publisherAsPrinted": "MGM Corporation; Robbins Music Corporation",
+      "publisherAsPrinted": "Robbins Music Corporation",
       "lyricistAsPrinted": "Marylis",
       "filmTitleAsSource": "A day at the races",
       "jurmannCollaboration": true,
@@ -5147,7 +5151,8 @@
       ],
       "periods": [
         "hollywood"
-      ]
+      ],
+      "publicNote": "Robbins Music Corporation, the publisher of the English original, is credited on Sieghardt alone: the 1937 United States copyright catalogue registers only the English song with Robbins, and no edition of this version has been found."
     },
     {
       "id": "S205",

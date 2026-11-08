@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 1353,
+  "count": 1352,
   "records": [
     {
       "id": "CON-F001-C-P009",
@@ -7715,7 +7715,7 @@
       "role": "composer",
       "nameAsPrinted": "Bronisław Kaper",
       "sortOrder": 10,
-      "certainty": "confirmed",
+      "certainty": "probable",
       "workIds": [
         "W-S032"
       ],
@@ -7731,7 +7731,7 @@
       "role": "composer",
       "nameAsPrinted": "Walter Jurmann",
       "sortOrder": 11,
-      "certainty": "confirmed",
+      "certainty": "probable",
       "workIds": [
         "W-S032"
       ],
@@ -7747,7 +7747,7 @@
       "role": "lyricist",
       "nameAsPrinted": "Fritz Rotter",
       "sortOrder": 20,
-      "certainty": "confirmed",
+      "certainty": "probable",
       "workIds": [
         "W-S032"
       ],
@@ -7765,7 +7765,7 @@
       "evidenceContext": [
         "sheet_music"
       ],
-      "certainty": "confirmed",
+      "certainty": "probable",
       "workIds": [
         "W-S032"
       ],
@@ -11561,9 +11561,9 @@
       "role": "publisher",
       "nameAsPrinted": "Éditions Salabert",
       "evidenceContext": [
-        "sheet_music"
+        "secondary_literature"
       ],
-      "certainty": "confirmed",
+      "certainty": "probable",
       "workIds": [
         "W-S087"
       ],
@@ -11571,8 +11571,9 @@
         "ORG039"
       ],
       "sourceIds": [
-        "SRC0299"
-      ]
+        "SRC0373"
+      ],
+      "evidenceLocator": "Sieghardt opus list, p. 194, op. 092/F: “Edition Karl Brüll/1933, Editions Salabert, Paris”"
     },
     {
       "id": "CON-S088-C-P077",
@@ -18565,9 +18566,9 @@
       "role": "publisher",
       "nameAsPrinted": "Robbins Music Corporation",
       "evidenceContext": [
-        "sheet_music"
+        "secondary_literature"
       ],
-      "certainty": "confirmed",
+      "certainty": "probable",
       "workIds": [
         "W-S197"
       ],
@@ -18577,7 +18578,7 @@
       "sourceIds": [
         "SRC0373"
       ],
-      "evidenceLocator": "Sieghardt work catalogue, p. 198, op. 128/A"
+      "evidenceLocator": "Sieghardt opus list, p. 198, op. 128/A: “Robbins Music Corporation/1936”"
     },
     {
       "id": "CON-S198-C-P009",
@@ -18639,9 +18640,9 @@
       "role": "publisher",
       "nameAsPrinted": "Robbins Music Corporation",
       "evidenceContext": [
-        "sheet_music"
+        "secondary_literature"
       ],
-      "certainty": "confirmed",
+      "certainty": "probable",
       "workIds": [
         "W-S198"
       ],
@@ -18651,7 +18652,7 @@
       "sourceIds": [
         "SRC0373"
       ],
-      "evidenceLocator": "Sieghardt work catalogue, p. 198, op. 128/F"
+      "evidenceLocator": "Sieghardt opus list, p. 198, op. 128/F: “Robbins Music Corporation/1936”"
     },
     {
       "id": "CON-S200-C-P009",
@@ -18811,9 +18812,9 @@
       "role": "publisher",
       "nameAsPrinted": "Robbins Music Corporation",
       "evidenceContext": [
-        "sheet_music"
+        "secondary_literature"
       ],
-      "certainty": "confirmed",
+      "certainty": "probable",
       "workIds": [
         "W-S201"
       ],
@@ -18822,7 +18823,8 @@
       ],
       "sourceIds": [
         "SRC0373"
-      ]
+      ],
+      "evidenceLocator": "Sieghardt, publisher of the English original"
     },
     {
       "id": "CON-S202-C-P009",
@@ -18876,31 +18878,13 @@
       ]
     },
     {
-      "id": "CON-S202-PUB-ORG001",
-      "role": "publisher",
-      "nameAsPrinted": "MGM Corporation",
-      "evidenceContext": [
-        "sheet_music"
-      ],
-      "certainty": "confirmed",
-      "workIds": [
-        "W-S202"
-      ],
-      "organizationIds": [
-        "ORG001"
-      ],
-      "sourceIds": [
-        "SRC0373"
-      ]
-    },
-    {
       "id": "CON-S202-PUB-ORG035",
       "role": "publisher",
       "nameAsPrinted": "Robbins Music Corporation",
       "evidenceContext": [
-        "sheet_music"
+        "secondary_literature"
       ],
-      "certainty": "confirmed",
+      "certainty": "probable",
       "workIds": [
         "W-S202"
       ],
@@ -18909,7 +18893,8 @@
       ],
       "sourceIds": [
         "SRC0373"
-      ]
+      ],
+      "evidenceLocator": "Sieghardt, publisher of the English original"
     },
     {
       "id": "CON-S205-C-P009",

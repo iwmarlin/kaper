@@ -144,6 +144,16 @@ class SieghardtComparisonTests(unittest.TestCase):
             page = (root / "records" / kind / old / "index.html").read_text(encoding="utf-8")
             self.assertIn("url=../../work/W-F052/", page)
 
+    def test_publishers_on_sieghardt_alone_are_probable(self):
+        for credit_id in ("CON-S087-PUB-ORG039", "CON-S197-PUB-ORG035", "CON-S198-PUB-ORG035",
+                          "CON-S201-PUB-ORG035", "CON-S202-PUB-ORG035", "CON-S032-PUB-ORG033"):
+            credit = self.credits[credit_id]
+            self.assertEqual(credit["certainty"], "probable")
+            self.assertEqual(credit["sourceIds"], ["SRC0373"])
+        self.assertNotIn("CON-S202-PUB-ORG001", self.credits)
+        self.assertEqual(self.songs["S032"]["certainty"], "probable")
+        self.assertIn("No document of the time names this song", self.songs["S032"]["publicNote"])
+
 
 if __name__ == "__main__":
     unittest.main()
