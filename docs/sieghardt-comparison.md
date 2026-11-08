@@ -132,6 +132,21 @@ document stands, and that is noted below.
 - *Un regard de femme* and *Dairy-Maid Song*: Sieghardt credits Jurmann
   alone; the BnF catalogue and the 1936 copyright registration credit Kaper
   and Jurmann.
+- **Years.** Sieghardt dates seven songs differently from the archive, from
+  the publication years he reports. Under `docs/work-years.md` his catalogue
+  does not date a Work, and no document of the time supports his year in any
+  of the seven. The archive keeps its years:
+
+  | Work | Sieghardt | Archive | Earliest document |
+  | --- | --- | --- | --- |
+  | *Wer weint heut’ aus Liebe Tränen?* | 1931 | 1932 | Hofmeister 1932; none in Hofmeister 1931 |
+  | *Ein Lied aus meiner Heimat* | 1931 | 1932 | the same |
+  | *Es war einmal ein Baby* | 1931 | 1932 | the same |
+  | *Once There Was a Baby* | 1931 | 1933 | United States registration, 1933 (`SRC0308`); a version cannot be older than its German original of 1932 |
+  | *Nur Sport!* | 1932 | 1933 | Hofmeister 1933; none in Hofmeister 1932 |
+  | *Tränen in der Geige* | 1933 | 1932 | Hofmeister, November 1932; 1933 is the year of the film |
+  | *Le bistrot du port* | 1933 | 1934 | the Coda edition, cop. 1934 (`SRC0285`), and Lys Gauty’s Polydor recording of 1934 (`SRC0884`) |
+
 - *Falling in Love with You*, *Learn to Smile* and *The Sweetest Song in All
   the World*: Sieghardt dates them 1941, from later editions; their copyright
   registrations date them 1932 and 1934.
@@ -142,12 +157,6 @@ document stands, and that is noted below.
   Sieghardt's filmography describes an MGM one-reel miniature of 1936 by
   Harold S. Bucquet, produced by Jack Chertok, with Chic Sale, and his
   year-by-year list calls it an animated short. The film may be the wrong one.
-- **Years** Sieghardt gives earlier than the archive, from publication years
-  he reports: *Wer weint heut' aus Liebe Tränen* and *Ein Lied aus meiner
-  Heimat* (1931), *Es war einmal ein Baby* and *Once There Was a Baby*
-  (1931), *Nur Sport!* (1932), *Le bistrot du port* (1933); *Tränen in der
-  Geige* the other way (1933 against 1932). Whether a secondary source's
-  publication year can date a Work is for `docs/work-years.md` to say.
 - **Publisher credits resting on Sieghardt or the Jurmann catalogue alone**,
   to be checked the same way: *Wir sind international* (Alrobi; Hofmeister
   1931 has the film's other songs with Alrobi, not this one), *Les charmes
