@@ -192,12 +192,17 @@ class GornerWorkListTest(unittest.TestCase):
                 self.assertNotIn("year-by-year", text)
                 self.assertNotIn("adds Carl W. Stalling", text)
 
-    def test_waxman_cues_off_the_opus_list_rest_on_gorner(self):
+    def test_waxman_cues_rest_on_the_opus_list_and_gorner(self):
         for credit_id in ("CON-S135-C-P135", "CON-S139-C-P135", "CON-S141-C-P135"):
             credit = self.credits[credit_id]
             with self.subTest(credit=credit_id):
-                self.assertEqual((credit["certainty"], credit["sourceIds"]), ("probable", ["SRC0992", "SRC0373"]))
-                self.assertIn("p. 227", credit["evidenceLocator"])
+                self.assertEqual((credit["certainty"], credit["sourceIds"]), ("probable", ["SRC0373", "SRC0992"]))
+                self.assertIn("p. 200", credit["evidenceLocator"])
+
+    def test_a_trader_names_waxman_too(self):
+        credit = self.credits["CON-S169-C-P135"]
+        self.assertEqual((credit["certainty"], credit["sourceIds"]), ("probable", ["SRC0373", "SRC0992"]))
+        self.assertIn("op. 155", credit["evidenceLocator"])
 
 
 if __name__ == "__main__":

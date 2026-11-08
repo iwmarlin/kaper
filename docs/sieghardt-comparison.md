@@ -2,12 +2,12 @@
 
 Alexander Sieghardt's catalogue of Walter Jurmann's works, in Elisabeth
 Buxbaum's *„Veronika, der Lenz ist da“* (2006; `SRC0373`), was compared
-with the archive: the opus list as far as op. 135 (pp. 178–199) and the
-filmography (pp. 212–216 and 218–231). Every entry that names Kaper was
-compared with the archive's Work, credits, titles and dates. Two parts were
-not to hand: the rest of the opus list, which goes on past op. 135 (the
-filmography cites op. 136–139 and op. 155 for *Trouble for Two*) and
-presumably fills pp. 200–211, and p. 217, with filmography entries 17–19.
+with the archive: the opus list, op. 001–280 (pp. 178–211), and the
+filmography from its first entry to no. 62 (pp. 212–231). Every entry that
+names Kaper was compared with the archive's Work, credits, titles and
+dates. The photographs of pp. 204 and 208 (op. 193–204, 1941–1943, and
+op. 238–249, 1946–1954) are not legible, and the filmography goes on past
+p. 231, which was not to hand.
 
 A work list arranged by year, pp. 200–217 of Eberhard Görner's *Walter
 Jurmann: Sein Leben, seine Musik* (Henschel, 2014; `SRC0992`), was used
@@ -41,10 +41,14 @@ below.
   Ernst Marischka on *Ninon, lach mir einmal zu* (op. 088); Henri-Georges
   Clouzot and Serge Veber on *O Madona!* (op. 089/F); Louis Poterat on *C'est
   chez nous* (op. 111) and *Vivons l'amour, vivons la vie* (op. 109); Marc-Cab
-  on *C'est ton amour* (op. 112); Franz Waxman on six cues for *Trouble for
-  Two* (op. 131, 132 and 135; the other three, *Suicide Club*, *Second Deal*
-  and *The Next Morning*, on Görner's list, `SRC0992`, and Sieghardt's
-  filmography, p. 227, which names Waxman among the film's composers). He also confirms Léo
+  on *C'est ton amour* (op. 112); Franz Waxman on seven cues for *Trouble
+  for Two* (op. 131, 132, 135, 137–139 and 155, with Görner's list,
+  `SRC0992`), *A Trader* (op. 155) among them since November 2026. For
+  *The Next Morning*, *Second Deal* and *Suicide Club* (op. 137–139)
+  Sieghardt names Jurmann and Waxman without Kaper, where the Jurmann
+  catalogue and Görner name Kaper too; the archive keeps Kaper. Sieghardt
+  also names Jurmann with Kaper on *My Heart Is a Gypsy* (op. 174), which
+  stays `probable`, since the 1939 registration names Kaper alone. He also confirms Léo
   Lelièvre on *Vivons l'amour*, which is now cited. Paul Bertrand, Paul Henri
   Bertrand and Alexandre Tschesnokoff are named in the songs' notes rather than
   credited: no register holds them, and the archive does not make a person
@@ -165,7 +169,7 @@ below.
     does not name it either: his filmography (no. 9, p. 214) lists Kaper
     among the film's composers but gives as its music only Jurmann’s
     *Parlez-vous français?* (op. 041, Alrobi 1931), and the title is in
-    neither his opus list as far as op. 135 nor Görner's list. The song and
+    neither his opus list nor Görner's list. The song and
     its credits are now `probable`. It entered the archive from the
     earliest version of the site, with no document; `SRC0373`, its only
     source, does not contain it.
@@ -189,11 +193,14 @@ below.
   | *Nur Sport!* | 1932 | 1933 | Hofmeister 1933; none in Hofmeister 1932 |
   | *Tränen in der Geige* | 1933 | 1932 | Hofmeister, November 1932; 1933 is the year of the film |
   | *Le bistrot du port* | 1933 | 1934 | the Coda edition, cop. 1934 (`SRC0285`), and Lys Gauty’s Polydor recording of 1934 (`SRC0884`) |
+  | *Ni mal, ni bien* | 1936 | 1934 | the Salabert edition (`SRC0071`) and the film’s sheet-music cover, both 1934 |
 
 - *Falling in Love with You*, *Learn to Smile* and *The Sweetest Song in All
-  the World*: Görner's list dates them 1941, from later editions; their
-  copyright registrations date them 1932 and 1934. Sieghardt's opus list as
-  far as op. 135 does not include them.
+  the World*: Sieghardt (op. 187, 189 and 191, p. 203) and Görner date
+  them 1941, from later editions; their copyright registrations date them
+  1932 and 1934.
+- *Celui que j’aime*: Sieghardt gives Leo Feist, 1937 (op. 156/F); the
+  France-Mélodie edition of 1939 (`SRC0303`) stands.
 
 - **Films.**
   - *My Song for You*: Sieghardt names Spoliansky, Kaper and Jurmann for its
@@ -249,6 +256,12 @@ below.
     archive does. *Es wird schon wieder besser*, *Skandal in der
     Parkstraße*, *Melodie der Liebe* and *Ein toller Einfall* (nos. 12–15)
     agree with the archive too.
+  - **Filmography entries 17–20** (p. 217) agree with the archive. For
+    *Hochzeitsreise zu Dritt* Sieghardt names Karl Meinhardt as director,
+    where the archive, on a film database and an advertisement of the time, has Erich Schmidt
+    and Carl Meinhard as dialogue director; his op. 069 for the film is a
+    Swedish foxtrot and is most likely a misprint for op. 079, *Wenn ich
+    ’mal eine Dummheit mach’*.
 
 ## Left for decision or further research
 
@@ -272,6 +285,10 @@ below.
   Walter Jurmann. © Apr. 25, 1932; Alrobi”. It is added (`W-S230`), linked
   to the film as `probable`, since only Sieghardt names the film: his
   filmography (no. 14, p. 216) has op. 057 sung by Richard Tauber in it.
+- **Harbour Café** (op. 188): Sieghardt and Görner list a song by Jurmann
+  and Kaper with their own words, published by Criterion Music
+  Corporation in 1941. The archive does not hold it, and no document of the
+  time has been checked yet.
 - **Language versions.** The versions Sieghardt lists under the opus numbers
   of songs the archive holds were checked in the United States copyright
   catalogues (1930–1937), Hofmeister (1929–1938), the BnF, the Deutsche
