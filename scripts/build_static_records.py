@@ -37,6 +37,10 @@ LEGACY_WITHDRAWN_REDIRECTS = {
         ("media", "M197"), ("media", "M304"), ("source", "SRC0384"), ("source", "SRC0656"),
     )
 }
+# "Wir sind international" (W-S032) was withdrawn in November 2026: no document
+# of the time, nor Sieghardt or Görner, names the song, which came from the
+# site's first version. Its address leads to the film it was given.
+LEGACY_WITHDRAWN_REDIRECTS[("work", "W-S032")] = ("work", "W-F007")
 # Each old (kind, id) maps to the (kind, id) whose page replaces it.
 LEGACY_REDIRECTS = (
     {("source", old): ("source", new) for old, new in LEGACY_SOURCE_REDIRECTS.items()}

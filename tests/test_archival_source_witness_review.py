@@ -94,7 +94,7 @@ class ArchivalSourceWitnessReviewTests(unittest.TestCase):
                              "U.S. National Archives and Records Administration")
             self.assertEqual(self.sources[sid]["publication"], "National Archives Catalog")
         self.assertEqual(self.sources["SRC0009"]["repository"], "American Heritage Center, University of Wyoming")
-        self.assertEqual(self.sources["SRC0009"]["publication"], "Archives West")
+        self.assertEqual(self.sources["SRC0009"]["publication"], "Bronislaw Kaper Papers, Collection 03193")
         self.assertEqual(self.sources["SRC0880"]["repository"], "UCLA Library, Performing Arts Special Collections")
         self.assertEqual(self.sources["SRC0880"]["publication"], "Online Archive of California")
         self.assertIn("displays one scan", self.sources["SRC0014"]["researchNote"])

@@ -146,13 +146,19 @@ class SieghardtComparisonTests(unittest.TestCase):
 
     def test_publishers_on_sieghardt_alone_are_probable(self):
         for credit_id in ("CON-S087-PUB-ORG039", "CON-S197-PUB-ORG035", "CON-S198-PUB-ORG035",
-                          "CON-S201-PUB-ORG035", "CON-S202-PUB-ORG035", "CON-S032-PUB-ORG033"):
+                          "CON-S201-PUB-ORG035", "CON-S202-PUB-ORG035"):
             credit = self.credits[credit_id]
             self.assertEqual(credit["certainty"], "probable")
             self.assertEqual(credit["sourceIds"], ["SRC0373"])
         self.assertNotIn("CON-S202-PUB-ORG001", self.credits)
-        self.assertEqual(self.songs["S032"]["certainty"], "probable")
-        self.assertIn("No document of the time names this song", self.songs["S032"]["publicNote"])
+
+    def test_wir_sind_international_is_withdrawn(self):
+        # No document of the time, nor Sieghardt or Görner, names the song.
+        self.assertNotIn("S032", self.songs)
+        self.assertNotIn("W-S032", table("works"))
+        self.assertFalse([c for c in self.credits if c.startswith("CON-S032-")])
+        page = (DATA.parents[2] / "records" / "work" / "W-S032" / "index.html").read_text(encoding="utf-8")
+        self.assertIn("url=../W-F007/", page)
 
     def test_documented_versions_are_added(self):
         works, relations = table("works"), table("work-relations")

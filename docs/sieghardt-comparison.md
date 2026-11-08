@@ -173,10 +173,11 @@ below.
     does not name it either: his filmography (no. 9, p. 214) lists Kaper
     among the film's composers but gives as its music only Jurmann’s
     *Parlez-vous français?* (op. 041, Alrobi 1931), and the title is in
-    neither his opus list nor Görner's list. The song and
-    its credits are now `probable`. It entered the archive from the
-    earliest version of the site, with no document; `SRC0373`, its only
-    source, does not contain it.
+    neither his opus list nor Görner's list. It entered the archive from
+    the earliest version of the site, with no document; `SRC0373`, its only
+    source, does not contain it. The song and its credits were first made
+    `probable` and, in November 2026, withdrawn; the old address of
+    `W-S032` leads to the film, `W-F007`.
 - *On n'aime qu'une fois*: the United States copyright registration of 1935
   (`SRC0973`) names André de Badet alone as author of the words, where
   Sieghardt adds Paul Henri Bertrand. The song's note says so.

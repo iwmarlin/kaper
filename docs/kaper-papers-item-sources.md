@@ -62,8 +62,13 @@ rule: one Source per manuscript, the box it cites matching the work's.
   *Was macht jede Nacht*, added later, had no such credit, so their cards did
   not say where the manuscript is. `CON-S012-HI-ORG056` (box 1) and
   `CON-S024-HI-ORG056` (box 2) now do, each resting on its manuscript Source.
-- **Still open: O004 is not in the accession list.** The list's single entry
-  *Piece for voice and orchestra, Berlin, 1926*, 8 leaves, may describe one
-  manuscript holding both the 1926 orchestral piece and its Berlin
-  recomposition for voice, which would explain both the missing entry and the
-  1926 date. Only the reproductions can say whether there are one or two.
+- **Settled, 8 November 2026: O004 shares O030's folder.** The list's single
+  entry *Piece for voice and orchestra, Berlin, 1926*, 8 leaves, describes one
+  folder, scanned by the Center as “Box 2, Untitled Orchestra for Voice”. Its
+  first four pages hold the *Piece for Orchestra*, headed “written in Warsaw,
+  1926”, a fragment of little more than one page; the other eight hold the
+  *Piece for Voice and Orchestra*, headed Warsaw, struck through, Berlin,
+  1928, which opens with the same flute figure. The list took the scoring
+  from the later piece and the date from the earlier. `SRC0009` now cites the
+  folder and the accession list like the other manuscript Sources, and its
+  note and `SRC0958`'s say what the folder holds.
