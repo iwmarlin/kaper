@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 1352,
+  "count": 1353,
   "records": [
     {
       "id": "CON-F001-C-P009",
@@ -4832,9 +4832,9 @@
       "evidenceContext": [
         "background_music"
       ],
-      "scopeNote": "Background cues for the animated short, documented as a Kaper–Jurmann collaboration.",
+      "scopeNote": "Background cues for MGM’s Miniature. Sieghardt credits them to Jurmann with Kaper, and the Walter Jurmann catalogue to Jurmann; no document of the time names a composer.",
       "sortOrder": 40,
-      "certainty": "confirmed",
+      "certainty": "probable",
       "workIds": [
         "W-F052"
       ],
@@ -4851,9 +4851,9 @@
       "evidenceContext": [
         "background_music"
       ],
-      "scopeNote": "Background cues for the animated short, documented as a Kaper–Jurmann collaboration.",
+      "scopeNote": "Background cues for MGM’s Miniature. Sieghardt credits them to Jurmann with Kaper, and the Walter Jurmann catalogue to Jurmann; no document of the time names a composer.",
       "sortOrder": 41,
-      "certainty": "confirmed",
+      "certainty": "probable",
       "workIds": [
         "W-F052"
       ],
@@ -4861,66 +4861,8 @@
         "P077"
       ],
       "sourceIds": [
-        "SRC0306",
-        "SRC0373"
-      ]
-    },
-    {
-      "id": "CON-F052-C-P158",
-      "role": "composer",
-      "evidenceContext": [
-        "additional_music"
-      ],
-      "scopeNote": "Listed by Buxbaum/Sieghardt as an additional music contributor.",
-      "sortOrder": 42,
-      "certainty": "confirmed",
-      "workIds": [
-        "W-F052"
-      ],
-      "personIds": [
-        "P158"
-      ],
-      "sourceIds": [
-        "SRC0373"
-      ]
-    },
-    {
-      "id": "CON-F052-D-P157",
-      "role": "film_director",
-      "nameAsPrinted": "Ub Iwerks",
-      "evidenceContext": [
-        "film_credits"
-      ],
-      "sortOrder": 10,
-      "certainty": "confirmed",
-      "workIds": [
-        "W-F052"
-      ],
-      "personIds": [
-        "P157"
-      ],
-      "sourceIds": [
-        "SRC0373"
-      ]
-    },
-    {
-      "id": "CON-F052-PC-ORG116",
-      "role": "production_company",
-      "nameAsPrinted": "Celebrity Productions–P. A. Powers",
-      "evidenceContext": [
-        "film_credits"
-      ],
-      "sortOrder": 60,
-      "certainty": "confirmed",
-      "workIds": [
-        "W-F052"
-      ],
-      "organizationIds": [
-        "ORG116"
-      ],
-      "sourceIds": [
         "SRC0373",
-        "SRC0384"
+        "SRC0306"
       ]
     },
     {
@@ -25613,6 +25555,87 @@
       "sourceIds": [
         "SRC0046",
         "SRC0373"
+      ]
+    },
+    {
+      "id": "CON-F052-D-P209",
+      "role": "film_director",
+      "nameAsPrinted": "Harold S. Bucquet",
+      "evidenceContext": [
+        "copyright_or_registration"
+      ],
+      "sortOrder": 10,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-F052"
+      ],
+      "personIds": [
+        "P209"
+      ],
+      "sourceIds": [
+        "SRC0983",
+        "SRC0373"
+      ]
+    },
+    {
+      "id": "CON-F052-PR-P210",
+      "role": "producer",
+      "nameAsPrinted": "Jack Chertok",
+      "evidenceContext": [
+        "secondary_literature"
+      ],
+      "evidenceLocator": "Sieghardt filmography, p. 226",
+      "sortOrder": 20,
+      "certainty": "probable",
+      "workIds": [
+        "W-F052"
+      ],
+      "personIds": [
+        "P210"
+      ],
+      "sourceIds": [
+        "SRC0373"
+      ],
+      "scopeNote": "Producer of MGM’s Miniatures series; named for this short by Sieghardt alone."
+    },
+    {
+      "id": "CON-F052-PC-ORG001",
+      "role": "production_company",
+      "nameAsPrinted": "Metro-Goldwyn-Mayer",
+      "evidenceContext": [
+        "copyright_or_registration"
+      ],
+      "sortOrder": 60,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-F052"
+      ],
+      "organizationIds": [
+        "ORG001"
+      ],
+      "sourceIds": [
+        "SRC0983",
+        "SRC0984",
+        "SRC0373"
+      ]
+    },
+    {
+      "id": "CON-F052-CC-ORG001",
+      "role": "copyright_claimant",
+      "nameAsPrinted": "Metro-Goldwyn-Mayer Corp.",
+      "evidenceContext": [
+        "copyright_or_registration"
+      ],
+      "sortOrder": 70,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-F052"
+      ],
+      "organizationIds": [
+        "ORG001"
+      ],
+      "sourceIds": [
+        "SRC0983"
       ]
     }
   ]

@@ -15,7 +15,7 @@ from pathlib import Path
 from urllib.parse import unquote, urlsplit
 
 from site_calendar import publication_today
-from build_static_records import LEGACY_REDIRECTS
+from build_static_records import LEGACY_REDIRECTS, legacy_redirect_url
 
 
 PUBLIC_PAGES = [
@@ -493,8 +493,8 @@ def validate(root: Path) -> dict:
         if source_seo.get("pageTitles", {}).get("duplicateGroupCount") != 0:
             errors.append("Static Source pages contain duplicate HTML titles")
         redirect_pages = {
-            root / "records" / kind / old / "index.html": new
-            for (kind, old), new in LEGACY_REDIRECTS.items()
+            root / "records" / kind / old / "index.html": (kind, target)
+            for (kind, old), target in LEGACY_REDIRECTS.items()
         }
         static_pages = [
             page for page in (root / "records").glob("*/*/index.html")
@@ -503,13 +503,13 @@ def validate(root: Path) -> dict:
         if len(static_pages) != expected_records:
             errors.append("Static record page count does not match its report")
         sitemap_urls = re.findall(r"<loc>([^<]+)</loc>", sitemap)
-        for page, target in redirect_pages.items():
+        for page, (kind, (target_kind, target)) in redirect_pages.items():
             relative = page.relative_to(root).parent.as_posix() + "/"
             if not page.is_file():
                 errors.append(f"{relative}: legacy redirect page is missing")
-            elif f'url=../{target}/' not in page.read_text(encoding="utf-8"):
+            elif f'url={legacy_redirect_url(kind, target_kind, target)}' not in page.read_text(encoding="utf-8"):
                 errors.append(f"{relative}: legacy redirect target is incorrect")
-            if not (page.parent.parent / target / "index.html").is_file():
+            if not (root / "records" / target_kind / target / "index.html").is_file():
                 errors.append(f"{relative}: legacy redirect target page is missing")
             if f"{SITE_ORIGIN}{relative}" in sitemap_urls:
                 errors.append(f"{relative}: legacy redirect must not appear in the sitemap")

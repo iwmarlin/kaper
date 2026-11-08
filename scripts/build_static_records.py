@@ -27,9 +27,29 @@ LEGACY_SOURCE_REDIRECTS = {"SRC0526": "SRC0074"}
 # Works merged into another remain navigable the same way: "Signorina! komm zu
 # mir" is the printed title of "Oh Madonna!" (docs/sieghardt-comparison.md).
 LEGACY_WORK_REDIRECTS = {"W-S068": "W-S078"}
-LEGACY_REDIRECTS = {
-    ("source", old): new for old, new in LEGACY_SOURCE_REDIRECTS.items()
-} | {("work", old): new for old, new in LEGACY_WORK_REDIRECTS.items()}
+# Records withdrawn with the film they belonged to lead to that film: the
+# Ub Iwerks cartoon recorded as "Little Boy Blue" until November 2026 was not
+# the film Kaper and Jurmann scored (docs/sieghardt-comparison.md).
+LEGACY_WITHDRAWN_REDIRECTS = {
+    (kind, old): ("work", "W-F052")
+    for kind, old in (
+        ("person", "P157"), ("person", "P158"), ("organization", "ORG116"),
+        ("media", "M197"), ("media", "M304"), ("source", "SRC0384"), ("source", "SRC0656"),
+    )
+}
+# Each old (kind, id) maps to the (kind, id) whose page replaces it.
+LEGACY_REDIRECTS = (
+    {("source", old): ("source", new) for old, new in LEGACY_SOURCE_REDIRECTS.items()}
+    | {("work", old): ("work", new) for old, new in LEGACY_WORK_REDIRECTS.items()}
+    | LEGACY_WITHDRAWN_REDIRECTS
+)
+
+
+def legacy_redirect_url(kind: str, target_kind: str, target_id: str) -> str:
+    """The relative address of a redirect's target, from records/<kind>/<old>/."""
+    if target_kind == kind:
+        return f"../{quote(target_id, safe='')}/"
+    return f"../../{target_kind}/{quote(target_id, safe='')}/"
 PUBLIC_PAGES = [
     "",
     "works.html",
@@ -831,8 +851,8 @@ def static_page(
         page_title = f"{title} ({label.lower()})"
     browser_title = f"{page_title} | {PAGE_TITLE_SUFFIX}"
     record_id = record["id"]
-    style_version = "f6c7ab33a7"
-    record_script_version = "f6c7ab33a7"
+    style_version = "2a803e5f0e"
+    record_script_version = "2a803e5f0e"
     route = f"records/{record_type}/{quote(record_id, safe='')}/"
     canonical = f"{ORIGIN}{route}"
     og_image = og_image_for(record_type, record, tables, image_mapping)
@@ -870,8 +890,8 @@ def static_page(
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <link rel="preload" href="assets/fonts/kaper-sans.woff2?v=f6c7ab33a7" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="assets/fonts/kaper-serif.woff2?v=f6c7ab33a7" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/kaper-sans.woff2?v=2a803e5f0e" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/kaper-serif.woff2?v=2a803e5f0e" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/site/styles.css?v={style_version}">
   <title>{esc(browser_title)}</title>
   {ld_json}
@@ -1001,28 +1021,32 @@ def expected_outputs(
         "schemaVersion": "1.0.0",
         "entries": sitemap_state,
     }
+    def record_ids(table: str) -> set[str]:
+        return {item["id"] for item in read_json(root / f"data/public/v1/{table}.json").get("records", [])}
+
     catalogue_ids = {
         "source": {item["id"] for item in public_sources},
-        "work": {
-            item["id"]
-            for item in read_json(root / "data/public/v1/works.json").get("records", [])
-        },
+        "work": record_ids("works"),
+        "person": record_ids("people"),
+        "organization": record_ids("organizations"),
+        "media": record_ids("media"),
     }
-    for (kind, old_id), target_id in LEGACY_REDIRECTS.items():
-        noun = "Source" if kind == "source" else "Work"
-        if target_id not in catalogue_ids[kind]:
-            raise RuntimeError(f"Missing legacy {kind} target: {target_id}")
+    for (kind, old_id), (target_kind, target_id) in LEGACY_REDIRECTS.items():
+        noun = kind.capitalize()
+        if target_id not in catalogue_ids[target_kind]:
+            raise RuntimeError(f"Missing legacy {target_kind} target: {target_id}")
         if old_id in catalogue_ids[kind]:
             raise RuntimeError(f"Legacy {kind} still exists in the catalogue: {old_id}")
-        relative_target = f"../{quote(target_id, safe='')}/"
-        canonical = f"{ORIGIN}records/{kind}/{quote(target_id, safe='')}/"
+        relative_target = legacy_redirect_url(kind, target_kind, target_id)
+        canonical = f"{ORIGIN}records/{target_kind}/{quote(target_id, safe='')}/"
+        moved = "has moved to" if target_kind == kind else "was withdrawn; it belonged to"
         outputs[root / "records" / kind / old_id / "index.html"] = (
             '<!doctype html>\n<html lang="en"><head><meta charset="utf-8">\n'
             f'<meta http-equiv="refresh" content="0; url={esc(relative_target)}">\n'
             '<meta name="robots" content="noindex">\n'
             f'<link rel="canonical" href="{esc(canonical)}">\n'
             f'<title>{noun} moved — {esc(target_id)}</title></head><body>\n'
-            f'<p>This {kind} has moved to <a href="{esc(relative_target)}">{esc(target_id)}</a>.</p>\n'
+            f'<p>This {kind} {moved} <a href="{esc(relative_target)}">{esc(target_id)}</a>.</p>\n'
             '</body></html>\n'
         )
     return outputs, sitemap, report, state_payload, stale_routes

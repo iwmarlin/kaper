@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 885,
+  "count": 886,
   "records": [
     {
       "id": "SRC0001",
@@ -14086,12 +14086,12 @@
         "P135",
         "P136",
         "P153",
-        "P157",
-        "P158",
         "P164",
         "P206",
         "P207",
-        "P208"
+        "P208",
+        "P209",
+        "P210"
       ],
       "organizationIds": [
         "ORG001",
@@ -14102,8 +14102,7 @@
         "ORG035",
         "ORG047",
         "ORG049",
-        "ORG061",
-        "ORG116"
+        "ORG061"
       ],
       "workIds": [
         "W-F005",
@@ -14545,9 +14544,9 @@
         "CON-F050-PC-ORG001",
         "CON-F052-C-P009",
         "CON-F052-C-P077",
-        "CON-F052-C-P158",
-        "CON-F052-D-P157",
-        "CON-F052-PC-ORG116",
+        "CON-F052-D-P209",
+        "CON-F052-PC-ORG001",
+        "CON-F052-PR-P210",
         "CON-F054-C-P009",
         "CON-F054-C-P077",
         "CON-F054-D-P092",
@@ -14994,40 +14993,6 @@
       "nameVariantIds": [
         "PNV0046"
       ]
-    },
-    {
-      "id": "SRC0384",
-      "shortCitation": "Wikimedia Commons, Little Boy Blue poster (1936)",
-      "fullCitation": "Wikimedia Commons. “File:Little Boy Blue poster 1936.jpg.” Poster for the animated film Little Boy Blue.",
-      "sourceType": "wikimedia_commons_file",
-      "title": "Little Boy Blue — poster",
-      "creator": "Celebrity Productions–P. A. Powers; artwork by Ub Iwerks",
-      "repository": "Wikimedia Commons",
-      "publication": "Wikimedia Commons",
-      "date": "1936",
-      "dateRole": "creation",
-      "dateQualifier": "confirmed",
-      "accessDate": "2026-06-23",
-      "reliability": "high",
-      "sourceStatus": "verified",
-      "slug": "src0384-wikimedia-commons-little-boy-blue-poster-1936",
-      "personIds": [
-        "P157"
-      ],
-      "organizationIds": [
-        "ORG090",
-        "ORG116"
-      ],
-      "workIds": [
-        "W-F052"
-      ],
-      "mediaIds": [
-        "M197"
-      ],
-      "contributionIds": [
-        "CON-F052-PC-ORG116"
-      ],
-      "primaryUrl": "https://commons.wikimedia.org/wiki/File:Little_Boy_Blue_poster_1936.jpg"
     },
     {
       "id": "SRC0386",
@@ -23456,33 +23421,6 @@
       "title": "Encyclopédie de la comédie musicale — Marc-Cab",
       "organizationIds": [
         "ORG176"
-      ]
-    },
-    {
-      "accessDate": "2026-08-08",
-      "creator": "Photographer unidentified; official Disney publicity photograph",
-      "date": "1930",
-      "dateRole": "creation",
-      "dateQualifier": "confirmed",
-      "fullCitation": "“Ub Iwerks drawing Mickey Mouse.” Official Disney publicity photograph, 1930; photographer unidentified. Wikimedia Commons, File:Ub Iwerks.jpg.",
-      "id": "SRC0656",
-      "mediaIds": [
-        "M304"
-      ],
-      "personIds": [
-        "P157"
-      ],
-      "primaryUrl": "https://commons.wikimedia.org/wiki/File:Ub_Iwerks.jpg",
-      "publication": "Wikimedia Commons",
-      "reliability": "high",
-      "repository": "Wikimedia Commons",
-      "shortCitation": "Official Disney publicity photograph of Ub Iwerks, 1930; Wikimedia Commons",
-      "slug": "src0656-ub-iwerks-publicity-portrait-1930",
-      "sourceStatus": "verified",
-      "sourceType": "wikimedia_commons_file",
-      "title": "Ub Iwerks drawing Mickey Mouse — publicity photograph, 1930",
-      "organizationIds": [
-        "ORG090"
       ]
     },
     {
@@ -34778,6 +34716,114 @@
         "CON-F018-L-P005",
         "CON-S036-L-P005"
       ]
+    },
+    {
+      "id": "SRC0983",
+      "shortCitation": "CCE Motion Pictures 1912–1939, p. 475 — Little Boy Blue (Miniature)",
+      "fullCitation": "U.S. Copyright Office, Catalog of Copyright Entries, Cumulative Series: Motion Pictures 1912–1939. Washington, DC: Library of Congress, Copyright Office, 1951, p. 475. Entry: “LITTLE BOY BLUE. (Miniature) 1936. 1 reel, sd., b&w. Based on the poem by Eugene Field. Credits: Director, Harold S. Bucquet. © Metro-Goldwyn-Mayer Corp.; 22May36; MP6493.” Internet Archive.",
+      "sourceType": "copyright_catalogue",
+      "title": "Catalog of Copyright Entries: Little Boy Blue (Miniature)",
+      "creator": "Library of Congress. Copyright Office",
+      "repository": "Internet Archive",
+      "publication": "Catalog of Copyright Entries",
+      "date": "1951",
+      "dateRole": "catalogue_volume",
+      "dateQualifier": "confirmed",
+      "accessDate": "2026-11-08",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "slug": "src0983-cce-motion-pictures-little-boy-blue-miniature",
+      "organizationIds": [
+        "ORG001",
+        "ORG067"
+      ],
+      "workIds": [
+        "W-F052"
+      ],
+      "filmIds": [
+        "F052"
+      ],
+      "contributionIds": [
+        "CON-F052-D-P209",
+        "CON-F052-PC-ORG001",
+        "CON-F052-CC-ORG001"
+      ],
+      "primaryUrl": "https://archive.org/details/Motionpict19121939librrich0010/page/n487/mode/2up",
+      "identifiers": [
+        {
+          "scheme": "usco_registration",
+          "value": "MP6493"
+        }
+      ],
+      "researchNote": "The entry lists the credits recorded with the registration: Harold S. Bucquet as director, and no composer. The same page lists Paul Terry’s Little Boy Blue of 1933 and a Universal film of 1916; Ub Iwerks’s ComiColor cartoon of 1936 has no entry in the catalogue.",
+      "researchNoteType": "evidence_note",
+      "personIds": [
+        "P209"
+      ]
+    },
+    {
+      "id": "SRC0984",
+      "shortCitation": "Harrison’s Reports, 1936 — MGM one-reel release schedule, Little Boy Blue",
+      "fullCitation": "Harrison’s Reports 18 (1936), release schedule of short subjects: “Metro-Goldwyn-Mayer — One Reel. M-330 Little Boy Blue — Miniatures (11 m.) May 23.” Internet Archive / Media History Digital Library.",
+      "sourceType": "press_item",
+      "title": "Harrison’s Reports: MGM one-reel schedule, Little Boy Blue",
+      "creator": "Harrison’s Reports",
+      "repository": "Internet Archive / Media History Digital Library",
+      "publication": "Harrison’s Reports",
+      "date": "1936",
+      "dateRole": "publication",
+      "dateQualifier": "confirmed",
+      "accessDate": "2026-11-08",
+      "reliability": "medium",
+      "sourceStatus": "verified",
+      "slug": "src0984-harrisons-reports-1936-little-boy-blue-miniature",
+      "organizationIds": [
+        "ORG001",
+        "ORG067",
+        "ORG091"
+      ],
+      "workIds": [
+        "W-F052"
+      ],
+      "filmIds": [
+        "F052"
+      ],
+      "contributionIds": [
+        "CON-F052-PC-ORG001"
+      ],
+      "primaryUrl": "https://archive.org/details/harrisonsreports18harr/page/n157/mode/1up",
+      "researchNote": "MGM’s one-reel schedule for 1935–36 lists Little Boy Blue as M-330 in the Miniatures series, eleven minutes, released 23 May 1936, followed by Master Will Shakespeare and How to Train a Dog.",
+      "researchNoteType": "evidence_note"
+    },
+    {
+      "id": "SRC0985",
+      "shortCitation": "International Motion Picture Almanac 1937–38, p. 910 — Celebrity Productions, Little Boy Blue",
+      "fullCitation": "1937–38 International Motion Picture Almanac. New York: Quigley Publishing Company, 1938, p. 910. Entry for Celebrity Productions, Inc., short features: “ComiColor Cartoons … Little Boy Blue July 30, ’36 1 reel.” Internet Archive / Media History Digital Library.",
+      "sourceType": "press_item",
+      "title": "International Motion Picture Almanac 1937–38: Celebrity Productions",
+      "creator": "Quigley Publishing Company",
+      "repository": "Internet Archive / Media History Digital Library",
+      "publication": "International Motion Picture Almanac",
+      "date": "1938",
+      "dateRole": "publication",
+      "dateQualifier": "confirmed",
+      "accessDate": "2026-11-08",
+      "reliability": "medium",
+      "sourceStatus": "verified",
+      "slug": "src0985-motion-picture-almanac-1937-38-celebrity-little-boy-blue",
+      "organizationIds": [
+        "ORG067",
+        "ORG091"
+      ],
+      "workIds": [
+        "W-F052"
+      ],
+      "filmIds": [
+        "F052"
+      ],
+      "primaryUrl": "https://archive.org/details/international193738quig/page/n925/mode/1up",
+      "researchNote": "Documents the other Little Boy Blue of 1936: Ub Iwerks’s ComiColor cartoon, released by Celebrity Productions on 30 July 1936. It is cited to tell the two films apart, not as a source for this one.",
+      "researchNoteType": "verification_note"
     }
   ],
   "recordCount": null

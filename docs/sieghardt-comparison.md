@@ -173,6 +173,20 @@ document stands, and that is noted below.
     composer on Unifrance. Sieghardt gives him the French film’s lyrics, and
     the Eschig editions of 1932 print his French words for the songs of the
     German original; he is now credited as its lyricist.
+  - *Little Boy Blue* (`F052`): two films of 1936 have the title. The
+    archive recorded Ub Iwerks’s ComiColor cartoon, released by Celebrity
+    Productions on 30 July 1936 (`SRC0985`). Sieghardt’s filmography (p. 226)
+    describes the other, MGM’s one-reel Miniature after Eugene Field’s poem,
+    which the copyright registration (`SRC0983`, MP6493) gives to Harold S.
+    Bucquet as director and MGM’s schedule (`SRC0984`) releases on 23 May
+    1936; his year-by-year list and the Jurmann catalogue call it animated,
+    and he adds Carl W. Stalling, which belong to the cartoon. Kaper and
+    Jurmann were MGM’s composers that year, so the record now describes the
+    Miniature: Bucquet and MGM confirmed, Jack Chertok as producer and the
+    music `probable` on Sieghardt and the Jurmann catalogue, which no
+    document of the time confirms. Iwerks, Stalling, Celebrity Productions,
+    the cartoon’s poster and the Iwerks photograph are withdrawn, and their
+    pages lead to the film.
   - *Kind, ich freu’ mich auf Dein Kommen*: Sieghardt has Gerron alone as
     director; filmportal names Kurt Gerron and Erich von Neusser, who was also
     head of production. The sheet-music cover names no director, and no
@@ -181,10 +195,6 @@ document stands, and that is noted below.
 
 ## Left for decision or further research
 
-- **Little Boy Blue** (`F052`). The archive records Ub Iwerks's cartoon;
-  Sieghardt's filmography describes an MGM one-reel miniature of 1936 by
-  Harold S. Bucquet, produced by Jack Chertok, with Chic Sale, and his
-  year-by-year list calls it an animated short. The film may be the wrong one.
 - **Publisher credits resting on Sieghardt or the Jurmann catalogue alone**,
   to be checked the same way: *Wir sind international* (Alrobi; Hofmeister
   1931 has the film's other songs with Alrobi, not this one), *Les charmes
