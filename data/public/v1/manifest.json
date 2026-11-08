@@ -48,7 +48,7 @@
   "counts": {
     "People": 181,
     "Organizations": 238,
-    "Sources": 876,
+    "Sources": 877,
     "Media": 410,
     "Works": 300,
     "Films": 56,
@@ -58,19 +58,19 @@
     "Work Relations": 205,
     "Timeline Events": 56,
     "Places": 45,
-    "Contributions": 1358,
+    "Contributions": 1357,
     "Person Name Variants": 72
   },
   "files": [
     {
       "file": "build-report.json",
       "bytes": 114686,
-      "sha256": "8c978bf4f8ab542a8ec884adaf787914f8d84b23efc64681582c79461441a019"
+      "sha256": "27ffd2ed6462af8ba4686c52f8c306a80331f1256c629fd383470faacea8d27d"
     },
     {
       "file": "contributions.json",
-      "bytes": 551104,
-      "sha256": "0c5917d20df7ae75ed85460a3559d7efbca86b45a6c98655c2b0353c2957ec65"
+      "bytes": 550787,
+      "sha256": "9a52c343fabf105e3dad7ae3a4384b0231acf6ddef20476b1bd5772478419d11"
     },
     {
       "file": "films.json",
@@ -84,8 +84,8 @@
     },
     {
       "file": "organizations.json",
-      "bytes": 197803,
-      "sha256": "773bcfedd4eeeb057dceb24cfa625a33b7f22bf1f4dab2107d1c108776f7018b"
+      "bytes": 197811,
+      "sha256": "551f7858c6963ff3a7c2008ca0aa6879120ac3bb21b747ce41d324dcf80aaeaa"
     },
     {
       "file": "other-works.json",
@@ -109,13 +109,13 @@
     },
     {
       "file": "songs.json",
-      "bytes": 144608,
-      "sha256": "89e4e518d513a47e69e3be28589f1a56b788f197bd237136d9924b804c820327"
+      "bytes": 145134,
+      "sha256": "20b5640b93e63ad5ae5e9d1de21d366ff0ab2dff3dabbf099637266a18a0447e"
     },
     {
       "file": "sources.json",
-      "bytes": 1429507,
-      "sha256": "419213e1ead1d44048ef66569ab8d49099e7bb2ee8fa1f781967b6d77fa675d3"
+      "bytes": 1431552,
+      "sha256": "8afeaea008da18f173e7dee46b2b1a35bb177f7dd066b57d51b5118e161cc445"
     },
     {
       "file": "timeline-events.json",
@@ -134,8 +134,8 @@
     },
     {
       "file": "works.json",
-      "bytes": 287402,
-      "sha256": "2acc3962051e7c1c78faca6d0b481b2e4d400e1169e1aac6df6538a52d845928"
+      "bytes": 287906,
+      "sha256": "c4f9869571bc7f70aa485c8f442ca1d9ee61735c02d5e3d912385c6fd6b27e64"
     }
   ]
 }

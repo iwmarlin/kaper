@@ -36,7 +36,11 @@ document stands, and that is noted below.
 - **MGM was claimant, Robbins publisher.** *You're All I Need* and *Love Song
   of Tahiti* credited MGM as publisher on their copyright entries, which
   name the claimant. They now credit MGM as claimant and Robbins Music
-  Corporation as publisher, on Sieghardt (op. 121, op. 117).
+  Corporation as publisher. Robbins was first credited on Sieghardt
+  (op. 121, op. 117); it now rests on documents of the time the archive
+  already held, the Robbins edition of *You're All I Need* in the USC
+  collection and Robbins's advertisement for *Love Song of Tahiti* in
+  *Variety*, 27 November 1935.
 - **A title variant.** Sieghardt titles *Es war einmal ein Baby* “Kinderlied”
   (op. 034), the refrain's first line in brackets; it is recorded as a
   variant.
@@ -55,6 +59,29 @@ document stands, and that is noted below.
   likely takes the performer of a late recording for the author of the
   words. The song keeps Halicz, and its note says so.
 
+- **Publishers**, checked against Hofmeister's monthly register (1931–1934),
+  the United States copyright catalogues (1933–1935), the BnF catalogue and
+  the Images Musicales collection of sheet-music covers. No document of the
+  time confirms a publisher Sieghardt gives where the archive differs.
+  - *Le plus petit baiser*: the cover of the edition is Choudens's (Images
+    Musicales); Éditions Musicales Echo is Sieghardt's alone.
+  - *À Paris tiguidiguidi*: no edition has been found anywhere; the archive
+    names no publisher, and Echo is Sieghardt's alone.
+  - *Adieu, es ist zu schön, um wahr zu sein* and *Wie schön ist diese
+    Welt*: Hofmeister, November 1933, registers both with Dacapo-Verlag,
+    Vienna, and has no Coda edition in 1933 or 1934. Coda published the
+    French versions of the film's songs, which Sieghardt seems to have
+    taken for the German.
+  - The French *San Francisco*: the edition in the Jurmann collection at
+    UCLA is France Mélodie's, 1936. Robbins, credited on Sieghardt alone,
+    is no longer credited, and the song's note says so.
+  - *Amanda*: the archive's Éditions musicales universelles rests on the
+    Jurmann catalogue, a secondary source too, and Sieghardt gives Éditions
+    Univers. With no edition found, the credit is `probable` and the note
+    gives both.
+- *On n'aime qu'une fois*: the United States copyright registration of 1935
+  (`SRC0973`) names André de Badet alone as author of the words, where
+  Sieghardt adds Paul Henri Bertrand. The song's note says so.
 - *Un regard de femme* and *Dairy-Maid Song*: Sieghardt credits Jurmann
   alone; the BnF catalogue and the 1936 copyright registration credit Kaper
   and Jurmann.
@@ -80,11 +107,12 @@ document stands, and that is noted below.
   (op. 089), where the archive has two Works.
 - **Titles.** *Ich suche einen, der mir allein gehört* is *Ich suche eine,
   die mir allein gehört* in Sieghardt (op. 054).
-- **Publishers.** *Le plus petit baiser* and *À Paris tiguidiguidi*: Éditions
-  Musicales Echo (1933) in Sieghardt, Choudens or none in the archive; *Adieu,
-  es ist zu schön, um wahr zu sein* and *Wie schön ist diese Welt*: Edition
-  Coda in Sieghardt, Dacapo only in the archive; *Amanda*: “Editions Univers”;
-  the French *San Francisco*: Francis Day, Paris.
+- **Publisher credits resting on Sieghardt or the Jurmann catalogue alone**,
+  to be checked the same way: *Wir sind international* (Alrobi; Hofmeister
+  1931 has the film's other songs with Alrobi, not this one), *Les charmes
+  chantent* (Salabert), and Robbins on *Blaue venezianische Wasser*, *Sous le
+  ciel de Venise*, *Tous les noirs* and *Demain matin tout ira mieux*, with MGM
+  on the last. Four of these versions have no Source but Sieghardt.
 - **Other credits.** *Trink dich gesund*:
   Sieghardt gives the pseudonyms Erich Walter Schmidt (Jurmann) and Peter
   Schattner (Rotter).

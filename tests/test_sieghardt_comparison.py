@@ -53,6 +53,15 @@ class SieghardtComparisonTests(unittest.TestCase):
         self.assertEqual(self.credits["CON-S214-L-P156"]["role"], "lyricist")
         self.assertFalse(any("Wyci" in (c.get("nameAsPrinted") or "") for c in self.credits.values()))
 
+    def test_publishers_need_a_document_of_the_time(self):
+        self.assertNotIn("CON-S200-PUB-ORG035", self.credits)
+        self.assertEqual(self.credits["CON-S103-PUB-ORG032"]["certainty"], "probable")
+        for credit_id, source_id in (("CON-S119-PUB-ORG035", "SRC0443"), ("CON-S123-PUB-ORG035", "SRC0046")):
+            credit = self.credits[credit_id]
+            self.assertEqual((credit["certainty"], credit["sourceIds"][0]), ("confirmed", source_id))
+        self.assertIn("SRC0973", self.credits["CON-S106-L-P006"]["sourceIds"])
+        self.assertIn("André de Badet alone", self.songs["S106"]["publicNote"])
+
 
 if __name__ == "__main__":
     unittest.main()
