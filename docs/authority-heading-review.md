@@ -285,8 +285,13 @@ has him as “Delden, Ferry van (Tekstdichter liedteksten, componist)
 record is linked under a new register key, `nta`, and is the source of his
 heading.
 
-**P114 Karl Brüll** — still open. The LexM site turns automated requests away,
-so whether it has an entry of his own could not be checked from here.
+**P114 Karl Brüll** — settled 8 November 2026. LexM has an entry of his own,
+`lexm_lexmperson_00003804`, the one `SRC0915` already cited: Hauptname
+“Brüll, Karl”, born 29 January 1895 in Boskowitz, composer, conductor, actor
+and music publisher, with Bruell, Charles, Brüll, Carl and Calson, Charles as
+other names, now recorded as name variants. The heading stands. GND holds
+several undifferentiated “Brüll, Karl” records, one tagged “Liederdichter”,
+none with dates that would tie it to him, so no GND record is linked.
 
 **P004 André Auguste Saudemont and P014 Egon Schubert** need nothing: they link
 only VIAF, which is not a source of headings, and both are marked as local
