@@ -220,8 +220,23 @@ document stands, and that is noted below.
 
 ## Left for decision or further research
 
-- **Not in the archive.** *And Still I Love You* (op. 016), *Am schönen
-  Titicacasee* (op. 021) and the title song of *Melodie der Liebe* (op. 057);
-  the Italian version of *Ein Lied für Dich*, *Aspetto una signorina*; and
-  about thirty-five language versions Sieghardt lists under the opus numbers
-  of songs the archive holds.
+- **Not in the archive: three songs.** Sieghardt credits Kaper on three songs
+  the archive does not hold; the documents of the time do not.
+  - *And Still I Love You* (op. 016): the 1930 United States registration
+    gives “words by Irving Caesar, music by Walter Jurmann, new arr. by
+    Albert Szirmai” (Harms, © 23 October 1930). Sieghardt’s opus list adds
+    Kaper; his year-by-year list does not.
+  - *Am schönen Titicacasee* (op. 021): Hofmeister enters it in 1930 under
+    “Rotter, Fritz und Walter Jurmann” (Wiener Boheme-Verlag) and in 1932 as
+    “[Rotter u. Jurmann]”, and the 1930 United States registration gives
+    “Text u. Musik von Fritz Rotter u. Walter Jurmann”. No Italian or
+    American version was found.
+  - *Melodie der Liebe*, the film’s title song (op. 057): Hofmeister’s 1932
+    entry for the film’s song book lists four songs and not this one, and
+    none of the forty-three records and prints from the film in the
+    Deutsche Nationalbibliothek is it.
+  None is added.
+- **Not in the archive: language versions.** About thirty-five versions that
+  Sieghardt lists under the opus numbers of songs the archive holds, and the
+  Italian version of *Ein Lied für Dich*, *Aspetto una signorina*. They are
+  being checked one by one for a document of the time.
