@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 1344,
+  "count": 1358,
   "records": [
     {
       "id": "CON-F001-C-P009",
@@ -8014,7 +8014,7 @@
       "role": "lyricist",
       "nameAsPrinted": "André Mauprey",
       "sortOrder": 20,
-      "certainty": "confirmed",
+      "certainty": "probable",
       "workIds": [
         "W-S036"
       ],
@@ -8023,7 +8023,11 @@
       ],
       "sourceIds": [
         "SRC0373"
-      ]
+      ],
+      "evidenceContext": [
+        "secondary_literature"
+      ],
+      "evidenceLocator": "Sieghardt filmography, p. 221, entry 30: lyrics by André Mauprey, musical programme op. 030/F and op. 046/F; the opus list (p. 187, op. 046/F) gives the lyricist as unknown"
     },
     {
       "id": "CON-S036-PUB-ORG047",
@@ -14314,11 +14318,11 @@
       ]
     },
     {
-      "id": "CON-S119-PUB-ORG001",
-      "role": "publisher",
+      "id": "CON-S119-CC-ORG001",
+      "role": "copyright_claimant",
       "nameAsPrinted": "Metro-Goldwyn-Mayer corp., New York",
       "evidenceContext": [
-        "sheet_music"
+        "copyright_catalogue"
       ],
       "certainty": "confirmed",
       "workIds": [
@@ -14584,11 +14588,11 @@
       ]
     },
     {
-      "id": "CON-S123-PUB-ORG001",
-      "role": "publisher",
+      "id": "CON-S123-CC-ORG001",
+      "role": "copyright_claimant",
       "nameAsPrinted": "Metro-Goldwyn-Mayer corp., New York",
       "evidenceContext": [
-        "sheet_music"
+        "copyright_catalogue"
       ],
       "certainty": "confirmed",
       "workIds": [
@@ -14598,9 +14602,7 @@
         "ORG001"
       ],
       "sourceIds": [
-        "SRC0229",
-        "SRC0306",
-        "SRC0486"
+        "SRC0229"
       ]
     },
     {
@@ -18594,7 +18596,6 @@
         "P106"
       ],
       "sourceIds": [
-        "SRC0373",
         "SRC0630"
       ],
       "nameVariantIds": [
@@ -18634,7 +18635,8 @@
       ],
       "sourceIds": [
         "SRC0373"
-      ]
+      ],
+      "evidenceLocator": "Sieghardt work catalogue, p. 198, op. 128/A"
     },
     {
       "id": "CON-S197-C-P077",
@@ -18650,7 +18652,8 @@
       ],
       "sourceIds": [
         "SRC0373"
-      ]
+      ],
+      "evidenceLocator": "Sieghardt work catalogue, p. 198, op. 128/A"
     },
     {
       "id": "CON-S197-PUB-ORG035",
@@ -18668,7 +18671,8 @@
       ],
       "sourceIds": [
         "SRC0373"
-      ]
+      ],
+      "evidenceLocator": "Sieghardt work catalogue, p. 198, op. 128/A"
     },
     {
       "id": "CON-S198-C-P009",
@@ -18684,7 +18688,8 @@
       ],
       "sourceIds": [
         "SRC0373"
-      ]
+      ],
+      "evidenceLocator": "Sieghardt work catalogue, p. 198, op. 128/F"
     },
     {
       "id": "CON-S198-C-P077",
@@ -18700,7 +18705,8 @@
       ],
       "sourceIds": [
         "SRC0373"
-      ]
+      ],
+      "evidenceLocator": "Sieghardt work catalogue, p. 198, op. 128/F"
     },
     {
       "id": "CON-S198-L-P108",
@@ -18720,7 +18726,8 @@
       ],
       "nameVariantIds": [
         "PNV0029"
-      ]
+      ],
+      "evidenceLocator": "Sieghardt work catalogue, p. 198, op. 128/F"
     },
     {
       "id": "CON-S198-PUB-ORG035",
@@ -18738,7 +18745,8 @@
       ],
       "sourceIds": [
         "SRC0373"
-      ]
+      ],
+      "evidenceLocator": "Sieghardt work catalogue, p. 198, op. 128/F"
     },
     {
       "id": "CON-S200-C-P009",
@@ -24030,9 +24038,11 @@
       ],
       "sourceIds": [
         "SRC0802",
-        "SRC0951"
+        "SRC0951",
+        "SRC0373"
       ],
-      "scopeNote": "The Columbia disc catalogue transcribes “Varna, Lelievre & Marc-Cab” without a forename. The BnF catalogue for the voice-only edition identifies Léo Lelièvre (1899–1966); the voice-and-piano entry does not list him. The attribution remains probable pending comparison of the printed sources."
+      "scopeNote": "The Columbia disc catalogue transcribes “Varna, Lelievre & Marc-Cab” without a forename. The BnF catalogue for the voice-only edition identifies Léo Lelièvre (1899–1966); the voice-and-piano entry does not list him. The attribution remains probable pending comparison of the printed sources.",
+      "evidenceLocator": "Sieghardt work catalogue, p. 197, op. 109; year-by-year list, 1934"
     },
     {
       "id": "CON-S016-LAB-ORG152",
@@ -25389,6 +25399,272 @@
       ],
       "personIds": [
         "P208"
+      ],
+      "sourceIds": [
+        "SRC0373"
+      ]
+    },
+    {
+      "id": "CON-S076-L-P017",
+      "role": "lyricist",
+      "nameAsPrinted": "Ernst Marischka",
+      "evidenceContext": [
+        "secondary_literature"
+      ],
+      "evidenceLocator": "Sieghardt work catalogue, p. 193, op. 088",
+      "certainty": "probable",
+      "workIds": [
+        "W-S076"
+      ],
+      "personIds": [
+        "P017"
+      ],
+      "sourceIds": [
+        "SRC0373"
+      ]
+    },
+    {
+      "id": "CON-S079-L-P033",
+      "role": "lyricist",
+      "nameAsPrinted": "Henri Clouzot",
+      "evidenceContext": [
+        "secondary_literature"
+      ],
+      "evidenceLocator": "Sieghardt work catalogue, p. 194, op. 089/F",
+      "certainty": "probable",
+      "workIds": [
+        "W-S079"
+      ],
+      "personIds": [
+        "P033"
+      ],
+      "sourceIds": [
+        "SRC0373"
+      ]
+    },
+    {
+      "id": "CON-S079-L-P206",
+      "role": "lyricist",
+      "nameAsPrinted": "Serge Veber",
+      "evidenceContext": [
+        "secondary_literature"
+      ],
+      "evidenceLocator": "Sieghardt work catalogue, p. 194, op. 089/F",
+      "certainty": "probable",
+      "workIds": [
+        "W-S079"
+      ],
+      "personIds": [
+        "P206"
+      ],
+      "sourceIds": [
+        "SRC0373"
+      ]
+    },
+    {
+      "id": "CON-S113-L-P049",
+      "role": "lyricist",
+      "nameAsPrinted": "Louis Poterot",
+      "evidenceContext": [
+        "secondary_literature"
+      ],
+      "evidenceLocator": "Sieghardt work catalogue, p. 197, op. 111",
+      "certainty": "probable",
+      "workIds": [
+        "W-S113"
+      ],
+      "personIds": [
+        "P049"
+      ],
+      "sourceIds": [
+        "SRC0373"
+      ]
+    },
+    {
+      "id": "CON-S114-L-P052",
+      "role": "lyricist",
+      "nameAsPrinted": "Marcel Cabridens as Marc Cab",
+      "evidenceContext": [
+        "secondary_literature"
+      ],
+      "evidenceLocator": "Sieghardt work catalogue, p. 197, op. 112",
+      "certainty": "probable",
+      "workIds": [
+        "W-S114"
+      ],
+      "personIds": [
+        "P052"
+      ],
+      "sourceIds": [
+        "SRC0373"
+      ]
+    },
+    {
+      "id": "CON-S112-L-P049",
+      "role": "lyricist",
+      "nameAsPrinted": "Louis Poterat",
+      "evidenceContext": [
+        "secondary_literature"
+      ],
+      "evidenceLocator": "Sieghardt work catalogue, p. 197, op. 109",
+      "certainty": "probable",
+      "workIds": [
+        "W-S112"
+      ],
+      "personIds": [
+        "P049"
+      ],
+      "sourceIds": [
+        "SRC0373"
+      ]
+    },
+    {
+      "id": "CON-S138-C-P135",
+      "role": "composer",
+      "nameAsPrinted": "Franz Waxman",
+      "evidenceContext": [
+        "secondary_literature"
+      ],
+      "evidenceLocator": "Sieghardt work catalogue, p. 199, op. 131",
+      "certainty": "probable",
+      "workIds": [
+        "W-S138"
+      ],
+      "personIds": [
+        "P135"
+      ],
+      "sourceIds": [
+        "SRC0373"
+      ]
+    },
+    {
+      "id": "CON-S140-C-P135",
+      "role": "composer",
+      "nameAsPrinted": "Franz Waxman",
+      "evidenceContext": [
+        "secondary_literature"
+      ],
+      "evidenceLocator": "Sieghardt work catalogue, p. 199, op. 132",
+      "certainty": "probable",
+      "workIds": [
+        "W-S140"
+      ],
+      "personIds": [
+        "P135"
+      ],
+      "sourceIds": [
+        "SRC0373"
+      ]
+    },
+    {
+      "id": "CON-S137-C-P135",
+      "role": "composer",
+      "nameAsPrinted": "Franz Waxman",
+      "evidenceContext": [
+        "secondary_literature"
+      ],
+      "evidenceLocator": "Sieghardt work catalogue, p. 199, op. 135",
+      "certainty": "probable",
+      "workIds": [
+        "W-S137"
+      ],
+      "personIds": [
+        "P135"
+      ],
+      "sourceIds": [
+        "SRC0373"
+      ]
+    },
+    {
+      "id": "CON-S141-C-P135",
+      "role": "composer",
+      "nameAsPrinted": "Franz Waxman",
+      "evidenceContext": [
+        "secondary_literature"
+      ],
+      "evidenceLocator": "Sieghardt work catalogue, year-by-year list, 1936",
+      "certainty": "probable",
+      "workIds": [
+        "W-S141"
+      ],
+      "personIds": [
+        "P135"
+      ],
+      "sourceIds": [
+        "SRC0373"
+      ]
+    },
+    {
+      "id": "CON-S135-C-P135",
+      "role": "composer",
+      "nameAsPrinted": "Franz Waxman",
+      "evidenceContext": [
+        "secondary_literature"
+      ],
+      "evidenceLocator": "Sieghardt work catalogue, year-by-year list, 1936",
+      "certainty": "probable",
+      "workIds": [
+        "W-S135"
+      ],
+      "personIds": [
+        "P135"
+      ],
+      "sourceIds": [
+        "SRC0373"
+      ]
+    },
+    {
+      "id": "CON-S139-C-P135",
+      "role": "composer",
+      "nameAsPrinted": "Franz Waxman",
+      "evidenceContext": [
+        "secondary_literature"
+      ],
+      "evidenceLocator": "Sieghardt work catalogue, year-by-year list, 1936",
+      "certainty": "probable",
+      "workIds": [
+        "W-S139"
+      ],
+      "personIds": [
+        "P135"
+      ],
+      "sourceIds": [
+        "SRC0373"
+      ]
+    },
+    {
+      "id": "CON-S119-PUB-ORG035",
+      "role": "publisher",
+      "nameAsPrinted": "Robbins Music Corporation",
+      "evidenceContext": [
+        "secondary_literature"
+      ],
+      "evidenceLocator": "Sieghardt work catalogue, p. 198, op. 121",
+      "certainty": "probable",
+      "workIds": [
+        "W-S119"
+      ],
+      "organizationIds": [
+        "ORG035"
+      ],
+      "sourceIds": [
+        "SRC0373"
+      ]
+    },
+    {
+      "id": "CON-S123-PUB-ORG035",
+      "role": "publisher",
+      "nameAsPrinted": "Robbins Music Corporation",
+      "evidenceContext": [
+        "secondary_literature"
+      ],
+      "evidenceLocator": "Sieghardt work catalogue, p. 197, op. 117",
+      "certainty": "probable",
+      "workIds": [
+        "W-S123"
+      ],
+      "organizationIds": [
+        "ORG035"
       ],
       "sourceIds": [
         "SRC0373"

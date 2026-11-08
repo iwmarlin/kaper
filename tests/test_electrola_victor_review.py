@@ -74,16 +74,18 @@ class ElectrolaVictorReviewTests(unittest.TestCase):
         self.assertIn("separate physical issues", credit["scopeNote"])
 
     def test_recordings_are_not_used_as_sheet_music_publisher_evidence(self):
-        for sid, cid, remaining in (
-            ("SRC0005", "CON-S045-PUB-ORG029", "SRC0101"),
-            ("SRC0006", "CON-S119-PUB-ORG001", "SRC0228"),
+        # CON-S119-PUB-ORG001 is now CON-S119-CC-ORG001: the registration names
+        # MGM as copyright claimant (docs/sieghardt-comparison.md).
+        for sid, logged, cid, remaining in (
+            ("SRC0005", "CON-S045-PUB-ORG029", "CON-S045-PUB-ORG029", "SRC0101"),
+            ("SRC0006", "CON-S119-PUB-ORG001", "CON-S119-CC-ORG001", "SRC0228"),
         ):
             with self.subTest(source=sid):
                 self.assertEqual(self.contributions[cid]["sourceIds"], [remaining])
                 self.assertNotIn(cid, self.sources[sid]["contributionIds"])
                 removals = self.overrides["linkRemovals"]
-                self.assertIn(cid, removals["Sources"][sid]["fields"]["contributionIds"])
-                self.assertIn(sid, removals["Contributions"][cid]["fields"]["sourceIds"])
+                self.assertIn(logged, removals["Sources"][sid]["fields"]["contributionIds"])
+                self.assertIn(sid, removals["Contributions"][logged]["fields"]["sourceIds"])
 
     def test_review_survives_normalization_and_has_auditable_fields(self):
         for sid in REVIEWED:

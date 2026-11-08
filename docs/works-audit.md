@@ -36,9 +36,15 @@ name no director. That was first recorded as “no Source names one”, which
 was wrong: Sieghardt's filmography of Walter Jurmann, already among the
 film's Sources, names Earl Haley and Maurice Kusell (p. 224, entry 40). They
 are now its directors, `probable` because that one secondary Source is all
-that names them, and the film's note says who gives what. Left open:
-*Sous le ciel de Venice* in Sieghardt, whose filmography (pp. 218–231) and
-year-by-year work list (pp. 200–217) do not include it.
+that names them, and the film's note says who gives what.
+
+*Sous le ciel de Venise*: Sieghardt's opus list (p. 198) prints the French
+version both ways, *Sous le ciel de Venise* in the entry for op. 128 and
+*Sous le ciel de Venice* in its own entry, op. 128/F. The record now takes
+the French form and keeps *Venice* as a variant. Both the French and the
+German version are dated 1936, as the catalogue dates them and as their
+original is dated; they had been 1937. Nothing from this audit is left
+open.
 
 ## 1. Eighteen titles are not the form any Source prints
 
@@ -81,7 +87,8 @@ every other English title is in headline case — *Penny’s Return*,
 
 **Not verifiable from here.** `W-S198` *Sous le ciel de Venice* rests on
 Sieghardt's work catalogue alone. *Venice* is the English name; a French
-title would read *Venise*. Worth checking in the book.
+title would read *Venise*. Worth checking in the book. *(Checked: see
+Outcome.)*
 
 The fix keeps each record's identifier, address and slug; only the title
 and sort title change. Where a Source does print the old form — the
@@ -187,7 +194,7 @@ missing credits, and empties the field where it held something else.
 
 ## Order of work
 
-Items 1 to 4 are done; of item 5, the director is settled and the Sieghardt check is open.
+All five items are done.
 
 1. Correct the eighteen titles and the two English cases, keeping the old
    forms as variants where a Source prints them (finding 1).

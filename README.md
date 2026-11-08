@@ -110,6 +110,8 @@ open
   credits and dates.
 - [`people-audit.md`](docs/people-audit.md) — headings, register
   identifiers and life dates of people and organizations.
+- [`sieghardt-comparison.md`](docs/sieghardt-comparison.md) — the archive
+  against Sieghardt's catalogue of Jurmann's works, entry by entry.
 - [`public-data-audit.md`](docs/public-data-audit.md) — the dataset against
   its own checks.
 
