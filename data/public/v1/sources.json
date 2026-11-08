@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 892,
+  "count": 893,
   "records": [
     {
       "id": "SRC0001",
@@ -14104,6 +14104,7 @@
         "ORG061"
       ],
       "workIds": [
+        "W-F004",
         "W-F005",
         "W-F007",
         "W-F008",
@@ -14212,6 +14213,7 @@
         "TE0042"
       ],
       "filmIds": [
+        "F004",
         "F008",
         "F009",
         "F010",
@@ -35055,6 +35057,60 @@
         "CON-S233-C-P105",
         "CON-S233-L-P212",
         "CON-S233-PUB-ORG247"
+      ]
+    },
+    {
+      "id": "SRC0992",
+      "shortCitation": "Görner, Walter Jurmann (Leipzig 2014), Werkverzeichnis",
+      "fullCitation": "Eberhard Görner, Walter Jurmann: Sein Leben, seine Musik. Leipzig: Henschel, 2014. 280 pp., with a CD. Werkverzeichnis, pp. 200–217, arranged by year; its note 10 states that the work list, filmography and discography rest on the information at www.jurmann.org.",
+      "sourceType": "book",
+      "title": "Görner, Walter Jurmann: Sein Leben, seine Musik — Werkverzeichnis",
+      "creator": "Eberhard Görner",
+      "publication": "Henschel, Leipzig",
+      "date": "2014",
+      "dateRole": "publication",
+      "dateQualifier": "confirmed",
+      "reliability": "medium",
+      "sourceStatus": "verified",
+      "slug": "src0992-gorner-walter-jurmann-werkverzeichnis-2014",
+      "identifiers": [
+        {
+          "scheme": "isbn",
+          "value": "978-3-89487-686-9"
+        }
+      ],
+      "primaryUrl": "https://d-nb.info/1044039388",
+      "accessDate": "2026-11-08",
+      "researchNote": "A secondary work list, arranged by year. By its own note it follows the Walter Jurmann website, so it does not corroborate the online works catalogue (SRC0306) independently. It is a different work from Alexander Sieghardt’s catalogue in Buxbaum (SRC0373); until November 2026 the archive’s notes took it for Sieghardt’s “year-by-year list”.",
+      "researchNoteType": "evidence_note",
+      "workIds": [
+        "W-F045",
+        "W-F052",
+        "W-S062",
+        "W-S112",
+        "W-S135",
+        "W-S139",
+        "W-S141"
+      ],
+      "filmIds": [
+        "F045",
+        "F052"
+      ],
+      "songIds": [
+        "S062",
+        "S112",
+        "S135",
+        "S139",
+        "S141"
+      ],
+      "titleVariantIds": [
+        "TV0324"
+      ],
+      "contributionIds": [
+        "CON-S112-L-P051",
+        "CON-S135-C-P135",
+        "CON-S139-C-P135",
+        "CON-S141-C-P135"
       ]
     }
   ],
