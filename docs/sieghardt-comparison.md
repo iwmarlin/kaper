@@ -220,8 +220,53 @@ document stands, and that is noted below.
 
 ## Left for decision or further research
 
-- **Not in the archive.** *And Still I Love You* (op. 016), *Am schönen
-  Titicacasee* (op. 021) and the title song of *Melodie der Liebe* (op. 057);
-  the Italian version of *Ein Lied für Dich*, *Aspetto una signorina*; and
-  about thirty-five language versions Sieghardt lists under the opus numbers
-  of songs the archive holds.
+- **Songs the archive did not hold.** Sieghardt credits Kaper on three songs
+  that were not in the archive. For two of them the documents of the time
+  name Jurmann without Kaper:
+  - *And Still I Love You* (op. 016): the 1930 United States registration
+    gives “words by Irving Caesar, music by Walter Jurmann, new arr. by
+    Albert Szirmai” (Harms, © 23 October 1930). Sieghardt’s opus list adds
+    Kaper; his year-by-year list does not.
+  - *Am schönen Titicacasee* (op. 021): Hofmeister enters it in 1930 under
+    “Rotter, Fritz und Walter Jurmann” (Wiener Boheme-Verlag) and in 1932 as
+    “[Rotter u. Jurmann]”, and the 1930 United States registration gives
+    “Text u. Musik von Fritz Rotter u. Walter Jurmann”. No Italian or
+    American version was found.
+  Neither is added.
+  The third, *Melodie der Liebe*, the film’s title song (op. 057), is
+  documented. Hofmeister’s 1932 entry for the film’s song book lists four
+  songs and not this one, but the 1932 United States catalogue registers it
+  (`SRC0986`): “Melodie der liebe; schlager, w Fritz Rotter, m B. Kaper u. Walter Jurmann. © Apr. 25, 1932;
+  Alrobi”. It is added (`W-S230`), linked to the film as `probable`, since
+  only Sieghardt names the film.
+- **Language versions.** The versions Sieghardt lists under the opus numbers
+  of songs the archive holds were checked in the United States copyright
+  catalogues (1930–1937), Hofmeister (1929–1938), the BnF, the Deutsche
+  Nationalbibliothek, LIBRIS, the Internet Archive and Discogs.
+  - Added, each with a document of the time: the English *Ninon* by Harry S.
+    Pepper (`W-S231`; registered 22 August 1933, Dix, Ltd.); the Swedish
+    *Ninon* by Arne Olovson (`W-S232`; Carl Gehrmans’s print in LIBRIS and
+    two Swedish discs of 1933); and, found on the way, the Swedish version of
+    *Du lieber Geiger, spiel einen Tango für mich*, *Å, denna tango*, also by
+    Olovson (`W-S233`; Gehrmans, [1931]), which Sieghardt does not list.
+  - Already in the archive: the French *Sport (Nur Sport)*, *La vie et
+    l’amour*, *Dit’s-moi, Madame*, *Ça va déjà mieux* and both texts of
+    *Ninon, quand tu me souris*; Harold Adamson’s *Ninon*; *Love Is a Fairy
+    Tale*.
+  - Known only from Sieghardt, with no document found: *Ninon* in Czech,
+    Danish, Hungarian, Italian (*Un sorriso basta a cominciar*), Norwegian,
+    Dutch (*Zonder jou*), Brazilian and Finnish (*Jos jäät*); the Italian
+    *Senza amore*, *Tu mi piaci*, *La prima sensazione*, *Quando piango son
+    felice*, *Notte sul mare*, *Signorina* and the Italian versions of *Ein
+    Lied aus meiner Heimat* and *San Francisco*; the German *Cosi Cosa*
+    (Günther Behrle), *San Francisco, du bist die Stadt für mich* (Rotter),
+    *Natascha* and *Die Liebe kommt*; the French *Cosi Cosa* (Secchia and
+    Vella), *Happy New Year* (Isabelle Kloutchkowski) and *Schön ist das ganze
+    Leben*; the Dutch *Signorina*, *Madonna* and *Nur Sport*; the Greek
+    *Signorina*; the Hungarian *San Francisco*; the English *My Heart Was
+    Made for Love* and *Ein Lied aus meiner Heimat*, and an American *Ich
+    frag’ Madam*; the Danish *Hvem vil for en kvinde*; and the Italian film
+    *Aspetto una signorina*. The German records of *San Francisco* of 1936
+    are instrumental or sung in English. The Czech, Hungarian, Italian, Dutch
+    and Finnish national catalogues could not be searched from here, so these
+    stay open rather than disproved.

@@ -818,6 +818,27 @@ def structured_data(
     return f'<script type="application/ld+json">{payload}</script>'
 
 
+WORK_TITLE_DISTINCTIONS: dict[str, str] = {}
+
+
+def work_title_distinctions(root: Path) -> dict[str, str]:
+    """Works whose title, year and kind coincide, mapped to "words by …"."""
+    works = read_json(root / "data/public/v1/works.json").get("records", [])
+    songs = {s["id"]: s for s in read_json(root / "data/public/v1/songs.json").get("records", [])}
+    groups: dict[tuple, list[dict]] = {}
+    for work in works:
+        key = (work.get("title"), work.get("year"), work.get("workType"))
+        groups.setdefault(key, []).append(work)
+    out = {}
+    for members in groups.values():
+        if len(members) < 2:
+            continue
+        for work in members:
+            lyricist = next((songs[s].get("lyricistAsPrinted") for s in work.get("songIds", []) if s in songs), None)
+            out[work["id"]] = f"words by {lyricist}" if lyricist else work["id"]
+    return out
+
+
 def static_page(
     record_type: str,
     record: dict,
@@ -838,6 +859,11 @@ def static_page(
         if work_kind == "other":
             work_kind = "work"
         qualifier = " ".join(filter(None, [display_value(record.get("year")), work_kind]))
+        # Two versions of one song can share title, year and kind (the English
+        # and the Swedish "Ninon" of 1933); the author of the words tells them
+        # apart.
+        if record.get("id") in WORK_TITLE_DISTINCTIONS:
+            qualifier = f"{qualifier}, {WORK_TITLE_DISTINCTIONS[record['id']]}"
         page_title = f"{title} — {qualifier}" if qualifier else title
     elif record_type in {"person", "place", "event"}:
         page_title = title
@@ -921,6 +947,8 @@ def expected_outputs(
     initial_dates: Optional[dict[str, str]] = None,
 ) -> tuple[dict[Path, str], str, dict, dict, list[str]]:
     record_root = root / "data/site/records"
+    WORK_TITLE_DISTINCTIONS.clear()
+    WORK_TITLE_DISTINCTIONS.update(work_title_distinctions(root))
     public_sources = read_json(root / "data/public/v1/sources.json").get("records", [])
     source_description_counts = Counter(
         compact_text(compact_text(item.get("fullCitation")), META_DESCRIPTION_LIMIT)

@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 204,
+  "count": 208,
   "records": [
     {
       "id": "REL0001",
@@ -3685,6 +3685,74 @@
       ],
       "sourceIds": [
         "SRC0625"
+      ]
+    },
+    {
+      "id": "REL0217",
+      "relationType": "associated_with_film",
+      "targetWorkTitle": "Melodie der Liebe",
+      "direction": "source_to_target",
+      "publicNote": "Linked to the film by Sieghardt’s opus list; the registration of 1932 names no film.",
+      "certainty": "probable",
+      "sourceWorkIds": [
+        "W-S230"
+      ],
+      "targetWorkIds": [
+        "W-F011"
+      ],
+      "sourceIds": [
+        "SRC0373"
+      ]
+    },
+    {
+      "id": "REL0218",
+      "relationType": "language_version_of",
+      "targetWorkTitle": "Ninon, lach mir einmal zu",
+      "direction": "source_to_target",
+      "publicNote": "“Ninon” by Harry S. Pepper is an English-language version of “Ninon, lach mir einmal zu”.",
+      "certainty": "confirmed",
+      "sourceWorkIds": [
+        "W-S231"
+      ],
+      "targetWorkIds": [
+        "W-S076"
+      ],
+      "sourceIds": [
+        "SRC0987"
+      ]
+    },
+    {
+      "id": "REL0219",
+      "relationType": "language_version_of",
+      "targetWorkTitle": "Ninon, lach mir einmal zu",
+      "direction": "source_to_target",
+      "publicNote": "“Ninon” by Arne Olovson is a Swedish-language version of “Ninon, lach mir einmal zu”.",
+      "certainty": "confirmed",
+      "sourceWorkIds": [
+        "W-S232"
+      ],
+      "targetWorkIds": [
+        "W-S076"
+      ],
+      "sourceIds": [
+        "SRC0988"
+      ]
+    },
+    {
+      "id": "REL0220",
+      "relationType": "language_version_of",
+      "targetWorkTitle": "Du lieber Geiger, spiel einen Tango für mich",
+      "direction": "source_to_target",
+      "publicNote": "“Å, denna tango” is the Swedish-language version of “Du lieber Geiger, spiel einen Tango für mich”.",
+      "certainty": "confirmed",
+      "sourceWorkIds": [
+        "W-S233"
+      ],
+      "targetWorkIds": [
+        "W-S038"
+      ],
+      "sourceIds": [
+        "SRC0991"
       ]
     }
   ]
