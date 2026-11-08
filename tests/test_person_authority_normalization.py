@@ -181,7 +181,8 @@ class PersonAuthorityNormalizationTests(unittest.TestCase):
         self.assertIn("https://viaf.org/viaf/317160982", authority_urls(self.people_by_id["P014"]))
         # Groener's heading now has a contributing register: the BnF notice.
         self.assertEqual(self.people_by_id["P021"]["authorizedNameSource"], "BnF")
-        self.assertIn("Dutch National Thesaurus", self.people_by_id["P096"]["authorizedNameSource"])
+        self.assertEqual(self.people_by_id["P096"]["authorizedNameSource"], "Dutch National Thesaurus (NTA)")
+        self.assertIn("https://data.bibliotheken.nl/id/thes/p09487591X", authority_urls(self.people_by_id["P096"]))
 
 
 if __name__ == "__main__":

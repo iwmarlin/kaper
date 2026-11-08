@@ -324,7 +324,14 @@ below.
     *Hochzeitsreise zu Dritt*, on a Columbia disc of [1933?]; *Partir*
     (Luciano Ramo; Suvini-Zerboni, 1934), from *Un’avventura al Lido*; *Bel
     gorilla*, a paso doble for small orchestra (Suvini-Zerboni, 1934); and
-    *Danubiana*, a foxtrot “di F. Rotter e B. Kaper” (Suvini-Zerboni, 1932).
+    a foxtrot “di F. Rotter e B. Kaper” printed after Harry Morell’s *Dodò*
+    (Suvini-Zerboni, 1932) under *Danubiana*, which is not its title but the
+    Italian revue of 1932 it came from (the United States catalogue of 1933
+    registers the waltz *Nuvole d’amore* “dalla rivista Danubiana”, words by
+    Luciano Ramo, music by Giovanni D’Anzi). *Arrivederci e grazie*, a
+    foxtrot with words by Michele Galdieri and music by “Dr. B. Kaper”, is in
+    the *1° Album Curci* (Naples, F.lli Curci, 1930); no document says which
+    Kaper song it renders, if any.
     In the Royal Danish Library, *Hvem vil for en Kvinde græde?* (Jac.
     Boesen, 1932), parts for salon orchestra, which Sieghardt gives as the
     Danish *Wer weint heut’ aus Liebe Tränen?* (op. 046). OPAC SBN also

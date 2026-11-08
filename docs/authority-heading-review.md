@@ -268,21 +268,25 @@ the descriptor page itself renders in the browser only.
 **The seven language-area headings** wait on the amendment proposed below.
 
 **Six people and two organizations whose register is BnF** — P060, P069, P106,
-P108, P113, P155, ORG030, ORG032. Neither catalogue.bnf.fr nor data.bnf.fr
-answered at all during this session; the requests returned no status. Wikidata
-offers a BnF identifier for Robert Wohlmuth, `17166302h`, which should be
-confirmed against the register before it is recorded.
+P108, P113, P155, ORG030, ORG032. Checked against the BnF catalogue on 8
+November 2026, when it answered. Every linked record is the right person and
+states the archive's heading: Steinhof, Ninon (with Steinhoff as a rejected
+form); Wohlmuth, Robert, 1902–1987; Davson, Charlie, a pseudonym of Charles
+Secchia; Mauprey, Didier, 18..?–1944, a pseudonym of Didier Bloch; May, Karl
+Michael, 1893–1943; Rey, Georges, 1908–2011; Éditions Coda et Max. P113 now
+links the catalogue record (`cb140336628`) rather than its data.bnf.fr page.
+The BnF holds no record for Éditions musicales universelles, which keeps its
+local heading.
 
-**P096 Ferry van Delden** — the heading comes from the Dutch national thesaurus
-through the VIAF cluster. Wikidata Q2600682 carries no NTA identifier, VIAF
-itself is behind a bot check that this review did not attempt to pass, and a
-guessed thesaurus URI returned nothing. The identifier has to come from the VIAF
-cluster page.
+**P096 Ferry van Delden** — settled 8 November 2026. The Dutch national
+thesaurus of names, published as linked data by the Koninklijke Bibliotheek,
+has him as “Delden, Ferry van (Tekstdichter liedteksten, componist)
+(1892-1965)”, record `p09487591X`, found without passing through VIAF. The
+record is linked under a new register key, `nta`, and is the source of his
+heading.
 
-**P114 Karl Brüll** — a search restricted to `lexm.uni-hamburg.de` found no
-person entry for him, so the LexM label may point at a mention inside another
-entry rather than at an entry of his own. Worth checking in LexM's own index
-before an identifier is recorded or the label is changed.
+**P114 Karl Brüll** — still open. The LexM site turns automated requests away,
+so whether it has an entry of his own could not be checked from here.
 
 **P004 André Auguste Saudemont and P014 Egon Schubert** need nothing: they link
 only VIAF, which is not a source of headings, and both are marked as local

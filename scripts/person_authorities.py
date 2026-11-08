@@ -59,12 +59,12 @@ REFERENCE_LABEL_ALIASES = {
 # VIAF aggregates headings supplied by other agencies; it is not itself the
 # register from which an authorized heading may be transcribed.  Two thinly
 # documented records have no identifiable contributing register and therefore
-# keep an explicitly local heading.  Ferry van Delden is the documented
-# exception: the Dutch NTA form is visible through the VIAF cluster.
+# keep an explicitly local heading.  Ferry van Delden's heading is the Dutch
+# NTA form, linked directly since November 2026 rather than through VIAF.
 HEADING_SOURCE_OVERRIDES = {
     "P004": "local heading",
     "P014": "local heading",
-    "P096": "Dutch National Thesaurus (NTA), via VIAF cluster",
+    "P096": "Dutch National Thesaurus (NTA)",
     "P139": "LCNAF",
 }
 

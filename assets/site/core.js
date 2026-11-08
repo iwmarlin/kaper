@@ -283,6 +283,7 @@ export const AUTHORITY_SCHEME_LABELS = Object.freeze({
   bnf: "BnF",
   bn: "BN",
   nukat: "NUKAT",
+  nta: "NTA",
   lc_providers: "LC Providers",
   viaf: "VIAF",
   isni: "ISNI",

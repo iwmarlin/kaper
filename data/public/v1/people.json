@@ -5333,8 +5333,12 @@
       "deathYear": 1965,
       "lifeDatesCertainty": "confirmed",
       "authorizedName": "Delden, Ferry van",
-      "authorizedNameSource": "Dutch National Thesaurus (NTA), via VIAF cluster",
+      "authorizedNameSource": "Dutch National Thesaurus (NTA)",
       "authorities": [
+        {
+          "scheme": "nta",
+          "url": "https://data.bibliotheken.nl/id/thes/p09487591X"
+        },
         {
           "scheme": "viaf",
           "url": "https://viaf.org/viaf/287771697"
@@ -5709,7 +5713,7 @@
       "authorities": [
         {
           "scheme": "bnf",
-          "url": "https://data.bnf.fr/14033662/karl_michael_may"
+          "url": "https://catalogue.bnf.fr/ark:/12148/cb140336628"
         },
         {
           "scheme": "viaf",

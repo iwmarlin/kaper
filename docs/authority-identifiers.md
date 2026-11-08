@@ -41,6 +41,7 @@ into the data.
 | `bnf` | BnF | `catalogue.bnf.fr`, `data.bnf.fr` |
 | `bn` | BN | `dbn.bn.org.pl`, `data.bn.org.pl` |
 | `nukat` | NUKAT | `nukat.edu.pl` |
+| `nta` | NTA | `data.bibliotheken.nl/id/thes/` (Dutch national thesaurus of names) |
 | `lc_providers` | LC Providers | `id.loc.gov/entities/providers/` |
 | `viaf` | VIAF | `viaf.org` |
 | `isni` | ISNI | `isni.org/isni/` |
