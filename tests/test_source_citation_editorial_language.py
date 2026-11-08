@@ -90,7 +90,7 @@ class SourceCitationEditorialLanguageTests(unittest.TestCase):
                 self.assertIn("research reproduction", sources[source_id]["researchNote"])
                 self.assertIn("accession list", sources[source_id]["researchNote"])
                 self.assertIn("does not provide images", sources[source_id]["researchNote"])
-        self.assertIn("describes the collection generally", sources["SRC0009"]["researchNote"])
+        self.assertIn("describes the folder but does not provide images", sources["SRC0009"]["researchNote"])
 
     def test_visual_context_and_rights_are_preserved_outside_citations(self) -> None:
         sources = {

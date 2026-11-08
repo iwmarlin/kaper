@@ -54,6 +54,7 @@ AUTHORITY_SCHEMES: dict[str, dict[str, object]] = {
     "bnf": {"label": "BnF", "order": 30},
     "bn": {"label": "BN", "order": 40},
     "nukat": {"label": "NUKAT", "order": 50},
+    "nta": {"label": "NTA", "order": 52},
     "lc_providers": {"label": "LC Providers", "order": 55},
     "viaf": {"label": "VIAF", "order": 60},
     "isni": {"label": "ISNI", "order": 70},
@@ -72,6 +73,8 @@ SCHEME_BY_LEGACY_LABEL = {
     "bn": "bn",
     "biblioteka narodowa": "bn",
     "nukat": "nukat",
+    "nta": "nta",
+    "dutch national thesaurus": "nta",
     "lc providers": "lc_providers",
     "library of congress providers": "lc_providers",
     "viaf": "viaf",
@@ -130,6 +133,10 @@ def authority_scheme_for_url(url: str) -> str | None:
         return "bn"
     if host == "nukat.edu.pl":
         return "nukat"
+    # The Dutch national thesaurus of names, published by the Koninklijke
+    # Bibliotheek as linked data.
+    if host == "data.bibliotheken.nl" and path.startswith("/id/thes/"):
+        return "nta"
     if host.endswith("wikidata.org"):
         return "wikidata"
     if host == "musicbrainz.org" and path.startswith("/artist/"):

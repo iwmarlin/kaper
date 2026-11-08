@@ -173,10 +173,11 @@ below.
     does not name it either: his filmography (no. 9, p. 214) lists Kaper
     among the film's composers but gives as its music only Jurmann’s
     *Parlez-vous français?* (op. 041, Alrobi 1931), and the title is in
-    neither his opus list nor Görner's list. The song and
-    its credits are now `probable`. It entered the archive from the
-    earliest version of the site, with no document; `SRC0373`, its only
-    source, does not contain it.
+    neither his opus list nor Görner's list. It entered the archive from
+    the earliest version of the site, with no document; `SRC0373`, its only
+    source, does not contain it. The song and its credits were first made
+    `probable` and, in November 2026, withdrawn; the old address of
+    `W-S032` leads to the film, `W-F007`.
 - *On n'aime qu'une fois*: the United States copyright registration of 1935
   (`SRC0973`) names André de Badet alone as author of the words, where
   Sieghardt adds Paul Henri Bertrand. The song's note says so.
@@ -323,7 +324,14 @@ below.
     *Hochzeitsreise zu Dritt*, on a Columbia disc of [1933?]; *Partir*
     (Luciano Ramo; Suvini-Zerboni, 1934), from *Un’avventura al Lido*; *Bel
     gorilla*, a paso doble for small orchestra (Suvini-Zerboni, 1934); and
-    *Danubiana*, a foxtrot “di F. Rotter e B. Kaper” (Suvini-Zerboni, 1932).
+    a foxtrot “di F. Rotter e B. Kaper” printed after Harry Morell’s *Dodò*
+    (Suvini-Zerboni, 1932) under *Danubiana*, which is not its title but the
+    Italian revue of 1932 it came from (the United States catalogue of 1933
+    registers the waltz *Nuvole d’amore* “dalla rivista Danubiana”, words by
+    Luciano Ramo, music by Giovanni D’Anzi). *Arrivederci e grazie*, a
+    foxtrot with words by Michele Galdieri and music by “Dr. B. Kaper”, is in
+    the *1° Album Curci* (Naples, F.lli Curci, 1930); no document says which
+    Kaper song it renders, if any.
     In the Royal Danish Library, *Hvem vil for en Kvinde græde?* (Jac.
     Boesen, 1932), parts for salon orchestra, which Sieghardt gives as the
     Danish *Wer weint heut’ aus Liebe Tränen?* (op. 046). OPAC SBN also

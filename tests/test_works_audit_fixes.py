@@ -90,7 +90,7 @@ class WorksAuditFixTests(unittest.TestCase):
                 self.assertEqual(self.credits[credit_id]["role"], role)
 
     def test_jurmann_flag_agrees_with_the_credits(self):
-        for song_id in ("S032", "S097", "S176", "S181", "S184", "S185", "S186", "S187",
+        for song_id in ("S097", "S176", "S181", "S184", "S185", "S186", "S187",
                         "S192", "S223", "S226", "S227"):
             with self.subTest(song=song_id):
                 self.assertTrue(self.songs[song_id].get("jurmannCollaboration"))
