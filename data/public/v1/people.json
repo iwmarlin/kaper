@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 183,
+  "count": 188,
   "records": [
     {
       "id": "P001",
@@ -938,7 +938,13 @@
         "CON-S230-C-P009",
         "CON-S231-C-P009",
         "CON-S232-C-P009",
-        "CON-S233-C-P009"
+        "CON-S233-C-P009",
+        "CON-S234-C-P009",
+        "CON-S235-C-P009",
+        "CON-S236-C-P009",
+        "CON-S237-C-P009",
+        "CON-S238-C-P009",
+        "CON-S239-C-P009"
       ],
       "nameVariantIds": [
         "PNV0001",
@@ -1262,7 +1268,13 @@
         "W-S230",
         "W-S231",
         "W-S232",
-        "W-S233"
+        "W-S233",
+        "W-S234",
+        "W-S235",
+        "W-S236",
+        "W-S237",
+        "W-S238",
+        "W-S239"
       ],
       "birthYear": 1902,
       "deathYear": 1983,
@@ -4591,7 +4603,13 @@
         "CON-S229-C-P077",
         "CON-S230-C-P077",
         "CON-S231-C-P077",
-        "CON-S232-C-P077"
+        "CON-S232-C-P077",
+        "CON-S234-C-P077",
+        "CON-S235-C-P077",
+        "CON-S236-C-P077",
+        "CON-S237-C-P077",
+        "CON-S238-C-P077",
+        "CON-S239-C-P077"
       ],
       "nameVariantIds": [
         "PNV0005",
@@ -4806,7 +4824,13 @@
         "W-S229",
         "W-S230",
         "W-S231",
-        "W-S232"
+        "W-S232",
+        "W-S234",
+        "W-S235",
+        "W-S236",
+        "W-S237",
+        "W-S238",
+        "W-S239"
       ],
       "birthYear": 1903,
       "deathYear": 1971,
@@ -9654,6 +9678,118 @@
       "workIds": [
         "W-S232",
         "W-S233"
+      ]
+    },
+    {
+      "id": "P213",
+      "displayName": "Michele Galdieri",
+      "sortName": "Galdieri, Michele",
+      "authorizedName": "Galdieri, Michele",
+      "authorizedNameSource": "LCNAF",
+      "slug": "michele-galdieri",
+      "primaryRole": "lyricist",
+      "roles": [
+        "lyricist"
+      ],
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n2008016327"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/129970867"
+        }
+      ],
+      "contributionIds": [
+        "CON-S234-L-P213",
+        "CON-S236-L-P213"
+      ],
+      "workIds": [
+        "W-S234",
+        "W-S236"
+      ]
+    },
+    {
+      "id": "P214",
+      "displayName": "Alfredo Bracchi",
+      "sortName": "Bracchi, Alfredo",
+      "authorizedName": "Bracchi, Alfredo",
+      "authorizedNameSource": "LCNAF",
+      "slug": "alfredo-bracchi",
+      "primaryRole": "lyricist",
+      "roles": [
+        "lyricist"
+      ],
+      "authorities": [
+        {
+          "scheme": "lcnaf",
+          "url": "https://id.loc.gov/authorities/names/n2008084140"
+        },
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/1020457228"
+        }
+      ],
+      "contributionIds": [
+        "CON-S235-L-P214"
+      ],
+      "workIds": [
+        "W-S235"
+      ]
+    },
+    {
+      "id": "P215",
+      "displayName": "Ahl-Nielsen",
+      "sortName": "Ahl-Nielsen",
+      "authorizedName": "Ahl-Nielsen",
+      "authorizedNameSource": "local heading",
+      "slug": "ahl-nielsen",
+      "primaryRole": "lyricist",
+      "roles": [
+        "lyricist"
+      ],
+      "contributionIds": [
+        "CON-S237-L-P215"
+      ],
+      "workIds": [
+        "W-S237"
+      ]
+    },
+    {
+      "id": "P216",
+      "displayName": "Giovanni di Sorrento",
+      "sortName": "Sorrento, Giovanni di",
+      "authorizedName": "Sorrento, Giovanni di",
+      "authorizedNameSource": "local heading",
+      "slug": "giovanni-di-sorrento",
+      "primaryRole": "lyricist",
+      "roles": [
+        "lyricist"
+      ],
+      "contributionIds": [
+        "CON-S238-L-P216"
+      ],
+      "workIds": [
+        "W-S238"
+      ]
+    },
+    {
+      "id": "P217",
+      "displayName": "Per Silja",
+      "sortName": "Silja, Per",
+      "authorizedName": "Silja, Per",
+      "authorizedNameSource": "local heading",
+      "slug": "per-silja",
+      "primaryRole": "lyricist",
+      "roles": [
+        "lyricist"
+      ],
+      "contributionIds": [
+        "CON-S239-L-P217"
+      ],
+      "workIds": [
+        "W-S239"
       ]
     }
   ],

@@ -205,5 +205,34 @@ class GornerWorkListTest(unittest.TestCase):
         self.assertIn("op. 155", credit["evidenceLocator"])
 
 
+class CatalogueLanguageVersionsTest(unittest.TestCase):
+    """Versions added from OPAC SBN and the Royal Danish Library, November 2026."""
+
+    def setUp(self):
+        load = lambda n: {r["id"]: r for r in json.loads((DATA / f"{n}.json").read_text())["records"]}
+        self.songs, self.credits, self.relations = load("songs"), load("contributions"), load("work-relations")
+
+    def test_each_version_rests_on_a_document_of_the_time(self):
+        expected = {
+            "S234": ("P213", "SRC0993", "W-S076"), "S235": ("P214", "SRC0994", "W-S119"),
+            "S236": ("P213", "SRC0996", "W-S130"), "S237": ("P215", "SRC0997", "W-S076"),
+            "S238": ("P216", "SRC0999", "W-S078"), "S239": ("P217", "SRC0999", "W-S078"),
+        }
+        for song_id, (lyricist, source, original) in expected.items():
+            with self.subTest(song=song_id):
+                self.assertNotIn("SRC0373", self.songs[song_id]["sourceIds"][:1])
+                credit = self.credits[f"CON-{song_id}-L-{lyricist}"]
+                self.assertEqual((credit["certainty"], credit["sourceIds"][0]), ("confirmed", source))
+                relation = [r for r in self.relations.values() if r.get("sourceWorkIds") == [f"W-{song_id}"]]
+                self.assertEqual([(r["relationType"], r["targetWorkIds"]) for r in relation],
+                                 [("language_version_of", [original])])
+
+    def test_translations_without_a_stated_original_are_not_added(self):
+        titles = {s["title"] for s in self.songs.values()}
+        for title in ("Domani chissà", "Segui il ritmo", "Canta il mio cuore", "Il primo amore", "Signorinetta", "Partir"):
+            with self.subTest(title=title):
+                self.assertNotIn(title, titles)
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -292,31 +292,59 @@ below.
 - **Language versions.** The versions Sieghardt lists under the opus numbers
   of songs the archive holds were checked in the United States copyright
   catalogues (1930–1937), Hofmeister (1929–1938), the BnF, the Deutsche
-  Nationalbibliothek, LIBRIS, the Internet Archive and Discogs.
-  - Added, each with a document of the time: the English *Ninon* by Harry S.
-    Pepper (`W-S231`; registered 22 August 1933, Dix, Ltd.); the Swedish
-    *Ninon* by Arne Olovson (`W-S232`; Carl Gehrmans’s print in LIBRIS and
-    two Swedish discs of 1933); and, found on the way, the Swedish version of
-    *Du lieber Geiger, spiel einen Tango für mich*, *Å, denna tango*, also by
-    Olovson (`W-S233`; Gehrmans, [1931]), which Sieghardt does not list.
+  Nationalbibliothek, LIBRIS, the Internet Archive and Discogs, and in
+  November 2026 in the Italian union catalogue (OPAC SBN), the Royal Danish
+  Library, the Finnish Finna, the National Library of Norway and the Dutch
+  national library with its newspaper archive, Delpher. A version is added
+  only where a document of the time ties it to the original: the same title
+  and film, the original title printed beside it, or the original words
+  acknowledged.
+  - Added: the English *Ninon* by Harry S. Pepper (`W-S231`; registered 22
+    August 1933, Dix, Ltd.); the Swedish *Ninon* by Arne Olovson (`W-S232`;
+    Carl Gehrmans’s print in LIBRIS and two Swedish discs of 1933); the
+    Swedish version of *Du lieber Geiger, spiel einen Tango für mich*, *Å,
+    denna tango*, also by Olovson (`W-S233`; Gehrmans, [1931]), which
+    Sieghardt does not list; the Italian *Ninon* by Michele Galdieri
+    (`W-S234`; Curci, c1933, from “Aspetto una signora”, the Italian release
+    of *Ein Lied für Dich*); the Italian *Tu sei l’amor* by Alfredo Bracchi
+    (`W-S235`; Curci, ©1935, and a Columbia disc titled “Tu sei l’amore =
+    You’re all I need”); the Italian *San Francisco* by Galdieri (`W-S236`;
+    Curci, ©1937); the Danish *Ninon, smil engang endnu* by Ahl-Nielsen
+    (`W-S237`; Alfred Thorsing, 1933, and three Danish discs of 1933); and
+    the Danish and Swedish *Oh Madonna*, by Giovanni di Sorrento and Per
+    Silja (`W-S238`, `W-S239`), printed together in Thorsing’s edition of
+    1933, which gives the German song as *Signorina*.
+  - Found in documents of the time but not added, because no document says
+    which original they translate: in OPAC SBN, *Domani chissà* and *Segui
+    il ritmo* (Bracchi; Curci, 1937 and 1938), from *A Day at the Races*;
+    *Canta il mio cuore* and *Il primo amore* (Lulli; Franchi, Rome, ©1936
+    and 1937), from *Three Smart Girls*; *Signorinetta* (Bosio) and *Se
+    vuoi!* (“N.M.”), from *Viaggio di nozze in tre*, the Italian release of
+    *Hochzeitsreise zu Dritt*, on a Columbia disc of [1933?]; *Partir*
+    (Luciano Ramo; Suvini-Zerboni, 1934), from *Un’avventura al Lido*; *Bel
+    gorilla*, a paso doble for small orchestra (Suvini-Zerboni, 1934); and
+    *Danubiana*, a foxtrot “di F. Rotter e B. Kaper” (Suvini-Zerboni, 1932).
+    In the Royal Danish Library, *Hvem vil for en Kvinde græde?* (Jac.
+    Boesen, 1932), parts for salon orchestra, which Sieghardt gives as the
+    Danish *Wer weint heut’ aus Liebe Tränen?* (op. 046). OPAC SBN also
+    records *La prima sensazione* and *Quando piango son felice* on undated
+    discs.
   - Already in the archive: the French *Sport (Nur Sport)*, *La vie et
     l’amour*, *Dit’s-moi, Madame*, *Ça va déjà mieux* and both texts of
     *Ninon, quand tu me souris*; Harold Adamson’s *Ninon*; *Love Is a Fairy
     Tale*.
   - Known only from Sieghardt, with no document found: *Ninon* in Czech,
-    Danish, Hungarian, Italian (*Un sorriso basta a cominciar*), Norwegian,
-    Dutch (*Zonder jou*), Brazilian and Finnish (*Jos jäät*); the Italian
-    *Senza amore*, *Tu mi piaci*, *La prima sensazione*, *Quando piango son
-    felice*, *Notte sul mare*, *Signorina* and the Italian versions of *Ein
-    Lied aus meiner Heimat* and *San Francisco*; the German *Cosi Cosa*
+    Hungarian, Norwegian, Dutch (*Zonder jou*), Brazilian and Finnish (*Jos
+    jäät*); the Italian *Senza amore*, *Tu mi piaci*, *Notte sul mare* and
+    the Italian *Ein Lied aus meiner Heimat*; the German *Cosi Cosa*
     (Günther Behrle), *San Francisco, du bist die Stadt für mich* (Rotter),
     *Natascha* and *Die Liebe kommt*; the French *Cosi Cosa* (Secchia and
     Vella), *Happy New Year* (Isabelle Kloutchkowski) and *Schön ist das ganze
     Leben*; the Dutch *Signorina*, *Madonna* and *Nur Sport*; the Greek
     *Signorina*; the Hungarian *San Francisco*; the English *My Heart Was
     Made for Love* and *Ein Lied aus meiner Heimat*, and an American *Ich
-    frag’ Madam*; the Danish *Hvem vil for en kvinde*; and the Italian film
-    *Aspetto una signorina*. The German records of *San Francisco* of 1936
-    are instrumental or sung in English. The Czech, Hungarian, Italian, Dutch
-    and Finnish national catalogues could not be searched from here, so these
-    stay open rather than disproved.
+    frag’ Madam*. The German records of *San Francisco* of 1936 are
+    instrumental or sung in English. The Czech, Hungarian and Brazilian
+    national catalogues could not be searched from here (the Czech union
+    catalogue turns automated requests away), so those stay open rather than
+    disproved.

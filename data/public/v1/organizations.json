@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 239,
+  "count": 243,
   "records": [
     {
       "id": "ORG001",
@@ -7959,6 +7959,109 @@
       "sourceIds": [
         "SRC0988",
         "SRC0991"
+      ]
+    },
+    {
+      "id": "ORG249",
+      "displayName": "Edizioni Curci",
+      "authorizedName": "Edizioni Curci",
+      "authorizedNameSource": "local heading",
+      "types": [
+        "publisher"
+      ],
+      "city": [
+        "Milan"
+      ],
+      "country": "Italy",
+      "slug": "edizioni-curci",
+      "nameVariants": "Curci",
+      "publicNote": "Milan music publisher of the Italian versions of “Ninon”, “You’re All I Need” and “San Francisco”.",
+      "sourceIds": [
+        "SRC0993",
+        "SRC0994",
+        "SRC0996"
+      ],
+      "contributionIds": [
+        "CON-S234-PUB-ORG249",
+        "CON-S235-PUB-ORG249",
+        "CON-S236-PUB-ORG249"
+      ],
+      "workIds": [
+        "W-S234",
+        "W-S235",
+        "W-S236"
+      ]
+    },
+    {
+      "id": "ORG250",
+      "displayName": "Alfred Thorsings Musikforlag",
+      "authorizedName": "Alfred Thorsings Musikforlag",
+      "authorizedNameSource": "local heading",
+      "types": [
+        "publisher"
+      ],
+      "city": [
+        "Copenhagen"
+      ],
+      "country": "Denmark",
+      "slug": "alfred-thorsings-musikforlag",
+      "nameVariants": "Alfred Thorsing",
+      "publicNote": "Copenhagen music publisher of the Danish versions of “Ninon” and “Oh Madonna!” from Ein Lied für Dich, issued in 1933.",
+      "sourceIds": [
+        "SRC0997",
+        "SRC0999"
+      ],
+      "contributionIds": [
+        "CON-S237-PUB-ORG250",
+        "CON-S238-PUB-ORG250",
+        "CON-S239-PUB-ORG250"
+      ],
+      "workIds": [
+        "W-S237",
+        "W-S238",
+        "W-S239"
+      ]
+    },
+    {
+      "id": "ORG251",
+      "displayName": "Istituto Centrale per il Catalogo Unico (ICCU)",
+      "authorizedName": "Istituto Centrale per il Catalogo Unico delle biblioteche italiane e per le informazioni bibliografiche",
+      "authorizedNameSource": "local heading",
+      "types": [
+        "library"
+      ],
+      "city": [
+        "Rome"
+      ],
+      "country": "Italy",
+      "slug": "iccu-opac-sbn",
+      "nameVariants": "OPAC SBN",
+      "publicNote": "The Italian central cataloguing institute, whose union catalogue OPAC SBN records the Italian prints and discs.",
+      "sourceIds": [
+        "SRC0993",
+        "SRC0994",
+        "SRC0995",
+        "SRC0996"
+      ]
+    },
+    {
+      "id": "ORG252",
+      "displayName": "Det Kgl. Bibliotek (Royal Danish Library)",
+      "authorizedName": "Det Kgl. Bibliotek",
+      "authorizedNameSource": "local heading",
+      "types": [
+        "library"
+      ],
+      "city": [
+        "Copenhagen"
+      ],
+      "country": "Denmark",
+      "slug": "det-kgl-bibliotek",
+      "publicNote": "The Royal Danish Library, whose catalogue records the Danish prints and discs.",
+      "sourceIds": [
+        "SRC0997",
+        "SRC0998",
+        "SRC0999"
       ]
     }
   ]
