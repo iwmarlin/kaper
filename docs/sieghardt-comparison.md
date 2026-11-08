@@ -5,9 +5,10 @@ Buxbaum's *„Veronika, der Lenz ist da“* (2006; `SRC0373`), was compared
 with the archive: the opus list, op. 001–280 (pp. 178–211), and the
 filmography from its first entry to no. 62 (pp. 212–231). Every entry that
 names Kaper was compared with the archive's Work, credits, titles and
-dates. The photographs of pp. 204 and 208 (op. 193–204, 1941–1943, and
-op. 238–249, 1946–1954) are not legible, and the filmography goes on past
-p. 231, which was not to hand.
+dates. The rest of the filmography, after p. 231, and pp. 204 and 208 of
+the opus list (op. 193–204, 1941–1943, and op. 238–249, 1946–1954) cover
+Jurmann's later work, without Kaper apart from one entry, op. 194, noted
+below.
 
 A work list arranged by year, pp. 200–217 of Eberhard Görner's *Walter
 Jurmann: Sein Leben, seine Musik* (Henschel, 2014; `SRC0992`), was used
@@ -289,6 +290,10 @@ below.
   and Kaper with their own words, published by Criterion Music
   Corporation in 1941. The archive does not hold it, and no document of the
   time has been checked yet.
+- **Blush and Sigh** (op. 194): Sieghardt and Görner list a song by Jurmann
+  and Kaper, words by Gus Kahn, written for *When Ladies Meet* (1941) and
+  not used, and Görner adds background cues for the film, also unused. The
+  archive holds neither the song nor the film.
 - **Language versions.** The versions Sieghardt lists under the opus numbers
   of songs the archive holds were checked in the United States copyright
   catalogues (1930–1937), Hofmeister (1929–1938), the BnF, the Deutsche
