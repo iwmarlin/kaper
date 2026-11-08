@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 69,
+  "count": 70,
   "records": [
     {
       "id": "TV0002",
@@ -696,10 +696,10 @@
     },
     {
       "id": "TV0290",
-      "variantTitle": "Sous le ciel de Venice",
-      "titleAsSource": "Sous le ciel de Venice",
+      "variantTitle": "Sous le ciel de Venise",
+      "titleAsSource": "SOUS LE CIEL DE VENISE",
       "variantType": "language_version",
-      "variantTypeAsSource": "Buxbaum/Sieghardt language-version entry, no. 128/F",
+      "variantTypeAsSource": "Buxbaum/Sieghardt language-version listing in the entry for op. 128",
       "language": "fr",
       "languageStatus": "source",
       "note": "French-language version title for W-S129 / Blue Venetian Waters. Linked version work: W-S198 / S198.",
@@ -1166,6 +1166,23 @@
       ],
       "sourceIds": [
         "SRC0306"
+      ]
+    },
+    {
+      "id": "TV0323",
+      "variantTitle": "Sous le ciel de Venice",
+      "titleAsSource": "SOUS LE CIEL DE VENICE",
+      "variantType": "alternate_title",
+      "variantTypeAsSource": "Buxbaum/Sieghardt entry op. 128/F",
+      "language": "fr",
+      "languageStatus": "source",
+      "note": "The form printed in the catalogue’s own entry for the French version; the entry for op. 128 prints Sous le ciel de Venise.",
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S198"
+      ],
+      "sourceIds": [
+        "SRC0373"
       ]
     }
   ]
