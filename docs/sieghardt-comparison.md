@@ -5,10 +5,13 @@ Buxbaum's *„Veronika, der Lenz ist da“* (2006; `SRC0373`), was compared
 with the archive: the opus list, op. 001–280 (pp. 178–211), and the
 filmography from its first entry to no. 62 (pp. 212–231). Every entry that
 names Kaper was compared with the archive's Work, credits, titles and
-dates. The rest of the filmography, after p. 231, and pp. 204 and 208 of
-the opus list (op. 193–204, 1941–1943, and op. 238–249, 1946–1954) cover
-Jurmann's later work, without Kaper apart from one entry, op. 194, noted
-below.
+dates. From 1941 on, the opus list and the filmography fall outside the
+archive's years, 1902–1939. Two entries there name Kaper: *Harbour Café*
+(op. 188, p. 203; Criterion Music Corporation, 1941), words by Jurmann and
+Kaper, and *Blush and Sigh* (op. 194, p. 204; manuscript, 1941), words by
+Gus Kahn, written for *When Ladies Meet* and not used. Neither is in the
+United States copyright catalogues of 1941–1942, which register from that
+film only cues by Kaper alone; they are not added.
 
 A work list arranged by year, pp. 200–217 of Eberhard Görner's *Walter
 Jurmann: Sein Leben, seine Musik* (Henschel, 2014; `SRC0992`), was used
@@ -286,14 +289,6 @@ below.
   Walter Jurmann. © Apr. 25, 1932; Alrobi”. It is added (`W-S230`), linked
   to the film as `probable`, since only Sieghardt names the film: his
   filmography (no. 14, p. 216) has op. 057 sung by Richard Tauber in it.
-- **Harbour Café** (op. 188): Sieghardt and Görner list a song by Jurmann
-  and Kaper with their own words, published by Criterion Music
-  Corporation in 1941. The archive does not hold it, and no document of the
-  time has been checked yet.
-- **Blush and Sigh** (op. 194): Sieghardt and Görner list a song by Jurmann
-  and Kaper, words by Gus Kahn, written for *When Ladies Meet* (1941) and
-  not used, and Görner adds background cues for the film, also unused. The
-  archive holds neither the song nor the film.
 - **Language versions.** The versions Sieghardt lists under the opus numbers
   of songs the archive holds were checked in the United States copyright
   catalogues (1930–1937), Hofmeister (1929–1938), the BnF, the Deutsche
