@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 1368,
+  "count": 1369,
   "records": [
     {
       "id": "CON-F001-C-P009",
@@ -23911,10 +23911,11 @@
       "sourceIds": [
         "SRC0802",
         "SRC0951",
-        "SRC0373"
+        "SRC0373",
+        "SRC0992"
       ],
       "scopeNote": "The Columbia disc catalogue transcribes “Varna, Lelievre & Marc-Cab” without a forename. The BnF catalogue for the voice-only edition identifies Léo Lelièvre (1899–1966); the voice-and-piano entry does not list him. The attribution remains probable pending comparison of the printed sources.",
-      "evidenceLocator": "Sieghardt work catalogue, p. 197, op. 109; year-by-year list, 1934"
+      "evidenceLocator": "Sieghardt work catalogue, p. 197, op. 109; Görner, Werkverzeichnis, 1934, p. 211"
     },
     {
       "id": "CON-S016-LAB-ORG152",
@@ -24121,9 +24122,11 @@
         "P077"
       ],
       "sourceIds": [
-        "SRC0306"
+        "SRC0306",
+        "SRC0373"
       ],
-      "scopeNote": "The Walter Jurmann works catalogue lists the song as written in collaboration with Bronisław Kaper; the 1939 copyright registration names Kaper alone as composer."
+      "scopeNote": "The Walter Jurmann works catalogue and Sieghardt’s work catalogue list the song as written with Bronisław Kaper; the 1939 copyright registration names Kaper alone as composer.",
+      "evidenceLocator": "Sieghardt work catalogue, p. 202, op. 174"
     },
     {
       "id": "CON-S220-C-P009",
@@ -25454,7 +25457,7 @@
       "evidenceContext": [
         "secondary_literature"
       ],
-      "evidenceLocator": "Sieghardt work catalogue, year-by-year list, 1936",
+      "evidenceLocator": "Sieghardt work catalogue, p. 200, op. 138; Görner, Werkverzeichnis, 1936, p. 213",
       "certainty": "probable",
       "workIds": [
         "W-S141"
@@ -25463,7 +25466,8 @@
         "P135"
       ],
       "sourceIds": [
-        "SRC0373"
+        "SRC0373",
+        "SRC0992"
       ]
     },
     {
@@ -25473,7 +25477,7 @@
       "evidenceContext": [
         "secondary_literature"
       ],
-      "evidenceLocator": "Sieghardt work catalogue, year-by-year list, 1936",
+      "evidenceLocator": "Sieghardt work catalogue, p. 200, op. 139; Görner, Werkverzeichnis, 1936, p. 213",
       "certainty": "probable",
       "workIds": [
         "W-S135"
@@ -25482,7 +25486,8 @@
         "P135"
       ],
       "sourceIds": [
-        "SRC0373"
+        "SRC0373",
+        "SRC0992"
       ]
     },
     {
@@ -25492,7 +25497,7 @@
       "evidenceContext": [
         "secondary_literature"
       ],
-      "evidenceLocator": "Sieghardt work catalogue, year-by-year list, 1936",
+      "evidenceLocator": "Sieghardt work catalogue, p. 200, op. 137; Görner, Werkverzeichnis, 1936, p. 214",
       "certainty": "probable",
       "workIds": [
         "W-S139"
@@ -25501,7 +25506,8 @@
         "P135"
       ],
       "sourceIds": [
-        "SRC0373"
+        "SRC0373",
+        "SRC0992"
       ]
     },
     {
@@ -25902,6 +25908,26 @@
       ],
       "evidenceContext": [
         "sheet_music"
+      ]
+    },
+    {
+      "id": "CON-S169-C-P135",
+      "role": "composer",
+      "nameAsPrinted": "Franz Waxman",
+      "evidenceContext": [
+        "secondary_literature"
+      ],
+      "evidenceLocator": "Sieghardt work catalogue, p. 201, op. 155; Görner, Werkverzeichnis, 1936, p. 212",
+      "certainty": "probable",
+      "workIds": [
+        "W-S169"
+      ],
+      "personIds": [
+        "P135"
+      ],
+      "sourceIds": [
+        "SRC0373",
+        "SRC0992"
       ]
     }
   ]

@@ -30,8 +30,8 @@ class SieghardtComparisonTests(unittest.TestCase):
 
     def test_authors_sieghardt_adds_are_probable(self):
         for credit_id in ("CON-S076-L-P017", "CON-S079-L-P033", "CON-S079-L-P206", "CON-S113-L-P049",
-                          "CON-S112-L-P049", "CON-S114-L-P052", "CON-S135-C-P135", "CON-S137-C-P135",
-                          "CON-S138-C-P135", "CON-S139-C-P135", "CON-S140-C-P135", "CON-S141-C-P135"):
+                          "CON-S112-L-P049", "CON-S114-L-P052", "CON-S137-C-P135",
+                          "CON-S138-C-P135", "CON-S140-C-P135"):
             credit = self.credits[credit_id]
             with self.subTest(credit=credit_id):
                 self.assertEqual((credit["certainty"], credit["sourceIds"]), ("probable", ["SRC0373"]))
@@ -168,6 +168,41 @@ class SieghardtComparisonTests(unittest.TestCase):
         self.assertEqual(relations["REL0217"]["certainty"], "probable")
         page = (DATA.parents[2] / "records/work/W-S232/index.html").read_text(encoding="utf-8")
         self.assertIn("words by Arne Olovson", page)
+
+
+
+
+class GornerWorkListTest(unittest.TestCase):
+    """The list by year is Görner's (2014), not part of Sieghardt's catalogue."""
+
+    def setUp(self):
+        self.sources = {r["id"]: r for r in json.loads((DATA / "sources.json").read_text())["records"]}
+        self.credits = {r["id"]: r for r in json.loads((DATA / "contributions.json").read_text())["records"]}
+
+    def test_gorner_is_a_source_of_its_own(self):
+        source = self.sources["SRC0992"]
+        self.assertEqual(source["creator"], "Eberhard Görner")
+        self.assertIn("pp. 200–217", source["fullCitation"])
+        self.assertIn("jurmann.org", source["fullCitation"])
+
+    def test_no_note_calls_it_sieghardts(self):
+        for name in ("contributions", "films", "songs", "works", "title-variants"):
+            text = (DATA / f"{name}.json").read_text()
+            with self.subTest(file=name):
+                self.assertNotIn("year-by-year", text)
+                self.assertNotIn("adds Carl W. Stalling", text)
+
+    def test_waxman_cues_rest_on_the_opus_list_and_gorner(self):
+        for credit_id in ("CON-S135-C-P135", "CON-S139-C-P135", "CON-S141-C-P135"):
+            credit = self.credits[credit_id]
+            with self.subTest(credit=credit_id):
+                self.assertEqual((credit["certainty"], credit["sourceIds"]), ("probable", ["SRC0373", "SRC0992"]))
+                self.assertIn("p. 200", credit["evidenceLocator"])
+
+    def test_a_trader_names_waxman_too(self):
+        credit = self.credits["CON-S169-C-P135"]
+        self.assertEqual((credit["certainty"], credit["sourceIds"]), ("probable", ["SRC0373", "SRC0992"]))
+        self.assertIn("op. 155", credit["evidenceLocator"])
 
 
 if __name__ == "__main__":
