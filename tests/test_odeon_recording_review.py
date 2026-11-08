@@ -32,7 +32,9 @@ class OdeonRecordingReviewTests(unittest.TestCase):
 
     def test_publisher_credit_is_not_supported_by_the_record_label(self):
         cid = "CON-S078-PUB-ORG029"
-        self.assertEqual(self.contributions[cid]["sourceIds"], ["SRC0297"])
+        # The Hofmeister registration of the printed edition, "Signorina! komm
+        # zu mir", now supports it as well (docs/sieghardt-comparison.md).
+        self.assertEqual(self.contributions[cid]["sourceIds"], ["SRC0216", "SRC0297"])
         self.assertNotIn(cid, self.sources["SRC0487"]["contributionIds"])
         removals = self.overrides["linkRemovals"]
         self.assertIn(cid, removals["Sources"]["SRC0487"]["fields"]["contributionIds"])

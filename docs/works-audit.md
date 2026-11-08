@@ -46,6 +46,14 @@ German version are dated 1936, as the catalogue dates them and as their
 original is dated; they had been 1937. Nothing from this audit is left
 open.
 
+**Corrected 8 November 2026.** Two statements below were wrong. The row for
+`W-S078` says the words *komm zu mir* belong to *Signorina! komm zu mir*;
+they are in the refrain of *Oh Madonna!* too (“Oh Madonna, oh Madonna, komm
+zu mir”), as the film and the Odeon disc sing it. And “No two Works are one
+work” missed that pair: *Signorina! komm zu mir* and *Oh Madonna!* are one
+tune with two texts, the printed one and the sung one. They are now one Work,
+`W-S078`, as set out in `docs/sieghardt-comparison.md`.
+
 ## 1. Eighteen titles are not the form any Source prints
 
 A Work's title should be the form its earliest primary Source prints, with

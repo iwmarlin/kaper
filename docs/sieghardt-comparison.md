@@ -46,6 +46,32 @@ document stands, and that is noted below.
   variant.
 - **The French version of Blue Venetian Waters** is *Sous le ciel de Venise*,
   as recorded in `docs/works-audit.md`.
+- **One work catalogued as two.** Sieghardt calls *Signorina* an earlier text
+  of *O Madonna* (op. 089), and the documents bear him out. Hofmeister, May
+  1933, registers only two songs from *Ein Lied für dich*: *Ninon* and
+  *Signorina! komm zu mir*, a 6/8 march-foxtrot with words by Marischka and
+  Rotter; no *Madonna* edition appears. In the film (Internet Archive copy)
+  and on Kiepura’s Odeon disc the tune is sung as *Oh Madonna!*. A disc by
+  Carl Jörken (6108, coupled with *Ninon*) is titled *O signorina (O
+  Madonna)* and sings the Madonna text. Kiepura’s Polish disc couples
+  *Ninon* with *Signorina, signorina*, where the German one couples it with
+  *Oh Madonna!*; the two recordings have the same form, and a chroma
+  comparison of the audio aligns them far more closely than either with
+  *Ninon*. The two records are now one Work, *Oh Madonna!* (`W-S078`), the
+  title the film and the earliest disc give; *Signorina! komm zu mir* is its
+  printed title (`TV0325`), and the Polish version is linked to it. The old
+  address of `W-S068` leads to `W-S078`. Sieghardt’s Max Kolpe as author of
+  the words is his alone: the disc labels and Hofmeister name Marischka and
+  Rotter.
+- **Ich suche einen / eine.** Sieghardt’s *Ich suche eine, die mir allein
+  gehört* (op. 054) is the title of the Ufaton edition, as Hofmeister
+  registered it in June 1932. The film’s programme, *Illustrierter
+  Film-Kurier* no. 1775 (`SRC0974`), prints the song as *Ich suche Einen, der
+  mir allein gehört*, sung by the girls and by Evelyn: the same song in the
+  woman’s and the man’s form. The archive keeps the film’s form as the title,
+  now on the programme rather than a video upload, and the edition’s as a
+  variant. The note no longer says that Willy Fritsch sang the man’s form in
+  the film, which no document of the time states.
 
 ## Where the archive's documents outweigh Sieghardt
 
@@ -79,6 +105,16 @@ document stands, and that is noted below.
     Jurmann catalogue, a secondary source too, and Sieghardt gives Éditions
     Univers. With no edition found, the credit is `probable` and the note
     gives both.
+- *La vie et l’amour*: Sieghardt makes it a work of its own (op. 075,
+  German original unknown) and also lists Lucien Boyer’s French text under
+  *Schade, daß Liebe ein Märchen ist* (op. 060/F). The Salabert edition of
+  1932 in the BnF prints the German title beside the French: *La Vie et
+  l’Amour (Schade, dass Liebe ein Märchen ist!)*. Boyer’s four French texts
+  for the film each answer one German song, and his year-by-year list gives
+  the French song Rotter’s words and Alrobi, Berlin, which are *Schade*’s.
+  Op. 075 is *Schade* a second time; the archive keeps it as the French
+  version. Réda Caire’s Pathé disc of 1933 (`SRC0975`) records it under the
+  film’s French title.
 - *On n'aime qu'une fois*: the United States copyright registration of 1935
   (`SRC0973`) names André de Badet alone as author of the words, where
   Sieghardt adds Paul Henri Bertrand. The song's note says so.
@@ -101,12 +137,6 @@ document stands, and that is noted below.
   (1931), *Nur Sport!* (1932), *Le bistrot du port* (1933); *Tränen in der
   Geige* the other way (1933 against 1932). Whether a secondary source's
   publication year can date a Work is for `docs/work-years.md` to say.
-- **Identity.** Sieghardt makes *Vie et l'amour* a work of its own (op. 075),
-  where the archive makes it the French version of *Schade, daß Liebe ein
-  Märchen ist*; and he calls *Signorina* an earlier text of *O Madonna*
-  (op. 089), where the archive has two Works.
-- **Titles.** *Ich suche einen, der mir allein gehört* is *Ich suche eine,
-  die mir allein gehört* in Sieghardt (op. 054).
 - **Publisher credits resting on Sieghardt or the Jurmann catalogue alone**,
   to be checked the same way: *Wir sind international* (Alrobi; Hofmeister
   1931 has the film's other songs with Alrobi, not this one), *Les charmes

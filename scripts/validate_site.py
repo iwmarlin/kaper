@@ -15,7 +15,7 @@ from pathlib import Path
 from urllib.parse import unquote, urlsplit
 
 from site_calendar import publication_today
-from build_static_records import LEGACY_SOURCE_REDIRECTS
+from build_static_records import LEGACY_REDIRECTS
 
 
 PUBLIC_PAGES = [
@@ -493,8 +493,8 @@ def validate(root: Path) -> dict:
         if source_seo.get("pageTitles", {}).get("duplicateGroupCount") != 0:
             errors.append("Static Source pages contain duplicate HTML titles")
         redirect_pages = {
-            root / "records" / "source" / old / "index.html": new
-            for old, new in LEGACY_SOURCE_REDIRECTS.items()
+            root / "records" / kind / old / "index.html": new
+            for (kind, old), new in LEGACY_REDIRECTS.items()
         }
         static_pages = [
             page for page in (root / "records").glob("*/*/index.html")
@@ -509,7 +509,7 @@ def validate(root: Path) -> dict:
                 errors.append(f"{relative}: legacy redirect page is missing")
             elif f'url=../{target}/' not in page.read_text(encoding="utf-8"):
                 errors.append(f"{relative}: legacy redirect target is incorrect")
-            if not (root / "records" / "source" / target / "index.html").is_file():
+            if not (page.parent.parent / target / "index.html").is_file():
                 errors.append(f"{relative}: legacy redirect target page is missing")
             if f"{SITE_ORIGIN}{relative}" in sitemap_urls:
                 errors.append(f"{relative}: legacy redirect must not appear in the sitemap")

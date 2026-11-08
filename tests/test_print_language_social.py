@@ -10,7 +10,7 @@ from urllib.parse import unquote
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
-from build_static_records import LEGACY_SOURCE_REDIRECTS
+from build_static_records import LEGACY_REDIRECTS
 
 CSS = ROOT / "assets/site/styles.css"
 MAX_SOCIAL_BYTES = 600_000
@@ -75,7 +75,7 @@ class SocialImageTests(unittest.TestCase):
         self.assertGreater(len(pages), 1000)
         offenders = []
         for page in pages:
-            if page.parent.parent.name == "source" and page.parent.name in LEGACY_SOURCE_REDIRECTS:
+            if (page.parent.parent.name, page.parent.name) in LEGACY_REDIRECTS:
                 continue  # Redirects are not independent record pages.
             text = page.read_text(encoding="utf-8")
             match = re.search(r'<meta property="og:image" content="([^"]+)">', text)

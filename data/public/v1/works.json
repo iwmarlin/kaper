@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 300,
+  "count": 299,
   "records": [
     {
       "id": "W-F001",
@@ -601,7 +601,8 @@
         "SRC0373",
         "SRC0316",
         "SRC0323",
-        "SRC0791"
+        "SRC0791",
+        "SRC0974"
       ],
       "mediaIds": [
         "M018",
@@ -1203,7 +1204,6 @@
         "ORG011"
       ],
       "relationIds": [
-        "REL0036",
         "REL0041",
         "REL0043",
         "REL0129",
@@ -5820,6 +5820,7 @@
       "certainty": "confirmed",
       "publicScope": "standalone_page",
       "sourceIds": [
+        "SRC0974",
         "SRC0107",
         "SRC0791"
       ],
@@ -5852,7 +5853,7 @@
       "mediaIds": [
         "M412"
       ],
-      "publicNote": "Two gendered counterparts of the song are documented. Ufaton-Verlag published it, and Hofmeisters Monatsbericht registered it, as “Ich suche Eine, die mir allein gehört”, the form sung in the film by Willy Fritsch. The surviving film excerpt preserves the answering form used as the title here, sung by Ellen Schwanneke and Rosy Bársony; no disc of it is recorded in the discographic title lists.",
+      "publicNote": "Two gendered forms of the song are documented. The film’s programme, Illustrierter Film-Kurier no. 1775, prints it as “Ich suche Einen, der mir allein gehört”, sung by the ten girls and by Evelyn (Ellen Schwanneke), and a surviving film excerpt preserves that form, used as the title here. Ufaton-Verlag published it, and Hofmeisters Monatsbericht registered it in June 1932, as “Ich suche Eine, die mir allein gehört”, the form a man sings; no document of the time says who sang that form in the film. No disc of either form is recorded in the discographic title lists.",
       "titleVariantIds": [
         "TV0314"
       ]
@@ -6557,49 +6558,6 @@
       ]
     },
     {
-      "id": "W-S068",
-      "title": "Signorina! komm zu mir",
-      "slug": "signorina-signorina-komm-zu-mir",
-      "sortTitle": "Signorina! komm zu mir",
-      "workType": "Song",
-      "year": 1933,
-      "period": "european",
-      "certainty": "confirmed",
-      "publicScope": "standalone_page",
-      "sourceIds": [
-        "SRC0216"
-      ],
-      "contributionIds": [
-        "CON-S068-C-P009",
-        "CON-S068-C-P077",
-        "CON-S068-L-P017",
-        "CON-S068-L-P020",
-        "CON-S068-PUB-ORG029"
-      ],
-      "personIds": [
-        "P009",
-        "P017",
-        "P020",
-        "P077"
-      ],
-      "organizationIds": [
-        "ORG029"
-      ],
-      "relationIds": [
-        "REL0036",
-        "REL0198"
-      ],
-      "songIds": [
-        "S068"
-      ],
-      "periods": [
-        "european"
-      ],
-      "titleVariantIds": [
-        "TV0307"
-      ]
-    },
-    {
       "id": "W-S069",
       "title": "Solang’ wir zwei nur gute Freunde sind",
       "slug": "solang-wir-zwei-nur-gute-freunde-sind",
@@ -6786,7 +6744,8 @@
       "publicScope": "standalone_page",
       "sourceIds": [
         "SRC0056",
-        "SRC0064"
+        "SRC0064",
+        "SRC0975"
       ],
       "contributionIds": [
         "CON-S073-C-P009",
@@ -7040,11 +6999,14 @@
       "publicScope": "standalone_page",
       "sourceIds": [
         "SRC0297",
-        "SRC0487"
+        "SRC0487",
+        "SRC0216"
       ],
       "titleVariantIds": [
         "TV0153",
-        "TV0318"
+        "TV0318",
+        "TV0307",
+        "TV0325"
       ],
       "contributionIds": [
         "CON-S078-C-P009",
@@ -7073,7 +7035,8 @@
       ],
       "relationIds": [
         "REL0043",
-        "REL0136"
+        "REL0136",
+        "REL0198"
       ],
       "songIds": [
         "S078"
@@ -7083,7 +7046,8 @@
       ],
       "mediaIds": [
         "M395"
-      ]
+      ],
+      "publicNote": "One tune with two German texts by Ernst Marischka and Fritz Rotter. The song was published, and Hofmeister registered it in May 1933, as “Signorina! komm zu mir”, a 6/8 march-foxtrot; in the film, and on Jan Kiepura’s Odeon disc, it is sung as “Oh Madonna!”. A disc by Carl Jörken is titled “O signorina (O Madonna)” and sings the Madonna text, and the Polish version, “Signorina, signorina”, follows the printed title. The two were catalogued as separate works until November 2026."
     },
     {
       "id": "W-S079",

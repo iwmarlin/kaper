@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 71,
+  "count": 72,
   "records": [
     {
       "id": "TV0002",
@@ -906,9 +906,9 @@
       "language": "pl",
       "languageStatus": "source",
       "certainty": "confirmed",
-      "note": "Polish version title for W-S068. Linked version work: W-S215 / S215.",
+      "note": "Polish version title for W-S078. Linked version work: W-S215 / S215.",
       "workIds": [
-        "W-S068"
+        "W-S078"
       ],
       "sourceIds": [
         "SRC0633"
@@ -1027,7 +1027,7 @@
       "variantTypeAsSource": "printed edition and register entry",
       "language": "de",
       "languageStatus": "source",
-      "note": "The counterpart sung in the film by Willy Fritsch; the form under which Ufaton-Verlag published the song and Hofmeister registered it.",
+      "note": "The man’s form of the title, under which Ufaton-Verlag published the song and Hofmeister registered it; the film’s programme prints the woman’s form, the title here.",
       "certainty": "confirmed",
       "workIds": [
         "W-S052"
@@ -1200,6 +1200,23 @@
       ],
       "sourceIds": [
         "SRC0373"
+      ]
+    },
+    {
+      "id": "TV0325",
+      "variantTitle": "Signorina! komm zu mir",
+      "titleAsSource": "Signorina! komm zu mir",
+      "variantType": "alternate_title",
+      "variantTypeAsSource": "title of the printed edition",
+      "language": "de",
+      "languageStatus": "source",
+      "certainty": "confirmed",
+      "note": "The title, and the text, of the Wiener Boheme-Verlag edition registered by Hofmeister in May 1933; the film and the Odeon disc sing the same tune as “Oh Madonna!”.",
+      "workIds": [
+        "W-S078"
+      ],
+      "sourceIds": [
+        "SRC0216"
       ]
     }
   ]

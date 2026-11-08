@@ -24,6 +24,12 @@ ORIGIN = "https://iwmarlin.github.io/kaper/"
 # Retired public source IDs remain navigable without appearing as independent
 # catalogue records or sitemap entries.
 LEGACY_SOURCE_REDIRECTS = {"SRC0526": "SRC0074"}
+# Works merged into another remain navigable the same way: "Signorina! komm zu
+# mir" is the printed title of "Oh Madonna!" (docs/sieghardt-comparison.md).
+LEGACY_WORK_REDIRECTS = {"W-S068": "W-S078"}
+LEGACY_REDIRECTS = {
+    ("source", old): new for old, new in LEGACY_SOURCE_REDIRECTS.items()
+} | {("work", old): new for old, new in LEGACY_WORK_REDIRECTS.items()}
 PUBLIC_PAGES = [
     "",
     "works.html",
@@ -995,20 +1001,28 @@ def expected_outputs(
         "schemaVersion": "1.0.0",
         "entries": sitemap_state,
     }
-    for old_id, target_id in LEGACY_SOURCE_REDIRECTS.items():
-        if target_id not in {item["id"] for item in public_sources}:
-            raise RuntimeError(f"Missing legacy source target: {target_id}")
-        if old_id in {item["id"] for item in public_sources}:
-            raise RuntimeError(f"Legacy source still exists in the catalogue: {old_id}")
+    catalogue_ids = {
+        "source": {item["id"] for item in public_sources},
+        "work": {
+            item["id"]
+            for item in read_json(root / "data/public/v1/works.json").get("records", [])
+        },
+    }
+    for (kind, old_id), target_id in LEGACY_REDIRECTS.items():
+        noun = "Source" if kind == "source" else "Work"
+        if target_id not in catalogue_ids[kind]:
+            raise RuntimeError(f"Missing legacy {kind} target: {target_id}")
+        if old_id in catalogue_ids[kind]:
+            raise RuntimeError(f"Legacy {kind} still exists in the catalogue: {old_id}")
         relative_target = f"../{quote(target_id, safe='')}/"
-        canonical = f"{ORIGIN}records/source/{quote(target_id, safe='')}/"
-        outputs[root / "records" / "source" / old_id / "index.html"] = (
+        canonical = f"{ORIGIN}records/{kind}/{quote(target_id, safe='')}/"
+        outputs[root / "records" / kind / old_id / "index.html"] = (
             '<!doctype html>\n<html lang="en"><head><meta charset="utf-8">\n'
             f'<meta http-equiv="refresh" content="0; url={esc(relative_target)}">\n'
             '<meta name="robots" content="noindex">\n'
             f'<link rel="canonical" href="{esc(canonical)}">\n'
-            f'<title>Source moved — {esc(target_id)}</title></head><body>\n'
-            f'<p>This source has moved to <a href="{esc(relative_target)}">{esc(target_id)}</a>.</p>\n'
+            f'<title>{noun} moved — {esc(target_id)}</title></head><body>\n'
+            f'<p>This {kind} has moved to <a href="{esc(relative_target)}">{esc(target_id)}</a>.</p>\n'
             '</body></html>\n'
         )
     return outputs, sitemap, report, state_payload, stale_routes
@@ -1025,8 +1039,7 @@ def build(root: Path, publication_date: str) -> dict:
             path.relative_to(root).parent.as_posix() + "/"
             for path in seed_outputs
             if not (
-                path.parent.parent.name == "source"
-                and path.parent.name in LEGACY_SOURCE_REDIRECTS
+                (path.parent.parent.name, path.parent.name) in LEGACY_REDIRECTS
             )
         ]
         initial_dates = git_lastmod_dates(

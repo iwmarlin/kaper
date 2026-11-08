@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 877,
+  "count": 879,
   "records": [
     {
       "id": "SRC0001",
@@ -8051,20 +8051,20 @@
       "sourceStatus": "verified",
       "slug": "src0216-signorina-komm-zu-mir-1933",
       "workIds": [
-        "W-S068"
+        "W-S078"
       ],
       "songIds": [
-        "S068"
+        "S078"
       ],
       "workRelationIds": [
-        "REL0036"
+        "REL0043"
       ],
       "contributionIds": [
-        "CON-S068-C-P009",
-        "CON-S068-C-P077",
-        "CON-S068-L-P017",
-        "CON-S068-L-P020",
-        "CON-S068-PUB-ORG029"
+        "CON-S078-C-P009",
+        "CON-S078-C-P077",
+        "CON-S078-L-P017",
+        "CON-S078-L-P020",
+        "CON-S078-PUB-ORG029"
       ],
       "repository": "Internet Archive",
       "accessDate": "2026-11-05",
@@ -8086,6 +8086,9 @@
           "url": "https://anno.onb.ac.at/cgi-content/anno-plus?aid=hof&datum=19330055",
           "role": "alternate_access"
         }
+      ],
+      "titleVariantIds": [
+        "TV0325"
       ]
     },
     {
@@ -34431,6 +34434,88 @@
       ],
       "researchNote": "Read on the page scan. The entry names André de Badet alone as author of the words of both songs.",
       "researchNoteType": "verification_note"
+    },
+    {
+      "id": "SRC0974",
+      "shortCitation": "Ein toller Einfall — Illustrierter Film-Kurier no. 1775",
+      "fullCitation": "Ein toller Einfall. Illustrierter Film-Kurier, no. 1775 (1932). Film programme. Berlin: Alfred Weiner. University of Warwick Library copy; digitized by Internet Archive, identifier eintollereinfall0000illu.",
+      "sourceType": "press_item",
+      "title": "Illustrierter Film-Kurier no. 1775: Ein toller Einfall",
+      "repository": "University of Warwick Library",
+      "publication": "Illustrierter Film-Kurier",
+      "date": "1932",
+      "dateRole": "publication",
+      "dateQualifier": "confirmed",
+      "accessDate": "2026-11-08",
+      "reliability": "medium",
+      "sourceStatus": "verified",
+      "slug": "src0974-illustrierter-film-kurier-1775-1932",
+      "organizationIds": [
+        "ORG067",
+        "ORG162"
+      ],
+      "workIds": [
+        "W-F012",
+        "W-S052"
+      ],
+      "filmIds": [
+        "F012"
+      ],
+      "songIds": [
+        "S052"
+      ],
+      "contributionIds": [
+        "CON-S052-C-P009",
+        "CON-S052-C-P077",
+        "CON-S052-L-P020"
+      ],
+      "workRelationIds": [
+        "REL0020"
+      ],
+      "primaryUrl": "https://archive.org/details/eintollereinfall0000illu",
+      "accessUrl": "https://archive.org/details/eintollereinfall0000illu/mode/2up?q=suche",
+      "researchNote": "The programme of the film, released on 13 May 1932, prints the song as “Ich suche Einen, der mir allein gehört. Rumba. Text von Fritz Rotter. Musik von Walter Jurmann und B. Kaper”, with its words, sung by the ten girls who love Paul; the synopsis then gives Evelyn (Ellen Schwanneke) the same words. The credit page names Walter Jurmann for the music, Fritz Rotter for the lyrics and Kurt Gerron as director, and says the songs are published by Ufaton-Verlag.",
+      "researchNoteType": "evidence_note"
+    },
+    {
+      "id": "SRC0975",
+      "shortCitation": "BnF, Pathé X 96231, “La vie et l’amour” (Réda Caire, [1933])",
+      "fullCitation": "Réda Caire, vocal; orchestre tango Pesenti. “La vie et l’amour,” from the film Mélodie d’amour, W. Jurmann and B. Kaper / “Ah ! Combien sont perfides les femmes,” from Nina Rosa, Romberg and A. Willemetz. [S.l.]: [Pathé], [1933]. 1 disc: 78 rpm, 25 cm. Commercial reference Pathé X 96231; matrices 301725 and 301728. Bibliothèque nationale de France, Catalogue général, notice no. FRBNF37969564, ARK ark:/12148/cb37969564x.",
+      "researchNote": "The BnF dates the disc [1933] from the 1933 supplement of the Répertoire phonographique; it is a catalogue-supplied issue date, not a session date. The two matrix numbers are listed together, without a title-by-title assignment. The disc confirms that the French song was recorded under the film’s French title; its link to “Schade, daß Liebe ein Märchen ist” rests on the Salabert edition. The performers are not credited in the archive.",
+      "researchNoteType": "discographic_note",
+      "sourceType": "sound_recording_catalogue",
+      "title": "La vie et l’amour / Ah ! Combien sont perfides les femmes — Pathé X 96231",
+      "creator": "Réda Caire, vocal; orchestre tango Pesenti",
+      "repository": "Bibliothèque nationale de France / Catalogue général",
+      "publication": "Pathé",
+      "date": "1933",
+      "dateRole": "issue",
+      "dateQualifier": "confirmed",
+      "dateDisplay": "[1933]",
+      "accessDate": "2026-11-08",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "slug": "src0975-bnf-pathe-x-96231-la-vie-et-lamour-1933",
+      "organizationIds": [
+        "ORG062"
+      ],
+      "workIds": [
+        "W-S073"
+      ],
+      "songIds": [
+        "S073"
+      ],
+      "contributionIds": [
+        "CON-S073-C-P009",
+        "CON-S073-C-P077"
+      ],
+      "primaryUrl": "https://catalogue.bnf.fr/ark:/12148/cb37969564x",
+      "identifiers": [
+        {
+          "scheme": "ark",
+          "value": "ark:/12148/cb37969564x"
+        }
+      ]
     }
   ],
   "recordCount": null

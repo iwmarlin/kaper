@@ -4,6 +4,7 @@ import glob
 import html
 import json
 import re
+import sys
 import unicodedata
 import unittest
 from pathlib import Path
@@ -11,6 +12,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data/public/v1"
+sys.path.insert(0, str(ROOT / "scripts"))
+from build_static_records import LEGACY_REDIRECTS  # noqa: E402
 
 
 def records(filename: str) -> list[dict]:
@@ -31,6 +34,8 @@ class WorkRecordPresentationTests(unittest.TestCase):
         cls.pages = {
             Path(path).parent.name: Path(path).read_text(encoding="utf-8")
             for path in glob.glob(str(ROOT / "records/work/*/index.html"))
+            # A merged Work's old address is a redirect, not a record page.
+            if ("work", Path(path).parent.name) not in LEGACY_REDIRECTS
         }
         cls.works = {record["id"]: record for record in records("works.json")}
         cls.variants = {record["id"]: record for record in records("title-variants.json")}

@@ -62,6 +62,40 @@ class SieghardtComparisonTests(unittest.TestCase):
         self.assertIn("SRC0973", self.credits["CON-S106-L-P006"]["sourceIds"])
         self.assertIn("André de Badet alone", self.songs["S106"]["publicNote"])
 
+    def test_signorina_and_madonna_are_one_work(self):
+        works, relations = table("works"), table("work-relations")
+        self.assertNotIn("S068", self.songs)
+        self.assertNotIn("W-S068", works)
+        self.assertFalse([c for c in self.credits if c.startswith("CON-S068-")])
+        madonna = works["W-S078"]
+        self.assertEqual(madonna["title"], "Oh Madonna!")
+        self.assertIn("SRC0216", madonna["sourceIds"])
+        self.assertTrue(madonna["publicNote"].startswith("One tune with two German texts"))
+        printed = self.variants["TV0325"]
+        self.assertEqual((printed["variantTitle"], printed["workIds"], printed["sourceIds"]),
+                         ("Signorina! komm zu mir", ["W-S078"], ["SRC0216"]))
+        self.assertEqual(self.variants["TV0307"]["workIds"], ["W-S078"])
+        self.assertEqual(relations["REL0198"]["targetWorkIds"], ["W-S078"])
+        self.assertNotIn("REL0036", relations)
+        self.assertIn("SRC0216", relations["REL0043"]["sourceIds"])
+        for record in list(table("people").values()) + list(table("organizations").values()):
+            self.assertNotIn("W-S068", record.get("workIds", []))
+        page = (DATA.parents[2] / "records/work/W-S068/index.html").read_text(encoding="utf-8")
+        self.assertIn('url=../W-S078/', page)
+
+    def test_ich_suche_rests_on_the_film_programme(self):
+        work = table("works")["W-S052"]
+        self.assertEqual(work["title"], "Ich suche einen, der mir allein gehört")
+        self.assertEqual(work["sourceIds"][0], "SRC0974")
+        self.assertNotIn("Fritsch", work["publicNote"])
+        self.assertNotIn("Fritsch", self.variants["TV0314"]["note"])
+        self.assertIn("Ich suche Einen, der mir allein gehört", table("sources")["SRC0974"]["researchNote"])
+
+    def test_la_vie_et_lamour_stays_the_french_schade(self):
+        relation = table("work-relations")["REL0143"]
+        self.assertEqual((relation["sourceWorkIds"], relation["targetWorkIds"]), (["W-S073"], ["W-S059"]))
+        self.assertIn("SRC0975", self.songs["S073"]["sourceIds"])
+
 
 if __name__ == "__main__":
     unittest.main()
