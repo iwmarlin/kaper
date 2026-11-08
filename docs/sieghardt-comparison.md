@@ -21,8 +21,10 @@ document stands, and that is noted below.
   alone, and the song's note gives Sieghardt's attribution. *Pourquoi donc
   verser des larmes* credited André Mauprey on Sieghardt, whose opus list
   says “unknown”; his filmography, though, credits the French film's lyrics,
-  this song among them, to Mauprey (p. 221). The credit stays, `probable`,
-  with both places named.
+  this song among them, to Mauprey (p. 221). The credit was kept as
+  `probable`; it is now confirmed by the Eschig voice-and-piano edition of
+  1932 in the BnF (`SRC0981`), which prints “Paroles françaises de André
+  Mauprey”.
 - **Authors Sieghardt adds**, credited `probable` on his catalogue alone:
   Ernst Marischka on *Ninon, lach mir einmal zu* (op. 088); Henri-Georges
   Clouzot and Serge Veber on *O Madona!* (op. 089/F); Louis Poterat on *C'est
@@ -151,6 +153,32 @@ document stands, and that is noted below.
   the World*: Sieghardt dates them 1941, from later editions; their copyright
   registrations date them 1932 and 1934.
 
+- **Films.**
+  - *My Song for You*: Sieghardt names Spoliansky, Kaper and Jurmann for its
+    music and says *Ninon* was sung in it in English. *The Box Office
+    Check-Up of 1935* (`SRC0978`) lists the film’s songs as Spoliansky and
+    Eyton’s *My Song for You* and *With All My Heart*, with pieces by Verdi
+    and Schubert; the English *Ninon* registered in 1933 is from *A Song for
+    You*, the British title of *Ein Lied für Dich*. The archive gives the film
+    no music credit for Kaper, and its note no longer calls the use of
+    *Ninon* documented.
+  - *Wings of the Morning*: Kaper and Jurmann were credited `confirmed` on
+    IMDb alone, for a march from *Les nuits moscovites* heard uncredited. The
+    copyright registrations (`SRC0979`) name Muir Mathieson as music director
+    and the *Hollywood Spectator* review (`SRC0980`) Arthur Benjamin for the
+    music; Sieghardt and the Jurmann catalogue record the cues Jurmann and
+    Kaper wrote for the film as not used. The two credits are now
+    `probable`, and the note says who gives what.
+  - *Mariage à responsabilité limitée*: André Mauprey was credited as a
+    composer on Unifrance. Sieghardt gives him the French film’s lyrics, and
+    the Eschig editions of 1932 print his French words for the songs of the
+    German original; he is now credited as its lyricist.
+  - *Kind, ich freu’ mich auf Dein Kommen*: Sieghardt has Gerron alone as
+    director; filmportal names Kurt Gerron and Erich von Neusser, who was also
+    head of production. The sheet-music cover names no director, and no
+    document of the time was found that settles it, so the archive keeps
+    both.
+
 ## Left for decision or further research
 
 - **Little Boy Blue** (`F052`). The archive records Ub Iwerks's cartoon;
@@ -163,13 +191,6 @@ document stands, and that is noted below.
   chantent* (Salabert), and Robbins on *Blaue venezianische Wasser*, *Sous le
   ciel de Venise*, *Tous les noirs* and *Demain matin tout ira mieux*, with MGM
   on the last. Four of these versions have no Source but Sieghardt.
-- **Films.** *My Song for You* has no music credit in the archive, where
-  Sieghardt names Spoliansky, Kaper and Jurmann; *Wings of the Morning*: his
-  filmography has “Arthur Benjamin & Walter Jurmann?”, his year-by-year list
-  Kaper and Jurmann cues “nicht verwendet”; *Mariage à responsabilité
-  limitée*: Mauprey wrote the lyrics, where the archive lists him among the
-  music credits; *Kind, ich freu' mich auf Dein Kommen*: Gerron alone directs
-  in Sieghardt.
 - **Not in the archive.** *And Still I Love You* (op. 016), *Am schönen
   Titicacasee* (op. 021) and the title song of *Melodie der Liebe* (op. 057);
   the Italian version of *Ein Lied für Dich*, *Aspetto una signorina*; and

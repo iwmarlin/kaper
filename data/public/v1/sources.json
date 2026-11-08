@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 881,
+  "count": 885,
   "records": [
     {
       "id": "SRC0001",
@@ -5783,7 +5783,7 @@
         "TV0012"
       ],
       "contributionIds": [
-        "CON-F018-C-P005",
+        "CON-F018-L-P005",
         "CON-F018-C-P009",
         "CON-F018-C-P077",
         "CON-F018-D-P042",
@@ -12212,7 +12212,6 @@
         "CON-F044-C-P009",
         "CON-F044-C-P077",
         "CON-F044-PC-ORG001",
-        "CON-F045-BM-P077",
         "CON-F051-C-P077",
         "CON-F052-C-P077",
         "CON-S088-C-P009",
@@ -14417,6 +14416,7 @@
         "CON-F017-PC-ORG014",
         "CON-F018-C-P009",
         "CON-F018-D-P042",
+        "CON-F018-L-P005",
         "CON-F018-PC-ORG008",
         "CON-F019-C-P077",
         "CON-F019-D-P030",
@@ -15560,7 +15560,8 @@
         "ORG162"
       ],
       "workIds": [
-        "W-F023"
+        "W-F023",
+        "W-S078"
       ],
       "mediaIds": [
         "M192",
@@ -15572,12 +15573,23 @@
       "contributionIds": [
         "CON-F023-C-P009",
         "CON-F023-D-P044",
-        "CON-F023-PC-ORG003"
+        "CON-F023-PC-ORG003",
+        "CON-S078-C-P009",
+        "CON-S078-C-P077",
+        "CON-S078-L-P017",
+        "CON-S078-L-P020",
+        "CON-S078-PUB-ORG029"
       ],
       "primaryUrl": "https://archive.org/details/einliedfrdich0000illu/mode/2up",
       "accessUrl": "https://archive.org/details/einliedfrdich0000illu/mode/2up?q=Kaper",
-      "researchNote": "The programme credits Joe May as director and Willy Schmidt-Gentner with musical direction; its song page prints lyrics by Ernst Marischka and Fritz Rotter and music by Jurmann and Kaper.",
-      "researchNoteType": "evidence_note"
+      "researchNote": "The programme credits Joe May as director and Willy Schmidt-Gentner with musical direction, and says the songs are published by Wiener Bohème-Verlag. Its song page prints “Signorina! Serenade. Text von Ernst Marischka und Fritz Rotter. Musik von Jurmann u Kaper”, and under that title the words “O Madonna, o Madonna, komm zu mir und laß mich länger nicht allein …”: the printed title and the sung text of one song.",
+      "researchNoteType": "evidence_note",
+      "songIds": [
+        "S078"
+      ],
+      "workRelationIds": [
+        "REL0043"
+      ]
     },
     {
       "id": "SRC0410",
@@ -33572,6 +33584,7 @@
         "ORG062"
       ],
       "workIds": [
+        "W-F018",
         "W-S034",
         "W-S050"
       ],
@@ -33580,11 +33593,12 @@
         "S050"
       ],
       "contributionIds": [
+        "CON-F018-L-P005",
+        "CON-S034-L-P020",
         "CON-S050-C-P009",
         "CON-S050-C-P077",
         "CON-S050-L-P005",
-        "CON-S050-PUB-ORG047",
-        "CON-S034-L-P020"
+        "CON-S050-PUB-ORG047"
       ],
       "primaryUrl": "https://catalogue.bnf.fr/ark:/12148/cb43069600z",
       "researchNote": "The BnF catalogue explicitly distinguishes Rotter’s original words from Mauprey’s French words. This record describes the vocal edition; the 1934 orchestral arrangement is catalogued separately as SRC0070. The digitized copy is available on Gallica intra muros; the score itself was not examined.",
@@ -33594,6 +33608,9 @@
           "scheme": "ark",
           "value": "ark:/12148/cb43069600z"
         }
+      ],
+      "filmIds": [
+        "F018"
       ]
     },
     {
@@ -34620,6 +34637,147 @@
       "primaryUrl": "https://d-nb.info/382265815",
       "researchNote": "The catalogue transcribes the credits as “Musik: Erich Schmidt, Text: Peter Schattner” and gives no date. The performers are not credited in the archive.",
       "researchNoteType": "discographic_note"
+    },
+    {
+      "id": "SRC0978",
+      "shortCitation": "The Box Office Check-Up of 1935, p. 100 — songs in My Song for You",
+      "fullCitation": "The Box Office Check-Up of 1935. New York: Quigley Publishing Company, 1936, p. 100. Table of songs in the year’s pictures, entry for My Song for You (GB Pictures): “Ah, Yes, Thou Art Mine” (Verdi); “Ave Maria” (Franz Schubert); “Celeste Aida” (Verdi); “My Song for You” (Harms; Spoliansky; Frank Eyton); “With All My Heart” (Harms; Spoliansky; Frank Eyton). Internet Archive / Media History Digital Library.",
+      "sourceType": "press_item",
+      "title": "The Box Office Check-Up of 1935: songs in My Song for You",
+      "creator": "Quigley Publishing Company",
+      "repository": "Internet Archive / Media History Digital Library",
+      "publication": "The Box Office Check-Up of 1935",
+      "date": "1936",
+      "dateRole": "publication",
+      "dateQualifier": "confirmed",
+      "accessDate": "2026-11-08",
+      "reliability": "medium",
+      "sourceStatus": "verified",
+      "slug": "src0978-box-office-check-up-1935-my-song-for-you",
+      "organizationIds": [
+        "ORG067",
+        "ORG091"
+      ],
+      "workIds": [
+        "W-F057"
+      ],
+      "filmIds": [
+        "F057"
+      ],
+      "primaryUrl": "https://archive.org/details/boxofficecheckup00quig/page/n89/mode/1up",
+      "researchNote": "The table gives, for each picture of 1935, its songs with publisher, composer and lyricist. For My Song for You it lists two songs by Mischa Spoliansky and Frank Eyton and three pieces by Verdi and Schubert, and no song by Kaper or Jurmann.",
+      "researchNoteType": "evidence_note"
+    },
+    {
+      "id": "SRC0979",
+      "shortCitation": "CCE Motion Pictures 1912–1939, p. 958 — Wings of the Morning",
+      "fullCitation": "U.S. Copyright Office, Catalog of Copyright Entries, Cumulative Series: Motion Pictures 1912–1939. Washington, DC: Library of Congress, Copyright Office, 1951, p. 958. Entries: “WINGS OF THE MORNING. 1937. 7,500 ft., sd. From stories by Donn Byrne. Credits: Director, Harold D. Schuster; adaptation and screenplay, Tom Geraghty; music director, Muir Mathieson. © Twentieth Century-Fox Film Corp.; 18Feb37; LP7221,” and the same, presented by New World Pictures, 18Jan37; LP7825. Internet Archive.",
+      "sourceType": "copyright_catalogue",
+      "title": "Catalog of Copyright Entries: Wings of the Morning",
+      "creator": "Library of Congress. Copyright Office",
+      "repository": "Internet Archive",
+      "publication": "Catalog of Copyright Entries",
+      "date": "1951",
+      "dateRole": "catalogue_volume",
+      "dateQualifier": "confirmed",
+      "accessDate": "2026-11-08",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "slug": "src0979-cce-motion-pictures-wings-of-the-morning",
+      "organizationIds": [
+        "ORG067"
+      ],
+      "workIds": [
+        "W-F045"
+      ],
+      "filmIds": [
+        "F045"
+      ],
+      "primaryUrl": "https://archive.org/details/Motionpict19121939librrich0010/page/n970/mode/2up",
+      "identifiers": [
+        {
+          "scheme": "usco_registration",
+          "value": "LP7221"
+        },
+        {
+          "scheme": "usco_registration",
+          "value": "LP7825"
+        }
+      ],
+      "researchNote": "The cumulative catalogue lists the credits recorded with each registration. Both registrations of the film name Muir Mathieson as music director and no composer.",
+      "researchNoteType": "evidence_note"
+    },
+    {
+      "id": "SRC0980",
+      "shortCitation": "Hollywood Spectator, 13 February 1937, p. 12 — Wings of the Morning",
+      "fullCitation": "“Color Complicates It.” Review of Wings of the Morning. Hollywood Spectator, 13 February 1937, p. 12. Credits: “music arranged by Arthur Benjamin.” Internet Archive / Media History Digital Library.",
+      "sourceType": "press_item",
+      "title": "Hollywood Spectator: review of Wings of the Morning",
+      "creator": "Hollywood Spectator",
+      "repository": "Internet Archive / Media History Digital Library",
+      "publication": "Hollywood Spectator",
+      "date": "1937-02-13",
+      "dateRole": "publication",
+      "dateQualifier": "confirmed",
+      "accessDate": "2026-11-08",
+      "reliability": "medium",
+      "sourceStatus": "verified",
+      "slug": "src0980-hollywood-spectator-wings-of-the-morning-1937",
+      "organizationIds": [
+        "ORG067",
+        "ORG091"
+      ],
+      "workIds": [
+        "W-F045"
+      ],
+      "filmIds": [
+        "F045"
+      ],
+      "primaryUrl": "https://archive.org/details/hollywoodspectat1112holl/page/n27/mode/1up",
+      "researchNote": "The review’s credit block names Arthur Benjamin for the music and no other composer.",
+      "researchNoteType": "evidence_note"
+    },
+    {
+      "id": "SRC0981",
+      "shortCitation": "BnF, Eschig 1932, “Pourquoi donc verser des larmes ?” (voice and piano)",
+      "fullCitation": "Walter Jurmann and Bronisław Kaper, “Pourquoi donc verser des larmes ?” (Wer weint heut’ aus Liebe Tränen ?), slow-fox from the sound film E. M. B. H.; original words by Fritz Rotter, French words by André Mauprey. Voice and piano. Paris: éditions Max Eschig, 1932. Bibliothèque nationale de France, Catalogue général, FRBNF43069602, ark:/12148/cb43069602n.",
+      "sourceType": "sheet_music_catalogue",
+      "title": "Pourquoi donc verser des larmes ? — Eschig, 1932",
+      "creator": "Walter Jurmann and Bronisław Kaper (music); Fritz Rotter (original words); André Mauprey (French words)",
+      "repository": "Bibliothèque nationale de France / Catalogue général",
+      "publication": "Éditions Max Eschig",
+      "date": "1932",
+      "dateRole": "publication",
+      "dateQualifier": "confirmed",
+      "accessDate": "2026-11-08",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "slug": "src0981-bnf-eschig-pourquoi-donc-verser-des-larmes-1932",
+      "organizationIds": [
+        "ORG047",
+        "ORG062"
+      ],
+      "workIds": [
+        "W-S036",
+        "W-F018"
+      ],
+      "songIds": [
+        "S036"
+      ],
+      "filmIds": [
+        "F018"
+      ],
+      "primaryUrl": "https://catalogue.bnf.fr/ark:/12148/cb43069602n",
+      "identifiers": [
+        {
+          "scheme": "ark",
+          "value": "ark:/12148/cb43069602n"
+        }
+      ],
+      "contributionIds": [
+        "CON-F018-L-P005",
+        "CON-S036-L-P005"
+      ]
     }
   ],
   "recordCount": null

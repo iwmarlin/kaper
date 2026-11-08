@@ -21,9 +21,11 @@ class SieghardtComparisonTests(unittest.TestCase):
         self.assertNotIn("SRC0373", self.credits["CON-S196-L-P106"]["sourceIds"])
         self.assertIn("Secchia", self.songs["S196"]["publicNote"])
 
-    def test_mauprey_rests_on_the_filmography(self):
+    def test_mauprey_rests_on_the_eschig_edition(self):
+        # First probable on Sieghardt's filmography alone; the Eschig edition of
+        # 1932 in the BnF prints his French words.
         credit = self.credits["CON-S036-L-P005"]
-        self.assertEqual(credit["certainty"], "probable")
+        self.assertEqual((credit["certainty"], credit["sourceIds"][0]), ("confirmed", "SRC0981"))
         self.assertIn("p. 221", credit["evidenceLocator"])
 
     def test_authors_sieghardt_adds_are_probable(self):
@@ -110,6 +112,19 @@ class SieghardtComparisonTests(unittest.TestCase):
             self.assertEqual(credit["sourceIds"][:2], ["SRC0976", "SRC0977"])
         self.assertEqual(self.songs["S100"]["genre"], "schunkelwalzer")
         self.assertIn("Schmidt, Erich Walter", table("sources")["SRC0976"]["researchNote"])
+
+    def test_film_credits_follow_documents_of_the_time(self):
+        works = table("works")
+        for credit_id in ("CON-F045-BM-P009", "CON-F045-BM-P077"):
+            self.assertEqual((self.credits[credit_id]["certainty"], self.credits[credit_id]["sourceIds"]),
+                             ("probable", ["SRC0173"]))
+        self.assertTrue({"SRC0979", "SRC0980"} <= set(works["W-F045"]["sourceIds"]))
+        self.assertNotIn("CON-F018-C-P005", self.credits)
+        self.assertEqual(self.credits["CON-F018-L-P005"]["role"], "lyricist")
+        self.assertIn("SRC0978", works["W-F057"]["sourceIds"])
+        self.assertIn("No document of the time credits", works["W-F057"]["publicNote"])
+        self.assertIn("Signorina! Serenade", table("sources")["SRC0409"]["researchNote"])
+        self.assertIn("SRC0409", works["W-S078"]["sourceIds"])
 
 
 if __name__ == "__main__":
