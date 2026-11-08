@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 1358,
+  "count": 1357,
   "records": [
     {
       "id": "CON-F001-C-P009",
@@ -12975,7 +12975,7 @@
       "evidenceContext": [
         "sheet_music"
       ],
-      "certainty": "confirmed",
+      "certainty": "probable",
       "workIds": [
         "W-S103"
       ],
@@ -13004,7 +13004,8 @@
       ],
       "sourceIds": [
         "SRC0077",
-        "SRC0525"
+        "SRC0525",
+        "SRC0973"
       ],
       "nameVariantIds": [
         "PNV0019"
@@ -13028,7 +13029,8 @@
       ],
       "sourceIds": [
         "SRC0077",
-        "SRC0525"
+        "SRC0525",
+        "SRC0973"
       ],
       "nameVariantIds": [
         "PNV0022"
@@ -13047,7 +13049,8 @@
         "P006"
       ],
       "sourceIds": [
-        "SRC0077"
+        "SRC0077",
+        "SRC0973"
       ]
     },
     {
@@ -13066,7 +13069,8 @@
       ],
       "sourceIds": [
         "SRC0077",
-        "SRC0525"
+        "SRC0525",
+        "SRC0973"
       ]
     },
     {
@@ -13170,7 +13174,8 @@
       "sourceIds": [
         "SRC0078",
         "SRC0525",
-        "SRC0801"
+        "SRC0801",
+        "SRC0973"
       ],
       "nameVariantIds": [
         "PNV0019"
@@ -13195,7 +13200,8 @@
       "sourceIds": [
         "SRC0078",
         "SRC0525",
-        "SRC0801"
+        "SRC0801",
+        "SRC0973"
       ],
       "nameVariantIds": [
         "PNV0022"
@@ -13214,7 +13220,8 @@
         "P006"
       ],
       "sourceIds": [
-        "SRC0078"
+        "SRC0078",
+        "SRC0973"
       ]
     },
     {
@@ -13233,7 +13240,8 @@
       ],
       "sourceIds": [
         "SRC0078",
-        "SRC0525"
+        "SRC0525",
+        "SRC0973"
       ]
     },
     {
@@ -18817,24 +18825,6 @@
       "sourceIds": [
         "SRC0373",
         "SRC0489"
-      ]
-    },
-    {
-      "id": "CON-S200-PUB-ORG035",
-      "role": "publisher",
-      "nameAsPrinted": "Robbins Music Corporation",
-      "evidenceContext": [
-        "sheet_music"
-      ],
-      "certainty": "confirmed",
-      "workIds": [
-        "W-S200"
-      ],
-      "organizationIds": [
-        "ORG035"
-      ],
-      "sourceIds": [
-        "SRC0373"
       ]
     },
     {
@@ -25637,10 +25627,9 @@
       "role": "publisher",
       "nameAsPrinted": "Robbins Music Corporation",
       "evidenceContext": [
-        "secondary_literature"
+        "sheet_music"
       ],
-      "evidenceLocator": "Sieghardt work catalogue, p. 198, op. 121",
-      "certainty": "probable",
+      "certainty": "confirmed",
       "workIds": [
         "W-S119"
       ],
@@ -25648,6 +25637,7 @@
         "ORG035"
       ],
       "sourceIds": [
+        "SRC0443",
         "SRC0373"
       ]
     },
@@ -25656,10 +25646,9 @@
       "role": "publisher",
       "nameAsPrinted": "Robbins Music Corporation",
       "evidenceContext": [
-        "secondary_literature"
+        "newspaper_or_periodical"
       ],
-      "evidenceLocator": "Sieghardt work catalogue, p. 197, op. 117",
-      "certainty": "probable",
+      "certainty": "confirmed",
       "workIds": [
         "W-S123"
       ],
@@ -25667,6 +25656,7 @@
         "ORG035"
       ],
       "sourceIds": [
+        "SRC0046",
         "SRC0373"
       ]
     }

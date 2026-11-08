@@ -28,7 +28,7 @@ class CopyrightCataloguePageLinkTests(unittest.TestCase):
         ]
 
     def test_every_entry_opens_on_its_page(self):
-        self.assertEqual(len(self.cce), 89)
+        self.assertEqual(len(self.cce), 90)
         for source in self.cce:
             with self.subTest(source=source["id"]):
                 self.assertRegex(source["primaryUrl"], r"/page/n?\d+")

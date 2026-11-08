@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 876,
+  "count": 877,
   "records": [
     {
       "id": "SRC0001",
@@ -1130,7 +1130,10 @@
         "S123"
       ],
       "researchNote": "The advertisement credits Gus Kahn, Walter Jurmann and Bronisław Kaper and promotes the song as a theme used throughout MGM’s Mutiny on the Bounty.",
-      "researchNoteType": "evidence_note"
+      "researchNoteType": "evidence_note",
+      "contributionIds": [
+        "CON-S123-PUB-ORG035"
+      ]
     },
     {
       "id": "SRC0047",
@@ -14640,7 +14643,6 @@
         "CON-S200-C-P077",
         "CON-S200-L-P005",
         "CON-S200-L-P108",
-        "CON-S200-PUB-ORG035",
         "CON-S201-C-P009",
         "CON-S201-C-P077",
         "CON-S201-L-P109",
@@ -16336,7 +16338,8 @@
       "sourceStatus": "verified",
       "slug": "src0443-youre-all-i-need-1935",
       "organizationIds": [
-        "ORG080"
+        "ORG080",
+        "ORG035"
       ],
       "workIds": [
         "W-F033",
@@ -16356,7 +16359,8 @@
         "CON-S119-L-P025",
         "CON-S185-C-P009",
         "CON-S185-C-P077",
-        "CON-S185-L-P028"
+        "CON-S185-L-P028",
+        "CON-S119-PUB-ORG035"
       ],
       "workRelationIds": [
         "REL0079"
@@ -34379,6 +34383,54 @@
       ],
       "researchNote": "A charity recording of operetta arias and songs, Ninon among them. The Biblioteka Narodowa records Jan Wyciślik as the performer and gives no author of the Polish words; its authority record describes him as an opera and operetta tenor and the owner of the Innow company. Discogs (release 22781609) lists Ninon with Kaper and Jurmann as its only credits. Neither names a Polish text by him.",
       "researchNoteType": "identity_assessment"
+    },
+    {
+      "id": "SRC0973",
+      "shortCitation": "CCE 1935, “Natacha” and “On n’aime qu’une fois”",
+      "fullCitation": "U.S. Copyright Office, Catalog of Copyright Entries, New Series. Part 3: Musical Compositions, 1935, vol. 30, nos. 1–12. Washington, DC: U.S. Government Printing Office, 1936, p. 511, entry no. 11456: “Natacha; fox-trot, [and] On n’aime qu’une fois; tango: de Les nuits moscovites, paroles André de Badet, m Kaper-Jurmann. © Aug. 1, 1935; E for. 43972; Editions Coda, s. a., Paris.”",
+      "sourceType": "copyright_catalogue",
+      "title": "Catalog of Copyright Entries: “Natacha” and “On n’aime qu’une fois”",
+      "creator": "U.S. Copyright Office",
+      "repository": "Internet Archive / U.S. Copyright Office",
+      "publication": "Washington, DC: U.S. Government Printing Office",
+      "date": "1935",
+      "dateRole": "catalogue_volume",
+      "dateQualifier": "confirmed",
+      "accessDate": "2026-11-08",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "slug": "src0973-cce-1935-natacha-on-n-aime-qu-une-fois",
+      "primaryUrl": "https://archive.org/details/catalogofcopyrig313libr/page/n538/mode/2up",
+      "identifiers": [
+        {
+          "scheme": "usco_registration",
+          "value": "E for. 43972"
+        }
+      ],
+      "workIds": [
+        "W-S104",
+        "W-S106"
+      ],
+      "songIds": [
+        "S104",
+        "S106"
+      ],
+      "organizationIds": [
+        "ORG067",
+        "ORG068"
+      ],
+      "contributionIds": [
+        "CON-S104-C-P009",
+        "CON-S104-C-P077",
+        "CON-S104-L-P006",
+        "CON-S104-PUB-ORG030",
+        "CON-S106-C-P009",
+        "CON-S106-C-P077",
+        "CON-S106-L-P006",
+        "CON-S106-PUB-ORG030"
+      ],
+      "researchNote": "Read on the page scan. The entry names André de Badet alone as author of the words of both songs.",
+      "researchNoteType": "verification_note"
     }
   ],
   "recordCount": null
