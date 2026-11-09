@@ -19,10 +19,10 @@ from authority_identifiers import scheme_label  # noqa: E402
 # until an identifier for them is recorded.
 LINKED_REGISTERS = {"LCNAF", "GND", "BnF", "BN"}
 
-# Records that still name a register without an identifier for it.  Each was
-# left open deliberately and is listed in docs/authority-heading-review.md:
-# the BnF catalogue could not be read when the others were resolved.
-PROVENANCE_GAPS = {"P069", "ORG030", "ORG032"}
+# Records that name a register without an identifier for it.  The last three
+# (P069, ORG030, ORG032) were settled on 8 November 2026, when the BnF
+# catalogue could be read; none may be added.
+PROVENANCE_GAPS: set[str] = set()
 
 
 class AuthorityHeadingTests(unittest.TestCase):
