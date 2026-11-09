@@ -216,5 +216,25 @@ class SourceNormalizationTests(unittest.TestCase):
         )
 
 
+
+class UnknownDateQualifierTest(unittest.TestCase):
+    """A qualifier outside the vocabulary stops normalization instead of becoming "confirmed"."""
+
+    def test_unknown_qualifier_is_refused(self):
+        from normalize_sources import unknown_date_qualifiers
+
+        source = {"id": "SRC9999", "sourceType": "sound_recording_catalogue", "title": "t",
+                  "date": "1936", "dateRole": "issue", "dateQualifier": "inferred", "dateDisplay": "[1936?]"}
+        self.assertEqual(unknown_date_qualifiers([source]), ["SRC9999: 'inferred'"])
+        self.assertEqual(unknown_date_qualifiers([dict(source, dateQualifier="uncertain")]), [])
+
+    def test_the_canonical_file_has_no_unknown_qualifier(self):
+        from normalize_sources import unknown_date_qualifiers
+
+        records = json.loads((Path(__file__).resolve().parents[1] / "data/public/v1/sources.json")
+                             .read_text(encoding="utf-8"))["records"]
+        self.assertEqual(unknown_date_qualifiers(records), [])
+
+
 if __name__ == "__main__":
     unittest.main()

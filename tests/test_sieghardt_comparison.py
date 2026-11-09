@@ -240,5 +240,17 @@ class CatalogueLanguageVersionsTest(unittest.TestCase):
                 self.assertNotIn(title, titles)
 
 
+class TimelineAuditTest(unittest.TestCase):
+    """The end of the partnership rests on the last joint registration, not on Sieghardt."""
+
+    def test_partnership_ends_with_the_1939_registration(self):
+        events = {r["id"]: r for r in json.loads((DATA / "timeline-events.json").read_text())["records"]}
+        event = events["TE0042"]
+        self.assertEqual(event["displayDate"], "1939")
+        self.assertEqual(event["sourceIds"][0], "SRC0280")
+        self.assertNotIn("amicabl", event["longDescription"] + event["shortDescription"])
+        self.assertIn("SRC0959", events["TE0015"]["sourceIds"])
+
+
 if __name__ == "__main__":
     unittest.main()
