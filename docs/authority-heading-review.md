@@ -5,6 +5,17 @@ register linked in `authorityUrl` actually states, and where the archive's
 heading departs from it. What was then acted on is recorded under *Applied*, at
 the end; the rest stands as a worklist.
 
+**Where it stands, 9 November 2026.** Nothing from this review is open. The
+headings it lists as differing were settled under the amendment of 25
+September and in `docs/people-audit.md`: Henri Lemarchand is now headed
+`Lemarchand, Henri` from BnF, Louis B. Mayer `Mayer, Louis B. (Louis Burt)`
+from LCNAF. The cases that waited on BnF, the Dutch thesaurus and LexM were
+settled on 8 November 2026, as the section *Still open, and why* records:
+the BnF records of Wohlmuth, Coda and five others confirm their headings,
+Éditions musicales universelles keeps a local heading, Ferry van Delden
+links his NTA record and Karl Brüll's LexM entry is his own. The sections
+below are left as written, as the record of how each case was reached.
+
 The starting point was an inconsistency in the data rather than in the rule.
 `docs/authority-headings.md` puts the provenance of a heading in `authorityUrl`,
 and that is filled for every person who has a register. The additional field
@@ -233,7 +244,10 @@ Three remain open: **P069 Robert Wohlmuth**, whose record names BnF, and
 name BnF and link nothing at all. Wikidata gives a BnF identifier for Wohlmuth,
 `17166302h`, but catalogue.bnf.fr did not answer while this was written and an
 identifier the register has not confirmed was not added. `tests/test_authority_headings.py`
-holds the three as a named exception and fails on any new one.
+holds the three as a named exception and fails on any new one. *(Settled 8
+November 2026: Wohlmuth and Coda link BnF records the catalogue confirms,
+Éditions musicales universelles has a local heading, and the test's exception
+is gone.)*
 
 **Still open, and untouched**: the nine differing headings, the precedence
 question behind seven of them, the fifteen people whose register is not
