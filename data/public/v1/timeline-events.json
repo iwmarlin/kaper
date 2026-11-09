@@ -627,7 +627,7 @@
       "placeDisplay": "Warsaw; Berlin",
       "cityKey": "berlin",
       "shortDescription": "Kaper left Warsaw for Berlin to continue his musical education and professional development.",
-      "longDescription": "Around 1926, Kaper left Warsaw for Berlin to continue his musical education.",
+      "longDescription": "Around 1926, Kaper left Warsaw for Berlin to continue his musical education. The manuscripts date the move to that year: the Piece for Orchestra of 1926 is headed “written in Warsaw”, while the song Hätt’ ich einen Kammerdiener?, also of 1926, is listed in the collection’s accession list as written in Berlin. By his own account he came intending to enrol at the Hochschule für Musik.",
       "featured": true,
       "roles": [
         "migration_event",
@@ -637,7 +637,10 @@
         "P009"
       ],
       "sourceIds": [
-        "SRC0490"
+        "SRC0490",
+        "SRC0009",
+        "SRC0959",
+        "SRC0494"
       ],
       "mediaIds": [
         "M030",
@@ -894,7 +897,7 @@
       "placeDisplay": "Berlin",
       "cityKey": "europe",
       "shortDescription": "The earliest published tangos and foxtrots by Kaper and Fritz Rotter documented here appeared in German and Viennese editions.",
-      "longDescription": "Tangos and foxtrots by “Dr. Kaper” appeared in German and Viennese editions. His working relationship with Fritz Rotter was older than these printed songs: a manuscript of 1926 already places the two names together.",
+      "longDescription": "Tangos and foxtrots by Fritz Rotter and Kaper appeared in German and Viennese editions in 1929. Hofmeister’s register for December 1929 lists the valse Boston “Gib nur acht, über Nacht kommt die Liebe”, published in Vienna by the Wiener Boheme-Verlag, and the tango “Tränen weint jede Frau so gern”, published by Seifert. His working relationship with Rotter was older than these printed songs: a manuscript of 1926 already places the two names together.",
       "roles": [
         "publication_event",
         "professional_network",
@@ -906,7 +909,9 @@
       ],
       "sourceIds": [
         "SRC0358",
-        "SRC0490"
+        "SRC0490",
+        "SRC0102",
+        "SRC0103"
       ],
       "workIds": [
         "W-S010",
@@ -1235,7 +1240,12 @@
         "P077"
       ],
       "sourceIds": [
-        "SRC0490"
+        "SRC0490",
+        "SRC0109",
+        "SRC0333",
+        "SRC0026",
+        "SRC0690",
+        "SRC0416"
       ],
       "workIds": [
         "W-F006",
@@ -1366,7 +1376,8 @@
         "SRC0074",
         "SRC0077",
         "SRC0078",
-        "SRC0491"
+        "SRC0491",
+        "SRC0944"
       ],
       "workIds": [
         "W-F031",
@@ -1750,7 +1761,7 @@
       "placeDisplay": "Hollywood/Los Angeles",
       "cityKey": "hollywood",
       "shortDescription": "Kaper made his Hollywood debut at MGM, contributing songs to Escapade and other studio films.",
-      "longDescription": "Kaper contributed to Escapade, directed by Robert Z. Leonard and starring William Powell and Luise Rainer. For the film, which opened in July 1935, he supplied a single number, “You’re All I Need”, to words by Gus Kahn. He also contributed songs to the Marx Brothers’ A Night at the Opera, with Ned Washington, and to Mutiny on the Bounty. MGM engaged him at first as a song specialist rather than as a composer of film scores; by his own account, he moved between those roles only gradually. The press introduced Kaper and Jurmann as “Two New Composers” of Kiepura’s European hits.",
+      "longDescription": "Kaper contributed to Escapade, directed by Robert Z. Leonard and starring William Powell and Luise Rainer. For the film, which opened in July 1935, Kaper and Jurmann supplied a single number, “You’re All I Need”, to words by Gus Kahn; the AFI catalogue adds Harold Adamson. He also contributed songs to the Marx Brothers’ A Night at the Opera, with Ned Washington, and to Mutiny on the Bounty. MGM engaged him at first as a song specialist rather than as a composer of film scores; by his own account, he moved between those roles only gradually. The press introduced Kaper and Jurmann as “Two New Composers” of Kiepura’s European hits.",
       "roles": [
         "career_milestone",
         "work_milestone"
@@ -1763,7 +1774,8 @@
       "sourceIds": [
         "SRC0090",
         "SRC0491",
-        "SRC0527"
+        "SRC0527",
+        "SRC0140"
       ],
       "workIds": [
         "W-F033",
@@ -2026,10 +2038,10 @@
       "slug": "1938-end-of-an-era",
       "title": "End of the Jurmann–Kaper partnership",
       "label": "1938 · Jurmann–Kaper era ends",
-      "displayDate": "1938",
-      "dateStart": "1938-01-01",
+      "displayDate": "1939",
+      "dateStart": "1939-01-01",
       "datePrecision": "year",
-      "sortDate": "1938-07-01",
+      "sortDate": "1939-06-30",
       "sortOrder": 42,
       "displayMode": "point",
       "eventType": "career",
@@ -2042,8 +2054,8 @@
       ],
       "placeDisplay": "Hollywood/Los Angeles",
       "cityKey": "hollywood",
-      "shortDescription": "The Jurmann–Kaper collaboration ended amicably as Hollywood’s musical priorities changed.",
-      "longDescription": "The Jurmann–Kaper collaboration ended amicably as changes in the film industry reduced demand for thematic songs.",
+      "shortDescription": "The last music registered in the names of both Kaper and Jurmann dates from February 1939.",
+      "longDescription": "The last work registered in the names of both composers is “At night”, a cue for The Adventures of Huckleberry Finn written with Franz Waxman and registered in the United States on 25 February 1939. Sieghardt’s catalogue and Görner’s work list name two later songs by the pair, “Harbour Café”, published by Criterion in 1941, and “Blush and Sigh”, written for When Ladies Meet (1941) and not used; no document of the time confirms either. No document in the archive gives the reasons the partnership ended.",
       "roles": [
         "career_milestone",
         "professional_network"
@@ -2053,7 +2065,9 @@
         "P077"
       ],
       "sourceIds": [
-        "SRC0373"
+        "SRC0280",
+        "SRC0373",
+        "SRC0992"
       ],
       "placeIds": [
         "PL004",
