@@ -31,9 +31,27 @@ from recording_sources import normalize_recording_source
 from repository_names import normalize_repository_name
 from sheet_music_sources import normalize_sheet_music_source
 from source_access_dates import normalize_access_citation
+from source_dates import DATE_QUALIFIERS
 from source_slugs import canonical_source_slug
 from visual_sources import normalize_visual_source
 from video_sources import normalize_video_source
+
+
+def unknown_date_qualifiers(records: list[dict[str, Any]]) -> list[str]:
+    """Records in the canonical file whose dateQualifier is outside the vocabulary.
+
+    The normalizer would otherwise pass such a value to date inference, which
+    returns "confirmed" and drops ``dateDisplay``: a catalogue's "[1936?]"
+    became a confirmed 1936 that way in November 2026.  The command refuses
+    to write instead.  Migrations of legacy values call ``normalized_source``
+    directly and are not affected.
+    """
+    return [
+        f"{record.get('id', '<missing id>')}: {record.get('dateQualifier')!r}"
+        for record in records
+        if record.get("dateQualifier") not in (None, "")
+        and record.get("dateQualifier") not in DATE_QUALIFIERS
+    ]
 
 
 def normalized_source(source: dict[str, Any]) -> dict[str, Any]:
@@ -118,6 +136,13 @@ def main() -> int:
     args = parser.parse_args()
 
     payload = json.loads(args.path.read_text(encoding="utf-8"))
+    unknown = unknown_date_qualifiers(payload.get("records", []))
+    if unknown:
+        print(
+            "Source normalization refused: dateQualifier must be one of "
+            f"{sorted(DATE_QUALIFIERS)}; found " + "; ".join(unknown)
+        )
+        return 1
     normalized, changed_ids = normalize_payload(payload)
     if not changed_ids:
         print("Source normalization: no drift")

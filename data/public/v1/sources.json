@@ -35031,7 +35031,7 @@
       "repository": "Kungliga biblioteket / LIBRIS",
       "publication": "Gehrmans Musikförlag",
       "date": "1931",
-      "dateRole": "catalogue_volume",
+      "dateRole": "publication",
       "dateQualifier": "confirmed",
       "accessDate": "2026-11-08",
       "reliability": "high",
@@ -35058,7 +35058,8 @@
         "CON-S233-C-P105",
         "CON-S233-L-P212",
         "CON-S233-PUB-ORG247"
-      ]
+      ],
+      "dateDisplay": "[1931]"
     },
     {
       "id": "SRC0992",
@@ -35204,7 +35205,7 @@
       "publication": "Columbia",
       "date": "1936",
       "dateRole": "issue",
-      "dateQualifier": "confirmed",
+      "dateQualifier": "uncertain",
       "slug": "src0995-sbn-columbia-dq1824-tu-sei-lamore",
       "organizationIds": [
         "ORG251"
@@ -35229,7 +35230,8 @@
       "contributionIds": [
         "CON-S235-C-P009",
         "CON-S235-C-P077"
-      ]
+      ],
+      "dateDisplay": "[1936?]"
     },
     {
       "id": "SRC0996",
