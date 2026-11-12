@@ -319,3 +319,28 @@ The earlier count looked at `primaryUrl` and `accessUrl` only;
 5. ~~Check the nine YouTube 401s in a browser (finding 2).~~ Done: all nine play.
 6. ~~Link or reword the record identifiers in research notes (finding 5).~~
    Done, in the renderer, for every note a page prints.
+
+## Link recheck, 12 November 2026
+
+All 992 distinct URLs in the Sources were requested again. 780 answered on
+the first pass. A further 49 were confirmed by other routes: the official
+YouTube oEmbed (16), Discogs (5), DOI handle (3) and id.loc.gov (11) APIs, a
+slower sequential retry (9), and completing incomplete certificate chains
+from the servers' own AIA links (5). TLS verification stayed on throughout.
+
+Two links were dead and are fixed:
+
+- **SRC0313.** The Landesarchiv Berlin moved its registry holdings list. The
+  new file, `app/uploads/2026/07/Standesaemter_Berlin_Bestaende.pdf`, still
+  lists P Rep. 800 as the former Berlin I registry.
+- **SRC0667.** The former BIFI image server is gone. The upstream image URL
+  now points to its Wayback Machine capture of 22 October 2022.
+
+The rest could not be confirmed from this environment, which is not the same
+as dead. Sites with bot protection were left alone: www.loc.gov, Gallica,
+IMDb, Newspapers.com, CDNC, TCM, worldradiohistory, picryl, unifrance and
+sacem. Some hosts refuse the network outright: ANNO, LexM, the UCLA Weimar
+site, the Warsaw address books, the Jagiellonian and KUL digital libraries.
+The two marclavry.org Wayback links were confirmed through the archive.org
+availability index. Four YouTube videos with embedding switched off are known
+to play (finding 2).
