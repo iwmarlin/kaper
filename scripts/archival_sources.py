@@ -38,7 +38,7 @@ REVIEWED_ARCHIVAL_FIELDS = {
         "additionalLinks": [
             {
                 "label": "Landesarchiv Berlin — official registry holdings (P Rep. 800, Berlin I)",
-                "url": "https://landesarchiv-berlin.de/wp-content/uploads/2021/08/StandesaemterBerlin_Bestaende.pdf",
+                "url": "https://landesarchiv-berlin.de/app/uploads/2026/07/Standesaemter_Berlin_Bestaende.pdf",
                 "role": "contextual_reference"
             }
         ]
