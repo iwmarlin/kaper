@@ -23,7 +23,8 @@ class JeanFelinePortraitTests(unittest.TestCase):
 
     def test_portrait_identity_is_explicitly_qualified(self) -> None:
         self.assertEqual(self.medium["category"], "portrait")
-        self.assertEqual(self.medium["rightsStatus"], "public_domain")
+        self.assertEqual(self.medium["rightsStatus"], "restricted")
+        self.assertEqual(self.medium["galleryStatus"], "detail_only")
         self.assertIn("probable", self.medium["publicCaption"])
         self.assertEqual(self.source["researchNoteType"], "identity_assessment")
         self.assertIn("probable rather than certain", self.source["researchNote"])

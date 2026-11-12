@@ -192,3 +192,47 @@ A yearly review each January would keep the statuses current.
   - the two CC BY-NC images, `M087` and `M092`, suit a non-commercial site;
   - `M281` (BY-NC-ND) is reproduced unaltered, apart from technical resizes.
 - **External audio and video (96)** are linked, not rehosted.
+
+## Applied, 12 November 2026
+
+- **Renderings `M010`–`M014`.** The notes now name the legal basis for the
+  music, which is the right of quotation (Polish Copyright Act, art. 29(1)).
+  The renderings illustrate the archive's scholarly documentation and
+  analysis of Kaper's early works, and they name the composer and the
+  manuscript. The recording layer remains Iwona Lindstedt's own work.
+- **Findings 2 and 3.** `M461`, `M319`, `M111`, `M104` and `M331` are now
+  restricted and `detail_only`. Each note gives the term and the year it
+  ends. `M111` becomes public domain in the United States on 1 January 2027.
+- **Studio Harcourt.** The VRT ticket cited for `M249` (2020112910005534)
+  is also cited on the Baker and Clouzot files, but there it supports a
+  different claim: the term of a French collective work, not a release. All
+  three Harcourt portraits are therefore treated alike, and `M249` is now
+  restricted.
+- **German photographs.**
+  - `M043` (Becker & Maass / Marie Boehm) and `M068` (Titzenthaler) are now
+    copyright undetermined, following `M350`. Both are public domain in the
+    EU; in the United States the status turns on a first publication that
+    is not attested.
+  - `M248` (Zeisler) is now restricted, following `M344`.
+- **Commons tags without provenance.** `M442` Schlechter, `M322` Laemmle and
+  `M220` Lubitsch (whose Arquivo Nacional licence template could not be read
+  here; Commons was rate-limiting)
+  are now copyright undetermined, following `M309` and `M314`.
+- **The twelve generic notes** now state their grounds:
+  - the four Polish archive photographs rest on the unreserved-photograph
+    rule and the Narodowe Archiwum Cyfrowe statement;
+  - `M079` is an anonymous postcard of 1908;
+  - the four Commons MGM posters, `M156` among them, rest on publication
+    without notice;
+  - the two PICRYL posters say that PICRYL is not a rights authority;
+  - `M228` *Motion Picture Daily* is absent from the University of
+    Pennsylvania renewal inventory.
+
+- **Confined.** The six notes that said “confined” now say “excluded from
+  the galleries”, which is what `detail_only` does.
+
+**Left for the next pass:** findings 5 to 8. They are the public-domain
+badge on Kaper's sheet music, restricted images in featured places, file
+sizes, and the yearly review. A further point belongs with finding 6: the
+four `mixed_rights` galleries (`M030`–`M033`) show restricted members such
+as `M071`, `M105`, `M113` and `M121` in a gallery that is itself selected.
