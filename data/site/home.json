@@ -184,10 +184,12 @@
       ],
       "mediaIds": [
         "M031",
-        "M046"
+        "M046",
+        "M229"
       ],
       "heroMediaIds": [
-        "M046"
+        "M046",
+        "M229"
       ],
       "placeIds": [
         "PL002"
@@ -195,7 +197,11 @@
       "periods": [
         "european"
       ],
-      "image": null
+      "image": {
+        "id": "M229",
+        "assetPath": "assets/images/portraits/richard-tauber-1920s.jpg",
+        "altText": "Black-and-white studio portrait of tenor Richard Tauber in a dark three-piece suit."
+      }
     },
     {
       "id": "TE0037",
