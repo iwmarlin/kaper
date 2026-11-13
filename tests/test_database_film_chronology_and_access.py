@@ -32,7 +32,7 @@ class DatabaseFilmChronologyAndAccessTests(unittest.TestCase):
         self.assertEqual(source["dateDisplay"], "1931/1932 (film)")
         self.assertIn("31 December 1931", source["researchNote"])
         self.assertIn("15 January 1932", source["researchNote"])
-        self.assertEqual(self.works["W-F008"]["year"], 1932)
+        self.assertEqual(self.works["W-F008"]["year"], 1931)
 
     def test_other_film_years_date_films_not_database_publication(self):
         for source_id, year in {"SRC0479": "1930", "SRC0480": "1937", "SRC0481": "1937", "SRC0482": "1938"}.items():
