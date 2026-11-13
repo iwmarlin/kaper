@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 1389,
+  "count": 1390,
   "records": [
     {
       "id": "CON-F001-C-P009",
@@ -807,6 +807,7 @@
       "sourceIds": [
         "SRC0119",
         "SRC0306",
+        "SRC0333",
         "SRC0373"
       ],
       "scopeNote": "Co-composer with Walter Jurmann of the documented film songs “Du gefällst mir so” and “Ganz ohne Liebe wär’ das Leben so bescheiden.”"
@@ -3092,7 +3093,7 @@
         "stock_music"
       ],
       "sortOrder": 40,
-      "certainty": "confirmed",
+      "certainty": "probable",
       "workIds": [
         "W-F032"
       ],
@@ -3701,7 +3702,7 @@
       ],
       "scopeNote": "Composition of one or more songs associated with the film; this is not a claim to authorship of the complete film score.",
       "sortOrder": 40,
-      "certainty": "confirmed",
+      "certainty": "probable",
       "workIds": [
         "W-F039"
       ],
@@ -4117,7 +4118,7 @@
       ],
       "scopeNote": "Composition of one or more songs associated with the film; this is not a claim to authorship of the complete film score.",
       "sortOrder": 40,
-      "certainty": "confirmed",
+      "certainty": "probable",
       "workIds": [
         "W-F044"
       ],
@@ -4873,7 +4874,7 @@
       ],
       "scopeNote": "Composition of one or more songs associated with the film; this is not a claim to authorship of the complete film score.",
       "sortOrder": 40,
-      "certainty": "confirmed",
+      "certainty": "probable",
       "workIds": [
         "W-F054"
       ],
@@ -26264,6 +26265,24 @@
       ],
       "evidenceContext": [
         "sheet_music"
+      ]
+    },
+    {
+      "id": "CON-F006-C-P113",
+      "role": "composer",
+      "evidenceContext": [
+        "film_credits"
+      ],
+      "sortOrder": 41,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-F006"
+      ],
+      "personIds": [
+        "P113"
+      ],
+      "sourceIds": [
+        "SRC0120"
       ]
     }
   ]
