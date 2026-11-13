@@ -63,14 +63,11 @@ credit are now `probable`.
 - **Remaining premieres.** All other filmportal premieres fall in the year
   the records give.
 
-## Open question
+## Decided
 
-**`F008` *Ehe mit beschränkter Haftung*.** Filmportal gives the German
-premiere as **31 December 1931**, after censorship decisions of 11 and 30
-December 1931. `SRC0478` records that date. The film is nevertheless dated
-1932, and the test pins that year.
-
-By the rule in `docs/work-years.md`, a film's year is its first release,
-which would make it 1931. The song *Wer weint heut' aus Liebe Tränen?*
-would follow, since it was moved to 1932 on the ground that the film was
-released in 1932. Left unchanged pending a decision.
+**`F008` *Ehe mit beschränkter Haftung* is now dated 1931.** Filmportal gives
+the German premiere as 31 December 1931, after censorship decisions of 11
+and 30 December 1931. By the rule in `docs/work-years.md`, a film's year is
+its first release. The song *Wer weint heut' aus Liebe Tränen?*, sung in the
+film, follows to 1931. Its French version, *Pourquoi donc verser des
+larmes*, keeps 1932 on the Eschig edition of that year.

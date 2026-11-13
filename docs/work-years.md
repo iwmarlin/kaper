@@ -65,8 +65,7 @@ film song are taken to be the same work, reused.
 | Work | Was | Now | Why |
 | --- | --- | --- | --- |
 | *Süße Mamsell, denkst du noch an das kleine Hotel* | 1929 | 1930 | every dated Source is of 1930 |
-| *Wer weint heut’ aus Liebe Tränen?* | 1931 | 1932 | Hofmeister, February 1932; the film was released in 1932 |
-| *Pourquoi donc verser des larmes* | 1931 | 1932 | its film, *Ehe mit beschränkter Haftung*, was released in 1932 |
+| *Pourquoi donc verser des larmes* | 1931 | 1932 | French voice-and-piano edition, Eschig, 1932 |
 | *Dit’s-moi, Madame* | 1931 | 1932 | French vocal edition of 1932 |
 | *Ein Lied aus meiner Heimat* | 1931 | 1932 | Hofmeister, May 1932; *Melodie der Liebe* was reviewed on 27 April 1932 |
 | *Once There Was a Baby* | 1932 | 1933 | the English version was registered in London in May 1933 |
@@ -95,3 +94,12 @@ zusamm’?*, from the same film, keeps 1931: it was recorded on 15 September
 `tests/test_work_years.py` holds the rule where it can be checked
 mechanically: no Work is dated after its own copyright registration or after
 a dated manuscript of it.
+
+## Correction, 13 November 2026
+
+*Ehe mit beschränkter Haftung* had its German premiere on 31 December 1931
+(filmportal, `SRC0478`), so by the rule above the film is dated 1931, not
+1932. *Wer weint heut’ aus Liebe Tränen?*, sung in it, returns to 1931 with
+it. *Pourquoi donc verser des larmes*, its French version, keeps 1932 on
+its own evidence, the Eschig edition of that year; the reason given for it
+above has been corrected accordingly.
