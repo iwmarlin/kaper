@@ -267,10 +267,6 @@ VISUAL_SOURCE_FIELDS: dict[str, dict[str, Any]] = {
         "dateRole": "publication",
         "fullCitation": "Photographer unidentified. Press photograph of director Henry Koster for Flower Drum Song, published by Universal-International in 1961. Cropped detail via Wikimedia Commons."
     },
-    "SRC0839": {
-        "researchNote": "The file page gives the date as “early 1900s”, but no independently documented photography date or original publication has been established. That file-page dating is not adopted here. The date remains unknown; no replacement decade is inferred from the sitter’s appearance.",
-        "dateQualifier": "unknown"
-    },
     "SRC0403": {
         "publication": "Illustrierter Film-Kurier, no. 677",
         "dateRole": "publication"
@@ -635,11 +631,6 @@ VISUAL_CITATION_FIELDS: dict[str, str] = {
         "Studio Star. “Tino Rossi portrait années 1930.” Studio portrait from the "
         "collection of contributor Simonet63; original publication unidentified. "
         "Digital image via Wikimedia Commons."
-    ),
-    "SRC0839": (
-        "Photographer unidentified. Publicity portrait of Emanuel Schlechter; "
-        "original publication and date unidentified. Digital image via Wikimedia "
-        "Commons, File:Emanuel-schlechter.jpg."
     ),
 }
 

@@ -30101,34 +30101,6 @@
       ]
     },
     {
-      "id": "SRC0839",
-      "shortCitation": "Wikimedia Commons, publicity portrait of Emanuel Schlechter",
-      "fullCitation": "Photographer unidentified. Publicity portrait of Emanuel Schlechter; original publication and date unidentified. Digital image via Wikimedia Commons, File:Emanuel-schlechter.jpg.",
-      "sourceType": "wikimedia_commons_file",
-      "title": "Emanuel Schlechter — publicity portrait",
-      "creator": "Photographer unidentified",
-      "repository": "Wikimedia Commons",
-      "publication": "Wikimedia Commons",
-      "dateRole": "creation",
-      "dateQualifier": "unknown",
-      "accessDate": "2026-08-26",
-      "reliability": "medium",
-      "sourceStatus": "verified",
-      "slug": "src0839-wikimedia-commons-emanuel-schlechter-portrait",
-      "organizationIds": [
-        "ORG090"
-      ],
-      "personIds": [
-        "P175"
-      ],
-      "mediaIds": [
-        "M442"
-      ],
-      "primaryUrl": "https://commons.wikimedia.org/wiki/File:Emanuel-schlechter.jpg",
-      "researchNote": "The file page gives the date as “early 1900s”, but no independently documented photography date or original publication has been established. That file-page dating is not adopted here. The date remains unknown; no replacement decade is inferred from the sitter’s appearance.",
-      "researchNoteType": "date_assessment"
-    },
-    {
       "id": "SRC0840",
       "shortCitation": "Wikimedia Commons, cabinet card portrait of Tchaikovsky",
       "fullCitation": "Wikimedia Commons file: Tchaikovsky by Reutlinger (cropped).jpg. Cabinet card portrait of Pyotr Ilyich Tchaikovsky, dated 1888 and published in 1904; attributed to Émile Reutlinger (1825–1907). New York Public Library, Digital Gallery, image 1158492.",
@@ -35484,6 +35456,36 @@
       "organizationIds": [
         "ORG090"
       ]
+    },
+    {
+      "id": "SRC1002",
+      "shortCitation": "NAC 3/1/0/6/2661/7 — guests at the young lawyers’ ball in Warsaw, with Emanuel Schlechter",
+      "fullCitation": "Narodowe Archiwum Cyfrowe, Koncern Ilustrowany Kurier Codzienny – Archiwum Ilustracji, sygn. 3/1/0/6/2661/7 (dawna sygn. 1-P-2661-7): „Grupa uczestników balu. Widoczni od lewej: reżyser Józef Lejtes (2. z lewej), malarka Gena Galewska, autor tekstów piosenek Emanuel Schlechter (występuje również jako Szlechter) i producent filmowy Norbert Tarler.” Unit „Bal młodych prawników w Warszawie”, 1930–1939. Photographer unidentified. Also catalogued on Szukaj w Archiwach as unit 5942216, object 414852.",
+      "sourceType": "archival_photograph",
+      "title": "Bal młodych prawników w Warszawie — group of ball guests with Emanuel Schlechter",
+      "creator": "Photographer unidentified",
+      "repository": "Narodowe Archiwum Cyfrowe",
+      "publication": "Szukaj w Archiwach",
+      "date": "1930",
+      "dateEnd": "1939",
+      "dateRole": "creation",
+      "dateQualifier": "confirmed",
+      "accessDate": "2026-11-13",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "slug": "src1002-nac-warsaw-lawyers-ball-schlechter",
+      "personIds": [
+        "P175"
+      ],
+      "organizationIds": [
+        "ORG070"
+      ],
+      "mediaIds": [
+        "M467"
+      ],
+      "researchNote": "The catalogue gives the date range 1930–1939, not an exact year, and records the rights as expired (“Wygasły”); no author or photographic studio is named. The object caption identifies the sitters from the left, which places Schlechter fourth from the left, between Gena Galewska and Norbert Tarler.",
+      "researchNoteType": "evidence_note",
+      "primaryUrl": "https://www.szukajwarchiwach.gov.pl/jednostka/-/jednostka/5942216/obiekty/414852#opis_obiektu"
     }
   ],
   "recordCount": null

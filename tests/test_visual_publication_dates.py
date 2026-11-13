@@ -72,13 +72,18 @@ class VisualPublicationDatesTests(unittest.TestCase):
         self.assertIn("published by Universal-International in 1961", source["fullCitation"])
         self.assertEqual(normalized_source(dict(source, creator="Universal-International")), source)
 
-    def test_schlechter_note_does_not_claim_an_assigned_decade(self):
-        records = json.loads((ROOT / "data/public/v1/sources.json").read_text())["records"]
-        source = next(record for record in records if record["id"] == "SRC0839")
-        self.assertNotIn("date", source)
-        self.assertEqual(source["dateQualifier"], "unknown")
-        self.assertIn("The date remains unknown", source["researchNote"])
-        self.assertNotIn("dated here by decade", source["researchNote"])
+    def test_schlechter_portrait_rests_on_the_captioned_nac_photograph(self):
+        root = ROOT / "data/public/v1"
+        sources = {r["id"]: r for r in json.loads((root / "sources.json").read_text())["records"]}
+        media = {r["id"]: r for r in json.loads((root / "media.json").read_text())["records"]}
+        self.assertNotIn("SRC0839", sources)
+        self.assertNotIn("M442", media)
+        source, medium = sources["SRC1002"], media["M467"]
+        self.assertIn("Emanuel Schlechter", source["fullCitation"])
+        self.assertIn("3/1/0/6/2661/7", source["fullCitation"])
+        self.assertEqual(medium["rightsStatus"], "public_domain")
+        self.assertEqual(medium["sourceIds"], ["SRC1002"])
+        self.assertTrue(medium["slug"].startswith("emanuel-schlechter-"))
 
     def test_madame_programme_identifies_the_original_publication(self):
         records = json.loads((ROOT / "data/public/v1/sources.json").read_text())["records"]
