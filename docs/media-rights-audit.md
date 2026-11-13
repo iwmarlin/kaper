@@ -244,3 +244,19 @@ badge on Kaper's sheet music, restricted images in featured places, file
 sizes, and the yearly review. A further point belongs with finding 6: the
 four `mixed_rights` galleries (`M030`–`M033`) show restricted members such
 as `M071`, `M105`, `M113` and `M121` in a gallery that is itself selected.
+
+### Schlechter portrait replaced, 13 November 2026
+
+The Commons portrait of Emanuel Schlechter (`M442`, `SRC0839`) had
+undetermined rights and an impossible date. It has been withdrawn together
+with its links. Its addresses redirect to the replacement:
+
+- **`M467`**, a detail of the group photograph NAC 3/1/0/6/2661/7, from the
+  young lawyers' ball in Warsaw, 1930–1939;
+- **`SRC1002`**, its source record.
+
+The catalogue caption names the sitters from the left: Józef Lejtes second,
+then Gena Galewska, Emanuel Schlechter and Norbert Tarler. That places
+Schlechter fourth from the left. NAC records the rights as expired, and as
+an unreserved Polish press photograph the portrait is public domain in the
+United States too.
