@@ -215,9 +215,17 @@ A yearly review each January would keep the statuses current.
     is not attested.
   - `M248` (Zeisler) is now restricted, following `M344`.
 - **Commons tags without provenance.** `M442` Schlechter, `M322` Laemmle and
-  `M220` Lubitsch (whose Arquivo Nacional licence template could not be read
-  here; Commons was rate-limiting)
-  are now copyright undetermined, following `M309` and `M314`.
+  `M220` Lubitsch are now copyright undetermined, following `M309` and
+  `M314`. All three were checked again in the files' upload histories:
+  - Laemmle was uploaded in 2005 with PD-old and nothing else.
+  - Schlechter was uploaded in 2011 as a “publicity photo early 1900s”,
+    which cannot be right for a man born in 1904.
+  - Lubitsch carries the Arquivo Nacional template with the
+    PD-Brazil-URAA ground. That template is not a release by the archive,
+    and the ground requires first publication in Brazil. The photograph is
+    a Hollywood studio portrait: the Mary Pickford Foundation reproduces
+    the same image with Lubitsch's signature, so the Brazilian print was a
+    distributed publicity still.
 - **The twelve generic notes** now state their grounds:
   - the four Polish archive photographs rest on the unreserved-photograph
     rule and the Narodowe Archiwum Cyfrowe statement;
