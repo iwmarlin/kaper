@@ -260,3 +260,34 @@ then Gena Galewska, Emanuel Schlechter and Norbert Tarler. That places
 Schlechter fourth from the left. NAC records the rights as expired, and as
 an unreserved Polish press photograph the portrait is public domain in the
 United States too.
+
+## Applied, second pass, 13 November 2026
+
+- **Finding 5, Kaper's sheet music.**
+  - `M125`, `M126` and `M206` show pages of the printed music. They are now
+    `mixed_rights` and `detail_only`: public domain in the United States, but
+    the music is protected in Poland and the EU until 2053. They are
+    reproduced under the right of quotation to document the edition.
+  - `M199` and `M200` show only covers and stay public domain. Their notes
+    now say that none of the music is reproduced.
+  - The notes of `M125`, `M199` and `M200` had named the Gebethner i Wolff
+    edition of 1927; they now name their own edition, J. Altschuler, 1926.
+  - The sheet-music gallery `M035`, formerly three pages of music, now
+    gathers the two covers.
+- **Finding 6, featured places.**
+  - The home page, the chronology and link-preview (`og:image`) images now
+    use only media whose rights allow featuring (`FEATURABLE_RIGHTS_STATUSES`
+    in `scripts/build_static_records.py`). The chronology shows 30 heroes
+    instead of 46; the home card for `TE0026` has no image.
+  - The galleries `M031`, `M032` and `M033` no longer gather restricted or
+    undetermined members. Those members stay on their own records.
+  - The people index keeps its avatars. The decision recorded in
+    `portrait_for` (`scripts/build_catalogue_indexes.py`) stands: a small
+    avatar linked to the record that states its rights.
+- **Finding 7, size.** Sixty restricted, undetermined or mixed-rights images
+  are now no more than 800 px on the long side, and the notes give the new
+  dimensions. `tests/test_media_rights_presentation.py` holds the cap and the
+  rules for galleries, the home page and the chronology.
+- **Finding 8, yearly review.** `python3 scripts/rights_expiry.py` lists
+  every restricted record by the year its stated term ends, and `--due`
+  lists the ones already past. Run it each January.

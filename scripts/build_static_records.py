@@ -511,6 +511,23 @@ MEDIA_SCHEMA_TYPE = {
 }
 
 NEUTRAL_OG_IMAGE_PATH = "apple-touch-icon.png"
+
+# Rights statuses under which a locally held image may be featured: shown on
+# the home page, in the chronology, or as a link-preview image. Restricted,
+# undetermined and mixed-rights media stay on the records that document them
+# (docs/media-rights-audit.md, finding 6).
+FEATURABLE_RIGHTS_STATUSES = frozenset({
+    "public_domain",
+    "open_licence",
+    "provider_terms",
+    "permission_granted",
+    "own_work",
+})
+
+
+def featurable_media(item: dict) -> bool:
+    """Whether a media record's own image may be featured beyond its records."""
+    return item.get("rightsStatus") in FEATURABLE_RIGHTS_STATUSES
 IMAGE_ASSET_SUFFIXES = {".jpg", ".jpeg", ".png", ".webp", ".gif"}
 IMAGE_DERIVATIVES_PATTERN = re.compile(r"Object\.freeze\((\{.*\})\);\s*$", re.DOTALL)
 SOCIAL_IMAGE_WIDTH = 960
@@ -628,8 +645,9 @@ def og_image_for(record_type: str, record: dict, tables: dict, image_mapping: di
 
     Person payloads contain only portraits already verified as belonging to that
     person by build_record_payloads.py. Works, events and places retain the order
-    of their explicit media links; event hero media take priority. A neutral
-    archive mark is used when no suitable local image exists.
+    of their explicit media links; event hero media take priority. Only media
+    whose rights allow featuring are used. A neutral archive mark is used when
+    no suitable local image exists.
     """
     media_by_id = {item["id"]: item for item in tables.get("media", [])}
     candidates: list[dict] = []
@@ -653,6 +671,8 @@ def og_image_for(record_type: str, record: dict, tables: dict, image_mapping: di
         ]
 
     for media in candidates:
+        if not featurable_media(media):
+            continue
         path = image_asset_path(media)
         if not path:
             continue
@@ -886,8 +906,8 @@ def static_page(
         page_title = f"{title} ({label.lower()})"
     browser_title = f"{page_title} | {PAGE_TITLE_SUFFIX}"
     record_id = record["id"]
-    style_version = "7f6841125c"
-    record_script_version = "7f6841125c"
+    style_version = "8a3d437e80"
+    record_script_version = "8a3d437e80"
     route = f"records/{record_type}/{quote(record_id, safe='')}/"
     canonical = f"{ORIGIN}{route}"
     og_image = og_image_for(record_type, record, tables, image_mapping)
@@ -925,8 +945,8 @@ def static_page(
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <link rel="preload" href="assets/fonts/kaper-sans.woff2?v=7f6841125c" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="assets/fonts/kaper-serif.woff2?v=7f6841125c" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/kaper-sans.woff2?v=8a3d437e80" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/kaper-serif.woff2?v=8a3d437e80" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/site/styles.css?v={style_version}">
   <title>{esc(browser_title)}</title>
   {ld_json}

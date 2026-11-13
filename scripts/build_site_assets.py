@@ -16,6 +16,8 @@ import shutil
 from pathlib import Path
 from typing import Optional
 
+from build_static_records import FEATURABLE_RIGHTS_STATUSES
+
 
 IMAGE_EXTENSIONS = {".jpg", ".jpeg", ".png", ".tif", ".tiff", ".webp"}
 TARGET_WIDTHS = (320, 640, 960, 1440, 2048)
@@ -454,7 +456,12 @@ def home_payload(data_root: Path) -> dict:
         """First locally held image linked to the event, for the selected-moments cards."""
         for media_id in (event.get("heroMediaIds") or []) + (event.get("mediaIds") or []):
             item = media_by_id.get(media_id)
-            if item and item.get("assetPath") and item.get("mediaType") != "audio":
+            if (
+                item
+                and item.get("assetPath")
+                and item.get("mediaType") != "audio"
+                and item.get("rightsStatus") in FEATURABLE_RIGHTS_STATUSES
+            ):
                 return {
                     "id": item["id"],
                     "assetPath": item["assetPath"],

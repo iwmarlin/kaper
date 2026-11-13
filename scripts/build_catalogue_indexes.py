@@ -15,7 +15,7 @@ import subprocess
 import sys
 from pathlib import Path
 
-from build_static_records import esc, og_image_for, responsive_image_mapping
+from build_static_records import esc, featurable_media, og_image_for, responsive_image_mapping
 
 
 INDEX_FILES = {
@@ -360,6 +360,7 @@ def timeline_index(data_root: Path, schema_version: str) -> dict:
                 if media_id in media
                 and media[media_id].get("assetPath")
                 and media[media_id].get("mediaType") != "audio"
+                and featurable_media(media[media_id])
             ),
             None,
         )
