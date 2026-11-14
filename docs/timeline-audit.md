@@ -58,3 +58,34 @@ cited no document of the time; five of those now do, and one was rewritten.
   reach the archive through Lindstedt (`SRC0491`), which the event cites.
 - **`TE0047`** gives Kaper's own account of “Henry Craig” and Andrzej Włast
   through Lindstedt (`SRC0490`); the account itself is not cited directly.
+
+## Images, 14 November 2026
+
+Once restricted images were kept out of the chronology, 25 events had no
+image left. Each was given one whose rights allow it to be featured. 55 of
+56 events now have one.
+
+- **Eighteen** come from media the archive already held. Among them:
+  - the *Radjo* listing of the Bick–Kaper duo (`TE0019`);
+  - the *Zum 5 Uhr-Tee* album advertisement with “Gib nur acht” (`TE0021`);
+  - the 1932 Berlin address-book entry (`TE0027`);
+  - the Kiepura reception photograph with the Kapers (`TE0029`);
+  - the Escapade clipping (`TE0037`).
+- **Six are new:**
+
+| Medium | Event | Rights |
+|---|---|---|
+| `M468` title page of the 1926 *Hätt' ich einen Kammerdiener?* manuscript (title and names only, no music) | `TE0048` | public domain |
+| `M469` Hotel Kaiserhof, 1932 | `TE0056` | Bundesarchiv, CC BY-SA 3.0 DE |
+| `M470` Lubitsch in Hollywood, 1930, by Erich Salomon | `TE0041` | public domain |
+| `M471` a Montrouge postcard of before 1931 | `TE0030` | public domain |
+| `M472` Kiepura in Warsaw, 1936, by Henryk Poddębski | `TE0034` | public domain |
+| `M473` the Reichsgesetzblatt page with the film-quota law of 23 June 1933 | `TE0057` | public domain |
+
+`M473` shows the law, not the ordinance of 28 June 1933 issued under it,
+which was not printed in the Reichsgesetzblatt; its caption says so.
+
+A Warsaw photograph of ulica Wilcza was rejected. Europeana marks it public
+domain, but the library that holds it states that it is protected and that
+permission to publish was given to the library alone. `TE0045`, the police
+certificate of 1920, still has no image.
