@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 902,
+  "count": 907,
   "records": [
     {
       "id": "SRC0001",
@@ -33952,7 +33952,10 @@
       ],
       "slug": "src0959-hatt-ich-einen-kammerdiener-manuscript-kaper-papers",
       "researchNote": "A research reproduction supplied by the American Heritage Center was examined. The public link leads to the collection’s 1970 accession list, which describes the manuscript but does not provide images of it.",
-      "researchNoteType": "object_context"
+      "researchNoteType": "object_context",
+      "mediaIds": [
+        "M468"
+      ]
     },
     {
       "id": "SRC0960",
@@ -35045,6 +35048,7 @@
       "date": "1931",
       "dateRole": "publication",
       "dateQualifier": "confirmed",
+      "dateDisplay": "[1931]",
       "accessDate": "2026-11-08",
       "reliability": "high",
       "sourceStatus": "verified",
@@ -35070,8 +35074,7 @@
         "CON-S233-C-P105",
         "CON-S233-L-P212",
         "CON-S233-PUB-ORG247"
-      ],
-      "dateDisplay": "[1931]"
+      ]
     },
     {
       "id": "SRC0992",
@@ -35221,6 +35224,7 @@
       "date": "1936",
       "dateRole": "issue",
       "dateQualifier": "uncertain",
+      "dateDisplay": "[1936?]",
       "slug": "src0995-sbn-columbia-dq1824-tu-sei-lamore",
       "organizationIds": [
         "ORG251"
@@ -35245,8 +35249,7 @@
       "contributionIds": [
         "CON-S235-C-P009",
         "CON-S235-C-P077"
-      ],
-      "dateDisplay": "[1936?]"
+      ]
     },
     {
       "id": "SRC0996",
@@ -35493,6 +35496,167 @@
       "researchNote": "The catalogue gives the date range 1930–1939, not an exact year, and records the rights as expired (“Wygasły”); no author or photographic studio is named. The object caption identifies the sitters from the left, which places Schlechter fourth from the left, between Gena Galewska and Norbert Tarler.",
       "researchNoteType": "evidence_note",
       "primaryUrl": "https://www.szukajwarchiwach.gov.pl/jednostka/-/jednostka/5942216/obiekty/414852#opis_obiektu"
+    },
+    {
+      "id": "SRC1003",
+      "shortCitation": "Bundesarchiv Bild 183-R99277, Berlin, Hotel “Kaiserhof”, 1932",
+      "fullCitation": "“Berlin 1932: Das Hotel ‘Kaiserhof’ am Wilhelmplatz.” Photograph, 1932, Scherl Bilderdienst; photographer unidentified. Bundesarchiv, Bild 183-R99277 (ADN-Zentralbild archive); supplied to Wikimedia Commons through the German Federal Archive cooperation project.",
+      "sourceType": "archival_photograph",
+      "title": "Bundesarchiv Bild 183-R99277 — Berlin, Wilhelmplatz, Hotel “Kaiserhof”, 1932",
+      "creator": "Photographer unidentified (Scherl Bilderdienst)",
+      "repository": "Bundesarchiv / Wikimedia Commons",
+      "publication": "Wikimedia Commons",
+      "date": "1932",
+      "dateRole": "creation",
+      "dateQualifier": "confirmed",
+      "accessDate": "2026-11-14",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "slug": "src1003-bundesarchiv-183-r99277-hotel-kaiserhof-1932",
+      "organizationIds": [
+        "ORG090",
+        "ORG169"
+      ],
+      "mediaIds": [
+        "M469"
+      ],
+      "primaryUrl": "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_183-R99277,_Berlin,_Wilhelmplatz,_Hotel_%22Kaiserhof%22.jpg",
+      "additionalLinks": [
+        {
+          "label": "Creative Commons BY-SA 3.0 Germany licence",
+          "url": "https://creativecommons.org/licenses/by-sa/3.0/de/",
+          "role": "rights_statement"
+        }
+      ],
+      "identifiers": [
+        {
+          "scheme": "usco_renewal",
+          "value": "R99277"
+        }
+      ]
+    },
+    {
+      "id": "SRC1004",
+      "shortCitation": "Erich Salomon, “Ernst Lubitsch mit seiner Sekretärin,” Hollywood, 1930",
+      "fullCitation": "Erich Salomon. “Ernst Lubitsch mit seiner Sekretärin.” Photograph, Hollywood, 1930. Berlinische Galerie, Berlin; digital image via Wikimedia Commons.",
+      "sourceType": "image_or_photograph",
+      "title": "Ernst Lubitsch with his secretary, Hollywood, 1930",
+      "creator": "Erich Salomon",
+      "repository": "Berlinische Galerie / Wikimedia Commons",
+      "publication": "Wikimedia Commons",
+      "date": "1930",
+      "dateRole": "creation",
+      "dateQualifier": "confirmed",
+      "accessDate": "2026-11-14",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "slug": "src1004-salomon-lubitsch-hollywood-1930",
+      "organizationIds": [
+        "ORG090"
+      ],
+      "personIds": [
+        "P125"
+      ],
+      "mediaIds": [
+        "M470"
+      ],
+      "primaryUrl": "https://commons.wikimedia.org/wiki/File:Ernst_Lubitsch_mit_seiner_Sekret%C3%A4rin,_Hollywood,_1930.jpg",
+      "researchNote": "The Commons file names Erich Salomon as photographer and the Berlinische Galerie as holding collection, and dates the photograph 1930.",
+      "researchNoteType": "verification_note"
+    },
+    {
+      "id": "SRC1005",
+      "shortCitation": "Postcard, “Grand-Montrouge. Grande Rue – Avenue de la République”, Archives départementales des Hauts-de-Seine, 9FI/MON_17",
+      "fullCitation": "“Grand-Montrouge. Grande Rue – Avenue de la République.” Picture postcard, publisher and photographer unidentified, posted at Montrouge before 1931. Archives départementales des Hauts-de-Seine, 9FI/MON_17; digital image via Wikimedia Commons.",
+      "sourceType": "image_or_photograph",
+      "title": "Grand-Montrouge, Grande Rue – Avenue de la République — postcard",
+      "creator": "Photographer unidentified",
+      "repository": "Archives départementales des Hauts-de-Seine / Wikimedia Commons",
+      "publication": "Wikimedia Commons",
+      "date": "1900",
+      "dateRole": "creation",
+      "dateQualifier": "approximate",
+      "dateDisplay": "c. 1900–1910",
+      "accessDate": "2026-11-14",
+      "reliability": "medium",
+      "sourceStatus": "verified",
+      "slug": "src1005-montrouge-grande-rue-postcard",
+      "organizationIds": [
+        "ORG090"
+      ],
+      "placeIds": [
+        "PL021"
+      ],
+      "mediaIds": [
+        "M471"
+      ],
+      "primaryUrl": "https://commons.wikimedia.org/wiki/File:Carte_postale_-_Montrouge_-_Grande_rue_-_Avenue_de_la_R%C3%A9publique.jpg",
+      "researchNote": "The Commons record dates the card to 1900, a round figure; the card carries a 10-centime Semeuse stamp and a Montrouge postmark, so it was published and posted in the first decades of the century, long before 1931. It shows Montrouge, not the Salabert studio, whose street address has not been established.",
+      "researchNoteType": "date_assessment"
+    },
+    {
+      "id": "SRC1006",
+      "shortCitation": "Henryk Poddębski, Jan Kiepura singing on Plac Piłsudskiego, Warsaw, 1936, Polona",
+      "fullCitation": "Henryk Poddębski. “Występ Jana Kiepury na placu Piłsudskiego w Warszawie.” Photograph, Warsaw, 1936. Biblioteka Narodowa, Polona; digital image via Wikimedia Commons.",
+      "sourceType": "image_or_photograph",
+      "title": "Jan Kiepura singing on Plac Piłsudskiego, Warsaw, 1936",
+      "creator": "Henryk Poddębski",
+      "repository": "Biblioteka Narodowa / Wikimedia Commons",
+      "publication": "Polona",
+      "date": "1936",
+      "dateRole": "creation",
+      "dateQualifier": "uncertain",
+      "dateDisplay": "[1936?]",
+      "accessDate": "2026-11-14",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "slug": "src1006-poddebski-kiepura-plac-pilsudskiego-1936",
+      "organizationIds": [
+        "ORG063",
+        "ORG090"
+      ],
+      "personIds": [
+        "P117"
+      ],
+      "mediaIds": [
+        "M472"
+      ],
+      "primaryUrl": "https://polona.pl/item/wystep-jana-kiepury-na-placu-pilsudskiego-w-warszawie,NjYxNTc3MDc/0/",
+      "additionalLinks": [
+        {
+          "label": "Wikimedia Commons file",
+          "url": "https://commons.wikimedia.org/wiki/File:Jan_Kiepura_by_Henryk_Podd%C4%99bski.jpg",
+          "role": "source_image"
+        }
+      ],
+      "researchNote": "The Commons file dates the photograph 15 January 1936. The scene, with summer clothing, foliage and an open-air crowd, does not suit mid-January, so that date may record cataloguing rather than the day the photograph was taken; the year is kept as uncertain.",
+      "researchNoteType": "date_assessment"
+    },
+    {
+      "id": "SRC1007",
+      "shortCitation": "Reichsgesetzblatt 1933, Teil I, no. 69, p. 393 — Gesetz über die Vorführung ausländischer Bildstreifen, 23 June 1933",
+      "fullCitation": "“Gesetz über die Vorführung ausländischer Bildstreifen. Vom 23. Juni 1933.” Reichsgesetzblatt 1933, Teil I, no. 69, issued in Berlin on 27 June 1933, p. 393. Digital page via Wikimedia Commons.",
+      "sourceType": "wikimedia_commons_file",
+      "title": "Gesetz über die Vorführung ausländischer Bildstreifen, 23 June 1933",
+      "creator": "Reichsregierung",
+      "repository": "Wikimedia Commons",
+      "publication": "Reichsgesetzblatt",
+      "date": "1933-06-23",
+      "dateRole": "publication",
+      "dateQualifier": "confirmed",
+      "accessDate": "2026-11-14",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "slug": "src1007-reichsgesetzblatt-1933-i-393-bildstreifen",
+      "organizationIds": [
+        "ORG090"
+      ],
+      "mediaIds": [
+        "M473"
+      ],
+      "primaryUrl": "https://commons.wikimedia.org/wiki/File:Deutsches_Reichsgesetzblatt_33T1_069_0393.jpg",
+      "researchNote": "The law of 23 June 1933 extended the 1930 law on the showing of foreign films, as amended in 1932, to 30 June 1936, and empowered the Reich Minister for Popular Enlightenment and Propaganda to issue its implementing ordinances. The ordinance of 28 June 1933 that redefined a German film by citizenship and origin was issued under it and was not printed in the Reichsgesetzblatt; this page shows the law, not the ordinance.",
+      "researchNoteType": "evidence_note"
     }
   ],
   "recordCount": null

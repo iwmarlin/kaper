@@ -29,7 +29,7 @@
       "label": "Media",
       "description": "Images, documents and sound",
       "href": "media.html",
-      "count": 410
+      "count": 416
     }
   ],
   "portrait": {
@@ -248,10 +248,13 @@
       ],
       "mediaIds": [
         "M034",
-        "M074"
+        "M074",
+        "M118",
+        "M119"
       ],
       "heroMediaIds": [
-        "M074"
+        "M074",
+        "M118"
       ],
       "placeIds": [
         "PL004",
@@ -264,9 +267,9 @@
       ],
       "featured": true,
       "image": {
-        "id": "M034",
-        "assetPath": "assets/images/historical-context/nasz-przeglad-1934-43.jpg",
-        "altText": "Gallery card for Bronisław Kaper’s MGM years, combining documents, press items and contextual images."
+        "id": "M118",
+        "assetPath": "assets/images/historical-context/escapade-brooklyn-eagle-1935-07-22-6.jpg",
+        "altText": "Newspaper clipping from the Brooklyn Daily Eagle, 22 July 1935."
       }
     }
   ],
@@ -280,6 +283,6 @@
       "probable": 11,
       "uncertain": 0
     },
-    "sources": 902
+    "sources": 907
   }
 }
