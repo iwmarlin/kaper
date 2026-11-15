@@ -212,3 +212,42 @@ All five items are done.
    wording (finding 4).
 5. Check *Sous le ciel de Venice* in Sieghardt, and the director of *Two
    Hearts in Wax Time*, when a copy is to hand.
+
+## Songs resting on later compilations, 15 November 2026
+
+The films audit lowered six films whose credit for Kaper rested only on
+later compilations. The same rule applied to the songs found 25 marked
+`confirmed` on such sources alone: Sieghardt's work catalogue, the Walter
+Jurmann catalogue, Görner's work list, IMDb's soundtrack listings, Pfau's
+*Lexikon der deutschen Tanzmusik*, Stanicek's work entry, or a web article.
+
+One of the 25 stays `confirmed`: `W-S178` *Les cols bleus de la marine*. Its
+Source, Images Musicales, reproduces a copy of the 1930 Salabert edition, so
+it rests on a document of the time.
+
+For the other 24 the BnF and Deutsche Nationalbibliothek catalogues were
+searched by title, and the archive's recordings were checked. None has an
+edition, a register entry or a recording of the time that names Kaper.
+They are now `probable`:
+
+- the song itself;
+- Kaper's credit and his co-authors' credits (56 credits);
+- the song's film and language-version relations (18 relations).
+
+Each song's note now names the sources the attribution rests on.
+
+| Songs | Film |
+|---|---|
+| `W-S087` *Les charmes chantent, mon violon soupire* | *L'Homme qui ne sait pas dire non* |
+| `W-S103` *Amanda* | *Le greluchon délicat* |
+| `W-S121` *Happy Natives* | *Last of the Pagans* |
+| `W-S127` *Hi-do-ho*, `W-S128` *Love Needs No Inspiration* | *Two Hearts in Wax Time* |
+| `W-S131` *Happy New Year* | *San Francisco* |
+| `W-S135`–`W-S142` and `W-S169`, the nine cues | *Trouble for Two* |
+| `W-S165`–`W-S167` *Magic*, *Rhumba*, *Tahiti* | *Man of the People* |
+| `W-S197`, `W-S198`, `W-S201`, `W-S202`, the German and French versions of the MGM songs | — |
+| `W-S183` *Diese Melodie sing ich nur für Sie*, `W-S191` *Mit dir möchte ich ziehn bis zum Ende der Welt* | none (1931) |
+
+A document of the time would restore any of them to `confirmed`: a
+copyright registration, a Hofmeister entry, a printed edition or a label
+credit.
