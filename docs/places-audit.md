@@ -79,3 +79,55 @@ lot.
 - **`context_only` places** (Vienna, Babelsberg, Joinville, Sievering) are
   context for the multiple-language and star-singer events and make no
   claim about Kaper's presence.
+
+## Images, 16 November 2026
+
+Sixteen places had no image whose rights allow it to be shown, or none at
+all. Eleven now have one.
+
+### Linked from the archive
+
+Three images already in the archive depict a place that lacked one:
+
+| Place | Image |
+|---|---|
+| `PL003` Paris | `M082`, the Eiffel Tower from the Trocadéro |
+| `PL033` Berlin-Wilmersdorf | `M282`, the 1928 aerial view of Pommersche Straße |
+| `PL044` Montpellier | `M219`, *L’Éclair*, 22 June 1934 |
+
+### Added
+
+| Place | Image | Rights |
+|---|---|---|
+| `PL004` Los Angeles | `M475`, City Hall, Tichnor postcard, c. 1930–1945 | Public domain: published in the United States without notice |
+| `PL005` Hollywood | `M474`, Hollywood Boulevard, Tichnor postcard, c. 1930–1945 | The same |
+| `PL012` Culver City | `M476`, the Culver Hotel, Tichnor postcard, c. 1930–1945 | The same |
+| `PL024` New York City | `M477`, the skyline from Governors Island, Acacia Card Company postcard, 1943–1945 | The same |
+| `PL026` Le Havre | `M478`, Albert Sébille’s poster “Paris–Havre–New York”, c. 1920–1930 | Public domain: Sébille died in 1953; published before 1931 |
+| `PL038` London | `M479`, Muirhead Bone’s drypoint of Piccadilly Circus, 1915 | Public domain: Bone died in 1953; published in 1915 |
+| `PL013` Hamborn | `M480`, the town hall on a postcard posted on 7 October 1920 | Public domain: anonymous, published by 1920 |
+| `PL022` Hôtel George-V | `M481`, the façade photographed in 2021 | CC BY-SA 4.0 |
+
+The four postcards come from the Tichnor Brothers Postcard Collection of
+the Boston Public Library. The backs of all four were checked, and none
+carries a copyright notice. Two cards of the New York skyline were set
+aside because the front carries “© by Irving Underhill”. The New York card
+is later than Kaper’s arrival: the publisher’s address uses a postal zone,
+which places it in 1943 or later. Its source note says so.
+
+The George-V image is a present-day photograph. No period view of the
+hotel under clear terms was found.
+
+### Still without an image
+
+- **`PL002` Berlin.** Suitable views of about 1930 are on Commons from the
+  Bundesarchiv (CC BY-SA 3.0 DE). One example is *Leipziger Platz und
+  Leipziger Straße*, B 145 Bild-P014783. Commons refused the download from
+  here.
+- **`PL006` MGM Studios.** The only images are the two of undetermined
+  rights already on the record. No published view of the lot before 1931
+  under clear terms was found.
+- **`PL025` Pier 57.** The 1907 pier burned in 1947, and every image on
+  Commons shows its successor.
+- **`PL035` Château Frontenac** and **`PL007` Wilcza 29** keep their
+  existing images. Those images are restricted, and no other image is known.
