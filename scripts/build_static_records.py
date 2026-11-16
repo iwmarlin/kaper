@@ -46,6 +46,9 @@ LEGACY_WITHDRAWN_REDIRECTS[("work", "W-S032")] = ("work", "W-F007")
 # captioned NAC photograph; its addresses lead to the replacement.
 LEGACY_WITHDRAWN_REDIRECTS[("media", "M442")] = ("media", "M467")
 LEGACY_WITHDRAWN_REDIRECTS[("source", "SRC0839")] = ("source", "SRC1002")
+# The police certificate of April 1920 (TE0045) was folded into the baptism
+# event in November 2026: it is evidence for that change, not an event.
+LEGACY_WITHDRAWN_REDIRECTS[("event", "TE0045")] = ("event", "TE0005")
 # Each old (kind, id) maps to the (kind, id) whose page replaces it.
 LEGACY_REDIRECTS = (
     {("source", old): ("source", new) for old, new in LEGACY_SOURCE_REDIRECTS.items()}
@@ -1087,6 +1090,8 @@ def expected_outputs(
         "person": record_ids("people"),
         "organization": record_ids("organizations"),
         "media": record_ids("media"),
+        "event": record_ids("timeline-events"),
+        "place": record_ids("places"),
     }
     for (kind, old_id), (target_kind, target_id) in LEGACY_REDIRECTS.items():
         noun = kind.capitalize()
