@@ -79,3 +79,77 @@ lot.
 - **`context_only` places** (Vienna, Babelsberg, Joinville, Sievering) are
   context for the multiple-language and star-singer events and make no
   claim about Kaper's presence.
+
+## Images, 16 November 2026
+
+Sixteen places had no image whose rights allow it to be shown, or none at
+all. Thirteen now have one.
+
+### Linked from the archive
+
+Three images already in the archive depict a place that lacked one:
+
+| Place | Image |
+|---|---|
+| `PL003` Paris | `M082`, the Eiffel Tower from the Trocadéro |
+| `PL033` Berlin-Wilmersdorf | `M282`, the 1928 aerial view of Pommersche Straße |
+| `PL044` Montpellier | `M219`, *L’Éclair*, 22 June 1934 |
+
+### Added
+
+| Place | Image | Rights |
+|---|---|---|
+| `PL004` Los Angeles | `M475`, City Hall, Tichnor postcard, c. 1930–1945 | Public domain: published in the United States without notice |
+| `PL005` Hollywood | `M474`, Hollywood Boulevard, Tichnor postcard, c. 1930–1945 | The same |
+| `PL012` Culver City | `M476`, the Culver Hotel, Tichnor postcard, c. 1930–1945 | The same |
+| `PL024` New York City | `M477`, the skyline from Governors Island, Acacia Card Company postcard, 1943–1945 | The same |
+| `PL026` Le Havre | `M478`, Albert Sébille’s poster “Paris–Havre–New York”, c. 1920–1930 | Public domain: Sébille died in 1953; published before 1931 |
+| `PL038` London | `M479`, Muirhead Bone’s drypoint of Piccadilly Circus, 1915 | Public domain: Bone died in 1953; published in 1915 |
+| `PL013` Hamborn | `M480`, the town hall on a postcard posted on 7 October 1920 | Public domain: anonymous, published by 1920 |
+| `PL022` Hôtel George-V | `M481`, the façade photographed in 2021 | CC BY-SA 4.0 |
+| `PL002` Berlin | `M482`, Potsdamer Platz towards Leipziger Platz, c. 1930, Bundesarchiv B 145 Bild-P014783 | CC BY-SA 3.0 DE |
+| `PL025` Pier 57 | `M483`, the Chelsea piers from the air, 18 July 1924, NARA 18-AA-94-41 | Public domain: a work of the United States government |
+
+The four postcards come from the Tichnor Brothers Postcard Collection of
+the Boston Public Library. The backs of all four were checked, and none
+carries a copyright notice. Two cards of the New York skyline were set
+aside because the front carries “© by Irving Underhill”. The New York card
+is later than Kaper’s arrival: the publisher’s address uses a postal zone,
+which places it in 1943 or later. Its source note says so.
+
+The George-V image is a present-day photograph. No period view of the
+hotel under clear terms was found.
+
+### Without an image that can be featured
+
+Two places show an image on their own page that the archive cannot feature
+elsewhere. These images stay on the record only, at no more than 800 px.
+
+- **`PL006` MGM Studios.** The record has two images of undetermined
+  rights. No view of the lot published before 1931 under clear terms was
+  found.
+- **`PL035` Château Frontenac.** The record's image, `M071`, is a
+  restricted advertisement. It was printed in 1935 without a credit, so in
+  France it was protected until the end of 2005. It was therefore still
+  protected on 1 January 1996, and the URAA restored United States
+  copyright to the end of 2030.
+
+Advertisements are treated like any other work. French law protects a
+work whatever its “mérite ou destination” (CPI, art. L112-1), so an
+anonymous French print is free in both countries only if it was published
+by 1930. Two other advertisements were considered for the Château
+Frontenac:
+
+- a drawing in *L’Atlantique*, 19 July 1936, protected in the United
+  States to the end of 2031;
+- a listing in *Le Moniteur des consulats*, 1 March 1931, which has text
+  only. It is now a Source of `PL035` (`SRC1018`), because it presents the
+  hotel as a residential “home”.
+
+**`PL007` Wilcza 29** has no image at all. A photograph found earlier was
+rejected, because the library that holds it marks it as protected.
+
+The Pier 57 aerial is unlabelled. The 1907 pier, destroyed by fire in 1947,
+belonged to the Chelsea Piers, and the photograph shows that line of piers
+north of the Gansevoort Street market. The record therefore says that Pier
+57 is among them, but it does not mark which shed is Pier 57.
