@@ -120,19 +120,34 @@ which places it in 1943 or later. Its source note says so.
 The George-V image is a present-day photograph. No period view of the
 hotel under clear terms was found.
 
-### Still without an image
+### Without an image that can be featured
 
-- **`PL006` MGM Studios.** The only images are the two of undetermined
-  rights already on the record. No published view of the lot before 1931
-  under clear terms was found.
-- **`PL035` Château Frontenac.** The record's only image, `M071`, is a
+Two places show an image on their own page that the archive cannot feature
+elsewhere. These images stay on the record only, at no more than 800 px.
+
+- **`PL006` MGM Studios.** The record has two images of undetermined
+  rights. No view of the lot published before 1931 under clear terms was
+  found.
+- **`PL035` Château Frontenac.** The record's image, `M071`, is a
   restricted advertisement. It was printed in 1935 without a credit, so in
   France it was protected until the end of 2005. It was therefore still
   protected on 1 January 1996, and the URAA restored United States
   copyright to the end of 2030.
-- **`PL007` Wilcza 29.** The record has no image. A photograph found
-  earlier was rejected, because the library that holds it marks it as
-  protected.
+
+Advertisements are treated like any other work. French law protects a
+work whatever its “mérite ou destination” (CPI, art. L112-1), so an
+anonymous French print is free in both countries only if it was published
+by 1930. Two other advertisements were considered for the Château
+Frontenac:
+
+- a drawing in *L’Atlantique*, 19 July 1936, protected in the United
+  States to the end of 2031;
+- a listing in *Le Moniteur des consulats*, 1 March 1931, which has text
+  only. It is now a Source of `PL035` (`SRC1018`), because it presents the
+  hotel as a residential “home”.
+
+**`PL007` Wilcza 29** has no image at all. A photograph found earlier was
+rejected, because the library that holds it marks it as protected.
 
 The Pier 57 aerial is unlabelled. The 1907 pier, destroyed by fire in 1947,
 belonged to the Chelsea Piers, and the photograph shows that line of piers
