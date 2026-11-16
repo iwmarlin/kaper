@@ -240,10 +240,27 @@ Waters*. None of the 24 appears, under these or other authors' names. No
 edition, register entry or recording of the time naming Kaper was found
 for any of them.
 
-Hofmeister's monthly lists, the register that would document the German
-and French songs of 1931–1934, could not be reached from here. They are
-`W-S087`, `W-S103`, `W-S183` and `W-S191`.
-They are now `probable`:
+Hofmeister’s *Musikalisch-literarischer Monatsbericht*, the register of
+music published in the German-speaking countries, was then searched for
+the four German and French songs among them, `W-S087`, `W-S103`, `W-S183`
+and `W-S191`, in the volumes for 1929 to 1938 on the Internet Archive. None
+appears. The 1931 volume lists Kaper’s songs from *Die große Attraktion*
+and *Seitensprünge* and his tango *Ich weiß ein kleines Café*, with Austin
+Egen, but neither *Diese Melodie sing ich nur für Sie* nor *Mit dir möchte
+ich ziehn bis zum Ende der Welt*. The two French songs were published in
+Paris and would not be expected there.
+
+Two similar titles do appear, and neither names Kaper:
+
+- 1929: *Mit dir möcht ich ziehn bis ans Ende der Welt*, a slow fox by
+  J. Freudenthal (Leipzig, International-Edition);
+- 1932: *Mit einer schönen Frau geh ich gerne bis ans Ende der Welt*, a
+  tango by Arcany with words by Fritz Rotter (Wiener Boheme-Verlag).
+
+Whether Pfau’s entry for `W-S191` confuses either of them cannot be told
+from the lexicon, which gives no source.
+
+All 24 are now `probable`:
 
 - the song itself;
 - Kaper's credit and his co-authors' credits (56 credits);
