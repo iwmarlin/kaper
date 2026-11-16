@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 915,
+  "count": 917,
   "records": [
     {
       "id": "SRC0001",
@@ -35929,6 +35929,80 @@
       "organizationIds": [
         "ORG090"
       ]
+    },
+    {
+      "id": "SRC1016",
+      "shortCitation": "Bundesarchiv B 145 Bild-P014783, Berlin, Leipziger Platz und Leipziger Straße, c. 1930",
+      "fullCitation": "“Berlin; Leipziger Platz und Straße.” Photograph, c. 1930, by A. Frankl. Bundesarchiv, B 145 Bild-P014783; supplied to Wikimedia Commons through the German Federal Archive cooperation project.",
+      "sourceType": "wikimedia_commons_file",
+      "title": "Bundesarchiv B 145 Bild-P014783 — Berlin, Leipziger Platz und Leipziger Straße, c. 1930",
+      "creator": "A. Frankl",
+      "repository": "Bundesarchiv / Wikimedia Commons",
+      "publication": "Wikimedia Commons",
+      "date": "1930",
+      "dateRole": "creation",
+      "dateQualifier": "approximate",
+      "dateDisplay": "c. 1930",
+      "accessDate": "2026-11-16",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "slug": "src1016-bundesarchiv-b145-p014783-leipziger-platz-c1930",
+      "organizationIds": [
+        "ORG090",
+        "ORG169"
+      ],
+      "placeIds": [
+        "PL002"
+      ],
+      "mediaIds": [
+        "M482"
+      ],
+      "primaryUrl": "https://commons.wikimedia.org/wiki/File:Bundesarchiv_B_145_Bild-P014783,_Berlin,_Leipziger_Platz_und_Leipziger_Stra%C3%9Fe.jpg",
+      "additionalLinks": [
+        {
+          "label": "Creative Commons BY-SA 3.0 Germany licence",
+          "url": "https://creativecommons.org/licenses/by-sa/3.0/de/",
+          "role": "rights_statement"
+        }
+      ],
+      "researchNote": "The Bundesarchiv dates the photograph to about 1930. The signal tower on Potsdamer Platz stood from 1924 to 1937, which agrees with that date. The image stands for the city in Kaper’s Berlin years; it does not show a place connected with him.",
+      "researchNoteType": "date_assessment"
+    },
+    {
+      "id": "SRC1017",
+      "shortCitation": "“New York – Docks – New York Harbor”, aerial photograph, 18 July 1924, NARA 18-AA-94-41",
+      "fullCitation": "“New York – Docks – New York Harbor.” Aerial photograph, lettered “118 Docks – New York Harbor, 7-18-24, 14th Photo Section, Air Service, U.S. Army.” Records of the Army Air Forces, Record Group 18, series “Airscapes” of American and Foreign Areas, 18-AA-94-41. National Archives at College Park, Still Pictures, NAID 68146256.",
+      "sourceType": "archival_photograph",
+      "title": "New York – Docks – New York Harbor — aerial photograph, 1924",
+      "creator": "14th Photo Section, Air Service, U.S. Army",
+      "repository": "U.S. National Archives and Records Administration",
+      "publication": "National Archives Catalog",
+      "date": "1924-07-18",
+      "dateRole": "creation",
+      "dateQualifier": "confirmed",
+      "dateDisplay": "18 July 1924",
+      "accessDate": "2026-11-16",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "slug": "src1017-nara-18-aa-94-41-north-river-docks-1924",
+      "organizationIds": [
+        "ORG069"
+      ],
+      "placeIds": [
+        "PL025"
+      ],
+      "mediaIds": [
+        "M483"
+      ],
+      "primaryUrl": "https://catalog.archives.gov/id/68146256",
+      "identifiers": [
+        {
+          "scheme": "naid",
+          "value": "68146256"
+        }
+      ],
+      "researchNote": "The date is lettered on the print as 7-18-24. The view runs north from the Gansevoort Street market sheds along the Chelsea Piers, the line of piers from 54 to 62 to which the original Pier 57, built in 1907 and destroyed by fire in 1947, belonged. The print does not number the piers, so the record does not mark which shed is Pier 57.",
+      "researchNoteType": "identity_assessment"
     }
   ],
   "recordCount": null

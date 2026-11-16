@@ -83,7 +83,7 @@ lot.
 ## Images, 16 November 2026
 
 Sixteen places had no image whose rights allow it to be shown, or none at
-all. Eleven now have one.
+all. Thirteen now have one.
 
 ### Linked from the archive
 
@@ -107,6 +107,8 @@ Three images already in the archive depict a place that lacked one:
 | `PL038` London | `M479`, Muirhead Bone’s drypoint of Piccadilly Circus, 1915 | Public domain: Bone died in 1953; published in 1915 |
 | `PL013` Hamborn | `M480`, the town hall on a postcard posted on 7 October 1920 | Public domain: anonymous, published by 1920 |
 | `PL022` Hôtel George-V | `M481`, the façade photographed in 2021 | CC BY-SA 4.0 |
+| `PL002` Berlin | `M482`, Potsdamer Platz towards Leipziger Platz, c. 1930, Bundesarchiv B 145 Bild-P014783 | CC BY-SA 3.0 DE |
+| `PL025` Pier 57 | `M483`, the Chelsea piers from the air, 18 July 1924, NARA 18-AA-94-41 | Public domain: a work of the United States government |
 
 The four postcards come from the Tichnor Brothers Postcard Collection of
 the Boston Public Library. The backs of all four were checked, and none
@@ -120,14 +122,19 @@ hotel under clear terms was found.
 
 ### Still without an image
 
-- **`PL002` Berlin.** Suitable views of about 1930 are on Commons from the
-  Bundesarchiv (CC BY-SA 3.0 DE). One example is *Leipziger Platz und
-  Leipziger Straße*, B 145 Bild-P014783. Commons refused the download from
-  here.
 - **`PL006` MGM Studios.** The only images are the two of undetermined
   rights already on the record. No published view of the lot before 1931
   under clear terms was found.
-- **`PL025` Pier 57.** The 1907 pier burned in 1947, and every image on
-  Commons shows its successor.
-- **`PL035` Château Frontenac** and **`PL007` Wilcza 29** keep their
-  existing images. Those images are restricted, and no other image is known.
+- **`PL035` Château Frontenac.** The record's only image, `M071`, is a
+  restricted advertisement. It was printed in 1935 without a credit, so in
+  France it was protected until the end of 2005. It was therefore still
+  protected on 1 January 1996, and the URAA restored United States
+  copyright to the end of 2030.
+- **`PL007` Wilcza 29.** The record has no image. A photograph found
+  earlier was rejected, because the library that holds it marks it as
+  protected.
+
+The Pier 57 aerial is unlabelled. The 1907 pier, destroyed by fire in 1947,
+belonged to the Chelsea Piers, and the photograph shows that line of piers
+north of the Gansevoort Street market. The record therefore says that Pier
+57 is among them, but it does not mark which shed is Pier 57.
