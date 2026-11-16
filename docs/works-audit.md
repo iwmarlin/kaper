@@ -225,9 +225,24 @@ One of the 25 stays `confirmed`: `W-S178` *Les cols bleus de la marine*. Its
 Source, Images Musicales, reproduces a copy of the 1930 Salabert edition, so
 it rests on a document of the time.
 
-For the other 24 the BnF and Deutsche Nationalbibliothek catalogues were
-searched by title, and the archive's recordings were checked. None has an
-edition, a register entry or a recording of the time that names Kaper.
+For the other 24 three searches were made:
+
+- the BnF and Deutsche Nationalbibliothek catalogues, by title;
+- the archive's own recordings;
+- the full text of the Catalog of Copyright Entries, musical compositions,
+  for 1931 to 1938 (Internet Archive volumes 26 to 33). Each title was
+  searched, and so were the composer-index entries under Kaper and
+  Jurmann.
+
+The index entries list every song the two registered in those years, among
+them *Love Song of Tahiti*, *Keep the Magic of Maytime* and *Blue Venetian
+Waters*. None of the 24 appears, under these or other authors' names. No
+edition, register entry or recording of the time naming Kaper was found
+for any of them.
+
+Hofmeister's monthly lists, the register that would document the German
+and French songs of 1931–1934, could not be reached from here. They are
+`W-S087`, `W-S103`, `W-S183` and `W-S191`.
 They are now `probable`:
 
 - the song itself;
