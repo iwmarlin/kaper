@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 1390,
+  "count": 1391,
   "records": [
     {
       "id": "CON-F001-C-P009",
@@ -26284,6 +26284,29 @@
       "sourceIds": [
         "SRC0120"
       ]
+    },
+    {
+      "id": "CON-F006-C-P105",
+      "role": "composer",
+      "evidenceContext": [
+        "film_credits"
+      ],
+      "sortOrder": 42,
+      "certainty": "confirmed",
+      "workIds": [
+        "W-F006"
+      ],
+      "personIds": [
+        "P105"
+      ],
+      "sourceIds": [
+        "SRC0120"
+      ],
+      "nameAsPrinted": "Fritz German",
+      "nameVariantIds": [
+        "PNV0003"
+      ],
+      "scopeNote": "Filmportal names the composer as Fritz German, the pseudonym of Hermann Scheibenhofer, under which he and Kaper signed “Du lieber Geiger, spiel einen Tango für mich” from this film."
     }
   ]
 }

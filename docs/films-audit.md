@@ -40,8 +40,12 @@ credit are now `probable`.
   “Dr. B. Kaper” and Jurmann for the music.
 - **`F006` *Seitensprünge*.** Filmportal credits the music to Karl M. May,
   Kaper and Fritz German. Karl Michael May (`P113`) has a record here and
-  now has his composer credit. Fritz German has no record, and the note
-  names him.
+  now has his composer credit. Fritz German is the pseudonym of Hermann
+  Scheibenhofer (`P105`, name variant `PNV0003`). The index of the 1930
+  United States copyright catalogue resolves it, and he signed the film's
+  song “Du lieber Geiger” under it with Kaper. He now has his composer
+  credit, recorded under the printed name. An earlier version of this
+  audit wrongly said he had no record.
 
 ## Checked and left as they are
 
