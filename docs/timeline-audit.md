@@ -87,5 +87,18 @@ which was not printed in the Reichsgesetzblatt; its caption says so.
 
 A Warsaw photograph of ulica Wilcza was rejected. Europeana marks it public
 domain, but the library that holds it states that it is protected and that
-permission to publish was given to the library alone. `TE0045`, the police
-certificate of 1920, still has no image.
+permission to publish was given to the library alone.
+
+### The police certificate folded into the baptism, 17 November 2026
+
+`TE0045`, “Police certificate records Mosaic religion”, was the only event
+without an image. It was not an event in its own right. A certificate of
+good conduct of 21 April 1920, kept in the university file, gives Kaper’s
+religion as Mosaic. That is evidence for the change recorded three months
+later at the baptism.
+
+Its content now forms part of `TE0005`, the baptism. That event also takes
+its Source (Lindstedt, `SRC0490`) and its place, Wilcza 29 (`PL007`), the
+address in the university and police papers of 1920. The address of
+`TE0045` redirects to `TE0005`. The chronology has 55 events, and every
+one has an image.
