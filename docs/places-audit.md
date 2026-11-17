@@ -54,12 +54,6 @@ lot.
   Heffernan Avenue, where the 1933 inspection station stood. The
   OpenStreetMap point is the middle of the avenue, so the difference of
   145 m is expected.
-- **`PL032` Joinville.** Paramount's multiple-language versions were made at
-  the studios in Saint-Maurice, which were commonly called Joinville; the
-  Pathé studios stood in Joinville-le-Pont itself. The record is
-  `context_only` with a city-level marker, so the question does not move
-  the map. If it is ever made more precise, the studio should first be
-  identified from the 1929 *Pour Vous* article it cites.
 - **Region names** (`Masovian Voivodeship`, `Normandy`) are present-day
   administrative names. They serve to locate a place, not to describe it
   historically. Names of the time are carried by the authorized names and
@@ -153,3 +147,32 @@ The Pier 57 aerial is unlabelled. The 1907 pier, destroyed by fire in 1947,
 belonged to the Chelsea Piers, and the photograph shows that line of piers
 north of the Gansevoort Street market. The record therefore says that Pier
 57 is among them, but it does not mark which shed is Pier 57.
+
+## The Joinville studio identified, 17 November 2026
+
+`PL032` had been a city-level marker at Joinville-le-Pont. Its image,
+`M278`, showed the Cinéromans studio there, which later became Pathé-Natan.
+The trade press of the time used “Joinville” for two studios. *Ciné-Miroir*
+(12 October 1934, p. 654) names them: “à Joinville-le-Pont les studios
+Pathé-Natan, boulevard Gallieni, et les studios Paramount, rue des
+Réservoirs, à Saint-Maurice”.
+
+The studio relevant here is Paramount’s:
+
+- In May 1930 it had five stages and served Paramount’s plan for talking
+  pictures in six languages (*Exhibitors Daily Review*, 21 May 1930).
+- On 26 September 1933 *Variety* reported every stage booked and named
+  Erich Pommer’s Fox-Europa unit as preparing its next film there. That
+  film was *On a volé un homme*, with music by Jurmann and Kaper.
+- On 23 January 1934 *Variety* expected the unit to return to “the
+  Paramount Joinville studio”.
+
+`PL032` now records the Paramount studio at the rue des Réservoirs,
+Saint-Maurice (`site_approximate`). It cites these three items and the
+*Ciné-Miroir* note. `M278` is unlinked from the place and from `TE0051`,
+because it shows the other studio. It remains in the archive with its
+caption.
+
+Of Kaper’s other French films of 1933–34, *Variety* (24 July 1934) places
+the shooting of *Les nuits moscovites* at Billancourt. No studio has been
+established for *Une femme au volant* or *Le greluchon délicat*.
