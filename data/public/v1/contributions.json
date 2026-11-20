@@ -811,6 +811,7 @@
       ],
       "sourceIds": [
         "SRC0306",
+        "SRC0333",
         "SRC0373"
       ]
     },
@@ -3095,7 +3096,7 @@
         "stock_music"
       ],
       "sortOrder": 41,
-      "certainty": "confirmed",
+      "certainty": "probable",
       "workIds": [
         "W-F032"
       ],
@@ -3104,7 +3105,8 @@
       ],
       "sourceIds": [
         "SRC0373"
-      ]
+      ],
+      "scopeNote": "The film itself is probable; the credit rests on Sieghardt’s filmography."
     },
     {
       "id": "CON-F032-D-P007",
@@ -3334,6 +3336,7 @@
         "P009"
       ],
       "sourceIds": [
+        "SRC0045",
         "SRC0306",
         "SRC0373"
       ]
@@ -3353,6 +3356,7 @@
         "P077"
       ],
       "sourceIds": [
+        "SRC0045",
         "SRC0306",
         "SRC0373"
       ]
@@ -3705,8 +3709,8 @@
         "film_credits"
       ],
       "sortOrder": 41,
-      "certainty": "confirmed",
-      "scopeNote": "Composition of one or more songs associated with the film; this is not a claim to authorship of the complete film score.",
+      "certainty": "probable",
+      "scopeNote": "Composition of one or more songs associated with the film; this is not a claim to authorship of the complete film score. The film itself is probable; the credit rests on Sieghardt’s filmography, the Jurmann works catalogue and IMDb.",
       "workIds": [
         "W-F039"
       ],
@@ -4875,8 +4879,8 @@
         "film_credits"
       ],
       "sortOrder": 41,
-      "certainty": "confirmed",
-      "scopeNote": "Composition of one or more songs associated with the film; this is not a claim to authorship of the complete film score.",
+      "certainty": "probable",
+      "scopeNote": "Composition of one or more songs associated with the film; this is not a claim to authorship of the complete film score. The film itself is probable; the credit rests on Sieghardt’s filmography alone.",
       "workIds": [
         "W-F054"
       ],
@@ -4892,7 +4896,7 @@
       "role": "film_director",
       "nameAsPrinted": "Gaston Roudès",
       "sortOrder": 1,
-      "certainty": "confirmed",
+      "certainty": "probable",
       "workIds": [
         "W-F054"
       ],
@@ -4901,7 +4905,8 @@
       ],
       "sourceIds": [
         "SRC0373"
-      ]
+      ],
+      "scopeNote": "The film itself is probable; the credit rests on Sieghardt’s filmography alone."
     },
     {
       "id": "CON-F054-PC-ORG061",
@@ -12209,7 +12214,7 @@
       "role": "composer",
       "nameAsPrinted": "Bronislaw Kaper",
       "sortOrder": 1,
-      "certainty": "confirmed",
+      "certainty": "probable",
       "workIds": [
         "W-S097"
       ],
@@ -12222,14 +12227,15 @@
       ],
       "nameVariantIds": [
         "PNV0020"
-      ]
+      ],
+      "scopeNote": "The BnF record of the 1934 disc names Kaper as conductor but gives no composer statement; this credit rests on Sieghardt’s filmography and the Jurmann works catalogue."
     },
     {
       "id": "CON-S097-C-P079",
       "role": "composer",
       "nameAsPrinted": "André Roubier",
       "sortOrder": 2,
-      "certainty": "confirmed",
+      "certainty": "probable",
       "workIds": [
         "W-S097"
       ],
@@ -12240,7 +12246,7 @@
         "SRC0373",
         "SRC0306"
       ],
-      "scopeNote": "Alexander Sieghardt’s published work catalogue credits Walter Jurmann, Bronisław Kaper and André Roubier with the music; the official Walter Jurmann Songs page repeats the attribution.",
+      "scopeNote": "Alexander Sieghardt’s published work catalogue credits Walter Jurmann, Bronisław Kaper and André Roubier with the music; the official Walter Jurmann Songs page repeats the attribution. Rests on Sieghardt’s filmography and the Jurmann works catalogue; no document of the time naming the composers has been traced.",
       "evidenceLocator": "Sieghardt work catalogue, p. 196, entry 099"
     },
     {
@@ -12271,7 +12277,7 @@
       "role": "lyricist",
       "nameAsPrinted": "Louis Poterat",
       "sortOrder": 1,
-      "certainty": "confirmed",
+      "certainty": "probable",
       "workIds": [
         "W-S097"
       ],
@@ -12281,7 +12287,8 @@
       "sourceIds": [
         "SRC0373",
         "SRC0306"
-      ]
+      ],
+      "scopeNote": "Rests on Sieghardt’s filmography and the Jurmann works catalogue; no document of the time naming the lyricist has been traced."
     },
     {
       "id": "CON-S097-P-P132",
@@ -13794,7 +13801,7 @@
       "role": "composer",
       "nameAsPrinted": "André Roubier",
       "sortOrder": 2,
-      "certainty": "confirmed",
+      "certainty": "probable",
       "workIds": [
         "W-S116"
       ],
@@ -13805,7 +13812,7 @@
         "SRC0373",
         "SRC0306"
       ],
-      "scopeNote": "Alexander Sieghardt’s published work catalogue names André Roubier alongside Walter Jurmann and Bronisław Kaper; the official Walter Jurmann Songs page repeats the attribution. The Salabert recording source does not name Roubier.",
+      "scopeNote": "Alexander Sieghardt’s published work catalogue names André Roubier alongside Walter Jurmann and Bronisław Kaper; the official Walter Jurmann Songs page repeats the attribution. The Salabert recording source does not name Roubier. The Salabert disc names only Kaper and Jurmann as composers; Roubier’s share rests on Sieghardt’s filmography and the Jurmann works catalogue.",
       "evidenceLocator": "Sieghardt work catalogue, entry “Pourvu qu’on ait vingt ans”"
     },
     {
@@ -17572,7 +17579,7 @@
       "role": "composer",
       "nameAsPrinted": "Bronisław Kaper",
       "sortOrder": 10,
-      "certainty": "confirmed",
+      "certainty": "probable",
       "workIds": [
         "W-S177"
       ],
@@ -17582,14 +17589,15 @@
       "sourceIds": [
         "SRC0301",
         "SRC0373"
-      ]
+      ],
+      "scopeNote": "Rests on Sieghardt’s filmography and the metadata of a 2014 digital reissue; no document of the time naming the composers has been traced."
     },
     {
       "id": "CON-S177-C-P077",
       "role": "composer",
       "nameAsPrinted": "Walter Jurmann",
       "sortOrder": 11,
-      "certainty": "confirmed",
+      "certainty": "probable",
       "workIds": [
         "W-S177"
       ],
@@ -17599,14 +17607,15 @@
       "sourceIds": [
         "SRC0301",
         "SRC0373"
-      ]
+      ],
+      "scopeNote": "Rests on Sieghardt’s filmography and the metadata of a 2014 digital reissue; no document of the time naming the composers has been traced."
     },
     {
       "id": "CON-S177-L-P041",
       "role": "lyricist",
       "nameAsPrinted": "Jean Féline",
       "sortOrder": 1,
-      "certainty": "confirmed",
+      "certainty": "probable",
       "workIds": [
         "W-S177"
       ],
@@ -17615,7 +17624,8 @@
       ],
       "sourceIds": [
         "SRC0373"
-      ]
+      ],
+      "scopeNote": "Rests on Sieghardt’s filmography alone."
     },
     {
       "id": "CON-S178-C-P009",
@@ -23880,7 +23890,7 @@
       "role": "composer",
       "nameAsPrinted": "Bronislaw Kaper",
       "sortOrder": 1,
-      "certainty": "confirmed",
+      "certainty": "probable",
       "workIds": [
         "W-S088"
       ],
@@ -23893,14 +23903,14 @@
       "nameVariantIds": [
         "PNV0020"
       ],
-      "scopeNote": "The printed edition credits the music to Pierre Candel (Walter Jurmann) alone; the official Walter Jurmann works catalogue records the song as written in collaboration with Bronisław Kaper."
+      "scopeNote": "The printed edition credits the music to Pierre Candel (Walter Jurmann) alone; the official Walter Jurmann works catalogue records the song as written in collaboration with Bronisław Kaper. The printed score credits the music to Pierre Candel, Jurmann’s pseudonym, alone; Kaper’s share rests on the Walter Jurmann works catalogue."
     },
     {
       "id": "CON-S089-C-P009",
       "role": "composer",
       "nameAsPrinted": "Bronislaw Kaper",
       "sortOrder": 1,
-      "certainty": "confirmed",
+      "certainty": "probable",
       "workIds": [
         "W-S089"
       ],
@@ -23913,14 +23923,14 @@
       "nameVariantIds": [
         "PNV0020"
       ],
-      "scopeNote": "The printed edition credits the music to Pierre Candel (Walter Jurmann) alone; the official Walter Jurmann works catalogue records the song as written in collaboration with Bronisław Kaper."
+      "scopeNote": "The printed edition credits the music to Pierre Candel (Walter Jurmann) alone; the official Walter Jurmann works catalogue records the song as written in collaboration with Bronisław Kaper. The printed score credits the music to Pierre Candel, Jurmann’s pseudonym, alone; Kaper’s share rests on the Walter Jurmann works catalogue."
     },
     {
       "id": "CON-S090-C-P009",
       "role": "composer",
       "nameAsPrinted": "Bronislaw Kaper",
       "sortOrder": 1,
-      "certainty": "confirmed",
+      "certainty": "probable",
       "workIds": [
         "W-S090"
       ],
@@ -23933,14 +23943,14 @@
       "nameVariantIds": [
         "PNV0020"
       ],
-      "scopeNote": "The printed edition credits the music to Pierre Candel (Walter Jurmann) alone; the official Walter Jurmann works catalogue records the song as written in collaboration with Bronisław Kaper."
+      "scopeNote": "The printed edition credits the music to Pierre Candel (Walter Jurmann) alone; the official Walter Jurmann works catalogue records the song as written in collaboration with Bronisław Kaper. The printed score credits the music to Pierre Candel, Jurmann’s pseudonym, alone; Kaper’s share rests on the Walter Jurmann works catalogue."
     },
     {
       "id": "CON-S091-C-P009",
       "role": "composer",
       "nameAsPrinted": "Bronislaw Kaper",
       "sortOrder": 1,
-      "certainty": "confirmed",
+      "certainty": "probable",
       "workIds": [
         "W-S091"
       ],
@@ -23953,14 +23963,14 @@
       "nameVariantIds": [
         "PNV0020"
       ],
-      "scopeNote": "The printed edition credits the music to Pierre Candel (Walter Jurmann) alone; the official Walter Jurmann works catalogue records the song as written in collaboration with Bronisław Kaper."
+      "scopeNote": "The printed edition credits the music to Pierre Candel (Walter Jurmann) alone; the official Walter Jurmann works catalogue records the song as written in collaboration with Bronisław Kaper. The printed score credits the music to Pierre Candel, Jurmann’s pseudonym, alone; Kaper’s share rests on the Walter Jurmann works catalogue."
     },
     {
       "id": "CON-S097-C-P077",
       "role": "composer",
       "nameAsPrinted": "Walter Jurmann",
       "sortOrder": 2,
-      "certainty": "confirmed",
+      "certainty": "probable",
       "workIds": [
         "W-S097"
       ],
@@ -23971,7 +23981,7 @@
         "SRC0373",
         "SRC0306"
       ],
-      "scopeNote": "Alexander Sieghardt’s published work catalogue credits Walter Jurmann, Bronisław Kaper and André Roubier with the music; the official Walter Jurmann Songs page repeats the attribution.",
+      "scopeNote": "Alexander Sieghardt’s published work catalogue credits Walter Jurmann, Bronisław Kaper and André Roubier with the music; the official Walter Jurmann Songs page repeats the attribution. Rests on Sieghardt’s filmography and the Jurmann works catalogue; no document of the time naming the composers has been traced.",
       "evidenceLocator": "Sieghardt work catalogue, p. 196, entry 099"
     },
     {
