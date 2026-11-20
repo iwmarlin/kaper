@@ -49,6 +49,9 @@ LEGACY_WITHDRAWN_REDIRECTS[("source", "SRC0839")] = ("source", "SRC1002")
 # The police certificate of April 1920 (TE0045) was folded into the baptism
 # event in November 2026: it is evidence for that change, not an event.
 LEGACY_WITHDRAWN_REDIRECTS[("event", "TE0045")] = ("event", "TE0005")
+# Maxim-Film GmbH (ORG007) was withdrawn in November 2026: no source names it
+# among the producers of Ihre Majestät die Liebe, whose page replaces it.
+LEGACY_WITHDRAWN_REDIRECTS[("organization", "ORG007")] = ("work", "W-F004")
 # Each old (kind, id) maps to the (kind, id) whose page replaces it.
 LEGACY_REDIRECTS = (
     {("source", old): ("source", new) for old, new in LEGACY_SOURCE_REDIRECTS.items()}

@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 1391,
+  "count": 1390,
   "records": [
     {
       "id": "CON-F001-C-P009",
@@ -278,24 +278,6 @@
       ],
       "organizationIds": [
         "ORG006"
-      ],
-      "sourceIds": [
-        "SRC0117"
-      ]
-    },
-    {
-      "id": "CON-F004-PC-ORG007",
-      "role": "production_company",
-      "nameAsPrinted": "Maxim-Film GmbH",
-      "evidenceContext": [
-        "film_credits"
-      ],
-      "certainty": "confirmed",
-      "workIds": [
-        "W-F004"
-      ],
-      "organizationIds": [
-        "ORG007"
       ],
       "sourceIds": [
         "SRC0117"
@@ -1431,7 +1413,7 @@
       "evidenceContext": [
         "film_credits"
       ],
-      "certainty": "confirmed",
+      "certainty": "probable",
       "workIds": [
         "W-F016"
       ],
@@ -1441,7 +1423,8 @@
       "sourceIds": [
         "SRC0127",
         "SRC0373"
-      ]
+      ],
+      "scopeNote": "Credited by Sieghardt’s filmography alone; filmportal.de names no production company for this version."
     },
     {
       "id": "CON-F017-C-P009",
@@ -4927,7 +4910,7 @@
       "evidenceContext": [
         "film_credits"
       ],
-      "certainty": "confirmed",
+      "certainty": "probable",
       "workIds": [
         "W-F054"
       ],
@@ -4936,7 +4919,8 @@
       ],
       "sourceIds": [
         "SRC0373"
-      ]
+      ],
+      "scopeNote": "Credited by Sieghardt’s filmography alone; no document of the time naming the company has been traced."
     },
     {
       "id": "CON-F055-D-P095",
@@ -6462,7 +6446,8 @@
       ],
       "sourceIds": [
         "SRC0103",
-        "SRC0707"
+        "SRC0707",
+        "SRC1023"
       ],
       "nameVariantIds": [
         "PNV0019"
@@ -6488,7 +6473,7 @@
     {
       "id": "CON-S009-PUB-ORG033",
       "role": "publisher",
-      "nameAsPrinted": "Alrobi Musikverlag",
+      "nameAsPrinted": "Musikverlag Alrobi",
       "evidenceContext": [
         "sheet_music"
       ],
@@ -6500,7 +6485,7 @@
         "ORG033"
       ],
       "sourceIds": [
-        "SRC0103"
+        "SRC1023"
       ]
     },
     {
@@ -7511,25 +7496,6 @@
       ],
       "personIds": [
         "P020"
-      ],
-      "sourceIds": [
-        "SRC0292",
-        "SRC0465"
-      ]
-    },
-    {
-      "id": "CON-S026-PUB-ORG037",
-      "role": "publisher",
-      "nameAsPrinted": "Drei-Masken Verlag",
-      "evidenceContext": [
-        "sheet_music"
-      ],
-      "certainty": "confirmed",
-      "workIds": [
-        "W-S026"
-      ],
-      "organizationIds": [
-        "ORG037"
       ],
       "sourceIds": [
         "SRC0292",
@@ -26307,6 +26273,25 @@
         "PNV0003"
       ],
       "scopeNote": "Filmportal names the composer as Fritz German, the pseudonym of Hermann Scheibenhofer, under which he and Kaper signed “Du lieber Geiger, spiel einen Tango für mich” from this film."
+    },
+    {
+      "id": "CON-S026-PUB-ORG033",
+      "role": "publisher",
+      "nameAsPrinted": "Alrobi Musikverlag G.m.b.H.",
+      "evidenceContext": [
+        "sheet_music"
+      ],
+      "certainty": "confirmed",
+      "workIds": [
+        "W-S026"
+      ],
+      "organizationIds": [
+        "ORG033"
+      ],
+      "sourceIds": [
+        "SRC0292",
+        "SRC0465"
+      ]
     }
   ]
 }
