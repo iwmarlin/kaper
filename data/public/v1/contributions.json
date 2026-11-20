@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 1390,
+  "count": 1389,
   "records": [
     {
       "id": "CON-F001-C-P009",
@@ -6694,11 +6694,11 @@
     {
       "id": "CON-S013-PUB-ORG033",
       "role": "publisher",
-      "nameAsPrinted": "Alrobi-Musikverlag",
+      "nameAsPrinted": "Musikverlag Alrobi",
       "evidenceContext": [
         "sheet_music"
       ],
-      "certainty": "confirmed",
+      "certainty": "probable",
       "workIds": [
         "W-S013"
       ],
@@ -6706,26 +6706,10 @@
         "ORG033"
       ],
       "sourceIds": [
-        "SRC0787"
-      ]
-    },
-    {
-      "id": "CON-S013-PUB-ORG049",
-      "role": "publisher",
-      "nameAsPrinted": "Edition Meisel & Co.",
-      "evidenceContext": [
-        "sheet_music"
+        "SRC0787",
+        "SRC1024"
       ],
-      "certainty": "confirmed",
-      "workIds": [
-        "W-S013"
-      ],
-      "organizationIds": [
-        "ORG049"
-      ],
-      "sourceIds": [
-        "SRC0787"
-      ]
+      "scopeNote": "Publisher of the album 1000 Takte Tanz, Band 2, in which the song is printed. The publisher of the song’s own first edition is not documented."
     },
     {
       "id": "CON-S014-C-P009",

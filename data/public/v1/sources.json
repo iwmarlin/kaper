@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 923,
+  "count": 924,
   "records": [
     {
       "id": "SRC0001",
@@ -28377,8 +28377,7 @@
       "contributionIds": [
         "CON-S013-C-P009",
         "CON-S013-L-P020",
-        "CON-S013-PUB-ORG033",
-        "CON-S013-PUB-ORG049"
+        "CON-S013-PUB-ORG033"
       ],
       "titleVariantIds": [
         "TV0311"
@@ -36166,6 +36165,39 @@
       "primaryUrl": "https://archive.org/details/Musikalisch-literarischerMonatsbericht1929/page/n64/mode/1up",
       "researchNote": "The entry is listed under Kaper alone and names the Berlin publisher Alrobi for the salon-orchestra and voice-and-piano editions. A separate entry of December 1929 (p. 287) records an arrangement for band published by Seifert of Eppendorf; that entry does not concern Alrobi.",
       "researchNoteType": "evidence_note"
+    },
+    {
+      "id": "SRC1024",
+      "shortCitation": "Hofmeister, May 1929, p. 124 — “1000 Takte Tanz”",
+      "fullCitation": "1000 Takte Tanz. 24 der populärsten Tanz- u. Gesangsschlager, f. Ges. m. Pfte. [1929.] (51 S.) Berlin: Musikverlag Alrobi. Registered in Hofmeisters Musikalisch-literarischer Monatsbericht (May 1929): 124. Internet Archive scan, leaf n123.",
+      "sourceType": "sheet_music_catalogue",
+      "title": "Hofmeisters Musikalisch-literarischer Monatsbericht: “1000 Takte Tanz”",
+      "creator": "Musikverlag Alrobi",
+      "repository": "Internet Archive",
+      "publication": "Musikverlag Alrobi, Berlin",
+      "date": "1929-05",
+      "dateRole": "catalogue_volume",
+      "dateQualifier": "confirmed",
+      "accessDate": "2026-11-20",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "slug": "src1024-1000-takte-tanz-alrobi-1929",
+      "organizationIds": [
+        "ORG033",
+        "ORG067"
+      ],
+      "workIds": [
+        "W-S013"
+      ],
+      "contributionIds": [
+        "CON-S013-PUB-ORG033"
+      ],
+      "primaryUrl": "https://archive.org/details/Musikalisch-literarischerMonatsbericht1929/page/n123/mode/1up",
+      "researchNote": "Registers the first volume of Alrobi’s album series 1000 Takte Tanz; the 1930 volume registers its fourth volume, again with Alrobi (Hofmeister 1930, leaf n236). The second volume, in which “Wenn wir nicht beide in Gesellschaft wären” is printed, has not been found in the register, but it belongs to the same Alrobi series.",
+      "researchNoteType": "evidence_note",
+      "songIds": [
+        "S013"
+      ]
     }
   ],
   "recordCount": null

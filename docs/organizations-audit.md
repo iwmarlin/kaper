@@ -92,16 +92,33 @@ now it had no link at all.
 - **Wiener Bohème Verlag** is the same entity as the GND heading, whose
   later dates (1947 and after) belong to the post-war Berlin house.
 
-## Open
+## Resolved after review, 20 November 2026
 
-- **`W-S013`, Edition Meisel.** The song's two publisher credits, Alrobi
-  and Edition Meisel & Co., cite the Deutsches Lied index of *1000 Takte
-  Tanz*, Band 2. Hofmeister (1929, 1930) lists that album series as
-  Alrobi's, which supports the Alrobi credit. The index record that would
-  show Meisel cannot be opened automatically, so the Meisel credit is left
-  as it stands.
-- **UniFrance.** The French production credits that cite UniFrance (Films
-  R.P., Vandor-Film, and SIC for *Le greluchon délicat*) could not be
-  re-read. The site blocks automated access.
+- **UniFrance.** The French production credits that cite UniFrance were
+  checked in a browser and agree:
+  - Vandor-Film for *Mariage à responsabilité limitée*;
+  - Films R.P. for *Une femme au volant*;
+  - Films R.P. and the SIC for *Le greluchon délicat*.
+- **`W-S013`, “Wenn wir nicht beide in Gesellschaft wären”.** The
+  Deutsches Lied record, read in a browser, names no publisher. GEMA has
+  no entry for the song. The song is not registered in the 1929 or 1930
+  copyright catalogue, nor in Hofmeister for those years.
+  - The credit to Edition Meisel & Co. had no source and is withdrawn.
+  - Alrobi is kept as the publisher of the album *1000 Takte Tanz*,
+    Band 2, in which the song is printed. Hofmeister registers the
+    series as Alrobi's: the first volume in May 1929 (p. 124, `SRC1024`)
+    and the fourth in 1930.
+  - That credit is now `probable`. Its note says that the first edition's
+    publisher is not documented.
 - **The Seifert band arrangement** of “Tränen weint jede Frau so gern” is
   recorded in `SRC0103` but has no publisher credit of its own.
+
+## Open
+
+The anthology's title for `W-S013` carries the bracket “(Vergißmeinnicht)”.
+The only Rotter–Kaper song of 1929 with that word that Hofmeister and the
+copyright catalogue register is “Nimm diesen Strauß Vergißmeinnicht”
+(`W-S007`, Roehr). The anthology's title may be a line of its refrain. In
+that case the two records describe one song. The point can be settled from
+the recording linked to `W-S007` (`M336`) or from a printed text. Until
+then the records stay separate.
