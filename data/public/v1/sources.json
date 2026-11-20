@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 922,
+  "count": 923,
   "records": [
     {
       "id": "SRC0001",
@@ -3524,8 +3524,7 @@
       ],
       "contributionIds": [
         "CON-S009-C-P009",
-        "CON-S009-L-P020",
-        "CON-S009-PUB-ORG033"
+        "CON-S009-L-P020"
       ],
       "nameVariantIds": [
         "PNV0019"
@@ -4081,7 +4080,6 @@
       ],
       "organizationIds": [
         "ORG006",
-        "ORG007",
         "ORG072"
       ],
       "workIds": [
@@ -4094,8 +4092,7 @@
         "CON-F004-C-P077",
         "CON-F004-D-P044",
         "CON-F004-MD-P142",
-        "CON-F004-PC-ORG006",
-        "CON-F004-PC-ORG007"
+        "CON-F004-PC-ORG006"
       ],
       "primaryUrl": "https://www.filmportal.de/film/ihre-majestaet-die-liebe_fd3471af6daf45eaa4f5ee88572a05bc"
     },
@@ -11494,7 +11491,7 @@
         "CON-S026-C-P009",
         "CON-S026-C-P020",
         "CON-S026-L-P020",
-        "CON-S026-PUB-ORG037"
+        "CON-S026-PUB-ORG033"
       ],
       "nameVariantIds": [
         "PNV0019"
@@ -17027,7 +17024,7 @@
         "CON-S026-C-P009",
         "CON-S026-C-P020",
         "CON-S026-L-P020",
-        "CON-S026-PUB-ORG037"
+        "CON-S026-PUB-ORG033"
       ],
       "nameVariantIds": [
         "PNV0019"
@@ -36134,6 +36131,40 @@
       ],
       "primaryUrl": "https://lantern.mediahist.org/catalog/exhibitorsdailyr27unse_0574",
       "researchNote": "Reports Jesse L. Lasky’s announcement that “Paramount already has a studio with five stages at Joinville, near Paris, in charge of Robert T. Kane”, as part of its plan “to produce talking pictures in six different languages — French, Spanish, German, Italian, Swedish and Hungarian”.",
+      "researchNoteType": "evidence_note"
+    },
+    {
+      "id": "SRC1023",
+      "shortCitation": "Hofmeister, March 1929, p. 65 — “Tränen weint jede Frau so gern. Lied u. Tango”",
+      "fullCitation": "B. Kaper, “Tränen weint jede Frau so gern.” Lied u. Tango, for salon orchestra with jazz parts, arranged by N. Dostal; edition for voice and piano. Berlin: Musikverlag Alrobi, 1929. Registered in Hofmeisters Musikalisch-literarischer Monatsbericht (March 1929): 65. Internet Archive scan, leaf n64.",
+      "sourceType": "sheet_music_catalogue",
+      "title": "Hofmeisters Musikalisch-literarischer Monatsbericht: “Tränen weint jede Frau so gern. Lied u. Tango”",
+      "creator": "B. Kaper",
+      "repository": "Internet Archive",
+      "publication": "Musikverlag Alrobi, Berlin",
+      "date": "1929-03",
+      "dateRole": "catalogue_volume",
+      "dateQualifier": "confirmed",
+      "accessDate": "2026-11-20",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "slug": "src1023-traenen-weint-jede-frau-so-gern-alrobi-1929",
+      "organizationIds": [
+        "ORG033",
+        "ORG067"
+      ],
+      "workIds": [
+        "W-S009"
+      ],
+      "songIds": [
+        "S009"
+      ],
+      "contributionIds": [
+        "CON-S009-C-P009",
+        "CON-S009-PUB-ORG033"
+      ],
+      "primaryUrl": "https://archive.org/details/Musikalisch-literarischerMonatsbericht1929/page/n64/mode/1up",
+      "researchNote": "The entry is listed under Kaper alone and names the Berlin publisher Alrobi for the salon-orchestra and voice-and-piano editions. A separate entry of December 1929 (p. 287) records an arrangement for band published by Seifert of Eppendorf; that entry does not concern Alrobi.",
       "researchNoteType": "evidence_note"
     }
   ],

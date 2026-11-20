@@ -43,7 +43,9 @@ class UploaderEvidenceQualificationTests(unittest.TestCase):
 
     def test_alrobi_credit_keeps_only_independent_score_evidence(self):
         credit_id = "CON-S009-PUB-ORG033"
-        self.assertEqual(self.contributions[credit_id]["sourceIds"], ["SRC0103"])
+        # Hofmeister, March 1929, p. 65 names Alrobi; SRC0103 (December 1929) is
+        # the separate Seifert band arrangement and does not concern Alrobi.
+        self.assertEqual(self.contributions[credit_id]["sourceIds"], ["SRC1023"])
         self.assertEqual(self.contributions[credit_id]["certainty"], "confirmed")
         self.assertNotIn(credit_id, self.sources["SRC0707"]["contributionIds"])
         removals = self.overrides["linkRemovals"]

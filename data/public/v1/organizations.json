@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 243,
+  "count": 242,
   "records": [
     {
       "id": "ORG001",
@@ -179,6 +179,9 @@
           "scheme": "isni",
           "url": "https://isni.org/isni/0000000405252995"
         }
+      ],
+      "placeIds": [
+        "PL006"
       ]
     },
     {
@@ -337,29 +340,6 @@
       ]
     },
     {
-      "id": "ORG007",
-      "displayName": "Maxim-Film GmbH",
-      "authorizedName": "Maxim-Film GmbH",
-      "types": [
-        "film_studio"
-      ],
-      "city": [
-        "Berlin"
-      ],
-      "country": "Germany",
-      "slug": "maxim-film-gmbh",
-      "authorizedNameSource": "Filmportal.de",
-      "sourceIds": [
-        "SRC0117"
-      ],
-      "contributionIds": [
-        "CON-F004-PC-ORG007"
-      ],
-      "workIds": [
-        "W-F004"
-      ]
-    },
-    {
       "id": "ORG008",
       "displayName": "Vandor-Film",
       "authorizedName": "Vandor Film",
@@ -444,7 +424,8 @@
           "scheme": "gnd",
           "url": "https://d-nb.info/gnd/3053169-X"
         }
-      ]
+      ],
+      "nameVariants": "Münchener Lichtspielkunst AG; MLK; Emelka"
     },
     {
       "id": "ORG011",
@@ -497,6 +478,10 @@
           "scheme": "gnd",
           "url": "https://d-nb.info/gnd/19944-8"
         }
+      ],
+      "placeIds": [
+        "PL020",
+        "PL031"
       ]
     },
     {
@@ -967,17 +952,18 @@
     },
     {
       "id": "ORG029",
-      "displayName": "Wiener Boheme Verlag",
+      "displayName": "Wiener Bohème Verlag",
       "authorizedName": "Wiener Bohème Verlag",
       "types": [
         "publisher"
       ],
       "city": [
-        "Vienna"
+        "Vienna",
+        "Berlin"
       ],
       "country": "Austria",
       "slug": "wiener-boheme-verlag",
-      "nameVariants": "Wiener Bohème Verlag",
+      "nameVariants": "Wiener Boheme-Verlag; Wiener Bohème-Verlag Otto Hein; Wiener Bohème Verlag G.m.b.H.",
       "sourceIds": [
         "SRC0101",
         "SRC0157",
@@ -1041,7 +1027,8 @@
           "scheme": "viaf",
           "url": "https://viaf.org/viaf/305221456"
         }
-      ]
+      ],
+      "publicNote": "Vienna music publisher founded on 1 November 1919 as the Firma Wiener Bohème Verlag (Otto Hein), with a branch in Berlin soon after. On 19 December 1931 Ufa bought the Berlin branch, which became the Wiener Bohème Verlag G.m.b.H.; Otto Hein remained its manager until the end of 1932, after which it was a wholly owned subsidiary of Ufa. The Vienna house was struck from the register on 21 November 1941. These dates follow the GND record."
     },
     {
       "id": "ORG030",
@@ -1130,7 +1117,7 @@
     {
       "id": "ORG031",
       "displayName": "Edition Karl Brüll",
-      "authorizedName": "Edition Karl Brüll",
+      "authorizedName": "Edition Karl Brüll (Berliner Bohème-Verlag)",
       "types": [
         "publisher"
       ],
@@ -1171,8 +1158,18 @@
         "W-S207",
         "W-S211"
       ],
-      "publicNote": "Berlin music publisher documented under the names Edition Karl Brüll and Berliner Bohème-Verlag. No matching formal GND or VIAF corporate authority has been identified.",
-      "authorizedNameSource": "local heading"
+      "publicNote": "Berlin music publisher, printed as Edition Brüll in the registers of 1931–1932. The GND records it as Edition Karl Brüll (Berliner Bohème-Verlag), owned by Karl Brüll from 1 January 1922, and as the successor of the Berliner Bohème-Verlag, Inh. Karl Brüll. Whether its owner is the lyricist of the same name is not established here.",
+      "authorizedNameSource": "GND",
+      "authorities": [
+        {
+          "scheme": "gnd",
+          "url": "https://d-nb.info/gnd/107295706X"
+        },
+        {
+          "scheme": "viaf",
+          "url": "https://viaf.org/viaf/311832467"
+        }
+      ]
     },
     {
       "id": "ORG032",
@@ -1227,7 +1224,8 @@
         "SRC0214",
         "SRC0223",
         "SRC0787",
-        "SRC0869"
+        "SRC0869",
+        "SRC1023"
       ],
       "contributionIds": [
         "CON-O015-PUB-ORG033",
@@ -1243,6 +1241,7 @@
         "CON-S021-PUB-ORG033",
         "CON-S023-PUB-ORG033",
         "CON-S025-PUB-ORG033",
+        "CON-S026-PUB-ORG033",
         "CON-S030-PUB-ORG033",
         "CON-S031-PUB-ORG033",
         "CON-S046-PUB-ORG033",
@@ -1270,6 +1269,7 @@
         "W-S021",
         "W-S023",
         "W-S025",
+        "W-S026",
         "W-S030",
         "W-S031",
         "W-S046",
@@ -1482,13 +1482,11 @@
         "SRC0179"
       ],
       "contributionIds": [
-        "CON-S026-PUB-ORG037",
         "CON-S027-PUB-ORG037",
         "CON-S048-PUB-ORG037",
         "CON-S051-PUB-ORG037"
       ],
       "workIds": [
-        "W-S026",
         "W-S027",
         "W-S048",
         "W-S051"
@@ -1626,6 +1624,9 @@
           "scheme": "viaf",
           "url": "https://viaf.org/viaf/133781096"
         }
+      ],
+      "placeIds": [
+        "PL021"
       ]
     },
     {
@@ -2874,7 +2875,8 @@
         "SRC1019",
         "SRC1020",
         "SRC1021",
-        "SRC1022"
+        "SRC1022",
+        "SRC1023"
       ],
       "authorizedNameSource": "LCNAF",
       "authorities": [
@@ -4445,6 +4447,12 @@
       "sourceIds": [
         "SRC0552",
         "SRC0554"
+      ],
+      "placeIds": [
+        "PL046"
+      ],
+      "timelineEventIds": [
+        "TE0014"
       ]
     },
     {
