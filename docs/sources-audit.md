@@ -407,11 +407,10 @@ wieder besser* as another form of its title (`REL0144`). That print is of
   `TV0129`, `TV0166`, `TV0252`, `TV0289`, `TV0290`, `TV0292`–`TV0294`,
   `TV0322`, `TV0323`. Five of them name Works that are already probable.
 
-`tests/test_sources_period_evidence.py` fails if a confirmed title variant,
-or a confirmed relation involving a song, comes to rest on the three
-catalogues alone again.
+`tests/test_sources_period_evidence.py` fails if a confirmed title variant
+or a confirmed relation comes to rest on the three catalogues alone again.
 
-**Open: six relations between films.** `REL0127` and `REL0129`–`REL0133`
+**Six relations between films.** `REL0127` and `REL0129`–`REL0133`
 record that *Son altesse l’amour*, *Tout pour l’amour*, *Madame ne veut pas
 d’enfants*, *Le chant du destin*, *L’Homme qui ne sait pas dire non* and
 *Voyage de noces* are the French versions of the German films. Each cites
@@ -427,7 +426,9 @@ on the Internet Archive. None names a French film as the version of a
 German one. The French trade press of those years, La Cinématographie
 française, Cinémonde, Pour Vous and Hebdo-Film, is on Gallica, which was not
 searched from here. These multiple-language versions are not in doubt in
-film history, so they were not lowered without a decision.
+film history, but on 21 November 2026 they were lowered to probable all the
+same, each with a note that Sieghardt alone states the link, until a page of
+the French trade press is found. The test now covers every relation.
 
 **Checked and left.** Two filmportal links that looked dead were whole when
 requested in full; the address had been cut short in this audit's own
