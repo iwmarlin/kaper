@@ -2,8 +2,8 @@
 
 docs/sources-audit.md, "Period evidence, 21 November 2026": Sieghardt's work
 catalogue, Görner's work list and the Walter Jurmann website may be wrong, and
-a title variant or a relation between a song and another work that rests on
-them alone is at most probable.
+a title variant or a relation between works that rests on them alone is at
+most probable.
 """
 
 import json
@@ -26,13 +26,9 @@ class PeriodEvidenceTests(unittest.TestCase):
                 with self.subTest(variant=variant["id"]):
                     self.assertFalse(set(variant["sourceIds"]) <= SECONDARY_CATALOGUES)
 
-    def test_no_confirmed_song_relation_rests_on_a_catalogue_alone(self):
-        works = table("works")
+    def test_no_confirmed_relation_rests_on_a_catalogue_alone(self):
         for relation in table("work-relations").values():
-            ids = relation["sourceWorkIds"] + relation["targetWorkIds"]
             if relation["certainty"] != "confirmed":
-                continue
-            if not any(works[w]["workType"] == "Song" for w in ids):
                 continue
             with self.subTest(relation=relation["id"]):
                 self.assertFalse(set(relation["sourceIds"]) <= SECONDARY_CATALOGUES)
