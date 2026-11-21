@@ -34,8 +34,8 @@ import {
   sourceTypePluralLabel,
   typeBadge,
   updateMeta,
-} from "./core.js?v=3c104218a8";
-import { RECORD_INDEXES, recordIndexReturn } from "./catalogue-filters.js?v=3c104218a8";
+} from "./core.js?v=473851dece";
+import { RECORD_INDEXES, recordIndexReturn } from "./catalogue-filters.js?v=473851dece";
 
 // A canonical record route arrives prerendered and renders no image in the
 // browser, so the image map is loaded only where a record is actually rendered:
@@ -1972,7 +1972,7 @@ export function renderRecordMarkup(view, requestedId, requestedType) {
       ${view.leading ? `<div class="shell record-leading">${view.leading}</div>` : ""}
       <div class="shell record-layout${view.fullWidth ? " record-layout--single" : ""}">
         <div>${view.main || `<div class="empty-state"><p>No additional public detail is available.</p></div>`}</div>
-        <aside>${view.aside || ""}</aside>
+        <div class="record-layout__aside">${view.aside || ""}</div>
       </div>
     </section>`.replace(/[ \t]+$/gm, "");
 }
@@ -2085,7 +2085,7 @@ async function bootstrapRecordPage() {
     }
     const [data, { IMAGE_DERIVATIVES }] = await Promise.all([
       loadRecordPayload(requestedType, requestedId),
-      import("./image-derivatives.js?v=3c104218a8"),
+      import("./image-derivatives.js?v=473851dece"),
     ]);
     registerImageDerivatives(IMAGE_DERIVATIVES);
     const { config, view } = renderRecordView(requestedType, requestedId, data);
