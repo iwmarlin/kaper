@@ -344,3 +344,84 @@ site, the Warsaw address books, the Jagiellonian and KUL digital libraries.
 The two marclavry.org Wayback links were confirmed through the archive.org
 availability index. Four YouTube videos with embedding switched off are known
 to play (finding 2).
+
+## Period evidence, 21 November 2026
+
+The earlier sections ask whether a reader can reach a Source. This one asks
+what a statement rests on. The rule is the archive's own: Sieghardt's work
+catalogue (`SRC0373`), Görner's work list (`SRC0992`) and the Walter Jurmann
+website (`SRC0306`) are secondary and may be wrong, so a statement that rests
+on them alone is at most probable. A statement is confirmed by a document of
+the time: a print, a register entry, a label, the trade press.
+
+**What rests on secondary Sources alone.** Every confirmed record in every
+table was checked for Sources that are all secondary (the three catalogues,
+books, later web pages, Wikipedia). No Work, Film, Song, credit for Kaper,
+Place or timeline event does: the works, films and people audits had already
+dealt with those. What was left were 26 relations between works, 10 title
+variants, two credits on *Mutiny on the Bounty*, and records whose subject is
+the website itself (an Organization documented by its own page), which is
+what such a Source is for.
+
+**Period documents found and cited.** Five new Sources from the Media
+History Digital Library, each read on the page:
+
+| Source | What it shows | Now cited by |
+| --- | --- | --- |
+| `SRC1028` Variety, 30 Oct. 1935, p. 54 | Jurmann and Kaper wrote *Duchess Has a Twinkle in Her Eye*, words by Ned Washington, “for Metro’s *Kind Lady*” | `REL0080` |
+| `SRC1029` Film Daily Year Book 1939, p. 544 | Kaper's songs for *Everybody Sing*: *Early Morning Sequence*, *Swing Mr. Mendelssohn Swing*, *The One I Love*, *The Show Must Go On*, *Melody Farm* | `REL0113`, `REL0116` |
+| `SRC1030` Variety, 8 July 1936, p. 15 | The review of *I Stand Condemned*: “a remake of ‘Nuits Moscovites’ (‘Moscow Nights’)” | `REL0134` |
+| `SRC1031` Film Daily Year Book 1936, p. 223 | *Mutiny on the Bounty*: directed by Frank Lloyd, musical score by Herbert Stothart | the two credits, which had a 2004 web page and Sieghardt |
+
+Documents already in the archive were added where they name both works:
+the Coda edition *Chant du destin* of 1934 (`SRC0219`) for its three songs
+(`REL0053`–`REL0055`); Variety of 27 November 1935 (`SRC0045`) for *Shadows on
+the Starlit Waters* in *Last of the Pagans* (`REL0082`); the Eschig editions
+of 1932 and 1934 (`SRC0981`, `SRC0073`), which print *Pourquoi donc verser
+des larmes ?* with its German title (`REL0139`); the French edition of *San
+Francisco* in the Jurmann Collection (`SRC0489`, `REL0166`); and the Salabert
+print of *Ça va déjà bien mieux !* (`SRC0786`), which gives *’S wird schon
+wieder besser* as another form of its title (`REL0144`). That print is of
+1956, after the archive's period, but it is the French version itself.
+
+**Lowered to probable.** No document of the time names both works:
+
+- `REL0014`, `REL0023`: the English *Stay ’way from my arms* and the French
+  *Ça va déjà bien mieux !* were linked to the German films as confirmed. The
+  archive's convention, already followed by `REL0017`, `REL0190` and
+  `REL0194`, is that a version connected to a film only through its German
+  song is probable. They now follow it, with the same note.
+- `REL0108`, `REL0110`, `REL0114`, `REL0122`: songs “composed for the film but
+  not used”. The Jurmann catalogue says so, and for *Maytime* the Jurmann
+  Collection finding aid too; the copyright entries of 1936 and 1937 do not
+  name a film.
+- `REL0145`, `REL0147`: the French *Ninon* and *Adieu* as versions of the
+  German songs. Each French print names the French version of the film and
+  its composers (Kaper and Jurmann; for *Adieu*, Jurmann as Pierre Candel),
+  and the BnF records give no German title. The link is a strong inference,
+  not a statement.
+- `REL0154`: *Stay ’way from my arms* as the English version of *Wer weint
+  heut’ aus Liebe Tränen?*. The 1932 copyright entry names composers and
+  English lyricists but no original.
+- The ten title variants that rest on Sieghardt or the Jurmann website alone:
+  `TV0129`, `TV0166`, `TV0252`, `TV0289`, `TV0290`, `TV0292`–`TV0294`,
+  `TV0322`, `TV0323`. Five of them name Works that are already probable.
+
+`tests/test_sources_period_evidence.py` fails if a confirmed title variant,
+or a confirmed relation involving a song, comes to rest on the three
+catalogues alone again.
+
+**Open: six relations between films.** `REL0127` and `REL0129`–`REL0133`
+record that *Son altesse l’amour*, *Tout pour l’amour*, *Madame ne veut pas
+d’enfants*, *Le chant du destin*, *L’Homme qui ne sait pas dire non* and
+*Voyage de noces* are the French versions of the German films. Each cites
+Sieghardt alone. filmportal.de has both films of each pair, with the same
+year and crew, but does not state the link in words, and neither the
+Universal Filmlexikon of 1932–1933 nor a first search of the trade papers
+did either. These multiple-language versions are not in doubt in film
+history, so they were not lowered without a decision.
+
+**Checked and left.** Two filmportal links that looked dead were whole when
+requested in full; the address had been cut short in this audit's own
+listing. The year that looked wrong on `SRC0737` (1926 against a 2025 upload)
+is the disc's year, and the line break in `SRC0848` is a paragraph.

@@ -228,7 +228,7 @@
       "targetWorkTitle": "Ehe mit beschränkter Haftung",
       "targetTitleAsSource": "Ihre Majestät die Liebe (US version: Her Majesty, Love)",
       "direction": "source_to_target",
-      "certainty": "confirmed",
+      "certainty": "probable",
       "sourceWorkIds": [
         "W-S037"
       ],
@@ -241,7 +241,8 @@
       ],
       "sourceIds": [
         "SRC0373"
-      ]
+      ],
+      "publicNote": "The English version “Stay ’way from my arms” is connected to “Ehe mit beschränkter Haftung” through its German source song; direct screen use of the English version is not established."
     },
     {
       "id": "REL0015",
@@ -393,7 +394,7 @@
       "targetWorkTitle": "Es wird schon wieder besser",
       "targetTitleAsSource": "Es wird schon wieder besser",
       "direction": "source_to_target",
-      "certainty": "confirmed",
+      "certainty": "probable",
       "sourceWorkIds": [
         "W-S055"
       ],
@@ -402,7 +403,8 @@
       ],
       "sourceIds": [
         "SRC0373"
-      ]
+      ],
+      "publicNote": "The French version “Ça va déjà bien mieux !” is connected to “Es wird schon wieder besser” through its German source song; the only print found, of 1956, does not name the film."
     },
     {
       "id": "REL0024",
@@ -906,6 +908,7 @@
         "W-F027"
       ],
       "sourceIds": [
+        "SRC0219",
         "SRC0373"
       ]
     },
@@ -923,6 +926,7 @@
         "W-F027"
       ],
       "sourceIds": [
+        "SRC0219",
         "SRC0373"
       ]
     },
@@ -940,6 +944,7 @@
         "W-F027"
       ],
       "sourceIds": [
+        "SRC0219",
         "SRC0373"
       ]
     },
@@ -1367,6 +1372,7 @@
         "P023"
       ],
       "sourceIds": [
+        "SRC1028",
         "SRC0373"
       ]
     },
@@ -1401,6 +1407,7 @@
         "W-F035"
       ],
       "sourceIds": [
+        "SRC0045",
         "SRC0373"
       ]
     },
@@ -1821,7 +1828,7 @@
       "targetWorkTitle": "A Day at the Races",
       "targetTitleAsSource": "A day at the races",
       "direction": "source_to_target",
-      "certainty": "confirmed",
+      "certainty": "probable",
       "sourceWorkIds": [
         "W-S154"
       ],
@@ -1832,7 +1839,7 @@
         "SRC0373",
         "SRC0306"
       ],
-      "publicNote": "Composed for the film but not used, per the official Walter Jurmann catalogue."
+      "publicNote": "Composed for the film but not used, according to the official Walter Jurmann catalogue; no document of the time found here says so."
     },
     {
       "id": "REL0109",
@@ -1857,7 +1864,7 @@
       "targetWorkTitle": "Everybody Sing",
       "targetTitleAsSource": "Everybody sing",
       "direction": "source_to_target",
-      "certainty": "confirmed",
+      "certainty": "probable",
       "sourceWorkIds": [
         "W-S156"
       ],
@@ -1868,7 +1875,7 @@
         "SRC0373",
         "SRC0306"
       ],
-      "publicNote": "Composed for the film but not used, per the official Walter Jurmann catalogue."
+      "publicNote": "Composed for the film but not used, according to the official Walter Jurmann catalogue; no document of the time found here says so."
     },
     {
       "id": "REL0111",
@@ -1918,6 +1925,7 @@
         "W-F048"
       ],
       "sourceIds": [
+        "SRC1029",
         "SRC0373"
       ]
     },
@@ -1927,7 +1935,7 @@
       "targetWorkTitle": "Everybody Sing",
       "targetTitleAsSource": "Everybody sing",
       "direction": "source_to_target",
-      "certainty": "confirmed",
+      "certainty": "probable",
       "sourceWorkIds": [
         "W-S160"
       ],
@@ -1938,7 +1946,7 @@
         "SRC0373",
         "SRC0306"
       ],
-      "publicNote": "Composed for the film but not used, per the official Walter Jurmann catalogue."
+      "publicNote": "Composed for the film but not used, according to the official Walter Jurmann catalogue; no document of the time found here says so."
     },
     {
       "id": "REL0115",
@@ -1974,6 +1982,7 @@
         "P071"
       ],
       "sourceIds": [
+        "SRC1029",
         "SRC0373"
       ]
     },
@@ -2070,7 +2079,7 @@
       "targetWorkTitle": "Maytime",
       "targetTitleAsSource": "Maytime",
       "direction": "source_to_target",
-      "certainty": "confirmed",
+      "certainty": "probable",
       "sourceWorkIds": [
         "W-S168"
       ],
@@ -2079,9 +2088,10 @@
       ],
       "sourceIds": [
         "SRC0373",
-        "SRC0306"
+        "SRC0306",
+        "SRC0890"
       ],
-      "publicNote": "Composed for the film but not used, per the official Walter Jurmann catalogue."
+      "publicNote": "Composed for the film but not used, according to the official Walter Jurmann catalogue and the finding aid of the Walter Jurmann Collection; no document of the time found here says so."
     },
     {
       "id": "REL0123",
@@ -2283,6 +2293,7 @@
         "P007"
       ],
       "sourceIds": [
+        "SRC1030",
         "SRC0373"
       ]
     },
@@ -2374,6 +2385,8 @@
         "W-S033"
       ],
       "sourceIds": [
+        "SRC0981",
+        "SRC0073",
         "SRC0373"
       ]
     },
@@ -2448,6 +2461,7 @@
         "W-S054"
       ],
       "sourceIds": [
+        "SRC0786",
         "SRC0373"
       ]
     },
@@ -2457,8 +2471,8 @@
       "targetWorkTitle": "Ninon, lach mir einmal zu",
       "targetTitleAsSource": "Ninon, lach mir einmal zu",
       "direction": "source_to_target",
-      "publicNote": "“Ninon, quand tu me souris” is documented as a language version of “Ninon, lach mir einmal zu”.",
-      "certainty": "confirmed",
+      "publicNote": "The French song was sung by Jan Kiepura in “Tout pour l’amour”, the French version of the film in which he sang the German one; no document of the time found here names the two together.",
+      "certainty": "probable",
       "sourceWorkIds": [
         "W-S077"
       ],
@@ -2494,8 +2508,8 @@
       "targetWorkTitle": "Adieu, es ist zu schön, um wahr zu sein",
       "targetTitleAsSource": "Adieu, es ist zu schön, um wahr zu sein",
       "direction": "source_to_target",
-      "publicNote": "“Adieu” is documented as a language version of “Adieu, es ist zu schön, um wahr zu sein”.",
-      "certainty": "confirmed",
+      "publicNote": "The French “Adieu” was published from “Le chant du destin”, the French version of the film that has the German one, under Jurmann’s pseudonym Pierre Candel; no document of the time found here names the two together.",
+      "certainty": "probable",
       "sourceWorkIds": [
         "W-S091"
       ],
@@ -2604,8 +2618,8 @@
       "targetWorkTitle": "Wer weint heut’ aus Liebe Tränen?",
       "targetTitleAsSource": "Wer weint heut’ aus Liebe Tränen?",
       "direction": "source_to_target",
-      "publicNote": "“Stay ’way from my arms” is documented as a language version of “Wer weint heut’ aus Liebe Tränen?”.",
-      "certainty": "confirmed",
+      "publicNote": "Sieghardt’s work catalogue gives this as the English version of the German song; the 1932 copyright entry names composers and English lyricists but no German original.",
+      "certainty": "probable",
       "sourceWorkIds": [
         "W-S037"
       ],
@@ -2773,6 +2787,7 @@
         "W-S130"
       ],
       "sourceIds": [
+        "SRC0489",
         "SRC0373"
       ]
     },
