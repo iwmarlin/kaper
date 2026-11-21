@@ -19,7 +19,8 @@ is not shown twice. In a Source's citation it marks the title string with its
 language for screen readers. Removing these variants would take both away, so
 they stay. The rule of 7 November 2026, that a separate film's title is not a
 variant of the film it was made from, concerns the catalogue search, where
-such a variant makes one title find two films. See the open question below.
+such a variant makes one title find two films; the four film variants this
+audit found against it were removed (see the last section).
 
 ## What was changed
 
@@ -84,13 +85,24 @@ such a variant makes one title find two films. See the open question below.
 - The date of the Odeon disc of the Polish versions (`SRC0633`) is correctly
   recorded as after 1930, which is all the Biblioteka Narodowa states.
 
-## Open question
+## Four film titles that belong to other films
 
-Four films still carry the title of another film as a variant: *Mariage à
-responsabilité limitée* (`TV0012`) on *Ehe mit beschränkter Haftung*, *Voyage
-de noces* (`TV0019`) on *Hochzeitsreise zu Dritt*, *Moscow Nights* (`TV0050`)
-on *Les nuits moscovites* and *Son altesse l’amour* (`TV0286`) on *Ihre
-Majestät die Liebe*. Each of these films has its own record. Under the rule of
-7 November these variants should go, as four others did then. However, the
-public data audit records that `F005` and `F032` were made to carry two of
-them deliberately. Left for a decision.
+Four films carried the title of another film as a variant:
+
+| Variant | On | That title's own record |
+| --- | --- | --- |
+| *Mariage à responsabilité limitée* (`TV0012`) | *Ehe mit beschränkter Haftung* | `W-F018`, French remake |
+| *Voyage de noces* (`TV0019`) | *Hochzeitsreise zu Dritt* | `W-F016`, French version |
+| *Moscow Nights* (`TV0050`) | *Les nuits moscovites* | `W-F032`, English remake |
+| *Son altesse l’amour* (`TV0286`) | *Ihre Majestät die Liebe* | `W-F005`, French version |
+
+A language version is a separate film with its own cast, and a remake more
+so. Under the rule of 7 November 2026 these titles belong to their own
+records, so the four variants were removed on 21 November 2026, as four
+others were then. A search for the French or English title now finds that
+film alone. The relation between the two films is unchanged and still links
+them on both pages.
+
+`tests/test_title_variants_audit.py` holds the corrections in place, and
+also fails if one title is ever recorded twice on one work in the same
+language.
