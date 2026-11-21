@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 927,
+  "count": 931,
   "records": [
     {
       "id": "SRC0001",
@@ -1100,6 +1100,9 @@
       "contributionIds": [
         "CON-F035-C-P009",
         "CON-F035-C-P077"
+      ],
+      "workRelationIds": [
+        "REL0082"
       ]
     },
     {
@@ -2302,7 +2305,8 @@
         "S033"
       ],
       "workRelationIds": [
-        "REL0013"
+        "REL0013",
+        "REL0139"
       ],
       "contributionIds": [
         "CON-S036-C-P009",
@@ -8295,6 +8299,11 @@
           "scheme": "ark",
           "value": "ark:/12148/cb42890135x"
         }
+      ],
+      "workRelationIds": [
+        "REL0053",
+        "REL0054",
+        "REL0055"
       ]
     },
     {
@@ -18049,6 +18058,9 @@
           "scheme": "ark",
           "value": "ark:/13030/kt5779q3vh"
         }
+      ],
+      "workRelationIds": [
+        "REL0166"
       ]
     },
     {
@@ -28326,6 +28338,9 @@
           "scheme": "ark",
           "value": "ark:/12148/cb39702785f"
         }
+      ],
+      "workRelationIds": [
+        "REL0144"
       ]
     },
     {
@@ -31857,6 +31872,9 @@
           "url": "https://catalog.afi.com/Film/6120-MAYTIME",
           "role": "contextual_reference"
         }
+      ],
+      "workRelationIds": [
+        "REL0122"
       ]
     },
     {
@@ -34736,6 +34754,9 @@
       ],
       "titleVariantIds": [
         "TV0110"
+      ],
+      "workRelationIds": [
+        "REL0139"
       ]
     },
     {
@@ -36293,6 +36314,163 @@
       "titleVariantIds": [
         "TV0002"
       ],
+      "organizationIds": [
+        "ORG067",
+        "ORG091"
+      ]
+    },
+    {
+      "id": "SRC1028",
+      "shortCitation": "Music note on “Duchess Has a Twinkle in Her Eye” — Variety, 30 October 1935, p. 54",
+      "fullCitation": "[Music note on “Duchess Has a Twinkle in Her Eye”.] Variety (New York), 30 October 1935, p. 54. Media History Digital Library, Variety vol. 120; digitised by the Internet Archive.",
+      "sourceType": "press_item",
+      "title": "Duchess Has a Twinkle in Her Eye — Variety, 1935",
+      "publication": "Variety",
+      "date": "1935-10-30",
+      "dateRole": "publication",
+      "slug": "src1028-variety-1935-10-30-duchess-has-a-twinkle",
+      "primaryUrl": "https://archive.org/details/variety120-1935-10/page/n317/",
+      "researchNote": "Reports that Jurmann and Kaper (printed “Jurman-Kapar”) had written the melody for Ned Washington’s lyrics to “Duchess Has a Twinkle in Her Eye” for Metro’s Kind Lady.",
+      "workIds": [
+        "W-S120",
+        "W-F037"
+      ],
+      "personIds": [
+        "P009",
+        "P077",
+        "P058"
+      ],
+      "repository": "Internet Archive / Media History Digital Library",
+      "dateQualifier": "confirmed",
+      "accessDate": "2026-11-21",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "researchNoteType": "evidence_note",
+      "organizationIds": [
+        "ORG067",
+        "ORG091"
+      ],
+      "workRelationIds": [
+        "REL0080"
+      ],
+      "songIds": [
+        "S120"
+      ],
+      "filmIds": [
+        "F037"
+      ]
+    },
+    {
+      "id": "SRC1029",
+      "shortCitation": "“Music Composers: Kaper, Bronislaw” — The Film Daily Year Book 1939, p. 544",
+      "fullCitation": "“Kaper, Bronislaw.” In “Music Composers,” The Film Daily Year Book of Motion Pictures, 1939, p. 544. New York: The Film Daily, 1939. Media History Digital Library; digitised by the Internet Archive.",
+      "sourceType": "press_item",
+      "title": "Music Composers: Kaper, Bronislaw — The Film Daily Year Book 1939",
+      "publication": "The Film Daily Year Book of Motion Pictures",
+      "date": "1939",
+      "dateRole": "publication",
+      "slug": "src1029-film-daily-year-book-1939-music-composers-kaper",
+      "primaryUrl": "https://archive.org/details/film-daily-yearbook-1939/page/n547/",
+      "researchNote": "Lists Kaper’s film songs of the year: San Francisco (“San Francisco”); Three Smart Girls (“Someone to Care for Me”, “My Heart is Singing”); Everybody Sing (“Early Morning Sequence”, “Swing Mr. Mendelssohn Swing”, “The One I Love”, “The Show Must Go On”, “Melody Farm”).",
+      "workIds": [
+        "W-F048",
+        "W-S159",
+        "W-S162"
+      ],
+      "personIds": [
+        "P009"
+      ],
+      "repository": "Internet Archive / Media History Digital Library",
+      "dateQualifier": "confirmed",
+      "accessDate": "2026-11-21",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "researchNoteType": "evidence_note",
+      "organizationIds": [
+        "ORG067",
+        "ORG091"
+      ],
+      "workRelationIds": [
+        "REL0113",
+        "REL0116"
+      ],
+      "filmIds": [
+        "F048"
+      ],
+      "songIds": [
+        "S159",
+        "S162"
+      ]
+    },
+    {
+      "id": "SRC1030",
+      "shortCitation": "Review of “I Stand Condemned” — Variety, 8 July 1936, p. 15",
+      "fullCitation": "[Review of “I Stand Condemned”.] Film Reviews, Variety (New York), 8 July 1936, p. 15. Media History Digital Library, Variety vol. 123; digitised by the Internet Archive.",
+      "sourceType": "press_item",
+      "title": "I Stand Condemned review — Variety, 1936",
+      "publication": "Variety",
+      "date": "1936-07-08",
+      "dateRole": "publication",
+      "slug": "src1030-variety-1936-07-08-i-stand-condemned-review",
+      "primaryUrl": "https://archive.org/details/variety123-1936-07/page/n70/",
+      "researchNote": "Reviews the London Films production released by United Artists, produced by Alexis Granowsky and directed by Anthony Asquith, with Harry Baur and Laurence Olivier, and opens: “This is a remake of ‘Nuits Moscovites’ (‘Moscow Nights’), one of last season’s best French films.”",
+      "workIds": [
+        "W-F032",
+        "W-F031"
+      ],
+      "filmIds": [
+        "F032",
+        "F031"
+      ],
+      "personIds": [
+        "P007"
+      ],
+      "repository": "Internet Archive / Media History Digital Library",
+      "dateQualifier": "confirmed",
+      "accessDate": "2026-11-21",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "researchNoteType": "evidence_note",
+      "organizationIds": [
+        "ORG067",
+        "ORG091"
+      ],
+      "workRelationIds": [
+        "REL0134"
+      ]
+    },
+    {
+      "id": "SRC1031",
+      "shortCitation": "“Mutiny on the Bounty” — The Film Daily Year Book 1936, p. 223",
+      "fullCitation": "“Mutiny on the Bounty.” In “1935 Releases,” The Film Daily Year Book of Motion Pictures, 1936, p. 223. New York: The Film Daily, 1936. Media History Digital Library; digitised by the Internet Archive.",
+      "sourceType": "press_item",
+      "title": "Mutiny on the Bounty — The Film Daily Year Book 1936",
+      "publication": "The Film Daily Year Book of Motion Pictures",
+      "date": "1936",
+      "dateRole": "publication",
+      "slug": "src1031-film-daily-year-book-1936-mutiny-on-the-bounty",
+      "primaryUrl": "https://archive.org/details/filmdailyyearboo00film_7/page/n226/",
+      "researchNote": "Lists the M-G-M release, running time 132 minutes, produced by Irving Thalberg, directed by Frank Lloyd, musical score by Herbert Stothart, reviewed 1 November 1935.",
+      "workIds": [
+        "W-F034"
+      ],
+      "filmIds": [
+        "F034"
+      ],
+      "personIds": [
+        "P018",
+        "P136"
+      ],
+      "contributionIds": [
+        "CON-F034-C-P136",
+        "CON-F034-D-P018"
+      ],
+      "repository": "Internet Archive / Media History Digital Library",
+      "dateQualifier": "confirmed",
+      "accessDate": "2026-11-21",
+      "reliability": "high",
+      "sourceStatus": "verified",
+      "researchNoteType": "evidence_note",
       "organizationIds": [
         "ORG067",
         "ORG091"
