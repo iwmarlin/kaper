@@ -417,9 +417,17 @@ d’enfants*, *Le chant du destin*, *L’Homme qui ne sait pas dire non* and
 *Voyage de noces* are the French versions of the German films. Each cites
 Sieghardt alone. filmportal.de has both films of each pair, with the same
 year and crew, but does not state the link in words, and neither the
-Universal Filmlexikon of 1932–1933 nor a first search of the trade papers
-did either. These multiple-language versions are not in doubt in film
-history, so they were not lowered without a decision.
+Universal Filmlexikon of 1932–1933 nor the trade papers that could be
+searched from here do either. Those were every volume of Der Kinematograph
+from October 1930 to August 1932 (the Media History Digital Library has no
+later volume), Variety for 1931–1934, which reviewed *Hochzeitsreise zu
+Dritt* from Berlin and reported *Voyage de noces* and *Madame wünscht keine
+Kinder* at the box office, and the four issues of Ciné-Miroir of 1933–1934
+on the Internet Archive. None names a French film as the version of a
+German one. The French trade press of those years, La Cinématographie
+française, Cinémonde, Pour Vous and Hebdo-Film, is on Gallica, which was not
+searched from here. These multiple-language versions are not in doubt in
+film history, so they were not lowered without a decision.
 
 **Checked and left.** Two filmportal links that looked dead were whole when
 requested in full; the address had been cut short in this audit's own
