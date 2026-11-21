@@ -5,7 +5,7 @@
     "endYear": 1939,
     "label": "Bronisław Kaper early career, documented through 1939"
   },
-  "count": 72,
+  "count": 66,
   "records": [
     {
       "id": "TV0002",
@@ -20,26 +20,9 @@
         "W-F001"
       ],
       "sourceIds": [
-        "SRC0122"
-      ]
-    },
-    {
-      "id": "TV0012",
-      "variantTitle": "Mariage à responsabilité limitée",
-      "titleAsSource": "Mariage à responsabilité limitée",
-      "variantType": "remake_title",
-      "variantTypeAsSource": "probable remake / same-plot adaptation title",
-      "language": "fr",
-      "languageStatus": "inferred",
-      "certainty": "confirmed",
-      "workIds": [
-        "W-F008"
-      ],
-      "sourceIds": [
-        "SRC0161",
-        "SRC0165",
-        "SRC0373",
-        "SRC0478"
+        "SRC0122",
+        "SRC1026",
+        "SRC1027"
       ]
     },
     {
@@ -57,24 +40,6 @@
       ],
       "sourceIds": [
         "SRC0124"
-      ]
-    },
-    {
-      "id": "TV0019",
-      "variantTitle": "Voyage de noces",
-      "titleAsSource": "Voyage des noces",
-      "variantType": "language_version",
-      "variantTypeAsSource": "language version",
-      "language": "fr",
-      "languageStatus": "inferred",
-      "certainty": "confirmed",
-      "workIds": [
-        "W-F014"
-      ],
-      "sourceIds": [
-        "SRC0127",
-        "SRC0373",
-        "SRC0452"
       ]
     },
     {
@@ -178,36 +143,21 @@
       ]
     },
     {
-      "id": "TV0050",
-      "variantTitle": "Moscow Nights",
-      "titleAsSource": "Moscow Nights",
-      "variantType": "remake_title",
-      "variantTypeAsSource": "remake / English-language remake title",
-      "language": "en",
-      "languageStatus": "source",
-      "certainty": "confirmed",
-      "workIds": [
-        "W-F031"
-      ],
-      "sourceIds": [
-        "SRC0373"
-      ]
-    },
-    {
       "id": "TV0053",
-      "variantTitle": "Stand Condemned",
-      "titleAsSource": "Stand Condemned",
+      "variantTitle": "I Stand Condemned",
+      "titleAsSource": "I Stand Condemned",
       "variantType": "alternate_title",
       "variantTypeAsSource": "alternate title",
       "language": "en",
       "languageStatus": "source",
-      "note": "Alternate English/US release title.",
+      "note": "Title of the United States release, distributed by United Artists and reviewed in June 1936.",
       "certainty": "confirmed",
       "workIds": [
         "W-F032"
       ],
       "sourceIds": [
-        "SRC0167"
+        "SRC0167",
+        "SRC1025"
       ]
     },
     {
@@ -223,6 +173,7 @@
         "W-S033"
       ],
       "sourceIds": [
+        "SRC0981",
         "SRC0373"
       ]
     },
@@ -239,6 +190,7 @@
         "W-S033"
       ],
       "sourceIds": [
+        "SRC0212",
         "SRC0373"
       ]
     },
@@ -271,6 +223,7 @@
         "W-S034"
       ],
       "sourceIds": [
+        "SRC0950",
         "SRC0070"
       ]
     },
@@ -370,6 +323,7 @@
         "W-S076"
       ],
       "sourceIds": [
+        "SRC0298",
         "SRC0373"
       ]
     },
@@ -552,23 +506,6 @@
       ]
     },
     {
-      "id": "TV0280",
-      "variantTitle": "Keep the magic of Maytime",
-      "titleAsSource": "Keep the magic of Maytime",
-      "variantType": "alternate_title",
-      "variantTypeAsSource": "CCE title variant",
-      "language": "en",
-      "languageStatus": "source",
-      "note": "Buxbaum gives catalogue title as Keep the Magic of Springtime; CCE gives Keep the Magic of Maytime. Treated as an alternate title/CCE variant for S168 / W-S168.",
-      "certainty": "confirmed",
-      "workIds": [
-        "W-S168"
-      ],
-      "sourceIds": [
-        "SRC0238"
-      ]
-    },
-    {
       "id": "TV0282",
       "variantTitle": "The Orchestra in Love",
       "titleAsSource": "The Orchestra in Love",
@@ -622,23 +559,6 @@
         "SRC0064",
         "SRC0373",
         "SRC0483"
-      ]
-    },
-    {
-      "id": "TV0286",
-      "variantTitle": "Son altesse l’amour",
-      "titleAsSource": "Son altesse l’amour",
-      "variantType": "language_version",
-      "variantTypeAsSource": "French-language version / film title",
-      "language": "fr",
-      "languageStatus": "source",
-      "certainty": "confirmed",
-      "workIds": [
-        "W-F004"
-      ],
-      "sourceIds": [
-        "SRC0151",
-        "SRC0373"
       ]
     },
     {
@@ -770,7 +690,7 @@
       "variantTypeAsSource": "French version",
       "language": "fr",
       "languageStatus": "source",
-      "note": "French-language version of the German original W-S009 / S009 ‘Tränen weint jede Frau so gern’ (Fritz Rotter / B. Kaper). French words by André Mauprey. Chant et piano, 1930. BnF also records a 1931 orchestral arrangement by Nico Dostal (tango, for orchestra with piano conductor). Created 2026-07-05 from BnF catalogue entries; SRC record to be added.",
+      "note": "French-language version of the German original W-S009 / S009 ‘Tränen weint jede Frau so gern’ (Fritz Rotter / B. Kaper). French words by André Mauprey. Chant et piano, 1930. BnF also records a 1931 orchestral arrangement by Nico Dostal (tango, for orchestra with piano conductor).",
       "certainty": "confirmed",
       "workIds": [
         "W-S009"
@@ -787,7 +707,7 @@
       "variantTypeAsSource": "French version",
       "language": "fr",
       "languageStatus": "source",
-      "note": "French-language version of the German original W-S038 / S038 ‘Du lieber Geiger, spiel einen Tango für mich’ (Fritz Rotter / B. Kaper; film Seitensprünge). French words by André Mauprey. Chant et piano et chant seul, 1931. Created 2026-07-05 from a BnF music-sheet entry; SRC record to be added.",
+      "note": "French-language version of the German original W-S038 / S038 ‘Du lieber Geiger, spiel einen Tango für mich’ (Fritz Rotter / B. Kaper; film Seitensprünge). French words by André Mauprey. Chant et piano et chant seul, 1931.",
       "certainty": "confirmed",
       "workIds": [
         "W-S038"
@@ -804,7 +724,7 @@
       "variantTypeAsSource": "French version",
       "language": "fr",
       "languageStatus": "source",
-      "note": "French-language version of the German original W-S020 / S020 ‘Was braucht denn jede Frau leider unbedingt?’ from the film Der Korvettenkapitän (French release: Les Cols bleus). French words by René Nazelles (P093). Chant et piano et chant seul, 1930. Created 2026-07-05 from a BnF music-sheet entry; SRC record to be added.",
+      "note": "French-language version of the German original W-S020 / S020 ‘Was braucht denn jede Frau leider unbedingt?’ from the film Der Korvettenkapitän (French release: Les Cols bleus). French words by René Nazelles (P093). Chant et piano et chant seul, 1930.",
       "certainty": "confirmed",
       "workIds": [
         "W-S020"
@@ -821,7 +741,7 @@
       "variantTypeAsSource": "French version",
       "language": "fr",
       "languageStatus": "source",
-      "note": "French-language version of the German original W-S019 / S019 ‘Von einem bißchen Glück träumt jedes Mädchen’, slow-fox from the film Der Korvettenkapitän (French: Les Cols bleus). French words by René Nazelles (P093). Chant et piano et chant seul, 1930. Created 2026-07-05 from a BnF music-sheet entry; SRC record to be added.",
+      "note": "French-language version of the German original W-S019 / S019 ‘Von einem bißchen Glück träumt jedes Mädchen’, slow-fox from the film Der Korvettenkapitän (French: Les Cols bleus). French words by René Nazelles (P093). Chant et piano et chant seul, 1930.",
       "certainty": "confirmed",
       "workIds": [
         "W-S019"
@@ -838,7 +758,7 @@
       "variantTypeAsSource": "French version",
       "language": "fr",
       "languageStatus": "source",
-      "note": "French-language version of the German original W-S018 / S018 ‘Sagen kleine Mädels nein’ from the film Der Korvettenkapitän (French: Les Cols bleus). French words by René Nazelles (P093). Chant et piano, 1930. Created 2026-07-05 from a BnF music-sheet entry; SRC record to be added.",
+      "note": "French-language version of the German original W-S018 / S018 ‘Sagen kleine Mädels nein’ from the film Der Korvettenkapitän (French: Les Cols bleus). French words by René Nazelles (P093). Chant et piano, 1930.",
       "certainty": "confirmed",
       "workIds": [
         "W-S018"
@@ -999,25 +919,6 @@
       "sourceIds": [
         "SRC0782"
       ]
-    },
-    {
-      "id": "TV0313",
-      "variantTitle": "Kinderlied",
-      "titleAsSource": "Kinderlied (Es war einmal ein Baby)",
-      "variantType": "alternate_title",
-      "variantTypeAsSource": "alternate title",
-      "language": "de",
-      "languageStatus": "source",
-      "certainty": "confirmed",
-      "workIds": [
-        "W-S062"
-      ],
-      "sourceIds": [
-        "SRC0062",
-        "SRC0306",
-        "SRC0880"
-      ],
-      "note": "Generic title under which the song is listed in the Melodie der Liebe folio (UCLA finding aid), the BnF record of its French version and the Walter Jurmann works catalogue."
     },
     {
       "id": "TV0314",
@@ -1188,17 +1089,20 @@
     {
       "id": "TV0324",
       "variantTitle": "Kinderlied",
-      "titleAsSource": "KINDERLIED",
+      "titleAsSource": "Kinderlied",
       "variantType": "alternate_title",
-      "variantTypeAsSource": "Buxbaum/Sieghardt entry op. 034",
+      "variantTypeAsSource": "alternate title",
       "language": "de",
       "languageStatus": "source",
-      "note": "Sieghardt’s title for the song (opus list, p. 185), with “Es war einmal ein Baby” as the first line of the refrain. Görner’s work list has the same title (1931, p. 203).",
+      "note": "Generic title of the song. The 1932 Paris edition of its French version gives it as “Kinderlied. Es war einmal ein Baby”; the Melodie der Liebe folio in the Walter Jurmann Collection (UCLA finding aid) and the Walter Jurmann works catalogue list the song under this title, and so do Sieghardt’s opus list (p. 185), with “Es war einmal ein Baby” as the first line of the refrain, and Görner’s work list (1931, p. 203).",
       "certainty": "confirmed",
       "workIds": [
         "W-S062"
       ],
       "sourceIds": [
+        "SRC0062",
+        "SRC0880",
+        "SRC0306",
         "SRC0373",
         "SRC0992"
       ]
